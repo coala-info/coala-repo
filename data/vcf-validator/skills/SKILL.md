@@ -1,6 +1,6 @@
 ---
 name: vcf-validator
-description: The vcf-validator tool validates VCF file format compliance and verifies VCF records against a reference genome. Use when user asks to validate VCF files, check VCF syntax and semantics, verify VCF records against a reference genome, generate validation reports, filter VCF records, or ensure VCF files meet database submission standards.
+description: The vcf-validator suite verifies that VCF files adhere to official specifications and match reference genome sequences. Use when user asks to validate VCF syntax, check for specification errors or warnings, generate validation reports, or verify that reference alleles match a FASTA file.
 homepage: https://github.com/EBIVariation/vcf-validator
 ---
 
@@ -8,57 +8,81 @@ homepage: https://github.com/EBIVariation/vcf-validator
 # vcf-validator
 
 ## Overview
-This skill provides procedural knowledge for validating VCF files using the EBI Variation team's C++ validation suite. It covers two primary utilities: `vcf_validator` for format compliance (lexical, syntactic, and semantic analysis) and `vcf_assembly_checker` for verifying that VCF records match a specific reference genome. Use this tool to ensure genomic data is submission-ready for databases like the European Variation Archive (EVA).
+
+The vcf-validator suite is a high-performance C++ toolset designed to ensure VCF files adhere to official specifications. It categorizes issues into "Errors" (specification violations) and "Warnings" (best practice recommendations). Beyond standard syntax checking, it includes a specialized assembly checker to verify that the reference alleles (REF) in a VCF match the actual sequences in a provided FASTA file, which is critical for maintaining data integrity in bioinformatics pipelines.
 
 ## Core Validation Patterns
 
-### Basic Syntax and Semantic Check
-The default behavior checks for both syntax (format) and semantic (logic) issues.
-```bash
-vcf_validator -i input.vcf
-```
+### Standard Validation
+The primary command is `vcf_validator`. By default, it checks for both errors and warnings.
 
-### Validation Levels
-Control the strictness of the validation using the `-l` or `--level` flag:
-- `error`: Only reports critical syntax violations.
-- `warning`: Reports both errors and recommendations (Default).
-- `stop`: Terminates execution immediately upon encountering the first syntax error.
+```bash
+# Basic validation of a local file
+vcf_validator -i input.vcf
+
+# Validate compressed files (.gz or .bz2 supported natively)
+vcf_validator -i input.vcf.gz
+
+# Strict mode: Stop immediately upon the first syntax error
+vcf_validator -i input.vcf -l stop
+```
 
 ### Generating Reports
-Use the `-r` flag to specify output formats (comma-separated, no spaces):
-- `summary`: A high-level count of error types and their first occurrence (Default).
-- `text`: A verbose, line-by-line description of every error found.
-- `stdout`: Redirects the report to the terminal instead of a file.
+Use the `-r` flag to specify report types. Multiple reports can be generated simultaneously using a comma-separated list without spaces.
 
-Example for a comprehensive summary and text log in a specific directory:
+*   `summary`: A high-level count of error types and their first occurrences (Default).
+*   `text`: A verbose, line-by-line description of every error found.
+
 ```bash
-vcf_validator -i input.vcf.gz -r summary,text -o ./validation_results/
+# Generate both summary and verbose text reports in a specific directory
+vcf_validator -i input.vcf -r summary,text -o ./validation_results/
 ```
+
+### Advanced Validation Logic
+*   **Evidence Requirement**: Use `--require-evidence` to ensure the VCF contains either Genotypes (FORMAT/GT) or Allele Frequencies (INFO/AF). This is often required for database submissions.
+*   **Streaming**: For unsupported formats like `.zip`, use pipes:
+    ```bash
+    zcat input.vcf.zip | vcf_validator
+    ```
 
 ## Assembly Checking
-The `vcf_assembly_checker` ensures the `REF` column in the VCF matches the sequence in a provided FASTA file.
 
-### Requirements
-- A FASTA file (`-f`).
-- A FASTA index file (`.fai`) must exist in the same directory as the FASTA file.
-- (Optional) An assembly report (`-a`) if contig naming conventions (e.g., GenBank vs. UCSC) differ between the VCF and FASTA.
+The `vcf_assembly_checker` verifies if the `REF` column matches the reference genome. It requires a FASTA file and its corresponding `.fai` index.
 
-### Common Assembly Commands
-Verify VCF against a reference:
+### Basic Assembly Check
 ```bash
-vcf_assembly_checker -i input.vcf -f reference.fa
+vcf_assembly_checker -i input.vcf -f reference.fasta
 ```
 
-Generate a "cleaned" VCF containing only the records that passed the assembly check:
+### Handling Contig Mismatches
+If your VCF uses different chromosome naming conventions (e.g., "1" vs "chr1") than your FASTA file, provide an assembly report to map them:
 ```bash
-vcf_assembly_checker -i input.vcf -f reference.fa -r valid,summary
+vcf_assembly_checker -i input.vcf -f reference.fasta -a assembly_report.txt
+```
+
+### Filtering Valid Records
+You can use the assembly checker to extract only the records that match the reference:
+```bash
+vcf_assembly_checker -i input.vcf -f reference.fasta -r valid
 ```
 
 ## Expert Tips
-- **Compressed Files**: The tools natively support `.gz` and `.bz2`. For `.zip` or other formats, use a pipe: `zcat file.vcf.zip | vcf_validator`.
-- **Evidence Validation**: Use the `--require-evidence` flag to ensure the VCF contains either Genotypes (FORMAT/GT) or Allele Frequencies (INFO/AF), which is often required for database submissions.
-- **GenBank Accessions**: When preparing data for EBI/EVA, use `--require-genbank` with the assembly checker to ensure contigs use official accessions.
-- **Output Naming**: Reports are automatically named after the input file with an appended timestamp. Use `-o` to prevent cluttering your working directory.
+
+1.  **Performance**: The validator is implemented in C++14 and is significantly faster than Python-based validators. For large files, always prefer the binary version over scripted alternatives.
+2.  **Output Naming**: Reports are automatically named after the input file with an appended timestamp. If using stdin, the current directory is used for output unless `-o` is specified.
+3.  **Validation Levels**:
+    *   `error`: Use this if you only care about hard failures that prevent file parsing.
+    *   `warning`: Use this for quality control and ensuring compatibility with strict tools (Default).
+4.  **Memory Efficiency**: When running the assembly checker, ensure the `.fai` file is present in the same directory as the FASTA file to enable random access and reduce memory overhead.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| vcf-assembly-checker | vcf-assembly-checker version 0.10.2 |
+| vcf_validator | vcf_validator version 0.10.2 |
 
 ## Reference documentation
 - [vcf-validator GitHub Repository](./references/github_com_EBIVariation_vcf-validator.md)

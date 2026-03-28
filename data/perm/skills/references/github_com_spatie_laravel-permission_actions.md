@@ -1,1 +1,543 @@
-Workflow runs · spatie/laravel-permission · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} spatie / laravel-permission Public Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 1.8k Star 12.8k Code Issues 2 Pull requests 2 Discussions Actions Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Security Insights Actions: spatie/laravel-permission Actions All workflows Workflows Dependabot Updates Dependabot Updates dependabot-auto-merge dependabot-auto-merge Fix PHP code style issues Fix PHP code style issues PHPStan PHPStan Run Tests - Cache Drivers Run Tests - Cache Drivers Run Tests - Current Run Tests - Current Update Changelog Update Changelog Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 931 workflow runs 931 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. 7.1.0 Update Changelog #62: Release 7.1.0 released by drbyte 17s 17s View workflow file Merge pull request #2918 from ssw1cblarrion/patch-1 Fix PHP code style issues #212: Commit 34bf23c pushed by drbyte 20s 7.1.0 7.1.0 20s View workflow file Merge pull request #2918 from ssw1cblarrion/patch-1 Run Tests - Current #844: Commit 34bf23c pushed by drbyte 40s 7.1.0 7.1.0 40s View workflow file Merge pull request #2918 from ssw1cblarrion/patch-1 PHPStan #299: Commit 34bf23c pushed by drbyte 38s 7.1.0 7.1.0 38s View workflow file Merge pull request #2918 from ssw1cblarrion/patch-1 Run Tests - Cache Drivers #683: Commit 34bf23c pushed by drbyte 2m 10s 7.1.0 7.1.0 2m 10s View workflow file Merge pull request #2918 from ssw1cblarrion/patch-1 Run Tests - Current #843: Commit 34bf23c pushed by drbyte 40s main main 40s View workflow file Merge pull request #2918 from ssw1cblarrion/patch-1 Run Tests - Cache Drivers #682: Commit 34bf23c pushed by drbyte 2m 5s main main 2m 5s View workflow file fix(v7): prevent recursive relationships and optimize checks for non-persisted models Run Tests - Current #842: Pull request #2920 opened by muhammed-rashid 52s muhammed-rashid:fix/permission-recursion-and-optimization muhammed-rashid:fix/permission-recursion-and-optimization 52s View #2920 View workflow file fix(v7): prevent recursive relationships and optimize checks for non-persisted models Run Tests - Cache Drivers #681: Pull request #2920 opened by muhammed-rashid 2m 5s muhammed-rashid:fix/permission-recursion-and-optimization muhammed-rashid:fix/permission-recursion-and-optimization 2m 5s View #2920 View workflow file fix(v7): prevent recursive relationships and optimize checks for non-persisted models PHPStan #298: Pull request #2920 opened by muhammed-rashid 41s muhammed-rashid:fix/permission-recursion-and-optimization muhammed-rashid:fix/permission-recursion-and-optimization 41s View #2920 View workflow file fix(v7): prevent recursive relationships and optimize checks for non-persisted models dependabot-auto-merge #476: Pull request #2920 opened by muhammed-rashid 1s 1s View #2920 View workflow file Document lazy-load relationships Run Tests - Cache Drivers #680: Commit dc57827 pushed by drbyte 1m 59s main main 1m 59s View workflow file Document lazy-load relationships Fix PHP code style issues #211: Commit dc57827 pushed by drbyte 22s main main 22s View workflow file Document lazy-load relationships Run Tests - Current #841: Commit dc57827 pushed by drbyte 43s main main 43s View workflow file Document lazy-load relationships PHPStan #297: Commit dc57827 pushed by drbyte 42s main main 42s View workflow file [v7] Bring back PHP 8.3 Run Tests - Current #840: Pull request #2918 synchronize by ssw1cblarrion 1m 1s ssw1cblarrion:patch-1 ssw1cblarrion:patch-1 1m 1s View #2918 View workflow file [v7] Bring back PHP 8.3 Run Tests - Cache Drivers #679: Pull request #2918 synchronize by ssw1cblarrion 1m 59s ssw1cblarrion:patch-1 ssw1cblarrion:patch-1 1m 59s View #2918 View workflow file [v7] Bring back PHP 8.3 dependabot-auto-merge #475: Pull request #2918 synchronize by ssw1cblarrion 1s 1s View #2918 View workflow file [v7] Bring back PHP 8.3 dependabot-auto-merge #474: Pull request #2918 synchronize by ssw1cblarrion 2s 2s View #2918 View workflow file [v7] Bring back PHP 8.3 dependabot-auto-merge #473: Pull request #2918 opened by ssw1cblarrion 2s 2s View #2918 View workflow file Remove skipped tests for older PHP versions Fix PHP code style issues #210: Commit bbc6805 pushed by drbyte 23s main main 23s View workflow file Remove skipped tests for older PHP versions Run Tests - Cache Drivers #676: Commit bbc6805 pushed by drbyte 2m 6s main main 2m 6s View workflow file Remove skipped tests for older PHP versions Run Tests - Current #837: Commit bbc6805 pushed by drbyte 40s main main 40s View workflow file Remove skipped tests for older PHP versions PHPStan #296: Commit bbc6805 pushed by drbyte 36s main main 36s View workflow file Remove skipped tests for older PHP versions Run Tests - Cache Drivers #675: Commit dead1e1 pushed by drbyte 2m 5s main main 2m 5s View workflow file Previous 1 2 3 4 5 &hellip; 37 38 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fspatie%2Flaravel-permission%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fspatie%2Flaravel-permission%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=spatie%2Flaravel-permission)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[spatie](/spatie)
+/
+**[laravel-permission](/spatie/laravel-permission)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Fspatie%2Flaravel-permission) You must be signed in to change notification settings
+* [Fork
+  1.8k](/login?return_to=%2Fspatie%2Flaravel-permission)
+* [Star
+   12.9k](/login?return_to=%2Fspatie%2Flaravel-permission)
+
+* [Code](/spatie/laravel-permission)
+* [Issues
+  0](/spatie/laravel-permission/issues)
+* [Pull requests
+  3](/spatie/laravel-permission/pulls)
+* [Discussions](/spatie/laravel-permission/discussions)
+* [Actions](/spatie/laravel-permission/actions)
+* [Security
+  0](/spatie/laravel-permission/security)
+* [Insights](/spatie/laravel-permission/pulse)
+
+Additional navigation options
+
+* [Code](/spatie/laravel-permission)
+* [Issues](/spatie/laravel-permission/issues)
+* [Pull requests](/spatie/laravel-permission/pulls)
+* [Discussions](/spatie/laravel-permission/discussions)
+* [Actions](/spatie/laravel-permission/actions)
+* [Security](/spatie/laravel-permission/security)
+* [Insights](/spatie/laravel-permission/pulse)
+
+# Actions: spatie/laravel-permission
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**1,032 workflow runs**
+
+**1,032 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[github\_actions in /. - Update #1288640041](/spatie/laravel-permission/actions/runs/23422272950)
+
+Dependabot Updates
+#70:
+by
+[dependabot](/apps/dependabot)
+bot
+
+42s
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+42s
+
+[More Laracasts links](/spatie/laravel-permission/actions/runs/23228981735)
+
+Run Tests - Cache Drivers
+#726:
+Commit [c2d537a](/spatie/laravel-permission/commit/c2d537a43aab5f23a048041df522e93332cb45c1)
+pushed
+by
+[drbyte](/drbyte)
+
+2m 58s
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+2m 58s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23228981735/workflow)
+
+[More Laracasts links](/spatie/laravel-permission/actions/runs/23228981726)
+
+Run Tests - Current
+#887:
+Commit [c2d537a](/spatie/laravel-permission/commit/c2d537a43aab5f23a048041df522e93332cb45c1)
+pushed
+by
+[drbyte](/drbyte)
+
+1m 4s
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+1m 4s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23228981726/workflow)
+
+[Add Laravel 13 to matrix](/spatie/laravel-permission/actions/runs/23220399521)
+
+Run Tests - Cache Drivers
+#725:
+Commit [0a8ab4b](/spatie/laravel-permission/commit/0a8ab4b84dc5efe23be9ddcd77951e10030c452d)
+pushed
+by
+[drbyte](/drbyte)
+
+2m 48s
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+2m 48s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220399521/workflow)
+
+[Add Laravel 13 to matrix](/spatie/laravel-permission/actions/runs/23220399508)
+
+Run Tests - Current
+#886:
+Commit [0a8ab4b](/spatie/laravel-permission/commit/0a8ab4b84dc5efe23be9ddcd77951e10030c452d)
+pushed
+by
+[drbyte](/drbyte)
+
+55s
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+55s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220399508/workflow)
+
+[Add Laravel 13 to matrix](/spatie/laravel-permission/actions/runs/23220399499)
+
+PHPStan
+#324:
+Commit [0a8ab4b](/spatie/laravel-permission/commit/0a8ab4b84dc5efe23be9ddcd77951e10030c452d)
+pushed
+by
+[drbyte](/drbyte)
+
+44s
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+44s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220399499/workflow)
+
+[Add Laravel 13 to matrix](/spatie/laravel-permission/actions/runs/23220399471)
+
+Fix PHP code style issues
+#227:
+Commit [0a8ab4b](/spatie/laravel-permission/commit/0a8ab4b84dc5efe23be9ddcd77951e10030c452d)
+pushed
+by
+[drbyte](/drbyte)
+
+21s
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+[7.2.4](/spatie/laravel-permission/tree/refs/tags/7.2.4 "7.2.4")
+
+21s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220399471/workflow)
+
+[7.2.4](/spatie/laravel-permission/actions/runs/23220399364)
+
+Update Changelog
+#68:
+Release [7.2.4](/spatie/laravel-permission/releases/tag/7.2.4)
+released
+by
+[drbyte](/drbyte)
+
+1m 3s
+
+1m 3s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220399364/workflow)
+
+[Add Laravel 13 to matrix](/spatie/laravel-permission/actions/runs/23220317542)
+
+Run Tests - Current
+#885:
+Commit [0a8ab4b](/spatie/laravel-permission/commit/0a8ab4b84dc5efe23be9ddcd77951e10030c452d)
+pushed
+by
+[drbyte](/drbyte)
+
+50s
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+50s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220317542/workflow)
+
+[Add Laravel 13 to matrix](/spatie/laravel-permission/actions/runs/23220317538)
+
+Run Tests - Cache Drivers
+#724:
+Commit [0a8ab4b](/spatie/laravel-permission/commit/0a8ab4b84dc5efe23be9ddcd77951e10030c452d)
+pushed
+by
+[drbyte](/drbyte)
+
+2m 45s
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+[main](/spatie/laravel-permission/tree/refs/heads/main "main")
+
+2m 45s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220317538/workflow)
+
+[6.25.0](/spatie/laravel-permission/actions/runs/23220273371)
+
+Update Changelog
+#67:
+Release [6.25.0](/spatie/laravel-permission/releases/tag/6.25.0)
+released
+by
+[drbyte](/drbyte)
+
+14s
+
+14s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220273371/workflow)
+
+[Add L13 into v6 workflow](/spatie/laravel-permission/actions/runs/23220273342)
+
+Fix PHP code style issues
+#226:
+Commit [d7d4cb0](/spatie/laravel-permission/commit/d7d4cb0d58616722f1afc90e0484e4825155b9b3)
+pushed
+by
+[drbyte](/drbyte)
+
+23s
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+23s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220273342/workflow)
+
+[Add L13 into v6 workflow](/spatie/laravel-permission/actions/runs/23220273334)
+
+Run Tests - Cache Drivers
+#723:
+Commit [d7d4cb0](/spatie/laravel-permission/commit/d7d4cb0d58616722f1afc90e0484e4825155b9b3)
+pushed
+by
+[drbyte](/drbyte)
+
+2m 53s
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+2m 53s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220273334/workflow)
+
+[Add L13 into v6 workflow](/spatie/laravel-permission/actions/runs/23220273319)
+
+Run Tests - Current
+#884:
+Commit [d7d4cb0](/spatie/laravel-permission/commit/d7d4cb0d58616722f1afc90e0484e4825155b9b3)
+pushed
+by
+[drbyte](/drbyte)
+
+1m 25s
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+1m 25s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220273319/workflow)
+
+[Add L13 into v6 workflow](/spatie/laravel-permission/actions/runs/23220273314)
+
+PHPStan
+#323:
+Commit [d7d4cb0](/spatie/laravel-permission/commit/d7d4cb0d58616722f1afc90e0484e4825155b9b3)
+pushed
+by
+[drbyte](/drbyte)
+
+56s
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+[6.25.0](/spatie/laravel-permission/tree/refs/tags/6.25.0 "6.25.0")
+
+56s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23220273314/workflow)
+
+[Add L13 into v6 workflow](/spatie/laravel-permission/actions/runs/23219982641)
+
+Run Tests - Cache Drivers
+#722:
+Commit [d7d4cb0](/spatie/laravel-permission/commit/d7d4cb0d58616722f1afc90e0484e4825155b9b3)
+pushed
+by
+[drbyte](/drbyte)
+
+2m 43s
+[v6](/spatie/laravel-permission/tree/refs/heads/v6 "v6")
+
+[v6](/spatie/laravel-permission/tree/refs/heads/v6 "v6")
+
+2m 43s
+
+* [View workflow file](/spatie/laravel-permission/actions/runs/23219982641/workflow)
+
+[Add L13 into v6 workflow](/spatie/laravel-permission/actions/runs/23219982636)
+
+Run Tests - Current
+#883:
+Commit [d7d4cb0](/spatie/laravel-permission/commit/d7d4cb0d58616722f1afc90e0484e4825155b9b3)
+pushed
+by
+[drbyte](/drbyte)
+
+1m 22s
+[v6](/spatie/laravel-permission/tree/refs/heads/v6 "v6")
+
+[v6](/spatie/larave

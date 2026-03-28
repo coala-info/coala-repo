@@ -100,3 +100,6 @@ options:
   --version             show program's version number and exit
 ```
 
+
+## Metadata
+- **Skill**: not generated

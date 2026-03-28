@@ -1,6 +1,6 @@
 ---
 name: newick_utils
-description: Newick Utilities is a suite of command-line tools for processing, manipulating, and visualizing phylogenetic trees. Use when user asks to visualize trees in ASCII or SVG format, reroot trees, prune taxa, extract clades, or condense nodes based on support values.
+description: The newick_utils suite provides a high-performance toolkit for processing, manipulating, and visualizing phylogenetic tree data. Use when user asks to visualize trees in ASCII or SVG formats, re-root clades, prune or keep specific taxa, collapse low-support nodes, or extract tree statistics and labels.
 homepage: http://cegg.unige.ch/newick_utils
 ---
 
@@ -8,46 +8,49 @@ homepage: http://cegg.unige.ch/newick_utils
 # newick_utils
 
 ## Overview
-The `newick_utils` skill enables efficient command-line manipulation of phylogenetic data. This suite of tools is designed for high-throughput tree processing, allowing you to programmatically alter tree topology, filter taxa, and generate visual representations without manual editing. It is particularly useful for bioinformaticians needing to automate tree normalization or prepare figures for publication.
+The `newick_utils` suite provides a high-performance toolkit for handling phylogenetic tree data. It is particularly useful for automated pipelines where trees need to be programmatically modified—such as removing specific taxa, collapsing nodes with low support, or changing the outgroup—before final visualization or downstream analysis.
 
 ## Common CLI Patterns
 
 ### Tree Visualization
-*   **ASCII Display**: Use `nw_display` to quickly inspect a tree in the terminal.
-    ```bash
-    nw_display tree.nwk
-    ```
-*   **SVG Rendering**: Generate publication-quality graphics.
-    ```bash
-    nw_display -s tree.nwk > tree.svg
-    ```
+*   **ASCII Preview**: Quickly view a tree structure in the terminal.
+    `nw_display tree.nwk`
+*   **SVG Generation**: Create a publication-quality image.
+    `nw_display -s tree.nwk > tree.svg`
+*   **Radial Layout**: Useful for large trees.
+    `nw_display -r tree.nwk > radial_tree.svg`
 
-### Topology Manipulation
-*   **Re-rooting**: Use `nw_reroot` to set a specific outgroup.
-    ```bash
-    nw_reroot tree.nwk Outgroup_Node
-    ```
-*   **Pruning**: Remove specific leaves from a tree.
-    ```bash
-    nw_prune tree.nwk Leaf_A Leaf_B
-    ```
-*   **Subtree Extraction**: Isolate a clade based on a common ancestor or specific labels.
-    ```bash
-    nw_clade tree.nwk Node_Label
-    ```
+### Tree Manipulation
+*   **Re-rooting**: Set a specific node or clade as the outgroup.
+    `nw_reroot tree.nwk Leaf_A Leaf_B`
+*   **Pruning**: Remove specific leaves from the tree.
+    `nw_prune tree.nwk Leaf_X Leaf_Y`
+*   **Trimming**: Keep only a specific subset of leaves.
+    `nw_keep tree.nwk Leaf_A Leaf_B Leaf_C`
+*   **Condensing**: Collapse nodes with bootstrap support below a threshold (e.g., 70).
+    `nw_condense 70 tree.nwk`
 
-### Tree Refinement
-*   **Condensing**: Collapse nodes with low support values (e.g., bootstrap < 70).
-    ```bash
-    nw_condense 70 tree.nwk
-    ```
-*   **Trimming**: Remove nodes or simplify the tree structure based on specific criteria using `nw_trim`.
+### Data Extraction
+*   **List Leaves**: Output all taxa names.
+    `nw_labels tree.nwk`
+*   **Tree Statistics**: Get number of leaves, nodes, and path lengths.
+    `nw_stats tree.nwk`
+*   **Subtree Extraction**: Grab a specific clade based on a common ancestor of two nodes.
+    `nw_clade tree.nwk Leaf_A Leaf_B`
 
 ## Expert Tips
-*   **Piping**: Newick Utilities are designed to work with Unix pipes. You can chain operations (e.g., rerooting then pruning then displaying) in a single command line to avoid creating intermediate files.
-*   **Label Handling**: Ensure your Newick files use standard labeling; special characters or spaces in leaf names may require quoting or pre-processing.
-*   **Support Values**: When condensing trees, ensure the support values are correctly positioned in the Newick string (usually as node labels) for the tool to parse them accurately.
+*   **Piping**: Commands are designed to be piped together. For example, to prune a tree and then display it: `nw_prune tree.nwk Taxon_1 | nw_display -`
+*   **Label Management**: Use `nw_rename` to map cryptic IDs to readable species names using a tab-delimited map file.
+*   **Order Matters**: When re-rooting, ensure the outgroup specified is monophyletic in the input tree to avoid unexpected topologies.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| nw_prune | Prune nodes from a Newick tree. (Note: The provided help text contained only system error messages; arguments are derived from standard tool documentation for nw_prune). |
+| nw_reroot | Reroot a phylogenetic tree at a specified node or outgroup. |
 
 ## Reference documentation
-- [newick_utils - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_newick_utils_overview.md)
-- [EZlab | Computational Evolutionary Genomics group](./references/www_ezlab_org_index.md)
+- [EZlab Tools Overview](./references/www_ezlab_org_index.md)

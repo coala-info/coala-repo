@@ -84,3 +84,6 @@ options:
                         filtered_assembly.fasta
 ```
 
+
+## Metadata
+- **Skill**: generated

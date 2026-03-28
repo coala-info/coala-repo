@@ -1,6 +1,6 @@
 ---
 name: panaln
-description: The panaln tool performs genomic read alignment against a pangenome index to reduce reference bias and improve mapping for non-reference alleles. Use when user asks to generate a pangenome from a reference and VCF, index a pangenome, or align FASTQ reads to a pangenome index.
+description: Panaln maps sequencing reads to a pangenome index created from a reference genome and variant data to improve alignment accuracy. Use when user asks to generate a pangenome from FASTA and VCF files, construct a pangenome index, or align FASTQ reads to a pangenome.
 homepage: https://github.com/Lilu-guo/Panaln
 ---
 
@@ -8,58 +8,69 @@ homepage: https://github.com/Lilu-guo/Panaln
 # panaln
 
 ## Overview
-The `panaln` tool provides a specialized workflow for genomic read alignment that incorporates known genetic variation into the reference structure. By using a pangenome index rather than a linear reference, it reduces reference bias and improves alignment performance for reads containing non-reference alleles. The workflow consists of three primary stages: combining reference and variant data, indexing the resulting pangenome, and performing the final alignment.
+Panaln is a bioinformatics tool designed to improve read mapping accuracy by utilizing a pangenome index rather than a single linear reference. By integrating known genomic variations from VCF files into the index, Panaln allows for better alignment of reads that contain non-reference alleles. The tool operates through a three-stage pipeline: combining reference and variant data, constructing a Burrows-Wheeler Transform (BWT) based index, and performing the final alignment.
 
 ## Installation and Setup
-The tool is available via Bioconda or can be compiled from source.
+Before using the tool, it must be compiled in a specific order to link the required FM-index and Wavefront Alignment (WFA) libraries.
 
-**Conda Installation:**
 ```bash
-conda install bioconda::panaln
-```
+# 1. Compile FM library
+cd panaln/FM/
+make
 
-**Source Compilation:**
-If compiling from source, you must build the dependencies (FM and semiWFA) located in the repository subdirectories before building the main executable.
-```bash
-cd FM && make
-cd ../semiWFA && make
-cd ../ && make
+# 2. Compile semiWFA library
+cd ../semiWFA/
+make
+
+# 3. Compile Panaln
+cd ../
+make
 ```
 
 ## Core Workflow
 
-### 1. Generate Pangenome (`combine`)
-This step merges a standard reference FASTA with a VCF file to create a `.pan` file.
+### 1. Generate Pangenome (.pan)
+Combine a standard reference FASTA with a VCF file to create the pangenome representation.
 ```bash
-panaln combine -s /absolute/path/ref.fasta -v /absolute/path/variants.vcf -b output_basename
+./panaln combine -s <ref.fasta> -v <input.vcf> -b <basename> [options]
 ```
-*   **-s**: Reference genome (FASTA).
-*   **-v**: Variant call file (VCF).
-*   **-b**: Basename for the generated pangenome.
-*   **-c**: Context size (default: 150). Adjust this based on your read length or local complexity.
+*   **-s**: Absolute path to the reference genome (Required).
+*   **-v**: Absolute path to the VCF file containing variants (Required).
+*   **-b**: Basename for the generated output files (Required).
+*   **-c**: Context size (Optional, default: 150). Adjust this based on your expected read lengths.
 
-### 2. Construct Index (`index`)
-Once the `.pan` file is created, it must be indexed for efficient searching.
+### 2. Construct Index
+Build the index from the generated `.pan` file. This step is required before alignment can occur.
 ```bash
-panaln index -p /absolute/path/output_basename.pan
+./panaln index -p <input.pan>
 ```
-*   **-p**: The pangenome file generated in the previous step.
+*   **-p**: Absolute path to the `.pan` file generated in the previous step.
 
-### 3. Read Alignment (`align`)
-Align FASTQ reads against the pangenome index to produce a SAM file.
+### 3. Read Alignment
+Map sequencing reads to the pangenome index to produce a SAM file.
 ```bash
-panaln align -x /absolute/path/index_basename -f /absolute/path/reads.fastq -s /absolute/path/output.sam
+./panaln align -x <index_basename> -f <input.fastq> -s <output.sam>
 ```
-*   **-x**: The basename of the index created in step 2.
-*   **-f**: Input sequencing reads (FASTQ).
-*   **-s**: Output alignment file (SAM).
+*   **-x**: Absolute path to the index basename (the path used in the index step).
+*   **-f**: Absolute path to the input FASTQ file (Required).
+*   **-s**: Absolute path for the output SAM file (Required).
 
-## Best Practices and Tips
-*   **Absolute Paths**: The tool requires absolute paths for all file arguments. Using relative paths often leads to execution errors.
-*   **Memory Management**: Pangenome indexing is memory-intensive. Ensure your environment has sufficient RAM, especially when working with large eukaryotic genomes (e.g., Human).
-*   **Variant Selection**: For the `combine` step, using a filtered VCF containing high-confidence common variants (like those from the GIAB project or dbSNP common sets) typically yields better results than using unfiltered raw callsets which may introduce noise into the index.
-*   **Dependency Check**: If the `panaln` command is not found after a source build, ensure the binary is in your PATH or call it directly using `./panaln`.
+## Expert Tips and Best Practices
+*   **Absolute Paths**: Panaln requires absolute paths for all file specifications. Using relative paths often leads to file-not-found errors during the indexing or alignment phases.
+*   **Memory Management**: Pangenome indexing is memory-intensive. Ensure your environment has sufficient RAM, especially when working with large reference genomes like HG38.
+*   **Context Size**: The `-c` parameter in the `combine` step defines the flanking sequence length around variants. If you are working with long-read data (e.g., PacBio CCS), consider increasing the context size beyond the default 150.
+*   **Library Dependencies**: If alignment fails immediately, verify that `fm.a` was correctly copied into the root directory during the `make` process, as the Makefile depends on this for the final executable.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| align | Align fastq sequences using panaln |
+| combine | Generate Pangenome by combining FASTA and VCF files |
+| index | Index a pan-genome file |
 
 ## Reference documentation
-- [Panaln GitHub Repository](./references/github_com_Lilu-guo_Panaln.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_panaln_overview.md)
+- [Panaln README](./references/github_com_Lilu-guo_Panaln_blob_master_README.md)
+- [Panaln Repository Overview](./references/github_com_Lilu-guo_Panaln.md)

@@ -480,4 +480,4 @@ Access your synchronized data at http://www.fitbit.com.
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated

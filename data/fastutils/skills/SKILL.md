@@ -1,6 +1,6 @@
 ---
 name: fastutils
-description: fastutils is a high-performance toolkit for processing and manipulating genomic sequence data in FASTA and FASTQ formats. Use when user asks to generate sequence statistics, reformat or filter reads, interleave paired-end files, subsample datasets by coverage, extract subsequences, or perform reverse complement operations.
+description: fastutils is a lightweight C++ toolkit for the rapid processing, analysis, and reformatting of FASTA and FASTQ genomic sequence files. Use when user asks to generate sequence statistics, filter reads by length, subsample data to a specific coverage, interleave paired-end files, or extract specific genomic regions.
 homepage: https://github.com/haghshenas/fastutils
 ---
 
@@ -8,68 +8,90 @@ homepage: https://github.com/haghshenas/fastutils
 # fastutils
 
 ## Overview
-`fastutils` is a lightweight C++ toolkit designed for high-performance processing of genomic sequence data. It provides a suite of command-line utilities that handle common bioinformatics tasks such as quality control reporting, sequence transformation, and dataset downsampling. Use this skill to perform rapid operations on large FASTA/FASTQ files without the overhead of complex pipelines, especially when working with raw sequencing reads or reference genomes.
-
-## Core Commands and Usage
-
-### 1. Sequence Statistics and Lengths
-Use these commands to assess the quality and composition of your data.
-*   **General Stats**: `fastutils stat -i reads.fastq`
-    *   Reports read count, total bases, and GC composition.
-*   **Read Lengths**: `fastutils length -i reads.fastq`
-    *   Outputs a tab-separated list of read IDs and their lengths.
-    *   **Tip**: Use `-t` to include a running total of bases in a third column.
-
-### 2. Reformatting and Filtering
-The `format` command is the primary tool for file conversion and cleaning.
-*   **Convert FASTQ to FASTA**: `fastutils format -i reads.fastq > reads.fasta`
-*   **Wrap Lines**: Use `-w <int>` to set line width (e.g., `-w 60`). Use `-w 0` for no wrapping (single-line sequences).
-*   **Length Filtering**: Use `-m <int>` for minimum length and `-M <int>` for maximum length.
-*   **Header Manipulation**: 
-    *   `-p <string>`: Prepend a prefix to read names.
-    *   `-d`: Replace read names with a digital index (useful for anonymizing or shortening headers).
-
-### 3. Paired-End Interleaving
-Combine separate forward and reverse read files into a single interleaved file.
-*   **Command**: `fastutils interleave -1 forward.fq -2 reverse.fq -q > interleaved.fq`
-*   **Note**: The `-q` flag ensures the output remains in FASTQ format if the input allows.
-
-### 4. Subsampling and Downsampling
-Useful for creating smaller datasets for testing or normalizing coverage.
-*   **By Coverage**: `fastutils subsample -i reads.fastq -d 25 -g 4.6m -r > subsampled.fastq`
-    *   `-d`: Target depth (e.g., 25x).
-    *   `-g`: Genome size (supports suffixes k, m, g).
-    *   `-r`: Random selection (default is top-down).
-    *   `-l`: Select the longest reads instead of random.
-
-### 5. Sequence Extraction and Manipulation
-*   **Subsequence Extraction**: `fastutils subseq -i ref.fa chr1:100-500`
-    *   Extracts specific coordinates from a named entry.
-*   **Reverse Complement**: `fastutils revcomp -i reads.fq`
-    *   **Expert Tip**: Use `-l` to output the lexicographically smaller sequence between the original and the reverse complement (useful for canonical k-mer analysis).
-*   **Scaffold Splitting**: `fastutils cutN -i scaffolds.fa > contigs.fa`
-    *   Breaks sequences at 'N' bases to convert scaffolds into contigs.
+fastutils is a lightweight C++ toolkit designed for the rapid processing and analysis of genomic sequence files. It provides a suite of command-line utilities to handle common bioinformatics tasks such as generating summary statistics, filtering reads by length, interleaving paired-end data, and extracting specific genomic regions. It is particularly useful for initial data assessment and preprocessing of FASTA and FASTQ datasets.
 
 ## Common CLI Patterns
 
-**Filtering and Reformatting Pipeline:**
+### Sequence Statistics and Metrics
+To get a quick summary of a dataset, including read counts, total bases, and GC content:
 ```bash
-# Extract reads longer than 1kb, wrap at 60bp, and add a sample prefix
-fastutils format -i input.fastq -m 1000 -w 60 --prefix "SampleA_" > filtered.fasta
+fastutils stat -i reads.fastq
 ```
 
-**Calculating Mean Read Length:**
+To extract read lengths for distribution analysis (often piped to tools like `datamash` or `R`):
 ```bash
-# Combine with standard unix tools for quick metrics
-fastutils length -i reads.fastq | datamash mean 1
+fastutils length -i reads.fastq
 ```
 
-**Extracting Contigs from a Specific Chromosome:**
+### Reformatting and Filtering
+Convert FASTQ to FASTA while filtering for a minimum length and wrapping the output:
 ```bash
-# Pipe formatted output to grep to isolate a chromosome, then split at Ns
-cat genome.fa | fastutils format | grep ">chrX" -A1 | fastutils cutN -i - > chrX.contigs.fa
+fastutils format -i reads.fastq -m 1000 -w 60 > filtered.fasta
 ```
+
+Common `format` flags:
+- `-q`: Force FASTQ output if the input allows.
+- `-n`: Remove sequences containing 'N' bases.
+- `-d`: Replace read names with a digital index (useful for reducing file size).
+- `-p` / `-s`: Add prefixes or suffixes to read headers.
+
+### Coverage-Based Subsampling
+fastutils can downsample reads to a specific coverage depth. This requires the estimated genome size (supporting k, m, g suffixes).
+
+Subsample to 25x coverage using the longest reads:
+```bash
+fastutils subsample -i reads.fastq -d 25 -g 4.6m -l > subsampled.fastq
+```
+
+Subsample randomly (use `-s` for reproducibility):
+```bash
+fastutils subsample -i reads.fastq -d 10 -g 3g -r -s 42 > random_subsample.fastq
+```
+
+### Sequence Manipulation
+**Reverse Complement**: Generate the reverse complement of all sequences. Use `-l` to output the lexicographically smaller sequence (useful for canonical k-mer representation).
+```bash
+fastutils revcomp -i input.fa -l > canonical.fa
+```
+
+**Subsequence Extraction**: Extract specific coordinates from a large FASTA file.
+```bash
+fastutils subseq -i genome.fa chr1:100-500 chr2:1000-2000
+```
+
+**Scaffold Splitting**: Break sequences into contigs at every occurrence of 'N' bases.
+```bash
+fastutils cutN -i scaffolds.fa -o contigs.fa
+```
+
+### Paired-End Interleaving
+Combine two separate R1 and R2 files into a single interleaved file:
+```bash
+fastutils interleave -1 reads_R1.fastq -2 reads_R2.fastq -q > interleaved.fastq
+```
+
+## Expert Tips
+- **Piping**: fastutils is designed for streaming. Use `-i -` to read from stdin and `-o -` (or omit `-o` where stdout is default) to pipe between fastutils commands or other tools.
+- **Memory Efficiency**: The `subsample` command is optimized for low memory usage, making it suitable for large datasets where other tools might fail.
+- **PacBio Headers**: When working with PacBio data, use the `-P` flag in the `format` command to ensure header compatibility.
+- **Contig Extraction**: A powerful pattern for extracting contigs from specific chromosomes involves piping:
+  `cat genome.fa | fastutils format | grep ">chrX" -A1 | fastutils cutN -i - > chrX_contigs.fa`
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cutN | Cut Ns from fastx sequences |
+| fastutils length | Calculates length statistics for sequences in FASTA/FASTQ files. |
+| fastutils_format | Format FASTA/FASTQ files |
+| fastutils_revcomp | Reverse complement sequences in FASTA/Q format. |
+| fastutils_stat | Compute statistics for fasta/q files. |
+| interleave | Interleaves paired-end sequencing reads. |
+| subsample | Subsamples reads from an input file based on coverage depth and genome size. |
+| subseq | Extract subsequences from FASTX files. |
 
 ## Reference documentation
-- [fastutils GitHub Repository](./references/github_com_haghshenas_fastutils.md)
-- [fastutils Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_fastutils_overview.md)
+- [fastutils README](./references/github_com_haghshenas_fastutils_blob_master_README.md)
+- [fastutils Overview](./references/github_com_haghshenas_fastutils.md)

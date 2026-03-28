@@ -1,1 +1,295 @@
-MAGeCK download | SourceForge.net Join/Login Business Software Open Source Software For Vendors Blog About More Articles Create SourceForge Podcast Site Documentation Subscribe to our Newsletter Support Request For Vendors Help Create Join Login Business Software Open Source Software SourceForge Podcast Resources Articles Case Studies Blog Menu Help Create Join Login Home Open Source Software Scientific/Engineering Bio-Informatics MAGeCK MAGeCK Model-based Analysis of Genome-wide CRISPR-Cas9 Knockout Brought to you by: davidliwei Downloads: 76 This Week Last Update: 2024-01-12 Download Share This Get an email when there's a new version of MAGeCK Next Summary Files Reviews Support Wiki Model-based Analysis of Genome-wide CRISPR-Cas9 Knockout (MAGeCK) is a computational tool to identify important genes from the recent genome-scale CRISPR-Cas9 knockout screens technology. For instructions and documentations, please refer to the wiki page. MAGeCK is developed by Wei Li and Han Xu from Dr. Xiaole Shirley Liu&#39;s lab at Dana-Farber Cancer Institute/Harvard School of Public Health, and is maintained by Wei Li lab at Children&#39;s National Medical Center. We thank the support from Claudia Adams Barr Program in Innovative Basic Cancer Research and NIH/NHGRI to develop MAGeCK. Features The most popular computational algorithm in screening analysis Over 2000 citations and 200k downloads Simple, easy to use pipeline to screen genes in Genome-wide CRISPR-Cas9 Knockout experiments A complete documentation with easy-to-start tutorials High sensitivity and low false discovery rate Actively maintaining the source code with new features and bug fixes Support from the developer and user community A set of visualization features that generate publication standard figures Project Samples ' href="//www.youtube-nocookie.com/embed/iIyP2w44ric?rel=0" > Project Activity See All Activity &gt; Categories Bio-Informatics , Medical , Statistics License BSD License Follow MAGeCK MAGeCK Web Site Other Useful Business Software AI-generated apps that pass security review Stop waiting on engineering. Build production-ready internal tools with AI—on your company data, in your cloud. Retool lets you generate dashboards, admin panels, and workflows directly on your data. Type something like “Build me a revenue dashboard on my Stripe data” and get a working app with security, permissions, and compliance built in from day one. Whether on our cloud or self-hosted, create the internal software your team needs without compromising enterprise standards or control. Try Retool free Additional Project Details Intended Audience Science/Research Programming Language C , Python Related Categories Python Bio-Informatics Software , Python Medical Software , Python Statistics Software , C Bio-Informatics Software , C Medical Software , C Statistics Software Registered 2014-04-04 Similar Business Software ActCAD Software ActCAD is a native dwg/dxf cad software suitable for professional 2D drafting and 3D modeling projects. ActCAD is trusted by over 30000 users in over 103 countries for more than 10 years. The interface, commands, icons, dialogs, shortcuts etc. are very much similar to other popular cad software... See Software Dronedesk Are you wasting hours on drone flight planning? Still using spreadsheets, doc templates, and paper checklists? If so, it&#39;s time to switch to Dronedesk, the web-based drone operations management application that makes planning safe drone flights super-efficient. Dronedesk does all the... See Software Altium Develop Altium Develop is a multidisciplinary product creation platform that breaks down silos and empowers teams to design collaboratively without limits. Built on Altium Designer and Altium 365, it unifies electrical, mechanical, software, sourcing, and manufacturing teams in a shared environment.... See Software Evocon Trusted by manufacturers worldwide, Evocon is a simple and easy-to-use OEE software that helps manufacturing companies improve their production efficiency and reduce waste. The system enables automated data collection, real-time data visualization, downtime tracking, bottleneck identification,... See Software HiveMQ HiveMQ is the Industrial AI Platform helping enterprises move from connected devices to intelligent operations. Built on the MQTT standard and a distributed edge-to-cloud architecture, HiveMQ connects and governs industrial data in real time, enabling organizations to act with intelligence. With... See Software Houzz Pro Houzz Pro is the #1 construction management solution for residential contractors and designers. Get an all-in-one solution that spans the full customer lifecycle, including marketing, CRM, estimates, takeoffs, 3D floor plans, project management, selections, online invoicing &amp; payments,... See Software Report inappropriate content Recommended Projects SSC Spacer Scoring for CRISPR CRISPR-offinder-v1-2 A CRISPR tool for user-defined protospacer adjacent motif sgRNAcas9 a software for designing CRISPR sgRNA and evaluating Off-Target Sites isiKnock In silico knockouts for signaling pathways Citrus The Citrus project aims at collecting all the code for cancer systems biology developed by the Califano Lab. Including: ARACNe, pARACNe, DIGGIT and CINDy. Top Searches mageck mageck-win64.exe injection Related Business Categories Bioinformatics Engineering SourceForge Create a Project Open Source Software Business Software Top Downloaded Projects Company About Team SourceForge Headquarters 1320 Columbia Street Suite 310 San Diego, CA 92101 +1 (858) 422-6466 Resources Support Site Documentation Site Status SourceForge Reviews &copy; 2026 Slashdot Media. All Rights Reserved. Terms Privacy Opt Out Advertise &times; Thanks for helping keep SourceForge clean. X You seem to have CSS turned off. Please don't fill out this field. You seem to have CSS turned off. Please don't fill out this field. Briefly describe the problem (required): Upload screenshot of ad (required): Select a file , or drag & drop file here. ✔ ✘ Screenshot instructions: Click URL instructions: Right-click on the ad, choose "Copy Link", then paste here &rarr; (This may not be possible with some types of ads) More information about our ad policies Ad destination/click URL:
+* [Join/Login](https://sourceforge.net/auth/)
+* [Business Software](/software/)
+* [Open Source Software](/directory/)
+* [For Vendors](/software/vendors/ "For Vendors")
+* [Blog](/blog/ "Blog")
+* [About](/about)
+* More
+* + [Articles](/articles/)
+  + [Create](/create)
+  + [SourceForge Podcast](https://sourceforge.net/articles/category/sourceforge-podcast/)
+  + [Site Documentation](https://sourceforge.net/p/forge/documentation/Docs%20Home/)
+  + [Subscribe to our Newsletter](/user/newsletters)
+  + [Support Request](/support)
+
+[![SourceForge logo](//a.fsdn.com/con/images/sandiego/sf-logo-full.svg)](/ "Home")
+
+[For Vendors](/software/vendors/ "For Vendors")
+[Help](/support "Help")
+[Create](/create/ "Create")
+[Join](/user/registration "Join")
+[Login](https://sourceforge.net/auth/ "Login")
+
+[![SourceForge logo](//a.fsdn.com/con/images/sandiego/sf-logo-full.svg)](/ "Home")
+
+[Business Software](/software/)
+
+[Open Source Software](/directory/ "Browse")
+
+[SourceForge Podcast](https://sourceforge.net/articles/category/sourceforge-podcast/)
+
+Resources
+
+* [Articles](/articles/)
+* [Case Studies](/software/case-studies/)
+* [Blog](/blog/)
+
+Menu
+
+* [Help](/support)
+* [Create](/create)
+* [Join](/user/registration/ "Join")
+* [Login](https://sourceforge.net/auth/ "Login")
+
+* [Home](/)
+* [Open Source Software](/directory/)
+* [Scientific/Engineering](/directory/scientific-engineering/)
+* [Bio-Informatics](/directory/bio-informatics/)
+* MAGeCK
+
+# MAGeCK
+
+## Model-based Analysis of Genome-wide CRISPR-Cas9 Knockout
+
+Brought to you by:
+[davidliwei](/u/davidliwei/profile/)
+
+**Downloads:**
+[199 This Week](/projects/mageck/files/stats/timeline "Downloads This Week")
+
+**Last Update:**
+[2024-01-12](/p/mageck/activity/)
+
+[![](//a.fsdn.com/con/images/sandiego/sf-icon-black.svg) Download](/projects/mageck/files/latest/download "Download mageck-0.5.9.5.tar.gz from SourceForge  - 2.5 MB")
+
+Share This
+
+![Email in envelope](//a.fsdn.com/con/images/sandiego/sf_email_icon.svg)
+
+#### Get an email when there's a new version of MAGeCK
+
+Next
+
+[![Leader badge](//a.fsdn.com/con/app/syndication/badge_img_direct/oss-community-leader/oss-community-leader/?variant_id=sf "The Community Leader badge is awarded to open source projects that have reached the milestone of 50,000 total downloads.")](/about/project_awards "Badges")
+
+* [Summary](/projects/mageck/)
+* [Files](/projects/mageck/files/)
+* [Reviews](/projects/mageck/reviews/)
+* [Support](/projects/mageck/support)
+* [Wiki](/p/mageck/wiki/)
+
+[![Leader badge](//a.fsdn.com/con/app/syndication/badge_img_direct/oss-community-leader/oss-community-leader/?variant_id=sf "The Community Leader badge is awarded to open source projects that have reached the milestone of 50,000 total downloads.")](/about/project_awards "Badges")
+
+Model-based Analysis of Genome-wide CRISPR-Cas9 Knockout (MAGeCK) is a computational tool to identify important genes from the recent genome-scale CRISPR-Cas9 knockout screens technology.
+
+For instructions and documentations, please refer to the wiki page.
+
+MAGeCK is developed by Wei Li and Han Xu from Dr. Xiaole Shirley Liu's lab at Dana-Farber Cancer Institute/Harvard School of Public Health, and is maintained by Wei Li lab at Children's National Medical Center. We thank the support from Claudia Adams Barr Program in Innovative Basic Cancer Research and NIH/NHGRI to develop MAGeCK.
+
+### Features
+
+* The most popular computational algorithm in screening analysis
+* Over 2000 citations and 200k downloads
+* Simple, easy to use pipeline to screen genes in Genome-wide CRISPR-Cas9 Knockout experiments
+* A complete documentation with easy-to-start tutorials
+* High sensitivity and low false discovery rate
+* Actively maintaining the source code with new features and bug fixes
+* Support from the developer and user community
+* A set of visualization features that generate publication standard figures
+
+### Project Samples
+
+[![Play Video](data:image/png;base64...)](//www.youtube-nocookie.com/embed/iIyP2w44ric?rel=0)
+[![Running MAGeCK is easy and convenient: just one command line.](//a.fsdn.com/con/app/proj/mageck/screenshots/commandline.png/245/183/1)](//a.fsdn.com/con/app/proj/mageck/screenshots/commandline.png/max/max/1 "Running MAGeCK is easy and convenient: just one command line.")
+[![MAGeCK generates PDF reports that help you better analyze your data.   ](//a.fsdn.com/con/app/proj/mageck/screenshots/sample1_summary.png/245/183/1)](//a.fsdn.com/con/app/proj/mageck/screenshots/sample1_summary.png/max/max/1 "MAGeCK generates PDF reports that help you better analyze your data.   ")
+[![MAGeCK generates PDF reports that help you better analyze your data. This is an example of read count distributions generated by MAGeCK.](//a.fsdn.com/con/app/proj/mageck/screenshots/abl_smalllib_stat.png/245/183/1)](//a.fsdn.com/con/app/proj/mageck/screenshots/abl_smalllib_stat.png/max/max/1 "MAGeCK generates PDF reports that help you better analyze your data. This is an example of read count distributions generated by MAGeCK.")
+[![MAGeCK ranks genes based on the rankings of the targeting sgRNAs and evaluates their statistical significance.](//a.fsdn.com/con/app/proj/mageck/screenshots/gene.png/245/183/1)](//a.fsdn.com/con/app/proj/mageck/screenshots/gene.png/max/max/1 "MAGeCK ranks genes based on the rankings of the targeting sgRNAs and evaluates their statistical significance.")
+[![MAGeCK ranks single-guided RNAs (sgRNAS) and evaluates their statistical significance](//a.fsdn.com/con/app/proj/mageck/screenshots/sgrna.png/245/183/1)](//a.fsdn.com/con/app/proj/mageck/screenshots/sgrna.png/max/max/1 "MAGeCK ranks single-guided RNAs (sgRNAS) and evaluates their statistical significance")
+[![MAGeCK can further identify enriched pathways.](//a.fsdn.com/con/app/proj/mageck/screenshots/pathway.png/245/183/1)](//a.fsdn.com/con/app/proj/mageck/screenshots/pathway.png/max/max/1 "MAGeCK can further identify enriched pathways.")
+
+### Project Activity
+
+[See All Activity >](/p/mageck/activity/)
+
+### Categories
+
+[Bio-Informatics](/directory/bio-informatics/), [Medical](/directory/medical/), [Statistics](/directory/statistics/)
+
+### License
+
+BSD License
+
+### Follow MAGeCK
+
+[MAGeCK Web Site](http://sourceforge.net/p/mageck/wiki/Home/ "MAGeCK Web Site")
+
+Other Useful Business Software
+
+![MongoDB Atlas runs apps anywhere Icon](//a.fsdn.com/con/app/nel_img/20452)
+
+MongoDB Atlas runs apps anywhere
+
+Deploy in 115+ regions with the modern database for every enterprise.
+
+MongoDB Atlas gives you the freedom to build and run modern applications anywhere—across AWS, Azure, and Google Cloud. With global availability in over 115 regions, Atlas lets you deploy close to your users, meet compliance needs, and scale with confidence across any geography.
+
+Start Free
+
+### Additional Project Details
+
+#### Intended Audience
+
+Science/Research
+
+#### Programming Language
+
+[C](/directory/c/), [Python](/directory/python/)
+
+#### Related Categories
+
+[Python Bio-Informatics Software](/directory/bio-informatics/python/),
+[Python Medical Software](/directory/medical/python/),
+[Python Statistics Software](/directory/statistics/python/),
+[C Bio-Informatics Software](/directory/bio-informatics/c/),
+[C Medical Software](/directory/medical/c/),
+[C Statistics Software](/directory/statistics/c/)
+
+#### Registered
+
+2014-04-04
+
+Similar Business Software
+
+* ![Lockbox LIMS](//a.fsdn.com/allura/s/lockbox-lims/icon?1743088617?&w=48 "Lockbox LIMS")
+
+  [**Lockbox LIMS**](/software/product/Lockbox-LIMS/ "Find out more about Lockbox LIMS")
+
+  A sample tracking, test result capture, and inventory management cloud LIMS for life science research, biotech/NGS, and industrial QC labs. Includes regulatory support for CLIA, HIPAA, Part 11, and ISO 17025. Nothing is more critical to a lab’s success than the quality, security, and...
+
+  [See Software](/software/product/Lockbox-LIMS/ "Find out more about Lockbox LIMS")
+* ![QBench](//a.fsdn.com/allura/s/qbench/icon?95ff63dcf898d81a728bb6195da5c0cf69cbbeada0902c5495ec7a92715b05ac?&w=48 "QBench")
+
+  [**QBench**](/software/product/QBench/ "Find out more about QBench")
+
+  The modern, flexible, easy-to-use LIMS. QBench enables our customers to get a LIMS up and running faster. Automate your entire lab with our developer-friendly API, Inventory Management, Customer Portal, Billing, and Quality Management System modules. QBench is a cloud-based Laboratory...
+
+  [See Software](/software/product/QBench/ "Find out more about QBench")
+* ![SAP S/4HANA Cloud Public Edition](//a.fsdn.com/allura/s/sap-s-4hana-cloud-public/icon?dfd2e38b7aca1327b7a5f0fe4b472715e06e06df4b5489605d418b90c9997e7f?&w=48 "SAP S/4HANA Cloud Public Edition")
+
+  [**SAP S/4HANA Cloud Public Edition**](/software/product/SAP-S-4HANA-Cloud-Public-Edition/ "Find out more about SAP S/4HANA Cloud Public Edition")
+
+  SAP Cloud ERP is the premier ERP solution for growth-focused organizations. Seamlessly integrating AI, and predictive analytics, it empowers businesses to digitally transform and streamline processes end to end. Leveraging built-in industry best practices, SAP Cloud ERP accelerates...
+
+  [See Software](/software/product/SAP-S-4HANA-Cloud-Public-Edition/ "Find out more about SAP S/4HANA Cloud Public Edition")
+* ![RegDesk](//a.fsdn.com/allura/s/regdesk/icon?3238151ff55c09b7404b8022f4c2dd8d46f1cc31f06bd81af29c02029bc6ebcf?&w=48 "RegDesk")
+
+  [**RegDesk**](/software/product/RegDesk/ "Find out more about RegDesk")
+
+  RegDesk is a Regulatory Information Management System (RIMS) that helps medical device companies manage global regulatory submissions, product registrations, and compliance in one centralized platform. It streamlines regulatory workflows, organizes regulatory data, and provides global regulatory...
+
+  [See Software](/software/product/RegDesk/ "Find out more about RegDesk")
+* ![Qualio](//a.fsdn.com/allura/s/quality-management-software/icon?79176fdf6cc1e3b37e8ceb16803b3f19f8f6a64dcbd52095427fcbf2814ba828?&w=48 "Qualio")
+
+  [**Qualio**](/software/product/Qualio/ "Find out more about Qualio")
+
+  Qualio is the leading quality and compliance platform built exclusively for emerging life sciences companies. MedTech, pharma, biotech, and diagnostics teams use Qualio to standardize quality processes, connect them to regulatory obligations, and gain real-time visibility into compliance...
+
+  [See Software](/software/product/Qualio/ "Find out more about Qualio")
+* ![Calira](//a.fsdn.com/allura/s/bookkit/icon?21359055f97a2f1adf1add38ae3319176ba8b39290eec7df841c19feea994666?&w=48 "Calira")
+
+  [**Calira**](/software/product/Calira/ "Find out more about Calira")
+
+  Calira is the world-leading lab management system helping all types of laboratories optimize their operations and accelerate results. Calira equips research teams with an easy-to-use software solution which enables them to coordinate equipment usage, plan maintenance activities, and generate...
+
+  [See Software](/software/product/Calira/ "Find out more about Calira")
+
+[Report inappropriate content](/projects/mageck/report_inappropriate)
+
+Featured
+
+![MongoDB Atlas runs apps anywhere Icon](//a.fsdn.com/con/app/nel_img/20452)
+
+MongoDB Atlas runs apps anywhere
+
+Deploy in 115+ regions with the modern database for every enterprise.
+
+MongoDB Atlas gives you the freedom to build and run modern applications anywhere—across AWS, Azure, and Google Cloud. With global availability in over 115 regions, Atlas lets you deploy close to your users, meet compliance needs, and scale with confidence across any geography.
+
+Start Free
+
+Recommended Projects
+
+* [SSC](/projects/spacerscoringcrispr/ "Learn more about SSC ")
+
+  Spacer Scoring for CRISPR
+* [MoPAC](/projects/mopac/ "Learn more about MoPAC ")
+
+  The Modular Pipeline for the Analysis of CRISPR screens
+* [![Protospacer](//a.fsdn.com/allura/p/protospacer/icon?1409068194 "Protospacer")](/projects/protospacer/ "Protospacer")
+
+  [Protospacer](/projects/protospacer/ "Learn more about Protospacer ")
+
+  Rapid gRNA design and validation for CRISPR
+* [![BPGA](//a.fsdn.com/allura/p/bpgatool/icon?1479964461 "BPGA")](/projects/bpgatool/ "BPGA")
+
+  [BPGA](/projects/bpgatool/ "Learn more about BPGA ")
+
+  A tool for ultra-fast pan-genome analysis of microbes.
+* [rRNAFinder](/projects/rrnafinder/ "Learn more about rRNAFinder ")
+
+  Fast ribosomal RNA detector and annotator
+
+Top Searches
+
+* [mageck](/directory/?q=mageck)
+* [mageck-win64.exe](/directory/?q=mageck-win64.exe)
+* [injection](/directory/?q=injection)
+* [android 16 for samsung a20](/directory/?q=android+16+for+samsung+a20)
+
+Related Business Categories
+
+* [Bioinformatics](/software/bioinformatics/)
+* [Life Sciences](/software/life-sciences/)
+
+SourceForge
+
+* [Create a Project](/create/ "Create a Project")
+* [Open Source Software](/directory/ "Open Source Software Directory")
+* [Business Software](/software/ "Business Software Directory")
+* [Top Downloaded Projects](/top "Top Open Source Projects")
+
+Company
+
+* [About](/about)
+* [Team](/about/leadership "Open Source Software Directory")
+* SourceForge Headquarters
+  1320 Columbia Street Suite 310
+  San Diego, CA 92101
+  +1 (858) 422-6466
+
+Resources
+
+* [Support](/support "Support Section")
+* [Site Documentation](/p/forge/documentation/Docs%20Home/ "Site Documentation")
+* [Site Status](https://fosstodon.org/%40sourceforgestatus "Site Status")
+* [SourceForge Reviews](/reviews "Reviews")
+
+[![SourceForge logo](//a.fsdn.com/con/images/sandiego/sf-logo-full.svg)](/ "Home")
+
+© 2026 Slashdot Media. All Rights Reserved.
+
+Your Opt-Out Rights
+
+×
+
+[Terms](https://slashdotmedia.com/terms-of-use "Terms")
+[Privacy](https://slashdotmedia.com/privacy-statement/ "Privacy")
+[Advertise](https://slashdotmedia.com/contact/ "Advertise")
+
+![Retool Logo](https://a.fsdn.com/con/img/retool.png)
+
+✕
+
+![MongoDB Logo](//a.fsdn.com/con/img/hi-logo.png)
+
+![](https://analytics.slashdotmedia.com/index.php?idsite=39)

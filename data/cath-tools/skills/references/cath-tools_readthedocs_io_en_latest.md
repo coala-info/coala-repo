@@ -1,0 +1,88 @@
+[cath-tools](.)
+
+* [Home](.)
+  + [Overview](#overview)
+    - [Tools](#tools)
+    - [Extra Tools](#extra-tools)
+  + [Authors](#authors)
+  + [Acknowledgements](#acknowledgements)
+  + [Feedback](#feedback)
+
+Tools
+
+* [cath-cluster](tools/cath-cluster/)
+* [cath-map-clusters](tools/cath-map-clusters/)
+* [cath-resolve-hits](tools/cath-resolve-hits/)
+* [cath-ssap](tools/cath-ssap/)
+* [cath-superpose](tools/cath-superpose/)
+
+* [Build](build/)
+
+* [License](license/)
+
+* [References](references/)
+
+[cath-tools](.)
+
+* Home
+
+---
+
+# CATH Tools [![Build Status](https://github.com/UCLOrengoGroup/cath-tools/actions/workflows/build.yml/badge.svg)](https://github.com/UCLOrengoGroup/cath-tools/actions) [![Documentation Status](https://readthedocs.org/projects/cath-tools/badge/?version=latest)](https://readthedocs.org/projects/cath-tools/?badge=latest)
+
+## Overview
+
+Protein structure comparison tools such as SSAP, as used by the [Orengo Group](https://www.ucl.ac.uk/orengo-group "Orengo Group website") in curating [CATH](http://www.cathdb.info/ "CATH website").
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| [**Executable DOWNLOADS**](https://github.com/UCLOrengoGroup/cath-tools/releases/latest "Downloads for the latest CATH Tools release")    (for Linux/Mac; chmod them to be executable) | [**Docs**](http://cath-tools.readthedocs.io/en/latest/ "CATH Tools user documentation at Read the Docs") | [**Code**](https://github.com/UCLOrengoGroup/cath-tools "CATH Tools GitHub repository") | [Extras repo](https://github.com/UCLOrengoGroup/cath-tools-supplementary "CATH Tools Supplementary GitHub repository") |
+
+### Tools
+
+|  |  |
+| --- | --- |
+| ![](https://raw.githubusercontent.com/UCLOrengoGroup/cath-tools/master/docs/tools/img/cath-cluster.jpg) | [**cath-cluster**](http://cath-tools.readthedocs.io/en/latest/tools/cath-cluster)    Complete-linkage cluster arbitrary data. |
+| ![](https://raw.githubusercontent.com/UCLOrengoGroup/cath-tools/master/docs/tools/img/cath-map-clusters.jpg) | [**cath-map-clusters**](http://cath-tools.readthedocs.io/en/latest/tools/cath-map-clusters)    Map names from previous clusters to new clusters based on (the overlaps between) their members (which may be specified as regions within a parent sequence). Renumber any clusters with no equivalents. |
+| ![](https://raw.githubusercontent.com/UCLOrengoGroup/cath-tools/master/docs/tools/img/cath-resolve-hits.example.jpg) | [**cath-resolve-hits**](http://cath-tools.readthedocs.io/en/latest/tools/cath-resolve-hits)    Collapse a list of domain matches to your query sequence(s) down to the non-overlapping subset (ie domain architecture) that maximises the sum of the hits' scores. |
+| ![](https://raw.githubusercontent.com/UCLOrengoGroup/cath-tools/master/docs/tools/img/ssap_alignment.jpg) | [**cath-ssap**](http://cath-tools.readthedocs.io/en/latest/tools/cath-ssap)    Structurally align a pair of proteins. |
+| ![](https://raw.githubusercontent.com/UCLOrengoGroup/cath-tools/master/docs/tools/img/1fi2A00_1j58A01.good.jpg) | [**cath-superpose**](http://cath-tools.readthedocs.io/en/latest/tools/cath-superpose)    Superpose two or more protein structures using an existing alignment. |
+
+### Extra Tools
+
+* `build-test` Perform the cath-tools tests (which should all pass, albeit with a few warnings)
+* `cath-assign-domains` Use an SVM model on SSAP+PRC data to form a plan for assigning the domains to CATH superfamilies/folds
+* `cath-refine-align` Iteratively refine an existing alignment by attempting to optimise SSAP score
+* `cath-score-align` Score an existing alignment using structural data
+
+## Authors
+
+The SSAP algorithm (`cath-ssap`) was devised by Christine A Orengo and William R Taylor.
+
+Please cite: *Protein Structure Alignment*, Taylor and Orengo, Journal of Molecular Biology 208, 1-22, PMID: 2769748. ([PubMed](https://www.ncbi.nlm.nih.gov/pubmed/2769748), [Elsevier](http://www.sciencedirect.com/science/article/pii/0022283689900843))
+
+Since then, many people have contributed to this code, most notably:
+
+* [Tony E Lewis](https://github.com/tonyelewis) (2011–…)
+* Oliver C Redfern (~2003–2011)
+* James E Bray, [Ian Sillitoe](https://github.com/sillitoe) (~2000–2003)
+* [Andrew C R Martin](https://github.com/AndrewCRMartin) (considerable edits around 2001)
+
+## Acknowledgements
+
+`cath-ssap` typically uses [DSSP](https://github.com/cmbi/xssp), either by reading DSSP files or via its own implementation of the DSSP algorithms.
+
+`cath-cluster` uses Fionn Murtagh's reciprocal-nearest-neighbour algorithm (see [Multidimensional clustering algorithms, volume 4 of Compstat Lectures.
+Physica-Verlag, Würzburg/ Wien, 1985. ISBN 3-7051-0008-4](http://www.multiresolutions.com/strule/MClA/)) as described and refined in Daniel Müllner's [Modern hierarchical, agglomerative clustering algorithms](https://arxiv.org/abs/1109.2378) (2011, arXiv:1109.2378).
+
+## Feedback
+
+Please tell us about your cath-tools bugs/suggestions [here](https://github.com/UCLOrengoGroup/cath-tools/issues/new).
+
+If you find this software useful, please spread the word and star the [GitHub repo](https://github.com/UCLOrengoGroup/cath-tools).
+
+[Next](tools/cath-cluster/ "cath-cluster")
+
+---
+
+Built with [MkDocs](https://www.mkdocs.org/) using a [theme](https://github.com/readthedocs/sphinx_rtd_theme) provided by [Read the Docs](https://readthedocs.org).

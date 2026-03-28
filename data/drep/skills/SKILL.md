@@ -1,6 +1,6 @@
 ---
 name: drep
-description: "dRep performs de-replication and comparison of microbial genomes by clustering similar sequences and selecting the highest-quality representative for each group. Use when user asks to de-replicate a genome set, cluster genomes based on average nucleotide identity, compare genomic similarity, or select representative genomes based on assembly quality metrics."
+description: dRep compares and de-replicates microbial genome sets to identify clusters of similar genomes and select the highest-quality representatives. Use when user asks to compare genome similarity, de-replicate genome sets, or cluster genomes based on average nucleotide identity.
 homepage: https://github.com/MrOlm/drep
 ---
 
@@ -8,46 +8,74 @@ homepage: https://github.com/MrOlm/drep
 # drep
 
 ## Overview
-dRep is a specialized tool for the de-replication of microbial genomes. It streamlines the process of grouping similar genomes (clustering) and selecting a single "best" representative for each group based on assembly quality metrics like completeness and contamination. It utilizes a two-step clustering approach: a rapid primary clustering using Mash, followed by a high-resolution secondary clustering using algorithms like ANIm or fastANI.
 
-## Core Workflows
+dRep is a specialized tool for the rapid comparison and de-replication of microbial genome sets. It automates the process of identifying clusters of highly similar genomes and selecting the highest-quality representative from each cluster. This is particularly useful in metagenomics to reduce redundancy in genome-resolved datasets. The tool operates through a two-stage clustering process: a fast primary clustering (usually via Mash) followed by a more sensitive secondary clustering (usually via ANIm or FastANI).
 
-### 1. Dependency Verification
-Before running analysis, ensure all genomic alignment and quality assessment tools are available:
+## Core Commands
+
+### Dependency Verification
+Before running analysis, ensure all external dependencies (Mash, MUMmer, etc.) are available:
 ```bash
 dRep check_dependencies
 ```
 
-### 2. Genome Comparison
-Use this to visualize the relationship between genomes without performing de-replication:
+### Genome Comparison
+Use this to generate similarity matrices and clusters without selecting representatives:
 ```bash
-dRep compare output_directory -g path/to/genomes/*.fasta
+dRep compare <output_directory> -g /path/to/genomes/*.fasta
 ```
 
-### 3. Full De-replication
-This is the standard workflow to identify clusters and select representative genomes:
+### Genome De-replication
+Use this to cluster genomes and pick the best representative for each cluster based on quality:
 ```bash
-dRep dereplicate output_directory -g path/to/genomes/*.fasta
+dRep dereplicate <output_directory> -g /path/to/genomes/*.fasta
 ```
 
-## CLI Best Practices and Tips
+## Expert CLI Patterns
 
-### Resource Management
-*   **Parallelization**: Use the `-p` flag to specify the number of processors. dRep is highly parallelizable, especially during the secondary clustering phase.
-*   **Memory Constraints**: If working with thousands of genomes and encountering memory errors during Mash, use the `--low_ram_primary_clustering` flag.
+### Handling Large Datasets (>5,000 genomes)
+For massive datasets, use multi-round primary clustering and memory-efficient options to prevent crashes:
+```bash
+dRep dereplicate <out_dir> -g /path/to/genomes/*.fasta --multiround_primary_clustering --low_ram_primary_clustering
+```
+
+### Optimizing for Speed
+FastANI is significantly faster than the default MUMmer (ANIm) for secondary clustering:
+```bash
+dRep dereplicate <out_dir> -g /path/to/genomes/*.fasta -S_algorithm fastANI
+```
 
 ### Quality-Based Selection
-*   **CheckM Integration**: dRep can automatically run CheckM to determine genome quality. Ensure CheckM is in your path or provide pre-computed results using `--genomeInfo`.
-*   **Scoring Criteria**: By default, dRep scores genomes based on: `completeness - 5*contamination + 0.5*log10(N50) + 0.5*log10(size) + 0.1*centrality`. You can customize these weights using the `-conW`, `-compW`, etc., flags.
+If you have pre-calculated genome information (like CheckM results), provide it to improve the "best" genome selection:
+```bash
+dRep dereplicate <out_dir> -g /path/to/genomes/*.fasta --genomeInfo <quality_info.csv>
+```
 
-### Clustering Thresholds
-*   **Secondary Clustering**: The default Average Nucleotide Identity (ANI) threshold for secondary clustering is 99% (`-sa 0.99`). Adjust this based on your definition of a "strain" or "species" (e.g., 0.95 for species-level de-replication).
-*   **Algorithm Choice**: Use `--S_algorithm` to switch between `ANIm` (default, accurate but slower) and `fastANI` (faster for very large datasets).
+### Ignoring Quality Filtering
+If you want to de-replicate based on similarity alone without filtering out "low-quality" genomes:
+```bash
+dRep dereplicate <out_dir> -g /path/to/genomes/*.fasta --ignoreGenomeQuality
+```
 
-### Handling Large Datasets
-*   If the process stalls on large genome sets, check the `dRep.log` file in the output directory for specific alignment failures.
-*   Ensure your input genome files have unique names, as dRep uses filenames as the primary identifiers.
+## Common Parameters and Tips
+
+- **-g / --genomes**: Can accept a glob (e.g., `*.fasta`) or a text file containing a list of paths to genomes.
+- **-sa / --S_ani**: Sets the Average Nucleotide Identity (ANI) threshold for secondary clustering (default is 0.99 for dereplicate, 0.95 for compare).
+- **-nc / --cov_thresh**: Sets the minimum alignment coverage threshold (default 0.1).
+- **-comp / --completeness**: Minimum completeness for a genome to be considered (default 75).
+- **-con / --contamination**: Maximum contamination for a genome to be considered (default 25).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| compare | Compare genomes to find similar ones |
+| dereplicate | Dereplicate genomes based on ANI and other quality metrics. |
+| drep_dRep | Check dependencies for dRep |
 
 ## Reference documentation
-- [drep - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_drep_overview.md)
-- [GitHub - MrOlm/drep: Rapid comparison and dereplication of genomes](./references/github_com_MrOlm_drep.md)
+- [dRep GitHub Repository](./references/github_com_MrOlm_drep.md)
+- [dRep README](./references/github_com_MrOlm_drep_blob_master_README.md)
+- [dRep Change Log](./references/github_com_MrOlm_drep_blob_master_CHANGELOG.md)

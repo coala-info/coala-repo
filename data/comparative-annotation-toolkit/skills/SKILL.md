@@ -1,57 +1,74 @@
 ---
 name: comparative-annotation-toolkit
-description: The Comparative Annotation Toolkit is a pipeline for transferring gene annotations between genomes using HAL-format alignments and the Augustus gene prediction framework. Use when user asks to transfer gene annotations between genomes, project reference GFF3 files onto target genomes, or perform comparative gene prediction across multiple species.
+description: The Comparative Annotation Toolkit produces high-quality gene annotations across multiple genomes using a reference annotation and a whole-genome alignment. Use when user asks to project annotations from a reference genome to target genomes, perform comparative gene prediction with Augustus, or generate a UCSC Assembly Hub for comparative genomics.
 homepage: https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit
 ---
 
 
 # comparative-annotation-toolkit
 
-# Comparative Annotation Toolkit (CAT)
-
 ## Overview
-The Comparative Annotation Toolkit (CAT) is a comprehensive pipeline for transferring gene annotations between genomes. By taking a HAL-format alignment and a reference GFF3 annotation as input, CAT projects these annotations onto target genomes. It integrates multiple evidence sources, including protein alignments and RNA-seq data, and utilizes the Augustus gene prediction framework to refine transcripts. The pipeline is built on the Toil workflow engine, allowing it to scale from local machines to high-performance computing clusters or cloud environments.
 
-## Core Workflow and Usage
+The Comparative Annotation Toolkit (CAT) is a specialized workflow engine designed for large-scale comparative genomics. It takes a multiple genome alignment (HAL format) and an existing annotation (GFF3) on a reference genome to produce consistent, high-quality annotations for all other genomes in the alignment. CAT is unique in its ability to combine "transMap" (projection via alignment) with ab initio gene prediction (Augustus) and RNA-seq evidence to resolve orthology and improve annotation accuracy in divergent regions.
 
-### 1. Input Requirements
-To run the CAT pipeline, you must provide:
-- **HAL Alignment**: A multiple genome alignment file containing both your reference and target genomes.
-- **Reference GFF3**: A high-quality annotation file for the reference genome in the HAL alignment.
-- **Genomes List**: A list of target genomes within the HAL alignment to be annotated.
+## Core CLI Usage
 
-### 2. Configuration Files
-CAT relies on `luigi` for task management. You must have the following configuration files in your execution directory or pointed to by environment variables:
-- `luigi.cfg`: Defines pipeline parameters, paths to binaries, and resource allocation.
-- `logging.cfg`: Configures the verbosity and format of the pipeline logs.
+CAT is executed as a `luigi` task. The primary module is `cat.RunCat`.
 
-If these files are missing after installation, set the `LUIGI_CONFIG_PATH` to point to their location.
+### Basic Command Structure
 
-### 3. Execution Environment
-CAT uses the **Toil** workflow engine. When invoking the pipeline, you can specify the batch system:
-- **Local**: For small test runs or single-machine execution.
-- **Mesos/Slurm/Torque**: For distributed execution on a cluster.
-- **Cloud (AWS/Azure/GCE)**: For large-scale cloud-based annotation.
+```bash
+luigi --module cat RunCat \
+    --hal=/path/to/alignment.hal \
+    --ref-genome=ReferenceName \
+    --target-genomes='("Target1", "Target2")' \
+    --out-dir=./output \
+    --work-dir=./temp \
+    --local-scheduler
+```
 
-### 4. Key Components and Best Practices
-- **TransMap**: This is the initial step that projects coordinates via the HAL alignment. Ensure your HAL alignment is high-quality, as TransMap accuracy depends directly on the underlying synteny.
-- **Augustus Integration**:
-    - **Augustus CGP**: Use this for simultaneous gene prediction across all genomes in the alignment.
-    - **Augustus PB**: Use this when you have RNA-seq "hints" to improve prediction accuracy.
-- **HomGeneMapping (HGM)**: This module is used to evaluate the conservation of annotations across the alignment.
-- **Binary Dependencies**: CAT requires a suite of UCSC Kent tools (e.g., `faToTwoBit`, `gff3ToGenePred`, `pslMap`). Ensure these are in your `PATH`.
+### Common Parameters
 
-### 5. Common CLI Patterns
-While CAT is often invoked through a wrapper script or `luigi` command, the general pattern involves specifying the Toil jobstore and the input parameters:
+- `--hal`: Path to the HAL alignment file containing all genomes.
+- `--ref-genome`: The name of the genome in the HAL file that has the source annotations.
+- `--target-genomes`: A Python-style tuple string listing the genomes to be annotated.
+- `--annotation-gff3`: Path to the source GFF3 file on the reference genome.
+- `--augustus`: Enables the standard Augustus species-specific gene prediction.
+- `--augustus-cgp`: Enables Augustus Comparative Gene Prediction (CGP) for simultaneous prediction across all genomes.
+- `--augustus-pb`: Enables Augustus Protein-Coding (PB) mode using RNA-seq/protein hints.
+- `--assembly-hub`: Automatically generates a UCSC Assembly Hub for visualizing results.
+- `--workers`: Number of parallel luigi workers (tasks) to run.
 
-- **Jobstore**: Always specify a unique path for the Toil jobstore (e.g., `./jobStore`). If a run fails, you can resume by pointing to the same jobstore.
-- **Clean up**: Use the `--clean` flag (e.g., `--clean always`) to manage the temporary files generated by Toil during the run.
+## Expert Tips and Best Practices
 
-## Expert Tips
-- **Augustus Versioning**: Ensure you are using Augustus >= 3.3.1. If using Comparative Gene Prediction (CGP), you must compile Augustus with the `SQLITE` and `BOOST` flags enabled.
-- **Memory Management**: CAT's memory usage is moderate, but the Toil engine requires sufficient disk space for the jobstore, especially when processing many genomes or large RNA-seq datasets.
-- **Pathing**: If you move Augustus binaries, you must set the `AUGUSTUS_CONFIG_PATH` environment variable to point to the `species` directory.
+### Environment and Dependencies
+CAT has a complex dependency tree including the Kent toolset, HAL tools, and Augustus. 
+- **Path Management**: Ensure `hal2fasta`, `halLiftover`, `wigToBigWig`, and `augustus` are in your `$PATH`.
+- **Docker/Singularity**: Due to the heavy dependency load, running CAT via the official Docker image (`quay.io/ucsc_cgl/cat`) is highly recommended for stability.
+
+### Resource Management
+- **Work Directory**: CAT generates many intermediate files. Ensure `--work-dir` is on a filesystem with high IOPS and significant free space.
+- **Toil Integration**: For large-scale runs (e.g., 50+ genomes), CAT can use the Toil engine to distribute jobs across a cluster. This requires configuring a `toil` leader node.
+
+### Input Validation
+- **GFF3 Format**: CAT is strict about GFF3 formatting. Ensure your reference GFF3 is validated (e.g., using `gff3ToGenePred`) before starting the pipeline.
+- **HAL Names**: The names provided in `--ref-genome` and `--target-genomes` must exactly match the sequence names inside the HAL alignment. Use `halStats --tree <file.hal>` to verify names.
+
+### Troubleshooting
+- **Luigi Scheduler**: If running on a single machine, always include `--local-scheduler`. If the pipeline crashes, you can resume by pointing to the same `--work-dir`; CAT will skip successfully completed tasks.
+- **Logging**: Use `--log-level DEBUG` to diagnose failures in specific sub-tools like `transMap` or `Augustus`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| faToTwoBit | Convert DNA from fasta to 2bit format |
+| gff3ToGenePred | convert a GFF3 file to a genePred file |
+| pslMap | map PSLs alignments to new targets using alignments of the old target to the new target. Given inPsl and mapPsl, where the target of inPsl is the query of mapPsl, create a new PSL with the query of inPsl aligned to all the targets of mapPsl. If inPsl is a protein to nucleotide alignment and mapPsl is a nucleotide to nucleotide alignment, the resulting alignment is nucleotide to nucleotide alignment of a hypothetical mRNA that would code for the protein. This is useful as it gives base alignments of spliced codons. A chain file may be used instead mapPsl. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_ComparativeGenomicsToolkit_Comparative-Annotation-Toolkit.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_comparative-annotation-toolkit_overview.md)
+- [Comparative-Annotation-Toolkit README](./references/github_com_ComparativeGenomicsToolkit_Comparative-Annotation-Toolkit_blob_master_README.md)
+- [CAT Complete Dockerfile (Dependency List)](./references/github_com_ComparativeGenomicsToolkit_Comparative-Annotation-Toolkit_blob_master_Dockerfile.complete.md)
+- [Travis CI Test Patterns](./references/github_com_ComparativeGenomicsToolkit_Comparative-Annotation-Toolkit_blob_master_.travis.yml.md)

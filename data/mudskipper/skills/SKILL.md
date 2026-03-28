@@ -1,6 +1,6 @@
 ---
 name: mudskipper
-description: "Mudskipper projects genomic read alignments onto transcriptomic coordinates using a GTF annotation file. Use when user asks to convert genomic BAM files to transcriptomic alignments, project genomic reads to transcripts for quantification, or generate RAD files for single-cell RNA-seq workflows."
+description: "Mudskipper projects genomic alignments onto transcriptomic coordinates using a GTF annotation. Use when user asks to convert genomic BAM or SAM files to transcriptomic alignments, project bulk or single-cell RNA-seq reads to transcripts, or index a GTF for efficient alignment conversion."
 homepage: https://github.com/OceanGenomics/mudskipper
 ---
 
@@ -8,50 +8,54 @@ homepage: https://github.com/OceanGenomics/mudskipper
 # mudskipper
 
 ## Overview
-`mudskipper` is a specialized bioinformatics tool designed to project genomic read alignments onto transcriptomic coordinates. By utilizing a GTF annotation file, it identifies which transcripts a genomic alignment overlaps and generates corresponding transcriptomic alignment records. This allows researchers to perform transcript-level quantification without the computationally expensive step of re-mapping raw reads directly to the transcriptome.
 
-## Core Workflows
+`mudskipper` is a specialized tool designed to project genomic alignments onto transcriptomic coordinates. It functions by parsing a GTF annotation to build an interval tree of exons, then mapping each genomic alignment entry to all transcripts it overlaps. This is particularly useful for researchers who have performed genome-wide alignments but want to use transcript-specific quantification tools like `salmon` (bulk) or `alevin-fry` (single-cell) without the computational overhead of re-mapping reads to a transcriptome index.
+
+## CLI Usage Patterns
 
 ### Bulk RNA-Seq Conversion
-To convert a standard genomic BAM file to a transcriptomic BAM for tools like Salmon:
+To convert a genomic BAM to a transcriptomic BAM for use with Salmon:
 ```bash
 mudskipper bulk --gtf annotation.gtf --alignment genomic.bam --out transcriptomic.bam
 ```
 
 ### Single-Cell RNA-Seq Conversion
-To convert single-cell genomic alignments to RAD format for use with alevin-fry:
+To convert genomic alignments to a RAD file for alevin-fry:
 ```bash
-mudskipper sc --gtf annotation.gtf --alignment genomic.sam --out transcriptomic_dir --rad
+mudskipper sc --gtf annotation.gtf --alignment genomic.sam --out transcriptomic_dir
 ```
 
-### Efficient Processing with Indexing
-If processing multiple samples using the same annotation, first build a GTF index to avoid redundant parsing:
-1. **Build the index**:
-   ```bash
-   mudskipper index --gtf annotation.gtf --dir-index gtf_index
-   ```
-2. **Run conversion using the index**:
-   ```bash
-   mudskipper bulk --index gtf_index --alignment genomic.bam --out transcriptomic.bam
-   ```
+### Efficient Multi-Sample Processing
+If processing multiple files against the same annotation, build an index first to save time:
+```bash
+# 1. Create the index
+mudskipper index --gtf annotation.gtf --dir-index gtf_index
 
-## Command Line Options and Best Practices
+# 2. Use the index for bulk or sc tasks
+mudskipper bulk --index gtf_index --alignment sample1.bam --out sample1_trans.bam
+mudskipper bulk --index gtf_index --alignment sample2.bam --out sample2_trans.bam
+```
 
-### Key Parameters
-- `--alignment (-a)`: Input SAM/BAM file containing genomic alignments.
-- `--gtf (-g)`: Input GTF/GFF file for on-the-fly index building.
-- `--index (-i)`: Path to a pre-built index directory (mutually exclusive with `--gtf`).
-- `--out (-o)`: Output file path (BAM) or directory (RAD).
-- `--threads (-t)`: Number of threads for BAM processing (default: 1).
-- `--max-softclip (-s)`: Maximum allowed soft-clipped bases (default: 50). Alignments exceeding this are dropped.
-- `--rad (-r)`: Output in RAD format instead of BAM (required for single-cell alevin-fry workflows).
+## Best Practices and Expert Tips
 
-### Expert Tips
-- **Version Matching**: Always ensure the GTF file matches the exact reference genome version used during the initial genomic alignment. Discrepancies in chromosome names or coordinates will result in dropped alignments.
-- **Soft-clip Filtering**: If your genomic aligner was permissive with soft-clipping, consider tightening the `--max-softclip` parameter to ensure only high-quality transcriptomic projections are retained.
-- **Spliced Alignments**: `mudskipper` natively handles spliced genomic alignments (records with 'N' in the CIGAR string) by matching them against the exon structures defined in the GTF.
-- **Limitations**: Note that `mudskipper` currently does not project alignments to intergenic or intronic regions, nor does it support "overhanging" alignments that extend beyond transcript boundaries.
+- **GTF Consistency**: Ensure the GTF file matches the exact version of the reference genome used for the initial alignment. If target sequences (chromosomes/contigs) are missing from the GTF, those alignments will be dropped.
+- **Soft-clip Filtering**: By default, `mudskipper` drops alignments with more than 50 soft-clipped bases. Adjust this using `-s` or `--max-softclip <INT>` if your library prep or alignment strategy expects higher soft-clipping.
+- **Performance**: Use the `-t` or `--threads` flag to speed up BAM/SAM processing, especially for deep-sequenced bulk samples.
+- **Output Formats**: 
+    - Use the `--rad` flag in `bulk` mode if you prefer RAD format over BAM.
+    - In `sc` mode, the output is typically a directory containing the projected alignments.
+- **Alignment Constraints**: Note that `mudskipper` currently only projects alignments that are fully contained within transcript boundaries and match the splicing pattern of the exons. Intergenic, intronic, or overhanging alignments are generally excluded from the output.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mudskipper bulk | Convert alignment of bulk RNA-Seq reads against genome to alignment against transcriptome. |
+| mudskipper index | Parse the GTF and build an index to make later runs faster. |
+| mudskipper sc | Convert alignment of single-cell RNA-Seq reads against genome to alignment against transcriptome. |
 
 ## Reference documentation
-- [mudskipper GitHub Repository](./references/github_com_OceanGenomics_mudskipper.md)
-- [bioconda mudskipper Overview](./references/anaconda_org_channels_bioconda_packages_mudskipper_overview.md)
+- [mudskipper README](./references/github_com_OceanGenomics_mudskipper_blob_main_README.md)
+- [mudskipper Repository Overview](./references/github_com_OceanGenomics_mudskipper.md)

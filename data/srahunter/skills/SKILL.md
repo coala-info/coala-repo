@@ -1,6 +1,6 @@
 ---
 name: srahunter
-description: srahunter downloads sequencing data from the NCBI SRA database and converts it into FASTQ format while retrieving associated metadata. Use when user asks to download SRA accessions, convert SRA files to FASTQ, or retrieve standard and full metadata for sequencing runs.
+description: srahunter automates the downloading of NCBI Sequence Read Archive data, converts it to FASTQ format, and retrieves associated metadata. Use when user asks to download SRA runs, convert SRA files to FASTQ, or generate metadata reports and summary tables for SRA accessions.
 homepage: https://github.com/GitEnricoNeko/srahunter
 ---
 
@@ -8,34 +8,73 @@ homepage: https://github.com/GitEnricoNeko/srahunter
 # srahunter
 
 ## Overview
-The `srahunter` skill enables efficient interaction with the NCBI SRA database. It is particularly useful for bioinformaticians who need to process lists of SRA accessions to obtain raw sequencing data (Illumina, PACBio, or ONT) or structured metadata. The tool automates the conversion of `.sra` files to FASTQ, manages disk space checks, and provides resume capabilities for interrupted downloads.
 
-## Core Commands
+srahunter is a specialized bioinformatics utility designed to streamline the interaction with the NCBI Sequence Read Archive. It simplifies the often cumbersome process of fetching raw sequencing data by automating the download of `.sra` files, converting them into single or paired-end FASTQ files, and performing automatic cleanup of temporary files to manage disk space. Beyond data retrieval, it provides robust metadata harvesting capabilities, allowing researchers to quickly generate summary tables or interactive HTML reports for large lists of SRA accessions.
 
-### 1. Downloading Data
-Use `srahunter download` to fetch SRA files and convert them to FASTQ.
-- **Input**: Requires a text file containing a list of Run accession numbers (e.g., SRR8487013).
-- **Command Pattern**: `srahunter download -i <accession_list.txt> [options]`
-- **Key Options**:
-  - `-t`: Set threads (default: 6).
-  - `-p`: Specify temporary path for `.sra` files.
-  - `-o`: Specify output directory for `.fastq` files.
-  - `-ms`: Set maximum SRA file size (default: 50G).
+## Installation
+
+The tool is available via Bioconda. It is recommended to use `mamba` for faster dependency resolution:
+
+```bash
+mamba install bioconda::srahunter
+# OR
+conda install bioconda::srahunter
+```
+
+## Core Workflows
+
+### 1. Downloading and Converting Data
+Use the `download` module to fetch SRA runs and convert them to FASTQ.
+
+```bash
+srahunter download -i accession_list.txt [options]
+```
+
+**Key Options:**
+- `-i, --list`: Path to a text file containing SRA Run accessions (e.g., SRR8487013), one per line.
+- `-t`: Number of threads for parallel processing (default: 6).
+- `-o, --outdir`: Directory for the final `.fastq` files (default: current directory).
+- `-p, --path`: Temporary directory for raw `.sra` files (default: `./tmp_srahunter`).
+- `--gzip`: Optional flag to compress output into `.fastq.gz`.
+- `-ms, --maxsize`: Maximum size limit for each SRA file (default: 50G).
 
 ### 2. Metadata Retrieval
-Use `srahunter metadata` for standard metadata or `srahunter fullmetadata` for comprehensive details.
-- **Standard**: `srahunter metadata -i <accession_list.txt>`
-  - Outputs `SRA_info.csv` and an interactive HTML table in `SRA_html/`.
-- **Full (BETA)**: `srahunter fullmetadata -i <accession_list.txt>`
-  - Outputs `Full_SRA_info.csv` containing all available metadata fields.
+Generate structured reports of the most important metadata associated with your accessions.
 
-## Expert Tips & Best Practices
-- **Disk Management**: The tool requires at least 20GB of free space to start a download. It automatically deletes `.sra` files after successful conversion to FASTQ to save space.
-- **Resuming Jobs**: If a download is interrupted, re-run the same command. The tool tracks progress and resumes from the last successful sample.
-- **Error Tracking**: Check `failed_list.csv` after a run to identify specific accessions that failed to download or convert.
-- **Installation**: For the best experience, install via Bioconda using Mamba: `mamba install bioconda::srahunter`.
-- **Accession Format**: Ensure the input list contains only Run accessions (SRR/ERR/DRR). Other accession types (SRP, PRJ, etc.) are currently not supported for direct download.
+```bash
+srahunter metadata -i accession_list.txt
+```
+
+- **Output**: Produces `SRA_info.csv` and an interactive HTML table in the `SRA_html/` folder.
+- **Tip**: Use `--no-html` if you only require the CSV output.
+
+### 3. Full Metadata (BETA)
+Retrieve every available metadata field for the provided accessions.
+
+```bash
+srahunter fullmetadata -i accession_list.txt
+```
+
+- **Note**: This module is currently in BETA and is known to have issues with miRNA-seq data.
+
+## Expert Tips and Best Practices
+
+- **Accession Format**: Ensure your input list contains only **Run** accession numbers (starting with SRR, ERR, or DRR). Project or Study accessions are not currently supported.
+- **Disk Space Management**: srahunter requires at least **20GB of free disk space** to initiate a download. It automatically deletes the bulky `.sra` files after a successful "dump" to FASTQ, significantly reducing the long-term storage footprint.
+- **Resume Capability**: If a download is interrupted, simply run the same command again. The tool tracks successfully processed samples and will resume from where it left off.
+- **Error Tracking**: Always check `failed_list.csv` after a large batch job to identify accessions that encountered network or processing errors.
+- **Performance**: When working on high-core systems, scale the `-t` parameter to match your available CPU resources for faster FASTQ dumping.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| srahunter download | Download SRA data and convert it to FASTQ format. |
+| srahunter fullmetadata | Accession list from SRA (file path) |
+| srahunter metadata | Accession list from SRA (file path) |
 
 ## Reference documentation
-- [srahunter GitHub Repository](./references/github_com_GitEnricoNeko_srahunter.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_srahunter_overview.md)
+- [srahunter README](./references/github_com_GitEnricoNeko_srahunter_blob_main_README.md)
+- [srahunter CLI Specification](./references/github_com_GitEnricoNeko_srahunter_blob_main_cli.py.md)

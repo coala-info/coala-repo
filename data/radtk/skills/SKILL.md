@@ -1,6 +1,6 @@
 ---
 name: radtk
-description: radtk is a high-performance toolkit for managing, concatenating, inspecting, and partitioning RAD files used in single-cell transcriptomics workflows. Use when user asks to merge multiple RAD files, convert binary RAD files to JSON for inspection, or split a RAD file into multiple parts.
+description: radtk is a performant toolkit for processing and inspecting binary RAD files. Use when user asks to concatenate multiple RAD files, split a RAD file into multiple outputs, or view a textual representation of RAD file records.
 homepage: https://github.com/COMBINE-lab/radtk
 ---
 
@@ -8,34 +8,46 @@ homepage: https://github.com/COMBINE-lab/radtk
 # radtk
 
 ## Overview
-The `radtk` toolkit is a high-performance utility written in Rust for managing RAD files, which are frequently generated in single-cell transcriptomics workflows (such as those using alevin-fry). This skill enables the efficient concatenation of data from different runs, the inspection of internal file tags and headers, and the partitioning of large datasets.
 
-## Core Commands and Usage
+`radtk` is a specialized toolkit developed by the COMBINE-lab for handling RAD files. It provides a performant, Rust-based interface to perform common operations on these binary formats without needing to write custom parsing scripts. Its primary utility lies in merging datasets from different sequencing runs (provided they share the same reference and tag sets) and providing transparency into the contents of the binary records through its viewing capabilities.
 
-### Concatenating RAD Files
-Use the `cat` command to merge multiple RAD files into a single output file.
-- **Requirement**: All input files must have compatible headers. This means they must be generated against the same reference and contain the identical tag set.
-- **Pattern**: `radtk cat --input <file1.rad> <file2.rad> --output <merged.rad>`
+## Command Line Usage
 
-### Inspecting RAD Content
-Use the `view` command to transform the binary RAD format into a textual JSON format. This is essential for:
-- Verifying header information.
-- Inspecting specific records or quantities of interest.
-- Debugging tag values within the file.
-- **Pattern**: `radtk view <input.rad>`
+The `radtk` utility follows a standard sub-command structure.
 
-### Splitting RAD Files
-The `split` command allows for partitioning a RAD file into multiple parts.
-- **Pattern**: `radtk split --input <input.rad> --output <output_directory>`
-- **Tip**: Use the `--quiet` flag if you need to suppress progress bars during automated processing.
+### Concatenating RAD Files (`cat`)
+Use the `cat` command to merge multiple RAD files. This is essential when processing samples that have been split across multiple lanes or runs.
 
-## Best Practices and Expert Tips
-- **Header Validation**: Before attempting a `cat` operation, use `radtk view` on the first few hundred lines of each file to ensure the `ref_count` and `tag_set` match exactly.
-- **JSON Processing**: Since `view` outputs JSON, pipe the output to `jq` for advanced filtering and searching of specific cell barcodes or UMI sequences.
-- **Performance**: `radtk` is optimized for speed. When working with large datasets on high-core systems, the bottleneck is typically I/O rather than computation.
-- **Reference Names**: The `view` command can resolve reference indices to names if the appropriate header information is present in the RAD file.
+*   **Requirement**: All input files must have compatible headers. This means they must be built against the exact same reference and contain the same set of tags.
+*   **Pattern**: `radtk cat <INPUT_FILES>... --output <OUTPUT_FILE>`
+
+### Inspecting RAD Files (`view`)
+Use the `view` command to transform the binary RAD format into a textual JSON representation. This is the primary method for searching for specific records or verifying the quantities of interest within a file.
+
+*   **Pattern**: `radtk view <INPUT_FILE>`
+*   **Tip**: Since the output is JSON, pipe the result to `jq` for advanced filtering or pretty-printing.
+    *   Example: `radtk view sample.rad | jq '.'`
+
+## Expert Tips and Best Practices
+
+1.  **Header Validation**: Before attempting a large `cat` operation, verify that your upstream alignment tool (like `salmon` or `piscem`) used the same index for all files. `radtk cat` will fail if headers are incompatible to prevent data corruption.
+2.  **Logging and Troubleshooting**: `radtk` uses the `tracing` framework. If you encounter issues, check if your environment supports `RUST_LOG` levels to get more verbose output during execution.
+3.  **Performance**: As a Rust-based tool, `radtk` is designed for speed. When viewing very large RAD files, consider redirecting the output to a file rather than printing to the terminal to avoid performance bottlenecks in the terminal emulator.
+4.  **Help Access**: Use the standard help flags to see the most up-to-date arguments for each sub-command:
+    *   `radtk --help`
+    *   `radtk cat --help`
+    *   `radtk view --help`
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| radtk_cat | concatenate the records in a sequence of RAD files |
+| radtk_split | split an input RAD file into multiple output files |
+| view | view a text representation of the RAD file |
 
 ## Reference documentation
-- [radtk - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_radtk_overview.md)
-- [COMBINE-lab/radtk: Various tools for working with RAD files](./references/github_com_COMBINE-lab_radtk.md)
-- [Commits · COMBINE-lab/radtk](./references/github_com_COMBINE-lab_radtk_commits_main.md)
+- [radtk README](./references/github_com_COMBINE-lab_radtk_blob_main_README.md)
+- [radtk Project Configuration](./references/github_com_COMBINE-lab_radtk_blob_main_Cargo.toml.md)

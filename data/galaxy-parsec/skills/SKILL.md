@@ -1,6 +1,6 @@
 ---
 name: galaxy-parsec
-description: The galaxy-parsec tool provides command-line utilities that wrap BioBlend functions to interact with Galaxy servers via the API. Use when user asks to manage histories, download datasets, run workflows, or automate Galaxy tasks through the command line.
+description: Galaxy-parsec provides command-line wrappers for BioBlend functions to interact with Galaxy instances through a terminal. Use when user asks to manage Galaxy histories, download datasets, or automate Galaxy tasks using shell scripts and JSON processing.
 homepage: https://github.com/galaxy-iuc/parsec
 ---
 
@@ -8,61 +8,50 @@ homepage: https://github.com/galaxy-iuc/parsec
 # galaxy-parsec
 
 ## Overview
+Galaxy-parsec (or simply `parsec`) provides a comprehensive suite of command-line wrappers for BioBlend functions, allowing for "linux-friendly" interaction with Galaxy instances. It transforms complex API calls into composable CLI commands, enabling users to build powerful automation pipelines using standard shell utilities. This skill focuses on the core CLI operations for managing remote Galaxy resources efficiently.
 
-The `galaxy-parsec` tool provides a suite of command-line utilities that wrap BioBlend functions, allowing for direct interaction with Galaxy servers without writing Python scripts. It transforms complex API calls into composable CLI commands, making it possible to manage histories, datasets, libraries, and workflows using standard Linux patterns. This skill should be used to automate repetitive Galaxy tasks, perform batch operations, or bridge Galaxy with other command-line bioinformatics tools.
+## Core Configuration
+Before executing functional commands, the environment must be initialized to point to a specific Galaxy instance.
 
-## Getting Started
-
-### Initialization
-Before using parsec, you must configure your connection to a Galaxy instance.
-- Run `parsec init` to set up your credentials.
-- You will need the Galaxy server URL and your API key (found in Galaxy under User > Preferences > Manage API Key).
-- Configuration is typically stored in `~/.planemo.yml`.
-
-### Global Options
-- `--galaxy_instance <name>`: Specify which Galaxy instance to use if multiple are configured.
-- `-v, --verbose`: Enable verbose logging for debugging API interactions.
-- `--help`: View available sub-commands for any level of the tool.
+- **Initialization**: Run `parsec init` to configure the API key and Galaxy URL.
+- **Instance Selection**: Use the `--galaxy_instance <name>` global flag to switch between different servers defined in your configuration.
+- **Verbosity**: Use `-v` or `--verbose` to debug API communication issues.
 
 ## Common CLI Patterns
 
-Parsec outputs data in JSON format, making it highly compatible with `jq`.
-
 ### History Management
-List all histories and extract the ID of the most recent one:
-```bash
-parsec histories get_histories | jq -r '.[0].id'
-```
-
-Show detailed information for a specific history:
-```bash
-parsec histories show_history <history_id>
-```
+Histories are the primary containers for Galaxy analysis.
+- **List all histories**: `parsec histories get_histories`
+- **Filter for a specific ID**: `parsec histories get_histories | jq '.[0].id'`
+- **View detailed history metadata**: `parsec histories show_history <history_id>`
+- **Create a new history**: `parsec histories create_history "My New Analysis"`
 
 ### Dataset Operations
-List datasets within a specific history:
-```bash
-parsec histories show_history <history_id> | jq '.state_ids.ok'
-```
+Datasets reside within histories and are identified by unique IDs.
+- **List datasets in a history**: `parsec histories show_history <history_id> | jq '.state_ids.ok'`
+- **Download a dataset**: `parsec datasets download_dataset <dataset_id> --file_path ./local_file.dat`
+- **Delete a dataset**: `parsec histories delete_dataset <history_id> <dataset_id>`
 
-Download a dataset:
-```bash
-parsec datasets download_dataset <dataset_id> --file_path ./my_data.dat
-```
+### Composing with Shell Tools
+The true power of `parsec` lies in piping JSON outputs to `jq` and `xargs`.
+- **Batch processing**: To run an action on all histories, pipe the IDs:
+  `parsec histories get_histories | jq -r '.[].id' | xargs -I {} parsec histories show_history {}`
 
-### Batch Processing with xargs
-To perform an action on multiple items, pipe the IDs from `jq` to `xargs`. For example, to show details for every history:
-```bash
-parsec histories get_histories | jq -r '.[].id' | xargs -n 1 parsec histories show_history
-```
+## Expert Tips
+- **JSON Output**: Almost all `parsec` commands return JSON. Always have `jq` available to parse specific fields like `id`, `state`, or `name`.
+- **Admin Requirements**: Certain commands (like data library creation or accessing other users' API keys) require an admin account on the Galaxy instance.
+- **Deprecated Methods**: Avoid `download_dataset` within the `histories` subcommand; use the top-level `datasets download_dataset` command for better stability.
+- **State Checking**: When automating, check the `state` field of a history or dataset. Valid states include `ok`, `running`, `queued`, and `error`.
 
-## Expert Tips and Best Practices
 
-- **Admin Privileges**: Certain commands, such as creating data libraries or accessing other users' API keys, require an admin account on the Galaxy instance.
-- **Filtering with jq**: Since Galaxy returns large JSON objects, always use `jq` to filter for the specific attributes you need (e.g., `.id`, `.name`, `.state`) to keep your pipeline readable.
-- **Instance Selection**: If you work with multiple Galaxy servers (e.g., Main, EU, and a local dev instance), use the `--galaxy_instance` flag to ensure commands are sent to the correct environment.
-- **Handling Deprecations**: Some methods (like certain download commands) may be marked as deprecated in the help text; always prefer the suggested alternative (e.g., using `datasets` commands over `histories` for specific file downloads).
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| galaxy-parsec_parsec | Initialize Galaxy parsec connection. |
+| parsec | Command line wrappers around BioBlend functions. While this sounds unexciting, with parsec and jq you can easily build powerful command line scripts. |
 
 ## Reference documentation
-- [Parsec GitHub Repository](./references/github_com_galaxy-iuc_parsec.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_galaxy-parsec_overview.md)
+- [Parsec GitHub Overview](./references/github_com_galaxy-iuc_parsec.md)
+- [Parsec Wiki](./references/github_com_galaxy-iuc_parsec_wiki.md)

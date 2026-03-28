@@ -1,6 +1,6 @@
 ---
 name: humann2
-description: HUMAnN2 profiles the presence and abundance of microbial pathways in metagenomic or metatranscriptomic communities. Use when user asks to profile microbial pathways, normalize abundance tables, join multiple sample outputs, or regroup gene families into functional categories.
+description: HUMAnN2 profiles the functional and metabolic potential of microbial communities by transforming raw sequencing reads into gene family and pathway abundances. Use when user asks to characterize microbial metabolic pathways, quantify gene family abundances from metagenomes or metatranscriptomes, or normalize and regroup functional profiles.
 homepage: http://huttenhower.sph.harvard.edu/humann2
 ---
 
@@ -8,48 +8,61 @@ homepage: http://huttenhower.sph.harvard.edu/humann2
 # humann2
 
 ## Overview
-HUMAnN2 (HMP Unified Metabolic Analysis Network 2) is a pipeline for efficiently and accurately profiling the presence and abundance of microbial pathways in a community. It works by mapping reads to species-specific pangenomes when possible, and falling back to translated search against a protein database for unclassified reads. This skill provides the necessary CLI patterns to execute the tiered functional profiling workflow, normalize results, and join multiple samples for comparative analysis.
+HUMAnN 2.0 (HMP Unified Metabolic Analysis Network) is a bioinformatic pipeline designed to answer "what are the microbes doing?" within a community. It transforms raw DNA or RNA sequencing reads into stratified functional profiles. This skill provides the necessary command-line patterns to execute the core pipeline, manage its extensive databases (ChocoPhlAn and UniRef), and process the resulting gene family and pathway tables.
 
 ## Core Workflow and CLI Patterns
 
-### 1. Functional Profiling
-The primary command processes a single sample. It requires a quality-controlled metagenome (FastQ) or an alignment file.
+### 1. Database Initialization
+Before running samples, the required nucleotide and protein databases must be downloaded.
 
-```bash
-# Basic functional profiling from FastQ
-humann2 --input sample.fastq --output output_dir
+*   **Nucleotide (ChocoPhlAn):**
+    `humann2_databases --download chocophlan full /path/to/db`
+*   **Protein (UniRef):**
+    `humann2_databases --download uniref uniref90_ec_filtered_diamond /path/to/db`
+    *Tip: Use the `uniref90_ec_filtered_diamond` version for a balance of speed and sensitivity.*
 
-# Profiling from an existing alignment (faster if already mapped)
-humann2 --input sample.sam --output output_dir
-```
+### 2. Basic Execution
+The primary command accepts FASTQ (metagenome/metatranscriptome), SAM/BAM (alignments), or TSV (gene tables).
 
-### 2. Normalizing Abundances
-HUMAnN2 outputs are in "RPKs" (Reads Per Kilobase) by default. To compare across samples, normalize to relative abundance or copies per million (CPM).
+`humann2 --input sample.fastq --output output_dir`
 
-```bash
-# Normalize gene families to relative abundance
-humann2_renorm_table --input genes.tsv --output genes_relab.tsv --units relab
+**Key Arguments:**
+*   `--nucleotide-database`: Path to ChocoPhlAn if not in default config.
+*   `--protein-database`: Path to UniRef if not in default config.
+*   `--metaphlan`: Path to the MetaPhlAn2 directory if not in system PATH.
+*   `--threads`: Number of CPUs to use (highly recommended for Diamond/Bowtie2 steps).
 
-# Normalize to Copies Per Million (CPM)
-humann2_renorm_table --input pathways.tsv --output pathways_cpm.tsv --units cpm
-```
+### 3. Output Interpretation
+HUMAnN2 generates three primary files in the output directory:
+1.  `[sample]_genefamilies.tsv`: Abundance of gene families (usually in RPKs).
+2.  `[sample]_pathabundance.tsv`: Abundance of metabolic pathways.
+3.  `[sample]_pathcoverage.tsv`: Presence/absence (0 to 1) of pathways.
 
-### 3. Joining and Regrouping Tables
-When processing multiple samples, use these utilities to create a single feature table and map IDs to different functional categories (e.g., mapping UniRef50 to GO terms).
+### 4. Post-Processing Utilities
+After running individual samples, use these utility scripts to prepare data for statistical analysis:
 
-```bash
-# Merge multiple sample outputs into one table
-humann2_join_tables --input output_dir --output joined_pathways.tsv
+*   **Merge Tables:** Combine multiple sample outputs into a single matrix.
+    `humann2_join_tables --input output_dir --output joined_table.tsv`
+*   **Normalization:** Convert RPKs to relative abundance or copies per million (CPM).
+    `humann2_renorm_table --input joined_table.tsv --output joined_table_cpm.tsv --units cpm`
+*   **Regrouping:** Map gene families to other functional categories (e.g., GO terms, KO, EC).
+    `humann2_regroup_table --input genefamilies.tsv --groups uniref90_ko --output ko_abundance.tsv`
 
-# Regroup gene families into higher-level categories (e.g., EggNOG, GO)
-humann2_regroup_table --input genes.tsv --groups uniref50_eggnog --output genes_eggnog.tsv
-```
+## Expert Tips and Best Practices
+*   **Memory Management:** Ensure at least 16GB of RAM is available. For large datasets using the full UniRef90 database, 32GB+ is safer.
+*   **Input Quality:** Always perform adapter trimming and host-read removal (e.g., removing human DNA) before running HUMAnN2 to improve speed and accuracy.
+*   **Bypassing Steps:** If you already have MetaPhlAn2 results, you can provide the taxonomic profile using `--taxonomic-profile [file].tsv` to skip the initial taxonomic profiling step.
+*   **Temporary Files:** HUMAnN2 creates a `_humann2_temp` folder. If a run crashes, you can often resume or troubleshoot by inspecting the `.log` file inside this directory.
 
-## Expert Tips
-- **Database Selection**: Ensure the `--nucleotide-db` (ChocoPhlAn) and `--protein-db` (UniRef) paths are correctly set if not in the default location.
-- **Bypass Nucleotide Search**: If you know the species are not in the pangenome database, use `--bypass-nucleotide-index` to save time, though this increases the computational load on the translated search.
-- **Thread Optimization**: Use `--threads` to scale performance, but monitor memory usage during the translated search phase (Diamond/Rapsearch2).
-- **Tiered Mapping**: Remember that HUMAnN2 first attempts a fast nucleotide mapping; only unmapped reads proceed to the slower translated search.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| humann2_regroup_table | Regroup HUMAnN2 table features (e.g. convert UniRef50 gene families to GO terms or KO groups). |
+| humann2_renorm_table | Renormalize a HUMAnN2 table to relative abundance or other units. |
 
 ## Reference documentation
-- [humann2 - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_humann2_overview.md)
+- [HUMAnN 2.0 Overview and Installation](./references/huttenhower_sph_harvard_edu_humann2.md)
+- [HUMAnN 2.0 Database and Run Configuration](./references/huttenhower_sph_harvard_edu_humann2_1.md)

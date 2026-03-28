@@ -1,1 +1,321 @@
-GitHub - vinisalazar/BioProv: A provenance library for bioinformatics workflows 🧬 🔀 📝 Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} vinisalazar / BioProv Public Notifications You must be signed in to change notification settings Fork 1 Star 14 A provenance library for bioinformatics workflows 🧬 🔀 📝 bioprov.readthedocs.io/ License MIT license 14 stars 1 fork Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights vinisalazar/BioProv master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 867 Commits 867 Commits .github/ workflows .github/ workflows bioprov bioprov docs docs .coveragerc .coveragerc .gitignore .gitignore .readthedocs.yml .readthedocs.yml CHANGELOG.md CHANGELOG.md CONTRIBUTING.md CONTRIBUTING.md LICENSE LICENSE MANIFEST.in MANIFEST.in README.md README.md environment.yml environment.yml setup.py setup.py View all files Repository files navigation README Contributing MIT license BioProv - W3C-PROV provenance documents for bioinformatics Code Tests Docs BioProv is a Python library for W3C-PROV representation of bioinformatics workflows. It enables you to quickly write workflows and to describe relationships between samples, files, users and programs. Please see the tutorials for a more detailed introduction and visit ReadTheDocs for the complete documentation. Quickstart &gt; &gt;&gt; import bioprov as bp # Create samples and file objects &gt; &gt;&gt; sample = bp . Sample ( "mysample" ) &gt; &gt;&gt; genome = bp . File ( "mysample.fasta" , "genome" ) &gt; &gt;&gt; sample . add_files ( genome ) # Create programs &gt; &gt;&gt; output = sample . files [ "blast_out" ] = bp . File ( "mysample.blast.tsv" , "blast_out" ) &gt; &gt;&gt; blastn = bp . Program ( "blastn" , params = { "-query" : sample . files [ "genome" ], "-db" : "mydb.fasta" , "-out" : output } ) &gt; &gt;&gt; sample . add_programs ( blastn ) # Run programs &gt; &gt;&gt; sample . run_programs () # Save your project &gt; &gt;&gt; proj = bp . Project (( sample ,), tag = "example_project" ) &gt; &gt;&gt; proj . to_json () # Create PROV documents &gt; &gt;&gt; prov = bp . BioProvDocument ( proj ) # Save in PROVN or graphical format &gt; &gt;&gt; prov . write_provn () # human-readable text format &gt; &gt;&gt; prov . dot . write_pdf () # graphical format BioProv also has a command-line application to run preset workflows. $ bioprov -h usage: bioprov [-h] [--show_config | --show_db | --clear_db | -v | -l] {genome_annotation,blastn,kaiju} ... BioProv command-line application. Choose a command to begin. optional arguments: -h, --help show this help message and exit --show_config Show location of config file. --show_db Show location of database file. --clear_db Clears all records in database. -v, --version Show BioProv version -l, --list List Projects in the BioProv database. workflows: {genome_annotation,blastn,kaiju} BioProv is built with the Biopython and Pandas libraries. You can import data into BioProv using Pandas objects. # Read csv straight into BioProv &gt; &gt;&gt; samples = bp . read_csv ( "my_dataframe.tsv" , sep = " \t " , sequencefile_cols = "assembly" ) # Alternatively, use a pandas DataFrame &gt; &gt;&gt; df = pd . read_csv ( "my_dataframe.tsv" , sep = " \t " ) # [...] manipulate your df &gt; &gt;&gt; df [ "assembly" ] = "assembly_directory/" + df [ "assembly" ] # Now load from your df &gt; &gt;&gt; project = bp . from_df ( df , sequencefile_cols = "assembly" , source_file = "my_dataframe.tsv" ) # `samples` becomes a Project dict-like object &gt; &gt;&gt; sample1 = project [ 'sample1' ] # You can also export your sample and associated files and attributes as a dataframe &gt; &gt;&gt; project . to_csv () Installation # Install from pip $ pip install bioprov # Install from conda $ conda install -c conda-forge -c bioconda bioprov # Install from source $ git clone https://github.com/vinisalazar/bioprov &amp;&amp; cd bioprov ; # download $ conda env create -f environment.yaml &amp;&amp; conda activate bioprov ; # install dependencies $ pip install . &amp;&amp; pytest ; # install and test Important! BioProv requires Prodigal to be tested. Otherwise tests will fail. Contributions are welcome! BioProv is in active development and no warranties are provided (please see the License). Dependencies BioProv requires the follow dependencies to run. Also see the setup and environment files. biopython coolname coveralls dataclasses pandas prodigal prov provstore-api pydot pytest pytest-cov tqdm tinydb About A provenance library for bioinformatics workflows 🧬 🔀 📝 bioprov.readthedocs.io/ Topics python provenance biopython prov biological-data w3c-prov Resources Readme License MIT license Contributing Contributing Uh oh! There was an error while loading. Please reload this page . Activity Stars 14 stars Watchers 2 watching Forks 1 fork Report repository Releases 9 Release v0.1.24 Latest Oct 5, 2021 + 8 releases Uh oh! There was an error while loading. Please reload this page . Contributors 2 &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages Python 100.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvinisalazar%2FBioProv)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvinisalazar%2FBioProv)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=vinisalazar%2FBioProv)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[vinisalazar](/vinisalazar)
+/
+**[BioProv](/vinisalazar/BioProv)**
+Public
+
+* [Notifications](/login?return_to=%2Fvinisalazar%2FBioProv) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2Fvinisalazar%2FBioProv)
+* [Star
+   14](/login?return_to=%2Fvinisalazar%2FBioProv)
+
+* [Code](/vinisalazar/BioProv)
+* [Issues
+  0](/vinisalazar/BioProv/issues)
+* [Pull requests
+  0](/vinisalazar/BioProv/pulls)
+* [Actions](/vinisalazar/BioProv/actions)
+* [Projects](/vinisalazar/BioProv/projects)
+* [Security
+  0](/vinisalazar/BioProv/security)
+* [Insights](/vinisalazar/BioProv/pulse)
+
+Additional navigation options
+
+* [Code](/vinisalazar/BioProv)
+* [Issues](/vinisalazar/BioProv/issues)
+* [Pull requests](/vinisalazar/BioProv/pulls)
+* [Actions](/vinisalazar/BioProv/actions)
+* [Projects](/vinisalazar/BioProv/projects)
+* [Security](/vinisalazar/BioProv/security)
+* [Insights](/vinisalazar/BioProv/pulse)
+
+# vinisalazar/BioProv
+
+master
+
+[Branches](/vinisalazar/BioProv/branches)[Tags](/vinisalazar/BioProv/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[867 Commits](/vinisalazar/BioProv/commits/master/)   867 Commits | | |
+| [.github/workflows](/vinisalazar/BioProv/tree/master/.github/workflows "This path skips through empty directories") | | [.github/workflows](/vinisalazar/BioProv/tree/master/.github/workflows "This path skips through empty directories") |  |  |
+| [bioprov](/vinisalazar/BioProv/tree/master/bioprov "bioprov") | | [bioprov](/vinisalazar/BioProv/tree/master/bioprov "bioprov") |  |  |
+| [docs](/vinisalazar/BioProv/tree/master/docs "docs") | | [docs](/vinisalazar/BioProv/tree/master/docs "docs") |  |  |
+| [.coveragerc](/vinisalazar/BioProv/blob/master/.coveragerc ".coveragerc") | | [.coveragerc](/vinisalazar/BioProv/blob/master/.coveragerc ".coveragerc") |  |  |
+| [.gitignore](/vinisalazar/BioProv/blob/master/.gitignore ".gitignore") | | [.gitignore](/vinisalazar/BioProv/blob/master/.gitignore ".gitignore") |  |  |
+| [.readthedocs.yml](/vinisalazar/BioProv/blob/master/.readthedocs.yml ".readthedocs.yml") | | [.readthedocs.yml](/vinisalazar/BioProv/blob/master/.readthedocs.yml ".readthedocs.yml") |  |  |
+| [CHANGELOG.md](/vinisalazar/BioProv/blob/master/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/vinisalazar/BioProv/blob/master/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [CONTRIBUTING.md](/vinisalazar/BioProv/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/vinisalazar/BioProv/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
+| [LICENSE](/vinisalazar/BioProv/blob/master/LICENSE "LICENSE") | | [LICENSE](/vinisalazar/BioProv/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/vinisalazar/BioProv/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/vinisalazar/BioProv/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/vinisalazar/BioProv/blob/master/README.md "README.md") | | [README.md](/vinisalazar/BioProv/blob/master/README.md "README.md") |  |  |
+| [environment.yml](/vinisalazar/BioProv/blob/master/environment.yml "environment.yml") | | [environment.yml](/vinisalazar/BioProv/blob/master/environment.yml "environment.yml") |  |  |
+| [setup.py](/vinisalazar/BioProv/blob/master/setup.py "setup.py") | | [setup.py](/vinisalazar/BioProv/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Contributing
+* MIT license
+
+### BioProv - W3C-PROV provenance documents for bioinformatics
+
+| Code | [![PyPI Version](https://camo.githubusercontent.com/a164466b5c400d66ce7e9f51f39b5232970b98020c2bb3d19372352f14c962bb/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f62696f70726f76)](https://pypi.org/project/bioprov/) | [![lint](https://github.com/vinisalazar/BioProv/workflows/lint/badge.svg?branch=master)](https://github.com/vinisalazar/BioProv/actions?query=workflow%3Alint) | [![Code style](https://camo.githubusercontent.com/7019b88be88468d6b83fcbf59d2c06bfa4992bafa7d129f9b89ab29f8c7c1acb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d626c61636b2d3030303030302e737667)](https://github.com/psf/black) |
+| --- | --- | --- | --- |
+| Tests | [![Build Status](https://camo.githubusercontent.com/bbedbdd23b002c908f029ba1da8fadc33790ff102c28bea6416b67fab3266b15/68747470733a2f2f7472617669732d63692e6f72672f76696e6973616c617a61722f42696f50726f762e7376673f6272616e63683d6d6173746572)](https://travis-ci.org/vinisalazar/BioProv) | [![tests](https://github.com/vinisalazar/bioprov/workflows/tests/badge.svg?branch=master)](https://github.com/vinisalazar/bioprov/actions?query=workflow%3Atests) | [![Coverage Status](https://camo.githubusercontent.com/799976390b76108d155ddb48244f09281caef694b1f2adf1a1fea32454446e74/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f76696e6973616c617a61722f42696f50726f762f62616467652e7376673f6272616e63683d6d617374657226736572766963653d676974687562)](https://coveralls.io/github/vinisalazar/BioProv?branch=master&service=github) |
+| Docs | [![Docs status](https://camo.githubusercontent.com/d114c00d97bd1b1cd2bce9298d40fdb9fac3bb8d5c0209b5221633aa1762600c/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f62696f70726f762f62616467652f3f76657273696f6e3d6c6174657374)](https://bioprov.readthedocs.io/en/latest/?badge=latest) | [![License](https://camo.githubusercontent.com/1ca074dad81f4c760dfc1a76098a73c8475287ba447154d33b56910ac032acf7/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f76696e6973616c617a61722f62696f70726f76)](https://github.com/vinisalazar/BioProv/blob/master/LICENSE) | [![binder](https://camo.githubusercontent.com/c351dded6463f29bc0945aaaa25a1ab9556d5f7e02c99d2c74dd641a5eb7dee9/68747470733a2f2f6d7962696e6465722e6f72672f62616467655f6c6f676f2e737667)](https://mybinder.org/v2/gh/vinisalazar/bioprov/master?filepath=docs%2Ftutorials%2F) |
+
+BioProv is a Python library for [W3C-PROV](https://www.w3.org/TR/prov-overview/) representation of bioinformatics workflows.
+It enables you to quickly write workflows and to describe relationships between samples, files, users and programs.
+
+Please see the [tutorials](/vinisalazar/BioProv/blob/master/docs/tutorials/introduction.ipynb) for a more detailed introduction and
+visit [ReadTheDocs](https://bioprov.readthedocs.io/) for the complete documentation.
+
+### Quickstart
+
+```
+>>> import bioprov as bp
+
+# Create samples and file objects
+>>> sample = bp.Sample("mysample")
+>>> genome = bp.File("mysample.fasta", "genome")
+>>> sample.add_files(genome)
+
+# Create programs
+>>> output = sample.files["blast_out"] = bp.File("mysample.blast.tsv", "blast_out")
+>>> blastn = bp.Program("blastn",
+                        params={"-query": sample.files["genome"],
+                                "-db": "mydb.fasta", "-out": output}
+                        )
+>>> sample.add_programs(blastn)
+
+# Run programs
+>>> sample.run_programs()
+
+# Save your project
+>>> proj = bp.Project((sample,), tag="example_project")
+>>> proj.to_json()
+
+# Create PROV documents
+>>> prov = bp.BioProvDocument(proj)
+
+# Save in PROVN or graphical format
+>>> prov.write_provn()  # human-readable text format
+>>> prov.dot.write_pdf()  # graphical format
+```
+
+BioProv also has a command-line application to run preset workflows.
+
+```
+$ bioprov -h
+usage: bioprov [-h] [--show_config | --show_db | --clear_db | -v | -l]
+               {genome_annotation,blastn,kaiju} ...
+
+BioProv command-line application. Choose a command to begin.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --show_config         Show location of config file.
+  --show_db             Show location of database file.
+  --clear_db            Clears all records in database.
+  -v, --version         Show BioProv version
+  -l, --list            List Projects in the BioProv database.
+
+workflows:
+  {genome_annotation,blastn,kaiju}
+```
+
+BioProv is built with the [Biopython](https://biopython.org/) and [Pandas](http://pandas.pydata.org/) libraries.
+
+You can import data into BioProv using Pandas objects.
+
+```
+# Read csv straight into BioProv
+>>> samples = bp.read_csv("my_dataframe.tsv", sep="\t", sequencefile_cols="assembly")
+
+# Alternatively, use a pandas DataFrame
+>>> df = pd.read_csv("my_dataframe.tsv", sep="\t")
+
+# [...] manipulate your df
+>>> df["assembly"] = "assembly_directory/" + df["assembly"]
+
+# Now load from your df
+>>> project = bp.from_df(df, sequencefile_cols="assembly", source_file="my_dataframe.tsv")
+
+# `samples` becomes a Project dict-like object
+>>> sample1 = project['sample1']
+
+# You can also export your sample and associated files and attributes as a dataframe
+>>> project.to_csv()
+```
+
+### Installation
+
+```
+# Install from pip
+$ pip install bioprov
+
+# Install from conda
+$ conda install -c conda-forge -c bioconda bioprov
+
+# Install from source
+$ git clone https://github.com/vinisalazar/bioprov && cd bioprov;     # download
+$ conda env create -f environment.yaml && conda activate bioprov;     # install dependencies
+$ pip install . && pytest;                                            # install and test
+```
+
+**Important!** BioProv requires [Prodigal](https://githu

@@ -1929,3 +1929,6 @@ usage: singlem [-h]
 singlem: error: argument subparser_name: invalid choice: 'genomes' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: damasker
-description: "Damasker identifies and soft-masks repetitive genomic sequences within Dazzler databases to prevent assembly errors. Use when user asks to identify interspersed repeats, mask tandem repeats, or generate HPC scripts for parallel repeat masking."
+description: Damasker identifies and masks interspersed and tandem repetitive regions within genomic read databases to improve assembly accuracy. Use when user asks to mask repeats, identify tandem repeats with datander, or generate HPC scripts for repeat-masking workflows.
 homepage: https://github.com/thegenemyers/DAMASKER
 ---
 
@@ -9,62 +9,58 @@ homepage: https://github.com/thegenemyers/DAMASKER
 
 ## Overview
 
-Damasker is a specialized suite designed to identify and soft-mask repetitive genomic sequences. It is part of the Dazzler assembly ecosystem and works directly with Dazzler databases (.db or .dam) and local alignment files (.las). By masking tandem and interspersed repeats, it prevents repetitive regions from confounding the "scrubbing" and overlapping phases of genome assembly.
+Damasker is the repeat-masking component of the Dazzler assembly suite. It identifies repetitive regions by analyzing the "pile-up" of alignments. If a region of a read aligns to many other reads (interspersed repeats) or to itself (tandem repeats), it is flagged in an interval track. This "soft-masking" allows downstream tools to ignore these regions during initial overlap discovery while preserving the underlying sequence data for later resolution of complex genomic structures.
 
 ## Core Workflows
 
-### 1. Interspersed Repeat Masking
-Use `REPmask` to identify regions covered by a specific number of overlaps from other reads.
+### 1. Masking Interspersed Repeats (REPmask)
+Use `REPmask` after running `daligner` to identify regions covered by an excessive number of alignments.
 
-```bash
-REPmask [-v] [-n<track_name>] -c<coverage_threshold> <subject:db> <overlaps:las> ...
-```
+*   **Basic Command**: `REPmask -c<threshold> <subject.db> <overlaps.las>`
+*   **Key Parameter**: `-c` sets the coverage depth. A region covered by more than `<int>` alignments is masked.
+*   **Naming Tracks**: Use `-n<name>` to override the default `.rep` track name.
+*   **Batch Processing**: Use the `@` symbol to process multiple `.las` files (e.g., `overlaps.@.las`).
 
-*   **Key Parameter**: `-c` is required. It defines the minimum coverage depth to trigger masking.
-*   **Output**: Creates an interval track (default suffix `.rep`).
-*   **Note**: The `<subject:db>` must refer to the entire database, while `<overlaps:las>` can refer to specific block files.
+### 2. Masking Tandem Repeats (datander & TANmask)
+Tandem repeats are found by comparing a read against itself.
 
-### 2. Tandem Repeat Masking
-Tandem masking is a two-step process involving self-comparison followed by mask generation.
+*   **Step A (Find self-alignments)**: `datander <subject.db>`
+    *   This produces `TAN.<block>.las` files.
+    *   Options like `-k` (k-mer size) and `-h` (hit threshold) match `daligner` defaults.
+*   **Step B (Generate mask)**: `TANmask -l<min_len> <subject.db> TAN.<block>.las`
+    *   **Key Parameter**: `-l` defines the minimum length (default 500bp) for a tandem repeat to be masked.
+    *   **Output**: Generates a `.tan` track by default.
 
-**Step A: Run `datander`**
-A specialized version of `daligner` that compares every read only against itself.
-```bash
-datander [-v] [-k<kmer>] [-h<hit_threshold>] [-e<error_rate>] <path:db|dam> ...
-```
-*   Produces `TAN.[block].las` files containing self-alignments.
+### 3. HPC Automation
+For large datasets, use the `HPC` prefix tools to generate shell scripts for cluster environments (LSF/SLURM).
 
-**Step B: Run `TANmask`**
-Processes the self-alignments to define tandem repeat boundaries.
-```bash
-TANmask [-v] [-l<min_length>] [-n<track_name>] <subject:db> <overlaps:las> ...
-```
-*   **Key Parameter**: `-l` (default 500) defines the minimum length for a region to be considered a tandem repeat.
-*   **Output**: Creates an interval track (default suffix `.tan`).
-
-### 3. Scaling with HPC Scripts
-For large, multi-block databases, use `HPC.REPmask` to generate a shell script for parallel execution.
-
-```bash
-HPC.REPmask [options] -g<blocks_per_group> -c<coverage> <reads:db|dam> [<first_block>[-<last_block>]]
-```
-*   **Logic**: It automates the `daligner` -> `LAmerge` -> `REPmask` pipeline.
-*   **Usage**: Redirect the output to a `.sh` file and execute it (e.g., `HPC.REPmask ... > mask_repeats.sh`).
+*   **HPC.REPmask**: Generates a script to run `daligner`, `LAmerge`, and `REPmask` in a coordinated block-processing workflow.
+    *   `HPC.REPmask -g<block_span> -c<threshold> <reads.db>`
+*   **HPC.TANmask**: Generates a script for the `datander` and `TANmask` workflow.
 
 ## Expert Tips and CLI Patterns
 
-### File Sequence Shorthand (@)
-Damasker supports a specific syntax for handling multiple `.las` files:
-*   `name.@`: Interpreted as `name.1.las`, `name.2.las`, etc.
-*   `name.@5`: Starts the sequence at 5.
-*   `name.@1-10`: Processes files 1 through 10 inclusive.
+*   **The @ Notation**: Damasker supports sophisticated file sequencing.
+    *   `overlaps.@.las`: Files 1, 2, 3... until none are found.
+    *   `overlaps.@5.las`: Start at file 5.
+    *   `overlaps.@1-10.las`: Process files 1 through 10 inclusive.
+*   **Soft-Masking Strategy**: Always mask tandem repeats (`.tan`) before or alongside interspersed repeats (`.rep`). Tandem repeats can create false "piles" that confuse interspersed repeat detection.
+*   **Database Integrity**: The `<subject:db>` argument must always refer to the entire database, even if the `<overlaps:las>` file only contains alignments for a specific block.
+*   **Memory Management**: When using `datander` or `HPC` scripts, use the `-M` option to specify memory limits in GB to prevent job crashes on memory-constrained nodes.
 
-### Soft-Masking Philosophy
-Damasker performs **soft-masking**. This means the underlying sequence data is preserved, but the repeat intervals are recorded in "tracks." Downstream Dazzler tools (like `daligner` or `DASCRUBBER`) can then be instructed to ignore these masked regions during initial overlap discovery.
 
-### Temporary File Management
-When running `datander` or `HPC.REPmask`, use the `-P` option to specify a directory for temporary files (e.g., `/tmp` or a fast SSD mount) to avoid I/O bottlenecks on network storage.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| HPC.REPmask | HPC.REPmask is a script that runs daligner and REPmask. |
+| REPmask | Repeat masking tool |
+| TANmask | Report tandem repeats |
+| datander | Searches for k-mers in overlapping bands and identifies alignments based on specified criteria. |
 
 ## Reference documentation
-- [DAMASKER README](./references/github_com_thegenemyers_DAMASKER.md)
-- [Bioconda Damasker Overview](./references/anaconda_org_channels_bioconda_packages_damasker_overview.md)
+
+- [Damasker README](./references/github_com_thegenemyers_DAMASKER_blob_master_README.md)
+- [HPC REPmask Implementation](./references/github_com_thegenemyers_DAMASKER_blob_master_HPC.REPmask.c.md)
+- [HPC TANmask Implementation](./references/github_com_thegenemyers_DAMASKER_blob_master_HPC.TANmask.c.md)

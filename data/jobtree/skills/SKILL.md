@@ -1,6 +1,6 @@
 ---
 name: jobtree
-description: jobtree is a framework for managing and executing large-scale, nested computational pipelines on high-performance computing clusters. Use when user asks to configure job execution, monitor pipeline status, restart failed jobs, or analyze resource utilization across a batch system.
+description: jobTree is a Python-based pipeline management system designed for executing complex, recursive bioinformatics workflows on local machines or large-scale clusters. Use when user asks to run a pipeline, monitor job status, restart failed runs, or analyze performance statistics.
 homepage: https://github.com/benedictpaten/jobTree
 ---
 
@@ -8,55 +8,49 @@ homepage: https://github.com/benedictpaten/jobTree
 # jobtree
 
 ## Overview
-jobtree is a specialized framework for managing large-scale computational pipelines on high-performance computing (HPC) clusters. It allows for the creation of complex, nested job structures where tasks can dynamically spawn sub-tasks. Use this skill to configure job execution, monitor the status of running pipelines, restart failed jobs from the point of failure, and analyze resource utilization (CPU/Memory) across a batch system.
+jobTree is a Python-based pipeline management system designed for complex, recursive computations where tasks can dynamically schedule sub-tasks. It is particularly effective for bioinformatics workflows that need to scale from a single machine to large-scale clusters. This skill assists in navigating the legacy jobTree environment, focusing on command-line operations for pipeline execution, error recovery, and performance profiling.
 
-## Installation and Setup
-To use jobtree, ensure it and its dependency `sonLib` are in your Python path.
-
-- **Conda Installation**: `conda install bioconda::jobtree`
-- **Manual Setup**: 
-  1. Clone `sonLib` and `jobTree` into the same parent directory.
-  2. Update your environment: `export PYTHONPATH=${PYTHONPATH}:/path/to/parent_dir`
-  3. Build: Run `make all` in the jobtree base directory.
-
-## Core CLI Patterns
+## Core CLI Operations
 
 ### Running a Pipeline
-Execute your jobtree script by passing the required management directory and batch system.
-```bash
-python your_script.py --jobTree ./myJobTreeDir --batchSystem singleMachine --logLevel INFO --stats
-```
-- `--jobTree`: Path to a directory (must not exist) where job state is stored.
-- `--batchSystem`: Options include `parasol`, `gridEngine`, `lsf`, or `singleMachine`.
-- `--stats`: Enables collection of performance data.
+To execute a jobTree script, run the Python script directly with the required jobTree arguments.
+- **Basic Command**: `python your_script.py --jobTree ./state_dir --batchSystem singleMachine`
+- **Cluster Execution**: Change `--batchSystem` to `parasol`, `lsf`, or `gridEngine` depending on your environment.
+- **Logging**: Use `--logLevel INFO` or `--logLevel DEBUG` to monitor progress.
+- **Statistics**: Add the `--stats` flag during execution if you intend to analyze performance later.
 
 ### Monitoring Status
-Check the progress of a running or finished pipeline to identify failed jobs.
-```bash
-jobTreeStatus ./myJobTreeDir --verbose
-```
-- Use `--failIfNotComplete` to return a non-zero exit code if any jobs are still active or failed.
-- The `--verbose` flag is essential for retrieving the specific log files and error traces of failed jobs.
+Use `jobTreeStatus` to check the health of a running or finished pipeline.
+- **Check Progress**: `jobTreeStatus ./state_dir`
+- **Detailed Error Reporting**: `jobTreeStatus ./state_dir --verbose` (This prints log files for failed jobs).
+- **Validation**: Use `--failIfNotComplete` in automated environments to return a non-zero exit code if the pipeline is unfinished.
 
-### Restarting a Pipeline
-If a pipeline fails due to a transient error or a bug you have since fixed, restart it without re-running successful jobs.
-```bash
-jobTreeRun --jobTree ./myJobTreeDir --logLevel INFO
-```
+### Restarting Failed Runs
+If a pipeline fails due to cluster instability or a specific job error, you can resume from the point of failure.
+- **Resume Command**: `jobTreeRun --jobTree ./state_dir`
+- **Note**: jobTree preserves the state in the directory specified by `--jobTree`. Do not delete this directory if you intend to restart.
 
-### Analyzing Performance
-Generate a report on CPU, memory, and time usage for all jobs in the pipeline.
-```bash
-jobTreeStats ./myJobTreeDir --human --categories time,memory
-```
-- `--human`: Formats numbers (e.g., bytes to GB) for easier reading.
-- `--sortCategory`: Sort the target list by `time`, `memory`, or `count`.
+### Performance Analysis
+If the pipeline was run with the `--stats` flag, use `jobTreeStats` to generate a report.
+- **Human Readable Report**: `jobTreeStats ./state_dir --pretty`
+- **Sorting**: Use `--sortCategory time` or `--sortCategory memory` to identify bottlenecks.
+- **Data Export**: Use `--raw` to output XML data for custom parsing.
 
 ## Expert Tips
-- **Job Directory Persistence**: The `--jobTree` directory is not deleted automatically. This is intentional to allow for debugging and restarts. Manually remove it only after a successful run and data verification.
-- **Resource Specification**: When writing scripts, always specify default CPU and memory requirements to prevent the batch system from over-allocating or killing jobs for exceeding limits.
-- **Logging**: Use `--logLevel DEBUG` only for small test runs, as it can generate massive log files in the jobTree directory for large-scale pipelines.
+- **Environment Setup**: Ensure `PYTHONPATH` includes the parent directory of both `sonLib` and `jobTree`. jobTree requires `sonLib` to function.
+- **Directory Management**: The `--jobTree` directory is not automatically deleted. For a fresh run, you must manually remove the existing directory or specify a new path.
+- **Resource Specification**: When writing scripts, define default CPU and memory requirements to prevent the batch system from over-allocating or killing jobs for exceeding limits.
+- **Python Version**: jobTree is designed for Python 2.5 through 2.7. It is not compatible with Python 3.x (use Toil for Python 3 support).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| jobTreeRun | Options |
+| jobTreeStats | Prints statistics about a jobTree. |
+| jobTreeStatus | Prints the status of a job tree. |
 
 ## Reference documentation
 - [github_com_benedictpaten_jobTree.md](./references/github_com_benedictpaten_jobTree.md)
-- [anaconda_org_channels_bioconda_packages_jobtree_overview.md](./references/anaconda_org_channels_bioconda_packages_jobtree_overview.md)

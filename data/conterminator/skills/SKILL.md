@@ -1,6 +1,6 @@
 ---
 name: conterminator
-description: Conterminator identifies sequences assigned to incorrect taxonomic groups by performing efficient ungapped local alignments across large datasets. Use when user asks to detect cross-kingdom contamination, identify mislabeled sequences in FASTA files, or find bacterial sequences within eukaryotic datasets.
+description: Conterminator identifies and flags sequences assigned to the wrong taxonomic kingdom by performing ungapped local alignments across genomic datasets. Use when user asks to detect cross-taxon contamination, identify misclassified sequences in FASTA files, or clean genomic databases using taxonomy mapping.
 homepage: https://github.com/martin-steinegger/conterminator
 ---
 
@@ -8,19 +8,12 @@ homepage: https://github.com/martin-steinegger/conterminator
 # conterminator
 
 ## Overview
-Conterminator is a specialized tool designed to identify sequences that have been assigned to the wrong taxonomic group. By performing ungapped local alignments across an entire dataset, it detects sequences from one kingdom (e.g., Bacteria) that appear within a dataset labeled as another (e.g., Metazoa). It is built on the MMseqs2 framework, making it highly efficient for massive sequence sets.
+Conterminator is a high-performance tool designed to identify sequences that have been assigned to the wrong taxonomic kingdom. By performing ungapped local alignments across an entire dataset, it flags sequences that show high similarity to organisms in distant taxa. This is essential for maintaining the integrity of genomic databases and ensuring that downstream analyses are not biased by "hidden" contaminants.
 
-## Core Workflows
+## Usage Patterns
 
-### 1. Preparing Input Files
-Conterminator requires two primary inputs:
-- **FASTA File**: The sequences to be checked.
-- **Mapping File**: A tab-separated file (TSV) with two columns:
-  1. FASTA identifier (text before the first space).
-  2. NCBI Taxonomy ID.
-
-### 2. Running the Analysis
-The command structure differs slightly based on the sequence type. Both require a result prefix and a temporary directory for intermediate files.
+### Basic Execution
+Conterminator requires two primary inputs: a FASTA file and a tab-separated mapping file.
 
 **For Nucleotide Sequences:**
 ```bash
@@ -32,40 +25,43 @@ conterminator dna input.fna input.mapping result_prefix tmp_dir
 conterminator protein input.faa input.mapping result_prefix tmp_dir
 ```
 
-### 3. Defining Contamination Rules
-The `--kingdom` parameter is the most powerful feature, allowing you to define exactly which taxa should be considered "contaminants" relative to each other.
+### Input Requirements
+1. **FASTA File**: Standard sequence file.
+2. **Mapping File**: A two-column TSV file:
+   - Column 1: Sequence Identifier (by default, text up to the first blank space).
+   - Column 2: NCBI Taxonomy ID.
 
+### Defining Contamination Rules
+The `--kingdom` parameter defines which taxonomic groups are checked against each other.
+
+- **Simple Pair**: To check for contamination between Bacteria (TaxID 2) and Humans (TaxID 9606):
+  `--kingdom 2,9606`
+- **Logic Operators**: Use `!` (NOT), `||` (OR), and `&&` (AND) for complex rules.
 - **Default Rule**: `2||2157,4751,33208,33090,2759&&!4751&&!33208&&!33090`
-  - This compares Bacteria/Archaea, Fungi, Metazoa, Viridiplantae, and "Other Eukaryotes" against each other.
-- **Custom Rule Syntax**:
-  - `,` : Separates distinct groups to compare against each other.
-  - `||` : OR logic.
-  - `&&` : AND logic.
-  - `!` : NOT logic.
-- **Example (Bacteria vs. Human)**:
-  To specifically look for bacterial contamination in human samples:
-  ```bash
-  conterminator dna input.fna input.mapping result --kingdom 2,9606
-  ```
+  (This checks for contamination between Bacteria/Archaea, Fungi, Metazoa, Viridiplantae, and other Eukaryotes).
 
 ## Interpreting Results
 The tool generates two main output files:
 
-1. **`{prefix}_conterm_prediction`**: The primary list of predicted contaminants.
-   - **Column 2**: The contaminated sequence ID.
-   - **Column 3**: The kingdom index of the sequence.
-   - **Column 8**: The ID of the longest contaminating sequence it aligned to.
-   - **Column 12**: Count of how many sequences from the contaminating kingdom aligned to this entry.
-2. **`{prefix}_all`**: A comprehensive list of all alignments used to make predictions, useful for deep-dive validation of specific hits.
+1. **`{PREFIX}_conterm_prediction`**: A TSV file containing predicted contamination.
+   - **Columns**: Numeric ID, Contaminated ID, Kingdom, Species Name, Alignment Start/End, Corrected Contig Length, Longest Contaminating Sequence ID, and its Kingdom/Species.
+2. **`{PREFIX}_all`**: Contains all alignments used to predict contamination for deeper manual inspection.
 
 ## Expert Tips
-- **Temporary Storage**: Ensure the `tmp_dir` is on a fast disk (like an SSD) with ample space, as MMseqs2-based tools generate significant intermediate data during the all-against-all search.
-- **Taxonomy Mapping**: If working with NCBI's NT database, you can generate the mapping file using `blastdbcmd`:
-  ```bash
-  blastdbcmd -db nt -entry all -outfmt "%a %T" > nt.mapping
-  ```
-- **Redundancy**: The prediction file may list the same identifier multiple times if multiple distinct contamination alignments were detected. Always aggregate or filter this file before downstream processing.
+- **Temporary Directory**: Ensure the `tmp_dir` is on a fast disk (SSD) with sufficient space, as the underlying MMseqs2 modules generate significant intermediate data.
+- **Taxonomy Mapping**: For large databases like NCBI NT, use `blastdbcmd` to generate the mapping file:
+  `blastdbcmd -db nt -entry all -outfmt "%a %T" > nt.fna.taxidmapping`
+- **Hardware Requirements**: Requires a 64-bit system with at least SSE4.1 instruction set support. Use the AVX2 build if your CPU supports it for significantly faster processing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dna | Searches for cross taxon contamination in DNA sequences |
+| protein | Searches for cross taxon contamination in protein sequences |
 
 ## Reference documentation
-- [GitHub Repository - steineggerlab/conterminator](./references/github_com_steineggerlab_conterminator.md)
-- [Conterminator Wiki](./references/github_com_steineggerlab_conterminator_wiki.md)
+- [Conterminator GitHub Repository](./references/github_com_steineggerlab_conterminator.md)
+- [Conterminator Wiki Home](./references/github_com_steineggerlab_conterminator_wiki.md)

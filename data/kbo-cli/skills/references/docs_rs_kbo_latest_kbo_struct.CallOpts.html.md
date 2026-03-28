@@ -1,1 +1,298 @@
-CallOpts in kbo - Rust Docs.rs kbo-0.5.1 kbo 0.5.1 Permalink Docs.rs crate page MIT OR Apache-2.0 Links Homepage Repository crates.io Source Owners tmaklin Dependencies embed-doc-image ^0.1.4 normal sbwt ^0.3.4 normal assert_approx_eq ^1 dev random ^0.14.0 dev Versions 100% of the crate is documented Platform aarch64-apple-darwin aarch64-unknown-linux-gnu x86_64-unknown-linux-gnu Feature flags docs.rs About docs.rs Badges Builds Metadata Shorthand URLs Download Rustdoc JSON Build queue Privacy policy Rust Rust website The Book Standard Library API Reference Rust by Example The Cargo Guide Clippy Documentation CallOpts kbo 0.5.1 Call Opts Fields max_error_prob sbwt_build_opts Trait Implementations Clone Debug Default PartialEq StructuralPartialEq Auto Trait Implementations Freeze RefUnwindSafe Send Sync Unpin UnwindSafe Blanket Implementations Any Borrow&#60;T&#62; BorrowMut&#60;T&#62; CloneToUninit Conv Erased FmtForward From&#60;T&#62; Into&#60;U&#62; IntoEither Pipe Pointable Tap ToOwned TryConv TryFrom&#60;U&#62; TryInto&#60;U&#62; VZip&#60;V&#62; In crate kbo kbo Struct Call Opts &nbsp; Copy item path Source #[non_exhaustive] pub struct CallOpts { pub max_error_prob: f64 , pub sbwt_build_opts: BuildOpts , } Expand description Options and parameters for call Fields (Non-exhaustive) § This struct is marked as non-exhaustive Non-exhaustive structs could have additional fields added in future. Therefore, non-exhaustive structs cannot be constructed in external crates using the traditional Struct { .. } syntax; cannot be matched against without a wildcard .. ; and struct update syntax will not work. § max_error_prob: f64 Prefix match lengths with probability higher than max_error_prob to happen at random are considered noise. § sbwt_build_opts: BuildOpts Build options for indexing the reference sequence, k must match the k -mer size used in indexing the query. Trait Implementations § Source § impl Clone for CallOpts Source § fn clone (&amp;self) -&gt; CallOpts Returns a duplicate of the value. Read more 1.0.0 · Source § fn clone_from (&amp;mut self, source: &amp;Self) Performs copy-assignment from source . Read more Source § impl Debug for CallOpts Source § fn fmt (&amp;self, f: &amp;mut Formatter &lt;'_&gt;) -&gt; Result Formats the value using the given formatter. Read more Source § impl Default for CallOpts Source § fn default () -&gt; CallOpts Default to these values: let mut opts = kbo::CallOpts::default(); opts.max_error_prob = 0.0000001 ; opts.sbwt_build_opts = kbo::BuildOpts::default(); opts.sbwt_build_opts.build_select = true ; Source § impl PartialEq for CallOpts Source § fn eq (&amp;self, other: &amp; CallOpts ) -&gt; bool Tests for self and other values to be equal, and is used by == . 1.0.0 · Source § fn ne (&amp;self, other: &amp;Rhs ) -&gt; bool Tests for != . The default implementation is almost always sufficient, and should not be overridden without very good reason. Source § impl StructuralPartialEq for CallOpts Auto Trait Implementations § § impl Freeze for CallOpts § impl RefUnwindSafe for CallOpts § impl Send for CallOpts § impl Sync for CallOpts § impl Unpin for CallOpts § impl UnwindSafe for CallOpts Blanket Implementations § Source § impl&lt;T&gt; Any for T where T: 'static + ? Sized , Source § fn type_id (&amp;self) -&gt; TypeId Gets the TypeId of self . Read more Source § impl&lt;T&gt; Borrow &lt;T&gt; for T where T: ? Sized , Source § fn borrow (&amp;self) -&gt; &amp;T Immutably borrows from an owned value. Read more Source § impl&lt;T&gt; BorrowMut &lt;T&gt; for T where T: ? Sized , Source § fn borrow_mut (&amp;mut self) -&gt; &amp;mut T Mutably borrows from an owned value. Read more Source § impl&lt;T&gt; CloneToUninit for T where T: Clone , Source § unsafe fn clone_to_uninit (&amp;self, dest: *mut u8 ) 🔬 This is a nightly-only experimental API. ( clone_to_uninit ) Performs copy-assignment from self to dest . Read more Source § impl&lt;T&gt; Conv for T Source § fn conv &lt;T&gt;(self) -&gt; T where Self: Into &lt;T&gt;, Converts self into T using Into&lt;T&gt; . Read more Source § impl&lt;T&gt; FmtForward for T Source § fn fmt_binary (self) -&gt; FmtBinary &lt;Self&gt; where Self: Binary , Causes self to use its Binary implementation when Debug -formatted. Source § fn fmt_display (self) -&gt; FmtDisplay &lt;Self&gt; where Self: Display , Causes self to use its Display implementation when Debug -formatted. Source § fn fmt_lower_exp (self) -&gt; FmtLowerExp &lt;Self&gt; where Self: LowerExp , Causes self to use its LowerExp implementation when Debug -formatted. Source § fn fmt_lower_hex (self) -&gt; FmtLowerHex &lt;Self&gt; where Self: LowerHex , Causes self to use its LowerHex implementation when Debug -formatted. Source § fn fmt_octal (self) -&gt; FmtOctal &lt;Self&gt; where Self: Octal , Causes self to use its Octal implementation when Debug -formatted. Source § fn fmt_pointer (self) -&gt; FmtPointer &lt;Self&gt; where Self: Pointer , Causes self to use its Pointer implementation when Debug -formatted. Source § fn fmt_upper_exp (self) -&gt; FmtUpperExp &lt;Self&gt; where Self: UpperExp , Causes self to use its UpperExp implementation when Debug -formatted. Source § fn fmt_upper_hex (self) -&gt; FmtUpperHex &lt;Self&gt; where Self: UpperHex , Causes self to use its UpperHex implementation when Debug -formatted. Source § fn fmt_list (self) -&gt; FmtList &lt;Self&gt; where &amp;'a Self: for&lt;'a&gt; IntoIterator , Formats each item in a sequence. Read more Source § impl&lt;T&gt; From &lt;T&gt; for T Source § fn from (t: T) -&gt; T Returns the argument unchanged. Source § impl&lt;T, U&gt; Into &lt;U&gt; for T where U: From &lt;T&gt;, Source § fn into (self) -&gt; U Calls U::from(self) . That is, this conversion is whatever the implementation of From &lt;T&gt; for U chooses to do. Source § impl&lt;T&gt; IntoEither for T Source § fn into_either (self, into_left: bool ) -&gt; Either &lt;Self, Self&gt; Converts self into a Left variant of Either&lt;Self, Self&gt; if into_left is true . Converts self into a Right variant of Either&lt;Self, Self&gt; otherwise. Read more Source § fn into_either_with &lt;F&gt;(self, into_left: F) -&gt; Either &lt;Self, Self&gt; where F: FnOnce (&amp;Self) -&gt; bool , Converts self into a Left variant of Either&lt;Self, Self&gt; if into_left(&amp;self) returns true . Converts self into a Right variant of Either&lt;Self, Self&gt; otherwise. Read more Source § impl&lt;T&gt; Pipe for T where T: ? Sized , Source § fn pipe &lt;R&gt;(self, func: impl FnOnce (Self) -&gt; R) -&gt; R where Self: Sized , Pipes by value. This is generally the method you want to use. Read more Source § fn pipe_ref &lt;'a, R&gt;(&amp;'a self, func: impl FnOnce (&amp;'a Self) -&gt; R) -&gt; R where R: 'a, Borrows self and passes that borrow into the pipe function. Read more Source § fn pipe_ref_mut &lt;'a, R&gt;(&amp;'a mut self, func: impl FnOnce (&amp;'a mut Self) -&gt; R) -&gt; R where R: 'a, Mutably borrows self and passes that borrow into the pipe function. Read more Source § fn pipe_borrow &lt;'a, B, R&gt;(&amp;'a self, func: impl FnOnce ( &amp;'a B ) -&gt; R) -&gt; R where Self: Borrow &lt;B&gt;, B: 'a + ? Sized , R: 'a, Borrows self , then passes self.borrow() into the pipe function. Read more Source § fn pipe_borrow_mut &lt;'a, B, R&gt;( &amp;'a mut self, func: impl FnOnce ( &amp;'a mut B ) -&gt; R, ) -&gt; R where Self: BorrowMut &lt;B&gt;, B: 'a + ? Sized , R: 'a, Mutably borrows self , then passes self.borrow_mut() into the pipe function. Read more Source § fn pipe_as_ref &lt;'a, U, R&gt;(&amp;'a self, func: impl FnOnce ( &amp;'a U ) -&gt; R) -&gt; R where Self: AsRef &lt;U&gt;, U: 'a + ? Sized , R: 'a, Borrows self , then passes self.as_ref() into the pipe function. Source § fn pipe_as_mut &lt;'a, U, R&gt;(&amp;'a mut self, func: impl FnOnce ( &amp;'a mut U ) -&gt; R) -&gt; R where Self: AsMut &lt;U&gt;, U: 'a + ? Sized , R: 'a, Mutably borrows self , then passes self.as_mut() into the pipe function. Source § fn pipe_deref &lt;'a, T, R&gt;(&amp;'a self, func: impl FnOnce ( &amp;'a T ) -&gt; R) -&gt; R where Self: Deref &lt;Target = T&gt;, T: 'a + ? Sized , R: 'a, Borrows self , then passes self.deref() into the pipe function. Source § fn pipe_deref_mut &lt;'a, T, R&gt;( &amp;'a mut self, func: impl FnOnce ( &amp;'a mut T ) -&gt; R, ) -&gt; R where Self: DerefMut &lt;Target = T&gt; + Deref , T: 'a + ? Sized , R: 'a, Mutably borrows self , then passes self.deref_mut() into the pipe function. Source § impl&lt;T&gt; Pointable for T Source § const ALIGN : usize The alignment of pointer. Source § type Init = T The type for initializers. Source § unsafe fn init (init: &lt;T as Pointable &gt;:: Init ) -&gt; usize Initializes a with the given initializer. Read more Source § unsafe fn deref &lt;'a&gt;(ptr: usize ) -&gt; &amp;'a T Dereferences the given pointer. Read more Source § unsafe fn deref_mut &lt;'a&gt;(ptr: usize ) -&gt; &amp;'a mut T Mutably dereferences the given pointer. Read more Source § unsafe fn drop (ptr: usize ) Drops the object pointed to by the given pointer. Read more Source § impl&lt;T&gt; Tap for T Source § fn tap (self, func: impl FnOnce (&amp;Self)) -&gt; Self Immutable access to a value. Read more Source § fn tap_mut (self, func: impl FnOnce (&amp;mut Self)) -&gt; Self Mutable access to a value. Read more Source § fn tap_borrow &lt;B&gt;(self, func: impl FnOnce ( &amp;B )) -&gt; Self where Self: Borrow &lt;B&gt;, B: ? Sized , Immutable access to the Borrow&lt;B&gt; of a value. Read more Source § fn tap_borrow_mut &lt;B&gt;(self, func: impl FnOnce ( &amp;mut B )) -&gt; Self where Self: BorrowMut &lt;B&gt;, B: ? Sized , Mutable access to the BorrowMut&lt;B&gt; of a value. Read more Source § fn tap_ref &lt;R&gt;(self, func: impl FnOnce ( &amp;R )) -&gt; Self where Self: AsRef &lt;R&gt;, R: ? Sized , Immutable access to the AsRef&lt;R&gt; view of a value. Read more Source § fn tap_ref_mut &lt;R&gt;(self, func: impl FnOnce ( &amp;mut R )) -&gt; Self where Self: AsMu
+[Docs.rs](/)
+
+* kbo-0.5.1
+
+  + kbo 0.5.1
+  + [Permalink](/kbo/0.5.1/kbo/struct.CallOpts.html "Get a link to this specific version")
+  + [Docs.rs crate page](/crate/kbo/latest "See kbo in docs.rs")
+  + [MIT](https://spdx.org/licenses/MIT) OR [Apache-2.0](https://spdx.org/licenses/Apache-2.0)
+
+  + Links
+  + [Homepage](https://github.com/tmaklin/kbo)
+  + [Repository](https://github.com/tmaklin/kbo)
+  + [crates.io](https://crates.io/crates/kbo "See kbo in crates.io")
+  + [Source](/crate/kbo/latest/source/ "Browse source of kbo-0.5.1")
+
+  + Owners
+  + [tmaklin](https://crates.io/users/tmaklin)
+
+  + Dependencies
+  + - [embed-doc-image ^0.1.4
+      *normal*](/embed-doc-image/%5E0.1.4/)
+    - [sbwt ^0.3.4
+      *normal*](/sbwt/%5E0.3.4/)
+    - [assert\_approx\_eq ^1
+      *dev*](/assert_approx_eq/%5E1/)
+    - [random ^0.14.0
+      *dev*](/random/%5E0.14.0/)
+
+  + Versions
+
+  + [**100%**
+    of the crate is documented](/crate/kbo/latest)
+* Platform
+  + [aarch64-apple-darwin](/crate/kbo/latest/target-redirect/aarch64-apple-darwin/kbo/struct.CallOpts.html)
+  + [aarch64-unknown-linux-gnu](/crate/kbo/latest/target-redirect/aarch64-unknown-linux-gnu/kbo/struct.CallOpts.html)
+  + [x86\_64-unknown-linux-gnu](/crate/kbo/latest/target-redirect/kbo/struct.CallOpts.html)
+* [Feature flags](/crate/kbo/latest/features "Browse available feature flags of kbo-0.5.1")
+
+* docs.rs
+  + [About docs.rs](/about)
+  + [Badges](/about/badges)
+  + [Builds](/about/builds)
+  + [Metadata](/about/metadata)
+  + [Shorthand URLs](/about/redirections)
+  + [Download](/about/download)
+  + [Rustdoc JSON](/about/rustdoc-json)
+  + [Build queue](/releases/queue)
+  + [Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+* Rust
+  + [Rust website](https://www.rust-lang.org/)
+  + [The Book](https://doc.rust-lang.org/book/)
+  + [Standard Library API Reference](https://doc.rust-lang.org/std/)
+  + [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+  + [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+  + [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+## CallOpts
+
+## [kbo](../kbo/index.html)0.5.1
+
+## CallOpts
+
+### [Fields](#fields)
+
+* [max\_error\_prob](#structfield.max_error_prob "max_error_prob")
+* [sbwt\_build\_opts](#structfield.sbwt_build_opts "sbwt_build_opts")
+
+### [Trait Implementations](#trait-implementations)
+
+* [Clone](#impl-Clone-for-CallOpts "Clone")
+* [Debug](#impl-Debug-for-CallOpts "Debug")
+* [Default](#impl-Default-for-CallOpts "Default")
+* [PartialEq](#impl-PartialEq-for-CallOpts "PartialEq")
+* [StructuralPartialEq](#impl-StructuralPartialEq-for-CallOpts "StructuralPartialEq")
+
+### [Auto Trait Implementations](#synthetic-implementations)
+
+* [Freeze](#impl-Freeze-for-CallOpts "Freeze")
+* [RefUnwindSafe](#impl-RefUnwindSafe-for-CallOpts "RefUnwindSafe")
+* [Send](#impl-Send-for-CallOpts "Send")
+* [Sync](#impl-Sync-for-CallOpts "Sync")
+* [Unpin](#impl-Unpin-for-CallOpts "Unpin")
+* [UnwindSafe](#impl-UnwindSafe-for-CallOpts "UnwindSafe")
+
+### [Blanket Implementations](#blanket-implementations)
+
+* [Any](#impl-Any-for-T "Any")
+* [Borrow<T>](#impl-Borrow%3CT%3E-for-T "Borrow<T>")
+* [BorrowMut<T>](#impl-BorrowMut%3CT%3E-for-T "BorrowMut<T>")
+* [CloneToUninit](#impl-CloneToUninit-for-T "CloneToUninit")
+* [Conv](#impl-Conv-for-T "Conv")
+* [Erased](#impl-Erased-for-T "Erased")
+* [FmtForward](#impl-FmtForward-for-T "FmtForward")
+* [From<T>](#impl-From%3CT%3E-for-T "From<T>")
+* [Into<U>](#impl-Into%3CU%3E-for-T "Into<U>")
+* [IntoEither](#impl-IntoEither-for-T "IntoEither")
+* [Pipe](#impl-Pipe-for-T "Pipe")
+* [Pointable](#impl-Pointable-for-T "Pointable")
+* [Tap](#impl-Tap-for-T "Tap")
+* [ToOwned](#impl-ToOwned-for-T "ToOwned")
+* [TryConv](#impl-TryConv-for-T "TryConv")
+* [TryFrom<U>](#impl-TryFrom%3CU%3E-for-T "TryFrom<U>")
+* [TryInto<U>](#impl-TryInto%3CU%3E-for-T "TryInto<U>")
+* [VZip<V>](#impl-VZip%3CV%3E-for-T "VZip<V>")
+
+## [In crate kbo](index.html)
+
+[kbo](index.html)
+
+# Struct CallOpts Copy item path
+
+[Source](../src/kbo/lib.rs.html#318-326)
+
+```
+#[non_exhaustive]
+
+pub struct CallOpts {
+    pub max_error_prob: f64,
+    pub sbwt_build_opts: BuildOpts,
+}
+```
+
+Expand description
+
+Options and parameters for [call](fn.call.html "fn kbo::call")
+
+## Fields (Non-exhaustive)[§](#fields)
+
+This struct is marked as non-exhaustive
+
+Non-exhaustive structs could have additional fields added in future. Therefore, non-exhaustive structs cannot be constructed in external crates using the traditional `Struct { .. }` syntax; cannot be matched against without a wildcard `..`; and struct update syntax will not work.
+
+[§](#structfield.max_error_prob)`max_error_prob: [f64](https://doc.rust-lang.org/nightly/std/primitive.f64.html)`
+
+Prefix match lengths with probability higher than `max_error_prob` to
+happen at random are considered noise.
+
+[§](#structfield.sbwt_build_opts)`sbwt_build_opts: [BuildOpts](struct.BuildOpts.html "struct kbo::BuildOpts")`
+
+[Build options](struct.BuildOpts.html "struct kbo::BuildOpts") for indexing the reference sequence, `k` must
+match the *k*-mer size used in indexing the query.
+
+## Trait Implementations[§](#trait-implementations)
+
+[Source](../src/kbo/lib.rs.html#317)[§](#impl-Clone-for-CallOpts)
+
+### impl [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[Source](../src/kbo/lib.rs.html#317)[§](#method.clone)
+
+#### fn [clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)(&self) -> [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+Returns a duplicate of the value. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)
+
+1.0.0 · [Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#245-247)[§](#method.clone_from)
+
+#### fn [clone\_from](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)(&mut self, source: &Self)
+
+Performs copy-assignment from `source`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)
+
+[Source](../src/kbo/lib.rs.html#317)[§](#impl-Debug-for-CallOpts)
+
+### impl [Debug](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html "trait core::fmt::Debug") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[Source](../src/kbo/lib.rs.html#317)[§](#method.fmt)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/fmt/type.Result.html "type core::fmt::Result")
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)
+
+[Source](../src/kbo/lib.rs.html#328-353)[§](#impl-Default-for-CallOpts)
+
+### impl [Default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html "trait core::default::Default") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[Source](../src/kbo/lib.rs.html#347-352)[§](#method.default)
+
+#### fn [default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)() -> [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+Default to these values:
+
+```
+let mut opts = kbo::CallOpts::default();
+opts.max_error_prob = 0.0000001;
+opts.sbwt_build_opts = kbo::BuildOpts::default();
+opts.sbwt_build_opts.build_select = true;
+```
+
+[Source](../src/kbo/lib.rs.html#317)[§](#impl-PartialEq-for-CallOpts)
+
+### impl [PartialEq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html "trait core::cmp::PartialEq") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[Source](../src/kbo/lib.rs.html#317)[§](#method.eq)
+
+#### fn [eq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq)(&self, other: &[CallOpts](struct.CallOpts.html "struct kbo::CallOpts")) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `self` and `other` values to be equal, and is used by `==`.
+
+1.0.0 · [Source](https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#264)[§](#method.ne)
+
+#### fn [ne](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne)(&self, other: [&Rhs](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `!=`. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+
+[Source](../src/kbo/lib.rs.html#317)[§](#impl-StructuralPartialEq-for-CallOpts)
+
+### impl [StructuralPartialEq](https://doc.rust-lang.org/nightly/core/marker/trait.StructuralPartialEq.html "trait core::marker::StructuralPartialEq") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+## Auto Trait Implementations[§](#synthetic-implementations)
+
+[§](#impl-Freeze-for-CallOpts)
+
+### impl [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[§](#impl-RefUnwindSafe-for-CallOpts)
+
+### impl [RefUnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html "trait core::panic::unwind_safe::RefUnwindSafe") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[§](#impl-Send-for-CallOpts)
+
+### impl [Send](https://doc.rust-lang.org/nightly/core/marker/trait.Send.html "trait core::marker::Send") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[§](#impl-Sync-for-CallOpts)
+
+### impl [Sync](https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html "trait core::marker::Sync") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[§](#impl-Unpin-for-CallOpts)
+
+### impl [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+[§](#impl-UnwindSafe-for-CallOpts)
+
+### impl [UnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html "trait core::panic::unwind_safe::UnwindSafe") for [CallOpts](struct.CallOpts.html "struct kbo::CallOpts")
+
+## Blanket Implementations[§](#blanket-implementations)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#138)[§](#impl-Any-for-T)
+
+### impl<T> [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") for T where T: 'static + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#139)[§](#method.type_id)
+
+#### fn [type\_id](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)(&self) -> [TypeId](https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html "struct core::any::TypeId")
+
+Gets the `TypeId` of `self`. [Read more](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#212)[§](#impl-Borrow%3CT%3E-for-T)
+
+### impl<T> [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<T> for T where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#214)[§](#method.borrow)
+
+#### fn [borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Immutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#221)[§](#impl-BorrowMut%3CT%3E-for-T)
+
+### impl<T> [BorrowMut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html "trait core::borrow::BorrowMut")<T> for T where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#222)[§](#method.borrow_mut)
+
+#### fn [borrow\_mut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)(&mut self) -> [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#547)[§](#impl-CloneToUninit-for-T)
+
+### impl<T> [CloneToUninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html "trait core::clone::CloneToUninit") for T where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#549)[§](#method.clone_to_uninit)
+
+#### unsafe fn [clone\_to\_uninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)(&self, dest: [\*mut](https://doc.rust-lang.org/nightly/std/primitive.pointer.html) [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html))
+
+🔬This is a nightly-only experimental API. (`clone_to_uninit`)
+
+Performs copy-assignment from `self` to `dest`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)
+
+[Source](https://docs.rs/tap/1.0.1/x86_64-unknown-linux-gnu/src/tap/conv.rs.html#58)[§](#impl-Conv-for-T)
+
+### impl<T> [Conv](https://docs.rs/tap/1.0.1/x86_64-unknown-linux-gnu/tap/conv/trait.Conv.html "trait tap::conv::Conv") for T
+
+[Source](https://docs.rs/tap/1.0.1/x86_64-unknown-linux-gnu/src/tap/conv.rs.html#49-52)[§](#method.conv)
+
+#### fn [conv](https://docs.rs/tap/1.0.1/x86_64-unknown-linux-gnu/tap/conv/trait.Conv.html#method.conv)<T>(self) -> T where Self: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<T>,
+
+Converts `self` into `T` using `Into<T>`. [Read more](https://docs.rs/tap/1.0.1/x86_64-unknown-linux-gnu/tap/conv/trait.Conv.html#method.conv)
+
+[Source](https://docs.rs/wyz/0.5.1/x86_64-unknown-linux-gnu/src/wyz/fmt.rs.html#114)[§](#impl-FmtForward-for-T)
+
+### impl<T> [FmtForward](https://docs.rs/wyz/0.5.1/x86_64-unknown-linux-gnu/wyz/fmt/trait.FmtForward.html "trait wyz::fmt::FmtForward") for T
+
+[Source](https://docs.rs/wyz/0.5.1/x86_64-unknown-linux-gnu/src/wyz/fmt.rs.html#41-42)[§](#method.fmt_binary)
+
+#### fn [fmt\_binary](https://docs.rs/wyz/0.5.1/x86_64-unknown-linux-gnu/wyz/fmt/trait.FmtForward.html#method.fmt_binary)(self) -> [FmtBinary](https://docs.rs/wyz/0.5.1/x86_64-unknown-linux-gnu/wyz/fmt/struct.FmtBinary.html "struct wyz::fmt::FmtBinary")<Self> where Self: [Binary](https://doc.rust-lang.org/nightly/core/fmt/trait.Binary.html "trait core::fmt::Binary"),
+
+Causes `self` to use its `Binary` implementation

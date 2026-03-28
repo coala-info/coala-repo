@@ -251,3 +251,6 @@ The composite doc suffix.
 Report bugs to yhg926@gmail.com.
 ```
 
+
+## Metadata
+- **Skill**: generated

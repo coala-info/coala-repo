@@ -1,6 +1,6 @@
 ---
 name: fraposa-pgsc
-description: This tool projects genomic study samples into a reference PCA space to predict genetic ancestry using computationally efficient methods. Use when user asks to project samples into a reference PCA space, determine genetic ancestry, or predict population labels for study datasets.
+description: The fraposa-pgsc tool projects study samples onto a reference PCA space to predict genetic ancestry while correcting for shrinkage using the OADP algorithm. Use when user asks to project samples onto a reference panel, predict ancestry labels, or visualize population clusters in PCA space.
 homepage: https://github.com/PGScatalog/fraposa_pgsc
 ---
 
@@ -9,61 +9,74 @@ homepage: https://github.com/PGScatalog/fraposa_pgsc
 
 ## Overview
 
-The `fraposa-pgsc` tool is a specialized version of FRAPOSA (Fast and Robust Ancestry Prediction) integrated into the PGS Catalog pipeline. It enables the projection of study samples into a reference PCA space (like 1000 Genomes) to determine genetic ancestry. It is designed to be computationally efficient, handling large-scale genomic data by utilizing Online Singular Value Decomposition (SVD) and Procrustes transformation.
+The `fraposa-pgsc` tool implements the Fast and Robust Ancestry Prediction (FRAPOSA) method. It allows you to project "study" samples onto a pre-calculated PCA space derived from a "reference" panel. This is critical in genomics to account for population stratification. The tool is optimized for speed and accuracy using the Online Augmentation, Decomposition, and Procrustes (OADP) algorithm, which addresses the "shrinkage" problem where projected samples appear closer to the PCA origin than they should. Use this skill to prepare datasets, execute projections, predict ancestry labels, and generate diagnostic plots.
 
-## Core Workflow
+## Core CLI Usage
 
 ### 1. Data Preparation
-Before running the tool, ensure your reference and study datasets are in binary PLINK format (`.bed`, `.bim`, `.fam`). 
+Reference and study datasets must share the exact same variants.
+*   **Requirement**: The `.bim` files for both sets must be identical in terms of variant IDs and allele orientation.
+*   **Manual Intersection**: Use PLINK to extract common variants before running FRAPOSA.
 
-**Critical Requirement**: The reference and study sets must contain the exact same variants in the same order. Use tools like `plink` or `pgscatalog-intersect` to extract common variants before starting.
-
-### 2. Generating PC Scores
-The primary command projects study samples onto the reference loadings.
+### 2. Running PCA and Projection
+The primary command projects study samples onto the reference space.
 
 ```bash
-# Basic usage with default OADP method
-fraposa --stu_filepref <study_prefix> <ref_prefix>
+# Basic projection using default OADP method
+fraposa --stu_filepref study_prefix reference_prefix
 ```
 
-**Key Options:**
-- `--method`: Choose between `oadp` (default, most accurate), `adp` (accurate but slow), or `sp` (fast but ignores shrinkage bias).
-- `--dim_ref`: Number of PCs to calculate (default is often sufficient, but can be adjusted for specific resolution).
-- `--out`: Specify a custom output prefix.
+**Key Arguments:**
+*   `--method`: Defaults to `oadp` (recommended). Use `sp` for standard projection (faster but less accurate) or `adp`.
+*   `--dim_ref`: Number of reference PCs to calculate (default is often sufficient).
+*   `--out`: Custom prefix for output files (defaults to study prefix).
 
 ### 3. Ancestry Prediction
-To predict population labels, you must provide a reference population file (`.popu`) containing Family ID, Individual ID, and the population label.
+Once PC scores are generated, predict the population membership of study samples. This requires a reference population file (`reference_prefix.popu`).
 
 ```bash
-# Predict study ancestry memberships
-fraposa_pred <stu_prefix>
+# Predict ancestry labels
+fraposa_pred study_prefix
 ```
+*   **Input**: Requires `{study_prefix}.pcs` (from the previous step) and `{reference_prefix}.popu`.
+*   **Output**: Generates `{study_prefix}.popu` containing predicted labels.
 
 ### 4. Visualization
-Generate a PC plot to inspect the projection and clustering.
+Generate a 2D plot of the first two Principal Components to visually inspect ancestry clusters.
 
 ```bash
-# Create a PNG plot of the PC scores
-fraposa_plot <stu_prefix>
+# Generate PC plot
+fraposa_plot study_prefix
 ```
+*   **Output**: A PNG file showing study samples overlaid on the reference clusters.
 
 ## Expert Tips and Best Practices
 
-### Handling Large Study Sets
-If the study dataset is too large for memory, use the `--stu_filt_iid` flag to process samples in batches. You can split your `.fam` file into smaller lists of IDs and run `fraposa` in parallel across these batches.
+### Memory Management for Large Datasets
+FRAPOSA loads study samples into memory. If you encounter memory errors with large cohorts (e.g., UK Biobank):
+1.  **Split the study samples**: Use the `split` command on the `.fam` file to create smaller batches of IIDs.
+2.  **Filter by IID**: Use the `--stu_filt_iid` flag to process one batch at a time.
+3.  **Parallelize**: Run multiple `fraposa` instances in parallel for different IID batches using the same reference.
 
-```bash
-# Example: Processing a specific batch of IDs
-fraposa <ref_prefix> --stu_filepref <study_prefix> --stu_filt_iid <batch_ids.txt> --out <batch_output>
-```
+### Handling Intermediate Files
+The tool produces `*.dat` files. These are binary caches of the genotype data.
+*   Keep these if you plan to re-run projections with different parameters to save time on data loading.
+*   Delete them if disk space is a concern after the final `.pcs` files are generated.
 
 ### Method Selection
-- **OADP (Default)**: Always prefer OADP for study samples. It corrects for the "shrinkage" effect where study samples appear closer to the PCA origin than they should, which is a common artifact in high-dimensional genetic data.
-- **SP (Standard Projection)**: Only use for very quick looks or when the number of samples is significantly larger than the number of variants.
+*   **OADP (Default)**: Always use this for final analysis. It provides the most robust results by correcting for the shrinkage of PC scores in projected samples.
+*   **SP**: Only use for quick exploratory looks where high precision isn't required.
 
-### Intermediate Files
-The tool produces `.dat` files during execution. These are cached versions of the reference data. If you are running multiple study batches against the same reference, keep these files to significantly reduce computation time for subsequent runs.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fraposa | Performs Principal Component Analysis (PCA) prediction using reference and study samples. |
+| fraposa_plot | Plots the results of FRA-POSA. |
+| fraposa_pred | Predicts the genetic risk score for a study population based on a reference population. |
 
 ## Reference documentation
-- [github_com_PGScatalog_fraposa_pgsc.md](./references/github_com_PGScatalog_fraposa_pgsc.md)
-- [anaconda_org_channels_bioconda_packages_fraposa-pgsc_overview.md](./references/anaconda_org_channels_bioconda_packages_fraposa-pgsc_overview.md)
+- [FRAPOSA_PGSC README](./references/github_com_PGScatalog_fraposa_pgsc_blob_master_README.md)
+- [Tool Overview and Requirements](./references/github_com_PGScatalog_fraposa_pgsc.md)

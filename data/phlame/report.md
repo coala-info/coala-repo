@@ -238,3 +238,6 @@ options:
   -o OUTPUT_COUNTS  Path to output counts file.
 ```
 
+
+## Metadata
+- **Skill**: generated

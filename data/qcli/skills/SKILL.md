@@ -1,6 +1,6 @@
 ---
 name: qcli
-description: LogiQCLI is an intelligent command-line interface that integrates AI capabilities into the terminal for specialized coding, debugging, and file management workflows. Use when user asks to switch operational modes, manage API keys, perform precise file edits, search codebases using regex, or retrieve library documentation.
+description: qcli is a terminal-based agent framework that manages AI model interactions and local file operations. Use when user asks to switch AI models or modes, perform precise file manipulations like applying diffs, manage workspace configurations, or search and document project libraries.
 homepage: https://github.com/xyOz-dev/LogiQCLI
 ---
 
@@ -8,40 +8,60 @@ homepage: https://github.com/xyOz-dev/LogiQCLI
 # qcli
 
 ## Overview
-LogiQCLI is an intelligent, extensible command-line interface designed to integrate AI capabilities directly into the developer terminal. It facilitates specialized workflows through "Modes" (such as Code, Architect, and Debug) and provides a robust set of tools for precise file manipulation, codebase searching, and documentation retrieval. Use this skill to navigate the CLI's command structure and leverage its agent-based file management system.
+LogiQ CLI (qcli) is a terminal-based agent framework that bridges the gap between local development environments and various AI providers. It allows for seamless switching between specialized operational modes and provides a suite of tools for precise file manipulation, history management, and workspace configuration. This skill provides the procedural knowledge required to navigate its command structure and utilize its integrated development tools effectively.
 
-## Core Commands
-- **/addkey**: Initialize your environment by adding API keys for providers (LMStudio, OpenRouter, Requesty).
-- **/mode [list|set]**: Switch operational modes to change the AI's behavior (e.g., switching to 'Debug' for troubleshooting).
-- **/workspace**: View or update the active directory where tools will perform file operations.
-- **/settings interactive**: Access a guided configuration menu for application preferences.
-- **/compress**: Optimize long sessions by keeping only the first and last three messages in the chat history.
-- **/clear**: Reset the display and chat history for a fresh context.
+## Command Reference
 
-## Tool-Specific Best Practices
-When the agent is executing tasks within LogiQCLI, prioritize the following tool patterns:
+### Configuration and Setup
+*   **/addkey**: Initialize or add a new API key. You will be prompted for a nickname to allow for easy switching later.
+*   **/switchkey**: Toggle between different saved API provider keys.
+*   **/settings interactive**: Launch the guided configuration menu to adjust application preferences.
+*   **/workspace**: View or update the active directory where the CLI performs file operations.
 
-### Precise File Editing
-- **apply_diff**: Use this for targeted changes. It requires an exact match of the content to be replaced, making it the safest method for small, specific edits.
-- **write_file**: Use only when creating a new file or completely replacing the contents of an existing one.
-- **append_file**: Ideal for logs or adding new exports to the end of configuration files without reading the whole file first.
+### Model and Mode Management
+*   **/model**: Check the currently active AI model or change it to a different supported version.
+*   **/models**: Open the management interface for the available models list.
+*   **/mode [list | <name>]**: Switch between operational behaviors:
+    *   **Code**: Optimized for writing and refactoring.
+    *   **Architect**: Best for high-level design and project structure.
+    *   **Debug**: Focused on error analysis and troubleshooting.
 
-### Searching and Refactoring
-- **search_files**: Use regex patterns to locate specific logic or variable declarations across the entire workspace.
-- **search_and_replace**: Best for global refactoring (e.g., renaming a variable across a file). It supports regex for complex pattern matching.
+### Session Control
+*   **/clear**: Reset the current chat history and clear the terminal display.
+*   **/compress**: Optimize the context window by keeping only the first message and the three most recent messages.
+*   **/exit** or **quit**: Safely terminate the session.
 
-### Navigation and Inspection
-- **read_file_by_line_count**: When dealing with large source files, use this to preview the header or specific sections to save on token usage.
-- **backup_commands**: Always list or create backups before performing destructive operations like `delete_file` or complex `search_and_replace` tasks.
+## Integrated Tool Usage
 
-### Documentation Retrieval
-- **resolve_library_id**: If a library name is ambiguous, run this first to get the correct ID.
-- **get_library_docs**: Use the resolved ID to fetch the latest API references and code examples directly into the session.
+### File Manipulation
+*   **apply_diff**: Use this for precise, targeted edits. It requires an exact match of the original text to ensure no accidental changes occur in surrounding code.
+*   **search_and_replace**: Best for global refactoring (e.g., renaming a variable across a whole file). Supports regex patterns.
+*   **create_file**: Standard method for adding new files; it includes safety checks to prevent overwriting existing data.
+*   **append_file**: Adds content to the end of a file; useful for logging or updating configuration lists.
 
-## Expert Tips
-- **Global Access**: On macOS, ensure the `logiq` alias is created via `sudo ln -sf` to run the tool from any directory.
-- **Self-Contained Execution**: LogiQCLI runs on .NET 9.0; if building from source, use the `build-release.sh` script to generate architecture-specific binaries (osx-arm64 for Apple Silicon).
-- **Token Optimization**: Use `/compress` frequently during long debugging sessions to prevent the context window from becoming saturated with old logs.
+### Project Navigation
+*   **search_files**: Execute regex searches across the entire workspace to find specific mentions or configurations.
+*   **backup_commands**: Manage the local version history. Use this to `list`, `restore`, or `compare` previous versions of files before and after AI edits.
+
+### Documentation and Research
+*   **resolve_library_id**: Find the specific identifier for a software library.
+*   **get_library_docs**: Fetch up-to-date documentation and code examples for a resolved library ID to ensure the AI is working with current API standards.
+
+## Best Practices
+*   **Context Management**: Regularly use `/compress` during long sessions to prevent performance degradation and stay within model token limits.
+*   **Safety First**: Always verify the current workspace with `/workspace` before running tools that modify files.
+*   **Mode Switching**: Don't stay in 'Code' mode for architectural discussions; switching to 'Architect' provides the agent with better high-level heuristics.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| diff | Compare FILES line by line. |
+| file | Determine type of FILEs. |
+| file | Determine type of FILEs. |
+| id | Print user and group information for the specified USER, or (when USER omitted) for the current user. |
 
 ## Reference documentation
-- [LogiQCLI Main Repository](./references/github_com_xyOz-dev_LogiQCLI.md)
+- [LogiQCLI README](./references/github_com_xyOz-dev_LogiQCLI_blob_main_README.md)

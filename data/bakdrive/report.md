@@ -173,7 +173,7 @@ optional arguments:
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## bakdrive
 

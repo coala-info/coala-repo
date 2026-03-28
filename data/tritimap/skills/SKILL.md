@@ -1,6 +1,6 @@
 ---
 name: tritimap
-description: Triti-Map is a bioinformatics pipeline for gene mapping, causal variant identification, and novel gene discovery in Triticeae genomes. Use when user asks to 'map genes', 'identify causal variants', 'discover novel genes', or 'perform bulk-segregant analysis'.
+description: Triti-Map is a bioinformatics pipeline designed to identify trait-associated genomic regions and candidate genes in large-genome Triticeae species. Use when user asks to identify trait association intervals, detect mutations, or assemble genes absent from a reference genome.
 homepage: https://github.com/fei0810/Triti-Map
 ---
 
@@ -8,45 +8,72 @@ homepage: https://github.com/fei0810/Triti-Map
 # tritimap
 
 ## Overview
-Triti-Map is a specialized bioinformatics pipeline designed to handle the unique challenges of gene mapping in the large and complex genomes of the Triticeae tribe. It automates the transition from raw sequencing data—such as WGS, ChIP-Seq, or RNA-Seq—to the identification of causal variants and novel genes. By leveraging Snakemake, it provides a reproducible workflow for bulk-segregant analysis (BSA) and the discovery of functional elements that may be absent from standard reference genomes.
+Triti-Map is a specialized bioinformatics pipeline built on Snakemake designed to handle the complexities of large-genome Triticeae species. It automates the transition from raw sequence data to candidate gene identification by integrating two primary workflows: an Interval Mapping Module for identifying trait-associated genomic regions and mutations, and an Assembly Module for discovering functional elements or genes absent from the reference genome.
 
-## Core CLI Usage
+## Installation and Setup
+The tool is primarily distributed via Bioconda. Ensure a UNIX environment is available with Conda installed.
 
-### Initialization
-Before running the pipeline, initialize the working directory to generate the necessary metadata templates.
-- `tritimap init`: Generates configuration templates in the current directory.
-- `tritimap init -d /path/to/work`: Generates templates in a specific target directory.
+```bash
+# Environment creation and installation
+conda create -c conda-forge -c bioconda -n tritimap tritimap
+conda activate tritimap
 
-### Execution
-The pipeline is executed using the `run` command with a specified number of threads and a target module.
-- `tritimap run -j 30 all`: Executes both the Interval Mapping and Assembly modules.
-- `tritimap run -j 30 only_mapping`: Identifies trait association intervals and mutations only.
-- `tritimap run -j 30 only_assembly`: Identifies trait-associated new genes only.
+# Verification
+tritimap --help
+```
 
-## Workflow Best Practices
+## Core Workflow
+The pipeline follows a standard three-step process: initialization, configuration, and execution.
 
-### 1. Pre-processing Requirements
-Triti-Map requires specific indices to be built manually before execution. Ensure the following are prepared:
-- **GATK/Samtools**: Create a sequence dictionary and `.fai` index for your reference genome.
-- **DNA-Seq**: Build indices using `bwa-mem2`.
-- **RNA-Seq**: Build indices using `STAR` (ensure `--sjdbGTFfile` and memory limits are correctly set for large wheat genomes).
+### 1. Project Initialization
+Generate the required configuration templates in your working directory.
+```bash
+# Initialize in current directory
+tritimap init
 
-### 2. Metadata Configuration
-After running `init`, you must populate the generated CSV files:
-- **sample.csv**: Define your sample names and sequencing file paths.
-- **region.csv**: Specify chromosome regions to filter raw results (essential when running the Assembly Module independently).
+# Initialize in a specific directory
+tritimap init -d /path/to/work_dir
+```
+This command creates three essential files: `config.yaml`, `sample.csv`, and `region.csv`.
 
-### 3. Execution Management
-- **Long-running Processes**: Triticeae gene mapping can take 24–48 hours. Always execute the pipeline within a terminal multiplexer like `GNU Screen` or `tmux` to prevent session disconnection.
-- **Resource Allocation**: Use the `-j` flag to match the available CPU cores on your high-performance computing (HPC) node.
+### 2. Prerequisite Indexing
+Before running the pipeline, reference genomes must be indexed using standard bioinformatics tools. Triti-Map expects these indices to be prepared:
+- **GATK/Samtools**: `gatk CreateSequenceDictionary` and `samtools faidx`.
+- **DNA-Seq**: `bwa-mem2 index`.
+- **RNA-Seq**: `STAR --runMode genomeGenerate`.
 
-### 4. Result Interpretation
-The pipeline outputs results into a structured `results/` directory:
-- `03_mappingout`: Primary alignment and mapping statistics.
-- `05_vcfout`: Variant calling results for mutation identification.
-- `06_regionout`: Filtered genomic regions of interest.
-- `07_assembleout`: De novo assembly results for novel gene discovery.
+### 3. Execution Patterns
+Triti-Map supports modular execution depending on the research goal. Use the `-j` flag to specify the number of CPU cores.
+
+```bash
+# Run the full pipeline (Mapping + Assembly)
+tritimap run -j 30 all
+
+# Identify trait association intervals and mutations only
+tritimap run -j 30 only_mapping
+
+# Identify new genes/sequences only
+tritimap run -j 30 only_assembly
+```
+
+## Expert Tips and Best Practices
+- **Long-Running Processes**: Triticeae genomes are massive; a full run can take 1–2 days. Always execute the pipeline within a terminal multiplexer like `screen` or `tmux` to prevent session disconnection.
+- **Memory Management**: For STAR index generation on wheat genomes, ensure the system has at least 100GB+ of RAM available.
+- **Region Filtering**: When running the Assembly Module alone, ensure `region.csv` is accurately populated with target chromosome coordinates to focus the assembly and reduce computational overhead.
+- **Result Inspection**: Outputs are organized numerically in the `results/` directory. Check `05_vcfout` for variant calls and `06_regionout` for the final association intervals.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| init | Generate snakemake configuration file and other needed file. The command will generate three configuration files(config.yaml, sample.csv and region.csv) in the running directory. |
+| run | Triti-Map main command. The pipeline supports three execute modules: all, only_mapping and only_assembly. First, you need to fill in the configuration file correctly. |
 
 ## Reference documentation
 - [Triti-Map Main Repository](./references/github_com_fei0810_Triti-Map.md)
-- [Triti-Map Wiki Home](./references/github_com_fei0810_Triti-Map_wiki.md)
+- [Running Triti-Map](./references/github_com_fei0810_Triti-Map_wiki_running_tritimap.md)
+- [Preparing Configuration Files](./references/github_com_fei0810_Triti-Map_wiki_preparing_config.md)
+- [Genome Preparation](./references/github_com_fei0810_Triti-Map_wiki_preparing_genome.md)
+- [Exploring Results](./references/github_com_fei0810_Triti-Map_wiki_results_tritimap.md)

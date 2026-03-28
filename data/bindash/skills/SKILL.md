@@ -1,6 +1,6 @@
 ---
 name: bindash
-description: BinDash estimates genomic distances and Average Nucleotide Identity between large datasets using a densified MinHash scheme. Use when user asks to sketch genomic sequences, calculate Jaccard Index, or perform fast all-vs-all distance estimations between genomes.
+description: BinDash is a high-performance utility that rapidly estimates genomic distances and Average Nucleotide Identity (ANI) using a specialized MinHash scheme. Use when user asks to sketch genomic sequences, estimate distances between genomes, or calculate Jaccard indices and ANI values.
 homepage: https://github.com/zhaoxiaofei/bindash
 ---
 
@@ -9,60 +9,63 @@ homepage: https://github.com/zhaoxiaofei/bindash
 
 ## Overview
 
-BinDash is a high-performance command-line utility designed for the comparison of massive genomic datasets, including pangenomes and metagenomes. It utilizes a bin-wise densified MinHash scheme to provide extremely fast and memory-efficient distance estimations. By converting raw sequence data into compact "sketches," BinDash allows users to estimate the Jaccard Index and Average Nucleotide Identity (ANI) between genomes without the computational overhead of traditional alignment methods.
+BinDash (Binwise Densified MinHash) is a high-performance command-line utility designed for the rapid estimation of genomic distances. It utilizes a specialized MinHash scheme (b-bit one-permutation rolling MinHash with densification) to reduce massive genomic datasets into compact "sketches." These sketches allow for near-instantaneous comparison of sequences to calculate Jaccard indices, which are then converted into ANI values. It is significantly more memory-efficient and faster than traditional alignment-based methods, making it suitable for large-scale environmental genomics and pangenome analysis on typical personal computers.
 
-## Core Workflow
-
-The standard BinDash workflow consists of two primary steps: sketching the input sequences and then calculating the distances between those sketches.
+## Core Workflows
 
 ### 1. Sketching Sequences
-Create a compressed representation of your genomic data. BinDash supports FASTA and FASTQ formats (including gzipped files).
+Before comparing genomes, you must convert the raw sequence data into a sketch file. BinDash supports FASTA and FASTQ formats, including gzipped files.
 
-**Single file sketching:**
 ```bash
-bindash sketch --outfname=genome.sketch input.fasta
+# Sketch a single genome
+bindash sketch --outfname=genome_A.sketch input_A.fasta
+
+# Sketch a gzipped metagenome
+bindash sketch --outfname=sample_B.sketch sample_B.fastq.gz
 ```
 
-**Batch sketching (using a list file):**
-Create a text file (e.g., `genomes.txt`) containing the path to one genome per line.
+### 2. Estimating Distances
+Once sketches are created, use the `dist` command to compare them. The output typically includes the Jaccard index and the estimated ANI.
+
 ```bash
-bindash sketch --listfname=genomes.txt --outfname=all_genomes.sketch
+# Compare two sketch files
+bindash dist genome_A.sketch sample_B.sketch
 ```
 
-### 2. Distance Estimation
-Compare sketches to generate distance metrics. The output includes the query name, target name, mutation distance, p-value, and Jaccard Index.
+### 3. Model Selection
+BinDash allows you to choose the underlying statistical model used to convert the Jaccard index into ANI.
 
-**All-vs-all comparison:**
+*   **Poisson Model**: Generally used for most mutation rate estimations.
+*   **Binomial Model**: An alternative statistical approach for specific genomic contexts.
+
 ```bash
-bindash dist --outfname=results.txt all_genomes.sketch
+# Specify the model during distance calculation
+bindash dist --model=poisson genome_A.sketch genome_B.sketch
+bindash dist --model=binomial genome_A.sketch genome_B.sketch
 ```
 
-**Query against a database:**
-```bash
-bindash dist --outfname=query_results.txt query.sketch database.sketch
-```
+## Expert Tips and Best Practices
 
-## Expert Parameters and Best Practices
+*   **Input Flexibility**: You do not need to decompress `.gz` files before sketching; BinDash handles zlib compression natively, saving disk space and I/O time.
+*   **Scaling to Terabytes**: For massive datasets, sketch all genomes individually first. The resulting `.sketch` files are orders of magnitude smaller than the raw data, making the subsequent `dist` operations extremely fast.
+*   **ANI Equations**:
+    *   Poisson: $ANI = 1 + \frac{1}{k} \log \frac{2J}{1+J}$
+    *   Binomial: $ANI = (\frac{2J}{1+J})^{\frac{1}{k}}$
+    *   Where $J$ is the Jaccard index and $k$ is the k-mer size.
+*   **Hardware Optimization**: BinDash is optimized for C++11 and utilizes OpenMP for parallel processing. Ensure your environment supports multi-threading to take full advantage of its speed.
 
-### Accuracy Tuning
-*   **Sketch Size:** For high-accuracy comparisons (ANI > 99.5%), ensure the `--sketchsize64` parameter is set to at least **188**. This results in an actual sketch size of approximately 12,000, which is necessary to resolve very fine differences between closely related strains.
-*   **K-mer Size:** While default k-mer sizes are often sufficient, remember that larger genomes generally require larger k-mer sizes to maintain specificity.
 
-### Statistical Models
-BinDash allows you to choose the underlying probabilistic model for ANI estimation via the `--model` option:
-*   **Poisson:** Use for general distance estimation.
-*   **Binomial:** Use when the binomial assumption better fits your specific genomic architecture or comparison scale.
 
-### Densification Strategies
-If you need to tune the MinHash performance or behavior, use the `--dens` flag:
-*   `--dens=1`: Optimal densification (Shrivastava 2017).
-*   `--dens=2`: Faster densification (Mai et al. 2020), offering O(k*log(k)) complexity.
-*   `--dens=3`: Re-randomized densification (Li et al. 2019).
+## Subcommands
 
-### Performance Optimization
-*   **Parallelization:** BinDash is designed to utilize available CPU instructions (like AVX2 or AVX512) automatically for POPCOUNT operations.
-*   **Memory:** Because it operates on sketches, you can compare terabytes of data on a standard laptop once the initial sketching phase is complete.
+| Command | Description |
+|---------|-------------|
+| bindash | B-bit One-Permutation Rolling MinHash with Optimal/Faster Densification for Genome Search and Comparisons. Or Binwise Densified MinHash. |
+| bindash | B-bit One-Permutation Rolling MinHash with Optimal/Faster Densification for Genome Search and Comparisons. Or Binwise Densified MinHash. |
+| bindash | B-bit One-Permutation Rolling MinHash with Optimal/Faster Densification for Genome Search and Comparisons. Or Binwise Densified MinHash. |
+| bindash | B-bit One-Permutation Rolling MinHash with Optimal/Faster Densification for Genome Search and Comparisons. Or Binwise Densified MinHash. |
+| bindash | B-bit One-Permutation Rolling MinHash with Optimal/Faster Densification for Genome Search and Comparisons. Or Binwise Densified MinHash. |
 
 ## Reference documentation
-- [BinDash GitHub Repository](./references/github_com_zhaoxiaofei_bindash.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_bindash_overview.md)
+- [BinDash README](./references/github_com_zhaoxiaofei_bindash_blob_master_README.md)
+- [Installation and Build Guide](./references/github_com_zhaoxiaofei_bindash.md)

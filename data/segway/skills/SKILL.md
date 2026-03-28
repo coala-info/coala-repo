@@ -1,6 +1,6 @@
 ---
 name: segway
-description: Segway performs unsupervised segmentation and annotation of multi-track functional genomics data using Dynamic Bayesian Networks at 1-bp resolution. Use when user asks to initialize models from Genomedata, train parameters on epigenomic tracks, or identify genomic states to generate segmentation BED files.
+description: Segway is a genomic segmentation tool that uses Dynamic Bayesian Networks to transform multiple tracks of functional genomics data into discrete annotations. Use when user asks to train a model on chromatin data, identify genomic segments like enhancers or promoters, or calculate posterior probabilities for label assignments.
 homepage: http://segway.hoffmanlab.org/
 ---
 
@@ -9,45 +9,72 @@ homepage: http://segway.hoffmanlab.org/
 
 ## Overview
 
-Segway is a specialized tool for the unsupervised segmentation and annotation of multi-track functional genomics data. Unlike many other segmenters, it operates at 1-bp resolution and utilizes Dynamic Bayesian Networks (DBNs) to handle heterogeneous patterns of missing data across different experiments. This skill provides the necessary command-line patterns and procedural knowledge to initialize, train, and identify genomic states using the Segway workflow.
+Segway is a genomic segmentation tool that utilizes Dynamic Bayesian Networks (DBNs) to transform multiple tracks of continuous functional genomics data into discrete, interpretable annotations. Unlike many other methods, Segway can operate at 1-bp resolution and handles heterogeneous patterns of missing data effectively. It is primarily used to identify recurring patterns in chromatin structure—such as enhancers, promoters, and repressed regions—across the genome.
 
-## Core Workflow and CLI Patterns
+## Core Workflow
 
-The Segway workflow typically follows a three-stage process: initialization, training, and identification (segmentation).
+The Segway workflow typically follows a three-step process: data preparation (via Genomedata), model training, and segment identification.
 
-### 1. Initialization
-Before training, you must generate the model files and world files based on your input data.
-
-```bash
-segway init genomedata-dir/ output-dir/
-```
-*   **Tip**: Ensure your input data is in `Genomedata` format. If you have BigWig or BED files, they must be converted using the `genomedata-load` tool first.
-
-### 2. Training
-Training optimizes the DBN parameters to fit your specific epigenomic tracks.
+### 1. Training the Model
+Training discovers patterns in your data. Because DBN training can be sensitive to initial conditions, it is standard practice to run multiple "instances" with different random seeds.
 
 ```bash
-segway train genomedata-dir/ output-dir/
+# Basic training with 10 labels and 10 random starts
+segway train --num-labels=10 --num-instances=10 <input.genomedata> <traindir>
 ```
-*   **Minibatch Training**: For large genomes or many tracks, use minibatch training (available in version 2.0+) to significantly reduce memory overhead and time.
-*   **Layer Control**: You can specify the number of labels (states) to discover using the `--num-labels` flag (default is often 25, but 10-15 is common for simpler interpretations).
 
-### 3. Identification (Segmentation)
-Once the model is trained, use it to generate the actual BED files representing the genomic segments.
+### 2. Identifying Segments
+Once trained, use the best parameters to annotate the genome.
 
 ```bash
-segway identify genomedata-dir/ training-dir/ identification-dir/
+# Generate the segmentation (Viterbi decoding)
+segway identify <input.genomedata> <traindir> <identifydir>
 ```
-*   **Output**: The primary output is a `segway.bed.gz` file, which contains the coordinates and assigned labels for the entire genome.
 
-## Expert Tips and Best Practices
+### 3. Posterior Probabilities (Optional)
+To see the confidence or "soft" assignment of labels at each position:
 
-*   **Resolution**: Segway's strength is 1-bp resolution. Avoid downsampling your data unless computational resources are extremely limited, as Segway is designed to handle the maximum resolution of ChIP-seq data.
-*   **Missing Data**: Segway natively handles missing data tracks. You do not need to impute missing values before running the tool; the DBN model accounts for these gaps during inference.
-*   **Cluster Integration**: Segway is designed to run on high-performance computing (HPC) clusters. It supports Sun Grid Engine (SGE), Oracle Grid Engine, and Platform LSF. Use the `--cluster-opt` flags to pass specific resource requirements to your scheduler.
-*   **Mnemonic Assignment**: After identification, the labels (e.g., 0, 1, 2) are arbitrary. You must perform functional enrichment analysis (e.g., looking for H3K4me3 at promoters) to assign biological mnemonics like "Promoter" or "Enhancer" to the numeric labels.
+```bash
+segway posterior <input.genomedata> <traindir> <posteriordir>
+```
+
+## Command-Line Best Practices
+
+### Data Selection and Filtering
+*   **Track Subset**: Use `--track` multiple times to limit the analysis to specific signals.
+    `segway train --track H3K4me3 --track H3K27ac ...`
+*   **Region Filtering**: Use `--include-coords` or `--exclude-coords` with BED files to focus training on specific regions (e.g., ENCODE pilot regions) or mask out repetitive elements/blacklisted regions.
+*   **Minibatch Training**: For large genomes, use `--minibatch-fraction=0.01` to speed up training iterations by using a random subset of the genome for each round.
+
+### Performance and Resolution
+*   **Resolution**: Use `--resolution=<bp>` (e.g., 10 or 100) to downsample data for faster processing. **Warning**: You must use the same resolution for both `train` and `identify`.
+*   **Local Execution**: Force local execution on a single machine by setting the environment variable:
+    `SEGWAY_CLUSTER=local segway train ...`
+*   **Parallelism**: Control local concurrency with `SEGWAY_NUM_LOCAL_JOBS`.
+
+### Model Customization
+*   **Label Count**: If the resulting segmentation is too granular, decrease `--num-labels`. If distinct biological states are merged, increase it.
+*   **Mixture Components**: Increase Gaussian mixture components for complex signal distributions:
+    `--mixture-components=3`
+*   **Validation**: Use `--validation-fraction=0.05` to hold out data and select the parameter set that maximizes likelihood on unseen data.
+
+## Interpreting Results
+
+*   **segway.bed.gz**: The standard BED file where each line is a segment. Best for computational analysis.
+*   **segway.layered.bed.gz**: A "layered" BED file designed for genome browsers (UCSC/Ensembl). It uses thick/thin lines to represent segment presence, making it easier to visualize multiple labels simultaneously.
+*   **Mnemonics**: Segway labels are initially numeric (0, 1, 2...). You must typically correlate these with known biological markers (e.g., Label 5 is high in H3K4me3, suggesting it represents a TSS).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotates genomic data using a trained model. |
+| segway posterior | Compute posterior probabilities for Segway segmentation. |
+| train | Train a Segway model. |
 
 ## Reference documentation
-
-- [Segway Home and Documentation Overview](./references/segway_hoffmanlab_org_index.md)
-- [Bioconda Segway Package Details](./references/anaconda_org_channels_bioconda_packages_segway_overview.md)
+- [Quickstart Guide](./references/segway_hoffmanlab_org_doc_3.0.4_quick.html.md)
+- [Segway 3.0.4 Overview](./references/segway_hoffmanlab_org_doc_3.0.4_segway.html.md)
+- [Mnemonic Assignments Example](./references/segway_hoffmanlab_org_2011_mnemonics.20110125.tab.md)

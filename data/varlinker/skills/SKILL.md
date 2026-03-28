@@ -1,6 +1,6 @@
 ---
 name: varlinker
-description: varlinker annotates point variants in human genomics by mapping VCF coordinates to biological features. Use when user asks to 'perform full variant annotation', 'annotate specific reference alleles', or 'annotate specific alternate alleles'.
+description: "varlinker maps genomic coordinates from VCF files to biological features including genes, exons, transcripts, and clinical evidence. Use when user asks to link variants to genomic features, annotate VCFs with ClinVar records, perform allele-specific extraction, or map genes to phenotypes and OMIM evidence."
 homepage: https://github.com/IBCHgenomic/varlinker
 ---
 
@@ -8,44 +8,75 @@ homepage: https://github.com/IBCHgenomic/varlinker
 # varlinker
 
 ## Overview
-`varlinker` is a high-performance, Rust-based tool designed for exact point variant annotation in human genomics. It excels at mapping VCF coordinates to biological features (genes, exons, and transcripts) using parallel processing. This skill provides the necessary command patterns to perform comprehensive annotations or filter for specific alleles within large datasets.
 
-## Command Usage
+varlinker is a high-performance, parallel-threaded tool written in Rust designed for human genomics research. It serves as a specialized annotator that maps genomic coordinates to biological features. Its primary function is to "link" variants found in VCF files to specific genes, exons, and transcripts, while also providing subcommands for clinical and phenotypic evidence mapping. It is particularly useful for researchers needing to process large datasets quickly or filter annotations based on specific reference or alternate alleles.
 
-### Full Variant Annotation
-To perform a complete annotation of a VCF file, use the `variant-linker` command. This process is multi-threaded and generates three distinct output files categorized by genomic feature.
+## Command Line Usage and Patterns
 
+### Core Variant Annotation
+To perform a comprehensive annotation of all variants within a VCF file:
 ```bash
-varlinker variant-linker <INPUT_VCF>
+varlinker variant-linker ./path/to/sample.vcf
+```
+This command generates three distinct output files in the working directory:
+- `annotationfile-gene.txt`: Links variants to Ensembl Gene IDs and symbols.
+- `annotationfile-exon.txt`: Provides exon-level mapping.
+- `annotationfile-transcript.txt`: Provides transcript-level mapping.
+
+### Allele-Specific Extraction
+Use these commands when you only care about specific nucleotide changes:
+
+**Annotate by Reference Allele:**
+```bash
+varlinker variant-trefanno ./sample.vcf [ALLELE]
+# Example: varlinker variant-trefanno ./sample.vcf A
 ```
 
-**Outputs generated:**
-- `annotationfile-gene.txt`: Maps variants to Ensembl Gene IDs and symbols.
-- `annotationfile-exon.txt`: Maps variants to specific exon boundaries.
-- `annotationfile-transcript.txt`: Maps variants to transcript-level data.
-
-### Specific Allele Extraction
-If you only need to annotate or extract variants matching a specific nucleotide, use the targeted annotation commands.
-
-**Annotate only specific Reference (REF) alleles:**
+**Annotate by Alternate Allele:**
 ```bash
-varlinker variant-trefanno <INPUT_VCF> <NUCLEOTIDE>
-# Example: Extract all 'A' reference variants
-varlinker variant-trefanno sample.vcf A
+varlinker variant-taltanno ./sample.vcf [ALLELE]
+# Example: varlinker variant-taltanno ./sample.vcf T
 ```
 
-**Annotate only specific Alternate (ALT) alleles:**
+### Clinical and Phenotypic Linking
+varlinker supports complex workflows for clinical genomics:
+
+- **ClinVar VCF Annotation**: Link VCF variants directly to ClinVar records.
+  ```bash
+  varlinker vcf-clinvar-annotate --vcffile <VCF> --clinvar <CLINVAR_FILE>
+  ```
+- **Phenotype Linking**: Connect genes to diseases and HPO (Human Phenotype Ontology) terms.
+  ```bash
+  varlinker phenotype-linker --genesdisease <FILE> --genesphenotype <FILE> --phenotypehpoa <FILE> --phenotypesgenes <FILE>
+  ```
+- **OMIM Evidence**: Extract links for specific OMIM evidence numbers.
+  ```bash
+  varlinker omim --omimfile <FILE> --evidencenumber <INT> --hpomapping <FILE> --hpomedgen <FILE>
+  ```
+
+### Database Management
+Before running complex annotations, ensure you have the required reference files. The tool provides a built-in downloader:
 ```bash
-varlinker variant-taltanno <INPUT_VCF> <NUCLEOTIDE>
-# Example: Extract all 'T' alternate variants
-varlinker variant-taltanno sample.vcf T
+varlinker databases --databaseoption [OPTION_INDEX]
 ```
 
-## Best Practices
-- **Input Format**: Ensure your input is a standard VCF file. The tool is optimized for human genomics coordinates.
-- **Parallelism**: The tool utilizes Rust's threading capabilities; ensure the execution environment has sufficient CPU cores for large VCF files to maximize throughput.
-- **Output Management**: Since `variant-linker` produces three separate files in the working directory, ensure you have write permissions and sufficient disk space before starting a large run.
+## Expert Tips
+
+- **Parallel Execution**: varlinker uses the Rayon library for data parallelism. When running on high-core count machines, it will automatically scale to utilize available threads for VCF parsing and annotation.
+- **Output Format**: The output files use a tab-delimited format compatible with standard Unix tools like `awk`, `grep`, and `sed` for downstream filtering.
+- **Memory Efficiency**: Because it is written in Rust, the tool handles large VCF files with a lower memory footprint compared to Python-based alternatives, making it suitable for memory-constrained environments.
+- **Windows Support**: While primarily used on Linux/macOS, it can be compiled for Windows using `cargo xwin` if the MSVC target is added to the Rust environment.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| varlinker variant-linker | Links variants across different datasets. |
+| varlinker_variant-taltanno | extract the annotation of the specific alt allele |
+| varlinker_variant-trefanno | extract the annotation of the specific ref allele |
 
 ## Reference documentation
-- [varlinker GitHub Repository](./references/github_com_sablokrep_varlinker.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_varlinker_overview.md)
+- [varlinker README](./references/github_com_sablokrep_varlinker_blob_main_README.md)
+- [varlinker Main Source](./references/github_com_sablokrep_varlinker_blob_main_main.rs.md)

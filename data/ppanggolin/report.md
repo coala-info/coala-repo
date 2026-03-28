@@ -1729,3 +1729,6 @@ Config arguments:
   -f, --force           Overwrite the given output file if it exists.
 ```
 
+
+## Metadata
+- **Skill**: generated

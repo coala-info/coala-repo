@@ -1,1 +1,357 @@
-GitHub - ncbi/SRPRISM Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners View all resources Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ncbi / SRPRISM Public Notifications You must be signed in to change notification settings Fork 6 Star 5 License View license 5 stars 6 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights ncbi/SRPRISM master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 79 Commits 79 Commits srprism srprism windows windows .gitignore .gitignore LICENSE LICENSE README.md README.md View all files Repository files navigation README License SRPRISM - Single Read Paired Read Indel Substitution Minimizer Version 3.3.3-pre For questions regarding SRPRISM, please contact Aleksandr Morgulis ( morgulis@ncbi.nlm.nih.gov ) or Richa Agarwala ( agarwala@ncbi.nlm.nih.gov ) Linux Compilation Download current source code for SRPRISM $ git clone https://github.com/ncbi/SRPRISM Do following: $ cd SRPRISM/srprism To enable support for NGS library, needed to access NCBI SRA archive directly, please uncomment the following line in the beginning of the top level Makefile # export USE_SRA = 1 This will trigger automatic download and compilation of the NGS library. In order to use pre-installed NGS and VDB libraries, uncomment the following lines in the top level Makefile and change them to point to the relevant paths # export NGS_PATH = # export VDB_PATH = To build SRPRISM application, do $ make After successful build, srprism executable can be found in app/ subdirectory. Windows Compilation Windows 64-bit version of SRPRISM was tested with MS Visual Studio 2022 and MS Visual Studio 2022 Community Edition. In order to compile the following is required: - MS Visual Studio 2022 (or Community Edition of it); - if cloning from github: git with git bash (available here: https://git-scm.com/download/win) To compile: - select a work directory (in the following $SRP_HOME is used as a full pathname of that directory); - to clone the latest version: start git bash and issue the following commands: cd $SRP_HOME git clone https://github.com/ncbi/SRPRISM - to use the latest stable release: download the latest .zip archive from github.com/ncbi/SRPRISM/releases and unpack it in $SRP_HOME - start MS Visual Studio 2022 and open solution: $SRP_HOME\SRPRISM\windows\SRPRISM\SRPRISM.sln - select Release/x64 configuration - in the "Solution Explorer" pane, right click on the solution and select "build solution" in the context menu - the final executable SRPRISM.exe will be in $SRP_HOME\SRPRISM\windows\SRPRISM\x64\Release\ Usage Please see srprism/README file for usage infromation and examples. About No description, website, or topics provided. Resources Readme License View license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 5 stars Watchers 5 watching Forks 6 forks Report repository Releases 7 SRPRISM version 3.3.2 Latest Mar 22, 2023 + 6 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Languages C++ 99.0% Other 1.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fncbi%2FSRPRISM)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fncbi%2FSRPRISM)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ncbi%2FSRPRISM)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ncbi](/ncbi)
+/
+**[SRPRISM](/ncbi/SRPRISM)**
+Public
+
+* [Notifications](/login?return_to=%2Fncbi%2FSRPRISM) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2Fncbi%2FSRPRISM)
+* [Star
+   5](/login?return_to=%2Fncbi%2FSRPRISM)
+
+* [Code](/ncbi/SRPRISM)
+* [Issues
+  0](/ncbi/SRPRISM/issues)
+* [Pull requests
+  0](/ncbi/SRPRISM/pulls)
+* [Actions](/ncbi/SRPRISM/actions)
+* [Projects](/ncbi/SRPRISM/projects)
+* [Security
+  0](/ncbi/SRPRISM/security)
+* [Insights](/ncbi/SRPRISM/pulse)
+
+Additional navigation options
+
+* [Code](/ncbi/SRPRISM)
+* [Issues](/ncbi/SRPRISM/issues)
+* [Pull requests](/ncbi/SRPRISM/pulls)
+* [Actions](/ncbi/SRPRISM/actions)
+* [Projects](/ncbi/SRPRISM/projects)
+* [Security](/ncbi/SRPRISM/security)
+* [Insights](/ncbi/SRPRISM/pulse)
+
+# ncbi/SRPRISM
+
+master
+
+[Branches](/ncbi/SRPRISM/branches)[Tags](/ncbi/SRPRISM/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[79 Commits](/ncbi/SRPRISM/commits/master/)   79 Commits | | |
+| [srprism](/ncbi/SRPRISM/tree/master/srprism "srprism") | | [srprism](/ncbi/SRPRISM/tree/master/srprism "srprism") |  |  |
+| [windows](/ncbi/SRPRISM/tree/master/windows "windows") | | [windows](/ncbi/SRPRISM/tree/master/windows "windows") |  |  |
+| [.gitignore](/ncbi/SRPRISM/blob/master/.gitignore ".gitignore") | | [.gitignore](/ncbi/SRPRISM/blob/master/.gitignore ".gitignore") |  |  |
+| [LICENSE](/ncbi/SRPRISM/blob/master/LICENSE "LICENSE") | | [LICENSE](/ncbi/SRPRISM/blob/master/LICENSE "LICENSE") |  |  |
+| [README.md](/ncbi/SRPRISM/blob/master/README.md "README.md") | | [README.md](/ncbi/SRPRISM/blob/master/README.md "README.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# SRPRISM - Single Read Paired Read Indel Substitution Minimizer
+
+Version 3.3.3-pre
+
+For questions regarding SRPRISM, please contact
+Aleksandr Morgulis (morgulis@ncbi.nlm.nih.gov)
+or
+Richa Agarwala (agarwala@ncbi.nlm.nih.gov)
+
+## Linux Compilation
+
+```
+Download current source code for SRPRISM
+$ git clone https://github.com/ncbi/SRPRISM
+
+Do following:
+$ cd SRPRISM/srprism
+
+To enable support for NGS library, needed to access NCBI SRA archive directly,
+please uncomment the following line in the beginning of the top level Makefile
+# export USE_SRA = 1
+This will trigger automatic download and compilation of the NGS library.
+In order to use pre-installed NGS and VDB libraries, uncomment the following
+lines in the top level Makefile and change them to point to the relevant paths
+# export NGS_PATH =
+# export VDB_PATH =
+
+To build SRPRISM application, do
+$ make
+
+After successful build, srprism executable can be found in app/ subdirectory.
+```
+
+## Windows Compilation
+
+```
+Windows 64-bit version of SRPRISM was tested with MS Visual Studio 2022 and
+MS Visual Studio 2022 Community Edition. In order to compile the following
+is required:
+
+    - MS Visual Studio 2022 (or Community Edition of it);
+    - if cloning from github: git with git bash (available here: https://git-scm.com/download/win)
+
+To compile:
+
+    - select a work directory (in the following $SRP_HOME is used as a
+        full pathname of that directory);
+    - to clone the latest version: start git bash and issue the following commands:
+        cd $SRP_HOME
+        git clone https://github.com/ncbi/SRPRISM
+    - to use the latest stable release: download the latest .zip archive from
+      github.com/ncbi/SRPRISM/releases and unpack it in $SRP_HOME
+    - start MS Visual Studio 2022 and open solution: $SRP_HOME\SRPRISM\windows\SRPRISM\SRPRISM.sln
+    - select Release/x64 configuration
+    - in the "Solution Explorer" pane, right click on the solution and select "build solution" in
+      the context menu
+    - the final executable SRPRISM.exe will be in $SRP_HOME\SRPRISM\windows\SRPRISM\x64\Release\
+```
+
+## Usage
+
+```
+Please see srprism/README file for usage infromation and examples.
+```
+
+## About
+
+No description, website, or topics provided.
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[View license](#License-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/ncbi/SRPRISM/activity)
+
+[Custom properties](/ncbi/SRPRISM/custom-properties)
+
+### Stars
+
+[**5**
+stars](/ncbi/SRPRISM/stargazers)
+
+### Watchers
+
+[**5**
+watching](/ncbi/SRPRISM/watchers)
+
+### Forks
+
+[**6**
+forks](/ncbi/SRPRISM/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fncbi%2FSRPRISM&report=ncbi+%28user%29)
+
+## [Releases 7](/ncbi/SRPRISM/releases)
+
+[SRPRISM version 3.3.2
+
+Latest
+
+Mar 22, 2023](/ncbi/SRPRISM/releases/tag/v3.3.2)
+
+[+ 6 releases](/ncbi/SRPRISM/releases)
+
+## [Packages 0](/orgs/ncbi/packages?repo_name=SRPRISM)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/ncbi/SRPRISM/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [C++
+  99.0%](/ncbi/SRPRISM/search?l=c%2B%2B)
+* Other
+  1.0%
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

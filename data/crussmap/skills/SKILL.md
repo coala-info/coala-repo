@@ -1,6 +1,6 @@
 ---
 name: crussmap
-description: Crussmap lifts over genomic coordinates between reference assemblies using chain files. Use when user asks to liftover genomic coordinates, convert BED files between reference assemblies, or inspect the contents of chain files.
+description: "crussmap performs genomic coordinate liftover between different assembly versions using UCSC chain files. Use when user asks to lift over genomic coordinates, convert BED files between assemblies, or inspect chain file contents."
 homepage: https://github.com/wjwei-handsome/crussmap
 ---
 
@@ -8,45 +8,56 @@ homepage: https://github.com/wjwei-handsome/crussmap
 # crussmap
 
 ## Overview
-crussmap is a performance-optimized bioinformatics tool written in Rust, designed to "liftover" genomic coordinates from one reference assembly to another (e.g., hg19 to hg38). It reconstructs the logic of the original CrossMap tool to provide significantly faster processing speeds by utilizing efficient chain file parsing and interval tree lookups. Use this skill to guide the conversion of BED files or to inspect the contents of chain files.
 
-## Installation
-The tool can be installed via Cargo or Conda:
-- **Conda**: `conda install bioconda::crussmap`
-- **Cargo**: `cargo install crussmap`
+`crussmap` is a Rust-based reimplementation of the `CrossMap` tool, optimized for speed and memory efficiency. It allows researchers to "lift over" genomic coordinates between different assembly versions (e.g., hg19 to hg38) using standard UCSC chain files. By utilizing a fast interval tree library and efficient parsers, it provides a significant performance boost over the original Python implementation, making it ideal for processing very large BED files.
 
 ## Command Line Usage
 
-### 1. Converting BED Files
-The primary function of crussmap is converting BED coordinates. It requires a source BED file and a corresponding `.chain` file.
+### Coordinate Conversion (BED)
 
+The primary function of `crussmap` is converting BED files.
+
+**Basic conversion to stdout:**
 ```bash
-# Basic conversion with output to stdout
-crussmap bed --bed input.bed --input assembly.chain
-
-# Conversion with file output and unmapped record tracking
-crussmap bed --bed input.bed --input assembly.chain --output mapped.bed --unmap unmapped.bed
+crussmap bed --bed input.bed --input assembly_map.chain
 ```
 
-**Best Practices:**
-- Always specify an `--unmap` file to capture coordinates that failed to transition between assemblies due to gaps or structural differences.
-- Use the short flags `-b` (for bed) and `-i` (for input chain) for quicker command construction.
-
-### 2. Viewing Chain Files
-Chain files are often binary or complex. crussmap can convert them into human-readable formats to inspect the block pair representations.
-
+**Conversion with file output:**
+Use the `--output` and `--unmap` flags to save results and capture coordinates that could not be mapped to the new assembly.
 ```bash
-# View chain file in TSV format
-crussmap view --input data/test.chain --output out_file.tsv
-
-# View chain file in CSV format
-crussmap view --input data/test.chain --output out_file.csv --csv
+crussmap bed --bed input.bed --input assembly_map.chain --output mapped.bed --unmap failed.bed
 ```
 
-## Performance Tips
-- **Large Datasets**: crussmap is optimized for speed. In benchmarks, it can process tens of thousands of lines in milliseconds. It is preferred over Python-based CrossMap for very large BED files.
-- **Memory**: The tool uses `rust-lapper` for interval trees, which is memory-efficient, but ensure your environment has enough RAM to load the entire chain file into an interval tree structure.
+### Chain File Inspection
+
+Before performing a liftover, you can inspect the contents of a chain file to understand the block pair representations.
+
+**View as TSV (Default):**
+```bash
+crussmap view --input data/test.chain --output chain_view.txt
+```
+
+**View as CSV:**
+```bash
+crussmap view --input data/test.chain --output chain_view.csv --csv
+```
+
+## Expert Tips and Best Practices
+
+- **Performance Benchmarking**: `crussmap` is significantly faster than the Python version. In testing environments, it can process ~10,000 BED records against a ~250,000-line chain file in approximately 250 milliseconds.
+- **Handling Unmapped Regions**: Always provide an `--unmap` file path. Genomic regions that fall into gaps in the target assembly or are deleted in the new version will be written here, which is critical for maintaining data integrity in downstream analysis.
+- **Chain File Source**: Ensure you are using standard UCSC `.chain` files. `crussmap` uses a specialized `nom`-based parser designed specifically for this format.
+- **Installation**: If the binary is not present in the environment, it can be installed via Cargo: `cargo install crussmap`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| crussmap_bed | Converts BED file. Regions mapped to multiple locations to the new assembly will be split |
+| crussmap_view | View chain file in tsv/csv format |
 
 ## Reference documentation
-- [crussmap GitHub Repository](./references/github_com_JianYang-Lab_crussmap.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_crussmap_overview.md)
+- [github_com_JianYang-Lab_crussmap.md](./references/github_com_JianYang-Lab_crussmap.md)
+- [github_com_JianYang-Lab_crussmap_blob_main_README.md](./references/github_com_JianYang-Lab_crussmap_blob_main_README.md)

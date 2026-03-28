@@ -398,3 +398,6 @@ Examples:
     motifscan scan -i regions.bed -m <motif_set> -g hg19 --site --plot -o <path>
 ```
 
+
+## Metadata
+- **Skill**: generated

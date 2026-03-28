@@ -1,6 +1,6 @@
 ---
 name: pgap2
-description: PGAP2 is a high-performance toolkit designed for the rapid construction and analysis of prokaryotic pan-genomes using a fine-grained feature network. Use when user asks to perform quality control on genomic data, construct pan-genome maps, identify orthologous groups, build phylogenetic trees, or conduct population clustering and evolutionary statistics.
+description: PGAP2 is a high-performance toolkit for the rapid construction and analysis of prokaryotic pan-genomes using sequence similarity and gene synteny. Use when user asks to perform pan-genome clustering, generate presence-absence variation matrices, construct single-copy core phylogenetic trees, or conduct population clustering and evolutionary analysis.
 homepage: https://github.com/bucongfan/PGAP2
 ---
 
@@ -8,54 +8,73 @@ homepage: https://github.com/bucongfan/PGAP2
 # pgap2
 
 ## Overview
-PGAP2 (Pan-Genome Analysis Pipeline 2) is a high-performance toolkit designed for the rapid construction and analysis of prokaryotic pan-genomes. It utilizes a Fine-Grained Feature Network to achieve significant speedups over traditional pipelines, capable of processing 1,000 genomes in approximately 20 minutes. The tool is modular, supporting initial quality control, core/pan-genome mapping, and various post-processing tasks such as phylogenetic tree construction, population clustering, and evolutionary statistics.
+
+PGAP2 (Pan-Genome Analysis Pipeline 2) is a high-performance toolkit designed for the rapid construction and analysis of prokaryotic pan-genomes. It utilizes a Fine-Grained Feature Network—combining gene identity (sequence similarity) and gene synteny (positional adjacency)—to accurately identify orthologous groups even in highly variable regions. The tool is optimized for scale, capable of processing 1,000 genomes in approximately 20 minutes. It supports a full workflow from raw sequence data and quality control to phylogenetic tree construction and population clustering.
 
 ## Core Workflows
 
-### 1. Preprocessing and Quality Control
-Before running the main pipeline, use the `prep` module to perform quality checks and visualize input data.
+### 1. Preprocessing (Quality Control)
+Use the `prep` module to validate input data and generate interactive visualizations.
 ```bash
 pgap2 prep -i input_dir/ -o output_dir/
 ```
-*   **Input**: Supports mixed formats (GFF, GBFF, FASTA).
-*   **Output**: Generates an interactive HTML report and vector figures.
-*   **Tip**: This step creates a pickle file that allows for quick restarts of the calculation.
+*   **Inputs**: Supports mixed formats (GFF, GBFF, FASTA) in one directory.
+*   **Output**: Generates an interactive HTML report and vector figures for data inspection.
 
 ### 2. Main Pan-Genome Construction
-The `main` module identifies orthologous groups and constructs the pan-genome map.
+The `main` module performs the core clustering and network association.
 ```bash
 pgap2 main -i input_dir/ -o output_dir/
 ```
-*   **Input Formats**: 
-    *   Prokka-style GFF files.
-    *   GFF + FASTA (separate files).
-    *   GenBank flat files (GBFF).
-    *   Raw FASTA (requires `--annot` flag to trigger internal annotation).
-*   **Key Options**:
-    *   `--retrieve`: Use to retrieve missing gene loci (requires `miniprot` and `seqtk`).
-    *   `--reannot`: Re-annotate genomes using `prodigal`.
-    *   `--debug`: Enable for detailed logging during troubleshooting.
+*   **Mixed Inputs**: Automatically recognizes Prokka-style GFFs, GenBank (GBFF), and FASTA files.
+*   **FASTA-only Input**: If providing only genome FASTA files, you must include the `--annot` flag to trigger structural annotation.
+*   **Refinement Flags**:
+    *   `--retrieve`: Uses `miniprot` and `seqtk` to find missing gene loci and reduce "false" absences in the PAV (Presence-Absence Variation) matrix.
+    *   `--reannot`: Re-annotates all genomes using `prodigal` to ensure consistent gene calling across the dataset.
 
 ### 3. Postprocessing and Downstream Analysis
-The `post` module contains several submodules. The input directory for these submodules should be the **output directory** of the `main` module.
-```bash
-pgap2 post [submodule] -i main_output_dir/ -o post_output_dir/
-```
+The `post` module contains several submodules for specific biological insights. The input directory for these commands should be the output directory from the `main` step.
 
-**Common Submodules:**
-*   `profile`: Statistical analysis of the pan-genome. Can also be run independently using a PAV file: `pgap2 post profile --pav your_pav_file -o output_dir/`.
-*   `singletree`: Constructs a phylogenetic tree based on single-copy core genes.
-*   `baps`: Performs population clustering (requires `fastbaps`).
-*   `tajima`: Conducts Tajima's D test for evolutionary analysis.
+*   **Statistical Profiling**:
+    ```bash
+    pgap2 post profile -i main_output/ -o post_output/
+    # Or run independently using a PAV file
+    pgap2 post profile --pav your_pav_file.csv -o post_output/
+    ```
+*   **Phylogenetic Tree (Single-copy Core)**:
+    ```bash
+    pgap2 post singletree -i main_output/ -o post_output/
+    ```
+*   **Population Clustering (BAPS)**:
+    ```bash
+    pgap2 post baps -i main_output/ -o post_output/
+    ```
+*   **Evolutionary Analysis (Tajima's D)**:
+    ```bash
+    pgap2 post tajima -i main_output/ -o post_output/
+    ```
 
 ## Expert Tips and Best Practices
-*   **Installation**: Use `mamba` for faster dependency resolution: `mamba install -c bioconda pgap2`.
-*   **Mixed Inputs**: You can mix different file formats (e.g., some GBFF and some GFF) in the same input directory; PGAP2 automatically recognizes them by suffix.
-*   **Performance**: For large datasets (>1000 genomes), PGAP2 automatically organizes subdirectories to maintain filesystem performance.
-*   **Visualization**: Ensure `Rscript` is in your PATH and the necessary R libraries (`ggpubr`, `dplyr`, `patchwork`) are installed to generate the interactive HTML reports.
-*   **Memory Management**: If running on low-resource environments, consider using `MMseqs2` as the clustering method over `CD-HIT` for better memory efficiency.
+
+*   **Input Consistency**: While PGAP2 handles mixed formats, using `--reannot` is recommended when combining genomes from different sources (e.g., RefSeq vs. in-house assemblies) to avoid annotation bias.
+*   **Handling "Sticky" Nodes**: PGAP2 automatically resolves nodes that are sequence-similar but syntenically distant (e.g., paralogs or transposable elements) using the Conserved Gene Neighbor (CGN) rule.
+*   **Insertion Sequences**: The pipeline performs a specific merging step for sequences with >99% similarity regardless of synteny to prevent highly mobile elements from fragmenting the synteny network.
+*   **Performance Tuning**: For large datasets (>1,000 genomes), ensure `diamond` and `mmseqs2` are installed, as they are significantly faster than `blast+` and `cd-hit` for the initial identity network construction.
+*   **Dependency Management**: Use the Mamba solver for installation to resolve the complex bio-dependency tree (R packages, alignment tools, and phylogeny software) more reliably than standard Conda.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pgap2 main | Main entry point for pgap2. |
+| pgap2 post | Performs post-processing analysis on pangenome data. |
+| pgap2_add | Add new sequences to an existing PGAP2 analysis. |
+| pgap2_prep | Prepares input data for pgap2. |
 
 ## Reference documentation
-- [PGAP2 GitHub Repository](./references/github_com_bucongfan_PGAP2.md)
-- [PGAP2 Wiki](./references/github_com_bucongfan_PGAP2_wiki.md)
-- [Bioconda PGAP2 Overview](./references/anaconda_org_channels_bioconda_packages_pgap2_overview.md)
+- [PGAP2 GitHub README](./references/github_com_bucongfan_PGAP2.md)
+- [PGAP2 Algorithm Details](./references/github_com_bucongfan_PGAP2_wiki_Algorithm.md)
+- [PGAP2 Installation Guide](./references/github_com_bucongfan_PGAP2_wiki_Installation.md)
+- [PGAP2 Quick Start](./references/github_com_bucongfan_PGAP2_wiki_Quick-start.md)

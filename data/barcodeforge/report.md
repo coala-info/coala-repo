@@ -75,3 +75,6 @@ Usage: barcodeforge extract-auspice-data [OPTIONS] AUSPICE_JSON_PATH
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

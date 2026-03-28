@@ -301,3 +301,6 @@ Options:
           Print version
 ```
 
+
+## Metadata
+- **Skill**: generated

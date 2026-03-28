@@ -118,3 +118,6 @@ Commands:
      version        detailed version information
 ```
 
+
+## Metadata
+- **Skill**: generated

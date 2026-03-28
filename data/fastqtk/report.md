@@ -451,3 +451,6 @@ It reverse complements all the reads from a FASTQ file.
 For redirecting to STDOUT/STDIN use - instead of file name.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,1 +1,387 @@
-Commits · BU-ISCIII/relecov-tools · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} BU-ISCIII / relecov-tools Public Notifications You must be signed in to change notification settings Fork 28 Star 7 Code Issues 27 Pull requests 4 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Commits Branch selector main User selector All users All time Commit History Commits on Dec 15, 2025 Merge pull request #843 from BU-ISCIII/develop Show description for ba21efb Aberdur authored ba21efb Copy full SHA for ba21efb Update CHANGELOG Aberdur committed 306ba3a Copy full SHA for 306ba3a Update main.py Aberdur committed 70a2edc Copy full SHA for 70a2edc Update README Aberdur committed 4fdb60b Copy full SHA for 4fdb60b update pyproject Aberdur committed f35adfa Copy full SHA for f35adfa Updated CHANGELOG.md victor5lm committed c2cce89 Copy full SHA for c2cce89 Updated create_summary_tables.py to separate results depending on the pathogen victor5lm committed eae295f Copy full SHA for eae295f Commits on Dec 12, 2025 Fixed typo on update location ESapenaVentura committed 9543f64 Copy full SHA for 9543f64 Update CHANGELOG ESapenaVentura committed e1201d0 Copy full SHA for e1201d0 Now listed python3.10+ in requirements ESapenaVentura committed 1bab39b Copy full SHA for 1bab39b now uses python 3.10.x to support new syntax. ESapenaVentura committed b1cab31 Copy full SHA for b1cab31 Commits on Dec 3, 2025 fixed black in readlabmetadata pytest Daniel-VM committed b65201c Copy full SHA for b65201c fixed dependency for pytest in read lab metadata Daniel-VM committed 90bd023 Copy full SHA for 90bd023 added pytest to readlabmetadata #832 Daniel-VM committed 5792ca6 Copy full SHA for 5792ca6 added git workflow test: read lab metadata + mepram datasets Daniel-VM committed 1261bd7 Copy full SHA for 1261bd7 added test datasets to validate #832 Daniel-VM committed 9be64dc Copy full SHA for 9be64dc update changelog and readme in #832 Daniel-VM committed c2f569e Copy full SHA for c2f569e fix linting in #832 Daniel-VM committed a8cb461 Copy full SHA for a8cb461 add docstrings Daniel-VM committed a28fbb5 Copy full SHA for a28fbb5 added support to complex Mepram metadata Daniel-VM committed b29ffe9 Copy full SHA for b29ffe9 Update CHANGELOG Aberdur committed 7c3d1d1 Copy full SHA for 7c3d1d1 Remove ontology for organism mapping Aberdur committed 828b926 Copy full SHA for 828b926 Fix download to unify summary log when uncompressed to compressed file Aberdur committed 4d4e27f Copy full SHA for 4d4e27f Update __main.py Aberdur committed b54e087 Copy full SHA for b54e087 Update README.md Aberdur committed b616fd0 Copy full SHA for b616fd0 Update pyproject.toml Aberdur committed b485071 Copy full SHA for b485071 Commits on Nov 28, 2025 add reviewer suggestions in #826 pt2. Daniel-VM committed 49281f5 Copy full SHA for 49281f5 add reviewer suggestions in #826 Daniel-VM committed 789e72d Copy full SHA for 789e72d update changelog in #826 Daniel-VM committed 00b7766 Copy full SHA for 00b7766 adapt schema builder excel generation to complex fields Daniel-VM committed 4ff8d59 Copy full SHA for 4ff8d59 Commits on Nov 25, 2025 black victor5lm committed 0f3c16a Copy full SHA for 0f3c16a Added current time to log&#x27;s filename victor5lm committed 1ac12b9 Copy full SHA for 1ac12b9 Added logging victor5lm committed 2a9a50b Copy full SHA for 2a9a50b Fixed linting victor5lm committed 61e138b Copy full SHA for 61e138b Fixed linting victor5lm committed 5de59b3 Copy full SHA for 5de59b3 Pagination Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FBU-ISCIII%2Frelecov-tools%2Fcommits%2Fmain%2F)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FBU-ISCIII%2Frelecov-tools%2Fcommits%2Fmain%2F)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fcommits%2Fshow&source=header-repo&source_repo=BU-ISCIII%2Frelecov-tools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[BU-ISCIII](/BU-ISCIII)
+/
+**[relecov-tools](/BU-ISCIII/relecov-tools)**
+Public
+
+* [Notifications](/login?return_to=%2FBU-ISCIII%2Frelecov-tools) You must be signed in to change notification settings
+* [Fork
+  28](/login?return_to=%2FBU-ISCIII%2Frelecov-tools)
+* [Star
+   7](/login?return_to=%2FBU-ISCIII%2Frelecov-tools)
+
+* [Code](/BU-ISCIII/relecov-tools)
+* [Issues
+  30](/BU-ISCIII/relecov-tools/issues)
+* [Pull requests
+  4](/BU-ISCIII/relecov-tools/pulls)
+* [Actions](/BU-ISCIII/relecov-tools/actions)
+* [Projects](/BU-ISCIII/relecov-tools/projects)
+* [Security
+  0](/BU-ISCIII/relecov-tools/security)
+* [Insights](/BU-ISCIII/relecov-tools/pulse)
+
+Additional navigation options
+
+* [Code](/BU-ISCIII/relecov-tools)
+* [Issues](/BU-ISCIII/relecov-tools/issues)
+* [Pull requests](/BU-ISCIII/relecov-tools/pulls)
+* [Actions](/BU-ISCIII/relecov-tools/actions)
+* [Projects](/BU-ISCIII/relecov-tools/projects)
+* [Security](/BU-ISCIII/relecov-tools/security)
+* [Insights](/BU-ISCIII/relecov-tools/pulse)
+
+# Commits
+
+## Branch selector
+
+main
+
+## User selector
+
+All users
+
+All time
+
+## Commit History
+
+### Commits on Mar 2, 2026
+
+* #### [Merge pull request #870 from BU-ISCIII/develop](/BU-ISCIII/relecov-tools/commit/5c622b5e8d6e53bbe29e75f72212c90cf7c29943)
+
+  Show description for 5c622b5
+
+  [![Shettland](https://avatars.githubusercontent.com/u/76519482?v=4&size=32)](/Shettland)[Shettland](/BU-ISCIII/relecov-tools/commits?author=Shettland)
+
+  authored
+
+  [5c622b5](/BU-ISCIII/relecov-tools/commit/5c622b5e8d6e53bbe29e75f72212c90cf7c29943)
+
+  Copy full SHA for 5c622b5
+
+### Commits on Feb 27, 2026
+
+* #### [Update README version](/BU-ISCIII/relecov-tools/commit/417a36bfe7de778dab866c29a6472375cc718062)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [417a36b](/BU-ISCIII/relecov-tools/commit/417a36bfe7de778dab866c29a6472375cc718062)
+
+  Copy full SHA for 417a36b
+* #### [Update pyproject version](/BU-ISCIII/relecov-tools/commit/17df1d4915dc24166ad48807b9cc04e01d9a5465)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [17df1d4](/BU-ISCIII/relecov-tools/commit/17df1d4915dc24166ad48807b9cc04e01d9a5465)
+
+  Copy full SHA for 17df1d4
+* #### [Update CHANGELOG version](/BU-ISCIII/relecov-tools/commit/9bc09dd7f5011e97e2c4922cd731a60c46356416)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [9bc09dd](/BU-ISCIII/relecov-tools/commit/9bc09dd7f5011e97e2c4922cd731a60c46356416)
+
+  Copy full SHA for 9bc09dd
+* #### [Updata main version](/BU-ISCIII/relecov-tools/commit/5a2322ea7f07bb866fe101a5d66036419abd875f)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [5a2322e](/BU-ISCIII/relecov-tools/commit/5a2322ea7f07bb866fe101a5d66036419abd875f)
+
+  Copy full SHA for 5a2322e
+
+### Commits on Feb 26, 2026
+
+* #### [Remove redundant boolean](/BU-ISCIII/relecov-tools/commit/b2a538aae63e4a5ad5a9727be1655c088a92f2e1)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [b2a538a](/BU-ISCIII/relecov-tools/commit/b2a538aae63e4a5ad5a9727be1655c088a92f2e1)
+
+  Copy full SHA for b2a538a
+* #### [Hotfix schema](/BU-ISCIII/relecov-tools/commit/111a641b7f72bd49a15878484f76863ac705c10d)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [111a641](/BU-ISCIII/relecov-tools/commit/111a641b7f72bd49a15878484f76863ac705c10d)
+
+  Copy full SHA for 111a641
+* #### [Update CHANGELOG](/BU-ISCIII/relecov-tools/commit/a56913f15286b6b53e87f4e448dab803b1205485)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [a56913f](/BU-ISCIII/relecov-tools/commit/a56913f15286b6b53e87f4e448dab803b1205485)
+
+  Copy full SHA for a56913f
+* #### [Fix initial EQA2026 submitting\_institution\_id complete from path to xlsx](/BU-ISCIII/relecov-tools/commit/a8660d0e5d7727a4352828376f9ee104e119dba5)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [a8660d0](/BU-ISCIII/relecov-tools/commit/a8660d0e5d7727a4352828376f9ee104e119dba5)
+
+  Copy full SHA for a8660d0
+* #### [Add new enum to type/subtype\_assignment\_software\_name](/BU-ISCIII/relecov-tools/commit/0d46312c90c8fb5454bf557bc14d2c64229c3e91)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [0d46312](/BU-ISCIII/relecov-tools/commit/0d46312c90c8fb5454bf557bc14d2c64229c3e91)
+
+  Copy full SHA for 0d46312
+* #### [Update CHANGELOG](/BU-ISCIII/relecov-tools/commit/e5e1ce31203c8278f333ba92bdb192f3ead483fc)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [e5e1ce3](/BU-ISCIII/relecov-tools/commit/e5e1ce31203c8278f333ba92bdb192f3ead483fc)
+
+  Copy full SHA for e5e1ce3
+* #### [Update relecov\_schema.json title and add space removal check](/BU-ISCIII/relecov-tools/commit/a7a643e79914dc069b456d29a7bb159f861e544e)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [a7a643e](/BU-ISCIII/relecov-tools/commit/a7a643e79914dc069b456d29a7bb159f861e544e)
+
+  Copy full SHA for a7a643e
+* #### [Update CHANGELOG](/BU-ISCIII/relecov-tools/commit/c9fc2e8cb136b6ee147487d983077f59de6a2ed7)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [c9fc2e8](/BU-ISCIII/relecov-tools/commit/c9fc2e8cb136b6ee147487d983077f59de6a2ed7)
+
+  Copy full SHA for c9fc2e8
+* #### [Add date parser for DDYYMM to DD-YY-MM](/BU-ISCIII/relecov-tools/commit/0c3a98b262698d7f4d0c60267c9ec8cd4cb6ffb4)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [0c3a98b](/BU-ISCIII/relecov-tools/commit/0c3a98b262698d7f4d0c60267c9ec8cd4cb6ffb4)
+
+  Copy full SHA for 0c3a98b
+
+### Commits on Feb 24, 2026
+
+* #### [Update CHANGELOG](/BU-ISCIII/relecov-tools/commit/d9e401ac1bfba1422cea944fdcd017ec53494fda)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [d9e401a](/BU-ISCIII/relecov-tools/commit/d9e401ac1bfba1422cea944fdcd017ec53494fda)
+
+  Copy full SHA for d9e401a
+* #### [Add env secrets to test validate upload](/BU-ISCIII/relecov-tools/commit/98caee5e85886d48bb6c24047c5cc15dccbbf513)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [98caee5](/BU-ISCIII/relecov-tools/commit/98caee5e85886d48bb6c24047c5cc15dccbbf513)
+
+  Copy full SHA for 98caee5
+
+### Commits on Feb 23, 2026
+
+* #### [Remove legacy extra config load in read-lab-metadata](/BU-ISCIII/relecov-tools/commit/cc87661945925a8b334a4ebe462ebe07cfb351e9)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [cc87661](/BU-ISCIII/relecov-tools/commit/cc87661945925a8b334a4ebe462ebe07cfb351e9)
+
+  Copy full SHA for cc87661
+* #### [Add log.warning to cast to type in build-schema](/BU-ISCIII/relecov-tools/commit/d6d8cbf742c7b3af85594d57aacc299aee3d3151)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [d6d8cbf](/BU-ISCIII/relecov-tools/commit/d6d8cbf742c7b3af85594d57aacc299aee3d3151)
+
+  Copy full SHA for d6d8cbf
+* #### [Update build-schema to apply types to examples in schema](/BU-ISCIII/relecov-tools/commit/6501802de45f3f68061a47d2f5a05b873da84464)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [6501802](/BU-ISCIII/relecov-tools/commit/6501802de45f3f68061a47d2f5a05b873da84464)
+
+  Copy full SHA for 6501802
+* #### [Fix relecov\_schema.json](/BU-ISCIII/relecov-tools/commit/1a561266a46bc75188c9439895eb27f8a6bb6f10)
+
+  [![Aberdur](https://avatars.githubusercontent.com/u/117915926?v=4&size=32)](/Aberdur)[Aberdur](/BU-ISCIII/relecov-tools/commits?author=Aberdur)
+
+  committed
+
+  [1a56126](/BU-ISCIII/relecov-tools/commit/1a561266a46bc75188c9439895eb27f8a6bb6f10)
+
+  Copy full SHA for 1a56126
+* #### [Apply fix with PR861 t

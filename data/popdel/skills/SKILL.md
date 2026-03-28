@@ -1,6 +1,6 @@
 ---
 name: popdel
-description: popdel identifies and genotypes deletions in large-scale genomic datasets using a likelihood-based joint-calling approach. Use when user asks to create sample profiles from BAM or CRAM files, perform joint deletion calling across a cohort, or inspect and convert profile files.
+description: PopDel discovers and genotypes deletions in large-scale diploid germline datasets by performing joint likelihood-based calling. Use when user asks to create insert-size profiles for BAM or CRAM files, perform joint deletion calling across a cohort, or view profile metadata.
 homepage: https://github.com/kehrlab/PopDel
 ---
 
@@ -9,60 +9,76 @@ homepage: https://github.com/kehrlab/PopDel
 
 ## Overview
 
-The `popdel` tool is a lightweight, high-performance suite designed to identify and genotype deletions (typically 100bp and larger) across massive genomic datasets. It utilizes a likelihood-based approach that excels in joint-calling scenarios. The workflow is split into two main phases: an initial profiling step that summarizes insert-size distributions for individual samples, followed by a joint-calling step that processes these profiles together to produce a unified VCF output. This tool is specifically optimized for diploid germline WGS data and should not be used for exome sequencing (WES) or somatic mutation detection.
+PopDel is a high-performance tool designed for the discovery and genotyping of deletions in diploid organisms. It excels at joint calling across massive datasets—capable of handling cohorts exceeding 50,000 samples. The tool operates via a two-stage workflow: first, it generates compact insert-size profiles for individual samples; second, it performs joint likelihood-based calling across these profiles to produce a standardized VCF output. It is specifically optimized for germline WGS data and is not intended for exome (WES) or somatic variant analysis.
 
-## Command Line Usage
+## Core Workflow
 
 ### 1. Create Sample Profiles
-Before calling variants, you must generate a profile for every BAM or CRAM file in your cohort. This step estimates the library's insert-size distribution.
+Generate an insert-size profile for every BAM or CRAM file in your cohort. This step is computationally independent for each sample.
 
 ```bash
 # Basic profiling
 popdel profile input_sample.bam
 
-# Profiling with a specific output name
-popdel profile -o sample_name.profile input_sample.bam
+# Specify output path and reference genome (default is GRCh38)
+popdel profile -o sample.profile -g hg19 input_sample.bam
 ```
 
-**Expert Tips for Profiling:**
-- **Reference Genome**: The default is GRCh38. If using a different build (e.g., hg19 or T2T), you must specify it or provide sampling intervals.
-- **Read Group Conflicts**: If your BAM files have conflicting read group IDs, use the `-e` or `--per-sample-rgid` flag to resolve them.
-- **Performance**: While available via Bioconda, the tool performs significantly faster when compiled from source using `make`.
-
 ### 2. Joint Deletion Calling
-Once profiles are created, they are processed together. You must first create a text file containing the absolute paths to all `.profile` files.
+Create a text file containing the absolute paths to all generated profiles, then run the joint caller.
 
 ```bash
 # Generate the profile list
 realpath *.profile > all_profiles.txt
 
 # Run joint calling
-popdel call all_profiles.txt > output_deletions.vcf
+popdel call all_profiles.txt > cohort_deletions.vcf
 ```
 
-**Expert Tips for Calling:**
-- **Scaling**: `popdel` is tested for up to 50,000 samples. For very large cohorts, ensure your system's memory management is optimized.
-- **Output**: The resulting VCF (v4.2) includes standard fields and specific INFO tags like `SVLEN` (deletion length).
+## Expert Tips and Best Practices
 
-### 3. Inspecting and Converting Profiles
-Use the `view` command to examine the contents of a profile or convert between compressed and uncompressed formats.
+### Performance Optimization
+*   **Installation Method**: Always prefer building from source using `make`. The Conda distribution has been observed to be significantly slower (up to 50% increase in calling time).
+*   **Parallelization Strategy**: 
+    *   **Profiling**: Run `popdel profile` in parallel across samples using a task scheduler or `xargs`.
+    *   **Calling**: Parallelize by genomic region using the `-r` flag (e.g., per chromosome) and merge the resulting VCFs.
 
+### Reference Genome Handling
+PopDel supports several human reference builds out of the box. Use the `-g` flag during the profiling step:
+*   `GRCh38` (Default)
+*   `hg38`
+*   `GRCh37`
+*   `hg19`
+*   `T2T` (Telomere-to-Telomere)
+
+For non-human or custom genomes, you must provide user-defined sampling intervals for parameter estimation.
+
+### Profile Management
+Use `popdel view` to inspect the contents of a profile or convert between compressed and uncompressed formats.
 ```bash
-# View profile information
+# View profile metadata and statistics
 popdel view sample.profile
 
-# Unzip an existing profile
-popdel view -o unzipped.profile -x sample.profile
+# Extract a specific region from a profile
+popdel view -r chr1:1000000-2000000 sample.profile
 ```
 
-## Best Practices
+### Filtering and Quality
+*   **Minimum Size**: PopDel is most reliable for deletions of a few hundred base pairs and upwards.
+*   **Diploid Only**: Ensure your data is from diploid organisms. The likelihood model is specifically tuned for homozygous/heterozygous germline states.
 
-- **Input Requirements**: Only use short-read paired-end data. The tool relies on insert-size statistics which are not applicable to long-read or single-end data.
-- **Reference Consistency**: Ensure the reference genome used for alignment matches the intervals specified during the `profile` step.
-- **Parallelization**: Profiling is an "embarrassingly parallel" task. Use a workload manager (like Slurm) or `xargs` to profile multiple samples simultaneously before running the single `call` command.
-- **Avoid Somatic/WES**: Do not use `popdel` for cancer somatic calling or whole-exome data, as the underlying statistical model assumes diploid germline distributions across the whole genome.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| PopDel | Performs joint-calling of deletions using a list of profile-files previously created using the 'popdel profile' command. The input profiles are either specified directly as arguments or listed in PROFILE-LIST-FILE (one filename per line). |
+| PopDel | Profile creation from BAM/CRAM file |
+| PopDel | Displays a profile file in human readable format or unzips it. |
 
 ## Reference documentation
-- [PopDel GitHub Repository](./references/github_com_kehrlab_PopDel.md)
-- [PopDel Wiki Home](./references/github_com_kehrlab_PopDel_wiki.md)
-- [PopDel Version 1.5.0 Release Notes](./references/github_com_kehrlab_PopDel_tags.md)
+- [PopDel Main Repository](./references/github_com_kehrlab_PopDel.md)
+- [Profiling Documentation](./references/github_com_kehrlab_PopDel_wiki_03.-Create-profiles-with-popdel-profile.md)
+- [Calling Documentation](./references/github_com_kehrlab_PopDel_wiki_04.-Call-deletions-with-popdel-call.md)
+- [Parallelization Guide](./references/github_com_kehrlab_PopDel_wiki_07.-Parallelization.md)

@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -183,9 +184,9 @@ Showing runs from all workflows
 
 will be ignored since log searching is not yet available
 
-**26 workflow runs**
+**15 workflow runs**
 
-**26 workflow runs**
+**15 workflow runs**
 
 Event
 
@@ -513,109 +514,4 @@ by
 
 * [View workflow file](/lh3/bwa/actions/runs/13997820107/workflow)
 
-[feat: add an option to output MD in the XA tag](/lh3/bwa/actions/runs/12836516755)
-
-CI
-#51:
-Pull request [#439](/lh3/bwa/pull/439)
-synchronize
-by
-[nh13](/nh13)
-
-4m 13s
-[nh13:patch-9](/nh13/bwa/tree/refs/heads/patch-9 "nh13:patch-9")
-
-[nh13:patch-9](/nh13/bwa/tree/refs/heads/patch-9 "nh13:patch-9")
-
-4m 13s
-
-* [View #439](/lh3/bwa/pull/439)
-* [View workflow file](/lh3/bwa/actions/runs/12836516755/workflow)
-
-[feat: add HN tag to bwa aln](/lh3/bwa/actions/runs/12836305193)
-
-CI
-#50:
-Pull request [#438](/lh3/bwa/pull/438)
-synchronize
-by
-[nh13](/nh13)
-
-4m 10s
-[nh13:patch-8](/nh13/bwa/tree/refs/heads/patch-8 "nh13:patch-8")
-
-[nh13:patch-8](/nh13/bwa/tree/refs/heads/patch-8 "nh13:patch-8")
-
-4m 10s
-
-* [View #438](/lh3/bwa/pull/438)
-* [View workflow file](/lh3/bwa/actions/runs/12836305193/workflow)
-
-[feat: add an option to output MD in the XA tag](/lh3/bwa/actions/runs/12834418274)
-
-CI
-#49:
-Pull request [#439](/lh3/bwa/pull/439)
-synchronize
-by
-[nh13](/nh13)
-
-3m 57s
-[nh13:patch-9](/nh13/bwa/tree/refs/heads/patch-9 "nh13:patch-9")
-
-[nh13:patch-9](/nh13/bwa/tree/refs/heads/patch-9 "nh13:patch-9")
-
-3m 57s
-
-* [View #439](/lh3/bwa/pull/439)
-* [View workflow file](/lh3/bwa/actions/runs/12834418274/workflow)
-
-[feat: add HN tag to bwa aln](/lh3/bwa/actions/runs/12834409907)
-
-CI
-#48:
-Pull request [#438](/lh3/bwa/pull/438)
-synchronize
-by
-[nh13](/nh13)
-
-5m 3s
-[nh13:patch-8](/nh13/bwa/tree/refs/heads/patch-8 "nh13:patch-8")
-
-[nh13:patch-8](/nh13/bwa/tree/refs/heads/patch-8 "nh13:patch-8")
-
-5m 3s
-
-* [View #438](/lh3/bwa/pull/438)
-* [View workflow file](/lh3/bwa/actions/runs/12834409907/workflow)
-
-[feat: add an option to output MD in the XA tag](/lh3/bwa/actions/runs/12825513836)
-
-CI
-#47:
-Pull request [#439](/lh3/bwa/pull/439)
-synchronize
-by
-[nh13](/nh13)
-
-4m 11s
-[nh13:patch-9](/nh13/bwa/tree/refs/heads/patch-9 "nh13:patch-9")
-
-[nh13:patch-9](/nh13/bwa/tree/refs/heads/patch-9 "nh13:patch-9")
-
-4m 11s
-
-* [View #439](/lh3/bwa/pull/439)
-* [View workflow file](/lh3/bwa/actions/runs/12825513836/workflow)
-
-[feat: add an option to output MD in the XA tag](/lh3/bwa/actions/runs/12825488248)
-
-CI
-#46:
-Pull request [#439](/lh3/bwa/pull/439)
-synchronize
-by
-[nh13](/nh13)
-
-4m 2s
-[nh13:patch-9](/nh13/bwa/
+You can’t perform that action at this time.

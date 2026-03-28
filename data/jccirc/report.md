@@ -88,3 +88,6 @@ Arguments (all required):
 	-H		show help information
 ```
 
+
+## Metadata
+- **Skill**: generated

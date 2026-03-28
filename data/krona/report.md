@@ -294,3 +294,6 @@ __________________________________________________________________/ Options \___
                     [Default: '/usr/local/opt/krona/taxonomy']
 ```
 
+
+## Metadata
+- **Skill**: generated

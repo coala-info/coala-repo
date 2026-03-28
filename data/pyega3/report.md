@@ -175,3 +175,6 @@ usage: pyega3 [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS]
 pyega3: error: argument subcommand: invalid choice: 'this' (choose from 'datasets', 'files', 'fetch')
 ```
 
+
+## Metadata
+- **Skill**: generated

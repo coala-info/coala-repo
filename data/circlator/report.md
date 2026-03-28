@@ -562,3 +562,6 @@ No inputs — do not generate CWL.
 1.5.5
 ```
 
+
+## Metadata
+- **Skill**: generated

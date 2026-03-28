@@ -1,6 +1,6 @@
 ---
 name: taxor
-description: Taxor performs taxonomic classification and profiling of long-read sequencing data using a memory-efficient Hierarchical Interleaved XOR Filter index. Use when user asks to build a taxonomic index, search DNA sequences against a database, or generate abundance reports using an EM algorithm.
+description: Taxor is a bioinformatics tool designed for fast, memory-efficient taxonomic assignment and profiling using hierarchical indexing. Use when user asks to build a k-mer index, search DNA sequences against a reference database, or generate taxonomic abundance profiles.
 homepage: https://github.com/JensUweUlrich/Taxor
 ---
 
@@ -8,71 +8,66 @@ homepage: https://github.com/JensUweUlrich/Taxor
 # taxor
 
 ## Overview
-
-Taxor is a high-performance bioinformatics tool designed for the taxonomic classification of long-read sequencing data. It utilizes a Hierarchical Interleaved XOR Filter (HIXF) index to store k-mers or syncmers, providing a significantly smaller memory footprint compared to traditional k-mer-based classifiers. The tool is optimized for precision, incorporating an Expectation-Maximization (EM) algorithm to resolve multi-matching reads and applying genome size correction for accurate taxonomic and sequence abundance reporting.
-
-## Installation
-
-The recommended method for installing Taxor is via Bioconda:
-
-```bash
-conda install bioconda::taxor
-```
+Taxor is a specialized bioinformatics tool designed for fast and space-efficient taxonomic assignment. It leverages an optimized hierarchical indexing structure (HIXF) to store k-mers, allowing for low false-positive rates and a significantly smaller memory footprint compared to traditional classifiers. It is ideal for workflows involving large reference sets (like RefSeq or GenBank) and requires precise classification by combining k-mer similarity with genome coverage analysis.
 
 ## Core Workflows
 
-### 1. Building an Index (taxor build)
+### 1. Building a Database Index
+The `build` command creates the HIXF index required for searching.
 
-The `build` command creates the HIXF index required for searching. It requires a tab-separated (TSV) file containing metadata and a directory containing the corresponding FASTA files.
-
-**The Input TSV Format:**
-The file must contain six tab-separated columns:
-1. Assembly accession (e.g., GCF_000002495.2)
+**Input File Requirements:**
+You must provide a tab-separated (TSV) file with the following 6 columns:
+1. Assembly Accession (e.g., GCF_000002495.2)
 2. NCBI Taxonomy ID
-3. FTP path (used to match the FASTA file stem)
-4. Organism name
-5. Taxonomy string (k__;p__;...)
-6. Taxonomy ID string (semicolon-separated IDs)
+3. FTP Path (used to derive file names)
+4. Organism Name
+5. Taxonomy String (k__;p__;...)
+6. Taxonomy ID String (semicolon-separated IDs)
 
-**Command Pattern:**
+**Execution Pattern:**
 ```bash
-taxor build --input-file metadata.tsv --input-sequence-dir ./genomes --output-filename database.hixf --threads 8
+taxor build \
+    --input-file taxonomy_info.tsv \
+    --input-sequence-dir ./fasta_files/ \
+    --output-filename my_index.hixf \
+    --threads 8 \
+    --kmer-size 22 \
+    --syncmer-size 12 \
+    --use-syncmer
 ```
 
-**Optimization Tips:**
-- **Syncmers:** Use `--use-syncmer` to significantly reduce the index size.
-- **Parameter Constraints:** When using syncmers, both `--kmer-size` and `--syncmer-size` must be **even-numbered**.
-- **K-mer Size:** Default is 20 (max 30). Syncmer size must be smaller than k-mer size (max 26).
+### 2. Searching Sequences
+The `search` command queries DNA sequences (FASTA/FASTQ) against the generated `.hixf` index.
 
-### 2. Searching Sequences (taxor search)
+*   **Input**: A sequence file and the pre-built index.
+*   **Output**: Search results containing k-mer matches and similarity scores.
 
-The `search` command queries DNA sequences against the pre-built HIXF index.
+### 3. Taxonomic Profiling
+The `profile` command processes search results to generate abundance reports.
 
-**Command Pattern:**
-```bash
-taxor search --index database.hixf --input-file query_reads.fastq --output-file search_results.txt
-```
-
-### 3. Taxonomic Profiling (taxor profile)
-
-The `profile` command processes search results to generate abundance reports. It uses an EM algorithm to reassign reads that match multiple taxa.
-
-**Command Pattern:**
-```bash
-taxor profile --search-file search_results.txt --index database.hixf --output-prefix sample_report
-```
-
-**Key Parameters:**
-- `--em-step`: Adjusts the iterations for the EM algorithm (found in version 0.2.0+).
-- `--threshold`: Sets a minimum abundance threshold for reporting.
+*   **EM Algorithm**: Taxor uses an Expectation-Maximization algorithm to reassign reads that match multiple taxa.
+*   **Abundance**: It provides both taxonomic and sequence abundance, corrected for genome size.
 
 ## Expert Tips and Best Practices
 
-- **Memory Efficiency:** If working with limited RAM, always enable syncmers (`--use-syncmer`). This downsampling scheme maintains high sensitivity for long reads while drastically lowering the memory required to load the index.
-- **File Naming:** Ensure the file stem of your FASTA files in the `--input-sequence-dir` matches the last part of the FTP path provided in column 3 of your metadata TSV.
-- **Thread Scaling:** Taxor scales well with threads during the `build` process. Use the `--threads` parameter to speed up the construction of large databases (e.g., RefSeq).
-- **NCBI Integration:** Taxor is designed to work seamlessly with NCBI taxonomy. Ensure your taxonomy strings and IDs are formatted correctly in the input TSV to ensure the `profile` step generates valid reports.
+*   **Syncmer Selection**: Always use the `--use-syncmer` flag for large databases. This enables open canonical syncmers, which significantly reduces the index size on disk and in memory without a major loss in sensitivity.
+*   **Parameter Constraints**: When using syncmers, both `--kmer-size` and `--syncmer-size` must be **even numbers**. The syncmer size must always be smaller than the k-mer size (max k=30, max s=26).
+*   **File Naming**: Ensure the file stems of your FASTA files in the `--input-sequence-dir` exactly match the last part of the FTP path provided in column 3 of your input TSV.
+*   **Memory Optimization**: Taxor is designed to be more memory-efficient than tools like Kraken2. If working on a machine with limited RAM, prioritize using the pre-built HIXF indices for Viruses or RefSeq ABFV.
+*   **Long-Read Advantage**: While Taxor works for various lengths, its scoring system (combining k-mer similarity and genome coverage) is specifically optimized to reduce false positives in long-read datasets (Oxford Nanopore/PacBio).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| taxor | This program must be invoked with one of the following subcommands: - build - search - profile See the respective help page for further details (e.g. by calling taxor build -h). The following options below belong to the top-level parser and need to be specified before the subcommand key word. Every argument after the subcommand key word is passed on to the corresponding sub-parser. |
+| taxor | This program must be invoked with one of the following subcommands: build, search, profile. See the respective help page for further details (e.g. by calling taxor build -h). The following options below belong to the top-level parser and need to be specified before the subcommand key word. Every argument after the subcommand key word is passed on to the corresponding sub-parser. |
+| taxor | This program must be invoked with one of the following subcommands: build, search, profile. See the respective help page for further details (e.g. by calling taxor build -h). The following options below belong to the top-level parser and need to be specified before the subcommand key word. Every argument after the subcommand key word is passed on to the corresponding sub-parser. |
+| taxor | This program must be invoked with one of the following subcommands: - build - search - profile See the respective help page for further details (e.g. by calling taxor build -h). The following options below belong to the top-level parser and need to be specified before the subcommand key word. Every argument after the subcommand key word is passed on to the corresponding sub-parser. |
+| taxor-build | Creates an HIXF index of a given set of fasta files |
 
 ## Reference documentation
-- [Taxor Overview](./references/anaconda_org_channels_bioconda_packages_taxor_overview.md)
-- [Taxor GitHub Documentation](./references/github_com_JensUweUlrich_Taxor.md)
+- [Taxor GitHub Repository Overview](./references/github_com_JensUweUlrich_Taxor_blob_main_README.md)
+- [Taxor Docker Configuration](./references/github_com_JensUweUlrich_Taxor_blob_main_Dockerfile.md)

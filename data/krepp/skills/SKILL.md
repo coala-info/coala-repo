@@ -1,6 +1,6 @@
 ---
 name: krepp
-description: Krepp performs k-mer-based maximum likelihood estimation to analyze metagenomic data and perform phylogenetic placement. Use when user asks to build a reference index, estimate distances between reads and genomes, or place sequencing reads onto a phylogenetic tree.
+description: krepp analyzes sequencing reads using k-mer frequencies and maximum likelihood models to estimate evolutionary distances and perform phylogenetic placement. Use when user asks to index reference genomes, estimate distances between reads and references, perform phylogenetic placement, or sketch and seek sequences.
 homepage: https://github.com/bo1929/krepp
 ---
 
@@ -8,51 +8,78 @@ homepage: https://github.com/bo1929/krepp
 # krepp
 
 ## Overview
-
-`krepp` is a high-performance bioinformatics tool that utilizes k-mer-based maximum likelihood estimation to analyze metagenomic data. Unlike traditional alignment-based methods, it provides a rapid way to calculate distances between sequencing reads and reference genomes and to perform phylogenetic placement. The workflow typically involves building a specialized index from reference genomes and a phylogeny, followed by querying reads against that index to generate distance tables or `.jplace` files for downstream evolutionary analysis.
+krepp is a specialized bioinformatics tool that utilizes k-mer frequencies and maximum likelihood models to analyze the relationship between sequencing reads and reference genomes. You should use this skill to guide the creation of reference indices, estimate evolutionary distances, or perform rapid phylogenetic placement of metagenomic or genomic reads without the need for full sequence alignment. It is particularly effective for high-throughput taxonomic assignment and evolutionary analysis of short-read data.
 
 ## Core Workflows
 
-### 1. Building a Reference Index
-Before querying, you must create an index from your reference genomes. This requires a mapping file and a Newick tree.
+### 1. Indexing Reference Genomes
+Before querying, you must build an index from a set of reference genomes and, optionally, a phylogenetic tree.
 
 ```bash
-# Basic index construction
-krepp index -k 27 -w 35 -h 11 -i input_map.tsv -t tree.nwk -o index_name --num-threads 8
+# Basic indexing command
+krepp index -k 27 -w 35 -h 11 -o <index_prefix> -i <input_map.tsv> -t <tree.nwk> --num-threads 8
 ```
-*   `-k`: K-mer size.
-*   `-w`: Window size for minimizers.
-*   `-i`: A TSV file mapping genome IDs to their respective fasta files.
-*   `-t`: The backbone phylogenetic tree in Newick format.
+*   **-k**: K-mer size (e.g., 27).
+*   **-w**: Window size for minimizers (e.g., 35).
+*   **-h**: Hash size (e.g., 11).
+*   **-i**: A TSV file mapping genome IDs to their fasta file paths.
+*   **-t**: A Newick format tree file for phylogenetic placement.
 
 ### 2. Estimating Distances
-To find the distance between query reads and the indexed reference genomes:
+Use the `dist` command to calculate the maximum likelihood distance between query reads and the indexed references.
 
 ```bash
-krepp dist -i index_name -q query_reads.fq --num-threads 4 > distances.tsv
+krepp dist -i <index_prefix> -q <query.fq> --num-threads 4 > distances.tsv
 ```
-The output provides a `SEQ_ID`, `REFERENCE_NAME`, and the calculated `DIST`.
+*   **Output**: A TSV containing `SEQ_ID`, `REFERENCE_NAME`, and `DIST`.
 
 ### 3. Phylogenetic Placement
-To place reads onto the backbone tree provided during indexing:
+Use the `place` command to determine the most likely position of reads on the reference tree.
 
 ```bash
-# Generate standard jplace (JSON) output
-krepp place -i index_name -q query_reads.fq --num-threads 8 > placements.jplace
+# Standard jplace output (JSON)
+krepp place -i <index_prefix> -q <query.fq> --num-threads 8 > placements.jplace
 
-# Generate human-readable tabular output
-krepp place -i index_name -q query_reads.fq --tabular --num-threads 8 > placements.tsv
+# Tabular output for easier parsing
+krepp place -i <index_prefix> -q <query.fq> --tabular --num-threads 8 > placements.tsv
+```
+*   **jplace**: Compatible with downstream tools like `gappa` for visualization (e.g., heat trees).
+*   **--tabular**: Provides a flat file with `SEQ_ID`, `DISTAL_NODE`, `EDGE_NUM`, `LWR` (Likelihood Weight Ratio), and `DIST`.
+
+### 4. Simple Sketching and Seeking
+For quick comparisons against a single reference without a full index:
+
+```bash
+# Create a sketch of a reference
+krepp sketch <reference.fa> -o <ref_sketch>
+
+# Query against the sketch
+krepp seek -i <ref_sketch> -q <query.fq>
 ```
 
 ## Expert Tips and Best Practices
+*   **Thread Optimization**: Always specify `--num-threads` to match your environment, as k-mer counting and likelihood calculations are highly parallelizable.
+*   **Memory Management**: Indexing large datasets (e.g., GTDB) requires significant RAM. For toy examples or small batches, memory usage is typically <1.5GB.
+*   **Handling Ns**: krepp automatically ignores 'N' characters in query sequences to maintain accuracy.
+*   **Downstream Analysis**: If using `place`, use the `.jplace` output to generate visualizations with `gappa examine heat-tree`.
+*   **Prebuilt Indices**: Check the official documentation for available prebuilt microbial indices to save time on the indexing stage.
 
-*   **Thread Optimization**: Always specify `--num-threads` to match your hardware, as `krepp` is designed to scale across multiple cores during both indexing and querying.
-*   **Output Formats**: Use the `--tabular` flag with the `place` command if you need to quickly parse results with standard Unix tools (grep, awk) or R/Python dataframes. Use the default `.jplace` format if you intend to use downstream tools like `gappa` for visualization (e.g., heat trees).
-*   **Memory Management**: Indexing large numbers of genomes can be memory-intensive. Ensure your hash size (`-h`) and k-mer parameters are appropriate for your available RAM.
-*   **Quick Analysis**: For simple comparisons against a single reference without a full index/tree setup, use the `sketch` and `seek` subcommands.
-*   **Handling Ns**: `krepp` typically ignores 'N' bases in query sequences to maintain accuracy in k-mer counting.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| krepp dist | Estimate distances of queries to genomes in an index. |
+| krepp index | Build an index from k-mers of reference genomes. |
+| krepp inspect | Display statistics and information for a given index. |
+| krepp place | Place queries on a tree with respect to an index. |
+| krepp seek | Seek query sequences in a sketch and estimate distances. |
+| krepp sketch | Create a sketch from k-mers in a single FASTA/FASTQ file. |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_bo1929_krepp.md)
-- [Official Wiki and Documentation](./references/github_com_bo1929_krepp_wiki.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_krepp_overview.md)
+- [A toy example for testing](./references/github_com_bo1929_krepp_wiki_A-toy-example-for-testing.md)
+- [Estimating distances](./references/github_com_bo1929_krepp_wiki_Estimating-distances.md)
+- [Placing on a tree](./references/github_com_bo1929_krepp_wiki_Placing-on-a-tree.md)
+- [Indexing reference genomes](./references/github_com_bo1929_krepp_wiki_Indexing-reference-genomes.md)

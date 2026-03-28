@@ -1,56 +1,89 @@
+---
 name: alphafill
-description: Enrich AlphaFold protein models with ligands, cofactors, and ions. Use when you need to add molecular context to "apo" AlphaFold structures to better understand protein function, structural integrity, or to design downstream wet-lab experiments.
+description: AlphaFill transplants ligands and co-factors from experimental structures into AlphaFold protein models to provide molecular context. Use when user asks to process mmCIF models, create a structural index, or manage a local AlphaFill database and server.
+homepage: https://alphafill.eu
+---
 
-# AlphaFill
 
-AlphaFill is an algorithm that "transplants" missing ligands, cofactors, and (metal) ions into AlphaFold models using sequence and structure similarity to known structures in the PDB-REDO databank.
+# alphafill
 
-## Quick Access (REST API)
+## Overview
 
-The fastest way to retrieve filled models is via the REST interface.
+AlphaFill is a computational tool designed to add molecular context to AlphaFold protein models. While AlphaFold predicts protein coordinates with high accuracy, it often lacks the ligands and co-factors essential for understanding biological function. AlphaFill uses sequence and structural similarity to "transplant" these missing components from experimental structures (PDB and PDB-REDO) into the predicted models. Use this skill to perform local processing of structure files or to manage a local AlphaFill databank and web interface.
 
-- **Download mmCIF structure**: `https://alphafill.eu/v1/aff/${uniprot_id}`
-- **Download Metadata (JSON)**: `https://alphafill.eu/v1/aff/${uniprot_id}/json`
+## Core Workflows
 
-The JSON metadata provides details on the origin of the ligands and quality metrics (global and local RMSd values).
-
-## Installation
-
-Install the AlphaFill suite via Bioconda:
+### 1. Initial Setup and Indexing
+Before processing models, you must generate a FastA index of your local PDB/PDB-REDO directory. This index is used by the algorithm to find structural analogues.
 
 ```bash
-conda install bioconda::alphafill
+# Build the PDB FastA file based on your configuration
+alphafill create-index
 ```
 
-## CLI Toolset
-
-The `alphafill` package includes several specialized binaries:
-
-- `alphafill process`: The core engine used to transplant compounds into a specific structure.
-- `alphafill create-index`: Used to index the PDB-REDO data for fast searching.
-- `alphafill rebuild-db`: Manages the local databank of filled models.
-- `alphafill server`: Runs a local instance of the AlphaFill web interface.
-
-## Bulk Data Access
-
-To download the entire AlphaFill databank (all enriched AlphaFold models), use rsync:
+### 2. Processing AlphaFold Models
+The primary function of AlphaFill is to take a predicted model (mmCIF format) and produce a "filled" version containing transplanted ligands.
 
 ```bash
-rsync -av rsync://rsync.alphafill.eu/alphafill/ alphafill/
+# Basic processing command
+alphafill process <input-model.cif.gz> <output-filled-model.cif.gz>
 ```
 
-## Expert Tips & Best Practices
+**Expert Tips for Processing:**
+- **Input Format**: AlphaFill specifically works with mmCIF (.cif) files. If your files are compressed (.gz), the tool can handle them directly.
+- **Performance**: Most models process in under 2 minutes, though time increases with the number of potential transplants.
+- **Validation**: Check the metadata in the resulting mmCIF file to see the Root-Mean-Square deviation (RMSd) values, which indicate the quality of the transplant alignment.
 
-### Quality Assessment
-Always check the RMSd values in the provided JSON metadata. AlphaFill provides:
-1. **Global RMSd**: Overall similarity between the AlphaFold model and the PDB-REDO template.
-2. **Local RMSd**: Similarity specifically around the binding site. Low local RMSd indicates high confidence in the ligand placement.
+### 3. Server and Database Management
+If you are running the AlphaFill web application environment, use these commands to manage the backend.
 
-### Custom Models
-If a specific UniProt ID is not in the pre-computed databank, you can use the `alphafill-process` tool or the "Create your own AlphaFill model" feature on the AlphaFill website by submitting a custom structure file.
+- **Database Initialization**: After processing files into your `db-dir`, sync the statistics to your PostgreSQL database:
+  ```bash
+  alphafill rebuild-db
+  ```
+- **Daemon Control**:
+  ```bash
+  # Start the server as a daemon
+  alphafill server start
 
-### Ligand Analogues
-AlphaFill often transplants "analogues." If the exact ligand is not available in a high-similarity template, it may use a chemically similar compound. Check the `analogue` field in the metadata to verify if the transplanted molecule is the exact cofactor or a structural relative.
+  # Run in the foreground (useful for debugging)
+  alphafill server start --no-daemon
 
-### Integration with AlphaFold DB
-AlphaFill is designed to complement the AlphaFold Protein Structure Database. When analyzing a new protein, first check the AlphaFold DB for the fold, then use AlphaFill to provide the functional context (e.g., finding where ATP, Heme, or Zinc ions should be located).
+  # Check status or stop
+  alphafill server status
+  alphafill server stop
+  ```
+
+## Configuration Best Practices
+
+The `alphafill.conf` file (typically located in `/etc/`) must be correctly configured for the CLI to function. Ensure the following paths are defined:
+
+- `pdb-dir`: Path to your local PDB or PDB-REDO structure library.
+- `pdb-fasta`: Path where the `create-index` command will store the sequence file.
+- `ligands`: Path to the `af-ligands.cif` file (provided with the source) which defines which compounds are eligible for transplantation.
+
+## Data Access and Integration
+
+If you need to fetch data from the public AlphaFill databank instead of running it locally:
+- **REST API**: Access structure files at `https://alphafill.eu/v1/aff/${uniprot_id}`.
+- **Metadata**: Retrieve transplant metadata in JSON format at `https://alphafill.eu/v1/aff/${uniprot_id}/json`.
+- **Bulk Download**: Use rsync to mirror the entire databank:
+  ```bash
+  rsync -av rsync://rsync.alphafill.eu/alphafill/ local_alphafill_dir/
+  ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| alphafill | AlphaFill is a tool to process AlphaFold structures by enriching them with ligands and co-factors from the PDB. |
+| alphafill | AlphaFill is a tool to process AlphaFold structures by filling in missing compounds. It can create indices from PDB files or process AlphaFill structures. |
+| create-index | Create an index for AlphaFill using PDB mmCIF files and sequences |
+| process | Process AlphaFold models to fill them with ligands and other missing structural information. |
+
+## Reference documentation
+- [AlphaFill README](./references/github_com_PDB-REDO_alphafill_blob_trunk_README.md)
+- [AlphaFill Manual Pages](./references/alphafill_eu_manual.md)
+- [AlphaFill Download and API Guide](./references/alphafill_eu_download.md)

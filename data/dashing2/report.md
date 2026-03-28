@@ -647,3 +647,6 @@ terminate called after throwing an instance of 'std::invalid_argument'
   what():  Required: one positional argument for printmin_main
 ```
 
+
+## Metadata
+- **Skill**: generated

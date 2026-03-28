@@ -1,1 +1,273 @@
-GitHub - jean-pierreBoth/gsearch: Approximate nearest neighbour search for microbial genomes based on hash metric Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} jean-pierreBoth / gsearch Public Notifications You must be signed in to change notification settings Fork 7 Star 57 Approximate nearest neighbour search for microbial genomes based on hash metric License MIT license 57 stars 7 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 1 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights jean-pierreBoth/gsearch master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 544 Commits 544 Commits binaux binaux data data scripts scripts src src .gitignore .gitignore Cargo.toml Cargo.toml GSearch-annembed-GTDBv207.jpg GSearch-annembed-GTDBv207.jpg GSearch-logo.jpg GSearch-logo.jpg GSearch-logo.svg GSearch-logo.svg GSearch_art.jpg GSearch_art.jpg LICENSE-MIT LICENSE-MIT README.md README.md gsearch_database.txt gsearch_database.txt installpb.md installpb.md todo.md todo.md View all files Repository files navigation README MIT license GSearch: Ultra-fast and Scalable Genome Search based on Various MinHash-like Metrics and HNSW If you find GSearch useful, please cite the following paper: @article{zhao2024gsearch, title={GSearch: ultra-fast and scalable genome search by combining K-mer hashing with hierarchical navigable small world graphs}, author={Zhao, Jianshu and Both, Jean Pierre and Rodriguez-R, Luis M and Konstantinidis, Konstantinos T}, journal={Nucleic Acids Research}, volume={52}, number={16}, pages={e74--e74}, year={2024}, publisher={Oxford University Press} } Quick install on Linux (Stable version) Install via bioconda conda install -c conda-forge -c bioconda gsearch pre-combiled binary wget https://github.com/jean-pierreBoth/gsearch/releases/download/v0.1.5/gsearch_Linux_x86-64_v0.1.5.zip unzip gsearch_Linux_x86-64_v0.1.5.zip chmod a+x ./gsearch_Linux_x86-64_v0.1.5/ * cd gsearch_Linux_x86-64_v0.1.5 ./gsearch -h Install developmental version (Linux) Note that pre-built databases will not work for development version, you need to rebuild database yourself # #or via cargo, install cargo: curl --proto ' =https ' --tlsv1.2 -sSf https://sh.rustup.rs | sh # # install via cargo cargo install gsearch --features annembed_intel-mkl,simdeez_f --force # # For macOS see below install section for details Quick start # # build a database of genomes (all genomes in folds and subfolds of files_folder), files will be saved to the current directory gsearch --pio 2000 --nbthreads 24 tohnsw -d ./files_fold -k 21 -s 18000 -n 128 --ef 1600 --algo optdens --scale_modify_f 0.25 # # Search genomes against this database, all genomes in query_genome_folder gsearch --pio 2000 --nbthreads 24 request -b . -r ./query_genome_folder -n 50 # # add genomes to existing database, all database files will be modified, save before this step gsearch --pio 2000 --nbthreads 24 add -b . -n ./new_genome_folder GSearch stands for genomic search . This package ( currently in development ) compute MinHash-like signatures of bacteria and archaea (or virus and fungi) genomes and stores the id of bacteria and MinHash-like signatures in a HNSW structure for searching of new request genomes. The HNSW structure can also be reduced to a flat NSW (also knonw as HubNSW) for better space requirement and accuracy for high-dimension datasets. A total of ~50,000 to ~60,000 lines of highly optimized Rust code were provided in this repo and several other crates/libraries develped for this repo, such as kmerutils , probminhash , hnswlib-rs and annembed , see below for details. Some of the libraries are very popular (e.g., hnsw_rs) and have been used &gt;150 thousand times for vector database search and semantic search in LLM applications, see here . This package is developped by Jean-Pierre Both jpboth for the software part and Jianshu Zhao for the genomics part. We also created a mirror of this repo on GitLab and Gitee (You need to log in first to see the content), just in case Github service is not available in some region. gsearch -h ************** initializing logger ***************** Approximate nearest neighbour search for microbial genomes based on MinHash-like metric Usage: gsearch [OPTIONS] [COMMAND] Commands: tohnsw Build HNSW graph database from a collection of database genomes based on MinHash-like metric add Add new genome files to a pre-built HNSW graph database request Request nearest neighbors of query genomes against a pre-built HNSW graph database/index ann Approximate Nearest Neighbor Embedding using UMAP-like algorithm help Print this message or the help of the given subcommand(s) Options: --pio &lt; pio &gt; Parallel IO processing --nbthreads &lt; nbthreads &gt; nb thread for sketching -h, --help Print help -V, --version Print version Key functions Sketching of genomes/tohnsw, to build hnsw graph database The objective is to use the Jaccard index as an accurate proxy of mutation rate or Average Nucleitide Identity(ANI) or Average Amino Acide Identity (AAI) According to equation (Poisson model or Binomial model): $$ANI=1+\frac{1}{k}log\frac{2*J}{1+J}$$ or $$ANI=(\frac{2*J}{1+J})^{\frac{1}{k}}$$ where J is Jaccard-like index (e.g. Jp from ProbMinHash or J from SuperMinHash, SetSketch or Densified MinHash, a class of locality sensitive hashing algorithms, suitable for nearest neighbor search, see below) and k is k-mer size. To achieve this we use sketching. We generate kmers along genome DNA or amino acid sequences and sketch the kmer distribution encountered (weighted or not) in a file, see kmerutils . Then final sketch is stored in a Hnsw database See here hnsw or here hnsw . For HubNSW/FlatNSW, see here The sketching and HNSW graph database building is done by the subcommand tohnsw . The Jaccard index come in 2 flavours: 1. The probability Jaccard index that takes into account the Kmer multiplicity. It is defined by : $$J_{P(A,B)}=\sum_{d\in D} \frac{1}{\sum_{d'\in D} \max (\frac{\omega_{A}(d')}{\omega_{A}(d)},\frac{\omega_{B}(d')}{\omega_{B}(d)})}$$ where $\omega_{A}(d)$ is the multiplicity of $d$ in A (see Moulton-Jiang-arxiv ). In this case for J_p we use the probminhash algorithm as implemented in probminhash , or see original paper/implementation here . 2. The unweighted (simple) Jaccard index defined by : $$Jaccard(A,B)=\frac{A \cap B}{A \cup B}$$ In this case for J we use the SuperMinHash , SetSketch (based on the locality sensitivity in section 3.3 or joint maximum likelihood estimation in section 3.2, joint estimation) or densified MinHash based on One Permutation Hashing with Optimal Densification method or One Permutation Hashing with Faster Densification method, also implemented in probminhash mentioned above. The above mentioned choices for sketching can be specified in "gsearch tohnsw" subcommand via the --algo option (prob, super/super2, hll and optdens). We suggest using either ProbMinHash or Optimal Densification. For SuperMinhash, 2 implementations are available: super is for floating point type sketch while super2 is for integer type sketch. The later is much faster than the former. hll is for SetSketch, we name it hll because the SetSketch data structure can be seen as a similar implementation of HyperLogLog, but adding new algorithms for similarity estimation (e.g., Locality Sensitivity, LSH or Joint Maximum Likelihood Estimation, JMLE for Jaccard index) in additional to distinct element countin
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjean-pierreBoth%2Fgsearch)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjean-pierreBoth%2Fgsearch)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=jean-pierreBoth%2Fgsearch)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[jean-pierreBoth](/jean-pierreBoth)
+/
+**[gsearch](/jean-pierreBoth/gsearch)**
+Public
+
+* [Notifications](/login?return_to=%2Fjean-pierreBoth%2Fgsearch) You must be signed in to change notification settings
+* [Fork
+  7](/login?return_to=%2Fjean-pierreBoth%2Fgsearch)
+* [Star
+   62](/login?return_to=%2Fjean-pierreBoth%2Fgsearch)
+
+* [Code](/jean-pierreBoth/gsearch)
+* [Issues
+  1](/jean-pierreBoth/gsearch/issues)
+* [Pull requests
+  0](/jean-pierreBoth/gsearch/pulls)
+* [Actions](/jean-pierreBoth/gsearch/actions)
+* [Projects](/jean-pierreBoth/gsearch/projects)
+* [Security
+  0](/jean-pierreBoth/gsearch/security)
+* [Insights](/jean-pierreBoth/gsearch/pulse)
+
+Additional navigation options
+
+* [Code](/jean-pierreBoth/gsearch)
+* [Issues](/jean-pierreBoth/gsearch/issues)
+* [Pull requests](/jean-pierreBoth/gsearch/pulls)
+* [Actions](/jean-pierreBoth/gsearch/actions)
+* [Projects](/jean-pierreBoth/gsearch/projects)
+* [Security](/jean-pierreBoth/gsearch/security)
+* [Insights](/jean-pierreBoth/gsearch/pulse)
+
+# jean-pierreBoth/gsearch
+
+master
+
+[Branches](/jean-pierreBoth/gsearch/branches)[Tags](/jean-pierreBoth/gsearch/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[545 Commits](/jean-pierreBoth/gsearch/commits/master/)   545 Commits | | |
+| [binaux](/jean-pierreBoth/gsearch/tree/master/binaux "binaux") | | [binaux](/jean-pierreBoth/gsearch/tree/master/binaux "binaux") |  |  |
+| [data](/jean-pierreBoth/gsearch/tree/master/data "data") | | [data](/jean-pierreBoth/gsearch/tree/master/data "data") |  |  |
+| [scripts](/jean-pierreBoth/gsearch/tree/master/scripts "scripts") | | [scripts](/jean-pierreBoth/gsearch/tree/master/scripts "scripts") |  |  |
+| [src](/jean-pierreBoth/gsearch/tree/master/src "src") | | [src](/jean-pierreBoth/gsearch/tree/master/src "src") |  |  |
+| [.gitignore](/jean-pierreBoth/gsearch/blob/master/.gitignore ".gitignore") | | [.gitignore](/jean-pierreBoth/gsearch/blob/master/.gitignore ".gitignore") |  |  |
+| [Cargo.toml](/jean-pierreBoth/gsearch/blob/master/Cargo.toml "Cargo.toml") | | [Cargo.toml](/jean-pierreBoth/gsearch/blob/master/Cargo.toml "Cargo.toml") |  |  |
+| [GSearch-annembed-GTDBv207.jpg](/jean-pierreBoth/gsearch/blob/master/GSearch-annembed-GTDBv207.jpg "GSearch-annembed-GTDBv207.jpg") | | [GSearch-annembed-GTDBv207.jpg](/jean-pierreBoth/gsearch/blob/master/GSearch-annembed-GTDBv207.jpg "GSearch-annembed-GTDBv207.jpg") |  |  |
+| [GSearch-logo.jpg](/jean-pierreBoth/gsearch/blob/master/GSearch-logo.jpg "GSearch-logo.jpg") | | [GSearch-logo.jpg](/jean-pierreBoth/gsearch/blob/master/GSearch-logo.jpg "GSearch-logo.jpg") |  |  |
+| [GSearch-logo.svg](/jean-pierreBoth/gsearch/blob/master/GSearch-logo.svg "GSearch-logo.svg") | | [GSearch-logo.svg](/jean-pierreBoth/gsearch/blob/master/GSearch-logo.svg "GSearch-logo.svg") |  |  |
+| [GSearch\_art.jpg](/jean-pierreBoth/gsearch/blob/master/GSearch_art.jpg "GSearch_art.jpg") | | [GSearch\_art.jpg](/jean-pierreBoth/gsearch/blob/master/GSearch_art.jpg "GSearch_art.jpg") |  |  |
+| [LICENSE-MIT](/jean-pierreBoth/gsearch/blob/master/LICENSE-MIT "LICENSE-MIT") | | [LICENSE-MIT](/jean-pierreBoth/gsearch/blob/master/LICENSE-MIT "LICENSE-MIT") |  |  |
+| [README.md](/jean-pierreBoth/gsearch/blob/master/README.md "README.md") | | [README.md](/jean-pierreBoth/gsearch/blob/master/README.md "README.md") |  |  |
+| [gsearch\_database.txt](/jean-pierreBoth/gsearch/blob/master/gsearch_database.txt "gsearch_database.txt") | | [gsearch\_database.txt](/jean-pierreBoth/gsearch/blob/master/gsearch_database.txt "gsearch_database.txt") |  |  |
+| [installpb.md](/jean-pierreBoth/gsearch/blob/master/installpb.md "installpb.md") | | [installpb.md](/jean-pierreBoth/gsearch/blob/master/installpb.md "installpb.md") |  |  |
+| [todo.md](/jean-pierreBoth/gsearch/blob/master/todo.md "todo.md") | | [todo.md](/jean-pierreBoth/gsearch/blob/master/todo.md "todo.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+[![install with bioconda](https://camo.githubusercontent.com/9940610b859f8e4dd2daade6d2f4fb4c45d56afedc37ae98d8617daf79c1f836/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/gsearch/README.html)
+[![](https://camo.githubusercontent.com/e25a7e9d484447eb5d5e3416a709fc52da710cf340ea0b9535dba48a1aaeef87/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f6c6963656e73652e737667)](https://camo.githubusercontent.com/e25a7e9d484447eb5d5e3416a709fc52da710cf340ea0b9535dba48a1aaeef87/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f6c6963656e73652e737667)
+[![](https://camo.githubusercontent.com/39539302173c1569988e24782e83896eb161c451b0c18aa845525d3168e4053e/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f76657273696f6e2e737667)](https://camo.githubusercontent.com/39539302173c1569988e24782e83896eb161c451b0c18aa845525d3168e4053e/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f76657273696f6e2e737667)
+[![](https://camo.githubusercontent.com/36f46e1fe9903bd27673812a0f5fa49c611ff3cb708ea3764d3fd13744cf9b09/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f6c61746573745f72656c656173655f72656c61746976655f646174652e737667)](https://camo.githubusercontent.com/36f46e1fe9903bd27673812a0f5fa49c611ff3cb708ea3764d3fd13744cf9b09/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f6c61746573745f72656c656173655f72656c61746976655f646174652e737667)
+[![](https://camo.githubusercontent.com/ec1f16102eeb110f83ea2f380a04bd23e5b6cb16b67787dcb6fa5bcec9a12bc0/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f706c6174666f726d732e737667)](https://camo.githubusercontent.com/ec1f16102eeb110f83ea2f380a04bd23e5b6cb16b67787dcb6fa5bcec9a12bc0/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f706c6174666f726d732e737667)
+[![install with conda](https://camo.githubusercontent.com/94915d6ae3d7e23a52d5becb130f8b2926fb1df1b1cbaee24a8ddcf0fddee6e8/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f677365617263682f6261646765732f646f776e6c6f6164732e737667)](https://anaconda.org/bioconda/gsearch)
+[![DOI](https://camo.githubusercontent.com/0fb915d2756dd61e052e9aebb62d33f5dbe378505a475d16cdfe9c67f5250e43/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f3138373933373335372e737667)](https://doi.org/10.5281/zenodo.10543594)
+[![](https://camo.githubusercontent.com/dae3c5a9cb113fd467c0a6dff0fac124c6471ef401cd44f7000f0d3a7cc25ddc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f72642d2532333538363546322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465)](https://discord.gg/5cXSA8bMcW)
+
+[![Latest Version](https://camo.githubusercontent.com/1a054ee83e92cc7a58c8ff17fcc537b924810a60acace7ee4a8ef1cbb099bf41/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f762f677365617263683f7374796c653d666f722d7468652d626164676526636f6c6f723d6d656469756d707572706c65266c6f676f3d72757374)](https://crates.io/crates/gsearch)
+[![docs.rs](https://camo.githubusercontent.com/0808e9cf3e6d9a5e8fbce48b82e9703da44d91d0978c7d3c2a4a9a0023e644a7/68747470733a2f2f696d672e736869656c64732e696f2f646f637372732f677365617263683f7374796c653d666f722d7468652d6261646765266c6f676f3d646f63732e727326636f6c6f723d6d656469756d736561677265656e)](https://docs.rs/gsearch/latest/gsearch/)
+
+[![Alt!](https://github.com/jean-pierreBoth/gsearch/raw/master/GSearch_art.jpg?raw=true)](https://github.com/jean-pierreBoth/gsearch/blob/master/GSearch_art.jpg?raw=true)
+
+# GSearch: Ultra-fast and Scalable Genome Search based on Various MinHash-like Metrics and HNSW
+
+[![](/jean-pierreBoth/gsearch/raw/master/GSearch-logo.svg)](/jean-pierreBoth/gsearch/blob/master/GSearch-logo.svg)
+
+If you find GSearch useful, please cite the following paper:
+
+```
+@article{zhao2024gsearch,
+  title={GSearch: ultra-fast and scalable genome search by combining K-mer hashing with hierarchical navigable small world graphs},
+  author={Zhao, Jianshu and Both, Jean Pierre and Rodriguez-R, Luis M and Konstantinidis, Konstantinos T},
+  journal={Nucleic Acids Research},
+  volume={52},
+  number={16},
+  pages={e74--e74},
+  year={2024},
+  publisher={Oxford University Press}
+}
+```
+
+## Quick install on Linux (Stable version)
+
+### Install via bioconda
+
+```
+conda install -c conda-forge -c bioconda gsearch
+```
+
+### pre-combiled binary
+
+```
+wget https://github.com/jean-pierreBoth/gsearch/releases/download/v0.1.5/gsearch_Linux_x86-64_v0.1.5.zip
+unzip gsearch_Linux_x86-64_v0.1.5.zip
+chmod a+x ./gsearch_Linux_x86-64_v0.1.5/*
+cd gsearch_Linux_x86-64_v0.1.5
+./gsearch -h
+```
+
+## Install developmental version (Linux)
+
+Note that pre-built databases will not work for development version, you need to rebuild database yourself
+
+```
+##or via cargo, install cargo:
+curl --proto '=https' --tlsv1.2 -sSf https://sh.ru

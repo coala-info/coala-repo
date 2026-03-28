@@ -1,1 +1,153 @@
-1.3.&nbsp;Key Features 1.3.&nbsp;Key Features Prev &nbsp; Chapter&nbsp;1.&nbsp;Background to EMBOSS &nbsp; Next 1.3.&nbsp;Key Features 1.3.1.&nbsp;General Features 1.3.1.1.&nbsp;Open source EMBOSS is open source: All code is open source and licensed under the GNU Software licences. EMBOSS is free (as in "free beer"): you can download it free-of-charge. EMBOSS is free (as in "free speech"): you can do whatever you want with the code, provided you preserve that same freedom for others. EMBOSS has ties with the Open-Bio Foundation (OBF). The OBF is a volunteer-run organisation focused on supporting open source programming in bioinformatics. They provide administrative support and facilities for EMBOSS. Further information is available at http://www.open-bio.org/ . Submitted code from outside contributors is welcome. 1.3.1.2.&nbsp;Stable licensing The GNU General Public License (GPL) was adopted for the application code and the GNU Lesser GPL (LGPL) for library code. These licences have the following advantages: They allow third party code to link freely to the EMBOSS libraries. Any original copyrights can be retained. Users have rights that cannot be taken away. They allow developers to change employers without losing control of the code. The EMBOSS developers still use their own code under (L)GPL showing that the licence has stood the test of time well. 1.3.1.3.&nbsp;UNIX command line EMBOSS supports a standard Unix-style command line interface which is intrinsically flexible, convenient and powerful. It has many useful features including: AJAX Command Definition (ACD) files define all application parameters and permissible values. Each application has the same command line style of interface, so master one and you've mastered them all. Many simple and complex (biological) data types and file formats are supported. Powerful and flexible Uniform Sequence Address (USA) mechanism for specifying sequences. Unambiguous short names are used for application parameters. Parameters related to individual sequences or other types may be referenced by name and number. 1.3.1.4.&nbsp;Command line validation Validation of user input is perhaps the most powerful feature of the EMBOSS command line and was the original motivation for the ACD standard. The validation has the following features: An ACD file (which may contain default values) and all user input is validated when an application is invoked, before the application proper starts. Input at the command line is handled automatically, e.g. reprompting for correct values. User input and validation is handled in plain text; no additional software, recompilation or configuration files are needed. 1.3.1.5.&nbsp;Data in any common format GCG could only read "GCG format" whereas many other packages read FASTA format only, despite lack of agreement of exactly what FASTA format is. Much time is wasted writing code to handle the vast range of often evolving, poorly specified or abused standards for storing bioinformatic data. EMBOSS supports most common data formats: All sequence and many alignment and structural formats are handled. Many other data formats are handled automatically. EMBOSS detects the format of an input sequence automatically. Parsing of different formats is tested until one succeeds. A few formats are not tested automatically by default but are available on request. Formats can be specified explicitly for efficiency. 1.3.1.6.&nbsp;No sequence length limit GCG (and EGCG as a consequence) imposed a sequence size limit of 350kb which at the time was too short for DNA sequences (forcing recompilation of the software) and too long for protein sequences (being wasteful of system memory). EMBOSS is flexible: There are no arbitrary limits on the amount of data that can be processed. The upper memory limit is determined only by the available system memory. Sufficient memory for all input and other data is allocated automatically. Dynamic memory management for programming objects such as sequences and arrays is simplified. 1.3.1.7.&nbsp;Availability and distribution EMBOSS is freely available and widely distributed: EMBOSS runs on almost every UNIX platform, plus MS Windows and MacOS. There is an actively developed, mature code base with a stable release each year. Regular updates and fixes are available. The current source code is available via CVS. 1.3.1.8.&nbsp;Quality assurance Regular quality assurance (QA) testing is essential to ensure EMBOSS remains reliable whenever changes and additions to the code are made: QA tests are run on all applications ensuring everything works as expected. The QA tests include memory usage: EMBOSS applications do not leak memory. Nightly compilation tests are performed on a variety of platforms. 1.3.2.&nbsp;Features for Users of EMBOSS 1.3.2.1.&nbsp;Simple site configuration Simple site configuration is ensured by simple configuration files: emboss.default is used for installation-wide configuration. ~/.embossrc is used for user-specific configuration. Environment variables are used to set file paths and for program control. 1.3.2.2.&nbsp;Support for local databases A variety of sequence database types and access methods are supported: Database flatfiles. Database flatfiles indexed by SRS. GCG reformatted .seq and .ref files. BLAST index files. Access methods allow local utilities and database systems for data retrieval to be easily defined. New databases and access methods are easily added. 1.3.2.3.&nbsp;Remote data servers Often a user will need a single or a few sequences only and will need to retrieve them from a remote server, e.g. SRS at EMBL-EBI or Entrez at NCBI. This is supported under EMBOSS: EMBOSS allows remote servers to be defined as databases. Retrieval of remote sequence data is transparent: access is the same as for a local database. 1.3.2.4.&nbsp;Support for users of EMBOSS EMBOSS users are well supported: There are mailing lists for discussions about using EMBOSS. There is timely support from the core developers and a large user community. Bug reports, support requests and feature requests are logged and tracked. Applications are well documented including common usage examples. Several tutorials and bioinformatics training courses are available. The EMBOSS Users Guide provides comprehensive documentation for users of EMBOSS. The EMBOSS Web Site provides auxiliary and reference documentation. 1.3.2.5.&nbsp;Functionality and integration The basic functionality has increased dramatically since the first release, with features to aid integration with other software: EMBOSS includes a comprehensive set of sequence analysis programs. Other popular publicly available packages and tools are integrated via the EMBASSY section. EMBOSS includes powerful database indexing software. Standard report formats are being adopted for application output to make parsing of output and application interoperation easier. Applications are consistently described (via the ACD syntax), which helps GUI designers and developers. Interface-specific extensions are added to the ACD syntax to help interface developers. Applications are easily customised via edits to their ACD file. Third party applications are easily wrapped. Movement towards optional use of XML for application output. 1.3.2.6.&nbsp;Interfaces Many different interfaces to EMBOSS are available: Powerful graphical interfaces. Easy to use web-based interfaces. EMBOSS is included in powerful workflow software for constructing data pipelines. Prev &nbsp; Up &nbsp; Next 1.2.&nbsp;EMBOSS Developers&nbsp; Home &nbsp;Chapter&nbsp;2.&nbsp;Basic Set-up and Maintenance
+| 1.3. Key Features | | |
+| --- | --- | --- |
+| [Prev](ch01s02.html) | Chapter 1. Background to EMBOSS | [Next](ch02.html) |
+
+---
+
+## 1.3. Key Features
+
+### 1.3.1. General Features
+
+#### 1.3.1.1. Open source
+
+EMBOSS is open source:
+
+* All code is open source and licensed under the GNU Software licences.
+* EMBOSS is free (as in "free beer"): you can download it free-of-charge.
+* EMBOSS is free (as in "free speech"): you can do whatever you want with the code, provided you preserve that same freedom for others.
+* EMBOSS has ties with the Open-Bio Foundation (OBF). The OBF is a volunteer-run organisation focused on supporting open source programming in bioinformatics. They provide administrative support and facilities for EMBOSS. Further information is available at *<http://www.open-bio.org/>*.
+* Submitted code from outside contributors is welcome.
+
+#### 1.3.1.2. Stable licensing
+
+The GNU General Public License (GPL) was adopted for the application code and the GNU Lesser GPL (LGPL) for library code. These licences have the following advantages:
+
+* They allow third party code to link freely to the EMBOSS libraries.
+* Any original copyrights can be retained.
+* Users have rights that cannot be taken away.
+* They allow developers to change employers without losing control of the code.
+
+The EMBOSS developers still use their own code under (L)GPL showing that the licence has stood the test of time well.
+
+#### 1.3.1.3. UNIX command line
+
+EMBOSS supports a standard Unix-style command line interface which is intrinsically flexible, convenient and powerful. It has many useful features including:
+
+* AJAX Command Definition (ACD) files define all application parameters and permissible values.
+* Each application has the same command line style of interface, so master one and you've mastered them all.
+* Many simple and complex (biological) data types and file formats are supported.
+* Powerful and flexible Uniform Sequence Address (USA) mechanism for specifying sequences.
+* Unambiguous short names are used for application parameters.
+* Parameters related to individual sequences or other types may be referenced by name and number.
+
+#### 1.3.1.4. Command line validation
+
+Validation of user input is perhaps the most powerful feature of the EMBOSS command line and was the original motivation for the ACD standard. The validation has the following features:
+
+* An ACD file (which may contain default values) and all user input is validated when an application is invoked, before the application proper starts.
+* Input at the command line is handled automatically, e.g. reprompting for correct values.
+* User input and validation is handled in plain text; no additional software, recompilation or configuration files are needed.
+
+#### 1.3.1.5. Data in any common format
+
+GCG could only read "GCG format" whereas many other packages read FASTA format only, despite lack of agreement of exactly what FASTA format is. Much time is wasted writing code to handle the vast range of often evolving, poorly specified or abused standards for storing bioinformatic data. EMBOSS supports most common data formats:
+
+* All sequence and many alignment and structural formats are handled.
+* Many other data formats are handled automatically.
+* EMBOSS detects the format of an input sequence automatically. Parsing of different formats is tested until one succeeds. A few formats are not tested automatically by default but are available on request.
+* Formats can be specified explicitly for efficiency.
+
+#### 1.3.1.6. No sequence length limit
+
+GCG (and EGCG as a consequence) imposed a sequence size limit of 350kb which at the time was too short for DNA sequences (forcing recompilation of the software) and too long for protein sequences (being wasteful of system memory). EMBOSS is flexible:
+
+* There are no arbitrary limits on the amount of data that can be processed.
+* The upper memory limit is determined only by the available system memory.
+* Sufficient memory for all input and other data is allocated automatically.
+* Dynamic memory management for programming objects such as sequences and arrays is simplified.
+
+#### 1.3.1.7. Availability and distribution
+
+EMBOSS is freely available and widely distributed:
+
+* EMBOSS runs on almost every UNIX platform, plus MS Windows and MacOS.
+* There is an actively developed, mature code base with a stable release each year.
+* Regular updates and fixes are available.
+* The current source code is available via CVS.
+
+#### 1.3.1.8. Quality assurance
+
+Regular quality assurance (QA) testing is essential to ensure EMBOSS remains reliable whenever changes and additions to the code are made:
+
+* QA tests are run on all applications ensuring everything works as expected.
+* The QA tests include memory usage: EMBOSS applications do not leak memory.
+* Nightly compilation tests are performed on a variety of platforms.
+
+### 1.3.2. Features for Users of EMBOSS
+
+#### 1.3.2.1. Simple site configuration
+
+Simple site configuration is ensured by simple configuration files:
+
+* `emboss.default` is used for installation-wide configuration.
+* `~/.embossrc` is used for user-specific configuration.
+* Environment variables are used to set file paths and for program control.
+
+#### 1.3.2.2. Support for local databases
+
+A variety of sequence database types and access methods are supported:
+
+* Database flatfiles.
+* Database flatfiles indexed by SRS.
+* GCG reformatted `.seq` and `.ref` files.
+* BLAST index files.
+* Access methods allow local utilities and database systems for data retrieval to be easily defined.
+* New databases and access methods are easily added.
+
+#### 1.3.2.3. Remote data servers
+
+Often a user will need a single or a few sequences only and will need to retrieve them from a remote server, e.g. SRS at EMBL-EBI or Entrez at NCBI. This is supported under EMBOSS:
+
+* EMBOSS allows remote servers to be defined as databases.
+* Retrieval of remote sequence data is transparent: access is the same as for a local database.
+
+#### 1.3.2.4. Support for users of EMBOSS
+
+EMBOSS users are well supported:
+
+* There are mailing lists for discussions about using EMBOSS.
+* There is timely support from the core developers and a large user community.
+* Bug reports, support requests and feature requests are logged and tracked.
+* Applications are well documented including common usage examples.
+* Several tutorials and bioinformatics training courses are available.
+* The *EMBOSS Users Guide* provides comprehensive documentation for users of EMBOSS.
+* The EMBOSS Web Site provides auxiliary and reference documentation.
+
+#### 1.3.2.5. Functionality and integration
+
+The basic functionality has increased dramatically since the first release, with features to aid integration with other software:
+
+* EMBOSS includes a comprehensive set of sequence analysis programs.
+* Other popular publicly available packages and tools are integrated via the EMBASSY section.
+* EMBOSS includes powerful database indexing software.
+* Standard report formats are being adopted for application output to make parsing of output and application interoperation easier.
+* Applications are consistently described (via the ACD syntax), which helps GUI designers and developers.
+* Interface-specific extensions are added to the ACD syntax to help interface developers.
+* Applications are easily customised via edits to their ACD file.
+* Third party applications are easily wrapped.
+* Movement towards optional use of XML for application output.
+
+#### 1.3.2.6. Interfaces
+
+Many different interfaces to EMBOSS are available:
+
+* Powerful graphical interfaces.
+* Easy to use web-based interfaces.
+* EMBOSS is included in powerful workflow software for constructing data pipelines.
+
+---
+
+|  |  |  |
+| --- | --- | --- |
+| [Prev](ch01s02.html) | [Up](ch01.html) | [Next](ch02.html) |
+| 1.2. EMBOSS Developers | [Home](index.html) | Chapter 2. Basic Set-up and Maintenance |

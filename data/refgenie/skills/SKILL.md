@@ -1,50 +1,91 @@
 ---
 name: refgenie
-description: "Refgenie manages reference genome assets for reproducible bioinformatics pipelines. Use when user asks to download, build, or find reference genome assets."
+description: Refgenie is a reference genome manager that standardizes the storage, retrieval, and building of bioinformatics assets. Use when user asks to manage reference genomes, download pre-built genomic assets, retrieve local file paths for indexes, or build custom genome assemblies.
 homepage: http://refgenie.databio.org
 ---
 
 
 # refgenie
 
----
 ## Overview
+Refgenie is a reference genome manager that standardizes how bioinformatics assets are stored and accessed. It eliminates the need for hard-coding paths to genome indexes by providing a "seek" mechanism. It operates on a "pull-or-build" logic: you can download professionally curated assets from a remote server or generate your own for custom assemblies using scripted recipes.
 
-Refgenie is a powerful command-line tool and Python library designed to streamline the management of reference genome assets. It provides a standardized way to organize, download, and build essential files like BWA or Bowtie2 indexes, FASTA files, and annotations. This ensures that bioinformatics pipelines can easily access and utilize these resources in a portable and reproducible manner, regardless of the computing environment.
+## Core Workflows
 
-## Core Functionality
+### 1. Initialization
+Before using refgenie locally, you must initialize a configuration file and subscribe to an asset server.
+```bash
+# Initialize the config
+export REFGENIE=genome_config.yaml
+refgenie init -c $REFGENIE
 
-Refgenie primarily revolves around managing "assets" for different reference genomes. These assets can be pre-built and downloaded from remote servers or custom-built from your own FASTA files.
+# Subscribe to the default public server
+refgenie subscribe -s http://rg.databio.org
+```
 
-### Key Commands and Concepts
+### 2. Managing Assets (Pull & Seek)
+The most common use case is downloading an index and retrieving its path for a tool.
+```bash
+# List available remote assets
+refgenie listr
 
-*   **`refgenie init`**: Initializes a refgenie configuration file and genome data directory. This is the first step before using most other refgenie commands.
-    *   `export REFGENIE=/path/to/your/genome_config.yaml` should be set to make the configuration persistent.
-*   **`refgenie listr`**: Lists available remote assets from configured servers. Useful for discovering what pre-built assets are available.
-*   **`refgenie pull GENOME/ASSET`**: Downloads a specified pre-built asset for a given genome.
-    *   Example: `refgenie pull hg38/bwa_index`
-*   **`refgenie build GENOME/ASSET`**: Builds a custom asset for a given genome. This requires specifying input files or other assets.
-    *   Example: `refgenie build my_custom_genome/bowtie2_index --files fasta=my_genome.fa`
-    *   Use `-q` or `--requirements` to see what inputs are needed for a build.
-    *   Can use `--docker` or `--bulker` for managing build dependencies.
-*   **`refgenie seek GENOME/ASSET`**: Retrieves the local file path to a managed asset. This is crucial for making pipelines portable.
-    *   Example: `refgenie seek hg38/salmon_index`
-*   **`refgenie list`**: Lists locally available assets.
-*   **`refgenie add GENOME/ASSET --path <local_path>`**: Manually adds a custom asset that refgenie will manage.
+# Download an asset (e.g., hg38 fasta)
+refgenie pull hg38/fasta
 
-### Expert Tips
+# Get the local path to use in a command
+refgenie seek hg38/bowtie2_index
+```
 
-*   **Asset Registry Paths**: Refgenie uses a `GENOME/ASSET:TAG` format for specifying assets. Often, the `:TAG` part can be omitted if you're using the default tag.
-*   **Remote Mode**: For cloud environments or temporary use, refgenie can operate in "remote mode" without a persistent configuration file. Commands often end with 'r' (e.g., `listr`, `seekr`).
-*   **Dependencies**: When building assets, ensure the necessary software is installed or leverage Docker/Bulker for reproducible builds.
-*   **Configuration Management**: Always set the `REFGENIE` environment variable to point to your `genome_config.yaml` file for seamless operation.
-*   **Python API**: For programmatic access within scripts, import `refgenconf` and use its `RefGenConf` class to interact with assets.
+### 3. Building Custom Assets
+If an asset isn't on the server, build it locally. Most builds require a `fasta` asset to exist first.
+```bash
+# 1. Build the fasta asset from a local file
+refgenie build custom_genome/fasta --files fasta=/path/to/genome.fa
+
+# 2. Build derived assets (e.g., bwa_index) using the fasta asset
+refgenie build custom_genome/bwa_index
+```
+
+## Asset Registry Paths
+Refgenie uses a standardized string format: `genome/asset.seek_key:tag`.
+- **Defaults**: If you omit the tag, it uses `default`. If you omit the seek_key, it uses the asset name.
+- **Example**: `hg38/fasta.fai:default` refers to the index file of the default hg38 FASTA asset.
+
+## Expert Tips
+- **Remote Seek**: Use `refgenie seekr` to get URLs for assets hosted on the cloud (e.g., S3) without downloading them.
+- **Aliases**: If you have a genome digest but want to call it "hg38", use `refgenie alias set --aliases hg38 --digest <digest>`.
+- **Requirements Check**: Before building, check what files or parameters a recipe needs: `refgenie build hg38/bowtie2_index -q`.
+- **Concurrency**: When running many builds in a HPC environment, use the `--map` flag to build metadata separately, then `refgenie build --reduce` to merge them into the main config.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| populater | Populate registry paths with remote paths. |
+| refgenie | refgenie - reference genome asset manager |
+| refgenie build | Build genome assets. |
+| refgenie compare | Compare two genomes. |
+| refgenie getseq | Get sequences from a genome. |
+| refgenie init | Initialize a genome configuration. |
+| refgenie list | List available local assets. |
+| refgenie populate | Populate registry paths with local paths. |
+| refgenie pull | Download assets. |
+| refgenie remove | Remove a local asset. |
+| refgenie seek | Get the path to a local asset. |
+| refgenie seekr | Get the path to a remote asset. |
+| refgenie subscribe | Add a refgenieserver URL to the config. |
+| refgenie tag | Tag an asset. |
+| refgenie unsubscribe | Remove a refgenieserver URL from the config. |
+| refgenie upgrade | Upgrade config. This will alter the files on disk. |
+| refgenie_add | Add local asset to the config file. |
+| refgenie_id | Return the asset digest. |
+| refgenie_listr | Remote refgenie assets |
 
 ## Reference documentation
-- [Overview](./references/refgenie_databio_org_en_latest_overview.md)
-- [Install and configure](./references/refgenie_databio_org_en_latest_install.md)
-- [Download pre-built assets](./references/refgenie_databio_org_en_latest_pull.md)
-- [Build assets](./references/refgenie_databio_org_en_latest_build.md)
-- [Add custom assets](./references/refgenie_databio_org_en_latest_custom_assets.md)
-- [Retrieve paths to assets](./references/refgenie_databio_org_en_latest_asset_registry_paths.md)
-- [Demo videos](./references/refgenie_databio_org_en_latest_demo_videos.md)
+- [Refgenie Overview](./references/refgenie_databio_org_en_latest_overview.md)
+- [Asset Registry Paths](./references/refgenie_databio_org_en_latest_asset_registry_paths.md)
+- [Building Assets](./references/refgenie_databio_org_en_latest_build.md)
+- [Available Assets & Recipes](./references/refgenie_databio_org_en_latest_available_assets.md)
+- [Genome Aliases](./references/refgenie_databio_org_en_latest_aliases.md)

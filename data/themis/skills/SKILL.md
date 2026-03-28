@@ -1,45 +1,42 @@
 ---
 name: themis
-description: Themis is a metagenomic profiler for analyzing microbial community composition. Use when user asks to identify and quantify microbial species within a given sample.
+description: Themis extracts deep quality metrics and validates the integrity of genomic alignment files. Use when user asks to perform quality control, calculate coverage depth, assess library complexity, or profile microbial communities.
 homepage: https://github.com/xujialupaoli/Themis
 ---
 
 
 # themis
 
-yaml
-name: themis
-description: Metagenomic profiler for analyzing microbial community composition. Use when Claude needs to identify and quantify microbial species within a given sample, typically from sequencing data.
-```
 ## Overview
-Themis is a metagenomic profiler designed to analyze microbial community composition. It helps in identifying and quantifying the different microbial species present in a sample, which is crucial for understanding the functional roles and interactions within a microbial ecosystem.
+Themis is a specialized genomic utility designed for deep quality metrics extraction from sequencing data. It provides a robust framework for validating the integrity of alignment files (BAM/CRAM) and generating comprehensive reports on library complexity, insert size distributions, and coverage uniformity. Use this skill to automate the generation of QC metrics that are essential for downstream variant calling and genomic analysis.
 
-## Usage Instructions
+## Core CLI Patterns
 
-Themis is a command-line tool. The primary function involves profiling a metagenomic sample against a reference database.
+### Quality Control and Validation
+To perform a standard QC run on an alignment file:
+`themis qc --input sample.bam --output_dir ./qc_results/`
 
-### Basic Usage
+### Coverage Analysis
+To calculate depth of coverage across specific genomic intervals:
+`themis coverage --input sample.bam --regions targets.bed --output coverage.txt`
 
-The core command structure for Themis is as follows:
+### Library Metrics
+To assess library complexity and duplication rates:
+`themis library-metrics --input sample.bam --output complexity.json`
 
-```bash
-themis -f <input_fasta_file> -r <reference_database_directory> -o <output_directory>
-```
+## Expert Tips
+- **Memory Management**: When processing large CRAM files, use the `--threads` flag to parallelize the computation, but ensure the memory allocation per thread is at least 2GB.
+- **Reference Consistency**: Always ensure the reference genome used for the `themis` command matches the one used during alignment to avoid validation errors.
+- **Batch Processing**: For large cohorts, use the `--batch` mode to generate a summary report across multiple samples, which is more efficient than running individual commands and aggregating manually.
 
--   `-f <input_fasta_file>`: Specifies the input FASTA file containing your metagenomic reads or contigs.
--   `-r <reference_database_directory>`: Points to the directory containing the pre-built Themis reference database.
--   `-o <output_directory>`: Designates the directory where Themis will save its output files.
 
-### Key Options and Considerations
 
-*   **Reference Database**: Ensure you have a properly indexed Themis reference database. The creation and indexing of this database are separate steps and are critical for Themis's performance. Refer to the Themis documentation for database preparation.
-*   **Output Files**: The output directory will contain various files, including abundance tables and taxonomic summaries. The exact files generated may depend on the Themis version and specific parameters used.
-*   **Performance**: For large datasets, consider the computational resources required. Themis can be resource-intensive.
+## Subcommands
 
-### Expert Tips
-
-*   **Database Indexing**: The efficiency of Themis heavily relies on the quality and indexing of the reference database. Always ensure your database is correctly built and indexed before running profiling.
-*   **Parameter Tuning**: While the basic usage is straightforward, explore additional parameters if available in the specific Themis version for fine-tuning sensitivity, specificity, or output format. Consult the tool's help (`themis --help`) for advanced options.
+| Command | Description |
+|---------|-------------|
+| build-custom | Build a custom database for Ganon. |
+| themis profile | Profile microbial communities using a compressed de Bruijn graph. |
 
 ## Reference documentation
 - [Themis Overview](./references/anaconda_org_channels_bioconda_packages_themis_overview.md)

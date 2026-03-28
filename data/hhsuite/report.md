@@ -637,3 +637,6 @@ Examples: reformat.pl 1hjra.a3m 1hjra.a2m
           reformat.pl fas sto '*.fasta' .stockholm
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,1 +1,237 @@
-GitHub - infphilo/centrifuge: Classifier for metagenomic sequences Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} infphilo / centrifuge Public forked from DaehwanKimLab/centrifuge Notifications You must be signed in to change notification settings Fork 8 Star 30 Classifier for metagenomic sequences License GPL-3.0 license 30 stars 75 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Pull requests Actions Projects Security Insights infphilo/centrifuge master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 404 Commits 404 Commits centrifuge.xcodeproj centrifuge.xcodeproj doc doc evaluation evaluation example example indices indices third_party third_party .gitignore .gitignore AUTHORS AUTHORS LICENSE LICENSE MANUAL MANUAL MANUAL.markdown MANUAL.markdown Makefile Makefile NEWS NEWS README.md README.md TUTORIAL TUTORIAL VERSION VERSION aligner_bt.cpp aligner_bt.cpp aligner_bt.h aligner_bt.h aligner_cache.cpp aligner_cache.cpp aligner_cache.h aligner_cache.h aligner_metrics.h aligner_metrics.h aligner_result.h aligner_result.h aligner_seed.cpp aligner_seed.cpp aligner_seed.h aligner_seed.h aligner_seed_policy.cpp aligner_seed_policy.cpp aligner_seed_policy.h aligner_seed_policy.h aligner_sw.cpp aligner_sw.cpp aligner_sw.h aligner_sw.h aligner_sw_common.h aligner_sw_common.h aligner_sw_nuc.h aligner_sw_nuc.h aligner_swsse.cpp aligner_swsse.cpp aligner_swsse.h aligner_swsse.h aligner_swsse_ee_i16.cpp aligner_swsse_ee_i16.cpp aligner_swsse_ee_u8.cpp aligner_swsse_ee_u8.cpp aligner_swsse_loc_i16.cpp aligner_swsse_loc_i16.cpp aligner_swsse_loc_u8.cpp aligner_swsse_loc_u8.cpp aln_sink.h aln_sink.h alphabet.cpp alphabet.cpp alphabet.h alphabet.h assert_helpers.h assert_helpers.h binary_sa_search.h binary_sa_search.h bitpack.h bitpack.h blockwise_sa.h blockwise_sa.h bt2_idx.cpp bt2_idx.cpp bt2_idx.h bt2_idx.h bt2_io.h bt2_io.h bt2_util.h bt2_util.h btypes.h btypes.h ccnt_lut.cpp ccnt_lut.cpp centrifuge centrifuge centrifuge-BuildSharedSequence.pl centrifuge-BuildSharedSequence.pl centrifuge-RemoveEmptySequence.pl centrifuge-RemoveEmptySequence.pl centrifuge-RemoveN.pl centrifuge-RemoveN.pl centrifuge-build centrifuge-build centrifuge-compress.pl centrifuge-compress.pl centrifuge-download centrifuge-download centrifuge-inspect centrifuge-inspect centrifuge-kreport centrifuge-kreport centrifuge-promote centrifuge-promote centrifuge-sort-nt.pl centrifuge-sort-nt.pl centrifuge.cpp centrifuge.cpp centrifuge_build.cpp centrifuge_build.cpp centrifuge_build_main.cpp centrifuge_build_main.cpp centrifuge_compress.cpp centrifuge_compress.cpp centrifuge_inspect.cpp centrifuge_inspect.cpp centrifuge_main.cpp centrifuge_main.cpp centrifuge_report.cpp centrifuge_report.cpp classifier.h classifier.h diff_sample.cpp diff_sample.cpp diff_sample.h diff_sample.h dp_framer.cpp dp_framer.cpp dp_framer.h dp_framer.h ds.cpp ds.cpp ds.h ds.h edit.cpp edit.cpp edit.h edit.h endian_swap.h endian_swap.h fast_mutex.h fast_mutex.h filebuf.h filebuf.h formats.h formats.h functions.sh functions.sh group_walk.cpp group_walk.cpp group_walk.h group_walk.h hi_aligner.h hi_aligner.h hier_idx.h hier_idx.h hier_idx_common.h hier_idx_common.h hyperloglogbias.h hyperloglogbias.h hyperloglogplus.h hyperloglogplus.h limit.cpp limit.cpp limit.h limit.h ls.cpp ls.cpp ls.h ls.h mask.cpp mask.cpp mask.h mask.h mem_ids.h mem_ids.h mm.h mm.h multikey_qsort.h multikey_qsort.h opts.h opts.h outq.cpp outq.cpp outq.h outq.h View all files Repository files navigation README GPL-3.0 license Centrifuge Classifier for metagenomic sequences [Centrifuge] is a novel microbial classification engine that enables rapid, accurate and sensitive labeling of reads and quantification of species on desktop computers. The system uses a novel indexing scheme based on the Burrows-Wheeler transform (BWT) and the Ferragina-Manzini (FM) index, optimized specifically for the metagenomic classification problem. Centrifuge requires a relatively small index (4.7 GB for all complete bacterial and viral genomes plus the human genome) and classifies sequences at very high speed, allowing it to process the millions of reads from a typical high-throughput DNA sequencing run within a few minutes. Together these advances enable timely and accurate analysis of large metagenomics data sets on conventional desktop computers The Centrifuge hompage is http://www.ccb.jhu.edu/software/centrifuge The Centrifuge paper is available at https://genome.cshlp.org/content/26/12/1721 The Centrifuge poster is available at http://www.ccb.jhu.edu/people/infphilo/data/Centrifuge-poster.pdf For more details on installing and running Centrifuge, look at MANUAL Quick guide Installation from source git clone https://github.com/infphilo/centrifuge cd centrifuge make sudo make install prefix=/usr/local Building indexes We provide several indexes on the Centrifuge homepage at http://www.ccb.jhu.edu/software/centrifuge . Centrifuge needs sequence and taxonomy files, as well as sequence ID to taxonomy ID mapping. See the MANUAL files for details. We provide a Makefile that simplifies the building of several standard and custom indices cd indices make p+h+v # bacterial, human, and viral genomes [~12G] make p_compressed # bacterial genomes compressed at the species level [~4.2G] make p_compressed+h+v # combination of the two above [~8G] About Classifier for metagenomic sequences Resources Readme License GPL-3.0 license Uh oh! There was an error while loading. Please reload this page . Activity Stars 30 stars Watchers 2 watching Forks 8 forks Report repository Releases 6 tags Packages 0 No packages published Languages C++ 88.4% Python 2.9% Objective-C 2.9% Perl 2.6% C 1.6% Makefile 1.0% Shell 0.6% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Finfphilo%2Fcentrifuge)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Finfphilo%2Fcentrifuge)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=infphilo%2Fcentrifuge)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[infphilo](/infphilo)
+/
+**[centrifuge](/infphilo/centrifuge)**
+Public
+
+forked from [DaehwanKimLab/centrifuge](/DaehwanKimLab/centrifuge)
+
+* [Notifications](/login?return_to=%2Finfphilo%2Fcentrifuge) You must be signed in to change notification settings
+* [Fork
+  8](/login?return_to=%2Finfphilo%2Fcentrifuge)
+* [Star
+   30](/login?return_to=%2Finfphilo%2Fcentrifuge)
+
+* [Code](/infphilo/centrifuge)
+* [Pull requests
+  0](/infphilo/centrifuge/pulls)
+* [Actions](/infphilo/centrifuge/actions)
+* [Projects](/infphilo/centrifuge/projects)
+* [Security
+  0](/infphilo/centrifuge/security)
+* [Insights](/infphilo/centrifuge/pulse)
+
+Additional navigation options
+
+* [Code](/infphilo/centrifuge)
+* [Pull requests](/infphilo/centrifuge/pulls)
+* [Actions](/infphilo/centrifuge/actions)
+* [Projects](/infphilo/centrifuge/projects)
+* [Security](/infphilo/centrifuge/security)
+* [Insights](/infphilo/centrifuge/pulse)
+
+# infphilo/centrifuge
+
+master
+
+[Branches](/infphilo/centrifuge/branches)[Tags](/infphilo/centrifuge/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[404 Commits](/infphilo/centrifuge/commits/master/)   404 Commits | | |
+| [centrifuge.xcodeproj](/infphilo/centrifuge/tree/master/centrifuge.xcodeproj "centrifuge.xcodeproj") | | [centrifuge.xcodeproj](/infphilo/centrifuge/tree/master/centrifuge.xcodeproj "centrifuge.xcodeproj") |  |  |
+| [doc](/infphilo/centrifuge/tree/master/doc "doc") | | [doc](/infphilo/centrifuge/tree/master/doc "doc") |  |  |
+| [evaluation](/infphilo/centrifuge/tree/master/evaluation "evaluation") | | [evaluation](/infphilo/centrifuge/tree/master/evaluation "evaluation") |  |  |
+| [example](/infphilo/centrifuge/tree/master/example "example") | | [example](/infphilo/centrifuge/tree/master/example "example") |  |  |
+| [indices](/infphilo/centrifuge/tree/master/indices "indices") | | [indices](/infphilo/centrifuge/tree/master/indices "indices") |  |  |
+| [third\_party](/infphilo/centrifuge/tree/master/third_party "third_party") | | [third\_party](/infphilo/centrifuge/tree/master/third_party "third_party") |  |  |
+| [.gitignore](/infphilo/centrifuge/blob/master/.gitignore ".gitignore") | | [.gitignore](/infphilo/centrifuge/blob/master/.gitignore ".gitignore") |  |  |
+| [AUTHORS](/infphilo/centrifuge/blob/master/AUTHORS "AUTHORS") | | [AUTHORS](/infphilo/centrifuge/blob/master/AUTHORS "AUTHORS") |  |  |
+| [LICENSE](/infphilo/centrifuge/blob/master/LICENSE "LICENSE") | | [LICENSE](/infphilo/centrifuge/blob/master/LICENSE "LICENSE") |  |  |
+| [MANUAL](/infphilo/centrifuge/blob/master/MANUAL "MANUAL") | | [MANUAL](/infphilo/centrifuge/blob/master/MANUAL "MANUAL") |  |  |
+| [MANUAL.markdown](/infphilo/centrifuge/blob/master/MANUAL.markdown "MANUAL.markdown") | | [MANUAL.markdown](/infphilo/centrifuge/blob/master/MANUAL.markdown "MANUAL.markdown") |  |  |
+| [Makefile](/infphilo/centrifuge/blob/master/Makefile "Makefile") | | [Makefile](/infphilo/centrifuge/blob/master/Makefile "Makefile") |  |  |
+| [NEWS](/infphilo/centrifuge/blob/master/NEWS "NEWS") | | [NEWS](/infphilo/centrifuge/blob/master/NEWS "NEWS") |  |  |
+| [README.md](/infphilo/centrifuge/blob/master/README.md "README.md") | | [README.md](/infphilo/centrifuge/blob/master/README.md "README.md") |  |  |
+| [TUTORIAL](/infphilo/centrifuge/blob/master/TUTORIAL "TUTORIAL") | | [TUTORIAL](/infphilo/centrifuge/blob/master/TUTORIAL "TUTORIAL") |  |  |
+| [VERSION](/infphilo/centrifuge/blob/master/VERSION "VERSION") | | [VERSION](/infphilo/centrifuge/blob/master/VERSION "VERSION") |  |  |
+| [aligner\_bt.cpp](/infphilo/centrifuge/blob/master/aligner_bt.cpp "aligner_bt.cpp") | | [aligner\_bt.cpp](/infphilo/centrifuge/blob/master/aligner_bt.cpp "aligner_bt.cpp") |  |  |
+| [aligner\_bt.h](/infphilo/centrifuge/blob/master/aligner_bt.h "aligner_bt.h") | | [aligner\_bt.h](/infphilo/centrifuge/blob/master/aligner_bt.h "aligner_bt.h") |  |  |
+| [aligner\_cache.cpp](/infphilo/centrifuge/blob/master/aligner_cache.cpp "aligner_cache.cpp") | | [aligner\_cache.cpp](/infphilo/centrifuge/blob/master/aligner_cache.cpp "aligner_cache.cpp") |  |  |
+| [aligner\_cache.h](/infphilo/centrifuge/blob/master/aligner_cache.h "aligner_cache.h") | | [aligner\_cache.h](/infphilo/centrifuge/blob/master/aligner_cache.h "aligner_cache.h") |  |  |
+| [aligner\_metrics.h](/infphilo/centrifuge/blob/master/aligner_metrics.h "aligner_metrics.h") | | [aligner\_metrics.h](/infphilo/centrifuge/blob/master/aligner_metrics.h "aligner_metrics.h") |  |  |
+| [aligner\_result.h](/infphilo/centrifuge/blob/master/aligner_result.h "aligner_result.h") | | [aligner\_result.h](/infphilo/centrifuge/blob/master/aligner_result.h "aligner_result.h") |  |  |
+| [aligner\_seed.cpp](/infphilo/centrifuge/blob/master/aligner_seed.cpp "aligner_seed.cpp") | | [aligner\_seed.cpp](/infphilo/centrifuge/blob/master/aligner_seed.cpp "aligner_seed.cpp") |  |  |
+| [aligner\_seed.h](/infphilo/centrifuge/blob/master/aligner_seed.h "aligner_seed.h") | | [aligner\_seed.h](/infphilo/centrifuge/blob/master/aligner_seed.h "aligner_seed.h") |  |  |
+| [aligner\_seed\_policy.cpp](/infphilo/centrifuge/blob/master/aligner_seed_policy.cpp "aligner_seed_policy.cpp") | | [aligner\_seed\_policy.cpp](/infphilo/centrifuge/blob/master/aligner_seed_policy.cpp "aligner_seed_policy.cpp") |  |  |
+| [aligner\_seed\_policy.h](/infphilo/centrifuge/blob/master/aligner_seed_policy.h "aligner_seed_policy.h") | | [aligner\_seed\_policy.h](/infphilo/centrifuge/blob/master/aligner_seed_policy.h "aligner_seed_policy.h") |  |  |
+| [aligner\_sw.cpp](/infphilo/centrifuge/blob/master/aligner_sw.cpp "aligner_sw.cpp") | | [aligner\_sw.cpp](/infphilo/centrifuge/blob/master/aligner_sw.cpp "aligner_sw.cpp") |  |  |
+| [aligner\_sw.h](/infphilo/centrifuge/blob/master/aligner_sw.h "aligner_sw.h") | | [aligner\_sw.h](/infphilo/centrifuge/blob/master/aligner_sw.h "aligner_sw.h") |  |  |
+| [aligner\_sw\_common.h](/infphilo/centrifuge/blob/master/aligner_sw_common.h "aligner_sw_common.h") | | [aligner\_sw\_common.h](/infphilo/centrifuge/blob/master/aligner_sw_common.h "aligner_sw_common.h") |  |  |
+| [aligner\_sw\_nuc.h](/infphilo/centrifuge/blob/master/aligner_sw_nuc.h "aligner_sw_nuc.h") | | [aligner\_sw\_nuc.h](/infphilo/centrifuge/blob/master/aligner_sw_nuc.h "aligner_sw_nuc.h") |  |  |
+| [aligner\_swsse.cpp](/infphilo/centrifuge/blob/master/aligner_swsse.cpp "aligner_swsse.cpp") | | [aligner\_swsse.cpp](/infphilo/centrifuge/blob/master/aligner_swsse.cpp "aligner_swsse.cpp") |  |  |
+| [aligner\_swsse.h](/infphilo/centrifuge/blob/master/aligner_swsse.h "aligner_swsse.h") | | [aligner\_swsse.h](/infphilo/centrifuge/blob/master/aligner_swsse.h "aligner_swsse.h") |  |  |
+| [aligner\_swsse\_ee\_i16.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_ee_i16.cpp "aligner_swsse_ee_i16.cpp") | | [aligner\_swsse\_ee\_i16.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_ee_i16.cpp "aligner_swsse_ee_i16.cpp") |  |  |
+| [aligner\_swsse\_ee\_u8.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_ee_u8.cpp "aligner_swsse_ee_u8.cpp") | | [aligner\_swsse\_ee\_u8.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_ee_u8.cpp "aligner_swsse_ee_u8.cpp") |  |  |
+| [aligner\_swsse\_loc\_i16.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_loc_i16.cpp "aligner_swsse_loc_i16.cpp") | | [aligner\_swsse\_loc\_i16.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_loc_i16.cpp "aligner_swsse_loc_i16.cpp") |  |  |
+| [aligner\_swsse\_loc\_u8.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_loc_u8.cpp "aligner_swsse_loc_u8.cpp") | | [aligner\_swsse\_loc\_u8.cpp](/infphilo/centrifuge/blob/master/aligner_swsse_loc_u8.cpp "aligner_swsse_loc_u8.cpp") |  |  |
+| [aln\_sink.h](/infphilo/centrifuge/blob/master/aln_sink.h "aln_sink.h") | | [aln\_sink.h](/infphilo/centrifuge/blob/master/aln_sink.h "aln_sink.h") |  |  |
+| [alphabet.cpp](/infphilo/centrifuge/blob/master/alphabet.cpp "alphabet.cpp") | | [alphabet.cpp](/infphilo/centrifuge/blob/master/alphabet.cpp "alphabet.cpp") |  |  |
+| [alphabet.h](/infphilo/centrifuge/blob/master/alphabet.h "alphabet.h") | | [alphabet.h](/infphilo/centrifuge/blob/master/alphabet.h "alphabet.h") |  |  |
+| [assert\_helpers.h](/infphilo/centrifuge/blob/master/assert_helpers.h "assert_helpers.h") | | [assert\_helpers.h](/infphilo/centrifuge/blob/master/assert_helpers.h "assert_helpers.h") |  |  |
+| [binary\_sa\_search.h](/infphilo/centrifuge/blob/master/binary_sa_search.h "binary_sa_search.h") | | [binary\_sa\_search.h](/infphilo/centrifuge/blob/master/binary_sa_search.h "binary_sa_search.h") |  |  |
+| [bitpack.h](/infphilo/centrifuge/blob/master/bitpack.h "bitpack.h") | | [bitpack.h](/infphilo/centrifuge/blob/master/bitpack.h "bitpack.h") |  |  |
+| [blockwise\_sa.h](/infphilo/centrifuge/blob/master/blockwise_sa.h "blockwise_sa.h") | | [blockwise\_sa.h](/infphilo/centrifuge/blob/master/blockwise_sa.h "blockwise_sa.h") |  |  |
+| [bt2\_idx.cpp](/infphilo/centrifuge/blob/master/bt2_idx.cpp "bt2_idx.cpp") | | [bt2\_idx.cpp](/infphilo/centrifuge/blob/master/bt2_idx.cpp "bt2_idx.cpp") |  |  |
+| [bt2\_idx.h](/infphilo/centrifuge/blob/master/bt2_idx.h "bt2_idx.h") | | [bt2\_idx.h](/infphilo/centrifuge/blob/master/bt2_idx.h "bt2_id

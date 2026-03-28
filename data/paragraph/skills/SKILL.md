@@ -1,6 +1,6 @@
 ---
 name: paragraph
-description: Paragraph genotypes structural variants by realigning short-read data to directed acyclic graphs representing genomic variations. Use when user asks to genotype structural variants from a VCF, perform graph-based read realignment, or prepare sample manifests for population-scale genomic analysis.
+description: Paragraph is a graph-based structural variant genotyper that realigns short reads to local directed acyclic graphs to determine genotypes. Use when user asks to genotype structural variants using a graph-based approach, realign reads to variant graphs, or perform population-scale genotyping of deletions, insertions, and duplications.
 homepage: https://github.com/Illumina/paragraph
 ---
 
@@ -8,69 +8,58 @@ homepage: https://github.com/Illumina/paragraph
 # paragraph
 
 ## Overview
+Paragraph is a graph-based structural variant genotyper developed by Illumina. Unlike traditional linear aligners that often struggle with complex genomic regions or large insertions, Paragraph constructs local directed acyclic graphs (DAGs) for each variant. It then realigns short reads to these graphs to determine the most likely genotype. This approach provides higher accuracy for SVs, especially in population-scale studies where consistent genotyping across many samples is required.
 
-Paragraph is a specialized genotyping suite that addresses the limitations of linear reference mapping for structural variants (SVs). By constructing a directed acyclic graph (DAG) for each variant and realigning reads to these graphs, it provides more accurate genotyping than traditional methods, especially in complex or repetitive genomic regions. It is designed for short-read data and supports both single-sample and population-scale analysis.
+## Instructions
 
-## Core Workflows
+### 1. Prepare the Sample Manifest
+Paragraph requires a tab-delimited manifest file describing the input samples.
+*   **Required Columns**:
+    *   `id`: Unique sample identifier.
+    *   `path`: Full path to the BAM or CRAM file.
+    *   `depth`: Average genomic depth (use `bin/idxdepth` for a fast estimate).
+    *   `read length`: Average read length in base pairs.
+*   **Optional Columns**:
+    *   `sex`: "male"/"M" or "female"/"F" (affects sex chromosome genotyping).
+    *   `depth sd`: Standard deviation of depth (defaults to `sqrt(5 * depth)`).
 
-### 1. Standard Genotyping from VCF
-The primary entry point for most users is `multigrmpy.py`, which automates the genotyping of variants listed in a VCF file across one or more samples.
+### 2. Standard Genotyping Workflow
+Use the `multigrmpy.py` script to genotype a VCF against a set of samples. This is the standard entry point for most users.
 
 ```bash
 python3 bin/multigrmpy.py \
     -i candidates.vcf \
-    -m samples_manifest.txt \
+    -m samples.txt \
     -r reference.fa \
     -o output_directory \
     -t 8 \
     -M 600
 ```
 
-### 2. Manifest File Preparation
-The manifest file is a tab-delimited or comma-delimited file required for multi-sample runs.
+### 3. Expert Tips and Best Practices
+*   **Filter High-Depth Regions**: Use the `-M` option to set the maximum allowed read count for a variant. A good rule of thumb is to set this to **20 times the mean sample depth**. This prevents the tool from stalling on low-complexity or repetitive regions with abnormal pileups.
+*   **VCF Formatting**:
+    *   **Deletions/Duplications/Inversions**: Ensure the `END` tag is present in the INFO field.
+    *   **Insertions**: Paragraph looks for the insertion sequence in the INFO field. By default, it looks for the `SEQ` key. If using Manta output, specify `--ins-info-key SVINSSEQ`.
+*   **Imprecise Breakpoints**: Paragraph can handle variants where the VCF breakpoint is slightly off, but accuracy decreases as the deviation increases.
+*   **Population Genotyping**: For large cohorts, run Paragraph in single-sample mode (one manifest per sample) and merge the resulting VCFs using `bcftools merge`.
 
-**Required Columns:**
-- `id`: Unique sample identifier.
-- `path`: Full path to the BAM or CRAM file.
-- `depth`: Average genomic depth.
-- `read length`: Average read length in base pairs.
+### 4. Troubleshooting Common Errors
+*   **REF Allele Mismatch**: If you see `REF != END - POS + 1`, your VCF coordinates do not match the reference sequence length. Verify your VCF records.
+*   **Padding Bases**: Ensure the padding base (the nucleotide at the `POS` position) is identical between the `REF` and `ALT` columns.
+*   **BAM/Reference Mismatch**: Ensure the chromosome names in your BAM header exactly match those in the reference FASTA.
 
-**Optional Columns:**
-- `depth sd`: Standard deviation of depth (defaults to `sqrt(5 * depth)`).
-- `sex`: "male"/"M" or "female"/"F"; affects sex chromosome genotyping.
 
-### 3. Custom Graph Genotyping
-For complex events not easily represented in VCF, use a custom JSON graph with the `grmpy` or `paragraph` tools.
 
-```bash
-# Genotype a specific graph JSON
-bin/grmpy \
-    -m samples_manifest.txt \
-    -r reference.fa \
-    -i variant_graph.json \
-    -o output.json \
-    -E 1
-```
+## Subcommands
 
-## Input Requirements
-
-### VCF Format (4.0+)
-Paragraph supports indel-style (full sequence) and symbolic alleles.
-- **`<DEL>`**: Must include `END` in the INFO field.
-- **`<INS>`**: Must include an INFO key for the sequence (default: `SEQ`).
-- **`<DUP>`**: Must include `END` in the INFO field; assumes sequence between POS and END is duplicated.
-- **`<INV>`**: Must include `END` in the INFO field; assumes sequence between POS and END is reverse-complemented.
-
-## Expert Tips and Best Practices
-
-- **Depth Calculation**: Use the included `bin/idxdepth` tool to calculate average genome depth. it is significantly faster than standard `samtools` depth calculations for manifest preparation.
-- **Handling High-Depth Regions**: Use the `-M` (maximum allowed read count) option to skip variants in low-complexity regions with abnormal pileups. A recommended value is **20 times the mean sample depth**.
-- **Population Genotyping**: For large cohorts, run `multigrmpy.py` in single-sample mode for each individual and then merge the resulting VCFs using `bcftools merge`. This is more efficient than running a single massive manifest.
-- **Thread Management**: Use the `-t` flag to enable multithreading, which is critical for processing large VCFs or population-scale data.
-- **Output Interpretation**:
-    - `genotypes.vcf.gz`: Standard VCF output containing individual genotypes.
-    - `genotypes.json.gz`: Detailed JSON output containing alignment counts and model scores for every path in the graph.
+| Command | Description |
+|---------|-------------|
+| Multigrmpy.py | A tool for graph-based genotyping of variants using a manifest of samples and a reference genome. |
+| grmpy | Graph-based read mapping and genotyping for structural variants. |
+| paragraph_idxdepth | Estimate coverage depth from BAM/CRAM files using index information. |
 
 ## Reference documentation
-- [Illumina Paragraph GitHub Repository](./references/github_com_Illumina_paragraph.md)
-- [Paragraph Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_paragraph_overview.md)
+- [Paragraph README](./references/github_com_Illumina_paragraph.md)
+- [Common Usage Questions](./references/github_com_Illumina_paragraph_wiki_Common-usage-question.md)
+- [Frequently Asked Errors](./references/github_com_Illumina_paragraph_wiki_Frequently-asked-errors.md)

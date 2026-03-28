@@ -55,7 +55,7 @@ Features:
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## ruby_gem
 

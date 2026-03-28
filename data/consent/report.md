@@ -78,3 +78,6 @@ Usage: /usr/local/bin/CONSENT-polish [options] --contigs contigs.fast[a|q] --rea
 	--version, -v: 	               Print version information.
 ```
 
+
+## Metadata
+- **Skill**: generated

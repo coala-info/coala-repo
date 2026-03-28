@@ -1,1 +1,483 @@
-Workflow runs · fulcrumgenomics/fgsv · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} fulcrumgenomics / fgsv Public Notifications You must be signed in to change notification settings Fork 1 Star 19 Code Issues 8 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: fulcrumgenomics/fgsv Actions All workflows Workflows unit tests and docs unit tests and docs Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 80 workflow runs 80 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. ci: run tests after docs generation to ensure checks on final commit … unit tests and docs #356: Commit c2a55f8 pushed by clintval 1m 13s main main 1m 13s View workflow file ci: run tests after docs generation to ensure checks on final commit unit tests and docs #355: Pull request #54 synchronize by clintval 2m 29s fix-ci-workflow-order fix-ci-workflow-order 2m 29s View #54 View workflow file Merge remote-tracking branch 'origin/main' into fix-ci-workflow-order unit tests and docs #354: Commit 2d98700 pushed by clintval 1m 14s fix-ci-workflow-order fix-ci-workflow-order 1m 14s View workflow file Documentation improvements and integer overflow fix (#48) unit tests and docs #353: Commit a5de483 pushed by clintval 1m 24s main main 1m 24s View workflow file Documentation improvements and integer overflow fix unit tests and docs #352: Pull request #48 synchronize by clintval 2m 25s docs/improve-documentation-and-fix-overflow docs/improve-documentation-and-fix-overflow 2m 25s View #48 View workflow file Merge remote-tracking branch 'origin/main' into docs/improve-document… unit tests and docs #351: Commit e6f6e42 pushed by clintval 1m 16s docs/improve-documentation-and-fix-overflow docs/improve-documentation-and-fix-overflow 1m 16s View workflow file docs: replace tools symlink with direct references (#50) unit tests and docs #350: Commit ddaf633 pushed by clintval 1m 16s main main 1m 16s View workflow file docs: replace tools symlink with direct references unit tests and docs #349: Pull request #50 synchronize by clintval 2m 31s fix-tools-symlink-refs fix-tools-symlink-refs 2m 31s View #50 View workflow file Generate docs files unit tests and docs #348: Commit dd3244c pushed by clintval 1m 16s fix-tools-symlink-refs fix-tools-symlink-refs 1m 16s View workflow file docs: use DOI-based URL for Zenodo badge (#51) unit tests and docs #347: Commit 960b0eb pushed by clintval 1m 14s main main 1m 14s View workflow file Generate docs files unit tests and docs #346: Commit 4ca18ef pushed by clintval 1m 17s fix/doi-badge fix/doi-badge 1m 17s View #51 View workflow file Ensure SvPileup ignores duplicate records by default (#45) unit tests and docs #345: Commit 89c3668 pushed by clintval 1m 9s main main 1m 9s View workflow file Merge remote-tracking branch 'origin/main' into cv_duplicate_mark unit tests and docs #344: Commit 94f20b8 pushed by clintval 1m 25s cv_duplicate_mark cv_duplicate_mark 1m 25s View workflow file Ensure SvPileup ignores duplicate records by default unit tests and docs #343: Pull request #45 synchronize by clintval 2m 34s cv_duplicate_mark cv_duplicate_mark 2m 34s View #45 View workflow file build: upgrade fgbio to 3.1.1 (#53) unit tests and docs #342: Commit 28c05d1 pushed by clintval 1m 27s main main 1m 27s View workflow file Add @clintval to CODEOWNERS (#55) unit tests and docs #341: Commit 05e3e58 pushed by tfenne 46s main main 46s View workflow file Add @clintval to CODEOWNERS unit tests and docs #340: Pull request #55 opened by clintval 49s cv_codeowner cv_codeowner 49s View #55 View workflow file Add @clintval to CODEOWNERS unit tests and docs #339: Commit 1382355 pushed by clintval 55s cv_codeowner cv_codeowner 55s View #55 View workflow file Ensure SvPileup ignores duplicate records by default unit tests and docs #338: Pull request #45 synchronize by clintval 44s cv_duplicate_mark cv_duplicate_mark 44s View #45 View workflow file chore: align = unit tests and docs #337: Commit 326dc20 pushed by clintval 46s cv_duplicate_mark cv_duplicate_mark 46s View workflow file Ensure SvPileup ignores duplicate records by default unit tests and docs #336: Pull request #45 synchronize by clintval 55s cv_duplicate_mark cv_duplicate_mark 55s View #45 View workflow file docs: delete spurious change in index.md unit tests and docs #335: Commit e13d0f4 pushed by clintval 47s cv_duplicate_mark cv_duplicate_mark 47s View workflow file Merge remote-tracking branch 'origin/main' into cv_duplicate_mark unit tests and docs #334: Commit 04bbcf4 pushed by clintval 52s cv_duplicate_mark cv_duplicate_mark 52s View workflow file Ensure SvPileup ignores duplicate records by default unit tests and docs #333: Pull request #45 synchronize by clintval 45s cv_duplicate_mark cv_duplicate_mark 45s View #45 View workflow file ci: run tests after docs generation to ensure checks on final commit unit tests and docs #332: Pull request #54 synchronize by nh13 2m 34s fix-ci-workflow-order fix-ci-workflow-order 2m 34s View #54 View workflow file Previous 1 2 3 4 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Ffulcrumgenomics%2Ffgsv%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Ffulcrumgenomics%2Ffgsv%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=fulcrumgenomics%2Ffgsv)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[fulcrumgenomics](/fulcrumgenomics)
+/
+**[fgsv](/fulcrumgenomics/fgsv)**
+Public
+
+* [Notifications](/login?return_to=%2Ffulcrumgenomics%2Ffgsv) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2Ffulcrumgenomics%2Ffgsv)
+* [Star
+   20](/login?return_to=%2Ffulcrumgenomics%2Ffgsv)
+
+* [Code](/fulcrumgenomics/fgsv)
+* [Issues
+  9](/fulcrumgenomics/fgsv/issues)
+* [Pull requests
+  0](/fulcrumgenomics/fgsv/pulls)
+* [Actions](/fulcrumgenomics/fgsv/actions)
+* [Projects](/fulcrumgenomics/fgsv/projects)
+* [Security
+  0](/fulcrumgenomics/fgsv/security)
+* [Insights](/fulcrumgenomics/fgsv/pulse)
+
+Additional navigation options
+
+* [Code](/fulcrumgenomics/fgsv)
+* [Issues](/fulcrumgenomics/fgsv/issues)
+* [Pull requests](/fulcrumgenomics/fgsv/pulls)
+* [Actions](/fulcrumgenomics/fgsv/actions)
+* [Projects](/fulcrumgenomics/fgsv/projects)
+* [Security](/fulcrumgenomics/fgsv/security)
+* [Insights](/fulcrumgenomics/fgsv/pulse)
+
+# Actions: fulcrumgenomics/fgsv
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**154 workflow runs**
+
+**154 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[doc: update fulcrum genomics logo with light/dark theme support (#65)](/fulcrumgenomics/fgsv/actions/runs/23657786887)
+
+unit tests and docs
+#431:
+Commit [6b9e5a6](/fulcrumgenomics/fgsv/commit/6b9e5a659fff19a7809611b739ac169c983ff475)
+pushed
+by
+[nh13](/nh13)
+
+1m 18s
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+1m 18s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/23657786887/workflow)
+
+[doc: update fulcrum genomics logo with light/dark theme support](/fulcrumgenomics/fgsv/actions/runs/23640751142)
+
+unit tests and docs
+#430:
+Pull request [#65](/fulcrumgenomics/fgsv/pull/65)
+opened
+by
+[nh13](/nh13)
+
+2m 14s
+[doc/nh\_update-fulcrum-logo](/fulcrumgenomics/fgsv/tree/refs/heads/doc/nh_update-fulcrum-logo "doc/nh_update-fulcrum-logo")
+
+[doc/nh\_update-fulcrum-logo](/fulcrumgenomics/fgsv/tree/refs/heads/doc/nh_update-fulcrum-logo "doc/nh_update-fulcrum-logo")
+
+2m 14s
+
+* [View #65](/fulcrumgenomics/fgsv/pull/65)
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/23640751142/workflow)
+
+[doc: update fulcrum genomics logo with light/dark theme support](/fulcrumgenomics/fgsv/actions/runs/23640749240)
+
+unit tests and docs
+#429:
+Commit [d3944f2](/fulcrumgenomics/fgsv/commit/d3944f25f8f464881b50d46113aaea18928a3053)
+pushed
+by
+[nh13](/nh13)
+
+1m 20s
+[doc/nh\_update-fulcrum-logo](/fulcrumgenomics/fgsv/tree/refs/heads/doc/nh_update-fulcrum-logo "doc/nh_update-fulcrum-logo")
+
+[doc/nh\_update-fulcrum-logo](/fulcrumgenomics/fgsv/tree/refs/heads/doc/nh_update-fulcrum-logo "doc/nh_update-fulcrum-logo")
+
+1m 20s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/23640749240/workflow)
+
+[fix: guard against missing MC tag in allele frequency calculation (#58)](/fulcrumgenomics/fgsv/actions/runs/22559861713)
+
+unit tests and docs
+#428:
+Commit [7ab12ae](/fulcrumgenomics/fgsv/commit/7ab12ae8d194c6277449cb0beea22a90c0f6225a)
+pushed
+by
+[nh13](/nh13)
+
+1m 30s
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+1m 30s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22559861713/workflow)
+
+[fix: guard against missing MC tag in allele frequency calculation](/fulcrumgenomics/fgsv/actions/runs/22556323976)
+
+unit tests and docs
+#427:
+Pull request [#58](/fulcrumgenomics/fgsv/pull/58)
+synchronize
+by
+[nh13](/nh13)
+
+2m 21s
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+2m 21s
+
+* [View #58](/fulcrumgenomics/fgsv/pull/58)
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22556323976/workflow)
+
+[fix: replace unsafe mateEnd.get with descriptive error in allele freq…](/fulcrumgenomics/fgsv/actions/runs/22556323044)
+
+unit tests and docs
+#426:
+Commit [48b6570](/fulcrumgenomics/fgsv/commit/48b6570fd2ae68a59be4d044902383a2c31b7627)
+pushed
+by
+[nh13](/nh13)
+
+1m 15s
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+1m 15s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22556323044/workflow)
+
+[fix: prevent integer overflow and truncation in MergedPileup weighted…](/fulcrumgenomics/fgsv/actions/runs/22556267975)
+
+unit tests and docs
+#425:
+Commit [ca7b619](/fulcrumgenomics/fgsv/commit/ca7b61965b64501dd8a5a0fb54cf012ad0e2061b)
+pushed
+by
+[nh13](/nh13)
+
+1m 18s
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+1m 18s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22556267975/workflow)
+
+[fix: prevent integer overflow and truncation in MergedPileup weighted mean](/fulcrumgenomics/fgsv/actions/runs/22251866789)
+
+unit tests and docs
+#424:
+Pull request [#56](/fulcrumgenomics/fgsv/pull/56)
+synchronize
+by
+[nh13](/nh13)
+
+2m 37s
+[fix/merged-pileup-integer-overflow](/fulcrumgenomics/fgsv/tree/refs/heads/fix/merged-pileup-integer-overflow "fix/merged-pileup-integer-overflow")
+
+[fix/merged-pileup-integer-overflow](/fulcrumgenomics/fgsv/tree/refs/heads/fix/merged-pileup-integer-overflow "fix/merged-pileup-integer-overflow")
+
+2m 37s
+
+* [View #56](/fulcrumgenomics/fgsv/pull/56)
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22251866789/workflow)
+
+[fix: guard against missing MC tag in allele frequency calculation](/fulcrumgenomics/fgsv/actions/runs/22251866223)
+
+unit tests and docs
+#423:
+Pull request [#58](/fulcrumgenomics/fgsv/pull/58)
+synchronize
+by
+[nh13](/nh13)
+
+2m 14s
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+2m 14s
+
+* [View #58](/fulcrumgenomics/fgsv/pull/58)
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22251866223/workflow)
+
+[fix: prevent integer overflow and truncation in MergedPileup weighted…](/fulcrumgenomics/fgsv/actions/runs/22251866127)
+
+unit tests and docs
+#422:
+Commit [21111db](/fulcrumgenomics/fgsv/commit/21111db6081697bc5ec6a42a6ff45cb043525dbd)
+pushed
+by
+[nh13](/nh13)
+
+1m 23s
+[fix/merged-pileup-integer-overflow](/fulcrumgenomics/fgsv/tree/refs/heads/fix/merged-pileup-integer-overflow "fix/merged-pileup-integer-overflow")
+
+[fix/merged-pileup-integer-overflow](/fulcrumgenomics/fgsv/tree/refs/heads/fix/merged-pileup-integer-overflow "fix/merged-pileup-integer-overflow")
+
+1m 23s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22251866127/workflow)
+
+[fix: replace unsafe mateEnd.get with descriptive error in allele freq…](/fulcrumgenomics/fgsv/actions/runs/22251865505)
+
+unit tests and docs
+#421:
+Commit [a4edb83](/fulcrumgenomics/fgsv/commit/a4edb83d31f6f131969e3f983c07b7fde16dbf86)
+pushed
+by
+[nh13](/nh13)
+
+1m 11s
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+[fix/mate-end-unsafe-get](/fulcrumgenomics/fgsv/tree/refs/heads/fix/mate-end-unsafe-get "fix/mate-end-unsafe-get")
+
+1m 11s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22251865505/workflow)
+
+[fix: sort aggregated pileup IDs numerically instead of lexicographica…](/fulcrumgenomics/fgsv/actions/runs/22251768587)
+
+unit tests and docs
+#420:
+Commit [81ec5c2](/fulcrumgenomics/fgsv/commit/81ec5c2f503672d71e7491fdfaad1a5d69b62562)
+pushed
+by
+[nh13](/nh13)
+
+1m 2s
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+[main](/fulcrumgenomics/fgsv/tree/refs/heads/main "main")
+
+1m 2s
+
+* [View workflow file](/fulcrumgenomics/fgsv/actions/runs/22251768587/workflow)
+
+[fix: prevent integer overflow and truncation in MergedPileup weighted mean](/fulcrumgenomics/fgsv/actions/runs/22251645602)
+
+unit tests and docs
+#419:
+Pull request [#56](/fulcrumgenomics/fgsv/pull/56)
+synchronize
+by
+[nh13](/nh13)
+
+3m 3s
+[fix/merged-pileup-integer-overflow](/fulcrumgenomics/fgsv/tree/refs/heads/fix/merged-pileup-integer-overflow "fix/merged-pileup-integer-overflow")
+
+[fix/merged-pileup-integer-overflow](/fulcrumgenomics/fgsv/tree/refs/heads/fix/merged-pileup-integer-overflow "fix/merged-pileup-integer-overflow")
+
+3m 

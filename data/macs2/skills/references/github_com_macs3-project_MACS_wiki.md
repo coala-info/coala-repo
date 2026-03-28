@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -150,13 +151,13 @@ Public
 * [Fork
   271](/login?return_to=%2Fmacs3-project%2FMACS)
 * [Star
-   767](/login?return_to=%2Fmacs3-project%2FMACS)
+   770](/login?return_to=%2Fmacs3-project%2FMACS)
 
 * [Code](/macs3-project/MACS)
 * [Issues
-  260](/macs3-project/MACS/issues)
+  261](/macs3-project/MACS/issues)
 * [Pull requests
-  0](/macs3-project/MACS/pulls)
+  1](/macs3-project/MACS/pulls)
 * [Discussions](/macs3-project/MACS/discussions)
 * [Actions](/macs3-project/MACS/actions)
 * [Projects](/macs3-project/MACS/projects)

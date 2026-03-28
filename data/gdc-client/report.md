@@ -191,3 +191,6 @@ Settings to display:
 gdc-client error: the following arguments are required: section
 ```
 
+
+## Metadata
+- **Skill**: generated

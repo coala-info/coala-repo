@@ -1,6 +1,6 @@
 ---
 name: psass
-description: PSASS detects genomic signals and comparative metrics between two pooled populations to identify sex-linked regions or scaffolds. Use when user asks to identify sex-determination signals, calculate Fst and SNP distribution from pooled sequencing data, or generate nucleotide composition files from BAM or CRAM files.
+description: "PSASS detects genomic signatures of sex determination and calculates population genetic metrics from pooled sequencing datasets. Use when user asks to generate nucleotide counts from alignment files, identify sex-specific SNPs, or calculate Fst and depth metrics across sliding windows or genes."
 homepage: https://github.com/RomainFeron/PSASS
 ---
 
@@ -9,61 +9,66 @@ homepage: https://github.com/RomainFeron/PSASS
 
 ## Overview
 
-PSASS (Pooled Sequencing Analysis for Sex Signal) is a specialized toolset designed to detect genomic signals that differ between two pooled populations. It is primarily used in sex-determination research to identify sex-linked scaffolds or regions. The tool transforms raw alignment data into comparative metrics, allowing for the identification of fixed differences (SNPs) and regions of high genetic divergence (Fst) without requiring individual-level genotypes.
+PSASS (Pooled Sequencing Analysis for Sex Signal) is a specialized bioinformatics tool designed to detect genomic signatures of sex determination from pooled sequencing datasets. It streamlines the comparative analysis of two pools by calculating population genetic metrics and identifying SNPs that are heterozygous in one pool while being homozygous in the other. This is particularly useful for identifying sex-determining regions or sex-specific markers in non-model organisms where individual sequencing is not feasible.
 
 ## Core Workflow
 
-The standard PSASS pipeline consists of two primary stages: generating a nucleotide composition file and then analyzing that file for comparative metrics.
+The standard PSASS workflow consists of two primary steps: generating a nucleotide count file and then analyzing that file for genetic signals.
 
-### 1. Generating Nucleotide Composition (pileup)
-The `pileup` command creates a "wig-like" file containing nucleotide counts for every position. This is significantly faster than using `samtools mpileup` followed by a conversion script.
+### 1. Generate Nucleotide Counts (pileup)
+Use the `pileup` command to process alignment files (BAM or CRAM) into a nucleotide composition file.
 
 ```bash
 psass pileup --reference genome.fa --output-file counts.tsv pool1.bam pool2.bam
 ```
 
-**Best Practices:**
-- **Input Format**: Use BAM or CRAM files. Both must be sorted by genomic coordinates.
-- **CRAM Requirements**: If using CRAM, the `--reference` (or `-r`) flag is mandatory.
-- **Mapping Quality**: Use `--min-map-quality` (default 0) to filter out multi-mapping reads or low-confidence alignments, typically setting this to 20 or 30 for cleaner signals.
+*   **Input Requirements**: Alignment files must be sorted by genomic coordinates.
+*   **CRAM Files**: If using CRAM input, the `--reference` (or `-r`) flag is mandatory.
+*   **Filtering**: Use `--min-map-quality` (default 0) to exclude low-quality alignments from the counts.
 
-### 2. Computing Comparative Metrics (analyze)
-The `analyze` command processes the output from the pileup stage to calculate Fst, depth, and SNP distribution.
+### 2. Statistical Analysis (analyze)
+Use the `analyze` command to compute Fst, SNPs, and depth metrics from the pileup output.
 
 ```bash
-psass analyze --window-size 10000 --output-resolution 1000 --snp-file specific_snps.tsv counts.tsv window_metrics.tsv
+psass analyze --window-size 10000 --output-resolution 1000 --snp-file snps.tsv counts.tsv results_window.tsv
 ```
 
-**Key Parameters:**
-- **Windowing**: `--window-size` (default 100kb) and `--output-resolution` (step size, default 10kb) control the granularity of the sliding window analysis.
-- **Pool Naming**: Use `--pool1` and `--pool2` to label your groups (e.g., "females" and "males") for clearer output headers.
-- **SNP Identification**:
-    - `--freq-het`: The expected frequency for a heterozygous site (default 0.5).
-    - `--range-het`: The allowed variance around the heterozygous frequency (default 0.15).
-    - `--freq-hom` / `--range-hom`: Thresholds for homozygous sites (default 1.0 and 0.05).
-- **Filtering**: `--min-depth` (default 10) ensures metrics are only calculated for sites with sufficient coverage.
+*   **Sliding Windows**: Control the granularity of the analysis using `--window-size` (the span of the calculation) and `--output-resolution` (the step size between windows).
+*   **Pool Naming**: Use `--pool1` and `--pool2` to provide descriptive names for the groups in the output headers.
+*   **Specific SNP Detection**: The `--snp-file` flag generates a separate TSV containing the exact genomic positions of pool-specific SNPs.
+*   **High Fst Positions**: Use `--fst-file` to output the positions of individual bases with high between-pool differentiation.
 
-## Advanced Usage and Tips
+## Advanced Features
 
 ### Gene-Level Analysis
-To calculate metrics for specific genomic features rather than arbitrary windows, provide a GFF file:
+PSASS can aggregate metrics at the gene level if provided with a GFF3 annotation file.
+
 ```bash
-psass analyze --gff-file annotations.gff --genes-file gene_metrics.tsv counts.tsv window_metrics.tsv
+psass analyze --gff-file annotation.gff --genes-file gene_metrics.tsv counts.tsv results_window.tsv
 ```
-This produces statistics for both coding and non-coding parts of the genes defined in the GFF.
+This calculates pool-specific SNPs and depth for both coding and non-coding regions of every gene defined in the GFF.
 
-### Identifying High-Divergence Sites
-To extract specific positions where Fst exceeds a certain threshold (rather than just the window average), use the `--fst-file` and `--min-fst` flags:
-```bash
-psass analyze --fst-file high_fst_sites.tsv --min-fst 0.8 counts.tsv window_metrics.tsv
-```
+### Output Format
+*   **Window File**: Contains Fst, pool-specific SNP counts, and depth (absolute and relative) for each window.
+*   **SNP File**: Lists chromosome, position, and the specific nucleotide states for the identified pool-specific markers.
 
-### Handling Clustered SNPs
-If your data contains many adjacent SNPs that likely represent a single evolutionary event (or alignment artifact), use the `--group-snps` flag. This counts consecutive SNPs as a single polymorphism, preventing a single divergent haplotype from inflating SNP counts.
+## Expert Tips and Best Practices
 
-### Integration with Visualization
-The output files from `psass analyze` (specifically the window metrics) are designed to be compatible with the `sgtr` R package for generating Manhattan plots and depth distribution visualizations.
+*   **Coordinate Sorting**: Always verify that your BAM/CRAM files are coordinate-sorted and indexed before running `pileup`.
+*   **Window Selection**: For fragmented assemblies (scaffolds), ensure the `--window-size` is appropriate for the average scaffold length to avoid losing data on smaller contigs.
+*   **Depth Normalization**: PSASS calculates relative depth, which is critical for comparing pools with different total sequencing throughput.
+*   **Visualization**: The output TSV files are designed for easy integration with the `sgtr` R package for Manhattan plots and depth visualization.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| analyze | Analyze sliding window metrics and sex-biased SNPs from sync files |
+| convert | Convert samtools pileup output to PSASS format |
+| pileup | Alignment files to include in pileup, in bam or cram format and indexed |
 
 ## Reference documentation
-- [PSASS GitHub Repository](./references/github_com_SexGenomicsToolkit_PSASS.md)
-- [PSASS Release Notes](./references/github_com_SexGenomicsToolkit_PSASS_releases.md)
+- [PSASS README](./references/github_com_SexGenomicsToolkit_PSASS_blob_master_README.md)
+- [Bioconda PSASS Overview](./references/anaconda_org_channels_bioconda_packages_psass_overview.md)

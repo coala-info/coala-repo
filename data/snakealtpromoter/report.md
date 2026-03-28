@@ -125,3 +125,6 @@ options:
                         Snakemake docs.
 ```
 
+
+## Metadata
+- **Skill**: generated

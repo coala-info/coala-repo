@@ -1,6 +1,6 @@
 ---
 name: samstats
-description: samstats calculates read-level mapping statistics from SAM files to provide an accurate view of sequencing library quality. Use when user asks to calculate mapping statistics, perform quality control on SAM files, or determine the percentage of uniquely mapped reads.
+description: samstats computes read-level alignment statistics from SAM or BAM files to report the number of unique fragments sequenced and mapped. Use when user asks to calculate mapping statistics, analyze read-level quality control metrics, or generate alignment reports from queryname-sorted files.
 homepage: https://github.com/kundajelab/SAMstats
 ---
 
@@ -9,40 +9,59 @@ homepage: https://github.com/kundajelab/SAMstats
 
 ## Overview
 
-`samstats` is a specialized tool for calculating mapping statistics from SAM (Sequence Alignment/Map) files. Unlike standard tools that report statistics based on every alignment record in a file, `samstats` aggregates data at the read level. This provides a more accurate view of the underlying sequencing library by ensuring that a single read with multiple alignment entries does not artificially inflate mapping counts. It is primarily used in bioinformatics pipelines for quality control (QC) to determine the percentage of reads that are uniquely mapped, unmapped, or properly paired.
+`samstats` is a specialized bioinformatics utility designed to compute alignment statistics from SAM or BAM files. While standard tools like `samtools flagstat` count every alignment record (including secondary and supplementary alignments), `samstats` focuses on the underlying biological reads. This distinction is critical for accurately reporting the number of unique fragments sequenced and mapped in a library. It supports both single-threaded and parallel execution and includes helper scripts for sorting and filtering based on specific bitwise flags.
 
-## Command Line Usage
+## Usage Patterns
 
-The tool provides two primary executables: `SAMstats` for single-threaded processing and `SAMstatsParallel` for multi-threaded execution.
+### Core Commands
 
-### Basic Syntax
+The tool provides two primary entry points depending on your performance needs:
 
-To run the standard single-threaded version:
+- **Standard Execution**: Best for smaller files or environments where thread locking might occur.
+  ```bash
+  SAMstats --sorted_sam_file input.sam --outf stats.txt --chunk_size 1000
+  ```
 
-```bash
-SAMstats --sorted_sam_file <input.sam> --outf <output_stats.txt> --chunk_size 1000
-```
-
-To run the multi-threaded version:
-
-```bash
-SAMstatsParallel --sorted_sam_file <input.sam> --outf <output_stats.txt> --chunk_size 1000 --threads 4
-```
+- **Parallel Execution**: Utilizes multiple cores for processing large datasets.
+  ```bash
+  SAMstatsParallel --sorted_sam_file input.sam --outf stats.txt --threads 4 --chunk_size 1000
+  ```
 
 ### Parameters
-
-- `--sorted_sam_file`: Path to the input SAM file. **Note**: The file must be sorted by coordinate or read name for the tool to correctly group read pairs and multi-mappers.
+- `--sorted_sam_file`: Path to the input SAM/BAM file. **Note**: The file must be sorted by read name (queryname) for accurate read-level statistics.
 - `--outf`: The destination path for the generated statistics report.
-- `--chunk_size`: The number of reads to process in a single batch. Increasing this can improve performance but increases memory usage.
-- `--threads`: (Only for `SAMstatsParallel`) The number of CPU cores to utilize.
+- `--chunk_size`: Number of reads to process in a single batch (default is often 1000).
+- `--threads`: (Parallel only) Number of CPU threads to allocate.
 
 ## Expert Tips and Best Practices
 
-- **Input Requirements**: Always ensure your SAM file is sorted before running `samstats`. If you have a BAM file, convert it to SAM using `samtools view` first, as the tool expects SAM format.
-- **Performance Considerations**: While `SAMstatsParallel` is available, it may occasionally perform slower than the single-threaded version on certain systems due to Python's thread locking mechanisms. If processing speed is a concern, benchmark both versions on a small subset of your data.
-- **Read-Level Accuracy**: Use this tool instead of `samtools flagstat` when your dataset contains a high number of secondary or supplementary alignments (e.g., in long-read sequencing or complex genomic regions) to avoid overcounting.
-- **Memory Management**: If you encounter memory errors on very large files, reduce the `--chunk_size` parameter.
+### Pre-sorting Requirements
+`samstats` requires input files to be sorted by **queryname** (`samtools sort -n`) to ensure all alignment records for a single read are grouped together. If your file is coordinate-sorted, use the provided wrapper script to automate the transition:
+```bash
+bash SAMstats.sort.stat.filter.sh input.bam output_prefix.stats num_threads
+```
+
+### Interpreting Results
+Unlike `flagstat`, `samstats` output explicitly breaks down QC pass/fail metrics for:
+- **Read 1 vs Read 2**: Essential for identifying strand-specific sequencing issues.
+- **Primary vs. Secondary/Supplementary**: Helps distinguish the main genomic origin of a read from chimeric or multi-mapping events.
+- **Properly Paired Fragments**: Provides a more accurate count of biologically relevant pairs compared to raw alignment counts.
+
+### Performance Tuning
+- **Thread Locking**: In some environments, `SAMstatsParallel` may perform slower than the single-threaded version due to Python's Global Interpreter Lock (GIL) or I/O bottlenecks. If performance is poor, revert to `SAMstats`.
+- **Memory Management**: Adjust `--chunk_size` based on available RAM. Larger chunks can improve speed but increase memory footprint.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| SAMstats | Compute SAM file mapping statistics for a SAM file sorted by read name |
+| SAMstatsParallel | Compute SAM file mapping statistics for a SAM file sorted by read name |
 
 ## Reference documentation
-- [samstats - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_samstats_overview.md)
-- [GitHub - kundajelab/SAMstats: Georgi's scripts to compute mapping statistics](./references/github_com_kundajelab_SAMstats.md)
+
+- [SAMstats README](./references/github_com_kundajelab_SAMstats_blob_master_README.md)
+- [SAMstats Sort and Filter Script](./references/github_com_kundajelab_SAMstats_blob_master_SAMstats.sort.stat.filter.sh.md)
+- [Flagstat Helper Script](./references/github_com_kundajelab_SAMstats_blob_master_flagstat.sh.md)

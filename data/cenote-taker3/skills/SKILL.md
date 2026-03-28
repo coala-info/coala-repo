@@ -1,6 +1,6 @@
 ---
 name: cenote-taker3
-description: Cenote-Taker 3 is a bioinformatics pipeline for the high-throughput discovery and functional annotation of viral sequences in metagenomic data. Use when user asks to discover novel viruses, annotate viromes, find prophages in microbial genomes, or generate GenBank-ready files and genome maps.
+description: Cenote-Taker 3 is a virus bioinformatics pipeline that identifies and annotates viral sequences in metagenomic assemblies or individual genomes using hallmark gene detection. Use when user asks to identify viral sequences in DNA contigs, discover prophages in microbial genomes, or provide functional and taxonomic annotations for confirmed viruses.
 homepage: https://github.com/mtisza1/Cenote-Taker3
 ---
 
@@ -9,79 +9,74 @@ homepage: https://github.com/mtisza1/Cenote-Taker3
 
 ## Overview
 
-Cenote-Taker 3 (CT3) is a specialized bioinformatics pipeline designed for the high-throughput discovery and functional annotation of the virome. It scales from single sequences to massive metagenomic assemblies, identifying virus hallmark genes and providing hierarchical taxonomy assignments. Use this skill to navigate the installation of required databases, execute discovery workflows for novel viruses, find prophages within microbial genomes, and generate interactive genome maps (.gbf) or GenBank-ready files.
+Cenote-Taker 3 is a high-performance virus bioinformatics pipeline designed to scale from individual genomes to massive metagenomic assemblies. It specializes in identifying "hallmark genes" to detect viral sequences and provides comprehensive functional and taxonomic annotations. This skill should be used when you need to analyze DNA contigs to distinguish viral content from host sequences, particularly in complex environmental samples or when looking for integrated proviruses in bacterial genomes.
 
-## Environment and Database Setup
+## Installation and Database Setup
 
-Before running discovery, the environment must be configured and databases must be localized.
+Before running the main pipeline, the environment must be configured and databases must be downloaded.
 
-### 1. Installation
-Install via Mamba for the most reliable dependency resolution:
-```bash
-mamba create -n ct3_env -c conda-forge -c bioconda cenote-taker3
-conda activate ct3_env
-```
-
-### 2. Database Initialization
-CT3 requires several gigabytes of HMM and taxonomy databases. Use the `get_ct3_dbs` utility:
-```bash
-# Basic database setup (~3.0 GB)
-get_ct3_dbs -o /path/to/ct3_DBs --hmm T --hallmark_tax T --refseq_tax T --mmseqs_cdd T --domain_list T
-
-# Optional: Add HHsuite databases for deeper annotation (CDD, Pfam, PDB70)
-get_ct3_dbs -o /path/to/ct3_DBs --hmm T --hhCDD T --hhPFAM T --hhPDB T
-```
-
-### 3. Configuration
-Set the `CENOTE_DBS` environment variable to avoid specifying the database path in every command:
-```bash
-conda env config vars set CENOTE_DBS=/path/to/ct3_DBs
-# Reactivate environment to apply
-conda activate ct3_env
-```
+1.  **Environment**: Ensure the `ct3_env` is activated.
+2.  **Database Download**: Use `get_ct3_dbs` to fetch required HMMs and taxonomy data.
+    ```bash
+    # Basic database setup (~3.0 GB)
+    get_ct3_dbs -o ct3_DBs --hmm T --hallmark_tax T --refseq_tax T --mmseqs_cdd T --domain_list T
+    ```
+3.  **Environment Variable**: The tool looks for the `CENOTE_DBS` variable.
+    ```bash
+    conda env config vars set CENOTE_DBS=/path/to/ct3_DBs
+    ```
 
 ## Common CLI Patterns
 
-### Virus Discovery and Annotation
-The default mode for metagenomic contigs where you want to find and annotate viral sequences:
+### 1. Discovery and Annotation (Default)
+Use this for metagenomic contigs where you want to find and annotate all potential viral sequences.
 ```bash
-cenotetaker3 -c contigs.fasta -r my_run_title -p T
+cenotetaker3 -c contigs.fna -r my_run_title -p T
 ```
+*   `-c`: Input contigs (FASTA).
+*   `-r`: Run title (used for output directory and file naming).
+*   `-p T`: Enable "Pruning" (discovery mode) to find viral regions.
 
-### Prophage Discovery in Microbial Genomes
-When searching for proviruses within bacterial or archaeal genomes, increase the hallmark gene stringency:
+### 2. Prophage Discovery in Microbial Genomes
+When searching for prophages within bacterial or archaeal genomes, increase the hallmark gene threshold to reduce false positives.
 ```bash
 cenotetaker3 -c genome.fna -r prophage_search -p T --lin_minimum_hallmark_genes 2
 ```
 
-### Annotation Only
-If you already have a set of confirmed viral sequences and only need functional annotation:
+### 3. Annotation Only
+Use this when you already have a set of confirmed virus sequences and only need functional/taxonomic annotation.
 ```bash
-cenotetaker3 -c virus_contigs.fna -r annotation_run -p F -am T
+cenotetaker3 -c virus_seqs.fna -r annotation_run -p F -am T
+```
+*   `-p F`: Disable pruning/discovery.
+*   `-am T`: Enable annotation mode.
+
+### 4. Advanced Functional Search
+To include high-sensitivity protein structure-based searches (requires HH-suite databases):
+```bash
+# Requires downloading hhCDD, hhPFAM, or hhPDB during get_ct3_dbs
+cenotetaker3 -c contigs.fna -r deep_annotation -p T --hhsuite T
 ```
 
-### Custom Hallmark Selection
-Limit the search to specific viral categories by defining hallmark gene sets:
-```bash
-# Options include: virion, rdrp, dnarep, etc.
-cenotetaker3 -c input.fna -r custom_search -p T -db virion rdrp
-```
+## Expert Tips and Best Practices
 
-## Output Interpretation
+*   **Speed**: Cenote-Taker 3 is significantly faster than version 2. For massive datasets, ensure you are using the default `prodigal-gv` caller unless you have a specific reason to force standard `prodigal` using `--caller prodigal`.
+*   **Hallmark Selection**: You can limit the hallmark gene categories used for discovery with the `-db` flag (e.g., `-db virion rdrp` to focus on structural proteins and RNA-dependent RNA polymerases).
+*   **Coverage Analysis**: If you have raw sequencing reads, provide them to calculate coverage levels for the identified viruses:
+    ```bash
+    cenotetaker3 -c contigs.fna -r coverage_run -p T --reads sample_R*.fastq
+    ```
+*   **Output Review**: Always check `{run_title}_virus_summary.tsv` first for a high-level overview of identified viruses. For visualization, the `.gbf` files in the `sequin_and_genome_maps/` folder can be opened in standard genome browsers.
 
-CT3 generates a structured output directory. Key files include:
-- `{run_title}_virus_summary.tsv`: The primary summary of all identified viruses.
-- `{run_title}_virus_sequences.fna`: FASTA file containing the nucleotide sequences of identified viruses.
-- `final_genes_to_contigs_annotation_summary.tsv`: Detailed functional info for every gene.
-- `sequin_and_genome_maps/`: Contains `.gbf` files for visualization in tools like Artemis or Benchling.
 
-## Expert Tips
 
-- **ORF Calling**: CT3 uses `prodigal-gv` by default, which is optimized for viral gene prediction. Only force standard `prodigal` using `--caller prodigal` if you have a specific reason to avoid the virus-optimized version.
-- **Performance**: CT3 is significantly faster than CT2. For very large datasets, ensure you are using the `pyhmmer` integration (default in recent versions) which utilizes multi-core processing efficiently.
-- **Circular Contigs**: If you have pre-identified circular contigs from long-read assemblies, use the `--circ-files` option to improve terminal repeat detection and pruning accuracy.
-- **Read Coverage**: To include abundance data in your summaries, provide your raw reads using the `--reads` flag (supports fastq/fastq.gz).
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cenotetaker3 | Cenote-Taker 3 is a pipeline for virus discovery and thorough annotation of viral contigs and genomes. |
+| get_ct3_dbs | Update and/or download databases associated with Cenote-Taker 3. HMM (hmmer) databases: updated January 10th, 2024. RefSeq Virus taxonomy DB compiled July 31, 2023. hallmark taxonomy database added March 19th, 2024 |
 
 ## Reference documentation
-- [Cenote-Taker3 GitHub Repository](./references/github_com_mtisza1_Cenote-Taker3.md)
+- [Cenote-Taker3 README](./references/github_com_mtisza1_Cenote-Taker3_blob_main_README.md)
 - [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cenote-taker3_overview.md)

@@ -109,3 +109,6 @@ Usage:   prophex bwt2fa <idxbase> <output.fa>
          -h        print help message
 ```
 
+
+## Metadata
+- **Skill**: generated

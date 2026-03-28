@@ -61,3 +61,6 @@ Positional arguments:
      <alignments.bam>   alignments in BAM format
 ```
 
+
+## Metadata
+- **Skill**: generated

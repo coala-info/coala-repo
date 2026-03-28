@@ -1,1 +1,1 @@
-TADbit @ CNAG/CRG Building 3D genomes . TADbit is library that provides a single computational package to perform all analyses of 3C-based experiments. TADbit was designed bottom up to optimize user experience. It is implemented in the popular Python programming language and it comes with a rich set of tutorials and on line help that will allow non-experts to analyze their data and produce publication-grade figures. TADbit can be found in GitHub . TADbit and TADkit are developed by the Structural Genomics Group @ CNAG-CRG in Barcelona.
+Structural Genomics@CNAG·CRG

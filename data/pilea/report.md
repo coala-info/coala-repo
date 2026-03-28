@@ -184,3 +184,6 @@ Usage: pilea [-h] [-v] {index,fetch,profile,rebuild} ...
 pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'bacterial' (choose from index, fetch, profile, rebuild)
 ```
 
+
+## Metadata
+- **Skill**: generated

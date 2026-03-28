@@ -1,6 +1,6 @@
 ---
 name: genometester4
-description: GenomeTester4 is a high-performance toolkit for counting k-mers and performing set theory operations on genomic sequences. Use when user asks to count k-mers in sequencing data, perform set operations like intersections or unions on k-mer lists, or query specific k-mer frequencies from binary databases.
+description: GenomeTester4 is a toolkit for k-mer based genomic analysis that performs frequency counting and set operations on sequencing data. Use when user asks to count k-mers, perform set operations like intersections or unions on k-mer lists, and query specific k-mer frequencies.
 homepage: https://github.com/bioinfo-ut/GenomeTester4
 ---
 
@@ -8,42 +8,56 @@ homepage: https://github.com/bioinfo-ut/GenomeTester4
 # genometester4
 
 ## Overview
-GenomeTester4 is a high-performance toolkit designed for the manipulation of k-mer lists. It allows researchers to treat genomic sequences as sets of k-mers and perform basic set theory operations to find commonalities or differences between genomes or sequencing runs. The toolkit is composed of several specialized binaries, including `gmer_counter` for initial k-mer frequency analysis, `glistcompare` for set operations, and `glistquery` for extracting specific k-mer data. It serves as the foundation for advanced applications like FastGT (alignment-free genotyping) and KATK (de novo variant calling).
 
-## Core Binaries and Usage
+GenomeTester4 is a high-performance toolkit designed for k-mer based genomic analysis. It allows for the transformation of raw sequencing data into binary k-mer frequency lists and provides tools to manipulate these lists using set theory. By performing unions, intersections, and complements, users can isolate k-mers specific to certain strains, identify shared sequences across multiple samples, or prepare data for alignment-free variant calling.
 
-### 1. gmer_counter
-Used to count k-mers in FASTA or FASTQ files and generate binary k-mer databases.
-- **Basic Counting**: `gmer_counter -db <input_file> -o <output_prefix> -k <kmer_length>`
-- **Verbose Output**: Use `--verbose` to track progress during large-scale counting tasks.
-- **Text to Binary**: If you have a text-based k-mer list, `gmer_counter` is used to convert it into the optimized binary format required by other tools in the suite.
+## Core Workflow and CLI Patterns
 
-### 2. glistcompare
-The primary tool for set operations between two or more k-mer lists.
-- **Intersection**: Find k-mers present in multiple lists.
-- **Union**: Combine k-mers from multiple lists.
-- **Difference/Complement**: Find k-mers unique to a specific dataset (e.g., k-mers in a mutant strain not present in the wild type).
-- **Common Patterns**:
-    - Use `-c <cutoff>` to filter k-mers by frequency during comparison.
-    - Use `--stream` for memory-efficient processing of large lists.
-    - Use `--is-union` or specific rule arguments to define how k-mer counts are handled when merging (e.g., sum of counts vs. minimum count).
+The toolkit consists of several specialized binaries. The standard workflow involves counting k-mers to create a list, comparing lists to perform set operations, and querying the results.
 
-### 3. glistquery
-Used to retrieve information from generated k-mer databases.
-- **Sequence Query**: Check if specific sequences exist in the k-mer list.
-- **Reverse Complement**: Supports searching for the reverse complement of k-mers automatically.
-- **Statistics**: Use to extract GC content or frequency distributions from the binary database.
-- **Zero Counts**: Use `-min 0` to include k-mers with zero counts in the output if necessary for downstream statistical modeling.
+### 1. Counting K-mers (gmer_counter)
+Before performing set operations, you must generate k-mer frequency lists from your sequence files (FASTA/FASTQ).
 
-## Expert Tips and Best Practices
-- **Memory Management**: For large genomes, ensure you use the binary database format (.list) rather than text formats to minimize I/O overhead and memory consumption.
-- **K-mer Length**: While the tool supports various lengths, ensure consistency across all files being compared with `glistcompare`.
-- **FastGT & KATK Integration**: 
-    - For genotype calling, use `gmer_caller` in conjunction with pre-defined k-mer databases.
-    - For rare variants, use `gassembler` to assemble reads containing k-mers identified as unique or rare by `glistcompare`.
-- **Handling Ns**: Recent updates have improved how the tool handles ambiguous bases (N) and GC counting; always use the latest version (4.0+) to ensure accurate index creation and sequence name parsing.
+*   **Basic Counting**: Generate a binary k-mer list from input reads.
+*   **Verbose Output**: Use `--verbose` to monitor the counting process and resource utilization.
+*   **Subsequence Handling**: The tool handles k-mer extraction and frequency calculation; ensure your input files are properly formatted as standard sequence files.
+
+### 2. Set Operations (glistcompare)
+This is the primary tool for comparing two or more k-mer lists.
+
+*   **Intersection**: Find k-mers present in multiple lists.
+*   **Union**: Combine k-mers from multiple lists.
+*   **Complement/Difference**: Find k-mers present in one list but not another (useful for finding unique markers).
+*   **Streaming**: Use the `--stream` option for memory-efficient processing when handling very large k-mer sets.
+*   **Arbitrary Rules**: Use the "arbitrary number rule" to define specific thresholds for how many input lists a k-mer must appear in to be included in the output.
+
+### 3. Querying and Filtering (glistquery)
+Once a k-mer list (or the result of a comparison) is generated, use `glistquery` to extract specific information.
+
+*   **Search**: Look up specific k-mer sequences within a binary list.
+*   **Reverse Complement**: Use the reverse complement search feature to ensure k-mers are found regardless of strand orientation.
+*   **Filtering by Count**: Use `-min [value]` to filter k-mers based on their frequency. Setting `-min 0` will include k-mers with zero counts in the output if necessary.
+*   **Index Support**: For large databases, ensure an index is created to speed up query times.
+*   **Union Tables**: Use `--is-union` when querying lists that were generated via a union operation to correctly interpret the combined counts.
+
+## Expert Tips
+
+*   **Binary vs. Text**: GenomeTester4 uses efficient binary formats for k-mer lists. If a conversion from a text database to a binary database fails, check for disk space or formatting errors in the source text file.
+*   **Memory Management**: K-mer analysis is memory-intensive. When working with large genomes or high-depth sequencing, prefer the `glistcompare --stream` pattern to reduce the RAM footprint.
+*   **Genotyping Extensions**: For specific genotyping tasks, refer to the sub-projects included in the suite:
+    *   **FastGT**: For calling common SNVs directly from raw reads.
+    *   **KATK**: For identifying rare and de novo variants.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| glistcompare | Compares lists of k-mers. |
+| glistquery | Query a list file generated by glistmaker. |
+| gmer_counter | Nothing to do! |
 
 ## Reference documentation
-- [GenomeTester4 GitHub Repository](./references/github_com_bioinfo-ut_GenomeTester4.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_genometester4_overview.md)
-- [Commit History and Feature Updates](./references/github_com_bioinfo-ut_GenomeTester4_commits_master.md)
+- [GenomeTester4 Main Repository](./references/github_com_bioinfo-ut_GenomeTester4.md)
+- [GenomeTester4 Overview](./references/anaconda_org_channels_bioconda_packages_genometester4_overview.md)

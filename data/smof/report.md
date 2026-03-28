@@ -772,3 +772,6 @@ options:
   -l, --lines  writes the total number of sequences
 ```
 
+
+## Metadata
+- **Skill**: generated

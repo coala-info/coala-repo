@@ -324,3 +324,6 @@ options:
   --debug               debug mode
 ```
 
+
+## Metadata
+- **Skill**: generated

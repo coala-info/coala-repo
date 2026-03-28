@@ -1,1 +1,255 @@
-Workflow runs · KwanLab/Autometa · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} KwanLab / Autometa Public Notifications You must be signed in to change notification settings Fork 16 Star 45 Code Issues 39 Pull requests 1 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Actions: KwanLab/Autometa Actions All workflows Workflows docker get genomes for mock CI/CD docker get genomes for mock CI/CD docker mock data reporter CI/CD docker mock data reporter CI/CD nf-core linting nf-core linting nf-core linting comment nf-core linting comment pytest/codecov pytest/codecov docker Autometa CI/CD docker Autometa CI/CD Disabled Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 34 workflow runs 34 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. nf-core linting comment nf-core linting comment #675: completed by chasemc 11s 11s View workflow file nf-core linting comment nf-core linting comment #674: in_progress by chasemc 11s 11s View workflow file nf-core linting comment nf-core linting comment #673: requested by chasemc 11s 11s View workflow file Update to nf-core last v2 version; incorporating GTDB docker mock data reporter CI/CD #273: Pull request #370 synchronize by chasemc 1m 37s new-nf new-nf 1m 37s View #370 View workflow file Update to nf-core last v2 version; incorporating GTDB nf-core linting #530: Pull request #370 synchronize by chasemc 11s new-nf new-nf 11s View #370 View workflow file Update to nf-core last v2 version; incorporating GTDB pytest/codecov #225: Pull request #370 synchronize by chasemc 4m 24s new-nf new-nf 4m 24s View #370 View workflow file Update to nf-core last v2 version; incorporating GTDB docker get genomes for mock CI/CD #273: Pull request #370 synchronize by chasemc 1m 1s new-nf new-nf 1m 1s View #370 View workflow file nf-core linting comment nf-core linting comment #672: completed by chasemc 11s 11s View workflow file nf-core linting comment nf-core linting comment #671: in_progress by chasemc 12s 12s View workflow file nf-core linting comment nf-core linting comment #670: requested by chasemc 10s 10s View workflow file Update to nf-core last v2 version; incorporating GTDB docker get genomes for mock CI/CD #272: Pull request #370 opened by chasemc 58s new-nf new-nf 58s View #370 View workflow file Update to nf-core last v2 version; incorporating GTDB pytest/codecov #224: Pull request #370 opened by chasemc 4m 36s new-nf new-nf 4m 36s View #370 View workflow file Update to nf-core last v2 version; incorporating GTDB nf-core linting #529: Pull request #370 opened by chasemc 9s new-nf new-nf 9s View #370 View workflow file Update to nf-core last v2 version; incorporating GTDB docker mock data reporter CI/CD #272: Pull request #370 opened by chasemc 2m 5s new-nf new-nf 2m 5s View #370 View workflow file nf-core linting comment nf-core linting comment #669: completed by chasemc 10s 10s View workflow file nf-core linting comment nf-core linting comment #668: in_progress by chasemc 10s 10s View workflow file nf-core linting comment nf-core linting comment #667: requested by chasemc 12s 12s View workflow file 📝 add figshare link to documentaion nf-core linting #528: Pull request #369 opened by chasemc 13s add-figshare-to-documentation add-figshare-to-documentation 13s View #369 View workflow file nf-core linting comment nf-core linting comment #666: completed by chasemc 10s 10s View workflow file nf-core linting comment nf-core linting comment #665: in_progress by chasemc 11s 11s View workflow file nf-core linting comment nf-core linting comment #664: requested by chasemc 13s 13s View workflow file 📝 Update Contributor Covenant nf-core linting #527: Pull request #368 opened by chasemc 9s hotfix-conduct hotfix-conduct 9s View #368 View workflow file nf-core linting comment nf-core linting comment #663: completed by chasemc 14s 14s View workflow file nf-core linting comment nf-core linting comment #662: in_progress by chasemc 11s 11s View workflow file nf-core linting comment nf-core linting comment #661: requested by chasemc 14s 14s View workflow file Previous 1 2 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FKwanLab%2FAutometa%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FKwanLab%2FAutometa%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=KwanLab%2FAutometa)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[KwanLab](/KwanLab)
+/
+**[Autometa](/KwanLab/Autometa)**
+Public
+
+* [Notifications](/login?return_to=%2FKwanLab%2FAutometa) You must be signed in to change notification settings
+* [Fork
+  16](/login?return_to=%2FKwanLab%2FAutometa)
+* [Star
+   45](/login?return_to=%2FKwanLab%2FAutometa)
+
+* [Code](/KwanLab/Autometa)
+* [Issues
+  39](/KwanLab/Autometa/issues)
+* [Pull requests
+  1](/KwanLab/Autometa/pulls)
+* [Discussions](/KwanLab/Autometa/discussions)
+* [Actions](/KwanLab/Autometa/actions)
+* [Projects](/KwanLab/Autometa/projects)
+* [Security
+  0](/KwanLab/Autometa/security)
+* [Insights](/KwanLab/Autometa/pulse)
+
+Additional navigation options
+
+* [Code](/KwanLab/Autometa)
+* [Issues](/KwanLab/Autometa/issues)
+* [Pull requests](/KwanLab/Autometa/pulls)
+* [Discussions](/KwanLab/Autometa/discussions)
+* [Actions](/KwanLab/Autometa/actions)
+* [Projects](/KwanLab/Autometa/projects)
+* [Security](/KwanLab/Autometa/security)
+* [Insights](/KwanLab/Autometa/pulse)
+
+# Actions: KwanLab/Autometa
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**0 workflow runs**
+
+**0 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+![GitHub Actions](https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg)
+
+### There are no workflow runs yet.
+
+You can’t perform that action at this time.

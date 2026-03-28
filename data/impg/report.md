@@ -448,3 +448,6 @@ General options:
   -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 0]
 ```
 
+
+## Metadata
+- **Skill**: generated

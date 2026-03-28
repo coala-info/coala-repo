@@ -401,3 +401,6 @@ Usage: /usr/local/share/gapseq/src/pan-draft.R [-[-help|h]] [-[-models_path|m] <
     -s|--sbml.no.output            Do not save model as sbml file. Default: Save as SBML
 ```
 
+
+## Metadata
+- **Skill**: generated

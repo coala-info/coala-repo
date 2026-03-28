@@ -1,6 +1,6 @@
 ---
 name: mob_suite
-description: The mob_suite toolkit identifies, reconstructs, and characterizes plasmid sequences from whole genome sequencing data. Use when user asks to reconstruct plasmids from draft assemblies, type plasmid biomarkers, or cluster plasmids into similarity groups.
+description: MOB-suite is a bioinformatics framework for the reconstruction, typing, and clustering of plasmid sequences from draft genome assemblies. Use when user asks to reconstruct plasmids from assemblies, identify plasmid biological characteristics, or cluster plasmid sequences into similarity groups.
 homepage: https://github.com/phac-nml/mob-suite
 ---
 
@@ -9,63 +9,70 @@ homepage: https://github.com/phac-nml/mob-suite
 
 ## Overview
 
-The `mob_suite` is a specialized bioinformatics toolkit designed for the comprehensive analysis of plasmids within Whole Genome Sequencing (WGS) data. It addresses the challenge of identifying mobile genetic elements in fragmented draft assemblies by using a combination of curated databases and genomic distance estimation. The suite allows you to reconstruct individual plasmid sequences, predict their mobility (transferability), and assign them to similarity clusters (OTUs) for epidemiological surveillance and evolutionary studies.
+The MOB-suite is a specialized bioinformatics framework designed to handle the complexities of plasmid analysis in draft genome assemblies. Plasmids are often difficult to assemble and distinguish from chromosomal fragments; this toolset provides a modular approach to solve this by using a combination of marker-based typing and sequence-based clustering. It is essential for researchers studying horizontal gene transfer, antimicrobial resistance (AMR) spread, and bacterial evolution.
 
 ## Core Workflows
 
 ### 1. Database Initialization
-Before using the suite, you must initialize the required databases (hosted on Figshare). This happens automatically on the first run of `mob_recon` or `mob_typer`, but manual initialization is recommended to ensure environment stability.
+Before running any analysis, the local databases must be initialized. These databases include reference plasmid sequences, sketches, and biomarkers.
 
 ```bash
-# Initialize or update databases in the default location
+# Standard initialization (downloads to default location)
 mob_init
 
-# Initialize databases in a specific directory
-mob_init --database_directory /path/to/custom_db
+# Initialize in a specific directory
+mob_init -d /path/to/custom_db_dir
 ```
 
-### 2. Plasmid Reconstruction (`mob_recon`)
-This is the primary tool for processing draft assemblies. It identifies plasmid-derived contigs, groups them into individual plasmids, and provides full typing information.
+### 2. Plasmid Reconstruction (MOB-recon)
+This is the primary tool for most users. It takes a draft assembly (FASTA) and separates contigs into chromosomal or specific plasmid groups.
 
 ```bash
-# Basic reconstruction from a draft assembly
-mob_recon --input assembly.fasta --outdir results_dir
+# Basic reconstruction
+mob_recon --input <assembly.fasta> --outdir <output_directory>
 
-# Reconstruction with chromosome depletion (filtering out known chromosomal sequences)
-mob_recon --input assembly.fasta --outdir results_dir --force
+# Reconstruction with automated database download (if not already done)
+mob_recon -i <assembly.fasta> -o <out_dir>
+
+# Using chromosome depletion (filtering out known chromosomal sequences)
+mob_recon -i <assembly.fasta> -o <out_dir> --filter <chromosome_sequences.fasta>
 ```
 
-### 3. Plasmid Typing (`mob_typer`)
-Use this tool when you have already isolated plasmid sequences (e.g., from a complete assembly or a specific fasta file) and need to characterize their biomarkers.
+### 3. Plasmid Typing (MOB-typer)
+Use this tool when you already have a purified or reconstructed plasmid sequence and need to identify its biological characteristics.
 
 ```bash
-# Type a specific plasmid sequence
-mob_typer --input plasmid.fasta --outdir typing_results
-
-# Multi-mode typing for a directory of files
-mob_typer --input_directory ./plasmids --outdir multi_typing_results
+# Type a single plasmid file
+mob_typer --input <plasmid.fasta> --outdir <output_directory>
 ```
 
-### 4. Plasmid Clustering (`mob_cluster`)
-Used to group plasmids into similarity groups based on Mash genomic distances. This is useful for determining if a plasmid belongs to a known lineage.
+### 4. Plasmid Clustering (MOB-cluster)
+This tool groups plasmids into similarity groups (clusters) using Mash genomic distances. It is useful for nomenclature and identifying operational taxonomic units (OTUs) for plasmids.
 
 ```bash
 # Cluster a set of plasmid sequences
-mob_cluster --input plasmids.fasta --outdir cluster_output
+mob_cluster --input <all_plasmids.fasta> --outdir <cluster_results>
 ```
 
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
-- **Input Quality**: `mob_recon` is designed for draft assemblies. While it works on complete genomes, its primary strength is resolving the "plasmid vs. chromosome" ambiguity in fragmented data.
-- **Memory Management**: The databases are large. If running in a memory-constrained environment (like a small Docker container), ensure you have at least 4-8GB of RAM available for BLAST and Mash operations.
-- **Output Interpretation**:
-    - `contig_report.txt`: Provides the assignment of every input contig (Plasmid vs. Chromosome).
-    - `mobtyper_results.txt`: Contains the replicon, relaxase, and mate-pair formation (MPF) types, along with predicted mobility (e.g., conjugative, mobilizable, non-mobile).
-- **Container Usage**: When using Docker or Singularity, always mount your data volumes to `/mnt` and ensure the tool has write permissions to the output directory.
-    ```bash
-    docker run --rm -v $(pwd):/mnt kbessonov/mob_suite:latest mob_recon -i /mnt/assembly.fasta -o /mnt/output
-    ```
+- **First Run Latency**: The first execution of `mob_recon` or `mob_typer` will trigger a large database download if `mob_init` hasn't been run. Ensure you have a stable internet connection and sufficient disk space.
+- **Draft vs. Complete Assemblies**: While optimized for draft assemblies, MOB-suite is highly effective on complete genomes to confirm plasmid boundaries and mobility markers.
+- **Interpreting Cluster Codes**: MOB-cluster accessions provide a sequence-based nomenclature. Highly similar plasmids will share cluster codes, which often correlate with specific replicon and relaxase types.
+- **Memory Management**: For large batches of assemblies, ensure the system has enough RAM for `blast+` and `mash` operations, which are the primary computational bottlenecks.
+- **Chromosome Depletion**: If you have a high-quality reference chromosome for your specific strain, use the `--filter` option in `mob_recon` to significantly improve the accuracy of plasmid contig assignment.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mob_cluster | MOB-Cluster: Generate and update existing plasmid clusters' version: 3.1.9 |
+| mob_init | MOB-INIT: initialize databases |
+| mob_recon | MOB-Recon: Typing and reconstruction of plasmids from draft and complete assemblies |
+| mob_typer | Plasmid typing and mobility prediction |
 
 ## Reference documentation
 - [MOB-suite GitHub Repository](./references/github_com_phac-nml_mob-suite.md)
-- [Bioconda mob_suite Overview](./references/anaconda_org_channels_bioconda_packages_mob_suite_overview.md)
+- [MOB-suite README and Usage Guide](./references/github_com_phac-nml_mob-suite_blob_master_README.md)

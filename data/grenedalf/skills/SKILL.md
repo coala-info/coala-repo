@@ -1,6 +1,6 @@
 ---
 name: grenedalf
-description: grenedalf is a high-performance C++ toolkit for the statistical analysis of pooled sequencing data. Use when user asks to calculate diversity metrics, estimate population differentiation, convert files to sync format, or generate allele frequency tables.
+description: grenedalf is a high-performance command-line toolkit for the statistical analysis of pool-sequencing data. Use when user asks to calculate genetic diversity metrics, estimate population differentiation, analyze allele frequencies, or convert genomic files into sync format.
 homepage: https://github.com/lczech/grenedalf
 ---
 
@@ -9,44 +9,79 @@ homepage: https://github.com/lczech/grenedalf
 
 ## Overview
 
-grenedalf is a high-performance C++ toolkit designed for the statistical analysis of pooled sequencing data. It serves as a modern, scalable alternative to older tools like PoPoolation and PoPoolation2. Use this skill to efficiently process large genomic datasets where individuals are sequenced in pools rather than individually, requiring specific statistical corrections for pool size and sequencing depth. It excels at calculating diversity metrics, allele frequencies, and population differentiation (Fst) across sliding windows or specific genomic sites.
+grenedalf is a high-performance command-line toolkit designed for the statistical analysis of pool-sequencing (Pool-seq) data. It serves as a faster, more memory-efficient alternative to older tools like PoPoolation and PoPoolation2. The tool handles the unique statistical challenges of pooled data—where multiple individuals are sequenced together—by applying corrections for pool size and sequencing depth. It supports a wide range of genomic formats and provides specialized workflows for calculating population genetics metrics across sliding windows or specific genomic regions.
 
-## Command Line Interface
+## Core Workflows
 
-The general syntax for grenedalf is:
-`grenedalf <command> [options]`
+### 1. Calculating Genetic Diversity
+Use the `diversity` command to compute corrected measures of nucleotide diversity and neutrality tests.
+- **Metrics**: Theta Pi ($\pi$), Theta Watterson ($\theta_W$), and Tajima's D.
+- **Key Options**: Requires pool sizes to be specified for accurate correction.
+- **Example**:
+  ```bash
+  grenedalf diversity --pool-sizes 50 50 100 --sam-path sample1.sam sample2.sam sample3.sam --window-width 10000
+  ```
 
-### Core Commands
+### 2. Estimating Population Differentiation (FST)
+Use the `fst` command to compare genetic differentiation between pools.
+- **Methods**: Supports various estimators including those following PoPoolation2 and poolfstat.
+- **Example**:
+  ```bash
+  grenedalf fst --sync-path input.sync --pool-sizes 100 --window-width 50000 --window-stride 10000
+  ```
 
-- **`diversity`**: Calculates pool-corrected diversity measures including Theta Pi, Theta Watterson, and Tajima's D.
-- **`fst`**: Computes pool-corrected Fst values to measure differentiation between populations.
-- **`sync`**: Converts VCF or BAM files into the synchronized (sync) format, which lists base counts per sample at each genomic position.
-- **`frequency`**: Generates tables of allele frequencies or raw base counts for total or per-sample data.
-- **`simulate`**: Creates synthetic frequency data for testing and null-model generation.
+### 3. Allele Frequency Analysis
+Use the `frequency` command to extract per-sample or total base counts and frequencies.
+- **Use Case**: Generating tables for downstream custom R scripts or visualizing allele frequency spectrums (AFS).
+- **Example**:
+  ```bash
+  grenedalf frequency --vcf-path variants.vcf.gz --out-dir frequency_results/
+  ```
 
-### Common Workflow Patterns
+### 4. File Conversion and Simulation
+- **Sync Generation**: Convert BAM/SAM/VCF files into the `sync` format (common in Pool-seq) using `grenedalf sync`.
+- **Simulation**: Generate random frequency data for null model testing using `grenedalf simulate`.
 
-#### 1. Calculating Diversity Statistics
-To compute Tajima's D and Theta across the genome using a sliding window:
-`grenedalf diversity --sync-path input.sync --window-width 1000 --window-stride 500 --pool-sizes 50`
+## Expert Tips and Best Practices
 
-#### 2. Estimating Fst between Pools
-To compare two or more pools:
-`grenedalf fst --sync-path input.sync --pool-sizes 50 50 --window-width 1000`
+### Handling Pool Sizes
+Accurate statistics require knowing the number of diploid individuals in each pool.
+- Use `--pool-sizes <int>` to set a global size for all samples.
+- Use a file with `--pool-sizes-file <file>` for varying sizes across many samples.
 
-#### 3. Data Preparation (Sync Generation)
-To create a sync file from a VCF (ensure the VCF contains AD or DP/count tags):
-`grenedalf sync --vcf-path input.vcf --out-dir output_folder`
+### Filtering and Masking
+Pool-seq data is sensitive to sequencing errors and mapping biases.
+- **Region Filtering**: Use `--filter-region-mask-fasta` to restrict analysis to specific genomic areas.
+- **Quality Control**: Always apply depth filters (min/max coverage) to avoid regions with copy number variation or low confidence.
+- **Masking**: Provide a BED file to `--filter-mask-bed` to exclude repetitive regions or known problematic loci.
 
-### Expert Tips and Best Practices
+### Windowing Strategies
+- **Sliding Windows**: Define `---window-width` and `--window-stride`. If stride is less than width, windows will overlap.
+- **Averaging**: grenedalf uses a "window averaging policy." By default, it considers the number of "valid" positions (those passing filters) rather than just the raw window size to avoid underestimating diversity in sparse regions.
 
-- **Pool Size Specification**: Always provide accurate `--pool-sizes`. If all pools have the same size, a single value suffices; otherwise, provide a list matching the order of samples in your input file.
-- **Filtering**: Use `--filter-sample-min-count` and `--filter-sample-max-count` to remove low-confidence alleles or repetitive regions (ultra-high coverage) before calculating statistics.
-- **Windowing**: For large genomes, use `--window-width` and `--window-stride` to perform sliding window analyses, which smooths local stochasticity in Pool-Seq data.
-- **Performance**: grenedalf is multi-threaded. Use the `--threads` option to speed up calculations on large sync files.
-- **Citations**: Use `grenedalf citation` to see the specific papers and methods implemented for the commands you are using.
+### Performance Optimization
+- **Input Formats**: While grenedalf reads BAM/SAM directly, converting to a `sync` file first can significantly speed up iterative analyses.
+- **Multithreading**: Use the `-j` or `--threads` flag to parallelize computations across genomic contigs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cathedral-plot | Create a cathedral plot, using the pre-computated cathedral data. |
+| citation | Print references to be cited when using grenedalf. |
+| fst-cathedral | Compute the data for an FST cathedral plot. |
+| grenedalf diversity | Compute pool-sequencing corrected diversity measures Theta Pi, Theta Watterson, and Tajima's D. |
+| grenedalf frequency | Create a table with per-sample and/or total base counts and/or frequencies at positions in the genome. |
+| grenedalf fst | Compute pool-sequencing corrected measures of FST. |
+| grenedalf sync | Create a sync file that lists per-sample base counts at each position in the genome. |
+| simulate | Create a file with simulated random frequency data. |
 
 ## Reference documentation
-- [Home · lczech/grenedalf Wiki](./references/github_com_lczech_grenedalf_wiki.md)
-- [grenedalf - Toolkit for Population Genetic Statistics](./references/github_com_lczech_grenedalf.md)
-- [grenedalf - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_grenedalf_overview.md)
+
+- [Home: Wiki Overview](./references/github_com_lczech_grenedalf_wiki.md)
+- [Subcommand: diversity](./references/github_com_lczech_grenedalf_wiki_Subcommand_-diversity.md)
+- [Subcommand: fst](./references/github_com_lczech_grenedalf_wiki_Subcommand_-fst.md)
+- [Filtering Best Practices](./references/github_com_lczech_grenedalf_wiki_Filtering.md)
+- [Windowing and Averaging](./references/github_com_lczech_grenedalf_wiki_Windowing.md)

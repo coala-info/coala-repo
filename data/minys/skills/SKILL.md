@@ -1,6 +1,6 @@
 ---
 name: minys
-description: MinYS is a bioinformatics pipeline that reconstructs target genomes from metagenomic samples using a reference-guided assembly approach. Use when user asks to assemble symbiont genomes, perform reference-guided metagenomic assembly, or fill gaps between contigs using sequencing reads.
+description: MinYS extracts and assembles specific bacterial genomes from metagenomic datasets by using a reference genome as bait to recruit relevant reads. Use when user asks to assemble symbiont genomes from metagenomes, fill gaps in genomic assemblies, or convert GFA files to FASTA format.
 homepage: https://github.com/cguyomar/MinYS
 ---
 
@@ -8,48 +8,69 @@ homepage: https://github.com/cguyomar/MinYS
 # minys
 
 ## Overview
-MinYS (MineYourSymbiont) is a specialized bioinformatics pipeline for reconstructing target genomes from metagenomic samples using a reference-guided approach. It automates a multi-step workflow involving read mapping (BWA), contig assembly (Minia), gap-filling (MindTheGap), and graph simplification. This tool is particularly effective for extracting and assembling symbiont genomes or specific bacterial targets where a related reference genome is available to guide the recruitment of reads.
+MinYS (MineYourSymbiont) is a specialized bioinformatics pipeline designed to extract and assemble specific bacterial genomes from metagenomic datasets. Instead of performing a full de novo metagenomic assembly, it uses a reference genome as a "bait" to recruit relevant reads. The process involves mapping reads with BWA, performing a backbone assembly with Minia, filling gaps with MindTheGap, and finally simplifying the resulting assembly graph. It is particularly effective for recovering symbiont genomes where a related reference is available but the target organism has significant divergence or strain-specific variations.
 
-## Command Line Usage
+## Core Workflow
 
-### Basic Execution
-The primary entry point is `MinYS.py`. A standard run requires paired-end reads and a reference genome.
-
+### Basic Assembly
+To run a standard assembly with paired-end reads and a reference genome:
 ```bash
-MinYS.py -1 reads.1.fq -2 reads.2.fq -ref reference.fa -out results_dir
+MinYS.py -1 reads_1.fq -2 reads_2.fq -ref reference.fa -out results_dir
 ```
 
-### Input Variations
-- **Paired-end files**: Use `-1` and `-2`.
-- **Single file**: Use `-in`.
-- **Batch processing**: Use `-fof` (File of Files). For paired data, the file should contain two tab-separated columns.
+### Parameter Selection by Coverage
+The quality of the assembly depends heavily on k-mer size and abundance thresholds.
+- **Low Coverage (< 50x):** Use smaller k-mers (e.g., 25-31) and low abundance thresholds (e.g., 3).
+- **High Coverage (> 100x):** Use larger k-mers (e.g., 51-61) and higher abundance thresholds (e.g., 10) to resolve repeats and filter sequencing errors.
 
-### Workflow Control and Optimization
-- **Parallelization**: Use `-nb-cores` to specify the number of CPU threads.
-- **Bypassing Steps**: 
-  - If you already have contigs: `-contigs <file.fa>`. Note: You must also provide `-assembly-kmer-size` to define the overlap.
-  - If you already have a graph: `-graph <file.h5>`.
-- **Memory/Storage**: If running on a Lustre filesystem, prevent HDF5 locking errors by setting the environment variable:
-  `export HDF5_USE_FILE_LOCKING='FALSE'`
+Example for high-coverage symbionts:
+```bash
+MinYS.py -1 r1.fq -2 r2.fq -ref ref.fa \
+    -assembly-kmer-size 61 -assembly-abundance-min 10 \
+    -gapfilling-kmer-size 51 -gapfilling-abundance-min 5 \
+    -nb-cores 8
+```
 
-## Parameter Tuning
+### Bypassing Steps
+If you already have contigs or a graph and want to resume or skip the initial mapping/assembly:
+- **Use existing contigs:** `-contigs my_contigs.fa` (skips BWA and Minia).
+- **Use existing graph:** `-graph my_graph.h5` (skips graph creation).
 
-### Assembly and Gap-filling
-- **K-mer Size**: Controlled by `-assembly-kmer-size` and `-gapfilling-kmer-size` (Default: 31). These should be adjusted based on read length and complexity.
-- **Abundance Threshold**: `-assembly-abundance-min` and `-gapfilling-abundance-min` default to `auto`, but can be set manually to filter out low-frequency sequencing errors.
-- **Contig Filtering**: Use `-min-contig-size` (Default: 400) to ignore small, potentially chimeric contigs during the gap-filling stage.
+## Post-Processing and Utility Scripts
+MinYS produces GFA (Graphical Fragment Assembly) files. The final output is typically found in `gapfilling/*.simplified.gfa`.
 
-### Graph Simplification
-- **Node Merging**: The `-l` parameter (Default: 100) defines the minimum prefix length for merging nodes in the assembly graph.
-- **Gap Limits**: `-max-length` (Default: 50000) sets the maximum allowed distance for gap-filling between contigs.
+### Converting Graph to Fasta
+To extract sequences from the simplified graph for downstream analysis:
+```bash
+python graph_simplification/gfa2fasta.py input.simplified.gfa output.fasta 0
+```
 
-## Post-Processing Utilities
-MinYS includes scripts in the `graph_simplification/` directory to handle the GFA output:
+### Filtering and Path Enumeration
+- **Filter small components:** Remove disconnected nodes or small contigs that don't meet a size threshold (e.g., 100kb).
+  ```bash
+  python graph_simplification/filter_components.py input.gfa filtered.gfa 100000
+  ```
+- **Enumerate paths:** If the graph contains bubbles or multiple paths, use this to extract distinct genomic variants.
+  ```bash
+  python graph_simplification/enumerate_paths.py input.gfa output_dir
+  ```
 
-- **Convert to FASTA**: `gfa2fasta.py in.gfa out.fa`
-- **Filter by Size**: `filter_components.py in.gfa min_size` (returns components larger than the specified total nucleotide count).
-- **Path Enumeration**: `enumerate_paths.py in.gfa out_dir` (extracts distinct genomic paths from the graph based on ANI and coverage).
+## Expert Tips
+- **Reference Selection:** The reference does not need to be identical but should be close enough for BWA to recruit reads.
+- **Visualization:** Use **Bandage** to visualize the `.gfa` files. This helps identify if the genome is circularized or if there are unresolved repeats.
+- **Lustre Filesystems:** If running on a high-performance cluster using Lustre, set `export HDF5_USE_FILE_LOCKING='FALSE'` to avoid HDF5 errors during the MindTheGap step.
+- **Masking:** Use the `-mask` option with a BED file to exclude highly conserved regions (like rRNA) that might recruit reads from non-target organisms in the metagenome.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| filter_components.py | Filters components based on minimum length. |
+| minys_MinYS.py | MinYS: A pipeline for de novo assembly of circular DNA molecules |
 
 ## Reference documentation
-- [MinYS GitHub Repository](./references/github_com_cguyomar_MinYS.md)
-- [Bioconda MinYS Overview](./references/anaconda_org_channels_bioconda_packages_minys_overview.md)
+- [MinYS README](./references/github_com_cguyomar_MinYS_blob_master_README.md)
+- [MinYS Tutorial](./references/github_com_cguyomar_MinYS_blob_master_doc_tutorial.md)
+- [MinYS CLI Source](./references/github_com_cguyomar_MinYS_blob_master_MinYS.py.md)

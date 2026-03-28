@@ -1,6 +1,6 @@
 ---
 name: sylph-tax
-description: This tool transforms raw metagenomic profiling data from sylph into taxonomically annotated formats and merged sample tables. Use when user asks to generate taxonomic profiles, convert sylph outputs to Pavian-compatible formats, merge multiple sample results, or assign taxonomy using GTDB or fungal databases.
+description: sylph-tax maps metagenomic profiling results from sylph to standardized taxonomic nomenclatures like GTDB or RefSeq. Use when user asks to download taxonomic metadata, convert sylph results into taxonomic profiles, generate Pavian-compatible reports, or merge multiple profiles into a single table.
 homepage: https://github.com/bluenote-1577/sylph-tax
 ---
 
@@ -8,39 +8,38 @@ homepage: https://github.com/bluenote-1577/sylph-tax
 # sylph-tax
 
 ## Overview
-The `sylph-tax` skill enables the transformation of raw metagenomic profiling data from `sylph` into taxonomically annotated formats. While `sylph` provides efficient profiling, its native output lacks hierarchical taxonomic strings. This tool bridges that gap, allowing researchers to generate profiles compatible with downstream visualization and analysis tools like Pavian. Use this skill to handle taxonomy assignment, merge sample results, and format outputs for GTDB or fungal databases.
 
-## Installation and Setup
-Install the tool via Bioconda:
-```bash
-conda install bioconda::sylph-tax
-```
+sylph-tax is a Python-based utility designed to bridge the gap between the high-speed metagenomic profiling of sylph and the requirement for standardized taxonomic nomenclature. While sylph identifies genomic matches, sylph-tax maps these matches to established taxonomies (such as GTDB or RefSeq), producing profiles similar to Kraken or MetaPhlAn. This skill provides the necessary CLI patterns to manage databases, process results in restricted environments like HPC clusters, and format data for comparative analysis.
 
-## Core Workflows
+## Common CLI Patterns and Best Practices
 
-### Generating Taxonomic Profiles
-The primary function is converting `sylph` TSV files into taxonomic profiles.
-- **Input**: TSV output from a `sylph` run.
-- **Output**: Taxonomic profiles in formats similar to Kraken or MetaPhlAn.
-- **Pavian Support**: Use the tool to generate Pavian-compatible outputs for interactive visualization.
+### Database Management
+Before profiling, you must obtain the relevant taxonomic metadata.
+- **Standard Download**: Use `sylph-tax download` to fetch default databases.
+- **Custom Location**: Use the `--download-to <directory>` flag to specify a non-default path. This is recommended for shared environments to avoid filling home directory quotas.
 
-### Merging Results
-When working with multiple samples, use the merging functionality to create a unified table.
-- **Coverage Data**: The tool supports `True_cov` (True Coverage) metrics during the merge process to provide more accurate abundance estimates.
-- **Empty Dataframes**: Recent versions (v1.7.1+) correctly handle merges involving samples with no detected species.
+### Processing sylph Results
+The primary workflow involves taking the `.tsv` output from a sylph run and converting it into a taxonomic profile.
+- **Basic Conversion**: Run `sylph-tax` pointing to your sylph output file.
+- **Pavian Compatibility**: Use the `--pavian` flag to generate a report that replicates MetaPhlAn4 columns, making it directly compatible with the Pavian Shiny app for visualization.
+- **Handling Unknowns**: By default, the tool replaces empty taxonomic ranks with "UNKNOWN" to maintain table integrity.
 
-### Database Integration
-The tool is designed to work with specific taxonomic databases:
-- **GTDB**: Supports GTDB r226 and earlier versions.
-- **Fungi**: Includes specialized support for fungal databases (v1.6.0+).
-- **Metadata**: Handles metadata splits (e.g., `_ASM` or `_Genomic` suffixes) to ensure correct taxonomic mapping.
+### Expert Tips for HPC and Restricted Environments
+- **Bypass Config Files**: In HPC environments with broken or non-shared file systems, use the `--no-config` option. This prevents the tool from attempting to read or write to `~/.config/sylph-tax/config.json` and allows you to explicitly define database paths via the command line.
+- **Metadata Matching**: The tool is flexible with genome IDs. It can match IDs like `GCF_00120` even if the metadata file originally expected extensions like `.fa` or `.fna`.
+- **Merging Profiles**: When dealing with multiple samples, ensure you are using the latest version to avoid bugs related to merging empty dataframes (samples with no detected species).
 
-## Expert Tips and Best Practices
-- **No-Config Runs**: As of v1.8.0, the tool supports "no-config" execution, simplifying the workflow by reducing the need for external configuration files.
-- **Handling Metadata**: If your metadata files contain complex suffixes from assembly or genomic splits, `sylph-tax` includes logic to parse these correctly without requiring manual filename cleaning.
-- **Abundance Metrics**: When merging, prioritize using the `True_cov` support to ensure that the resulting taxonomic table reflects the estimated genomic coverage rather than just raw read counts.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sylph-tax download | Download taxonomy metadata |
+| sylph-tax merge | Merge multiple sylph-tax taxonomy files into a single TSV table. |
+| sylph-tax taxprof | Generates a taxonomy profile from SYLPH result files. |
 
 ## Reference documentation
-- [sylph-tax Overview (Bioconda)](./references/anaconda_org_channels_bioconda_packages_sylph-tax_overview.md)
-- [sylph-tax Repository and README](./references/github_com_bluenote-1577_sylph-tax.md)
-- [sylph-tax Version History and Changes](./references/github_com_bluenote-1577_sylph-tax_tags.md)
+- [sylph-tax GitHub Repository](./references/github_com_bluenote-1577_sylph-tax.md)
+- [sylph-tax Changelog](./references/github_com_bluenote-1577_sylph-tax_blob_main_CHANGELOG.md)
+- [sylph-tax README](./references/github_com_bluenote-1577_sylph-tax_blob_main_README.md)

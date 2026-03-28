@@ -1,6 +1,6 @@
 ---
 name: megagta
-description: MegaGTA is a metagenomic assembler that uses Hidden Markov Models to reconstruct specific target genes from metagenomic datasets. Use when user asks to assemble full-length functional marker genes, perform gene-targeted metagenomic assembly, or filter and cluster assembled gene sequences.
+description: MegaGTA is a metagenomic gene-targeted assembler that uses Hidden Markov Models to reconstruct specific genes of interest from complex microbial communities. Use when user asks to perform targeted assembly of specific genes, reconstruct low-abundance sequences using HMMs, or process metagenomic reads for antibiotic resistance and metabolic markers.
 homepage: https://github.com/HKU-BAL/MegaGTA
 ---
 
@@ -9,58 +9,59 @@ homepage: https://github.com/HKU-BAL/MegaGTA
 
 ## Overview
 
-MegaGTA is a specialized metagenomic assembler designed to reconstruct specific genes of interest rather than the entire metagenome. It utilizes Hidden Markov Models (HMMs) to guide the assembly process through iterative de Bruijn graphs. This approach is particularly effective for recovering full-length sequences of functional marker genes, even at low abundance, by focusing computational resources on sequences that match the profile of the target gene families.
+MegaGTA is a specialized metagenomic gene-targeted assembler that utilizes Hidden Markov Models (HMMs) to guide the construction of iterative de Bruijn graphs. Unlike general-purpose de novo assemblers, MegaGTA focuses computational resources on specific genes of interest (e.g., antibiotic resistance genes, metabolic markers, or phylogenetic anchors), allowing for more sensitive reconstruction of low-abundance sequences in complex microbial communities. It leverages gene resources compatible with the Xander assembler to define the target search space.
 
-## Core Workflows
+## Core Workflow
 
-### 1. Assembly Execution
-The primary assembly is performed using the `megagta.py` script. It requires a set of reads and a configuration file defining the target genes.
+### 1. Preparation and Configuration
+Before running the assembly, you must define your target genes in a `gene_list.txt` file. Each line specifies a gene and its associated HMM and alignment files.
 
-```bash
-bin/megagta.py -r reads.fq -g gene_list.txt -o output_dir
-```
-
-**Key Arguments:**
-- `-r`: Input metagenomic reads in FASTQ format.
-- `-g`: Path to the gene configuration list.
-- `-o`: Output directory for assembly results.
-
-### 2. Post-Processing and Clustering
-After assembly, use the post-processing script to filter results, remove chimeras, and cluster sequences to reduce redundancy.
-
-```bash
-bin/post_proc.sh -g gene_resources_dir -d output_dir/contigs -m 16G -c 0.01
-```
-
-**Key Arguments:**
-- `-g`: The directory containing gene resources (HMMs and alignments).
-- `-d`: The directory containing the raw contigs from the assembly step.
-- `-m`: Memory limit (e.g., 16G).
-- `-c`: Clustering similarity threshold (expressed as distance; e.g., 0.01 results in 99% similarity clusters).
-
-## Configuration and Setup
-
-### Gene List Format (`gene_list.txt`)
-The gene list is a tab-delimited or space-delimited file where each line defines a target gene family. You must provide paths to the forward HMM, reverse HMM, and a reference multiple sequence alignment (MSA).
-
-**Format:**
-`[gene_name] [path_to_forward_hmm] [path_to_reverse_hmm] [path_to_ref_alignment]`
+**gene_list.txt format:**
+`<gene_name> <forward_hmm> <reverse_hmm> <ref_alignment_faa>`
 
 **Example:**
 ```text
 rplB share/RDPTools/Xander_assembler/gene_resource/rplB/for_enone.hmm share/RDPTools/Xander_assembler/gene_resource/rplB/rev_enone.hmm share/RDPTools/Xander_assembler/gene_resource/rplB/ref_aligned.faa
 ```
 
-### Resource Management
-- **Gene Resources**: MegaGTA is compatible with the resource format used by the Xander assembler. Default resources are typically located in `share/RDPTools/Xander_assembler/gene_resource`.
-- **Tool Paths**: Before running `post_proc.sh`, ensure the paths to `HMMER` and `UCHIME` are correctly configured within the script itself.
+### 2. Targeted Assembly
+Run the primary assembly script using your sequencing reads and the configuration file.
+
+```bash
+bin/megagta.py -r reads.fq -g gene_list.txt -o output_dir
+```
+
+### 3. Post-Processing
+After assembly, use the post-processing script to perform clustering and chimera checking (via UCHIME).
+
+```bash
+bin/post_proc.sh -g gene_resources_dir -d output_dir/contigs -m 16G -c 0.01
+```
+*   `-g`: Directory containing gene resources (formatted for Xander).
+*   `-d`: The `contigs` subdirectory within your assembly output.
+*   `-m`: Memory limit (e.g., 16G).
+*   `-c`: Clustering similarity threshold (0.01 represents a 0.99 similarity threshold).
 
 ## Expert Tips and Best Practices
 
-- **Iterative Graphs**: MegaGTA uses iterative de Bruijn graphs to navigate complex regions. If assembly is fragmented, verify that your HMMs are sensitive enough to capture the diversity of the gene in your specific environment.
-- **Memory Allocation**: The post-processing step can be memory-intensive depending on the number of recovered contigs. Always specify the `-m` flag based on available system resources.
-- **Custom Genes**: To target genes not included in the default RDPTools set, you must prepare HMMs and a reference alignment following the Xander resource format.
-- **Chimera Detection**: The post-processing pipeline includes UCHIME. Ensure UCHIME is in your PATH or explicitly defined in the shell script to avoid silent failures during the cleaning phase.
+*   **Tool Path Configuration**: The `bin/post_proc.sh` script requires manual editing to point to your local installations of HMMER and UCHIME. Ensure these paths are updated before execution.
+*   **Gene Resources**: MegaGTA is compatible with Xander assembler gene resources. If your gene of interest is not provided in the default `share/RDPTools/Xander_assembler/gene_resource` directory, you must follow Xander's preparation protocols to generate the required HMMs and alignments.
+*   **Submodule Initialization**: If building from source, ensure submodules are initialized (`git submodule update --init --recursive`) to include the necessary RDPTools components.
+*   **Memory Management**: During post-processing, ensure the `-m` flag matches your available system resources, as HMM-guided filtering and clustering can be memory-intensive for large datasets.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| buildlib | Build a library from read files. |
+| denovo | no succinct de Bruijn graph name! |
+| megagta_findstart | Find the start of the first exon in a gene. |
+| read2sdbg | Builds a de Bruijn graph from sequencing reads. |
+| readstat | Reads FASTQ files from standard input. |
+| search | Search for genes in a de Bruijn graph. |
 
 ## Reference documentation
-- [MegaGTA Main README](./references/github_com_HKU-BAL_MegaGTA.md)
+- [MegaGTA README](./references/github_com_HKU-BAL_MegaGTA_blob_master_README.md)
+- [Build Script (make.sh)](./references/github_com_HKU-BAL_MegaGTA_blob_master_make.sh.md)

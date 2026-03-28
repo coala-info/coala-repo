@@ -1,6 +1,6 @@
 ---
 name: ggcat
-description: "ggcat constructs and queries compacted and colored de Bruijn graphs from sequencing reads. Use when user asks to build a compacted de Bruijn graph, create colored graphs to track k-mer sources, or query k-mers against an existing graph."
+description: "GGCAT constructs and queries compacted and colored de Bruijn graphs from genomic sequencing data. Use when user asks to build a compacted de Bruijn graph, create colored graphs for multi-sample analysis, or query sequences for k-mer presence."
 homepage: https://github.com/algbio/ggcat
 ---
 
@@ -8,62 +8,82 @@ homepage: https://github.com/algbio/ggcat
 # ggcat
 
 ## Overview
-ggcat (Compacted and Colored de Bruijn Graph Construction and Querying) is a high-performance bioinformatics tool designed to transform raw sequencing reads into compacted de Bruijn graphs. It excels at handling "colored" graphs, which allow you to track which specific input files contain which k-mers. The tool provides multiple output representations to optimize for graph size or path properties and includes a dedicated query mode for rapid k-mer lookups against built graphs.
 
-## Graph Construction
-The `build` command is the primary entry point for creating graphs.
+GGCAT (compacted and colored de Bruijn graph construction and querying) is a high-performance bioinformatics tool designed to process raw sequencing reads or existing graphs into a unified, compacted representation. It excels at handling "colors" (metadata labels for different input sources), allowing users to track which k-mers belong to which samples. This skill provides the procedural knowledge to execute graph construction, perform k-mer queries, and optimize memory and thread usage for large genomic datasets.
 
-### Basic Construction
-To build a standard compacted de Bruijn graph from FASTA/FASTQ files:
+## Core Workflows
+
+### 1. Building a Compacted de Bruijn Graph (cDBG)
+
+To build a standard graph from FASTA/FASTQ files:
 ```bash
-ggcat build -k <kmer_length> -j <threads> <input_files> -o <output.fasta.lz4>
+ggcat build -k <k_value> -j <threads> <input_files> -o <output_file.fasta.lz4>
 ```
 
-### Colored Graphs
-Colored graphs associate k-mers with their source files. By default, the filename is the color name.
-- **Enable colors**: Add the `-c` flag.
-- **Custom color mapping**: Use a tab-separated file (`color\tpath`) with the `-d` flag.
-```bash
-# Example color_mapping.txt:
-# sample_A    reads_1.fq
-# sample_A    reads_2.fq
-# sample_B    genome.fa
+**Best Practices:**
+- **K-mer Length (`-k`)**: Choose based on your organism's complexity (e.g., 31 is common for bacterial genomes).
+- **Multiplicity (`-s`)**: Use `-s 1` to keep all k-mers, or the default `-s 2` to filter out potential sequencing errors (singletons).
+- **Input Lists**: For many files, use `-l <file_list.txt>` where each line is a path to an input file.
 
-ggcat build -k 31 -c -d color_mapping.txt -o colored_graph.fasta.lz4
+### 2. Colored Graph Construction
+
+Use colors to distinguish between different datasets (e.g., different species or samples) within the same graph.
+
+**Automatic Coloring:**
+Adding `-c` uses filenames as color names.
+
+**Custom Coloring:**
+Create a tab-separated mapping file (`map.txt`):
+```text
+SampleA	reads_1.fq
+SampleA	reads_2.fq
+SampleB	genome_v2.fa
+```
+Build using the mapping:
+```bash
+ggcat build -k <k_value> -c -d map.txt -o <output.fasta.lz4>
 ```
 
-### Output Representations
-ggcat supports several algorithms to represent k-mer sets efficiently:
-- **Maximal Unitigs**: Default output.
-- **Simplitigs**: Use `--simplitigs` for a more compact representation.
-- **Matchtigs/Eulertigs**: Use `--greedy-matchtigs` or `--eulertigs` for minimum-size plain-text representations.
-- **GFA Output**: Use `--gfa-v1` or `--gfa-v2` for Graphical Fragment Assembly formats.
+### 3. Querying Sequences
 
-## Querying Graphs
-The `query` command checks for the presence of k-mers from a query file in an existing graph.
+Search for k-mer presence in a built graph. The `k` value must match the construction value.
 
-### Uncolored Query
+**Uncolored Query:**
 ```bash
-ggcat query -k <k_value> <input_graph> <query.fasta>
+ggcat query -k <k_value> <input-graph.fasta.lz4> <query.fasta>
 ```
 
-### Colored Query
-When querying a colored graph, ggcat looks for a `.colors.dat` file with the same base name as the graph.
-- **Standard query**: `ggcat query -c -k 31 graph.fasta.lz4 query.fasta`
-- **Human-readable colors**: By default, colors are integers. To get filenames in the output, use `-f JsonLinesWithNames`.
-- **Mapping recovery**: Use `ggcat dump-colors <colormap.colors.dat> <output.txt>` to export the integer-to-filename mapping.
+**Colored Query:**
+```bash
+ggcat query --colors -k <k_value> <input-graph.fasta.lz4> <query.fasta>
+```
+*Note: GGCAT expects a `.colors.dat` file with the same base name as the graph in the same directory.*
 
-## Performance and Resource Tuning
-- **Memory Management**: Use `-m <GB>` to set a suggested memory limit for temporary file storage. Use `-p` (prefer-memory) to force the tool to use the allocated memory before spilling to disk.
-- **Multiplicity**: By default, k-mers with a count of 1 are filtered out. Use `-s 1` to include all k-mers or increase it to filter noise in high-coverage data.
-- **Threading**: Always specify `-j` to match your available CPU cores for optimal speed.
-- **Temporary Files**: ggcat creates a `.temp_files` directory. You can change this with `-t <dir>`.
+### 4. Advanced Output Modes
 
-## Expert Tips
-- **K-mer Consistency**: The `-k` value used during `query` must be identical to the one used during `build`.
-- **Input Lists**: If you have hundreds of input files, use `-l <file_list.txt>` instead of passing them as individual arguments to avoid shell command length limits.
-- **Compression**: The default output is lz4 compressed. Most downstream tools require decompression or specific library support.
+GGCAT supports specialized unitig representations to reduce storage or facilitate downstream analysis:
+- **Links (`-e`)**: Generates BCALM2-style connections between unitigs.
+- **Matchtigs (`-g`)**: Computes a minimum plain-text representation of k-mer sets (greedy matchtigs).
+- **Eulertigs (`--eulertigs`)**: Computes a representation without k-mer repetitions.
+- **GFA Output**: Use `--gfa-v1` or `--gfa-v2` for graphical formats instead of FASTA.
 
-## Reference documentation
-- [GGCAT GitHub Repository](./references/github_com_algbio_ggcat.md)
-- [Bioconda ggcat Package](./references/anaconda_org_channels_bioconda_packages_ggcat_overview.md)
+## Performance Optimization
+
+- **Memory Management**: Use `-m <GB>` to suggest a memory limit. For high-memory systems, use `-p` (prefer-memory) to keep data in RAM as long as possible before spilling to disk.
+- **Temporary Files**: Use `-t <dir>` to point to a fast NVMe drive for temporary storage, as GGCAT performs significant I/O during the bucketing phase.
+- **Threading**: Scale `-j` to the number of available physical cores.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Builds a k-mer graph from input files. |
+| dump-colors | Dumps the colors from a colormap file. |
+| matches | ggcat-matches 2.0.0 |
+| query | Query a graph with k-mers |
+
+## Reference Documentation
+- [GGCAT GitHub README](./references/github_com_algbio_ggcat_blob_main_README.md)
+- [GGCAT Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ggcat_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: metabat2
-description: MetaBAT2 clusters metagenomic contigs into bins based on sequence composition and abundance to generate Metagenome-Assembled Genomes. Use when user asks to bin metagenomic contigs, generate Metagenome-Assembled Genomes, or cluster sequences using tetranucleotide frequency and coverage data.
+description: MetaBAT2 reconstructs individual microbial genomes from metagenomic assemblies by clustering contigs based on sequence composition and abundance profiles. Use when user asks to bin metagenomic contigs, generate metagenome-assembled genomes, or calculate contig depth profiles for binning.
 homepage: https://bitbucket.org/berkeleylab/metabat
 ---
 
@@ -8,52 +8,41 @@ homepage: https://bitbucket.org/berkeleylab/metabat
 # metabat2
 
 ## Overview
-MetaBAT2 is an automated binning algorithm that clusters metagenomic contigs into bins based on tetranucleotide frequency and differential abundance across samples. It is highly efficient for large-scale datasets and is a standard tool in metagenomic pipelines for generating Metagenome-Assembled Genomes (MAGs). It excels at handling complex microbial communities by integrating sequence composition and coverage information.
+MetaBAT2 (Metagenomic Binning At Scale) is an automated tool designed to reconstruct individual microbial genomes from complex metagenomic assemblies. It integrates sequence composition (tetranucleotide frequencies) and multi-sample abundance (coverage) to cluster contigs into Metagenome-Assembled Genomes (MAGs). This skill provides the necessary command-line patterns to execute the binning workflow efficiently, from depth calculation to final bin generation.
 
 ## Core Workflow
 
-### 1. Prepare Abundance Data
-MetaBAT2 requires a depth file generated from BAM files (reads mapped back to the assembly). Use the included utility script to create this.
+### 1. Generate Abundance Profiles
+Before binning, you must calculate the depth of coverage for your contigs across all samples. Use the `jgi_summarize_bam_contig_depths` tool included with the MetaBAT2 package.
 
 ```bash
 jgi_summarize_bam_contig_depths --outputDepth depth.txt *.bam
 ```
 
 ### 2. Execute Binning
-Run the main binning command using the assembly FASTA and the generated depth file.
+Run the main `metabat2` executable using the assembly FASTA and the depth file generated in the previous step.
 
 ```bash
-metabat2 -i assembly.fasta -a depth.txt -o bins/bin_prefix
+metabat2 -i assembly.fasta -a depth.txt -o bins/bin
 ```
 
-## Common CLI Patterns
+## Expert Tips and CLI Patterns
 
-### High Sensitivity Mode
-For complex samples where you want to maximize the recovery of bins, even if they are less complete.
-```bash
-metabat2 -i assembly.fasta -a depth.txt -o bins/bin --sensitive
-```
+### Optimization Parameters
+- **Contig Length**: By default, MetaBAT2 ignores contigs shorter than 2500bp. For highly fragmented assemblies, you can lower this using `-m` (e.g., `-m 1500`), though shorter contigs may decrease bin purity.
+- **Sensitivity**: Use the `--presets` flag to quickly adjust the trade-off between sensitivity and specificity:
+  - `--sensitive`: Increases the number of contigs binned at the cost of potential contamination.
+  - `--verySensitive`: Maximum recovery of genomic material.
+  - `--specific` / `--verySpecific`: Focuses on high-purity bins.
 
-### Specific Contig Length Filtering
-By default, MetaBAT2 ignores contigs shorter than 2500bp. Adjust this based on your assembly quality.
-```bash
-# Lowering threshold for highly fragmented assemblies (use with caution)
-metabat2 -i assembly.fasta -a depth.txt -o bins/bin -m 1500
-```
+### Resource Management
+- **Threading**: Use `-t` to specify the number of CPU threads. MetaBAT2 is highly parallelizable.
+- **Memory**: For very large metagenomes, ensure the system has sufficient RAM to hold the distance matrix in memory.
 
-### Multi-threaded Execution
-Always specify threads to improve performance on large metagenomes.
-```bash
-metabat2 -i assembly.fasta -a depth.txt -o bins/bin -t 16
-```
-
-## Expert Tips
-
-- **Input Quality**: Ensure your BAM files are sorted and indexed. The quality of binning is heavily dependent on the accuracy of the read mapping.
-- **Differential Abundance**: MetaBAT2 performs significantly better when provided with multiple BAM files from related samples (e.g., a time series or different sites), as it uses differential abundance patterns to separate closely related species.
-- **Contig Length**: While `-m` can be lowered, contigs shorter than 1500bp often lack sufficient tetranucleotide frequency signal, leading to poor binning or contamination.
-- **Validation**: Always follow MetaBAT2 with a tool like CheckM or CheckM2 to assess the completeness and contamination of the resulting MAGs.
+### Common File Handling
+- Ensure your BAM files are sorted and indexed before calculating depth.
+- The output prefix (e.g., `-o bins/bin`) will create files named `bin.1.fa`, `bin.2.fa`, etc., inside the specified directory.
 
 ## Reference documentation
-- [MetaBAT2 Bitbucket Repository](./references/bitbucket_org_berkeleylab_metabat.md)
-- [Bioconda MetaBAT2 Overview](./references/anaconda_org_channels_bioconda_packages_metabat2_overview.md)
+- [MetaBAT Bitbucket Repository](./references/bitbucket_org_berkeleylab_metabat.md)
+- [Bioconda MetaBAT2 Package](./references/anaconda_org_channels_bioconda_packages_metabat2_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: crocodeel
-description: "CroCoDeEL detects and estimates cross-sample contamination levels in metagenomic datasets by analyzing species abundance tables. Use when user asks to identify contaminated samples, estimate contamination rates, or generate visual contamination reports from species abundance data."
+description: CroCoDeEL detects and estimates cross-sample contamination levels in metagenomic datasets using a Random Forest model. Use when user asks to identify contamination events, visualize contamination scatterplots, or train custom models for specific sequencing protocols.
 homepage: https://github.com/metagenopolis/crocodeel
 ---
 
@@ -8,65 +8,66 @@ homepage: https://github.com/metagenopolis/crocodeel
 # crocodeel
 
 ## Overview
-CroCoDeEL (CROss-sample COntamination DEtection and Estimation of its Level) is a specialized tool for quality control in metagenomics. It analyzes species abundance tables to identify samples that have been contaminated by other samples in the same batch. By using a Random Forest model, it distinguishes between shared biological signatures and actual contamination events, providing the likely source of contamination and an estimated contamination rate.
-
-## Installation and Verification
-Verify the environment is correctly configured before processing large datasets:
-```bash
-crocodeel test_install
-```
-Use `--keep-results` to inspect the toy dataset output if troubleshooting.
+CroCoDeEL (CROss-sample COntamination DEtection and Estimation of its Level) is a specialized tool for quality control in metagenomics. It uses a Random Forest model to distinguish between true biological similarity and contamination events. This skill provides the necessary command-line patterns to identify contamination, visualize results for manual validation, and train custom models for specific lab environments.
 
 ## Core Workflows
 
-### The "Easy" Workflow
-For most standard analyses, use the integrated workflow to search for contamination and generate a visual report in one step:
+### Input Requirements
+- **Format**: TSV file with species names in the first column and sample abundances in subsequent columns.
+- **Normalization**: CroCoDeEL automatically normalizes tables to relative abundance (sum = 1).
+- **Upstream Tools**: Use **Meteor** for optimal results. **MetaPhlAn4** (with `--tax_level t`) is supported but may miss low-level contamination.
+
+### Detecting Contamination
+To identify contamination events and output a report:
+```bash
+crocodeel search_conta -s species_abundance.tsv -c contamination_events.tsv
+```
+**For MetaPhlAn4 users**: Always filter low-abundance species to maintain sensitivity:
+```bash
+crocodeel search_conta -s species_abundance.tsv --filter-low-ab 20 -c contamination_events.tsv
+```
+
+### Visualization and Validation
+Because related samples (e.g., longitudinal data or co-housed animals) can trigger false positives, manual inspection of scatterplots is highly recommended.
+
+**Generate plots separately:**
+```bash
+crocodeel plot_conta -s species_abundance.tsv -c contamination_events.tsv -r contamination_report.pdf
+```
+
+**One-step workflow (Search + Plot):**
 ```bash
 crocodeel easy_wf -s species_abundance.tsv -c contamination_events.tsv -r contamination_report.pdf
 ```
 
-### Manual Search and Visualization
-If you prefer to separate the detection from the plotting:
-1. **Search**: `crocodeel search_conta -s species_abundance.tsv -c contamination_events.tsv`
-2. **Plot**: `crocodeel plot_conta -s species_abundance.tsv -c contamination_events.tsv -r contamination_report.pdf`
+### Custom Model Training
+For advanced users needing to adapt the tool to specific sequencing protocols:
+1. Prepare a labeled training dataset (TSV).
+2. Train the model:
+   ```bash
+   crocodeel train_model -s training_dataset.tsv -m custom_model.tsv -r model_performance.tsv
+   ```
+3. Apply the custom model:
+   ```bash
+   crocodeel search_conta -s species_abundance.tsv -m custom_model.tsv -c results.tsv
+   ```
 
-## Input Requirements and Best Practices
+## Expert Tips
+- **False Positives**: If samples are biologically related (e.g., same individual over time), CroCoDeEL may flag them. Use the generated PDF to check if the "contamination line" (red) truly represents introduced species or general profile similarity.
+- **Installation Verification**: Run `crocodeel test_install` to ensure the environment is correctly configured before processing large datasets.
+- **Subdominant Species**: The tool's accuracy relies heavily on the precise estimation of low-abundance species; ensure your taxonomic profiler is sensitive enough.
 
-### Data Formatting
-- **Format**: TSV file.
-- **Structure**: First column must be species names; subsequent columns are sample abundances.
-- **Normalization**: CroCoDeEL automatically normalizes columns to relative abundance (sum = 1.0).
 
-### Taxonomic Profiler Recommendations
-The accuracy of CroCoDeEL depends heavily on the detection of subdominant species:
-- **Meteor**: The preferred suite for generating input tables.
-- **MetaPhlAn4**: Supported, but you **must** use the `--tax_level t` parameter during profiling.
-- **Filtering**: When using MetaPhlAn4, use the `--filter-low-ab` flag in CroCoDeEL to improve sensitivity:
-  ```bash
-  crocodeel search_conta -s species_abundance.tsv --filter-low-ab 20 -c contamination_events.tsv
-  ```
 
-## Result Interpretation and Expert Tips
+## Subcommands
 
-### Identifying False Positives
-CroCoDeEL may report false positives in specific biological contexts where samples are naturally very similar. Exercise caution and manually inspect scatterplots for:
-- **Longitudinal data**: Multiple samples from the same individual over time.
-- **Related samples**: Animals raised in the same cage or co-housed individuals.
-
-### Scatterplot Analysis
-The generated PDF report (`-r`) provides log-scale scatterplots. 
-- **Red Line**: Represents the contamination line.
-- **Interpretation**: Species appearing along the red line are those specifically introduced by the source into the target sample. If the "contaminated" species follow the general diagonal of the cloud rather than the red line, it is likely a false positive due to biological similarity.
-
-### Custom Models
-For advanced users with specific lab signatures, you can train and apply a custom Random Forest model:
-```bash
-# Training
-crocodeel train_model -s training_data.tsv -m custom_model.tsv -r performance_metrics.tsv
-
-# Application
-crocodeel search_conta -s species_abundance.tsv -m custom_model.tsv -c results.tsv
-```
+| Command | Description |
+|---------|-------------|
+| crocodeel easy_wf | Detects and quantifies contamination events in metagenomic samples. |
+| crocodeel plot_conta | Generate scatterplots for contamination events. |
+| search_conta | Search for contamination events |
+| test_install | Test the installation of crocodeel |
+| train_model | Train a Random Forest model to classify species based on their abundance. |
 
 ## Reference documentation
 - [CroCoDeEL GitHub Repository](./references/github_com_metagenopolis_crocodeel.md)

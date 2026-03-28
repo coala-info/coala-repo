@@ -351,3 +351,6 @@ est_depth indir(has bamfiles) genome_size
 only work for single chromosome data
 ```
 
+
+## Metadata
+- **Skill**: generated

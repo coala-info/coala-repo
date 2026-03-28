@@ -1,6 +1,6 @@
 ---
 name: rust-ncbitaxonomy
-description: This tool provides high-performance utilities for managing and querying the NCBI Taxonomy database via a local SQLite backend. Use when user asks to convert taxdump files to SQLite, retrieve taxonomic metadata, filter RefSeq FASTA files by ancestor, or subset classified FASTQ reads.
+description: The rust-ncbitaxonomy suite provides high-performance tools for managing NCBI Taxonomy data and filtering genomic files based on taxonomic lineages. Use when user asks to initialize a local taxonomy database, perform taxonomic lookups, calculate distances between taxa, or filter RefSeq and FASTQ files to retain specific taxonomic branches.
 homepage: https://github.com/pvanheus/ncbitaxonomy
 ---
 
@@ -8,67 +8,56 @@ homepage: https://github.com/pvanheus/ncbitaxonomy
 # rust-ncbitaxonomy
 
 ## Overview
-The `rust-ncbitaxonomy` suite provides high-performance utilities for working with the NCBI Taxonomy database via a local SQLite backend. It is designed for bioinformatics workflows that require taxonomic filtering of large sequence datasets without relying on remote API calls. The toolset includes a utility for database management and specialized filters for RefSeq FASTA and classified FASTQ files.
 
-## Database Initialization
-Before using the filtering tools, you must convert the NCBI taxdump into a local SQLite database.
+The `rust-ncbitaxonomy` suite provides a high-performance Rust-based toolkit for managing and querying NCBI Taxonomy data locally. By converting the standard NCBI `taxdump` files into a structured SQLite database, it enables fast, offline access to taxonomic relationships. This skill is particularly valuable for bioinformatics pipelines that require filtering genomic data (like RefSeq or classified FASTQ reads) to retain only specific taxonomic branches, or for calculating distances between taxa without relying on external API calls.
 
-1.  **Download Data**: Obtain `taxdump.tar.gz` from the NCBI FTP site.
-2.  **Convert to SQLite**:
-    ```bash
-    taxonomy_util to_sqlite --db taxonomy.sqlite
-    ```
-    *Note: Ensure the input files (nodes.dmp, names.dmp, etc.) are in the current directory or specified path.*
+## Core Utilities and Usage
 
-## Taxonomic Metadata Retrieval
-Use `taxonomy_util` to query the database for specific taxonomic information.
+### 1. Database Management (`taxonomy_util`)
+Before using the filtering tools, you must initialize a local SQLite database from the NCBI FTP taxdump files (`taxdump.zip` or `taxdump.tar.gz`).
 
-*   **Find TaxID by Name**:
-    ```bash
-    taxonomy_util get_id "Homo sapiens" --db taxonomy.sqlite
-    ```
-*   **Get Lineage**:
-    ```bash
-    taxonomy_util get_lineage "Escherichia coli" --db taxonomy.sqlite
-    ```
-*   **Calculate Common Ancestor Distance**:
-    Find the tree distance between two taxa:
-    ```bash
-    taxonomy_util common_ancestor_distance <taxid1> <taxid2> --db taxonomy.sqlite
-    ```
+*   **Create SQLite DB**: 
+    `taxonomy_util to_sqlite --db <output_db_url>`
+*   **Taxonomic Lookups**:
+    *   Find ID by name: `taxonomy_util get_id <name>`
+    *   Find name by ID: `taxonomy_util get_name <taxid>`
+    *   Get full lineage: `taxonomy_util get_lineage <name>`
+*   **Tree Analysis**:
+    *   Calculate distance to common ancestor: `taxonomy_util common_ancestor_distance <taxid1> <taxid2>`
 
-## Sequence Filtering Patterns
-
-### Filtering RefSeq FASTA Files
-The `taxonomy_filter_refseq` tool subsets FASTA files based on a specific ancestor.
+### 2. Filtering RefSeq FASTA Files (`taxonomy_filter_refseq`)
+Use this tool to subset a RefSeq FASTA file so it only contains sequences belonging to a specific ancestor's lineage.
 
 *   **Basic Filter**:
-    ```bash
-    taxonomy_filter_refseq input.fasta "Mammalia" output.fasta --db taxonomy.sqlite
-    ```
-*   **Strict Filtering**:
-    Exclude predicted or curated accessions (e.g., NM_, XM_) to keep only high-confidence sequences:
-    ```bash
-    taxonomy_filter_refseq --no_curated --no_predicted input.fasta "Bacteria" output.fasta --db taxonomy.sqlite
-    ```
+    `taxonomy_filter_refseq -d <db_url> <input_fasta> <ancestor_name> <output_fasta>`
+*   **Refining Selection**:
+    *   Exclude curated accessions (NM_, NR_, NP_): `--no_curated`
+    *   Exclude predicted accessions (XM_, XR_, XP_): `--no_predicted`
 
-### Filtering FASTQ Files
-Filter sequencing reads that have already been classified by Kraken2 or Centrifuge.
+### 3. Filtering FASTQ Files (`taxonomy_filter_fastq`)
+This tool filters FASTQ files based on classification reports from Kraken2 or Centrifuge, retaining only reads that descend from a specified ancestor.
 
-*   **Kraken2 Output**:
-    ```bash
-    taxonomy_filter_fastq --kraken2 --ancestor_taxid 1234 --tax_report_filename report.k2 input.fastq --db taxonomy.sqlite
-    ```
-*   **Centrifuge Output**:
-    ```bash
-    taxonomy_filter_fastq --centrifuge --ancestor_taxid 567 --tax_report_filename report.centrifuge input.fastq --db taxonomy.sqlite
-    ```
+*   **Kraken2 Filtering**:
+    `taxonomy_filter_fastq --kraken2 -A <ancestor_id> -F <kraken_report> <input_fastq>`
+*   **Centrifuge Filtering**:
+    `taxonomy_filter_fastq --centrifuge -A <ancestor_id> -F <centrifuge_report> <input_fastq>`
+*   **Output Management**:
+    Use `-d` or `--output_dir` to specify where the filtered FASTQ files should be saved.
 
 ## Best Practices
-*   **Database Path**: Always specify the `--db` (or `-d`) flag to point to your local SQLite file to avoid "database not found" errors.
-*   **Standard Output**: If an output filename is omitted in `taxonomy_filter_refseq`, the tool defaults to stdout, which is useful for piping into other tools like `samtools` or `minimap2`.
-*   **Memory Efficiency**: Because these tools use a local SQLite database, they are generally more memory-efficient than tools that load the entire taxonomy into RAM, making them suitable for environments with limited resources.
+*   **Database URL**: The tools typically expect a URL format for the SQLite database. If using a local file, ensure the path is correctly formatted (e.g., `sqlite:///path/to/taxonomy.sqlite`).
+*   **Environment Variables**: You can define `DATABASE_URL` in a `.env` file to avoid passing the `--db` flag repeatedly.
+*   **Performance**: For large-scale filtering, ensure the SQLite database is stored on a fast disk (SSD) to minimize I/O bottlenecks during lineage lookups.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| taxonomy_filter_fastq | Filter FASTQ files whose reads have been classified by Centrifuge or Kraken2, only retaining reads in taxa descending from given ancestor |
+| taxonomy_filter_refseq | Filter NCBI RefSeq FASTA files by taxonomic lineage |
+| taxonomy_util | Utilities for working with the NCBI taxonomy database |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_pvanheus_ncbitaxonomy.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_rust-ncbitaxonomy_overview.md)
+- [NCBI Taxonomy Rust Crate README](./references/github_com_pvanheus_ncbitaxonomy_blob_master_README.md)

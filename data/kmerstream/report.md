@@ -63,3 +63,6 @@ Usage: KmerStreamJoin -o output files ...
     --verbose            Print output at the end
 ```
 
+
+## Metadata
+- **Skill**: generated

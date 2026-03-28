@@ -1,6 +1,6 @@
 ---
 name: flair
-description: FLAIR is a bioinformatics suite designed to identify, correct, and quantify high-confidence transcripts from noisy long-read sequencing data. Use when user asks to align long reads, correct splice sites, collapse reads into isoforms, quantify transcript abundance, or perform differential splicing analysis.
+description: FLAIR is a computational suite that processes long-read RNA-seq data to identify, correct, and quantify high-confidence transcript isoforms. Use when user asks to align long reads to a reference, correct splice junctions, collapse reads into isoforms, quantify transcript expression, or detect gene fusions.
 homepage: https://github.com/BrooksLabUCSC/flair
 ---
 
@@ -9,45 +9,71 @@ homepage: https://github.com/BrooksLabUCSC/flair
 
 ## Overview
 
-FLAIR (Full-Length Alternative Isoform analysis of RNA) is a specialized bioinformatics suite designed to handle the unique challenges of noisy long-read sequencing data. While long reads provide the advantage of spanning entire transcripts, their higher error rates (particularly in Nanopore data) can lead to false splice site detection. FLAIR solves this by using a multi-step pipeline that aligns reads, corrects them using known splice sites or high-confidence data, collapses them into a set of representative isoforms, and then quantifies those isoforms for differential expression or splicing analysis.
+FLAIR is a computational suite designed to transform noisy long-read RNA-seq data into high-confidence transcript models. Because long reads (particularly from Nanopore) often contain errors at splice junctions, FLAIR uses orthogonal data—such as short-read splice junctions or reference annotations—to "correct" alignments. It then collapses these corrected reads into a set of representative isoforms, quantifies their expression across samples, and provides modules for differential splicing and expression analysis.
 
 ## Core Workflow and CLI Patterns
 
-The standard FLAIR pipeline follows a sequential execution of subcommands.
-
 ### 1. Alignment (flair align)
-Align your raw reads (FastQ) to the reference genome. FLAIR typically uses minimap2 internally.
-- **Best Practice**: Ensure your reference genome index is compatible with the version of minimap2 bundled or used by FLAIR.
+Aligns raw long reads to a reference genome.
+- **Basic usage**: `flair align -g genome.fa -r reads.fastq [options]`
+- **Output**: Produces a filtered BED file of alignments and a BAM file.
 
 ### 2. Correction (flair correct)
-Correct misaligned splice sites using a reference GTF or short-read splice site evidence.
-- **Pattern**: `flair correct -f annotation.gtf -q aligned_reads.bed -g genome.fa`
-- **Tip**: This step is critical for noisy ONT reads to ensure that exon boundaries align with known biology.
+Refines splice junctions using short-read data or annotations.
+- **Junction Inputs**: In v3.0.0+, specify the junction source explicitly:
+  - Use `--junction_bed` for BED format junctions.
+  - Use `--junction_tab` for STAR-style `SJ.out.tab` files.
+- **Long-read Junctions**: You can now detect junctions directly from long reads using `intronProspector` and pass them to `flair correct` via `--junction_bed`.
+- **Optimization**: The `-g genome` option is no longer required in v3.0.0+, significantly increasing processing speed.
 
 ### 3. Isoform Definition (flair collapse)
-Collapse corrected reads into a set of high-confidence isoforms.
-- **Pattern**: `flair collapse -g genome.fa -r reads.fastq -q corrected_reads.bed`
-- **Expert Tip**: Use the `--remove_internal_priming` flag to filter out transcripts that may have originated from internal poly-A priming rather than the true 3' end of the mRNA.
+Collapses corrected reads into a high-confidence transcriptome.
+- **Basic usage**: `flair collapse -g genome.fa -r reads.fastq -q corrected.bed [options]`
+- **CDS Prediction**: Use `--predictCDS` to include coding sequence prediction during the collapse step.
+- **Internal Priming**: To remove potential artifacts, use `--remove_internal_priming` along with `--intprimingthreshold`.
+- **Output**: Generates `isoforms.bed`, `isoforms.gtf`, `isoforms.fa`, and `isoform.read.map.txt`.
 
 ### 4. Quantification (flair quantify)
-Estimate the abundance of the defined isoforms across your samples.
-- **Pattern**: `flair quantify -r reads_manifest.tsv -i collapsed_isoforms.fa`
-- **Manifest Format**: The manifest should be a tab-delimited file containing: `sample_name`, `condition`, `batch`, and `reads_fastq_path`.
+Quantifies isoform usage across multiple samples.
+- **Manifest File**: Requires a TSV manifest linking sample names to their respective read files.
+- **Basic usage**: `flair quantify -r manifest.tsv -i isoforms.fa [options]`
+- **Efficiency**: v3.0.0+ features improved memory handling for large multi-sample datasets.
 
-### 5. Differential Analysis (flair diffexp & flair diffsplice)
-Perform statistical testing for differential isoform usage or alternative splicing events.
-- **diffexp**: Identifies changes in total transcript abundance.
-- **diffsplice**: Specifically looks for changes in the proportion of isoforms used (Percent Spliced In - PSI).
+### 5. Streamlined Workflow (flair transcriptome)
+A modern module that combines `correct` and `collapse` into a single step.
+- **Input**: Runs directly from an aligned BAM file.
+- **Parallelization**: Supports effective parallel processing via `--parallelmode`.
 
-## Expert Tips and Troubleshooting
+## Advanced Modules
 
-- **Genome Annotation**: Always ensure your GTF and reference FASTA use the same chromosome naming convention (e.g., both using "chr1" or both using "1").
-- **Memory Management**: For very large BED files, ensure your environment has sufficient RAM, as the `collapse` step can be memory-intensive.
-- **Version Compatibility**: As of version 3.0.0, some legacy scripts (like `bam2Bed12`) have been integrated or removed. Always use the main `flair <subcommand>` entry point rather than calling scripts in the `bin/` directory directly.
-- **Strand Specificity**: If your library preparation was strand-specific, ensure you pass the appropriate parameters to `flair align` and `flair collapse` to improve isoform accuracy.
+- **flair fusion**: Detects gene fusions and fusion-specific isoforms with high accuracy.
+- **flair variants**: Identifies variant-aware transcripts by clustering reads with shared variants (e.g., from Longshot).
+- **flair combine**: Merges transcriptomes generated from different samples or combines fusion isoforms with standard collapsed isoforms.
+
+## Expert Tips and Best Practices
+
+- **MAPQ Filtering**: The default minimum MAPQ is 0 in recent versions. This allows more reads to contribute to isoform models without significantly sacrificing accuracy.
+- **Annotation Parsing**: Ensure GTF files are well-formatted; v3.0.0+ has improved robustness for unsorted or complex annotation files.
+- **Memory Management**: When running `quantify` on many samples, ensure your manifest is correctly formatted to take advantage of the improved multi-sample processing speed.
+- **Version 3.0.0+ Changes**: Note that dependencies on `pandas` and `rpy2` have been removed, and the tool now produces sorted output files by default.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| align | FLAIR align outputs an unfiltered bam file and a filtered bed file for use in the downstream pipeline |
+| collapse | take bed file of corrected reads and generate confident collapsed isoform models |
+| combine | Combine transcriptomes from multiple samples based on a manifest file. |
+| correct | take bed file of long RNA-seq reads and filter out those with anomalous splice junctions correct remaining to nearest orthogonally supported splice site |
+| diffexp | Differential expression analysis of isoforms using flair. It performs parallel DRIMSeq and filters isoforms based on expression thresholds. |
+| diffsplice | Differential splicing analysis using DRIMSeq, taking isoforms and count matrices as input. |
+| fusion | FLAIR fusion detection module for identifying gene fusions from transcriptomic data. |
+| quantify | takes in many long-read RNA-seq reads files and quantifies them against a single transcriptome. A stringent, full-read-match-based approach |
+| transcriptome | Defines isoforms from genomic alignments and optional short-read junction support. |
+| variants | FLAIR variants module for calling variants from isoform data. |
 
 ## Reference documentation
-
-- [flair - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_flair_overview.md)
-- [BrooksLabUCSC/flair: Full-Length Alternative Isoform analysis of RNA](./references/github_com_BrooksLabUCSC_flair.md)
-- [Issues · BrooksLabUCSC/flair](./references/github_com_BrooksLabUCSC_flair_issues.md)
+- [github_com_BrooksLabUCSC_flair_blob_master_README.md](./references/github_com_BrooksLabUCSC_flair_blob_master_README.md)
+- [github_com_BrooksLabUCSC_flair_blob_master_CHANGELOG.md](./references/github_com_BrooksLabUCSC_flair_blob_master_CHANGELOG.md)

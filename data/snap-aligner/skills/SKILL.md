@@ -1,72 +1,68 @@
 ---
 name: snap-aligner
-description: "This tool aligns short DNA sequencing reads to a reference genome efficiently. Use when user asks to align reads to a reference genome, sort alignments, mark duplicates, or index BAM files."
+description: snap-aligner is a high-performance genomic aligner that maps nucleotide sequences to a reference genome using hash-based indexing. Use when user asks to index a reference genome, align single-end or paired-end reads, and perform post-alignment processing like sorting or marking duplicates.
 homepage: http://snap.cs.berkeley.edu/
 ---
 
 
 # snap-aligner
 
-yaml
-name: snap-aligner
-description: |
-  A fast and accurate read aligner for high-throughput sequencing data.
-  Use when Claude needs to align short DNA reads to a reference genome,
-  and requires efficient processing of FASTQ, SAM, or BAM files.
-  This tool also supports sorting, marking duplicates, and indexing results.
-```
 ## Overview
-snap-aligner is a high-performance tool designed for aligning short DNA sequencing reads to a reference genome. It excels at processing large datasets efficiently, offering significant speed advantages over other aligners. Beyond basic alignment, snap-aligner integrates functionalities for sorting, duplicate marking, and indexing, streamlining the bioinformatics pipeline by consolidating these steps into a single tool. It supports common input formats like FASTQ, SAM, and BAM, and can output in SAM or BAM formats.
+SNAP (Scalable Nucleotide Alignment Program) is a high-performance genomic aligner optimized for modern sequencing read lengths. By leveraging hash-based indexing and large system memory, it achieves speeds significantly faster than traditional tools like BWA-mem2 or Bowtie2. Its primary advantage is the integration of post-alignment processing—such as sorting, indexing, and marking duplicates—directly into the alignment executable, which drastically reduces I/O overhead and total pipeline wall-clock time.
 
-## Usage Instructions
+## Command Line Usage
 
-snap-aligner is a command-line tool. The general syntax is:
-
+### 1. Genome Indexing
+Before alignment, create a hash table index from a FASTA reference.
 ```bash
-snap-aligner [options] <reads_file1> [reads_file2] <reference_genome> <output_file>
+snap-aligner index <reference.fa> <index_directory> [options]
+```
+- **Tip**: Indexing the human genome requires approximately 40-50 GB of RAM.
+- **Options**: Use `-s` to specify seed size (default is 20; larger seeds increase speed but may reduce sensitivity).
+
+### 2. Paired-End Alignment
+Align paired FASTQ files and produce a sorted, duplicate-marked BAM file.
+```bash
+snap-aligner paired <index_directory> <read1.fastq> <read2.fastq> -o <output.bam> [options]
+```
+- **Essential Flags**:
+  - `-t <threads>`: Specify CPU cores (SNAP auto-detects, but explicit setting is safer in HPC environments).
+  - `-so`: Sort the output by alignment location.
+  - `-d`: Mark duplicate reads during the alignment process.
+  - `-X`: Indicate that the input is already filtered/compressed (e.g., .gz).
+
+### 3. Single-End Alignment
+```bash
+snap-aligner single <index_directory> <reads.fastq> -o <output.bam> [options]
 ```
 
-### Key Options and Best Practices:
+### 4. Working with SAM/BAM Inputs
+SNAP can take existing SAM/BAM files as input to re-align or process them.
+```bash
+snap-aligner paired <index_directory> <input.bam> -o <output.bam>
+```
 
-*   **Input Files**:
-    *   `reads_file1`: Path to the first FASTQ or BAM file.
-    *   `reads_file2`: Path to the second FASTQ or BAM file (for paired-end reads). Omit for single-end reads.
-    *   Reference genomes should be in FASTA format.
+## Expert Tips and Best Practices
 
-*   **Output**:
-    *   `output_file`: Path for the output SAM or BAM file.
+- **Memory Management**: Ensure the host machine has at least 48GB of RAM for human genome projects. If memory is constrained, SNAP may fail to load the index.
+- **Read Length**: SNAP is specifically optimized for reads of 100 bases or higher. For very short reads (e.g., <70bp), traditional aligners may provide better sensitivity.
+- **Daemon Mode**: For high-volume environments, run SNAP in daemon mode to keep the index loaded in memory across multiple jobs.
+  - Start daemon: `snap-aligner daemon`
+  - Submit jobs: Use the `SNAPCommand` utility to send alignment requests to the running daemon.
+- **I/O Optimization**: Since SNAP is extremely fast, the bottleneck is often disk I/O. Use SSDs for the index directory and output paths whenever possible.
+- **Error Handling**: If you encounter "Bus error" or "unaligned access" on non-x86 architectures, ensure you are using the latest version or a build specifically patched for your CPU architecture.
 
-*   **Performance and Memory**:
-    *   snap-aligner is memory-intensive, especially for large reference genomes like the human genome (requiring at least 48 GB of RAM). More memory can improve performance.
-    *   The tool automatically utilizes all available CPU cores. Use the `-T <num_threads>` option to specify the number of threads if needed.
 
-*   **Alignment Options**:
-    *   `-h <hash_seed_length>`: Controls the length of the hash seed for read location. Longer seeds can improve speed but may require more memory.
-    *   `-m <max_insert_size>`: Sets the maximum insert size for paired-end reads.
-    *   `-e <edit_distance>`: Specifies the maximum edit distance allowed for an alignment.
-    *   `-i <index_file>`: Use a pre-built index for faster alignment. Building an index can be done separately if needed.
 
-*   **Post-Alignment Processing (Integrated)**:
-    *   `--sort`: Sorts the output alignments.
-    *   `--markduplicates`: Marks duplicate reads.
-    *   `--output-bam`: Outputs in BAM format instead of SAM.
-    *   `--index`: Creates an index for the output BAM file.
+## Subcommands
 
-    These options can often be combined in a single command, e.g.:
-    ```bash
-    snap-aligner -t 16 --output-bam --sort --markduplicates --index reads_R1.fastq.gz reads_R2.fastq.gz reference.fa aligned_sorted_deduped.bam
-    ```
-
-*   **Reference Genome Indexing**:
-    *   While snap-aligner can align directly to FASTA, building an index beforehand (`snap-aligner index ...`) can significantly speed up subsequent alignments. Consult the manual for specific indexing commands.
-
-*   **Paired-End Reads**:
-    *   Ensure `reads_file1` and `reads_file2` are correctly ordered for paired-end alignment.
-
-*   **Error Handling**:
-    *   Pay attention to error messages, especially regarding memory limitations or incorrect file paths.
-    *   The tool is optimized for modern read lengths (100 bases or higher).
+| Command | Description |
+|---------|-------------|
+| index | Build an index for the SNAP aligner. |
+| paired | Align paired-end reads using SNAP. |
+| snap-aligner single | Aligns reads to a SNAP index. |
 
 ## Reference documentation
-- [SNAP - Scalable Nucleotide Alignment Program - Microsoft Research](./references/www_microsoft_com_en-us_research_project_snap.md)
-- [GitHub - amplab/snap](./references/github_com_amplab_snap.md)
+- [SNAP GitHub Repository](./references/github_com_amplab_snap.md)
+- [SNAP Project Overview - Microsoft Research](./references/www_microsoft_com_en-us_research_project_snap.md)
+- [SNAP Wiki](./references/github_com_amplab_snap_wiki.md)

@@ -391,3 +391,6 @@ Usage: seqnado genomes [OPTIONS] COMMAND [ARGS]...
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

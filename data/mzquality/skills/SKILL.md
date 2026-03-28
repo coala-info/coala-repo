@@ -1,6 +1,6 @@
 ---
 name: mzquality
-description: The mzquality tool executes a comprehensive quality control pipeline for metabolomics data using the SummarizedExperiment framework. Use when user asks to perform batch correction, calculate internal standard ratios, identify statistical outliers, or generate quality control reports for metabolomics studies.
+description: mzquality monitors and reports the quality of mass spectrometry measurements in metabolomics studies by transforming raw data into standardized objects for automated analysis. Use when user asks to monitor data quality, perform batch correction using quality control samples, detect outliers, or filter unreliable compounds and samples.
 homepage: https://github.com/hankemeierlab/mzQuality
 ---
 
@@ -9,90 +9,76 @@ homepage: https://github.com/hankemeierlab/mzQuality
 
 ## Overview
 
-The `mzquality` skill enables AI agents to execute a complete quality control pipeline for metabolomics studies. It centers on the `SummarizedExperiment` object to manage assays, row data (compounds), and column data (samples). The tool automates complex tasks such as calculating compound-to-internal-standard ratios, performing batch correction, and identifying statistical outliers via the Rosner Test. Use this skill to transform raw metabolomics data into a curated, reportable dataset.
-
-## Installation and Setup
-
-To initialize the environment for `mzquality`, ensure the following R dependencies are handled:
-
-```R
-# Install remotes and BiocManager if missing
-if (!require("remotes")) install.packages("remotes")
-if (!require("BiocManager")) install.packages("BiocManager")
-
-# Install required Bioconductor data and the package itself
-BiocManager::install("GenomeInfoDbData")
-remotes::install_github("hankemeierlab/mzQuality")
-```
+mzquality is a specialized R package designed to monitor and report the quality of mass spectrometry measurements in metabolomics studies. It transforms raw data into a Bioconductor `SummarizedExperiment` object, providing a standardized framework for outlier detection, batch correction using pooled study quality control (SQC) samples, and filtering of unreliable compounds. The tool automates complex metrics such as matrix effect calculations, background signal percentages, and internal standard suggestions to ensure data integrity before downstream statistical analysis.
 
 ## Core Workflow
 
-### 1. Data Ingestion
-The package expects tab-delimited text files. Use `readData` to validate mandatory columns before building the experiment object.
+The standard mzquality workflow follows a three-step process: data ingestion, experiment construction, and automated analysis.
 
-```R
+### 1. Data Ingestion and Validation
+Use `readData()` to import tab-delimited text files. This function automatically validates the presence of mandatory columns required for quality metrics.
+
+```r
 library(mzQuality)
+# Path to your tab-delimited data
+path <- "path/to/your_data.tsv"
+raw_data <- readData(path)
+```
 
-# Read and validate input
-raw_data <- readData("path/to/your_data.tsv")
+### 2. Building the Experiment
+Convert the validated data into a `SummarizedExperiment` object, which serves as the primary data structure for all subsequent calculations.
 
-# Convert to SummarizedExperiment
+```r
 exp <- buildExperiment(raw_data)
 ```
 
-### 2. Automated Analysis
-The `doAnalysis` function is a wrapper that executes the primary QC metrics:
-- Internal standard ratio calculation.
-- Batch correction using SQC samples.
-- Background signal percentage and matrix effect calculation.
-- Presence/median area calculations.
+### 3. Executing Quality Analysis
+The `doAnalysis()` function is a comprehensive wrapper that performs the following operations:
+* Calculates compound-to-internal standard ratios.
+* Performs batch correction via pooled SQC samples.
+* Determines background signal percentages and matrix effects.
+* Identifies statistical outliers in QC samples using the Rosner Test.
+* Suggests optimal Internal Standards.
 
-```R
-# Execute full analysis pipeline
+```r
+# Run the full suite of quality metrics
 exp <- doAnalysis(exp = exp)
 ```
 
-### 3. Filtering and Selection
-`mzquality` flags reliable compounds and samples in the `use` column of `rowData` and `colData`.
+## Expert Tips and Best Practices
 
-```R
-# Subset the experiment to only include reliable data
-exp_filtered <- exp[rowData(exp)$use, colData(exp)$use]
+### Filtering Unreliable Data
+mzquality does not automatically delete data; instead, it flags it. After running `doAnalysis()`, check the `use` column in both `rowData` (for compounds) and `colData` (for samples).
+* **Compounds**: Flagged based on RSDQC, background signal, and presence in QC samples.
+* **Samples**: Flagged based on the Rosner Test for statistical outliers.
+
+```r
+# Filter for high-quality compounds and samples
+clean_exp <- exp[rowData(exp)$use == "TRUE", colData(exp)$use == "TRUE"]
 ```
 
-### 4. Visualization
-Use specialized plotting functions to inspect data distribution and batch effects:
+### Handling Calibration Lines
+If your input data includes known concentrations for calibration, `doAnalysis()` will automatically calculate concentrations and R² values. Ensure your input file follows the specific schema for calibration levels defined in the package vignettes.
 
-```R
-# PCA plot for batch-corrected ratios
-pcaPlot(exp, assay = "ratio_corrected")
+### Batch Correction
+The tool uses pooled SQC samples to correct for analytical drift. For optimal results, ensure that SQC samples are interspersed regularly throughout your injection sequence and correctly labeled in your input data.
 
-# Boxplot of all sample values
-aliquotPlot(exp)
 
-# Scatterplot for a specific compound ratio
-compoundPlot(exp, assay = "ratio")
-```
 
-### 5. Report Generation
-Generate a comprehensive export including HTML plots, Excel summaries, and processed data files.
+## Subcommands
 
-```R
-createReports(
-  folder = "QC_Reports",
-  project = "Study_Name",
-  exp = exp,
-  backgroundPercent = 40,
-  cautionRSD = 15,
-  nonReportableRSD = 30
-)
-```
-
-## Expert Tips
-
-- **Manual Overrides**: The `use` flags generated by `doAnalysis` can be manually adjusted (e.g., `rowData(exp)$use[5] <- FALSE`) before subsetting or reporting if domain knowledge suggests a specific compound is problematic despite passing automated thresholds.
-- **Assay Selection**: When plotting, always specify the correct `assay` string (e.g., `"ratio"`, `"ratio_corrected"`, or `"area"`) to ensure you are visualizing the intended processing stage.
-- **Calibration Lines**: If your input data includes known concentrations for calibration, `doAnalysis` will automatically calculate concentrations and $R^2$ values.
+| Command | Description |
+|---------|-------------|
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
+| qcli.py | CLI to the mzQuality |
 
 ## Reference documentation
-- [mzQuality Main Documentation](./references/github_com_hankemeierlab_mzQuality.md)
+- [mzQuality README](./references/github_com_hankemeierlab_mzQuality_blob_main_README.md)
+- [mzQuality Description](./references/github_com_hankemeierlab_mzQuality_blob_main_DESCRIPTION.md)

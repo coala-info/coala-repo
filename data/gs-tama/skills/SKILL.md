@@ -1,6 +1,6 @@
 ---
 name: gs-tama
-description: gs-tama is a toolkit for processing long-read transcriptome data to refine gene models and merge disparate datasets into high-confidence annotations. Use when user asks to collapse redundant transcripts, merge multiple annotation sets, filter transcript fragments, or convert GTF files to BED12 format.
+description: "gs-tama processes long-read transcriptomic mappings to produce refined, non-redundant transcript annotations. Use when user asks to collapse mapped reads into transcript models, merge multiple annotation files, or assign CDS and UTR regions to BED files."
 homepage: https://github.com/sguizard/gs-tama
 ---
 
@@ -9,37 +9,64 @@ homepage: https://github.com/sguizard/gs-tama
 
 ## Overview
 
-gs-tama (Gene-Switch Transcriptome Annotation by Modular Algorithms) is a specialized toolkit for handling the complexities of long-read transcriptome data. It provides a suite of Python scripts designed to refine gene models by collapsing overlapping reads into unique isoforms and merging disparate datasets into a high-confidence annotation. Use this skill to guide the execution of modular workflows that improve the structural accuracy of transcript models.
+TAMA (Transcriptome Annotation by Modular Algorithms) is a specialized toolkit for handling the high error rates and structural complexities of long-read transcriptomics. It transforms raw genomic mappings (SAM files) into refined, non-redundant transcript annotations. The tool is particularly effective at "fuzzy" matching, allowing users to define thresholds for 5', 3', and splice junction variations to account for sequencing noise or biological wobble.
 
-## Core Workflows and CLI Patterns
+## Core Workflows
 
-### Collapsing Redundant Transcripts
-Use `tama_collapse.py` to process mapped long reads (SAM/BAM converted to BED) into a set of unique transcripts.
-- **Input**: Typically requires a BED file of mapped reads.
-- **Key Output**: Generates a collapsed BED file (often suffixed with `_collapsed.bed`) and a report of read-to-transcript mappings.
-- **Best Practice**: Ensure reads are properly aligned to a reference genome before collapsing.
+### Collapsing Transcripts with tama_collapse.py
 
-### Merging Annotation Sets
-Use `tama_merge.py` to combine multiple transcriptomes (e.g., from different tissues or sequencing technologies) into a single non-redundant set.
-- **Input**: A file list containing paths to the BED files you wish to merge.
-- **Function**: It identifies overlapping transcripts across sources and merges them based on user-defined thresholds for junction and end-point matching.
+Use this script to take a sorted SAM file of mapped reads and produce a non-redundant set of transcript models.
 
-### Quality Control and Filtering
-The toolkit includes several scripts for refining the final annotation:
-- **Fragment Removal**: Use `tama_remove_fragment_models.py` to eliminate transcripts that appear to be incomplete fragments of longer models.
-- **Single Read Models**: Use `tama_remove_single_read_models_levels.py` to filter out transcripts supported by only a single read, which helps reduce noise from sequencing artifacts.
-- **ORF Prediction**: Use `tama_filter_primary_transcripts_orf.py` to prioritize transcripts based on Open Reading Frame (ORF) analysis.
+**Basic Command Pattern:**
+```bash
+python tama_collapse.py -s <input.sam> -f <genome.fasta> -p <output_prefix> -x <capped_mode>
+```
 
-### Format Conversion and Preparation
-- **GTF to BED**: Use `tama_format_gtf_to_bed12_ncbi.py` or similar scripts in the suite to convert standard GTF files into the BED12 format required by TAMA.
-- **CDS Addition**: Use `tama_cds_regions_bed_add.py` to incorporate coding sequence information into existing BED files.
+**Key Parameters:**
+- `-s`: Input SAM file. **Must be sorted by coordinate.**
+- `-f`: Reference genome FASTA file.
+- `-p`: Prefix for all output files (e.g., `.bed`, `.txt`).
+- `-x`: Use `capped` if your library prep specifically captures 5' caps (e.g., TeloPrime); use `no_cap` for standard Iso-Seq or cDNA-Seq.
+- `-a`, `-m`, `-z`: Thresholds (in bp) for 5' end, splice junctions, and 3' end respectively. Default is 10bp. Increase these if dealing with high-noise data.
+- `-i`: Identity threshold (default 85).
+- `-c`: Coverage threshold (default 99).
 
-## Expert Tips
-- **Modular Execution**: Since TAMA is a collection of scripts rather than a single monolithic binary, chain commands together using standard shell pipes or sequential script calls.
-- **Memory Management**: For very large datasets, look for "Low Mem" options or versions of the scripts (e.g., updated versions of `tama_collapse.py`) mentioned in the repository updates.
-- **Naming Conventions**: TAMA often uses specific ID formats; use the formatting scripts provided in the toolkit to ensure compatibility between different modules.
+### Merging Annotations with tama_merge.py
+
+Use this script to combine multiple TAMA BED files (from different samples or tissues) into a single unified transcriptome.
+
+**Basic Command Pattern:**
+```bash
+python tama_merge.py -f <file_list.txt> -p <output_prefix>
+```
+
+**Note on File List:** The input file `-f` expects a text file where each line contains the path to a BED file, the merge priority (e.g., `capped` or `no_cap`), the cap status, and a sample name.
+
+## Expert Tips and Best Practices
+
+- **SAM Sorting:** TAMA requires coordinate-sorted SAM files. If your aligner (like Minimap2) outputs unsorted data, use `samtools sort` before running `tama_collapse.py`.
+- **Splice Junction Priority:** If you have high-confidence splice junction information (e.g., from short-read data), use the `-sj sj_priority` flag to prioritize these junctions during the collapse process.
+- **Identity Calculation:** By default, TAMA uses `ident_cov` which includes coverage in the identity calculation. If you want to exclude hard and soft clipping from the identity score, use `-icm ident_map`.
+- **Output Interpretation:**
+    - `.bed`: The final collapsed transcript models.
+    - `_trans_report.txt`: Detailed information on how many reads were collapsed into each transcript.
+    - `_polya.txt`: Information regarding poly-A tail detection if applicable.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| tama_cds_regions_bed_add.py | This script uses data from the blastp parse file and the original annotation to assign the locations of the UTR/CDS regions to the bed file |
+| tama_collapse.py | This script collapses mapped transcript models |
+| tama_filter_primary_transcripts_orf.py | This script uses the ORF/NMD output bed file and filters to have only 1 transcript per gene |
+| tama_merge.py | This script merges transcriptomes. |
+| tama_remove_fragment_models.py | This script absorbs transcriptomes. |
+| tama_remove_single_read_models_levels.py | This script uses the TAMA collapse and TAMA merge outputs to remove single read models |
 
 ## Reference documentation
-- [gs-tama - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_gs-tama_overview.md)
-- [GitHub - sguizard/gs-tama](./references/github_com_sguizard_gs-tama.md)
-- [Commits · sguizard/gs-tama](./references/github_com_sguizard_gs-tama_commits_master.md)
+
+- [TAMA Collapse Script](./references/github_com_sguizard_gs-tama_blob_master_tama_collapse.py.md)
+- [TAMA Merge Script](./references/github_com_sguizard_gs-tama_blob_master_tama_merge.py.md)
+- [Project README](./references/github_com_sguizard_gs-tama_blob_master_README.md)

@@ -42,3 +42,6 @@ Usage: ./halfdeep <ref>
     Assumes we have <ref>.lengths and <input.fofn> in the same dir
 ```
 
+
+## Metadata
+- **Skill**: generated

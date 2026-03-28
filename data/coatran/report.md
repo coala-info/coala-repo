@@ -76,3 +76,6 @@ CoaTran v0.0.4 (exponential effective population size growth)
 USAGE: coatran_expgrowth <trans_network> <sample_times> <init_eff_pop_size> <eff_pop_growth>
 ```
 
+
+## Metadata
+- **Skill**: generated

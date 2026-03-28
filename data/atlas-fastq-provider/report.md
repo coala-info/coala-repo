@@ -56,3 +56,6 @@ Deinterleaves paired-end FASTQ files.
 /usr/local/bin/deinterleave_fastq.sh: line 28: $2: ambiguous redirect
 ```
 
+
+## Metadata
+- **Skill**: generated

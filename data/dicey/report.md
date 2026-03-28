@@ -246,3 +246,6 @@ Generic options:
   -o [ --outfile ] arg (="map.fa.gz")   gzipped output file
 ```
 
+
+## Metadata
+- **Skill**: generated

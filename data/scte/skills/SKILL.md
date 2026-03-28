@@ -1,6 +1,6 @@
 ---
 name: scte
-description: "scTE quantifies the expression of transposable elements and genes simultaneously from single-cell sequencing data. Use when user asks to build genome indices for transposable elements, quantify TE and gene expression from BAM or SAM files, or process single-cell outputs from CellRanger and STARsolo."
+description: scTE quantifies the expression of transposable elements and genes in single-cell datasets using a hierarchical classification strategy. Use when user asks to build genome indices for repetitive elements, quantify transposable element expression from BAM files, or integrate TE counts with single-cell gene expression data.
 homepage: https://github.com/JiekaiLab/scTE
 ---
 
@@ -8,60 +8,66 @@ homepage: https://github.com/JiekaiLab/scTE
 # scte
 
 ## Overview
-scTE (single-cell Transposable Element) is a computational pipeline designed to quantify the expression of transposable elements and genes simultaneously from single-cell sequencing data. It addresses the challenge of multi-mapping reads and overlapping genomic features by providing a specialized indexing and assignment strategy. Use this skill to prepare reference indices for various species (Human, Mouse, Zebrafish, etc.) and to run the quantification process on aligned BAM/SAM files to produce count matrices compatible with downstream single-cell analysis workflows.
+scTE is a computational pipeline designed to quantify the expression of repetitive elements, specifically Transposable Elements (TEs), alongside standard gene expression in single-cell datasets. It addresses the challenge of multi-mapping reads in repetitive regions by using a hierarchical classification strategy. By default, scTE prioritizes gene exons, ensuring that TEs overlapping with known gene features do not lead to double-counting unless specific modes are enabled. It is compatible with standard single-cell alignment outputs from tools like Cell Ranger and STARsolo.
 
-## Core Workflows
+## Command Line Usage
 
 ### 1. Building Genome Indices
-Before quantification, you must build a genome index. scTE can automatically download annotations for common assemblies or use custom files.
+Before quantification, you must build a genome index. scTE provides shortcuts for common model organisms or allows for custom annotations.
 
-**Standard Assemblies:**
-Supported assemblies include `mm10`, `hg38`, `panTro6`, `macFas5`, `dm6`, `danRer11`, and `xenTro9`.
+**Standard Organisms:**
+Use the `-g` flag to automatically download and build indices for supported genomes (mm10, hg38, panTro6, macFas5, dm6, danRer11, xenTro9).
 ```bash
-scTE_build -g hg38
+scTE_build -g hg38 -o hg38_index
 ```
 
 **Custom Annotations:**
-If working with a non-standard assembly or specific TE/Gene sets, provide your own BED and GTF files.
+If using a custom genome or specific versions of TEs/Genes, provide the BED and GTF files manually.
 ```bash
-scTE_build -te TEs.bed -gene Genes.gtf -o custom_index
+scTE_build -te TEs.bed -gene Genes.gtf -o custom_index -m exclusive
 ```
-*   **-te**: Six-column BED file for transposable elements.
-*   **-gene**: GTF file for gene annotations.
+
+**Index Modes (`-m`):**
+*   `exclusive` (Default): Reads are assigned to genes first; TEs in exons/UTRs contribute only to the gene score.
+*   `inclusive`: Reads are assigned to both TEs and genes if they overlap.
+*   `nointron`: Removes TEs located within gene introns from the analysis.
 
 ### 2. Quantifying Expression
-The main `scTE` command processes aligned reads. It is highly recommended to use unfiltered alignment files.
+The main `scTE` command processes BAM/SAM files. It requires specific tags for Cell Barcodes (CB) and UMIs depending on the upstream aligner.
 
-**For CellRanger Outputs:**
-CellRanger typically uses `CB` for cell barcodes and `UB` for UMIs.
-```bash
-scTE -i input.bam -o output_prefix -x hg38.exclusive.idx --hdf5 True -CB CB -UMI UB
-```
-
-**For STARsolo Outputs:**
-STARsolo typically uses `CR` for cell barcodes and `UR` for UMIs.
+**For STARsolo Aligned Data:**
+Typically uses `CR` for Cell Barcodes and `UR` for UMIs.
 ```bash
 scTE -i input.bam -o output_prefix -x hg38.exclusive.idx --hdf5 True -CB CR -UMI UR
 ```
 
-## Expert Tips and Best Practices
+**For Cell Ranger Aligned Data:**
+Typically uses `CB` for Cell Barcodes and `UB` for UMIs.
+```bash
+scTE -i input.bam -o output_prefix -x mm10.exclusive.idx --hdf5 True -CB CB -UMI UB
+```
 
-### Read Assignment Modes
-The `--mode` (or `-m`) parameter determines how reads overlapping both genes and TEs are handled:
-*   **exclusive (Default)**: Reads are allocated to gene exons first. TEs inside exon/UTR regions only contribute to the gene score.
-*   **inclusive**: Assigns reads to both TEs and genes if the read originates from a TE located within a gene's exon/UTR.
-*   **nointron**: Removes TEs located within the introns of genes from the analysis.
+### 3. Key Parameters
+*   `-p`: Number of threads. **Note:** scTE requires approximately 10GB of RAM per thread for human/mouse genomes.
+*   `--min_genes`: Minimum number of genes required to keep a cell.
+*   `--hdf5`: Set to `True` to output in HDF5 format (compatible with AnnData/Scanpy).
 
-### Input Requirements
-*   **BAM/SAM**: Ensure your alignment file contains the necessary barcode and UMI tags.
-*   **Memory Management**: Use the `--hdf5 True` flag when processing large datasets to improve efficiency and output structure.
+## Best Practices and Expert Tips
+*   **Input Quality:** Always use the **unfiltered** alignment BAM file (e.g., `possorted_genome_bam.bam` from Cell Ranger) rather than the filtered version. This ensures that reads mapping to TEs—which might be filtered out by standard gene-centric pipelines—are preserved for scTE to quantify.
+*   **Memory Management:** Monitor your system resources closely. If running on a standard workstation with 32GB RAM, limit the threads (`-p`) to 2 or 3 when working with human data to avoid OOM (Out of Memory) errors.
+*   **Barcode Verification:** If you are unsure which tags your BAM file uses, run `samtools view your_file.bam | head -n 1` and look for the `CB:Z:` or `CR:Z:` tags to identify the correct `-CB` and `-UMI` arguments.
+*   **ATAC-seq Support:** The package includes `scTEATAC` and `scTEATAC_build` for processing single-cell ATAC-seq data, following a similar logic for chromatin accessibility in repetitive regions.
 
-### Common CLI Parameters
-*   **-i**: Path to the input BAM/SAM file.
-*   **-o**: Prefix for output files.
-*   **-x**: Path to the index file generated by `scTE_build`.
-*   **-p**: Number of threads to use (parallel processing).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| scTE | hahaha... |
+| scTE_build | Build genome annotation index for scTE |
 
 ## Reference documentation
-- [scTE Main Documentation](./references/github_com_JiekaiLab_scTE.md)
-- [scTE Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_scte_overview.md)
+- [scTE GitHub README](./references/github_com_JiekaiLab_scTE_blob_master_README.md)
+- [scTE Setup and Scripts](./references/github_com_JiekaiLab_scTE_blob_master_setup.py.md)
+- [Test Script Examples](./references/github_com_JiekaiLab_scTE_blob_master_test.sh.md)

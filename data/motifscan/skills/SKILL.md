@@ -1,6 +1,6 @@
 ---
 name: motifscan
-description: MotifScan identifies DNA motif occurrences and performs enrichment analysis within specific genomic regions. Use when user asks to scan for transcription factor binding sites, perform motif enrichment analysis, or manage genome assemblies and motif libraries.
+description: MotifScan detects known DNA motifs within genomic regions and performs statistical enrichment analysis. Use when user asks to scan genomic regions for motifs, manage reference genomes, install motif sets, or perform motif enrichment analysis.
 homepage: https://github.com/shao-lab/MotifScan
 ---
 
@@ -8,71 +8,77 @@ homepage: https://github.com/shao-lab/MotifScan
 # motifscan
 
 ## Overview
-MotifScan is a bioinformatics tool designed to detect known DNA motif occurrences within specific genomic coordinates. It is primarily used to analyze sequences for transcription factor binding sites and to perform statistical tests to determine if motifs are significantly enriched or depleted in a set of regions compared to a control. The tool streamlines the process by managing genome assemblies and motif libraries (like JASPAR) internally.
+MotifScan is a specialized bioinformatics tool for detecting known DNA motifs within genomic regions. It provides a complete workflow for motif discovery, including the management of reference genomes and Position Frequency Matrix (PFM) sets. Beyond simple pattern matching, MotifScan can perform statistical tests to determine if motifs are significantly enriched or depleted in a target set of regions compared to a control set. It is highly optimized for performance using multi-threading and C extensions for score calculations.
 
-## Genome Management
+## Command Line Usage
+
+### 1. Genome Management
 Before scanning, you must install the relevant genome assembly.
 
-### Remote Installation (UCSC)
-List available assemblies and install by name:
-```bash
-# List all available genomes from UCSC
-motifscan genome --list-remote
+*   **List available remote genomes (UCSC):**
+    ```bash
+    motifscan genome --list-remote
+    ```
+*   **Install a genome from UCSC:**
+    ```bash
+    motifscan genome --install -n hg19 -r hg19
+    ```
+*   **Install from local files:**
+    Requires a FASTA file and a refGene annotation file.
+    ```bash
+    motifscan genome --install -n hg19 -i <genome.fa> -a <refGene.txt>
+    ```
 
-# Install a specific genome (e.g., hg19)
-motifscan genome --install -n hg19 -r hg19
-```
+### 2. Motif Set Management
+MotifScan uses motif sets (typically from JASPAR) to scan sequences.
 
-### Local Installation
-If using custom or local files, provide the FASTA and a `refGene.txt` annotation file:
-```bash
-motifscan genome --install -n my_genome -i genome.fa -a refGene.txt
-```
+*   **List available JASPAR sets:**
+    ```bash
+    motifscan motif --list-remote
+    ```
+*   **Install a motif set for a specific genome:**
+    ```bash
+    motifscan motif --install -n vertebrates -r vertebrates_non-redundant -g hg19
+    ```
+*   **Build an existing motif set for a new genome:**
+    If you have a motif set installed for hg19 but now need it for hg38:
+    ```bash
+    motifscan motif --build vertebrates -g hg38
+    ```
 
-## Motif Set Management
-MotifScan uses Position Frequency Matrices (PFMs) to identify binding sites.
+### 3. Scanning Genomic Regions
+The `scan` command is the primary tool for motif detection.
 
-### Installing JASPAR Sets
-```bash
-# List available JASPAR 2020 sets
-motifscan motif --list-remote
+*   **Basic scan:**
+    ```bash
+    motifscan scan -i regions.bed -g hg19 -m vertebrates -o output_dir
+    ```
+*   **Enrichment analysis:**
+    To compare input regions against a control set to find significantly enriched motifs:
+    ```bash
+    motifscan scan -i regions.bed -c control.bed -g hg19 -m vertebrates -o output_dir
+    ```
 
-# Install a specific set for an installed genome
-motifscan motif --install -n vertebrates -r vertebrates_non-redundant -g hg19
-```
+## Best Practices and Expert Tips
 
-### Custom Motif Sets
-Install a local JASPAR-format PFM file:
-```bash
-motifscan motif --install -n custom_motifs -i pfms.jaspar -g hg19
-```
+*   **Performance Optimization:** MotifScan v1.3.0+ uses pthreads for concurrent scanning. Ensure your environment allows for multi-threading to take advantage of significant speed improvements.
+*   **Input Formats:** The tool natively supports multiple genomic formats including BED, MACS, MACS2, and narrowPeak. You do not need to manually convert these to standard BED in most cases.
+*   **Memory Management:** For very large datasets, monitor memory usage. Recent updates have optimized memory footprint, but scanning high-resolution motif sets across whole-genome datasets remains resource-intensive.
+*   **Score Cutoffs:** MotifScan supports multiple rounds of sampling to calculate score cutoffs. If your results are too noisy, consider adjusting the sampling parameters (check `motifscan scan -h` for specific sampling flags).
+*   **Naming Conventions:** Avoid special characters like `/` or `*` in custom motif names; the tool automatically replaces these with `_` to prevent filesystem errors.
 
-### Porting Motif Sets
-If you have a motif set installed for one genome (e.g., hg19) and want to use it for another (e.g., hg38), use the build command:
-```bash
-motifscan motif --build vertebrates -g hg38
-```
 
-## Scanning and Enrichment Analysis
-The `scan` command is the primary interface for discovery.
 
-### Basic Motif Scanning
-To find occurrences of motifs in a BED file:
-```bash
-motifscan scan -i regions.bed -g hg19 -m vertebrates -o output_dir
-```
+## Subcommands
 
-### Enrichment Analysis
-To check for over-representation, provide a control set of regions:
-```bash
-motifscan scan -i target_regions.bed -c control_regions.bed -g hg19 -m vertebrates -o output_dir
-```
-
-## Expert Tips
-- **Help Command**: Use `motifscan <command> -h` for a full list of arguments, including p-value thresholds and background model settings.
-- **Output Structure**: The output directory will contain a summary table of motif occurrences and enrichment statistics, along with detailed site locations.
-- **Memory Management**: For very large BED files or extremely long sequences, ensure the system has sufficient RAM, as MotifScan loads genome sequences into memory for scanning.
+| Command | Description |
+|---------|-------------|
+| config | Configure data paths for MotifScan. |
+| genome | Genome assembly commands. This subcommand controls the genome assemblies used by MotifScan. MotifScan requires a sequences FASTA file and a gene annotation file (if available) for each genome assembly, users can either download them from a remote database or install directly with local prepared files. |
+| motif | Motif set (PFMs/PWMs) commands. |
+| scan | Scan input regions to detect motif occurrences. |
 
 ## Reference documentation
 - [MotifScan GitHub Repository](./references/github_com_shao-lab_MotifScan.md)
-- [MotifScan Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_motifscan_overview.md)
+- [MotifScan README](./references/github_com_shao-lab_MotifScan_blob_master_README.rst.md)
+- [MotifScan ChangeLog](./references/github_com_shao-lab_MotifScan_blob_master_CHANGELOG.rst.md)

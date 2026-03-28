@@ -1,6 +1,6 @@
 ---
 name: metamate
-description: metaMATE cleans NGS amplicon data by evaluating abundance thresholds within specific bins to optimize the removal of artifacts like NUMTs. Use when user asks to clean metabarcoding data, evaluate filtering thresholds for ASVs, identify authentic sequences using reference sets, or extract filtered sequences from an abundance analysis.
+description: metaMATE cleans mitochondrial metabarcoding datasets by evaluating and applying abundance thresholds to distinguish authentic sequences from noise. Use when user asks to filter ASVs, remove NUMTs from metabarcoding data, or validate abundance thresholds using reference sequences.
 homepage: https://github.com/tjcreedy/metamate
 ---
 
@@ -8,57 +8,59 @@ homepage: https://github.com/tjcreedy/metamate
 # metamate
 
 ## Overview
-metaMATE (metabarcoding Multiple Abundance Threshold Evaluator) is a specialized tool designed to clean NGS amplicon data, specifically targeting mitochondrial coding loci. Unlike simple global frequency filters, metaMATE allows for the evaluation of various abundance thresholds within specific "bins"—such as individual libraries, phylogenetic clades, or taxonomic groups. It employs a validation-based approach where input ASVs are checked against reference sequences to identify "authentic" control groups, helping users determine the optimal filtering strategy that balances artifact removal with data retention.
 
-## Installation
-Install via bioconda:
-```bash
-conda install bioconda::metamate
-```
+metaMATE (metabarcoding Multiple Abundance Threshold Evaluator) is a specialized tool designed to clean mitochondrial metabarcoding datasets. It moves beyond simple global frequency filters by allowing users to test and validate various abundance thresholds within specific sampling units (libraries) or biological contexts (clades/taxa). By utilizing a set of known reference sequences as a control group, metaMATE provides an empirical way to balance the trade-off between removing "noise" (like NUMTs) and retaining "signal" (authentic sequences).
 
 ## Core Workflow
 
-### 1. The `find` Mode
-The primary discovery phase. It assesses a range of frequency filtering specifications and outputs statistics rather than filtered sequences.
+The standard metaMATE workflow consists of two primary phases: discovery and extraction.
 
-**Key Tasks:**
-- Identifies authentic sequences using reference sets (via BBmap).
-- Flags sequences based on length or translation parameters.
-- Bins ASVs by library, clade, or taxon.
-- Generates a report on how different thresholds affect the retention of validated sequences.
+### 1. Discovery Phase (`find`)
+Use the `find` command to assess how different filtering strategies impact your data. This mode does not filter the sequences immediately but generates a report on the retention/rejection of validated control groups.
 
-### 2. Analysis
-Review the tabulated results from `find` to identify the threshold set that maximizes the removal of putative NUMTs while minimizing the loss of verified authentic ASVs.
+**Key Inputs:**
+- **ASVs**: A FASTA file of unique sequences.
+- **Libraries**: Data assigning read counts per ASV to specific sampling units.
+- **References**: A FASTA file of sequences expected to be present (used to identify "authentic" controls).
 
-### 3. The `dump` Mode
-Once a strategy is chosen, use `dump` to extract the actual filtered ASV sequences from the results cache.
-
-### 4. The `filter-adaptive` Mode
-Used for applying filters that can adapt based on sample-specific characteristics rather than a single global threshold.
-
-## Command Line Usage and Best Practices
-
-### Input Requirements
-- **ASVs**: Unique sequences (FASTA). Ideally denoised and filtered for length outliers.
-- **Reference Sequences**: A set of sequences expected to be present. These are used to "validate" the filtering performance.
-- **Library Data**: Information mapping ASVs to discrete sampling units (libraries). This is critical for the tool's power.
-
-### Common CLI Patterns
-While specific argument flags depend on the version, the general structure follows:
+**Common CLI Pattern:**
 ```bash
-# Run discovery
-metamate find --asvs sequences.fasta --references refs.fasta --outdir results_dir [additional binning/threshold args]
-
-# Extract filtered data after analysis
-metamate dump --cache results_dir/metamate_cache.zip --threshold_set [ID] --output filtered_asvs.fasta
+metamate find --inputs <asvs.fasta> --libraries <library_data> --references <refs.fasta> --out <output_prefix>
 ```
 
-### Expert Tips
-- **ASV Limits**: If performing clade binning, metaMATE is limited to 65,536 input ASVs due to the complexity of the UPGMA algorithm.
-- **Reference Selection**: References do not need to be comprehensive. Even a small set of high-confidence sequences (from BOLD, GenBank, or MIDORI) allows the tool to estimate the impact of filtering.
-- **Library Definition**: Ensure your "libraries" represent discrete pools of amplicons (e.g., individual samples or PCR replicates). The tool's strength lies in assessing read counts across these units.
-- **Phylogenetic Binning**: Use clade-based binning to catch NUMTs that might be locally abundant in one library but are phylogenetically distinct from authentic sequences.
+### 2. Analysis Phase
+Examine the `_results.csv` file generated by `find`. This file contains statistics for every threshold combination tested.
+- Use the provided R script (`analyse_results_draft.R`) to visualize the false-positive and false-negative rates.
+- Identify the `resultindex` or `rejects_hash` that provides the best balance for your specific research goals.
+
+### 3. Extraction Phase (`dump`)
+Once an optimal threshold set is identified, use the `dump` command to produce the final filtered FASTA file.
+
+**Common CLI Pattern:**
+```bash
+metamate dump --cache <results.cache> --index <resultindex> --out <filtered_asvs.fasta>
+```
+
+## Expert Tips and Best Practices
+
+- **Library-Level Power**: Always provide multi-sample (library) data if possible. metaMATE's primary strength is assessing read counts across discrete sampling units rather than the whole dataset.
+- **Reference Selection**: Your reference set doesn't need to be exhaustive. Even a small set of high-quality, expected sequences allows metaMATE to calibrate its error models effectively.
+- **Clade Binning Limits**: If performing clade-based binning, ensure your input ASV count is below 65,536. The underlying UPGMA algorithm has exponential complexity and will fail or hang beyond this limit.
+- **Validation Groups**: metaMATE automatically creates two control groups:
+    1. **Authentic**: ASVs matching your references.
+    2. **Non-Authentic**: ASVs that fall outside acceptable length or translation parameters (e.g., containing stop codons in a coding locus).
+- **Adaptive Filtering**: For advanced users, `filter-adaptive` can be used to apply different thresholds to different parts of the dataset based on the validation results.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| metamate dump | Dump filtered ASVs based on specifications. |
+| metamate filter-adaptive | adaptive filtering arguments |
+| metamate_find | find arguments: |
 
 ## Reference documentation
-- [metaMATE GitHub Repository](./references/github_com_tjcreedy_metamate.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_metamate_overview.md)
+- [metaMATE README](./references/github_com_tjcreedy_metamate_blob_main_README.md)
+- [Results Analysis Script](./references/github_com_tjcreedy_metamate_blob_main_analyse_results_draft.R.md)

@@ -100,3 +100,6 @@ EXAMPLE
         rtk colsums -i table.csv -o prefix
 ```
 
+
+## Metadata
+- **Skill**: generated

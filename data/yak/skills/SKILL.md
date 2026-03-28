@@ -1,6 +1,6 @@
 ---
 name: yak
-description: yak is a high-performance tool that analyzes k-mer distributions to assess genomic quality, estimate base accuracy, and evaluate assembly completeness. Use when user asks to build k-mer hash tables, estimate base accuracy, evaluate assembly completeness, generate k-mer histograms, or partition sex chromosomes.
+description: Yak evaluates genomic assembly quality and base-level accuracy by comparing sequences against k-mer spectra from high-quality short reads. Use when user asks to estimate assembly quality values, calculate k-mer completeness, build k-mer hash tables, or partition sex chromosomes.
 homepage: https://github.com/lh3/yak
 ---
 
@@ -8,70 +8,82 @@ homepage: https://github.com/lh3/yak
 # yak
 
 ## Overview
-yak (Yet Another K-mer analyzer) is a high-performance tool for genomic quality assessment. It operates by comparing the k-mer distributions of high-accuracy sequences (like assemblies or HiFi reads) against the k-mer spectrum of short-read data. Its primary strength lies in its empirical model for estimating base accuracy (QV), which remains reliable even as accuracy approaches Q50 by accounting for unsampled and erroneous k-mers in the reference short-read set.
+Yak is a specialized bioinformatics tool designed to evaluate the quality of genomic assemblies and long reads (specifically PacBio CCS/HiFi) by comparing them against the k-mer spectrum of high-quality short reads. It provides a robust, reference-free method for estimating base-level accuracy (Quality Value or QV) and completeness. It is particularly effective at high accuracy levels (up to Q50) where naive estimators often fail due to sampling bias or short-read errors.
 
-## Common CLI Patterns
+## Core Workflows and CLI Patterns
 
 ### 1. Building K-mer Hash Tables
-The `count` command is the prerequisite for most analyses. It generates a `.yak` file representing the k-mer profile of your reads or assembly.
+Before analysis, you must count k-mers in your input data to create `.yak` files.
 
-**For assemblies (counting singletons):**
+*   **For Assemblies:** Count all k-mers, including singletons.
+    ```bash
+    ./yak count -K1.5g -t32 -o asm.yak asm.fa.gz
+    ```
+*   **For High-Coverage Reads:** Discard singletons to reduce noise and memory usage.
+    ```bash
+    ./yak count -b37 -t32 -o ccs.yak ccs-reads.fq.gz
+    ```
+*   **For Paired-End Short Reads:** Provide both files to create a combined spectrum.
+    ```bash
+    ./yak count -b37 -t32 -o sr.yak <(zcat sr_1.fq.gz) <(zcat sr_2.fq.gz)
+    ```
+
+### 2. Quality Value (QV) Estimation
+Estimate the base accuracy of an assembly or long reads by comparing them to a short-read k-mer hash table.
+
+*   **Assembly QV:**
+    ```bash
+    ./yak qv -t32 -p -K3.2g -l100k sr.yak asm.fa.gz > asm-sr.qv.txt
+    ```
+*   **CCS Read QV:**
+    ```bash
+    ./yak qv -t32 -p sr.yak ccs-reads.fq.gz > ccs-sr.qv.txt
+    ```
+
+### 3. Inspection and Completeness
+Evaluate how well the assembly represents the k-mers found in the raw reads.
+
+*   **K-mer QV for Reads:**
+    ```bash
+    ./yak inspect ccs.yak sr.yak > ccs-sr.kqv.txt
+    ```
+*   **Assembly Completeness:**
+    ```bash
+    ./yak inspect sr.yak asm.yak > sr-asm.kqv.txt
+    ```
+*   **K-mer Histogram:** Generate a frequency distribution of k-mers.
+    ```bash
+    ./yak inspect sr.yak > sr.hist
+    ```
+
+### 4. Sex Chromosome Partitioning
+For human de novo assemblies, yak can help separate X and Y contigs using specialized k-mer databases.
+
 ```bash
-yak count -K1.5g -t32 -o asm.yak asm.fa.gz
+# Partition contigs based on k-mer counts
+./yak sexchr -K2g -t16 chrY-no-par.yak chrX-no-par.yak par.yak hap1.fa hap2.fa > cnt.txt
+
+# Use the provided helper script to group and extract sequences
+./groupxy.pl cnt.txt | awk '$4==1' | cut -f2 | seqtk subseq -l80 <(cat hap1.fa hap2.fa) - > new-hap1.fa
 ```
 
-**For high-coverage reads (discarding singletons to save memory):**
-```bash
-yak count -b37 -t32 -o reads.yak reads.fq.gz
-```
+## Best Practices
+*   **Memory Management:** Use the `-K` flag to pre-allocate hash table memory (e.g., `-K1.5g`). This prevents frequent re-allocations during the counting phase.
+*   **Threading:** Yak is highly multi-threaded. Always utilize the `-t` flag to match your available CPU cores for significant speedups in `count` and `qv` operations.
+*   **Singleton Handling:** When working with high-coverage short reads (e.g., Illumina), use `-b` (typically `-b37`) to ignore k-mers that appear only once, as these are likely sequencing errors. For assemblies, keep singletons to ensure every part of the sequence is evaluated.
 
-**For paired-end short reads:**
-To provide two identical streams for counting:
-```bash
-yak count -b37 -t32 -o sr.yak <(zcat sr*.fq.gz) <(zcat sr*.fq.gz)
-```
 
-### 2. Estimating Base Accuracy (QV)
-The `qv` command calculates the consensus quality of an assembly or a set of reads by comparing them to a short-read k-mer hash table.
 
-**Compute assembly QV:**
-```bash
-yak qv -t32 -p -K3.2g -l100k sr.yak asm.fa.gz > asm-sr.qv.txt
-```
+## Subcommands
 
-**Compute CCS read QV:**
-```bash
-yak qv -t32 -p sr.yak ccs-reads.fq.gz > ccs-sr.qv.txt
-```
-
-### 3. Evaluating Assembly Completeness
-Use the `inspect` command with two yak files (typically short-read k-mers vs. assembly k-mers) to determine how many k-mers from the reads are represented in the assembly.
-
-```bash
-yak inspect sr.yak asm.yak > sr-asm.kqv.txt
-```
-
-### 4. Generating K-mer Histograms
-To visualize the k-mer frequency distribution of a dataset:
-```bash
-yak inspect sr.yak > sr.hist
-```
-
-### 5. Sex Chromosome Partitioning
-Yak can be used to partition X and Y chromosomes in human de novo assemblies using specific k-mer sets for Y-unique, X-unique, and Pseudo-Autosomal Regions (PAR).
-
-```bash
-yak sexchr -K2g -t16 chrY-no-par.yak chrX-no-par.yak par.yak hap1.fa hap2.fa > cnt.txt
-```
-
-## Expert Tips and Best Practices
-
-*   **Memory Management**: Use the `-K` flag to pre-allocate the hash table size. It supports human-readable suffixes (e.g., `1.5g` for 1.5 billion entries). If the hash table is too small, performance degrades; if too large, it wastes RAM.
-*   **Singleton Handling**: For high-coverage short reads (e.g., Illumina), use `-b` (typically `-b37`) to ignore k-mers appearing only once. This significantly reduces the memory footprint and filters out most sequencing errors. For assemblies, do not use `-b` as you want to count every k-mer.
-*   **Thread Scaling**: Most yak commands scale well with the `-t` flag. For large genomes, 16-32 threads are recommended.
-*   **QV Interpretation**: When accuracy is very high (Q50+), the `-p` flag is essential as it invokes the empirical model that compensates for the limitations of the short-read "truth" set.
-*   **Output Redirection**: Most yak commands output to stdout; always redirect to a file for record-keeping.
+| Command | Description |
+|---------|-------------|
+| count | Count k-mers in FASTA files |
+| inspect | Evaluates k-mer QV and k-mer sensitivity. |
+| qv | Calculate k-mer quality values (QV) for sequences. |
+| triobin | Identify and extract triobins from yak files. |
+| trioeval | Evaluate trios from yak files and a reference FASTA. |
 
 ## Reference documentation
-- [bioconda / yak Overview](./references/anaconda_org_channels_bioconda_packages_yak_overview.md)
-- [lh3/yak GitHub Repository](./references/github_com_lh3_yak.md)
+- [Yak GitHub Repository Overview](./references/github_com_lh3_yak.md)
+- [Yak README and Getting Started](./references/github_com_lh3_yak_blob_master_README.md)

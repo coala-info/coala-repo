@@ -1,6 +1,6 @@
 ---
 name: graphembed
-description: Graphembed transforms complex graph structures into low-dimensional vector representations for downstream machine learning tasks. Use when user asks to embed large-scale networks, perform link prediction, or identify dense node groups through graph decomposition.
+description: The graphembed tool generates low-dimensional embeddings for large-scale graphs with weighted edges while supporting symmetric and asymmetric structural analysis. Use when user asks to embed massive datasets, preserve asymmetric transitivity in directed networks, perform link prediction validation, or identify dense node groups through core decomposition.
 homepage: https://github.com/jean-pierreBoth/graphembed
 ---
 
@@ -8,47 +8,59 @@ homepage: https://github.com/jean-pierreBoth/graphembed
 # graphembed
 
 ## Overview
-graphembed is a specialized toolset designed for efficient and robust network embedding. It transforms complex graph structures into low-dimensional vector representations, making them suitable for downstream machine learning tasks. The tool is particularly effective for large-scale data, such as social networks or citation graphs, offering algorithms that balance computational speed with structural accuracy. It supports directed and undirected graphs with weighted edges and includes built-in utilities for validating embedding quality through link prediction.
 
-## Core Embedding Methods
+The `graphembed` tool is a Rust-based library and executable designed for efficient embedding of graphs with positively weighted edges. It is particularly well-suited for massive datasets, such as the Orkut graph (3M nodes, 100M edges), which it can process in minutes. The tool supports both symmetric and asymmetric embeddings, allowing for the preservation of transitivity in directed networks. Beyond embedding, it provides structural analysis through core decomposition to identify maximally dense groups of nodes.
 
-### NodeSketch (Recursive Sketching)
-Use this method for maximum efficiency on massive graphs (e.g., millions of nodes).
-- **Mechanism**: Uses multi-hop neighborhood identification via sensitive hashing (ProbMinHash).
-- **Distance Metric**: The resulting discrete embedding vectors use Jaccard distance.
-- **Best For**: Symmetric embeddings where speed is critical. It can also be extended for asymmetric directed graphs.
+## Command Line Usage
+
+The primary interface is the `embed` binary. Use the following patterns for common tasks:
+
+### NodeSketch Embedding (Symmetric/Asymmetric)
+NodeSketch uses recursive sketching based on `probminhash` to identify multi-hop neighborhoods.
+
+- **Basic Symmetric Embedding**:
+  `embed nodesketch --data <input_file> --dim 200 --hop 5 --decay 0.3`
+- **Asymmetric (Directed) Embedding**:
+  `embed nodesketch --data <input_file> --dim 500 --hop 2 --decay 0.25 --asymmetric`
 
 ### ATP (Asymmetric Transitivity Preserving)
-Use this method when the directionality and transitivity of edges are critical.
-- **Mechanism**: Based on the Adamic-Adar matricial representation and randomized Singular Value Decomposition (SVD).
-- **Output**: Produces left singular vectors (representing source nodes) and right singular vectors (representing target nodes).
-- **Similarity**: Uses dot product similarity rather than a standard norm.
+ATP uses Adamic-Adar matricial representation and randomized SVD to preserve asymmetric relationships.
 
-## CLI Usage and Best Practices
+- **Rank-based SVD**:
+  `embed atp rank --data <input_file> --rank 200 --nbiter 5`
+- **Precision-based SVD**:
+  `embed atp precision --data <input_file> --rank 100 --bkiter 3`
 
-### General Workflow
-1. **Data Preparation**: Ensure input graphs are in CSV or TSV format. 
-   - **Tip**: If using datasets from Windows environments, use `dos2unix` to fix End-of-Line (EOL) characters before processing.
-2. **Execution**: Use the `embed` binary provided by the package.
-3. **Validation**: Use the built-in validation module to assess quality via Area Under the Curve (AUC) metrics with random edge deletion.
+### Validation and Link Prediction
+To assess embedding quality, `graphembed` can perform link prediction by randomly deleting a fraction of edges and calculating the Area Under the Curve (AUC).
 
-### Performance Optimization
-- **Linear Algebra**: When compiling from source, use the `openblas-system` feature for significantly faster matricial operations:
-  ```bash
-  cargo build --release --features="openblas-system"
-  ```
-- **Dimension Selection**: For SVD-based embeddings (ATP), monitor the decay of eigenvalues. Stop increasing dimensions once the eigenvalues no longer decrease significantly.
+- **Run with Validation**:
+  `embed nodesketch --data <input_file> --dim 200 --validate --ratio 0.15`
 
-### Graph Decomposition
-Beyond embedding, use the `structure` module for "density-friendly" decomposition. This is useful for:
-- Identifying maximally dense groups of nodes.
-- Assessing if internal community edges are consistently shorter in the embedding space than edges crossing community boundaries.
+## Expert Tips and Best Practices
 
-## Expert Tips
-- **Directed vs. Undirected**: Treating a directed graph as undirected during embedding can significantly degrade link prediction AUC. Always use the asymmetric options for directed social or citation networks.
-- **Memory Management**: For extremely large graphs like Orkut (100M+ edges), NodeSketch is preferred over SVD-based methods due to its lower memory footprint and faster execution (approx. 5 minutes on modern hardware).
-- **Label Support**: If your graph has discrete labels on nodes or edges, utilize the `gkernel` module, which extends the hashing strategy to handle labeled data.
+- **Algorithm Selection**: 
+  - Use **NodeSketch** for speed on massive graphs and when Jaccard distance is a suitable similarity measure.
+  - Use **ATP** when preserving asymmetric transitivity (source vs. target roles) is critical, utilizing the dot product as the similarity measure.
+- **Hyperparameter Tuning**:
+  - **Decay**: In NodeSketch, the decay coefficient reduces edge weight as the search moves further from the source node. Lower decay (e.g., 0.1-0.2) focuses on local structure; higher decay (0.4-0.5) captures broader neighborhood context.
+  - **Dimensions**: For ATP, increasing dimensions is beneficial as long as the corresponding eigenvalues continue to decrease significantly.
+- **Data Preparation**: Ensure input files are in CSV or TSV format. If working on Linux with files generated on Windows, run `dos2unix` to prevent line-ending issues.
+- **Performance**: For maximum performance, compile with specific BLAS features:
+  `cargo build --release --features="openblas-system"`
+- **Structural Analysis**: Use the `structure` module for density-friendly decomposition to verify if communities are preserved in the embedding space (internal edges should typically be shorter than boundary-crossing edges).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| embedding | Graph/Network Embedding |
+| validation | Graph/Network Embedding with Accuracy Benchmark |
 
 ## Reference documentation
-- [graphembed Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_graphembed_overview.md)
-- [graphembed GitHub Documentation](./references/github_com_jean-pierreBoth_graphembed.md)
+
+- [Graphembed README](./references/github_com_jean-pierreBoth_graphembed_blob_master_README.md)
+- [Embedding Results and Benchmarks](./references/github_com_jean-pierreBoth_graphembed_blob_master_resultats.md)
+- [Orkut Graph Analysis](./references/github_com_jean-pierreBoth_graphembed_blob_master_orkut.md)

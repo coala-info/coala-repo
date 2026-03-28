@@ -1,6 +1,6 @@
 ---
 name: hapbin
-description: hapbin is a high-performance toolset for calculating EHH, iHS, and XP-EHH statistics to detect positive selection in large genomic datasets. Use when user asks to convert haplotype files to binary format, calculate extended haplotype homozygosity for specific loci, or perform genome-wide iHS and XP-EHH scans.
+description: hapbin is a high-performance software suite used to detect signatures of natural selection in large-scale genomic datasets using haplotype-based statistics. Use when user asks to calculate EHH, perform genome-wide iHS scans, compare populations using XP-EHH, or convert haplotype files into binary format.
 homepage: https://github.com/evotools/hapbin
 ---
 
@@ -8,56 +8,63 @@ homepage: https://github.com/evotools/hapbin
 # hapbin
 
 ## Overview
+hapbin is a high-performance C++ software suite designed for detecting signatures of natural selection. It is particularly effective for large-scale genomic datasets where traditional tools may be computationally prohibitive. The toolset focuses on haplotype-based statistics that identify "selective sweeps"—regions where a beneficial allele has risen rapidly in frequency, leaving a characteristic pattern of extended linkage disequilibrium.
 
-hapbin is a high-performance toolset designed for rapid scans of positive selection in large genomic datasets. It provides optimized implementations for calculating Extended Haplotype Homozygosity (EHH), Integrated Haplotype Score (iHS), and Cross Population Extended Haplotype Homozygosity (XP-EHH). The suite is particularly useful for researchers working with phased human or model organism data who require faster execution times than traditional tools like selscan. It achieves this efficiency through a specialized binary file format and multi-threaded execution.
+## Core Tools and Usage
 
-## Core Workflows
+### 1. EHH Calculation (`ehhbin`)
+Calculates the decay of identity by descent for a specific locus.
+- **Command**: `ehhbin --hap [file] --map [file] --locus [ID] --out [prefix]`
+- **Best Practice**: Use this to visualize the decay of homozygosity for a specific candidate SNP identified in a genome-wide scan.
 
-### 1. Data Preparation and Conversion
-Before running selection scans, convert standard ASCII IMPUTE format files to the more efficient hapbin binary format.
+### 2. iHS Calculation (`ihsbin`)
+Performs a genome-wide scan for selection within a single population.
+- **Command**: `ihsbin --hap [file] --map [file] --out [prefix] [options]`
+- **Key Options**:
+    - `--minmaf [float]`: Filter out low-frequency variants (e.g., `0.05`).
+    - `--cutoff [float]`: Set the EHH decay threshold for integration (default is often `0.05` or `0.1`).
+- **Note**: iHS is most powerful for detecting ongoing selection where the beneficial allele is at intermediate frequency.
 
-```bash
-# Convert ASCII .hap to binary .hapbin
-hapbinconv --hap input.hap --out output.hapbin
-```
+### 3. XP-EHH Calculation (`xpehhbin`)
+Compares haplotype lengths between two populations to detect nearly fixed or fixed selective sweeps.
+- **Command**: `xpehhbin --hapA [PopA] --hapB [PopB] --map [file] --out [prefix]`
+- **Best Practice**: Ensure the map file contains all SNPs present in both population haplotype files.
 
-**Input Requirements:**
-- **Haplotype files:** Must be in IMPUTE hap format (phased).
-- **Map files:** Must follow the Selscan format (4 space-separated columns: chromosome, locus ID, genetic position, physical position).
+### 4. Format Conversion (`hapbinconv`)
+Converts ASCII IMPUTE `.hap` files into the optimized `.hapbin` binary format.
+- **Command**: `hapbinconv --hap [input.hap] --out [output.hapbin]`
+- **Expert Tip**: Always convert to `.hapbin` for large datasets. It significantly reduces I/O overhead and memory usage during the main calculation phases.
 
-### 2. Calculating EHH for Specific Loci
-Use `ehhbin` to analyze the decay of identity by descent for a specific variant.
+## Data Requirements
 
-```bash
-ehhbin --hap data.hapbin --map data.map --locus [locus_id] --out [prefix]
-```
-- The output contains 5 columns: Locus ID, genetic position, physical position, EHH for allele 0, and EHH for allele 1.
+### Input Formats
+- **Haplotype File (`--hap`)**: Must be in **IMPUTE hap format** (rows are SNPs, columns are phased alleles, space-separated).
+- **Map File (`--map`)**: Four space-separated columns:
+  1. Chromosome
+  2. Locus ID (must match the ID used in `--locus` for `ehhbin`)
+  3. Genetic Position (Centimorgans)
+  4. Physical Position (Base pairs)
 
-### 3. Genome-wide iHS Scans
-Use `ihsbin` to calculate the Integrated Haplotype Score across all loci in a file.
+### Output Interpretation
+- **ehhbin**: 5 columns (Locus ID, Genetic Pos, Physical Pos, EHH_Allele_0, EHH_Allele_1).
+- **ihsbin**: Includes `iHH_0`, `iHH_1`, unstandardized iHS, and standardized iHS.
+- **xpehhbin**: Includes `iHH_A`, `iHH_B`, and the raw XP-EHH score.
 
-```bash
-ihsbin --hap data.hapbin --map data.map --out [prefix] --minmaf 0.05 --cutoff 0.05
-```
-- **--minmaf:** Filters out variants with a Minor Allele Frequency below the threshold (e.g., 0.05).
-- **--cutoff:** Sets the EHH value at which the integration stops (default is often 0.05).
+## Performance Optimization
+- **Parallelization**: hapbin supports OpenMP. Ensure the environment variable `OMP_NUM_THREADS` is set to utilize multiple cores.
+- **Memory**: For extremely large datasets, use the MPI-enabled version if running on a high-performance computing (HPC) cluster.
+- **VCF Pre-processing**: If starting with VCF files, use `vcftools` or `bcftools` to convert to IMPUTE format before using `hapbinconv`.
 
-### 4. Cross-Population XP-EHH Scans
-Use `xpehhbin` to compare haplotype lengths between two populations.
 
-```bash
-xpehhbin --hapA popA.hapbin --hapB popB.hapbin --map data.map --out [prefix]
-```
-- The output includes iHH values for both populations and the resulting XP-EHH statistic.
 
-## Expert Tips and Best Practices
+## Subcommands
 
-- **Performance:** Always use `hapbinconv` to create `.hapbin` files before running large-scale scans. The binary format significantly reduces I/O overhead and memory usage.
-- **Map File Consistency:** Ensure your map file has the exact same number of loci as your haplotype file. A common error is a mismatch between these two files, which will cause the tools to fail.
-- **Standardization:** `ihsbin` performs internal standardisation by grouping alleles into frequency bins (default 2%). If you require custom standardisation, you may need to process the unstandardised iHS values from the output manually.
-- **VCF Conversion:** If your data is in VCF format, use `vcftools` with the `--export-impute` flag to generate the required input for `hapbinconv`.
-- **Parallelization:** If compiled with OpenMP, the tools will utilize multiple cores. Ensure your environment variables (like `OMP_NUM_THREADS`) are set correctly for your HPC environment.
+| Command | Description |
+|---------|-------------|
+| ehhbin | Calculate EHH and EHHbin statistics for a given locus. |
+| hapbinconv | Convert between ASCII hap and binary hapbin formats. |
+| ihsbin | Calculate iHS values for SNPs based on haplotype data. |
+| xpehhbin | Calculate XP-EHH values for bins of SNPs. |
 
 ## Reference documentation
 - [hapbin GitHub Repository](./references/github_com_evotools_hapbin.md)
-- [hapbin Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_hapbin_overview.md)

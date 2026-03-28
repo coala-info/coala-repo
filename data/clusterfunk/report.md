@@ -754,3 +754,6 @@ usage: clusterfunk <subcommand> <options>
 clusterfunk: error: argument : invalid choice: 'shared' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: biopet-seqstat
-description: Biopet-seqstat extracts and manages descriptive quality statistics from FASTQ files, including read lengths and base quality metrics. Use when user asks to generate sequencing statistics, merge multiple stats files into a single report, or validate the integrity of stats files.
+description: "Biopet-seqstat generates, merges, and validates quality metrics and nucleotide statistics from FASTQ sequencing data. Use when user asks to generate sequencing statistics, merge multiple stats files, or validate the integrity of stats JSON files."
 homepage: https://github.com/biopet/seqstat
 ---
 
@@ -8,52 +8,56 @@ homepage: https://github.com/biopet/seqstat
 # biopet-seqstat
 
 ## Overview
-biopet-seqstat is a bioinformatics utility designed to extract and manage descriptive statistics from FASTQ files. It is used to assess the quality of sequencing runs by providing detailed metrics on read lengths and base qualities. The tool is particularly effective in multi-sample workflows because it can merge individual statistics while preserving the hierarchical metadata structure (Sample/Library/Readgroup), or collapse them into a single summary. It also includes a validation component to ensure that generated statistics files remain uncorrupted and consistent.
-
-## Installation
-Install the tool via bioconda:
-```bash
-conda install bioconda::biopet-seqstat
-```
-
-## Core Command Modes
-
-### 1. Generate Mode
-Use this mode to process a FASTQ file and produce a JSON-formatted statistics file.
-*   **Primary Output**: Total base count, nucleotide distribution (A, C, G, T, N), total read count, and quality encoding (e.g., Sanger).
-*   **Histograms**: Generates distributions for average base qualities and read lengths (minimum and maximum).
-*   **Usage Tip**: Run this on individual FASTQ files immediately after sequencing or adapter trimming to establish a quality baseline.
-
-### 2. Merge Mode
-Use this mode to aggregate multiple seqstat output files into a single report.
-*   **Metadata Preservation**: By default, the tool maintains the Sample, Library, and Readgroup structure defined in the input files.
-*   **Collapsing**: Use the collapse option if you require a single global summary without hierarchical breakdown.
-*   **Expert Tip**: Avoid manual editing of the intermediate seqstat files before merging, as this can lead to "corrupt" status if aggregation values cannot be recalculated.
-
-### 3. Validate Mode
-Use this mode to check the integrity of a generated seqstat file.
-*   **Function**: It attempts to regenerate aggregation values from the raw data within the file.
-*   **When to use**: Run validation if a file has been transferred across systems or if manual modification is suspected.
+SeqStat is a specialized tool within the Biopet suite designed for the quality assessment of sequencing data. It processes FASTQ files to extract critical metrics such as base quality distributions, nucleotide composition, and read length histograms. Beyond initial generation, the tool allows for the aggregation of statistics across multiple samples or libraries while maintaining metadata structures, and provides a validation mechanism to ensure the integrity of the resulting stats files.
 
 ## Common CLI Patterns
-While specific flags may vary by version, the general invocation follows the sub-command structure:
+
+### Generating Statistics
+The `Generate` mode is used to analyze a single FASTQ file. It automatically detects quality encoding (e.g., Sanger, Solexa).
 
 ```bash
-# Generate stats for a single FASTQ
-biopet-seqstat generate -i input.fastq.gz -o output.json
-
-# Merge multiple stats files
-biopet-seqstat merge -i sample1.json -i sample2.json -o merged_stats.json
-
-# Validate a stats file
-biopet-seqstat validate -i stats.json
+biopet-seqstat Generate -i input.fastq.gz -o output_stats.json
 ```
 
-## Best Practices
-*   **Quality Encoding**: Always verify the detected quality encoding (Sanger vs. Solexa) in the "Generate" output to ensure downstream tools interpret Phred scores correctly.
-*   **Read Length Analysis**: Use the read length histograms to identify unexpected trimming artifacts or library preparation issues (e.g., excessive adapter dimmers appearing as a peak at very short lengths).
-*   **Pipeline Integration**: In large-scale projects, generate stats for every FASTQ and use the "Merge" mode at the end of the pipeline to create a comprehensive QC report for the entire cohort.
+**Outputted Metrics:**
+*   **Bases:** Total count, base quality distribution, and individual nucleotide counts (A, C, G, T, N).
+*   **Reads:** Total count, minimum/maximum lengths, average quality histograms, and quality encoding detection.
+
+### Merging Statistics
+The `Merge` mode aggregates multiple SeqStat JSON files. This is useful for combining data from different lanes, libraries, or samples.
+
+```bash
+# Merge multiple files while keeping sample/library/readgroup structure
+biopet-seqstat Merge -i sample1.json -i sample2.json -o merged_stats.json
+
+# Collapse the structure into a single aggregate
+biopet-seqstat Merge --collapse -i sample1.json -i sample2.json -o collapsed_stats.json
+```
+
+### Validating Stats Files
+Use the `Validate` mode if a stats file has been manually edited or if corruption is suspected. It attempts to regenerate aggregation values to ensure consistency.
+
+```bash
+biopet-seqstat Validate -i stats_file.json
+```
+
+## Expert Tips and Best Practices
+
+*   **Input Formats:** SeqStat typically handles compressed FASTQ files (.gz) natively, which is recommended to save disk I/O.
+*   **Metadata Preservation:** When merging, the tool preserves the hierarchical structure (Sample -> Library -> Readgroup). If your downstream reporting tools require a flat file, use the `--collapse` flag.
+*   **Quality Encoding:** If you are working with older datasets, use the `Generate` mode to verify the quality encoding (e.g., Illumina 1.3+ vs 1.8+) before proceeding with alignment or trimming.
+*   **Integration:** SeqStat is often used as a lightweight alternative to FastQC when only numerical summaries are required for automated pipelines or custom dashboards.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| generate | Generate stats from FastQ files |
+| merge | Merge seqstat files into a single file |
+| validate | Validate a seqstat schema file |
 
 ## Reference documentation
-- [biopet-seqstat - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_biopet-seqstat_overview.md)
-- [GitHub - biopet/seqstat](./references/github_com_biopet_seqstat.md)
+- [SeqStat GitHub README](./references/github_com_biopet_seqstat_blob_develop_README.md)
+- [SeqStat Build Configuration](./references/github_com_biopet_seqstat_blob_develop_build.sbt.md)

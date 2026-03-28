@@ -112,3 +112,6 @@ OPTIONS:
     -o, --output <OUTPUT>    path to output file, format and compression of input is preserved
 ```
 
+
+## Metadata
+- **Skill**: generated

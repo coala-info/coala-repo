@@ -167,3 +167,6 @@ Usage:
 	-tag	[tag]			Append this string to deflines or BAM tags (Default:  not on/not used)
 ```
 
+
+## Metadata
+- **Skill**: generated

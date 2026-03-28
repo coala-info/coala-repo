@@ -98,3 +98,6 @@ Options:
   --show TEXT:{type,item}     Show Options for type or item
 ```
 
+
+## Metadata
+- **Skill**: not generated

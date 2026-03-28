@@ -399,3 +399,6 @@ SIG_MTD:
 See https://slow5.bioinf.science/man for detailed description of these command-line options.
 ```
 
+
+## Metadata
+- **Skill**: generated

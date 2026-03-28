@@ -1,70 +1,74 @@
 ---
 name: pyani-plus
-description: The pyani-plus tool performs whole-genome classification of microbes using Average Nucleotide Identity (ANI) and similar methods. Use when user asks to classify microbial genomes based on sequence similarity, calculate Average Nucleotide Identity (ANI) between genomes, or perform other related whole-genome comparative analyses.
+description: pyani-plus calculates Average Nucleotide Identity (ANI) to classify and compare microbial genomes using various alignment algorithms. Use when user asks to calculate ANI between genome sequences, classify bacterial species, manage genomic analysis runs in a database, or generate identity heatmaps.
 homepage: https://github.com/pyani-plus/pyani-plus
 ---
 
 
 # pyani-plus
 
-yaml
-name: pyani-plus
-description: |
-  Performs whole-genome classification of microbes using Average Nucleotide Identity (ANI) and similar methods.
-  Use when Claude needs to:
-  - Classify microbial genomes based on sequence similarity.
-  - Calculate Average Nucleotide Identity (ANI) between genomes.
-  - Perform other related whole-genome comparative analyses.
-  - Analyze microbial diversity and relatedness.
-```
 ## Overview
-The `pyani-plus` tool is designed for classifying microbial genomes by calculating their Average Nucleotide Identity (ANI) and employing similar comparative genomic methods. It's particularly useful for understanding the evolutionary relationships and taxonomic placement of bacterial and archaeal species based on their complete genome sequences.
 
-## Usage Instructions
+`pyani-plus` is a specialized tool for microbial genomics used to classify and compare whole-genome sequences. It calculates the Average Nucleotide Identity (ANI) between pairs of genomes, which serves as a gold standard for defining bacterial species (typically using a 95-96% identity threshold). The tool manages results in a local SQLite database, allowing for incremental updates, run comparisons, and robust data tracking. It is a modern reimplementation of the original `pyani` package, offering improved performance and support for a wider range of alignment algorithms and schedulers.
 
-`pyani-plus` is a command-line tool that can be installed via Conda (from the BioConda channel) or PyPI.
+## Core Workflows
 
-### Core Functionality: Classification and Comparison
+### 1. Initializing an Analysis
+To run an ANI analysis, you must provide a directory containing your genome FASTA files. Results are automatically stored in a SQLite database (defaulting to `pyani_plus.db` in the current directory).
 
-The primary command for performing genome classification is `pyani-plus classify`. This command takes one or more FASTA files (or directories containing FASTA files) as input and computes similarity metrics between them.
+**Common Methods:**
+- **ANIm (MUMmer):** `pyani-plus anim -i <input_dir> -o <output_dir>`
+- **ANIb (BLAST+):** `pyani-plus anib -i <input_dir> -o <output_dir>`
+- **FastANI:** `pyani-plus fastani -i <input_dir> -o <output_dir>`
+- **Sourmash:** `pyani-plus sourmash -i <input_dir> -o <output_dir>`
 
-**Basic Usage:**
+### 2. Managing Analysis Runs
+Since `pyani-plus` uses a database, you can manage multiple experiments within the same file.
 
-```bash
-pyani-plus classify <input_directory_or_fasta_files>
-```
+- **List all runs:** `pyani-plus list-runs`
+- **Delete a specific run:** `pyani-plus delete-run --run-id <ID>`
+- **Resume an interrupted run:** `pyani-plus resume --run-id <ID>`
 
-This will generate similarity matrices and potentially other output files in the current directory.
+### 3. Classification and Visualization
+Once the identity matrix is calculated, use the following commands to interpret the data:
 
-### Key Commands and Options
+- **Classify genomes:** Group genomes into clusters based on an identity threshold (e.g., 0.95 for species).
+  `pyani-plus classify --run-id <ID> --threshold 0.95`
+- **Generate plots:** Create heatmaps of the ANI results.
+  `pyani-plus plot-run --run-id <ID> -o <output_dir>`
+- **Export data:** Extract matrices (identity, coverage, etc.) to TSV or Excel.
+  `pyani-plus export-run --run-id <ID> -o <output_dir>`
 
-*   **`pyani-plus classify`**:
-    *   **`--input`**: Path to input FASTA files or a directory containing FASTA files.
-    *   **`--output`**: Directory to save output files (similarity matrices, etc.). Defaults to the current directory.
-    *   **`--method`**: The comparison method to use. Common options include:
-        *   `ani` (Average Nucleotide Identity - default)
-        *   `aai` (Average Amino Acid Identity)
-        *   `ggdc` (Genome-to-Genome Distance Calculator - requires external installation)
-        *   `mash` (MinHash-based similarity - requires `mash` to be installed)
-        *   `wani` (Weighted Average Nucleotide Identity)
-        *   `gani` (Generalized Average Nucleotide Identity)
-    *   **`--scheduler`**: Specifies how to parallelize computations. Options include `sync` (sequential), `multiprocessing`, `slurm`, `pbs`, etc. For local parallelization, `multiprocessing` is often suitable.
-    *   **`--workers`**: The number of parallel workers to use when `multiprocessing` or other parallel schedulers are selected.
-    *   **`--force`**: Overwrite existing output files if they exist.
-    *   **`--verbose`**: Print detailed progress information.
+## Expert Tips
 
-**Example: Classifying genomes in a directory using multiprocessing:**
+- **Database Portability:** You can specify a custom database path using the `--database` or `-d` flag. This is useful for sharing results or organizing projects.
+- **Naming Runs:** Always use the `--name` flag when starting a run. It makes identifying specific experiments in `list-runs` much easier than relying on timestamps or IDs.
+- **Thread Management:** For large datasets, use the `--threads` flag to speed up alignments, especially for BLAST-based (ANIb) or FastANI methods.
+- **External Alignments:** If you have already performed alignments using other tools, `pyani-plus` can import external alignment data using the `external-alignment` subcommand.
 
-```bash
-pyani-plus classify --input /path/to/genomes/ --output ./results --method ani --scheduler multiprocessing --workers 8 --verbose
-```
 
-### Advanced Features and Tips
 
-*   **Input Formats**: `pyani-plus` accepts individual FASTA files or entire directories. Ensure all FASTA files within a directory are genomes you wish to compare.
-*   **Output Interpretation**: The primary outputs are typically tab-separated value (TSV) files representing similarity matrices. These matrices show the calculated similarity score between each pair of input genomes.
-*   **Dependencies**: Some methods (e.g., `ggdc`, `mash`) require external command-line tools to be installed separately. Ensure these dependencies are met for the chosen method.
-*   **Citation**: Please refer to the `CITATIONS` file in the project repository for proper citation guidelines.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| anib | Execute ANIb calculations, logged to a pyANI-plus SQLite3 database. |
+| anim | Execute ANIm calculations, logged to a pyANI-plus SQLite3 database. |
+| delete-run | Delete any single run from the given pyANI-plus SQLite3 database. |
+| dnadiff | Execute mumer-based dnadiff calculations, logged to a pyANI-plus SQLite3 database. |
+| export-run | Export any single run from the given pyANI-plus SQLite3 database. |
+| external-alignment | Compute pairwise ANI from given multiple-sequence-alignment (MSA) file. |
+| fastani | Execute fastANI calculations, logged to a pyANI-plus SQLite3 database. |
+| plot-run | Plot heatmaps and distributions for any single run. |
+| pyani-plus classify | Classify genomes into clusters based on ANI results. |
+| pyani-plus list-runs | List the runs defined in a given pyANI-plus SQLite3 database. |
+| pyani-plus plot-run-comp | Plot comparisons between multiple runs. |
+| pyani-plus resume | Resume any (partial) run already logged in the database. |
+| sourmash | Execute sourmash-plugin-branchwater ANI calculations, logged to a pyANI-plus SQLite3 database. |
 
 ## Reference documentation
-- [pyANI-plus documentation](https://pyani-plus.github.io/pyani-plus-docs/)
+
+- [Walkthrough: A First Analysis](./references/pyani-plus_github_io_pyani-plus-docs_walkthrough.html.md)
+- [Subcommands Overview](./references/pyani-plus_github_io_pyani-plus-docs_subcommands_subcommands.html.md)
+- [Installation Guide](./references/pyani-plus_github_io_pyani-plus-docs_installation.html.md)
+- [Main README](./references/github_com_pyani-plus_pyani-plus_blob_main_README.md)

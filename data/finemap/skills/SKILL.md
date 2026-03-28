@@ -1,73 +1,74 @@
 ---
 name: finemap
-description: "Finemap identifies causal SNPs and estimates their effect sizes and heritability contributions. Use when user asks to fine-map genetic association results, identify causal variants, or estimate heritability."
+description: FINEMAP identifies causal variants in genomic regions by integrating GWAS summary statistics with linkage disequilibrium information using a Bayesian framework. Use when user asks to perform statistical fine-mapping, identify causal SNPs, or process large-scale correlation matrices using binary formats.
 homepage: http://www.christianbenner.com
 ---
 
 
 # finemap
 
-yaml
-name: finemap
-description: |
-  Program for identifying causal SNPs and their effect sizes and heritability contributions.
-  Use when you need to fine-map genetic association results to identify potential causal variants and estimate their contributions to heritability. This is particularly useful for post-GWAS analysis and understanding the genetic architecture of complex traits.
-```
+# finemap
+
 ## Overview
-Finemap is a powerful tool designed for fine-mapping genetic association studies. It helps researchers pinpoint potential causal single nucleotide polymorphisms (SNPs) within a genomic region and quantify their individual contributions to the heritability of a trait. This is a crucial step after genome-wide association studies (GWAS) to move from identifying associated regions to identifying specific causal variants.
+FINEMAP is a specialized tool for the statistical fine-mapping of causal variants in genomic regions. It implements a Bayesian framework to identify the most likely set of causal variants by integrating GWAS summary statistics with Linkage Disequilibrium (LD) information. It is designed for high-performance analysis, supporting multiple causal variants per locus and providing efficient handling of large-scale data through custom binary formats (BCOR for correlations and BDOSE for dosages).
 
-## Usage
+## Core Workflows
 
-Finemap operates by taking summary statistics from genetic association studies and using them to calculate posterior probabilities for each SNP being causal. It can also estimate heritability contributions from these SNPs.
+### 1. Basic Fine-Mapping (SSS)
+The Stochastic Search Strategy (SSS) is the primary method for identifying causal variants.
 
-### Core Functionality and Input
+```bash
+finemap --sss --in-files <master_file> [options]
+```
 
-Finemap primarily works with summary statistics from association studies. The most common input format is a tab-separated file containing:
+**Key Options:**
+- `--n-causal-snps`: Maximum number of causal variants to search for (default is 5).
+- `--prior-snps`: Prior probability of a SNP being causal.
+- `--prob-threshold`: Threshold for including configurations in the output.
 
-*   **SNP**: rsID of the SNP
-*   **A1**: Allele 1 (reference allele)
-*   **A2**: Allele 2 (alternative allele)
-*   **Z**: Z-score for the association test
-*   **N**: Sample size for the SNP
+### 2. Input File Preparation
+FINEMAP requires a "master" file that points to the specific data files for each locus. The master file is a space-delimited text file with the following header:
+`z;ld;snp;config;cred;log;n_samples`
 
-You can also provide LD (Linkage Disequilibrium) information, which is crucial for accurate fine-mapping. Finemap can accept LD matrices directly or generate them from VCF files.
+- **Z-file**: Contains summary statistics (rsid, chromosome, position, allele1, allele2, maf, beta, se).
+- **LD-file**: Contains the SNP correlation matrix (text or BCOR format).
+- **SNP-file**: Output file for SNP-level posterior probabilities.
+- **Config-file**: Output file for configuration-level probabilities.
+- **Cred-file**: Output file for credible sets.
 
-### Common CLI Patterns
+### 3. Working with Binary Formats
+FINEMAP uses optimized binary formats to handle large datasets efficiently.
 
-Here are some common ways to use Finemap:
+#### BCOR (Binary Correlation) v1.1
+Used for storing SNP correlation matrices.
+- **Compression Levels**: Supports 1-byte (level 3), 2-byte (level 0), 4-byte (level 1), and 8-byte (level 2) precision.
+- **Missing Values**: Coded specifically based on compression level (e.g., `53248` for 2-byte).
+- **Conversion**: Integer values $y$ are converted to floating-point $x$ via $x = 2^{(2 - 8 \times N_{bytes})} \times y - 1$.
 
-1.  **Basic Fine-mapping with Summary Statistics:**
-    ```bash
-    finemap --sumstats <summary_stats.txt> --output <output_prefix>
-    ```
-    This command performs fine-mapping using only the provided summary statistics.
+#### BDOSE (Binary Dosage) v1.1
+Used for storing standardized dosages.
+- **Structure**: Includes a header with BGEN metadata, SNP identifiers, sample IDs, and Zstandard compressed dosage data.
+- **Conversion**: Dosage values $y$ are converted to floating-point $x$ via $x = 2^{(2 - 8 \times N_{bytes})} \times y$.
 
-2.  **Fine-mapping with Summary Statistics and LD Matrix:**
-    ```bash
-    finemap --sumstats <summary_stats.txt> --ld <ld_matrix.ld> --output <output_prefix>
-    ```
-    Providing an LD matrix (`.ld` file) significantly improves the accuracy of the fine-mapping results.
+## Expert Tips and Best Practices
 
-3.  **Estimating Heritability:**
-    ```bash
-    finemap --sumstats <summary_stats.txt> --heritability --output <output_prefix>
-    ```
-    This option focuses on estimating the heritability explained by the SNPs in the summary statistics.
+- **Allele Alignment**: Ensure that the effect alleles (allele2) in your Z-file are consistent with the alleles used to calculate the LD matrix. Misalignment will lead to incorrect causal variant identification.
+- **Sample Size**: Always provide the correct sample size ($N$) in the master file, as this directly impacts the calculation of the Bayes Factors.
+- **BCOR vs. Text LD**: For regions with more than 5,000 SNPs, always use the BCOR format. It significantly reduces memory overhead and speeds up the stochastic search.
+- **Convergence Check**: Review the `.log` file output to ensure the SSS algorithm has converged. If the number of causal variants identified is equal to `--n-causal-snps`, consider increasing the limit.
+- **Standardization**: FINEMAP expects summary statistics to be standardized. If using non-standardized betas, ensure the standard errors are correctly scaled.
 
-4.  **Using a Region File:**
-    You can specify a region file to analyze specific genomic intervals:
-    ```bash
-    finemap --sumstats <summary_stats.txt> --region <region_file.txt> --output <output_prefix>
-    ```
-    The region file typically contains columns like `CHR`, `BP`, and `SNP` to define the regions of interest.
 
-### Expert Tips
 
-*   **LD Matrix Generation:** If you don't have a pre-computed LD matrix, you can generate one from a VCF file using tools like `plink` or `ldak`. Ensure the LD matrix is in the correct format for Finemap.
-*   **Allele Matching:** It is critical that the alleles in your summary statistics (`A1`, `A2`) are consistent with the alleles in your LD reference panel. Mismatched alleles can lead to incorrect results.
-*   **Z-score Direction:** Ensure your Z-scores are consistently oriented with respect to one of the alleles (e.g., always for `A1`).
-*   **Output Files:** Finemap generates several output files, including `_config.txt`, `_log.txt`, `_results.txt`, and `_ld.txt`. The `_results.txt` file typically contains the posterior probabilities of causality for each SNP.
-*   **Parameter Tuning:** For complex datasets, consider exploring Finemap's advanced parameters for controlling the number of causal SNPs or the prior probabilities. Refer to the official Finemap documentation for a comprehensive list of options.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| finemap | Welcome to FINEMAP v1.4.2 |
+| finemap | Welcome to FINEMAP v1.4.2 |
 
 ## Reference documentation
-- [Finemap Overview](./references/anaconda_org_channels_bioconda_packages_finemap_overview.md)
+- [BCOR v1.1 file format](./references/www_christianbenner_com_bcor_v1.1.html.md)
+- [BDOSE v1.1 file format](./references/www_christianbenner_com_bdose_v1.1.html.md)
+- [BDOSE v1.0 file format](./references/www_christianbenner_com_bdose_v1.0.html.md)
+- [FINEMAP Overview](./references/anaconda_org_channels_bioconda_packages_finemap_overview.md)

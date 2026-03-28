@@ -1,6 +1,6 @@
 ---
 name: isoncorrect
-description: isONcorrect is a tool designed for error-correcting ONT cDNA reads by leveraging shared exon regions across isoforms. Use when user asks to error-correct transcriptomic reads, process gene-level clusters in batch, or improve the accuracy of low-abundance transcripts.
+description: isONcorrect performs de novo error correction on Oxford Nanopore cDNA sequencing data to improve base-level accuracy across transcript isoforms. Use when user asks to error correct long-read transcriptome data, improve the accuracy of ONT cDNA reads, or process clustered isoforms for high-quality consensus sequences.
 homepage: https://github.com/ksahlin/isONcorrect
 ---
 
@@ -8,59 +8,65 @@ homepage: https://github.com/ksahlin/isONcorrect
 # isoncorrect
 
 ## Overview
-isONcorrect is a specialized tool for error-correcting ONT cDNA reads. Unlike genomic error-correctors, it is designed to handle the unique challenges of transcriptomics, such as alternative splicing and extreme differences in transcript abundance. It leverages shared exon regions across different isoforms to correct low-abundance transcripts using information from high-abundance ones. This skill provides guidance on running the standalone corrector and the recommended multi-step pipeline.
+isONcorrect is a specialized tool designed to improve the base-level accuracy of Oxford Nanopore cDNA sequencing data. While standard genomic error-correctors often struggle with the uneven coverage and alternative splicing patterns found in transcriptomes, isONcorrect leverages shared regions across different isoforms to correct even low-abundance transcripts. It is typically used as the final step in a pipeline following transcript classification (pychopper) and clustering (isONclust).
 
-## Installation and Setup
-The tool is primarily distributed via Bioconda. It requires `spoa` as a critical dependency.
+## Installation and Environment
+The tool is primarily distributed via Conda and Pip. It requires `spoa` as a core dependency.
 
 ```bash
-# Recommended installation via Conda
-conda create -n isoncorrect python=3.9
+# Recommended setup
+conda create -n isoncorrect python=3.9 pip
 conda activate isoncorrect
-conda install -c bioconda isoncorrect spoa
+pip install isONcorrect
+conda install -c bioconda spoa
 ```
 
 ## Core Usage Patterns
 
-### Single Cluster Correction
-Use the base command when you have a specific set of reads (e.g., from a single gene cluster) that needs correction.
-
+### Correcting a Single Cluster
+Use the base command when processing a single FASTQ file (usually representing one gene cluster).
 ```bash
-isONcorrect --fastq input_cluster.fastq --outfolder ./output_dir --t 8
+isONcorrect --fastq path/to/cluster.fastq --outfolder output_dir
 ```
 
-### Batch Processing (Recommended)
-For full datasets, use `run_isoncorrect` to process multiple fastq files (clusters) in parallel.
-
+### Parallel Processing (Recommended)
+For full datasets, use the `run_isoncorrect` wrapper to process multiple clusters in parallel.
 ```bash
-run_isoncorrect --t 16 --fastq_folder ./clustered_fastq_dir/ --outfolder ./corrected_output/
+run_isoncorrect --t 16 --fastq_folder path/to/clusters_dir/ --outfolder output_dir/
 ```
 
-## Recommended Pipeline Workflow
-For raw ONT cDNA reads, the author recommends a specific upstream pipeline before running isONcorrect:
+## Parameter Optimization
+The tool provides two main profiles depending on your computational resources and accuracy requirements:
 
-1.  **Full-length Identification**: Use `pychopper` (cdna_classifier.py) to identify full-length reads.
-2.  **Clustering**: Use `isONclust` to group reads into gene-level clusters.
-3.  **Fastq Generation**: Use `isONclust write_fastq` to create individual files for each cluster.
-4.  **Correction**: Run `run_isoncorrect` on the folder containing the cluster files.
+*   **Default Profile (v0.0.8+):** Optimized for speed and memory efficiency.
+    *   Parameters: `--k 9 --w 20 --max_seqs 2000`
+    *   Performance: 2-3x faster, 3-8x less memory, ~98.5-99.3% accuracy.
+*   **High Accuracy Profile:** Matches the original published results.
+    *   Parameters: `--k 9 --w 10 --max_seqs 1000`
+    *   Performance: Higher resource usage, ~98.9-99.6% accuracy.
 
-## Expert Tips and Parameters
+## Recommended Workflow
+To achieve optimal results with ONT cDNA reads, follow this sequential pipeline:
+1.  **Classification:** Run `pychopper` to identify full-length reads and orient them.
+2.  **Clustering:** Run `isONclust` to group reads by gene or gene family.
+3.  **Extraction:** Use `isONclust write_fastq` to generate individual FASTQ files for each cluster.
+4.  **Correction:** Run `run_isoncorrect` on the folder of clustered FASTQ files.
 
-### Accuracy vs. Performance
-Since version 0.0.8, default parameters prioritize speed and memory efficiency.
-*   **Default (Fast)**: `--k 9 --w 20 --max_seqs 2000` (98.5-99.3% accuracy).
-*   **High Accuracy (Paper Settings)**: `--k 9 --w 10 --max_seqs 1000` (98.9-99.6% accuracy).
+## Expert Tips
+*   **Memory Management:** If the tool crashes on very large clusters, reduce the `--max_seqs` parameter to limit the number of sequences used for the correction of a single read.
+*   **Input Quality:** While isONcorrect does not strictly require full-length reads, using `pychopper` first is highly recommended for downstream transcriptome analysis to ensure biological validity.
+*   **Output Headers:** The tool preserves the original read headers in the output FASTQ, making it easy to map corrected reads back to their original metadata.
 
-### Handling Large Clusters
-If your data contains targeted sequences or extremely high-abundance genes, `isONclust` may produce a few massive clusters that bottleneck the process.
-*   **Optimization**: Add the `--split_wrt_batches` flag to `run_isoncorrect` to improve load balancing across cores for uneven cluster sizes.
 
-### Output Structure
-The tool generates one `corrected_reads.fastq` file per input cluster. To create a final dataset for downstream analysis (like mapping or isoform collapse), concatenate these files:
-```bash
-cat ./corrected_output/*/corrected_reads.fastq > all_corrected_reads.fq
-```
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| isONcorrect | De novo error correction of long-read transcriptome reads |
+| run_isoncorrect | De novo clustering of long-read transcriptome reads |
 
 ## Reference documentation
-- [isONcorrect GitHub Repository](./references/github_com_ksahlin_isONcorrect.md)
-- [Bioconda isoncorrect Overview](./references/anaconda_org_channels_bioconda_packages_isoncorrect_overview.md)
+- [isONcorrect README](./references/github_com_ksahlin_isONcorrect_blob_master_README.md)
+- [Correction Pipeline Script](./references/github_com_ksahlin_isONcorrect_blob_master_scripts_correction_pipeline.sh.md)
+- [Project Configuration](./references/github_com_ksahlin_isONcorrect_blob_master_pyproject.toml.md)

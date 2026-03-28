@@ -163,3 +163,6 @@ ARGS:
     <FILES>...    Path(s) to mtsv results files to collapse
 ```
 
+
+## Metadata
+- **Skill**: generated

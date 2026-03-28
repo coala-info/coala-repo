@@ -98,3 +98,6 @@ Usage: Rscript  batch_correction_wrapper.R {args}
  	rdata_output {file}: set the output Rdata file (mandatory)
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -192,3 +192,6 @@ ARGS:
     <input-query>    The input query as a .fasta file
 ```
 
+
+## Metadata
+- **Skill**: generated

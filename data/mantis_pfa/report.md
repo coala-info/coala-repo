@@ -104,3 +104,6 @@ There is no command "check_sql"
         mantis -v
 ```
 
+
+## Metadata
+- **Skill**: generated

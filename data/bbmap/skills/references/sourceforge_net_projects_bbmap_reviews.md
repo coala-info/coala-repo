@@ -58,10 +58,10 @@ Brought to you by:
 [1 Review](/projects/bbmap/reviews/ "BBMap Reviews")
 
 **Downloads:**
-496 This Week
+767 This Week
 
 **Last Update:**
-4 days ago
+2026-03-10
 
 [![](//a.fsdn.com/con/images/sandiego/sf-icon-black.svg) Download](/projects/bbmap/files/latest/download "Download BBMap_39.80.tar.gz from SourceForge  - 54.4 MB")
 
@@ -234,8 +234,6 @@ Your Opt-Out Rights
 [Terms](https://slashdotmedia.com/terms-of-use "Terms")
 [Privacy](https://slashdotmedia.com/privacy-statement/ "Privacy")
 [Advertise](https://slashdotmedia.com/contact/ "Advertise")
-
-![Retool Logo](//a.fsdn.com/con/img/retool.png)
 
 ![Retool Logo](https://a.fsdn.com/con/img/retool.png)
 

@@ -1,0 +1,135 @@
+[adVNTR](index.html)
+
+latest
+
+* [FAQ](faq.html)
+* Installation
+  + [Install adVNTR with conda](#install-advntr-with-conda)
+  + [Data Requirements](#data-requirements)
+  + [Execution:](#execution)
+  + [Demo: input in BAM format](#demo-input-in-bam-format)
+  + [Install from source (Not recommended)](#install-from-source-not-recommended)
+    - [Dependencies](#dependencies)
+    - [To Install](#to-install)
+* [Quick Start](quickstart.html)
+* [Tutorial](tutorial.html)
+
+[adVNTR](index.html)
+
+* [Docs](index.html) »
+* Installation
+* [Edit on GitHub](https://github.com/mehrdadbakhtiari/adVNTR/blob/master/docs/installation.rst)
+
+---
+
+# Installation[¶](#installation "Permalink to this headline")
+
+In order to use adVNTR, it is recommended to (1) install adVNTR using conda packaging manager and (2) download the
+predefined models for human genome from [Data Requirements](#data-requirements) section. However, you can install it from the source
+and/or use custom models.
+
+## Install adVNTR with conda[¶](#install-advntr-with-conda "Permalink to this headline")
+
+If you are using the conda packaging manager (e.g. [miniconda](https://docs.conda.io/en/latest/miniconda.html) or anaconda),
+you can install adVNTR from the [bioconda channel](https://bioconda.github.io/):
+
+```
+conda config --add channels bioconda
+conda install advntr
+```
+
+adVNTR could be invoked from command line with `advntr`
+
+## Data Requirements[¶](#data-requirements "Permalink to this headline")
+
+In order to genotype VNTRs, you need to either train models for loci of interest or use pre-trained models (recommended):
+\* To run adVNTR on trained VNTR models:
+
+> * Download [vntr\_data\_recommended\_loci.zip](https://cseweb.ucsd.edu/~mbakhtia/adVNTR/vntr_data_recommended_loci.zip) and extract it inside the project directory. This includes a set of pre-trained VNTR models in hg19 for Illumina (6719 loci) and Pacbio (8960 loci) sequencing data. You can use [vntr\_data\_recommended\_loci\_hg38.zip](https://cseweb.ucsd.edu/~mbakhtia/adVNTR/vntr_data_recommended_loci_hg38.zip) for VNTRs in GRCh38.
+> * You can also download and use [vntr\_data\_genic\_loci.zip](https://cseweb.ucsd.edu/~mbakhtia/adVNTR/vntr_data_genic_loci.zip) for 158522 VNTRs in hg19 that results in having much longer running time.
+
+Alternatively, you can add model for custom VNTR. See [Add Custom VNTR](tutorial.html#add-custom-vntr-label) for more information about training models for custom VNTRs.
+
+## Execution:[¶](#execution "Permalink to this headline")
+
+Use following command to see the help for running the tool.
+
+```
+advntr --help
+```
+
+The program outputs the RU count genotypes of VNTRs. To specify a single VNTR by its ID use `--vntr_id <id>` option.
+The list of some known VNTRs and their ID is available at [Disease-linked-VNTRs page](https://github.com/mehrdadbakhtiari/adVNTR/wiki/Disease-linked-VNTRs) in wiki.
+
+See the demo execution here or [Quick Start](quickstart.html#quickstart) page to see an example data set with step-by-step genotyping commands.
+
+## Demo: input in BAM format[¶](#demo-input-in-bam-format "Permalink to this headline")
+
+* `--alignment_file` specifies the alignment file containing mapped and unmapped reads:
+
+```
+advntr genotype --alignment_file aligned_illumina_reads.bam --working_directory ./log_dir/
+```
+
+* With `--pacbio`, adVNTR assumes the alignment file contains PacBio sequencing data:
+
+```
+advntr genotype --alignment_file aligned_pacbio_reads.bam --working_directory ./log_dir/ --pacbio
+```
+
+* Use `--frameshift` to find the possible frameshifts in VNTR:
+
+```
+advntr genotype --alignment_file aligned_illumina_reads.bam --working_directory ./log_dir/ --frameshift
+```
+
+## Install from source (Not recommended)[¶](#install-from-source-not-recommended "Permalink to this headline")
+
+You can also install adVNTR from the source instead of using conda. First, you need to install the following packages:
+
+### Dependencies[¶](#dependencies "Permalink to this headline")
+
+1. Following libraries are required to be installed on the system:
+   :   * `python2.7`
+       * `python-pip`
+       * `python-tk`
+       * `libz-dev`
+       * `samtools`
+       * `muscle`
+
+You can install these requirement in Ubuntu Linux by running `sudo apt-get install python2.7 python-pip python-tk libz-dev samtools muscle`
+To install these packages on Mac OS, you can use [Homebrew](https://brew.sh/).
+
+2. Following python2.7 packages are required:
+   :   * `biopython`
+       * `pysam` version 0.9.1.4 or above
+       * `cython`
+       * `networkx` version 1.11
+       * `scipy`
+       * `joblib`
+       * `scikit-learn`
+
+You can install required python libraries by running `pip install -r requirements.txt`
+
+### To Install[¶](#to-install "Permalink to this headline")
+
+To get the latest version and install it locally, run:
+
+```
+git clone https://github.com/mehrdadbakhtiari/adVNTR
+cd adVNTR
+make; make install
+python setup.py install
+```
+
+adVNTR could be invoked from command line with `advntr`
+
+[Next](publication.html "<no title>")
+ [Previous](faq.html "FAQ")
+
+---
+
+© Copyright 2018, Mehrdad Bakhtiari
+Revision `87ac49e4`.
+
+Built with [Sphinx](http://sphinx-doc.org/) using a [theme](https://github.com/rtfd/sphinx_rtd_theme) provided by [Read the Docs](https://readthedocs.org).

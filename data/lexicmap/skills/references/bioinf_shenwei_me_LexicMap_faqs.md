@@ -1,0 +1,326 @@
+[Skip to main content](#main-content)
+
+[ ]
+[ ]
+
+Open Navigation
+
+Close Navigation
+
+[![](/LexicMap/logo.svg)
+LexicMap: efficient sequence alignment against millions of prokaryotic genomes​](https://bioinf.shenwei.me/LexicMap/)
+
+[GitHub](https://github.com/shenwei356/LexicMap)
+
+Toggle Dark/Light/Auto mode
+
+Toggle Dark/Light/Auto mode
+
+Toggle Dark/Light/Auto mode
+
+[Back to homepage](https://bioinf.shenwei.me/LexicMap/)
+
+Close Menu Bar
+
+Open Menu Bar
+
+## Navigation
+
+* [ ]
+
+  [Introduction](/LexicMap/introduction/)
+* [ ]
+
+  [Installation](/LexicMap/installation/)
+* [ ]
+
+  [Releases](/LexicMap/releases/)
+* [ ]
+
+  Tutorials
+  + [ ]
+
+    [Step 1. Building a database](/LexicMap/tutorials/index/)
+  + [ ]
+
+    [Step 2. Searching](/LexicMap/tutorials/search/)
+  + [ ]
+
+    More
+
+    - [ ]
+
+      [Indexing GTDB](/LexicMap/tutorials/misc/index-gtdb/)
+    - [ ]
+
+      [Indexing GenBank+RefSeq](/LexicMap/tutorials/misc/index-genbank/)
+    - [ ]
+
+      [Indexing AllTheBacteria](/LexicMap/tutorials/misc/index-allthebacteria/)
+    - [ ]
+
+      [Indexing GlobDB](/LexicMap/tutorials/misc/index-globdb/)
+    - [ ]
+
+      [Indexing UHGG](/LexicMap/tutorials/misc/index-uhgg/)
+* [ ]
+
+  Usage
+  + [ ]
+
+    [lexicmap](/LexicMap/usage/lexicmap/)
+  + [ ]
+
+    [index](/LexicMap/usage/index/)
+  + [ ]
+
+    [search](/LexicMap/usage/search/)
+  + [ ]
+
+    [utils](/LexicMap/usage/utils/)
+
+    - [ ]
+
+      [2blast](/LexicMap/usage/utils/2blast/)
+    - [ ]
+
+      [2sam](/LexicMap/usage/utils/2sam/)
+    - [ ]
+
+      [merge-search-results](/LexicMap/usage/utils/merge-search-results/)
+    - [ ]
+
+      [masks](/LexicMap/usage/utils/masks/)
+    - [ ]
+
+      [kmers](/LexicMap/usage/utils/kmers/)
+    - [ ]
+
+      [genomes](/LexicMap/usage/utils/genomes/)
+    - [ ]
+
+      [subseq](/LexicMap/usage/utils/subseq/)
+    - [ ]
+
+      [seed-pos](/LexicMap/usage/utils/seed-pos/)
+    - [ ]
+
+      [reindex-seeds](/LexicMap/usage/utils/reindex-seeds/)
+    - [ ]
+
+      [remerge](/LexicMap/usage/utils/remerge/)
+    - [ ]
+
+      [edit-genome-ids](/LexicMap/usage/utils/edit-genome-ids/)
+* [ ]
+
+  [FAQs](/LexicMap/faqs/)
+* [ ]
+
+  Notes
+  + [ ]
+
+    [Motivation](/LexicMap/notes/motivation/)
+
+## More
+
+* [ ]
+
+  [More tools](https://github.com/shenwei356)
+
+2. /
+3. FAQs
+
+# FAQs
+
+## Table of contents
+
+* [Table of contents](#table-of-contents)
+* [Does LexicMap support short reads?](#does-lexicmap-support-short-reads)
+* [Does LexicMap support fungi genomes?](#does-lexicmap-support-fungi-genomes)
+* [How’s the hardware requirement?](#hows-the-hardware-requirement)
+* [How to resume the indexing as Slurm job time limit is almost reached while lexicmap index is still in the merging step?](#how-to-resume-the-indexing-as-slurm-job-time-limit-is-almost-reached-while-lexicmap-index-is-still-in-the-merging-step)
+* [Can I extract the matched sequences?](#can-i-extract-the-matched-sequences)
+* [How can I extract the upstream and downstream flanking sequences of matched regions?](#how-can-i-extract-the-upstream-and-downstream-flanking-sequences-of-matched-regions)
+* [Why isn’t the pident 100% when aligning with a sequence from the reference genomes?](#why-isnt-the-pident-100-when-aligning-with-a-sequence-from-the-reference-genomes)
+* [Why is LexicMap slow for batch searching?](#why-is-lexicmap-slow-for-batch-searching)
+* [How can I know if an index is compatible with a LexicMap version? Should I rebuild an existing index?](#how-can-i-know-if-an-index-is-compatible-with-a-lexicmap-version-should-i-rebuild-an-existing-index)
+
+---
+
+## Does LexicMap support short reads?
+
+**LexicMap is mainly designed for sequence alignment with a small number of queries (gene/plasmid/virus/phage sequences) longer than 150 bp by default**.
+
+**If you want to search some short reads, you need to build the index with small `-D/--seed-max-desert` (default 100) and `-d/--seed-in-desert-dist` (default 50), e.g., `-D 60 -d 30` for 125bp reads, or `-D 50 -D 25` for 100bp reads**. It will increase the indexing time and increase the index size. Don’t worry this, if you have a small scale of genomes, like < 10,000.
+
+If you just want to search long (>1kb) queries for highly similar (>95%) targets, you can build an index with a bigger `-D/--seed-max-desert` (default 100) and `-d/--seed-in-desert-dist` (default 50), e.g., `-D 300 -d 150`. Bigger values decrease the search sensitivity for distant targets, speed up the indexing
+speed, decrease the indexing memory occupation and decrease the index size. While the alignment speed is almost not affected.
+
+Note that **LexicMap is slow for ultra-long (>1Mb) queries, and the alignment might be fragmented**.
+
+## Does LexicMap support fungi genomes?
+
+Yes. LexicMap mainly supports small genomes including prokaryotic, viral, and plasmid genomes.
+**Fungi can also be supported, just remember to increase the value of `-g/--max-genome` when running `lexicmap index`,
+which is used to skip genomes larger than 15Mb by default**.
+
+```
+  -g, --max-genome int            ► Maximum genome size. Extremely large genomes (e.g., non-isolate
+                                  assemblies from Genbank) will be skipped. (default 15000000)
+```
+
+Maximum genome size is about 268 Mb (268,435,456). More precisely:
+
+```
+$total_bases + ($num_contigs - 1) * 1000 <= 268,435,456
+```
+
+as we concatenate contigs with 1000-bp intervals of N’s to reduce the sequence scale to index.
+
+For big and complex genomes, like the human genome (chr1 is ~248 Mb) which has many repetitive sequences, LexicMap would be slow to align.
+Since v0.9.0, you can set a small value of `-N, --top-n-chains` to keep a few matches if you only want to check if sequences match any position in a human genome, which would be faster.
+
+## How’s the hardware requirement?
+
+* For index building. See details [hardware requirement](https://bioinf.shenwei.me/LexicMap/tutorials/index/#hardware-requirements).
+* For seaching. See details [hardware requirement](https://bioinf.shenwei.me/LexicMap/tutorials/search/#hardware-requirements).
+
+## How to resume the indexing as Slurm job time limit is almost reached while lexicmap index is still in the merging step?
+
+Use [lexicmap utils remerge](https://bioinf.shenwei.me/LexicMap/usage/utils/remerge/) (available since v0.5.0), which reruns the merging step for an unfinished index.
+
+> When to use this command?
+>
+> * Only one thread is used for merging indexes, which happens when there are
+>   a lot (>200 batches) of batches (`$inpu_files / --batch-size`) and the value
+>   of `--max-open-files` is not big enough.
+> * The Slurm/PBS job time limit is almost reached and the merging step won’t be finished before that.
+> * Disk quota is reached in the merging step.
+
+So you can stop the indexing command by press `Ctrl` + `C` (**make sure it is in the merging step**, see example below), and run `lexicmap utils remerge -d index.lmi`,
+where `index.lmi` is the output index directory in `lexicmap index`.
+
+Optionally, you might set bigger values of
+flag `--max-open-files` and `-J/--seed-data-threads` if you have hundreds of thousands of input genomes or have set
+a small batch size with `-b/--batch-size`. E.g.,
+
+```
+22:54:24.420 [INFO] merging 297 indexes...
+22:54:24.455 [INFO]   [round 1]
+22:54:24.455 [INFO]     batch 1/1, merging 297 indexes to xxx.lmi.tmp/r1_b1 with 1 threads...
+```
+
+There’s only one thread was used for seed data merging, it would take a long time.
+So we can set a larger `--max-open-files`, e.g., `4096`,
+and it would allow `4096 / (297+2) = 13.7` threads for merging, let’s set `--seed-data-threads 12`.
+
+```
+# specify the maximum open files per process
+ulimit -n 4096
+
+lexicmap utils remerge -d index.lmi --max-open-files 4096 --seed-data-threads 12
+```
+
+## Can I extract the matched sequences?
+
+**Update: since v0.8.0, it’s simpler with `lexicmap utils subseq`**.
+See [more examples](https://bioinf.shenwei.me/LexicMap/usage/utils/subseq/).
+
+```
+# Extracting similar sequences for a query gene.
+
+# search matches with query coverage >= 90%
+lexicmap search -d demo.lmi/ bench/b.gene_E_faecalis_SecY.fasta -o results.tsv \
+    --min-qcov-per-hsp 90
+
+# extract matched sequences as FASTA format
+lexicmap utils subseq -d demo.lmi -f results.tsv -o results.tsv.aligned.fasta
+
+seqkit head -n 1 results.tsv.aligned.fasta | head -n 3
+>NZ_KB944588.1:228637-229935:+ sgenome=GCF_000392875.1 sseqid=NZ_KB944588.1 qcovGnm=100.000 cls=1 hsp=1 qcovHSP=100.000 alenHSP=1299 pident=100.000 gaps=0 qstart=1 qend=1299 sstart=228637 send=229935 sstr=+ slen=274762 evalue=0.00e+00 bitscore=2343
+TTGTTCAAGCTATTAAAGAACGCCTTTAAAGTCAAAGACATTAGATCAAAAATCTTATTT
+ACAGTTTTAATCTTGTTTGTATTTCGCCTAGGTGCGCACATTACTGTGCCCGGGGTGAAT
+```
+
+---
+
+**For v0.7.0 or older versions:**
+
+Yes, `lexicmap search` has a flag
+
+```
+  -a, --all                            ► Output more columns, e.g., matched sequences. Use this if you
+                                       want to output blast-style format with "lexicmap utils 2blast".
+```
+
+to output CIGAR string, aligned query and subject sequences.
+
+```
+21. cigar,    CIGAR string of the alignment.                      (optional with -a/--all)
+22. qseq,     Aligned part of query sequence.                     (optional with -a/--all)
+23. sseq,     Aligned part of subject sequence.                   (optional with -a/--all)
+24. align,    Alignment text ("|" and " ") between qseq and sseq. (optional with -a/--all)
+```
+
+An example:
+
+```
+# Extracting similar sequences for a query gene.
+
+# search matches with query coverage >= 90%
+lexicmap search -d gtdb_complete.lmi/ b.gene_E_faecalis_SecY.fasta -o results.tsv \
+    --min-qcov-per-hsp 90 --all
+
+# extract matched sequences as FASTA format
+sed 1d results.tsv | awk -F'\t' '{print ">"$5":"$15"-"$16":"$17"\n"$23;}' \
+    | seqkit seq -g > results.fasta
+
+seqkit head -n 1 results.fasta | head -n 3
+>NZ_JALSCK010000007.1:39224-40522:-
+TTGTTCAAGCTATTAAAGAACGCCTTTAAAGTCAAAGACATTAGATCAAAAATCTTATTT
+ACAGTTTTAATCTTGTTTGTATTTCGCCTAGGTGCGCACATTACTGTGCCCGGGGTGAAT
+```
+
+And `lexicmap util 2blast` can help to convert the tabular format to Blast-style format,
+see [examples](https://bioinf.shenwei.me/LexicMap/usage/utils/2blast/#examples).
+
+## How can I extract the upstream and downstream flanking sequences of matched regions?
+
+[lexicmap utils subseq](https://bioinf.shenwei.me/LexicMap/usage/utils/subseq/)
+can extract subsequencess via genome ID, sequence ID and positions.
+So you can use these information from the search result and expand the region positions to extract flanking sequences.
+
+**Update: since v0.8.0, you can extract the extended aligned region with `lexicmap utils subseq`**.
+See [more examples](https://bioinf.shenwei.me/LexicMap/usage/utils/subseq/).
+
+## Why isn’t the pident 100% when aligning with a sequence from the reference genomes?
+
+It happens if there are some degenerate bases (e.g., `N`) in the query sequence.
+In the indexing step, all degenerate bases are converted to their lexicographic first bases. E.g., `N` is converted to `A`.
+While for the query sequences, we don’t convert them.
+
+## Why is LexicMap slow for batch searching?
+
+LexicMap is mainly designed for sequence alignment with a small number of queries against a database with a huge number (millions) of genomes.
+
+There are some ways to improve the search speed of `lexicmap search`:
+<http://bioinf.shenwei.me/LexicMap/tutorials/search/#improving-searching-speed>
+
+[Click](/LexicMap/usage/search/)
+to read more detail of the usage.
+
+## How can I know if an index is compatible with a LexicMap version? Should I rebuild an existing index?
+
+LexicMap is under active development, but we are striving to preserve index compatibility as we implement new features and improvements.
+The change history and compatibility information are available [here](https://bioinf.shenwei.me/LexicMap/tutorials/index/#index-format-changelog).
+
+[*gdoc\_arrow\_left\_alt*
+edit-genome-ids](/LexicMap/usage/utils/edit-genome-ids/ "edit-genome-ids")
+
+[Motivation
+*gdoc\_arrow\_right\_alt*](/LexicMap/notes/motivation/ "Motivation")
+
+Built with [Hugo](https://gohugo.io/) and
+
+Back to top

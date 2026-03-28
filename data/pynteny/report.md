@@ -255,3 +255,6 @@ If you use this software, please cite it as below:
 Semidán Robaina Estévez (2022). Pynteny: synteny-aware hmm searches made easy(Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.7048685
 ```
 
+
+## Metadata
+- **Skill**: generated

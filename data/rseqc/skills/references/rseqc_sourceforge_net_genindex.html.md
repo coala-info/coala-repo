@@ -1,1 +1,20 @@
-Index &#8212; RSeQC documentation Navigation index RSeQC documentation &#187; Index Index Quick search Navigation index RSeQC documentation &#187; Index &#169; Copyright 2024, Liguo Wang. Created using Sphinx 8.0.2.
+### Navigation
+
+* index
+* [RSeQC documentation](index.html) »
+* Index
+
+# Index
+
+[![Logo of RSeQC](_static/logo.png)](index.html)
+
+### Quick search
+
+### Navigation
+
+* index
+* [RSeQC documentation](index.html) »
+* Index
+
+© Copyright 2024, Liguo Wang.
+Created using [Sphinx](https://www.sphinx-doc.org/) 8.0.2.

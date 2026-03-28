@@ -1,6 +1,6 @@
 ---
 name: zamp
-description: zAMP is a bioinformatics pipeline for analyzing amplicon-based metagenomic data. Use when user asks to prepare a taxonomic database, run a metagenomics pipeline, process metagenomic samples, filter or trim reads, or generate citations.
+description: zAMP is a command-line interface for reproducible amplicon-based metagenomics that processes raw sequencing data into taxonomic insights. Use when user asks to prepare reference databases, execute end-to-end analysis pipelines, or generate visualizations for metagenomic datasets.
 homepage: https://github.com/metagenlab/zAMP/
 ---
 
@@ -9,54 +9,49 @@ homepage: https://github.com/metagenlab/zAMP/
 
 ## Overview
 
-zAMP is a bioinformatic pipeline built on Snakemake designed for the analysis of amplicon-based metagenomic data. It provides a streamlined workflow for processing 16S rRNA or ITS Illumina paired-end reads, covering everything from raw data quality control to Amplicon Sequence Variant (ASV) inference and taxonomic assignment. This skill should be used to guide the preparation of reference databases and the execution of the metagenomics pipeline, especially when high reproducibility and scalability are required.
+zAMP is a specialized command-line interface for reproducible amplicon-based metagenomics. It streamlines the transition from raw sequencing data (local FASTQ or SRA accessions) to taxonomic insights. You should use this skill when you need to:
+1. **Prepare Reference Databases**: Train taxonomic classifiers on specific primer regions (e.g., SILVA, Greengenes2, UNITE) to improve sensitivity.
+2. **Execute Analysis Pipelines**: Perform end-to-end processing including read QC, Amplicon Sequence Variant (ASV) inference, and taxonomic classification.
+3. **Generate Visualizations**: Produce basic plots and summary statistics for metagenomic datasets.
 
-## Core CLI Usage
+## CLI Usage and Best Practices
 
-The zAMP tool operates through a primary command-line interface with two main functional subcommands: `db` and `run`.
+The `zamp` tool follows a standard subcommand structure: `zamp [COMMAND] [ARGS]`.
 
 ### 1. Database Preparation (`zamp db`)
+Before running an analysis, you must prepare a database tailored to your primers. This increases the accuracy of taxonomic assignments.
 
-Before running the analysis, you must prepare a taxonomic database. This step allows zAMP to train classifiers on specific primer-amplified regions, which significantly increases taxonomic sensitivity.
+*   **Standard Pattern**:
+    ```bash
+    zamp db --fasta <ref_dna.fasta> --taxonomy <ref_tax.tsv> --name <db_name> --fw-primer <SEQ> --rv-primer <SEQ> -o <output_dir>
+    ```
+*   **Expert Tip**: When using Greengenes2, ensure you have exported the `.qza` files to `.fasta` and `.tsv` formats using QIIME2 before passing them to `zamp db`.
 
-**Common Pattern:**
-```bash
-zamp db --fasta <database_fasta> \
-        --taxonomy <taxonomy_tsv> \
-        --name <database_name> \
-        --fw-primer <forward_primer_sequence> \
-        --rv-primer <reverse_primer_sequence> \
-        -o <output_directory>
-```
+### 2. Running the Pipeline (`zamp run`)
+The `run` command executes the actual analysis. It requires an input sample sheet and a prepared database.
 
-**Best Practices:**
-- Ensure primers are provided without adapters or barcodes.
-- Use standard databases like Greengenes2, SILVA, or UNITE as the source for fasta and taxonomy files.
-- If using Qiime2 artifacts (.qza), they must be exported to standard formats (fasta/tsv) before using `zamp db`.
+*   **Input Format**: Use a TSV file (e.g., `samples.tsv`) containing sample IDs and paths to FASTQ files or SRA accessions.
+*   **Execution Pattern**:
+    ```bash
+    zamp run -i <samples.tsv> -db <prepared_db_name> --fw-primer <SEQ> --rv-primer <SEQ>
+    ```
+*   **Resource Management**: Since `zamp` is built on Snakemake, it inherits Snakemake's ability to handle resource allocation. Ensure `mamba` and `apptainer` are available in your environment for dependency management.
 
-### 2. Executing the Pipeline (`zamp run`)
+### 3. Common CLI Options
+*   `-h, --help`: Access specific help for `db` or `run` subcommands.
+*   `-v, --version`: Verify the installed version of the pipeline.
+*   `citation`: Use this to generate the necessary citations for the tools bundled within the pipeline (e.g., DADA2, VSEARCH).
 
-Once the database is prepared, use the `run` command to process your samples.
 
-**Common Pattern:**
-```bash
-zamp run -i <samples_sheet.tsv> \
-         -db <database_name> \
-         --fw-primer <forward_primer_sequence> \
-         --rv-primer <reverse_primer_sequence>
-```
 
-**Input Requirements:**
-- The input file (`-i`) should be a tab-separated values (TSV) file containing sample identifiers and paths to local fastq files or SRA accessions.
+## Subcommands
 
-## Expert Tips and Best Practices
-
-- **Primer Consistency**: Always use the exact same primer sequences for both the `db` and `run` commands to ensure the trained classifier matches the experimental data.
-- **Resource Management**: Since zAMP is a Snakemake-based tool, it inherently supports parallel execution. Ensure your environment (Conda/Mamba) is properly configured to allow the pipeline to manage dependencies via Apptainer or Docker if required for specific steps.
-- **Troubleshooting**: Use `zamp [command] --help` to view all available parameters, including options for read filtering, trimming, and specific DADA2 parameters.
-- **Citations**: Use `zamp citation` to generate a list of the specific tools and versions used within the pipeline for your methods section.
+| Command | Description |
+|---------|-------------|
+| insilico | Run the in-silico module for zAMP |
+| run | Run zAMP |
+| zamp db | Prepare database files for zAMP |
 
 ## Reference documentation
-
-- [zAMP GitHub Repository](./references/github_com_metagenlab_zAMP.md)
-- [zAMP Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_zamp_overview.md)
+- [zAMP GitHub Repository](./references/github_com_metagenlab_zAMP_blob_master_README.md)
+- [zAMP Documentation Overview](./references/github_com_metagenlab_zAMP.md)

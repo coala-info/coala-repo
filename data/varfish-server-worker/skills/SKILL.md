@@ -1,6 +1,6 @@
 ---
 name: varfish-server-worker
-description: varfish-server-worker processes genomic data from VCFs into optimized formats and executes complex variant queries for VarFish Server. Use when user asks to ingest sequence variants, query sequence variants, aggregate sequence variant carrier counts, ingest structural variants, convert structural variant databases to binary, query structural variants, or prefilter sequence variants.
+description: VarFish Server Worker processes genomic data by converting VCF files into optimized internal formats, building reference databases, and executing high-speed variant queries. Use when user asks to ingest sequence or structural variants, execute variant filtration queries, aggregate carrier counts, or compile reference databases into binary formats.
 homepage: https://github.com/bihealth/varfish-server-worker
 ---
 
@@ -8,59 +8,64 @@ homepage: https://github.com/bihealth/varfish-server-worker
 # varfish-server-worker
 
 ## Overview
+The `varfish-server-worker` is a specialized tool designed to handle the heavy lifting of genomic data processing within the VarFish ecosystem. It provides a command-line interface for converting standard VCF files into optimized internal formats, building binary reference databases, and executing high-speed queries for variant filtration. It is particularly useful for bioinformaticians and developers managing VarFish instances who need to automate data imports or perform on-the-fly annotation of large-scale genomic datasets.
 
-The `varfish-server-worker` is a high-performance Rust-based utility designed to handle computationally intensive background tasks for VarFish Server. It bridges the gap between raw genomic data (VCFs) and the VarFish web interface by converting data into optimized binary formats and executing complex queries. Use this tool when you need to prepare data for import into VarFish or when you need to run variant filtration workflows outside of the main server process.
+## Command Line Usage Patterns
 
-## Core Workflows
+### Sequence Variant (SNV/Indel) Processing
+Use the `seqvars` subcommand for small variants.
 
-### Sequence Variant (seqvars) Processing
-
-The `seqvars` suite is used for small variants (SNVs and indels).
-
-1.  **Ingestion**: Convert standard VCF files into the internal format required for querying.
+*   **Ingest VCF Data**: Convert a single VCF into the internal format required for querying.
     ```bash
-    varfish-server-worker seqvars ingest --input-vcf IN.vcf.gz --output-vcf OUT.vcf.gz
+    varfish-server-worker seqvars ingest --input-vcf input.vcf.gz --output-path internal_format.bin
     ```
-    *   **Note**: The tool interprets standard fields like `GT`, `GQ`, `DP`, `AD`, and `PS`.
-    *   **Annotation**: It automatically adds gnomAD (exomes/genomes) and HelixMtDb frequencies, and functional annotations (ANN field).
+    *Note: Supports GATK (HaplotypeCaller, UnifiedGenotyper) and Illumina Dragen outputs, interpreting fields like GT, GQ, DP, AD, PS, and SQ.*
 
-2.  **Querying**: Filter variants based on a JSON query configuration.
+*   **Execute Queries**: Filter variants based on a JSON query definition.
     ```bash
-    varfish-server-worker seqvars query --input-vcf INGESTED.vcf.gz --input-query QUERY.json --output-results RESULTS.json
+    varfish-server-worker seqvars query --input-path internal_format.bin --query-json query.json --output-results results.json
     ```
 
-3.  **Aggregation**: Compute carrier counts across multiple ingested files.
+*   **Aggregate Carriers**: Compute carrier counts across multiple ingested files.
     ```bash
-    varfish-server-worker seqvars aggregate --input-vcf FILE1.vcf.gz FILE2.vcf.gz --output-vcf CARRIER_COUNTS.vcf.gz
+    varfish-server-worker seqvars aggregate --input-paths file1.bin file2.bin --output-path carrier_counts.bin
     ```
 
-### Structural Variant (strucvars) Processing
+### Structural Variant (SV) Processing
+Use the `strucvars` subcommand for large variants and CNVs.
 
-The `strucvars` suite handles large variants and CNVs.
-
-1.  **Ingestion**: Prepare SV files for querying.
+*   **Ingest SVs**: Prepare structural variant files for querying.
     ```bash
-    varfish-server-worker strucvars ingest --input-vcf SV_IN.vcf.gz --output-vcf SV_OUT.vcf.gz
+    varfish-server-worker strucvars ingest --input-vcf sv_input.vcf.gz --output-path sv_internal.bin
     ```
 
-2.  **Database Conversion**: Convert text-based database files (from `varfish-db-downloader`) into binary format for fast lookups.
+*   **Database Conversion**: Convert text-based databases (from varfish-db-downloader) to high-speed binary formats.
     ```bash
-    varfish-server-worker strucvars txt-to-bin --input-txt DB.txt --output-bin DB.bin
+    varfish-server-worker strucvars txt-to-bin --input-txt db_file.txt --output-bin db_file.bin
     ```
 
-3.  **Querying**: Perform SV filtration and annotation.
-    ```bash
-    varfish-server-worker strucvars query --input-vcf SV_INGESTED.vcf.gz --input-query QUERY.json --output-results RESULTS.json
-    ```
+### Database Management
+Use the `db` subcommand to compile reference data.
+```bash
+varfish-server-worker db compile --input-path reference_data/ --output-path database.bin
+```
 
-## Expert Tips and Best Practices
+## Best Practices and Tips
+*   **Internal Format**: Always use the `ingest` command before attempting a `query`. The worker is optimized for its internal binary format, not raw VCFs, during the filtration phase.
+*   **S3 Integration**: In production environments, the worker typically interacts with VCFs stored in S3. Ensure environment variables for S3 access are configured if the VarFish server is delegating tasks to the worker.
+*   **Memory Efficiency**: For large-scale aggregations (`seqvars aggregate`), ensure sufficient temporary disk space as the tool reads through multiple ingested files to build carrier tables.
+*   **Query Definitions**: Queries are defined via JSON. Ensure the JSON schema matches the expected protobuf-based definitions used by the current worker version (0.13.0+).
 
-*   **Data Expansion**: Be aware that `seqvars ingest` emits one output line for every variant allele and every affected gene. A single VCF record affecting multiple genes will result in multiple internal records.
-*   **Field Requirements**: For optimal results, ensure your input VCFs contain `AD` (Allelic Depth) and `GQ` (Genotype Quality) fields. The worker uses these for sophisticated quality filtering.
-*   **Somatic Quality**: For Dragen VCFs, the worker maps `FORMAT/SQ` (Somatic Quality) to `FORMAT/GQ` during ingestion.
-*   **Prefiltering**: Use `seqvars prefilter` to significantly reduce file size by removing variants with high population frequency or those far from exons before running intensive queries.
-*   **Binary Databases**: Always use the `db` subcommands or `txt-to-bin` to prepare reference databases. The worker is optimized for these binary formats, and using raw text files will severely degrade performance.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| seqvars | Sequence variant related commands |
+| strucvars | Structural variant related commands |
+| varfish-server-worker | varfish-server-worker |
 
 ## Reference documentation
-- [VarFish Server Worker GitHub Repository](./references/github_com_varfish-org_varfish-server-worker.md)
-- [VarFish Server Worker Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_varfish-server-worker_overview.md)
+- [VarFish Server Worker README](./references/github_com_varfish-org_varfish-server-worker_blob_main_README.md)
+- [VarFish Server Worker Overview](./references/anaconda_org_channels_bioconda_packages_varfish-server-worker_overview.md)

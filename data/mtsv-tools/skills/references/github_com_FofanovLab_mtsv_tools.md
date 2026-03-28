@@ -1,1 +1,383 @@
-GitHub - FofanovLab/mtsv_tools: Core metagenomic binning tools for mtsv Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} FofanovLab / mtsv_tools Public Notifications You must be signed in to change notification settings Fork 2 Star 5 Core metagenomic binning tools for mtsv License MIT license 5 stars 2 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 1 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights FofanovLab/mtsv_tools master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 109 Commits 109 Commits arbitrary_dna arbitrary_dna conda-recipe conda-recipe icons icons src src ssw ssw tests tests vendor/ cue vendor/ cue .gitignore .gitignore .travis.yml .travis.yml CITATION.cff CITATION.cff Cargo.lock Cargo.lock Cargo.toml Cargo.toml LICENSE LICENSE README.md README.md rustfmt.toml rustfmt.toml View all files Repository files navigation README MIT license mtsv-tools MTSv Tools is a suite of core tools for taxonomic classification of metagenomic sequencing reads. MTSv performs a full-alignment using an FM-index assisted q-gram filter followed by SIMD accelerated Smith-Waterman alignment. Installation conda install mtsv-tools -c bioconda Requirements mtsv is built in Rust. You'll need: rustc and cargo &gt;= 1.29.0 ( rustup.rs is the easiest installation method) a C compiler (tested with GCC and clang) Tests To run tests: $ cargo test To generate a code coverage report, make sure kcov &gt;= 26 is installed on your PATH , then install cargo-kcov : $ cargo install cargo-kcov To run coverage: $ cargo kcov -- --exclude-pattern="/.cargo,vendor/,tests/,bench/,include/,bin/,ssw/" This will place a code coverage report under target/kcov/index.html . Building Package To build the MTSv binaries: $ cargo build --release They'll be available under target/release/mtsv-* . Documentation To generate the internal documentation: $ cargo doc [--open] (pass the --open flag if you want to immediately open the docs in your browser) Usage mtsv builds several binaries: mtsv-chunk mtsv-binner mtsv-build mtsv-collapse All of these accept the --help flag to print a help message on their usage. See below for specific use instructions. Reference Sequence Data MTSv implements a custom metagenomic index (MG-index) based on the FM-index data structure. Reference indices must be built prior to performing taxonomic classification. Reference file format To construct the MG-indices, you'll need a multi-FASTA file of all reference sequences, with headers in the format SEQID-TAXID . So a sequence has a unique integer ID 12345, and belongs to the NCBI taxonomic ID 987, the header for that sequence should read 12345-987 . The reference sequences can be sourced from any DNA sequence collection (i.e., GenBank, RefSeq, etc.) and customized to fit your project. Chunking reference database Because MTSv was designed to be highly parallelizable, we recommend building multiple indices from smaller chunks of the reference sequences. This helps reduce the memory requirements and allows for faster processing for both index building and assignment. $ mtsv-chunk -i PATH_TO_FASTA -o PATH_TO_CHUNK_FOLDER -g NUM_GBS_PER_CHUNK This will break up the reference fasta into a series of smaller files and place them into the directory specified. See the help message for further information. mtsv-chunk 2.0.0 Adam Perry &lt;adam.n.perry@gmail.com&gt;:Tara Furstenau &lt;tara.furstenau@gmail.com&gt; Split a FASTA reference database into chunks for index generation. USAGE: mtsv-chunk [FLAGS] --input &lt;INPUT&gt; --output &lt;OUTPUT&gt; --gb &lt;SIZE_GB&gt; FLAGS: -v Include this flag to trigger debug-level logging. -h, --help Prints help information -V, --version Prints version information OPTIONS: -i, --input &lt;INPUT&gt; Path(s) to vedro results files to collapse -o, --output &lt;OUTPUT&gt; Folder path to write split outupt files to. -g, --gb &lt;SIZE_GB&gt; Chunk size (in gigabytes). [default: 1.0] Metagenomic index build (MG-index) Now that you have N chunks of your FASTA database, they need to be processed into indices which MTSv can use for querying. During the index build, the sequences in the chunked FASTA file are concatenated while recording the location of sequence boundaries and the TaxID associated with each sequence. A suffix array, Burrows-Wheeler Transform (BWT), and FM-index are built from the concatenated sequences using the Rust-Bio v0.39.1 package. The FM-index and the associated sequence metadata constitutes the MG-index. One MG-index is created per FASTA file, and new indices can be added as the reference collection grows without needing to rebuild any of the existing indices. $ mtsv-build --fasta /path/to/chunkN.fasta --index /path/to/write/chunkN.index Using default settings, indices will be ~3.6x the size of the reference file and require about that much RAM to run the binning step. The default sampling interval is 64 for the BWT occurance array and 32 for the suffix array. This can be overridden by passing --sample-interval &lt;FM_SAMPLE_INTERVAL&gt; for the occurance array or --sa-sample &lt;SA_SAMPLE_RATE&gt; for the suffix array. Lower values will increase the size of the index and can provide a reduction in query time. Increasing the flag will decrease the size of the index up to a point while accepting a slower query time. See the help message for other options. $ mtsv-build --help mtsv-build 2.0.0 Adam Perry &lt;adam.n.perry@gmail.com&gt;:Tara Furstenau &lt;tara.furstenau@gmail.com&gt; Index construction for mtsv metagenomics binning tool. USAGE: mtsv-build [FLAGS] [OPTIONS] --fasta &lt;FASTA&gt; --index &lt;INDEX&gt; FLAGS: -v Include this flag to trigger debug-level logging. -h, --help Prints help information -V, --version Prints version information OPTIONS: -f, --fasta &lt;FASTA&gt; Path to FASTA database file. --sample-interval &lt;FM_SAMPLE_INTERVAL&gt; BWT occurance sampling rate. If sample interval is k, every k-th entry will be kept. [default: 64] -i, --index &lt;INDEX&gt; Absolute path to mtsv index file. --sa-sample &lt;SA_SAMPLE_RATE&gt; Suffix array sampling rate. If sampling rate is k, every k-th entry will be kept. [default: 32] Binning Reads The mtsv-binner command assignes the reads to reference sequences in the provided MG-index (a separate binning command should be run for each of the desired MG-Indices). It will begin by extracting overlapping substrings (seeds) of the same size ( --seed-size ) with certain offsets ( --seed-interval ) from each query sequence and its reverse complement. It then uses the MG-index to search for exact, ungapped matches for each seed. The seed matches are sorted by location and grouped into candidate regions using specified windows. The number of hits per candidate is tallied and any candidate that does not meet the minimum number of seed hits is filtered out. The remaining candidate positions are sorted in descending order by the number of seed hits so that the most promising regions are evaluated first. For each candidate region, MTSv extracts the corresponding range from the reference sequence and looks up the TaxID associated with the region in the MG-index. If the current query has already been sucessfully aligned to the TaxID associated with the candidate region, no additional alignment is attempted, and the next candidate region is checked. Otherwise an SIMD-accelerated Smith-Waterman alignment is performed between the extracted reference sequence and 
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFofanovLab%2Fmtsv_tools)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFofanovLab%2Fmtsv_tools)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=FofanovLab%2Fmtsv_tools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[FofanovLab](/FofanovLab)
+/
+**[mtsv\_tools](/FofanovLab/mtsv_tools)**
+Public
+
+* [Notifications](/login?return_to=%2FFofanovLab%2Fmtsv_tools) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2FFofanovLab%2Fmtsv_tools)
+* [Star
+   5](/login?return_to=%2FFofanovLab%2Fmtsv_tools)
+
+* [Code](/FofanovLab/mtsv_tools)
+* [Issues
+  0](/FofanovLab/mtsv_tools/issues)
+* [Pull requests
+  1](/FofanovLab/mtsv_tools/pulls)
+* [Actions](/FofanovLab/mtsv_tools/actions)
+* [Projects](/FofanovLab/mtsv_tools/projects)
+* [Security
+  0](/FofanovLab/mtsv_tools/security)
+* [Insights](/FofanovLab/mtsv_tools/pulse)
+
+Additional navigation options
+
+* [Code](/FofanovLab/mtsv_tools)
+* [Issues](/FofanovLab/mtsv_tools/issues)
+* [Pull requests](/FofanovLab/mtsv_tools/pulls)
+* [Actions](/FofanovLab/mtsv_tools/actions)
+* [Projects](/FofanovLab/mtsv_tools/projects)
+* [Security](/FofanovLab/mtsv_tools/security)
+* [Insights](/FofanovLab/mtsv_tools/pulse)
+
+# FofanovLab/mtsv\_tools
+
+master
+
+[Branches](/FofanovLab/mtsv_tools/branches)[Tags](/FofanovLab/mtsv_tools/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[130 Commits](/FofanovLab/mtsv_tools/commits/master/)   130 Commits | | |
+| [arbitrary\_dna](/FofanovLab/mtsv_tools/tree/master/arbitrary_dna "arbitrary_dna") | | [arbitrary\_dna](/FofanovLab/mtsv_tools/tree/master/arbitrary_dna "arbitrary_dna") |  |  |
+| [conda-recipe](/FofanovLab/mtsv_tools/tree/master/conda-recipe "conda-recipe") | | [conda-recipe](/FofanovLab/mtsv_tools/tree/master/conda-recipe "conda-recipe") |  |  |
+| [icons](/FofanovLab/mtsv_tools/tree/master/icons "icons") | | [icons](/FofanovLab/mtsv_tools/tree/master/icons "icons") |  |  |
+| [src](/FofanovLab/mtsv_tools/tree/master/src "src") | | [src](/FofanovLab/mtsv_tools/tree/master/src "src") |  |  |
+| [ssw](/FofanovLab/mtsv_tools/tree/master/ssw "ssw") | | [ssw](/FofanovLab/mtsv_tools/tree/master/ssw "ssw") |  |  |
+| [tests](/FofanovLab/mtsv_tools/tree/master/tests "tests") | | [tests](/FofanovLab/mtsv_tools/tree/master/tests "tests") |  |  |
+| [vendor/cue](/FofanovLab/mtsv_tools/tree/master/vendor/cue "This path skips through empty directories") | | [vendor/cue](/FofanovLab/mtsv_tools/tree/master/vendor/cue "This path skips through empty directories") |  |  |
+| [.gitignore](/FofanovLab/mtsv_tools/blob/master/.gitignore ".gitignore") | | [.gitignore](/FofanovLab/mtsv_tools/blob/master/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/FofanovLab/mtsv_tools/blob/master/.travis.yml ".travis.yml") | | [.travis.yml](/FofanovLab/mtsv_tools/blob/master/.travis.yml ".travis.yml") |  |  |
+| [CHANGELOG.md](/FofanovLab/mtsv_tools/blob/master/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/FofanovLab/mtsv_tools/blob/master/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [CITATION.cff](/FofanovLab/mtsv_tools/blob/master/CITATION.cff "CITATION.cff") | | [CITATION.cff](/FofanovLab/mtsv_tools/blob/master/CITATION.cff "CITATION.cff") |  |  |
+| [Cargo.lock](/FofanovLab/mtsv_tools/blob/master/Cargo.lock "Cargo.lock") | | [Cargo.lock](/FofanovLab/mtsv_tools/blob/master/Cargo.lock "Cargo.lock") |  |  |
+| [Cargo.toml](/FofanovLab/mtsv_tools/blob/master/Cargo.toml "Cargo.toml") | | [Cargo.toml](/FofanovLab/mtsv_tools/blob/master/Cargo.toml "Cargo.toml") |  |  |
+| [LICENSE](/FofanovLab/mtsv_tools/blob/master/LICENSE "LICENSE") | | [LICENSE](/FofanovLab/mtsv_tools/blob/master/LICENSE "LICENSE") |  |  |
+| [README.md](/FofanovLab/mtsv_tools/blob/master/README.md "README.md") | | [README.md](/FofanovLab/mtsv_tools/blob/master/README.md "README.md") |  |  |
+| [rustfmt.toml](/FofanovLab/mtsv_tools/blob/master/rustfmt.toml "rustfmt.toml") | | [rustfmt.toml](/FofanovLab/mtsv_tools/blob/master/rustfmt.toml "rustfmt.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+[![Bioconda](https://camo.githubusercontent.com/fe72bbe0f50fef5d865677fed0177f0e71b98b9cac828f3551db028ee7857388/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f6d7473762d746f6f6c732e737667)](https://anaconda.org/bioconda/mtsv-tools)
+
+# mtsv-tools
+
+MTSv Tools provides the core computational engine for high-resolution taxonomic classification of metagenomic and metatranscriptomic sequencing reads.
+
+This repository contains the fundamental indexing and alignment components (MG-index construction, read binning, collapsing, and partitioning). It is intentionally modular and minimal.
+
+Wrapper pipelines and companion utilities are being developed to streamline reference preparation, filtering workflows, and downstream annotation. These higher-level tools build on the stable core provided here.
+
+## Install with Conda (recommended)
+
+`conda install mtsv-tools -c bioconda`
+
+## Building from Source
+
+Requirements:
+
+* `rustc` and `cargo` >= 1.29.0 ([rustup.rs](https://rustup.rs) is the easiest installation method)
+* a C compiler (tested with GCC and clang)
+
+```
+cd mtsv-tools
+cargo update
+cargo build --release
+```
+
+Compiled binaries will be located in: `target/release/mtsv-*`.
+
+## Tests
+
+To run tests:
+
+```
+cargo test
+```
+
+## Documentation
+
+To generate the internal documentation:
+
+```
+$ cargo doc [--open]
+```
+
+(pass the `--open` flag if you want to immediately open the docs in your browser)
+
+## Usage
+
+mtsv-tools consists of multiple command-line programs that implement a modular workflow:
+
+Main Workflow
+
+* `mtsv-chunk`
+* `mtsv-build`
+* `mtsv-binner`
+* `mtsv-collapse`
+
+Utilities
+
+* `mtsv-partition`
+* `mtsv-reference`
+
+## Reference Sequence Data
+
+MTSv implements a custom metagenomic and metatranscriptomic index (MG-index) based on the FM-index data structure.
+Reference indices must be built prior to performing taxonomic classification.
+
+### Chunking reference database (`mtsv-chunk`)
+
+Because MTSv was designed to be highly parallelizable, we recommend building multiple indices from moderately sized chunks of the reference database rather than a single monolithic FASTA file. This reduces peak memory usage and enables parallel execution during both index construction and read assignment.
+
+`mtsv-chunk` can be used to split large aggregate reference FASTA files into smaller chunks to improve scalability and resource control.
+
+If your reference sequences are already distributed across many individual FASTA files (e.g., one file per genome), they can simply be concatenated into appropriately sized batches before running `mtsv-build`.
+
+```
+$ mtsv-chunk -i PATH_TO_FASTA -o PATH_TO_CHUNK_FOLDER -g NUM_GBS_PER_CHUNK
+```
+
+Example (input name -> output names):
+
+```
+Input:  /data/ref_db.fasta
+Output: PATH_TO_CHUNK_DIR/ref_db_0.fasta
+        PATH_TO_CHUNK_DIR/ref_db_1.fasta
+        PATH_TO_CHUNK_DIR/ref_db_2.fasta
+        ...
+```
+
+This will break up the reference fasta into a series of smaller files and place them into the directory specified. See the help message for further information.
+
+```
+Split a FASTA reference database into chunks for metagenomic and metatranscriptomic assignment index generation.
+
+USAGE:
+    mtsv-chunk [FLAGS] --input <INPUT> --output <OUTPUT> --gb <SIZE_GB>
+
+FLAGS:
+    -v               Include this flag to trigger debug-level logging.
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -i, --input <INPUT>      Path(s) to assignment results files to collapse
+    -o, --output <OUTPUT>    Folder path to write split outupt files to.
+    -g, --gb <SIZE_GB>       Chunk size (in gigabytes). [default: 1.0]
+```
+
+## MG-Index build (`mtsv-build`)
+
+Constructs an MG-index (FM-index + metadata) from a FASTA fasta. One MG-index is created per FASTA file, and new indices can be added as the reference collection grows without needing to rebuild any of the existing indices.
+
+```
+$ mtsv-build --fasta /path/to/chunkN.fasta --index /path/to/write/chunkN.index
+```
+
+##### Performance tuning
+
+| Option | Description |
+| --- | --- |
+| `--sample-interval` | BWT occurrence sampling rate (default: 64) |
+| `--sa-sample` | Suffix array sampling rate (default: 32) |
+
+Lower sampling intervals → larger index, faster queries
+Higher sampling intervals → smaller index, slower queries
+
+Using default settings, indices will be ~3.5x the size of the reference file and require about that much RAM to run the binning step.
+
+##### Mapping reference sequence metadata during index construction
+
+`mtsv-build` requires a mapping between each reference sequence and an NCBI TaxID. This can be provided in one of two ways:
+
+**Option 1:** Encode TaxID directly in the FASTA header (Default Behavior)
+
+```
+>SEQID-TAXID
+```
+
+Example:
+
+```
+>12345-987
+```
+
+Where:
+12345 → internal sequence identifier (seqid)
+987 → NCBI TaxID
+
+**Option 2:** Provide an external mapping file
+If your FASTA headers do not follow the SEQID-TAXID convention, you may supply a mapping file using:
+`--mapping /path/to/map.tsv`
+
+The mapping file must:
+
+* Contain a header row.
+* Include the following columns:
+  + header — FASTA ID (must match exactly the first token of the FASTA header)
+  + taxid — NCBI TaxID
+  + seqid — Internal sequence identifier
+
+The parser is delimiter-agnostic (comma, tab, or whitespace).
+
+Example:
+
+```
+h

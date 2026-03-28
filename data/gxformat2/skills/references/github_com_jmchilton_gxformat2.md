@@ -1,0 +1,309 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjmchilton%2Fgxformat2)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjmchilton%2Fgxformat2)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=jmchilton%2Fgxformat2)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[jmchilton](/jmchilton)
+/
+**[gxformat2](/jmchilton/gxformat2)**
+Public
+
+forked from [galaxyproject/gxformat2](/galaxyproject/gxformat2)
+
+* [Notifications](/login?return_to=%2Fjmchilton%2Fgxformat2) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fjmchilton%2Fgxformat2)
+* [Star
+   0](/login?return_to=%2Fjmchilton%2Fgxformat2)
+
+* [Code](/jmchilton/gxformat2)
+* [Pull requests
+  0](/jmchilton/gxformat2/pulls)
+* [Actions](/jmchilton/gxformat2/actions)
+* [Projects](/jmchilton/gxformat2/projects)
+* [Security
+  0](/jmchilton/gxformat2/security)
+* [Insights](/jmchilton/gxformat2/pulse)
+
+Additional navigation options
+
+* [Code](/jmchilton/gxformat2)
+* [Pull requests](/jmchilton/gxformat2/pulls)
+* [Actions](/jmchilton/gxformat2/actions)
+* [Projects](/jmchilton/gxformat2/projects)
+* [Security](/jmchilton/gxformat2/security)
+* [Insights](/jmchilton/gxformat2/pulse)
+
+# jmchilton/gxformat2
+
+main
+
+[Branches](/jmchilton/gxformat2/branches)[Tags](/jmchilton/gxformat2/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[533 Commits](/jmchilton/gxformat2/commits/main/)   533 Commits | | |
+| [.claude/commands](/jmchilton/gxformat2/tree/main/.claude/commands "This path skips through empty directories") | | [.claude/commands](/jmchilton/gxformat2/tree/main/.claude/commands "This path skips through empty directories") |  |  |
+| [.github](/jmchilton/gxformat2/tree/main/.github ".github") | | [.github](/jmchilton/gxformat2/tree/main/.github ".github") |  |  |
+| [docs](/jmchilton/gxformat2/tree/main/docs "docs") | | [docs](/jmchilton/gxformat2/tree/main/docs "docs") |  |  |
+| [gxformat2](/jmchilton/gxformat2/tree/main/gxformat2 "gxformat2") | | [gxformat2](/jmchilton/gxformat2/tree/main/gxformat2 "gxformat2") |  |  |
+| [java](/jmchilton/gxformat2/tree/main/java "java") | | [java](/jmchilton/gxformat2/tree/main/java "java") |  |  |
+| [schema](/jmchilton/gxformat2/tree/main/schema "schema") | | [schema](/jmchilton/gxformat2/tree/main/schema "schema") |  |  |
+| [scripts](/jmchilton/gxformat2/tree/main/scripts "scripts") | | [scripts](/jmchilton/gxformat2/tree/main/scripts "scripts") |  |  |
+| [tests](/jmchilton/gxformat2/tree/main/tests "tests") | | [tests](/jmchilton/gxformat2/tree/main/tests "tests") |  |  |
+| [typescript](/jmchilton/gxformat2/tree/main/typescript "typescript") | | [typescript](/jmchilton/gxformat2/tree/main/typescript "typescript") |  |  |
+| [.coveragerc](/jmchilton/gxformat2/blob/main/.coveragerc ".coveragerc") | | [.coveragerc](/jmchilton/gxformat2/blob/main/.coveragerc ".coveragerc") |  |  |
+| [.editorconfig](/jmchilton/gxformat2/blob/main/.editorconfig ".editorconfig") | | [.editorconfig](/jmchilton/gxformat2/blob/main/.editorconfig ".editorconfig") |  |  |
+| [.gitignore](/jmchilton/gxformat2/blob/main/.gitignore ".gitignore") | | [.gitignore](/jmchilton/gxformat2/blob/main/.gitignore ".gitignore") |  |  |
+| [.readthedocs.yaml](/jmchilton/gxformat2/blob/main/.readthedocs.yaml ".readthedocs.yaml") | | [.readthedocs.yaml](/jmchilton/gxformat2/blob/main/.readthedocs.yaml ".readthedocs.yaml") |  |  |
+| [CLAUDE.md](/jmchilton/gxformat2/blob/main/CLAUDE.md "CLAUDE.md") | | [CLAUDE.md](/jmchilton/gxformat2/blob/main/CLAUDE.md "CLAUDE.md") |  |  |
+| [CODE\_OF\_CONDUCT.md](/jmchilton/gxformat2/blob/main/CODE_OF_CONDUCT.md "CODE_OF_CONDUCT.md") | | [CODE\_OF\_CONDUCT.md](/jmchilton/gxformat2/blob/main/CODE_OF_CONDUCT.md "CODE_OF_CONDUCT.md") |  |  |
+| [CODE\_OF\_CONDUCT.rst](/jmchilton/gxformat2/blob/main/CODE_OF_CONDUCT.rst "CODE_OF_CONDUCT.rst") | | [CODE\_OF\_CONDUCT.rst](/jmchilton/gxformat2/blob/main/CODE_OF_CONDUCT.rst "CODE_OF_CONDUCT.rst") |  |  |
+| [CONTRIBUTING.rst](/jmchilton/gxformat2/blob/main/CONTRIBUTING.rst "CONTRIBUTING.rst") | | [CONTRIBUTING.rst](/jmchilton/gxformat2/blob/main/CONTRIBUTING.rst "CONTRIBUTING.rst") |  |  |
+| [HISTORY.rst](/jmchilton/gxformat2/blob/main/HISTORY.rst "HISTORY.rst") | | [HISTORY.rst](/jmchilton/gxformat2/blob/main/HISTORY.rst "HISTORY.rst") |  |  |
+| [LICENSE](/jmchilton/gxformat2/blob/main/LICENSE "LICENSE") | | [LICENSE](/jmchilton/gxformat2/blob/main/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/jmchilton/gxformat2/blob/main/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/jmchilton/gxformat2/blob/main/MANIFEST.in "MANIFEST.in") |  |  |
+| [Makefile](/jmchilton/gxformat2/blob/main/Makefile "Makefile") | | [Makefile](/jmchilton/gxformat2/blob/main/Makefile "Makefile") |  |  |
+| [README.rst](/jmchilton/gxformat2/blob/main/README.rst "README.rst") | | [README.rst](/jmchilton/gxformat2/blob/main/README.rst "README.rst") |  |  |
+| [build\_schema.sh](/jmchilton/gxformat2/blob/main/build_schema.sh "build_schema.sh") | | [build\_schema.sh](/jmchilton/gxformat2/blob/main/build_schema.sh "build_schema.sh") |  |  |
+| [dev-requirements.txt](/jmchilton/gxformat2/blob/main/dev-requirements.txt "dev-requirements.txt") | | [dev-requirements.txt](/jmchilton/gxformat2/blob/main/dev-requirements.txt "dev-requirements.txt") |  |  |
+| [pyproject.toml](/jmchilton/gxformat2/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/jmchilton/gxformat2/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| [requirements.txt](/jmchilton/gxformat2/blob/main/requirements.txt "requirements.txt") | | [requirements.txt](/jmchilton/gxformat2/blob/main/requirements.txt "requirements.txt") |  |  |
+| [setup.cfg](/jmchilton/gxformat2/blob/main/setup.cfg "setup.cfg") | | [setup.cfg](/jmchilton/gxformat2/blob/main/setup.cfg "setup.cfg") |  |  |
+| [tox.ini](/jmchilton/gxformat2/blob/main/tox.ini "tox.ini") | | [tox.ini](/jmchilton/gxformat2/blob/main/tox.ini "tox.ini") |  |  |
+| [uv.lock](/jmchilton/gxformat2/blob/main/uv.lock "uv.lock") | | [uv.lock](/jmchilton/gxformat2/blob/main/uv.lock "uv.lock") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Code of conduct
+* Contributing
+* License
+
+[![https://readthedocs.org/projects/gxformat2/badge/?version=latest](https://camo.githubusercontent.com/b955615b0e5844ba468a8a55dd3f9e6162fcc534dbf0a2d1b01bbb08c871b1c3/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f6778666f726d6174322f62616467652f3f76657273696f6e3d6c6174657374)](https://gxformat2.readthedocs.io/en/latest/)
+[![](https://camo.githubusercontent.com/6a2fa9fd747bf2ff375fe0c74a80150ea7088db1b76a1fc6fda52095f2970a4b/68747470733a2f2f62616467652e667572792e696f2f70792f6778666f726d6174322e737667)](https://pypi.python.org/pypi/gxformat2/)
+[![](https://github.com/galaxyproject/gxformat2/workflows/Python%20CI/badge.svg)](https://github.com/galaxyproject/gxformat2/actions?query=workflow%3A%22Python+CI%22)
+[![](https://github.com/galaxyproject/gxformat2/workflows/Java%20CI/badge.svg)](https://github.com/galaxyproject/gxformat2/actions?query=workflow%3A%22Java+CI%22)
+[![https://img.shields.io/badge/latest%20schema-v19.09-blue](https://camo.githubusercontent.com/edfb6019c2128c6a7f3da10bc66adb7476e7c2949128c0add25c0cf04f9cf8b2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6174657374253230736368656d612d7631392e30392d626c7565)](https://galaxyproject.github.io/gxformat2/v19_09.html)
+
+## Format 2
+
+This package defines a high-level [Galaxy](https://galaxyproject.org/) workflow description termed "Format
+2". The current schema version is v19\_09 and the schema can be found
+[here](https://galaxyproject.github.io/gxformat2/v19_09.html). This version of
+workflow format can be consumed by Galaxy since version 19.09.
+
+The Format 2 workflow description is still somewhat experimental and may
+yet change in small potentially backward incompatible ways until the format is
+exported by Galaxy by default.
+
+The traditional Galaxy workflow description (files ending in `.ga` extension,
+sometimes called native workflows in this project) was not designed to be
+concise and is neither readily human readable or human writable. Galaxy
+workflow Format 2 is being designed to address these limitations,
+while also moving Galaxy's workflow description language toward standards such
+as the Common Workflow Language.
+
+## gxformat2
+
+This Python project can be installed from PyPI using `pip`.
+
+```
+$ pip install gxformat2
+```
+
+Checkout the project tests or how it used in projects such as Planemo and
+Galaxy to see how to use the gxformat2 library. Reference documentation for
+the [modules](https://gxformat2.readthedocs.io/en/latest/py-modindex.html)
+can be found as part of the project's documentation.
+
+This project also includes various scripts for working with Galaxy workflows.
+Checkout their help for more information.
+
+```
+$ gxwf-lint --help
+$ gxwf-viz --help
+$ gxwf-abstract-export --help
+$ gxwf-to-native --help
+$ gxwf-to-format2 --help
+```
+
+## Development
+
+Setup a development environment with [uv](https://docs.astral.sh/uv/):
+
+```
+$ uv sync --group test --group lint --group mypy
+```
+
+Run tests:
+
+```
+$ uv run --group test pytest tests/ -x -q
+```
+
+Run linting:
+
+```
+$ uv run --group lint ruff check
+$ uv run --group lint flake8
+$ uv run --group lint black --check --diff .
+```
+
+Run type checking:
+
+```
+$ uv run --group mypy mypy gxformat2
+```
+
+This library and associated scripts are licensed under the MIT License.
+
+## About

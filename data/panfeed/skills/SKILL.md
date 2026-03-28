@@ -1,6 +1,6 @@
 ---
 name: panfeed
-description: panfeed is a k-mer counter that extracts gene-cluster-specific k-mer patterns from microbial pangenomes for association studies. Use when user asks to generate k-mer presence/absence matrices, perform fine-mapping of GWAS hits, or visualize k-mer positions relative to gene clusters.
+description: panfeed is a k-mer streaming tool that anchors genomic variation to specific gene clusters in bacterial pangenomes for association studies. Use when user asks to generate k-mer presence/absence patterns, perform fine-mapping of GWAS hits, or visualize k-mer associations within gene clusters.
 homepage: https://github.com/microbial-pangenomes-lab/panfeed
 ---
 
@@ -8,57 +8,60 @@ homepage: https://github.com/microbial-pangenomes-lab/panfeed
 # panfeed
 
 ## Overview
+panfeed is a specialized k-mer streaming tool that processes bacterial pangenomes one gene cluster at a time. Unlike global de Bruijn graph approaches, panfeed anchors k-mers to specific gene clusters, which reduces computational artifacts in repetitive regions and makes the resulting GWAS hits much easier to interpret and visualize. It transforms annotated assemblies (GFF3) and pangenome matrices into k-mer tables, providing both presence/absence patterns for discovery and base-resolution mapping for fine-mapping.
 
-panfeed is a specialized k-mer counter designed for microbial pangenomics. Unlike global de Bruijn graph approaches, it streams k-mers one gene cluster at a time. This localized approach reduces computational artifacts in repetitive regions and significantly improves the interpretability of GWAS results. It takes GFF3 files and a gene presence/absence matrix (from tools like Panaroo or Roary) and produces k-mer presence/absence patterns compatible with association tools like pyseer.
+## Workflow and CLI Patterns
 
-## Installation
+### The Two-Pass Strategy
+To optimize storage and speed, always use the two-pass approach.
 
-Install via bioconda for the most stable environment:
-```bash
-conda install -c bioconda panfeed
-```
-
-## Standard Workflow
-
-### 1. First Pass: Pattern Generation
+**Pass 1: Discovery**
 Generate the unique k-mer presence/absence patterns for the entire pangenome.
 ```bash
-panfeed -g gff_folder/ -p gene_presence_absence.csv -o pass1_output --upstream 100 --downstream 100 --compress --cores 8
+panfeed -g gff_folder/ -p gene_presence_absence.csv -o discovery_out --upstream 100 --downstream 100 --compress --cores 8
 ```
-*   **-g**: Directory containing `.gff` files (must include nucleotide sequences).
-*   **-p**: The presence/absence CSV from your pangenome pipeline.
-*   **--upstream/--downstream**: Bases to include flanking the gene clusters.
+*   **-g**: Directory containing `SAMPLE.gff` files (must include nucleotide sequences at the end).
+*   **-p**: The pangenome matrix from Roary, Panaroo, or ggCaller.
+*   **--upstream/--downstream**: Captures non-coding variation surrounding the gene.
 
-### 2. Significance Filtering
-After running GWAS (e.g., with pyseer) on `hashes_to_patterns.tsv.gz`, identify clusters containing significant k-mers.
+**Pass 2: Fine-Mapping**
+After running GWAS (e.g., with pyseer) and identifying significant hits, extract the relevant clusters and re-run panfeed to get positional data.
 ```bash
-panfeed-get-clusters -a gwas_results.tsv -p pass1_output/kmers_to_hashes.stv.gz -t 1E-7 > significant_clusters.txt
-```
+# 1. Extract significant clusters (threshold e.g., 1E-7)
+panfeed-get-clusters -a pyseer_results.tsv -p discovery_out/kmers_to_hashes.stv.gz -t 1E-7 > target_genes.txt
 
-### 3. Second Pass: Fine-Mapping
-Run panfeed again, but only on significant clusters to generate positional metadata.
-```bash
-panfeed -g gff_folder/ -p gene_presence_absence.csv -o pass2_output --genes significant_clusters.txt --targets samples.txt --upstream 100 --downstream 100 --compress
+# 2. Run second pass for positional mapping
+panfeed -g gff_folder/ -p gene_presence_absence.csv -o fine_mapping_out --genes target_genes.txt --upstream 100 --downstream 100 --compress
 ```
 
-### 4. Annotation and Visualization
-Merge GWAS statistics with k-mer positions and create plots.
-```bash
-# Merge data
-panfeed-get-kmers -a gwas_results.tsv -p kmers_to_hashes.tsv.gz -k kmers.tsv.gz | gzip > annotated_kmers.tsv.gz
+### Annotation and Visualization
+Once the second pass is complete, merge the association statistics with the positional k-mer data to create interpretable plots.
 
-# Plot results
-panfeed-plot -k annotated_kmers.tsv.gz -p phenotype_data.tsv --phenotype-column target_trait
+```bash
+# Annotate k-mers with association stats
+panfeed-get-kmers -a pyseer_results.tsv -p discovery_out/kmers_to_hashes.tsv.gz -k fine_mapping_out/kmers.tsv.gz | gzip > annotated_kmers.tsv.gz
+
+# Generate plots (Significance, Sequence, and Hybrid)
+panfeed-plot -k annotated_kmers.tsv.gz -p phenotype_data.tsv --phenotype-column MY_TRAIT
 ```
 
 ## Expert Tips and Best Practices
+*   **Input Formatting**: Ensure sample names in your GFF filenames (`SAMPLE.gff`) exactly match the column headers in your `gene_presence_absence.csv`.
+*   **Missing Genes**: Use `--consider-missing` if you want the k-mer patterns to explicitly differentiate between a missing k-mer within a gene and the entire gene cluster being absent.
+*   **Large Datasets**: For datasets with thousands of samples, provide a "file-of-files" to `-g` (a text file containing paths to GFFs) instead of a directory path to avoid shell argument limits and filesystem latency.
+*   **Memory Management**: panfeed is efficient because it streams by cluster, but increasing `--cores` will increase memory usage linearly.
+*   **Separate Fastas**: If your GFF3 files do not contain the `##FASTA` section, provide the sequences separately using `-f fasta_folder/`.
 
-*   **GFF3 Requirements**: Ensure your GFF3 files contain the `##FASTA` section at the end. If they do not, use the `-f` flag to point to a directory of matching FASTA files.
-*   **Handling Large Datasets**: For thousands of samples, avoid shell "argument list too long" errors by providing a file containing paths instead of a directory: `panfeed -g file_of_gff_paths.txt ...`.
-*   **Missing Data Encoding**: By default, a missing gene cluster is encoded as `0`. Use `--consider-missing` if you want the k-mer patterns to explicitly differentiate between a missing k-mer in an existing gene and a completely absent gene cluster.
-*   **Memory Management**: When working with very large pangenomes, use the `--compress` flag to keep intermediate files small and reduce I/O overhead.
-*   **Plot Customization**: Use `--start` and `--stop` in `panfeed-plot` to zoom into specific regions relative to the start codon (e.g., `--start -50 --stop 100` to focus on the promoter and 5' end).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| panfeed-get-clusters | Indicate which genes clusters have significantly associated patterns |
+| panfeed-get-kmers | Annotate association results with positional information |
+| panfeed-plot | Plot association results from panfeed |
 
 ## Reference documentation
-- [panfeed GitHub Repository](./references/github_com_microbial-pangenomes-lab_panfeed.md)
-- [panfeed Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_panfeed_overview.md)
+- [panfeed README and Quick Start](./references/github_com_microbial-pangenomes-lab_panfeed_blob_main_README.md)
+- [panfeed Overview](./references/anaconda_org_channels_bioconda_packages_panfeed_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: vsnp3
-description: vSNP3 is a specialized tool for high-resolution pathogen surveillance, identifying strain differences down to the single nucleotide level and generating comparative analyses. Use when user asks to process individual pathogen samples, align reads, call SNPs, generate comparative SNP matrices, create phylogenetic trees, classify pathogen strains, or identify mixed pathogen infections.
+description: vSNP3 is a bioinformatics pipeline for pathogen surveillance that performs single-nucleotide polymorphism calling and phylogenetic analysis. Use when user asks to align sequencing reads, call SNPs, generate comparative matrices, or build phylogenetic trees for outbreak investigation.
 homepage: https://github.com/USDA-VS/vsnp3
 ---
 
@@ -9,45 +9,65 @@ homepage: https://github.com/USDA-VS/vsnp3
 
 ## Overview
 
-vSNP3 is a specialized tool for high-resolution pathogen surveillance that identifies strain differences down to the single nucleotide level. Unlike traditional SNP callers that require reprocessing all samples when new data is added, vSNP3 utilizes a decoupled two-step architecture. Step 1 performs alignment and SNP calling for individual samples, while Step 2 aggregates these results to generate comparative matrices and phylogenetic trees. A core strength of the tool is its "Defining SNP" system, which uses specific genomic markers to automatically classify samples into hierarchical groups and filter out lineage-specific problematic positions.
+vSNP3 is a bioinformatics pipeline designed for pathogen surveillance and outbreak investigation. It provides single-nucleotide resolution to differentiate closely related strains. The tool is structured into a two-step process: first, individual samples are aligned and SNPs are called; second, these results are aggregated to produce comparative matrices and phylogenetic trees. This modular approach allows users to build and update strain databases incrementally without reprocessing existing data.
 
 ## Core Workflow
 
-### 1. Environment Setup
+### 1. Environment Setup and Dependencies
 Before running analysis, ensure the reference dependencies are correctly mapped.
 
-```bash
-# Add the path to your reference dependencies (defining SNPs, metadata, etc.)
-vsnp3_path_adder.py -d /path/to/vsnp_dependencies
+*   **Add Reference Paths**: Use the path adder to point the tool to your reference genomes and defining SNP files.
+    ```bash
+    vsnp3_path_adder.py -d /path/to/vsnp_dependencies
+    ```
+*   **Verify References**: List all currently installed reference types and their associated file paths.
+    ```bash
+    vsnp3_path_adder.py -s
+    ```
 
-# Verify installed reference types and their paths
-vsnp3_path_adder.py -s
-```
+### 2. Step 1: Alignment and SNP Calling
+Process raw sequencing reads for each sample individually. This step only needs to be performed once per sample.
 
-### 2. Step 1: Individual Sample Processing
-Run this once per sample. It aligns reads to a reference genome, calls SNPs, and tracks zero-coverage regions.
+*   **Basic Command**:
+    ```bash
+    vsnp3_step1.py -r1 sample_R1.fastq.gz -r2 sample_R2.fastq.gz -t <reference_type>
+    ```
+*   **Key Outputs**:
+    *   `.vcf`: High-quality SNP calls.
+    *   `.bam`: Read alignments.
+    *   `stats.csv`: Quality metrics and alignment coverage.
 
-```bash
-# Basic usage for paired-end reads
-vsnp3_step1.py -r1 sample_R1.fastq.gz -r2 sample_R2.fastq.gz -t <reference_type>
-```
-*   **Note**: The `<reference_type>` (e.g., `Mycobacterium_AF2122`) determines which reference genome and defining SNP files are used.
+### 3. Step 2: Matrix and Tree Generation
+Combine VCF files from multiple samples to perform comparative analysis.
 
-### 3. Step 2: Comparative Analysis
-Run this to combine VCF files from multiple samples into a final analysis.
-
-```bash
-# Generate SNP matrices and phylogenetic trees for all processed samples in the directory
-vsnp3_step2.py -a -t <reference_type>
-```
+*   **Basic Command**:
+    ```bash
+    vsnp3_step2.py -a -t <reference_type>
+    ```
+*   **Key Outputs**:
+    *   **SNP Matrix**: An Excel or HTML table showing SNP positions across all samples.
+    *   **Phylogenetic Tree**: A Newick file (`.nwk`) for visualization in tools like FigTree or ITOL.
+    *   **Summary Report**: An HTML file summarizing the group relationships.
 
 ## Expert Tips and Best Practices
 
-- **Incremental Database Building**: When receiving new samples for an ongoing investigation, only run Step 1 on the new FASTQ files. You can then run Step 2 on the entire collection of VCF files to see how new strains relate to the existing database without wasting time re-aligning old samples.
-- **Defining SNPs for Classification**: Use the defining SNP Excel files to automatically group samples. vSNP3 checks specific positions to assign samples to subgroups (e.g., Group A vs. Group B). This allows for focused analysis on specific clusters within a larger dataset.
-- **Handling Mixed Strains**: vSNP3 uses IUPAC ambiguity codes to represent positions with multiple alleles. This is critical for identifying mixed infections or intra-host variation.
-- **Zero Coverage Tracking**: Pay attention to the zero-coverage output. vSNP3 distinguishes between a "Reference" call and "No Data," which prevents false-negative SNP calls in regions with poor sequencing depth.
-- **Filtering**: The tool automatically filters problematic positions defined in the reference-specific Excel files. If you discover new problematic sites for a specific lineage, update the corresponding defining SNP file to improve future analysis quality.
+*   **Defining SNPs**: vSNP3 uses "defining SNPs" to automatically categorize samples into hierarchical groups. If a sample contains a specific SNP at a known position, the tool will automatically assign it to a subgroup, allowing for focused analysis of relevant clusters.
+*   **Zero Coverage Tracking**: Unlike many SNP callers, vSNP3 tracks regions with no sequence data. This prevents "false negatives" where a lack of data is mistaken for a reference allele.
+*   **Mixed Strains**: The tool uses IUPAC ambiguity codes to represent positions with multiple alleles, which is critical for identifying mixed infections or contaminated samples.
+*   **Incremental Updates**: When new samples arrive during an outbreak, only run Step 1 on the new data. You can then run Step 2 on the entire collection of VCFs (old and new) to see the updated relationships.
+*   **Reference Selection**: Ensure the `-t` (reference type) matches the specific pathogen being analyzed, as this determines which reference genome and defining SNP set are used.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| vsnp3_step1.py | When running samples through step1 and 2 of vSNP, or when running a routine analysis, set up dependencies using vsnp3_path_adder.py |
+| vsnp3_vsnp3_path_adder.py | vsnp3_path_adder.py is used to add reference types. |
+| vsnp3_vsnp3_step2.py | Store VCF files from vSNP step1 to step 2 directory. VCF files must be stored by reference type. Make a VCF file directory database that will build over time as samples are ran in step 1 |
 
 ## Reference documentation
-- [vSNP3 GitHub Repository](./references/github_com_USDA-VS_vSNP3.md)
+- [vSNP3 Main Repository](./references/github_com_USDA-VS_vSNP3.md)
+- [vSNP3 README and Quick Start](./references/github_com_USDA-VS_vSNP3_blob_main_README.md)
+- [Conda Installation Guide](./references/github_com_USDA-VS_vSNP3_blob_main_docs_instructions_conda_instructions.md)

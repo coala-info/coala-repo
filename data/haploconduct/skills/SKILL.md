@@ -1,6 +1,6 @@
 ---
 name: haploconduct
-description: HaploConduct is a bioinformatics toolkit for de novo assembly that reconstructs individual haplotype sequences from viral quasispecies or polyploid genomes. Use when user asks to perform strain-aware viral genome assembly, reconstruct haplotypes from high-coverage viral samples, or assemble polyploid genomes while preserving haplotype identity.
+description: HaploConduct is a bioinformatics suite for the de novo assembly of viral quasispecies and polyploid haplotypes. Use when user asks to reconstruct intra-host virus strains, assemble diploid or polyploid genomes, or estimate the number of strains in a sample.
 homepage: https://github.com/HaploConduct/HaploConduct
 ---
 
@@ -8,38 +8,71 @@ homepage: https://github.com/HaploConduct/HaploConduct
 # haploconduct
 
 ## Overview
+HaploConduct is a specialized bioinformatics suite for de novo assembly of haplotypes. It provides two primary workflows: SAVAGE, which is optimized for reconstructing intra-host virus strains without a reference genome, and POLYTE, which is tailored for diploid and polyploid organisms at low coverage. This skill enables the execution of these complex assembly pipelines, estimation of strain counts, and management of haplotype-aware overlap graphs.
 
-HaploConduct is a specialized bioinformatics toolkit for de novo assembly that focuses on preserving haplotype identity. Unlike standard assemblers that produce a single consensus sequence, HaploConduct aims to reconstruct the individual sequences of different strains or chromosomes present in a sample. It provides two primary workflows: SAVAGE, which is optimized for extremely high-coverage viral samples where multiple strains coexist, and POLYTE, which is tailored for polyploid genomes where coverage per haplotype is relatively low but the total ploidy is known.
+## Installation and Environment
+HaploConduct is built for Linux-based systems and relies on Python 2.7. The most reliable way to ensure all C++ dependencies (Boost, OpenMP) and external tools (bwa, samtools, rust-overlaps) are available is via Bioconda.
 
-## Usage and CLI Patterns
+```bash
+# Create and activate the environment
+conda create --name haploconduct-deps python=2.7 scipy bwa samtools rust-overlaps
+source activate haploconduct-deps
 
-The toolkit is accessed through a central wrapper script. Note that the current implementation requires a Python 2.7 environment.
+# Install the package
+conda install haploconduct
+```
 
-### SAVAGE (Strain Aware VirAl GEnome assembly)
-Use this for viral quasispecies reconstruction without a reference genome.
+## Core Subprograms
+The `haploconduct` wrapper provides access to three main execution modes:
 
-*   **Primary Command**: `haploconduct savage`
-*   **Input Requirements**: Illumina paired-end reads.
-*   **Coverage Target**: Requires high total coverage, typically at least 10,000x.
-*   **Mechanism**: Uses an overlap graph-based approach to enumerate statistically well-calibrated groups of reads to reconstruct individual haplotypes.
+- `savage`: For viral quasispecies assembly. Requires high coverage (typically >10,000x).
+- `polyte`: For diploid/polyploid genomes of known ploidy. Optimized for 15-20x coverage per haplotype.
+- `polyte-split`: A specialized mode for large genomic regions (>100 kb) that bins data into 10 kb segments before assembly.
 
-### POLYTE (POLYploid genome fitTEr)
-Use this for diploid or polyploid organisms when the ploidy is known.
+## Common CLI Patterns
 
-*   **Primary Command**: `haploconduct polyte`
-*   **Input Requirements**: Illumina paired-end reads.
-*   **Coverage Target**: Requires approximately 10x coverage per haplotype; optimal performance is achieved at 15-20x per haplotype.
-*   **Mechanism**: Employs an iterative scheme to join reads and contigs while preserving haplotype identity based on a haplotype-aware overlap graph.
+### Estimating Strain Count
+Before running a full assembly, use the included script to estimate the number of strains in a sample based on contig alignments to a reference.
 
-## Best Practices and Expert Tips
+```bash
+python estimate_strain_count.py --sam input.sam --ref reference.fasta --verbose
+```
 
-*   **Environment Management**: Since HaploConduct relies on Python 2.7 and specific C++ dependencies (Boost, OpenMP), it is highly recommended to run it within a dedicated Conda environment.
-*   **Reference-Guided Mode**: While designed for de novo assembly, the toolkit can operate in reference-guided mode. In this case, ensure `bwa` and `samtools` are available in your PATH, as they are used for the alignment stages.
-*   **Data Quality**: Both methods are specifically tuned for Illumina paired-end data. Ensure adapters are trimmed and low-quality reads are filtered before starting the assembly to improve the accuracy of the overlap graph.
-*   **Ploidy Specification**: When using POLYTE, the ploidy must be known and specified. Providing an incorrect ploidy will lead to fragmented or chimeric assemblies.
-*   **Memory and CPU**: The overlap graph construction and clique enumeration (via the internal `quick-cliques` package) can be computationally intensive. Ensure your system has sufficient RAM for high-coverage viral datasets.
+### Running SAVAGE
+Execute the viral quasispecies assembly pipeline. Use the `-h` flag to see specific parameters for overlap thresholds and iteration counts.
+
+```bash
+haploconduct savage [options]
+```
+
+### Running POLYTE
+For polyploid assembly where ploidy is known:
+
+```bash
+# Standard mode
+haploconduct polyte [options]
+
+# Split mode for large regions (>100kb)
+haploconduct polyte-split [options]
+```
+
+## Expert Tips
+- **Coverage Requirements**: Ensure your input data meets the minimum depth requirements. SAVAGE is extremely coverage-hungry due to the complexity of viral quasispecies, while POLYTE is specifically designed to perform well at lower "per-haplotype" coverage.
+- **Reference-Guided vs. De Novo**: While SAVAGE can run de novo using FM-index structures, providing an ad-hoc consensus reference can significantly improve assembly quality in complex samples.
+- **Memory Management**: For large datasets or high-ploidy reconstructions, prefer `polyte-split` to reduce the computational overhead by processing the genome in 10 kb bins.
+- **Dependency Check**: If the tool fails to launch, verify the core binary by running `ViralQuasispecies --help` to ensure the C++ components are correctly compiled and linked to Boost libraries.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| polyte-split.py | POLYTE assembles individual haplotypes from NGS data. It expects as input single- and/or paired-end Illumina sequencing reads. |
+| polyte.py | POLYTE assembles individual haplotypes from NGS data. It expects as input single- and/or paired-end Illumina sequencing reads. |
+| savage.py | SAVAGE - Strain Aware VirAl GEnome assembly. SAVAGE assembles individual (viral) haplotypes from NGS data. It expects as input single- and/or paired-end Illumina sequencing reads. Please note that the paired-end reads are expected to be in forward-forward format, as output by PEAR. |
 
 ## Reference documentation
-
-- [HaploConduct GitHub Repository](./references/github_com_HaploConduct_HaploConduct.md)
-- [HaploConduct Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_haploconduct_overview.md)
+- [HaploConduct Main README](./references/github_com_HaploConduct_HaploConduct_blob_master_README.md)
+- [HaploConduct Wrapper Script](./references/github_com_HaploConduct_HaploConduct_blob_master_haploconduct.py.md)
+- [Strain Estimation Tool](./references/github_com_HaploConduct_HaploConduct_blob_master_estimate_strain_count.py.md)

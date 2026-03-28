@@ -106,3 +106,6 @@ Options:
   -h, --help           Print help
 ```
 
+
+## Metadata
+- **Skill**: generated

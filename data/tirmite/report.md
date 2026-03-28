@@ -235,3 +235,6 @@ options:
   --keep-temp           Preserve temporary directory.
 ```
 
+
+## Metadata
+- **Skill**: generated

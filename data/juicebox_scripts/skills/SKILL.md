@@ -1,6 +1,6 @@
 ---
 name: juicebox_scripts
-description: juicebox_scripts provides utilities to convert between Juicebox assembly files and standard genomic formats like FASTA, AGP, and BED. Use when user asks to translate manual Juicebox edits into updated assembly files, convert AGP files to assembly format, or prepare genomic data for Hi-C visualization.
+description: The juicebox_scripts tool converts genomic data formats between FASTA, AGP, and Juicebox-compatible assembly files to facilitate manual genome assembly curation. Use when user asks to convert FASTA or AGP files to assembly format, translate Juicebox edits back into updated genomic files, or remove gap contigs from assembly files.
 homepage: https://github.com/phasegenomics/juicebox_scripts
 ---
 
@@ -9,51 +9,66 @@ homepage: https://github.com/phasegenomics/juicebox_scripts
 
 ## Overview
 
-The `juicebox_scripts` suite provides essential utilities for bioinformaticians working with Hi-C data to curate genome assemblies. It bridges the gap between the Juicebox visualization tool and standard genomic file formats. Use this skill to translate manual edits made in Juicebox (such as contig breaks, joins, or reorientations) back into updated FASTA, AGP, and BED files, or to prepare initial assembly files from existing genomic data.
+The juicebox_scripts skill provides a suite of utilities designed to bridge the gap between standard genomic data formats and the Juicebox visualization tool. It is primarily used during the scaffolding phase of genome assembly, allowing researchers to convert AGP and FASTA files into Juicebox-ready .assembly files, and conversely, to translate manual edits made within Juicebox back into updated FASTA, AGP, and BED files. This ensures that manual refinements to an assembly are accurately captured in downstream bioinformatic outputs.
 
-## Core Workflows and CLI Usage
+## Tool Usage and CLI Patterns
 
-### 1. Post-Juicebox Assembly Conversion
-After modifying an assembly in Juicebox and exporting a `.assembly` file, use `juicebox_assembly_converter.py` to generate updated genomic files.
+### Preparing Files for Juicebox
 
-**To generate new scaffold-level files:**
-This produces outputs matching the scaffolding represented in Juicebox.
+Before visualizing an assembly in Juicebox, you often need to convert your starting files into the `.assembly` format.
+
+*   **From FASTA to AGP**: If you only have a FASTA file, first generate an AGP representation.
+    ```bash
+    makeAgpFromFasta.py <input_fasta> <output_agp>
+    ```
+*   **From AGP to Assembly**: Convert the AGP file to a Juicebox-compatible `.assembly` file.
+    ```bash
+    agp2assembly.py <input_agp> <output_assembly>
+    ```
+
+### Processing Juicebox Outputs
+
+After manually editing an assembly in Juicebox and exporting the `.assembly` file, use these scripts to generate the final assembly products.
+
+*   **Full Scaffold Output**: Generate new FASTA, AGP, and BED files that reflect the scaffolding and orientations defined in Juicebox.
+    ```bash
+    python juicebox_assembly_converter.py -a <modified_assembly> -f <original_fasta> -p <output_prefix> -v
+    ```
+*   **Contig-Only Output**: Use this mode if you only want to retrieve the contigs (including any breaks introduced in Juicebox) without the scaffolding information.
+    ```bash
+    python juicebox_assembly_converter.py -a <modified_assembly> -f <original_fasta> -c
+    ```
+
+### Handling Gap Contigs
+
+Juicebox sometimes includes gaps explicitly as contigs in the exported `.assembly` file, which can cause the converter script to fail. Use `degap_assembly.py` to clean these files.
+
 ```bash
-python juicebox_assembly_converter.py -a <modified_assembly> -f <original_fasta> -p <output_prefix>
-```
-
-**To generate contig-only files:**
-Use this if you only want to reflect contig breaks made in Juicebox without applying the scaffolding.
-```bash
-python juicebox_assembly_converter.py -a <modified_assembly> -f <original_fasta> -c
-```
-
-### 2. Preparing Juicebox Inputs
-Before visualization, you may need to convert existing assembly descriptions into the Juicebox-compatible `.assembly` format.
-
-**Convert AGP to Assembly:**
-```bash
-python agp2assembly.py <input_agp> <output_assembly>
-```
-
-**Convert FASTA to AGP:**
-```bash
-python makeAgpFromFasta.py <input_fasta> <output_agp>
-```
-
-### 3. Handling Gap Contigs
-If `juicebox_assembly_converter.py` fails because gaps are explicitly included as contigs in your `.assembly` file, use `degap_assembly.py` to clean the file.
-```bash
-python degap_assembly.py <has_gaps.assembly> > <no_gaps.assembly>
+python degap_assembly.py has_gaps.assembly > no_gaps.assembly
 ```
 
 ## Expert Tips and Best Practices
 
-- **File Consistency**: Always ensure that the `.hic` file and the `.assembly` file used together in Juicebox were generated from the same source. Mismatches in contig names or lengths between these files will lead to errors during conversion.
-- **Contig Breaks**: When using Juicebox to identify misjoins, the `-c` (contig mode) in the converter is the safest way to obtain a "cleaned" set of contigs for a subsequent round of scaffolding.
-- **Output Prefixing**: Use the `-p` flag in the converter to keep your workspace organized, as the tool generates multiple files (FASTA, AGP, BED, and a break report) simultaneously.
-- **Dependency Note**: These scripts are designed to work within a pipeline that often includes `matlock` and `3d-dna`. If generating a `.hic` file from a BAM, ensure you use `matlock bam2 juicer` followed by a coordinate sort before running the assembly visualizer.
+*   **Consistency is Critical**: Always ensure that the `.hic` file and the `.assembly` file used together in Juicebox were generated from the same underlying data. Mismatches in contig names or lengths between these files will lead to visualization errors and incorrect coordinate mapping.
+*   **Break Reports**: The `juicebox_assembly_converter.py` script automatically generates a report describing contig breaks. Review this report to validate that the breaks introduced during manual curation align with your biological expectations or Hi-C signal evidence.
+*   **Environment Requirements**: These scripts are compatible with Python 2.7 and 3.5/3.6. Ensure your environment has these versions available, as newer Python 3.x versions may require minor syntax adjustments for certain scripts.
+*   **Integration with 3D-DNA**: For a complete workflow, these scripts are often used alongside the `3d-dna` pipeline and `matlock`. A common pattern for generating a `.hic` file from a BAM file (mapped against starting contigs) is:
+    1. Convert BAM to links: `matlock bam2 juicer in.bam out.links.txt`
+    2. Sort links: `sort -k2,2 -k6,6 out.links.txt > out.sorted.links.txt`
+    3. Visualize: `bash 3d-dna/visualize/run-assembly-visualizer.sh -p false in.assembly out.sorted.links.txt`
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| agp2assembly.py | (No description) |
+| juicebox_assembly_converter.py | Converts a Juicebox assembly file to other formats. |
+| juicebox_scripts_degap_assembly.py | Removes gaps from an assembly file. |
+| makeAgpFromFasta.py | Converts a FASTA file to an AGP file. |
 
 ## Reference documentation
+
+- [Juicebox Scripts README](./references/github_com_phasegenomics_juicebox_scripts_blob_master_README.md)
 - [Juicebox Scripts Overview](./references/anaconda_org_channels_bioconda_packages_juicebox_scripts_overview.md)
-- [Juicebox Utilities and Workflows](./references/github_com_phasegenomics_juicebox_scripts.md)

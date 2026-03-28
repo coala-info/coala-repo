@@ -427,3 +427,6 @@ options:
                         Output file name (default: coverage_intervals.tsv)
 ```
 
+
+## Metadata
+- **Skill**: generated

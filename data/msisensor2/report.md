@@ -74,3 +74,6 @@ Usage:  msisensor2 msi [options]
        -h   help
 ```
 
+
+## Metadata
+- **Skill**: generated

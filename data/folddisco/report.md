@@ -177,3 +177,6 @@ No inputs — do not generate CWL.
 [1;31m[FAIL][0m Result, answer, and index files must be provided
 ```
 
+
+## Metadata
+- **Skill**: generated

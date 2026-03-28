@@ -67,3 +67,6 @@ Allowed options:
                                       checked for Genbank accessions
 ```
 
+
+## Metadata
+- **Skill**: generated

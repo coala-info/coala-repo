@@ -83,3 +83,6 @@ options:
                         generation (default: 1,000,000)
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: bbmap
-description: BBMap is a versatile bioinformatics suite used for fast, splice-aware sequence alignment and comprehensive genomic data processing. Use when user asks to align reads to a reference, trim adapters, filter contaminants, merge overlapping reads, normalize coverage, or reformat sequencing files.
+description: BBMap is a global, splice-aware aligner used to map DNA and RNA-seq reads from various sequencing platforms to a reference genome. Use when user asks to align reads to a reference, perform adapter trimming, filter contaminants, normalize sequence coverage, or convert between bioinformatics file formats.
 homepage: https://sourceforge.net/projects/bbmap
 ---
 
@@ -8,56 +8,55 @@ homepage: https://sourceforge.net/projects/bbmap
 # bbmap
 
 ## Overview
-BBMap is a versatile suite of bioinformatics tools (BBTools) centered around a fast, splice-aware global aligner. It is designed to handle massive datasets with high sensitivity for indels and mutations. Beyond alignment, the suite provides essential utilities for the entire sequencing pipeline: decontamination, error correction, read merging, and data normalization. It is particularly effective for Illumina, PacBio, and Nanopore data, offering deterministic performance and efficient memory management.
+
+BBTools is a comprehensive suite of fast, multithreaded bioinformatics utilities written in Java. The core tool, BBMap, is a global, splice-aware aligner capable of handling DNA and RNA-seq data from all major sequencing platforms (Illumina, PacBio, Nanopore, etc.). Beyond alignment, the suite provides specialized tools for nearly every stage of the pre-assembly and post-sequencing pipeline, including error correction, deduplication, and library complexity analysis.
 
 ## Core CLI Patterns
 
-### 1. Alignment (bbmap.sh)
-Use for mapping DNA or RNA reads to a reference genome.
-*   **Indexing and Mapping:** `bbmap.sh ref=genome.fa in=reads.fq out=mapped.sam`
-*   **RNA-seq (Splice-aware):** Set `maxindel=200k` for organisms with long introns (e.g., humans).
-*   **Memory Management:** Use `nodisk` to prevent writing the index to disk if you only need it for a single run.
-*   **Sensitivity:** Use the `fast` flag for speed or `slow` for maximum sensitivity with highly mutated genomes.
+### General Syntax
+Most BBTools follow a consistent parameter syntax:
+```bash
+tool.sh in=<input> out=<output> [options]
+```
+- **Memory Management**: Use the `-Xmx` flag to specify memory (e.g., `bbmap.sh -Xmx20g ...`). By default, tools attempt to autodetect available RAM.
+- **Paired Reads**: Handle paired files using `in1=` and `in2=` or the `#` wildcard:
+  ```bash
+  reformat.sh in=reads_#.fq out=processed_#.fq
+  ```
+- **Piping**: Use `stdin` and `stdout` with extensions to guide the tool:
+  ```bash
+  cat reads.fq.gz | bbduk.sh in=stdin.fq.gz out=stdout.fq ...
+  ```
 
-### 2. Quality Control and Trimming (bbduk.sh)
-"Duk" stands for Decontamination Using Kmers. Use this for adapter trimming and filtering.
-*   **Adapter Trimming:** `bbduk.sh in=reads.fq out=clean.fq ref=adapters.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo`
-    *   `tpe`: Trims pairs to the same length.
-    *   `tbo`: Trims adapters based on overlap.
-*   **Contaminant Filtering:** `bbduk.sh in=reads.fq out=unmatched.fq outm=matched.fq ref=phix.fa k=31 hdist=1`
-*   **Quality Trimming:** `bbduk.sh in=reads.fq out=trimmed.fq qtrim=rl trimq=10`
+## Tool-Specific Best Practices
 
-### 3. Read Merging (bbmerge.sh)
-Use to merge overlapping paired-end reads into single reads.
-*   **Standard Merging:** `bbmerge.sh in1=r1.fq in2=r2.fq out=merged.fq outu=unmerged.fq`
-*   **Error Correction via Overlap:** `bbmerge.sh in=reads.fq out=corrected.fq ecco mix` (Corrects bases in the overlap region without merging).
+### BBMap (Alignment)
+- **Indexing**: BBMap builds an index in a `/ref/` folder. Use `nodisk` to keep the index in memory for one-off runs.
+- **RNA-Seq**: For organisms with long introns (like humans), increase the search range: `maxindel=200k`.
+- **Sensitivity**: Use the `fast` flag for speed or `slow` for maximum sensitivity with highly mutated genomes.
 
-### 4. Normalization (bbnorm.sh)
-Use to reduce coverage in high-depth areas to speed up assembly.
-*   **Targeted Normalization:** `bbnorm.sh in=reads.fq out=norm.fq target=100 min=5` (Aims for 100x coverage, discards reads with <5x depth).
+### BBDuk (Trimming & Filtering)
+- **Adapter Trimming**: Use `ktrim=r k=23 mink=11 hdist=1` for standard Illumina adapter removal.
+- **Contaminant Removal**: Filter PhiX or other spike-ins by providing a reference: `ref=phix.fa outu=clean.fq`.
+- **Quality Trimming**: Use `qtrim=rl trimq=10` to trim both ends to a minimum Phred score of 10.
 
-### 5. Format Conversion and Utility (reformat.sh)
-The "Swiss Army Knife" for file manipulation.
-*   **Conversion:** `reformat.sh in=reads.fq out=reads.fa`
-*   **Subsampling:** `reformat.sh in=reads.fq out=sampled.fq samplecount=1000000`
-*   **Interleaving:** `reformat.sh in1=r1.fq in2=r2.fq out=interleaved.fq`
-*   **Verification:** `reformat.sh in=reads.fq vint` (Verifies paired-read synchronization).
+### BBMerge (Read Merging)
+- **Accuracy**: For optimal results, provide the adapter sequences: `adapter1=<seq> adapter2=<seq>`.
+- **Non-overlapping Reads**: Use `bbmerge-auto.sh` with `extend2=20` to attempt merging reads that do not physically overlap by using kmer-based extension.
 
-## Expert Tips and Best Practices
+### BBNorm (Normalization)
+- **Assembly Prep**: Normalize high-coverage datasets to a target depth (e.g., `target=100`) to speed up assembly and reduce graph complexity.
+- **Error Correction**: Enable `ecc=t` during normalization to fix low-frequency kmer errors.
 
-### Memory and Performance
-*   **Java Heap Space:** BBTools are Java-based. Use the `-Xmx` flag to manually set memory (e.g., `bbmap.sh -Xmx20g ...`). By default, scripts attempt to autodetect available memory.
-*   **Threading:** Tools use all available cores by default. Use `t=N` to restrict thread usage on shared systems.
-*   **Piping:** Most tools support piping via `in=stdin.fq` and `out=stdout.fq`. Note that `bbnorm.sh` and `tadpole.sh` cannot accept piped input in certain modes because they require multiple passes.
+### Reformat (Utility)
+- **Format Conversion**: Convert between any supported format (Fastq, Fasta, SAM, BAM) simply by changing the output extension.
+- **Subsampling**: Use `samplebasestarget=1000000` or `samplerate=0.1` to reduce dataset size.
+- **Fixing Pairs**: If paired files become disordered, use `repair.sh` to re-synchronize them based on read headers.
 
-### File Handling
-*   **Automatic Compression:** BBTools automatically detects `.gz` and `.bz2` extensions. If `pigz` is installed, it will be used for parallel compression/decompression.
-*   **Wildcards:** Use the `#` symbol for paired files: `in=reads_#.fq` expands to `reads_1.fq` and `reads_2.fq`.
-*   **Wildcard Output:** Use the `%` symbol in tools like `bbsplit.sh` to generate files based on reference names: `pattern=out_%.fq`.
-
-### Data Integrity
-*   **Repairing Pairs:** If paired files become disordered (e.g., after filtering one file independently), use `repair.sh in1=broken1.fq in2=broken2.fq out1=fixed1.fq out2=fixed2.fq outs=singletons.fq`.
-*   **Deduplication:** Use `clumpify.sh` to group similar reads. This significantly improves Gzip compression ratios and can remove optical/PCR duplicates with the `dedupe` flag.
+## Expert Tips
+- **Compression**: BBTools natively supports `.gz` files. If `pigz` is installed, it will automatically use it for high-speed parallel compression.
+- **Validation**: Use `vint` (verify interleaved) or `vpair` (verify pairs) in `reformat.sh` to check if your paired-end files are properly synchronized.
+- **Kmer Length**: For most filtering tasks, `k=31` is the maximum supported length and provides the highest specificity.
 
 
 

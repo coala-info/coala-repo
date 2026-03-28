@@ -1,6 +1,6 @@
 ---
 name: mageck-vispr
-description: "MAGeCK-VISPR is an integrated workflow for the quality control, analysis, and visualization of CRISPR/Cas9 screens. Use when user asks to initialize a CRISPR analysis project, run the MAGeCK-VISPR pipeline, or visualize screen results with VISPR."
+description: MAGeCK-VISPR generates interactive web-based visualizations and quality control reports for CRISPR/Cas9 screening data processed by the MAGeCK pipeline. Use when user asks to visualize screening results, set up configuration files for VISPR, run the visualization server, or generate static quality control reports.
 homepage: https://bitbucket.org/liulab/mageck-vispr
 ---
 
@@ -8,53 +8,50 @@ homepage: https://bitbucket.org/liulab/mageck-vispr
 # mageck-vispr
 
 ## Overview
-MAGeCK-VISPR is an integrated workflow designed for the rigorous analysis of CRISPR/Cas9 screens. It automates the pipeline from raw sequencing reads to statistical analysis by orchestrating several tools: FastQC for quality control, cutadapt for adapter trimming, MAGeCK for guide RNA enrichment/depletion analysis, and VISPR for interactive visualization. It is particularly effective for large-scale screens with multiple conditions or replicates, providing a standardized Snakemake-based execution environment.
+MAGeCK-VISPR is a specialized companion tool for the MAGeCK pipeline. It transforms raw screening data and MAGeCK analysis outputs into interactive, web-based visualizations. Use this skill to guide the setup of configuration files, execution of the VISPR server, and the generation of comprehensive QC reports that help identify screen outliers, library bias, and significant gene hits.
 
 ## Core Workflow and CLI Patterns
 
-### 1. Project Initialization
-The workflow begins by generating a template directory structure. This is essential for establishing the expected file hierarchy.
+### 1. Configuration Setup
+VISPR requires a configuration file (typically `config.yaml`) to define the study metadata, fastq files, and library design.
+- **Essential Fields**: Ensure `targets`, `samples`, and `statistics` are defined.
+- **Library File**: Point to the sgRNA library file (CSV/Tab) containing `id`, `sequence`, and `gene`.
 
+### 2. Running the Visualization Server
+To host the interactive report locally:
 ```bash
-# Initialize a new MAGeCK-VISPR project
-mageck-vispr init <project_name>
+vispr server config.yaml
 ```
+- Access the dashboard via the default URL (usually `http://127.0.0.1:5000`).
+- Use the `--port` flag to specify a different port if 5000 is occupied.
 
-This command creates a directory containing the necessary configuration files and a `Snakefile`.
-
-### 2. Configuration Requirements
-Before running the workflow, two primary files must be configured manually:
-- **Sample Definition**: A tab-separated file (usually `samples.txt`) defining sample names, FastQ file paths, and their respective conditions (e.g., control vs. treatment).
-- **Workflow Configuration**: A configuration file defining parameters for MAGeCK, the library design (sgRNA sequences), and the genomic targets.
-
-### 3. Executing the Workflow
-MAGeCK-VISPR leverages Snakemake for execution. You can run the pipeline locally or on a cluster.
-
+### 3. Static Report Generation
+For sharing results without a live server:
 ```bash
-# Run the workflow locally using a specific number of cores
-mageck-vispr run local --cores 8
-
-# Perform a dry run to validate the configuration and steps
-snakemake -n
-
-# Run on a cluster (requires a cluster configuration file)
-mageck-vispr run cluster --cluster "sbatch -p <partition>" --jobs 10
+vispr report --output report_dir config.yaml
 ```
+- This generates a standalone directory containing HTML and assets.
 
-### 4. Visualization
-Once the analysis is complete, use the VISPR component to host an interactive web-based visualization of the results.
+### 4. Quality Control Metrics
+Focus on these key visualizations within the VISPR interface:
+- **Gini Index**: High values indicate poor library representation or extreme selection.
+- **Zero Counts**: Monitor the number of sgRNAs with no reads to assess library dropout.
+- **PCA Plots**: Verify that biological replicates cluster together.
 
-```bash
-# Start the VISPR server to explore results
-vispr server <results_prefix>.vispr.yaml
-```
+## Best Practices
+- **Data Consistency**: Ensure sample names in the configuration file match the column headers in your MAGeCK count and MLE/RRA files.
+- **Resource Management**: For large-scale screens with many samples, use `vispr report` to pre-render plots, as the live server may lag when calculating distributions on-the-fly.
+- **Integration**: Always run `mageck count` and `mageck test` (or `mle`) before initializing VISPR, as it relies on these output files for the "Results" tab.
 
-## Expert Tips and Best Practices
-- **Library File Formatting**: Ensure your library file (CSV/TSV) matches the MAGeCK format exactly: `ID`, `Sequence`, `Gene`. Any mismatch in guide IDs between the library and the configuration will cause the counting step to fail.
-- **Quality Control First**: Always inspect the FastQC reports generated in the `qc/` directory before interpreting MAGeCK hits. High adapter contamination or low base quality can lead to false negatives in guide counting.
-- **Resource Management**: For large screens (many samples), the `cutadapt` and `count` steps are CPU-intensive. Use the `--cores` flag to parallelize these tasks.
-- **Handling Multiple Replicates**: MAGeCK-VISPR handles replicates internally. Ensure replicates are labeled with the same condition name in your sample definition file to allow the MAGeCK "MLE" or "RRA" algorithms to properly estimate variance.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mageck-vispr annotate-library | MAGeCK-VISPR is a comprehensive quality control, analysis and visualization pipeline for CRISPR/Cas9 screens. |
+| mageck-vispr init | MAGeCK-VISPR is a comprehensive quality control, analysis and visualization pipeline for CRISPR/Cas9 screens. |
 
 ## Reference documentation
-- [MAGeCK-VISPR Overview](./references/anaconda_org_channels_bioconda_packages_mageck-vispr_overview.md)
-- [MAGeCK-VISPR Source and Documentation](./references/bitbucket_org_liulab_mageck-vispr.md)
+- [MAGeCK-VISPR Bitbucket Repository](./references/bitbucket_org_liulab_mageck-vispr.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_mageck-vispr_overview.md)

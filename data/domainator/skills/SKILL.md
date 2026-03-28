@@ -1,6 +1,6 @@
 ---
 name: domainator
-description: Domainator is a modular bioinformatics suite for annotating protein domains and analyzing their genomic contexts using GenBank files. Use when user asks to annotate sequences with HMMs, extract genomic neighborhoods, deduplicate sequences, or perform comparative analysis of gene clusters.
+description: Domainator is a modular bioinformatics suite for domain-centric analysis and annotation of genetic data using HMM profiles. Use when user asks to annotate sequences with functional domains, extract genomic neighborhoods, search for specific domains, cluster sequences, or perform comparative genomics.
 homepage: https://github.com/nebiolabs/domainator
 ---
 
@@ -8,45 +8,62 @@ homepage: https://github.com/nebiolabs/domainator
 # domainator
 
 ## Overview
+Domainator is a modular bioinformatics suite designed for "domain-centric" analysis of genetic data. It treats HMM-profiles as first-class citizens and utilizes the GenBank format as a universal carrier for both sequence and annotation data. Use this skill to help users annotate sequences with functional domains, extract specific genomic neighborhoods (such as biosynthetic gene clusters), and perform comparative genomics based on domain architecture rather than just raw sequence identity.
 
-Domainator is a modular bioinformatics suite designed for workflows centered on protein domains and their genomic contexts. Unlike many tools that separate sequence data from annotations, Domainator utilizes the GenBank format as a primary carrier for both, ensuring data portability and consistency. It is particularly effective for "genome mining" workflows where a user needs to identify specific functional domains and then analyze the surrounding gene neighborhoods across multiple organisms or metagenomic contigs. The suite is organized into functional categories: editors (which transform GenBank files), reporters (which generate statistics or tables), and comparison/plotting tools (which create networks and trees).
+## Core CLI Patterns
+Domainator follows a consistent "Editor" logic where the file being modified is passed via `-i` and the reference criteria (HMMs or sequences) are passed via `-r`.
 
-## CLI Usage Patterns and Best Practices
+### Functional Annotation
+To add domain annotations to unannotated sequences (GenBank or FASTA) using HMM profiles or reference proteins:
+```bash
+domainate.py -i input.gb -r pfam-A.hmm -o annotated.gb
+```
+*Expert Tip: You can provide multiple reference files (e.g., HMMs and FASTA proteins) in a single call to annotate with both simultaneously.*
 
-### Core Logic: Input vs. Reference
-In Domainator, the `-i` argument typically specifies the file being edited or searched, while the `-r` argument specifies the criteria (HMM profiles or reference sequences).
-*   **Annotation**: `domainate.py -i unannotated.gb -r pfam-A.hmm -o annotated.gb`
-*   **Searching**: `domain_search.py -i database.fasta -r query.hmm -o hits.gb`
+### Domain-Based Searching
+To subset a large database based on the presence of specific domain hits:
+```bash
+domain_search.py -i uniprot.fasta -r query.hmm -o hits.gb
+```
 
-### Chaining with Streaming
-Many Domainator programs support stdin and stdout, allowing for efficient shell piping to avoid intermediate files.
-*   **Pattern**: `cat input.gb | domainate.py -r ref.hmm | domain_search.py -r target.hmm > results.gb`
-*   *Note*: Programs requiring multiple passes over the data do not support streaming.
+### Neighborhood Extraction
+To extract the genomic context (neighborhood) around a specific protein or domain of interest:
+```bash
+select_by_cds.py -i genome_contigs.gb -r anchor_domain.hmm -o neighborhoods.gb
+```
 
-### Common Workflow Examples
+### Sequence Clustering and Deduplication
+To cluster sequences and keep only representatives using CD-HIT or usearch:
+```bash
+deduplicate_genbank.py -i input.gb -o representatives.gb
+```
 
-#### 1. Functional Annotation
-Add functional hits to a set of contigs using both HMMs and protein sequences simultaneously:
-`domainate.py -i contigs.gb -r pfam.hmm rebase_gold.fasta -o annotated.gb`
+## Workflow Best Practices
+- **GenBank as the Standard**: Always prefer GenBank (.gb) files for intermediate steps. Domainator stores all metadata and annotations within the GenBank features, ensuring data portability across the suite.
+- **Piping and Streaming**: Many Domainator programs support streaming. Use standard UNIX pipes to chain editors together to avoid creating large intermediate files.
+- **HMM Subsetting**: Use Domainator's HMM tools to subset large libraries (like Pfam) to only the profiles relevant to your specific search to increase performance.
+- **Reporting**: Use "Record-wise report" programs to convert GenBank data into TSV format for final analysis in Excel, R, or Python (Pandas).
 
-#### 2. Neighborhood Extraction
-Extract the genomic neighborhood (e.g., 10kb flanking regions) around a specific domain hit:
-`select_by_cds.py -i annotated.gb --query "Domain_Name" --flanking 10000 -o neighborhoods.gb`
+## Program Categories
+- **Editors**: (`domainate`, `domain_search`, `select_by_cds`) Output format matches input format; used for transformations.
+- **Comparison**: (`compare_contigs`, `seq_dist`) Generate distance or similarity matrices.
+- **Summary**: Produce statistics and high-level graphs of the dataset.
+- **Plotting**: Convert matrices into formats for Cytoscape or tree viewers.
 
-#### 3. Sequence Similarity and Clustering
-Deduplicate sequences based on similarity before downstream analysis:
-`deduplicate_genbank.py -i input.gb --identity 0.90 -o representatives.gb`
 
-#### 4. Comparative Analysis
-Compare gene neighborhoods based on domain content using Jaccard or adjacency indexes:
-`compare_contigs.py -i neighborhoods.gb -o distance_matrix.txt`
 
-### Expert Tips
-*   **HMM Subsetting**: Domainator treats HMM-profiles as first-class citizens; you can subset `.hmm` files directly within the suite to focus on specific protein families.
-*   **Data Portability**: Always prefer GenBank output when moving between Domainator "editors" to ensure all metadata and domain hits are preserved for the next step.
-*   **Visualization**: Use `build_ssn.py` to generate `.xgmml` files for Cytoscape when analyzing large protein families or neighborhood clusters.
-*   **Help**: Every sub-program includes detailed documentation via the `-h` flag (e.g., `build_projection.py -h`).
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build_ssn.py | Generates Sequence Similarity Networks      Build a sequence similarity network and do analysis related to that. |
+| domainator_compare_contigs.py | Calculates similarity metrics for gene neighborhoods |
+| domainator_deduplicate_genbank.py | Remove redundant sequences from a genbank file |
+| domainator_domain_search.py | Search for matches to hmm profiles |
+| domainator_domainate.py | Annotate sequence files with hmm profiles |
+| domainator_select_by_cds.py | Extract contigs regions around selected CDSs |
 
 ## Reference documentation
-- [Domainator GitHub Repository](./references/github_com_nebiolabs_domainator.md)
-- [Bioconda Domainator Overview](./references/anaconda_org_channels_bioconda_packages_domainator_overview.md)
+- [Domainator README](./references/github_com_nebiolabs_domainator_blob_main_README.md)
+- [Documentation Index](./references/github_com_nebiolabs_domainator_blob_main_docs_README.md)
+- [Developing Domainator](./references/github_com_nebiolabs_domainator_blob_main_docs_developing_domainator.md)

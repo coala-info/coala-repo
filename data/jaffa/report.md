@@ -126,3 +126,6 @@ echo "Running JAFFA version 2.3" ;             echo "Checking for required data 
 Use 'bpipe errors' to see output from failed commands.
 ```
 
+
+## Metadata
+- **Skill**: generated

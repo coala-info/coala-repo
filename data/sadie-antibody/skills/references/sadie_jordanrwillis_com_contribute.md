@@ -1,1 +1,131 @@
-Contributing to SADIE - SADIE Skip to content SADIE Contributing to SADIE Initializing search jwillis0720/sadie SADIE jwillis0720/sadie SADIE Reference Database AIRR Sequence Annotation AIRR Sequence Annotation Annotating Advanced Annotation Methods Visualization Sequence Numbering BCR/TCR Objects Clustering Contributing to SADIE Contributing to SADIE Table of contents Issues Pull Requests Table of contents Issues Pull Requests Contributing to SADIE Please contribute to SADIE ! Issues &para; Questions, feature requests, and bug reports are welcome as discussions or issues . However, to report a security vulnerability, please see our security policy . To make it as simple as possible for us to help you, please include the version output in your issue: sadie --version Please try to always include the above unless you're unable to install SADIE or know it's not relevant to your question or feature request. Pull Requests &para; SADIE has an automated release. If you submit a pull request, it will be released as soon as it is accepted. This ensures that the latest version of SADIE is always available to the community. You'll need to have a version between Python 3.9 and 3.13 , poetry , and git installed. Clone your fork from Github and cd into your repo directory $ git clone git@github.com:YOUR_USERNAME/sadie.git $ cd sadie Set up a poetry for running tests $ pip install poetry ---&gt; 100% !!! Info Poetry now supports all Python versions from 3.9 to 3.13 Install sadie, dependencies, test dependencies, and doc dependencies $ poetry install --with dev ---&gt; 100% Checkout a new branch and make your changes $ git checkout -b my-new-feature-branch Fix formatting and imports $ pre-commit run --all-files !!! Info SADIE uses black to enforce formatting, isort to fix imports, and pyright for type checking. Run tests and linting $ poetry run pytest tests Build documentation $ mkdocs build $ mkdocs serve INFO - Building documentation... INFO - [14:27:11] Serving on http://127.0.0.1:8000/ !!! Info Our netlify.toml is used to create our documentation site. This is not needed for a pull request but is useful for checking your changes locally. 1. Commit your changes and submit a pull request to the `development` branch ... add, commit, push, and create your pull request point to our development branch. Thank you in advance! Made with Material for MkDocs
+[ ]
+[ ]
+
+[Skip to content](#issues)
+
+SADIE
+
+Contributing to SADIE
+
+Initializing search
+
+[jwillis0720/sadie](https://github.com/jwillis0720/sadie "Go to repository")
+
+SADIE
+
+[jwillis0720/sadie](https://github.com/jwillis0720/sadie "Go to repository")
+
+* [SADIE](..)
+* [Reference Database](../reference/)
+* [ ]
+
+  AIRR Sequence Annotation
+
+  AIRR Sequence Annotation
+  + [Annotating](../annotation/)
+  + [Advanced Annotation Methods](../advanced_annotation/)
+  + [Visualization](../visualization/)
+* [Sequence Numbering](../renumbering/)
+* [BCR/TCR Objects](../models/)
+* [Clustering](../clustering/)
+* [ ]
+
+  Contributing to SADIE
+
+  [Contributing to SADIE](./)
+
+  Table of contents
+  + [Issues](#issues)
+  + [Pull Requests](#pull-requests)
+
+Table of contents
+
+* [Issues](#issues)
+* [Pull Requests](#pull-requests)
+
+# Contributing to SADIE
+
+Please contribute to *SADIE*!
+
+## Issues[¶](#issues "Permanent link")
+
+Questions, feature requests, and bug reports are welcome as [discussions or issues](https://github.com/jwillis0720/sadie/issues/new/choose). **However, to report a security
+vulnerability, please see our [security policy](https://github.com/jwillis0720/sadie/security/policy).**
+
+To make it as simple as possible for us to help you, please include the version output in your issue:
+
+```
+sadie --version
+```
+
+Please try to always include the above unless you're unable to install *SADIE* or **know** it's not relevant
+to your question or feature request.
+
+## Pull Requests[¶](#pull-requests "Permanent link")
+
+*SADIE* has an automated release. If you submit a pull request, it will be released as soon as it is accepted. This ensures that the latest version of *SADIE* is always available to the community.
+
+You'll need to have a version between **Python 3.9 and 3.13**, **poetry**, and **git** installed.
+
+1. Clone your fork from Github and cd into your repo directory
+
+```
+$ git clone git@github.com:YOUR_USERNAME/sadie.git
+$ cd sadie
+```
+
+1. Set up a poetry for running tests
+
+   ```
+   $ pip install poetry
+   ---> 100%
+   ```
+
+!!! Info
+Poetry now supports all Python versions from 3.9 to 3.13
+
+1. Install sadie, dependencies, test dependencies, and doc dependencies
+
+```
+$ poetry install --with dev
+---> 100%
+```
+
+1. Checkout a new branch and make your changes
+
+```
+$ git checkout -b my-new-feature-branch
+```
+
+1. Fix formatting and imports
+
+   ```
+   $ pre-commit run --all-files
+   ```
+
+!!! Info
+SADIE uses [black](https://github.com/psf/black) to enforce formatting, [isort](https://github.com/PyCQA/isort) to fix imports, and [pyright](https://github.com/microsoft/pyright) for type checking.
+
+1. Run tests and linting
+
+```
+$ poetry run pytest tests
+```
+
+1. Build documentation
+
+   ```
+   $ mkdocs build
+   $ mkdocs serve
+   INFO     -  Building documentation...
+   INFO     -  [14:27:11] Serving on http://127.0.0.1:8000/
+   ```
+
+   !!! Info
+   Our netlify.toml is used to create our documentation site.
+   This is not needed for a pull request but is useful for checking your changes locally.
+   1. Commit your changes and submit a pull request to the `development` branch
+   ... add, commit, push, and create your pull request point to our development branch. Thank you in advance!
+
+Made with
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)

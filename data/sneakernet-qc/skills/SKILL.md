@@ -1,6 +1,6 @@
 ---
 name: sneakernet-qc
-description: SneakerNet is a modular pipeline that automates quality control, assembly, and genomic analysis for primary sequencing data. Use when user asks to initialize a project directory from raw reads, run QC plugins, detect contamination, or perform AMR genotyping.
+description: sneakernet-qc automates the QA/QC process for primary genomic sequencing data by transforming raw reads into structured project directories and executing analysis plugins. Use when user asks to initialize project directories from raw sequencer output, run the standard suite of genomic analysis plugins, or skip specific pipeline steps like data egress.
 homepage: https://github.com/lskatz/sneakernet
 ---
 
@@ -8,56 +8,68 @@ homepage: https://github.com/lskatz/sneakernet
 # sneakernet-qc
 
 ## Overview
-SneakerNet is a modular Perl-based pipeline designed to automate the QC process for primary genomic and metagenomic read data. It transforms raw sequencing folders into standardized project directories and executes a series of plugins to assess read quality, detect contamination, perform assembly, and predict antimicrobial resistance (AMR) genotypes. It is optimized for high-throughput environments where consistent, multi-step analysis is required for every sequencing run.
 
-## Project Initialization
-Before running the QC pipeline, raw data must be organized into a SneakerNet-formatted project directory.
+SneakerNet is a modular bioinformatics pipeline designed to automate the QA/QC process for primary genomic sequencing data. It transforms raw reads into a structured project directory and executes a series of plugins to generate assemblies, identify taxa, and predict phenotypes. This skill provides the necessary command-line patterns to initialize project directories and execute the standard analysis suite, ensuring consistent and reproducible genomic surveillance.
 
-- **Standard Initialization**: Use `SneakerNet.roRun.pl` to parse a raw MiSeq/HiSeq/Ion Torrent directory.
-  ```bash
-  SneakerNet.roRun.pl --createsamplesheet -o ProjectName-Year-Ordinal /path/to/raw/run/dir
-  ```
-- **Naming Convention**: Project folders should ideally follow a dash-delimited format: `[Machine]-[Year]-[Ordinal]-[OptionalName]`.
-- **File Requirements**: Fastq files must use the `_R1_` and `_R2_` naming convention for the parser to correctly identify pairs.
+## Core Workflow
 
-## Running the Pipeline
-The primary execution engine is `SneakerNetPlugins.pl`.
+### 1. Project Initialization
+Before running the analysis, you must convert a raw sequencer output folder (e.g., from a MiSeq) into a SneakerNet-formatted project directory.
 
-- **Basic Execution**:
-  ```bash
-  SneakerNetPlugins.pl --numcpus 8 /path/to/SneakerNet/project/dir
-  ```
-- **Logging**: It is best practice to redirect output to a log file and monitor it.
-  ```bash
-  SneakerNetPlugins.pl --numcpus 8 /path/to/project > project/SneakerNet.log 2>&1 &
-  tail -f project/SneakerNet.log
-  ```
-- **Docker Usage**: When using the containerized version, ensure the Kraken database and project directories are correctly mounted.
-  ```bash
-  docker run --rm -v $PWD:/data -v $KRAKEN_DB:/kraken-database lskatz/sneakernet:latest SneakerNetPlugins.pl --numcpus 12 /data/project_folder
-  ```
+```bash
+SneakerNet.roRun.pl --createsamplesheet -o PROJECT_NAME /path/to/miseq/run/directory
+```
 
-## Configuration and Customization
-SneakerNet behavior is controlled via a configuration file named `snok.txt` located within the project directory.
+- **Note**: This creates the required `samples.tsv` and organizes the FASTQ files.
+- **Tip**: If the sample sheet already exists, ensure it is in the root of the project directory.
 
-- **Email Notifications**: Add a comma-separated list of recipients.
-  ```bash
-  echo "emails = analyst@example.com, supervisor@example.com" > project_dir/snok.txt
-  ```
-- **Workflow Selection**: Define which set of plugins to run (e.g., `default`, `assembly-only`).
-  ```bash
-  echo "workflow = default" >> project_dir/snok.txt
-  ```
-- **Disabling Steps**: Use CLI flags to skip specific post-processing steps like file transfers or emails.
-  ```bash
-  SneakerNetPlugins.pl --no email --no transfer project_dir
-  ```
+### 2. Running the Pipeline
+Execute the standard suite of plugins on an initialized project directory.
+
+```bash
+SneakerNetPlugins.pl --numcpus 8 ./PROJECT_NAME
+```
+
+### 3. Common Plugin Controls
+You can skip specific steps (like data egress) using the `--no` flag:
+
+- **Skip Emailing**: `--no email`
+- **Skip File Transfer**: `--no transfer`
+- **Skip Database Saving**: `--no save`
+
+## Docker Usage Patterns
+
+For environments using containers, use the following patterns to ensure volumes are mapped correctly for the Perl scripts.
+
+**Importing Data:**
+```bash
+docker run --rm -v $PWD:/data lskatz/sneakernet:latest \
+  SneakerNet.roRun.pl /data/MISEQ_RAW -o /data/SN_INPUT
+```
+
+**Running Analysis:**
+```bash
+docker run --rm -v $PWD:/data -v $KRAKEN_DB:/kraken-database \
+  lskatz/sneakernet:latest \
+  SneakerNetPlugins.pl --numcpus 12 --no email /data/SN_INPUT
+```
 
 ## Expert Tips
-- **Plugin Architecture**: Each step (Kraken, StarAMR, Shovill) is a standalone plugin. If a specific analysis fails, you can often re-run just that plugin script if the environment is sourced correctly.
-- **Base Balance**: Pay close attention to the base balance report; a significant deviation from a 1:1 ratio in A/T or C/G can indicate library prep issues or sequencing artifacts.
-- **Contamination Checks**: SneakerNet uses a dual-check system: Kraken for taxonomic distribution and ColorID/MLST to ensure only one instance of conserved genes exists. If these disagree, manual inspection of the assembly is required.
+
+- **Resource Management**: Always specify `--numcpus` to match your environment; the default may not be optimal for high-throughput assembly.
+- **Contamination Checks**: SneakerNet uses Kraken and MLST-based checks. Ensure your Kraken database path is correctly set in the environment or mapped in Docker, otherwise, contamination plugins will fail.
+- **Output Inspection**: The primary output is an HTML summary report (`report.html`) located in the project directory. This provides a high-level "Pass/Fail" status for every sample in the run.
+- **Manual Overrides**: If a sample fails QC due to known issues, you can manually edit the `samples.tsv` or the plugin-specific TSV files in the project folder before re-running `SneakerNetPlugins.pl`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| SneakerNet.roRun.pl | Parses an unaltered Illumina run and formats it into something usable for SneakerNet. Fastq files must be in the format of _R1_ and _R2_ instead of _1 and _2 for this particular script. |
+| SneakerNetPlugins.pl | runs all SneakerNet plugins on a run directory |
 
 ## Reference documentation
-- [SneakerNet GitHub Repository](./references/github_com_lskatz_SneakerNet.md)
-- [Bioconda SneakerNet-QC Overview](./references/anaconda_org_channels_bioconda_packages_sneakernet-qc_overview.md)
+- [SneakerNet README](./references/github_com_lskatz_SneakerNet_blob_master_README.md)
+- [SneakerNet Dockerfile](./references/github_com_lskatz_SneakerNet_blob_master_Dockerfile.md)

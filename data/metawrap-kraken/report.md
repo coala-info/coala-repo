@@ -73,3 +73,6 @@ Usage: metaWRAP [module]
 	--show-config	show where the metawrap configuration files are stored
 ```
 
+
+## Metadata
+- **Skill**: generated

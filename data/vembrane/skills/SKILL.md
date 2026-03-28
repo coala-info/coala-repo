@@ -1,6 +1,6 @@
 ---
 name: vembrane
-description: vembrane manipulates VCF/BCF files using Python expressions for advanced filtering and data extraction. Use when user asks to filter or tag variants, extract variant data into tables, sort or prioritize variants, annotate variants, or convert VCF data to JSON, YAML, or FHIR.
+description: "vembrane manipulates VCF and BCF files using Python expressions for advanced filtering, sorting, and data extraction. Use when user asks to filter variants with complex logic, extract VCF fields into tabular formats, sort records by custom expressions, or tag variants based on specific criteria."
 homepage: https://github.com/vembrane/vembrane
 ---
 
@@ -8,60 +8,90 @@ homepage: https://github.com/vembrane/vembrane
 # vembrane
 
 ## Overview
+`vembrane` is a command-line utility that brings the power of Python expressions to VCF/BCF file manipulation. It allows for sophisticated filtering and transformation by treating variant fields—such as `INFO`, `FORMAT`, `CHROM`, and functional annotations—as Python objects. This enables the use of complex logic, mathematical operations, and string manipulations that are often difficult or impossible in standard VCF tools. It is particularly effective for variant prioritization and data extraction into tabular or structured formats.
 
-vembrane is a specialized tool for the manipulation of Variant Call Format (VCF) and Binary VCF (BCF) files. While tools like `bcftools` use a custom filtering language, vembrane allows users to write native Python expressions to evaluate variant records. This provides immense flexibility, enabling the use of Python's standard library (math, statistics, regex) and built-in functions to perform sophisticated variant prioritization, quality control, and data conversion.
+## Core Command Patterns
 
-## Core Subcommands
-
-- **filter**: Removes records that do not satisfy a boolean Python expression.
-- **tag**: Non-destructive filtering; adds a label to the `FILTER` column for records matching an expression.
-- **table**: Extracts specific fields into a tabular format (TSV/CSV).
-- **sort**: Reorders variants based on one or more Python expressions (useful for prioritization).
-- **annotate**: Integrates data from external TSV/CSV files based on genomic coordinates.
-- **structured/fhir**: Converts VCF data into JSON, YAML, or FHIR-compliant formats.
-
-## Common CLI Patterns
-
-### Filtering by Quality and Depth
-Filter for variants with a quality score over 30 and a total read depth (DP) in the INFO field greater than 10:
+### Filtering Variants
+The `filter` subcommand is the primary way to subset VCF files.
 ```bash
-vembrane filter 'QUAL > 30 and INFO["DP"] > 10' input.vcf
+# Filter by quality and specific consequence
+vembrane filter 'QUAL >= 30 and ANN["Consequence"].any_is_a("missense_variant")' input.bcf
+
+# Filter using INFO and FORMAT fields
+vembrane filter 'INFO["DP"] > 10 and all(FORMAT["GQ"][s] > 20 for s in SAMPLES)' input.vcf
 ```
 
-### Working with Annotations (ANN/CSQ)
-vembrane automatically parses SnpEff (ANN) or VEP (CSQ) fields. To filter for specific consequences:
+### Creating Tables
+The `table` subcommand extracts VCF data into tabular formats (TSV/CSV/Parquet).
 ```bash
-vembrane filter 'any(c == "missense_variant" for c in ANN["Consequence"])' input.vcf
-```
-*Note: Use `--annotation-key CSQ` if your file uses VEP annotations.*
+# Extract specific fields to a TSV
+vembrane table 'CHROM, POS, REF, ALT, ANN["Gene_Name"], QUAL' input.vcf > output.tsv
 
-### Genotype-Based Filtering
-Filter for variants where at least two samples are heterozygous:
-```bash
-vembrane filter 'count_het() >= 2' input.vcf
+# Use Python math in table columns
+vembrane table 'CHROM, POS, 10**(-QUAL/10)' input.vcf
 ```
 
-### Creating a Custom TSV
-Extract chromosome, position, and specific sample genotypes:
+### Sorting and Prioritization
+The `sort` subcommand allows for multi-level sorting based on expressions.
 ```bash
-vembrane table 'CHROM, POS, REF, ALT, FORMAT["GT"]["Sample1"]' input.vcf > output.tsv
+# Sort by allele frequency (ascending) then by quality (descending)
+vembrane sort 'ANN["gnomAD_AF"], -QUAL' input.vcf > sorted.vcf
 ```
 
-### Sorting for Prioritization
-Sort variants by gnomAD frequency (ascending) and then by REVEL score (descending):
+### Tagging (Non-destructive Filtering)
+The `tag` subcommand adds values to the `FILTER` column instead of removing records.
 ```bash
-vembrane sort input.vcf 'ANN["gnomad_AF"], -ANN["REVEL"]' > prioritized.vcf
+# Tag variants with low depth
+vembrane tag --tag low_depth="INFO['DP'] < 5" input.vcf
+```
+
+## Python Expression Syntax
+
+### Field Access
+- **Standard Fields**: `CHROM`, `POS`, `ID`, `REF`, `ALT`, `QUAL`, `FILTER`.
+- **INFO Fields**: `INFO["FIELD_NAME"]`.
+- **FORMAT Fields**: `FORMAT["FIELD_NAME"]["SAMPLE_NAME"]`.
+- **Samples**: `SAMPLES` (a list of sample names).
+
+### Annotation (ANN/CSQ) Handling
+`vembrane` provides special handling for the `ANN` (or `CSQ`) field, which often contains multiple entries per variant.
+- **Access**: `ANN["Field"]` returns a list of values for that field across all transcripts.
+- **Sequence Ontology**: Use `.any_is_a("term")` to check if any annotation matches a Sequence Ontology term or its children.
+  ```python
+  ANN["Consequence"].any_is_a("stop_gained")
+  ```
+
+### Handling Missing Values
+VCF files often have missing data. Use Python's `get` or check for `None`.
+```python
+# Provide a default value for missing INFO fields
+INFO.get("DP", 0) > 10
 ```
 
 ## Expert Tips
+- **Performance**: When working with large files, use BCF format and pipe `bcftools view` into `vembrane` for faster processing.
+- **Custom Context**: Use `--custom-context` to pass a Python script defining helper functions that can be used within your expressions.
+- **Annotation Keys**: If your VCF uses a key other than `ANN` for annotations (e.g., `CSQ`), use the `-k` or `--annotation-key` flag.
+- **Tabular Defaults**: By default, `vembrane table` produces a "long" format (one row per sample). Use `--wide` to get one row per variant if sample-specific data is not needed.
 
-- **Handling Missing Data**: Use `without_na(values)` to skip missing entries or `replace_na(values, replacement)` to provide defaults within your expressions.
-- **Truthiness**: If an expression returns multiple values (like a list of annotations), wrap it in `any()` or `all()` to ensure it evaluates to a single boolean for the filter.
-- **Performance**: For large files, use BCF input/output (`-O bcf`) to speed up processing.
-- **External Context**: Use `--context-file` to pass a Python script defining custom functions or variables that can be used inside your filter expressions.
-- **Ontology Support**: Use the `SO` symbol in expressions to check for Sequence Ontology terms if an OBO file is provided via `--ontology`.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| structured | Create structured output from a VCF/BCF and a YTE template. |
+| vembrane annotate | Add new INFO field annotations to a VCF/BCF from other data sources, using a configuration file. |
+| vembrane fhir | Generate FHIR records from VCF/BCF files. |
+| vembrane filter | Filter VCF/BCF records and annotations based on a user-defined Python expression.Only records for which the expression evaluates to True are kept. |
+| vembrane sort | Sort VCF/BCF records by one or multiple Python expressions that encode keys for the desired order. This feature is primarily meant to prioritizing records for the human eye. For large unfiltered VCF/BCF files, the only relevant sorting is usually by position, which is better done with e.g. bcftools (and usually the standard sorting that variant callers output). Expects the VCF/BCF file to be single-allelic, i.e., one ALT allele per record. |
+| vembrane tag | Flag records by adding a tag to their FILTER field based on one or more expressions. This is a non-destructive alternative to `filter`, as it keeps all records. |
+| vembrane_table | Convert VCF/BCF records to tabular format. |
 
 ## Reference documentation
-
-- [vembrane GitHub Repository](./references/github_com_vembrane_vembrane.md)
-- [vembrane Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_vembrane_overview.md)
+- [vembrane README](./references/github_com_vembrane_vembrane_blob_main_README.md)
+- [Table Subcommand Documentation](./references/github_com_vembrane_vembrane_blob_main_docs_table.md)
+- [Sort Subcommand Documentation](./references/github_com_vembrane_vembrane_blob_main_docs_sort.md)
+- [Tag Subcommand Documentation](./references/github_com_vembrane_vembrane_blob_main_docs_tag.md)
+- [vembrane Homepage](./references/vembrane_github_io_index.md)

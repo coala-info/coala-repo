@@ -1,6 +1,6 @@
 ---
 name: varfish-cli
-description: varfish-cli provides a command-line interface to manage variant data on the VarFish platform. Use when user asks to manage variant data, import VCF and pedigree files, or upload new cases to VarFish.
+description: The varfish-cli tool automates the upload of genomic variant data and the management of projects on a VarFish server instance. Use when user asks to import cases, list projects, convert DRAGEN QC metrics, or interact with the VarFish API.
 homepage: https://github.com/bihealth/varfish-cli
 ---
 
@@ -9,14 +9,11 @@ homepage: https://github.com/bihealth/varfish-cli
 
 ## Overview
 
-The `varfish-cli` tool provides a command-line interface to the VarFish REST API, enabling researchers and bioinformaticians to manage variant data programmatically. It bridges the gap between local variant calling pipelines and the VarFish web platform, primarily facilitating the import of VCF and pedigree files into the server for downstream filtration and prioritization.
+The `varfish-cli` tool is the primary bridge between local genomic data and a VarFish server instance. It allows bioinformaticians to automate the upload of variant calls (SNVs and SVs), manage project structures, and perform administrative tasks without using the web interface. This skill provides the necessary patterns for configuring the tool and executing common workflows like case importation and project navigation.
 
 ## Configuration
 
-Before using the tool, you must configure authentication and server details.
-
-1. Create a configuration file at `~/.varfishrc.toml`.
-2. Add your server URL and API token (generated in the VarFish web UI under user settings):
+Before using the tool, ensure a configuration file exists at `~/.varfishrc.toml`.
 
 ```toml
 [global]
@@ -26,25 +23,42 @@ varfish_api_token = "your-secret-api-token"
 
 ## Common CLI Patterns
 
-### Command Discovery
-The tool uses a nested command structure. Always use the `--help` flag to discover available subcommands and their specific arguments.
+### Project Management
+To see which projects are available for data upload or analysis:
+- `varfish-cli projects project-list`
 
-- List all top-level commands: `varfish-cli --help`
-- Explore a specific subcommand: `varfish-cli [subcommand] --help` (e.g., `varfish-cli importer --help`)
+### Case Importation
+Importing a case typically requires a pedigree file (.ped) and variant files.
+- **Basic Import**: `varfish-cli importer case-import --project-uuid <UUID> --path-ped <FILE.ped> --path-vcf <FILE.vcf.gz>`
+- **Including Structural Variants**: Add `--path-sv-vcf <SV_FILE.vcf.gz>` to the command.
+- **Genome Build**: Specify the build if not GRCh37 using `--genome-build GRCh38`.
+- **Indexing**: Use the `--index` option during import to trigger database indexing immediately after upload.
 
-### Data Import
-The `importer` subcommand is the primary way to upload new cases to VarFish.
-
-- **Prepare for Import**: Ensure you have your VCF files and a corresponding PED (pedigree) file ready.
-- **Execute Import**: Use the `importer` command to push data to a specific project. You will typically need the project UUID from the VarFish web interface.
+### Data Conversion
+The tool includes utilities to convert vendor-specific outputs (like Illumina DRAGEN) into VarFish-compatible formats:
+- `varfish-cli dragen-to-bam-qc` (Converts DRAGEN QC metrics to legacy VarFish format).
 
 ## Expert Tips
 
-- **API Token Security**: Keep your `~/.varfishrc.toml` file secure (e.g., `chmod 600 ~/.varfishrc.toml`) as it contains your API credentials.
-- **Automation**: Use `varfish-cli` within Bash scripts to automatically upload results at the end of a variant calling pipeline.
-- **Version Consistency**: Ensure your `varfish-cli` version is compatible with your `varfish-server` version. Check your local version with `varfish-cli --version`.
-- **Environment Overrides**: While the config file is standard, check subcommand help for environment variable overrides if you need to switch between production and staging servers frequently.
+- **SSL Verification**: If working with a local server using self-signed certificates, you can bypass SSL checks using the `--no-verify-ssl` flag, though this is not recommended for production environments.
+- **Automation**: Use the `project-list` command to programmatically retrieve UUIDs for use in automated upload pipelines.
+- **Validation**: Always ensure your VCF files are background-zipped and indexed (.tbi) before attempting an import to prevent transfer errors.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| varfish-cli | varfish-cli |
+| varfish-cli | Varfish CLI importer |
+| varfish-cli | Varfish CLI tool for managing projects and data. |
+| varfish-cli | Varfish CLI tool for interacting with the Varfish API. |
+| varfish-cli | varfish-cli |
+| varfish-cli | varfish-cli |
 
 ## Reference documentation
-- [VarFish REST API client (CLI + Python package)](./references/github_com_varfish-org_varfish-cli.md)
-- [varfish-cli - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_varfish-cli_overview.md)
+
+- [VarFish CLI README](./references/github_com_varfish-org_varfish-cli_blob_main_README.md)
+- [Changelog and Version History](./references/github_com_varfish-org_varfish-cli_blob_main_CHANGELOG.md)
+- [Configuration Example](./references/github_com_varfish-org_varfish-cli_blob_main_varfishrc.toml.example.md)

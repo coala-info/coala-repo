@@ -1,6 +1,6 @@
 ---
 name: labrat
-description: LABRAT measures the relative abundance of alternative 3' UTR isoforms and calculates psi values to quantify alternative polyadenylation. Use when user asks to quantify alternative 3' UTR isoforms, calculate psi values for gene site usage, or perform differential alternative polyadenylation analysis between experimental conditions.
+description: LABRAT analyzes alternative 3' end usage in transcriptomic data by quantifying transcript abundances to calculate a psi value for each gene. Use when user asks to quantify alternative polyadenylation, analyze 3' UTR shifts, or calculate psi values from bulk or single-cell RNA-seq data.
 homepage: https://github.com/TaliaferroLab/LABRAT
 ---
 
@@ -9,68 +9,56 @@ homepage: https://github.com/TaliaferroLab/LABRAT
 
 ## Overview
 
-LABRAT (Lightweight Alignment-Based Reckoning of Alternative Three-prime ends) provides a specialized workflow for measuring the relative abundance of alternative 3' UTR isoforms. It calculates a "psi" ($\psi$) value for each gene, where 0 represents exclusive usage of the most upstream APA site and 1 represents exclusive usage of the most downstream site. By leveraging the quasi-mapping capabilities of `salmon`, LABRAT accurately assigns reads to specific 3' UTRs even when sequences heavily overlap, overcoming the limitations of traditional count-based alignment methods.
-
-## Installation and Environment
-
-The most reliable way to use LABRAT is via the Bioconda package:
-
-```bash
-conda install -c bioconda labrat
-```
-
-Note: LABRAT currently requires `salmon` versions < 1.0.0. If using a manual installation, ensure a compatible environment is active.
+LABRAT (Lightweight Alignment-Based Reckoning of Alternative Three-prime ends) is a specialized tool for analyzing alternative 3' end usage in transcriptomic data. Unlike traditional methods that rely on standard read counting, LABRAT utilizes the kmer-based quasi-mapping of `salmon` to accurately quantify transcript abundances even when 3' UTR sequences overlap significantly. It produces a "psi" ($\psi$) value for each gene, where 0 represents exclusive usage of the most proximal APA site and 1 represents exclusive usage of the most distal site.
 
 ## Core Workflow
 
-The LABRAT pipeline consists of three sequential modes.
+### 1. Environment and Dependencies
+Ensure the environment is correctly configured. LABRAT relies on specific versions of bioinformatics tools.
+- Use `conda` to install the environment: `conda install -c bioconda labrat`.
+- Note: Documentation suggests `salmon` versions < 1.0.0 for maximum compatibility with the indexing strategy, though newer versions may be supported in updated releases.
 
-### 1. makeTFfasta
-Generate a specialized fasta file of terminal fragments (TFs) for quantification.
+### 2. Annotation and Indexing
+LABRAT requires a genome annotation (GFF/GTF) to define "terminal fragments" (the last two exons of a transcript).
+- Provide a high-quality GFF3 or GTF file.
+- The tool will automatically index the GFF using `gffutils` to create a `.db` file.
+- Use species-specific scripts if working with model organisms like Zebrafish (`LABRAT_danRer.py`), Drosophila (`LABRAT_dm6annotation.py`), or Rat (`LABRAT_rn6annotation.py`).
 
-```bash
-LABRAT.py --mode makeTFfasta --gff <annotation.gff> --genomefasta <genome.fasta>
-```
+### 3. Quantifying APA with LABRAT.py
+Run the primary script to process bulk RNA-seq data.
+- Input: RNA-seq FASTQ files and a reference genome/transcriptome.
+- Output: A table of $\psi$ values and statistical comparisons between conditions.
+- Use the `--gff` flag to specify your annotation and `--fasta` for the genomic sequence.
 
-- **GFF Requirement**: Use Gencode annotations for human/mouse. Ensure the GFF is uncompressed.
-- **Output**: Creates a fasta file containing the sequences used for salmon indexing.
+### 4. Single-Cell Analysis
+For single-cell data, use `LABRATsc.py`.
+- This version is optimized for the sparsity of single-cell libraries.
+- It often integrates with `alevin` (Salmon's single-cell processing tool) output.
 
-### 2. runSalmon
-Quantify transcript abundance using the generated TF fasta.
+## Best Practices and Tips
 
-```bash
-LABRAT.py --mode runSalmon --txfasta <TF_fasta> --reads1 <R1.fastq> --reads2 <R2.fastq> --samplename <name> --threads <int>
-```
+- **Terminal Fragment Length**: LABRAT filters out transcripts where the terminal fragment (last two exons) is shorter than 200 nucleotides. Ensure your annotation includes full-length 3' UTRs.
+- **Protein Coding Focus**: By default, the tool focuses on protein-coding genes. If analyzing non-coding RNAs, ensure the `gene_type` or `biotype` attributes in your GFF match the expected "protein_coding" string or modify the filter logic in the script.
+- **Interpreting Psi ($\psi$)**:
+    - **Increase in $\psi$**: Indicates a shift toward **distal** (longer) 3' UTRs.
+    - **Decrease in $\psi$**: Indicates a shift toward **proximal** (shorter) 3' UTRs.
+- **Replicates**: Always use experimental replicates. LABRAT uses statistical models (like linear regression or Chi-squared tests depending on the specific script version) to identify significant APA shifts, which require variance information from replicates.
+- **Salmon Indexing**: When creating the Salmon index, ensure you are using the transcriptome generated or expected by LABRAT to maintain the mapping between kmers and terminal fragments.
 
-- **Library Types**: Specify `--librarytype RNAseq` (default) or `--librarytype 3pseq`.
-- **RNAseq**: Quantifies the last two exons; uses length-normalized TPM values.
-- **3pseq**: Quantifies the last 300nt; uses raw read counts.
 
-### 3. calculatepsi
-Calculate $\psi$ values and perform differential APA analysis between conditions.
 
-```bash
-LABRAT.py --mode calculatepsi --gff <annotation.gff> --sampconds <conditions.csv>
-```
+## Subcommands
 
-- **Conditions File**: A CSV file mapping sample names to experimental conditions.
-- **Output**: A table containing $\psi$ values, $\Delta\psi$ (change in site usage), and significance metrics.
-
-## Species-Specific Annotations
-
-For non-Gencode species, use the specialized annotation scripts provided in the package:
-
-- **Drosophila (dm6)**: Use `LABRAT_dm6annotation.py` to process Ensembl GFF files.
-- **Rat (rn6)**: Use `LABRAT_rn6annotation.py`.
-- **Zebrafish (danRer)**: Use `LABRAT_danRer.py`.
-
-## Expert Tips and Best Practices
-
-- **Resolution**: If a gene has multiple APA sites, an increase in $\psi$ indicates a shift toward distal (downstream) sites, while a decrease indicates a shift toward proximal (upstream) sites.
-- **Expression Thresholds**: LABRAT automatically filters low-expression genes (default: 5 TPM for RNAseq, 100 counts for 3pseq). Adjust these if working with low-depth libraries.
-- **Salmon Directory**: If `salmon` is not in your PATH, specify its location using the `--salmondir` flag.
-- **Single Cell**: For single-cell data, utilize the `LABRATsc.py` variant designed for sparse quantification.
+| Command | Description |
+|---------|-------------|
+| LABRAT.py | LABRAT.py |
+| LABRAT_danRer.py | A Python script for analyzing RNA sequencing data, specifically focusing on transcript quantification and differential splicing analysis. |
+| LABRAT_dm6annotation.py | LABRAT_dm6annotation.py |
+| LABRAT_rn6annotation.py | LABRAT_rn6annotation.py |
+| LABRATsc.py | How to perform tests? Either compare psi values of individual cells or subsample cells from clusters. |
 
 ## Reference documentation
-- [LABRAT Overview and Usage](./references/github_com_TaliaferroLab_LABRAT.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_labrat_overview.md)
+- [LABRAT Main README](./references/github_com_TaliaferroLab_LABRAT_blob_master_README.md)
+- [Bulk RNA-seq Script (LABRAT.py)](./references/github_com_TaliaferroLab_LABRAT_blob_master_LABRAT.py.md)
+- [Single-Cell Script (LABRATsc.py)](./references/github_com_TaliaferroLab_LABRAT_blob_master_LABRATsc.py.md)
+- [Conda Environment Config](./references/github_com_TaliaferroLab_LABRAT_blob_master_labratenv.yml.md)

@@ -482,3 +482,6 @@ Usage: genomad marker-classification [OPTIONS] INPUT OUTPUT DATABASE
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

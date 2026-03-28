@@ -1,6 +1,6 @@
 ---
 name: cooltools
-description: cooltools is a suite for processing and analyzing Hi-C data in the .cool format to extract biological insights from chromosome conformation capture experiments. Use when user asks to calculate contact frequency decay, identify A/B compartments, call TAD boundaries using insulation scores, or perform aggregate pileup analysis.
+description: cooltools is a Python-based suite for analyzing genome folding data and characterizing chromatin architecture from Hi-C contact matrices. Use when user asks to calculate contact frequency vs. distance, identify A/B compartments, find TAD boundaries via insulation scores, or perform aggregate peak analysis.
 homepage: https://github.com/mirnylab/cooltools
 ---
 
@@ -8,64 +8,68 @@ homepage: https://github.com/mirnylab/cooltools
 # cooltools
 
 ## Overview
+cooltools is a specialized Python-based suite developed by the Open2C ecosystem for the rigorous analysis of genome folding data. It bridges the gap between raw contact matrices and biological discovery by providing deterministic tools for characterizing genome architecture. Use this skill to guide the execution of standard Hi-C workflows, from basic visualization prep to complex multi-scale feature calling, ensuring results are consistent with 4D Nucleome and ENCODE standards.
 
-cooltools is the primary suite for processing and analyzing Hi-C data within the Open2C ecosystem. It is specifically optimized to work with the sparse `.cool` format, enabling efficient analysis of high-resolution datasets that would otherwise be memory-prohibitive. This skill provides guidance on using the cooltools Command Line Interface (CLI) to extract biological insights from chromosome conformation capture data, ranging from basic distance-scaling properties to complex structural features like compartments and boundaries.
+## Core Workflows and CLI Patterns
 
-## Installation and Setup
+The cooltools CLI follows a consistent pattern: `cooltools <command> [options] <input.cool>`.
 
-Install cooltools via bioconda for the most stable environment:
+### 1. Contact Frequency vs. Distance (Scaling)
+To understand how often genomic loci interact as a function of their linear distance:
+- **Command**: `cooltools expected-cis` (for intra-chromosomal) or `expected-trans` (for inter-chromosomal).
+- **Key Output**: A table of "expected" contact frequencies, essential for normalizing other analyses (like enrichment/pileups).
+- **Tip**: Always provide a genome regions file (via `bioframe`) to ensure calculations respect chromosome boundaries and gaps.
 
-```bash
-conda install -c bioconda cooltools
-```
-
-Ensure your input files are in `.cool` or `.mcool` format. Use the `cooler` suite to generate these from raw contact lists if necessary.
-
-## Common CLI Workflows
-
-### 1. Contacts vs. Distance (Expected)
-To calculate how contact frequency decays with genomic distance (scaling), use the `expected` commands. This is a prerequisite for many other analyses like normalization and loop calling.
-
-*   **Cis-expected (within chromosomes):**
-    ```bash
-    cooltools expected-cis --view regions.bed -o output.expected.tsv input.cool
-    ```
-*   **Trans-expected (between chromosomes):**
-    ```bash
-    cooltools expected-trans --view regions.bed -o output.trans.tsv input.cool
-    ```
-
-### 2. Compartment Analysis (Eigenvectors)
-To identify A/B compartments (active vs. inactive chromatin), use the `eigs` commands.
-
-*   **Calculate Eigenvectors:**
-    ```bash
-    cooltools eigs-cis --view regions.bed --phasing-track phasing_track.bigWig -o output_prefix input.cool
-    ```
-    *Tip: Providing a phasing track (like GC content or H3K4me1) ensures the sign of the eigenvector correctly corresponds to A/B compartments.*
+### 2. Compartment Analysis (A/B Identity)
+To identify active (A) and inactive (B) chromatin compartments:
+- **Command**: `cooltools eigs-cis`
+- **Workflow**:
+    1. Generate the eigenvectors (usually the first EV corresponds to compartments).
+    2. Use `cooltools saddle` to create saddleplots, visualizing the preference of A-A, B-B, and A-B interactions.
+- **Expert Tip**: Use a track of gene density or GC content to "flip" the sign of the eigenvector so that positive values consistently represent the A compartment.
 
 ### 3. Insulation and TAD Boundaries
-To identify Topologically Associating Domain (TAD) boundaries using the insulation score method:
+To find Topologically Associating Domain (TAD) boundaries:
+- **Command**: `cooltools insulation`
+- **Parameters**: Requires a "window" size (e.g., 10kb, 25kb, 50kb).
+- **Logic**: The tool calculates the insulation score; local minima in this score represent high-insulation points (potential boundaries).
+- **Refinement**: Use the resulting boundary strengths to filter for "robust" boundaries across different cell states.
 
-```bash
-cooltools insulation --window-sizes 10000,20000,50000 input.cool > output.insulation.tsv
-```
-*   **Boundary Calling:** The output TSV contains insulation minima which represent potential boundaries. Filter these based on the "boundary strength" column.
+### 4. Aggregate Peak Analysis (Pileups)
+To visualize the average local neighborhood around specific genomic features (e.g., CTCF sites, promoters):
+- **Command**: `cooltools pileup`
+- **Requirement**: A `.cool` file and a BED file of coordinates.
+- **Normalization**: Use the "expected" table generated in Step 1 to calculate "Observed/Expected" pileups, which highlight enrichment over the genomic background.
 
-### 4. Pileups (Aggregate Analysis)
-To create average maps around specific genomic features (e.g., CTCF sites or called loops):
+## Expert Best Practices
+- **Data Format**: Ensure all input data is in the `.cool` or `.mcool` format. If you have paired-end reads, use `cooler cload` or `pairtools` first to generate the matrix.
+- **Resolution Selection**: 
+    - Use **low resolution** (100kb - 1Mb) for compartments and saddleplots.
+    - Use **medium resolution** (10kb - 40kb) for insulation and TAD boundaries.
+    - Use **high resolution** (1kb - 5kb) for loops and fine-scale pileups.
+- **Parallelization**: Most cooltools commands support the `-p` or `--nproc` flag. Always utilize multiple cores for `expected` and `pileup` calculations to reduce processing time.
+- **Genomic Intervals**: cooltools relies heavily on `bioframe`. When defining "chromosomes" or "arms," ensure your TSV/BED files match the exact chromosome names in the `.cool` file header.
 
-```bash
-cooltools pileup --features features.bed --view regions.bed -o output.pileup.npy input.cool
-```
 
-## Expert Tips and Best Practices
 
-*   **Resolution Selection:** Always match the resolution (bin size) of your `.cool` file to the feature you are studying. Use 100kb+ for compartments, 10kb-25kb for TAD boundaries, and 1kb-5kb for loops/pileups.
-*   **Normalization:** Most cooltools commands expect "balanced" data. Ensure your cooler file has been balanced (using `cooler balance`) and use the `--clr-weight-name weight` flag if your weight column is named differently.
-*   **View Files:** Use a `--view` BED file to define the specific genomic regions (e.g., chromosomes or specific arms) to be analyzed. This prevents artifacts from centromeres or unplaced scaffolds.
-*   **Memory Management:** For very high-resolution data, use the `--nproc` flag to parallelize tasks, but monitor memory usage as Hi-C matrices can be extremely large when expanded.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cooltools expected-trans | Calculate expected Hi-C signal for trans regions of chromosomal interaction map: average of interactions in a rectangular block defined by a pair of regions, e.g. inter-chromosomal blocks. |
+| cooltools saddle | Calculate saddle statistics and generate saddle plots for an arbitrary signal track on the genomic bins of a contact matrix. |
+| coverage | Calculate the sums of cis and genome-wide contacts (aka coverage aka marginals) for a sparse Hi-C contact map in Cooler HDF5 format. Note that the sum(tot_cov) from this function is two times the number of reads contributing to the cooler, as each side contributes to the coverage. |
+| dots | Call dots on a Hi-C heatmap that are not larger than max_loci_separation. |
+| eigs-cis | Perform eigen value decomposition on a cooler matrix to calculate compartment signal by finding the eigenvector that correlates best with the phasing track. |
+| eigs-trans | Perform eigen value decomposition on a cooler matrix to calculate compartment signal by finding the eigenvector that correlates best with the phasing track. |
+| expected-cis | Calculate expected Hi-C signal for cis regions of chromosomal interaction   map: average of interactions separated by the same genomic distance, i.e.   are on the same diagonal on the cis-heatmap. |
+| genome | Utilities for binned genome assemblies. |
+| insulation | Calculate the diamond insulation scores and call insulating boundaries. |
+| pileup | Perform retrieval of the snippets from .cool file. |
+| random-sample | Pick a random sample of contacts from a Hi-C map. |
+| rearrange | Rearrange data from a cooler according to a new genomic view |
+| virtual4c | Generate virtual 4C profile from a contact map by extracting all interactions of a given viewpoint with the rest of the genome. |
 
 ## Reference documentation
-- [GitHub Repository](./references/github_com_open2c_cooltools.md)
-- [Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_cooltools_overview.md)
+- [cooltools: enabling high-resolution Hi-C analysis in Python](./references/github_com_open2c_cooltools.md)
+- [Releasing and Versioning Guidelines](./references/github_com_open2c_cooltools_wiki_Releasing.md)

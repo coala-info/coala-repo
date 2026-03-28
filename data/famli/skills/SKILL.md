@@ -1,6 +1,6 @@
 ---
 name: famli
-description: FAMLI identifies and quantifies protein-coding sequences in metagenomic datasets by resolving multi-mapped reads and filtering alignments based on coverage evenness. Use when user asks to align metagenomic reads to a protein database, resolve multi-mapping using likelihood inference, or filter existing alignments to estimate protein abundances.
+description: FAMLI identifies protein-coding sequences from metagenomic data by resolving multi-mapped reads and filtering by coverage evenness. Use when user asks to filter protein alignments, resolve multi-mapped reads, identify protein-coding sequences, or perform functional profiling of metagenomic data.
 homepage: https://github.com/FredHutch/FAMLI
 ---
 
@@ -9,57 +9,53 @@ homepage: https://github.com/FredHutch/FAMLI
 
 ## Overview
 
-FAMLI (Functional Analysis of Metagenomes by Likelihood Inference) is a specialized tool designed to improve the precision of protein-coding sequence identification in metagenomic datasets. In shotgun metagenomics, short reads often align equally well to multiple reference proteins (multi-mapping), leading to high false-positive rates. FAMLI addresses this by using an iterative algorithm that weights alignments based on the total depth of coverage and prunes candidates that exhibit highly uneven coverage across the peptide length. It transforms raw alignments into a high-confidence set of protein abundances, typically outputting results in a structured JSON format.
+FAMLI is a specialized tool for identifying protein-coding sequences from short-read shotgun metagenomic data. Its primary purpose is to solve the "multi-mapping" problem—where a single read aligns equally well to multiple reference proteins—which often leads to high false-positive rates. FAMLI uses an iterative likelihood inference algorithm to reassign these reads to the most probable reference and filters out sequences with uneven coverage (SD/Mean ratio > 1.0), significantly improving the precision of functional profiling.
 
-## Core CLI Usage
+## Core Workflows
 
-The `famli` tool is primarily interacted with through two main subcommands: `align` and `filter`.
+### 1. Filtering Alignments
+The `filter` command is the core of FAMLI. It processes BLASTX-like tabular alignments (e.g., from DIAMOND) to prune unlikely references and assign multi-mapped reads.
 
-### The `align` Command
-This is the comprehensive wrapper command that handles the end-to-end workflow.
-- **Workflow**: Downloads reference databases/input data (if remote) -> Aligns reads using DIAMOND -> Parses alignments -> Resolves multi-mapping -> Computes metrics -> Writes JSON output.
-- **Input Support**: Accepts local files, SRA accessions, AWS S3 URIs, or FTP links.
+```bash
+famli filter --input <alignments.tab> --output <results.json> --threads <int>
+```
 
-### The `filter` Command
-Use this command if you have already performed alignments and need to run the FAMLI likelihood inference algorithm on existing data.
-- **Primary Function**: Prunes multi-mapped reads and filters out references with uneven coverage (SD/Mean ratio > 1.0).
+**Key Parameters:**
+- `--sd-mean-cutoff`: Threshold for coverage evenness (default: 1.0). Lower values are more stringent.
+- `--strim-5` / `--strim-3`: Number of amino acids to trim from the ends of references when calculating coverage to avoid edge effects.
+- `--bitscore-ix`: The column index (0-based) for bitscores in the input file if using a non-standard tabular format.
 
-## Tool-Specific Best Practices
+### 2. Alignment Best Practices
+FAMLI is designed to work with DIAMOND. For optimal results, use the following DIAMOND alignment parameters before running `famli filter`:
 
-### Alignment Optimization
-FAMLI relies on DIAMOND for amino acid space alignment. For optimal results compatible with FAMLI's filtering logic, use the following DIAMOND parameters:
 - `--query-cover 90`: Ensures the read covers most of the reference.
-- `--id 80`: Minimum identity threshold.
-- `--min-score 20`: Minimum bitscore for consideration.
-- `--top 10`: Limits the number of candidate alignments per read to the top 10.
+- `--id 80`: Minimum identity percentage.
+- `--top 10`: Reports alignments within 10% of the top bitscore.
+- `--min-score 20`: Minimum bitscore threshold.
 
-### Filtering Logic & Thresholds
-- **Coverage Evenness**: FAMLI filters out any reference sequence where the Standard Deviation of coverage depth divided by the Mean coverage depth is greater than 1.0.
-- **Likelihood Scaling**: By default, the tool uses a scale of 0.9. During iterations, any alignment with a likelihood score less than 90% of the maximum likelihood for that specific query is culled.
-- **Read Length**: Use the `--min-read-length` flag (introduced in v0.8) to discard very short reads that contribute to noise. The conservative default is 30bp.
+### 3. Taxonomic Analysis Wrapper
+The `diamond-tax.py` script acts as a wrapper for running the entire pipeline (alignment + LCA/likelihood inference) on FASTQ files.
 
-### Output Management
-- **JSON Output**: The primary output is a JSON file containing reference IDs, abundance metrics, and coverage statistics.
-- **Alignment Persistence**: Use the `--output-aln` flag (available in v1.1+) if you need to save the filtered alignment file in addition to the summary statistics.
-- **Cloud Integration**: FAMLI can write output directly to AWS S3 buckets if a URI is provided as the output path.
-
-## Common CLI Patterns
-
-**Basic local alignment and filtering:**
 ```bash
-famli align --input sample_reads.fastq.gz --refdb protein_db.dmnd --output results.json
+python3 diamond-tax.py --input <input_url> --sample-name <name> --ref-db <db_path> --output-folder <out_path>
 ```
+*Note: Supports local paths as well as s3:// and ftp:// URLs.*
 
-**Filtering an existing alignment file:**
-```bash
-famli filter --input alignments.tab --output filtered_results.json
-```
+## Expert Tips
 
-**Processing an SRA dataset with a specific read length cutoff:**
-```bash
-famli align --input SRR1234567 --refdb protein_db.dmnd --min-read-length 50 --output SRR1234567_famli.json
-```
+- **Coverage Evenness**: If you encounter high false-positive rates despite using FAMLI, check the `SD / MEAN` ratio in the output. Truly present peptides should have relatively even coverage across their length.
+- **Memory Management**: When processing very large metagenomes with many multi-mapping reads, increase the `--threads` count to speed up the iterative reassignment phase.
+- **Input Formatting**: If your alignment tool produces custom tabular output, use the `--qseqid-ix`, `--sseqid-ix`, and `--slen-ix` flags to map the correct columns for FAMLI.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| famli | Align a set of reads with DIAMOND, filter alignments with FAMLI, and return the results |
+| famli | Filter a set of existing alignments in tabular format with FAMLI |
 
 ## Reference documentation
-- [FAMLI Main Documentation](./references/github_com_FredHutch_FAMLI.md)
-- [Version History and Feature Tags](./references/github_com_FredHutch_FAMLI_tags.md)
+- [FAMLI README](./references/github_com_FredHutch_FAMLI_blob_master_README.md)
+- [DIAMOND-tax Wrapper](./references/github_com_FredHutch_FAMLI_blob_master_diamond-tax.py.md)

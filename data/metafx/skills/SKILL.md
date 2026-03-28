@@ -1,6 +1,6 @@
 ---
 name: metafx
-description: MetaFX extracts biological features from metagenomic short-read data by identifying specific components in a de Bruijn graph. Use when user asks to extract features from raw reads, visualize sample proximity via PCA, perform statistical analysis, or train and apply machine learning models for sample classification.
+description: MetaFX transforms raw metagenomic reads into numerical features using de Bruijn graph components for sample differentiation and analysis. Use when user asks to extract metagenomic features, identify sequences that distinguish sample groups, perform PCA for sample clustering, or train machine learning models for classification and prediction.
 homepage: https://github.com/ctlab/metafx
 ---
 
@@ -8,72 +8,79 @@ homepage: https://github.com/ctlab/metafx
 # metafx
 
 ## Overview
-MetaFX (METAgenomic Feature eXtraction) is a specialized toolkit designed to bridge the gap between raw metagenomic short-read data and biological interpretation. It transforms large-scale sequencing datasets into a feature table by identifying specific components in a de Bruijn graph that are either unique to certain sample groups or common across a dataset. This skill enables the execution of unsupervised and supervised pipelines for feature extraction, sample visualization via PCA, and the training of classification models.
+MetaFX (METAgenomic Feature eXtraction) is a specialized toolbox designed to transform raw metagenomic reads into meaningful numerical features. Unlike standard taxonomic profiling, MetaFX uses de Bruijn graph components to identify sequences that differentiate groups of samples (e.g., healthy vs. diseased). These features can be used to train machine learning models, perform PCA for sample clustering, or be exported as FASTA sequences for functional annotation.
 
-## Installation and Environment
-MetaFX requires a Java Runtime Environment (JRE 1.8+) and Python 3.9+.
+## Core Workflows
 
-*   **Conda (Recommended):** `conda install -c bioconda metafx`
-*   **Manual:** Clone the repository and add the `bin/` directory and its subdirectories (`metafx-modules`, `metafx-scripts`) to your `PATH`.
-*   **Dependencies:** Ensure `coreutils` is installed on macOS (`brew install coreutils`).
+### 1. Unsupervised Feature Extraction
+Use these modules when you do not have predefined categories or want to explore natural clusters in the data.
 
-## Core CLI Usage
-The general syntax for all operations is:
-`metafx <pipeline> [launch_options] [input_parameters]`
-
-### 1. Feature Extraction
-Feature extraction is the primary step to convert raw reads into a numeric feature table.
-
-*   **Supervised Extraction (Group-relevant):**
-    Use the `unique` pipeline when you have labeled data and want to find features that distinguish specific categories.
+*   **metafast**: Best for general distance estimation and heatmap generation.
     ```bash
-    metafx unique -t 8 -m 4G -k 31 -w output_dir -i sample_list.txt
+    metafx metafast -k 31 -t <threads> -m <memory> -w <work_dir> -i <reads_pattern>
     ```
-    *   `-i`: A tab-separated file containing `<path_to_reads>\t<category>`.
-    *   `-k`: K-mer size (maximum 31).
-
-*   **Unsupervised Extraction (MetaFast):**
-    Use when you have no prior knowledge of sample relations.
+*   **metaspades**: Uses the SPAdes assembler logic for feature extraction (requires SPAdes installed).
     ```bash
-    metafx metafast -t 8 -m 8G -k 21 -w wd_metafast -i test_data/*.fastq.gz
+    metafx metaspades -k 21 -w <work_dir> -i <paired_end_reads>
     ```
 
-### 2. Visualization and Analysis
-Once a `feature_table.tsv` is generated, use these modules to understand sample proximity.
+### 2. Supervised Feature Extraction
+Use these modules when you have metadata (e.g., diagnosis) and want to find features that distinguish specific groups.
 
-*   **PCA Visualization:**
+*   **unique**: Extracts k-mers present in one category but absent in others.
     ```bash
-    metafx pca -w wd_pca -f wd_unique/feature_table.tsv -i wd_unique/samples_categories.tsv --show
+    metafx unique -k 31 -i <sample_list.txt> -w <work_dir>
     ```
-*   **Statistical Significance:**
-    Use `metafx chisq` to perform basic statistical analysis on the extracted features.
+    *Note: `sample_list.txt` should be a tab-separated file: `<path_to_file>\t<category>`.*
+*   **chisq / stats**: Uses statistical tests to identify features with significant frequency differences between groups.
 
-### 3. Machine Learning Workflow
-MetaFX supports training models to predict categories for new metagenomic samples.
+### 3. Analysis and Machine Learning
+Once a feature table is generated (usually `feature_table.tsv`), use these modules for downstream analysis:
 
-*   **Cross-Validation:**
-    Evaluate model performance on your current feature table.
+*   **PCA Visualization**:
     ```bash
-    metafx cv -t 4 -w wd_cv -f feature_table.tsv -i samples_categories.tsv --grid
+    metafx pca -f <feature_table.tsv> -i <samples_categories.tsv> -w <out_dir> --show
     ```
-*   **Training (Fit):**
-    Save a model for future use.
+*   **Cross-Validation**: Train and evaluate a model (Random Forest by default) using the extracted features.
     ```bash
-    metafx fit -f feature_table.tsv -i samples_categories.tsv -w model_dir
+    metafx cv -f <feature_table.tsv> -i <samples_categories.tsv> -n <folds> --grid
     ```
-*   **Inference (Predict):**
-    Apply a trained model to new, unseen samples.
+*   **Prediction**: Apply a trained model to new samples.
     ```bash
-    metafx predict -w predict_dir -m model_dir/model.pkl -i new_samples.txt
+    metafx predict -f <new_feature_table.tsv> -m <model_file> -w <out_dir>
     ```
 
 ## Expert Tips and Best Practices
-*   **Read Naming:** For paired-end read detection, files must use `_R1`/`_R2` or `_r1`/`_r2` suffixes (e.g., `sample_R1.fastq.gz`).
-*   **Memory Allocation:** Always specify memory with the `-m` flag (e.g., `-m 16G`). Required RAM scales linearly with the total size of the input dataset.
-*   **K-mer Selection:** Use `-k 31` for high specificity in complex metagenomes; use lower values (e.g., 21) for faster processing or lower coverage samples.
-*   **Interpreting Features:** The `contigs_<category>/` directory contains FASTA files of the features. These can be run through BLAST or other annotation tools to identify the specific organisms or genes driving the classification.
-*   **Graph Visualization:** MetaFX produces `.gfa` files (e.g., `components-graph.gfa`). These can be loaded into **Bandage** to visualize the connectivity of the extracted features.
+
+*   **K-mer Selection**: Use `-k 31` for most metagenomic applications to ensure high specificity. Lower k-mer sizes may increase sensitivity but lead to more ambiguous graph components.
+*   **Memory Management**: MetaFX memory requirements grow linearly with dataset size. Use the `-m` flag (e.g., `-m 16G`) to prevent Java heap space errors. If not specified, it defaults to 90% of free RAM.
+*   **Paired-End Detection**: Ensure paired-end files follow the naming convention `_R1`/`_R2` or `_r1`/`_r2` immediately before the extension for automatic detection.
+*   **Performance Optimization**: If running multiple pipelines on the same data, use `metafx extract_kmers` first and then point subsequent commands to the resulting directory using `--kmers-dir`. This avoids redundant k-mer counting.
+*   **Interpreting Results**: The `component.seq.fasta` files in the output directories contain the actual sequences representing your features. These should be submitted to BLAST or DIAMOND for biological annotation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| calc_features | MetaFX calc_features module – to count values for new samples based on previously extracted features |
+| chisq | supervised feature extraction using top significant k-mers by chi-squared test |
+| extract_kmers | Counting k-mers presence for samples |
+| metafast | MetaFX metafast module – unsupervised feature extraction and distance estimation via MetaFast (https://github.com/ctlab/metafast/) |
+| metafx bandage | MetaFX bandage module – Machine Learning methods to train classifier and prepare for visualisation in Bandage (https://github.com/ctlab/BandageNG) |
+| metafx colored | supervised feature extraction using group-colored de Bruijn graph |
+| metafx cv | Machine Learning methods to train classification model based on extracted features and check accuracy via cross-validation |
+| metafx feature_analysis | MetaFX feature_analysis module – pipeline to build de Bruijn graphs for samples with selected feature and visualize them in BandageNG (https://github.com/ctlab/BandageNG) |
+| metafx fit | Machine Learning methods to train classification model based on extracted features |
+| metafx fit_predict | Machine Learning methods to train classification model based on extracted features and immediately apply it to classify new samples |
+| metafx pca | PCA dimensionality reduction and visualisation of samples based on extracted features |
+| metafx predict | MetaFX predict module – Machine Learning methods to classify new samples based on pre-trained model |
+| metafx stats | supervised feature extraction using statistically significant k-mers |
+| metafx unique | supervised feature extraction using group-specific k-mers |
+| metaspades | MetaFX metaspades module – unsupervised feature extraction and distance estimation via metaSpades (https://cab.spbu.ru/software/meta-spades/) |
 
 ## Reference documentation
-- [MetaFX Main Repository](./references/github_com_ctlab_metafx.md)
-- [MetaFX Wiki and Detailed Module Guide](./references/github_com_ctlab_metafx_wiki.md)
+- [MetaFX GitHub Wiki](./references/github_com_ctlab_metafx_wiki.md)
+- [MetaFX Tutorial](./references/github_com_ctlab_metafx_wiki_MetaFX-tutorial.md)
+- [Main README](./references/github_com_ctlab_metafx.md)

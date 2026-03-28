@@ -1,0 +1,1 @@
+For full functionality of this site it is necessary to enable JavaScript.

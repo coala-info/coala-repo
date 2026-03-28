@@ -213,3 +213,6 @@ Options:
   -K INT     chunk size [100m]
 ```
 
+
+## Metadata
+- **Skill**: generated

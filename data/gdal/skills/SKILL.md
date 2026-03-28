@@ -1,6 +1,6 @@
 ---
 name: gdal
-description: GDAL is a translator library and command-line toolkit used to process, convert, and manipulate geospatial raster and vector data. Use when user asks to inspect spatial metadata, translate between file formats, reproject datasets to different coordinate systems, or perform spatial subsetting and filtering.
+description: GDAL is a translator library for raster and vector geospatial data that provides a single abstract data model for diverse formats. Use when user asks to convert geospatial file formats, reproject data between coordinate reference systems, inspect metadata, or perform spatial operations like clipping, tiling, and merging.
 homepage: https://github.com/OSGeo/gdal
 ---
 
@@ -9,52 +9,100 @@ homepage: https://github.com/OSGeo/gdal
 
 ## Overview
 
-GDAL is the foundational translator library for geospatial data, handling raster (GDAL) and vector (OGR) formats through a unified abstract data model. This skill enables the efficient use of GDAL's command-line interface (CLI) to perform complex spatial operations—such as warping images to new projections, converting between formats like GeoTIFF and Shapefile, or extracting specific layers and features—without requiring custom programming. It is particularly useful for data preprocessing, ETL (Extract, Transform, Load) workflows, and inspecting unknown spatial datasets.
+GDAL (Geospatial Data Abstraction Library) is the foundational translator library for raster and vector geospatial data. It provides a single abstract data model for all supported formats, allowing users to interact with diverse datasets—from GeoTIFFs and Shapefiles to Cloud Optimized GeoTIFFs (COG) and GeoPackages—using a consistent set of command-line tools. 
 
-## Core CLI Utilities and Patterns
+Use this skill to perform high-performance spatial data engineering tasks, including:
+- Converting between geospatial file formats.
+- Reprojecting data between different Coordinate Reference Systems (CRS).
+- Inspecting metadata, spatial extents, and band statistics.
+- Clipping, tiling, and merging large datasets.
+- Accessing data directly from cloud storage or compressed archives using virtual file systems.
 
-### Metadata Inspection
-Before processing, always inspect the dataset to understand its projection, extent, and data types.
-*   **Raster**: `gdalinfo input.tif`
-    *   Use `-stats` to calculate pixel statistics.
-    *   Use `-wkt_format WKT1_ESRI` for ESRI-compatible coordinate system strings.
-*   **Vector**: `ogrinfo -al -so input.shp`
-    *   `-al`: List all layers.
-    *   `-so`: Summary only (prevents dumping every feature to the console).
-    *   Use `-fid <id>` to inspect a specific feature by its ID.
+## Common CLI Patterns
 
-### Format Translation and Subsetting
-*   **Raster (gdal_translate)**: Convert formats or extract sub-windows.
-    *   `gdal_translate -of GTiff -co "COMPRESS=LZW" input.nc output.tif`
-    *   `-projwin <ulx> <uly> <lrx> <lry>`: Subset by geographic coordinates.
-    *   `-outsize <x>% <y>%`: Rescale the image.
-*   **Vector (ogr2ogr)**: The "Swiss Army Knife" for vector data.
-    *   `ogr2ogr -f "GeoJSON" output.json input.shp`
-    *   `-where "population > 100000"`: Filter features by attribute.
-    *   `-clipsrc <xmin> <ymin> <xmax> <ymax>`: Clip vector data to a bounding box.
+### Raster Operations (GDAL)
 
-### Reprojection and Warping
-*   **gdalwarp**: Used for reprojecting rasters and mosaicking.
-    *   `gdalwarp -t_srs EPSG:4326 input.tif output_wgs84.tif`
-    *   `--like <template_ds>`: Match the extent and resolution of a reference dataset (useful for aligning layers).
-    *   `-r bilinear`: Specify resampling method (near, bilinear, cubic, cubicspline, lanczos, average, mode).
+**Inspect Metadata**
+Use `gdalinfo` to view CRS, extent, and band information.
+```bash
+gdalinfo input.tif
+```
 
-### Virtual Datasets (VRT)
-Use VRTs to create "virtual" mosaics or transformations without duplicating the underlying data.
-*   `gdalbuildvrt mosaic.vrt *.tif`: Creates a single virtual file representing all input TIFFs.
+**Format Conversion**
+Use `gdal_translate` to convert between formats or create subsets.
+```bash
+gdal_translate -of GTiff input.asc output.tif
+```
 
-## Expert Tips
+**Reprojection**
+Use `gdalwarp` to change the coordinate system.
+```bash
+gdalwarp -t_srs EPSG:4326 input.tif output_wgs84.tif
+```
 
-*   **Cloud Optimized GeoTIFF (COG)**: When creating rasters for web use, use the COG driver:
-    `gdal_translate input.tif output.tif -of COG -co COMPRESS=DEFLATE`
-*   **Batch Processing**: Use `/vsimem/` (virtual file system in memory) for intermediate steps to avoid disk I/O overhead.
-*   **Environment Variables**: 
-    *   `GDAL_CACHEMAX`: Increase memory for large operations (e.g., `--config GDAL_CACHEMAX 512`).
-    *   `CPL_DEBUG ON`: Enable verbose debugging to troubleshoot driver or projection issues.
-*   **SQL Queries**: `ogr2ogr` supports OGR SQL or SQLite dialects for complex filtering:
-    `ogr2ogr -sql "SELECT name, area FROM layers WHERE area > 500" output.shp input.shp`
+**Cloud Optimized GeoTIFF (COG) Generation**
+Create a web-optimized raster with internal tiling and overviews.
+```bash
+gdal_translate input.tif output_cog.tif -of COG -co COMPRESS=LZW
+```
+
+### Vector Operations (OGR)
+
+**Inspect Vector Data**
+Use `ogrinfo` to see layers and feature counts.
+```bash
+ogrinfo -ro -so input.gpkg
+```
+
+**Vector Conversion and Reprojection**
+Use `ogr2ogr` to convert formats (e.g., Shapefile to GeoJSON) and reproject.
+```bash
+ogr2ogr -f "GeoJSON" output.json input.shp -t_srs EPSG:4326
+```
+
+**Filtering by Attribute or Spatial Extent**
+```bash
+ogr2ogr -where "population > 100000" output.shp input.shp
+```
+
+## Expert Tips and Best Practices
+
+### Virtual File Systems
+GDAL can read data directly from URLs or inside archives without manual extraction using prefixes:
+- **Network files**: `/vsicurl/https://example.com/data.tif`
+- **ZIP archives**: `/vsizip/path/to/file.zip/internal_file.tif`
+- **GZip files**: `/vsigzip/file.gz`
+
+### Creation Options (`-co`)
+Most drivers support specific creation options to control output quality and structure.
+- For GeoTIFFs, use `-co TILED=YES` for faster random access.
+- For compression, use `-co COMPRESS=DEFLATE` or `-co COMPRESS=LZW`.
+
+### Handling Large Datasets
+- **Overviews**: Use `gdaladdo` to build internal "pyramids" for faster rendering of large rasters.
+- **VRT (Virtual Format)**: Use `gdalbuildvrt` to create a virtual mosaic of many files without duplicating the underlying data.
+
+### Driver-Specific Configuration
+Some drivers require specific environment variables or configuration options. For example, the `AAIGrid` driver allows forcing cell size output:
+```bash
+gdal_translate input.tif output.asc -of AAIGrid --config FORCE_CELLSIZE YES
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gdal_ogrinfo | Prints detailed information about OGR data sources and layers. |
+| gdal_translate | Translate a raster file to another format, with optional resampling, scaling, etc. |
+| gdalbuildvrt | Builds a virtual raster (VRT) from a list of input GDAL datasets. |
+| gdalinfo | Prints information about a GDAL dataset. |
+| gdalwarp | Reprojects a raster dataset to match a given projection, resolution and extent. |
+| ogr2ogr | Convert data between vector formats |
 
 ## Reference documentation
-- [GDAL Project Overview](./references/github_com_OSGeo_gdal.md)
-- [Recent CLI Enhancements and Issues](./references/github_com_OSGeo_gdal_issues.md)
-- [Latest CLI Feature Commits](./references/github_com_OSGeo_gdal_commits_master.md)
+- [GDAL Documentation Index](./references/gdal_org_en_stable_index.html.md)
+- [GDAL Programs/Utilities](./references/gdal_org_en_stable_programs_index.html.md)
+- [Raster Drivers](./references/gdal_org_en_stable_drivers_raster_index.html.md)
+- [Vector Drivers](./references/gdal_org_en_stable_drivers_vector_index.html.md)

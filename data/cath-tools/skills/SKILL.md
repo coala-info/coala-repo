@@ -1,6 +1,6 @@
 ---
 name: cath-tools
-description: The cath-tools suite provides high-performance C++ implementations for protein structure comparison, classification, and domain architecture resolution. Use when user asks to perform structural alignment via SSAP, resolve overlapping domain hits, superpose 3D coordinates, or cluster structural similarity data.
+description: The cath-tools suite provides high-performance C++ implementations for protein structural alignment, superposition, domain hit resolution, and clustering. Use when user asks to align protein structures using SSAP, generate structure superpositions, resolve overlapping domain hits into architectures, or perform complete-linkage clustering.
 homepage: https://github.com/UCLOrengoGroup/cath-tools
 ---
 
@@ -9,38 +9,65 @@ homepage: https://github.com/UCLOrengoGroup/cath-tools
 
 ## Overview
 
-The `cath-tools` suite provides high-performance C++ implementations of protein structure comparison and classification algorithms. Developed by the UCL Orengo Group, these tools are the engine behind the CATH (Class, Architecture, Topology, Homologous superfamily) database. The toolkit is primarily used for pairwise structural alignment via the SSAP algorithm, resolving overlapping domain matches into a definitive domain architecture, and performing hierarchical clustering on structural similarity data.
+The `cath-tools` suite provides high-performance C++ implementations of algorithms used in the curation of the CATH protein structure database. This skill enables the structural comparison of proteins through the SSAP (Sequential Structure Alignment Program) algorithm, the generation of high-quality superpositions that focus on conserved regions, and the resolution of overlapping domain hits into optimal architectures. It also includes utilities for complete-linkage clustering and mapping between different cluster partitions.
 
-## Core Tool Usage
+## Core Tools and CLI Patterns
 
 ### Structural Alignment (cath-ssap)
-Use `cath-ssap` to perform a structural alignment between two protein structures. It is the standard tool for determining structural homology in the CATH hierarchy.
-- **Basic Pattern**: `cath-ssap <pdb_file_1> <pdb_file_2>`
-- **Note**: The tool typically utilizes DSSP (Define Secondary Structure of Proteins) algorithms for secondary structure assignment during the alignment process.
+Use `cath-ssap` to align a pair of protein structures. It automatically switches between fast secondary-structure-based alignment and slower residue-level alignment based on score thresholds.
 
-### Domain Hit Resolution (cath-resolve-hits)
-When searching a sequence against a library of domain models, you often get overlapping hits. `cath-resolve-hits` identifies the optimal, non-overlapping subset of hits that maximizes the total score.
-- **Usage**: `cath-resolve-hits <input_hits_file>`
-- **Best Practice**: Use this to convert raw search results into a final "domain architecture" for a protein sequence.
+*   **Basic Alignment**: `cath-ssap <protein1> <protein2>`
+*   **PDB Path Configuration**: Set the environment variable `CATH_TOOLS_PDB_PATH` to avoid repeating `--pdb-path` in every command.
+*   **Specific Regions**: Use the format `D[id]start-stop:chain` to align specific domains.
+    *   Example: `cath-ssap --align-regions 'D[1cukA01]10-150:A' --align-regions 'D[1bvsA01]15-155:A' 1cukA01 1bvsA01`
 
 ### Structure Superposition (cath-superpose)
-Once an alignment is generated, use `cath-superpose` to transform the 3D coordinates of the structures into a common frame of reference.
-- **Basic Pattern**: `cath-superpose <pdb_files> --alignment <alignment_file>`
-- **Utility**: Essential for visualizing structural differences or creating ensemble models.
+Unlike standard RMSD-minimizing tools, `cath-superpose` focuses on well-aligned regions to produce more biologically meaningful visualizations.
 
-### Data Clustering (cath-cluster)
-Perform complete-linkage clustering on arbitrary similarity data.
-- **Usage**: `cath-cluster <similarity_data_file>`
-- **Algorithm**: Uses a reciprocal-nearest-neighbor algorithm for efficient hierarchical clustering.
+*   **Automatic All-vs-All**: `cath-superpose --do-the-ssaps --pdb-infile <file1> --pdb-infile <file2>`
+*   **Using Existing Alignments**: Provide a `.list` file from `cath-ssap`.
+    *   `cath-superpose --ssap-aln-infile alignment.list --pdb-infile p1.pdb --pdb-infile p2.pdb --sup-to-pymol`
+*   **Output Formats**:
+    *   `--sup-to-pdb-file output.pdb`: Single PDB with faked chain codes.
+    *   `--sup-to-pymol-file script.pml`: Generates a PyMOL script for high-quality rendering.
+
+### Resolving Domain Hits (cath-resolve-hits)
+Collapses multiple (potentially overlapping) domain matches into the best non-overlapping architecture by maximizing the total score.
+
+*   **HMMER Integration**: Directly process HMMER output.
+    *   `cath-resolve-hits --input-format hmmer_domtblout <hits_file>`
+*   **Performance Tip**: If hits are already sorted by query ID, use `--input-hits-are-grouped` to significantly reduce memory usage.
+*   **Overlap Control**: Use `--overlap-trim-spec 30/10` to allow minor overlaps (up to 10 residues for segments of 30) by trimming segment boundaries.
+
+### Clustering and Mapping (cath-cluster & cath-map-clusters)
+*   **Clustering**: Perform complete-linkage clustering on distance or strength data.
+    *   `cath-cluster --link_dirn DISTANCE --levels 35,60,95,100 <input_file>`
+*   **Mapping**: Map entities between different versions of clusters, accounting for slight residue-range variations.
+    *   `cath-map-clusters --map-from-clustmemb-file old_clusters.txt new_clusters.txt`
 
 ## Expert Tips and Best Practices
 
-- **Domain Boundaries**: When working with `cath-resolve-hits`, ensure your input file follows the expected hit format (typically query ID, match ID, score, and residue boundaries).
-- **Refining Alignments**: For high-precision tasks, use `cath-refine-align` to iteratively improve an existing alignment by optimizing the SSAP score.
-- **Scoring**: If you already have an alignment and simply need to evaluate its structural quality, use `cath-score-align` rather than re-running the full SSAP alignment.
-- **Installation**: The most reliable way to deploy the toolkit is via Bioconda: `conda install bioconda::cath-tools`.
-- **Input Formats**: While the tools primarily handle PDB files, ensure that residue numbering and chain IDs are consistent, as structural alignment is sensitive to backbone completeness.
+1.  **Environment Variables**: Streamline workflows by exporting `CATH_TOOLS_PDB_PATH`, `CATH_TOOLS_PDB_PREFIX`, and `CATH_TOOLS_PDB_SUFFIX`.
+2.  **Alignment Refining**: When superposing multiple structures, use `--align-refining HEAVY` in `cath-superpose` to improve the quality of the "glued" multiple alignment, though it increases computation time.
+3.  **Visualization**: Use `--gradient-colour-alignment` in `cath-superpose` to color the structure from blue to red along the alignment length, highlighting structural conservation vs. divergence.
+4.  **DSSP Handling**: While `cath-ssap` can calculate secondary structure internally from PDBs, providing pre-calculated DSSP files via `CATH_TOOLS_DSSP_PATH` can speed up large-scale batch processing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cath-cluster | Cluster items based on the links between them. |
+| cath-refine-align | Iteratively refine an existing alignment by attempting to optimise SSAP score |
+| cath-resolve-hits | Collapse a list of domain matches to your query sequence(s) down to the non-overlapping subset (ie domain architecture) that maximises the sum of the hits' scores. |
+| cath-score-align | Score an existing alignment using structural data |
+| cath-ssap | Run a SSAP pairwise structural alignment |
+| cath-superpose | Superpose protein structures using an existing alignment |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_UCLOrengoGroup_cath-tools.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_cath-tools_overview.md)
+- [cath-ssap](./references/cath-tools_readthedocs_io_en_latest_tools_cath-ssap.md)
+- [cath-superpose](./references/cath-tools_readthedocs_io_en_latest_tools_cath-superpose.md)
+- [cath-resolve-hits](./references/cath-tools_readthedocs_io_en_latest_tools_cath-resolve-hits.md)
+- [cath-cluster](./references/cath-tools_readthedocs_io_en_latest_tools_cath-cluster.md)
+- [cath-map-clusters](./references/cath-tools_readthedocs_io_en_latest_tools_cath-map-clusters.md)

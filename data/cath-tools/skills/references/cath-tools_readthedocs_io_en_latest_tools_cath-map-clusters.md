@@ -1,0 +1,118 @@
+[cath-tools](../..)
+
+* [Home](../..)
+
+Tools
+
+* [cath-cluster](../cath-cluster/)
+* [cath-map-clusters](./)
+  + [Features](#features)
+  + [Usage](#usage)
+  + [Sorting criteria for new, unmapped clusters](#sorting-criteria-for-new-unmapped-clusters)
+  + [Feedback](#feedback)
+* [cath-resolve-hits](../cath-resolve-hits/)
+* [cath-ssap](../cath-ssap/)
+* [cath-superpose](../cath-superpose/)
+
+* [Build](../../build/)
+
+* [License](../../license/)
+
+* [References](../../references/)
+
+[cath-tools](../..)
+
+* Tools
+* cath-map-clusters
+
+---
+
+# cath-map-clusters
+
+[**Downloads**](https://github.com/UCLOrengoGroup/cath-tools/releases/latest)
+
+A simple way to map between different partitions (clusterings, sub-groupings) of a group of entities. Accounts for equivalences between domains specified on slightly differing regions of a parent sequence. Renumbers any clusters with no equivalents.
+
+![Screenshot](../img/cath-map-clusters.jpg)
+
+***Above**: An illustration of cath-map-clusters' task of mapping between different sets of clusters*
+
+## Features
+
+* Fast
+* Simple
+
+## Usage
+
+The current full `--help` usage information is:
+
+```
+Usage: cath-map-clusters [options] <input_file>
+
+Map names from previous clusters to new clusters based on (the overlaps between)
+their members (which may be specified as regions within a parent sequence).
+Renumber any clusters with no equivalents.
+
+When <input_file> is -, the input is read from standard input.
+
+Miscellaneous:
+  -h [ --help ]                         Output help message
+  -v [ --version ]                      Output version information
+
+Input:
+  --map-from-clustmemb-file <file>      Map numbers from previous clusters specified in <file> to their equivalents in the working clusters where possible and
+                                        if all the cluster names in <file>are positive integers, renumber leftover new clusters from one plus the largest
+                                        or if not, rename with new_cmc_cluster_1, new_cmc_cluster_2, ...
+                                        (of, if unspecified, renumber all working clusters from 1 upwards)
+  --read-batches-from-input             Read batches of work from the input file with lines of format: `batch_id working_clust_memb_file prev_clust_memb_file` where:
+                                         * batch_id             is a unique label for the batch (with no whitespace)
+                                         * prev_clust_memb_file is optional
+
+Mapping:
+  --min_equiv_dom_ol <percent> (=60)    Define domain equivalence as: sharing more than <percent>% of residues (over the longest domain)
+                                        (where <percent> must be ≥ 50)
+  --min_equiv_clust_ol <percent> (=60)  Define cluster equivalence as: more than <percent>% of the map-from cluster's members having equivalents in the working cluster
+                                        [and them being equivalent to > 20% of the working cluster's entries and > 50% of those that have an equivalence]
+                                        (where <percent> must be ≥ 50%)
+
+Output:
+  --append-batch-id <id>                Append batch ID <id> as an extra column in the results output (equivalent to the first column in a --multi-batch-file input file)
+  --output-to-file <file>               Write output to file <file> (or, if unspecified, to stdout)
+  --summarise-to-file <file>            Print a summary of the renumbering to file <file>
+  --print-entry-results                 Output the entry (domain)-level mapping results
+
+Detailed help:
+  --sorting-help                        Show the criteria for sorting unmapped clusters
+
+The input cluster-membership data should contain lines like:
+
+cluster_name domain_id
+
+...where domain_id is a sequence/protein name, optionally suffixed with the domain's segments in notation like '/100-199,350-399'. The suffixes should be present for all of the domain IDs or for none of them. Domains shouldn't overlap with others in the same cluster-membership data.
+
+Input data doesn't have to be grouped by cluster.
+
+NOTE: When mapping (ie using --map-from-clustmemb-file), the mapping algorithm treats the two cluster membership files differently - see --min_equiv_clust_ol description.
+
+Please tell us your cath-tools bugs/suggestions : https://github.com/UCLOrengoGroup/cath-tools/issues/new
+```
+
+## Sorting criteria for new, unmapped clusters
+
+* Descending on sum over domains of `sqrt(total_dom_length)` (ie clusters with more/longer sequences come earlier, with more emphasis on having more sequences)
+* Descending on number of sequences (ie clusters with more sequences come first)
+* Ascending on average mid-point index (ie clusters with domains earlier in their sequences come first)
+* Ascending on first domain ID
+
+If neither of a pair of clusters is preferred by one criterion, the comparison drops down to the next.
+
+## Feedback
+
+Please tell us about your cath-tools bugs/suggestions [here](https://github.com/UCLOrengoGroup/cath-tools/issues/new).
+
+[Previous](../cath-cluster/ "cath-cluster")
+[Next](../cath-resolve-hits/ "cath-resolve-hits")
+
+---
+
+Built with [MkDocs](https://www.mkdocs.org/) using a [theme](https://github.com/readthedocs/sphinx_rtd_theme) provided by [Read the Docs](https://readthedocs.org).

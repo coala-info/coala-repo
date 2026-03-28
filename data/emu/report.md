@@ -153,3 +153,6 @@ options:
   --counts        counts rather than abundances in output table
 ```
 
+
+## Metadata
+- **Skill**: generated

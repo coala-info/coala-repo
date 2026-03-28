@@ -93,3 +93,6 @@ Options:
     -r          input formatted as training data
 ```
 
+
+## Metadata
+- **Skill**: generated

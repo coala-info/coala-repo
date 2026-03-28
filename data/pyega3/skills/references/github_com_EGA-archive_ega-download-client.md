@@ -1,1 +1,338 @@
-GitHub - EGA-archive/ega-download-client: A Python-based EGA download client Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} EGA-archive / ega-download-client Public Notifications You must be signed in to change notification settings Fork 53 Star 110 A Python-based EGA download client License Apache-2.0 license 110 stars 53 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 22 Pull requests 3 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights EGA-archive/ega-download-client master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 491 Commits 491 Commits .github/ ISSUE_TEMPLATE .github/ ISSUE_TEMPLATE pyega3 pyega3 tests tests .editorconfig .editorconfig .gitignore .gitignore .gitlab-ci.yml .gitlab-ci.yml LICENSE LICENSE MANIFEST.in MANIFEST.in README.md README.md debian_dependency_install.sh debian_dependency_install.sh development.md development.md go.sh go.sh go1.sh go1.sh osx_dependency_install.sh osx_dependency_install.sh red_hat_dependency_install.sh red_hat_dependency_install.sh requirements.txt requirements.txt setup.cfg setup.cfg setup.py setup.py View all files Repository files navigation README Apache-2.0 license EGA download client: pyEGA3 Overview The pyEGA3 download client is a python-based tool for viewing and downloading files from authorized EGA datasets. pyEGA3 uses the EGA Data API and has several key features: Files are transferred over secure https connections and received unencrypted, so no need for decryption after download. Downloads resume from where they left off in the event that the connection is interrupted. pyEGA3 supports file segmenting and parallelized download of segments, improving overall performance. After download completes, file integrity is verified using checksums. pyEGA3 implements the GA4GH-compliant htsget protocol for download of genomic ranges for data files with accompanying index files. Tutorial video A video tutorial demonstrating the usage of pyEGA3 from installation through file download is available here . Requirements Python 3.6 or newer. ( download instructions ) Installation and update Using Pip3 Install pyEGA3 using pip3. sudo pip3 install pyega3 Update pyEGA3, if needed, using pip3. pip3 install pyega3 --upgrade Test your pip3 installation by running pyEGA3. pyega3 --help Using conda (bioconda channel) Install pyEGA3 using conda. conda config --add channels bioconda conda config --add channels conda-forge conda install pyega3 Update pyEGA3, if needed, using conda. conda update pyega3 Test your conda installation by running pyEGA3. pyega3 --help Using GitHub Clone the ega-download-client GitHub repository. Navigate to the directory where the repository was cloned. cd path/to/ega-download-client Three scripts are provided to install the required Python environment depending on the host operating system. Linux (Red Hat): red_hat_dependency_install.sh Linux: debian_dependency_install.sh macOS: osx_dependency_install.sh Execute the script corresponding to the host operating system. For example, if using Red Hat Linux, run: sh red_hat_dependency_install.sh Test your GitHub installation by running pyEGA3. python -m pyega3.pyega3 --help Using Docker There are Docker images built by Bioconda: https://bioconda.github.io/recipes/pyega3/README.html An example of running pyEGA3 in a Docker container: docker run --rm -v /tmp:/app -w /app quay.io/biocontainers/pyega3:3.4.0--py_0 pyega3 -d -t fetch EGAF00001775036 This example command mounts your /tmp folder into the Docker container as /app, starts the 3.4.0 version of pyEGA3 and downloads a test file. The test file will be downloaded into your /tmp folder. You can find other, possibly newer, versions ("tags") of the pyEGA3 Docker image on the above-mentioned Bioconda page. Usage - File download usage: pyega3.py [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS] [-t] [-ms MAX_SLICE_SIZE] {datasets,files,fetch} ... Download from EMBL EBI ' s EGA (European Genome-phenome Archive) positional arguments: {datasets,files,fetch} subcommands datasets List authorized datasets files List files in a specified dataset fetch Fetch a dataset or file optional arguments: -h, --help show this help message and exit -d, --debug Extra debugging messages -cf CONFIG_FILE, --config-file CONFIG_FILE JSON file containing credentials/config e.g.{"username":"user1","password":"toor"} -sf SERVER_FILE, --server-file SERVER_FILE JSON file containing server config e.g.{"url_auth":"aai url","url_api":"api url", "url_api_ticket":"htsget url", "client_secret":"client secret"} -c CONNECTIONS, --connections CONNECTIONS Download using specified number of connections (default: 1 connection) -t, --test Test user activated -ms MAX_SLICE_SIZE, --max-slice-size MAX_SLICE_SIZE Set maximum size for each slice in bytes (default: 100 MB) Testing pyEGA3 installation We recommend that all fresh installations of pyEGA3 be tested. A test account has been created which can be used ( -t ) to test the following pyEGA3 actions: List the datasets available to the test account pyega3 -d -t datasets List the files available in a test dataset pyega3 -d -t files EGAD00001003338 Download a test file pyega3 -d -t fetch EGAF00001775036 The test dataset (EGAD00001003338) is large (almost 1TB), so please be mindful if deciding to test downloading the entire dataset. The test account does not require an EGA username and password because it contains publicaly accessible files from the 1000 Genomes Project . The files in the test dataset can be used for troubleshooting and training purposes. Defining credentials To view and download files for which you have been granted access, pyEGA3 requires your EGA username (email address) and password saved to a credentials file. Create a file called CREDENTIALS_FILE and place it in the directory where pyEGA3 will run. The credentials file must be in JSON format and must contain your registered EGA username (email address) and password provided by EGA Helpdesk. An example CREDENTIALS_FILE is available here . Using pyEGA3 for file download Replace &lt;these values&gt; with values relevant for your datasets. Display authorized datasets pyega3 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; datasets Display files in a dataset pyega3 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; files EGAD &lt; NUM &gt; Download a dataset pyega3 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; fetch EGAD &lt; NUM &gt; --output-dir &lt; /Path/To/OutputDirectory &gt; Download a single file pyega3 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; fetch EGAF &lt; NUM &gt; --output-dir &lt; /Path/To/OutputDirectory &gt; List unencrypted md5 checksums for all files in a dataset pyega3 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; files EGAD &lt; NUM &gt; Save unencrypted md5 checksums to a file nohup pyega3 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; files EGAD &lt; NUM &gt; &lt; /Path/To/File/md5sums.txt &gt; Download a file or dataset using 5 connections pyega3 -c 5 -cf &lt; /Path/To/CREDENTIALS_FILE &gt; fetch EGAD &lt; NUM &gt; --output-dir &lt; /Path/To/OutputDirectory &gt; Usage - Genomic range requests via htsget usage: pyega3 fetch [-h] [--reference-name REFERENCE_NAME] [--reference-md5 REFERENCE_MD5] [--start START] [--end END] [--format {BAM,CRAM,VCF,BCF}] [--max-retries MAX_RETRIES] [--retry-wait RETRY_WAIT] [--output-dir OUTPUT_DIR] [--delete-temp-files] identifier positional arguments: identifier Id for dataset (e.g. EGAD00000000001) or file (e.g. EGAF12345678901) opti
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FEGA-archive%2Fega-download-client)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FEGA-archive%2Fega-download-client)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=EGA-archive%2Fega-download-client)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[EGA-archive](/EGA-archive)
+/
+**[ega-download-client](/EGA-archive/ega-download-client)**
+Public
+
+* [Notifications](/login?return_to=%2FEGA-archive%2Fega-download-client) You must be signed in to change notification settings
+* [Fork
+  53](/login?return_to=%2FEGA-archive%2Fega-download-client)
+* [Star
+   113](/login?return_to=%2FEGA-archive%2Fega-download-client)
+
+* [Code](/EGA-archive/ega-download-client)
+* [Issues
+  24](/EGA-archive/ega-download-client/issues)
+* [Pull requests
+  3](/EGA-archive/ega-download-client/pulls)
+* [Actions](/EGA-archive/ega-download-client/actions)
+* [Projects](/EGA-archive/ega-download-client/projects)
+* [Security
+  0](/EGA-archive/ega-download-client/security)
+* [Insights](/EGA-archive/ega-download-client/pulse)
+
+Additional navigation options
+
+* [Code](/EGA-archive/ega-download-client)
+* [Issues](/EGA-archive/ega-download-client/issues)
+* [Pull requests](/EGA-archive/ega-download-client/pulls)
+* [Actions](/EGA-archive/ega-download-client/actions)
+* [Projects](/EGA-archive/ega-download-client/projects)
+* [Security](/EGA-archive/ega-download-client/security)
+* [Insights](/EGA-archive/ega-download-client/pulse)
+
+# EGA-archive/ega-download-client
+
+master
+
+[Branches](/EGA-archive/ega-download-client/branches)[Tags](/EGA-archive/ega-download-client/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[491 Commits](/EGA-archive/ega-download-client/commits/master/)   491 Commits | | |
+| [.github/ISSUE\_TEMPLATE](/EGA-archive/ega-download-client/tree/master/.github/ISSUE_TEMPLATE "This path skips through empty directories") | | [.github/ISSUE\_TEMPLATE](/EGA-archive/ega-download-client/tree/master/.github/ISSUE_TEMPLATE "This path skips through empty directories") |  |  |
+| [pyega3](/EGA-archive/ega-download-client/tree/master/pyega3 "pyega3") | | [pyega3](/EGA-archive/ega-download-client/tree/master/pyega3 "pyega3") |  |  |
+| [tests](/EGA-archive/ega-download-client/tree/master/tests "tests") | | [tests](/EGA-archive/ega-download-client/tree/master/tests "tests") |  |  |
+| [.editorconfig](/EGA-archive/ega-download-client/blob/master/.editorconfig ".editorconfig") | | [.editorconfig](/EGA-archive/ega-download-client/blob/master/.editorconfig ".editorconfig") |  |  |
+| [.gitignore](/EGA-archive/ega-download-client/blob/master/.gitignore ".gitignore") | | [.gitignore](/EGA-archive/ega-download-client/blob/master/.gitignore ".gitignore") |  |  |
+| [.gitlab-ci.yml](/EGA-archive/ega-download-client/blob/master/.gitlab-ci.yml ".gitlab-ci.yml") | | [.gitlab-ci.yml](/EGA-archive/ega-download-client/blob/master/.gitlab-ci.yml ".gitlab-ci.yml") |  |  |
+| [LICENSE](/EGA-archive/ega-download-client/blob/master/LICENSE "LICENSE") | | [LICENSE](/EGA-archive/ega-download-client/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/EGA-archive/ega-download-client/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/EGA-archive/ega-download-client/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/EGA-archive/ega-download-client/blob/master/README.md "README.md") | | [README.md](/EGA-archive/ega-download-client/blob/master/README.md "README.md") |  |  |
+| [debian\_dependency\_install.sh](/EGA-archive/ega-download-client/blob/master/debian_dependency_install.sh "debian_dependency_install.sh") | | [debian\_dependency\_install.sh](/EGA-archive/ega-download-client/blob/master/debian_dependency_install.sh "debian_dependency_install.sh") |  |  |
+| [development.md](/EGA-archive/ega-download-client/blob/master/development.md "development.md") | | [development.md](/EGA-archive/ega-download-client/blob/master/development.md "development.md") |  |  |
+| [go.sh](/EGA-archive/ega-download-client/blob/master/go.sh "go.sh") | | [go.sh](/EGA-archive/ega-download-client/blob/master/go.sh "go.sh") |  |  |
+| [go1.sh](/EGA-archive/ega-download-client/blob/master/go1.sh "go1.sh") | | [go1.sh](/EGA-archive/ega-download-client/blob/master/go1.sh "go1.sh") |  |  |
+| [osx\_dependency\_install.sh](/EGA-archive/ega-download-client/blob/master/osx_dependency_install.sh "osx_dependency_install.sh") | | [osx\_dependency\_install.sh](/EGA-archive/ega-download-client/blob/master/osx_dependency_install.sh "osx_dependency_install.sh") |  |  |
+| [red\_hat\_dependency\_install.sh](/EGA-archive/ega-download-client/blob/master/red_hat_dependency_install.sh "red_hat_dependency_install.sh") | | [red\_hat\_dependency\_install.sh](/EGA-archive/ega-download-client/blob/master/red_hat_dependency_install.sh "red_hat_dependency_install.sh") |  |  |
+| [requirements.txt](/EGA-archive/ega-download-client/blob/master/requirements.txt "requirements.txt") | | [requirements.txt](/EGA-archive/ega-download-client/blob/master/requirements.txt "requirements.txt") |  |  |
+| [setup.cfg](/EGA-archive/ega-download-client/blob/master/setup.cfg "setup.cfg") | | [setup.cfg](/EGA-archive/ega-download-client/blob/master/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/EGA-archive/ega-download-client/blob/master/setup.py "setup.py") | | [setup.py](/EGA-archive/ega-download-client/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Apache-2.0 license
+
+# EGA download client: pyEGA3
+
+## Overview
+
+The pyEGA3 download client is a python-based tool for viewing and downloading files from authorized EGA datasets. pyEGA3 uses the EGA Data API and has several key features:
+
+* Files are transferred over secure https connections and received unencrypted, so no need for decryption after download.
+* Downloads resume from where they left off in the event that the connection is interrupted.
+* pyEGA3 supports file segmenting and parallelized download of segments, improving overall performance.
+* After download completes, file integrity is verified using checksums.
+* pyEGA3 implements the GA4GH-compliant htsget protocol for download of genomic ranges for data files with accompanying index files.
+
+### Tutorial video
+
+A video tutorial demonstrating the usage of pyEGA3 from installation through file download is available [here](https://embl-ebi.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=be79bb93-1737-4f95-b80f-ab4300aa6f5a).
+
+## Requirements
+
+* Python 3.6 or newer. ([download instructions](https://www.python.org/downloads/))
+
+## Installation and update
+
+### Using Pip3
+
+1. Install pyEGA3 using pip3.
+
+   ```
+   sudo pip3 install pyega3
+   ```
+2. Update pyEGA3, if needed, using pip3.
+
+   ```
+   pip3 install pyega3 --upgrade
+   ```
+3. Test your pip3 installation by running pyEGA3.
+
+   ```
+   pyega3 --help
+   ```
+
+### Using conda (bioconda channel)
+
+1. Install pyEGA3 using conda.
+
+   ```
+   conda config --add channels bioconda
+   conda config --add channels conda-forge
+   conda install pyega3
+   ```
+2. Update pyEGA3, if needed, using conda.
+
+   ```
+   conda update pyega3
+   ```
+3. Test your conda installation by running pyEGA3.
+
+   ```
+   pyega3 --help
+   ```
+
+### Using GitHub
+
+1. Clone the [ega-download-client](https://github.com/EGA-archive/ega-download-client) GitHub repository.
+2. Navigate to the directory where the repository was cloned.
+
+   ```
+   cd path/to/ega-download-client
+   ```
+3. Three scripts are provided to install the required Python environment depending on the host operating system.
+
+   * Linux (Red Hat): red\_hat\_dependency\_install.sh
+   * Linux: debian\_dependency\_install.sh
+   * macOS: osx\_dependency\_install.sh
+4. Execute the script corresponding to the host operating system. For example, if using Red Hat Linux, run:
+
+   ```
+   sh red_hat_dependency_install.sh
+   ```
+5. Test your GitHub installation by running pyEGA3.
+
+   ```
+   python -m pyega3.pyega3 --help
+   ```
+
+### Using Docker
+
+There are Docker images built by Bioconda: <https://bioconda.github.io/recipes/pyega3/README.html>
+An example of running pyEGA3 in a Docker container:
+
+```
+docker run --rm -v /tmp:/app -w /app quay.io/biocontainers/pyega3:3.4.0--py_0 pyega3 -d -t fetch EGAF00001775036
+```
+
+This example command mounts your /tmp folder into the Docker container as /app,
+starts the 3.4.0 version of pyEGA3 and downloads a test file.
+The test file will be downloaded into your /tmp folder.
+You can find other, possibly newer, versions ("tags") of the pyEGA3 Docker image
+on the above-mentioned Bioconda page.
+
+## Usage - File download
+
+```
+usage: pyega3.py [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS] [-t] [-ms MAX_SLICE_SIZE] {datasets,files,fetch} ...
+
+Download from EMBL EBI's EGA (European Genome-phenome Archive)
+
+positional arguments:
+  {datasets,files,fetch}
+                        subcommands
+    datasets            List authorized datasets
+    files               List files in a specified dataset
+    fetch               Fetch a dataset or file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d, --debug           Extra debugging messages
+  -cf CONFIG_FILE, --config-file CONFIG_FILE
+                        JSON file containing credentials/config e.g.{"username":"user1","password":"toor"}
+  -sf SERVER_FILE, --server-file SERVER_FILE
+                        JSON file containing server config e.g.{"url_aut

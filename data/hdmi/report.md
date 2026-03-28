@@ -141,3 +141,6 @@ options:
   --temp_dir TEMP_DIR   Temporary directory for merged files
 ```
 
+
+## Metadata
+- **Skill**: generated

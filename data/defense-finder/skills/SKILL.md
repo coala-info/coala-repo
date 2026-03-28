@@ -1,6 +1,6 @@
 ---
 name: defense-finder
-description: Defense-finder automates the detection of known anti-phage systems in genomic sequences using HMM profiles and MacSyFinder. Use when user asks to identify defense systems in genomes, update defense system models, or analyze protein sequences for anti-phage mechanisms.
+description: DefenseFinder identifies anti-phage defense systems in genomic or protein sequences using specialized HMM models. Use when user asks to search for defense systems in a genome, update defense system models, or interpret defense-finder output files.
 homepage: https://github.com/mdmparis/defense-finder
 ---
 
@@ -8,63 +8,67 @@ homepage: https://github.com/mdmparis/defense-finder
 # defense-finder
 
 ## Overview
-Defense-finder is a specialized bioinformatic tool that automates the detection of known anti-phage systems in genomic sequences. It utilizes MacSyFinder and a curated library of Hidden Markov Model (HMM) profiles to identify gene clusters that constitute functional defense mechanisms. This skill provides the necessary command-line patterns and best practices to effectively run the tool, manage its models, and interpret the resulting data.
+DefenseFinder is a specialized bioinformatic tool that leverages MacSyFinder and HMMer to identify anti-phage systems within genomic data. It is designed to scan protein sequences (in genomic order) or nucleotide sequences to find complete molecular systems rather than isolated genes. This skill provides the necessary command-line patterns to install, update, and execute defense-finder, as well as guidance on interpreting its multi-file output.
 
 ## Installation and Setup
-Defense-finder requires HMMER (v3.1+) and MacSyFinder. It is best installed via a virtual environment.
+Before running a search, ensure the environment is prepared and the latest HMM models are downloaded.
 
 ```bash
-# Installation via pip
+# Install via pip
 pip install mdmparis-defense-finder
 
-# Installation via Conda
-conda install bioconda::defense-finder
+# CRITICAL: Download/Update the defense system models
+defense-finder update
 ```
 
-## Model Management
-The tool relies on external models that must be downloaded and updated regularly to ensure the detection of the most recently discovered defense systems.
+## Core Workflows
 
-- **Initial Download/Update**: Always run this before a new analysis if you haven't used the tool recently.
-  ```bash
-  defense-finder update
-  ```
-- **Custom Model Directory**: If you maintain models in a specific location:
-  ```bash
-  defense-finder update --models-dir /path/to/your/models
-  ```
+### Running a Search
+The `run` command is the primary entry point. It automatically detects whether the input is nucleotide or protein.
 
-## Running the Search
-The `run` command is the primary interface for analysis.
-
-### Basic Usage
-Defense-finder automatically detects whether the input is a protein (.faa) or nucleotide fasta file.
 ```bash
+# Standard run on a genome file
 defense-finder run genome.faa
+
+# Specify an output directory
+defense-finder run genome.faa --outdir ./results
 ```
 
-### Critical Input Requirements
-- **Protein Order**: If providing a protein fasta file, proteins **must** be in their natural genomic order. Defense-finder uses the spatial proximity of genes to determine if they form a valid defense system.
-- **Dataset Size**: For small sets (< 30,000 proteins), a standard run is sufficient. For larger datasets, consider formatting the data into Gembase format (refer to MacSyFinder documentation).
-- **Execution Time**: A typical bacterial genome should take less than two minutes on standard hardware.
+### Input Requirements
+- **Protein FASTA (.faa)**: Proteins must be in their natural genomic order. DefenseFinder relies on spatial proximity to determine if genes form a functional system.
+- **Nucleotide FASTA (.fna/.fasta)**: The tool will handle translation/prediction internally.
+- **Scale**: For small sets (< 30,000 proteins), the standard `run` command is sufficient. For larger datasets, consider the Gembase format (refer to full documentation).
 
-## Interpreting Results
-The tool generates three primary tab-separated value (TSV) files:
+## Output Interpretation
+DefenseFinder generates three primary TSV files in the output directory:
 
-1.  **defense_finder_systems.tsv**: The high-level summary. Each line represents a detected system (e.g., a specific Type I-E CRISPR system).
-    - `sys_id`: Unique identifier for the system.
-    - `type` / `subtype`: The classification of the defense mechanism.
-    - `protein_in_syst`: List of genes included in the cluster.
-2.  **defense_finder_genes.tsv**: Detailed information for every gene identified as part of a system, including its position and MacSyFinder score.
-3.  **defense_finder_hmmer.tsv**: Raw HMMER hits for the protein profiles.
+1.  **defense_finder_systems.tsv**: The most important file. Lists complete, validated systems.
+    - `type` / `subtype`: The classification of the defense system (e.g., RM_type_I, CAS_Class1-Subtype-I-E).
+    - `protein_in_syst`: The specific genes identified as part of that cluster.
+2.  **defense_finder_genes.tsv**: Detailed breakdown of every gene found within a system, including MacSyFinder scores and positions.
+3.  **defense_finder_hmmer.tsv**: Raw HMMer hits. 
+    - **Expert Tip**: Use this file for deep inspection of "orphan" genes. Note that biologically, isolated genes often do not provide anti-phage immunity; only full systems in the `systems.tsv` file are considered high-confidence.
 
-## Expert Tips
-- **Model Versioning**: Ensure your models are version 2.0.0 or higher to be compatible with Defense-finder v2.x.
-- **Updating the Tool**: If the models update but the tool is outdated, use:
-  ```bash
-  pip install -U mdmparis-defense-finder
-  ```
-- **System IDs**: Use the `sys_id` in the systems file to cross-reference specific genes in the genes file for detailed genomic context analysis.
+## Maintenance
+Models are updated frequently as new defense systems are discovered.
+```bash
+# Check for and fetch latest models
+defense-finder update
+
+# Check version of the CLI tool
+defense-finder --version
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| run | Search for all known anti-phage defense systems in the target fasta file. |
+| update | Fetches the latest defense finder models. |
 
 ## Reference documentation
-- [Defense-finder GitHub Repository](./references/github_com_mdmparis_defense-finder.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_defense-finder_overview.md)
+- [Main README](./references/github_com_mdmparis_defense-finder_blob_master_README.md)
+- [List of detectable systems](./references/github_com_mdmparis_defense-finder_blob_master_List_system_article.md)
+- [CLI Structure and Logic](./references/github_com_mdmparis_defense-finder_blob_master_CONTRIBUTING.md)

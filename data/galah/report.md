@@ -91,3 +91,6 @@ Example: Dereplicate a set of contigs within FASTA files using small-genomes set
 See galah cluster --full-help for further options and further detail.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,0 +1,58 @@
+[Skip to main content](#main-content)
+[ ]
+
+[ ]
+
+`Ctrl`+`K`
+
+[![Logo image](_static/cellsnake-logo-blue-small.png)](index.html)
+
+Getting Started
+
+* [Installation](installation.html)
+* [Quick start example](quickstart.html)
+* [Example run on Fetal Brain dataset](fetalbrain.html)
+* [Example run on Fetal Liver dataset](fetalliver.html)
+* [Metagenomics analysis](kraken.html)
+* [How to draw marker plots](markers.html)
+* [Config Files (Parameter Files)](configs.html)
+* [Options and Arguments](options.html)
+* [Downstream analysis](downstream.html)
+* Glossary
+
+* [.rst](_sources/glossary.rst "Download source file")
+* .pdf
+
+# Glossary
+
+# Glossary[#](#glossary "Permalink to this headline")
+
+Here we explain some of the terminology related to Cellsnake and Seurat.
+
+**RDS (R Data Serialization)** files are a common format for saving R objects in RStudio, and they allow you to preserve the state of an object between R sessions. Cellsnake generated RDS files for later use, you can access them under analyses folder.
+
+**ClusTree plot** ClusTree package allows you to produce clustering trees, a visualisation for interrogating clusterings as resolution increases. Please refer their publication for more details. You can access this plot under *technicals*.
+
+**nFeature\_RNA** is the number of genes detected in each cell. You can access this plot under *technicals*.
+
+**nCount\_RNA** is the total number of molecules detected within a cell. You can access this plot under *technicals*.
+
+**mt.percent** Mitochondrial RNA percentage. We use “^[Mm][Tt]-” regex pattern to detect MT genes. Higher percentage of MT genes may suggest dead cells.
+
+**rp.percent** Ribosomal RNA percentage. We use “(?i)(^RP[SL])” regex pattern to detect ribosomal genes. Usually no filtering required for ribosomal genes.
+
+**min\_cells** Features detected at least this many cells. For example a gene detected only in 2 cells may not be important. We use 3 as a default value.
+
+**min\_features** Cells at least this many features. For example a cell express only 50 genes might be a dead cell. We use 200 as a default value.
+
+**Snakemake** Snakemake is a workflow managament tool to design bioinformatics pipelines. Cellsnake contains a Snakemake workflow based on mostly Seurat which is an R based single-cell analysis tool.
+
+**SingleR** It is an R package for annotation of single-cell RNA-seq data. **plot\_annotations** predicted using SingleR package. You can also access additional plots under singler directory related to annotation.
+
+[previous
+
+Downstream analysis](downstream.html "previous page")
+
+By Sinan U. Umu
+
+© Copyright 2023, Sinan U. Umu.

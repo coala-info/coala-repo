@@ -97,3 +97,6 @@ options:
   --log                 Write log file
 ```
 
+
+## Metadata
+- **Skill**: generated

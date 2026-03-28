@@ -1,6 +1,6 @@
 ---
 name: kanpig
-description: kanpig genotypes structural variants from long-read sequencing data using k-mer analysis of local variant graphs. Use when user asks to genotype structural variants, create pileup files for efficient re-analysis, perform trio-based genotyping, or detect mosaic variants.
+description: kanpig genotypes structural variants by building local variant graphs and finding the best-supported paths using long-read alignments. Use when user asks to genotype structural variants, create project-level VCFs, perform trio analysis, or detect mosaic variants.
 homepage: https://github.com/ACEnglish/kanpig
 ---
 
@@ -8,66 +8,77 @@ homepage: https://github.com/ACEnglish/kanpig
 # kanpig
 
 ## Overview
-
-kanpig (Kmer ANalysis of PIleups for Genotyping) is a specialized tool for determining the genotypes of structural variants from long-read sequencing. Unlike traditional aligners that may struggle with complex SV representations, kanpig builds local variant graphs and evaluates read support using k-mer similarities. It is designed to be extremely fast and I/O efficient, making it suitable for large cohorts and N+1 genotyping pipelines.
+kanpig (Kmer Analysis of Pileups for Genotyping) is a high-performance tool designed to genotype structural variants by building local variant graphs and finding the best-supported paths using long-read alignments. It transforms the general problem of SV genotyping into a path-finding task through these graphs, allowing for high accuracy even in complex genomic regions. It is particularly useful for creating project-level VCFs (pVCFs), analyzing trios, or detecting mosaic variants.
 
 ## Core Workflows
 
 ### Standard Genotyping
-The primary command for germline genotyping requires a candidate VCF, aligned reads, and a reference genome.
-
+To genotype a set of variants against a long-read sample:
 ```bash
-kanpig gt \
-  --input variants.vcf.gz \
-  --reads alignments.bam \
-  --reference genome.fa \
-  --out output.vcf
+kanpig gt --input variants.vcf.gz \
+    --reads alignments.bam \
+    --reference genome.fa \
+    --out output.vcf
 ```
 
-### Optimized Re-analysis (PLUP Workflow)
-For samples that will be genotyped multiple times or for very high-coverage data, convert the BAM to a "plup" (pileup) file. This file is significantly smaller (~2000x) and faster to parse.
-
-1. **Create the pileup:**
+### Optimized Re-analysis (BAM to PLUP)
+For high-coverage samples or datasets that will be genotyped multiple times (e.g., N+1 cohorts), convert the BAM to a "pileup" (plup) file. This file is ~2,000x smaller and significantly faster to parse.
 ```bash
+# 1. Create and index the plup file
 kanpig plup --bam alignments.bam | bedtools sort -header | bgzip > alignments.plup.gz
 tabix -p bed alignments.plup.gz
+
+# 2. Genotype using the plup file instead of the BAM
+kanpig gt --input variants.vcf.gz \
+    --reads alignments.plup.gz \
+    --reference genome.fa \
+    --out output.vcf
 ```
 
-2. **Genotype using the pileup:**
-```bash
-kanpig gt --input variants.vcf.gz --reads alignments.plup.gz --reference genome.fa --out output.vcf
-```
+### Project-Level VCF (pVCF) Pipeline
+1. **Discovery**: Call SVs per sample (e.g., using Sniffles).
+2. **Merge**: Consolidate variants using `bcftools merge -m none`.
+3. **Collapse**: Remove redundant representations using `truvari collapse`.
+4. **Genotype**: Run `kanpig gt` on each sample using the collapsed VCF as input.
+5. **Combine**: Merge the per-sample kanpig outputs back into a single pVCF.
 
-### Specialized Modes
-- **Trio Genotyping:** Use `kanpig trio` for family-based genotyping to improve accuracy using Mendelian constraints.
-- **Mosaic Detection:** Use `kanpig mosaic` for detecting non-germline haplotype clustering.
+## Parameter Tuning & Best Practices
 
-## Expert Parameters & Tuning
-
-### Neighborhood Management
-- `--neighdist`: Controls the size of local variant graphs. If variants are dense, increasing this helps recruit distant reads that span the entire complex region. If too large, it may include too many SVs for efficient graph traversal.
-- `--maxnodes`: If a neighborhood exceeds this limit, kanpig switches to a faster `--one-to-one` comparison mode to prevent memory exhaustion.
-
-### Sensitivity vs. Precision
-- `--sizesim` and `--seqsim`: Default is `0.90`. 
-    - **Increase (e.g., 0.95)**: Higher precision, lower recall.
-    - **Decrease (e.g., 0.85)**: Higher recall, lower precision (useful for noisy reads or poorly defined SV boundaries).
-- `--maxpaths`: Limits the search space in the variant graph. Increase this if you suspect complex nested variants are being missed.
-
-### Resource Optimization
-- **Threads**: kanpig is highly parallelized but I/O bound. Using more than 8 physical cores rarely provides significant speedups. Avoid hyperthreading; map threads to physical processors.
+### Computational Resources
+- **Threads**: Kanpig is I/O limited. Use 4–8 physical cores; hyperthreading generally does not improve performance.
 - **Memory**: Allocate approximately 2GB of RAM per core.
 
-## Interpreting Results (FORMAT Fields)
+### Sensitivity vs. Precision
+- **Similarity Thresholds**: `--sizesim` and `--seqsim` (default 0.90) control how closely a read must match a graph path. Lowering these (e.g., 0.85) increases recall but may reduce precision.
+- **Scoring Penalties**: 
+    - `--gpenalty`: Penalizes paths with split variant representations (default 0.04).
+    - `--fpenalty`: Penalizes putative false-negatives in the graph.
+- **Neighborhoods**: `--neighdist` (default 1000bp) defines the local graph size. If variants are missing support, increasing this may recruit more distant informative pileups.
 
-| Field | Description |
-|-------|-------------|
-| **FT** | Filter flag (0x0 is pass). Check for 0x2 (Low GQ) or 0x4 (Low Depth). |
-| **SQ** | Phred-scaled likelihood that the alternate allele is present. |
-| **GQ** | Genotype Quality; difference between the most and second-most likely genotypes. |
-| **PS** | Phase Set ID. Used for long-range phasing or grouping variants evaluated together. |
-| **KS** | Kanpig Score; the internal similarity score used for the genotype call. |
+### Specialized Modes
+- **Trio Genotyping**: Use `kanpig trio` for family-based analysis to improve Mendelian consistency.
+- **Mosaicism**: Use `kanpig mosaic` to detect non-germline haplotype clustering.
+- **Sex Chromosomes**: Always provide a `--ploidy-bed` to ensure correct genotyping on sex chromosomes or for organisms with non-diploid genomes.
+
+## Interpreting Results (FT Bit Flags)
+The `FT` field in the output VCF provides quality metadata. Common flags include:
+- `0x2`: Genotype Quality (GQ) < 5.
+- `0x4`: Depth (DP) < 5.
+- `0x32`: The best path only used part of the haplotype (potential false-negative).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| kanpig gt | Germline SV Genotyping |
+| kanpig mosaic | Mosaic SV Genotyping |
+| kanpig trio | Trio SV Genotyping |
+| plup | BAM/CRAM to Pileup Index |
 
 ## Reference documentation
-- [kanpig Main Repository](./references/github_com_ACEnglish_kanpig.md)
-- [kanpig Wiki and Documentation](./references/github_com_ACEnglish_kanpig_wiki.md)
+- [kanpig Main Documentation](./references/github_com_ACEnglish_kanpig.md)
+- [Project-Level VCF Pipeline](./references/github_com_ACEnglish_kanpig_wiki_Project_E2_80_90Level-VCF-Pipeline.md)
+- [Genotype Filtering Tips](./references/github_com_ACEnglish_kanpig_wiki_Filtering-Genotypes.md)
+- [Scoring Function Details](./references/github_com_ACEnglish_kanpig_wiki_Scoring-Function.md)

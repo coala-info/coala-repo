@@ -1,6 +1,6 @@
 ---
 name: phylowgs
-description: PhyloWGS is a computational tool that reconstructs the clonal evolution and subclonal structure of tumors by integrating point mutations and copy number variations. Use when user asks to estimate the number of subclones, determine cellular prevalence, or infer evolutionary relationships between tumor cell populations.
+description: PhyloWGS reconstructs the clonal evolutionary structure of tumors by integrating mutation frequencies with copy number data. Use when user asks to infer tumor phylogeny, resolve intratumor heterogeneity, or model clonal architectures from genomic sequencing data.
 homepage: https://github.com/morrislab/phylowgs
 ---
 
@@ -8,68 +8,72 @@ homepage: https://github.com/morrislab/phylowgs
 # phylowgs
 
 ## Overview
-PhyloWGS is a computational tool designed to analyze the clonal structure of tumors. By integrating point mutations and copy number changes, it estimates the number of subclones, their cellular prevalence, and the evolutionary relationships between them. This skill provides the procedural knowledge required to run the Python/C++ implementation, including data formatting, running multiple MCMC chains for better posterior approximation, and generating standardized JSON outputs for downstream analysis.
+PhyloWGS is a specialized genomic analysis tool designed to resolve the intratumor heterogeneity of cancer samples. It uses a Bayesian approach to integrate variant allele frequencies from mutations with local copy number data, allowing it to model the evolutionary "tree" of a tumor. By sampling various possible tree structures through Markov Chain Monte Carlo (MCMC) simulations, it provides a posterior distribution of clonal architectures, helping researchers understand how a tumor has progressed over time.
 
 ## Installation and Setup
-PhyloWGS requires Python 2.7 and a compiled C++ component.
-1. **Dependencies**: Ensure `numpy`, `scipy`, and `ete2` are installed for Python 2.
-2. **Compilation**: Compile the Metropolis-Hastings module:
-   ```bash
-   g++ -o mh.o -O3 mh.cpp util.cpp `gsl-config --cflags --libs`
-   ```
+Before running the Python scripts, the C++ MCMC kernels must be compiled:
+```bash
+g++ -o mh.o -O3 mh.cpp util.cpp `gsl-config --cflags --libs`
+```
+Ensure Python 2.7, NumPy, SciPy, ETE2, and the GNU Scientific Library (GSL) are available in the environment.
 
 ## Input Data Preparation
-PhyloWGS requires two tab-delimited files. If no CNVs are present, the CNV file must exist but be empty.
+PhyloWGS requires two specific tab-delimited input files.
 
-### SSM Data (`ssm_data.txt`)
+### 1. SSM Data (`ssm_data.txt`)
 | Column | Description |
 | :--- | :--- |
-| `id` | Identifier starting at `s0`, `s1`, etc. |
-| `gene` | Variant identifier (e.g., `chr_pos`). |
-| `a` | Number of reference-allele reads. |
-| `d` | Total number of reads at the locus. |
-| `mu_r` | Expected reference allele frequency in reference population (typically `0.999`). |
-| `mu_v` | Expected reference allele frequency in variant population (typically `0.499` for diploid). |
+| **id** | Identifier starting at `s0`, `s1`, etc. |
+| **gene** | String identifier (e.g., gene name or `chr_pos`). |
+| **a** | Number of reference-allele reads. |
+| **d** | Total number of reads at the locus. |
+| **mu_r** | Expected reference allele fraction from reference population (typically `0.999`). |
+| **mu_v** | Expected reference allele fraction from variant population (typically `0.499` for diploid). |
 
-### CNV Data (`cnv_data.txt`)
-| Column | Description |
-| :--- | :--- |
-| `cnv` | Identifier starting at `c0`, `c1`, etc. |
-| `a` | Reference reads covering the CNV. |
-| `d` | Total reads covering the CNV. |
-| `ssms` | Semicolon-separated triplets: `SSM_ID,maternal_CN,paternal_CN`. |
+### 2. CNV Data (`cnv_data.txt`)
+*   **Format**: `cnv_id`, `a` (ref reads), `d` (total reads), and `ssms`.
+*   **SSMs Column**: Semicolon-separated triplets of `SSM_ID,maternal_CN,paternal_CN`.
+*   **Note**: If no CNVs exist, create an empty file using `touch cnv_data.txt`.
 
 ## Execution Patterns
 
-### Recommended: Multi-chain MCMC
-Running multiple chains improves the approximation of the posterior distribution. Set `--num-chains` to match available CPU cores.
-```bash
-python2 multievolve.py --num-chains 4 --ssms ssm_data.txt --cnvs cnv_data.txt
-```
+### Recommended: Multiple MCMC Chains
+To ensure better convergence and a more accurate posterior distribution, always use `multievolve.py`. Set `--num-chains` to match the available CPU cores.
 
-### Fast Testing
-To verify the pipeline without waiting for full convergence, reduce samples:
 ```bash
+# Standard production run
+python2 multievolve.py --num-chains 8 --ssms ssm_data.txt --cnvs cnv_data.txt
+
+# Quick test run (low quality, for pipeline validation only)
 python2 multievolve.py --num-chains 4 --ssms ssm_data.txt --cnvs cnv_data.txt --burnin-samples 1 --mcmc-samples 1
 ```
 
-### Deterministic Runs
-PhyloWGS writes the seed to `random_seed.txt`. To replicate a specific run:
+### Reproducibility
+PhyloWGS writes the random seed to `random_seed.txt`. To replicate a specific run, use:
 ```bash
-python2 evolve.py --random-seed <integer> ssm_data.txt cnv_data.txt
+python2 multievolve.py --random-seed <integer> --ssms ssm_data.txt --cnvs cnv_data.txt
 ```
 
 ## Processing Results
-After evolution, use `write_results.py` to generate files for the PhyloWGS visualizer.
+After the inference completes, use `write_results.py` to convert the `trees.zip` output into JSON formats compatible with the PhyloWGS visualizer.
+
 ```bash
-python2 write_results.py <dataset_name> ./trees.zip <output_summ.json.gz> <output_muts.json.gz> <output_mutass.zip>
+python2 write_results.py <dataset_name> ./trees.zip <summary_out.json.gz> <mutlist_out.json.gz> <mutass_out.zip>
 ```
 
 ## Expert Tips
-- **Memory Management**: For datasets with an excessive number of mutations, execution speed will decrease significantly. Consider filtering mutations to high-confidence or driver variants if the run exceeds 3 days.
-- **Tumor Purity**: If you have independent tumor purity estimates, ensure they are reflected in the `mu_v` calculations or used to validate the cellular prevalence of the trunk (clonal) node.
-- **WES Data**: While designed for WGS, PhyloWGS can be used for Whole Exome Sequencing (WES) data, provided that CNV calls are adjusted for the decreased genomic coverage.
+*   **Chain Convergence**: For publication-quality results, use at least the default 1000 burn-in and 2500 MCMC samples.
+*   **SSM Naming**: When running `write_results.py`, use the `--include-ssm-names` flag if you need the original gene/identifier strings to appear in the visualization, though this increases file size.
+*   **Resource Management**: `multievolve.py` spawns separate processes for each chain. Ensure the system has sufficient memory (RAM) to support the number of chains specified, especially with high mutation counts.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| evolve.py | Run PhyloWGS to infer subclonal composition from SSMs and CNVs |
+| write_results.py | Write JSON files describing trees |
 
 ## Reference documentation
 - [PhyloWGS GitHub Repository](./references/github_com_morrislab_phylowgs.md)
-- [Bioconda PhyloWGS Package](./references/anaconda_org_channels_bioconda_packages_phylowgs_overview.md)

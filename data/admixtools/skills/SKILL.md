@@ -1,6 +1,6 @@
 ---
 name: admixtools
-description: ADMIXTOOLS is a software suite for formal statistical testing of population relationships and admixture history using genomic data. Use when user asks to calculate f-statistics, perform D-statistics tests, model ancestry with qpAdm, or convert between EIGENSTRAT and PACKEDANCESTRYMAP file formats.
+description: AdmixTools is a bioinformatics toolkit used to detect and quantify gene flow and reconstruct population histories using genomic data. Use when user asks to perform f-statistics tests, estimate admixture proportions, or fit complex phylogenetic admixture graphs.
 homepage: https://github.com/DReichLab/AdmixTools
 ---
 
@@ -9,45 +9,51 @@ homepage: https://github.com/DReichLab/AdmixTools
 
 ## Overview
 
-ADMIXTOOLS is a specialized software suite designed for formal statistical testing of population relationships and admixture history using genomic data. It is the standard toolset for calculating f-statistics, which quantify shared genetic drift between populations. Use this skill to navigate the various programs within the suite—such as `qpDstat` for D-statistics or `qpAdm` for modeling ancestry—and to manage the specific file formats (EIGENSTRAT, PACKEDANCESTRYMAP) required for paleogenomics and population genetics workflows.
+AdmixTools is a specialized bioinformatics toolkit designed to detect and quantify gene flow between populations using genomic data. It allows researchers to determine if a population is a mixture of other groups, estimate the timing of these mixture events, and build complex phylogenetic models. The suite is the industry standard for analyzing ancient and modern DNA to reconstruct human evolutionary history.
 
 ## Core Programs and Usage
 
-The suite consists of several distinct executables, each targeting a specific statistical test:
+Most AdmixTools programs follow a standard execution pattern using a parameter file (parfile):
+`executable -p parfile`
 
-- **convertf**: Essential for data preparation. Converts between formats like EIGENSTRAT, PACKEDANCESTRYMAP, and PED.
-- **qp3Pop**: Performs the $f_3$-test. Used as a test for admixture (negative $f_3$) or as an "outgroup $f_3$" to measure shared drift between two populations relative to an outgroup.
-- **qpDstat**: Implements D-statistics (ABBA-BABA). A formal test for whether a 4-population tree $((P1, P2), (P3, P4))$ is consistent with simple branching or requires gene flow.
-- **qpF4Ratio**: Estimates admixture proportions ($\alpha$) by calculating the ratio of two $f_4$ statistics.
-- **qpAdm**: Models a target population as a mixture of "source" populations relative to a set of "outgroup" (right) populations.
-- **rolloff**: Estimates the date of an admixture event based on the decay of linkage disequilibrium.
-- **qpfstats**: A performance-oriented tool that precomputes an $f$-statistic basis, significantly reducing computation time for `qpAdm`, `qpWave`, and `qpGraph`.
+### 1. Data Preparation (convertf)
+Use `convertf` to transform genotype data between formats (e.g., PACKEDANCESTRY, EIGENSTRAT, PED).
+*   **Key Parameter:** `genotypename`, `snpname`, `indivname` (input) and `outputformat`.
+*   **Tip:** Use `PACKEDANCESTRY` or the newer `transpose_geno` (tgeno) format for large datasets to reduce memory overhead and improve speed.
 
-## Common CLI Patterns
+### 2. Formal Tests of Admixture
+*   **qp3Pop:** Performs the $f_3$ test. A significantly negative $f_3(Target; Source1, Source2)$ is definitive evidence that the Target is admixed from groups related to Source1 and Source2.
+*   **qpDstat:** Calculates $D$-statistics (4-population test). Use this to test if a tree $((A, B), (C, D))$ is consistent with the data or if there is evidence of gene flow between specific branches.
+*   **qpF4Ratio:** Estimates the admixture proportion ($\alpha$) by calculating the ratio of two $f_4$ statistics.
 
-Most ADMIXTOOLS programs are invoked by passing a parameter file:
-
-```bash
-qpDstat -p parfile
-```
-
-### Parameter File Essentials
-While specific to each program, common parameters include:
-- `genotypename`: Path to the .geno or .packedancestrymap file.
-- `snpname`: Path to the .snp file.
-- `indivname`: Path to the .ind or .indiv file.
-- `poplistname`: File containing the populations to be tested.
-- `allsnps: YES`: Recommended when using `qpfstats` or version 7+ to maximize data usage.
-- `numchrom: 22`: Default for humans; adjust this if working with non-human species.
+### 3. Advanced Modeling
+*   **qpAdm:** Models a "left" (target) population as a mixture of various source populations relative to a set of "right" (outgroup) populations. It provides p-values for model fit and estimated admixture weights.
+*   **qpGraph:** Fits a complex admixture graph to the data. 
+*   **qpfstats:** A performance-oriented tool that precomputes $f$-statistics. Use this before running `qpAdm` or `qpGraph` on large datasets to drastically reduce computation time.
 
 ## Expert Tips and Best Practices
 
-- **Performance Optimization**: For large datasets, use `qpfstats` to precompute statistics. This allows you to run multiple `qpAdm` or `qpGraph` models without re-reading the raw genotype files every time.
-- **Data Formats**: Version 8.0+ supports the `transpose_geno` (or `tgeno`) format, which is more efficient for certain large-scale analyses.
-- **Jackknife Blocks**: Use `blgsize` to control the block size for Weighted Jackknife (default is 0.05 Morgans). If you need custom blocks, use `blockname` to provide a file mapping SNPs to specific block integers.
-- **Handling Missing Data**: When using `qpAdm`, the `allsnps: YES` option allows the program to use all available SNPs for each f-statistic calculation rather than only the intersection of SNPs across all populations, which is crucial for low-coverage ancient DNA.
-- **Graph Validation**: When using `qpGraph`, consider the `halfscore: YES` feature (v7+) to compare two phylogenies and obtain a goodness-of-fit score.
+*   **Handling Chromosomes:** By default, AdmixTools assumes 22 human autosomes. For other species, specify `numchrom: <N>` in your parfile.
+*   **SNP Selection:** Use `allsnps: YES` in `qpAdm` or `qpWave` to maximize the number of SNPs used in the analysis, especially when working with "pseudo-haploid" ancient DNA where data is sparse.
+*   **Jackknife Blocks:** AdmixTools uses a block jackknife to estimate standard errors. If you have specific requirements for block sizes, use `blgsize` (default is 0.05 Morgans).
+*   **Memory Management:** For very large datasets, ensure you are using the 64-bit versions of the tools and consider pre-calculating basis statistics with `qpfstats`.
+*   **Ingroup/Outgroup Logic:** In `qpAdm`, the choice of "Right" populations (outgroups) is critical. They must be differentially related to the sources but should not have experienced recent gene flow from the "Left" populations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| convertf | A tool from the AdmixTools suite used to convert between different genetic data formats (e.g., EIGENSTRAT, PACKEDANCESTRYMAP, PED, etc.) using a parameter file. |
+| qp3Pop | Compute the f3-statistic, also known as the 3-population test, to test for admixture or shared genetic history. |
+| qpAdm | qpAdm is used to estimate the proportions of ancestry from a set of source populations for a target population. |
+| qpDstat | Compute D-statistics for population genetics analysis |
+| qpGraph | qpGraph is a tool for fitting population graphs to f-statistics. |
+| qpWave | qpWave is a tool for testing whether a set of 'left' populations is consistent with being descended from a specified number of waves of admixture relative to a set of 'right' populations. |
+| qpfstats | Compute f-statistics for AdmixTools |
 
 ## Reference documentation
-- [ADMIXTOOLS GitHub Repository](./references/github_com_DReichLab_AdmixTools.md)
-- [Bioconda Admixtools Overview](./references/anaconda_org_channels_bioconda_packages_admixtools_overview.md)
+
+- [AdmixTools Main README](./references/github_com_DReichLab_AdmixTools.md)
+- [Format Conversion (convertf)](./references/github_com_DReichLab_AdmixTools_tree_master_convertf.md)

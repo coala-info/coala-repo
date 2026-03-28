@@ -600,3 +600,6 @@ Please use one of the known methods (or see documentation to add a new one):
 Usage: python /usr/local/bin/transit export <method>
 ```
 
+
+## Metadata
+- **Skill**: not generated

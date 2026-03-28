@@ -66,3 +66,6 @@ options:
                         write the primers to a JSON array
 ```
 
+
+## Metadata
+- **Skill**: generated

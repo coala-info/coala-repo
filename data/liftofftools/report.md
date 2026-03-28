@@ -136,3 +136,6 @@ usage: liftofftools [-h] -r R -t T -rg GFF/GTF or DB -tg GFF/GTF or DB [-c]
 liftofftools: error: argument subcommand: invalid choice: 'be' (choose from 'clusters', 'variants', 'synteny', 'all')
 ```
 
+
+## Metadata
+- **Skill**: generated

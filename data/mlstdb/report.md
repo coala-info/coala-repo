@@ -75,3 +75,6 @@ Options:
   -v, --verbose               Enable verbose logging for debugging
 ```
 
+
+## Metadata
+- **Skill**: generated

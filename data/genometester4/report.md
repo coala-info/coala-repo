@@ -136,3 +136,6 @@ No inputs — do not generate CWL.
 Cannot read --help
 ```
 
+
+## Metadata
+- **Skill**: generated

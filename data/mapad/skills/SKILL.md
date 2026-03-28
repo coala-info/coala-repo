@@ -1,6 +1,6 @@
 ---
 name: mapad
-description: "mapAD is a damage-aware short-read mapper optimized for aligning ancient DNA sequences to a reference genome. Use when user asks to index a reference genome, map ancient DNA reads using a damage-aware model, or perform distributed mapping across a cluster."
+description: mapad is a bioinformatics tool designed to align short, damaged ancient DNA reads to a reference genome using a probabilistic deamination model. Use when user asks to index a reference genome, map ancient DNA reads, or account for post-mortem DNA damage during alignment.
 homepage: https://github.com/mpieva/mapAD
 ---
 
@@ -9,71 +9,62 @@ homepage: https://github.com/mpieva/mapAD
 
 ## Overview
 
-mapAD is a specialized short-read mapper optimized for the unique characteristics of ancient DNA. It utilizes a damage-aware scoring model based on the ANFO/r-candy framework to handle the high rates of deamination (C to T and G to A transitions) typically found in degraded biological samples. By using a bidirectional FMD-index and a backtracking algorithm, it provides a fast and sensitive alternative to general-purpose mappers like BWA for paleogenomic data.
-
-## Installation
-
-The tool is available via Bioconda:
-
-```bash
-conda install bioconda::mapad
-```
+mapAD is a high-performance bioinformatics tool designed to address the unique challenges of ancient DNA sequencing. Unlike general-purpose mappers, it incorporates a probabilistic model of post-mortem DNA damage—specifically the deamination of cytosine to uracil, which appears as C-to-T (or G-to-A) substitutions. It utilizes a bidirectional FMD-index and pure backtracking to provide sensitive alignments for short, damaged reads.
 
 ## Core Workflows
 
-### 1. Indexing a Reference Genome
-Before mapping, you must generate the FMD-index files. This process creates six auxiliary files (.tbw, .tle, .toc, .tpi, .trt, .tsa) in the same directory as the reference FASTA.
+### 1. Reference Indexing
+Before mapping, you must generate the FMD-index files for your reference FASTA. This process creates six auxiliary files (`.tbw`, `.tle`, `.toc`, `.tpi`, `.trt`, `.tsa`).
 
 ```bash
 mapad index --reference /path/to/reference.fasta
 ```
 
-### 2. Mapping Reads (Local Execution)
-For standard local processing, use the `map` command. It is highly recommended to specify the library type and damage parameters to maximize sensitivity.
+### 2. Mapping with Damage Awareness
+The `map` command requires specifying the library type and damage parameters to accurately score alignments.
 
+**Basic Mapping Template:**
 ```bash
 mapad -vv map \
-  --threads 32 \
-  --library single_stranded \
+  --threads 0 \
+  --library <single_stranded|double_stranded> \
   -p 0.03 \
   -f 0.5 \
   -t 0.5 \
   -d 0.02 \
   -s 1.0 \
-  -i 0.001 \
-  --reads input.bam \
   --reference /path/to/reference.fasta \
-  --output output.bam
+  --reads /path/to/reads.fastq > output.sam
 ```
 
-### 3. Distributed Mapping
-For large datasets, mapAD supports a dispatcher-worker architecture to spread the load across multiple nodes in a cluster.
-
-**Start the Dispatcher:**
-```bash
-mapad -v map --dispatcher [parameters as above]
-```
-
-**Spawn Workers (on cluster nodes):**
-```bash
-mapad -vv worker --threads 8 --host <dispatcher_hostname>
-```
-
-## Parameter Guide & Best Practices
+## Parameter Optimization
 
 ### Damage Model Parameters
-*   **`-p` (Mismatch Rate):** Allowed mismatches under the base error rate. `0.03` is a standard starting point.
-*   **`--library`:** Set to `single_stranded` or `double_stranded`. This dictates how deamination probabilities are applied to the read ends.
-*   **`-f` and `-t`:** 5' and 3' overhang parameters. In single-stranded libraries, `-f` and `-t` are both used; in double-stranded, only `-f` is used as a generic overhang parameter.
-*   **`-s` (Single-strand deamination):** Rate in overhangs (often set to `1.0` for high-damage samples).
-*   **`-d` (Double-strand deamination):** Rate in double-stranded parts of the molecule.
+*   **`-f` (5' overhang) & `-t` (3' overhang)**: Controls the geometric distribution of overhangs. For double-stranded libraries, `-f` is the generic overhang parameter.
+*   **`-s` (Single-stranded deamination)**: The rate of deamination in the overhangs (typically high, e.g., `1.0` for 50% deamination at the very ends).
+*   **`-d` (Double-stranded deamination)**: The rate of deamination in the interior double-stranded parts of the fragment (typically low, e.g., `0.01` or `0.02`).
+*   **`-p` (Mismatch threshold)**: The allowed mismatch rate under the base error rate `D`. A value of `0.03` is a standard starting point for aDNA.
 
-### Expert Tips
-*   **Verbosity:** Use `-vv` to get detailed progress updates during the mapping process.
-*   **Damage Over-specification:** Over-specifying damage parameters (e.g., setting high deamination rates) generally does not significantly hurt alignment accuracy, making it safer to be aggressive with these settings.
-*   **Mapping Quality (MAPQ):** mapAD MAPQ scores are similar to BWA, but with one key difference: if a read maps equally well to two positions, mapAD assigns a MAPQ of 3 (BWA assigns 0). Use a threshold of `> 5-10` for reliable filtering.
-*   **Performance:** If compiling from source, use `RUSTFLAGS="-C target-feature=+avx2,+fma"` to enable SIMD instructions for significantly faster processing on modern CPUs.
+### Performance Tuning
+*   **Threading**: Set `--threads 0` to automatically use all available CPU cores.
+*   **SIMD Acceleration**: If compiling from source, use `RUSTFLAGS="-C target-feature=+avx2,+fma"` for significant speedups on modern CPUs.
+*   **Verbosity**: Use `-vv` to monitor mapping progress and statistics.
+
+## Expert Tips
+*   **Over-specification**: It is generally safer to slightly over-specify damage parameters (e.g., using "50% deamination" settings) than to under-specify them; tests indicate minimal negative impact on accuracy when parameters are higher than the actual damage.
+*   **Library Selection**: Ensure `--library` matches your wet-lab protocol (single-stranded vs. double-stranded), as this fundamentally changes how the deamination probabilities $p_C$ and $p_G$ are calculated across the read length.
+*   **Memory Management**: For large genomes (like Human hg19/hg38), ensure the system has sufficient RAM to load the FMD-index into memory.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mapad map | Maps reads to an indexed genome |
+| mapad_index | Indexes a genome file |
+| worker | Spawns worker |
 
 ## Reference documentation
-- [mapAD GitHub Repository](./references/github_com_mpieva_mapAD.md)
-- [mapAD Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_mapad_overview.md)
+- [mapAD Repository Overview](./references/github_com_mpieva_mapAD_blob_main_Readme.md)
+- [Build and Configuration Details](./references/github_com_mpieva_mapAD_blob_main_Cargo.toml.md)

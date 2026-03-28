@@ -1,1 +1,372 @@
-GitHub - r3fang/SnapTools: A module for working with snap files in Python Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} r3fang / SnapTools Public Notifications You must be signed in to change notification settings Fork 21 Star 37 A module for working with snap files in Python License Apache-2.0 license 37 stars 21 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 30 Pull requests 4 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights r3fang/SnapTools master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 45 Commits 45 Commits bin bin build build dist dist docs docs snaptools.egg-info snaptools.egg-info snaptools snaptools .gitignore .gitignore .travis.yml .travis.yml LICENSE.txt LICENSE.txt README.md README.md setup.cfg setup.cfg setup.py setup.py test.py test.py View all files Repository files navigation README Apache-2.0 license SnapTools A module for working with snap files in Python. Introduction snap (Single Nucleus Accessibility Profile) file is a hierarchically structured hdf5 file that is specially designed for storing single nucleus ATAC-seq datasets. A snap file (version 4) contains the following sessions: header (HD), cell-by-bin accessibility matrix (AM), cell-by-peak matrix (PM), cell-by-gene matrix (GM), barcode (BD) and fragment (FM). HD session contains snap-file version, created date, alignment and reference genome information. BD session contains all unique barcodes and corresponding meta data. AM session contains cell-by-bin matrices of different resolutions (or bin sizes). PM session contains cell-by-peak count matrix. GM session contains cell-by-gene count matrix. FM session contains all usable fragments for each cell. Fragments are indexed for fast search. Detailed information about snap file can be found here . Requirements Python (both python2 and python3) pysam h5py numpy pybedtools Latest News add snap-del which deletes a session in snap file. version 1.4.+ now supports both python2 and python3. Quick Install Install snaptools from PyPI $ pip install snaptools Install snaptools from source code $ git clone https://github.com/r3fang/snaptools.git $ cd snaptools $ pip install -e . $ ./bin/snaptools usage: snaptools [-h] ... Program: snaptools (A module for working with snap files in Python) Version: 1.4.1 Contact: Rongxin Fang E-mail: r4fang@gmail.com optional arguments: -h, --help show this help message and exit functions: dex-fastq De-multicomplex fastq file. index-genome Index reference genome. align-paired-end Align paired-end reads. align-single-end Align single-end reads. snap-pre Create a snap file from bam or bed file. snap-add-bmat Add cell x bin count matrix to snap file. snap-add-pmat Add cell x peak count matrix to snap file. snap-add-gmat Add cell x gene count matrix to snap file. snap-del Delete a session. Example Step 1. Download test example $ wget http://renlab.sdsc.edu/r3fang/share/SnapTools/snaptools_test.tar.gz $ tar -xf snaptools_test.tar.gz $ cd snaptools_test/ $ gunzip mm10.fa.gz Step 2. Index Reference Genome (Optional) . Index the reference genome before alingment if you do not have one. (skip this step if you already have indexed genome). Here we show how to index the genome using BWA. User can choose different --aligner . $ which bwa /opt/biotools/bwa/bin/bwa $ snaptools index-genome \ --input-fasta=mm10.fa \ --output-prefix=mm10 \ --aligner=bwa \ --path-to-aligner=/opt/biotools/bwa/bin/ \ --num-threads=5 Step 3. Alignment . We next align reads to the corresponding reference genome using snaptools with following command. After alignment, reads are sorted by the read names which allows for grouping reads according to the barcode ( --if-sort ). User can mutiple CPUs to speed up this step ( --num-threads ). $ snaptools align-paired-end \ --input-reference=mm10.fa \ --input-fastq1=demo.R1.fastq.gz \ --input-fastq2=demo.R2.fastq.gz \ --output-bam=demo.bam \ --aligner=bwa \ --path-to-aligner=/opt/biotools/bwa/bin/ \ --read-fastq-command=zcat \ --min-cov=0 \ --num-threads=5 \ --if-sort=True \ --tmp-folder=./ \ --overwrite=TRUE Step 4. Pre-processing . After alignment, we converted pair-end reads into fragments and for each fragment, we check the following attributes: 1) mapping quality score MAPQ; 2) whether two ends are appropriately paired according to the alignment flag information; 3) fragment length. We only keep the properly paired fragments whose MAPQ ( --min-mapq ) is greater than 30 with fragment length less than 1000bp ( --max-flen ). Because the reads have been sorted based on the names, fragments belonging to the same cell (or barcode) are naturally grouped together which allows for removing PCR duplicates. After alignment and filtration, we generated a snap-format (Single-Nucleus Accessibility Profiles) file that contains meta data, cell-by-bin count matrices of a variety of resolutions, cell-by-peak count matrix. Detailed information about snap file can be found in here. $ snaptools snap-pre \ --input-file=demo.bam \ --output-snap=demo.snap \ --genome-name=mm10 \ --genome-size=mm10.chrom.size \ --min-mapq=30 \ --min-flen=0 \ --max-flen=1000 \ --keep-chrm=TRUE \ --keep-single=TRUE \ --keep-secondary=False \ --overwrite=True \ --max-num=1000000 \ --min-cov=100 \ --verbose=True This command creates two files demo.snap and demo.snap.qc which contains the library quality control metrics as shown below. $ cat demo.snap.qc Total number of unique barcodes: 3217 TN - Total number of fragments: 576676 UM - Total number of uniquely mapped: 540307 SE - Total number of single ends: 0 SA - Total number of secondary alignments: 1 PE - Total number of paired ends: 540306 PP - Total number of proper paired: 539772 PL - Total number of proper frag len: 539772 US - Total number of usable fragments: 539772 UQ - Total number of unique fragments: 537336 CM - Total number of chrM fragments: 0 Step 5. Cell-by-Bin Matrix . Using generated snap file, we next create the cell-by-bin matrix. Snap file allows for storing cell-by-bin matrices of different resolutions. In the below example, three cell-by-bin matrices are created with bin size of 5,000 and 10,000. The cell-by-bin matrices will be added to demo.snap without creating another file. Same with snap-add-pmat and snap-add-gmat . $ snaptools snap-add-bmat \ --snap-file=demo.snap \ --bin-size-list 5000 10000 \ --verbose=True About A module for working with snap files in Python Resources Readme License Apache-2.0 license Uh oh! There was an error while loading. Please reload this page . Activity Stars 37 stars Watchers 2 watching Forks 21 forks Report repository Releases 4 v1.2.3 Latest Feb 21, 2019 + 3 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Languages Python 100.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fr3fang%2FSnapTools)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fr3fang%2FSnapTools)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=r3fang%2FSnapTools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[r3fang](/r3fang)
+/
+**[SnapTools](/r3fang/SnapTools)**
+Public
+
+* [Notifications](/login?return_to=%2Fr3fang%2FSnapTools) You must be signed in to change notification settings
+* [Fork
+  21](/login?return_to=%2Fr3fang%2FSnapTools)
+* [Star
+   37](/login?return_to=%2Fr3fang%2FSnapTools)
+
+* [Code](/r3fang/SnapTools)
+* [Issues
+  30](/r3fang/SnapTools/issues)
+* [Pull requests
+  4](/r3fang/SnapTools/pulls)
+* [Actions](/r3fang/SnapTools/actions)
+* [Projects](/r3fang/SnapTools/projects)
+* [Security
+  0](/r3fang/SnapTools/security)
+* [Insights](/r3fang/SnapTools/pulse)
+
+Additional navigation options
+
+* [Code](/r3fang/SnapTools)
+* [Issues](/r3fang/SnapTools/issues)
+* [Pull requests](/r3fang/SnapTools/pulls)
+* [Actions](/r3fang/SnapTools/actions)
+* [Projects](/r3fang/SnapTools/projects)
+* [Security](/r3fang/SnapTools/security)
+* [Insights](/r3fang/SnapTools/pulse)
+
+# r3fang/SnapTools
+
+master
+
+[Branches](/r3fang/SnapTools/branches)[Tags](/r3fang/SnapTools/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[45 Commits](/r3fang/SnapTools/commits/master/)   45 Commits | | |
+| [bin](/r3fang/SnapTools/tree/master/bin "bin") | | [bin](/r3fang/SnapTools/tree/master/bin "bin") |  |  |
+| [build](/r3fang/SnapTools/tree/master/build "build") | | [build](/r3fang/SnapTools/tree/master/build "build") |  |  |
+| [dist](/r3fang/SnapTools/tree/master/dist "dist") | | [dist](/r3fang/SnapTools/tree/master/dist "dist") |  |  |
+| [docs](/r3fang/SnapTools/tree/master/docs "docs") | | [docs](/r3fang/SnapTools/tree/master/docs "docs") |  |  |
+| [snaptools.egg-info](/r3fang/SnapTools/tree/master/snaptools.egg-info "snaptools.egg-info") | | [snaptools.egg-info](/r3fang/SnapTools/tree/master/snaptools.egg-info "snaptools.egg-info") |  |  |
+| [snaptools](/r3fang/SnapTools/tree/master/snaptools "snaptools") | | [snaptools](/r3fang/SnapTools/tree/master/snaptools "snaptools") |  |  |
+| [.gitignore](/r3fang/SnapTools/blob/master/.gitignore ".gitignore") | | [.gitignore](/r3fang/SnapTools/blob/master/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/r3fang/SnapTools/blob/master/.travis.yml ".travis.yml") | | [.travis.yml](/r3fang/SnapTools/blob/master/.travis.yml ".travis.yml") |  |  |
+| [LICENSE.txt](/r3fang/SnapTools/blob/master/LICENSE.txt "LICENSE.txt") | | [LICENSE.txt](/r3fang/SnapTools/blob/master/LICENSE.txt "LICENSE.txt") |  |  |
+| [README.md](/r3fang/SnapTools/blob/master/README.md "README.md") | | [README.md](/r3fang/SnapTools/blob/master/README.md "README.md") |  |  |
+| [setup.cfg](/r3fang/SnapTools/blob/master/setup.cfg "setup.cfg") | | [setup.cfg](/r3fang/SnapTools/blob/master/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/r3fang/SnapTools/blob/master/setup.py "setup.py") | | [setup.py](/r3fang/SnapTools/blob/master/setup.py "setup.py") |  |  |
+| [test.py](/r3fang/SnapTools/blob/master/test.py "test.py") | | [test.py](/r3fang/SnapTools/blob/master/test.py "test.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Apache-2.0 license
+
+[![Build Status](https://camo.githubusercontent.com/5fbe749ed6d192d1dfa761b41ab2181d6e81a0395fd11e7fe42ba2554da73cba/68747470733a2f2f7472617669732d63692e6f72672f723366616e672f536e6170546f6f6c732e7376673f6272616e63683d6d6173746572)](https://travis-ci.org/r3fang/SnapTools)
+
+## SnapTools
+
+A module for working with snap files in Python.
+
+## Introduction
+
+snap (Single Nucleus Accessibility Profile) file is a hierarchically structured hdf5 file that is specially designed for storing single nucleus ATAC-seq datasets. A snap file (version 4) contains the following sessions: header (HD), cell-by-bin accessibility matrix (AM), cell-by-peak matrix (PM), cell-by-gene matrix (GM), barcode (BD) and fragment (FM).
+
+* HD session contains snap-file version, created date, alignment and reference genome information.
+* BD session contains all unique barcodes and corresponding meta data.
+* AM session contains cell-by-bin matrices of different resolutions (or bin sizes).
+* PM session contains cell-by-peak count matrix.
+* GM session contains cell-by-gene count matrix.
+* FM session contains all usable fragments for each cell. Fragments are indexed for fast search.
+* Detailed information about snap file can be found [here](https://github.com/r3fang/SnapTools/blob/master/docs/snap_format.docx).
+
+## Requirements
+
+* Python (both python2 and python3)
+* pysam
+* h5py
+* numpy
+* pybedtools
+
+## Latest News
+
+* add `snap-del` which deletes a session in snap file.
+* version 1.4.+ now supports both python2 and python3.
+
+## Quick Install
+
+Install snaptools from PyPI
+
+```
+$ pip install snaptools
+```
+
+Install snaptools from source code
+
+```
+$ git clone https://github.com/r3fang/snaptools.git
+$ cd snaptools
+$ pip install -e .
+$ ./bin/snaptools
+usage: snaptools [-h]  ...
+
+Program: snaptools (A module for working with snap files in Python)
+Version: 1.4.1
+Contact: Rongxin Fang
+E-mail:  r4fang@gmail.com
+
+optional arguments:
+  -h, --help        show this help message and exit
+
+functions:
+
+    dex-fastq       De-multicomplex fastq file.
+    index-genome    Index reference genome.
+    align-paired-end
+                    Align paired-end reads.
+    align-single-end
+                    Align single-end reads.
+    snap-pre        Create a snap file from bam or bed file.
+    snap-add-bmat   Add cell x bin count matrix to snap file.
+    snap-add-pmat   Add cell x peak count matrix to snap file.
+    snap-add-gmat   Add cell x gene count matrix to snap file.
+    snap-del        Delete a session.
+```
+
+## Example
+
+**Step 1. Download test example**
+
+```
+$ wget http://renlab.sdsc.edu/r3fang/share/SnapTools/snaptools_test.tar.gz
+$ tar -xf snaptools_test.tar.gz
+$ cd snaptools_test/
+$ gunzip mm10.fa.gz
+```
+
+**Step 2. Index Reference Genome (Optional)**.
+Index the reference genome before alingment if you do not have one. (skip this step if you already have indexed genome). Here we show how to index the genome using BWA. User can choose different `--aligner` .
+
+```
+$ which bwa
+/opt/biotools/bwa/bin/bwa
+$ snaptools index-genome	\
+	--input-fasta=mm10.fa	\
+	--output-prefix=mm10	\
+    --aligner=bwa	\
+	--path-to-aligner=/opt/biotools/bwa/bin/	\
+	--num-threads=5
+```
+
+**Step 3. Alignment**.
+We next align reads to the corresponding reference genome using snaptools with following command. After alignment, reads are sorted by the read names which allows for grouping reads according to the barcode (`--if-sort`). User can mutiple CPUs to speed up this step (`--num-threads`).
+
+```
+$ snaptools align-paired-end	\
+	--input-reference=mm10.fa	\
+	--input-fastq1=demo.R1.fastq.gz	\
+	--input-fastq2=demo.R2.fastq.gz	\
+	--output-bam=demo.bam	\
+	--aligner=bwa	\
+	--path-to-aligner=/opt/biotools/bwa/bin/	\
+	--read-fastq-command=zcat	\
+	--min-cov=0	\
+	--num-threads=5	\
+	--if-sort=True	\
+	--tmp-folder=./	\
+	--overwrite=TRUE
+```
+
+**Step 4. Pre-processing**.
+After alignment, we converted pair-end reads into fragments and for each fragment, we check the following attributes: 1) mapping quality score MAPQ; 2) whether two ends are appropriately paired according to the alignment flag information; 3) fragment length. We only keep the properly paired fragments whose MAPQ (`--min-mapq`) is greater than 30 with fragment length less than 1000bp (`--max-flen`). Because the reads have been sorted based on the names, fragments belonging to the same cell (or barcode) are naturally grouped together which allows for removing PCR duplicates. After alignment and filtration, we generated a snap-format (Single-Nucleus Accessibility Profiles) file that contains meta data, cell-by-bin count matrices of a variety of resolutions, cell-by-peak count matrix. Detailed information about snap file can be found in here.
+
+```
+$ snaptools snap-pre  \
+	--input-file=demo.bam  \
+	--output-snap=demo.snap  \
+	--genome-name=mm10  \
+	--genome-size=mm10.chrom.size  \
+	--min-mapq=30  \
+	--min-flen=0  \
+	--max-flen=1000  \
+	--keep-chrm=TRUE  \
+	--keep-single=TRUE  \
+	--keep-secondary=False  \
+	--overwrite=True  \
+	--max-num=1000000  \
+	--min-cov=100  \
+	--verbose=True
+```
+
+This command creates two files `demo.snap` and `demo.snap.qc` which contains the library quality control metrics as shown below.
+
+```
+$ cat demo.snap.qc
+
+Total number of unique barcodes:             3217
+TN - Total number of fragments:              576676
+UM - Total number of uniquely mapped:        540307
+SE - Total number of single ends:            0
+SA - Total number of secondary alignments:   1
+PE - Total number of paired ends:            540306
+PP - Total number of proper paired:          539772
+PL - Total number of proper frag len:        539772
+US - Total number of usable fragments:       539772
+UQ - Total number of unique fragments:       537336
+CM - Total number of chrM fragments:         0
+```
+
+**Step 5. Cell-by-Bin Matrix**.
+Using generated snap file, we next create the cell-by-bin matrix. Snap file allows for storing cell-by-bin matrices of different resolutions. In the below example, three cell-by-bin matrices are created with bin size of 5,000 and 10,000. The cell-by-bin matrices will be added to `demo.snap` without creating another file. Same with `snap-add-pmat` and `snap-add-gmat`.
+
+```
+$

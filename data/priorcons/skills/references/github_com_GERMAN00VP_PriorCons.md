@@ -1,1 +1,430 @@
-GitHub - GERMAN00VP/PriorCons Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} GERMAN00VP / PriorCons Public Notifications You must be signed in to change notification settings Fork 0 Star 1 License View license 1 star 0 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights GERMAN00VP/PriorCons main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 14 Commits 14 Commits priorcons.egg-info priorcons.egg-info priorcons priorcons .gitignore .gitignore CHANGELOG.md CHANGELOG.md LICENSE LICENSE NOTICE NOTICE README.md README.md pyproject.toml pyproject.toml View all files Repository files navigation README License PriorCons This repository provides tools to: Generate Integrated Consensus ( integrate_consensus.py ) Produces a high-quality viral consensus by strategically using ABACAS sequences to fill missing regions in the mapping consensus. It employs a sliding-window approach that verifies the evolutionary plausibility of ABACAS content against empirical priors before incorporation. Build Evolutionary Priors ( build_priors.py ) Constructs empirical prior distributions from large multiple-sequence alignments. These priors model expected genetic variation across genomic windows and provide likelihood thresholds for quality control during consensus integration. Access Supporting Utilities ( utils scripts) Provides modular helper functions for alignment processing, window scoring, and consensus construction used by both main workflows. Installation pip install priorcons CLI usage # Create priors priorcons build-priors --input sequences.fasta --ref REF_ID --output priors.parquet # Run consensus integration priorcons integrate-consensus --input alignment.aln --ref REF_ID --prior priors.parquet --output_dir results 🚀 Main Script: integrate_consensus.py This is the entrypoint of the tool. It creates a integrated consensus sequence by combining mapping consensus and ABACAS output, both aligned to a reference sequence, but only after performing quality control (QC) at the window level. 🔑 Inputs --input → path to an alignment file ( .aln ) containing at least: 1º Reference sequence 2º Mapping consensus sequence 3º ABACAS consensus sequence The sequences in the alignment file must be provided in the specified order, as they will be identified by their position. --ref → ID of the reference sequence in the alignment. --prior → path to a priors table ( .parquet ) generated with build_priors.py . --output_dir → directory to save the results. 🧪 Workflow Start with mapping consensus as the baseline Identify missing/unreliable regions in mapping consensus For each window : If mapping has coverage → keep mapping sequence If mapping has missing data → evaluate ABACAS for that window: Check fragmentation and quality Verify evolutionary plausibility using priors (nLL score) If ABACAS passes QC → use ABACAS to fill missing regions Construct final consensus combining mapping baseline with validated ABACAS fills Restore mapping-specific insertions QC reporting : compute coverage, substitutions, and insertion metrics comparing the final integrated consensus to MAPPING. 📦 Outputs The script produces three files inside --output_dir : Integrated consensus FASTA File: &lt;basename&gt;-INTEGRATED.fasta Contains the final consensus sequence after merging and reinserting insertions. Window QC trace (CSV) File: windows_trace.csv One row per window, recording: start , end → genomic coordinates. MISSING_MAPPING , MISSING_ABACAS → counts of missing bases. ABACAS_MORE_INFO → whether ABACAS has fewer missing bases than MAPPING. ABACAS_FRAGMENTS → fragmentation level of ABACAS in this window (keep: 0 &lt; n fragments &lt; 3 ). WINDOW_PRIOR_nLL_p95 → threshold from priors. WINDOW_SCORE_nLL → score of ABACAS in this window. WINDOW_QC_PASSED → True/False decision. Consensus QC summary (JSON) File: qc.json Provides overall metrics comparing the MAPPING consensus and the integrated consensus: MAPPING_COVERAGE → % of genome covered in MAPPING. FINAL_COVERAGE → % of genome covered in integrated consensus. MAPPING_SUBSTITUTIONS → substitutions vs. reference in MAPPING. FINAL_SUBSTITUTIONS → substitutions vs. reference in integrated consensus. EXPECTED_SUBSTITUTIONS → expected number of substitutions, extrapolated from mapping. OBS-EXP_SUBSTITUTIONS → difference between observed and expected substitutions. N_INSERTIONS → number of insertions added back. TOTAL_INSERTIONS_LENGTH → total inserted length. INSERTIONS → list of insertions with their coordinates. ▶️ Example run python integrate_consensus.py \ --input /path/to/ &lt; sample_name &gt; .aln \ --ref RSV_BD \ --prior /path/to/RSVBD_win100_ovlp50_priors.parquet \ --output_dir results This will generate: results/&lt;sample_name&gt;-INTEGRATED.fasta results/windows_trace.csv results/qc.json 🛠 Script: build_priors.py This script creates empirical priors (overlapped windows) from a large multiple sequence alignment. These priors are later used by integrate_consensus.py to evaluate windows. 🔑 Inputs -i / --input → aligned FASTA file with multiple sequences. -r / --ref → ID of the reference sequence. -o / --output → output file ( .parquet ). --win → window size (default: 100). --overlap → overlap size (default: 10). ▶️ Example run python build_priors.py \ -i alignment.fasta \ -r ReferenceID \ -o priors.parquet \ --win 100 \ --overlap 10 📦 Output A .parquet file with one row per window, containing: start , end → window coordinates. nLL_p95 , nLL_p99 → empirical thresholds. profile → base probability distributions for each position in the window. 🧮 Methodology (build_priors.py) 1. Probability distributions per position For each window of size W bases (e.g., W = 100 ), and for each position j within that window, we compute the probability of observing each nucleotide: Where: = number of sequences with base at position . = pseudocount (Laplace smoothing, default ) to avoid zero probabilities. Bases N are ignored in the counts. This gives a per-position categorical distribution . 2. Log-likelihood of a sequence in a window Given a query sequence , we compute its probability under the window profile. For each valid (non- N ) position with observed base : The normalized negative log-likelihood (nLL) is: Where: = number of positions in the window where has a non- N base. Smaller nLL values indicate sequences more likely under the empirical profile. 3. Empirical priors To characterize "normal variation" for each window: Score all sequences from the alignment against the window profile. Collect the distribution of nLL values. Extract percentiles (e.g., 95th and 99th) to serve as thresholds. Thus, for each window we store: The distribution (profile) . Empirical thresholds: nLL_p95 and nLL_p99 . A new sequence can later be compared: If nLL &lt; nLL_p95 → typical. If nLL &gt; nLL_p99 → unusually variable, possibly unreliable region. � Supporting utils Several utility scripts provide reusable functions for both processes: utils.py → basic alignment and scoring functions: load_alignment , extract_ref_positions , sliding_windows , score_window . utils_integrate_consensus.py → additional helpers for consensus integration: missingness and fragmentation counts, insertion handling, QC calculations, consensus merging, window evaluation wrapper. These modular functions keep the pipeline clean and reusable. QC ANALYSIS This tool allows also an analyis
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FGERMAN00VP%2FPriorCons)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FGERMAN00VP%2FPriorCons)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=GERMAN00VP%2FPriorCons)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[GERMAN00VP](/GERMAN00VP)
+/
+**[PriorCons](/GERMAN00VP/PriorCons)**
+Public
+
+* [Notifications](/login?return_to=%2FGERMAN00VP%2FPriorCons) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2FGERMAN00VP%2FPriorCons)
+* [Star
+   1](/login?return_to=%2FGERMAN00VP%2FPriorCons)
+
+* [Code](/GERMAN00VP/PriorCons)
+* [Issues
+  0](/GERMAN00VP/PriorCons/issues)
+* [Pull requests
+  0](/GERMAN00VP/PriorCons/pulls)
+* [Actions](/GERMAN00VP/PriorCons/actions)
+* [Projects](/GERMAN00VP/PriorCons/projects)
+* [Security
+  0](/GERMAN00VP/PriorCons/security)
+* [Insights](/GERMAN00VP/PriorCons/pulse)
+
+Additional navigation options
+
+* [Code](/GERMAN00VP/PriorCons)
+* [Issues](/GERMAN00VP/PriorCons/issues)
+* [Pull requests](/GERMAN00VP/PriorCons/pulls)
+* [Actions](/GERMAN00VP/PriorCons/actions)
+* [Projects](/GERMAN00VP/PriorCons/projects)
+* [Security](/GERMAN00VP/PriorCons/security)
+* [Insights](/GERMAN00VP/PriorCons/pulse)
+
+# GERMAN00VP/PriorCons
+
+main
+
+[Branches](/GERMAN00VP/PriorCons/branches)[Tags](/GERMAN00VP/PriorCons/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[18 Commits](/GERMAN00VP/PriorCons/commits/main/)   18 Commits | | |
+| [priorcons](/GERMAN00VP/PriorCons/tree/main/priorcons "priorcons") | | [priorcons](/GERMAN00VP/PriorCons/tree/main/priorcons "priorcons") |  |  |
+| [.gitignore](/GERMAN00VP/PriorCons/blob/main/.gitignore ".gitignore") | | [.gitignore](/GERMAN00VP/PriorCons/blob/main/.gitignore ".gitignore") |  |  |
+| [CHANGELOG.md](/GERMAN00VP/PriorCons/blob/main/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/GERMAN00VP/PriorCons/blob/main/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [LICENSE](/GERMAN00VP/PriorCons/blob/main/LICENSE "LICENSE") | | [LICENSE](/GERMAN00VP/PriorCons/blob/main/LICENSE "LICENSE") |  |  |
+| [NOTICE](/GERMAN00VP/PriorCons/blob/main/NOTICE "NOTICE") | | [NOTICE](/GERMAN00VP/PriorCons/blob/main/NOTICE "NOTICE") |  |  |
+| [README.md](/GERMAN00VP/PriorCons/blob/main/README.md "README.md") | | [README.md](/GERMAN00VP/PriorCons/blob/main/README.md "README.md") |  |  |
+| [pyproject.toml](/GERMAN00VP/PriorCons/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/GERMAN00VP/PriorCons/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# PriorCons
+
+**Prior‑guided consensus integration for viral genomes**
+
+---
+
+## 🧭 Introduction
+
+PriorCons improves viral consensus sequences by safely recovering missing information while preserving reliability.
+
+The software integrates:
+
+* A **high‑confidence consensus sequence** (FASTA) generated using a stringent pipeline. This sequence is trusted but may contain masked regions (Ns).
+* The **reference genome** used during assembly.
+* A **candidate consensus sequence** that is less conservative but potentially more informative (for example, produced with relaxed filtering or alternative assembly).
+
+The objective is to fill gaps in the high‑confidence consensus using information from the candidate sequence — but only when supported by evolutionary evidence — so that coverage increases without introducing sequencing artefacts.
+
+To achieve this, PriorCons uses **evolutionary priors** derived from large collections of genomes for the same virus or subtype aligned to the reference. These priors model expected variation and provide statistical thresholds that guide integration decisions.
+
+---
+
+## 📦 Installation
+
+PriorCons can be installed via **Conda** (recommended for bioinformatics) or **PyPI**:
+
+### Using Conda
+
+```
+conda install -c bioconda priorcons
+```
+
+[View on Bioconda](https://anaconda.org/bioconda/priorcons)
+
+### Using Pip
+
+```
+pip install priorcons
+```
+
+[View on PyPI](https://pypi.org/project/priorcons/)
+
+---
+
+## ⚡ Quickstart + CLI Examples
+
+Follow these steps to generate an integrated consensus using PriorCons.
+
+### 1. Prepare the Priors Database
+
+You need a collection of viral sequences (e.g., from GISAID or NCBI) relevant to your sample.
+
+* **Alignment is critical:** Use MAFFT in reference-anchored mode (e.g. `--add --keeplength`) to keep coordinates consistent when building priors.
+* **Include the Reference:** Ensure your reference sequence is included in this FASTA file.
+
+### 2. Build the Priors
+
+Run the build-priors command to create the empirical distribution of variation.
+
+```
+priorcons build-priors --input database_aligned.fasta --output virus_priors.json
+```
+
+### 3. Run integrate-consensus
+
+Once you have the priors, align your three sequences (Trusted, Candidate, and Reference) and run the integration.
+
+**Alignment Recommendation:** Since you are only aligning 3 sequences, use a high-sensitivity strategy. We recommend **MAFFT** with the following parameters:
+
+```
+mafft --localpair --maxiterate 1000 input.fasta > aligned_input.fasta
+```
+
+**Running the integration:**
+
+```
+priorcons integrate-consensus \
+    --aligned-fasta aligned_input.fasta \
+    --priors virus_priors.parquet \
+    --output otput_dir
+```
+
+---
+
+## 🔬 Workflow Overview
+
+*PriorCons uses a window-based approach to statistically validate and fill gaps in viral assemblies.*
+
+1. **Slide** overlapping windows across the genome.
+2. **Detect** windows with missing regions (Ns) in the trusted consensus.
+3. **Evaluate** the corresponding candidate window using the priors.
+4. **Accept** candidate window only if the score is evolutionarily plausible (below the statistical threshold).
+5. **Produce** an integrated consensus with increased completeness and maintained accuracy.
+
+**Output dir contents:**
+
+* **{sample\_name}-INTEGRATED.fasta:** A FASTA file with the integrated sequence.
+* **qc.json:** A json file with summary statistics of the integration process.
+* **windows\_trace.csv:** A table with records of the window selection process.
+
+---
+
+## 🧮 Methodology
+
+### 1. Probability distributions per position
+
+For each window of size $W$ bases, and each position $j$:
+
+$$P\_j(b)=\frac{c\_j(b)+\alpha}{\sum\_{x\in{A,C,G,T}}(c\_j(x)+\alpha)}$$
+
+Where:
+
+* $c\_j(b)$ is the count of base $b$.
+* $\alpha$ is a pseudocount.
+* Bases N are ignored.
+
+### 2. Log‑likelihood of a sequence
+
+Given a sequence $Q$:
+
+$$\log L(Q \mid \text{window}) = \sum\_j \log P\_j(q\_j)$$
+
+Normalized negative log‑likelihood:
+
+$$\text{nLL}(Q) = -\frac{1}{N\_{\text{valid}}} \sum\_j \log P\_j(q\_j)$$
+
+Lower values indicate sequences consistent with expected variation.
+
+### 3. Empirical thresholds
+
+All sequences are scored to obtain an nLL distribution. The 95th percentile is used as a cutoff: windows exceeding this threshold are considered atypical and rejected during integration.
+
+---
+
+## 📊 Outputs
+
+* **Integrated consensus FASTA:** The final integrated sequence.
+* **Window‑level QC trace:** A file containing scores for each window.
+* **Summary QC metrics:** Summary metrics regarding coverage and changes performed.
+
+---
+
+## 📚 Citing
+
+This software was developed by Germán Vallejo Palma at the Instituto de Salud Carlos III
+(ISCIII) — National Centre of Microbiology, Respiratory Viruses and Influenza Unit.
+
+If you use this software in a publication, report, or product, please cite the
+appropriate authors and include the above attribution.
+
+## About
+
+No description, website, or topics provided.
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[View license](#License-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/GERMAN00VP/PriorCons/activity)
+
+### Stars
+
+[**1**
+star](/GERMAN00VP/PriorCons/stargazers)
+
+### Watchers
+
+[**0**
+watching](/GERMAN00VP/PriorCons/watchers)
+
+### Forks
+
+[**0**
+forks](/GERMAN00VP/PriorCons/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FGERMAN00VP%2FPriorCons&report=GERMAN00VP+%28user%29)
+
+## [Releases](/GERMAN00VP/PriorCons/releases)
+
+No releases published
+
+## [Packages 0](/users/GERMAN00VP/packages?repo_name=PriorCons)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/GERMAN00VP/PriorCons/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [Python
+  100.0%](/GERMAN00VP/PriorCons/search?l=python)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

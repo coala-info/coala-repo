@@ -1,6 +1,6 @@
 ---
 name: msisensor-rna
-description: MSIsensor-RNA quantifies Microsatellite Instability by analyzing the expression of mismatch repair genes in bulk or single-cell RNA-seq data. Use when user asks to identify informative genes for MSI detection, train machine learning models for MSI classification, or predict MSI status from transcriptomic expression values.
+description: MSIsensor-RNA detects microsatellite instability status by analyzing gene expression levels from bulk or single-cell transcriptomic data. Use when user asks to identify informative genes for MSI detection, train custom MSI models, or perform MSI scoring on RNA-seq samples.
 homepage: https://github.com/xjtu-omics/msisensor-rna
 ---
 
@@ -8,67 +8,70 @@ homepage: https://github.com/xjtu-omics/msisensor-rna
 # msisensor-rna
 
 ## Overview
-MSIsensor-RNA is a specialized tool within the MSIsensor family designed to quantify Microsatellite Instability (MSI) by analyzing the expression of genes associated with the mismatch repair (MMR) system. Unlike DNA-based methods that look for genomic mutations, this tool focuses on the transcriptomic causes of MSI. It is particularly useful for bulk RNA-seq and single-cell RNA-seq (scRNA-seq) workflows where DNA sequencing may not be available or where a more cost-effective MSI scoring method is required.
+
+MSIsensor-RNA is a computational tool designed to detect Microsatellite Instability (MSI) using transcriptomic data. Unlike traditional DNA-based methods that look for genomic mutations, this tool quantifies MSI by analyzing the expression levels of genes associated with the mismatch repair (MMR) system. It is highly effective for both bulk RNA-seq and single-cell RNA-seq (scRNA-seq) workflows, offering a cost-effective alternative for MSI biomarker discovery in immunotherapy research.
 
 ## Installation and Setup
-The tool can be installed via Conda or Pip:
+
+The tool can be installed via pip or run through Docker for environment consistency.
 
 ```bash
-# Via Conda
-conda install -c bioconda msisensor-rna
+# Install from source
+git clone https://github.com/xjtu-omics/msisensor-rna.git
+cd msisensor-rna
+pip3 install .
 
-# Via Pip
-pip install msisensor-rna
+# Using Docker
+docker pull pengjia1110/msisensor-rna:latest
 ```
 
-## Data Preparation
-MSIsensor-RNA requires a specific CSV input format.
-- **Format**: Comma-separated values (.csv).
-- **Columns**: 
-  1. `SampleID`: Unique identifier for the sample.
-  2. `msi`: MSI status (e.g., `MSI-H` or `MSS`). This is required for training but can be placeholder data for detection.
-  3. `Gene Columns`: Normalized expression values (e.g., `MLH1`, `MSH2`, etc.).
-- **Normalization**: It is highly recommended to use normalized values, such as **z-score normalization of log2(FPKM+1)**.
+## Command Line Interface
 
-## Core Workflows
+The tool follows a standard sub-command structure: `msisensor-rna <command> [options]`.
 
-### 1. Feature Selection (`genes`)
-Identify the most informative genes for MSI detection from a training dataset.
+### 1. Gene Selection (`genes`)
+Identify the most informative genes for MSI detection from your expression matrix.
 
 ```bash
-msisensor-rna genes -i training_data.csv -o informative_genes.csv --threads 4 --thresh_auc 0.65
+msisensor-rna genes -i input_expression.csv -o informative_genes.txt
 ```
-- **Key Tip**: Adjust `--thresh_auc` (default 0.65) and `--thresh_p` (default 0.01) to control the stringency of gene selection.
+*   **Input**: A CSV/TSV file where rows are genes and columns are samples (or vice versa, depending on orientation).
+*   **Tip**: Ensure your gene identifiers (symbols or Ensembl IDs) match the requirements of the downstream model.
 
 ### 2. Model Training (`train`)
-Build a custom machine learning model for a specific cancer type or sequencing platform.
+Train a custom MSI detection model if the default models are not suitable for your specific cancer type or sequencing platform.
 
 ```bash
-msisensor-rna train -i training_data.csv -m my_model.model -t CRC -c RandomForest
+msisensor-rna train -i training_data.csv -m metadata.csv -o custom_model.pkl
 ```
-- **Classifiers**: Supports `SVM`, `RandomForest` (default), `LogisticRegression`, `MLPClassifier`, `GaussianNB`, and `AdaBoostClassifier`.
-- **Requirement**: Ensure at least 10 positive MSI samples are present (adjustable via `-p`).
+*   **Metadata**: Should contain the ground truth MSI status (e.g., MSI-H vs MSS) for the training samples.
 
-### 3. MSI Detection (`detection`)
-Run the MSI classification on new samples using a trained model.
+### 3. MSI Detection (`msi` or `detection`)
+Perform the actual MSI scoring on query samples.
 
 ```bash
-msisensor-rna detection -i test_data.csv -m my_model.model -o output_prefix
-```
-- **Output**: Generates results indicating the MSI score and predicted status for each sample in the input file.
-
-### 4. Model Inspection (`show`)
-View metadata or update descriptions for an existing model file.
-
-```bash
-msisensor-rna show -m my_model.model --model_description "Model trained on TCGA-STAD log2 FPKM data"
+msisensor-rna msi -i query_expression.csv -m model/default_model.pkl -o results.csv
 ```
 
-## Best Practices
-- **Consistency**: Always use the same normalization method for the detection input data as was used for the training data.
-- **Cancer Specificity**: While Pan-Cancer models are possible, training cancer-type-specific models (e.g., CRC, STAD) often yields higher sensitivity and specificity.
-- **Single-Cell Usage**: For scRNA-seq, ensure data is properly aggregated or normalized to account for sparsity before running detection.
+## Best Practices and Expert Tips
+
+*   **Data Normalization**: While MSIsensor-RNA handles various expression formats, ensure your data is consistently normalized (e.g., TPM, FPKM, or Log-transformed counts) across training and detection phases. Recent updates include internal normalization modules to improve robustness.
+*   **Single-Cell Analysis**: When using scRNA-seq data, it is often beneficial to aggregate cells or use pseudo-bulk profiles if the per-cell signal is too sparse, though the tool is optimized to handle the distribution of single-cell expression.
+*   **Model Selection**: Use the provided pre-trained models in the `model/` directory for standard pan-cancer analysis. Only retrain if working with a highly unique tissue type or non-human data.
+*   **Input Format**: The tool typically expects CSV/TSV formats. Ensure that the gene names in your input file match the feature names the model was trained on (usually HGNC Gene Symbols).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| genes | Select informative genes for microsatellite instability detection. |
+| msisensor-rna detection | Microsatellite instability detection. |
+| show | Show the information of the model and add more details. |
+| train | Train custom model for microsatellite instability detection. |
 
 ## Reference documentation
-- [MSIsensor-RNA GitHub Repository](./references/github_com_xjtu-omics_msisensor-rna.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_msisensor-rna_overview.md)
+- [MSIsensor-RNA GitHub Repository](./references/github_com_xjtu-omics_msisensor-rna_blob_main_README.md)
+- [Dockerfile and Environment Setup](./references/github_com_xjtu-omics_msisensor-rna_blob_main_Dockerfile.md)
+- [Project Metadata and Dependencies](./references/github_com_xjtu-omics_msisensor-rna_blob_main_setup.py.md)

@@ -105,3 +105,6 @@ ERROR: index not correctly loaded. Ensure that you correctly call `fmsi index` b
 Usage:   fmsi export <index-prefix>
 ```
 
+
+## Metadata
+- **Skill**: generated

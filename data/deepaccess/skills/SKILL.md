@@ -1,6 +1,6 @@
 ---
 name: deepaccess
-description: DeepAccess is a deep learning framework for predicting chromatin accessibility and interpreting the genomic sequence features that drive those predictions. Use when user asks to train ensemble models on genomic regions, perform differential interpretation between cell types, or generate saliency maps for sequence visualization.
+description: DeepAccess is a deep learning framework for predicting chromatin accessibility and interpreting genomic sequence patterns using ensemble convolutional neural networks. Use when user asks to train models on genomic coordinates or sequences, identify influential DNA motifs, analyze sequence pattern spacing, or generate nucleotide-level saliency maps.
 homepage: https://github.com/gifford-lab/deepaccess-package
 ---
 
@@ -8,69 +8,89 @@ homepage: https://github.com/gifford-lab/deepaccess-package
 # deepaccess
 
 ## Overview
-DeepAccess is a specialized deep learning framework designed for genomic sequence analysis. It enables the training of ensemble models to predict chromatin accessibility across multiple tasks (e.g., different cell types or conditions) and provides robust interpretation tools to understand the sequence features driving those predictions. Use this skill to guide the preparation of genomic regions (BED/FASTA), execute model training with cross-validation/holdout strategies, and perform differential interpretation between experimental conditions.
 
-## Installation and Dependencies
-DeepAccess requires `bedtools` (v2.29.2+) to be available in the system PATH for processing BED files.
-- **Pip**: `pip install deepaccess`
-- **Conda**: `conda install -c bioconda deepaccess`
+DeepAccess is a specialized deep learning framework designed for the analysis of genomic sequence data. It enables the training of ensemble convolutional neural networks (CNNs) to predict chromatin accessibility across multiple tasks or cell types. Beyond prediction, the tool provides robust interpretation modules to extract biological insights, such as identifying influential DNA motifs, analyzing the spacing between sequence patterns, and generating base-pair resolution saliency maps to visualize nucleotide importance.
 
-## Training Models
-The `deepaccess train` command builds models from either BED files or FASTA sequences.
+## Core Workflows
 
-### Using BED Files (Recommended for Genomic Regions)
-When starting with genomic coordinates, you must provide a reference FASTA and a chromosome sizes file.
+### 1. Model Training
+
+DeepAccess supports training from either genomic coordinates (BED files) or raw sequences (FASTA files).
+
+**Training from BED files (Requires reference genome):**
+Use this when you have peak calls for different conditions.
 ```bash
-deepaccess train -l CellTypeA CellTypeB \
-    -beds cell_a.bed cell_b.bed \
-    -ref mm10.fa \
-    -g mm10.chrom.sizes \
-    -out output_dir \
-    -ho chr19 \
-    -nepochs 10
+deepaccess train \
+  -beds cell1.bed cell2.bed \
+  -l CellType1 CellType2 \
+  -ref hg38.fa \
+  -g hg38.chrom.sizes \
+  -out ./output_model \
+  -nepochs 10 \
+  -ho chrX
+```
+*   **Note**: `-ho` specifies a holdout chromosome for validation to prevent overfitting.
+*   **Note**: Requires `bedtools` to be installed and in your PATH.
+
+**Training from FASTA files:**
+Use this if sequences are already extracted and labeled.
+```bash
+deepaccess train \
+  -fa sequences.fa \
+  -fasta_labels labels.txt \
+  -l LabelA LabelB \
+  -out ./output_model
 ```
 
-### Using FASTA Files
-If sequences are already extracted, use the `-fa` and `-fasta_labels` arguments.
+### 2. Model Interpretation
+
+Once a model is trained, use the `interpret` command to understand what the model has learned.
+
+**Motif Activity Analysis:**
+Evaluate the Expected Predicted Effect (EPE) of known motifs.
 ```bash
-deepaccess train -l Task1 Task2 \
-    -fa sequences.fa \
-    -fasta_labels labels.txt \
-    -out output_dir
+deepaccess interpret \
+  -trainDir ./output_model \
+  -l CellType1 CellType2 \
+  -c CellType1vsCellType2 \
+  -evalMotifs motifs_database.txt
 ```
 
-### Expert Tips for Training
-- **Holdout Strategy**: Always use the `-ho` (holdout) argument to specify a chromosome (e.g., `chr19`) for validation to prevent overfitting and ensure genomic independence.
-- **Outgroup Regions**: Use `-f` (default 0.1) to include a fraction of random genomic regions as a negative "outgroup" set, which helps the model distinguish accessible regions from the genomic background.
-- **Reproducibility**: Set a specific seed using `-seed` to ensure deterministic behavior across training runs.
-
-## Interpreting Results
-The `deepaccess interpret` command extracts biological insights from trained models.
-
-### Differential Accessibility (DEPE)
-To compare the importance of features between two labels (e.g., ASCL1 vs CTCF):
+**Pattern Spacing and Interaction:**
+Test how the spacing between specific DNA patterns affects predicted accessibility.
 ```bash
-deepaccess interpret -trainDir output_dir \
-    -fastas test_sequences.fa \
-    -l ASCL1 CTCF \
-    -c ASCL1vsCTCF \
-    -evalMotifs default/HMv11_MOUSE.txt
+deepaccess interpret \
+  -trainDir ./output_model \
+  -evalPatterns patterns.fa \
+  -bg background_sequences.fa
 ```
 
-### Saliency and Visualization
-To generate per-base importance scores and visualize them:
+**Saliency Mapping:**
+Generate nucleotide-level importance scores for specific sequences.
 ```bash
-deepaccess interpret -trainDir output_dir \
-    -fastas sequences.fa \
-    -saliency \
-    -vis
+deepaccess interpret \
+  -trainDir ./output_model \
+  -fastas interesting_regions.fa \
+  -saliency -vis
 ```
 
-### Key Interpretation Parameters
-- **-c (Comparisons)**: Define specific contrasts. `C1,C2vsC3` runs differential analysis for the combination of C1 and C2 against C3.
-- **-evalMotifs**: Provide a PWM/PCM database to map learned patterns to known transcription factor binding sites.
-- **-subtract**: By default, DeepAccess uses ratios for Expected Prediction Effect (EPE). Use `-subtract` to use the difference instead.
+## Expert Tips and Best Practices
+
+*   **Differential Analysis**: Use the `-c` (comparisons) flag during interpretation to perform differential EPE analysis (e.g., `GroupAvsGroupB`). This highlights motifs that are specifically important for one condition over another.
+*   **Background Selection**: When evaluating patterns, providing a relevant background FASTA (`-bg`) is critical for accurate enrichment calculations.
+*   **Outgroup Regions**: When training from BED files, use `-f` (frac_random) to include random genomic regions as an "inactive" outgroup, which helps the model learn to distinguish accessible peaks from the genomic background.
+*   **Ensemble Reliability**: DeepAccess trains an ensemble of models; ensure the `-trainDir` contains the full output of the training process to allow the interpretation module to aggregate results across the ensemble.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| deepaccess | Interpret deep learning models for DNA sequence analysis. |
+| deepaccess | Train a deep learning model for variant calling. |
 
 ## Reference documentation
-- [DeepAccess Package Overview](./references/github_com_gifford-lab_deepaccess-package.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_deepaccess_overview.md)
+
+- [DeepAccess Package README](./references/github_com_gifford-lab_deepaccess-package_blob_main_README.md)
+- [Example Execution Script](./references/github_com_gifford-lab_deepaccess-package_blob_main_run_ASCL1vsCTCF_DeepAccess.sh.md)

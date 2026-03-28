@@ -1,1 +1,396 @@
-GitHub - conchoecia/gloTK: genomes of luminous organisms toolkit Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} conchoecia / gloTK Public Notifications You must be signed in to change notification settings Fork 0 Star 4 genomes of luminous organisms toolkit License GPL-3.0 license 4 stars 0 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights conchoecia/gloTK master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 47 Commits 47 Commits gloTK gloTK scripts scripts .NEWS.swp .NEWS.swp .gitignore .gitignore AUTHORS AUTHORS LICENSE LICENSE MANIFEST.in MANIFEST.in NEWS NEWS README.md README.md multiproc.py multiproc.py setup.py setup.py version.txt version.txt View all files Repository files navigation README GPL-3.0 license gloTK GloTK is the Genomes of Luminous Organisms Toolkit. It contains scripts to facilitate genome assembly optomization and analysis using common genome assemblers. Supported Assemblers Currently there are only scripts for one assembler: Meraculous 2.2.2.4+ Dependencies The mer_reporter.py script currently requires the following to be installed: Python 3.5 (If you haven't installed yet, I recommend the Anaconda distribution) py-gfm Python Github-flavored Markdown Install You can install the gloTK package on your linux machine by typing pip install gloTK in your terminal. Major releases of gloTK are uploaded to the Python Package Index . Scripts To use these programs, install gloTK as described above and type glotk into your terminal. If you hit the tab key a few times your computer should try to autocomplete and you will see a few options: glotk-mer-reporter.py Generates HTML reports of all Meraculous assemblies found within the current working directory (CWD) . Collates all relevant files and images into a meraculous_reports directory in the CWD . glotk-sweep This allows the user to input a single meraculous config file, and to define parameters to sweep on and optomize. Currently this program supports sweeping on mer_size and bubble_depth_threshold . Typing glotk-sweep into your terminal after installing will give you more details. News v0.1.15 - 20161116 This version incorporates glotk-project. This script reads in a config file and generates a 'glotk_project' directory in which information about the libraries, assemblies, et cetera for this Meraculous genome project is stored. Assemblies, reports, config files, et cetera will take place in adjacent directories gloTK project files will now take on the following file structure: project_dir/ |--glotk_info/ | | default_config.config | | sample_metadata.config | | read_metadata.config | | assemblynumber_to_runname.txt | | | |--activity_log/ | | as000.log | | as001.log | | etcetera.log | | | |--read_configs/ | reads0.yaml #this is the initial yaml file for imported reads | reads1.yaml #reads generated from Seqprep, trimmomatic, et cetera | |--glotk_assemblies | |--as000_&lt;assembly_name&gt;/ | | |--assembler_output/ | | | |--as001_20161102_ME_pleu_bach_k63_d1/ | |--meraculous_etcetera | |--glotk_configs | as000_&lt;assembly_name&gt;.config | as001_20161102_ME_pleu_bach_k63_d1.config | |--glotk_reads | | reads.log | | | |--reads0/ | | &lt;forward_reads_symlink&gt;.fq.gz | | &lt;reverse_reads_symlink&gt;.fq.gz | | | |--reads1/ | &lt;processed_forward&gt;.fq.gz | &lt;processed_reverse&gt;.fq.gz | |--glotk_fastqc |--glotk_kmers |--glotk_reports v0.1.14 - 20161102 Gave a --triplet flag to glotk-sweep to cause the assembler to run diploid modes 0, 1, and 2 on the same kmer size. v0.1.13 - 20161102 Made glotk-sweep function by inputting each value of k to assemble for, rather than using 'sweep start', 'sweep stop', and 'sweep interval'. Usage is: '--slist 23 27 57' to perform assemblies for those three values About genomes of luminous organisms toolkit Resources Readme License GPL-3.0 license Uh oh! There was an error while loading. Please reload this page . Activity Stars 4 stars Watchers 1 watching Forks 0 forks Report repository Releases No releases published Packages 0 No packages published Languages Python 95.2% Gnuplot 4.8% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconchoecia%2FgloTK)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconchoecia%2FgloTK)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=conchoecia%2FgloTK)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[conchoecia](/conchoecia)
+/
+**[gloTK](/conchoecia/gloTK)**
+Public
+
+* [Notifications](/login?return_to=%2Fconchoecia%2FgloTK) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fconchoecia%2FgloTK)
+* [Star
+   4](/login?return_to=%2Fconchoecia%2FgloTK)
+
+* [Code](/conchoecia/gloTK)
+* [Issues
+  0](/conchoecia/gloTK/issues)
+* [Pull requests
+  0](/conchoecia/gloTK/pulls)
+* [Actions](/conchoecia/gloTK/actions)
+* [Projects](/conchoecia/gloTK/projects)
+* [Security
+  0](/conchoecia/gloTK/security)
+* [Insights](/conchoecia/gloTK/pulse)
+
+Additional navigation options
+
+* [Code](/conchoecia/gloTK)
+* [Issues](/conchoecia/gloTK/issues)
+* [Pull requests](/conchoecia/gloTK/pulls)
+* [Actions](/conchoecia/gloTK/actions)
+* [Projects](/conchoecia/gloTK/projects)
+* [Security](/conchoecia/gloTK/security)
+* [Insights](/conchoecia/gloTK/pulse)
+
+# conchoecia/gloTK
+
+master
+
+[Branches](/conchoecia/gloTK/branches)[Tags](/conchoecia/gloTK/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[47 Commits](/conchoecia/gloTK/commits/master/)   47 Commits | | |
+| [gloTK](/conchoecia/gloTK/tree/master/gloTK "gloTK") | | [gloTK](/conchoecia/gloTK/tree/master/gloTK "gloTK") |  |  |
+| [scripts](/conchoecia/gloTK/tree/master/scripts "scripts") | | [scripts](/conchoecia/gloTK/tree/master/scripts "scripts") |  |  |
+| [.NEWS.swp](/conchoecia/gloTK/blob/master/.NEWS.swp ".NEWS.swp") | | [.NEWS.swp](/conchoecia/gloTK/blob/master/.NEWS.swp ".NEWS.swp") |  |  |
+| [.gitignore](/conchoecia/gloTK/blob/master/.gitignore ".gitignore") | | [.gitignore](/conchoecia/gloTK/blob/master/.gitignore ".gitignore") |  |  |
+| [AUTHORS](/conchoecia/gloTK/blob/master/AUTHORS "AUTHORS") | | [AUTHORS](/conchoecia/gloTK/blob/master/AUTHORS "AUTHORS") |  |  |
+| [LICENSE](/conchoecia/gloTK/blob/master/LICENSE "LICENSE") | | [LICENSE](/conchoecia/gloTK/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/conchoecia/gloTK/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/conchoecia/gloTK/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [NEWS](/conchoecia/gloTK/blob/master/NEWS "NEWS") | | [NEWS](/conchoecia/gloTK/blob/master/NEWS "NEWS") |  |  |
+| [README.md](/conchoecia/gloTK/blob/master/README.md "README.md") | | [README.md](/conchoecia/gloTK/blob/master/README.md "README.md") |  |  |
+| [multiproc.py](/conchoecia/gloTK/blob/master/multiproc.py "multiproc.py") | | [multiproc.py](/conchoecia/gloTK/blob/master/multiproc.py "multiproc.py") |  |  |
+| [setup.py](/conchoecia/gloTK/blob/master/setup.py "setup.py") | | [setup.py](/conchoecia/gloTK/blob/master/setup.py "setup.py") |  |  |
+| [version.txt](/conchoecia/gloTK/blob/master/version.txt "version.txt") | | [version.txt](/conchoecia/gloTK/blob/master/version.txt "version.txt") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* GPL-3.0 license
+
+# gloTK
+
+GloTK is the Genomes of Luminous Organisms Toolkit. It contains
+scripts to facilitate genome assembly optomization and analysis using
+common genome assemblers.
+
+## Supported Assemblers
+
+Currently there are only scripts for one assembler:
+
+* Meraculous *2.2.2.4+*
+
+## Dependencies
+
+* The `mer_reporter.py` script currently requires the following to be installed:
+  + Python 3.5
+    - (If you haven't installed yet, I recommend the [Anaconda](https://www.continuum.io/downloads) distribution)
+  + [py-gfm](https://py-gfm.readthedocs.io/en/latest/)
+    - *Python Github-flavored Markdown*
+
+## Install
+
+You can install the `gloTK` package on your linux machine by typing
+`pip install gloTK` in your terminal.
+
+Major releases of `gloTK` are uploaded to the [Python Package Index](https://pypi.python.org/pypi/gloTK).
+
+## Scripts
+
+To use these programs, install `gloTK` as described above and type `glotk` into
+your terminal. If you hit the `tab` key a few times your computer should try to
+autocomplete and you will see a few options:
+
+* **glotk-mer-reporter.py**
+  + Generates HTML reports of all Meraculous assemblies found within
+    the current working directory *(CWD)*. Collates all relevant files and images
+    into a `meraculous_reports` directory in the *CWD*.
+* **glotk-sweep**
+  + This allows the user to input a single meraculous config file, and to define
+    parameters to sweep on and optomize. Currently this program supports sweeping
+    on `mer_size` and `bubble_depth_threshold`. Typing `glotk-sweep` into your
+    terminal after installing will give you more details.
+
+## News
+
+### **v0.1.15** - 20161116
+
+* This version incorporates glotk-project. This script reads in a config file
+  and generates a 'glotk\_project' directory in which information about the
+  libraries, assemblies, et cetera for this Meraculous genome project is stored.
+  Assemblies, reports, config files, et cetera will take place in
+  adjacent directories
+* gloTK project files will now take on the following file structure:
+
+```
+project_dir/
+|--glotk_info/
+|  |  default_config.config
+|  |  sample_metadata.config
+|  |  read_metadata.config
+|  |  assemblynumber_to_runname.txt
+|  |
+|  |--activity_log/
+|  |     as000.log
+|  |     as001.log
+|  |     etcetera.log
+|  |
+|  |--read_configs/
+|        reads0.yaml #this is the initial yaml file for imported reads
+|        reads1.yaml #reads generated from Seqprep, trimmomatic, et cetera
+|
+|--glotk_assemblies
+|  |--as000_<assembly_name>/
+|  |  |--assembler_output/
+|  |
+|  |--as001_20161102_ME_pleu_bach_k63_d1/
+|     |--meraculous_etcetera
+|
+|--glotk_configs
+|     as000_<assembly_name>.config
+|     as001_20161102_ME_pleu_bach_k63_d1.config
+|
+|--glotk_reads
+|  |  reads.log
+|  |
+|  |--reads0/
+|  |     <forward_reads_symlink>.fq.gz
+|  |     <reverse_reads_symlink>.fq.gz
+|  |
+|  |--reads1/
+|        <processed_forward>.fq.gz
+|        <processed_reverse>.fq.gz
+|
+|--glotk_fastqc
+|--glotk_kmers
+|--glotk_reports
+```
+
+### **v0.1.14** - 20161102
+
+* Gave a --triplet flag to glotk-sweep to cause the assembler to run diploid modes
+  0, 1, and 2 on the same kmer size.
+
+### **v0.1.13** - 20161102
+
+* Made glotk-sweep function by inputting each value of k to assemble for, rather
+  than using 'sweep start', 'sweep stop', and 'sweep interval'.
+  Usage is: '--slist 23 27 57' to perform assemblies for those three values
+
+## About
+
+genomes of luminous organisms toolkit
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[GPL-3.0 license](#GPL-3.0-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/conchoecia/gloTK/activity)
+
+### Stars
+
+[**4**
+stars](/conchoecia/gloTK/stargazers)
+
+### Watchers
+
+[**1**
+watching](/conchoecia/gloTK/watchers)
+
+### Forks
+
+[**0**
+forks](/conchoecia/gloTK/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fconchoecia%2FgloTK&report=conchoecia+%28user%29)
+
+## [Releases](/conchoecia/gloTK/releases)
+
+No releases published
+
+## [Packages 0](/users/conchoecia/packages?repo_name=gloTK)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/conchoecia/gloTK/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [Python
+  95.2%](/conchoecia/gloTK/search?l=python)
+* [Gnuplot
+  4.8%](/conchoecia/gloTK/search?l=gnuplot)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

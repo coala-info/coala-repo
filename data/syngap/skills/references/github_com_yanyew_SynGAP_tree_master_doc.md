@@ -1,1 +1,417 @@
-SynGAP/doc at master · yanyew/SynGAP · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} yanyew / SynGAP Public Notifications You must be signed in to change notification settings Fork 5 Star 45 Code Issues 2 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fyanyew%2FSynGAP%2Ftree%2Fmaster%2Fdoc)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fyanyew%2FSynGAP%2Ftree%2Fmaster%2Fdoc)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=yanyew%2FSynGAP)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[yanyew](/yanyew)
+/
+**[SynGAP](/yanyew/SynGAP)**
+Public
+
+* [Notifications](/login?return_to=%2Fyanyew%2FSynGAP) You must be signed in to change notification settings
+* [Fork
+  5](/login?return_to=%2Fyanyew%2FSynGAP)
+* [Star
+   45](/login?return_to=%2Fyanyew%2FSynGAP)
+
+* [Code](/yanyew/SynGAP)
+* [Issues
+  2](/yanyew/SynGAP/issues)
+* [Pull requests
+  0](/yanyew/SynGAP/pulls)
+* [Actions](/yanyew/SynGAP/actions)
+* [Projects](/yanyew/SynGAP/projects)
+* [Security
+  0](/yanyew/SynGAP/security)
+* [Insights](/yanyew/SynGAP/pulse)
+
+Additional navigation options
+
+* [Code](/yanyew/SynGAP)
+* [Issues](/yanyew/SynGAP/issues)
+* [Pull requests](/yanyew/SynGAP/pulls)
+* [Actions](/yanyew/SynGAP/actions)
+* [Projects](/yanyew/SynGAP/projects)
+* [Security](/yanyew/SynGAP/security)
+* [Insights](/yanyew/SynGAP/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [SynGAP](/yanyew/SynGAP/tree/master)
+
+/
+
+# doc
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/yanyew/SynGAP/commits/master/doc)
+
+History
+
+master
+
+## Breadcrumbs
+
+1. [SynGAP](/yanyew/SynGAP/tree/master)
+
+/
+
+# doc
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/yanyew/SynGAP/tree/master) | | |
+| [FAQ.md](/yanyew/SynGAP/blob/master/doc/FAQ.md "FAQ.md") | | [FAQ.md](/yanyew/SynGAP/blob/master/doc/FAQ.md "FAQ.md") |  |  |
+| [Installation.md](/yanyew/SynGAP/blob/master/doc/Installation.md "Installation.md") | | [Installation.md](/yanyew/SynGAP/blob/master/doc/Installation.md "Installation.md") |  |  |
+| [Quick Start.md](/yanyew/SynGAP/blob/master/doc/Quick%20Start.md "Quick Start.md") | | [Quick Start.md](/yanyew/SynGAP/blob/master/doc/Quick%20Start.md "Quick Start.md") |  |  |
+| [README.md](/yanyew/SynGAP/blob/master/doc/README.md "README.md") | | [README.md](/yanyew/SynGAP/blob/master/doc/README.md "README.md") |  |  |
+| [Usage.md](/yanyew/SynGAP/blob/master/doc/Usage.md "Usage.md") | | [Usage.md](/yanyew/SynGAP/blob/master/doc/Usage.md "Usage.md") |  |  |
+| [What is SynGAP.md](/yanyew/SynGAP/blob/master/doc/What%20is%20SynGAP.md "What is SynGAP.md") | | [What is SynGAP.md](/yanyew/SynGAP/blob/master/doc/What%20is%20SynGAP.md "What is SynGAP.md") |  |  |
+| View all files | | |
+
+## [README.md](#readme)
+
+Outline
+
+# SynGAP
+
+[![SyGAP_logo](https://private-user-images.githubusercontent.com/90335707/331816539-becdec2d-b1ea-4119-a3ea-6a1be7ccb6ba.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQ2Njc0NDEsIm5iZiI6MTc3NDY2NzE0MSwicGF0aCI6Ii85MDMzNTcwNy8zMzE4MTY1MzktYmVjZGVjMmQtYjFlYS00MTE5LWEzZWEtNmExYmU3Y2NiNmJhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMjglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzI4VDAzMDU0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZlMjk1MzQ4YWJlZGM5N2RkMGUxYTlmNGMzMDBlMDhmOTBiZmE0NDY3MDA3MDdiYjYyNWQwMmMwYTFkYjBiNmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.xb_JxWeaVJZGztb7I4HwIxGjZ_cyArhxWLSDQy7e8Sg)](https://private-user-images.githubusercontent.com/90335707/331816539-becdec2d-b1ea-4119-a3ea-6a1be7ccb6ba.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQ2Njc0NDEsIm5iZiI6MTc3NDY2NzE0MSwicGF0aCI6Ii85MDMzNTcwNy8zMzE4MTY1MzktYmVjZGVjMmQtYjFlYS00MTE5LWEzZWEtNmExYmU3Y2NiNmJhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMjglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzI4VDAzMDU0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZlMjk1MzQ4YWJlZGM5N2RkMGUxYTlmNGMzMDBlMDhmOTBiZmE0NDY3MDA3MDdiYjYyNWQwMmMwYTFkYjBiNmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.xb_JxWeaVJZGztb7I4HwIxGjZ_cyArhxWLSDQy7e8Sg)
+
+A toolkit for comparative genomics and transcriptomics research of related species.
+
+**SynGAP** (**Synteny-based Gene Structure Annotation Polisher**) is a command-line software written in Python3, suitable for Linux operating systems. And we provides the image that can be used for other operating systems such as MacOS and Windows.
+It supports two main workflows:
+(1) **genome annotations polishing for related species** (*dual*, *master*, *triple*, and *custom*);
+(2) **gene differential expression analysis of related species** (*genepair*, *evi*, and *eviplot*).
+
+Find source codes and documentation at <https://github.com/yanyew/SynGAP>
+Find detailed documentation at <https://www.yuque.com/yanyew/gc786d>
+For any question about SynGAP, please contact 360875601w@gmail.com
+If you use SynGAP, please cite:
+
+# Installation
+
+## conda (recommended)
+
+```
+conda install -c conda-forge -c bioconda syngap
+```
+
+## manually
+
+```
+cd ~/code  # or any directory of your choice
+git clone git://github.com/yanyew/SynGAP.git
+cd ~/code/SynGAP
+conda env create -f SynGAP.environment.yaml -c conda-forge -c bioconda
+export PATH=~/code/SynGAP:$PATH
+```
+
+## Docker image
+
+```
+docker pull yanyew/syngap:1.2.5
+docker run -it yanyew/syngap:1.2.5
+conda activate syngap # activate the conda environment for SynGAP
+```
+
+# Dependence
+
+```
+python >=3.10
+biopython >=1.81
+jcvi >=1.3.6
+bedtools >=2.31.0
+last >=1454
+emboss >=6.6.0
+gffread >=0.12.7
+seqkit >=2.4.0
+diamond >=2.1.8
+perl-bioperl >=1.7.8
+kneed >=0.8.3
+numpy >=1.26.0
+pandas >=2.1.1
+matplotlib-base >=3.8.0
+scikit-image >=0.22.0
+pybedtools >=0.9.0
+deap >=1.4.1
+more-itertools
+crossmap
+graphviz
+webcolors
+ortools-python
+ftpretty
+```
+
+# Usage
+
+## genome annotations polishing
+
+### *dual*
+
+SynGAP *dual* was a module designed for the mutual gene structural annotations correction of two species, which takes the genome sequences and genome annotations of the correction objects as input.
+For example:
+
+```
+syngap dual \
+--sp1fa=Athaliana_167_TAIR9.fa \
+--sp1gff=Athaliana_167_TAIR10.gene.gff3 \
+--sp2fa=Arabidopsis_halleri.Ahal2.2.dna.toplevel.fa \
+--sp2gff=Arabidopsis_halleri.Ahal2.2.52.gff3 \
+--sp1=Ath \
+--sp2=Aha
+```
+
+In the *results* directory, there are several key output files:
+
+| **Result File** | **Description** |
+| --- | --- |
+| \*.SynGAP.gff3 | the full polished genome annotation file (originnal + polished) |
+| \*.SynGAP.clean.gff3 | the polished genome annotation file (only polished) |
+| \*.SynGAP.clean.miss\_annotated.gff3 | only the polished annotations that are miss-annotated in the originnal genome annotation |
+| \*.SynGAP.clean.mis\_annotated.gff3 | only the polished annotations that are mis-annotated in the originnal genome annotation |
+| \*.anchors.gap | the *gaps* where mis-annotation or miss-annotation of gene models (MAGs) may exist |
+
+### *master*
+
+You can also chosse to polish the gene structural annotations of one species with the Core set picked up by us. Core set includes several plant and animal species with high quality genome annotation:
+
+| **plant** | **animal** |
+| --- | --- |
+| *Aristolochia fimbriata* | *Bos taurus* |
+| *Arabidopsis thaliana* | *Caenorhabditis elegans* |
+| *Brachypodiumdistachyon* | *Canis lupus familiaris* |
+| *Cucumis sativus* | *Drosophila melanogaster* |
+| *Citrus sinensis* | *Danio rerio* |
+| *Fragaria vesca* | *Felis catus* |
+| *Glycine max* | *Gallus gallus* |
+| *Musa acuminata* | *Homo sapiens* |
+| *Oryza sativa* | *Mus musculus* |
+| *Solanum lycopersicum* | *Ovis aries* |
+| *Vitis vinifera* | *Pan troglodytes* |
+| *Zea mays* | *Sus scrofa* |
+|  | *Xenopus tropicalis* |
+
+To use SynGAP *master*, you should first download the database from the link below, which include plant.tar.gz and animal.tar.gz. You can choose the one you need.
+<https://tbtools.cowtransfer.com/s/85ed3920aa7f47>
+Then import the downloaded database:
+
+```
+syngap initdb \
+--sp=plant \
+--file=plant.tar.gz
+```
+
+After import the database, run SynGAP *master*:
+
+```
+syngap master \
+--sp=plant \
+--sp1fa=Brassica_rapa_ro18.SCU_BraROA_2.3.dna.toplevel.fa \
+--sp1gff=Brassica_rapa_ro18.SCU_BraROA_2.3.53.chr.gff3 \
+--sp1=Bra
+```
+
+### *triple*
+
+As for the polishing of three species in combination, you can choose SynGAP *triple.*
+
+```
+syngap triple \
+--sp1fa=Athaliana_167_TAIR9.fa \
+--sp1gff=Athaliana_167_TAIR10.gene.gff3 \
+--sp2fa=Arabidopsis_halleri.Ahal2.2.dna.toplevel.fa \
+--sp2gff=Arabidopsis_halleri.Ahal2.2.52.gff3 \
+--sp3fa=Brassica_rapa_ro18.SCU_BraROA_2.3.dna.toplevel.fa \
+--sp3gff=Brassica_rapa_ro18.SCU_BraROA_2.3.53.chr.gff3 \
+--sp1=Ath \
+--sp2=Aha \
+--sp3=Bra
+```
+
+### *custom*
+
+If you only focus on the annotation polishing in specific synteny block, or prefer to use synteny results from other software rather than jcvi, you can offer the *\*.anchors* file that contains the block and use SynGAP *custom*.
+
+```
+syngap custom \
+--sp1fa=Athaliana_167_TAIR9.fa \
+--sp1gff=Athaliana_167_TAIR10.gene.gff3 \
+--sp2fa=Arabidopsis_halleri.Ahal2.2.dna.toplevel.fa \
+--sp2gff=Arabidopsis_halleri.Ahal2.2.52.gff3 \
+--custom_anchors=Ath.Aha.originalid.anchors \
+--sp1=Ath \
+--sp2=Aha
+```
+
+## **gene differential expression analysis of related species**
+
+SynGAP incorporates another function module, *genepair*, to generate high-con

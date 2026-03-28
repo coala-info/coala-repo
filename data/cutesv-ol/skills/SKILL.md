@@ -1,6 +1,6 @@
 ---
 name: cutesv-ol
-description: cutesv-ol is a framework for real-time structural variation discovery that processes sequencing data incrementally as it is generated. Use when user asks to detect structural variations in real-time, monitor a directory for incoming sequencing data, or identify genomic variations before a sequencing run concludes.
+description: cuteSV-OL performs real-time discovery of structural variations by monitoring incoming nanopore sequencing data. Use when user asks to discover structural variations during a live sequencing run, monitor a directory for real-time SV analysis, or calculate target variant recall before a run concludes.
 homepage: https://github.com/120L022331/cuteSV-OL
 ---
 
@@ -8,64 +8,78 @@ homepage: https://github.com/120L022331/cuteSV-OL
 # cutesv-ol
 
 ## Overview
-cutesv-ol is a specialized framework for real-time structural variation discovery. Unlike standard SV callers that require a completed sequencing run, this tool monitors a directory for incoming data and processes it incrementally. It is ideal for clinical or time-sensitive applications where early detection of genomic variations is required to inform decision-making before a sequencing run concludes.
 
-## Installation and Environment
-The tool requires a specific environment setup due to its dependencies (Python < 3.13).
+cuteSV-OL is a specialized framework designed for the live discovery of structural variations during nanopore sequencing runs. Unlike standard SV callers that require a completed dataset, cuteSV-OL monitors a directory for incoming sequencing data and performs analysis in real-time. It is particularly useful for clinical or time-sensitive applications where rapid feedback on specific target variants or population-scale SVs is required before the sequencing run concludes.
 
-```bash
-# Recommended installation via Bioconda
-conda install -c conda-forge -c bioconda cutesv-ol
-```
+## Core CLI Usage
 
-## Core Command Structure
-The primary command is `cuteSV_ONLINE`. It requires four positional arguments followed by optional parameters.
+The primary command for the online framework is `cuteSV_ONLINE`. It requires four positional arguments followed by optional parameters.
 
 ```bash
 cuteSV_ONLINE <monitored_dir> <reference.fa> <work_dir> <output_vcf_dir> [options]
 ```
 
-- **monitored_dir**: The directory where the sequencer or basecaller is writing new fastq/bam files.
+### Essential Parameters
+
+- **monitored_dir**: The directory where the sequencing instrument (or basecaller) is writing new fastq/bam files.
 - **reference.fa**: The reference genome file.
-- **work_dir**: Directory for intermediate files and the recall log.
-- **output_vcf_dir**: Where real-time VCF results are stored.
+- **work_dir**: Directory for intermediate files and the `recall_file.txt`.
+- **output_vcf_dir**: Directory where real-time VCF results are stored.
 
-## Common CLI Patterns
+## Expert Tips and Best Practices
 
-### Basic Real-Time Monitoring
-Use this for standard runs where you simply want to see SVs as they appear.
+### 1. Accelerate Alignment with MMI
+Always pre-generate a minimap2 index (.mmi) for your reference genome. Using the `--mmi_path` option significantly reduces the computational overhead during real-time processing.
+
 ```bash
-cuteSV_ONLINE ./raw_data ./ref.fa ./tmp ./results --threads 16 --monitor_fade 600
+# Pre-generate index
+minimap2 -d reference.mmi reference.fa
+
+# Use in cuteSV-OL
+cuteSV_ONLINE [args] --mmi_path reference.mmi
 ```
 
-### Targeted SV Detection (Ground Truth Comparison)
-If you are looking for specific known variants (e.g., from a population study or a specific patient's previous record), use the `--target_set` parameter.
+### 2. Real-Time Benchmarking
+If you are looking for specific known variants, use the `--target_set` and `--user_defined` flags. This allows the tool to calculate recall in real-time against your ground truth.
 
+- **For Population SVs**: Use a population VCF (like HGSVC) and set `--sv_freq` (e.g., 0.1) to focus on high-frequency variants.
+- **For Custom Targets**: Use `--user_defined` to ensure every variant in your provided VCF is treated as a target.
+
+### 3. Optimizing Resource Usage
+- **Threads**: Adjust `--threads` based on available CPU cores (default is 4). For high-throughput PromethION runs, 16-32 threads are recommended.
+- **Batch Interval**: Use `--batch_interval` to control how often VCFs are updated. A lower number provides more frequent updates but increases disk I/O.
+
+### 4. Automated Termination
+Use `--target_rate` to define a success threshold. If the recall rate of your target SV set reaches this percentage, the process can signal that sufficient data has been collected, potentially saving sequencing reagents and time.
+
+### 5. Handling Monitor Timeouts
+The `--monitor_fade` parameter (default 600s) determines how long the tool waits for new files before shutting down. Increase this value if your basecalling pipeline has significant latency or if you are multiplexing and expect long gaps between file outputs.
+
+## Common Workflow Patterns
+
+### Basic Real-Time Monitoring
 ```bash
-cuteSV_ONLINE ./raw_data ./ref.fa ./tmp ./results \
-    --target_set known_variants.vcf \
+cuteSV_ONLINE ~/sequencing_output/ ~/ref/hg38.fa ./work ./results --threads 8
+```
+
+### Targeted Recall Analysis (Clinical/Specific SVs)
+```bash
+cuteSV_ONLINE ~/monitor/ ~/ref/hg38.fa ./work ./results \
+    --mmi_path ~/ref/hg38.mmi \
+    --target_set ~/targets/pathogenic_svs.vcf \
     --user_defined \
     --target_rate 95
 ```
 
-### High-Performance Alignment
-To speed up the alignment phase, provide a pre-computed minimap2 index (.mmi).
-```bash
-# Generate index first
-minimap2 -d reference.mmi reference.fa
 
-# Run with index
-cuteSV_ONLINE ./raw_data ./ref.fa ./tmp ./results --mmi_path reference.mmi
-```
 
-## Expert Tips and Best Practices
+## Subcommands
 
-- **Monitor Fade**: The `--monitor_fade` parameter (default 600s) determines when the tool stops. If your basecaller is slow or network-delayed, increase this value to prevent the process from exiting prematurely.
-- **Batch Intervals**: Adjust `--batch_interval` (default 4) to balance between update frequency and computational overhead. Lower values provide more frequent updates but consume more CPU.
-- **VCF Versioning**: The tool generates multiple VCF files in the output directory. The filenames typically indicate the sequencing depth at the time of generation. Always check the most recent file for the most complete current call set.
-- **Population Frequency**: When using a population VCF as a target set, ensure it has an `AF` (Allele Frequency) field. You can use `bcftools +fill-tags` to generate this if it is missing. Use `--sv_freq` to filter the target set to only high-frequency variants.
-- **Recall Analysis**: Check `<work_dir>/recall_file.txt` to see the real-time sensitivity/recall statistics against your target set.
+| Command | Description |
+|---------|-------------|
+| cuteSV_ONLINE | cuteSV-OL is a real-time SV detection tool based on cuteSV. |
+| minimap2 | Minimap2 is a versatile tool for sequence alignment. It can be used for various tasks including indexing reference genomes, mapping long reads (PacBio, Nanopore), short reads, and performing spliced alignments for RNA-seq data. It also supports read overlap detection. |
 
 ## Reference documentation
-- [github_com_gwmHIT_cuteSV-OL.md](./references/github_com_gwmHIT_cuteSV-OL.md)
-- [anaconda_org_channels_bioconda_packages_cutesv-ol_overview.md](./references/anaconda_org_channels_bioconda_packages_cutesv-ol_overview.md)
+- [github_com_gwmHIT_cuteSV-OL_blob_master_README.md](./references/github_com_gwmHIT_cuteSV-OL_blob_master_README.md)
+- [github_com_gwmHIT_cuteSV-OL_blob_master_environment.yml.md](./references/github_com_gwmHIT_cuteSV-OL_blob_master_environment.yml.md)

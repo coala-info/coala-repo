@@ -1,6 +1,6 @@
 ---
 name: cmat
-description: The ClinVar Mapping and Annotation Toolkit parses, enriches, and standardizes ClinVar XML data by mapping variants to genes and clinical traits to ontology terms. Use when user asks to annotate ClinVar records, generate spreadsheets for manual trait curation, or export curated results back into master mapping files.
+description: CMAT processes ClinVar XML data to map clinical variants to genes, transcripts, and functional consequences while standardizing clinical traits to ontology terms. Use when user asks to annotate ClinVar variants, generate curation spreadsheets for unmapped traits, or export manual curation results into a master mapping file.
 homepage: https://github.com/EBIvariation/CMAT
 ---
 
@@ -9,65 +9,81 @@ homepage: https://github.com/EBIvariation/CMAT
 
 ## Overview
 
-The ClinVar Mapping and Annotation Toolkit (CMAT) is a specialized suite of tools designed to parse, enrich, and standardize ClinVar XML data. It transforms raw ClinVar records into annotated datasets by mapping variants to genes and functional consequences while aligning clinical traits with ontology terms (such as EFO). CMAT supports a complete curation workflow, allowing users to generate automated mappings, export them for manual expert review, and re-integrate curated results back into the master mapping files.
+CMAT (ClinVar Mapping and Annotation Toolkit) is a specialized suite of tools designed to process ClinVar's XML data. It automates the enrichment of clinical variant records by mapping them to specific genes, transcripts, and functional consequences. Additionally, it provides a structured workflow for mapping clinical traits to standardized ontology terms (such as EFO, HPO, or Mondo), which is essential for downstream analysis in platforms like Open Targets. The toolkit supports both automated pipelines and a manual curation loop to ensure high-quality data mapping.
 
 ## Installation and Setup
 
-CMAT is primarily distributed via Bioconda.
+CMAT requires Python 3.8+ and Nextflow 21.10+.
 
+### Environment Configuration
+Before running pipelines, define the following environment variables for convenience:
 ```bash
-# Install via Conda
-conda create -n cmat -c conda-forge -c bioconda cmat
-conda activate cmat
+export CODE_ROOT=/path/to/CMAT
+export LATEST_MAPPINGS=${CODE_ROOT}/mappings/latest_mappings.tsv
 ```
 
-If working from source, ensure Python 3.8+ and Nextflow 21.10+ are installed. Set the following environment variables for convenience:
-- `LATEST_MAPPINGS`: Path to your ontology mapping TSV file.
-- `CODE_ROOT`: Path to the CMAT repository (if using source).
+If starting a new project without an existing mapping file, initialize a TSV file with the appropriate ontology header:
+```bash
+echo "#ontology=<ontology_code>" > latest_mappings.tsv
+```
 
-## Core CLI Commands
+## Core CLI Workflows
 
-### 1. Annotation Pipeline
-The primary command for annotating ClinVar XML with gene/consequence data and trait ontology terms.
+CMAT can be invoked directly via the `cmat` command (if installed via Conda) or by running the Nextflow scripts.
 
+### 1. Variant Annotation
+Annotate ClinVar variants with gene information, functional consequences, and ontology terms.
+
+**Standard Annotation:**
 ```bash
 cmat annotate \
-  --output_dir ./output \
+  --clinvar input_clinvar.xml.gz \
   --mappings ${LATEST_MAPPINGS} \
-  --include_transcripts
+  --output_dir ./output_dir
 ```
-- **Note**: By default, this downloads the latest ClinVar RCV XML dump from the NCBI FTP. To use a local file, add `--clinvar path/to/file.xml.gz`.
-- **Tip**: Use `--include_transcripts` to ensure functional consequence annotations include specific transcript details.
 
-### 2. Trait Curation: Generation
-Generates a spreadsheet for manual curation when automated mappings are insufficient or new traits appear in ClinVar.
+**Detailed Transcript Annotation:**
+Add the `--include_transcripts` flag to include specific transcript-level functional consequences.
 
+### 2. Trait Curation Workflow
+This is a two-step process to handle new or unmapped traits in ClinVar.
+
+**Step A: Generate Curation Spreadsheet**
+Identifies unmapped traits and prepares a table for manual review.
 ```bash
 cmat generate-curation \
-  --curation_root ./curation \
+  --curation_root ./curation_work \
   --mappings ${LATEST_MAPPINGS} \
-  --comments ./previous_comments.tsv
+  --comments curator_comments.txt
 ```
-- This produces `google_sheets_table.tsv` in the curation directory.
-- Paste the contents into the CMAT curation template starting at the "ClinVar label" column.
+*Note: This produces `google_sheets_table.tsv`, which should be pasted into the CMAT curation template.*
 
-### 3. Trait Curation: Export
-Imports manually reviewed and finished curation spreadsheets back into the master mapping file.
-
+**Step B: Export Manual Curation**
+After manual review is complete and saved as a CSV, incorporate the new mappings back into the master mapping file.
 ```bash
 cmat export-curation \
-  --input_csv ./finished_curation.csv \
-  --curation_root ./curation \
+  --input_csv finished_curation.csv \
+  --curation_root ./curation_work \
   --mappings ${LATEST_MAPPINGS}
 ```
 
 ## Expert Tips and Best Practices
 
-- **Initializing New Ontologies**: If starting a mapping for a new target ontology, create a TSV file containing only the header `#ontology=<code>` (where `<code>` is a supported ontology code). CMAT will populate this file as processing continues.
-- **Resuming Pipelines**: If a pipeline fails or is interrupted, CMAT (via Nextflow) supports the `-resume` flag to continue from the last successful process.
-- **Mapping File Format**: The mappings file is a TSV. Ensure it is never saved with Excel-style formatting that might corrupt the tab-separation or character encoding.
-- **Trait Mapping Database**: Regularly run the curation pipelines to ensure new ClinVar submissions are captured and mapped, preventing "mapping drift" over time.
+- **Nextflow Resumption**: Always use the `-resume` flag when running pipelines. This allows the toolkit to skip successfully completed steps if a previous run was interrupted or failed.
+- **Conda vs. Source**: If using the Conda installation, use the `cmat <command>` syntax. If running from a git clone, use `nextflow run ${CODE_ROOT}/pipelines/<pipeline_name>.nf`.
+- **SSL Security Levels**: If encountering SSL errors when connecting to Ensembl servers during annotation, ensure your environment's OpenSSL security level is set to 1 (standard in the provided CI configurations).
+- **Python Executable**: Ensure the `PYTHON_BIN` variable is correctly set in the `nextflow.config` file within the pipelines directory to point to your active environment's Python path.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| run | Execute a pipeline project |
+| run | Execute a pipeline project |
+| run | Execute a pipeline project |
 
 ## Reference documentation
-- [CMAT Main Documentation](./references/github_com_EBIvariation_CMAT.md)
+- [CMAT Main README](./references/github_com_EBIvariation_CMAT_blob_master_README.md)
 - [Bioconda CMAT Overview](./references/anaconda_org_channels_bioconda_packages_cmat_overview.md)

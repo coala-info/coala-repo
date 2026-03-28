@@ -111,3 +111,6 @@ Usage: canon-gff3 [options] gff3file1 [gff3file2 ...]
      -v|--version            print version number and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

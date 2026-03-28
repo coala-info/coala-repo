@@ -1888,3 +1888,6 @@ options:
   -m MISMATCHES  amount of mismatches allowed (int default=2)
 ```
 
+
+## Metadata
+- **Skill**: not generated

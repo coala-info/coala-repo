@@ -1,6 +1,6 @@
 ---
 name: wgatools
-description: wgatools is a toolkit for manipulating and analyzing whole genome alignment files. Use when user asks to convert alignment formats, index or extract genomic regions, chunk or filter alignments, call variants, generate statistics, create dotplots, or inspect alignments.
+description: wgatools is a high-performance toolkit for processing, visualizing, and analyzing Whole Genome Alignment data in MAF and PAF formats. Use when user asks to convert between MAF and PAF formats, generate dotplots, extract genomic regions, call variants, or calculate alignment statistics.
 homepage: https://github.com/wjwei-handsome/wgatools
 ---
 
@@ -9,48 +9,55 @@ homepage: https://github.com/wjwei-handsome/wgatools
 
 ## Overview
 
-wgatools is an ultrafast, Rust-based toolkit designed for the comprehensive manipulation and analysis of whole genome alignment files. It serves as a "Swiss Army knife" for bioinformatics workflows, enabling seamless transitions between MAF, PAF, and Chain formats. Beyond simple conversion, it provides specialized utilities for indexing and extracting genomic regions, calling variants directly from alignments, and generating interactive visualizations. Use this skill when you need to process large-scale genomic alignments with high efficiency, especially when integrating disparate alignment outputs or performing quality control on comparative data.
+wgatools is a specialized Rust-based suite designed for the rapid processing of Whole Genome Alignment (WGA) data. It provides a comprehensive set of utilities to handle Multiple Alignment Format (MAF) and Pairwise Mapping Format (PAF) files, which are often too large for general-purpose text tools. This skill enables efficient workflows for genomic researchers to filter alignments, visualize structural relationships through dotplots, and discover variants directly from alignment blocks.
 
 ## Core CLI Patterns
 
 ### Format Conversion
-wgatools supports bidirectional conversion between the three primary alignment formats.
+Convert between the two primary WGA formats to ensure compatibility with different downstream tools.
+- **MAF to PAF**: `wgatools maf2paf -i input.maf > output.paf`
+- **PAF to MAF**: `wgatools paf2maf -i input.paf -r reference.fa -q query.fa > output.maf`
 
-*   **MAF to PAF**: `wgatools maf2paf input.maf > output.paf`
-*   **PAF to MAF**: Requires reference and query sequences.
-    `wgatools paf2maf input.paf --target target.fa --query query.fa > output.maf`
-*   **Chain to MAF**: `wgatools chain2maf input.chain -g target.fa -q query.fa > output.maf`
-*   **Piping**: Commands can be chained to avoid intermediate files.
-    `cat input.maf | wgatools maf2paf | wgatools paf2maf -t target.fa -q query.fa > output.maf`
+### Visualization and Inspection
+- **Terminal Viewer**: Use `wgatools view input.maf` to inspect alignment blocks directly in the command line with color-coded bases.
+- **Dotplot Generation**: Create a visual representation of alignments to identify synteny, inversions, and translocations.
+  `wgatools dotplot input.maf -o plot.pdf` (Supports both MAF and PAF).
 
-### Alignment Manipulation and Extraction
-*   **Indexing**: Build an index for rapid random access to MAF files.
-    `wgatools maf-index input.maf`
-*   **Extraction**: Extract specific genomic coordinates (requires index).
-    `wgatools maf-ext input.maf --region chr1:1000-2000`
-*   **Chunking**: Split large MAF files by length for parallel processing.
-    `wgatools chunk input.maf --length 100000`
-*   **Filtering**: Filter alignment records based on criteria like length or identity.
-    `wgatools filter input.paf --min-len 1000 --min-iden 0.9`
+### Region Extraction and Manipulation
+- **Extract Regions**: Pull specific genomic coordinates from a large MAF file.
+  `wgatools extract input.maf --region chr1:1000-2000 > subset.maf`
+- **Chunking**: Split massive MAF files into smaller, manageable pieces based on sequence length.
+  `wgatools chunk input.maf -l 1000000 -o output_dir/`
 
-### Analysis and Visualization
-*   **Variant Calling**: Call SNPs and Indels from MAF or PAF alignments.
-    `wgatools call input.maf > variants.vcf`
-*   **Statistics**: Generate summary statistics for alignment files.
-    `wgatools stat input.maf`
-*   **Dotplots**: Create interactive HTML dotplots for visualizing alignments.
-    `wgatools dotplot -f paf input.paf > plot.html`
-*   **Terminal View**: Inspect MAF alignments directly in the console.
-    `wgatools tview input.maf`
+### Variant Calling
+Discover SNPs and Indels directly from the alignment blocks.
+- **Basic Call**: `wgatools call input.maf -r reference.fa > variants.vcf`
+- **Memory Efficient**: For very large alignments, use the chunked calling feature to minimize RAM usage.
 
-## Expert Tips and Best Practices
+### Statistics and Validation
+- **Alignment Stats**: Generate summary statistics (identity, coverage, length) for alignment files.
+  `wgatools stat input.paf`
+- **PAF Validation**: Check for and fix common formatting errors in PAF files.
+  `wgatools check input.paf --fix`
 
-*   **Automatic Compression**: wgatools automatically handles compression based on the output file extension. Use `.gz`, `.bz2`, or `.xz` in the `-o` parameter to save disk space without extra steps.
-*   **Multi-threading**: For compute-intensive tasks like variant calling or large-scale conversions, always specify threads using the global `-t` option (e.g., `-t 8`).
-*   **PAF Validation**: When working with PAF files generated by various aligners, use `wgatools validate` to check and fix query/target positions based on CIGAR strings to ensure downstream compatibility.
-*   **Memory Efficiency**: When calling variants on extremely large alignments, use the `--chunk-size` option within the `call` subcommand to manage memory consumption effectively.
-*   **Interactive Dotplots**: For large alignments, use the `-l` (length) parameter in `dotplot` to collapse short segments. This significantly improves browser performance when viewing the resulting HTML.
+## Expert Tips
+
+- **Indexing**: For large-scale extractions, ensure your MAF file is indexed (if supported by the specific version) to avoid linear scanning of the file.
+- **Filtering**: Always filter low-quality or extremely short alignment blocks before variant calling to reduce false positives.
+  `wgatools filter input.maf --min-length 1000 --min-identity 0.9 > filtered.maf`
+- **All-to-All Alignments**: When working with pangenomes, use `wgatools paf-cov` to calculate coverage across all-to-all alignments to identify core and accessory genomic regions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| wgatools | A command-line tool for various genomic analyses. |
+| wgatools | For more information, try '--help'. |
+| wgatools_validate | Validate and fix query&target position in PAF file by CIGAR |
 
 ## Reference documentation
-- [Whole Genome Alignment Tools Main Documentation](./references/github_com_wjwei-handsome_wgatools.md)
-- [wgatools Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_wgatools_overview.md)
+- [wgatools GitHub Repository](./references/github_com_wjwei-handsome_wgatools.md)
+- [wgatools README](./references/github_com_wjwei-handsome_wgatools_blob_master_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_wgatools_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: fastx-toolkit
-description: The FASTX-Toolkit provides command-line utilities for processing and manipulating FASTA and FASTQ files from Next-Generation Sequencing data. Use when user asks to filter reads by quality, trim sequences, clip adapters, convert FASTQ to FASTA, or generate quality statistics.
+description: The FASTX-Toolkit is a collection of command-line utilities used for the preprocessing, filtering, and manipulation of short-read sequencing data. Use when user asks to trim adapters, filter reads by quality, collapse identical sequences, split barcodes, or convert FASTQ files to FASTA format.
 homepage: https://github.com/agordon/fastx_toolkit
 ---
 
@@ -9,42 +9,54 @@ homepage: https://github.com/agordon/fastx_toolkit
 
 ## Overview
 
-The FASTX-Toolkit is a collection of command-line utilities designed for the initial processing of Next-Generation Sequencing (NGS) reads. It allows for the manipulation of FASTA and FASTQ files to improve downstream mapping and assembly results. Use this skill to clean raw data by removing low-quality reads, stripping technical sequences like adapters or barcodes, and generating quality statistics. Note that this toolkit is legacy software (unmaintained since 2010) and is best suited for standard, low-level sequence manipulation.
+The FASTX-Toolkit is a collection of specialized command-line utilities designed for the manipulation and "cleaning" of short-read sequencing data. While the software is legacy (unmaintained since 2010), it remains a standard for basic bioinformatic workflows where reads must be prepared before alignment to a reference genome. It allows for the removal of low-quality reads, the stripping of sequencing adapters, and the reorganization of multiplexed libraries based on barcodes.
 
-## Common CLI Patterns
+## Command Line Usage and Patterns
 
 ### Quality Control and Statistics
-*   **Generate Quality Statistics**: Use `fastx_quality_stats` to produce a text file containing quality scores and nucleotide distributions per position.
-    `fastx_quality_stats -i input.fastq -o output_stats.txt`
-*   **Filter by Quality**: Use `fastq_quality_filter` to remove reads that do not meet a specific quality threshold.
-    `fastq_quality_filter -q 20 -p 80 -i input.fastq -o filtered.fastq`
-    *(Note: `-q 20` is the minimum quality score; `-p 80` is the minimum percentage of bases that must have that score.)*
+Before processing, always generate statistics to understand the library quality.
+- **Generate Stats**: `fastx_quality_stats -i input.fastq -o output_stats.txt`
+- **Visualize Quality**: Use `fastq_quality_boxplot_graph.sh` and `fastx_nucleotide_distribution_graph.sh` on the resulting stats file to create visual charts (requires gnuplot).
 
-### Sequence Modification
-*   **Trimming**: Use `fastx_trimmer` to extract a specific range of nucleotides (e.g., removing barcodes from the 5' end or cutting low-quality 3' ends).
-    `fastx_trimmer -f 1 -l 50 -i input.fastq -o trimmed.fastq`
-    *(Note: `-f` is the first base to keep; `-l` is the last base to keep.)*
-*   **Adapter Clipping**: Use `fastx_clipper` to remove known adapter or linker sequences.
-    `fastx_clipper -a ATCGATCG -i input.fastq -o clipped.fastq`
-*   **Reverse Complement**: Use `fastx_reverse_complement` to generate the reverse-complement of sequences.
-    `fastx_reverse_complement -i input.fasta -o rc_output.fasta`
+### Trimming and Clipping
+- **Fixed Trimming**: Use `fastx_trimmer` to remove a specific number of bases from the start or end of reads.
+  - Example (keep bases 1 to 50): `fastx_trimmer -f 1 -l 50 -i in.fq -o out.fq`
+- **Adapter Removal**: Use `fastx_clipper` to remove known adapter sequences.
+  - Example: `fastx_clipper -a ATCGTA -i in.fq -o out.fq`
+  - Use `-M` to specify a minimum alignment length for the adapter.
 
-### Format Conversion and Organization
-*   **FASTQ to FASTA**: Convert sequencing files while stripping quality scores.
-    `fastq_to_fasta -i input.fastq -o output.fasta`
-*   **Barcode Splitting**: Use `fastx_barcode_splitter.pl` to demultiplex reads based on a barcode file.
-    `cat input.fastq | fastx_barcode_splitter.pl --bcfile barcodes.txt --prefix output_ --suffix .fastq`
-*   **Collapsing Sequences**: Use `fastx_collapser` to merge identical sequences and report their counts.
-    `fastx_collapser -i input.fasta -o collapsed.fasta`
+### Filtering
+- **Quality Filtering**: Remove reads that do not meet a quality threshold.
+  - Example (keep reads where 80% of bases have a Phred score of 20+): `fastq_quality_filter -q 20 -p 80 -i in.fq -o out.fq`
+- **Artifact Filtering**: Use `fastx_artifacts_filter` to remove reads that are likely sequencing artifacts (e.g., reads with extremely high proportions of a single nucleotide).
 
-## Expert Tips
+### Format Conversion and Manipulation
+- **FASTQ to FASTA**: `fastq_to_fasta -i in.fq -o out.fa`
+- **Reverse Complement**: `fastx_reverse_complement -i in.fq -o out.fq` (automatically reverses quality scores for FASTQ).
+- **Collapsing**: Use `fastx_collapser` to merge identical sequences into a single entry with a count (useful for small RNA-seq).
 
-*   **Piping**: Most tools in the toolkit support standard input and output. You can chain commands to avoid creating large intermediate files:
-    `fastq_quality_filter -q 20 -p 80 -i in.fastq | fastx_trimmer -f 1 -l 50 > filtered_trimmed.fastq`
-*   **Quality Score Encoding**: The toolkit was developed during the transition of Phred score encodings. If you encounter errors with quality scores, you may need to use `fastq_quality_converter` to ensure your ASCII scores are in the format expected by the specific tool.
-*   **Gzip Support**: Native support for compressed files is limited in older versions. If a tool fails on a `.gz` file, use `zcat` to pipe the data:
-    `zcat input.fastq.gz | fastq_quality_filter -q 20 -p 80 > filtered.fastq`
-*   **Visualizations**: The toolkit includes wrapper scripts like `fastq_quality_boxplot_graph.sh` and `fastx_nucleotide_distribution_graph.sh`. These require `gnuplot` to be installed on the system to generate PNG charts from the output of `fastx_quality_stats`.
+### Barcode Splitting
+For multiplexed runs, use `fastx_barcode_splitter.pl`.
+- Provide a barcode file with two columns: `[barcode_id] [sequence]`.
+- Example: `cat in.fq | fastx_barcode_splitter.pl --bcfile barcodes.txt --prefix /path/to/output/ --suffix .fq`
+
+## Expert Tips and Best Practices
+
+- **Piping**: Most tools in the toolkit support standard input and output. Chain commands to avoid creating massive intermediate files.
+  - Example: `fastx_trimmer -f 5 -i in.fq | fastq_quality_filter -q 20 -p 80 > filtered.fq`
+- **Quality Offsets**: Be cautious with quality score encoding. Older versions of the toolkit may assume Phred+64 (Illumina 1.3-1.7). Use `fastq_quality_converter` if you need to switch between ASCII and numeric scores or adjust offsets.
+- **Gzip Support**: The native tools often do not support compressed `.gz` files directly. Use `zcat` to pipe data in: `zcat input.fq.gz | fastx_trimmer -f 1 -l 50 > output.fq`.
+- **Paired-End Data**: The toolkit was primarily designed for single-end reads. When using tools like `fastq_quality_filter` on paired-end data, be aware that it processes reads independently, which can "de-sync" your R1 and R2 files. You may need a post-processing script to re-pair the reads.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fastq_to_fasta | Convert FASTQ files to FASTA files. |
+| fastx_collapser | Collapses identical sequences in a FASTA/Q file into a single sequence. |
 
 ## Reference documentation
-- [FASTX-Toolkit Summary and Tool List](./references/github_com_agordon_fastx_toolkit.md)
+- [FASTX-Toolkit GitHub README](./references/github_com_agordon_fastx_toolkit.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_fastx-toolkit_overview.md)

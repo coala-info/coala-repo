@@ -1,6 +1,6 @@
 ---
 name: ucsc-bedtopsl
-description: The ucsc-bedtopsl utility converts BED records into PSL alignment records while preserving block structures. Use when user asks to convert genomic features to alignments, transform BED files to PSL format, or represent gene models as perfect alignments for the UCSC Genome Browser.
+description: This tool converts BED genomic feature records into PSL alignment records. Use when user asks to transform BED files to PSL format, represent genomic features as alignments, or prepare data for UCSC visualization tracks.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
@@ -8,45 +8,37 @@ homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 # ucsc-bedtopsl
 
 ## Overview
+The `bedToPsl` utility is part of the UCSC Genome Browser "kent" source suite. It transforms BED (Browser Extensible Data) records into PSL (Pattern Space Layout) records. This is particularly useful when you have genomic features (like gene models or peak calls) and need to represent them in a format that describes how they align to a reference sequence, which is a requirement for certain downstream UCSC utilities and visualization tracks.
 
-The `ucsc-bedtopsl` utility (commonly invoked as `bedToPsl`) is a specialized tool from the UCSC Genome Browser "Kent" suite. It transforms BED records into PSL records, which are typically used to describe sequence alignments. 
+## Usage Instructions
 
-This conversion is particularly useful in bioinformatics workflows where you need to represent genomic features (like gene models or peak calls) as "perfect alignments" against a reference genome. This allows these features to be used with tools that calculate alignment statistics or with Genome Browser track types that require PSL input to display features with directionality and block structures.
-
-## Usage Patterns
-
-### Basic Conversion
-The tool requires a `chrom.sizes` file to correctly populate the sequence length fields in the PSL output.
+### Basic Command Syntax
+The tool requires a chromosome sizes file to correctly map the BED coordinates into the PSL structure.
 
 ```bash
 bedToPsl chrom.sizes input.bed output.psl
 ```
 
-### Generating the Required chrom.sizes File
-If you do not have a `chrom.sizes` file for your assembly, you can generate one using `fetchChromSizes` (another UCSC utility) or from a FASTA index:
+### Requirements
+- **chrom.sizes**: A tab-separated file containing two columns: `<chromosome_name> <size_in_bases>`. You can generate this using `fetchChromSizes` or by extracting it from a 2bit file using `twoBitInfo`.
+- **input.bed**: A standard BED file. While the tool can process BED3, it is most effective with BED12 (linked features/blocks) to correctly populate the block-related fields in the PSL output.
 
-```bash
-# Using samtools on a reference fasta
-samtools faidx reference.fa
-cut -f1,2 reference.fa.fai > chrom.sizes
-```
+### Expert Tips and Best Practices
+- **Preserving Block Structure**: If your BED file contains multiple blocks (e.g., exons in a gene model), `bedToPsl` will correctly translate these into PSL blocks. Ensure your input is a valid BED12 to maintain this structural integrity.
+- **Strand Orientation**: PSL files are strand-aware. `bedToPsl` uses the strand column in the BED file to determine the orientation in the resulting PSL. If no strand is provided in the BED file, it defaults to the positive strand.
+- **Validation**: After conversion, you can validate the resulting PSL file using `pslCheck` to ensure it meets the structural requirements for the UCSC Genome Browser.
+- **Coordinate Systems**: Remember that both BED and PSL use 0-indexed, half-open coordinates. The conversion is a direct mapping of these coordinates, but the PSL format adds additional fields for match/mismatch counts (which are typically zeroed out or estimated during this conversion as the underlying sequence alignment is not present in a BED file).
 
-### Common Pipeline Integration
-It is a best practice to ensure your BED file is properly sorted before conversion to maintain consistency in downstream PSL-based indices.
 
-```bash
-bedSort input.bed sorted.bed
-bedToPsl hg38.chrom.sizes sorted.bed output.psl
-```
 
-## Expert Tips
+## Subcommands
 
-*   **Alignment Interpretation**: The resulting PSL file represents a "perfect" alignment. The match count will equal the total length of the BED blocks, and there will be no mismatches, Ns, or rep-matches.
-*   **Block Structure**: `bedToPsl` preserves the block structure (exons/introns) defined in BED12 files. If your BED file only has 3 columns (chrom, start, end), the PSL will represent a single-block alignment.
-*   **Validation**: Use `pslCheck` after conversion if you intend to upload the file as a track to the UCSC Genome Browser to ensure the resulting PSL is well-formed.
-*   **Coordinate Systems**: Remember that BED is 0-indexed, half-open, while PSL also uses 0-indexing for coordinates. The tool handles this conversion automatically.
+| Command | Description |
+|---------|-------------|
+| bedSort | Sort a BED file. The input and output can be the same file. |
+| fetchChromSizes | Fetch chromosome sizes for a specified UCSC genome database (e.g., hg38, mm10). |
+| pslCheck | Check PSL files for correctness. |
 
 ## Reference documentation
-
-- [ucsc-bedtopsl Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ucsc-bedtopsl_overview.md)
-- [UCSC Binary Utilities Index](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
+- [UCSC Genome Browser Kent Source Utilities](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.aarch64.v492.md)
+- [UCSC Genome Browser Source README](./references/github_com_ucscGenomeBrowser_kent.md)

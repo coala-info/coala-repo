@@ -1,0 +1,199 @@
+[Skip to main content](#content)
+
+Thank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain
+the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in
+Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles
+and JavaScript.
+
+Advertisement
+
+[![Advertisement](//pubads.g.doubleclick.net/gampad/ad?iu=/285/scientific_reports/article&sz=728x90&c=1382928459&t=pos%3Dtop%26type%3Darticle%26artid%3Ds41598-020-80757-5%26doi%3D10.1038/s41598-020-80757-5%26subjmeta%3D114,2785,631,794%26kwrd%3DComputational+biology+and+bioinformatics,Genome+informatics,Software)](//pubads.g.doubleclick.net/gampad/jump?iu=/285/scientific_reports/article&sz=728x90&c=1382928459&t=pos%3Dtop%26type%3Darticle%26artid%3Ds41598-020-80757-5%26doi%3D10.1038/s41598-020-80757-5%26subjmeta%3D114,2785,631,794%26kwrd%3DComputational+biology+and+bioinformatics,Genome+informatics,Software)
+
+[![Scientific Reports](https://media.springernature.com/full/nature-cms/uploads/product/srep/header-d3c533c187c710c1bedbd8e293815d5f.svg)](/srep)
+
+* [View all journals](https://www.nature.com/siteindex)
+* [Search](#search-menu)
+* [Log in](https://idp.nature.com/auth/personal/springernature?redirect_uri=https://www.nature.com/articles/s41598-020-80757-5/tables/3)
+
+* [Content
+  Explore content](#explore)
+* [About the journal](#about-the-journal)
+* [Publish with us](#publish-with-us)
+
+* [Sign up for alerts](https://journal-alerts.springernature.com/subscribe?journal_id=41598)
+* [RSS feed](https://www.nature.com/srep.rss)
+
+1. [nature](/)
+2. [scientific reports](/srep)
+3. [articles](/srep/articles?type=article)
+4. [article](/articles/s41598-020-80757-5)
+5. table
+
+# Table 3 Statistics of the assemblies generated from the raw and corrected real long reads.
+
+From: [Scalable long read self-correction and assembly polishing with multiple sequence alignment](/articles/s41598-020-80757-5)
+
+| Dataset | Corrector | Contigs | Aligned contigs (%) | NGA50 (bp) | NGA75 (bp) | Genome coverage (%) | Errors / 100 kbp | Misassemblies |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| *S. cerevisiae* | Original | 29 | 93.10 | 408,751 | 179,653 | 84.67 | 10,514 | 45 |
+| Canu | 27 | **100.00** | 549,622 | 426,490 | **96.64** | 1291 | 53 |
+| Daccord\(^1\) | \_ | \_ | \_ | \_ | \_ | \_ | \_ |
+| FLAS | **21** | **100.00** | 542,516 | **447,884** | 95.63 | 1423 | 43 |
+| MECAT | 22 | **100.00** | **550,249** | 305,358 | 95.81 | **1154** | **38** |
+| CONSENT | 37 | 97.30 | 524,568 | 419,018 | 94.68 | 1548 | 60 |
+| *D. melanogaster* | Original | 423 | 96.45 | 864,011 | 159,590 | 83.22 | 10,690 | 810 |
+| Canu | 410 | 92.93 | 2,757,690 | 822,577 | **92.95** | 1896 | 845 |
+| Daccord\(^1\) | \_ | \_ | \_ | \_ | \_ | \_ | \_ |
+| FLAS | 407 | 98.53 | 1,123,346 | 363,017 | 92.16 | 2736 | 838 |
+| MECAT | 310 | **99.68** | 1,414,076 | 480,297 | 92.02 | 1731 | **554** |
+| CONSENT | **287** | 98.61 | **5,906,563** | **1,143,682** | 92.26 | **1502** | 804 |
+| *H. sapiens* (chr 1) | Original\(^2\) | 201 | 93.53 | 1,008,692 | \_ | 77.52 | 11,318 | 98 |
+| Canu | 361 | 98.61 | 946,029 | 245,015 | 94.85 | 4689 | 49 |
+| Daccord\(^1\) | \_ | \_ | \_ | \_ | \_ | \_ | \_ |
+| FLAS | 259 | **100.00** | 1,378,242 | 287,113 | 94.89 | 4413 | 50 |
+| MECAT | 237 | 100.00 | 1,698,601 | 289,968 | **94.97** | **4404** | **44** |
+| CONSENT | **154** | 92.21 | **2,777,701** | **736,664** | 92.30 | 4486 | 78 |
+| *H. sapiens* (chr 1) (Flye) | Original | 319 | 97.81 | 11,231,592 | 2,893,011 | **96.24** | 2204 | 44 |
+| Canu | 181 | 98.90 | 3,022,928 | 1,237,577 | 95.69 | 2521 | **27** |
+| Daccord\(^1\) | \_ | \_ | \_ | \_ | \_ | \_ | \_ |
+| FLAS | 169 | **99.41** | 7,733,334 | 2,298,510 | 95.73 | 2677 | 33 |
+| MECAT | 170 | 98.82 | 7,625,451 | 1,475,937 | 95.61 | 2732 | 36 |
+| CONSENT | **153** | 98.69 | **12,088,173** | **3,089,752** | 95.71 | **2057** | 28 |
+
+1. Best results for each metric is highlighted in bold.
+2. \(^1\)As previously mentioned, Daccord results on the three datasets are absent, since it could not be run. \(^2\)For the assembly of the original reads on the *H. sapiens* (chr 1) dataset, QUAST-LG did not provide a metric for the NGA75.
+
+[Back to article page](/articles/s41598-020-80757-5#Tab3)
+
+## Explore content
+
+* [Research articles](/srep/research-articles)
+* [News & Comment](/srep/news-and-comment)
+* [Collections](/srep/collections)
+* [Subjects](/srep/browse-subjects)
+
+* [Follow us on Facebook](https://www.facebook.com/scientificreports)
+* [Follow us on X](https://twitter.com/SciReports)
+* [Sign up for alerts](https://journal-alerts.springernature.com/subscribe?journal_id=41598)
+* [RSS feed](https://www.nature.com/srep.rss)
+
+## About the journal
+
+* [About Scientific Reports](/srep/about)
+* [Contact](/srep/contact)
+* [Journal policies](/srep/journal-policies)
+* [Guide to referees](/srep/guide-to-referees)
+* [Calls for Papers](/srep/calls-for-papers)
+* [Editor's Choice](/srep/editorschoice)
+* [Journal highlights](/srep/highlights)
+* [Open Access Fees and Funding](/srep/open-access)
+
+## Publish with us
+
+* [For authors](/srep/author-instructions)
+* [Language editing services](https://authorservices.springernature.com/go/sn/?utm_source=For+Authors&utm_medium=Website_Nature&utm_campaign=Platform+Experimentation+2022&utm_id=PE2022)
+* [Open access funding](/srep/open-access-funding)
+* [Submit manuscript](https://author-welcome.nature.com/41598)
+
+## Search
+
+Search articles by subject, keyword or author
+
+Show results from
+
+All journals
+This journal
+
+Search
+
+[Advanced search](/search/advanced)
+
+### Quick links
+
+* [Explore articles by subject](/subjects)
+* [Find a job](/naturecareers)
+* [Guide to authors](/authors/index.html)
+* [Editorial policies](/authors/editorial_policies/)
+
+Scientific Reports
+(*Sci Rep*)
+
+ISSN 2045-2322 (online)
+
+## nature.com footer links
+
+### About Nature Portfolio
+
+* [About us](https://www.nature.com/npg_/company_info/index.html)
+* [Press releases](https://www.nature.com/npg_/press_room/press_releases.html)
+* [Press office](https://press.nature.com/)
+* [Contact us](https://support.nature.com/support/home)
+
+### Discover content
+
+* [Journals A-Z](https://www.nature.com/siteindex)
+* [Articles by subject](https://www.nature.com/subjects)
+* [protocols.io](https://www.protocols.io/)
+* [Nature Index](https://www.natureindex.com/)
+
+### Publishing policies
+
+* [Nature portfolio policies](https://www.nature.com/authors/editorial_policies)
+* [Open access](https://www.nature.com/nature-research/open-access)
+
+### Author & Researcher services
+
+* [Reprints & permissions](https://www.nature.com/reprints)
+* [Research data](https://www.springernature.com/gp/authors/research-data)
+* [Language editing](https://authorservices.springernature.com/language-editing/)
+* [Scientific editing](https://authorservices.springernature.com/scientific-editing/)
+* [Nature Masterclasses](https://masterclasses.nature.com/)
+* [Research Solutions](https://solutions.springernature.com/)
+
+### Libraries & institutions
+
+* [Librarian service & tools](https://www.springernature.com/gp/librarians/tools-services)
+* [Librarian portal](https://www.springernature.com/gp/librarians/manage-your-account/librarianportal)
+* [Open research](https://www.nature.com/openresearch/about-open-access/information-for-institutions)
+* [Recommend to library](https://www.springernature.com/gp/librarians/recommend-to-your-library)
+
+### Advertising & partnerships
+
+* [Advertising](https://partnerships.nature.com/product/digital-advertising/)
+* [Partnerships & Services](https://partnerships.nature.com/)
+* [Media kits](https://partnerships.nature.com/media-kits/)
+* [Branded
+  content](https://partnerships.nature.com/product/branded-content-native-advertising/)
+
+### Professional development
+
+* [Nature Awards](https://www.nature.com/immersive/natureawards/index.html)
+* [Nature Careers](https://www.nature.com/naturecareers/)
+* [Nature
+  Conferences](https://conferences.nature.com)
+
+### Regional websites
+
+* [Nature Africa](https://www.nature.com/natafrica)
+* [Nature China](http://www.naturechina.com)
+* [Nature India](https://www.nature.com/nindia)
+* [Nature Japan](https://www.natureasia.com/ja-jp)
+* [Nature Middle East](https://www.nature.com/nmiddleeast)
+
+* [Privacy
+  Policy](https://www.nature.com/info/privacy)
+* [Use
+  of cookies](https://www.nature.com/info/cookies)
+* Your privacy choices/Manage cookies
+* [Legal
+  notice](https://www.nature.com/info/legal-notice)
+* [Accessibility
+  statement](https://www.nature.com/info/accessibility-statement)
+* [Terms & Conditions](https://www.nature.com/info/terms-and-conditions)
+* [Your US state privacy rights](https://www.springernature.com/ccpa)
+
+[![Springer Nature](/static/images/logos/sn-logo-white-c8f7a9c061.svg)](https://www.springernature.com/)
+
+© 2026 Springer Nature Limited
+
+![](https://verify.nature.com/verify/nature.png)

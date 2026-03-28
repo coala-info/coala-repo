@@ -485,3 +485,6 @@ FILE:
     If no input file is specified, input will be read from stdin.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -64,3 +64,6 @@ options:
   --keep-temp           Keep per-sample temp dirs for debugging
 ```
 
+
+## Metadata
+- **Skill**: generated

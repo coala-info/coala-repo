@@ -166,3 +166,6 @@ ecoli (UCSC assembly: GCF_000005845.2)
 Browse a genome: tgv -g <genome> (e.g. tgv -g rat)
 ```
 
+
+## Metadata
+- **Skill**: generated

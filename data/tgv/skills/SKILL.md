@@ -1,6 +1,6 @@
 ---
 name: tgv
-description: The Terminal Genome Viewer (tgv) is a lightweight, high-performance tool for exploring genomic data and alignments within a terminal interface. Use when user asks to browse local or remote alignment files, visualize variants and intervals, or jump to specific genes and genomic coordinates using Vim-inspired navigation.
+description: The Terminal Genome Viewer (tgv) is a lightweight, command-line tool for navigating and visualizing genomic datasets using Vim-like keybindings. Use when user asks to browse genomes in the terminal, view BAM or VCF files, jump to specific genes or coordinates, or access remote genomic data from S3 buckets.
 homepage: https://github.com/zeqianli/tgv
 ---
 
@@ -8,61 +8,55 @@ homepage: https://github.com/zeqianli/tgv
 # tgv
 
 ## Overview
+The Terminal Genome Viewer (tgv) provides a lightweight alternative to GUI-based browsers like IGV. It is designed for speed and efficiency, utilizing Vim-like keybindings to navigate through large genomic datasets. It supports local and remote files (including S3 buckets) and allows for rapid jumping between genes, exons, and specific chromosomal positions.
 
-The Terminal Genome Viewer (tgv) is a lightweight, high-performance tool designed for genomic data exploration within a terminal interface. Built in Rust and utilizing the Ratatui library, it provides a "blazing fast" experience with navigation inspired by Vim. It allows researchers to view local or remote alignment files, jump to specific genes or loci, and manage reference genomes without leaving the command line.
+## Core Usage Patterns
 
-## Installation
+### Basic Navigation
+*   **Browse Human Genome (Online):** `tgv`
+*   **Browse Specific Genome:** `tgv -g <genome_name>` (e.g., `tgv -g cat`)
+*   **List Available Genomes:** `tgv list` or `tgv list --more`
+*   **View Local Alignments:** `tgv sorted.bam`
+*   **View Multiple Tracks:** `tgv sorted.bam -v variants.vcf -b intervals.bed`
+*   **Remote S3 Access:** `tgv s3://bucket/file.bam -g hg19 -r TP53`
 
-Install tgv using one of the following package managers:
+### In-App Controls (Normal Mode)
+*   **Movement:** `h`/`j`/`k`/`l` (Left/Down/Up/Right)
+*   **Fast Scroll:** `y` (Fast Left), `p` (Fast Right)
+*   **Zooming:** `z` (Zoom In), `o` (Zoom Out)
+*   **Genomic Jumps:**
+    *   `W` / `B`: Next / Previous Gene
+    *   `w` / `b`: Next / Previous Exon
+*   **Command Mode:**
+    *   `:q`: Quit
+    *   `:ls`: Switch Chromosomes
+    *   `:<gene_name>`: Jump to gene (e.g., `:TP53`)
+    *   `:<chr>:<pos>`: Jump to coordinate (e.g., `:1:123456`)
+*   **Multipliers:** Prefix movements with numbers (e.g., `20B` to move left by 20 genes).
 
-- **Cargo**: `cargo install tgv --locked`
-- **Homebrew**: `brew install zeqianli/tgv/tgv`
-- **Conda**: `conda install bioconda::tgv`
+## Expert Tips & Best Practices
 
-## Core CLI Patterns
+### Performance Optimization
+*   **Local Caching:** For frequently used genomes, download a local cache to significantly increase rendering speed:
+    `tgv download hg38`
+*   **Indexing:** Ensure all BAM, VCF, and BED files are properly indexed (`.bai`, `.tbi`) before opening. TGV relies on these indices for fast random access.
+*   **No-Reference Mode:** If working with a non-standard assembly or a BAM without a matching reference in TGV, use the `--no-reference` flag:
+    `tgv sample.bam -r 1:500 --no-reference`
 
-### Basic Browsing
-- **Default (hg38)**: Simply run `tgv` to browse the human genome (requires internet for initial fetch).
-- **Specific Genome**: Use `tgv -g <genome_name>` (e.g., `tgv -g cat`).
-- **List Available Genomes**: Run `tgv list` or `tgv list --more` to see supported reference genomes.
+### Remote Workflows
+*   **SSH Sessions:** TGV is ideal for SSH. If the UI flickers, ensure your terminal emulator supports high-speed rendering (like Alacritty or Kitty) and that your `TERM` environment variable is set correctly (e.g., `xterm-256color`).
+*   **Mouse Support:** TGV supports mouse interactions for scrolling and selection; ensure your terminal protocol allows mouse reporting if you prefer it over Vim keys.
 
-### Visualizing Alignments
-- **Local BAM**: `tgv sorted.bam`
-- **With Variants and Intervals**: `tgv sorted.bam -v variants.vcf -b intervals.bed`
-- **Remote Files**: `tgv s3://my-bucket/sorted.bam -g hg19`
-- **No Reference Mode**: `tgv non_human.bam --no-reference -r 1:100-200`
 
-### Navigation and Jump
-- **Start at Region**: `tgv -r 1:2345`
-- **Start at Gene**: `tgv -r TP53`
 
-## Navigation Shortcuts (Vim-motion)
+## Subcommands
 
-| Key | Action |
-|---|---|
-| **h / l** | Move left / right |
-| **j / k** | Move down / up (tracks) |
-| **y / p** | Faster move left / right |
-| **W / B** | Jump to next / previous gene |
-| **w / b** | Jump to next / previous exon |
-| **z / o** | Zoom in / out |
-| **_number_ + _key_** | Repeat movement (e.g., `20B` moves left by 20 genes) |
-
-## Command Mode (:)
-
-Press `:` to enter command mode for specific actions:
-- `:q` : Quit the application.
-- `:ls` : Open the chromosome selection menu.
-- `:<gene_name>` : Jump to a specific gene (e.g., `:TP53`).
-- `:<chr>:<pos>` : Jump to a specific coordinate (e.g., `:1:123456`).
-
-## Expert Tips
-
-- **Performance Caching**: If you use a specific reference genome frequently, download it locally to eliminate network latency: `tgv download hg38`. Caches are stored in `~/.tgv` by default.
-- **Remote Indexing**: When viewing remote BAM files, ensure the index file (.bai) is also accessible at the same remote location.
-- **Mouse Support**: tgv supports mouse interactions for scrolling and selection within the terminal UI.
-- **Normal Mode**: If the interface seems unresponsive to commands, press `Esc` to ensure you are in "Normal Mode" before typing commands or motions.
+| Command | Description |
+|---------|-------------|
+| tgv download | Download command |
+| tgv_list | Browse a genome: tgv -g <genome> (e.g. tgv -g rat) |
 
 ## Reference documentation
-- [Main Repository and Usage](./references/github_com_zeqianli_tgv.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_tgv_overview.md)
+- [GitHub Repository Overview](./references/github_com_zeqianli_tgv.md)
+- [Installation Guide](./references/github_com_zeqianli_tgv_wiki_Installation.md)
+- [Usage and Keybindings](./references/github_com_zeqianli_tgv_wiki_Usage.md)

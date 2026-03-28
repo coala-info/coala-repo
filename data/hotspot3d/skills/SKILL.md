@@ -1,6 +1,6 @@
 ---
 name: hotspot3d
-description: hotspot3d identifies mutation hotspots by analyzing the 3D spatial proximity of amino acids within protein structures. Use when user asks to identify 3D mutation clusters, process MAF files for structural proximity, or visualize mutation hotspots in protein models.
+description: "HotSpot3D maps linear protein sequence mutations onto 3D structures to identify and analyze spatial mutation clusters. Use when user asks to identify spatial hotspots, map mutations to 3D protein structures, or determine the statistical significance of mutation clusters."
 homepage: https://github.com/ding-lab/hotspot3d
 ---
 
@@ -8,65 +8,68 @@ homepage: https://github.com/ding-lab/hotspot3d
 # hotspot3d
 
 ## Overview
+HotSpot3D is a specialized bioinformatics suite that maps linear protein sequence mutations onto 3D structures. This allows researchers to identify spatial clusters (hotspots) that may be functionally significant but are separated by large distances in a 1D sequence. The tool facilitates the correlation of these hotspots with known protein domains, drug-binding sites, and COSMIC annotations.
 
-hotspot3d is a specialized bioinformatics tool used to identify mutation "hotspots" by analyzing the 3D proximity of amino acids within protein structures. While mutations may appear distant in a linear protein sequence, they often cluster together in the folded 3D conformation. This tool allows researchers to correlate these spatial clusters with known domains, other mutations, or drug-binding sites. Use this skill when you need to process Mutation Annotation Format (MAF) files to find clusters that might have functional or therapeutic significance.
+## Core Workflow
 
-## Core Workflow and CLI Patterns
-
-The hotspot3d workflow is divided into two main phases: Preprocessing (generating or downloading structural proximity data) and Analysis (searching and clustering specific mutation data).
+The standard HotSpot3D pipeline follows a two-phase approach: Preprocessing and Analysis.
 
 ### 1. Preprocessing
-Before analyzing mutations, the tool requires proximity data for the proteins of interest.
+Preprocessing prepares the structural environment and annotations. While you can generate these from scratch, using pre-calculated data from Synapse is recommended for efficiency.
 
-*   **Automated Preprocessing**: Run the full suite of annotations (ROI, p-values, transcripts, COSMIC).
-    ```bash
-    hotspot3d prep --output-dir=preprocessing_dir
-    ```
-*   **Updating Proximity Files**: Calculate 3D distances from PDB files.
-    ```bash
-    hotspot3d uppro --output-dir=preprocessing_dir --pdb-file-dir=pdb_files_dir --drugport-file=drugport_results
-    ```
+*   **Update Proximity:** Calculate distances between residues in PDB files.
+    `hotspot3d uppro --output-dir=prep_dir --pdb-file-dir=pdb_dir`
+*   **Run Full Prep:** Executes ROI generation, p-value calculation, and transcript/COSMIC annotation in one step.
+    `hotspot3d prep --output-dir=prep_dir`
 
-### 2. Mutation Analysis
-Once preprocessing is complete, use your specific mutation data (MAF file) to find hotspots.
+### 2. Analysis
+Once the environment is prepped, use your mutation data (MAF file) to find clusters.
 
-*   **Proximity Searching**: Identify pairs of mutations in 3D proximity based on your MAF.
-    ```bash
-    hotspot3d search --maf-file=your_input.maf --prep-dir=preprocessing_dir
-    ```
-*   **Clustering**: Group the pairwise proximity data into clusters.
-    ```bash
-    hotspot3d cluster --pairwise-file=3D_Proximity.pairwise --maf-file=your_input.maf
-    ```
-*   **Significance Testing**: Determine the statistical significance of identified clusters.
-    ```bash
-    hotspot3d sigclus --prep-dir=preprocessing_dir --pairwise-file=3D_Proximity.pairwise --clusters-file=3D_Proximity.pairwise.singleprotein.collapsed.clusters
-    ```
+*   **Search:** Identify proximity information for your specific mutations.
+    `hotspot3d search --maf-file=input.maf --prep-dir=prep_dir`
+*   **Cluster:** Group pairwise data into clusters.
+    `hotspot3d cluster --pairwise-file=3D_Proximity.pairwise --maf-file=input.maf`
+*   **Significance:** Determine the statistical significance of identified clusters.
+    `hotspot3d sigclus --prep-dir=prep_dir --pairwise-file=3D_Proximity.pairwise --clusters-file=output.clusters`
+*   **Summary:** Generate a human-readable summary of the clustering results.
+    `hotspot3d summary --clusters-file=output.clusters`
 
-### 3. Summarization and Visualization
-*   **Summary**: Generate a flat-file summary of the clustering results.
-    ```bash
-    hotspot3d summary --clusters-file=3D_Proximity.pairwise.singleprotein.collapsed.clusters
-    ```
-*   **Visualization**: Generate scripts for PyMol to visualize the 3D clusters.
-    ```bash
-    hotspot3d visual --pairwise-file=3D_Proximity.pairwise --clusters-file=3D_Proximity.pairwise.singleprotein.collapsed.clusters --pdb=3XSR
-    ```
+## Input Requirements (MAF Format)
+HotSpot3D requires a standard .maf file but necessitates two non-standard columns for proper mapping:
+1.  **Transcript ID:** Ensembl coding transcript IDs (e.g., ENST00000275493).
+2.  **Protein Change:** HGVS p. single-letter abbreviations (e.g., p.L858R).
 
-## Input Requirements and Best Practices
+Essential standard columns include: `Hugo_Symbol`, `Chromosome`, `Start_Position`, `End_Position`, `Variant_Classification`, `Reference_Allele`, `Tumor_Seq_Allele1`, `Tumor_Seq_Allele2`, and `Tumor_Sample_Barcode`.
 
-### MAF File Specifications
-hotspot3d requires a standard .maf file but necessitates specific columns for successful mapping:
-*   **Standard Columns**: `Hugo_Symbol`, `Chromosome`, `Start_Position`, `End_Position`, `Variant_Classification`, `Reference_Allele`, `Tumor_Seq_Allele1`, `Tumor_Seq_Allele2`, `Tumor_Sample_Barcode`.
-*   **Required Custom Columns**:
-    *   **Transcript ID**: Ensembl coding transcript IDs (e.g., ENST00000275493).
-    *   **Protein Change**: HGVS p. single-letter abbreviations (e.g., p.L858R).
+## Expert Tips & Best Practices
+*   **Drug Interactions:** To include drug-mutation proximity, run the `drugport` module first to parse the DrugPort database before running `uppro`.
+*   **Visualization:** Use the `visual` command to generate scripts for PyMol. This is the most effective way to validate if a cluster makes structural sense.
+    `hotspot3d visual --pairwise-file=3D_Proximity.pairwise --clusters-file=output.clusters --pdb=PDB_ID`
+*   **Distance Cutoffs:** By default, proximity data usually contains pairs within 20 Angstroms. If your analysis requires tighter clusters, you may need to filter the `.pairwise` file before clustering.
+*   **Environment Setup:** Ensure `PERL5LIB` and `PATH` include the HotSpot3D installation directories, as the tool relies on several Perl modules (LWP::Simple, Parallel::ForkManager).
 
-### Expert Tips
-*   **Preprocessed Data**: Instead of generating proximity files for the entire proteome (which is computationally expensive), download pre-calculated human protein proximity data from Synapse (e.g., GRCh37/Ensembl 74 or GRCh38/Ensembl 87).
-*   **Distance Cutoff**: By default, proximity data typically includes pairs within 20 Angstroms. This is generally sufficient for most biological hotspot applications.
-*   **Drug Integration**: Use the `drugport` module to parse DrugPort data if you intend to identify mutation-drug clusters for precision medicine research.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cluster | Cluster mutation-mutation, mutation-drug, or mutation-site pairs using network or density-based methods. |
+| drugport | Drugport parsing tool for HotSpot3D |
+| hotspot3d | 3D mutation proximity analysis program. |
+| hotspot3d | 3D mutation proximity analysis program. |
+| hotspot3d | 3D mutation proximity analysis program. Preprocessing steps include parsing drugport database, updating proximity files, and running ROI generation, statistical calculation, annotation, and prioritization. |
+| hotspot3d | 3D mutation proximity analysis program. |
+| main | Hotspot3D main pipeline for proximity search, clustering, and analysis of mutations. |
+| prep | Preparation step for Hotspot3D to generate proximity files and perform various analysis steps. |
+| prior | Calculate prior probabilities for Hotspot3D analysis |
+| search | Search for proximity results using HotSpot3D preprocessing results |
+| sigclus | Calculate significance of clusters using simulations |
+| summary | Summarize Hotspot3D clusters |
+| trans | Generate proximity files for 3D hotspots |
+| uppro | Generate proximity files for proteins using PDB data and distance measures. |
+| visual | Visualize clusters and mutations using PyMol scripts |
 
 ## Reference documentation
-- [hotspot3d GitHub Repository](./references/github_com_ding-lab_hotspot3d.md)
-- [hotspot3d Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_hotspot3d_overview.md)
+- [HotSpot3D GitHub Repository](./references/github_com_ding-lab_hotspot3d.md)
+- [HotSpot3D Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_hotspot3d_overview.md)

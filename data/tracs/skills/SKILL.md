@@ -1,6 +1,6 @@
 ---
 name: tracs
-description: tracs estimates genetic distances between microbial samples to infer transmission chains from noisy or metagenomic data. Use when user asks to estimate genetic distance, infer transmission chains, build a reference database, align reads, calculate SNP distances, cluster samples, or visualize transmission networks.
+description: TRACS infers transmission links and genetic distances between bacterial samples by analyzing metagenomic data with an empirical Bayes approach. Use when user asks to build a reference database, align reads, calculate SNP distances, or identify transmission clusters and outbreaks.
 homepage: https://github.com/gtonkinhill/tracs
 ---
 
@@ -8,54 +8,82 @@ homepage: https://github.com/gtonkinhill/tracs
 # tracs
 
 ## Overview
-`tracs` (Transmission Analysis from Complex Samples) is a specialized tool for estimating the genetic distance between microbial samples to determine how closely they are related in a transmission chain. It excels in handling "noisy" data—such as metagenomic samples or multi-strain infections—by aligning reads to multiple reference genomes. This allows it to calculate a robust lower bound for SNP distances, helping researchers identify transmission events even when sequence coverage is inconsistent.
+
+TRACS (Transmission Reconstruction from Metagenomic Samples) is a specialized bioinformatic tool designed to infer transmission links between bacterial samples. It is particularly robust when working with complex metagenomic data or samples containing multiple strains, where traditional single-reference SNP calling might fail or provide biased results. By employing an empirical Bayes approach and aligning reads to multiple reference genomes, TRACS provides a conservative "lower bound" estimate of the genetic distance (SNPs) and the number of intermediate hosts separating two samples.
 
 ## Installation and Dependencies
-The tool is primarily distributed via Bioconda. For alignment-based workflows, several external binaries must be available in your system PATH.
+
+TRACS can be installed via Conda or Pip:
 
 ```bash
-# Installation via Conda
+# Recommended: Conda installation
 conda install bioconda::tracs
 
-# Manual installation for latest features
+# Manual installation via Pip
 pip3 install git+https://github.com/gtonkinhill/tracs
 ```
 
-**Required External Tools:**
-*   `samtools` (for alignment processing)
-*   `minimap2` (for sequence alignment)
-*   `htsbox` (required for generating alignments)
+**Note**: For alignment functionality, ensure the following tools are installed and available in your PATH:
+- `samtools`
+- `minimap2`
+- `htsbox`
 
-## Core Workflow and CLI Usage
-The `tracs` suite is organized into several functional modules, typically accessed via the main runner or specific script runners.
+## Core Command Line Usage
+
+TRACS operates through a series of specialized modules. You can call them via the main `tracs` entry point or individual runner scripts.
 
 ### 1. Database Preparation
-Before aligning samples, you must build a reference database from one or more reference genomes.
-*   **Runner**: `build_db_runner.py`
-*   **Tip**: Using multiple diverse reference genomes improves the accuracy of the lower-bound SNP estimate.
+Before aligning reads, you must prepare the reference database.
+- **Command**: `tracs build_db`
+- **Purpose**: Indexes and prepares multiple reference genomes to allow for robust distance estimation across diverse genetic backgrounds.
 
 ### 2. Alignment
-Align your single-isolate or metagenomic reads against the prepared database.
-*   **Runner**: `align-runner.py`
-*   **Requirement**: Ensure `minimap2` and `samtools` are installed.
+Map your metagenomic or isolate reads against the prepared database.
+- **Command**: `tracs align`
+- **Requirement**: Requires `minimap2` and `samtools`.
+- **Best Practice**: Use this when you have raw FASTQ data and need to generate the intermediate alignment files required for distance calculation.
 
 ### 3. Distance Estimation
-This is the core analytical step that uses an empirical Bayes approach to account for coverage variation.
-*   **Runner**: `distance_runner.py`
-*   **Output**: Pairwise SNP distances and estimated number of intermediate hosts.
+The core analytical step of TRACS.
+- **Command**: `tracs distance`
+- **Function**: Uses an empirical Bayes framework to calculate the pairwise SNP distances. It specifically accounts for variable coverage depths common in metagenomic sequencing.
 
-### 4. Downstream Analysis
-Once distances are calculated, you can cluster samples or visualize the transmission network.
-*   **Clustering**: `cluster-runner.py`
-*   **Thresholding**: `threshold-runner.py` (used to define transmission cutoffs)
-*   **Visualization**: `plot-runner.py`
+### 4. Clustering and Thresholding
+Once distances are calculated, use these modules to identify transmission clusters.
+- **Commands**: `tracs threshold` and `tracs cluster`
+- **Usage**: Define SNP cutoffs to group samples into potential transmission chains or outbreaks.
 
-## Best Practices
-*   **Metagenomic Samples**: `tracs` is specifically optimized for metagenomic data where traditional consensus-based SNP calling often fails. Use it when you suspect samples contain minor variants or multiple strains of the same species.
-*   **SNP Distance Limits**: Do not use `tracs` for estimating very large evolutionary distances. It is designed for high-resolution transmission inference (small SNP distances) within an outbreak context.
-*   **Reference Selection**: The tool's "lower bound" logic relies on the quality of the reference genomes provided. Always include a reference that is closely related to the outbreak strain if available.
-*   **Pipeline Execution**: For most standard workflows, `pipe-runner.py` can be used to chain these steps together into a single execution.
+### 5. Pipeline Execution
+For a streamlined workflow from raw data to results.
+- **Command**: `tracs pipe`
+- **Function**: Wraps the build, align, and distance steps into a single execution path.
+
+### 6. Visualization
+- **Command**: `tracs plot`
+- **Function**: Generates visual representations of the transmission distances and clusters to aid in epidemiological interpretation.
+
+## Expert Tips and Best Practices
+
+- **SNP Distance Limits**: TRACS is optimized for high-resolution transmission inference (small SNP distances). It is not intended for estimating large phylogenetic distances between highly divergent strains.
+- **Metagenomic Advantage**: When working with metagenomic samples, TRACS is superior to standard isolate-based pipelines because it doesn't assume a single dominant strain is present; it looks for the "closest" possible link between samples.
+- **Lower Bound Interpretation**: Always remember that TRACS provides a **lower bound** estimate. This makes it a conservative tool for ruling out transmission (i.e., if the lower bound is high, transmission is very unlikely).
+- **Reference Selection**: Aligning to multiple reference genomes helps mitigate "reference bias," where the choice of a single reference might hide SNPs in accessory genome regions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build-db | Builds a database for tracs |
+| pipe | A script to run the full TRACS pipeline. |
+| tracs_align | Uses sourmash to identify reference genomes within a read set and then aligns reads to each reference using minimap2 |
+| tracs_cluster | Groups samples into putative transmission clusters using single linkage clustering |
+| tracs_combine | Combine runs of TRACS'm align ready for distance estimation |
+| tracs_distance | Estimates pairwise SNP and transmission distances between each pair of samples aligned to the same reference genome. |
+| tracs_plot | Generates plots from a pileup file. |
+| tracs_threshold | Estimates transmission thresholds. |
 
 ## Reference documentation
-- [tracs Overview](./references/anaconda_org_channels_bioconda_packages_tracs_overview.md)
-- [tracs GitHub Repository](./references/github_com_gtonkinhill_tracs.md)
+- [TRACS GitHub Repository](./references/github_com_gtonkinhill_tracs.md)
+- [TRACS README](./references/github_com_gtonkinhill_tracs_blob_main_README.md)

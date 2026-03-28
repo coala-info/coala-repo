@@ -1,6 +1,6 @@
 ---
 name: hyphy
-description: HyPhy is a software package for molecular evolution research that performs hypothesis testing to identify signatures of natural selection in genetic sequences. Use when user asks to detect gene-wide selection, identify branch-specific or site-specific selection, test for relaxed selection, or screen for recombination.
+description: HyPhy is a specialized framework for comparative sequence analysis used to identify selective pressures at the gene, site, or branch level. Use when user asks to detect selection using methods like FEL, MEME, or BUSTED, test for relaxation of selection with RELAX, or identify recombination using GARD.
 homepage: http://hyphy.org/
 ---
 
@@ -8,60 +8,73 @@ homepage: http://hyphy.org/
 # hyphy
 
 ## Overview
+HyPhy (Hypothesis Testing using Phylogenies) is a specialized framework for comparative sequence analysis. It is primarily used by bioinformaticians to identify selective pressures at the gene, site, or branch level. While it provides a powerful scripting language (HBL) for custom model development, most users interact with it through a library of standardized, high-performance analysis pipelines. It supports nucleotide, amino-acid, and codon data, and is optimized for multi-threaded (MP) or cluster-based (MPI) execution.
 
-HyPhy (Hypothesis Testing using Phylogenies) is a specialized software package designed for molecular evolution research. It allows users to test specific hypotheses about how genetic sequences evolve over time, with a primary focus on identifying signatures of natural selection. This skill helps you navigate the suite of available methods to determine whether selection is acting on an entire gene, specific lineages, or individual sites within an alignment. It also provides the necessary command-line patterns to execute these analyses and prepare results for visualization.
+## CLI Usage Patterns
+The `hyphy` command (or `HYPHYMP`) typically triggers an interactive menu if run without arguments. For automated workflows, provide the path to a standard analysis or a custom `.bf` script.
 
-## Method Selection Guide
+### Running Standard Analyses
+Standard analyses are located in the HyPhy library directory. You can call them by name or path:
+```bash
+# General syntax
+hyphy <analysis_name> --alignment <path> --tree <path> [options]
 
-Choosing the correct method is critical for a valid evolutionary hypothesis test. Use the following logic to select a tool:
+# Example: Detecting selection at sites using FEL
+hyphy fel --alignment data.fasta --tree tree.nwk --code Universal
+```
 
-| Goal | Recommended Method |
-| :--- | :--- |
-| **Gene-wide selection** (Has the gene experienced selection anywhere?) | **BUSTED** |
-| **Branch-specific selection** (Which lineages are under selection?) | **aBSREL** |
-| **Pervasive site selection** (Which sites are selected across the whole tree?) | **FUBAR** (preferred) or **FEL** |
-| **Episodic site selection** (Which sites are selected on some branches?) | **MEME** |
-| **Relaxed selection** (Has selection pressure weakened on certain branches?) | **RELAX** |
-| **Directional selection** (Is there a bias toward a specific amino acid?) | **FADE** |
-| **Recombination detection** (Pre-processing to avoid false positives) | **GARD** |
+### Common Selection Detection Methods
+*   **FUBAR**: Preferred for pervasive selection (sites). Fast and Bayesian.
+*   **MEME**: Preferred for episodic selection (sites). Detects selection that affects only a subset of branches.
+*   **aBSREL**: Preferred for branch-specific selection. Tests if specific lineages have experienced diversification.
+*   **BUSTED**: Gene-wide test for episodic selection. Use when you want to know if *any* site on *any* branch is under selection.
+*   **RELAX**: Tests if selection pressure has been relaxed or intensified on a set of "test" branches compared to "reference" branches.
 
-## Command Line Usage
+### Environment and Paths
+If HyPhy cannot find its library files, specify the `LIBPATH` or set the environment variable:
+```bash
+# Inline path specification
+hyphy LIBPATH=/usr/local/lib/hyphy <analysis>
 
-HyPhy 2.4+ functions as a standard CLI tool. The general syntax is:
-`hyphy <method> --alignment <path> [options]`
+# Environment variable
+export HYPHY_LIB_PATH=/usr/local/lib/hyphy
+```
 
-### Common CLI Patterns
+## HyPhy Batch Language (HBL) Basics
+For custom scripts, HBL uses a syntax similar to C/C++.
+*   **Namespaces**: Use the dot notation (e.g., `namespace.variable`) to avoid global scope collisions.
+*   **Local Functions**: Use `lfunction` instead of `function` to ensure variables remain scoped to the function.
+*   **Data Loading**:
+    ```hbl
+    DataSet myData = ReadDataFile("path/to/file.fasta");
+    DataSetFilter myFilter = CreateFilter(myData, 1); // 1 = Nucleotide/Standard
+    ```
 
-*   **Basic Analysis (Tree included in alignment file):**
-    `hyphy busted --alignment data/ksr2.fna`
+## Expert Tips
+*   **Recombination**: Always run **GARD** (Genetic Algorithm for Recombination Detection) before selection analyses, as recombination can cause false positives in selection detection.
+*   **Parallelization**: Use `HYPHYMPI` for large datasets or complex models like GARD and FUBAR to distribute the load across cluster nodes.
+*   **Genetic Codes**: Ensure the correct `--code` is specified (e.g., `Universal`, `Vertebrate-mtDNA`).
+*   **Output**: HyPhy generates JSON files containing detailed results. Use `hyphy-vision` or web-based tools to visualize these results interactively.
 
-*   **Analysis with Separate Tree File:**
-    `hyphy mem --alignment data/lysin.fna --tree data/lysin.nwk`
 
-*   **Interactive Mode:**
-    Use `-i` to be prompted for parameters (genetic code, p-value thresholds, etc.):
-    `hyphy -i`
 
-*   **Mixed Mode (Specify some flags, prompt for others):**
-    `hyphy -i slac --alignment data/CD2.fasta --code Universal`
+## Subcommands
 
-### Key Arguments
-*   `--alignment`: Path to the multiple sequence alignment (FASTA, PHYLIP, NEXUS).
-*   `--tree`: Path to the Newick-formatted phylogeny.
-*   `--code`: Genetic code (default is `Universal`).
-*   `--output`: Specify a custom path for the resulting JSON file.
-
-## Best Practices and Expert Tips
-
-1.  **Recombination Screening:** Always run **GARD** on your alignment before selection analysis. Recombination can mimic the signal of positive selection, leading to false positives. If GARD finds breakpoints, use the resulting partitioned NEXUS file for subsequent analyses.
-2.  **Synonymous Rate Variation:** When prompted or configuring FEL/SLAC, always enable synonymous rate variation. Assuming a constant *dS* across sites is often biologically unrealistic and can bias *dN/dS* estimates.
-3.  **FUBAR vs. FEL:** For site-specific pervasive selection, **FUBAR** is generally preferred over FEL because it is faster and uses a Bayesian approach that is more robust to small datasets.
-4.  **Visualization:** HyPhy outputs results in JSON format. Do not attempt to read these manually for interpretation. Upload the JSON file to [HyPhy Vision](https://vision.hyphy.org/) for interactive trees and plots.
-5.  **Branch Labeling:** For methods like BUSTED or RELAX that compare "Test" vs "Reference" branches, use the [Phylotree Widget](https://hyphy.org/resources/phylotree/) to label your Newick tree with `{Test}` or `{Reference}` tags before running the CLI.
+| Command | Description |
+|---------|-------------|
+| hyphy_mcc | Test for |
+| hyphy_mclk | RUNNING MOLECULAR CLOCK ANALYSIS |
+| hyphy_meme | Available analysis command line options |
+| hyphy_mgvsgy | Choose Genetic Code |
+| hyphy_molerate | Available analysis command line options |
+| hyphy_mss-ga | Genetic Algorithms for Recombination Detection. Implements a heuristic approach to screening alignments of sequences for recombination, by using the CHC genetic algorithm to search for phylogenetic incongruence among different partitions of the data. The number of partitions is determined using a step-down procedure, while the placement of breakpoints is searched for with the GA. The best fitting model (based on c-AIC) is returned; and additional post-hoc tests run to distinguish topological incongruence from rate-variation. v0.2 adds and spooling results to JSON after each breakpoint search conclusion |
+| hyphy_mss-ga-processor | Read an alignment (and, optionally, a tree) remove duplicate sequences, and prune the tree accordingly. |
+| hyphy_mt | RUNNING MODEL TESTING ANALYSIS Based on the program ModelTest |
+| mss_joint_fitter | Performs a joint MSS model fit to several genes jointly. |
 
 ## Reference documentation
-
-- [Selection Methods Overview](./references/hyphy_org_methods_selection-methods.md)
-- [CLI Tutorial](./references/hyphy_org_tutorials_CLI-tutorial.md)
+- [HyPhy Overview](./references/hyphy_org_about.md)
 - [Getting Started with HyPhy](./references/hyphy_org_getting-started.md)
-- [HyPhy Installation and Environment](./references/hyphy_org_installation.md)
+- [Selection Methods Guide](./references/hyphy_org_methods_selection-methods.md)
+- [HBL libv3 Reference](./references/github_com_veg_hyphy_wiki_libv3.md)
+- [Installation and CLI Options](./references/hyphy_org_installation.md)

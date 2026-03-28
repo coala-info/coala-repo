@@ -1,6 +1,6 @@
 ---
 name: halfdeep
-description: HalfDeep detects genomic intervals covered at half the expected depth to identify correctly separated or uncollapsed haplotypes in genome assemblies. Use when user asks to identify half-depth regions, detect assembly artifacts, or perform quality control on genome assemblies using read mapping or k-mer analysis.
+description: HalfDeep automates the detection of genomic regions with half-depth coverage signatures to identify assembly errors or haploid sequences in diploid genome assemblies. Use when user asks to align raw reads to an assembly, compute per-base depth, or identify statistically significant intervals that deviate from expected global coverage.
 homepage: https://github.com/richard-burhans/HalfDeep
 ---
 
@@ -8,82 +8,70 @@ homepage: https://github.com/richard-burhans/HalfDeep
 # halfdeep
 
 ## Overview
-HalfDeep is a specialized bioinformatics suite used to detect genomic intervals covered at half the expected depth by sequenced reads. In the context of genome assembly, half-depth coverage typically signifies regions where the assembly has correctly separated alleles (haplotypes) or, conversely, where a region should have been collapsed but wasn't. It is a critical tool for assembly curation and quality control. The workflow involves mapping reads to an assembly, calculating depth, and identifying statistical outliers that match the half-depth profile.
 
-## Installation and Dependencies
-HalfDeep requires the following tools to be available in your `$PATH`:
-- **minimap2**: For read mapping.
-- **samtools**: For BAM processing.
-- **genodsp** (v0.0.8+): For depth signal processing.
+HalfDeep is a specialized toolset for automated detection of "half-depth" genomic regions. In the context of diploid genome assembly, regions that should be represented twice but are only represented once (or vice versa) show characteristic coverage signatures. HalfDeep automates the pipeline of aligning raw reads to an assembly, computing per-base depth, and identifying statistically significant intervals that deviate from the expected global coverage. It is designed to work within a specific directory structure similar to the VGP (Vertebrate Genomes Project) assembly pipeline.
 
-Install via Bioconda:
-```bash
-conda install bioconda::halfdeep
-```
+## Requirements and Setup
+
+Before running HalfDeep, ensure the following dependencies are in your `$PATH`:
+- `minimap2`
+- `samtools`
+- `genodsp` (version 0.0.8 or newer)
+- The HalfDeep shell and Python scripts
 
 ## Core Workflow
-The tool expects a specific directory structure similar to the VGP (Vertebrate Genomes Project) pipeline.
 
-### 1. Preparation
-Create a File of Filenames (`input.fofn`) containing the paths to your raw sequencing files (e.g., `.fastq.gz`).
+### 1. Prepare the Assembly
+Index your assembly using `minimap2`. Choose the appropriate preset for your read type (e.g., `map-pb` for PacBio subreads, `map-hifi` for HiFi).
+
+```bash
+minimap2 -x map-pb -d assembly.idx assembly.fasta.gz
+```
+
+### 2. Initialize Input Files
+Create a "File of Filenames" (`input.fofn`) containing the paths to your raw sequencing files (FASTQ).
+
 ```bash
 ls pacbio/*.fastq.gz > input.fofn
 ```
 
-### 2. Mapping and Depth Calculation
-Run `bam_depth.sh` for each sequencing file. The second argument is the line number in `input.fofn` to process.
+### 3. Generate Depth Data
+Run the `bam_depth.sh` script (or its variants) for each file in your `input.fofn`. The second argument is the line number in the `.fofn` to process.
+
+- **PacBio Subreads:** `bam_depth.sh <ref.fasta> <line_number>`
+- **PacBio HiFi:** `bam_depth.hifi.sh <ref.fasta> <line_number>`
+- **Illumina:** `bam_depth.illumina.sh <ref.fasta> <line_number>`
+- **Assembly-to-Assembly (5% divergence):** `bam_depth.asm5.sh <ref.fasta> <line_number>`
+- **Assembly-to-Assembly (20% divergence):** `bam_depth.asm20.sh <ref.fasta> <line_number>`
+
+### 4. Call Half-Depth Intervals
+Once all depth files are generated, run the main caller to produce the `halfdeep.dat` file.
+
 ```bash
-# Process the first fastq file in input.fofn
-bam_depth.sh assembly.fasta 1
-
-# Process the second fastq file
-bam_depth.sh assembly.fasta 2
-```
-**Technology-Specific Scripts:**
-- For HiFi reads: Use `bam_depth.hifi.sh`
-- For Illumina reads: Use `bam_depth.illumina.sh`
-- For specific alignment presets: Use `bam_depth.asm5.sh` or `bam_depth.asm20.sh`
-
-### 3. Interval Detection
-Once all individual depth files are generated, run the main detection script to produce the `halfdeep.dat` output.
-```bash
-halfdeep.sh assembly.fasta
-```
-For Illumina-specific detection, use `halfdeep.illumina.sh`.
-
-### 4. K-mer Based Analysis
-If you prefer k-mer depth analysis over mapping-based depth, use the k-mer variant (requires FastK):
-```bash
-halfdeep.kmers.sh assembly.fasta
+halfdeep.sh assembly.fasta.gz
 ```
 
-## Visualization (R)
-HalfDeep includes an R script for plotting results. Load the environment and use the provided functions:
+## Output Interpretation
 
-```r
-source("path_to_halfdeep/halfdeep.r")
+The primary output is `halfdeep.dat`. This file contains a list of intervals (1-based, closed) called as "covered at half depth."
 
-# Load data
-scaffolds = read_scaffold_lengths("scaffold_lengths.dat")
-scaffoldToOffset = linearized_scaffolds(scaffolds)
-depth = read_depth("depth.dat.gz", scaffoldToOffset)
-halfDeep = read_halfdeep("halfdeep.dat", scaffoldToOffset)
-percentileToValue = read_percentiles("percentile_commands.sh")
+## Expert Tips and Best Practices
 
-# Plot to screen
-halfdeep_plot(scaffolds, depth, halfDeep, percentileToValue, "Assembly_Name")
+- **Directory Structure:** HalfDeep expects a specific layout. Run commands from a directory containing your `input.fofn` and an `assembly_curated/` folder. It will automatically create a `halfdeep/` directory to store intermediate BAMs and depth files.
+- **Parallelization:** The `bam_depth.sh` scripts are designed to work with SLURM array tasks. If the `<number>` argument is omitted, the script defaults to `$SLURM_ARRAY_TASK_ID`.
+- **Memory Management:** Intermediate `.bam` files can be very large. The HiFi variant (`bam_depth.hifi.sh`) includes commands to remove intermediate BAMs after the compressed depth data is generated to save space.
+- **Visualization:** Use the provided `halfdeep.r` script in R to plot coverage across scaffolds. This is highly recommended for validating the "half-depth" calls visually against the global distribution.
 
-# Plot specific scaffolds to PDF
-halfdeep_plot(scaffolds, depth, halfDeep, percentileToValue, "Assembly_Name", 
-              plotFilename="output.pdf", 
-              scaffoldsToPlot=c("Scaffold_1", "Scaffold_2"))
-```
 
-## Expert Tips
-- **Parallelization**: The `bam_depth.sh` step is designed to be arrayed on a cluster (SLURM/SGE) using the line index argument to process multiple fastq files simultaneously.
-- **Memory Management**: Ensure `genodsp` has enough memory for large assemblies, as it processes the depth signals.
-- **Output Format**: The `halfdeep.dat` file uses 1-based closed intervals.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ./bam_depth | Assumes we have <ref> and input.fofn in the current dir |
+| halfdeep | Assumes we have <ref>.lengths and <input.fofn> in the same dir |
 
 ## Reference documentation
 - [HalfDeep GitHub Repository](./references/github_com_richard-burhans_HalfDeep.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_halfdeep_overview.md)
+- [HalfDeep README](./references/github_com_richard-burhans_HalfDeep_blob_master_README.md)
+- [HiFi Depth Script](./references/github_com_richard-burhans_HalfDeep_blob_master_bam_depth.hifi.sh.md)

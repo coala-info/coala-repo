@@ -519,3 +519,6 @@ Additional options:
   --log-fst-comp: log components of Fst/Phi_st calculations to a file.
 ```
 
+
+## Metadata
+- **Skill**: generated

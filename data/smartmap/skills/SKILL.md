@@ -1,6 +1,6 @@
 ---
 name: smartmap
-description: SmartMap uses an iterative Bayesian algorithm to reweight multi-mapping reads for more accurate genome-wide coverage estimation. Use when user asks to distribute multi-mapping read weights, prepare DNA or RNA alignments for reweighting, or generate weighted BEDGRAPH files from sequencing data.
+description: SmartMap provides a probabilistic approach to reweight and assign multi-mapping sequencing reads using alignment scores and local genomic context. Use when user asks to resolve multi-mapping reads, perform Bayesian reweighting of alignments, or generate weighted BedGraph files for DNA-seq and RNA-seq data.
 homepage: http://shah-rohan.github.io/SmartMap
 ---
 
@@ -8,46 +8,62 @@ homepage: http://shah-rohan.github.io/SmartMap
 # smartmap
 
 ## Overview
-The `smartmap` tool addresses the challenge of multi-mapping reads by using an iterative Bayesian algorithm to distribute read weights based on local genomic context and alignment scores. It transforms standard alignments into weighted BEDGRAPH files, providing a more accurate representation of genome-wide coverage than traditional "unique-only" or "random-assignment" methods. This skill covers the three primary components: `SmartMapPrep` (DNA/Bowtie2), `SmartMapRNAPrep` (RNA/Hisat2), and the core `SmartMap` reweighting binary.
+SmartMap provides a probabilistic approach to multi-mapping reads. Instead of discarding reads that align to multiple genomic locations or picking one at random, it uses alignment scores and local genomic context to iteratively reweight each alignment. The workflow typically involves three stages: alignment and preprocessing (using `SmartMapPrep` or `SmartMapRNAPrep`), followed by the core Bayesian assignment (using the `SmartMap` binary) to generate weighted BedGraph files.
 
-## Workflow and CLI Patterns
+## Workflow and CLI Usage
 
-### 1. Data Preparation (Alignment)
-Before running the Bayesian refinement, reads must be aligned and filtered. The prep scripts automate Bowtie2/Hisat2 execution with specific flags required for the downstream algorithm.
+### 1. Preprocessing (Alignment & BED Generation)
+Use these scripts to align FASTQ files and format them for the reweighting algorithm.
 
-**For DNA-seq (Bowtie2):**
-Use `SmartMapPrep` to generate extended BED files.
+**For DNA-seq (ChIP-seq, ATAC-seq, MNase-seq):**
+Uses Bowtie2.
 ```bash
-SmartMapPrep -x /path/to/bowtie2_index -o output_prefix -1 reads_R1.fq.gz -2 reads_R2.fq.gz -p 8 -k 51
+SmartMapPrep -x [BT2_INDEX] -o [PREFIX] -1 [R1.fastq.gz] -2 [R2.fastq.gz] -p [THREADS] -k 51
 ```
-*   **Key Parameter:** `-k` (default 51) defines the search space for multi-mappers. Increasing this captures more ambiguity but increases computation time.
+*   `-k`: Maximum alignments to report (default 51). Increase for highly repetitive genomes.
+*   `-I` / `-L`: Set minimum/maximum insert sizes (default 100-250).
 
-**For RNA-seq (Hisat2):**
-Use `SmartMapRNAPrep` for splice-aware alignment.
+**For RNA-seq (Strand-specific):**
+Uses Hisat2.
 ```bash
-SmartMapRNAPrep -x /path/to/hisat2_index -o rna_prefix -1 rna_R1.fq.gz -2 rna_R2.fq.gz -p 8
-```
-
-### 2. Bayesian Reweighting
-The core `SmartMap` binary processes the output from the prep stage. It requires a genome lengths file (tab-delimited: `chrom\tlength`).
-
-**Standard Run:**
-```bash
-SmartMap -g hg38.chrom.sizes -o final_weighted -i 10 output_prefix.bed.gz
+SmartMapRNAPrep -x [HISAT2_INDEX] -o [PREFIX] -1 [R1.fastq.gz] -2 [R2.fastq.gz] -p [THREADS]
 ```
 
-**Strand-Specific RNA-seq:**
-If your library is stranded, ensure you use the `-S` flag to generate separate positive and negative strand BEDGRAPHs.
+### 2. Bayesian Reweighting (Core Tool)
+Run the `SmartMap` binary on the `.bed` or `.bed.gz` files generated in the previous step.
+
+**Standard Command:**
 ```bash
-SmartMap -S -g hg38.chrom.sizes -o stranded_output input_splits/*.bed
+SmartMap -g [GENOME_CHROMSIZES] -o [OUTPUT_PREFIX] [INPUT_BEDS...]
 ```
 
-### 3. Expert Tips and Best Practices
-*   **Memory Management:** For large datasets, `SmartMap` processes files in the `splits/` directory created by the prep scripts. You can pass individual split files (e.g., `splits/read_1.bed`, `splits/read_2.bed`) to the binary to manage load.
-*   **Iteration Tuning:** The `-i` parameter defaults to 1. For complex repetitive regions (e.g., transposons or paralogs), increasing iterations (e.g., `-i 5` or `-i 10`) allows the weights to converge more accurately.
-*   **Score Thresholds:** Use `-s` to filter out low-quality alignments if the initial mapping was too permissive.
-*   **Output Handling:** The tool produces Gzipped BEDGRAPH files. These can be converted to BigWig using `wigToBigWig` for visualization in IGV or UCSC Genome Browser.
+**Common Options:**
+*   `-i [INT]`: Number of iterations. 1 is standard; 10 is used for maximum refinement.
+*   `-S`: **Crucial** for RNA-seq; enables strand-specific output.
+*   `-m [INT]`: Max alignments per read to process (default 50). Should match or exceed the `-k` parameter used in Prep.
+*   `-c`: Generates continuous BedGraph files (fills in zeros).
+*   `-l [FLOAT]`: Rate of fitting (default 1.0). Use lower values (e.g., 0.25) for "slow fitting" to prevent over-fitting in complex regions.
+
+### 3. Output Interpretation
+*   **Standard:** Produces a `.bedgraph.gz` file where the score represents the weighted coverage.
+*   **Strand-specific:** Produces two files (one per strand).
+*   **Log files:** Check the `.log` output for convergence metrics and alignment distribution statistics.
+
+## Expert Tips
+*   **Genome Length File:** The `-g` file must be a tab-delimited list of `chromosome [tab] length`. The order in this file determines the order in the output BedGraph.
+*   **Memory Management:** For large datasets with high `-k` values, ensure the system has sufficient RAM, as SmartMap loads alignment metadata into memory to perform iterations.
+*   **Single-End Data:** While the binary can process single-end BED files, the `Prep` scripts are hardcoded for paired-end SAM flags (99, 163, 355, 419). For single-end data, manually convert BAM to the extended BED format required by the binary.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| SmartMap | SmartMap for analysis of ambiguously mapping reads in next-generation sequencing. |
+| SmartMapPrep | SmartMapPrep prepares input files for SmartMap. |
+| SmartMapPrep | SmartMapRNAPrep [options] -x [Bowtie2 index] -o [output prefix] -1 [R1 fastq] -2 [R2 fastq] |
 
 ## Reference documentation
-- [SmartMap User Manual](./references/shah-rohan_github_io_SmartMap.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_smartmap_overview.md)
+- [SmartMap Manual and Documentation](./references/shah-rohan_github_io_SmartMap.md)
+- [SmartMap Analysis Workflow](./references/shah-rohan_github_io_SmartMap_analysis.html.md)

@@ -1,6 +1,6 @@
 ---
 name: itol-config
-description: This tool generates iTOL annotation files by mapping CSV metadata to specific visual styles like color strips, text labels, and matrices. Use when user asks to create iTOL configuration files, map metadata to phylogenetic trees, or generate tree annotation templates from CSV data.
+description: This tool converts CSV datasets into configuration files for iTOL phylogenetic tree annotations. Use when user asks to generate iTOL annotation templates, create color strips for tree nodes, or map metadata onto a phylogenetic tree.
 homepage: https://github.com/jodyphelan/itol-config
 ---
 
@@ -9,64 +9,82 @@ homepage: https://github.com/jodyphelan/itol-config
 
 ## Overview
 
-The `itol-config` tool simplifies the process of creating annotation files for iTOL. Instead of manually constructing the complex header and data blocks required by iTOL, this tool parses standard CSV files and maps metadata to specific visual styles. It is ideal for researchers who need to project metadata (like geographic origin, antibiotic resistance, or species labels) onto large phylogenetic trees.
-
-## Installation
-
-Install the package directly from the source:
-
-```bash
-pip install git+https://github.com/jodyphelan/itol-config.git
-```
+The `itol-config` tool simplifies the process of preparing metadata for iTOL tree visualizations. Instead of manually constructing complex, tab-delimited configuration files required by the iTOL web interface, this tool converts standard CSV datasets into valid iTOL annotation templates. It is particularly useful for high-throughput genomic studies where multiple metadata columns (like geographic origin, host, or resistance markers) need to be mapped onto a phylogenetic tree.
 
 ## CLI Usage Patterns
 
-The primary interface is the `itol-config` command. It generates a separate configuration file for each column in your input CSV (excluding the ID column).
+The primary interface is the `itol-config` command. It processes an input CSV and generates one configuration file per data column.
 
 ### Basic Command Structure
 ```bash
-itol-config --input <input.csv> --out <prefix> --id <id_column> --type <annotation_type>
+itol-config --input metadata.csv --out output_prefix --id Sample_ID --type colour_strip
 ```
 
-### Parameters
-- `--input`: Path to the CSV file containing your metadata.
-- `--out`: Prefix for the generated output files (e.g., `my_tree_annotations`).
-- `--id`: The name of the column in the CSV that matches the leaf/node IDs in your tree file.
-- `--type`: The iTOL annotation class to generate. Supported types include:
-    - `colour_strip`: Creates a colored bar next to the tree leaves.
-    - `text_label`: Adds text annotations to the leaves.
-    - `matrix`: Creates a multi-column heatmap/matrix.
-    - `binary_matrix`: Creates a presence/absence matrix.
+### Key Arguments
+- `--input`: Path to your source CSV file.
+- `--id`: The column name in your CSV that matches the leaf/node IDs in your phylogenetic tree.
+- `--type`: The iTOL annotation format to generate. Currently supported:
+    - `colour_strip`: Creates a colored strip outside the tree.
+    - `text_label`: Adds text annotations to specific nodes.
+- `--out`: Prefix for the resulting `.txt` files.
 
-### Customizing Colors
-By default, the tool assigns colors automatically. To use specific hex codes or color names for categorical values, provide a TOML configuration file:
+## Advanced Configuration
 
-```bash
-itol-config --input data.csv --out out --id SampleID --type colour_strip --colour-conf colors.toml
-```
+### Custom Color Mapping
+By default, the tool assigns colors automatically. To enforce a specific color scheme, use a TOML configuration file with the `--colour-conf` flag.
 
-**TOML Format (`colors.toml`):**
+**Example `colors.toml`:**
 ```toml
-[Column_Name_1]
-ValueA = "#FF0000"
-ValueB = "blue"
+[Country]
+UK = "#ff0000"
+USA = "#0000ff"
+France = "#00ff00"
 
-[Column_Name_2]
-High = "#00FF00"
-Low = "#CCCCCC"
+[Status]
+Resistant = "red"
+Sensitive = "green"
+```
+
+**Command with colors:**
+```bash
+itol-config --input data.csv --id id --type colour_strip --colour-conf colors.toml --out my_tree
+```
+
+## Python API Integration
+
+For custom workflows or dynamic data generation, use the `get_config_writer` factory function.
+
+```python
+from itol_config import get_config_writer
+
+# Data must be a dictionary: { 'node_id': 'value' }
+data_map = {"Node_1": "Group_A", "Node_2": "Group_B"}
+
+writer = get_config_writer(
+    config_type="colour_strip",
+    data=data_map,
+    label="My_Metadata_Layer"
+)
+
+writer.write("itol_annotation_layer.txt")
 ```
 
 ## Expert Tips
+- **ID Matching**: Ensure the values in your `--id` column exactly match the labels in your Newick/Nexus tree file. iTOL is case-sensitive and sensitive to hidden whitespace.
+- **Annotation Types**: If you need to display categorical data (like lineage), `colour_strip` is usually the most readable. Use `text_label` sparingly to avoid cluttering the tree visualization.
+- **Batch Processing**: The CLI generates a separate file for every column in the CSV (excluding the ID column). This allows you to drag and drop multiple layers into iTOL simultaneously to build complex visualizations.
 
-- **ID Matching**: Ensure the values in your `--id` column match the leaf names in your Newick or Nexus tree file exactly. iTOL is case-sensitive and sensitive to special characters.
-- **Batch Processing**: Since the tool generates a file for every column in the CSV, it is often more efficient to create a "master" CSV with all metadata and run the command once per annotation type.
-- **Layer Management**: Use the `--out` prefix to keep your workspace organized. For example, using `--out phenotypic_` will result in files like `phenotypic_ColumnName.txt`, which can be dragged and dropped directly into the iTOL web interface.
-- **Programmatic Access**: For complex workflows, you can import the writer directly in Python:
-  ```python
-  from itol_config import get_config_writer
-  writer = get_config_writer(config_type="colour_strip", data=my_dict, label="MyLabel")
-  writer.write("output_config.txt")
-  ```
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| colour_strip | Generates an iTOL configuration file for colouring tree branches based on sequence metadata. |
+| itol_config | Configuration tool for ITOL |
+| itol_config | Configuration tool for ITOL |
+| itol_config binary_data | Generates an iTOL configuration file for binary data from a CSV input. |
+| itol_config text_label | Generates an iTOL text label configuration file from a CSV file. |
 
 ## Reference documentation
-- [Main README and Usage Guide](./references/github_com_jodyphelan_itol-config.md)
+- [itol-config README](./references/github_com_jodyphelan_itol-config_blob_main_README.md)

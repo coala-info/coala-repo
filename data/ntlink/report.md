@@ -136,3 +136,6 @@ This program built for x86_64-conda-linux-gnu
 Report bugs to <bug-make@gnu.org>
 ```
 
+
+## Metadata
+- **Skill**: generated

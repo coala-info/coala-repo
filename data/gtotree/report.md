@@ -401,3 +401,6 @@ Ex. usage: gtt-subset-GTDB-classes -i GTDB-arc-and-bac-refseq-rep-metadata.tsv
 --get-only-individuals-for-the-rank order
 ```
 
+
+## Metadata
+- **Skill**: generated

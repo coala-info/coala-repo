@@ -1,6 +1,6 @@
 ---
 name: hostile
-description: Hostile decontaminates (meta)genomic datasets by identifying and removing reads that align to a host reference genome. Use when user asks to remove host contamination from sequencing data, decontaminate short or long reads, or mask human genetic information for privacy.
+description: Hostile removes host DNA sequences from metagenomic datasets using masked reference indexes to preserve microbial reads. Use when user asks to clean fastq files, remove human reads from sequencing data, or mask reference genomes to prevent accidental pathogen removal.
 homepage: https://github.com/bede/hostile
 ---
 
@@ -8,66 +8,60 @@ homepage: https://github.com/bede/hostile
 # hostile
 
 ## Overview
-Hostile is a specialized tool for decontaminating (meta)genomic datasets by identifying and removing reads that align to a host reference genome. It utilizes high-performance aligners—Bowtie2 for short reads and Minimap2 for long reads—to process data efficiently. This skill should be used during the preprocessing stage of bioinformatics workflows, especially when working with clinical samples where human DNA contamination is prevalent, or when privacy concerns require the removal of host genetic information.
-
-## Installation
-The recommended way to install Hostile is via Conda/Mamba to ensure all non-Python dependencies (Bowtie2, Minimap2, Samtools, Bedtools) are correctly configured:
-```bash
-conda create -y -n hostile -c conda-forge -c bioconda hostile
-conda activate hostile
-```
+Hostile is a high-performance bioinformatics tool designed to "clean" metagenomic datasets by filtering out DNA sequences belonging to a host organism. Unlike traditional methods that might accidentally discard microbial reads, Hostile uses specialized masked indexes to ensure high sensitivity for pathogens while maintaining >99.5% removal of host DNA. It supports both Bowtie2 (short reads) and Minimap2 (long reads) and can handle streaming data via stdin/stdout.
 
 ## Common CLI Patterns
 
-### Decontaminating Long Reads (ONT)
-By default, Hostile uses Minimap2 for long reads.
-```bash
-# Basic decontamination (creates long.clean.fastq.gz)
-hostile clean --fastq1 long.fastq.gz
+### Basic Decontamination
+By default, Hostile downloads and uses a human T2T (Telomere-to-Telomere) reference index.
 
-# Using a specific index (e.g., Mouse)
-hostile clean --fastq1 long.fastq.gz --index mouse-mm39
+**Short reads (Paired-end):**
+```bash
+hostile clean --fastq1 reads_R1.fastq.gz --fastq2 reads_R2.fastq.gz --output cleaned_reads/
 ```
 
-### Decontaminating Short Reads (Illumina)
-For short reads, Hostile defaults to Bowtie2.
+**Long reads (ONT):**
 ```bash
-# Paired-end reads
-hostile clean --fastq1 short_R1.fastq.gz --fastq2 short_R2.fastq.gz
-
-# Single-end or unpaired reads
-hostile clean --fastq1 short.fastq.gz --aligner bowtie2
+hostile clean --fastq1 reads.fastq.gz --output cleaned_reads/
 ```
 
-### Handling Streams (Piping)
-Hostile supports stdin and stdout for integration into larger command-line pipes.
+### Using Masked Indexes
+To prevent the accidental removal of specific pathogens (like bacteria or viruses), use a masked index.
 ```bash
-# Read from stdin
-cat reads.fastq | hostile clean --fastq1 -
+# Masked against 985 bacterial genomes
+hostile clean --index human-t2t-hla-argos985 --fastq1 reads.fq.gz
 
-# Write to stdout (uncompressed)
-hostile clean --fastq1 reads.fastq.gz -o - > clean.fastq
+# Masked against bacteria, viruses, and phages (best for viral discovery)
+hostile clean --index human-t2t-hla.argos-bacteria-985_rs-viral-202401_ml-phage-202401 --fastq1 reads.fq.gz
+```
+
+### Streaming and Pipelines
+Hostile supports stdin and stdout using the `-` shortcut, allowing it to be piped between other tools.
+```bash
+cat reads.fastq.gz | hostile clean --fastq1 - --output - | gzip > decontaminated.fastq.gz
 ```
 
 ### Privacy and Optimization
-- **Privacy**: Use `--rename` to replace read headers with integers, reducing file size and removing potential metadata.
-- **Performance**: Use `-t` or `--threads` to specify alignment threads (default is 8).
-- **Inversion**: Use `--invert` to keep only the host reads and discard the microbial reads (useful for host-only studies).
+*   **Anonymization**: Use `--rename` to replace original read headers with integers, which also reduces file size.
+*   **Performance**: Hostile automatically detects available CPU cores, but you can provide specific aligner arguments if needed.
+*   **Inverted Mode**: Use `--invert` to keep only the host reads (useful for host genomics or QC).
 
-## Index Management
-Hostile automatically downloads the `human-t2t-hla` index on first run, but you can manage indexes manually to save time or work offline.
+## Expert Tips
+*   **Memory Requirements**: Ensure your environment has at least 4GB RAM for short reads (Bowtie2) and 13GB RAM for long reads (Minimap2).
+*   **Custom Cache**: If working on a cluster with limited home directory space, set the `HOSTILE_CACHE_DIR` environment variable to a high-capacity storage path.
+*   **Offline Usage**: Use the `--airplane` flag to prevent the tool from attempting to check for index updates or downloads when working in air-gapped environments.
+*   **Custom Masking**: If you have a specific organism you must preserve, use the `hostile mask` utility to create a custom index from your own reference genomes.
 
-- **List available standard indexes**: `hostile index list`
-- **Pre-fetch an index**: `hostile index fetch --name human-t2t-hla-argos985`
-- **Custom Indexes**: 
-  - For Minimap2: Provide the path to a FASTA or `.mmi` file: `--index path/to/genome.fa`
-  - For Bowtie2: Provide the path to the index prefix: `--index path/to/bt2-index-name`
 
-## Best Practices
-- **Microbial Retention**: If your research involves pathogens that might be similar to the host, use a "masked" index (e.g., `human-t2t-hla-argos985`) which prevents the removal of known bacterial or viral sequences.
-- **Memory Requirements**: Ensure your environment has at least 4GB of RAM for short reads (Bowtie2) and 13GB for long reads (Minimap2).
-- **Storage**: Set the `HOSTILE_CACHE_DIR` environment variable if you need to store large index files on a specific drive or shared partition.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| clean | Remove reads aligning to an index from fastq[.gz] input files or stdin. |
+| index | Manage and download indexes for use with hostile clean |
+| mask | Mask reference genome against target genome(s) |
 
 ## Reference documentation
-- [Hostile GitHub Repository](./references/github_com_bede_hostile.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_hostile_overview.md)
+- [Hostile README](./references/github_com_bede_hostile_blob_main_README.md)
+- [Hostile Changelog](./references/github_com_bede_hostile_blob_main_CHANGELOG.md)

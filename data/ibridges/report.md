@@ -667,3 +667,6 @@ Examples:
 > ibridges setup some-servername -o ~/.irods/some_server.json
 ```
 
+
+## Metadata
+- **Skill**: generated

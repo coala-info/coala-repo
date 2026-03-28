@@ -1,1 +1,393 @@
-TRE calling | PINTS web portal | Transcription-centric enhancer compendium PINTS web portal Home TRE calling Element matrix Analysis Analyze new dataset &raquo; FAQ TRE calling Part 1: Preprocess sequencing libraries Step I: Figure out the experimental design We believe t ranscription s tart s ites (TSSs) are very important in defining the boundaries of TREs. So the first task is to figure out where we can locate the TSSs in the sequenced libraries. For typical GRO-cap/PRO-cap/csRNA-seq/NET-CAGE libraries, TSSs are usually identical to the 5′ of the reads (single-end). For CoPRO (paired-end), TSSs are identical to the 5′ of read 2. Just like other RNA-sequencing libraries, nascent transcript sequencing libraries may also contain: UMI Template-switching oligos Other barcodes The failure of trimming adapters and other non-genomic sequences from sequencing reads may lead to very low overall mapping rates and affect the downstream quantification. So please also check the details with the data producers or look into the corresponding papers. After you have answers to the above questions, we can move on to the next step. Step II: Process raw reads You can use a set of tools (like fastp , cutadapt ) to trim adapters, UMIs, and any other added sequences. Assume that you have a library back from the facility, which is generated with Illumina Truseq Small RNA kit (RA3 adapter: TGGAATTCTCGGGTGCCAAGG) sequenced in single-end manner You can use fastp to process the reads like this: fastp -i SampleA.fastq.gz \ # input fastq file -o SampleA.trimmed.fastq.gz \ # save the processed reads to this file --adapter_sequence =TGGAATTCTCGGGTGCCAAGG \ # no need to specify for paired-end lib -h report.html \ # save the report to this html file --low_complexity_filter \ # remove low-complexity reads -l 14 \ # only keep reads longer than 14 nt -w 16 # number of threads fastp can create For single-end libraries, if you are not sure about the adapter sequences, you can try to run fastqc , and use the most abundant sequence in the Overrepresented sequences section or the adapters detected in the Adapter Content section. Step III: Align processed reads to the reference genome For aligning sequencing reads back to the reference genome (like hg38, hg19, mm10, etc.), we recommend using STAR . Below is a minimum example showing how you can use STAR to generate both the aligned BAM file and signal tracks for peak calling. STAR --readFilesCommand zcat \ # set this switch if the reads are compressed by gzip --runThreadN 16 \ # number of max threads STAR can create --genomeDir ./refs/indexes/human/star_hg38 \ # path to the genome index --outFileNamePrefix SampleA_ \ # prefix for outputs --readFilesIn ./SampleA.trimmed.fastq.gz \ # reads to be mapped, if you have both read 1 and 2, separate them by a space --outSAMtype BAM SortedByCoordinate \ # output a coordinate-sorted bam What is genome index and how to get one? Most sequence aligners build indexes for the genome sequences ahead of time so when given random sequences, the aligners know effectively where are they on the genome. For STAR, you can build your own index with command like: STAR --runThreadN 16 \ # the number of threads to be used for index generation --runMode genomeGenerate \ --genomeDir /path/to/genomeDir \ # genome indices will be saved to this path --genomeFastaFiles /path/to/genome/fasta1 /path/to/genome/fasta2 # FASTA file(s) with the reference sequences Or you can download prebuild indexes from the author's website or the ENCODE portal . The file SampleA_Aligned.sortedByCoord.out.bam will hold all the aligned reads. STAR requires at least 16 GB memory and recommends 32 GB memory for mammal genomes. If your machine doesn't have enough memory, other aligners, like HISAT2 and bowtie2 can also be used. Step IV: Export signal tracks A common practice after getting the alignments is to visually check how the signal looks in genome browsers like IGV. To generate signal tracks for this purpose, you can use our pints_visualizer like: pints_visualizer -b SampleA_Aligned.sortedByCoord.out.bam \ # the input bam file -e GROcap \ # reads are in the same direction as RNAs, and only report the 5′ end of reads in the output --mapq-threshold 255 \ # only consider uniquely mapped reads --chromosome-start-with chr \ # only reads mapped to contigs start with chr will be included -o SampleA # prefix for outputs Two bigWig files SampleA_pl.bw and SampleA_mn.bw will be generated in the folder. You can load these files into IGV and see the distribution of signals genome-wide. Alternatively, if you are using STAR to generate the alignment, you can add these options to your STAR command: --outWigType wiggle read1_5p --outWigStrand Stranded --outWigNorm None --outWigReferencesPrefix chr STAR will yield four files: SampleA_Signal.Unique.str1.out.wig , SampleA_Signal.Unique.str2.out.wig , SampleA_Signal.UniqueMultiple.str1.out.wig , and SampleA_Signal.UniqueMultiple.str2.out.wig . The first two files are strand-specific signals generated with uniquely mapped reads, which can be converted to bigWig format with wigToBigWig . Part 2: Identify candidate regulatory elements Step I: Get started With the aligned BAM files and the information about the library layout, we can get started with TRE calling. PINTS is a Python package and can be easily installed via pip (automatically installed with Python): pip install pyPINTS After installing PINTS, we can now move on to call peaks from BAM files: pints_caller --bam-file SampleA_Aligned.sortedByCoord.out.bam \ --save-to . \ # TREs will be saved to the current dir --file-prefix SampleA \ # prefix for outputs --exp-type GROcap \ # PINTS will extract the 5′ of reads and treat them as TSS signals --thread 16 # Allow PINTS to create 16 threads concurrently Currently, PINTS knows how to extract TSS information directly from these experiments (for --exp-type ): GROcap (also for single-end PRO-cap libraries), CoPRO (also for paired-end PRO-cap libraries), csRNAseq , NETCAGE , CAGE , RAMPAGE , and STRIPEseq . If the assay you are working with is not listed or you are not using the default layout, you can tell PINTS where it can locate the TSS by specifying R_5 , R1_5 , R1_3 , R2_5 , or R2_3 . If the reads represent the reverse complement of RNAs, you can add --reverse-complement to your command. PINTS will generate four files in this case: SampleA_1_bidirectional_peaks.bed : Bidirectional TREs (divergent + convergent) SampleA_1_divergent_peaks.bed : Divergent TREs SampleA_1_unidirectional_peaks.bed : Unidirectional TREs peakcalling_yyyy_mm_dd_hh_mm_ss.log : Log file PINTS can also take bigwig files as input; in this case, simply replace --bam-file SampleA_Aligned.sortedByCoord.out.bam with --bw-pl SampleA_pl.bw --bw-mn SampleA_mn.bw Step II: Extract candidate enhancers We assume distal bidirectional transcripts are mainly from enhancer RNA transcription. To extract candidate enhancers from the pool of all TREs, we need a bed file that defines proximal TREs (promoters), then we can use bedtools to extract distal TREs as follows: bedtools intersect -a SampleA_1_bidirectional_peaks.bed -b promoters.bed -v > SampleA_1_bidirectional_peaks.distalTREs.bed We have prepared promoter reference bed files (500 bp regions flanking protein-coding transcripts) for human and mouse genomes: promoter for hg38 : based on GENCODE annotation (v24) promoter for hg19 : based on GENCODE annotation (v19) promoter for mm10 : based on GENCODE annotation (m23) The files listed above may be directly applicable if you are working with these genomes. For CAGE-like assays, it may be helpful to remove TREs that overlap with exons. Here are exon regions (except for the first exon/5' UTR) we extracted from GENCODE: exons for hg38 : based on GENCODE annotation (v24) exons for hg19 : based on GENCODE annotation (v19) exons for mm10 : based on GENCODE annotation (m23) bedtools intersect -a SampleA_1_bidirectional_peaks.bed -b exons.bed -f 0.6 -v > SampleA_1_bidirectional_peaks.nonexon.bed We prepared some examples about preparing signal tracks for other commonly used tools in our GitHub repo . If your favourite tool is not included, please let us know by either create a new pull request in the repo or leave a message at the end of this page. Part 3: Case study 1 (GRO-cap) Step I: Get raw sequencing data The raw sequencing file is available on the ENCODE portal, and you can use wget or curl to download it: wget https://www.encodeproject.org/files/ENCFF028THC/@@download/ENCFF028THC.fastq.gz Step II: Trim adapters fastp -i ENCFF028THC.fastq.gz \ --adapter_sequence=TGGAATTCTCGGGTGCCAAGG \ -o ENCFF028THC.trimmed.fastq.gz \ -l 14 \ # only keep reads longer than 14nts after trimming # This library was polyadenylated, # so we are trimming the last 20nts per reads (with --trim_tail1). # For more recent single-end PRO/GRO-cap libraries, this may not be necessary. --trim_tail1 20 \ --low_complexity_filter \ -w 8 # use 8 threads Step III: Alignment # mapping STAR --readFilesCommand zcat --runThreadN 8 \ --outSAMtype BAM SortedByCoordinate \ --genomeDir ~/refs/indexes/human/star_hg38 \ --outFileNamePrefix GROcap_hg38_ \ --readFilesIn ENCFF028THC.trimmed.fastq.gz \ --outSAMmultNmax 1 \ --outFilterMultimapNmax 50 \ --alignIntronMax 1000 # get uniquely mapped reads samtools view -hb -q 255 -o GROcap_hg38.uniq.bam GROcap_hg38_Aligned.sortedByCoord.out.bam Step IV: Visualize TSS signals pints_visualizer -b GROcap_hg38.uniq.bam \ -e GROcap \ --mapq-threshold 255 \ --chromosome-start-with chr \ -o GROcap_hg38 \ --filters U13369 chrM EBV Step V: TRE calling pints_caller --bw-pl GROcap_hg38_pl.bw \ --bw-mn GROcap_hg38_mn.bw \ --file-prefix GROcap_hg38 \ --thread 8 You can also use the bam file as the input: pints_caller --bam-file GROcap_hg38.uniq.bam \ --exp-type GROcap \ --file-prefix GROcap_hg38 \ --filters U13369 chrM EBV \ --thread 8 Lastly, we use bedtools to retrieve distal TREs as enhancer candidates. bedtools intersect -a GROc
+[PINTS web portal](/)
+
+* [Home](/)
+* [TRE calling](/tre_calling)
+* [Element matrix](/summary_stats)
+* Analysis
+
+  [Analyze new dataset](/new_job)
+
+  »
+* [FAQ](/faq)
+
+## TRE calling
+
+---
+
+## Part 1: Preprocess sequencing libraries
+
+##### Step I: Figure out the experimental design
+
+We believe transcription start sites (TSSs) are very important in defining the boundaries of TREs.
+So the first task is to figure out where we can locate the TSSs in the sequenced libraries.
+For typical GRO-cap/PRO-cap/csRNA-seq/NET-CAGE libraries, TSSs are usually identical to the 5′ of the reads (single-end).
+For CoPRO (paired-end), TSSs are identical to the 5′ of read 2.
+
+Just like other RNA-sequencing libraries, nascent transcript sequencing libraries may also contain:
+
+* UMI
+* Template-switching oligos
+* Other barcodes
+
+The failure of trimming adapters and other non-genomic sequences from sequencing reads
+may lead to very low overall mapping rates and affect the downstream quantification.
+So please also check the details with the data producers or look into the corresponding papers.
+After you have answers to the above questions, we can move on to the next step.
+
+---
+
+##### Step II: Process raw reads
+
+You can use a set of tools (like  [fastp](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/fastp), [cutadapt](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/cutadapt)) to trim adapters, UMIs, and any other added sequences.
+
+Assume that you have a library back from the facility, which is
+
+* generated with Illumina Truseq Small RNA kit (RA3 adapter: TGGAATTCTCGGGTGCCAAGG)
+* sequenced in single-end manner
+
+You can use `fastp` to process the reads like this:
+
+```
+fastp -i SampleA.fastq.gz \  # input fastq file
+    -o SampleA.trimmed.fastq.gz \  # save the processed reads to this file
+    --adapter_sequence=TGGAATTCTCGGGTGCCAAGG \  # no need to specify for paired-end lib
+    -h report.html \  # save the report to this html file
+    --low_complexity_filter \  # remove low-complexity reads
+    -l 14 \  # only keep reads longer than 14 nt
+    -w 16  # number of threads fastp can create
+```
+
+For single-end libraries, if you are not sure about the adapter sequences,
+you can try to run  [fastqc](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/fastqc),
+and use the most abundant sequence in the `Overrepresented sequences` section
+or the adapters detected in the `Adapter Content` section.
+
+---
+
+##### Step III: Align processed reads to the reference genome
+
+For aligning sequencing reads back to the reference genome (like hg38, hg19, mm10, etc.),
+we recommend using  [STAR](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/star-align).
+Below is a minimum example showing how you can use `STAR` to generate both the aligned BAM
+file and signal tracks for peak calling.
+
+```
+STAR --readFilesCommand zcat \  # set this switch if the reads are compressed by gzip
+     --runThreadN 16 \  # number of max threads STAR can create
+     --genomeDir ./refs/indexes/human/star_hg38 \  # path to the genome index
+     --outFileNamePrefix SampleA_ \  # prefix for outputs
+     --readFilesIn ./SampleA.trimmed.fastq.gz \  # reads to be mapped, if you have both read 1 and 2, separate them by a space
+     --outSAMtype BAM SortedByCoordinate \  # output a coordinate-sorted bam
+```
+
+[What is genome index and how to get one?](#starIndex)
+
+Most sequence aligners build indexes for the genome sequences ahead of time so when
+given random sequences, the aligners know effectively where are they on the genome.
+For STAR, you can build your own index with command like:
+
+```
+STAR --runThreadN 16 \  # the number of threads to be used for index generation
+     --runMode genomeGenerate \
+     --genomeDir /path/to/genomeDir \  # genome indices will be saved to this path
+     --genomeFastaFiles /path/to/genome/fasta1 /path/to/genome/fasta2  # FASTA file(s) with the reference sequences
+```
+
+Or you can download prebuild indexes from the author's
+ [website](https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/)
+or the  [ENCODE portal](https://www.encodeproject.org/data-standards/reference-sequences/).
+
+The file `SampleA_Aligned.sortedByCoord.out.bam` will hold all the aligned reads.
+
+`STAR` requires at least 16 GB memory and recommends 32 GB memory for mammal
+genomes. If your machine doesn't have enough memory, other aligners, like
+ [HISAT2](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/hisat2)
+and  [bowtie2](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/bowtie2)
+can also be used.
+
+---
+
+##### Step IV: Export signal tracks
+
+A common practice after getting the alignments is to visually check how the signal looks in genome browsers like IGV. To generate signal tracks for this purpose, you can use our `pints_visualizer` like:
+
+```
+pints_visualizer -b SampleA_Aligned.sortedByCoord.out.bam \  # the input bam file
+                 -e GROcap \  # reads are in the same direction as RNAs, and only report the 5′ end of reads in the output
+                 --mapq-threshold 255 \  # only consider uniquely mapped reads
+                 --chromosome-start-with chr \  # only reads mapped to contigs start with chr will be included
+                 -o SampleA  # prefix for outputs
+```
+
+Two bigWig files `SampleA_pl.bw` and `SampleA_mn.bw` will be generated in the folder. You can load these files into IGV and
+see the distribution of signals genome-wide.
+
+Alternatively, if you are using STAR to generate the alignment, you can add these options to your `STAR` command:
+
+```
+--outWigType wiggle read1_5p --outWigStrand Stranded --outWigNorm None --outWigReferencesPrefix chr
+```
+
+STAR will yield four files: `SampleA_Signal.Unique.str1.out.wig`, `SampleA_Signal.Unique.str2.out.wig`, `SampleA_Signal.UniqueMultiple.str1.out.wig`, and `SampleA_Signal.UniqueMultiple.str2.out.wig`.
+The first two files are strand-specific signals generated with uniquely mapped reads, which can be converted to bigWig format with  [wigToBigWig](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/ucsc-wigtobigwig).
+
+## Part 2: Identify candidate regulatory elements
+
+##### Step I: Get started
+
+With the aligned BAM files and the information about the library layout, we can get started with TRE calling.
+
+PINTS is a  [Python](https://www.python.org/) package and can be easily installed via  [pip](https://pip.pypa.io/en/stable/installation/) (automatically installed with Python):
+
+```
+pip install pyPINTS
+```
+
+After installing PINTS, we can now move on to call peaks from BAM files:
+
+```
+pints_caller --bam-file SampleA_Aligned.sortedByCoord.out.bam \
+    --save-to . \  # TREs will be saved to the current dir
+    --file-prefix SampleA \  # prefix for outputs
+    --exp-type GROcap \  # PINTS will extract the 5′ of reads and treat them as TSS signals
+    --thread 16  # Allow PINTS to create 16 threads concurrently
+```
+
+Currently, PINTS knows how to extract TSS information directly from these experiments (for --exp-type):
+`GROcap` (also for single-end PRO-cap libraries),
+`CoPRO` (also for paired-end PRO-cap libraries),
+`csRNAseq`,
+`NETCAGE`,
+`CAGE`,
+`RAMPAGE`,
+and `STRIPEseq`.
+ If the assay you are working with is not listed or you are not using the default layout, you can tell PINTS where it can locate the TSS by specifying
+`R_5`,
+`R1_5`,
+`R1_3`,
+`R2_5`,
+or `R2_3`.
+If the reads represent the reverse complement of RNAs, you can add --reverse-complement to your command.
+
+PINTS will generate four files in this case:
+
+* `SampleA_1_bidirectional_peaks.bed`: Bidirectional TREs (divergent + convergent)
+* `SampleA_1_divergent_peaks.bed`: Divergent TREs
+* `SampleA_1_unidirectional_peaks.bed`: Unidirectional TREs
+* `peakcalling_yyyy_mm_dd_hh_mm_ss.log`: Log file
+
+PINTS can also take bigwig files as input; in this case, simply replace
+
+```
+--bam-file SampleA_Aligned.sortedByCoord.out.bam
+```
+
+with
+
+```
+--bw-pl SampleA_pl.bw --bw-mn SampleA_mn.bw
+```
+
+---
+
+##### Step II: Extract candidate enhancers
+
+We assume distal bidirectional transcripts are mainly from enhancer RNA transcription.
+To extract candidate enhancers from the pool of all TREs, we need a bed file that defines
+proximal TREs (promoters), then we can use  [bedtools](https://open.bioqueue.org/home/knowledge/showKnowledge/sig/bedtools-intersect) to extract distal TREs as follows:
+
+```
+bedtools intersect -a SampleA_1_bidirectional_peaks.bed -b promoters.bed -v > SampleA_1_bidirectional_peaks.distalTREs.bed
+```
+
+We have prepared promoter reference bed files (500 bp regions flanking protein-coding transcripts) for human and mouse genomes:
+
+* [promoter for hg38](//pints.yulab.org/ref/examples/promoters_1kb_tss_centered.bed.gz): based on GENCODE annotation (v24)
+* [promoter for hg19](//pints.yulab.org/ref/examples/hg19_promoters_1kb_tss_centered.bed.gz): based on GENCODE annotation (v19)
+* [promoter for mm10](//pints.yulab.org/ref/examples/mm10_promoters_1kb_tss_centered.bed.gz): based on GENCODE annotation (m23)
+
+The files listed above may be directly applicable if you are working with these genomes.
+
+For CAGE-like assays, it may be helpful to remove TREs that overlap with exons. Here are exon regions (except for the first exon/5' UTR) we extracted from GENCODE:
+
+* [exons for hg38](//pints.yulab.org/ref/examples/hg38_v24_exons_pcg.bed.gz): based on GENCODE annotation (v24)
+* [exons for hg19](//pints.yulab.org/ref/examples/hg19_v19_exons_pcg.bed.gz): based on GENCODE annotation (v19)
+* [exons for mm10](//pints.yulab.org/ref/examples/mm10_v23_exons_pcg.bed.gz): based on GENCODE annotation (m23)
+
+```
+bedtools intersect -a SampleA_1_bidirectional_peaks.bed -b exons.bed -f 0.6 -v > SampleA_1_bidirectional_peaks.nonexon.bed
+```
+
+We prepared some examples about preparing signal tracks for other commonly used
+tools in our  [GitHub repo](https://github.com/hyulab/PINTS_analysis/tree/main/Protocols).
+If your favourite tool is not included, please let us know by either create a new pull
+request in the repo or leave a message at the end of this page.
+
+## Part 3: Case study 1 (GRO-cap)
+
+##### Step I: Get raw sequencing data
+
+The raw sequencing file is available on the ENCODE portal, and you can use `wget` or `curl` to download it:
+
+```
+wget https://www.encodeproject.org/files/ENCFF028THC/@@download/ENCFF028THC.fastq.gz
+```
+
+---
+
+##### Step II: Trim adapters
+
+```
+fastp -i ENCFF028THC.fastq.gz \
+    --adapter_sequence=TGGAATTCTCGGGTGCCAAGG \
+    -o ENCFF028THC.trimmed.fastq.gz \
+    -l 14 \   # only keep reads longer than 14nts after trimming
+    # This library was polyadenylated,
+    # so we are trimming the last 20nts per reads (with --trim_tail1).
+    # For more recent single-end PRO/GRO-cap libraries, this may not be necessary.
+    --trim_tail1 20 \
+    --low_complexity_filter \
+    -w 8   # use 8 threads
+```
+
+---
+
+##### Step III: Alignment
+
+```
+# mapping
+STAR --readFilesCommand zcat --runThreadN 8 \
+     --outSAMtype BAM SortedByCoordinate \
+     --genomeDir ~/refs/indexes/human/star_hg38 \
+     --outFileNamePrefix GROcap_hg38_ \
+     --readFilesIn ENCFF028THC.trimmed.fastq.gz \
+     --outSAMmultNmax 1 \
+     --outFilterMultimapNmax 50 \
+     --alignIntronMax 1000
+# get uniquely mapped reads
+samtools view -hb -q 255 -o GROcap_hg38.uniq.bam GROcap_hg38_Aligned.sortedByCoord.out.bam
+```
+
+---
+
+##### Step IV: Visualize TSS signals
+
+```
+pints_visualizer -b GROcap_hg38.uniq.bam \
+    -e GROcap \
+    --mapq-threshold 255 \
+    --chromosome-start-with chr \
+    -o GROcap_hg38 \
+    --filters U13369 chrM EBV
+```
+
+---
+
+##### Step V: TRE calling
+
+```
+pints_caller --bw-pl GROcap_hg38_pl.bw \
+    --bw-mn GROcap_hg38_mn.bw \
+    --file-prefix GROcap_hg38 \
+    --thread 8
+```
+
+You can also use the bam file as the input:
+
+```
+pints_caller --bam-file GROcap_hg38.uniq.bam \
+    --exp-type GROcap \
+    --file-prefix GROcap_hg38 \
+    --filters U13369 chrM EBV \
+    --thread 8
+```
+
+Lastly, we use bedtools to retrieve distal TREs as enhancer candidates.
+
+```
+bedtools intersect -a GROcap_hg38_1_bidirectional_peaks.bed \
+    -b promoters_1kb_tss_centered.bed -v > \
+    GROcap_hg38_1_bidirectional_peaks.distalTREs.bed
+```
+
+## Part 4: Case study 2 (CoPRO)
+
+In this case, we are going to analyze paired-end PRO-cap libraries for the human Caco-2 cell line. Two replicates are available here.
+
+For paired-end PRO-cap libraries from the Lis lab or Yu lab, they are usually generated:
+
+* with VRA3 and VRA5 RNA adaptors (not RA3 and RA5).
+* with UMIs (6nts) at the beginning of both reads
+
+We refer to these PRO-cap libraries as CoPRO libraries.
+
+##### Step I: Get raw sequencing data
+
+The raw sequencing files are available on the ENCODE portal, and you can use `wget` or `curl` to download them:
+
+```
+# rep 1 read 1
+wget https://www.encodeproject.org/files/ENCFF594DTA/@@download/ENCFF594DTA.fastq.gz
+# rep 1 read 2
+wget https://www.encodeproject.org/files/ENCFF669OMY/@@download/ENCFF669OMY.fastq.gz
+# rep 2 read 1
+wget https://www.encodeproject.org/files/ENCFF039OZP/@@download/ENCFF039OZP.fastq.gz
+# rep 2 read 2
+wget https://www.encodeproject.org/files/ENCFF900WVT/@@download/ENCFF900WVT.fastq.gz
+```
+
+---
+
+##### Step II: Trim adapters
+
+```
+fastp -i ENCFF594DTA.fastq.gz -I ENCFF669OMY.fastq.gz \
+    -o caco2_rep1.1.fq.gz -O caco2_rep1.2.fq.gz \
+    -h caco2_rep1.html -j caco2_rep1.json \
+    --adapter_sequence TGGAATTCTCGGGTGCCAAGGAACTCCAGTCAC --adapter_sequence_r2 GATCGTCGGACTGTAGAACTCTGAAC \
+    --umi --umi_len=6 --umi_loc=per_read \
+    -g --low_complexity_filter \
+    -w 8 -c --overlap_len_require 18 --low_complexity_filter -l 18
+fastp -i ENCFF039OZP.fastq.gz -I ENCFF900WVT.fastq.gz \
+    -o caco2_rep2.1.fq.gz -O caco2_rep2.2.fq.gz \
+    -h caco2_rep2.html -j caco2_rep2.json \
+    --adapter_sequence TGGAATTCTCGGGTGCCAAGGAACTCCAGTCAC --adapter_sequence_r2 GATCGTCGGACTGTAGAACTCTGAAC \
+    --umi --umi_len=6 --umi_loc=per_read \
+    -g --low_complexity_filter \
+    -w 8 -c --overlap_len_require 18 --low_complexity_filter -l 18
+```
+
+---
+
+##### Step III: Alignment
+
+```
+STAR --readFilesCommand zcat --runThreadN 8 \
+    --alignMatesGapMax 1000 --alignIntronMax 1000 \
+    --outFilterMultimapNmax 10 \
+    --outFilterMismatchNmax 1 \
+    --outFilterMultimapScoreRange 0 \
+    --outSAMtype BAM SortedByCoordinate \
+    --genomeDir ~/refs/indexes/human/star_hg38 \
+    --outFileNamePrefix caco2_rep1_ \
+    --readFilesIn caco2_rep1.1.fq.gz caco2_rep1.2.fq.gz
+
+STAR --readFilesCommand zcat --runThreadN 8 \
+    --alignMatesGapMax 1000 --alignIntronMax 1000 \
+    --outFilterMultimapNmax 10 \
+    --outFilterMismatchNmax 1 \
+    --outFilterMultimapScoreRange 0 \
+    --outSAMtype BAM SortedByCoordinate \
+    --genomeDir ~/refs/indexes/human/star_hg38 \
+    --outFileNamePrefix caco2_rep2_ \
+    --readFilesIn caco2_rep2.1.fq.gz caco2_rep2.2.fq.gz
+```
+
+---
+
+##### Step IV: Remove PCR duplicates and merge replicates
+
+```
+# get uniquely mapped reads
+samtools view -hb -q 255 -o caco2_rep1_with_dup.bam caco2_rep1_Aligned.sortedByCoord.out.bam
+samtools view -hb -q 255 -o caco2_rep2_with_dup.bam caco

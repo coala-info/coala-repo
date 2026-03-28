@@ -95,3 +95,6 @@ optional arguments:
   -o OUTDIR             path to output directore
 ```
 
+
+## Metadata
+- **Skill**: generated

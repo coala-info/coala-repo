@@ -124,3 +124,6 @@ Usage: ngs.plot.r -G genome -R region -C [cov|config]file
                  If set to 1, the neutral color represents 0(i.e. no bias)
 ```
 
+
+## Metadata
+- **Skill**: generated

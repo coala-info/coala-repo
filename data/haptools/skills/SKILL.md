@@ -1,6 +1,6 @@
 ---
 name: haptools
-description: "haptools simulates and analyzes complex traits by accounting for local ancestry and specific haplotype effects in admixed populations. Use when user asks to simulate admixed genotypes, generate phenotypes from haplotype effects, transform genotypes into haplotype variants, or visualize chromosomal ancestry tracks."
+description: Haptools is a toolkit for simulating and analyzing genotypes and phenotypes in admixed populations using haplotype-level data. Use when user asks to simulate admixed genotypes, visualize ancestry tracks with karyograms, transform genotypes into haplotype dosages, or simulate complex phenotypes with haplotype-specific effects.
 homepage: https://github.com/cast-genomics/haptools
 ---
 
@@ -8,38 +8,82 @@ homepage: https://github.com/cast-genomics/haptools
 # haptools
 
 ## Overview
-The `haptools` skill provides a specialized workflow for simulating and analyzing complex traits within the context of ancestry and haplotypes. It is designed for researchers working with admixed populations who need to account for local ancestry and specific haplotype effects rather than just individual SNPs. Use this skill to generate realistic simulated genotypes, transform haplotypes into phenotype effects, and visualize chromosomal ancestry tracks.
+Haptools is a specialized toolkit designed for genomics researchers working with admixed populations and haplotype-level data. It bridges the gap between standard genotype formats (VCF/PGEN) and complex trait analysis by providing tools to simulate ancestry breakpoints, transform genotypes into haplotype dosages, and model phenotypes with local-ancestry or haplotype-specific effects. Use this skill to execute high-performance simulations and file operations that account for the phased nature of genetic data.
 
-## Core Commands and Workflows
+## Core CLI Patterns
 
-### Genotype Simulation (`simgenotype`)
-Simulate admixed genomes based on a recombination map and a set of founder haplotypes.
-- **Basic Usage**: `haptools simgenotype --recomb <map.txt> --hap <founders.hap> --out <output.vcf>`
-- **Expert Tip**: Ensure your recombination map matches the coordinate system (e.g., GRCh38) of your founder files to avoid simulation artifacts.
+### Simulating Admixed Genotypes
+Use `simgenotype` to create individuals with mosaic ancestry based on a genetic map and reference populations.
 
-### Phenotype Simulation (`simphenotype`)
-Generate phenotypes based on specific haplotype effects or local ancestry.
-- **Basic Usage**: `haptools simphenotype --genotypes <input.vcf> --haplotypes <effects.hap> --out <output.pheno>`
-- **Key Parameters**:
-  - `--heritability`: Specify the narrow-sense heritability of the simulated trait.
-  - `--prevalence`: Use for case-control (binary) trait simulation.
+```bash
+haptools simgenotype \
+  --model references/model.dat \
+  --map references/genetic_map.txt \
+  --ref genotypes/reference_panel.vcf.gz \
+  --out output/admixed_samples.vcf.gz
+```
+*   **Tip**: Use `--chunk-size` to manage memory when processing large PGEN files.
+*   **Tip**: Ensure your reference VCF is phased; `haptools` relies on phasing for accurate crossover simulation.
 
-### Haplotype Transformation (`transform`)
-Convert a VCF of genotypes into a "haplotype VCF" where multi-site haplotypes are treated as single variants.
-- **Basic Usage**: `haptools transform --genotypes <input.vcf> --haplotypes <definitions.hap> --out <transformed.vcf>`
-- **Utility**: This is essential for downstream GWAS or association testing where the unit of interest is a specific combination of alleles.
+### Visualizing Ancestry (Karyograms)
+Generate a visual representation of the local ancestry tracks (breakpoints) for simulated individuals.
 
-### Visualization (`karyogram`)
-Create a visual representation of local ancestry (admixture tracks) for simulated or real individuals.
-- **Basic Usage**: `haptools karyogram --bp <input.bp> --out <output.png>`
-- **Input**: Requires a `.bp` file (breakpoints) typically generated during the `simgenotype` process.
+```bash
+haptools karyogram \
+  --bp output/admixed_samples.bp \
+  --sample HG001 \
+  --out output/HG001_karyogram.png
+```
 
-## Common CLI Patterns
+### Haplotype Transformation
+The `transform` command is the engine for converting variant-level genotypes into haplotype-level dosages based on a `.hap` definition file.
 
-- **Filtering by Region**: Most commands support `--region` to restrict analysis to specific chromosomes or genomic coordinates, saving significant compute time.
-- **Standardized Formats**: `haptools` relies heavily on the `.hap` format for defining haplotypes and their effects. Always validate your `.hap` file structure before running long-running simulations.
-- **Memory Management**: For large-scale simulations, use the `--chunk-size` parameter (where available) to process the genome in segments.
+```bash
+haptools transform \
+  genotypes/samples.vcf.gz \
+  definitions/haplotypes.hap \
+  --out output/haplotype_dosages.vcf.gz
+```
+*   **Filtering**: Use `--maf` to filter out rare haplotypes from the resulting dosage file.
+*   **Region-specific**: Use `--region` (e.g., `chr1:1000-2000`) to speed up processing if only specific loci are needed.
+
+### Simulating Phenotypes
+Simulate complex traits by applying effects to specific haplotypes or variants.
+
+```bash
+haptools simphenotype \
+  output/haplotype_dosages.vcf.gz \
+  effects/causal_effects.hap \
+  --heritability 0.5 \
+  --out output/simulated_traits.phen
+```
+
+## Expert Tips & Best Practices
+
+1.  **File Formats**: 
+    *   **`.hap` files**: These are tab-delimited files defining haplotypes. They must contain `H` lines (header for the haplotype) and `V` lines (variants within that haplotype).
+    *   **`.bp` files**: These contain breakpoint information. They are generated by `simgenotype` and required by `karyogram`.
+2.  **Performance**: For large-scale datasets, prefer PLINK2 PGEN files over VCFs. `haptools` is optimized for PGEN reading, especially when using the `--chunk-size` parameter in recent versions.
+3.  **Validation**: Always check the header of your `.hap` files. If `haptools` throws an `UnboundLocalError` or issues warnings about headers, ensure the file follows the specific versioning requirements (e.g., `version 0.1.0`).
+4.  **LD Calculation**: Use the `ld` command to compute Pearson correlation between haplotypes or variants in a haplotype-aware manner.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| haptools index | Takes in an unsorted .hap file and outputs it as a .gz and a .tbi file |
+| haptools simgenotype | Simulate admixed genomes under a pre-defined model. |
+| haptools transform | Creates a VCF composed of haplotypes |
+| haptools_clump | Performs clumping on datasets with SNPs, SNPs and STRs, and STRs. Clumping is the process of identifying SNPs or STRs that are highly correlated with one another and concatenating them all together into a single "clump" in order to not repeat the same effect size due to LD. |
+| karyogram | Visualize a karyogram of local ancestry tracks |
+| ld | Compute the pair-wise LD (Pearson's correlation) between haplotypes (or variants) and a single TARGET haplotype (or variant) |
+| simphenotype | Haplotype-aware phenotype simulation. Create a set of simulated phenotypes from a set of haplotypes. |
 
 ## Reference documentation
-- [Haptools GitHub Repository](./references/github_com_CAST-genomics_haptools.md)
-- [Bioconda Haptools Overview](./references/anaconda_org_channels_bioconda_packages_haptools_overview.md)
+- [Haptools ReadTheDocs Home](./references/haptools_readthedocs_io_en_stable.md)
+- [Command: simgenotype](./references/haptools_readthedocs_io_en_stable_commands_simgenotype.html.md)
+- [Command: transform](./references/haptools_readthedocs_io_en_stable_commands_transform.html.md)
+- [Command: simphenotype](./references/haptools_readthedocs_io_en_stable_commands_simphenotype.html.md)
+- [Haplotype File Format (.hap)](./references/haptools_readthedocs_io_en_stable_formats_haplotypes.html.md)

@@ -1,1 +1,359 @@
-GitHub - vanheeringen-lab/psap: CLI interface for the PSAP classifier. PSAP implements a RandomForest approach to predict the probability of proteins to mediate protein phase separation (PPS) Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} vanheeringen-lab / psap Public Notifications You must be signed in to change notification settings Fork 2 Star 4 CLI interface for the PSAP classifier. PSAP implements a RandomForest approach to predict the probability of proteins to mediate protein phase separation (PPS) License MIT license 4 stars 2 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights vanheeringen-lab/psap master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 280 Commits 280 Commits .github/ workflows .github/ workflows psap psap tests tests .flake8 .flake8 .gitattributes .gitattributes .gitignore .gitignore LICENSE LICENSE MANIFEST.in MANIFEST.in README.rst README.rst environment.yml environment.yml setup.cfg setup.cfg setup.py setup.py versioneer.py versioneer.py View all files Repository files navigation README MIT license psap CLI interface for the PSAP classifier. PSAP implements a RandomForest approach to predict the probability of proteins to mediate protein phase separation (PPS). Initially, a set of protein sequences is annotated with biochemical features which are subsequently used to train a RandomForest (scikit-learn) classifier. The trained classifier is afterwards exported to json format and can be used to predict the llps class probability (PSAP_score) for unseen protein sequences. The default model was trained on the human reference proteome with a list of literature curated PPS proteins for positive class labeling. Both can be found in /data. Publication | Mierlo, G., Jansen, J. R. G., Wang, J., Poser, I., van Heeringen, S. J., &amp; Vermeulen, M. (2021). Predicting protein condensate formation using machine learning. Cell Reports, 34(5), 108705. https://doi.org/10.1016/j.celrep.2021.108705 . Free software: MIT license Getting Started 1. Install psap pip pip install psap conda conda install bioconda::psap 2. Train classifier psap train - f / path / to / peptide - trainingset . fasta - l / path / to / known / pps - proteins . txt ( optional ) - o / path / to / output / directory ( optional ) The trained RandomForest classifier will be exported to json format and stored in the output directory. 3. Predict llps score psap predict - f / path / to / peptide - testset . fasta - m / path / to / model . json ( optional ) - o / path / to / output / directory ( optional ) psap loads the default classifier stored in /data/model when no model is provided with -m. An example peptide fasta file can be found in the psap/data/testset folder. 4. Annotate peptide sequences (optional) psap annotate - f / path / to / peptide . fasta - l / path / to / known / pps - proteins . txt ( optional ) - o / path / to / output / directory ( optional ) Manually annotate a peptide fasta with biochemical features. This step is included in train and predict. Credits This package was adapted from the cookiecutter and the audreyr/cookiecutter-pypackage project template. About CLI interface for the PSAP classifier. PSAP implements a RandomForest approach to predict the probability of proteins to mediate protein phase separation (PPS) Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 4 stars Watchers 1 watching Forks 2 forks Report repository Releases 8 Release v1.0.7 Latest May 10, 2022 + 7 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 2 &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages Python 100.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvanheeringen-lab%2Fpsap)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvanheeringen-lab%2Fpsap)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=vanheeringen-lab%2Fpsap)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[vanheeringen-lab](/vanheeringen-lab)
+/
+**[psap](/vanheeringen-lab/psap)**
+Public
+
+* [Notifications](/login?return_to=%2Fvanheeringen-lab%2Fpsap) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2Fvanheeringen-lab%2Fpsap)
+* [Star
+   4](/login?return_to=%2Fvanheeringen-lab%2Fpsap)
+
+* [Code](/vanheeringen-lab/psap)
+* [Issues
+  0](/vanheeringen-lab/psap/issues)
+* [Pull requests
+  0](/vanheeringen-lab/psap/pulls)
+* [Actions](/vanheeringen-lab/psap/actions)
+* [Projects](/vanheeringen-lab/psap/projects)
+* [Security
+  0](/vanheeringen-lab/psap/security)
+* [Insights](/vanheeringen-lab/psap/pulse)
+
+Additional navigation options
+
+* [Code](/vanheeringen-lab/psap)
+* [Issues](/vanheeringen-lab/psap/issues)
+* [Pull requests](/vanheeringen-lab/psap/pulls)
+* [Actions](/vanheeringen-lab/psap/actions)
+* [Projects](/vanheeringen-lab/psap/projects)
+* [Security](/vanheeringen-lab/psap/security)
+* [Insights](/vanheeringen-lab/psap/pulse)
+
+# vanheeringen-lab/psap
+
+master
+
+[Branches](/vanheeringen-lab/psap/branches)[Tags](/vanheeringen-lab/psap/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[280 Commits](/vanheeringen-lab/psap/commits/master/)   280 Commits | | |
+| [.github/workflows](/vanheeringen-lab/psap/tree/master/.github/workflows "This path skips through empty directories") | | [.github/workflows](/vanheeringen-lab/psap/tree/master/.github/workflows "This path skips through empty directories") |  |  |
+| [psap](/vanheeringen-lab/psap/tree/master/psap "psap") | | [psap](/vanheeringen-lab/psap/tree/master/psap "psap") |  |  |
+| [tests](/vanheeringen-lab/psap/tree/master/tests "tests") | | [tests](/vanheeringen-lab/psap/tree/master/tests "tests") |  |  |
+| [.flake8](/vanheeringen-lab/psap/blob/master/.flake8 ".flake8") | | [.flake8](/vanheeringen-lab/psap/blob/master/.flake8 ".flake8") |  |  |
+| [.gitattributes](/vanheeringen-lab/psap/blob/master/.gitattributes ".gitattributes") | | [.gitattributes](/vanheeringen-lab/psap/blob/master/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/vanheeringen-lab/psap/blob/master/.gitignore ".gitignore") | | [.gitignore](/vanheeringen-lab/psap/blob/master/.gitignore ".gitignore") |  |  |
+| [LICENSE](/vanheeringen-lab/psap/blob/master/LICENSE "LICENSE") | | [LICENSE](/vanheeringen-lab/psap/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/vanheeringen-lab/psap/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/vanheeringen-lab/psap/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.rst](/vanheeringen-lab/psap/blob/master/README.rst "README.rst") | | [README.rst](/vanheeringen-lab/psap/blob/master/README.rst "README.rst") |  |  |
+| [environment.yml](/vanheeringen-lab/psap/blob/master/environment.yml "environment.yml") | | [environment.yml](/vanheeringen-lab/psap/blob/master/environment.yml "environment.yml") |  |  |
+| [setup.cfg](/vanheeringen-lab/psap/blob/master/setup.cfg "setup.cfg") | | [setup.cfg](/vanheeringen-lab/psap/blob/master/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/vanheeringen-lab/psap/blob/master/setup.py "setup.py") | | [setup.py](/vanheeringen-lab/psap/blob/master/setup.py "setup.py") |  |  |
+| [versioneer.py](/vanheeringen-lab/psap/blob/master/versioneer.py "versioneer.py") | | [versioneer.py](/vanheeringen-lab/psap/blob/master/versioneer.py "versioneer.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+## psap
+
+[![](https://github.com/vanheeringen-lab/psap/actions/workflows/python-app.yml/badge.svg)](https://github.com/vanheeringen-lab/psap)
+[![](https://github.com/vanheeringen-lab/psap/actions/workflows/continuous-deployment.yml/badge.svg)](https://github.com/vanheeringen-lab/psap)
+[![](https://camo.githubusercontent.com/1076d78fbddf0c64af724eee51f09e3d991a02b1bed21dd47917f170b6f6b06c/68747470733a2f2f62616467652e667572792e696f2f70792f707361702e737667)](https://pypi.org/project/psap/)
+[![https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat](https://camo.githubusercontent.com/9940610b859f8e4dd2daade6d2f4fb4c45d56afedc37ae98d8617daf79c1f836/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c6174)](https://anaconda.org/bioconda/psap)
+
+CLI interface for the PSAP classifier. PSAP implements a RandomForest approach to predict the probability of proteins to mediate protein phase separation (PPS). Initially, a set of protein sequences is annotated with biochemical features which are subsequently used to train a RandomForest (scikit-learn) classifier. The trained classifier is afterwards exported to json format and can be used to predict the llps class probability (PSAP\_score) for unseen protein sequences.
+
+The default model was trained on the human reference proteome with a list of literature curated PPS proteins for positive class labeling. Both can be found in /data.
+
+**Publication**
+| Mierlo, G., Jansen, J. R. G., Wang, J., Poser, I., van Heeringen, S. J., & Vermeulen, M. (2021). Predicting protein condensate formation using machine learning. Cell Reports, 34(5), 108705. <https://doi.org/10.1016/j.celrep.2021.108705>.
+
+* Free software: MIT license
+
+## Getting Started
+
+### 1. *Install psap*
+
+**pip**
+
+```
+pip install psap
+```
+
+**conda**
+
+```
+conda install bioconda::psap
+```
+
+### 2. *Train classifier*
+
+```
+psap train -f /path/to/peptide-trainingset.fasta -l /path/to/known/pps-proteins.txt (optional) -o /path/to/output/directory (optional)
+```
+
+The trained RandomForest classifier will be exported to json format and stored in the output directory.
+
+### 3. *Predict llps score*
+
+```
+psap predict -f /path/to/peptide-testset.fasta -m /path/to/model.json (optional) -o /path/to/output/directory (optional)
+```
+
+psap loads the default classifier stored in /data/model when no model is provided with -m.
+An example peptide fasta file can be found in the psap/data/testset folder.
+
+### 4. *Annotate peptide sequences (optional)*
+
+```
+psap annotate -f /path/to/peptide.fasta -l /path/to/known/pps-proteins.txt (optional) -o /path/to/output/directory (optional)
+```
+
+Manually annotate a peptide fasta with biochemical features. This step is included in train and predict.
+
+### Credits
+
+This package was adapted from the [cookiecutter](https://github.com/audreyr/cookiecutter) and the [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) project template.
+
+## About
+
+CLI interface for the PSAP classifier. PSAP implements a RandomForest approach to predict the probability of proteins to mediate protein phase separation (PPS)
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[MIT license](#MIT-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/vanheeringen-lab/psap/activity)
+
+[Custom properties](/vanheeringen-lab/psap/custom-properties)
+
+### Stars
+
+[**4**
+stars](/vanheeringen-lab/psap/stargazers)
+
+### Watchers
+
+[**1**
+watching](/vanheeringen-lab/psap/watchers)
+
+### Forks
+
+[**2**
+forks](/vanheeringen-lab/psap/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fvanheeringen-lab%2Fpsap&report=vanheeringen-lab+%28user%29)
+
+## [Releases 8](/vanheeringen-lab/psap/releases)
+
+[Release v1.0.7
+
+Latest
+
+May 10, 2022](/vanheeringen-lab/psap/releases/tag/v1.0.7)
+
+[+ 7 releases](/vanheeringen-lab/psap/releases)
+
+## [Packages 0](/orgs/vanheeringen-lab/packages?repo_name=psap)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/vanheeringen-lab/psap/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [Python
+  100.0%](/vanheeringen-lab/psap/search?l=python)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

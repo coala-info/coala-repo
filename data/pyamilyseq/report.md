@@ -44,3 +44,6 @@ A tool for gene clustering and pangenome analysis.
 2026-02-24 21:54:57,877 ERROR: pyamilyseq: error: argument run_mode: invalid choice: 'partial' (choose from Full, Partial)
 ```
 
+
+## Metadata
+- **Skill**: generated

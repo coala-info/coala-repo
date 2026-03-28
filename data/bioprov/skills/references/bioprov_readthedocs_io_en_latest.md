@@ -1,0 +1,185 @@
+BioProv
+
+latest
+
+Contents:
+
+* [BioProv - W3C-PROV provenance documents for bioinformatics](readme.html)
+* [Quickstart](readme.html#quickstart)
+* [Installation](readme.html#installation)
+* [Dependencies](readme.html#dependencies)
+* [Source API](modules.html)
+
+BioProv
+
+* Docs »
+* BioProv - W3C-PROV provenance documents for bioinformatics
+* [Edit on GitHub](https://github.com/vinisalazar/BioProv/blob/dev/docs/source/index.md)
+
+---
+
+# BioProv - W3C-PROV provenance documents for bioinformatics[¶](#bioprov-w3c-prov-provenance-documents-for-bioinformatics "Permalink to this headline")
+
+| Code | [![PyPI Version](https://img.shields.io/pypi/v/bioprov)](https://pypi.org/project/bioprov/) | [![lint](https://github.com/vinisalazar/BioProv/workflows/lint/badge.svg?branch=master)](https://github.com/vinisalazar/BioProv/actions?query=workflow%3Alint) | [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) |
+| --- | --- | --- | --- |
+| Tests | [![Build Status](https://travis-ci.org/vinisalazar/BioProv.svg?branch=master)](https://travis-ci.org/vinisalazar/BioProv) | [![tests](https://github.com/vinisalazar/bioprov/workflows/tests/badge.svg?branch=master)](https://github.com/vinisalazar/bioprov/actions?query=workflow%3Atests) | [![Coverage Status](https://coveralls.io/repos/github/vinisalazar/BioProv/badge.svg?branch=master&service=github)](https://coveralls.io/github/vinisalazar/BioProv?branch=master&service=github) |
+| Docs | [![Docs status](https://readthedocs.org/projects/bioprov/badge/?version=latest)](https://bioprov.readthedocs.io/en/latest/?badge=latest) | [![License](https://img.shields.io/github/license/vinisalazar/bioprov)](https://github.com/vinisalazar/BioProv/blob/master/LICENSE) | [![binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/vinisalazar/bioprov/master?filepath=docs%2Ftutorials%2F) |
+
+BioProv is a Python library for [W3C-PROV](https://www.w3.org/TR/prov-overview/) representation of bioinformatics workflows.
+It enables you to quickly write workflows and to describe relationships between samples, files, users and programs.
+
+Please see the tutorials for a more detailed introduction and
+visit [ReadTheDocs](https://bioprov.readthedocs.io/) for the complete documentation.
+
+# Quickstart[¶](#quickstart "Permalink to this headline")
+
+```
+>>> import bioprov as bp
+
+# Create samples and file objects
+>>> sample = bp.Sample("mysample")
+>>> genome = bp.File("mysample.fasta", "genome")
+>>> sample.add_files(genome)
+
+# Create programs
+>>> output = sample.files["blast_out"] = bp.File("mysample.blast.tsv", "blast_out")
+>>> blastn = bp.Program("blastn",
+                        params={"-query": sample.files["genome"],
+                                "-db": "mydb.fasta", "-out": output}
+                        )
+>>> sample.add_programs(blastn)
+
+# Run programs
+>>> sample.run_programs()
+
+# Save your project
+>>> proj = bp.Project((sample,), tag="example_project")
+>>> proj.to_json()
+
+# Create PROV documents
+>>> prov = bp.BioProvDocument(proj)
+
+# Save in PROVN or graphical format
+>>> prov.write_provn()  # human-readable text format
+>>> prov.dot.write_pdf()  # graphical format
+```
+
+BioProv also has a command-line application to run preset workflows.
+
+```
+$ bioprov -h
+usage: bioprov [-h] [--show_config | --show_db | --clear_db | -v | -l]
+               {genome_annotation,blastn,kaiju} ...
+
+BioProv command-line application. Choose a command to begin.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --show_config         Show location of config file.
+  --show_db             Show location of database file.
+  --clear_db            Clears all records in database.
+  -v, --version         Show BioProv version
+  -l, --list            List Projects in the BioProv database.
+
+workflows:
+  {genome_annotation,blastn,kaiju}
+```
+
+BioProv is built with the [Biopython](https://biopython.org/) and [Pandas](http://pandas.pydata.org/) libraries.
+
+You can import data into BioProv using Pandas objects.
+
+```
+# Read csv straight into BioProv
+>>> samples = bp.read_csv("my_dataframe.tsv", sep="\t", sequencefile_cols="assembly")
+
+# Alternatively, use a pandas DataFrame
+>>> df = pd.read_csv("my_dataframe.tsv", sep="\t")
+
+# [...] manipulate your df
+>>> df["assembly"] = "assembly_directory/" + df["assembly"]
+
+# Now load from your df
+>>> project = bp.from_df(df, sequencefile_cols="assembly", source_file="my_dataframe.tsv")
+
+# `samples` becomes a Project dict-like object
+>>> sample1 = project['sample1']
+
+# You can also export your sample and associated files and attributes as a dataframe
+>>> project.to_csv()
+```
+
+# Installation[¶](#installation "Permalink to this headline")
+
+```
+# Install from pip
+$ pip install bioprov
+
+# Install from conda
+$ conda install -c conda-forge -c bioconda bioprov
+
+# Install from source
+$ git clone https://github.com/vinisalazar/bioprov && cd bioprov;     # download
+$ conda env create -f environment.yaml && conda activate bioprov;     # install dependencies
+$ pip install . && pytest;                                            # install and test
+```
+
+**Important!** BioProv requires [Prodigal](https://github.com/hyattpd/Prodigal) to be tested. Otherwise tests will fail.
+
+Contributions are welcome!
+
+**BioProv is in active development and no warranties are provided (please see the License).**
+
+# Dependencies[¶](#dependencies "Permalink to this headline")
+
+BioProv requires the follow dependencies to run. Also see the setup and environment files.
+
+* biopython
+* coolname
+* coveralls
+* dataclasses
+* pandas
+* prodigal
+* prov
+* provstore-api
+* pydot
+* pytest
+* pytest-cov
+* tqdm
+* tinydb
+
+## Welcome to BioProv’s documentation![¶](#welcome-to-bioprov-s-documentation "Permalink to this headline")
+
+Contents:
+
+* [BioProv - W3C-PROV provenance documents for bioinformatics](readme.html)
+* [Quickstart](readme.html#quickstart)
+* [Installation](readme.html#installation)
+* [Dependencies](readme.html#dependencies)
+* [Source API](modules.html)
+  + [bioprov package](bioprov.html)
+    - [Subpackages](bioprov.html#subpackages)
+      * [bioprov.data package](bioprov.data.html)
+      * [bioprov.programs package](bioprov.programs.html)
+      * [bioprov.src package](bioprov.src.html)
+      * [bioprov.tests package](bioprov.tests.html)
+      * [bioprov.workflows package](bioprov.workflows.html)
+    - [Submodules](bioprov.html#submodules)
+    - [bioprov.bioprov module](bioprov.html#module-bioprov.bioprov)
+    - [bioprov.utils module](bioprov.html#module-bioprov.utils)
+    - [Module contents](bioprov.html#module-bioprov)
+
+## Indices and tables[¶](#indices-and-tables "Permalink to this headline")
+
+* [Index](genindex.html)
+* [Module Index](py-modindex.html)
+* [Search Page](search.html)
+
+[Next](readme.html "BioProv - W3C-PROV provenance documents for bioinformatics")
+
+---
+
+© Copyright 2020, Vini Salazar
+Revision `d72a8c59`.
+
+Built with [Sphinx](http://sphinx-doc.org/) using a [theme](https://github.com/rtfd/sphinx_rtd_theme) provided by [Read the Docs](https://readthedocs.org).

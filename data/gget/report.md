@@ -116,3 +116,6 @@ optional arguments:
   -j, --json            DEPRECATED - json is now the default output format (convert to csv using flag [--csv]).
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -346,3 +346,6 @@ usage: qualimap comp-counts [-a <arg>] -bam <arg> -gtf <arg> [-id <arg>] [-out
                                   be ignored. Default: exon
 ```
 
+
+## Metadata
+- **Skill**: generated

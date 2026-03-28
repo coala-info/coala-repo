@@ -1,6 +1,6 @@
 ---
 name: diamond
-description: DIAMOND is a high-performance sequence alignment tool used for protein-protein and translated DNA-protein searches. Use when user asks to align protein or DNA sequences to a reference database, perform blastp or blastx searches, or cluster large-scale protein datasets.
+description: DIAMOND is a high-performance sequence aligner designed for large-scale protein and translated DNA searches against protein databases. Use when user asks to align protein sequences, perform translated DNA searches, create reference databases, or cluster massive protein datasets.
 homepage: https://github.com/bbuchfink/diamond
 ---
 
@@ -8,72 +8,61 @@ homepage: https://github.com/bbuchfink/diamond
 # diamond
 
 ## Overview
-DIAMOND is a high-performance sequence alignment tool optimized for large-scale proteomics and genomics data. It serves as a highly efficient alternative to NCBI-BLAST for protein-protein (blastp) and translated DNA-protein (blastx) searches. Beyond simple alignment, it supports advanced features like frameshift-aware alignment for long reads and massive-scale protein clustering. It is designed to run effectively on everything from standard laptops to high-performance computing clusters.
 
-## Core CLI Workflows
+DIAMOND is a sequence aligner designed for massive protein datasets, offering BLAST-compatible functionality at speeds 100x to 10,000x faster than traditional BLAST. It is specifically optimized for large-scale analysis of big sequence data, such as metagenomic samples or large protein databases. Use this skill to prepare reference databases, perform sensitive protein searches, or cluster billions of sequences with low resource requirements.
+
+## Core Workflows
 
 ### 1. Database Preparation
-Before searching, you must convert your reference FASTA file into a specialized DIAMOND database format (.dmnd).
+Before searching, you must create a DIAMOND-formatted database from a FASTA file.
 
 ```bash
-diamond makedb --in reference.fasta -d reference_db
+diamond makedb --in reference.fasta -d reference
 ```
 
-### 2. Protein Alignment (blastp)
-Used for searching protein queries against a protein reference database.
+### 2. Sequence Alignment
+DIAMOND supports two primary alignment modes:
+- **blastp**: Align protein queries against a protein reference database.
+- **blastx**: Align translated DNA queries (e.g., NGS reads) against a protein reference database.
 
 ```bash
-diamond blastp -d reference_db -q queries.fasta -o results.tsv
+# Protein search
+diamond blastp -d reference -q queries.fasta -o matches.tsv
+
+# Translated DNA search
+diamond blastx -d reference -q reads.fasta -o matches.tsv
 ```
 
-### 3. Translated DNA Alignment (blastx)
-Used for searching DNA queries (translated in all 6 frames) against a protein reference database.
+### 3. Sequence Clustering
+For reducing redundancy or grouping similar proteins, use the clustering commands.
+- **linclust**: Fast clustering with linear scaling, ideal for massive datasets.
+- **cluster**: More sensitive clustering using all-vs-all alignment.
 
 ```bash
-diamond blastx -d reference_db -q reads.fasta -o results.tsv
-```
-
-### 4. Sequence Clustering
-DIAMOND provides two main modes for clustering protein sequences:
-- **linclust**: Linear scaling clustering, ideal for massive datasets (tens of billions of sequences).
-- **cluster**: Sensitive clustering using all-vs-all alignment.
-
-```bash
-# Fast clustering at 30% identity
+# Fast clustering (30% identity threshold)
 diamond linclust -d reference.fasta -o clusters.tsv --approx-id 30 -M 64G
 ```
 
 ## Expert Tips and Best Practices
 
 ### Managing Memory and Performance
-- **Block Size (`-b`)**: This is the most important parameter for memory usage. It defines the number of query letters (in billions) processed in one iteration. 
-    - Default is 2.0. 
-    - If the program crashes due to memory limits, decrease this (e.g., `-b 0.5`).
-    - On high-RAM systems, increasing this can improve performance.
-- **Temporary Space**: DIAMOND uses significant disk space for temporary files. Use `--tmpdir /path/to/fast/disk` to point to an SSD or RAM disk for faster processing.
+- **Block Size (`-b`)**: This is the most important parameter for memory usage. It defines the number of query letters (in billions) processed in one block. The default is 2.0. If the program crashes due to memory limits, decrease this value (e.g., `-b 0.5`).
+- **Sensitivity Levels**: DIAMOND defaults to a "fast" mode. Adjust sensitivity based on your needs:
+  - `--fast`, `--mid-sensitive`, `--sensitive`, `--more-sensitive`, `--very-sensitive`, `--ultra-sensitive`.
+  - Use `--very-sensitive` for results most comparable to BLASTP.
 
-### Adjusting Sensitivity
-DIAMOND offers several sensitivity modes. Choosing the right one is a trade-off between speed and the ability to find distant homologs:
-- `--fast` (Default): Fastest mode, best for closely related sequences.
-- `--mid-sensitive`: Good balance.
-- `--sensitive`: Recommended for most general use cases.
-- `--more-sensitive`, `--very-sensitive`, `--ultra-sensitive`: Use these for finding very distant evolutionary relationships, though they are significantly slower.
+### Handling Large Inputs
+- DIAMOND is optimized for files with >1 million proteins. While it works for smaller files, it reaches peak efficiency with large-scale data.
+- **Repeat Masking**: Enabled by default. If you are working with sequences where low-complexity regions are biologically significant, disable it using `--masking 0`.
 
-### Handling Repeat Masking
-By default, DIAMOND applies repeat masking to both query and reference sequences to avoid spurious hits in low-complexity regions.
-- To disable masking (e.g., if you are looking for specific low-complexity motifs), use `--masking 0`.
-
-### Output Customization
-Use the `-f` or `--outfmt` flag to change the output format:
+### Output Formats
+Use the `-f` flag to specify output:
 - `0`: BLAST pairwise
-- `5`: BLAST XML
-- `6`: Tabular (Default). You can customize columns: `-f 6 qseqid sseqid pident length evalue bitscore`
-- `100`: DIAMOND archive (DAA). This format stores all alignment information and can be converted to other formats later using the `view` command.
+- `6`: BLAST tabular (default)
+- `100`: DAA (DIAMOND alignment archive), a proprietary binary format that can be later converted to other formats using the `view` command.
 
 ### Frameshift Alignment
-For long-read sequencing data (like Oxford Nanopore or PacBio) that may contain indels causing frameshifts, use the range-culling or frameshift options:
-- `--range-culling`: Better for long-read analysis.
-- `-F 15`: Allows for frameshifts in the alignment (penalty of 15).
+For long-read analysis (like Nanopore or PacBio) where frameshifts are common, use the `--range-culling` and `--top` options to better handle fragmented alignments.
 
 
 
@@ -82,22 +71,21 @@ For long-read sequencing data (like Oxford Nanopore or PacBio) that may contain 
 | Command | Description |
 |---------|-------------|
 | blastp | DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. |
-| blastx | DIAMOND is a sequence aligner for protein and translated DNA searches. The blastx command aligns translated DNA queries against a protein reference database. |
-| cluster | Clustering sequences using DIAMOND |
-| diamond dbinfo | Display information about a DIAMOND database file |
-| diamond_getseq | Display sequences from a DIAMOND database file by their sequence numbers. |
-| greedy-vertex-cover | Greedy vertex cover clustering tool for DIAMOND |
-| linclust | Linear-time clustering of protein sequences |
+| blastx | DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. |
+| cluster | Clustering sequences using the DIAMOND algorithm |
+| dbinfo | Display information about a DIAMOND database file |
+| getseq | Retrieve sequences from a DIAMOND database file. |
+| greedy-vertex-cover | Greedy vertex cover clustering using DIAMOND |
+| linclust | Clustering of protein sequences using the DIAMOND linclust algorithm. |
 | makedb | Build a DIAMOND database from a FASTA file |
-| makeidx | Build an index for a DIAMOND database file. |
-| merge-daa | Merge DAA files |
-| realign | Realign sequences using the DIAMOND algorithm |
-| reassign | Reassign sequences to clusters or representatives using the DIAMOND protein aligner. |
+| makeidx | Create an index for a DIAMOND database |
+| merge-daa | Merge DAA files into a single file |
+| realign | Realign sequences using the DIAMOND engine |
+| reassign | Reassign sequences to closest representatives in clustering |
 | recluster | Recluster sequences using the DIAMOND algorithm |
-| view | View and convert DIAMOND alignment archives (DAA) |
+| view | View and convert DIAMOND alignment archive (DAA) files |
 
 ## Reference documentation
 - [DIAMOND Wiki Home](./references/bbuchfink_diamond_wiki.md)
 - [Command Line Options](./references/github_com_bbuchfink_diamond_wiki_3.-Command-line-options.md)
 - [Clustering Guide](./references/github_com_bbuchfink_diamond_wiki_Clustering.md)
-- [File Formats](./references/github_com_bbuchfink_diamond_wiki_File-formats.md)

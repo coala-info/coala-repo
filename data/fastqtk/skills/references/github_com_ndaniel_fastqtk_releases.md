@@ -1,0 +1,499 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fndaniel%2Ffastqtk%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fndaniel%2Ffastqtk%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=ndaniel%2Ffastqtk)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ndaniel](/ndaniel)
+/
+**[fastqtk](/ndaniel/fastqtk)**
+Public
+
+* [Notifications](/login?return_to=%2Fndaniel%2Ffastqtk) You must be signed in to change notification settings
+* [Fork
+  3](/login?return_to=%2Fndaniel%2Ffastqtk)
+* [Star
+   6](/login?return_to=%2Fndaniel%2Ffastqtk)
+
+* [Code](/ndaniel/fastqtk)
+* [Issues
+  0](/ndaniel/fastqtk/issues)
+* [Pull requests
+  0](/ndaniel/fastqtk/pulls)
+* [Actions](/ndaniel/fastqtk/actions)
+* [Projects](/ndaniel/fastqtk/projects)
+* [Security
+  0](/ndaniel/fastqtk/security)
+* [Insights](/ndaniel/fastqtk/pulse)
+
+Additional navigation options
+
+* [Code](/ndaniel/fastqtk)
+* [Issues](/ndaniel/fastqtk/issues)
+* [Pull requests](/ndaniel/fastqtk/pulls)
+* [Actions](/ndaniel/fastqtk/actions)
+* [Projects](/ndaniel/fastqtk/projects)
+* [Security](/ndaniel/fastqtk/security)
+* [Insights](/ndaniel/fastqtk/pulse)
+
+# Releases: ndaniel/fastqtk
+
+[Releases](/ndaniel/fastqtk/releases)
+[Tags](/ndaniel/fastqtk/tags)
+
+Releases · ndaniel/fastqtk
+
+## v0.28
+
+07 Jun 17:29
+
+![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)
+[github-actions](/apps/github-actions)
+
+[v0.28](/ndaniel/fastqtk/tree/v0.28)
+
+[`4c3d0fb`](/ndaniel/fastqtk/commit/4c3d0fbfee9479e27094c6fe5252522228fcaa68)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/ndaniel/fastqtk/tags)
+
+[v0.28](/ndaniel/fastqtk/releases/tag/v0.28)
+
+[Latest](/ndaniel/fastqtk/releases/latest)
+
+[Latest](/ndaniel/fastqtk/releases/latest)
+
+## What's Changed
+
+* Remove faulty code in drop-se by [@mikelchtermans](https://github.com/mikelchtermans) in [#6](https://github.com/ndaniel/fastqtk/pull/6)
+* Supporting reads of length one in lengths and providing more granular error messaging by [@thomas-watchmaker](https://github.com/thomas-watchmaker) in [#7](https://github.com/ndaniel/fastqtk/pull/7)
+
+## New Contributors
+
+* [@mikelchtermans](https://github.com/mikelchtermans) made their first contribution in [#6](https://github.com/ndaniel/fastqtk/pull/6)
+* [@thomas-watchmaker](https://github.com/thomas-watchmaker) made their first contribution in [#7](https://github.com/ndaniel/fastqtk/pull/7)
+
+**Full Changelog**: [v0.27...v0.28](https://github.com/ndaniel/fastqtk/compare/v0.27...v0.28)
+
+### Contributors
+
+* [![@thomas-watchmaker](https://avatars.githubusercontent.com/u/81595282?s=64&v=4)](https://github.com/thomas-watchmaker)
+* [![@mikelchtermans](https://avatars.githubusercontent.com/u/103198521?s=64&v=4)](https://github.com/mikelchtermans)
+
+thomas-watchmaker and mikelchtermans
+
+Assets
+3
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## fastqtk\_v0.27
+
+14 Mar 08:13
+
+![@ndaniel](https://avatars.githubusercontent.com/u/161419?s=40&v=4)
+[ndaniel](/ndaniel)
+
+[v0.27](/ndaniel/fastqtk/tree/v0.27)
+
+[`f888b4d`](/ndaniel/fastqtk/commit/f888b4d5c29d02910bba5448c41384cd9345c4e6)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/ndaniel/fastqtk/tags)
+
+[fastqtk\_v0.27](/ndaniel/fastqtk/releases/tag/v0.27)
+
+Fixed more bugs.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## fastq-leave\_v0.25
+
+14 Jan 10:22
+
+![@ndaniel](https://avatars.githubusercontent.com/u/161419?s=40&v=4)
+[ndaniel](/ndaniel)
+
+[v0.25](/ndaniel/fastqtk/tree/v0.25)
+
+[`f0e1995`](/ndaniel/fastqtk/commit/f0e19953c54b87b5f7974496066103f309f56fd1)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/ndaniel/fastqtk/tags)
+
+[fastq-leave\_v0.25](/ndaniel/fastqtk/releases/tag/v0.25)
+
+Added tools.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## fastqtk\_v0.23
+
+13 Jan 13:55
+
+![@ndaniel](https://avatars.githubusercontent.com/u/161419?s=40&v=4)
+[ndaniel](/ndaniel)
+
+[0.23](/ndaniel/fastqtk/tree/0.23)
+
+[`9d2fea7`](/ndaniel/fastqtk/commit/9d2fea77f234579d577e401adfb14426739000a3)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/ndaniel/fastqtk/tags)
+
+[fastqtk\_v0.23](/ndaniel/fastqtk/releases/tag/0.23)
+
+Added more tools and bug fixes.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## fastqtk\_v0.21
+
+13 Jan 08:24
+
+![@ndaniel](https://avatars.githubusercontent.com/u/161419?s=40&v=4)
+[ndaniel](/ndaniel)
+
+[v0.21](/ndaniel/fastqtk/tree/v0.21)
+
+[`0645bf4`](/ndaniel/fastqtk/commit/0645bf483a9767c25752b03309e2a8c030ada3ab)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/ndaniel/fastqtk/tags)
+
+[fastqtk\_v0.21](/ndaniel/fastqtk/releases/tag/v0.21)
+
+Fixed bugs.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

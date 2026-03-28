@@ -1,1 +1,445 @@
-GoekeLab m6anet · Discussions · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} GoekeLab / m6anet Public Notifications You must be signed in to change notification settings Fork 20 Star 131 Code Issues 25 Pull requests 0 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights GoekeLab m6anet Discussions Search all discussions Clear Sort by: Latest activity Latest activity Date created Top: Past day Top: Past week Top: Past month Top: Past year Top: All Label Filter by label Sorry, something went wrong. Filter Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . No labels found. Sorry about that. Use alt + click/return to exclude labels. Filter: Open Open Closed Locked Unlocked Answered Unanswered Verified All Categories, most helpful, and community links Categories View all discussions 📢 Announcement #️⃣ General 💡 Ideas 🗳️ Polls 🙏 Q&amp;A 🙌 Show and tell Loading Uh oh! There was an error while loading. Please reload this page . Community links Code of conduct m6anet.readthedocs.io Discussions 4 You must be logged in to vote 💡 Mapping transcript coordinates to genomic positions kylepalos started Apr 5, 2023 in Ideas 5 1 You must be logged in to vote 🙏 About the RNA04 dataset to train the model charlesxu90 asked Nov 29, 2023 in Q&amp;A · Answered 3 1 You must be logged in to vote 🙏 What are the metrics for the nested values in data.json ajb8866 asked Jun 28, 2024 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 A definition of read-level and site-level and the relationship between 'mod_ratio' and 'probability_modified' jouhpf asked Jan 19, 2024 in Q&amp;A · Unanswered 0 2 You must be logged in to vote 💡 Training data noncodo started Nov 3, 2023 in Ideas 2 1 You must be logged in to vote 🙏 Can m6anet output all the reads probability? kir1to455 asked Sep 18, 2023 in Q&amp;A · Unanswered 0 2 You must be logged in to vote #️⃣ Change n_read threshold DayeaPark asked Sep 5, 2023 in General · Unanswered 0 2 You must be logged in to vote 🙏 Can I use m6anet on basecalled data with Dorado? llecompte asked Jul 17, 2023 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 How to get result of miCLIP? thadasps asked May 19, 2023 in Q&amp;A · Answered 2 2 You must be logged in to vote #️⃣ Training on HCT116 Data skovaka asked Apr 26, 2023 in General · Unanswered 11 2 You must be logged in to vote 🙏 Seeking some clarification of the m6A predicted results YCCHEN23 asked May 11, 2023 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 About probability_modified threshold Yang990-sys asked May 11, 2023 in Q&amp;A · Answered 2 1 You must be logged in to vote 🙏 Setting minimum read count sdwien asked Mar 3, 2022 in Q&amp;A · Unanswered 3 1 You must be logged in to vote #️⃣ Training on non-DRACH/other modifications hengjwj asked Apr 12, 2023 in General · Answered 1 1 You must be logged in to vote 💡 Possible attempt to modify the code(IVT dataset with read-level labels available) for detectetion at read-level and return modification ratio of sites JiayiLi21 started Apr 7, 2023 in Ideas 1 1 You must be logged in to vote 💡 [Request]: eventalign.tsv.gz support loganylchen started Mar 6, 2023 in Ideas 2 1 You must be logged in to vote #️⃣ Can m6anet pick up m1A signal? ruicatxiao asked Feb 27, 2023 in General · Unanswered 2 4 You must be logged in to vote 📢 v-2.0.0 chrishendra93 announced Feb 24, 2023 in Announcement 0 1 You must be logged in to vote 🙏 Some Feedback and Questions tjprins asked Jan 18, 2023 in Q&amp;A · Unanswered 6 1 You must be logged in to vote #️⃣ m6Anet result differences in same bam file. DayeaPark asked Jan 18, 2023 in General · Unanswered 0 1 You must be logged in to vote 🙏 What is mod_ratio and I can get m6a site without DRACH motif? thadasps asked Jan 12, 2023 in Q&amp;A · Unanswered 1 3 You must be logged in to vote #️⃣ nf-m6anet NextFlow pipeline MaestSi asked Dec 21, 2022 in General · Unanswered 0 1 You must be logged in to vote 🙏 Single molecule m6A probability predictions Stakaitis asked Feb 27, 2022 in Q&amp;A · Answered 29 1 You must be logged in to vote 🙏 No mod ratios in csv file esh97 asked Dec 5, 2022 in Q&amp;A · Answered 4 2 You must be logged in to vote 🙏 m6anet -train on demo data : indexer out of bound error JiayiLi21 asked Nov 19, 2022 in Q&amp;A · Unanswered 0 Previous 1 2 Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FGoekeLab%2Fm6anet%2Fdiscussions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FGoekeLab%2Fm6anet%2Fdiscussions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fdiscussions%2Findex&source=header-repo&source_repo=GoekeLab%2Fm6anet)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[GoekeLab](/GoekeLab)
+/
+**[m6anet](/GoekeLab/m6anet)**
+Public
+
+* [Notifications](/login?return_to=%2FGoekeLab%2Fm6anet) You must be signed in to change notification settings
+* [Fork
+  20](/login?return_to=%2FGoekeLab%2Fm6anet)
+* [Star
+   131](/login?return_to=%2FGoekeLab%2Fm6anet)
+
+* [Code](/GoekeLab/m6anet)
+* [Issues
+  25](/GoekeLab/m6anet/issues)
+* [Pull requests
+  0](/GoekeLab/m6anet/pulls)
+* [Discussions](/GoekeLab/m6anet/discussions)
+* [Actions](/GoekeLab/m6anet/actions)
+* [Projects](/GoekeLab/m6anet/projects)
+* [Security
+  0](/GoekeLab/m6anet/security)
+* [Insights](/GoekeLab/m6anet/pulse)
+
+Additional navigation options
+
+* [Code](/GoekeLab/m6anet)
+* [Issues](/GoekeLab/m6anet/issues)
+* [Pull requests](/GoekeLab/m6anet/pulls)
+* [Discussions](/GoekeLab/m6anet/discussions)
+* [Actions](/GoekeLab/m6anet/actions)
+* [Projects](/GoekeLab/m6anet/projects)
+* [Security](/GoekeLab/m6anet/security)
+* [Insights](/GoekeLab/m6anet/pulse)
+
+# GoekeLab m6anet Discussions
+
+Search all discussions
+
+Clear
+
+Sort by:
+Latest activity
+
+[Latest activity](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen)
+[Date created](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+sort%3Adate_created)
+[Top: Past day](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-26)
+[Top: Past week](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-20)
+[Top: Past month](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-02-25)
+[Top: Past year](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2025-03-27)
+[Top: All](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+sort%3Atop)
+
+Label
+
+# Filter by label
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No labels found. Sorry about that.
+
+Use `alt` + `click/return` to exclude labels.
+
+Filter: Open
+
+* [Open](/GoekeLab/m6anet/discussions)
+* [Closed](/GoekeLab/m6anet/discussions?discussions_q=is%3Aclosed)
+* [Locked](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+is%3Alocked)
+* [Unlocked](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+is%3Aunlocked)
+* [Answered](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+is%3Aanswered)
+* [Unanswered](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+is%3Aunanswered)
+* [Verified](/GoekeLab/m6anet/discussions?discussions_q=is%3Aopen+is%3Averified)
+* [All](/GoekeLab/m6anet/discussions?discussions_q=)
+
+## Categories, most helpful, and community links
+
+### Categories
+
+* [View all discussions](/GoekeLab/m6anet/discussions)
+* [📢
+
+  Announcement](/GoekeLab/m6anet/discussions/categories/announcement)
+* [#️⃣
+
+  General](/GoekeLab/m6anet/discussions/categories/general)
+* [💡
+
+  Ideas](/GoekeLab/m6anet/discussions/categories/ideas)
+* [🗳️
+
+  Polls](/GoekeLab/m6anet/discussions/categories/polls)
+* [🙏
+
+  Q&A](/GoekeLab/m6anet/discussions/categories/q-a)
+* [🙌
+
+  Show and tell](/GoekeLab/m6anet/discussions/categories/show-and-tell)
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+### Community links
+
+* [Code of conduct](/GoekeLab/m6anet/blob/590ec277cb48d61774f0872395099e466022e810/CODE_OF_CONDUCT.md)
+* [m6anet.readthedocs.io](https://m6anet.readthedocs.io/)
+
+## Discussions
+
+* 5
+   You must be logged in to vote
+
+  💡
+
+  ### [Mapping transcript coordinates to genomic positions](/GoekeLab/m6anet/discussions/104)
+
+  [kylepalos](/kylepalos)
+  started
+  Apr 5, 2023
+   in
+  [Ideas](/GoekeLab/m6anet/discussions/categories/ideas?discussions_q=is%3Aopen+category%3AIdeas)
+
+  [![@kylepalos](https://avatars.githubusercontent.com/u/56089443?s=60&v=4)](/kylepalos)
+  [![@chrishendra93](https://avatars.githubusercontent.com/u/20517604?s=60&v=4)](/chrishendra93)[![@HenriettaHolze](https://avatars.githubusercontent.com/u/53051882?s=60&v=4)](/HenriettaHolze)
+
+  [![@kylepalos](https://avatars.githubusercontent.com/u/56089443?s=60&v=4)](/kylepalos)
+  [![@chrishendra93](https://avatars.githubusercontent.com/u/20517604?s=60&v=4)](/chrishendra93)[![@HenriettaHolze](https://avatars.githubusercontent.com/u/53051882?s=60&v=4)](/HenriettaHolze)
+
+  [5](/GoekeLab/m6anet/discussions/104)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [About the RNA04 dataset to train the model](/GoekeLab/m6anet/discussions/144)
+
+  [charlesxu90](/charlesxu90)
+  asked
+  Nov 29, 2023
+   in
+  [Q&A](/GoekeLab/m6anet/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Answered
+
+  [![@charlesxu90](https://avatars.githubusercontent.com/u/5413227?s=60&v=4)](/charlesxu90)
+  [![@jonathangoeke](https://avatars.githubusercontent.com/u/10560051?s=60&v=4)](/jonathangoeke)[![@BrendanBeahan](https://avatars.githubusercontent.com/u/32421717?s=60&v=4)](/BrendanBeahan)
+
+  [![@charlesxu90](https://avatars.githubusercontent.com/u/5413227?s=60&v=4)](/charlesxu90)
+  [![@jonathangoeke](https://avatars.githubusercontent.com/u/10560051?s=60&v=4)](/jonathangoeke)[![@BrendanBeahan](https://avatars.githubusercontent.com/u/32421717?s=60&v=4)](/BrendanBeahan)
+
+  [3](/GoekeLab/m6anet/discussions/144)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [What are the metrics for the nested values in data.json](/GoekeLab/m6anet/discussions/167)
+
+  [ajb8866](/ajb8866)
+  asked
+  Jun 28, 2024
+   in
+  [Q&A](/GoekeLab/m6anet/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@ajb8866](https://avatars.githubusercontent.com/u/70210329?s=60&v=4)](/ajb8866)
+
+  [![@ajb8866](https://avatars.githubusercontent.com/u/70210329?s=60&v=4)](/ajb8866)
+
+  [0](/GoekeLab/m6anet/discussions/167)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [A definition of read-level and site-level and the relationship between 'mod\_ratio' and 'probability\_modified'](/GoekeLab/m6anet/discussions/148)
+
+  [jouhpf](/jouhpf)
+  asked
+  Jan 19, 2024
+   in
+  [Q&A](/GoekeLab/m6anet/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@jouhpf](https://avatars.githubusercontent.com/u/58061729?s=60&v=4)](/jouhpf)
+
+  [![@jouhpf](https://avatars.githubusercontent.com/u/58061729?s=60&v=4)](/jouhpf)
+
+  [0](/GoekeLab/m6anet/discussions/148)
+* 2
+   You must be logged in to vote
+
+  💡
+
+  ### [Training data](/GoekeLab/m6anet/discussions/140)
+
+  [noncodo](/noncodo)
+  started
+  Nov 3, 2023
+   in
+  [Ideas](/GoekeLab/m6anet/discussions/categories/ideas?discussions_q=is%3Aopen+category%3AIdeas)
+
+  [![@noncodo](https://avatars.githubusercontent.com/u/4597999?s=60&v=4)](/noncodo)
+  [![@jonathangoeke](https://avatars.githubusercontent.com/u/10560051?s=60&v=4)](/jonathangoeke)
+
+  [![@noncodo](https://avatars.githubusercontent.com/u/4597999?s=60&v=4)](/noncodo)
+  [![@jonathangoeke](https://avatars.githubusercontent.com/u/10560051?s=60&v=4)](/jonathangoeke)
+
+  [2](/GoekeLab/m6anet/discussions/140)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [Can m6anet output all the reads probability?](/GoekeLab/m6anet/discussions/134)
+
+  [kir1to455](/kir1to455)
+  asked
+  Sep 18, 2023
+   in
+  [Q&A](/GoekeLab/m6anet/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@kir1to455](https://avatars.githubusercontent.com/u/87375686?s=60&v=4)](/kir1to455)
+
+  [![@kir1to455](https://avatars.githubusercontent.com/u/87375686?s=60&v=4)](/kir1to455)
+
+  [0](/GoekeLab/m6anet/discussions/134)
+* 2
+   You must be logged in to vote
+
+  #️⃣
+
+  ### [Change n\_read threshold](/GoekeLab/m6anet/discussions/132)
+
+  [DayeaPark](/DayeaPark)
+  asked
+  Sep 5, 2023
+   in
+  [General](/GoekeLab/m6anet/discussions/categories/general?discussions_q=is%3Aopen+category%3AGeneral)
+
+  · Unanswered
+
+  [![@DayeaPark](https://avatars.githubusercontent.com/u/99752377?s=60&v=4)](/DayeaPark)
+
+  [![@DayeaPark](https://avatars.githubusercontent.com/u/99752377?s=60&v=4)](/DayeaPark)
+
+  [0](/GoekeLab/m6anet/discussions/132)
+* 2
+   You must be logged in to vote
+
+  🙏
+
+  ### [Can I use m6anet on basecalled data with Dorado?](/GoekeLab/m6anet/discussions/124)
+
+  [llecompte](/llecompte)
+  asked
+  Jul 17, 2023
+   in
+  [Q&A](/GoekeLab/m6anet/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@llecompte](https://avatars.githubusercontent.com/u/20283255?s=60&v=4)](/llecompte)
+
+  [![@llecompte](https://avatars.githubusercontent.com/u/20283255?s=60&v=4)](/llecompte)
+
+  [0](/GoekeLab/m6anet/discussions/124)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [How to get result of miCLIP?](/GoekeLab/m6anet/discussions/122)
+
+  [thadasps](/thadasps)
+  asked
+  May 19, 2023
+   in
+  [Q&A](/GoekeLab/m6anet/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Answered
+
+  [![@thadasps](https://avatars.githubusercontent.com/u/108725113?s=60&v=4)](/thadasps)
+  [![@kristinrma](https://avatars.githubusercontent.com/u/61301451?s=60&v=4)](/kristinrma)[![@Codezy99](https://avatars.githubusercontent.com/u/67577959?s=60&v=4)](/Codezy99)
+
+  [![@thadasps](https://avatars.githubusercontent.com/u/108725113?s=60&v=4)](/thadasps)
+  [![@kristinrma](https://avatars.githubusercontent.com/u/61301451?s=60&v=4)](/kristinrma)[![@Codezy99](https://avatars.githubusercontent.com/u/67577959

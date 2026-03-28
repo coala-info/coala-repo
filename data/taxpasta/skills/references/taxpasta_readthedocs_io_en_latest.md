@@ -1,0 +1,293 @@
+[ ]
+[ ]
+
+[Skip to content](#about)
+
+[![logo](assets/images/taxpasta-logo-white-pastaonly.svg)](. "TAXPASTA")
+
+TAXPASTA
+
+Home
+
+Initializing search
+
+[taxprofiler/taxpasta](https://github.com/taxprofiler/taxpasta "Go to repository")
+
+[![logo](assets/images/taxpasta-logo-white-pastaonly.svg)](. "TAXPASTA")
+TAXPASTA
+
+[taxprofiler/taxpasta](https://github.com/taxprofiler/taxpasta "Go to repository")
+
+* [ ]
+
+  Home
+
+  [Home](.)
+
+  Table of contents
+  + [About](#about)
+
+    - [Supported Taxonomic Profilers](#supported-taxonomic-profilers)
+  + [Install](#install)
+
+    - [Optional Dependencies](#optional-dependencies)
+  + [Usage](#usage)
+
+    - [Standardise](#standardise)
+    - [Merge](#merge)
+  + [Citation](#citation)
+  + [Acknowledgments](#acknowledgments)
+  + [Copyright](#copyright)
+* [ ]
+
+  Tutorials
+
+  Tutorials
+  + [Getting Started](tutorials/getting-started/)
+  + [Deep Dive](tutorials/deepdive/)
+* [ ]
+
+  How-tos
+
+  How-tos
+  + [How-to Add Taxa Names to Output](how-tos/how-to-add-names/)
+  + [How-to Customise Sample Names](how-tos/how-to-customise-sample-names/)
+  + [How-to Merge Across Profilers](how-tos/how-to-merge-across-profilers/)
+* [ ]
+
+  [Commands](commands/)
+
+  Commands
+  + [standardise](commands/standardise/)
+  + [merge](commands/merge/)
+* [ ]
+
+  [Quick reference](quick_reference/)
+
+  Quick reference
+  + [standardise](quick_reference/standardise/)
+  + [merge](quick_reference/merge/)
+* [ ]
+
+  [Supported profilers](supported_profilers/)
+
+  Supported profilers
+  + [Terminology](supported_profilers/terminology/)
+  + [Bracken](supported_profilers/bracken/)
+  + [Centrifuge](supported_profilers/centrifuge/)
+  + [DIAMOND](supported_profilers/diamond/)
+  + [ganon](supported_profilers/ganon/)
+  + [Kaiju](supported_profilers/kaiju/)
+  + [KMCP](supported_profilers/kmcp/)
+  + [Kraken2](supported_profilers/kraken2/)
+  + [KrakenUniq](supported_profilers/krakenuniq/)
+  + [MEGAN6/MALT](supported_profilers/megan6/)
+  + [MetaPhlAn](supported_profilers/metaphlan/)
+  + [mOTUs](supported_profilers/motus/)
+* [FAQ](faq/)
+* [ ]
+
+  Design Decisions
+
+  Design Decisions
+  + [1. Record architecture decisions](adr/0001-record-architecture-decisions/)
+  + [2. Use Integer Taxonomy Identifiers](adr/0002-use-integer-taxonomy-identifiers/)
+* [ ]
+
+  API Reference
+
+  API Reference
+  + [Application](api/application/)
+  + [Domain](api/domain/)
+  + [Infrastructure](api/infrastructure/)
+* [ ]
+
+  [Contributing](contributing/)
+
+  Contributing
+  + [Supporting New Taxonomic Profilers](contributing/supporting_new_profiler/)
+
+Table of contents
+
+* [About](#about)
+
+  + [Supported Taxonomic Profilers](#supported-taxonomic-profilers)
+* [Install](#install)
+
+  + [Optional Dependencies](#optional-dependencies)
+* [Usage](#usage)
+
+  + [Standardise](#standardise)
+  + [Merge](#merge)
+* [Citation](#citation)
+* [Acknowledgments](#acknowledgments)
+* [Copyright](#copyright)
+
+# Home
+
+![taxpasta logo - a green DNA double helix morphing into a fusili pasta shape with the word taxpasta above it](assets/images/taxpasta-logo.svg)
+
+***TAX**onomic **P**rofile **A**ggregation and **STA**ndardisation*
+
+## About[¶](#about "Permanent link")
+
+The main purpose of taxpasta is to *standardise* taxonomic profiles created by a
+range of bioinformatics tools. We call those tools taxonomic profilers. They
+each come with their own particular tabular output format. Across the profilers,
+relative abundances can be reported in read counts, fractions, or percentages,
+as well as any number of additional columns with extra information. We therefore
+decided to take [the lessons learnt](https://xkcd.com/927/) to heart and provide
+our own solution to deal with this pasticcio. With taxpasta you can ingest all
+of those formats and, at a minimum, output taxonomy identifiers and their
+integer counts. Taxpasta can not only standardise profiles but also *merge* them
+across samples for the *same* profiler into a single table.
+
+![Diagram of taxpasta functionality. On the left are a range of taxonomic profilers with hetereogeneous output types with a header of taxonomic profiles, then a range of colourful lines leading into a box with a single green line, the taxpasta logo plus three icons for Validation, Standardisation and Conversion, and finally a range of green lines spreading out to a range of file icons with various file types with a header of Standardised Tables.](assets/images/taxpasta_diagram_v0.4.png)
+
+### Supported Taxonomic Profilers[¶](#supported-taxonomic-profilers "Permanent link")
+
+Taxpasta currently supports standardisation and generation of comparable
+taxonomic tables for:
+
+* [Bracken](https://ccb.jhu.edu/software/bracken/)
+* [Centrifuge](https://ccb.jhu.edu/software/centrifuge/)
+* [DIAMOND](https://github.com/bbuchfink/diamond)
+* [ganon](https://pirovc.github.io/ganon/)
+* [Kaiju](https://kaiju.binf.ku.dk/)
+* [Kraken2](https://ccb.jhu.edu/software/kraken2/)
+* [KrakenUniq](https://github.com/fbreitwieser/krakenuniq)
+* [MEGAN6](http://www-ab.informatik.uni-tuebingen.de/software/megan6)/[MALT](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/malt/)
+* [MetaPhlAn](https://huttenhower.sph.harvard.edu/metaphlan)
+* [mOTUs](https://motu-tool.org/)
+
+See [supported profilers](supported_profilers/) for more information.
+
+## Install[¶](#install "Permanent link")
+
+It's as simple as:
+
+```
+pip install taxpasta
+```
+
+Taxpasta is also available from the [Bioconda](https://bioconda.github.io/)
+channel
+
+```
+conda install -c bioconda taxpasta
+```
+
+and thus automatically generated
+[Docker](https://quay.io/repository/biocontainers/taxpasta?tab=tags) and
+[Singularity](https://depot.galaxyproject.org/singularity/)
+[BioContainers](https://biocontainers.pro/) images also exist.
+
+### Optional Dependencies[¶](#optional-dependencies "Permanent link")
+
+Taxpasta supports a number of extras that you can install for additional
+features; primarily support for additional output file formats. You can install
+them by specifying a comma separated list within square brackets, for example,
+
+```
+pip install 'taxpasta[rich,biom]'
+```
+
+* `rich` provides [rich](https://rich.readthedocs.io/)-formatted command line output and logging.
+* `arrow` supports writing output tables in [Apache Arrow](https://arrow.apache.org/) format.
+* `parquet` supports writing output tables in [Apache Parquet](https://parquet.apache.org/) format.
+* `biom` supports writing output tables in [BIOM](https://biom-format.org/) format.
+* `ods` supports writing output tables in [ODS](https://www.libreoffice.org/discover/what-is-opendocument/) format.
+* `xlsx` supports writing output tables in [Microsoft Excel](https://support.microsoft.com/en-us/office/file-formats-that-are-supported-in-excel-0943ff2c-6014-4e8d-aaea-b83d51d46247) format.
+* `all` includes all of the above.
+* `dev` provides all tools needed for contributing to taxpasta.
+
+## Usage[¶](#usage "Permanent link")
+
+The main entry point for taxpasta is its command-line interface (CLI). You can interactively
+explore the offered commands through the help system.
+
+```
+taxpasta -h
+```
+
+See the [Getting Started](tutorials/getting-started/) tutorial to get familiar with Taxpasta.
+
+Taxpasta currently offers two commands corresponding to the main [use-cases](#about).
+You can find out more in the [commands' documentation](commands/).
+
+### Standardise[¶](#standardise "Permanent link")
+
+Since the [supported profilers](#supported-taxonomic-profilers) all produce
+their own flavour of tabular output, a quick way to normalize such files, is to
+standardise them with taxpasta. You need to let taxpasta know what tool the file
+was created by. As an example, let's standardise a MetaPhlAn profile. (You can
+find an example file in our [test
+data](https://raw.githubusercontent.com/taxprofiler/taxpasta/main/tests/data/metaphlan/MOCK_002_Illumina_Hiseq_3000_se_metaphlan3-db.metaphlan3_profile.txt).)
+
+```
+curl -O https://raw.githubusercontent.com/taxprofiler/taxpasta/main/tests/data/metaphlan/MOCK_002_Illumina_Hiseq_3000_se_metaphlan3-db.metaphlan3_profile.txt
+
+taxpasta standardise -p metaphlan -o standardised.tsv MOCK_002_Illumina_Hiseq_3000_se_metaphlan3-db.metaphlan3_profile.txt
+```
+
+With these minimal arguments, taxpasta produces a two column output consisting of
+
+| taxonomy\_id | count |
+| --- | --- |
+|  |  |
+
+You can count on the second column being integers ![😉](https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f609.svg ":wink:") Having such a simple
+and tidy table should make your downstream analysis much smoother to start out
+with. Please, have a look at the full [getting
+started](tutorials/getting-started/) tutorial for a more thorough
+introduction.
+
+### Merge[¶](#merge "Permanent link")
+
+Converting single tables is nice, but hopefully you have many shiny samples to
+analyze. The `taxpasta merge` command works similarly to `standardise` except
+that you provide multiple profiles as input. Grab a few more MOCK examples from
+our [test
+data](https://github.com/taxprofiler/taxpasta/tree/main/tests/data/metaphlan) and
+try it out.
+
+```
+LOCATION=https://raw.githubusercontent.com/taxprofiler/taxpasta/main/tests/data/metaphlan
+curl -O "${LOCATION}/MOCK_001_Illumina_Hiseq_3000_se_metaphlan3-db.metaphlan3_profile.txt"
+curl -O "${LOCATION}/MOCK_002_Illumina_Hiseq_3000_se_metaphlan3-db.metaphlan3_profile.txt"
+curl -O "${LOCATION}/MOCK_003_Illumina_Hiseq_3000_se_metaphlan3-db.metaphlan3_profile.txt"
+
+taxpasta merge -p metaphlan -o merged.tsv MOCK_*.metaphlan3_profile.txt
+```
+
+The output of the `merge` command has one column for the taxonomy identifier and
+one more column for each input profile. Again, please have a look at the full
+[getting started](tutorials/getting-started/) tutorial for a more thorough
+introduction.
+
+## Citation[¶](#citation "Permanent link")
+
+If you use TAXPASTA in your academic work, please cite our [article in the Journal of Open Source Software](https://doi.org/10.21105/joss.05627).
+
+> Beber, M. E., Borry, M., Stamouli, S., & Fellows Yates, J. A. (2023). TAXPASTA: TAXonomic Profile Aggregation and STAndardisation. Journal of Open Source Software, 8(87), 5627. https://doi.org/10.21105/joss.05627
+
+## Acknowledgments[¶](#acknowledgments "Permanent link")
+
+Many thanks to:
+
+* [nf-core](https://nf-co.re) for bringing together the original developers
+* [Zandra Fagernäs](https://twitter.com/ZandraSelina) for the logo design
+
+## Copyright[¶](#copyright "Permanent link")
+
+* Copyright © 2022-2024, Moritz E. Beber, Maxime Borry, James A. Fellows
+  Yates, and Sofia Stamouli.
+* Free software distributed under the [Apache Software License
+  2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Back to top
+
+Copyright © 2022 Moritz E. Beber, Maxime Borry, James A. Fellows Yates, and Sofia Stamouli
+
+Made with
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)

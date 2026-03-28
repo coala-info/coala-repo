@@ -130,3 +130,6 @@ output_msp_or_mgf (opt):
 The filename for an output msp or mgf file to record predicted candidate spectra (if not given, doesn't save predicted spectra)
 ```
 
+
+## Metadata
+- **Skill**: generated

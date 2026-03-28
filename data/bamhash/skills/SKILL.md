@@ -1,6 +1,6 @@
 ---
 name: bamhash
-description: BamHash generates order-independent checksums for genomic data to verify file integrity across different formats and processing stages. Use when user asks to generate checksums for BAM, CRAM, or FASTQ files, verify data consistency after re-sorting, or compare raw reads to aligned outputs.
+description: "BamHash generates order-independent checksums for sequencing data to verify data integrity across different file formats and pipeline stages. Use when user asks to calculate checksums for BAM, CRAM, FASTQ, or FASTA files, detect data corruption, or verify that read data remains consistent after alignment and processing."
 homepage: https://github.com/DecodeGenetics/BamHash
 ---
 
@@ -9,66 +9,51 @@ homepage: https://github.com/DecodeGenetics/BamHash
 
 ## Overview
 
-BamHash is a specialized utility designed to generate order-independent checksums for genomic data. Unlike standard MD5 or SHA sums that change if a file is re-sorted, BamHash focuses on the content of the reads—specifically the read name, sequence, and quality scores. By summing individual read hashes, it produces a final value that remains consistent even if the reads are reordered during alignment or processing. This makes it an essential tool for quality control in NGS pipelines to confirm that no data was lost or corrupted between the raw FASTQ stage and the final BAM/CRAM output.
+BamHash provides a robust method for generating order-independent checksums for high-throughput sequencing data. By computing hash values for individual reads (incorporating read names, sequences, and quality scores) and summing them, the tool produces a final value that remains consistent even if the reads are reordered during alignment or processing. This allows bioinformaticians to detect data corruption or loss across different stages of a pipeline.
 
-## Usage Instructions
+## Common CLI Patterns
 
-### Core Executables
-BamHash provides three distinct executables based on the input file type:
-- `bamhash_checksum_bam`: For BAM and CRAM files.
-- `bamhash_checksum_fastq`: For FASTQ files (supports gzipped input).
-- `bamhash_checksum_fasta`: For FASTA files (assumes single-end, no quality).
+### Hashing BAM and CRAM Files
+Use `bamhash_checksum_bam` for alignment files. By default, it assumes paired-end data.
 
-### Common CLI Patterns
+*   **Standard BAM check:**
+    `bamhash_checksum_bam input.bam`
+*   **CRAM check (requires reference):**
+    `bamhash_checksum_bam -r reference.fasta input.cram`
+*   **Single-end BAM:**
+    `bamhash_checksum_bam --no-paired input.bam`
 
-#### Verifying BAM Integrity
-To generate a checksum for a BAM file:
-```bash
-bamhash_checksum_bam input.bam
-```
+### Hashing FASTQ and FASTA Files
+*   **Paired-end FASTQ:**
+    `bamhash_checksum_fastq read_1.fastq.gz read_2.fastq.gz`
+*   **Single-end FASTQ:**
+    `bamhash_checksum_fastq --no-paired input.fastq.gz`
+*   **FASTA (assumes single-end, no quality):**
+    `bamhash_checksum_fasta input.fasta`
 
-#### Verifying CRAM Integrity
-CRAM files require the original reference genome used for compression:
-```bash
-bamhash_checksum_bam -r reference.fasta input.cram
-```
+## Expert Tips and Best Practices
 
-#### Verifying FASTQ Pairs
-When processing paired-end FASTQ files, provide both files. The tool expects read names to match between pairs:
-```bash
-bamhash_checksum_fastq read_R1.fastq.gz read_R2.fastq.gz
-```
+### Handling Pipeline Modifications
+If your bioinformatics pipeline modifies specific parts of the read data, use these flags to ensure the checksums still match:
+*   **Quality Score Changes:** If you have performed Base Quality Score Recalibration (BQSR) or quality binning, use `--no-quality` on both the BAM and FASTQ commands to compare only the sequences and names.
+*   **Read Name Mangling:** If the aligner or a script alters read names, use the `--no-name` flag to hash only the sequences and quality values.
+*   **Comparing FASTA to BAM:** To compare a FASTA file (which lacks quality data) to a BAM file, you must run the BAM check with both `--no-paired` and `--no-quality`.
 
-#### Single-End Data
-By default, the tool assumes paired-end data. For single-end runs, you must specify the flag:
-```bash
-bamhash_checksum_bam --no-paired input.bam
-bamhash_checksum_fastq --no-paired input.fastq.gz
-```
+### Troubleshooting Mismatches
+If two files that should be identical produce different hashes:
+1.  **Debug Mode:** Use the `-d` flag to print the information and hash value for every individual read. This helps identify exactly which read is causing the discrepancy.
+2.  **Validation:** Ensure that `bamhash_checksum_fastq` is provided with pairs in the correct order (R1 then R2). The tool will exit with a failure if read names between the two FASTQ files do not match.
+3.  **Secondary Alignments:** Note that the tool is designed to handle secondary alignments properly to avoid double-counting reads that appear multiple times in a BAM file.
 
-### Expert Tips and Best Practices
 
-#### Handling Pipeline Modifications
-If your bioinformatics pipeline modifies read names (e.g., adding suffixes) or recalibrates quality scores, the default hash will not match. Use these flags to ignore specific components:
-- **Ignore Read Names**: Use when a tool has mangled or renamed headers.
-- **Ignore Quality**: Use after Base Quality Score Recalibration (BQSR) or if quality scores were quantized.
-- **Example (Comparing BAM to FASTQ without quality)**:
-  ```bash
-  # Run on FASTQ
-  bamhash_checksum_fastq --no-quality R1.fq R2.fq
-  # Run on BAM
-  bamhash_checksum_bam --no-quality input.bam
-  ```
 
-#### Debugging Mismatches
-If two files that should be identical produce different hashes, use the `-d` (debug) flag. This prints the information and hash value for every individual read, allowing you to identify exactly where the discrepancy occurs (e.g., a specific read pair that was dropped or modified).
+## Subcommands
 
-#### Comparing FASTA to BAM
-Since FASTA files lack quality information, you must disable quality checking when comparing them to a BAM file:
-```bash
-bamhash_checksum_bam --no-paired --no-quality input.bam
-```
+| Command | Description |
+|---------|-------------|
+| bamhash_checksum_bam | Checksum of a sam, bam or cram file |
+| bamhash_checksum_fasta | Checksum of a set of fasta files |
+| bamhash_checksum_fastq | Program for checksum of sequence reads. |
 
 ## Reference documentation
-- [BamHash GitHub Repository](./references/github_com_DecodeGenetics_BamHash.md)
-- [BamHash Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_bamhash_overview.md)
+- [BamHash Main Repository and Usage](./references/github_com_DecodeGenetics_BamHash.md)

@@ -263,3 +263,6 @@ Options:
   --sparse                        Force sparsity.
 ```
 
+
+## Metadata
+- **Skill**: generated

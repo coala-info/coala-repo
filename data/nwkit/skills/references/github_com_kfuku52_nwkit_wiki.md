@@ -1,1 +1,450 @@
-Home · kfuku52/nwkit Wiki · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} kfuku52 / nwkit Public Notifications You must be signed in to change notification settings Fork 3 Star 13 Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Wiki Security Insights Home Jump to bottom Tomoya Nishiguchi edited this page Oct 15, 2025 &middot; 12 revisions Setting up Installation and dependencies Subcommands constrain : Generating a species-tree-like Newick file for topological constraint dist : Calculating topological distance between two trees drop : Removing node and branch information info : Printing tree information intersection : Dropping non-overlapping leaves/sequences between two trees or between a tree and an alignment label : Adding unique node labels mark : Adding texts to node labels by identifying the targets with a leaf name regex mcmctree : Introducing divergence time constraints for PAML's mcmctree nhx2nwk : Generating Newick from NHX printlabel : Searching and printing node labels prune : Pruning leaves rescale : Rescale branch length with a given factor root : Placing or transferring the tree root sanitize : Eliminating non-standard Newick flavors shuffle : Shuffling branches and/or labels skim : Sampling leaves from clades with shared traits subtree : Generating a subtree Newick file transfer : Transferring information between trees Toggle table of contents Pages 20 Loading Home Setting up Subcommands Loading Installation and dependencies Uh oh! There was an error while loading. Please reload this page . Loading nwkit constrain Uh oh! There was an error while loading. Please reload this page . Loading nwkit dist Uh oh! There was an error while loading. Please reload this page . Loading nwkit drop Uh oh! There was an error while loading. Please reload this page . Loading nwkit info Uh oh! There was an error while loading. Please reload this page . Loading nwkit intersection Uh oh! There was an error while loading. Please reload this page . Loading nwkit label Uh oh! There was an error while loading. Please reload this page . Loading nwkit mark Uh oh! There was an error while loading. Please reload this page . Loading nwkit mcmctree Uh oh! There was an error while loading. Please reload this page . Loading nwkit nhx2nwk Uh oh! There was an error while loading. Please reload this page . Loading nwkit printlabel Uh oh! There was an error while loading. Please reload this page . Loading nwkit prune Uh oh! There was an error while loading. Please reload this page . Loading nwkit rescale Uh oh! There was an error while loading. Please reload this page . Loading nwkit root Uh oh! There was an error while loading. Please reload this page . Loading nwkit sanitize Uh oh! There was an error while loading. Please reload this page . Loading nwkit shuffle Uh oh! There was an error while loading. Please reload this page . Loading nwkit skim Uh oh! There was an error while loading. Please reload this page . Loading nwkit subtree Uh oh! There was an error while loading. Please reload this page . Loading nwkit transfer Uh oh! There was an error while loading. Please reload this page . Show 5 more pages… Clone this wiki locally Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fkfuku52%2Fnwkit%2Fwiki)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fkfuku52%2Fnwkit%2Fwiki)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Findex&source=header-repo&source_repo=kfuku52%2Fnwkit)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[kfuku52](/kfuku52)
+/
+**[nwkit](/kfuku52/nwkit)**
+Public
+
+* [Notifications](/login?return_to=%2Fkfuku52%2Fnwkit) You must be signed in to change notification settings
+* [Fork
+  3](/login?return_to=%2Fkfuku52%2Fnwkit)
+* [Star
+   13](/login?return_to=%2Fkfuku52%2Fnwkit)
+
+* [Code](/kfuku52/nwkit)
+* [Issues
+  0](/kfuku52/nwkit/issues)
+* [Pull requests
+  0](/kfuku52/nwkit/pulls)
+* [Actions](/kfuku52/nwkit/actions)
+* [Projects](/kfuku52/nwkit/projects)
+* [Wiki](/kfuku52/nwkit/wiki)
+* [Security
+  0](/kfuku52/nwkit/security)
+* [Insights](/kfuku52/nwkit/pulse)
+
+Additional navigation options
+
+* [Code](/kfuku52/nwkit)
+* [Issues](/kfuku52/nwkit/issues)
+* [Pull requests](/kfuku52/nwkit/pulls)
+* [Actions](/kfuku52/nwkit/actions)
+* [Projects](/kfuku52/nwkit/projects)
+* [Wiki](/kfuku52/nwkit/wiki)
+* [Security](/kfuku52/nwkit/security)
+* [Insights](/kfuku52/nwkit/pulse)
+
+# Home
+
+[Jump to bottom](#wiki-pages-box)
+
+Kenji Fukushima edited this page Mar 25, 2026
+·
+[15 revisions](/kfuku52/nwkit/wiki/Home/_history)
+
+## Setting up
+
+* [Installation and dependencies](https://github.com/kfuku52/nwkit/wiki/Installation-and-dependencies)
+
+## Subcommands
+
+* [`constrain`](https://github.com/kfuku52/nwkit/wiki/nwkit-constrain): Generating a species-tree-like Newick file for topological constraint
+* [`collapse`](https://github.com/kfuku52/nwkit/wiki/nwkit-collapse): Collapsing internal branches by support and/or branch length
+* [`cladefreq`](https://github.com/kfuku52/nwkit/wiki/nwkit-cladefreq): Summarizing clade frequencies across a tree collection
+* [`consensus`](https://github.com/kfuku52/nwkit/wiki/nwkit-consensus): Generating a consensus tree or transferring consensus support to a reference tree
+* [`dist`](https://github.com/kfuku52/nwkit/wiki/nwkit-dist): Calculating topological distance between two trees
+* [`draw`](https://github.com/kfuku52/nwkit/wiki/nwkit-draw): Drawing a phylogenetic tree with optional speciation/duplication node markers
+* [`drop`](https://github.com/kfuku52/nwkit/wiki/nwkit-drop): Removing node and branch information
+* [`image`](https://github.com/kfuku52/nwkit/wiki/nwkit-image): Retrieving representative species images with license-aware filtering
+* [`info`](https://github.com/kfuku52/nwkit/wiki/nwkit-info): Printing tree information
+* [`intersection`](https://github.com/kfuku52/nwkit/wiki/nwkit-intersection): Dropping non-overlapping leaves/sequences between two trees or between a tree and an alignment
+* [`label`](https://github.com/kfuku52/nwkit/wiki/nwkit-label): Adding unique node labels
+* [`mark`](https://github.com/kfuku52/nwkit/wiki/nwkit-mark): Adding texts to node labels by identifying the targets with a leaf name regex
+* [`mcmctree`](https://github.com/kfuku52/nwkit/wiki/nwkit-mcmctree): Introducing divergence time constraints for PAML's mcmctree
+* [`monophyly`](https://github.com/kfuku52/nwkit/wiki/nwkit-monophyly): Assessing whether species or trait-defined groups are monophyletic
+* [`nhx2nwk`](https://github.com/kfuku52/nwkit/wiki/nwkit-nhx2nwk): Generating Newick from NHX
+* [`nwk2table`](https://github.com/kfuku52/nwkit/wiki/nwkit-nwk2table): Converting a Newick tree into a parent-child table
+* [`printlabel`](https://github.com/kfuku52/nwkit/wiki/nwkit-printlabel): Searching and printing node labels
+* [`prune`](https://github.com/kfuku52/nwkit/wiki/nwkit-prune): Pruning leaves
+* [`rename`](https://github.com/kfuku52/nwkit/wiki/nwkit-rename): Renaming nodes using a TSV mapping or regular expression
+* [`rescale`](https://github.com/kfuku52/nwkit/wiki/nwkit-rescale): Rescale branch length with a given factor
+* [`root`](https://github.com/kfuku52/nwkit/wiki/nwkit-root): Placing or transferring the tree root
+* [`sanitize`](https://github.com/kfuku52/nwkit/wiki/nwkit-sanitize): Eliminating non-standard Newick flavors
+* [`shuffle`](https://github.com/kfuku52/nwkit/wiki/nwkit-shuffle): Shuffling branches and/or labels
+* [`skim`](https://github.com/kfuku52/nwkit/wiki/nwkit-skim): Sampling leaves from clades with shared traits
+* [`subtree`](https://github.com/kfuku52/nwkit/wiki/nwkit-subtree): Generating a subtree Newick file
+* [`table2nwk`](https://github.com/kfuku52/nwkit/wiki/nwkit-table2nwk): Converting a parent-child table into a Newick tree
+* [`transfer`](https://github.com/kfuku52/nwkit/wiki/nwkit-transfer): Transferring information between trees
+* [`validate`](https://github.com/kfuku52/nwkit/wiki/nwkit-validate): Validating one or more Newick trees and reporting structural issues
+
+## Toggle table of contents Pages 30
+
+* Loading
+
+  [Home](/kfuku52/nwkit/wiki)
+
+  + [Setting up](/kfuku52/nwkit/wiki#setting-up)
+  + [Subcommands](/kfuku52/nwkit/wiki#subcommands)
+* Loading
+
+  [Installation and dependencies](/kfuku52/nwkit/wiki/Installation-and-dependencies)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit cladefreq](/kfuku52/nwkit/wiki/nwkit-cladefreq)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit collapse](/kfuku52/nwkit/wiki/nwkit-collapse)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit consensus](/kfuku52/nwkit/wiki/nwkit-consensus)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit constrain](/kfuku52/nwkit/wiki/nwkit-constrain)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit dist](/kfuku52/nwkit/wiki/nwkit-dist)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit draw](/kfuku52/nwkit/wiki/nwkit-draw)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit drop](/kfuku52/nwkit/wiki/nwkit-drop)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit image](/kfuku52/nwkit/wiki/nwkit-image)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit info](/kfuku52/nwkit/wiki/nwkit-info)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit intersection](/kfuku52/nwkit/wiki/nwkit-intersection)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit label](/kfuku52/nwkit/wiki/nwkit-label)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit mark](/kfuku52/nwkit/wiki/nwkit-mark)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit mcmctree](/kfuku52/nwkit/wiki/nwkit-mcmctree)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit monophyly](/kfuku52/nwkit/wiki/nwkit-monophyly)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit nhx2nwk](/kfuku52/nwkit/wiki/nwkit-nhx2nwk)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit nwk2table](/kfuku52/nwkit/wiki/nwkit-nwk2table)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit printlabel](/kfuku52/nwkit/wiki/nwkit-printlabel)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit prune](/kfuku52/nwkit/wiki/nwkit-prune)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit rename](/kfuku52/nwkit/wiki/nwkit-rename)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit rescale](/kfuku52/nwkit/wiki/nwkit-rescale)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit root](/kfuku52/nwkit/wiki/nwkit-root)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit sanitize](/kfuku52/nwkit/wiki/nwkit-sanitize)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit shuffle](/kfuku52/nwkit/wiki/nwkit-shuffle)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit skim](/kfuku52/nwkit/wiki/nwkit-skim)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit subtree](/kfuku52/nwkit/wiki/nwkit-subtree)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit table2nwk](/kfuku52/nwkit/wiki/nwkit-table2nwk)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit transfer](/kfuku52/nwkit/wiki/nwkit-transfer)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [nwkit validate](/kfuku52/nwkit/wiki/nwkit-validate)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Show 15 more pages…
+
+### Clone this wiki locally
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage 

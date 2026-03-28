@@ -1,107 +1,63 @@
 ---
 name: dinf
-description: "Performs discriminator-based inference for population genetics using neural networks. Use when you ask to infer population genetic parameters by comparing a target dataset to simulated data or when working with the dinf Python API."
+description: dinf performs population genetics parameter inference by training neural networks to distinguish between real and simulated datasets. Use when user asks to infer demographic parameters, train a discriminator, run adversarial Monte Carlo simulations, or visualize posterior distributions.
 homepage: https://github.com/RacimoLab/dinf
 ---
 
 
 # dinf
 
-Performs discriminator-based inference for population genetics using neural networks.
-  Use when you need to infer population genetic parameters by comparing a target dataset
-  to simulated data, or when working with the dinf Python API for simulation model creation
-  and CLI for training and inference.
----
 ## Overview
 
-The `dinf` tool is designed for population genetics research, enabling inference of genetic parameters through a process of discriminator-based comparison between observed (target) and simulated datasets. It leverages neural networks to achieve this, finding simulation parameters that best match the target data. The tool offers both a Python API for defining simulation models and a command-line interface (CLI) for training discriminators and performing inference.
+dinf is a specialized tool for population genetics that performs parameter inference by leveraging neural networks as discriminators. Instead of using traditional summary statistics, it trains a discriminator to distinguish between a target (real) dataset and a simulated dataset. Inference is achieved by identifying the simulation parameters that produce data most similar to the target, effectively making the simulated data indistinguishable to the neural network. This approach is particularly useful for complex demographic models where likelihood functions are difficult to compute.
 
-## Usage
+## CLI Usage and Patterns
 
-The `dinf` tool can be used via its Python API or its command-line interface.
+The `dinf` toolset consists of three primary executables: `dinf` (core logic), `dinf-plot` (visualization), and `dinf-tabulate` (data processing).
 
-### Command-Line Interface (CLI)
+### Core Inference Workflow
 
-The CLI is primarily used for training discriminators and performing inference.
+Always specify the simulation model and the discriminator architecture using the `-m` and `-d` flags.
 
-**General Structure:**
+*   **Training a Discriminator**:
+    `dinf --model model.py --discriminator disc.py train --output-file discriminator.flax`
+*   **Monte Carlo Inference (formerly SMC)**:
+    `dinf --model model.py --discriminator disc.py mc --iterations 10 --output-prefix my_inference`
+*   **MCMC Inference**:
+    `dinf --model model.py --discriminator disc.py mcmc --epochs 100`
 
-```bash
-dinf <command> [options]
-```
+### Data Tabulation and Plotting
 
-**Key Commands and Options:**
+*   **Tabulate Results**: Use `dinf-tabulate` to convert raw inference output into a readable format.
+    `dinf-tabulate my_inference.h5 > results.csv`
+*   **Visualize Posterior Distributions**:
+    `dinf-plot hist my_inference.h5`
+*   **Check Convergence/Entropy**:
+    `dinf-plot entropy my_inference.h5`
 
-*   **`train`**: Trains a discriminator model.
-    *   `--target-data <path>`: Path to the target dataset.
-    *   `--sim-params <path>`: Path to a file defining simulation parameters.
-    *   `--output-dir <path>`: Directory to save the trained discriminator.
-    *   `--epochs <int>`: Number of training epochs.
-    *   `--batch-size <int>`: Batch size for training.
+## Best Practices and Expert Tips
 
-*   **`infer`**: Performs inference using a trained discriminator.
-    *   `--discriminator <path>`: Path to the trained discriminator model.
-    *   `--target-data <path>`: Path to the target dataset.
-    *   `--sim-params <path>`: Path to a file defining simulation parameters to search over.
-    *   `--output-file <path>`: File to save the inference results.
-    *   `--optimizer <str>`: The optimization algorithm to use (e.g., 'adam', 'sgd').
-    *   `--learning-rate <float>`: Learning rate for the optimizer.
+*   **Feature Matrix Selection**: Choose the appropriate matrix type for your genomic data. Use `BinnedHaplotypeMatrix` for standard `dinf` workflows or `HaplotypeMatrix` for workflows mimicking the PG-GAN style.
+*   **Neural Network Architectures**: For population genetic data, use permutation-invariant architectures. `ExchangeableCNN` is the default for single populations, while multi-population versions are available for complex demographic scenarios.
+*   **Performance Optimization**: `dinf` uses JAX and Flax. Ensure your environment is configured for GPU acceleration if available, as training discriminators on millions of simulations is computationally intensive.
+*   **KDE Reflection**: When plotting results with `dinf-plot`, the tool uses Kernel Density Estimation (KDE) with reflection to prevent density drops at the edges of the parameter support.
+*   **Lazy Imports**: The CLI is designed to be responsive by lazily importing heavy libraries like SciPy; however, the first execution of a complex model may still have a slight lag.
 
-**Example Workflow:**
 
-1.  **Prepare your data:** Ensure your target dataset and simulation parameter definitions are in the correct format (refer to the project documentation for specifics).
-2.  **Train a discriminator:**
-    ```bash
-    dinf train --target-data path/to/your/target_data.tsv --sim-params path/to/simulation_params.yaml --output-dir ./trained_discriminator
-    ```
-3.  **Perform inference:**
-    ```bash
-    dinf infer --discriminator ./trained_discriminator/discriminator.pth --target-data path/to/your/target_data.tsv --sim-params path/to/simulation_params.yaml --output-file ./inference_results.csv --optimizer adam --learning-rate 0.001
-    ```
 
-### Python API
+## Subcommands
 
-The Python API allows for programmatic creation of simulation models and integration into custom workflows.
-
-**Key Components:**
-
-*   **`dinf.models`**: Contains modules for defining simulation models.
-*   **`dinf.training`**: Utilities for training discriminators.
-*   **`dinf.inference`**: Tools for performing inference.
-
-**Example Snippet (Conceptual):**
-
-```python
-import dinf.models as models
-import dinf.training as training
-import dinf.inference as inference
-
-# Define a simulation model
-my_model = models.MySimulationModel(...)
-
-# Train a discriminator
-discriminator = training.train_discriminator(
-    target_data=...,
-    simulation_model=my_model,
-    sim_params=...,
-    epochs=100
-)
-
-# Perform inference
-results = inference.run_inference(
-    discriminator=discriminator,
-    target_data=...,
-    sim_params=...
-)
-```
-
-**Best Practices:**
-
-*   **Data Formatting:** Always consult the official documentation for the expected format of input data files (e.g., `.tsv`, `.yaml`).
-*   **Parameter Tuning:** Experiment with different `epochs`, `batch-size`, `optimizer`, and `learning-rate` values to achieve optimal results.
-*   **Output Interpretation:** Understand the output of the `infer` command, which typically includes inferred parameter values and their confidence intervals.
+| Command | Description |
+|---------|-------------|
+| dinf mc | Adversarial Monte Carlo. |
+| dinf pg-gan | PG-GAN style simulated annealing. |
+| dinf predict | Make predictions using a trained discriminator. |
+| dinf train | Train a discriminator. |
+| dinf_check | Basic dinf_model health checks. |
+| mcmc | Adversarial MCMC. |
 
 ## Reference documentation
 
-- [GitHub - RacimoLab/dinf: Dinf is discriminator-based inference for population genetics](./references/github_com_RacimoLab_dinf.md)
-- [Anaconda.org channels bioconda packages dinf overview](./references/anaconda_org_channels_bioconda_packages_dinf_overview.md)
+- [README](./references/github_com_RacimoLab_dinf_blob_main_README.md)
+- [Changelog](./references/github_com_RacimoLab_dinf_blob_main_CHANGELOG.md)
+- [Setup Configuration](./references/github_com_RacimoLab_dinf_blob_main_setup.cfg.md)

@@ -1,6 +1,6 @@
 ---
 name: wipertools
-description: wipertools sanitizes genomic sequencing data by cleaning and repairing FASTQ files. Use when user asks to clean FASTQ files, repair corrupted genomic sequencing data, define allowed sequence alphabets, generate quality reports, split or merge FASTQ files, or aggregate summary reports.
+description: wipertools is a utility suite designed to sanitize malformed FASTQ files, synchronize paired-end reads, and recover data from corrupted GZIP archives. Use when user asks to fix malformed FASTQ lines, synchronize desynchronized R1 and R2 files, or salvage reads from broken GZIP streams.
 homepage: https://github.com/mazzalab/fastqwiper
 ---
 
@@ -8,43 +8,55 @@ homepage: https://github.com/mazzalab/fastqwiper
 # wipertools
 
 ## Overview
-wipertools is a specialized suite of programs (including fastqwiper, splitfastq, and summarygather) designed to sanitize genomic sequencing data. It acts as a "pre-flight" cleaner for FASTQ files, addressing common issues such as malformed headers, invalid sequence alphabets, and broken GZIP streams that often cause standard bioinformatic tools to fail. It is particularly effective at salvaging readable reads from corrupted archives and maintaining proper read interleaving.
+wipertools is a specialized utility suite designed to sanitize "dirty" sequencing data. It acts as a pre-processing guardrail for bioinformatics pipelines, specifically targeting issues that standard aligners or quality control tools cannot handle. Use this skill to fix malformed FASTQ lines, recover data from broken GZIP streams, and ensure that paired-end R1 and R2 files are perfectly synchronized by removing orphaned reads.
 
-## Command Line Usage
+## Core Functional Cases
 
-### Cleaning FASTQ Files
-The primary command for sanitizing a file is `fastqwiper`. It accepts both raw `.fastq` and compressed `.fastq.gz` formats.
+### 1. Sanitizing Readable but Malformed FASTQ
+Use this workflow when your FASTQ files can be opened and decompressed, but contain "pesky" lines—such as extra whitespace, non-compliant headers, or inconsistent line counts per record.
+- **Goal**: Transform unformatted lines into a strictly compliant FASTQ format.
+- **Trigger**: Downstream errors regarding FASTQ formatting or unexpected characters.
 
-```bash
-wipertools fastqwiper -i input.fastq.gz -o cleaned.fastq.gz
-```
+### 2. Synchronizing Paired-End Reads
+Use this workflow when R1 and R2 files have become desynchronized (e.g., one file has more reads than the other or the order is mismatched).
+- **Goal**: Drop unpaired reads and fix interleaving to ensure every read in R1 has a corresponding mate in R2.
+- **Trigger**: Errors in aligners (like BWA or Bowtie2) reporting mismatched read IDs or unequal file lengths.
 
-### Advanced Filtering Options
-*   **Define Allowed Alphabet**: Use the `-a` flag to restrict the SEQ line to specific characters (default is `ACGTN`).
-    ```bash
-    wipertools fastqwiper -i in.fastq -o out.fastq -a ACGTRN
-    ```
-*   **Quality Reporting**: Generate a final quality report summary using the `-l` flag.
-    ```bash
-    wipertools fastqwiper -i in.fastq -o out.fastq -l quality_summary.txt
-    ```
-*   **Status Monitoring**: Adjust how often status messages are printed to the console using `-f` (default is every 500,000 reads).
-    ```bash
-    wipertools fastqwiper -i in.fastq -o out.fastq -f 1000000
-    ```
+### 3. Recovering Corrupted GZIP Archives
+Use this workflow when a `.fastq.gz` file is "unreadable"—meaning standard decompression tools like `gunzip` or `zcat` fail with CRC errors or unexpected End-Of-File (EOF) markers.
+- **Goal**: Salvage healthy reads from the non-corrupted segments of the archive and reformat them into a new, valid GZIP file.
+- **Trigger**: "Unexpected end of file" or "invalid compressed data" errors during decompression.
 
-### File Manipulation
-*   **Splitting**: Use `splitfastq` to break large files into manageable chunks for parallel processing.
-*   **Merging**: Combine multiple FASTQ files while ensuring the resulting file maintains proper formatting.
-*   **Summary Gathering**: Use `summarygather` to aggregate reports from multiple `fastqwiper` runs into a single document.
+## CLI Usage Patterns
+
+The primary command-line interface is accessed via `wipertools`.
+
+- **Help and Discovery**:
+  `wipertools --help`
+  Use this to view the latest subcommands and available flags for scattering or gathering data.
+
+- **Version Check**:
+  `wipertools --version`
+  Ensure you are running a compatible version (typically requires Python 3.10 to 3.12).
 
 ## Expert Tips and Best Practices
 
-*   **Handling Corruption**: If a `.gz` file is unreadable by standard decompression tools, use the `fastqwiper` workflow. It leverages `gzrt` (Gzip Recovery Toolkit) to extract healthy segments and reformat them into a valid FASTQ structure.
-*   **ASCII Offsets**: Ensure you are using the correct ASCII offset for quality scores. Most modern Illumina data uses Sanger/Illumina 1.8+ (offset 33), while older Solexa data may use offset 64.
-*   **Paired-End Integrity**: When cleaning paired-end data, ensure your files follow the `_R1.fastq.gz` and `_R2.fastq.gz` naming convention to allow the tool to correctly identify pairs and settle interleaving issues.
-*   **Resource Allocation**: For large-scale cleaning, running the tool via the provided Docker or Singularity containers is recommended to ensure all dependencies (like `gzrt` and `BBTools`) are correctly configured in the environment.
+- **GZIP Validation**: Before processing, run `gunzip -t filename.fastq.gz`. If it returns an error, you must use the recovery workflow (Case 3) rather than standard cleaning.
+- **Resource Management**: For very large datasets, look for "scatter" subcommands (like `fastq_scatter`) mentioned in the tool's internal documentation to split files for parallel processing.
+- **OS Compatibility**: While the core `wipertools` CLI runs on Linux, Mac, and Windows, advanced Snakemake-based workflows within the suite are optimized for Linux/Docker environments.
+- **Input Integrity**: Always maintain a backup of the original corrupted file, as the recovery process creates a new sanitized version rather than modifying the source in-place.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fastqgather | Joins multiple FASTQ files into a single one. |
+| fastqwiper | Wipes quality scores from a FASTQ file. |
+| wipertools reportgather | Gathers multiple report files into a single final report. |
+| wipertools_fastqscatter | Split a FASTQ file into multiple smaller files. |
 
 ## Reference documentation
-- [wipertools - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_wipertools_overview.md)
-- [FastqWiper GitHub Repository](./references/github_com_mazzalab_fastqwiper.md)
+- [FastqWiper README](./references/github_com_mazzalab_fastqwiper_blob_main_README.md)
+- [Wipertools Overview](./references/anaconda_org_channels_bioconda_packages_wipertools_overview.md)

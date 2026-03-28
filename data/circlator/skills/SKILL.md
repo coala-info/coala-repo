@@ -1,6 +1,6 @@
 ---
 name: circlator
-description: Circlator automates the circularization and start-position standardization of linear draft assembly contigs using corrected long reads. Use when user asks to circularize genome assemblies, fix the start position of circular contigs, or identify overlaps at contig ends.
+description: Circlator is a bioinformatics pipeline designed to circularize genome assemblies using corrected long reads. Use when user asks to circularize chromosomes or plasmids, reorient circular contigs to a specific start gene, or clean redundant sequences from an assembly.
 homepage: https://github.com/sanger-pathogens/circlator
 ---
 
@@ -8,60 +8,80 @@ homepage: https://github.com/sanger-pathogens/circlator
 # circlator
 
 ## Overview
+Circlator is a bioinformatics pipeline designed to finalize genome assemblies by circularizing chromosomes and plasmids. It works by taking an existing assembly (FASTA) and corrected long reads (FASTA/FASTQ). The tool maps reads to the ends of contigs, performs a local assembly of those ends, and merges the results back into the original assembly to create a seamless circular sequence. It also automates the "fixstart" process, ensuring that circularized contigs begin at a biologically relevant position, such as the *dnaA* gene.
 
-Circlator is a specialized bioinformatics pipeline that automates the process of turning linear draft assembly contigs into circularized sequences. It functions by mapping corrected long reads to the ends of contigs, performing a local re-assembly of those reads to identify overlaps, and merging the new assembly with the original. Beyond circularization, it provides tools to re-orient circular sequences so they begin at a biologically relevant start point, such as the dnaA gene or a user-defined sequence.
+## Core Workflow
+The most efficient way to use Circlator is through the `all` command, which executes the entire pipeline (mapping, assembly, merging, cleaning, and reorienting).
 
-## Core Workflows
-
-### 1. Environment Validation
-Before running the pipeline, verify that all external dependencies (BWA, SAMtools, MUMmer, Prodigal, and an assembler like SPAdes or Canu) are correctly installed and accessible in your PATH.
-
+### Basic Execution (PacBio)
+For standard corrected PacBio reads:
 ```bash
-circlator progcheck
+circlator all assembly.fasta corrected_reads.fasta output_directory
 ```
 
-### 2. Complete Circularization Pipeline
-Run the full automated workflow using the `all` command. This executes mapping, re-assembly, merging, cleaning, and start-position fixing in a single call.
-
+### Handling Nanopore Data
+Nanopore reads typically require more relaxed parameters due to different error profiles:
 ```bash
-circlator all <assembly.fasta> <corrected_reads.fasta> <output_directory>
+circlator all --merge_min_id 85 --merge_breaklen 1000 assembly.fasta reads.fasta output_directory
 ```
 
-*   **Input**: Requires a genome assembly in FASTA format and **corrected** PacBio or Nanopore reads (FASTA or FASTQ).
-*   **Output**: The primary result is `06.fixstart.fasta` (or similar numbered file depending on the stage) within the output directory.
-
-### 3. Standardizing Start Positions
-If you have an assembly that is already circularized but incorrectly oriented, use `fixstart` to reset the start position.
-
+### Using Alternative Assemblers
+By default, Circlator uses SPAdes for the internal assembly of contig ends. If SPAdes fails to produce a join, try Canu:
 ```bash
-# First, download a reference dnaA file if needed
-circlator get_dnaa dnaa_reference.fasta
-
-# Fix the start position of circular contigs
-circlator fixstart <input.fasta> <output_prefix>
+circlator all --assembler canu assembly.fasta reads.fasta output_directory
 ```
 
-*   **Logic**: If a dnaA gene is found, it becomes the new start. If not, the tool uses Prodigal to find the gene nearest the center of the contig to use as the start.
-*   **Customization**: You can provide your own FASTA file of genes to search for using the `--genes_fa` flag.
+## Advanced CLI Patterns
 
-### 4. Manual Step Execution
-For troubleshooting or fine-grained control, run individual stages of the pipeline:
+### Customizing the Start Position
+If you want the circularized genome to start at a specific gene or sequence (other than the default *dnaA*), provide a FASTA file containing your target sequences:
+```bash
+circlator all --genes_for_fixstart my_genes.fasta assembly.fasta reads.fasta output_dir
+```
 
-*   `mapreads`: Map reads to the assembly to identify contig ends.
-*   `bam2reads`: Extract the reads that map to the ends for re-assembly.
-*   `assemble`: Run the local assembly on the extracted reads.
-*   `merge`: Integrate the new local assemblies with the original contigs.
-*   `clean`: Remove small or redundant contigs that were fully contained within others.
+### Disabling Contig Merging
+If you only want to circularize existing contigs and do not want Circlator to attempt joining different contigs together, use the `--no_pair_merge` flag:
+```bash
+circlator all --no_pair_merge assembly.fasta reads.fasta output_dir
+```
 
-## Best Practices and Tips
+### Running Individual Modules
+For troubleshooting or specific tasks, you can run modules independently:
+- **fixstart**: Reorient a circular FASTA file without running the whole pipeline.
+  ```bash
+  circlator fixstart input.fasta output_prefix
+  ```
+- **clean**: Remove small or redundant contigs that are completely contained within larger ones.
+  ```bash
+  circlator clean input.fasta output.fasta
+  ```
 
-*   **Read Quality**: Circlator performs best with **corrected** long reads. Using raw, high-error-rate reads without prior correction (via tools like Canu or MECAT) often leads to failed circularization.
-*   **Assembly Fragmentation**: The input assembly should not be overly fragmented. While Circlator can join contigs, its primary strength is closing the ends of nearly-complete chromosomes and plasmids.
-*   **Assembler Choice**: By default, Circlator often looks for SPAdes. If using Canu or another assembler for the internal re-assembly step, ensure it is specified in the options if the default is not found.
-*   **Troubleshooting**: If a contig fails to circularize, examine the log files in the output directory. Common reasons include insufficient read coverage at the contig ends or overlaps that are too short to be confidently assembled.
+## Expert Tips and Best Practices
+- **Input Quality**: Circlator requires **corrected** long reads. Using raw, uncorrected reads will significantly decrease the success rate of circularization.
+- **Assembly Fragmentation**: While Circlator can join contigs, it performs best on assemblies that are already relatively contiguous. If the assembly is highly fragmented, consider additional scaffolding before circularization.
+- **Verification**: Always check the `outprefix.circularise.log` file. It provides a detailed breakdown of which contigs were circularized and the reasons why others were not (e.g., "no_match" or "small_overlap").
+- **Final Output**: The definitive final assembly is always named `06.fixstart.fasta` within the output directory.
+- **Post-Processing**: Circularization often leaves small indels at the join point. It is critical to run a polisher like Pilon (for Illumina) or Medaka/Nanopolish (for Nanopore) on the `06.fixstart.fasta` file to ensure high consensus accuracy at the junction.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bam2reads | Make reads from mapping to be reassembled |
+| circlator all | Run mapreads, bam2reads, assemble, merge, clean, fixstart |
+| circlator_assemble | Assemble reads using SPAdes/Canu |
+| circlator_fixstart | Change start point of each sequence in assembly |
+| circlator_get_dnaa | Downloads and filters a file of dnaA (or other) genes from uniprot |
+| circlator_mapreads | Map reads using bwa mem |
+| clean | Clean contigs |
+| merge | Merge original and new assembly |
+| minimus2 | Runs minimus2 circularisation pipeline, see https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Circularising-and-trimming ... this script is a modified version of that protocol. It first runs minimus2 on the input contigs (unless --no_pre_merge is used). Then it tries to circularise each contig one at a time, by breaking it in the middle and using the two pieces as input to minimus2. If minimus2 outputs one contig, then that new one is assumed to be circularised and is kept, otherwise the original contig is kept. |
+| test | Run Circlator on a small test dataset |
 
 ## Reference documentation
-
-- [Circlator GitHub README](./references/github_com_sanger-pathogens_circlator.md)
-- [Circlator Wiki](./references/github_com_sanger-pathogens_circlator_wiki.md)
-- [Bioconda Circlator Package](./references/anaconda_org_channels_bioconda_packages_circlator_overview.md)
+- [Circlator Wiki Home](./references/github_com_sanger-pathogens_circlator_wiki.md)
+- [Brief Instructions](./references/github_com_sanger-pathogens_circlator_wiki_Brief-instructions.md)
+- [Task: all](./references/github_com_sanger-pathogens_circlator_wiki_Task_3A-all.md)
+- [Troubleshooting Guide](./references/github_com_sanger-pathogens_circlator_wiki_Troubleshooting.md)

@@ -61,3 +61,6 @@ MCScanX_h prefix_fn [options]
  -h  print this help page
 ```
 
+
+## Metadata
+- **Skill**: generated

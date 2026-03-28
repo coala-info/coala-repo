@@ -1,1 +1,75 @@
-Index of /admin/exe This directory contains Genome Browser and Blat application binaries built for standalone command-line use on various supported Linux and UNIX platforms. To determine which set of binaries to download, type "uname -a" on the command line to display your machine type. In most cases the usage statement for the application can be viewed by running the binary with no arguments. **Note about 'permission denied' error** In order for your computer to run a freshly downloaded utility, you will need to update the file system permissions to allow your operating system to run the program. $ chmod +x ./filePath/utility_name $ ./filePath/utility_name See also: http://en.wikipedia.org/wiki/Chmod Some of these applications are able to connect to UCSC's public MySQL server. Such applications require an .hg.conf file to be present in the user's home directory. For more information and an example .hg.conf file, see: http://genome.ucsc.edu/goldenPath/help/mysql.html You can access the source code through GitHub: https://github.com/ucscGenomeBrowser/kent/tree/master/src/utils The UCSC Genome Browser and Blat software are free for academic, nonprofit, and personal use. The default license for all command-line tools is the MIT license: https://raw.githubusercontent.com/ucscGenomeBrowser/kent/refs/heads/master/LICENSE A license is only required for commercial use of certain command-line tools (e.g., blat and isPCR), and the interactive genome browser web programs, but these are not part of the directory here. For information about commercial licensing of the Genome Browser software, see http://genome.ucsc.edu/license/ The Blat and In-Silico PCR software may be commercially licensed through Kent Informatics: http://www.kentinformatics.com Name Last modified Size Description Parent Directory - external.i386/ 2017-05-25 15:04 - external.x86_64/ 2017-05-26 06:25 - linux.aarch64.v492/ 2026-01-21 05:26 - linux.x86_64.v369/ 2019-02-01 18:05 - linux.x86_64.v385/ 2019-12-12 14:06 - linux.x86_64.v479/ 2025-03-27 15:22 - linux.x86_64/ 2026-02-03 15:34 - macOSX.arm64/ 2026-02-04 18:30 - macOSX.x86_64/ 2026-02-04 18:39 - testFiles/ 2024-02-09 11:12 - userApps.archive/ 2026-02-04 15:00 - userApps.v350.src.tgz 2017-06-13 23:26 15M userApps.v351.src.tgz 2017-07-06 10:42 15M userApps.v353.src.tgz 2017-08-15 16:28 15M userApps.v352.src.tgz 2017-07-26 09:43 15M userApps.v355.src.tgz 2017-09-26 18:05 16M userApps.v356.src.tgz 2017-10-17 15:07 16M userApps.v357.src.tgz 2017-11-07 15:09 16M userApps.v358.src.tgz 2017-12-05 19:54 16M userApps.v359.src.tgz 2018-01-09 16:51 16M userApps.v361.src.tgz 2018-02-20 15:35 16M userApps.v362.src.tgz 2018-03-13 19:42 16M userApps.v390.src.tgz 2019-11-13 07:23 16M userApps.v392.src.tgz 2020-01-14 17:00 16M userApps.v393.src.tgz 2020-02-05 09:41 16M userApps.v394.src.tgz 2020-02-26 09:19 16M userApps.v396.src.tgz 2020-04-07 15:57 16M userApps.v395.src.tgz 2020-03-17 19:17 16M userApps.v397.src.tgz 2020-04-28 16:02 16M userApps.v398.src.tgz 2020-05-20 08:20 16M userApps.src.tgz 2026-02-04 15:00 24M
+```
+This directory contains Genome Browser and Blat application binaries built for standalone
+command-line use on various supported Linux and UNIX platforms. To determine which set of binaries
+to download, type "uname -a" on the command line to display your machine type. In most cases the
+usage statement for the application can be viewed by running the binary with no arguments.
+
+**Note about 'permission denied' error**
+In order for your computer to run a freshly downloaded utility, you will need to update the file
+system permissions to allow your operating system to run the program.
+   $ chmod +x ./filePath/utility_name
+   $ ./filePath/utility_name
+See also:
+   http://en.wikipedia.org/wiki/Chmod
+
+Some of these applications are able to connect to UCSC's public MySQL server. Such applications
+require an .hg.conf file to be present  in the user's home directory. For more
+information and an example .hg.conf file, see:
+   http://genome.ucsc.edu/goldenPath/help/mysql.html
+You can access the source code through GitHub:
+   https://github.com/ucscGenomeBrowser/kent/tree/master/src/utils
+
+The UCSC Genome Browser and Blat software are free for academic, nonprofit, and personal use.
+The default license for all command-line tools is the MIT license:
+   https://raw.githubusercontent.com/ucscGenomeBrowser/kent/refs/heads/master/LICENSE
+A license is only required for commercial use of certain command-line tools (e.g., blat and
+isPCR), and the interactive genome browser web programs, but these are not part of
+the directory here.
+
+For information about commercial licensing of the Genome Browser software, see
+   http://genome.ucsc.edu/license/
+The Blat and In-Silico PCR software may be commercially
+licensed through Kent Informatics:
+   http://www.kentinformatics.com
+```
+
+```
+      Name                    Last modified      Size  Description
+
+---
+
+      Parent Directory                             -
+      external.i386/          2017-05-25 15:04    -
+      external.x86_64/        2017-05-26 06:25    -
+      linux.aarch64.v492/     2026-01-21 05:26    -
+      linux.x86_64.v369/      2019-02-01 18:05    -
+      linux.x86_64.v385/      2019-12-12 14:06    -
+      linux.x86_64.v479/      2025-03-27 15:22    -
+      linux.x86_64/           2026-03-20 11:01    -
+      macOSX.arm64/           2026-03-20 16:36    -
+      macOSX.x86_64/          2026-03-20 17:20    -
+      testFiles/              2024-02-09 11:12    -
+      userApps.archive/       2026-03-20 13:45    -
+      userApps.v350.src.tgz   2017-06-13 23:26   15M
+      userApps.v351.src.tgz   2017-07-06 10:42   15M
+      userApps.v353.src.tgz   2017-08-15 16:28   15M
+      userApps.v352.src.tgz   2017-07-26 09:43   15M
+      userApps.v355.src.tgz   2017-09-26 18:05   16M
+      userApps.v356.src.tgz   2017-10-17 15:07   16M
+      userApps.v357.src.tgz   2017-11-07 15:09   16M
+      userApps.v358.src.tgz   2017-12-05 19:54   16M
+      userApps.v359.src.tgz   2018-01-09 16:51   16M
+      userApps.v361.src.tgz   2018-02-20 15:35   16M
+      userApps.v362.src.tgz   2018-03-13 19:42   16M
+      userApps.v390.src.tgz   2019-11-13 07:23   16M
+      userApps.v392.src.tgz   2020-01-14 17:00   16M
+      userApps.v393.src.tgz   2020-02-05 09:41   16M
+      userApps.v394.src.tgz   2020-02-26 09:19   16M
+      userApps.v396.src.tgz   2020-04-07 15:57   16M
+      userApps.v395.src.tgz   2020-03-17 19:17   16M
+      userApps.v397.src.tgz   2020-04-28 16:02   16M
+      userApps.v398.src.tgz   2020-05-20 08:20   16M
+      userApps.src.tgz        2026-03-20 13:45   24M
+
+---
+```

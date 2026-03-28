@@ -1,6 +1,6 @@
 ---
 name: capcruncher
-description: CapCruncher is a bioinformatics suite designed to process and analyze Capture-C, Tri-C, and Tiled-C sequencing data. Use when user asks to initialize projects, generate pipeline configurations, or execute data processing workflows on local workstations and HPC clusters.
+description: CapCruncher is a bioinformatics toolset for processing and analyzing Capture-C, Tri-C, and Tiled-C chromosome conformation capture data. Use when user asks to process capture-based sequencing data, run the CapCruncher pipeline, generate contact matrices, or perform specific tasks like fragment annotation and read deduplication.
 homepage: https://github.com/sims-lab/CapCruncher.git
 ---
 
@@ -9,37 +9,75 @@ homepage: https://github.com/sims-lab/CapCruncher.git
 
 ## Overview
 
-CapCruncher is a specialized bioinformatics suite designed to handle the unique filtering requirements of Capture-C, Tri-C, and Tiled-C datasets, which differ significantly from standard Hi-C workflows. It automates the path from raw FASTQ files to downstream outputs like contact matrices, visualization plots, and UCSC Genome Browser track hubs. This skill assists in navigating the command-line interface (CLI) to initialize projects, generate environment-specific configurations, and manage pipeline execution on both local workstations and High-Performance Computing (HPC) clusters.
+CapCruncher is a high-performance bioinformatics toolset specifically optimized for Capture-C, Tri-C, and Tiled-C data. Unlike general-purpose Hi-C pipelines, CapCruncher employs filtering and processing steps tailored to the unique requirements of capture-based chromosome conformation capture. It automates the journey from raw sequencing reads to contact matrices and visualization, scaling efficiently from local workstations to large HPC clusters using workflow management profiles.
 
-## Command Line Usage
+## Installation and Setup
 
-The `capcruncher` tool uses a subcommand-based interface. Always use the `--help` flag at any level to see available options.
+CapCruncher is primarily supported on Linux. It is best managed within a conda/mamba environment to handle dependencies like Singularity or specific Python libraries.
 
-### Configuration
+```bash
+# Installation via Bioconda (Recommended)
+mamba install -c bioconda capcruncher
 
-Before running the pipeline, you must generate a configuration file. It is highly recommended to use the interactive generator rather than manual creation.
+# Installation via PyPI
+pip install capcruncher
+```
 
-- **Interactive Setup**: Run `capcruncher pipeline-config` and follow the terminal prompts to define your project parameters.
-- **Help for Config**: `capcruncher pipeline-config --help`
+## Core CLI Usage
 
-### Pipeline Execution
+The tool uses a subcommand-based interface. Always use the `--help` flag to explore specific parameters for each module.
 
-The pipeline expects FASTQ files and the generated configuration file to be present in the current working directory.
+### 1. Pipeline Configuration
+Before running the pipeline, you must generate a configuration file. CapCruncher provides an interactive prompt to ensure all parameters are correctly set.
 
-- **Local Execution**: Use the `--cores` flag to specify CPU allocation.
-  `capcruncher pipeline --cores 8`
-- **HPC Execution (SLURM)**: Use the `--profile` flag to leverage cluster workload managers.
-  `capcruncher pipeline --cores 8 --profile slurm --use-singularity`
+```bash
+capcruncher pipeline-config
+```
+Follow the interactive prompts to define your genome, restriction enzymes, and viewpoint locations.
 
-## Best Practices and Expert Tips
+### 2. Running the Pipeline
+The pipeline expects raw FASTQ files to be present in the current working directory.
 
-- **Session Management**: Pipeline runs are often long-lived. Always execute the pipeline within a `tmux` session or use `nohup` to prevent the process from terminating if your SSH connection drops.
-  - *Example*: `nohup capcruncher pipeline --cores 16 --profile slurm &`
-- **Dependency Management**: When working on shared clusters, use the `--use-singularity` or `--use-conda` flags within the pipeline command to ensure a reproducible environment without manual dependency installation.
-- **Subcommand Discovery**: If you are unsure of specific filtering parameters or output formats, explore the CLI reference via `capcruncher <subcommand> --help`.
-- **Platform Support**: Note that CapCruncher is currently optimized for Linux environments.
+```bash
+# Local execution with 8 cores
+capcruncher pipeline --cores 8
+
+# HPC execution using SLURM and Singularity containers
+capcruncher pipeline --cores 16 --profile slurm --use-singularity
+```
+
+### 3. Modular Subcommands
+For fine-grained control or custom workflows, you can call individual processing modules:
+
+- `capcruncher annotate`: Annotate fragments with genomic features.
+- `capcruncher deduplicate`: Remove PCR duplicates from mapped reads.
+- `capcruncher filter`: Apply Capture-C specific filters to interactions.
+- `capcruncher pileup`: Generate contact matrices from filtered interactions.
+- `capcruncher statistics`: Generate quality control metrics for the run.
+
+## Expert Tips and Best Practices
+
+- **Session Management**: Since genomic pipelines can run for hours, always execute the pipeline within a `tmux` or `screen` session, or use `nohup` to prevent job termination upon disconnection.
+- **HPC Optimization**: When running on a cluster, use the `--profile` flag (e.g., `slurm`) to allow the underlying Snakemake engine to manage job submissions and resource allocation automatically.
+- **Dependency Isolation**: Use the `--use-singularity` flag in production environments. This ensures that the exact versions of alignment tools (like Bowtie2) and processing libraries are used, improving reproducibility.
+- **Input Organization**: Ensure your FASTQ files follow standard naming conventions and are placed in the root of your analysis directory before initializing the pipeline.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| capcruncher | Command-line interface for capcruncher utilities. |
+| capcruncher alignments | Alignment annotation, identification and deduplication. |
+| fastq | Fastq splitting, deduplication and digestion. |
+| genome | Genome wide methods digestion. |
+| interactions | Reporter counting, storing, comparison and pileups |
+| plot | Generates plots for the outputs produced by CapCruncher |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
 
-- [CapCruncher GitHub Repository](./references/github_com_sims-lab_CapCruncher.md)
-- [CapCruncher Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_capcruncher_overview.md)
+- [CapCruncher README](./references/github_com_sims-lab_CapCruncher_blob_master_README.md)
+- [Pipeline Guide](./references/sims-lab_github_io_CapCruncher_pipeline.md)
+- [CLI Reference](./references/sims-lab_github_io_CapCruncher_cli.md)

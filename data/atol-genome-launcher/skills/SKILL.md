@@ -1,6 +1,6 @@
 ---
 name: atol-genome-launcher
-description: The atol-genome-launcher automates the retrieval of sequencing data from Bioplatforms Australia and organizes it for genome assembly and annotation. Use when user asks to generate RNA-Seq manifests, batch download sequencing reads, or retrieve specific assets using Bioplatforms URLs.
+description: The atol-genome-launcher automates the lifecycle of genomic assembly workflows by managing directory structures, data transfers, and pipeline deployments. Use when user asks to deploy assembly pipelines, download sequencing reads from BioPlatforms Australia, or upload assembly results to S3 storage.
 homepage: https://github.com/TomHarrop/atol-genome-launcher
 ---
 
@@ -8,55 +8,54 @@ homepage: https://github.com/TomHarrop/atol-genome-launcher
 # atol-genome-launcher
 
 ## Overview
+The atol-genome-launcher is a specialized toolkit designed to automate the lifecycle of genomic assembly workflows. It provides a standardized interface for parsing assembly manifests, managing directory structures for different processing stages (raw, QC, assembly), and handling data transfer between local environments and remote repositories. It is primarily used by bioinformaticians to initialize run directories, fetch sequencing reads, and archive final assembly outputs using consistent metadata.
 
-The `atol-genome-launcher` is a utility suite designed to bridge the gap between metadata management and bioinformatic execution. It is primarily used to automate the retrieval of raw sequencing data from Bioplatforms Australia (BPA) and organize it into structured formats suitable for genome assembly and annotation. Use this skill when you need to generate manifests for specific organisms or perform high-throughput downloads of RNA-Seq datasets while maintaining sample integrity.
+## CLI Usage and Commands
 
-## Environment Setup
+### Pipeline Deployment
+Use `deploy-pipeline` to initialize a working directory for a specific assembly. This command sets up the necessary Snakemake workflow files and configurations.
+- **Basic Deployment**: `deploy-pipeline manifest.yaml`
+- **Specify Run Directory**: `deploy-pipeline --run-dir ./my_assembly_run manifest.yaml`
+- **Force Update**: Use `--force` to overwrite existing deployment files.
 
-Before using the download utilities, you must provide your Bioplatforms Australia API key.
+### Data Acquisition
+The launcher provides tools to fetch raw reads from BioPlatforms Australia (BPA).
+- **Download All Reads**: `assembly-data-downloader manifest.yaml`
+- **Parallel Downloads**: Speed up acquisition using `--parallel_downloads <number>`.
+- **Single File Download**: `bpa-file-downloader <bioplatforms_url> <destination_file_name>`
+  - *Note*: Requires the `BPA_APIKEY` environment variable to be set.
 
-```bash
-export BPA_APIKEY="your_api_key_here"
-```
+### Result Management and Upload
+After pipeline completion, use these tools to archive results to S3-compatible storage (e.g., Ceph).
+- **Upload Pipeline Stage**: `pipeline-result-uploader --stage genomeassembly --bucket <my-bucket> manifest.yaml receipts.jsonl`
+  - This command walks the output directory, identifies files for the specified stage, and uploads them.
+- **Single File Upload**: `result-file-uploader --bucket <my-bucket> <local_file> <remote_path>`
 
-## Core CLI Workflows
-
-### 1. Generating RNA-Seq Manifests
-Use `rnaseq-manifest-generator` to query metadata and create a CSV manifest of available RNA-Seq files for a specific organism.
-
-**Pattern:**
-```bash
-rnaseq-manifest-generator --resources <resources_csv> --packages <packages_csv> <organism_key> <output_manifest_csv>
-```
-
-*   **Resources/Packages**: These are the CSV files produced by the `atol-bpa-datamapper`.
-*   **Organism Key**: The `organism_grouping_key` used in the Data Mapper.
-
-### 2. Batch Downloading Reads
-Once a manifest is generated, use `rnaseq-reads-downloader` to fetch the files. This tool automatically runs the underlying downloader for each entry and combines files by sample.
-
-**Pattern:**
-```bash
-rnaseq-reads-downloader --parallel_downloads 4 <manifest_csv> <output_directory>
-```
-
-*   **Parallelism**: Use `--parallel_downloads` to speed up the process, especially for large datasets.
-*   **Sample Handling**: The tool handles the logic of grouping downloaded files into their respective sample folders.
-
-### 3. Individual File Retrieval
-For targeted downloads of specific assets from a Bioplatforms URL, use `bpa-file-downloader`.
-
-**Pattern:**
-```bash
-bpa-file-downloader --file_checksum <expected_hash> <bioplatforms_url> <local_file_name>
-```
+## Environment Configuration
+Several commands rely on `rclone` for data transfer. Ensure the following environment variables are configured for upload tasks:
+- `RCLONE_CONFIG_UPLOAD_TYPE`: (e.g., "s3")
+- `RCLONE_CONFIG_UPLOAD_PROVIDER`: (e.g., "Ceph")
+- `RCLONE_CONFIG_UPLOAD_ACCESS_KEY_ID`
+- `RCLONE_CONFIG_UPLOAD_SECRET_ACCESS_KEY`
+- `RCLONE_CONFIG_UPLOAD_ENDPOINT`
 
 ## Best Practices
+- **Standardized Manifests**: Always ensure your input manifest follows the AToL `yaml_manifest` schema, as all CLI tools depend on this standardized parsing.
+- **Dry Runs**: Use the `-n` flag with downloaders and uploaders to verify file paths and connection settings before initiating large data transfers.
+- **Directory Layouts**: The tool uses a `directory_layout.json` to define where "raw" and "qc" files live. Avoid manually moving files out of these expected paths to ensure the `pipeline-result-uploader` can find them.
+- **Receipts**: Always provide a `receipts_file` path to `pipeline-result-uploader` to maintain a JSONL log of all successful uploads and their checksums.
 
-- **Checksum Verification**: Always provide the `--file_checksum` when using `bpa-file-downloader` to ensure data integrity during transit.
-- **Metadata Sync**: Ensure your `resources.csv` and `packages.csv` are up to date from the `atol-bpa-datamapper` before generating manifests, as the launcher relies entirely on these mappings.
-- **Resource Management**: When running `rnaseq-reads-downloader` on HPC environments, match `--parallel_downloads` to the number of cores requested in your job script to optimize throughput without hitting API rate limits or exhausting local I/O.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bpa-file-downloader | Downloads files from a given URL and saves them with a specified name. |
+| rnaseq-manifest-generator | Generate a manifest of RNAseq data for an organism. |
+| rnaseq-reads-downloader | Downloads RNA-Seq reads based on a manifest file. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_TomHarrop_atol-genome-launcher.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_atol-genome-launcher_overview.md)
+- [AToL Genome Launcher README](./references/github_com_TomHarrop_atol-genome-launcher_blob_main_README.md)
+- [Project Configuration and Scripts](./references/github_com_TomHarrop_atol-genome-launcher_blob_main_pyproject.toml.md)
+- [Changelog and Version History](./references/github_com_TomHarrop_atol-genome-launcher_blob_main_CHANGELOG.md)

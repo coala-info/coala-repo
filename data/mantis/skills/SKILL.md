@@ -1,61 +1,78 @@
 ---
 name: mantis
-description: Mantis indexes and searches massive collections of sequencing data using a colored de Bruijn graph. Use when user asks to build indices from Squeakr files, compress indices with MST, or query sequences against large datasets.
+description: Mantis builds, compresses, and queries large-scale sequence-search indices and colored de Bruijn graphs from biological datasets. Use when user asks to build a sequence index from Squeakr files, compress color information using MST, or query k-mers and transcripts across thousands of experiments.
 homepage: https://github.com/splatlab/mantis
 ---
 
 
 # mantis
 
-## Overview
-Mantis is a specialized tool for indexing and searching massive collections of sequencing data. It transforms raw reads into a searchable index that supports fast graph traversal and sequence-level queries without false positives or negatives. This skill provides the necessary procedures to build indices from Squeakr files, optimize them using Minimum Spanning Tree (MST) compression, and execute high-performance queries.
+think---
+name: mantis
+description: Large-scale sequence-search index and colored de Bruijn graph representation. Use when needing to build, compress, or query exact sequence indices from thousands of raw-read experiments (Squeakr CQF files).
+---
 
-## Installation and Setup
-Mantis is available via Bioconda or can be built from source.
-- **Conda**: `conda install bioconda::mantis`
-- **Source Requirements**: CMake 3.9+, C++17, zlib, and sdsl-lite.
-- **Hardware Note**: For CPUs older than Intel Haswell, build with `-DNH=1` to bypass specific hardware instructions.
+## Overview
+
+Mantis is a high-performance, space-efficient tool designed for indexing and searching large collections of biological sequences. Unlike Bloom filter-based methods, Mantis uses counting quotient filters (CQF) to provide exact results with no false positives or negatives. It is particularly effective for researchers working with thousands of RNA-seq or genomic datasets who need to perform rapid k-mer queries or topological analyses on a colored de Bruijn graph.
 
 ## Core Workflows
 
-### 1. Building an Index
-The `build` command creates the initial colored de Bruijn graph.
-- **Input**: Requires a list of Squeakr CQF files.
-- **Optimization**: Always run `squeakr` with the `--no-counts` flag to reduce intermediate disk usage by an order of magnitude.
-- **System Prep**: Increase the open file handle limit (`ulimit -n`) to at least the number of input files.
+### 1. Building the Index
+The `build` command converts a collection of Squeakr CQF files into a unified Mantis index.
 
-**Command Pattern:**
 ```bash
-mantis build -s <log-slots> -i <input_list.lst> -o <output_dir>
-```
-**Recommended `<log-slots>` values:**
-- `28`: Small sets (e.g., bacterial genomes).
-- `30`: Large sets of medium-sized read files.
-- `33`: Large sets of big read files.
-
-### 2. Compressing with MST
-After building, use the `mst` command to compress color information. This significantly reduces the memory footprint for queries without impacting performance.
-
-**Command Pattern:**
-```bash
-mantis mst -p <index_prefix> -t <threads> -d
-```
-- Use `-d` to delete the intermediate RRR-compressed representation and save space.
-- Use `-k` if you need to keep the RRR representation for specific legacy analyses.
-
-### 3. Querying the Index
-Query the index using FASTA files or specific k-mers.
-
-**Command Pattern:**
-```bash
-mantis query -p <index_prefix> -o <output_file> <query_sequences.fa>
+mantis build -s <log-slots> -i <input_list> -o <output_dir>
 ```
 
-## Expert Tips and Best Practices
-- **Memory Management**: Mantis uses `mmap` and `madvise` to manage memory. While tools like `/usr/bin/time` might report high Resident Set Size (RSS), the kernel will reclaim pages under pressure.
-- **Resize Overhead**: Choose a reasonable `log-slots` value initially. While Mantis auto-resizes, each resize operation halts the build and increases total runtime.
-- **Input Consistency**: Ensure all input Squeakr files were generated with the same k-mer size.
+*   **Input List**: A text file containing paths to the input Squeakr CQF files.
+*   **Log-Slots (`-s`)**: Sets the initial size of the output CQF. Mantis resizes automatically, but choosing a good starting value prevents performance hits:
+    *   `28`: Small bacterial genomes.
+    *   `30`: Large set of medium-sized read files.
+    *   `33`: Large set of big read files.
+*   **Optimization**: Use the `-e` flag to write the equivalence class abundance distribution for diagnostic purposes.
+
+### 2. MST Compression (Highly Recommended)
+After building, use the `mst` command to significantly reduce the memory footprint of the color information using Minimum Spanning Trees.
+
+```bash
+mantis mst -p <index_prefix> -t <threads> [-k | -d]
+```
+
+*   **Memory Management**: Use `-d` (delete-RRR) to remove the intermediate RRR representation and save disk space, or `-k` (keep-RRR) if you need to maintain both formats.
+*   **Performance**: This step makes subsequent queries much more memory-efficient without sacrificing speed.
+
+### 3. Querying Sequences
+Search for k-mers or transcripts within the indexed experiments.
+
+```bash
+mantis query [-j] [-k <kmer_size>] -p <index_prefix> -o <output_file> <query_fasta>
+```
+
+*   **Output Formats**: Use `-j` to get results in JSON format for easier downstream parsing.
+*   **Legacy Support**: If you did not run the `mst` step, use `-1` to query using the original color classes.
+
+## Expert Tips & Best Practices
+
+*   **Pre-processing with Squeakr**: Always run `squeakr` with the `--no-counts` argument before building a Mantis index. This reduces intermediate storage requirements by over 10x by only including k-mers that pass the abundance threshold.
+*   **System Limits**: The `build` process opens all input Squeakr files simultaneously. Ensure your system's "open file handles" limit (`ulimit -n`) is set higher than the number of input files.
+*   **Memory Usage**: Mantis uses `mmap` and `madvise` to manage memory. While it clears used pages to keep Resident Set Size (RSS) in check, ensure the host system has sufficient RAM to map the primary index files.
+*   **Hardware Acceleration**: If running on Intel Haswell or newer CPUs, ensure the binary is compiled with Haswell instructions (default) to utilize optimized machine-word selection. For older hardware, compile with `-DNH=1`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mantis | Mantis is a k-mer based de Bruijn graph construction and querying tool. |
+| mantis | Query the de Bruijn graph index. |
+| mantis | Mantis is a k-mer based de Bruijn graph construction and querying tool. |
+| mantis | Mantis is a k-mer based sequence analysis tool. |
+| mantis | Validates the MST structure of the de Bruijn graph. |
+| mantis build | Build a CQF (Compressed Quotient Filter) from input filters. |
 
 ## Reference documentation
-- [Mantis GitHub Repository](./references/github_com_splatlab_mantis.md)
-- [Bioconda Mantis Overview](./references/anaconda_org_channels_bioconda_packages_mantis_overview.md)
+
+- [Mantis GitHub README](./references/github_com_splatlab_mantis_blob_master_README.md)
+- [Mantis Overview](./references/github_com_splatlab_mantis.md)

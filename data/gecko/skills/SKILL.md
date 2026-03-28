@@ -1,6 +1,6 @@
 ---
 name: gecko
-description: GECKO is a high-performance tool designed for rapid pairwise sequence alignment and the identification of high-scoring segment pairs. Use when user asks to perform genome comparisons, execute the GECKO workflow, or convert binary fragment files into readable alignments.
+description: GECKO identifies high-scoring segment pairs in pairwise genome comparisons using a disk-based approach for large-scale sequences. Use when user asks to compare genomes, find sequence similarities, or generate alignments between large chromosomal sequences.
 homepage: https://github.com/otorreno/gecko
 ---
 
@@ -8,48 +8,61 @@ homepage: https://github.com/otorreno/gecko
 # gecko
 
 ## Overview
-GECKO (GEnome Comparison with K-mers Out-of-core) is a high-performance tool designed for rapid pairwise sequence alignment. It identifies collections of High-scoring Segment Pairs (HSPs) by utilizing a modular architecture that balances sensitivity and speed. This skill provides the procedural knowledge required to execute the GECKO workflow, optimize parameters for different organism sizes, and process the resulting alignment data.
+GECKO (GEnome Comparison with K-mers Out-of-core) is a specialized tool for identifying High-scoring Segment Pairs (HSPs) in pairwise genome comparisons. Unlike memory-bound aligners, GECKO employs disk-based storage for intermediate hits, allowing it to process chromosome-scale sequences efficiently. It produces both human-readable CSV metadata and binary fragment files that can be converted into full alignments.
 
-## Core Workflow
-The primary execution method is via the `workflow.sh` script.
+## Command Line Usage
+
+### Running the Comparison Workflow
+The primary entry point is the `workflow.sh` script. It requires five positional parameters plus a trailing "1" for internal processing.
 
 ```bash
 ./gecko/bin/workflow.sh <query.fasta> <reference.fasta> <length> <similarity> <wordLength> 1
 ```
 
-### Parameter Guidelines
-*   **Query/Reference**: Must be in FASTA format. The reference reverse strand is automatically computed and matched.
-*   **Length**: Minimum nucleotide length for an HSP.
-    *   *Small organisms (e.g., E. coli)*: ~40 bp.
-    *   *Large organisms (e.g., Human)*: 100+ bp.
-*   **Similarity**: Threshold for filtering noise. Recommended values are between 50 and 60.
-*   **Word Length (k-mer size)**: Determines seed sensitivity. **Must be a multiple of 4.**
-    *   *Small organisms*: 12 or 16.
-    *   *Large organisms*: 32.
-    *   *Note*: Smaller seeds increase sensitivity but decrease performance.
+### Parameter Tuning
+*   **Length**: The minimum nucleotide length for an HSP to be kept.
+    *   *Small organisms (Bacteria/E. Coli)*: Use ~40.
+    *   *Large organisms (Human chromosomes)*: Use 100+.
+*   **Similarity**: The score threshold (0-100). Use values above **50-60** to filter out background noise.
+*   **Word Length**: The seed size for finding initial matches. **Must be a multiple of 4.**
+    *   *Higher Sensitivity*: Use 12 or 16 (best for bacteria).
+    *   *Higher Performance*: Use 32 (best for large chromosomes).
 
-## Extracting Alignments
-GECKO produces binary `.frags` files in the `results/` directory. To convert these into human-readable text alignments, use the extraction script:
+### Extracting Alignments
+GECKO saves results in a binary `.frags` format. To generate a human-readable alignment text file, use the `frags2align.sh` utility:
 
 ```bash
-./gecko/bin/frags2align.sh results/query-reference.frags <query.fasta> <reference.fasta> <output_alignments.txt>
+./gecko/bin/frags2align.sh results/query-reference.frags <query.fasta> <reference.fasta> output_alignments.txt
 ```
 
-## Output Interpretation
-The `results/query-reference.csv` file contains the following key columns for each detected HSP:
+## Output Management
+GECKO generates a specific folder structure in the execution directory:
+*   **results/**: Contains `query-reference.csv` (metadata) and `query-reference.frags` (binary data).
+*   **intermediateFiles/hits/**: Stores seed matches. **Warning**: This folder can grow extremely large (e.g., 600GB for human-gorilla comparisons). Delete this folder after the workflow completes to reclaim disk space.
+*   **intermediateFiles/dictionaries/**: Stores sequence indexes. These are reused if the same sequences are compared again, speeding up subsequent runs.
+
+## Interpreting Results (CSV)
+The output CSV contains the following key columns for each HSP:
 *   **xStart/xEnd**: Coordinates in the query sequence.
 *   **yStart/yEnd**: Coordinates in the reference sequence.
-*   **strand**: `f` (forward) or `r` (reverse). Note that for reverse strands, `yEnd` is smaller than `yStart`.
-*   **score**: Raw alignment score (+4 for match, -4 for mismatch).
-*   **%ident**: Number of identities divided by alignment length.
-*   **SeqX/SeqY**: ID of the sequence within the FASTA file (0-indexed).
+*   **strand**: `f` for forward, `r` for reverse. (Note: In `r` strands, `yEnd` is smaller than `yStart`).
+*   **%ident**: Percentage of identical matches over the alignment length.
+*   **SeqX/SeqY**: Numerical IDs for sequences if the input FASTA contained multiple entries (0 is the first sequence).
 
-## Expert Tips and Best Practices
-*   **Disk Space Management**: GECKO is extremely disk-intensive. A chromosome-level comparison (e.g., Human vs. Gorilla) can generate up to 600GB of temporary "hits" data.
-*   **Cleanup**: Always monitor the `hits/` folder. It is recommended to delete the contents of this folder after a successful run to reclaim storage space.
-*   **Performance Bottlenecks**: Because GECKO is I/O intensive, running multiple instances concurrently on the same filesystem can lead to significant performance degradation due to disk contention.
-*   **Re-runs**: The `dictionaries/` folder stores pre-processed sequence data. If you run a comparison again using the same sequences, GECKO will utilize these files to speed up the process.
+## Expert Tips
+*   **Disk I/O**: GECKO is disk-intensive. If running on a cluster or shared filesystem, limit the input file size to prevent starving other processes of I/O bandwidth.
+*   **Memory vs. Speed**: If a comparison is taking too long, increase the `wordLength` (e.g., from 16 to 32). If you are missing conserved regions, decrease it.
+*   **Visualization**: The `.csv` output is compatible with GECKO-MGV (Multiple Genome Visualizer) for interactive analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ./gecko/bin/workflow.sh | GECKO workflow for sequence comparison. |
+| gecko_frags2align.sh | Converts fragment files to alignment files. |
 
 ## Reference documentation
-- [GECKO GitHub Repository](./references/github_com_otorreno_gecko.md)
-- [Bioconda Gecko Overview](./references/anaconda_org_channels_bioconda_packages_gecko_overview.md)
+- [GECKO Main Documentation](./references/github_com_otorreno_gecko_blob_master_README.md)
+- [Repository Overview](./references/github_com_otorreno_gecko.md)

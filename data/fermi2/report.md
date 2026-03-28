@@ -248,7 +248,7 @@ Output format:
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## fermi2
 

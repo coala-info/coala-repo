@@ -1,6 +1,6 @@
 ---
 name: phylotoast
-description: PhyloToAST is a suite of Python scripts for species-level phylogenetic analysis and visualization of microbial datasets. Use when user asks to generate PCOA or LDA plots, manipulate BIOM files, map OTU IDs to taxonomic names, or handle datasets with multiple primer sets.
+description: PhyloToAST is a suite of Python scripts that augments the QIIME workflow for high-resolution species-level microbial analysis and visualization. Use when user asks to generate PCoA plots, perform LDA analysis, format data for iTol, filter representative sequences, transform BIOM files, or map OTUs to taxonomy.
 homepage: https://github.com/smdabdoub/phylotoast
 ---
 
@@ -8,42 +8,50 @@ homepage: https://github.com/smdabdoub/phylotoast
 # phylotoast
 
 ## Overview
-PhyloToAST (Phylogenetic Tools for Analysis, Species-level, and Training) is a suite of Python scripts designed to bridge the gap between general phylogenetic pipelines and specialized species-level insights. While it integrates closely with QIIME, it provides standalone utility for handling complex microbial datasets, especially those requiring high-performance computing (HPC) environments. Key capabilities include sophisticated data visualization, taxonomic mapping, and the ability to handle multiple primer sets to ensure a more accurate representation of microbial communities.
+PhyloToAST (Phylogenetic Tools for Analysis, Species-level, and Taxonomy) is a specialized suite of Python scripts designed to augment the QIIME bioinformatics workflow. While QIIME provides a general framework for microbial community analysis, PhyloToAST provides the "glue" and specialized tools needed for high-resolution species-specific analysis and publication-quality visualizations. It is particularly effective for researchers working with complex microbial datasets who need to move beyond standard genus-level summaries into detailed species-level insights and high-performance computing environments.
 
-## Installation and Environment
-PhyloToAST is a Python 2.7-based toolset (with ongoing community efforts for Python 3 compatibility). 
-- **Installation**: Install via pip using `pip install phylotoast`.
-- **Dependencies**: Ensure `biom-format` (>= 2.1.5), `scikit-bio`, `matplotlib` (>= 1.5.0), and `h5py` are available, as these are critical for BIOM v2.x parsing and visualization.
+## Core CLI Tools and Usage Patterns
 
-## Core CLI Scripts and Usage Patterns
+### Visualization and Ordination
+PhyloToAST provides enhanced plotting capabilities compared to standard QIIME outputs.
 
-### 1. Visualization and Plotting
-PhyloToAST provides several scripts for generating publication-quality figures.
-- **PCOA.py**: Used for generating 2D or 3D Principal Coordinates Analysis plots.
-    - *Expert Tip*: Use the legend placement options and point size parameters to clean up crowded plots. It supports an option to suppress the legend entirely for cleaner 3D exports.
-- **LDA.py**: Performs Linear Discriminant Analysis.
-    - *Expert Tip*: Use the point size parameter to adjust the scale of features in the resulting plot.
-- **KDE Graphs**: Useful for visualizing distribution density, particularly when addressing known `dtype` issues in older matplotlib versions.
+*   **PCoA Plotting (`PCOA.py`)**: Used to generate 2D or 3D Principal Coordinates Analysis plots.
+    *   Supports custom legend placement and the option to disable legends for cleaner publication figures.
+    *   Can handle various coordinate input formats derived from beta diversity calculations.
+*   **LDA Analysis (`LDA.py`)**: Used for Linear Discriminant Analysis to identify features (taxa) that characterize the differences between groups.
+    *   Includes parameters for adjusting point sizes and formatting for specific aesthetic requirements.
+*   **iTol Integration**: Several scripts support outputting data formatted specifically for the Interactive Tree of Life (iTol), allowing for the mapping of abundance data onto phylogenetic trees. Use the option to retain OTU IDs if specific sequence tracking is required.
 
-### 2. BIOM Table Manipulation
-- **transform_biom.py**: A versatile utility for converting or modifying BIOM files.
-- **restrict_repset.py**: Essential after filtering a BIOM table. Use this to create a new OTU representative set file that matches only the entries remaining in your filtered BIOM table.
-- **kraken-biom parsing**: Use the specific parsing options within the toolset to handle BIOM files generated from Kraken outputs.
+### Data Manipulation and Filtering
+These tools help refine the dataset after initial QIIME processing.
 
-### 3. Taxonomic Mapping
-- **otu_to_tax.py / otu_to_tax_name.py**: These scripts map OTU IDs to their corresponding taxonomic strings.
-    - *Best Practice*: When preparing data for iTol (Interactive Tree of Life), use these scripts to ensure OTU IDs are preserved or replaced with human-readable taxonomic names as required by your downstream visualization needs.
+*   **Representative Set Filtering (`restrict_repset.py`)**: After filtering a BIOM table (e.g., removing low-abundance OTUs), use this script to create a new FASTA file containing only the representative sequences that remain in the filtered table.
+*   **BIOM Transformation (`transform_biom.py`)**: A utility for modifying BIOM file structures or converting between formats.
+*   **Taxonomy Mapping (`otu_to_tax.py` and `otu_to_tax_name.py`)**: Converts OTU identifiers to human-readable taxonomic strings. This is essential for interpreting results after species-level assignments.
 
-### 4. Analysis and Export
-- **Core OTUs**: Use the `--table_fp` flag to output a list of core OTUs directly to a TSV file for easy import into spreadsheet software or R.
-- **Multiple Primer Support**: When working with datasets sequenced using different primers, use PhyloToAST's specific workflows to merge data while minimizing primer-induced bias.
+### Species-Level Analysis
+*   **Core OTU Identification**: Use the `--table_fp` option in relevant scripts to output lists of core OTUs (taxa present across a specific percentage of samples) as TSV files for easy import into spreadsheet software.
+*   **Primer Bias Mitigation**: PhyloToAST includes logic to handle data generated from multiple primer sets, allowing for a more integrated view of the community that isn't skewed by the bias of a single 16S rRNA gene target region.
 
-## Workflow Best Practices
-- **HPC Integration**: The toolset is designed for cluster environments. When running large-scale analyses, leverage the built-in support for SLURM and PBS job schedulers.
-- **Data Integrity**: Always run `restrict_repset.py` after any OTU filtering step to maintain consistency between your sequence data and your abundance tables.
-- **iTol Integration**: If using iTol for tree visualization, use the provided export options to format your data, ensuring you decide whether to keep or strip OTU IDs early in the process.
+## Expert Tips for Workflow Integration
+
+1.  **Dependency Management**: PhyloToAST does not automatically install its dependencies. If a script fails, check for missing libraries such as `scikit-bio`, `biom-format`, or `palettable`.
+2.  **BIOM v2.x Support**: For parsing HDF5-based BIOM files (v2.x), ensure `h5py` is installed in your environment.
+3.  **HPC Execution**: The toolset is designed with cluster-computing in mind. Scripts are optimized to be wrapped in PBS or SLURM submission scripts for parallel processing of large-scale microbiome datasets.
+4.  **Short OTU Names**: When working with taxonomy scripts, be aware that the tool handles cases where higher taxonomic ranks (like Genus) might be missing but Species-level data is present, preventing "empty" labels in your visualizations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| otu_to_tax_name.py | Convert a list of OTU IDs to a list of OTU IDs paired with Genus_Species identifiers and perform reverse lookup, if needed. |
+| phylotoast_LDA.py | Performs Latent Dirichlet Allocation (LDA) analysis on phylogenetic data. |
+| restrict_repset.py | Take a subset BIOM table (e.g. from a core calculation) and a representative set (repset) FASTA file and create a new repset restricted to the OTUs in the BIOM table. |
+| transform_biom.py | This script applies varioustransforms to the data in a given BIOM-format table and outputs a newBIOM table with the transformed data. |
 
 ## Reference documentation
 - [PhyloToAST Main Repository](./references/github_com_smdabdoub_phylotoast.md)
-- [Version 1.2.0 Release Notes and Script List](./references/github_com_smdabdoub_phylotoast_tags.md)
-- [Recent Commits and CLI Flag Updates](./references/github_com_smdabdoub_phylotoast_commits_master.md)
+- [Version History and Script Updates](./references/github_com_smdabdoub_phylotoast_tags.md)
+- [Recent Feature Commits](./references/github_com_smdabdoub_phylotoast_commits_master.md)

@@ -264,3 +264,6 @@ General:
   --version                 Prints version info and exits
 ```
 
+
+## Metadata
+- **Skill**: generated

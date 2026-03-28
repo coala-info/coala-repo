@@ -1,6 +1,6 @@
 ---
 name: surpyvor
-description: "surpyvor is a Python wrapper for SURVIVOR used to merge, evaluate, and visualize structural variant VCF files. Use when user asks to merge structural variant callsets, benchmark variants against a truth set, calculate precision and recall, or create UpSet and Venn diagrams for VCF overlaps."
+description: Surpyvor is a Python utility that wraps the SURVIVOR toolset to manage, merge, and evaluate structural variant callsets. Use when user asks to merge VCF files, identify intersections or unions of variants, calculate performance metrics like precision and recall, or generate Venn and UpSet plots for variant overlaps.
 homepage: https://github.com/wdecoster/surpyvor
 ---
 
@@ -8,52 +8,58 @@ homepage: https://github.com/wdecoster/surpyvor
 # surpyvor
 
 ## Overview
+`surpyvor` is a Python-based utility designed to streamline the management of structural variant (SV) data. By wrapping the `SURVIVOR` toolset, it provides a more accessible interface for complex operations such as merging VCF files, identifying intersections (high confidence) or unions (high sensitivity) of variants, and performing rigorous performance evaluations. It includes built-in support for generating publication-quality plots to visualize callset overlaps.
 
-surpyvor is a Python wrapper for SURVIVOR designed to simplify the evaluation, merging, and plotting of structural variant (SV) VCF files. It provides a streamlined interface for benchmarking SV callers against truth sets and consolidating callsets from different algorithms to improve variant discovery confidence.
+## Common CLI Patterns
 
-## Command Line Usage
+### Merging and Intersecting Callsets
+- **Merge multiple VCFs**: Combine SV calls from different tools or samples.
+  `surpyvor merge --variants callset1.vcf callset2.vcf -o merged.vcf`
+- **High Confidence (Intersection)**: Extract variants present in all provided VCFs.
+  `surpyvor highconf --variants caller1.vcf caller2.vcf caller3.vcf -o intersection.vcf`
+- **High Sensitivity (Union)**: Create a union of all variants across callsets.
+  `surpyvor highsens --variants caller1.vcf caller2.vcf -o union.vcf`
 
-### Core Sub-commands
-- `merge`: Combine multiple SV VCF files.
-- `highsens`: Generate the union of multiple SV VCFs.
-- `highconf`: Generate the intersection of multiple SV VCFs.
-- `prf`: Calculate precision, recall, and F-measure.
-- `upset`: Create an UpSet plot for multiple VCF files.
-- `venn`: Create a Venn diagram for 2 or 3 VCF files.
-- `fixvcf`: Clean and reformat VCF files to resolve common compatibility issues.
+### Performance Evaluation (PRF)
+Calculate precision, recall, and F-measure by comparing a query VCF against a truth set.
+`surpyvor prf --variants truth.vcf query.vcf --matrix --bar`
+- Use `--ignore_chroms` to exclude non-canonical contigs (default: `chrEBV`).
 
-### Common Arguments
-- `-o`, `--output`: Path for the output VCF (default: stdout).
-- `--plotout`: Filename for generated plots.
-- `-d`, `--distance`: Maximum pairwise distance between coordinates to consider variants concordant (default: 500).
-- `-l`, `--minlength`: Minimum SV length to include in analysis (default: 50).
-- `--variants`: List of VCF files to process.
+### Visualization
+- **Venn Diagram**: Compare 2 or 3 VCF files.
+  `surpyvor venn --variants a.vcf b.vcf c.vcf --plotout overlap_venn.png`
+- **UpSet Plot**: Visualize intersections for more than 3 VCF files.
+  `surpyvor upset --variants v1.vcf v2.vcf v3.vcf v4.vcf --plotout upset_plot.png`
 
-### Common CLI Patterns
+## Tool-Specific Best Practices
+- **Distance Parameter**: The default distance for considering SVs concordant is 500bp (`-d 500`). For high-accuracy long-read callers, consider reducing this to 100-200bp to minimize false matches.
+- **Minimum Length**: By default, `surpyvor` filters out variants shorter than 50bp (`-l 50`). Adjust this if your analysis includes smaller indels.
+- **Environment Setup**: Ensure `SURVIVOR`, `bcftools`, `bgzip`, and `tabix` are available in your system's `$PATH`, as `surpyvor` relies on these binaries for core processing.
+- **Output Handling**: Most commands default to `stdout`. Always specify `-o` or `--output` for VCF results to avoid terminal flooding.
+- **SNV Mode**: For merging small variants using `bcftools` logic through the wrapper, use the `--snv` flag if supported by your version.
 
-**Merging Callsets**
-```bash
-surpyvor merge --variants caller1.vcf caller2.vcf caller3.vcf -d 500 -o merged_calls.vcf
-```
 
-**Benchmarking against a Truth Set**
-```bash
-surpyvor prf --variants truth.vcf query.vcf --bar --matrix --ignore_chroms chrM,chrEBV
-```
 
-**Visualizing Callset Overlap**
-```bash
-surpyvor upset --variants f1.vcf f2.vcf f3.vcf --plotout sv_upset_plot.png
-```
+## Subcommands
 
-## Expert Tips and Best Practices
-
-- **Distance Tuning**: The default distance of 500bp is a standard heuristic. For high-accuracy long-read data (e.g., PacBio HiFi), consider reducing this to 100-200bp to minimize false concordances.
-- **VCF Pre-processing**: If encountering errors with third-party SV callers, use the `fixvcf` subcommand. It handles issues like incorrect reference nucleotides, SVLEN formatting, and chromosome filtering (e.g., removing chrM).
-- **SNV Mode**: For specific workflows requiring merging of single nucleotide variants via bcftools logic within the surpyvor wrapper, use the `--snv` flag during merging.
-- **Chromosome Filtering**: Use `--ignore_chroms` in the `prf` command to exclude decoy sequences or mitochondria which often contain noisy SV calls that skew precision/recall metrics.
-- **Environment Requirements**: Ensure `bcftools`, `bgzip`, `tabix`, and `SURVIVOR` are in your `$PATH`, as surpyvor relies on these external binaries for core processing.
+| Command | Description |
+|---------|-------------|
+| highconf | Merge variants from multiple VCF files, considering high confidence variants. |
+| highsens | Merge variants from multiple VCF files. |
+| minlen | Filter SVs by minimum length |
+| surpyvor lengthplot | Plot variant lengths from a VCF file. |
+| surpyvor prf | Calculate performance metrics for structural variant calls. |
+| surpyvor purge2d | Filter alignments from a BAM file. |
+| surpyvor upset | Generate upset plots for structural variants |
+| surpyvor varcount | VCF to plot from |
+| surpyvor venn | Generate Venn diagrams of structural variants from multiple VCF files. |
+| surpyvor_carrierplot | Plot carrier plots from VCF files. |
+| surpyvor_fixref | Fixes reference sequences in a VCF file. |
+| surpyvor_fixvcf | Fix problems related to using jasmine |
+| surpyvor_haplomerge | Merge VCF files from multiple callers. |
+| surpyvor_merge | Merge VCF files from multiple callers. |
+| svlentruncate | Truncates SVLEN in VCF files. |
 
 ## Reference documentation
-- [surpyvor GitHub Repository](./references/github_com_wdecoster_surpyvor.md)
-- [surpyvor Commit History](./references/github_com_wdecoster_surpyvor_commits_master.md)
+- [surpyvor README](./references/github_com_wdecoster_surpyvor_blob_master_README.md)
+- [surpyvor Setup and Dependencies](./references/github_com_wdecoster_surpyvor_blob_master_setup.py.md)

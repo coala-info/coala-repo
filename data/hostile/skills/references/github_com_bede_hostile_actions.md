@@ -1,1 +1,375 @@
-Workflow runs · bede/hostile · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} bede / hostile Public Notifications You must be signed in to change notification settings Fork 8 Star 115 Code Issues 7 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: bede/hostile Actions All workflows Workflows Test Test Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 36 workflow runs 36 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. Update readme for 2.0.2 Test #223: Commit 81c394b pushed by bede 1m 9s main main 1m 9s View workflow file Default map-ont preset now implicit rather than explicit, permitting … Test #222: Commit e87e82c pushed by bede 1m 16s main main 1m 16s View workflow file Bump changelog for 2.0.1 Test #221: Commit f4af206 pushed by bede 1m 13s main main 1m 13s View workflow file 2.0.1: fix for breaking change in defopt 7.0.0 Test #220: Commit 8e99caa pushed by bede 1m 20s main main 1m 20s View workflow file Remove recently problematic gawk dep from conda deps, readme trivia Test #219: Commit ff0ff44 pushed by bede 1m 14s main main 1m 14s View workflow file Describe alignment parameters and how to override them Test #218: Commit 6c859c2 pushed by bede 2m 5s main main 2m 5s View workflow file Describe --aligner-args, warn about increasing FPR Test #217: Commit 4469e04 pushed by bede 1m 27s main main 1m 27s View workflow file Add basic workflow diagram Test #216: Commit 1e16f4a pushed by bede 1m 10s main main 1m 10s View workflow file Add basic workflow diagram Test #215: Commit 07cc5ec pushed by bede 1m 9s main main 1m 9s View workflow file Readme typos, CLI help formatting Test #214: Commit 3ec85a0 pushed by bede 1m 8s main main 1m 8s View workflow file Mention stdout in fastq1 fastq2 CLI help, readme intro Test #213: Commit 0aa3a52 pushed by bede 1m 21s main main 1m 21s View workflow file 2.0.0 release detail Test #212: Commit b024e7b pushed by bede 1m 17s main main 1m 17s View workflow file New index-related subcommands Test #211: Commit 2f601cd pushed by bede 1m 33s main main 1m 33s View workflow file Changelog structure Test #210: Commit 53f7290 pushed by bede 1m 26s main main 1m 26s View workflow file Add changelog Test #209: Commit 622aef5 pushed by bede 1m 26s main main 1m 26s View workflow file 68 tests passing Test #208: Commit fec40c6 pushed by bede 1m 8s main main 1m 8s View workflow file Support stdin for Bowtie2 (Minimap2 not yet passing test Test #207: Commit f6ef634 pushed by bede 1m 9s main main 1m 9s View workflow file Rename --offline to --airplane to free up -o for --output Test #206: Commit d3045aa pushed by bede 1m 5s main main 1m 5s View workflow file Support stdin for single/unpaired reads with --fastq1 - Test #205: Commit b07f7d8 pushed by bede 1m 6s main main 1m 6s View workflow file Support CASAVA 1.8+ style headers (--casava) #41 Test #204: Commit c71e024 pushed by bede 1m 3s main main 1m 3s View workflow file Support CASAVA 1.8+ style headers (--casava) #41 Test #203: Commit eb83fa5 pushed by bede 1m 10s main main 1m 10s View workflow file Partial support for CASAVA 1.8+ style headers (--casava) #41 Test #202: Commit dd5d6bb pushed by bede 1m 13s main main 1m 13s View workflow file Paired read stdout example Test #201: Commit 0d47ee2 pushed by bede 1m 17s main main 1m 17s View workflow file Smart thread count allocation between alignment and compression Test #200: Commit 637e387 pushed by bede 1m 9s main main 1m 9s View workflow file Error msg for mismatched read counts, update log output for stdout, test Test #199: Commit 493b44a pushed by bede 1m 41s main main 1m 41s View workflow file Previous 1 2 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbede%2Fhostile%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbede%2Fhostile%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=bede%2Fhostile)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bede](/bede)
+/
+**[hostile](/bede/hostile)**
+Public
+
+* [Notifications](/login?return_to=%2Fbede%2Fhostile) You must be signed in to change notification settings
+* [Fork
+  8](/login?return_to=%2Fbede%2Fhostile)
+* [Star
+   119](/login?return_to=%2Fbede%2Fhostile)
+
+* [Code](/bede/hostile)
+* [Issues
+  7](/bede/hostile/issues)
+* [Pull requests
+  0](/bede/hostile/pulls)
+* [Actions](/bede/hostile/actions)
+* [Projects](/bede/hostile/projects)
+* [Security
+  0](/bede/hostile/security)
+* [Insights](/bede/hostile/pulse)
+
+Additional navigation options
+
+* [Code](/bede/hostile)
+* [Issues](/bede/hostile/issues)
+* [Pull requests](/bede/hostile/pulls)
+* [Actions](/bede/hostile/actions)
+* [Projects](/bede/hostile/projects)
+* [Security](/bede/hostile/security)
+* [Insights](/bede/hostile/pulse)
+
+# Actions: bede/hostile
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**7 workflow runs**
+
+**7 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Update readme for 2.0.2](/bede/hostile/actions/runs/17474045571)
+
+Test
+#223:
+Commit [81c394b](/bede/hostile/commit/81c394bd4a36ce623e735fa4c2e727cea020c233)
+pushed
+by
+[bede](/bede)
+
+1m 9s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+1m 9s
+
+* [View workflow file](/bede/hostile/actions/runs/17474045571/workflow)
+
+[Default map-ont preset now implicit rather than explicit, permitting …](/bede/hostile/actions/runs/17473858009)
+
+Test
+#222:
+Commit [e87e82c](/bede/hostile/commit/e87e82caf5b34062db48154409658951fbd75c34)
+pushed
+by
+[bede](/bede)
+
+1m 16s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+1m 16s
+
+* [View workflow file](/bede/hostile/actions/runs/17473858009/workflow)
+
+[Bump changelog for 2.0.1](/bede/hostile/actions/runs/15737895525)
+
+Test
+#221:
+Commit [f4af206](/bede/hostile/commit/f4af206b9544a08183be4a12c3cc7ccaddbf50f0)
+pushed
+by
+[bede](/bede)
+
+1m 13s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+1m 13s
+
+* [View workflow file](/bede/hostile/actions/runs/15737895525/workflow)
+
+[2.0.1: fix for breaking change in defopt 7.0.0](/bede/hostile/actions/runs/15737730111)
+
+Test
+#220:
+Commit [8e99caa](/bede/hostile/commit/8e99caa571b39c5e6426a487077005a79e860a15)
+pushed
+by
+[bede](/bede)
+
+1m 20s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+1m 20s
+
+* [View workflow file](/bede/hostile/actions/runs/15737730111/workflow)
+
+[Remove recently problematic gawk dep from conda deps, readme trivia](/bede/hostile/actions/runs/15654551767)
+
+Test
+#219:
+Commit [ff0ff44](/bede/hostile/commit/ff0ff44ce031726c05b54782a5ff122b9bfe6269)
+pushed
+by
+[bede](/bede)
+
+1m 14s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+1m 14s
+
+* [View workflow file](/bede/hostile/actions/runs/15654551767/workflow)
+
+[Describe alignment parameters and how to override them](/bede/hostile/actions/runs/14535177226)
+
+Test
+#218:
+Commit [6c859c2](/bede/hostile/commit/6c859c20bc133f140722baa1e0d2756a2434ec67)
+pushed
+by
+[bede](/bede)
+
+2m 5s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+2m 5s
+
+* [View workflow file](/bede/hostile/actions/runs/14535177226/workflow)
+
+[Describe --aligner-args, warn about increasing FPR](/bede/hostile/actions/runs/14515512619)
+
+Test
+#217:
+Commit [4469e04](/bede/hostile/commit/4469e04a9ec0a3171b2899758b6040d36e328f4f)
+pushed
+by
+[bede](/bede)
+
+1m 27s
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+[main](/bede/hostile/tree/refs/heads/main "main")
+
+1m 27s
+
+* [View workflow file](/bede/hostile/actions/runs/14515512619/workflow)
+
+You can’t perform that action at this time.

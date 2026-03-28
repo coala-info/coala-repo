@@ -107,3 +107,6 @@ usage: hamronize <tool> <options>
 hamronize: error: argument analysis_tool: invalid choice: 'interactive' (choose from abricate, amrfinderplus, amrplusplus, ariba, csstar, deeparg, fargene, groot, kmerresistance, resfams, resfinder, mykrobe, rgi, srax, srst2, staramr, tbprofiler, summarize)
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,1 +1,557 @@
-Workflow runs · gbouras13/plassembler · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} gbouras13 / plassembler Public Notifications You must be signed in to change notification settings Fork 10 Star 84 Code Issues 8 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: gbouras13/plassembler Actions All workflows Workflows CI CI Release Release Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 55 workflow runs 55 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. Fix #82 Created using Colab CI #274: Commit 8f78420 pushed by gbouras13 2m 25s main main 2m 25s View workflow file Update input_commands.py CI #273: Pull request #81 opened by iskold 2m 12s iskold:patch-1 iskold:patch-1 2m 12s View #81 View workflow file Merge pull request #80 from gbouras13/dev CI #272: Commit 1b0a706 pushed by gbouras13 1h 10m 4s v1.8.2 v1.8.2 1h 10m 4s View workflow file Merge pull request #80 from gbouras13/dev Release #15: Commit 1b0a706 pushed by gbouras13 2m 16s v1.8.2 v1.8.2 2m 16s View workflow file Merge pull request #80 from gbouras13/dev CI #271: Commit 1b0a706 pushed by gbouras13 1h 5m 56s main main 1h 5m 56s View workflow file v1.8.2 CI #270: Pull request #80 opened by gbouras13 1h 15m 3s dev dev 1h 15m 3s View #80 View workflow file format CI #269: Commit 61e9cbf pushed by gbouras13 1h 14m 42s dev dev 1h 14m 42s View #80 View workflow file ci CI #268: Commit 7be7a3a pushed by gbouras13 2m 16s dev dev 2m 16s View workflow file Fix #78 CI #267: Commit 513f30c pushed by gbouras13 2m 37s dev dev 2m 37s View workflow file mac CI #266: Commit f57a7dd pushed by gbouras13 1m 2s dev dev 1m 2s View workflow file Fix #79 CI #265: Commit c20daec pushed by gbouras13 2m 12s dev dev 2m 12s View workflow file Merge pull request #77 from MrTomRod/patch-1 CI #264: Commit c2828a7 pushed by gbouras13 1h 7m 33s main main 1h 7m 33s View workflow file Merge pull request #75 from gbouras13/dev Release #14: Commit 47eb82a pushed by gbouras13 2m 49s v1.8.1 v1.8.1 2m 49s View workflow file Merge pull request #75 from gbouras13/dev CI #262: Commit 47eb82a pushed by gbouras13 3h 31m 45s v1.8.1 v1.8.1 3h 31m 45s View workflow file Merge pull request #75 from gbouras13/dev CI #261: Commit 47eb82a pushed by gbouras13 1h 41m 12s main main 1h 41m 12s View workflow file Dev CI #260: Pull request #75 opened by gbouras13 2h 6m 56s dev dev 2h 6m 56s View #75 View workflow file bump vesion CI #259: Commit 2fd8531 pushed by gbouras13 2h 1m 58s dev dev 2h 1m 58s View #75 View workflow file Fix #74 CI #258: Commit 61985e5 pushed by gbouras13 2h 20m 28s dev dev 2h 20m 28s View workflow file Fix #73 Add --keep_fastqs for plassembler long CI #257: Commit cb81ad8 pushed by gbouras13 2m 15s dev dev 2m 15s View workflow file Merge pull request #70 from gbouras13/dev Release #13: Commit 32ca27d pushed by gbouras13 2m 16s v1.8.0 v1.8.0 2m 16s View workflow file Merge pull request #70 from gbouras13/dev CI #256: Commit 32ca27d pushed by gbouras13 1h 45m 11s v1.8.0 v1.8.0 1h 45m 11s View workflow file Merge pull request #70 from gbouras13/dev CI #255: Commit 32ca27d pushed by gbouras13 1h 41m 29s main main 1h 41m 29s View workflow file relax python version limits and remove codecov CI #254: Pull request #70 opened by gbouras13 2h 47m 17s dev dev 2h 47m 17s View #70 View workflow file relax python version limits and remove codecov CI #253: Commit f108df6 pushed by gbouras13 1h 42m 9s dev dev 1h 42m 9s View #70 View workflow file Merge pull request #69 from rrwick/main CI #252: Commit 1312025 pushed by gbouras13 1h 46m 7s main main 1h 46m 7s View workflow file Previous 1 2 3 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgbouras13%2Fplassembler%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgbouras13%2Fplassembler%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=gbouras13%2Fplassembler)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[gbouras13](/gbouras13)
+/
+**[plassembler](/gbouras13/plassembler)**
+Public
+
+* [Notifications](/login?return_to=%2Fgbouras13%2Fplassembler) You must be signed in to change notification settings
+* [Fork
+  10](/login?return_to=%2Fgbouras13%2Fplassembler)
+* [Star
+   86](/login?return_to=%2Fgbouras13%2Fplassembler)
+
+* [Code](/gbouras13/plassembler)
+* [Issues
+  8](/gbouras13/plassembler/issues)
+* [Pull requests
+  1](/gbouras13/plassembler/pulls)
+* [Actions](/gbouras13/plassembler/actions)
+* [Projects](/gbouras13/plassembler/projects)
+* [Security
+  0](/gbouras13/plassembler/security)
+* [Insights](/gbouras13/plassembler/pulse)
+
+Additional navigation options
+
+* [Code](/gbouras13/plassembler)
+* [Issues](/gbouras13/plassembler/issues)
+* [Pull requests](/gbouras13/plassembler/pulls)
+* [Actions](/gbouras13/plassembler/actions)
+* [Projects](/gbouras13/plassembler/projects)
+* [Security](/gbouras13/plassembler/security)
+* [Insights](/gbouras13/plassembler/pulse)
+
+# Actions: gbouras13/plassembler
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**54 workflow runs**
+
+**54 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Fix #82 Created using Colab](/gbouras13/plassembler/actions/runs/21311027216)
+
+CI
+#274:
+Commit [8f78420](/gbouras13/plassembler/commit/8f78420c0858ae6e16eb0cc99da02bd98d56c765)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2m 25s
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+2m 25s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/21311027216/workflow)
+
+[Update input\_commands.py](/gbouras13/plassembler/actions/runs/20998335554)
+
+CI
+#273:
+Pull request [#81](/gbouras13/plassembler/pull/81)
+opened
+by
+[iskold](/iskold)
+
+2m 12s
+[iskold:patch-1](/iskold/plassembler/tree/refs/heads/patch-1 "iskold:patch-1")
+
+[iskold:patch-1](/iskold/plassembler/tree/refs/heads/patch-1 "iskold:patch-1")
+
+2m 12s
+
+* [View #81](/gbouras13/plassembler/pull/81)
+* [View workflow file](/gbouras13/plassembler/actions/runs/20998335554/workflow)
+
+[Merge pull request #80 from gbouras13/dev](/gbouras13/plassembler/actions/runs/20700739305)
+
+CI
+#272:
+Commit [1b0a706](/gbouras13/plassembler/commit/1b0a70684777598c1f9c17be4260d19856c15e59)
+pushed
+by
+[gbouras13](/gbouras13)
+
+1h 10m 4s
+[v1.8.2](/gbouras13/plassembler/tree/refs/tags/v1.8.2 "v1.8.2")
+
+[v1.8.2](/gbouras13/plassembler/tree/refs/tags/v1.8.2 "v1.8.2")
+
+1h 10m 4s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20700739305/workflow)
+
+[Merge pull request #80 from gbouras13/dev](/gbouras13/plassembler/actions/runs/20700739304)
+
+Release
+#15:
+Commit [1b0a706](/gbouras13/plassembler/commit/1b0a70684777598c1f9c17be4260d19856c15e59)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2m 16s
+[v1.8.2](/gbouras13/plassembler/tree/refs/tags/v1.8.2 "v1.8.2")
+
+[v1.8.2](/gbouras13/plassembler/tree/refs/tags/v1.8.2 "v1.8.2")
+
+2m 16s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20700739304/workflow)
+
+[Merge pull request #80 from gbouras13/dev](/gbouras13/plassembler/actions/runs/20700728314)
+
+CI
+#271:
+Commit [1b0a706](/gbouras13/plassembler/commit/1b0a70684777598c1f9c17be4260d19856c15e59)
+pushed
+by
+[gbouras13](/gbouras13)
+
+1h 5m 56s
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+1h 5m 56s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20700728314/workflow)
+
+[v1.8.2](/gbouras13/plassembler/actions/runs/20700591005)
+
+CI
+#270:
+Pull request [#80](/gbouras13/plassembler/pull/80)
+opened
+by
+[gbouras13](/gbouras13)
+
+1h 15m 3s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+1h 15m 3s
+
+* [View #80](/gbouras13/plassembler/pull/80)
+* [View workflow file](/gbouras13/plassembler/actions/runs/20700591005/workflow)
+
+[format](/gbouras13/plassembler/actions/runs/20692974927)
+
+CI
+#269:
+Commit [61e9cbf](/gbouras13/plassembler/commit/61e9cbf08165f69c23e5c8585f07e438d417f225)
+pushed
+by
+[gbouras13](/gbouras13)
+
+1h 14m 42s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+1h 14m 42s
+
+* [View #80](/gbouras13/plassembler/pull/80)
+* [View workflow file](/gbouras13/plassembler/actions/runs/20692974927/workflow)
+
+[ci](/gbouras13/plassembler/actions/runs/20692917466)
+
+CI
+#268:
+Commit [7be7a3a](/gbouras13/plassembler/commit/7be7a3ad589fa5ac30ffbe587f2444173dfddc74)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2m 16s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+2m 16s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20692917466/workflow)
+
+[Fix #78](/gbouras13/plassembler/actions/runs/20692464981)
+
+CI
+#267:
+Commit [513f30c](/gbouras13/plassembler/commit/513f30c360910c6e0c30250249ccdf690b89aaeb)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2m 37s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+2m 37s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20692464981/workflow)
+
+[mac](/gbouras13/plassembler/actions/runs/20692423194)
+
+CI
+#266:
+Commit [f57a7dd](/gbouras13/plassembler/commit/f57a7dd91feb9aeb7459791eda9402498fb8f60a)
+pushed
+by
+[gbouras13](/gbouras13)
+
+1m 2s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+1m 2s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20692423194/workflow)
+
+[Fix #79](/gbouras13/plassembler/actions/runs/20565985025)
+
+CI
+#265:
+Commit [c20daec](/gbouras13/plassembler/commit/c20daeccff705e3b714fd71c7a181f4164474543)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2m 12s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+2m 12s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20565985025/workflow)
+
+[Merge pull request #77 from MrTomRod/patch-1](/gbouras13/plassembler/actions/runs/20115309219)
+
+CI
+#264:
+Commit [c2828a7](/gbouras13/plassembler/commit/c2828a77ee0a13be0079a8b012ac0a978d90e92d)
+pushed
+by
+[gbouras13](/gbouras13)
+
+1h 7m 33s
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+1h 7m 33s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/20115309219/workflow)
+
+[Merge pull request #75 from gbouras13/dev](/gbouras13/plassembler/actions/runs/18071153289)
+
+Release
+#14:
+Commit [47eb82a](/gbouras13/plassembler/commit/47eb82aa9cabe47c4791db17d5e53cdc726d47bd)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2m 49s
+[v1.8.1](/gbouras13/plassembler/tree/refs/tags/v1.8.1 "v1.8.1")
+
+[v1.8.1](/gbouras13/plassembler/tree/refs/tags/v1.8.1 "v1.8.1")
+
+2m 49s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/18071153289/workflow)
+
+[Merge pull request #75 from gbouras13/dev](/gbouras13/plassembler/actions/runs/18071153286)
+
+CI
+#262:
+Commit [47eb82a](/gbouras13/plassembler/commit/47eb82aa9cabe47c4791db17d5e53cdc726d47bd)
+pushed
+by
+[gbouras13](/gbouras13)
+
+3h 31m 45s
+[v1.8.1](/gbouras13/plassembler/tree/refs/tags/v1.8.1 "v1.8.1")
+
+[v1.8.1](/gbouras13/plassembler/tree/refs/tags/v1.8.1 "v1.8.1")
+
+3h 31m 45s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/18071153286/workflow)
+
+[Merge pull request #75 from gbouras13/dev](/gbouras13/plassembler/actions/runs/18071146628)
+
+CI
+#261:
+Commit [47eb82a](/gbouras13/plassembler/commit/47eb82aa9cabe47c4791db17d5e53cdc726d47bd)
+pushed
+by
+[gbouras13](/gbouras13)
+
+1h 41m 12s
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+[main](/gbouras13/plassembler/tree/refs/heads/main "main")
+
+1h 41m 12s
+
+* [View workflow file](/gbouras13/plassembler/actions/runs/18071146628/workflow)
+
+[Dev](/gbouras13/plassembler/actions/runs/18071146051)
+
+CI
+#260:
+Pull request [#75](/gbouras13/plassembler/pull/75)
+opened
+by
+[gbouras13](/gbouras13)
+
+2h 6m 56s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+2h 6m 56s
+
+* [View #75](/gbouras13/plassembler/pull/75)
+* [View workflow file](/gbouras13/plassembler/actions/runs/18071146051/workflow)
+
+[bump vesion](/gbouras13/plassembler/actions/runs/18052456583)
+
+CI
+#259:
+Commit [2fd8531](/gbouras13/plassembler/commit/2fd8531fc335e38e42b4aedca8f6bf2d793b8683)
+pushed
+by
+[gbouras13](/gbouras13)
+
+2h 1m 58s
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+[dev](/gbouras13/plassembler/tree/refs/heads/dev "dev")
+
+2h 1m 58s
+
+* [View #7

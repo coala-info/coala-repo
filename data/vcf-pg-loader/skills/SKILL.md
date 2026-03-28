@@ -1,6 +1,6 @@
 ---
 name: vcf-pg-loader
-description: vcf-pg-loader loads genomic variant data from VCF files into a PostgreSQL database. Use when user asks to load VCF data, initialize a database schema, import GWAS summary statistics, validate loaded data, query the database, or verify installation.
+description: vcf-pg-loader automates the ingestion of VCF genomic data into PostgreSQL databases for structured analysis and polygenic scoring. Use when user asks to load VCF files into a database, initialize genomic database schemas, or annotate variants using reference databases.
 homepage: https://github.com/Zacharyr41/vcf-pg-loader
 ---
 
@@ -8,44 +8,57 @@ homepage: https://github.com/Zacharyr41/vcf-pg-loader
 # vcf-pg-loader
 
 ## Overview
+The `vcf-pg-loader` is a specialized utility designed to bridge the gap between raw genomic variant files and relational databases. It automates the ingestion of VCF data into PostgreSQL, providing a structured foundation for downstream genomic analysis and polygenic scoring. This tool is essential for bioinformatics engineers who need to move beyond flat-file processing into scalable, queryable database architectures while maintaining strict security standards for protected health information (PHI).
 
-The `vcf-pg-loader` is a high-performance CLI tool designed to bridge the gap between genomic flat files and relational databases. It is specifically optimized for Polygenic Risk Score (PRS) research, providing a robust infrastructure for handling large-scale variant data, genotype dosages, and clinical-grade compliance. By utilizing streaming parsing and the PostgreSQL binary COPY protocol, it ensures maximum throughput while maintaining data integrity through built-in variant normalization and quality control metrics.
+## Installation and Setup
+The tool can be installed via multiple package managers or directly from source:
 
-## Core CLI Patterns
+- **Bioconda**: `conda install -c bioconda vcf-pg-loader`
+- **PyPI**: `pip install vcf-pg-loader`
+- **Development**: Use `uv` for fast environment setup: `uv sync`
 
-### 1. Environment Setup and Verification
-Before running load operations, ensure your environment is correctly configured.
-- **Verify Installation**: Run `vcf-pg-loader doctor` to check dependencies like Python and Docker.
-- **Database Credentials**: Set the `PGPASSWORD` environment variable to avoid interactive prompts during automated workflows.
+## Database Configuration
+The tool relies on environment variables for database connectivity. For HIPAA compliance, never include passwords in connection strings.
 
-### 2. Database Initialization
-You must initialize the schema before the first load if using an external database.
-- **Standard Human Genome**: `vcf-pg-loader init-db --db postgresql://user:pass@host/dbname`
-- **Non-Human Genomes**: Use the `--no-human-genome` flag to switch chromosome columns from ENUM to TEXT types.
+1. **Required Variables**:
+   - `VCF_PG_LOADER_DB_PASSWORD`: The primary variable for the database password.
+   - `PGHOST`, `PGPORT`, `PGUSER`, `PGDATABASE`: Standard PostgreSQL connection parameters.
 
-### 3. Loading VCF Data
-The tool supports two primary modes of operation:
-- **Zero-Config Mode**: Automatically manages a local PostgreSQL instance via Docker.
-  `vcf-pg-loader load sample.vcf.gz`
-- **Custom Database Mode**: Connects to an existing PostgreSQL instance.
-  `vcf-pg-loader load sample.vcf.gz --db postgresql://user:pass@host/dbname`
+2. **Security Fallbacks**:
+   - If `VCF_PG_LOADER_DB_PASSWORD` is unset, the tool falls back to `PGPASSWORD`.
+   - Supports fetching credentials from **AWS Secrets Manager** (via `VCF_PG_LOADER_AWS_SECRET_PREFIX`) or **HashiCorp Vault** (`VAULT_ADDR`).
 
-### 4. PRS Workflow Integration
-For Polygenic Risk Score research, follow this sequence:
-1. **Load Genotypes**: Load imputed VCFs containing dosages/GP fields.
-2. **Import GWAS Stats**: `vcf-pg-loader import-gwas gwas_sumstats.tsv --study-id <ID>`
-3. **Load Weights**: Integrate PGS Catalog scoring files to match variants against your loaded genotypes.
+## Common CLI Patterns
+While specific flags depend on the version, the tool generally follows these functional patterns:
 
-## Expert Tips and Best Practices
+- **Standard Ingestion**:
+  Point the loader to your VCF file and target database. Ensure the database schema is initialized before large-scale loads.
+- **Docker Deployment**:
+  Use the provided `docker-compose.yml` for a standard stack, or `docker-compose.hipaa.yml` for a hardened configuration that includes encrypted communication and stricter access controls.
 
-- **Variant Normalization**: By default, the tool uses the `vt` algorithm to left-align and trim variants. If your VCF is already normalized, use `--no-normalize` to increase loading speed.
-- **Multi-allelic Handling**: The loader properly handles `Number=A/R/G` fields during decomposition. It extracts the specific values corresponding to each ALT allele rather than just duplicating the info string.
-- **Performance Optimization**:
-    - Use the binary COPY protocol (default) for the fastest inserts.
-    - For very large datasets, ensure the database host has sufficient IOPS, as the tool uses asyncpg for high-concurrency writes.
-- **Data Validation**: After a load completes, always run `vcf-pg-loader validate <batch-id>` to ensure the row counts in the database match the records parsed from the VCF.
-- **Querying Data**: Use `vcf-pg-loader db shell` to quickly jump into a `psql` session pre-configured with your connection string.
+## Expert Tips
+- **HIPAA Compliance**: Always run the tool as a non-root user (the default container user is `vcfloader`). Use the `docker/certs/` directory to manage TLS certificates for encrypted database connections.
+- **Performance**: When loading large VCFs (e.g., Whole Genome Sequencing data), ensure your PostgreSQL instance is tuned for high-volume inserts (adjust `max_wal_size` and `checkpoint_timeout`).
+- **Integration**: This tool is compatible with `nf-core` modules. If building a Nextflow pipeline, use the `vcfpgloader/load` module to standardize the ingestion step.
+- **Testing**: Use the `docker-compose.test.yml` to spin up a transient environment for validating VCF compatibility before committing to a production database.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate loaded variants using reference databases. |
+| annotation-query | Execute an ad-hoc SQL query against annotation tables. |
+| benchmark | Run performance benchmarks on VCF parsing and loading. |
+| init-db | Initialize database schema. |
+| list-annotations | List all loaded annotation sources. |
+| load | Load a VCF file into PostgreSQL. |
+| load-annotation | Load an annotation VCF file as a reference database. The annotation source can then be used to annotate query VCFs via SQL JOINs. |
+| validate | Validate a completed load. |
 
 ## Reference documentation
-- [vcf-pg-loader Overview](./references/anaconda_org_channels_bioconda_packages_vcf-pg-loader_overview.md)
-- [vcf-pg-loader GitHub Repository](./references/github_com_Zacharyr41_vcf-pg-loader.md)
+- [Main Repository Overview](./references/github_com_Zacharyr41_vcf-pg-loader.md)
+- [Environment Configuration Template](./references/github_com_Zacharyr41_vcf-pg-loader_blob_main_.env.example.md)
+- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_vcf-pg-loader_overview.md)
+- [HIPAA Security Review Process](./references/github_com_Zacharyr41_vcf-pg-loader_blob_main_.trivyignore.md)

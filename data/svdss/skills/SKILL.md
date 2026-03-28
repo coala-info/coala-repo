@@ -1,6 +1,6 @@
 ---
 name: svdss
-description: SVDSS identifies structural variants in high-accuracy long reads by analyzing sample-specific strings and performing local assembly. Use when user asks to index a reference genome, smooth reads to remove noise, extract sample-specific strings, or call structural variants from long-read sequencing data.
+description: SVDSS detects structural variants in high-accuracy long reads by identifying sample-specific strings relative to a reference genome. Use when user asks to index a reference, smooth BAM files, extract sample-specific strings, call structural variants, or genotype variants using the SVDSS workflow.
 homepage: https://github.com/Parsoa/SVDSS
 ---
 
@@ -8,73 +8,68 @@ homepage: https://github.com/Parsoa/SVDSS
 # svdss
 
 ## Overview
-
-SVDSS (Structural Variant Discovery from Sample-specific Strings) is a specialized tool designed to identify structural variants in high-accuracy long reads. It operates on the principle of "sample-specific strings" (SFS)—the shortest substrings found in a target sample that are unique relative to a reference genome. The tool uses these strings to anchor potential SV sites and performs local partial-order assembly (POA) to produce precise variant predictions. While optimized for PacBio HiFi data, it can be applied to other technologies like ONT, though accuracy may vary.
-
-## Installation and Environment
-
-SVDSS is most easily managed via Bioconda.
-
-```bash
-conda create -n svdss -c conda-forge -c bioconda svdss
-conda activate svdss
-```
+SVDSS is a specialized tool for detecting structural variants using the concept of Sample-specific Strings (SFS). It is optimized for high-accuracy long reads, such as PacBio HiFi data. The tool works by identifying the shortest substrings unique to a sample relative to a reference genome, anchoring potential SV sites, and using local assembly to generate precise variant calls. This skill provides guidance on the multi-step workflow required to move from raw alignments to a genotyped VCF.
 
 ## Core Workflow
-
-The SVDSS pipeline consists of four primary stages. For a streamlined execution, a wrapper script `run_svdss` is available, but manual execution allows for better control over intermediate files.
+The standard SVDSS pipeline consists of five sequential steps. While a wrapper script `run_svdss` exists, manual execution allows for better control over intermediate files and parameters.
 
 ### 1. Indexing the Reference
-Build an FMD index of the reference genome. This index can be reused for any number of samples compared against the same reference.
-
+Build the FMD index required for SFS searching. This is a one-time cost per reference genome.
 ```bash
-SVDSS index -t 16 -d reference.fa > reference.fa.fmd
+SVDSS index -t <threads> -d <reference.fa> > <reference.fa.fmd>
 ```
 
-### 2. Read Smoothing
-Smoothing is a critical step that removes SNPs, small indels, and sequencing errors. This reduces noise and ensures that extracted SFS are highly relevant to actual structural variants.
-
+### 2. BAM Smoothing
+Smoothing is critical as it removes SNPs, small indels, and sequencing errors, which significantly reduces noise and improves SFS relevance.
 ```bash
-SVDSS smooth --reference reference.fa --bam sample.bam --threads 16 > smoothed.bam
+SVDSS smooth --reference <reference.fa> --bam <input.bam> --threads <threads> > smoothed.bam
 samtools index smoothed.bam
 ```
 
-### 3. SFS Search
-Extract the sample-specific strings from the smoothed BAM file using the FMD index.
-
+### 3. SFS Extraction
+Search for sample-specific strings using the FMD index and the smoothed BAM.
 ```bash
-SVDSS search --index reference.fa.fmd --bam smoothed.bam > specifics.txt
+SVDSS search --index <reference.fa.fmd> --bam smoothed.bam > specifics.txt
 ```
 
 ### 4. SV Calling
-Generate the final VCF output by assembling superstrings from the SFS clusters.
-
+Perform local partial-order-assembly (POA) to call variants.
 ```bash
-SVDSS call --reference reference.fa --bam smoothed.bam --sfs specifics.txt --threads 16 > calls.vcf
+SVDSS call --reference <reference.fa> --bam smoothed.bam --sfs specifics.txt --threads <threads> > calls.vcf
+```
+
+### 5. Genotyping
+Use `kanpig` to genotype the discovered variants.
+```bash
+kanpig -r <reference.fa> -v calls.vcf -b <input.bam> > genotyped.vcf
 ```
 
 ## Expert Tips and Best Practices
 
-- **Reference Selection**: Use a reference genome that matches your analysis goals. If you are not interested in alternative contigs, filter them out of the FASTA before indexing to avoid "diluting" the specificity of the strings.
-- **BAM Indexing**: Always run `samtools index` on the `smoothed.bam` file before proceeding to the `call` step. The `call` command requires an indexed BAM to function correctly.
-- **Filtering Results**: Use the `--min-sv-length` (default 50) and `--min-cluster-weight` (minimum support) options during the `call` phase to reduce false positives.
-- **Haplotagging**: By default, SVDSS considers haplotagging information. If your BAM is not phased or you wish to ignore this data, use the `-t` flag in the wrapper or appropriate flags in the subcommands.
-- **Resource Management**: The `index` and `smooth` steps are computationally intensive. Ensure you allocate sufficient threads (`-t` or `--threads`) and memory for these operations.
+### Parameter Tuning
+- **Minimum Cluster Weight (`--min-cluster-weight`)**: This is the primary lever for balancing precision and recall. 
+  - For **30x diploid coverage**, use a value of **2**.
+  - For higher coverage or to increase precision, increase this to **3 or 4**.
+- **SV Length (`--min-sv-length`)**: Default is typically 50bp. Adjust this if you are specifically looking for smaller or larger structural events.
+- **Mapping Quality (`-q`)**: The default is 20. If working with repetitive regions, consider increasing this to reduce false positives from misaligned reads.
 
-## Common CLI Patterns
+### Data Requirements
+- **Read Type**: SVDSS is designed for **accurate** long reads (PacBio HiFi). Using it with high-error data like standard ONT reads may result in significant inaccuracies.
+- **Reference Selection**: Ensure the reference genome does not include ALT contigs if you are not interested in them, as they can interfere with the uniqueness of SFS.
 
-**Using the Wrapper Script:**
-For a quick, end-to-end run with default parameters:
-```bash
-run_svdss -w ./output_dir -@ 16 reference.fa sample.bam
-```
+### Performance
+- **Threading**: Most subcommands support the `--threads` or `-t` flag. Smoothing and Calling are the most computationally intensive steps.
+- **Index Reuse**: The `.fmd` index is sample-independent. Always store and reuse it for different samples aligned to the same reference version.
 
-**Adjusting Sensitivity:**
-If you are getting too few calls, consider lowering the mapping quality threshold or the minimum support:
-```bash
-SVDSS call --reference ref.fa --bam smoothed.bam --sfs specifics.txt --min-support 1 --min-sv-length 30 > sensitive_calls.vcf
-```
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| run_svdss | Run SVDSS for structural variant detection. |
+| svdss_SVDSS | SVDSS [index\|smooth\|search\|call] |
 
 ## Reference documentation
-- [SVDSS GitHub Repository](./references/github_com_Parsoa_SVDSS.md)
-- [SVDSS Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_svdss_overview.md)
+- [SVDSS README](./references/github_com_Parsoa_SVDSS_blob_master_README.md)
+- [SVDSS Snakefile (Workflow Logic)](./references/github_com_Parsoa_SVDSS_blob_master_Snakefile.md)

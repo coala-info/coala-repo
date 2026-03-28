@@ -1,1 +1,282 @@
-GitHub - AmpliconSuite/AmpliconReconstructorOM: Reconstructs complex variation using Bionano optical mapping data and breakpoint graph data Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} AmpliconSuite / AmpliconReconstructorOM Public Notifications You must be signed in to change notification settings Fork 6 Star 19 Reconstructs complex variation using Bionano optical mapping data and breakpoint graph data License View license 19 stars 6 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 4 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights AmpliconSuite/AmpliconReconstructorOM master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 255 Commits 255 Commits SegAligner SegAligner ref_genomes ref_genomes scripts scripts test_files test_files .gitignore .gitignore ARAlignDetect.py ARAlignDetect.py AmpliconReconstructorOM.py AmpliconReconstructorOM.py ContigAlignmentGraph.py ContigAlignmentGraph.py LICENSE.md LICENSE.md OMPathFinder.py OMPathFinder.py README.md README.md abstract_graph.py abstract_graph.py align_to_candidate_path.py align_to_candidate_path.py bionanoUtil.py bionanoUtil.py bionano_samples.yaml bionano_samples.yaml breakpoint_graph.py breakpoint_graph.py cycles_file_to_fasta.py cycles_file_to_fasta.py generate_cmap.py generate_cmap.py global_names.py global_names.py graph_to_bed.py graph_to_bed.py ref_util.py ref_util.py View all files Repository files navigation README License AmpliconReconstructorOM Reconstructs focal amplifications using Bionano optical mapping data and an NGS-derived breakpoint graph. The publication related to this work has been published in Nature Communications . If using this tool please cite the following: Luebeck et al., "AmpliconReconstructor integrates NGS and optical mapping to resolve the complex structures of focal amplifications" , Nature Communications , 2020. September 2022 Update: Version 1.02: adds support for python3. September 2020 Update: Version 1.01: adds support for GRCh38-based analysis. Contents: Dependencies Installation Inputs &amp; Outputs Running AR SegAligner documentation Dependencies AR uses Python 2 (2.7+) or Python 3, and C++ (C++11 or higher with g++ as the compiler) and a Unix-based OS. AR has been tested on Ubuntu 16.04 and later. AR may not work with CentOS 7 unless glibc is 3.4.20 or higher. AR has the following Python library dependencies: Matplotlib 2.0.0 (or higher) To ensure you meet the version dependency for Matplotlib, do pip install --upgrade matplotlib . numpy pysam PyYAML intervaltree pip install numpy matplotlib pysam PyYAML intervaltree AR requires that the AmpliconArchitect (AA) data repo be downloaded and the $AA_DATA_REPO bash variable must be set. If you already have AA installed, no action is required. Otherwise, instructions on setting the data repo are available here . AR can produce optional visualizations of the reconstructed amplicons, this requires the CycleViz . Instructions for installing CycleViz are included below. Installation To install AR, we add some variables to the .bashrc file (located in your home directory). We provide some bash commands to automate this process. Typically this installation process can be completed in 5 or less minutes. Download AR. git clone https://github.com/jluebeck/AmpliconReconstructor &amp;&amp; cd AmpliconReconstructor Add AmpliconReconstructor and SegAligner to path. echo " export AR_SRC= $PWD " &gt;&gt; ~ /.bashrc echo " export SA_SRC= $PWD /SegAligner " &gt;&gt; ~ /.bashrc source ~ /.bashrc A SegAligner binary compatible with a Linux x86 64-bit architecture is included. If you want to compile the SegAligner binary yourself, run the following. cd SegAligner make cd .. Add AR python libs to $PYTHONPATH variable. echo "export PYTHONPATH=$PYTHONPATH:$AR_SRC" &gt;&gt; ~/.bashrc (Optional, but highly recommended) Install CycleViz . # before running, make sure dependencies for CycleViz (listed in "Dependencies" section) are satisfied # now, install CycleViz cd ../../ # or wherever you want to install CycleViz git clone https://github.com/jluebeck/CycleViz echo " export CV_SRC= $PWD /CycleViz " &gt;&gt; ~ /.bashrc Make the changes to .bashrc live for this session: source ~/.bashrc (Optional) Add Microsoft fonts to Ubuntu (e.g. Arial). sudo apt-get install ttf-mscorefonts-installer fontconfig sudo fc-cache -f # rebuilds the font cache Inputs &amp; Outputs Inputs: At a high level, AR accepts as inputs assembled Bionano contigs ( .cmap ) and an AA-formatted breakpoint graph file ( *_graph.txt ). Generating an in silico digested graph Once AA has been run on your NGS data, please convert the resulting *_graph.txt file to CMAP form, using the script generate_cmap.py . An example command is $AR_SRC/generate_cmap.py -r reference_genome.fasta -e DLE1 -g sample_amplicon1_graph.txt The YAML file A sample .yaml template is included in the AR source directory. The .yaml file should specify the following properties for each entry ( sample_name ) sample_name: path: /some/path/to/your/samples/ - Path prefix which will be applied to all other input filenames graph: sample_graph.txt - AA-formatted breakpoint graph file. Assumes "graph" is located under "path". contigs: sample_EXP_REFINEFINAL1.cmap - assembled OM contigs. Assumes "contigs" is located under "path". cmap: sample_graph_DLE1.cmap - in-silico CMAP generated from AA-formatted graph file instrument: [Irys/Saphyr] enzyme: [BspQI/DLE1] reference_build: [hg19/GRCh38] - Specify either hg19 or GRCh38 reference build used. min_map_len: ~ - [Optional] set a custom minimum number of labels for SegAligner alignment (advanced option) xmaps: ~ - [Optional] provide a .xmap-formatted file of alignments between "cmap" and reference genome. Disables SegAligner alignment (advanced option) Outputs: AR outputs a collection of possible reconstruction paths, ordered by total alignment score. The output file format is the same as the AA cycles file format . The files created by AR are placed into three folders alignments/ Contains the individual graph segment alignments to contigs, produced by SegAligner reconstructions/ AR reconstructions and reconstruction alignments visualizations/ Visualizations of AR reconstructions The reconstructions/ folder contains a number of files. a) [sample_name]_paths_cycles.txt - AA cycles-formatted output describing the reconstructed genomic paths. This is the primary output used for interpreting reconstructions. b) [sample_name]_path_[N]_aln.txt - SegAligner-formatted OM alignment of entire reconstruction path (segments to scaffolds). c) [sample_name]_scaffold_paths.txt - AA cycles-formatted output describing the heaviest weight paths for each individual OM contig. d) [sample_name]_scaffold_path_[N]_aln.txt - SegAligner-formatted OM alignment of graph segments to individual OM contig. e) [sample_name]_data.json - A json representation of the unresolved reconstruction graph. Can be uploaded to ScaffoldGraphViewer . f) [sample_name]_run.log - Verbose output about reconstruction process. The visualizations/ folder will contain CycleViz visulazations of the reconstructed genomic paths specified in [sample_name]_paths_cycles.txt . By default AR will not produce CycleViz images unless either the $CV_SRC bash variable is set ( CycleViz installation ) or --CV_path /path/to/CycleViz/ is manually specified. Usage AR requires a number of inputs. To simplify running AR, we use a wrapper script AmpliconReco
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconReconstructorOM)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconReconstructorOM)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=AmpliconSuite%2FAmpliconReconstructorOM)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[AmpliconSuite](/AmpliconSuite)
+/
+**[AmpliconReconstructorOM](/AmpliconSuite/AmpliconReconstructorOM)**
+Public
+
+* [Notifications](/login?return_to=%2FAmpliconSuite%2FAmpliconReconstructorOM) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2FAmpliconSuite%2FAmpliconReconstructorOM)
+* [Star
+   19](/login?return_to=%2FAmpliconSuite%2FAmpliconReconstructorOM)
+
+* [Code](/AmpliconSuite/AmpliconReconstructorOM)
+* [Issues
+  5](/AmpliconSuite/AmpliconReconstructorOM/issues)
+* [Pull requests
+  0](/AmpliconSuite/AmpliconReconstructorOM/pulls)
+* [Actions](/AmpliconSuite/AmpliconReconstructorOM/actions)
+* [Projects](/AmpliconSuite/AmpliconReconstructorOM/projects)
+* [Security
+  0](/AmpliconSuite/AmpliconReconstructorOM/security)
+* [Insights](/AmpliconSuite/AmpliconReconstructorOM/pulse)
+
+Additional navigation options
+
+* [Code](/AmpliconSuite/AmpliconReconstructorOM)
+* [Issues](/AmpliconSuite/AmpliconReconstructorOM/issues)
+* [Pull requests](/AmpliconSuite/AmpliconReconstructorOM/pulls)
+* [Actions](/AmpliconSuite/AmpliconReconstructorOM/actions)
+* [Projects](/AmpliconSuite/AmpliconReconstructorOM/projects)
+* [Security](/AmpliconSuite/AmpliconReconstructorOM/security)
+* [Insights](/AmpliconSuite/AmpliconReconstructorOM/pulse)
+
+# AmpliconSuite/AmpliconReconstructorOM
+
+master
+
+[Branches](/AmpliconSuite/AmpliconReconstructorOM/branches)[Tags](/AmpliconSuite/AmpliconReconstructorOM/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[255 Commits](/AmpliconSuite/AmpliconReconstructorOM/commits/master/)   255 Commits | | |
+| [SegAligner](/AmpliconSuite/AmpliconReconstructorOM/tree/master/SegAligner "SegAligner") | | [SegAligner](/AmpliconSuite/AmpliconReconstructorOM/tree/master/SegAligner "SegAligner") |  |  |
+| [ref\_genomes](/AmpliconSuite/AmpliconReconstructorOM/tree/master/ref_genomes "ref_genomes") | | [ref\_genomes](/AmpliconSuite/AmpliconReconstructorOM/tree/master/ref_genomes "ref_genomes") |  |  |
+| [scripts](/AmpliconSuite/AmpliconReconstructorOM/tree/master/scripts "scripts") | | [scripts](/AmpliconSuite/AmpliconReconstructorOM/tree/master/scripts "scripts") |  |  |
+| [test\_files](/AmpliconSuite/AmpliconReconstructorOM/tree/master/test_files "test_files") | | [test\_files](/AmpliconSuite/AmpliconReconstructorOM/tree/master/test_files "test_files") |  |  |
+| [.gitignore](/AmpliconSuite/AmpliconReconstructorOM/blob/master/.gitignore ".gitignore") | | [.gitignore](/AmpliconSuite/AmpliconReconstructorOM/blob/master/.gitignore ".gitignore") |  |  |
+| [ARAlignDetect.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/ARAlignDetect.py "ARAlignDetect.py") | | [ARAlignDetect.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/ARAlignDetect.py "ARAlignDetect.py") |  |  |
+| [AmpliconReconstructorOM.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/AmpliconReconstructorOM.py "AmpliconReconstructorOM.py") | | [AmpliconReconstructorOM.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/AmpliconReconstructorOM.py "AmpliconReconstructorOM.py") |  |  |
+| [ContigAlignmentGraph.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/ContigAlignmentGraph.py "ContigAlignmentGraph.py") | | [ContigAlignmentGraph.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/ContigAlignmentGraph.py "ContigAlignmentGraph.py") |  |  |
+| [LICENSE.md](/AmpliconSuite/AmpliconReconstructorOM/blob/master/LICENSE.md "LICENSE.md") | | [LICENSE.md](/AmpliconSuite/AmpliconReconstructorOM/blob/master/LICENSE.md "LICENSE.md") |  |  |
+| [OMPathFinder.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/OMPathFinder.py "OMPathFinder.py") | | [OMPathFinder.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/OMPathFinder.py "OMPathFinder.py") |  |  |
+| [README.md](/AmpliconSuite/AmpliconReconstructorOM/blob/master/README.md "README.md") | | [README.md](/AmpliconSuite/AmpliconReconstructorOM/blob/master/README.md "README.md") |  |  |
+| [abstract\_graph.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/abstract_graph.py "abstract_graph.py") | | [abstract\_graph.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/abstract_graph.py "abstract_graph.py") |  |  |
+| [align\_to\_candidate\_path.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/align_to_candidate_path.py "align_to_candidate_path.py") | | [align\_to\_candidate\_path.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/align_to_candidate_path.py "align_to_candidate_path.py") |  |  |
+| [bionanoUtil.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/bionanoUtil.py "bionanoUtil.py") | | [bionanoUtil.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/bionanoUtil.py "bionanoUtil.py") |  |  |
+| [bionano\_samples.yaml](/AmpliconSuite/AmpliconReconstructorOM/blob/master/bionano_samples.yaml "bionano_samples.yaml") | | [bionano\_samples.yaml](/AmpliconSuite/AmpliconReconstructorOM/blob/master/bionano_samples.yaml "bionano_samples.yaml") |  |  |
+| [breakpoint\_graph.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/breakpoint_graph.py "breakpoint_graph.py") | | [breakpoint\_graph.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/breakpoint_graph.py "breakpoint_graph.py") |  |  |
+| [cycles\_file\_to\_fasta.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/cycles_file_to_fasta.py "cycles_file_to_fasta.py") | | [cycles\_file\_to\_fasta.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/cycles_file_to_fasta.py "cycles_file_to_fasta.py") |  |  |
+| [generate\_cmap.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/generate_cmap.py "generate_cmap.py") | | [generate\_cmap.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/generate_cmap.py "generate_cmap.py") |  |  |
+| [global\_names.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/global_names.py "global_names.py") | | [global\_names.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/global_names.py "global_names.py") |  |  |
+| [graph\_to\_bed.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/graph_to_bed.py "graph_to_bed.py") | | [graph\_to\_bed.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/graph_to_bed.py "graph_to_bed.py") |  |  |
+| [ref\_util.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/ref_util.py "ref_util.py") | | [ref\_util.py](/AmpliconSuite/AmpliconReconstructorOM/blob/master/ref_util.py "ref_util.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# AmpliconReconstructorOM
+
+Reconstructs focal amplifications using Bionano optical mapping data and an NGS-derived breakpoint graph. The publication related to this work has been published in *Nature Communications*. If using this tool please cite the following:
+
+Luebeck et al., ["AmpliconReconstructor integrates NGS and optical mapping to resolve the complex structures of focal amplifications"](https://www.nature.com/articles/s41467-020-18099-z), *Nature Communications*, 2020.
+
+**September 2022 Update:** Version 1.02: adds support for python3.
+
+**September 2020 Update:** Version 1.01: adds support for GRCh38-based analysis.
+
+## Contents:
+
+1. [Dependencies](#dependencies)
+2. [Installation](#installation)
+3. [Inputs & Outputs](#inputs--outputs)
+4. [Running AR](#usage)
+5. [SegAligner documentation](#segaligner)
+
+## Dependencies
+
+AR uses Python 2 (2.7+) or Python 3, and C++ (C++11 or higher with g++ as the compiler) and a Unix-based OS. AR has been tested on Ubuntu 16.04 and later. AR may not work with CentOS 7 unless `glibc` is 3.4.20 or higher.
+
+AR has the following Python library dependencies:
+
+* Matplotlib 2.0.0 (or higher)
+  + To ensure you meet the version dependency for Matplotlib, do
+    `pip install --upgrade matplotlib`.
+* numpy
+* pysam
+* PyYAML
+* intervaltree
+
+`pip install numpy matplotlib pysam PyYAML intervaltree`
+
+AR requires that the [AmpliconArchitect (AA)](https://github.com/jluebeck/AmpliconArchitect) data repo be downloaded and the `$AA_DATA_REPO` bash variable must be set. If you already have AA installed, no action is required. Otherwise, instructions on setting the data repo are available [here](https://github.com/jluebeck/AmpliconArchitect#data-repositories).
+
+AR can produce optional visualizations of the reconstructed amplicons, this requires the
+[CycleViz](https://github.com/jluebeck/CycleViz). Instructions for installing CycleViz are included below.
+
+## Installation
+
+To install AR, we add some variables to the .bashrc file (located in your home directory). We provide some bash commands to automate this process. Typically this installation process can be completed in 5 or less minutes.
+
+1. Download AR.
+
+   `git clone https://github.com/jluebeck/AmpliconReconstructor && cd AmpliconReconstructor`
+2. Add AmpliconReconstructor and SegAligner to path.
+
+   ```
+   echo "export AR_SRC=$PWD" >> ~/.bashrc
+   echo "export SA_SRC=$PWD/SegAligner" >> ~/.bashrc
+   source ~/.bashrc
+   ```
+3. A SegAligner binary compatible with a Linux x86 64-bit architecture is included. If you want to compile the SegAligner binary yourself, run the following.
+
+   ```
+   cd SegAligner
+   make
+   cd ..
+   ```
+4. Add AR python libs to `$PYTHONPATH` varia

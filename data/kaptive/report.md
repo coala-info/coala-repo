@@ -258,3 +258,6 @@ For more help, visit: [1mhttps://kaptive.readthedocs.io/en/latest/[0m
 2026-02-25 05:53:40           parse_args] [1;31m  ERROR] Insufficient arguments for kaptive convert[0m
 ```
 
+
+## Metadata
+- **Skill**: generated

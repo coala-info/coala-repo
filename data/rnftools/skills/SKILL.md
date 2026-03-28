@@ -1,6 +1,6 @@
 ---
 name: rnftools
-description: rnftools manages simulated sequencing data by encoding genomic coordinates into read names using the RNF convention to facilitate automated mapper evaluation. Use when user asks to simulate sequencing reads with coordinate metadata, convert SAM files to RNF format, or evaluate the alignment accuracy of mappers using precision-recall curves.
+description: RNFtools generates and evaluates simulated Next-Generation Sequencing data by encoding genomic coordinates directly into read names using the RNF framework. Use when user asks to simulate reads from reference genomes, convert existing datasets to RNF-compliant formats, or evaluate the mapping accuracy of bioinformatic aligners using ROC curves.
 homepage: http://karel-brinda.github.io/rnftools
 ---
 
@@ -8,46 +8,55 @@ homepage: http://karel-brinda.github.io/rnftools
 # rnftools
 
 ## Overview
-rnftools provides a unified environment for managing simulated sequencing data. By utilizing the RNF naming convention, it encodes the original genomic coordinates of simulated reads directly into their names. This allows for automated, parameter-free evaluation of how accurately different mappers align reads back to a reference genome. The tool integrates read simulation (via engines like Art, DwgSim, or Mason) and evaluation into a streamlined workflow.
+
+This skill enables the generation and evaluation of simulated Next-Generation Sequencing (NGS) data using the RNF framework. RNFtools provides a standardized way to encode genomic coordinates directly into read names, allowing for seamless evaluation of mapping accuracy without the need for external truth files. Use this tool to create complex simulated datasets from reference genomes and to generate ROC curves or other performance metrics for various bioinformatic aligners.
 
 ## Core Functionalities
 
-### 1. Read Simulation (rnftools sam2rnf / engine wrappers)
-rnftools can wrap various simulators to produce RNF-compliant FASTQ files.
-- **Standard Workflow**: Define a simulation configuration (often via a Snakefile) to generate reads from a reference FASTA.
-- **Coordinate Encoding**: Ensure reads are generated with RNF names so that downstream evaluation tools can identify the "true" source of the read without needing the original SAM/BAM file.
+### Read Simulation (rnf-sim)
+RNFtools can simulate reads using various backends (like Art, Dwgsim, or Mason) while ensuring the output follows the RNF naming convention.
 
-### 2. Mapper Evaluation (rnftools lavendel)
-The `lavendel` module is used to compare mapper output (SAM/BAM) against the ground truth encoded in RNF read names.
-- **Input**: A SAM/BAM file produced by a mapper and the original RNF-compliant reads.
-- **Output**: Precision-recall curves and reports indicating mapping accuracy.
-- **Key Metric**: It calculates the distance between the mapped position and the true position to determine if a read is "correctly" aligned based on a user-defined threshold.
+- **Basic Simulation**: Define a "genome" and "reads" to generate FASTQ files where the read names contain the exact source coordinates.
+- **Coverage-based Sampling**: Specify desired fold coverage or a fixed number of read pairs.
+- **Error Profiles**: Configure sequencing error rates and insert size distributions to mimic specific platforms (Illumina, Ion Torrent, etc.).
 
-### 3. Format Conversion
-- **sam2rnf**: Convert existing SAM files (from simulators that don't support RNF) into RNF-compliant formats.
-- **rnf2bam**: Create BAM files where the RNF metadata is preserved or utilized for validation.
+### Format Conversion (rnf-conv)
+Convert existing simulated datasets or BAM files into RNF-compliant formats.
+- Use this to "RNFize" reads from simulators that do not natively support the format.
+- Extract mapping information from BAM files to create RNF-compliant FASTQ files for re-evaluation.
 
-## CLI Usage Patterns
-
-### Basic Simulation Setup
-While rnftools often uses a Python-based configuration (Snakemake-like), direct CLI utilities are available:
-```bash
-# Convert a SAM file from a simulator to RNF format
-rnftools sam2rnf --input input.sam --output output.rnf.fq
-```
-
-### Evaluating a Mapper
-To evaluate how well a mapper performed:
-```bash
-# Generate evaluation plots and statistics
-rnftools lavendel --bam aligned_reads.bam --output evaluation_report/
-```
+### Evaluation and Benchmarking (rnf-eval)
+Compare the output of different mappers against the "truth" encoded in the RNF read names.
+- **Accuracy Assessment**: Determine if a read is mapped correctly based on a distance threshold (e.g., within 20bp of the true origin).
+- **Visualization**: Generate SVG or PDF reports containing ROC curves (Sensitivity vs. False Discovery Rate) to compare the precision of different alignment algorithms or parameter sets.
 
 ## Best Practices
-- **Reference Consistency**: Always use the exact same reference FASTA for simulation and for the subsequent mapping index to avoid coordinate shifts.
-- **Read ID Integrity**: Do not strip or modify the read names during the mapping process, as rnftools relies on the RNF string in the read header to perform evaluation.
-- **Engine Selection**: Choose the simulation engine (Art, Mason, etc.) that best mimics the error profile of the sequencing technology you are benchmarking (e.g., Illumina vs. PacBio).
+
+- **Reference Consistency**: Ensure the same reference genome version is used for both simulation and subsequent mapping to avoid coordinate mismatches.
+- **Read Name Integrity**: Avoid tools that strip or truncate read names during processing, as the RNF metadata is stored entirely within the string preceding the first space in the FASTQ header.
+- **Evaluation Thresholds**: When running evaluations, adjust the "allowed distance" parameter based on the complexity of the genomic region (e.g., increase it for highly repetitive regions or long-read simulations).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| curesim2rnf | Convert a CuReSim FASTQ file to RNF-FASTQ. |
+| dwgsim2rnf | Convert a DwgSim FASTQ file (dwgsim_prefix.bfast.fastq) to RNF-FASTQ. |
+| es2et | todo |
+| liftover | Liftover genomic coordinates in RNF names in a SAM/BAM files or in a FASTQ file. |
+| rnftools art2rnf | Convert an Art SAM file to RNF-FASTQ. Note that Art produces non-standard SAM files and manual editation might be necessary. In particular, when a FASTA file contains comments, Art left them in the sequence name. Comments must be removed in their corresponding @SQ headers in the SAM file, otherwise all reads are considered to be unmapped by this script. |
+| rnftools et2roc | todo |
+| rnftools mason2rnf | Convert a Mason SAM file to RNF-FASTQ. |
+| rnftools merge | todo |
+| rnftools validate | Validate RNF names in a FASTQ file. |
+| rnftools wgsim2rnf | Convert WgSim FASTQ files to RNF-FASTQ. |
+| sam2es | todo |
+| sam2rnf | Convert a SAM/BAM file to RNF-FASTQ. |
+| sam2roc | todo |
 
 ## Reference documentation
-- [rnftools Overview](./references/anaconda_org_channels_bioconda_packages_rnftools_overview.md)
-- [RNF Framework Details](./references/brinda_eu_rnftools.md)
+
+- [RNFtools Overview](./references/brinda_eu_rnftools.md)
+- [Bioconda RNFtools Package](./references/anaconda_org_channels_bioconda_packages_rnftools_overview.md)

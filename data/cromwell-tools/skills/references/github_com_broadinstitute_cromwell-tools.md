@@ -1,1 +1,278 @@
-GitHub - broadinstitute/cromwell-tools: A collection of Python clients and accessory scripts for interacting with the Cromwell Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} broadinstitute / cromwell-tools Public Notifications You must be signed in to change notification settings Fork 11 Star 23 A collection of Python clients and accessory scripts for interacting with the Cromwell cromwell-tools.readthedocs.io License BSD-3-Clause license 23 stars 11 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 15 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights broadinstitute/cromwell-tools master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 96 Commits 96 Commits .github .github cromwell_tools cromwell_tools docs docs notebooks notebooks .flake8 .flake8 .gitattributes .gitattributes .gitignore .gitignore .pre-commit-config.yaml .pre-commit-config.yaml Dockerfile Dockerfile LICENSE LICENSE README.rst README.rst codecov.yml codecov.yml requirements-docs.txt requirements-docs.txt requirements-test.txt requirements-test.txt requirements.txt requirements.txt setup.py setup.py View all files Repository files navigation README Code of conduct BSD-3-Clause license Cromwell-tools Overview This repo contains a cromwell_tools Python package, accessory scripts and IPython notebooks. The cromwell_tools Python package is designed to be a Python API and Command Line Tool for interacting with the Cromwell . with the following features: Python3 compatible. (Starting from release v2.0.0, cromwell-tools will no longer support Python 2.7) Consistency in authentication to work with Cromwell. Consistency between API and CLI interfaces. Sufficient test cases. Documentation on Read The Docs . The accessory scripts and IPython notebooks are useful to: Monitor the resource usages of workflows running in Cromwell. Visualize the workflows benchmarking metrics. Installation 1. (optional and highly recommended) Create a Python 3 virtual environment locally and activate it: e.g. virtualenv -p python3 myenv &amp;&amp; source myenv/bin/activate Install (or upgrade) Cromwell-tools from PyPI : pip install -U cromwell-tools You can verify the installation by: cromwell-tools --version Usage Python API In Python, you can import the package with: import cromwell_tools . api as cwt cwt . submit ( * args ) assuming args is a list of arguments needed. For more details, please check the tutorial on Read the Docs . Commandline Interface This package also installs a command line interface that mirrors the API and is used as follows: $&gt; cromwell-tools -h usage: cromwell-tools [-h] {submit,wait,status,abort,release_hold,query,health} ... positional arguments: {submit,wait,status,abort,release_hold,query,health} sub-command help submit submit help wait wait help status status help abort abort help release_hold release_hold help query query help health health help optional arguments: -h, --help show this help message and exit -V, --version show program's version number and exit A set of sub-commands to submit, query, abort, release on-hold workflows, wait for workflow completion and determining status of jobs are exposed by this CLI. For more details, please check the tutorial on Read the Docs . Testing To run tests: Run Tests with Docker Running the tests within docker image is the recommended way, to do this, you need to have docker-daemon installed in your environment. From the root of the cromwell-tools repo: cd cromwell_tools/tests &amp;&amp; bash test.sh Run Tests with local Python environment If you have to run the tests with your local Python environment, we highly recommend to create and activate a virtualenv with requirements before you run the tests: virtualenv test-env source test-env/bin/activate pip install -r requirements.txt -r requirements-test.txt Finally, from the root of the cromwell-tools repo, run the tests with: python -m pytest --cov=cromwell_tools cromwell_tools/tests Note Which version of Python is used to run the tests here depends on the virtualenv parameter. You can use virtualenv -p to choose which Python version you want to create the virtual environment. Development Code Style The cromwell-tools code base is complying with the PEP-8 and using Black to format our code, in order to avoid "nitpicky" comments during the code review process so we spend more time discussing about the logic, not code styles. In order to enable the auto-formatting in the development process, you have to spend a few seconds setting up the pre-commit the first time you clone the repo: Install pre-commit by running: pip install pre-commit (or simply run pip install -r requirements.txt ). Run pre-commit install to install the git hook. Once you successfully install the pre-commit hook to this repo, the Black linter/formatter will be automatically triggered and run on this repo. Please make sure you followed the above steps, otherwise your commits might fail at the linting test! If you really want to manually trigger the linters and formatters on your code, make sure Black and flake8 are installed in your Python environment and run flake8 DIR1 DIR2 and black DIR1 DIR2 --skip-string-normalization respectively. Dependencies When upgrading the dependencies of cromwell-tools, please make sure requirements.txt , requirements-test.txt and setup.py are consistent! Documentation To edit the docmentation and rebuild it locally, make sure you have Sphinx installed. You might also want to install the dependencies for building the docs: pip install requirements-docs.txt . Finally from within the root directory, run: sphinx-build -b html docs/ docs/_build/ and then you could preview the built documentation by opening docs/_build/index.html in your web browser. Publish on PyPI To publish a new version of Cromwell-tools on PyPI: Make sure you have an empty dist folder locally. Make sure you have twine installed: pip install twine . Build the package: python setup.py sdist bdist_wheel Upload and publish on PyPI: twine upload dist/* --verbose , note you will need the username and password of the development account to finish this step. Contribute Coming soon... For now, feel free to submit issues and open a PR, we will try our best to address them. About A collection of Python clients and accessory scripts for interacting with the Cromwell cromwell-tools.readthedocs.io Resources Readme License BSD-3-Clause license Code of conduct Code of conduct Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 23 stars Watchers 32 watching Forks 11 forks Report repository Releases 20 v2.4.1 Latest Feb 21, 2020 + 19 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 11 Uh oh! There was an error while loading. Please reload this page . Languages Python 96.1% Shell 3.3% Other 0.6% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbroadinstitute%2Fcromwell-tools)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbroadinstitute%2Fcromwell-tools)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=broadinstitute%2Fcromwell-tools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[broadinstitute](/broadinstitute)
+/
+**[cromwell-tools](/broadinstitute/cromwell-tools)**
+Public
+
+* [Notifications](/login?return_to=%2Fbroadinstitute%2Fcromwell-tools) You must be signed in to change notification settings
+* [Fork
+  11](/login?return_to=%2Fbroadinstitute%2Fcromwell-tools)
+* [Star
+   23](/login?return_to=%2Fbroadinstitute%2Fcromwell-tools)
+
+* [Code](/broadinstitute/cromwell-tools)
+* [Issues
+  15](/broadinstitute/cromwell-tools/issues)
+* [Pull requests
+  1](/broadinstitute/cromwell-tools/pulls)
+* [Actions](/broadinstitute/cromwell-tools/actions)
+* [Projects](/broadinstitute/cromwell-tools/projects)
+* [Security
+  0](/broadinstitute/cromwell-tools/security)
+* [Insights](/broadinstitute/cromwell-tools/pulse)
+
+Additional navigation options
+
+* [Code](/broadinstitute/cromwell-tools)
+* [Issues](/broadinstitute/cromwell-tools/issues)
+* [Pull requests](/broadinstitute/cromwell-tools/pulls)
+* [Actions](/broadinstitute/cromwell-tools/actions)
+* [Projects](/broadinstitute/cromwell-tools/projects)
+* [Security](/broadinstitute/cromwell-tools/security)
+* [Insights](/broadinstitute/cromwell-tools/pulse)
+
+# broadinstitute/cromwell-tools
+
+master
+
+[Branches](/broadinstitute/cromwell-tools/branches)[Tags](/broadinstitute/cromwell-tools/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[96 Commits](/broadinstitute/cromwell-tools/commits/master/)   96 Commits | | |
+| [.github](/broadinstitute/cromwell-tools/tree/master/.github ".github") | | [.github](/broadinstitute/cromwell-tools/tree/master/.github ".github") |  |  |
+| [cromwell\_tools](/broadinstitute/cromwell-tools/tree/master/cromwell_tools "cromwell_tools") | | [cromwell\_tools](/broadinstitute/cromwell-tools/tree/master/cromwell_tools "cromwell_tools") |  |  |
+| [docs](/broadinstitute/cromwell-tools/tree/master/docs "docs") | | [docs](/broadinstitute/cromwell-tools/tree/master/docs "docs") |  |  |
+| [notebooks](/broadinstitute/cromwell-tools/tree/master/notebooks "notebooks") | | [notebooks](/broadinstitute/cromwell-tools/tree/master/notebooks "notebooks") |  |  |
+| [.flake8](/broadinstitute/cromwell-tools/blob/master/.flake8 ".flake8") | | [.flake8](/broadinstitute/cromwell-tools/blob/master/.flake8 ".flake8") |  |  |
+| [.gitattributes](/broadinstitute/cromwell-tools/blob/master/.gitattributes ".gitattributes") | | [.gitattributes](/broadinstitute/cromwell-tools/blob/master/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/broadinstitute/cromwell-tools/blob/master/.gitignore ".gitignore") | | [.gitignore](/broadinstitute/cromwell-tools/blob/master/.gitignore ".gitignore") |  |  |
+| [.pre-commit-config.yaml](/broadinstitute/cromwell-tools/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") | | [.pre-commit-config.yaml](/broadinstitute/cromwell-tools/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |  |
+| [Dockerfile](/broadinstitute/cromwell-tools/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/broadinstitute/cromwell-tools/blob/master/Dockerfile "Dockerfile") |  |  |
+| [LICENSE](/broadinstitute/cromwell-tools/blob/master/LICENSE "LICENSE") | | [LICENSE](/broadinstitute/cromwell-tools/blob/master/LICENSE "LICENSE") |  |  |
+| [README.rst](/broadinstitute/cromwell-tools/blob/master/README.rst "README.rst") | | [README.rst](/broadinstitute/cromwell-tools/blob/master/README.rst "README.rst") |  |  |
+| [codecov.yml](/broadinstitute/cromwell-tools/blob/master/codecov.yml "codecov.yml") | | [codecov.yml](/broadinstitute/cromwell-tools/blob/master/codecov.yml "codecov.yml") |  |  |
+| [requirements-docs.txt](/broadinstitute/cromwell-tools/blob/master/requirements-docs.txt "requirements-docs.txt") | | [requirements-docs.txt](/broadinstitute/cromwell-tools/blob/master/requirements-docs.txt "requirements-docs.txt") |  |  |
+| [requirements-test.txt](/broadinstitute/cromwell-tools/blob/master/requirements-test.txt "requirements-test.txt") | | [requirements-test.txt](/broadinstitute/cromwell-tools/blob/master/requirements-test.txt "requirements-test.txt") |  |  |
+| [requirements.txt](/broadinstitute/cromwell-tools/blob/master/requirements.txt "requirements.txt") | | [requirements.txt](/broadinstitute/cromwell-tools/blob/master/requirements.txt "requirements.txt") |  |  |
+| [setup.py](/broadinstitute/cromwell-tools/blob/master/setup.py "setup.py") | | [setup.py](/broadinstitute/cromwell-tools/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Code of conduct
+* BSD-3-Clause license
+
+# Cromwell-tools
+
+[![Container Build Status](https://camo.githubusercontent.com/ee86336f1a3eaefcec674ac6b76475d4ac1fb4b1d3dc80e863768a26692d62f4/68747470733a2f2f717561792e696f2f7265706f7369746f72792f62726f6164696e737469747574652f63726f6d77656c6c2d746f6f6c732f737461747573)](https://quay.io/repository/broadinstitute/cromwell-tools)
+[![Unit Test Status](https://github.com/broadinstitute/cromwell-tools/workflows/Tests%20on%20Pull%20Requests%20and%20Master/badge.svg)](https://github.com/broadinstitute/cromwell-tools/actions?query=workflow%3A%22Tests+on+Pull+Requests+and+Master%22+branch%3Amaster)
+[![Documentation Status](https://camo.githubusercontent.com/b68eac3e2a6fa00e86a887eba00c7878ca51efa22f27ddc862b26ee405d52ddb/68747470733a2f2f696d672e736869656c64732e696f2f72656164746865646f63732f63726f6d77656c6c2d746f6f6c732f6c61746573742e7376673f6c6162656c3d52656164746865446f63732533412532304c6174657374266c6f676f3d52656164253230746865253230446f6373267374796c653d666c61742d737175617265)](http://cromwell-tools.readthedocs.io/en/latest/?badge=latest)
+[![Latest Release](https://camo.githubusercontent.com/b1d3855b62cde5aa8932c100c1b6b6251da4a750f2920aa582cbf811767a8080/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f62726f6164696e737469747574652f63726f6d77656c6c2d746f6f6c732e7376673f6c6162656c3d4c617465737425323052656c65617365267374796c653d666c61742d73717561726526636f6c6f72423d677265656e)](https://github.com/broadinstitute/cromwell-tools/releases)
+[![License](https://camo.githubusercontent.com/0ae3df83d95a95e00bc700f8dac4998a8eed56c9f69f4393bad65f322e07e842/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f62726f6164696e737469747574652f63726f6d77656c6c2d746f6f6c732e7376673f7374796c653d666c61742d737175617265)](https://img.shields.io/github/license/broadinstitute/cromwell-tools.svg?style=flat-square)
+[![Language](https://camo.githubusercontent.com/e788f6db7f6ebd275d9ba5fc375472f5849ff6ab7b0e92362e3591f2bd5ca06e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d332e357c332e367c332e372d677265656e2e7376673f7374796c653d666c61742d737175617265266c6f676f3d707974686f6e26636f6c6f72423d626c7565)](https://img.shields.io/badge/python-3.5%7C3.6%7C3.7-green.svg?style=flat-square&logo=python&colorB=blue)
+[![Code Style](https://camo.githubusercontent.com/938a78ba40e60b1a0e9b748bb05e68479cf111e898fc28bb26ce391621e2a84b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436f64652532305374796c652d626c61636b2d3030303030302e7376673f7374796c653d666c61742d737175617265)](https://github.com/ambv/black)
+[![Code Coverage](https://camo.githubusercontent.com/97fa089f9f508b8f8b1dc8e57d95a029dbd06841a65f4bac1ee6797239ad9252/68747470733a2f2f636f6465636f762e696f2f67682f62726f6164696e737469747574652f63726f6d77656c6c2d746f6f6c732f6272616e63682f6d61737465722f67726170682f62616467652e737667)](https://codecov.io/gh/broadinstitute/cromwell-tools)
+
+## Overview
+
+This repo contains a cromwell\_tools Python package, accessory scripts and IPython notebooks.
+
+The cromwell\_tools Python package is designed to be a Python API and Command Line Tool for interacting with the [Cromwell](https://github.com/broadinstitute/cromwell). with the following features:
+:   * Python3 compatible. (Starting from release v2.0.0, cromwell-tools will no longer support Python 2.7)
+    * Consistency in authentication to work with Cromwell.
+    * Consistency between API and CLI interfaces.
+    * Sufficient test cases.
+    * Documentation on [Read The Docs](https://cromwell-tools.readthedocs.io/en/latest/).
+
+The accessory scripts and IPython notebooks are useful to:
+:   * Monitor the resource usages of workflows running in Cromwell.
+    * Visualize the workflows benchmarking metrics.
+
+## Installation
+
+1. (optional and highly recommended) Create a Python 3 [virtual environment](https://virtualenv.pypa.io/en/latest/userguide/#usage)
+locally and activate it: e.g. `virtualenv -p python3 myenv && source myenv/bin/activate`
+
+2. Install (or upgrade) Cromwell-tools from [PyPI](https://pypi.org/):
+
+```
+pip install -U cromwell-tools
+```
+
+3. You can verify the installation by:
+
+```
+cromwell-tools --version
+```
+
+## Usage
+
+### Python API
+
+In Python, you can import the package with:
+
+```
+import cromwell_tools.api as cwt
+cwt.submit(*args)
+```
+
+assuming args is a list of arguments needed.
+
+For more details, please check the tutorial on [Read the Docs](https://cromwell-tools.readthedocs.io/en/latest/Tutorials/Quickstart/api_quickstart.html).
+
+### Commandline Interface
+
+This package also installs a command line interface that mirrors the A

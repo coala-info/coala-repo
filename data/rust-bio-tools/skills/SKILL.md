@@ -1,6 +1,6 @@
 ---
 name: rust-bio-tools
-description: rust-bio-tools is a suite of high-performance command-line utilities for processing and analyzing Next-Generation Sequencing data. Use when user asks to manipulate VCF/BCF files, split or filter FASTQ files, extract BAM depth, collapse reads, or generate interactive HTML reports for genomic data.
+description: Rust-Bio-Tools is a suite of high-performance command-line utilities for processing genomic data formats like VCF, BCF, FASTQ, and BAM. Use when user asks to convert VCF files to text, match or split VCF records, filter and split FASTQ files, collapse reads using UMIs, or generate interactive HTML reports and plots for genomic data.
 homepage: https://github.com/rust-bio/rust-bio-tools
 ---
 
@@ -9,69 +9,89 @@ homepage: https://github.com/rust-bio/rust-bio-tools
 
 ## Overview
 
-`rust-bio-tools` (invoked via the `rbt` command) is a suite of ultra-fast, robust command-line utilities designed for common bioinformatics tasks. Built on the Rust-Bio library, it provides linear-time implementations for processing Next-Generation Sequencing (NGS) data. It is particularly useful for researchers needing to manipulate VCF/BCF files, split or filter FASTQ files, extract depth information from BAM files, or generate portable, interactive HTML reports for variant and alignment visualization.
+Rust-Bio-Tools (`rbt`) is a suite of ultra-fast, robust command-line utilities designed for common bioinformatics workflows. Built on the Rust-Bio library, it prioritizes performance and linear-time algorithms. It is particularly effective for handling large-scale genomic data where standard tools might be slow, specifically for tasks involving VCF tag extraction, FASTQ record filtering, and the creation of portable, interactive HTML visualizations for variant and alignment data.
 
-## Common CLI Patterns
+## Command Line Usage and Patterns
 
-### VCF/BCF Manipulation
-*   **Fuzzy Matching**: Compare two VCF/BCF files in linear time.
+### VCF/BCF Processing
+
+*   **Convert VCF to Text**: Use `vcf-to-txt` to extract specific fields into a tab-delimited format. It is superior to standard tools for handling multiallelic sites by properly expanding records.
+    ```bash
+    rbt vcf-to-txt --info DP AF --format GQ < input.vcf > output.txt
+    ```
+*   **Fuzzy Matching**: Match records between two VCF files in linear time.
     ```bash
     rbt vcf-match file1.vcf file2.vcf > matched.vcf
     ```
-*   **Flexible Conversion**: Convert VCF/BCF to a tab-delimited text format. This tool is superior to simple parsers as it correctly handles multiallelic sites and allows specific tag selection.
+*   **Splitting**: Split a VCF into N equal chunks while maintaining structural variant (BND) integrity.
     ```bash
-    rbt vcf-to-txt --info DP AF --format AD < input.vcf > output.txt
-    ```
-*   **Splitting**: Divide a VCF/BCF into N equal chunks while maintaining BND (breakend) record integrity.
-    ```bash
-    rbt vcf-split input.vcf chunk1.vcf chunk2.vcf ...
+    rbt vcf-split input.bcf folder/prefix --n-chunks 10
     ```
 
-### FASTQ Processing
-*   **Round-Robin Splitting**: Split FASTQ files into a specific number of chunks efficiently.
+### FASTQ Manipulation
+
+*   **Round-Robin Splitting**: Distribute reads across multiple files to ensure balanced processing in downstream pipelines.
     ```bash
     rbt fastq-split chunk1.fastq chunk2.fastq < input.fastq
     ```
-*   **Filtering**: Filter records from a FASTQ file based on a list of IDs.
+*   **Filtering**: Quickly filter FASTQ records based on IDs or other criteria.
     ```bash
     rbt fastq-filter ids.txt < input.fastq > filtered.fastq
     ```
 
-### BAM Utilities
-*   **Depth Extraction**: Extract depth information at specific loci.
+### BAM and Read Processing
+
+*   **Depth Extraction**: Extract depth at specific loci efficiently.
     ```bash
-    rbt bam-depth input.bam < loci.bed > depth.txt
+    rbt bam-depth reference.fasta < input.bam --loci loci.bed
     ```
-*   **Read Collapsing**: Merge BAM or FASTQ reads using Unique Molecular Identifiers (UMIs) or duplicate marks to create consensus fragments.
+*   **UMI/Duplicate Collapsing**: Merge reads into consensus fragments using Unique Molecular Identifiers (UMIs) or duplicate marks.
     ```bash
-    rbt collapse-reads-to-fragments bam input.bam output.bam
-    rbt collapse-reads-to-fragments fastq input_R1.fq input_R2.fq output_R1.fq output_R2.fq
-    ```
-*   **Anonymization**: Remove sensitive metadata from BAM files.
-    ```bash
-    rbt bam-anonymize input.bam output.bam
+    rbt collapse-reads-to-fragments bam < input.bam > collapsed.bam
+    rbt collapse-reads-to-fragments fastq < fwd.fastq < rev.fastq > collapsed.fastq
     ```
 
 ### Interactive Reporting and Visualization
-*   **VCF Reports**: Generate an interactive HTML report with plots for VCF and BAM data.
+
+*   **Genomic Reports**: Generate standalone HTML reports containing interactive plots for VCF and BAM data.
     ```bash
-    rbt vcf-report input.vcf --bam input.bam --reference ref.fasta --output report_dir/
+    rbt vcf-report input.vcf reference.fasta --bam input.bam --output report/
     ```
-*   **BAM Plotting**: Create a single HTML file containing visualizations for specific genomic regions across one or multiple BAM files.
+*   **BAM Plotting**: Create a single HTML file visualizing a specific genomic region across multiple BAM files.
     ```bash
-    rbt plot-bam reference.fasta region_coords input1.bam input2.bam > plot.html
-    ```
-*   **CSV Reports**: Transform a standard CSV file into an interactive HTML report with built-in visualization capabilities.
-    ```bash
-    rbt csv-report input.csv --output report_dir/
+    rbt plot-bam reference.fasta region_coords --bam file1.bam file2.bam > plot.html
     ```
 
 ## Expert Tips
-*   **Performance**: `rbt` is optimized for speed and memory safety. Use it as a faster alternative to Python or Perl-based scripts for large-scale NGS datasets.
-*   **Piping**: Most `rbt` tools support standard input/output, making them ideal for inclusion in shell-based bioinformatics pipelines.
-*   **Multiallelic Handling**: When using `vcf-to-txt`, the tool automatically expands multiallelic sites into multiple rows, ensuring that no information is lost during conversion to tabular format.
-*   **GSL Dependency**: Note that `rust-bio-tools` depends on the GNU Scientific Library (GSL). Ensure `libgsl-dev` (Ubuntu), `gsl` (Arch/OSX), or the equivalent is installed in your environment.
+
+*   **Performance**: `rbt` tools are optimized for speed. When processing large datasets, prefer BCF over VCF for input to reduce parsing overhead.
+*   **Multiallelic Sites**: When using `vcf-to-txt`, the tool automatically handles the expansion of multiallelic records, ensuring that each allele is represented correctly in the output text file.
+*   **Anonymization**: For sharing data while maintaining privacy, use `bam-anonymize` (if available in the local environment) to strip sensitive metadata and sequence information while preserving alignment structures.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bam-anonymize | Tool to build artifical reads from real BAM files with identical properties |
+| collapse-reads-to-fragments | Tool to predict maximum likelihood fragment sequence from FASTQ or BAM files. |
+| csv-report | Creates report from a given csv file containing a table with the given data |
+| fastq-filter | Remove records from a FASTQ file (from STDIN), output to STDOUT. |
+| plot-bam | Creates a html file with a vega visualization of the given bam region that is then written to stdout. |
+| rbt | A set of command-line utilities for bioinformatics in Rust. |
+| rbt | A set of command-line utilities for bioinformatics, written in Rust. |
+| rbt | A set of command-line utilities for bioinformatics tasks using the Rust-Bio library. |
+| rbt | A collection of command-line utilities for bioinformatics in Rust. |
+| rbt | A set of command-line utilities for bioinformatics, written in Rust. |
+| sequence-stats | Tool to compute stats on sequence file (from STDIN), output is in YAML with fields: min, max, average, median, nb_reads, nb_bases, n50. |
+| vcf-annotate-dgidb | Looks for interacting drugs in DGIdb and annotates them for every gene in every record. |
+| vcf-baf | Annotate b-allele frequency for each single nucleotide variant and sample. |
+| vcf-match | Annotate for each variant in a VCF/BCF at STDIN whether it is contained in a given second VCF/BCF. The matching is fuzzy for indels and exact for SNVs. Results are printed as BCF to STDOUT, with an additional INFO tag MATCHING. The two vcfs do not have to be sorted. |
+| vcf-report | Creates report from a given VCF file including a visual plot for every variant with the given BAM and FASTA file. The VCF file has to be annotated with VEP, using the options --hgvs and --hgvsg. |
+| vcf-split | Split a given VCF/BCF file into N chunks of approximately the same size. Breakends are kept together. Output type is always BCF. |
+| vcf-to-txt | Convert VCF/BCF file from STDIN to tab-separated TXT file at STDOUT. INFO and FORMAT tags have to be selected explicitly. |
 
 ## Reference documentation
-- [GitHub Repository - rust-bio-tools](./references/github_com_rust-bio_rust-bio-tools.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_rust-bio-tools_overview.md)
+- [Rust-Bio-Tools README](./references/github_com_rust-bio_rust-bio-tools_blob_master_README.md)
+- [Rust-Bio-Tools Changelog](./references/github_com_rust-bio_rust-bio-tools_blob_master_CHANGELOG.md)

@@ -1,6 +1,6 @@
 ---
 name: metabinner
-description: MetaBinner is an ensemble binning tool that recovers individual genomes from metagenomic assemblies by integrating diverse binning results. Use when user asks to recover metagenome-assembled genomes, generate coverage and k-mer profiles, or perform ensemble binning on contigs.
+description: MetaBinner is an ensemble binning tool that recovers high-quality microbial genomes from metagenomic assemblies by integrating multiple binning results. Use when user asks to bin metagenomic contigs, generate coverage and composition profiles, or recover genomes from complex microbial communities.
 homepage: https://github.com/ziyewang/MetaBinner
 ---
 
@@ -9,77 +9,75 @@ homepage: https://github.com/ziyewang/MetaBinner
 
 ## Overview
 
-MetaBinner is a high-performance ensemble binning tool designed to recover individual genomes from metagenomic assemblies. It operates in two primary phases: a component module that generates diverse, high-quality binning results using a "partial seed" method, and an ensemble module that integrates these results into a final set of bins. Unlike many other ensemble binners, MetaBinner is stand-alone and does not require the output of external binning tools like MaxBin2 or MetaBAT2 to function.
+MetaBinner is a stand-alone ensemble binning tool designed to recover high-quality microbial genomes from metagenomic assemblies. It utilizes a "partial seed" method to generate diverse component binning results, which are then integrated through an ensemble module. This approach allows it to achieve superior performance on complex communities without requiring outputs from other individual binners. The workflow typically involves preprocessing assembly files to create coverage and composition (k-mer) profiles before running the main ensemble pipeline.
 
-## Preprocessing
+## Preprocessing Workflows
 
-Before running the main MetaBinner pipeline, you must prepare coverage and composition profiles.
+Before running the main MetaBinner pipeline, you must prepare the input profiles.
 
-### 1. Contig Filtering
-MetaBinner performs best on contigs longer than 1000bp. Use the provided script to filter your assembly:
-
+### 1. Generating Coverage Profiles
+If you have a depth file from MetaWRAP (`mb2_master_depth.txt`), format it for MetaBinner:
 ```bash
-python Filter_tooshort.py <assembly.fasta> 1000
-```
-
-### 2. Coverage Profile Generation
-The coverage profile is a TSV file where rows are contigs and columns are samples. If you have raw reads, use the provided wrapper script:
-
-```bash
-# If installed via bioconda, find the script path first
-METABINNER_PATH=$(dirname $(which run_metabinner.sh))
-
-bash ${METABINNER_PATH}/scripts/gen_coverage_file.sh \
-    -a assembly.fasta \
-    -o coverage_output_dir \
-    -t 8 \
-    -m 16 \
-    path_to_reads/*_1.fastq path_to_reads/*_2.fastq
-```
-
-**Note:** If you already have a MetaWRAP/MaxBin2 depth file (`mb2_master_depth.txt`), you can format it for MetaBinner using:
-```bash
+# Basic conversion
 cat mb2_master_depth.txt | cut -f -1,4- > coverage_profile.tsv
+
+# Recommended: Filter contigs < 1000bp during conversion
+cat mb2_master_depth.txt | awk '{if ($2>1000) print $0 }' | cut -f -1,4- > coverage_profile_f1k.tsv
 ```
 
-### 3. Composition (K-mer) Profile Generation
-Generate the k-mer frequency matrix (typically k=4):
-
+To generate coverage directly from reads using the provided helper script:
 ```bash
-python gen_kmer.py assembly.fasta 1000 4
+bash gen_coverage_file.sh -a contig_file.fa -o ./coverage_out -t 8 -m 16 [reads_1.fastq reads_2.fastq]
 ```
-This produces a `.csv` file in the same directory as the assembly.
 
-## Execution Patterns
+### 2. Generating Composition Profiles
+Use the `gen_kmer.py` script to create the k-mer vector representation (typically k=4):
+```bash
+python gen_kmer.py assembly.fa 1000 4
+```
+*Note: This generates a kmer_4_f1000.csv file in the same directory as the assembly.*
 
-The main entry point is `run_metabinner.sh`. 
+## Running MetaBinner
 
-### Standard Usage
+The primary entry point is `run_metabinner.sh`. All paths provided to this script must be **absolute paths**.
+
+### Standard Execution
 ```bash
 bash run_metabinner.sh \
-    -a /absolute/path/to/assembly.fa \
-    -o /absolute/path/to/output_dir \
-    -d /absolute/path/to/coverage_profile.tsv \
-    -k /absolute/path/to/kmer_4_f1000.csv \
-    -p /absolute/path/to/metabinner_dir \
-    -t 16 \
-    -s large
+  -a /path/to/final_contigs.fa \
+  -o /path/to/output_dir \
+  -d /path/to/coverage_profile.tsv \
+  -k /path/to/kmer_profile.csv \
+  -p /path/to/metabinner_source_dir \
+  -t 16 \
+  -s large
 ```
 
-### Critical CLI Requirements
-*   **Absolute Paths**: All paths passed to `-a`, `-o`, `-d`, `-k`, and `-p` **must** be absolute paths. Relative paths will cause the internal scripts to fail.
-*   **Dataset Scale (`-s`)**:
-    *   `small`: For low-complexity datasets.
-    *   `large`: Default; standard metagenomes.
-    *   `huge`: Use this for extremely large datasets to reduce memory consumption.
+### Parameter Guidance
+- `-a`: Metagenomic assembly file (FASTA).
+- `-d`: Coverage profile (TSV, tab-separated).
+- `-k`: Composition profile (CSV, comma-separated).
+- `-s`: Dataset scale. Options: `small`, `large`, or `huge`. Use `huge` for very large datasets to minimize RAM usage.
+- `-p`: The installation path of MetaBinner. If installed via bioconda, use: `metabinner_path=$(dirname $(which run_metabinner.sh))`.
 
-## Best Practices and Tips
+## Expert Tips and Best Practices
 
-*   **Environment Pathing**: If MetaBinner is installed via Bioconda, the `-p` parameter (path to MetaBinner) can be dynamically set using: `metabinner_path=$(dirname $(which run_metabinner.sh))`.
-*   **Memory Management**: If you encounter "Segmentation fault" or memory errors on large assemblies, switch the `-s` parameter to `huge`.
-*   **Output Interpretation**: The final binning assignments are located in `${output_dir}/metabinner_res/metabinner_result.tsv`. This file maps contig IDs to bin IDs.
-*   **Contig Length**: While 1000bp is the default threshold, for highly fragmented assemblies, you may experiment with 1500bp or 2000bp to improve bin purity, though this may reduce the total recovered genome size.
+- **Contig Length Filter**: Always filter out contigs shorter than 1000bp. Binning short contigs introduces significant noise and reduces the quality of the ensemble result.
+- **Absolute Paths**: The wrapper script `run_metabinner.sh` is sensitive to pathing; ensure every argument uses a full system path to avoid file-not-found errors during intermediate steps.
+- **CheckM Dependency**: MetaBinner relies on CheckM for marker gene information during the ensemble process. Ensure CheckM is properly configured with its database (`checkm data setroot`) before running the pipeline.
+- **Output Interpretation**: The final binning assignments are stored in `${output_dir}/metabinner_res/metabinner_result.tsv`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| Filter_tooshort.py | Filters out short sequences from a FASTA file. |
+| bash run_metabinner.sh | Run the MetaBinner pipeline |
+| metabinner_gen_kmer.py | Generates k-mers from input sequences. |
 
 ## Reference documentation
-- [MetaBinner GitHub Repository](./references/github_com_ziyewang_MetaBinner.md)
-- [MetaBinner Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_metabinner_overview.md)
+- [MetaBinner GitHub README](./references/github_com_ziyewang_MetaBinner_blob_master_README.md)
+- [MetaBinner Execution Script](./references/github_com_ziyewang_MetaBinner_blob_master_run_metabinner.sh.md)
+- [Conda Environment Specification](./references/github_com_ziyewang_MetaBinner_blob_master_metabinner_env.yaml.md)

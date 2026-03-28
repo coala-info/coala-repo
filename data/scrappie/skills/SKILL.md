@@ -1,78 +1,86 @@
 ---
 name: scrappie
-description: "Scrappie is a basecalling and signal simulation tool for Oxford Nanopore sequencing data. Use when user asks to basecall sequences from raw signal or event data, simulate squiggles from FASTA sequences, or process legacy R9.4 and R10 nanopore models."
+description: Scrappie is a research-oriented basecaller that converts raw electrical signal data from Oxford Nanopore devices into DNA sequences. Use when user asks to perform basecalling on raw fast5 files, call bases from event data, or predict squiggles from sequences.
 homepage: https://github.com/nanoporetech/scrappie
 ---
 
 
 # scrappie
 
+think thoughtfully.name: scrappie
+description: A technology demonstrator for Oxford Nanopore basecalling algorithms. Use this skill when you need to perform basecalling on Nanopore sequencing data, specifically for calling bases from raw signal (fast5) or events, or when predicting squiggles from sequences.
+
 ## Overview
+Scrappie is a research-oriented basecaller developed by Oxford Nanopore Technologies. While it has been largely superseded by newer tools like Bonito and Guppy for production environments, it remains a vital tool for algorithm research, technology demonstration, and specific legacy workflows. It excels at converting raw electrical signal data from Nanopore devices into DNA sequences (FASTA/SAM) and provides utilities for signal segmentation and event detection.
 
-Scrappie is a technology demonstrator developed by the Oxford Nanopore Research Algorithms group. It serves as a specialized tool for basecalling nanopore sequencing data and simulating signal (squiggles) from known sequences. While it has been largely superseded by newer tools like Bonito, Scrappie remains relevant for research workflows requiring specific event-based calling or legacy model support (R9.4, R10).
-
-## Command Line Usage
+## Core CLI Operations
 
 ### Basecalling from Raw Signal
-The `raw` subcommand is used to call sequences directly from the raw signal stored in .fast5 files.
-
+The most common use case is calling bases directly from raw fast5 files.
 ```bash
 # Call a directory of reads
 scrappie raw path/to/reads/ > basecalls.fa
 
-# Call specific files
+# Call specific fast5 files
 scrappie raw read1.fast5 read2.fast5 > basecalls.fa
 
-# Specify a specific model (e.g., R10)
-scrappie raw --model rgrgr_r10 path/to/reads/ > basecalls.fa
+# Specify a specific model (e.g., rgrgr_r941)
+scrappie raw --model rgrgr_r941 path/to/reads/ > basecalls.fa
 ```
 
-### Basecalling from Events
-The `events` subcommand performs basecalling based on pre-processed event data.
-
+### Basecalling via Events
+Use this mode when working with pre-processed event data rather than raw signal.
 ```bash
 scrappie events path/to/reads/ > basecalls.fa
 ```
 
-### Squiggle Simulation
-The `squiggle` subcommand predicts the expected nanopore signal (squiggle) from a given FASTA sequence.
-
+### Performance Optimization
+Scrappie uses OpenMP for multi-processing. Proper environment variable configuration is critical for performance.
 ```bash
-scrappie squiggle --model squiggle_r94 input.fasta > simulated_signal.txt
-```
+# Set threads to match system capacity
+export OMP_NUM_THREADS=`nproc`
 
-## Performance and Optimization
-
-### Threading and Parallelization
-Scrappie uses OpenMP for multi-processing. For optimal performance on multi-core systems:
-
-1.  **System-wide threads**: Set `OMP_NUM_THREADS` to the number of available cores.
-2.  **BLAS optimization**: Set `OPENBLAS_NUM_THREADS=1` to prevent thread contention between the application and the linear algebra library.
-3.  **Internal threading**: Use the `-#` or `--threads` flag to specify how many reads to process in parallel.
-
-```bash
-export OMP_NUM_THREADS=$(nproc)
+# Ensure OpenBLAS remains single-threaded to avoid contention
 export OPENBLAS_NUM_THREADS=1
-scrappie raw --threads 4 path/to/reads/ > basecalls.fa
+
+# Run scrappie with parallel read processing
+scrappie raw --threads ${OMP_NUM_THREADS} path/to/reads/ > basecalls.fa
 ```
 
-### Large Scale Processing
-For very large datasets, use `parallel` to manage multiple instances of Scrappie in single-threaded mode to maximize throughput:
+## Expert Tips and Patterns
 
+### Metadata Extraction
+You can extract read metadata into a TSV format by piping the output and using the provided helper scripts.
 ```bash
-find path/to/reads/ -name "*.fast5" | parallel -P ${OMP_NUM_THREADS} scrappie raw --threads 1 > basecalls.fa
+scrappie raw --threads 1 path/to/reads/ | tee basecalls.fa | grep '^>' | cut -d ' ' -f 2- | python3 misc/json_to_tsv.py > meta_data.tsv
 ```
 
-## Common Options and Best Practices
+### Handling Large Datasets
+For very large datasets, use `xargs` to manage the input stream effectively.
+```bash
+find path/to/reads/ -name "*.fast5" | xargs scrappie raw > basecalls.fa
+```
 
-*   **Output Formats**: Use `-f` or `--format` to toggle between `FASTA` (default) and `SAM`.
-*   **Model Selection**: Always verify the chemistry of your flowcell. Available raw models include `raw_r94`, `rgrgr_r94`, `rgrgr_r941`, `rgrgr_r10`, and `rnnrf_r94`.
-*   **Metadata Extraction**: To extract read metadata into a TSV format, pipe the output through the provided utility script:
-    ```bash
-    scrappie raw path/to/reads/ | grep '^>' | cut -d ' ' -f 2- | python3 misc/json_to_tsv.py > metadata.tsv
-    ```
-*   **Trimming**: Use `-t start:end` to trim a specific number of samples or events from the beginning and end of reads to remove adapters or low-quality signal.
+### Common Parameters
+- `--format [FASTA|SAM]`: Choose the output format (default is FASTA).
+- `--limit [n]`: Limit processing to the first *n* reads for quick testing.
+- `--trim [start:end]`: Trim a specific number of events/signals from the beginning or end of the read.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| event_table | Scrappie basecaller -- basecall via events |
+| events | Scrappie basecaller -- basecall via events |
+| mappy | Scrappie squiggler |
+| raw | Scrappie basecaller -- basecall from raw signal |
+| scrappie | Scrappie is a technology demonstrator for the Oxford Nanopore Technologies Limited Research Algorithms group. |
+| seqmappy | Scrappie seqmappy (local-global) |
+| squiggle | Scrappie squiggler |
 
 ## Reference documentation
 - [Scrappie GitHub Repository](./references/github_com_nanoporetech_scrappie.md)
-- [Scrappie Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_scrappie_overview.md)
+- [Scrappie README](./references/github_com_nanoporetech_scrappie_blob_master_README.md)
+- [Scrappie CMake Configuration](./references/github_com_nanoporetech_scrappie_blob_master_CMakeLists.txt.md)

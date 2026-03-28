@@ -1,6 +1,6 @@
 ---
 name: genomad
-description: genomad identifies and classifies mobile genetic elements like viruses and plasmids within nucleotide sequences using a hybrid neural network and protein-based approach. Use when user asks to identify viruses or plasmids in metagenomic data, find proviruses, or annotate mobile genetic elements.
+description: geNomad identifies and classifies mobile genetic elements like viruses and plasmids within nucleotide sequences using a hybrid neural network and marker-based approach. Use when user asks to identify proviruses, assign viral taxonomy, annotate proteins, or distinguish between chromosomal, viral, and plasmid DNA.
 homepage: https://portal.nersc.gov/genomad/
 ---
 
@@ -8,33 +8,71 @@ homepage: https://portal.nersc.gov/genomad/
 # genomad
 
 ## Overview
-genomad is a specialized tool designed to find and classify mobile genetic elements within nucleotide sequences. It utilizes a hybrid approach combining neural networks and protein-based classification to distinguish between chromosomal DNA, viruses, and plasmids. It is particularly effective for metagenomic datasets where identifying the origin of specific contigs is critical for downstream ecological or functional analysis.
+geNomad is a specialized bioinformatics framework designed to identify mobile genetic elements (MGEs) within nucleotide sequences. It utilizes a hybrid approach combining neural network classification with marker-based protein identification to distinguish between chromosomal, viral, and plasmid DNA. Beyond simple identification, it provides modules for identifying proviruses integrated into host genomes, assigning taxonomy to viral sequences, and generating functional annotations for predicted proteins.
 
 ## Core Workflows
 
-### Basic Identification
-To run the end-to-end pipeline (identification, taxonomic assignment, and annotation):
+### Database Setup
+Before running any analysis, the geNomad database must be downloaded. This database contains the protein profiles and taxonomic information required for classification.
 ```bash
-genomad end-to-end [INPUT.fasta] [OUTPUT_DIRECTORY] [DATABASE_DIRECTORY]
+genomad download-database .
 ```
 
-### Key Subcommands
-- `find-proviruses`: Specifically identifies viral sequences integrated into host genomes.
-- `annotate`: Predicts genes and assigns functions using the geNomad database.
-- `marker-classification`: Classifies sequences based on the presence of specific MGE markers.
-- `score-calibration`: Refines classification scores to reduce false positives.
+### End-to-End Pipeline
+The most common usage is the `end-to-end` command, which executes the entire pipeline (gene prediction, protein annotation, classification, and summary).
+```bash
+genomad end-to-end [OPTIONS] INPUT.fna OUTPUT_DIR DATABASE_DIR
+```
 
-### Common Parameters
-- `--min-score`: Filter results by classification confidence (default is usually 0.7).
-- `--splits`: Increase this value (e.g., `--splits 5`) to reduce memory usage during the neural network classification phase.
-- `--cleanup`: Removes intermediate files to save disk space after the run completes.
-- `--relaxed`: Use this flag during provirus detection to increase sensitivity for smaller or less conserved viral regions.
+### Modular Execution
+If you do not need the full pipeline, you can run specific modules:
+- `annotate`: Predicts genes and searches for markers.
+- `find-proviruses`: Identifies viral segments integrated into host contigs.
+- `marker-classification`: Classifies sequences based on protein markers.
+- `nn-classification`: Classifies sequences using the neural network model.
+- `summary`: Aggregates results and applies post-classification filters.
 
-## Expert Tips
-- **Database Setup**: Ensure the geNomad database is downloaded and indexed before running. Use `genomad download-database .` to fetch the latest version.
-- **Contig Length**: For optimal performance, filter out very short contigs (<1000 bp) before running geNomad, as short sequences often lack sufficient marker density for reliable classification.
-- **Interpreting Scores**: geNomad provides separate scores for virus and plasmid likelihood. A high "virus score" and low "plasmid score" indicates a strong viral candidate. If both are low, the sequence is likely chromosomal.
-- **Provirus Boundaries**: When identifying proviruses, geNomad provides coordinates. Always verify these boundaries if performing detailed comparative genomics, as the tool prioritizes marker-rich regions.
+## Expert Tips and Best Practices
+
+### Memory Management
+geNomad's protein profile search is memory-intensive. If running on a machine with limited RAM (e.g., < 64GB), use the `--splits` parameter to process the database in chunks.
+- **Example**: `--splits 8` reduces memory footprint but increases execution time.
+
+### Classification Sensitivity
+You can adjust the stringency of the classification using presets:
+- `--relaxed`: Disables post-classification filters. Use for discovery in novel environments where hallmark genes might be divergent.
+- `--conservative`: Increases filter stringency. Use when high precision is required and you want to minimize false positives.
+- **Manual Filtering**: By default, geNomad requires a score of ≥ 0.7. You can manually adjust this with `--min-score`.
+
+### Handling Large Datasets
+- **Cleanup**: Use the `--cleanup` flag to delete intermediate files (like large MMseqs2 alignment files) once the pipeline finishes.
+- **Compression**: geNomad natively supports compressed input files (`.gz`, `.bz2`, `.xz`, and `.zst` for Python 3.14+).
+- **Threading**: Use `--threads` to speed up the annotation and classification steps.
+
+### Taxonomic Assignment
+By default, geNomad assigns taxonomy at the family level. 
+- Use `--lenient-taxonomy` to attempt assignments below the family rank (genus, species).
+- Use `--full-ictv-lineage` to include sub-ranks (subrealm, subphylum, etc.) in the output.
+
+## Understanding Key Outputs
+The `_summary` directory contains the most relevant files:
+- `*_summary.tsv`: The primary results table including scores, hallmark gene counts, and taxonomy.
+- `*.fna`: FASTA files containing the identified plasmid or viral sequences.
+- `*_genes.tsv`: Coordinates and functional annotations for all predicted genes in the identified MGEs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| genomad annotate | Predict the genes in the INPUT file (FASTA format), annotate them using geNomad's markers (located in the DATABASE directory), and write the results to the OUTPUT directory. |
+| genomad download-database | Download the latest version of geNomad's database and save it in the DESTINATION directory. |
+| genomad end-to-end | Takes an INPUT file (FASTA format) and executes all modules of the geNomad pipeline for plasmid and virus identification. Output files are written in the OUTPUT directory. A local copy of geNomad's database (DATABASE directory), which can be downloaded with the download-database command, is required. The end-to-end command omits some options. If you want to have a more granular control over the execution parameters, please execute each module separately. |
+| genomad find-proviruses | Find integrated viruses within the sequences in INPUT file using the geNomad markers (located in the DATABASE directory) and write the results to the OUTPUT directory. This command depends on the data generated by the annotate module. |
+| genomad marker-classification | Classify the sequences in the INPUT file (FASTA format) based on the presence of geNomad markers (located in the DATABASE directory) and write the results to the OUTPUT directory. This command depends on the data generated by the annotate module. |
 
 ## Reference documentation
-- [genomad Overview](./references/anaconda_org_channels_bioconda_packages_genomad_overview.md)
+- [geNomad GitHub README](./references/github_com_apcamargo_genomad_blob_main_README.md)
+- [geNomad Changelog](./references/github_com_apcamargo_genomad_blob_main_CHANGELOG.md)
+- [geNomad Documentation Portal](./references/portal_nersc_gov_genomad.md)

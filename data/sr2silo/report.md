@@ -147,3 +147,6 @@ Usage: sr2silo submit-to-loculus [OPTIONS]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

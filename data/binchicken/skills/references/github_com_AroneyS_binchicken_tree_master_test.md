@@ -1,0 +1,274 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAroneyS%2Fbinchicken%2Ftree%2Fmaster%2Ftest)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAroneyS%2Fbinchicken%2Ftree%2Fmaster%2Ftest)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=AroneyS%2Fbinchicken)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[AroneyS](/AroneyS)
+/
+**[binchicken](/AroneyS/binchicken)**
+Public
+
+* [Notifications](/login?return_to=%2FAroneyS%2Fbinchicken) You must be signed in to change notification settings
+* [Fork
+  7](/login?return_to=%2FAroneyS%2Fbinchicken)
+* [Star
+   72](/login?return_to=%2FAroneyS%2Fbinchicken)
+
+* [Code](/AroneyS/binchicken)
+* [Issues
+  12](/AroneyS/binchicken/issues)
+* [Pull requests
+  2](/AroneyS/binchicken/pulls)
+* [Actions](/AroneyS/binchicken/actions)
+* [Projects](/AroneyS/binchicken/projects)
+* [Security
+  0](/AroneyS/binchicken/security)
+* [Insights](/AroneyS/binchicken/pulse)
+
+Additional navigation options
+
+* [Code](/AroneyS/binchicken)
+* [Issues](/AroneyS/binchicken/issues)
+* [Pull requests](/AroneyS/binchicken/pulls)
+* [Actions](/AroneyS/binchicken/actions)
+* [Projects](/AroneyS/binchicken/projects)
+* [Security](/AroneyS/binchicken/security)
+* [Insights](/AroneyS/binchicken/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [binchicken](/AroneyS/binchicken/tree/master)
+
+/
+
+# test
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/AroneyS/binchicken/commits/master/test)
+
+History
+
+master
+
+## Breadcrumbs
+
+1. [binchicken](/AroneyS/binchicken/tree/master)
+
+/
+
+# test
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/AroneyS/binchicken/tree/master) | | |
+| [data](/AroneyS/binchicken/tree/master/test/data "data") | | [data](/AroneyS/binchicken/tree/master/test/data "data") |  |  |
+| [conftest.py](/AroneyS/binchicken/blob/master/test/conftest.py "conftest.py") | | [conftest.py](/AroneyS/binchicken/blob/master/test/conftest.py "conftest.py") |  |  |
+| [test\_abundance\_weighting.py](/AroneyS/binchicken/blob/master/test/test_abundance_weighting.py "test_abundance_weighting.py") | | [test\_abundance\_weighting.py](/AroneyS/binchicken/blob/master/test/test_abundance_weighting.py "test_abundance_weighting.py") |  |  |
+| [test\_aviary\_commands.py](/AroneyS/binchicken/blob/master/test/test_aviary_commands.py "test_aviary_commands.py") | | [test\_aviary\_commands.py](/AroneyS/binchicken/blob/master/test/test_aviary_commands.py "test_aviary_commands.py") |  |  |
+| [test\_build.py](/AroneyS/binchicken/blob/master/test/test_build.py "test_build.py") | | [test\_build.py](/AroneyS/binchicken/blob/master/test/test_build.py "test_build.py") |  |  |
+| [test\_build\_reads\_list.py](/AroneyS/binchicken/blob/master/test/test_build_reads_list.py "test_build_reads_list.py") | | [test\_build\_reads\_list.py](/AroneyS/binchicken/blob/master/test/test_build_reads_list.py "test_build_reads_list.py") |  |  |
+| [test\_cluster\_graph.py](/AroneyS/binchicken/blob/master/test/test_cluster_graph.py "test_cluster_graph.py") | | [test\_cluster\_graph.py](/AroneyS/binchicken/blob/master/test/test_cluster_graph.py "test_cluster_graph.py") |  |  |
+| [test\_coassemble.py](/AroneyS/binchicken/blob/master/test/test_coassemble.py "test_coassemble.py") | | [test\_coassemble.py](/AroneyS/binchicken/blob/master/test/test_coassemble.py "test_coassemble.py") |  |  |
+| [test\_collect\_reference\_bins.py](/AroneyS/binchicken/blob/master/test/test_collect_reference_bins.py "test_collect_reference_bins.py") | | [test\_collect\_reference\_bins.py](/AroneyS/binchicken/blob/master/test/test_collect_reference_bins.py "test_collect_reference_bins.py") |  |  |
+| [test\_common.py](/AroneyS/binchicken/blob/master/test/test_common.py "test_common.py") | | [test\_common.py](/AroneyS/binchicken/blob/master/test/test_common.py "test_common.py") |  |  |
+| [test\_evaluate.py](/AroneyS/binchicken/blob/master/test/test_evaluate.py "test_evaluate.py") | | [test\_evaluate.py](/AroneyS/binchicken/blob/master/test/test_evaluate.py "test_evaluate.py") |  |  |
+| [test\_evaluate\_script.py](/AroneyS/binchicken/blob/master/test/test_evaluate_script.py "test_evaluate_script.py") | | [test\_evaluate\_script.py](/AroneyS/binchicken/blob/master/test/test_evaluate_script.py "test_evaluate_script.py") |  |  |
+| [test\_is\_interleaved.py](/AroneyS/binchicken/blob/master/test/test_is_interleaved.py "test_is_interleaved.py") | | [test\_is\_interleaved.py](/AroneyS/binchicken/blob/master/test/test_is_interleaved.py "test_is_interleaved.py") |  |  |
+| [test\_iterate.py](/AroneyS/binchicken/blob/master/test/test_iterate.py "test_iterate.py") | | [test\_iterate.py](/AroneyS/binchicken/blob/master/test/test_iterate.py "test_iterate.py") |  |  |
+| [test\_manual.py](/AroneyS/binchicken/blob/master/test/test_manual.py "test_manual.py") | | [test\_manual.py](/AroneyS/binchicken/blob/master/test/test_manual.py "test_manual.py") |  |  |
+| [test\_no\_genomes.py](/AroneyS/binchicken/blob/master/test/test_no_genomes.py "test_no_genomes.py") | | [test\_no\_genomes.py](/AroneyS/binchicken/blob/master/test/test_no_genomes.py "test_no_genomes.py") |  |  |
+| [test\_query\_processing.py](/AroneyS/binchicken/blob/master/test/test_query_processing.py "test_query_processing.py") | | [test\_query\_processing.py](/AroneyS/binchicken/blob/master/test/test_query_processing.py "test_query_processing.py") |  |  |
+| [test\_run\_workflow\_errors.py](/AroneyS/binchicken/blob/master/test/test_run_workflow_errors.py "test_run_workflow_errors.py") | | [test\_run\_workflow\_errors.py](/AroneyS/binchicken/blob/master/test/test_run_workflow_errors.py "test_run_workflow_errors.py") |  |  |
+| [test\_single.py](/AroneyS/binchicken/blob/master/test/test_single.py "test_single.py") | | [test\_single.py](/AroneyS/binchicken/blob/master/test/test_single.py "test_single.py") |  |  |
+| [test\_sketch\_samples.py](/AroneyS/binchicken/blob/master/test/test_sketch_samples.py "test_sketch_samples.py") | | [test\_sketch\_samples.py](/AroneyS/binchicken/blob/master/test/test_sketch_samples.py "test_sketch_samples.py") |  |  |
+| [test\_summarise\_coassemblies.py](/AroneyS/binchicken/blob/master/test/test_summarise_coassemblies.py "test_summarise_coassemblies.py") | | [test\_summarise\_coassemblies.py](/AroneyS/binchicken/blob/master/test/test_summarise_coassemblies.py "test_summarise_coassemblies.py") |  |  |
+| [test\_target\_elusive.py](/AroneyS/binchicken/blob/master/test/test_target_elusive.py "test_target_elusive.py") | | [test\_target\_elusive.py](/AroneyS/binchicken/blob/master/test/test_target_elusive.py "test_target_elusive.py") |  |  |
+| [test\_target\_weighting.py](/AroneyS/binchicken/blob/master/test/test_target_weighting.py "test_target_weighting.py") | | [test\_target\_weighting.py](/AroneyS/binchicken/blob/master/test/test_target_weighting.py "test_target_weighting.py") |  |  |
+| [test\_update.py](/AroneyS/binchicken/blob/master/test/test_update.py "test_update.py") | | [test\_update.py](/AroneyS/binchicken/blob/master/test/test_update.py "test_update.py") |  |  |
+| View all files | | |
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

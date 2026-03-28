@@ -96,3 +96,6 @@ optional arguments:
                         forward reads.
 ```
 
+
+## Metadata
+- **Skill**: generated

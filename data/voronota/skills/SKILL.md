@@ -1,6 +1,6 @@
 ---
 name: voronota
-description: Voronota performs geometric analysis of biological macromolecules using Voronoi diagrams. Use when user asks to convert atomic coordinates, calculate Voronoi diagrams, calculate inter-atom contacts, perform structural queries, assess model quality, or analyze membrane proteins.
+description: Voronota analyzes biological macromolecular structures using Voronoi diagrams to define atomic contacts and surfaces. Use when user asks to calculate interatomic contacts, assess protein model quality, compare structures using CAD-score, detect pockets and cavities, or analyze membrane protein orientations.
 homepage: https://www.voronota.com/
 ---
 
@@ -9,57 +9,89 @@ homepage: https://www.voronota.com/
 
 ## Overview
 
-Voronota is a specialized software suite designed for the geometric analysis of biological macromolecules. It represents atoms as balls with van der Waals radii and constructs Voronoi diagrams to define atomic neighborhoods and contact surfaces. The toolset is divided into a core engine and several expansions: **Voronota-LT** for high-speed parallelized tessellation, **Voronota-JS** for advanced scripting and quality scoring (VoroMQA), and **Voronota-GL** for visualization. Use this skill to automate structural queries, calculate inter-atom contact areas, and perform comparative structural analysis.
+Voronota is a specialized toolset for the comprehensive analysis of biological macromolecules through the Voronoi diagram of balls. It treats atoms as spheres with van der Waals radii to define atomic neighborhoods and contact surfaces. This skill provides guidance on using the core `voronota` executable and its specialized wrapper scripts for model quality assessment (VoroMQA), contact area difference scoring (CAD-score), and structural feature identification (pockets, membranes).
 
 ## Core CLI Usage
 
-The standard workflow involves converting atomic coordinates into a "balls" format before performing geometric calculations.
+The `voronota` suite consists of a main engine and several high-level wrapper scripts.
 
-### Basic Workflow
-1.  **Convert PDB to Balls**:
-    `voronota get-balls-from-atoms-file < input.pdb > balls.txt`
-2.  **Calculate Vertices**:
-    `voronota calculate-vertices < balls.txt > vertices.txt`
-3.  **Calculate Contacts**:
-    `voronota calculate-contacts < balls.txt > contacts.txt`
+### Calculating Contacts and Surfaces
+Use the `voronota-contacts` script for a simplified workflow to get interatomic contacts.
 
-### Annotated Contacts and Querying
-To perform selection-based analysis, use the query commands:
-*   **Annotated Contacts**: `voronota calculate-contacts --annotated < balls.txt > annotated_contacts.txt`
-*   **Querying Balls**: `voronota query-balls --match 'C:A,R:10:20' < balls.txt` (Matches Chain A, Residues 10-20).
-*   **Querying Contacts**: `voronota query-contacts --match-first 'C:A' --match-second 'C:B' < annotated_contacts.txt` (Finds inter-chain contacts between A and B).
+```bash
+# Calculate all contacts for a PDB file
+voronota-contacts < input.pdb > contacts.txt
 
-## High-Performance Analysis (Voronota-LT)
+# Calculate contacts and include solvent-accessible surface area (SASA)
+voronota-contacts --include-sas < input.pdb > contacts_with_sas.txt
+```
 
-Use `voronota-lt` when speed is critical or when processing large ensembles. It uses a radical tessellation (Laguerre-Voronoi diagram) which is significantly faster than the standard additively weighted Voronoi diagram.
+### Model Quality Assessment (VoroMQA)
+VoroMQA evaluates the quality of protein structures based on the atom-atom contact probabilities.
 
-*   **Fast Contact Calculation**:
-    `voronota-lt -i input.pdb --print-contacts > contacts.txt`
-*   **Parallel Execution**:
-    `voronota-lt --processors 4 --probe 1.4 -i input.pdb --print-cells > cells.txt`
-*   **Membrane Protein Analysis**:
-    `voronota-js-membrane-voromqa --input model.pdb --output-dir ./results`
+```bash
+# Get global and local (per-residue) quality scores
+voronota-js-voromqa --input model.pdb --output-prefix evaluation_results
+```
 
-## Model Quality Assessment (Voronota-JS)
+### Structural Comparison (CAD-score)
+CAD-score is used to compare a model structure against a reference structure based on contact area differences.
 
-The JS expansion provides wrappers for complex scoring methods used in CASP-level assessments.
+```bash
+# Compare a model to a target reference
+voronota-cadscore --target reference.pdb --model model.pdb
+```
 
-*   **VoroMQA Scoring**:
-    `voronota-js-voromqa --input model.pdb`
-*   **CAD-score (Comparative Analysis)**:
-    `voronota-js-global-cadscore --target target.pdb --model model.pdb`
-*   **Interface Scoring (VoroIF-GNN)**:
-    `voronota-js-voroif-gnn --input-target target.pdb --input-model model.pdb`
+### Pocket and Cavity Detection
+Identify internal voids, channels, and pockets using tessellation vertices.
 
-## Expert Tips
+```bash
+# Identify pockets and output them as a PDB file of dummy atoms
+voronota-pocket --input protein.pdb --output-pockets pockets.pdb
+```
 
-*   **Probe Radius**: The default rolling probe radius is 1.4 Å (standard for water). For pocket analysis, increasing the probe radius (e.g., 2.0 to 5.0 Å) helps identify larger cavities.
-*   **Selection Syntax**: Use the colon `:` to define ranges (e.g., `10:50`) and commas `,` for lists. The artificial chain name `solvent` is used to query solvent-accessible areas.
-*   **Output Formats**: Most commands output TSV-formatted data. Use `--print-everything` in `voronota-lt` to get a comprehensive dump of contacts, cells, and site summaries in one pass.
-*   **Visualization**: Generate SVG plots of contacts directly from the CLI using `--plot-contacts-to-file output.svg`.
+### Membrane Protein Analysis
+Fit a protein into a membrane based on surface frustration analysis.
+
+```bash
+# Find the optimal membrane orientation
+voronota-membrane --input membrane_protein.pdb --output-atoms atoms_in_membrane.pdb
+```
+
+## Expert Tips and Best Practices
+
+- **Parallel Processing**: When using the core `voronota` command for large-scale vertex calculations, use the `calculate-vertices-in-parallel` command if the binary was compiled with OpenMP support.
+- **Expansion Selection**:
+    - Use **Voronota-LT** (Lite) for massive speed increases when only contact areas and SASA are needed, especially for large complexes.
+    - Use **Voronota-JS** for complex workflows requiring custom logic or the latest VoroMQA/VoroIF-GNN scoring methods.
+- **Input Preparation**: Ensure PDB files are clean. While Voronota is robust, removing non-standard ligands or water molecules (unless specifically analyzing them) can clarify the contact map.
+- **Piping**: The core `voronota` tool is designed for Unix-style piping. You can chain `get-balls-from-atoms-file` into `calculate-vertices` and then into `calculate-contacts` for fine-grained control over the tessellation parameters.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| voronota_calculate-contacts | Calculates contacts between balls. |
+| voronota_calculate-vertices | Calculates Voronoi vertices from a list of balls. |
+| voronota_calculate-vertices-in-parallel | Calculates Voronoi vertices in parallel. |
+| voronota_compare-contacts | Compares contacts from two Voronota models. |
+| voronota_draw-contacts | Draws contacts in various formats. |
+| voronota_expand-descriptors | Expand atom descriptors to 'chainID resSeq iCode serial altLoc resName name' |
+| voronota_get-balls-from-atoms-file | Reads atoms from a PDB or mmCIF file and computes Voronoi tessellation balls. |
+| voronota_query-balls | Query a list of balls based on various criteria and modify them. |
+| voronota_query-balls-clashes | Query Voronota output for ball clashes. |
+| voronota_query-contacts | Query contacts based on various criteria and modify them. |
+| voronota_run-script | Run a script with Voronota |
+| voronota_score-contacts-energy | Calculates contact energies based on Voronota analysis. |
+| voronota_score-contacts-potential | Calculates potential values for contacts based on various input files and outputs summary statistics. |
+| voronota_score-contacts-quality | Calculates weighted average local score based on atom energy descriptors. |
+| voronota_write-balls-to-atoms-file | Writes balls to an atoms file. |
 
 ## Reference documentation
-- [Voronota Main Documentation](./references/www_voronota_com_index.md)
-- [Voronota-LT (Fast Tessellation)](./references/www_voronota_com_expansion_lt_index.html.md)
-- [Voronota-JS (Scoring and Scripting)](./references/www_voronota_com_expansion_js_index.html.md)
-- [Query Arguments Guide](./references/www_voronota_com_support_generate-arguments-for-query-contacts.html.md)
+
+- [About Voronota](./references/github_com_kliment-olechnovic_voronota_blob_master_README.md)
+- [Voronota-JS Expansion](./references/github_com_kliment-olechnovic_voronota_tree_master_expansion_js.md)
+- [Voronota-LT Expansion](./references/github_com_kliment-olechnovic_voronota_tree_master_expansion_lt.md)
+- [Command Reference Generation](./references/github_com_kliment-olechnovic_voronota_blob_master_document.bash.md)

@@ -1,6 +1,6 @@
 ---
 name: pairtools
-description: pairtools is a command-line suite for processing Hi-C sequencing alignments into structured DNA contact lists. Use when user asks to parse alignments into .pairs format, sort contact lists, remove PCR duplicates, filter pairs by genomic distance, or generate Hi-C library statistics.
+description: pairtools processes paired-end sequence alignments from Hi-C experiments into standardized contact maps. Use when user asks to parse SAM/BAM files into .pairs format, sort pairs, remove duplicates, filter ligation junctions, or generate library statistics.
 homepage: https://github.com/mirnylab/pairtools
 ---
 
@@ -9,50 +9,50 @@ homepage: https://github.com/mirnylab/pairtools
 
 ## Overview
 
-pairtools is a high-performance command-line suite designed to process mapped sequencing reads from Hi-C experiments. It transforms raw alignments into a structured, tab-separated format (.pairs) that represents 3D DNA contacts. The toolset provides a modular workflow to detect ligation junctions, remove PCR duplicates, sort contact lists, and filter pairs based on mapping quality or genomic distance.
+pairtools is a high-performance command-line suite designed to process paired-end sequence alignments from Hi-C experiments. It transforms raw alignment data (SAM/BAM) into the standardized .pairs format, which is a tab-separated table of ligation junctions. The toolset provides a modular workflow for sorting, deduplicating, and filtering these junctions, enabling researchers to move from mapped reads to high-quality contact maps and statistical summaries of chromosome conformation.
 
 ## Core Workflow and CLI Patterns
 
 ### 1. Parsing Alignments
-Convert .sam or .bam files into .pairs or .pairsam format. This is the entry point for most Hi-C pipelines.
+The first step is converting SAM/BAM files into .pairs files. You must provide a `.chromsizes` file (a tab-separated file with chromosome names and sizes).
 
 ```bash
-# Basic parsing from BAM to compressed .pairs
-pairtools parse -c sacCer3.chrom.sizes -o output.pairs.gz --drop-sam input.bam
+# Basic parsing
+pairtools parse -c genome.chrom.sizes -o output.pairs.gz input.bam
 
-# Generate .pairsam (includes SAM alignments) for manual inspection
-pairtools parse -c sacCer3.chrom.sizes -o output.pairsam.gz input.bam
+# Parsing with SAM record removal to save space
+pairtools parse -c genome.chrom.sizes --drop-sam -o output.pairs.gz input.bam
 ```
 
-### 2. Sorting
-Sorting is a prerequisite for deduplication and merging. pairtools uses the system `sort` utility for efficiency.
+### 2. Sorting Pairs
+Most downstream tools require the .pairs file to be sorted by chromosome and position.
 
 ```bash
-# Sort a .pairs file by chromosome and position
-pairtools sort --nproc 8 -o sorted.pairs.gz input.pairs.gz
+# Sort using multiple processors
+pairtools sort --nproc 8 -o sorted.pairs.gz unsorted.pairs.gz
 ```
 
 ### 3. Deduplication
-Remove PCR and optical duplicates. Input must be sorted and "triu-flipped" (which `parse` handles by default).
+Identify and remove PCR or optical duplicates. It is recommended to use the `--mark-dups` flag to keep the records but tag them.
 
 ```bash
-# Remove duplicates and save statistics to a YAML file
-pairtools dedup --output-stats stats.yaml -o dedup.pairs.gz sorted.pairs.gz
+# Detect duplicates and generate stats
+pairtools dedup --mark-dups --output-stats stats.txt -o deduped.pairs.gz sorted.pairs.gz
 ```
 
 ### 4. Filtering and Selection
-Use `select` to filter pairs based on mapping types (e.g., UU for uniquely mapped) or specific genomic conditions.
+Use `pairtools select` to filter pairs based on properties like `pair_type` (e.g., UU for unique-unique), mapping quality, or genomic distance.
 
 ```bash
-# Select only uniquely mapped pairs (UU)
-pairtools select "(pair_type == 'UU')" -o filtered.pairs.gz input.pairs.gz
+# Select only unique-unique (UU) and unique-rescued (UR) pairs
+pairtools select "(pair_type=='UU') or (pair_type=='UR')" -o filtered.pairs.gz input.pairs.gz
 
-# Filter by genomic distance (e.g., > 1kb)
-pairtools select "abs(pos1 - pos2) > 1000" -o long_range.pairs.gz input.pairs.gz
+# Filter by mapping quality (automatically converted to integers)
+pairtools select "(mapq1 >= 30) and (mapq2 >= 30)" -o high_mapq.pairs.gz input.pairs.gz
 ```
 
-### 5. Statistics and Quality Control
-Generate comprehensive reports on the distribution of pair types and mapping statistics.
+### 5. Generating Statistics
+Generate comprehensive reports on the library composition, including the number of cis/trans contacts and duplicate rates.
 
 ```bash
 pairtools stats -o library_stats.txt input.pairs.gz
@@ -60,14 +60,38 @@ pairtools stats -o library_stats.txt input.pairs.gz
 
 ## Expert Tips and Best Practices
 
-- **Compression**: Always use `.gz` or `.lz4` extensions in output paths; pairtools automatically detects these and applies compression to save disk space.
-- **Memory Management**: When using `pairtools sort`, use the `--memory` flag to specify the buffer size for the underlying Unix sort to prevent disk thrashing.
-- **Piping**: Commands are designed to work in Unix pipes to avoid intermediate file I/O.
-  - *Example*: `pairtools parse ... | pairtools sort ... | pairtools dedup ...`
-- **Chrom Sizes**: Ensure the `.chromsizes` file matches the exact chromosome names and order used in the original BAM/SAM header.
-- **Complex Walks**: For long-read Hi-C or data with many chimeric alignments, use `pairtools parse2` to identify multi-ligation events.
+- **Piping for Efficiency**: pairtools is designed for Unix piping. You can chain commands to avoid writing large intermediate files to disk.
+  ```bash
+  pairtools parse -c chrom.sizes input.bam | pairtools sort --nproc 4 | pairtools dedup -o final.pairs.gz
+  ```
+- **Compression**: Always use the `.gz` extension for output files. pairtools automatically detects this and uses `bgzip` or `pbgzip` (if available) for compression.
+- **Memory Management**: For `pairtools sort`, use the `--max-mem` flag to limit memory usage on shared systems.
+- **Complex Walks**: For advanced Hi-C protocols (like multi-contact 3C), use `pairtools parse2` to handle complex walks and chimeric alignments.
+- **Flipping**: Use `pairtools flip` to ensure that for every pair, the first side has a lower genomic coordinate than the second side, which is required for consistent contact matrix generation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| filterbycov | Remove pairs from regions of high coverage. |
+| flip | Flip pairs to get an upper-triangular matrix. |
+| header | Manipulate the .pairs/.pairsam header |
+| merge | Merge .pairs/.pairsam files. By default, assumes that the files are sorted and maintains the sorting. |
+| pairtools dedup | Find and remove PCR/optical duplicates. |
+| pairtools parse | Find ligation pairs in .sam data, make .pairs. SAM_PATH : an input .sam/.bam file with paired-end sequence alignments of Hi-C molecules. If the path ends with .bam, the input is decompressed from bam with samtools. By default, the input is read from stdin. |
+| pairtools sample | Select a random subset of pairs in a pairs file. |
+| pairtools_markasdup | Tag all pairs in the input file as duplicates. |
+| pairtools_parse2 | Extracts pairs from .sam/.bam data with complex walks, make .pairs. SAM_PATH : an input .sam/.bam file with paired-end or single-end sequence alignments of Hi-C (or Hi-C-like) molecules. If the path ends with .bam, the input is decompressed from bam with samtools. By default, the input is read from stdin. |
+| pairtools_phase | Phase pairs mapped to a diploid genome. Diploid genome is the genome with two set of the chromosome variants, where each chromosome has one of two suffixes (phase-suffixes) corresponding to the genome version (phase- suffixes). |
+| pairtools_sort | Sort a .pairs/.pairsam file. |
+| restrict | Assign restriction fragments to pairs. |
+| scaling | Calculate pairs scalings. |
+| select | Select pairs according to some condition. |
+| split | Split a .pairsam file into .pairs and .sam. |
+| stats | Calculate pairs statistics. |
 
 ## Reference documentation
-
-- [GitHub Repository: pairtools](./references/github_com_open2c_pairtools.md)
-- [Bioconda: pairtools Overview](./references/anaconda_org_channels_bioconda_packages_pairtools_overview.md)
+- [pairtools README](./references/github_com_open2c_pairtools_blob_master_README.md)
+- [pairtools Changelog](./references/github_com_open2c_pairtools_blob_master_CHANGES.md)

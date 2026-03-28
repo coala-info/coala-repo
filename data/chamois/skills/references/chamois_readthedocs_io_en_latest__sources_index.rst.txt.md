@@ -1,0 +1,86 @@
+.. CHAMOIS documentation master file, created by
+sphinx-quickstart on Tue Mar 18 21:40:56 2025.
+You can adapt this file completely to your liking, but it should at least
+contain the root `toctree` directive.
+CHAMOIS |Stars|
+===============
+.. |Stars| image:: https://img.shields.io/github/stars/zellerlab/CHAMOIS.svg?style=social&maxAge=3600&label=Star
+:target: https://github.com/zellerlab/CHAMOIS/stargazers
+:class: dark-light
+.. figure:: \_images/logo.png
+:align: right
+:width: 250px
+\*Chemical Hierarchy Approximation for secondary Metabolite clusters Obtained In Silico.\*
+|Actions| |PyPI| |Bioconda| |Wheel| |Versions| |License| |Source| |Mirror| |Issues| |Docs| |Changelog| |Preprint|
+.. |Actions| image:: https://img.shields.io/github/actions/workflow/status/zellerlab/CHAMOIS/test.yml?branch=main&logo=github&style=flat-square&maxAge=300
+:target: https://github.com/zellerlab/CHAMOIS/actions
+.. |PyPI| image:: https://img.shields.io/pypi/v/chamois-tool.svg?logo=pypi&style=flat-square&maxAge=3600
+:target: https://pypi.org/project/chamois-tool
+.. |Bioconda| image:: https://img.shields.io/conda/vn/bioconda/chamois?logo=anaconda&style=flat-square&maxAge=3600
+:target: https://anaconda.org/bioconda/chamois
+.. |Wheel| image:: https://img.shields.io/pypi/wheel/chamois-tool.svg?style=flat-square&maxAge=3600
+:target: https://pypi.org/project/chamois-tool/#files
+.. |Versions| image:: https://img.shields.io/pypi/pyversions/chamois-tool.svg?logo=python&style=flat-square&maxAge=3600
+:target: https://pypi.org/project/chamois-tool/#files
+.. |License| image:: https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square&maxAge=2678400
+:target: https://choosealicense.com/licenses/gpl-3.0/
+.. |Source| image:: https://img.shields.io/badge/source-GitHub-303030.svg?maxAge=2678400&style=flat-square
+:target: https://github.com/zellerlab/CHAMOIS/
+.. |Mirror| image:: https://img.shields.io/badge/mirror-EMBL-009f4d?style=flat-square&maxAge=2678400
+:target: https://git.embl.de/larralde/CHAMOIS
+.. |Changelog| image:: https://img.shields.io/badge/keep%20a-changelog-8A0707.svg?maxAge=2678400&style=flat-square
+:target: https://github.com/zellerlab/CHAMOIS/blob/main/CHANGELOG.md
+.. |Issues| image:: https://img.shields.io/github/issues/zellerlab/CHAMOIS.svg?style=flat-square&maxAge=600
+:target: https://github.com/zellerlab/CHAMOIS/issues
+.. |Docs| image:: https://img.shields.io/readthedocs/chamois/latest?style=flat-square&maxAge=600
+:target: https://chamois.readthedocs.io
+.. |Preprint| image:: https://img.shields.io/badge/preprint-bioRxiv-darkblue?style=flat-square&maxAge=2678400
+:target: https://www.biorxiv.org/content/10.1101/2025.03.13.642868
+Overview
+--------
+CHAMOIS is a fast method for predicting chemical features of natural products
+produced by Biosynthetic Gene Clusters (BGCs) using only their genomic
+sequence. It can be used to get chemical features from BGCs predicted in
+silico with tools such as `GECCO `\_ or
+`antiSMASH `\_.
+Setup
+-----
+Run ``pip install chamois-tool`` in a shell to
+download the development version from GitHub, or have a look at the
+:doc:`Installation page ` to find other ways to install CHAMOIS.
+Citation
+--------
+CHAMOIS is scientific software, with a
+`preprint `\_
+in `BioRxiv `\_. Check the
+:doc:`Publications page ` to see how to cite CHAMOIS.
+Library
+-------
+.. toctree::
+:maxdepth: 2
+User Guide
+Examples
+Figures
+CLI Reference
+API Reference
+Feedback
+--------
+Contact
+^^^^^^^
+If you have any question about CHAMOIS, if you run into any issue, or if you
+would like to make a feature request, please create an
+`issue in the GitHub repository `\_.
+You can also directly contact `Martin Larralde via email `\_.
+Contributing
+^^^^^^^^^^^^
+If you want to contribute to CHAMOIS, please have a look at the
+contribution guide first, and feel free to open a pull
+request on the `GitHub repository `\_.
+License
+-------
+This library is provided under the `GNU General Public License 3.0 or later `\_.
+See the :doc:`Copyright Notice ` section for more information.
+\*This project was developed by\* `Martin Larralde `\_
+\*during his PhD project at the\* `European Molecular Biology Laboratory `\_
+\*and the\* `Leiden University Medical Center `\_
+\*in the\* `Zeller team `\_.

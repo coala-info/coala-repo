@@ -1,6 +1,6 @@
 ---
 name: shmlast
-description: shmlast is a high-performance tool for orthology assignment that implements the Conditional Reciprocal Best Hits algorithm for transcriptome-to-protein comparisons. Use when user asks to find orthologs between a transcriptome and a protein database, perform reciprocal best hit searches, or assign orthology using the LAST aligner.
+description: shmlast identifies orthologous sequences between a transcriptome and a protein database using the Conditional Reciprocal Best Hits algorithm. Use when user asks to find orthologs, perform conditional reciprocal best hits, or run reciprocal best hits between two species.
 homepage: https://github.com/camillescott/shmlast
 ---
 
@@ -9,58 +9,55 @@ homepage: https://github.com/camillescott/shmlast
 
 ## Overview
 
-shmlast is a high-performance tool for orthology assignment that implements the Conditional Reciprocal Best Hits (CRBH) algorithm. While traditional Reciprocal Best Hits (RBH) can be overly conservative, shmlast improves sensitivity by learning an appropriate e-value cutoff for specific sequence lengths based on an initial set of RBHs. It replaces the slow NCBI BLAST+ engine with the LAST aligner and utilizes GNU Parallel for efficient multi-core execution. It is specifically designed for transcriptome-to-protein comparisons between two species.
+shmlast is a specialized tool designed to identify orthologous sequences between two species by implementing the Conditional Reciprocal Best Hits (CRBH) algorithm. Unlike standard Reciprocal Best Hits (RBH) which uses a static e-value cutoff, shmlast trains a model based on sequence length to determine appropriate e-value thresholds. It utilizes the LAST aligner for significantly faster processing compared to traditional BLAST-based methods. It is specifically optimized for comparing a transcriptome (nucleotide) against a protein database (amino acid).
 
 ## Common CLI Patterns
 
 ### Conditional Reciprocal Best Hits (CRBH)
-The primary workflow for finding orthologs between a transcriptome and a protein database:
+The primary command for finding orthologs using the length-dependent model:
 ```bash
 shmlast crbl -q transcripts.fa -d proteins.faa
 ```
 
 ### Reciprocal Best Hits (RBL)
-To perform a standard Reciprocal Best Hit search without the conditional modeling step:
+To perform a standard reciprocal best hit search without the conditional model:
 ```bash
 shmlast rbl -q transcripts.fa -d proteins.faa
 ```
 
 ### Performance Optimization
-shmlast scales well across multiple CPU cores. Use the `--n_threads` option to speed up the LAST alignments:
+Distribute the alignment tasks across multiple CPU cores:
 ```bash
-shmlast crbl -q transcripts.fa -d proteins.faa --n_threads 16
+shmlast crbl -q transcripts.fa -d proteins.faa --n_threads 8
 ```
 
-### Adjusting Stringency
-You can specify a maximum expectation-value (e-value) for the initial searches:
+### Adjusting Sensitivity
+Specify a maximum expectation-value (e-value) cutoff:
 ```bash
-shmlast crbl -q transcripts.fa -d proteins.faa -e 0.000001
+shmlast crbl -q transcripts.fa -d proteins.faa -e 1e-6
 ```
 
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
-### Database Selection
-*   **Species-Specific Only**: CRBH is designed for comparing two species. Do not use shmlast to annotate a transcriptome against a mixed protein database (e.g., UniRef90 or NR), as the underlying statistical model assumes a direct evolutionary relationship between two specific proteomes/transcriptomes.
-*   **Format**: Ensure your query (`-q`) is a nucleotide transcriptome (FASTA) and your database (`-d`) is a protein database (FASTA).
+- **Species Selection**: Only use shmlast for comparing two specific species. It is not designed for, and should not be used with, mixed protein databases like UniRef90 or NR.
+- **Model Validation**: Always inspect the generated PDF plot (`$QUERY.x.$DATABASE.crbl.model.plot.pdf`) to ensure the model fit is appropriate for your datasets.
+- **Input Formats**: Ensure the query file (`-q`) is a nucleotide transcriptome in FASTA format and the database (`-d`) is a protein FASTA file.
+- **Data Analysis**: The output is a standard CSV. For downstream analysis, use the Python Pandas library:
+  ```python
+  import pandas as pd
+  df = pd.read_csv('query.x.database.crbl.csv')
+  ```
+- **Dependencies**: shmlast relies on `lastal` and `gnu-parallel`. If running in a custom environment, ensure these are in your PATH.
 
-### Validating the Model
-shmlast generates a PDF plot (`$QUERY.x.$DATABASE.crbl.model.plot.pdf`) by default. Always inspect this plot to ensure the model fit (the "fit" line) accurately reflects the distribution of your reciprocal best hits. A poor fit may indicate that the two species are too distantly related for the CRBH algorithm to be effective.
 
-### Handling Outputs
-The primary output is a CSV file. You can quickly load and filter this data using Python and Pandas:
-```python
-import pandas as pd
-# Load the CRBH results
-df = pd.read_csv('query.x.database.crbl.csv')
 
-# Filter for high-confidence hits based on bitscore or alignment length
-top_hits = df[df['bitscore'] > 50]
-```
+## Subcommands
 
-### Known Limitations
-*   **IUPAC Codes**: Be cautious with RNA sequences containing non-standard IUPAC codes, as they may cause translation issues in certain versions.
-*   **Sequence Types**: Currently, shmlast does not support nucleotide-to-nucleotide or protein-to-protein alignments; it is strictly for transcriptome-to-protein workflows.
+| Command | Description |
+|---------|-------------|
+| shmlast crbl | Run Conditional Reciprocal Best Hits between the query and database. |
+| shmlast rbl | Run Reciprocal Best Hits between the query and database. |
 
 ## Reference documentation
-- [shmlast GitHub Repository](./references/github_com_camillescott_shmlast.md)
-- [shmlast Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_shmlast_overview.md)
+
+- [shmlast README](./references/github_com_camillescott_shmlast_blob_master_README.md)

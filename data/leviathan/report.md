@@ -80,3 +80,6 @@ OPTIONS:
 	-C, --candidates:         File where to store valid SV candidates (default: "candidates.bedpe")
 ```
 
+
+## Metadata
+- **Skill**: generated

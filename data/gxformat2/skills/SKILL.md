@@ -1,6 +1,6 @@
 ---
 name: gxformat2
-description: The gxformat2 toolkit provides utilities to validate, visualize, and manage Galaxy Workflow Format 2 files. Use when user asks to lint Galaxy workflows, visualize workflow connections, export abstract workflow versions, or manage human-readable workflow formats.
+description: gxformat2 converts Galaxy workflows between native JSON and human-friendly YAML formats while providing tools for validation and visualization. Use when user asks to convert workflows between formats, lint workflow logic, visualize workflow structures, or export abstract workflow representations.
 homepage: https://github.com/jmchilton/gxformat2
 ---
 
@@ -8,48 +8,51 @@ homepage: https://github.com/jmchilton/gxformat2
 # gxformat2
 
 ## Overview
+The gxformat2 toolset provides a bridge between the complex, machine-oriented native Galaxy workflow format (.ga) and a more concise, human-friendly YAML representation known as Format 2. This skill enables the efficient use of command-line utilities to validate workflow logic, visualize structures, and transform files between formats to facilitate better version control and manual editing of Galaxy workflows.
 
-The `gxformat2` toolkit is designed to manage Galaxy Workflow Format 2, a concise and human-friendly alternative to the traditional native Galaxy `.ga` format. While native Galaxy workflows are often difficult to read or write manually, Format 2 provides a streamlined structure that is easier to version control and edit. This skill focuses on using the core Python-based CLI utilities to ensure workflow integrity and facilitate workflow sharing.
+## CLI Usage Patterns
 
-## Installation
+### Workflow Conversion
+The primary use of gxformat2 is translating between workflow formats.
 
-The tools can be installed via pip or conda:
+*   **Convert Format 2 to Native Galaxy**: Use this to prepare a human-written YAML workflow for import into a Galaxy instance.
+    `gxwf-to-native workflow.yml`
+*   **Convert Native Galaxy to Format 2**: Use this to turn an exported `.ga` file into a readable YAML format for version control or manual auditing.
+    `gxwf-to-format2 workflow.ga`
 
-```bash
-pip install gxformat2
-# OR
-conda install bioconda::gxformat2
-```
+### Validation and Linting
+Before importing or sharing a workflow, ensure it adheres to the schema and contains no logical errors.
 
-## Core CLI Utilities
+*   **Lint a Workflow**: Checks for common issues and schema violations.
+    `gxwf-lint workflow.yml`
 
-### Workflow Validation (Linting)
-Use `gxwf-lint` to check your workflow files for syntax errors, structural issues, or missing required fields. This is a critical step before attempting to import a workflow into a Galaxy instance.
+### Visualization
+Generate a visual representation of the workflow steps and connections.
 
-```bash
-gxwf-lint my_workflow.gxwf.yml
-```
-
-### Workflow Visualization
-Use `gxwf-viz` to generate a visual representation of the workflow logic and tool connections.
-
-```bash
-gxwf-viz my_workflow.gxwf.yml
-```
+*   **Visualize a Workflow**: Creates a diagram of the workflow structure.
+    `gxwf-viz workflow.yml`
 
 ### Abstract Export
-Use `gxwf-abstract-export` to create an abstract version of a Galaxy workflow, which can be useful for documentation or high-level architectural reviews.
+*   **Export Abstract Workflow**: Generates an abstract representation of the workflow.
+    `gxwf-abstract-export workflow.yml`
 
-```bash
-gxwf-abstract-export my_workflow.gxwf.yml
-```
+## Expert Tips and Best Practices
 
-## Best Practices
+*   **Version Control**: Always convert native `.ga` files to Format 2 before committing to Git. The YAML representation is significantly more "diff-friendly" than the native JSON-based `.ga` format.
+*   **Pre-conversion Linting**: Run `gxwf-lint` on any manually edited Format 2 files before attempting to convert them to native format to catch syntax errors early.
+*   **Source References**: When manually editing workflows, remember that gxformat2 uses the `step_label/output_name` pattern for connections. If a label contains a `/`, the tool uses specific resolution logic defined in its model to disambiguate the reference.
+*   **Normalization**: The tool automatically handles "step outs" and anonymous references during normalization, allowing for more concise workflow definitions than the native format requires.
 
-- **Format Conversion**: Use these tools when transitioning from native `.ga` files to Format 2 to ensure the resulting file remains compatible with Galaxy versions 19.09 and later.
-- **CI/CD Integration**: Incorporate `gxwf-lint` into automated testing pipelines to catch workflow errors before they are committed to a repository.
-- **Human-Readable Editing**: Prefer Format 2 for workflows that require manual editing or frequent peer reviews, as the structure is significantly more legible than the native JSON-based `.ga` format.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gxwf-abstract-export | This script converts an executable Galaxy workflow (in either format - Format 2 or native .ga) into an abstract CWL representation. In order to represent Galaxy tool executions in the Common Workflow Language workflow language, they are serialized as v1.2+ abstract 'Operation' classes. Because abstract 'Operation' classes are used, the resulting CWL workflow is not executable - either in Galaxy or by CWL implementations. The resulting CWL file should be thought of more as a common metadata specification describing the workflow structure. |
+| gxwf-lint | Lint a workflow file. |
+| gxwf-viz | This script converts an executable Galaxy workflow (in either format - Format 2 or native .ga) into a format for visualization with Cytoscape (https://cytoscape.org/). If the target output path ends with .html this script will output a HTML page with the workflow visualized using cytoscape.js. Otherwise, this script will output a JSON description of the workflow elements for consumption by Cytoscape. |
 
 ## Reference documentation
-- [Galaxy Workflow Format 2](./references/github_com_galaxyproject_gxformat2.md)
-- [gxformat2 on Bioconda](./references/anaconda_org_channels_bioconda_packages_gxformat2_overview.md)
+- [Galaxy Workflow Format 2 GitHub](./references/github_com_galaxyproject_gxformat2.md)
+- [gxformat2 Project Structure and Patterns](./references/github_com_jmchilton_gxformat2_blob_main_CLAUDE.md)

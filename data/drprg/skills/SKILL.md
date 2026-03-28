@@ -1,6 +1,6 @@
 ---
 name: drprg
-description: drprg identifies drug resistance markers in genomic sequencing data by leveraging reference graphs. Use when user asks to predict drug resistance, download pre-built species indices, or build custom reference graph indices from VCF files and reference genomes.
+description: drprg predicts antimicrobial drug resistance by using reference graphs to capture a wide range of genetic variation from sequencing reads. Use when user asks to download or build genomic indices, predict drug resistance from Illumina or Nanopore reads, and perform high-sensitivity resistance profiling.
 homepage: https://github.com/mbhall88/drprg
 ---
 
@@ -8,52 +8,68 @@ homepage: https://github.com/mbhall88/drprg
 # drprg
 
 ## Overview
-drprg (Drug Resistance Prediction with Reference Graphs) is a specialized bioinformatics tool that identifies drug resistance markers by leveraging the power of genome graphs. By using reference graphs instead of linear references, it achieves higher sensitivity and specificity in complex genomic regions. It is primarily used for Mycobacterium tuberculosis (MTB) but is designed to be species-agnostic provided a suitable index is available.
 
-## Installation
-The tool is primarily supported on Linux. The recommended installation method is via Bioconda:
-```bash
-conda install -c bioconda drprg
-```
+`drprg` (Drug Resistance Prediction with Reference Graphs) is a specialized bioinformatics tool that moves beyond the "single-reference" paradigm by using reference graphs to describe genetic variation. By utilizing the Pandora method, it captures a broader range of resistance-associated haplotypes, including SNPs, indels, and large gene deletions (such as *katG* or *pncA*). Use this skill to guide users through the workflow of preparing genomic indices and performing high-sensitivity resistance profiling that outperforms traditional pileup-based tools in both speed and memory efficiency.
 
-## Core Workflows
+## Command Line Usage
 
-### 1. Managing Indices
-Before running a prediction, you must have a reference graph index. The tool provides a built-in mechanism to download pre-built indices for supported species.
+### 1. Index Management
+Before prediction, you must have a species-specific index. The tool provides prebuilt indices for common pathogens.
 
-**Download the M. tuberculosis index:**
-```bash
-drprg index --download mtb
-```
+*   **Download a prebuilt index (e.g., M. tuberculosis):**
+    ```bash
+    drprg index --download mtb
+    ```
+*   **List available indices or interact with local ones:**
+    ```bash
+    drprg index --help
+    ```
 
 ### 2. Predicting Drug Resistance
-The `predict` command is the primary interface for analyzing sequencing data. It requires an index, input reads, and an output directory.
+The `predict` command is the primary interface for analyzing sequencing reads.
 
-**Standard Illumina Run:**
-```bash
-drprg predict -x mtb -i reads.fq --illumina -o output_directory/
-```
-
-**Key Arguments:**
-- `-x, --index`: The name or path of the species index (e.g., `mtb`).
-- `-i, --input`: Path to the input fastq file (supports gzipped files).
-- `--illumina`: Specifies that the input data is from an Illumina platform.
-- `-o, --outdir`: Directory where results will be stored.
-- `-t, --threads`: Number of CPU cores to utilize (default is 1).
+*   **Basic Illumina Prediction:**
+    ```bash
+    drprg predict -x mtb -i reads.fq.gz --illumina -o output_directory/
+    ```
+*   **Using Multiple Threads:**
+    To speed up the graph mapping process, specify the thread count (default is 1).
+    ```bash
+    drprg predict -t 8 -x mtb -i reads.fq.gz --illumina -o output_directory/
+    ```
 
 ### 3. Building Custom Indices
-If a pre-built index is not available for your target organism, use the `build` command to create one from a VCF of known resistance-associated variants and a reference genome.
+If a prebuilt index is not available for your specific strain or species, you can build one from a collection of samples and a resistance catalogue.
 
-```bash
-drprg build --vcf variants.vcf --ref reference.fasta -o custom_index/
-```
+*   **Build Command:**
+    ```bash
+    drprg build [OPTIONS] --resource <catalogue> --outdir <dir>
+    ```
 
 ## Expert Tips and Best Practices
-- **Resource Allocation**: For large datasets, always specify the `-t` flag to match your available CPU cores to significantly reduce processing time.
-- **Platform Specifics**: Ensure you use the correct platform flag (e.g., `--illumina`). While the tool is optimized for Illumina, it is designed to handle different error profiles.
-- **Output Inspection**: The output directory contains detailed prediction reports. Check the verbose output (`-v`) if a prediction fails to identify expected markers or if mapping rates are low.
-- **Docker for Non-Linux Systems**: Since Linux is the only natively supported platform, use the official Docker container for macOS or Windows environments to ensure binary compatibility.
+
+*   **Platform Compatibility:** `drprg` is natively supported on Linux. For macOS or Windows users, recommend using the official Docker container to avoid compatibility issues with the underlying Rust-based graph processing engine.
+*   **Input Handling:** While the tool is highly efficient, ensure that input FASTQ files are quality-trimmed for the best results, especially when dealing with Nanopore data where error rates are higher.
+*   **Memory Efficiency:** `drprg` is designed to use significantly less memory than competitors like Mykrobe or TBProfiler. It is suitable for execution on standard laptops or cloud instances with limited RAM.
+*   **Verbosity:** Use the `-v` or `--verbose` flag when troubleshooting index downloads or complex builds to see the underlying progress of the reference graph construction.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| drprg | Build a DRaWoR program |
+| drprg | For more information, try '--help'. |
+| drprg | A command-line tool for managing and processing data. This specific invocation seems to be for a subcommand that is not recognized. |
+| drprg | Command-line tool for running various prediction tasks. |
+| drprg | A command-line tool for managing and processing data. |
+| drprg | For more information, try '--help'. |
+| drprg build | Build an index to predict resistance from |
+| drprg index | Download and interact with indices |
+| drprg predict | Predict drug resistance |
 
 ## Reference documentation
-- [drprg Overview](./references/anaconda_org_channels_bioconda_packages_drprg_overview.md)
-- [drprg GitHub Repository](./references/github_com_mbhall88_drprg.md)
+
+- [drprg Main Documentation and Quickstart](./references/github_com_mbhall88_drprg_blob_main_README.md)
+- [Methodology and Citation Information](./references/github_com_mbhall88_drprg_blob_main_CITATION.cff.md)

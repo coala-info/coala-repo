@@ -1,6 +1,6 @@
 ---
 name: wdltool
-description: wdltool is a command-line utility for validating, parsing, and generating artifacts for WDL workflows. Use when user asks to validate WDL workflows, generate input templates, visualize workflow logic, highlight WDL syntax, or parse WDL files.
+description: wdltool is a Java utility used to validate, parse, and prepare WDL scripts for workflow execution. Use when user asks to validate WDL syntax, generate input JSON templates, or visualize workflow data-flow graphs.
 homepage: https://github.com/broadinstitute/wdltool
 ---
 
@@ -9,47 +9,47 @@ homepage: https://github.com/broadinstitute/wdltool
 
 ## Overview
 
-wdltool is a specialized command-line utility designed to assist bioinformaticians and pipeline developers in managing WDL workflows. It acts as a pre-execution suite that ensures workflow scripts are syntactically and semantically sound before they are submitted to an execution engine like Cromwell. Use this skill to automate the generation of input templates, visualize workflow logic through directed acyclic graphs (DAGs), and debug complex import structures within WDL files.
+wdltool is a specialized Java utility designed to streamline the development and debugging of WDL scripts. It serves as a pre-execution toolkit that allows developers to perform static analysis, ensure semantic correctness, and prepare the necessary configuration files for workflow engines like Cromwell. By using wdltool, you can catch syntax errors early, understand complex data flows through visualization, and automatically generate the schemas required to provide workflow parameters.
 
-## Core CLI Commands
+## Command Line Usage
 
-The basic syntax for all operations is:
+The tool is typically executed as a runnable JAR file. The basic syntax is:
 `java -jar wdltool.jar <action> <parameters>`
 
-### 1. Validation
-Performs full syntax and semantic checking, including resolving imports and verifying that called tasks exist.
-- **Command**: `java -jar wdltool.jar validate <workflow.wdl>`
-- **Expert Tip**: Always run validation after modifying task signatures or import paths. It catches "task not found" errors and namespace collisions that simple parsers might miss.
+### Core Actions
 
-### 2. Generating Input Templates
-Computes all required inputs for a workflow and outputs a JSON skeleton.
-- **Command**: `java -jar wdltool.jar inputs <workflow.wdl>`
-- **Usage**: Redirect the output to a file: `java -jar wdltool.jar inputs my_wf.wdl > inputs.json`.
-- **Best Practice**: Use this command to ensure your input JSON matches the expected types (e.g., `Array[String]`, `Int`, `File`) exactly as defined in the WDL.
+- **validate**: Performs full syntax and semantic checking. It resolves imports and ensures that all called tasks exist and namespaces do not conflict.
+  - Example: `java -jar wdltool.jar validate my_workflow.wdl`
+- **inputs**: Generates a JSON skeleton containing all required inputs for a workflow. This is the standard way to create a template for your parameter files.
+  - Example: `java -jar wdltool.jar inputs my_workflow.wdl`
+- **graph**: Generates a data-flow graph in `.dot` format. This is useful for visualizing the Directed Acyclic Graph (DAG) of your workflow.
+  - Example: `java -jar wdltool.jar graph my_workflow.wdl > workflow_graph.dot`
+  - Use the `--all` flag to include non-executable nodes like task declarations and outputs in the graph.
+- **highlight**: Reformats and colorizes WDL code.
+  - `console`: Outputs colorized text directly to the terminal.
+  - `html`: Wraps WDL elements in `<span>` tags for web display.
+- **parse**: Performs a low-level grammar check and outputs the Abstract Syntax Tree (AST). Note that `validate` is preferred for general use as it includes higher-level semantic checks.
 
-### 3. Workflow Graphing
-Generates a data-flow graph in Graphviz DOT format to visualize the execution path.
-- **Command**: `java -jar wdltool.jar graph <workflow.wdl>`
-- **Advanced Flag**: Use `--all` to include all nodes, including task declarations and call outputs, even if they are not explicitly executed in the main flow.
-- **Visualization**: Pipe the output to Graphviz: `java -jar wdltool.jar graph my_wf.wdl | dot -Tpng -o workflow_graph.png`.
+## Best Practices and Expert Tips
 
-### 4. Syntax Highlighting
-Reformats and colorizes WDL code for documentation or terminal viewing.
-- **Command**: `java -jar wdltool.jar highlight <workflow.wdl> <html|console>`
-- **Output**: `html` wraps elements in `<span>` tags; `console` uses ANSI color codes.
+- **Pre-flight Validation**: Always run the `validate` command before attempting to run a WDL on a production cluster. It catches common errors like missing task references or duplicate variable names that might only appear mid-execution otherwise.
+- **Input Template Management**: When using the `inputs` command, the generated JSON values indicate the expected type (e.g., `"String"`, `"Array[Int]"`). Do not change the keys; only replace the type-string values with your actual data.
+- **Visualizing Dependencies**: If a workflow is failing due to unexpected execution order, use `graph` to verify that your `call` dependencies are correctly linked via input/output mapping.
+- **Standardizing Code**: Use `highlight <file> console` to quickly check the structure of a complex WDL file in a terminal environment; the colorization helps distinguish between keywords, variables, and command blocks.
 
-### 5. Parsing
-Performs low-level grammar checks and outputs an Abstract Syntax Tree (AST).
-- **Command**: `java -jar wdltool.jar parse <workflow.wdl>`
-- **Note**: This is a lower-level check than `validate`. Use `validate` for functional workflow verification and `parse` only for debugging grammar-specific issues.
 
-## Best Practices and Tips
 
-- **Exit Codes**: wdltool returns non-zero exit codes on validation failures. Use this in CI/CD pipelines to block broken workflows from being deployed.
-- **Standard Input**: You can pipe WDL content directly into the parser using `/dev/stdin`:
-  `echo "workflow wf {}" | java -jar wdltool.jar parse /dev/stdin`
-- **Legacy Status**: Note that wdltool was succeeded by WOMtool. If you encounter features in newer WDL versions (1.0+) that fail validation, consider using the WOMtool JAR provided with Cromwell releases.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| java -jar wdltool.jar | Performs various operations on WDL files. |
+| wdltool | Validates a WDL file. |
+| wdltool graph | Generate a graphviz DOT representation of a WDL workflow. |
+| wdltool womgraph | Generate a DOT graph of a WDL workflow or CWL document. |
+| wdltool_inputs | Generate JSON inputs for a WDL workflow. |
+| wdltool_parse | Parses a WDL file and prints its Abstract Syntax Tree (AST). |
 
 ## Reference documentation
-- [wdltool GitHub Repository](./references/github_com_broadinstitute_wdltool.md)
-- [wdltool Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_wdltool_overview.md)
+
+- [WDLtool README](./references/github_com_broadinstitute_wdltool_blob_develop_README.md)

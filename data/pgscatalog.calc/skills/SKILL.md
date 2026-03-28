@@ -1,6 +1,6 @@
 ---
 name: pgscatalog.calc
-description: This tool calculates polygenic scores and performs statistical adjustments based on genetic ancestry. Use when user asks to calculate polygenic scores, convert genomic data to Zarr format, aggregate results from multiple files, or adjust scores for genetic ancestry.
+description: The pgscatalog.calc package performs polygenic score calculation, result aggregation, and genetic ancestry adjustment using a high-performance scoring engine. Use when user asks to aggregate scores across genomic segments, adjust scores for genetic ancestry, or calculate polygenic scores using the Zarr-based engine.
 homepage: https://github.com/PGScatalog/pygscatalog/
 ---
 
@@ -8,52 +8,51 @@ homepage: https://github.com/PGScatalog/pygscatalog/
 # pgscatalog.calc
 
 ## Overview
-The `pgscatalog.calc` package provides specialized tools for the final stages of polygenic score application. While other components of the suite handle downloading and matching, this skill focuses on the computational execution of scores and the statistical adjustment of those scores based on genetic ancestry. It introduces a high-performance Zarr-based workflow (`pgsc_calc`) for handling large-scale genomic data efficiently and provides utilities to merge results across split genomic files.
 
-## Installation
-Install the package via bioconda or pip:
-```bash
-conda install bioconda::pgscatalog.calc
-# OR
-pip install pgscatalog.calc
-```
+The `pgscatalog.calc` package provides specialized tools for the final stages of polygenic score calculation and refinement. While other components of the suite handle downloading and matching, this package focuses on the mathematical execution: aggregating results from genomic segments, adjusting scores to account for genetic ancestry (normalization), and providing a high-performance scoring engine that uses the Zarr format for efficient data handling. It is designed to work seamlessly with outputs from `pgscatalog.match` and is a core component of the PGS Catalog Calculator workflow.
 
-## Core CLI Workflows
+## CLI Usage and Best Practices
 
-### 1. High-Performance Scoring (Zarr Workflow)
-For large datasets, use the two-step `pgsc_calc` process which converts genomic data to an optimized Zarr format before scoring.
+### 1. Aggregating Calculated Scores
+When scores are calculated across multiple chromosomes or genomic chunks, use `pgscatalog-aggregate` to combine them into a single final report.
 
-**Step A: Load and Index**
-Convert VCF or BGEN files into a compressed Zarr archive:
-```bash
-pgsc_calc load --input target_genotypes.vcf.gz --output genotypes.zarr.zip
-```
+*   **Basic Pattern**:
+    `pgscatalog-aggregate --scores <score_file1> <score_file2> -o aggregated_scores.txt`
+*   **Expert Tip**: Use the `--verify_variants` flag to ensure that the variants in your scoring files perfectly match the variants used during the scoring step. This prevents silent errors where missing variants might lead to underestimated scores.
 
-**Step B: Calculate Scores**
-Execute the calculation using the prepared Zarr archive and a matched scoring file:
-```bash
-pgsc_calc score --zarr genotypes.zarr.zip --scorefile matched_scores.txt.gz --output results.txt.gz
-```
+### 2. Genetic Ancestry Adjustment
+To make polygenic scores comparable across different populations, use `pgscatalog-ancestry-adjust`. This tool performs normalization (e.g., calculating Z-scores or percentiles) based on genetic ancestry.
 
-### 2. Aggregating Results
-If scores were calculated per-chromosome or across multiple batches, use `pgscatalog-aggregate` to combine them into a single dataset:
-```bash
-pgscatalog-aggregate --input score_file_1.txt score_file_2.txt --output combined_scores.txt.gz
-```
+*   **Workflow**:
+    1.  Provide the calculated PGS.
+    2.  Provide genetic ancestry data (typically PCA projections).
+    3.  Run the adjustment to produce normalized outputs.
+*   **Key Feature**: It supports adjusting averages and distributions to mitigate the bias often found in PGS when applied to non-European populations.
 
-### 3. Genetic Ancestry Adjustment
-To normalize scores and account for ancestry-driven variation, use the adjustment tool. This typically requires a reference distribution or principal components (PCs):
-```bash
-pgscatalog-ancestry-adjust --scorefile combined_scores.txt.gz --pcs samples_pcs.txt --output adjusted_scores.txt.gz
-```
+### 3. High-Performance Scoring (Zarr Engine)
+For large-scale datasets, `pgscatalog.calc` introduces the `pgsc_calc` command, which uses an optimized Zarr-based backend.
 
-## Expert Tips and Best Practices
-- **Handling Ambiguous Variants**: When running `pgsc_calc score`, use the `--keep_ambiguous` or `--keep_multiallelic` flags if your research design requires including variants that are typically filtered out for strand-ambiguity or complexity.
-- **Memory Efficiency**: The Zarr-based `pgsc_calc` workflow is significantly more memory-efficient than traditional text-based processing. Always prefer `pgsc_calc load` for datasets exceeding a few hundred samples.
-- **Input Validation**: Ensure your scoring files have been processed by `pgscatalog-match` before attempting calculation, as `pgscatalog.calc` expects variants to be pre-aligned to the target genome.
-- **Parallelization**: When working with biobank-scale data, run `pgsc_calc load` per chromosome in parallel, then aggregate the final scores.
+*   **Loading Data**:
+    `pgsc_calc load --vcf <input.vcf.gz> --zarr <output.zarr.zip>`
+    This converts standard genomic formats (VCF/BGEN) into an indexed, compressed Zarr archive optimized for rapid scoring.
+*   **Calculating Scores**:
+    `pgsc_calc score --zarr <input.zarr.zip> --scoring_file <formatted_score.txt> -o results.txt`
+    This executes the actual matrix multiplication between genotypes and effect weights.
+
+### 4. Implementation Tips
+*   **Sample IDs**: The tool automatically handles Family IDs (FIDs) and Individual IDs (IIDs). If FIDs are available in your input data, they will be used to ensure unique sample identification.
+*   **Memory Efficiency**: When working with large cohorts, prefer the `pgsc_calc load/score` workflow over traditional text-based processing to reduce memory overhead and execution time.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pgscatalog-aggregate | Aggregate plink .sscore files into a combined TSV table. |
+| pgscatalog-ancestry-adjust | Program to analyze ancestry outputs of the pgscatalog/pgsc_calc pipeline. Current inputs:    - PCA projections from reference and target datasets (*.pcs)    - calculated polygenic scores (e.g. aggregated_scores.txt.gz),    - information about related samples in the reference dataset (e.g. deg2_hg38.king.cutoff.out.id). |
 
 ## Reference documentation
-- [pgscatalog.calc Overview](./references/anaconda_org_channels_bioconda_packages_pgscatalog.calc_overview.md)
-- [pygscatalog Repository Main](./references/github_com_PGScatalog_pygscatalog.md)
-- [pygscatalog Version Tags and CLI Flags](./references/github_com_PGScatalog_pygscatalog_tags.md)
+- [pgscatalog.calc README](./references/github_com_PGScatalog_pygscatalog_blob_main_pgscatalog.utils_packages_pgscatalog.calc_README.md)
+- [pygscatalog Main README](./references/github_com_PGScatalog_pygscatalog_blob_main_README.md)
+- [pygscatalog Changelog](./references/github_com_PGScatalog_pygscatalog_blob_main_CHANGELOG.md)

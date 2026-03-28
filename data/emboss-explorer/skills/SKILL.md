@@ -1,61 +1,96 @@
 ---
 name: emboss-explorer
-description: EMBOSS is a comprehensive suite of bioinformatics tools for sequence analysis, alignment, and database searching. Use when user asks to align sequences, search databases, identify protein motifs, analyze nucleic acids, or perform restriction mapping.
+description: emboss-explorer provides a comprehensive suite of bioinformatics tools for sequence manipulation, alignment, and molecular biology data analysis. Use when user asks to retrieve or convert sequence formats, perform local or global alignments, analyze protein properties, or configure bioinformatics databases.
 homepage: http://emboss.open-bio.org/
 ---
 
 
 # emboss-explorer
 
+# emboss-explorer
+
 ## Overview
-EMBOSS is a comprehensive, open-source suite of over 200 command-line applications designed for molecular biology and bioinformatics. It provides a unified interface for tasks such as sequence alignment, database searching, protein motif identification, and nucleic acid analysis. This skill enables efficient interaction with the suite by leveraging its consistent command-line syntax, automatic format detection, and powerful sequence addressing system.
+EMBOSS is a comprehensive, open-source suite of over 400 bioinformatics tools designed to handle a wide array of molecular biology data. This skill enables the effective use of EMBOSS applications through the command line, providing procedural knowledge for sequence manipulation, database indexing, and environment configuration. It transforms a general agent into a specialized bioinformatics technician capable of navigating the AJAX/NUCLEUS libraries and the extensive application set.
 
-## Usage Instructions
+## Core CLI Usage Patterns
 
-### 1. Environment Verification
-Before running analysis, ensure the EMBOSS environment is correctly configured.
-- **Check Version**: Run `embossversion` to verify the installation and current version (e.g., 6.6.0).
-- **Pathing**: Ensure the EMBOSS binaries (typically in `/usr/local/emboss/bin` or a conda path) are in your `PATH`.
-- **Data Files**: If using restriction mapping or motif tools, ensure data files are initialized using extraction tools:
-  - `rebaseextract` (Restriction enzymes)
-  - `aaindexextract` (Amino acid indices)
-  - `prosextract` (PROSITE patterns)
+### Sequence Retrieval and Conversion
+The `seqret` tool is the primary utility for reading and writing sequences between different formats.
 
-### 2. Command Line Syntax
-All EMBOSS tools follow a consistent AJAX Command Definition (ACD) pattern.
-- **Standard Pattern**: `toolname -parameter1 value1 -parameter2 value2`
-- **Validation**: EMBOSS automatically validates inputs against the tool's ACD file. If a required parameter is missing, the tool will prompt for it interactively.
-- **Help**: Use the `-help` global qualifier with any tool to see available parameters and descriptions.
+*   **Basic Retrieval**: `seqret <database>:<entry>`
+    *   Example: `seqret embl:x65923`
+*   **Format Conversion**: Use the `-osformat` qualifier to specify output formats (e.g., fasta, embl, genbank).
+    *   Example: `seqret swissprot:p01234 -osformat fasta -outseq p01234.fasta`
+*   **Handling Multiple Sequences**: To write sequences to individual files instead of a single stream, use the `ossingle` qualifier.
 
-### 3. Uniform Sequence Address (USA)
-The USA is the standard way to specify sequence inputs. It allows you to point to files, database entries, or specific sequences within a multi-sequence file.
-- **Syntax**: `format::path/to/file:entryname`
-- **Examples**:
-  - `fasta::myseq.fa` (Specific format and file)
-  - `sw:pep_human` (Entry from a defined database)
-  - `asis::atgc...` (Raw sequence string)
-- **Automatic Detection**: EMBOSS can usually detect the format automatically if the prefix is omitted, but specifying it (e.g., `genbank::file.gb`) improves efficiency.
+### Sequence Alignment
+*   **Local Alignment (Waterman-Smith)**: Use `water`.
+    *   Example: `water -asequence seq1.fa -bsequence seq2.fa -gapopen 10.0 -gapextend 0.5 -outfile align.water`
+*   **Global Alignment (Needleman-Wunsch)**: Use `needle`.
+*   **Forcing Sequence Type**: If a short protein sequence is mistaken for nucleic acid, use the `-protein` or `-nucleic` switch.
 
-### 4. Handling File Formats
-EMBOSS is format-agnostic and can read/write most common bioinformatics formats (FASTA, GenBank, EMBL, GCG, etc.).
-- **Input**: Use the `-sformat` qualifier to force an input format if auto-detection fails.
-- **Output**: Use the `-osformat` qualifier to specify the output format for sequences.
-- **Reports**: Many tools produce report files. Use `-rformat` to change the report style (e.g., `excel`, `table`, `gff`).
+### Protein Analysis
+*   **Antigenic Sites**: `antigenic -sequence prot.fa -minlen 6`
+*   **Charge Plots**: `charge -sequence prot.fa`
+*   **Helical Wheel Plots**: `pepwheel -sequence prot.fa -steps 18 -turns 5`
 
-### 5. Global Qualifiers
-These qualifiers work across almost all EMBOSS applications:
-- `-auto`: Turns off interactive prompting; uses defaults for any non-specified required parameters.
-- `-stdout`: Directs the primary output to the standard output stream.
-- `-filter`: Allows the tool to act as a UNIX pipe (reads from stdin, writes to stdout).
-- `-options`: Prompts for all optional parameters, not just required ones.
+## Database Configuration (.embossrc)
 
-### 6. Tool Discovery
-If the specific tool name is unknown, use the following logic based on the suite's organization:
-- **Groups**: Tools are organized by function (e.g., EDIT, ALIGNMENT, NUCLEIC, PROTEIN).
-- **Documentation**: Refer to the "EMBOSS Apps A-Z" or functional groups to identify the correct utility for a specific biological question.
+To use databases like EMBL or SwissProt, they must be defined in a `.embossrc` file (user-level) or `emboss.default` (site-level).
+
+### Definition Syntax
+```text
+DB <database_name>
+[
+    type: <N for nucleic, P for protein>
+    method: direct
+    format: <format_type>
+    dir: <path_to_data>
+    file: <filename_pattern>
+    comment: "Description"
+]
+```
+
+### Testing Definitions
+Use `showdb` to verify that EMBOSS recognizes your configured databases.
+
+## Environment Variables
+EMBOSS relies on specific environment variables to locate data and documentation:
+
+*   **PATH**: Must include the EMBOSS `bin` directory (e.g., `/usr/local/emboss/bin`).
+*   **EMBOSS_DATA**: Directory for finding data files (e.g., matrices, codon tables).
+*   **EMBOSS_ACDROOT**: Directory containing `.acd` files which define application parameters.
+*   **EMBOSS_GRAPHICS**: Default device for visual output (e.g., `png`, `postscript`, `x11`).
+
+## Expert Tips for Tool Integration
+
+### ACD File Validation
+Before developing new wrappers or scripts, validate the application's Ajax Command Definition (ACD) file:
+*   `acdc <application>`: Tests the ACD file.
+*   `acdvalid <application>`: Validates the syntax of the ACD file.
+*   `acdpretty <application>`: Reformats the ACD file for readability.
+
+### Non-Interactive Execution
+For automated workflows, use the `-auto` qualifier to suppress interactive prompts and use default values for all optional parameters.
+
+### Debugging
+If an application fails or produces unexpected results:
+*   Use `-debug` to generate a `.dbg` file containing detailed execution traces.
+*   Check `embossversion` to ensure the environment is correctly linked to the expected library versions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| emboss-explorer_aaindexextract | Extract amino acid property data from AAINDEX |
+| emboss-explorer_prosextract | Process the PROSITE motif database for use by patmatmotifs |
+| emboss-explorer_rebaseextract | Process the REBASE database for use by restriction enzyme applications |
+| embossversion | Report the current EMBOSS version number |
 
 ## Reference documentation
-- [EMBOSS Key Features](./references/emboss_open-bio_org_html_use_ch01s03.html.md)
-- [Post-installation and Data Setup](./references/emboss_open-bio_org_html_adm_ch01s06.html.md)
-- [Introduction to EMBOSS](./references/emboss_open-bio_org_html_use_pr02s01.html.md)
-- [EMBOSS Homepage Overview](./references/emboss_open-bio_org_index.md)
+- [EMBOSS Frequently Asked Questions](./references/emboss_open-bio_org_html_adm_apb.html.md)
+- [Post-installation of EMBOSS](./references/emboss_open-bio_org_html_adm_ch01s06.html.md)
+- [EMBOSS Applications (release R6)](./references/emboss_open-bio_org_html_use_apbs04.html.md)
+- [Installation of CVS (Developers) Release](./references/emboss_open-bio_org_html_dev_ch01s02.html.md)

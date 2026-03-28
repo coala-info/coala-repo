@@ -1,6 +1,6 @@
 ---
 name: plannotate
-description: pLannotate is a specialized tool designed to annotate features and components within engineered plasmid sequences. Use when user asks to annotate synthetic DNA constructs, generate plasmid maps, or identify genetic parts in circular and linear sequences.
+description: pLannotate automatically annotates engineered genetic constructs and plasmids to identify functional features like promoters and markers. Use when user asks to annotate DNA sequences, generate interactive plasmid maps, create GenBank files, or identify features in synthetic DNA fragments.
 homepage: https://github.com/barricklab/pLannotate
 ---
 
@@ -8,66 +8,56 @@ homepage: https://github.com/barricklab/pLannotate
 # plannotate
 
 ## Overview
-pLannotate is a specialized tool designed to streamline the annotation of engineered plasmids. Unlike general-purpose genomic annotators, it focuses on the components typically found in synthetic DNA constructs. It can be used as a command-line tool for batch processing, a local web-based GUI via Streamlit, or integrated directly into Python bioinformatics pipelines. This skill provides the necessary patterns to execute these annotations efficiently and interpret the results.
+pLannotate is a specialized tool designed for the automated annotation of engineered genetic constructs, particularly plasmids. It bridges the gap between raw sequence data and functional maps by identifying common features like promoters, antibiotic resistance markers, origins of replication, and tags. You should use this skill to streamline the characterization of synthetic DNA, ensure consistent feature naming, and produce visualization-ready files for molecular biology workflows.
 
 ## Installation and Setup
-Before first use, the database must be initialized.
+Before first use, the local database must be initialized:
 ```bash
-# Install via bioconda
-conda install bioconda::plannotate
-
-# Essential: Download and setup the annotation databases
 plannotate setupdb
 ```
 
-## Command Line Interface (Batch Mode)
-The `batch` command is the primary method for annotating sequence files.
+## Command Line Usage
+The primary interface for processing sequences is the `batch` command.
 
 ### Basic Annotation
-Annotate a sequence and generate a standard GenBank file:
+To annotate a sequence and generate a standard GenBank file:
 ```bash
 plannotate batch -i sequence.fasta -o ./output_folder
 ```
 
-### Generating Visual and Tabular Reports
-To get an interactive plasmid map and a spreadsheet of features:
+### Generating Visual Maps
+To create an interactive HTML plasmid map alongside the GenBank file:
 ```bash
-plannotate batch -i sequence.gbk --html --csv --file_name my_plasmid
+plannotate batch -i sequence.fasta --html
 ```
 
-### Handling Linear DNA
-By default, pLannotate assumes circular topology. For linear fragments or PCR products:
+### Handling Linear Fragments
+If the input is a linear DNA fragment (e.g., a PCR product or synthetic block) rather than a circular plasmid, use the `--linear` flag to prevent the tool from searching for features that wrap around the sequence ends:
 ```bash
-plannotate batch -i fragment.fa --linear
+plannotate batch -i fragment.fasta --linear --html
 ```
 
-### Sensitivity Tuning
-If standard annotation misses expected features, use the detailed mode. Note that this increases the likelihood of false positives:
+### High-Sensitivity Search
+For sequences where standard annotation might miss truncated or divergent features, use the detailed mode. Note that this increases the likelihood of false positives:
 ```bash
-plannotate batch -i sequence.fa --detailed
-```
-
-## Python API Usage
-For integration into custom scripts, use the `annotate` module.
-
-```python
-from plannotate.annotate import annotate
-from plannotate.resources import get_seq_record
-
-seq = "ATGC..." # Your DNA string
-
-# Perform annotation
-hits = annotate(seq, is_detailed=True, linear=False)
-
-# Convert hits to a Biopython SeqRecord
-seq_record = get_seq_record(hits, seq)
+plannotate batch -i sequence.fasta --detailed
 ```
 
 ## Expert Tips
-- **Output Suffixes**: By default, pLannotate appends `_pLann` to output files. Use `-s ''` to disable this behavior if you require strict naming conventions.
-- **GUI Access**: If you prefer a visual interface for single-file uploads, run `plannotate streamlit` to launch a local web server at `http://localhost:8501`.
-- **Database Customization**: You can generate a template for custom databases using `plannotate yaml > config.yaml`. While this skill focuses on CLI usage, this command is the entry point for advanced users needing to point the tool at proprietary feature sets.
+- **Output Control**: By default, pLannotate appends `_pLann` to output files. Use `-s ''` to disable this suffix or `-f custom_name` to specify a completely different filename.
+- **Data Extraction**: Use the `--csv` flag to generate a spreadsheet of all identified hits, which is useful for programmatic analysis of feature coordinates and identities.
+- **Python Integration**: For complex workflows, pLannotate can be imported directly into Python scripts using `from plannotate.annotate import annotate` to return a Pandas DataFrame of hits.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| plannotate batch | Annotates engineered DNA sequences, primarily plasmids. Accepts a FASTA or GenBank file and outputs a GenBank file with annotations, as well as an optional interactive plasmid map as an HTLM file. |
+| plannotate_yaml | Annotates sequences with information from various databases. |
+| streamlit | Launches pLannotate as an interactive web app. |
 
 ## Reference documentation
-- [pLannotate GitHub Repository](./references/github_com_barricklab_pLannotate.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_plannotate_overview.md)
+- [pLannotate README](./references/github_com_barricklab_pLannotate_blob_master_README.md)
+- [pLannotate Repository Overview](./references/github_com_barricklab_pLannotate.md)

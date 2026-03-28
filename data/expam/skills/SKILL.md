@@ -1,6 +1,6 @@
 ---
 name: expam
-description: expam is a computational tool for high-resolution metagenomic profiling that maps sequencing reads to phylogenetic trees. Use when user asks to build genomic databases, perform tree-based metagenomic profiling, map results to NCBI taxonomy, or visualize microbial community distributions.
+description: expam performs taxonomic and phylogenetic characterization of metagenomic samples using phylogeny-aware mapping. Use when user asks to characterize metagenomic samples, map reads to taxonomic lineages, generate phylogenetic trees, or convert phylogenetic results into taxonomic summaries.
 homepage: https://github.com/seansolari/expam
 ---
 
@@ -8,55 +8,86 @@ homepage: https://github.com/seansolari/expam
 # expam
 
 ## Overview
-`expam` is a computational tool designed for high-resolution metagenomic profiling. Unlike traditional methods that rely solely on k-mer matches or Lowest Common Ancestor (LCA) approaches, `expam` leverages phylogenetic trees to provide a more accurate representation of microbial communities. It maps sequencing reads to nodes within a reference phylogeny, allowing for both phylogenetic and taxonomic interpretations of the data. It is particularly useful for researchers who need to manage large-scale genomic databases and require deterministic, tree-based classification.
+
+expam (Extended Phylogeny-Aware Metagenomics) is a specialized tool for the taxonomic and phylogenetic characterization of metagenomic samples. Unlike traditional classifiers that rely solely on taxonomic labels, expam utilizes phylogenetic trees to provide more nuanced mapping, distinguishing between single-leaf (SL) and multi-leaf (ML) assignments. It is particularly useful for researchers needing to reconcile metagenomic reads with specific NCBI taxonomic lineages or custom phylogenetic structures.
 
 ## Installation and Setup
-The recommended way to install `expam` is via Conda to ensure all dependencies, including the ETE3 toolkit for visualization, are correctly managed.
+
+The recommended installation method is via Bioconda to ensure all C-extensions and dependencies (like HDF5) are correctly linked.
 
 ```bash
-# Recommended installation with visualization support
+# Recommended installation with ETE3 for tree plotting
 conda create -n expam -c conda-forge -c bioconda -c etetoolkit expam ete3
-
-# Basic installation without ETE3
-conda create -n expam -c conda-forge -c bioconda expam
 ```
 
-## Core Workflows and CLI Patterns
+**Critical Version Note**: Ensure you are using version 1.4.0.0 or higher. Previous versions contained a critical bug regarding "environmental samples" in the NCBI taxonomy mapping.
 
-### 1. Database Construction
-When building a database, `expam` requires an `accession_ids.csv` file. 
-*   **Critical Step**: After a successful database build, you must manually specify Taxonomic IDs in the third column of the `accession_ids.csv` file to enable taxonomic mapping.
+## Common CLI Patterns
 
-### 2. Metagenomic Profiling
-Profiling generates counts for sequences mapped to the phylogeny.
-*   **Filtering**: Use the `--cpm` (counts per million) flag to apply automated cutoffs. Note that the older `--cutoff` flag has been deprecated.
-*   **Output**: The tool produces sample summaries that combine Single-Lineage (SL) and Multi-Lineage (ML) counts into a 'total' counts column.
+### Database Management
+After a successful database build, you must manually specify Taxonomic IDs for input sequences.
+- Locate `accession_ids.csv` in your database directory.
+- Fill the third column with the appropriate NCBI TaxIDs.
 
-### 3. Taxonomic Mapping
-If you have phylogenetic results and need to convert them to standard NCBI taxonomy:
+### Classification and Mapping
+To convert phylogenetic results into taxonomic summaries:
 ```bash
-expam to_taxonomy <input_results>
+expam to_taxonomy <project_name>
 ```
-*   **Note**: Ensure you are using version 1.4.0.0 or higher, as earlier versions had bugs related to "environmental samples" in the NCBI taxonomy.
 
-### 4. Visualization
-`expam` can generate phylogenetic trees of your results.
-*   **ETE3 Integration**: Use the `expam tree` command to create plots.
-*   **iTOL Support**: Use the `--itol` flag to generate files compatible with the Interactive Tree of Life web tool.
-*   **Scaling**: Use `--log-scale` for better visualization of samples with high dynamic range in abundance.
-
-### 5. Distance Matrix Calculation
-For comparative metagenomics, `expam` integrates with Sourmash:
+### Phylogenetic Analysis
+To generate or interact with phylogenetic trees, especially when using Sourmash signatures:
 ```bash
-expam tree ... --sourmash
+expam tree <project_name> --sourmash
 ```
-*   Ensure your signatures file is present before running, as the tool checks for this file to calculate distance matrices.
+
+### Filtering and Cutoffs
+As of version 1.2, the `--cutoff` flag has been deprecated. Use Counts Per Million (CPM) for automated filtering:
+```bash
+# Apply a CPM-based cutoff to sample outputs
+expam <command> --cpm <value>
+```
 
 ## Expert Tips and Best Practices
-*   **Memory Management**: For large databases, use the `expam_limit` utility to prevent the system OOM (Out of Memory) killer from terminating processes. Avoid using an excessively high number of processes on memory-constrained systems.
-*   **Taxonomy Updates**: `expam` now uses ETE3 to interface with the NCBI taxonomy. If your taxonomic outputs seem inconsistent, verify your ETE3 database is up to date.
-*   **Unique K-mers**: Use the included `CountUniqueKmers.py` script in the `scripts/` directory to analyze the uniqueness of k-mers within your reference set before running full profiles.
+
+### Memory Management (OOM Prevention)
+expam makes extensive use of shared memory (`/dev/shm`). On high-core systems, using too many processes can trigger the OOM (Out Of Memory) killer.
+- **Process Limit**: For large databases on high-memory machines, stick to 10–30 processes.
+- **Resource Limiting**: Use the `expam_limit` utility to set hard bounds on memory consumption.
+- **Shared Memory Check**: If the program crashes ungracefully, check for orphaned shared memory segments using `df -h /dev/shm`.
+
+### Troubleshooting ETE3/Qt
+If you encounter `ImportError: cannot import name 'NodeStyle'`, it is usually a Qt5 linking issue.
+- **Mac**: Install `qt5` via brew and then install the matching `pyqt5` version via pip (e.g., `pip install pyqt5==5.15` if brew installed 5.15.x).
+- **Linux**: Install `qt5-default` via apt and match the `pyqt5` pip package to the system version.
+
+### Output Interpretation
+- **SL vs. ML**: Single-leaf (SL) counts represent unique assignments, while Multi-leaf (ML) counts represent assignments to internal nodes (uncertainty).
+- **Total Counts**: Version 1.4+ includes a 'total' column that combines SL and ML counts for a simplified view.
+- **Cumulative Summaries**: expam generates summary files that combine all samples into a single table after accumulation and cutoffs are applied.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| add | Add sequence to the database. |
+| build | Start building database. |
+| create | Initialise database. |
+| cutoff | Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS! |
+| download_taxonomy | Download taxonomic information for reference sequences. |
+| draw_tree | Draw the reference tree. |
+| make_reads | Uniformly sample reads of length l from some input sequence. This is for testing purposes only, and is not a replacement for actual read generating software. |
+| mashtree | Create mashtree from current sequences and add to database. |
+| phylotree | Draw results on phylotree. |
+| print | Print current database parameters. |
+| quickrun | Initialise, set parameters and start building db (assumes sequences all lie in the same folder). |
+| remove | Remove sequence from database (only impacts future db builds). |
+| run | Run reads against database. |
+| set | Set database build parameters. |
+| to_taxonomy | Convert results to taxonomic setting. |
 
 ## Reference documentation
-- [expam - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_expam_overview.md)
-- [GitHub - seansolari/expam](./references/github_com_seansolari_expam.md)
+- [expam GitHub README](./references/github_com_seansolari_expam_blob_main_README.md)
+- [expam Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_expam_overview.md)

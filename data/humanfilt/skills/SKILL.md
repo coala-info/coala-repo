@@ -1,6 +1,6 @@
 ---
 name: humanfilt
-description: humanfilt removes human contaminant reads from sequencing data by running a sequential pipeline of decontamination tools against multiple reference genomes. Use when user asks to remove human DNA from metagenomics or pathogen sequencing data, filter sequencing reads, or setup human reference databases for decontamination.
+description: humanfilt removes human DNA and RNA contaminants from sequencing datasets through a multi-step taxonomic and alignment pipeline. Use when user asks to remove human reads from metagenomic data, decontaminate pathogen sequences, or filter human DNA from non-human model organism datasets.
 homepage: https://github.com/jprehn-lab/humanfilt
 ---
 
@@ -9,55 +9,81 @@ homepage: https://github.com/jprehn-lab/humanfilt
 
 ## Overview
 
-`humanfilt` is a specialized bioinformatics utility designed to streamline the removal of human "contaminant" reads from sequencing data. It automates the complex process of downloading and indexing multiple human reference genomes and running a sequential pipeline of tools—including Kraken2, Trim Galore, FastUniq, BBDuk, BWA, Bowtie2, and Minimap2—to ensure maximum decontamination. This tool is essential for researchers working on metagenomics, pathogen sequencing, or non-human model organisms where human DNA interference must be minimized.
+The `humanfilt` tool is a specialized bioinformatics utility designed to remove human DNA/RNA contaminants from sequencing datasets. It is particularly useful for researchers working on metagenomics, pathogen sequencing, or non-human model organisms where human read carryover can bias results. The tool automates a complex seven-step pipeline—including taxonomic classification, quality trimming, de-duplication, and multiple rounds of alignment against various human reference genomes—to ensure maximum decontamination efficiency.
 
-## Installation and Initial Setup
+## Installation and Setup
 
-Before running the pipeline, the environment must be configured and reference databases must be cached.
+Before running the pipeline, the environment must be configured and reference databases must be cached locally.
 
-1.  **Install via Conda**:
+1.  **Environment Creation**: Use Conda to install the tool and its dependencies.
     ```bash
     conda create -n hf -y -c conda-forge -c bioconda humanfilt=1.0.0
     conda activate hf
     ```
 
-2.  **Initialize Databases**:
-    Run the setup command once to download and index GRCh38, T2T, HPRC, UniVec, and Kraken2 human databases.
+2.  **Database Initialization**: Run the setup command once to download and index approximately 5 human references and the Kraken2 database.
     ```bash
     humanfilt setup
     ```
-    *Note: By default, data is stored in `~/.local/share/humanfilt`. Use `--data-dir <path>` to change this location.*
+    *Note: By default, data is stored in `~/.local/share/humanfilt`. Use `--data-dir <PATH>` to change this location.*
 
 ## Core Usage Patterns
 
 ### Standard WGS Decontamination
-For paired-end WGS data, use the following pattern:
+For paired-end WGS data, use the `run` command with the `wgs` mode.
 ```bash
 humanfilt run \
   --mode wgs \
-  --input /path/to/paired_fastqs \
-  --output /path/to/output_dir \
-  --report /path/to/summary_report.csv \
+  --input /path/to/fastqs \
+  --output /path/to/clean_output \
+  --report /path/to/decon_report.csv \
   --threads 16
 ```
 
 ### Customizing Quality Control
-If the default trimming parameters (Phred 20, length 20) are too lenient or strict for your specific library prep:
+You can adjust the stringency of the initial trimming step (Trim Galore) to suit specific library qualities.
 ```bash
 humanfilt run --mode wgs \
-  --input <input> --output <output> \
+  --input ./raw_data \
+  --output ./filtered_data \
   --trim-quality 25 \
-  --trim-length 35
+  --trim-length 30
 ```
 
-## Expert Tips and Best Practices
+### High-Performance Execution
+The tool auto-detects CPU counts, but for shared HPC environments, explicitly define thread usage and skip the auto-setup check to save time.
+```bash
+humanfilt run --mode wgs \
+  --input ./input \
+  --output ./output \
+  --threads 24 \
+  --no-auto-setup
+```
 
-*   **HPC and Cluster Environments**: When running on compute nodes without internet access, ensure `humanfilt setup` is run on a login node first. Use the `--no-auto-setup` flag in your batch scripts to prevent the tool from attempting to check for updates or downloads during the run.
-*   **Thread Management**: The tool auto-detects CPU counts. However, in shared environments or SLURM jobs, explicitly set `--threads` to match your allocated resources to avoid over-subscription.
-*   **Disk Space**: The pipeline generates several intermediate files. If you are low on space, do NOT use `--keep-temp`. If you need to debug a failed run, `--keep-temp` will preserve per-sample logs and intermediate BAMs.
-*   **Custom Kraken2 Databases**: If you have a pre-existing Kraken2 human database, you can bypass the default one using `--kraken2-db /path/to/db`.
-*   **Environment Variables**: You can set `HUMANFILT_ZENODO_RECORD` to point to specific versions of the reference data if your study requires strict version pinning for reproducibility.
+## Pipeline Steps Reference
+When interpreting reports or troubleshooting, remember the internal execution order:
+1.  **Kraken2**: Initial taxonomic filtering (keeps unclassified).
+2.  **Trim Galore**: Quality and adapter trimming.
+3.  **FastUniq**: De-duplication of reads.
+4.  **BBDuk**: UniVec contaminant screening.
+5.  **BWA**: Alignment against GRCh38 (keeps unmapped).
+6.  **Bowtie2**: Alignment against T2T-CHM13 (keeps unmapped).
+7.  **Minimap2**: Alignment against HPRC (keeps unmapped) to produce final FASTQs.
+
+## Expert Tips
+*   **Disk Space**: Ensure the partition containing the cache directory has sufficient space (several dozen GBs) for the indexed human pangenomes and Kraken2 databases.
+*   **Debugging**: If a run fails, use the `--keep-temp` flag to inspect per-sample logs and intermediate files within the temporary directories.
+*   **Reports**: Always specify a `--report` path. This CSV is the primary way to track how many reads were lost at each specific decontamination step (e.g., how many reads were specifically caught by the T2T vs. GRCh38 alignment).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| humanfilt run | Run humanfilt |
+| humanfilt setup | Setup humanfilt references. |
 
 ## Reference documentation
-- [humanfilt Overview](./references/anaconda_org_channels_bioconda_packages_humanfilt_overview.md)
-- [humanfilt GitHub Repository](./references/github_com_jprehn-lab_humanfilt.md)
+- [Humanfilt GitHub README](./references/github_com_jprehn-lab_humanfilt_blob_main_README.md)
+- [Project Metadata](./references/github_com_jprehn-lab_humanfilt_blob_main_pyproject.toml.md)

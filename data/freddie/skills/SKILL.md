@@ -1,6 +1,6 @@
 ---
 name: freddie
-description: Freddie is an annotation-free tool that detects and discovers alternative splicing isoforms from transcriptomic long-reads aligned to a reference genome. Use when user asks to identify novel transcripts, perform isoform discovery without a GTF file, or generate consensus isoforms from long-read alignments.
+description: Freddie is a bioinformatics pipeline that discovers transcriptomic isoforms from long-read sequencing data without requiring a reference annotation. Use when user asks to partition alignments, segment read sets, cluster reads using Gurobi optimization, or generate consensus isoforms in GTF format.
 homepage: https://github.com/vpc-ccg/freddie
 ---
 
@@ -9,59 +9,56 @@ homepage: https://github.com/vpc-ccg/freddie
 
 ## Overview
 
-Freddie is an annotation-free isoform detection and discovery tool designed for transcriptomic long-reads. It identifies alternative splicing isoforms by analyzing reads aligned to a reference genome. Unlike many other tools, Freddie does not require a prior annotation file (GTF/GFF) to guide the discovery process, making it ideal for identifying novel transcripts or working with poorly annotated genomes. The pipeline transforms raw alignments into a set of consensus isoforms in GTF format through a four-stage computational process.
+Freddie is a specialized bioinformatics pipeline designed to discover transcriptomic isoforms from long-read sequencing data. Unlike many other tools, it does not require a reference annotation file (GTF/GFF) to guide the discovery process. It works by partitioning alignments into independent sets, segmenting them to find canonical breakpoints, clustering reads based on these segments using the Gurobi optimization solver, and finally generating consensus isoforms. This skill provides the procedural knowledge required to execute the four primary stages of the Freddie workflow via its native Python CLI.
 
-## Usage Instructions
+## Execution Workflow
 
-### 1. Pre-processing
-Before running Freddie, reads must be aligned to the reference genome using a splice-aware aligner (e.g., `minimap2` or `deSALT`) and the resulting SAM file must be sorted and indexed.
+The Freddie pipeline consists of four sequential stages. Before starting, ensure your input SAM file is sorted and indexed.
 
+### 1. Split (Partitioning)
+Partitions reads into independent genomic sets to allow for parallel processing.
 ```bash
-# Example alignment with minimap2
-minimap2 -a -x splice -t {threads} {genome.fasta} {reads.fastq} > aligned.sam
-
-# Sort and index
-samtools sort aligned.sam -o sorted.bam
-samtools index sorted.bam
+python py/freddie_split.py --reads [reads.fastq] --bam [sorted.bam] --outdir [split_dir] --threads [t]
 ```
 
-### 2. Pipeline Stages
-
-#### Split (Partitioning)
-Partitions the reads into independent sets for parallel processing.
+### 2. Segment
+Computes canonical segmentation for each read set.
 ```bash
-python py/freddie_split.py --reads {reads.fastq} --bam {sorted.bam} --outdir {split_dir} -t {threads}
+python py/freddie_segment.py --split-dir [split_dir] --outdir [segment_dir] --threads [t]
 ```
+*   **Expert Tip**: Adjust `--sigma` (default 5.0) if you have extremely high or low coverage to refine the Gaussian filter used for breakpoint detection.
 
-#### Segment (Canonical Segmentation)
-Computes the segmentation for each read set.
+### 3. Cluster
+Clusters reads using their segmentation representation. This stage requires a Gurobi license.
 ```bash
-python py/freddie_segment.py -s {split_dir} --outdir {segment_dir} -t {threads}
-```
-*   **Key Parameter**: `--sigma` (Default: 5.0). Adjust the Gaussian filter standard deviation if breakpoint detection is too sensitive or too coarse.
-
-#### Cluster (Isoform Clustering)
-Clusters reads based on their segmentation. This stage requires a Gurobi license.
-```bash
-# Set license path
 export GRB_LICENSE_FILE=/path/to/gurobi.lic
-
-python py/freddie_cluster.py --segment-dir {segment_dir} --outdir {cluster_dir} -t {threads}
+python py/freddie_cluster.py --segment-dir [segment_dir] --outdir [cluster_dir] --threads [t]
 ```
-*   **Key Parameter**: `--min-isoform-size` (Default: 3). Minimum read support required to report an isoform.
-*   **Key Parameter**: `--timeout` (Default: 4). Gurobi timeout per isoform in minutes.
+*   **Constraint**: If the optimization takes too long, use `--timeout` (default 4 minutes) to limit the time spent per isoform.
 
-#### Isoforms (GTF Generation)
-Generates the final consensus isoforms.
+### 4. Isoforms
+Generates the final consensus isoforms in GTF format.
 ```bash
-python py/freddie_isoforms.py --split-dir {split_dir} --cluster-dir {cluster_dir} --output {isoforms.gtf} -t {threads}
+python py/freddie_isoforms.py --split-dir [split_dir] --cluster-dir [cluster_dir] --output [isoforms.gtf] --threads [t]
 ```
 
-### 3. Expert Tips
-*   **Gurobi Requirement**: The `cluster` stage is computationally intensive and relies on the Gurobi Solver. Ensure `GRB_LICENSE_FILE` is exported in your environment before execution.
-*   **Parallelization**: Use the `-t` (threads) flag across all stages to significantly reduce processing time, especially during the `split` and `segment` phases.
-*   **Memory Management**: For the `segment` stage, if dealing with extremely high-coverage regions, monitor memory usage; you may need to adjust `--max-problem-size` (Default: 50) to break down large problems.
+## Best Practices and Requirements
+
+*   **Input Alignment**: Use a splice-aware aligner like `minimap2` (with `-x splice`) or `deSALT`. Freddie relies on the quality of these initial splice alignments.
+*   **Gurobi License**: The clustering stage is mathematically intensive and requires the Gurobi Solver. Academic users can obtain a free license from Gurobi's website.
+*   **Environment**: It is recommended to run Freddie within its dedicated Conda environment to ensure all Python dependencies and Gurobi components are correctly linked.
+*   **Parallelization**: Freddie is designed for multi-threading. Always specify the `-t` parameter across all stages to significantly reduce processing time, especially during the Segment and Cluster phases.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| freddie_isoforms.py | Extract alignment information from BAM/SAM file and splits reads into distinct transcriptional intervals |
+| freddie_segment.py | Cluster aligned reads into isoforms |
+| freddie_split.py | Extract alignment information from BAM/SAM file and splits reads into distinct transcriptional intervals |
 
 ## Reference documentation
-- [Freddie GitHub Repository](./references/github_com_vpc-ccg_freddie.md)
-- [Bioconda Freddie Overview](./references/anaconda_org_channels_bioconda_packages_freddie_overview.md)
+- [Freddie README](./references/github_com_vpc-ccg_freddie_blob_master_README.md)
+- [Freddie Output Structure](./references/github_com_vpc-ccg_freddie_blob_master_OUTPUT.md)

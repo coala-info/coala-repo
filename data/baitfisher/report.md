@@ -34,7 +34,7 @@ FAIL to generate CWL: baitfisher not found in Singularity image. The image may n
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## baitfisher_BaitFisher
 

@@ -1,6 +1,6 @@
 ---
 name: yame
-description: YAME efficiently stores and manipulates DNA methylation data. Use when user asks to pack or unpack methylation data, subset or downsample datasets, perform row operations, summarize data, or integrate methylation workflows.
+description: YAME is a toolkit for the efficient storage, compression, and manipulation of DNA methylation data using specialized binary formats. Use when user asks to pack methylation data into CX formats, downsample methylation sites, subset rows, or generate summary statistics for methylation matrices.
 homepage: https://github.com/zhou-lab/YAME
 ---
 
@@ -8,48 +8,61 @@ homepage: https://github.com/zhou-lab/YAME
 # yame
 
 ## Overview
-YAME (Yet Another Methylation Encoder/Extractor) is a high-performance toolkit designed for the efficient storage and manipulation of DNA methylation data. It addresses the challenges of handling massive methylation matrices by introducing compact binary formats (CX formats) stored within BGZF frames. This skill assists in navigating the YAME command-line interface to pack raw data, subset large datasets, perform statistical row operations, and integrate methylation workflows with other genomic tools like bedtools.
 
-## Installation
-Install YAME via bioconda:
+YAME (Yet Another Methylation Encoder) is a specialized toolkit designed for the efficient storage and manipulation of DNA methylation data. It introduces the "CX" family of binary formats, which utilize BGZF compression to store methylation values, MU counts, and genomic coordinates in a uniform structure. It is particularly useful for researchers needing to scale methylation analysis to hundreds of thousands of single cells while maintaining high performance and low storage overhead.
+
+## Core CLI Usage
+
+YAME follows a standard command-line interface pattern where the primary binary `yame` is followed by a specific subcommand.
+
+### Installation
+Install via Bioconda:
 ```bash
 conda install yame -c bioconda
 ```
 
-## Core CLI Operations
-
-### Data Conversion (Packing/Unpacking)
-YAME uses specialized binary formats to achieve high compression and fast access.
-- **Packing**: Convert text-based methylation data into compressed CX formats.
-- **Unpacking**: Extract binary data back into human-readable formats for inspection or downstream processing.
-
-### Subsetting and Filtering
-Use `rowsub` to extract specific genomic regions or subsets of cells/samples.
-- Use the `-f` flag to specify the format version (e.g., format 6 is a common target for recent updates).
-- Subsetting is essential for focusing analysis on specific CpG sites or genomic features.
-
-### Downsampling
-The `dsample` command is used to reduce the depth or size of methylation datasets while preserving biological signals.
-- **Pattern**: `yame dsample -b [input.cx]`
-- Useful for normalizing coverage across different samples or testing pipeline robustness with smaller data slices.
-
-### Row Operations and Statistics
-Perform mathematical or logical operations across rows of the methylation matrix using `rowop`.
-- **Summary Statistics**: `yame rowop -o stat [input.cx]`
-- **Categorical States**: Use row operations to call methylation states or identify differential methylation patterns.
-
-### Data Summarization
-The `summary` command provides a global overview of the methylation landscape within a file.
-- Use this to check data integrity, total CpG counts, and global methylation levels.
-- Note: If encountering segmentation faults in `summary`, ensure the input file is properly indexed and matches the expected CX format version.
+### Primary Subcommands
+- **pack**: Convert raw methylation data into compressed CX binary formats.
+- **unpack**: Extract data from CX formats back into human-readable or downstream-compatible formats.
+- **dsample**: Downsample methylation data (use `-b` for specific downsampling logic).
+- **rowsub**: Subset rows from a methylation matrix.
+- **rowop**: Perform row-wise operations (e.g., `rowop -o stat` to generate statistics).
+- **split**: Split methylation files (use `-s` for specific splitting criteria).
+- **summary**: Generate summary statistics for CX files.
+- **enrichment**: Perform enrichment testing on methylation sites.
 
 ## Expert Tips and Best Practices
-- **Format Consistency**: YAME has evolved through several format versions (e.g., format 5 is considered obsolete in newer versions). Always ensure your files are packed using the version compatible with your specific analysis scripts.
-- **Single-Cell Scaling**: When working with single-cell data, utilize YAME's ability to handle hundreds of thousands of cells by keeping data in the compressed CX format as long as possible.
-- **BGZF Integration**: Since YAME uses BGZF (Blocked GNU Zip Format), files are compatible with random access. Use this to your advantage when querying specific genomic coordinates without decompressing the entire file.
-- **Tool Integration**: YAME is designed to work alongside `bedtools`. You can often pipe unpacked coordinate streams directly into bedtools for genomic intersections.
+
+- **CX Format Selection**: YAME supports multiple CX format variants (e.g., MU counts, binary states, fractions). Ensure you select the format that matches your data precision requirements to maximize compression.
+- **Single-Cell Scaling**: When working with single-cell data, use the binary methylation or categorical state formats to handle the sparsity of the data efficiently.
+- **BGZF Integration**: Since YAME uses BGZF frames, the output files are compatible with tools that support blocked GZIP, allowing for random access and indexing.
+- **Piping**: YAME is designed to integrate with standard bioinformatics pipelines. You can often pipe output to `bedtools` or other genomic utilities for multi-omic analysis.
+- **Memory Management**: For extremely large matrices, prefer `rowsub` and `rowop` to process data in chunks rather than loading entire datasets into memory.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| binarize | Convert per-site M/U counts (format 3) into a packed binary-with-universe track (format 6). |
+| chunk | Chunk a .cx file into smaller pieces. |
+| chunkchar | Chunk a text file into characters. |
+| dsample | Downsample methylation data for format 3 or 6.   - For format 3, downsampling masks by setting M=U=0.   - For format 6, downsampling masks by clearing the universe bit. |
+| hprint | Print data transposed / horizontally. |
+| index | The index file name default to <in.cx>.idx |
+| info | Report information about a YAME file. |
+| mask | Masking tool for CG files |
+| rowop | Perform row-wise operations across multiple records (samples) in a CX file.   Depending on the operation, output is either a new CX file or plain text. |
+| rowsub | Subset (slice) rows from each dataset (record) in a CX stream. Output is always written to stdout. |
+| split | Split a cx file into multiple files based on sample names. |
+| subset | Subset a multi-sample .cx by sample names (requires an index), or (with -s) convert a format-2 state track into one binary track per state. |
+| summary | Summarize a query feature set (or per-state composition) and optionally its overlap/enrichment against one or more masks. |
+| yame pairwise | Compute a per-site differential-methylation set between two format-3 (M/U) samples, and output it as a single format-6 track (set + universe). |
+| yame_pack | Pack tab-delimited text into a compressed cx file. |
+| yame_unpack | Print selected records from a .cx file as a tab-delimited table. Each output row is a genomic row index; each output column is a selected sample/record. |
 
 ## Reference documentation
-- [YAME Overview](./references/anaconda_org_channels_bioconda_packages_yame_overview.md)
-- [YAME GitHub Repository](./references/github_com_zhou-lab_YAME.md)
-- [YAME Issues and Troubleshooting](./references/github_com_zhou-lab_YAME_issues.md)
+- [github_com_zhou-lab_YAME_blob_main_README.md](./references/github_com_zhou-lab_YAME_blob_main_README.md)
+- [github_com_zhou-lab_YAME_commits_main.md](./references/github_com_zhou-lab_YAME_commits_main.md)
+- [anaconda_org_channels_bioconda_packages_yame_overview.md](./references/anaconda_org_channels_bioconda_packages_yame_overview.md)

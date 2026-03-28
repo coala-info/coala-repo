@@ -1,6 +1,6 @@
 ---
 name: ebisearch
-description: The ebisearch tool provides programmatic access to the European Bioinformatics Institute's search engine to query biological data domains. Use when user asks to fetch metadata, list database domains, or execute search queries for biological entries.
+description: EBI Search provides high-performance text search and automated data retrieval from biological databases hosted at the European Bioinformatics Institute. Use when user asks to search biological data, retrieve specific database entries, find cross-referenced records, or get metadata from domains like UniProt, Ensembl, and ChEBI.
 homepage: https://github.com/ebi-wp/EBISearch-webservice-clients
 ---
 
@@ -8,43 +8,70 @@ homepage: https://github.com/ebi-wp/EBISearch-webservice-clients
 # ebisearch
 
 ## Overview
-The ebisearch skill facilitates programmatic access to the European Bioinformatics Institute's search engine. It leverages a collection of specialized web service clients to execute queries against biological data domains. Instead of constructing manual REST calls, this skill provides the patterns for using pre-built scripts to fetch metadata, domain hierarchies, and search results directly from the command line.
+EBI Search is a high-performance text search engine providing access to the vast biological data hosted at the European Bioinformatics Institute (EMBL-EBI). This skill enables the use of specialized web service clients to interact with the EBI Search RESTful API. It is particularly useful for bioinformatics workflows that require automated data retrieval from databases like UniProt, Ensembl, and ChEBI without using a web browser.
 
-## CLI Usage Patterns
+## Client Usage Patterns
 
-The EBI Search clients are organized by language. Choose the implementation that matches your environment's available runtimes.
+The EBI Search clients follow a consistent pattern: `<client_executable> <method_name> <arguments>`.
 
 ### Python Client (Recommended)
-The Python client uses the `requests` library and is the most straightforward for modern workflows.
-- **Dependency**: `pip install requests`
-- **Pattern**: `python python/ebeye_requests.py <method> [arguments]`
-- **Example**: `python python/ebeye_requests.py getDomainDetails chebi`
+Requires the `requests` library (`pip install requests`).
+- **Pattern**: `python python/ebeye_requests.py <method> <args>`
+- **Example**: `python python/ebeye_requests.py getNumberOfResults uniprot VAV_HUMAN`
 
 ### Perl Client
-Useful for legacy bioinformatics pipelines or environments where Perl is the primary language.
-- **Dependencies**: `LWP`, `XML::Simple`, `LWP::Protocol::https`
-- **Pattern**: `perl ./perl/ebeye_lwp.pl <method> [arguments]`
-- **Example**: `perl ./perl/ebeye_lwp.pl getDomainDetails chebi`
+Requires `XML::Simple`, `LWP`, and `LWP::Protocol::https`.
+- **Pattern**: `perl perl/ebeye_lwp.pl <method> <args>`
+- **Example**: `perl perl/ebeye_lwp.pl getDomainDetails chebi`
 
 ### Java Client
-Requires OpenJDK 8 (Note: Java 9 and above are currently not supported).
-- **Pattern**: `java -Djava.ext.dirs=java/lib/ -jar java/jar/EBeye_JAXRS.jar --<method> [arguments]`
-- **Example**: `java -Djava.ext.dirs=java/lib/ -jar java/jar/EBeye_JAXRS.jar --getDomainDetails chebi`
+Requires OpenJDK 8 (Note: Java 9 and above are not supported).
+- **Pattern**: `java -Djava.ext.dirs=java/lib/ -jar java/jar/EBeye_JAXRS.jar --<method> <args>`
+- **Example**: `java -Djava.ext.dirs=java/lib/ -jar java/jar/EBeye_JAXRS.jar --getNumberOfResults hgnc human`
 
-## Common Methods and Operations
+## Common Methods and CLI Examples
 
-While the specific arguments depend on the target domain, the following methods are standard across the clients:
+### 1. Metadata and Discovery
+- **getDomainDetails**: Retrieve information about a specific data domain.
+  `python python/ebeye_requests.py getDomainDetails chebi`
+- **getDomainsReferencedInDomain**: List domains that have cross-references from the target domain.
+  `python python/ebeye_requests.py getDomainsReferencedInDomain hgnc`
 
-- `getDomainDetails`: Retrieves metadata about a specific database domain (e.g., `chebi`, `uniprot`).
-- `listDomains`: Lists all available domains within the EBI Search index.
-- `getResults`: Executes a search query and returns matching entries.
+### 2. Searching and Counting
+- **getNumberOfResults**: Get the hit count for a specific query.
+  `python python/ebeye_requests.py getNumberOfResults uniprot "cancer"`
+- **getAutoComplete**: Get suggestions for a partial search term.
+  `python python/ebeye_requests.py getAutoComplete uniprot vav`
 
-## Best Practices and Tips
+### 3. Data Retrieval
+- **getEntries**: Fetch specific fields for a list of entry IDs.
+  `python python/ebeye_requests.py getEntries uniprot "Q9GZU1,P80567" "acc,organism_scientific_name"`
+- **getResults**: Search and retrieve specific fields for the results.
+  `python python/ebeye_requests.py getResults ensembl_gene tpi name`
 
-- **Prefer REST over SOAP**: The EBI Search team recommends using these RESTful clients exclusively, as the older SOAP-based services are no longer maintained.
-- **Domain Identification**: Always verify the exact domain ID (like `chebi` or `embl_release`) before running queries to avoid empty results.
-- **Dependency Management**: If using the Python client, ensure `requests` is installed in your active virtual environment to prevent execution errors.
-- **Java Environment**: If using the Java client, you must explicitly set the extension directory using `-Djava.ext.dirs=java/lib/` to ensure the JAR can find its required dependencies.
+### 4. Cross-Referencing and Similarity
+- **getReferencedEntries**: Find entries in a different domain that are linked to your source entry.
+  `python python/ebeye_requests.py getReferencedEntries ensembl_gene ENSG00000141968 uniprot acc`
+- **getMoreLikeThis**: Find entries similar to a specific entry.
+  `python python/ebeye_requests.py getMoreLikeThis ensembl_gene ENSG00000141968 "id,name"`
+
+## Expert Tips
+- **Field Selection**: When using `getEntries` or `getResults`, provide a comma-separated list of fields (e.g., `"acc,name,description"`) to minimize payload size and focus on relevant data.
+- **Query Syntax**: Queries can be simple terms or complex boolean expressions. Use quotes for queries containing spaces or special characters.
+- **Batching**: For `getEntries`, you can provide multiple IDs separated by commas to reduce the number of API calls.
+- **Debugging**: The Java client supports a `-debugLevel 1` flag to provide more verbose output during execution.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ebisearch_get_domains | Get domains from EBI Search |
+| ebisearch_get_entries | Get entries from EBI Search |
+| get_fields | Get specific fields from EBI Search |
+| get_query_results | Return the all the results for a query on a specific domain in EBI |
 
 ## Reference documentation
-- [EBI Search Web Service Clients README](./references/github_com_ebi-wp_EBISearch-webservice-clients.md)
+- [EBISearch Web Service Clients README](./references/github_com_ebi-wp_EBISearch-webservice-clients_blob_master_README.md)
+- [EBI Search Web Service Client CI Tests](./references/github_com_ebi-wp_EBISearch-webservice-clients_blob_master_.gitlab-ci.yml.md)

@@ -1,6 +1,6 @@
 ---
 name: shiba
-description: Shiba is a computational framework designed to systematically identify differential RNA splicing across bulk, single-cell, and long-read sequencing platforms. Use when user asks to quantify alternative mRNA splicing events, analyze single-cell RNA-seq data for differential splicing, process long-read RNA-seq data, or perform lightweight splicing analysis.
+description: Shiba identifies alternative mRNA splicing patterns from bulk and single-cell RNA-seq alignments. Use when user asks to identify alternative splicing events, perform differential splicing analysis, or process bulk and single-cell RNA-seq data.
 homepage: https://github.com/Sika-Zheng-Lab/Shiba
 ---
 
@@ -9,59 +9,51 @@ homepage: https://github.com/Sika-Zheng-Lab/Shiba
 
 ## Overview
 
-Shiba is a versatile computational framework designed to systematically identify differential RNA splicing across various sequencing platforms. It streamlines a complex four-step workflow—transcript assembly (via StringTie), event identification, read counting (via RegTools and featureCounts), and statistical testing (Fisher's exact test)—into a manageable pipeline. 
+Shiba is a versatile computational framework designed for the systematic identification of alternative mRNA splicing. It streamlines the transition from raw alignments (BAM files) to biological insights by performing transcript assembly, splicing event identification, read counting, and statistical differential analysis. The tool is split into two primary interfaces: `shiba.py` for bulk RNA-seq and `scshiba.py` for single-cell RNA-seq. It is particularly effective for detecting complex splicing patterns, including alternative first/last exons (AFE/ALE), skipped exons (SE), and mutually exclusive exons (MXE).
 
-Use this skill when you need to:
-- Quantify alternative mRNA splicing events from bulk RNA-seq.
-- Analyze single-cell RNA-seq data for differential splicing (scShiba).
-- Process long-read RNA-seq data for splicing analysis.
-- Execute lightweight splicing analysis with minimal dependencies (MameShiba).
+## Core Workflows
 
-## Command Line Usage
+### Bulk RNA-seq Analysis (Shiba)
+The standard bulk workflow requires an experiment table (TSV) defining samples and groups, a reference genome annotation (GTF/GFF3), and aligned BAM files.
 
-Shiba is primarily executed via Python scripts that ingest a configuration file. Ensure your environment is activated (`conda activate shiba`) before running these commands.
-
-### Bulk RNA-seq Analysis (Standard)
-The standard pipeline performs the full four-step process.
 ```bash
-shiba.py -p [threads] config.yaml
+# Standard execution
+shiba.py --experiment experiment.tsv --genefile annotation.gtf --outdir results/
+
+# Lightweight analysis (MameShiba)
+# Use this to run only splicing analysis without the full assembly pipeline
+shiba.py --mame --experiment experiment.tsv --genefile annotation.gtf --outdir results/
 ```
 
-### Lightweight Analysis (MameShiba)
-Use the `--mame` flag for a faster, lightweight version that requires fewer dependencies. This is ideal if you only need to perform splicing analysis without the full assembly overhead.
+### Single-Cell RNA-seq Analysis (scShiba)
+For single-cell data, Shiba requires a barcode-to-group mapping file to aggregate reads and identify cluster-specific splicing.
+
 ```bash
-shiba.py --mame -p [threads] config.yaml
+scshiba.py --experiment experiment.tsv --barcode barcode_groups.tsv --genefile annotation.gtf --outdir sc_results/
 ```
 
-### Single-Cell Analysis (scShiba)
-For single-cell datasets, use the dedicated `scshiba.py` entry point.
-```bash
-scshiba.py -p [threads] config.yaml
-```
+## Expert Tips and Best Practices
 
-### Snakemake Workflows
-Shiba provides Snakemake wrappers for reproducible and scalable execution.
-```bash
-# For bulk RNA-seq
-snakemake -s snakeshiba.smk --configfile config.yaml --cores [threads] --use-singularity
+- **Long-Read Support**: Shiba natively supports long-read data (PacBio/ONT). To enable this, ensure the `datatype` column in your experiment TSV is set to `long-read`.
+- **Transcript Assembly**: Shiba uses StringTie for assembly. If you have a high-quality custom transcriptome, you can provide it via the `--genefile` argument to bypass the assembly step and focus on quantification.
+- **Handling Low Variance**: In version 0.8.2+, Shiba handles NaN values in PCA analysis more robustly. If you encounter issues with PSI (Percent Spliced In) matrices, ensure you are using the latest version to benefit from improved KNN imputation.
+- **Visualization**: 
+    - Check `plots/pdf/barplot_splicing_summary.pdf` for a high-level count of DSEs.
+    - Use the `summary.html` report for an interactive overview of all detected events.
+    - For sashimi plots, use the companion tool `shiba2sashimi`.
+- **Resource Management**: For large-scale single-cell datasets, ensure your environment has sufficient memory for the read-counting step, as scShiba aggregates junctions across barcodes.
 
-# For single-cell RNA-seq
-snakemake -s snakescshiba.smk --configfile config.yaml --cores [threads] --use-singularity
-```
 
-## Best Practices and Expert Tips
 
-### Performance Optimization
-- **Threading**: Always specify the `-p` (or `--cores` in Snakemake) parameter to match your available CPU resources, as transcript assembly and read counting are computationally intensive.
-- **Memory Management**: When running the full pipeline on large datasets, ensure the machine has sufficient RAM for StringTie assembly and featureCounts.
+## Subcommands
 
-### Data Compatibility
-- **Long-Read Support**: Shiba supports long-read RNA-seq data. Ensure your input files and configuration reflect the specific requirements for long-read alignments.
-- **Excel Outputs**: If you require results in Excel format, you must manually install `styleframe` (e.g., `pip install styleframe==4.1`), as it is an optional dependency.
-
-### Visualization
-- After identifying DSEs, use the companion tool `shiba2sashimi` to generate sashimi plots for visual verification of splicing events.
+| Command | Description |
+|---------|-------------|
+| scshiba.py | scShiba v0.8.1 - Pipeline for identification of differential RNA splicing in single-cell RNA-seq data |
+| shiba.py | Shiba v0.8.1 - Pipeline for identification of differential RNA splicing |
 
 ## Reference documentation
-- [Shiba GitHub Repository](./references/github_com_Sika-Zheng-Lab_Shiba.md)
-- [Shiba Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_shiba_overview.md)
+- [Shiba README](./references/github_com_Sika-Zheng-Lab_Shiba_blob_main_README.md)
+- [Shiba Changelog](./references/github_com_Sika-Zheng-Lab_Shiba_blob_main_CHANGELOG.md)
+- [Bulk RNA-seq Usage](./references/sika-zheng-lab_github_io_Shiba_usage_shiba.md)
+- [Single-cell RNA-seq Usage](./references/sika-zheng-lab_github_io_Shiba_usage_scshiba.md)

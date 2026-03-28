@@ -1,6 +1,6 @@
 ---
 name: blobtk
-description: Blobtk is a high-performance toolkit for processing genomic assemblies to identify contaminants and generate taxon-annotated visualizations. Use when user asks to generate blob or snail plots, calculate sequence depth, filter genomic assemblies, or manage taxonomy metadata.
+description: BlobTk is a high-performance toolkit designed to process genome assembly data for quality assessment and contamination identification. Use when user asks to calculate sequencing coverage depth, filter reads based on sequence names, generate assembly visualizations like snail or blob plots, or process taxonomic data.
 homepage: https://github.com/genomehubs/blobtk
 ---
 
@@ -8,38 +8,55 @@ homepage: https://github.com/genomehubs/blobtk
 # blobtk
 
 ## Overview
+BlobTk is a high-performance Rust-based toolkit designed to support the BlobToolKit ecosystem. It provides essential utilities for bioinformaticians working on genome assemblies to assess assembly quality and contamination. The tool excels at processing large alignment files (BAM/CRAM) to extract coverage statistics and allows for precise filtering of sequencing reads based on specific contig or scaffold selections.
 
-blobtk is a high-performance Rust-based toolkit that provides the engine for the BlobToolKit ecosystem. It is used to process genomic assemblies to identify contaminants, calculate coverage metrics, and generate taxon-annotated visualizations. Use this skill to navigate its command-line interface for assembly QC, taxonomy matching (specifically with ENA metadata), and configuration validation.
+## Core Workflows
 
-## Core CLI Usage
+### Calculating Coverage Depth
+Use `blobtk depth` to generate coverage profiles. This is often the first step in identifying contamination or binned populations within an assembly.
 
-The `blobtk` binary uses a subcommand-based structure. You can access help for any subcommand using `blobtk <subcommand> --help`.
+- **Basic BAM coverage**: `blobtk depth -b input.bam -O output.bed`
+- **Binned coverage (e.g., 1kb windows)**: `blobtk depth -b input.bam -s 1000 -O output.1000.bed`
+- **CRAM support**: Requires the reference fasta: `blobtk depth -c input.cram -a reference.fasta -O output.bed`
 
-### Visualization with `plot`
-The `plot` subcommand is used to generate blob plots and snail plots to visualize assembly statistics.
-- **Basic Plotting**: Use `blobtk plot` to generate visualizations of your dataset.
-- **Grid Layouts**: Use the `--shape grid` flag to organize multiple plots, though be aware this feature is sensitive to configuration parameters.
-- **Taxon Levels**: You can generate plots at different taxonomic ranks (genus, family, order) by specifying the appropriate attributes in your input data.
+### Filtering Sequences and Reads
+Use `blobtk filter` to extract specific reads that map to a subset of sequences (e.g., removing cobionts or extracting a specific organelle).
 
-### Taxonomy Management
-The `taxonomy` subcommand handles NCBI-style taxdump files and metadata matching.
-- **ENA Matching**: Use this to match ENA JSONL metadata against a taxonomy database.
-- **Taxdump Modification**: Supports adding new species or finding/creating genus nodes within an existing taxdump.
-- **Multi-format Output**: Capable of producing taxonomy data in multiple formats for downstream compatibility.
+- **Filter paired-end reads**:
+  ```bash
+  blobtk filter -i ids.txt -b mapping.bam -f forward.fq.gz -r reverse.fq.gz -F
+  ```
+- **Output options**:
+  - `-A`: Output filtered FASTA.
+  - `-F`: Output filtered FASTQ.
+  - `-O <file>`: Just output the list of read IDs.
 
-### Assembly Processing
-- **`depth`**: Used for calculating sequence depth/coverage across scaffolds or contigs.
-- **`filter`**: Used to subset or filter genomic assemblies based on specific criteria (e.g., coverage, GC content, or taxonomic assignment).
-- **`validate`**: Essential for checking the integrity of GenomeHubs configuration files before starting large-scale imports or analyses.
+### Visualization and Taxonomy
+BlobTk provides specialized commands for generating standard BlobToolKit visualizations and managing taxonomic data.
 
-## Expert Tips and Best Practices
+- **Snail Plots**: Use `blobtk snail` to generate assembly statistics visualizations (N50, BUSCO, etc.).
+- **Blob Plots**: Use `blobtk plot` for GC-coverage-taxonomic plots.
+- **Taxonomy**: Use `blobtk taxonomy` to process ENA/NCBI taxonomic data or validate configuration files for GenomeHubs.
 
-- **Performance**: Since `blobtk` is written in Rust, it is significantly faster than older Python-based iterations. Prefer it for large-scale depth calculations and filtering tasks.
-- **Environment Setup**: On Apple Silicon (M1/M2) Macs, if installing via Conda, you may need to set the architecture to `osx-64` using `conda config --env --set subdir osx-64` to ensure compatibility with certain bioconda builds.
-- **Error Handling**: When using the `taxonomy` subcommand, ensure your `out_dir` exists before execution, as the tool may fail when attempting to write exception logs to non-existent paths.
-- **Python Integration**: If you need to use `blobtk` within a script, it is available as a Python module via `pip install blobtk`, providing a bridge between the Rust performance and Python's data science ecosystem.
+## Expert Tips
+- **Bin Size**: Setting `-s 0` (default) calculates a single average depth per contig. For highly fragmented assemblies or looking for localized coverage drops, use a fixed bin size like `-s 1000`.
+- **Memory Efficiency**: Since BlobTk is written in Rust, it is significantly faster and more memory-efficient than equivalent Python scripts for parsing large BAM files.
+- **Python Integration**: For custom analysis pipelines, you can import the modules directly: `from blobtk import depth, filter`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| blobtk_taxonomy | Process a taxonomy and lookup lineages, or start the API server with --api |
+| depth | Calculate sequencing coverage depth. |
+| filter | Filter files based on list of sequence names. |
+| index | Index files for GenomeHubs. Called as `blobtk index` |
+| plot | Process a BlobDir and produce static plots. |
+| validate | Validate BlobToolKit and GenomeHubs files. |
 
 ## Reference documentation
-- [BlobTk Wiki Home](./references/github_com_genomehubs_blobtk_wiki.md)
-- [BlobTk GitHub Repository](./references/github_com_genomehubs_blobtk.md)
-- [Bioconda blobtk Overview](./references/anaconda_org_channels_bioconda_packages_blobtk_overview.md)
+- [blobtk depth](./references/github_com_genomehubs_blobtk_wiki_blobtk-depth.md)
+- [blobtk filter](./references/github_com_genomehubs_blobtk_wiki_blobtk-filter.md)
+- [blobtk overview](./references/github_com_genomehubs_blobtk_wiki_blobtk.md)

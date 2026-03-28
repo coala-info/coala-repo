@@ -1,6 +1,6 @@
 ---
 name: seqfu
-description: Seqfu is a high-performance suite of utilities for manipulating, filtering, and analyzing FASTA and FASTQ sequence files. Use when user asks to calculate assembly metrics like N50, count sequences, filter reads by length or pattern, manage paired-end data, or rename sequence headers.
+description: SeqFu is a versatile toolkit for the manipulation, filtering, and statistical analysis of FASTA and FASTQ sequence files. Use when user asks to count sequences, calculate assembly statistics like N50, filter reads by length, reverse complement sequences, or manage paired-end files.
 homepage: http://github.com/quadram-institute-bioscience/seqfu/
 ---
 
@@ -8,55 +8,101 @@ homepage: http://github.com/quadram-institute-bioscience/seqfu/
 # seqfu
 
 ## Overview
-The `seqfu` suite is a high-performance collection of DNA sequence utilities designed for the robust manipulation of FASTX files. It is particularly useful for bioinformatics pipelines that require seamless handling of both FASTA and FASTQ formats, often within the same command. The toolset excels at handling compressed (.gz) files and standard input/output streams, making it a lightweight alternative to heavier sequence processing frameworks. Use this skill to perform common tasks like sequence counting, length filtering, and paired-end data management.
 
-## Core Toolset and CLI Patterns
+SeqFu is a versatile toolkit designed for robust and reproducible manipulation of sequence files. It provides a unified interface for FASTA and FASTQ formats, supporting transparent decompression and standard input/output streams. Whether you are performing initial quality checks, filtering reads, or summarizing assembly metrics, SeqFu offers a faster, more memory-efficient alternative to traditional scripts. It is optimized for modern bioinformatics workflows, particularly those involving Illumina paired-end data and large-scale genomic datasets.
 
-### Sequence Statistics and Counting
-*   **Calculate N50 and assembly metrics**: Use `n50` to get a quick summary of sequence lengths, including N50, total length, and sequence counts.
-    ```bash
-    n50 genome.fasta
-    ```
-*   **Count sequences**: Use `fu-count` for a fast tally of records in one or multiple files.
-    ```bash
-    fu-count *.fastq.gz
-    ```
+## Core CLI Patterns
 
-### Filtering and Extraction
-*   **Filter by length**: Use `fu-len` to keep sequences within a specific size range.
+### General Usage
+Most SeqFu commands follow a standard syntax:
+```bash
+seqfu <command> [options] <input_files>
+```
+*   **Compressed Files**: SeqFu natively handles `.gz` files without needing `zcat`.
+*   **Streams**: Use `-` to read from standard input.
+*   **Unified Parsing**: Most tools accept both FASTA and FASTQ interchangeably.
+
+### Essential Commands
+
+#### 1. Sequence Statistics and Counting
+*   **Quick Count**: Get the number of sequences in one or more files.
     ```bash
-    fu-len -m 100 -M 500 input.fasta > filtered.fasta
+    seqfu count reads.fq.gz
     ```
-*   **Pattern matching**: Use `fu-grep` to extract sequences based on DNA motifs, sequence names, or header comments.
+*   **Assembly Stats (N50)**: Calculate N50, total length, and GC content.
     ```bash
-    fu-grep "GATC" input.fastq > matches.fastq
-    ```
-*   **Sort sequences**: Use `fu-sort` to organize sequences by their length.
-    ```bash
-    fu-sort input.fasta > sorted.fasta
+    seqfu stats contigs.fasta
     ```
 
-### Paired-End (PE) Operations
-*   **Interleave/Deinterleave**: Use `interleafq` to convert between interleaved and separate R1/R2 files.
-*   **Repair and Concatenate**: Use `pe-cat` to merge paired-end files. This tool is specifically designed to be error-tolerant and can often repair broken PE sets where one file has more reads than the other.
-*   **Filter PE sets**: Use `pe-len` or `pe-grep` to ensure that filtering operations are applied to both pairs simultaneously, maintaining the integrity of the dataset.
-
-### Sequence Modification
-*   **Rename headers**: Use `fu-rename` to add prefixes or standardize sequence identifiers.
+#### 2. Filtering and Manipulation
+*   **Length Filtering**: Keep sequences within a specific size range.
     ```bash
-    fu-rename --prefix "SampleA_" input.fasta > renamed.fasta
+    seqfu len -m 500 -M 1000 input.fasta > filtered.fasta
+    ```
+*   **Reverse Complement**: Generate the reverse complement of sequences.
+    ```bash
+    seqfu rc input.fasta
+    ```
+*   **Subsetting**: Extract the first or last N sequences.
+    ```bash
+    seqfu head -n 100 reads.fq
+    seqfu tail -n 100 reads.fq
     ```
 
-## Expert Tips and Best Practices
-*   **Stream Processing**: Most `seqfu` tools support standard input. Pipe outputs together to avoid creating large intermediate files.
+#### 3. Searching (Grep)
+*   **Pattern Matching**: Search for DNA motifs or header strings.
     ```bash
-    cat reads.fastq | fu-len -m 50 | fu-count
+    seqfu grep "GATTACA" reads.fq
     ```
-*   **Gzip Support**: You do not need to decompress files before using `seqfu`. It natively handles `.gz` files, saving disk space and I/O time.
-*   **Unified Parsing**: Since `seqfu` uses the same parser for FASTA and FASTQ, you can often run the same command on mixed-format datasets without changing parameters.
-*   **Header Metadata**: Unlike simpler tools, `seqfu` is designed to parse both the sequence name and the comments in the header (e.g., `>Name Comment`), which is critical when filtering based on metadata added by assemblers or simulators.
+
+#### 4. Paired-End Management
+*   **Interleaving**: Combine R1 and R2 files into a single interleaved file.
+    ```bash
+    seqfu interleave reads_R1.fq reads_R2.fq > interleaved.fq
+    ```
+*   **Deinterleaving**: Split an interleaved file back into R1 and R2.
+    ```bash
+    seqfu deinterleave interleaved.fq -1 R1.fq -2 R2.fq
+    ```
+
+## Expert Tips
+
+*   **Metadata Extraction**: Use `seqfu metadata` to quickly view information about the sequencing run or file properties.
+*   **Tabulation**: Use `seqfu tabulate` to convert FASTX files into a tab-separated format, which is ideal for downstream processing with `awk` or `sed`.
+*   **Memory Efficiency**: When working with massive datasets, prefer `seqfu` over general-purpose text tools like `grep` or `cat`, as SeqFu is specifically optimized for the multi-line nature of FASTX formats.
+*   **Piping**: Combine tools for complex workflows:
+    ```bash
+    seqfu grep "ATG" input.fq | seqfu len -m 100 | seqfu stats
+    ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bases | Print the DNA bases, and %GC content, in the input files |
+| cat | Concatenate multiple FASTA or FASTQ files. |
+| check | Check the integrity of FASTQ files, returns non zero   if an error occurs. Will print a table with a report. |
+| count | Count sequences in paired-end aware format |
+| dei | interleave FASTQ files |
+| derep | Dereplicate sequences based on their content. |
+| fu-rotate | Rotate the sequences of one or more sequence files using    coordinates or motifs. |
+| grep | Print sequences selected if they match patterns or contain oligonucleotides using regular expressions. |
+| head | Select a number of sequences from the beginning of a file, allowing to select a fraction of the reads (for example to print 100 reads, selecting one every 10). |
+| ilv | interleave FASTQ files |
+| lanes | This tool supports up to 8 lanes of Illumina-formatted output files. Merged lane output files will be in an uncompressed format. |
+| list | Print sequences that are present in a list file, which can contains leading ">" or "@" characters. Duplicated entries in the list will be ignored. |
+| metadata | Prepare mapping files from directory containing FASTQ files |
+| rc | Print the reverse complementary of sequences in files or sequences given as parameters. Can read FASTA/FASTQ also from STDIN, but not naked strings. |
+| sort | Sort sequences by size printing only unique sequences |
+| stats | Print statistics about input files |
+| tabulate | Convert FASTQ to TSV and viceversa. Single end is a 4 columns table (name, comment, seq, qual), paired end have 4 columns for the R1 and 4 columns for the R2. Paired end reads need to be supplied as interleaved. |
+| tail | Print the last sequences of files |
+| tofasta | Convert various sequence formats to FASTA format. |
+| view | View a FASTA/FASTQ file for manual inspection, allowing to search for an oligonucleotide. |
 
 ## Reference documentation
-- [SeqFu Wiki - Home](./references/github_com_quadram-institute-bioscience_seqfu_wiki.md)
-- [SeqFu GitHub Overview](./references/github_com_quadram-institute-bioscience_seqfu.md)
-- [Bioconda SeqFu Package](./references/anaconda_org_channels_bioconda_packages_seqfu_overview.md)
+- [SeqFu Home](./references/github_com_quadram-institute-bioscience_seqfu_wiki.md)
+- [Design Guidelines](./references/github_com_quadram-institute-bioscience_seqfu_wiki_Design-guidelines.md)
+- [SeqFu2 Introduction](./references/telatin_github_io_seqfu2_intro.md)

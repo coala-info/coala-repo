@@ -268,3 +268,6 @@ references:
  - Kraft, L., Söding, J., Steinegger, M., Jochheim, A., Sackett, P. W., Fernandez-Guerra, A., & Renaud, G. (2024). CarpeDeam: A De Novo Metagenome Assembler for Heavily Damaged Ancient Datasets. Cold Spring Harbor Laboratory.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -427,3 +427,6 @@ Usage: sixframe.rb [options] genome.fasta
         --gff3                       Output gff3 instead of fasta [false]
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -524,3 +524,6 @@ ru.ifmo.genetics.utils.tool.NotSetArgumentException: Mandatory argument --k (-k)
 ************************************************************************************************************************
 ```
 
+
+## Metadata
+- **Skill**: generated

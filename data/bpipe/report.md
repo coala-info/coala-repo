@@ -824,3 +824,6 @@ Bpipe Version null   Built on Wed Feb 25 16:31:16 GMT 2026
 usage: bpipe diagram [-e] [-f <format>] <pipeline> <input1> <input2> ...
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: biosyntax-vim
-description: biosyntax-vim provides syntax highlighting and intuitive color schemes for common bioinformatics file formats within the Vim editor. Use when user asks to view genomic data with color-coded patterns, highlight biological file formats like SAM or VCF in Vim, or visually inspect sequence alignments and quality scores.
+description: bioSyntax-vim provides domain-specific syntax highlighting for biological data formats within the Vim text editor. Use when user asks to highlight genomic files, visually audit bioinformatics formats like SAM or VCF, or identify sequence patterns in FASTQ files.
 homepage: https://github.com/bioSyntax/bioSyntax-vim
 ---
 
@@ -8,44 +8,48 @@ homepage: https://github.com/bioSyntax/bioSyntax-vim
 # biosyntax-vim
 
 ## Overview
-bioSyntax-vim is a specialized plugin that brings intuitive color schemes to standard bioinformatics file formats. It helps researchers identify patterns, errors, and structural elements in large genomic and proteomic datasets directly within the Vim editor. By mapping specific biological meanings (like base quality, feature types, or sequence identity) to distinct colors, it transforms dense text files into human-readable data.
+bioSyntax-vim is a specialized plugin that integrates the bioSyntax coloring logic into the Vim text editor. It transforms the standard monochrome or poorly highlighted terminal view of biological data into a structured, color-coded environment. By providing domain-specific syntax highlighting for common bioinformatics formats, it allows for faster visual auditing of genomic files, easier identification of sequence patterns (like 'N' bases in FASTQ), and clearer distinction between metadata headers and data records.
 
 ## Usage and Best Practices
 
-### Filetype Detection
-The plugin automatically recognizes common biological extensions. Open any supported file to trigger the highlighting:
-- **Sequencing**: `.fq`, `.fastq`, `.sam`, `.bam`
-- **Genomics**: `.gtf`, `.gff`, `.bed`, `.vcf`
-- **Structural/Other**: `.pdb`, `.aln`, `.nexus`, `.flagstat`
+### Manual Filetype Triggering
+While bioSyntax-vim uses `ftdetect` to automatically recognize files by their extensions, you may need to manually trigger highlighting for files with non-standard extensions or when piped from other tools.
 
-### Manual Filetype Overrides
-If a file lacks a standard extension or the syntax does not trigger automatically, manually set the filetype within Vim:
-- For SAM files: `:set filetype=sam`
-- For FASTQ files: `:set filetype=fq`
-- For GTF/BED files: `:set filetype=gtf` or `:set filetype=bed`
-- For Clustal/ALN files: `:set filetype=aln`
+Use the following commands within Vim:
+- **SAM files**: `:set filetype=sam`
+- **VCF files**: `:set filetype=vcf`
+- **FASTQ files**: `:set filetype=fq`
+- **GTF/GFF files**: `:set filetype=gtf`
+- **BED files**: `:set filetype=bed`
+- **PDB/PyMol**: `:set filetype=pymol`
+- **Multiple Alignment**: `:set filetype=aln`
 
-### Working with Large Files
-Bioinformatics files are often massive. To maintain performance while using syntax highlighting:
-- **Disable Undo**: Use `vim -n [file]` to skip the swap file for faster loading.
-- **Read-Only Mode**: Use `view [file]` or `vim -R [file]` to prevent accidental modifications to raw data.
-- **Large File Plugin**: Consider using a "LargeFile" plugin alongside bioSyntax to automatically disable certain features (like folding) that can lag on multi-gigabyte SAM files.
+### Handling Large Genomic Files
+Vim can struggle with syntax highlighting on extremely large files (e.g., multi-gigabyte FASTQ or SAM files).
+- **Disable highlighting for performance**: If the editor becomes unresponsive, use `:syntax off`.
+- **Limit highlighting**: Use `:syntax sync minlines=100` to prevent Vim from parsing the entire file for context.
+- **Read-only mode**: Open large files with `vim -R` to prevent accidental modifications while browsing.
 
-### Integration with `less`
-You can use bioSyntax highlighting as a pager for the command line. Add the following to your shell configuration (e.g., `.bashrc` or `.zshrc`) to use Vim as a colorized pager:
+### Format-Specific Features
+- **GTF/BED Shading**: The plugin supports 2-shade chromosome coloring to help visually distinguish between different genomic regions.
+- **FASTQ Validation**: The `fq` syntax highlighting is designed to recognize 'N' characters in sequence lines, making it easier to spot low-quality reads.
+- **SAM/BAM Viewing**: When using Vim as a pager for `samtools view`, ensure the filetype is set to `sam` to correctly parse the tab-delimited fields and flag stats.
+
+### Integration with Pagers
+To use bioSyntax-vim highlighting when viewing files via `less`, you can utilize the `vimpager` script or set an alias that calls Vim in a read-only, minimal configuration:
 ```bash
-alias biosyntax='vim -R -c "set syntax=on" -'
-```
-Then pipe data directly:
-```bash
-samtools view -h sample.bam | head -n 100 | biosyntax
+alias biosam='vim -R -c "set ft=sam" -'
 ```
 
-### Expert Tips
-- **Conserved Positions**: When viewing `.aln` (Clustal) files, bioSyntax highlights conserved residues, making it easier to identify functional domains in alignments.
-- **Base Quality**: In FASTQ files, the syntax highlighting often distinguishes between the sequence line and the quality score line, helping you visually scan for low-quality 'N' bases.
-- **Chromosomal Shading**: For GTF and BED files, the plugin uses "2shade" coloring to help distinguish between different chromosomes or feature types.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| vim | Vi IMproved, a text editor |
+| vim | VIM - Vi IMproved, a text editor |
 
 ## Reference documentation
-- [bioSyntax-vim Repository](./references/github_com_bioSyntax_bioSyntax-vim.md)
-- [Supported Formats and Commits](./references/github_com_bioSyntax_bioSyntax-vim_commits_master.md)
+- [bioSyntax-vim README](./references/github_com_bioSyntax_bioSyntax-vim_blob_master_README.md)
+- [Commit History (Supported Formats)](./references/github_com_bioSyntax_bioSyntax-vim_commits_master.md)

@@ -70,3 +70,6 @@ Commands:
   convert  Convert plink fileset to VCF Zarr.
 ```
 
+
+## Metadata
+- **Skill**: generated

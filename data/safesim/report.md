@@ -79,3 +79,6 @@ To detect UMI, this prgram first checks for the MI tag in each alignment record 
 <OUTPUT-PREFIX> is appended by the string literals ".tumor.bam" and ".normal.bam" (without the double quotes) to generate the tumor and normal simulated BAM filenames, respectively. The tumor and normal bam files have to be merged (e.g., by samtools merge) to simulate the sequenced sample.
 ```
 
+
+## Metadata
+- **Skill**: generated

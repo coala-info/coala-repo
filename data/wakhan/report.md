@@ -292,3 +292,6 @@ options:
                         segmentation instead of breakpoints (default: False)
 ```
 
+
+## Metadata
+- **Skill**: generated

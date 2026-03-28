@@ -129,3 +129,6 @@ options:
   -v, --version         It prints the version and exists
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,1 +1,259 @@
-Custom Tests &#8212; memote 0.11.1 Site Installation Getting Started Flowchart Understanding the reports Experimental Data Custom Tests Test Suite Contributing Credits History API Reference Page Custom Tests Custom Test Setup A Custom Test Module Minimal Test Module &amp; Simple Test Function Template Parametrized Test Function Template Custom Test Configuration The Custom Option The Pytest Option Guidelines &laquo; Experimental Data Test Suite &raquo; Source Custom Tests ¶ Memote can be configured to include custom test modules from any other directory in addition to the tests that are included in the package. Custom Test Setup ¶ All custom test modules and the tests defined inside of them have to adhere to the same standard design for the results to be generated and displayed correctly. Optionally, a user may specify a configuration file which can be used to change how individual tests are displayed in the snapshot report. A Custom Test Module ¶ At its core, a memote test module is a collection of specific python code in a text file with the file ending .py . Since, memote uses pytest for discovery and execution of model tests, the conditions for memote test modules and pytest test modules are identical. The module name has to match either test_*.py or *_test.py : your_custom_directory/ test_module1.py module2_test.py ... Minimal Test Module &amp; Simple Test Function Template ¶ The minimal content of a custom test module should look like this: import pytest from memote.utils import annotate , wrapper , truncate import path.to.your_support_module as your_support_module @annotate ( title = &quot;Some human-readable descriptive title for the report&quot; , format_type = &quot;Single keyword describing how the data ought to be displayed.&quot; ) def test_your_custom_case ( read_only_model ): &quot;&quot;&quot; Docstring that briefly outlines the test function. A more elaborate explanation of why this test is important, how it works, and the assumptions/ theory behind it. This can be more than one line. &quot;&quot;&quot; ann = test_your_custom_case . annotation ann [ &quot;data&quot; ] = list ( your_support_module . specific_model_quality ( read_only_model )) ann [ &quot;metric&quot; ] = len ( ann [ &quot;data&quot; ]) / len ( read_only_model . total_model_quality ) ann [ &quot;message&quot; ] = wrapper . fill ( &quot;&quot;&quot;A concise message that displays and explains the test results. For instance, if data is a list of items the amount: {} and percentage ({:.2%}) values can be recorded here, as well as an excerpt of the list itself: {}&quot;&quot;&quot; . format ( len ( ann [ &quot;data&quot; ]), ann [ &#39;metric&#39; ], truncate ( ann [ &#39;data&#39; ]) )) ) assert len ( ann [ &quot;data&quot; ]) == 0 , ann [ &quot;message&quot; ] This is a minimal test module template containing a test function called test_your_custom_case . There can be additional lines of code, but you should keep in mind that any logic is best put into a separate support module, which is imported above as your_support_module . The functions of this support module are called by the test function. This will simplify debugging, error handling and allows for dedicated unit testing on the code in the support module. The following components are requirements of test_your_custom_case : Each test has to be decorated with the annotate() decorator, which collects: The data that the test is run on. Can be of the following type: list , set , tuple , string , float , integer and boolean . It can be of type dictionary , but this is only supported for parametrized tests (see example below). The format_type of data. This is not the actual python type of data but it correlates closely with it. If data is a set , tuple or list format_type=&quot;count&quot; configures the report to display its length. If data is an integer or float use format_type=&quot;number&quot; . If data is a single string, then choose format_type=&quot;raw&quot; . This format_type also works for any other data type. In case, you’d rather display the metric as opposed to the contents of data use format_type=&quot;percent&quot; . It is important that the custom test case does not return nan , None or null as this will lead to errors on the report. A human-readable, descriptive title that will be displayed in the report as opposed to the test function name test_your_custom_case which will only serve as the test’s ID internally. metric can be any fraction relating to the quality that is tested. In memote’s core tests the metrics of each scored tests are used to calculate the overall score. The message is a brief summary of the results displayed only on the command line. There are no restrictions on what it should include. We’ve generally tried to keep this short and concise to avoid spamming the command line. The prefix ‘test_’ is required by pytest for automatic test discovery. Every function with this prefix will be executed when later running memote with the configuration to find custom tests. read_only_model is the required parameter to access the loaded metabolic model at runtime. In the report the docstring is taken as a tooltip for each test. It should generally adhere to the conventions of the NumPy/SciPy documentation. It suffices to write a brief one-sentence outline of the test function optionally followed by a more elaborate explanation that helps the user to understand the test’s purpose and function. The assert statement works just like the assert statement in pytest . Parametrized Test Function Template ¶ Pytest allows us to run one test function with multiple sets of arguments by simply using the pytest.mark.paremtrize decorator. This is quite useful when the same underlying assertion logic can be applied to several parameters. In the following example taken from memote.suite.tests.test_annotation we test that there are no metabolites that lack annotations from any of the databases listed in annotation.METABOLITE_ANNOTATIONS . Without parametrization we would have had to copy the entire test function below to specifically check the metabolite annotations for each database. @pytest . mark . parametrize ( &quot;db&quot; , list ( annotation . METABOLITE_ANNOTATIONS )) @annotate ( title = &quot;Missing Metabolite Annotations Per Database&quot; , format_type = &quot;count&quot; , message = dict (), data = dict (), metric = dict ()) def test_metabolite_annotation_overview ( read_only_model , db ): &quot;&quot;&quot; Expect all metabolites to have annotations from common databases. The required databases are outlined in `annotation.py`. &quot;&quot;&quot; ann = test_metabolite_annotation_overview . annotation ann [ &quot;data&quot; ][ db ] = get_ids ( annotation . generate_component_annotation_overview ( read_only_model . metabolites , db )) ann [ &quot;metric&quot; ][ db ] = len ( ann [ &quot;data&quot; ][ db ]) / len ( read_only_model . metabolites ) ann [ &quot;message&quot; ][ db ] = wrapper . fill ( &quot;&quot;&quot;The following {} metabolites ({:.2%}) lack annotation for {}: {}&quot;&quot;&quot; . format ( len ( ann [ &quot;data&quot; ][ db ]), ann [ &quot;metric&quot; ][ db ], db , truncate ( ann [ &quot;data&quot; ][ db ]))) assert len ( ann [ &quot;data&quot; ][ db ]) == 0 , ann [ &quot;message&quot; ][ db ] Custom Test Configuration ¶ Finally, there are two ways of configuring memote to find custom tests. The first involves the --custom-* options of the memote CLI and requires the user to provide a corresponding config file with the custom test modules, while the second involves passing arguments directly to pytest through the use of the --pytest-args option, which can be abbreviated to -a . This option only requires the user to set up the custom test module. No config file is needed here. The Custom Option ¶ When invoking the memote run , memote report snapshot or memote report diff commands in the terminal, it is possible to add the --custom-* options: --custom-tests takes the absolute path to any directory in which pytest is to check for custom tests modules. By default test discovery is recursive. More information is provided here . --custom-config The absolute path to a valid configuration file. To simply insert custom tests into the test suite, it suffices to use the first option --custom-tests . Providing the custom configuration file with --custom-config further gives you the means to weigh, categorise and layout where on the report your results will be displayed. $ memote report snapshot --custom-tests path/to/dir/ --custom-config path/to/config.yml --filename &quot;report.html&quot; path/to/model.xml The Pytest Option ¶ In addition, it is possible to pass any number of absolute paths to custom test directories directly to pytest, as long as they are placed behind any other parameters that you might want to pass in. For instance here we want to get a list of the ten slowest running tests while including two custom test module directories: $ memote run -a &quot;--durations=10 path/to/dir1/ path/to/dir2/&quot; --filename &quot;report.html&quot; path/to/model.xml Guidelines ¶ Please consider the following guidelines which reflect some of the considerations behind the core tests in memote. Adhering to these guidelines will allow other researchers to easily adopt your custom tests and ensure that they are applicable to a wide array of modeling practises. 1. Be namespace agnostic . Use the METANETX_SHORTLIST and COMPARTMENT_SHORTLIST (both in memote/support/helpers.py ) mapping tables from memote or consider creating your own if your custom test needs to identify a specific metabolite in a specific compartment. You can generate a custom metabolite shortlist by adapting shortlist.tsv and then executing the script annotate_mnx_shortlists.py found in memote/scripts . 2. Be paradigm agnostic . Use the functions provided in memote/support for routine operations i.e. identifying a model’s biomass reaction(s) or finding all purely metabolic reactions. We have bee
+[![](_static/memote-logo.png)](index.html)
+**0.11.1**
+
+* [Site](index.html)
+
+  - [Installation](installation.html)
+  - [Getting Started](getting_started.html)
+  - [Flowchart](flowchart.html)
+  - [Understanding the reports](understanding_reports.html)
+  - [Experimental Data](experimental_data.html)
+  - Custom Tests
+  - [Test Suite](test_suite.html)
+  - [Contributing](contributing.html)
+  - [Credits](authors.html)
+  - [History](history.html)
+  - [API Reference](autoapi/index.html)
+* Page
+
+  - Custom Tests
+    * [Custom Test Setup](#custom-test-setup)
+      + [A Custom Test Module](#a-custom-test-module)
+      + [Minimal Test Module & Simple Test Function Template](#minimal-test-module-simple-test-function-template)
+      + [Parametrized Test Function Template](#parametrized-test-function-template)
+    * [Custom Test Configuration](#custom-test-configuration)
+      + [The Custom Option](#the-custom-option)
+      + [The Pytest Option](#the-pytest-option)
+    * [Guidelines](#guidelines)
+* [« Experimental Data](experimental_data.html "Previous Chapter: Experimental Data")
+* [Test Suite »](test_suite.html "Next Chapter: Test Suite")
+* [Source](_sources/custom_tests.rst.txt)
+
+# Custom Tests[¶](#custom-tests "Permalink to this headline")
+
+Memote can be configured to include custom test modules from any other directory
+in addition to the tests that are included in the package.
+
+## Custom Test Setup[¶](#custom-test-setup "Permalink to this headline")
+
+All custom test modules and the tests defined inside of them have to adhere to
+the same standard design for the results to be generated and displayed correctly.
+Optionally, a user may specify a configuration file which can be used to
+change how individual tests are displayed in the snapshot report.
+
+### A Custom Test Module[¶](#a-custom-test-module "Permalink to this headline")
+
+At its core, a memote test module is a collection of specific python code in a
+text file with the file ending `.py`. Since, memote uses [pytest](https://docs.pytest.org/en/latest/) for discovery
+and execution of model tests, the [conditions](https://docs.pytest.org/en/latest/goodpractices.html#test-package-name) for memote test modules and
+pytest test modules are identical.
+
+The module name has to match either `test_*.py` or `*_test.py`:
+
+```
+your_custom_directory/
+    test_module1.py
+    module2_test.py
+    ...
+```
+
+### Minimal Test Module & Simple Test Function Template[¶](#minimal-test-module-simple-test-function-template "Permalink to this headline")
+
+The minimal content of a custom test module should look like this:
+
+```
+import pytest
+from memote.utils import annotate, wrapper, truncate
+
+import path.to.your_support_module as your_support_module
+
+@annotate(
+    title="Some human-readable descriptive title for the report",
+    format_type="Single keyword describing how the data ought to be displayed."
+)
+def test_your_custom_case(read_only_model):
+"""
+Docstring that briefly outlines the test function.
+
+A more elaborate explanation of why this test is important, how it works,
+and the assumptions/ theory behind it. This can be more than one line.
+"""
+ann = test_your_custom_case.annotation
+ann["data"] = list(your_support_module.specific_model_quality(read_only_model))
+ann["metric"] = len(ann["data"]) / len(read_only_model.total_model_quality)
+ann["message"] = wrapper.fill(
+    """A concise message that displays and explains the test results.
+    For instance, if data is a list of items the amount: {} and
+    percentage ({:.2%}) values can be recorded here, as well as an
+    excerpt of the list itself: {}""".format(
+    len(ann["data"]), ann['metric'], truncate(ann['data'])
+    ))
+)
+assert len(ann["data"]) == 0, ann["message"]
+```
+
+This is a minimal test module template containing a test function called
+`test_your_custom_case`. There can be additional lines of code, but you
+should keep in mind that any logic is best put into a separate support
+module, which is imported above as `your_support_module`. The functions of
+this support module are called by the test function. This will simplify
+debugging, error handling and allows for dedicated unit testing on the code
+in the support module.
+
+The following components are requirements of `test_your_custom_case`:
+
+* Each test has to be decorated with the `annotate()` decorator, which
+  collects:
+  + The `data` that the test is run on. Can be of the following type: `list`,
+    `set`, `tuple`, `string`, `float`, `integer` and `boolean`. It
+    can be of type `dictionary`, but this is only supported for parametrized
+    tests (see example below).
+  + The `format_type` of data. This is not the actual python type
+    of `data` but it correlates closely with it.
+    If `data` is a `set`, `tuple` or `list` `format_type="count"`
+    configures the report to display its length.
+    If `data` is an `integer` or `float` use `format_type="number"`.
+    If `data` is a single string, then choose `format_type="raw"`. This
+    `format_type` also works for any other data type.
+    In case, you’d rather display the `metric` as opposed to the contents of
+    `data` use `format_type="percent"`.
+    It is important that the custom test case does not return `nan`,
+    `None` or `null` as this will lead to errors on the report.
+  + A human-readable, descriptive `title` that will be displayed in the report
+    as opposed to the test function name `test_your_custom_case` which will
+    only serve as the test’s ID internally.
+  + `metric` can be any fraction relating to the quality that is tested. In
+    memote’s core tests the metrics of each scored tests are used to calculate
+    the overall score.
+  + The `message` is a brief summary of the results displayed only on the
+    command line. There are no restrictions on what it should include. We’ve
+    generally tried to keep this short and concise to avoid spamming the command
+    line.
+* The prefix ‘test\_’ is required by pytest for automatic test discovery.
+  Every function with this prefix will be executed when later running memote
+  with the configuration to find custom tests.
+* `read_only_model` is the required parameter to access the loaded
+  metabolic model at runtime.
+* In the report the docstring is taken as a tooltip for each test. It should
+  generally adhere to the [conventions](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt) of the NumPy/SciPy documentation. It
+  suffices to write a brief one-sentence outline of the test function optionally
+  followed by a more elaborate explanation that helps the user to understand
+  the test’s purpose and function.
+* The assert statement works just like the assert statement in [pytest](https://docs.pytest.org/en/latest/assert.html).
+
+### Parametrized Test Function Template[¶](#parametrized-test-function-template "Permalink to this headline")
+
+Pytest allows us to run one test function with [multiple sets of arguments](https://docs.pytest.org/en/latest/parametrize.html#parametrize) by
+simply using the `pytest.mark.paremtrize` decorator. This is quite useful
+when the same underlying assertion logic can be applied to several parameters.
+In the following example taken from `memote.suite.tests.test_annotation` we test
+that there are no metabolites that lack annotations from any of the databases
+listed in `annotation.METABOLITE_ANNOTATIONS`. Without parametrization we
+would have had to copy the entire test function below to specifically check
+the metabolite annotations for each database.
+
+```
+@pytest.mark.parametrize("db", list(annotation.METABOLITE_ANNOTATIONS))
+@annotate(title="Missing Metabolite Annotations Per Database",
+          format_type="count", message=dict(), data=dict(), metric=dict())
+def test_metabolite_annotation_overview(read_only_model, db):
+    """
+    Expect all metabolites to have annotations from common databases.
+
+    The required databases are outlined in `annotation.py`.
+    """
+    ann = test_metabolite_annotation_overview.annotation
+    ann["data"][db] = get_ids(annotation.generate_component_annotation_overview(
+        read_only_model.metabolites, db))
+    ann["metric"][db] = len(ann["data"][db]) / len(read_only_model.metabolites)
+    ann["message"][db] = wrapper.fill(
+        """The following {} metabolites ({:.2%}) lack annotation for {}:
+        {}""".format(len(ann["data"][db]), ann["metric"][db], db,
+                     truncate(ann["data"][db])))
+    assert len(ann["data"][db]) == 0, ann["message"][db]
+```
+
+## Custom Test Configuration[¶](#custom-test-configuration "Permalink to this headline")
+
+Finally, there are two ways of configuring memote to find custom tests. The
+first involves the `--custom-*` options of the memote CLI and requires the
+user to provide a corresponding config file with the custom test modules,
+while the second involves passing arguments directly to pytest through the use
+of the `--pytest-args` option, which can be abbreviated to `-a`. This
+option only requires the user to set up the custom test module. No config file
+is needed here.
+
+### The Custom Option[¶](#the-custom-option "Permalink to this headline")
+
+When invoking the `memote run`, `memote report snapshot` or
+`memote report diff` commands in the terminal, it is possible to add the
+`--custom-*` options:
+
+1. `--custom-tests` takes the absolute path to any directory in which pytest
+   is to check for custom tests modules. By default test discovery is
+   recursive. More information is provided [here](https://docs.pytest.org/en/latest/goodpractices.html).
+2. `--custom-config` The absolute path to a valid configuration file.
+
+To simply insert custom tests into the test suite, it suffices to use the
+first option `--custom-tests`. Providing the custom configuration file with
+`--custom-config` further gives you the means to weigh, categorise and
+layout where on the report your results will be displayed.
+
+```
+$ memote report snapshot --custom-tests path/to/dir/ --custom-config path/to/config.yml --filename "report.html" path/to/model.xml
+```
+
+### The Pytest Option[¶](#the-pytest-option "Permalink to this headline")
+
+In addition, it is possible to pass any number of absolute paths to custom
+test directories directly to pytest, as long as they are placed behind any
+other parameters that you might want to pass in. For instance here we want to
+get a list of the ten slowest running tests while including two custom test
+module directories:
+
+```
+$ memote run -a "--durations=10 path/to/dir1/ path/to/dir2/" --filename "report.html" path/to/model.xml
+```
+
+## Guidelines[¶](#guidelines "Permalink to this headline")
+
+Please consider the following guidelines which reflect some of the considerations
+behind the core tests in memote. Adhering to these guidelines will allow other
+researchers to easily adopt your custom tests and ensure that they are applicable
+to a wide array of modeling practises.
+
+1. **Be namespace agnostic**. Use the `METANETX_SHORTLIST` and
+`COMPARTMENT_SHORTLIST` (both in `memote/support/helpers.py`) mapping
+tables from memote or consider creating your own if your custom test needs to
+identify a specific metabolite in a specific
+compartment. You can generate a custom metabolite shortlist by adapting
+`shortlist.tsv` and then executing the script `annotate_mnx_shortlists.py`
+found in `memote/scripts`.
+
+2. **Be paradigm agnostic**. Use the functions provided in
+`memote/support` for routine operations i.e. identifying a model’s biomass
+reaction(s) or finding all purely metabolic reactions. We have been intent on making
+memote as robust as possible with regards to the range of modeling
+paradigms we have encountered so far. In addition, support functions are rigidly
+unit tested.
+
+3. **Be organism agnostic**. Unless you target a specific class of organism,
+consider how your test performs on a model of a different organism. Will the
+results be biased by that in anyway? If so, consider emphasizing that bias in the
+docstring.
+
+4. **Be reproducible**. Provide a `requirements.txt` or `setup.cfg` with your
+custom test module if you rely on packages or specific version that differ from
+those memote relies on.
+
+5. **Write readable code**. Lint your code with respect to [PEP8](https://www.python.org/dev/peps/pep-0008/), annotate it
+consistently and make use of logging.
+
+6. **Share the love**. Let us know about your custom tests! We are considering
+to build a registry and knowing that people use this feature is the first step
+towards that.
+
+Back to top
+
+© Copyright 2017, Novo Nordisk Foundation Center for Biosustainability, Technical University of Denmark.
+Last updated on Sep 13, 2023.

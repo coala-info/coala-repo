@@ -1,6 +1,6 @@
 ---
 name: agouti
-description: AGouTI assigns biological context to genomic or transcriptomic intervals by overlapping them with known features like genes and sub-genic regions. Use when user asks to annotate genomic coordinates, build a searchable feature database from GTF files, or determine the functional context of experimental data like binding sites and variants.
+description: AGouTI processes genomic and transcriptomic intervals to label them with functional features using a high-performance SQLite database built from GTF or GFF3 files. Use when user asks to create an annotation database, annotate BED or custom interval files, or perform transcriptomic-mode analysis relative to transcript starts.
 homepage: https://github.com/zywicki-lab/agouti
 ---
 
@@ -8,54 +8,56 @@ homepage: https://github.com/zywicki-lab/agouti
 # agouti
 
 ## Overview
-AGouTI (Annotation of Genomic and Transcriptomic Intervals) is a flexible tool designed to assign biological context to specific coordinates. It transforms raw positional data into functional information by overlapping intervals with known genomic features. You should use this skill when you need to determine which genes or sub-genic regions (e.g., 5' part, middle, or 3' part of a transcript) correspond to your experimental data, such as RBP binding sites, variants, or structural motifs.
 
-## Installation and Setup
-AGouTI is available via Bioconda or pip. It requires Python >= 3.7.
+AGouTI (Annotation of Genomic and Transcriptomic Intervals) is a bioinformatics tool designed to bridge the gap between raw sequence intervals and functional genomic features. It processes standard annotation formats (GTF/GFF3) into a high-performance SQLite database, which is then used to query and label user-provided intervals. Unlike many general-purpose tools, AGouTI excels at transcriptomic-mode annotation, allowing researchers to work with coordinates relative to transcript starts rather than just genomic positions. This makes it an essential tool for analyzing RNA-binding protein (RBP) sites, structural motifs, and post-transcriptional modifications.
 
+## Database Creation (Step 1)
+
+Before annotating, you must build a local database from your reference annotation.
+
+### Basic Command
 ```bash
-# Installation via Conda
-conda install bioconda::agouti
-
-# Installation via pip
-pip install AGouTI
+agouti create_db -f GTF -a reference.gtf -d output_db
 ```
 
-## Core Workflow
-Running AGouTI is a mandatory two-step process: first building a searchable database, then performing the actual annotation.
+### Expert Tips for Database Building
+- **Memory Management**: For large genomes (e.g., Human Gencode), AGouTI may require up to 5GB of RAM. If working on a low-memory machine, use the `-l` or `--low-ram` flag to build the database directly on the disk (SSD recommended).
+- **Handling Incomplete GTFs**: If your GTF file lacks explicit "gene" or "transcript" feature lines, use `-i` (infer genes) and `-j` (infer transcripts). Note that these operations are computationally expensive and increase processing time.
+- **File Persistence**: Ensure you keep the generated `.relations` and `.pickle` files in the same directory as the SQLite database file; the `annotate` module requires all three to function.
 
-### 1. Database Creation (`create_db`)
-This step converts GTF/GFF3 files into an SQLite database. All attributes are converted to lowercase for consistency.
+## Interval Annotation (Step 2)
 
-**Basic Command:**
+Once the database is ready, you can annotate BED files or custom text-based interval files.
+
+### Basic Command
 ```bash
-agouti create_db -f GTF -a annotation.gtf -d output_db
+agouti annotate -i input.bed -d output_db
 ```
 
-**Expert Tips for Database Creation:**
-*   **Memory Management:** By default, the database is built in RAM. For large genomes (e.g., Human/Mouse) on machines with < 8GB RAM, use the `-l` or `--low-ram` flag to build directly on disk.
-*   **Sparse GTF Files:** If your GTF file lacks explicit "gene" or "transcript" lines, use `-i` (`--infer_genes`) and `-j` (`--infer_transcripts`). Note that this significantly increases processing time.
-*   **Required Files:** Ensure the generated `.relations` and `.pickle` files remain in the same directory as the `.db` file; the annotation step requires all three.
+### Working with Custom Formats
+If your data is not in standard BED format, use the `-m` or `--custom` flag to define your columns:
+- Specify columns for: `id`, `chr` (chromosome), `s` (start), `e` (end), and optionally `strand`.
+- This is ideal for TSV or CSV outputs from other bioinformatics pipelines.
 
-### 2. Interval Annotation (`annotate`)
-Once the database is ready, use it to annotate your coordinate files.
-
-**Basic Command:**
-```bash
-agouti annotate -d output_db -i input.bed -o annotated_results.txt
-```
-
-**Common CLI Patterns:**
-*   **Transcriptomic Mode:** Use this when your input coordinates are relative to the start of a transcript rather than a chromosome.
-    *   *Warning:* Ensure the transcript IDs in your input exactly match the version used to build the database (e.g., ENST00000613119.1 vs .2).
-*   **Custom Formats:** If your input is not a standard BED file, use the `--custom` flag to define which columns contain the ID, Chromosome/Transcript, Start, End, and Strand.
-*   **Feature Selection:** You can limit annotations to specific features (e.g., only `exon` or `CDS`) or specific attributes (e.g., `gene_name`, `biotype`) to keep the output concise.
+### Transcriptomic Mode
+When your coordinates are relative to a transcript (e.g., "Position 50 of ENST00000123456") rather than a chromosome:
+- Ensure the transcript IDs in your input file match the version used in the database (e.g., ENST00000613119.1 vs .2).
+- This mode is critical for RBP binding site analysis where the biological context is the processed mRNA.
 
 ## Best Practices
-*   **Uniformity:** Always check the `database_name.database.structure.txt` file after creation. It provides a tree-like visualization of the feature hierarchy, which is essential for choosing the right filters during the annotation step.
-*   **De Novo Regions:** AGouTI can define regions like "5' part" or "3' part" even if they aren't explicitly in the GTF. This is highly useful for analyzing distribution patterns across mRNA.
-*   **Handling Overlaps:** AGouTI is flexible with multiple annotations. If a region overlaps multiple features, use the attribute selection flags to prioritize the most relevant metadata for your analysis.
+- **Uniformity**: AGouTI converts all feature names and attributes to lowercase during database creation to ensure case-insensitive matching during annotation.
+- **Feature Selection**: After running `create_db`, check the `database_name.database.structure.txt` file. It provides a tree-like visualization of available features and attributes, helping you decide which specific tags to include in your final annotation output.
+- **Version Control**: Always use the exact same GTF/GFF3 version for creating the database that was used to generate the input intervals to avoid coordinate shifts or ID mismatches.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate BED or custom column-based files using a database created with agouti create_db. |
+| create_db | Create a genomic annotation database from GTF or GFF3 files |
 
 ## Reference documentation
-- [AGouTI GitHub README](./references/github_com_zywicki-lab_agouti.md)
-- [Bioconda AGouTI Overview](./references/anaconda_org_channels_bioconda_packages_agouti_overview.md)
+- [AGouTI README](./references/github_com_zywicki-lab_agouti_blob_main_README.md)
+- [AGouTI Setup and Metadata](./references/github_com_zywicki-lab_agouti_blob_main_setup.py.md)

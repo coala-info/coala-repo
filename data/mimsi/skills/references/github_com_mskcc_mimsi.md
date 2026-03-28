@@ -1,1 +1,297 @@
-GitHub - mskcc/mimsi: Microsatellite Instability Classification using Multiple Instance Learning Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} mskcc / mimsi Public Notifications You must be signed in to change notification settings Fork 8 Star 28 Microsatellite Instability Classification using Multiple Instance Learning github.com/mskcc/mimsi License GPL-3.0 license 28 stars 8 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 1 Pull requests 2 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights mskcc/mimsi master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 159 Commits 159 Commits data data main main model model tests tests utils utils .gitattributes .gitattributes .gitignore .gitignore .travis.yml .travis.yml LICENSE LICENSE README.md README.md __init__.py __init__.py analyze.py analyze.py makefile makefile requirements.txt requirements.txt setup.py setup.py View all files Repository files navigation README GPL-3.0 license MiMSI A deep, multiple instance learning based classifier for identifying Microsatellite Instability in Next-Generation Sequencing Results. Made with ❤️ and lots of ☕ by the Clinical Bioinformatics Team @ Memorial Sloan Kettering Cancer Center Summary Microsatellite Instability (MSI) is a phenotypic measure of deficiencies in DNA mismatch repair (MMR) machinery. These deficiencies lead to replication slippage in microsatellite regions, resulting in varying lengths of deletions in tumor samples. Detecting proper MSI status with high sensitivity and specificity in cancer patients is a critical priority in clinical genomics, especially after the FDA's approval of a targeted therapy for advanced cancer patients with MSI-high phenotype regardless of cancer type. Current methods that determine MSI status using sequencing data compare the distributions of nucleotide deletion lengths between tumor and a matched normal with a statistical test. These methods lose sensitivity to accurately assess MSI status in some clinical situations, like low tumor purity samples or samples with low sequencing coverage. MiMSI is a multiple instance learning (MIL) model for predicting MSI phenotype from next-generation sequencing data that demonstrates very high sensitivity even in clinical situations where low purity samples are common. Getting Started Installing with conda conda install mimsi -c bioconda evaluate_sample --version Note that the conda package requires python 3.6, 3.7, or 3.8 Installing from source with pip The source code and prebuilt model can be obtained by cloning this repo onto your local environment: git clone https://github.com/mskcc/mimsi.git cd mimsi and then to install via pip: cd mimsi # Root directory of the repository that includes the setup.py script. pip install . evaluate_sample --version On a local machine, build time for MiMSI via pip should be less than 2 minutes, depenent on download speed. Running a Full Analysis MiMSI is comprised of two main steps. The first is an NGS Vector creation stage, where the aligned reads are encoded into a form that can be interpreted by our model. The second stage is the actual evaluation, where we input the collection of microsatellite instances for a sample into the trained model to determine a classification for the sample. For convenience, we've packaged both of these stages into a python script that executes them together. If you'd like to run the steps individually (perhaps to train the model from scratch) please see the section "Running Analysis Components Separately" below. If you're interested in learning more about the implementation of MiMSI please check out our pre-print ! Required files MiMSI requires three main inputs: The tumor/normal pair of .bam files for the sample you would like to classify A list of the microsatellite regions the model should check The trained model to use in evaluating the sample or samples Tumor &amp; Normal .bam files If you are only analyzing one sample, the tumor and normal bam files can be specified as command line args (see "Testing an Individual Sample"). If you would like to process multiple samples in one batch the tool can accept a tab-separated file listing each sample with the following headers: Tumor_ID Tumor_Bam Normal_Bam Normal_ID Label sample-id-1 /tumor/bam/file/location /normal/bam/file/location normal1 -1 sample-id-2 /tumor/bam/file/location2 /normal/bam/file/location2 normal2 -1 The columns can be in any order as long as the column headers match the headers shown above. Note that the character '_' is not allowed in Tumor_ID and Normal_ID values. The Normal_ID column/values are optional. If Normal_ID is given for a tumor/normal pair, the npy array and final results will include the Normal_ID. Otherwise, only Tumor_ID will be reported. The Tumor_Bam and Normal_Bam columns specify the full filesystem path for the tumor and normal .bam files, respectively. The label field is not necessary if you are evaluating cases, but it's included in the event that you would like to train &amp; test a custom model on your own dataset (see "Training the Model from Scratch"). The vectors and final classification results will be named according to the Tumor_ID, and optionally, Normal_ID columns, so be sure to use something that is unique and easily recognizable to avoid errors. List of Microsatellite Regions A list of microsatellite regions needs to be provided as a tab-separated text file. A (very) short example list demonstrating the required columns is provided in the /utils/example_ms_list.txt file. A version of the file we used in testing/training is also available in the utils directory as 'microsatellites_impact_only.list'. NOTE: The sites present in this file focus on the regions targeted by MSK-IMPACT, the NGS assay utilized in our institute. You may use this or feel free to focus on sites particular to your own panel. These files were generated utilizing the excellent MSI Scan functionality from MSISensor . Trained Models MiMSI was developed and tested with varying coverage levels and different pooling mechanisms. We have provided four fully-trained models in the models directory - two different coverage levels (100x and 200x combined tumor &amp; normal) with two different pooling mechanisms (average and attention). If you would like to use the attention models (indicated with an "_attn" suffix) include the --use-attention flag when calling analyze or evaluate_sample. The coverage levels can be set via the --coverage cli arg. The 200x model is the default, and for running the 100x models use --coverage 50 . Running an individual sample To run an individual sample, analyze --tumor-bam /path/to/tumor.bam --normal-bam /path/to/normal.bam --case-id my-unique-tumor-id --norm-case-id my-unique-normal-id --microsatellites-list ./test/microsatellites_impact_only.list --save-location /path/to/save/ --model ./model/mi_msi_v0_4_0_200x_attn.model --use-attention --save The tumor-bam and normal-bam args specify the .bam files the pipeline will use when building the input vectors. These vectors will be saved to disk in the location indicated by the save-location arg. WARNING: Existing files in this directory in the formats *_locations.npy and *_data.npy will be deleted! The format for the filename of the built vectors is {case-id}_data_{label}.npy and {case-id}_locations_{label}.npy . The data file contains the N x coverage x 40 x 3 vector for the sample, where N is the number of microsa
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmskcc%2Fmimsi)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmskcc%2Fmimsi)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=mskcc%2Fmimsi)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[mskcc](/mskcc)
+/
+**[mimsi](/mskcc/mimsi)**
+Public
+
+* [Notifications](/login?return_to=%2Fmskcc%2Fmimsi) You must be signed in to change notification settings
+* [Fork
+  9](/login?return_to=%2Fmskcc%2Fmimsi)
+* [Star
+   28](/login?return_to=%2Fmskcc%2Fmimsi)
+
+* [Code](/mskcc/mimsi)
+* [Issues
+  1](/mskcc/mimsi/issues)
+* [Pull requests
+  3](/mskcc/mimsi/pulls)
+* [Actions](/mskcc/mimsi/actions)
+* [Projects](/mskcc/mimsi/projects)
+* [Security
+  0](/mskcc/mimsi/security)
+* [Insights](/mskcc/mimsi/pulse)
+
+Additional navigation options
+
+* [Code](/mskcc/mimsi)
+* [Issues](/mskcc/mimsi/issues)
+* [Pull requests](/mskcc/mimsi/pulls)
+* [Actions](/mskcc/mimsi/actions)
+* [Projects](/mskcc/mimsi/projects)
+* [Security](/mskcc/mimsi/security)
+* [Insights](/mskcc/mimsi/pulse)
+
+# mskcc/mimsi
+
+master
+
+[Branches](/mskcc/mimsi/branches)[Tags](/mskcc/mimsi/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[159 Commits](/mskcc/mimsi/commits/master/)   159 Commits | | |
+| [data](/mskcc/mimsi/tree/master/data "data") | | [data](/mskcc/mimsi/tree/master/data "data") |  |  |
+| [main](/mskcc/mimsi/tree/master/main "main") | | [main](/mskcc/mimsi/tree/master/main "main") |  |  |
+| [model](/mskcc/mimsi/tree/master/model "model") | | [model](/mskcc/mimsi/tree/master/model "model") |  |  |
+| [tests](/mskcc/mimsi/tree/master/tests "tests") | | [tests](/mskcc/mimsi/tree/master/tests "tests") |  |  |
+| [utils](/mskcc/mimsi/tree/master/utils "utils") | | [utils](/mskcc/mimsi/tree/master/utils "utils") |  |  |
+| [.gitattributes](/mskcc/mimsi/blob/master/.gitattributes ".gitattributes") | | [.gitattributes](/mskcc/mimsi/blob/master/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/mskcc/mimsi/blob/master/.gitignore ".gitignore") | | [.gitignore](/mskcc/mimsi/blob/master/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/mskcc/mimsi/blob/master/.travis.yml ".travis.yml") | | [.travis.yml](/mskcc/mimsi/blob/master/.travis.yml ".travis.yml") |  |  |
+| [LICENSE](/mskcc/mimsi/blob/master/LICENSE "LICENSE") | | [LICENSE](/mskcc/mimsi/blob/master/LICENSE "LICENSE") |  |  |
+| [README.md](/mskcc/mimsi/blob/master/README.md "README.md") | | [README.md](/mskcc/mimsi/blob/master/README.md "README.md") |  |  |
+| [\_\_init\_\_.py](/mskcc/mimsi/blob/master/__init__.py "__init__.py") | | [\_\_init\_\_.py](/mskcc/mimsi/blob/master/__init__.py "__init__.py") |  |  |
+| [analyze.py](/mskcc/mimsi/blob/master/analyze.py "analyze.py") | | [analyze.py](/mskcc/mimsi/blob/master/analyze.py "analyze.py") |  |  |
+| [makefile](/mskcc/mimsi/blob/master/makefile "makefile") | | [makefile](/mskcc/mimsi/blob/master/makefile "makefile") |  |  |
+| [requirements.txt](/mskcc/mimsi/blob/master/requirements.txt "requirements.txt") | | [requirements.txt](/mskcc/mimsi/blob/master/requirements.txt "requirements.txt") |  |  |
+| [setup.py](/mskcc/mimsi/blob/master/setup.py "setup.py") | | [setup.py](/mskcc/mimsi/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* GPL-3.0 license
+
+# MiMSI
+
+A deep, multiple instance learning based classifier for identifying Microsatellite Instability in Next-Generation Sequencing Results.
+
+Made with ❤️ and lots of ☕ by the Clinical Bioinformatics Team @ Memorial Sloan Kettering Cancer Center
+
+## Summary
+
+Microsatellite Instability (MSI) is a phenotypic measure of deficiencies in DNA mismatch repair (MMR) machinery. These deficiencies lead to replication slippage in microsatellite regions, resulting in varying lengths of deletions in tumor samples. Detecting proper MSI status with high sensitivity and specificity in cancer patients is a critical priority in clinical genomics, especially after the FDA's approval of a targeted therapy for advanced cancer patients with MSI-high phenotype regardless of cancer type.
+
+Current methods that determine MSI status using sequencing data compare the distributions of nucleotide deletion lengths between tumor and a matched normal with a statistical test. These methods lose sensitivity to accurately assess MSI status in some clinical situations, like low tumor purity samples or samples with low sequencing coverage. MiMSI is a multiple instance learning (MIL) model for predicting MSI phenotype from next-generation sequencing data that demonstrates very high sensitivity even in clinical situations where low purity samples are common.
+
+## Getting Started
+
+### Installing with conda
+
+```
+conda install mimsi -c bioconda
+evaluate_sample --version
+```
+
+*Note that the conda package requires python 3.6, 3.7, or 3.8*
+
+### Installing from source with pip
+
+The source code and prebuilt model can be obtained by cloning this repo onto your local environment:
+
+```
+git clone https://github.com/mskcc/mimsi.git
+cd mimsi
+```
+
+and then to install via pip:
+
+```
+cd mimsi # Root directory of the repository that includes the setup.py script.
+pip install .
+evaluate_sample --version
+```
+
+On a local machine, build time for MiMSI via pip should be less than 2 minutes, depenent on download speed.
+
+## Running a Full Analysis
+
+MiMSI is comprised of two main steps. The first is an NGS Vector creation stage, where the aligned reads are encoded into a form that can be interpreted by our model. The second stage is the actual evaluation, where we input the collection of microsatellite instances for a sample into the trained model to determine a classification for the sample. For convenience, we've packaged both of these stages into a python script that executes them together. If you'd like to run the steps individually (perhaps to train the model from scratch) please see the section "Running Analysis Components Separately" below.
+
+If you're interested in learning more about the implementation of MiMSI please check out our [pre-print](https://www.biorxiv.org/content/10.1101/2020.09.16.299925v1)!
+
+### Required files
+
+MiMSI requires three main inputs:
+
+1. The tumor/normal pair of `.bam` files for the sample you would like to classify
+2. A list of the microsatellite regions the model should check
+3. The trained model to use in evaluating the sample or samples
+
+#### Tumor & Normal .bam files
+
+If you are only analyzing one sample, the tumor and normal bam files can be specified as command line args (see "Testing an Individual Sample"). If you would like to process multiple samples in one batch the tool can accept a tab-separated file listing each sample with the following headers:
+
+```
+Tumor_ID	Tumor_Bam	Normal_Bam	Normal_ID	Label
+sample-id-1     /tumor/bam/file/location    /normal/bam/file/location   normal1	-1
+sample-id-2     /tumor/bam/file/location2    /normal/bam/file/location2 normal2	-1
+```
+
+The columns can be in any order as long as the column headers match the headers shown above. Note that the character '\_' is not allowed in Tumor\_ID and Normal\_ID values. The Normal\_ID column/values are optional. If Normal\_ID is given for a tumor/normal pair, the npy array and final results will include the Normal\_ID. Otherwise, only Tumor\_ID will be reported. The Tumor\_Bam and Normal\_Bam columns specify the full filesystem path for the tumor and normal `.bam` files, respectively. The label field is not necessary if you are evaluating cases, but it's included in the event that you would like to train & test a custom model on your own dataset (see "Training the Model from Scratch"). The vectors and final classification results will be named according to the Tumor\_ID, and optionally, Normal\_ID columns, so be sure to use something that is unique and easily recognizable to avoid errors.
+
+#### List of Microsatellite Regions
+
+A list of microsatellite regions needs to be provided as a tab-separated text file. A (very) short example list demonstrating the required columns is provided in the `/utils/example_ms_list.txt` file. A version of the file we used in testing/training is also available in the utils directory as 'microsatellites\_impact\_only.list'. NOTE: The sites present in this file focus on the regions targeted by MSK-IMPACT, the NGS assay utilized in our institute. You may use this or feel free to focus on sites particular to your own panel. These files were generated utilizing the excellent MSI Scan functionality from [MSISensor](https://github.com/ding-lab/msisensor).
+
+#### Trained Models
+
+MiMSI was developed and tested with varying coverage levels and different pooling mechanisms. We have provided four fully-trained models in the models directory - two different coverage levels (100x and 200x combined tumor & normal) with two different pooling mechanisms (average and attention). If you would like to use the attention models (indicated with an "\_attn" suffix) include the `--use-attention` flag when calling analyze or evaluate\_sample. The coverage levels can be set via the `--coverage` cli arg. The 200x model is the default, and for running the 100x models use `--coverage 50`.
+
+### Running an individual sample
+
+To run an individual sample,
+
+```
+analyze --tumor-bam /path/to/tumor.bam --normal-bam /path/to/normal.bam --case-id my-unique-tumor-id --norm-case-id my-unique-normal-id --microsatellites-list ./test/microsatellites_impact_only.list --save-location /path/to/sav

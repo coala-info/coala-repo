@@ -1,1 +1,574 @@
-Workflow runs · heuermh/eider · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} heuermh / eider Public Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 0 Star 0 Code Issues 4 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: heuermh/eider Actions All workflows Workflows CI CI Deploy Snapshot Deploy Snapshot Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 36 workflow runs 36 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. add sql statement delimiter Deploy Snapshot #34: Commit c36b2c7 pushed by heuermh 1m 5s main main 1m 5s View workflow file specify zenodo doi Deploy Snapshot #33: Commit 772563b pushed by heuermh 1m 11s main main 1m 11s View workflow file chore: 📝 Update codemeta.json with Zenodo identifier Deploy Snapshot #32: Commit 38c5f03 pushed by codefair-io bot 1m 9s main main 1m 9s View workflow file chore: 📝 Update CITATION.cff with Zenodo identifier Deploy Snapshot #31: Commit 8d7cb37 pushed by codefair-io bot 1m 7s main main 1m 7s View workflow file [maven-release-plugin] prepare for next development iteration Deploy Snapshot #30: Commit 57b0feb pushed by heuermh 1m 3s main main 1m 3s View workflow file [maven-release-plugin] prepare release eider-0.3 Deploy Snapshot #29: Commit 5a64a1a pushed by heuermh 1m 16s main main 1m 16s View workflow file add homebrew install doc Deploy Snapshot #28: Commit 8d12e6c pushed by heuermh 1m 7s main main 1m 7s View workflow file remove affiliation Deploy Snapshot #27: Commit 42ebe4e pushed by heuermh 1m 5s main main 1m 5s View workflow file feat: ✨ add citation file Deploy Snapshot #26: Commit f16c767 pushed by heuermh 1m 11s main main 1m 11s View workflow file feat: ✨ Add code metadata files CI #2: Pull request #8 opened by codefair-io bot 49s code-metadata-I7z7z code-metadata-I7z7z 49s View #8 View workflow file update duckdb dependency version to 1.4.4.0 Deploy Snapshot #25: Commit 76b28fa pushed by heuermh 1m 53s main main 1m 53s View workflow file update duckdb dependency version to 1.4.3.0 Deploy Snapshot #24: Commit ec1fb65 pushed by heuermh 1m 19s main main 1m 19s View workflow file update duckdb dependency version to 1.4.2.0 Deploy Snapshot #23: Commit 69ae557 pushed by heuermh 1m 38s main main 1m 38s View workflow file update dsh-compress dependency version to 1.8.1, duckdb to 1.4.1.0 Deploy Snapshot #22: Commit ad3039a pushed by heuermh 1m 39s main main 1m 39s View workflow file update duckdb dependency version to 1.4.0.0 Deploy Snapshot #21: Commit 5b328f4 pushed by heuermh 1m 10s main main 1m 10s View workflow file [maven-release-plugin] prepare for next development iteration Deploy Snapshot #20: Commit 8ae2493 pushed by heuermh 1m 14s main main 1m 14s View workflow file [maven-release-plugin] prepare release eider-0.2 Deploy Snapshot #19: Commit 57cfa41 pushed by heuermh 1m 21s main main 1m 21s View workflow file update duckdb dependency version to 1.3.2.1 Deploy Snapshot #18: Commit 44662ea pushed by heuermh 1m 23s main main 1m 23s View workflow file update server-id to central Deploy Snapshot #17: Commit 10cb418 pushed by heuermh 1m 11s main main 1m 11s View workflow file update duckdb dependency version to 1.3.2.0, dsh-compress to 1.8, dsh… Deploy Snapshot #16: Commit 1b90fae pushed by heuermh 52s main main 52s View workflow file update duckdb dependency version to 1.3.1.0 Deploy Snapshot #15: Commit c31f7b5 pushed by heuermh 50s main main 50s View workflow file update duckdb depdendency version to 1.3.0.0 Deploy Snapshot #14: Commit ddeb282 pushed by heuermh 1m 0s main main 1m 0s View workflow file update picocli dependency version to 4.7.7, dsh-compress to 1.7.2, ds… Deploy Snapshot #13: Commit a6150db pushed by heuermh 1m 10s main main 1m 10s View workflow file minor style fixes Deploy Snapshot #12: Commit 06eff73 pushed by heuermh 43s main main 43s View workflow file add conda/biocontainers doc to readme Deploy Snapshot #11: Commit c965ad9 pushed by heuermh 55s main main 55s View workflow file Previous 1 2 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fheuermh%2Feider%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fheuermh%2Feider%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=heuermh%2Feider)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[heuermh](/heuermh)
+/
+**[eider](/heuermh/eider)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Fheuermh%2Feider) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fheuermh%2Feider)
+* [Star
+   0](/login?return_to=%2Fheuermh%2Feider)
+
+* [Code](/heuermh/eider)
+* [Issues
+  4](/heuermh/eider/issues)
+* [Pull requests
+  0](/heuermh/eider/pulls)
+* [Actions](/heuermh/eider/actions)
+* [Projects](/heuermh/eider/projects)
+* [Security
+  0](/heuermh/eider/security)
+* [Insights](/heuermh/eider/pulse)
+
+Additional navigation options
+
+* [Code](/heuermh/eider)
+* [Issues](/heuermh/eider/issues)
+* [Pull requests](/heuermh/eider/pulls)
+* [Actions](/heuermh/eider/actions)
+* [Projects](/heuermh/eider/projects)
+* [Security](/heuermh/eider/security)
+* [Insights](/heuermh/eider/pulse)
+
+# Actions: heuermh/eider
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**37 workflow runs**
+
+**37 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[update duckdb dependency version to 1.5.0.0](/heuermh/eider/actions/runs/22918807980)
+
+Deploy Snapshot
+#35:
+Commit [e788bb9](/heuermh/eider/commit/e788bb9582e71445949e0f92c2434ab616e1d7c2)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 30s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 30s
+
+* [View workflow file](/heuermh/eider/actions/runs/22918807980/workflow)
+
+[add sql statement delimiter](/heuermh/eider/actions/runs/21720600833)
+
+Deploy Snapshot
+#34:
+Commit [c36b2c7](/heuermh/eider/commit/c36b2c79dd30f67fe92788e96ff07a52b518be6e)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 5s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 5s
+
+* [View workflow file](/heuermh/eider/actions/runs/21720600833/workflow)
+
+[specify zenodo doi](/heuermh/eider/actions/runs/21547191636)
+
+Deploy Snapshot
+#33:
+Commit [772563b](/heuermh/eider/commit/772563bb64f4b8edb04b02219a7c3f3c7ecac889)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 11s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 11s
+
+* [View workflow file](/heuermh/eider/actions/runs/21547191636/workflow)
+
+[chore: 📝 Update codemeta.json with Zenodo identifier](/heuermh/eider/actions/runs/21547014571)
+
+Deploy Snapshot
+#32:
+Commit [38c5f03](/heuermh/eider/commit/38c5f03f45f63b5eb4f91740ece9fdbd55f2e2b6)
+pushed
+by
+[codefair-io](/apps/codefair-io)
+bot
+
+1m 9s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 9s
+
+* [View workflow file](/heuermh/eider/actions/runs/21547014571/workflow)
+
+[chore: 📝 Update CITATION.cff with Zenodo identifier](/heuermh/eider/actions/runs/21547014384)
+
+Deploy Snapshot
+#31:
+Commit [8d7cb37](/heuermh/eider/commit/8d7cb37f166716b5934de2c375f0b62ab52277be)
+pushed
+by
+[codefair-io](/apps/codefair-io)
+bot
+
+1m 7s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 7s
+
+* [View workflow file](/heuermh/eider/actions/runs/21547014384/workflow)
+
+[[maven-release-plugin] prepare for next development iteration](/heuermh/eider/actions/runs/21546934121)
+
+Deploy Snapshot
+#30:
+Commit [57b0feb](/heuermh/eider/commit/57b0feb17eda30da6f626405d8d6b79d6ddcb2ad)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 3s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 3s
+
+* [View workflow file](/heuermh/eider/actions/runs/21546934121/workflow)
+
+[[maven-release-plugin] prepare release eider-0.3](/heuermh/eider/actions/runs/21546933841)
+
+Deploy Snapshot
+#29:
+Commit [5a64a1a](/heuermh/eider/commit/5a64a1a7b1d3592b5126df7c6d890e1df8040247)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 16s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 16s
+
+* [View workflow file](/heuermh/eider/actions/runs/21546933841/workflow)
+
+[add homebrew install doc](/heuermh/eider/actions/runs/21527459443)
+
+Deploy Snapshot
+#28:
+Commit [8d12e6c](/heuermh/eider/commit/8d12e6c3e04c7a2bbf7af4c5a3a0091b465a0775)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 7s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 7s
+
+* [View workflow file](/heuermh/eider/actions/runs/21527459443/workflow)
+
+[remove affiliation](/heuermh/eider/actions/runs/21527026937)
+
+Deploy Snapshot
+#27:
+Commit [42ebe4e](/heuermh/eider/commit/42ebe4e7aa3e3ffc6c49f16ec5918e228b79dd1b)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 5s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 5s
+
+* [View workflow file](/heuermh/eider/actions/runs/21527026937/workflow)
+
+[feat: ✨ add citation file](/heuermh/eider/actions/runs/21526972688)
+
+Deploy Snapshot
+#26:
+Commit [f16c767](/heuermh/eider/commit/f16c76728cbdba97b7dc2e30671741d9973278a0)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 11s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 11s
+
+* [View workflow file](/heuermh/eider/actions/runs/21526972688/workflow)
+
+[feat: ✨ Add code metadata files](/heuermh/eider/actions/runs/21526910993)
+
+CI
+#2:
+Pull request [#8](/heuermh/eider/pull/8)
+opened
+by
+[codefair-io](/apps/codefair-io)
+bot
+
+49s
+[code-metadata-I7z7z](/heuermh/eider/tree/refs/heads/code-metadata-I7z7z "code-metadata-I7z7z")
+
+[code-metadata-I7z7z](/heuermh/eider/tree/refs/heads/code-metadata-I7z7z "code-metadata-I7z7z")
+
+49s
+
+* [View #8](/heuermh/eider/pull/8)
+* [View workflow file](/heuermh/eider/actions/runs/21526910993/workflow)
+
+[update duckdb dependency version to 1.4.4.0](/heuermh/eider/actions/runs/21403934105)
+
+Deploy Snapshot
+#25:
+Commit [76b28fa](/heuermh/eider/commit/76b28fa713c988712a5c15dd9e60ac631d502eb4)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 53s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 53s
+
+* [View workflow file](/heuermh/eider/actions/runs/21403934105/workflow)
+
+[update duckdb dependency version to 1.4.3.0](/heuermh/eider/actions/runs/20186509223)
+
+Deploy Snapshot
+#24:
+Commit [ec1fb65](/heuermh/eider/commit/ec1fb65dd441f23d26d0898199ef71eaf392c37f)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 19s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 19s
+
+* [View workflow file](/heuermh/eider/actions/runs/20186509223/workflow)
+
+[update duckdb dependency version to 1.4.2.0](/heuermh/eider/actions/runs/19803424536)
+
+Deploy Snapshot
+#23:
+Commit [69ae557](/heuermh/eider/commit/69ae55754df81827cadebf2df9c97f11efb0f692)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 38s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 38s
+
+* [View workflow file](/heuermh/eider/actions/runs/19803424536/workflow)
+
+[update dsh-compress dependency version to 1.8.1, duckdb to 1.4.1.0](/heuermh/eider/actions/runs/19176561880)
+
+Deploy Snapshot
+#22:
+Commit [ad3039a](/heuermh/eider/commit/ad3039a7454e7cc91cb31c90c413cd8602099762)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 39s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 39s
+
+* [View workflow file](/heuermh/eider/actions/runs/19176561880/workflow)
+
+[update duckdb dependency version to 1.4.0.0](/heuermh/eider/actions/runs/17798345994)
+
+Deploy Snapshot
+#21:
+Commit [5b328f4](/heuermh/eider/commit/5b328f4e739ad1851e68383a83846e346d7e4a92)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 10s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 10s
+
+* [View workflow file](/heuermh/eider/actions/runs/17798345994/workflow)
+
+[[maven-release-plugin] prepare for next development iteration](/heuermh/eider/actions/runs/17506730706)
+
+Deploy Snapshot
+#20:
+Commit [8ae2493](/heuermh/eider/commit/8ae2493ccaa42c05f2bb6b4e343179589462657e)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 14s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+1m 14s
+
+* [View workflow file](/heuermh/eider/actions/runs/17506730706/workflow)
+
+[[maven-release-plugin] prepare release eider-0.2](/heuermh/eider/actions/runs/17506730346)
+
+Deploy Snapshot
+#19:
+Commit [57cfa41](/heuermh/eider/commit/57cfa419b3b3d1da607f40b47ac3e0ccf480dd7b)
+pushed
+by
+[heuermh](/heuermh)
+
+1m 21s
+[main](/heuermh/eider/tree/refs/heads/main "main")
+
+[main](/heuermh/eider/tree/refs/heads/main "

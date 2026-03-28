@@ -116,3 +116,6 @@ Options for sampling:
                                   generator (set this automatically if seed=0)
 ```
 
+
+## Metadata
+- **Skill**: generated

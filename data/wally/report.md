@@ -117,3 +117,6 @@ Display options:
   -y [ --height ] arg (=0)       height of the plot [0: best fit]
 ```
 
+
+## Metadata
+- **Skill**: generated

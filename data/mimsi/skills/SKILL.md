@@ -1,6 +1,6 @@
 ---
 name: mimsi
-description: MiMSI is a deep learning tool that predicts microsatellite instability phenotypes from tumor-normal BAM pairs using multiple instance learning. Use when user asks to classify MSI status, predict MSI phenotypes from NGS data, or process tumor-normal pairs for microsatellite analysis.
+description: MiMSI identifies microsatellite instability phenotypes from tumor-normal BAM pairs using a deep learning approach. Use when user asks to classify MSI status, analyze tumor-normal BAM files for microsatellite instability, or run multiple instance learning models on genomic data.
 homepage: https://github.com/mskcc/mimsi
 ---
 
@@ -9,66 +9,74 @@ homepage: https://github.com/mskcc/mimsi
 
 ## Overview
 
-MiMSI (Microsatellite Instability Classification using Multiple Instance Learning) is a deep learning-based tool designed to predict MSI phenotypes from tumor-normal BAM pairs. While traditional methods rely on statistical tests of nucleotide deletion lengths—which often fail in low-purity or low-coverage clinical scenarios—MiMSI encodes aligned reads into vectors and uses a trained MIL model to maintain high sensitivity and specificity across varying sample qualities.
+MiMSI (Multiple Instance learning based classifier for Microsatellite Instability) is a specialized bioinformatics tool that identifies MSI phenotypes from tumor-normal BAM pairs. Unlike traditional methods that rely on statistical tests of deletion length distributions, MiMSI uses a deep learning approach (Multiple Instance Learning) to maintain accuracy in samples with low tumor content. The workflow involves encoding aligned reads into NGS vectors and then evaluating those vectors against pre-trained models to produce a classification probability.
 
-## Installation
+## Installation and Setup
 
-The tool is available via Bioconda (recommended) or source.
+MiMSI is available via Bioconda or source. It requires Python 3.6, 3.7, or 3.8.
 
 ```bash
-# Conda installation
-conda install -c bioconda mimsi
+# Installation via Conda
+conda install mimsi -c bioconda
 
-# Verify installation
-evaluate_sample --version
+# Installation from source
+git clone https://github.com/mskcc/mimsi.git
+cd mimsi
+pip install .
 ```
 
-## Core Workflow
+## Core Workflow: Running Analysis
 
-MiMSI operates in two stages: NGS Vector creation (encoding reads) and Evaluation (classification). These are typically executed together using the `analyze` command.
+The `analyze` command handles both vector creation and model evaluation.
 
 ### Single Sample Analysis
-To process an individual tumor-normal pair, provide the BAM files and a microsatellite site list.
+To process an individual tumor/normal pair, provide the BAM paths and a microsatellite loci list.
 
 ```bash
 analyze \
   --tumor-bam /path/to/tumor.bam \
   --normal-bam /path/to/normal.bam \
-  --case-id unique-sample-id \
+  --case-id tumor_sample_001 \
+  --norm-case-id normal_sample_001 \
   --microsatellites-list ./utils/microsatellites_impact_only.list \
   --model ./model/mi_msi_v0_4_0_200x_attn.model \
-  --save-location /path/to/output/ \
   --use-attention \
+  --save-location ./results/ \
   --save
 ```
 
-### Batch Processing
-For multiple samples, create a tab-separated (TSV) file with the following headers: `Tumor_ID`, `Tumor_Bam`, `Normal_Bam`, `Normal_ID`, and `Label`.
+### Bulk Processing
+For batch runs, use a tab-separated case list file with headers: `Tumor_ID`, `Tumor_Bam`, `Normal_Bam`, `Normal_ID`, and `Label`.
 
-*   **Note**: The `_` character is prohibited in `Tumor_ID` and `Normal_ID` values.
-*   **Label**: Use `-1` for unknown cases during evaluation.
+```bash
+analyze --case-list /path/to/samples.tsv --microsatellites-list ./utils/microsatellites.list --save-location ./output/
+```
 
 ## Expert Tips and Best Practices
 
-### Model Selection
-MiMSI provides pre-trained models optimized for different sequencing depths and pooling mechanisms:
-*   **Coverage**: The default model is 200x (combined tumor/normal). For lower coverage data, use the 100x models by passing `--coverage 50`.
-*   **Pooling**: If using a model with the `_attn` suffix, you **must** include the `--use-attention` flag in your command.
+### Model Selection and Coverage
+MiMSI provides models optimized for different sequencing depths and pooling mechanisms. Match your parameters to the pre-trained model filename:
+- **Coverage**: The default is 200x. For 100x combined coverage, use `--coverage 50`.
+- **Pooling**: If using a model with the `_attn` suffix, you **must** include the `--use-attention` flag.
+- **Default**: The 200x attention model is generally recommended for standard clinical panels.
 
-### Microsatellite Site Lists
-The tool requires a list of regions to inspect. 
-*   For MSK-IMPACT assays, use `utils/microsatellites_impact_only.list`.
-*   For custom panels, generate a site list using the `scan` functionality from **MSISensor**.
+### Input Requirements
+- **Loci List**: Use the provided `microsatellites_impact_only.list` for MSK-IMPACT assays or generate a custom list using MSISensor's scan functionality.
+- **Naming Constraints**: Do **not** use underscores (`_`) in `Tumor_ID` or `Normal_ID` values, as this character is used as a delimiter in internal file naming.
+- **Output Handling**: The tool repeats evaluation 10x per sample to allow for confidence interval generation. Use the `--save` flag to ensure the classification score is written to disk rather than just standard output.
 
-### Output Files
-The tool generates `.npy` files during the vector creation stage:
-*   `{case-id}_data_{label}.npy`: Contains the N x coverage x 40 x 3 vector.
-*   `{case-id}_locations_{label}.npy`: Contains the genomic coordinates.
-*   **Warning**: The `analyze` command will delete existing `*_locations.npy` and `*_data.npy` files in the specified `--save-location`.
+### File Management
+The `save-location` directory is sensitive. MiMSI will automatically delete existing files matching `*_locations.npy` and `*_data.npy` in that directory to prevent data mixing. Always use a dedicated output folder per run or per sample.
 
-### Performance
-On a standard machine, building vectors and evaluating a sample via `pip` or `conda` typically takes less than 2 minutes, depending on the number of microsatellite sites and read depth.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| analyze | MiMSI Analysis |
+| evaluate_sample | MiMSI Sample(s) Evalution Utility |
 
 ## Reference documentation
-- [MiMSI GitHub Repository](./references/github_com_mskcc_mimsi.md)
-- [MiMSI Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_mimsi_overview.md)
+- [MiMSI Main Repository](./references/github_com_mskcc_mimsi_blob_master_README.md)
+- [Analysis Script Details](./references/github_com_mskcc_mimsi_blob_master_analyze.py.md)

@@ -326,3 +326,6 @@ Error: options < 3!
 Usage: /usr/local/bin/prune_tree.py input.nwk output.nwk seq/seqs(separated by comma)_in_clade1_for_deletion( seq/seqs_in_clade2_for_deletion ...)
 ```
 
+
+## Metadata
+- **Skill**: generated

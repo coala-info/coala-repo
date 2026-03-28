@@ -1,6 +1,6 @@
 ---
 name: phyx
-description: Phyx is a suite of command-line tools for performing modular phylogenetic operations and sequence alignment manipulations. Use when user asks to concatenate alignments, convert phylogenetic file formats, reroot trees, or translate nucleotide sequences.
+description: Phyx is a collection of command-line utilities designed for efficient phylogenetic data manipulation and workflow construction. Use when user asks to concatenate alignments, reroot or prune trees, convert sequence formats, or clean alignments by removing ambiguous data.
 homepage: https://github.com/FePhyFoFum/phyx
 ---
 
@@ -9,62 +9,58 @@ homepage: https://github.com/FePhyFoFum/phyx
 
 ## Overview
 
-`phyx` is a comprehensive suite of C++ command-line tools designed for phylogenetic procedures. Following the Unix philosophy of "one tool, one task," it provides modular programs that communicate via standard input and output. This allows for the construction of complex bioinformatics pipelines by chaining simple commands. The toolkit excels at sequence alignment manipulation (concatenation, cleaning, translation), tree operations (rerooting, pruning, NJ/UPGMA inference), and seamless conversion between common phylogenetic file formats.
+Phyx is a collection of specialized C++ utilities designed for high-efficiency phylogenetic workflows. It follows the Unix philosophy of "one tool for one task," allowing complex bioinformatics pipelines to be constructed by piping data between programs. It is particularly useful for researchers needing to manipulate large sets of Newick trees or sequence alignments without the overhead of heavy graphical interfaces.
 
-## Core CLI Usage and Patterns
+## Core CLI Patterns
 
-### General Syntax
-Most `phyx` tools follow a standard naming convention starting with `px`. You can access help for any specific tool using the `-h` flag:
-```bash
-pxcat -h
-```
+### Sequence Manipulation
+Phyx tools typically expect Fasta format by default but can handle others via converters.
+- **Concatenate alignments**: `pxcat -s seq1.fa seq2.fa -p partitions.txt -o combined.fa`
+- **Clean alignments**: Remove sites with high missing data using `pxclsq`.
+- **Translate sequences**: `pxtlate -i dna.fa -f 1 > protein.fa` (where `-f` specifies the reading frame).
+- **Format Conversion**: Use `pxs2fa`, `pxs2nex`, or `pxs2phy` to move between Fasta, Nexus, and Phylip.
 
-### Chaining Commands (Piping)
-The primary strength of `phyx` is its ability to pipe data between tools.
-*   **Example: Clean an alignment and then convert it to Phylip format:**
-    ```bash
-    pxclsq -s alignment.fa -p 0.2 | pxs2phy > cleaned_alignment.phy
-    ```
+### Tree Processing
+Phyx is highly effective for rapid tree topology edits.
+- **Rerooting**: `pxrr -t tree.tre -outgroup taxon_A,taxon_B`
+- **Pruning**: `pxrmt -t tree.tre -n taxon_to_remove`
+- **Subtree Extraction**: `pxtrt -t tree.tre -m "taxon_A,taxon_B"` extracts the induced subtree for the specified taxa.
+- **Support Filtering**: `pxcolt -t tree.tre -c 70` collapses nodes with bootstrap support below 70.
 
-### Common Sequence Operations
-*   **Concatenation**: Combine multiple alignments using `pxcat`.
-    ```bash
-    pxcat -s seq1.fa seq2.fa seq3.fa -o combined.fa
-    ```
-*   **Cleaning**: Remove sites with high missing data using `pxclsq`.
-*   **Translation**: Convert nucleotide sequences to amino acids with `pxtlate`.
-*   **Reverse Complement**: Use `pxrevcomp` for quick sequence orientation fixes.
+### Piping and Composition
+The power of phyx lies in combining tools. For example, to take a tree, reroot it, and then convert it to Nexus format in one line:
+`pxrr -t input.tre -o outgroup_name | pxt2nex > final_tree.nex`
 
-### Common Tree Operations
-*   **Inference**: Generate quick trees using Neighbor-Joining (`pxnj`) or UPGMA (`pxupgma`).
-*   **Rerooting**: Reroot a tree file using `pxrr`.
-*   **Pruning**: Remove specific taxa from a tree using `pxrmt`.
-*   **Subtree Extraction**: Extract an induced subtree from a larger phylogeny using `pxtrt`.
+## Expert Tips
 
-### Format Conversion
-`phyx` provides dedicated tools to move between Fasta, Nexus, and Phylip:
-*   `pxs2fa`: Convert to Fasta.
-*   `pxs2nex`: Convert to Nexus.
-*   `pxs2phy`: Convert to Phylip.
-*   `pxt2new`: Convert a tree to Newick format.
+- **Line Endings**: Phyx requires Unix line endings (`\n`). If your files were created on Windows, run `dos2unix` on them before processing to avoid truncated results or crashes.
+- **Illegal Characters**: Nexus and Newick formats are sensitive to characters like `()[]{}/,;:=*'"+-<>`. If your taxon names contain these, wrap the names in single quotes or use `pxrlt` to relabel them before analysis.
+- **Standard Input**: Most phyx programs can read from `stdin` if the input file argument is omitted or replaced with `-`, facilitating long pipe chains.
+- **Help Access**: Every tool supports the `-h` flag (e.g., `pxcat -h`) to display specific options and usage examples.
 
-## Expert Tips and Best Practices
 
-### Handling "Illegal" Characters
-Phylogenetic file formats (Nexus/Newick) have strict rules about taxon names. Characters like `()[]{}/,;:=*'"+-<>` can cause programs to crash or truncate results.
-*   **Solution**: Wrap taxon names containing these characters in single or double quotes within your input files.
 
-### Line Ending Consistency
-`phyx` is designed for Unix environments and expects Unix line endings (`\n`).
-*   If your data originated on Windows, use `dos2unix` to convert the files before processing to prevent piping errors or unexpected crashes.
+## Subcommands
 
-### Data Integrity
-*   **Compositional Homogeneity**: Use `pxcomp` to test if your sequence data meets the stationarity assumptions required by many phylogenetic models.
-*   **Bipartition Analysis**: Use `pxbp` to summarize bipartitions and support values from a set of trees (e.g., from a bootstrap or MCMC run).
-
-### Resource Efficiency
-Because `phyx` tools are written in C++ and focus on specific tasks, they are generally more memory-efficient than monolithic alternatives. When working with extremely large alignments, prefer piping (`|`) over writing intermediate files to disk to reduce I/O overhead.
+| Command | Description |
+|---------|-------------|
+| pxbp | Print out bipartitions found in treefile. Trees are assumed rooted unless the -e argument is provided. This will take a newick- or nexus-formatted tree from a file or STDIN. |
+| pxcat | Sequence file concatenation. This will take fasta, fastq, phylip, and nexus sequence formats. Individual files may be of different formats. |
+| pxclsq | Clean alignments by removing positions/taxa with too much ambiguous data. This will take fasta, fastq, phylip, and nexus formats from a file or STDIN. Results are written in fasta format. |
+| pxcomp | Sequence compositional homogeneity test. Chi-square test for equivalent character state counts across lineages. This will take fasta, phylip, and nexus formats from a file or STDIN. |
+| pxnj | Basic neighbour-joining tree maker. This will take fasta, fastq, phylip, and nexus inputs from a file or STDIN. |
+| pxrevcomp | Reverse complement sequences. This will take fasta, fastq, phylip, and nexus formats from a file or STDIN. Results are written in fasta format. |
+| pxrmt | Remove tree tips by label. This will take a newick- or nexus-formatted tree from a file or STDIN. Output is written in newick format. |
+| pxrr | Reroot (or unroot) a tree file and produce a newick. This will take a newick- or nexus-formatted tree from a file or STDIN. Output is written in newick format. |
+| pxs2fa | Convert seqfiles from nexus, phylip, fastq to fasta. Data can be read from a file or STDIN. |
+| pxs2nex | Convert seqfiles from nexus, phylip, or fastq to nexus. Can read from STDIN or file. |
+| pxs2phy | Convert seqfiles from nexus, phylip, or fastq to phylip. Can read from STDIN or file. |
+| pxt2new | Converts a tree file (newick or nexus) to newick format. |
+| pxtlate | Translate DNA alignment to amino acids. This will take fasta, fastq, phylip, and nexus formats from a file or STDIN. NOTE: assumes sequences are in frame. |
+| pxtrt | This will trace a big tree given a taxon list and produce newick. Data can be read from a file or STDIN. |
+| pxupgma | Bare bones UPGMA tree generator. Currently only uses uncorrected p-distances. This will take fasta, fastq, phylip, and nexus formats from a file or STDIN. |
 
 ## Reference documentation
-- [Phyx GitHub Repository](./references/github_com_FePhyFoFum_phyx.md)
-- [Phyx Wiki Home](./references/github_com_FePhyFoFum_phyx_wiki.md)
+- [github_com_FePhyFoFum_phyx.md](./references/github_com_FePhyFoFum_phyx.md)
+- [github_com_FePhyFoFum_phyx_wiki_Program-list.md](./references/github_com_FePhyFoFum_phyx_wiki_Program-list.md)
+- [github_com_FePhyFoFum_phyx_wiki_Installation.md](./references/github_com_FePhyFoFum_phyx_wiki_Installation.md)

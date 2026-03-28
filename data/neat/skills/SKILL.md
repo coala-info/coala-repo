@@ -1,67 +1,59 @@
 ---
 name: neat
-description: "NEAT generates high-fidelity synthetic sequencing data and ground truth files by modeling the characteristics of real sequencing runs. Use when user asks to simulate sequencing reads, create custom error or mutation models, or compare VCF files against a golden reference to evaluate pipeline performance."
+description: NEAT is a high-fidelity read simulator that generates genomic data and ground-truth files by learning empirical models from existing datasets. Use when user asks to simulate sequencing reads, generate fragment length or error models, or compare variant calling results against a golden VCF.
 homepage: https://github.com/ncsa/NEAT/
 ---
 
 
 # neat
 
----
-
 ## Overview
-NEAT (NExt-generation Analysis Toolkit) is a specialized suite for creating high-fidelity synthetic sequencing data with an established ground truth. Unlike basic simulators, NEAT can "learn" the characteristics of real sequencing runs—such as error profiles, fragment length distributions, and mutational models—to produce data that closely mimics actual laboratory results. It is primarily used to stress-test alignment and variant calling workflows by providing "golden" reference files (BAM/VCF) that represent the exact truth of the simulated reads.
 
-## Core Functionality and CLI Patterns
+NEAT (NExt-generation Analysis Toolkit) is a high-fidelity read simulator that produces genomic data mimicking real-world sequencing runs. Unlike simulators that use static error profiles, NEAT can learn empirical models—including fragment length distributions, sequencing errors, and quality scores—directly from existing datasets. It supports both short-read and long-read simulation and outputs "golden" BAM and VCF files, providing an absolute ground truth for testing alignment and variant calling accuracy.
 
-### Primary Simulation
-The main entry point for generating reads is the `read-simulator`. In recent versions (4.3.5+), performance is significantly improved through parallel processing.
+## Native CLI Usage
 
-*   **Check Installation**: Verify the environment and available sub-commands.
-    ```bash
-    neat --help
-    ```
-*   **Parallel Execution**: Use the threads parameter to speed up simulation for large genomes.
-    ```bash
-    neat read-simulator --threads <number_of_threads>
-    ```
-*   **Log Management**: If the output is too verbose, restrict logging to errors only.
-    ```bash
-    neat read-simulator --log-level ERROR
-    ```
+NEAT is invoked using the `neat` executable followed by specific subcommands. Use `neat --help` to see the full list of available modules.
 
-### Modeling Utilities
-NEAT provides specific utilities to extract parameters from existing datasets to make simulations more realistic.
+### Core Simulation
+- **read-simulator**: The primary engine for generating simulated reads. It processes a reference FASTA and applies mutation and sequencing models to produce FASTQ, BAM, and VCF outputs.
+- **vcf_compare**: A specialized utility to compare a "query" VCF (from a variant caller) against the "golden" VCF produced by NEAT to calculate sensitivity and precision.
 
-*   **Fragment Length Modeling**: Learn the distribution of fragment lengths from an existing BAM file.
-    ```bash
-    neat model-fraglen
-    ```
-*   **Mutation Modeling**: Generate a model of mutational frequencies.
-    ```bash
-    neat gen-mut-model
-    ```
-*   **Sequencing Error Modeling**: Create a custom error model based on a specific sequencing run or machine type.
-    ```bash
-    neat model-seq-err
-    ```
+### Model Generation Utilities
+Before running a simulation, use these tools to create models from real data:
+- **model-fraglen**: Extracts fragment length distributions from an existing BAM file.
+- **gen-mut-model**: Generates a mutation model based on provided genomic data.
+- **model-seq-err**: Learns sequencing error rates and patterns from a BAM file.
+- **model-qual-score**: Learns binned quality score distributions from a FASTQ or BAM file.
 
-### Validation and Comparison
-After running a variant caller on NEAT-generated data, use the comparison tool to evaluate performance.
+## Best Practices and Expert Tips
 
-*   **VCF Comparison**: Compare your pipeline's VCF output against the "golden" VCF produced by NEAT to calculate sensitivity and precision.
-    ```bash
-    neat vcf_compare
-    ```
+### Performance Optimization
+- **Parallelization**: NEAT 4.3+ supports multi-threading. Ensure the `threads` parameter is utilized to significantly speed up the `read-simulator` and VCF processing stages.
+- **Logging**: If the output is too verbose, use the `--log-level ERROR` flag to suppress non-critical messages and improve terminal performance.
 
-## Expert Tips and Best Practices
+### Environment and Dependencies
+- **Linux Requirement**: NEAT is designed for Linux (tested on Ubuntu). Windows users should use WSL, and MacOS users must remove `libgcc` from the `environment.yml` before installation.
+- **VCF Requirements**: `bcftools` must be installed and available in the system PATH if you require NEAT to generate or process VCF files.
+- **Data Preparation**: Always ensure the reference FASTA is unzipped (e.g., `gunzip data/H1N1.fa.gz`) before starting a simulation to avoid file-read errors.
 
-*   **Environment Setup**: NEAT is designed for Linux (tested on Ubuntu). If working on Windows or macOS, use WSL or a containerized environment. For macOS users, ensure `libgcc` is handled correctly in the environment setup.
-*   **VCF Requirements**: To generate VCF files containing the variants NEAT added, ensure `bcftools` is installed and available in your PATH.
-*   **Ploidy Considerations**: When simulating non-human or specific experimental organisms, ensure the ploidy settings match the biological reality of your target to avoid artifacts in variant frequency.
-*   **Long-Read Simulation**: While originally designed for short reads, NEAT can handle long-read simulation by adjusting the error models and read length parameters to match technologies like PacBio or Oxford Nanopore.
-*   **Ground Truth**: Always retain the "golden" BAM and VCF files produced during simulation; these are your primary assets for calculating the accuracy of any downstream bioinformatics tools.
+### Workflow Pattern
+1. **Learn**: Use `model-fraglen` and `model-seq-err` on a high-quality BAM from your target sequencing platform.
+2. **Simulate**: Run `read-simulator` using the learned models and a reference genome.
+3. **Validate**: Align the resulting FASTQs and call variants, then use `vcf_compare` to measure the pipeline's performance against the NEAT-generated golden VCF.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| neat model-seq-err | Generate sequencing error model from a FASTQ, BAM, or SAM file_list. |
+| neat_gen-mut-model | Generate mutation model from a pickle or BED file and user input. |
+| neat_model-fraglen | Generate fragment length model from a BAM or SAM file_list. |
+| neat_read-simulator | NEAT read simulator |
 
 ## Reference documentation
-- [NEAT GitHub Repository](./references/github_com_ncsa_NEAT.md)
-- [Bioconda NEAT Overview](./references/anaconda_org_channels_bioconda_packages_neat_overview.md)
+- [The NEAT Project README](./references/github_com_ncsa_NEAT_blob_main_README.md)
+- [NEAT ChangeLog and Version History](./references/github_com_ncsa_NEAT_blob_main_ChangeLog.md)
+- [Contributing and Testing Guide](./references/github_com_ncsa_NEAT_blob_main_CONTRIBUTING.md)

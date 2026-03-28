@@ -71,3 +71,6 @@ options:
                         Output file path name
 ```
 
+
+## Metadata
+- **Skill**: generated

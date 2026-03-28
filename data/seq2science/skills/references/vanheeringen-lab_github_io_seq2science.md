@@ -1,1 +1,63 @@
-seq2science &mdash; seq2science documentation seq2science Getting started Workflows Using the results Extensive docs Extra resources Frequently Asked Questions (FAQ) Contributing to seq2science seq2science seq2science Edit on GitHub seq2science  Seq2science is the attempt of the van heeringen lab to generate a collection of generic pipelines/workflows which can be used by complete beginners to bioinformatics and experienced bioinformaticians alike. Please take a look at our docs for help with installation, how to run it, and best practices. Our supported workflows: Downloading of fastq Alignment ATAC-seq RNA-seq ChIP-seq scATAC-seq scRNA-seq New users  Information for new users, such as how to install and configure can be found in our getting started page, and our Frequently Asked Questions (FAQ) section. Feedback  Anything not working as expected? Please reach out to us via our issues page and we’ll try to help you as soon as possible! Cite us  van der Sande M, Frölich S, Schäfers T, Smits JGA, Snabel RR, Rinzema S, van Heeringen SJ. 2023. Seq2science: an end-to-end workflow for functional genomics analysis. PeerJ 11:e16380 https://doi.org/10.7717/peerj.16380 Next &#169; Copyright Maarten van der Sande, Siebren Frölich, Jos Smits, Rebecca Snabel, Tilman Schäfers, &amp; Simon van Heeringen.. Built with Sphinx using a theme provided by Read the Docs .
+seq2science
+
+* [Getting started](content/gettingstarted.html)
+* [Workflows](content/workflows.html)
+* [Using the results](content/results.html)
+* [Extensive docs](content/extensive_docs.html)
+* [Extra resources](content/extracontent.html)
+* [Frequently Asked Questions (FAQ)](content/faq.html)
+* [Contributing to seq2science](CONTRIBUTING.html)
+
+seq2science
+
+* seq2science
+* [Edit on GitHub](https://github.com/vanheeringen-lab/seq2science/blob/master/docs/index.rst)
+
+---
+
+# seq2science[](#seq2science "Link to this heading")
+
+[![bioconda-badge](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat)](http://bioconda.github.io/recipes/seq2science/README.html)
+[![anaconda-version](https://anaconda.org/bioconda/seq2science/badges/version.svg)](https://anaconda.org/bioconda/seq2science/badges/version.svg)
+[![nr downloads](https://img.shields.io/conda/dn/bioconda/seq2science.svg?style=flat)](http://bioconda.github.io/recipes/seq2science/README.html)
+[![star this repo](https://img.shields.io/github/stars/vanheeringen-lab/seq2science?style=flat&color=brightgreen)](https://github.com/vanheeringen-lab/seq2science/stargazers)
+[![Test Status](http://ocimum.science.ru.nl/jenkins/buildStatus/icon?job=seq2science%2Fmaster&subject=tests)](http://ocimum.science.ru.nl/jenkins/job/seq2science/job/master/lastBuild/display/redirect/)
+[![docs](https://github.com/vanheeringen-lab/seq2science/workflows/docs/badge.svg)](https://vanheeringen-lab.github.io/seq2science)
+[![DOI](https://img.shields.io/badge/DOI-10.7717%2Fpeerj.16380-%2302A7FC)](https://doi.org/10.7717/peerj.16380)
+[![DOI](https://zenodo.org/badge/196379320.svg)](https://zenodo.org/badge/latestdoi/196379320)
+
+Seq2science is the attempt of the *van heeringen lab* to generate a collection of generic pipelines/workflows which can be used by complete beginners to bioinformatics and experienced bioinformaticians alike. Please take a look at our [docs](https://vanheeringen-lab.github.io/seq2science/) for help with installation, how to run it, and best practices.
+
+[![alt text](https://vanheeringen-lab.github.io/seq2science/_static/seq2science.png)](https://vanheeringen-lab.github.io/seq2science/_static/seq2science.png)
+
+Our supported workflows:
+
+* [Downloading of fastq](https://vanheeringen-lab.github.io/seq2science/content/workflows/download_fastq.html)
+* [Alignment](https://vanheeringen-lab.github.io/seq2science/content/workflows/alignment.html)
+* [ATAC-seq](https://vanheeringen-lab.github.io/seq2science/content/workflows/atac_seq.html)
+* [RNA-seq](https://vanheeringen-lab.github.io/seq2science/content/workflows/rna_seq.html)
+* [ChIP-seq](https://vanheeringen-lab.github.io/seq2science/content/workflows/chip_seq.html)
+* [scATAC-seq](https://vanheeringen-lab.github.io/seq2science/content/workflows/scatac_seq.html)
+* [scRNA-seq](https://vanheeringen-lab.github.io/seq2science/content/workflows/scrna_seq.html)
+
+## New users[](#new-users "Link to this heading")
+
+Information for new users, such as how to install and configure can be found in our [getting started](https://vanheeringen-lab.github.io/seq2science/content/gettingstarted.html) page, and our [Frequently Asked Questions (FAQ)](https://vanheeringen-lab.github.io/seq2science/content/faq.html) section.
+
+## Feedback[](#feedback "Link to this heading")
+
+Anything not working as expected? Please reach out to us via our [issues](https://github.com/vanheeringen-lab/seq2science/issues) page and we’ll try to help you as soon as possible!
+
+## Cite us[](#cite-us "Link to this heading")
+
+van der Sande M, Frölich S, Schäfers T, Smits JGA, Snabel RR, Rinzema S, van Heeringen SJ. 2023. Seq2science: an end-to-end workflow for functional genomics analysis. PeerJ 11:e16380 <https://doi.org/10.7717/peerj.16380>
+
+[Next](content/gettingstarted.html "Getting started")
+
+---
+
+© Copyright Maarten van der Sande, Siebren Frölich, Jos Smits, Rebecca Snabel, Tilman Schäfers, & Simon van Heeringen..
+
+Built with [Sphinx](https://www.sphinx-doc.org/) using a
+[theme](https://github.com/readthedocs/sphinx_rtd_theme)
+provided by [Read the Docs](https://readthedocs.org).

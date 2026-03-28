@@ -141,3 +141,6 @@ splitrim(main+0x17) [0x4d7a27]
 /lib/libc.so.6(__libc_start_main+0xf5) [0x7ed42a303be5]
 ```
 
+
+## Metadata
+- **Skill**: generated

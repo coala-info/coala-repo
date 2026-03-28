@@ -1,0 +1,1178 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FComparativeGenomicsToolkit%2Fcactus-gfa-tools%2Fblob%2Fmain%2Fgafkluge.hpp)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FComparativeGenomicsToolkit%2Fcactus-gfa-tools%2Fblob%2Fmain%2Fgafkluge.hpp)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=ComparativeGenomicsToolkit%2Fcactus-gfa-tools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ComparativeGenomicsToolkit](/ComparativeGenomicsToolkit)
+/
+**[cactus-gfa-tools](/ComparativeGenomicsToolkit/cactus-gfa-tools)**
+Public
+
+* [Notifications](/login?return_to=%2FComparativeGenomicsToolkit%2Fcactus-gfa-tools) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2FComparativeGenomicsToolkit%2Fcactus-gfa-tools)
+* [Star
+   2](/login?return_to=%2FComparativeGenomicsToolkit%2Fcactus-gfa-tools)
+
+* [Code](/ComparativeGenomicsToolkit/cactus-gfa-tools)
+* [Issues
+  2](/ComparativeGenomicsToolkit/cactus-gfa-tools/issues)
+* [Pull requests
+  0](/ComparativeGenomicsToolkit/cactus-gfa-tools/pulls)
+* [Actions](/ComparativeGenomicsToolkit/cactus-gfa-tools/actions)
+* [Projects](/ComparativeGenomicsToolkit/cactus-gfa-tools/projects)
+* [Security
+  0](/ComparativeGenomicsToolkit/cactus-gfa-tools/security)
+* [Insights](/ComparativeGenomicsToolkit/cactus-gfa-tools/pulse)
+
+Additional navigation options
+
+* [Code](/ComparativeGenomicsToolkit/cactus-gfa-tools)
+* [Issues](/ComparativeGenomicsToolkit/cactus-gfa-tools/issues)
+* [Pull requests](/ComparativeGenomicsToolkit/cactus-gfa-tools/pulls)
+* [Actions](/ComparativeGenomicsToolkit/cactus-gfa-tools/actions)
+* [Projects](/ComparativeGenomicsToolkit/cactus-gfa-tools/projects)
+* [Security](/ComparativeGenomicsToolkit/cactus-gfa-tools/security)
+* [Insights](/ComparativeGenomicsToolkit/cactus-gfa-tools/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [cactus-gfa-tools](/ComparativeGenomicsToolkit/cactus-gfa-tools/tree/main)
+
+/
+
+# gafkluge.hpp
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/ComparativeGenomicsToolkit/cactus-gfa-tools/commits/main/gafkluge.hpp)
+
+History
+
+326 lines (284 loc) · 11.8 KB
+
+main
+
+## Breadcrumbs
+
+1. [cactus-gfa-tools](/ComparativeGenomicsToolkit/cactus-gfa-tools/tree/main)
+
+/
+
+# gafkluge.hpp
+
+Top
+
+## File metadata and controls
+
+* Code
+* Blame
+
+326 lines (284 loc) · 11.8 KB
+
+[Raw](https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools/raw/refs/heads/main/gafkluge.hpp)
+
+Copy raw file
+
+Download raw file
+
+Open symbols panel
+
+Edit and raw actions
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+25
+
+26
+
+27
+
+28
+
+29
+
+30
+
+31
+
+32
+
+33
+
+34
+
+35
+
+36
+
+37
+
+38
+
+39
+
+40
+
+41
+
+42
+
+43
+
+44
+
+45
+
+46
+
+47
+
+48
+
+49
+
+50
+
+51
+
+52
+
+53
+
+54
+
+55
+
+56
+
+57
+
+58
+
+59
+
+60
+
+61
+
+62
+
+63
+
+64
+
+65
+
+66
+
+67
+
+68
+
+69
+
+70
+
+71
+
+72
+
+73
+
+74
+
+75
+
+76
+
+77
+
+78
+
+79
+
+80
+
+81
+
+82
+
+83
+
+84
+
+85
+
+86
+
+87
+
+88
+
+89
+
+90
+
+91
+
+92
+
+93
+
+94
+
+95
+
+96
+
+97
+
+98
+
+99
+
+100
+
+101
+
+102
+
+103
+
+104
+
+105
+
+106
+
+107
+
+108
+
+109
+
+110
+
+111
+
+112
+
+113
+
+114
+
+115
+
+116
+
+117
+
+118
+
+119
+
+120
+
+121
+
+122
+
+123
+
+124
+
+125
+
+126
+
+127
+
+128
+
+129
+
+130
+
+131
+
+132
+
+133
+
+134
+
+135
+
+136
+
+137
+
+138
+
+139
+
+140
+
+141
+
+142
+
+143
+
+144
+
+145
+
+146
+
+147
+
+148
+
+149
+
+150
+
+151
+
+152
+
+153
+
+154
+
+155
+
+156
+
+157
+
+158
+
+159
+
+160
+
+161
+
+162
+
+163
+
+164
+
+165
+
+166
+
+167
+
+168
+
+169
+
+170
+
+171
+
+172
+
+173
+
+174
+
+175
+
+176
+
+177
+
+178
+
+179
+
+180
+
+181
+
+182
+
+183
+
+184
+
+185
+
+186
+
+187
+
+188
+
+189
+
+190
+
+191
+
+192
+
+193
+
+194
+
+195
+
+196
+
+197
+
+198
+
+199
+
+200
+
+201
+
+202
+
+203
+
+204
+
+205
+
+206
+
+207
+
+208
+
+209
+
+210
+
+211
+
+212
+
+213
+
+214
+
+215
+
+216
+
+217
+
+218
+
+219
+
+220
+
+221
+
+222
+
+223
+
+224
+
+225
+
+226
+
+227
+
+228
+
+229
+
+230
+
+231
+
+232
+
+233
+
+234
+
+235
+
+236
+
+237
+
+238
+
+239
+
+240
+
+241
+
+242
+
+243
+
+244
+
+245
+
+246
+
+247
+
+248
+
+249
+
+250
+
+251
+
+252
+
+253
+
+254
+
+255
+
+256
+
+257
+
+258
+
+259
+
+260
+
+261
+
+262
+
+263
+
+264
+
+265
+
+266
+
+267
+
+268
+
+269
+
+270
+
+271
+
+272
+
+273
+
+274
+
+275
+
+276
+
+277
+
+278
+
+279
+
+280
+
+281
+
+282
+
+283
+
+284
+
+285
+
+286
+
+287
+
+288
+
+289
+
+290
+
+291
+
+292
+
+293
+
+294
+
+295
+
+296
+
+297
+
+298
+
+299
+
+300
+
+301
+
+302
+
+303
+
+304
+
+305
+
+306
+
+307
+
+308
+
+309
+
+310
+
+311
+
+312
+
+313
+
+314
+
+315
+
+316
+
+317
+
+318
+
+319
+
+320
+
+321
+
+322
+
+323
+
+324
+
+325
+
+#pragma once
+
+/\*\*
+
+\* \file gafkluge.hpp
+
+\*
+
+\* Barebones header-only standalone GAF parser reads GAF lines into and out of structs
+
+\* Named in honour of gfakluge
+
+\*/
+
+#include <string>
+
+#include <iostream>
+
+#include <sstream>
+
+#include <cstdint>
+
+#include <vector>
+
+#include <map>
+
+#include <functional>
+
+namespace gafkluge {
+
+/\*\*
+
+\* We allow pretty much any field to be set as "\*" in the GAF, which gets mapped to a -1
+
+\* in the numeric fields (as there are no valid negative values)
+
+\*/
+
+static const std::string missing\_string = "\*";
+
+static const int64\_t missing\_int = -1;
+
+inline std::string int\_to\_string(int64\_t i) {
+
+return i == missing\_int ? missing\_string : std::to\_string(i);
+
+}
+
+inline int64\_t string\_to\_int(const std::string& s) {
+
+return s == missing\_string ? missing\_int : std::stol(s);
+
+}
+
+inline bool is\_missing(const std::string& s) {
+
+return s == missing\_string;
+
+}
+
+inline bool is\_missing(int64\_t i) {
+
+return i == missing\_int;
+
+}
+
+/\*\*
+
+\* One step of a GAF path
+
+\*/
+
+struct GafStep {
+
+std::string name; // Either a path name or segment/node name (see above)
+
+bool is\_reverse; // In reverse orientation ('<' in GAF)
+
+bool is\_stable; // True if it's a stable path name (as opposed to segment/node name)
+
+bool is\_interval; // True if it's an interval of a stable path (false if it's the whole path)
+
+int64\_t start; // 0-based start (inclusive). only defined if is\_stable and is\_interval are true
+
+int64\_t end; // 0-based end (inclusive). only defined if is\_stable and is\_interval are true
+
+};
+
+/\*\*
+
+\* One line of GAF as described here: https://github.com/lh3/gfatools/blob/master/doc/rGFA.md
+
+\*/
+
+struct GafRecord {
+
+std::string query\_name; // Query sequence name
+
+int64\_t query\_length; // Query sequence length
+
+int64\_t query\_start; // 0-based, closed
+
+int64\_t query\_end; // 0-based, open
+
+int64\_t path\_length;
+
+int64\_t path\_start; // Start position on the path (0-based)
+
+int64\_t path\_end; // End position on the path (0-based)
+
+int64\_t matches; // Number of residue matches
+
+int64\_t block\_length; // Alignment block length
+
+int32\_t mapq; // Mapping quality (0-255; 255 for missing)
+
+char strand; // strand relative to the path + or -
+
+std::vector<GafStep> path; // the path
+
+// Map a tag name to its type and value
+
+// ex: "de:f:0.2183" in the GAF would appear as opt\_fields["de"] = ("f", "0.2183")
+
+std::map<std::string, std::pair<std::string, std::string>> opt\_fields;
+
+// Init everything to missing
+
+GafRecord() : query\_length(missing\_int), query\_start(missing\_int), query\_end(missing\_int),
+
+strand(missing\_string[0]), path\_length(missing\_int), path\_start(missing\_int),
+
+path\_end(missing\_int), matches(missing\_int), block\_length(missing\_int), mapq(255) {}
+
+};
+
+/\*\*
+
+\* Parse a single GAF record
+
+\*/
+
+inline void parse\_gaf\_record(const std::string& gaf\_line, GafRecord& gaf\_record) {
+
+std::istringstream in(gaf\_line);
+
+std::string buffer;
+
+int col = 1;
+
+std::function<void(void)> scan\_column = [&]() {
+
+getline(in, buffer, '\t');
+
+if (!in || buffer.empty()) {
+
+throw std::runtime\_error("Error parsing GAF column " + std::to\_string(col));
+
+}
+
+++col;
+
+};
+
+scan\_column();
+
+gaf\_record.query\_name = std::move(buffer);
+
+scan\_column();
+
+gaf\_record.query\_length = string\_to\_int(buffer);
+
+scan\_column();
+
+gaf\_record.query\_start = string\_to\_int(buffer);
+
+scan\_column();
+
+gaf\_record.query\_end = string\_to\_int(buffer);
+
+scan\_column();
+
+if (buffer == "-" || buffer == missing\_string || buffer == "+") {
+
+gaf\_record.strand = buffer[0];
+
+} else {
+
+throw std::runtime\_error("Error parsing GAF strand: " + buffer);
+
+}
+
+gaf\_record.path.clear();
+
+scan\_column();
+
+if (buffer[0] == '<' || buffer[0] == '>') {
+
+// our path is a list of oriented segments or intervales
+
+size\_t pos = 0;
+
+size\_t next;
+
+do {
+
+GafStep step;
+
+pos = buffer.find\_first\_of("><", pos);
+
+next = buffer.find\_first\_of("><", pos + 1);
+
+std::string step\_token = buffer.substr(pos, next != std::string::npos ? next - pos : std::string::npos);
+
+size\_t colon = step\_token.find\_first\_of(':');
+
+step.is\_reverse = step\_token[0] == '<';
+
+if (colon == std::string::npos) {
+
+// no colon, we interpret the step as a segID
+
+step.name = step\_token.substr(1);
+
+step.is\_stable = false;
+
+step.is\_interval = false;
+
+} else {
+
+// colon, we interpret the step as a stable path interval
+
+step.name = step\_token.substr(1, colon - 1);
+
+step.is\_stable = true;
+
+step.is\_interval = true;
+
+size\_t dash = step\_token.find\_first\_of('-', colon);
+
+if (dash == std::string::npos) {
+
+throw std::runtime\_error("Error parsing GAF range of " + step\_token);
+
+}
+
+step.start = std::stol(step\_token.substr(colon + 1, dash - colon));
+
+step.end = std::stol(step\_token.substr(dash + 1));
+
+}
+
+gaf\_record.path.push\_back(step);
+
+pos = next;
+
+} while (next != std::string::npos);
+
+} else if (buffer != "\*") {
+
+// our path is a stable path name
+
+gaf\_record.path.resize(1);
+
+gaf\_record.path[0].name = buffer;
+
+gaf\_record.path[0].is\_reverse = false;
+
+gaf\_record.path[0].is\_stable = true;
+
+gaf\_record.path[0].is\_interval = false;
+
+}
+
+scan\_column();
+
+gaf\_record.path\_length = string\_to\_int(buffer);
+
+scan\_column();
+
+gaf\_record.path\_start = string\_to\_int(buffer);
+
+scan\_column();
+
+gaf\_record.path\_end = string\_to\_int(buffer);
+
+scan\_column();
+
+gaf\_record.matches = string\_to\_int(buffer);
+
+scan\_column();
+
+gaf\_record.block\_length = string\_to\_int(buffer);
+
+scan\_column(

@@ -1,59 +1,83 @@
 ---
 name: prophyle
-description: "ProPhyle accurately classifies DNA sequences for metagenomic analysis using phylogenetic relationships. Use when user asks to classify DNA sequences for metagenomic analysis, identify microbial communities, or classify viruses."
+description: ProPhyle is a DNA sequence classifier that uses k-mer based approaches and phylogenetic structures to analyze metagenomic data. Use when user asks to download reference genomes, index sequences according to a taxonomic tree, classify sequencing reads, or estimate organism abundance.
 homepage: https://github.com/karel-brinda/prophyle
 ---
 
 
 # prophyle
 
-prophyle/SKILL.md
----
-name: prophyle
-description: Accurate, resource-frugal, and deterministic phylogeny-based metagenomic classifier. Use when Claude needs to classify DNA sequences for metagenomic analysis, specifically when identifying microbial communities or viruses based on phylogenetic relationships. This skill is ideal for tasks requiring high accuracy and efficient resource utilization in phylogenetic classification.
----
-
 ## Overview
 
-ProPhyle is a powerful tool for metagenomic classification, leveraging phylogenetic relationships to accurately identify microbial communities and viruses within DNA sequence data. It is designed to be both resource-efficient and deterministic, making it suitable for large-scale analyses where precision and speed are critical. Use ProPhyle when you need to understand the composition of a microbial sample by classifying its constituent DNA sequences based on their evolutionary history.
+ProPhyle is a DNA sequence classifier designed for metagenomics that combines k-mer based approaches with phylogenetic structures. It utilizes the Burrows-Wheeler Transform (BWT) and phylogenetic compression to create "simplitigs," which significantly reduce the memory footprint of genomic indices. Use this skill to guide the workflow of downloading reference genomes, indexing them according to a taxonomic tree, and classifying sequencing data with high deterministic accuracy.
 
-## Usage Instructions
+## Core Workflow and CLI Patterns
 
-ProPhyle operates primarily through its command-line interface. The core functionality involves building an index and then classifying sequences against that index.
+### 1. Database Preparation
+ProPhyle can automatically fetch genomic data and taxonomy.
 
-### Core Commands and Workflow
+```bash
+# Download a specific dataset (e.g., bacteria, viruses)
+prophyle download <dataset_name>
 
-1.  **Building an Index:**
-    Before classifying, you need to build a ProPhyle index from a reference database. This is a one-time process for a given database.
+# Common datasets: 'bacteria', 'viruses', 'hmp'
+```
 
-    ```bash
-    prophyle build-index -d <reference_database_directory> -o <output_index_prefix>
-    ```
+### 2. Index Construction
+Indexing requires a phylogenetic tree (Newick format) and the corresponding genomic sequences.
 
-    *   `-d <reference_database_directory>`: Path to the directory containing reference sequences (e.g., FASTA files).
-    *   `-o <output_index_prefix>`: Prefix for the output index files. ProPhyle will generate multiple files (e.g., `.bwt`, `.nodes`, `.tree`).
+```bash
+# Build the index
+prophyle index -t <tree.nwk> <library_dir> <index_prefix>
 
-2.  **Classifying Sequences:**
-    Once an index is built, you can classify your query sequences.
+# Optimization: Use -k to specify k-mer length (default is 31)
+prophyle index -k 23 -t tree.nwk ./sequences/ my_index
+```
 
-    ```bash
-    prophyle classify -i <query_sequences.fasta> -o <output_classification.tsv> -p <output_index_prefix>
-    ```
+### 3. Sequence Classification
+Classify reads against the constructed index. ProPhyle typically outputs results in a format compatible with downstream analysis (often SAM-like or assignments to tree nodes).
 
-    *   `-i <query_sequences.fasta>`: Path to the FASTA file containing the DNA sequences to classify.
-    *   `-o <output_classification.tsv>`: Path for the output classification results in TSV format.
-    *   `-p <output_index_prefix>`: The prefix of the ProPhyle index files created in the `build-index` step.
+```bash
+# Classify reads
+prophyle classify <index_prefix> <reads.fastq> > <assignments.txt>
 
-### Expert Tips and Best Practices
+# For paired-end reads
+prophyle classify <index_prefix> <reads_1.fq> <reads_2.fq> > <assignments.txt>
+```
 
-*   **Reference Database Quality:** The accuracy of ProPhyle's classification is highly dependent on the quality and completeness of your reference database. Ensure your reference sequences are well-curated and representative of the organisms you expect to find.
-*   **Index Management:** Keep track of your index prefixes and the reference databases they were built from. For large projects, consider organizing your indices in dedicated directories.
-*   **Output Format:** The default output of `classify` is a TSV file. This format is easily parsable by other bioinformatics tools and scripting languages for downstream analysis.
-*   **Resource Management:** ProPhyle is designed to be resource-frugal. However, for very large datasets or reference databases, ensure you have sufficient RAM and disk space. The `build-index` step can be memory-intensive.
-*   **Deterministic Output:** ProPhyle's deterministic nature means that running the same classification with the same index and input sequences will always yield the identical results, which is crucial for reproducibility.
-*   **Command-Line Arguments:** Familiarize yourself with all available command-line arguments for `build-index` and `classify` to fine-tune performance and output. Use `prophyle build-index --help` and `prophyle classify --help` for detailed options.
+### 4. Abundance Analysis
+After classification, use the analyze command to estimate the abundance of organisms.
+
+```bash
+# Estimate abundances
+prophyle analyze <index_prefix> <assignments.txt> <output_prefix>
+```
+
+## Expert Tips and Best Practices
+
+- **Memory Management**: ProPhyle is designed to be frugal, but for very large bacterial databases, ensure your system has sufficient RAM for the BWT construction phase.
+- **K-mer Selection**: Use shorter k-mers (e.g., k=21 or 23) for higher sensitivity in divergent species, and longer k-mers (e.g., k=31) for higher specificity.
+- **Tree Customization**: You can provide custom Newick trees to focus classification on specific clades or to use non-NCBI taxonomies.
+- **Simplitigs**: If manually managing sequences, remember that ProPhyle converts k-mers into simplitigs (maximal non-branching paths in a de Bruijn graph) to optimize the BWT.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| classify | Classify reads using a prophyle index. |
+| decompress | Decompress a prophyle archive |
+| prophyle analyze | Analyze classified reads based on an index directory or phylogenetic tree. |
+| prophyle compress | Compresses a prophyle index directory into a tar.gz archive. |
+| prophyle download | Download genomic libraries and associated data. |
+| prophyle_classify | Classify reads based on a prophyle index. |
+| prophyle_compile | Compile prophyle database |
+| prophyle_footprint | Calculate footprint of prophages in a genome. |
+| prophyle_index | Index phylogenetic trees for efficient querying. |
 
 ## Reference documentation
-- [ProPhyle README](./references/github_com_prophyle_prophyle.md)
-- [ProPhyle Documentation](./references/github_com_prophyle_prophyle_tree_master_docs.md)
-- [ProPhyle Anaconda Overview](./references/anaconda_org_channels_bioconda_packages_prophyle_overview.md)
+- [ProPhyle Homepage/Index](./references/prophyle_github_io_index.md)
+- [Installation Guide](./references/prophyle_github_io_install.html.md)
+- [Usage Examples](./references/prophyle_github_io_example.html.md)
+- [GitHub Repository README](./references/github_com_prophyle_prophyle_blob_master_README.rst.md)

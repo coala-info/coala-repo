@@ -185,3 +185,6 @@ No inputs — do not generate CWL.
 0 contigs, total 0 bp, min 0 bp, max 0 bp, avg 0 bp, N50 0 bp
 ```
 
+
+## Metadata
+- **Skill**: generated

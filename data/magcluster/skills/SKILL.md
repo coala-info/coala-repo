@@ -1,6 +1,6 @@
 ---
 name: magcluster
-description: MagCluster is a bioinformatics pipeline designed to identify, annotate, and visualize magnetosome gene clusters within genomic data. Use when user asks to annotate genomes for magnetosome proteins, screen GenBank files for putative gene clusters, or generate interactive comparative alignments of identified clusters.
+description: MagCluster is a bioinformatics pipeline designed to identify, annotate, and visualize magnetosome gene clusters in genomic sequences. Use when user asks to annotate genomes with magnetosome protein databases, screen for magnetosome gene clusters using physical proximity logic, or visualize gene cluster alignments.
 homepage: https://github.com/runjiaji/magcluster
 ---
 
@@ -9,53 +9,74 @@ homepage: https://github.com/runjiaji/magcluster
 
 ## Overview
 
-MagCluster is a specialized bioinformatics pipeline designed to streamline the discovery and analysis of magnetosome gene clusters. Unlike general-purpose tools that rely solely on sequence identity, MagCluster leverages the biological reality that magnetosome genes are physically clustered on the chromosome. It provides a three-stage workflow: automated annotation using a curated magnetosome protein database, heuristic-based screening of GenBank files to isolate putative clusters, and interactive visualization for comparative genomics.
+MagCluster is a specialized bioinformatics pipeline designed to streamline the discovery of magnetosome gene clusters. It addresses the difficulty of identifying these clusters by combining sequence identity with physical proximity on the chromosome. The tool automates the workflow from raw genome sequences to annotated GenBank files and comparative visualizations, leveraging a mandatory magnetosome protein database for high-accuracy annotation.
 
-## Core Workflow and CLI Patterns
+## Installation and Setup
 
-### 1. Genome Annotation (prokka)
-The `prokka` module performs batch annotation of genome files. It uses a mandatory internal reference file of magnetosome proteins to ensure consistent naming.
+MagCluster is primarily supported on Linux and macOS. For Windows users, WSL is required.
 
-*   **Standard Usage**:
-    ```bash
-    magcluster prokka --evalue 1e-05 ./genomes_folder
-    ```
-*   **Best Practices**:
-    *   **E-value**: Always set `--evalue 1e-05` as recommended by the developers for optimal sensitivity/specificity balance in MGC detection.
-    *   **Input**: You can provide individual `.fasta`, `.fna`, or `.fa` files, or a directory containing them.
-    *   **Output**: By default, the tool uses the genome filename for the output directory, prefix, and locus tags to maintain organization during batch processing.
+```bash
+# Recommended: Installation via Bioconda
+conda create -n magcluster
+conda activate magcluster
+conda install -c conda-forge -c bioconda magcluster
+```
 
-### 2. MGC Screening (mgc_screen)
-This module identifies putative clusters by searching for the keyword "magnetosome" in the product names of the GenBank files generated in the previous step.
+## Command Line Usage
 
-*   **Standard Usage**:
-    ```bash
-    magcluster mgc_screen --threshold 3 --contiglength 2000 --windowsize 10000 ./gbk_folder
-    ```
+MagCluster operates through three primary modules: `prokka`, `mgc_screen`, and `clinker`.
+
+### 1. Genome Annotation (`prokka`)
+Annotates genomes using a specialized magnetosome protein database.
+
+*   **Input**: Multiple genome files (.fasta, .fna, .fa) or a directory containing genomes.
+*   **Best Practice**: Use an e-value of `1e-05` for MGC annotation.
+
+```bash
+# Annotate multiple genomes in a folder
+magcluster prokka --evalue 1e-05 ./MTB_genomes_folder
+
+# Annotate specific files
+magcluster prokka --evalue 1e-05 genome1.fasta genome2.fasta
+```
+
+### 2. MGC Screening (`mgc_screen`)
+Retrieves MGC-containing contigs from GenBank files generated in the previous step. It uses a text-mining strategy (keyword: "magnetosome") and physical clustering logic.
+
 *   **Key Parameters**:
-    *   `-l, --contiglength`: Minimum length of contigs to consider (Default: 2000 bp). Increase this if working with high-quality finished genomes to filter out small fragments.
-    *   `-w, --windowsize`: The sliding window size for screening (Default: 10,000 bp).
-    *   `-th, --threshold`: The minimum number of magnetosome genes required within the window to flag a cluster (Default: 3).
-*   **Outputs**:
-    *   A GenBank file containing only the putative MGC contigs.
-    *   A CSV file summarizing all identified magnetosome protein sequences.
+    *   `-l` / `--contiglength`: Minimum contig length (default: 2000 bp).
+    *   `-win` / `--windowsize`: Screening window size (default: 10,000 bp).
+    *   `-th` / `--threshold`: Minimum number of magnetosome genes in a window (default: 3).
 
-### 3. Alignment and Visualization (clinker)
-MagCluster utilizes `clinker` to align identified MGCs and generate interactive figures.
+```bash
+# Screen GenBank files with custom thresholds
+magcluster mgc_screen -l 5000 -win 15000 -th 4 -o ./output_mgc genome1.gbk genome2.gbk
+```
 
-*   **Standard Usage**:
-    ```bash
-    magcluster clinker -p MGC_comparison.html ./mgc_screen_results/*.gbk
-    ```
-*   **Expert Tip**: The `-p` flag is essential as it generates an interactive HTML page. This allows you to manually adjust the alignment, hide/show specific genes, and export publication-quality SVG files directly from the browser.
+### 3. Alignment and Visualization (`clinker`)
+Uses the `clinker` tool to align and visualize the identified putative MGCs.
 
-## Expert Tips and Troubleshooting
+```bash
+# Visualize identified clusters
+magcluster clinker [options]
+```
 
-*   **Manual Validation**: Automated identification is efficient but not infallible. Always manually inspect the output GenBank files or the interactive visualization to confirm the biological relevance of the identified clusters.
-*   **Environment Management**: If `conda` takes too long to solve the environment during installation, use `mamba` for significantly faster dependency resolution.
-*   **Windows Support**: MagCluster does not natively support Windows. Use Windows Subsystem for Linux (WSL2) if a Linux environment is not available.
-*   **Keyword Dependency**: Since `mgc_screen` relies on text-mining the keyword "magnetosome", ensure that the annotation step used the correct protein database (which is the default behavior of `magcluster prokka`).
+## Expert Tips
+
+*   **Naming Consistency**: By default, MagCluster uses the genome filename as the output folder name, file prefix, and GenBank locus tag to prevent confusion during batch processing.
+*   **Standardization**: The `--compliant` flag is enabled by default in the `prokka` module to ensure the resulting GenBank files meet standard specifications for downstream tools.
+*   **Performance**: If Conda environment resolution is slow, use `mamba` as a faster alternative for installation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| clinker | magcluster clinker |
+| mgc_screen | Analyzes .gbk/.gbf files to identify potential MGCs based on magnetosome gene content within specified windows. |
+| prokka | Prokka: rapid prokaryotic genome annotation |
 
 ## Reference documentation
-- [MagCluster GitHub Repository](./references/github_com_runjiaji_magcluster.md)
-- [MagCluster Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_magcluster_overview.md)
+- [MagCluster GitHub README](./references/github_com_RunJiaJi_MagCluster_blob_main_README.md)
+- [MagCluster Repository Overview](./references/github_com_RunJiaJi_MagCluster.md)

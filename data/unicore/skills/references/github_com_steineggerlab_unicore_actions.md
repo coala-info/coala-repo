@@ -1,1 +1,556 @@
-Workflow runs · steineggerlab/unicore · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} steineggerlab / unicore Public Notifications You must be signed in to change notification settings Fork 10 Star 84 Code Issues 3 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: steineggerlab/unicore Actions All workflows Workflows Rust Rust Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 55 workflow runs 55 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. createdb - skip concatenation if everything or nothing is looked up Rust #55: Commit ffac166 pushed by endixk 44s main main 44s View workflow file use longer sequence hashing and provide collision warning Rust #54: Commit 7ce282e pushed by endixk 48s main main 48s View workflow file format publication Rust #53: Commit da9042e pushed by endixk 42s main main 42s View workflow file update publication Rust #52: Commit cd2f96c pushed by endixk 49s main main 49s View workflow file v1.1.1 stable release Rust #51: Commit bad9f2e pushed by endixk 50s main main 50s View workflow file Updated README Rust #50: Commit 7e0a9e8 pushed by pskvins 44s main main 44s View workflow file Made the message more clear Rust #49: Commit 3c28427 pushed by pskvins 37s main main 37s View workflow file Update README Rust #48: Commit 65537bc pushed by pskvins 44s main main 44s View workflow file Updated raxml to raxml-ng Rust #47: Commit f8c8e6e pushed by pskvins 48s main main 48s View workflow file gene-tree module - RAxML/FastTree support Rust #46: Commit 4eb209b pushed by endixk 44s main main 44s View workflow file specify default model of partition Rust #45: Commit 933cd9d pushed by endixk 40s main main 40s View workflow file Added --no-inference option for tree module Rust #44: Commit baec0e7 pushed by pskvins 47s main main 47s View workflow file Now tree module generates partition file Rust #43: Commit 029869b pushed by pskvins 36s main main 36s View workflow file Little bit more efficient Rust #42: Commit a3b33a1 pushed by pskvins 51s main main 51s View workflow file Merge remote-tracking branch 'origin/main' Rust #41: Commit 79d945a pushed by endixk 42s main main 42s View workflow file Feature: warning for species with low core gene rate is added Rust #40: Commit 9bb9544 pushed by pskvins 37s main main 37s View workflow file Currently it is not stable Rust #39: Commit ad4767b pushed by pskvins 44s main main 44s View workflow file Bug fixed: afdb-lookup hash problem Rust #38: Commit 3ae86b9 pushed by pskvins 54s main main 54s View workflow file Now ignore sequences shorter than two amino acids Rust #37: Commit 8b52386 pushed by pskvins 46s main main 46s View workflow file v1.1.0 stable release Rust #36: Commit 26c9998 pushed by endixk 40s main main 40s View workflow file Merge pull request #7 from steineggerlab/foldseek_default Rust #35: Commit 10f5992 pushed by pskvins 43s main main 43s View workflow file Foldseek default Rust #34: Pull request #7 synchronize by pskvins 45s foldseek_default foldseek_default 45s View #7 View workflow file Merge pull request #6 from steineggerlab/cfgmodule Rust #33: Commit 77863df pushed by endixk 40s main main 40s View workflow file Add config module Rust #32: Pull request #6 opened by endixk 44s cfgmodule cfgmodule 44s View #6 View workflow file adjust clap help message Rust #31: Commit 50b0e25 pushed by endixk 46s main main 46s View workflow file Previous 1 2 3 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsteineggerlab%2Funicore%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsteineggerlab%2Funicore%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=steineggerlab%2Funicore)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[steineggerlab](/steineggerlab)
+/
+**[unicore](/steineggerlab/unicore)**
+Public
+
+* [Notifications](/login?return_to=%2Fsteineggerlab%2Funicore) You must be signed in to change notification settings
+* [Fork
+  10](/login?return_to=%2Fsteineggerlab%2Funicore)
+* [Star
+   86](/login?return_to=%2Fsteineggerlab%2Funicore)
+
+* [Code](/steineggerlab/unicore)
+* [Issues
+  3](/steineggerlab/unicore/issues)
+* [Pull requests
+  0](/steineggerlab/unicore/pulls)
+* [Actions](/steineggerlab/unicore/actions)
+* [Projects](/steineggerlab/unicore/projects)
+* [Security
+  0](/steineggerlab/unicore/security)
+* [Insights](/steineggerlab/unicore/pulse)
+
+Additional navigation options
+
+* [Code](/steineggerlab/unicore)
+* [Issues](/steineggerlab/unicore/issues)
+* [Pull requests](/steineggerlab/unicore/pulls)
+* [Actions](/steineggerlab/unicore/actions)
+* [Projects](/steineggerlab/unicore/projects)
+* [Security](/steineggerlab/unicore/security)
+* [Insights](/steineggerlab/unicore/pulse)
+
+# Actions: steineggerlab/unicore
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**29 workflow runs**
+
+**29 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Updated README](/steineggerlab/unicore/actions/runs/23000149457)
+
+Rust
+#58:
+Commit [b4cdbb9](/steineggerlab/unicore/commit/b4cdbb93478fe165dd903c71f4857b05199089d7)
+pushed
+by
+[pskvins](/pskvins)
+
+40s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+40s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/23000149457/workflow)
+
+[Merge pull request #11 from steineggerlab/3di\_rate](/steineggerlab/unicore/actions/runs/22998050403)
+
+Rust
+#57:
+Commit [3ded5ee](/steineggerlab/unicore/commit/3ded5ee4c640b1ef94504e63ef2d961ad8ada526)
+pushed
+by
+[endixk](/endixk)
+
+41s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+41s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/22998050403/workflow)
+
+[Added tree inference with 3Di MSA or AA+3Di MSA](/steineggerlab/unicore/actions/runs/22997269642)
+
+Rust
+#56:
+Pull request [#11](/steineggerlab/unicore/pull/11)
+opened
+by
+[pskvins](/pskvins)
+
+37s
+[3di\_rate](/steineggerlab/unicore/tree/refs/heads/3di_rate "3di_rate")
+
+[3di\_rate](/steineggerlab/unicore/tree/refs/heads/3di_rate "3di_rate")
+
+37s
+
+* [View #11](/steineggerlab/unicore/pull/11)
+* [View workflow file](/steineggerlab/unicore/actions/runs/22997269642/workflow)
+
+[createdb - skip concatenation if everything or nothing is looked up](/steineggerlab/unicore/actions/runs/19348133474)
+
+Rust
+#55:
+Commit [ffac166](/steineggerlab/unicore/commit/ffac166a89f1abcb86dd5dabb5e0af06c485d3ee)
+pushed
+by
+[endixk](/endixk)
+
+44s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+44s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/19348133474/workflow)
+
+[use longer sequence hashing and provide collision warning](/steineggerlab/unicore/actions/runs/15778576232)
+
+Rust
+#54:
+Commit [7ce282e](/steineggerlab/unicore/commit/7ce282e03e0afeb266bb894a7c91127ed87b3cb8)
+pushed
+by
+[endixk](/endixk)
+
+48s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+48s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15778576232/workflow)
+
+[format publication](/steineggerlab/unicore/actions/runs/15419819693)
+
+Rust
+#53:
+Commit [da9042e](/steineggerlab/unicore/commit/da9042e0440ee89fe9d7383c3608c510c421c84f)
+pushed
+by
+[endixk](/endixk)
+
+42s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+42s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15419819693/workflow)
+
+[update publication](/steineggerlab/unicore/actions/runs/15418920712)
+
+Rust
+#52:
+Commit [cd2f96c](/steineggerlab/unicore/commit/cd2f96cd249140307db053135c6cd2f4b7d58e9b)
+pushed
+by
+[endixk](/endixk)
+
+49s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+49s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15418920712/workflow)
+
+[v1.1.1 stable release](/steineggerlab/unicore/actions/runs/15140806629)
+
+Rust
+#51:
+Commit [bad9f2e](/steineggerlab/unicore/commit/bad9f2e49daa31fcbdbb592d65195354b2ac70d5)
+pushed
+by
+[endixk](/endixk)
+
+50s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+50s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15140806629/workflow)
+
+[Updated README](/steineggerlab/unicore/actions/runs/15136777466)
+
+Rust
+#50:
+Commit [7e0a9e8](/steineggerlab/unicore/commit/7e0a9e8e565a9b09d99f9249bdcdaa2b83eafe85)
+pushed
+by
+[pskvins](/pskvins)
+
+44s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+44s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15136777466/workflow)
+
+[Made the message more clear](/steineggerlab/unicore/actions/runs/15097548083)
+
+Rust
+#49:
+Commit [3c28427](/steineggerlab/unicore/commit/3c28427254edb4b872620c4ab9fbba6711d0b614)
+pushed
+by
+[pskvins](/pskvins)
+
+37s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+37s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15097548083/workflow)
+
+[Update README](/steineggerlab/unicore/actions/runs/15097479165)
+
+Rust
+#48:
+Commit [65537bc](/steineggerlab/unicore/commit/65537bc0ef15aa9e334545b612294dd80cb167d8)
+pushed
+by
+[pskvins](/pskvins)
+
+44s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+44s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15097479165/workflow)
+
+[Updated raxml to raxml-ng](/steineggerlab/unicore/actions/runs/15097128519)
+
+Rust
+#47:
+Commit [f8c8e6e](/steineggerlab/unicore/commit/f8c8e6e0feea867a20ff92d79c1d8e7e754687da)
+pushed
+by
+[pskvins](/pskvins)
+
+48s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+48s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15097128519/workflow)
+
+[gene-tree module - RAxML/FastTree support](/steineggerlab/unicore/actions/runs/15071811464)
+
+Rust
+#46:
+Commit [4eb209b](/steineggerlab/unicore/commit/4eb209bebabf30cab3c43953c44a904ad1041957)
+pushed
+by
+[endixk](/endixk)
+
+44s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+44s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15071811464/workflow)
+
+[specify default model of partition](/steineggerlab/unicore/actions/runs/15066254901)
+
+Rust
+#45:
+Commit [933cd9d](/steineggerlab/unicore/commit/933cd9d289e376ca067df2d4f09bdb340ddd5f2b)
+pushed
+by
+[endixk](/endixk)
+
+40s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+40s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15066254901/workflow)
+
+[Added --no-inference option for tree module](/steineggerlab/unicore/actions/runs/15047475249)
+
+Rust
+#44:
+Commit [baec0e7](/steineggerlab/unicore/commit/baec0e796041c79f34f83af7dd0b89d881c5ce1b)
+pushed
+by
+[pskvins](/pskvins)
+
+47s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+47s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15047475249/workflow)
+
+[Now tree module generates partition file](/steineggerlab/unicore/actions/runs/15046664825)
+
+Rust
+#43:
+Commit [029869b](/steineggerlab/unicore/commit/029869b10bef12044efe68de557dce43cc719ced)
+pushed
+by
+[pskvins](/pskvins)
+
+36s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+36s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/15046664825/workflow)
+
+[Little bit more efficient](/steineggerlab/unicore/actions/runs/14301821244)
+
+Rust
+#42:
+Commit [a3b33a1](/steineggerlab/unicore/commit/a3b33a12a0f5b64d7d636093aedabc4cd2133f29)
+pushed
+by
+[pskvins](/pskvins)
+
+51s
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+[main](/steineggerlab/unicore/tree/refs/heads/main "main")
+
+51s
+
+* [View workflow file](/steineggerlab/unicore/actions/runs/14301821244/workflow)
+
+[Merge remote-tracking branch 'origin/main'](/stei

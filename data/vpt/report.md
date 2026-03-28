@@ -1548,3 +1548,6 @@ usage: vpt [OPTIONS] COMMAND [arguments]
 vpt: error: argument : invalid choice: 'written' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
+
+## Metadata
+- **Skill**: generated

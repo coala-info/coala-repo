@@ -1,6 +1,6 @@
 ---
 name: secapr
-description: SECAPR is a bioinformatic pipeline that processes raw sequence capture data into phylogenetically informative alignments. Use when user asks to clean raw reads, assemble contigs, identify target loci, align sequences, or phase alleles for diploid data.
+description: SECAPR is a comprehensive toolkit that processes raw Illumina fastq reads into phylogenomic alignments through quality control, de novo assembly, and target extraction. Use when user asks to clean and trim reads, assemble contigs from target enrichment data, identify target sequences, or align and phase reads for phylogenetic analysis.
 homepage: https://github.com/AntonelliLab/seqcap_processor
 ---
 
@@ -8,71 +8,91 @@ homepage: https://github.com/AntonelliLab/seqcap_processor
 # secapr
 
 ## Overview
-
-SECAPR (SEquence CApture PRocessor) is a specialized bioinformatic pipeline designed to transform raw FASTQ data from sequence capture protocols into phylogenetically informative alignments. It automates the transition from raw reads to final datasets by integrating quality control, de novo assembly, and target locus identification. A key strength of the tool is its ability to handle diploid data through allele phasing, which provides a more accurate representation of genetic variation for downstream phylogenetic and phylogenomic analyses.
+SECAPR (SEquence CApture PRocessor) is a comprehensive toolkit designed to transform raw Illumina fastq reads into phylogenomic alignments. It automates the transition from raw data to "ready-to-analyze" sequences by integrating third-party tools like Trimmomatic, Trinity, and Velvet into a unified command-line interface. It is particularly effective for processing target enrichment data where researchers need to extract specific loci from a genomic background and handle allelic variation through phasing.
 
 ## Installation and Environment
-
-The most reliable way to use secapr is through a dedicated Conda environment to manage its numerous third-party dependencies.
+The tool is best managed via Conda to ensure all dependencies (like SAMtools and Trimmomatic) are correctly linked.
 
 ```bash
-# Create and activate a dedicated environment
-conda create -n secapr_env bioconda::secapr
+# Create and activate the environment
+conda create -n secapr_env secapr
 conda activate secapr_env
-```
 
-**Note for Apple Silicon (M1/M2) Users:**
-If you encounter compatibility issues on newer macOS hardware, force the environment to use the `osx-64` architecture:
-```bash
-conda activate secapr_env
-conda config --env --set subdir osx-64
+# Verify installation
+secapr -h
 ```
 
 ## Core Workflow Commands
 
-The pipeline is modular. You can run individual steps or the full workflow. Use `secapr <command> -h` for detailed parameter descriptions.
-
 ### 1. Quality Control and Trimming
-Clean raw reads by removing adapters and low-quality sequences.
+Before assembly, reads must be cleaned of adapters and low-quality bases. SECAPR uses a configuration file to manage barcodes and adapter sequences.
+
 ```bash
-secapr clean_reads --input path/to/raw_fastq --output path/to/cleaned_reads
+# Clean and trim reads
+secapr clean_reads --input /path/to/fastq --config adapter_config.txt --output /path/to/cleaned --index double --read_min 150000
 ```
+*   **Tip**: Use `--read_min` to exclude samples with insufficient data early in the pipeline.
+*   **Config Format**: Ensure your config file has `[adapters]`, `[names]`, and `[barcodes]` sections as defined in the documentation.
 
 ### 2. De Novo Assembly
-Assemble the cleaned reads into contigs for each sample.
+SECAPR supports multiple assemblers. Assembly is performed per sample to generate contigs.
+
 ```bash
-secapr assemble_reads --input path/to/cleaned_reads --output path/to/assembled_contigs --assembler trinity
+# Assemble cleaned reads
+secapr assemble_reads --input /path/to/cleaned --output /path/to/assembly --assembler trinity
 ```
 
-### 3. Target Identification
-Identify which assembled contigs match your target enrichment probes (reference library).
+### 3. Target Identification and Extraction
+Once assembled, you must identify which contigs match your target probes (reference sequences).
+
 ```bash
-secapr find_target_contigs --contigs path/to/assembled_contigs --reference probes.fasta --output path/to/target_contigs
+# Find contigs matching reference probes
+secapr find_target_contigs --input /path/to/assembly --reference probes.fasta --output /path/to/target_contigs
+
+# Extract identified sequences into locus-specific files
+secapr extract_sequences --input /path/to/target_contigs --output /path/to/locus_fastas
 ```
 
-### 4. Locus Selection and Alignment
-Extract the identified sequences and align them across samples.
+### 4. Alignment and Phasing
+For phylogenetic inference, sequences must be aligned. SECAPR can also phase reads to recover allelic information (haplotypes) rather than just consensus sequences.
+
 ```bash
-secapr locus_selection --input path/to/target_contigs --output path/to/selected_loci
-secapr align_sequences --input path/to/selected_loci --output path/to/alignments
+# Align sequences per locus
+secapr align_sequences --input /path/to/locus_fastas --output /path/to/alignments
+
+# Map reads and phase alleles
+secapr locus_selection --input /path/to/alignments --output /path/to/selected_loci
+secapr phase_reads --input /path/to/selected_loci --output /path/to/phased_data
 ```
 
-### 5. Allele Phasing
-Map reads back to the assembled contigs to identify heterozygous sites and phase alleles.
-```bash
-secapr reference_assembly --reads path/to/cleaned_reads --reference path/to/selected_loci --output path/to/mapped_reads
-secapr phase_alleles --input path/to/mapped_reads --output path/to/phased_alleles
-```
+## Expert Tips
+*   **Memory Management**: Assembly (especially with Trinity) is memory-intensive. Ensure your environment has sufficient RAM or use the `--cores` flag where available to limit parallel processes.
+*   **File Inspection**: Before starting, check your raw read counts using `grep -c '^+$' *.fastq`. SECAPR works best with at least 200,000 reads per file.
+*   **Compressed Files**: Modern versions of SECAPR support `.gz` files directly for the `clean_reads` step, but older versions may require manual unzipping via `gunzip`.
 
-## Expert Tips and Best Practices
 
-- **Resource Management**: Assembly (`assemble_reads`) and mapping are computationally intensive. Always use the `--cores` flag to utilize multi-threading where available.
-- **Input Organization**: Ensure your FASTQ files follow a consistent naming convention (e.g., `SampleName_R1.fastq.gz`) as secapr relies on pattern matching to pair reads.
-- **Validation**: Always run `secapr quality_check` on your raw data before starting the pipeline to identify potential library prep issues.
-- **Paralog Detection**: Pay close attention to the output of `find_target_contigs`. If multiple contigs match a single reference probe with high similarity, it may indicate a paralogous locus that should be excluded from phylogenetic analysis.
-- **Phasing Benefits**: For samples with high heterozygosity, always perform the phasing step. Using consensus sequences (which collapse heterozygotes into ambiguity codes) can lead to "branch length attraction" artifacts in phylogeny.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| add_missing_sequences | This script will add dummy sequences '?' for missing taxa in each alignments, making sure that all alignments in the input folder contain the same taxa (as required for e.g. *BEAST) |
+| concatenate_alignments | Concatenate mutliple alignments (MSAs) into one supermatrix |
+| paralogs_to_ref | Align paralogous contigs with reference sequence |
+| quality_check | This script runs a fastqc test on all fastq samples in a user-provided folder and creates an overview plot |
+| secapr align_sequences | Create multiple sequence alignments from sequence collections |
+| secapr assemble_reads | Assemble trimmed Illumina read files (fastq) |
+| secapr automate_all | This script automates the complete secapr pipeline, producing MSAs (allele, contig and BAM-consensus) from FASTQ files |
+| secapr clean_reads | Clean and trim raw Illumina read files |
+| secapr find_target_contigs | Extract the contigs that match the reference database |
+| secapr join_exons | Join exon-alignment files belonging to the same gene |
+| secapr locus_selection | Extract the n loci with the best read-coverage from you reference-based assembly (bam-files) |
+| secapr plot_sequence_yield | Plot overview of extracted sequences |
+| secapr reference_assembly | Create new reference library and map raw reads against the library (reference-based assembly) |
+| secapr_phase_alleles | Phase remapped reads form reference-based assembly into two separate alleles. Then produce consensus sequence for each allele. |
 
 ## Reference documentation
-- [SECAPR Main Repository](./references/github_com_AntonelliLab_seqcap_processor.md)
-- [SECAPR Workflow Documentation](./references/github_com_AntonelliLab_seqcap_processor_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_secapr_overview.md)
+- [SECAPR GitHub Overview](./references/github_com_AntonelliLab_seqcap_processor.md)
+- [File Preparation and Inspection](./references/github_com_AntonelliLab_seqcap_processor_wiki_1.-File-preparation-and-inspection.md)
+- [Trimming and Filtering Guide](./references/github_com_AntonelliLab_seqcap_processor_wiki_2.-Trimming-and-filtering.md)
+- [Assembly Workflow](./references/github_com_AntonelliLab_seqcap_processor_wiki_3.-Assembly.md)

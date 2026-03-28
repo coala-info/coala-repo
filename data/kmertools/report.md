@@ -237,3 +237,6 @@ Usage: kmertools <COMMAND>
 For more information, try '--help'.
 ```
 
+
+## Metadata
+- **Skill**: generated

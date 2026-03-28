@@ -1,1 +1,367 @@
-GitHub - vinta/awesome-python: An opinionated list of awesome Python frameworks, libraries, software and resources. Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners View all resources Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} vinta / awesome-python Public Notifications You must be signed in to change notification settings Fork 27.2k Star 284k An opinionated list of awesome Python frameworks, libraries, software and resources. awesome-python.com/ License View license 284k stars 27.2k forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Pull requests 8 Discussions Actions Security 0 Insights Additional navigation options Code Pull requests Discussions Actions Security Insights vinta/awesome-python master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,956 Commits 1,956 Commits .claude .claude .github .github docs docs .gitignore .gitignore CLAUDE.md CLAUDE.md CONTRIBUTING.md CONTRIBUTING.md LICENSE LICENSE Makefile Makefile README.md README.md mkdocs.yml mkdocs.yml requirements.txt requirements.txt sort.py sort.py View all files Repository files navigation README Contributing License Special thanks to: Warp, built for coding with multiple AI agents. Awesome Python An opinionated list of awesome Python frameworks, libraries, software and resources. Inspired by awesome-php . Awesome Python Admin Panels Algorithms and Design Patterns ASGI Servers Asynchronous Programming Audio Authentication Build Tools Built-in Classes Enhancement Caching CMS Code Analysis Command-line Interface Development Command-line Tools Computer Vision Configuration Files Cryptography Data Analysis Data Validation Data Visualization Database Drivers Database Date and Time Debugging Tools Deep Learning DevOps Tools Distributed Computing Distribution Documentation Downloader Editor Plugins and IDEs Email Environment Management File Manipulation Functional Programming Game Development Geolocation GUI Development Hardware HTML Manipulation HTTP Clients Image Processing Implementations Interactive Interpreter Internationalization Job Scheduler Logging Machine Learning Miscellaneous Natural Language Processing Network Virtualization ORM Package Management Package Repositories Penetration testing Permissions Processes Quantum Computing Recommender Systems Refactoring RESTful API Robotics RPC Servers Science Search Serialization Serverless Frameworks Shell Specific Formats Processing Static Site Generator Task Queues Template Engine Testing Text Processing URL Manipulation Video Web Asset Management Web Content Extracting Web Crawling Web Frameworks WebSocket WSGI Servers Resources Newsletters Podcasts Contributing Admin Panels Libraries for administrative interfaces. ajenti - The admin panel your servers deserve. django-grappelli - A jazzy skin for the Django Admin-Interface. django-unfold - Elevate your Django admin with a stunning modern interface, powerful features, and seamless user experience. flask-admin - Simple and extensible administrative interface framework for Flask. flower - Real-time monitor and web admin for Celery. func-to-web - Instantly create web UIs from Python functions using type hints. Zero frontend code required. jet-bridge - Admin panel framework for any application with nice UI (ex Jet Django). streamlit - A framework which lets you build dashboards, generate reports, or create chat apps in minutes. wooey - A Django app which creates automatic web UIs for Python scripts. Algorithms and Design Patterns Python implementation of data structures, algorithms and design patterns. Also see awesome-algorithms . Algorithms algorithms - Minimal examples of data structures and algorithms. python-ds - A collection of data structure and algorithms for coding interviews. sortedcontainers - Fast and pure-Python implementation of sorted collections. thealgorithms - All Algorithms implemented in Python. Design Patterns python-cqrs - Event-Driven Architecture Framework with CQRS/CQS, Transaction Outbox, Saga orchestration. python-patterns - A collection of design patterns in Python. transitions - A lightweight, object-oriented finite state machine implementation. ASGI Servers ASGI -compatible web servers. daphne - A HTTP, HTTP2 and WebSocket protocol server for ASGI and ASGI-HTTP. granian - A Rust HTTP server for Python applications built on top of Hyper and Tokio, supporting WSGI/ASGI/RSGI. hypercorn - An ASGI and WSGI Server based on Hyper libraries and inspired by Gunicorn. uvicorn - A lightning-fast ASGI server implementation, using uvloop and httptools. Asynchronous Programming Libraries for asynchronous, concurrent and parallel execution. Also see awesome-asyncio . asyncio - (Python standard library) Asynchronous I/O, event loop, coroutines and tasks. awesome-asyncio concurrent.futures - (Python standard library) A high-level interface for asynchronously executing callables. gevent - A coroutine-based Python networking library that uses greenlet . multiprocessing - (Python standard library) Process-based parallelism. trio - A friendly library for async concurrency and I/O. twisted - An event-driven networking engine. uvloop - Ultra fast asyncio event loop. Audio Libraries for manipulating audio and its metadata. Audio audioFlux - A library for audio and music analysis, feature extraction. audioread - Cross-library (GStreamer + Core Audio + MAD + FFmpeg) audio decoding. dejavu - Audio fingerprinting and recognition. gTTS - Python library and CLI tool for converting text to speech using Google Translate TTS. kapre - Keras Audio Preprocessors. librosa - Python library for audio and music analysis. matchering - A library for automated reference audio mastering. mingus - An advanced music theory and notation package with MIDI file and playback support. pyaudioanalysis - Audio feature extraction, classification, segmentation and applications. pydub - Manipulate audio with a simple and easy high level interface. timeside - Open web audio processing framework. Metadata beets - A music library manager and MusicBrainz tagger. eyed3 - A tool for working with audio files, specifically MP3 files containing ID3 metadata. mutagen - A Python module to handle audio metadata. tinytag - A library for reading music meta data of MP3, OGG, FLAC and Wave files. Authentication Libraries for implementing authentication schemes. OAuth authlib - JavaScript Object Signing and Encryption draft implementation. django-allauth - Authentication app for Django that "just works." django-oauth-toolkit - OAuth 2 goodies for Django. oauthlib - A generic and thorough implementation of the OAuth request-signing logic. JWT pyjwt - JSON Web Token implementation in Python. python-jose - A JOSE implementation in Python. Build Tools Compile software from source code. bitbake - A make-like build tool for embedded Linux. buildout - A build system for creating, assembling and deploying applications from multiple parts. platformio - A console tool to build code with different development platforms. pybuilder - A continuous build tool written in pure Python. scons - A software construction tool. Built-in Classes Enhancement Libraries for enhancing Python built-in classes. attrs - Replacement for __init__ , __eq__ , __repr__ , etc. boilerplate in class definitions. bidict - Efficient, Pythonic bidirectional map data structures and related functionality.. box - Python dictionaries with advanced dot notation access. dataclasses - (Python standard library) Data classes. dotteddict - A library that provides a method of accessing lists and dicts with a dotted path notation. CMS Content Manag
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvinta%2Fawesome-python)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvinta%2Fawesome-python)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=vinta%2Fawesome-python)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[vinta](/vinta)
+/
+**[awesome-python](/vinta/awesome-python)**
+Public
+
+* [Notifications](/login?return_to=%2Fvinta%2Fawesome-python) You must be signed in to change notification settings
+* [Fork
+  27.5k](/login?return_to=%2Fvinta%2Fawesome-python)
+* [Star
+   289k](/login?return_to=%2Fvinta%2Fawesome-python)
+
+* [Code](/vinta/awesome-python)
+* [Pull requests
+  4](/vinta/awesome-python/pulls)
+* [Discussions](/vinta/awesome-python/discussions)
+* [Actions](/vinta/awesome-python/actions)
+* [Security
+  0](/vinta/awesome-python/security)
+* [Insights](/vinta/awesome-python/pulse)
+
+Additional navigation options
+
+* [Code](/vinta/awesome-python)
+* [Pull requests](/vinta/awesome-python/pulls)
+* [Discussions](/vinta/awesome-python/discussions)
+* [Actions](/vinta/awesome-python/actions)
+* [Security](/vinta/awesome-python/security)
+* [Insights](/vinta/awesome-python/pulse)
+
+# vinta/awesome-python
+
+master
+
+[Branches](/vinta/awesome-python/branches)[Tags](/vinta/awesome-python/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[2,235 Commits](/vinta/awesome-python/commits/master/)   2,235 Commits | | |
+| [.claude](/vinta/awesome-python/tree/master/.claude ".claude") | | [.claude](/vinta/awesome-python/tree/master/.claude ".claude") |  |  |
+| [.github](/vinta/awesome-python/tree/master/.github ".github") | | [.github](/vinta/awesome-python/tree/master/.github ".github") |  |  |
+| [website](/vinta/awesome-python/tree/master/website "website") | | [website](/vinta/awesome-python/tree/master/website "website") |  |  |
+| [.gitignore](/vinta/awesome-python/blob/master/.gitignore ".gitignore") | | [.gitignore](/vinta/awesome-python/blob/master/.gitignore ".gitignore") |  |  |
+| [CLAUDE.md](/vinta/awesome-python/blob/master/CLAUDE.md "CLAUDE.md") | | [CLAUDE.md](/vinta/awesome-python/blob/master/CLAUDE.md "CLAUDE.md") |  |  |
+| [CONTRIBUTING.md](/vinta/awesome-python/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/vinta/awesome-python/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
+| [LICENSE](/vinta/awesome-python/blob/master/LICENSE "LICENSE") | | [LICENSE](/vinta/awesome-python/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile](/vinta/awesome-python/blob/master/Makefile "Makefile") | | [Makefile](/vinta/awesome-python/blob/master/Makefile "Makefile") |  |  |
+| [README.md](/vinta/awesome-python/blob/master/README.md "README.md") | | [README.md](/vinta/awesome-python/blob/master/README.md "README.md") |  |  |
+| [SPONSORSHIP.md](/vinta/awesome-python/blob/master/SPONSORSHIP.md "SPONSORSHIP.md") | | [SPONSORSHIP.md](/vinta/awesome-python/blob/master/SPONSORSHIP.md "SPONSORSHIP.md") |  |  |
+| [pyproject.toml](/vinta/awesome-python/blob/master/pyproject.toml "pyproject.toml") | | [pyproject.toml](/vinta/awesome-python/blob/master/pyproject.toml "pyproject.toml") |  |  |
+| [uv.lock](/vinta/awesome-python/blob/master/uv.lock "uv.lock") | | [uv.lock](/vinta/awesome-python/blob/master/uv.lock "uv.lock") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Contributing
+* License
+
+# Awesome Python
+
+An opinionated list of Python frameworks, libraries, tools, and resources.
+
+# **Sponsors**
+
+> The **#10 most-starred repo on GitHub**. Put your product in front of Python developers. [Become a sponsor](/vinta/awesome-python/blob/master/SPONSORSHIP.md).
+
+# Categories
+
+**AI & ML**
+
+* [AI and Agents](#ai-and-agents)
+* [Deep Learning](#deep-learning)
+* [Machine Learning](#machine-learning)
+* [Natural Language Processing](#natural-language-processing)
+* [Computer Vision](#computer-vision)
+* [Recommender Systems](#recommender-systems)
+
+**Web Development**
+
+* [Web Frameworks](#web-frameworks)
+* [Web APIs](#web-apis)
+* [Web Servers](#web-servers)
+* [WebSocket](#websocket)
+* [Template Engines](#template-engines)
+* [Web Asset Management](#web-asset-management)
+* [Authentication](#authentication)
+* [Admin Panels](#admin-panels)
+* [CMS](#cms)
+* [Static Site Generators](#static-site-generators)
+
+**HTTP & Scraping**
+
+* [HTTP Clients](#http-clients)
+* [Web Scraping](#web-scraping)
+* [Email](#email)
+
+**Database & Storage**
+
+* [ORM](#orm)
+* [Database Drivers](#database-drivers)
+* [Database](#database)
+* [Caching](#caching)
+* [Search](#search)
+* [Serialization](#serialization)
+
+**Data & Science**
+
+* [Data Analysis](#data-analysis)
+* [Data Validation](#data-validation)
+* [Data Visualization](#data-visualization)
+* [Geolocation](#geolocation)
+* [Science](#science)
+* [Quantum Computing](#quantum-computing)
+
+**Developer Tools**
+
+* [Algorithms and Design Patterns](#algorithms-and-design-patterns)
+* [Interactive Interpreter](#interactive-interpreter)
+* [Code Analysis](#code-analysis)
+* [Testing](#testing)
+* [Debugging Tools](#debugging-tools)
+* [Build Tools](#build-tools)
+* [Documentation](#documentation)
+
+**DevOps**
+
+* [DevOps Tools](#devops-tools)
+* [Distributed Computing](#distributed-computing)
+* [Task Queues](#task-queues)
+* [Job Schedulers](#job-schedulers)
+* [Logging](#logging)
+* [Network Virtualization](#network-virtualization)
+
+**CLI & GUI**
+
+* [CLI Development](#cli-development)
+* [CLI Tools](#cli-tools)
+* [GUI Development](#gui-development)
+
+**Text & Documents**
+
+* [Text Processing](#text-processing)
+* [HTML Manipulation](#html-manipulation)
+* [File Format Processing](#file-format-processing)
+* [File Manipulation](#file-manipulation)
+
+**Media**
+
+* [Image Processing](#image-processing)
+* [Audio & Video Processing](#audio--video-processing)
+* [Game Development](#game-development)
+
+**Python Language**
+
+* [Implementations](#implementations)
+* [Built-in Classes Enhancement](#built-in-classes-enhancement)
+* [Functional Programming](#functional-programming)
+* [Asynchronous Programming](#asynchronous-programming)
+* [Date and Time](#date-and-time)
+
+**Python Toolchain**
+
+* [Environment Management](#environment-management)
+* [Package Management](#package-management)
+* [Package Repositories](#package-repositories)
+* [Distribution](#distribution)
+* [Configuration Files](#configuration-files)
+
+**Security**
+
+* [Cryptography](#cryptography)
+* [Penetration Testing](#penetration-testing)
+
+**Miscellaneous**
+
+* [Hardware](#hardware)
+* [Microsoft Windows](#microsoft-windows)
+* [Miscellaneous](#miscellaneous)
+
+---
+
+**AI & ML**
+
+## AI and Agents
+
+*Libraries for building AI applications, LLM integrations, and autonomous agents.*
+
+* Agent Skills
+  + [django-ai-plugins](https://github.com/vintasoftware/django-ai-plugins) - Django backend agent skills for Django, DRF, Celery, and Django-specific code review.
+  + [sentry-skills](https://github.com/getsentry/skills) - Python-focused engineering skills for code review, debugging, and backend workflows.
+  + [trailofbits-skills](https://github.com/trailofbits/skills) - Python-friendly security skills for auditing, testing, and safer backend development.
+* Orchestration
+  + [autogen](https://github.com/microsoft/autogen) - A programming framework for building agentic AI applications.
+  + [crewai](https://github.com/crewAIInc/crewAI) - A framework for orchestrating role-playing autonomous AI agents for collaborative task solving.
+  + [dspy](https://github.com/stanfordnlp/dspy) - A framework for programming, not prompting, language models.
+  + [langchain](https://github.com/langchain-ai/langchain) - Building applications with LLMs through composability.
+  + [pydantic-ai](https://github.com/pydantic/pydantic-ai) - A Python agent framework for building generative AI applications with structured schemas.
+* Data Layer
+  + [instructor](https://github.com/567-labs/instructor) - A library for extracting structured data from LLMs, powered by Pydantic.
+  + [llama-index](https://github.com/run-llama/llama_index) - A data framework for your LLM application.
+  + [mem0](https://github.com/mem0ai/mem0) - An intelligent memory layer for AI agents enabling personalized interactions.
+* Pre-trained Models and Inference
+  + [diffusers](https://github.com/huggingface/diffusers) - A library that provides pre-trained diffusion models for generating and editing images, audio, and video.
+  + [transformers](https://github.com/huggingface/transformers) - A framework that lets you easily use pre-trained transformer models for NLP, vision, and audio tasks.
+  + [unsloth](https://github.com/unslothai/unsloth) - A library for faster LLM fine-tuning and training with reduced memory usage.
+  + [vllm](https://github.com/vllm-project/vllm) - A high-throughput and memory-efficient inference and serving engine for LLMs.
+
+## Deep Learning
+
+*Frameworks for Neural Networks and Deep Learning. Also see [awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning).*
+
+* [jax](https://github.com/jax-ml/jax) - a library for high-performance numerical computing with automatic differentiation and JIT compilation.
+* [keras](https://github.com/keras-team/keras) - A high-level deep learning library with support for JAX, TensorFlow, and PyTorch backends.
+* [pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) - Deep learning framework to train, deploy, and ship AI products Lightning fast.
+* [pytorch](https://github.com/pytorch/pytorch) - Tensors 

@@ -1,6 +1,6 @@
 ---
 name: caspeak
-description: CasPeak is a bioinformatics pipeline for detecting and validating mobile element insertions using outer-Cas9 targeted Nanopore sequencing data. Use when user asks to identify non-reference insertions, align long reads to mobile element consensus sequences, detect coverage peaks, or generate validated VCF and BED files for genomic variants.
+description: CasPeak identifies mobile element insertions from targeted Nanopore sequencing data by combining read alignment, peak detection, and local assembly. Use when user asks to identify non-reference insertions, detect coverage peaks from Cas9-targeted sequencing, or validate insertion events through local assembly and dotplot visualization.
 homepage: https://github.com/Rye-lxy/CasPeak
 ---
 
@@ -8,69 +8,73 @@ homepage: https://github.com/Rye-lxy/CasPeak
 # caspeak
 
 ## Overview
-CasPeak is a specialized bioinformatics pipeline for detecting mobile element insertions (MEIs) that are not present in the reference genome. It leverages the unique signal of outer-Cas9 targeted Nanopore sequencing, where enrichment occurs at the insertion boundaries. This skill guides you through the multi-step process of aligning long reads, identifying coverage peaks that signify potential insertions, and validating these events to produce high-confidence VCF or BED outputs.
+CasPeak is a specialized bioinformatics pipeline designed to identify mobile element insertions (MEIs) that are not present in a reference genome. It specifically leverages the unique signal from outer-Cas9 targeted Nanopore sequencing. By combining read alignment (via LAST), peak detection, and local assembly (via lamassemble), it provides a robust workflow for validating real insertion events.
 
-## Core Workflow
+## Core Workflows
 
-### 1. Quick Start (All-in-One)
-If you want to run the entire pipeline from raw reads to validated variants in a single step, use the `exec` subcommand.
+### The All-in-One Shortcut
+For most users, the `exec` subcommand is the preferred entry point as it handles the entire pipeline from raw reads to validated VCF.
 
 ```bash
 caspeak exec \
-  --read /path/to/reads.fq.gz \
-  --ref /path/to/reference.fa \
-  --insert /path/to/consensus_ME.fa \
-  --target-start <INT> \
-  --target-end <INT> \
-  --thread <INT> \
-  --vcf
+    --read reads.fq.gz \
+    --ref hg38.fa \
+    --insert consensus.fa \
+    --target-start 100 \
+    --target-end 120 \
+    --thread 8 \
+    --vcf \
+    --bedtools-genome human.hg38.genome
 ```
 
-### 2. Step-by-Step Execution
-For larger datasets or when manual inspection of intermediate files is required, run the subcommands sequentially.
+### Step-by-Step Execution
+If you need to inspect intermediate files or adjust parameters between stages, run the subcommands sequentially:
 
-**A. Alignment**
-Aligns reads to both the reference genome and the mobile element consensus sequence using `LAST`.
-```bash
-caspeak align --read reads.fq.gz --ref ref.fa --insert me_consensus.fa --thread 8
-```
-
-**B. Peak Detection**
-Identifies candidate insertion sites based on coverage enrichment.
-```bash
-caspeak peak \
-  --read reads.fq.gz --ref ref.fa --insert me_consensus.fa \
-  --target-start <INT> --target-end <INT> \
-  --thread 8
-```
-
-**C. Validation**
-Filters candidate peaks and generates the final call set.
-```bash
-caspeak valid --thread 8 --vcf
-```
-
-**D. Visualization**
-Generates dotplots for identified peaks to manually inspect the evidence.
-```bash
-caspeak plot --maf result/validate.maf
-```
+1.  **Align**: Map reads to both the reference and the insertion consensus.
+    ```bash
+    caspeak align --read reads.fq --ref ref.fa --insert mei.fa --thread 4
+    ```
+2.  **Peak**: Filter reads and identify coverage peaks.
+    *   *Tip*: Use `--exog` if the mobile element is completely foreign to the reference genome.
+    *   *Tip*: Use `--mask` with a RepeatMasker file to reduce false positives in repetitive regions.
+    ```bash
+    caspeak peak --target-start <INT> --target-end <INT> --min-cov 2
+    ```
+3.  **Valid**: Perform local assembly to confirm the insertion.
+    ```bash
+    caspeak valid --thread 4 --vcf
+    ```
 
 ## Expert Tips and Best Practices
 
 ### Input Requirements
-- **Target Coordinates**: You must know the exact start and end positions of the Cas9 target site within your mobile element consensus sequence (`--target-start` and `--target-end`).
-- **Genome Files**: If not using the default hg38, provide a genome file (chromosome names and lengths) via `--bedtools-genome` to ensure correct coverage calculations.
+*   **Target Coordinates**: You must know the exact Cas9 target site coordinates within your insertion consensus sequence (`--target-start` and `--target-end`).
+*   **Genome Files**: CasPeak defaults to `human.hg38.genome` for bedtools operations. If working with other species or custom builds, you must provide a genome file (tab-delimited: chromosome name and length) via `--bedtools-genome`.
 
-### Filtering and Sensitivity
-- **Exogenous Elements**: If the mobile element is entirely absent from the reference genome (e.g., a transgene), use the `-x` or `--exog` flag during the `peak` step to optimize detection.
-- **Masking**: Use `--mask` with a RepeatMasker `.out` file to reduce false positives in highly repetitive regions, though be aware this may slightly increase false negatives.
-- **Read Length**: By default, reads shorter than 500bp are filtered. Adjust this using `--min-read-length` if working with fragmented DNA.
-- **Coverage Threshold**: The default minimum coverage for a peak is 2. For high-depth data, increase `--min-cov` to reduce noise.
+### Filtering and Trimming
+*   **Read Length**: The default minimum read length is 500bp. For highly fragmented data, adjust `--min-read-length`.
+*   **Alignment Proportion**: Use `--max-prop` (default 0.99) and `--min-prop` (default 0.4) to control how much of a read must align to the reference. This helps filter out reads that are entirely reference-derived or entirely noise.
+*   **Padding**: If your targeting isn't perfectly precise, increase `--padding` (default 20) to capture reads near the target site.
 
-### Working Directory Management
-- Always specify the same `--workdir` (default is current directory) for all subcommands in a project. CasPeak relies on the directory structure created by `align` to find files for `peak` and `valid`.
+### Visualization
+After validation, use the `plot` subcommand to generate dotplots for every detected peak. This is the most effective way to manually curate and verify the structural integrity of the detected MEIs.
+```bash
+caspeak plot --maf result/validate.maf
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| caspeak | caspeak: error: argument {align,peak,valid,exec,plot}: invalid choice: 'sequence' (choose from align, peak, valid, exec, plot) |
+| caspeak_align | Aligns reads to a reference genome, considering MEI insertions. |
+| caspeak_peak | Detects peaks of mobile element insertions in sequencing data. |
+| caspeak_plot | Plot MAF files |
+| caspeak_valid | Validate peaks |
+| exec | Execute the CASpeak pipeline for detecting mobile element insertions. |
 
 ## Reference documentation
-- [CasPeak GitHub Repository](./references/github_com_Rye-lxy_CasPeak.md)
-- [CasPeak Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_caspeak_overview.md)
+- [CasPeak README](./references/github_com_Rye-lxy_CasPeak_blob_master_README.md)
+- [CasPeak CLI Source](./references/github_com_Rye-lxy_CasPeak_blob_master_caspeak.md)

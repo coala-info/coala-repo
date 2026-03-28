@@ -1,0 +1,396 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbagari%2Fmeta%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbagari%2Fmeta%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=bagari%2Fmeta)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bagari](/bagari)
+/
+**[meta](/bagari/meta)**
+Public
+
+* [Notifications](/login?return_to=%2Fbagari%2Fmeta) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2Fbagari%2Fmeta)
+* [Star
+   1](/login?return_to=%2Fbagari%2Fmeta)
+
+* [Code](/bagari/meta)
+* [Issues
+  0](/bagari/meta/issues)
+* [Pull requests
+  0](/bagari/meta/pulls)
+* [Actions](/bagari/meta/actions)
+* [Projects](/bagari/meta/projects)
+* [Security
+  0](/bagari/meta/security)
+* [Insights](/bagari/meta/pulse)
+
+Additional navigation options
+
+* [Code](/bagari/meta)
+* [Issues](/bagari/meta/issues)
+* [Pull requests](/bagari/meta/pulls)
+* [Actions](/bagari/meta/actions)
+* [Projects](/bagari/meta/projects)
+* [Security](/bagari/meta/security)
+* [Insights](/bagari/meta/pulse)
+
+# Releases: bagari/meta
+
+[Releases](/bagari/meta/releases)
+[Tags](/bagari/meta/tags)
+
+Releases · bagari/meta
+
+## v2.0.1
+
+04 Nov 05:34
+
+![@bagari](https://avatars.githubusercontent.com/u/39617810?s=40&v=4)
+[bagari](/bagari)
+
+[v2.0.1](/bagari/meta/tree/v2.0.1)
+
+[`f3e676d`](/bagari/meta/commit/f3e676d59a68b94f4b2500e22da088c09044a452)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bagari/meta/tags)
+
+[v2.0.1](/bagari/meta/releases/tag/v2.0.1)
+
+[Latest](/bagari/meta/releases/latest)
+
+[Latest](/bagari/meta/releases/latest)
+
+* Fixed bug in reorienting streamlines.
+* Updated CM-Rep code to be compatible with the latest update of VTK and ITK.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v2.0.0
+
+03 Oct 03:08
+
+![@bagari](https://avatars.githubusercontent.com/u/39617810?s=40&v=4)
+[bagari](/bagari)
+
+[v2.0.0](/bagari/meta/tree/v2.0.0)
+
+[`6400869`](/bagari/meta/commit/6400869d9bd43c9701029708b6e2b74690b018d2)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bagari/meta/tags)
+
+[v2.0.0](/bagari/meta/releases/tag/v2.0.0)
+
+* Added support for multiple white matter bundle formats: `trk`, `trx`, `tt.gz`, `tck`.
+* Added option to invert the transform matrix.
+* Fixed along-length segmentation/labeling issue when subject bundles were cropped or incomplete.
+* Added option to extract volumetric and streamline profiles.
+* Added streamline shape metrics.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v1.0.1
+
+28 Feb 00:52
+
+![@bagari](https://avatars.githubusercontent.com/u/39617810?s=40&v=4)
+[bagari](/bagari)
+
+[v1.0.1](/bagari/meta/tree/v1.0.1)
+
+[`692c090`](/bagari/meta/commit/692c0907c33fb5ad389538b6a7571c7cbec94374)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bagari/meta/tags)
+
+[v1.0.1](/bagari/meta/releases/tag/v1.0.1)
+
+* Resolved an issue where excluded\_idx was empty.
+* Prevented the creation of empty DataFrames when computing bundle features based on binary masks and microstructure maps
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## v1.0.0
+
+02 Nov 23:11
+
+![@bagari](https://avatars.githubusercontent.com/u/39617810?s=40&v=4)
+[bagari](/bagari)
+
+[v1.0.0](/bagari/meta/tree/v1.0.0)
+
+[`2c4487a`](/bagari/meta/commit/2c4487a3bee94476f11220c54a65c3057a54fa62)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bagari/meta/tags)
+
+[v1.0.0](/bagari/meta/releases/tag/v1.0.0)
+
+**First release of Medial Tractography Analysis (MeTA):** a workflow designed to minimize brain microstructural heterogeneity in diffusion MRI (dMRI) metrics by extracting and parcellating the core volume along the length of white matter bundles in voxel space, directly preserving bundle shape while efficiently capturing regional variation within and along the bundles.
+
+**Key Features:**
+
+* Extraction of the Medial Surface and Core Volume of white matter bundles (WM).
+* Segmentation of WM bundles along their length in voxel space.
+* Computation of volumetric and streamline-based features.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

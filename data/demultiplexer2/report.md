@@ -84,3 +84,6 @@ options:
                         Directory to write the demultiplexed files to.
 ```
 
+
+## Metadata
+- **Skill**: generated

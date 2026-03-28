@@ -1,0 +1,131 @@
+# The team[¶](#the-team "Link to this heading")
+
+Below are the past and present members of the relion team in reverse chronological order of joining.
+
+## Current members[¶](#current-members "Link to this heading")
+
+### Bogdan Toader[¶](#bogdan-toader "Link to this heading")
+
+[Google Scholar](https://scholar.google.com/citations?user=X76IzDMAAAAJ&hl)
+
+Bogdan studied Computer Science and Mathematics at the University of Manchester and did a PhD in Mathematics at the University of Oxford.
+He joined the LMB in January 2024 as a postdoc in both our and Tanmay Bharat’s groups to further improve and develop new tools and algoriths for cryo-ET data processing.
+
+### Kiarash Jamali[¶](#kiarash-jamali "Link to this heading")
+
+[Google Scholar](https://scholar.google.com/citations?user=qoyhWcYAAAAJ)
+
+Kiarash studied Mathematics and Statistics at the University of Toronto, St George. He joined our group as a PhD student in October 2021, but had been working with us a volunteering undergrad student since the COVID19 lockdown in April 2020. Kiarash works on various machine-learning methods for solving cryo-EM structures and beyond.
+
+### Johannes Schwab[¶](#johannes-schwab "Link to this heading")
+
+[Google Scholar](https://scholar.google.co.jp/citations?user=qhevh4EAAAAJ)
+
+Johannes studied Mathematics at the University of Innsbruckm Austria, where he also obtained his PhD.
+Johannes works on machine-learning approaches to deal with molecular flexibility in cryo-EM reconstruction.
+
+### Dari Kimanius[¶](#dari-kimanius "Link to this heading")
+
+[Google Scholar](https://scholar.google.co.jp/citations?user=noWvpR8AAAAJ)
+
+Dari studied Theoretical Physics at the Royal Institute of Technology (KTH, Stockholm), and did a PhD in Biophysics and Bioinformatics at Stockholm University.
+Dari joined our group as a post-doc in May 2019.
+Dari implemented *GPU-acceleration* during his PhD.
+For his postdoc at LMB, he works on the incorporation of *more informative priors* through deep convolutional neural networks, as well as on the design of more efficient *optimisation algorithms*.
+
+### Euan Pyle[¶](#euan-pyle "Link to this heading")
+
+[Google Scholar](https://scholar.google.com/citations?user=bkRQ0BQAAAAJ)
+
+Euan studied Chemistry and Biology at Durham University before going on to complete his PhD at Imperial College London. As a post-doc position in Giulia Zanetti’s lab at Birkbeck College/The Francis Crick Institute, he contributed code to the RELION 5.0 tomography pipeline, in close collaboration with Alister Burt.
+
+### Takanori Nakane[¶](#takanori-nakane "Link to this heading")
+
+[Google Scholar](https://scholar.google.co.jp/citations?user=czk0JLkAAAAJ)
+
+Takanori studied as an M.D. at Kyoto University, where he also obtained his PhD in Medicine.
+In 2014 he also obtained an M.Phil in Computational Biology from the University of Cambridge.
+Takanori joined our team in October 2017.
+He works on many facets of single-particle analysis and kindly dedicates a lot of his time to provide support to RELION users worldwide.
+
+### Sjors Scheres[¶](#sjors-scheres "Link to this heading")
+
+[Google Scholar](https://scholar.google.co.jp/citations?user=5VgYLcsAAAAJ)
+
+Sjors studied Chemistry at Utrecht University, The Netherlands, where he also obtained his PhD in protein crystallography.
+He was a post-doc in the group of Jose-Maria Carazo in Madrid, before he started his group at the LMB in 2010.
+Sjors designed the *regularised likelihood algorithm* and is the *original architect* of relion.
+
+## Past members[¶](#past-members "Link to this heading")
+
+### Alister Burt[¶](#alister-burt "Link to this heading")
+
+[Google Scholar](https://scholar.google.co.uk/citations?hl=en&user=ERGSZbUAAAAJ)
+
+Alister studied Chemistry at the University at York, UK and did his PhD at the IBS in Grenoble, France. He was a post-doc in the group of David Barford, where he contributed code to the new sub-tomogram avaraging pipeline in relion-5;
+
+### David Li[¶](#david-li "Link to this heading")
+
+[Google Scholar](https://scholar.google.com/citations?user=AGKZlfsAAAAJ)
+
+David studied Electrical Engineering and Computer Science at MIT. He worked in the lab of Prof Feng Zhang on CRISPR systems. David joined our group as an MPhil student in October 2022 to work on in vitro assembly of tau filaments. During his stay with us David also developed new classification software for filaments. David went on to do a PhD at Stanford.
+
+### Liyi Dong[¶](#liyi-dong "Link to this heading")
+
+Liyi studied Biology at China Agricultural University and did a BSc at Purdue University with Michael Rossmann.
+Liyi joined our group as a PhD student in November 2017.
+She worked on *automated selection of 2D class averages*.
+
+### Shaoda He[¶](#shaoda-he "Link to this heading")
+
+Shaoda studied Biology at Peking University, where he also participated in a programme organized by the Electronic Engineering and Computer Science Department.
+Shaoda joined our group in October 2014.
+He developed *helical reconstruction* and *local symmetry averaging*.
+
+### Joaquín Otón[¶](#joaquin-oton "Link to this heading")
+
+[Google Scholar](https://scholar.google.co.jp/citations?user=g2ZJPIYAAAAJ)
+
+Joaquin (Kino) studied Physics at Universitat de Vàlencia (Spain) and did a PhD in Optical Engineering at Universitat Politècnica de Catalunya.
+He joined the neighbouring Briggs group in 2018.
+Together with Jasenko, he co-developed a new approach for *sub-tomogram averaging*.
+
+### Jasenko Zivanov[¶](#jasenko-zivanov "Link to this heading")
+
+Jasenko studied Computer Science at the University of Basel, Switzerland, where he also obtained his PhD.
+Jasenko was a postdoc with us for more than three years (during 2017-2020), and continues to work with us from Switzerland.
+Jasenko developed *Bayesian polishing* and *optical aberration correction* for single-particle analsyis.
+Together with Kino, he also developed a new approach for *sub-tomogram averaging*.
+
+[![Logo](_static/relion-logo.png)](index.html)
+
+### Navigation
+
+* [What’s new?](Whats-new.html)
+* The team
+  + [Current members](#current-members)
+  + [Past members](#past-members)
+* [Installation](Installation.html)
+* [Single particle tutorial](SPA_tutorial/index.html)
+* [Subtomogram tutorial](STA_tutorial/index.html)
+* [On-the-fly processing](Onthefly.html)
+* [Reference pages](Reference/index.html)
+
+---
+
+* [Source repository of this documentation](https://github.com/3dem/relion-documents)
+
+### Related Topics
+
+* [Documentation overview](index.html)
+  + Previous: [What’s new?](Whats-new.html "previous chapter")
+  + Next: [Installation](Installation.html "next chapter")
+
+### Quick search
+
+©RELION developer team, licensed under GPLv3.
+|
+Powered by [Sphinx 8.2.3](https://www.sphinx-doc.org/)
+& [Alabaster 1.0.0](https://alabaster.readthedocs.io)
+|
+[Page source](_sources/Team.rst.txt)

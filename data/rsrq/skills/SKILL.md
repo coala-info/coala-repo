@@ -1,6 +1,6 @@
 ---
 name: rsrq
-description: "rsrq is a high-performance job queue system that uses Redis to distribute and execute shell commands across parallel workers. Use when user asks to enqueue shell commands, start parallel workers, monitor queue status, or integrate job scheduling with Snakemake."
+description: rsrq is a lightweight, high-performance job queueing system that uses Redis to manage and distribute shell commands across multiple worker processes. Use when user asks to enqueue command-line tasks from text files, spawn parallel workers to process jobs, monitor queue status, or integrate job submission with Snakemake.
 homepage: https://github.com/aaronmussig/rsrq
 ---
 
@@ -9,80 +9,101 @@ homepage: https://github.com/aaronmussig/rsrq
 
 ## Overview
 
-rsrq (Rust Redis Queue) is a high-performance, minimal job queue system written in Rust. It leverages Redis to manage and distribute shell commands across parallel workers. Unlike more complex task queues, rsrq focuses on simplicity: you provide a text file of commands, and rsrq handles the distribution and execution. It is specifically designed to integrate seamlessly with Snakemake, allowing users to route specific rules to different Redis queues.
+rsrq (Rust Redis Queue) is a lightweight, high-performance job queueing system inspired by the Python RQ library. It uses Redis as a backend to manage and distribute shell commands across multiple worker processes. This tool is specifically designed for users who need to parallelize a large number of independent command-line tasks—such as those found in data processing or bioinformatics pipelines—without the complexity of a full-scale cluster scheduler. It provides a simple interface to enqueue jobs from text files and scale workers across one or more machines.
 
-## Environment Setup
+## Installation and Setup
 
-Before using rsrq, you must define the connection string for your Redis instance.
+Ensure Rust 1.70+ is installed.
 
 ```bash
-export REDIS_URL=redis://[:password@]host[:port][/db_number]
+# Install via Cargo
+cargo install rsrq
+
+# Or via Bioconda
+conda install -c conda-forge -c bioconda rsrq
 ```
 
-## Core CLI Usage
-
-### 1. Enqueueing Jobs
-Jobs are added to a named queue by providing a text file where each line represents a single shell command to be executed.
+### Connection Configuration
+The tool requires a Redis instance. Define the connection string as an environment variable:
 
 ```bash
-rsrq enqueue <queue_name> <commands_file.txt>
+export REDIS_URL=redis://[:password@]host[:port][/db]
 ```
 
-### 2. Processing Jobs
-Workers must be started manually on the machine(s) where the tasks should run. You can specify the number of parallel worker threads.
+## Core CLI Workflows
+
+### 1. Enqueuing Jobs
+Jobs are defined in a plain text file where each line represents a single shell command to be executed.
 
 ```bash
-# Start 10 parallel workers for the 'analysis' queue
-rsrq worker analysis --workers 10
+# Syntax: rsrq enqueue <queue_name> <commands_file>
+rsrq enqueue processing_queue ./tasks.txt
+```
+
+### 2. Processing Jobs with Workers
+Workers pull jobs from a specific queue. You can spawn multiple workers in a single command to enable parallel execution on the current host.
+
+```bash
+# Spawn 8 parallel workers for the 'processing_queue'
+rsrq worker processing_queue --workers 8
 ```
 
 ### 3. Monitoring and Maintenance
-Use these commands to track progress or reset the environment.
+Use the status and purge commands to manage the lifecycle of your queues.
 
-*   **Check Status**: View the current state of jobs in the queue.
-    ```bash
-    rsrq status
-    ```
-*   **Purge Data**: Remove all information from the Redis database to start fresh.
-    ```bash
-    rsrq purge all
-    ```
+```bash
+# View current job counts and worker status
+rsrq status
+
+# Clear all data from the Redis database (use with caution)
+rsrq purge all
+```
 
 ## Snakemake Integration
 
-rsrq provides native support for Snakemake cluster profiles.
+rsrq provides native support for Snakemake, allowing it to act as a cluster-like submission backend.
 
-### Configuration
-Export a cluster profile to a specific directory:
-```bash
-rsrq snakemake config /path/to/profile_dir
-```
+1. **Initialize Profile**: Generate the necessary configuration files for a Snakemake profile.
+   ```bash
+   rsrq snakemake config ./rsrq_profile
+   ```
 
-### Execution
-Run Snakemake using the generated profile:
-```bash
-snakemake --profile /path/to/profile_dir
-```
+2. **Execute Snakemake**: Run your workflow using the generated profile.
+   ```bash
+   snakemake --profile ./rsrq_profile
+   ```
 
-### Rule-Specific Queues
-In your Snakefile, you can direct specific rules to different rsrq queues using the `resources` attribute. If no queue is specified, it defaults to the `default` queue.
-
-```python
-rule process_data:
-    input: "input.txt"
-    output: "output.txt"
-    resources:
-        queue = 'high_priority'
-    shell:
-        "my_command {input} {output}"
-```
+3. **Rule-Specific Queues**: In your Snakefile, you can direct specific rules to different rsrq queues using the `resources` attribute:
+   ```python
+   rule example:
+       input: "data.txt"
+       output: "result.txt"
+       resources:
+           queue="high_priority"
+       shell:
+           "process_data {input} {output}"
+   ```
 
 ## Expert Tips and Best Practices
 
-*   **Resource Management**: rsrq workers do not automatically monitor system CPU or memory usage. You must calculate the appropriate number of `--workers` based on the resource requirements of the commands being executed and the total capacity of the host machine.
-*   **Parallel Scaling**: Since rsrq is Redis-backed, you can start workers on multiple different physical nodes pointing to the same `REDIS_URL` to create a simple distributed computing cluster.
-*   **Command Formatting**: Ensure the commands file contains raw shell commands. rsrq executes these lines directly; complex shell logic (like pipes or redirects) should be wrapped in a script if they behave unexpectedly when enqueued.
+- **Resource Awareness**: rsrq workers do not automatically monitor system CPU or memory. When spawning workers with `--workers`, ensure the total resource requirements of the concurrent jobs do not exceed the host's physical limits.
+- **Persistent Workers**: For long-running pipelines, consider running workers inside a terminal multiplexer like `tmux` or `screen` to prevent jobs from being killed if your SSH session disconnects.
+- **Queue Isolation**: Use descriptive queue names (e.g., `alignment`, `assembly`, `cleanup`) to organize different types of tasks and scale workers independently based on the workload of each stage.
+- **Redis Security**: If using a remote Redis instance, always use a password-protected connection string and ensure your Redis port is not exposed to the public internet.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| enqueue | Enqueue a batch of commands to be run |
+| rsrq purge | Removes all data from Redis |
+| rsrq snakemake | Commands that can be issued by Snakemake for cluster execution |
+| rsrq status | Check the status of all objects in the Redis database |
+| rsrq worker | Spawns worker processes to consume jobs from a queue |
 
 ## Reference documentation
-- [rsrq GitHub Repository](./references/github_com_aaronmussig_rsrq.md)
+
+- [rsrq GitHub Repository](./references/github_com_aaronmussig_rsrq_blob_main_README.md)
 - [rsrq Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_rsrq_overview.md)

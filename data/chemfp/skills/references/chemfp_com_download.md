@@ -1,1 +1,123 @@
-How to get chemfp chemfp Features Download Datasets License News Contact High Performance Search FPS Format FPB Format FPC Format • Datasets Multiple Toolkit Support Documentation: • Command-line Tools • Python API • Example Programs How to get chemfp Chemfp has two development tracks. Nearly all development is on the 5.x track. This version has the highest performance and many more features. It requires Python 3.9 or later. The 1.x track is maintained in order to provide a good reference baseline to evaluate similarity search performance. It is available at no cost under the open source MIT license. It is only available for Python 2.7. Version 5.0 Chemfp version 5.0, released 24 September 2025, is the most recent version of the 5.x track. See the documentation to learn more about this version of chemfp. A pre-compiled binary package which works on most Linux-based operating systems can be installed using the following command: python -m pip install chemfp -i https://chemfp.com/packages/ If you get the message: ERROR: Could not find a version that satisfies the requirement chemfp (from versions: none) ERROR: No matching distribution found for chemfp then that's likely because you are using a Mac or other non-Linux-based operating system where I haven't built pre-compiled packages. You may also download the files directly from the chemfp package manger download page . Several chemfp features are either limited or disabled in the pre-compiled package. It may not be used to: generate FPB files; create or search in-memory fingerprint arenas with more than 50,000 fingerprints; perform Tversky searches; perform Tanimoto searches of FPS files with more than 20 queries at a time. For details see the Chemfp Base License Agreement . These features may be fully enabled using a time-based license key. Request a license key Short-term license keys are available for evaluation and benchmarking. Longer term license keys under licenses for academic and commercial use are available. View the licensing page to see the different licensing options and to request a license key. Source code licensing Chemfp is also available with source code access. This option has several advantages over the pre-compiled binary: you may continue to use the source code even after the support period ends; it includes macOS support; easier deployment as it does not contain the license key system. Visit the licensing page to see the different licensing options and to request a license key. Version 1.6.1 Chemfp version 1.6.1 is the most recent version of the 1.x line. It is available at no cost under the MIT license. It can be installed from PyPI using: # NOTE: likely only useful for benchmarking and legacy purposes. python2.7 -m pip install chemfp or downloaded directly The 1.x track is in maintainence mode. It does not support recent (2019 or later) versions of RDKit, OEChem, or Open Babel. It exists primarily for benchmarking purposes. See the chemfp 1.6.1 documentation on archive.org to learn more about this version of chemfp. Some of the many improvements in the chemfp 5.x track which are not available in chemfp 1.x are: the FPB format for fast loading , new APIs to make it easier to do web development, support for more than 4GB of fingerprint data, even faster search performance , Tversky search, diversity picking, Butina clustering, CSV tools, shard-based searches, histogram generation, and many API additions for tool development and notebook and interactive use. Copyright &copy; 2012-2025 Andrew Dalke Scientific AB
+# [chemfp](https://chemfp.com/index.html)
+
+* [Features](https://chemfp.com/features/)
+* [Download](https://chemfp.com/download/)
+* [Datasets](https://chemfp.com/datasets/)
+* [License](https://chemfp.com/license/)
+* [News](https://chemfp.com/news/)
+* [Contact](https://chemfp.com/contact/)
+
+* [High Performance Search](/performance/)
+* [FPS Format](/fps_format/)
+* [FPB Format](/fpb_format/)
+* [FPC Format](/fpc_format/)
+* [• Datasets](/datasets/)
+* [Multiple Toolkit Support](/toolkits/)
+* [Documentation:](/docs/)
+* [• Command-line Tools](/docs/tools.html)
+* [• Python API](/docs/chemfp_api.html)
+* [• Example Programs](https://hg.sr.ht/~dalke/chemfp_examples)
+
+## How to get chemfp
+
+Chemfp has two development tracks. Nearly all development is on
+the 5.x track. This version has the highest performance and many
+more features. It requires Python 3.9 or later.
+
+The 1.x track is maintained in order to provide a good reference
+baseline to evaluate similarity search performance. It is available at
+no cost under the open source MIT license. It is only available for
+Python 2.7.
+
+## Version 5.0
+
+Chemfp version 5.0, released 24 September 2025, is the most recent
+version of the 5.x track. See [the documentation](/docs/) to learn
+more about this version of chemfp.
+
+A pre-compiled binary package which works on most Linux-based
+operating systems can be installed using the following command:
+
+```
+python -m pip install chemfp -i https://chemfp.com/packages/
+```
+
+If you get the message:
+
+```
+ERROR: Could not find a version that satisfies the requirement chemfp (from versions: none)
+ERROR: No matching distribution found for chemfp
+```
+
+then that's likely because you are using a Mac or other
+non-Linux-based operating system where I haven't built pre-compiled
+packages.
+
+You may also download the files directly from the
+[chemfp package manger download page](https://chemfp.com/packages/chemfp).
+
+Several chemfp features are either limited or disabled in the
+pre-compiled package. It may not be used to:
+
+* generate FPB files;
+* create or search in-memory fingerprint arenas with more than 50,000 fingerprints;
+* perform Tversky searches;
+* perform Tanimoto searches of FPS files with more than 20 queries at a time.
+
+For details see the [Chemfp Base License Agreement](/BaseLicense.txt).
+
+These features may be fully enabled using a time-based license key.
+
+### Request a license key
+
+Short-term license keys are available for evaluation and
+benchmarking. Longer term license keys under licenses for academic and
+commercial use are available. View the [licensing page](/license) to
+see the different licensing options and to request a license key.
+
+### Source code licensing
+
+Chemfp is also available with source code access. This option has
+several advantages over the pre-compiled binary:
+
+* you may continue to use the source code even after the support
+  period ends;
+* it includes macOS support;
+* easier deployment as it does not contain the license key system.
+
+Visit the [licensing page](/license) to
+see the different licensing options and to request a license key.
+
+## Version 1.6.1
+
+Chemfp version 1.6.1 is the most recent version of the 1.x line. It is
+available at no cost under the MIT license.
+
+It can be [installed from PyPI](https://pypi.org/project/chemfp/)
+using:
+
+```
+# NOTE: likely only useful for benchmarking and legacy purposes.
+python2.7 -m pip install chemfp
+```
+
+or [downloaded directly](http://dalkescientific.com/releases/chemfp-1.6.1.tar.gz)
+
+The 1.x track is in maintainence mode. It does not support recent
+(2019 or later) versions of RDKit, OEChem, or Open Babel. It exists
+primarily for benchmarking purposes.
+
+See the [chemfp 1.6.1
+documentation](https://web.archive.org/web/20240709120544/https%3A//chemfp.readthedocs.io/en/chemfp-1.6.1/)
+on archive.org to learn more about this version of chemfp.
+
+Some of the many improvements in the chemfp 5.x track which are *not*
+available in chemfp 1.x are: the [FPB format for fast
+loading](/fpb_format/), [new APIs](/toolkits/) to make it easier to do
+web development, support for more than 4GB of fingerprint data, even
+[faster search performance](/performance/), Tversky search, diversity
+picking, Butina clustering, CSV tools, shard-based searches, histogram
+generation, and many API additions for tool development and notebook
+and interactive use.
+
+Copyright © 2012-2025 Andrew Dalke Scientific AB

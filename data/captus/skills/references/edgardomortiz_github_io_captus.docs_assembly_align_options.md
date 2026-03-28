@@ -1,0 +1,393 @@
+1. [Captus](/captus.docs/) >
+2. [Assembly](/captus.docs/assembly/) >
+3. [Align](/captus.docs/assembly/align/) >
+4. Options
+
+* [*Input*](#input)
+  + [**`-e, --captus_extractions_dir`**](#-e---captus_extractions_dir)
+  + [**`-m, --markers`**](#-m---markers)
+  + [**`-f, --formats`**](#-f---formats)
+  + [**`--max_paralogs`**](#--max_paralogs)
+  + [**`-s, --min_samples`**](#-s---min_samples)
+* [*Output*](#output)
+  + [**`-o, --out`**](#-o---out)
+  + [**`--keep_all`**](#--keep_all)
+  + [**`--overwrite`**](#--overwrite)
+* [*Alignment*](#alignment)
+  + [**`--align_method`**](#--align_method)
+  + [**`--timeout`**](#--timeout)
+  + [**`--disable_codon_align`**](#--disable_codon_align)
+  + [**`--outgroup`**](#--outgroup)
+* [*Paralog filtering*](#paralog-filtering)
+  + [**`--filter_method`**](#--filter_method)
+  + [**`--tolerance`**](#--tolerance)
+* [*Trimming (TAPER and ClipKIT)*](#trimming-taper-and-clipkit)
+  + [**`-c, --taper_cutoff`**](#-c---taper_cutoff)
+  + [**`--taper_conservative`**](#--taper_conservative)
+  + [**`--taper_unfiltered`**](#--taper_unfiltered)
+  + [**`--disable_taper`**](#--disable_taper)
+  + [**`--clipkit_method`**](#--clipkit_method)
+  + [**`-g, --clipkit_gaps`**](#-g---clipkit_gaps)
+  + [**`-d, --min_data_per_column`**](#-d---min_data_per_column)
+  + [**`--ends_only`**](#--ends_only)
+  + [**`-v, --min_coverage`**](#-v---min_coverage)
+* [*Other*](#other)
+  + [**`--collect_only`**](#--collect_only)
+  + [**`--redo_from`**](#--redo_from)
+  + [**`--mafft_path`**, **`--muscle_path`**, **`--clipkit_path`**](#--mafft_path---muscle_path---clipkit_path)
+  + [**`--show_less`**](#--show_less)
+  + [**`--ram`**, **`--threads`**, **`--concurrent`**, **`--debug`**,](#--ram---threads---concurrent---debug)
+
+# Options
+
+# align
+
+---
+
+To show all available options and their default values you can type in your terminal:
+
+```
+captus align --help
+```
+
+---
+
+## *Input*
+
+---
+
+### **`-e, --captus_extractions_dir`**
+
+Path to the output directory from the `extract` command, (e.g. `03_extractions` iy you used the default name). The `align` command depends entirely on the output from the `extract` step, in other words, you can’t provide your unaligned or aligned FASTA files for processing.
+
+This argument is **required** , the default is **./03\_extractions/**
+
+---
+
+### **`-m, --markers`**
+
+Which type(s) of markers to align, you can provide a comma-separated list (no spaces). These are the available marker types:
+
+* `NUC` = **Nuc**lear proteins inside directories ‘01\_coding\_NUC’
+* `PTD` = **P**las**t**i**d**ial proteins inside directories ‘02\_coding\_PTD’
+* `MIT` = **Mit**ochondrial proteins inside directories ‘03\_coding\_MIT’
+* `DNA` = Miscellaneous **DNA** markers inside directories ‘04\_misc\_DNA’
+* `CLR` = **Cl**uste**r**-derived DNA markers inside directories ‘05\_clusters’
+* `ALL` = Shortcut for NUC,PTD,MIT,DNA,CLR
+
+This argument is optional, the default is **ALL**.
+
+---
+
+### **`-f, --formats`**
+
+For each marker type, `Captus` creates several different formats. You can provide a comma-separated list (no spaces) of the formats you wish to align. These are the available formats:
+
+* `AA` = Coding sequences in **a**mino**a**cids
+* `NT` = Coding sequences in **n**ucleo**t**ides
+* `GE` = Complete **ge**ne sequences (exons + introns) without extra flanking sequence
+* `GF` = Complete **g**ene sequences with **f**lanking upstream and downstream basepairs
+* `MA` = **Ma**tched sequences without extra flanking sequence
+* `MF` = **M**atched sequences with **f**lanking upstream and downstream basepairs
+* `ALL` = Shortcut for AA,NT,GE,GF,MA,MF
+
+\* AA, NT, GE, and GF are valid only for NUC, PTD, and MIT markers, while MA and MF are valid only for DNA and CLR
+
+This argument is optional, the default is **AA,NT,GE,MA**
+
+Formats for protein markers
+
+![Formats for protein markers](/captus.docs/images/protein_extraction.png?width=600&classes=shadow)
+
+Formats for miscellaneous DNA markers
+
+![Format s for miscellaneous DNA markers](/captus.docs/images/misc_dna_extraction.png?width=600&classes=shadow)
+
+---
+
+### **`--max_paralogs`**
+
+Maximum number of secondary hits (copies) per sample to import from the extraction step. Large numbers of marker copies per sample can increase alignment times. Hits (copies) are ranked from best to worst during the ’extract’ step. -1 disables the initial removal of paralogs and aligns which might be useful if you expect very high ploidy levels for example.
+
+This argument is optional, the default is **5**
+
+---
+
+### **`-s, --min_samples`**
+
+Minimum number of samples in a marker to proceed with alignment. Markers with fewer samples will be skipped. The default **4** corresponds to smallest number of sequences to build a rooted phylogeny.
+
+This argument is optional, the default is **4**
+
+---
+
+## *Output*
+
+---
+
+### **`-o, --out`**
+
+With this option you can redirect the output directory to a path of your choice, that path will be created if it doesn’t already exist.
+
+This argument is optional, the default is **./04\_alignments/**
+
+---
+
+### **`--keep_all`**
+
+Many intermediate log files are created by `MAFFT`/`MUSCLE` and `ClipKIT` during assembly, `Captus` deletes all the unnecesary intermediate files unless you enable this flag.
+
+---
+
+### **`--overwrite`**
+
+Use this flag with caution, this will replace any previous result within the output directory (for the sample names that match).
+
+---
+
+## *Alignment*
+
+---
+
+### **`--align_method`**
+
+Select the alignment algorithm for [MAFFT](https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html) or [MUSCLE 5](https://drive5.com/muscle5/manual/commands.html). Valid algorithm names are:
+
+* `mafft_auto` = MAFFT’s automatic selection based on amount of data
+* `mafft_genafpair` = MAFFT’s E-INS-i (very slow, multiple conserved domains and long gaps)
+* `mafft_localpair` = MAFFT’s L-INS-i (very slow, one conserved domain and long gaps)
+* `mafft_globalpair` = MAFFT’s G-INS-i (very slow, global homology)
+* `mafft_retree1` = MAFFT’s FFT-NS-1 (fast, progressive method)
+* `mafft_retree2` = MAFFT’s FFT-NS-2 (very fast, progressive method)
+* `muscle_align` = MUSCLE 5’s default PPP algorithm (very slow)
+* `muscle_super5` = MUSCLE 5’s Super 5 algorithm (slow)
+
+This argument is optional, the default is **mafft\_auto**.
+
+---
+
+### **`--timeout`**
+
+Modify the waiting time in seconds for an individual alignment to complete. When using more exhaustive MAFFT algorithm (e.g., `genafpair`) or especially MUSCLE (considerably slower than MAFFT in general), alignment can take very long (up to hours depending on sample number an length of the sequences).
+
+This argument is optional, the default is **21600** (= 6 hours).
+
+---
+
+### **`--disable_codon_align`**
+
+When `AA`s and their corresponding `NT`s are aligned in the same run, `Captus` uses the `AA` alignment as template for aligning the `NT` format, thus obtaining a codon-aware alignment for the coding sequences in nucleotides. Use this flag to disable this method and use the regular `MAFFT`/`MUSCLE` nucleotide alignment.
+
+---
+
+### **`--outgroup`**
+
+Outgroup sample names, separated by commas, no spaces. `Captus` will place these samples whenever possible at the beginning of the alignments, since many phylogenetic programs root the resulting phylogeny at the first sample in the alignment your trees will be automatically rooted.
+Example: `--outgroup sample2,sample5`
+
+This argument is optional and has no default.
+
+---
+
+## *Paralog filtering*
+
+---
+
+### **`--filter_method`**
+
+We provide two filtering methods for paralog removal, you can select either or both:
+
+* `naive` = Only the best hit for each sample (marked as hit=00) is retained.
+* `informed` = Only keep the copy (regardless of hit ranking) that is most similar to the reference sequence that was
+  chosen most frequently among all other samples in the alignment. This method was designed to take advantage of references that contain several sequences per locus (like `Angiosperms353`), if the reference only contains a single reference per locus the result will be very similar to the `naive` method (see `--tolerance`).
+* `both` = Two separate folders will be created, each containing the results from each filtering method.
+* `none` = Skip paralog removal, just remove reference sequences from the alignments. Useful for phylogenetic methods that allow paralogs like [`ASTRAL-Pro`](https://github.com/chaoszhang/A-pro).
+
+This argument is optional, the default is **both**.
+
+---
+
+### **`--tolerance`**
+
+Only applicable to the `informed` filter. If the selected copy’s identity to the most commonly chosen reference is below this number of Standard Deviations from the mean, it will also be removed (the lower the number the stricter the filter).
+
+This argument is optional, the default is **2.0**.
+
+---
+
+## *Trimming (TAPER and ClipKIT)*
+
+---
+
+### **`-c, --taper_cutoff`**
+
+TAPER cutoff threshold, values greater than 1.0 are recommended, the lower the value the more aggressive the correction, 3.0 recommended by TAPER’s authors.
+
+This argument is optional, the default is **3.0**.
+
+---
+
+### **`--taper_conservative`**
+
+Enable the more conservative mode of TAPER. Captus uses the aggressive mode by default, see ‘correction\_multi\_aggressive.jl’ at [https://github.com/chaoszhang/TAPER"](https://github.com/chaoszhang/TAPER%22).
+
+---
+
+### **`--taper_unfiltered`**
+
+Enable TAPER correction even for alignments than have not been paralog-filtered, TAPER is only able to distinguish error when an unfiltered alignment contains copies of the locus that are not extremely divergent.
+
+---
+
+### **`--disable_taper`**
+
+Disable TAPER algorithm for masking for erroneous regions in alignments, see <https://doi.org/10.1111/2041-210X.13696>
+
+---
+
+### **`--clipkit_method`**
+
+Select [ClipKIT’s trimming mode](https://jlsteenwyk.com/ClipKIT/advanced/index.html#modes). Valid trimming modes are:
+
+* `smart-gap`
+* `gappy`
+* `kpic`
+* `kpic-smart-gap`
+* `kpic-gappy`
+* `kpi`
+* `kpi-smart-gap`
+* `kpi-gappy`
+
+This argument is optional, the default is **gappy**.
+
+---
+
+### **`-g, --clipkit_gaps`**
+
+Gappyness threshold per position. Accepted values between 0 and 1. This argument is ignored when using the `kpi` and `kpic` algorithms or intermediate steps that use `smart-gap`.
+
+This argument is optional, the default is **0.9**.
+
+---
+
+### **`-d, --min_data_per_column`**
+
+Minimum number of non-missing sites per column. When this parameter is > 0, Captus will dynamically calculate a `--clipkit_gaps` threshold per alignment to keep this minimum amount of data per column.
+
+This argument is optional, the default is **0**.
+
+---
+
+### **`--ends_only`**
+
+Trim only the ends of the alignments (do not trim internal gaps).
+
+---
+
+### **`-v, --min_coverage`**
+
+Minimum coverage of sequence as proportion of the mean of sequence lengths in the alignment, ignoring gaps. After `ClipKIT` finishes trimming columns, `Captus` will also remove short sequences below this threshold.
+
+This argument is optional, the default is **0.4**.
+
+---
+
+## *Other*
+
+---
+
+### **`--collect_only`**
+
+Only collect the markers from the extraction folder and exit, it skips the addition of reference target sequences and subsequent steps.
+
+---
+
+### **`--redo_from`**
+
+You can repeat the analysis without undoing all the steps. These are the points from which you can restart the `align` command:
+
+* `alignment` = Delete all subdirectories with alignments and restart.
+* `filtering` = Delete all subdirectories with paralog-filtered alignments and restart.
+* `removal` = Delete all subdirectories with alignments whose references have been removed and restart.
+* `trimming` = Delete all subdirectories with trimmed alignments and restart.
+
+This argument is optional and has no default.
+
+---
+
+### **`--mafft_path`**, **`--muscle_path`**, **`--clipkit_path`**
+
+If you have installed your own copies of `MAFFT`, `MUSCLE` or `ClipKIT` you can provide the full path to those copies.
+
+These arguments are optional, the defaults are **mafft** and **clipkit** respectively.
+
+---
+
+### **`--show_less`**
+
+Enable this flag to show individual alignment information during the run. Detailed information is written regardless to the log.
+
+---
+
+### **`--ram`**, **`--threads`**, **`--concurrent`**, **`--debug`**,
+
+See [Parallelization (and other common options)](https://edgardomortiz.github.io/captus.docs/basics/parallelization/)
+
+---
+
+Created by [Edgardo M. Ortiz](https://edgardomortiz.github.io/captus.docs/more/credits/#edgardo-m-ortiz) (06.08.2021)
+Last modified by [Gentaro Shigita](https://edgardomortiz.github.io/captus.docs/more/credits/#gentaro-shigita) (12.05.2025)
+
+[![](/captus.docs/images/logo.svg)](/)
+
+Search
+
+* [Home](/captus.docs/)
+
+* [ ] Submenu Basics[Basics](/captus.docs/basics/)
+  + [Overview](/captus.docs/basics/overview/)
+  + [Installation](/captus.docs/basics/installation/)
+  + [Parallelization](/captus.docs/basics/parallelization/)
+* [x] Submenu Assembly[Assembly](/captus.docs/assembly/)
+  + [x] Submenu Clean[**1.** Clean](/captus.docs/assembly/clean/)
+    - [Input Preparation](/captus.docs/assembly/clean/preparation/)
+    - [Options](/captus.docs/assembly/clean/options/)
+    - [Output Files](/captus.docs/assembly/clean/output/)
+    - [HTML Report](/captus.docs/assembly/clean/report/)
+  + [x] Submenu Assemble[**2.** Assemble](/captus.docs/assembly/assemble/)
+    - [Input Preparation](/captus.docs/assembly/assemble/preparation/)
+    - [Options](/captus.docs/assembly/assemble/options/)
+    - [Output Files](/captus.docs/assembly/assemble/output/)
+    - [HTML Report](/captus.docs/assembly/assemble/report/)
+  + [x] Submenu Extract[**3.** Extract](/captus.docs/assembly/extract/)
+    - [Input Preparation](/captus.docs/assembly/extract/preparation/)
+    - [Options](/captus.docs/assembly/extract/options/)
+    - [Output Files](/captus.docs/assembly/extract/output/)
+    - [HTML Report](/captus.docs/assembly/extract/report/)
+  + [x] Submenu Align[**4.** Align](/captus.docs/assembly/align/)
+    - [Options](/captus.docs/assembly/align/options/)
+    - [Output Files](/captus.docs/assembly/align/output/)
+    - [HTML Report](/captus.docs/assembly/align/report/)
+* [Design](/captus.docs/design/)
+* [ ] Submenu Tutorials[Tutorials](/captus.docs/tutorials/)
+  + [Basic](/captus.docs/tutorials/basic/)
+  + [Advanced](/captus.docs/tutorials/advanced/)
+
+More
+
+* [GitHub repo](https://github.com/edgardomortiz/Captus)
+* [Credits](/captus.docs/more/credits)
+
+---
+
+* Language
+* Theme
+
+  Green
+* Clear History
+
+[Download](https://github.com/edgardomortiz/Captus/archive/master.zip)
+[Star](https://github.com/edgardomortiz/Captus)
+[Fork](https://github.com/edgardomortiz/Captus/fork)
+
+Built with  by [Hugo](https://gohugo.io/)

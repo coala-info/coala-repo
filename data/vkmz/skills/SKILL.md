@@ -1,6 +1,6 @@
 ---
 name: vkmz
-description: vkmz visualizes and annotates metabolomics LC-MS data using van Krevelen Diagrams. Use when user asks to visualize metabolomics data, generate van Krevelen Diagrams, predict molecular formulas, process LC-MS feature lists, or visualize data that already has molecular formulas.
+description: vkmz transforms LC-MS feature lists into interactive van Krevelen Diagrams to facilitate the identification of chemical classes. Use when user asks to generate van Krevelen Diagrams, identify chemical classes from mass spectrometry data, or process LC-MS feature tables and molecular formulas.
 homepage: https://github.com/HegemanLab/VKMZ
 ---
 
@@ -9,44 +9,56 @@ homepage: https://github.com/HegemanLab/VKMZ
 
 ## Overview
 
-vkmz is a specialized visualization and annotation tool for metabolomics research. It transforms LC-MS feature data into van Krevelen Diagrams (VKD), which plot molecules based on their elemental ratios (typically O:C vs H:C). This allows for the rapid identification of biochemical families such as lipids, proteins, or carbohydrates within a sample. The tool can perform formula prediction by matching neutral masses against a lookup table or visualize data that has already been annotated with molecular formulas.
+vkmz is a specialized tool for metabolomics that transforms LC-MS feature lists into interactive van Krevelen Diagrams. It facilitates the identification of chemical classes (such as lipids, proteins, or carbohydrates) by plotting molecules based on their oxygen-to-carbon (O:C) and hydrogen-to-carbon (H:C) ratios. The tool supports both raw mass-to-charge (m/z) data—where it predicts formulas using an internal database—and pre-annotated formula lists.
 
 ## Core Workflows
 
-### 1. Tabular Mode (Generic Data)
-Use this mode for standard LC-MS feature lists. The input file must contain columns for `sample_name`, `polarity`, `mz`, `rt`, and `intensity`.
+### 1. Tabular Mode (Generic LC-MS Data)
+Use this mode for standard feature tables. The input file must contain the following columns: `sample_name`, `polarity`, `mz`, `rt`, and `intensity`.
 
 ```bash
-vkmz tabular --input data.csv --output output_dir --error 10
+vkmz tabular --input data.csv --output output_prefix --error 10
 ```
 
-*   **Mass Error**: Specified in ppm via `--error`. Adjust based on your instrument's mass accuracy (e.g., 5-10 ppm for Orbitrap/FT-ICR).
-*   **Polarity**: If your file lacks a polarity column, force it using `--polarity positive` or `--polarity negative`.
+*   **Mass Error**: Specified in ppm (parts-per-million). For high-resolution data, 5-10 ppm is standard.
+*   **Polarity**: Values must be "positive" or "negative".
 *   **Neutral Mass**: If your input already contains neutral masses instead of m/z, use the `--neutral` flag.
 
-### 2. W4M-XCMS Mode
-Use this mode when working with outputs from Workflow4Metabolomics (Galaxy). It requires three specific files: the data matrix, variable metadata, and sample metadata.
+### 2. Formula Mode (Pre-annotated Data)
+Use this mode if you already have molecular formulas and simply need to generate the VKD visualization.
 
 ```bash
-vkmz w4m-xcms -xd datamatrix.tab -xv variableMetadata.tab -xs sampleMetadata.tab -o output_dir -e 10 --impute
+vkmz formula --input annotated_data.csv --output output_prefix
 ```
 
-*   **Charge Imputation**: Use `--impute` (or `--impute-charge`) to assume a charge of 1 for features missing annotation. Without this, features lacking charge info are discarded.
-
-### 3. Formula Mode
-Use this mode if you already have molecular formulas (e.g., from Sirius or other annotation software) and only need to generate the VKD.
+### 3. W4M-XCMS Mode
+Specifically for data processed via Workflow4Metabolomics (Galaxy). Requires three distinct files.
 
 ```bash
-vkmz formula -i annotated_data.csv -o output_dir
+vkmz w4m-xcms -xd datamatrix.csv -xv variableMetadata.csv -xs sampleMetadata.csv -o output_prefix -e 10
 ```
 
 ## Expert Tips and Best Practices
 
-*   **Handling Multiple Predictions**: By default, vkmz may filter ambiguous matches. Use the `--alternate` flag in tabular mode to keep features that match multiple potential formula predictions.
-*   **Output Formats**: Beyond the interactive HTML VKD, you can export data for downstream analysis using `--json` or `--sql` flags.
-*   **Custom Databases**: If you have a specific library of mass-formula pairs, point vkmz to it using `--database /path/to/db`.
-*   **Data Cleaning**: vkmz automatically filters for monoisotopic features if CAMERA annotation is detected in the input. If your results seem sparse, check if your input features were correctly flagged as monoisotopic.
+*   **Charge Handling**: By default, vkmz removes features without charge information if a charge column exists. Use `--impute-charge` (or `--impute`) to force a charge of "1" for missing values, but be aware this may increase false positives in formula prediction.
+*   **Monoisotopic Filtering**: If CAMERA annotation is detected in the input, vkmz automatically filters for monoisotopic features to ensure accurate VKD plotting.
+*   **Output Formats**: While the primary output is an interactive D3-based HTML page, you can export data for downstream analysis using:
+    *   `--json`: Saves results in JSON format.
+    *   `--sql`: Saves results to a SQLite database.
+*   **Custom Databases**: You can point the tool to a custom formula-mass lookup table using `--database [PATH]`.
+*   **Ambiguous Matches**: By default, vkmz picks the best match. Use the `--alternate` flag to retain features that have multiple formula predictions within the error range.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| vkmz formula | Parses a tabular formula file and outputs results in various formats. |
+| vkmz w4m-xcms | Process XCMS data with various metadata and output options. |
+| vkmz_tabular | Parses tabular files for mass spectrometry data. |
 
 ## Reference documentation
-- [vkmz GitHub Repository](./references/github_com_HegemanLab_vkmz.md)
-- [vkmz Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_vkmz_overview.md)
+- [vkmz README](./references/github_com_HegemanLab_vkmz_blob_master_README.md)
+- [Tabular Data Example](./references/github_com_HegemanLab_vkmz_blob_master_test-data_tabular.tabular.md)
+- [Annotated Formula Example](./references/github_com_HegemanLab_vkmz_blob_master_test-data_annotation.tabular.md)

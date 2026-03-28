@@ -1,6 +1,6 @@
 ---
 name: hic2cool
-description: "hic2cool converts Hi-C data from the .hic format to the .cool or .mcool formats for use with the Cooler suite and HiGlass. Use when user asks to convert .hic files to cooler format, extract normalization vectors from .hic files, or update legacy cooler files for HiGlass compatibility."
+description: hic2cool converts Hi-C contact matrices from the .hic format into .cool or .mcool formats for use with the Cooler API and HiGlass. Use when user asks to convert .hic files to cooler format, update legacy cooler files, or extract normalization vectors from .hic files.
 homepage: https://github.com/4dn-dcic/hic2cool
 ---
 
@@ -8,52 +8,51 @@ homepage: https://github.com/4dn-dcic/hic2cool
 # hic2cool
 
 ## Overview
-hic2cool is a specialized utility designed to bridge the gap between two major Hi-C data formats: the Java-based `.hic` format used by Juicer and the HDF5-based `.cool` format used by the Cooler suite. It allows for both single-resolution and multi-resolution conversions, ensuring that data generated in one pipeline can be utilized in tools like HiGlass or Open2C analysis packages.
+
+hic2cool is a specialized utility designed to provide interoperability between the Juicer and Cooler ecosystems. It facilitates the conversion of Hi-C contact matrices from the proprietary `.hic` format into the HDF5-based `.cool` or `.mcool` formats. This conversion is a prerequisite for using the `cooler` Python API for downstream analysis or the `HiGlass` platform for interactive web-based visualization.
 
 ## Command Line Interface (CLI) Usage
 
-### Basic Conversion
-The primary command is `hic2cool convert`.
+The tool is primarily used via the `hic2cool` command followed by a specific mode: `convert`, `update`, or `extract-norms`.
 
-**Create a multi-resolution file (.mcool):**
-By default, setting resolution to 0 (or omitting it) will convert all resolutions found in the `.hic` file.
-```bash
-hic2cool convert input.hic output.mcool -r 0
-```
+### 1. Converting Files
 
-**Create a single-resolution file (.cool):**
-Specify a specific base pair resolution. Note that single-resolution files are generally not compatible with HiGlass.
-```bash
-hic2cool convert input.hic output.cool -r 10000
-```
+The `convert` command is the most common entry point.
 
-### Performance and Logging
-- **Multiprocessing**: Use `-p` to specify the number of processes. This is most effective for large, high-resolution matrices.
-- **Silent Mode**: Use `-s` to suppress console output.
-- **Warnings**: Use `-w` to explicitly print warnings during the conversion process.
+*   **Single-Resolution Conversion**:
+    ```bash
+    hic2cool convert input.hic output.cool -r 10000
+    ```
+    *Note: The resolution must exist within the original .hic file.*
 
-```bash
-hic2cool convert input.hic output.mcool -p 4 -s
-```
+*   **Multi-Resolution Conversion (for HiGlass)**:
+    ```bash
+    hic2cool convert input.hic output.mcool -r 0
+    ```
+    *Setting resolution to 0 triggers the creation of a multi-resolution file containing all resolutions present in the source.*
 
-### Managing Normalization Vectors
-hic2cool handles the conversion of normalization vectors (e.g., KR, VC). Since version 0.5.0, it preserves the divisive nature of `.hic` normalization for compatibility with HiGlass.
+*   **Parallel Processing**:
+    ```bash
+    hic2cool convert input.hic output.mcool -r 0 -p 8
+    ```
+    *Use the `-p` flag to specify the number of processes. This is most effective for large, high-resolution matrices.*
 
-**Extracting norms to an existing cooler:**
-If you already have a `.cool` file and only need the normalization vectors from a `.hic` file:
-```bash
-hic2cool extract-norms input.hic existing_output.cool
-```
-*Note: The resolutions in the `.cool` file must match those in the `.hic` file.*
-
-**Updating legacy files:**
-If you have `.cool` files created with hic2cool versions prior to 0.5.0, update them to the current normalization standard:
+### 2. Updating Legacy Files
+If you have cooler files generated with hic2cool versions earlier than 0.5.0, they use an outdated normalization logic. Update them to ensure compatibility with modern 4DN pipelines:
 ```bash
 hic2cool update legacy_input.cool updated_output.cool
 ```
 
+### 3. Extracting Normalization Vectors
+To add normalization vectors from a `.hic` file to an existing `.cool` file (provided they share the same resolutions):
+```bash
+hic2cool extract-norms input.hic target.cool
+```
+*   Use the `-e` flag to exclude mitochondrial chromosomes (MT/chrM) during extraction.
+
 ## Python API Usage
-You can integrate the converter directly into Python workflows.
+
+You can integrate the conversion directly into Python workflows:
 
 ```python
 from hic2cool import hic2cool_convert
@@ -61,16 +60,27 @@ from hic2cool import hic2cool_convert
 # Convert to multi-res
 hic2cool_convert('input.hic', 'output.mcool', 0)
 
-# Convert to single-res
-hic2cool_convert('input.hic', 'output.cool', 50000)
+# Convert to specific single-res
+hic2cool_convert('input.hic', 'output.cool', 25000)
 ```
 
-## Expert Tips
-- **HiGlass Compatibility**: Always produce multi-resolution files (`-r 0`) if the intended use is visualization in HiGlass.
-- **Mitochondrial DNA**: When extracting norms, use the `-e` flag to automatically exclude mitochondrial chromosomes (searches for 'M', 'MT', 'chrM', etc.).
-- **Resolution Constraints**: You can only convert to resolutions that already exist within the source `.hic` file. hic2cool does not perform re-binning.
-- **Memory Management**: While `hic2cool` is designed to be lightweight, converting very high-resolution matrices (e.g., 1kb or 5kb) for large genomes requires significant RAM.
+## Expert Tips and Best Practices
+
+*   **HiGlass Compatibility**: HiGlass requires multi-resolution files. Always use `-r 0` if the end goal is visualization. Single-resolution `.cool` files created with a specific `-r` value will not work in HiGlass.
+*   **Normalization Handling**: Starting with version 0.5.0, hic2cool preserves the divisive normalization values used by Juicer. When viewing in HiGlass, you must manually apply these transforms (Right-click tileset -> Configure Series -> Transforms -> Select Norm).
+*   **Resolution Constraints**: You cannot "create" new resolutions during conversion. The value passed to `-r` must be one of the resolutions already baked into the `.hic` file.
+*   **Silent Mode**: When running in automated scripts or pipelines, use the `-s` flag to suppress console output.
+*   **Memory and CPU**: While the tool is lightweight, high-resolution conversions (e.g., 1kb or 5kb) of large genomes can be resource-intensive. Ensure sufficient RAM and use `-p` to speed up the HDF5 writing process.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hic2cool convert | convert a hic file to a cooler file |
+| hic2cool extract-norms | extract normalization vectors from a cooler file and add them to a cooler file |
+| hic2cool update | update a cooler file produced by hic2cool |
 
 ## Reference documentation
-- [github_com_4dn-dcic_hic2cool.md](./references/github_com_4dn-dcic_hic2cool.md)
-- [anaconda_org_channels_bioconda_packages_hic2cool_overview.md](./references/anaconda_org_channels_bioconda_packages_hic2cool_overview.md)
+- [hic2cool GitHub README](./references/github_com_4dn-dcic_hic2cool_blob_master_README.md)

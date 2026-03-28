@@ -1,6 +1,6 @@
 ---
 name: tsumugi
-description: TSUMUGI extracts and visualizes gene modules based on phenotypic similarity from knockout mouse data. Use when user asks to filter by phenotype terms, filter by biological context, filter by similarity score, filter by a list of genes, generate a network for Cytoscape, or generate a local web application.
+description: "TSUMUGI identifies gene modules and functional relationships by analyzing phenotypic similarities in knockout mouse data. Use when user asks to identify gene clusters based on shared phenotypes, build network graphs for visualization, or find human disease models using Mammalian Phenotype Ontology data."
 homepage: https://github.com/akikuno/TSUMUGI-dev
 ---
 
@@ -10,65 +10,82 @@ homepage: https://github.com/akikuno/TSUMUGI-dev
 ---
 
 ## Overview
-TSUMUGI (Trait-driven Surveillance for Mutation-based Gene module Identification) is a specialized bioinformatics tool designed to extract and visualize gene modules based on phenotypic similarity. By leveraging knockout (KO) mouse data, it allows researchers to "weave together" genes that manifest similar clinical or biological traits. This skill provides guidance on using the TSUMUGI Command-Line Interface (CLI) to process large-scale phenotype datasets, apply rigorous biological filters, and export results for downstream network analysis in tools like Cytoscape.
 
-## Core CLI Workflows
+TSUMUGI (Trait-driven Surveillance for Mutation-based Gene module Identification) is a bioinformatics tool designed to "weave together" genes that share functional relationships based on phenotypic similarity. By analyzing knockout (KO) mouse data, it identifies clusters of genes that produce similar biological abnormalities when mutated. It utilizes the Mammalian Phenotype Ontology (MPO) and calculates similarity using Resnik and Phenodigm scores. This skill enables the extraction of gene modules, visualization of phenotypic networks, and identification of potential human disease models.
 
-The TSUMUGI CLI operates primarily by streaming JSONL data through various filtering subcommands. Most commands require either `pairwise_similarity_annotations.jsonl.gz` or `genewise_phenotype_annotations.jsonl.gz` as input.
+## Installation and Setup
 
-### 1. Data Processing and Filtering
-TSUMUGI subcommands are designed to be piped together to refine gene networks.
+TSUMUGI can be installed via BioConda or PyPI. BioConda is recommended for managing bioinformatics dependencies.
 
-*   **Filter by Phenotype (MP Terms):**
-    Include or exclude specific Mammalian Phenotype Ontology terms.
-    ```bash
-    # Keep only pairs sharing a specific phenotype
-    tsumugi mp --include "increased circulating enzyme level" --pairwise < input.jsonl.gz > filtered.jsonl
-    ```
-
-*   **Filter by Biological Context:**
-    Refine networks based on the specific conditions where phenotypes were observed.
-    ```bash
-    # Filter for female-specific phenotypes in homozygous mice
-    tsumugi sex --keep Female < input.jsonl.gz | tsumugi zygosity --keep Homo > refined.jsonl
-    ```
-
-*   **Filter by Significance and Similarity:**
-    Use the `score` command to threshold the network based on Phenodigm/Resnik similarity scores (0–100).
-    ```bash
-    tsumugi score --min 50 < input.jsonl.gz > high_confidence_pairs.jsonl
-    ```
-
-### 2. Gene List Analysis
-To extract a subnetwork from a specific set of genes of interest:
 ```bash
-# Keep only genes listed in a text file (one symbol per line)
-tsumugi genes --keep genes_of_interest.txt --pairwise < input.jsonl.gz > subnetwork.jsonl
+# Install via BioConda
+conda install -c bioconda tsumugi
+
+# Install via PyPI
+pip install tsumugi
 ```
 
-### 3. Network Generation and Export
-Once filtered, convert the JSONL stream into standard formats for visualization.
+## Command Line Interface (CLI) Usage
 
-*   **Cytoscape Compatibility:**
+The CLI allows for local processing of large-scale IMPC datasets, providing more flexibility than the web interface.
+
+### Core Commands
+
+*   **Build a Network Graph**: Generate a GraphML file for use in external tools like Cytoscape.
     ```bash
-    tsumugi build-graphml < filtered_pairs.jsonl > network.graphml
+    tsumugi build-graphml --input statistical-results-ALL.csv.gz --output network.graphml
+    ```
+*   **Build a Web Application Bundle**: Create a standalone offline version of the TSUMUGI web app with specific data.
+    ```bash
+    tsumugi build-webapp --input statistical-results-ALL.csv.gz --output ./my_webapp
     ```
 
-*   **Local Webapp Generation:**
-    Creates a standalone HTML/JS bundle for interactive exploration.
-    ```bash
-    tsumugi build-webapp < filtered_pairs.jsonl
-    ```
+### Data Requirements
+
+To run local analyses, you typically need the following files from the IMPC:
+1.  `statistical-results-ALL.csv.gz`: The primary statistical results.
+2.  `mp.obo`: The Mammalian Phenotype Ontology definition file.
+3.  `impc_phenodigm.csv`: Phenodigm scores for similarity calculation.
 
 ## Expert Tips and Best Practices
 
-*   **Streaming Architecture:** Always redirect output to a file (`>`) or pipe to the next command. The CLI is designed for high-throughput streaming and does not modify input files in place.
-*   **Input Requirements:** 
-    *   Use `--pairwise` flags when processing `pairwise_similarity_annotations`.
-    *   Use `--genewise` flags when processing `genewise_phenotype_annotations`.
-*   **Recomputing Data:** Use `tsumugi run` only when you need to incorporate the latest raw IMPC statistical results (`statistical-results-ALL.csv.gz`). For most analysis tasks, using the pre-computed JSONL files from the TSUMUGI homepage is significantly faster.
-*   **Memory Management:** While the web tool limits gene lists to 200 entries for performance, the CLI can handle significantly larger sets. However, for visualization purposes, aim to filter the similarity score (`--min`) to maintain a readable edge density.
+### Filtering and Thresholds
+*   **Shared Phenotypes**: By default, TSUMUGI visualizes gene pairs that share **3 or more** abnormal phenotypes.
+*   **Similarity Scores**: Use the `phenotype_similarity_score` (0–100) to filter for high-confidence functional relationships. A score > 0 is required for visualization.
+*   **Effect Size**: Filter by "Phenotype Severity" (effect size) to focus on genes with the most significant biological impact.
+
+### Input Types
+*   **Phenotype Search**: Input MPO terms (e.g., `MP:0000137`) to find genes associated with specific traits.
+*   **Gene Search**: Input MGI symbols (e.g., `Aak1`) to find phenotypically similar "partner" genes.
+*   **Gene List**: When providing a list, limit it to **200 genes** for the web tool; use the CLI for larger sets to avoid performance issues.
+
+### Data Interpretation
+*   **Zygosity**: Specify `Homo` (homozygous), `Hetero` (heterozygous), or `Hemi` (hemizygous) to isolate specific inheritance patterns.
+*   **Life Stage**: Filter results by life stage (`Embryo`, `Early`, `Interval`, `Late`) to identify developmental vs. adult-onset phenotypes.
+*   **Sexual Dimorphism**: Check for phenotypes that appear only in `Male` or `Female` subjects to identify sex-specific gene functions.
+
+### Exporting for Publication
+*   **GraphML**: Best for high-quality network analysis in Cytoscape.
+*   **JSONL**: Use the gzipped JSONL outputs (`genewise_phenotype_annotations.jsonl.gz`) for downstream programmatic analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| life-stage | Keep or drop annotations based on life stage. |
+| tsumugi build-graphml | Builds a graphml file from pairwise and genewise similarity annotations. |
+| tsumugi build-webapp | Builds a web application for visualizing Tsumugi results. |
+| tsumugi mp | Filter gene pairs based on Mammalian Phenotype ontology terms and annotations. |
+| tsumugi run | TSUMUGI pipeline for analyzing IMPC statistical results and generating phenotype-disease associations. |
+| tsumugi sex | Keep or drop annotations based on sexual dimorphism. |
+| tsumugi_count | Filter genes based on the number of detected phenotypes per KO or shared between KO pairs. |
+| tsumugi_genes | Filter annotations based on gene symbols or gene pairs. |
+| tsumugi_score | Filter genes based on the similarity score per KO or shared between KO pairs. |
+| zygosity | Keep or drop annotations based on zygosity. |
 
 ## Reference documentation
-- [TSUMUGI-dev Main Repository](./references/github_com_akikuno_TSUMUGI-dev.md)
+- [TSUMUGI GitHub Repository](./references/github_com_akikuno_TSUMUGI-dev_blob_main_README.md)
+- [TSUMUGI CLI Documentation (DE)](./references/github_com_akikuno_TSUMUGI-dev_blob_main_doc_README_DE.md)
 - [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_tsumugi_overview.md)

@@ -380,3 +380,6 @@ Write a new genome sequence by introducing variants from the input files
 Report bugs to https://github.com/jts/nanopolish/issues
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -98,3 +98,6 @@ optional arguments:
   --version             Print version and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

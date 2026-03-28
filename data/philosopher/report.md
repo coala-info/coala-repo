@@ -692,3 +692,6 @@ Flags:
       --temp string   define a custom temporary folder for Philosopher
 ```
 
+
+## Metadata
+- **Skill**: generated

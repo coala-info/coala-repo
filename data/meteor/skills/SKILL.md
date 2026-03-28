@@ -1,6 +1,6 @@
 ---
 name: meteor
-description: Meteor quantifies metagenomic shotgun sequencing data by mapping reads against curated gene catalogues for taxonomic and functional profiling. Use when user asks to download microbial gene catalogues, organize FASTQ files into sample directories, map reads to reference catalogues, or generate species and functional abundance profiles.
+description: Meteor performs high-resolution metagenomic analysis by mapping shotgun sequencing reads against microbial gene catalogues to generate taxonomic and functional profiles. Use when user asks to download gene catalogues, map reads to a reference, generate species-level abundance tables, perform functional annotation, or conduct strain-level population structure inference.
 homepage: https://github.com/metagenopolis/meteor
 ---
 
@@ -9,75 +9,94 @@ homepage: https://github.com/metagenopolis/meteor
 
 ## Overview
 
-Meteor is a specialized platform designed for the quantitative analysis of metagenomic shotgun sequencing data. It operates by mapping reads against comprehensive gene catalogues to provide species-level taxonomic profiling, functional analysis (including KEGG and DBcan annotations), and strain-level population structure inference. It is particularly effective for studying complex ecosystems like the human gut, oral, or skin microbiomes using pre-built, curated reference catalogues.
+Meteor is a specialized platform designed for high-resolution metagenomic analysis. It transforms raw shotgun sequencing data into actionable biological insights by mapping reads against pre-built microbial gene catalogues. The tool is capable of performing species-level taxonomic profiling (covering Bacteria, Archaea, and Eukaryotes), functional annotation (KEGG, DBcan, ARD), and advanced strain-level population structure inference. It is particularly useful for researchers working with established ecosystems like the human gut, oral cavity, or various animal models.
 
-## Core Workflow and CLI Patterns
+## Core CLI Workflow
 
-### 1. Reference Catalogue Management
-Meteor requires a local microbial gene catalogue. Catalogues come in "full" (all genes + functional data) or "fast" (marker genes only, no functional profiling) versions.
+### 1. Environment Setup and Testing
+Verify the installation and dependencies (Python 3.11+, bowtie2, freebayes) before starting a production run.
+```bash
+meteor test
+```
 
-*   **List and Download:**
-    ```bash
-    # Download a specific catalogue (e.g., human gut)
-    meteor download -i hs_10_4_gut -o catalogue_dir/
+### 2. Catalogue Management
+Meteor requires a reference catalogue specific to the ecosystem being studied.
+- **Full version**: Includes all genes; required for functional profiling.
+- **Light/Fast version**: Includes only marker genes; used for rapid taxonomic profiling.
 
-    # Download the 'light' version for faster species-only profiling
-    meteor download -i hs_10_4_gut --fast -o catalogue_dir/
-    ```
-*   **Available Catalogues:** `fc_1_3_gut` (Cat), `clf_1_0_gut` (Dog), `gg_13_6_caecal` (Chicken), `hs_10_4_gut` (Human Gut), `hs_8_4_oral` (Human Oral), `hs_2_9_skin` (Human Skin), `mm_5_0_gut` (Mouse), `oc_5_7_gut` (Rabbit), `rn_5_9_gut` (Rat), `ssc_9_3_gut` (Pig).
+**Common Pattern:**
+```bash
+# Download human gut catalogue in fast mode
+meteor download -i hs_10_4_gut --fast -o catalogue_dir/
+```
+*Available catalogues include: `fc_1_3_gut` (cat), `gg_13_6_caecal` (chicken), `hs_10_4_gut` (human gut), `mm_5_0_gut` (mouse), etc.*
 
-### 2. Data Preparation (Indexing)
-Meteor expects a specific directory structure where each sample has its own subdirectory.
+### 3. Data Indexing
+Prepare your FASTQ files by creating the required directory structure and JSON metadata.
+```bash
+# Basic indexing
+meteor fastq -i /path/to/fastq -o /path/to/output_dir
 
-*   **Organize FASTQ files:**
-    ```bash
-    meteor fastq -i /path/to/raw_fastq -o /path/to/formatted_samples
-    ```
-*   **Handling Multiple Files per Sample:** Use the `-m` regex option to group multiple sequencing runs (e.g., different lanes) into a single sample directory.
-    ```bash
-    # Groups files containing 'SAMPLE_01', 'SAMPLE_02', etc.
-    meteor fastq -i ./raw_data -m "SAMPLE_\\d+" -o ./processed_samples
-    ```
+# Grouping multiple sequencing runs for the same library
+meteor fastq -i ./ -m "SAMPLE_\\d+" -o output_dir
+```
 
-### 3. Mapping and Counting
-This step aligns reads to the catalogue and generates gene count tables.
+### 4. Mapping and Counting
+Map reads against the catalogue to generate gene count tables.
+- **Identity Threshold (`--id`)**: Default is 95% for full catalogues. Use 97% for "fast" catalogues to reduce false positives.
+- **Strain Profiling Prep**: You must use `--kf` (keep filtered) to retain the CRAM files necessary for subsequent strain analysis.
 
-*   **Standard Mapping:**
-    ```bash
-    meteor mapping -i sample_dir/ -r catalogue_dir/ -o mapping_dir/ -t 8
-    ```
-*   **Preserving Alignments:** By default, Meteor deletes CRAM files to save space. Use `--kf` (keep files) if you intend to perform strain-level profiling later.
-*   **Identity Thresholds:** Meteor defaults to 95% identity for full catalogues. For "fast" catalogues, 97% is recommended to reduce false positives.
+**Expert Tip:** Filter out host reads and low-quality reads (length < 60nt) before running this step.
+```bash
+meteor mapping -i sample_dir/ -r catalogue_dir/ -o mapping_dir/ --kf -t 8
+```
 
-### 4. Taxonomic and Functional Profiling
-Generates abundance tables for species and functions.
+### 5. Taxonomic and Functional Profiling
+Generate abundance tables for species and functions.
+- Use `-n coverage` to normalize read counts by gene length.
+- Functional outputs (ARD, DBCAN, GMM, GBM) are only generated when using a **full** catalogue.
 
-*   **Generate Profiles:**
-    ```bash
-    # Use -n coverage to normalize for gene length
-    meteor profile -i mapping_dir/sample/ -r catalogue_dir/ -o profile_dir/ -n coverage
-    ```
-*   **Outputs:** This generates tables for Species, ARD (Antibiotic Resistance), DBCAN (Carbohydrate enzymes), GMM (Metabolic modules), and GBM (Gut-Brain modules). Note: Functional tables require the "full" catalogue.
+```bash
+meteor profile -i mapping_dir/sample_dir -o profile_dir -r catalogue_dir -n coverage
+```
 
-### 5. Strain Profiling and Phylogeny
-For high-resolution population analysis.
+### 6. Merging and Comparative Analysis
+Combine individual sample profiles into a single global table for statistical analysis.
+```bash
+meteor merge -i profile_dir -r catalogue_dir -o merging_dir
+```
 
-*   **Identify Mutations:**
-    ```bash
-    meteor strain -i mapping_dir/sample/ -r catalogue_dir/ -o strain_dir/
-    ```
-*   **Build Trees:**
-    ```bash
-    meteor tree -i strain_dir/ -o tree_dir/
-    ```
+### 7. Strain-Level Inference
+Identify specific mutations and build phylogenetic trees to analyze population structure.
+```bash
+# Identify mutations
+meteor strain -i mapping_dir/sample_dir -o strain_dir -r catalogue_dir
 
-## Expert Tips and Best Practices
+# Build phylogenetic trees (GTR+GAMMA model)
+meteor tree -i strain_dir -o tree_dir
+```
 
-*   **Pre-processing:** Meteor does not perform quality trimming or host depletion. Always filter out low-quality reads, reads shorter than 60nt, and host-contaminating reads (e.g., human DNA) *before* running `meteor mapping`.
-*   **Normalization:** Always use the `-n coverage` flag during the `profile` step to ensure gene counts are normalized by gene length, which is essential for accurate relative abundance comparisons.
-*   **Batch Processing:** `meteor mapping` and `meteor profile` typically process one sample at a time. Use a shell loop or the provided Nextflow wrapper (`nf-meteor.nf`) for large cohorts.
-*   **Memory Management:** Mapping against large catalogues (like `gg_13_6_caecal`) is memory-intensive. Ensure your environment has sufficient RAM or use the `--fast` catalogue version if functional data is not required.
+## Best Practices and Tips
+
+- **Memory Management**: The "fast" mode significantly reduces memory and time requirements and is recommended for large cohorts where only taxonomic composition is needed.
+- **JSON Metadata**: Meteor generates `_census_stage_N.json` files at each step. These contain valuable audit trails (parameters, versions, and metrics) and should be preserved.
+- **Automation**: For large-scale processing, use the Nextflow wrapper (`nf-meteor.nf`) provided in the repository to automate the transition between mapping, profiling, and merging.
+- **Normalization**: Always use the `-n coverage` flag during the `profile` step if you intend to compare abundances across different genes or samples.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| download | Download a specific catalogue for Meteor analysis. |
+| fastq | Create a fastq repository from a directory containing fastq files. |
+| mapping | Map reads against a gene catalog and calculate raw gene counts. |
+| merge | Merge abundance tables from multiple samples into a single directory. |
+| profile | Generate species and functional abundance tables from raw gene counts. |
+| strain | Perform variant calling and strain analysis on mapped samples. |
+| tree | Infer phylogenetic trees from strain directories using various models and output formats. |
 
 ## Reference documentation
 - [Meteor GitHub Repository](./references/github_com_metagenopolis_meteor.md)
-- [Meteor Wiki and Detailed Documentation](./references/github_com_metagenopolis_meteor_wiki.md)
+- [Meteor Wiki and Documentation](./references/github_com_metagenopolis_meteor_wiki.md)

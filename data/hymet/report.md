@@ -276,3 +276,6 @@ options:
   --dry-run   Show commands without executing them
 ```
 
+
+## Metadata
+- **Skill**: generated

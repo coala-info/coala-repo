@@ -1,59 +1,82 @@
 ---
 name: ngs-bits
-description: The ngs-bits suite provides a collection of high-performance C++ tools for NGS data processing, quality control, and clinical diagnostics. Use when user asks to perform adapter trimming, calculate standardized QC metrics, detect CNVs or ROH, verify sample identity and gender, or manipulate BED and VCF files for secondary analysis.
+description: ngs-bits is a collection of bioinformatics tools for analyzing sequencing data with a focus on clinical diagnostics and quality control. Use when user asks to generate quality control reports, validate sample identity through gender or ancestry checks, trim adapters, filter BAM files, or perform BED and VCF annotations.
 homepage: https://github.com/imgag/ngs-bits
 ---
 
 
 # ngs-bits
 
-# ngs-bits
-
 ## Overview
-The `ngs-bits` suite is a collection of high-performance C++ tools specifically engineered for NGS-based diagnostics. It provides a robust framework for the entire secondary analysis workflow, from raw FASTQ processing and adapter trimming to sophisticated quality control and variant-level analysis. The suite is particularly valuable for clinical environments requiring deterministic results, standardized QC metrics (via the qcML format), and specialized diagnostic tools for detecting Copy Number Variations (CNV), Runs of Homozygosity (ROH), and Uniparental Disomy (UPD).
+ngs-bits is a specialized collection of tools designed for the analysis of short-read and long-read sequencing data, with a heavy focus on medical diagnostics. Unlike general-purpose bioinformatics suites, ngs-bits provides high-level tools for sample validation (gender, ancestry, and similarity), trio-based analysis (Mendelian errors, contamination), and structured quality control using the qcML format. It is the primary toolkit for pipelines requiring integrated database support (NGSD) and rigorous clinical sample tracking.
 
-## Core Workflows and Tool Usage
+## Common CLI Patterns and Tool Usage
 
-### 1. Quality Control (QC)
-The suite uses the `qcML` format (XML-based) for standardized reporting.
-- **FASTQ QC**: Use `ReadQC` for initial raw data assessment.
-- **BAM QC**: Use `MappingQC` to calculate mapping statistics, coverage, and insert sizes.
-- **VCF QC**: Use `VariantQC` for variant-level metrics (Ti/Tv ratio, etc.).
-- **Reporting**: Use `QcToTsv` to convert the structured `qcML` files into flat TSV files for integration into custom reports or spreadsheets.
+### Quality Control (QC) Workflow
+The suite uses a standardized XML-based format called `qcML`. To generate a comprehensive report, run the tools sequentially:
+- **Raw Data:** `ReadQC -in1 input_R1.fastq.gz -in2 input_R2.fastq.gz -out output.qcML`
+- **Mapping:** `MappingQC -in input.bam -out output.qcML`
+- **Variants:** `VariantQC -in input.vcf -out output.qcML`
+- **Aggregation:** Use `QcToTsv` to convert these XML files into a flat TSV format for multi-sample comparison or LIMS integration.
 
-### 2. Sample Validation and Diagnostics
-These tools are critical for clinical sample tracking and biological verification.
-- **Sample Identity**: Use `SampleSimilarity` to compare VCF/BAM files and detect sample swaps. Use `SampleIdentity` to identify datasets belonging to the same patient across different modalities (WGS, RNA-seq, etc.).
-- **Biological Sex**: Run `SampleGender` on BAM files to verify if the genetic sex matches the clinical metadata.
-- **Ancestry**: Use `SampleAncestry` to estimate the genetic background of a sample.
-- **Variant Hunting**:
-    - `CnvHunter`: Detect CNVs in targeted resequencing using non-matched controls.
-    - `RohHunter`: Detect Runs of Homozygosity from annotated VCFs.
-    - `UpdHunter`: Detect Uniparental Disomy using trio variant data.
+### Sample Validation and Identity
+These tools are critical for detecting sample swaps or contamination in a diagnostic setting:
+- **Gender Check:** `SampleGender -in input.bam -method ry` (Uses the R-ratio of Y-chromosomal reads).
+- **Similarity:** `SampleSimilarity -in1 sample1.vcf -in2 sample2.vcf` (Calculates genotype overlap to verify if samples originate from the same individual).
+- **Ancestry:** `SampleAncestry -in input.vcf` (Estimates population origin based on specific variant frequencies).
 
-### 3. Sequence Manipulation (FASTQ & BAM)
-- **Trimming**: `SeqPurge` is a highly sensitive adapter trimmer specifically optimized for paired-end data.
-- **BAM Filtering**: Use `BamFilter` for complex filtering criteria beyond simple flag checks.
-- **Overlap Clipping**: Use `BamClipOverlap` to prevent double-counting of bases in overlapping paired-end reads.
-- **Conversion**: Use `BamToFastq` for coordinate-sorted BAMs when re-alignment is necessary.
+### Specialized Trimming and Filtering
+- **SeqPurge:** Use this for highly sensitive adapter trimming in paired-end data. It is often more effective than general trimmers for clinical data because it considers the overlap of the two reads.
+  `SeqPurge -in1 R1.fastq.gz -in2 R2.fastq.gz -out1 R1_trimmed.fastq.gz -out2 R2_trimmed.fastq.gz`
+- **BamFilter:** Use this for complex filtering of BAM files (e.g., by mapping quality, flags, or specific regions) in a single pass.
 
-### 4. Genomic Interval Operations (BED Tools)
-The `ngs-bits` BED tools are often more specialized for diagnostics than general-purpose suites:
-- **Coverage**: `BedCoverage` calculates average coverage across regions from multiple BAM files simultaneously.
-- **Annotation**: `BedAnnotateGenes` and `BedAnnotateGC` add biological context and GC content to intervals.
-- **Refinement**: Use `BedLowCoverage` and `BedHighCoverage` to identify problematic regions for clinical reporting.
+### BED and Interval Operations
+While similar to bedtools, these tools are optimized for diagnostic coverage reporting:
+- **BedCoverage:** Annotates a BED file with average coverage from one or more BAM files.
+  `BedCoverage -bam input.bam -in regions.bed -out coverage.bed`
+- **BedAnnotateGenes:** Requires a connection to the NGSD to map genomic coordinates to gene names and transcripts.
 
-### 5. VCF Manipulation
-- **Annotation**: `VcfAnnotateConsequence` provides transcript-specific predictions similar to VEP but integrated into the C++ workflow.
-- **Merging**: Use `VcfAdd` to combine VCF files by appending.
-- **Filtering**: Use `VcfAnnotateFromVcf` or `VcfAnnotateFromBed` to flag variants based on external databases or target regions.
+### VCF Manipulation
+- **VcfAnnotateConsequence:** Adds transcript-specific consequence predictions (similar to VEP) directly to the VCF.
+- **VcfAnnotateFromVcf:** Efficiently transfers INFO or ID fields from a source VCF (like gnomAD or ClinVar) to your target VCF.
 
-## Expert Tips and Best Practices
-- **NGSD Integration**: Many tools (like `BedAnnotateGenes`) can optionally connect to the NGSD (Next-Generation Sequencing Database). Ensure your environment variables are set if using a local NGSD instance.
-- **Performance**: Most tools are multi-threaded. Check the `-threads` parameter for computationally intensive tasks like `SeqPurge` or `MappingQC`.
-- **Reference Genomes**: Ensure the reference genome FASTA used across different tools matches exactly (e.g., chromosome naming conventions like 'chr1' vs '1'). Use `FastaFromBam` to verify or retrieve the reference used in a specific BAM/CRAM file.
-- **Memory Management**: When processing large VCFs or BAMs, tools like `VcfSort` or `BedSort` may require significant memory; ensure your environment has sufficient overhead for coordinate-based sorting.
+## Expert Tips
+- **NGSD Integration:** Many tools (like `BedAnnotateGenes` or `BedGeneOverlap`) require the NGSD (Next-Generation Sequencing Database). Ensure your environment is configured with the necessary database credentials if using these features.
+- **Memory Management:** For large BAM files, tools like `BamToFastq` or `BamFilter` are optimized for streaming; however, ensure your temporary directory has sufficient space for intermediate sorting if required.
+- **CRAM Support:** Most BAM tools in ngs-bits natively support CRAM format via htslib, provided the reference genome is accessible.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| BamClipOverlap | Softclipping of overlapping reads. |
+| BamFilter | Filter alignments in BAM/CRAM file (no input sorting required). |
+| BamToFastq | Converts a coordinate-sorted BAM file to FASTQ files. |
+| BedAnnotateGC | Annotates GC content fraction to regions in a BED file. |
+| BedAnnotateGenes | Annotates BED file regions with gene names. |
+| BedCoverage | Annotates a BED file with the average coverage of the regions from one or several BAM/CRAM file(s). |
+| BedHighCoverage | Detects high-coverage regions from a BAM/CRAM file. Note that only read start/end are used. Thus, deletions in the CIGAR string are treated as covered. |
+| BedLowCoverage | Detects low-coverage regions from a BAM/CRAM file. |
+| BedSort | Sort the regions in a BED file. |
+| MappingQC | Calculates QC metrics based on mapped NGS reads. |
+| QcToTsv | Converts qcML files to a TSV file. |
+| ReadQC | Calculates QC metrics on unprocessed NGS reads. |
+| RohHunter | ROH detection based on a variant list. |
+| SampleAncestry | Estimates the ancestry of a sample based on variants. |
+| SampleGender | Determines the gender of a sample from the BAM/CRAM file. |
+| SampleSimilarity | Calculates pairwise sample similarity metrics from VCF/BAM/CRAM files. |
+| SeqPurge | Removes adapter sequences from paired-end sequencing data. |
+| UpdHunter | UPD detection from trio variant data. |
+| VariantQC | Calculates QC metrics on variant lists. |
+| VcfAdd | Merges several VCF files into one VCF by appending one to the other. Variant lines from all other input files are appended to the first input file. VCF header lines are taken from the first input file only. |
+| VcfAnnotateConsequence | Adds transcript-specific consequence predictions to a VCF file. |
+| VcfAnnotateFromBed | Annotates the INFO column of a VCF with data from a BED file. |
+| VcfAnnotateFromVcf | Annotates a VCF file with data from one or more source VCF files. |
+| VcfSort | Sorts variant lists according to chromosomal position. |
+| ngs-bits_FastaFromBam | Download the reference genome FASTA file for a BAM/CRAM file. |
 
 ## Reference documentation
-- [ngs-bits GitHub Repository](./references/github_com_imgag_ngs-bits.md)
-- [Bioconda ngs-bits Overview](./references/anaconda_org_channels_bioconda_packages_ngs-bits_overview.md)
+- [ngs-bits Main Documentation](./references/github_com_imgag_ngs-bits.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_ngs-bits_overview.md)

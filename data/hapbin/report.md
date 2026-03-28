@@ -113,3 +113,6 @@ Usage: xpehhbin --map input.map --hapA inputA.hap --hapB inputB.hap
 	-e,--max-extend			Maximum distance in bp to traverse when calculating EHH (default: 0 (disabled))
 ```
 
+
+## Metadata
+- **Skill**: generated

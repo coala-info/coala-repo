@@ -1,6 +1,6 @@
 ---
 name: rabbittclust
-description: RabbitTClust is a toolkit designed for the rapid clustering of massive bacterial genome collections using dimensionality reduction and various clustering algorithms. Use when user asks to perform hierarchical clustering, execute greedy incremental clustering, or apply graph-based community detection to large genomic datasets.
+description: RabbitTClust is a high-performance genomic clustering toolkit that utilizes dimensionality reduction and parallelization to process massive sequence datasets. Use when user asks to perform hierarchical clustering via MST, execute greedy incremental clustering, detect communities using Leiden or DBSCAN, or generate CLI commands for processing FASTA files.
 homepage: https://github.com/RabbitBio/RabbitTClust
 ---
 
@@ -8,63 +8,56 @@ homepage: https://github.com/RabbitBio/RabbitTClust
 # rabbittclust
 
 ## Overview
+RabbitTClust is a specialized toolkit designed for high-performance genomic clustering. It leverages dimensionality reduction (sketching) and parallelization to process massive datasets that would otherwise be computationally prohibitive. You should use this skill to determine the appropriate clustering algorithm (MST for hierarchical relationships, Greedy for rapid incremental updates, or Leiden/DBSCAN for community detection) and to generate the correct CLI commands for processing FASTA files or genome lists.
 
-RabbitTClust is a specialized toolkit designed for the rapid clustering of massive bacterial genome collections. By utilizing dimensionality reduction techniques like MinHash sketches and KSSD, it bypasses the computational bottleneck of all-against-all alignments. It is particularly effective for researchers working with hundreds of thousands to millions of genomes who require fast distance estimations and flexible clustering logic, including hierarchical, greedy, and graph-based approaches.
+## Core Modules and Usage Patterns
 
-## Installation and Environment
+RabbitTClust provides different binaries based on the desired clustering logic. All modules share common sketching parameters.
 
-Install RabbitTClust via Bioconda for the most stable environment:
+### 1. Minimum Spanning Tree (clust-mst)
+Best for hierarchical clustering and single-linkage analysis.
+- **Basic Command**: `clust-mst -i <input_fasta> -o <output_prefix> -d <distance_threshold>`
+- **Input List**: Use `-l` if the input is a text file containing paths to multiple genomes.
+- **Phylogeny**: Add `--newick-tree` to generate a Newick format file for downstream tree visualization.
+- **Optimization**: Use `--fast` to enable the KSSD algorithm for faster sketching and distance computation.
 
-```bash
-conda install bioconda::rabbittclust
-```
+### 2. Greedy Incremental (clust-greedy)
+Best for very large datasets or when adding new genomes to an existing set.
+- **Basic Command**: `clust-greedy -i <input_list> -o <output_prefix> -d <threshold>`
+- **Incremental Updates**: Use `--save-rep` to store the representative inverted index, allowing for faster future additions using the `--append` flag.
 
-Note: The tool requires a 64-bit Linux system with support for at least AVX2 instructions for optimal performance.
+### 3. Graph-Based & Density Clustering (clust-leiden / clust-dbscan)
+Used for community detection within genomic networks.
+- **Leiden**: Requires `igraph` dependency. Use for modularity-based community detection.
+- **DBSCAN**: Use for density-based clustering to identify core genomic groups and noise.
 
-## Core Clustering Modules
+## Expert Tips and Best Practices
 
-Select the appropriate module based on your analytical goals:
+### Sketching Parameters
+The accuracy and speed of RabbitTClust depend heavily on sketching configuration:
+- **K-mer Size (`-k`)**: Default is often sufficient, but adjust based on genome complexity (e.g., 21-31 for bacteria).
+- **Sketch Size (`-s`)**: Default is 1000. Increase for higher sensitivity in distance estimation at the cost of memory and speed.
+- **Containment (`-c`)**: Use when comparing genomes of significantly different sizes (e.g., a phage vs. a host) to use the Mash containment coefficient.
 
-### 1. Hierarchical Clustering (clust-mst)
-Use this for traditional single-linkage hierarchical clustering. It is the best choice when you need to visualize relationships via a tree structure.
+### Performance Tuning
+- **Threads (`-t`)**: By default, the tool uses all available CPUs. Manually restrict this in shared HPC environments.
+- **Filtering (`-m`)**: Use `-m <length>` to ignore small contigs or fragments (default is 10,000 bp).
+- **Intermediate Files**: Use `-e` (no-save) to prevent the tool from writing large `.sketch` or `.mst` files to disk if you only need the final cluster assignments.
 
-*   **Basic usage**: `./clust-mst -l -i genome_list.txt -o output_prefix`
-*   **Generate a tree**: Add `--newick-tree` to produce a Newick format file for downstream visualization.
-*   **High-speed mode**: Use `--fast` to enable the KSSD algorithm for sketching and distance computation.
-*   **Representative selection**: Use `--reps-per-cluster [INT]` to automatically pick representative genomes from each cluster.
+### Post-Processing
+- **Representative Selection**: Use `--reps-per-cluster <int>` to automatically pick $k$ representative genomes from each cluster.
+- **Deduplication**: Use `--dedup-dist <float>` to collapse near-identical nodes within a cluster into a single entry in a `.dedup` output file.
 
-### 2. Greedy Incremental Clustering (clust-greedy)
-Use this for the fastest possible clustering or when you need to add new genomes to an existing clustered dataset without recomputing everything.
 
-*   **Basic usage**: `./clust-greedy -l -i genome_list.txt -o output_prefix`
-*   **Incremental update**: Use `--append [PRE-GENERATED_SKETCHES]` to add new sequences to an existing project.
-*   **Memory optimization**: Use `--save-rep` to maintain an inverted index of representatives, which speeds up incremental runs.
 
-### 3. Graph-based Clustering (clust-leiden)
-Use this for community detection in genomic networks. It requires the `igraph` library.
+## Subcommands
 
-*   **Basic usage**: `./clust-leiden --fast -l -i genome_list.txt -o output_prefix`
-*   **Adjust granularity**: Use `--resolution [FLOAT]` (higher values result in more, smaller clusters).
-*   **Algorithm choice**: While Leiden is the default, you can switch to Louvain using the `--louvain` flag.
-
-## Common CLI Patterns and Parameters
-
-*   **Input Handling**: 
-    *   For a single FASTA: `-i genome.fasta`
-    *   For multiple files: Create a text file with one path per line and use `-l -i list.txt`.
-*   **Distance Thresholds**: Set the clustering stringency with `-d [FLOAT]`. For example, a distance of 0.05 roughly corresponds to 95% Average Nucleotide Identity (ANI).
-*   **Sketch Tuning**: 
-    *   Increase `-s [INT]` (default 1000) for higher sensitivity in distance estimation at the cost of speed and memory.
-    *   Use `-k [INT]` to adjust k-mer size based on the taxonomic level of your organisms.
-*   **Resource Management**: Always specify threads with `-t` to match your hardware capabilities, as RabbitTClust is highly parallelized.
-
-## Expert Tips
-
-*   **Intermediate Files**: By default, the tool saves sketches and intermediate files. If disk space is a concern and you do not plan to run incremental updates, use the `-e` or `--no-save` flag.
-*   **Filtering**: Use `-m [UINT]` to set a minimum genome length (default 10,000). This prevents short, poor-quality assemblies or contaminants from skewing the clustering results.
-*   **Containment Distance**: For datasets with significant size variation (e.g., comparing genomes to much smaller plasmids or fragments), use the `-c` flag to enable AAF distance with containment coefficients.
-*   **Pre-computed Inputs**: If you have already generated sketches or MST files in a previous run, use `--presketched` or `--premsted` to skip the most computationally expensive steps.
+| Command | Description |
+|---------|-------------|
+| clust-greedy | greedy incremental clustering module for RabbitTClust |
+| clust-mst | minimum-spanning-tree-based module for RabbitTClust |
 
 ## Reference documentation
 - [RabbitTClust GitHub Repository](./references/github_com_RabbitBio_RabbitTClust.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_rabbittclust_overview.md)
+- [RabbitTClust README](./references/github_com_RabbitBio_RabbitTClust_blob_main_README.md)
+- [Installation and Build Script](./references/github_com_RabbitBio_RabbitTClust_blob_main_install.sh.md)

@@ -301,3 +301,6 @@ No inputs — do not generate CWL.
 ERROR: unknown option
 ```
 
+
+## Metadata
+- **Skill**: generated

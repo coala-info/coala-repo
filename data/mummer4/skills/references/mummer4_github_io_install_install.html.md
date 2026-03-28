@@ -1,1 +1,56 @@
-MUMmer Installation MUMmer Home Manual Installation Tutorials Downloads Dependencies If compiling from a release source tarball you need a recent version of the GCC compiler (g++ version >= 4.7) and other essential tools for compilation (GNU make, ar, etc. Install build-essential on Debian or Ubuntu derivatives). Additional requirements are needed to compile the SWIG script bindings. See the SWIG installation guide . Compilation & Installation To compile and install: ./configure --prefix=/path/to/installation make make install If --prefix is omitted, the software is installed in /usr/local . One may need sudo make install if installing in a system location. Software Requirements The MUMmer4.x package requires the following to run successfully. In the absence of one or more of these utilities, certain MUMmer programs may fail to run correctly. In parenthesis the minimum version. These utilities must be accessible via the system path: perl5 (5.6.0) sh sed awk Optional: To use the visualization tools included with MUMmer, it may be necessary to install the following utilities: fig2dev (3.2.3) gnuplot (4.0) xfig (3.2) Uninstallation In the "MUMmer4.x" base directory type: make uninstall About Us MUMmer4 and nucmer4 were developed by Guillaume Marcais (CMU/UMD) and Aleksey Zimin (UMD/JHU), building on MUMmer3 and nucmer3. The development and support team also includes Adam Phillippy (NIH), Daniela Puiu (JHU), and Steven Salzberg (JHU). Useful Links MUMmer4 at Github MUMmer3 at SourceForge Acknowledgements The development of early versions of MUMmer, particularly MUMmer3, was supported in part by NSF under grants IIS-9902923 (S. Salzberg) and IIS-9820497 (A. Delcher), and by NIH under grants R01-LM06845 to Steven Salzberg. MUMmer 1.0 and 2.0 were developed by Art Delcher, Steven Salzberg and colleagues (see the papers for other authors). MUMmer3.0 was a joint development effort by Stefan Kurtz of the University of Hamburg, Adam Phillippy, Art Delcher and Steven Salzberg, who were all at TIGR until 2005. MUMmer4 is currently supported in part by NIH under grant R01-GM083873 to Steven Salzberg.
+# MUMmer
+
+* [Home](../index.html)
+* [Manual](../manual/manual.html)
+* [Installation](../install/install.html)
+* [Tutorials](../tutorial/tutorial.html)
+* [Downloads](https://github.com/mummer4/mummer/releases)
+
+# Dependencies
+
+If compiling from a [release source tarball](https://github.com/mummer4/mummer/releases) you need a recent version of the GCC compiler (g++ version >= 4.7) and other essential tools for compilation (GNU make, ar, etc. Install build-essential on Debian or Ubuntu derivatives). Additional requirements are needed to compile the SWIG script bindings. See the [SWIG installation guide](https://github.com/mummer4/mummer/blob/master/swig/INSTALL.md).
+
+# Compilation & Installation
+
+To compile and install:
+
+./configure --prefix=/path/to/installation
+make
+make install
+
+If --prefixis omitted, the software is installed in /usr/local. One may need sudo make install if installing in a system location.
+
+# Software Requirements
+
+The MUMmer4.x package requires the following to run successfully. In the absence of one or more of these utilities, certain MUMmer programs may fail to run correctly. In parenthesis the minimum version. These utilities must be accessible via the system path:
+
+- perl5 (5.6.0)
+- sh
+- sed
+- awk
+**Optional:** To use the visualization tools included with MUMmer, it may be
+necessary to install the following utilities:- fig2dev (3.2.3)
+- gnuplot (4.0)
+- xfig (3.2)
+
+# Uninstallation
+
+In the "MUMmer4.x" base directory type:
+
+make uninstall
+
+[![](../icons/up.png)](#head)
+
+## About Us
+
+MUMmer4 and nucmer4 were developed by Guillaume Marcais (CMU/UMD) and Aleksey Zimin (UMD/JHU), building on MUMmer3 and nucmer3. The development and support team also includes Adam Phillippy (NIH), Daniela Puiu (JHU), and Steven Salzberg (JHU).
+
+## Useful Links
+
+* [MUMmer4 at Github](https://github.com/mummer4/mummer)
+* [MUMmer3 at SourceForge](http://mummer.sourceforge.net/)
+
+## Acknowledgements
+
+The development of early versions of MUMmer, particularly MUMmer3, was supported in part by NSF under grants IIS-9902923 (S. Salzberg) and IIS-9820497 (A. Delcher), and by NIH under grants R01-LM06845 to Steven Salzberg. MUMmer 1.0 and 2.0 were developed by Art Delcher, Steven Salzberg and colleagues (see the papers for other authors). MUMmer3.0 was a joint development effort by Stefan Kurtz of the University of Hamburg, Adam Phillippy, Art Delcher and Steven Salzberg, who were all at TIGR until 2005.
+MUMmer4 is currently supported in part by NIH under grant R01-GM083873 to Steven Salzberg.

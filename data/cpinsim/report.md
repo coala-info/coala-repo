@@ -136,3 +136,6 @@ optional arguments:
                         the given path. If not specified, std-out is used.
 ```
 
+
+## Metadata
+- **Skill**: generated

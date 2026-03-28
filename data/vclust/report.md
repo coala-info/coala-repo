@@ -241,3 +241,6 @@ Binary dependencies:
 [32;1mStatus: ready[0m
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: bleties
-description: BleTIES is a bioinformatics toolkit for discovering and assembling Internal Eliminated Sequences in ciliate genomes using long-read alignments. Use when user asks to predict and assemble non-scrambled IESs, identify chromosome breakpoints, or create MIC-like assemblies from MAC references.
+description: BleTIES is a bioinformatics toolkit designed to identify and analyze Internal Eliminated Sequences and genome rearrangement events in ciliates using long-read sequencing data. Use when user asks to identify IES junctions, perform de novo IES assembly, quantify IES retention levels, map telomere addition sites, or simulate genome rearrangements.
 homepage: https://github.com/Swart-lab/bleties
 ---
 
@@ -8,56 +8,69 @@ homepage: https://github.com/Swart-lab/bleties
 # bleties
 
 ## Overview
-BleTIES (Basic Long-read Enabled Toolkit for Interspersed DNA Elimination Studies) is a specialized bioinformatics suite designed for ciliate genomics. It facilitates the discovery and targeted assembly of sequences that are removed during the transition from the germline micronucleus (MIC) to the somatic macronucleus (MAC). By analyzing long-read alignments against a MAC reference, BleTIES identifies insertion signals that represent IESs and provides tools for their reconstruction and visualization.
+BleTIES (Basic Long-read Enabled Toolkit for Interspersed DNA Elimination Studies) is a specialized bioinformatics suite for studying genome rearrangement in ciliates. It leverages the high error tolerance and length of single-molecule long reads to identify sequences that are present in the Micronucleus (MIC) but removed during the development of the Macronucleus (MAC). The toolkit provides a complete workflow from de novo IES discovery and assembly to population-level retention quantification and telomere addition site mapping.
 
-## Installation and Setup
-The recommended way to install BleTIES is via Bioconda:
+## Core Submodules and Workflows
 
+BleTIES uses a subcommand-based CLI. Access specific help for any module using `bleties <subcommand> --help`.
+
+### 1. IES Discovery and Assembly (MILRAA)
+Use **MILRAA** (Method for IES Locating by Read-Assembly Alignment) to identify putative IESs and their junctions.
+*   **Input**: Sorted/indexed BAM of long reads mapped to a MAC reference.
+*   **Requirement**: The BAM file must contain valid CIGAR strings and `NM` (edit distance) tags.
+*   **Function**: It clusters reads with insertions relative to the MAC, performs local assembly of those insertions, and reports IES coordinates and sequences.
+
+### 2. Retention Analysis (MILRET & MILCOR)
+Quantify how many reads support the retention of an IES versus its excision.
+*   **MILRET**: Calculates IES retention scores across the population at specific junctions. Use this for general quantification of IES presence.
+*   **MILCOR**: Calculates per-read retention scores. Use this to bin individual reads as being of MIC or MAC origin based on their IES content.
+
+### 3. Chromosome Breakage (MILTEL)
+Use **MILTEL** to identify potential chromosome breakage sites where telomeres are added.
+*   **Logic**: It looks for soft-clipped reads at the ends of alignments that contain telomeric repeats, indicating where a MIC chromosome was processed into a MAC scaffold.
+
+### 4. Sequence Manipulation (Insert)
+Use the **insert** utility to modify reference genomes.
+*   **MAC to MIC**: Insert known IES sequences into a MAC reference to create a "MAC+IES" hybrid (pseudo-MIC).
+*   **MIC to MAC**: Perform the reverse operation to simulate excision.
+
+## CLI Usage Patterns
+
+### Basic Execution
 ```bash
-conda create -c conda-forge -c bioconda -n bleties bleties
-conda activate bleties
+# General help
+bleties --help
+
+# Submodule help
+bleties milraa --help
 ```
 
-To verify the installation and check the version:
-```bash
-bleties --version
-```
+### Visualization
+BleTIES includes standalone scripts for plotting results, typically found in the `bin/` directory:
+*   `milraa_plot.py`: Visualizes IES junctions and assembly support.
+*   `milcor_plot.py`: Plots per-read retention scores and read binning results.
 
-## Core Modules and CLI Usage
-BleTIES operates through several sub-commands tailored to specific stages of IES analysis.
+## Expert Tips and Best Practices
 
-### MILRAA (Main IES Reconstruction)
-The primary module for predicting and assembling non-scrambled IESs.
-*   **Trigger**: Use when you have a BAM file of long reads mapped to a MAC genome.
-*   **Command**: `bleties milraa [options]`
-*   **Requirement**: Input BAM must have valid CIGAR strings and NM tags (mismatch count).
+*   **Mapping Accuracy**: BleTIES assumes the input mapping is accurate. Use high-quality mappers like `minimap2` (with `-ax map-pb` or `-ax map-ont`) or `pbmm2` for PacBio data.
+*   **CIGAR/NM Tags**: Ensure your mapper is configured to output the `NM` tag. If missing, BleTIES may fail to correctly evaluate the mismatch rate within putative IES regions.
+*   **Read Types**: While compatible with uncorrected PacBio subreads and Nanopore reads, the highest accuracy for IES reconstruction is achieved using PacBio CCS (HiFi) reads.
+*   **Scrambled IESs**: Note that the current version of MILRAA is designed for non-scrambled IESs. Complex rearrangements (scrambled/inverted) may require manual curation or specialized tools.
+*   **Curation**: Use the **MISER** module (experimental) to screen for potentially erroneous IES calls and curate the list of putative junctions before running downstream retention analysis.
 
-### MILTEL (Breakpoint Analysis)
-Used for identifying chromosome breakpoints and telomere addition sites.
-*   **Command**: `bleties miltel [options]`
 
-### INSERT
-Used to modify a reference assembly by inserting or removing sequences based on a feature table, effectively creating a predicted MIC-like assembly from a MAC reference.
-*   **Command**: `bleties insert [options]`
 
-### Other Sub-commands
-*   `miser`: IES retention analysis.
-*   `milret`: IES retention scoring.
-*   `milcor`: Correlation analysis of IES retention.
+## Subcommands
 
-To view specific options for any module, use the help flag:
-```bash
-bleties <module> --help
-```
-
-## Best Practices and Expert Tips
-*   **Mapping Quality**: The accuracy of BleTIES depends heavily on the initial mapping. Use a long-read mapper (like Winnowmap2 or Minimap2) that produces accurate CIGAR strings.
-*   **Input Validation**: Ensure your BAM file is sorted and indexed. BleTIES relies on the NM tag; if your mapper does not produce it by default, you may need to use `samtools fillmd` or a similar utility.
-*   **Visualization**: After running `milraa` or `milcor`, use the provided auxiliary plotting scripts located in the package's script directory:
-    *   `milraa_plot.py`: Visualizes IES reconstruction results.
-    *   `milcor_plot.py`: Visualizes correlations between IESs.
-*   **Non-Scrambled Focus**: Note that the current version of `milraa` is optimized for non-scrambled IESs. For complex rearrangements, manual inspection of the output GFF3 and BAM files may be required.
+| Command | Description |
+|---------|-------------|
+| bleties milcor | MILCOR - Method of IES Long-read CORrelation |
+| bleties miltel | MILTEL - Method of Long-read Telomere detection |
+| bleties_insert | Insert - Insert/Remove IESs to/from MAC reference sequence |
+| milraa | MILRAA - Method of Identification by Long Read Alignment Anomalies |
 
 ## Reference documentation
-- [BleTIES Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_bleties_overview.md)
-- [BleTIES GitHub Repository](./references/github_com_Swart-lab_bleties.md)
+- [BleTIES Main Documentation](./references/github_com_Swart-lab_bleties_blob_master_docs_index.md)
+- [MILRAA Module Details](./references/swart-lab_github_io_bleties_milraa.html.md)
+- [MILRET/MILCOR Retention Analysis](./references/swart-lab_github_io_bleties_milret.html.md)
+- [Installation and Environment](./references/github_com_Swart-lab_bleties_blob_master_README.md)

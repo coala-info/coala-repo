@@ -566,3 +566,6 @@ Options:
                                  is generated
 ```
 
+
+## Metadata
+- **Skill**: generated

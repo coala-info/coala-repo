@@ -1,6 +1,6 @@
 ---
 name: recycler
-description: Recycler identifies circular genomic elements by analyzing assembly graph topology, read coverage, and paired-end alignment data. Use when user asks to extract circular sequences from assembly graphs, identify plasmids in metagenomes, or recover circular paths from short-read assemblies.
+description: Recycler identifies circular genomic elements like plasmids and phages by analyzing assembly graph topology and read coverage. Use when user asks to identify circularity in genomic assemblies, recover plasmids from metagenomic samples, or find cycles in assembly graphs.
 homepage: https://github.com/Shamir-Lab/Recycler
 ---
 
@@ -8,51 +8,79 @@ homepage: https://github.com/Shamir-Lab/Recycler
 # recycler
 
 ## Overview
-Recycler is a computational tool designed to identify circular genomic elements by analyzing the topology of an assembly graph alongside read coverage and paired-end alignment information. It is particularly effective at "recycling" short or low-coverage contigs into complete circular paths that might otherwise be overlooked in standard linear assemblies. Use this skill to navigate the multi-step preprocessing required for Recycler and to execute the core extraction algorithm.
 
-## Preprocessing Workflow
-Recycler requires a specific BAM input containing the best alignment hits for read pairs against the assembly nodes.
+Recycler is a specialized tool for identifying circularity in genomic assemblies. It works by analyzing the topology of an assembly graph—specifically looking at contig overlaps and lengths—combined with coverage information and paired-end read alignments. Unlike simple circularity checks, Recycler uses a greedy algorithm to find cycles that are consistent with the observed read coverage, making it effective for recovering plasmids and phages that might otherwise be overlooked in complex metagenomic samples.
 
-1.  **Generate Node FASTA**: Convert the assembly graph (FASTG) into a FASTA file.
-    ```bash
-    make_fasta_from_fastg.py -g assembly_graph.fastg -o assembly_graph.nodes.fasta
-    ```
-2.  **Align Reads**: Index the nodes and align your original paired-end reads.
-    ```bash
-    bwa index assembly_graph.nodes.fasta
-    bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam
-    ```
-3.  **Filter and Sort**: Recycler performs best with primary alignments.
-    ```bash
-    # Filter for primary alignments (remove 0x0800)
-    samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam
-    samtools sort reads_pe_primary.bam -o reads_pe_primary.sort.bam
-    samtools index reads_pe_primary.sort.bam
-    ```
+## Installation and Requirements
 
-## Core Usage Patterns
+Recycler requires Python 2.7+ and the following dependencies:
+- NumPy, NetworkX (2.0+), PySAM, and nose.
+- External tools for preprocessing: BWA, samtools, and SPAdes (3.6+ recommended).
 
-### For Metagenomes or Plasmidomes
-The default mode is optimized for complex samples where multiple circular elements may exist at varying coverages.
+## Core Workflow
+
+### 1. Prepare the BAM Input
+Recycler requires a BAM file containing only the best primary alignments of your paired-end reads to the assembly nodes.
+
 ```bash
-recycle.py -g assembly_graph.fastg -k 55 -b reads_pe_primary.sort.bam
+# 1. Generate a fasta file from the assembly graph
+make_fasta_from_fastg.py -g assembly_graph.fastg -o assembly_graph.nodes.fasta
+
+# 2. Index and align reads
+bwa index assembly_graph.nodes.fasta
+bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam
+
+# 3. Filter for primary alignments (CRITICAL)
+samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam
+
+# 4. Sort and index
+samtools sort reads_pe_primary.bam -o reads_pe_primary.sort.bam
+samtools index reads_pe_primary.sort.bam
 ```
 
-### For Isolate Assemblies
-If the data comes from a single isolated strain, enable the isolate flag to improve accuracy.
+### 2. Run Recycler
+The command differs slightly based on whether your sample is a single isolate or a metagenome.
+
+**For Isolate Data:**
 ```bash
 recycle.py -g assembly_graph.fastg -k 55 -b reads_pe_primary.sort.bam -i True
 ```
 
-## Parameter Tuning
-*   **-k (Max K-mer)**: This must match the maximum k-mer length used during the assembly process (e.g., if SPAdes ran with `-k 21,33,55`, use `55`).
-*   **-l (Minimum Length)**: By default, sequences shorter than 1000bp are ignored. Decrease this for very small plasmids or increase it to filter noise.
-*   **-m (Max CV)**: The Coefficient of Variation threshold (default 0.5). Higher values are less restrictive, allowing for more variation in coverage along a circular path.
+**For Metagenome/Plasmidome Data:**
+```bash
+recycle.py -g assembly_graph.fastg -k 55 -b reads_pe_primary.sort.bam
+```
 
-## Output Interpretation
-*   **<prefix>.cycs.fasta**: Contains the final predicted circular sequences.
-*   **<prefix>.cycs.paths_w_cov.txt**: Detailed path information. The "node numbers" listed here can be used to highlight and visualize the circular paths in tools like **Bandage**.
+## Command Line Arguments
+
+| Argument | Description |
+| :--- | :--- |
+| `-g` | **Required.** Path to the assembly graph FASTG file (e.g., `assembly_graph.fastg`). |
+| `-k` | **Required.** The maximum k-mer length used during the assembly process. |
+| `-b` | **Required.** Path to the filtered, sorted, and indexed BAM file. |
+| `-i` | Set to `True` for isolated strains; default is `False` (metagenomes). |
+| `-l` | Minimum length for reporting a circular sequence (default: 1000). |
+| `-m` | Max coefficient of variation for pre-selection (default: 0.5). Higher is less restrictive. |
+| `-o` | Output directory. Defaults to the directory containing the FASTG file. |
+
+## Best Practices and Tips
+
+- **Graph Compatibility**: While designed for SPAdes FASTG files, Recycler can work with other assemblers like MEGAHIT if the output is converted to the expected FASTG format.
+- **K-mer Selection**: Always use the *maximum* k-mer value used by the assembler to ensure the graph overlaps are interpreted correctly.
+- **Filtering BAMs**: The step `samtools view -bF 0x0800` is essential. Recycler's logic depends on primary alignments to calculate coverage accurately; including secondary or supplementary alignments will introduce noise.
+- **Output Interpretation**: 
+    - `.cycs.fasta`: Contains the actual sequences of predicted circular elements.
+    - `.cycs.paths_w_cov.txt`: Provides the path through the original graph nodes, which is useful for visualization in tools like Bandage.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| recycle.py | Recycler extracts likely plasmids (and other circular DNA elements) from de novo assembly graphs |
+| recycler_make_fasta_from_fastg.py | make_fasta_from_fastg converts fastg assembly graph to fasta format |
+| samtools | Tools for alignments in the SAM format |
 
 ## Reference documentation
 - [Recycler GitHub Repository](./references/github_com_Shamir-Lab_Recycler.md)
-- [Bioconda Recycler Overview](./references/anaconda_org_channels_bioconda_packages_recycler_overview.md)

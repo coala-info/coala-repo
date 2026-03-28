@@ -304,3 +304,6 @@ contains multiallelic sites, we recommend decomposing your VCF
 (see A. Tan, Bioinformatics 2015) prior to indexing.
 ```
 
+
+## Metadata
+- **Skill**: generated

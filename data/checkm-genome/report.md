@@ -1816,3 +1816,6 @@ options:
 Example: checkm analyze lineage.ms ./bins ./output
 ```
 
+
+## Metadata
+- **Skill**: generated

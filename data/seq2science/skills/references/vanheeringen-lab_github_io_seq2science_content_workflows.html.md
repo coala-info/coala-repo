@@ -1,1 +1,47 @@
-Workflows &mdash; seq2science documentation seq2science Getting started Workflows Downloading fastqs Alignment ATAC-seq ChIP-seq RNA-seq scATAC-seq scRNA-seq Using the results Extensive docs Extra resources Frequently Asked Questions (FAQ) Contributing to seq2science seq2science Workflows Edit on GitHub Workflows  These are our currently supported workflows. These workflows generally overlap a lot, so once you understand the logic of one of these, learning another should be easy! Downloading fastqs Alignment ATAC-seq ChIP-seq RNA-seq scATAC-seq scRNA-seq Previous Next &#169; Copyright Maarten van der Sande, Siebren Frölich, Jos Smits, Rebecca Snabel, Tilman Schäfers, &amp; Simon van Heeringen.. Built with Sphinx using a theme provided by Read the Docs .
+[seq2science](../index.html)
+
+* [Getting started](gettingstarted.html)
+* Workflows
+  + [Downloading fastqs](workflows/download_fastq.html)
+  + [Alignment](workflows/alignment.html)
+  + [ATAC-seq](workflows/atac_seq.html)
+  + [ChIP-seq](workflows/chip_seq.html)
+  + [RNA-seq](workflows/rna_seq.html)
+  + [scATAC-seq](workflows/scatac_seq.html)
+  + [scRNA-seq](workflows/scrna_seq.html)
+* [Using the results](results.html)
+* [Extensive docs](extensive_docs.html)
+* [Extra resources](extracontent.html)
+* [Frequently Asked Questions (FAQ)](faq.html)
+* [Contributing to seq2science](../CONTRIBUTING.html)
+
+[seq2science](../index.html)
+
+* Workflows
+* [Edit on GitHub](https://github.com/vanheeringen-lab/seq2science/blob/master/docs/content/workflows.rst)
+
+---
+
+# Workflows[](#workflows "Link to this heading")
+
+These are our currently supported workflows.
+These workflows generally overlap a lot, so once you understand the logic of one of these, learning another should be easy!
+
+* [Downloading fastqs](workflows/download_fastq.html)
+* [Alignment](workflows/alignment.html)
+* [ATAC-seq](workflows/atac_seq.html)
+* [ChIP-seq](workflows/chip_seq.html)
+* [RNA-seq](workflows/rna_seq.html)
+* [scATAC-seq](workflows/scatac_seq.html)
+* [scRNA-seq](workflows/scrna_seq.html)
+
+[Previous](gettingstarted.html "Getting started")
+[Next](workflows/download_fastq.html "Downloading fastqs")
+
+---
+
+© Copyright Maarten van der Sande, Siebren Frölich, Jos Smits, Rebecca Snabel, Tilman Schäfers, & Simon van Heeringen..
+
+Built with [Sphinx](https://www.sphinx-doc.org/) using a
+[theme](https://github.com/readthedocs/sphinx_rtd_theme)
+provided by [Read the Docs](https://readthedocs.org).

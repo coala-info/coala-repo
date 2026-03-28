@@ -196,3 +196,6 @@ Other Function
                   --help: Print detailed help message
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,0 +1,2 @@
+xml version="1.0" encoding="utf-8"?Jekyll2026-03-23T13:02:46+00:00https://www.seqan.de/feed.xmlSeqAnSeqAn is an open source C++ library of efficient algorithms and data structures for the analysis of sequences with the focus on biological data.
+SeqAnsupport@seqan.de

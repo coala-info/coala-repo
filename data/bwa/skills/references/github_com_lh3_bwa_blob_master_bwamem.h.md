@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -934,8 +935,4 @@ void mem\_fill\_scmat(int a, int b, int8\_t mat[25]);
 
 \*/
 
-void mem\_process\_seqs(const mem\_opt\_t \*opt, const bwt\_t \*bwt, const bntseq\_t \*bns, const uint8\_t \*pac, int64\_t n\_processed, int n, bseq1\_t \*seqs, const mem\_pestat\_t \*pes0);
-
-/\*\*
-
-\* Find t
+void mem\_process\_seqs(const mem\_opt\_t \*opt, const bwt\_t \*bwt, const bntseq\_t \*bns, const uint8\_t \*pac, int64\_t n\_processed, int n, bseq1\_t \*seqs, 

@@ -1,42 +1,67 @@
 ---
 name: mitorsaw
-description: "Mitorsaw analyzes mitochondrial DNA variants in PacBio HiFi sequencing data, distinguishing homoplasmic and heteroplasmic variants while removing NUMT reads. Use when user asks to call mitochondrial variants, analyze heteroplasmic variants, or filter NUMT reads."
+description: Mitorsaw analyzes PacBio HiFi data to perform mitochondrial genome assembly, heteroplasmy detection, and NUMT filtering. Use when user asks to reconstruct mitochondrial haplotypes, call low-frequency variants, or filter nuclear mitochondrial segments from long-read sequencing data.
 homepage: https://github.com/PacificBiosciences/mitorsaw
 ---
 
 
 # mitorsaw
 
----
 ## Overview
-Mitorsaw is a specialized bioinformatics tool designed for the in-depth analysis of mitochondrial DNA variants within PacBio HiFi sequencing data. It excels at identifying both homoplasmic (present in all copies) and heteroplasmic (present in a subset of copies) variants across the entire mitochondrial genome. A key feature is its ability to distinguish and remove nuclear mitochondrial DNA (NUMT) reads, which can otherwise confound variant calling. Furthermore, mitorsaw can construct phylogenetic-like structures to understand heteroplasmic variant inheritance patterns and estimate haplotype abundances, ultimately generating consensus sequences for each identified haplotype.
 
-## Usage Instructions
+Mitorsaw is a specialized bioinformatics tool designed to leverage the high accuracy and long-read nature of PacBio HiFi data for comprehensive mitochondrial genome analysis. Unlike standard variant callers, it specifically addresses the challenges of the circular mitochondrial genome, including the detection of low-frequency heteroplasmy and the filtering of nuclear mitochondrial segments (NUMTs) that often confound mitochondrial mapping. It produces phased VCFs and haplotype-specific consensus sequences, allowing for a detailed view of mitochondrial diversity within a single sample.
 
-Mitorsaw is primarily used via its command-line interface. The core functionality revolves around processing sequencing data to identify and analyze mitochondrial variants.
+## Core Workflow: Haplotype Analysis
 
-### Core Functionality and Commands
+The primary command is `mitorsaw haplotype`. This command performs the full pipeline: read parsing, NUMT removal, variant calling, and haplotype reconstruction.
 
-The primary command for running mitorsaw is `mitorsaw`. While specific subcommands are not detailed in the provided documentation, the tool's purpose suggests a workflow that likely involves inputting sequencing reads and outputting variant calls, phylogenetic information, and consensus sequences.
+### Basic Command Pattern
+```bash
+mitorsaw haplotype \
+    --reference path/to/GRCh38.fasta \
+    --bam input_sample.bam \
+    --output-vcf results.vcf.gz \
+    --output-hap-stats stats.json
+```
 
-### Input Data
+### Key Requirements
+- **Reference**: Must be GRCh38 and must contain the `chrM` contig.
+- **Input**: BAM files must be indexed (`.bai`). You can specify `--bam` multiple times to include multiple files for a single sample.
+- **Resources**: The process is single-threaded. Ensure at least 20GB of RAM is available, primarily for the remapping step used to identify NUMTs.
 
-Mitorsaw is designed to work with PacBio HiFi sequencing data. The exact format of the input reads (e.g., FASTQ, BAM) is not explicitly stated but is typical for such tools.
+## Heuristic Tuning and Optimization
 
-### Key Analysis Steps and Outputs
+Adjust these parameters to balance sensitivity against false discovery, depending on your research goals:
 
-1.  **Variant Identification**: Detects homoplasmic and heteroplasmic variants in the mitochondrial genome.
-2.  **NUMT Read Removal**: Filters out reads originating from nuclear mitochondrial DNA to improve variant calling accuracy.
-3.  **Phylogenetic Analysis**: Generates a tree-like structure to visualize heteroplasmic variant inheritance and haplotype relationships.
-4.  **Haplotype Consensus Sequences**: Creates consensus sequences for each identified mitochondrial haplotype.
+- **Sensitivity for Low-Frequency Variants**:
+  Use `--minimum-maf` (default: 0.10) to control the Minimum Allele Frequency. Lowering this (e.g., to 0.01 or 0.05) increases the detection of rare heteroplasmic variants but may introduce noise from sequencing artifacts.
+- **Filtering False Positives**:
+  Use `--minimum-read-count` (default: 3) to set the minimum number of supporting reads required for a heteroplasmic variant. Increasing this value is recommended for datasets with lower coverage to ensure variant call robustness.
+- **Sample Naming**:
+  By default, the tool uses the SM tag from the BAM read group. Use `--sample-name {NAME}` to manually override the sample name in the output VCF.
 
-### Expert Tips and Best Practices
+## Interpreting Outputs
 
-*   **Data Quality**: Ensure your PacBio HiFi sequencing data is of high quality, as this will directly impact the accuracy of variant detection and downstream analyses.
-*   **NUMT Filtering**: Pay close attention to the NUMT read removal step. Accurate filtering is crucial for reliable mitochondrial variant analysis.
-*   **Interpreting Phylogeny**: The generated phylogenetic tree is a powerful tool for understanding evolutionary relationships and inheritance patterns of mitochondrial variants. Familiarize yourself with phylogenetic interpretation to gain the most insight.
-*   **Haplotype Analysis**: The consensus sequences for each haplotype can be used for further comparative genomics or population studies.
+### Phased VCF
+The VCF output uses the pipe (`|`) symbol to indicate phasing.
+- **GT Field**: `0|1|0` indicates that the variant is absent in the primary consensus (`hap_0`), present in `hap_1`, and absent in `hap_2`.
+- **AD/DP**: The Allele Depth (AD) sum may be less than the Total Depth (DP) if reads overlap a locus but cannot be confidently assigned (common in homopolymer regions).
+
+### Debugging and Visualization
+Use the `--output-debug {FOLDER}` flag to generate auxiliary files. This is highly recommended for:
+- **IGV Review**: It generates customized BAMs and tracks optimized for viewing mitochondrial alignments.
+- **Coverage Analysis**: Produces `coverage_stats.json` to verify sequencing depth across the 16.5kb genome.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mitorsaw_build | Download and build the mitochondria database |
+| mitorsaw_haplotype | Run the haplotyper on a dataset |
 
 ## Reference documentation
-- [Mitorsaw Overview](./references/anaconda_org_channels_bioconda_packages_mitorsaw_overview.md)
-- [Mitorsaw GitHub Repository](./references/github_com_PacificBiosciences_mitorsaw.md)
+- [Mitorsaw User Guide](./references/github_com_PacificBiosciences_mitorsaw_blob_main_docs_user_guide.md)
+- [Installation and CLI Basics](./references/github_com_PacificBiosciences_mitorsaw_blob_main_docs_install.md)
+- [Mitorsaw README](./references/github_com_PacificBiosciences_mitorsaw_blob_main_README.md)

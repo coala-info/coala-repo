@@ -61,3 +61,6 @@ required:
     -P|--include-pwm
 ```
 
+
+## Metadata
+- **Skill**: generated

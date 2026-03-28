@@ -1,54 +1,65 @@
 ---
 name: eido
-description: "Eido is a personal data management framework that allows users to create and manage Notion-like documents and databases locally with AI features. Use when user asks to manage personal data, create Notion-like documents, or leverage AI for data analysis and interaction."
+description: Eido is a framework and command-line tool for managing SQLite-based personal knowledge bases and processing Portable Encapsulated Projects. Use when user asks to create tables with schema inference, import JSON data, manage relay service messages, or validate and convert PEP formats.
 homepage: https://github.com/mayneyao/eidos
 ---
 
 
 # eido
 
-yaml
-name: eido
-description: A framework for Personal Data Management, enabling users to organize, store, and manage personal data with Notion-like documents and databases. It offers offline support, AI features for data interaction, and an extensible architecture for custom tools and blocks. Use when Claude needs to manage personal data, create Notion-like documents, or leverage AI for data analysis and interaction.
-```
 ## Overview
-Eido is an extensible framework designed for personal data management. It allows users to create and manage Notion-like documents and databases locally, offering offline access and AI-powered features for data interaction, summarization, and translation. Its core strength lies in its extensibility, allowing for custom tools and UI blocks to be developed.
+Eidos is an extensible, local-first framework designed to transform SQLite into a personal knowledge base. This skill facilitates the use of the `eidos` CLI and its associated SDK to automate data management tasks. Use this skill when you need to programmatically interact with Eidos tables, migrate data from JSON sources, or develop custom scripts for data processing and relay handling.
 
-## Usage Instructions
+## CLI Usage Patterns
 
-Eido is primarily used through its desktop application, which can be downloaded from [eidos.space](https://eidos.space/download).
+### Table Management
+The `eidos` CLI allows for rapid table creation and data ingestion.
 
-### Core Functionality
+*   **Create with Schema Inference**: Automatically generate a table structure by piping JSON data.
+    `cat sample.json | eidos table create "My New Table"`
+*   **Explicit Schema Creation**: Define field types during creation.
+    `eidos table create "Tasks" --fields "title:text,done:checkbox,priority:select"`
+*   **Template-based Creation**: Create a new table based on an existing table's structure.
+    `eidos table create "2026 Goals" --template tb_source_id`
+*   **Data Import**: Import JSON files into existing tables.
+    `eidos table import tb_target_id --file data.json`
+    `cat data.json | eidos table tb_target_id`
 
-*   **Personal Data Management**: Organize, store, and manage personal data using a Notion-like interface with documents and databases.
-*   **Offline Support**: All functionalities operate locally, ensuring data access without an internet connection.
-*   **AI Features**: Integrate with LLMs for tasks such as translating, summarizing, and interacting with your data.
-*   **Extensibility**: Develop custom extensions using JavaScript/TypeScript or Python to build tools and enhance Eido's capabilities.
+### System Maintenance
+*   **Node Uniqueness**: Ensure "Node name uniqueness validation" is enabled in Space Data Management to use the CLI effectively.
+*   **Repair Tables**: Use the `fix` command in the CMDK (Command Palette) within the UI if tables become unresponsive after schema changes.
 
-### Developing Extensions
+## Relay Service Integration
+Relay acts as a cloud-based message queue that buffers data (webhooks, IoT, Telegram bots) until the local Eidos instance is online to process it.
 
-To develop extensions for Eido:
+### Relay Handlers
+To process incoming Relay messages, implement a `relayHandler` script:
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/mayneyao/eidos.git
-    ```
-2.  **Install dependencies**:
-    ```bash
-    pnpm install
-    ```
-3.  **Install SQLite extensions**:
-    ```bash
-    pnpm install:sqlite-ext
-    ```
-    (This is typically only needed for the first time.)
-4.  **Start development**:
-    *   For desktop development:
-        ```bash
-        pnpm dev:desktop
-        ```
+1.  **Define Metadata**: Specify the channel and function name.
+2.  **Batch Processing**: Relay delivers messages in batches for efficiency.
+3.  **File System Access**: Use `eidos.space.fs` to write processed data directly to local markdown or JSON files.
 
-Extensions are located within the `extensions/` directory and are released under the MIT License.
+### Manual Message Pulling
+For custom integrations outside of the Eidos script environment, use the HTTP API:
+*   **Pull**: `POST https://api.eidos.space/v1/relay/channels/{channel}/messages/pull`
+*   **Acknowledge**: `POST https://api.eidos.space/v1/relay/channels/{channel}/messages/ack` (requires `lease_ids`).
+
+## Expert Tips
+*   **Prisma-style SDK**: When writing internal Eidos scripts, use the `eidos.space.table("tableName")` client for type-safe CRUD operations (e.g., `.findMany`, `.create`, `.update`).
+*   **Local-First Performance**: Since data is stored in a local SQLite database, batch your `writeFile` operations in Relay handlers to minimize disk I/O overhead.
+*   **Mounting**: Use the `/@/{mount-name}` pattern to access files outside the standard Eidos workspace via the File System API.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| eido_convert | Convert PEP format using filters |
+| eido_inspect | Inspect a PEP |
+| eido_validate | Validate a PEP or its components |
 
 ## Reference documentation
-- [Eido Overview](./references/github_com_mayneyao_eidos.md)
+- [Eidos Changelog](./references/eidos_space_changelog.md)
+- [Eidos Relay Service](./references/eidos_space_relay.md)
+- [Eidos GitHub Repository](./references/github_com_mayneyao_eidos.md)

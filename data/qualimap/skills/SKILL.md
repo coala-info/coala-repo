@@ -1,6 +1,6 @@
 ---
 name: qualimap
-description: Qualimap evaluates the quality of high-throughput sequencing alignment data by analyzing SAM, BAM, and GFF files to detect sequencing or mapping biases. Use when user asks to perform BAM quality control, evaluate RNA-seq transcriptomic saturation, compare multiple alignment samples, or analyze feature count distributions.
+description: Qualimap evaluates the quality of alignments from Next Generation Sequencing experiments by processing BAM or SAM files to generate comprehensive QC reports. Use when user asks to perform general alignment quality control, analyze RNA-seq data for gene body coverage and strand specificity, or compare multiple samples to detect batch effects.
 homepage: http://qualimap.bioinfo.cipf.es/
 ---
 
@@ -8,53 +8,66 @@ homepage: http://qualimap.bioinfo.cipf.es/
 # qualimap
 
 ## Overview
-Qualimap is a Java-based tool designed to evaluate the quality of high-throughput sequencing alignment data. It processes SAM, BAM, and GFF files to detect biases in sequencing or mapping, providing both visual reports and raw statistics. It is particularly useful for assessing genome coverage, nucleotide distribution, and transcriptomic saturation.
 
-## Core Commands and Workflows
+Qualimap is a versatile tool designed to assess the quality of alignments from Next Generation Sequencing (NGS) experiments. It processes alignment files (BAM/SAM) to generate comprehensive reports that help identify potential issues in library preparation, sequencing, or mapping. Use this skill to perform basic alignment QC, specialized RNA-seq analysis (including gene body coverage and strand specificity), and multi-sample comparisons to detect batch effects or outliers in a cohort.
 
-### 1. BAM Quality Control (BAM QC)
-The primary mode for evaluating a single alignment file. It calculates coverage, GC content, mapping quality, and insert size.
+## Common CLI Patterns
 
+### BAM QC (General Alignment Quality Control)
+The primary mode for evaluating a single alignment file.
 ```bash
-qualimap bamqc -bam input.bam -outdir ./bamqc_report -nt 8 --java-mem-size=4G
+qualimap bamqc -bam input.bam -outdir ./bamqc_report -nt 4 --java-mem-size=4G
 ```
-- `-nt`: Number of threads.
-- `-gff`: (Optional) Provide a genomic features file to restrict analysis to specific regions (e.g., exome targets).
-- `--java-mem-size`: Essential for large BAM files to prevent OutOfMemory errors.
+- **Key Options**:
+  - `-gff` / `-bed`: Restrict analysis to specific genomic regions (e.g., exome targets).
+  - `-nt`: Number of threads for parallel processing.
+  - `-nw`: Number of windows for coverage calculation (default is 400).
+  - `-hm`: Minimum homopolymer size to estimate indels.
 
-### 2. RNA-seq QC
-Specialized mode for transcriptomics that computes genomic origin of reads (exonic, intronic, intergenic) and coverage bias along the gene body.
-
+### RNA-seq QC
+Specialized for transcriptomics data; requires a genome annotation file.
 ```bash
-qualimap rnaseq -bam input.bam -gtf annotations.gtf -outdir ./rnaseq_report -p strand-specific-reverse
+qualimap rnaseqqc -bam input.bam -gtf annotation.gtf -outdir ./rnaseq_report -p non-strand-specific
 ```
-- `-gtf`: Required annotation file.
-- `-p`: Sequencing protocol (non-strand-specific, strand-specific-forward, or strand-specific-reverse).
+- **Key Options**:
+  - `-p`: Protocol type (`strand-specific-forward`, `strand-specific-reverse`, or `non-strand-specific`).
+  - `-a`: Counting algorithm (`proportional` or `uniquely-mapped-reads`).
 
-### 3. Multi-sample Comparison
-Used to aggregate results from multiple `bamqc` runs to identify outliers or batch effects across a cohort.
-
+### Multi-sample BAM QC
+Used to compare multiple BAM files simultaneously. Requires a configuration file listing the samples.
 ```bash
-# First, create a metadata file (sample_list.txt) with:
-# sample1_name /path/to/bamqc_results_1
-# sample2_name /path/to/bamqc_results_2
-
-qualimap multi-bamqc -d sample_list.txt -outdir ./multi_report
+qualimap multi-bamqc -d input_list.txt -outdir ./multi_report
 ```
+- **Input List Format**: The input file should be tab-delimited: `sample_name [tab] path_to_bamqc_results`.
 
-### 4. Counts QC
-Analyzes the output of feature counting tools (like HTSeq or featureCounts) to estimate sequencing saturation and expression distribution.
-
+### Counts QC
+Evaluates the quality of feature counts (e.g., from HTSeq or featureCounts).
 ```bash
-qualimap counts -c -input counts.txt -outdir ./counts_report
+qualimap counts -c -bam input.bam -gtf annotation.gtf -outdir ./counts_report
 ```
 
-## Expert Tips
-- **Memory Management**: For human WGS data, always increase the Java heap size using `--java-mem-size=12G` or higher.
-- **Headless Environments**: If running on a server without a display, Qualimap handles the lack of X11 automatically in newer versions, but ensure `java-common` is installed.
-- **Validation**: Use the `-c` flag in `bamqc` to paint the chromosome names in the report, which helps verify if the BAM header matches the expected reference.
-- **Performance**: When analyzing specific regions (like Exome-seq), always provide the `-gff` or `-bed` file. This significantly speeds up the process by ignoring off-target reads.
+## Expert Tips and Best Practices
+
+- **Memory Management**: For high-coverage samples or large genomes (like human), always specify `--java-mem-size` (e.g., `8G` or `12G`) to prevent `OutOfMemoryError`.
+- **Duplicate Handling**: By default, Qualimap skips marked duplicates. Use the `-sd` (skip duplicates) or `-os` (analyze overlapping paired-end reads) options to fine-tune how reads are counted toward coverage.
+- **Headless Environments**: If running on a Linux server without a display, ensure the environment is set up correctly for Java's AWT (often handled by `-Djava.awt.headless=true` in the wrapper script).
+- **Region-based Analysis**: When working with Exome or Targeted sequencing, always provide a BED file. This ensures coverage statistics are calculated based on the target space rather than the whole genome, which would otherwise result in misleadingly low average coverage.
+- **Output Formats**: Qualimap generates HTML reports by default. Use `-outformat PDF` if a static document is required for documentation or sharing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| qualimap bamqc | Performs a quality control analysis on BAM files. |
+| qualimap clustering | QualiMap v.2.3 |
+| qualimap comp-counts | QualiMap v.2.3 |
+| qualimap counts | QualiMap v.2.3 |
+| qualimap multi-bamqc | Multi-sample BAM quality control analysis |
+| rnaseq | QualiMap v.2.3 |
 
 ## Reference documentation
-- [Qualimap Home and Features](./references/qualimap_conesalab_org_index.md)
-- [Bioconda Qualimap Overview](./references/anaconda_org_channels_bioconda_packages_qualimap_overview.md)
+- [Qualimap 2.3 documentation](./references/qualimap_conesalab_org_doc_html_index.html.md)
+- [Qualimap Examples and Sample Data](./references/qualimap_conesalab_org_doc_html_samples.html.md)
+- [Qualimap Overview and Version History](./references/qualimap_conesalab_org_index.md)

@@ -1,6 +1,6 @@
 ---
 name: bigsi
-description: BIGSI provides efficient storage and near-instantaneous querying of k-mers across massive genomic datasets using bit-sliced Bloom filters. Use when user asks to build genomic indices, perform bulk sequence searches, or search for genomic variants across large-scale sequencing collections.
+description: BIGSI indexes and searches k-mers across massive genomic datasets using bit-sliced Bloom filters. Use when user asks to build a genomic index, search for sequences or variants in large datasets, or insert and delete samples from an existing index.
 homepage: https://github.com/Phelimb/BIGSI
 ---
 
@@ -9,50 +9,74 @@ homepage: https://github.com/Phelimb/BIGSI
 
 ## Overview
 
-BIGSI (BItsliced Genomic Signature Index) is a specialized tool for the efficient storage and querying of k-mers across massive genomic datasets. It transforms raw sequencing data into bit-sliced Bloom filters, allowing for near-instantaneous searching of sequences across thousands of experiments. Use this skill to build genomic indices, perform high-throughput bulk searches, and manage the memory-intensive process of indexing large-scale WGS collections.
+BIGSI (BItsliced Genomic Signature Index) is a specialized tool for the scalable indexing and searching of k-mers within massive datasets of genomic sequences. It transforms large collections of WGS data into a searchable index by using bit-sliced Bloom filters, allowing for near-instantaneous queries to determine which samples contain a specific sequence or variant. This is particularly useful for researchers performing large-scale comparative genomics or tracking the presence of specific genes (like antibiotic resistance genes) across global datasets.
 
-## Installation and Setup
+## Common CLI Patterns and Usage
 
-Install BIGSI via Bioconda:
+### Environment Configuration
+BIGSI relies heavily on environment variables for configuration. Before running commands, ensure your storage backend and index parameters are defined.
 
 ```bash
-conda install -c bioconda bigsi
+# Set storage backend (berkeleydb or redis)
+export STORAGE='berkeleydb'
+export BDB_DB_FILENAME='my_genomic_index'
+
+# Define Bloom filter parameters
+export BFSIZE=1000000  # Size of the Bloom filter
+export NUM_HASHES=3    # Number of hash functions
 ```
 
-## Core CLI Patterns
-
 ### Building an Index
-Create a new index from a collection of samples. For large datasets, it is preferred to provide a list of files.
+The typical workflow involves initializing the database and then building the index from processed genomic data (usually Bloom filters or sequence files).
 
-*   **Build from file**: Use the "from file" parameter to specify a list of input Bloom filters or sequence files rather than passing them all as individual arguments.
-*   **Sample Naming**: Ensure unique sample names are used; recent versions use `sample_name` instead of `sample_id`.
+*   **Initialize the database**: Prepare the storage backend for indexing.
+*   **Build the index**: Construct the bit-sliced index from a set of input samples.
+    ```bash
+    bigsi build --samples <sample_list> --out <index_name>
+    ```
 
 ### Searching the Index
-Query the index to find which samples contain a specific sequence or k-mer.
+Search for specific k-mers or sequences across the entire indexed collection.
 
-*   **Standard Search**: Query a single sequence against the index.
-*   **Bulk Search**: Use `bulk_search` for querying multiple sequences simultaneously.
-*   **Streaming**: When performing bulk searches, enable the streaming option to process results without storing the entire result set in memory.
-*   **Variant Search**: Use `variant_search` specifically when looking for genomic variants across the indexed samples.
+*   **Sequence Search**: Query a FASTA file or a raw string against the index.
+    ```bash
+    bigsi search <sequence_string>
+    bigsi search --fasta <query.fasta>
+    ```
 
-## Expert Tips and Best Practices
+### Managing Samples
+You can update existing indices without a full rebuild.
 
-### Memory Management
-*   **RAM Requirements**: Ensure the system has at least 8 times the memory of the Bloom filter size in bytes to avoid `OverflowError` or indexing failures.
-*   **Multiprocessing**: BIGSI supports multiprocessing for building Bloom filters. However, if the number of jobs is set to 1 or less, it will default to single-threaded execution to save overhead.
-*   **BerkeleyDB Interface**: For backend operations, BIGSI utilizes the `db.DB()` interface. Ensure your environment supports BerkeleyDB if not using the default storage engines.
+*   **Insert**: Add new samples to an existing index.
+    ```bash
+    bigsi insert <sample_bloom_filter> --name <sample_name>
+    ```
+*   **Delete**: Remove a sample from the index.
+    ```bash
+    bigsi delete --name <sample_name>
+    ```
 
-### Search Optimization
-*   **Thresholding**: Adjust the search threshold (e.g., 100% match vs. partial match) to optimize for speed or sensitivity depending on the biological question.
-*   **Output Format**: Set the output format to text for easier parsing in downstream shell pipelines.
+## Expert Tips
 
-### Troubleshooting Common Issues
-*   **File Format Mismatch**: If using Docker, ensure input `.txt` files are correctly formatted and accessible within the container volume to avoid `ValueError`.
-*   **Exact Search**: Be aware that in some older versions, exact search might incorrectly return the first sample name; verify results with a known positive control.
+*   **Storage Selection**: Use `berkeleydb` for local, single-machine tasks. For distributed environments or high-concurrency web services, use `redis`.
+*   **Parameter Tuning**: The `BFSIZE` and `NUM_HASHES` must be consistent across all samples in an index. Increasing `BFSIZE` reduces the false-positive rate but increases the memory/disk footprint.
+*   **Memory Mapping**: When using BerkeleyDB, ensure your filesystem has enough IOPS, as BIGSI performs many small reads during bit-slice lookups.
+*   **Batch Processing**: When building large indices, it is more efficient to build Bloom filters for individual samples first and then use `bigsi build` to merge them into the bit-sliced format.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bigsi build | Build a BIGSI index. |
+| bigsi-v0.3.1 bloom | Creates a bloom filter from a sequence file or cortex graph. |
+| bigsi-v0.3.1 insert | Inserts a bloom filter into the graph e.g. bigsi insert ERR1010211.bloom ERR1010211 |
+| bigsi-v0.3.1 merge | (No description) |
+| bigsi-v0.3.1 search | Search for a sequence |
+| delete | Deletes a BigSI index. |
 
 ## Reference documentation
-
-- [BIGSI Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_bigsi_overview.md)
-- [BIGSI GitHub Repository](./references/github_com_Phelimb_BIGSI.md)
-- [BIGSI Commit History](./references/github_com_Phelimb_BIGSI_commits_master.md)
-- [BIGSI Known Issues](./references/github_com_Phelimb_BIGSI_issues.md)
+- [BIGSI README](./references/github_com_Phelimb_BIGSI_blob_master_README.md)
+- [Dockerfile Configuration](./references/github_com_Phelimb_BIGSI_blob_master_Dockerfile.md)
+- [Test Environment Variables](./references/github_com_Phelimb_BIGSI_blob_master_.env_test.md)

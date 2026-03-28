@@ -262,3 +262,6 @@ options:
   --verbose   Print status updates and diagnostic messages
 ```
 
+
+## Metadata
+- **Skill**: generated

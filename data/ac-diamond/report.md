@@ -490,3 +490,6 @@ View options:
   --forwardonly              only show alignments of forward strand
 ```
 
+
+## Metadata
+- **Skill**: generated

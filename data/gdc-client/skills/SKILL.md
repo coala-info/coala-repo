@@ -1,6 +1,6 @@
 ---
 name: gdc-client
-description: The gdc-client provides a command-line interface for transferring large-scale genomic data between local environments and the NCI Genomic Data Commons. Use when user asks to download files by UUID, retrieve data using a manifest, upload files to the GDC, or manage controlled-access data transfers with authentication tokens.
+description: The gdc-client is a command-line tool for downloading and uploading large-scale genomic data from the National Cancer Institute's Genomic Data Commons. Use when user asks to download files using UUIDs or manifests, resume interrupted data transfers, or upload files to the GDC.
 homepage: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
 ---
 
@@ -8,47 +8,53 @@ homepage: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
 # gdc-client
 
 ## Overview
-The `gdc-client` is a specialized command-line interface (CLI) designed for robust data transfer between local environments and the NCI Genomic Data Commons. It is the preferred tool for handling large-scale genomic files (often 200-300 GB) that are prone to failure via standard browser downloads. This skill provides the necessary syntax and operational patterns to execute downloads via manifests, retrieve specific UUIDs, and manage controlled-access data using authentication tokens.
+The `gdc-client` is the primary command-line interface for interacting with the National Cancer Institute's Genomic Data Commons. It is specifically designed to handle high-volume data transfers (often 200-300 GB per file) that would be unreliable via a standard web browser. This skill helps you navigate the tool's core functions: downloading data via UUIDs or manifests, resuming interrupted transfers, and submitting data to the GDC.
 
-## Core Commands and Usage
+## Core Commands
 
 ### Downloading Data
-The `download` command is the primary method for retrieving files.
+The `download` command is the most common use case.
 
-*   **Download by UUID**: Use for individual files.
-    ```bash
-    gdc-client download <UUID>
-    ```
-*   **Download via Manifest**: The most efficient way to download multiple files.
-    ```bash
-    gdc-client download -m manifest_file.txt
-    ```
-*   **Specify Output Directory**:
-    ```bash
-    gdc-client download -m manifest.txt -d /path/to/destination/
-    ```
+- **Download by UUID**:
+  `gdc-client download <UUID1> <UUID2>`
+- **Download using a Manifest**:
+  Recommended for bulk downloads. Download a manifest file (.txt) from the GDC Data Portal first.
+  `gdc-client download -m manifest.txt`
+- **Specify Output Directory**:
+  `gdc-client download -m manifest.txt -d /path/to/destination`
 
-### Handling Controlled Access
-For data requiring authorization (e.g., TCGA controlled-access BAMs), you must provide a token file downloaded from the GDC Data Portal.
-```bash
-gdc-client download -m manifest.txt -t gdc-user-token.txt
-```
+### Controlled Access
+To download "Controlled Access" data (e.g., germline variants, primary BAMs), you must provide an authentication token.
+
+1. Download your GDC authentication token from the GDC Data Portal.
+2. Use the `-t` flag:
+   `gdc-client download -m manifest.txt -t gdc-user-token.txt`
 
 ### Resuming Transfers
-One of the tool's primary strengths is its ability to resume. If a transfer is interrupted, simply re-run the exact same command. The client checks the local directory for existing file parts and resumes from the last successful byte.
+The tool automatically supports resuming. If a transfer is interrupted, run the exact same command again in the same directory. The client will check the existing files and resume from where it left off.
 
-### Data Submission (Upload)
-For users with submission privileges, the `upload` command is used to transfer data to the GDC.
-```bash
-gdc-client upload -m manifest.txt -t gdc-user-token.txt
-```
+### Data Submission
+For users with submission permissions:
+`gdc-client upload -t token.txt -p <project_id> <file_path>`
 
-## Expert Tips and Best Practices
-*   **Token Security**: Always keep your GDC authentication token private. Do not hardcode it into scripts that are shared publicly.
-*   **Manifest Efficiency**: When working with hundreds of files, always use the manifest method rather than individual UUID commands to take advantage of the tool's internal connection pooling.
-*   **MD5 Verification**: The `gdc-client` automatically performs MD5 checksum validation upon completion. If a file fails this check, it will be flagged; ensure you have sufficient disk space, as full disks are a common cause of checksum failures.
-*   **Parallel Downloads**: While the client handles some optimization, for extremely large cohorts, consider splitting a large manifest into smaller chunks and running multiple `gdc-client` instances if your network bandwidth and disk I/O allow.
+## Expert Tips & Best Practices
+
+- **MD5 Verification**: The client automatically performs MD5 checksum validation after a download. If a file fails, it will be marked for redownload.
+- **Connection Tuning**: If you are on a high-bandwidth network, you can increase the number of download workers (default is 8):
+  `gdc-client download -m manifest.txt -n 16`
+- **Directory Structure**: By default, `gdc-client` creates a sub-directory named after the File UUID for every file downloaded. To prevent this and download all files into a single flat directory, use the `--no-directory` flag.
+- **Retry Logic**: Use the `--retry-amount` flag if you are experiencing unstable network conditions to increase the number of times the client attempts to reconnect.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| download | Download files from the GDC |
+| gdc-client | The Genomic Data Commons Command Line Client |
+| gdc-client upload | Upload files to the GDC. |
+| settings | Manage gdc-client settings |
 
 ## Reference documentation
 - [GDC Data Transfer Tool Overview](./references/gdc_cancer_gov_access-data_gdc-data-transfer-tool.md)
-- [Bioconda gdc-client Package Info](./references/anaconda_org_channels_bioconda_packages_gdc-client_overview.md)

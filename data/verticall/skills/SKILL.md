@@ -1,6 +1,6 @@
 ---
 name: verticall
-description: Verticall reconstructs the vertical evolutionary history of bacteria by identifying and masking horizontally acquired sequences. Use when user asks to 'reconstruct vertical evolutionary history', 'identify and mask horizontally acquired sequences', 'generate a recombination-free distance matrix', or 'create a masked alignment for phylogenetic tree building'.
+description: Verticall reconstructs the vertical evolutionary history of bacteria by identifying and excluding horizontally acquired DNA sequences from genomic datasets. Use when user asks to identify vertical inheritance patterns, mask horizontal gene transfer in alignments, or generate distance matrices for large-scale bacterial phylogenetics.
 homepage: https://github.com/rrwick/Verticall
 ---
 
@@ -9,44 +9,76 @@ homepage: https://github.com/rrwick/Verticall
 
 ## Overview
 
-Verticall is a specialized tool designed to reconstruct the vertical evolutionary history of bacteria by identifying and masking horizontally acquired sequences (recombination). Unlike other tools that focus on closely related isolates, Verticall scales to massive datasets and handles significant sequence divergence. It functions by performing pairwise assembly comparisons to distinguish between vertical inheritance and horizontal exchange, providing either a recombination-free distance matrix or a masked alignment for downstream tree-building programs.
+Verticall is a specialized tool designed to reconstruct the vertical evolutionary history of bacteria by identifying and excluding horizontally acquired DNA sequences. Unlike tools like Gubbins or ClonalFrameML, Verticall scales to thousands of genomes and handles diverse datasets spanning multiple species. It operates primarily on genome assemblies, using pairwise alignments to distinguish between vertical inheritance and horizontal acquisition based on sequence divergence patterns.
 
 ## Core Workflows
 
 ### 1. Distance Tree Workflow (Diverse Datasets)
-Use this workflow for datasets with high variation, such as those spanning multiple species.
-- **Step 1: Pairwise Comparison**
-  Run `verticall pairwise` on your genome assemblies to generate TSV files containing alignment statistics.
-- **Step 2: Generate Matrix**
-  Use `verticall matrix` to process the TSV files into a distance matrix.
-- **Step 3: Build Tree**
-  Input the resulting matrix into a distance-based tree builder (e.g., RapidNJ or FastME).
+Best for datasets with significant variation or multiple species where a single reference-based alignment is impractical.
 
-### 2. Alignment Tree Workflow (Large Datasets)
-Use this workflow for thousands of genomes where a Maximum Likelihood (ML) tree is required.
-- **Step 1: Reference Comparison**
-  Compare each assembly against a single reference genome using `verticall pairwise`.
-- **Step 2: Masking**
-  Use `verticall mask` to apply the recombination filters to a SNP matrix or alignment.
-- **Step 3: Build Tree**
-  Input the masked alignment into an ML tree builder (e.g., IQ-TREE or RAxML-NG).
+1.  **Pairwise Comparison**: Run all-against-all comparisons of your assemblies.
+    ```bash
+    verticall pairwise -i assemblies_dir/ -o pairwise_results.tsv
+    ```
+2.  **Generate Matrix**: Create a distance matrix using the vertical-only genomic distances.
+    ```bash
+    verticall matrix -i pairwise_results.tsv -o distance_matrix.dist
+    ```
+3.  **Build Tree**: Use an external tool like RapidNJ or FastME to build a tree from the `.dist` file.
 
-## Command Reference and Best Practices
+### 2. Alignment Tree Workflow (Large/Closely Related Datasets)
+Best for thousands of closely related isolates where a whole-genome pseudo-alignment (e.g., from Snippy or SKA) is available.
 
-### Key Commands
-- `verticall pairwise`: The primary engine for comparing assemblies. Requires FASTA inputs.
-- `verticall matrix`: Aggregates pairwise results into a Phylip-formatted distance matrix.
-- `verticall mask`: Filters horizontal regions from an existing alignment based on pairwise results.
-- `verticall summary`: Provides a report on the amount of vertical vs. horizontal sequence identified.
-- `verticall view`: Visualizes the pairwise comparisons to help verify filtering thresholds.
+1.  **Reference Comparison**: Compare every assembly against a single reference.
+    ```bash
+    verticall pairwise -i assemblies_dir/ -r reference.fasta -o reference_comparisons.tsv
+    ```
+2.  **Mask Alignment**: Use the comparison results to "paint" and mask horizontal regions in your alignment.
+    ```bash
+    verticall mask -i reference_comparisons.tsv -a full_alignment.fasta -o masked.fasta
+    ```
+3.  **Build ML Tree**: Use IQ-TREE, RAxML-NG, or FastTree on the `masked.fasta` file.
 
-### Expert Tips
-- **Assembly Quality**: While Verticall handles fragmented assemblies, higher N50 values generally improve the sensitivity of recombination detection.
-- **Tool Selection**: If your dataset is a small group of very closely related genomes, Gubbins may provide finer resolution. Use Verticall when Gubbins fails to scale or when sequence divergence is high.
-- **Parallelization**: `verticall pairwise` is computationally intensive; utilize the `--threads` flag to speed up large-scale comparisons.
-- **Memory Management**: For very large matrices, ensure you have sufficient RAM or use the `--existing_tsv` flag to resume interrupted runs without recomputing alignments.
+## Command Reference & Best Practices
+
+### verticall pairwise
+*   **Input Requirements**: Assemblies must be in FASTA format. Sample names are derived from filenames.
+*   **Ambiguous Bases**: Verticall does not support ambiguous bases (N). Use `verticall repair` first if your assemblies contain them.
+*   **Performance**: For large datasets in the distance workflow, use `--index_only` first to build indices, then run the full comparison to allow for better parallelization.
+
+### verticall mask
+*   **--exclude_reference**: Use this flag if you do not want the reference sequence included in the final output alignment.
+*   **--exclude_invariant**: Removes constant sites, significantly speeding up downstream Maximum Likelihood tree construction for large datasets.
+
+### verticall repair
+*   Use this utility to prepare assemblies by splitting contigs at ambiguous bases, ensuring compatibility with the main Verticall pipeline.
+    ```bash
+    verticall repair -i raw_assemblies/ -o repaired_assemblies/
+    ```
+
+## Expert Tips
+*   **Assembly Quality**: While Verticall works with fragmented assemblies, higher N50 values generally improve the accuracy of recombination detection.
+*   **Gubbins vs. Verticall**: If your dataset is very small and extremely closely related, Gubbins may provide finer resolution. Use Verticall when Gubbins fails to scale or when sequence divergence is too high for traditional tools.
+*   **Interpreting TSV**: The `mean_vertical_distance` column in the pairwise TSV is the most reliable metric for vertical-only divergence, as it ignores regions identified as horizontal or unaligned.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| verticall mask | mask horizontal regions from a whole-genome pseudo-alignment |
+| verticall pairwise | pairwise analysis of assemblies |
+| verticall repair | repair assembly for use in Verticall |
+| verticall summary | summarise regions for one assembly |
+| verticall view | view plots for a single assembly pair |
+| verticall_matrix | produce a PHYLIP distance matrix |
 
 ## Reference documentation
-- [Verticall Wiki](./references/github_com_rrwick_Verticall_wiki.md)
-- [Verticall GitHub Repository](./references/github_com_rrwick_Verticall.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_verticall_overview.md)
+- [Home](./references/github_com_rrwick_Verticall_wiki.md)
+- [Quick start](./references/github_com_rrwick_Verticall_wiki_Quick-start.md)
+- [Distance tree workflow](./references/github_com_rrwick_Verticall_wiki_Distance-tree-workflow.md)
+- [Alignment tree workflow](./references/github_com_rrwick_Verticall_wiki_Alignment-tree-workflow.md)
+- [Verticall pairwise](./references/github_com_rrwick_Verticall_wiki_Verticall-pairwise.md)
+- [Verticall mask](./references/github_com_rrwick_Verticall_wiki_Verticall-mask.md)
+- [Verticall repair](./references/github_com_rrwick_Verticall_wiki_Verticall-repair.md)

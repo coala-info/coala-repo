@@ -1,6 +1,6 @@
 ---
 name: neffy-cli
-description: neffy-cli quantifies sequence diversity in multiple sequence alignments by calculating the NEFF metric and performs format conversions between common bioinformatics file types. Use when user asks to calculate sequence diversity, compute NEFF values for protein or nucleotide alignments, convert MSA formats like A3M or Stockholm, or process multimer alignments.
+description: neffy-cli calculates the effective number of sequences in a multiple sequence alignment to measure alignment diversity while accounting for redundancy. Use when user asks to calculate NEFF values, quantify MSA diversity, or convert between different multiple sequence alignment file formats.
 homepage: https://maryam-haghani.github.io/NEFFy
 ---
 
@@ -8,52 +8,55 @@ homepage: https://maryam-haghani.github.io/NEFFy
 # neffy-cli
 
 ## Overview
-The `neffy-cli` tool is a high-performance utility designed for bioinformatics researchers to quantify sequence diversity within Multiple Sequence Alignments (MSAs). It calculates the NEFF metric, which is a critical indicator of the information content and evolutionary constraints within an alignment, often used to improve the accuracy of protein structure prediction models like AlphaFold. Beyond computation, it serves as a robust converter for common MSA formats, handling complex tasks like gap filtering, non-standard residue treatment, and multimer MSA processing.
+NEFFy is a specialized bioinformatics tool used to quantify the effective number of sequences in a Multiple Sequence Alignment (MSA). By accounting for sequence similarity and redundancy, it provides a more accurate measure of alignment diversity than a simple sequence count. It supports protein, RNA, and DNA alphabets and includes a dedicated utility for converting between various MSA file formats.
 
-## NEFF Computation
-The primary command for diversity calculation is `neff`.
+## Core CLI Commands
 
-### Basic Usage
+### 1. NEFF Computation (`neff`)
+The `neff` command calculates the effective number of sequences based on similarity thresholds and normalization options.
+
+**Basic Usage:**
 ```bash
-neff --file=input.fasta --alphabet=0 --threshold=0.8
+./neff --file=input.fasta --alphabet=0 --threshold=0.8
 ```
 
-### Key Parameters
-- `--file`: Comma-separated list of MSA files. If multiple files are provided, sequences are integrated (duplicates removed) before calculation.
-- `--alphabet`: `0` for Protein (default), `1` for RNA, `2` for DNA.
-- `--threshold`: Similarity cutoff (0.0 to 1.0) to determine if sequences are "similar." Default is `0.8`.
-- `--norm`: Normalization method:
-  - `0`: Square root of sequence length (default).
-  - `1`: Sequence length.
-  - `2`: No normalization.
-- `--is_symmetric`: `true` (default) for standard similarity assessment; `false` for asymmetric weighting (useful for RaptorX-style workflows).
-- `--gap_cutoff`: Remove positions with gap frequency higher than this value (e.g., `0.7`).
-- `--residue_neff=true`: Generates column-wise NEFF values instead of a single global value.
+**Key Flags:**
+- `--file=<files>`: Comma-separated list of input MSA files. If multiple files are provided, NEFFy integrates them for a single computation.
+- `--alphabet=<0|1|2>`: Specifies the sequence type: `0` for Protein (default), `1` for RNA, `2` for DNA.
+- `--threshold=<value>`: Similarity cutoff between 0 and 1 (default is `0.8`). Sequences with similarity above this value are clustered.
+- `--norm=<0|1|2>`: Normalization method:
+    - `0`: Normalize by the square root of sequence length (default).
+    - `1`: Normalize by the sequence length.
+    - `2`: No normalization.
+- `--depth=<N>`: Limit computation to the first `N` sequences in the MSA.
+- `--gap_cutoff=<value>`: Threshold (0 to 1) to remove gappy positions (default is `1`, no removal).
+- `--pos_start` / `--pos_end`: Define a specific residue range (inclusive) for the calculation.
 
-### Expert Tips for NEFF
-- **Handling Multimers**: For complex assemblies, use `--multimer_MSA=true` combined with `--stoichiom=A2B1` and `--chain_length=100,150`. This allows the tool to correctly identify paired vs. unpaired sequences in block-diagonal MSAs.
-- **Query Gaps**: By default, `neffy-cli` omits gap positions in the query (first) sequence. Use `--omit_query_gaps=false` if you need to retain insertion columns relative to the query.
-- **Integration**: You can combine multiple databases (e.g., UniRef, BFD, MGnify) by passing them as a list: `--file=db1.sto,db2.a3m`. Use `--depth` to limit the total number of sequences processed.
+### 2. MSA Conversion (`converter`)
+The `converter` utility allows for seamless format switching between supported MSA types.
 
-## MSA File Conversion
-The `converter` command handles format transitions based on file extensions.
-
-### Basic Usage
+**Basic Usage:**
 ```bash
-converter --in_file=input.a3m --out_file=output.sto --alphabet=0
+./converter --file=input.fasta --format=fasta --out_format=stockholm
 ```
 
-### Supported Formats
-- **A2M/A3M**: Common in HH-suite; handles insertions (lowercase) and deletions.
-- **STO (Stockholm)**: Supports rich metadata and secondary structure annotations.
-- **CLUSTAL/PFAM**: Human-readable interleaved or tab-separated formats.
-- **ALN**: Simple aligned format where the first sequence is gap-free.
+## Expert Tips and Best Practices
 
-### Conversion Best Practices
-- **Validation**: Always keep `--check_validation=true` (default) to ensure sequences match the specified alphabet (Protein/RNA/DNA) during conversion.
-- **Extension-Based**: The tool automatically determines the target format from the `--out_file` extension. Ensure your output filename ends in `.fasta`, `.sto`, `.a3m`, `.a2m`, `.aln`, `.clustal`, or `.pfam`.
+- **Handling Non-Standard Letters:** Use `--non_standard_option` to control how the tool treats ambiguous residues. Setting this to `1` or `2` is recommended when working with high-noise datasets to treat non-standard characters as gaps.
+- **Query-Centric Analysis:** By default, `--omit_query_gaps=true` is active. This ensures the NEFF calculation is relative to the first sequence (the query), which is standard practice for MSA-based protein modeling.
+- **Symmetry in Similarity:** If your workflow requires strict identity matching, consider setting `--is_symmetric=false` to change how gaps are weighted in the similarity cutoff calculation.
+- **Validation:** Always use `--check_validation=true` when working with new datasets to ensure the sequences strictly adhere to the specified alphabet (Protein/RNA/DNA).
+- **Performance:** For extremely large alignments, use the `--depth` flag to perform a representative calculation on the top sequences, which often provides a sufficient estimate of diversity while saving significant compute time.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ./converter | This program converts the format of an input Multiple Sequence Alignment (MSA) file to that of an output MSA file. It supports various formats and can validate sequences against a specified alphabet. |
+| ./neff | This program computes the Number of Effective Sequences (NEFF) for a given multiple sequence alignment (MSA). NEFF is used to assess the diversity of sequences by accounting for redundancy and sequence similarity. |
 
 ## Reference documentation
-- [NEFFy Usage Guide](./references/maryam-haghani_github_io_NEFFy_usage_guide.html.md)
-- [MSA Formats Reference](./references/maryam-haghani_github_io_NEFFy_msa_formats.html.md)
-- [NEFF Metric Theory](./references/maryam-haghani_github_io_NEFFy_neff.html.md)
+- [NEFFy README](./references/github_com_Maryam-Haghani_NEFFy_blob_main_README.md)
+- [NEFFy Project Overview](./references/github_com_Maryam-Haghani_NEFFy.md)

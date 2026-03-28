@@ -1,1 +1,101 @@
-FAQ | PINTS web portal | Transcription-centric enhancer compendium PINTS web portal Home TRE calling Element matrix Analysis Analyze new dataset &raquo; FAQ Frequently asked questions TRE-bed format The TRE-BED format consists of one line per divergent transcriptional regulatory element (TRE), each containing 6 required columns of data: chrom - name of the chromosome or scaffold. Any valid seq_region_name can be used, and chromosome names can be given with or without the 'chr' prefix. chromStart - Start position of the feature in standard chromosomal coordinates (i.e. first base is 0). chromEnd - End position of the feature in standard chromosomal coordinates Name - name of the element or a placeholder like . fwdTSS - Position of the Transcription Start Site (TSS) on the forward strand revTSS - Position of the Transcription Start Site (TSS) on the reverse strand Please note: By default, our web portal assumes the input TREs are in divergent manners (have transcription activities on both the forward and reverse strands), but in certain cases, for example, sequencing depth is not high enough that your signal tracks suggest specific TREs are in the unidirectional manner (only one peak on the forward/reverse strand); in this case, you should put a -1 at the fourth or fifth column. For example, let's assume you have a TRE, whose coordinate is chr1:123456-123789, and it's only been observed to have transcription activity on the forward strand (TSS 123555), then the corresponding dTRE record should be: chr1 123456 123789 . 123555 -1 How to classfy TREs into distal and proximal? To classify TREs into distal and proximal, two files are required: Reference bed file for promoter regions (proximal regions), for example, we provide promoter (protein-coding genes) annotations based-on GENCODE v24, which can be downloaded from here . bedtools To obtain proximal TREs from the mixed dTRE file, you can use the following command: bedtools intersect -a test.dtrebed -b promoters_1kb_tss_centered.bed -u > test.proximal.dtrebed To obtain distal (also genic) TREs from the mixed dTRE file, you can use the following command: bedtools intersect -a test.dtrebed -b promoters_1kb_tss_centered.bed -v > test.distal.dtrebed Versions of reference files? Genome assembly - GRCh38 Gene annotation - GENCODE v24 Mutation - dbSNP 153 (comprehensive) Transcription Binding - JASPAR 2022 Epigenomic annotation - Candidate cis-Regulatory Element v3 Format of default annotation files The default annotations files downloaded from our catalog database are organized in bed-like format. Below are the columns that you will find in these annotation files: Chromosome name Start position End position Position of the major TSS on the forward strand. Multiple major TSSs will be contacted by @ . ( TSS1@TSS2 ) Position of the major TSS on the reverse strand. Multiple major TSSs will be contacted by @ . ( TSS1@TSS2 ) Functional characterization status. Suppose this element is validated by functional characterization experiments (CRISPR, MPRA, STARR-seq). In that case, we write each piece of evidence in this column in the format of AssayName(PubMedID) , and multiple pieces of evidence will be concatenated by @ (for example, MPRA(27259154)@CRISPR(31784727) ); otherwise, we will put NY ( N ot Y et) here. Epigenomic signal. Suppose an element is enriched for DNase-seq, H3K27ac ChIP-seq, H3K4me3 ChIP-seq, or CTCF ChIP-seq signal, we put DNase, H3K27ac, H3K4me3, and CTCF in this column respectively. If multiple epigenomic signals are enriched, we concatenate them by @ , and if none of these signals are enriched, we put Other in this column. Core promoter elements. For divergent TREs, we annotate whether they have initiator sequence, TATA-box, or downstream promoter region (DPR) in each direction (+ for forward/plus strand, - for reverse/minus strand). If no core promoter element is found in this TRE, we put Other in this column. Coordinates of core promoter elements. Formatted as pl_DPR_start-pl_DPR_end;mn_DPR_start-mn_DPR_end;pl_TATA_start-pl_TATA_end;mn_TATA_start-mn_TATA_end;pl_Inr_start-pl_Inr_end;mn_Inr_start-mn_Inr_end . If our portal cannot find any of these core promoters, the start and end coordinates will be -1 . Transcription factors that have JASPAR-predicted binding sites in this element. Different transcription factors are separated by ; . Summary of variants. How to cite PINTS web portal? If you find our portal helpful, please cite https://www.nature.com/articles/s41587-022-01211-7 in your work. Page of Have other questions? Please enable JavaScript to view the comments powered by Disqus. PINTS: P eak I dentifier for N ascent T ranscript S tarts. All data in this portal is currently mapped to Genome Assembly GRCh38. Content on this site is licensed under CC BY 4.0 . &copy; Yu Lab and Lis Lab 2019-2026. Design and implemented by Li Yao . DB ver: 2022v1 . Report a problem
+[PINTS web portal](/)
+
+* [Home](/)
+* [TRE calling](/tre_calling)
+* [Element matrix](/summary_stats)
+* Analysis
+
+  [Analyze new dataset](/new_job)
+
+  »
+* [FAQ](/faq)
+
+## Frequently asked questions
+
+---
+
+## TRE-bed format
+
+The TRE-BED format consists of one line per divergent transcriptional regulatory element (TRE), each containing 6 required columns of data:
+
+1. **chrom** - name of the chromosome or scaffold. Any valid seq\_region\_name can be used, and chromosome names can be given with or without the 'chr' prefix.
+2. **chromStart** - Start position of the feature in standard chromosomal coordinates (i.e. first base is 0).
+3. **chromEnd** - End position of the feature in standard chromosomal coordinates
+4. **Name** - name of the element or a placeholder like `.`
+5. **fwdTSS** - Position of the Transcription Start Site (TSS) on the *forward* strand
+6. **revTSS** - Position of the Transcription Start Site (TSS) on the *reverse* strand
+
+Please note: By default, our web portal assumes the input TREs are in divergent manners (have transcription activities on both the forward and reverse strands), but in certain cases, for example, sequencing depth is not high enough that your signal tracks suggest specific TREs are in the unidirectional manner (only one peak on the forward/reverse strand); in this case, you should put a `-1` at the fourth or fifth column. For example, let's assume you have a TRE, whose coordinate is chr1:123456-123789, and it's only been observed to have transcription activity on the forward strand (TSS 123555), then the corresponding dTRE record should be:
+
+```
+
+chr1	123456	123789	.	123555	-1
+```
+
+## How to classfy TREs into distal and proximal?
+
+To classify TREs into distal and proximal, two files are required:
+
+* Reference bed file for promoter regions (proximal regions), for example, we provide promoter (protein-coding genes) annotations based-on GENCODE v24, which can be downloaded from [here](//pints.yulab.org/ref/examples/promoters_1kb_tss_centered.bed.gz).
+* bedtools
+
+To obtain proximal TREs from the mixed dTRE file, you can use the following command:
+
+```
+
+bedtools intersect -a test.dtrebed -b promoters_1kb_tss_centered.bed -u > test.proximal.dtrebed
+```
+
+To obtain distal (also genic) TREs from the mixed dTRE file, you can use the following command:
+
+```
+
+bedtools intersect -a test.dtrebed -b promoters_1kb_tss_centered.bed -v > test.distal.dtrebed
+```
+
+## Versions of reference files?
+
+* **Genome assembly** - GRCh38
+* **Gene annotation** - GENCODE v24
+* **Mutation** - dbSNP 153 (comprehensive)
+* **Transcription Binding** - JASPAR 2022
+* **Epigenomic annotation** - Candidate cis-Regulatory Element v3
+
+## Format of default annotation files
+
+The default annotations files downloaded from our catalog database are organized in bed-like format. Below are the columns that you will find in these annotation files:
+
+1. Chromosome name
+2. Start position
+3. End position
+4. Position of the major TSS on the forward strand. Multiple major TSSs will be contacted by `@`. (*TSS1@TSS2*)
+5. Position of the major TSS on the reverse strand. Multiple major TSSs will be contacted by `@`. (*TSS1@TSS2*)
+6. Functional characterization status. Suppose this element is validated by functional characterization experiments (CRISPR, MPRA, STARR-seq). In that case, we write each piece of evidence in this column in the format of `AssayName(PubMedID)`, and multiple pieces of evidence will be concatenated by `@` (for example, `MPRA(27259154)@CRISPR(31784727)`); otherwise, we will put *NY* (*N*ot *Y*et) here.
+7. Epigenomic signal. Suppose an element is enriched for DNase-seq, H3K27ac ChIP-seq, H3K4me3 ChIP-seq, or CTCF ChIP-seq signal, we put DNase, H3K27ac, H3K4me3, and CTCF in this column respectively. If multiple epigenomic signals are enriched, we concatenate them by `@`, and if none of these signals are enriched, we put *Other* in this column.
+8. Core promoter elements. For divergent TREs, we annotate whether they have initiator sequence, TATA-box, or downstream promoter region (DPR) in each direction (+ for forward/plus strand, - for reverse/minus strand). If no core promoter element is found in this TRE, we put *Other* in this column.
+9. Coordinates of core promoter elements. Formatted as `pl_DPR_start-pl_DPR_end;mn_DPR_start-mn_DPR_end;pl_TATA_start-pl_TATA_end;mn_TATA_start-mn_TATA_end;pl_Inr_start-pl_Inr_end;mn_Inr_start-mn_Inr_end`. If our portal cannot find any of these core promoters, the start and end coordinates will be *-1*.
+10. Transcription factors that have JASPAR-predicted binding sites in this element. Different transcription factors are separated by `;`.
+11. Summary of variants.
+
+## How to cite PINTS web portal?
+
+If you find our portal helpful, please cite <https://www.nature.com/articles/s41587-022-01211-7> in your work.
+
+* Page
+  of
+
+#### Have other questions?
+
+Please enable JavaScript to view the [comments powered by Disqus.](https://disqus.com/?ref_noscript)
+
+---
+
+PINTS: Peak Identifier for Nascent Transcript Starts.
+
+All data in this portal is currently mapped to Genome Assembly GRCh38.
+
+Content on this site is licensed under [CC BY 4.0](//creativecommons.org/licenses/by/4.0/). © Yu Lab and Lis Lab 2019-2026.
+
+Design and implemented by [Li Yao](https://www.yaobio.com).
+
+DB ver: [2022v1](/release). [Report a problem](https://github.com/hyulab/pints/issues/new?assignees=&labels=web+portal&template=website_issue.md&title=%5BPortal+bug%5D)

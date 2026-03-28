@@ -293,3 +293,6 @@ optional arguments:
   -o output.txt  Name of output file in which joined tables are saved
 ```
 
+
+## Metadata
+- **Skill**: generated

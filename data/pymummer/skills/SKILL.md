@@ -1,6 +1,6 @@
 ---
 name: pymummer
-description: "pymummer provides a Python 3 interface for the MUMmer alignment package to automate genomic sequence alignment and parse output files into structured objects. Use when user asks to run nucmer alignments, parse coordinate or SNP files, filter genomic hits, or calculate identity between sequences."
+description: "pymummer provides a Python wrapper for the MUMmer suite to automate sequence alignment and parse results into structured objects. Use when user asks to align genomic sequences, filter delta files, detect SNPs, or parse coordinate mapping outputs."
 homepage: https://github.com/sanger-pathogens/pymummer
 ---
 
@@ -8,79 +8,67 @@ homepage: https://github.com/sanger-pathogens/pymummer
 # pymummer
 
 ## Overview
-The `pymummer` skill provides a streamlined Python 3 interface for the MUMmer alignment package. It automates the execution of command-line utilities such as `nucmer`, `delta-filter`, `show-coords`, and `show-snps`, while providing a robust API to parse the resulting output files. Instead of manually handling text-based alignment reports, this skill allows you to treat genomic hits as structured Python objects, facilitating tasks like filtering self-hits, calculating identity, and extracting variant information.
 
-## Core Workflow
-The standard procedure involves initializing a runner for the alignment, executing the process, and then using a reader to iterate through the results.
+The `pymummer` library provides a Pythonic wrapper around the MUMmer suite, specifically targeting `nucmer`, `delta-filter`, `show-coords`, and `show-snps`. It automates the execution of these command-line tools and provides structured parsers to transform their text-based outputs into iterable Python objects. This is particularly useful for bioinformatics pipelines that require sequence alignment filtering, SNP detection, or coordinate mapping without manual file handling or complex subprocess management.
 
-### Running an Alignment
-Use the `nucmer.Runner` class to execute the alignment. This wraps the `nucmer` command and subsequent processing steps.
+## Core Usage Pattern
+
+To perform an alignment and process the results, follow this standard workflow:
 
 ```python
-from pymummer import nucmer
+from pymummer import nucmer, coords_file
 
-# Initialize the runner
-# reference_file: Path to reference FASTA
-# query_file: Path to query FASTA
-# results_file: Path where the output coords/snps will be stored
-runner = nucmer.Runner("reference.fasta", "query.fasta", "output.coords", maxmatch=True)
+# 1. Initialize the runner
+# Arguments: reference, query, output_file
+runner = nucmer.Runner(ref_fasta, query_fasta, "output.coords")
 
-# Execute the alignment
+# 2. Execute the alignment
 runner.run()
-```
 
-### Parsing Results
-Once the alignment is complete, use the `coords_file.reader` to process the output.
-
-```python
-from pymummer import coords_file
-
+# 3. Parse the resulting coords file
 file_reader = coords_file.reader("output.coords")
 
-# Iterate through alignment objects
+# 4. Iterate through alignment objects
 for hit in file_reader:
-    if hit.is_self_hit():
-        continue
-    
-    # Access alignment attributes
-    print(f"Ref: {hit.ref_name} | Query: {hit.qry_name}")
-    print(f"Identity: {hit.percent_identity}%")
-    print(f"Length: {hit.hit_length_ref}")
+    if not hit.is_self_hit():
+        print(f"Ref: {hit.ref_start}-{hit.ref_end} | Query: {hit.qry_start}-{hit.qry_end}")
 ```
 
-## Tool-Specific Best Practices
+## The nucmer.Runner Class
 
-### Filtering Results
-The `nucmer.Runner` class allows for integrated filtering during the execution phase, which is more efficient than post-processing large coordinate files.
-- **`min_id`**: Set a minimum percentage identity (e.g., `95`) to ignore low-quality matches.
-- **`min_length`**: Set a minimum alignment length to filter out short, spurious hits.
-- **`maxmatch`**: Set to `True` if working with closely related sequences where you want to find all matches regardless of their uniqueness.
+The `Runner` class encapsulates several MUMmer steps into a single execution. Key parameters include:
 
-### Handling SNPs
-If your analysis requires variant calling, enable the SNP caller within the runner:
+- `min_id`: Sets the minimum identity percentage for the `delta-filter` step.
+- `min_length`: Sets the minimum alignment length for the `delta-filter` step.
+- `breaklen`: Extension threshold (nucmer default is 200).
+- `maxmatch`: If `True`, uses all anchor matches regardless of their uniqueness.
+- `show_snps`: If `True`, executes the `show-snps` command on the alignment.
+- `coords_header` / `snps_header`: Boolean flags to include or omit headers in output files (default `True`).
 
-```python
-runner = nucmer.Runner(
-    "ref.fa", 
-    "query.fa", 
-    "output.snps", 
-    show_snps=True, 
-    snps_header=True
-)
-runner.run()
-```
+## Handling Alignments
 
-### Alignment Object Utilities
-The `alignment` objects returned by the reader provide several helper methods:
-- **`hit.is_self_hit()`**: Quickly identify if the reference and query sequences are the same.
-- **`hit.reverse_query()`**: Check if the query aligned in the reverse orientation.
-- **Coordinate Translation**: Use the alignment objects to map specific positions from the query to the reference.
+The `alignment` objects produced by the `coords_file.reader` allow for easy manipulation of hit data:
 
-## Installation and Environment
-- **Conda**: `conda install bioconda::pymummer`
-- **Pip**: `pip install pymummer`
-- **Dependency Note**: Ensure `MUMmer` (specifically version 3 or 4) is installed and available in your system PATH, as `pymummer` is a wrapper and does not include the binary executables.
+- **Filtering**: Use `hit.is_self_hit()` to quickly discard matches where a sequence is aligned against itself in a multi-fasta file.
+- **Coordinate Transformation**: The library supports checking attributes of a hit and swapping reference/query orientations.
+- **SNP Analysis**: When `show_snps=True` is used in the runner, the resulting data can be used to identify variants between the reference and query.
+
+## Expert Tips
+
+- **Environment Setup**: `pymummer` requires the MUMmer binaries to be in your system PATH. If using Conda, ensure the `mummer` package is installed in the active environment.
+- **M-Series Macs**: If running on ARM64 macOS, you must use an Intel-emulated (x86_64) environment to maintain compatibility with MUMmer4 binaries from Bioconda.
+- **Memory Management**: For very large genomic comparisons, ensure the `outfile` path points to a location with sufficient disk space, as MUMmer delta and coords files can grow significantly before filtering.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| delta-filter | Reads a delta alignment file from either nucmer or promer and filters the alignments based on the command-line switches, leaving only the desired alignments which are output to stdout in the same delta format as the input. |
+| nucmer | nucmer generates nucleotide alignments between two mutli-FASTA input files. The out.delta output file lists the distance between insertions and deletions that produce maximal scoring alignments between each sequence. The show-* utilities know how to read this format. |
+| show-coords | Output is to stdout, and consists of a list of coordinates, percent identity, and other useful information regarding the alignment data contained in the .delta file used as input. |
+| show-snps | Output is to stdout, and consists of a list of SNPs (or amino acid substitutions for promer) with positions and other useful info. |
 
 ## Reference documentation
 - [pymummer GitHub Repository](./references/github_com_sanger-pathogens_pymummer.md)
-- [pymummer Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pymummer_overview.md)

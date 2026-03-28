@@ -1,0 +1,477 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fstjude-rust-labs%2Ffq%2Fblob%2Fmaster%2FCHANGELOG.md)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fstjude-rust-labs%2Ffq%2Fblob%2Fmaster%2FCHANGELOG.md)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=stjude-rust-labs%2Ffq)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[stjude-rust-labs](/stjude-rust-labs)
+/
+**[fq](/stjude-rust-labs/fq)**
+Public
+
+* [Notifications](/login?return_to=%2Fstjude-rust-labs%2Ffq) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2Fstjude-rust-labs%2Ffq)
+* [Star
+   94](/login?return_to=%2Fstjude-rust-labs%2Ffq)
+
+* [Code](/stjude-rust-labs/fq)
+* [Issues
+  4](/stjude-rust-labs/fq/issues)
+* [Pull requests
+  2](/stjude-rust-labs/fq/pulls)
+* [Actions](/stjude-rust-labs/fq/actions)
+* [Projects](/stjude-rust-labs/fq/projects)
+* [Security
+  0](/stjude-rust-labs/fq/security)
+* [Insights](/stjude-rust-labs/fq/pulse)
+
+Additional navigation options
+
+* [Code](/stjude-rust-labs/fq)
+* [Issues](/stjude-rust-labs/fq/issues)
+* [Pull requests](/stjude-rust-labs/fq/pulls)
+* [Actions](/stjude-rust-labs/fq/actions)
+* [Projects](/stjude-rust-labs/fq/projects)
+* [Security](/stjude-rust-labs/fq/security)
+* [Insights](/stjude-rust-labs/fq/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [fq](/stjude-rust-labs/fq/tree/master)
+
+/
+
+# CHANGELOG.md
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/stjude-rust-labs/fq/commits/master/CHANGELOG.md)
+
+History
+
+258 lines (152 loc) · 6.98 KB
+
+master
+
+## Breadcrumbs
+
+1. [fq](/stjude-rust-labs/fq/tree/master)
+
+/
+
+# CHANGELOG.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+258 lines (152 loc) · 6.98 KB
+
+[Raw](https://github.com/stjude-rust-labs/fq/raw/refs/heads/master/CHANGELOG.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# Changelog
+
+## Unreleased
+
+### Changed
+
+* Log messages are written to `stderr` rather than `stdout`.
+* cli: `fq lint --record-definition_separator <string>` now only accepts a
+  single ASCII character ([#51](https://github.com/stjude-rust-labs/fq/issues/51)).
+
+  This previously accepted any nonempty string and dropped the rest of the
+  characters.
+* commands/filter: Require source count to match destination count ([#52](https://github.com/stjude-rust-labs/fq/issues/52)).
+* commands/filter: Normalized names input ([#49](https://github.com/stjude-rust-labs/fq/issues/49)).
+
+  The record names to filter now follow the same normalization rules as FASTQ
+  record names, i.e., removal of the `@` prefix and description.
+* commands/filter: Require a filter condition.
+
+  Previously, both the `names` and `sequence-pattern` options were allowed to
+  be missing, which would passthrough the input. This is a nonsensical
+  use-case and can be alternatively achieved with a copy.
+* commands/lint: Re-enable names validator when duplicate name validator is
+  used for paired inputs ([#48](https://github.com/stjude-rust-labs/fq/issues/48)).
+
+  When the inputs are paired, the duplicate name validator (S007) depends on
+  the names validator (P001). If P001 is disabled, it will now get
+  re-enabled.
+* commands/lint: Support the duplicate name validator for single inputs
+  ([#47](https://github.com/stjude-rust-labs/fq/issues/47)).
+* fastq/record: Split name from definition on first separator.
+
+  This previously searched for the separator from the end of the definition,
+  which may contain part of the description if the separator appears multiple
+  times. It now searches from the beginning of the definition.
+
+  This also affects how the name is extracted in the `filter` command.
+
+### Removed
+
+* Remove `--verbose` flag.
+
+  Logging is always enabled. This flag was previously deprecated in 0.8.0.
+* commands: Remove `generate` command.
+
+  The `generate` command created completely random paired reads. The
+  descriptors tended to overlap when N was large, so while the outputs were
+  parsable, they weren't practically useful for anything.
+
+## 0.12.0 - 2024-07-08
+
+### Added
+
+* commands/lint: Add `--record-definition-separator` option ([#34](https://github.com/stjude-rust-labs/fq/issues/34)).
+
+  This allows a custom separator to be used to strip the description from a
+  record name. When unset, the default remains the same with '/' and ' '.
+
+## 0.11.0 - 2023-09-07
+
+### Changed
+
+* commands/lint: Return a nonzero exit code if an error is logged.
+
+  When the lint mode is set to `log`, the `lint` command will now exit with a
+  nonzero status if there are any validation errors.
+
+## 0.10.0 - 2023-04-04
+
+### Added
+
+* commands/filter: Add filter by sequence pattern ([#27](https://github.com/stjude-rust-labs/fq/issues/27)).
+
+  Records can be filtered by their sequence using a regular expression: `fq filter --sequence-pattern <regex> --dsts <dst> <src>`. It cannot be
+  combined with name filtering.
+
+### Changed
+
+* commands/filter: Support multiple segments ([#30](https://github.com/stjude-rust-labs/fq/issues/30)).
+
+  The `filter` command now supports multiple segments. Each source is paired
+  with a destination (i.e., the output is no longer written to stdout by
+  default), which is filtered by whether the record in the first segment is
+  matched.
+* commands/subsample: Disallow 0% and 100% as probabilities.
+
+  At these extremes, use `touch` and `cp`, respectively, instead.
+
+## 0.9.1 - 2022-02-15
+
+### Fixed
+
+* commands/subsample: Count the lines from the decompressed data if the input
+  is gzipped.
+
+  Used in the exact sampler, this previously counted "lines" from the
+  compressed input.
+* commands/subsample: Clamp the destination record count to the range of the
+  source record count.
+
+  Otherwise, this would cause the filter to never finish building.
+
+## 0.9.0 - 2022-02-10
+
+### Added
+
+* commands/subsample: Add exact sampler.
+
+  This writes an exact number of samples to the output. Set the
+  `-n/--record-count` option to use the exact sampler.
+
+### Changed
+
+* Update argument parser to clap 3.
+
+## 0.8.0 - 2021-11-12
+
+### Changed
+
+* Rename project to fq.
+
+### Added
+
+* commands/generate: Add `-s` short option for `--seed`.
+* commands: Add `subsample` command.
+
+  `subsample` outputs a proportional subset of records from single or paired
+  FASTQ files.
+
+### Deprecated
+
+* Deprecate `--verbose` flag.
+
+  Logging is now always enabled.
+
+## 0.7.1 - 2021-10-07
+
+### Fixed
+
+* main: Show global version in subcommands ([#20](https://github.com/stjude-rust-labs/fq/issues/20)).
+
+  This allows subcommands to show the global version, e.g., `fq lint --version`.
+
+## 0.7.0 - 2021-05-07
+
+### Added
+
+* `generate`: Added `--read-length` option to set the number of bases to
+  generate in each record's sequence.
+
+## 0.6.0 - 2020-12-17
+
+### Added
+
+* The FASTQ reader handles files with CRLF (Windows) newlines and no final
+  newline.
+
+## 0.5.0 - 2020-10-09
+
+### Changed
+
+* [BREAKING] `generate`: Renamed `--n-records` to `--record-count`.
+* `generate`: `--record-count` is parsed as a `u64` rather than an `i32`. The
+  argument parser never allowed negative numbers, so this change still
+  includes the entire previous input set.
+
+## 0.4.0 - 2020-06-30
+
+### Added
+
+* The `generate` command adds a `--seed <u64>` option to seed the random
+  number generator. This is useful to regenerate the same outputs.
+
+### Changed
+
+* The FASTQ generator now uses the Sanger/Illumina 1.8+ range of
+  quality scores ([0, 41]). It samples scores on a normal distribution (μ =
+  20.5, σ = 2.61).
+
+## 0.3.1 - 2019-08-14
+
+### Changed
+
+* Updated dependency `bloom` --> `bbloom` to reflect a name change in the library.
+
+## 0.3.0 - 2019-08-09
+
+### Added
+
+* New `filter` command. This accepts an allowlist of record read names to
+  keep in the output FASTQ.
+* Add `Dockerfile` to build a self-contained image for `fq`. Build with
+  `docker build --tag fqlib .`.
+* Show git commit ID and date in display version, e.g., when using
+  `--version`. This makes it easier to know the exact build of fqlib being
+  used.
+
+### Changed
+
+* [BREAKING] `generate`: Renamed `--num-blocks` to `--n-records`.
+
+## 0.2.0 - 2018-11-28
+
+### Added
+
+* For paired end reads, `fq lint` exits with unexpected EOF if the both
+  streams do not finish together.
+* Multistream gzip files can be used as inputs. Written files still use a
+  single stream.
+* `fq lint` can take one FASTQ file as input for only single read validation.
+
+### Changed
+
+* A single binary `fq` with subcommands replaces `fqgen` and `fqlint`. Update
+  usages to `fq generate` and `fq lint`, respectively.
+* Metadata from CASAVA 1.8 read names is truncated. This is handled the same
+  as interleaves.
+
+### Fixed
+
+* Fix line offset in error messages, which was previously off by 4.
+
+## 0.1.0 - 2018-06-05
+
+* Initial release
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

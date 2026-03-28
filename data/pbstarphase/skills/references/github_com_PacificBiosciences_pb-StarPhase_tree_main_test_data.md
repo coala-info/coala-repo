@@ -1,0 +1,272 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FPacificBiosciences%2Fpb-StarPhase%2Ftree%2Fmain%2Ftest_data)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FPacificBiosciences%2Fpb-StarPhase%2Ftree%2Fmain%2Ftest_data)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=PacificBiosciences%2Fpb-StarPhase)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[PacificBiosciences](/PacificBiosciences)
+/
+**[pb-StarPhase](/PacificBiosciences/pb-StarPhase)**
+Public
+
+* [Notifications](/login?return_to=%2FPacificBiosciences%2Fpb-StarPhase) You must be signed in to change notification settings
+* [Fork
+  4](/login?return_to=%2FPacificBiosciences%2Fpb-StarPhase)
+* [Star
+   20](/login?return_to=%2FPacificBiosciences%2Fpb-StarPhase)
+
+* [Code](/PacificBiosciences/pb-StarPhase)
+* [Issues
+  0](/PacificBiosciences/pb-StarPhase/issues)
+* [Pull requests
+  0](/PacificBiosciences/pb-StarPhase/pulls)
+* [Actions](/PacificBiosciences/pb-StarPhase/actions)
+* [Security
+  0](/PacificBiosciences/pb-StarPhase/security)
+* [Insights](/PacificBiosciences/pb-StarPhase/pulse)
+
+Additional navigation options
+
+* [Code](/PacificBiosciences/pb-StarPhase)
+* [Issues](/PacificBiosciences/pb-StarPhase/issues)
+* [Pull requests](/PacificBiosciences/pb-StarPhase/pulls)
+* [Actions](/PacificBiosciences/pb-StarPhase/actions)
+* [Security](/PacificBiosciences/pb-StarPhase/security)
+* [Insights](/PacificBiosciences/pb-StarPhase/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [pb-StarPhase](/PacificBiosciences/pb-StarPhase/tree/main)
+
+/
+
+# test\_data
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/PacificBiosciences/pb-StarPhase/commits/main/test_data)
+
+History
+
+main
+
+## Breadcrumbs
+
+1. [pb-StarPhase](/PacificBiosciences/pb-StarPhase/tree/main)
+
+/
+
+# test\_data
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/PacificBiosciences/pb-StarPhase/tree/main) | | |
+| [CACNA1S](/PacificBiosciences/pb-StarPhase/tree/main/test_data/CACNA1S "CACNA1S") | | [CACNA1S](/PacificBiosciences/pb-StarPhase/tree/main/test_data/CACNA1S "CACNA1S") |  |  |
+| [CYP2C8-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/CYP2C8-faux "CYP2C8-faux") | | [CYP2C8-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/CYP2C8-faux "CYP2C8-faux") |  |  |
+| [CYP2D6\_configs](/PacificBiosciences/pb-StarPhase/tree/main/test_data/CYP2D6_configs "CYP2D6_configs") | | [CYP2D6\_configs](/PacificBiosciences/pb-StarPhase/tree/main/test_data/CYP2D6_configs "CYP2D6_configs") |  |  |
+| [DPYD-sv-test](/PacificBiosciences/pb-StarPhase/tree/main/test_data/DPYD-sv-test "DPYD-sv-test") | | [DPYD-sv-test](/PacificBiosciences/pb-StarPhase/tree/main/test_data/DPYD-sv-test "DPYD-sv-test") |  |  |
+| [HLA-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/HLA-faux "HLA-faux") | | [HLA-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/HLA-faux "HLA-faux") |  |  |
+| [HLA\_configs](/PacificBiosciences/pb-StarPhase/tree/main/test_data/HLA_configs "HLA_configs") | | [HLA\_configs](/PacificBiosciences/pb-StarPhase/tree/main/test_data/HLA_configs "HLA_configs") |  |  |
+| [NAT2](/PacificBiosciences/pb-StarPhase/tree/main/test_data/NAT2 "NAT2") | | [NAT2](/PacificBiosciences/pb-StarPhase/tree/main/test_data/NAT2 "NAT2") |  |  |
+| [RNR1-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/RNR1-faux "RNR1-faux") | | [RNR1-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/RNR1-faux "RNR1-faux") |  |  |
+| [UGT1A1-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/UGT1A1-faux "UGT1A1-faux") | | [UGT1A1-faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/UGT1A1-faux "UGT1A1-faux") |  |  |
+| [refseq\_faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/refseq_faux "refseq_faux") | | [refseq\_faux](/PacificBiosciences/pb-StarPhase/tree/main/test_data/refseq_faux "refseq_faux") |  |  |
+| [README.md](/PacificBiosciences/pb-StarPhase/blob/main/test_data/README.md "README.md") | | [README.md](/PacificBiosciences/pb-StarPhase/blob/main/test_data/README.md "README.md") |  |  |
+| [empty\_gene\_list.txt](/PacificBiosciences/pb-StarPhase/blob/main/test_data/empty_gene_list.txt "empty_gene_list.txt") | | [empty\_gene\_list.txt](/PacificBiosciences/pb-StarPhase/blob/main/test_data/empty_gene_list.txt "empty_gene_list.txt") |  |  |
+| [test\_reference.fa](/PacificBiosciences/pb-StarPhase/blob/main/test_data/test_reference.fa "test_reference.fa") | | [test\_reference.fa](/PacificBiosciences/pb-StarPhase/blob/main/test_data/test_reference.fa "test_reference.fa") |  |  |
+| View all files | | |
+
+## [README.md](#readme)
+
+# Test data files
+
+Collection of input files we can test with.
+
+1. CACNA1S - Contains real database from CPIC for CACNA1S, a relatively simple gene to do tests with
+   1. `CPIC_API.json` - CPIC results just for gene *CACNA1S*; generated via [https://api.cpicpgx.org/v1/allele\_definition?genesymbol=eq.CACNA1S&select=*,%20allele\_location\_value(*,%20sequence\_location(\*))&order=name](https://api.cpicpgx.org/v1/allele_definition?genesymbol=eq.CACNA1S&select=*,%20allele_location_value(*,%20sequence_location(*))&order=name)
+2. RNR1-faux - Contains fake data simulating poly-allelic calls present in RNR1. This primarily focuses on variants like rs1556422499, which take the form of T -> [delT, delinsCn].
+3. UGT1A1-faux - Contains fake data simulating calls present in UGT1A1. This primarily focuses on testing the various allele combinations when phased data is provided including: testing same phase, testing opposite phase, testing homozygous + phased variant, and testing phased on different phase sets (PS tag). Real variants were altered to work with our small reference file and simulate the real allelic combinations from UGT1A1.
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

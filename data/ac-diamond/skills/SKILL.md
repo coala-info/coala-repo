@@ -1,6 +1,6 @@
 ---
 name: ac-diamond
-description: AC-DIAMOND is a high-performance DNA-protein alignment tool that uses SIMD parallelization to accelerate sequence searches against protein databases. Use when user asks to build reference databases, align DNA queries to protein sequences, or convert alignment results into tabular and SAM formats.
+description: AC-DIAMOND is a high-performance sequence alignment tool optimized for aligning DNA reads or contigs against protein reference databases using enhanced SIMD parallelization. Use when user asks to build a protein database, align DNA sequences to protein references, or convert DAA alignment files into tabular or SAM formats.
 homepage: https://github.com/Maihj/AC-DIAMOND
 ---
 
@@ -8,64 +8,71 @@ homepage: https://github.com/Maihj/AC-DIAMOND
 # ac-diamond
 
 ## Overview
-AC-DIAMOND is a highly optimized DNA-protein alignment tool based on DIAMOND v0.7.9. It utilizes advanced SIMD parallelization and compressed indexing to achieve speeds approximately 6-7 times faster than the original DIAMOND while maintaining similar sensitivity levels. This skill provides the necessary command-line patterns to build reference databases, execute alignments across different sensitivity modes, and format output results.
+AC-DIAMOND (Accelerated DIAMOND) is a high-performance sequence alignment tool that improves upon DIAMOND v0.7.9 through enhanced SIMD parallelization and compressed indexing. It is specifically optimized for aligning DNA reads or contigs against protein reference databases, offering a 6-7x speed increase while maintaining comparable sensitivity levels.
 
 ## Core Workflow
 
-### 1. Database Construction (makedb)
-Before alignment, you must convert a FASTA protein reference into the AC-DIAMOND binary format.
+### 1. Database Construction (`makedb`)
+Before alignment, you must create a formatted database from a protein FASTA file.
 
+**Fast Mode:**
 ```bash
-# Basic database creation
-ac-diamond makedb --in reference.fa -d ref_db
-
-# Create a database optimized for sensitive modes
-ac-diamond makedb --in reference.fa -d ref_db_sensitive --sensitive -b 4
+./ac-diamond makedb --in reference.fa -d db_name -b 4
 ```
 
-*   **--block-size (-b)**: Sequence letters in billions per block. Adjust based on available RAM (default is 4).
+**Sensitive Mode:**
+```bash
+./ac-diamond makedb --in reference.fa -d db_name --sensitive -b 4
+```
+*   `--in`: Path to protein reference database (FASTA).
+*   `-d`: Path for the output AC-DIAMOND database.
+*   `-b`: Block size in billions of sequence letters (default is 4).
 
-### 2. Sequence Alignment (align)
-Align DNA queries (FASTA/FASTQ) against the protein database.
+### 2. Sequence Alignment (`align`)
+Align DNA queries against the protein database. The primary output is a DAA (DIAMOND Alignment Archive) file.
 
 ```bash
-# Fast mode alignment
-ac-diamond align -d ref_db -q query.fa -a matches -t /tmp/directory
-
-# Sensitive mode alignment
-ac-diamond align -d ref_db_sensitive -q query.fa -a matches --sensitive -e 0.001 -z 6
+./ac-diamond align -d db_name -q query.fa -a output_prefix -e 0.001 -z 6 -t /tmp
 ```
+*   `-q`: Path to query input (FASTA/FASTQ).
+*   `-a`: Output file prefix (will append `.daa`).
+*   `-e`: Maximum e-value to keep an alignment (default 0.001).
+*   `-z`: Query sequence block size in billions of letters.
+*   `-t`: Temporary directory for storage.
+*   `--sensitive`: Use this flag if the database was built with the sensitive option.
 
-*   **-a**: Output prefix (the tool appends `.daa`).
-*   **-t**: Path to temporary directory. Using `/dev/shm` (RAM disk) is recommended for maximum speed.
-*   **-z**: Query block size in billions of letters.
-
-### 3. Result Visualization (view)
-Convert the proprietary DAA output into human-readable or standard formats.
+### 3. Result Visualization (`view`)
+Convert the binary DAA file into human-readable formats like BLAST tabular or SAM.
 
 ```bash
-# Convert to BLAST tabular format
-ac-diamond view -a matches.daa -o matches.m8 -f tab
-
-# Convert to SAM format
-ac-diamond view -a matches.daa -o matches.sam -f sam
+./ac-diamond view -a output_prefix.daa -o results.m8 -f tab
 ```
+*   `-f`: Output format (`tab` for BLAST tabular, `sam` for SAM format).
+*   `--compress`: Set to `1` to gzip the output.
 
-## Sensitivity Modes
+## Search Modes
+*   **Fast Mode**: The default setting, optimized for maximum throughput.
+*   **Sensitive-2 Mode**: Provides higher sensitivity for divergent sequences. Requires the `--sensitive` flag during both `makedb` and `align` steps.
+*   **Sensitive-1 Mode**: A hybrid pipeline that runs Fast mode first and then uses Sensitive-2 mode for the remaining unaligned queries. This is typically executed via the `scripts/sensitive1_search.sh` script.
 
-| Mode | Command Flag | Use Case |
-| :--- | :--- | :--- |
-| **Fast** | (Default) | High-speed screening of high-identity matches. |
-| **Sensitive-2** | `--sensitive` | Deep searches for distant homologs; requires index built with `--sensitive`. |
-| **Sensitive-1** | `sensitive1_search.sh` | A pipeline approach that runs Fast mode first, then re-runs unaligned queries in Sensitive-2 mode. |
+## Expert Tips & Performance
+*   **Temporary Storage**: For maximum performance, point the `--tmpdir` (`-t`) to a RAM-backed file system like `/dev/shm`.
+*   **Thread Management**: Use `-p` to specify the number of CPU threads. It defaults to the maximum available, but limiting it can be useful in shared environments.
+*   **Memory Tuning**: If you encounter memory issues, decrease the block size (`-b` for reference, `-z` for query).
+*   **Scoring**: You can override e-value filtering by using `--min-score` to set a hard bit-score threshold.
 
-## Performance Optimization Tips
 
-*   **Thread Management**: Use `-p` or `--threads` to specify CPU cores. By default, it uses all available cores.
-*   **Memory Tuning**: If the system runs out of memory, decrease the `--block-size` during `makedb` or `--query-block-size` during `align`.
-*   **I/O Bottlenecks**: Always specify a fast local disk or RAM disk for the temporary directory (`-t`) to prevent network filesystem latency from slowing down the SIMD-accelerated compute.
-*   **Scoring Parameters**: Fine-tune alignments using `--gapopen`, `--gapextend`, and `--matrix` (default is BLOSUM62).
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ac-diamond | AC-DIAMOND is a tool for aligning DNA query sequences against a protein reference database, featuring database building, alignment, and viewing capabilities. |
+| ac-diamond | AC-DIAMOND is a tool for aligning DNA query sequences against a protein reference database, building databases, and viewing alignment archives. |
+| ac-diamond | AC-DIAMOND: A tool for building databases, aligning DNA sequences against protein databases, and viewing alignment archives. |
+| align | Align DNA query sequences against a protein reference database |
+| makedb | Build AC-DIAMOND database from a FASTA file |
+| view | View AC-DIAMOND alignment archive (DAA) formatted file |
 
 ## Reference documentation
-- [AC-DIAMOND GitHub Repository](./references/github_com_Maihj_AC-DIAMOND.md)
-- [Bioconda ac-diamond Package](./references/anaconda_org_channels_bioconda_packages_ac-diamond_overview.md)
+- [AC-DIAMOND README](./references/github_com_Maihj_AC-DIAMOND_blob_master_README.rst.md)

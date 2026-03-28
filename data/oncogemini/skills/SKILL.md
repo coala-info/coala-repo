@@ -1,6 +1,6 @@
 ---
 name: oncogemini
-description: OncoGEMINI is a specialized framework for exploring and filtering tumor variants by integrating genomic annotations with allele frequency signatures across longitudinal samples. Use when user asks to identify variants driving tumor evolution, detect clonal bottlenecks, find loss of heterozygosity, or query cancer genomics databases.
+description: Oncogemini is a specialized framework for analyzing tumor-normal pairs and longitudinal cancer genomics data using a SQLite database. Use when user asks to query somatic variants, identify truncal mutations, perform bottleneck analysis for clonal expansion, or detect loss of heterozygosity.
 homepage: https://github.com/fakedrtom/oncogemini
 ---
 
@@ -8,77 +8,75 @@ homepage: https://github.com/fakedrtom/oncogemini
 # oncogemini
 
 ## Overview
+OncoGEMINI is a specialized framework designed for cancer genomics. It extends the capabilities of the GEMINI system to handle the unique requirements of tumor-normal pairs and longitudinal sampling. By utilizing a SQLite database generated from annotated VCF files, it allows researchers to execute sophisticated SQL-based queries and use built-in tools to detect evolutionary patterns in tumor progression, such as variants that increase in frequency over time or those unique to specific metastatic sites.
 
-OncoGEMINI is a specialized adaptation of the GEMINI framework designed for cancer genomics. It enables researchers to explore and filter tumor variants by integrating genomic annotations with allele frequency signatures across multiple samples from the same individual. The tool is optimized for longitudinal studies, allowing for the identification of variants that drive tumor evolution or represent specific selective pressures like clonal bottlenecks.
+## Database Preparation
+Before using OncoGEMINI tools, the input VCF must be properly processed and converted into a database format.
 
-## VCF Preparation and Database Creation
+1.  **Normalization**: Decompose multi-allelic sites and normalize variants using `vt`.
+2.  **Annotation**: Annotate the VCF with functional impact (VEP/SnpEff) and cancer-specific metadata (using `vcfanno`).
+3.  **Manifest Creation**: Create a sample manifest file. Unlike standard PED files, this must include:
+    *   `patient_id`: To group samples from the same individual.
+    *   `time`: Integer representing the sampling order (0 for normal/baseline, >0 for longitudinal tumor samples).
+    *   `purity`: (Optional) Estimated tumor content.
+4.  **Loading**: Use `vcf2db.py` to create the database:
+    ```bash
+    vcf2db.py annotated.vcf.gz sample.manifest output.db
+    ```
 
-Before using OncoGEMINI, VCF files must be properly formatted and converted into a GEMINI-compatible SQLite database.
+## Common CLI Patterns
 
-### 1. Normalization and Decomposition
-Multi-allelic sites must be decomposed and normalized using `vt`.
+### General Querying
+Use the `query` tool for flexible SQL-based filtering of the `variants` table.
 ```bash
-# Decompose and normalize a VCF
-zless input.vcf.gz \
-  | sed 's/ID=AD,Number=./ID=AD,Number=R/' \
-  | vt decompose -s - \
-  | vt normalize -r reference.fasta - \
-  | bgzip -c > normalized.vcf.gz
-
-tabix -p vcf normalized.vcf.gz
+oncogemini query -q "SELECT chrom, start, end, ref, alt, gene FROM variants WHERE impact_severity == 'HIGH' AND is_somatic == 1" database.db
 ```
 
-### 2. Annotation
-Annotate the VCF with functional information (SnpEff or VEP) and additional cancer-relevant data using `vcfanno`.
-```bash
-vcfanno config.toml normalized.vcf.gz > annotated.vcf
-```
-
-### 3. Sample Manifest Format
-Create a tab-delimited manifest file. The `time` column is critical: `0` represents normal/baseline, and `>0` represents subsequent tumor sampling points.
-| family_id | name | paternal_id | maternal_id | sex | phenotype | patient_id | time | purity |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Normal | 0 | 0 | 1 | 1 | PatientA | 0 | 0 |
-| 1 | Tumor_T1 | 0 | 0 | 1 | 2 | PatientA | 1 | 0.3 |
-| 1 | Tumor_T2 | 0 | 0 | 1 | 2 | PatientA | 2 | 0.6 |
-
-### 4. Building the Database
-Use `vcf2db.py` to generate the searchable database.
-```bash
-vcf2db.py annotated.vcf.gz sample.manifest study.db
-```
-
-## Analysis Commands
-
-### General Queries
-Use the `query` tool for SQL-based filtering of variants.
-```bash
-# Find high-impact variants on a specific chromosome
-oncogemini query -q "select chrom, start, end, ref, alt, gene from variants where chrom == '13' and impact_severity == 'HIGH'" study.db
-```
-
-### Identifying Clonal Bottlenecks
-The `bottleneck` tool identifies variants where allele frequencies increase across sampling timepoints, suggesting clonal expansion.
-*   **--minSlope**: Minimum AF increase rate (default 0.05).
-*   **--minR**: Minimum correlation coefficient (default 0.5).
-*   **--maxNorm**: Maximum AF allowed in the normal sample (default 0).
+### Bottleneck Analysis
+Identify variants whose allele frequencies (AF) increase across sequential timepoints, suggesting clonal expansion or selection.
+*   **Default requirements**: Positive slope (>0.05) and high R correlation (>0.5).
+*   **Normal sample**: Automatically filters for variants with 0 AF in the normal sample (time=0).
 
 ```bash
-# Find variants with a steep increase in AF across timepoints
-oncogemini bottleneck --minSlope 0.4 --minR 0.8 study.db
+oncogemini bottleneck --minSlope 0.1 --minR 0.8 --endDiff 0.2 database.db
 ```
 
-### Loss of Heterozygosity (LOH)
-The `loh` tool identifies variants that are heterozygous in the normal sample but become homozygous in tumor samples.
-```bash
-oncogemini loh study.db
-```
+### Somatic Analysis Tools
+OncoGEMINI includes several specialized tools for tumor evolution:
+*   **truncal**: Identifies "founder" mutations present in all tumor samples of a patient.
+*   **unique**: Finds variants present in only one specific sample or timepoint.
+*   **loh**: Detects potential Loss of Heterozygosity events based on allele frequency shifts.
+*   **annotate**: Adds new column metadata to an existing OncoGEMINI database.
 
 ## Best Practices
-*   **Annotation Depth**: OncoGEMINI's power depends on the annotations present in the VCF. Ensure you include CADD scores, ClinVar, and population frequencies (ExAC/gnomAD) during the `vcfanno` step.
-*   **Purity Adjustment**: If tumor purity is known, include it in the manifest. Some tools can use this to better estimate expected allele frequencies.
-*   **Normal Samples**: Always include a normal sample (time=0) when possible to allow the tools to filter out germline variants and accurately detect LOH.
+*   **Decomposition is Mandatory**: Always run `vt decompose` before database loading; failing to do so will result in multi-allelic variants being incorrectly parsed.
+*   **Timepoint Integrity**: Ensure the `time` column in your manifest accurately reflects the biological sequence of samples to make `bottleneck` results meaningful.
+*   **SQL Optimization**: When using `query`, select only the columns you need (e.g., `chrom, start, end`) rather than `SELECT *` to improve performance on large clinical datasets.
+*   **Normal Samples**: Always include a germline/normal sample with `time 0` in your manifest if you want the tools to automatically filter out germline variation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| db_info | Show information about a specific database. |
+| oncogemini annotate | Annotate variants with information from a BED file. |
+| oncogemini bottleneck | Analyze bottleneck in cancer evolution |
+| oncogemini dump | Dump data from the oncogemini database. |
+| oncogemini fusions | Query the database for fusions. |
+| oncogemini loh | Filter and query LOH variants from a database. |
+| oncogemini query | Query the oncogemini database. |
+| oncogemini region | Query oncogemini database for regions or genes. |
+| oncogemini set_somatic | Set somatic status for variants in a database. |
+| oncogemini stats | Report statistics from the database. |
+| oncogemini truncal | Query the database for truncal variants. |
+| oncogemini update | Update oncogemini and its dependencies. |
+| oncogemini windower | Windowing tool for oncogemini |
+| oncogemini_amend | Amend a database with new sample information. |
+| oncogemini_roh | Finds regions of homozygosity (ROH) in a database. |
+| oncogemini_unique | Identify unique variants in a database. |
 
 ## Reference documentation
-- [OncoGEMINI GitHub Repository](./references/github_com_fakedrtom_oncogemini.md)
-- [Bioconda OncoGEMINI Overview](./references/anaconda_org_channels_bioconda_packages_oncogemini_overview.md)
+- [OncoGEMINI README](./references/github_com_fakedrtom_oncogemini_blob_master_README.md)
+- [Master Test Script (Tool List)](./references/github_com_fakedrtom_oncogemini_blob_master_master-test.sh.md)

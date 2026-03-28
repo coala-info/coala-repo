@@ -1,1 +1,411 @@
-Commits · quantumlib/OpenFermion · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} quantumlib / OpenFermion Public Notifications You must be signed in to change notification settings Fork 411 Star 1.7k Code Issues 44 Pull requests 21 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights Commits Branch selector main User selector All users All time Commit History Commits on Feb 7, 2026 Bump actions/checkout from 6.0.0 to 6.0.1 (#1184) Show description for 31c3db5 dependabot[bot] authored 31c3db5 Copy full SHA for 31c3db5 Bump actions/setup-python from 6.0.0 to 6.1.0 (#1181) Show description for f886fed dependabot[bot] and mhucka authored f886fed Copy full SHA for f886fed Remove no-longer-necessary weekly.yaml workflow (#1197) Show description for da609bd mhucka authored da609bd Copy full SHA for da609bd Remove OSV scanner because it turns out to be redundant (#1195) Show description for d46565d mhucka authored d46565d Copy full SHA for d46565d Update scorecard workflow (#1196) Show description for ac1c91c mhucka authored ac1c91c Copy full SHA for ac1c91c Commits on Nov 25, 2025 Update versions of GitHub Actions used in workflows (#1175) mhucka authored fc1cc5f Copy full SHA for fc1cc5f Commits on Nov 17, 2025 Bump google/osv-scanner-action from 2.2.3 to 2.2.4 (#1169) Show description for fccdaec dependabot[bot] authored fccdaec Copy full SHA for fccdaec Bump actions/checkout from 5.0.0 to 5.0.1 (#1172) Show description for e226059 dependabot[bot] authored e226059 Copy full SHA for e226059 Bump github/codeql-action from 4.31.0 to 4.31.3 (#1173) Show description for 5d1ed15 dependabot[bot] authored 5d1ed15 Copy full SHA for 5d1ed15 docs: update return type of get_molecular_hamiltonian (#1166) Show description for fe69173 BapisteB and mhucka authored fe69173 Copy full SHA for fe69173 Commits on Oct 28, 2025 Bump actions/upload-artifact from 4.6.2 to 5.0.0 (#1168) Show description for b4fbfca dependabot[bot] authored b4fbfca Copy full SHA for b4fbfca Bump github/codeql-action from 4.30.8 to 4.31.0 (#1167) Show description for d95eca7 dependabot[bot] authored d95eca7 Copy full SHA for d95eca7 Commits on Oct 14, 2025 Fix #1137 and #908: replace README.rst with Markdown version &amp; update content (#1143) Show description for c5c873c mhucka authored c5c873c Copy full SHA for c5c873c Bump github/codeql-action from 3.30.6 to 4.30.8 (#1159) Show description for cd3dcf6 dependabot[bot] authored cd3dcf6 Copy full SHA for cd3dcf6 Commits on Oct 9, 2025 Change references to &quot;master&quot; to be to &quot;main&quot; (#1151) Show description for 4e0ec18 mhucka authored 4e0ec18 Copy full SHA for 4e0ec18 Commits on Oct 2, 2025 Bump google/osv-scanner-action from 2.2.2 to 2.2.3 (#1152) Show description for 9a508c0 dependabot[bot] and mhucka authored 9a508c0 Copy full SHA for 9a508c0 Bump ossf/scorecard-action from 2.4.2 to 2.4.3 (#1154) Show description for 79c6f01 dependabot[bot] authored 79c6f01 Copy full SHA for 79c6f01 Bump github/codeql-action from 3.30.5 to 3.30.6 (#1153) Show description for 3dada18 dependabot[bot] authored 3dada18 Copy full SHA for 3dada18 Avoid early exit in check/shellcheck due to spurious read failure (#1150) Show description for 69be3a2 pavoljuhas authored 69be3a2 Copy full SHA for 69be3a2 Bump github/codeql-action from 3.30.3 to 3.30.5 (#1148) Show description for 00419ab dependabot[bot] authored 00419ab Copy full SHA for 00419ab Bump zgosalvez/github-actions-ensure-sha-pinned-actions from 3.0.25 to 4.0.0 (#1149) Show description for 3dcd0f5 dependabot[bot] authored 3dcd0f5 Copy full SHA for 3dcd0f5 Commits on Sep 26, 2025 check/shellcheck - exit if it cannot reliably change to the repo_dir (#1147) Show description for 14004b3 pavoljuhas authored 14004b3 Copy full SHA for 14004b3 Add check/shellcheck (#1144) Show description for efb4202 mhucka authored efb4202 Copy full SHA for efb4202 Add check/pylint-changed-files (#1145) Show description for f1537d2 mhucka authored f1537d2 Copy full SHA for f1537d2 Tell actionlint that image ubuntu-24.04-arm is valid (#1136) Show description for 898ae6c mhucka authored 898ae6c Copy full SHA for 898ae6c Fix #1120: change unsafe regex in symbolic_operator.py (#1140) Show description for 205c5d2 mhucka authored 205c5d2 Copy full SHA for 205c5d2 Update hadolint configuration (#1142) Show description for ba5d0b8 mhucka authored ba5d0b8 Copy full SHA for ba5d0b8 Commits on Sep 23, 2025 Fix #764: wrong SymbolicOperator.isclose() result (#1114) Show description for 9f3a2ee mhucka authored 9f3a2ee Copy full SHA for 9f3a2ee Commits on Sep 19, 2025 Make CI run on any changes to tools, check scripts, and all workflow files (#1122) Show description for 783c3f8 mhucka authored 783c3f8 Copy full SHA for 783c3f8 Bump github/codeql-action from 3.30.0 to 3.30.3 (#1127) Show description for 3d8e3ea dependabot[bot] and mhucka authored 3d8e3ea Copy full SHA for 3d8e3ea Fix #1118: avoid using &quot;-P&quot; with grep (#1121) Show description for dbd13ff mhucka authored dbd13ff Copy full SHA for dbd13ff Bump actions/setup-python from 5.6.0 to 6.0.0 (#1126) Show description for 3869507 dependabot[bot] and mhucka authored 3869507 Copy full SHA for 3869507 Commits on Sep 18, 2025 Fix #925: inconsistent return in df_integrals.py::double_factorize (#1111) Show description for 4b3c4f6 mhucka and google-labs-jules[bot] authored 4b3c4f6 Copy full SHA for 4b3c4f6 Commits on Sep 2, 2025 Bump google/osv-scanner-action from 2.1.0 to 2.2.2 (#1123) Show description for cff68e6 dependabot[bot] authored cff68e6 Copy full SHA for cff68e6 Bump github/codeql-action from 3.29.7 to 3.30.0 (#1124) Show description for 761c7c4 dependabot[bot] authored 761c7c4 Copy full SHA for 761c7c4 Pagination Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fquantumlib%2FOpenFermion%2Fcommits%2Fmain%2F)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fquantumlib%2FOpenFermion%2Fcommits%2Fmain%2F)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fcommits%2Fshow&source=header-repo&source_repo=quantumlib%2FOpenFermion)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[quantumlib](/quantumlib)
+/
+**[OpenFermion](/quantumlib/OpenFermion)**
+Public
+
+* [Notifications](/login?return_to=%2Fquantumlib%2FOpenFermion) You must be signed in to change notification settings
+* [Fork
+  412](/login?return_to=%2Fquantumlib%2FOpenFermion)
+* [Star
+   1.7k](/login?return_to=%2Fquantumlib%2FOpenFermion)
+
+* [Code](/quantumlib/OpenFermion)
+* [Issues
+  39](/quantumlib/OpenFermion/issues)
+* [Pull requests
+  8](/quantumlib/OpenFermion/pulls)
+* [Actions](/quantumlib/OpenFermion/actions)
+* [Security
+  0](/quantumlib/OpenFermion/security)
+* [Insights](/quantumlib/OpenFermion/pulse)
+
+Additional navigation options
+
+* [Code](/quantumlib/OpenFermion)
+* [Issues](/quantumlib/OpenFermion/issues)
+* [Pull requests](/quantumlib/OpenFermion/pulls)
+* [Actions](/quantumlib/OpenFermion/actions)
+* [Security](/quantumlib/OpenFermion/security)
+* [Insights](/quantumlib/OpenFermion/pulse)
+
+# Commits
+
+## Branch selector
+
+main
+
+## User selector
+
+All users
+
+All time
+
+## Commit History
+
+### Commits on Mar 26, 2026
+
+* #### [Add a `.geminiignore` file (#1224)](/quantumlib/OpenFermion/commit/da71212d4d3ad3604a3d7da6d6d78a34e59bc8b0)
+
+  Show description for da71212
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [da71212](/quantumlib/OpenFermion/commit/da71212d4d3ad3604a3d7da6d6d78a34e59bc8b0)
+
+  Copy full SHA for da71212
+* #### [Fix #481: make tests of Pubchem more robust (#1219)](/quantumlib/OpenFermion/commit/e5ea36b8f36623ea16079f6ec877324479645090)
+
+  Show description for e5ea36b
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [e5ea36b](/quantumlib/OpenFermion/commit/e5ea36b8f36623ea16079f6ec877324479645090)
+
+  Copy full SHA for e5ea36b
+* #### [Skip running slow tests in CI (#1238)](/quantumlib/OpenFermion/commit/f2d94b08c2cb7facbd3e0f61dd43affd5644a0de)
+
+  Show description for f2d94b0
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [f2d94b0](/quantumlib/OpenFermion/commit/f2d94b08c2cb7facbd3e0f61dd43affd5644a0de)
+
+  Copy full SHA for f2d94b0
+
+### Commits on Mar 25, 2026
+
+* #### [Bump zgosalvez/github-actions-ensure-sha-pinned-actions from 5.0.2 to 5.0.3 (#1234)](/quantumlib/OpenFermion/commit/9f38347917319feb27bd0a64017c8b5c02681c32)
+
+  Show description for 9f38347
+
+  [![dependabot[bot]](https://avatars.githubusercontent.com/in/29110?v=4&size=32)](/apps/dependabot)[dependabot[bot]](/quantumlib/OpenFermion/commits?author=dependabot%5Bbot%5D)
+
+  authored
+
+  [9f38347](/quantumlib/OpenFermion/commit/9f38347917319feb27bd0a64017c8b5c02681c32)
+
+  Copy full SHA for 9f38347
+* #### [Bump github/codeql-action from 4.33.0 to 4.34.1 (#1233)](/quantumlib/OpenFermion/commit/eb8dcdf6a949a48881290c02357e690529a82bce)
+
+  Show description for eb8dcdf
+
+  [![dependabot[bot]](https://avatars.githubusercontent.com/in/29110?v=4&size=32)](/apps/dependabot)[dependabot[bot]](/quantumlib/OpenFermion/commits?author=dependabot%5Bbot%5D)
+
+  authored
+
+  [eb8dcdf](/quantumlib/OpenFermion/commit/eb8dcdf6a949a48881290c02357e690529a82bce)
+
+  Copy full SHA for eb8dcdf
+* #### [Remove OSV scanner config file (#1223)](/quantumlib/OpenFermion/commit/89862e93d2f1526cc603225e2bb0b064ad48c02f)
+
+  Show description for 89862e9
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [89862e9](/quantumlib/OpenFermion/commit/89862e93d2f1526cc603225e2bb0b064ad48c02f)
+
+  Copy full SHA for 89862e9
+
+### Commits on Mar 18, 2026
+
+* #### [Bump github/codeql-action from 4.32.6 to 4.33.0 (#1227)](/quantumlib/OpenFermion/commit/e61078c44235c80590af71a68144539147790820)
+
+  Show description for e61078c
+
+  ![dependabot[bot]](https://avatars.githubusercontent.com/in/29110?v=4&size=32)![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)
+
+  [dependabot[bot]](/quantumlib/OpenFermion/commits?author=dependabot%5Bbot%5D)
+
+  and
+
+  [mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [e61078c](/quantumlib/OpenFermion/commit/e61078c44235c80590af71a68144539147790820)
+
+  Copy full SHA for e61078c
+* #### [More documentation formatting fixes (#1231)](/quantumlib/OpenFermion/commit/e3e51ae24fbdc5edf5882fd357d6fed6f29a3fae)
+
+  Show description for e3e51ae
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [e3e51ae](/quantumlib/OpenFermion/commit/e3e51ae24fbdc5edf5882fd357d6fed6f29a3fae)
+
+  Copy full SHA for e3e51ae
+
+### Commits on Mar 17, 2026
+
+* #### [Try to avoid equation constructs that look like Jinja templates (#1230)](/quantumlib/OpenFermion/commit/b62a84386eee3edd9e1d6d7769dba0e3deddd672)
+
+  Show description for b62a843
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [b62a843](/quantumlib/OpenFermion/commit/b62a84386eee3edd9e1d6d7769dba0e3deddd672)
+
+  Copy full SHA for b62a843
+* #### [Bump dorny/paths-filter from 3.0.2 to 4.0.1 (#1226)](/quantumlib/OpenFermion/commit/5515d829b9bdb1388bec752aaa2a301ff9d95ae0)
+
+  Show description for 5515d82
+
+  [![dependabot[bot]](https://avatars.githubusercontent.com/in/29110?v=4&size=32)](/apps/dependabot)[dependabot[bot]](/quantumlib/OpenFermion/commits?author=dependabot%5Bbot%5D)
+
+  authored
+
+  [5515d82](/quantumlib/OpenFermion/commit/5515d829b9bdb1388bec752aaa2a301ff9d95ae0)
+
+  Copy full SHA for 5515d82
+* #### [Bump zgosalvez/github-actions-ensure-sha-pinned-actions from 5.0.1 to 5.0.2 (#1228)](/quantumlib/OpenFermion/commit/2e8f54d9f596fa231f1e3cf2c9fcea4baf3c932f)
+
+  Show description for 2e8f54d
+
+  ![dependabot[bot]](https://avatars.githubusercontent.com/in/29110?v=4&size=32)![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)
+
+  [dependabot[bot]](/quantumlib/OpenFermion/commits?author=dependabot%5Bbot%5D)
+
+  and
+
+  [mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [2e8f54d](/quantumlib/OpenFermion/commit/2e8f54d9f596fa231f1e3cf2c9fcea4baf3c932f)
+
+  Copy full SHA for 2e8f54d
+
+### Commits on Mar 16, 2026
+
+* #### [Add hash for #1216 to `.git-blame-ignore-revs` and add info to `CONTRIBUTING.md` (#1225)](/quantumlib/OpenFermion/commit/ffeae0fb28208130836fbb6904751c5679181b41)
+
+  Show description for ffeae0f
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [ffeae0f](/quantumlib/OpenFermion/commit/ffeae0fb28208130836fbb6904751c5679181b41)
+
+  Copy full SHA for ffeae0f
+
+### Commits on Mar 14, 2026
+
+* #### [Add numbers.Number to COEFFICIENT\_TYPES in SymbolicOperator (#1171)](/quantumlib/OpenFermion/commit/55d3172df1513f4c627fb748797c761ccf8113e3)
+
+  Show description for 55d3172
+
+  [![kottmanj](https://avatars.githubusercontent.com/u/7647650?v=4&size=32)](/kottmanj)[kottmanj](/quantumlib/OpenFermion/commits?author=kottmanj)
+
+  authored
+
+  [55d3172](/quantumlib/OpenFermion/commit/55d3172df1513f4c627fb748797c761ccf8113e3)
+
+  Copy full SHA for 55d3172
+
+### Commits on Mar 13, 2026
+
+* #### [Add settings file for Gemini Code Assist (#1222)](/quantumlib/OpenFermion/commit/5b92653be039e4365b7fef42bb3517880c8f6ea9)
+
+  Show description for 5b92653
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [5b92653](/quantumlib/OpenFermion/commit/5b92653be039e4365b7fef42bb3517880c8f6ea9)
+
+  Copy full SHA for 5b92653
+* #### [Add check/all (#1146)](/quantumlib/OpenFermion/commit/4d66bf397e4c0a98228d08e28b15a2198dd012e6)
+
+  Show description for 4d66bf3
+
+  ![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)![pavoljuhas](https://avatars.githubusercontent.com/u/1915760?v=4&size=32)
+
+  [mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  and
+
+  [pavoljuhas](/quantumlib/OpenFermion/commits?author=pavoljuhas)
+
+  authored
+
+  [4d66bf3](/quantumlib/OpenFermion/commit/4d66bf397e4c0a98228d08e28b15a2198dd012e6)
+
+  Copy full SHA for 4d66bf3
+* #### [Run `check/format-incremental --all --apply` (no code changes) (#1216)](/quantumlib/OpenFermion/commit/7f262ff9cc9eeb9b1b2d6a26c4acbfb7ab17063e)
+
+  Show description for 7f262ff
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [7f262ff](/quantumlib/OpenFermion/commit/7f262ff9cc9eeb9b1b2d6a26c4acbfb7ab17063e)
+
+  Copy full SHA for 7f262ff
+* #### [Use sys.monitoring for small speedup of tests in Python 3.12+ (#1220)](/quantumlib/OpenFermion/commit/f0e30b90cace447fb70ab940c9d45f7c5ef757d1)
+
+  Show description for f0e30b9
+
+  [![mhucka](https://avatars.githubusercontent.com/u/1450019?v=4&size=32)](/mhucka)[mhucka](/quantumlib/OpenFermion/commits?author=mhucka)
+
+  authored
+
+  [f0e30b9](/quantumlib/OpenFermion/commit/f0e30b90cace447fb70ab940c9d4

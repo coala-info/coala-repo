@@ -1,6 +1,6 @@
 ---
 name: fsnviz
-description: "fsnviz automates the creation of Circos plots to visualize gene fusion events from genomic data. Use when user asks to visualize gene fusions, generate Circos plots for fusion-calling results, or map genomic rearrangements from STAR-Fusion or FusionCatcher output."
+description: FsnViz is a command-line utility that generates Circos plots to visualize RNA-seq gene fusion events from tabular data. Use when user asks to create genomic maps of gene fusions, visualize STAR-Fusion or FusionCatcher results, or generate SVG plots of chromosomal translocations.
 homepage: https://github.com/bow/fsnviz
 ---
 
@@ -8,40 +8,62 @@ homepage: https://github.com/bow/fsnviz
 # fsnviz
 
 ## Overview
-`fsnviz` is a Python-based utility that automates the creation of Circos plots to represent gene fusion events. It acts as a bridge between fusion-calling software and the Circos visualization engine, parsing complex hit tables and generating high-quality SVG images that map fusions across the genome. This skill should be used when you need to provide a visual summary of genomic rearrangements or validate fusion candidates in a spatial context.
 
-## Installation and Requirements
-Before running `fsnviz`, ensure the environment has the necessary dependencies:
-- **Circos**: Must be installed separately and available in the system PATH.
-- **Python**: Compatible with versions 3.5 and 3.6.
-- **Installation**: Use `conda install -c bioconda fsnviz` or `pip install fsnviz`.
+FsnViz is a Python-based command-line utility that automates the creation of Circos plots to represent RNA-seq gene fusion events. It acts as a wrapper that parses the output tables from popular fusion-finding algorithms and generates the necessary configuration files to produce SVG visualizations. This skill is essential when you need to move from raw tabular fusion data to a publication-ready genomic map showing translocations and breakpoints across the human genome.
 
 ## Command Line Usage
-The tool uses a subcommand structure based on the input source.
 
-### Basic Execution
-To generate a plot from a STAR-Fusion or FusionCatcher result file:
+The basic syntax for fsnviz requires specifying the source tool and the path to the result file:
 
 ```bash
-# For STAR-Fusion hits table
-fsnviz star-fusion path/to/star-fusion.fusion_predictions.abridged.tsv
-
-# For FusionCatcher final table
-fsnviz fusioncatcher path/to/final-list_candidate-fusion-genes.txt
+fsnviz <tool-name> <path-to-result-file>
 ```
 
-### Common Configuration Flags
-- `--output-dir <dir>`: Specifies where to save the generated files. The directory will be created if it does not exist.
-- `--base-name <name>`: Sets the prefix for output files (default is `fsnviz`).
-- `--karyotype <type>`: Defines the reference genome. Currently supports `human.hg19` (default) and `human.hg38`.
-- `--circos-conf <file>`: Allows the use of a custom Circos configuration file to override default styling.
+### Supported Input Formats
+
+- **STAR-Fusion**: Use the `star-fusion` command for the `star-fusion.fusion_predictions.tsv` or hits table.
+- **FusionCatcher**: Use the `fusioncatcher` command for the `final-list_candidate-fusion-genes.txt` file.
+
+### Common CLI Patterns
+
+**Basic Visualization:**
+Generates `fsnviz.svg` in the current directory using hg19 coordinates.
+```bash
+fsnviz star-fusion path/to/star-fusion.predictions.tsv
+```
+
+**Specifying Genome Build and Output:**
+Use the `--karyotype` flag to match your alignment reference (hg19 or hg38).
+```bash
+fsnviz fusioncatcher path/to/fusioncatcher_results.txt \
+    --karyotype human.hg38 \
+    --output-dir ./visualizations \
+    --base-name patient_sample_01
+```
+
+**Customizing Plot Appearance:**
+If you need to override the default templates (e.g., for specific colors or track layouts), provide a custom Circos configuration.
+```bash
+fsnviz star-fusion predictions.tsv --circos-conf custom_circos.conf
+```
 
 ## Expert Tips and Best Practices
-- **Karyotype Matching**: Always ensure the `--karyotype` flag matches the reference genome used during the alignment/fusion-calling step (e.g., use `human.hg38` if STAR-Fusion was run against GRCh38).
-- **Output Management**: By default, `fsnviz` writes to the current directory. Use `--output-dir` to prevent cluttering your workspace, as Circos generates several intermediate configuration files during the plotting process.
-- **Custom Styling**: If the default plot labels are too large or small, you can provide a modified template via the `--circos-conf` flag. The tool's default label sizes were optimized in version 0.3.0, but high-density fusion samples may still require manual adjustment.
-- **Dependency Check**: If the tool fails to produce an SVG, verify that the `circos` command is executable from your terminal, as `fsnviz` wraps this external binary.
+
+- **Circos Dependency**: fsnviz is a wrapper; ensure `circos` (specifically version 0.69-2) is installed and available in your system `$PATH`. The tool will fail if it cannot execute the `circos` binary.
+- **Karyotype Matching**: Always verify if your fusion detection was performed against hg19 or hg38. Using the wrong `--karyotype` flag will result in misaligned or empty plots because the genomic coordinates won't match the reference lengths.
+- **Output Management**: By default, fsnviz overwrites files named `fsnviz.svg`. When processing multiple samples, always use the `--base-name` flag to prevent data loss.
+- **Font Scaling**: If you have a high density of fusion events, the default font sizes might overlap. Use the `--circos-conf` flag to point to a modified configuration with adjusted `label_size` parameters.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fusioncatcher | Plots output of FusionCatcher. |
+| star-fusion | Plots output of STAR-Fusion. |
 
 ## Reference documentation
-- [fsnviz GitHub Repository](./references/github_com_bow_fsnviz.md)
-- [Bioconda fsnviz Overview](./references/anaconda_org_channels_bioconda_packages_fsnviz_overview.md)
+
+- [FsnViz README](./references/github_com_bow_fsnviz_blob_master_README.rst.md)
+- [FsnViz Changelog](./references/github_com_bow_fsnviz_blob_master_CHANGELOG.rst.md)

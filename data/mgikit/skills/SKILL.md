@@ -1,6 +1,6 @@
 ---
 name: mgikit
-description: mgikit is a bioinformatics toolkit designed to demultiplex and reformat raw sequencing data from MGI platforms. Use when user asks to identify index templates, demultiplex reads into sample-specific FASTQ files, convert MGI headers to Illumina format, or merge quality control reports.
+description: mgikit is a high-performance bioinformatics suite designed for demultiplexing and processing MGI sequencing data. Use when user asks to demultiplex MGI reads, identify index templates, consolidate quality reports, or reformat MGI FASTQ headers to Illumina standards.
 homepage: https://sagc-bioinformatics.github.io/mgikit/
 ---
 
@@ -9,61 +9,55 @@ homepage: https://sagc-bioinformatics.github.io/mgikit/
 
 ## Overview
 
-`mgikit` is a specialized bioinformatics toolkit designed for MGI sequencing platforms. It streamlines the transition from raw MGI data to analysis-ready FASTQ files by handling barcode identification, read assignment, and quality reporting. Use this skill to identify index locations in mixed libraries, perform high-performance demultiplexing, and convert MGI-specific headers into the more widely supported Illumina format for downstream compatibility.
+`mgikit` is a high-performance bioinformatics suite tailored for the MGI sequencing ecosystem. It provides a streamlined workflow for handling MGI-specific barcode structures, which often differ from standard Illumina formats. The toolkit excels at demultiplexing single and paired-end reads, automatically identifying optimal index templates (including reverse complements), and consolidating multi-lane data into comprehensive quality reports compatible with MultiQC.
 
 ## Core Workflows
 
-### 1. Index Template Detection
-If the exact location of barcodes within the read is unknown or if the library is mixed, use the `template` command first. It scans a subset of reads to identify the best-matching index positions.
+### 1. Automated Template Detection
+Before running a full demultiplexing job, use the `template` command to identify the correct index orientation and position. This is especially useful for mixed libraries or when the exact library preparation protocol is unconfirmed.
 
-```bash
-mgikit template -f R1.fq.gz -r R2.fq.gz -s sample_sheet.csv -o detection_results
-```
-*   **Tip**: Use `--popular-template` to force a single consistent template across all samples if the library is not mixed.
-*   **Tip**: Adjust `--testing-reads` (default 5,000) if you have a very complex pool with low-concentration samples.
+*   **Function**: Scans a subset of reads to find the highest match rate among possible index locations and orientations (as-is vs. reverse complementary).
+*   **Usage Tip**: Run this first to generate the correct template strings for your sample sheet.
 
-### 2. Demultiplexing
-The primary command for assigning reads to samples based on barcodes.
+### 2. Demultiplexing Reads
+The `demultiplex` command is the primary tool for splitting raw FASTQ files into sample-specific files.
 
-**Standard Paired-End Run:**
-```bash
-mgikit demultiplex -f R1.fq.gz -r R2.fq.gz -s sample_sheet.csv -o output_dir --threads 8
-```
+*   **Input Requirements**:
+    *   FASTQ files (R1 for single-end; R1 and R2 for paired-end).
+    *   A sample sheet containing sample IDs, index sequences, and their corresponding templates.
+*   **Mechanism**: It identifies barcodes at the end of R2 (paired-end) or R1 (single-end) and assigns reads based on a user-defined mismatch threshold.
+*   **Output**: Sample-specific FASTQ files and summary statistics.
 
-**Directory-based Input (MGI Flowcell Structure):**
-```bash
-mgikit demultiplex -i /path/to/lane_dir -s sample_sheet.csv -o output_dir
-```
+### 3. Report Consolidation
+After processing multiple lanes, use the `report` command to merge individual demultiplexing and quality metrics.
 
-*   **Mismatches**: Default is 1. For dual indexes (i7 and i5), the mismatch limit applies to the sum of both indexes.
-*   **Illumina Compatibility**: By default, `mgikit` outputs Illumina-formatted headers and file names. Use `--disable-illumina` to keep original MGI formatting.
-*   **Trimming**: Barcodes are trimmed by default. Use `--keep-barcode` if you need the barcode sequence to remain at the end of the reads.
+*   **Best Practice**: Use the output of this command with the MultiQC `mgikit` plugin to visualize per-lane and per-sample performance in a single dashboard.
 
-### 3. Reformatting Existing Files
-Use `reformat` to convert previously demultiplexed MGI files or raw data into Illumina format without re-running the full demultiplexing logic.
+### 4. Illumina Compatibility
+If your downstream pipeline requires Illumina-style FASTQ headers and file naming conventions, use the `reformat` command.
 
-```bash
-mgikit reformat -f sample_R1.fq.gz -r sample_R2.fq.gz --lane L01 --sample-index 1 -o reformatted_output
-```
+*   **Context**: This is specifically useful for files originally generated by MGI's `splitBarcode` tool that need to be integrated into standard Illumina-based analysis pipelines.
 
-### 4. Merging Reports
-When a run spans multiple lanes, use `report` to aggregate the individual lane statistics into a single comprehensive summary.
+## CLI Best Practices
 
-```bash
-mgikit report --qc-report lane1.info --qc-report lane2.info -o merged_run_report
-```
+*   **Mismatch Tolerance**: When demultiplexing, start with a low mismatch threshold (e.g., 1) to ensure high assignment accuracy, increasing only if library quality or barcode design necessitates it.
+*   **Mixed Libraries**: For flowcells containing different library types, rely on the `template` command's ability to report matches for all possible combinations to build a robust sample sheet.
+*   **Performance**: `mgikit` is written in Rust; ensure you provide adequate CPU threads for parallel decompression and processing when handling large MGI datasets.
 
-## Expert Tips and Best Practices
 
-*   **Memory Management**: If running on a shared cluster or a machine with limited RAM, use the `--memory` flag (in GB) to cap usage. The tool uses a writing buffer (`--writing-buffer-size`) that can be lowered to save memory at the cost of speed.
-*   **Handling Errors**: If a run has a high number of unassigned reads, `mgikit` may stop. Use `--ignore-undetermined` to force the process to continue with a warning.
-*   **Compression**: The default compression level is 1 (fast). For long-term storage, increase `--compression-level` up to 12, though this significantly slows down processing.
-*   **Validation**: Always use the `--validate` flag when working with potentially corrupted FASTQ files to ensure data integrity during the demultiplexing process.
-*   **Line Endings**: Ensure your sample sheet uses Unix line breakers (`\n`). Files created on Windows may cause parsing errors.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| demultiplex | Demultipex fastq files. |
+| reformat | Reformat MGI fastq headers to Illumina's and prepare quality report. |
+| report | Merge demultipexing reports. |
+| template | Detect barcode template. |
 
 ## Reference documentation
-- [MGIKIT Main Documentation](./references/sagc-bioinformatics_github_io_mgikit.md)
+- [mgikit Overview](./references/github_com_sagc-bioinformatics_mgikit_blob_main_README.md)
 - [Demultiplexing Guide](./references/sagc-bioinformatics_github_io_mgikit_demultiplex.md)
-- [Template Detection Guide](./references/sagc-bioinformatics_github_io_mgikit_template.md)
-- [Reformat Guide](./references/sagc-bioinformatics_github_io_mgikit_reformat.md)
-- [Report Merging Guide](./references/sagc-bioinformatics_github_io_mgikit_report.md)
+- [Template Detection](./references/sagc-bioinformatics_github_io_mgikit_template.md)
+- [Reformatting Tool](./references/sagc-bioinformatics_github_io_mgikit_reformat.md)
+- [Reporting and MultiQC](./references/sagc-bioinformatics_github_io_mgikit_report.md)

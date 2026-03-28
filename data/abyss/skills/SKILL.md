@@ -1,6 +1,6 @@
 ---
 name: abyss
-description: ABySS is a genomic sequence assembler designed to reconstruct long sequences from short-read data using a distributed de Bruijn graph or Bloom filters. Use when user asks to assemble large genomes, configure k-mer sizes for assembly, perform scaffolding, or close gaps in scaffolds.
+description: ABySS is a de novo sequence assembler designed for reconstructing large genomes from short-read sequencing data using a de Bruijn graph approach. Use when user asks to assemble genomes from short reads, perform parallel assembly using MPI, or use Bloom filters to reduce memory usage during assembly.
 homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss
 ---
 
@@ -8,72 +8,79 @@ homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss
 # abyss
 
 ## Overview
+ABySS is a specialized tool for reconstructing genomes from short-read sequencing data. It utilizes a de Bruijn graph approach to identify unambiguous paths that represent contigs. It is highly scalable, offering a single-processor mode for smaller genomes (<100 Mbp) and an MPI-based parallel version (ABYSS-P) for large-scale eukaryotic genomes. Modern versions also include a Bloom filter mode (ABySS 2.0+) which significantly reduces memory overhead, making large genome assembly possible on standard workstations.
 
-ABySS (Assembly By Short Sequences) is a specialized tool for reconstructing long genomic sequences from short-read data. It is particularly effective for large genomes due to its ability to distribute the de Bruijn graph across multiple nodes using MPI or to utilize a Bloom filter-based approach (ABySS 2.0+) to significantly reduce memory requirements. Use this skill to guide the configuration of assembly pipelines, select appropriate k-mer sizes, and manage scaffolding parameters.
+## Common CLI Patterns
 
-## Installation and Setup
-
-Install ABySS via Bioconda for the most stable environment:
-
-```bash
-conda install -c bioconda abyss
-```
-
-For large assemblies, ensure an MPI library (like OpenMPI) is installed if using the parallel distributed mode.
-
-## Core Workflow with abyss-pe
-
-The `abyss-pe` (ABySS Parallel Executive) script is the primary driver for the assembly pipeline. It manages stages from initial contig generation to scaffolding and gap closing.
-
-### Basic Assembly
-To run a standard assembly, specify the k-mer size, a name for the output, and the input files:
+### Basic Assembly with abyss-pe
+The primary driver script is `abyss-pe`. It manages the multi-stage pipeline from k-mer counting to scaffolding.
 
 ```bash
-abyss-pe k=64 name=project_name in='reads_1.fq reads_2.fq'
+# Basic paired-end assembly
+abyss-pe k=64 name=my_assembly in='reads1.fastq reads2.fastq'
+
+# Assembly using Bloom filter mode (ABySS 2.0+) to save memory
+# B = Bloom filter size (e.g., 32G, 40G), H = number of hash functions
+abyss-pe k=96 B=32G H=3 name=human_asm in='lib1_R1.fq lib1_R2.fq'
 ```
 
-### Memory-Efficient Assembly (Bloom Filter Mode)
-For large genomes (e.g., human) on systems with limited RAM, use the Bloom filter mode introduced in ABySS 2.0. This requires setting the `B`, `H`, and `kc` parameters:
+### Parallel Assembly (MPI)
+To run ABySS across multiple processors or nodes, use `mpirun` with `abyss-pe`.
 
-- `B`: Bloom filter size (e.g., `B=34G` for human).
-- `H`: Number of hash functions (typically `H=3` or `H=4`).
-- `kc`: K-mer coverage threshold (e.g., `kc=3`).
-
-Example:
 ```bash
-abyss-pe k=64 B=34G H=3 kc=3 name=human_asm in='reads.fq'
+# Run with 16 MPI processes
+mpirun -np 16 abyss-pe k=64 name=large_genome in='reads1.fq reads2.fq'
 ```
 
-### Parallel Execution
-Control the number of threads or MPI processes:
-- For multi-threading: `abyss-pe j=8 ...`
-- For MPI distributed assembly: `abyss-pe np=48 ...`
+### Handling Multiple Libraries
+ABySS can incorporate multiple paired-end (`lib`) and mate-pair (`mp`) libraries.
 
-## Parameter Optimization
+```bash
+abyss-pe k=64 name=multi_lib \
+    lib='pe1 pe2' \
+    pe1='pe1_1.fq pe1_2.fq' \
+    pe2='pe2_1.fq pe2_2.fq' \
+    mp='mp1' \
+    mp1='mp1_1.fq mp1_2.fq'
+```
 
-### Scaffolding and Contiguity
-- `s`: Minimum unitig size required for scaffolding (default is often 200bp).
-- `n`: Minimum number of pairs required to link two contigs.
-- `mp`: Specify mate-pair libraries for long-range scaffolding.
-- `l`: Minimum alignment length for a read to be used for scaffolding.
+## Expert Tips and Troubleshooting
 
-### RNA-Seq and High Coverage
-When assembling transcriptomes or high-coverage data:
-- Use `xtip=1` to more aggressively remove assembly tips caused by sequencing errors in high-coverage regions.
-- Use `Q` to set a minimum base quality threshold to filter out low-quality k-mers before assembly.
+### K-mer Length Limits
+If you encounter the error `Assertion length <= 64 failed`, the k-mer size exceeds the compile-time limit.
+- **Default**: Usually 128 in version 2.0+.
+- **Solution**: Recompile from source using `./configure --enable-maxk=192` (must be a multiple of 32).
 
-## Specialized Tools
+### Memory Optimization
+- **MPI Overhead**: For very large runs (>1000 cores), Open MPI buffers can consume excessive RAM. Use `--mca btl_openib_receive_queues` to tune communication buffers.
+- **Estimation**: Memory usage for the hash table is roughly `(8 + maxk/4) * n` bytes, where `n` is the number of distinct k-mers. Use `ntCard` to find the `F0` value (distinct k-mers) before starting.
 
-- **Sealer**: Use `abyss-sealer` to close gaps in finished scaffolds using a Bloom filter representation of the reads.
-- **Konnector**: Use to merge overlapping paired-end reads into longer pseudo-reads before assembly to improve contiguity.
-- **abyss-fatoagp**: Use to convert the final assembly into AGP format for GenBank submission.
+### Avoiding Deadlocks at High K
+When `k` is high (e.g., >200), message sizes may exceed the MPI "eager send limit," causing the job to hang.
+- **Fix**: Set the eager limit in the `mpirun` environment variable:
+  `export mpirun='mpirun --mca btl_sm_eager_limit 16000 --mca btl_openib_eager_limit 16000'`
 
-## Best Practices
+### Read ID Requirements
+ABySS requires paired reads to have matching IDs.
+- **Format**: IDs must be identical or end in `/1` and `/2`.
+- **Error**: `abyss-fixmate: error: All reads are mateless` indicates a mismatch in the FASTQ headers.
 
-- **K-mer Selection**: Start with a k-mer size approximately 60-70% of the read length. Smaller k-mers increase sensitivity but also increase graph complexity and memory usage.
-- **Data Pre-processing**: Always perform adapter trimming and quality filtering before running ABySS to reduce the number of erroneous k-mers.
-- **Resource Estimation**: For MPI mode, memory usage scales with the number of unique k-mers. For Bloom filter mode, memory is fixed by the `B` parameter.
+### Performance Tuning
+- **Parallel Loading**: Split large input BAM/FASTQ files into smaller chunks (up to the number of MPI ranks). This allows parallel I/O and can shave hours off large assemblies.
+- **Caveat**: Do not split a single library into more than ~50 files, as `abyss-map` may hit open-file limits.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| abyss-fatoagp | Convert FASTA files to AGP format using ABySS |
+| abyss-sealer-b | Close gaps by using left and right flanking sequences of gaps as 'reads' for Konnector and performing multiple runs with each of the supplied K values. |
+| make | A tool to control the generation of executables and other non-source files of a program from the program's source files. |
 
 ## Reference documentation
-- [ABySS Overview and Installation](./references/anaconda_org_channels_bioconda_packages_abyss_overview.md)
-- [ABySS Software Features and Publications](./references/www_bcgsc_ca_resources_software_abyss.md)
+- [ABySS Users FAQ](./references/github_com_BirolLab_abyss_wiki_ABySS-Users-FAQ.md)
+- [ABySS File Formats](./references/github_com_BirolLab_abyss_wiki_ABySS-File-Formats.md)
+- [ABySS Performance Tips](./references/github_com_BirolLab_abyss_wiki_ABySS-Performance-Tips.md)
+- [ABYSS-P Source Code Overview](./references/github_com_BirolLab_abyss_wiki_ABYSS-P-Source-Code-Overview.md)

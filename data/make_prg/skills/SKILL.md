@@ -1,6 +1,6 @@
 ---
 name: make_prg
-description: "make_prg transforms linear sequence alignments into graph-based reference structures for pangenome-aware mapping and variant calling. Use when user asks to create a PRG from multiple sequence alignments, update an existing graph with new sequence data, or generate GFA files for genetic diversity representation."
+description: "make_prg constructs and maintains Population Reference Graphs from multiple sequence alignments to represent genetic diversity. Use when user asks to create a PRG from MSAs or update an existing PRG database with new sequences."
 homepage: https://github.com/rmcolq/make_prg
 ---
 
@@ -9,47 +9,52 @@ homepage: https://github.com/rmcolq/make_prg
 
 ## Overview
 
-`make_prg` is a specialized bioinformatics tool designed to transform linear sequence alignments into graph-based reference structures. It handles the complexity of nested variation and allows for the incremental update of existing graphs with new sequence data. This tool is primarily used to generate the necessary inputs for pangenome-aware mapping and variant calling suites, ensuring that genetic diversity is accurately represented in the reference.
+make_prg is a bioinformatics utility designed to construct and maintain Population Reference Graphs (PRGs). It processes Multiple Sequence Alignments to create a graph-based representation of genetic diversity, which is a prerequisite for tools like Pandora and Gramtools. The tool supports both initial graph construction from scratch and efficient incremental updates, allowing researchers to incorporate new genomic data without recomputing the entire pangenome structure.
 
 ## Core Workflows
 
 ### Creating a PRG from MSAs
+Use the `from_msa` subcommand to generate a PRG from one or more alignment files.
 
-The `from_msa` subcommand is used to build a new graph. You can provide a single MSA file or a directory containing multiple alignments.
-
-**Basic command:**
 ```bash
-make_prg from_msa -i input_alignments/ -o my_pangenome_prefix
+# Process a single MSA file
+make_prg from_msa -i input.aln -o output_prefix
+
+# Process a directory of MSA files with a specific suffix
+make_prg from_msa -i ./msa_dir/ -s .fasta -o output_prefix
 ```
 
 **Key Parameters:**
-- `-f`: Specify alignment format (default is `fasta`). Supports any Biopython AlignIO format.
-- `-N`: Maximum nesting levels (default: 5). Increase for highly complex regions, though this increases graph complexity.
-- `-L`: Minimum match length (default: 7). This defines the number of identical characters required to collapse sequences into a single node.
-- `-O`: Output type. Use `p` for PRG, `b` for Binary, `g` for GFA, or `a` for all (default).
+- `-i, --input`: Path to a single MSA file or a directory containing multiple alignments.
+- `-o, --output-prefix`: Prefix for generated files (e.g., `.prg.bin`, `.prg.fa`, `.prg.gfa`).
+- `-f, --alignment-format`: Specify the format of the input MSAs (e.g., fasta, clustal).
+- `-t, --threads`: Enable multithreading for faster processing.
+- `-g, --output-graphs`: Explicitly request GFA output.
 
 ### Updating an Existing PRG
+Use the `update` subcommand to add new sequences to an existing PRG structure. This avoids the computational cost of rebuilding the MSA and PRG from scratch.
 
-The `update` subcommand allows you to incorporate new sequences into a PRG previously created with `from_msa`. This requires the `.update_DS.zip` file generated during the initial build.
-
-**Basic command:**
 ```bash
-make_prg update -u my_pangenome.update_DS.zip -d new_sequences.txt -o updated_pangenome
+make_prg update [options]
 ```
-
-**Key Parameters:**
-- `-d`: Path to a `denovo_paths.txt` file containing the new sequences.
-- `-D`: Deletion threshold (default: 10). Sequences representing deletions longer than this value are ignored to prevent graph bloat.
 
 ## Expert Tips and Best Practices
 
-- **Resource Management**: Use the `-t` flag to specify threads. Setting `-t 0` will automatically utilize all available cores, which is recommended for large MSA sets.
-- **Output Selection**: If you only need the graph for visualization or specific downstream tools, use `-O g` (GFA) or `-O p` (PRG) to save disk space and reduce processing time.
-- **Handling Large Datasets**: When processing a directory of MSAs, use the `--suffix` flag to ensure only relevant files (e.g., `.aln` or `.fasta`) are picked up by the tool.
-- **Nesting and Match Length**: 
-    - If the resulting graph is too fragmented, try increasing the minimum match length (`-L`).
-    - If the graph fails to capture complex structural variations, consider increasing the max nesting level (`-N`), keeping in mind the computational cost for downstream tools like Pandora.
+- **Output Management**: When processing a directory, `make_prg` bundles outputs. `.prg.bin` and `.prg.gfa` files will be collected into `.zip` archives, while `.prg.fa` will be generated as a multi-fasta file.
+- **Debugging**: Use the `-vv` flag to enable trace-level logging. This is particularly useful for tracking the recursive clustering and collapse algorithm behavior.
+- **Resource Optimization**: Always utilize the `-t` parameter in HPC environments to leverage multithreading, as PRG construction from large MSAs is computationally intensive.
+- **Handling Ambiguity**: Version 0.5.0+ properly handles 'N' characters in both MSAs and de novo sequences. Ensure you are using the latest version if your data contains ambiguous bases.
+- **Binary Requirements**: If using the precompiled portable binary, ensure the system has `GLIBC >= 2.29` (standard on Ubuntu 19.04+, Debian 11+, and CentOS 9+).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| make_prg from_msa | Creates a PRG from a Multiple Sequence Alignment. |
+| make_prg update | Updates a PRG database with new sequences. |
 
 ## Reference documentation
-- [make_prg GitHub Repository](./references/github_com_iqbal-lab-org_make_prg.md)
-- [Bioconda make_prg Overview](./references/anaconda_org_channels_bioconda_packages_make_prg_overview.md)
+- [make_prg README](./references/github_com_iqbal-lab-org_make_prg_blob_master_README.md)
+- [make_prg Changelog](./references/github_com_iqbal-lab-org_make_prg_blob_master_CHANGELOG.md)

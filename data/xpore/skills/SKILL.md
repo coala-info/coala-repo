@@ -1,6 +1,6 @@
 ---
 name: xpore
-description: xPore identifies and quantifies differential RNA modifications from Nanopore direct RNA sequencing data. Use when user asks to identify and quantify differential RNA modifications, prepare Nanopore direct RNA sequencing data, or perform differential modification analysis.
+description: xpore is a statistical framework for identifying and quantifying differential RNA modifications from Oxford Nanopore direct RNA sequencing data. Use when user asks to identify RNA modification sites, estimate modification rates, or perform differential epitranscriptomic analysis between different biological conditions.
 homepage: https://github.com/GoekeLab/xpore
 ---
 
@@ -8,47 +8,61 @@ homepage: https://github.com/GoekeLab/xpore
 # xpore
 
 ## Overview
-xPore is a statistical framework designed to identify and quantify differential RNA modifications from Nanopore direct RNA sequencing data. It operates by modeling the raw signal (current) distributions of k-mers to detect shifts caused by modifications. Unlike some other tools, xPore can estimate modification rates and identify differential sites even when a completely unmodified control sample is not available, making it highly versatile for comparative transcriptomics.
 
-## Installation
-Install xPore using either pip or conda:
+xpore is a powerful Python-based statistical framework designed for the epitranscriptomics field. It enables the identification of RNA modifications by analyzing the raw signal (current) from Oxford Nanopore Technologies (ONT) direct RNA sequencing. Unlike tools that require a completely unmodified control, xpore uses a mixture model to estimate modification rates across different conditions. It is specifically optimized for "differential" analysis, allowing researchers to pinpoint exactly where and how much the RNA modification landscape changes between samples, such as a wild-type versus a knockdown.
+
+## Data Preparation Workflow
+
+Before running xpore, you must align your raw Nanopore signals to a reference transcriptome using `nanopolish eventalign`.
+
+### 1. Data Preparation (`xpore dataprep`)
+The `dataprep` command converts the large, verbose output from nanopolish into a structured format (HDF5) that xpore can process efficiently.
+
+**Common CLI Pattern:**
 ```bash
-# Via PyPI
-pip install xpore
-
-# Via Bioconda
-conda install -c bioconda xpore
+xpore dataprep --eventalign eventalign.txt --out_dir ./prepared_data --readcount_min 20
 ```
 
-## Core Workflow
+**Key Parameters:**
+- `--eventalign`: The output file from `nanopolish eventalign`.
+- `--out_dir`: Directory where the processed data and index files will be stored.
+- `--readcount_min`: Filters out transcripts with low coverage early to save processing time.
+- `--skip_eventalign_indexing`: Use this flag if you have already generated an index for your eventalign file to speed up the process.
 
-### 1. Data Preparation
-Before using xPore, you must align your Nanopore reads and run Nanopolish `eventalign`. Once you have the eventalign output, use `xpore-dataprep` to format the data.
+### 2. Differential Modification Analysis (`xpore diffmod`)
+The `diffmod` command performs the actual statistical testing. It compares the signal distributions at each k-mer position across the transcriptome.
 
-- **Command**: `xpore-dataprep`
-- **Input**: Nanopolish `eventalign` output files.
-- **Function**: This utility parses the raw signal data and organizes it by transcript coordinates, creating the necessary index files for the modeling step.
-- **Tip**: Ensure your transcript IDs in the eventalign file match your reference transcriptome exactly to avoid empty outputs.
+**Execution Pattern:**
+```bash
+xpore diffmod --config config.ini
+```
 
-### 2. Differential Modification Analysis
-The primary analysis is performed using the `diffmod` sub-command.
+**Expert Tips for Analysis:**
+- **K-mer Model**: xpore relies on a pre-trained k-mer model (typically `model_kmer.csv`). Ensure this file is correctly referenced if not using the default bundled version.
+- **Filtering Results**: After the run, focus on the `diffmod_table.csv`. High-confidence sites typically have a high absolute `diff_mod_rate` and a low `p_value_adjusted`.
+- **Replicates**: xpore natively handles biological replicates. Ensure your configuration groups replicates under the same condition name to improve statistical power.
 
-- **Command**: `xpore diffmod`
-- **Logic**: It compares the signal intensity distributions between two or more conditions.
-- **Key Outputs**:
-    - **Modification Rates**: Estimated proportion of modified molecules at specific sites.
-    - **P-values/Z-scores**: Statistical significance of the difference in signal between conditions.
-    - **Log Likelihood Ratio (LLR)**: Used to rank the confidence of modification sites.
+## Best Practices and Troubleshooting
 
-## Expert Tips and Best Practices
+- **Memory Management**: `dataprep` can be memory-intensive for very large eventalign files. Consider splitting your eventalign files by chromosome or using high-memory nodes.
+- **Transcriptome Versioning**: Ensure the reference transcriptome used for `nanopolish` is identical to the one used in any downstream functional analysis to avoid coordinate mismatches.
+- **Minimum Coverage**: For reliable differential modification calls, a minimum coverage of 15-20 reads per site per condition is generally recommended. Sites with lower coverage often result in high variance and unreliable p-values.
+- **Output Interpretation**: 
+    - `mod_rate`: The estimated fraction of modified reads at a specific site.
+    - `z_score`: Indicates the direction and significance of the change between condition A and condition B.
 
-- **GFF Annotation**: In version 2.1+, you can utilize GFF options to improve coordinate mapping. This is particularly useful when moving between genomic and transcriptomic coordinates.
-- **Filtering**: Always perform post-filtering on the output table. Focus on sites with sufficient coverage (typically >20-50 reads) to ensure the statistical modeling of the signal distribution is robust.
-- **Handling NAs**: If you see `NA` in the `mod_rate` column, it often indicates insufficient coverage or signal variance that prevents the mixture model from converging at that specific site.
-- **Multiple Conditions**: xPore supports pairwise comparisons across multiple conditions. When setting up comparisons, ensure your experimental design clearly defines the "control" vs "treated" groups to correctly interpret the direction of the modification rate change.
-- **K-mer Context**: Remember that xPore identifies modifications within a k-mer context (typically 5-mers). A significant result indicates a modification within that specific k-mer, most commonly at the central position (e.g., the 'A' in a DRACH motif).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| xpore postprocessing | Performs postprocessing steps for xpore-diffmod output. |
+| xpore_dataprep | Prepares data for xpore analysis. |
+| xpore_diffmod | Performs differential modification analysis. |
 
 ## Reference documentation
-- [xpore GitHub Repository](./references/github_com_GoekeLab_xpore.md)
-- [Bioconda xpore Overview](./references/anaconda_org_channels_bioconda_packages_xpore_overview.md)
-- [xPore Discussions and Troubleshooting](./references/github_com_GoekeLab_xpore_discussions.md)
+- [xPore Quickstart Guide](./references/xpore_readthedocs_io_en_latest_quickstart.html.md)
+- [Command Line Interface Reference](./references/xpore_readthedocs_io_en_latest_cmd.html.md)
+- [Data Preparation Details](./references/xpore_readthedocs_io_en_latest_preparation.html.md)
+- [xPore GitHub Repository](./references/github_com_GoekeLab_xpore_blob_master_README.md)

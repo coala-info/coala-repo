@@ -1,6 +1,6 @@
 ---
 name: cadd-scripts
-description: "cadd-scripts integrates diverse genomic annotations into a single C-score to predict the effect of genetic variants. Use when user asks to install the CADD scoring environment, manage large-scale genomic annotation data, or execute the Snakemake-based pipeline to score novel or known variants."
+description: cadd-scripts ranks the pathogenicity of human genome variants by integrating multiple functional annotations into a single C-score. Use when user asks to retrieve C-scores for specific variants via API, perform offline variant scoring for large datasets, or prioritize SNVs and InDels based on their predicted deleteriousness.
 homepage: https://github.com/kircherlab/CADD-scripts
 ---
 
@@ -9,51 +9,80 @@ homepage: https://github.com/kircherlab/CADD-scripts
 
 ## Overview
 
-CADD (Combined Annotation Dependent Depletion) is a framework for integrating diverse genomic annotations into a single measure (C-score) for variant effect prediction. This skill facilitates the offline deployment and execution of CADD scripts, which is essential for large-scale genomic analysis where web-based scoring is impractical. It covers the installation of the scoring environment, management of large-scale genomic annotation data, and the execution of the Snakemake-based pipeline to generate scores for novel or known variants.
+CADD (Combined Annotation Dependent Depletion) is a widely used framework for ranking the pathogenicity of single nucleotide variants (SNVs) and insertion/deletion (InDel) variants in the human genome. It integrates multiple functional annotations into a single metric, known as a C-score. This skill enables the efficient retrieval of these scores via the experimental web API or the execution of local scoring workflows using the `CADD-scripts` repository. It is particularly useful for variant prioritization in clinical genetics, GWAS fine-mapping, and evolutionary biology research.
 
-## Installation and Setup
+## Web API Usage
 
-### Environment Initialization
-The easiest way to manage dependencies is via Conda or Mamba.
-- **Conda Install**: `conda install bioconda::cadd-scripts`
-- **Manual Setup**: If downloading the repository directly, use the provided installation script:
-  - US-based: `cadd-install.sh`
-  - Europe-based: `cadd-install.sh -b` (uses German mirrors for faster downloads)
+The CADD API is intended for experimental use and small-scale lookups (not for millions of variants).
 
-### Data Requirements
-CADD requires significant disk space (100 GB to 1 TB) and at least 12 GB of RAM.
-- **Annotations**: Download the specific build needed (GRCh37/hg19 or GRCh38/hg38) into `data/annotations/`.
-- **Prescored Files**: Optional but recommended to speed up scoring for known variants. Place these in `data/prescored/`.
-- **Verification**: Always verify large downloads using MD5 hashes provided on the CADD website to prevent pipeline failures due to corrupted files.
+### Single Position Lookup
+Retrieve all three possible SNVs at a specific coordinate:
+`curl https://cadd.gs.washington.edu/api/v1.0/<version>/<chrom>:<pos>`
 
-## CLI Usage Patterns
+### Specific Variant Lookup
+Retrieve a specific allele:
+`curl https://cadd.gs.washington.edu/api/v1.0/<version>/<chrom>:<pos>_<ref>_<alt>`
 
-### Primary Execution
-The main entry point for scoring is the `cadd.sh` script (or `CADD.sh` in older versions).
+### Range Access
+Retrieve SNVs in a range (limited to 100 bases):
+`curl https://cadd.gs.washington.edu/api/v1.0/<chrom>:<start>-<end>`
 
-### Snakemake Integration
-CADD uses Snakemake to manage the complex annotation and scoring workflow.
-- **Basic Scoring Command**:
-  ```bash
-  snakemake <output_path/filename.tsv.gz> --use-conda --cores <number_of_cores>
-  ```
-- **Environment Isolation**: Use `--conda-prefix envs/conda` to keep environments within the CADD directory rather than the global conda path.
-- **Containerization**: For maximum stability, run with Apptainer/Singularity:
-  ```bash
-  snakemake --use-singularity ...
-  ```
+**Supported Versions:** `GRCh38-v1.7`, `GRCh37-v1.7`, `GRCh38-v1.6`, `GRCh37-v1.6`. Append `_inclAnno` to the version string to include underlying functional annotations.
 
-### Handling Input Files
-- Input files should be in VCF or compressed TSV format.
-- Ensure the input file matches the genome build specified in your configuration.
+## Offline Scoring with CADD-scripts
 
-## Expert Tips and Best Practices
+For large datasets, use the local installation. The core entry point is the `CADD.sh` script.
 
-- **Resume Interrupted Downloads**: When fetching the ~300GB annotation files, use `wget -c` to allow resuming if the connection drops.
-- **Parallelization**: While Snakemake handles task parallelism, ensure your system has sufficient RAM (12GB+ per process) when increasing core counts, as some annotation steps are memory-intensive.
-- **Software Deployment**: Always use `--software-deployment-method conda` (or `--use-conda`) to ensure the correct Python 2 and Python 3 environments are used for specific legacy annotation tools within the pipeline.
-- **Storage Performance**: Given the massive size of the annotation database, running CADD from an SSD significantly reduces I/O wait times during the feature extraction phase.
+### Basic Scoring Command
+```bash
+./CADD.sh -g <genome_build> -v <version> <input.vcf>
+```
+- `-g`: Genome build (`GRCh37` or `GRCh38`).
+- `-v`: CADD version (e.g., `v1.7`).
+- `input.vcf`: A VCF file. Only the first 5 columns (CHROM, POS, ID, REF, ALT) are required.
+
+### Including Annotations
+To output the 60+ underlying genomic features used to calculate the score:
+```bash
+./CADD.sh -a -g <build> -v <version> <input.vcf>
+```
+
+### Performance Optimization
+Scoring InDels and multi-nucleotide substitutions is computationally expensive. When possible, use pre-scored whole-genome SNV files and tabix to retrieve scores for known variants rather than re-calculating them.
+
+## Expert Tips and Interpretation
+
+### Scaled vs. Raw Scores
+- **Scaled C-scores (PHRED-like)**: Use these for filtering and manual review. They represent the rank of a variant relative to all 8.6 billion possible SNVs.
+  - **10**: Top 10% most deleterious.
+  - **20**: Top 1% most deleterious.
+  - **30**: Top 0.1% most deleterious.
+  - *Recommended Cutoff*: A value between 10 and 20 is a common starting point for identifying potentially pathogenic variants.
+- **Raw C-scores**: Use these for computational analyses and statistical tests (e.g., comparing distributions between cases and controls), as they preserve higher resolution across the scoring spectrum.
+
+### Tabix Retrieval
+If you have downloaded the pre-scored files, use `tabix` for the fastest retrieval of SNV scores:
+```bash
+tabix <score_file.tsv.gz> <chrom>:<start>-<end>
+```
+
+### Installation Requirements
+- **Storage**: Requires 100 GB to 1 TB depending on the number of genome builds and annotation tracks installed.
+- **Memory**: At least 12 GB of RAM is required for scoring.
+- **Dependencies**: Managed via Conda and Snakemake. Use the `install.sh` script provided in the repository for guided setup.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cadd-scripts_cadd-install.sh | CADD version 1.7 |
+| cadd-scripts_cadd.sh | CADD version 1.7 |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
-- [CADD-scripts Overview](./references/anaconda_org_channels_bioconda_packages_cadd-scripts_overview.md)
-- [CADD-scripts GitHub Repository](./references/github_com_kircherlab_CADD-scripts.md)
+- [CADD API Documentation](./references/cadd_gs_washington_edu_api.md)
+- [CADD-scripts README](./references/github_com_kircherlab_CADD-scripts_blob_master_README.md)
+- [CADD General Information and Scoring Guidance](./references/cadd_gs_washington_edu_info.md)
+- [CADD Download and Offline Installation](./references/cadd_gs_washington_edu_download.md)

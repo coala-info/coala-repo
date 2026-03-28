@@ -1,6 +1,6 @@
 ---
 name: kmertools
-description: kmertools transforms raw DNA sequences into numerical vectors for machine learning and genomic analysis. Use when user asks to vectorize metagenomic datasets, generate sequence composition features, create coverage histograms, or bin reads using minimizers.
+description: The kmertools skill transforms DNA sequences into numerical representations like k-mer frequencies, Chaos Game Representations, and coverage histograms for genomic analysis. Use when user asks to generate oligonucleotide frequencies, create 2D spatial embeddings, calculate sequence coverage, count k-mers, or perform minimizer binning.
 homepage: https://github.com/anuradhawick/kmertools
 ---
 
@@ -8,52 +8,63 @@ homepage: https://github.com/anuradhawick/kmertools
 # kmertools
 
 ## Overview
-kmertools is a high-performance utility designed to transform raw DNA sequences into numerical vectors, a process essential for applying machine learning and advanced analytics to genomic data. It bridges the gap between bioinformatics and AI/ML by providing efficient implementations of k-mer analysis, sequence composition metrics, and binning strategies. Use this skill to vectorize metagenomic datasets, analyze sequencing depth through coverage histograms, or reduce data complexity using minimizers.
 
-## Core CLI Commands
-The tool is structured around several subcommands for specific vectorization tasks:
+The `kmertools` skill provides a high-performance interface for transforming raw DNA sequences into numerical representations suitable for machine learning and comparative genomics. It bridges the gap between biological sequence data and vector-based analytics by offering optimized implementations of k-mer counting, sequence composition features, and coverage depth analysis. This skill is particularly useful for metagenomic binning, viral sequence embedding, and preparing genomic datasets for neural networks or clustering algorithms.
 
-- **Sequence Composition (`comp`)**: Generates frequency vectors for oligonucleotides. This is the primary command for creating feature sets for sequence classification or clustering.
-- **Coverage Histograms (`cov`)**: Generates coverage-based features from sequencing reads. Useful for identifying species abundance and binning long-read metagenomic data.
-- **Minimiser Binning (`min`)**: Bins reads using minimizers to reduce the computational overhead of comparing large biological sequences.
-- **K-mer Counting (`ctr`)**: Performs standard k-mer frequency counting across input sequences.
-- **Chaos Game Representation (CGR)**: Computes CGR vectors, providing a spatial representation of gene structure based on k-mer transformations.
+## Core CLI Patterns
 
-## Common Usage Patterns
+### Sequence Composition (`comp`)
+Use the `comp` subcommand to extract features based on the nucleotide makeup of sequences.
 
-### Generating Sequence Features
-To extract composition-based features for downstream ML models:
+*   **Oligonucleotide Frequencies**: Generate frequency vectors for k-mers of a specific size.
+    ```bash
+    kmertools comp oligo -i input.fasta -o output.vec -k 4
+    ```
+*   **Chaos Game Representation (CGR)**: Generate 2D spatial embeddings of DNA sequences.
+    *   **Full Sequence CGR**: `kmertools comp cgr -i input.fasta -o output.cgr`
+    *   **K-mer based CGR**: `kmertools comp cgr -i input.fasta -o output.cgr -k 4`
+    *   **Custom Matrix Size**: Use `-v <SIZE>` to set the output square matrix dimensions.
+
+### Coverage Analysis (`cov`)
+Generate coverage histograms from sequencing reads to estimate depth and abundance.
 ```bash
-kmertools comp [OPTIONS] <INPUT_FASTA>
+kmertools cov -i reads.fastq -o coverage.hist
 ```
 
-### Metagenomic Binning Support
-To generate coverage histograms for long-read binning (based on the Metabcc-lr algorithm):
+### K-mer Counting (`ctr`)
+Perform fast k-mer frequency counting across a dataset.
 ```bash
-kmertools cov [OPTIONS] <INPUT_READS>
+kmertools ctr -i input.fasta -o counts.txt -k 31
 ```
 
-### Reducing Sequence Complexity
-To bin reads efficiently using minimizers:
+### Minimizer Binning (`min`)
+Reduce data complexity by binning sequences based on minimizers (the lexicographically smallest k-mer in a window).
 ```bash
-kmertools min [OPTIONS] <INPUT_FASTA>
+kmertools min -i input.fasta -o binned_output.txt -k 15 -w 10
 ```
 
-## Python Integration
-For users working in Jupyter notebooks or Python scripts, the functionality is available via `pykmertools`.
+## Expert Tips & Best Practices
 
-- **Installation**: `pip install pykmertools`
-- **Usage**:
-  ```python
-  import pykmertools as kt
-  # Access vectorization functions directly within Python pipelines
-  ```
+*   **Thread Optimization**: Most subcommands support the `-t` or `--threads` flag. Setting this to `0` (the default) allows the tool to automatically detect and use all available CPU cores for parallel processing.
+*   **CGR Normalization**: When using `comp cgr` in k-mer mode, the tool automatically normalizes counts by the total number of valid k-mers. To obtain raw counts instead, append the `-c` or `--counts` flag.
+*   **Handling Invalid Bases**: In k-mer based modes, windows containing non-ACGT characters (like N, R, Y) are automatically ignored. However, for sequence-wide CGR computations, ensure your input FASTA contains only standard bases to avoid errors.
+*   **K-size Selection**: For CGR, k-mer sizes between 3 and 7 are recommended. Note that the output vector size grows exponentially ($4^k$); using $k > 7$ may result in extremely large files and high memory consumption.
+*   **Python Integration**: For downstream analysis (e.g., plotting with Matplotlib or training with Scikit-learn), use the `pykmertools` library to load the generated vectors directly into Python environments.
 
-## Expert Tips
-- **Vectorization for ML**: When preparing data for neural networks, use the `comp` command to generate fixed-length oligonucleotide frequency vectors, which can be directly fed into standard input layers.
-- **Performance**: kmertools is written in Rust; for massive datasets, ensure you are using the multi-threaded capabilities if available in the specific subcommand options.
-- **CGR for Visualization**: Use Chaos Game Representation when you need to capture the global patterns of a sequence in a way that preserves local k-mer information in a 2D-like vector space.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| comp | Generate sequence composition based features |
+| kmertools min | Bin reads using minimisers |
+| kmertools_cov | Generates coverage histogram based on the reads |
+| kmertools_ctr | Count k-mers |
 
 ## Reference documentation
-- [kmertools Overview](./references/github_com_anuradhawick_kmertools.md)
-- [kmertools Wiki and Command Reference](./references/github_com_anuradhawick_kmertools_wiki.md)
+
+- [Home](./references/github_com_anuradhawick_kmertools_wiki.md)
+- [CGR Computations](./references/github_com_anuradhawick_kmertools_wiki_CGR-computations.md)
+- [Composition Computations](./references/github_com_anuradhawick_kmertools_wiki_Composition-computations.md)
+- [Minimiser Computations](./references/github_com_anuradhawick_kmertools_wiki_Minimiser-computations.md)

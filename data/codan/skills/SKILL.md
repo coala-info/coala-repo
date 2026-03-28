@@ -1,6 +1,6 @@
 ---
 name: codan
-description: CodAn predicts coding sequences and untranslated regions in eukaryotic transcripts to characterize their structure. Use when user asks to predict CDS and UTR regions, identify open reading frames, or annotate transcriptome assemblies using taxonomic-specific models.
+description: CodAn identifies protein-coding regions and untranslated regions within eukaryotic transcript sequences. Use when user asks to annotate coding sequences, determine CDS boundaries in de novo transcriptomes, or predict the coding potential of full or partial transcripts.
 homepage: https://github.com/pedronachtigall/CodAn
 ---
 
@@ -9,45 +9,82 @@ homepage: https://github.com/pedronachtigall/CodAn
 
 ## Overview
 
-CodAn (Coding sequence Annotator) is a specialized tool for characterizing the structure of eukaryotic transcripts by predicting CDS and UTR regions. It is particularly effective for researchers working with transcriptome assemblies who need to distinguish between coding and non-coding segments or identify open reading frames (ORFs). The tool relies on pre-trained models specific to taxonomic groups and the completeness of the input sequences (full-length vs. partial).
+CodAn (Coding sequence Annotator) is a computational tool designed to identify the structural regions of eukaryotic transcripts. By leveraging specialized predictive models, it distinguishes between the protein-coding regions and the non-coding 5' and 3' UTRs. This skill should be used when you have transcript sequences (in FASTA format) and need to determine their coding potential and exact CDS boundaries. It is particularly effective for annotating de novo assembled transcriptomes where genomic reference data might be limited.
 
-## Usage Patterns
+## Model Selection
 
-### Basic CDS Prediction
-The most common use case is predicting coding regions from a FASTA file of transcripts. You must specify the appropriate model path.
+Choosing the correct model is critical for prediction accuracy. Models are categorized by taxonomic group and transcript completeness.
 
+### Taxonomic Groups
+- **VERT**: Vertebrates
+- **INV**: Invertebrates
+- **PLANTS**: Plants
+- **FUNGI**: Fungi
+
+### Transcript Types
+- **full**: Use for transcripts believed to be complete (containing start and stop codons).
+- **partial**: Use for fragmented transcripts or ESTs where the sequence may be truncated.
+
+**Note**: Models must be decompressed (unzipped) before they can be passed to the `-m` parameter.
+
+## Command Line Usage
+
+The primary executable is `codan.py`.
+
+### Basic Syntax
 ```bash
-codan.py -t transcripts.fa -m /path/to/models/VERT_full -o output_folder
+codan.py -t <transcripts.fa> -m <path/to/model_folder> -o <output_directory>
 ```
 
-### Model Selection Guide
-Choosing the correct model is critical for accuracy. Models are categorized by taxonomic group and transcript type:
-- **Taxonomic Groups**: `VERT` (Vertebrates), `INV` (Invertebrates), `PLANTS`, `FUNGI`.
-- **Transcript Type**: 
-  - `_full`: Use for full-length transcripts (containing start and stop codons).
-  - `_partial`: Use for fragmented transcripts or ESTs.
+### Common Parameters
+- `-t, --transcripts`: Path to the input FASTA file.
+- `-m, --model`: Path to the directory containing the specific decompressed model.
+- `-s, --strand`: Specify the strand to predict (plus, minus, or both). Default is `both`.
+- `-c, --cpu`: Number of threads for parallel processing. Default is `1`.
+- `-o, --output`: Directory where results will be saved.
 
-### Advanced Annotation with BLAST
-To annotate predicted genes based on similarity to known proteins, provide a pre-formatted BLAST database.
+### Execution Patterns
 
+**Processing Vertebrate Full-Length Transcripts:**
 ```bash
-codan.py -t transcripts.fa -m /path/to/model -b /path/to/blast_db/protein_db
+codan.py -t human_transcripts.fa -m ./models/VERT_full -c 4 -o annotation_results
 ```
 
-### Performance Optimization
-For large datasets, utilize multiple CPU cores to speed up the prediction process.
-
+**Processing Plant Partial Transcripts (Plus Strand Only):**
 ```bash
-codan.py -t transcripts.fa -m /path/to/model -c 8
+codan.py -t arabidopsis_fragments.fa -m ./models/PLANTS_partial -s plus -c 8 -o plant_out
 ```
+
+## Docker Integration
+
+When using the official Docker container, the models are pre-installed in a specific location.
+
+**Running via Docker:**
+```bash
+docker run -v $PWD:/project --rm -it pedronachtigall/codan:latest \
+codan.py -t transcripts.fa -m /app/CodAn/models/VERT_full -o output_folder
+```
+*Note: The `-v $PWD:/project` flag mounts your current directory to the container's working directory.*
 
 ## Expert Tips
 
-- **Model Acquisition**: If installed via Conda, the predictive models are often not included in the package. You must download them separately from the GitHub repository or the official download links and point to their directory using the `-m` flag.
-- **Strand Specificity**: By default, CodAn checks both strands (`-s both`). If your library preparation was strand-specific, you can limit the search to `plus` or `minus` to reduce false positives and processing time.
-- **macOS Compatibility**: If running on macOS, ensure you have the `tops-viterbi_decoding` binary compiled for macOS in your `bin` folder, as the standard Linux binary will not execute.
-- **BLAST Integration**: When using the `-b` option, ensure your database was created using `makeblastdb`. You can adjust the High-scoring Segment Pair (HSP) threshold using `-H` (default is 80) to control the stringency of the similarity search.
+- **Sequence Formatting**: If your FASTA file has extremely long single-line sequences, use the provided `BreakLines.py` script to format them to 100 nucleotides per line for better compatibility:
+  ```bash
+  python3 BreakLines.py input.fa formatted_output.fa
+  ```
+- **Permissions**: If running from a git clone or manual installation, ensure the binaries have execution permissions: `chmod +x path/to/CodAn/bin/*`.
+- **Dependencies**: Ensure `blastn` (NCBI-BLAST+) is in your system PATH, as CodAn relies on it for internal sequence analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| codan.py | CodAn: Coding Regions Annotator for transcripts using deep learning and BLAST. |
+| tops-viterbi_decoding | ToPS Viterbi decoding tool |
 
 ## Reference documentation
-- [CodAn GitHub Repository](./references/github_com_pedronachtigall_CodAn.md)
-- [Bioconda CodAn Overview](./references/anaconda_org_channels_bioconda_packages_codan_overview.md)
+- [CodAn README](./references/github_com_pedronachtigall_CodAn_blob_master_README.md)
+- [CodAn Dockerfile](./references/github_com_pedronachtigall_CodAn_blob_master_Dockerfile.md)
+- [BreakLines Script](./references/github_com_pedronachtigall_CodAn_blob_master_scripts_BreakLines.py.md)

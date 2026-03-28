@@ -1,1 +1,352 @@
-GitHub - xryanglab/RiboCode: release version Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} xryanglab / RiboCode Public Notifications You must be signed in to change notification settings Fork 16 Star 58 release version License MIT license 58 stars 16 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 37 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights xryanglab/RiboCode master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 172 Commits 172 Commits .circleci .circleci RiboCode RiboCode data data .gitignore .gitignore AUTHORS AUTHORS ChangeLog.rst ChangeLog.rst LICENSE LICENSE MANIFEST.in MANIFEST.in README.rst README.rst setup.cfg setup.cfg setup.py setup.py View all files Repository files navigation README MIT license Detect translated ORFs using ribosome-profiling data RiboCode is a very simple but high-quality computational algorithm to identify genome-wide translated ORFs using ribosome-profiling data. Dependencies: pysam pyfasta h5py Biopython Numpy Scipy statsmodels matplotlib HTSeq minepy Installation RiboCode can be installed like any other Python packages. Here are some popular ways: Install via pypi: pip install ribocode Install via conda: conda install -c bioconda ribocode Install from source: git clone https://www.github.com/xzt41/RiboCode cd RiboCode python setup.py install Install from local: pip install RiboCode- * .tar.gz If you have not administrator permission, you need to install RiboCode locally in you own directory by adding the option --user in the above command. Then, you need to define ~/.local/bin/ in PATH variable, and ~/.local/lib/ in PYTHONPATH variable. For example, if you are using the bash shell, you should add the following lines to your ~/.bashrc file: export PATH= $PATH : $HOME /.local/bin/ export PYTHONPATH= $HOME /.local/lib/python2.7 then, source your ~/.bashrc file using this command: source ~ /.bashrc Users can also update or uninstall package through one of the following commands: pip install --upgrade RiboCode # upgrade pip uninstall RiboCode # uninstall conda update -c bioconda ribocode # upgrade conda remove ribocode # uninstall Tutorial to analyze ribosome-profiling data and run RiboCode Here, we use the HEK293 dataset as an example to illustrate the use of RiboCode and demonstrate typical workflow. Please make sure the path and file name are correct. Required files The genome FASTA file, GTF file for annotation can be downloaded from: http://www.gencodegenes.org or from: http://asia.ensembl.org/info/data/ftp/index.html http://useast.ensembl.org/info/data/ftp/index.html For example, the required files in this tutorial can be downloaded from following URL: GTF: ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_19/gencode.v19.annotation.gtf.gz FASTA: ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_19/GRCh37.p13.genome.fa.gz The GTF file required by RiboCode should include three-level hierarchy annotations: genes,transcripts and exons. Some GTF files may lack the gene and transcript annotations, users can added these annotations using the "GTFupdate" command in RiboCode . Please refer to GTF_update.rst for more information. The raw Ribo-seq FASTQ file can be downloaded using fastq-dump tool from SRA_Toolkit : fastq-dump -A &lt; SRR 1630831&gt; Trimming adapter sequence for ribo-seq data Using cutadapt program https://cutadapt.readthedocs.io/en/stable/installation.html Example: cutadapt -m 20 --match-read-wildcards -a (Adapter sequence) -o &lt; Trimmed fastq file &gt; &lt; Input fastq file &gt; Here, the adapter sequences for this data had already been trimmed off, so we can skip this step. Removing ribosomal RNA(rRNA) derived reads Removing rRNA contamination by aligning the trimmed reads to rRNA sequences using Bowtie , then keeping the unaligned reads for the next step. rRNA sequences are provided in rRNA.fa file. Example: bowtie-build &lt; rRNA.fa &gt; rRNA bowtie -p 8 -norc --un &lt; un_aligned.fastq &gt; -q &lt; SRR1630831.fastq &gt; rRNA &lt; HEK293_rRNA.align &gt; Aligning the clean reads to reference genome Using STAR program: https://github.com/alexdobin/STAR Example: (1). Build index STAR --runThreadN 8 --runMode genomeGenerate --genomeDir &lt; hg19_STARindex &gt; --genomeFastaFiles &lt; hg19_genome.fa &gt; --sjdbGTFfile &lt; gencode.v19.annotation.gtf &gt; (2). Alignment: STAR --outFilterType BySJout --runThreadN 8 --outFilterMismatchNmax 2 --genomeDir &lt; hg19_STARindex &gt; --readFilesIn &lt; un_aligned.fastq &gt; --outFileNamePrefix &lt; HEK 293&gt; --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM GeneCounts --outFilterMultimapNmax 1 --outFilterMatchNmin 16 --alignEndsType EndToEnd Running RiboCode to identify translated ORFs (1). Preparing the transcripts annotation files: prepare_transcripts -g &lt; gencode.v19.annotation.gtf &gt; -f &lt; hg19_genome.fa &gt; -o &lt; RiboCode_annot &gt; The RiboCode_annot folder is necessary for the following steps, so its location should be properly given if author moved it or changed the working directory. (2). Selecting the length range of the RPF reads and identify the P-site locations: metaplots -a &lt; RiboCode_annot &gt; -r &lt; HEK293Aligned.toTranscriptome.out.bam &gt; This step will generate two files: a PDF file plots the aggregate profiles of the distance from the 5'-end of reads to the annotated start codons (or stop codons), which is used for examining the P-site periodicity of RPF reads on CDS regions. The P-site config file, which defines the read lengths with strong 3-nt periodicity and the associated P-site locations for each length. In some cases, user may have multiple bam files to predict ORFs together in next step, they can use "-i" argument to specify a text file which contains the names of these bam files ( one file per line) (3). Detecting translated ORFs using the ribosome-profiling data: RiboCode -a &lt; RiboCode_annot &gt; -c &lt; config.txt &gt; -l no -g -o &lt; RiboCode_ORFs_result &gt; Using the config file generated by last step to specify the information of the bam file and P-site parameters, please refer to the example file config.txt in data folder. The "gtf" or "bed" format file of predicted ORFs can be obtained by adding the "-g" or "-b" argument to this command. Explanation of final result files The RiboCode generates two text files: The "(output file name).txt" contains the information of all predicted ORFs in each transcript. The "(output file name)_collapsed.txt" file combines the ORFs having the same stop codon in different transcript isoforms: the one harboring the most upstream in-frame ATG will be kept. Some column names of the result file: - ORF_ID: The identifier of predicated ORF. - ORF_type: The type of predicted ORF, which is annotated according to its location to associated CDS. The following ORF categories are reported: "annotated" (overlapping with annotated CDS, have the same stop codon with annotated CDS) "uORF" (upstream of annotated CDS, not overlapping with annotated CDS) "dORF" (downstream of annotated CDS, not overlapping with annotated CDS) "Overlap_uORF" (upstream of annotated CDS and overlapping annotated with CDS) "Overlap_dORF" (downstream of annotated CDS and overlapping annotated CDS" "Internal" (internal ORF of annotated CDS, but in a different reading frame) "novel" (from non-coding genes or non-coding transcripts of the coding genes). - alt_ORF_type: only shown in "_collapsed.t
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fxryanglab%2FRiboCode)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fxryanglab%2FRiboCode)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=xryanglab%2FRiboCode)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[xryanglab](/xryanglab)
+/
+**[RiboCode](/xryanglab/RiboCode)**
+Public
+
+* [Notifications](/login?return_to=%2Fxryanglab%2FRiboCode) You must be signed in to change notification settings
+* [Fork
+  16](/login?return_to=%2Fxryanglab%2FRiboCode)
+* [Star
+   58](/login?return_to=%2Fxryanglab%2FRiboCode)
+
+* [Code](/xryanglab/RiboCode)
+* [Issues
+  37](/xryanglab/RiboCode/issues)
+* [Pull requests
+  0](/xryanglab/RiboCode/pulls)
+* [Actions](/xryanglab/RiboCode/actions)
+* [Projects](/xryanglab/RiboCode/projects)
+* [Security
+  0](/xryanglab/RiboCode/security)
+* [Insights](/xryanglab/RiboCode/pulse)
+
+Additional navigation options
+
+* [Code](/xryanglab/RiboCode)
+* [Issues](/xryanglab/RiboCode/issues)
+* [Pull requests](/xryanglab/RiboCode/pulls)
+* [Actions](/xryanglab/RiboCode/actions)
+* [Projects](/xryanglab/RiboCode/projects)
+* [Security](/xryanglab/RiboCode/security)
+* [Insights](/xryanglab/RiboCode/pulse)
+
+# xryanglab/RiboCode
+
+master
+
+[Branches](/xryanglab/RiboCode/branches)[Tags](/xryanglab/RiboCode/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[172 Commits](/xryanglab/RiboCode/commits/master/)   172 Commits | | |
+| [.circleci](/xryanglab/RiboCode/tree/master/.circleci ".circleci") | | [.circleci](/xryanglab/RiboCode/tree/master/.circleci ".circleci") |  |  |
+| [RiboCode](/xryanglab/RiboCode/tree/master/RiboCode "RiboCode") | | [RiboCode](/xryanglab/RiboCode/tree/master/RiboCode "RiboCode") |  |  |
+| [data](/xryanglab/RiboCode/tree/master/data "data") | | [data](/xryanglab/RiboCode/tree/master/data "data") |  |  |
+| [.gitignore](/xryanglab/RiboCode/blob/master/.gitignore ".gitignore") | | [.gitignore](/xryanglab/RiboCode/blob/master/.gitignore ".gitignore") |  |  |
+| [AUTHORS](/xryanglab/RiboCode/blob/master/AUTHORS "AUTHORS") | | [AUTHORS](/xryanglab/RiboCode/blob/master/AUTHORS "AUTHORS") |  |  |
+| [ChangeLog.rst](/xryanglab/RiboCode/blob/master/ChangeLog.rst "ChangeLog.rst") | | [ChangeLog.rst](/xryanglab/RiboCode/blob/master/ChangeLog.rst "ChangeLog.rst") |  |  |
+| [LICENSE](/xryanglab/RiboCode/blob/master/LICENSE "LICENSE") | | [LICENSE](/xryanglab/RiboCode/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/xryanglab/RiboCode/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/xryanglab/RiboCode/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.rst](/xryanglab/RiboCode/blob/master/README.rst "README.rst") | | [README.rst](/xryanglab/RiboCode/blob/master/README.rst "README.rst") |  |  |
+| [setup.cfg](/xryanglab/RiboCode/blob/master/setup.cfg "setup.cfg") | | [setup.cfg](/xryanglab/RiboCode/blob/master/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/xryanglab/RiboCode/blob/master/setup.py "setup.py") | | [setup.py](/xryanglab/RiboCode/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+# Detect translated ORFs using ribosome-profiling data
+
+[![BuildStatus](https://camo.githubusercontent.com/34935ddcb2cd81bc278d17c32f308621218133369eede009b470be0514530db1/68747470733a2f2f636972636c6563692e636f6d2f67682f787279616e676c61622f5269626f436f64652e7376673f7374796c653d737667)](https://circleci.com/gh/xryanglab/RiboCode) [![PyPI](https://camo.githubusercontent.com/88da19ff855b336a4b648a704539f1fb6018d1b5778bd724bbc75a82368b10c2/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f5269626f436f64652e7376673f7374796c653d666c61742d737175617265)](https://pypi.python.org/pypi/RiboCode) [![PythonVersions](https://camo.githubusercontent.com/1fcecefbb547f812ed79d04b4d2dfb9220b2e19cf370abbec1cfde7113a1a02d/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f5269626f436f64652e7376673f7374796c653d666c61742d737175617265)](https://pypi.python.org/pypi/RiboCode) [![BioConda](https://camo.githubusercontent.com/02c0cd10ee525f3900c8d5833bc812799b57a3d95433ee2c53e839802b547bfd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c2d62696f636f6e64612d626c75652e7376673f7374796c653d666c61742d737175617265)](http://bioconda.github.io/recipes/ribocode/README.html) [![Publish1](https://camo.githubusercontent.com/f8b082f950506ebeb5c58e2111bcbb9ec1dd4bd192aa064c786ef6b6c9a7597e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7075626c6973682d4e41522d626c75652e7376673f7374796c653d666c61742d737175617265)](https://doi.org/10.1093/nar/gky179) [![Publish2](https://camo.githubusercontent.com/6b154562d00aa30e3bfe85cd284ce2eec3861429835347a2d3a6c62029f9fbcf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7075626c6973682d4a4f56452d627269676874677265656e2e7376673f7374796c653d666c61742d737175617265)](https://dx.doi.org/10.3791/63366) [![downloads](https://camo.githubusercontent.com/d69899b0c487f12e15faf8c4c602145b49149b76cf737c877463d77e025aceb5/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f7269626f636f64652f6261646765732f646f776e6c6f6164732e737667)](https://anaconda.org/bioconda/ribocode)
+
+*RiboCode* is a very simple but high-quality computational algorithm to
+identify genome-wide translated ORFs using ribosome-profiling data.
+
+## Dependencies:
+
+* pysam
+* pyfasta
+* h5py
+* Biopython
+* Numpy
+* Scipy
+* statsmodels
+* matplotlib
+* HTSeq
+* minepy
+
+## Installation
+
+*RiboCode* can be installed like any other Python packages. Here are some popular ways:
+
+* Install via pypi:
+
+```
+pip install ribocode
+```
+
+* Install via conda:
+
+```
+conda install -c bioconda ribocode
+```
+
+* Install from source:
+
+```
+git clone https://www.github.com/xzt41/RiboCode
+cd RiboCode
+python setup.py install
+```
+
+* Install from local:
+
+```
+pip install RiboCode-*.tar.gz
+```
+
+If you have not administrator permission, you need to install *RiboCode* locally in you own directory by adding the
+option `--user` in the above command. Then, you need to define `~/.local/bin/` in `PATH` variable,
+and `~/.local/lib/` in `PYTHONPATH` variable. For example, if you are using the bash shell, you should add the following lines to your `~/.bashrc` file:
+
+```
+export PATH=$PATH:$HOME/.local/bin/
+export PYTHONPATH=$HOME/.local/lib/python2.7
+```
+
+then, source your `~/.bashrc` file using this command:
+
+```
+source ~/.bashrc
+```
+
+Users can also update or uninstall package through one of the following commands:
+
+```
+pip install --upgrade RiboCode # upgrade
+pip uninstall RiboCode # uninstall
+conda update -c bioconda ribocode # upgrade
+conda remove ribocode # uninstall
+```
+
+## Tutorial to analyze ribosome-profiling data and run *RiboCode*
+
+Here, we use the [HEK293 dataset](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR1630831) as an example to illustrate the use of *RiboCode* and demonstrate typical workflow.
+Please make sure the path and file name are correct.
+
+1. **Required files**
+
+   The genome FASTA file, GTF file for annotation can be downloaded from:
+
+   <http://www.gencodegenes.org>
+
+   or from:
+
+   <http://asia.ensembl.org/info/data/ftp/index.html>
+
+   <http://useast.ensembl.org/info/data/ftp/index.html>
+
+   For example, the required files in this tutorial can be downloaded from following URL:
+
+   GTF: ftp://ftp.sanger.ac.uk/pub/gencode/Gencode\_human/release\_19/gencode.v19.annotation.gtf.gz
+
+   FASTA: ftp://ftp.sanger.ac.uk/pub/gencode/Gencode\_human/release\_19/GRCh37.p13.genome.fa.gz
+
+   [![Important](https://camo.githubusercontent.com/7c7d1da4ba059b2720a45f75304fab46991305fcc8c90c1621eabee091164153/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4e6f74652d6f72616e67652e737667)](https://github.com/xryanglab/RiboCode/blob/master/data/GTF_update.rst) The GTF file required by *RiboCode* should include three-level hierarchy
+   annotations: genes,transcripts and exons. Some GTF files may lack the gene and transcript
+   annotations, users can added these annotations using the "GTFupdate" command in *RiboCode*.
+   Please refer to [GTF\_update.rst](https://github.com/xryanglab/RiboCode/blob/master/data/GTF_update.rst) for more information.
+
+   The raw Ribo-seq FASTQ file can be downloaded using fastq-dump tool from [SRA\_Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software):
+
+   ```
+   fastq-dump -A <SRR1630831>
+   ```
+2. **Trimming adapter sequence for ribo-seq data**
+
+   Using cutadapt program <https://cutadapt.readthedocs.io/en/stable/installation.html>
+
+   Example:
+
+   ```
+   cutadapt -m 20 --match-read-wildcards -a (Adapter sequence) -o <Trimmed fastq file> <Input fastq file>
+   ```
+
+   Here, the adapter sequences for this data had already been trimmed off, so we can skip this step.
+3. **Removing ribosomal RNA(rRNA) derived reads**
+
+   Removing rRNA contamination by aligning the trimmed reads to rRNA sequences using [Bowtie](http://bowtie-bio.sourceforge.net/index.shtml),
+   then keeping the unaligned reads for the next step.
+
+   rRNA sequences are provided in [rRNA.fa](https://github.com/xryanglab/RiboCode/blob/master/data/rRNA.fa) file.
+
+   Example:
+
+   ```
+   bowtie-build <rRNA.fa> rRNA
+   bowtie -p 8 -norc --un <un_aligned.fastq> -q <SRR1630831.fastq> rRNA <HEK293_rRNA.align>
+   ```
+4. **Aligning the clean reads to reference genome**
+
+   Using STAR program: <https://github.com/alexdobin/STAR>
+
+   Example:
+
+   (1). Build index
+
+   ```
+   STAR --runThreadN 8 --r

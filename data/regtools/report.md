@@ -89,3 +89,6 @@ Usage:		regtools variants <command> [options]
 Command:	annotate		Annotate variants with splicing information.
 ```
 
+
+## Metadata
+- **Skill**: generated

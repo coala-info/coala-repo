@@ -1,6 +1,6 @@
 ---
 name: vcfkit
-description: VCF-kit is a suite of utilities for downstream analysis of VCF files, providing functions for population genetics, phylogenetics, and variant validation. Use when user asks to manage reference genomes, calculate population genetics statistics, design primers for genomic variants, generate phylogenetic trees, convert VCF data to other formats, rename samples, filter variants, or impute genotypes.
+description: VCF-kit is a suite of utilities designed for the analysis, transformation, and evolutionary interpretation of genomic variant data. Use when user asks to calculate population genetics statistics, generate phylogenetic trees, design primers for variants, or convert VCF files to TSV format.
 homepage: https://github.com/AndersenLab/VCF-kit
 ---
 
@@ -8,48 +8,60 @@ homepage: https://github.com/AndersenLab/VCF-kit
 # vcfkit
 
 ## Overview
-VCF-kit (invoked via the command `vk`) is a specialized suite of utilities for downstream VCF analysis. It bridges the gap between raw variant calling and biological insight by providing high-level functions for population genetics, phylogenetics, and laboratory validation. Use this skill to streamline workflows that involve reference genome management, genotype frequency calculations, and automated primer design for specific genomic variants.
+VCF-kit (accessed via the `vk` command) is a specialized suite of utilities designed to simplify the analysis of genomic variant data. While many tools focus on the initial calling of variants, VCF-kit provides high-level functions for evolutionary biology and experimental validation. It excels at transforming raw VCF data into biological insights, such as identifying selective sweeps, visualizing sample relationships through dendrograms, and automating the tedious process of primer design for variant verification.
 
-## Command Reference and Usage Patterns
+## Core Workflows and CLI Patterns
 
 ### Reference Genome Management
-Before performing operations like primer design or variant calling, you must set up a reference genome.
-- **Install a genome**: `vk genome location <genome_name>`
-- **List available genomes**: `vk genome list`
-- **Remove a genome**: `vk genome rm <genome_name>`
+Many `vk` commands require a reference genome. Use the `genome` module to manage these.
+- **Setup a reference**: `vk genome location/to/genome.fa`
+- **Search/Download**: `vk genome ncbi --search "Caenorhabditis elegans"`
 
 ### Population Genetics and Statistics
-- **Tajima's D**: Calculate Tajima's D across the genome.
+- **Tajima's D**: Calculate Tajima's D across the genome using a sliding window.
   `vk tajima <window_size> <step_size> input.vcf.gz`
-- **Genotype Calculations**: Obtain frequencies and counts of genotypes and alleles.
+- **Genotype Statistics**: Obtain allele frequencies and genotype counts.
   `vk calc genotypes input.vcf.gz`
 
-### Variant Validation and Primers
-One of VCF-kit's most powerful features is automated primer design for variants.
-- **Generate Primers**: Design primers for variants in a VCF file.
-  `vk primer template --reference=<genome> input.vcf.gz`
-- **Specific Region**: `vk primer design <region> --reference=<genome>`
+### Phylogenetic Analysis
+Generate dendrograms directly from VCF files to visualize sample relatedness.
+- **Generate a tree**: `vk phylo tree nj input.vcf.gz` (Uses Neighbor-Joining)
+- **FastTree integration**: `vk phylo fasttree input.vcf.gz`
 
-### Phylogenetics
-- **Generate Trees**: Create dendrograms directly from VCF data.
-  `vk phylo tree nj input.vcf.gz` (Neighbor-Joining tree)
-  `vk phylo fasta input.vcf.gz` (Convert VCF to FASTA for other tree-building tools)
+### Laboratory Validation (Primer Design)
+One of VCF-kit's most powerful features is automating primer design for specific variants.
+- **Design primers**: `vk primer design --region chrI:1-10000 input.vcf.gz`
+- **Validation**: It uses `primer3` and `blast` internally to ensure primers are unique and effective.
 
-### Data Manipulation and Conversion
-- **VCF to TSV**: Convert complex VCF data into a flat tab-separated file for use in R or Excel.
-  `vk vcf2tsv input.vcf.gz`
-- **Rename Samples**: Modify sample names using prefixes, suffixes, or string substitution.
-  `vk rename --prefix=STUDY1_ input.vcf.gz`
-- **Filtering**: Filter variants based on specific call counts (REF, HET, ALT, or missing).
-  `vk filter --min-alt=2 input.vcf.gz`
+### Data Transformation and Filtering
+- **VCF to TSV**: Convert complex VCF fields into a flat, readable TSV format.
+  `vk vcf2tsv input.vcf.gz > output.tsv`
+- **Sample Renaming**: Quickly modify sample names using prefixes, suffixes, or regex-like substitutions.
+  `vk rename --prefix "StudyA_" input.vcf.gz`
+- **Genotype Filtering**: Filter variants based on the number of missing calls or specific genotype types (REF, HET, ALT).
+  `vk filter --max-missing 0.1 input.vcf.gz`
 
-## Expert Tips and Best Practices
-- **Piping**: VCF-kit is designed to work with standard streams. You can pipe `bcftools` output directly into `vk` commands:
-  `bcftools view -v snps input.vcf.gz | vk vcf2tsv`
-- **Dependencies**: Ensure that external dependencies (`bwa`, `samtools`, `bcftools`, `blast`, and `primer3`) are installed and available in your PATH, as many `vk` modules (like `primer` and `call`) rely on them.
-- **Genotype Imputation**: Use the `vk hmm` module for linkage studies to impute genotypes from parental data using a Hidden Markov Model.
-- **Memory Management**: For large VCF files, ensure the file is indexed (`.tbi`) to allow faster access by certain `vk` modules.
+## Expert Tips
+- **Piping**: `vk` is designed to work within Unix pipes. You can pipe output from `bcftools` directly into `vk`:
+  `bcftools view -r chrI:1-1000 input.vcf.gz | vk vcf2tsv`
+- **Imputation**: Use the `vk hmm` command for imputing genotypes in linkage studies, which is particularly effective for recombinant inbred lines (RILs).
+- **Dependencies**: Ensure `bwa`, `samtools`, `bcftools`, `blast`, and `primer3` are in your PATH, as `vk` acts as an orchestrator for these tools during complex operations like primer design.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| calc | Calculate various statistics from VCF files. |
+| filter | Filter VCF based on genotype counts. |
+| genome | Manage genome data |
+| phylo | Phylogenetic analysis tools for VCF files. |
+| rename | Rename samples in a VCF file. |
+| tajima | Calculate Tajima's D |
+| vcf2tsv | Convert VCF to TSV format |
+| vk | A toolkit for variant calling and analysis. |
 
 ## Reference documentation
-- [VCF-kit GitHub Repository](./references/github_com_AndersenLab_VCF-kit.md)
-- [VCF-kit Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_vcfkit_overview.md)
+- [VCF-kit Main Repository](./references/github_com_AndersenLab_VCF-kit.md)
+- [VCF-kit Documentation Overview](./references/github_com_AndersenLab_VCF-kit_tree_master_docs.md)

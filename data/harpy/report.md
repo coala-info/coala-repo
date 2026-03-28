@@ -720,3 +720,6 @@ Commands:
   snakeparams   View/edit a workflow's Snakemake configurations
 ```
 
+
+## Metadata
+- **Skill**: generated

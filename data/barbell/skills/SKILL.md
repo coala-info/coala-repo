@@ -1,6 +1,6 @@
 ---
 name: barbell
-description: Barbell is a specialized tool for Oxford Nanopore Technologies demultiplexing that uses pattern-aware processing to identify barcodes and remove chimeric artifacts. Use when user asks to demultiplex Nanopore reads, annotate barcode patterns, or filter and trim reads for high-quality assembly.
+description: Barbell is a pattern-aware demultiplexer designed to resolve trimming errors and contamination in Nanopore sequencing data. Use when user asks to demultiplex reads, annotate barcode patterns, or trim and sort sequences based on specific Nanopore kits.
 homepage: https://github.com/rickbeeloo/barbell
 ---
 
@@ -8,63 +8,57 @@ homepage: https://github.com/rickbeeloo/barbell
 # barbell
 
 ## Overview
+Barbell is a pattern-aware demultiplexer designed to resolve common issues in Nanopore data, such as trimming errors and contamination from artefact reads. It uses a scoring system that is more robust than simple edit-distance, making it particularly effective for custom experiments and complex library preparations. It follows a modular workflow: **annotate** (find patterns), **inspect** (validate results), **filter** (select high-quality matches), and **trim** (produce clean reads).
 
-Barbell is a specialized tool for Oxford Nanopore Technologies (ONT) demultiplexing that focuses on "pattern-aware" processing. Unlike standard demultiplexers that may over-trim or miss chimeric artifacts, Barbell identifies specific arrangements of barcodes and flanks to ensure contamination-free assemblies. It is significantly faster and more accurate than many traditional tools, making it ideal for both standard runs and complex, multi-protocol experiments.
-
-## Installation
-
-Barbell can be installed via Conda or Cargo:
+## Quickstart with Presets
+For standard Nanopore kits, use the `kit` command to automate the workflow.
 
 ```bash
-# Via Bioconda
-conda install -c bioconda barbell
+# Basic usage for a specific kit
+barbell kit -k <kit-name> -i reads.fastq -o output_folder --maximize
 
-# Via Cargo (requires Rust)
-RUSTFLAGS="-C target-cpu=native" cargo install barbell
+# Example: Native Barcoding Kit 114 (96 samples)
+barbell kit -k SQK-NBD114-96 -i reads.fastq -o output_folder --maximize
+
+# Example: Rapid Barcoding Kit 114 (96 samples)
+barbell kit -k SQK-RBK114-96 -i reads.fastq -o output_folder --maximize
 ```
+*Note: Use `--maximize` for assembly-bound workflows to include more reads while maintaining high specificity.*
 
-## Core Workflows
+## Manual Workflow (Annotate & Trim)
+For custom experiments or in-depth inspection, run the steps manually.
 
-### 1. Quickstart with Presets
-For standard Nanopore kits (e.g., Native or Rapid barcoding), use the `kit` command.
-
+### 1. Annotation
+Generate a TSV table of all detected barcode/adapter patterns.
 ```bash
-barbell kit -k <kit-name> -i <reads.fastq> -o <output_folder> --maximize
+barbell annotate --kit <kit-name> -i reads.fastq -t 10 -o annotations.tsv
 ```
 
-*   **Recommended Flag**: `--maximize` is generally preferred for assembly tasks as it uses a more balanced barcode configuration.
-*   **Extended Search**: Use `--use-extended` to search for fusion points and artifacts. This is ~3x slower but essential for high-quality consensus sequences.
-
-### 2. Manual In-depth Workflow
-For maximum control, follow the `annotate` -> `inspect` -> `filter` -> `trim` sequence.
-
-#### Step A: Annotate
-Generate a TSV identifying barcodes and flanks in every read.
+### 2. Trimming
+Apply trimming based on the annotations.
 ```bash
-barbell annotate --kit <kit-name> -i <input.fastq> -t <threads> -o anno.tsv
+barbell trim -i reads.fastq -a annotations.tsv -o trimmed_reads/
 ```
 
-#### Step B: Inspect
-Summarize the patterns found in the annotation file to identify expected vs. unexpected (chimeric) reads.
-```bash
-barbell inspect -i anno.tsv
-```
+## Expert Tips & Troubleshooting
+- **Handling Concat Reads**: Barbell can identify fusion points within a single read. Use the `--use-extended` flag during annotation to search for these artefacts (3x slower but higher quality).
+- **Low Recovery**: If too few reads are annotated, slightly increase `--flank-max-errors`. The default is derived automatically but can be overridden if your data has higher error rates.
+- **False Positives**: If you see many `Fflank` matches (matches not near the ends), check the `rel_dist_to_end` column in the annotation TSV. If matches are random, lower the `--flank-max-errors` or adjust `--min-score-diff`.
+- **Gzip Support**: Barbell supports transparent decompression of `.fastq.gz` files.
+- **Performance**: Always use `target-cpu=native` if compiling from source to leverage SIMD instructions for maximum speed.
 
-#### Step C: Filter
-Create a `filters.txt` containing the specific patterns you want to keep (one per line), then run:
-```bash
-barbell filter -i anno.tsv -f filters.txt -o filtered.tsv
-```
 
-## Expert Tips and Troubleshooting
 
-*   **Handling "Missed" Reads**: If too few reads are annotated, slightly increase `--flank-max-errors`. Check the log to see the automatically derived cutoff first.
-*   **Reducing False Positives**: If you see too many `Fflank` matches (flank matches without confident barcodes) at random locations, lower the `--flank-max-errors` threshold.
-*   **Trimming Syntax**: When defining custom patterns for trimming, use `>>` to indicate "cut after this element" and `<<` for "cut before this element" inside the tag brackets.
-    *   Example: `Ftag[fw, *, @left(0..250), >>]`
-*   **Custom Experiments**: For non-standard protocols, ensure that the sequences provided for annotation are unique to avoid ambiguous mapping.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate FASTQ files with barcode information |
+| filter | Filter annotation files based on pattern |
+| inspect | View most common patterns in annotation |
+| kit | Run a preset |
+| trim | Trim and sort reads based on filtered annotations |
 
 ## Reference documentation
-
-- [Barbell GitHub Repository](./references/github_com_rickbeeloo_barbell.md)
-- [Barbell Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_barbell_overview.md)
+- [Barbell README](./references/github_com_rickbeeloo_barbell_blob_master_README.md)
+- [Barbell Changelog](./references/github_com_rickbeeloo_barbell_blob_master_CHANGELOG.md)

@@ -1,6 +1,6 @@
 ---
 name: snakesv
-description: snakeSV is a Snakemake workflow that automates the identification and interpretation of structural variants across large genomic datasets. Use when user asks to identify structural variants, run SV discovery tools like Manta or Delly, annotate VCF files, or submit genomic pipelines to HPC clusters.
+description: snakeSV is a Snakemake-based framework for comprehensive structural variant discovery, genotyping, and annotation. Use when user asks to run structural variant analysis pipelines, integrate multiple SV callers, or annotate variants with custom genomic features.
 homepage: https://github.com/RajLabMSSM/snakeSV/
 ---
 
@@ -8,47 +8,49 @@ homepage: https://github.com/RajLabMSSM/snakeSV/
 # snakesv
 
 ## Overview
+snakeSV is a flexible Snakemake-based framework designed for comprehensive Structural Variant (SV) analysis. It streamlines the process of SV discovery by integrating multiple callers and providing automated pre- and post-processing steps. It is particularly effective for large-scale studies where consistency across samples and integration of diverse annotation sources—such as cell-type-specific enhancers or long-read discovery panels—are required.
 
-snakeSV is a specialized framework designed to streamline the identification and interpretation of structural variants across large genomic datasets. By wrapping multiple discovery tools—such as Manta, Delly, and Smoove—into a unified Snakemake workflow, it automates the complex transition from raw BAM files to annotated VCFs. It is particularly useful for researchers needing a reproducible, scalable pipeline that handles pre-processing, multi-tool discovery, genotyping, and functional annotation in a single execution path.
+## Installation and Setup
+The preferred method for installation is via Bioconda to ensure all dependencies and sub-tools are correctly versioned and managed within an isolated environment.
 
-## Installation and Environment Setup
+- **Environment Creation**: Use `conda create -n snakesv_env -c bioconda snakesv` to set up the environment.
+- **Activation**: Run `conda activate snakesv_env` before executing any pipeline commands.
+- **Validation**: Execute `snakeSV --test_run` in a new directory to verify the installation using the built-in example dataset.
 
-The most reliable way to deploy snakeSV is through Bioconda to ensure all dependencies (Python, Snakemake, and bioinformatics tools) are correctly versioned.
+## Core CLI Usage
+The primary interface is the `snakeSV` command, which acts as a wrapper for the underlying Snakemake workflow.
 
-- **Environment Creation**: Always install snakeSV in a dedicated conda environment to avoid dependency conflicts with other genomic tools.
-- **Channel Configuration**: Ensure `conda-forge` and `bioconda` are added to your conda channels before installation.
-- **Verification**: After installation, use the built-in test command to verify the environment and tool paths:
-  `snakeSV --test_run`
+- **Standard Execution**: `snakeSV --configfile [PATH_TO_CONFIG] [SNAKEMAKE_FLAGS]`
+- **HPC Execution**: For LSF-based clusters, use the `snakejob` wrapper script. This requires a cluster configuration file (typically `cluster.yaml`) to define threads, memory, and partitions for individual rules.
+- **Common Snakemake Flags**: Always include `--cores [N]` and `--use-conda`. Use `--dry-run` (or `-n`) to verify the execution plan before processing large datasets.
 
-## Core Execution Patterns
+## Workflow Configuration Requirements
+To run the pipeline, you must prepare a configuration file. The following parameters are required for a successful run:
 
-### Native CLI Usage
-The `snakeSV` executable acts as the primary entry point. While it relies on a configuration file, the execution logic follows standard Snakemake behavior.
+- **SAMPLE_KEY**: A tab-separated file with columns `participant_id` and `bam`. It maps sample identifiers to their full BAM file paths.
+- **TOOLS**: A list of specific SV discovery tools to be utilized (e.g., manta, smoove, delly).
+- **REFERENCE_FASTA**: The path to the reference genome FASTA file.
+- **REF_BUILD**: The assembly version (e.g., "37" or "38").
+- **GTF (Optional)**: A Gencode GTF file used to annotate SV consequences like Loss of Function (LOF) or Copy Gain.
+- **SV_PANEL (Optional)**: A VCF file containing structural variants (often from long-read data) to be genotyped alongside the discovery set.
+- **ANNOTATION_BED (Optional)**: A list of BED files (formatted as chr, start, end, element_name) for custom functional annotations.
 
-- **Test Run**: Validates the installation using a small internal dataset.
-- **Direct Snakemake Execution**: For users who have cloned the repository, the pipeline can be triggered directly via Snakemake:
-  `snakemake -s workflow/Snakefile --configfile <path_to_config> --cores <N> --use-conda`
+## Expert Tips and Best Practices
+- **Leveraging Long-Read Data**: To improve the sensitivity of short-read SV detection, use a VCF generated from long-read assemblies (e.g., via svim-asm) as an `SV_PANEL`. This allows snakeSV to genotype high-confidence variants in your short-read samples.
+- **Tissue-Specific Interpretation**: When analyzing disease-related variants, provide cell-type-specific enhancer data (like H3K27ac peaks) via the `ANNOTATION_BED` parameter. This automatically labels SVs overlapping these regions in the final VCF INFO field.
+- **Resource Management**: SV discovery is resource-intensive. If running on a local machine, ensure `TMP_DIR` is set to a location with sufficient space, as tools like Manta and Smoove generate large intermediate files.
+- **Manual Git Installation**: If you clone the repository directly instead of using Bioconda, you must manually install Snakemake and ensure the `workdir` and `OUT_FOLDER` are explicitly defined in the command line configuration.
 
-### HPC Job Submission
-For large-scale studies, snakeSV provides a wrapper script called `snakejob` specifically designed for cluster environments (e.g., LSF).
 
-- **Wrapper Execution**: Use `snakejob` to handle the submission of the Snakemake master process and its sub-jobs to the cluster scheduler.
-- **Cluster Configuration**: The wrapper requires a cluster-specific configuration file (typically a YAML-formatted file, though the CLI interaction focuses on the `-u` and `-c` flags).
-- **Command Pattern**:
-  `./snakejob -u <cluster_config> -c <pipeline_config>`
 
-## Data Preparation Best Practices
+## Subcommands
 
-- **Sample Key Mapping**: Prepare a tab-separated "sample key" file. This file must contain a header with `participant_id` and `bam` columns. Ensure the paths to the BAM files are absolute or correctly relative to the working directory.
-- **Reference Genome**: The reference FASTA must be indexed. If using optional annotation features, ensure the reference build (e.g., 37 or 38) matches your input data and GTF files.
-- **Custom Annotations**: To enhance SV interpretation, provide BED files containing genomic elements. The pipeline will append the element names from the fourth column of the BED file to the SV INFO field.
-
-## Expert Tips for Large-Scale Studies
-
-- **Temporary Directories**: SV discovery tools generate massive amounts of intermediate data. Use the `TMP_DIR` parameter to point to high-speed local scratch space rather than network-attached storage to prevent I/O bottlenecks.
-- **Tool Selection**: You can customize the discovery suite by modifying the `TOOLS` list in your configuration. Running Manta, Smoove, and Delly in parallel is the standard approach for maximizing sensitivity.
-- **Genotyping Panels**: If you have a specific set of SVs (e.g., from long-read sequencing), use the `SV_PANEL` option to force-genotype those specific variants across your entire cohort.
+| Command | Description |
+|---------|-------------|
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
-- [snakeSV Wiki](./references/github_com_RajLabMSSM_snakeSV_wiki.md)
 - [snakeSV Main Repository](./references/github_com_RajLabMSSM_snakeSV.md)
+- [snakeSV Wiki Home](./references/github_com_RajLabMSSM_snakeSV_wiki.md)
+- [Usage Examples and Case Studies](./references/github_com_RajLabMSSM_snakeSV_wiki_Usage-examples.md)

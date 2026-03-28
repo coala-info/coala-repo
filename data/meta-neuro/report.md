@@ -260,3 +260,6 @@ options:
   --output OUTPUT       Output directory to save features
 ```
 
+
+## Metadata
+- **Skill**: generated

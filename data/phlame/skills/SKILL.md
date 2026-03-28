@@ -1,6 +1,6 @@
 ---
 name: phlame
-description: PHLAME is a bioinformatics pipeline for high-resolution intraspecies profiling and estimating strain divergence from reference phylogenies. Use when user asks to identify specific clades within a species, quantify genomic novelty, or track strain dynamics in metagenomic samples.
+description: PHLAME is a bioinformatics pipeline designed to characterize strain-level diversity and estimate phylogenetic divergence within a species from metagenomic samples. Use when user asks to build species-specific classifiers, generate candidate mutation tables, or profile metagenomic reads to identify strain frequencies and novel diversity.
 homepage: https://github.com/quevan/phlame
 ---
 
@@ -9,44 +9,65 @@ homepage: https://github.com/quevan/phlame
 
 ## Overview
 
-PHLAME (Phylogenetic-based Metagenomic Evaluation) is a specialized bioinformatics pipeline for high-resolution intraspecies profiling. While standard taxonomic profilers often stop at the species level, PHLAME identifies specific clades within a species and estimates the degree to which strains in a sample have diverged from the reference phylogeny. This "novelty-aware" capability allows researchers to quantify the proportion of diversity that cannot be explained by existing reference genomes, making it a powerful tool for tracking pathogen evolution and strain dynamics in complex microbial communities.
-
-## Installation and Setup
-
-PHLAME has several heavy bioinformatics dependencies (samtools, bcftools, RaXML). Using Conda is the recommended method to ensure all environment requirements are met:
-
-```bash
-conda install -c bioconda phlame
-```
-
-Ensure you have an aligner like `bowtie2` installed if you are starting from raw FASTQ sequencing data.
+PHLAME (Phylogenetic Likelihood Analysis of Metagenomic Evolution) is a bioinformatics pipeline designed to characterize strain-level diversity within a species from metagenomic samples. Unlike traditional methods that might misidentify novel strains as mixtures of known references, PHLAME uses a "Divergence" (DVb) metric to estimate where a sample's strains branch off from the known phylogeny. It is particularly effective for analyzing sample types where recovering high-quality genomes directly from metagenomes is difficult.
 
 ## Core Workflow
 
-### 1. Database Construction
-To profile a specific species, you must first create a reference database. This requires:
-- A high-quality assembled reference genome (.fasta).
-- A collection of whole genome sequences (WGS) for that species to capture known diversity.
+### 1. Database Preparation
+Before profiling metagenomes, you must build a species-specific classifier.
 
-The process involves generating a candidate mutation table, creating a phylogeny (often using RaXML), and then compiling these into a PHLAME-formatted database.
+*   **Align Reference Genomes**: Align your collection of WGS data (fastq or fasta) to a single species-specific reference genome using `bowtie2`.
+*   **Generate Counts**: Convert aligned `.bam` files into compressed `.counts` objects.
+    ```bash
+    phlame counts -i sample.bam -r reference.fasta -o sample.counts
+    ```
+*   **Build Candidate Mutation Table (CMT)**: Aggregate multiple counts files.
+    ```bash
+    phlame cmt -i counts_list.txt -s names_list.txt -r reference.fasta -o species_CMT.pickle.gz
+    ```
+*   **Generate Phylogeny**: Create a tree (requires RaXML).
+    ```bash
+    phlame tree -i species_CMT.pickle.gz -p species.phylip -r mapping.txt -o species.tre
+    ```
+*   **Create Classifier**: Detect clades and build the final database.
+    ```bash
+    phlame makedb -i species_CMT.pickle.gz -t species.tre -o species.classifier --min_branchlen 500
+    ```
 
 ### 2. Metagenomic Classification
-Once a database is prepared, use the `phlame classify` command to analyze metagenomic samples.
+Once a classifier is built, use it to profile metagenomic samples.
 
-**Input Requirements:**
-- Metagenomic sequencing data in `.fastq` or aligned `.bam` format.
-- A pre-built PHLAME reference database.
+*   **Align Metagenome**: Align metagenomic reads to the same species-specific reference used in database construction.
+*   **Run Classification**:
+    ```bash
+    phlame classify -i metagenome.bam -c species.classifier -r reference.fasta -m bayesian -o frequencies.csv -p fitinfo.data
+    ```
 
-**Key Metric: Divergence (DVb)**
-Pay close attention to the DVb metric in the output. It estimates the point on individual branches of a phylogeny where novel strains in your sample are inferred to diverge from known references. A high DVb suggests the presence of a strain significantly different from those in your reference database.
+## Expert Tips and Best Practices
 
-## Best Practices
+*   **Input Selection**: Prefer `.fastq` over assembled `.fasta` for reference genomes to avoid variant call errors introduced by draft assemblies. If you must use `.fasta`, simulate reads first using `wgsim`.
+*   **Branch Length Threshold**: The `--min_branchlen` parameter in `makedb` is critical. Visualize your tree first (e.g., in FigTree) to identify natural clade separations before setting this value.
+*   **Algorithm Choice**: 
+    *   Use `-m bayesian` for high-quality results. It provides a "Probability Score" and quantifies uncertainty, which is vital at low sequencing depths.
+    *   Use `-m mle` (Maximum Likelihood) only if computational speed is the primary concern, as it provides less information about novel diversity.
+*   **Interpreting Relative Abundance**: If the sum of relative abundances is significantly less than 1.0, it indicates the presence of novel intraspecies diversity not represented by any clade in your reference database.
+*   **Divergence (DVb)**: A DVb value represents the ratio of shared to unshared branch lengths (0 to 1). A value of 1.0 suggests the strain in the sample is nearly identical to the reference clade MRCA.
 
-- **Reference Selection**: The quality of your intraspecies profiling is directly tied to the diversity of the genomes used to build the reference database. Include as many representative strains as possible.
-- **Read Alignment**: If starting from FASTQ files, ensure your alignment parameters are sensitive enough to capture intraspecies variations but stringent enough to avoid cross-species contamination.
-- **Resource Management**: Building databases and running classifications on large metagenomes can be computationally intensive. Ensure `samtools` and `bcftools` are accessible in your PATH.
-- **Visualization**: Use the built-in visualization tools to inspect the distribution of clades and the divergence estimates across the phylogeny to identify potential "novelty" hotspots.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cmt | This tool is part of the phlame suite and is used for processing count data. |
+| phlame makedb | Build a phlame classifier database. |
+| phlame tree | Builds a phylogenetic tree from mutation data. |
+| phlame_classify | Classify lineages from bam files. |
+| phlame_counts | Calculate phlame counts from BAM file. |
+| phlame_plot | Generate informative output plots from lineage classification. |
 
 ## Reference documentation
-- [PHLAME GitHub Repository](./references/github_com_quevan_phlame.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_phlame_overview.md)
+- [PHLAME README](./references/github_com_quevan_phlame_blob_master_README.md)
+- [Building a Database Tutorial](./references/github_com_quevan_phlame_blob_master_docs_building_database_tutorial.md)
+- [Classifying Samples Tutorial](./references/github_com_quevan_phlame_blob_master_docs_classifying_samples_tutorial.md)
+- [Conceptual Introduction to PHLAME](./references/github_com_quevan_phlame_blob_master_docs_conceptual_intro.md)

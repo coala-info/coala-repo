@@ -1,0 +1,129 @@
+☰
+[ ]
+
+[![Bin Chicken logo](/binchicken/binchicken_logo.png)](/binchicken/)
+
+## [Bin Chicken](/binchicken/)
+
+S
+
+* [installation](/binchicken/installation)
+* [setup](/binchicken/setup)
+* [usage](/binchicken/usage)
+* [demo](/binchicken/demo)
+* [tools](/binchicken/tools)
+
++ [Bin Chicken coassemble](/binchicken/tools/coassemble)
++ [Bin Chicken single](/binchicken/tools/single)
++ [Bin Chicken update](/binchicken/tools/update)
++ [Bin Chicken iterate](/binchicken/tools/iterate)
++ [Bin Chicken evaluate](/binchicken/tools/evaluate)
++ [Bin Chicken build](/binchicken/tools/build)
+
+# Installation
+
+There are several ways to install Bin Chicken
+
+## System requirements
+
+The purpose of Bin Chicken is to suggest sets of samples for coassembly.
+The coassembly process can use upwards of 250GB of RAM and 32 cores, so we recommend running on a HPC system if you intend to assemble and recover genomes.
+
+Bin Chicken is supported for Linux (tested on SUSE 12.5). Specific dependencies are listed in [binchicken.yml](https://github.com/AroneyS/binchicken/blob/master/binchicken.yml).
+Bin Chicken uses many independent pixi environments for different tasks. These environments are listed in [pixi.toml](https://github.com/AroneyS/binchicken/blob/master/binchicken/pixi.toml).
+See [setup](/binchicken/setup) for environment and database setup.
+
+## Install from Bioconda via Pixi
+
+Create pixi.toml file:
+
+```
+[workspace]
+channels = ["conda-forge", "bioconda"]
+name = "binchicken"
+platforms = ["linux-64"]
+
+[dependencies]
+binchicken = "*"
+```
+
+Create pixi environment.
+
+```
+pixi install
+
+# Either run within your current environment
+pixi run binchicken -h
+# Or enter the environment
+pixi shell
+```
+
+## Install from Bioconda via Conda
+
+Install latest release via conda.
+
+```
+conda create -n binchicken -c bioconda -c conda-forge binchicken
+
+# Activate the environment
+conda activate binchicken
+```
+
+## Install from pip
+
+Create the environment using the `binchicken.yml` file then install from pip.
+
+```
+conda env create -n binchicken -f binchicken.yml
+conda activate binchicken
+pip install binchicken
+```
+
+## Install from source
+
+To install from source, we recommend using [pixi](https://pixi.sh/).
+Create conda env from `binchicken.yml` and install from source.
+
+```
+git clone https://github.com/AroneyS/binchicken.git
+cd binchicken
+mkdir -p binchicken/.pixi
+pixi run postinstall
+```
+
+Then binchicken can be run using `pixi run` (or via `pixi shell`).
+
+```
+pixi run binchicken --help
+```
+
+When installed this way, binchicken is installed in an "editable" way (similar to `pip install -e .`),
+meaning that any changes made to binchicken source are immediately available via the `binchicken` command.
+This is useful for development and debugging.
+
+Tests can be run with:
+
+```
+pixi run -e dev run-tests
+
+# Or a specific test
+pixi run -e dev run-a-test test_coassemble_taxa_of_interest
+```
+
+When run this way, the databases required for binchicken (e.g. `CHECKM2DB`) can be symlinked from a `db/` directory in the binchicken repository.
+An activation hook then ensures that these are available when in the pixi environments.
+To do this, create a `db/` directory in the binchicken repository and symlink the required databases into it.
+
+To check the expected database symlink names, see `admin/set_env_vars.sh` in the binchicken repository.
+The advantage of this approach is that locations of the databases are not tracked in the repository, since they are specific to the computing cluster of the user.
+
+On this page
+
+* [Installation](#installation)
+* [System requirements](#system-requirements)
+* [Install from Bioconda via Pixi](#install-from-bioconda-via-pixi)
+* [Install from Bioconda via Conda](#install-from-bioconda-via-conda)
+* [Install from pip](#install-from-pip)
+* [Install from source](#install-from-source)
+
+Powered by [Doctave](https://cli.doctave.com)

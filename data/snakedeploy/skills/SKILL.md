@@ -1,6 +1,6 @@
 ---
 name: snakedeploy
-description: Snakedeploy automates the deployment and configuration of Snakemake workflows from remote repositories to local environments. Use when user asks to deploy a workflow, pin conda environments, collect files into a tabular format, or scaffold new Snakemake plugins.
+description: Snakedeploy automates the deployment and management of Snakemake workflows from remote repositories to local execution environments. Use when user asks to deploy a workflow, pin Conda environments, update Snakemake wrappers, or scaffold new plugins.
 homepage: https://github.com/snakemake/snakedeploy
 ---
 
@@ -8,48 +8,75 @@ homepage: https://github.com/snakemake/snakedeploy
 # snakedeploy
 
 ## Overview
-Snakedeploy is a specialized tool designed to bridge the gap between a published Snakemake workflow and its local execution. It allows users to "install" a workflow from a remote repository without manually cloning the source code. By generating a local wrapper (a Snakefile that points to the remote source) and the necessary configuration boilerplate, it ensures that the workflow remains version-controlled and reproducible while allowing for local customization of parameters and environments.
 
-## Installation
-Install snakedeploy via the bioconda channel:
-```bash
-conda install -c bioconda snakedeploy
-```
+Snakedeploy is the official companion tool for Snakemake designed to simplify the transition from a remote workflow repository to a local, production-ready execution environment. It automates the creation of local configuration files and directory structures, ensuring that users can deploy complex pipelines with a single command while maintaining a clean separation between the workflow logic (stored in Git) and local data/configuration.
 
-## Core CLI Usage
+## Core CLI Patterns
 
 ### Deploying a Workflow
-The primary use case is deploying a remote workflow to a local directory. This creates a `Snakefile` that uses the `module` directive to pull the remote code, along with a `config/` directory.
+To initialize a local deployment of a remote Snakemake workflow, use the `deploy-workflow` command. This creates a local `config/` directory and a `Snakefile` that sources the remote rules.
+
 ```bash
-snakedeploy deploy-workflow <github-repo-url> <local-destination-path> --tag <version-tag>
+snakedeploy deploy-workflow https://github.com/user/repo . --tag v1.0.0
 ```
-*   **Example**: `snakedeploy deploy-workflow https://github.com/snakemake-workflows/rna-seq-star-deseq2 . --tag v2.1.0`
+*   **Best Practice**: Always specify a `--tag` or `--branch` to ensure reproducibility. Deploying from `main` can lead to breaking changes if the remote repository updates.
+*   **Tip**: Use `.` as the destination to deploy into the current directory.
 
-### Managing Environments
-To ensure long-term reproducibility, use snakedeploy to pin the specific versions of software in the workflow's Conda environments.
+### Managing Conda Environments
+Snakedeploy can pin Conda dependencies to specific hashes to ensure environment stability across different machines.
+
 ```bash
-snakedeploy update-conda-envs --pin-envs
+# Pin all conda environments in a workflow
+snakedeploy pin-conda-envs Snakefile
 ```
-This command generates explicit environment files that lock every dependency to a specific build.
+*   **Expert Tip**: Use the `--create-pr` flag (if configured with a GitHub token) to automatically submit the updated pins back to the upstream repository.
 
-### Organizing Files
-For workflows that involve complex file structures, use the collection subcommand to organize files into a tabular format:
+### Updating Snakemake Wrappers
+If your workflow relies on the Snakemake Wrapper Repository, you can synchronize them to the latest versions.
+
 ```bash
-snakedeploy collect-files
+snakedeploy update-snakemake-wrappers Snakefile
 ```
+*   **Note**: This command parses your `Snakefile`, identifies wrapper strings, and updates the version tags to the most recent compatible releases.
 
-### Developer Scaffolding
-If developing Snakemake plugins or new projects, snakedeploy provides scaffolding commands to generate the required directory structures and boilerplate:
-*   **Plugin Scaffolding**: `snakedeploy scaffold plugin`
-*   **Logger Scaffolding**: `snakedeploy scaffold logger-plugin`
+### Scaffolding Plugins
+For developers building Snakemake extensions, snakedeploy provides templates for various plugin types.
 
-## Best Practices
-*   **Version Pinning**: Always specify a `--tag` or `--branch` when deploying to ensure you are not using the "main" branch, which may change and break reproducibility.
-*   **Configuration**: After deployment, immediately inspect the generated `config/config.yaml`. Snakedeploy provides the schema-defined defaults, but you must provide the paths to your local data.
-*   **Profile Deployment**: Use snakedeploy to manage execution profiles (e.g., for Slurm or SGE). Recent versions (v0.11+) automatically include profile directories and license files in the deployment.
-*   **Clean Deployments**: Always deploy into a clean directory to avoid conflicts between the generated `Snakefile` and existing files.
+```bash
+# Create a scaffold for a new executor plugin
+snakedeploy scaffold-plugin . --type executor
+```
+*   Supported types include `executor`, `storage`, and `scheduler`.
+
+## Expert Tips
+
+1.  **Profile Deployment**: When deploying a workflow, snakedeploy can also pull in `profiles/` defined in the source repository. This is essential for cluster-ready pipelines that require specific resource configurations.
+2.  **Input Registration**: Use the `register-inputs` subcommand to collect local data files into a tabular structure (like a sample sheet) that the deployed workflow can immediately consume.
+3.  **Configuration Discovery**: After running `deploy-workflow`, check the generated `config/config.yaml`. Snakedeploy automatically extracts the default configuration schema from the source repository to help you fill in required parameters.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| snakedeploy | A tool for managing Snakemake workflows and their dependencies. |
+| snakedeploy | A tool for deploying and managing Snakemake workflows. |
+| snakedeploy | A tool for deploying and managing Snakemake workflows. |
+| snakedeploy | A tool for deploying Snakemake workflows and managing their dependencies. |
+| snakedeploy | Deploy Snakemake workflows and manage their environments. |
+| snakedeploy | snakedeploy: error: argument subcommand: invalid choice: 'package' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin) |
+| snakedeploy | A tool for deploying and managing Snakemake workflows. |
+| snakedeploy | A tool for deploying and managing Snakemake workflows. |
+| snakedeploy collect-files | Collect files into a tabular structure, given input from STDIN formats glob patterns defined in a config sheet. |
+| snakedeploy deploy-workflow | Deploy a workflow from a git repository. |
+| snakedeploy scaffold-snakemake-plugin | Scaffold a snakemake plugin by adding recommended dependencies and code snippets. |
+| snakedeploy update-conda-envs | Update given conda environment definition files (in YAML format) so that all contained packages are set to the latest feasible versions. |
+| snakedeploy update-snakemake-wrappers | Update all snakemake wrappers in given Snakefiles to their latest versions. |
+| snakedeploy_pin-conda-envs | Pin/lock given conda environment definition files (in YAML format) into a list of explicit package URLs including checksums, stored in a file <prefix>.<platform>.pin.txt with prefix being the path to the original definition file and <platform> being the name of the platform the pinning was performed on (e.g. linux-64). The resulting file will be automatically used by Snakemake to restore exactly the pinned environment. Also you can use it manually, e.g. with 'conda create -f <path-to-pin-file> -n <env-name>'. |
 
 ## Reference documentation
-- [snakedeploy - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_snakedeploy_overview.md)
-- [GitHub - snakemake/snakedeploy](./references/github_com_snakemake_snakedeploy.md)
-- [snakedeploy Tags/Releases](./references/github_com_snakemake_snakedeploy_tags.md)
+- [Workflow Deployment Guide](./references/snakedeploy_readthedocs_io_en_stable_workflow_users_workflow_deployment.html.md)
+- [Updating Conda Environments](./references/snakedeploy_readthedocs_io_en_stable_workflow_developers_update_conda_envs.html.md)
+- [Updating Snakemake Wrappers](./references/snakedeploy_readthedocs_io_en_stable_workflow_developers_update_snakemake_wrappers.html.md)
+- [Plugin Scaffolding](./references/snakedeploy_readthedocs_io_en_stable_snakemake_developers_scaffold_snakemake_plugins.html.md)

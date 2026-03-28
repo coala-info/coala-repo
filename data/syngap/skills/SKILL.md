@@ -1,6 +1,6 @@
 ---
 name: syngap
-description: SynGAP refines gene models and analyzes evolutionary transcriptomics by leveraging synteny and conservation between related species. Use when user asks to polish genome annotations, identify homologous gene pairs, or calculate expression variation across species.
+description: SynGAP refines gene structure annotations and identifies homologous gene pairs by leveraging evolutionary synteny between species. Use when user asks to polish genome annotations, correct gene models using synteny, identify high-confidence ortholog pairs, or perform cross-species transcriptomic analysis.
 homepage: https://github.com/yanyew/SynGAP
 ---
 
@@ -9,61 +9,67 @@ homepage: https://github.com/yanyew/SynGAP
 
 ## Overview
 
-SynGAP (Synteny-based Gene structure Annotation Polisher) is a specialized toolkit designed to refine gene models by leveraging evolutionary conservation between related organisms. It addresses common issues in genome annotation, such as missing or mis-annotated genes, by using syntenic blocks to guide the polishing process. Beyond annotation, it provides workflows for cross-species transcriptomic analysis, allowing researchers to identify high-confidence homologous gene pairs and calculate expression variation across time-series data.
+SynGAP (Synteny-based Gene Structure Annotation Polisher) is a specialized toolkit designed to refine gene models by leveraging evolutionary conservation and synteny between related species. It transforms general genome annotations into high-quality, polished versions by identifying gaps in gene models (MAGs) and correcting structural errors. Beyond annotation polishing, it provides workflows for cross-species transcriptomic analysis, enabling the identification of high-confidence homologous gene pairs and the calculation of expression variation indices (EVI).
 
-## Tool-Specific Best Practices
+## Core Workflows
 
-### Genome Annotation Polishing
-SynGAP offers four primary modes for polishing annotations. Choose the mode based on the number of species and the quality of available references:
+### 1. Genome Annotation Polishing
+Use these modules to correct gene structures based on synteny.
 
-*   **Dual Polishing (`dual`)**: Use for mutual correction between two related species. This is the most common workflow when both species have similar assembly quality.
-*   **Master Polishing (`master`)**: Use to polish a target species using a high-quality reference "Core set" provided by the SynGAP database. You must run `initdb` before using this mode.
-*   **Triple Polishing (`triple`)**: Use for a three-way combination to maximize the detection of conserved gene structures.
-*   **Custom Polishing (`custom`)**: Use if you prefer to provide your own synteny results (e.g., `.anchors` files from JCVI or other software) rather than letting SynGAP compute them.
+*   **Dual Polishing (`dual`)**: Mutual correction between two species.
+    ```bash
+    syngap dual --sp1fa=species1.fa --sp1gff=species1.gff3 --sp2fa=species2.fa --sp2gff=species2.gff3 --sp1=ID1 --sp2=ID2
+    ```
+*   **Master Polishing (`master`)**: Polish a target species using a high-quality "Core set" reference.
+    *   *Prerequisite*: Initialize the database first.
+    ```bash
+    syngap initdb --sp=plant --file=plant.tar.gz
+    syngap master --sp=plant --sp1fa=target.fa --sp1gff=target.gff3 --sp1=TargetID
+    ```
+*   **Triple Polishing (`triple`)**: Combined polishing using three related species.
+    ```bash
+    syngap triple --sp1fa=sp1.fa --sp1gff=sp1.gff3 --sp2fa=sp2.fa --sp2gff=sp2.gff3 --sp3fa=sp3.fa --sp3gff=sp3.gff3 --sp1=ID1 --sp2=ID2 --sp3=ID3
+    ```
+*   **Custom Polishing (`custom`)**: Use specific synteny blocks or results from external software (e.g., JCVI).
+    ```bash
+    syngap custom --sp1fa=sp1.fa --sp1gff=sp1.gff3 --sp2fa=sp2.fa --sp2gff=sp2.gff3 --custom_anchors=manual.anchors --sp1=ID1 --sp2=ID2
+    ```
 
-### Expression Variation Analysis
-For evolutionary transcriptomics, follow the sequential workflow:
-1.  **`genepair`**: Combines synteny and best two-way BLAST to generate high-confidence homologous pairs.
-2.  **`evi`**: Calculates the Expression Variation Index. Use TPM (Transcripts Per Million) as the input unit for normalized expression values to ensure consistency.
+### 2. Comparative Transcriptomics
+Use these modules to analyze gene expression across species boundaries.
 
-## Common CLI Patterns
+*   **Gene Pairing (`genepair`)**: Generates high-confidence ortholog pairs by combining SynGAP-improved synteny with reciprocal best BLAST hits.
+    ```bash
+    syngap genepair --sp1fa=sp1.fa --sp1gff=sp1.SynGAP.gff3 --sp2fa=sp2.fa --sp2gff=sp2.SynGAP.gff3 --sp1=ID1 --sp2=ID2
+    ```
 
-### Initializing the Master Database
-Before running the `master` workflow, download the required plant or animal database and initialize it:
-```bash
-syngap initdb --sp=plant --file=plant.tar.gz
-```
+## Expert Tips and Best Practices
 
-### Running Dual Polishing
-Provide FASTA and GFF3 files for both species. Use short, unique identifiers for `--sp1` and `--sp2`:
-```bash
-syngap dual \
-  --sp1fa=species1.fa \
-  --sp1gff=species1.gff3 \
-  --sp2fa=species2.fa \
-  --sp2gff=species2.gff3 \
-  --sp1=S1 \
-  --sp2=S2
-```
+*   **Output Interpretation**:
+    *   `*.SynGAP.gff3`: The complete annotation set containing both original and newly polished models.
+    *   `*.SynGAP.clean.gff3`: Contains only the polished/corrected annotations.
+    *   `*.miss_annotated.gff3`: Specifically identifies genes that were entirely missing in the original annotation.
+    *   `*.mis_annotated.gff3`: Specifically identifies genes that had incorrect structures in the original annotation.
+*   **Database Management**: When using the `master` workflow, ensure you have downloaded the appropriate `plant.tar.gz` or `animal.tar.gz` datasets. Use `syngap initdb` to register them before running the polishing command.
+*   **Input Requirements**: Always provide unique species identifiers (e.g., `Ath`, `Sly`) via the `--sp1` and `--sp2` flags to ensure output files are correctly prefixed and organized.
+*   **Environment**: It is highly recommended to run SynGAP within its dedicated Conda environment or Docker container to manage the extensive list of dependencies (Biopython, JCVI, Bedtools, Diamond, etc.).
 
-### Calculating EVI
-Ensure the gene pair file matches the expression files. The expression files should be tab-delimited:
-```bash
-syngap evi \
-  --genepair=S1.S2.final.genepair \
-  --sp1exp=S1_expression.tpm.xls \
-  --sp2exp=S2_expression.tpm.xls
-```
 
-## Expert Tips
 
-*   **Output Selection**: SynGAP generates multiple GFF3 files. 
-    *   Use `*.SynGAP.gff3` for a complete annotation containing both original and polished models.
-    *   Use `*.SynGAP.clean.gff3` if you only need the newly predicted/corrected models.
-*   **Input Consistency**: Ensure that the sequence IDs in your FASTA files exactly match the chromosome/scaffold IDs in the GFF3 files. Discrepancies will cause the synteny mapping to fail.
-*   **Resource Management**: For large genomes, SynGAP's dependency on `jcvi` and `last` can be memory-intensive. Ensure your environment has sufficient RAM when running `dual` or `triple` workflows.
-*   **Environment Setup**: It is highly recommended to use the Conda installation (`bioconda::syngap`) to manage the complex list of dependencies (Biopython, JCVI, Bedtools, LAST, etc.) automatically.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| genepair | Compares gene pairs between two species. |
+| syngap custom | Custom synteny analysis between two species. |
+| syngap dual | Compare two species' genomes and annotations. |
+| syngap evi | Calculate EVI (Expression Variation Index) for gene pairs. |
+| syngap initdb | Initialize a new syngap database by importing a masterdb. |
+| syngap master | This tool appears to be a master script for processing genomic data, likely involving species comparison and annotation. |
+| syngap triple | Compare three species genomes and their annotations. |
+| syngap_eviplot | Generate an EVI plot from a tab-divided EVI file. |
 
 ## Reference documentation
-- [SynGAP Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_syngap_overview.md)
-- [SynGAP GitHub Repository](./references/github_com_yanyew_SynGAP.md)
+- [SynGAP GitHub README](./references/github_com_yanyew_SynGAP_blob_master_README.md)
+- [Custom Polishing Logic](./references/github_com_yanyew_SynGAP_blob_master_custom.py.md)
+- [Dual Polishing Logic](./references/github_com_yanyew_SynGAP_blob_master_dual.py.md)

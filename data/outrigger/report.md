@@ -295,3 +295,6 @@ usage: outrigger [-h] [--version] {index,validate,psi} ...
 outrigger: error: invalid choice: 'splicing' (choose from 'index', 'validate', 'psi')
 ```
 
+
+## Metadata
+- **Skill**: generated

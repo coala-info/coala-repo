@@ -62,3 +62,4 @@ Options:
 
 ## Metadata
 - **Validation-run**: PASS
+- **Skill**: generated

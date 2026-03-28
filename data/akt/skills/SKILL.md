@@ -1,57 +1,67 @@
+---
 name: akt
-description: Ancestry and Kinship Tools (AKT) for statistical genetics. Use when analyzing VCF/BCF files to perform Principal Component Analysis (PCA), calculate kinship coefficients, discover pedigrees, identify unrelated individuals, or perform Mendelian phasing.
+description: AKT is a high-performance utility for analyzing large-scale genomic datasets to resolve sample relatedness and population structure. Use when user asks to estimate ancestry via PCA, calculate kinship coefficients, identify unrelated individuals, or perform Mendelian phasing on VCF and BCF files.
+homepage: https://github.com/Illumina/akt
+---
 
-# AKT (Ancestry and Kinship Tools)
 
-AKT provides high-performance statistical genetics routines using the htslib API. It is designed to work seamlessly with VCF/BCF files and integrates well into bioinformatics pipelines alongside `bcftools`.
+# akt
 
-## Core Commands
+---
+
+## Overview
+
+AKT (Ancestry and Kinship Toolkit) is a high-performance command-line utility designed for the analysis of large-scale genomic datasets. By utilizing the htslib API, it provides seamless integration with VCF and BCF file formats, allowing for efficient processing of genotype data. The tool is primarily used to resolve sample relatedness, identify population structure, and ensure data integrity in genetic cohorts by identifying pedigree errors or extracting unrelated subsets of individuals.
+
+## Command Reference and Usage
 
 ### Principal Component Analysis (PCA)
-Used for population structure analysis and ancestry inference.
+Used to estimate ancestry and identify population clusters.
+- **Basic usage**: `akt pca [options] input.vcf.gz`
+- **Key flag**: Use `--assume-homref` if you want to treat missing genotypes as homozygous reference (useful for low-coverage or sparse data).
+- **Handling Hemizygosity**: The tool includes specific logic for handling hemizygous genotypes (e.g., X chromosome in males) during PCA.
 
-- **Standard PCA**:
-  `akt pca -R <sites.vcf.gz> <input.bcf> > pca.txt`
-- **Project onto 1000 Genomes**:
-  `akt pca -W <1000G_reference.vcf.gz> <input.bcf> > 1000G_projections.txt`
+### Kinship Calculation
+Calculates kinship coefficients to determine how closely related pairs of individuals are.
+- **Basic usage**: `akt kin -F frequencies.vcf.gz input.vcf.gz`
+- **Methods (`-M`)**:
+  - `-M 0`: Plink-style kinship.
+  - `-M 1`: Standard kinship (default).
+  - `-M 2`: Genetic Relationship Matrix (GRM).
+- **Allele Frequencies**: You must provide allele frequencies using `-F`. If frequencies are not provided, you must use `--force` to calculate them from the input data (though providing a reference frequency file is preferred for accuracy).
 
-### Kinship and Relatedness
-Used to identify family relationships or verify sample identity.
+### Pedigree Discovery and Relatedness
+Identifies family structures within the data.
+- **Discover relatives**: `akt relatives input.vcf.gz`
+- **Identify unrelated samples**: `akt unrelated input.vcf.gz`
+  - This command generates a list of individuals that share no close relationships, which is a common requirement for association studies.
 
-- **Calculate Kinship Coefficients**:
-  `akt kin -R <sites.vcf.gz> -M 1 <input.bcf> > kinship.txt`
-  *Note: `-M 1` uses the robust KING-robust estimator.*
-- **Identify Duplicates**:
-  `awk '$6 > 0.4' kinship.txt` (Filters for samples with kinship > 0.4, indicating duplicates or MZ twins).
+### Mendelian Phasing
+Phases genotypes based on transmission logic in duos and trios.
+- **Basic usage**: `akt pedphase input.vcf.gz`
+- **Exclude chromosomes**: Use `-x <chrom_list>` to skip specific chromosomes (e.g., sex chromosomes) during the phasing process.
+- **Phase Sets**: The tool handles and propagates `PS` (Phase Set) tags and can convert them to indicate agreement with pedigree inheritance.
 
-### Pedigree Reconstruction
-Used to build family trees from kinship data.
+## Expert Tips and Best Practices
 
-- **Discover Pedigrees**:
-  `akt relatives <kinship.txt> -p <output_prefix>`
-- **Generate Unrelated Set**:
-  `akt unrelated <kinship.txt> > unrelated.ids`
-  *Useful for selecting a subset of samples for association studies to avoid inflation.*
+- **Multi-threading**: Use the `-@` flag (or `-n` in older versions) to specify the number of threads for kinship and PCA calculations.
+- **Input Compatibility**: Since AKT uses htslib, you can pipe output from `bcftools` directly into `akt` using `-` as the filename.
+- **Installation Issues**: If compiling on macOS or systems without OpenMP, use `make no_omp`. This will disable multi-threading but ensures the tool functions correctly on a single core.
+- **Memory Efficiency**: AKT is optimized for low memory footprints, though some operations may result in non-deterministic output ordering when multi-threaded.
 
-### Phasing
-- **Mendelian Phasing**:
-  `akt pedphase <input.bcf> > phased.vcf`
-  *Performs transmission phasing for duos and trios.*
 
-## Expert Tips & Best Practices
 
-### Reference Sites (-R)
-Always use a high-quality set of reference sites (e.g., WGS variants from GRCh37/38) with the `-R` flag. This ensures AKT focuses on informative, common SNPs and significantly speeds up processing by skipping rare or noisy variants.
+## Subcommands
 
-### Performance
-- AKT is multi-threaded. Use the `-n` option in `akt kin` and `akt ibd` to specify the number of threads.
-- If running on macOS or systems where OpenMP is unavailable, ensure the binary was compiled with `make no_omp` (though this limits execution to a single thread).
+| Command | Description |
+|---------|-------------|
+| kin | Calculate kinship/IBD statistics from a multisample BCF/VCF |
+| pca | Performs principal component analysis on a vcf/bcf |
+| pedphase | simple Mendel inheritance phasing of duos/trios |
+| unrelated | Derive a set of pedigrees from the akt kin output. |
+| unrelated | Print a list of unrelated individuals taking the output from akt kin as input. |
 
-### Input Handling
-- AKT reads both VCF and BCF. For large-scale analyses, prefer BCF for faster I/O.
-- Ensure input files are indexed (`tabix` for VCF, `bcftools index` for BCF) for efficient random access when using reference sites.
-
-### Downstream Analysis
-AKT output is typically tab-delimited text.
-- Use `scripts/pca.R` (found in the AKT repository) to quickly visualize PCA results.
-- Use `scripts/1000G_pca.R` for plotting projections against the 1000 Genomes reference.
+## Reference documentation
+- [AKT README](./references/github_com_Illumina_akt_blob_master_README.md)
+- [AKT Changelog](./references/github_com_Illumina_akt_blob_master_Changelog.md)
+- [Haplotype Phasing Logic](./references/github_com_Illumina_akt_blob_master_HaplotypeBuffer.hh.md)

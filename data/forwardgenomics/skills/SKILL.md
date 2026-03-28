@@ -1,6 +1,6 @@
 ---
 name: forwardgenomics
-description: Forward Genomics identifies genomic regions responsible for specific traits by detecting evolutionary signatures of sequence divergence in lineages where the trait has been lost. Use when user asks to identify trait-related genomic elements, perform phylogenetically-controlled association testing, or analyze sequence divergence using GLS and branch-based methods.
+description: Forward Genomics identifies genomic regions associated with the loss of specific traits by comparing divergence patterns across a phylogenetic tree. Use when user asks to link phenotypic trait loss to genomic changes, prepare phylogenetic input files, or execute the Perfect Match, GLS, and Branch analysis methods.
 homepage: https://github.com/hillerlab/ForwardGenomics
 ---
 
@@ -8,54 +8,80 @@ homepage: https://github.com/hillerlab/ForwardGenomics
 # forwardgenomics
 
 ## Overview
-Forward Genomics is a computational framework designed to identify genomic regions responsible for specific traits by looking for "use it or lose it" evolutionary signatures. When a trait is repeatedly lost in independent lineages, the underlying genetic information often diverges or disappears due to the lack of purifying selection. 
 
-This skill enables the use of three primary methods:
-1. **Perfect Match**: Finds regions where all trait-loss species are more diverged than all trait-preserving species.
-2. **GLS (Generalized Least Squares)**: Controls for phylogenetic relatedness and evolutionary rate differences.
-3. **Branch Method**: Uses per-branch divergence values to provide the highest statistical power, especially when distinguishing between coding (CDS) and non-coding (CNE) elements.
+Forward Genomics is a computational framework designed to link the repeated loss of a specific trait across different species to the underlying genomic changes. It operates on the principle that when a trait is no longer under selection (trait loss), the genetic information required for that trait will accumulate mutations and diverge over time. By comparing trait-loss lineages with trait-preserving lineages across a phylogenetic tree, the tool identifies genomic regions that show a signature of conservation in preserving species and divergence in loss species.
 
-## Prerequisites
-*   **R Environment**: Version 3.02 or later with packages `caper`, `xtermStyle`, `phangorn`, `weights`, and `isotone`.
-*   **Phast Package**: The `tree_doctor` utility must be in your `$PATH`.
-*   **Ancestral Naming**: All internal nodes in your phylogenetic tree must be named. Use `tree_doctor -a` if they are missing.
+This skill provides guidance on preparing the necessary phylogenetic and genomic input files and executing the three primary analysis methods: Perfect Match, Generalized Least Squares (GLS), and the Branch Method.
 
 ## Input File Requirements
-The tool requires four specific input formats:
-1.  **Phylogenetic Tree**: Newick format with branch lengths and named ancestors.
-2.  **Element IDs**: A simple list of genomic region identifiers to process.
-3.  **Phenotype List**: A space-separated file with header `species pheno`. Use `1` for trait presence and `0` for loss.
-4.  **Identity Values**:
-    *   **Global**: Space-separated table (Element ID vs. Species) for GLS.
-    *   **Local**: Space-separated file with header `branch id pid` for the Branch method.
+
+Before running the analysis, ensure the following four inputs are formatted correctly:
+
+1.  **Phylogenetic Tree**: A Newick format file with branch lengths. All ancestral nodes must be named.
+    *   *Tip*: Use `tree_doctor -a` from the PHAST package to automatically name internal nodes if they are missing.
+2.  **Element Identifiers**: A simple text file listing the IDs of genomic regions (e.g., genes or enhancers) to be processed, one per line.
+3.  **Phenotype List**: A space-separated file with a header `species pheno`.
+    *   `1`: Trait present.
+    *   `0`: Trait lost.
+    *   *Note*: Only include species present in the tree.
+4.  **Divergence Data (%id)**:
+    *   **Global %id**: For GLS/Perfect Match. A table with `species` as the first header, followed by species names. Rows start with the element ID.
+    *   **Local %id**: For the Branch Method. A table with header `branch id pid` listing per-branch divergence.
 
 ## Command Line Usage
 
-### Standard Analysis
+The primary interface is the `forwardGenomics.R` script.
+
+### Basic Execution
 To run all three methods (Perfect Match, GLS, and Branch) simultaneously:
+
 ```bash
-forwardGenomics.R --tree=tree.nh --elementIDs=IDlist.txt --listPheno=phenotype.txt --globalPid=globalPercentID.txt --localPid=localPercentID.txt --outFile=results.txt
+forwardGenomics.R --tree=path/to/tree.nh \
+                  --elementIDs=path/to/IDlist.txt \
+                  --listPheno=path/to/phenotype.txt \
+                  --globalPid=path/to/globalPid.txt \
+                  --localPid=path/to/localPid.txt \
+                  --outFile=results.txt
 ```
 
 ### Method Selection
-If you only have global data or only want to run specific tests, use the `--methods` flag:
-*   **GLS only**: `--methods=GLS`
-*   **Branch only**: `--methods=branch`
-*   **Perfect Match only**: `--methods=perfectMatch`
+Use the `--method` flag to limit the analysis type, which can save significant computation time if you only have specific data types:
 
-### Analyzing Non-Coding Regions (CNE)
-By default, the branch method assumes coding regions (CDS). For non-coding regions, you must specify the appropriate lookup data:
+*   **Branch Method only**: Requires `--localPid`.
+    ```bash
+    forwardGenomics.R [paths] --method='branch'
+    ```
+*   **GLS/Perfect Match only**: Requires `--globalPid`.
+    ```bash
+    forwardGenomics.R [paths] --method='GLS'
+    ```
+
+### Analyzing Non-Coding Regions (CNEs)
+By default, the Branch Method assumes coding sequences (CDS). If analyzing non-coding regions, you must point to the appropriate lookup data:
+
 ```bash
-forwardGenomics.R --tree=tree.nh --elementIDs=IDlist.txt --listPheno=phenotype.txt --localPid=localPercentID.txt --weights=lookUpData/branchWeights_CNE.txt --expectedPerIDs=lookUpData/expPercentID_CNE.txt --outFile=cne_results.txt
+forwardGenomics.R [paths] \
+                  --weights=lookUpData/branchWeights_CNE.txt \
+                  --expectedPerIDs=lookUpData/expPercentID_CNE.txt
 ```
 
-## Expert Tips & Best Practices
-*   **Evolutionary Rates**: Always prefer the **GLS** or **Branch** methods over Perfect Match for real biological data, as they account for the fact that some species naturally evolve faster than others.
-*   **Independent Losses**: By default, GLS only considers elements implying at least 2 independent loss events. This prevents false positives driven by a single lineage-specific event.
-*   **Data Preparation**: If you need to generate the element ID list from your global identity file, use:
-    `tail -n +2 globalPid.file | cut -f1 -d " " > IDlist.txt`
-*   **Branch Method Power**: The Branch method is the most sensitive but requires high-quality local (per-branch) sequence identity data. Ensure your alignment and branch-length estimations are robust before using this method.
+## Expert Tips and Best Practices
+
+*   **Phylogenetic Control**: Prefer the **Branch Method** or **GLS** over "Perfect Match" for publication-quality results. Perfect Match is highly restrictive and does not account for phylogenetic relatedness or varying evolutionary rates, whereas the other two methods do.
+*   **Data Normalization**: By default, the GLS method normalizes %id values to control for differences in neutral evolutionary rates across the tree.
+*   **Handling Missing Data**: The tool automatically handles genome gaps. If a genomic element is missing in some species, it will prune the tree for that specific element. However, it requires at least 2 trait-loss and 2 trait-preserving species to remain after pruning to process the element.
+*   **Ancestral Naming**: The most common cause of execution failure is unnamed internal nodes in the Newick tree. Always verify your tree with `tree_doctor -p` before starting.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| forwardGenomics.R | Forward Genomics: bold [0m |
+| tree_doctor | Scale, prune, merge, and otherwise tweak phylogenetic trees. Expects input to be a tree model (.mod) file unless filename ends with '.nh' or -n option is used, in which case it will be expected to be a tree file in Newick format. |
 
 ## Reference documentation
-- [ForwardGenomics GitHub README](./references/github_com_hillerlab_ForwardGenomics.md)
-- [ForwardGenomics Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_forwardgenomics_overview.md)
+- [Forward Genomics README](./references/github_com_hillerlab_ForwardGenomics_blob_master_README.md)
+- [Forward Genomics Main Script](./references/github_com_hillerlab_ForwardGenomics_blob_master_forwardGenomics.R.md)
+- [Full Analysis Logic](./references/github_com_hillerlab_ForwardGenomics_blob_master_forwardGenomics_fullAnalysis.R.md)

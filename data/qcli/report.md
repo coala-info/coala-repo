@@ -282,3 +282,6 @@ Full documentation at: <https://www.gnu.org/software/coreutils/id>
 or available locally via: info '(coreutils) id invocation'
 ```
 
+
+## Metadata
+- **Skill**: generated

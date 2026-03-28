@@ -1,0 +1,276 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbioconda%2Fbioconda-utils%2Ftree%2Fmaster%2Fbioconda_utils)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbioconda%2Fbioconda-utils%2Ftree%2Fmaster%2Fbioconda_utils)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=bioconda%2Fbioconda-utils)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bioconda](/bioconda)
+/
+**[bioconda-utils](/bioconda/bioconda-utils)**
+Public
+
+* [Notifications](/login?return_to=%2Fbioconda%2Fbioconda-utils) You must be signed in to change notification settings
+* [Fork
+  134](/login?return_to=%2Fbioconda%2Fbioconda-utils)
+* [Star
+   103](/login?return_to=%2Fbioconda%2Fbioconda-utils)
+
+* [Code](/bioconda/bioconda-utils)
+* [Issues
+  105](/bioconda/bioconda-utils/issues)
+* [Pull requests
+  22](/bioconda/bioconda-utils/pulls)
+* [Actions](/bioconda/bioconda-utils/actions)
+* [Security
+  0](/bioconda/bioconda-utils/security)
+* [Insights](/bioconda/bioconda-utils/pulse)
+
+Additional navigation options
+
+* [Code](/bioconda/bioconda-utils)
+* [Issues](/bioconda/bioconda-utils/issues)
+* [Pull requests](/bioconda/bioconda-utils/pulls)
+* [Actions](/bioconda/bioconda-utils/actions)
+* [Security](/bioconda/bioconda-utils/security)
+* [Insights](/bioconda/bioconda-utils/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [bioconda-utils](/bioconda/bioconda-utils/tree/master)
+
+/
+
+# bioconda\_utils
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/bioconda/bioconda-utils/commits/master/bioconda_utils)
+
+History
+
+master
+
+## Breadcrumbs
+
+1. [bioconda-utils](/bioconda/bioconda-utils/tree/master)
+
+/
+
+# bioconda\_utils
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/bioconda/bioconda-utils/tree/master) | | |
+| [lint](/bioconda/bioconda-utils/tree/master/bioconda_utils/lint "lint") | | [lint](/bioconda/bioconda-utils/tree/master/bioconda_utils/lint "lint") |  |  |
+| [templates](/bioconda/bioconda-utils/tree/master/bioconda_utils/templates "templates") | | [templates](/bioconda/bioconda-utils/tree/master/bioconda_utils/templates "templates") |  |  |
+| [\_\_init\_\_.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/__init__.py "__init__.py") | | [\_\_init\_\_.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/__init__.py "__init__.py") |  |  |
+| [\_version.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/_version.py "_version.py") | | [\_version.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/_version.py "_version.py") |  |  |
+| [aiopipe.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/aiopipe.py "aiopipe.py") | | [aiopipe.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/aiopipe.py "aiopipe.py") |  |  |
+| [artifacts.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/artifacts.py "artifacts.py") | | [artifacts.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/artifacts.py "artifacts.py") |  |  |
+| [autobump.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/autobump.py "autobump.py") | | [autobump.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/autobump.py "autobump.py") |  |  |
+| [bioconda\_utils-conda\_build\_config.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-conda_build_config.yaml "bioconda_utils-conda_build_config.yaml") | | [bioconda\_utils-conda\_build\_config.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-conda_build_config.yaml "bioconda_utils-conda_build_config.yaml") |  |  |
+| [bioconda\_utils-requirements-docs.txt](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements-docs.txt "bioconda_utils-requirements-docs.txt") | | [bioconda\_utils-requirements-docs.txt](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements-docs.txt "bioconda_utils-requirements-docs.txt") |  |  |
+| [bioconda\_utils-requirements.txt](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements.txt "bioconda_utils-requirements.txt") | | [bioconda\_utils-requirements.txt](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements.txt "bioconda_utils-requirements.txt") |  |  |
+| [bioconductor\_skeleton.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconductor_skeleton.py "bioconductor_skeleton.py") | | [bioconductor\_skeleton.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconductor_skeleton.py "bioconductor_skeleton.py") |  |  |
+| [build.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/build.py "build.py") | | [build.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/build.py "build.py") |  |  |
+| [build\_failure.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/build_failure.py "build_failure.py") | | [build\_failure.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/build_failure.py "build_failure.py") |  |  |
+| [bulk.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/bulk.py "bulk.py") | | [bulk.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/bulk.py "bulk.py") |  |  |
+| [circleci.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/circleci.py "circleci.py") | | [circleci.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/circleci.py "circleci.py") |  |  |
+| [cli.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/cli.py "cli.py") | | [cli.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/cli.py "cli.py") |  |  |
+| [config.schema.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/config.schema.yaml "config.schema.yaml") | | [config.schema.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/config.schema.yaml "config.schema.yaml") |  |  |
+| [cran\_skeleton.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/cran_skeleton.py "cran_skeleton.py") | | [cran\_skeleton.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/cran_skeleton.py "cran_skeleton.py") |  |  |
+| [docker\_utils.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/docker_utils.py "docker_utils.py") | | [docker\_utils.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/docker_utils.py "docker_utils.py") |  |  |
+| [example\_config.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/example_config.yaml "example_config.yaml") | | [example\_config.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/example_config.yaml "example_config.yaml") |  |  |
+| [githandler.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/githandler.py "githandler.py") | | [githandler.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/githandler.py "githandler.py") |  |  |
+| [githubhandler.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/githubhandler.py "githubhandler.py") | | [githubhandler.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/githubhandler.py "githubhandler.py") |  |  |
+| [gitter.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/gitter.py "gitter.py") | | [gitter.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/gitter.py "gitter.py") |  |  |
+| [graph.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/graph.py "graph.py") | | [graph.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/graph.py "graph.py") |  |  |
+| [hosters.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/hosters.py "hosters.py") | | [hosters.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/hosters.py "hosters.py") |  |  |
+| [involucro](/bioconda/bioconda-utils/blob/master/bioconda_utils/involucro "involucro") | | [involucro](/bioconda/bioconda-utils/blob/master/bioconda_utils/involucro "involucro") |  |  |
+| [maintainers.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/maintainers.yaml "maintainers.yaml") | | [maintainers.yaml](/bioconda/bioconda-utils/blob/master/bioconda_utils/maintainers.yaml "maintainers.yaml") |  |  |
+| [pkg\_test.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/pkg_test.py "pkg_test.py") | | [pkg\_test.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/pkg_test.py "pkg_test.py") |  |  |
+| [recipe.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/recipe.py "recipe.py") | | [recipe.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/recipe.py "recipe.py") |  |  |
+| [skiplist.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/skiplist.py "skiplist.py") | | [skiplist.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/skiplist.py "skiplist.py") |  |  |
+| [update\_pinnings.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/update_pinnings.py "update_pinnings.py") | | [update\_pinnings.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/update_pinnings.py "update_pinnings.py") |  |  |
+| [upload.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/upload.py "upload.py") | | [upload.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/upload.py "upload.py") |  |  |
+| [utils.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/utils.py "utils.py") | | [utils.py](/bioconda/bioconda-utils/blob/master/bioconda_utils/utils.py "utils.py") |  |  |
+| View all files | | |
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs

@@ -1,6 +1,6 @@
 ---
 name: lorikeet-genome
-description: Lorikeet is a metagenomic pipeline that performs local re-assembly to identify within-species variants and strain-level diversity. Use when user asks to call SNPs and indels in metagenomes, calculate dN/dS values for evolutionary analysis, or generate consensus genomes from read mappings.
+description: Lorikeet is a metagenomic analysis pipeline that performs local re-assembly for high-resolution variant calling and strain genotyping. Use when user asks to call variants, resolve strain-level differences, generate consensus genomes, or calculate evolutionary metrics like dN/dS.
 homepage: https://github.com/rhysnewell/Lorikeet
 ---
 
@@ -8,64 +8,56 @@ homepage: https://github.com/rhysnewell/Lorikeet
 # lorikeet-genome
 
 ## Overview
+Lorikeet is a specialized bioinformatics pipeline designed for high-resolution metagenomic analysis. It re-implements the GATK HaplotypeCaller algorithm to perform local re-assembly of active regions within candidate genomes, allowing for more accurate variant calling in complex microbial communities. Beyond simple variant calling, it can cluster variants into distinct strains using UMAP and HDBSCAN and calculate evolutionary metrics like dN/dS.
 
-Lorikeet is a specialized pipeline for within-species variant analysis in metagenomic communities. It distinguishes itself from standard variant callers by re-implementing the GATK HaplotypeCaller algorithm to perform local re-assembly of active regions within candidate genomes. This approach is particularly effective for resolving complex strain-level variation. The tool is versatile, supporting both short-read and long-read data (or hybrid sets) and provides downstream analysis for evolutionary pressure (dN/dS) and strain clustering.
+## Core Workflows
 
-## Core Subcommands
-
-- **`call`**: The primary subcommand for variant calling. It identifies SNPs and indels without performing downstream strain resolution.
-- **`genotype`**: (Experimental) Used to resolve specific strain-level genotypes from the microbial community.
-- **`consensus`**: Generates consensus genomes for each input reference based on the samples provided.
-- **`evolve`**: Calculates dN/dS values for genes based on read mappings, useful for detecting selection pressure.
-
-## Common CLI Patterns
-
-### Variant Calling from BAM Files
-When you already have aligned reads, use the `--bam-files` and `--genome-fasta-directory` flags. This is the most efficient way to run Lorikeet if alignments are pre-computed.
-
+### Strain Genotyping
+Use the `genotype` subcommand to resolve strain-level differences within MAGs. This is the primary workflow for identifying multiple strains of the same species in a sample.
 ```bash
-lorikeet call \
-    --bam-files sample1.bam,sample2.bam \
-    --longread-bam-files long_reads.bam \
-    --genome-fasta-directory ./genomes/ \
-    --extension fna \
-    --output-directory lorikeet_results/ \
-    --threads 12 \
-    --plot
+lorikeet genotype --bam <input.bam> --genome <reference.fasta> --outdir <output_directory>
 ```
 
-### Variant Calling from Raw Reads
-If starting from FASTQ files, Lorikeet can handle the alignment internally if a reference genome is provided.
-
+### Variant Calling
+Use the `call` subcommand for standard variant calling without the downstream strain clustering. This is useful for generating VCF-like data for general population genetics.
 ```bash
-lorikeet call \
-    -r reference_genome.fna \
-    -1 forward_reads.fastq.gz \
-    -2 reverse_reads.fastq.gz \
-    -l longread_alignment.bam \
-    --output-directory variant_output/
+lorikeet call --bam <input.bam> --genome <reference.fasta> --outdir <output_directory>
+```
+
+### Consensus Genome Generation
+Use the `consensus` subcommand to create sample-specific consensus sequences based on the mapped reads and reference genome.
+```bash
+lorikeet consensus --bam <input.bam> --genome <reference.fasta> --outdir <output_directory>
 ```
 
 ### Evolutionary Analysis
-To calculate dN/dS values for coding regions across samples:
-
+Use the `evolve` subcommand to calculate dN/dS values for genes, which helps in understanding the selective pressures acting on specific populations within the metagenome.
 ```bash
-lorikeet evolve \
-    --bam-files sample.bam \
-    --genome-fasta-directory ./genomes/ \
-    --gff-file annotations.gff \
-    --output-directory evolution_results/
+lorikeet evolve --bam <input.bam> --genome <reference.fasta> --outdir <output_directory>
 ```
 
 ## Expert Tips and Best Practices
 
-- **Hybrid Data**: Lorikeet is optimized for hybrid metagenomics. Providing long-read BAM files (`-l` or `--longread-bam-files`) significantly improves the resolution of local re-assemblies in repetitive or complex regions.
-- **Caching**: Use `--bam-file-cache-directory` when running multiple analyses on the same data to avoid redundant processing of BAM headers and indices.
-- **Resource Management**: Local re-assembly is computationally intensive. Always specify `--threads` to match your environment's capabilities.
-- **File Extensions**: When pointing to a genome directory, use the `-x` or `--extension` flag (e.g., `fna`, `fasta`) to ensure the tool correctly identifies your reference files.
-- **Shell Completion**: For frequent CLI use, generate completion scripts to speed up command entry:
-  `lorikeet shell-completion --shell bash --output-file ~/.lorikeet_completion`
+- **Input Flexibility**: Lorikeet accepts various input combinations:
+    - Raw reads + Reference Genome/MAG.
+    - Pre-aligned BAM file + Reference Genome.
+- **Environment Setup**: Ensure both `lorikeet` and the helper binary `remove_minimap2_duplicated_headers` are in your PATH. The latter is required to handle specific header issues common in long-read alignments.
+- **Hybrid Data**: While Lorikeet supports both long and short reads, it is particularly powerful for utilizing long reads to bridge complex regions during local re-assembly.
+- **Resource Management**: Local re-assembly is computationally intensive. Ensure your environment has sufficient memory when processing high-coverage "active regions."
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| call | Perform read mapping and variant calling using local reassembly of active regions |
+| consensus | Consensus caller for lorikeet |
+| genotype | Report strain-level genotypes and abundances based on variant read mappings |
+| lorikeet | Variant calling and strain genotyping analysis for metagenomics |
+| shell-completion | Generate a shell completion script for lorikeet |
 
 ## Reference documentation
 - [Lorikeet GitHub Repository](./references/github_com_rhysnewell_Lorikeet.md)
-- [Lorikeet Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_lorikeet-genome_overview.md)
+- [Installation Guide](./references/github_com_rhysnewell_Lorikeet_blob_master_INSTALL.md)
+- [Main README](./references/github_com_rhysnewell_Lorikeet_blob_master_README.md)

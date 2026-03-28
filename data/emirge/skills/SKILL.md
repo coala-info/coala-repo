@@ -1,6 +1,6 @@
 ---
 name: emirge
-description: EMIRGE reconstructs full-length ribosomal RNA genes from metagenomic or amplicon sequencing data using an iterative expectation-maximization algorithm. Use when user asks to reconstruct 16S or 18S sequences, estimate taxonomic abundances from environmental samples, or assemble conserved genes from short-read datasets.
+description: EMIRGE reconstructs full-length ribosomal RNA sequences and estimates their abundance from fragmented metagenomic or amplicon sequencing data. Use when user asks to reconstruct SSU genes from environmental DNA, identify microbial strains within a sample, or generate length-normalized abundance estimates for rRNA sequences.
 homepage: https://github.com/csmiller/EMIRGE
 ---
 
@@ -8,57 +8,78 @@ homepage: https://github.com/csmiller/EMIRGE
 # emirge
 
 ## Overview
+EMIRGE (Expectation-Maximization Iterative Reconstruction of Genes from the Environment) is a specialized assembly tool designed to recover full-length ribosomal RNA sequences from fragmented environmental DNA. It addresses the challenges of assembling highly conserved genes by using an iterative mapping and consensus-calling approach. It is particularly effective for identifying "strains" within a sample and providing length-normalized abundance estimates for the reconstructed sequences.
 
-EMIRGE (Expectation-Maximization Iterative Reconstruction of Genes from the Environment) is a specialized assembly tool designed to overcome the challenges of assembling highly conserved but divergent ribosomal genes from metagenomic or amplicon datasets. Instead of traditional de novo assembly, it uses a candidate database and an iterative Expectation-Maximization algorithm to map reads, estimate abundances, and refine consensus sequences. It is particularly effective for generating full-length 16S/18S sequences that provide better taxonomic resolution than short reads alone.
-
-## Core Workflow and CLI Patterns
+## Core Workflows
 
 ### 1. Database Preparation
-Before running the reconstruction, you must prepare a candidate SSU database. SILVA is the recommended source.
+Before running reconstructions, generate a candidate SSU database. By default, this downloads and processes the SILVA database.
 
 ```bash
 # Download and cluster the default SILVA SSU database
 python emirge_makedb.py
-
-# If using a custom database, ensure non-standard characters are removed
-python utils/fix_nonstandard_chars.py custom_db.fasta > custom_db_clean.fasta
-
-# Build the required Bowtie index
-bowtie-build SSU_candidate_db.fasta SSU_candidate_db
 ```
 
-### 2. Running the Reconstruction
-Choose the script based on your data type:
-- `emirge.py`: For shotgun metagenomic data.
-- `emirge_amplicon.py`: For PCR amplicon data or RNASeq data where rRNA is highly enriched.
+**Expert Tips:**
+- If using a custom database, run `utils/fix_nonstandard_chars.py` to ensure compatibility with Bowtie.
+- Always build a Bowtie index for your candidate database using `bowtie-build`.
 
-**Common Parameters:**
-- `-1`, `-2`: Forward and reverse FASTQ files (Illumina pipeline >= 1.3).
-- `-f`: Path to the candidate SSU database FASTA.
-- `-b`: Path to the Bowtie index.
-- `-l`: Maximum read length.
-- `-i`: Insert size mean.
-- `-s`: Insert size standard deviation.
-- `-n`: Number of iterations (default is often sufficient, but 40-80 is standard).
-
-### 3. Post-Processing and Results
-The output of EMIRGE is organized into iteration directories (e.g., `iter.01`, `iter.02`). You must run the rename script on the final iteration to generate a usable FASTA file.
+### 2. Metagenomic Reconstruction
+Use `emirge.py` for standard metagenomic data where rRNA reads represent a small fraction of the total library.
 
 ```bash
-# Generate the final fasta from the last iteration (e.g., iteration 40)
-emirge_rename_fasta.py iter.40 > reconstructed_ssu.fasta
+# Standard paired-end run
+emirge.py <output_dir> -1 <forward_reads.fastq> -2 <reverse_reads.fastq> -f <candidate_db.fasta> -b <bowtie_index> -l <max_read_length>
 ```
 
-## Expert Tips and Best Practices
+**Key Parameters:**
+- `-i`: Number of iterations. 40-80 is usually sufficient for convergence.
+- `-m`: Insert size mean.
+- `-s`: Insert size standard deviation.
+- `--resume`: Use this flag to continue a run from the last completed iteration.
 
-- **Convergence**: Iterations should ideally stop when reference sequences no longer change. In practice, 40 to 80 iterations are sufficient for most complex environmental samples.
-- **Resuming**: If a run stops prematurely, `emirge.py` supports resuming from a specific iteration.
-- **Abundance Estimates**: The final FASTA headers contain two types of abundance estimates:
-    - `Prior`: The raw abundance estimate.
-    - `NormPrior`: The length-normalized abundance estimate. Use `NormPrior` for more accurate community composition analysis if your reconstructed sequences vary significantly in length.
-- **Strain Splitting**: If a header contains a suffix like `_m01`, it indicates EMIRGE identified multiple "strains" or closely related sequences originating from the same initial candidate sequence.
-- **Memory and Performance**: EMIRGE relies on Bowtie (v1) for mapping. Ensure `bowtie`, `samtools`, and `usearch` (v6.0.203+) are in your executable PATH.
+### 3. Amplicon or High-Depth rRNA Reconstruction
+Use `emirge_amplicon.py` for PCR amplicons, total RNA-Seq, or any dataset where the majority of reads are ribosomal.
+
+```bash
+# Amplicon-specific run
+emirge_amplicon.py <output_dir> -1 <reads_1.fastq> -2 <reads_2.fastq> -f <db.fasta> -b <index> -l <length>
+```
+
+**Note:** This version loads all reads into memory to accelerate processing. Ensure the system has several GB of RAM available depending on the input size.
+
+### 4. Post-Processing and Results
+After the iterations complete, extract the final sequences into a usable FASTA format.
+
+```bash
+# Rename and format the final iteration results
+emirge_rename_fasta.py <output_dir>/iter.<N> > reconstructed_genes.fasta
+```
+
+## Output Interpretation
+The FASTA headers produced by `emirge_rename_fasta.py` contain critical metadata:
+- **Prior**: The raw abundance estimate.
+- **NormPrior**: The length-normalized abundance estimate (recommended for comparative analysis).
+- **Length**: The total length of the reconstructed sequence.
+
+## Troubleshooting and Best Practices
+- **Read Format**: EMIRGE expects Illumina FASTQ format (pipeline version >= 1.3).
+- **Mapper Compatibility**: EMIRGE specifically uses Bowtie 1. It is generally incompatible with Bowtie 2 due to how it handles alignments and indels.
+- **Single-End Data**: While designed for paired-end, you can process single-end data by omitting the `-2` parameter.
+- **Convergence**: If sequences are still changing significantly at iteration 40, increase the iteration count to 80 or 100.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bowtie | Alignments for short DNA sequences |
+| bowtie-build | Builds a Bowtie index from a reference sequence. |
+| emirge_emirge_makedb.py | emirge_makedb.py creates a reference database and the necessay indices for use by EMIRGE from an rRNA reference database. Without extra parameters, emirge_makedb.py will 1) download the most recent SILVA SSU database, 2) filter it by sequence length, 3) cluster at 97% sequence identity, 4) replace ambiguous bases with random characters and 5) create a bowtie index. |
+| emirge_rename_fasta.py | Rewrites an emirge fasta file to include proper sequence names and prior probabilities (abundance estimates) in the record headers, and sorts the sequences from most to least abundant |
+| samtools | Tools for alignments in the SAM format |
 
 ## Reference documentation
 - [EMIRGE Main Documentation](./references/github_com_csmiller_EMIRGE.md)
-- [EMIRGE Wiki and FAQ](./references/github_com_csmiller_EMIRGE_wiki.md)
+- [Frequently Asked Questions](./references/github_com_csmiller_EMIRGE_wiki_Frequently-Asked-Questions-_FAQ_.md)

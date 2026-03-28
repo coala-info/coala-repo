@@ -1,6 +1,6 @@
 ---
 name: rnasamba
-description: RNAsamba is a deep-learning tool that classifies RNA transcripts as protein-coding or non-coding based on their sequence. Use when user asks to classify transcripts, annotate a transcriptome, filter non-coding RNAs, extract translated protein sequences, or train custom coding potential models.
+description: RNAsamba is a deep learning tool that classifies RNA sequences as coding or non-coding and identifies their protein-coding potential. Use when user asks to evaluate transcript coding potential, classify RNA sequences, translate predicted open reading frames into proteins, or train custom classification models.
 homepage: https://github.com/apcamargo/RNAsamba
 ---
 
@@ -9,70 +9,66 @@ homepage: https://github.com/apcamargo/RNAsamba
 
 ## Overview
 
-RNAsamba is a deep-learning-based tool designed to classify RNA transcripts as either protein-coding or non-coding. Unlike traditional tools that rely on hand-crafted features, RNAsamba utilizes a neural network to calculate a coding score based on the sequence itself. It is particularly effective for analyzing de novo assembled transcriptomes where transcripts may be incomplete. Use this skill when you need to annotate a transcriptome, filter non-coding RNAs, or extract translated protein sequences from genomic or transcriptomic data.
+RNAsamba is a deep learning tool designed to evaluate the protein-coding potential of RNA sequences. By utilizing a neural network architecture, it classifies transcripts as coding or non-coding without relying on external homology searches or database alignments. It is highly effective for processing large-scale transcriptomic datasets and supports both the training of custom models and the use of pre-trained weights optimized for different transcript qualities (full-length vs. partial/fragmented).
 
-## Installation
+## Usage Instructions
 
-RNAsamba can be installed via bioconda or pip:
+### Classification Patterns
 
+The `classify` command is the primary tool for identifying coding sequences in an input FASTA file.
+
+**Standard Classification**
+Use this to generate a TSV file containing coding probabilities and classifications.
 ```bash
-# Using Conda
-conda install -c conda-forge -c bioconda rnasamba
-
-# Using Pip
-pip install rnasamba
+rnasamba classify output.tsv input.fasta weights.hdf5
 ```
 
-## Classification Workflow
-
-The `classify` command is the primary entry point for most users. It requires a FASTA file of transcripts and one or more pre-trained weight files (HDF5 format).
-
-### Basic Classification
-To classify sequences and save the results to a TSV file:
-
+**Classification with Protein Extraction**
+Use the `-p` flag to automatically translate predicted coding ORFs into a protein FASTA file.
 ```bash
-rnasamba classify results.tsv input_transcripts.fa weights.hdf5
+rnasamba classify output.tsv input.fasta weights.hdf5 -p predicted_proteins.fasta
 ```
 
-### Extracting Protein Sequences
-To automatically extract and translate the predicted coding ORFs into a FASTA file, use the `-p` or `--protein_fasta` flag:
-
+**Ensemble Classification**
+Improve prediction robustness by providing multiple weight files. RNAsamba will ensemble the results.
 ```bash
-rnasamba classify -p predicted_proteins.fa results.tsv input_transcripts.fa weights.hdf5
+rnasamba classify output.tsv input.fasta model_v1.hdf5 model_v2.hdf5
 ```
 
-### Model Selection
-RNAsamba provides two standard pre-trained models based on human data that generalize well across species:
-- **full_length_weights.hdf5**: Best for high-quality, complete transcript sequences (e.g., RefSeq/Ensembl annotations).
-- **partial_length_weights.hdf5**: Best for fragmented data, such as *de novo* transcriptomes or ESTs.
+### Training Patterns
 
-### Ensembling Models
-You can improve classification robustness by providing multiple weight files. RNAsamba will ensemble the predictions:
+The `train` command allows you to build a species-specific or dataset-specific model.
 
+**Basic Training**
+Requires a set of known coding and non-coding sequences.
 ```bash
-rnasamba classify results.tsv input.fa model1.hdf5 model2.hdf5
+rnasamba train output_model.hdf5 coding_sequences.fasta noncoding_sequences.fasta
 ```
 
-## Training a Custom Model
-
-If the pre-trained models are insufficient for your specific organism or data type, you can train a new model using known coding and non-coding sequences.
-
+**Optimized Training with Early Stopping**
+Use `-s` to stop training after a specific number of epochs without improvement in validation loss. This prevents overfitting.
 ```bash
-rnasamba train -v 2 custom_model.hdf5 coding_sequences.fa noncoding_sequences.fa
+rnasamba train output_model.hdf5 coding.fasta noncoding.fasta -s 5 -e 100 -b 128
 ```
 
-### Training Best Practices
-- **Early Stopping**: Use `-s` or `--early_stopping` to prevent overfitting. This stops training after a specified number of epochs without improvement in validation loss.
-- **Batch Size**: The default is 128. Adjust with `-b` if you encounter memory constraints.
-- **Verbosity**: Use `-v 2` to see a progress bar during the training process.
+## Expert Tips and Best Practices
 
-## Output Format
+*   **Model Selection**: 
+    *   Use `full_length_weights.hdf5` for high-quality datasets consisting of complete transcripts (e.g., curated reference genomes).
+    *   Use `partial_length_weights.hdf5` for *de novo* assemblies or fragmented sequences where transcripts may be truncated.
+*   **Early Stopping**: Always set the `--early_stopping` (or `-s`) parameter during training. A value between 3 and 10 is generally recommended to ensure the model saved is the one with the lowest validation loss.
+*   **Batch Size**: The default batch size is 128. If you encounter memory issues on smaller GPUs or systems, reduce this using `-b`.
+*   **Input Format**: Ensure your FASTA headers do not contain complex characters that might interfere with TSV parsing. RNAsamba identifies sequences by the first string in the FASTA header.
 
-The output TSV file contains three columns:
-1. **sequence_name**: The header from the input FASTA.
-2. **coding_score**: A value between 0 and 1 (higher means more likely to be coding).
-3. **classification**: A binary label ("coding" or "noncoding") based on a 0.5 threshold.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rnasamba classify | Classify sequences from a input FASTA file. |
+| rnasamba_train | Train a new classification model. |
 
 ## Reference documentation
 - [RNAsamba GitHub Repository](./references/github_com_apcamargo_RNAsamba.md)
-- [RNAsamba Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_rnasamba_overview.md)
+- [RNAsamba README](./references/github_com_apcamargo_RNAsamba_blob_master_README.md)

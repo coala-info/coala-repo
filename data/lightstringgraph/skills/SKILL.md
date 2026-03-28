@@ -1,6 +1,6 @@
 ---
 name: lightstringgraph
-description: LightStringGraph is a memory-efficient toolset used to construct and simplify string graphs from large-scale sequencing data using external memory structures. Use when user asks to build string graphs, perform transitive reduction on overlap graphs, or convert genomic graphs to ASQG format.
+description: LightStringGraph constructs memory-efficient string graphs from sequencing data using the Burrows-Wheeler Transform. Use when user asks to prepare BWT indices, identify read overlaps, perform transitive reduction, or convert string graphs to ASQG format.
 homepage: http://lsg.algolab.eu
 ---
 
@@ -8,48 +8,55 @@ homepage: http://lsg.algolab.eu
 # lightstringgraph
 
 ## Overview
-LightStringGraph (LSG) is a specialized toolset designed for large-scale genome assembly tasks where memory efficiency is critical. It utilizes external memory structures to build string graphs from high-throughput sequencing data. The workflow typically involves preparing reverse-complemented reads, generating a Burrows-Wheeler Transform (BWT) via BEETL, and then executing the LSG pipeline to produce a reduced string graph suitable for downstream assembly.
+LightStringGraph is a specialized suite for constructing string graphs from sequencing data with a low memory footprint. It leverages the Burrows-Wheeler Transform (BWT) to identify overlaps between reads without explicitly storing all overlaps in memory. This skill provides the procedural steps to prepare input data, generate the necessary BWT indices using BEETL, and execute the core LightStringGraph components (`lsg`, `redbuild`, and `graph2asqg`) to produce an assembly-ready graph.
 
 ## Workflow and CLI Usage
 
-### 1. Data Preparation
-LSG requires a FASTA file containing both forward reads and their reverse complements.
-- Given `input.fa` with $n$ reads, create `combined.fa` with $2n$ reads.
-- Reads $n+1$ to $2n$ must be the reverse complement of reads $1$ to $n$.
+### 1. Input Preparation
+The tool requires a FASTA file containing both the original reads and their reverse complements.
+- **Requirement**: If `reads.fa` has $n$ reads, the input file must have $2n$ reads where indices $n+1$ to $2n$ are the reverse complements of $1$ to $n$.
 
-### 2. BWT Generation
-Before running LSG, you must generate the BWT using the BEETL library.
+### 2. BWT Indexing (External Dependency)
+Before running LightStringGraph, you must generate a BWT index using the AlgoLab fork of BEETL.
 ```bash
-beetl-bwt -i combined.fa -o <BWTPrefix> --output-format=ASCII --generate-lcp --generate-end-pos-file
+beetl-bwt -i combined_reads.fa -o BWT_PREFIX --output-format=ASCII --generate-lcp --generate-end-pos-file
 ```
 
-### 3. Constructing the Overlap Graph (lsg)
-The `lsg` tool identifies overlaps between reads.
+### 3. Overlap Graph Construction (`lsg`)
+Identifies overlaps based on a minimum threshold ($\tau$).
 ```bash
-lsg -B <BWTPrefix> -T <Tau> -C <CycNum>
+lsg -B BWT_PREFIX -T <Tau> -C <CycNum>
 ```
-- `-B`: The prefix used during BWT generation.
-- `-T`: Minimum overlap length (Tau).
-- `-C`: Number of cycles. Usually set to `(read_length - Tau)`.
+- `-T <Tau>`: Minimum overlap length.
+- `-C <CycNum>`: Maximum number of BWT cycles. Usually set to `read_length - Tau`.
+- **Troubleshooting**: If `lsg` fails with a logic error, increase the system open file descriptor limit (`ulimit -n 2048`) and delete any `*.tmplsg.*` temporary files.
 
-### 4. Transitive Reduction (redbuild)
-The `redbuild` tool performs transitive reduction to simplify the graph into a string graph.
+### 4. Transitive Reduction (`redbuild`)
+Removes redundant edges to simplify the graph.
 ```bash
-redbuild -b <BWTPrefix> -r combined.fa -m <CycNum+1>
-```
-- `-m`: Should be set to the value of `<CycNum>` used in the previous step plus one.
-
-### 5. Format Conversion (graph2asqg)
-To export the graph for use in other assemblers, convert it to the Assembly String Graph (ASQG) format.
-```bash
-graph2asqg -b <BWTPrefix> -r combined.fa -l <readLength> > output.asqg
+redbuild -b BWT_PREFIX -r combined_reads.fa -m <CycNum+1>
 ```
 
-## Expert Tips and Troubleshooting
-- **File Descriptor Limits**: `lsg` opens many temporary files. If the tool crashes with a logic error, increase the system limit using `ulimit -n 2048` (or higher).
-- **Cleanup**: If a run fails, manually delete all `*.tmplsg.*` files in the working directory before restarting to prevent data corruption.
-- **Memory Management**: LSG is designed for external memory; ensure the disk partition used for temporary files has sufficient space for the BWT and intermediate graph structures.
+### 5. Conversion to ASQG (`graph2asqg`)
+Converts the internal format to the standard Assembly String Graph (ASQG) format used by assemblers like SGA.
+```bash
+graph2asqg -b BWT_PREFIX -r combined_reads.fa -l <readLength> > output.asqg
+```
+
+## Best Practices
+- **Memory Management**: LightStringGraph is designed for efficiency, but the BWT generation step (BEETL) is the primary bottleneck. Ensure sufficient disk space for the ASCII BWT and LCP files.
+- **Parameter Tuning**: Setting $\tau$ (Tau) too low will significantly increase the number of edges and computation time. A common starting point is 50-70% of the read length.
+- **File Cleanup**: The tool generates several intermediate `.tmplsg` files. Always clear these between different runs on the same prefix to avoid data corruption.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| graph2asqg | Converts a string graph to ASQG format. |
+| lsg | Light String Graph tool |
+| redbuild | Builds a light string graph. |
 
 ## Reference documentation
 - [LightStringGraph Overview](./references/lsg_algolab_eu_index.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_lightstringgraph_overview.md)

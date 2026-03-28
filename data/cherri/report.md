@@ -182,3 +182,6 @@ required arguments:
                         genome
 ```
 
+
+## Metadata
+- **Skill**: generated

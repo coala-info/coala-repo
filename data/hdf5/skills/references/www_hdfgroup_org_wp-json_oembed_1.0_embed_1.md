@@ -1,0 +1,2 @@
+{"version":"1.0","provider\_name":"The HDF Group - ensuring long-term access and usability of HDF data and supporting users of HDF technologies","provider\_url":"https:\/\/www.hdfgroup.org","author\_name":"loricooper","author\_url":"https:\/\/www.hdfgroup.org\/author\/admin\/","title":"The HDF Group - The HDF Group - ensuring long-term access and usability of HDF data and supporting users of HDF technologies","type":"rich","width":600,"height":338,"html":"
+> [The HDF Group<\/a><\/blockquote><\/iframe>](%5C%22https%3A%5C/%5C/www.hdfgroup.org%5C/%5C%22)

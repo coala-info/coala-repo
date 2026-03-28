@@ -1,6 +1,6 @@
 ---
 name: somalier
-description: "somalier performs genomic quality control by extracting informative site data to evaluate sample relatedness, sex, and ancestry. Use when user asks to extract genotypes from alignments, calculate relatedness, verify sex, or predict ancestry."
+description: Somalier is a high-performance tool used to verify sample identity, relatedness, and ancestry in genomic datasets by extracting genotypes at informative polymorphic sites. Use when user asks to identify sample swaps, confirm family relationships in pedigree files, predict sample ancestry, or perform quality control on large cohorts.
 homepage: https://github.com/brentp/somalier
 ---
 
@@ -8,70 +8,65 @@ homepage: https://github.com/brentp/somalier
 # somalier
 
 ## Overview
-
-somalier is a high-performance tool designed for genomic quality control. It operates by extracting informative site data into compact binary files and then aggregating those files to calculate relatedness, verify sex, and predict ancestry. It is significantly faster than traditional tools for these specific QC tasks, making it suitable for cohorts ranging from a few samples to tens of thousands. Use this skill to guide the extraction of genotypes from alignments or variants and the subsequent evaluation of sample relationships.
+Somalier is a high-performance tool designed to ensure the integrity of genomic datasets. It operates by extracting genotypes at a small set of highly informative, common polymorphic sites (typically ~17k to 60k sites). Because it focuses on a subset of the genome, it is orders of magnitude faster than full-genome comparisons. It is particularly useful for identifying sample swaps in large cohorts, confirming family relationships in pedigree files, and predicting the ancestry of unknown samples against a reference population like the 1000 Genomes Project.
 
 ## Core Workflow
 
-The somalier workflow consists of two primary steps: extraction and evaluation.
+### 1. Extraction
+The first step is to extract site information from your alignment or variant files. This creates a small `.somalier` binary file for each sample.
 
-### 1. Extracting Informative Sites
-
-The `extract` command creates a `.somalier` binary file for each input. This step is parallelizable by sample.
-
-**From BAM or CRAM (Recommended for accuracy):**
+**From BAM/CRAM (Recommended):**
 ```bash
-# Run for each sample
-somalier extract -d extracted/ --sites sites.vcf.gz -f reference.fa sample.cram
+somalier extract -d extracted/ --sites sites.vcf.gz -f reference.fa $sample.cram
 ```
+*   **Tip**: Extracting from alignments is more accurate than from single-sample VCFs because it uses all available reads at the target sites.
 
-**From Jointly-called VCF/BCF:**
+**From Joint-Called VCF/BCF:**
 ```bash
 somalier extract -d extracted/ --sites sites.vcf.gz -f reference.fa cohort.vcf.gz
 ```
 
-*   **--sites**: Use the known polymorphic sites VCF provided in the somalier releases (e.g., `sites.hg38.vcf.gz`).
-*   **--fasta**: The reference genome used for the alignments.
-
-### 2. Evaluating Relatedness and QC
-
-The `relate` command compares all extracted files to identify relationships and potential swaps.
+### 2. Relatedness and QC
+Once extracted, use the `relate` command to compare all samples. This step is extremely fast (seconds for hundreds of samples).
 
 ```bash
 somalier relate --ped project.ped extracted/*.somalier
 ```
 
 **Key Outputs:**
-*   `somalier.html`: An interactive report for visual inspection of relatedness, sex, and heterozygosity.
-*   `somalier.samples.tsv`: A PED-like file updated with QC metrics (sex, heterozygosity, depth).
-*   `somalier.pairs.tsv`: Detailed IBS (Identity By State) metrics for every possible pair.
+- `somalier.html`: An interactive report for visualizing sample relationships and QC metrics.
+- `somalier.samples.tsv`: A PED-like file updated with inferred sex and other QC data.
+- `somalier.pairs.tsv`: Detailed IBS (Identity By State) and relatedness coefficients for every pair.
 
-## Advanced Usage and Best Practices
+### 3. Ancestry Prediction
+To predict ancestry, you must provide labeled reference samples (e.g., 1000 Genomes) separated from your query samples by `++`.
 
-### Pedigree Inference
-If the pedigree is unknown or suspected to be incorrect, use the `--infer` flag to let somalier predict first-degree relationships.
 ```bash
-somalier relate --infer extracted/*.somalier
+somalier ancestry --labels labels.tsv ref/*.somalier ++ query/*.somalier
 ```
 
-### Ancestry Prediction
-To predict ancestry, you must provide a set of labeled samples (available in somalier releases).
-```bash
-somalier ancestry --labels labeled_samples.tsv --trained somalier-ancestry-model.ext extracted/*.somalier
-```
+## Expert Tips and Best Practices
 
-### Handling Large Cohorts
-For very large datasets where the command line argument limit might be reached, pass the files as quoted glob strings:
-```bash
-somalier relate "/path/to/data/*.somalier"
-```
+- **Site Selection**: Always use the pre-computed sites files provided in the somalier releases (e.g., `sites.hg38.vcf.gz`). These are selected for high minor allele frequency and low linkage disequilibrium.
+- **Parallelization**: The `extract` step is the most time-consuming. Run it in parallel across samples on a cluster. If you have split a single sample by chromosome, you can concatenate the resulting `.somalier` files using the provided Python helper scripts before running `relate`.
+- **Handling VCFs**: If extracting from VCFs that were not jointly called, use the `-u` or `--unknown` flag in `somalier relate` to treat missing genotypes as homozygous reference, which often improves results for sparse data.
+- **Pedigree Inference**: Use the `--infer` flag during `relate` to have somalier attempt to reconstruct the pedigree based on the data. This is excellent for catching "hidden" relationships or mislabeled family members.
+- **RNA-Seq Data**: When working with RNA-Seq, adjust the allele balance threshold using `--min-ab 0.2` (default is 0.3) to account for potential allele-specific expression or higher noise.
 
-### Expert Tips
-*   **Accuracy**: Extracting from BAM/CRAM is generally more accurate than extracting from single-sample VCFs.
-*   **RNA-Seq**: When working with RNA-Seq data, set `--min-ab 0.2` in the `relate` step to account for allele-specific expression.
-*   **Iterative Updates**: Because `relate` is extremely fast, you can add new samples by running `extract` only on the new files and then re-running `relate` on the entire collection of `.somalier` files.
-*   **Unknown Genotypes**: If using VCFs that were not jointly called, use the `-u` or `--unknown` flag in `relate` to treat missing genotypes as homozygous reference.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pca | dimensionality reduction |
+| somalier_extract | extract genotype-like information for a single-sample at selected sites |
+| somalier_find-sites | Finds sites from a VCF file based on various criteria. |
+| somalier_pedrel | report pairwise relationships from pedigree file |
+| somalier_relate | calculate relatedness among samples from extracted, genotype-like information |
 
 ## Reference documentation
-- [Main Documentation and Quick Start](./references/github_com_brentp_somalier.md)
-- [Pedigree Inference and Ancestry](./references/github_com_brentp_somalier_wiki.md)
+- [Somalier GitHub Repository](./references/github_com_brentp_somalier.md)
+- [Ancestry Prediction Guide](./references/github_com_brentp_somalier_wiki_ancestry.md)
+- [Pedigree Inference Details](./references/github_com_brentp_somalier_wiki_pedigree-inference.md)
+- [Frequently Asked Questions](./references/github_com_brentp_somalier_wiki_Frequently-Asked-Questions.md)

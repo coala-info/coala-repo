@@ -75,3 +75,6 @@ Parameters:
 	-n                   # (optional) use numeric IDs instead of FASTA IDs
 ```
 
+
+## Metadata
+- **Skill**: generated

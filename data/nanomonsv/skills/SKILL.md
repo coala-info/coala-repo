@@ -1,6 +1,6 @@
 ---
 name: nanomonsv
-description: nanomonsv identifies somatic structural variations from long-read nanopore sequencing data. Use when user asks to detect somatic structural variants, parse candidate reads from alignment files, call somatic SVs using local assembly, or classify insertion sequences.
+description: "nanomonsv detects somatic structural variations from long-read sequencing data by comparing tumor and control samples. Use when user asks to detect somatic structural variations, parse long-read alignment files, or classify mobile element insertions."
 homepage: https://github.com/friend1ws/nanomonsv
 ---
 
@@ -8,14 +8,12 @@ homepage: https://github.com/friend1ws/nanomonsv
 # nanomonsv
 
 ## Overview
-nanomonsv is a specialized suite of Python tools for identifying somatic structural variations (SVs) using long-read nanopore data. While short-read technologies often struggle with complex genomic rearrangements and repetitive regions, nanomonsv leverages the length of nanopore reads to characterize SVs with high precision. It is particularly powerful for detecting "Single Breakend" SVs—complex events involving centromeric sequences, LINE-1 mediated retrotransposition, and viral integrations that are often invisible to standard callers.
-
-The tool follows a multi-stage workflow: first parsing alignment files to isolate candidate reads, and then performing local assembly and rigorous filtering against a matched control (and optionally a control panel) to produce high-confidence somatic calls.
+nanomonsv is a specialized bioinformatics tool designed to detect somatic structural variations using the unique advantages of long-read sequencing. It excels at identifying variations in repetitive regions, centromeres, and complex rearrangements (like LINE1 or viral mediated events) that are often invisible to short-read technologies. The workflow typically involves parsing alignment files for both tumor and control samples, followed by a comparison step to filter out germline variants and sequencing noise.
 
 ## Core Workflow
 
-### 1. Parsing Candidate Reads
-The `parse` command identifies and extracts reads that potentially support structural variations. This must be run for both the tumor and the matched control BAM/CRAM files.
+### 1. Parsing Supporting Reads
+Extract putative SV-supporting reads from indexed BAM or CRAM files. This must be done for both tumor and control samples.
 
 ```bash
 # Parse tumor sample
@@ -24,51 +22,58 @@ nanomonsv parse tumor.bam output/tumor_prefix
 # Parse control sample
 nanomonsv parse control.bam output/control_prefix
 ```
+*   **Tip**: For CRAM files, provide the reference fasta using `--reference_fasta`.
+*   **Output**: Generates `.deletion.sorted.bed.gz`, `.insertion.sorted.bed.gz`, and `.rearrangement.sorted.bedpe.gz`.
 
-*   **Input**: BAM files must be aligned using `minimap2`.
-*   **Output**: Generates indexed BED and BEDPE files (e.g., `.deletion.sorted.bed.gz`, `.rearrangement.sorted.bedpe.gz`).
-
-### 2. Calling Somatic SVs
-The `get` command performs the actual SV calling by comparing the parsed tumor reads against the control data and the reference genome.
+### 2. SV Calling and Filtering
+Compare tumor and control parsed data to generate the final somatic SV list.
 
 ```bash
-nanomonsv get \
-    output/tumor_prefix \
-    tumor.bam \
-    reference.fa \
+nanomonsv get output/tumor_prefix tumor.bam reference.fa \
     --control_prefix output/control_prefix \
     --control_bam control.bam \
     --use_racon
 ```
 
-*   **Expert Tip**: Always use the `--use_racon` flag. This utilizes `racon` for generating consensus sequences, which significantly improves breakpoint resolution to single-base accuracy.
-*   **Reference**: Ensure the reference FASTA is the same one used for the initial `minimap2` alignment.
-
-### 3. Classifying Insertions (Advanced)
-For SVs involving insertions, use the `insert_classify` command to determine if the sequence originates from LINE-1, viruses, or other genomic locations.
+### 3. Advanced Classification (Optional)
+Classify inserted sequences (e.g., identifying mobile element insertions). Requires `bwa`, `minimap2`, `bedtools`, and `RepeatMasker`.
 
 ```bash
 nanomonsv insert_classify tumor.nanomonsv.result.txt reference.fa
 ```
 
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
-### Noise Reduction with Control Panels
-If you are working with low-depth control samples or want to maximize precision, use a "Control Panel." This allows nanomonsv to filter out common artifacts and germline variants found across multiple individuals.
-*   Use the `--control_panel_prefix` option in the `get` command.
-*   Pre-built control panels (e.g., from HPRC data) are recommended for standard human builds (GRCh38).
+### Using Control Panels
+To reduce false positives and computational cost, use a control panel (e.g., from HPRC) to filter common noise.
+*   Add `--control_panel_prefix /path/to/control_panel` during the `get` command.
+*   If a specific platform control is unavailable, the "Guppy version 4" Nanopore control panel is recommended for its versatility.
 
-### Environment Requirements
-*   **Dependencies**: Ensure `htslib` (specifically `tabix` and `bgzip`), `mafft`, and `racon` are installed and available in your system `PATH`.
-*   **Alignment**: nanomonsv is optimized for `minimap2` alignments. Using other aligners may lead to suboptimal results or parsing errors.
-*   **CRAM Support**: From version 0.7.0 onwards, CRAM files are supported. When using CRAM, always provide the reference genome via the `--reference_fasta` flag during the `parse` step.
+### Handling Results
+The primary output is `sample.nanomonsv.result.txt`.
+*   **Filtering**: Always check the `Is_Filter` column. Only rows marked `PASS` should be considered high-confidence somatic SVs.
+*   **Single Breakends**: If complex SVs are expected, check `sample.nanomonsv.sbnd.result.txt`.
+*   **Manual Extraction**: Use `grep -P '\tPASS$'` to extract valid variants while avoiding partial matches in other columns.
 
-### Filtering Results
-The primary output is `*.nanomonsv.result.txt`. For high-confidence calls, pay attention to:
-*   `MIN_TUMOR_VARIANT_READ_NUM`: Default is often 3; increasing this can reduce false positives in high-depth data.
-*   `MAX_CONTROL_VAF`: Use this to strictly filter out potential germline leakage.
+### Performance Tuning
+*   **Consensus Generation**: Use `--use_racon` (recommended) or `--use_mafft` to generate single-base resolution breakpoints.
+*   **VAF Thresholds**: The default VAF threshold is 0.05. Adjust using `--min_tumor_VAF` if working with low-purity samples.
+*   **Simple Repeats**: Provide a BED file of simple repeats via `--simple_repeat_bed` to filter out common artifacts in repetitive regions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| nanomonsv insert_classify | Classify SVs based on LINE1 insertion |
+| nanomonsv merge_control | Merge control files generated by parse function |
+| nanomonsv parse | Parse alignment files to identify structural variants. |
+| nanomonsv validate | Validate SV calls using BAM files and reference genome. |
+| nanomonsv_connect | Connects SVs from different reads based on their positions and support. |
+| nanomonsv_get | nanomonsv get is a subcommand of nanomonsv. It processes tumor and control BAM/CRAM files to identify structural variants. |
 
 ## Reference documentation
-- [nanomonsv GitHub README](./references/github_com_friend1ws_nanomonsv.md)
-- [nanomonsv Wiki and Tutorials](./references/github_com_friend1ws_nanomonsv_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_nanomonsv_overview.md)
+- [Main Documentation](./references/github_com_friend1ws_nanomonsv.md)
+- [Result Filtering Guide](./references/github_com_friend1ws_nanomonsv_wiki_How-to-understand-nanomonsv-result-filtering.md)
+- [Single Breakend SVs](./references/github_com_friend1ws_nanomonsv_wiki_Single-breakend-SV.md)

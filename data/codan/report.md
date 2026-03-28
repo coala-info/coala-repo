@@ -66,3 +66,6 @@ Allowed options:
   -F [ --fasta ]        use fasta format
 ```
 
+
+## Metadata
+- **Skill**: generated

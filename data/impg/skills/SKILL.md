@@ -1,6 +1,6 @@
 ---
 name: impg
-description: impg navigates genomic variation by projecting target sequences through pairwise alignment networks to find homologous regions. Use when user asks to project genomic regions across pangenomes, find homologous sequences using transitive closure, or generate local pangenome graphs and multiple sequence alignments from PAF files.
+description: impg is a high-performance tool that projects genomic ranges through an implicit alignment network to find homologous regions across pangenomes. Use when user asks to query genomic ranges, find homologous sequences via transitive closure, or extract pangenome subgraphs in formats like BED, GFA, and MAF.
 homepage: https://github.com/pangenome/impg
 ---
 
@@ -8,48 +8,88 @@ homepage: https://github.com/pangenome/impg
 # impg
 
 ## Overview
-`impg` (implicit pangenome graphs) is a specialized tool for rapidly navigating genomic variation across populations. Unlike traditional methods that require building explicit, often computationally expensive pangenome graphs, `impg` treats all-vs-all pairwise alignments as a network. It allows users to project a specific target range (like a disease gene or regulatory element) through this network to find all homologous sequences in seconds.
+
+`impg` (implicit pangenome graph) is a high-performance tool designed for pangenome-scale comparative genomics. Unlike traditional methods that require building massive, explicit whole-genome graphs, `impg` treats all-vs-all pairwise alignments as an implicit network. It allows users to define a target range in one genome and instantly project that range through the alignment network to find all homologous regions in other genomes. This approach is particularly effective for studying genomic variation at specific loci—such as disease genes or structural variants—across large populations or diverse species in seconds.
 
 ## Core CLI Patterns
 
-### Basic Region Projection
-To find where a specific region aligns across other genomes:
-`impg query -a alignments.paf -r seq_name:start-end`
+### Basic Range Querying
+The primary command is `impg query`. You must provide an alignment file and a target region.
 
-### Transitive Closure Search
-To discover all sequences connected to a target range through intermediate alignments (matches of matches), use the `-x` flag. This is essential for finding homology that isn't directly aligned to your reference:
-`impg query -a alignments.paf -r seq_name:start-end -x`
+```bash
+# Query a specific genomic range
+impg query -a alignments.paf -r seq_name:start-end
 
-### Extracting Sequences and Graphs
-When generating sequence-based outputs (FASTA, GFA, MAF), you must provide the underlying sequence files via `--sequence-files` or a `--sequence-list` file:
-`impg query -a alignments.paf -r chr1:1000-2000 -o fasta --sequence-files genomes.fa`
+# Query an entire sequence by name
+impg query -a alignments.paf -r seq_name
+```
 
-Common output formats (`-o`):
-- `bed` / `bedpe`: Standard coordinate-based results.
-- `fasta`: Homologous sequence extraction.
-- `gfa`: Local pangenome graph structure for the queried region.
-- `fasta-aln`: POA-based multiple sequence alignment (MSA).
+### Transitive Closure
+One of the most powerful features of `impg` is the ability to find sequences that are connected indirectly through the alignment network.
 
-## Expert Tips and Best Practices
+```bash
+# Enable transitive overlap search to find all connected homologous sequences
+impg query -a alignments.paf -r chrI:50000-100000 -x
 
-### Alignment Requirements
-`impg` requires PAF files to have CIGAR strings using `=` (match) and `X` (mismatch) rather than the generic `M`.
-- **Minimap2**: Always use the `--eqx` flag.
-- **Wfmash**: Generates compatible PAFs by default.
+# Control the depth of the transitive search (default is 2)
+impg query -a alignments.paf -r chrI:50000-100000 -x -m 3
+```
 
-### Performance Optimization
-- **Approximate Mode**: For very large datasets using `.1aln` files, use `--approximate` to significantly speed up coordinate projection.
-- **Transitive Depth**: Use `-m <int>` to limit the recursion depth of transitive searches. This prevents the search from "blooming" or stalling in highly repetitive genomic regions.
-- **Merging**: Use `-d <int>` to merge results within a certain distance, which is helpful for cleaning up fragmented alignments.
+### Batch Processing
+For large-scale analysis, use BED files to define multiple query regions.
 
-### Working with Compressed Data
-`impg` natively supports BGZF-compressed PAF files and AGC (Assembled Genome Compressed) archives for efficient sequence storage:
-`impg query -a aln.paf.gz -r chr1:1-1000 -o gfa --sequence-files genomes.agc`
+```bash
+# Query multiple regions defined in a BED file
+impg query -a alignments.paf -b regions.bed
+```
 
-### Visualization
-To visualize the results of a query, pipe the `fasta-aln` output directly into the provided visualization script:
-`impg query -a aln.paf -r chr1:1-1000 -o fasta-aln --sequence-files genomes.fa | python scripts/faln2html.py -i -`
+## Input and Output Specifications
+
+### Alignment Formats
+`impg` supports several alignment formats:
+- **PAF**: Must include CIGAR strings using `=` for matches and `X` for mismatches (generated by `wfmash` or `minimap2 --eqx`).
+- **1ALN**: A specialized alignment format.
+- **TPA**: Transitive Pangenome Alignment format.
+
+### Output Formats
+Use the `-o` flag to specify the output format based on your downstream needs:
+- `bed` (default): Standard genomic coordinates.
+- `bedpe`: Paired-end BED format.
+- `paf`: Alignment format.
+- `gfa`: Graphical Fragment Assembly format (requires sequence files).
+- `maf`: Multiple Alignment Format (requires sequence files).
+- `fasta`: Sequence extraction (requires sequence files).
+- `fasta-aln`: POA-based (Partial Order Alignment) FASTA alignment.
+
+### Working with Sequences
+When requesting sequence-based outputs (`gfa`, `maf`, `fasta`), you must provide the underlying sequence data:
+
+```bash
+# Extract homologous sequences as FASTA
+impg query -a alignments.paf -r chr1:1000-2000 -o fasta --sequence-files genomes.fa
+```
+
+## Expert Tips
+
+- **Identity Filtering**: Use `--min-identity` (e.g., `0.9`) to filter out low-quality or distant alignments during the projection.
+- **Output Redirection**: Use `-O` or `--output-prefix` to write results directly to files instead of stdout, which is safer for large pangenome extractions.
+- **Implicit Graph Advantages**: Use `impg` when you want to avoid the computational overhead of tools like `vg` or `cactus` for locus-specific studies. It is significantly faster for extracting "sub-graphs" of homology.
+- **CIGAR Requirement**: If your PAF files lack the `=` and `X` operators in the CIGAR string, `impg` will not be able to accurately project coordinates. Always ensure your aligner is configured for "extended" CIGAR output.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| impg index | Create an IMPG index |
+| impg query | Query overlaps in the alignment |
+| impg similarity | Compute pairwise similarity between sequences in a region |
+| impg_lace | Lace files together (graphs or VCFs) |
+| impg_refine | Refine loci to maximize the number of samples that span both ends of the region |
+| impg_stats | Print alignment statistics |
+| partition | Partition the alignment |
 
 ## Reference documentation
-- [impg GitHub Repository](./references/github_com_pangenome_impg.md)
-- [impg Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_impg_overview.md)
+- [impg: implicit pangenome graph](./references/github_com_pangenome_impg.md)
+- [impg README](./references/github_com_pangenome_impg_blob_main_README.md)

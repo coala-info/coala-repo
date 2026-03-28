@@ -1,6 +1,6 @@
 ---
 name: msamtools
-description: msamtools is a specialized extension of samtools designed for metagenomic data processing, including alignment filtering and abundance profiling. Use when user asks to filter alignments by identity or length, remove host reads from metagenomic samples, or generate taxonomic and functional abundance profiles.
+description: msamtools is a suite of tools designed to filter and profile large-scale shotgun metagenomics data by extending the functionality of samtools. Use when user asks to filter SAM/BAM alignments by identity or length, estimate relative abundance profiles, calculate sequence coverage, or remove host sequences from metagenomic datasets.
 homepage: https://github.com/arumugamlab/msamtools
 ---
 
@@ -8,59 +8,80 @@ homepage: https://github.com/arumugamlab/msamtools
 # msamtools
 
 ## Overview
-msamtools is a specialized extension of samtools designed for microbiome research. While samtools provides general-purpose manipulation of high-throughput sequencing data, msamtools adds procedural logic for metagenomic tasks such as host-read removal, stringent alignment filtering (by identity and length), and the generation of abundance profiles. It is built to operate within Unix streams, allowing it to be piped directly from aligners like BWA or Bowtie2.
+msamtools is a specialized suite of tools designed to extend the functionality of samtools for microbiome research. It excels at processing large-scale shotgun metagenomics data by providing high-performance filtering and profiling capabilities. It is particularly useful for "on-the-fly" processing in command-line pipes, allowing researchers to filter alignments by specific identity and length thresholds without creating massive intermediate files.
 
 ## Core Commands and Usage
 
-### 1. Filtering Alignments (`filter`)
-The `filter` command is used to refine alignments based on quality metrics beyond simple mapping quality.
+### 1. msamtools filter
+Used to filter SAM/BAM alignments based on alignment statistics. This is often used to remove low-quality or spurious mappings.
 
-*   **Common Flags:**
-    *   `-l <int>`: Minimum alignment length.
-    *   `-p <float>`: Minimum percent identity (e.g., 95).
-    *   `-z <float>`: Minimum percent of the read length covered by the alignment.
-    *   `-S`: Input is in SAM format (default is BAM).
-    *   `-b`: Output in BAM format.
-    *   `-u`: Output uncompressed BAM (faster for piping).
-    *   `--besthit`: Retain only the best alignment for each read.
-    *   `--invert`: Invert the filter (useful for host removal).
-    *   `--keep_unmapped`: Retain unmapped reads in the output.
+**Common Options:**
+- `-l <int>`: Minimum alignment length (e.g., `-l 80`).
+- `-p <float>`: Minimum percent identity (e.g., `-p 95`).
+- `-z <float>`: Minimum percent of the read aligned (e.g., `-z 80`).
+- `-b`: Output in BAM format.
+- `-S`: Input is in SAM format.
+- `-u`: Output uncompressed BAM (faster for piping).
+- `--besthit`: Retain only the highest-scoring alignment for each read.
+- `--invert`: Invert the filter (useful for host-removal workflows).
+- `--keep_unmapped`: Retain unmapped reads in the output.
 
-**Example: Standard Metagenomic Filter**
-Retain alignments ≥80bp, ≥95% identity, and covering ≥80% of the read length:
-`msamtools filter -S -b -l 80 -p 95 -z 80 input.sam > filtered.bam`
+**Example: Filtering on the fly**
+```bash
+bwa-mem2 mem DB R1.fq R2.fq | msamtools filter -S -b -l 80 -p 95 -z 80 > filtered.bam
+```
 
-**Example: Host Removal (Human Read Filtering)**
-To remove human reads, align to a human reference, filter for confident matches, and invert the selection:
-`bwa-mem2 mem human_db R1.fq R2.fq | msamtools filter -S -l 30 --invert --keep_unmapped -bu - | samtools fastq -1 hostfree_1.fq -2 hostfree_2.fq -`
+### 2. msamtools profile
+Estimates the relative abundance profile of reference sequences (genes or genomes) from a BAM file.
 
-### 2. Abundance Profiling (`profile`)
-The `profile` command estimates the relative abundance of reference sequences (e.g., species or genes) within a BAM file.
+**Common Options:**
+- `--multi <string>`: How to handle multi-mapping reads (`proportional`, `random`, or `all`). `proportional` is recommended for metagenomics.
+- `--label <string>`: Sample label for the output table.
+- `-o <file>`: Output file path.
 
-*   **Multi-mapping Handling (`--multi`):**
-    *   `proportional`: Distributes the weight of a multi-mapped read across all its targets.
-    *   `ignore`: Skips multi-mapped reads.
-*   **Other Flags:**
-    *   `--label`: Add a sample name/label to the output table.
-    *   `--mincount`: Filter out features with very low counts to reduce noise.
-    *   `--pandas`: Output in a format easily readable by Python/Pandas.
+**Example: Generating a gene profile**
+```bash
+msamtools profile --multi=proportional --label=SampleA -o profile.txt input.bam
+```
 
-**Example: Generating a Profile**
-`msamtools profile --multi=proportional --label=Sample_A -o profile.txt filtered.bam`
+### 3. msamtools coverage
+Estimates per-base or per-sequence read coverage.
 
-### 3. Coverage Estimation (`coverage`)
-Calculates per-base or per-sequence read coverage. This is essential for determining the breadth of a genome covered in a metagenomic sample.
+### 4. msamtools summary
+Summarizes alignment statistics (matches, mismatches, edits, etc.) for every read in a table format.
 
-### 4. Summary Statistics (`summary`)
-Provides a table summarizing alignment statistics for every read, useful for deep-dive QC or custom filtering logic in downstream scripts.
+## Expert Workflows
 
-## Expert Tips and Best Practices
+### Host Sequence Removal
+To remove human/host reads effectively, use a low alignment length threshold and the `--invert` flag. This captures even short partial matches to the host genome and discards them.
 
-*   **Stream Processing:** Always prefer piping (`|`) between `samtools` and `msamtools` to avoid the I/O overhead of creating large intermediate BAM files.
-*   **Sorting Requirements:** Note that some subprograms or specific flags (like `--besthit`) may require the BAM file to be sorted by read name (`samtools sort -n`) rather than coordinate.
-*   **Uncompressed BAM for Pipes:** When piping from `msamtools` to another tool, use the `-u` flag to output uncompressed BAM. This saves significant CPU time otherwise spent on compression.
-*   **Combining with Samtools:** msamtools is a supplement, not a replacement. Use `samtools` for indexing (`index`), sorting (`sort`), and viewing (`view`), and `msamtools` for the metagenomic-specific logic.
+```bash
+bwa-mem2 mem HUMAN_DB R1.fq R2.fq \
+  | msamtools filter -S -l 30 --invert --keep_unmapped -bu - \
+  | samtools fastq -1 hostfree_R1.fq.gz -2 hostfree_R2.fq.gz -
+```
+
+### Best-Hit Profiling
+For gene catalog mapping (e.g., IGC), it is common to filter for high-quality alignments and then take the best hit before profiling.
+
+```bash
+samtools sort -n input.bam \
+  | msamtools filter -b -u -l 80 -p 95 --besthit - \
+  | msamtools profile --multi=proportional --label=Sample1 -o Sample1.profile.txt -
+```
+*Note: Input to msamtools filter/profile often benefits from being name-sorted (`samtools sort -n`) when dealing with paired-end data.*
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| msamtools profile | Produces an abundance profile of all reference sequences in a BAM file based on the number of read-pairs (inserts) mapping to each reference sequence. |
+| msamtools_coverage | Produces per-position sequence coverage information for all reference sequences in the BAM file. Output is similar to old-style quality files from the Sanger  sequencing era, with a fasta-style header followed by lines of space-delimited  numbers. |
+| msamtools_filter | Filter alignments from BAM/SAM files. |
+| msamtools_summary | Prints summary of alignments in the given BAM/SAM file. By default, it prints a summary line per alignment entry in the file. The summary is a tab-delimited line with the following fields: qname,aligned_qlen,target_name,glocal_align_len,matches,percent_identity glocal_align_len includes the unaligned qlen mimicing a global alignment in the query and local alignment in target, thus glocal. With --stats option, summary is consolidated as distribution of read counts for a given measure. --stats=mapped   - distribution for number of mapped query bases --stats=unmapped - distribution for number of unmapped query bases --stats=edit     - distribution for edit distances --stats=score    - distribution for score=match-edit |
 
 ## Reference documentation
-- [msamtools GitHub README](./references/github_com_arumugamlab_msamtools.md)
-- [msamtools Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_msamtools_overview.md)
+- [msamtools README](./references/github_com_arumugamlab_msamtools_blob_master_README.md)
+- [msamtools Overview](./references/anaconda_org_channels_bioconda_packages_msamtools_overview.md)

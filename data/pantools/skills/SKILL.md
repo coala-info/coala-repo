@@ -1,66 +1,63 @@
 ---
 name: pantools
-description: Pantools is a pangenomic toolkit for comparative analysis of large numbers of genomes. Use when user asks to perform comparative genomic analyses, construct pangenomes, or analyze genomic variations across multiple genomes.
+description: PanTools is a bioinformatics framework that uses a Neo4j graph database to construct and analyze large-scale pangenomes. Use when user asks to build a pangenome, perform phylogenomic reconstruction, run k-mer classification, or conduct comparative genomic analyses.
 homepage: https://git.wur.nl/bioinformatics/pantools
 ---
 
 
 # pantools
 
-yaml
-name: pantools
-description: A pangenomic toolkit for comparative analysis of large numbers of genomes. Use when Claude needs to perform comparative genomic analyses, construct pangenomes, or analyze genomic variations across multiple genomes.
-```
 ## Overview
-PanTools is a powerful command-line utility designed for the comparative analysis of multiple genomes. It enables researchers to construct pangenomes, identify core and accessory genes, and analyze genomic variations. This tool is essential for understanding the evolutionary relationships and genetic diversity within a set of related organisms.
+PanTools is a specialized bioinformatics framework designed for the construction and analysis of large-scale pangenomes. It utilizes a Neo4j graph database backend to store genomic information, allowing for efficient comparative analysis across hundreds or thousands of genomes. This skill provides guidance on using the PanTools command-line interface (CLI) for tasks such as k-mer classification, functional annotation, and phylogenomic reconstruction.
 
-## Usage Instructions
+## Core Workflows and CLI Patterns
 
-PanTools operates through a series of commands to build and analyze pangenomes. The general workflow involves preparing input data, building the pangenome, and then performing various analyses.
+### Pangenome Construction
+PanTools v4+ features an optimized pangenome construction process.
+*   **Database Backend**: Ensure Neo4j is installed and configured, as PanTools relies on it for graph storage.
+*   **Phased Genomes**: Use the specific functionalities added in v4.3.0 for working with haplotype-resolved (phased) genomes to maintain allelic variation.
 
-### Core Commands and Workflow
+### Phylogenomics and Alignment
+*   **Core Phylogeny**: When running the `core_phylogeny` command, it is critical to use trimmed MSA results to ensure the accuracy of the resulting phylogenetic trees.
+*   **MSA Sequence Order**: For `hmGroup MSA`, PanTools requires a consistent order of sequences to ensure reproducible results.
+*   **Functional Consistency**: When adding TIGRFAM or PFAM entries, ensure that 'ID' and 'AC' fields are correctly mapped to the same Neo4j node to maintain database integrity.
 
-1.  **Input Preparation**:
-    *   PanTools typically works with genome sequences in FASTA format. Ensure your input genomes are correctly formatted.
-    *   You may need to generate gene presence/absence tables or other intermediate files depending on your specific analysis.
+### Comparative Search
+*   **Panproteome BLAST**: You can run BLAST searches directly against the panproteome. Ensure you are not using pangenome-specific variables when the tool is set to panproteome mode.
+*   **K-mer Classification**: Use k-mer classification for phenotype-based grouping, but be aware of potential crashes if phenotype data is improperly formatted.
 
-2.  **Pangenome Construction**:
-    *   The primary command for building a pangenome is `pantools build`.
-    *   This command requires specifying input genome files and output directories.
-    *   Key parameters often include:
-        *   `--sequences`: Path to input FASTA files or a directory containing them.
-        *   `--output_dir`: Directory to store the pangenome data.
-        *   `--kmer_size`: The size of k-mers to use for sequence comparison (e.g., 31).
-        *   `--threads`: Number of threads to use for parallel processing.
+## Expert Tips and Best Practices
 
-    *   **Example**:
-        ```bash
-        pantools build --sequences /path/to/genomes/ --output_dir ./pangenome_output --kmer_size 31 --threads 8
-        ```
+### Environment and Dependencies
+*   **KMC Versioning**: Avoid using KMC version 3.2.4 due to known compatibility issues. Use a stable version recommended in the PanTools documentation (typically 3.0.0 or higher, excluding 3.2.4).
+*   **Memory Management**: For large-scale pangenomes, monitor Java heap space. If you encounter integer overflows in `optimal_grouping`, increase the `-Xms` and `-Xmx` parameters.
+*   **Neo4j Connectivity**: Always verify that the Neo4j service is reachable before initiating graph-heavy commands.
 
-3.  **Pangenome Analysis**:
-    *   Once the pangenome is built, you can perform various analyses using commands like `pantools analyze`.
-    *   Common analyses include:
-        *   **Core genome identification**: Identifying genes present in all or a high percentage of genomes.
-        *   **Accessory genome identification**: Identifying genes present in a subset of genomes.
-        *   **Phylogenetic tree construction**: Inferring evolutionary relationships based on the pangenome.
+### Data Integrity
+*   **CIGAR Strings**: Verify CIGAR string consistency when working with mapped reads or alignments to prevent downstream errors in the graph structure.
+*   **BUSCO Scores**: When analyzing pangenome completeness, check the `busco_scores` file output for consistency across different genome versions.
 
-    *   **Example for analyzing gene presence/absence**:
-        ```bash
-        pantools analyze --input_dir ./pangenome_output --output_dir ./analysis_output --analysis gene_presence
-        ```
 
-4.  **Specific Analysis Modules**:
-    *   PanTools may have specialized modules for specific tasks. Refer to the documentation for details on modules like `optimal_grouping`, `core_phylogeny`, or `panproteome`.
 
-### Expert Tips and Best Practices
+## Subcommands
 
-*   **K-mer Size Selection**: The choice of `kmer_size` is crucial. Smaller k-mers capture more variation but can be computationally intensive and prone to spurious matches. Larger k-mers are more specific but might miss smaller variations. Experiment with different sizes (e.g., 21, 31, 51) based on your data and research question.
-*   **Resource Management**: Pangenome construction can be memory and CPU intensive. Utilize the `--threads` option to leverage multi-core processors. Monitor resource usage and adjust thread counts accordingly.
-*   **Output Directory Structure**: PanTools often creates a structured output directory. Familiarize yourself with the generated files (e.g., gene presence/absence matrices, phylogenetic trees) to interpret the results effectively.
-*   **Documentation Reference**: For detailed command options, specific analysis types, and advanced features, always consult the official PanTools documentation. The `CHANGELOG.md` and `README.md` files provide valuable insights into recent updates and core functionalities.
-*   **Version Control**: Be mindful of the PanTools version you are using, as functionalities and command-line arguments can change between releases. Check the `CHANGELOG.md` for version-specific details.
+| Command | Description |
+|---------|-------------|
+| deactivate_grouping | Deactivate the currently active homology grouping. |
+| pantools | Path to the database root directory. |
+| pantools | A comprehensive suite of tools for pangenome analysis. |
+| pantools | Path to the database root directory. |
+| pantools | Path to the database root directory. |
+| pantools | A command-line tool for pangenome analysis. |
+| pantools | A command-line tool for pangenome analysis. |
+| pantools | Path to the database root directory. |
+| pantools remove_nodes | Remove a selection of nodes and their relationships from the pangenome. |
+| remove_annotations | Remove all the genomic features that belong to annotations. |
+| remove_functions | Remove functional annotations from the pangenome. |
+| remove_grouping | Remove an homology grouping from the pangenome. |
+| remove_phenotypes | Delete phenotype nodes or remove specific phenotype information from the nodes. |
 
 ## Reference documentation
-- [PanTools README](./references/git_wur_nl_bioinformatics_pantools_-_blob_pantools_v4_README.md)
+- [PanTools Project Overview](./references/git_wur_nl_bioinformatics_pantools.md)
 - [PanTools Changelog](./references/git_wur_nl_bioinformatics_pantools_-_blob_pantools_v4_CHANGELOG.md)
+- [PanTools Releases and Version History](./references/git_wur_nl_bioinformatics_pantools_-_releases.md)

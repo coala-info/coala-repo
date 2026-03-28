@@ -272,3 +272,6 @@ Translate, squeeze, or delete characters from stdin, writing to stdout
 	-s	Squeeze multiple output characters of STRING2 into one character
 ```
 
+
+## Metadata
+- **Skill**: generated

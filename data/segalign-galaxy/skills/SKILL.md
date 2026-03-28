@@ -1,6 +1,6 @@
 ---
 name: segalign-galaxy
-description: SegAlign is a GPU-accelerated genomic alignment tool that performs large-scale pairwise whole-genome alignments and repeat masking. Use when user asks to perform pairwise whole-genome alignments, identify repetitive elements, or accelerate the LASTZ algorithm using GPUs.
+description: SegAlign is a GPU-accelerated system for performing pairwise whole genome alignments and repeat masking. Use when user asks to perform pairwise genome alignments, mask repetitive sequences using GPUs, or run SegAlign via Docker.
 homepage: https://github.com/gsneha26/SegAlign
 ---
 
@@ -8,40 +8,78 @@ homepage: https://github.com/gsneha26/SegAlign
 # segalign-galaxy
 
 ## Overview
+SegAlign is a scalable GPU-based system designed for pairwise whole genome alignments. It implements the seed-filter-extend paradigm popularized by LASTZ, offloading computationally intensive steps to the GPU to significantly reduce processing time. The skill covers the primary alignment workflow and the specialized repeat masking utility, focusing on command-line execution and data preparation.
 
-SegAlign is a high-performance genomic alignment tool designed to leverage GPU acceleration for the LASTZ seed-filter-extend algorithm. It is optimized for large-scale comparative genomics, providing a scalable solution for whole-genome alignments that would otherwise be computationally prohibitive on CPU-only systems. The tool includes two primary components: a core aligner for pairwise comparisons and a specialized repeat masker for identifying repetitive elements.
-
-## Command Line Usage
-
-### Pairwise Whole Genome Alignment
-Use `run_segalign` to perform alignments between a target and query genome.
+## Data Preparation
+SegAlign requires input sequences in FASTA format. If your genomic data is in `.2bit` format, you must convert it using `twoBitToFa` (from kentUtils) before running the alignment.
 
 ```bash
-run_segalign target.fa query.fa --output=output_filename.maf [options]
+# Convert 2bit to FASTA
+twoBitToFa target.2bit target.fa
+twoBitToFa query.2bit query.fa
 ```
 
-### Repeat Masking
-Use `run_segalign_repeat_masker` to identify and mask repetitive sequences in a genome.
+## Pairwise Whole Genome Alignment
+The primary command for alignment is `run_segalign`. It requires a target and a query file.
 
+**Basic Syntax:**
 ```bash
-run_segalign_repeat_masker sequence.fa --output=output_filename.seg [options]
+run_segalign target.fa query.fa [options]
 ```
 
-## Best Practices and Expert Tips
+**Common Pattern:**
+```bash
+run_segalign human_chr1.fa mouse_chr1.fa --output=alignment_results.maf
+```
 
-### Input Preparation
-* **Format Conversion**: SegAlign typically operates on FASTA files. If your source data is in `.2bit` format, use `twoBitToFa` from the kentUtils suite to convert it before running SegAlign.
-* **Sequence Masking**: For better alignment quality and performance, run the `run_segalign_repeat_masker` on your sequences before performing the final alignment.
+**Key Options:**
+- `--output`: Specify the output file path (typically .maf).
+- `--help`: View all available parameters, including scoring matrices and filtering thresholds.
 
-### GPU Optimization and Docker
-* **Shared Memory**: When running via Docker, always include the `--ipc=host` flag. This prevents "out of memory" errors related to GPU-host communication and shared memory segments.
-* **GPU Access**: Ensure the `--gpus all` flag is passed to the Docker container to allow the tool to utilize the available hardware acceleration.
-* **Environment**: SegAlign is optimized for NVIDIA CUDA 10.2. If running natively, ensure the CUDA toolkit binaries are in your `$PATH`.
+## Repeat Masking
+For identifying and masking repetitive sequences using GPU acceleration, use the `run_segalign_repeat_masker` utility.
 
-### Performance Tuning
-* **Batching**: If encountering memory issues on smaller GPU instances, consider breaking large genomes into smaller scaffolds or chromosomes, though SegAlign is designed to handle whole genomes.
-* **Help Documentation**: Access the full list of heuristic parameters (similar to LASTZ) by running the commands with the `--help` flag.
+**Basic Syntax:**
+```bash
+run_segalign_repeat_masker sequence.fa --output=masked_output.seg
+```
+
+## Docker and Container Usage
+When running SegAlign via Docker, you must ensure the container has access to the host GPU.
+
+**Alignment via Docker:**
+```bash
+docker run --ipc=host --gpus all -v $(pwd):/data -it gsneha/segalign:v0.1.2 \
+           run_segalign \
+           /data/target.fa \
+           /data/query.fa \
+           --output=/data/output.maf
+```
+
+**Repeat Masking via Docker:**
+```bash
+docker run --ipc=host --gpus all -v $(pwd):/data -it gsneha/segalign:v0.1.2 \
+           run_segalign_repeat_masker \
+           /data/sequence.fa \
+           --output=/data/output.seg
+```
+
+## Expert Tips and Best Practices
+- **GPU Requirements**: Ensure NVIDIA CUDA 10.2 toolkit is installed and the GPU is accessible. On AWS, use G3 or P3 instances for optimal performance.
+- **Memory Management**: Use `--ipc=host` when running in Docker to prevent shared memory issues during large-scale alignments.
+- **Input Validation**: Always verify that your FASTA headers are clean and that the files are not corrupted, as GPU kernels are sensitive to input formatting.
+- **Parallelization**: SegAlign is designed to be scalable; for multiple pairwise alignments, consider using `parallel` to manage multiple `run_segalign` instances across available GPUs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| run_segalign | Run segalign with specified target and query files. |
+| segalign_repeat_masker | You must specify a sequence file |
 
 ## Reference documentation
-- [SegAlign Main Repository and Usage](./references/github_com_gsneha26_SegAlign.md)
-- [SegAlign Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_segalign-galaxy_overview.md)
+- [SegAlign GitHub Repository](./references/github_com_gsneha26_SegAlign.md)
+- [SegAlign README](./references/github_com_gsneha26_SegAlign_blob_main_README.md)
+- [SegAlign Dockerfile](./references/github_com_gsneha26_SegAlign_blob_main_Dockerfile.md)

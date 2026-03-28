@@ -1,6 +1,6 @@
 ---
 name: fba
-description: The fba toolbox processes raw sequencing reads from feature barcoding experiments to generate cell-by-feature UMI count matrices. Use when user asks to extract barcodes, map targeted transcripts, quantify UMI counts, or demultiplex single-cell feature data.
+description: The fba toolset quantifies non-transcriptomic features like cell surface proteins or CRISPR perturbations in single-cell sequencing data by processing raw reads into count matrices. Use when user asks to extract feature barcodes, quantify synthetic DNA tags, demultiplex cell hashing data, or generate cell-by-feature matrices.
 homepage: https://github.com/jlduan/fba
 ---
 
@@ -8,40 +8,59 @@ homepage: https://github.com/jlduan/fba
 # fba
 
 ## Overview
+The `fba` (Feature Barcoding Analysis) toolset is a high-performance suite designed to quantify non-transcriptomic features in single-cell sequencing experiments. It specializes in identifying and counting synthetic DNA tags (barcodes) associated with specific cells. Use this skill to streamline the transition from raw sequencing reads to count matrices, ensuring accurate handling of sequence mismatches and barcode orientation.
 
-The `fba` (Feature Barcoding Analysis) toolbox is a specialized suite of command-line utilities designed to process raw sequencing reads from single-cell experiments that utilize feature barcoding. It provides a streamlined workflow to transform paired-end FASTQ files into a cell-by-feature UMI count matrix. Use this skill to navigate the multi-step process of barcode extraction, targeted transcript mapping, UMI deduplication, and cell demultiplexing. It is particularly effective for customized feature specifications that standard pipelines might not support.
+## Core Workflows and CLI Patterns
 
-## Core Command Patterns
+### 1. Sequence Extraction (`fba extract`)
+The first step involves extracting the relevant feature and cell barcode sequences from FASTQ files based on defined patterns.
 
-The `fba` workflow typically follows a sequential order: `extract` (or `map`) -> `filter` -> `count` -> `demultiplex`.
+*   **Basic Pattern Matching**: Use `-p` to define the structure of your reads.
+    *   `fba extract -r1 read1.fastq.gz -r2 read2.fastq.gz -p "CB:1-16,UMI:17-28" -o extracted.fastq.gz`
+*   **Handling Feature Tags**: Specify where the feature barcode is located (e.g., on Read 2).
+    *   `fba extract -r1 R1.fq.gz -r2 R2.fq.gz -p "CB:1-16,UMI:17-28" -f "FT:1-15" -o output/`
 
-### 1. Barcode Extraction
-Use `extract` to pull cell partitioning and feature information from FASTQ files.
-- **Standard Pattern**: `fba extract -1 <read1.fastq.gz> -2 <read2.fastq.gz> -cb_pos <start-end> -umi_pos <start-end> -fb_config <features.csv>`
-- **Tip**: Read 1 typically contains the Cell Barcode (CB) and UMI, while Read 2 contains the feature information.
+### 2. Feature Counting (`fba count`)
+Quantify the extracted features to generate a cell-by-feature matrix.
 
-### 2. Targeted Mapping
-For enriched transcripts (e.g., targeted gene panels), use `map` instead of `extract`.
-- **Mechanism**: Uses BWA or Bowtie2 for alignment of Read 2 and UMI-tools for deduplication.
-- **Usage**: `fba map -1 <read1.fastq.gz> -2 <read2.fastq.gz> -r <reference.fa>`
+*   **Reference Files**: You must provide a feature reference (TSV/CSV) containing feature names and their corresponding sequences.
+    *   `fba count -i extracted.fastq.gz -f features.tsv -o matrix_output/`
+*   **Mismatch Tolerance**: Adjust the number of allowed mismatches in the feature sequence using `-m`.
+    *   `fba count -i extracted.fastq.gz -f features.tsv -m 1` (allows 1 mismatch)
 
-### 3. Quantification
-The `count` command generates the UMI matrix.
-- **Input**: Takes the output from `extract` or `filter`.
-- **Usage**: `fba count -i <extracted_barcodes.tsv.gz> -o <matrix_output_dir>`
+### 3. Demultiplexing (`fba demultiplex`)
+Assign cells to specific samples or categories based on feature enrichment (common in Cell Hashing or CRISPR screens).
 
-### 4. Demultiplexing
-Assign cells to specific features based on abundance.
-- **Usage**: `fba demultiplex -i <matrix.mtx> -o <demux_results.csv>`
-- **Best Practice**: Review the distribution of feature counts before setting thresholds for demultiplexing to avoid high doublet rates or false negatives.
+*   **Thresholding**: `fba` can automatically determine thresholds or use user-defined ones to classify cells.
+    *   `fba demultiplex -i count_matrix.tsv -o demux_results/`
 
-## Quality Control and Troubleshooting
+### 4. Quality Control (`fba qc`)
+Generate summary statistics to evaluate the efficiency of barcode recovery and feature capture.
 
-- **Diagnostic Check**: Run `fba qc` early in the process. If `-1` is omitted, it runs in "bulk mode," analyzing only Read 2 to verify feature barcode quality without cell-level partitioning.
-- **Parameter Customization**: `fba` allows high flexibility in specifying barcode positions and lengths. Always verify the library construction (e.g., 10x Genomics v2 vs v3) to ensure `-cb_pos` and `-umi_pos` are accurate.
-- **Filtering**: Use `fba filter` to refine results by applying specific sequence filters (`-cb_seq` or `-fb_seq`) if you encounter high background noise or contamination.
+*   `fba qc -i extracted.fastq.gz -o qc_report/`
+
+## Expert Tips and Best Practices
+
+*   **Whitelist Usage**: Always provide a cell barcode whitelist (e.g., from 10x Genomics) using the `-w` flag during extraction to significantly improve accuracy and reduce noise from sequencing errors.
+*   **Read Orientation**: If feature counts are unexpectedly low, verify the orientation of the feature barcodes in your reference file. Some protocols require the reverse complement of the library sequence.
+*   **Memory Management**: For very large FASTQ files, use the `--chunk_size` parameter to process reads in batches and prevent out-of-memory errors.
+*   **Filtering**: Use `fba filter` to remove low-quality cell barcodes or UMIs before downstream analysis to ensure the integrity of the final matrix.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fba kallisto_wrapper | Deploy kallisto/bustools for feature barcoding quantification (just a wrapper) (Bray, N.L., et al. 2016). |
+| fba qc | Generate diagnostic information. If `-1` is omitted, bulk mode is enabled and only read 2 will be analyzed. |
+| fba_count | Count UMIs per feature per cell (UMI deduplication), powered by UMI-tools (Smith, T., et al. 2017). Take the output of `extract` or `filter` as input. |
+| fba_demultiplex | Demultiplex cells based on the abundance of features (matrix generated by `count` as input). |
+| fba_extract | Extract cell and feature barcodes from paired fastq files. For single cell assays, read 1 usually contains cell partitioning and UMI information, and read 2 contains feature information. |
+| fba_filter | Filter extracted cell and feature barcodes (output of `extract` or `qc`). Additional fragment filter/selection can be applied through `-cb_seq` and/or `-fb_seq`. |
+| fba_map | Quantify enriched transcripts (through hybridization or PCR amplification) from parent single cell libraries. Read 1 contains cell partitioning and UMI information, and read 2 contains transcribed regions of enriched/targeted transcripts of interest. BWA (Li, H. 2013) or Bowtie2 (Langmead, B., et al. 2012) is used for read 2 alignment. The quantification (UMI deduplication) of enriched/targeted transcripts is powered by UMI-tools (Smith, T., et al. 2017). |
 
 ## Reference documentation
-
-- [fba GitHub Repository](./references/github_com_jlduan_fba.md)
-- [fba Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_fba_overview.md)
+- [FBA GitHub Repository](./references/github_com_jlduan_fba.md)
+- [FBA README and Documentation](./references/github_com_jlduan_fba_blob_master_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_fba_overview.md)

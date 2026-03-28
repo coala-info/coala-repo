@@ -125,3 +125,6 @@ options:
   -v, --verbose         <Optional> Extra logging information
 ```
 
+
+## Metadata
+- **Skill**: generated

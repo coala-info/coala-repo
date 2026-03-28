@@ -1,0 +1,328 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Ffungs%2Ftaxator-tk%2Fblob%2Fmaster%2Fdoc%2Ffileformats.md)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Ffungs%2Ftaxator-tk%2Fblob%2Fmaster%2Fdoc%2Ffileformats.md)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=fungs%2Ftaxator-tk)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[fungs](/fungs)
+/
+**[taxator-tk](/fungs/taxator-tk)**
+Public
+
+* [Notifications](/login?return_to=%2Ffungs%2Ftaxator-tk) You must be signed in to change notification settings
+* [Fork
+  7](/login?return_to=%2Ffungs%2Ftaxator-tk)
+* [Star
+   15](/login?return_to=%2Ffungs%2Ftaxator-tk)
+
+* [Code](/fungs/taxator-tk)
+* [Issues
+  34](/fungs/taxator-tk/issues)
+* [Pull requests
+  0](/fungs/taxator-tk/pulls)
+* [Actions](/fungs/taxator-tk/actions)
+* [Projects](/fungs/taxator-tk/projects)
+* [Security
+  0](/fungs/taxator-tk/security)
+* [Insights](/fungs/taxator-tk/pulse)
+
+Additional navigation options
+
+* [Code](/fungs/taxator-tk)
+* [Issues](/fungs/taxator-tk/issues)
+* [Pull requests](/fungs/taxator-tk/pulls)
+* [Actions](/fungs/taxator-tk/actions)
+* [Projects](/fungs/taxator-tk/projects)
+* [Security](/fungs/taxator-tk/security)
+* [Insights](/fungs/taxator-tk/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [taxator-tk](/fungs/taxator-tk/tree/master)
+2. /[doc](/fungs/taxator-tk/tree/master/doc)
+
+/
+
+# fileformats.md
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/fungs/taxator-tk/commits/master/doc/fileformats.md)
+
+History
+
+71 lines (53 loc) · 4.94 KB
+
+master
+
+## Breadcrumbs
+
+1. [taxator-tk](/fungs/taxator-tk/tree/master)
+2. /[doc](/fungs/taxator-tk/tree/master/doc)
+
+/
+
+# fileformats.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+71 lines (53 loc) · 4.94 KB
+
+[Raw](https://github.com/fungs/taxator-tk/raw/refs/heads/master/doc/fileformats.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# File formats
+
+The taxator-tk suite uses simple, text-based and, if possible, standard formats. Thereby, data can be easily transformed, edited, compressed and saved.
+
+## Alignments
+
+### Formatting
+
+The input alignments to the program 'taxator' are given as TAB-separated columns with UNIX line breaks ('\n'). Comment lines start with a '#'. Empty lines are also ignored.
+
+### Columns
+
+The fields are defined as
+
+1. query identifier
+2. query start position (1-based, inclusive)
+3. query stop position (1-based, inclusive)
+4. query length
+5. reference identifier
+6. reference start position (1-based, inclusive)
+7. reference stop position (1-based, inclusive)
+8. alignment score (positive float, max. 6 digits after the decimal point, larger means better alignment)
+9. e-value (float, standard or scientific notation)
+10. identities (number of exactly matching positions, positive integer)
+11. alignment length (positive integer)
+12. alignment CIGAR code (optional, see official CIGAR definition by samtools)
+
+### Notes
+
+* If reference start and stop positions for nucleotide data are swapped, this denotes the reverse complement. Query position swapping is currently unsupported.
+* Sequence identifiers must not contain TAB characters. Generally, space characters are allowed but discouraged as they produce problems with many aligners or alignment formats (see MAF format).
+* It's ok to fill in evalues of zero if the aligner does not report any such value.
+
+## Segment predictions
+
+The taxonomic predictions for sequence segments that make up the output of taxator are given in General Feature Format (GFF3). Please to the [official documentation](http://www.sequenceontology.org/gff3.shtml) of this format. taxator-tk defines the following fields, some might be better understandable by considering [figure 2 in article
+doi://10.1093/bioinformatics/btu745](http://bioinformatics.oxfordjournals.org/content/31/6/817/F2.expansion.html).
+
+1. Query sequence identifier
+2. Generating program/algorithm, here `taxator-tk`
+3. Type of feature, here `sequence_feature`
+4. Begin of feature (1-based, inclusive)
+5. End of feature (1-based, inclusive)
+6. Prediction score, always `0` until taxator-tk 1.4
+7. Strand (not applicable), here `.`
+8. Phase (not applicable), here `.`
+9. Key-value attribute list with the following reserved tags:
+   * `seqlen`: length of query sequence
+   * `rtax`: NCBI taxon ID of the most similar alighment match (taxon S)
+   * `tax`: a range of the form `low:support-high:support` or `low-high:support` where low corresponds to taxon X and high to taxon R in panel (a)
+   * `ival`: a floating point interpolated relative score value in the range [0,1] that tell you whether the query is closer to the low (0) or high (1) taxon.
+
+### Notes
+
+* The calculation of the prediction score (column 6) was suspended for technical reasons prior to taxator-tk version 1.1 and should be revived until version 1.5, again.
+* The repetition of some fields and tags currently wastes some disk space. However, the GFF3 file is quite small compared to alignments and can be compressed using gzip or similar. For better tracking of information in the prediction part, we might introduce feature identifiers in the future.
+* rtax was added for version 1.4 to enable a nearest-neighbor classification scheme or a mixture of schemes in the consensus binning algorithm.
+
+## Primary binning output
+
+The assignment of input FASTA sequences (usually contigs) are generated in the bioboxes.org binning format (version 0.9). Please see the [official format specification](https://github.com/bioboxes/rfc/blob/4bb19a633a6a969c2332f1f298852114c5f89b1b/data-format/binning.mkd). In addition to the mandatory columns and tags, taxator-tk provides the following:
+
+* the recommended `TaxonomyID` header tag which provides a tree hash of the taxonomy tree
+* a column with tag `_TaxatorTK_Support` which gives the number of nonredundantly, exactly matching positions in the taxon
+* a column with tag `_TaxatorTK_Length` which provides the original sequence length
+
+### Notes
+
+* Dividing the support by the sequence length give and abstract percentage identity which can be puzzled together from multiple genomes. This is an underestimate because gaps between assigned segments are expected to have zero matching positions.
+* These values are propagated to secondary binning output files such as the summary files. The values in the summary files are simple the accumulated version of the corresponding columns in the binning output file.
+
+## FASTA input
+
+The input file must be a valid (multiple) FASTA format. The identifier which is given in the alignments must match the FASTA full FASTA header. In particular, the full identifier including whitespace characters must be reported by the aligner in the alignments format to match the corresponding FASTA sequence entry. Since different aligners behave differently on whitespace characters, you are adviced to strip the identifiers to short, unique alphanumeric strings. This also helps to reduce the memory overhead.
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

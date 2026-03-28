@@ -1,6 +1,6 @@
 ---
 name: metawrap-kraken
-description: MetaWRAP-Kraken performs taxonomic classification of metagenomic reads or contigs and generates interactive Krona visualizations. Use when user asks to assign taxonomic labels to sequencing data, profile microbial community composition, or generate Krona charts for metagenomic samples.
+description: This tool performs taxonomic classification and visualization of metagenomic reads and assemblies using Kraken and Krona. Use when user asks to classify sequences taxonomically, profile the community composition of raw reads, or generate interactive Krona visualizations for metagenomic assemblies.
 homepage: https://github.com/bxlab/metaWRAP
 ---
 
@@ -9,46 +9,53 @@ homepage: https://github.com/bxlab/metaWRAP
 
 ## Overview
 
-MetaWRAP-Kraken is a specialized module within the MetaWRAP suite designed to streamline taxonomic classification. It acts as a wrapper for Kraken and Kraken2, allowing researchers to assign taxonomic labels to metagenomic data—either raw sequencing reads or assembled contigs. Beyond simple classification, it integrates visualization tools to produce Krona charts, providing an intuitive overview of the community composition. This tool is essential for the "Taxonomic Profiling" stage of genome-resolved metagenomics.
+The `metawrap kraken` module is a specialized wrapper designed to streamline taxonomic classification and visualization in metagenomic workflows. It integrates Kraken (or Kraken2) for sequence classification and KronaTools for interactive visualization. Unlike standalone Kraken runs, this module provides automated weighting for assembled contigs based on their length and coverage, ensuring that the resulting taxonomic profiles accurately reflect the abundance of organisms in the assembly. It is particularly useful for comparing the community composition of raw reads against the successfully assembled portion of a metagenome.
 
-## Usage Patterns
+## Core CLI Usage
 
-The tool is typically invoked as a module of the main MetaWRAP executable. Depending on the version of the underlying algorithm required, use one of the following commands:
+The basic syntax for the module is:
+`metawrap kraken -o <output_directory> -t <threads> [options] <input_files>`
 
-- `metawrap kraken` (for Kraken 1)
-- `metawrap kraken2` (for Kraken 2)
+### Common Command Patterns
 
-### Common CLI Arguments
+**1. Profiling Raw Reads**
+To get a quick overview of the community composition from multiple samples:
+```bash
+metawrap kraken -o KRAKEN_READS -t 24 -s 1000000 sample_1.fastq sample_2.fastq
+```
+*Note: The `-s` flag subsets the reads to speed up the classification process without significantly sacrificing the profile's accuracy.*
 
-While specific flags may vary by version, the standard workflow follows this pattern:
+**2. Profiling an Assembly**
+When running on an assembly, the module automatically detects contig naming conventions (from metaWRAP's assembly module) to weight taxonomy:
+```bash
+metawrap kraken -o KRAKEN_ASSEMBLY -t 24 final_assembly.fasta
+```
 
-- `-o OUTPUT_DIR`: Specifies the directory where results and Krona charts will be saved.
-- `-t THREADS`: Sets the number of CPU cores (8+ recommended).
-- `-i INPUT_FILES`: The input fastq reads or fasta contigs.
-- `--unclassified-out`: (Optional) Saves reads that could not be assigned a taxonomy.
+**3. Using Kraken2**
+For improved speed and accuracy, use the Kraken2 module (available in metaWRAP v1.3.2+):
+```bash
+metawrap kraken2 -o KRAKEN2_OUT -t 24 sample_1.fastq sample_2.fastq
+```
 
 ## Expert Tips and Best Practices
 
-### Database Configuration
-Before running the Kraken module, ensure the database paths are correctly defined in the MetaWRAP configuration file.
-- Locate the config file: `yourpath/metaWRAP/bin/config-metawrap`.
-- Ensure the `KRAKEN_DB` or `KRAKEN2_DB` variables point to the directory containing your indexed taxonomy databases.
+*   **Memory Management**: Kraken databases are large and typically loaded into RAM. If your system has limited memory, use the `--no-preload` option to run the database from the hard disk, though this will significantly slow down processing.
+*   **Weighting Logic**: For assemblies, metaWRAP calculates taxonomy weight as `weight = coverage * length`. This prevents short, low-coverage contigs from skewing the visualization.
+*   **Subsetting**: When processing large FASTQ files (e.g., >10GB), always use the `-s` flag (e.g., `-s 1000000` for 1 million reads). This provides a representative taxonomic snapshot in a fraction of the time.
+*   **Database Configuration**: Ensure your `config-metawrap` file is correctly pointed to your Kraken/Kraken2 databases. You can check your current configuration using `metawrap --show-config`.
+*   **Visualization**: The primary output is `kronagram.html`. This is a self-contained interactive file that can be opened in any web browser to explore the taxonomic hierarchy.
 
-### Hardware Requirements
-Kraken is extremely memory-intensive because it loads the entire database index into RAM.
-- **RAM**: Minimum 64GB is recommended for standard RefSeq databases.
-- **Storage**: Ensure sufficient disk space for the intermediate classification files, which can be large.
 
-### Input Flexibility
-The module can handle different stages of the metagenomic pipeline:
-- **Raw Reads**: Use this to get an initial profile of the community before assembly.
-- **Assembled Contigs**: Use this to understand the taxonomic origin of your assembly before binning.
-- **Binned Genomes**: While MetaWRAP has a specific `classify_bins` module, you can run Kraken on individual bins to verify consistency.
 
-### Visualization
-The primary output for interpretation is the Krona chart (`.html` file). This interactive file allows you to zoom into specific taxonomic ranks (e.g., from Phylum down to Species) to explore the relative abundance of organisms.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| kraken | Run on any number of fasta assembly files and/or or paired-end reads. |
+| metawrap | Please select a proper module of metaWRAP. |
 
 ## Reference documentation
-
-- [MetaWRAP GitHub Repository](./references/github_com_bxlab_metaWRAP.md)
-- [Bioconda metawrap-kraken Overview](./references/anaconda_org_channels_bioconda_packages_metawrap-kraken_overview.md)
+- [MetaWRAP README](./references/github_com_bxlab_metaWRAP_blob_master_README.md)
+- [Module Descriptions](./references/github_com_bxlab_metaWRAP_blob_master_Module_descriptions.md)
+- [Usage Tutorial](./references/github_com_bxlab_metaWRAP_blob_master_Usage_tutorial.md)
+- [MetaWRAP Changelog](./references/github_com_bxlab_metaWRAP_blob_master_CHANGELOG.md)

@@ -1,1 +1,346 @@
-Pull requests · neherlab/treetime · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} neherlab / treetime Public Notifications You must be signed in to change notification settings Fork 58 Star 249 Code Issues 37 Pull requests 5 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Pull requests: neherlab/treetime Labels 11 Milestones 0 Labels 11 Milestones 0 New pull request New 5 Open 225 Closed 5 Open 225 Closed Author Filter by author Loading Uh oh! There was an error while loading. Please reload this page . author: Filter by this user Label Filter by label Loading Uh oh! There was an error while loading. Please reload this page . Use alt + click/return to exclude labels or ⇧ + click/return for logical OR Projects Filter by project Loading Uh oh! There was an error while loading. Please reload this page . Milestones Filter by milestone Loading Uh oh! There was an error while loading. Please reload this page . Reviews Filter by reviews No reviews Review required Approved review Changes requested Assignee Filter by who’s assigned Assigned to nobody Loading Uh oh! There was an error while loading. Please reload this page . assignee: Filter by this user Sort Sort by Newest Oldest Most commented Least commented Recently updated Least recently updated Best match Most reactions 👍 👎 😄 🎉 😕 ❤️ 🚀 👀 Pull requests list refactor: convert tests to newick-based graph construction #384 opened Feb 14, 2026 by ivan-aksamentov Loading… 4 tasks done Feat/gauss model #310 opened Jan 3, 2025 by rneher &bull; Draft Add python_requires&gt;=3.7 to setup.py #237 opened May 7, 2023 by corneliusroemer Loading… Feature: Extend ARG functionality to MultiTreeKnit #219 opened Dec 19, 2022 by rneher Loading… 1 New upper bound for inter1d objects #205 opened Aug 29, 2022 by anna-parker Loading… 1 3 ProTip! no:milestone will show everything without a milestone. Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fneherlab%2Ftreetime%2Fpulls)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fneherlab%2Ftreetime%2Fpulls)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fpull_requests%2Findex&source=header-repo&source_repo=neherlab%2Ftreetime)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[neherlab](/neherlab)
+/
+**[treetime](/neherlab/treetime)**
+Public
+
+* [Notifications](/login?return_to=%2Fneherlab%2Ftreetime) You must be signed in to change notification settings
+* [Fork
+  58](/login?return_to=%2Fneherlab%2Ftreetime)
+* [Star
+   251](/login?return_to=%2Fneherlab%2Ftreetime)
+
+* [Code](/neherlab/treetime)
+* [Issues
+  38](/neherlab/treetime/issues)
+* [Pull requests
+  4](/neherlab/treetime/pulls)
+* [Actions](/neherlab/treetime/actions)
+* [Projects](/neherlab/treetime/projects)
+* [Security
+  0](/neherlab/treetime/security)
+* [Insights](/neherlab/treetime/pulse)
+
+Additional navigation options
+
+* [Code](/neherlab/treetime)
+* [Issues](/neherlab/treetime/issues)
+* [Pull requests](/neherlab/treetime/pulls)
+* [Actions](/neherlab/treetime/actions)
+* [Projects](/neherlab/treetime/projects)
+* [Security](/neherlab/treetime/security)
+* [Insights](/neherlab/treetime/pulse)
+
+# Pull requests: neherlab/treetime
+
+[Labels
+11](/neherlab/treetime/labels) [Milestones
+0](/neherlab/treetime/milestones)
+
+[Labels
+11](/neherlab/treetime/labels) [Milestones
+0](/neherlab/treetime/milestones)
+
+[New pull request
+New](/neherlab/treetime/compare)
+
+[4 Open](/neherlab/treetime/pulls?q=is%3Aopen+is%3Apr)
+[356 Closed](/neherlab/treetime/pulls?q=is%3Apr+is%3Aclosed)
+
+[4 Open](/neherlab/treetime/pulls?q=is%3Aopen+is%3Apr)
+[356 Closed](/neherlab/treetime/pulls?q=is%3Apr+is%3Aclosed)
+
+Author
+
+Filter by author
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+author:
+
+Filter by this user
+
+Label
+
+Filter by label
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+Use `alt` + `click/return` to exclude labels
+
+or `⇧` + `click/return` for logical OR
+
+ Projects
+
+Filter by project
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ Milestones
+
+Filter by milestone
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ Reviews
+
+Filter by reviews
+
+[No reviews](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+review%3Anone)
+[Review required](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+review%3Arequired)
+[Approved review](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved)
+[Changes requested](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+review%3Achanges-requested)
+
+Assignee
+
+Filter by who’s assigned
+
+[**Assigned to nobody**](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+no%3Aassignee)
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+assignee:
+
+Filter by this user
+
+Sort
+
+Sort by
+
+[Newest](/neherlab/treetime/pulls?q=is%3Aopen+is%3Apr)
+[Oldest](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Acreated-asc)
+[Most commented](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Acomments-desc)
+[Least commented](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Acomments-asc)
+[Recently updated](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
+[Least recently updated](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
+[Best match](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Arelevance-desc)
+
+Most reactions
+
+[👍](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-%2B1-desc)
+[👎](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions--1-desc)
+[😄](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-smile-desc)
+[🎉](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-tada-desc)
+[😕](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-thinking_face-desc)
+[❤️](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-heart-desc)
+[🚀](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-rocket-desc)
+[👀](/neherlab/treetime/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-eyes-desc)
+
+## Pull requests list
+
+[Feat/gauss model](/neherlab/treetime/pull/310)
+
+#310
+opened Jan 3, 2025 by
+[rneher](/neherlab/treetime/issues?q=is%3Apr+is%3Aopen+author%3Arneher "Open pull requests created by rneher")
+
+•
+[Draft](/neherlab/treetime/pull/310#partial-pull-merging)
+
+[Add `python_requires>=3.7` to setup.py](/neherlab/treetime/pull/237)
+
+#237
+opened May 7, 2023 by
+[corneliusroemer](/neherlab/treetime/issues?q=is%3Apr+is%3Aopen+author%3Acorneliusroemer "Open pull requests created by corneliusroemer")
+
+[Feature: Extend ARG functionality to MultiTreeKnit](/neherlab/treetime/pull/219)
+
+#219
+opened Dec 19, 2022 by
+[rneher](/neherlab/treetime/issues?q=is%3Apr+is%3Aopen+author%3Arneher "Open pull requests created by rneher")
+
+[1](/neherlab/treetime/pull/219)
+
+[New upper bound for inter1d objects](/neherlab/treetime/pull/205)
+
+#205
+opened Aug 29, 2022 by
+[anna-parker](/neherlab/treetime/issues?q=is%3Apr+is%3Aopen+author%3Aanna-parker "Open pull requests created by anna-parker")
+
+[1](/neherlab/treetime/issues/205/linked_closing_reference?reference_location=REPO_ISSUES_INDEX)
+
+[3](/neherlab/treetime/pull/205)
+
+**ProTip!**
+Updated in the last three days: [updated:>2026-03-24](/neherlab/treetime/issues?q=is%3Apr+is%3Aopen+updated%3A%3E2026-03-24).
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

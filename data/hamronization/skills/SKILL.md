@@ -1,6 +1,6 @@
 ---
 name: hamronization
-description: The hamronization tool unifies the outputs of various antimicrobial resistance gene detection tools into a single, standardized data structure. Use when user asks to standardize AMR detection reports, combine results from different algorithms into a single table, or generate interactive summary dashboards.
+description: The hamronization tool converts disparate output formats from various antimicrobial resistance detection tools into a single unified specification. Use when user asks to convert AMR tool reports to a common format, harmonize outputs from tools like Abricate or RGI, or summarize multiple AMR reports into a single table or interactive HTML report.
 homepage: https://github.com/pha4ge/hAMRonization
 ---
 
@@ -8,73 +8,52 @@ homepage: https://github.com/pha4ge/hAMRonization
 # hamronization
 
 ## Overview
-The `hamronization` tool is a specialized parser designed to unify the outputs of 17 different antimicrobial resistance gene detection tools into a single, standardized data structure. It solves the problem of disparate output formats by mapping tool-specific results to the hAMRonization specification. This allows researchers to combine results from different algorithms (e.g., BLAST-based vs. k-mer based) into a single table or an interactive dashboard for easier interpretation and downstream processing.
+The `hamronization` tool is a specialized CLI utility designed to solve the "Tower of Babel" problem in antimicrobial resistance (AMR) genomics. Different bioinformatic tools produce disparate output formats (TSV, JSON, TXT) with varying column headers and data structures. This skill enables the conversion of outputs from 17 different AMR detection tools into a single unified specification, supporting both gene presence/absence and mutational resistance data.
 
-## Installation
-The tool is primarily available via Bioconda or Pip:
-```bash
-conda install -c bioconda hamronization
-# OR
-pip install hAMRonization
-```
+## Installation and Setup
+The tool is available via multiple package managers. Use the following commands to ensure the environment is ready:
+
+- **Pip**: `pip install hAMRonization`
+- **Conda**: `conda install -c bioconda hamronization`
+- **Docker**: `docker pull finlaymaguire/hamronization:latest`
 
 ## Common CLI Patterns
 
-### 1. Standardizing a Single Tool Output
-Most tools require you to manually provide version information for the software and the reference database used, as this metadata is often missing from the raw output files but required by the hAMRonization spec.
+### Converting Tool-Specific Reports
+The primary syntax is `hamronize <tool> <options>`. Each tool has specific input requirements based on its native output.
 
-```bash
-# Example for abricate
-hamronize abricate path/to/abricate_report.tsv \
-    --analysis_software_version 1.0.1 \
-    --reference_database_version 2023-01-01 \
-    --format tsv \
-    --output standardized_report.tsv
-```
+- **Abricate**: `hamronize abricate results.tsv > hamronized_results.tsv`
+- **RGI (Resistance Gene Identifier)**: `hamronize rgi rgi_output.txt > hamronized_rgi.tsv`
+- **ResFinder (JSON)**: `hamronize resfinder -j results.json > hamronized_resfinder.tsv`
+- **AMRFinderPlus**: `hamronize amrfinderplus results.tsv > hamronized_amrfinder.tsv`
+- **TBProfiler**: `hamronize tbprofiler results.results.json > hamronized_tb.tsv`
 
-### 2. Batch Processing Same-Tool Reports
-You can pass multiple reports from the same tool to a single command to generate a concatenated standardized file.
+### Summarizing Multiple Reports
+Once individual reports are converted to the hAMRonization format, use the `summarize` command to aggregate them into a single table or an interactive HTML report.
 
-```bash
-# Standardizing multiple RGI reports at once
-hamronize rgi report1.txt report2.txt report3.txt \
-    --analysis_software_version 6.0.0 \
-    --reference_database_version 3.2.5 \
-    --format json \
-    --output combined_rgi.json
-```
+- **Standard Summary**:
+  `hamronize summarize report1.tsv report2.tsv report3.tsv --output summary.tsv`
 
-### 3. Summarizing Mixed Tool Outputs
-The `summarize` command is used to merge reports that have already been "hamronized," even if they are in different formats (TSV and JSON).
+- **Interactive HTML Report**:
+  `hamronize summarize report1.tsv report2.tsv --format interactive --output summary.html`
 
-```bash
-# Combine different tool outputs into one master TSV
-hamronize summarize -t tsv -o master_summary.tsv \
-    standardized_abricate.json \
-    standardized_rgi.tsv \
-    standardized_deeparg.json
-```
+## Expert Tips and Best Practices
 
-### 4. Generating Interactive Reports
-For visual exploration, use the `interactive` summary type to create an HTML file.
+- **Version Sensitivity**: The parsers are typically tested against the latest versions of the underlying AMR tools. If a tool undergoes a major version change that alters its output format, the `hamronize` parser may require an update. Always verify the tool version if parsing fails.
+- **Metadata Enrichment**: When hamronizing, you can often provide additional context like `--sample_id` or `--input_file_name` to ensure the unified output correctly attributes results to specific samples in a large batch.
+- **Input Validation**: For tools like ResFinder, ensure you are using the correct flags (e.g., `-j` for JSON) as the parser expects specific structures.
+- **Pipeline Integration**: Use hAMRonization as a "shim" layer immediately following your AMR detection step. This allows all subsequent analysis scripts to target a single, stable schema regardless of which detection tool was used upstream.
 
-```bash
-hamronize summarize -t interactive -o amr_dashboard.html report1.tsv report2.tsv
-```
 
-## Supported Tools and Expected Inputs
-When calling `hamronize <tool>`, ensure you are providing the correct file type:
-- **abricate/amrfinderplus/ariba/groot**: Expects `.tsv`
-- **resfinder/mykrobe/tbprofiler**: Expects `.json`
-- **rgi**: Expects `.txt` (standard output) or `_bwtoutput.gene_mapping_data.txt`
-- **srst2**: Expects `_srst2_report.tsv`
-- **fargene**: Expects `retrieved-genes-*-hmmsearched.out`
 
-## Expert Tips
-- **Metadata Requirements**: If a command fails, check the `--help` for that specific tool (e.g., `hamronize rgi --help`). Many tools have mandatory flags for software/database versions to ensure the output meets the hAMRonization specification.
-- **Python Integration**: For complex workflows, use the library directly. `hAMRonization.parse()` returns a generator of result objects, which is memory-efficient for large datasets.
-- **Version Sensitivity**: The parsers are generally tested against the latest versions of the underlying AMR tools. If a tool's output format changes significantly in a new release, the parser may require an update.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hamronize | hamronize: error: argument analysis_tool: invalid choice: 'interactive' (choose from abricate, amrfinderplus, amrplusplus, ariba, csstar, deeparg, fargene, groot, kmerresistance, resfams, resfinder, mykrobe, rgi, srax, srst2, staramr, tbprofiler, summarize) |
+| hamronize | Convert AMR gene detection tool output(s) to hAMRonization specification format |
+| summarize | Concatenate and summarize AMR detection reports |
 
 ## Reference documentation
-- [hAMRonization GitHub Repository](./references/github_com_pha4ge_hAMRonization.md)
-- [Bioconda hamronization Overview](./references/anaconda_org_channels_bioconda_packages_hamronization_overview.md)
+- [hAMRonization README](./references/github_com_pha4ge_hAMRonization_blob_master_README.md)
+- [hAMRonization Specification Details](./references/github_com_pha4ge_hAMRonization_blob_master_docs_hAMRonization_specification_details.csv.md)

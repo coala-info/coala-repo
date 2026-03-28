@@ -1,1 +1,529 @@
-Workflow runs · uutils/diffutils · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} uutils / diffutils Public Notifications You must be signed in to change notification settings Fork 24 Star 240 Code Issues 12 Pull requests 6 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: uutils/diffutils Actions All workflows Workflows Basic CI Basic CI Fuzzing Fuzzing Release Release Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 470 workflow runs 470 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. chore(deps): update rust crate predicates to v3.1.4 Basic CI #576: Pull request #169 opened by renovate bot Queued renovate/predicates-3.x-lockfile renovate/predicates-3.x-lockfile Queued View #169 View workflow file chore(deps): update rust crate predicates to v3.1.4 Fuzzing #383: Pull request #169 opened by renovate bot 4m 37s renovate/predicates-3.x-lockfile renovate/predicates-3.x-lockfile 4m 37s View #169 View workflow file chore(deps): update rust crate predicates to v3.1.4 Release #251: Pull request #169 opened by renovate bot 1m 32s renovate/predicates-3.x-lockfile renovate/predicates-3.x-lockfile 1m 32s View #169 View workflow file chore(deps): update rust crate predicates to v3.1.4 Basic CI #575: Commit b224bff pushed by renovate bot 6h 24m 55s renovate/predicates-3.x-lockfile renovate/predicates-3.x-lockfile 6h 24m 55s View #169 View workflow file chore(deps): update rust crate libfuzzer-sys to v0.4.12 Basic CI #574: Commit 9f419c3 pushed by oSoMoN 12m 49s main main 12m 49s View workflow file chore(deps): update rust crate libfuzzer-sys to v0.4.12 Fuzzing #382: Commit 9f419c3 pushed by oSoMoN 2m 8s main main 2m 8s View workflow file chore(deps): update rust crate libfuzzer-sys to v0.4.12 Fuzzing #381: Pull request #168 opened by renovate bot 3m 45s renovate/libfuzzer-sys-0.x-lockfile renovate/libfuzzer-sys-0.x-lockfile 3m 45s View #168 View workflow file chore(deps): update rust crate libfuzzer-sys to v0.4.12 Release #250: Pull request #168 opened by renovate bot 41s renovate/libfuzzer-sys-0.x-lockfile renovate/libfuzzer-sys-0.x-lockfile 41s View #168 View workflow file chore(deps): update rust crate libfuzzer-sys to v0.4.12 Basic CI #573: Pull request #168 opened by renovate bot 18m 22s renovate/libfuzzer-sys-0.x-lockfile renovate/libfuzzer-sys-0.x-lockfile 18m 22s View #168 View workflow file chore(deps): update rust crate libfuzzer-sys to v0.4.12 Basic CI #572: Commit c98feed pushed by renovate bot 27m 28s renovate/libfuzzer-sys-0.x-lockfile renovate/libfuzzer-sys-0.x-lockfile 27m 28s View #168 View workflow file chore(deps): update rust crate tempfile to v3.25.0 Basic CI #571: Commit 95883b4 pushed by oSoMoN 8m 38s main main 8m 38s View workflow file chore(deps): update rust crate tempfile to v3.25.0 Fuzzing #380: Commit 95883b4 pushed by oSoMoN 1m 57s main main 1m 57s View workflow file chore(deps): update rust crate tempfile to v3.25.0 Basic CI #570: Pull request #167 opened by renovate bot 1h 9m 46s renovate/tempfile-3.x-lockfile renovate/tempfile-3.x-lockfile 1h 9m 46s View #167 View workflow file chore(deps): update rust crate tempfile to v3.25.0 Basic CI #569: Commit c6c3ef9 pushed by renovate bot 41m 3s renovate/tempfile-3.x-lockfile renovate/tempfile-3.x-lockfile 41m 3s View #167 View workflow file chore(deps): update rust crate tempfile to v3.25.0 Release #249: Pull request #167 opened by renovate bot 39s renovate/tempfile-3.x-lockfile renovate/tempfile-3.x-lockfile 39s View #167 View workflow file chore(deps): update rust crate tempfile to v3.25.0 Fuzzing #379: Pull request #167 opened by renovate bot 5m 5s renovate/tempfile-3.x-lockfile renovate/tempfile-3.x-lockfile 5m 5s View #167 View workflow file Merge pull request #166 from uutils/renovate/regex-1.x-lockfile Fuzzing #378: Commit f20af97 pushed by cakebaker 2m 37s main main 2m 37s View workflow file Merge pull request #166 from uutils/renovate/regex-1.x-lockfile Basic CI #568: Commit f20af97 pushed by cakebaker 24m 8s main main 24m 8s View workflow file chore(deps): update rust crate regex to v1.12.3 Basic CI #567: Commit b9b7ea8 pushed by renovate bot 1h 13m 18s renovate/regex-1.x-lockfile renovate/regex-1.x-lockfile 1h 13m 18s View #166 View workflow file chore(deps): update rust crate regex to v1.12.3 Fuzzing #377: Pull request #166 opened by renovate bot 16m 20s renovate/regex-1.x-lockfile renovate/regex-1.x-lockfile 16m 20s View #166 View workflow file chore(deps): update rust crate regex to v1.12.3 Release #248: Pull request #166 opened by renovate bot 8m 25s renovate/regex-1.x-lockfile renovate/regex-1.x-lockfile 8m 25s View #166 View workflow file chore(deps): update rust crate regex to v1.12.3 Basic CI #566: Pull request #166 opened by renovate bot 52m 24s renovate/regex-1.x-lockfile renovate/regex-1.x-lockfile 52m 24s View #166 View workflow file Merge pull request #164 from oech3/patch-2 Basic CI #565: Commit 47798b4 pushed by sylvestre 10m 37s main main 10m 37s View workflow file Merge pull request #164 from oech3/patch-2 Fuzzing #376: Commit 47798b4 pushed by sylvestre 2m 8s main main 2m 8s View workflow file Use preinstalled rust, disable incremental build Release #247: Pull request #164 opened by oech3 2m 31s oech3:patch-2 oech3:patch-2 2m 31s View #164 View workflow file Previous 1 2 3 4 5 &hellip; 18 19 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fuutils%2Fdiffutils%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fuutils%2Fdiffutils%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=uutils%2Fdiffutils)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[uutils](/uutils)
+/
+**[diffutils](/uutils/diffutils)**
+Public
+
+* [Notifications](/login?return_to=%2Fuutils%2Fdiffutils) You must be signed in to change notification settings
+* [Fork
+  28](/login?return_to=%2Fuutils%2Fdiffutils)
+* [Star
+   255](/login?return_to=%2Fuutils%2Fdiffutils)
+
+* [Code](/uutils/diffutils)
+* [Issues
+  16](/uutils/diffutils/issues)
+* [Pull requests
+  10](/uutils/diffutils/pulls)
+* [Actions](/uutils/diffutils/actions)
+* [Projects](/uutils/diffutils/projects)
+* [Security
+  0](/uutils/diffutils/security)
+* [Insights](/uutils/diffutils/pulse)
+
+Additional navigation options
+
+* [Code](/uutils/diffutils)
+* [Issues](/uutils/diffutils/issues)
+* [Pull requests](/uutils/diffutils/pulls)
+* [Actions](/uutils/diffutils/actions)
+* [Projects](/uutils/diffutils/projects)
+* [Security](/uutils/diffutils/security)
+* [Insights](/uutils/diffutils/pulse)
+
+# Actions: uutils/diffutils
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**736 workflow runs**
+
+**736 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23634157136)
+
+CodSpeed
+#50:
+Commit [8aa2a2c](/uutils/diffutils/commit/8aa2a2cb7c3c7e6ce5c5c4de855c6d652612858c)
+pushed
+by
+[cakebaker](/cakebaker)
+
+2m 0s
+[main](/uutils/diffutils/tree/refs/heads/main "main")
+
+[main](/uutils/diffutils/tree/refs/heads/main "main")
+
+2m 0s
+
+* [View workflow file](/uutils/diffutils/actions/runs/23634157136/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23634157129)
+
+Basic CI
+#666:
+Commit [8aa2a2c](/uutils/diffutils/commit/8aa2a2cb7c3c7e6ce5c5c4de855c6d652612858c)
+pushed
+by
+[cakebaker](/cakebaker)
+
+7m 19s
+[main](/uutils/diffutils/tree/refs/heads/main "main")
+
+[main](/uutils/diffutils/tree/refs/heads/main "main")
+
+7m 19s
+
+* [View workflow file](/uutils/diffutils/actions/runs/23634157129/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23634157125)
+
+Fuzzing
+#461:
+Commit [8aa2a2c](/uutils/diffutils/commit/8aa2a2cb7c3c7e6ce5c5c4de855c6d652612858c)
+pushed
+by
+[cakebaker](/cakebaker)
+
+1m 29s
+[main](/uutils/diffutils/tree/refs/heads/main "main")
+
+[main](/uutils/diffutils/tree/refs/heads/main "main")
+
+1m 29s
+
+* [View workflow file](/uutils/diffutils/actions/runs/23634157125/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23606959113)
+
+Basic CI
+#665:
+Commit [6451260](/uutils/diffutils/commit/64512605bdceaeff50afd79914b7d5788a2da4ad)
+pushed
+by
+[renovate](/apps/renovate)
+bot
+
+7m 57s
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+7m 57s
+
+* [View #205](/uutils/diffutils/pull/205)
+* [View workflow file](/uutils/diffutils/actions/runs/23606959113/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23606877066)
+
+Fuzzing
+#460:
+Pull request [#205](/uutils/diffutils/pull/205)
+opened
+by
+[renovate](/apps/renovate)
+bot
+
+1m 37s
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+1m 37s
+
+* [View #205](/uutils/diffutils/pull/205)
+* [View workflow file](/uutils/diffutils/actions/runs/23606877066/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23606877001)
+
+CodSpeed
+#49:
+Pull request [#205](/uutils/diffutils/pull/205)
+opened
+by
+[renovate](/apps/renovate)
+bot
+
+2m 1s
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+2m 1s
+
+* [View #205](/uutils/diffutils/pull/205)
+* [View workflow file](/uutils/diffutils/actions/runs/23606877001/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23606876973)
+
+Basic CI
+#664:
+Pull request [#205](/uutils/diffutils/pull/205)
+opened
+by
+[renovate](/apps/renovate)
+bot
+
+7m 17s
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+7m 17s
+
+* [View #205](/uutils/diffutils/pull/205)
+* [View workflow file](/uutils/diffutils/actions/runs/23606876973/workflow)
+
+[chore(deps): update codecov/codecov-action action to v6](/uutils/diffutils/actions/runs/23606876972)
+
+Release
+#310:
+Pull request [#205](/uutils/diffutils/pull/205)
+opened
+by
+[renovate](/apps/renovate)
+bot
+
+18s
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+[renovate/codecov-codecov-action-6.x](/uutils/diffutils/tree/refs/heads/renovate/codecov-codecov-action-6.x "renovate/codecov-codecov-action-6.x")
+
+18s
+
+* [View #205](/uutils/diffutils/pull/205)
+* [View workflow file](/uutils/diffutils/actions/runs/23606876972/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341561268)
+
+Release
+#309:
+Pull request [#204](/uutils/diffutils/pull/204)
+synchronize
+by
+[oech3](/oech3)
+
+20s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+20s
+
+* [View #204](/uutils/diffutils/pull/204)
+* [View workflow file](/uutils/diffutils/actions/runs/23341561268/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341561253)
+
+Fuzzing
+#459:
+Pull request [#204](/uutils/diffutils/pull/204)
+synchronize
+by
+[oech3](/oech3)
+
+1m 27s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+1m 27s
+
+* [View #204](/uutils/diffutils/pull/204)
+* [View workflow file](/uutils/diffutils/actions/runs/23341561253/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341561239)
+
+CodSpeed
+#48:
+Pull request [#204](/uutils/diffutils/pull/204)
+synchronize
+by
+[oech3](/oech3)
+
+1m 18s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+1m 18s
+
+* [View #204](/uutils/diffutils/pull/204)
+* [View workflow file](/uutils/diffutils/actions/runs/23341561239/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341561237)
+
+Basic CI
+#663:
+Pull request [#204](/uutils/diffutils/pull/204)
+synchronize
+by
+[oech3](/oech3)
+
+6m 19s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+6m 19s
+
+* [View #204](/uutils/diffutils/pull/204)
+* [View workflow file](/uutils/diffutils/actions/runs/23341561237/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341486992)
+
+CodSpeed
+#47:
+Pull request [#204](/uutils/diffutils/pull/204)
+opened
+by
+[oech3](/oech3)
+
+1m 13s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+1m 13s
+
+* [View #204](/uutils/diffutils/pull/204)
+* [View workflow file](/uutils/diffutils/actions/runs/23341486992/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341486988)
+
+Fuzzing
+#458:
+Pull request [#204](/uutils/diffutils/pull/204)
+opened
+by
+[oech3](/oech3)
+
+34s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+34s
+
+* [View #204](/uutils/diffutils/pull/204)
+* [View workflow file](/uutils/diffutils/actions/runs/23341486988/workflow)
+
+[\*.yml: dedup env:](/uutils/diffutils/actions/runs/23341486980)
+
+Release
+#308:
+Pull request [#204](/uutils/diffutils/pull/204)
+opened
+by
+[oech3](/oech3)
+
+18s
+[oech3:simple](/oech3/uu-diffutils/tree/refs/heads/simple "oech3:simple")
+
+[oech3:simple](/oech3/uu-diffuti

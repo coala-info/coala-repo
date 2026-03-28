@@ -1,1 +1,374 @@
-GitHub - AmpliconSuite/AmpliconSuiteAggregator: Aggregates the results from AmpliconSuite for upload to AmpliconRepository.org Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} AmpliconSuite / AmpliconSuiteAggregator Public Notifications You must be signed in to change notification settings Fork 4 Star 2 Aggregates the results from AmpliconSuite for upload to AmpliconRepository.org License View license 2 stars 4 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 2 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights AmpliconSuite/AmpliconSuiteAggregator develop Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 168 Commits 168 Commits docs/ v1 docs/ v1 gpunit gpunit src src .gitignore .gitignore Dockerfile Dockerfile LICENSE LICENSE README.md README.md build.xml build.xml manifest manifest paramgroups.json paramgroups.json prerelease.version prerelease.version pyproject.toml pyproject.toml release.version release.version requirements.txt requirements.txt setup.cfg setup.cfg View all files Repository files navigation README License Amplicon Suite Aggregator Description Aggregates the results from AmpliconSuite Takes in zip files (completed results of individual or grouped Amplicon Suite runs) Aggregates results Packages results into a new file Outputs an aggregated .html and .csv file of results. Result file (in .tar.gz) is the aggregated results of all individual AmpliconSutie runs. It can be directly loaded onto AmpliconRepository. Can also take additional files along with the upload, provided the directory they are in contains a file named AUX_DIR . Parameters available on GenePattern Server Available at: https://genepattern.ucsd.edu/gp/pages/index.jsf?lsid=urn:lsid:genepattern.org:module.analysis:00429:4.1 Amplicon Architect Results (required) Compressed (.tar.gz, .zip) files of the results from individual or grouped Amplicon Architect runs. project_name (required) Prefix for output .tar.gz. Result will be named: output_prefix .tar.gz Amplicon Repository Email If wanting to directly transfer results to AmpliconRepository.org, please enter your email. run amplicon classifier Option for users to re-run Amplicon Classifier. reference genome Reference genome used for Amplicon Architect results in the input. upload only If 'Yes', then skip aggregation / classification and upload file to AmpliconRepository as is. name map A two column file providing the current identifier for each sample (col 1) and a replacement name (col 2). Enables batch renaming of samples. Installation Option 1: Git Clone Step 1: git clone https://github.com/genepattern/AmpliconSuiteAggregator.git Step 2: Install python package dependencies from list below. If running into dependency issues, please use the docker methods. Option 2: Docker Step 1: docker pull genepattern/amplicon-suite-aggregator Dependencies List of python package dependencies used: intervaltree, matplotlib, numpy, pandas, Pillow, requests, scipy, urllib3 Options when running locally Amplicon Suite Aggregator related options -flist / --filelist : Text file with files to use (one per line) Create an input_list.txt file in this format where each line is a filepath to compressed aa_results: Use this file as the input to the -flist flag. --files : List of files or directories to use. Can specify multiple paths of (.tar.gz, .zip) of Amplicon Architect results. -o / --output_name : Output Prefix. Will be used as project name for Amplicon Repository upload. --name_map : A two column file providing the current identifier for each sample (col 1) and a replacement name (col 2). Enables batch renaming of samples. -c / --run_classifier (Yes, No): If 'Yes', then run Amplicon Classifier on AA samples. If Amplicon Classifier results are already included in inputs, then they will be removed and samples will be re-classified. --ref (hg19, GRCh37, GRCh38, GRCh38_viral, mm10): Reference genome name used for alignment, one of hg19, GRCh37, GRCh38, GRCh38_viral, or mm10. AmpliconRepository related options -u / --username : Email address for Amplicon Repository. If specified, will trigger an attempt to upload the aggregated file to AmpliconRepository.org. --upload_only (Yes, No): If 'Yes', then skip aggregation / classification and upload file to AmpliconRepository as is. -s / --server (dev, prod, local-debug): Which server to send results to. Accepts 'dev' or 'prod' or 'local-debug'. 'prod' is what most users want. 'dev' and 'local-debug' are for development and debugging. How to run If using local CLI: Running aggregator: python3 /path/to/AmpliconSuiteAggregator/path/src/AmpliconSuiteAggregator.py **options** Using API to upload directly to AmpliconRepository without aggregation : python3 /path/to/AmpliconSuiteAggregator/path/src/AmpliconSuiteAggregator.py --files /path/to/aggregated/file.tar.gz -o projname -u your.amplicon.repository.username@gmail.com --upload_only Yes -s prod Log into Amplicon Repository, you should see a new project with the output prefix you specified. If using Docker: To Running aggregator: docker run --rm -it -v PATH/TO/INPUTS/FOLDER:/inputs/ genepattern/amplicon-suite-aggregator python3 /opt/genepatt/AmpliconSuiteAggregator.py **options** Using API to upload directly to AmpliconRepository without aggregation : docker run --rm -it -v PATH/TO/INPUTS/FOLDER:/inputs/ genepattern/amplicon-suite-aggregator python3 /opt/genepatt/AmpliconSuiteAggregator.py -flist /path/to/input_list.txt -u YOUR_AMPLICON_REPOSITORY_EMAIL -o projname -u your.amplicon.repository.username@gmail.com --upload_only Yes -s prod Log into Amplicon Repository, you should see a new project with the output prefix you specified. Programming Language Python Contact For any issues Edwin Huang, edh021@cloud.ucsd.edu About Aggregates the results from AmpliconSuite for upload to AmpliconRepository.org Resources Readme License View license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 2 stars Watchers 5 watching Forks 4 forks Report repository Releases 5 v5.1.0 Latest Feb 4, 2026 + 4 releases Packages 0 No packages published Contributors 6 Uh oh! There was an error while loading. Please reload this page . Languages Python 97.5% Dockerfile 2.5% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconSuiteAggregator)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconSuiteAggregator)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=AmpliconSuite%2FAmpliconSuiteAggregator)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[AmpliconSuite](/AmpliconSuite)
+/
+**[AmpliconSuiteAggregator](/AmpliconSuite/AmpliconSuiteAggregator)**
+Public
+
+* [Notifications](/login?return_to=%2FAmpliconSuite%2FAmpliconSuiteAggregator) You must be signed in to change notification settings
+* [Fork
+  4](/login?return_to=%2FAmpliconSuite%2FAmpliconSuiteAggregator)
+* [Star
+   2](/login?return_to=%2FAmpliconSuite%2FAmpliconSuiteAggregator)
+
+* [Code](/AmpliconSuite/AmpliconSuiteAggregator)
+* [Issues
+  2](/AmpliconSuite/AmpliconSuiteAggregator/issues)
+* [Pull requests
+  0](/AmpliconSuite/AmpliconSuiteAggregator/pulls)
+* [Actions](/AmpliconSuite/AmpliconSuiteAggregator/actions)
+* [Projects](/AmpliconSuite/AmpliconSuiteAggregator/projects)
+* [Security
+  0](/AmpliconSuite/AmpliconSuiteAggregator/security)
+* [Insights](/AmpliconSuite/AmpliconSuiteAggregator/pulse)
+
+Additional navigation options
+
+* [Code](/AmpliconSuite/AmpliconSuiteAggregator)
+* [Issues](/AmpliconSuite/AmpliconSuiteAggregator/issues)
+* [Pull requests](/AmpliconSuite/AmpliconSuiteAggregator/pulls)
+* [Actions](/AmpliconSuite/AmpliconSuiteAggregator/actions)
+* [Projects](/AmpliconSuite/AmpliconSuiteAggregator/projects)
+* [Security](/AmpliconSuite/AmpliconSuiteAggregator/security)
+* [Insights](/AmpliconSuite/AmpliconSuiteAggregator/pulse)
+
+# AmpliconSuite/AmpliconSuiteAggregator
+
+main
+
+[Branches](/AmpliconSuite/AmpliconSuiteAggregator/branches)[Tags](/AmpliconSuite/AmpliconSuiteAggregator/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[185 Commits](/AmpliconSuite/AmpliconSuiteAggregator/commits/main/)   185 Commits | | |
+| [docs/v1](/AmpliconSuite/AmpliconSuiteAggregator/tree/main/docs/v1 "This path skips through empty directories") | | [docs/v1](/AmpliconSuite/AmpliconSuiteAggregator/tree/main/docs/v1 "This path skips through empty directories") |  |  |
+| [gpunit](/AmpliconSuite/AmpliconSuiteAggregator/tree/main/gpunit "gpunit") | | [gpunit](/AmpliconSuite/AmpliconSuiteAggregator/tree/main/gpunit "gpunit") |  |  |
+| [src](/AmpliconSuite/AmpliconSuiteAggregator/tree/main/src "src") | | [src](/AmpliconSuite/AmpliconSuiteAggregator/tree/main/src "src") |  |  |
+| [.gitignore](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/.gitignore ".gitignore") | | [.gitignore](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/.gitignore ".gitignore") |  |  |
+| [DEPLOY.md](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/DEPLOY.md "DEPLOY.md") | | [DEPLOY.md](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/DEPLOY.md "DEPLOY.md") |  |  |
+| [Dockerfile](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/Dockerfile "Dockerfile") | | [Dockerfile](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/Dockerfile "Dockerfile") |  |  |
+| [LICENSE](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/LICENSE "LICENSE") | | [LICENSE](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/README.md "README.md") | | [README.md](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/README.md "README.md") |  |  |
+| [build.xml](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/build.xml "build.xml") | | [build.xml](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/build.xml "build.xml") |  |  |
+| [manifest](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/manifest "manifest") | | [manifest](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/manifest "manifest") |  |  |
+| [paramgroups.json](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/paramgroups.json "paramgroups.json") | | [paramgroups.json](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/paramgroups.json "paramgroups.json") |  |  |
+| [prerelease.version](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/prerelease.version "prerelease.version") | | [prerelease.version](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/prerelease.version "prerelease.version") |  |  |
+| [pyproject.toml](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| [release.version](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/release.version "release.version") | | [release.version](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/release.version "release.version") |  |  |
+| [requirements.txt](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/requirements.txt "requirements.txt") | | [requirements.txt](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/requirements.txt "requirements.txt") |  |  |
+| [setup.cfg](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/setup.cfg "setup.cfg") | | [setup.cfg](/AmpliconSuite/AmpliconSuiteAggregator/blob/main/setup.cfg "setup.cfg") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# Amplicon Suite Aggregator
+
+## Description
+
+Aggregates results from [AmpliconSuite-pipeline](https://github.com/AmpliconSuite/AmpliconSuite-pipeline) runs.
+
+* Accepts compressed input files (`.tar.gz`, `.zip`) of individual or grouped AmpliconSuite results, or plain directories.
+* Aggregates and packages results into a new `.tar.gz` file, along with an aggregated `.csv` and `.html` summary.
+* The output `.tar.gz` can be directly uploaded to [AmpliconRepository.org](https://AmpliconRepository.org).
+* Supports batch sample renaming via a name map file.
+* Can include auxiliary files alongside the upload; place them in a directory containing a file named `AUX_DIR`.
+
+## Installation
+
+**Option 1 — pip**
+
+```
+pip install AmpliconSuiteAggregator
+```
+
+**Option 2 — Git clone**
+
+```
+git clone https://github.com/AmpliconSuite/AmpliconSuiteAggregator.git
+cd AmpliconSuiteAggregator
+pip install -r requirements.txt
+```
+
+## Dependencies
+
+Python packages: `pandas`, `requests`
+
+## Usage
+
+```
+python src/AmpliconSuiteAggregator.py -flist <input_list.txt> -o <project_name> [options]
+```
+
+`input_list.txt` is a plain text file with one input path per line (`.tar.gz`, `.zip`, or directory).
+
+### Aggregation options
+
+| Flag | Description |
+| --- | --- |
+| `-flist FILE` | Text file listing input paths, one per line |
+| `--files PATH [PATH ...]` | Input files or directories directly on the command line |
+| `-o NAME` | Output prefix / project name (required) |
+| `--name_map FILE` | Two-column file: col 1 = current sample name, col 2 = replacement name. Applies a deep rename throughout all output files and tables. |
+| `-c {Yes,No}` | Re-run Amplicon Classifier on inputs (`Yes`/`No`) |
+| `--ref GENOME` | Reference genome: `hg19`, `GRCh37`, `GRCh38`, `GRCh38_viral`, or `mm10` |
+
+### AmpliconRepository upload options
+
+| Flag | Description |
+| --- | --- |
+| `-u EMAIL` | AmpliconRepository username (email). If provided, triggers upload after aggregation. |
+| `--upload_only {Yes,No}` | Skip aggregation and upload an existing `.tar.gz` directly |
+| `-s {prod,dev}` | Target server (`prod` for most users) |
+
+## Examples
+
+**Aggregate a set of results:**
+
+```
+python src/AmpliconSuiteAggregator.py -flist input_list.txt -o MyProject
+```
+
+**Aggregate and upload to AmpliconRepository:**
+
+```
+python src/AmpliconSuiteAggregator.py -flist input_list.txt -o MyProject -u you@email.com -s prod
+```
+
+**Upload an already-aggregated file without re-aggregating:**
+
+```
+python src/AmpliconSuiteAggregator.py --files MyProject.tar.gz -o MyProject -u you@email.com --upload_only Yes -s prod
+```
+
+## Authors
+
+* [Jens Luebeck](https://github.com/jluebeck) *(main contact)*
+* Thorin Tabor
+* Edwin Huang
+
+## Issues
+
+Bug reports and feature requests: [GitHub Issues](https://github.com/AmpliconSuite/AmpliconSuiteAggregator/issues)
+
+## About
+
+Aggregates the results from AmpliconSuite for upload to AmpliconRepository.org
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[View license](#License-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/AmpliconSuite/AmpliconSuiteAggregator/activity)
+
+[Custom properties](/AmpliconSuite/AmpliconSuiteAggregator/custom-properties)
+
+### Stars
+
+[**2**
+stars](/AmpliconSuite/AmpliconSuiteAggregator/stargazers)
+
+### Watchers
+
+[**5**
+watching](/AmpliconSuite/AmpliconSuiteAggregator/watchers)
+
+### Forks
+
+[**4**
+forks](/AmpliconSuite/AmpliconSuiteAggregator/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconSuiteAggregator&report=AmpliconSuite+%28user%29)
+
+## [Releases 8](/AmpliconSuite/AmpliconSuiteAggregator/releases)
+
+[v5.4.0
+
+Latest
+
+Mar 11, 2026](/AmpliconSuite/AmpliconSuiteAggregator/releases/tag/v5.4.0)
+
+[+ 7 releases](/AmpliconSuite/AmpliconSuiteAggregator/releases)
+
+## [Packages 0](/orgs/AmpliconSuite/packages?repo_name=AmpliconSuiteAggregator)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/AmpliconSuite/AmpliconSuiteAggregator/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [Python
+  99.3%](/AmpliconSuite/AmpliconSuiteAggregator/search?l=python)
+* [Dockerfile
+  0.7%](/AmpliconSuite/AmpliconSuiteAggregator/search?l=dockerfile)
+
+## Footer
+
+© 2026 GitHub, Inc.

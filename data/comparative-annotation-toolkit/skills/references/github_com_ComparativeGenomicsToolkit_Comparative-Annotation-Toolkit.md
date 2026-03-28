@@ -1,1 +1,241 @@
-GitHub - ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ComparativeGenomicsToolkit / Comparative-Annotation-Toolkit Public Notifications You must be signed in to change notification settings Fork 48 Star 186 License Apache-2.0 license 186 stars 48 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 112 Pull requests 4 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 876 Commits 876 Commits .travis .travis augustus_cfgs augustus_cfgs cat cat img img programs programs scripts scripts test_data test_data test_parser test_parser tests tests tools tools .dockerignore .dockerignore .gitignore .gitignore .travis.yml .travis.yml Dockerfile Dockerfile Dockerfile.complete Dockerfile.complete LICENSE LICENSE MANIFEST.in MANIFEST.in PKG-INFO PKG-INFO README.md README.md _config.yml _config.yml environment.yaml environment.yaml logging.cfg logging.cfg luigi.cfg luigi.cfg setup.py setup.py View all files Repository files navigation README Apache-2.0 license This project aims to provide a straightforward end-to-end pipeline that takes as input a HAL-format multiple whole genome alignment as well as a GFF3 file representing annotations on one high quality assembly in the HAL alignment, and produces a output GFF3 annotation on all target genomes chosen. This pipeline is capable of running both on local cluster hardware as well as on common cloud infrastructure using the toil workflow engine. For full runs on many genomes, a decent amount of computational effort is required. Memory usage is moderate. Above is a flowchart schematic of the functionality of the CAT pipeline. Installation The pipeline can be installed by a simple pip install: pip install git+https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit.git However, at this time, direct pip installation will mean that the luigi.cfg , logging.cfg , and test files will be buried in your python directory. I am still trying to figure out how to approach this problem. In the meantime, you may be better off instead cloning the directory and installing from your clone: git clone https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit.git pip install -e Comparative-Annotation-Toolkit If you want to do the direct pip installation, you can grab the config files from the repository and place them in whatever directory you want to execute from, or set the LUIGI_CONFIG_PATH environmental variable to point to their location. Or have an ugly log, your choice. Either form of pip installation will install all of the python dependencies. Dependencies (if not using Docker) Below is a full breakdown of the required dependencies if you are not using Docker. Some of these can be challenging to get to all compile and work properly. In addition to the breakdown below, you may get guidance looking at the Dockerfile or looking at this list of installation commands generated by a helpful user. By default, you don't need to worry about installing any of these. However, there are also binary dependencies that must be compiled and installed if you are not using the Docker container we provide. Kent toolkit . Follow the installation instructions there. Make sure you put the newly created ~/bin/$MACHTYPE directory on your path. All of the binaries required by CAT are available pre-compiled on the utilities page . The required tools are faToTwoBit gff3ToGenePred genePredToBed genePredToFakePsl bamToPsl transMapPslToGenePred pslPosTarget axtChain chainMergeSort pslMap pslRecalcMatch pslMapPostChain gtfToGenePred genePredToGtf pslCDnaFilter clusterGenes pslToBigPsl bedSort bedToBigBed wigToBigWig fasize . bedtools . samtools (1.3 or greater). Augustus . Make sure you are installing augustus &gt;= 3.3.1 . If you want to use Augustus CGP, install the development version from the Github repository . You need to follow the instructions to compile augustus in comparative augustus mode. This requires that you modify a few lines in the common.mk file, and also need to have sqlite3 , lp-solve , bamtools , and libboost installed. If you are using ubuntu, this should work: apt-get install libboost-all-dev libboost sqlite3 libsqlite3-0 libsqlite3-dev libgsl0-dev lp-solve liblpsolve55-dev bamtools libbamtools-dev After you have the primary augustus binaries compiled, add the directory to your path. Note that if you move the augustus binaries from their original location, you will need to set the AUGUSTUS_CONFIG_PATH global variable to point to the species directory. You will also need to put the contents of the scripts directory on your path. Next, you need to compile the following auxiliary programs from the folder auxprogs : joingenes . Compiling this program will place it in the augustus binary directory. bam2hints . Compiling this program will place it in the augustus binary directory. Requires bamtools to be installed. If the bamtools headers are not at /usr/include/bamtools , you will need to modify the makefile. filterBam . Also requires the bamtools headers. bam2wig . Compiling this program will NOT place it in the augustus binary directory, you must do so yourself. This program requires you modify the makefile to explicitly point to your installation of htslib , bcftools , samtools , and tabix . Tabix is now packaged with htslib , and both are included in your kent directory at $kent/src/htslib/ . homGeneMapping . This program must also have its makefile at $augustus/trunks/auxprogs/homGeneMapping/src/Makefile modified to turn on the BOOST = true and SQLITE = true flags. Then run make clean &amp;&amp; make to recompile. There are a series of perl scripts that you need to place on your path from the $augustus/trunks/scripts directory: wig2hints.pl , exonerate2hints.pl , transMap2hints.pl , and join_mult_hints.pl . HAL toolkit . To install the HAL toolkit, you must also have the sonLib repository in the same parent directory. Compile sonLib first, then compile hal. Once hal is compiled, you need to have the binaries on your path. wiggletools . Used to combine RNA-seq expression in assembly hubs. sambamba . Used to name sort faster than samtools for hints building. exonerate . Used for protein alignments in hints building. Conda/bioconda Many of the above dependencies are on conda . However, you will still need to install the following things by hand: clusterGenes : The version on conda is too old. toil : The version on conda is too old (not python3 compatible). cat : You will need to install this repo with pip install after you enter the conda env ( conda activate cattest ). HAL : Not available on conda. conda create -y -n cattest -c conda-forge -c bioconda -c defaults python=3.7 pyfasta luigi seaborn pandas \ ete3 pysam numpy scipy bx-python bcbio-gff biopython parasail-python configobj sqlalchemy \ samtools bamtools augustus exonerate wiggletools bedtools \ ucsc-fatotwobit ucsc-gff3togenepred ucsc-genepredtobed ucsc-genepredtofakepsl ucsc-bamtopsl ucsc-transmappsltogenepred \ ucsc-pslpostarget ucsc-axtchain ucsc-chainmergesort ucsc-pslmap ucsc-pslrecalcmatch ucsc-pslmappostchain \ ucsc-gtftogenepred ucsc-genepredtogtf ucsc-pslcdnafilter ucsc-psltobigpsl \ ucsc-bedsort ucsc-bedtobigbed ucsc-fasize ucsc-wigtobigwig ucsc-hgloadchain In total, you must have all of the binaries 
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FComparativeGenomicsToolkit%2FComparative-Annotation-Toolkit)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FComparativeGenomicsToolkit%2FComparative-Annotation-Toolkit)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ComparativeGenomicsToolkit%2FComparative-Annotation-Toolkit)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ComparativeGenomicsToolkit](/ComparativeGenomicsToolkit)
+/
+**[Comparative-Annotation-Toolkit](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit)**
+Public
+
+* [Notifications](/login?return_to=%2FComparativeGenomicsToolkit%2FComparative-Annotation-Toolkit) You must be signed in to change notification settings
+* [Fork
+  49](/login?return_to=%2FComparativeGenomicsToolkit%2FComparative-Annotation-Toolkit)
+* [Star
+   186](/login?return_to=%2FComparativeGenomicsToolkit%2FComparative-Annotation-Toolkit)
+
+* [Code](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit)
+* [Issues
+  112](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/issues)
+* [Pull requests
+  4](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/pulls)
+* [Actions](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/actions)
+* [Projects](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/projects)
+* [Security
+  0](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/security)
+* [Insights](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/pulse)
+
+Additional navigation options
+
+* [Code](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit)
+* [Issues](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/issues)
+* [Pull requests](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/pulls)
+* [Actions](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/actions)
+* [Projects](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/projects)
+* [Security](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/security)
+* [Insights](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/pulse)
+
+# ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit
+
+master
+
+[Branches](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/branches)[Tags](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[876 Commits](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/commits/master/)   876 Commits | | |
+| [.travis](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/.travis ".travis") | | [.travis](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/.travis ".travis") |  |  |
+| [augustus\_cfgs](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/augustus_cfgs "augustus_cfgs") | | [augustus\_cfgs](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/augustus_cfgs "augustus_cfgs") |  |  |
+| [cat](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/cat "cat") | | [cat](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/cat "cat") |  |  |
+| [img](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/img "img") | | [img](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/img "img") |  |  |
+| [programs](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/programs "programs") | | [programs](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/programs "programs") |  |  |
+| [scripts](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/scripts "scripts") | | [scripts](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/scripts "scripts") |  |  |
+| [test\_data](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/test_data "test_data") | | [test\_data](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/test_data "test_data") |  |  |
+| [test\_parser](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/test_parser "test_parser") | | [test\_parser](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/test_parser "test_parser") |  |  |
+| [tests](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/tests "tests") | | [tests](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/tests "tests") |  |  |
+| [tools](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/tools "tools") | | [tools](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/tree/master/tools "tools") |  |  |
+| [.dockerignore](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/.dockerignore ".dockerignore") | | [.dockerignore](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/.dockerignore ".dockerignore") |  |  |
+| [.gitignore](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/.gitignore ".gitignore") | | [.gitignore](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/.travis.yml ".travis.yml") | | [.travis.yml](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/.travis.yml ".travis.yml") |  |  |
+| [Dockerfile](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/Dockerfile "Dockerfile") |  |  |
+| [Dockerfile.complete](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/Dockerfile.complete "Dockerfile.complete") | | [Dockerfile.complete](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/Dockerfile.complete "Dockerfile.complete") |  |  |
+| [LICENSE](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/LICENSE "LICENSE") | | [LICENSE](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [PKG-INFO](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/PKG-INFO "PKG-INFO") | | [PKG-INFO](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/PKG-INFO "PKG-INFO") |  |  |
+| [README.md](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/README.md "README.md") | | [README.md](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/README.md "README.md") |  |  |
+| [\_config.yml](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/_config.yml "_config.yml") | | [\_config.yml](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/_config.yml "_config.yml") |  |  |
+| [environment.yaml](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/environment.yaml "environment.yaml") | | [environment.yaml](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/environment.yaml "environment.yaml") |  |  |
+| [logging.cfg](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/logging.cfg "logging.cfg") | | [logging.cfg](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/logging.cfg "logging.cfg") |  |  |
+| [luigi.cfg](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/luigi.cfg "luigi.cfg") | | [luigi.cfg](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/luigi.cfg "luigi.cfg") |  |  |
+| [setup.py](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/setup.py "setup.py") | | [setup.py](/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Apache-2.0 license
+
+[![pipeline](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/raw/master/img/cat-logo.png)](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/img/cat-logo.png)
+
+This project aims to provide a straightforward end-to-end pipeline that takes as input a HAL-format multiple whole genome alignment as well as a GFF3 file representing annotations on one high quality assembly in the HAL alignment, and produces a output GFF3 annotation on all target genomes chosen.
+
+This pipeline is capable of running both on local cluster hardware as well as on common cloud infrastructure using the [toil](http://toil.readthedocs.io/en/latest/) workflow engine. For full runs on many genomes, a decent amount of computational effort is required. Memory usage is moderate.
+
+[![pipeline](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/raw/master/img/CAT_pipeline.png)](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit/blob/master/img/CAT_pipeline.png)
+
+Above is a flowchart schematic of the functionality of the `CAT` pipeline.
+
+# Installation
+
+The pipeline can be installed by a simple `pip` install:
+
+`pip install git+https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit.git`
+
+However, at this time, direct pip installation will mean that the `luigi.cfg`, `logging.cfg`, and

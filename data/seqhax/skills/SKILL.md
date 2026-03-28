@@ -1,6 +1,6 @@
 ---
 name: seqhax
-description: Seqhax is a bioinformatics toolkit for fast sequence processing, paired-end read management, and variant file analysis. Use when user asks to interleave or validate paired-end reads, anonymize sequence headers, truncate sequences, or generate histograms for VCF metrics like allele frequency and depth.
+description: "seqhax is a toolkit for manipulating FASTA/FASTQ files and analyzing VCF/BCF data through specialized subcommands. Use when user asks to interleave read pairs, verify paired-end synchronization, rename sequence headers, convert file formats, or generate histograms for variant metrics and missingness."
 homepage: https://github.com/kdmurray91/seqhax
 ---
 
@@ -9,38 +9,70 @@ homepage: https://github.com/kdmurray91/seqhax
 
 ## Overview
 
-`seqhax` is a specialized toolkit designed for bioinformatics workflows that require fast, command-line sequence processing. It complements general-purpose tools like `seqtk` by providing unique features such as robust paired-end handling and VCF-specific histogram generation. It is ideal for cleaning up sequence headers, validating read pairs, and performing quick quality checks on variant files. The package provides two primary binaries: `seqhax` for sequence manipulation and `htshax` for HTS-specific (VCF/BCF) utilities.
+seqhax is a "seqtk-style" toolkit designed to provide specific sequence analysis features that are often missing from larger, more common bioinformatics suites. It consists of two main components: `seqhax` for general sequence file manipulation (FASTA/FASTQ) and `htshax` for handling HTS formats (VCF/BCF) via HTSlib. This skill helps navigate its subcommands for tasks like read pair management, sequence renaming, and variant filtering statistics.
 
-## Core Command Usage
+## Command Usage and Best Practices
 
-### Paired-End Management
-One of the most powerful features of `seqhax` is its ability to handle inconsistent paired-end data.
+### Sequence Manipulation (seqhax)
 
-*   **Interleaving Reads**: Use `seqhax pairs` to combine R1 and R2 files.
-    *   **Strict Mode**: Replaces missing reads with a single 'N' to maintain sync.
-    *   **Broken Mode**: Simply omits missing reads.
-*   **Validation**: Use `seqhax pecheck` to verify that read IDs match between R1 and R2 files or within an interleaved file. This is a critical step before mapping if you suspect file corruption or sorting issues.
+The `seqhax` binary contains several subcommands for processing FASTA and FASTQ files.
 
-### Sequence Header and Content Manipulation
-*   **Anonymization**: Use `seqhax anon` to rename sequences to a sequential number, which is useful for sharing data while stripping original metadata.
-*   **Barcode Recovery**: Use `seqhax rebarcode` to move index sequences found in the FASTQ header to the beginning of the actual read sequence.
-*   **Modification**: Use `seqhax preapp` to quickly prepend or append specific strings to every sequence ID in a file.
-*   **Truncation**: Use `seqhax trunc` to shorten sequences to a fixed length.
+*   **Paired-End Management**:
+    *   Use `seqhax pairs` to interleave or de-interleave reads. It supports "Strict" interleaving (replacing missing reads with 'N') and "Broken paired" interleaving (removing missing reads).
+    *   Use `seqhax pecheck` to verify that R1 and R2 files (or interleaved files) have matching read IDs. This is a critical quality control step before assembly or mapping.
+*   **Sequence Renaming and Modification**:
+    *   `anon`: Use this to replace complex headers with simple sequential numbers.
+    *   `preapp`: Prepend or append specific strings to sequence IDs.
+    *   `trunc`: Truncate sequences to a specific length.
+*   **Filtering and Conversion**:
+    *   `convert`: Quickly toggle between FASTA and FASTQ formats.
+    *   `filter`: Extract specific reads based on criteria.
+    *   `rebarcode`: Move index sequences from the header to the start of the actual read sequence.
+*   **Utility and Stats**:
+    *   `stats`: Generate basic summary statistics for sequence files.
+    *   `randseq`: Generate random sequence data for testing pipelines.
+    *   `clihist`: Generate a text-based histogram of input data from stdin.
 
-### Statistics and Histograms
-*   **Basic Stats**: Use `seqhax stats` for a quick summary of sequence counts and lengths.
-*   **CLI Histograms**: Use `seqhax clihist` to generate a text-based histogram from any numerical data piped through stdin.
-*   **VCF/BCF Analysis**: Use `htshax bcfhist` to generate histograms for variant metrics. Unlike `bcftools stats`, this tool specifically summarizes:
-    *   Allele Frequency (AF)
-    *   Missingness across samples (F_MISSING)
-    *   Quality (QUAL)
-    *   Depth (DP)
+### HTS Data Analysis (htshax)
 
-## Best Practices
-*   **Piping**: Most `seqhax` commands are designed to work within Unix pipes. Use `-` to represent stdin where applicable.
-*   **Help Flags**: Since subcommands have specific options, always check `seqhax [subcommand] -h` for the most up-to-date parameter list.
-*   **Static Binaries**: If working in an environment without Conda, look for static binaries in the GitHub releases to avoid dependency issues with `zlib` or `htslib`.
+The `htshax` binary focuses on VCF/BCF utilities that extend the capabilities of `bcftools`.
+
+*   **Variant Histograms**:
+    *   Use `htshax bcfhist` to calculate histograms for metrics like Quality (QUAL), Allele Frequency (ALLELE_FREQ), and Depth (DP).
+    *   **Expert Tip**: Unlike `bcftools stats`, `htshax bcfhist` specifically summarizes **missingness** (`F_MISSING`) across samples, which is essential for determining filtering thresholds in population genetics.
+
+## Common CLI Patterns
+
+**Interleaving R1 and R2 files:**
+```bash
+seqhax pairs R1.fastq R2.fastq > interleaved.fastq
+```
+
+**Checking if paired files are synchronized:**
+```bash
+seqhax pecheck R1.fastq R2.fastq
+```
+
+**Adding a prefix to all sequence headers:**
+```bash
+seqhax preapp -p "SampleA_" input.fasta > output.fasta
+```
+
+**Analyzing VCF missingness:**
+```bash
+htshax bcfhist input.vcf.gz
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| anon | Anonymize sequence headers in a file |
+| convert | Convert sequence files to FASTA or FASTQ format |
+| filter | Filter sequence files based on length and format options. |
+| pair | Process and split paired-end sequence files in FASTA or FASTQ format. |
 
 ## Reference documentation
-- [Seqhax GitHub README](./references/github_com_kdm9_seqhax.md)
-- [Bioconda Seqhax Overview](./references/anaconda_org_channels_bioconda_packages_seqhax_overview.md)
+- [Seqhax GitHub Repository](./references/github_com_kdm9_seqhax.md)

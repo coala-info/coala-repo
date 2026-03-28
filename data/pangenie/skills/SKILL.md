@@ -1,6 +1,6 @@
 ---
 name: pangenie
-description: PanGenie infers genotypes by comparing short-read k-mer distributions against a pangenome graph of assembled haplotypes. Use when user asks to genotype short reads using a pangenome reference, index a pangenome VCF, or call structural variants using a haplotype panel.
+description: PanGenie is a k-mer based genotyper that uses a pangenome graph and a panel of known haplotypes to infer genotypes from short-read data. Use when user asks to genotype short reads against a pangenome graph, infer genotypes for structural variants, or perform k-mer based genotyping using a reference panel.
 homepage: https://github.com/eblerjana/pangenie
 ---
 
@@ -8,47 +8,67 @@ homepage: https://github.com/eblerjana/pangenie
 # pangenie
 
 ## Overview
-PanGenie is a specialized bioinformatics tool that infers genotypes by comparing short-read k-mer distributions against a pangenome graph. Unlike traditional linear mappers, it uses a panel of assembled haplotypes to provide context for variants, including complex structural variations. It is most effective when working with high-quality pangenome references (like those from HPRC or HGSVC) and requires input VCFs to be sequence-resolved and phased into single blocks.
+
+PanGenie is a k-mer based genotyper that leverages a pangenome graph and a panel of known, fully assembled haplotypes to infer genotypes from short-read data. Unlike traditional linear mappers, PanGenie uses paths through the graph to account for complex variation and structural variants. It is designed for diploid individuals and requires a specific VCF format where variants are represented as bubbles in a directed acyclic graph.
 
 ## Input Requirements
-To ensure successful genotyping, input files must meet strict criteria:
-- **VCF (-v):** Must be multi-sample, fully-phased (single block per sample), and sequence-resolved (no symbolic alleles).
-- **Non-overlapping Variants:** Overlapping variants must be merged into multi-allelic records. If using `vg deconstruct`, filter with `vcfbub -l 0`.
-- **Reads (-i):** Short-read data in a single FASTA or FASTQ file.
-- **Reference (-r):** Reference genome in FASTA format.
 
-## Command Line Usage
+PanGenie is sensitive to input VCF formatting. Ensure your input variants (-v) meet these criteria:
+- **Multi-sample**: Must contain haplotype information for at least one known sample.
+- **Fully-phased**: Haplotypes must be phased into a single block from start to end. Tools like WhatsHap are generally unsuitable as they produce multiple blocks.
+- **Non-overlapping**: Overlapping variants must be merged into a single multi-allelic record.
+- **Sequence-resolved**: REF and ALT sequences must be explicitly defined; symbolic records (e.g., `<DEL>`) are not supported.
 
-### Recommended Two-Step Workflow
-The two-step process is more memory-efficient and allows the index to be reused for multiple samples.
+## Core Workflow
 
-1. **Index the Pangenome:**
-   ```bash
-   PanGenie-index -v <variants.vcf> -r <reference.fa> -o <prefix> -t <threads>
-   ```
+The recommended approach uses a two-step process to save memory and allow for multi-sample genotyping using a shared index.
 
-2. **Genotype the Sample:**
-   ```bash
-   PanGenie -f <prefix> -i <reads.fq> -s <sample_name> -j <kmer_threads> -t <genotype_threads>
-   ```
-
-### One-Step Workflow
-Use this for quick runs where memory is not a constraint:
+### 1. Preprocessing (Indexing)
+Generate the k-mer index from the pangenome graph and reference genome.
 ```bash
-PanGenie -i <reads.fq> -r <reference.fa> -v <variants.vcf> -s <sample_name> -t <threads>
+PanGenie-index -v <variants.vcf> -r <reference.fa> -t <threads> -o <index_prefix>
 ```
 
-### Advanced Options and Performance
-- **Haplotype Sampling:** If your panel contains >100 haplotypes, PanGenie automatically switches to sampling (default 15 haplotypes) to maintain performance.
-- **Serialization:** Use the `-w` flag in `PanGenie` to serialize results instead of writing a VCF immediately. You can then use `PanGenie-vcf` to generate the VCF separately.
-- **Thread Allocation:** Use `-j` for k-mer counting threads and `-t` for the core genotyping algorithm.
+### 2. Genotyping
+Run the genotyper using the generated index and the subject's short reads.
+```bash
+PanGenie -f <index_prefix> -i <reads.fastq> -s <sample_name> -j <kmer_threads> -t <genotyping_threads> -o <output_prefix>
+```
 
-## Expert Tips
-- **VCF Preparation:** If your VCF contains overlapping alleles (common in PAV or other callers), use the Snakemake pipeline in `pipelines/run-from-callset/` to merge them before running the main tool.
-- **Memory Management:** The `PanGenie-index` step significantly reduces the memory footprint of subsequent genotyping runs. Always prefer this for large pangenomes (e.g., Human).
-- **Diploid Only:** Note that PanGenie is currently optimized for diploid individuals; results for haploid organisms or polyploid plants may not be reliable.
+## Handling Complex VCFs
+
+### Overlapping Variants
+If your VCF contains overlapping records (common in `vg deconstruct` output), filter it with `vcfbub` before running PanGenie:
+```bash
+vcfbub -l 0 -r 100000 --input <input.vcf> > pangenie-ready.vcf
+```
+
+### Nested Variants (Decomposition)
+Graph bubbles often contain multiple nested variants. To extract genotypes for these individual alleles, use the `convert-to-biallelic.py` script after genotyping:
+```bash
+cat <pangenie_output.vcf> | python3 convert-to-biallelic.py <callset.vcf> > <final_biallelic.vcf>
+```
+*Note: This requires a "callset VCF" that defines the individual variant IDs referenced in the graph VCF's INFO field.*
+
+## Expert Tips and Best Practices
+
+- **Memory Management**: Always use the two-step (`PanGenie-index` followed by `PanGenie -f`) workflow for large pangenomes to minimize memory overhead.
+- **Haplotype Sampling**: If the input panel contains more than 100 haplotypes, PanGenie automatically switches to haplotype sampling (defaulting to 15) to maintain efficiency.
+- **Read Input**: PanGenie expects all reads in a single FASTA or FASTQ file. If you have paired-end data, concatenate them or provide them as a single stream.
+- **Thread Allocation**: Use `-j` for k-mer counting (I/O and memory intensive) and `-t` for the actual genotyping (CPU intensive).
+- **Serialization**: Use the `-w` flag to serialize genotyping results if you intend to generate the final VCF separately using `PanGenie-vcf`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| PanGenie | Genotyping based on kmer-counting and known haplotype sequences. |
+| PanGenie-index | PanGenie - genotyping based on kmer-counting and known haplotype sequences. Indexing step. |
+| PanGenie-vcf | Genotyping based on kmer-counting and known haplotype sequences using serialized genotyping results. |
 
 ## Reference documentation
-- [PanGenie GitHub Repository](./references/github_com_eblerjana_pangenie.md)
-- [PanGenie Wiki](./references/github_com_eblerjana_pangenie_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_pangenie_overview.md)
+- [PanGenie Main Documentation](./references/github_com_eblerjana_pangenie.md)
+- [Genotyping variation nested inside of bubbles](./references/github_com_eblerjana_pangenie_wiki_A_--Genotyping-variation-nested-inside-of-bubbles.md)
+- [Creating PanGenie input VCFs from assemblies](./references/github_com_eblerjana_pangenie_wiki_B_-Creating-PanGenie-input-VCFs-from-haplotype_E2_80_90resolved-assemblies.md)

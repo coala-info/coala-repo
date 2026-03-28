@@ -1,6 +1,6 @@
 ---
 name: psap
-description: PSAP uses a RandomForest machine learning approach to predict the likelihood of protein liquid-liquid phase separation based on amino acid sequences. Use when user asks to predict phase separation scores, train custom protein classifiers, or annotate sequences with biochemical features.
+description: PSAP is a machine learning tool that predicts the likelihood of proteins undergoing liquid-liquid phase separation based on sequence-derived biochemical features. Use when user asks to predict phase separation scores, train custom classifiers for specific proteomes, or extract biochemical features from protein sequences.
 homepage: https://github.com/vanheeringen-lab/psap
 ---
 
@@ -8,48 +8,63 @@ homepage: https://github.com/vanheeringen-lab/psap
 # psap
 
 ## Overview
-PSAP (Protein Phase Separation classifier) is a bioinformatics tool that implements a RandomForest machine learning approach to estimate the likelihood of a protein undergoing liquid-liquid phase separation. It works by converting amino acid sequences into a set of biochemical features which are then evaluated against a trained model. While it comes with a default model trained on the human proteome, it provides the flexibility to train new models on custom datasets or simply annotate sequences with the underlying biochemical properties used for classification.
 
-## Installation
-The tool can be installed via pip or conda:
-```bash
-pip install psap
-# OR
-conda install bioconda::psap
-```
+PSAP (Protein Separation Analysis/Prediction) is a machine learning tool designed to identify proteins likely to undergo liquid-liquid phase separation. It utilizes a RandomForest classifier trained on biochemical features extracted from protein sequences. The tool provides a complete workflow for sequence annotation, model training, and class probability prediction (PSAP_score). While it includes a default model trained on the human reference proteome, it is flexible enough to support custom training sets for specialized research.
 
-## Command Line Usage
+## CLI Usage and Best Practices
 
 ### 1. Predicting Phase Separation Scores
-This is the primary use case for evaluating new protein sequences.
-```bash
-psap predict -f /path/to/sequences.fasta -o /path/to/output/
-```
-*   **Default Model**: If no model is specified with `-m`, psap uses the default human-trained model.
-*   **Custom Model**: Use `-m /path/to/model.json` to use a classifier you have trained yourself.
-*   **Output**: Generates a file containing the PSAP_score (class probability) for each sequence.
+The most common use case is predicting the probability of phase separation for a set of sequences.
 
-### 2. Training a Custom Classifier
-Use this if you are working with a non-human proteome or have a specific set of known phase-separating proteins for training.
 ```bash
-psap train -f /path/to/training_set.fasta -l /path/to/labels.txt -o /path/to/model_dir/
-```
-*   **Labels**: The `-l` flag points to a text file containing known PPS proteins for positive class labeling.
-*   **Export**: The trained RandomForest classifier is exported in JSON format for use in the `predict` command.
+# Use the default human-trained model
+psap predict -f sequences.fasta -o ./results
 
-### 3. Annotating Sequences
-If you only need the biochemical feature vectors without the final probability score, use the annotate command.
+# Use a custom trained model
+psap predict -f sequences.fasta -m custom_model.json -o ./results
+```
+
+*   **Expert Tip**: If no model is provided with `-m`, PSAP automatically loads the default classifier trained on the human proteome.
+*   **Input**: Ensure your input is a standard peptide FASTA file.
+
+### 2. Training Custom Classifiers
+If working with non-human proteomes or specific protein families, training a new model is recommended.
+
 ```bash
-psap annotate -f /path/to/sequences.fasta -o /path/to/output/
+psap train -f training_set.fasta -l known_pps_list.txt -o ./models
 ```
-*   Note: This step is automatically performed during `train` and `predict` workflows, so it is only necessary for manual feature analysis.
 
-## Best Practices and Tips
-*   **Input Format**: Ensure your protein sequences are in standard FASTA format.
-*   **Default Model Context**: Remember that the default model was trained on the human reference proteome. When applying it to highly divergent species, consider training a species-specific model using `psap train`.
-*   **Feature Extraction**: PSAP calculates features based on amino acid composition and biochemical properties; ensure your sequences do not contain non-standard amino acid codes that might interfere with feature calculation.
-*   **Resource Location**: Default models and test sets are typically located within the package data directory (e.g., `psap/data/`).
+*   **Training Set**: The `-f` flag should point to a FASTA file containing your training sequences.
+*   **Positive Labels**: The `-l` flag (optional but recommended) points to a text file containing IDs of known PPS proteins to guide the positive class labeling.
+*   **Output**: The resulting model is exported as a `.json` file, making it highly portable.
+
+### 3. Sequence Annotation
+You can extract biochemical features without running a full prediction or training cycle. This is useful for exploratory data analysis of protein properties.
+
+```bash
+psap annotate -f sequences.fasta -o ./annotations
+```
+
+*   **Note**: Annotation is a prerequisite for both training and prediction; however, the `train` and `predict` commands run this step automatically. Use `annotate` only if you need the raw feature table.
+
+## Workflow Patterns
+
+| Task | Command | Key Arguments |
+| :--- | :--- | :--- |
+| **Screening** | `psap predict` | `-f` (Target sequences) |
+| **Model Building** | `psap train` | `-f` (Training sequences), `-l` (Known positives) |
+| **Feature Extraction** | `psap annotate` | `-f` (Sequences) |
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate peptide fasta files with LLPS labels and store as a data frame |
+| predict | Predict protein phase separation potential using the PSAP classifier. |
+| train | Train a RandomForest classifier for PSAP (Phase Separation Associated Proteins) |
 
 ## Reference documentation
-- [PSAP Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_psap_overview.md)
-- [PSAP GitHub Repository](./references/github_com_vanheeringen-lab_psap.md)
+- [psap GitHub Repository](./references/github_com_vanheeringen-lab_psap_blob_master_README.rst.md)
+- [psap Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_psap_overview.md)

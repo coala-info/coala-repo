@@ -85,3 +85,6 @@ Other options:
   -V, --version   - Show version
 ```
 
+
+## Metadata
+- **Skill**: generated

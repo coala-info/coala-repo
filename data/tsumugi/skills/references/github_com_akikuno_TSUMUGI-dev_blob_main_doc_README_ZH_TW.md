@@ -1,0 +1,447 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fakikuno%2FTSUMUGI-dev%2Fblob%2Fmain%2Fdoc%2FREADME_ZH_TW.md)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fakikuno%2FTSUMUGI-dev%2Fblob%2Fmain%2Fdoc%2FREADME_ZH_TW.md)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=akikuno%2FTSUMUGI-dev)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[akikuno](/akikuno)
+/
+**[TSUMUGI-dev](/akikuno/TSUMUGI-dev)**
+Public
+
+* [Notifications](/login?return_to=%2Fakikuno%2FTSUMUGI-dev) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fakikuno%2FTSUMUGI-dev)
+* [Star
+   4](/login?return_to=%2Fakikuno%2FTSUMUGI-dev)
+
+* [Code](/akikuno/TSUMUGI-dev)
+* [Issues
+  14](/akikuno/TSUMUGI-dev/issues)
+* [Pull requests
+  0](/akikuno/TSUMUGI-dev/pulls)
+* [Actions](/akikuno/TSUMUGI-dev/actions)
+* [Projects](/akikuno/TSUMUGI-dev/projects)
+* [Security
+  0](/akikuno/TSUMUGI-dev/security)
+* [Insights](/akikuno/TSUMUGI-dev/pulse)
+
+Additional navigation options
+
+* [Code](/akikuno/TSUMUGI-dev)
+* [Issues](/akikuno/TSUMUGI-dev/issues)
+* [Pull requests](/akikuno/TSUMUGI-dev/pulls)
+* [Actions](/akikuno/TSUMUGI-dev/actions)
+* [Projects](/akikuno/TSUMUGI-dev/projects)
+* [Security](/akikuno/TSUMUGI-dev/security)
+* [Insights](/akikuno/TSUMUGI-dev/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [TSUMUGI-dev](/akikuno/TSUMUGI-dev/tree/main)
+2. /[doc](/akikuno/TSUMUGI-dev/tree/main/doc)
+
+/
+
+# README\_ZH\_TW.md
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/akikuno/TSUMUGI-dev/commits/main/doc/README_ZH_TW.md)
+
+History
+
+485 lines (348 loc) · 19.5 KB
+
+main
+
+## Breadcrumbs
+
+1. [TSUMUGI-dev](/akikuno/TSUMUGI-dev/tree/main)
+2. /[doc](/akikuno/TSUMUGI-dev/tree/main/doc)
+
+/
+
+# README\_ZH\_TW.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+485 lines (348 loc) · 19.5 KB
+
+[Raw](https://github.com/akikuno/TSUMUGI-dev/raw/refs/heads/main/doc/README_ZH_TW.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+> ⚠️ 本文件為生成式AI翻譯，若有疑問請參考原文（README.md）。
+> 原文: <https://github.com/akikuno/TSUMUGI-dev/blob/main/README.md>
+
+[![Tsumugi Logo](https://raw.githubusercontent.com/akikuno/TSUMUGI-dev/refs/heads/main/image/tsumugi-logo.jpg)](https://larc-tsukuba.github.io/tsumugi/)
+
+[![License](https://camo.githubusercontent.com/bd6fd148b2b0e7b24b0c93899a73a70d08a6931ffb5c8c2ebfaf844d137c0af7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d3963662e737667)](https://choosealicense.com/licenses/mit/)
+[![Test](https://camo.githubusercontent.com/5317d27a674a98ab232e33190897596ed51cc7c2c0fd376d8b776c6c32c90680/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f616b696b756e6f2f7473756d7567692d6465762f7079746573742e796d6c3f6272616e63683d6d61696e266c6162656c3d5465737426636f6c6f723d627269676874677265656e)](https://github.com/akikuno/tsumugi-dev/actions)
+[![PyPI](https://camo.githubusercontent.com/6813a579bb09febcaafbf405556e7af5712139d3178ea490f99079d265f90ab7/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7473756d7567692e7376673f6c6162656c3d5079504926636f6c6f723d6f72616e6765)](https://pypi.org/project/tsumugi/)
+[![Bioconda](https://camo.githubusercontent.com/82dd254e2a1a40f97941c629fbe63b551fd05dafdfcc99cee1c9fdbe031691ff/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f762f62696f636f6e64612f7473756d7567693f6c6162656c3d42696f636f6e646126636f6c6f723d6f72616e6765)](https://anaconda.org/bioconda/tsumugi)
+[![Preprint](https://camo.githubusercontent.com/31cd0d244d2e1338d1ec90ca2230c99ba92a9e1c9acbd791372a5af4f08f5755/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f62696f527869762d31302e36343839382f323032362e30322e31382e3730363732302d726564)](https://doi.org/10.64898/2026.02.18.706720)
+[![DOI](https://camo.githubusercontent.com/7ea14f964ac997ecf290bf557da3286700147771ce5d632394808d6522722319/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f3434313032353232372e737667)](https://doi.org/10.5281/zenodo.14957711)
+[![Contact](https://camo.githubusercontent.com/83f969143a92a64fa4dc1d7421f9eb583bc73176d359da66c0bfafe760836fa1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436f6e746163742d393233444532)](https://forms.gle/ME8EJZZHaRNgKZ979)
+
+**TSUMUGI (Trait-driven Surveillance for Mutation-based Gene module Identification)** 使用 [IMPC](https://www.mousephenotype.org/) KO 小鼠的表型資料，**依表型相似性萃取並視覺化基因模組**的網路工具。
+此工具開放給所有人使用👇️
+🔗<https://larc-tsukuba.github.io/tsumugi/>
+
+**TSUMUGI(紡ぎ)** 源自「將形成表型的基因群像紡線一樣編織」的概念。
+
+# 📖 TSUMUGI 的使用方式
+
+TSUMUGI 支援三種輸入。
+
+### 表現型（Phenotype）
+
+輸入關注的表現型，在該表現型之 KO 小鼠基因中尋找**整體表型也相似的基因群**。
+表現型名稱依據 [Mammalian Phenotype Ontology (MPO)](https://www.informatics.jax.org/vocab/mp_ontology)。
+👉 [表現型清單](https://github.com/larc-tsukuba/tsumugi/blob/main/data/available_mp_terms.txt)
+
+### 基因名（Gene）
+
+指定一個基因，尋找**KO 表現型相似的其他基因群**。
+基因符號遵循 [MGI](http://www.informatics.jax.org/)。
+👉 [基因清單](https://github.com/larc-tsukuba/tsumugi/blob/main/data/available_gene_symbols.txt)
+
+### 基因列表（Gene List）
+
+可輸入多個基因（每行一個），在列表內提取**表型相似的基因**。
+
+Caution
+
+找不到相似基因時：`No similar phenotypes were found among the entered genes.`
+超過 200 個時：`Too many genes submitted. Please limit the number to 200 or fewer.`
+
+### 📥 下載原始資料
+
+TSUMUGI 發佈 gzip 壓縮的 JSONL 檔。
+
+#### `genewise_phenotype_annotations.jsonl.gz`
+
+* 基因符號（例："1110059G10Rik"）
+* Marker accession ID（例："MGI:1913452"）
+* 表現型名稱/ID（例："fused joints", "MP:0000137"）
+* Effect size（例：0.0, 1.324）
+* 顯著性（True/false）
+* 接合型（"Homo", "Hetero", "Hemi"）
+* 生命階段（"Embryo", "Early", "Interval", "Late"）
+* 性別差異（"", "Male", "Female"）
+* 疾病註解（例：[] 或 "Premature Ovarian Failure 18"）
+
+範例：
+
+```
+{"significant": true, "sexual_dimorphism": "Female", "effect_size": 0.0119677350763567, "marker_symbol": "4930447C04Rik", "zygosity": "Homo", "marker_accession_id": "MGI:1923051", "mp_term_id": "MP:0000063", "disease_annotation": ["Male Infertility With Azoospermia Or Oligozoospermia Due To Single Gene Mutation", "Premature Ovarian Failure 18", "Spermatogenic Failure 52"], "life_stage": "Early", "mp_term_name": "decreased bone mineral density"}
+```
+
+#### `pairwise_similarity_annotations.jsonl.gz`
+
+* 基因對 (`gene1_symbol`, `gene2_symbol`)
+* `phenotype_shared_annotations`：共享表現型的中介資料（生命階段、接合型、性別差異）
+* `phenotype_similarity_score`：Resnik→Phenodigm 分數（0–100）
+
+範例：
+
+```
+{"gene1_symbol": "1500009L16Rik", "gene2_symbol": "Aak1", "phenotype_shared_annotations": [{"mp_term_name": "increased circulating enzyme level", "life_stage": "Early", "zygosity": "Homo", "sexual_dimorphism": "None"}], "phenotype_similarity_score": 47}
+```
+
+# 🌐 網路
+
+系統會依輸入自動繪製網路。
+
+Important
+
+**共享異常表現型≥3 且 表現型相似度 > 0.0** 的基因對會被視覺化。
+
+### 網路面板
+
+**節點**代表基因。點擊可查看該 KO 小鼠的異常表現型清單，拖曳可調整位置。
+**邊**點擊可查看共享表現型的詳細。
+**模組**以多邊形圈出基因子網絡。點擊模組可列出其中基因涉及的表現型；可拖曳模組重新擺放並避免重疊。
+
+### 控制面板
+
+可於左側調整網路顯示。
+
+#### 依表現型相似度過濾
+
+`Phenotypes similarity` 滑桿依 Resnik→Phenodigm 分數設定邊的門檻。
+
+> 計算詳情：👉 [🔍 表現型相似基因群的計算方法](#-%E8%A1%A8%E7%8F%BE%E5%9E%8B%E7%9B%B8%E4%BC%BC%E5%9F%BA%E5%9B%A0%E7%BE%A4%E7%9A%84%E8%A8%88%E7%AE%97%E6%96%B9%E6%B3%95)
+
+#### 依表現型嚴重度過濾
+
+`Phenotype severity` 滑桿依 effect size（KO 小鼠中的嚴重度）過濾節點，值越大影響越強。
+
+> 對二值表現型（如 [abnormal embryo development](https://larc-tsukuba.github.io/tsumugi/app/phenotype/abnormal_embryo_development.html); 二值列表見[此處](https://github.com/larc-tsukuba/tsumugi/blob/main/data/binary_phenotypes.txt)）或單一基因輸入時，此控制隱藏。
+
+#### 指定接合型
+
+* `Homo`（純合）
+* `Hetero`（雜合）
+* `Hemi`（半合）
+
+#### 指定性別
+
+* `Female`
+* `Male`
+
+#### 指定生命階段
+
+* `Embryo`
+* `Early`（0–16 週）
+* `Interval`（17–48 週）
+* `Late`（49 週以上）
+
+### 標記面板
+
+#### Highlight: Human Disease
+
+使用 IMPC Disease Models Portal 資料，高亮與人類疾病相關的基因。
+
+#### Search: Specific Gene
+
+於網路中搜尋基因名。
+
+#### Layout & Display
+
+調整布局、字體大小、邊線粗細、節點斥力（Cose 布局）。
+
+#### Export
+
+可匯出 PNG/CSV/GraphML。
+CSV 含模組ID與每個基因的表現型列表；GraphML 與 Cytoscape 相容。
+
+# 🛠 命令列版
+
+TSUMUGI CLI 允許使用本地下載的最新IMPC資料，並提供比網頁版更細緻的過濾與輸出。
+
+## 功能
+
+* 使用IMPC的`statistical-results-ALL.csv.gz`重新計算（可選`mp.obo`、`impc_phenodigm.csv`）。
+* 依MP術語包含/排除進行過濾。
+* 依基因清單過濾（逗號分隔或文字檔）。
+* 輸出：GraphML（`tsumugi build-graphml`）、離線Web應用包（`tsumugi build-webapp`）。
+
+## 安裝
+
+BioConda:
+
+```
+conda install -c conda-forge -c bioconda tsumugi
+```
+
+PyPI:
+
+```
+pip install tsumugi
+```
+
+`tsumugi --version`正常輸出即表示可用。
+
+## 可用命令
+
+* `tsumugi run`: 從IMPC資料重新計算網路
+* `tsumugi mp --include/--exclude (--pairwise/--genewise)`: 依MP術語包含/排除基因對或基因
+* `tsumugi count --pairwise/--genewise (--min/--max)`: 依表型數量過濾（基因對/基因）
+* `tsumugi score (--min/--max)`: 依表型相似度得分過濾（基因對）
+* `tsumugi genes --keep/--drop`: 基因清單保留/剔除（逗號或文字檔）
+* `tsumugi life-stage --keep/--drop`: 依生命階段過濾（Embryo/Early/Interval/Late）
+* `tsumugi sex --keep/--drop`: 依性別過濾（Male/Female/None）
+* `tsumugi zygosity --keep/--drop`: 依接合型過濾（Homo/Hetero/Hemi）
+* `tsumugi build-graphml`: 產生GraphML（Cytoscape等）
+* `tsumugi build-webapp`: 產生TSUMUGI Web應用資源（本地HTML/CSS/JS）
+
+Note
+
+所有過濾類子命令都會將JSONL輸出到STDOUT。
+如需存檔，請使用`>`重導向。
+
+Important
+
+除`tsumugi run`外，所有命令都需要`pairwise_similarity_annotation.jsonl.gz`或`genewise_phenotype_annotation.jsonl.gz`。
+兩個檔案都可以從[TSUMUGI首頁](https://larc-tsukuba.github.io/tsumugi/)下載。
+
+## 使用方法
+
+### 從IMPC資料重新計算（`tsumugi run`）
+
+若省略`--mp_obo`，TSUMUGI使用內建`data-version: releases/2025-08-27/mp.obo`。
+若省略`--impc_phenodigm`，使用2025-10-01從[IMPC Disease Models Portal](https://diseasemodels.research.its.qmul.ac.uk/)取得的檔案。
+
+```
+tsumugi run   --output_dir ./tsumugi-output   --statistical_results ./statistical-results-ALL.csv.gz   --threads 8
+```
+
+輸出：`./tsumugi-output`包含genewise註解（genewise\_phenotype\_annotations.jsonl.gz）、pairwise相似度資料（pairwise\_similarity\_annotations.jsonl.gz）與視覺化資源（`TSUMUGI-webapp`）。
+
+Important
+
+`TSUMUGI-webap

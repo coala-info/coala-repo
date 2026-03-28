@@ -1,6 +1,6 @@
 ---
 name: cpinsim
-description: "cpinsim simulates the formation of protein complexes based on constrained interaction networks and domain-specific dependencies. Use when user asks to simulate protein complex formation, model protein knockouts or overexpression, and analyze the impact of concentration perturbations on protein assemblies."
+description: CPINSim models the stochastic assembly of protein complexes by accounting for domain-level constraints and competition. Use when user asks to simulate protein complex formation, model protein knockouts or overexpression, and analyze the composition of the cellular interactome.
 homepage: https://github.com/BiancaStoecker/cpinsim
 ---
 
@@ -9,71 +9,60 @@ homepage: https://github.com/BiancaStoecker/cpinsim
 
 ## Overview
 
-cpinsim is a specialized simulation framework designed to model how protein complexes form in a cellular environment based on constrained interaction networks. Unlike simple interaction models, it accounts for domain-specific constraints and dependencies. Use this skill to execute simulations of complex formation, prepare interaction data through domain annotation, and perform "what-if" analyses by perturbing protein levels to observe changes in the resulting protein assemblies.
+CPINSim (Constrained Protein Interaction Networks Simulator) is a computational tool designed to model the stochastic assembly of protein complexes. Unlike simple interaction models, CPINSim accounts for specific constraints—such as domain competition and availability—that dictate how proteins bind. It provides a full pipeline from annotating interactions with domains to simulating the final distribution of complexes. This tool is particularly valuable for researchers investigating how changes in protein concentration (perturbations) affect the overall topology and composition of the cellular interactome.
 
-## Installation and Setup
+## Usage Guidelines
 
-The preferred method for using cpinsim is via Bioconda to ensure all dependencies (networkx, scipy, bitarray) are correctly managed.
+### Core Simulation Workflow
 
+The primary command for running simulations is `cpinsim simulate`. This requires a preprocessed protein input file (typically a CSV representing the network).
+
+**Basic Simulation Pattern:**
 ```bash
-conda create -n cpinsim -c bioconda cpinsim
-source activate cpinsim
+cpinsim simulate <input_file> -n <copies_per_protein> -og <output_graph.gz> -ol <log_file.log>
 ```
-
-## Command Line Usage
-
-The primary interface for the tool is the `cpinsim` command, specifically the `simulate` sub-command.
-
-### Basic Simulation
-To simulate complex formation with a specific number of copies for each protein:
-
-```bash
-cpinsim simulate <input_file.csv> -n 100 -og simulated_graph.gz -ol simulation.log
-```
-- `-n`: Number of copies per protein.
-- `-og`: Path to save the resulting simulated graph (gzipped pickle).
-- `-ol`: Path to save the simulation log.
+*   `-n`: Sets the initial number of copies for every protein in the simulation.
+*   `-og`: Specifies the path for the resulting simulation graph (saved as a gzipped pickle file).
+*   `-ol`: Specifies the path for the simulation log.
 
 ### Simulating Perturbations
-You can model the biological impact of protein concentration changes using the `-p` flag followed by the protein name and a multiplier.
 
-- **Knockout (KO):** Set the multiplier to 0.
-- **Overexpression:** Set the multiplier to a value greater than 1.
+CPINSim excels at "what-if" scenarios involving genetic or chemical changes to protein levels. Use the `-p` flag to define perturbations.
 
-```bash
-# Knockout FYN and overexpress ABL1 by 5x
-cpinsim simulate input.csv -n 100 -p FYN 0 -p ABL1 5 -og output.gz
-```
+*   **Protein Knockout:** Set the factor to `0`.
+    ```bash
+    cpinsim simulate input.csv -n 100 -og output.gz -p GENE_NAME 0
+    ```
+*   **Protein Overexpression:** Set the factor to a value greater than `1`.
+    ```bash
+    cpinsim simulate input.csv -n 100 -og output.gz -p GENE_NAME 5
+    ```
+*   **Multiple Perturbations:** You can chain multiple `-p` flags to simulate complex phenotypes (e.g., double knockouts or a knockout combined with overexpression).
 
-## Processing Results
+### Analyzing Results
 
-The output graph (`-og`) is a gzipped Python pickle containing a NetworkX graph object. Each connected component in this graph represents a formed protein complex.
+The output graph (`-og`) is a gzipped Python pickle object containing a `networkx` graph. Each connected component in this graph represents a single protein complex.
 
-### Result Extraction Script
-To analyze the complexes, use the following Python pattern:
+To extract and inspect the results, use a Python script:
+1.  Load the graph using `pickle` and `gzip`.
+2.  Identify complexes using `networkx.connected_component_subgraphs(graph)`.
+3.  Access protein names via the `"name"` attribute on the nodes.
 
-```python
-import pickle, gzip
-import networkx as nx
+### Best Practices
+*   **Preprocessing:** Ensure interactions and constraints are properly annotated with domains before simulation. CPINSim provides internal methods to infer domains from known data or assign unique artificial domains where data is missing.
+*   **Scaling:** Start with a smaller number of copies (`-n`) to verify the network logic before running large-scale simulations, as computational complexity increases with protein count and interaction density.
+*   **Environment:** Since CPINSim relies on specific versions of `networkx` (1.11) and `bitarray`, it is highly recommended to run it within a dedicated Conda environment.
 
-with gzip.open("simulated_graph.gz", "rb") as f:
-    graph = pickle.load(f)
 
-# Extract complexes as subgraphs, sorted by size
-complexes = sorted(list(nx.connected_component_subgraphs(graph)), key=len, reverse=True)
 
-# Access protein names within a complex
-for c in complexes[:5]:
-    print([c.node[node]["name"] for node in c])
-```
+## Subcommands
 
-## Best Practices
-
-- **Data Preprocessing:** Before simulation, ensure interactions are annotated with domains. cpinsim can infer domains from known data or assign unique artificial domains to satisfy the constraint logic.
-- **Input Format:** The tool expects a protein-wise text representation. If starting from raw interaction lists, use the cpinsim parser to generate the required input format.
-- **Scaling:** Start with a lower number of copies (`-n`) to validate the network logic before running large-scale simulations, as computational complexity increases with the number of protein copies and interaction density.
-- **Graph Analysis:** Since the output is a standard NetworkX object, you can leverage the full NetworkX API to calculate complex statistics, such as diameter, density, or specific motif distributions within the simulated assemblies.
+| Command | Description |
+|---------|-------------|
+| cpinsim simulate | Simulates protein interaction networks. |
+| cpinsim_annotate | Annotates interaction, competition, and allosteric effect files based on provided constraints and network information. |
+| cpinsim_parse | Parse protein interaction data from various file formats. |
 
 ## Reference documentation
-- [CPINSim GitHub Repository](./references/github_com_BiancaStoecker_cpinsim.md)
-- [CPINSim Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_cpinsim_overview.md)
+- [CPINSim README](./references/github_com_BiancaStoecker_cpinsim_blob_master_README.rst.md)
+- [CPINSim Setup and Dependencies](./references/github_com_BiancaStoecker_cpinsim_blob_master_setup.py.md)

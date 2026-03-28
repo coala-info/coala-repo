@@ -1,6 +1,6 @@
 ---
 name: machina
-description: Machina reconstructs the metastatic history of tumors by modeling the migration of cancer cell clones between primary and metastatic sites. Use when user asks to infer migration patterns, solve the parsimonious migration history problem, or simultaneously infer clone trees and migration events from DNA sequencing data.
+description: MACHINA is a computational framework that reconstructs the migration history of cancer cells by inferring seeding events between primary tumors and metastases. Use when user asks to infer migration patterns, resolve clone tree polytomies, or visualize clonal migration graphs and trees.
 homepage: https://github.com/raphael-group/machina
 ---
 
@@ -8,84 +8,50 @@ homepage: https://github.com/raphael-group/machina
 # machina
 
 ## Overview
+MACHINA is a computational framework designed to reconstruct the migration history of cancer cells. By taking clone trees and anatomical site labels as input, it infers the most likely sequence of seeding events between a primary tumor and various metastases. This skill helps navigate the suite of command-line tools provided by MACHINA to process mutation data, generate trees, and solve optimization problems related to clonal migration.
 
-MACHINA is a specialized suite of tools designed to reconstruct the metastatic history of tumors using DNA sequencing data. It models the movement of cancer cell clones between a primary tumor and various metastatic sites by solving the Parsimonious Migration History (PMH) problem. The framework is particularly useful for researchers looking to distinguish between different seeding patterns (e.g., monoclonal vs. polyclonal) and to infer the most likely sequence of migration events that led to a patient's current disease state.
+## Core Workflows
 
-## Core CLI Commands
+### 1. Data Preparation
+Before running the optimization algorithms, ensure your input files follow the required formats:
+- **Clone Tree (.tree):** An edge list of incident vertices (e.g., `ParentNode ChildNode`).
+- **Leaf Labeling (.labeling):** A mapping of leaf nodes to anatomical sites (e.g., `NodeID SiteName`).
+- **Frequencies (.tsv):** A tab-separated file containing mutation frequencies across different samples.
 
-The machina package provides several executables for different stages of the analysis pipeline:
+### 2. Migration Pattern Inference
+The framework provides several specialized tools depending on the level of uncertainty in your input data:
 
-| Command | Purpose |
-| :--- | :--- |
-| `cluster` | Clusters mutations using a binomial distribution model for variant read counts. |
-| `generatemigrationtrees` | Generates all possible migration trees given anatomical site labels. |
-| `pmh_sankoff` | Enumerates all minimum-migration vertex labelings for a fixed clone tree. |
-| `pmh` | Solves the PMH problem with specific migration pattern restrictions. |
-| `pmh_tr` | Solves PMH with Polytomy Resolution (PMH-PR) for unresolved clone trees. |
-| `pmh_ti` | Solves PMH and Tree Inference (PMH-TI) simultaneously using mutation frequencies. |
-| `visualizeclonetree` | Generates DOT files to visualize clone trees and vertex labelings. |
-| `visualizemigrationgraph` | Generates DOT files to visualize the resulting migration graph. |
+- **Standard PMH (`pmh`):** Use when you have a fixed clone tree and want to find the most parsimonious migration history.
+- **Polytomy Resolution (`pmh_tr`):** Use when your clone tree contains polytomies (nodes with more than two children) that need to be resolved to minimize migration events.
+- **Tree Inference (`pmh_ti`):** Use when you need to infer the mutation tree and migration history simultaneously from frequency data.
+- **Sankoff Enumeration (`pmh_sankoff`):** Use to enumerate all minimum-migration vertex labelings for a given clone tree.
 
-## Input Format Specifications
+### 3. Visualization and Utilities
+- **`visualizeclonetree`**: Generates DOT files to visualize the structure of the inferred clone trees.
+- **`visualizemigrationgraph`**: Creates a migration graph showing the seeding patterns between anatomical sites.
+- **`generatemigrationtrees`**: Useful for pre-generating valid migration constraints to narrow the search space for the ILP solvers.
 
-### Clone Tree (.tree)
-A simple edge list where each line represents a parent-child relationship:
-```text
-ParentNode ChildNode
-A A1
-A A2
-```
+## CLI Best Practices
+- **Gurobi Environment**: MACHINA relies on the Gurobi ILP solver. Ensure `GRB_LICENSE_KEY` is set in your environment. If Gurobi is in a non-standard location, update `LD_LIBRARY_PATH` (Linux) or `DYLD_LIBRARY_PATH` (macOS) to include the Gurobi `lib` directory.
+- **Path Management**: Add the `build` directory to your `PATH` after compilation to access tools like `pmh` and `cluster` globally.
+- **Memory and Performance**: For complex trees or large frequency matrices, the ILP solvers (`pmh_tr`, `pmh_ti`) can be resource-intensive. Consider using `generatemigrationtrees` first to restrict the migration patterns if the search space is too large.
 
-### Leaf Labeling (.labeling)
-Maps clone tree leaves to anatomical sites:
-```text
-LeafID SiteName
-A1 Liver
-A2 Lung
-```
 
-### Frequency File (.tsv)
-A tab-separated file with a specific header structure:
-1. Line 1: Number of anatomical sites.
-2. Line 2: Number of samples.
-3. Line 3: Number of mutation clusters.
-4. Line 4: Header (ignored by tool).
-5. Subsequent lines: `sample_index sample_label site_index site_label cluster_index cluster_label freq_lb freq_ub`
 
-## Common Workflows
+## Subcommands
 
-### 1. Basic Migration Inference
-When you have a fixed clone tree and want to find the most parsimonious labeling:
-```bash
-pmh -p primary_site -m migration_pattern_file tree_file labeling_file
-```
-
-### 2. Handling Unresolved Trees (Polytomies)
-If your clone tree has nodes with more than two children that need resolution:
-```bash
-pmh_tr -p primary_site -m migration_pattern_file tree_file labeling_file
-```
-
-### 3. Simultaneous Tree and Migration Inference
-When starting from mutation frequencies rather than a fixed tree:
-```bash
-pmh_ti -p primary_site -m migration_pattern_file mutation_tree_file frequency_file
-```
-
-## Expert Tips & Best Practices
-
-*   **Solver Dependency**: Most MACHINA solvers require Gurobi. Ensure your `GRB_LICENSE_KEY` environment variable is correctly set and the Gurobi libraries are in your `LD_LIBRARY_PATH` (Linux) or `DYLD_LIBRARY_PATH` (macOS).
-*   **Visualization**: The visualization tools output `.dot` files. Use the Graphviz `dot` command to convert these to images:
-    ```bash
-    visualizeclonetree patient.tree patient.labeling > output.dot
-    dot -Tpng output.dot -o tree.png
-    ```
-*   **Migration Restrictions**: Use `generatemigrationtrees` to define the search space for migration patterns if you have prior biological knowledge about which sites can seed others.
-*   **Conda Installation**: The easiest way to manage dependencies (Boost, LEMON) is via Bioconda:
-    ```bash
-    conda install -c bioconda machina
-    ```
+| Command | Description |
+|---------|-------------|
+| cluster | Cluster mutations based on their co-occurrence patterns. |
+| generatemigrationtrees | Generates migration trees for anatomical sites. |
+| pmh | Machina PMH tool for phylogenetic analysis. |
+| pmh_sankoff | Performs the Sankoff algorithm on a phylogenetic tree with leaf labelings. |
+| pmh_ti | Parses mutation trees and migration graphs to infer phylogenetic relationships. |
+| pmh_tr | Parses a clone tree and leaf labeling to infer evolutionary scenarios. |
+| visualizeclonetree | Visualize a clone tree with optional leaf and vertex labeling, and custom color maps. |
+| visualizemigrationgraph | Visualize the migration graph of a clone tree. |
 
 ## Reference documentation
-- [MACHINA GitHub Repository](./references/github_com_raphael-group_machina.md)
-- [MACHINA Overview and Installation](./references/anaconda_org_channels_bioconda_packages_machina_overview.md)
+- [MACHINA Repository Overview](./references/github_com_raphael-group_machina.md)
+- [Installation and Usage Guide](./references/github_com_raphael-group_machina_blob_master_README.md)
+- [Build Configuration and Dependencies](./references/github_com_raphael-group_machina_blob_master_CMakeLists.txt.md)

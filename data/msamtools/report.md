@@ -274,3 +274,6 @@ for a given measure.
    --stats=score    - distribution for score=match-edit
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: diffutils
-description: The diffutils tool compares files to identify differences or confirm identity using line-by-line text analysis or byte-by-byte binary comparison. Use when user asks to compare text files, generate unified patch files, identify differences in binary files, or check if two files are identical.
+description: This tool compares files and directories to identify differences in content or byte-level data. Use when user asks to compare file contents, generate unified diffs for patches, perform recursive directory comparisons, or conduct byte-by-byte binary analysis.
 homepage: https://github.com/uutils/diffutils
 ---
 
@@ -8,55 +8,59 @@ homepage: https://github.com/uutils/diffutils
 # diffutils
 
 ## Overview
+This skill provides guidance on using the `uutils/diffutils` suite, a modern Rust implementation of the classic GNU diff utilities. It is designed for developers and system administrators who need to compare file contents, create unified diffs for patching, or perform byte-by-byte comparisons of binary files. The tool aims for compatibility with GNU's functional behavior while leveraging Rust's safety and performance.
 
-The diffutils skill provides a specialized workflow for using the Rust-based drop-in replacements for traditional GNU diff utilities. This toolset includes `diff` for line-by-line text comparison and `cmp` for byte-by-byte binary comparison. It is designed to be compatible with existing patch tools while offering the performance benefits of a modern Rust implementation. Use this skill to identify changes between file versions, create standard patch files, or quickly determine if two files are identical without reading their entire contents.
+## CLI Usage and Patterns
 
-## Common CLI Patterns
+### Basic File Comparison
+Compare two files to see line-by-line differences:
+```bash
+diff file1.txt file2.txt
+```
 
-### Text Comparisons with `diff`
+### Generating Unified Diffs
+The unified format (`-u`) is the standard for creating patches. It provides context lines around changes, making it easier for tools like `patch` to apply the modifications.
+```bash
+diff -u old_version.txt new_version.txt > changes.patch
+```
 
-The primary tool for finding differences in text files.
+### Directory Comparison
+Compare the contents of two directories recursively to find differing files:
+```bash
+diff -r dir1/ dir2/
+```
 
-*   **Unified Diff (Standard for Patches)**:
-    Use the `-u` flag to generate a unified diff, which is the standard format for code patches and version control systems.
-    `diff -u old_file.txt new_file.txt`
+### Binary Comparison with `cmp`
+Use `cmp` for a low-level, byte-by-byte comparison. It is more efficient than `diff` for binary data or when you only need to know if files differ without seeing the specific text changes.
+```bash
+cmp file1.bin file2.bin
+```
+*   **Tip**: Use `-l` to print the byte numbers and values for all differing bytes.
+*   **Tip**: Use `-s` (silent) to only get an exit code (0 if identical, 1 if different).
 
-*   **Brief Output**:
-    If you only need to know if files differ without seeing the specific changes, use the `-q` (quiet) flag.
-    `diff -q file1.txt file2.txt`
-
-*   **Ignore Whitespace**:
-    To focus on functional changes rather than formatting, use flags to ignore whitespace.
-    `diff -b file1.txt file2.txt` (ignores changes in the amount of white space)
-    `diff -w file1.txt file2.txt` (ignores all white space)
-
-### Binary Comparisons with `cmp`
-
-Used for comparing two files byte-by-byte.
-
-*   **Find First Difference**:
-    The default behavior reports the byte and line number of the first difference.
-    `cmp file1.bin file2.bin`
-
-*   **Detailed Byte Differences**:
-    Use the `-l` flag to print the decimal byte number and the octal values for all differing bytes.
-    `cmp -l file1.bin file2.bin`
-
-*   **Silent Mode**:
-    Use `-s` for scripts where you only care about the exit code (0 if identical, 1 if different).
-    `cmp -s file1.bin file2.bin`
+### Side-by-Side Comparison with `sdiff`
+View differences in two columns for easier manual inspection:
+```bash
+sdiff file1.txt file2.txt
+```
 
 ## Expert Tips
+*   **Performance**: Since this is a Rust implementation, it is often faster than legacy versions for large files or deep directory trees.
+*   **Exit Codes**: 
+    *   `0`: No differences found.
+    *   `1`: Differences were found.
+    *   `2`: An error occurred (e.g., file not found).
+*   **Whitespace Handling**: Use `-b` to ignore changes in the amount of white space, or `-w` to ignore all white space entirely when comparing code.
 
-*   **Patch Compatibility**: When generating diffs for others to use, always prefer the `-u` (unified) format. It provides context lines that allow the `patch` utility to apply changes even if line numbers have shifted slightly.
-*   **Implementation Status**: Note that while `diff` and `cmp` are the most mature tools in this suite, `sdiff` and `diff3` are currently under active development in the uutils project. For complex three-way merges, verify the current implementation status of `diff3`.
-*   **Performance**: For very large files, `cmp` is significantly faster than `diff` because it stops at the first differing byte and does not attempt to calculate an edit script or alignment.
-*   **Exit Codes**:
-    *   0: No differences found.
-    *   1: Differences were found.
-    *   2: An error occurred (e.g., file not found).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cmp | Compare two files byte by byte. (Note: The provided help text contained a system error; arguments are based on standard diffutils cmp usage). |
+| diff3 | Compare three files line by line. |
 
 ## Reference documentation
-
-- [uutils/diffutils Main Repository](./references/github_com_uutils_diffutils.md)
-- [uutils/diffutils Issues and Status](./references/github_com_uutils_diffutils_issues.md)
+- [uutils/diffutils Repository Overview](./references/github_com_uutils_diffutils.md)
+- [Project README and Examples](./references/github_com_uutils_diffutils_blob_main_README.md)

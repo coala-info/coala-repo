@@ -1,6 +1,6 @@
 ---
 name: blinker
-description: Blink Shell is a professional-grade terminal emulator for iOS that provides persistent remote access and a local Unix-like environment. Use when user asks to connect to remote servers via SSH or Mosh, manage files using SCP or SFTP, and execute local scripts or commands on an iOS device.
+description: Blink Shell is a professional-grade terminal emulator for iOS and iPadOS that provides high-performance remote connections via SSH and Mosh. Use when user asks to establish persistent remote sessions, manage SSH keys, execute local Unix utilities, or run Python and Lua scripts on a mobile device.
 homepage: https://github.com/blinksh/blink
 ---
 
@@ -8,44 +8,71 @@ homepage: https://github.com/blinksh/blink
 # blinker
 
 ## Overview
-Blink Shell is a professional-grade terminal emulator for iOS that prioritizes speed and persistent connectivity. It leverages Mosh (Mobile Shell) to handle unstable mobile networks and SSH for standard remote access. Beyond being a simple terminal, it provides a local Unix-like environment with built-in utilities for file management, networking, and scripting (Python/Lua), specifically tailored to work within iOS sandbox constraints.
 
-## Core CLI Usage
+Blink Shell is a professional-grade terminal emulator designed specifically for the iOS/iPadOS ecosystem. It focuses on providing high-performance, stable remote connections by leveraging Mosh (Mobile Shell) and SSH. Unlike basic terminal apps, it offers a local environment with a curated "Unix toolbox," support for hardware keyboards with custom remapping, and specialized file management within the iOS sandbox. This skill helps users navigate the command-line interface, manage persistent connections, and utilize local scripting capabilities.
 
-### Remote Connections
-*   **SSH**: Standard secure shell access.
-    `ssh user@host`
-*   **Mosh**: Preferred for mobile use as it handles roaming and packet loss.
-    `mosh user@host`
-*   **Configuration**: Use the `config` command to manage Hosts and SSH Keys via the graphical interface.
+## Core Connection Commands
 
-### File Transfer and Management
-Blink uses a specialized version of `curl` to handle various protocols, including `scp` and `sftp`.
-*   **SCP via curl**:
-    `curl scp://host.name.edu/path/to/file -o local_filename --key $SHARED/id_rsa`
-*   **Standard SCP/SFTP**: These commands are available but act as wrappers for the curl implementation.
-    `scp user@host:remote_file local_destination`
-    `sftp local_file user@host:~/remote_path`
-*   **Local Utilities**: Standard commands like `ls`, `cd`, `cp`, `mv`, `rm`, `mkdir`, `tar`, and `grep` are available for local file manipulation.
+### SSH (Secure Shell)
+Use for standard remote terminal access.
+- **Basic connection**: `ssh user@host`
+- **Specify port and key**: `ssh -p 2222 -i id_rsa user@host`
+- **Verbose debugging**: Use `-v`, `-vv`, or `-vvv` to troubleshoot connection or authentication failures.
 
-### Environment and Scripting
-Due to iOS sandboxing, the local environment has specific write permissions.
-*   **Writable Directories**: You can only write to `~/Documents/`, `~/Library/`, and `~/tmp/`.
-*   **Environment Variables**: Use `setenv` to define variables.
-    `setenv PATH $PATH:~/Documents/bin`
-*   **Scripting**: Execute local logic using `python` or `lua`.
-*   **Redirection**: Supports standard redirection (`>`, `<`, `&>`), but note that pipes (`|`) are currently not supported.
+### Mosh (Mobile Shell)
+Recommended for mobile environments to handle roaming and intermittent connectivity.
+- **Basic connection**: `mosh user@host`
+- **Run remote command on start**: `mosh user@host -- tmux attach`
+- **Predictive echo**: Mosh provides local echo to hide network latency, which is essential for a fluid typing experience on mobile.
 
-## Expert Tips and Best Practices
-*   **Persistent Sessions**: Always prefer `mosh` over `ssh` for long-running sessions to avoid disconnection when switching apps or losing cellular signal.
-*   **Key Management**: Store your RSA keys via the `config` UI to ensure they are properly indexed for use with the `curl`-based transfer tools.
-*   **Keyboard Customization**: Blink allows remapping keys (e.g., Caps Lock to Escape or Control). Use the `config` menu to match your desktop terminal experience.
-*   **Gestures**:
-    *   **Swipe**: Switch between active terminal sessions.
-    *   **Slide Down**: Close the current session.
-    *   **Pinch**: Adjust font size (zoom) dynamically.
-*   **External Displays**: Use SplitView or external monitor support for multi-tasking between the terminal and documentation.
+### SSH Key Management
+- **Generate keys**: Use the `config` command to access the UI for key generation.
+- **Copy keys to server**: `ssh-copy-id identity_file user@host`. Note that this requires password authentication to be temporarily enabled on the remote server if no other keys are present.
+
+## Local Environment and Utilities
+
+### File System Restrictions
+Due to iOS sandboxing, you cannot write to the root or home directory. Use the following paths for persistent storage:
+- `~/Documents/`: Primary location for user files and scripts.
+- `~/Library/`: Configuration and support files.
+- `~/tmp/`: Temporary files.
+
+### Built-in Toolbox
+Blink includes a subset of Unix utilities. Note that while redirection (`>`, `<`) is supported, pipes (`|`) are currently not available in the native shell.
+- **File Operations**: `ls`, `cp`, `mv`, `rm`, `mkdir`, `touch`, `chmod`, `stat`.
+- **Network/Transfer**: `curl`, `scp`, `sftp`, `ping`, `nc`.
+- **Text Processing**: `cat`, `grep`, `wc`, `ed`.
+- **Archiving**: `tar`, `gzip`, `gunzip`, `compress`.
+
+### Scripting
+You can execute local logic using:
+- **Python**: Run scripts via `python script.py`.
+- **Lua**: Run scripts via `lua script.lua`.
+
+## Expert Tips and Shortcuts
+
+- **Configuration UI**: Type `config` to open the settings overlay for themes, fonts, and host definitions.
+- **Command History**: Use `Ctrl-r` to trigger a reverse search through your command history.
+- **Navigation**: Swipe left/right to switch between active sessions. Use pinch-to-zoom to adjust font size on the fly.
+- **Environment Variables**: Use `setenv KEY VALUE` to define variables. Common variables like `PATH`, `PYTHONHOME`, and `SSH_HOME` are pre-configured to point to writable iOS directories.
+- **Copy/Paste**: Blink supports standard iOS clipboard integration. Use `scp` or `curl` to move files between the local iOS environment and remote servers.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| blinker_ls | List directory contents |
+| cp | Copy SOURCE(s) to DEST |
+| grep | Search for PATTERN in FILEs (or stdin) |
+| mkdir | Create DIRECTORY |
+| mv | Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY |
+| python | Run a Python script or module |
+| rm | Remove (unlink) FILEs |
+| tar | Create, extract, or list files from a tar file |
 
 ## Reference documentation
 - [Blink Shell README](./references/github_com_blinksh_blink.md)
-- [Blink Wiki Home](./references/github_com_blinksh_blink_wiki.md)
+- [Commanding Your Blink](./references/github_com_blinksh_blink_wiki_Commanding-Your-Blink.md)
+- [Create and Access Host](./references/github_com_blinksh_blink_wiki_Create-and-Access-Host.md)

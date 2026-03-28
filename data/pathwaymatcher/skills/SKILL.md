@@ -1,6 +1,6 @@
 ---
 name: pathwaymatcher
-description: PathwayMatcher maps omics data, including genes, proteins, and proteoforms, to functional biological pathways and reactions in the Reactome database. Use when user asks to map identifiers to pathways, perform proteoform-specific analysis, or generate biological interaction networks.
+description: PathwayMatcher maps biological identifiers such as genes, proteins, proteoforms, and genetic variants to the Reactome pathway database. Use when user asks to map omics data to pathways, perform pathway enrichment analysis, identify reactions involving specific proteoforms, or analyze the functional impact of genetic variants.
 homepage: https://github.com/LuisFranciscoHS/PathwayMatcher
 ---
 
@@ -8,54 +8,67 @@ homepage: https://github.com/LuisFranciscoHS/PathwayMatcher
 # pathwaymatcher
 
 ## Overview
-PathwayMatcher is a Java-based command-line tool designed to bridge the gap between raw omics data and functional biological pathways. Unlike many tools that only map at the gene level, PathwayMatcher supports high-resolution mapping for proteoforms, allowing you to specify exact phosphorylation sites or other PTMs to see which specific reactions are affected. It is the primary tool for systematic, unbiased matching of human biomedical data to the Reactome database.
+PathwayMatcher is a specialized bioinformatics tool designed to bridge the gap between raw omics data and systems biology. It allows researchers to systematically map various biological identifiers to the Reactome pathway knowledgebase. Unlike general mappers, it supports high-resolution mapping for proteoforms (proteins with specific post-translational modifications) and genetic variants (SNPs). Use this skill when you need to perform pathway enrichment analysis, identify reactions involving specific protein states, or generate biological networks from experimental datasets.
 
-## Usage Guidelines
+## Input Types and Formatting
+PathwayMatcher requires specific input formats based on the data type. Use the `-t` flag to specify the type.
 
-### Core Command Structure
-PathwayMatcher is typically executed as a JAR file. The basic syntax is:
+| Data Type | Flag | Format Description |
+| :--- | :--- | :--- |
+| **Genes** | `-t gene` | One HUGO gene symbol per line (e.g., `CFTR`). |
+| **UniProt** | `-t uniprot` | One UniProt accession per line (e.g., `P00519`). |
+| **Ensembl** | `-t ensembl` | One Ensembl gene or protein ID per line. |
+| **Proteoforms** | `-t proteoform` | `Accession;MOD:ID:Site` (e.g., `P16220;00046:133`). |
+| **RSID** | `-t rsid` | One dbSNP identifier per line (e.g., `rs187174427`). |
+| **Chr/BP** | `-t chrbp` | Space-separated chromosome and base pair (e.g., `1 210827406`). |
+| **VCF** | `-t vcf` | Standard VCF v4.3 file (first 4 columns mandatory). |
+
+## Common CLI Patterns
+
+### Basic Pathway Mapping
+To map a list of proteins to Reactome pathways:
 ```bash
-java -jar PathwayMatcher.jar -i <input_file> -t <input_type> [options]
+java -jar PathwayMatcher.jar -i input_proteins.txt -t uniprot -o ./output_results/
 ```
 
-### Supported Input Types (`-t`)
-Specify the input type using the `-t` flag. Common types include:
-- `uniprot`: List of UniProt IDs.
-- `genes`: List of Gene names.
-- `ensembl`: Ensembl identifiers.
-- `peptides`: Amino acid sequences.
-- `proteoforms`: UniProt IDs with PTM coordinates (e.g., `P01234;00047:45`).
-- `variants`: Genetic variants (requires VCF-like format).
+### Proteoform Matching with PTMs
+When working with post-translational modifications, ensure the PSI-MOD 5-digit identifiers are used. PathwayMatcher will match only the reactions where the protein exists in that specific state.
+```bash
+java -jar PathwayMatcher.jar -i proteoforms.txt -t proteoform
+```
 
-### Common CLI Patterns
-- **Standard Protein Mapping**:
-  `java -jar PathwayMatcher.jar -i proteins.txt -t uniprot -o ./output/`
-- **Proteoform Mapping (High Precision)**:
-  Use this when you have PTM data to filter for pathways where the protein exists in a specific modified state.
-  `java -jar PathwayMatcher.jar -i proteoforms.txt -t proteoforms -mptm`
-- **Generating Networks**:
-  To output biological network files (GraphML/SIF) based on the matched entities:
-  `java -jar PathwayMatcher.jar -i input.txt -t uniprot -gn`
+### Genetic Variant Analysis
+For SNPs, PathwayMatcher maps variants to the proteins they affect and subsequently to pathways. Note that input lists for `rsid` and `chrbp` should be sorted by chromosome and base pair for optimal performance.
+```bash
+java -jar PathwayMatcher.jar -i variants.vcf -t vcf
+```
 
-### Key Options
-- `-i, --input`: Path to the input file (one entry per line).
-- `-o, --output`: Directory where results will be saved.
-- `-t, --type`: The format of the input identifiers.
-- `-mptm, --matchingPTM`: Enables strict matching for proteoforms based on PTMs.
-- `-gu, --graphUniprot`: Generates a protein-protein interaction network.
-- `-gp, --graphProteoform`: Generates a proteoform-specific interaction network.
+## Expert Tips
+- **Java Version**: Ensure Java 1.8 (64-bit) is installed.
+- **Memory Management**: For large VCF files or proteoform datasets, increase the JVM heap size using `-Xmx` (e.g., `java -Xmx4g -jar PathwayMatcher.jar ...`).
+- **Output Files**: PathwayMatcher typically produces three outputs:
+    1. `search.tsv`: Mapping of input entities to reactions and pathways.
+    2. `analysis.tsv`: Statistical overrepresentation analysis (p-values).
+    3. `network.txt`: Biological network files for visualization.
+- **Proteoform Flexibility**: If the specific PTM type is unknown but the site is known, use the modification ID `00000` (e.g., `P62753;00000:245`).
 
-### Output Files
-PathwayMatcher generates three primary outputs in the specified output directory:
-1. `search.tsv`: A mapping of input entities to reactions and pathways.
-2. `analysis.tsv`: Statistical overrepresentation analysis (p-values, FDR) for the matched pathways.
-3. `network.graphml/sif`: (Optional) Visualization-ready files for Cytoscape or other network tools.
 
-## Best Practices
-- **Java Version**: Ensure you are using Java 1.8, as newer versions may encounter compatibility issues with older releases of the tool.
-- **Memory Allocation**: For large datasets (especially genetic variants), increase the JVM heap size: `java -Xmx4g -jar PathwayMatcher.jar ...`
-- **Unbiased Analysis**: Remember that PathwayMatcher performs systematic matching without initial filtering. Always use the `analysis.tsv` file to determine which pathways are statistically significant for your specific biological context.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| match-chrbp | Match a list of genetic variants as chromosome and base pairs |
+| match-ensembl | Match a list of Ensembl protein identifiers |
+| match-genes | Match a list of gene names and perform over-representation analysis |
+| match-modified-peptides | Match a list of peptides with post translational modifications |
+| match-peptides | Match a list of peptides to proteins and identify associated reactions and pathways. |
+| match-proteoforms | Match a list of proteoforms to reactions and pathways |
+| match-rsids | Match a list of genetic variants as RsIds |
+| match-uniprot | Match a list of UniProt protein accessions to reactions and pathways, and perform over-representation analysis. |
+| match-vcf | Match a list of genetic variants in VCF format |
 
 ## Reference documentation
-- [PathwayMatcher Wiki](./references/github_com_PathwayAnalysisPlatform_PathwayMatcher_Dev_wiki.md)
-- [PathwayMatcher Overview](./references/github_com_PathwayAnalysisPlatform_PathwayMatcher_Dev.md)
+- [Input Formatting Guide](./references/github_com_PathwayAnalysisPlatform_PathwayMatcher_Dev_wiki_Input.md)
+- [Installation and Setup](./references/github_com_PathwayAnalysisPlatform_PathwayMatcher_Dev_wiki_Installation.md)
+- [Examples and Use Cases](./references/github_com_PathwayAnalysisPlatform_PathwayMatcher_Dev_wiki_Examples.md)

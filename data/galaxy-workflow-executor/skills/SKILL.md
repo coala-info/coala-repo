@@ -1,6 +1,6 @@
 ---
 name: galaxy-workflow-executor
-description: The galaxy-workflow-executor utility bridges Galaxy's web-based workflow system with CLI environments to schedule workflows, upload datasets, and retrieve results using BioBlend. Use when user asks to prepare workflow files, generate parameter templates, execute runs with state management, or recover from failed workflow executions.
+description: The galaxy-workflow-executor automates the execution of Galaxy workflows from the command line using the Bioblend library. Use when user asks to generate parameter templates, execute workflows with automated data uploads, or resume interrupted workflow runs.
 homepage: https://github.com/ebi-gene-expression-group/galaxy-workflow-executor
 ---
 
@@ -8,53 +8,60 @@ homepage: https://github.com/ebi-gene-expression-group/galaxy-workflow-executor
 # galaxy-workflow-executor
 
 ## Overview
-The `galaxy-workflow-executor` is a utility designed to bridge the gap between Galaxy's web-based workflow system and CLI-driven environments. It leverages the BioBlend library to schedule workflows, upload datasets, and retrieve results. This skill provides the procedural knowledge required to prepare workflow files, generate parameter templates, and execute runs with robust state management for error recovery.
 
-## Core CLI Usage
+The galaxy-workflow-executor is a specialized toolset designed to bridge the gap between the Galaxy web interface and automated command-line environments. It leverages the Bioblend library to facilitate the execution of complex genomic workflows. This skill should be used when you need to move beyond manual Galaxy interactions into reproducible, scriptable pipelines. It handles the heavy lifting of data uploads, parameter mapping based on workflow labels, and result retrieval, while providing robust state management to recover from connection failures or execution errors.
 
-### 1. Workflow Preparation
-Before execution, you must obtain the workflow definition in JSON format.
-- **Action**: In the Galaxy UI, go to **Workflows** -> **Share workflow** -> **Download**.
-- **Requirement**: Ensure workflow steps are annotated with **labels**. Labels are the primary keys used to map parameters and inputs in the CLI.
+## Core Workflows
+
+### 1. Preparing the Environment
+Before execution, ensure you have a credentials file (typically following the Parsec format) containing your Galaxy API key and the server URL. You must also download your workflow as a JSON file directly from the Galaxy UI using the "Share" -> "Download" option.
 
 ### 2. Generating Parameter Templates
-Use the generator script to create a template for tool parameters based on your workflow labels.
-```bash
-generate_params_from_workflow.py -C galaxy_credentials.yaml -G <instance_name> -W workflow.json -o <output_dir>
-```
-- `-C`: Path to your Galaxy credentials (formatted like `parsec` config).
-- `-G`: The specific Galaxy instance name defined in your credentials.
-- `-W`: The downloaded workflow JSON file.
+To ensure your parameter file matches the specific requirements of a workflow, use the generation script. This script connects to the Galaxy instance, inspects the workflow structure, and creates a template.
+
+**Command Pattern:**
+`python generate_params_from_workflow.py -C <credentials_file> -G <instance_name> -W <workflow_json> -o <output_dir>`
+
+*   **Expert Tip**: Ensure all steps in your Galaxy workflow are annotated with labels in the Galaxy UI before downloading the JSON. The executor uses these labels to map parameters; unlabeled steps are difficult to configure via CLI.
 
 ### 3. Executing the Workflow
-The primary execution command handles data upload, tool configuration, and result retrieval.
-```bash
-run_galaxy_workflow.py -C galaxy_credentials.yaml -G <instance_name> -w workflow.json -p parameters.yaml -i inputs.yaml
-```
-**Key Flags:**
-- `-i`: Path to the inputs file (mapping labels to local paths or Galaxy IDs).
-- `-l` or `--library-name`: Upload results directly to a specific Galaxy Data Library (requires admin privileges).
-- `--no-downloads`: Skip downloading results to the local filesystem.
-- `--keep-histories`: Prevent the executor from deleting the history after completion.
-- `--state-file`: Specify a custom path for the `exec_state.pickle` file.
+The primary execution script handles data upload, workflow scheduling, and monitoring.
 
-## Expert Tips and Best Practices
+**Command Pattern:**
+`python run_galaxy_workflow.py -C <credentials_file> -G <instance_name> -H <history_name> -i <inputs_file> -W <workflow_json> -P <parameters_file>`
 
-### State Persistence and Recovery
-The executor saves progress in `exec_state.pickle`. If a connection drops or a tool fails, re-running the command with the same working directory will attempt to resume from the last successful step.
-- **Warning**: If you switch to a different workflow or change input files, delete the `.pickle` file or use `--state-file` to point to a new location to avoid state conflicts.
+*   **Input Mapping**: The inputs file must be a YAML-formatted file where keys correspond to workflow input labels. Values should specify the local file path and file type, or alternatively, a Galaxy `dataset_id` or `library_id` if the data is already on the server.
+*   **Parameter Overrides**: The parameters file allows you to set specific tool settings for labeled steps. Simple atomic values in this file are automatically treated as workflow inputs.
 
-### Handling Input Data
-- **Local Files**: Use absolute paths in your inputs configuration for reliability.
-- **Existing Datasets**: If data is already in Galaxy, use `dataset_id` or `library_id` instead of a local path to save upload time.
+## Advanced Usage and Best Practices
 
-### Error Management
-- **Allowed Errors**: You can provide an optional YAML file to specify step labels that are permitted to fail without stopping the entire execution. This is useful for workflows with non-critical steps or known edge-case failures.
-- **Cleanup**: By default, the tool deletes the workflow and history from the Galaxy instance upon success to save space. Use `--keep-histories` if you need to perform manual inspection or debugging in the UI.
+### Execution State and Resumption
+The executor automatically saves progress in a state file (default: `exec_state.pickle`). 
+*   **Resuming**: If a run is interrupted, running the same command in the same directory will attempt to resume from the last successful step.
+*   **Isolation**: When running multiple different workflows in the same directory, use the `--state-file` flag to specify unique paths for each to prevent state collisions.
 
-### Result Retrieval
-Only outputs marked as "visible" (the "eye" icon in the Galaxy Workflow Editor) are downloaded or moved to libraries. Ensure your workflow JSON has the correct output visibility settings before running the executor.
+### Result Management
+*   **Local Downloads**: By default, results are downloaded to the working directory. Use `-o` to specify a different destination.
+*   **Data Libraries**: For production environments, use `-l <library_name>` to upload results directly to a Galaxy Data Library instead of downloading them locally. This requires admin privileges.
+*   **Cleanup**: The tool purges histories and workflows from the Galaxy instance upon successful completion to save space. Use `--keep-histories` or `--keep-workflow` if you need to inspect the intermediate steps in the Galaxy UI.
+
+### Error Handling
+*   **Allowed Failures**: You can provide a YAML file via the `-a` flag to define specific steps that are permitted to fail (e.g., steps that might fail under certain biological conditions but shouldn't stop the entire pipeline).
+*   **Exit Codes**: 
+    *   Code 3: History deletion failed (non-critical, results are usually already safe).
+    *   Code 4/5: Workflow scheduling was cancelled or failed on the server (critical).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| generate_params_from_workflow.py | Generate parameters from a Galaxy workflow. |
+| run_galaxy_workflow.py | Runs a Galaxy workflow based on provided configuration and inputs. |
 
 ## Reference documentation
-- [Galaxy workflow executor Overview](./references/github_com_ebi-gene-expression-group_galaxy-workflow-executor.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_galaxy-workflow-executor_overview.md)
+- [Main README](./references/github_com_ebi-gene-expression-group_galaxy-workflow-executor_blob_develop_README.md)
+- [Workflow Execution Script](./references/github_com_ebi-gene-expression-group_galaxy-workflow-executor_blob_develop_run_galaxy_workflow.py.md)
+- [Parameter Generation Script](./references/github_com_ebi-gene-expression-group_galaxy-workflow-executor_blob_develop_generate_params_from_workflow.py.md)
+- [Credentials Sample](./references/github_com_ebi-gene-expression-group_galaxy-workflow-executor_blob_develop_galaxy_credentials.yml.sample.md)

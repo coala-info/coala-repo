@@ -1,1 +1,1 @@
-"igdiscover.se" Your user agent does not support iframes. However you may visit the page that was supposed to be here
+Your user agent does not support iframes. However you may visit [the page that was supposed to be here](https://gkhlab.gitlab.io/igdiscover22/)

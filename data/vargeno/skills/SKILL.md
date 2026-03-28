@@ -1,6 +1,6 @@
 ---
 name: vargeno
-description: vargeno performs targeted genotyping of known Single Nucleotide Polymorphisms (SNPs) from raw sequencing reads. Use when user asks to genotype known SNPs or index a reference and SNP list for genotyping.
+description: VarGeno is a high-speed bioinformatics tool designed for genotyping a pre-defined set of SNPs using k-mer based approximate matching. Use when user asks to index a reference genome with known variants or genotype sequencing reads against a specific SNP list.
 homepage: https://github.com/medvedevgroup/vargeno
 ---
 
@@ -8,44 +8,60 @@ homepage: https://github.com/medvedevgroup/vargeno
 # vargeno
 
 ## Overview
+VarGeno is a specialized bioinformatics tool designed for high-speed SNP genotyping. Unlike general-purpose variant callers that perform de novo discovery, VarGeno focuses on efficiently determining the genotypes of a pre-defined set of SNPs. It utilizes k-mer based approximate matching to significantly accelerate the genotyping process, making it suitable for clinical diagnostics and large-scale genomic studies where speed is critical.
 
-vargeno is a high-performance bioinformatics tool designed for the targeted genotyping of known Single Nucleotide Polymorphisms (SNPs) from raw sequencing reads. By focusing on a specific SNP database rather than performing de novo variant calling, vargeno achieves significant speed improvements suitable for bedside diagnostics. It processes FASTQ sequencing data against a reference genome and a VCF file of known variants, producing a genotyped VCF output containing genotype calls (GT) and Phred-scaled quality scores (GQ).
+## Core Workflow
 
-## Command Line Usage
+Genotyping with VarGeno is a two-step process: indexing the reference data and then performing the actual genotyping.
 
-The vargeno workflow consists of two primary stages: index construction and genotyping.
-
-### 1. Indexing the Reference and SNPs
-Before genotyping, you must generate a specialized index from your reference genome and the target SNP list.
+### 1. Indexing
+Before processing donor reads, you must build an index from your reference genome and the target SNP list.
 
 ```bash
 vargeno index <reference.fa> <variants.vcf> <index_prefix>
 ```
+- **reference.fa**: The reference genome sequence in FASTA format.
+- **variants.vcf**: The list of known SNPs to be genotyped.
+- **index_prefix**: The base name for the generated index files.
 
-*   **reference.fa**: The reference genome sequence in FASTA format.
-*   **variants.vcf**: The list of known SNPs to be genotyped in VCF format.
-*   **index_prefix**: The base name for the generated index files.
-
-### 2. Genotyping Sequencing Reads
-Once the index is created, use the `geno` command to process the donor genome reads.
+### 2. Genotyping
+Once the index is created, you can genotype an individual's sequencing reads.
 
 ```bash
 vargeno geno <index_prefix> <reads.fq> <variants.vcf> <output.vcf>
 ```
+- **index_prefix**: Must match the prefix used during the indexing step.
+- **reads.fq**: Sequencing reads from the donor genome in FASTQ format.
+- **variants.vcf**: The same VCF file used during indexing.
+- **output.vcf**: The resulting file containing genotypes (GT) and genotype quality (GQ).
 
-*   **index_prefix**: Must match the prefix used during the indexing step.
-*   **reads.fq**: Sequencing reads from the donor genome in FASTQ format.
-*   **variants.vcf**: The same VCF file used during indexing.
-*   **output.vcf**: The filename for the resulting genotyped VCF.
+## Technical Specifications and Tips
 
-## Best Practices and Expert Tips
+### Output Interpretation
+VarGeno populates specific fields in the "FORMAT" column of the output VCF:
+- **GT (Genotype)**: Reported as `0/0` (homozygous reference), `0/1` (heterozygous), or `1/1` (homozygous alternate).
+- **GQ (Genotype Quality)**: A Phred-scaled integer representing the confidence in the genotype call.
 
-*   **Memory Requirements**: vargeno is memory-intensive. Genotyping a small subset of human chromosome 22 can require approximately 34 GB of RAM. Ensure your environment (especially in HPC or cloud settings) has sufficient memory allocation for whole-genome processing.
-*   **VCF Compatibility**: Ensure your input VCF follows the VCF 4.2 specification. vargeno specifically populates the `GT` (0/0, 0/1, 1/1) and `GQ` fields in the `FORMAT` column.
-*   **Index Reuse**: You only need to run the `index` command once for a specific combination of reference genome and SNP database. This index can be reused for genotyping any number of individual donor FASTQ files.
-*   **Input Validation**: Verify that the chromosome names in your FASTA reference exactly match the chromosome names in your VCF file to avoid indexing errors or empty outputs.
-*   **Alternative Version**: If memory constraints are a significant bottleneck, consider using "VarGeno-Lite," which is maintained as a separate project for lower-memory environments.
+### Resource Management
+- **Memory Usage**: VarGeno is memory-intensive. Genotyping a subset of human chromosome 22 can require approximately 34 GB of RAM. For whole-genome applications, ensure the system has significant memory capacity.
+- **VarGeno-Lite**: If system memory is a bottleneck, consider using the "Memory Lite" version (vargeno_lite), which is maintained as a separate project for resource-constrained environments.
+
+### Installation Best Practices
+The most reliable way to deploy VarGeno is via Bioconda:
+```bash
+conda install vargeno
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| vargeno | vargeno <option> [option parameters ...] |
+| vargeno | vargeno |
 
 ## Reference documentation
-- [vargeno - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_vargeno_overview.md)
-- [GitHub - medvedevgroup/vargeno](./references/github_com_medvedevgroup_vargeno.md)
+- [VarGeno Main Repository](./references/github_com_medvedevgroup_vargeno.md)
+- [VarGeno README and Usage](./references/github_com_medvedevgroup_vargeno_blob_master_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_vargeno_overview.md)

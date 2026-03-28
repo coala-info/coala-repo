@@ -1,6 +1,6 @@
 ---
 name: pyfasta
-description: pyfasta provides fast, memory-efficient random access and manipulation of FASTA sequence files using indexing and memory-mapping. Use when user asks to extract sub-sequences, split FASTA files, flatten sequences, or retrieve sequence statistics and information.
+description: "pyfasta provides fast, memory-efficient access to FASTA files through indexing and memory-mapping. Use when user asks to extract sub-sequences, split FASTA files into chunks, calculate GC content, or access genomic data via a Pythonic API."
 homepage: https://github.com/brentp/pyfasta
 ---
 
@@ -9,99 +9,113 @@ homepage: https://github.com/brentp/pyfasta
 
 ## Overview
 
-`pyfasta` is a specialized tool designed for "pythonic" and high-performance access to FASTA sequence files. It avoids high memory overhead by using memory-mapping (mmap) or direct file seeking (fseek/fread) to access sequence data on disk. When first used on a file, it creates a flattened version of the sequence (removing newlines and headers) and a pickle-based index (`.gdx`) to allow for near-instantaneous random access. It is an excellent choice for bioinformatics workflows requiring rapid retrieval of sub-sequences from large genomes.
+pyfasta is a tool designed for fast, memory-efficient, and "pythonic" access to FASTA files. It works by creating a flattened version of the sequence (removing newlines and headers) and an index file (.gdx), allowing for random access via memory-mapping (mmap) or direct file seeking (fseek). This ensures that sequence data is never fully read into RAM, making it suitable for large-scale genomic data.
 
-## Command Line Interface (CLI) Patterns
+Use this skill when you need to:
+- Access specific sub-sequences from large FASTA files using Python.
+- Split FASTA files into smaller chunks or by individual headers.
+- Extract specific sequences from a multi-FASTA file via the command line.
+- Calculate basic statistics like GC content for genomic sequences.
 
-The `pyfasta` executable provides several sub-commands for file manipulation and inspection.
+## CLI Usage Patterns
 
-### File Information and Statistics
-Use the `info` command to get a summary of the FASTA file, including sequence counts and lengths.
+### File Information
+Get basic statistics, including sequence lengths and GC content:
 ```bash
-# Show basic info and GC content for all sequences
-pyfasta info --gc sequence.fasta
+pyfasta info --gc input.fasta
 ```
 
 ### Splitting FASTA Files
-`pyfasta` offers flexible splitting options based on file count, headers, or k-mer sizes.
+Split a file into a specific number of relatively even-sized files:
 ```bash
-# Split into 6 files of roughly equal size
-pyfasta split -n 6 input.fasta
+pyfasta split -n 6 original.fasta
+```
 
-# Split into one file per header, using the sequence ID as the filename
-pyfasta split --header "%(seqid)s.fasta" input.fasta
+Split into one file per header, using the sequence ID in the filename:
+```bash
+pyfasta split --header "%(seqid)s.fasta" original.fasta
+```
 
-# Create 10K-mers with a 2K overlap
-pyfasta split -n 1 -k 10000 -o 2000 input.fasta
+Split into 10K-mers with a 2K overlap:
+```bash
+pyfasta split -n 1 -k 10000 -o 2000 original.fasta
 ```
 
 ### Extracting Sequences
-Extract specific sequences by their header IDs.
+Extract specific sequences by ID into a new FASTA file:
 ```bash
-# Extract specific sequences into a new FASTA file
 pyfasta extract --header --fasta input.fasta seq_id_1 seq_id_2
-
-# Extract all sequences EXCEPT those listed in a file
-pyfasta extract --header --fasta input.fasta --exclude --file ids_to_ignore.txt
-
-# Handle complex headers by splitting on space (lookup by first word only)
-pyfasta extract --header --fasta input.fasta --space --file ids.txt
 ```
 
-### Performance Optimization
-To save disk space and speed up later access, you can flatten a file "in-place". This removes newlines within the original file while keeping it a valid FASTA.
+Extract sequences using a text file containing IDs to exclude:
+```bash
+pyfasta extract --header --fasta input.fasta --exclude --file ids_to_ignore.txt
+```
+
+### Optimization
+Flatten a file "inplace" to speed up future access without creating a second large sequence file:
 ```bash
 pyfasta flatten input.fasta
 ```
 
-## Python API Usage
-
-The Python interface allows for dictionary-like access and slicing.
+## Python API Best Practices
 
 ### Basic Access
 ```python
 from pyfasta import Fasta
 f = Fasta('data.fasta')
 
-# List all sequence IDs (keys)
-ids = sorted(f.keys())
+# Access by header (returns a record object)
+chr1 = f['chr1']
 
-# Get sequence as a string (standard Python 0-based slicing)
-seq = f['chr1'][10:20]
+# Pythonic slicing (0-based)
+seq = chr1[10:20]
+
+# Get full sequence
+full_seq = str(chr1)
 ```
 
-### Biological Coordinate Queries
-Use the `sequence` method for 1-based coordinates or strand-specific retrieval.
+### Coordinate-Based Queries
+Use the `sequence` method for flexible queries, including strand-aware reverse complements:
 ```python
-# 1-based coordinates (biological standard)
-f.sequence({'chr': 'chr1', 'start': 2, 'stop': 9})
+# One-based coordinates (standard in biology)
+f.sequence({'chr': 'chr1', 'start': 2, 'stop': 9}, one_based=True)
 
-# 0-based coordinates (Python standard)
-f.sequence({'chr': 'chr1', 'start': 2, 'stop': 9}, one_based=False)
-
-# Reverse complement (automatic for negative strand)
+# Negative strand (returns reverse complement)
 f.sequence({'chr': 'chr1', 'start': 2, 'stop': 9, 'strand': '-'})
 ```
 
 ### Handling Complex Headers
-If your FASTA headers contain extra metadata (e.g., `>ID123 | description | metadata`), use a `key_fn` to define how IDs are indexed.
+If FASTA headers are long (e.g., ">ID123 | description | coords"), use `key_fn` to simplify keys:
 ```python
-# Key off only the first word of the header
 f = Fasta('data.fasta', key_fn=lambda key: key.split()[0])
+# Now accessible via f['ID123']
 ```
 
-## Expert Tips
+### Memory and Storage Management
+- **In-place flattening**: For massive files (e.g., >5GB), use `Fasta('data.fasta', flatten_inplace=True)` to avoid doubling disk usage.
+- **Index Files**: pyfasta creates `.gdx` (index) and `.flat` (flattened sequence) files. If the source FASTA changes, delete these files to force a re-index.
+- **Numpy Integration**: By default, pyfasta uses a memmapped numpy array. You can cast records directly to numpy arrays for vectorized operations:
+  ```python
+  import numpy as np
+  arr = np.array(f['chr1'])
+  ```
 
-*   **Backend Selection**: By default, `pyfasta` uses `NpyFastaRecord` (numpy memmap). If you have an extremely high number of records (headers) that make the pickle index too large for memory, use `record_class=TCRecord` to store the index in a TokyoCabinet database.
-*   **Numpy Integration**: You can treat a record as a numpy array for masking or mathematical operations:
-    ```python
-    import numpy as np
-    f = Fasta('data.fasta')
-    f['chr1'].as_string = False
-    arr = np.array(f['chr1'])
-    ```
-*   **Index Files**: `pyfasta` creates `.flat` and `.gdx` files. If the underlying FASTA file changes, you must delete these index files to force `pyfasta` to re-index.
-*   **Alternative**: The author of `pyfasta` suggests using `pyfaidx` for newer projects unless there is a specific reason to use `pyfasta`'s numpy-backed features.
+## Expert Tips
+- **Modern Alternative**: The author of pyfasta suggests using `pyfaidx` for newer projects unless specific pyfasta features are required.
+- **Duplicate Headers**: pyfasta will check for and warn about duplicate headers during indexing.
+- **Performance**: For high-frequency random access to thousands of small records, consider using the `TCRecord` backend (requires TokyoCabinet) to avoid memory overhead from the standard pickle index.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pyfasta_extract | Extract some sequences from a fasta file. |
+| pyfasta_info | Print headers and lengths of the given fasta file in order of length. |
+| pyfasta_split | split a fasta file into separated files. |
 
 ## Reference documentation
-- [pyfasta README](./references/github_com_brentp_pyfasta.md)
+- [pyfasta GitHub README](./references/github_com_brentp_pyfasta.md)
+- [pyfasta PyPI Overview](./references/pypi_org_project_pyfasta.md)

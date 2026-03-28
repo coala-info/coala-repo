@@ -1,6 +1,6 @@
 ---
 name: apptainer
-description: Apptainer is a container platform designed for high-performance computing environments that utilizes the Singularity Image Format to run applications with host-level integration. Use when user asks to run or execute commands in a container, build SIF images from definition files or Docker URIs, manage background instances, or access host GPUs and filesystems within a secure, shared environment.
+description: Apptainer is a container platform designed for high-performance computing that executes applications in secure, portable, and immutable single-file images. Use when user asks to pull images from registries, build SIF files from definition files, run interactive shells, execute commands within containers, or access host GPUs and filesystems.
 homepage: https://github.com/apptainer/apptainer
 ---
 
@@ -8,42 +8,78 @@ homepage: https://github.com/apptainer/apptainer
 # apptainer
 
 ## Overview
-Apptainer is a specialized container platform designed for ease of use on shared systems and High-Performance Computing (HPC) environments. It utilizes the Singularity Image Format (SIF), an immutable single-file container format that is easily transported and shared. Unlike traditional container runtimes, Apptainer emphasizes integration over isolation, ensuring that the user inside the container has the same privileges and identity as the user outside, which simplifies access to host resources like GPUs, parallel filesystems, and network stacks.
 
-## Core CLI Operations
+Apptainer is a powerful container platform designed specifically for the needs of shared computing environments and High-Performance Computing (HPC). Unlike other container runtimes, Apptainer prioritizes "integration over isolation," meaning it makes it easy to access host resources like GPUs, high-speed networks, and parallel filesystems. It uses a unique single-file image format (SIF) that is immutable and easily shareable. Crucially, Apptainer maintains a secure user model where the user inside the container has the same privileges as the user outside, preventing unauthorized privilege escalation on shared systems.
 
-### Running and Executing
-* **Run the default command**: Use `apptainer run <image.sif>` to execute the runscript defined in the image metadata.
-* **Execute specific commands**: Use `apptainer exec <image.sif> <command>` to run an arbitrary command within the container environment.
-* **Interactive shell**: Use `apptainer shell <image.sif>` to spawn an interactive shell inside the container.
-* **Instance management**: Use `apptainer instance start <image.sif> <name>` to run a container in the background as a service.
+## Common CLI Patterns
+
+### Image Acquisition and Inspection
+*   **Pull from Docker Hub**: `apptainer pull docker://ubuntu:22.04` (creates an `ubuntu_22.04.sif` file).
+*   **Pull from OCI Registry**: `apptainer pull oras://registry.example.com/image:tag`.
+*   **Inspect Metadata**: `apptainer inspect ubuntu.sif` to view build dates, labels, and original definition settings.
+
+### Container Execution
+*   **Interactive Shell**: `apptainer shell my_container.sif` (drops you into the container environment).
+*   **Execute a Command**: `apptainer exec my_container.sif python3 script.py`.
+*   **Run Default Script**: `apptainer run my_container.sif` (executes the `%runscript` defined in the image).
+*   **Run directly from Docker Hub**: `apptainer run docker://alpine` (downloads and runs in one step).
 
 ### Building Images
-* **Build from a definition file**: Use `apptainer build <output.sif> <recipe.def>`.
-* **Build from a URI**: Use `apptainer build <output.sif> docker://<image>:<tag>` to convert Docker/OCI images to SIF.
-* **Rootless builds**: Use the `--fakeroot` flag to build images without root privileges. This utilizes user namespaces to simulate root during the build process.
-* **Sandbox mode**: Use `apptainer build --sandbox <directory> <source>` to create a writable directory for development. Note that SIF files are immutable; changes require a sandbox or a new build.
+*   **Build from Definition File**: `apptainer build my_image.sif image.def`.
+*   **Convert Docker to SIF**: `apptainer build my_image.sif docker://godlovedc/lolcow`.
+*   **Sandbox Mode**: `apptainer build --sandbox my_directory/ docker://ubuntu` (creates a writable directory for development).
 
-### Image Management
-* **Pulling images**: Use `apptainer pull <name.sif> <source>` to download and convert images from registries (Docker Hub, ORAS, IPFS).
-* **Inspecting metadata**: Use `apptainer inspect <image.sif>` to view labels, runscripts, and environment variables defined in the image.
-
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
 ### Resource Integration
-* **GPU Acceleration**: Use the `--nv` flag for NVIDIA GPUs or `--rocm` for AMD GPUs to automatically bind the necessary host drivers into the container.
-* **Bind Mounts**: Apptainer automatically binds the user's `$HOME`, `/tmp`, and `/dev`. Use the `--bind` or `-B` flag (e.g., `-B /data:/mnt`) to map additional host directories.
-* **Environment Variables**: Variables prefixed with `APPTAINERENV_` on the host are automatically converted to variables inside the container (e.g., `APPTAINERENV_FOO=bar` becomes `FOO=bar`).
+*   **GPU Support**: Always use the `--nv` flag for NVIDIA GPUs or `--rocm` for AMD GPUs to inject the necessary host drivers into the container.
+    *   Example: `apptainer exec --nv my_cuda_image.sif ./gpu_app`
+*   **Binding Host Paths**: By default, Apptainer binds `$HOME`, `/tmp`, and `$PWD`. Use `--bind` (or `-B`) to map additional host directories.
+    *   Example: `apptainer exec --bind /data:/mnt/data my_image.sif ls /mnt/data`
 
 ### Security and Permissions
-* **User Identity**: Remember that you are the same user inside the container as outside. You cannot gain additional privileges on the host system by default.
-* **Security Flags**: Use `--security` options to apply SELinux or AppArmor profiles if required by the host environment.
-* **Writable Storage**: If a container needs to write to its own filesystem (not a bind mount), use the `--writable-tmpfs` flag to add a temporary writable layer in RAM.
+*   **Unprivileged Builds**: On modern Linux kernels, you can build SIF files without root privileges using the `--fakeroot` flag.
+*   **Writable Overlays**: Since SIF files are immutable, use `--overlay` to persist changes or write data to a specific layer without modifying the base image.
+*   **User Identity**: Remember that you are the same user inside the container. If you cannot write to a directory on the host, you cannot write to it from inside the container.
 
-### Performance and Storage
-* **Temporary Directory**: Set the `APPTAINER_TMPDIR` environment variable to a fast local disk (like `/scratch` or `/tmp`) to speed up image builds and prevent filling up the root partition.
-* **Caching**: Manage the local image cache using `apptainer cache list` and `apptainer cache clean` to recover disk space.
+### Compatibility
+*   **Singularity Migration**: Apptainer is the successor to Singularity. Most `singularity` commands are aliased to `apptainer`, but updating scripts to use the `apptainer` binary is recommended for long-term compatibility.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Build an Apptainer image |
+| cache | Manage your local Apptainer cache. You can list/clean using the specific types. |
+| capability | Manage Linux capabilities for users and groups. Capabilities allow you to have fine grained control over the permissions that your containers need to run. |
+| checkpoint | Manage container checkpoint state (experimental) |
+| completion | Generate the autocompletion script for apptainer for the specified shell. |
+| config | Manage various apptainer configuration (root user only). The config command allows root user to manage various configuration like fakeroot user mapping entries. |
+| delete | Deletes requested image from the library |
+| exec | Run a command within a container |
+| inspect | Show metadata for an image. Inspect will show you labels, environment variables, apps and scripts associated with the image determined by the flags you pass. |
+| instance | Manage containers running as services. Instances allow you to run containers as background processes. This can be useful for running services such as web servers or databases. |
+| key | Manage your trusted, public and private keys in your local or in the global keyring (local keyring: '~/.apptainer/keys' if 'APPTAINER_KEYSDIR' is not set, global keyring: '/usr/local/etc/apptainer/global-pgp-public') |
+| keyserver | The 'keyserver' command allows you to manage standalone keyservers that will be used for retrieving cryptographic keys. |
+| oci | Manage OCI containers. Allow you to manage containers from OCI bundle directories. NOTE: all oci commands requires to run as root. |
+| overlay | The overlay command allows management of EXT3 writable overlay images. |
+| plugin | The 'plugin' command allows you to manage Apptainer plugins which provide add-on functionality to the default Apptainer installation. |
+| pull | The 'pull' command allows you to download or build a container from a given URI. |
+| push | Upload image to the provided URI. The 'push' command allows you to upload a SIF container to a given URI (library:// or oras://). |
+| registry | Manage authentication to OCI/Docker registries. The 'registry' command allows you to manage authentication to standalone OCI/Docker registries, such as 'docker://' or 'oras://'. |
+| remote | Manage apptainer remote endpoints through its subcommands. A 'remote endpoint' is a group of services compatible with the container library API. |
+| run | Run the user-defined default command within a container. This command will launch an Apptainer container and execute a runscript if one is defined for that container. |
+| run-help | Show the user-defined help for an image |
+| search | Search a Container Library for container images matching the search query. You can specify an alternate architecture, and/or limit the results to only signed images. |
+| shell | Run a shell within a container |
+| sif | Manipulate Singularity Image Format (SIF) images. A set of commands are provided to display elements such as the SIF global header, the data object descriptors and to dump data objects. It is also possible to modify a SIF file via this tool via the add/del commands. |
+| sign | Add digital signature(s) to an image. The sign command allows a user to add one or more digital signatures to a SIF image. By default, one digital signature is added for each object group in the file. |
+| test | Run the user-defined tests within a container |
+| verify | The verify command allows a user to verify one or more digital signatures within a SIF image. |
 
 ## Reference documentation
-- [Apptainer README](./references/github_com_apptainer_apptainer.md)
-- [Security Policy and Advisories](./references/github_com_apptainer_apptainer_security.md)
+- [Apptainer Index](./references/apptainer_org_index.md)
+- [GitHub Apptainer Repository](./references/github_com_apptainer_apptainer.md)
+- [Apptainer Get Started](./references/apptainer_org_get-started.md)

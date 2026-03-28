@@ -1,6 +1,6 @@
 ---
 name: colorid_bv
-description: "colorid_bv builds and queries BIGSI indexes to facilitate rapid k-mer similarity searching and read classification across large genomic datasets. Use when user asks to build a Bloom filter index, search for gene presence in unassembled data, or classify and filter metagenomic reads."
+description: colorid_bv manages and queries large-scale genomic datasets using a Bit-Vector based BIGSI implementation for rapid k-mer similarity inference. Use when user asks to build a BIGSI index, search sequences against an index, identify the taxonomic origin of reads, or filter genomic datasets.
 homepage: https://github.com/hcdenbakker/colorid_bv
 ---
 
@@ -8,59 +8,53 @@ homepage: https://github.com/hcdenbakker/colorid_bv
 # colorid_bv
 
 ## Overview
-
-`colorid_bv` is a high-performance tool utilizing a BIGSI (Bloom Filter Index) implementation to facilitate metagenomic analysis and quality control. It allows users to index large volumes of genomic data—either reference sequences or raw reads—into a searchable structure. Once indexed, users can rapidly query the data to determine k-mer similarity, detect the presence of specific genes in unassembled data, or classify reads using a majority-rule algorithm. It is particularly effective for screening thousands of datasets for specific markers without the computational overhead of full assembly.
+The `colorid_bv` skill provides a specialized workflow for managing and querying large-scale genomic datasets using a Bit-Vector based BIGSI implementation. This tool is essential for researchers needing to rapidly identify the presence of specific genes or sequences across hundreds or thousands of unassembled genomes. It excels at k-mer similarity inference and read classification, allowing for efficient taxonomic filtering and isolate identification without the need for full genome assembly.
 
 ## Core Workflows
 
 ### 1. Building a BIGSI Index
-To search sequences, you must first create an index from your reference material or raw data.
+Before searching, you must index your reference sequences.
+- **Reference File Format**: Create a tab-delimited file (`ref_list.txt`) where each line is: `Accession_Name /path/to/fasta`.
+- **Standard Build**:
+  `colorid_bv build -r ref_list.txt -b index_name -k 31 -s 50000000 -n 4 -c 4`
+- **High-Performance Build**: Use the `-t` flag for multi-threading:
+  `colorid_bv build -r ref_list.txt -b index_name -k 21 -s 30000000 -n 2 -t 24 -c 24`
 
-*   **Prepare a reference file**: Create a tab-delimited text file where each line contains an identifier and the path to the corresponding sequence file.
-    ```bash
-    # Example reference file (refs.txt)
-    sample1    /path/to/sample1.fastq.gz
-    sample2    /path/to/sample2.fastq.gz
-    ```
-*   **Execute the build**:
-    ```bash
-    colorid_bv build -r refs.txt -b my_index_name -k 31 -s 50000000 -n 4 -c 4
-    ```
-    *   `-k`: K-mer size (default 31).
-    *   `-s`: Bloom filter size (adjust based on sample complexity).
-    *   `-n`: Number of hash functions.
-    *   `-t`: Number of threads for parallel building.
-
-### 2. Searching the Index
-Search for k-mer similarity between a query and the indexed references.
-
-*   **Standard Search**:
-    ```bash
-    colorid_bv search -b my_index_name -q query.fastq.gz -r query_reverse.fastq.gz
-    ```
-*   **Gene Detection (Gene Search)**: Use the `-g` flag to report the proportion of k-mers from a query (e.g., a specific gene sequence) matching entries in the index.
-    ```bash
-    colorid_bv search -b my_index_name -q gene_of_interest.fasta -g
-    ```
-*   **Perfect Match Search**: Use `-s` for a fast "perfect match" algorithm.
+### 2. Searching Sequences
+Search query files (FASTQ/FASTA) against a built index.
+- **General Search**:
+  `colorid_bv search -b index_name -q query_1.fastq.gz -r query_2.fastq.gz`
+- **Gene Presence Interrogation**: Use `-g` for imperfect matches (reports k-mer proportions) or `-s` for fast perfect matches.
+  `colorid_bv search -b index_name -q gene_of_interest.fasta -g`
+- **Multi-fasta Query**: Use `-m` to treat each entry in a multi-fasta file as a separate query.
 
 ### 3. Read Classification and Filtering
-Classify individual reads to identify taxa or filter specific sequences from a dataset.
-
-*   **Identify Reads**:
-    ```bash
-    colorid_bv read_id --bigsi my_index_name --prefix output_prefix --query reads.fastq.gz
-    ```
-*   **Filter Reads**: Use the output from `read_id` with the `read_filter` subcommand to extract or remove specific taxa.
+Identify the taxonomic origin of individual reads.
+- **Identify Reads**:
+  `colorid_bv read_id -b index_name -q query.fastq.gz --prefix output_prefix`
+- **Optimization**: Use `-H` (High Memory Load) to load the index into RAM (requires ~2x index size) for significantly faster processing.
+- **False Positive Correction**: Adjust `-p` (default 3) for larger datasets to maintain accuracy.
 
 ## Expert Tips and Best Practices
+- **K-mer Selection**: Use `k=31` for species-level identification and mixed samples. Use `k=21` for specific gene searches in cleaner datasets to increase sensitivity.
+- **Index Sizing**: The `-s` parameter (Bloom filter size) and `-n` (number of hashes) are critical. For complex metagenomes, increase these to lower the false positive rate.
+- **Memory Management**: If the system has sufficient RAM, always use the `-H` flag during `read_id` operations to avoid slow disk I/O.
+- **Batch Processing**: When using `read_id`, the default batch size is 50,000 reads. Adjust with `-c` based on available CPU threads.
 
-*   **Parameter Tuning**: For complex metagenomic samples, increase the Bloom filter size (`-s`) to reduce the false positive rate.
-*   **Gene Search Optimization**: When searching for small genes in large datasets, a smaller k-mer size (e.g., `-k 21`) is often more sensitive than the default 31.
-*   **Memory Management**: Use the `-H` (high memory load) flag during `read_id` for faster processing if your system has RAM at least 2x the size of the index.
-*   **Batch Processing**: For large numbers of samples, use `batch_id` to classify multiple files in a single run.
-*   **Index Inspection**: Use the `info` subcommand to dump index parameters and accessions if you forget the settings used during the build.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| batch_id | classifies batch of samples reads |
+| build | builds a bigsi |
+| info | dumps index parameters and accessions |
+| merge | merges (concatenates) indices |
+| read_filter | filters reads |
+| read_id | id's reads |
+| search | does a bigsi search on one or more fasta/fastq.gz files |
 
 ## Reference documentation
-- [colorid_bv GitHub Repository](./references/github_com_hcdenbakker_colorid_bv.md)
-- [colorid_bv Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_colorid_bv_overview.md)
+- [colorid_bv README](./references/github_com_hcdenbakker_colorid_bv_blob_master_README.md)
+- [Reference File Example](./references/github_com_hcdenbakker_colorid_bv_blob_master_ref_file_example.txt.md)

@@ -106,3 +106,6 @@ options:
                         sequence in JSON format for MultiQC
 ```
 
+
+## Metadata
+- **Skill**: generated

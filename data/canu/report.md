@@ -502,3 +502,6 @@ ERROR:  Assembly name prefix (-p) not supplied.
 ERROR:  Required parameter 'genomeSize' not set.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -294,3 +294,6 @@ optional arguments:
   -v, --version         Outputs the version number
 ```
 
+
+## Metadata
+- **Skill**: generated

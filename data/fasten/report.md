@@ -355,3 +355,6 @@ Options:
         --version       Print the version of Fasten and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

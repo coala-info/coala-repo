@@ -1,6 +1,6 @@
 ---
 name: outrigger
-description: "Outrigger identifies and quantifies novel and known alternative splicing events from RNA-seq data using a graph-database approach. Use when user asks to index splice junctions, validate de novo splicing events against a genome, or calculate Percent Spliced-In scores."
+description: Outrigger identifies and quantifies alternative splicing events like skipped exons and mutually exclusive exons from RNA-seq data using a graph-based approach. Use when user asks to build a splicing index from junctions or BAM files, validate de novo splice sites against a reference genome, or calculate Percent Spliced-In scores.
 homepage: https://yeolab.github.io/outrigger
 ---
 
@@ -8,51 +8,68 @@ homepage: https://yeolab.github.io/outrigger
 # outrigger
 
 ## Overview
+Outrigger is a specialized bioinformatics tool designed to identify and quantify alternative splicing events—specifically Skipped Exons (SE) and Mutually Exclusive Exons (MXE)—directly from RNA-seq data. Unlike tools that rely solely on existing annotations, Outrigger uses a graph database approach to discover novel exons and junctions present in your specific dataset. The workflow follows a three-step process: indexing junctions to find events, validating those events against biological splice-site rules, and calculating the final Psi scores.
 
-Outrigger is a specialized bioinformatics tool that transforms raw RNA-seq junction data into a quantifiable splicing annotation. Unlike traditional tools that rely solely on existing databases, Outrigger uses a graph-database approach to identify novel exons and splicing patterns directly from your samples. It follows a three-stage workflow: indexing junctions to find events, validating those events against genomic sequences, and calculating the inclusion levels (Psi) across samples.
+## Core Workflow and CLI Patterns
 
-## Core Workflow
+### 1. Building the Splicing Index (`index`)
+This step is computationally intensive and builds the graph of potential splicing events.
 
-### 1. Building the Splicing Index
-The `index` command is the most resource-intensive step. It identifies potential exons and builds the graph of splicing events.
-
-*   **Using STAR Junctions (Recommended):** Faster as counts are pre-aggregated.
+*   **Using STAR Junctions (Recommended):** Faster than BAM files as counts are pre-aggregated.
     ```bash
-    outrigger index --sj-out-tab path/to/*SJ.out.tab --gtf annotation.gtf
+    outrigger index --sj-out-tab *SJ.out.tab --gtf <annotation.gtf>
     ```
 *   **Using BAM Files:** Slower; requires sorted and indexed BAMs.
     ```bash
-    outrigger index --bams path/to/*.sorted.bam --gtf annotation.gtf
+    outrigger index --bam *sorted.bam --gtf <annotation.gtf>
     ```
-*   **Optimization Tip:** Use `--n-jobs` to parallelize. Indexing can take 24+ hours on large datasets; at least 4-8 cores are recommended.
+*   **Optimization Tips:**
+    *   **Parallelization:** Always use multiple cores. Use `--n-jobs -1` to use all available processors.
+    *   **Memory Management:** Use the `--low-memory` flag for large datasets to reduce the RAM footprint during CSV operations.
+    *   **Filtering:** Use `--min-reads` (default 10) to ignore low-confidence junctions and speed up graph construction.
 
-### 2. Validating Splice Sites
-The `validate` command filters the de novo events to ensure they follow biological rules (e.g., GT/AG or AT/AC motifs).
+### 2. Validating Splice Sites (`validate`)
+Filters the de novo events to ensure they follow canonical biological rules (e.g., GT/AG or AT/AC).
 
 ```bash
-outrigger validate --genome mm10 --fasta path/to/genome.fa
+outrigger validate --genome <genome_id> --fasta <reference.fasta>
 ```
-*   **Note:** You must provide the genome fasta and, ideally, a chromosome sizes file (`-g`) to ensure coordinates are valid.
+*   **Note:** This step requires a genome fasta file and is highly recommended to remove noise from the de novo index.
 
-### 3. Quantifying Percent Spliced-In (Psi)
-The `psi` command calculates the final inclusion scores based on the validated index.
+### 3. Quantifying Splicing (`psi`)
+Calculates the Percent Spliced-In (Ψ) scores for the validated (or indexed) events.
 
 ```bash
 outrigger psi
 ```
-*   **Default Behavior:** If run in the same directory as the previous steps, it automatically finds the `./outrigger_output/index` folder.
-*   **Filtering:** Use `--min-reads` (default 10) to adjust the stringency of junction support required for a Psi calculation.
+*   **Execution:** Run this in the same directory where `index` was performed. It automatically looks for the `outrigger_output` folder.
+*   **Output:** The primary result is `outrigger_output/psi/outrigger_psi.csv`, containing a matrix of events (rows) by samples (columns).
 
 ## Expert Tips and Best Practices
+*   **Directory Consistency:** Always run `index`, `validate`, and `psi` from the same working directory. Outrigger relies on a specific folder structure (`outrigger_output/`) created during the indexing phase.
+*   **Runtime Expectations:** 
+    *   `index`: 24–48 hours (highly dependent on junction count).
+    *   `validate`: 2–4 hours.
+    *   `psi`: 4–8 hours.
+*   **Resuming Interrupted Jobs:** If an indexing job fails, use the `--resume` flag to continue from the last checkpoint, or `--force` to overwrite and start over.
+*   **Multimapping Reads:** By default, Outrigger includes multimapping reads. Use `--ignore-multimapping` if you require higher stringency, particularly when working with repetitive genomic regions.
+*   **Custom Splice Sites:** For non-mammalian systems, you can adjust the valid splice sites during the `validate` step if the defaults (GT/AG, AT/AC) are not applicable.
 
-*   **Directory Consistency:** Always run `index`, `validate`, and `psi` from the same working directory. Outrigger relies on a specific folder structure (`outrigger_output/`) created during the index step.
-*   **Memory Management:** For large datasets or systems with limited RAM, use the `--low-memory` flag available in the `index`, `validate`, and `psi` subcommands to reduce the footprint when reading large CSV files.
-*   **Resuming Progress:** If an indexing run is interrupted, use the `--resume` flag to pick up where it left off. Use `--force` only if you need to overwrite a previous failed or incomplete run.
-*   **Specific Event Types:** If you are only interested in one type of splicing, use `--splice-types se` or `--splice-types mxe` during the index step to save time.
-*   **Multimapping Reads:** By default, Outrigger includes multimapping reads. If your alignment strategy produced many non-unique mappings that might bias splicing ratios, use the `--ignore-multimapping` flag.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| outrigger | outrigger: error: invalid choice: 'correct' (choose from 'index', 'validate', 'psi') |
+| outrigger | outrigger: error: invalid choice: 'database' (choose from 'index', 'validate', 'psi') |
+| outrigger | outrigger: error: invalid choice: 'splicing' (choose from 'index', 'validate', 'psi') |
+| outrigger psi | Calculate PSI scores |
+| outrigger validate | Validate splice site sequences against a genome. |
+| outrigger_index | Build an index of alternative splicing events from splice junction data. |
 
 ## Reference documentation
-- [index: Build a de novo splicing annotation index](./references/yeolab_github_io_outrigger_subcommands_outrigger_index.html.md)
-- [validate: Check that the found exons are real](./references/yeolab_github_io_outrigger_subcommands_outrigger_validate.html.md)
-- [psi: Calculate percent spliced-in (Psi/Ψ) scores](./references/yeolab_github_io_outrigger_subcommands_outrigger_psi.html.md)
-- [Usage Overview](./references/yeolab_github_io_outrigger_usage.html.md)
+- [Usage Guide](./references/yeolab_github_io_outrigger_usage.html.md)
+- [Index Subcommand](./references/yeolab_github_io_outrigger_subcommands_outrigger_index.html.md)
+- [Validate Subcommand](./references/yeolab_github_io_outrigger_subcommands_outrigger_validate.html.md)
+- [Psi Subcommand](./references/yeolab_github_io_outrigger_subcommands_outrigger_psi.html.md)

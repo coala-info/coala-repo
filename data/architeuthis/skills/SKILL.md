@@ -1,6 +1,6 @@
 ---
 name: architeuthis
-description: Architeuthis is a bioinformatics utility designed to merge, annotate, and analyze Kraken and Bracken classification reports. Use when user asks to merge multiple sample outputs into a single table, append taxonomic lineage to Bracken files, or analyze k-mer mapping quality and consistency.
+description: Architeuthis is a bioinformatics utility designed to process, merge, and annotate taxonomic classification data from the Kraken suite. Use when user asks to merge sample outputs, annotate TaxIDs with lineage paths, analyze k-mer mapping reliability, or filter Kraken files based on classification consistency.
 homepage: https://github.com/cdiener/architeuthis
 ---
 
@@ -9,54 +9,67 @@ homepage: https://github.com/cdiener/architeuthis
 
 ## Overview
 
-architeuthis is a specialized command-line utility designed to bridge the gap between raw Kraken-family outputs and downstream statistical analysis. It provides a fast, standalone solution for common bioinformatics bottlenecks such as merging large sets of classification reports and annotating Bracken files with complete taxonomic hierarchies. Beyond simple data manipulation, it offers advanced diagnostic capabilities to investigate k-mer classification patterns, allowing researchers to assess the reliability of taxonomic assignments based on mapping consistency and entropy across different ranks.
+Architeuthis (the "giant squid") is a specialized utility designed to streamline bioinformatics pipelines involving the Kraken suite. It eliminates the need for custom scripts to handle common tasks such as combining sample outputs or expanding TaxIDs into full taxonomic paths. Its primary strengths lie in its speed and its ability to perform deep-dives into k-mer classifications to identify cross-domain matches or poorly resolved taxa.
 
-## Core Workflows and CLI Patterns
+## Core Workflows
 
-### Merging Sample Outputs
-Use the `merge` command to combine multiple Kraken or Bracken output files into a single table. This is significantly more efficient than manual joins for large cohorts.
+### 1. Merging Sample Outputs
+Efficiently combine multiple classification files into a single dataset. Architeuthis automatically detects the file type and adds a `sample_id` column based on the filename.
 
-```bash
-# Merge multiple Bracken files into a single abundance matrix
-architeuthis merge sample1.bracken sample2.bracken sample3.bracken > merged_abundance.tsv
+- **Bracken/CSV files**: `architeuthis merge -o merged_output.csv *.b2`
+- **Kraken files**: `architeuthis merge -o merged.k2 sample1.k2 sample2.k2`
 
-# Merge Kraken report files
-architeuthis merge *.kreport > combined_reports.tsv
-```
+### 2. Lineage Annotation
+Transform TaxIDs into human-readable taxonomic paths. This is most efficient when performed *after* merging multiple samples.
 
-### Adding Taxonomic Lineage
-Bracken reports typically lack the full lineage string. Use the `lineage` command to append this information, which is essential for hierarchical analysis and visualization.
+- **Basic annotation**: `architeuthis lineage input.b2 -o annotated.csv`
+- **Custom format**: Use `--format` with taxonkit syntax (e.g., `"{genus};{species}"`).
+- **Database source**: Use `--db /path/to/kraken_db` to ensure the taxonomy matches your classification run.
 
-```bash
-# Add lineage information using a Kraken database
-architeuthis lineage --db /path/to/kraken_db sample_report.bracken > annotated_report.tsv
-```
+### 3. Mapping Analysis
+Investigate the reliability of classifications by looking at individual k-mer assignments.
 
-### Analyzing Mapping Quality
-To dive deeper into how reads were classified at the k-mer level, use the `mapping` command. This helps identify taxa that may be false positives due to inconsistent k-mer hits.
+- **K-mer summary**: `architeuthis mapping kmers sample.k2 --out mappings.csv`
+  - Useful for seeing if a "Bacterial" read actually contains "Human" k-mers.
+- **Taxonomic summary**: `architeuthis mapping summary sample.k2 --out summary.csv`
+  - Collapses mappings by rank to identify discordant classifications (where `in_lineage` is 0).
 
-```bash
-# Analyze k-mer level mapping for a Kraken output file
-architeuthis mapping --db /path/to/kraken_db kraken_output.txt > mapping_analysis.tsv
-```
+### 4. Quality Filtering
+Filter Kraken output files (`.k2`) to retain only high-confidence reads based on k-mer distribution.
 
-### Filtering and Metrics
-architeuthis can filter mappings based on several quality metrics:
-- **Mapping Consistency**: How uniformly k-mers support the assigned taxon.
-- **Mapping Entropy**: A measure of the uncertainty in the k-mer distribution at the final taxonomic rank.
-- **Multiple Mappings**: Identifying reads that match multiple taxa at the same rank.
-
-## Expert Tips and Best Practices
-
-- **Database Path**: While the `--db` flag is optional for some commands, always provide it when performing lineage annotation or mapping analysis to ensure the tool uses the correct taxonomic nodes and names from your specific Kraken build.
-- **Performance**: architeuthis is written in Go and optimized for speed. When merging hundreds of samples, pipe the output directly to a compressed file or a downstream tool to save disk I/O.
-- **Shell Integration**: Generate autocompletion scripts to speed up CLI usage:
+- **Filter command**:
   ```bash
-  architeuthis completion bash > /etc/bash_completion.d/architeuthis
+  architeuthis mapping filter \
+      --min-consistency 0.9 \
+      --max-multiplicity 2 \
+      --max-entropy 0.1 \
+      --out filtered.k2 \
+      input.k2
   ```
-- **Bracken Compatibility**: Ensure your Bracken files are in the standard format produced by `bracken -r` or `bracken-build`. architeuthis detects the format automatically but relies on standard column headers.
+- **Metrics**:
+  - **Consistency**: Fraction of k-mers matching the final read classification.
+  - **Multiplicity**: Number of unique taxa matched at the same rank.
+  - **Entropy**: Shannon index of k-mer assignments (abundance-weighted multiplicity).
+
+## Expert Tips
+
+- **Taxonomy Dumps**: If not using a Kraken DB, specify a local NCBI taxonomy directory using `--data-dir /path/to/taxdump/`.
+- **Modified Domains**: Architeuthis uses a modified domain rank that merges "domain", "acellular root", and "superkingdom" to better support Viruses and various NCBI taxonomy versions.
+- **Performance**: For large-scale studies, always `merge` first, then `lineage` to take advantage of internal taxonomy hashing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| completion | Generate the autocompletion script for the specified shell |
+| mapping | A tool for processing Kraken output, including filtering, k-mer summarization, and scoring. |
+| merge | Merge results using architeuthis |
 
 ## Reference documentation
 
-- [architeuthis GitHub Repository](./references/github_com_cdiener_architeuthis.md)
-- [Bioconda architeuthis Overview](./references/anaconda_org_channels_bioconda_packages_architeuthis_overview.md)
+- [Lineage annotation](./references/cdiener_github_io_architeuthis_lineage.md)
+- [Mapping Analysis](./references/cdiener_github_io_architeuthis_mapping.md)
+- [Filtering](./references/cdiener_github_io_architeuthis_filter.md)
+- [Merging](./references/cdiener_github_io_architeuthis_merge.md)

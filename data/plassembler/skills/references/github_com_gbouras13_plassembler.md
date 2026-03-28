@@ -1,1 +1,266 @@
-GitHub - gbouras13/plassembler: Program to quickly and accurately assemble plasmids in hybrid and long-only sequenced bacterial isolates Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} gbouras13 / plassembler Public Notifications You must be signed in to change notification settings Fork 10 Star 84 Program to quickly and accurately assemble plasmids in hybrid and long-only sequenced bacterial isolates License MIT license 84 stars 10 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 8 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights gbouras13/plassembler main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 444 Commits 444 Commits .github .github build build docs docs img img src/ plassembler src/ plassembler tests tests .flake8 .flake8 .gitignore .gitignore .readthedocs.yaml .readthedocs.yaml AUTHORS.md AUTHORS.md CONTRIBUTING.md CONTRIBUTING.md HISTORY.md HISTORY.md LICENSE LICENSE README.md README.md justfile justfile pyproject.toml pyproject.toml requirements.txt requirements.txt run_plassembler.ipynb run_plassembler.ipynb View all files Repository files navigation README Contributing MIT license plassembler Automated Bacterial Plasmid Assembly Program plassembler is a program that is designed for automated &amp; fast assembly of plasmids in bacterial genomes that have been hybrid sequenced with long read &amp; paired-end short read sequencing. It was originally designed for Oxford Nanopore Technologies long reads, but it will also work with Pacbio reads. As of v1.3.0, it also works well for long-read only assembled genomes. If you are assembling a small number of bacterial genomes manually, I would recommend starting by using Trycycler to recover the chromosome before using Plassembler to recover plasmids, especially the small ones. Otherwise, I recommend you don't actually use Plassembler by itself. If you have more genomes or want to assemble your genomes in a more automated way, I would recommend Hybracter . If you use Hybracter, you will not need to use Plassembler separately, as it is built in. But please still cite Plassembler. Quick Start The easiest way to install plassembler is via conda: conda install -c bioconda plassembler Followed by database download and installation: plassembler download -d &lt;databse directory&gt; And finally run plassembler : plassembler run -d &lt;database directory&gt; -l &lt;long read fastq&gt; -o &lt;output dir&gt; -1 &lt; short read R1 fastq&gt; -2 &lt; short read R2 fastq&gt; -c &lt;estimated chromosome length&gt; Please read the Installation section for more details, especially if you are an inexperienced command line user. 🐳 Container Images There are two sources of Docker images available for Plassembler: Source Repository Tags Notes Biocontainers quay.io/biocontainers/plassembler Link Requires an initial plassembler download . StaPH-B docker.io/staphb/plassembler Link Database is pre-installed at /plassembler_db . Example usage with Apptainer (Singularity) To use the recommended image, define the current image and pull it. IMAGE= " quay.io/biocontainers/plassembler:1.8.1--pyhdfd78af_0 " # Pull the container image apptainer pull --name plassembler.sif docker:// $IMAGE # Download the database (required for Biocontainers image) apptainer exec plassembler.sif plassembler download -d plassembler_db # Run Plassembler apptainer exec plassembler.sif \ plassembler run --help apptainer exec plassembler.sif \ plassembler run -d plassembler_db -l long_reads.fastq.gz -1 R1.fastq.gz -2 R2.fastq.gz -o outdir -t 4 -c 50000 Google Colab Notebook If you don't want to install plassembler locally, you can run it without any code using the colab notebook https://colab.research.google.com/github/gbouras13/plassembler/blob/main/run_plassembler.ipynb This is only recommend if you have one or a few samples to assemble (it takes a while per sample due to the limited nature of Google Colab resources - probably an hour or two a sample). If you have more than this, a local install is recommended. Manuscript plassembler has been recently published in Bioinformatics : George Bouras, Anna E. Sheppard, Vijini Mallawaarachchi, Sarah Vreugde, Plassembler: an automated bacterial plasmid assembly tool, Bioinformatics, Volume 39, Issue 7, July 2023, btad409, https://doi.org/10.1093/bioinformatics/btad409 . If you use plassembler , please see the full Citations section for a list of all programs plassembler uses under the hood, in order to fully recognise the creators of these tools for their work. Documentation The full documentation for Plassembler can be found here . Table of Contents plassembler Automated Bacterial Plasmid Assembly Program Quick Start Container Google Colab Notebook Manuscript Documentation Table of Contents plassembler v1.5.0 Update New Database (21 November 2023) plassembler v1.3.0 Updates (24 October 2023) Why Does Plassembler Exist? Why Not Just Use Unicycler? Other Features Quality Control Metagenomes Installation Conda Pip Source Unicycler v0.5.0 Installation Issues Running plassembler Outputs Benchmarking Acknowledgements Version Log Bugs and Suggestions Citations plassembler v1.5.0 Update New Database (21 November 2023) If you upgrade to v1.5.0, you will need to update the database using plassembler download Plassembler v1.5.0 incorporates a new expanded database thanks to the recent PLSDB release 2023_11_03_v2 . Thanks @ biobrad for the heads up. plassembler v1.3.0 Updates (24 October 2023) plassembler long should yield improved results. It achieves this by treating long reads as both short reads (in the sense of creating a de Brujin graph based short read assembly to begin) and long reads (for scaffolding) in Unicycler. While I'd still recommend short reads if you can get them, I am now confident that if your isolate has small plasmids in the long read set, plassembler long is very likely to find and recover them. For more information, see the documentation . The ability to specify a --flye_assembly and --flye_info if you already have a Flye assembly for your long reads instead of --flye_directory has been added. Thanks to @ incoherentian 's issue The ability to specify a --no_copy_numbers with plassembler assembled if you just want to run some plasmids against the PLSDB has been added. Thanks to @ gaworj 's issue . Why Does Plassembler Exist? In long-read assembled bacterial genomes, small plasmids are difficult to assemble correctly with long read assemblers. They commonly have circularisation issues and can be duplicated or missed (see this , this and this ). This recent paper in Microbial Genomics by Johnson et al also suggests that long read assemblers particularly miss small plasmids. plassembler was therefore created as a fast automated tool to ensure plasmids are assembled correctly without duplicated regions for high-throughput uses - like Unicycler but a lot laster - and to provide some useful statistics as well (such as estimate plasmid copy numbers for both long and short read sets). As it turns out (though this wasn't a motivation for making it), plassembler also recovers more small plasmids than the existing gold standard tool Unicycler. I think this is because it throws away chromosomal reads, similar to subsampling short reads sets which can improve recovery. As there are more plasmid reads a proportion of the overall read set, there seems to be a higher chance of recovering smaller plasmids. You can see this in
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgbouras13%2Fplassembler)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgbouras13%2Fplassembler)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=gbouras13%2Fplassembler)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[gbouras13](/gbouras13)
+/
+**[plassembler](/gbouras13/plassembler)**
+Public
+
+* [Notifications](/login?return_to=%2Fgbouras13%2Fplassembler) You must be signed in to change notification settings
+* [Fork
+  10](/login?return_to=%2Fgbouras13%2Fplassembler)
+* [Star
+   86](/login?return_to=%2Fgbouras13%2Fplassembler)
+
+* [Code](/gbouras13/plassembler)
+* [Issues
+  8](/gbouras13/plassembler/issues)
+* [Pull requests
+  1](/gbouras13/plassembler/pulls)
+* [Actions](/gbouras13/plassembler/actions)
+* [Projects](/gbouras13/plassembler/projects)
+* [Security
+  0](/gbouras13/plassembler/security)
+* [Insights](/gbouras13/plassembler/pulse)
+
+Additional navigation options
+
+* [Code](/gbouras13/plassembler)
+* [Issues](/gbouras13/plassembler/issues)
+* [Pull requests](/gbouras13/plassembler/pulls)
+* [Actions](/gbouras13/plassembler/actions)
+* [Projects](/gbouras13/plassembler/projects)
+* [Security](/gbouras13/plassembler/security)
+* [Insights](/gbouras13/plassembler/pulse)
+
+# gbouras13/plassembler
+
+main
+
+[Branches](/gbouras13/plassembler/branches)[Tags](/gbouras13/plassembler/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[444 Commits](/gbouras13/plassembler/commits/main/)   444 Commits | | |
+| [.github](/gbouras13/plassembler/tree/main/.github ".github") | | [.github](/gbouras13/plassembler/tree/main/.github ".github") |  |  |
+| [build](/gbouras13/plassembler/tree/main/build "build") | | [build](/gbouras13/plassembler/tree/main/build "build") |  |  |
+| [docs](/gbouras13/plassembler/tree/main/docs "docs") | | [docs](/gbouras13/plassembler/tree/main/docs "docs") |  |  |
+| [img](/gbouras13/plassembler/tree/main/img "img") | | [img](/gbouras13/plassembler/tree/main/img "img") |  |  |
+| [src/plassembler](/gbouras13/plassembler/tree/main/src/plassembler "This path skips through empty directories") | | [src/plassembler](/gbouras13/plassembler/tree/main/src/plassembler "This path skips through empty directories") |  |  |
+| [tests](/gbouras13/plassembler/tree/main/tests "tests") | | [tests](/gbouras13/plassembler/tree/main/tests "tests") |  |  |
+| [.flake8](/gbouras13/plassembler/blob/main/.flake8 ".flake8") | | [.flake8](/gbouras13/plassembler/blob/main/.flake8 ".flake8") |  |  |
+| [.gitignore](/gbouras13/plassembler/blob/main/.gitignore ".gitignore") | | [.gitignore](/gbouras13/plassembler/blob/main/.gitignore ".gitignore") |  |  |
+| [.readthedocs.yaml](/gbouras13/plassembler/blob/main/.readthedocs.yaml ".readthedocs.yaml") | | [.readthedocs.yaml](/gbouras13/plassembler/blob/main/.readthedocs.yaml ".readthedocs.yaml") |  |  |
+| [AUTHORS.md](/gbouras13/plassembler/blob/main/AUTHORS.md "AUTHORS.md") | | [AUTHORS.md](/gbouras13/plassembler/blob/main/AUTHORS.md "AUTHORS.md") |  |  |
+| [CONTRIBUTING.md](/gbouras13/plassembler/blob/main/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/gbouras13/plassembler/blob/main/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
+| [HISTORY.md](/gbouras13/plassembler/blob/main/HISTORY.md "HISTORY.md") | | [HISTORY.md](/gbouras13/plassembler/blob/main/HISTORY.md "HISTORY.md") |  |  |
+| [LICENSE](/gbouras13/plassembler/blob/main/LICENSE "LICENSE") | | [LICENSE](/gbouras13/plassembler/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/gbouras13/plassembler/blob/main/README.md "README.md") | | [README.md](/gbouras13/plassembler/blob/main/README.md "README.md") |  |  |
+| [justfile](/gbouras13/plassembler/blob/main/justfile "justfile") | | [justfile](/gbouras13/plassembler/blob/main/justfile "justfile") |  |  |
+| [pyproject.toml](/gbouras13/plassembler/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/gbouras13/plassembler/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| [requirements.txt](/gbouras13/plassembler/blob/main/requirements.txt "requirements.txt") | | [requirements.txt](/gbouras13/plassembler/blob/main/requirements.txt "requirements.txt") |  |  |
+| [run\_plassembler.ipynb](/gbouras13/plassembler/blob/main/run_plassembler.ipynb "run_plassembler.ipynb") | | [run\_plassembler.ipynb](/gbouras13/plassembler/blob/main/run_plassembler.ipynb "run_plassembler.ipynb") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Contributing
+* MIT license
+
+[![Open In Colab](https://camo.githubusercontent.com/eff96fda6b2e0fff8cdf2978f89d61aa434bb98c00453ae23dd0aab8d1451633/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667)](https://colab.research.google.com/github/gbouras13/plassembler/blob/main/run_plassembler.ipynb)
+
+[![Paper](https://camo.githubusercontent.com/3cb9b738bafb2e4eabf6cf60b8371e4c88a8b8051be65eb075de39567356a3b8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70617065722d42696f696e666f726d61746963732d7465616c2e7376673f7374796c653d666c61742d737175617265266d61784167653d33363030)](https://doi.org/10.1093/bioinformatics/btad409)
+[![CI](https://github.com/gbouras13/plassembler/actions/workflows/ci.yaml/badge.svg)](https://github.com/gbouras13/plassembler/actions/workflows/ci.yaml)
+[![BioConda Install](https://camo.githubusercontent.com/95cfe2c639e0bb4349b2f93e3d1f77cd5f08198d1cc87b915e6c164f5ffd4605/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f706c617373656d626c65722e7376673f7374796c653d666c6167266c6162656c3d42696f436f6e6461253230696e7374616c6c)](https://anaconda.org/bioconda/plassembler)
+[![codecov](https://camo.githubusercontent.com/bb5db47dfe53f113649401cd5c4ec790cdf27c02a72c98f97e684e491d806ddd/68747470733a2f2f636f6465636f762e696f2f67682f67626f7572617331332f706c617373656d626c65722f6272616e63682f6d61696e2f67726170682f62616467652e7376673f746f6b656e3d344231543250474d3956)](https://codecov.io/gh/gbouras13/plassembler)
+[![Code style: black](https://camo.githubusercontent.com/7019b88be88468d6b83fcbf59d2c06bfa4992bafa7d129f9b89ab29f8c7c1acb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d626c61636b2d3030303030302e737667)](https://github.com/psf/black)
+
+[![Anaconda-Server Badge](https://camo.githubusercontent.com/c474aefb4bd8d0482750dd1d53615d18fec1a8d8badc40e8e9155499526ce059/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f706c617373656d626c65722f6261646765732f76657273696f6e2e737667)](https://anaconda.org/bioconda/plassembler)
+[![Bioconda Downloads](https://camo.githubusercontent.com/7ecb9da4506931cab1b87517c60a79b6ca931041538a42bb18da910857cc92bf/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f706c617373656d626c6572)](https://img.shields.io/conda/dn/bioconda/plassembler)
+[![PyPI version](https://camo.githubusercontent.com/be77fda14092e2782c24cedf568f0607162e622c338cc5ed4451ebea6b6255be/68747470733a2f2f62616467652e667572792e696f2f70792f706c617373656d626c65722e737667)](https://badge.fury.io/py/plassembler)
+[![Downloads](https://camo.githubusercontent.com/d81ea1464e210c826ddbc90f818a9d069ea7f13aca9581d3dd5b6138236ed119/68747470733a2f2f7374617469632e706570792e746563682f62616467652f706c617373656d626c6572)](https://pepy.tech/project/plassembler)
+[![DOI](https://camo.githubusercontent.com/bfbc13754b89ca389e0dba1d1c00009ffb4e5b292657b5c4d4e228da62e48de5/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f3531343539363338392e737667)](https://zenodo.org/doi/10.5281/zenodo.10035954)
+
+# plassembler
+
+## Automated Bacterial Plasmid Assembly Program
+
+`plassembler` is a program that is designed for automated & fast assembly of plasmids in bacterial genomes that have been hybrid sequenced with long read & paired-end short read sequencing. It was originally designed for Oxford Nanopore Technologies long reads, but it will also work with Pacbio reads. As of v1.3.0, it also works well for long-read only assembled genomes.
+
+If you are assembling a small number of bacterial genomes manually, I would recommend starting by using [Trycycler](https://github.com/rrwick/Trycycler) to recover the chromosome before using Plassembler to recover plasmids, especially the small ones.
+
+Otherwise, I recommend you *don't* actually use Plassembler by itself. If you have more genomes or want to assemble your genomes in a more automated way, **I would recommend [Hybracter](https://github.com/gbouras13/hybracter)**. If you use Hybracter, you will not need to use Plassembler separately, as it is built in. But please still [cite](#citations) Plassembler.
+
+## Quick Start
+
+The easiest way to install `plassembler` is via conda:
+
+`conda install -c bioconda plassembler`
+
+Followed by database download and installation:
+
+`plassembler download -d <databse directory>`
+
+And finally run `plassembler`:
+
+`plassembler run -d <database directory> -l <long read fastq> -o <output dir> -1 < short read R1 fastq> -2 < short read R2 fastq> -c <estimated chromosome length>`
+
+Please read the [Installation](#installation) section for more details, especially if you are an inexperienced command line user.
+
+### 🐳 Container Images
+
+There are two sources of Docker images available for Plassembler:
+
+| Source | Repository | Tags | Notes |
+| --- | --- | --- | --- |
+| **Biocontainers** | `quay.io/biocontainers/plassembler` | [Link](https://quay.io/repository/biocontainers/plassembler?tab=tags) | 

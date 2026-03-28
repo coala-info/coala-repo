@@ -1,1 +1,337 @@
-GitHub - ChangqingW/SeqSizzle Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ChangqingW / SeqSizzle Public Notifications You must be signed in to change notification settings Fork 1 Star 18 License AGPL-3.0 license 18 stars 1 fork Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights ChangqingW/SeqSizzle master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 98 Commits 98 Commits .github/ workflows .github/ workflows img img src src .gitignore .gitignore CHANGELOG.md CHANGELOG.md Cargo.lock Cargo.lock Cargo.toml Cargo.toml LICENSE.md LICENSE.md README.md README.md View all files Repository files navigation README AGPL-3.0 license SeqSizzle is a pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. Installation Pre-built binary You can simply download and run the binary from Github Actions . Conda SeqSizzle is also available on bioconda : conda install -c bioconda -c conda-forge seqsizzle Cargo (crates.io) If you already have a Rust environment set up , you can use the cargo install command: cargo install seqsizzle Cargo will build the seqsizzle binary and place it in $HOME/.local/share/cargo/bin/seqsizzle . Cargo (git) If you already have a Rust environment set up, you can use the cargo install command in your local clone of the repo: git clone https://github.com/ChangqingW/SeqSizzle cd SeqSizzle cargo install --path . Cargo will build the seqsizzle binary and place it in $HOME/.cargo . Usage seqsizzle -h : A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. Usage: seqsizzle [OPTIONS] &lt;FILE&gt; [COMMAND] Commands: summarize Summarize the reads with patterns specified by the --patterns argument or the adapter flags. Make sure you supply the flags BEFORE the subcommand, e.g. `./SeqSizzle my.fastq -p my_patterns.csv --adapter-3p summarize`. '..' indicats unmatched regions of positive length, '-' indicates the patterns are overlapped, print the number of reads that match each pattern combination in TSV format. To be moved to the UI in the future enrich Find enriched k-mers in the reads. This can be used to identify potential adapter/primer sequences help Print this message or the help of the given subcommand(s) Arguments: &lt;FILE&gt; The FASTQ or FASTA file to view (supports .fastq, .fasta, .fa, .fq and their .gz variants) Options: --adapter-3p Start with 10x 3' kit adaptors: - Patrial Read1: CTACACGACGCTCTTCCGATCT (and reverse complement) - Partial TSO: CCCATGTACTCTGCGTTGATACCA (and reverse complement) - Poly(&gt;10)A/T --adapter-5p Start with 10x 5' kit adaptors - Patrial Read1: CTACACGACGCTCTTCCGATCT (and reverse complement) - Patrial Read2: AGATCGGAAGAGCACACGTCTGAA (and reverse complement) - TSO: TTTCTTATATGGG (and reverse complement) - Poly(&gt;10)A/T -p, --patterns &lt;PATTERNS_PATH&gt; Start with patterns from a CSV file Must have the following header: pattern,color,editdistance,comment -s, --save-patterns &lt;SAVE_PATTERNS_PATH&gt; Save the search panel to a CSV file before quitting. To be removed in the future since you can now hit Ctrl-S in the search panel to save the patterns --quality-italic Enable italic styling for low quality bases (enabled by default) --no-quality-italic Disable italic styling for low quality bases --quality-threshold &lt;QUALITY_THRESHOLD&gt; Quality threshold for styling [default: 10] --quality-colors Enable background color styling based on quality scores. You will probably have a hard time distinguishing forground colors from background colors, so this is disabled by default -h, --help Print help -V, --version Print version Navigation Viewer mode Up / down arrow (or j / k ) to scroll by one line, Ctrl+U / Ctrl+D to scoll half a screen. / (or Ctrl+F ) to toggle search panel, q to quit. i to toggle I talics for low quality bases (threshold define by --quality-threshold , default 10). b to toggle B ackground color styling based on quality scores Viewer mode with background color styling enabled would make forground colors hard to distinguish: Make sure your terminal supports 256 colors (e.g. terminal emulators like iterm2, kitty, etc.) and your font support italics and bold styles otherwise it may look less appealing. search panel mode Left / right arrow (or Tab / Shift-Tab) to cycle through different input fields and the patterns list. When on the patterns list field, up / down arrows cycle through patterns, Backspace (or Delete , d ) to delete the selected pattern and Return to pop the pattern into the input fields for editing. Return to add current inputs into the search pattern list (when focusing on any of the input boxes, rather than the patterns list). Use Shift + arrow keys to move cursor within an input field (as arrow keys alone are bind to cycling input fields). / or Esc to close the search panel. Subcommands enrich seqsizzle enrich --help : Find enriched k-mers in the reads. This can be used to identify potential adapter/primer sequences Usage: seqsizzle &lt;FILE&gt; enrich [OPTIONS] --output &lt;OUTPUT&gt; Options: -o, --output &lt;OUTPUT&gt; Path to write the output CSV file --max-reads &lt;MAX_READS&gt; Limit the total number of reads used for enrichment. Set to 0 to use all reads [default: 10000] --sample If set, randomly sample `--max-reads` reads from the file instead of taking the first N. Requires `--max-reads` --k-min &lt;K_MIN&gt; Minimum k-mer length to check [default: 8] --k-max &lt;K_MAX&gt; Maximum k-mer length to check [default: 12] --k-step &lt;K_STEP&gt; Step size between k-values (arithmetic progression) [default: 2] --top-kmers &lt;TOP_KMERS&gt; Number of top k-mers to keep per k value [default: 400] --substring-count-ratio-threshold &lt;SUBSTRING_COUNT_RATIO_THRESHOLD&gt; Substring filtering counts ratio threshold. For k-mers that are contained within longer k-mers, those with (shorter k-mer count) / (longer k-mer count) &gt;= this threshold will be removed. For homopolymer k-mers, the threshold is lowered to threshold^4 [default: 0.8] --min-count &lt;MIN_COUNT&gt; Minimum counts per read threshold for k-mers (overrides z-score if provided). Accepts fractional values (e.g., 0.01 for 1 count per 100 reads) --z-score-threshold &lt;Z_SCORE_THRESHOLD&gt; Z-score threshold for k-mer enrichment (default: 5.0) [default: 5] --skip-assemble Perform assembly with k_max k-mers --detect-reverse-complement Detect and merge reverse complement k-mers -h, --help Print help Example output CSV file: seqsizzle test.fastq enrich -o enrichment.csv sequence,length,estimated_count,counts_per_read,source_k,sqrt_deviance,log_fold_enrichment TTTTTTTTTTTT,12,179912,17.99,12,2041.4,18.2 AAAAAAAAAAAA,12,94008,9.40,12,1433.7,17.2 CCCATGTACTCTGCGTTGATACCACTGCTT,30,6190,0.62,assembled from k=12,640.8,49.3 CTACACGACGCTCTTCCGATCT,22,6440,0.64,assembled from k=12,533.7,33.3 AAGCAGTGGTATCAACGCAGAGTACATGGG,30,3298,0.33,assembled from k=12,463.3,48.4 AGATCGGAAGAGCGTCGTGTAG,22,3441,0.34,assembled from k=12,384.5,32.4 ... summarize seqsizzle summarize --help : Summarize the reads with patterns specified by the --patterns argument or the adapter flags. Make sure you supply the flags BEFORE the subcommand, e.g. `./SeqSizzle my.fastq -p my_patterns.csv --adapter-3p summarize`. '..' indicats unmatched regions of positive length, '-' indicates the patterns are overlapped, print 
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FChangqingW%2FSeqSizzle)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FChangqingW%2FSeqSizzle)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ChangqingW%2FSeqSizzle)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ChangqingW](/ChangqingW)
+/
+**[SeqSizzle](/ChangqingW/SeqSizzle)**
+Public
+
+* [Notifications](/login?return_to=%2FChangqingW%2FSeqSizzle) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2FChangqingW%2FSeqSizzle)
+* [Star
+   19](/login?return_to=%2FChangqingW%2FSeqSizzle)
+
+* [Code](/ChangqingW/SeqSizzle)
+* [Issues
+  0](/ChangqingW/SeqSizzle/issues)
+* [Pull requests
+  0](/ChangqingW/SeqSizzle/pulls)
+* [Actions](/ChangqingW/SeqSizzle/actions)
+* [Projects](/ChangqingW/SeqSizzle/projects)
+* [Security
+  0](/ChangqingW/SeqSizzle/security)
+* [Insights](/ChangqingW/SeqSizzle/pulse)
+
+Additional navigation options
+
+* [Code](/ChangqingW/SeqSizzle)
+* [Issues](/ChangqingW/SeqSizzle/issues)
+* [Pull requests](/ChangqingW/SeqSizzle/pulls)
+* [Actions](/ChangqingW/SeqSizzle/actions)
+* [Projects](/ChangqingW/SeqSizzle/projects)
+* [Security](/ChangqingW/SeqSizzle/security)
+* [Insights](/ChangqingW/SeqSizzle/pulse)
+
+# ChangqingW/SeqSizzle
+
+master
+
+[Branches](/ChangqingW/SeqSizzle/branches)[Tags](/ChangqingW/SeqSizzle/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[98 Commits](/ChangqingW/SeqSizzle/commits/master/)   98 Commits | | |
+| [.github/workflows](/ChangqingW/SeqSizzle/tree/master/.github/workflows "This path skips through empty directories") | | [.github/workflows](/ChangqingW/SeqSizzle/tree/master/.github/workflows "This path skips through empty directories") |  |  |
+| [img](/ChangqingW/SeqSizzle/tree/master/img "img") | | [img](/ChangqingW/SeqSizzle/tree/master/img "img") |  |  |
+| [src](/ChangqingW/SeqSizzle/tree/master/src "src") | | [src](/ChangqingW/SeqSizzle/tree/master/src "src") |  |  |
+| [.gitignore](/ChangqingW/SeqSizzle/blob/master/.gitignore ".gitignore") | | [.gitignore](/ChangqingW/SeqSizzle/blob/master/.gitignore ".gitignore") |  |  |
+| [CHANGELOG.md](/ChangqingW/SeqSizzle/blob/master/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/ChangqingW/SeqSizzle/blob/master/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [Cargo.lock](/ChangqingW/SeqSizzle/blob/master/Cargo.lock "Cargo.lock") | | [Cargo.lock](/ChangqingW/SeqSizzle/blob/master/Cargo.lock "Cargo.lock") |  |  |
+| [Cargo.toml](/ChangqingW/SeqSizzle/blob/master/Cargo.toml "Cargo.toml") | | [Cargo.toml](/ChangqingW/SeqSizzle/blob/master/Cargo.toml "Cargo.toml") |  |  |
+| [LICENSE.md](/ChangqingW/SeqSizzle/blob/master/LICENSE.md "LICENSE.md") | | [LICENSE.md](/ChangqingW/SeqSizzle/blob/master/LICENSE.md "LICENSE.md") |  |  |
+| [README.md](/ChangqingW/SeqSizzle/blob/master/README.md "README.md") | | [README.md](/ChangqingW/SeqSizzle/blob/master/README.md "README.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* AGPL-3.0 license
+
+SeqSizzle is a pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently.
+
+# Installation
+
+### Pre-built binary
+
+[![Release](https://github.com/ChangqingW/SeqSizzle/workflows/Release/badge.svg)](https://github.com/ChangqingW/SeqSizzle/actions/workflows/rust.yml)
+You can simply download and run the binary from [Github Actions](https://github.com/ChangqingW/SeqSizzle/releases/latest).
+
+### Conda
+
+SeqSizzle is also available on [bioconda](https://bioconda.github.io/recipes/seqsizzle/README.html):
+
+```
+conda install -c bioconda -c conda-forge seqsizzle
+```
+
+### Cargo (crates.io)
+
+[![Crates.io Version](https://camo.githubusercontent.com/0c83981359672b787269094165b9d01a84192da316bfcfc787aa62b466c7b597/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f762f73657173697a7a6c653f6c696e6b3d68747470732533412532462532466372617465732e696f25324663726174657325324673657173697a7a6c65)](https://crates.io/crates/seqsizzle)
+[![Crates.io Total Downloads](https://camo.githubusercontent.com/e34cdfe6b4f85d8b99cc3d3baaffb939ad5b99c7c943f2fc97dad457d407b112/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f642f73657173697a7a6c653f6c696e6b3d68747470732533412532462532466372617465732e696f25324663726174657325324673657173697a7a6c65)](https://crates.io/crates/seqsizzle)
+If you already have [a Rust environment set up](https://rustup.rs), you can use the `cargo install` command:
+
+```
+cargo install seqsizzle
+```
+
+Cargo will build the `seqsizzle` binary and place it in `$HOME/.local/share/cargo/bin/seqsizzle`.
+
+### Cargo (git)
+
+If you already have a Rust environment set up, you can use the `cargo install` command in your local clone of the repo:
+
+```
+git clone https://github.com/ChangqingW/SeqSizzle
+cd SeqSizzle
+cargo install --path .
+```
+
+Cargo will build the `seqsizzle` binary and place it in `$HOME/.cargo`.
+
+# Usage
+
+`seqsizzle -h`:
+
+```
+A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently.
+
+Usage: seqsizzle [OPTIONS] <FILE> [COMMAND]
+
+Commands:
+  summarize  Summarize the reads with patterns specified by the --patterns argument or the adapter flags. Make sure you supply the flags BEFORE the subcommand, e.g. `./SeqSizzle my.fastq -p my_patterns.csv --adapter-3p summarize`. '..' indicats unmatched regions of positive length, '-' indicates the patterns are overlapped, print the number of reads that match each pattern combination in TSV format. To be moved to the UI in the future
+  enrich     Find enriched k-mers in the reads. This can be used to identify potential adapter/primer sequences
+  help       Print this message or the help of the given subcommand(s)
+
+Arguments:
+  <FILE>  The FASTQ or FASTA file to view (supports .fastq, .fasta, .fa, .fq and their .gz variants)
+
+Options:
+      --adapter-3p
+          Start with 10x 3' kit adaptors:
+           - Patrial Read1: CTACACGACGCTCTTCCGATCT (and reverse complement)
+           - Partial TSO: CCCATGTACTCTGCGTTGATACCA (and reverse complement)
+           - Poly(>10)A/T
+      --adapter-5p
+          Start with 10x 5' kit adaptors
+           - Patrial Read1: CTACACGACGCTCTTCCGATCT (and reverse complement)
+           - Patrial Read2: AGATCGGAAGAGCACACGTCTGAA (and reverse complement)
+           - TSO: TTTCTTATATGGG (and reverse complement)
+           - Poly(>10)A/T
+  -p, --patterns <PATTERNS_PATH>
+          Start with patterns from a CSV file
+          Must have the following header:
+          pattern,color,editdistance,comment
+  -s, --save-patterns <SAVE_PATTERNS_PATH>
+          Save the search panel to a CSV file before quitting. To be removed in the future since you can now hit Ctrl-S in the search panel to save the patterns
+      --quality-italic
+          Enable italic styling for low quality bases (enabled by default)
+      --no-quality-italic
+          Disable italic styling for low quality bases
+      --quality-threshold <QUALITY_THRESHOLD>
+          Quality threshold for styling [default: 10]
+      --quality-colors
+          Enable background color styling based on quality scores. You will probably have a hard time distinguishing forground colors from background colors, so this is disabled by default
+  -h, --help
+          Print help
+  -V, --version
+          Print version
+```
+
+## Navigation
+
+### Viewer mode
+
+[![Viewer mode](/ChangqingW/SeqSizzle/raw/master/img/viewer_mode.png)](/ChangqingW/SeqSizzle/blob/master/img/viewer_mode.png)
+Up / down arrow (or `j` / `k`) to scroll by one line, `Ctrl+U` / `Ctrl+D` to scoll half a screen.
+`/` (or `Ctrl+F`) to toggle search panel, `q` to quit.
+`i` to toggle **I**talics for low quality bases (threshold define by `--quality-threshold`, default 10).
+`b` to toggle **B**ackground color styling based on quality scores
+Viewer mode with background color styling enabled would make forground colors hard to distinguish:
+[![Viewer mode with background color styling](/ChangqingW/SeqSizzle/raw/master/img/viewer_mode_background_coloring.png)](/ChangqingW/SeqSizzle/blob/master/img/viewer_mode_background_coloring.png)
+Make sure your terminal supports 256 colors (e.g. terminal emulators like iterm2, kitty, etc.) and your font support italics and bold styles otherwise it may look less appealing.
+
+### search panel mode
+
+[![Search panel mode](/ChangqingW/SeqSizzle/raw/master/img/search_panel.png)](/ChangqingW/SeqSizzle/blob/master/img/search_panel.png)
+Left / right arrow (or Tab / Shift-Tab) to cycle through different input fields and the patterns list.
+When on the patterns list field, up / down arrows cycle through patterns, `Backspace` (or `Delete`, `d`) to delete the selected pattern and `Return` to pop the pattern into the input fields for editing.
+`Return` to add current inputs into the search pattern list (when focusing on any of the input boxes, rather than the patterns list).
+Use **Shift +** arrow keys to move cursor within an input field (as arrow keys alone are bind to cycling input fields).
+`/` or `Esc` to close the search panel.
+
+## Subcommands
+
+### enrich
+
+`seqsizzle enrich --help`:
+
+```
+Find enriched k-mers in the reads. This can be used to identify potential adapter/primer sequences
+
+Usage: seqsizzle <FILE> enrich [OPTIONS] --output <OUTPUT>
+
+Options:
+  -o, --output <OUTPUT>
+          Path to write the output CSV file
+      --max-reads <MAX_READS>
+          Limit the total number of reads used for enrichment. Set to 0 to use all rea

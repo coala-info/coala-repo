@@ -1,6 +1,6 @@
 ---
 name: optimir
-description: "OptimiR is a specialized alignment workflow for small RNA-seq data that integrates genetic variants to create personalized miRNA reference libraries. Use when user asks to align small RNA-seq reads with personalized genotypes, quantify allele-specific expression, or characterize isomiR modifications."
+description: OptimiR is a bioinformatics workflow designed for the alignment of microRNA sequencing data that incorporates genetic variation to identify polymiRs and isomiRs. Use when user asks to prepare reference libraries from VCF files, process miRSeq fastq files, or aggregate results into abundance and consistency tables.
 homepage: https://github.com/FlorianThibord/OptimiR
 ---
 
@@ -8,50 +8,66 @@ homepage: https://github.com/FlorianThibord/OptimiR
 # optimir
 
 ## Overview
-OptimiR is a specialized alignment workflow designed for small RNA-seq data that integrates individual genetic information. By incorporating VCF files, it generates personalized reference libraries containing "polymiRs"—alternative miRNA sequences that reflect the user's specific genetic variants. This approach improves alignment accuracy for variant-carrying reads and enables the quantification of Allele Specific Expression (ASE) and the characterization of post-transcriptional modifications (isomiRs).
+OptimiR is a specialized bioinformatics workflow designed for the alignment of microRNA sequencing (miRSeq) data. Unlike general-purpose aligners, it specifically accounts for genetic variation by incorporating VCF files to generate "polymiRs"—alternative miRNA sequences containing known variants. It also provides detailed analysis of isomiRs, including modifications like trimming, templated tailing, and non-templated tailing. This skill provides the necessary command-line patterns to process raw fastq files, manage reference libraries, and interpret the resulting abundance and consistency tables.
 
-## Core CLI Usage
+## Core Workflows
 
-### Primary Processing Workflow
-The main entry point for alignment and quantification is the `process` command.
+### 1. Library Preparation
+Before processing samples, you must prepare the reference library. This step extracts variants from a VCF that map to miRNA coordinates and generates the necessary alignment indices.
 
 ```bash
-optimir process --fq /path/to/sample.fq.gz --dir_output /path/to/output/ --vcf /path/to/genotypes.vcf
+optimir libprep -v genotypes.vcf -o ./output_dir
+```
+*   **Tip**: If you are using non-default miRBase versions, specify the paths to matures (`-m`), hairpins (`-p`), and GFF3 (`-g`) files.
+*   **Note**: Running `libprep` separately is recommended when processing multiple samples in parallel to avoid redundant index generation.
+
+### 2. Sample Processing
+The `process` command handles the actual alignment of miRSeq reads.
+
+```bash
+optimir process --fq sample.fq.gz --vcf genotypes.vcf --dir_output ./output_dir --gff_out
+```
+*   **Sample Naming**: Ensure the sample name inside the VCF matches the fastq filename (excluding extension) for the genotype consistency analysis to work.
+*   **Temporary Files**: By default, OptimiR keeps temporary files in `OptimiR_tmp`. If you re-run a sample, it will skip the trimming step to save time unless `--trimAgain` is used. Use `--rmTempFiles` to clean up after a successful run.
+
+### 3. Summarization
+After processing all samples in a project, aggregate the results into a single summary.
+
+```bash
+optimir summarize --dir ./output_dir/OptimiR_Results
 ```
 
-### Key Arguments
-- `--fq`: Path to the input fastq file (supports .gz).
-- `--dir_output`: Directory where results and temporary files will be stored.
-- `--vcf`: (Optional but recommended) VCF file containing variants to be integrated into the miRNA reference.
-- `--rmTempFiles`: Use this flag to delete the `OptimiR_tmp` directory after a successful run to save disk space.
-- `--trimAgain`: Forces re-trimming of adapters even if temporary files from a previous run exist.
+## Expert Tips and Best Practices
 
-## Best Practices and Expert Tips
+### Handling Variants
+*   **Multi-allelic Sites**: OptimiR requires multi-allelic variants to be split into separate lines in the VCF.
+*   **Genotype Consistency**: Providing a VCF with genotypes allows OptimiR to filter out alignments that are inconsistent with the individual's genetic makeup. This is critical for accurate Allele Specific Expression (ASE) analysis.
+*   **Coordinates**: Ensure your VCF uses GRCh38 coordinates if you are using the default miRBase 21 resources.
 
-### VCF and Genotype Integration
-- **Sample Matching**: The sample name inside the VCF file must exactly match the basename of the fastq file (e.g., `sample1.fq.gz` requires sample name `sample1` in the VCF).
-- **Coordinate System**: Ensure your VCF uses GRCh38 coordinates to remain compatible with default miRBase 21 GFF3 files.
-- **Multi-allelic Variants**: OptimiR requires multi-allelic variants to be decomposed into separate lines.
-- **Genotype Format**: Use standard formats like `0/0`, `0/1`, `1/0`, or `1/1`. Complex genotypes like `0/2` are not supported.
+### Understanding Outputs
+*   **miRs_and_polymiRs_abundances**: This is the primary count table. PolymiRs are denoted with a `_na` suffix for alternative sequences.
+*   **Consistency Table**: Use this to check the reliability of polymiR detections. High "inconsistent" counts may suggest sequencing errors or sample swaps.
+*   **IsomiR Distribution**: The workflow categorizes reads into:
+    *   **Canonical**: Exact match to reference.
+    *   **Trim**: Deletions at ends.
+    *   **TA (Templated Tailing)**: Additions matching the precursor hairpin.
+    *   **NTA (Non-templated Tailing)**: Additions not matching the precursor (e.g., uridylation/adenylation).
 
-### Analyzing Results
-OptimiR produces three main output directories:
-1. **OptimiR_lib**: Contains the generated fasta sequences for miRs and polymiRs, along with alignment indexes.
-2. **OptimiR_Results**: Contains the final abundance tables.
-   - `polymiRs_table`: Detailed counts for reference vs. alternative alleles.
-   - `consistency_table`: Indicates if alignments match the provided genotypes (useful for filtering noise).
-   - `isomiRs_dist`: Distribution of modifications (Trimming, Templated Tailing, Non-Templated Tailing).
-3. **3_PostProcess**: Located within the output directory, this contains the final BAM alignment files.
+### Downstream Analysis
+OptimiR includes R scripts for visualization located in the installation directory (`optimir/libs/R_plot/`):
+*   Use `plot_ASE.R` on `polymiRs_table.annot` to visualize Allele Specific Expression.
+*   Use `plot_isoDist.R` on `isomiRs_dist.annot` to view the global distribution of isomiR modifications.
 
-### Visualization
-Use the provided R scripts located in `optimir/libs/R_plot/` to generate publication-ready figures:
-- **ASE Analysis**: Run `plot_ASE.R` on the `polymiRs_table.annot` file to visualize reference vs. alternative allele counts in heterozygotes.
-- **isomiR Distribution**: Run `plot_isoDist.R` on the `isomiRs_dist.annot` file to see the landscape of miRNA modifications.
 
-### Performance Optimization
-- **Caching**: OptimiR uses a pickle directory in `OptimiR_lib` to store library objects. If you run multiple samples against the same VCF/Reference, OptimiR will skip the library generation step, significantly reducing computation time.
-- **Resuming**: If a run is interrupted, keeping the `OptimiR_tmp` folder allows the tool to skip the trimming and collapsing steps upon restart.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| optimir libprep | Prepare reference libraries for OptimiR. |
+| optimir summarize | Summarize optimir results |
+| optimir_process | Processes sequencing data to identify and analyze microRNAs. |
 
 ## Reference documentation
-- [OptimiR GitHub Repository](./references/github_com_Florian_Thibord_OptimiR.md)
-- [OptimiR Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_optimir_overview.md)
+- [OptimiR README](./references/github_com_FlorianThibord_OptimiR_blob_master_README.md)
+- [Example Execution Script](./references/github_com_FlorianThibord_OptimiR_blob_master_example_all.sh.md)

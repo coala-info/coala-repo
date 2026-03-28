@@ -1,6 +1,6 @@
 ---
 name: smafa
-description: "smafa is a tool for efficiently indexing, querying, and clustering biological sequences of identical length. Use when user asks to create a searchable sequence database, query sequences against a reference, or cluster sequences into representative centroids."
+description: Smafa is a high-performance sequence aligner and clusterer optimized for fixed-length biological sequences. Use when user asks to cluster sequences by similarity, create a searchable sequence database, or query sequences against a database.
 homepage: https://github.com/wwood/smafa
 ---
 
@@ -8,52 +8,57 @@ homepage: https://github.com/wwood/smafa
 # smafa
 
 ## Overview
-
-smafa (Small Aligner for Aligned sequences) is a specialized tool written in Rust that provides efficient mechanisms for handling biological sequences that have already been aligned. Its primary constraint and strength is that it operates on sequences of identical length. This allows for significantly faster processing compared to general-purpose aligners. The tool is primarily used to create searchable databases from sequence sets, query those databases for matches, or cluster sequences into representative centroids.
+Smafa is a high-performance sequence aligner and clusterer specifically optimized for biological sequences that have already been aligned and share a uniform length. Unlike general-purpose aligners that handle variable lengths and indels, smafa leverages the fixed-length nature of its input to perform extremely fast distance computations and searches. It is primarily used within the SingleM ecosystem but is a powerful standalone tool for any workflow involving fixed-length sequence blocks.
 
 ## Installation
-
-The tool is available via Bioconda or Cargo:
+Smafa can be installed via Bioconda or Rust's package manager:
 
 ```bash
-# Using Conda
+# Via Bioconda
 conda install -c bioconda smafa
 
-# Using Cargo
+# Via Cargo
 cargo install smafa
 ```
 
-## Core Workflows
+## Core Workflow
 
-### 1. Database Creation and Querying
-For searching a set of sequences against a reference, you must first index the reference sequences.
-
-```bash
-# Create a database from a FASTA file
-smafa makedb reference_sequences.fasta output_db_name
-
-# Query the database with new sequences
-smafa query output_db_name query_sequences.fasta
-```
-
-### 2. Sequence Clustering
-Use the cluster mode to group similar sequences and identify centroids.
+### 1. Database Creation
+Before querying, you must initialize a database from your reference sequences. The input must be a FASTA file where every sequence is the same length.
 
 ```bash
-# Cluster sequences in a FASTA file
-smafa cluster input_sequences.fasta > clusters.tsv
+smafa makedb reference_sequences.fasta database_output.smafa
 ```
 
-## CLI Best Practices and Tips
+### 2. Querying the Database
+Once the database is created, you can search against it using a query FASTA file.
 
-- **Sequence Length Consistency**: Ensure all sequences in your input FASTA files are the same length. smafa will throw an error if it encounters sequences of varying lengths.
-- **DNA Encoding**: The tool supports standard DNA nucleotides and handles lowercase symbols. It also supports degenerate base notation (e.g., R, Y, S, W, K, M, B, D, H, V, N).
-- **Managing Output**: When running large queries, use the `--limit-per-sequence` flag to restrict the number of hits returned for each query sequence, preventing excessively large output files.
-- **Help Documentation**: Detailed options for each subcommand can be accessed using the help flag:
+```bash
+smafa query database_output.smafa query_sequences.fasta > results.tsv
+```
+
+## Expert Tips and Best Practices
+
+- **Sequence Length Consistency**: Smafa will error if it encounters sequences of varying lengths. Ensure your preprocessing pipeline (e.g., trimming or padding) guarantees identical lengths across the entire dataset.
+- **Case Sensitivity**: Modern versions of smafa support both uppercase and lowercase nucleotide symbols (A, C, G, T/U).
+- **Performance**: Smafa is written in Rust and uses bitfield encoding for nucleotides, making it exceptionally fast for large-scale metagenomic datasets.
+- **SingleM Integration**: If you are using smafa to troubleshoot SingleM results, remember that smafa handles the underlying "OTU" clustering logic for the marker genes.
+- **Help Documentation**: For specific flag details (such as identity thresholds or output formatting), use the built-in help commands:
   - `smafa makedb --help`
   - `smafa query --help`
-  - `smafa cluster --help`
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| smafa cluster | Cluster sequences by similarity |
+| smafa makedb | Generate a searchable database |
+| smafa_count | Print the number of reads/bases in a possibly gzipped FASTX file |
+| smafa_query | This command searches a database for query sequences. The database must be generated with the `makedb` command. The query sequences can be in FASTA or FASTQ format. The output is a tab-separated file with the following columns: |
 
 ## Reference documentation
-- [smafa Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_smafa_overview.md)
-- [smafa GitHub Repository](./references/github_com_wwood_smafa.md)
+- [github_com_wwood_smafa.md](./references/github_com_wwood_smafa.md)
+- [github_com_wwood_smafa_blob_main_README.md](./references/github_com_wwood_smafa_blob_main_README.md)
+- [github_com_wwood_smafa_blob_main_Cargo.toml.md](./references/github_com_wwood_smafa_blob_main_Cargo.toml.md)

@@ -1,6 +1,6 @@
 ---
 name: virprof
-description: VirProf identifies pathogens, viruses, and other microbes from host RNA-seq data using host read depletion, metagenomic assembly, and BLAST classification. Use when user asks to identify pathogens, discover viruses, identify commensal microbes, or recover viral genomes.
+description: VirProf is a bioinformatics pipeline that extracts, identifies, and assembles viral signals from host RNA-Seq data. Use when user asks to extract viral signals from host RNA-Seq data, perform host depletion, identify pathogens, or assemble viral genomes.
 homepage: https://github.com/seiboldlab/virprof
 ---
 
@@ -8,58 +8,63 @@ homepage: https://github.com/seiboldlab/virprof
 # virprof
 
 ## Overview
-VirProf is a specialized bioinformatics tool designed to bridge the gap between host transcriptomics and pathogen discovery. It integrates host read depletion with unguided metagenomic assembly and BLAST-based classification. While optimized for respiratory viruses, it is capable of identifying commensal microbes and other viral sequences within poly-A selected or total RNA-seq datasets.
+VirProf is a specialized bioinformatics pipeline designed to extract viral signals from host RNA-Seq data. It automates the process of host depletion, pathogen identification, and genome assembly. It is particularly effective for respiratory virus surveillance but can be applied to any RNA-Seq dataset where microbial or viral presence needs to be quantified. The tool leverages the YMP (Yet another Meta-omics Pipeline) framework and Snakemake to manage complex multi-stage workflows.
 
-## Installation and Setup
-VirProf is primarily distributed via Bioconda and containerized environments.
+## Core Workflows
 
-- **Conda**: `conda install bioconda::virprof`
-- **Apptainer/Singularity**: `apptainer pull library://epruesse/default/virprof`
-- **Database Requirement**: Requires the NCBI NT BLAST database (approx. 100GB unpacked). Use a symlink to point the tool to your local copy:
+### Initializing a Project
+Before running analysis, initialize the environment and ensure reference databases are linked.
+- **Test Initialization**: Run `./virprof_latest.sif init-test --force .` to generate a template directory structure including `test_data/`, `ymp.yml`, and `config.yml`.
+- **Database Setup**: VirProf requires the NCBI NT BLAST database. Link your local copy to the `databases/nt` directory:
   ```bash
-  cd databases && ln -s /path/to/your/NT_folder nt
+  cd databases
+  ln -s /path/to/your/NT_folder nt
   ```
 
-## Core CLI Patterns
-
-### Initializing Test Environments
-To verify installation and directory structure, use the `init-test` command:
-```bash
-virprof init-test --force .
-```
-This populates the current directory with a tiny example dataset, a mock BLAST database, and default configuration files.
-
 ### Running the Pipeline
-VirProf uses `ymp` (a Snakemake wrapper) to manage its stages. The standard execution follows this pattern:
-```bash
-./virprof_latest.sif ymp make <project>.<reference>.<pipeline>.pathogen --ri -j <threads>
-```
+VirProf uses a "stage stack" syntax to define the processing steps.
+- **Standard Pathogen Detection**:
+  ```bash
+  ./virprof_latest.sif ymp make <project>.<reference>.rnaseq_salmon.pathogen -j <threads>
+  ```
+- **Selective Alignment (Salmon SA)**: Use `rnaseq_salmon` for high-accuracy quantification.
+- **Rerun Interrupted Jobs**: Always include the `--ri` flag to resume from the last successful checkpoint if a run is aborted.
 
-**Common Pipeline Slugs:**
-- `rnaseq_salmon`: Standard RNA-seq processing.
-- `salmon_sa`: Salmon in Selective Alignment mode.
-- `pathogen`: The final stage for virus identification and genome recovery.
+### Configuration Best Practices
+Modify `config.yml` to tune detection sensitivity and filtering:
+- **Host Depletion**: Update `bin_prefilter_contigs` (e.g., `Euteleostomi`) and `bin_exclude_taxa` (e.g., `Hominidae`) to ensure host sequences are removed.
+- **Detection Thresholds**:
+  - `min_bp`: Minimum scaffold length (default 200).
+  - `min_reads`: Minimum read count for a hit (default 3).
+  - `max_pcthp`: Maximum homopolymer percentage to filter low-complexity sequences (default 12).
+- **Whitelist**: Use `respiratory_virus_whitelist.txt` to prioritize specific pathogens in the final summary reports.
 
-### Sample Configuration
-Samples must be defined in a CSV, TSV, or Excel sheet.
-- **Required Column**: `sample` (unique identifier).
-- **Standard Columns**: `unit`, `fq1` (forward reads), `fq2` (reverse reads).
-- **Metadata**: Any additional columns added to the sample sheet will be preserved in the final RDS output.
+## Output Interpretation
+Results are aggregated in the `reports/` directory with the naming convention `<project>.<pipeline>.<version>.<result>.<date>.<ext>`.
+- **.xlsx / .rds**: Summary reports of identified pathogens. The RDS version is preferred for downstream R analysis (e.g., with DESeq2).
+- **genomes/**: Multi-FASTA files containing recovered viral genomes grouped by species.
+- **gene_counts.rds**: A `SummarizedExperiment` object containing host gene counts for differential expression analysis.
+- **vp_multiqc_report.html**: Quality control metrics specifically for the pathogen detection stages.
 
-## Interpreting Results
-Outputs are consolidated in the `reports/` directory with the naming convention: `<project>.<pipeline>.<version>.<result>.<date>.<ext>`.
 
-- **pathogens.xlsx**: The primary human-readable summary of detected viruses.
-- **pathogens.rds**: Complete R object for downstream statistical analysis.
-- **genomes/**: A directory containing multi-FASTA files of recovered viral genomes, grouped by species.
-- **gene_counts.rds**: A `SummarizedExperiment` object containing host gene expression data, compatible with DESeq2.
-- **vp_multiqc_report.html**: Quality control metrics specifically for the pathogen detection workflow.
 
-## Expert Tips
-- **Rerunning**: Always use the `--ri` (rerun interrupted) flag when resuming a job to ensure Snakemake correctly identifies and completes unfinished tasks.
-- **Resource Management**: Use the `-j` flag to specify thread count. For large-scale NT BLAST searches, ensure the system has sufficient RAM to handle the database index.
-- **Whitelisting**: The tool uses a `respiratory_virus_whitelist.txt` by default. This can be modified to focus the classification on specific pathogens of interest.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| blast-classify | Compute LCA classification from BLAST search result |
+| download-genomes | Download genomes from NCBI. |
+| export-fasta | Exports blastbin hits in FASTA format |
+| fasta-qc | Calculates contig QC values |
+| find-bins | Collects recovered sequences into per-species files |
+| init-test | Set up a demo/test directory |
+| prepare-phylo | Prepares sequences for phylogenetic analysis |
+| virprof filter-blast | Filter sequences based on blast hits |
+| virprof index-tree | Parse NCBI taxonomy from dump files and write tree to binary |
+| virprof_blastbin | Merge and classify contigs based on BLAST search results |
+| ymp | Welcome to YMP! |
 
 ## Reference documentation
-- [VirProf GitHub Repository](./references/github_com_seiboldlab_virprof.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_virprof_overview.md)
+- [VirProf GitHub README](./references/github_com_seiboldlab_virprof_blob_master_README.md)
+- [Configuration Guide (config.yml)](./references/github_com_seiboldlab_virprof_blob_master_config.yml.md)
+- [Changelog and Version History](./references/github_com_seiboldlab_virprof_blob_master_CHANGELOG.md)

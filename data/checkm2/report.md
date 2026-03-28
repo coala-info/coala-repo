@@ -118,3 +118,6 @@ options:
                         Provide a location for the CheckM2 database for a given predict run [default: use either internal path set via <checkm2 database> or CHECKM2DB environmental variable]
 ```
 
+
+## Metadata
+- **Skill**: generated

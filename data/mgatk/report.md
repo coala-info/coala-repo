@@ -624,4 +624,4 @@ Options:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

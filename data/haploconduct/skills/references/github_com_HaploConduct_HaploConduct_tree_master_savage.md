@@ -1,0 +1,364 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FHaploConduct%2FHaploConduct%2Ftree%2Fmaster%2Fsavage)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FHaploConduct%2FHaploConduct%2Ftree%2Fmaster%2Fsavage)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=HaploConduct%2FHaploConduct)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[HaploConduct](/HaploConduct)
+/
+**[HaploConduct](/HaploConduct/HaploConduct)**
+Public
+
+* [Notifications](/login?return_to=%2FHaploConduct%2FHaploConduct) You must be signed in to change notification settings
+* [Fork
+  3](/login?return_to=%2FHaploConduct%2FHaploConduct)
+* [Star
+   30](/login?return_to=%2FHaploConduct%2FHaploConduct)
+
+* [Code](/HaploConduct/HaploConduct)
+* [Issues
+  6](/HaploConduct/HaploConduct/issues)
+* [Pull requests
+  0](/HaploConduct/HaploConduct/pulls)
+* [Actions](/HaploConduct/HaploConduct/actions)
+* [Projects](/HaploConduct/HaploConduct/projects)
+* [Security
+  0](/HaploConduct/HaploConduct/security)
+* [Insights](/HaploConduct/HaploConduct/pulse)
+
+Additional navigation options
+
+* [Code](/HaploConduct/HaploConduct)
+* [Issues](/HaploConduct/HaploConduct/issues)
+* [Pull requests](/HaploConduct/HaploConduct/pulls)
+* [Actions](/HaploConduct/HaploConduct/actions)
+* [Projects](/HaploConduct/HaploConduct/projects)
+* [Security](/HaploConduct/HaploConduct/security)
+* [Insights](/HaploConduct/HaploConduct/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [HaploConduct](/HaploConduct/HaploConduct/tree/master)
+
+/
+
+# savage
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/HaploConduct/HaploConduct/commits/master/savage)
+
+History
+
+master
+
+## Breadcrumbs
+
+1. [HaploConduct](/HaploConduct/HaploConduct/tree/master)
+
+/
+
+# savage
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/HaploConduct/HaploConduct/tree/master) | | |
+| [example](/HaploConduct/HaploConduct/tree/master/savage/example "example") | | [example](/HaploConduct/HaploConduct/tree/master/savage/example "example") |  |  |
+| [CHANGELOG.md](/HaploConduct/HaploConduct/blob/master/savage/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/HaploConduct/HaploConduct/blob/master/savage/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [INSTALL](/HaploConduct/HaploConduct/blob/master/savage/INSTALL "INSTALL") | | [INSTALL](/HaploConduct/HaploConduct/blob/master/savage/INSTALL "INSTALL") |  |  |
+| [README.md](/HaploConduct/HaploConduct/blob/master/savage/README.md "README.md") | | [README.md](/HaploConduct/HaploConduct/blob/master/savage/README.md "README.md") |  |  |
+| [freq\_est.py](/HaploConduct/HaploConduct/blob/master/savage/freq_est.py "freq_est.py") | | [freq\_est.py](/HaploConduct/HaploConduct/blob/master/savage/freq_est.py "freq_est.py") |  |  |
+| [old\_makefile](/HaploConduct/HaploConduct/blob/master/savage/old_makefile "old_makefile") | | [old\_makefile](/HaploConduct/HaploConduct/blob/master/savage/old_makefile "old_makefile") |  |  |
+| View all files | | |
+
+## [README.md](#readme)
+
+Outline
+
+# SAVAGE: Strain Aware VirAl GEnome assembly
+
+[![license](https://camo.githubusercontent.com/2bddb61e21ef104f9b843dab558ee3a0e7756748dca7caa3c51b6f592a50901f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d47504c25323076332e302d626c75652e737667)](http://www.gnu.org/licenses/)
+
+Current version: 0.4.2
+
+## Synopsis
+
+SAVAGE is a computational tool for reconstructing individual
+haplotypes of intra-host virus strains (a viral quasispecies) without
+the need for a high quality reference genome. SAVAGE makes use of
+either FM-index based data structures or ad-hoc consensus reference
+sequence for constructing overlap graphs from patient sample data.
+In this overlap graph, nodes represent reads and/or contigs, while
+edges reflect that two reads/contigs, based on sound statistical
+considerations, represent identical haplotypic sequence.
+Following an iterative scheme, a new overlap assembly algorithm that
+is based on the enumeration of statistically well-calibrated groups
+of reads/contigs then efficiently reconstructs the individual
+haplotypes from this overlap graph.
+
+For a more detailed description, please see our [Genome Research paper](http://genome.cshlp.org/content/early/2017/04/10/gr.215038.116) or the [preprint](http://biorxiv.org/content/early/2017/01/21/080341) on BioRxiv.
+
+SAVAGE assemblies can be further extended using [VG-Flow](https://bitbucket.org/jbaaijens/vg-flow/src/master/).
+
+## Motivation
+
+A viral quasispecies, the ensemble of viral strains populating an
+infected person, can be highly diverse. For optimal assessment of
+virulence, pathogenesis and therapy selection, determining the
+haplotypes of the individual strains can play a key role. As many
+viruses are subject to high mutation and recombination rates, high-
+quality reference genomes are often not available at the time of a
+new disease outbreak. SAVAGE is able to reconstruct individual
+haplotypes of the viral quasispecies without the need for a high-
+quality reference genome.
+
+## Installation and dependencies
+
+The easiest and recommended way to install SAVAGE is through Conda, using the [Bioconda](https://bioconda.github.io/) channel. Alternatively, SAVAGE can also be installed from source code. The installation procedure for either option is described below.
+
+*Please note that SAVAGE is built for linux-based systems only.*
+
+### Installation via Conda
+
+This is the easiest and recommended way to install SAVAGE. The Conda package manager allows you to install packages without needing any root privileges:
+
+* Install [miniconda](https://conda.io/miniconda.html)
+* Setup your [Bioconda](https://bioconda.github.io/) channel as described [here](https://bioconda.github.io/user/install.html#set-up-channels)
+* Install SAVAGE and all its dependencies through **one simple command**:
+
+```
+conda install savage
+```
+
+### Installation from source
+
+If installation via Conda is not an option for you, try installation from source.
+The SAVAGE program is a combination of C++ code (which has to be
+compiled) and Python scripts (version 2.6 or later, but not Python
+3.x). The C++ part requires several boost libraries (boost::timer,
+boost::system, and boost::program\_options) and it needs a compiler
+that supports [OpenMP](http://openmp.org/wp/) (such as `g++`).
+
+For maximal clique enumeration, SAVAGE depends on the [quick-cliques package](https://github.com/darrenstrash/quick-cliques) which is already included.
+
+As of version 0.4.0, SAVAGE uses the [rust-overlaps package](https://github.com/jbaaijens/rust-overlaps) for
+computing suffix-prefix overlaps in de novo mode.
+
+For reference-guided assembly, SAVAGE depends on the [bwa mem](http://bio-bwa.sourceforge.net/) aligner.
+
+Stages b and c of the algorithm may require `blastn` and `makeblastdb`
+from the ncbi C++ Toolkit.
+
+We provide a simple algorithm for relative frequency estimation of the assembled
+contigs. For improved frequency estimation and frequency-based filtering during assembly, we recommend using [Kallisto](https://pachterlab.github.io/kallisto/).
+This is optional, for more information please see the frequency estimation and filtering sections below.
+
+To summarize, please download and install:
+
+* [rust-overlaps](https://github.com/jbaaijens/rust-overlaps)
+* [ncbi-blast](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+* [bwa mem](http://bio-bwa.sourceforge.net/)
+* [Kallisto](https://pachterlab.github.io/kallisto/)
+
+*Each of these tools can also be installed using [Bioconda](https://bioconda.github.io/),
+a distribution of bioinformatics software realized as a channel for the
+versatile Conda package manager.*
+
+Once all dependencies are installed, download the [latest release](https://github.com/HaploConduct/HaploConduct/releases) of the HaploConduct package, enter the repository and type `make`.
+
+## Manual
+
+Currently, SAVAGE is designed for Illumina MiSeq sequencing reads
+that have been pre-processed by [PEAR](http://sco.h-its.org/exelixis/web/software/pear/) (for merging self-overlapping
+pairs). Thus, the input consists of (a combination of) single-end and/or paired-end reads.
+**Important:** SAVAGE expects paired-end reads stored in ***two fastq files with
+both sequences in forward orientation*** (instead of the more standard
+forward-reverse) because this how PEAR outputs non-merged reads. Please find a
+more detailed description of the SAVAGE input files below.
+
+SAVAGE offers two modes: SAVAGE-ref and SAVAGE-de-novo. SAVAGE-ref is the
+more efficient option, while SAVAGE-de-novo gives (slightly) better results.
+Instructions for using these modes can be found below.
+
+The most important parameter to set is the minimal overlap length *M* during
+overlap graph construction. For best results, please read the section on
+parameters carefully.
+
+### Input
+
+SAVAGE takes as input single-end and/or paired-end reads, which should be stored
+in separate fastq files (e.g. singles.fastq, paired1.fastq, paired2.fastq). The paired-end reads are assumed to be in *two fastq files with both
+sequences in forward orientation* (instead of the more standard forward-reverse)
+because this how PEAR outputs non-merged reads. These files can be specified
+using the following program options:
+
+* `-s` or `--input_s`
+  Input fastq file containing single-end reads.
+* `-p1` or `--input_p1`
+  Input fastq file containing /1 paired-en

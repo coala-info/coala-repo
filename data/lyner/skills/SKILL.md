@@ -1,6 +1,6 @@
 ---
 name: lyner
-description: Lyner is a command-line toolbox designed for chaining operations like filtering, normalizing, and visualizing dataframes through a pipe-based workflow. Use when user asks to read and transform data, filter by variability or name, perform clustering, transpose matrices, or generate interactive heatmaps and scatterplots.
+description: lyner is a command-line chaining toolbox designed for efficient dataframe processing and high-dimensional data analysis through piped command sequences. Use when user asks to read tabular data, transpose matrices, filter by variance or labels, normalize values, perform clustering or dimensionality reduction, and generate interactive heatmaps or scatter plots.
 homepage: https://github.com/tedil/lyner
 ---
 
@@ -8,46 +8,81 @@ homepage: https://github.com/tedil/lyner
 # lyner
 
 ## Overview
+lyner is a command-line "chaining toolbox" designed for efficient dataframe processing. It operates on a "pipe" concept where data is loaded into a `matrix` field and passed through a series of consecutive commands. This allows for complex data science workflows—from raw file reading to interactive heatmap generation—to be expressed as a single, readable command string. It is particularly well-suited for bioinformatics and high-dimensional data analysis where row/column orientation and iterative filtering are common.
 
-`lyner` is a command-line "chaining" toolbox designed to streamline operations on dataframes. It operates on a "pipe" concept: a sequence of commands starts by reading a file into an internal `matrix` field, and each subsequent command modifies or utilizes that matrix. It is particularly effective for multi-step exploratory data analysis where you need to quickly filter, normalize, and visualize high-dimensional data.
+## Command-Line Usage Patterns
 
-## Command-Line Usage
+### The Chaining Logic
+Every lyner command sequence typically follows this structure:
+`lyner <input_command> <processing_commands> <output_command>`
 
-### Basic Pipeline Structure
-A standard `lyner` command follows this pattern:
-`lyner [input] [transformations/filters] [analysis] [output/plot]`
+- **Input**: Usually `read <file.csv>` or `read <file.tsv>`.
+- **Processing**: Commands like `transform`, `filter`, `normalise`, `cluster`, or `decompose`.
+- **Output**: Commands like `plot` or `store`.
 
-### Core Commands
-- **read**: Loads a `.csv` or `.tsv` file into the pipe's `matrix` field.
-- **transform**: Applies mathematical operations (e.g., `log2`) to the matrix.
-- **transpose (alias: T)**: Swaps rows and columns. This is essential because many filters and clustering operations are orientation-specific.
-- **filter**: Removes data based on criteria:
-  - `--prefix` / `--suffix`: Filter by row/column names.
-  - `-v [float]`: Keep only the top percentage of most variable features (e.g., `-v 0.05` for top 5%).
+### Core CLI Commands
+- **read**: Loads a tabular file into the pipe's `matrix` field.
+- **transpose (alias: T)**: Swaps rows and columns. Essential because many commands (like `filter` or `cluster`) are orientation-specific.
+- **transform**: Applies mathematical operations (e.g., `transform log2`).
+- **filter**: 
+  - By label: `filter --prefix <string>` or `filter --suffix <string>`.
+  - By variance: `filter -v 0.05` (retains the top 5% most variable features).
 - **normalise**: Adjusts data scales (e.g., `normalise unit` for [0, 1] scaling).
-- **cluster**: Performs clustering. Use `-n` to specify the number of expected clusters.
-- **store**: Saves the current selection or specific pipe fields to a file.
-- **plot**: Generates interactive visualizations (e.g., `-m heatmap` or `-m scatter`).
+- **cluster**: Performs clustering. Use `-n` to specify the number of clusters.
+- **decompose**: Performs dimensionality reduction (e.g., `decompose -m ICA -n 2`).
+- **plot**: Generates interactive visualizations.
+  - `-m`: Mode (e.g., `heatmap`, `scatter`).
+  - `-o`: Output filename (e.g., `output.html`).
+  - `-c`: Specific configuration parameters (e.g., `-c zmin=0,zmax=1`).
 
-## Expert Tips and Best Practices
+### Working with Auxiliary Data
+lyner stores metadata in specific pipe fields. For example, clustering results are stored in `cluster_indices_samples` or `cluster_indices_features`.
+- To save these results: `[...] cluster -n 3 select cluster_indices_samples store clusters.txt`
+- To use annotations in plots: `read data.csv read-annotation labels.csv plot -m heatmap --with-annotation`
 
-### Managing the Pipe
-`lyner` stores auxiliary data in specific fields. For example, clustering results are stored in `cluster_indices_samples` or `cluster_indices_features`. To save these results, you must explicitly select them:
-`lyner read data.csv cluster -n 3 select cluster_indices_samples store clusters.txt`
+## Expert Tips
+- **Orientation Awareness**: If a filter isn't working as expected, you likely need to insert a `T` (transpose) command. lyner often defaults to feature-based operations; transpose to operate on samples.
+- **In-Place Transformations**: Most transform and normalization commands modify the `matrix` field in-place within the pipe.
+- **Interactive Plots**: lyner uses Plotly for its `plot` command. Always specify an `.html` output with `-o` to preserve interactivity.
+- **Annotation Supplementing**: Use the `supplement` command to merge external metadata into the current pipe before transposing or decomposing.
 
-### The Transpose Sandwich
-Since `filter` and `cluster` often target features (columns), use the "transpose sandwich" to operate on samples (rows):
-`lyner read data.csv T filter --prefix Control T`
-This transposes the data to make samples the columns, filters them, and transposes back to the original orientation.
 
-### Interactive Plotting
-When using `plot -m heatmap`, you can pass configuration options using the `-c` flag:
-`lyner read data.tsv normalise unit plot -m heatmap -c zmin=0,zmax=1 --with-annotation`
 
-### Combining Annotations
-Use `supplement` or `read-annotation` to merge metadata with your primary matrix. This is crucial for coloring scatterplots or adding sidebars to heatmaps:
-`lyner read data.tsv supplement metadata.csv T decompose -m ICA -n 2 plot -m scatter`
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| astype | Convert data to a specified type. |
+| center | Center the matrix. |
+| cluster | Cluster cells based on their expression profiles. |
+| cluster-agglomerative | Agglomerative clustering of cells |
+| cluster-from | Cluster sequences from a file. |
+| cluster-hierarchical | Hierarchical clustering of samples. |
+| compose | Compose a pipeline from a list of transformations. |
+| correlate | Calculate pairwise Pearson correlation coefficients between columns of a matrix. |
+| decompose | Decompose a matrix into its constituent parts. |
+| dendro | Plot a dendrogram from a distance matrix. |
+| design | Description of the experiment. Expects 2-column tsv (Sample, Class). |
+| dist-graph | Generates a distance graph from a distance matrix. |
+| estimate | Estimate gene expression levels from RNA-Seq data. |
+| filter | Filter data according to selected option. |
+| frequent-sets | Find frequent itemsets in a binary matrix. |
+| pairwise-distances | Compute pairwise distances between samples. |
+| read | Read abundance/count matrix from MATRIX (tsv format). |
+| read-annotation | Reads annotation from given file and stores it in `annotation`. |
+| reindex | Reindex the matrix. |
+| seed | Try "lyner seed --help" for help. |
+| select | Select a datum based on its name (e.g. 'matrix' or 'estimate'), making it the target of commands such as `show`, `save` and `plot`. |
+| show | Show the content of a lyner pipe. |
+| sort | Sorts the matrix by columns. |
+| sort-index | Sorts and indexes a matrix. |
+| summarise | Summarise a lyner matrix |
+| supplement | Supply additional data which may be used for plot colors, for example. |
+| targets | Specify targets for lyner |
+| threshold | Set \|data\| < value to 0, data >= value to 1, -data >= value to -1. |
+| transpose | Transpose a matrix or a selection of columns from a matrix. |
+| uncluster | Uncluster sequences |
 
 ## Reference documentation
-- [lyner GitHub Repository](./references/github_com_tedil_lyner.md)
-- [lyner Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_lyner_overview.md)
+- [Main README and Examples](./references/github_com_tedil_lyner_blob_master_README.md)
+- [Project Metadata and Dependencies](./references/github_com_tedil_lyner_blob_master_setup.py.md)

@@ -1,6 +1,6 @@
 ---
 name: genomedata
-description: "Genomedata stores and manages large-scale genomic track data in a high-performance HDF5-based format for fast random access. Use when user asks to create genomic archives from sequence files, load numeric tracks from BED or Wiggle files, query specific genomic regions, or access track data via the Python API."
+description: Genomedata provides high-performance storage and random access for multiple tracks of genomic signal data using the HDF5 format. Use when user asks to create a genomic data archive, load signal tracks from Wiggle or BED files, query specific genomic regions, or programmatically access track data via a Python API.
 homepage: http://genomedata.hoffmanlab.org
 ---
 
@@ -8,68 +8,74 @@ homepage: http://genomedata.hoffmanlab.org
 # genomedata
 
 ## Overview
-Genomedata is a specialized high-performance format designed to store multiple tracks of numeric genomic data anchored to a reference genome. It leverages HDF5 to provide fast random access and a small disk footprint, making it ideal for handling hundreds of gigabytes of functional genomics data (like ChIP-seq or RNA-seq tracks). This skill provides the necessary patterns for loading data into archives, querying values, and inspecting archive metadata.
+
+Genomedata is a specialized high-performance storage format designed to handle multiple tracks of numeric data anchored to a reference genome. Unlike flat files (like Wiggle or BED) which require exhaustive parsing, Genomedata utilizes HDF5 to provide near-instant random access to hundreds of gigabytes of data with a minimal disk footprint. This skill enables the efficient transformation of raw bioinformatics outputs into structured archives that are optimized for downstream analysis and parallel processing.
 
 ## Core CLI Workflows
 
-### Creating a Genomedata Archive
-The loading process typically involves two steps: loading the sequence/assembly information and then loading the numeric data tracks.
+### Creating an Archive (Convenience Method)
+The `genomedata-load` command is the primary entry point for creating a new archive from sequence and signal files.
 
-1.  **Initialize with Sequence/Assembly:**
-    ```bash
-    # Load from FASTA files
-    genomedata-load-seq ARCHIVE_NAME chromosome1.fa chromosome2.fa
-    
-    # Or initialize using chromosome sizes (without sequence data)
-    genomedata-load-seq --sizes ARCHIVE_NAME chrom.sizes
-    ```
+```bash
+genomedata-load -s <sequence.fa> -t <trackname>=<signal.wig> <archive_name>
+```
+*   **Note**: Use multiple `-s` flags for multiple sequence files and multiple `-t` flags for different data tracks.
+*   **Expert Tip**: Always put glob filenames in quotes (e.g., `-s "chr*.fa"`) to prevent the shell from expanding them before the tool can process them.
 
-2.  **Load Data Tracks:**
-    ```bash
-    # Load tracks from BED, bedGraph, or Wiggle files
-    # Note: Quote globs to ensure they are parsed by genomedata-load
-    genomedata-load ARCHIVE_NAME -s "data_dir/*.bedgraph"
-    ```
+### Manual Loading Pipeline (Fine-grained Control)
+For parallel loading or adding tracks to existing archives, use the underlying command sequence:
+
+1.  **Initialize Sequence**: `genomedata-load-seq <archive> <sequence.fa>`
+2.  **Open Tracks**: `genomedata-open-data <archive> <trackname1> <trackname2>`
+3.  **Stream Data**: `genomedata-load-data <archive> <trackname> < <signal_file>`
+4.  **Finalize**: `genomedata-close-data <archive>`
 
 ### Querying and Inspection
-*   **Extract Data:** Use `genomedata-query` to retrieve values for specific regions.
-    ```bash
-    genomedata-query ARCHIVE_NAME --track TRACKNAME --coords CHR START END
-    ```
-*   **List Tracks:** View all available tracks in an archive.
-    ```bash
-    genomedata-info tracknames ARCHIVE_NAME
-    ```
-*   **Summary Statistics:** Generate histograms or view contig information.
-    ```bash
-    genomedata-histogram ARCHIVE_NAME TRACKNAME
-    genomedata-info contigs ARCHIVE_NAME
-    ```
+*   **List Tracks**: `genomedata-info tracknames <archive>`
+*   **Check Sizes**: `genomedata-info sizes <archive>`
+*   **Extract Data**: `genomedata-query -c <chrom> -s <start> -e <end> -t <trackname> <archive>`
 
-## Python API Usage
-For high-performance access within scripts, use the `genomedata` Python package.
+## Python API Best Practices
+
+To access data programmatically, use the `Genome` object as a context manager to ensure file handles and HDF5 resources are cleaned up automatically.
 
 ```python
-import genomedata
+from genomedata import Genome
 
-with genomedata.Genome("path/to/archive") as genome:
+with Genome("path/to/archive") as genome:
     # Access a specific chromosome
     chrom = genome["chr1"]
     
     # Slice data: [start:end, track_index_or_name]
-    # Returns a NumPy array
-    data = chrom[100:200, ["track1", "track2"]]
+    # Uses zero-based, half-open indexing (standard Python/BED convention)
+    data = chrom[100:200, "my_track"]
     
-    # Access track names
-    print(genome.tracknames)
+    # Access underlying sequence (returned as uint8 array)
+    seq_array = chrom.seq[100:110]
 ```
 
-## Best Practices
-*   **Input Formatting:** Ensure BED/bedGraph files are sorted by genomic coordinate before loading to prevent errors.
-*   **Memory Efficiency:** When performing massive random access, use the "offline" pattern (sorting input positions first) to minimize HDF5 seek overhead.
-*   **Large Gaps:** `genomedata-close-data` automatically trims large gaps between supercontigs to save space.
-*   **Platform Support:** While primarily tested on Linux (x86_64, aarch64), it is compatible with Python 3.9+ and requires HDF5 libraries.
+## Expert Tips and Constraints
+
+*   **Sequence Matching**: Ensure chromosome names (e.g., `chr1`) in signal files match the FASTA headers exactly.
+*   **Implementation Choice**: Genomedata automatically chooses between a directory-based archive (better for parallel access, <100 sequences) and a single-file archive (better for distribution, >100 sequences).
+*   **Compression**: After running `genomedata-close-data`, you can further compress the archive using the external tool `h5repack` to save additional disk space.
+*   **Hardmasking**: Use `genomedata-hardmask` to filter out specific regions from tracks after they have been loaded, which is useful for removing blacklisted genomic regions.
+*   **BigWig Support**: The Python API can transparently open `.bw` files as if they were Genomedata archives, though they are limited to a single track.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| genomedata-histogram | Print a histogram of values from a genomedata archive |
+| genomedata-info | Print information about a genomedata archive. |
+| genomedata-load | Create Genomedata archive named GENOMEDATAFILE by loading specified track data and sequences. If GENOMEDATAFILE already exists, it will be overwritten. |
+| genomedata-load-seq | Start a Genomedata archive at GENOMEDATAFILE with the provided sequences. SEQFILEs should be in fasta format, and a separate Chromosome will be created for each definition line. |
+| genomedata-query | print data from genomedata archive in specified trackname and coordinates |
+| genomedata_genomedata-close-data | Compute summary statistics for data in Genomedata archive and ready for accessing. |
 
 ## Reference documentation
-- [Genomedata Homepage](./references/genomedata_hoffmanlab_org_index.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_genomedata_overview.md)
+- [Genomedata 1.7.4 Documentation](./references/genomedata_hoffmanlab_org_doc_1.7.4_genomedata.html.md)
+- [Genomedata GitHub README](./references/github_com_hoffmangroup_genomedata_blob_master_README.rst.md)
+- [Random Access Performance Script](./references/genomedata_hoffmanlab_org_performance_scripts_genomedata_random_access.py.md)

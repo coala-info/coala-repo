@@ -1,6 +1,6 @@
 ---
 name: rnasketch
-description: rnasketch is a toolkit for RNA sequence design that facilitates the inverse folding problem by connecting sequence sampling engines with energy evaluation tools. Use when user asks to design multistate RNA molecules, create temperature-dependent thermoswitches, develop ligand-triggered riboswitches, or engineer sRNA-mediated cofolding interactions.
+description: RNAsketch is a toolkit for designing nucleic acid sequences that meet specific structural objectives. Use when user asks to design multistate RNA sequences, create temperature-sensitive switches, engineer ligand-responsive riboswitches, or design sRNA co-folding interactions.
 homepage: https://github.com/ViennaRNA/RNAsketch
 ---
 
@@ -8,58 +8,71 @@ homepage: https://github.com/ViennaRNA/RNAsketch
 # rnasketch
 
 ## Overview
+RNAsketch is a specialized toolkit for nucleic acid sequence design, extending the capabilities of the ViennaRNA package. It allows for the engineering of complex RNA devices by optimizing sequences to meet specific structural objectives. This skill provides the procedural knowledge to use its core design scripts for creating bistable molecules, temperature-sensitive switches, and ligand-responsive systems.
 
-`rnasketch` is a specialized toolkit for RNA sequence design that acts as a "glue" between sequence sampling engines (like RNAblueprint and RNARedPrint) and energy evaluation tools (like ViennaRNA, Nupack, and pKiss). It is designed to solve the inverse folding problem—finding a sequence that fits a desired secondary structure—especially for complex cases where a single molecule must transition between multiple stable states.
-
-## Common CLI Patterns
-
-The toolkit provides several specialized scripts for different design objectives. Most scripts accept structural constraints via standard input.
+## Core Design Workflows
 
 ### Multistate Design
-To design a sequence that can fold into multiple target structures (e.g., a bistable molecule), use `design-multistate.py`.
-```bash
-echo -e '(((((....)))))....\n....(((((....)))))' | design-multistate.py -i -m random -s 500
-```
-*   `-m`: Optimization method (e.g., `random`).
-*   `-s`: Number of optimization steps or samples.
+Use `design-multistate.py` to create a single RNA sequence capable of folding into multiple distinct conformations (e.g., a bistable switch).
+
+*   **Input**: Provide target structures in dot-bracket notation, separated by newlines.
+*   **Command**:
+    ```bash
+    echo -e '(((((....)))))....\n....(((((....)))))' | design-multistate.py -i -m random -s 500
+    ```
+*   **Parameters**:
+    *   `-i`: Interactive mode/read from stdin.
+    *   `-m`: Optimization method (e.g., `random`, `adaptive`).
+    *   `-s`: Number of optimization steps.
 
 ### Thermoswitch Design
-Design molecules that change their Minimum Free Energy (MFE) structure based on temperature.
-```bash
-echo -e "((((((((((((....))))))))))))) 5.0\n(((((.....)))))(((((.....))))) 10.0\n(((((.....)))))............... 37.0" | design-thermoswitch.py -m random -s 1000
-```
-Input format: `Structure Temperature`.
+Use `design-thermoswitch.py` to design sequences that change their Minimum Free Energy (MFE) structure based on temperature.
+
+*   **Input**: Structure followed by the target temperature.
+*   **Command**:
+    ```bash
+    echo -e "(((((((((((((....))))))))))))) 5.0\n(((((.....)))))(((((.....))))) 10.0\n(((((.....)))))............... 37.0" | design-thermoswitch.py -m random -s 1000
+    ```
 
 ### Ligand-Triggered Switches
-Design riboswitches that respond to ligand binding (e.g., theophylline) using soft-constraints.
-```bash
-echo -e "STABLE_STRUCT\nLIGAND_COMPETENT_STRUCT\nSEQUENCE_CONSTRAINTS" | design-ligandswitch.py -r 70:30 --ligand "MOTIF_SEQ&MOTIF_SEQ;STRUCTURE_CONSTRAINT;ENERGY"
-```
-*   `-r`: Target ratio between the ligand-competent state and alternative states.
-*   `--ligand`: Defines the aptamer motif and binding energy.
+Use `design-ligandswitch.py` to design riboswitches that respond to small molecules (like theophylline). This utilizes soft constraints to model ligand binding.
 
-### sRNA Mediated Regulation (Cofolding)
-Design a 5'UTR and an sRNA that interacts to control translation (e.g., sequestering an RBS).
-```bash
-echo 'STRUCTURE_COMPLEX&STRUCTURE_COMPLEX\nSTRUCTURE_FREE&STRUCTURE_FREE\nSEQUENCE_CONSTRAINTS' | design-cofold.py -n 1 -s 1000
-```
+*   **Command Pattern**:
+    ```bash
+    echo -e "TARGET_STRUCTURE_1\nTARGET_STRUCTURE_2\nSEQUENCE_CONSTRAINTS" | design-ligandswitch.py -r 70:30 --ligand "LIGAND_MOTIF;LIGAND_STRUCTURE;ENERGY_CONTRIBUTION"
+    ```
+*   **Example (Theophylline)**:
+    ```bash
+    echo -e "(((((...((((((((.....)))))...)))...)))))...\n....(((((((((((......)))))))))))...\nAAGUGAUACCAGCAUCGUCUUGAUGCCCUUGGCAGCACUUCANNNNNN" | design-ligandswitch.py -r 70:30 --ligand "GAUACCAG&CCCUUGGCAGC;(...((((&)...)))...);-9.22"
+    ```
 
-### Advanced Sampling with RNARedPrint
-For more uniform sampling of the sequence space, use the RedPrint-based scripts. These require the `REDPRINT` environment variable to be set.
-```bash
-export REDPRINT=/path/to/redprint/
-echo -e "STRUCT1\nSTRUCT2" | design-redprint-multistate.py -i -n 10
-```
-*   `design-redprint-multistate.py`: Aims for equal energies across target structures.
-*   `design-energyshift.py`: Allows specifying specific target energies (e.g., `-e 40,40,20`).
+### sRNA Co-folding Design
+Use `design-cofold.py` to design interactions between two RNA molecules, such as an sRNA binding to a 5'UTR to regulate translation.
+
+*   **Command**:
+    ```bash
+    echo 'STRUCTURE_A&STRUCTURE_B\nCONSTRAINTS_A&CONSTRAINTS_B' | design-cofold.py -n 1 -s 1000
+    ```
 
 ## Expert Tips
+*   **Sequence Constraints**: Use `N` for any nucleotide, or specific bases (A, C, G, U) in your input strings to preserve functional motifs like Ribosome Binding Sites (RBS) or Start Codons (AUG).
+*   **Boltzmann Sampling**: For more advanced sampling that accounts for the ensemble of states rather than just the MFE, use `design-redprint-multistate.py`. This requires the `REDPRINT` environment variable to be set to the RNARedPrint path.
+*   **Validation**: Always validate designs using other ViennaRNA tools. For example, use `RNAheat` to verify thermoswitches or `RNAcofold` to check base pair probabilities in designed complexes.
+*   **Optimization Steps**: If the design fails to reach the target objective, increase the steps (`-s`) or try different optimization methods (`-m`).
 
-1.  **Optimization vs. Sampling**: While `RNARedPrint` provides Boltzmann-weighted sampling (finding sequences that fit the energy profile), you should often follow it with an optimization step (using the `-s` flag) to maximize the occupancy of the target structures in the ensemble.
-2.  **Visualizing Results**: After designing a multistate sequence, use the `barriers` program (from the ViennaRNA package) to visualize the energy landscape and confirm that the desired states are indeed deep local minima.
-3.  **Sequence Constraints**: You can provide IUPAC nucleotide codes (like `N`, `R`, `Y`) in the input to restrict the sequence space (e.g., forcing a specific Start Codon or Ribosome Binding Site).
-4.  **Environment Setup**: Ensure that the underlying engines (ViennaRNA, RNARedPrint, etc.) are in your `$PATH`. For `design-redprint` scripts, the `REDPRINT` variable must point to the directory containing the `RedPrint` executable.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| design-cofold.py | Design a cofold device. |
+| design-energyshift.py | Design a multi-stable riboswitch similar using Boltzmann sampling. |
+| design-ligandswitch.py | Design a ligand triggered device. |
+| design-multistate.py | Design a multi-stable riboswitch similar to Hoehner 2013 paper. |
+| design-redprint-multistate.py | Design a multi-stable riboswitch similar using Boltzmann sampling. |
+| design-thermoswitch.py | Design a multi-stable thermoswitch as suggested in the Flamm 2001 publication. |
 
 ## Reference documentation
-- [GitHub Repository and Usage Examples](./references/github_com_ViennaRNA_RNAsketch.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_rnasketch_overview.md)
+- [RNAsketch README and Examples](./references/github_com_ViennaRNA_RNAsketch_blob_master_README.rst.md)
+- [RNAsketch Overview](./references/anaconda_org_channels_bioconda_packages_rnasketch_overview.md)

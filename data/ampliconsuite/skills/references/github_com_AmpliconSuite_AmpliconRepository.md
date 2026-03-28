@@ -1,1 +1,231 @@
-GitHub - AmpliconSuite/AmpliconRepository: Website to host AmpliconSuite outputs, including AA outputs and resulting focal amplification classifications, such as ecDNA. Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} AmpliconSuite / AmpliconRepository Public Notifications You must be signed in to change notification settings Fork 5 Star 4 Website to host AmpliconSuite outputs, including AA outputs and resulting focal amplification classifications, such as ecDNA. AmpliconRepository.org License BSD-3-Clause license 4 stars 5 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 12 Pull requests 1 Actions Projects 0 Wiki Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Wiki Security Insights AmpliconSuite/AmpliconRepository main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,308 Commits 1,308 Commits .github/ workflows .github/ workflows caper caper licenses licenses .dockerignore .dockerignore .gitattributes .gitattributes .gitignore .gitignore Dockerfile Dockerfile LICENSE LICENSE README.md README.md check_flags.sh check_flags.sh check_project_flags.py check_project_flags.py check_project_flags_django.py check_project_flags_django.py diagnose_memory.py diagnose_memory.py docker-compose-dev.yml docker-compose-dev.yml gunicorn_config.py gunicorn_config.py install_profiling_tools.sh install_profiling_tools.sh memory_monitor.py memory_monitor.py performance_test.py performance_test.py purge-local-db.py purge-local-db.py quick_test.sh quick_test.sh requirements.txt requirements.txt run-manage-py-dev.sh run-manage-py-dev.sh run-manage-py.sh run-manage-py.sh start-neo4j-container.sh start-neo4j-container.sh start-server.sh start-server.sh stop-neo4j-container.sh stop-neo4j-container.sh stop-server.sh stop-server.sh sync_static_to_s3.sh sync_static_to_s3.sh test_inside_container.sh test_inside_container.sh verify_indexes.py verify_indexes.py version.txt version.txt View all files Repository files navigation README BSD-3-Clause license AmpliconRepository.org Authors: Forrest Kim, Edwin Huang, Ted Liefeld, Jens Luebeck, Thorin Tabor, Michael Chan, Dhruv Khatri, Kyra Fetter, Gino Prasad, Rohil Ahuja, Rishaan Kenkre, Tushar Agashe, Devika Torvi, Madalina Giurgiu, Vineet Bafna This is the main repository for the AmpliconRepository website. The documentation below provides intsructions on deploying the site locally, for development purposes. How to install the development environment for AmpliconRepository How to set up your development environment using docker compose Testing datasets Pushing changes to GitHub and merging PRs Using the development server Logging in as admin How to deploy and update the production server for AmpliconRepository There are two options for running the server locally: Option A : Manually install modules and configure the environment step-by-step. Option B : Use Docker to deploy the server and its environment on your system. Option A - install the development environment for AmpliconRepository: Requirements Python Virtual Environment (3.8 or higher) 1. Clone the repository from GitHub Clone repo using https, ssh, or GitHub Desktop to your local machine 2. Set up the virtual environment and install packages: In a terminal window, move to the cloned GitHub repo Go to the AmpliconRepository top level directory (should see requirements.txt ) Option A: Using python's environment manager Create a new Python virtual environment: python -m venv ampliconenv Activate the new environment (you need to do this everytime before running the server): source ampliconenv/bin/activate Install required packages pip install -r requirements.txt Option B: Using conda's environment manager Create a new Conda environment conda create -n ampliconenv "python&gt;=3.8,&lt;3.13" To activate conda activate ampliconenv Install pip to that environment conda install pip -n ampliconenv Install required packages ~/[anaconda3/miniconda3]/envs/ampliconenv/bin/pip install -r requirements.txt 3. Set up MongoDB locally (for development) Install MongoDB In Ubuntu this can be done with sudo apt install mongodb-server-core For newer versions of Ubuntu (e.g. 22.04+), follow the instructions here: https://www.fosstechnix.com/how-to-install-mongodb-on-ubuntu-22-04-lts/ In macOS this can be done with git config --global init.defaultBranch main brew tap mongodb/brew brew install mongodb-community@6.0 If the package is not found you may need to follow the directions here . If you don't have a database location set up, set up a location: mkdir -p ~/data/db/ In a terminal window or tab with the ampliconenv environment active, run MongoDB locally: mongod --dbpath ~/data/db or mongod --dbpath &lt;DB_PATH&gt; 3a. View MongoDB data in MongoDB Compass Download MongoDB Compass: https://www.mongodb.com/docs/compass/current/install/#download-and-install-compass Open the MongoDB Compass app after starting MongoDB locally Connect to your local instance of MongoDB: URI: mongodb://localhost:27017 Relevant data will be located in /AmpliconRepository/projects/ You can periodically clear your local deployment mongodb files using Compass so that your disk does not fill up. Run export DB_URI_SECRET='mongodb://localhost:27017' in your terminal to set the environment variable for your local database. So that this is active every time, you can add the command above to your ~/.bashrc file Note that the latest version of Compass (1.34.2) won't work with our older DB version. You can get an old compass for mac at https://downloads.mongodb.com/compass/mongodb-compass-1.28.4-darwin-x64.dmg 3b. Clearing your local DB Periodically, you will want to purge old or excessively large accumulated data from you DB. You can do this using the provided script python purge-local-db.py 4. Neo4j Download Instructions Docker the easiest way... edit the path at the end to the local drive you want it to use docker run -d --name neo4j -p 7474:7474 -p 7687:7687 --env NEO4J_AUTH=neo4j/$NEO4J_PASSWORD_SECRET -v /home/ubuntu/AmpliconRepository-dev/neo4j neo4j macOS Download and unzip the tar file: curl -O -C - http://dist.neo4j.org/neo4j-community-5.12.0-unix.tar.gz tar -xvzf neo4j-community-5.12.0-unix.tar.gz Start neo4j with the console command: cd neo4j-community-5.12.0 bin/neo4j console Go to http://localhost:7474/browser/ and change the auth settings. By default, both user and password are 'neo4j'. Keep user as 'neo4j' and change password to 'password'. The environment is now set up. Ensure that neo4j is running before querying the graph. Alternatively, go to https://neo4j.com/deployment-center/ , then download the rpm file for the latest Community Edition under the section titled 'Graph Database Self-Managed'. Further instructions are available upon clicking Download. Note that this method has not been tested by our team. Ubuntu (or Windows via WSL/WSL2) Please follow this documentation to set up the latest version of Neo4j Community Edition In brief, you can do wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add - echo 'deb https://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list sudo apt-get update sudo apt-get install neo4j Register for an account at Neo4j Aura Console Then launch it by running sudo neo4j start Visit http://localhost:7474 and login with neo4j as both the user and password. You will be prompted to set a password for future use. You must set the updated password to the value in your config.sh file (value of NEO4J_PASSWORD_SECRET)
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconRepository)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconRepository)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=AmpliconSuite%2FAmpliconRepository)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[AmpliconSuite](/AmpliconSuite)
+/
+**[AmpliconRepository](/AmpliconSuite/AmpliconRepository)**
+Public
+
+* [Notifications](/login?return_to=%2FAmpliconSuite%2FAmpliconRepository) You must be signed in to change notification settings
+* [Fork
+  5](/login?return_to=%2FAmpliconSuite%2FAmpliconRepository)
+* [Star
+   4](/login?return_to=%2FAmpliconSuite%2FAmpliconRepository)
+
+* [Code](/AmpliconSuite/AmpliconRepository)
+* [Issues
+  12](/AmpliconSuite/AmpliconRepository/issues)
+* [Pull requests
+  1](/AmpliconSuite/AmpliconRepository/pulls)
+* [Actions](/AmpliconSuite/AmpliconRepository/actions)
+* [Projects](/AmpliconSuite/AmpliconRepository/projects)
+* [Wiki](/AmpliconSuite/AmpliconRepository/wiki)
+* [Security
+  0](/AmpliconSuite/AmpliconRepository/security)
+* [Insights](/AmpliconSuite/AmpliconRepository/pulse)
+
+Additional navigation options
+
+* [Code](/AmpliconSuite/AmpliconRepository)
+* [Issues](/AmpliconSuite/AmpliconRepository/issues)
+* [Pull requests](/AmpliconSuite/AmpliconRepository/pulls)
+* [Actions](/AmpliconSuite/AmpliconRepository/actions)
+* [Projects](/AmpliconSuite/AmpliconRepository/projects)
+* [Wiki](/AmpliconSuite/AmpliconRepository/wiki)
+* [Security](/AmpliconSuite/AmpliconRepository/security)
+* [Insights](/AmpliconSuite/AmpliconRepository/pulse)
+
+# AmpliconSuite/AmpliconRepository
+
+main
+
+[Branches](/AmpliconSuite/AmpliconRepository/branches)[Tags](/AmpliconSuite/AmpliconRepository/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[1,411 Commits](/AmpliconSuite/AmpliconRepository/commits/main/)   1,411 Commits | | |
+| [.github](/AmpliconSuite/AmpliconRepository/tree/main/.github ".github") | | [.github](/AmpliconSuite/AmpliconRepository/tree/main/.github ".github") |  |  |
+| [caper](/AmpliconSuite/AmpliconRepository/tree/main/caper "caper") | | [caper](/AmpliconSuite/AmpliconRepository/tree/main/caper "caper") |  |  |
+| [licenses](/AmpliconSuite/AmpliconRepository/tree/main/licenses "licenses") | | [licenses](/AmpliconSuite/AmpliconRepository/tree/main/licenses "licenses") |  |  |
+| [test\_data](/AmpliconSuite/AmpliconRepository/tree/main/test_data "test_data") | | [test\_data](/AmpliconSuite/AmpliconRepository/tree/main/test_data "test_data") |  |  |
+| [tests](/AmpliconSuite/AmpliconRepository/tree/main/tests "tests") | | [tests](/AmpliconSuite/AmpliconRepository/tree/main/tests "tests") |  |  |
+| [.dockerignore](/AmpliconSuite/AmpliconRepository/blob/main/.dockerignore ".dockerignore") | | [.dockerignore](/AmpliconSuite/AmpliconRepository/blob/main/.dockerignore ".dockerignore") |  |  |
+| [.gitattributes](/AmpliconSuite/AmpliconRepository/blob/main/.gitattributes ".gitattributes") | | [.gitattributes](/AmpliconSuite/AmpliconRepository/blob/main/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/AmpliconSuite/AmpliconRepository/blob/main/.gitignore ".gitignore") | | [.gitignore](/AmpliconSuite/AmpliconRepository/blob/main/.gitignore ".gitignore") |  |  |
+| [Dockerfile](/AmpliconSuite/AmpliconRepository/blob/main/Dockerfile "Dockerfile") | | [Dockerfile](/AmpliconSuite/AmpliconRepository/blob/main/Dockerfile "Dockerfile") |  |  |
+| [LICENSE](/AmpliconSuite/AmpliconRepository/blob/main/LICENSE "LICENSE") | | [LICENSE](/AmpliconSuite/AmpliconRepository/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/AmpliconSuite/AmpliconRepository/blob/main/README.md "README.md") | | [README.md](/AmpliconSuite/AmpliconRepository/blob/main/README.md "README.md") |  |  |
+| [check\_flags.sh](/AmpliconSuite/AmpliconRepository/blob/main/check_flags.sh "check_flags.sh") | | [check\_flags.sh](/AmpliconSuite/AmpliconRepository/blob/main/check_flags.sh "check_flags.sh") |  |  |
+| [check\_project\_flags.py](/AmpliconSuite/AmpliconRepository/blob/main/check_project_flags.py "check_project_flags.py") | | [check\_project\_flags.py](/AmpliconSuite/AmpliconRepository/blob/main/check_project_flags.py "check_project_flags.py") |  |  |
+| [check\_project\_flags\_django.py](/AmpliconSuite/AmpliconRepository/blob/main/check_project_flags_django.py "check_project_flags_django.py") | | [check\_project\_flags\_django.py](/AmpliconSuite/AmpliconRepository/blob/main/check_project_flags_django.py "check_project_flags_django.py") |  |  |
+| [cleanup\_orphaned\_projects.py](/AmpliconSuite/AmpliconRepository/blob/main/cleanup_orphaned_projects.py "cleanup_orphaned_projects.py") | | [cleanup\_orphaned\_projects.py](/AmpliconSuite/AmpliconRepository/blob/main/cleanup_orphaned_projects.py "cleanup_orphaned_projects.py") |  |  |
+| [conftest.py](/AmpliconSuite/AmpliconRepository/blob/main/conftest.py "conftest.py") | | [conftest.py](/AmpliconSuite/AmpliconRepository/blob/main/conftest.py "conftest.py") |  |  |
+| [diagnose\_memory.py](/AmpliconSuite/AmpliconRepository/blob/main/diagnose_memory.py "diagnose_memory.py") | | [diagnose\_memory.py](/AmpliconSuite/AmpliconRepository/blob/main/diagnose_memory.py "diagnose_memory.py") |  |  |
+| [docker-compose-dev.yml](/AmpliconSuite/AmpliconRepository/blob/main/docker-compose-dev.yml "docker-compose-dev.yml") | | [docker-compose-dev.yml](/AmpliconSuite/AmpliconRepository/blob/main/docker-compose-dev.yml "docker-compose-dev.yml") |  |  |
+| [gunicorn\_config.py](/AmpliconSuite/AmpliconRepository/blob/main/gunicorn_config.py "gunicorn_config.py") | | [gunicorn\_config.py](/AmpliconSuite/AmpliconRepository/blob/main/gunicorn_config.py "gunicorn_config.py") |  |  |
+| [install\_profiling\_tools.sh](/AmpliconSuite/AmpliconRepository/blob/main/install_profiling_tools.sh "install_profiling_tools.sh") | | [install\_profiling\_tools.sh](/AmpliconSuite/AmpliconRepository/blob/main/install_profiling_tools.sh "install_profiling_tools.sh") |  |  |
+| [memory\_monitor.py](/AmpliconSuite/AmpliconRepository/blob/main/memory_monitor.py "memory_monitor.py") | | [memory\_monitor.py](/AmpliconSuite/AmpliconRepository/blob/main/memory_monitor.py "memory_monitor.py") |  |  |
+| [migrate\_project\_visibility.py](/AmpliconSuite/AmpliconRepository/blob/main/migrate_project_visibility.py "migrate_project_visibility.py") | | [migrate\_project\_visibility.py](/AmpliconSuite/AmpliconRepository/blob/main/migrate_project_visibility.py "migrate_project_visibility.py") |  |  |
+| [performance\_test.py](/AmpliconSuite/AmpliconRepository/blob/main/performance_test.py "performance_test.py") | | [performance\_test.py](/AmpliconSuite/AmpliconRepository/blob/main/performance_test.py "performance_test.py") |  |  |
+| [purge-local-db.py](/AmpliconSuite/AmpliconRepository/blob/main/purge-local-db.py "purge-local-db.py") | | [purge-local-db.py](/AmpliconSuite/AmpliconRepository/blob/main/purge-local-db.py "purge-local-db.py") |  |  |
+| [pytest.ini](/AmpliconSuite/AmpliconRepository/blob/main/pytest.ini "pytest.ini") | | [pytest.ini](/AmpliconSuite/AmpliconRepository/blob/main/pytest.ini "pytest.ini") |  |  |
+| [quick\_test.sh](/AmpliconSuite/AmpliconRepository/blob/main/quick_test.sh "quick_test.sh") | | [quick\_test.sh](/AmpliconSuite/AmpliconRepository/blob/main/quick_test.sh "quick_test.sh") |  |  |
+| [requirements.txt](/AmpliconSuite/AmpliconRepository/blob/main/requirements.txt "requirements.txt") | | [requirements.txt](/AmpliconSuite/AmpliconRepository/blob/main/requirements.txt "requirements.txt") |  |  |
+| [run-manage-py-dev.sh](/AmpliconSuite/AmpliconRepository/blob/main/run-manage-py-dev.sh "run-manage-py-dev.sh") | | [run-manage-py-dev.sh](/AmpliconSuite/AmpliconRepository/blob/main/run-manage-py-dev.sh "run-manage-py-dev.sh") |  |  |
+| [run-manage-py.sh](/AmpliconSuite/AmpliconRepository/blob/main/run-manage-py.sh "run-manage-py.sh") | | [run-manage-py.sh](/AmpliconSuite/AmpliconRepository/blob/main/run-manage-py.sh "run-manage-py.sh") |  |  |
+| [run\_django\_command.sh](/AmpliconSuite/AmpliconRepository/blob/main/run_django_command.sh "run_django_command.sh") | | [run\_django\_command.sh](/AmpliconSuite/AmpliconRepository/blob/main/run_django_command.sh "run_django_command.sh") |  |  |
+| [start-neo4j-container.sh](/AmpliconSuite/AmpliconRepository/blob/main/start-neo4j-container.sh "start-neo4j-container.sh") | | [start-neo4j-container.sh](/AmpliconSuite/AmpliconRepository/blob/main/start-neo4j-container.sh "start-neo4j-container.sh") |  |  |
+| [start-server.sh](/AmpliconSuite/AmpliconRepository/blob/main/start-server.sh "start-server.sh") | | [start-server.sh](/AmpliconSuite/AmpliconRepository/blob/main/start-server.sh "start-server.sh") |  |  |
+| [stop-neo4j-container.sh](/AmpliconSuite/AmpliconRepository/blob/main/stop-neo4j-container.sh "stop-neo4j-container.sh") | | [stop-neo4j-container.sh](/AmpliconSuite/AmpliconRepository/blob/main/stop-neo4j-container.sh "stop-neo4j-container.sh") |  |  |
+| [stop-server.sh](/AmpliconSuite/AmpliconRepository/blob/main/stop-server.sh "stop-server.sh") | | [stop-server.sh](/AmpliconSuite/AmpliconRepository/blob/main/stop-server.sh "stop-server.sh") |  |  |
+| [sync\_static\_to\_s3.sh](/AmpliconSuite/AmpliconRepository/blob/main/sync_static_to_s3.sh "sync_static_to_s3.sh") | | [sync\_static\_to\_s3.sh](/AmpliconSuite/AmpliconRepository/blob/main/sync_static_to_s3.sh "sync_static_to_s3.sh") |  |  |
+| [test\_i

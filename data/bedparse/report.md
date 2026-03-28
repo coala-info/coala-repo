@@ -325,3 +325,6 @@ usage: bedparse [-h] [--version]
 bedparse: error: argument sub-command: invalid choice: 'validateformat' (choose from '3pUTR', '5pUTR', 'cds', 'promoter', 'introns', 'filter', 'join', 'gtf2bed', 'bed12tobed6', 'convertChr', 'validateFormat')
 ```
 
+
+## Metadata
+- **Skill**: generated

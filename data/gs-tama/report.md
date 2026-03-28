@@ -255,3 +255,6 @@ optional arguments:
   -d D        Distance from last splice junction to call NMD (default 50bp)
 ```
 
+
+## Metadata
+- **Skill**: generated

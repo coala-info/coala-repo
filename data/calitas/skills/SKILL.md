@@ -1,6 +1,6 @@
 ---
 name: calitas
-description: CALITAS identifies potential CRISPR off-target sites by performing gapped alignments that respect protospacer and PAM constraints. Use when user asks to search a reference genome for candidate off-target sites, align guides to specific genomic locations, or perform variant-aware CRISPR target searches.
+description: CALITAS identifies potential CRISPR off-target sites by performing specialized gapped alignments between guide sequences and a reference genome. Use when user asks to search for off-target sites, align sequences to a reference, perform pairwise sequence alignments, or prepare VCF files for variant-aware searches.
 homepage: https://github.com/editasmedicine/calitas
 ---
 
@@ -8,73 +8,67 @@ homepage: https://github.com/editasmedicine/calitas
 # calitas
 
 ## Overview
+CALITAS is a specialized bioinformatic tool designed to identify potential CRISPR off-target sites by performing customized gapped alignments. Unlike standard aligners, it is "CRISPR-aware," meaning it understands the relationship between protospacers and PAM sequences. It excels at providing a non-redundant list of candidate sites, allowing for mismatches and DNA/RNA bulges (gaps) while maintaining a consistent "canonical" alignment for every locus found.
 
-CALITAS (CRISPR-Cas-aware ALigner for In silico off-TArget Search) is a specialized bioinformatics tool designed to identify potential off-target sites for CRISPR guide sequences. Unlike general-purpose aligners, CALITAS implements a customized gapped alignment algorithm that respects CRISPR-specific constraints, such as the relationship between the protospacer and the PAM. It is primarily used to enumerate candidate sites for further investigation, offering features like redundant alignment elimination and the integration of known genomic variants to ensure search results are comprehensive and biologically relevant.
+## Core Commands
+CALITAS operates via four primary sub-commands:
+- `SearchReference`: The main tool for genome-wide discovery of off-target sites using a FASTA reference.
+- `AlignToReference`: Used to generate standardized, high-quality alignments for a list of known genomic coordinates.
+- `PairwiseAlignSequences`: Performs direct alignment between two sets of sequences.
+- `PrepareVcf`: Optimizes VCF files for use in variant-aware off-target searches.
 
-## Installation and Environment
+## Usage Guidelines
 
-The most efficient way to use CALITAS is via the Bioconda package, which includes a helper script to manage the Java environment.
-
+### Reference Preparation
+All commands utilizing a FASTA file require a sequence index (`.fai`) and a sequence dictionary (`.dict`).
 ```bash
-conda install -c bioconda calitas
-```
-
-If running the standalone JAR file directly, ensure Java 8+ is installed and allocate sufficient memory:
-`java -Xmx8g -jar calitas.jar <command> [options]`
-
-## Reference Preparation
-
-Before running searches, the reference FASTA file must have both a FAI index and a sequence dictionary.
-
-```bash
-# Generate index
 samtools faidx reference.fa
-
-# Generate dictionary
-samtools dict -a <assembly-name> -s <species> -o reference.dict reference.fa
+samtools dict -a GRCh38 -s human -o reference.dict reference.fa
 ```
 
-## Core Command Patterns
-
-### SearchReference
-Use this to search an entire genome for candidate off-target sites.
-
-**Crucial Syntax**: Provide the guide sequence in **UPPERCASE** and the PAM sequence in **lowercase**.
-
+### Off-Target Search (SearchReference)
+To search a genome for a specific guide, provide the guide sequence in UPPER CASE and the PAM in lower case.
 ```bash
 calitas SearchReference \
-  -i CTTGCCCCACAGGGCAGTAAnrg \
+  -i GAGTCCGAGCAGAAGAAGAAnrg \
   -I guide_name \
-  -r reference.fa \
+  -r hg38.fa \
   -o results.txt \
   --max-guide-diffs 5 \
-  --max-pam-mismatches 1 \
-  --max-gaps-between-guide-and-pam 3
+  --max-pam-mismatches 1
 ```
 
-### AlignToReference
-Use this to produce standardized alignments at specific genomic locations where guides are already known to align.
-
+### Standardizing Known Sites (AlignToReference)
+If you have a list of coordinates (e.g., from an experimental assay) and want the CALITAS-standardized alignment:
+1. Create a tab-delimited input with headers: `id`, `query`, `chrom`, `position`.
+2. Run the alignment:
 ```bash
-calitas AlignToReference -i input_locations.txt -r reference.fa -o output.txt --window-size 60
+calitas AlignToReference -i input_sites.txt -r hg38.fa -o output_alignments.txt --window-size 60
 ```
-*Note: The input file must be tab-delimited with columns: `id`, `query`, `chrom`, `position`.*
 
-### PrepareVcf
-If performing a variant-aware search, always pre-process your VCF file to optimize performance.
-
+### Variant-Aware Searching
+To include genetic variation in your search, first process your VCF:
 ```bash
-calitas PrepareVcf -v input.vcf -o prepared.vcf
+calitas PrepareVcf -i input.vcf -o prepared.vcf.gz
 ```
+Then pass the prepared VCF to `SearchReference` using the `-v` flag to find off-targets that only exist in specific genetic backgrounds.
 
-## Expert Tips and Best Practices
+## Expert Tips
+- **PAM Flexibility**: You can provide multiple PAMs or perform PAM-less searches by adjusting the input string and the `--max-pam-mismatches` parameter.
+- **Scoring**: Use the customizable scoring system to penalize gaps more heavily than mismatches if your specific Cas enzyme is less tolerant of bulges.
+- **Memory Management**: When running the JAR directly, ensure sufficient heap space for large genomes (e.g., `-Xmx8g` for human genome searches).
+- **Output Interpretation**: The `strand` column indicates the strand the guide resembles. A `+` strand report means the guide binds to the `-` (bottom) genomic strand.
 
-- **Scoring Customization**: CALITAS allows weighting mismatches differently from gaps. Use these parameters to fine-tune sensitivity if the default "canonical" alignment logic is too restrictive for your specific Cas enzyme.
-- **PAM-less Searches**: For discovery of non-canonical targeting, you can perform PAM-less searches by omitting the lowercase PAM suffix in the input sequence.
-- **Variant Integration**: When using `-v` with `SearchReference`, CALITAS will report if a candidate off-target site is created or modified by a known variant in your VCF, providing `variant_id` and `allele_frequency` in the output.
-- **Memory Management**: For large genomes (like Human HG38), ensure at least 8GB of RAM is available to the JVM to prevent `OutOfMemoryError` during the alignment phase.
-- **Output Interpretation**: The `strand` column indicates the strand of the genome the guide resembles. A `+` report means the guide binds to the bottom (negative) strand.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| AlignToReference | Performs glocal alignment of query sequence to a window on the reference. Input should be a tab-delimited file with the following columns (with headers): |
+| PairwiseAlignSequences | Performs pairwise alignment of sequences. Input is a file with two sequences per line, separated by whitespace. Sequences may be composed of DNA and RNA bases and ambiguity codes. No headers are required or expected. |
+| PrepareVcf | Prepares a VCF for optimal use by SearchReference. Does the following: |
+| SearchReference | Searches a reference sequence for alignments of a guide+PAM. |
 
 ## Reference documentation
-- [CALITAS GitHub Repository](./references/github_com_editasmedicine_calitas.md)
-- [Bioconda CALITAS Overview](./references/anaconda_org_channels_bioconda_packages_calitas_overview.md)
+- [CALITAS README](./references/github_com_editasmedicine_calitas_blob_master_README.md)

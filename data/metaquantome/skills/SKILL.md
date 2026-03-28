@@ -1,51 +1,67 @@
 ---
 name: metaquantome
-description: Metaquantome performs quantitative metaproteomic analysis for taxonomic and functional profiling. Use when user asks to analyze metaproteomic data for taxonomic and functional profiling.
+description: metaquantome integrates taxonomic identification and functional quantification to analyze community activity in metaproteomics data. Use when user asks to expand taxonomic or functional annotations, filter and normalize peptide data, perform differential abundance testing, or visualize taxonomic contributions to metabolic functions.
 homepage: https://github.com/galaxyproteomics/metaquant
 ---
 
 
 # metaquantome
 
-yaml
-name: metaquantome
-description: Quantitative metaproteomics analysis of taxonomy and function. Use when Claude needs to analyze metaproteomic data for taxonomic and functional profiling, particularly when working with command-line interfaces and common bioinformatics workflows.
----
 ## Overview
+metaquantome is a specialized framework designed to bridge the gap between taxonomic identification and functional quantification in metaproteomics. While many tools treat taxonomy and function as separate silos, this tool allows for "functional-taxonomic" integration, enabling researchers to determine not just what functions are present in a microbiome, but specifically which taxa are responsible for those functions. It is particularly effective for analyzing large-scale mass spectrometry data to identify shifts in community activity across different experimental conditions.
 
-The metaquantome skill is designed for quantitative analysis of metaproteomic data. It helps in profiling the taxonomy and function of protein samples, providing insights into the composition and activities of microbial communities. This skill is best utilized when you need to process and interpret metaproteomic datasets from the command line, leveraging common bioinformatics practices.
+## Core Workflows and CLI Patterns
 
-## Usage Instructions
+### 1. Data Expansion (Annotation)
+The first step involves expanding raw input files (peptide intensities and identifications) into a format containing full taxonomic and functional hierarchies.
 
-metaquantome is a command-line tool. Its primary function is to process metaproteomic data to quantify and profile taxonomic and functional information.
+*   **Taxonomy Expansion**: Map peptides to NCBI taxids.
+    ```bash
+    metaquantome expand --db ncbi --input peptides.tab --outfile expanded_tax.tab --type t
+    ```
+*   **Functional Expansion**: Map to GO terms or EC numbers.
+    ```bash
+    metaquantome expand --db go --input peptides.tab --outfile expanded_func.tab --type f
+    ```
 
-### Core Functionality
+### 2. Data Filtering and Normalization
+Before statistical testing, data must be cleaned to remove low-confidence assignments and normalized to account for varying sample depths.
 
-The tool typically operates by taking input files (e.g., peptide-spectrum matches, protein databases) and producing quantitative outputs. While specific command-line arguments can vary based on the exact analysis being performed, common patterns involve specifying input files, output directories, and analysis parameters.
+*   **Filtering**: Use the `filter` command to remove entries with too few observations across replicates.
+    *   *Tip*: Set a threshold (e.g., minimum 2 replicates per condition) to increase statistical power.
+*   **Normalization**: Supports various methods including Total Ion Current (TIC) or median centering.
 
-### Common CLI Patterns and Expert Tips
+### 3. Statistical Analysis (Stat Mode)
+Perform differential abundance testing between experimental groups.
 
-*   **Input Data**: Ensure your input data is in a compatible format. For peptide-spectrum matches, this often means formats like mzML, mzXML, or proprietary formats from search engines. Protein sequence databases are also crucial.
-*   **Output Directory**: Always specify an output directory to keep your results organized. Use the `-o` or `--output` flag.
-*   **Taxonomic Profiling**: To perform taxonomic profiling, you will likely need to specify parameters related to taxonomic databases or ontologies. Look for flags like `--taxonomy` or `--taxonomic-db`.
-*   **Functional Profiling**: Similarly, for functional profiling, parameters related to functional databases (e.g., GO terms, KEGG pathways) will be important. Flags like `--function` or `--functional-db` are common.
-*   **Quantitative Analysis**: The core of metaquantome is quantification. Pay attention to parameters that control how protein abundances are calculated. This might involve normalization methods or specific statistical approaches.
-*   **Help Flags**: If you are unsure about specific commands or parameters, always use the help flags:
-    *   `metaquantome --help`
-    *   `metaquantome <subcommand> --help` (if metaquantome has subcommands)
-*   **Configuration Files**: For complex analyses, metaquantome might support configuration files. Check the documentation for options to load parameters from a file (e.g., `--config <path/to/config.yaml>`). This is highly recommended for reproducibility.
-*   **Version Management**: When working with bioinformatics tools, it's good practice to be aware of the version you are using. The `conda install bioconda::metaquantome` command suggests it's available via Conda, which is excellent for managing dependencies and versions.
+*   **Comparison**: Define experimental conditions using a sample annotation file.
+    ```bash
+    metaquantome stat --input expanded_data.tab --sample_file samples.tab --compare "Control-vs-Treatment" --outfile stats_results.tab
+    ```
 
-### Example Workflow (Conceptual)
+### 4. Visualization
+Generate plots to interpret the complex multi-dimensional data.
 
-A typical workflow might look like this:
+*   **Heatmaps**: Visualize top differentially abundant functions or taxa.
+*   **Barplots/Stacked Plots**: Show taxonomic contribution to a specific metabolic pathway.
+*   **Volcano Plots**: Identify significant outliers in functional expression.
 
-```bash
-# Example: Running a basic taxonomic and functional profiling analysis
-metaquantome --input peptides.fasta --taxonomy databases/uniprot_taxonomy.tsv --function databases/go_terms.obo --output results/
-```
+## Expert Tips for Metaproteomics
+*   **Database Selection**: Ensure the database used during the `expand` step matches the one used for initial peptide identification (e.g., UniProt vs. RefSeq) to prevent mapping mismatches.
+*   **LCA (Lowest Common Ancestor)**: When mapping peptides to taxonomy, metaquantome utilizes LCA logic. Be aware that highly conserved peptides will map to higher taxonomic ranks (e.g., Phylum or Kingdom) rather than Species.
+*   **Functional Redundancy**: Use the integrated "function-taxonomy" mode to see if a decrease in a specific enzyme's activity is due to a decrease in the total population or a specific shift in one genus.
 
-**Note**: The above is a conceptual example. Actual command-line arguments and file formats will depend on the specific version of metaquantome and the nature of your input data. Always refer to the tool's official documentation or `--help` output for precise usage.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| metaquantome db | metaQuantome uses freely available bioinformatic databases to expand your set of direct annotations. For most cases, all 3 databases can be downloaded (the default). |
+| metaquantome expand | The expand module is the first analysis step in the metaQuantome analysis workflow, and can be run to analyze function, taxonomy, or function and taxonomy together. |
+| metaquantome filter | The filter module is the second step in the metaQuantome analysis workflow. The purpose of the filter module is to filter expanded terms to those that are representative and well-supported by the data. Please see the manuscript (https://doi.org/10.1074/mcp.ra118.001240) for further details about filtering. |
+| metaquantome stat | The stat module is the third step in the metaQuantome analysis workflow. The purpose of the stat module is to perform differential expression analysis between 2 experimental conditions. metaQuantome offers paired and unpaired tests, as well as parametric and non-parametric options. |
+| metaquantome viz | The viz module is the final step in the metaQuantome analysis workflow. The available visualizations are: -bar plot -volcano plot -heatmap -PCA plot Please consult the manuscript (https://doi.org/10.1074/mcp.ra118.001240.) for full details on each of these plots. |
 
 ## Reference documentation
-- [metaquantome Overview (bioconda)](./references/anaconda_org_channels_bioconda_packages_metaquantome_overview.md)
+- [metaquantome Overview](./references/anaconda_org_channels_bioconda_packages_metaquantome_overview.md)

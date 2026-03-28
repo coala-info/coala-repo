@@ -299,3 +299,6 @@ A summary report is generated after each file's search results and after search
 completion. To suppress these reports, enable quiet mode using the [-quiet] flag
 ```
 
+
+## Metadata
+- **Skill**: generated

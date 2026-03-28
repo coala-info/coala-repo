@@ -1,1 +1,252 @@
-Reference Database - SADIE Skip to content SADIE Reference Database Initializing search jwillis0720/sadie SADIE jwillis0720/sadie SADIE Reference Database Reference Database Table of contents Germline Gene Gateway Examples of how to use the G3 API Generating AIRR Reference Database The reference YAML Generating AIRR database with Reference Class AIRR Sequence Annotation AIRR Sequence Annotation Annotating Advanced Annotation Methods Visualization Sequence Numbering BCR/TCR Objects Clustering Contributing to SADIE Table of contents Germline Gene Gateway Examples of how to use the G3 API Generating AIRR Reference Database The reference YAML Generating AIRR database with Reference Class Reference Module &para; The SADIE reference module abstracts the underlying reference data used by the AIRR and Numbering modules. Both of these modules use external database files. Their organization (particularly by AIRR, which ports IGBlast ) can be extremely complicated. Making a new reference database is a tedious and time-consuming task. This module provides a simple interface for making your own reference databases. Builtin reference SADIE ships with a reference database that contains the most common species along with functional genes. The average user will not need to use this module as the database is comprehensive. You can see each entry by looking either directly at the paths used src/sadie/airr/data/ for AIRR and src/sadie/anarci/data for the renumbering module. Another convenient way to look at the reference database is to view the reference.yml . More on how that file is structured will be provided . Germline Gene Gateway &para; New germline gene segments are being discovered at a rapid pace. To meet the needs of this changing landscape, SADIE gets all of the germline gene info from a programmatic API called the Germline Gene Gateway . This API is hosted as a free service. It consists of germline genes from IMGT as well as custom genes that have been annotated and cataloged by programs such as IGDiscover . To explore the API, visit the Germline Gene Gateway . This RESTful API conforms to the OpenAPI 3.0 specification. Examples of how to use the G3 API &para; The following examples show how to pull genes programmatically using the command line utilities curl , wget and the requests library in Python. It will fetch the first 5 V-Gene segments in IMGT notation. curl wget Python $ curl -X &#39;GET&#39; &#39;https://g3.jordanrwillis.com/api/v1/genes?source=imgt&amp;segment=V&amp;common=human&amp;limit=5&#39; -H &#39;accept: application/json&#39; -o &#39;human_v.json&#39; $ wget &#39;https://g3.jordanrwillis.com/api/v1/genes?source=imgt&amp;segment=V&amp;common=human&amp;limit=5&#39; -O human_v.json import json import requests from sadie.reference import G3Error url = &quot;https://g3.jordanrwillis.com/api/v1/genes?source=imgt&amp;segment=V&amp;common=human&amp;limit=5&quot; response = requests . get ( url ) response_json = response . json () if response . status_code != 200 : raise G3Error ( &quot;Error: &quot; + str ( response . status_code )) print ( json . dumps ( response_json , indent = 4 )) json . dump ( response_json , open ( &quot;human_v.json&quot; , &quot;w&quot; ), indent = 4 ) The output will be a JSON file containing the V-Gene segment and all relevant information needed by SADIE to write out databases needed by the AIRR and Numbering modules. human_v.json [ { &quot;_id&quot; : &quot;608b90908e6710a05b587046&quot; , &quot;source&quot; : &quot;imgt&quot; , &quot;common&quot; : &quot;human&quot; , &quot;gene&quot; : &quot;IGHV1-18*01&quot; , &quot;label&quot; : &quot;V-REGION&quot; , &quot;gene_segment&quot; : &quot;V&quot; , &quot;receptor&quot; : &quot;IG&quot; , &quot;sequence&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA&quot; , &quot;latin&quot; : &quot;Homo_sapiens&quot; , &quot;imgt&quot; : { &quot;sequence&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA&quot; , &quot;sequence_gapped&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCT...GAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTT............ACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTAC......AATGGTAACACAAACTATGCACAGAAGCTCCAG...GGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA&quot; , &quot;sequence_gapped_aa&quot; : &quot;QVQLVQSGA.EVKKPGASVKVSCKASGYTF....TSYGISWVRQAPGQGLEWMGWISAY..NGNTNYAQKLQ.GRVTMTTDTSTSTAYMELRSLRSDDTAVYYCAR&quot; , &quot;fwr1&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCT&quot; , &quot;fwr1_aa&quot; : &quot;QVQLVQSGAEVKKPGASVKVSCKAS&quot; , &quot;fwr1_start&quot; : 0 , &quot;fwr1_end&quot; : 74 , &quot;cdr1&quot; : &quot;GGTTACACCTTTACCAGCTATGGT&quot; , &quot;cdr1_aa&quot; : &quot;GYTFTSYG&quot; , &quot;cdr1_start&quot; : 75 , &quot;cdr1_end&quot; : 98 , &quot;fwr2&quot; : &quot;ATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGG&quot; , &quot;fwr2_aa&quot; : &quot;ISWVRQAPGQGLEWMGW&quot; , &quot;fwr2_start&quot; : 99 , &quot;fwr2_end&quot; : 149 , &quot;cdr2&quot; : &quot;ATCAGCGCTTACAATGGTAACACA&quot; , &quot;cdr2_aa&quot; : &quot;ISAYNGNT&quot; , &quot;cdr2_start&quot; : 150 , &quot;cdr2_end&quot; : 173 , &quot;fwr3&quot; : &quot;AACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGT&quot; , &quot;fwr3_aa&quot; : &quot;NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDTAVYYC&quot; , &quot;fwr3_start&quot; : 174 , &quot;fwr3_end&quot; : 287 , &quot;cdr3&quot; : &quot;GCGAGAGA&quot; , &quot;cdr3_aa&quot; : &quot;AR&quot; , &quot;cdr3_start&quot; : 288 , &quot;cdr3_end&quot; : 295 , &quot;imgt_functional&quot; : &quot;F&quot; , &quot;contrived_functional&quot; : &quot;F&quot; } }, { &quot;_id&quot; : &quot;608b90908e6710a05b587048&quot; , &quot;source&quot; : &quot;imgt&quot; , &quot;common&quot; : &quot;human&quot; , &quot;gene&quot; : &quot;IGHV1-18*02&quot; , &quot;label&quot; : &quot;V-REGION&quot; , &quot;gene_segment&quot; : &quot;V&quot; , &quot;receptor&quot; : &quot;IG&quot; , &quot;sequence&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC&quot; , &quot;latin&quot; : &quot;Homo_sapiens&quot; , &quot;imgt&quot; : { &quot;sequence&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC&quot; , &quot;sequence_gapped&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCT...GAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTT............ACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTAC......AATGGTAACACAAACTATGCACAGAAGCTCCAG...GGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC&quot; , &quot;sequence_gapped_aa&quot; : &quot;QVQLVQSGA.EVKKPGASVKVSCKASGYTF....TSYGISWVRQAPGQGLEWMGWISAY..NGNTNYAQKLQ.GRVTMTTDTSTSTAYMELRSLRSDDTA&quot; , &quot;fwr1&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCT&quot; , &quot;fwr1_aa&quot; : &quot;QVQLVQSGAEVKKPGASVKVSCKAS&quot; , &quot;fwr1_start&quot; : 0 , &quot;fwr1_end&quot; : 74 , &quot;cdr1&quot; : &quot;GGTTACACCTTTACCAGCTATGGT&quot; , &quot;cdr1_aa&quot; : &quot;GYTFTSYG&quot; , &quot;cdr1_start&quot; : 75 , &quot;cdr1_end&quot; : 98 , &quot;fwr2&quot; : &quot;ATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGG&quot; , &quot;fwr2_aa&quot; : &quot;ISWVRQAPGQGLEWMGW&quot; , &quot;fwr2_start&quot; : 99 , &quot;fwr2_end&quot; : 149 , &quot;cdr2&quot; : &quot;ATCAGCGCTTACAATGGTAACACA&quot; , &quot;cdr2_aa&quot; : &quot;ISAYNGNT&quot; , &quot;cdr2_start&quot; : 150 , &quot;cdr2_end&quot; : 173 , &quot;fwr3&quot; : &quot;AACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC&quot; , &quot;fwr3_aa&quot; : &quot;NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDTA&quot; , &quot;fwr3_start&quot; : 174 , &quot;fwr3_end&quot; : 275 , &quot;cdr3&quot; : &quot;&quot; , &quot;cdr3_aa&quot; : &quot;&quot; , &quot;cdr3_start&quot; : null , &quot;cdr3_end&quot; : null , &quot;imgt_functional&quot; : &quot;F&quot; , &quot;contrived_functional&quot; : &quot;F&quot; } }, { &quot;_id&quot; : &quot;608b90908e6710a05b587049&quot; , &quot;source&quot; : &quot;imgt&quot; , &quot;common&quot; : &quot;human&quot; , &quot;gene&quot; : &quot;IGHV1-18*03&quot; , &quot;label&quot; : &quot;V-REGION&quot; , &quot;gene_segment&quot; : &quot;V&quot; , &quot;receptor&quot; : &quot;IG&quot; , &quot;sequence&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACATGGCCGTGTATTACTGTGCGAGAGA&quot; , &quot;latin&quot; : &quot;Homo_sapiens&quot; , &quot;imgt&quot; : { &quot;sequence&quot; : &quot;CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGA
+[ ]
+[ ]
+
+[Skip to content](#reference-module)
+
+SADIE
+
+Reference Database
+
+Initializing search
+
+[jwillis0720/sadie](https://github.com/jwillis0720/sadie "Go to repository")
+
+SADIE
+
+[jwillis0720/sadie](https://github.com/jwillis0720/sadie "Go to repository")
+
+* [SADIE](..)
+* [ ]
+
+  Reference Database
+
+  [Reference Database](./)
+
+  Table of contents
+  + [Germline Gene Gateway](#germline-gene-gateway)
+
+    - [Examples of how to use the G3 API](#examples-of-how-to-use-the-g3-api)
+  + [Generating AIRR Reference Database](#generating-airr-reference-database)
+  + [The reference YAML](#the-reference-yaml)
+  + [Generating AIRR database with Reference Class](#generating-airr-database-with-reference-class)
+* [ ]
+
+  AIRR Sequence Annotation
+
+  AIRR Sequence Annotation
+  + [Annotating](../annotation/)
+  + [Advanced Annotation Methods](../advanced_annotation/)
+  + [Visualization](../visualization/)
+* [Sequence Numbering](../renumbering/)
+* [BCR/TCR Objects](../models/)
+* [Clustering](../clustering/)
+* [Contributing to SADIE](../contribute/)
+
+Table of contents
+
+* [Germline Gene Gateway](#germline-gene-gateway)
+
+  + [Examples of how to use the G3 API](#examples-of-how-to-use-the-g3-api)
+* [Generating AIRR Reference Database](#generating-airr-reference-database)
+* [The reference YAML](#the-reference-yaml)
+* [Generating AIRR database with Reference Class](#generating-airr-database-with-reference-class)
+
+# Reference Module[¶](#reference-module "Permanent link")
+
+The SADIE reference module abstracts the underlying reference data used by the [AIRR](../annotation/) and [Numbering](../renumbering/) modules. Both of these modules use external database files. Their organization (particularly by AIRR, which ports [IGBlast](https://www.ncbi.nlm.nih.gov/igblast/)) can be extremely complicated. Making a new reference database is a tedious and time-consuming task. This module provides a simple interface for making your own reference databases.
+
+Builtin reference
+
+SADIE ships with a reference database that contains the most common species along with functional genes. The average user will not need to use this module as the database is comprehensive. You can see each entry by looking either directly at the paths used `src/sadie/airr/data/` for AIRR and `src/sadie/anarci/data` for the renumbering module. Another convenient way to look at the reference database is to view the [reference.yml](https://github.com/jwillis0720/sadie/blob/master/src/sadie/reference/data/reference.yml). More on how that file is structured will be [provided](#the-reference-yaml).
+
+## Germline Gene Gateway[¶](#germline-gene-gateway "Permanent link")
+
+New germline gene segments are being discovered at a rapid pace. To meet the needs of this changing landscape, SADIE gets all of the germline gene info from a programmatic API called the [Germline Gene Gateway](https://g3.jordanrwillis.com/docs/). This API is hosted as a free service. It consists of germline genes from [IMGT](https://www.imgt.org) as well as custom genes that have been annotated and cataloged by programs such as [IGDiscover](http://docs.igdiscover.se/en/stable/). To explore the API, visit the [Germline Gene Gateway](https://g3.jordanrwillis.com/docs/). This RESTful API conforms to the [OpenAPI 3.0](https://swagger.io/specification/) specification.
+
+### Examples of how to use the G3 API[¶](#examples-of-how-to-use-the-g3-api "Permanent link")
+
+The following examples show how to pull genes programmatically using the command line utilities `curl`, `wget` and the `requests` library in Python. It will fetch the first 5 V-Gene segments in IMGT notation.
+
+The output will be a JSON file containing the V-Gene segment and all relevant information needed by SADIE to write out databases needed by the AIRR and Numbering modules.
+
+human\_v.json
+
+```
+    [
+        {
+            "_id": "608b90908e6710a05b587046",
+            "source": "imgt",
+            "common": "human",
+            "gene": "IGHV1-18*01",
+            "label": "V-REGION",
+            "gene_segment": "V",
+            "receptor": "IG",
+            "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA",
+            "latin": "Homo_sapiens",
+            "imgt": {
+                "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA",
+                "sequence_gapped": "CAGGTTCAGCTGGTGCAGTCTGGAGCT...GAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTT............ACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTAC......AATGGTAACACAAACTATGCACAGAAGCTCCAG...GGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA",
+                "sequence_gapped_aa": "QVQLVQSGA.EVKKPGASVKVSCKASGYTF....TSYGISWVRQAPGQGLEWMGWISAY..NGNTNYAQKLQ.GRVTMTTDTSTSTAYMELRSLRSDDTAVYYCAR",
+                "fwr1": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCT",
+                "fwr1_aa": "QVQLVQSGAEVKKPGASVKVSCKAS",
+                "fwr1_start": 0,
+                "fwr1_end": 74,
+                "cdr1": "GGTTACACCTTTACCAGCTATGGT",
+                "cdr1_aa": "GYTFTSYG",
+                "cdr1_start": 75,
+                "cdr1_end": 98,
+                "fwr2": "ATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGG",
+                "fwr2_aa": "ISWVRQAPGQGLEWMGW",
+                "fwr2_start": 99,
+                "fwr2_end": 149,
+                "cdr2": "ATCAGCGCTTACAATGGTAACACA",
+                "cdr2_aa": "ISAYNGNT",
+                "cdr2_start": 150,
+                "cdr2_end": 173,
+                "fwr3": "AACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGT",
+                "fwr3_aa": "NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDTAVYYC",
+                "fwr3_start": 174,
+                "fwr3_end": 287,
+                "cdr3": "GCGAGAGA",
+                "cdr3_aa": "AR",
+                "cdr3_start": 288,
+                "cdr3_end": 295,
+                "imgt_functional": "F",
+                "contrived_functional": "F"
+            }
+        },
+        {
+            "_id": "608b90908e6710a05b587048",
+            "source": "imgt",
+            "common": "human",
+            "gene": "IGHV1-18*02",
+            "label": "V-REGION",
+            "gene_segment": "V",
+            "receptor": "IG",
+            "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC",
+            "latin": "Homo_sapiens",
+            "imgt": {
+                "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC",
+                "sequence_gapped": "CAGGTTCAGCTGGTGCAGTCTGGAGCT...GAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTT............ACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTAC......AATGGTAACACAAACTATGCACAGAAGCTCCAG...GGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC",
+                "sequence_gapped_aa": "QVQLVQSGA.EVKKPGASVKVSCKASGYTF....TSYGISWVRQAPGQGLEWMGWISAY..NGNTNYAQKLQ.GRVTMTTDTSTSTAYMELRSLRSDDTA",
+                "fwr1": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCT",
+                "fwr1_aa": "QVQLVQSGAEVKKPGASVKVSCKAS",
+                "fwr1_start": 0,
+                "fwr1_end": 74,
+                "cdr1": "GGTTACACCTTTACCAGCTATGGT",
+                "cdr1_aa": "GYTFTSYG",
+                "cdr1_start": 75,
+                "cdr1_end": 98,
+                "fwr2": "ATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGG",
+                "fwr2_aa": "ISWVRQAPGQGLEWMGW",
+                "fwr2_start": 99,
+                "fwr2_end": 149,
+                "cdr2": "ATCAGCGCTTACAATGGTAACACA",
+                "cdr2_aa": "ISAYNGNT",
+                "cdr2_start": 150,
+                "cdr2_end": 173,
+                "fwr3": "AACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTAAGATCTGACGACACGGCC",
+                "fwr3_aa": "NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDTA",
+                "fwr3_start": 174,
+                "fwr3_end": 275,
+                "cdr3": "",
+                "cdr3_aa": "",
+                "cdr3_start": null,
+                "cdr3_end": null,
+                "imgt_functional": "F",
+                "contrived_functional": "F"
+            }
+        },
+        {
+            "_id": "608b90908e6710a05b587049",
+            "source": "imgt",
+            "common": "human",
+            "gene": "IGHV1-18*03",
+            "label": "V-REGION",
+            "gene_segment": "V",
+            "receptor": "IG",
+            "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACATGGCCGTGTATTACTGTGCGAGAGA",
+            "latin": "Homo_sapiens",
+            "imgt": {
+                "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACATGGCCGTGTATTACTGTGCGAGAGA",
+                "sequence_gapped": "CAGGTTCAGCTGGTGCAGTCTGGAGCT...GAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTT............ACCAGCTATGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTAC......AATGGTAACACAAACTATGCACAGAAGCTCCAG...GGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACATGGCCGTGTATTACTGTGCGAGAGA",
+                "sequence_gapped_aa": "QVQLVQSGA.EVKKPGASVKVSCKASGYTF....TSYGISWVRQAPGQGLEWMGWISAY..NGNTNYAQKLQ.GRVTMTTDTSTSTAYMELRSLRSDDMAVYYCAR",
+                "fwr1": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCT",
+                "fwr1_aa": "QVQLVQSGAEVKKPGASVKVSCKAS",
+                "fwr1_start": 0,
+                "fwr1_end": 74,
+                "cdr1": "GGTTACACCTTTACCAGCTATGGT",
+                "cdr1_aa": "GYTFTSYG",
+                "cdr1_start": 75,
+                "cdr1_end": 98,
+                "fwr2": "ATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGG",
+                "fwr2_aa": "ISWVRQAPGQGLEWMGW",
+                "fwr2_start": 99,
+                "fwr2_end": 149,
+                "cdr2": "ATCAGCGCTTACAATGGTAACACA",
+                "cdr2_aa": "ISAYNGNT",
+                "cdr2_start": 150,
+                "cdr2_end": 173,
+                "fwr3": "AACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACATGGCCGTGTATTACTGT",
+                "fwr3_aa": "NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDMAVYYC",
+                "fwr3_start": 174,
+                "fwr3_end": 287,
+                "cdr3": "GCGAGAGA",
+                "cdr3_aa": "AR",
+                "cdr3_start": 288,
+                "cdr3_end": 295,
+                "imgt_functional": "F",
+                "contrived_functional": "F"
+            }
+        },
+        {
+            "_id": "608b90908e6710a05b58704b",
+            "source": "imgt",
+            "common": "human",
+            "gene": "IGHV1-18*04",
+            "label": "V-REGION",
+            "gene_segment": "V",
+            "receptor": "IG",
+            "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTACGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA",
+            "latin": "Homo_sapiens",
+            "imgt": {
+                "sequence": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTTACCAGCTACGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTACAATGGTAACACAAACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA",
+                "sequence_gapped": "CAGGTTCAGCTGGTGCAGTCTGGAGCT...GAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGTTACACCTTT............ACCAGCTACGGTATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGGATCAGCGCTTAC......AATGGTAACACAAACTATGCACAGAAGCTCCAG...GGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGTGCGAGAGA",
+                "sequence_gapped_aa": "QVQLVQSGA.EVKKPGASVKVSCKASGYTF....TSYGISWVRQAPGQGLEWMGWISAY..NGNTNYAQKLQ.GRVTMTTDTSTSTAYMELRSLRSDDTAVYYCAR",
+                "fwr1": "CAGGTTCAGCTGGTGCAGTCTGGAGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCT",
+                "fwr1_aa": "QVQLVQSGAEVKKPGASVKVSCKAS",
+                "fwr1_start": 0,
+                "fwr1_end": 74,
+                "cdr1": "GGTTACACCTTTACCAGCTACGGT",
+                "cdr1_aa": "GYTFTSYG",
+                "cdr1_start": 75,
+                "cdr1_end": 98,
+                "fwr2": "ATCAGCTGGGTGCGACAGGCCCCTGGACAAGGGCTTGAGTGGATGGGATGG",
+                "fwr2_aa": "ISWVRQAPGQGLEWMGW",
+                "fwr2_start": 99,
+                "fwr2_end": 149,
+                "cdr2": "ATCAGCGCTTACAATGGTAACACA",
+                "cdr2_aa": "ISAYNGNT",
+                "cdr2_start": 150,
+                "cdr2_end": 173,
+                "fwr3": "AACTATGCACAGAAGCTCCAGGGCAGAGTCACCATGACCACAGACACATCCACGAGCACAGCCTACATGGAGCTGAGGAGCCTGAGATCTGACGACACGGCCGTGTATTACTGT",
+                "fwr3_aa": "NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDTAVYYC",
+                "fwr3_start": 174,
+                "fwr3_end": 287,
+                "cdr3": "GCGAGAGA",
+                "cdr3_aa": "AR",
+                "cdr3_start": 288,
+                "cdr3_end": 295,
+                "imgt_functional": "F",
+                "contrived_functional": "F"
+            }
+        },
+        {
+            "_id": "608b90908e6710a05b587053",
+            "source": "imgt",
+            "common": "human",
+            "gene": "IGHV1-2*01",
+            "label": "V-REGION",
+            "gene_segment": "V",
+            "receptor": "IG",
+            "sequence": "CAGGTGCAGCTGGTGCAGTCTGGGGCTGAGGTGAAGAAGCCTGGGGCCTCAGTGAAGGTCTCCTGCAAGGCTTCTGGATACACCTTCACCGGCTACTAT

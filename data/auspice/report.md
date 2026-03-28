@@ -149,3 +149,6 @@ Optional arguments:
   --minify-json   export JSONs without indentation or line returns
 ```
 
+
+## Metadata
+- **Skill**: generated

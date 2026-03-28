@@ -403,3 +403,6 @@ usage: blobtools nodesdb             --nodes <NODES> --names <NAMES>
         --names <NAMES>                 NCBI names.dmp file.
 ```
 
+
+## Metadata
+- **Skill**: generated

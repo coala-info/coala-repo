@@ -343,3 +343,6 @@ Output files:
                           GLIMPSE2 for random access to genomic regions
 ```
 
+
+## Metadata
+- **Skill**: generated

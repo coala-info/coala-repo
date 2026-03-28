@@ -1,0 +1,393 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbodulic%2FCATS-rf%2Fblob%2Fmain%2FREADME.md)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbodulic%2FCATS-rf%2Fblob%2Fmain%2FREADME.md)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=bodulic%2FCATS-rf)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bodulic](/bodulic)
+/
+**[CATS-rf](/bodulic/CATS-rf)**
+Public
+
+* [Notifications](/login?return_to=%2Fbodulic%2FCATS-rf) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fbodulic%2FCATS-rf)
+* [Star
+   3](/login?return_to=%2Fbodulic%2FCATS-rf)
+
+* [Code](/bodulic/CATS-rf)
+* [Issues
+  0](/bodulic/CATS-rf/issues)
+* [Pull requests
+  0](/bodulic/CATS-rf/pulls)
+* [Actions](/bodulic/CATS-rf/actions)
+* [Projects](/bodulic/CATS-rf/projects)
+* [Security
+  0](/bodulic/CATS-rf/security)
+* [Insights](/bodulic/CATS-rf/pulse)
+
+Additional navigation options
+
+* [Code](/bodulic/CATS-rf)
+* [Issues](/bodulic/CATS-rf/issues)
+* [Pull requests](/bodulic/CATS-rf/pulls)
+* [Actions](/bodulic/CATS-rf/actions)
+* [Projects](/bodulic/CATS-rf/projects)
+* [Security](/bodulic/CATS-rf/security)
+* [Insights](/bodulic/CATS-rf/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [CATS-rf](/bodulic/CATS-rf/tree/main)
+
+/
+
+# README.md
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/bodulic/CATS-rf/commits/main/README.md)
+
+History
+
+613 lines (368 loc) · 36.3 KB
+
+main
+
+## Breadcrumbs
+
+1. [CATS-rf](/bodulic/CATS-rf/tree/main)
+
+/
+
+# README.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+613 lines (368 loc) · 36.3 KB
+
+[Raw](https://github.com/bodulic/CATS-rf/raw/refs/heads/main/README.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# CATS-rf
+
+[![Logo](/bodulic/CATS-rf/raw/main/cats_rf_logo.png)](/bodulic/CATS-rf/blob/main/cats_rf_logo.png)
+
+[![License: MIT](https://camo.githubusercontent.com/fdf2982b9f5d7489dcf44570e714e3a15fce6253e0cc6b5aa61a075aac2ff71b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667)](/bodulic/CATS-rf/blob/main/LICENSE)
+[![Platform](https://camo.githubusercontent.com/9cf83456484cc7a0c2d9fee4224a41bdf3a217a5789596808f111c022b643263/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d4c696e75782532302537432532306d61634f532d627269676874677265656e)](https://camo.githubusercontent.com/9cf83456484cc7a0c2d9fee4224a41bdf3a217a5789596808f111c022b643263/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d4c696e75782532302537432532306d61634f532d627269676874677265656e)
+[![Bioconda](https://camo.githubusercontent.com/a5dff519a2d2869c380ceb9e62986c5dc6584d214fae49be433a57adb128dcff/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f636174732d72662e737667)](https://anaconda.org/bioconda/cats-rf)
+[![bioRxiv](https://camo.githubusercontent.com/ab0c5530d4a95a9cc8f6f48402129a01ca5c5f0cca46ec1e09dc1b44078e443a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f62696f527869762d31302e313130312f323032352e30372e32322e36363631313276312d6f72616e6765)](https://www.biorxiv.org/content/10.1101/2025.07.22.666112v1)
+
+Multipage documentation: <https://bodulic.github.io/CATS-rf/>
+
+# Table of Contents
+
+* [Introduction](#introduction)
+* [Installation](#installation)
+* [Test data](#test-data)
+* [Example usage](#example-usage)
+* [Detailed options](#detailed-options)
+* [Output explanation](#output-explanation)
+* [Assembly comparison with `CATS_rf_compare`](#assembly-comparison-with-cats_rf_compare)
+* [Citation](#citation)
+* [Troubleshooting](#troubleshooting)
+* [Changelog](#changelog)
+
+# Introduction
+
+CATS-rf is the reference-free module of the CATS (Comprehensive Assessment of Transcript Sequences) framework. It evaluates the quality of transcriptomes assembled de novo from short reads, relying solely on RNA-seq reads used in the assembly construction. The pipeline maps reads back to the assembled transcripts and examines mapping evidence suggesting misassembly. Quality evaluation is performed at the transcript level, integrating four score components each targeting specific assembly errors:
+
+| **Score Component** | **Evidence** | **Targeted Assembly Errors** |
+| --- | --- | --- |
+| Coverage component (*Sc*) | Low-coverage regions | Insertions, redundancy |
+| Accuracy component (*Sa*) | Low-accuracy regions | Sequence inaccuracy |
+| Local fidelity component (*Sl*) | Inconsistent pair mapping within transcripts | Structural errors (e.g. deletions, translocations, inversions...) |
+| Integrity component (*Si*) | Pairs mapping to different transcripts | Transcript fragmentation |
+
+Transcript quality score S*t* is calculated as the product of the described score components, equally weighting detected assembly errors. Assembly score *S* is computed as the mean of individual transcript scores. All components and scores are normalized to a range between 0 and 1, where higher values indicate better quality.
+
+In addition to transcript scores, CATS-rf provides a comprehensive set of assembly metrics, including transcript length and composition statistics, read mapping rates, positional coverage and accuracy profiles, and pair mapping consistency metrics.
+
+CATS-rf consistently displays stronger performance than currently existing reference-free transcriptome assembly evaluation tools. For detailed benchmarks and methodology, please refer to the CATS [preprint](https://www.biorxiv.org/content/10.1101/2025.07.22.666112v1)
+
+# Installation
+
+## Running CATS-rf via Docker
+
+Starting from version 1.0.2, CATS-rf can be run using Docker:
+
+Build the Docker image with:
+
+```
+docker pull bodulic/cats-rf
+```
+
+Run the container with:
+
+```
+docker run --rm -v "$PWD":/data -w /data bodulic/cats-rf CATS_rf
+
+docker run --rm -v "$PWD":/data -w /data bodulic/cats-rf CATS_rf_compare
+```
+
+## Running CATS-rf via Singularity
+
+Build the Singularity image with:
+
+```
+singularity build cats_rf.sif docker://bodulic/cats-rf:latest
+```
+
+Run the container with:
+
+```
+singularity run cats_rf.sif CATS_rf
+
+singularity run cats_rf.sif CATS_rf_compare
+```
+
+## Installing CATS-rf via conda
+
+CATS-rf and its dependencies can be directly installed via [Bioconda](https://anaconda.org/bioconda/cats-rf):
+
+```
+conda install -c bioconda cats-rf
+```
+
+In case of dependency conflicts, please see the Troubleshooting section.
+
+## Installing CATS-rf from source
+
+CATS-rf consists of Bash and R scripts located in the `scripts` directory of this repository. After cloning the repository, all CATS-rf scripts must be included in the `PATH` environment variable.
+The following dependencies are required:
+
+| **Dependency** | **Tested Version** | **Homepage** | **Conda Installation** |
+| --- | --- | --- | --- |
+| R | 4.3.0.-4.4.3 | <https://www.r-project.org> | `conda install conda-forge::r-base` |
+| data.table (R) | 1.16.4 | [https://cran.r-project.org/package=data.table](https://cran.r-project.org/package%3Ddata.table) | `conda install conda-forge::r-data.table` |
+| Bowtie2 | 2.5.4 | <https://github.com/BenLangmead/bowtie2> | `conda install -c bioconda bowtie2` |
+| Samtools | 1.21 | <https://www.htslib.org> | `conda install -c bioconda samtools` |
+| kallisto | 0.50.1 | <https://github.com/pachterlab/kallisto> | `conda install -c bioconda kallisto` |
+| GNU Parallel | 20220922 | <https://www.gnu.org/software/parallel> | `conda install conda-forge::parallel` |
+| bedtools (bamToBed) | 2.31.1 | <https://github.com/arq5x/bedtools2> | `conda install -c bioconda bedtools` |
+| python | 3.6-3.12 | <https://github.com/arq5x/bedtools2> | `conda install -c bioconda bedtools` |
+| pysamstats | 1.1.2 | <https://github.com/alimanfoo/pysamstats> | `conda install -c bioconda pysamstats` |
+
+R, Bowtie2, Samtools, kallisto, GNU Parallel, bedtools (bamToBed), and pysamstats executables must be included in `PATH`. R package data.table can be installed via conda or directly in R with `install.packages("data.table")`
+
+### MacOS
+
+If you are using MacOS, Bash (version >= 4.0) and GNU versions of core utilities are required. In this case, `PATH` should be adjusted so that CATS-rf uses GNU versions of core utilities:
+
+* Install Bash ≥ 4.0 via [Homebrew](https://formulae.brew.sh/formula/bash):
+
+```
+brew install bash
+```
+
+* Install GNU utilities:
+
+```
+brew install coreutils gnu-sed gawk
+```
+
+* Add Bash and GNU utilities to your `PATH` (adjust path depending on your architecture):
+
+For Apple Silicon:
+
+```
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+```
+
+For Intel-based configurations:
+
+```
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+```
+
+* Run CATS-rf using the installed Bash version:
+
+```
+bash CATS_rf
+```
+
+The stated changes can be made permanent by modifying the appropriate .rc file.
+
+# Test data
+
+CATS-rf installation can be tested using instructions and files located in `test_data` directory.
+
+Using typical hardware and default settings, the total runtime of CATS-rf on the provided test data is approximately 1 minute.
+
+For real-world datasets, runtime scales with sequencing depth. On average-depth human transcriptomes (~20 million reads), CATS-rf typically completes in approximately 1 hour.
+
+# Example usage
+
+CATS-rf requires a transcriptome assembly in FASTA format, along with short RNA-seq reads used during

@@ -1,6 +1,6 @@
 ---
 name: haystac
-description: Haystac provides a Bayesian framework for identifying species and estimating abundances in metagenomic sequencing libraries, with specific optimizations for ancient DNA. Use when user asks to build custom genomic databases from NCBI, pre-process sequencing reads, identify species in complex samples, or assess ancient DNA damage patterns.
+description: haystac is a Bayesian-based pipeline for identifying species and estimating their abundance within complex sequencing datasets. Use when user asks to build reference databases from NCBI, preprocess sequencing reads, or perform species identification and damage pattern analysis for ancient DNA.
 homepage: https://github.com/antonisdim/haystac
 ---
 
@@ -8,64 +8,69 @@ homepage: https://github.com/antonisdim/haystac
 # haystac
 
 ## Overview
-The haystac skill provides a robust Bayesian framework for identifying species within complex sequencing libraries. It excels at distinguishing between closely related taxa and is optimized for the unique challenges of ancient DNA, such as fragmentation and deamination. The workflow is modular, allowing you to construct custom genomic databases based on NCBI queries, prepare raw sequencing reads (FASTQ or SRA), and perform detailed abundance analyses with integrated damage pattern assessment.
 
-## Installation and Setup
-The recommended installation method is via the mamba package manager to ensure fast dependency resolution:
+haystac provides a robust, Bayesian-based pipeline for identifying species within complex sequencing datasets. Unlike simple alignment tools, it evaluates the statistical probability that a specific taxon is present given the available reads and a reference database. The tool is modular, covering the entire workflow from automated database construction via NCBI queries to sample preprocessing (including adapter trimming and read collapsing) and final abundance estimation. It is highly optimized for ancient DNA research, offering integrated damage pattern analysis to authenticate ancient sequences.
 
-```bash
-mamba create -c conda-forge -c bioconda -n haystac haystac
-conda activate haystac
-```
-
-## Core Workflows
+## Core Workflow
 
 ### 1. Database Construction
-Build a reference database using specific NCBI search queries or RefSeq representative sets.
+Build a specialized database of reference genomes. Genus-specific databases are recommended for faster, hypothesis-driven analyses.
 
-*   **NCBI Query Mode**: Best for hypothesis-driven research (e.g., focusing on a specific genus).
+*   **Build from NCBI Query**: Use a standard NCBI Nucleotide search string.
     ```bash
-    haystac database --mode build --query '"GenusName"[Organism] AND "complete genome"[All Fields]' --output genus_db
+    haystac database --mode build --query '"Yersinia"[Organism] AND "complete genome"[All Fields]' --output yersinia_db
     ```
-*   **RefSeq Representative Mode**: For broader, more exhaustive metagenomic screening.
+*   **Build from RefSeq**: Use representative prokaryotic species.
     ```bash
     haystac database --mode build --refseq-rep prokaryote_rep --output refseq_db
     ```
 
-### 2. Sample Pre-processing
-Prepare sequencing data for analysis. This module handles adapter trimming and can fetch data directly from the Sequence Read Archive (SRA).
+### 2. Sample Preparation
+Prepare raw sequencing data. haystac automatically identifies and removes adapters.
 
-*   **From SRA**:
+*   **From SRA**: Download and process directly using an accession code.
     ```bash
-    haystac sample --sra ERR1018966 --output sample_dir
+    haystac sample --sra ERR1018966 --output ERR1018966
     ```
-*   **From Local FASTQ (Paired-End)**:
-    Use `--collapse True` for ancient DNA to merge overlapping mate pairs.
+*   **From Local FASTQ**: Support for single-end or paired-end reads. Use `--collapse True` for ancient DNA to merge overlapping mate pairs.
     ```bash
-    haystac sample --fastq-r1 R1.fq.gz --fastq-r2 R2.fq.gz --collapse True --output sample_dir
-    ```
-
-### 3. Species Identification and Analysis
-The `analyse` module calculates the mean posterior abundance of species in the sample relative to the database.
-
-*   **Standard Abundance Analysis**:
-    ```bash
-    haystac analyse --mode abundances --database genus_db --sample sample_dir --output analysis_results
-    ```
-*   **Ancient DNA Analysis**:
-    Include damage pattern analysis to authenticate ancient sequences.
-    ```bash
-    haystac analyse --mode abundances --database genus_db --sample sample_dir --output analysis_results --mapdamage True
+    haystac sample --fastq-r1 sample_R1.fq.gz --fastq-r2 sample_R2.fq.gz --collapse True --output sample_dir
     ```
 
-## Expert Tips and Best Practices
-*   **Database Specificity**: For prokaryotes, genus-specific databases are significantly faster and often provide more robust identifications than massive, non-specific databases.
-*   **Interpreting Results**: Focus on the `_posterior_abundance.tsv` file located in the `probabilities/` sub-folder. Key metrics include:
-    *   **Uniquely Assigned Reads**: Higher counts increase confidence.
-    *   **Chi-squared Test**: Indicates if reads are spread evenly across the reference genome (low values suggest even coverage, high values may indicate mapping to repetitive regions or contaminants).
-*   **NCBI Search Details**: To get the most accurate query string, use the "Search details" box on the NCBI Nucleotide website and paste that string into the `--query` parameter.
-*   **Resource Management**: Building large databases (like the full RefSeq representative set) is computationally intensive and should be performed on high-performance computing (HPC) clusters rather than local laptops.
+### 3. Species Analysis
+Calculate the mean posterior abundance of species in the sample against the database.
+
+*   **Standard Abundance Run**:
+    ```bash
+    haystac analyse --mode abundances --database yersinia_db --sample ERR1018966 --output analysis_results
+    ```
+*   **With Damage Analysis**: Essential for aDNA to verify the characteristic deamination patterns of ancient molecules.
+    ```bash
+    haystac analyse --mode abundances --database yersinia_db --sample ERR1018966 --output analysis_results --mapdamage True
+    ```
+
+## Best Practices and Tips
+
+*   **Installation**: Always use `mamba` instead of `conda` for installation to ensure faster dependency resolution and better runtime performance.
+*   **Database Specificity**: For prokaryotes, building genus-specific databases is significantly faster and often more accurate than searching against the entire RefSeq database.
+*   **Interpreting Results**: The primary output is the `*_posterior_abundance.tsv` file located in the `probabilities/` sub-folder. 
+    *   **Uniquely Assigned Reads**: Look for high counts of reads assigned uniquely to your target taxon.
+    *   **Chi-squared Test**: Check the chi-squared values in the output; a low value indicates reads are spread evenly across the genome, reducing the likelihood of false positives from conserved regions.
+*   **Memory Management**: Building large databases (like the full RefSeq representative set) requires significant computational resources and is not recommended for standard laptops.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| haysac_config | Configuration options |
+| haystac | The haystac commands are: |
+| haystac analyse | Analyse a sample against a database |
+| haystac database | Build a database of target species |
+| haystac_sample | Prepare a sample for analysis |
 
 ## Reference documentation
-- [HAYSTAC GitHub Repository](./references/github_com_antonisdim_haystac.md)
-- [Bioconda Haystac Package Overview](./references/anaconda_org_channels_bioconda_packages_haystac_overview.md)
+
+- [HAYSTAC README](./references/github_com_antonisdim_haystac_blob_master_README.md)
+- [Installation and Setup](./references/github_com_antonisdim_haystac_blob_master_setup.py.md)

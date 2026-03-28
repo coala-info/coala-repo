@@ -1,6 +1,6 @@
 ---
 name: blobtools
-description: BlobTools visualizes and analyzes genome assemblies by integrating coverage, GC content, and taxonomic data to identify and filter contaminants. Use when user asks to assess assembly quality, visualize taxonomic distribution, identify contamination, or filter scaffolds based on coverage and taxonomy.
+description: BlobTools is a suite for screening genome assemblies to identify and remove contaminants by integrating sequence information, read coverage, and taxonomic assignments. Use when user asks to create a BlobDB, visualize assembly statistics through BlobPlots, assign taxonomy to scaffolds, or filter non-target DNA from genomic data.
 homepage: https://blobtools.readme.io/docs/what-is-blobtools
 ---
 
@@ -8,51 +8,57 @@ homepage: https://blobtools.readme.io/docs/what-is-blobtools
 # blobtools
 
 ## Overview
-BlobTools is a specialized suite for assessing the quality of genome assemblies by integrating assembly statistics (GC content and length), read coverage, and taxonomic information into a unified database (BlobDB). It is primarily used to visualize the "blob" of sequences, allowing researchers to distinguish between the target organism and potential contaminants—such as bacteria, fungi, or symbionts—based on their distinct clustering in a 2D plot.
+BlobTools is a specialized suite for screening genome assemblies. It integrates sequence information, read coverage, and taxonomic assignments to help researchers identify the origin of genomic scaffolds. It is particularly effective for detecting horizontal gene transfer or removing non-target (contaminant) DNA from *de-novo* genome projects.
 
-## Core CLI Workflow
-The standard workflow involves initializing a database and then layering coverage and taxonomic information onto it before generating visualizations.
+## Core Workflow
+The standard BlobTools pipeline follows a "Create -> Add -> View/Plot" logic:
 
-### 1. Initialization
-Create the base BlobDB from your assembly FASTA file.
-```bash
-blobtools create -i assembly.fasta -o project_name
-```
+1.  **Initialize**: Create a BlobDB file from a genome assembly.
+    ```bash
+    blobtools create -i assembly.fasta -o project_name
+    ```
+2.  **Add Coverage**: Incorporate mapping data (BAM files) to calculate depth.
+    ```bash
+    blobtools map2cov -i assembly.fasta -b mapping.bam -o project_name.blobDB.json
+    ```
+3.  **Add Taxonomy**: Import BLAST or Diamond hits to assign taxonomy.
+    ```bash
+    blobtools taxify -i hits.txt -t nodes.dmp -n names.dmp -o project_name.blobDB.json
+    ```
+4.  **Visualize**: Generate tabular summaries or graphical plots.
+    ```bash
+    blobtools view -i project_name.blobDB.json
+    ```
 
-### 2. Adding Coverage Data
-Incorporate mapping information (BAM files) to calculate base coverage per scaffold.
-```bash
-blobtools map2cov -i project_name.blobDB.json -b reads_mapped.bam
-```
+## Module Reference
+- **create**: Generates the base BlobDB. Requires a FASTA file.
+- **view**: Exports a TSV file containing all data (GC content, coverage, taxonomy) for each scaffold.
+- **plot**: Generates BlobPlots (scatter plots of GC vs. Coverage, scaled by length and colored by taxonomy).
+- **covplot**: Generates read coverage distributions across the assembly.
+- **seqfilter**: Filters the original FASTA file based on criteria defined in the BlobDB (e.g., removing scaffolds identified as Proteobacteria).
+- **taxify**: Converts external search results (like BLAST outfmt 6) into a format compatible with BlobTools using a TaxID-mapping file.
 
-### 3. Adding Taxonomic Hits
-Import search results (e.g., BLAST or Diamond output) to assign taxonomy. This requires the NCBI taxdump files.
-```bash
-blobtools taxify -i project_name.blobDB.json -f blast_results.out -t nodes.dmp -n names.dmp
-```
+## Best Practices
+- **Taxonomic Rules**: Use the `--taxrule` flag (default: `bestsumorder`) to define how hits are aggregated. `bestsum` is often preferred for high-sensitivity contaminant detection.
+- **Nodes and Names**: Ensure you have the NCBI `nodes.dmp` and `names.dmp` files available, as these are required for all taxonomic modules.
+- **Filtering**: Use `blobtools view` to identify problematic scaffolds, then use `blobtools seqfilter` with the `--list` option to create a "clean" assembly.
 
-### 4. Visualization and Export
-Generate the BlobPlot and a tabular summary of the data.
-```bash
-# Generate plots (PDF/PNG)
-blobtools plot -i project_name.blobDB.json
 
-# Generate a text-based TSV report for manual inspection
-blobtools view -i project_name.blobDB.json
-```
 
-## Common Modules and Patterns
-- **`seqfilter`**: Used to extract or exclude specific scaffolds. This is the primary tool for "cleaning" an assembly after identifying contaminants.
-- **`covplot`**: Generates a plot focusing specifically on read coverage distribution across scaffolds.
-- **`taxrule`**: Determines the logic for taxonomic assignment when multiple hits exist (e.g., `bestsum` or `bestsumorder`).
-- **`bamfilter`**: Filters BAM files based on the content of a BlobDB, useful for extracting reads that map to specific taxa.
+## Subcommands
 
-## Expert Tips
-- **Taxonomy Formatting**: When using `taxify`, ensure your BLAST/Diamond output is in tabular format (`-outfmt 6`) and includes the `staxids` column.
-- **NodesDB**: Keep your `nodes.dmp` and `names.dmp` files updated to ensure taxonomic assignments reflect the current NCBI taxonomy.
-- **Filtering Strategy**: Use the output from `blobtools view` to identify the exact headers of scaffolds you wish to remove, then pass that list to `seqfilter`.
-- **Visual Customization**: The `plot` module supports various parameters to adjust the scale (e.g., `--log`) and the taxonomic rank displayed (e.g., `--rank phylum`).
+| Command | Description |
+|---------|-------------|
+| bamfilter | Filter BAM files based on contig inclusion/exclusion lists and mapping status. |
+| blobtools create | Create a BlobDB from FASTA and associated data files. |
+| blobtools seqfilter | Filter sequences from a FASTA file based on a list of headers. |
+| blobtools_map2cov | Map BAM/CAS files to a FASTA assembly to calculate coverage. |
+| blobtools_nodesdb | NCBI nodes.dmp and names.dmp files are required to build the database. |
+| blobtools_plot | Plotting tool for BlobDB files. |
+| covplot | Create coverage plots from BlobDB and coverage files. |
+| taxify | Assigns taxonomic IDs to sequences based on similarity search results and a taxid mapping file. |
+| view | View and filter a BlobDB database. |
 
 ## Reference documentation
-- [BlobTools Overview](./references/anaconda_org_channels_bioconda_packages_blobtools_overview.md)
-- [What is BlobTools](./references/blobtools_readme_io_docs_what-is-blobtools.md)
+- [BlobTools Overview](./references/blobtools_readme_io_docs_what-is-blobtools.md)
+- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_blobtools_overview.md)

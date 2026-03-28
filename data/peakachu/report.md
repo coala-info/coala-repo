@@ -301,3 +301,6 @@ usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
 peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
 ```
 
+
+## Metadata
+- **Skill**: not generated

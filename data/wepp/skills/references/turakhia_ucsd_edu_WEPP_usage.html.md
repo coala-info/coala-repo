@@ -1,0 +1,251 @@
+[ ]
+[ ]
+
+[Skip to content](#user-guide)
+
+[![logo](images/WEPP_icon.png)](index.html "WEPP")
+
+WEPP
+
+User Guide
+
+Initializing search
+
+[TurakhiaLab/WEPP](https://github.com/TurakhiaLab/WEPP "Go to repository")
+
+* [Home](index.html)
+* [Install](install.html)
+* [Quick Start](quickstart.html)
+* [User Guide](usage.html)
+* [Contributions](contribution.html)
+* [Cite WEPP](cite.html)
+
+[![logo](images/WEPP_icon.png)](index.html "WEPP")
+WEPP
+
+[TurakhiaLab/WEPP](https://github.com/TurakhiaLab/WEPP "Go to repository")
+
+* [Home](index.html)
+* [Install](install.html)
+* [Quick Start](quickstart.html)
+* [ ]
+
+  User Guide
+
+  [User Guide](usage.html)
+
+  Table of contents
+  + [Organizing Data](#organizing-data)
+  + [WEPP Arguments](#wepp-arguments)
+  + [Run Command](#run-command)
+  + [Getting Mutation-Annotated Trees](#getting-mutation-annotated-trees)
+  + [Analyzing WEPP's Results](#analyzing-wepps-results)
+  + [Running WEPP Dashboard](#running-wepp-dashboard)
+  + [Debugging Tips](#debugging-tips)
+* [Contributions](contribution.html)
+* [Cite WEPP](cite.html)
+
+# **User Guide**
+
+## **Organizing Data**
+
+We assume that all wastewater samples are organized in the `data` directory, each within its own subdirectory given by `DIR` argument (see Run Command). For each sample, WEPP generates intermediate and output files in corresponding subdirectories under `intermediate` and `results`, respectively.
+
+Each created `DIR` inside `data` is expected to contain the following files:
+
+1. Sequencing Reads: Ending with `*_R{1/2}.fastq.gz` for paired-ended reads and `*.fastq.gz` for single-ended.
+2. Reference Genome in FASTA format
+3. Mutation-Annotated Tree (MAT)
+4. [OPTIONAL] Genome Masking File: `mask.bed`, whose third column specifies sites to be excluded from analysis.
+5. [OPTIONAL] Taxonium `.jsonl` file to be used for visualizing results in the WEPP dashboard.
+
+Visualization of WEPP's workflow directories
+
+```
+📁 WEPP
+└───📁data                                   # [User Created] Contains data to analyze
+    ├───📁SARS_COV_2_real                    # SARS-CoV-2 run wastewater samples - 1
+         ├───sars_cov_2_reads_R1.fastq.gz    # Paired-ended reads
+         ├───sars_cov_2_reads_R2.fastq.gz
+         ├───sars_cov_2_reference.fa
+         ├───mask.bed                        # OPTIONAL
+         ├───sars_cov_2_taxonium.jsonl.gz    # OPTIONAL
+         └───sars_cov_2_mat.pb.gz
+
+└───📁intermediate                           # [WEPP Generated] Contains intermediate stage files
+    ├───📁SARS_COV_2_real
+         ├───file_1
+         └───file_2
+
+└───📁results                                # [WEPP Generated] Contains final WEPP results
+    ├───📁SARS_COV_2_real
+         ├───file_1
+         └───file_2
+```
+
+## **WEPP Arguments**
+
+The WEPP Snakemake pipeline requires the following arguments, which can be provided either via the configuration file (`config/config.yaml`) or passed directly on the command line using the `--config` argument. The command line arguments take precedence over the config file.
+
+1. `DIR` - Folder name containing the wastewater reads.
+2. `FILE_PREFIX` - File Prefix for all intermediate files.
+3. `REF` - Reference Genome in fasta.
+4. `TREE` - Mutation-Annotated Tree.
+5. `SEQUENCING_TYPE` - Sequencing read type (s:Illumina single-ended, d:Illumina double-ended, or n:ONT long reads).
+6. `PRIMER_BED` - BED file argument for primers, with few primers provided in the `primers` folder. Requires path to the file.
+7. `MIN_AF` - Alleles with an allele frequency below this threshold in the reads will be masked (Illumina: 0.5%, Ion Torrent: 1.5%, ONT: 2%).
+8. `MIN_DEPTH` - Sites with read depth below this threshold will be masked.
+9. `MIN_Q` - Alleles with a Phred score below this threshold in the reads will be masked.
+10. `MIN_PROP` - Minimum Proportion of haplotypes (Wastewater Samples: 0.5%, Clinical Samples: 5%).
+11. `MIN_LEN` - Minimum read length to be considered after ivar trim (Deafult: 80).
+12. `MAX_READS` - Maximum number of reads considered by WEPP from the sample. Helpful for reducing runtime.
+13. `CLADE_LIST` - List the clade annotation schemes used in the MAT. SARS-CoV-2 MAT uses both nextstrain and pango lineage naming systems, so use "nextstrain,pango" for it.
+14. `CLADE_IDX` - Index used for assigning clades to selected haplotypes from MAT. Use '1' for Pango naming and '0' for Nextstrain naming for SARS-CoV-2. Other pathogens usually follow a single lineage annotation system, so work with '0'. In case of NO lineage annotations, use '-1'. Lineage Annotations could be checked by running: "matUtils summary -i {TREE} -C {FILENAME}" -> Use '0' for annotation\_1 and '1' for annotation\_2.
+15. `DASHBOARD_ENABLED` - Set to `True` to enable the interactive dashboard for viewing WEPP results, or `False` to disable it.
+16. `TAXONIUM_FILE` [Optional] - Name of the user-provided Taxonium `.jsonl` file for visualization. If specified, this file will be used instead of generating a new one from the given MAT. Ensure that the provided Taxonium file corresponds to the same MAT used for WEPP.
+
+## **Run Command**
+
+WEPP's snakemake workflow requires `DIR` and `FILE_PREFIX` as config arguments through the command line, while the remaining ones can be taken from the config file. It also requires `--cores` from the command line, which specifies the number of threads used by the workflow.
+
+Examples:
+
+1. Using all the parameters from the config file.
+
+   ```
+   run-wepp --config DIR=SARS_COV_2_real FILE_PREFIX=test_run TREE=sars_cov_2_mat.pb.gz REF=sars_cov_2_reference.fa --cores 32 --use-conda
+   ```
+2. Overriding MIN\_Q and CLADE\_IDX through command line.
+
+   ```
+   run-wepp --config DIR=SARS_COV_2_real FILE_PREFIX=test_run TREE=sars_cov_2_mat.pb.gz REF=sars_cov_2_reference.fa MIN_Q=25 CLADE_IDX=1 --cores 32 --use-conda
+   ```
+3. To visualize results from a previous WEPP analysis that was run without the dashboard, set `DASHBOARD_ENABLED` to `True` and re-run only the dashboard components, without reanalyzing the dataset.
+
+   ```
+   run-wepp --config DIR=SARS_COV_2_real FILE_PREFIX=test_run TREE=sars_cov_2_mat.pb.gz REF=sars_cov_2_reference.fa MIN_Q=25 CLADE_IDX=1 DASHBOARD_ENABLED=True --cores 32 --use-conda --forcerun dashboard_serve
+   ```
+
+Note
+
+⚠️ Use the same configuration parameters (DIR, FILE\_PREFIX, etc.) as were used for the specific project. This ensures the dashboard serves the correct results for your chosen dataset.
+⚠️ Make sure port forwarding is enabled when running on external servers to view results on your personal machine.
+
+## **Getting Mutation-Annotated Trees**
+
+Mutation-annotated trees (MAT) for different pathogens are maintained by the UShER team, which can be found [here](https://dev.usher.bio). You can also create your own MAT for any pathogen from the consensus genome assemblies using [viral\_usher](https://github.com/AngieHinrichs/viral_usher).
+
+## **Analyzing WEPP's Results**
+
+WEPP generates output files for each sample in its corresponding subdirectory under `results`. Some of the key files are described below:
+
+1. `lineage_abundance.csv` - Reports the estimated abundance of different lineages detected in the wastewater sample.
+2. `haplotype_abundance.csv` - Provides the abundance and lineage information for each selected haplotype (internal nodes or clinical sequences) inferred from the wastewater sample.
+3. `haplotype_uncertainty.csv` - Lists the maximum single-nucleotide distance and all haplotypes that could not be distinguished from one another for each selected haplotype.
+
+   * A non-zero nucleotide distance indicates that sequencing reads did not cover the distinguishing sites between haplotypes.
+   * A zero distance indicates that the haplotypes are identical.
+4. `haplotype_coverage.csv` - Contains the fraction of each selected haplotype that is supported by parsimonious read-to-haplotype assignments.
+5. `unaccounted_alleles.txt` - Reports the residue, allele frequency, and sequencing depth for each unaccounted allele detected in the sample. Alleles with higher residue values are more likely to originate from a novel variant, as they were not adequately represente by the selected haplotypes.
+
+Note
+
+⚠️ All of these results can be easily explored and visualized through the dashboard.
+
+## **Running WEPP Dashboard**
+
+The WEPP dashboard provides an interactive interface for exploring inferred haplotypes, lineage abundances, and unaccounted alleles. You can either run it as part of a WEPP analysis or launch it locally after completing a WEPP run on your server by copying the `results` directory.
+
+**Option 1: Run the dashboard during a WEPP run**
+
+Step 1: Enable the dashboard in your WEPP command.
+
+```
+run-wepp --config ... DASHBOARD_ENABLED=True --cores N --use-conda
+```
+
+Step 2: If you are running WEPP on a remote machine, use the SSH port forwarding to access the dashboard in your local browser.
+
+```
+ssh -L 8080:localhost:80 user@remote_host
+```
+
+Step 3: Open the dashboard in your browser at:
+
+```
+http://localhost:8080
+```
+
+Note
+
+⚠️ Replace 8080 with any available local port.
+
+**Option 2: Visualize results on your local machine (requires Docker)**
+
+You can also analyze your samples with WEPP on a server and run the dashboard locally.
+
+Step 1: Enable the dashboard in your WEPP command.
+
+```
+run-wepp --config ... DASHBOARD_ENABLED=True --cores N --use-conda
+```
+
+Step 2: Copy the `results` directory to your local machine.
+
+Run the following command on your local computer.
+
+```
+scp -r user@remote_host:/path_to_WEPP/results /path_to_local_directory/
+```
+
+Step 3: Pull the WEPP dashboard Docker image.
+
+```
+  docker pull pratikkatte7/wepp-dashboard
+```
+
+Step 4: Launch the dashboard by running the container and mounting the `results` directory.
+
+```
+  docker run -it \
+  -v "/path_to_local_directory/results:/app/taxonium_backend/results" \
+  -p 8080:80 \
+  pratikkatte7/wepp-dashboard
+```
+
+Step 5: Open the dashboard in your browser at:
+
+```
+http://localhost:8080
+```
+
+Note
+
+⚠️ Replace 8080 with any available local port. For additional details and advanced usage, see the [WEPP Dashboard](https://github.com/pratikkatte/WEPP-Dashboard) repository.
+
+## **Debugging Tips**
+
+In case of a failure or unexpected output, below are some common causes and possible solutions.
+
+1. `Run Failure` - Check whether reads were successfully aligned by minimap2 by inspecting the `alignment.sam` file in the `intermediate` directory. If enough reads are present but the `filter` rule crashes immediately, the sample may contain more reads than WEPP can efficiently handle. Use the `MAX_READS` parameter to downsample the input. For typical short-read datasets, setting this to ~3 million reads generally works well.
+2. `Missing Lineages` - If expected lineages are absent from the `lineage_abundance.csv` in the `results` directory, either the MAT does not contain any lineage annotations, or an incorrect `CLADE_IDX` argument was provided.
+3. `Uncertainty in Lineages and Haplotypes` - Uncertain lineage or haplotype assignments usually occur when:
+
+   * Sequencing depth is low
+   * Entire genome is not sufficiently covered
+   * Read quality is poor and iVar trims and discards a large number of reads.
+
+   Check `lineage_abundance.csv`, `haplotype_abundance.csv`, and `haplotype_uncertainty.csv` in the `results` directory. You can also review `alignment.sam` in the `intermediate` directory to see how many reads were used by WEPP and compare them with the reads provided as input.
+4. `Long Runtimes` - You can increase the number of threads using the `--cores` argument, or reduce the number of reads with `MAX_READS` (may affect results).
+
+[Previous
+
+Quick Start](quickstart.html)
+[Next
+
+Contributions](contribution.html)
+
+© 2025 [Turakhia Lab](https://github.com/TurakhiaLab)
+
+Made with
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)

@@ -1,6 +1,6 @@
 ---
 name: vclust
-description: vclust is a high-performance tool for comparative analysis and clustering of viral genomes. Use when user asks to prefilter genome pairs, calculate ANI measures, cluster viral sequences, deduplicate genomes, assign vOTUs, or classify viral species and genus.
+description: vclust is a high-performance alignment-based tool optimized for clustering and classifying viral genomes using LZ-ANI similarity measures. Use when user asks to prefilter genome pairs, calculate ANI or intergenomic similarity, cluster sequences into viral OTUs, or dereplicate redundant viral sequences.
 homepage: https://github.com/refresh-bio/vclust
 ---
 
@@ -8,70 +8,73 @@ homepage: https://github.com/refresh-bio/vclust
 # vclust
 
 ## Overview
-
-vclust is a high-performance, alignment-based tool designed for the comparative analysis of viral genomes. It utilizes a specialized Lempel-Ziv-based pairwise sequence aligner (LZ-ANI) that provides the sensitivity of BLASTn while operating at much higher speeds. The tool is optimized for processing large-scale metagenomic datasets, allowing users to calculate various similarity measures (ANI, global ANI, total ANI) and apply multiple clustering algorithms to define viral populations or taxonomic groups.
+vclust is a high-performance alignment-based tool specifically optimized for viral genomics. It leverages Lempel-Ziv-based pairwise alignment (LZ-ANI) to provide the accuracy of BLASTn with significantly higher throughput. It is designed to handle millions of sequences, making it ideal for large-scale metagenomic studies where traditional alignment tools are computationally prohibitive. The tool follows international standards (ICTV and MIUViG) for viral classification and clustering.
 
 ## Core Workflow
-
 The standard vclust pipeline consists of three sequential steps: prefiltering, alignment, and clustering.
 
 ### 1. Prefiltering
-Before performing expensive pairwise alignments, use `prefilter` to identify potentially similar genome pairs using k-mer analysis.
-
+Identify similar genome pairs to avoid unnecessary all-vs-all alignments.
 ```bash
 vclust prefilter -i input_genomes.fna -o filter_results.txt
 ```
+*   **Tip**: For very large datasets, use `--parts` to split the workload or adjust `--min-kmers` (default 20) to balance sensitivity and speed.
 
 ### 2. Alignment
-Calculate precise ANI measures for the pairs identified in the prefilter step.
-
+Calculate precise similarity measures for the filtered pairs.
 ```bash
-vclust align -i input_genomes.fna -o ani_measures.tsv --filter filter_results.txt
+vclust align -i input_genomes.fna --filter filter_results.txt -o ani_measures.tsv
 ```
-
-**Key Similarity Metrics (`--metric`):**
-- `ani`: Identical nucleotides divided by alignment length.
-- `gani`: Global ANI (divided by query/reference length).
-- `tani`: Total ANI (equivalent to VIRIDIC intergenomic similarity).
-- `cov`: Alignment fraction/coverage.
+*   **Measures calculated**: ANI, Global ANI (gANI), Total ANI (tANI/VIRIDIC-like), and Coverage.
+*   **Optimization**: Use `--threads` to utilize multi-core processors.
 
 ### 3. Clustering
-Group sequences based on the calculated metrics and a specified threshold.
-
+Group sequences based on a specific metric and threshold.
 ```bash
-vclust cluster -i ani_measures.tsv -o clusters.tsv --ids ani_measures.ids.tsv --metric ani --ani 0.95
+vclust cluster -i ani_measures.tsv --ids ani_measures.ids.tsv -o clusters.tsv --metric ani --ani 0.95
+```
+*   **Supported Algorithms**: Single-linkage, Complete-linkage, UCLUST, CD-HIT, Greedy set cover, and Leiden.
+
+## Common CLI Patterns
+
+### Viral OTU (vOTU) Assignment
+Following MIUViG standards (95% ANI over 85% coverage):
+```bash
+vclust cluster -i ani.tsv --ids ani.ids.tsv --metric ani --ani 0.95 --cov 0.85 -o votus.tsv
 ```
 
-**Supported Algorithms (`--algorithm`):**
-- `single-linkage`, `complete-linkage`
-- `uclust`, `cd-hit` (Greedy incremental)
-- `set-cover` (Greedy set cover)
-- `leiden` (Requires optional installation)
-
-## Common Tasks and Patterns
-
-### Dereplication (Removing Redundancy)
-To remove duplicate sequences within or between datasets:
+### Dereplication
+To remove redundant sequences and keep representative genomes:
 ```bash
-vclust deduplicate -i input.fna -o unique_sequences.fna
+vclust deduplicate -i input.fna -o unique_genomes.fna
 ```
 
-### vOTU Assignment (MIUViG Standards)
-To assign viral contigs into vOTUs (typically 95% ANI over 85% coverage):
-1. Run `align` to get both `ani` and `cov`.
-2. Run `cluster` with `--ani 0.95` and `--cov 0.85`.
+### Species and Genus Classification (ICTV)
+*   **Species**: Typically 95% ANI.
+*   **Genus**: Typically 70% ANI (or tANI/intergenomic similarity).
+```bash
+vclust cluster -i ani.tsv --ids ani.ids.tsv --metric tani --ani 0.70 -o genera.tsv
+```
 
-### Species and Genus Classification (ICTV Standards)
-- **Species**: Use a 95% ANI threshold.
-- **Genus**: Use a 70% ANI threshold (or as defined by specific viral families).
+## Best Practices
+*   **Memory Management**: If running out of memory during the `align` phase, ensure you are using the latest version (v1.2.4+) which includes optimized memory handling for LZ-ANI.
+*   **Sensitivity**: If you suspect missing clusters in highly divergent groups, decrease the `--min-kmers` value in the `prefilter` step, though this will increase computation time.
+*   **Input Format**: Ensure input FASTA files have unique headers. vclust relies on these identifiers across the pipeline stages.
+*   **Metric Selection**: Use `tani` for intergenomic similarity consistent with VIRIDIC, which is the preferred metric for many viral taxonomic applications.
 
-## Expert Tips
 
-- **Memory Optimization**: If running the `align` step on very large datasets, ensure you are using the latest version (v1.2.4+) which includes significant memory requirement reductions for the LZ-ANI submodule.
-- **Sensitivity**: If you are missing expected similarities, adjust the `--min-kmers` parameter in the `prefilter` step. The default is 20.
-- **Verification**: Use `vclust info` to verify the availability of submodule binaries (Kmer-db, LZ-ANI, Clusty) and ensure the environment is correctly configured.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| deduplicate | Output FASTA file with unique, nonredundant sequences, removing duplicates and their reverse complements |
+| vclust prefilter | vclust prefilter |
+| vclust_align | Align genome pairs |
+| vclust_cluster | Cluster genomes based on ANI metrics. |
 
 ## Reference documentation
-- [vclust GitHub Repository](./references/github_com_refresh-bio_vclust.md)
-- [vclust Wiki/User Guide](./references/github_com_refresh-bio_vclust_wiki.md)
-- [Bioconda vclust Overview](./references/anaconda_org_channels_bioconda_packages_vclust_overview.md)
+- [Vclust User Guide](./references/github_com_refresh-bio_vclust_wiki.md)
+- [Features and Similarity Measures](./references/github_com_refresh-bio_vclust_wiki_1-Features.md)
+- [Usage and Command Reference](./references/github_com_refresh-bio_vclust_wiki_4-Usage.md)
+- [Use Cases and Standards](./references/github_com_refresh-bio_vclust_wiki_6-Use-cases.md)

@@ -1,6 +1,6 @@
 ---
 name: mimi
-description: MIMI identifies chemical formulas from ultra-high-resolution mass spectrometry data by matching observed peaks against compound databases and verifying isotopic fine-structure patterns. Use when user asks to extract compounds from KEGG or HMDB, create mass matching caches for natural or labeled isotopes, and perform mass analysis to identify metabolites in mass spectrometry samples.
+description: MIMI identifies chemical formulas in metabolomics data by matching mass spectrometry signals against compound databases and verifying isotopic fine-structure patterns. Use when user asks to extract metabolite information from KEGG or HMDB, create pre-computed isotope caches, or perform high-precision mass analysis and formula identification.
 homepage: https://github.com/NYUAD-Core-Bioinformatics/MIMI
 ---
 
@@ -8,57 +8,62 @@ homepage: https://github.com/NYUAD-Core-Bioinformatics/MIMI
 # mimi
 
 ## Overview
-MIMI (Molecular Isotope Mass Identifier) is a specialized bioinformatics tool for processing ultra-high-resolution Fourier Transform Ion Cyclotron Resonance (UHR-FT-ICR) mass spectrometry data. It automates the identification of chemical formulas by comparing observed peaks against theoretical masses from databases like KEGG and HMDB. A key strength of MIMI is its ability to verify assignments using isotopic fine-structure patterns and its support for stable isotope-labeled experiments (e.g., 13C labeling).
+MIMI (Molecular Isotope Mass Identifier) is a specialized bioinformatics tool for high-precision metabolomics. It automates the identification of chemical formulas by comparing experimental mass spectrometry signals against known compound databases like KEGG and HMDB. The tool is particularly effective for experiments requiring high confidence, as it verifies initial mass matches by searching for specific isotopic fine-structure patterns. It supports batch processing and is optimized for speed through the use of pre-computed cache files.
 
-## Database Preparation
-Before running analysis, you must prepare a compound database.
+## Command Line Usage
 
-### Extracting from KEGG
-Use `mimi_kegg_extract` to pull compounds within a specific mass range.
+### 1. Database Preparation
+Extract compounds within a specific mass range to create a reference TSV.
+
+**From KEGG:**
 ```bash
-mimi_kegg_extract -l <lower_mass> -u <upper_mass> -o <output_tsv>
+mimi_kegg_extract -l [lower_mass] -u [upper_mass] -o [output_path.tsv]
 ```
 
-### Extracting from HMDB
+**From HMDB:**
 Requires the `hmdb_metabolites.xml` file.
 ```bash
-mimi_hmdb_extract -l <lower_mass> -u <upper_mass> -x <path_to_xml> -o <output_tsv>
+mimi_hmdb_extract -l [lower_mass] -u [upper_mass] -x [path_to_hmdb.xml] -o [output_path.tsv]
 ```
 
-## Cache Generation
-MIMI uses pre-computed cache files to accelerate mass matching. You must create these for each ionization mode and labeling strategy.
+### 2. Cache Generation
+Creating cache files is a prerequisite for analysis and significantly improves performance.
 
-### Natural Abundance Cache
+**Natural Abundance Cache:**
 ```bash
-mimi_cache_create -i <pos|neg> -d <compounds.tsv> -c <output_cache_prefix>
+mimi_cache_create -i [neg|pos] -d [database.tsv] -c [cache_prefix]
 ```
 
-### Isotope-Labeled Cache
-Requires a JSON configuration file defining the isotope enrichment (e.g., 95% 13C).
+**Isotope-Labeled Cache (e.g., 95% C13):**
+Requires an isotope configuration JSON file.
 ```bash
-mimi_cache_create -i <pos|neg> -l <label_config.json> -d <compounds.tsv> -c <output_cache_prefix>
+mimi_cache_create -i [neg|pos] -l [isotope_config.json] -d [database.tsv] -c [cache_prefix]
 ```
 
-## Mass Analysis
-The core analysis command matches sample peaks against the generated caches.
+### 3. Mass Analysis
+Perform the final identification and verification.
 
-### Basic Usage
 ```bash
-mimi_mass_analysis -p <ppm_threshold> -vp <verification_ppm> -c <cache1> <cache2> -s <sample.asc> -o <results.tsv>
+mimi_mass_analysis -p [ppm_threshold] -vp [verification_ppm] -c [cache_files...] -s [sample.asc] -o [results.tsv]
 ```
 
-### Key Parameters
-- `-p`: Mass error threshold (PPM) for initial matching.
-- `-vp`: PPM threshold for isotopic pattern verification.
-- `-c`: You can provide multiple cache files (e.g., one natural, one labeled) to analyze them side-by-side.
-- `-s`: Input peak list. Must be a three-column file: `Mass (m/z)`, `Intensity`, and `Resolution`.
+## Best Practices and Expert Tips
+- **Input Format**: Ensure your input peak list (`.asc`) is a three-column tab-delimited file: `Mass (m/z)`, `Intensity`, and `Resolution`.
+- **PPM Tuning**: Use the `-p` flag for the initial mass matching threshold and `-vp` for the stricter isotopic pattern verification threshold. For UHR-FT-ICR data, values around 1.0 PPM are standard.
+- **Batch Processing**: You can pass multiple cache files to `mimi_mass_analysis` to compare a single sample against multiple isotope profiles (e.g., natural abundance and labeled standards) simultaneously.
+- **Ion Mode**: Always specify the correct ionization mode (`neg` or `pos`) during cache creation to ensure theoretical masses are calculated correctly.
+- **Memory Management**: For very large databases, ensure the mass range (`-l` and `-u`) is as narrow as your experiment allows to keep cache sizes manageable.
 
-## Best Practices
-- **Input Formatting**: Ensure your `.asc` or text input files are tab or space-delimited with exactly three columns. MIMI relies on the Resolution column for fine-structure verification.
-- **Batch Processing**: MIMI supports analyzing multiple datasets simultaneously. Provide multiple sample files to generate a comparative output table.
-- **Threshold Tuning**: For UHR-FT-ICR data, start with a tight PPM (e.g., 1.0) to minimize false positives. If identification rates are low, check the calibration of the input data before widening the threshold.
-- **Labeling**: When working with spike-ins or labeled cultures, always generate a specific cache using the `-l` flag in `mimi_cache_create` to match the experimental enrichment levels.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mimi_cache_create | Molecular Isotope Mass Identifier |
+| mimi_hmdb_extract | Extract metabolite information from HMDB XML file |
+| mimi_mass_analysis | Molecular Isotope Mass Identifier |
 
 ## Reference documentation
-- [MIMI GitHub Repository](./references/github_com_NYUAD-Core-Bioinformatics_MIMI.md)
+- [MIMI GitHub README](./references/github_com_NYUAD-Core-Bioinformatics_MIMI_blob_main_README.md)
 - [MIMI Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_mimi_overview.md)

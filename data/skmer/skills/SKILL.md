@@ -1,6 +1,6 @@
 ---
 name: skmer
-description: Skmer calculates genomic distances and mutation rates from sequencing reads using alignment-free k-mer statistics. Use when user asks to build a reference library, query samples against a library, calculate pairwise genomic distances, or estimate uncertainty in distance measurements.
+description: Skmer estimates genomic distances and identifies samples from low-pass sequencing data using k-mer profiles. Use when user asks to perform genome skimming, create a reference library from genomic files, query samples against a library, or compute distance matrices for phylogenetic analysis.
 homepage: https://github.com/shahab-sarmashghi/Skmer
 ---
 
@@ -8,38 +8,57 @@ homepage: https://github.com/shahab-sarmashghi/Skmer
 # skmer
 
 ## Overview
-`skmer` provides a fast, alignment-free workflow for calculating genomic distances between samples using k-mer statistics. By leveraging Mash and Jellyfish, it processes raw sequencing reads to estimate the Jaccard index and subsequently the mutation rate, while applying corrections for sequencing depth and error rates. It is particularly effective for "genome skimming" projects where high-coverage data is unavailable.
 
-## Core Workflows
+Skmer is a specialized tool designed for "genome skimming"—the process of using low-pass sequencing data to identify samples and estimate evolutionary distances. By utilizing k-mer profiles (via Mash and Jellyfish), Skmer bypasses the computationally expensive steps of assembly and alignment. It is uniquely capable of correcting for sequencing errors and low depth of coverage, providing accurate genomic distance estimates even from sparse data. The tool outputs distance matrices that can be directly used for phylogenetic tree reconstruction.
 
-### 1. Building a Reference Library
-To process a collection of samples (one FASTQ/FASTA file per sample) and generate a searchable library:
-`skmer reference <input_directory> -p <threads> -l <library_name>`
+## CLI Usage and Best Practices
 
-- **K-mer Size (`-k`)**: Default is 31. Do not go below 21 to avoid random k-mer collisions.
-- **Sketch Size (`-s`)**: Default is 10^7. Larger sketches increase accuracy but require more disk space.
-- **Phylogenetic Distance (`-t`)**: Use this flag to apply the Jukes-Cantor transformation, converting raw distances into mutation rates suitable for tree building.
+### Creating a Reference Library
+The `reference` command is the starting point for most workflows. It processes a directory of genomic files and creates a searchable library.
 
-### 2. Querying Samples
-To identify an unknown sample or compare it against an existing library:
-`skmer query <query_file> <library_directory> -o <output_prefix>`
+*   **Basic Command**: `skmer reference <input_directory> -l <library_name>`
+*   **Parallelization**: Use `-p` to specify the number of CPU cores.
+    *   Example: `skmer reference ref_dir -p 8 -l my_library`
+*   **Phylogenetic Preparation**: If you intend to build a tree, always use the `-t` flag to apply the Jukes-Cantor (JC) transformation.
+    *   Example: `skmer reference ref_dir -t -o jc_distances`
 
-- Use the `-a` flag to automatically add the processed query to the reference library for future use.
+### Querying and Identification
+Use the `query` command to compare a new sample against an existing library.
 
-### 3. Pairwise Distance Calculation
-If you have multiple processed libraries or need to re-calculate distances for an existing library:
-`skmer distance <library_directory> -t -o <output_name>`
+*   **Search**: `skmer query <query_file> <library_path>`
+*   **Add to Library**: Use the `-a` flag to process the query and automatically append it to the reference library for future use.
+    *   Example: `skmer query new_sample.fastq my_library -a`
 
-### 4. Uncertainty Estimation
-To perform subsampling for quantifying uncertainty in distance estimates:
-`skmer subsample <input_directory> -sub <num_subsamples>`
+### Computing Distances
+If you have multiple processed libraries or want to re-calculate distances from an existing library:
 
-## Expert Tips & Best Practices
-- **Input Preparation**: Ensure input files are uncompressed (.fastq, .fq, .fa, .fasta). If working with paired-end data, merge overlapping reads using tools like BBMerge before running `skmer` to improve k-mer count accuracy.
-- **Assembly vs. Skims**: If the input sequence is long (e.g., a full assembly), `skmer` automatically detects this and skips the low-coverage/error correction steps.
-- **Parallelization**: Always utilize the `-p` flag during the `reference` step to significantly speed up k-mer counting and sketching across multiple CPU cores.
-- **Output Interpretation**: The default output `ref-dist-mat.txt` contains a square matrix of pairwise distances. If `-t` is used, these values represent estimated substitutions per site.
+*   **Command**: `skmer distance <library_path> -o <output_prefix>`
+*   **Transformation**: Apply `-t` here if it wasn't applied during the reference step to get mutation rates.
+
+## Expert Tips and Parameters
+
+*   **K-mer Size (`-k`)**: The default is 31 (the maximum supported by the underlying Mash tool). 
+    *   **Tip**: Do not use k-mer sizes smaller than 21, as random k-mer matches will begin to skew distance estimates.
+*   **Sketch Size (`-s`)**: The default is 10,000,000.
+    *   **Tip**: Reducing the sketch size saves disk space and memory but significantly reduces the accuracy of distance estimation for closely related species.
+*   **Input Preparation**:
+    *   Skmer requires uncompressed files (`.fastq`, `.fq`, `.fa`, `.fasta`).
+    *   For paired-end reads, it is highly recommended to merge overlapping pairs using a tool like BBMerge before running Skmer to improve k-mer count accuracy.
+*   **Assembly vs. Skims**: Skmer automatically detects if an input is an assembly based on sequence length. If an assembly is detected, the coverage and error correction steps are skipped for that specific sample.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| skmer | skmer: error: argument {commands}: invalid choice: 'Run' (choose from 'reference', 'subsample', 'correct', 'distance', 'query') |
+| skmer subsample | Performs subsample on a library of reference genome-skims or assemblies |
+| skmer_correct | Performs correction of subsampled distance matrices obtained for reference genome-skims or assemblies |
+| skmer_distance | Compute the distance matrix for a processed library |
+| skmer_query | Compare an input genome-skim or assembly against a reference library |
+| skmer_reference | Process a library of reference genome-skims or assemblies |
 
 ## Reference documentation
-- [Skmer GitHub Repository](./references/github_com_shahab-sarmashghi_Skmer.md)
-- [Bioconda Skmer Package](./references/anaconda_org_channels_bioconda_packages_skmer_overview.md)
+- [Skmer README](./references/github_com_shahab-sarmashghi_Skmer_blob_master_README.md)
+- [Skmer Setup and Dependencies](./references/github_com_shahab-sarmashghi_Skmer_blob_master_setup.py.md)

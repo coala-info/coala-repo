@@ -1,6 +1,6 @@
 ---
 name: nextclade_js
-description: Nextclade identifies genetic variations, assigns clades, and performs quality control on viral sequences. Use when user asks to align sequences to a reference, identify mutations, assign lineages, or perform quality checks on viral genomes.
+description: Nextclade performs viral genome alignment, mutation calling, clade assignment, and quality control checks. Use when user asks to analyze viral sequences, identify mutations, assign clades, or download pathogen-specific datasets.
 homepage: https://github.com/nextstrain/nextclade
 ---
 
@@ -8,54 +8,55 @@ homepage: https://github.com/nextstrain/nextclade
 # nextclade_js
 
 ## Overview
-Nextclade is a bioinformatics tool designed to identify genetic variations in viral genomes. It aligns sequences to a reference, identifies mutations (substitutions, insertions, and deletions), assigns sequences to known clades (lineages), and performs quality checks to identify potential sequencing issues. This skill focuses on the command-line interface (CLI) workflow, which typically involves fetching a pathogen-specific dataset and then running the analysis on a set of FASTA sequences.
+Nextclade is a bioinformatic tool developed by the Nextstrain team for the rapid analysis of viral genomes. It performs sequence alignment against a reference, assigns sequences to specific clades or lineages, identifies mutations (nucleotide and amino acid), and conducts quality control checks to flag potential sequencing issues. While available as a web application, the `nextclade` CLI (often distributed via npm or bioconda as `nextclade_js`) is the standard for high-throughput, local processing of genomic data.
 
-## Installation
-The tool can be installed via Bioconda:
-```bash
-conda install bioconda::nextclade_js
-```
-
-## Core Workflow
+## Core Workflows
 
 ### 1. Dataset Management
-Before running an analysis, you must obtain the appropriate reference dataset (e.g., for SARS-CoV-2).
+Before running analysis, you must obtain the appropriate dataset for the pathogen being studied.
 
-*   **List available datasets:**
-    ```bash
-    nextclade dataset list
-    ```
-*   **Download a specific dataset:**
-    ```bash
-    nextclade dataset get --name 'sars-cov-2' --output-dir 'data/sars-cov-2'
-    ```
+```bash
+# List all available datasets
+nextclade dataset list
+
+# Download a specific dataset (e.g., SARS-CoV-2)
+nextclade dataset get --name 'sars-cov-2' --output-dir 'data/sars-cov-2'
+```
 
 ### 2. Running Analysis
-Once the dataset is downloaded, you can process your sequences.
+The primary command for processing sequences is `run`. It requires a FASTA input and the dataset files downloaded in the previous step.
 
-*   **Basic analysis command:**
-    ```bash
-    nextclade run \
-      --input-fasta sequences.fasta \
-      --dataset data/sars-cov-2 \
-      --output-all output/
-    ```
+```bash
+nextclade run \
+  --input-dataset data/sars-cov-2 \
+  --output-all output/ \
+  sequences.fasta
+```
 
-### 3. Output Selection
-Nextclade generates several files by default when using `--output-all`. You can also specify individual outputs:
-*   `--output-csv`: Summary of clades and mutations in CSV format.
-*   `--output-tsv`: Summary in TSV format.
-*   `--output-json`: Detailed analysis results in JSON.
-*   `--output-tree`: Phylogenetic tree (Auspice JSON format) with your sequences placed on it.
-*   `--output-fasta`: Aligned sequences.
+### 3. Key Output Files
+When using `--output-all`, Nextclade generates several critical files:
+- `nextclade.csv/tsv`: Tabular summary of clades, mutations, and QC metrics.
+- `nextclade.json`: Detailed results including phylogenetic placement data.
+- `nextclade.aligned.fasta`: The sequences aligned to the reference.
+- `nextclade.errors.csv`: Log of sequences that failed processing.
 
-## Best Practices and Tips
-*   **Quality Control:** Always review the `qc.status` column in the output CSV/TSV. Sequences marked as "bad" or "mediocre" may have high levels of missing data (N's), private mutations, or mixed sites that could skew results.
-*   **Version Consistency:** Ensure the version of the Nextclade CLI matches the requirements of the dataset you are using. Use `nextclade --version` to check.
-*   **Memory Management:** For very large FASTA files, Nextclade is efficient, but ensure you have sufficient disk space for the `--output-all` files, especially the aligned FASTA and the phylogenetic tree.
-*   **Proxy Settings:** If downloading datasets behind a corporate proxy, ensure your environment variables (`HTTP_PROXY`, `HTTPS_PROXY`) are correctly configured to avoid connection errors.
+## Expert Tips and Best Practices
+
+- **Pathogen Specificity**: Always ensure the dataset matches the input sequences. Using a SARS-CoV-2 dataset on Influenza sequences will result in alignment failure or nonsensical mutation calls.
+- **Memory Management**: For very large FASTA files, use the `--jobs` flag to limit parallel processing if system memory is constrained.
+- **QC Interpretation**: Pay close attention to the `qc.overallStatus` column in the output. Sequences marked as "bad" often contain high levels of missing data (Ns) or mixed sites that can skew phylogenetic placement.
+- **Mutation Syntax**: Nextclade reports mutations relative to the reference sequence (e.g., `S:N501Y`). Ensure your downstream tools expect this standard notation.
+- **Version Consistency**: When performing longitudinal studies, stick to a specific dataset version to ensure clade assignments remain stable across different runs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dataset | List and download available Nextclade datasets (pathogens) |
+| nextclade | Viral genome alignment, mutation calling, clade assignment, quality checks and phylogenetic placement. |
 
 ## Reference documentation
-- [bioconda | nextclade_js Overview](./references/anaconda_org_channels_bioconda_packages_nextclade_js_overview.md)
 - [Nextclade GitHub Repository](./references/github_com_nextstrain_nextclade.md)
-- [Nextclade Discussions](./references/github_com_nextstrain_nextclade_discussions.md)
+- [Bioconda Nextclade Package Overview](./references/anaconda_org_channels_bioconda_packages_nextclade_js_overview.md)

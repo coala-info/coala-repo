@@ -1,6 +1,6 @@
 ---
 name: gottcha
-description: GOTTCHA is a metagenomic tool that performs high-resolution taxonomic profiling using a gene-independent, signature-based method. Use when user asks to profile metagenomic samples, classify taxonomic origins, or identify genomic signatures in FASTQ files.
+description: GOTTCHA is a signature-based metagenomic tool used for taxonomic profiling and classification of sequencing reads. Use when user asks to perform taxonomic profiling, classify metagenomic reads, or characterize community compositions from clinical or environmental samples.
 homepage: https://github.com/poeli/GOTTCHA
 ---
 
@@ -9,51 +9,89 @@ homepage: https://github.com/poeli/GOTTCHA
 
 ## Overview
 
-GOTTCHA (Genomic Origin Through Taxonomic CHAllenge) is a specialized metagenomic tool that employs a gene-independent, signature-based method for taxonomic profiling. By utilizing unique genomic signatures rather than universal marker genes, it provides high-resolution classification with significantly lower false discovery rates than many traditional tools. It is designed to be lightweight enough for laptop deployment while remaining robust enough for complex community analysis.
+GOTTCHA (Genomic Origin Through Taxonomic CHAllenge) is a signature-based metagenomic taxonomic profiling tool. Unlike many tools that rely on marker genes, GOTTCHA utilizes a hierarchical suite of unique genomic signatures to classify reads, which significantly reduces false discovery rates (FDR). It is designed to be computationally efficient enough for laptop use while maintaining superior performance in characterizing complex community compositions from clinical or environmental samples.
 
-## Installation and Setup
+## Installation and Database Setup
 
-Before running GOTTCHA, ensure the environment has Perl v5.8+ and at least 8GB of RAM.
+Before running GOTTCHA, ensure the environment is prepared with Perl v5.8+ and the necessary dependencies (BWA, D compiler).
 
-1.  **Initialization**: Run the installation script to compile dependencies like `splitrim` and check for `bwa`.
+1.  **Install GOTTCHA**:
     ```bash
+    git clone https://github.com/LANL-Bioinformatics/GOTTCHA.git gottcha
+    cd gottcha
     ./INSTALL.sh
     ```
-2.  **Binaries**: After installation, all executable scripts are located in the `bin/` directory.
-3.  **Database Requirement**: GOTTCHA requires two distinct components to function:
-    *   A taxonomic lookup table (`GOTTCHA_lookup.tar.gz`).
-    *   A pre-computed signature database (e.g., Bacterial species-level).
+2.  **Download Required Databases**:
+    GOTTCHA requires both a taxonomic lookup table and a specific signature database (e.g., Bacteria or Viruses).
+    ```bash
+    # Download lookup table
+    wget ftp://ftp.lanl.gov/public/genome/gottcha/latest/GOTTCHA_lookup.tar.gz
+    # Download a specific database (e.g., Bacteria species-level)
+    wget ftp://ftp.lanl.gov/public/genome/gottcha/latest/GOTTCHA_BACTERIA_c4937_k24_u30_xHUMAN3x.species.tar.gz
+    
+    # Unpack
+    tar -zxvf GOTTCHA_lookup.tar.gz
+    tar -zxvf GOTTCHA_BACTERIA_c4937_k24_u30_xHUMAN3x.species.tar.gz
+    ```
 
-## Command Line Usage
+## Common CLI Patterns
 
-The primary interface is the `gottcha.pl` Perl script.
-
-### Basic Profiling
-To profile a FASTQ file against a specific database:
+### Basic Taxonomic Profiling
+To profile a single FASTQ file using a pre-computed database:
 ```bash
-bin/gottcha.pl --input <INPUT_FASTQ> --database <DATABASE_PATH> --outdir <OUTPUT_DIRECTORY>
+bin/gottcha.pl \
+  --threads 8 \
+  --input input_file.fastq \
+  --database database/GOTTCHA_BACTERIA_c4937_k24_u30_xHUMAN3x.species \
+  --outdir ./output_folder
 ```
 
-### Common Parameters
-*   `--threads <int>`: Set the number of CPU threads (default is usually 1, but 8+ is recommended for speed).
-*   `--input <file>`: Path to the input FASTQ file.
-*   `--database <path>`: Path to the specific GOTTCHA database (do not include the file extension).
-*   `--outdir <path>`: Directory where results will be saved.
+### Handling Multiple Inputs
+GOTTCHA v1.0b+ supports multiple input files in a single command:
+```bash
+bin/gottcha.pl --input file1.fq --input file2.fq --database path/to/db --outdir ./results
+```
 
-### Database Selection Logic
-GOTTCHA databases are named based on their composition. Understanding the nomenclature helps in selecting the right one:
-*   **k24**: Indicates a 24-mer k-mer size was used.
-*   **u30**: Indicates a minimum of 30bp of unique fragments were retained.
-*   **xHUMAN3x**: Indicates the database has been masked against three human genomes to reduce false positives in clinical samples.
+### Advanced Filtering and Output
+*   **Exclude Plasmids**: To remove hits recruited to plasmids (requires the `.parsedGOTTCHA.dmp` file in the database):
+    ```bash
+    bin/gottcha.pl --input input.fq --database path/to/db --noPlasmidHit --outdir ./
+    ```
+*   **Export Alignments**: To save the mapping results in SAM format for downstream inspection:
+    ```bash
+    bin/gottcha.pl --input input.fq --database path/to/db --dumpSam --outdir ./
+    ```
+
+## Visualization with Krona
+
+To generate interactive pie charts, you must run GOTTCHA in "all" mode to produce the necessary lineage files.
+
+1.  **Run GOTTCHA in all mode**:
+    ```bash
+    bin/gottcha.pl --mode all --input input.fq --database path/to/db --outdir ./results
+    ```
+2.  **Generate Krona Chart**:
+    Use the `.lineage.tsv` file found in the `_temp` directory:
+    ```bash
+    ktImportText results_temp/input.lineage.tsv -o results.krona.html
+    ```
 
 ## Expert Tips and Best Practices
 
-*   **Verification**: Because signature databases are large, always verify downloads using MD5 checksums (`*.md5` files) provided on the download server.
-*   **Memory Management**: While 8GB is the minimum, complex databases or large FASTQ files may require more RAM during the BWA-MEM mapping phase.
-*   **Plasmid Analysis**: If you require plasmid-relative results, ensure you are using the newer parsed database format (`.parsedGOTTCHA.dmp`). Older databases will report zero for plasmid findings.
-*   **Input Quality**: GOTTCHA includes a `splitrim` tool (invoked internally or manually) to handle read trimming. If you encounter segfaults with `splitrim`, ensure your input FASTQ follows standard formatting and does not contain excessively long headers.
-*   **Output Interpretation**: The primary output is a `.tsv` file. Focus on the "Relative Abundance" and "Coverage" columns to assess the presence of specific taxa. High coverage across unique signatures provides higher confidence than a high read count on a single signature.
+*   **Database Integrity**: Always download the corresponding `.md5` files for databases to verify integrity, as signature databases can be several gigabytes in size.
+*   **Abundance Estimation**: By default, GOTTCHA uses "rolled up" depth of coverage at the strain level to calculate relative abundance. This is more accurate for organisms with low coverage (<1x).
+*   **Memory Management**: While laptop-deployable, ensure at least 8GB of RAM is available. For very large databases or high-thread counts, monitor memory usage as BWA-MEM mapping can be intensive.
+*   **Output Interpretation**: Focus on the `LINEAR_DOC` (Linear Depth of Coverage) and `NORM_COV` columns in the `*.gottcha.tsv` file. `LINEAR_DOC` represents the total bases mapped divided by the number of non-overlapping signature bases, providing a robust metric for presence.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gottcha.pl | Genomic Origin Through Taxonomic CHAllenge (GOTTCHA) is an annotation-independent and signature-based metagenomic taxonomic profiling tool that has significantly smaller FDR than other profiling tools. This Perl script is a wrapper to run the GOTTCHA profiling tool with pre-computed signature databases. The procedure includes 3 major steps: split-trimming the input data, mapping reads to a GOTTCHA database using BWA, profiling/filtering the result. |
+| splitrim | Splits a FASTA/FASTQ file into smaller files based on sequence names. |
 
 ## Reference documentation
-- [GOTTCHA Main Documentation](./references/github_com_poeli_GOTTCHA.md)
-- [GOTTCHA Issues and Troubleshooting](./references/github_com_poeli_GOTTCHA_issues.md)
+- [GOTTCHA Main Documentation](./references/lanl-bioinformatics_github_io_GOTTCHA.md)
+- [GOTTCHA GitHub Repository](./references/github_com_poeli_GOTTCHA.md)

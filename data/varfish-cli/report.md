@@ -280,3 +280,6 @@ Traceback (most recent call last):
 varfish_cli.exceptions.InvalidConfiguration: Need to specify server URL and API token
 ```
 
+
+## Metadata
+- **Skill**: generated

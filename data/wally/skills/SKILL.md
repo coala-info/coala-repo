@@ -1,6 +1,6 @@
 ---
 name: wally
-description: wally is a high-performance visualization tool for aligned sequencing reads and genomic variants. Use when user asks to visualize genomic regions, compare multiple samples, inspect structural variants, highlight breakpoints, visualize translocations, or trace long-read alignments.
+description: Wally is a command-line utility for the rapid visualization and batch image generation of aligned sequencing reads, contigs, and pan-genome graphs. Use when user asks to visualize genomic regions, generate publication-quality alignment plots, perform batch processing of variants via BED files, or inspect structural variants using split-read and paired-end views.
 homepage: https://github.com/tobiasrausch/wally
 ---
 
@@ -8,73 +8,81 @@ homepage: https://github.com/tobiasrausch/wally
 # wally
 
 ## Overview
+Wally is a high-performance command-line utility designed for the rapid visualization of aligned sequencing reads, assembled contigs, and pan-genome graphs. Unlike interactive genome browsers, wally excels at batch processing and automated image generation. It allows researchers to transform raw alignment data into clear, publication-quality plots that highlight paired-end orientations, split-read alignments, and depth of coverage across one or multiple samples.
 
-wally is a high-performance visualization tool designed for aligned sequencing reads and genomic variants. It provides a command-line interface to render read-level evidence, making it particularly effective for validating structural variants (SVs), comparing tumor-normal pairs, and inspecting long-read alignment chains. It transforms complex alignment data into interpretable plots, supporting both single-region inspections and large-scale batch processing.
+## Core CLI Usage
 
-## Core Workflows
+### Visualizing Specific Regions
+The `region` subcommand is the primary interface for generating plots. It requires a reference genome and at least one indexed BAM or CRAM file.
 
-### Visualizing Genomic Regions
+```bash
+# Basic region plot
+wally region -r chr1:1000-2000 -g ref.fa input.bam
 
-Use the `region` subcommand to plot specific coordinates. This requires a sorted and indexed BAM/CRAM file and a matching reference genome.
-
-*   **Basic Plotting**: Generate a plot for a single region.
-    `wally region -r chr1:1000-2000 -g reference.fa input.bam`
-*   **Custom Plot Names**: Append a name to the region string using a colon.
-    `wally region -r chr1:1000-2000:my_variant_plot -g reference.fa input.bam`
-*   **Multi-Sample Comparison**: Provide multiple BAM files to view them in a stacked "wallpaper" format (e.g., tumor vs. control).
-    `wally region -r chr17:7573900-7574000 -g reference.fa tumor.bam control.bam`
+# Plot with a specific output name
+wally region -r chr1:1000-2000:my_variant_plot -g ref.fa input.bam
+```
 
 ### Batch Processing with BED Files
+To visualize multiple variants or regions of interest simultaneously, use a BED file. The 4th column of the BED file is used as the output filename.
 
-For large-scale visualization (e.g., plotting all candidates from a VCF), use a BED file.
+```bash
+# Generate plots for all regions in a BED file
+wally region -R regions.bed -g ref.fa input.bam
+```
 
-*   **Execute Batch**: Use `-R` to specify the BED file. The 4th column of the BED file is used as the plot name.
-    `wally region -R regions.bed -g reference.fa input.bam`
-*   **VCF to BED Conversion**: Prepare regions from a VCF using `bcftools` and `awk` before running wally.
-    `bcftools query -f "%CHROM\t%POS\n" input.vcf.gz | awk '{print $1"\t"($2-50)"\t"($2+50)"\tid"NR;}' > regions.bed`
+### Comparative and Multi-Sample Views
+Wally can overlay or stack multiple alignment files, which is essential for somatic variant calling or population studies.
 
-### Structural Variant (SV) Inspection
+```bash
+# Tumor/Normal comparison
+wally region -r chr17:7573900-7574000 -g ref.fa tumor.bam control.bam
 
-wally includes specialized modes for identifying and validating SVs.
+# Large-scale "wallpaper" (e.g., 96 samples)
+wally region -y 20480 -r NC_045512.2:1-30000 -g ref.fa Plate*.bam
+```
 
-*   **Paired-End View**: Use `-p` to color-code reads based on insert size and orientation (e.g., blue for inversions, red for deletions).
-    `wally region -p -r chrA:100-500 -g reference.fa input.bam`
-*   **Breakpoint Highlighting**: Combine `-c` (clipped reads) and `-u` (supplementary alignments) to visualize exact breakpoints.
-    `wally region -cup -r chrA:100-500 -g reference.fa input.bam`
-*   **Split View**: Use `-s` to concatenate different genomic regions horizontally. This is essential for visualizing translocations or distal rearrangements.
-    `wally region -s 2 -r chrA:100-200,chrB:500-600 -g reference.fa input.bam`
+### Advanced Visualization Modes
 
-### Long-Read and Contig Matches
+#### Split View (Horizontal Concatenation)
+Use the `--split` (or `-s`) option to view multiple distant regions side-by-side, such as the breakpoints of a translocation.
 
-Use the `matches` subcommand to visualize how a long sequence (read or assembled contig) aligns across the genome.
+```bash
+# View two different chromosomes side-by-side
+wally region -s 2 -r chrA:35-80,chrB:60-80 -g ref.fa tumor.bam
+```
 
-*   **Single Read Match**: Trace the path of a specific read.
-    `wally matches -r read_name_id -g reference.fa input.bam`
-*   **Batch Read Matches**: Provide a list of read names in a file.
-    `wally matches -R reads.lst -g reference.fa input.bam`
+#### Paired-End View
+Enable paired-end coloring with `-p` to highlight structural variant candidates (e.g., inversions, deletions, or duplications) based on read orientation and insert size.
 
-## Advanced Configuration
+```bash
+wally region -p -r chr1:5000-6000 -g ref.fa input.bam
+```
 
-### Gene Annotations
+#### Gene Annotations
+Incorporate gene models or custom features using bgzipped and tabix-indexed BED files.
 
-To display gene models or custom annotations, provide a bgzipped and tabix-indexed BED file.
+```bash
+# Display gene annotations from a BED file
+wally region -b annotations.bed.gz -r chr1:1000-5000 -g ref.fa input.bam
+```
 
-*   **Add Annotations**: Use the `-b` flag.
-    `wally region -b annotations.bed.gz -r chr1:1000-2000 -g reference.fa input.bam`
-*   **Custom Colors**: wally reads Hex color codes from the 5th column of the BED file (e.g., `0xFF0000` for red).
+## Expert Tips
+- **Coordinate Matching**: Ensure chromosome naming (e.g., "chr1" vs "1") is consistent across the reference FASTA, BAM files, and BED annotations; wally treats them as literal strings.
+- **Custom Coloring**: You can specify Hex color codes in the 5th column of an annotation BED file to highlight specific genomic features in the plot.
+- **VCF Integration**: Quickly generate plots for VCF calls by converting the VCF to a BED format with padding:
+  `bcftools query -f "%CHROM\t%POS\n" variants.vcf.gz | awk '{print $1"\t"($2-50)"\t"($2+50)"\tid"NR;}' > regions.bed`
 
-### Image Scaling
 
-*   **Adjust Dimensions**: Control the output image size using `-x` (width) and `-y` (height).
-    `wally region -x 2048 -y 1024 -r chr1:1000-2000 -g reference.fa input.bam`
 
-## Best Practices
+## Subcommands
 
-*   **Coordinate Consistency**: Ensure chromosome naming (e.g., "chr1" vs "1") is identical across the reference FASTA, BAM files, and BED annotations. wally does not perform fuzzy matching on contig names.
-*   **Index Requirements**: Always ensure BAM/CRAM files are indexed (`.bai`/`.crai`) and the reference FASTA is indexed (`.fai`).
-*   **Memory Management**: When creating "wallpapers" with hundreds of samples, increase the vertical Y-dimension (`-y`) to ensure each sample track has sufficient pixel height.
-*   **Tabix Indexing**: For any annotation BED file, always run `bgzip` followed by `tabix -p bed <file>.gz` before passing it to wally.
+| Command | Description |
+|---------|-------------|
+| dotplot | Generates dot plots for sequence alignment visualization. |
+| matches | Display matches from BAM files |
+| region | Display BAM alignments in a specified region. |
 
 ## Reference documentation
-- [Wally: Visualization of aligned sequencing reads and contigs](./references/github_com_tobiasrausch_wally.md)
-- [wally - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_wally_overview.md)
+- [Wally GitHub README](./references/github_com_tobiasrausch_wally_blob_main_README.md)
+- [Wally Main Repository](./references/github_com_tobiasrausch_wally.md)

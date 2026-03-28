@@ -1,6 +1,6 @@
 ---
 name: tadtool
-description: TADtool is a utility for Hi-C data analysis that enables interactive visualization and parameter optimization for identifying Topologically Associating Domains. Use when user asks to find optimal TAD-calling parameters, visualize insulation indices or directionality indices, and generate domain calls from contact matrices.
+description: TADtool identifies and visualizes Topologically Associating Domains from Hi-C contact matrices using interactive parameter exploration and automated calling algorithms. Use when user asks to call TADs, visualize Hi-C data alongside domain boundaries, explore optimal window size parameters, or subset large contact matrices.
 homepage: https://github.com/vaquerizaslab/tadtool
 ---
 
@@ -8,62 +8,55 @@ homepage: https://github.com/vaquerizaslab/tadtool
 # tadtool
 
 ## Overview
-TADtool is a specialized utility for Hi-C data analysis that helps researchers determine the most biologically meaningful parameters for TAD-calling algorithms. It bridges the gap between raw contact matrices and domain calls by providing an interactive environment to visualize how different window sizes and algorithms (Insulation Index, Normalized Insulation, or Directionality Index) impact the resulting TAD boundaries. Once optimal parameters are identified, the tool can be used via the command line to process full datasets.
+TADtool is a specialized bioinformatics utility designed to bridge the gap between raw Hi-C contact matrices and the identification of structural genomic domains. It addresses the challenge of parameter selection in TAD-calling algorithms by providing an interactive environment to visualize how different window sizes and thresholds affect domain boundaries. Use this skill when you need to process Hi-C data in square, sparse, or `.npy` formats to define chromosomal architectures.
 
-## Installation and Setup
-TADtool is available via PyPI or Bioconda. It is primarily supported on Linux and macOS.
+## Core Workflows
 
-```bash
-# Via Conda
-conda install bioconda::tadtool
-
-# Via pip
-pip install tadtool
-```
-
-## Core CLI Commands
-
-### 1. Interactive Parameter Exploration (`plot`)
-The `plot` command is the primary way to find the "sweet spot" for TAD calling. It requires a matrix, a BED file defining regions, and a specific genomic coordinate to visualize.
+### 1. Interactive Parameter Exploration
+Use the `plot` command to visualize Hi-C data alongside TAD-calling indices. This is the recommended first step to determine the optimal window size for your specific dataset.
 
 ```bash
-tadtool plot matrix.txt regions.bed chr12:31000000-33000000
+tadtool plot <matrix_file> <regions_bed> <region_string>
 ```
+- **Matrix File**: Supports square tab-delimited text, sparse (row col val), or numpy `.npy`.
+- **Regions BED**: A headerless BED file where rows match the matrix dimensions.
+- **Region String**: Format as `chr:start-end` (e.g., `chr12:31000000-33000000`).
 
-**Key Arguments:**
-- `-a [insulation|ninsulation|directionality]`: Select the algorithm. Default is `insulation`.
-- `-w [sizes]`: Define window sizes. You can provide a file, a range (start stop step), or specific integers.
-- `-m MAX_DIST`: Limit the distance from the diagonal to improve rendering speed.
+### 2. Automated TAD Calling
+Once parameters are identified, use the `tads` command for non-interactive, high-throughput processing of full matrices.
 
-### 2. Programmatic TAD Calling (`tads`)
-Once you have identified the optimal window size and algorithm using the `plot` command, use `tads` to generate the final domain calls.
+- **Insulation Index (Default)**: Best for identifying boundaries based on local contact depletion.
+- **Directionality Index**: Best for identifying domains based on upstream/downstream bias.
+- **Normalized Insulation**: Use `-a ninsulation` to normalize against chromosomal averages.
 
-```bash
-tadtool tads matrix.txt regions.bed <window_size> --algorithm insulation > output_tads.bed
-```
+### 3. Data Preparation and Subsetting
+For very large matrices, use the `subset` command to create smaller, more manageable files for initial parameter testing.
 
-### 3. Matrix Subsetting (`subset`)
-For very large Hi-C matrices, use `subset` to create smaller files for faster interactive exploration.
+## CLI Reference and Best Practices
 
-## Data Format Requirements
+### Common Command Patterns
+- **Define Custom Window Sizes**: Use `-w` to pass specific sizes or a range (start stop step).
+  ```bash
+  tadtool plot matrix.txt regions.bed chr1:1-1000000 -w 10000 100000 10000
+  ```
+- **Change Algorithm**: Use `-a directionality` to switch from the default insulation index.
+- **Sparse Matrix Handling**: Ensure your BED file has a fourth column if using sparse notation; this column acts as the identifier for the row/column indices.
 
-### Hi-C Matrix
-TADtool supports three matrix formats:
-1. **Square Matrix**: Tab-delimited text file where rows = columns.
-2. **Sparse Matrix**: Tab-delimited file with three columns: `<row_index> <column_index> <value>`.
-3. **NumPy**: Binary `.npy` files for faster loading.
+### Expert Tips
+- **Memory Management**: For high-resolution data, work with intra-chromosomal matrices. Loading a full-genome matrix at high resolution may lead to significant performance degradation.
+- **Precomputed Data**: If you have already calculated indices, use the `-d` flag in the `plot` command to load them directly and skip the internal calculation step.
+- **Coordinate Systems**: Remember that the BED format used for regions is 0-indexed and end-exclusive, while the plotting region string is typically 1-indexed and inclusive.
 
-### Regions BED File
-A standard BED file (Chromosome, Start, End) corresponding to the matrix bins.
-- **Crucial**: The file must NOT have a header.
-- If using sparse format, the fourth column should contain the unique identifier used in the matrix.
 
-## Expert Tips and Best Practices
-- **Memory Management**: Loading whole-genome matrices at high resolution can be extremely memory-intensive. It is recommended to use intra-chromosomal matrices or subsetted regions for the interactive `plot` tool.
-- **Window Size Selection**: If you don't specify window sizes, TADtool defaults to logarithmic spacing. For the Insulation Index, it typically ranges between $10^4$ and $10^6$ bp.
-- **Sparse vs. Dense**: For high-resolution data where the matrix is mostly zeros, use the sparse matrix format to significantly reduce file size and improve loading times.
-- **Coordinate Standards**: Ensure your BED file coordinates follow the 0-indexed, half-open standard (BED3) to avoid off-by-one errors in boundary calls.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| tads | Call TADs with pre-defined parameters |
+| tadtool plot | Main interactive TADtool plotting window |
+| tadtool_subset | Reduce a matrix to a smaller region. |
 
 ## Reference documentation
-- [TADtool GitHub Repository](./references/github_com_vaquerizaslab_tadtool.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_tadtool_overview.md)
+- [TADtool GitHub README](./references/github_com_vaquerizaslab_tadtool_blob_master_README.md)
+- [TADtool Repository Overview](./references/github_com_vaquerizaslab_tadtool.md)

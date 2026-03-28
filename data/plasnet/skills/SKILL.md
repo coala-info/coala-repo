@@ -1,6 +1,6 @@
 ---
 name: plasnet
-description: Plasnet performs comparative analysis of plasmids by transforming evolutionary distances into hierarchical network clusters. Use when user asks to partition plasmid graphs into communities, refine clusters into subcommunities using precise distance metrics, or map sample metadata onto plasmid networks.
+description: Plasnet is a genomic analysis toolset that transforms plasmid evolutionary distance data into graph-based representations to identify communities and subcommunities. Use when user asks to partition plasmid datasets into communities, refine communities into specific types, identify hub plasmids, or visualize plasmid networks.
 homepage: https://github.com/leoisl/plasnet
 ---
 
@@ -8,52 +8,57 @@ homepage: https://github.com/leoisl/plasnet
 # plasnet
 
 ## Overview
-Plasnet is a specialized tool for the comparative analysis of plasmids through network-based clustering. It transforms pairwise evolutionary distances into a graph where plasmids are nodes and connections represent genetic similarity. The tool follows a hierarchical workflow: first partitioning a global plasmid graph into broad communities, then refining those communities into specific "types" or subcommunities using more precise metrics (like DCJ-indel distance), and finally overlaying metadata to track how these plasmids are distributed across different biological samples.
+`plasnet` is a specialized Python toolset designed for the genomic analysis of plasmids. It transforms pairwise evolutionary distance data into a graph-based representation, allowing researchers to partition large datasets into manageable "communities" and further refine them into specific "types" or subcommunities. By identifying "hub" plasmids—highly connected nodes that can obscure network structure—and providing interactive HTML visualizations, `plasnet` facilitates the exploration of plasmid evolution and horizontal gene transfer.
 
-## Core Workflow and CLI Patterns
+## Core Workflows
 
-### 1. Initial Graph Partitioning (split)
-The `split` command is the entry point. It builds the initial network and identifies broad clusters.
-
-```bash
-plasnet split <plasmids.tsv> <distances.tsv> <output_dir> [OPTIONS]
-```
-
-*   **Input Requirements**: 
-    *   `plasmids.tsv`: A single-column TSV with the header `plasmid` followed by IDs.
-    *   `distances.tsv`: A three-column TSV (`plasmid_1`, `plasmid_2`, `distance`).
-*   **Key Parameters**:
-    *   `-d, --distance-threshold`: The maximum distance value to consider two plasmids connected.
-    *   `-p, --output-plasmid-graph`: Use this to generate the full, unsplit graph visualization for a global view.
-    *   **Hub Detection**: Adjust `-b` (connectivity) and `-e` (edge density) to fine-tune how "hub" plasmids (highly connected nodes) are identified.
-
-### 2. Refining Communities (type)
-After splitting, use the `type` command to perform high-resolution clustering within identified communities.
+### 1. Initial Graph Splitting
+Use the `split` command to generate an initial plasmid graph and partition it into communities.
 
 ```bash
-plasnet type <output_dir>/objects/communities.pkl <refined_distances.tsv> <type_output_dir> [OPTIONS]
+plasnet split [PLASMIDS_FILE] [DISTANCES_FILE] [OUTPUT_DIR] \
+  --distance-threshold 0.5 \
+  --bh-connectivity 10 \
+  --output-plasmid-graph
 ```
+*   **Plasmids File**: A TSV with a single column `plasmid` listing all identifiers.
+*   **Distances File**: A TSV with three columns: `plasmid_1`, `plasmid_2`, and `distance` (0.0 to 1.0).
+*   **Distance Threshold**: The maximum distance allowed for an edge to exist between two plasmids.
 
-*   **Best Practice**: Use a more sensitive distance metric for this step (e.g., gene Jaccard for `split` and DCJ-indel for `type`).
-*   **Small Cluster Management**: Use `--small-subcommunity-size-threshold` to merge tiny, fragmented subcommunities into their larger neighbors, reducing noise in the visualization.
-
-### 3. Mapping Metadata (add-sample-hits)
-To see which samples contain which plasmids within the network:
+### 2. Community Typing
+Refine communities into subcommunities (types) using the `type` command. This typically uses a more stringent distance function or specific parameters to identify fine-grained relationships.
 
 ```bash
-plasnet add-sample-hits <type_output_dir>/objects/subcommunities.pkl <sample_hits.tsv> <final_output_dir>
+plasnet type [COMMUNITIES_PICKLE] [DISTANCES_FILE] [OUTPUT_DIR]
 ```
+*   **Pickle Input**: Uses the `.pickle` file generated during the `split` step.
+*   **Hub Identification**: This step explicitly identifies "hub" plasmids (highly connected nodes) and outputs them to `hub_plasmids.csv`.
 
-*   **Input**: `sample_hits.tsv` must have two columns: `sample` and `plasmid`.
-*   **Utility**: This generates visualizations showing which subcommunities are shared between different samples, highlighting potential horizontal gene transfer events.
+### 3. Mapping Sample Hits
+Annotate existing subcommunities with specific sample data to see which plasmids from your samples match the reference network.
+
+```bash
+plasnet add-sample-hits [TYPE_PICKLE] [SAMPLE_HITS_TSV] [OUTPUT_DIR]
+```
+*   This is essential for determining if different samples share the same plasmid types.
 
 ## Expert Tips and Best Practices
 
-*   **Visualization Formats**: By default, plasnet produces interactive HTML visualizations. If you require publication-quality figures or advanced layout control, look for the Cytoscape-compatible JSON files in the output directory to import the network into Cytoscape.
-*   **Distance Scaling**: Ensure your distance metrics are consistent. For `split`, the distance is typically a float between 0 and 1. For `type`, the threshold should reflect the specific scale of your refined metric.
-*   **Hub Plasmids**: Check the `hub_plasmids.csv` file generated by the `type` command. These plasmids often represent common backbones or highly successful plasmid lineages within your dataset.
-*   **Memory Management**: For very large datasets, the initial `split` command is the most resource-intensive. Pre-filtering your distance file to remove pairs far above your threshold can improve performance.
+*   **Hub (Blackhole) Management**: If your visualization is a "hairball," adjust `--bh-connectivity` (minimum connections to be a hub) and `--bh-neighbours-edge-density` (max density among neighbors). `plasnet` iteratively removes these hubs to reveal the underlying community structure.
+*   **Metadata Integration**: Use the `--plasmids-metadata` flag in the `split` command to attach custom attributes to plasmids, which will be reflected in the interactive visualizations.
+*   **Cytoscape Integration**: For publication-quality figures, use the flags to output Cytoscape-compatible JSON files. You can then load the `plasnet` style file (available in the repository) into Cytoscape to maintain consistent coloring and labeling.
+*   **Incremental Analysis**: As of v0.7.0, you can run `split` and `type` commands using previous results on a subset of plasmids to compare new data against established clusters without re-running the entire dataset.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| add-sample-hits | Add sample hits annotations on top of previously identified subcommunities or types |
+| split | Creates and split a plasmid graph into communities |
+| type | Type the communities of a previously split plasmid graph into subcommunities or types |
 
 ## Reference documentation
-- [plasnet GitHub Repository](./references/github_com_leoisl_plasnet.md)
-- [plasnet Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_plasnet_overview.md)
+- [GitHub Repository README](./references/github_com_leoisl_plasnet_blob_main_README.md)
+- [Changelog and Version History](./references/github_com_leoisl_plasnet_blob_main_CHANGELOG.md)

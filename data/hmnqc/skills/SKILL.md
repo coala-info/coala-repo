@@ -1,85 +1,96 @@
 ---
 name: hmnqc
-description: The hmnqc tool assesses the quality and integrity of targeted NGS datasets by generating standardized metrics from raw reads, alignments, and variant calls. Use when user asks to extract quality statistics into JSON, identify low-coverage positions, calculate target coverage, infer biological sex, or extract SNPs for identity verification.
+description: hmnqc is a bioinformatics utility that generates quality reports and verifies sample integrity for targeted sequencing workflows. Use when user asks to extract quality metrics, identify low-coverage positions, calculate target coverage, infer sample sex, or extract SNPs for identity checking.
 homepage: https://github.com/guillaume-gricourt/HmnQc
 ---
 
 
 # hmnqc
 
----
-
 ## Overview
 
-The `hmnqc` tool is a specialized bioinformatics utility for assessing the quality and integrity of targeted NGS datasets. It streamlines the generation of standardized metrics across different stages of a sequencing pipeline—from raw reads to aligned BAMs and variant calls. Use this skill to automate the extraction of raw statistics into JSON format or to generate Excel-based reports for coverage analysis, sex determination, and SNP extraction.
+hmnqc is a specialized bioinformatics utility designed for targeted sequencing workflows. It streamlines the process of generating quality reports and verifying sample integrity by processing raw and aligned sequencing data. It is particularly useful for clinical or research pipelines requiring standardized QC metrics in JSON or Excel formats. The tool integrates several core libraries like pysam, biopython, and CNVkit to provide a unified interface for quality, coverage, and identity metrics.
 
 ## Command Line Usage
 
-The tool follows a consistent pattern: `hmnqc <command> <parameters>`.
-
 ### Quality Metrics Extraction
-Extract comprehensive statistics from multiple file types into a single JSON file. This is typically used at the end of a primary analysis pipeline to aggregate QC data.
+Use the `quality` command to generate a comprehensive JSON file containing statistics from various stages of the pipeline.
 
 ```bash
 hmnqc quality \
-  --input-sample-name <sample_id> \
-  --output-hmnqc-json <output.json> \
-  --input-fastq-forward-raw <R1_raw.fastq.gz> \
-  --input-fastq-reverse-raw <R2_raw.fastq.gz> \
-  --input-fastq-forward-trim <R1_trimmed.fastq.gz> \
-  --input-fastq-reverse-trim <R2_trimmed.fastq.gz> \
-  --input-sample-bam <aligned.bam> \
-  --input-sample-bed <targets.bed> \
-  --input-sample-vcf <variants.vcf>
+    --input-sample-name <sample_id> \
+    --output-hmnqc-json <output.json> \
+    --input-fastq-forward-raw <R1_raw.fastq.gz> \
+    --input-fastq-reverse-raw <R2_raw.fastq.gz> \
+    --input-fastq-forward-trim <R1_trimmed.fastq.gz> \
+    --input-fastq-reverse-trim <R2_trimmed.fastq.gz> \
+    --input-sample-bam <aligned.bam> \
+    --input-sample-bed <targets.bed> \
+    --input-sample-vcf <variants.vcf>
 ```
 
-### Coverage and Depth Analysis
-Use these commands to identify gaps in sequencing or to calculate target enrichment efficiency.
+### Coverage Analysis
+hmnqc provides two primary ways to assess coverage: identifying gaps and calculating target statistics.
 
-*   **Identify Low-Coverage Positions**: Find specific genomic positions falling below a custom depth threshold.
-    ```bash
-    hmnqc depthmin \
-      --input-sample-bam <aligned.bam> \
-      --input-sample-bed <targets.bed> \
-      --parameter-cut-off <int_threshold> \
-      --output-hmnqc-xlsx <low_coverage.xlsx>
-    ```
+**Identify low-coverage positions:**
+Extract specific genomic positions that fall below a defined depth threshold.
+```bash
+hmnqc depthmin \
+    --input-sample-bam <aligned.bam> \
+    --input-sample-bed <targets.bed> \
+    --parameter-cut-off <int_threshold> \
+    --output-hmnqc-xlsx <low_coverage.xlsx>
+```
 
-*   **Target Coverage Statistics**: Compute general coverage metrics for regions defined in a BED file.
-    ```bash
-    hmnqc depthtarget \
-      --input-sample-bam <aligned.bam> \
-      --input-sample-bed <targets.bed> \
-      --parameter-mode target \
-      --ouput-hmnqc-xlsx <coverage_stats.xlsx>
-    ```
+**Calculate target coverage:**
+Compute summary statistics for regions defined in a BED file.
+```bash
+hmnqc depthtarget \
+    --input-sample-bam <aligned.bam> \
+    --input-sample-bed <targets.bed> \
+    --parameter-mode target \
+    --ouput-hmnqc-xlsx <coverage_stats.xlsx>
+```
 
 ### Identity and Sex Inference
-Verify sample metadata and check for potential sample swaps.
+Verify sample metadata and integrity using alignment data.
 
-*   **Infer Sex**: Determine the biological sex of a sample based on BAM alignment distribution across target regions.
-    ```bash
-    hmnqc infersexe \
-      --input-sample-bam <aligned.bam> \
-      --input-sample-bed <targets.bed> \
-      --output-hmnqc-xlsx <sex_inference.xlsx>
-    ```
+**Infer Sample Sex:**
+Determines sex based on coverage across sex chromosomes defined in the BED file.
+```bash
+hmnqc infersexe \
+    --input-sample-bam <aligned.bam> \
+    --input-sample-bed <targets.bed> \
+    --output-hmnqc-xlsx <sex_inference.xlsx>
+```
 
-*   **Extract SNPs**: Pull specific SNP information from a BAM file using a reference VCF to facilitate identity comparisons.
-    ```bash
-    hmnqc extractvcf \
-      --input-sample-bam <aligned.bam> \
-      --input-reference-vcf <reference_snps.vcf> \
-      --output-hmnqc-xlsx <extracted_snps.xlsx>
-    ```
+**Extract SNPs for Identity Checking:**
+Extracts specific SNPs from a BAM file based on a reference VCF to facilitate sample tracking or contamination checks.
+```bash
+hmnqc extractvcf \
+    --input-sample-bam <aligned.bam> \
+    --input-reference-vcf <reference_snps.vcf> \
+    --output-hmnqc-xlsx <extracted_snps.xlsx>
+```
 
-## Best Practices
+## Expert Tips
 
-*   **Input Consistency**: Ensure the `--input-sample-name` matches the internal identifiers used in your BAM and VCF headers to prevent downstream reporting confusion.
-*   **Targeted Analysis**: Always provide a BED file that accurately represents the capture kit or targeted panel used; using a whole-genome or mismatched BED will result in incorrect coverage and sex inference metrics.
-*   **Output Formats**: Note that `quality` produces JSON (ideal for machine reading/multi-qc tools), while the depth and identity commands produce XLSX (ideal for manual review by lab technicians).
-*   **Trimmed vs Raw**: When running the `quality` command, providing both raw and trimmed FASTQs allows the tool to calculate the efficiency of your adapter clipping and quality filtering steps.
+- **Input Flexibility**: The `quality` command can take a subset of inputs if certain files (like trimmed FASTQs or VCFs) are not available, though providing all files yields the most complete JSON report.
+- **Threshold Selection**: When using `depthmin`, ensure the `--parameter-cut-off` matches your clinical or experimental sensitivity requirements (e.g., 20x or 100x for targeted panels).
+- **Environment Setup**: hmnqc is best managed via Bioconda. If dependencies like `pysam` or `CNVkit` conflict with your local environment, use a dedicated conda environment: `conda create -n hmnqc_env -c bioconda hmnqc`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| depthmin | Calculate minimal depth coverage for QC reporting |
+| depthtarget | Calculate depth on target regions for BAM files using a BED file |
+| extractvcf | Extract VAF or SNP information from VCF files into an Excel output |
+| infersexe | Infer sex based on coverage of autosomes and sex chromosomes from BAM files. |
+| quality | Quality analysis of fastq, bam, and vcf files |
 
 ## Reference documentation
-- [HmnQc GitHub Repository](./references/github_com_guillaume-gricourt_HmnQc.md)
-- [HmnQc Bioconda Package](./references/anaconda_org_channels_bioconda_packages_hmnqc_overview.md)
+- [HmnQc README](./references/github_com_guillaume-gricourt_HmnQc_blob_main_README.md)
+- [HmnQc Main Repository](./references/github_com_guillaume-gricourt_HmnQc.md)

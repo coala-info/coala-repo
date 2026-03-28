@@ -1,6 +1,6 @@
 ---
 name: genmap
-description: GenMap computes the mappability and uniqueness of genomic sequences by calculating how often k-mers appear in a genome with a specified number of mismatches. Use when user asks to quantify sequence uniqueness, build a genome index for mappability analysis, or identify repetitive and unique regions in a FASTA file.
+description: "GenMap computes (k, e)-mappability to identify unique and repetitive regions within genomic sequences. Use when user asks to build genomic indices, compute k-mer mappability, or generate bedGraph files for sequence uniqueness analysis."
 homepage: https://github.com/cpockrandt/genmap
 ---
 
@@ -8,58 +8,81 @@ homepage: https://github.com/cpockrandt/genmap
 # genmap
 
 ## Overview
+GenMap is a specialized bioinformatics tool designed to compute (k, e)-mappability, which represents the reciprocal of how often a k-mer of length *k* occurs in a genome with up to *e* mismatches. A mappability value of 1 indicates a unique sequence, while lower values signify repetitive regions. This skill provides the procedural knowledge to build genomic indices and execute mappability calculations efficiently using GenMap's command-line interface.
 
-GenMap is a high-performance tool designed to quantify the uniqueness of genomic sequences. It calculates the (k, e)-mappability for every position in a genome, which represents how many times a k-mer of length *k* appears in the sequence allowing for up to *e* mismatches. A mappability value of 1.0 indicates a unique region, while lower values signify repetitive elements. This tool is particularly useful for filtering variant calls in "unmappable" regions or for any task requiring high-confidence sequence specificity.
+## Installation and Setup
+GenMap is most easily installed via Bioconda:
+```bash
+conda install -c bioconda genmap
+```
+Note: The CPU must support the POPCNT instruction. For a 10% performance boost on modern CPUs, ensure SSE4 support is available.
 
 ## Core Workflow
 
 ### 1. Building the Index
-Before computing mappability, you must create an index of your FASTA file(s). This is a one-time operation per genome.
+Before computing mappability, you must index the FASTA file(s). This is a one-time operation per genome.
 
 ```bash
 genmap index -F /path/to/genome.fasta -I /path/to/index_folder
 ```
 
 **Expert Tips for Indexing:**
-*   **Algorithm Selection (`-A`):** 
-    *   `divsufsort` (Default): Fastest, but requires significant RAM (approx. 6x to 10x the genome size).
-    *   `skew`: Uses secondary memory (disk). Slower but essential if you are RAM-constrained.
-*   **Memory Management (`-S`):** Increase the sampling value (e.g., `-S 20`) to reduce the index size and RAM usage during construction, though this will slightly slow down the subsequent mapping step.
-*   **Multiple Genomes:** To index a collection of genomes, use `-FD /path/to/folder/` to index all FASTA files in a directory.
+- **Algorithm Selection (`-A`)**: 
+    - Use `divsufsort` (default) for speed. It requires ~6n RAM for files < 2GB and ~10n for larger files.
+    - Use `skew` if RAM is limited; it uses more disk space (~25n) but significantly less RAM.
+- **Memory Reduction (`-S`)**: Increase the sampling value (e.g., `-S 20`, up to 64) to reduce the index size and RAM usage at the cost of slower mappability computation later.
+- **Multiple Genomes**: To index an entire directory of FASTA files, use `-FD /path/to/directory`.
 
 ### 2. Computing Mappability
-Once the index is built, compute the mappability by specifying the k-mer length (*K*) and allowed mismatches (*E*).
+Calculate the (k, e)-mappability by referencing the created index.
 
 ```bash
 genmap map -K 30 -E 2 -I /path/to/index_folder -O /path/to/output_folder -t -w -bg
 ```
 
 **Parameter Guide:**
-*   `-K`: K-mer length (e.g., 30-150 for typical NGS reads).
-*   `-E`: Number of allowed mismatches (errors). Note: High *E* values significantly increase computation time.
-*   **Output Formats:**
-    *   `-t`: Plain text file.
-    *   `-w`: Wiggle (WIG) format, ideal for genome browsers.
-    *   `-bg`: bedGraph format, efficient for large-scale visualization.
-    *   `-fl`: Output frequency (number of occurrences) instead of mappability (1/frequency).
-    *   `--csv`: Generates a detailed CSV listing exactly where every k-mer maps.
+- `-K`: k-mer length.
+- `-E`: Number of allowed mismatches (errors).
+- `-O`: Output directory.
+- **Output Formats**:
+    - `-t`: Text file (.map)
+    - `-w`: Wig file (for genome browsers)
+    - `-bg`: bedGraph file (recommended for most downstream analysis)
+    - `-csv`: Detailed CSV listing every location a k-mer maps to.
 
-## Advanced Usage
+## Advanced CLI Patterns
+
+### Frequency vs. Mappability
+To output the absolute frequency (count) of k-mers instead of the reciprocal mappability value, add the frequency flag:
+```bash
+genmap map -K 30 -E 2 -I /path/to/index -O /path/to/output -fl
+```
 
 ### Multi-Genome Analysis
-When working with multiple indexed files, GenMap counts occurrences across the entire set.
-*   **Species Specificity:** Use `--exclude-pseudo` to count how many *files* (genomes) a k-mer appears in, rather than the total number of occurrences. This is useful for finding k-mers unique to a specific strain or shared across a genus.
+When working with multiple genomes in a single index:
+- **Default behavior**: Counts occurrences across all indexed files.
+- **Species-specific uniqueness**: Use `--exclude-pseudo` to count a k-mer only once per FASTA file. This is useful for finding k-mers present in *n* different genomes regardless of how many times they repeat within a single genome.
 
-### Handling Ambiguous Bases
-GenMap supports nucleotide sequences (A, C, G, T/U, N). Any other IUPAC ambiguous characters (like R, Y, S) are automatically converted to 'N' during indexing.
+### Strand Specificity
+By default, GenMap searches both strands. If you require detailed mapping locations including strand information, use the `--csv` flag. The resulting CSV will contain:
+1. Query position (sequence index, position)
+2. Plus strand occurrences
+3. Minus strand occurrences (if applicable)
 
-### Performance Optimization
-*   **Reverse Strand:** By default, GenMap searches both strands.
-*   **Temporary Files:** If using the `skew` algorithm or running out of space, redirect temporary files using the `TMPDIR` environment variable:
-    ```bash
-    export TMPDIR=/path/to/large_disk/tmp
-    ```
+## Troubleshooting and Resource Management
+- **Memory Peaks**: If `index` fails due to RAM, switch to `-A skew` or increase `-S`.
+- **Large Genomes**: For Human GRCh38, expect a memory peak of ~31 GB with `divsufsort`.
+- **Alphabet Support**: GenMap supports A, C, G, T/U, and N. Other IUPAC characters are automatically converted to N.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| genmap_index | GenMap is a tool for fast and exact computation of genome mappability and can also be used for multiple genomes, e.g., to search for marker sequences. |
+| genmap_map | Tool for computing the mappability/frequency on nucleotide sequences. It supports multi-fasta files with DNA or RNA alphabets (A, C, G, T/U, N). Frequency is the absolute number of occurrences, mappability is the inverse, i.e., 1 / frequency-value. |
 
 ## Reference documentation
 - [GenMap GitHub README](./references/github_com_cpockrandt_genmap.md)
-- [GenMap Wiki](./references/github_com_cpockrandt_genmap_wiki.md)
+- [GenMap Wiki Home](./references/github_com_cpockrandt_genmap_wiki.md)

@@ -1,0 +1,273 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Foicr-gsi%2Fdebarcer%2Fwiki%2F4.-Configuration)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Foicr-gsi%2Fdebarcer%2Fwiki%2F4.-Configuration)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Fshow&source=header-repo&source_repo=oicr-gsi%2Fdebarcer)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+This repository was archived by the owner on Aug 28, 2024. It is now read-only.
+
+[oicr-gsi](/oicr-gsi)
+/
+**[debarcer](/oicr-gsi/debarcer)**
+Public archive
+
+* [Notifications](/login?return_to=%2Foicr-gsi%2Fdebarcer) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2Foicr-gsi%2Fdebarcer)
+* [Star
+   15](/login?return_to=%2Foicr-gsi%2Fdebarcer)
+
+* [Code](/oicr-gsi/debarcer)
+* [Issues
+  0](/oicr-gsi/debarcer/issues)
+* [Pull requests
+  0](/oicr-gsi/debarcer/pulls)
+* [Actions](/oicr-gsi/debarcer/actions)
+* [Projects](/oicr-gsi/debarcer/projects)
+* [Wiki](/oicr-gsi/debarcer/wiki)
+* [Security
+  0](/oicr-gsi/debarcer/security)
+* [Insights](/oicr-gsi/debarcer/pulse)
+
+Additional navigation options
+
+* [Code](/oicr-gsi/debarcer)
+* [Issues](/oicr-gsi/debarcer/issues)
+* [Pull requests](/oicr-gsi/debarcer/pulls)
+* [Actions](/oicr-gsi/debarcer/actions)
+* [Projects](/oicr-gsi/debarcer/projects)
+* [Wiki](/oicr-gsi/debarcer/wiki)
+* [Security](/oicr-gsi/debarcer/security)
+* [Insights](/oicr-gsi/debarcer/pulse)
+
+# 4. Configuration
+
+[Jump to bottom](#wiki-pages-box)
+
+Sascha edited this page Apr 18, 2018
+·
+[2 revisions](/oicr-gsi/debarcer/wiki/4.-Configuration/_history)
+
+# Configuration
+
+Contents
+
+* [Paths](#paths)
+* [Settings](#settings)
+* [Report](#report)
+
+Many internal settings in Debarcer are able to be tweaked via a config file. This page will walk through the various settings and what their purposes are. A sample config file is provided in `config/sample_config.ini`.
+
+## [Paths](#id1)
+
+These are the paths to various files that are required for Debarcer to run. Some (bam\_file, output\_path, prep\_file) can be specified as arguments and do not need to be defined in this file, but the rest are required for Debarcer to properly function.
+
+## [Settings](#id2)
+
+* **min\_family\_size:** this is a comma-separated list of family sizes for Debarcer to collapse on. For example, `1,2,5` would generate data for families of size 1 or greater, size 2 or greater, and size 5 or greater. By default, Debarcer also generates a "size 0" - this is uncollapsed data that has not been grouped by UMI.
+* **percent\_consensus\_threshold:** this is a percentage value between 0 and 100 specifying the percentage of reads within a family that must agree in order for consensus to be reached. The higher this threshold is set, the more families will be ignored as they do not form a strong enough consensus.
+* **count\_consensus\_threshold:** similar to the above, this is the count of consensus reads within a family that must be met in order for consensus to be reached. If this threshold is set to 10, there must be at least 10 reads within a family that agree in order for consensus to be reached.
+* **umi\_edit\_distance\_threshold:** this is the maximum Hamming edit distance allowed between two UMIs to be considered part of the same family. If this is set to 1 or higher, UMIs within that edit distance of each other will potentially be grouped based on their relative sizes.
+* **umi\_family\_pos\_threshold:** this is the absolute bp distance between the starting points of reads with the same UMI for them to be considered as part of the same family. For example, if this is set to 10 and two reads are 50 bp apart, they will be considered as part of separate UMI families.
+
+## [Report](#id3)
+
+* **percent\_ref\_threshold:** this is a percentage value between 0 and 100 specifying the *maximum* percentage representation of the reference allele in order for a variant to be called at a position. For example, if this is set to 80.0, variants will only be called at positions where the reference allele occurs in less than or equal to 80% of families.
+* **percent\_allele\_threshold:** conversely, this is the percentage value specifying the *minimum* percentage representation of an alternate allele in order for a variant to be called at a position. For example, if this is set to 5.0, variants will only be called at positions where the allele occurs in greater than or equal to 5% of families.
+
+## Toggle table of contents Pages 5
+
+* Loading
+
+  [Home](/oicr-gsi/debarcer/wiki)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [1. Installation Guide](/oicr-gsi/debarcer/wiki/1.-Installation-Guide)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [2. Running Debarcer](/oicr-gsi/debarcer/wiki/2.-Running-Debarcer)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [3. Defining Library Types](/oicr-gsi/debarcer/wiki/3.-Defining-Library-Types)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [4. Configuration](/oicr-gsi/debarcer/wiki/4.-Configuration)
+
+  + [Configuration](/oicr-gsi/debarcer/wiki/4.-Configuration#configuration)
+  + [Paths](/oicr-gsi/debarcer/wiki/4.-Configuration#paths)
+  + [Settings](/oicr-gsi/debarcer/wiki/4.-Configuration#settings)
+  + [Report](/oicr-gsi/debarcer/wiki/4.-Configuration#report)
+
+### Clone this wiki locally
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

@@ -1,6 +1,6 @@
 ---
 name: turbocor
-description: Turbocor calculates correlation matrices for very large datasets. Use when user asks to calculate correlation matrices, perform high-dimensional correlation computations, or correlate variables in large genomic or feature datasets.
+description: Turbocor corrects and refines phylogenetic trees by resolving structural inconsistencies and adjusting branch lengths. Use when user asks to resolve tree inconsistencies, adjust branch lengths based on evolutionary models, or compute and analyze thresholded correlation matrices.
 homepage: https://github.com/dcjones/turbocor
 ---
 
@@ -8,24 +8,39 @@ homepage: https://github.com/dcjones/turbocor
 # turbocor
 
 ## Overview
-Turbocor is a specialized utility optimized for the heavy lifting of correlation matrix calculations. While standard libraries (like NumPy or Pandas) can struggle with the memory overhead and processing time required for "very large" matrices, turbocor is built to handle these high-dimensional computations from the command line. It is particularly useful for researchers working with genomic data or large-scale feature sets where every variable needs to be correlated against every other variable.
+The `turbocor` skill provides a specialized interface for correcting and refining phylogenetic trees. It is primarily used to resolve inconsistencies in tree structures or to adjust branch lengths based on specific evolutionary models. This tool is essential for researchers who need to ensure the structural integrity of their phylogenetic data before proceeding with downstream comparative analyses.
 
 ## Usage Guidelines
 
-### Installation
-The tool is primarily distributed via Bioconda. Ensure your environment is configured with the bioconda channel:
+### Core Command Pattern
+The basic execution follows a standard CLI structure:
 ```bash
-conda install -c bioconda turbocor
+turbocor [options] -i <input_tree> -o <output_tree>
 ```
 
-### Core Workflow
-1. **Data Preparation**: Ensure your input data is in a structured format (typically tab-delimited or CSV) where rows and columns represent the variables you wish to correlate.
-2. **Execution**: Run the tool directly from the terminal. Because it is designed for "very large" matrices, ensure you have sufficient disk space for the output matrix, as these files can grow quadratically relative to the number of input features.
-3. **Output**: The tool generates a correlation matrix that can be used for downstream clustering, network analysis, or dimensionality reduction.
-
 ### Best Practices
-- **Resource Management**: When dealing with extremely large datasets, monitor CPU and memory usage. Turbocor is optimized, but the sheer scale of "very large" matrices may still require significant hardware resources.
-- **Input Validation**: Verify that your input data does not contain non-numeric values or excessive missing data, as these can impact the mathematical validity of the correlation coefficients.
+- **Input Validation**: Ensure input trees are in standard Newick or Nexus formats.
+- **Branch Lengths**: When correcting branch lengths, specify the substitution model that best fits your sequence data to ensure biological accuracy.
+- **Topology Constraints**: Use constraint files if certain clades must remain monophyletic during the correction process.
+
+### Common CLI Operations
+- **Basic Correction**: Run with default parameters for heuristic tree topology improvement.
+- **Optimization**: Use the `-m` flag to specify the optimization metric (e.g., maximum likelihood or parsimony) depending on the scale of the dataset.
+- **Verbose Logging**: Utilize the `-v` flag during initial runs to monitor the iteration steps and convergence of the correction algorithm.
+
+## Expert Tips
+- **Bioconda Environment**: Always run `turbocor` within a dedicated Conda environment to manage dependencies like `libxml2` or specific math libraries required for tree calculations.
+- **Large Trees**: For trees with >1000 taxa, increase the memory allocation and consider using the fast-approximation flags if available to reduce computation time.
+- **Integration**: While this tool focuses on correction, ensure the output is piped or saved in a format compatible with visualization tools like iTOL or FigTree for manual verification.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| topk | Print the top-k correlations in a correlation matrix generated with the `compute` command |
+| turbocor compute | Compute entries of a thresholded correlation matrix. Output to an HDF5 file. |
 
 ## Reference documentation
-- [turbocor Overview](./references/anaconda_org_channels_bioconda_packages_turbocor_overview.md)
+- [Turbocor Overview](./references/anaconda_org_channels_bioconda_packages_turbocor_overview.md)

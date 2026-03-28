@@ -350,3 +350,6 @@ Traceback (most recent call last):
 TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
 ```
 
+
+## Metadata
+- **Skill**: generated

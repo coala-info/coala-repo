@@ -1,0 +1,582 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjermp%2Fsshash%2Factions%2Fworkflows%2Fcodeql.yml)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjermp%2Fsshash%2Factions%2Fworkflows%2Fcodeql.yml)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=jermp%2Fsshash)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[jermp](/jermp)
+/
+**[sshash](/jermp/sshash)**
+Public
+
+* [Notifications](/login?return_to=%2Fjermp%2Fsshash) You must be signed in to change notification settings
+* [Fork
+  18](/login?return_to=%2Fjermp%2Fsshash)
+* [Star
+   96](/login?return_to=%2Fjermp%2Fsshash)
+
+* [Code](/jermp/sshash)
+* [Issues
+  0](/jermp/sshash/issues)
+* [Pull requests
+  0](/jermp/sshash/pulls)
+* [Actions](/jermp/sshash/actions)
+* [Projects](/jermp/sshash/projects)
+* [Security
+  0](/jermp/sshash/security)
+* [Insights](/jermp/sshash/pulse)
+
+Additional navigation options
+
+* [Code](/jermp/sshash)
+* [Issues](/jermp/sshash/issues)
+* [Pull requests](/jermp/sshash/pulls)
+* [Actions](/jermp/sshash/actions)
+* [Projects](/jermp/sshash/projects)
+* [Security](/jermp/sshash/security)
+* [Insights](/jermp/sshash/pulse)
+
+# Actions: jermp/sshash
+
+## Actions
+
+## CodeQL CodeQL Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Show workflow options
+
+* Create status badge
+
+# Create status badge
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[codeql.yml](/jermp/sshash/blob/master/.github/workflows/codeql.yml)
+
+will be ignored since log searching is not yet available
+
+**103 workflow runs**
+
+**103 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Merge pull request #91 from jermp/logs](/jermp/sshash/actions/runs/23427106558)
+
+CodeQL
+#198:
+Commit [3dad3b8](/jermp/sshash/commit/3dad3b84b9e3f371c3940511b66875de321bfc35)
+pushed
+by
+[jermp](/jermp)
+
+2m 59s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 59s
+
+* [View workflow file](/jermp/sshash/actions/runs/23427106558/workflow)
+
+[Logs](/jermp/sshash/actions/runs/23427000827)
+
+CodeQL
+#197:
+Pull request [#91](/jermp/sshash/pull/91)
+opened
+by
+[jermp](/jermp)
+
+2m 33s
+[logs](/jermp/sshash/tree/refs/heads/logs "logs")
+
+[logs](/jermp/sshash/tree/refs/heads/logs "logs")
+
+2m 33s
+
+* [View #91](/jermp/sshash/pull/91)
+* [View workflow file](/jermp/sshash/actions/runs/23427000827/workflow)
+
+[more conservative with memory during building](/jermp/sshash/actions/runs/23139162229)
+
+CodeQL
+#196:
+Commit [37da527](/jermp/sshash/commit/37da5273959ea3f632296b1bc8a393cd82997cb5)
+pushed
+by
+[jermp](/jermp)
+
+3m 0s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+3m 0s
+
+* [View workflow file](/jermp/sshash/actions/runs/23139162229/workflow)
+
+[minor to readme](/jermp/sshash/actions/runs/22964842297)
+
+CodeQL
+#195:
+Commit [c132eeb](/jermp/sshash/commit/c132eeb644b82d8dc34d2401307968af2084cda1)
+pushed
+by
+[jermp](/jermp)
+
+3m 30s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+3m 30s
+
+* [View workflow file](/jermp/sshash/actions/runs/22964842297/workflow)
+
+[codeQL v3](/jermp/sshash/actions/runs/22904704815)
+
+CodeQL
+#194:
+Commit [047de97](/jermp/sshash/commit/047de97f744974cc85c6d2b804d759bbf647f34f)
+pushed
+by
+[jermp](/jermp)
+
+2m 45s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 45s
+
+* [View workflow file](/jermp/sshash/actions/runs/22904704815/workflow)
+
+[check membership queries; whitespace consistency](/jermp/sshash/actions/runs/22894187509)
+
+CodeQL
+#193:
+Commit [fcd28a9](/jermp/sshash/commit/fcd28a95cf9a46f88702a4bba227da904453ed68)
+pushed
+by
+[jermp](/jermp)
+
+2m 57s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 57s
+
+* [View workflow file](/jermp/sshash/actions/runs/22894187509/workflow)
+
+[Merge pull request #90 from rob-p/fix/file-merging-sentinel](/jermp/sshash/actions/runs/22892237914)
+
+CodeQL
+#192:
+Commit [5a9d479](/jermp/sshash/commit/5a9d479e55fa0b614448b79f7f6fdf6a491f1050)
+pushed
+by
+[jermp](/jermp)
+
+2m 55s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 55s
+
+* [View workflow file](/jermp/sshash/actions/runs/22892237914/workflow)
+
+[Fix UB in file\_merging\_iterator sentinel and is\_member comparison](/jermp/sshash/actions/runs/22882636144)
+
+CodeQL
+#191:
+Pull request [#90](/jermp/sshash/pull/90)
+opened
+by
+[rob-p](/rob-p)
+
+2m 38s
+[rob-p:fix/file-merging-sentinel](/rob-p/sshash/tree/refs/heads/fix/file-merging-sentinel "rob-p:fix/file-merging-sentinel")
+
+[rob-p:fix/file-merging-sentinel](/rob-p/sshash/tree/refs/heads/fix/file-merging-sentinel "rob-p:fix/file-merging-sentinel")
+
+2m 38s
+
+* [View #90](/jermp/sshash/pull/90)
+* [View workflow file](/jermp/sshash/actions/runs/22882636144/workflow)
+
+[v5.1.0](/jermp/sshash/actions/runs/22873535002)
+
+CodeQL
+#190:
+Commit [028010d](/jermp/sshash/commit/028010d7a65d4f9a7c5456820315fcebea0f61ab)
+pushed
+by
+[jermp](/jermp)
+
+3m 14s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+3m 14s
+
+* [View workflow file](/jermp/sshash/actions/runs/22873535002/workflow)
+
+[Merge pull request #89 from jermp/dev](/jermp/sshash/actions/runs/22872860125)
+
+CodeQL
+#189:
+Commit [bb5b4a6](/jermp/sshash/commit/bb5b4a6fbb6e27ebcba2ba81930c20c1e3853e51)
+pushed
+by
+[jermp](/jermp)
+
+2m 54s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 54s
+
+* [View workflow file](/jermp/sshash/actions/runs/22872860125/workflow)
+
+[Merge pull request #89 from jermp/dev](/jermp/sshash/actions/runs/22872607937)
+
+CodeQL
+#188:
+Commit [bb5b4a6](/jermp/sshash/commit/bb5b4a6fbb6e27ebcba2ba81930c20c1e3853e51)
+pushed
+by
+[jermp](/jermp)
+
+3m 1s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+3m 1s
+
+* [View workflow file](/jermp/sshash/actions/runs/22872607937/workflow)
+
+[Allow memory mapping for queries](/jermp/sshash/actions/runs/22872425670)
+
+CodeQL
+#187:
+Pull request [#89](/jermp/sshash/pull/89)
+opened
+by
+[jermp](/jermp)
+
+3m 7s
+[dev](/jermp/sshash/tree/refs/heads/dev "dev")
+
+[dev](/jermp/sshash/tree/refs/heads/dev "dev")
+
+3m 7s
+
+* [View #89](/jermp/sshash/pull/89)
+* [View workflow file](/jermp/sshash/actions/runs/22872425670/workflow)
+
+[using cmov in the update loop of tournament tree](/jermp/sshash/actions/runs/22761328121)
+
+CodeQL
+#186:
+Commit [d2aa799](/jermp/sshash/commit/d2aa79982eea22528068ea2ed929969b684e28dd)
+pushed
+by
+[jermp](/jermp)
+
+2m 49s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 49s
+
+* [View #88](/jermp/sshash/pull/88)
+* [View workflow file](/jermp/sshash/actions/runs/22761328121/workflow)
+
+[updated external/pthash](/jermp/sshash/actions/runs/22348202874)
+
+CodeQL
+#185:
+Commit [96314d2](/jermp/sshash/commit/96314d26038a2dabcc6e6d6cbf7ebf9f20b025f4)
+pushed
+by
+[jermp](/jermp)
+
+3m 1s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+3m 1s
+
+* [View workflow file](/jermp/sshash/actions/runs/22348202874/workflow)
+
+[clang format](/jermp/sshash/actions/runs/22306047240)
+
+CodeQL
+#184:
+Commit [4cc6255](/jermp/sshash/commit/4cc6255d5ee4029966681c46621646214655dc0a)
+pushed
+by
+[jermp](/jermp)
+
+3m 14s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+3m 14s
+
+* [View workflow file](/jermp/sshash/actions/runs/22306047240/workflow)
+
+[Merge pull request #87 from ratschlab/upstream-bug-fixes](/jermp/sshash/actions/runs/22305802641)
+
+CodeQL
+#183:
+Commit [946c8c4](/jermp/sshash/commit/946c8c460d19f982e109b3a33f8174bf1da51d1e)
+pushed
+by
+[jermp](/jermp)
+
+2m 46s
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+[master](/jermp/sshash/tree/refs/heads/master "master")
+
+2m 46s
+
+* [View workflow file](/jermp/sshash/actions/runs/22305802641/workflow)
+
+[Fix sparse index bug and improve library integration](/jermp/sshash/actions/runs/22078491324)
+
+CodeQL
+#182:
+Pull request [#87](/jermp/sshash/pull/87)
+synchronize
+by
+[adamant-pwn](/adamant-pwn)
+
+2m 54s
+[ratschlab:upstream-bug-fixes](/ratschlab/sshash/tree/refs/heads/upstream-bug-fixes "ratschlab:upstream-bug-fixes")
+
+[ratschlab:upstream-bug-fixes](/ratschlab/sshash/tree/refs/heads/upstream-bug-fixes "ratschlab:upstream-bug-fixes")
+
+2m 54s
+
+* [View #87](/jermp/sshash/pull/87)
+* [View workflow file](/jermp/sshash/actions/runs/22078491324/workflow)
+
+[Fix sparse index bug and improve library integration](/jermp/sshash/actions/runs/22075533046)
+
+CodeQL
+#181:
+Pull request [#87](/jermp/sshash/pull/87)
+opened
+by
+[adamant-pwn](/adamant-pwn)
+
+3m 11s
+[ratschlab:upstream-bug-fixes](/ratsc

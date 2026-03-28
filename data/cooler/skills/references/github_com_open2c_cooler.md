@@ -1,1 +1,267 @@
-GitHub - open2c/cooler: A cool place to store your Hi-C Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} open2c / cooler Public Notifications You must be signed in to change notification settings Fork 59 Star 231 A cool place to store your Hi-C open2c.github.io/cooler License BSD-3-Clause license 231 stars 59 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 41 Pull requests 10 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights open2c/cooler master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,114 Commits 1,114 Commits .github .github docs docs src/ cooler src/ cooler tests tests .gitignore .gitignore .pre-commit-config.yaml .pre-commit-config.yaml .readthedocs.yml .readthedocs.yml CHANGES.md CHANGES.md CITATION.cff CITATION.cff CONTRIBUTING.md CONTRIBUTING.md LICENSE LICENSE README.md README.md pyproject.toml pyproject.toml View all files Repository files navigation README Code of conduct Contributing BSD-3-Clause license Cooler Latest Release License Build Status Pre-commit Status Docs Status Coverage Downloads Citation Community A cool place to store your Hi-C Cooler is a support library for a sparse, compressed, binary persistent storage format , also called cooler, used to store genomic interaction data, such as Hi-C contact matrices. The cooler file format is an implementation of a genomic matrix data model using HDF5 as the container format. The cooler package includes a suite of command line tools and a Python API to facilitate creating, querying and manipulating cooler files. To get started: Install cooler Read the documentation and see the Jupyter Notebook walkthrough . cool files from published Hi-C data sets are available here or via s3 (bucket s3://cooler01 --endpoint-url https://usgs2.osn.mghpcc.org --no-sign-request ). Many more multires ( mcool ) files are available on the 4DN data portal . Installation Install from PyPI using pip. $ pip install cooler If you are using conda , you can alternatively install cooler from the bioconda channel. $ conda install -c conda-forge -c bioconda cooler Citing Abdennur, N., and Mirny, L.A. (2020). Cooler: scalable storage for Hi-C data and other genomically labeled arrays. Bioinformatics . doi: 10.1093/bioinformatics/btz540 . @article { cooler2020 , author = { Abdennur, Nezar and Mirny, Leonid A } , title = " {Cooler: scalable storage for Hi-C data and other genomically labeled arrays} " , journal = { Bioinformatics } , volume = { 36 } , number = { 1 } , pages = { 311--316 } , year = { 2020 } , doi = { 10.1093/bioinformatics/btz540 } , url = { https://doi.org/10.1093/bioinformatics/btz540 } , } Contributing Interested in contributing to cooler? That's great! To get started, check out the contributing guide . Related projects See other Open2C tools to process Hi-C data ( pairtools , distiller ) and analyze Hi-C data ( cooltools )! Visualize your cooler data with HiGlass ! Check out this list of 3D genomics tools and papers , most of which accept cooler files. Affiliations and Acknowledgements Cooler is an Affiliated Project of NumFOCUS . Cooler development has received support from the NIH 4D Nucleome Consortium. We are grateful for a storage allocation from NSF's ACCESS Cyberinfrastucture Open Storage Network to host example cooler data. About A cool place to store your Hi-C open2c.github.io/cooler Topics python bioinformatics genomics ngs file-format contact-matrix hdf5 sparse hi-c cooler 3d-genome chromatin Resources Readme License BSD-3-Clause license Code of conduct Code of conduct Contributing Contributing Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 231 stars Watchers 13 watching Forks 59 forks Report repository Releases 46 v0.10.4 Latest Jul 21, 2025 + 45 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 19 Uh oh! There was an error while loading. Please reload this page . + 5 contributors Languages Python 100.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fopen2c%2Fcooler)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fopen2c%2Fcooler)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=open2c%2Fcooler)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[open2c](/open2c)
+/
+**[cooler](/open2c/cooler)**
+Public
+
+* [Notifications](/login?return_to=%2Fopen2c%2Fcooler) You must be signed in to change notification settings
+* [Fork
+  60](/login?return_to=%2Fopen2c%2Fcooler)
+* [Star
+   233](/login?return_to=%2Fopen2c%2Fcooler)
+
+* [Code](/open2c/cooler)
+* [Issues
+  41](/open2c/cooler/issues)
+* [Pull requests
+  10](/open2c/cooler/pulls)
+* [Discussions](/open2c/cooler/discussions)
+* [Actions](/open2c/cooler/actions)
+* [Projects](/open2c/cooler/projects)
+* [Security
+  0](/open2c/cooler/security)
+* [Insights](/open2c/cooler/pulse)
+
+Additional navigation options
+
+* [Code](/open2c/cooler)
+* [Issues](/open2c/cooler/issues)
+* [Pull requests](/open2c/cooler/pulls)
+* [Discussions](/open2c/cooler/discussions)
+* [Actions](/open2c/cooler/actions)
+* [Projects](/open2c/cooler/projects)
+* [Security](/open2c/cooler/security)
+* [Insights](/open2c/cooler/pulse)
+
+# open2c/cooler
+
+master
+
+[Branches](/open2c/cooler/branches)[Tags](/open2c/cooler/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[1,114 Commits](/open2c/cooler/commits/master/)   1,114 Commits | | |
+| [.github](/open2c/cooler/tree/master/.github ".github") | | [.github](/open2c/cooler/tree/master/.github ".github") |  |  |
+| [docs](/open2c/cooler/tree/master/docs "docs") | | [docs](/open2c/cooler/tree/master/docs "docs") |  |  |
+| [src/cooler](/open2c/cooler/tree/master/src/cooler "This path skips through empty directories") | | [src/cooler](/open2c/cooler/tree/master/src/cooler "This path skips through empty directories") |  |  |
+| [tests](/open2c/cooler/tree/master/tests "tests") | | [tests](/open2c/cooler/tree/master/tests "tests") |  |  |
+| [.gitignore](/open2c/cooler/blob/master/.gitignore ".gitignore") | | [.gitignore](/open2c/cooler/blob/master/.gitignore ".gitignore") |  |  |
+| [.pre-commit-config.yaml](/open2c/cooler/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") | | [.pre-commit-config.yaml](/open2c/cooler/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |  |
+| [.readthedocs.yml](/open2c/cooler/blob/master/.readthedocs.yml ".readthedocs.yml") | | [.readthedocs.yml](/open2c/cooler/blob/master/.readthedocs.yml ".readthedocs.yml") |  |  |
+| [CHANGES.md](/open2c/cooler/blob/master/CHANGES.md "CHANGES.md") | | [CHANGES.md](/open2c/cooler/blob/master/CHANGES.md "CHANGES.md") |  |  |
+| [CITATION.cff](/open2c/cooler/blob/master/CITATION.cff "CITATION.cff") | | [CITATION.cff](/open2c/cooler/blob/master/CITATION.cff "CITATION.cff") |  |  |
+| [CONTRIBUTING.md](/open2c/cooler/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/open2c/cooler/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
+| [LICENSE](/open2c/cooler/blob/master/LICENSE "LICENSE") | | [LICENSE](/open2c/cooler/blob/master/LICENSE "LICENSE") |  |  |
+| [README.md](/open2c/cooler/blob/master/README.md "README.md") | | [README.md](/open2c/cooler/blob/master/README.md "README.md") |  |  |
+| [pyproject.toml](/open2c/cooler/blob/master/pyproject.toml "pyproject.toml") | | [pyproject.toml](/open2c/cooler/blob/master/pyproject.toml "pyproject.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Code of conduct
+* Contributing
+* BSD-3-Clause license
+
+# Cooler
+
+[![Cooler](https://github.com/open2c/cooler/raw/master/docs/cooler_logo.png)](https://open2c.github.io/cooler)
+
+|  |  |
+| --- | --- |
+| Latest Release | [![latest release pypi](https://camo.githubusercontent.com/b60eca915f702775d221e3c7f88fd70864b0ceb5558b8384abd89cb68225d4d6/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f636f6f6c65723f636f6c6f723d626c7565266c6162656c3d507950492532307061636b616765)](https://pypi.org/project/cooler/) [![latest release bioconda](https://camo.githubusercontent.com/779d95f8709fab6096fa5e1093c57b852c8b9063da65744fb3ba850340258de1/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f636f6f6c65723f636f6c6f723d626c7565)](https://bioconda.github.io/recipes/cooler/README.html) |
+| License | [![license](https://camo.githubusercontent.com/3c8d2eb2ee7a98b587fc9ce7d17df0117cc3a9d027b0f2ae1a0e8183904c176c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4253442d677265656e)](https://github.com/open2c/cooler/blob/master/LICENSE) |
+| Build Status | [![build status](https://github.com/open2c/cooler/actions/workflows/ci.yml/badge.svg)](https://github.com/open2c/cooler/blob/master/.github/workflows/ci.yml) |
+| Pre-commit Status | [![pre-commit status](https://camo.githubusercontent.com/3a88eb25c652b7659ca2d518044ea2d75b06733008c3970cff6d8046d13f2e47/68747470733a2f2f726573756c74732e7072652d636f6d6d69742e63692f62616467652f6769746875622f6f70656e32632f636f6f6c65722f6d61737465722e737667)](https://results.pre-commit.ci/repo/github/49553222) |
+| Docs Status | [![](https://camo.githubusercontent.com/e48f6494771c2c2ee980eac9ea551c0bb82c04a998ceb576e38e3358023e0bc2/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f636f6f6c65722f62616467652f3f76657273696f6e3d6c6174657374)](http://cooler.readthedocs.org/en/latest/) |
+| Coverage | [![coverage](https://camo.githubusercontent.com/3b5882d91a79f572b3d786105572b738a7f8c85b19ff77b3dd639582de32f08c/68747470733a2f2f636f6465636f762e696f2f67682f6f70656e32632f636f6f6c65722f6272616e63682f6d61737465722f67726170682f62616467652e737667)](https://codecov.io/gh/open2c/cooler) |
+| Downloads | [![pypi downloads](https://camo.githubusercontent.com/e00344251fd494968b12098e932c39f78b53d7b3dd65cfc3cfdcae70859dd46f/68747470733a2f2f7374617469632e706570792e746563682f706572736f6e616c697a65642d62616467652f636f6f6c65723f706572696f643d746f74616c26756e6974733d696e7465726e6174696f6e616c5f73797374656d266c6566745f636f6c6f723d677265792672696768745f636f6c6f723d626c7565266c6566745f746578743d50795049253230646f776e6c6f616473)](https://pypi.org/project/cooler) [![bioconda downloads](https://camo.githubusercontent.com/92777fb8cc2e2b1b045500f0f8a2a33402bdaa8f742a3e26a7b5c0064ea1fe48/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f636f6f6c65722e7376673f7374796c653d666c6174266c6162656c3d42696f636f6e646120646f776e6c6f616473)](http://bioconda.github.io/recipes/cooler/README.html) |
+| Citation | [![paper doi](https://camo.githubusercontent.com/1d807842b3d8dc80f78b6f24f203241a932ae2924be6a75be6eab1bdd08da7af/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f444f492d31302e3130393325324662696f696e666f726d617469637325324662747a3534302d626c7565)](https://doi.org/10.1093/bioinformatics/btz540) [![zenodo doi](https://camo.githubusercontent.com/e56777217e5ac4ce1e9a29e39649bdf9610c5a6f53ad215bebec7e5b80541f9b/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f34393535333232322e737667)](https://zenodo.org/badge/latestdoi/49553222) |
+| Community | [![slack](https://camo.githubusercontent.com/8c383b32ba5b73e33170f34cc6665317a7a4567189a7d381fe53079581c6355a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636861742d736c61636b2d2532333346304633463f6c6f676f3d736c61636b)](https://bit.ly/open2c-slack) [![numfocus](https://camo.githubusercontent.com/acf91c4dcec73dd4fc9ede6b4181eb77028d6739d29724a7241ec1fe747d7d05/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706f776572656425323062792d4e756d464f4355532d6f72616e67652e7376673f7374796c653d666c617426636f6c6f72413d45313532334426636f6c6f72423d303037443841)](https://www.numfocus.org/) |
+
+## A cool place to store your Hi-C
+
+Cooler is a support library for a **sparse, compressed, binary** persistent storage [format](http://cooler.readthedocs.io/en/latest/schema.html), also called cooler, used to store genomic interaction data, such as Hi-C contact matrices.
+
+The cooler file format is an implementation of a genomic matrix data model using [HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) as the container format. The `cooler` package includes a suite of [command line tools](http://cooler.readthedocs.io/en/latest/cli.html) and a [Python API](http://cooler.readthedocs.io/en/latest/api.html) to facilitate creating, querying and manipulating cooler files.
+
+To get started:
+
+* [Install](#Installation) cooler
+* Read the [documentation](http://cooler.readthedocs.org/en/stable/) and see the Jupyter Notebook [walkthrough](https://github.com/open2c/cooler-binder).
+* *cool* files from published Hi-C data sets are available [here](https://usgs2.osn.mghpcc.org/cooler01/index.html) or via s3 (bucket `s3://cooler01 --endpoint-url https://usgs2.osn.mghpcc.org --no-sign-request`).
+* Many more multires (*mcool*) files are available on the [4DN data portal](https://data.4dnucleome.org/visualization/index).
+
+### Installation
+
+Install from PyPI using pip.
+
+```
+$ pip install cooler
+```
+
+If you are using `conda`, you can alternatively install `cooler` from the [bioconda](https://bioconda.github.io/index.html) channel.
+
+```
+$ conda install -c conda-forge -c bioconda cooler
+```
+
+### Citing
+
+Abdennur, N., and Mirny, L.A. (2020). Cooler: scalable storage for Hi-C data and other genomically labeled arrays. *Bioinformatics*. doi: [10.1093/bioinformatics/btz540](https://doi.org/10.1093/bioinformatics/btz540).
+
+```
+@article{cooler2020,
+    author 

@@ -1,6 +1,6 @@
 ---
 name: ampliconsuite
-description: AmpliconSuite is a bioinformatics framework that reconstructs the physical structure of focal genomic amplifications to identify extrachromosomal DNA and other complex rearrangements in cancer. Use when user asks to resolve focal amplification architectures, classify ecDNA or BFB cycles, and reconstruct breakpoint graphs from short-read or long-read sequencing data.
+description: AmpliconSuite reconstructs and characterizes the architecture of focal genomic amplifications to identify extrachromosomal DNA and complex structural variations from sequencing data. Use when user asks to identify ecDNA, analyze focal amplifications, classify amplification mechanisms, or visualize genomic cycles and breakpoint graphs.
 homepage: https://github.com/AmpliconSuite
 ---
 
@@ -8,64 +8,78 @@ homepage: https://github.com/AmpliconSuite
 # ampliconsuite
 
 ## Overview
-AmpliconSuite is a comprehensive bioinformatics framework designed to resolve the complex architecture of focal amplifications in cancer. At its core, it integrates structural variation (SV) and copy-number (CN) data to reconstruct genomic "cycles" and "paths" that represent the physical structure of amplified regions. The suite is essential for researchers distinguishing between different modes of oncogene amplification, such as ecDNA, BFB cycles, or chromothripsis-driven rearrangements.
+
+AmpliconSuite is a specialized bioinformatics ecosystem designed to reconstruct and characterize the architecture of focal genomic amplifications. It is primarily used to identify extrachromosomal DNA (ecDNA) and other complex structural variations from whole-genome sequencing (WGS) data. The suite integrates structural variation (SV) detection with copy number (CN) analysis to produce breakpoint graphs, which are then decomposed into genomic paths and cycles.
 
 ## Core Workflow: AmpliconSuite-pipeline
-The recommended way to run the analysis is through the `AmpliconSuite-pipeline.py` wrapper (formerly PrepareAA), which automates input preparation, seed detection, and downstream classification.
 
-### 1. Environment Setup
-Before execution, ensure the Mosek license and data repository are configured:
-- **Mosek License**: Place `mosek.lic` in `$HOME/mosek/`. The tool will not run without this.
-- **Data Repo**: Set the `AA_DATA_REPO` environment variable to your annotations directory.
-- **Download Data**: Use the pipeline to fetch reference files:
-  ```bash
-  AmpliconSuite-pipeline.py --download_repo [hg19|GRCh37|GRCh38|mm10]
-  ```
+The recommended way to use the suite is through the `AmpliconSuite-pipeline` wrapper. This handles the complex orchestration of input preparation, seed interval detection, and the execution of both AmpliconArchitect and AmpliconClassifier.
 
-### 2. Running the Pipeline (Short-Read)
-To process a BAM file from scratch (including CNV calling and classification):
+### 1. Input Preparation
+Before running the pipeline, ensure you have:
+- A coordinate-sorted and indexed BAM file.
+- A reference genome (e.g., hg19, GRCh38).
+- A CNV seed file (typically a BED file of high-copy number regions).
+
+### 2. Running the Pipeline
+Use `PrepareAA.py` to initiate the full analysis. This script automates the filtering of seed regions and ensures they meet the requirements for AA.
+
 ```bash
-AmpliconSuite-pipeline.py --bam sample.bam --ref GRCh38 --out sample_output --run_AA --run_classifier
-```
-- Use `--cnv_bed` if you already have copy number calls to save time.
-- Use `--nthreads` to enable multi-threading for the alignment and SV detection steps.
-
-## Long-Read Analysis with CoRAL
-For PacBio or Oxford Nanopore data, use CoRAL to reconstruct amplicons.
-
-### 1. Seed Generation
-Identify amplified intervals from copy number calls:
-```bash
-coral seed --cn-seg sample.cns --output-prefix sample_seeds
+python PrepareAA.py \
+    --samples sample_list.txt \
+    --bam sample.bam \
+    --output_directory ./output \
+    --ref GRCh38 \
+    --cnv_bed seeds.bed
 ```
 
-### 2. Reconstruction
-Perform the full reconstruction of the breakpoint graph:
+### 3. Classification with AmpliconClassifier
+If running AA standalone, you must manually invoke `amplicon_classifier.py` to predict the mechanism of amplification (e.g., ecDNA, BFB, or Linear).
+
 ```bash
-coral reconstruct --lr-bam sample.bam --cnv-seed sample_seeds_CNV_SEEDS.bed --cn-seg sample.cns --output-prefix ./output/sample
+python amplicon_classifier.py \
+    --input_list aa_output_files.txt \
+    --ref GRCh38 \
+    --output_prefix sample_classification
 ```
 
-## Classification and Interpretation
-If running tools standalone, use `AmpliconClassifier` to interpret `AmpliconArchitect` (AA) outputs.
+## Tool-Specific Best Practices
 
-### Classification Command
+### AmpliconArchitect (AA)
+- **Seed Selection**: AA is sensitive to the quality of input seeds. Use `PrepareAA.py` to apply recommended filters rather than passing raw CNV calls directly to AA.
+- **Performance**: Version 1.5+ includes caching of discordant read pairs. If processing samples with extremely high SV counts, ensure you are using the latest version to benefit from the ~2x speedup.
+- **Viral Integration**: For samples with viral content, use the `GRCh38_viral` reference to prevent graph decomposition failures at contig boundaries.
+
+### AmpliconClassifier (AC)
+- **Bulk vs. Subclonal**: Note that AC reports bulk estimated copy numbers, not subclonal distributions.
+- **Complexity Scores**: Use the complexity and similarity scores provided in the AC output table to prioritize amplicons for manual review or visualization.
+
+### Visualization with CycleViz
+To generate circular plots of identified ecDNA or cycles:
 ```bash
-python amplicon_classifier.py --ref GRCh38 --AA_results /path/to/AA_outputs/
+python CycleViz.py \
+    --cycle_file sample_amplicon1_cycles.txt \
+    --graph_file sample_amplicon1_graph.txt \
+    --ref hg19 \
+    --output_prefix sample_viz
 ```
 
-### Key Output Files
-- `*_amplicon_classification_profiles.tsv`: The primary result file. Look for "Positive" in the `ecDNA+` or `BFB+` columns.
-- `*_gene_list.tsv`: Lists oncogenes located on the amplified structures and their estimated copy numbers.
-- `*_feature_entropy.tsv`: Provides complexity scores for the amplicons.
+## Expert Tips
+- **Memory Management**: AA can be memory-intensive for highly rearranged genomes. Ensure your environment has sufficient RAM (typically 32GB+) for complex breakpoint graphs.
+- **Downsampling**: AA uses downsampling for coverage calculations in high-depth regions. If results seem inconsistent across runs, check the logging for the fraction of amplicon weight decomposed.
+- **Integration**: For long-read data (Nanopore/PacBio), consider using **CoRAL** instead of the standard AA pipeline for better reconstruction of candidate structures.
 
-## Expert Tips and Best Practices
-- **Reference Genomes**: Use `GRCh38_viral` if you suspect oncoviral hybrid focal amplifications (e.g., HPV or HBV integrations).
-- **Filtering**: Always use `AmpliconSuite-pipeline` rather than standalone `AmpliconArchitect` for initial runs. The pipeline applies critical filters to seed regions that prevent extreme runtimes and false positives.
-- **Memory Management**: AA can be memory-intensive for highly rearranged genomes. Ensure at least 16-32GB of RAM is available for complex samples.
-- **Visualization**: Use `CycleViz` to generate circular plots of identified ecDNA structures for publication.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| AmpliconSuite-pipeline.py | A pipeline wrapper for AmpliconArchitect, invoking alignment CNV calling and CNV filtering prior. Can launch AA, as well as downstream amplicon classification. |
+| amplicon_classifier.py | Classify AA amplicon type |
 
 ## Reference documentation
-- [AmpliconSuite-pipeline](./references/github_com_AmpliconSuite_AmpliconSuite-pipeline.md)
-- [AmpliconArchitect](./references/github_com_AmpliconSuite_AmpliconArchitect.md)
-- [AmpliconClassifier](./references/github_com_AmpliconSuite_AmpliconClassifier.md)
-- [CoRAL (Long-read)](./references/github_com_AmpliconSuite_CoRAL.md)
+- [AmpliconSuite Overview](./references/github_com_AmpliconSuite_.github_blob_main_profile_README.md)
+- [AmpliconArchitect Documentation](./references/github_com_AmpliconSuite_AmpliconArchitect.md)
+- [AmpliconSuite-pipeline Guide](./references/github_com_AmpliconSuite_AmpliconSuite-pipeline.md)
+- [AmpliconClassifier Details](./references/github_com_AmpliconSuite_AmpliconClassifier.md)

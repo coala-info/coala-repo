@@ -1,0 +1,492 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fnextstrain%2Faugur%2Fblob%2Fmaster%2F.mailmap)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fnextstrain%2Faugur%2Fblob%2Fmaster%2F.mailmap)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=nextstrain%2Faugur)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[nextstrain](/nextstrain)
+/
+**[augur](/nextstrain/augur)**
+Public
+
+* [Notifications](/login?return_to=%2Fnextstrain%2Faugur) You must be signed in to change notification settings
+* [Fork
+  136](/login?return_to=%2Fnextstrain%2Faugur)
+* [Star
+   276](/login?return_to=%2Fnextstrain%2Faugur)
+
+* [Code](/nextstrain/augur)
+* [Issues
+  232](/nextstrain/augur/issues)
+* [Pull requests
+  39](/nextstrain/augur/pulls)
+* [Actions](/nextstrain/augur/actions)
+* [Security
+  0](/nextstrain/augur/security)
+* [Insights](/nextstrain/augur/pulse)
+
+Additional navigation options
+
+* [Code](/nextstrain/augur)
+* [Issues](/nextstrain/augur/issues)
+* [Pull requests](/nextstrain/augur/pulls)
+* [Actions](/nextstrain/augur/actions)
+* [Security](/nextstrain/augur/security)
+* [Insights](/nextstrain/augur/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [augur](/nextstrain/augur/tree/master)
+
+/
+
+# .mailmap
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/nextstrain/augur/commits/master/.mailmap)
+
+History
+
+61 lines (61 loc) · 2.49 KB
+
+master
+
+## Breadcrumbs
+
+1. [augur](/nextstrain/augur/tree/master)
+
+/
+
+# .mailmap
+
+Top
+
+## File metadata and controls
+
+* Code
+* Blame
+
+61 lines (61 loc) · 2.49 KB
+
+[Raw](https://github.com/nextstrain/augur/raw/refs/heads/master/.mailmap)
+
+Copy raw file
+
+Download raw file
+
+Open symbols panel
+
+Edit and raw actions
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+25
+
+26
+
+27
+
+28
+
+29
+
+30
+
+31
+
+32
+
+33
+
+34
+
+35
+
+36
+
+37
+
+38
+
+39
+
+40
+
+41
+
+42
+
+43
+
+44
+
+45
+
+46
+
+47
+
+48
+
+49
+
+50
+
+51
+
+52
+
+53
+
+54
+
+55
+
+56
+
+57
+
+58
+
+59
+
+60
+
+61
+
+Akshay Subramanian <akshay.sub12@gmail.com>
+
+Alli Black <black.alli@gmail.com>
+
+Andreas Tille <tille@debian.org>
+
+Anna Parker <50943381+anna-parker@users.noreply.github.com>
+
+Anna Parker <anya.m.parker@gmail.com>
+
+Barney Potter <barney.potter.24@gmail.com>
+
+Benjamin Otter <benjamin.otter@stud.unibas.ch>
+
+Cameron Devine <camerondtrain@gmail.com>
+
+Carlosbg <bogomcar@gmail.com>
+
+Carol Willing <carolcode@willingconsulting.com>
+
+Chris Woszczak <cwoszczak@protonmail.com>
+
+Christian Clauss <cclauss@me.com>
+
+Christopher Tomkins-Tinch <tomkinsc@broadinstitute.org>
+
+Cornelius Roemer <cornelius.roemer@gmail.com>
+
+Daniel Dye <dye.daniel@gmail.com>
+
+Danielle Kain <dkain@chanzuckerberg.com>
+
+Dependabot <49699333+dependabot[bot]@users.noreply.github.com>
+
+Eddie Lebow <elebow@users.noreply.github.com>
+
+Elias Harkins <eli.harkins@gmail.com>
+
+Emma Hodcroft <emmahodcroft@gmail.com>
+
+Emma Hodcroft <freezefire666@yahoo.com>
+
+Eric Danielson <edanielson@twitter.com>
+
+Étienne Mollier <63921018+emollier@users.noreply.github.com>
+
+Felix Yan <felixonmars@archlinux.org>
+
+Gytis Dudas <gytisdudas@gmail.com>
+
+James Hadfield <hadfield.james@gmail.com>
+
+James Hadfield <jameshadfield@users.noreply.github.com>
+
+James Hadfield <jh22@sanger.ac.uk>
+
+Jennifer Chang <jenchang@iastate.edu>
+
+Jennifer Chang <jennifer.chang.bioinform@gmail.com>
+
+John Huddleston <huddlej@gmail.com>
+
+John SJ Anderson <janders4@fredhutch.org>
+
+Jover Lee <joverlee521@gmail.com>
+
+Julien Bordellier <git@julienbordellier.com>
+
+Kairsten Fay <kairsten.fay@gmail.com>
+
+Louise Moncla <lhmoncla@gmail.com>
+
+Mathias Walter <mathias@walter.gd>
+
+Mathias Walter <mathias@walter.gd> root <root@MATZENOTE.localdomain>
+
+Mingye Wang <arthur200126@gmail.com>
+
+Misja Ilcisin <milcisin@fredhutch.org>
+
+Nextstrain bot <hello@nextstrain.org>
+
+Pierre Barrat <p.barrat@live.fr>
+
+Rhys Kidd <rhyskidd@gmail.com>
+
+Richard Neher <neher@login10.cluster.bc2.ch>
+
+Richard Neher <neher@login11.cluster.bc2.ch>
+
+Richard Neher <neher@login20.cluster.bc2.ch>
+
+Richard Neher <richard.neher@tuebingen.mpg.de>
+
+Richard Neher <richard.neher@unibas.ch>
+
+Ryan Grout <ryan@ryangrout.org>
+
+Samuel Zhang <samuelzhang3@gmail.com>
+
+Sarah Murata <sarah.d.murata@gmail.com>
+
+Sidney Bell <sidneymb@uw.edu>
+
+Sidney Bell <sidneymbell@users.noreply.github.com>
+
+Terry Jones <terry@jon.es>
+
+Thomas A Caswell <tcaswell@gmail.com>
+
+Thomas Sibley <tsibley@fredhutch.org>
+
+Tony Tung <ttung@chanzuckerberg.com>
+
+Trevor Bedford <trevor@bedford.io>
+
+Trevor Bedford <trvrb@trevorbedford.com>
+
+Venkata Sai Kiran Kollapudi <skiran@salesforce.com>
+
+Victor Lin <13424970+victorlin@users.noreply.github.com>
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

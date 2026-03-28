@@ -244,3 +244,6 @@ options:
                         split project to sync directory (default: 1)
 ```
 
+
+## Metadata
+- **Skill**: generated

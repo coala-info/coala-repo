@@ -1,6 +1,6 @@
 ---
 name: vclean
-description: vclean identifies and mitigates contamination within viral genome assemblies. Use when user asks to identify contamination in viral genome assemblies, remove contamination from viral genome assemblies, purify viral genome assemblies, or calculate contamination probabilities for viral genomes.
+description: vclean identifies and mitigates contamination in viral genomes from environmental samples using machine learning. Use when user asks to identify viral contamination, calculate contamination probabilities, or extract reliable contigs from contaminated sequences.
 homepage: https://github.com/TsumaR/vclean
 ---
 
@@ -8,57 +8,58 @@ homepage: https://github.com/TsumaR/vclean
 # vclean
 
 ## Overview
-vclean is an automated command-line pipeline designed to identify and mitigate contamination within viral genome assemblies. It is specifically tailored for environmental viromics, where a single viral bin or scaffold may inadvertently contain sequences from multiple distinct viruses. The tool calculates contamination probabilities and provides a "purified" output by isolating the longest contigs from sequences flagged as contaminated.
+
+vclean is a specialized bioinformatics tool designed to identify and mitigate contamination in viral genomes derived from environmental samples. It uses a machine-learning approach to calculate contamination probabilities and provides a "purification" step that extracts the most reliable contigs from sequences flagged as contaminated. This skill provides the necessary procedures for environment setup, database management, and execution of the analysis pipeline.
 
 ## Installation and Setup
-vclean requires Python 3.9 and is best managed via Conda.
+
+vclean requires Python 3.9 and is best managed via Conda to handle its dependencies (pandas, scikit-learn, lightgbm, biopython).
 
 ```bash
-# Install vclean
+# Create environment and install vclean
 conda install -c conda-forge -c bioconda vclean python=3.9
 ```
 
-### Database Initialization
-Before running the analysis, you must download the required databases. This is a one-time setup step.
+## Database Management
 
-```bash
-# Download database to a specific directory
-vclean download_database /path/to/database_dir
-```
+Before running analyses, you must download the required model databases.
 
-### Environment Configuration
-To avoid specifying the database path in every command, set the `VCLEANDB` environment variable:
+1.  **Download**: Use the built-in command to fetch the data to a specific path.
+    ```bash
+    vclean download_database /path/to/database_dir
+    ```
+2.  **Configuration**: Set the `VCLEANDB` environment variable so the tool can locate the models automatically.
+    ```bash
+    export VCLEANDB=/path/to/database_dir
+    ```
 
-```bash
-export VCLEANDB=/path/to/database_dir
-```
+## Running the Pipeline
 
-## Command Usage
-
-### Running the Pipeline
-The primary command processes a directory of FASTA files.
+The primary command processes a directory of FASTA files and generates a contamination report.
 
 ```bash
 vclean run <input_fasta_dir> <output_dir> [options]
 ```
 
-**Key Arguments:**
-- `<input_fasta_dir>`: Path to the directory containing your viral genome FASTA files.
-- `<output_dir>`: Path where results will be stored.
-- `-d <path>`: (Optional) Manually specify the database path if `VCLEANDB` is not set.
+### Key Outputs
+- `Contamination_probability.tsv`: The main report containing the probability scores for each input sequence.
+- `feature_table.tsv`: The raw features extracted from the sequences used by the model.
+- `purified_fasta/`: A subdirectory created within the output folder. For sequences identified as contaminated, vclean saves new FASTA files here containing only the longest (and presumably most reliable) contigs.
 
-## Output Interpretation
-The tool generates three primary outputs in the specified `<output_dir>`:
+## Expert Tips
+- **Environment Variable**: Always ensure `VCLEANDB` is exported in your current shell session or added to your `.bashrc` to avoid using the `-d` flag repeatedly.
+- **Input Structure**: vclean expects a directory as input, not individual files. Ensure your target FASTA files are grouped in a single folder.
+- **Python Version**: If installation fails, verify you are strictly using Python 3.9, as the underlying machine learning models (LightGBM/Scikit-learn) may have version-specific serialization requirements.
 
-1.  **Contamination_probability.tsv**: The main report containing the calculated risk scores for each input sequence.
-2.  **feature_table.tsv**: Detailed genomic features used by the model to determine contamination status.
-3.  **purified_fasta/**: A subdirectory containing new FASTA files for sequences confirmed as contaminated. These files contain only the longest contigs to reduce the risk of multi-virus chimeras.
 
-## Best Practices
-- **Python Version**: Ensure your environment is strictly using Python 3.9, as newer versions may cause dependency conflicts with the underlying machine learning models.
-- **Input Organization**: Place all genomes to be analyzed in a single directory. vclean processes the entire directory as a batch.
-- **Resource Management**: For large datasets, ensure the machine has sufficient memory for the database to be loaded into context during the feature extraction phase.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| download_database | Download the latest version of vClean's database |
+| vclean | Run vClean |
 
 ## Reference documentation
-- [vClean GitHub Repository](./references/github_com_TsumaR_vclean.md)
-- [vClean Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_vclean_overview.md)
+- [vClean README](./references/github_com_TsumaR_vclean_blob_main_README.md)
+- [Project Metadata](./references/github_com_TsumaR_vclean_blob_main_pyproject.toml.md)

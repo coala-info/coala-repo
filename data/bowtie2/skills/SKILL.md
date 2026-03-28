@@ -1,6 +1,6 @@
 ---
 name: bowtie2
-description: "Bowtie 2 maps sequencing reads to large reference genomes using a memory-efficient FM Index. Use when user asks to align sequencing reads to a reference, index a genome, or perform end-to-end and local alignments."
+description: "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. Use when user asks to build a genome index, align single-end or paired-end reads, perform local or end-to-end alignment, or optimize alignment performance for large datasets."
 homepage: https://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 ---
 
@@ -8,62 +8,67 @@ homepage: https://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 # bowtie2
 
 ## Overview
-Bowtie 2 is an industry-standard tool for mapping sequencing reads (typically 50 to 1,000+ bp) to large reference genomes. It utilizes an FM Index based on the Burrows-Wheeler Transform to maintain a low memory footprint (approx. 3.2 GB for the human genome). It is highly versatile, supporting various alignment modes including end-to-end and local alignment, as well as paired-end and unpaired read inputs.
+Bowtie 2 is a cornerstone tool in computational biology for the ultrafast and memory-efficient alignment of sequencing reads. It utilizes an FM Index based on the Burrows-Wheeler Transform to maintain a small memory footprint (approximately 3.2 GB for the human genome). This skill enables the configuration of alignment modes—including gapped, local, and paired-end—and provides guidance on indexing reference sequences and optimizing performance through multithreading and hardware-specific instructions like AVX2.
 
-## Core Workflow
+## Core CLI Patterns
 
-### 1. Indexing the Reference
-Before alignment, you must create a set of index files from your reference FASTA.
+### 1. Building a Genome Index
+Before alignment, you must index the reference FASTA file.
 ```bash
-bowtie2-build reference.fasta genome_index_base
+bowtie2-build [options] <reference_in.fasta> <index_base_name>
 ```
-*   **Tip**: For very large genomes, `bowtie2-build` automatically switches to a "large" index format (.bt2l).
+*   **Large Genomes**: For references > 4GB, `bowtie2-build` automatically builds a "large" index (.bt2l).
+*   **Speed**: Use `--threads <int>` to parallelize index construction.
+*   **Compression**: Recent versions support Zstd-compressed reference files directly.
 
-### 2. Basic Alignment Patterns
-Aligning reads to the generated index:
+### 2. Basic Read Alignment
+Aligning unpaired (single-end) or paired-end reads to a pre-built index.
 
-**Unpaired Reads (Single-end):**
+**Single-end:**
 ```bash
-bowtie2 -x genome_index_base -U reads.fastq -S output.sam
-```
-
-**Paired-end Reads:**
-```bash
-bowtie2 -x genome_index_base -1 reads_1.fastq -2 reads_2.fastq -S output.sam
+bowtie2 -x <index_base> -U <reads.fastq> -S <output.sam>
 ```
 
-**Using Compressed Inputs:**
-Bowtie 2 natively supports `.gz` and `.zst` files.
+**Paired-end:**
 ```bash
-bowtie2 -x genome_index_base -U reads.fastq.gz -S output.sam
+bowtie2 -x <index_base> -1 <mates_1.fastq> -2 <mates_2.fastq> -S <output.sam>
 ```
 
-### 3. Performance and Presets
-Bowtie 2 provides "presets" that balance speed, sensitivity, and accuracy. These are shortcuts for multiple internal parameters.
-
-*   **End-to-end (Default)**: `--very-fast`, `--fast`, `--sensitive`, `--very-sensitive`
-*   **Local Alignment**: `--very-fast-local`, `--fast-local`, `--sensitive-local`, `--very-sensitive-local`
-
-**Multithreading:**
-Always use the `-p` flag to specify the number of CPU cores to accelerate alignment.
-```bash
-bowtie2 -p 8 -x genome_index_base -U reads.fq -S output.sam
-```
+### 3. Alignment Modes
+*   **End-to-end (Default)**: Requires the entire read to align.
+    *   `--very-fast`, `--fast`, `--sensitive`, `--very-sensitive` (Presets for speed vs. sensitivity).
+*   **Local**: Allows "soft-clipping" of read ends to find the best alignment.
+    *   `--local` (Use this for reads with adapter contamination or low-quality ends).
+    *   Presets: `--very-fast-local`, `--very-sensitive-local`.
 
 ## Expert Tips and Best Practices
 
-*   **Local vs. End-to-end**: Use `--local` if your reads might contain adapter sequences at the ends or if you expect significant structural variation. In local mode, Bowtie 2 "trims" the ends of the read to maximize the alignment score.
-*   **Reporting Multiple Alignments**: 
-    *   By default, Bowtie 2 finds the best alignment.
-    *   Use `-k <int>` to report up to N alignments.
-    *   Use `-a` to report all possible alignments (can be very slow and produce massive SAM files).
-*   **Memory Management**: If you are working on a system with limited RAM, Bowtie 2 is generally more efficient than BWA-MEM for large genomes.
-*   **SAM Output**: To save disk space, pipe the output directly to `samtools` to create a compressed BAM file:
-    ```bash
-    bowtie2 -x index -U reads.fq | samtools view -bS - > output.bam
-    ```
-*   **Discordant Pairs**: For paired-end data, Bowtie 2 looks for "concordant" alignments (mates facing each other at the expected distance). Use `--no-discordant` or `--no-mixed` to suppress specific types of non-standard mappings if your downstream pipeline requires strict pairing.
+### Performance Optimization
+*   **Multithreading**: Always use `-p <threads>` to utilize multiple CPU cores.
+*   **Hardware Acceleration**: On x86_64 systems, Bowtie 2 utilizes AVX2 instructions. Ensure your environment supports these for maximum throughput.
+*   **Input Handling**: Bowtie 2 supports wildcards (e.g., `-q *.fq`) and direct processing of compressed files (Gzip, Zstd).
+
+### Reporting and Sensitivity
+*   **Deterministic Mode**: Use `-d` (or `--deterministic-mode`) in newer versions (v2.5.5+) to ensure that reporting for `-k` or `-a` options is consistent across runs while maintaining high speed.
+*   **Multiple Alignments**:
+    *   `-k <int>`: Report up to N alignments per read.
+    *   `-a`: Report all valid alignments (can be very slow and produce massive SAM files).
+*   **MAPQ Calculation**: Note that Bowtie 2 assigns a MAPQ of 255 to supplementary alignments when using `-k` or `-a`.
+
+### SAM Output Management
+*   **Preserve Tags**: Use `--preserve-tags` when aligning BAM files to keep original metadata.
+*   **Comments**: Use `--sam-append-comment` to include FASTA/Q comments in the SAM record.
+*   **Memory Management**: If aligning very large BAM files, monitor memory usage; versions prior to v2.5.4 had known memory leaks during BAM parsing.
+
+## Index Inspection
+To extract information or the original reference sequence from an index:
+```bash
+bowtie2-inspect <index_base>
+```
+*   Use `-s` to see summary information about the index.
+*   Use `-o <file>` to save the reconstructed FASTA to a specific file.
 
 ## Reference documentation
-- [Bowtie 2: fast and sensitive read alignment](./references/bowtie-bio_sourceforge_net_bowtie2_index.shtml.md)
-- [bowtie2 - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_bowtie2_overview.md)
+- [Bowtie 2 Home](./references/bowtie-bio_sourceforge_net_bowtie2_index.shtml.md)
+- [Bowtie 2 Wiki](./references/github_com_BenLangmead_bowtie2_wiki.md)
+- [Bioconda Bowtie2 Package](./references/anaconda_org_channels_bioconda_packages_bowtie2_overview.md)

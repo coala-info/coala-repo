@@ -273,3 +273,6 @@ Usage: votuderep trainingdata [OPTIONS]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

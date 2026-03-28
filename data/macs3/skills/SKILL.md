@@ -1,6 +1,6 @@
 ---
 name: macs3
-description: "MACS3 identifies protein-DNA interaction sites and enrichment regions from next-generation sequencing data like ChIP-Seq and ATAC-Seq. Use when user asks to call narrow or broad peaks, generate signal tracks for visualization, or perform differential binding analysis between conditions."
+description: MACS3 is a suite of tools designed to identify genomic regions of enrichment and analyze chromatin accessibility from sequencing data. Use when user asks to call narrow or broad peaks, identify open chromatin regions via HMMRATAC, or perform differential binding analysis between conditions.
 homepage: https://pypi.org/project/MACS3/
 ---
 
@@ -9,63 +9,54 @@ homepage: https://pypi.org/project/MACS3/
 
 ## Overview
 
-MACS3 (Model-based Analysis of ChIP-Seq) is a powerful suite of tools designed to identify protein-DNA interaction sites from next-generation sequencing data. It improves spatial resolution by empirically modeling fragment lengths and uses a dynamic Poisson distribution to account for local genomic biases. Beyond standard ChIP-Seq, MACS3 supports ATAC-Seq analysis, paired-end data, and differential enrichment detection between conditions.
+MACS3 (Model-based Analysis of ChIP-Seq) is a powerful suite of tools designed to identify genomic regions of enrichment from sequencing data. It improves spatial resolution by empirically modeling the length of sequenced fragments and uses a dynamic Poisson distribution to capture local genomic biases. While primarily built for ChIP-Seq, MACS3 includes specialized subcommands for ATAC-seq (HMMRATAC), differential binding (bdgdiff), and signal track comparison (bdgcmp).
 
-## Core CLI Patterns
+## Core Workflows
 
-### Standard Peak Calling
-The most common entry point is the `callpeak` command.
+### 1. Standard Peak Calling (callpeak)
+The most common entry point for ChIP-Seq analysis.
 
-```bash
-# Basic narrow peak calling (Human genome, q-value cutoff 0.05)
-macs3 callpeak -t treatment.bam -c control.bam -f BAM -g hs -n experiment_out -q 0.05
+*   **Narrow Peaks (Transcription Factors):**
+    ```bash
+    macs3 callpeak -t treatment.bam -c control.bam -f BAM -g hs -n experiment_name -q 0.01
+    ```
+*   **Broad Peaks (Histone Marks):**
+    ```bash
+    macs3 callpeak -t treatment.bam -c control.bam --broad -g hs --broad-cutoff 0.1
+    ```
 
-# Broad peak calling (e.g., for histone marks like H3K36me3)
-macs3 callpeak -t treatment.bam -c control.bam --broad -g hs -n experiment_broad
-
-# Paired-end data (automatically handles fragment size)
-macs3 callpeak -t treatment.bam -c control.bam -f BAMPE -g hs -n experiment_pe
-```
-
-### Signal Track Generation
-To create tracks for visualization (e.g., in IGV), use the `-B` flag in `callpeak` followed by `bdgcmp`.
+### 2. ATAC-seq Analysis (HMMRATAC)
+MACS3 includes the HMMRATAC module, which is specifically designed for ATAC-seq data to identify open chromatin regions by modeling different fragment types (nucleosome-free, mono-nucleosomal, etc.).
 
 ```bash
-# 1. Generate bedGraph files during peak calling
-macs3 callpeak -t ChIP.bam -c Input.bam -B --SPMR -g hs -n sample
-
-# 2. Calculate Fold Enrichment (FE) track
-macs3 bdgcmp -t sample_treat_pileup.bdg -c sample_control_lambda.bdg -o sample_FE.bdg -m FE
-
-# 3. Calculate log10 Likelihood Ratio (logLR) track
-macs3 bdgcmp -t sample_treat_pileup.bdg -c sample_control_lambda.bdg -o sample_logLR.bdg -m logLR -p 0.00001
+macs3 hmmratac -i input.bam -n atac_experiment --format BAMPE
 ```
 
-### Differential Binding Analysis
-To find regions with significant differences between two conditions (Condition 1 vs Condition 2).
+### 3. Differential Binding (bdgdiff)
+To compare two conditions (e.g., Condition A vs Condition B), you must first run `callpeak` with the `-B` flag to generate bedGraph files, then use `bdgdiff`.
 
-```bash
-# Step 1: Generate pileup for both conditions (do not use --SPMR)
-macs3 callpeak -B -t cond1_ChIP.bam -c cond1_Ctrl.bam -n cond1 --nomodel --extsize 147
-macs3 callpeak -B -t cond2_ChIP.bam -c cond2_Ctrl.bam -n cond2 --nomodel --extsize 147
-
-# Step 2: Call differential regions
-# Note: -d1 and -d2 are the total non-redundant reads (found in callpeak logs)
-macs3 bdgdiff --t1 cond1_treat_pileup.bdg --c1 cond1_control_lambda.bdg \
-              --t2 cond2_treat_pileup.bdg --c2 cond2_control_lambda.bdg \
-              --d1 15000000 --d2 18000000 -g 60 -l 120 --o-prefix diff_out
-```
+1.  **Generate tracks:**
+    ```bash
+    macs3 callpeak -t cond1_ChIP.bam -c cond1_Ctrl.bam -B --nomodel --extsize 147 -n cond1
+    macs3 callpeak -t cond2_ChIP.bam -c cond2_Ctrl.bam -B --nomodel --extsize 147 -n cond2
+    ```
+2.  **Call differential regions:**
+    ```bash
+    macs3 bdgdiff --t1 cond1_treat_pileup.bdg --c1 cond1_control_lambda.bdg \
+                  --t2 cond2_treat_pileup.bdg --c2 cond2_control_lambda.bdg \
+                  --d1 [depth1] --d2 [depth2] -o diff_output
+    ```
 
 ## Expert Tips and Best Practices
 
-*   **Effective Genome Size (`-g`)**: Always provide the correct genome size. Shortcuts include `hs` (human: 2.7e9), `mm` (mouse: 1.87e9), `ce` (C. elegans: 9e7), and `dm` (Drosophila: 1.2e8). For other organisms, provide the actual number.
-*   **Duplicate Reads**: By default, MACS3 keeps only one read per exact genomic location (`--keep-dup 1`). For high-depth libraries or specific assays, you may use `--keep-dup all` or `auto`.
-*   **Fragment Size Prediction**: If the model fails to build, use `--nomodel` and manually specify `--extsize` (the expected fragment length) and `--shift` (usually 0 for ChIP-Seq, or negative for specific assays).
-*   **ATAC-Seq**: For ATAC-Seq, use the `hmmratac` subcommand which is specifically designed to handle the unique signal distribution of open chromatin assays.
-*   **Output Formats**:
-    *   `.narrowPeak` / `.broadPeak`: BED6+4 format for genomic browsers.
-    *   `.xls`: Contains peak information and the specific parameters used for the run.
-    *   `_summits.bed`: Precise point of highest enrichment; ideal for motif discovery.
+*   **Genome Size (`-g`):** Always specify the effective genome size. Common shortcuts: `hs` (human), `mm` (mouse), `ce` (C. elegans), `dm` (fruit fly). For other organisms, provide the actual number (e.g., `1.2e8`).
+*   **Signal Track Generation:** To create Fold Enrichment (FE) or log Likelihood Ratio (logLR) tracks for visualization (e.g., in IGV), use `bdgcmp` on the bedGraph files generated by `callpeak -B --SPMR`.
+    ```bash
+    macs3 bdgcmp -t treat_pileup.bdg -c control_lambda.bdg -m FE -o output_FE.bdg
+    ```
+*   **Duplicate Reads:** By default, MACS3 removes redundant reads at the same position to reduce PCR bias. If you have high-depth data and believe duplicates are real, use `--keep-dup all`.
+*   **Fragment Size Estimation:** If `callpeak` fails to build a model, use `--nomodel` and manually specify the fragment size with `--extsize`. You can find the predicted size by running `macs3 predictd` first.
+*   **Paired-end Data:** For paired-end BAM files, use `-f BAMPE`. This allows MACS3 to use the actual insert size for each pair rather than estimating it.
 
 
 
@@ -89,7 +80,9 @@ macs3 bdgdiff --t1 cond1_treat_pileup.bdg --c1 cond1_control_lambda.bdg \
 | refinepeak | Refine peak summits and compute enrichment scores using MACS3 |
 
 ## Reference documentation
-- [Advanced: Call peaks using MACS2 subcommands](./references/github_com_macs3-project_MACS_wiki_Advanced_-Call-peaks-using-MACS2-subcommands.md)
-- [Build Signal Track](./references/github_com_macs3-project_MACS_wiki_Build-Signal-Track.md)
+
+- [Home - MACS Wiki](./references/github_com_macs3-project_MACS_wiki_Home__history.md)
+- [Advanced: Call peaks using MACS2 subcommands](./references/github_com_macs3-project_MACS_wiki_Advanced_3A-Call-peaks-using-MACS2-subcommands.md)
 - [Call differential binding events](./references/github_com_macs3-project_MACS_wiki_Call-differential-binding-events.md)
-- [MACS3 Documentation Overview](./references/macs3-project_github_io_MACS.md)
+- [Build Signal Track](./references/github_com_macs3-project_MACS_wiki_Build-Signal-Track.md)
+- [HMMRATAC for ATAC-seq](./references/macs3-project_github_io_MACS_docs_hmmratac.html.md)

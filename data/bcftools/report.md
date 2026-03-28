@@ -1343,3 +1343,6 @@ Options:
 - **Runtime**: PASS
 - **Data used**: plan:vcf_file.vcf.gz
 - **Example job**: `bcftools_stats_job.json`
+
+## Metadata
+- **Skill**: generated

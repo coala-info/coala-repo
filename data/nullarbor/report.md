@@ -127,3 +127,6 @@ This program built for x86_64-pc-linux-gnu
 Report bugs to <bug-make@gnu.org>
 ```
 
+
+## Metadata
+- **Skill**: generated

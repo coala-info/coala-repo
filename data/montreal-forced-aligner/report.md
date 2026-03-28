@@ -543,3 +543,6 @@ Traceback (most recent call last):
 TypeError: Path.copy() missing 1 required positional argument: 'target'
 ```
 
+
+## Metadata
+- **Skill**: generated

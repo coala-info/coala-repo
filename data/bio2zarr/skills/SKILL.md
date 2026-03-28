@@ -1,6 +1,6 @@
 ---
 name: bio2zarr
-description: bio2zarr converts VCF and PLINK files into Zarr stores for efficient, parallelized genomic data analysis. Use when user asks to convert VCF files to Zarr, transform PLINK datasets into Zarr format, or optimize large-scale genotype data for distributed computing.
+description: bio2zarr converts bioinformatics file formats like VCF, PLINK, and tskit into the Zarr format for high-performance distributed computing and efficient data access. Use when user asks to convert genomic data to Zarr, perform large-scale VCF transformations, or optimize genomic datasets for parallel processing.
 homepage: https://sgkit-dev.github.io/bio2zarr/
 ---
 
@@ -8,46 +8,56 @@ homepage: https://sgkit-dev.github.io/bio2zarr/
 # bio2zarr
 
 ## Overview
-bio2zarr is a specialized utility designed to bridge the gap between legacy bioinformatics file formats and modern, distributed computing frameworks. It converts large-scale genomic data—primarily VCF (Variant Call Format) and PLINK files—into Zarr stores. This transformation enables efficient, parallelized access to genotype data, which is essential for high-performance genomic analysis in Python-based ecosystems.
+bio2zarr is a specialized tool designed to solve the performance bottlenecks associated with traditional bioinformatics file formats like VCF. It converts these formats into Zarr, a chunked, compressed, N-dimensional array format. This transformation enables high-performance distributed computing and efficient random access to genomic data, particularly for large-scale cohorts. The tool supports one-shot conversions for simple use cases and a multi-step "distributed" workflow for massive datasets that require parallel processing across multiple nodes or high-memory environments.
 
-## Core CLI Patterns
+## Core Workflows
 
 ### VCF to Zarr Conversion
-The conversion of VCF files is typically a two-step process: indexing (exploring the file) and encoding (writing the Zarr data).
+For most standard datasets, use the one-shot conversion command.
 
-```bash
-# Step 1: Inspect the VCF and create an intermediate metadata file
-bio2zarr vcf2zarr explode input.vcf.gz intermediate_directory
+- **One-shot conversion**:
+  `bio2zarr vcf2zarr convert input.vcf.gz output.zarr`
+- **Handling unindexed VCFs**:
+  `bio2zarr vcf2zarr convert --force input.vcf output.zarr`
 
-# Step 2: Encode the exploded data into the final Zarr store
-bio2zarr vcf2zarr encode intermediate_directory output.zarr
-```
+### Distributed Conversion (Large Datasets)
+For massive VCFs, the process is split into three stages to allow for resource management and parallelization:
 
-### PLINK to Zarr Conversion
-For PLINK datasets (BED/BIM/FAM), use the `plink2zarr` command:
+1.  **Explode**: Extract data from VCF into an intermediate chunked format (ICF).
+    `bio2zarr vcf2zarr explode input.vcf.gz intermediate_dir`
+2.  **Inspect/Edit Schema**: (Optional) Generate and modify the conversion schema.
+    `bio2zarr vcf2zarr mkschema intermediate_dir schema.json`
+3.  **Encode**: Convert the intermediate format to the final Zarr array.
+    `bio2zarr vcf2zarr encode intermediate_dir output.zarr`
 
-```bash
-# Convert PLINK triplet to Zarr
-bio2zarr plink2zarr input_prefix output.zarr
-```
+### Other Format Conversions
+- **PLINK**: `bio2zarr plink2zarr convert input.bed output.zarr`
+- **tskit**: `bio2zarr tskit2zarr convert input.trees output.zarr`
 
-## Performance Optimization
+## Expert Tips and Best Practices
 
-### Chunking and Compression
-Zarr's performance depends heavily on chunk sizes. bio2zarr allows you to specify how the data is partitioned.
-- **Variants vs. Samples**: For most GWAS or population genetics tasks, chunking by variants (e.g., 10,000 variants per chunk) is standard.
-- **Memory Management**: Use the `--max-memory` flag during encoding to prevent OOM (Out of Memory) errors on large datasets.
+### Performance Tuning
+- **Memory Management**: Use the `--max-memory` flag (e.g., `--max-memory 10G`) during the `encode` or `convert` steps to prevent OOM (Out of Memory) errors on large sample sizes.
+- **Worker Processes**: By default, the tool uses multiple processes. If debugging, set the number of workers to zero to run in the main thread.
+- **Chunking Strategy**: The default chunk size is 1,000 variants and 10,000 samples. For specific analysis patterns, you can adjust these via `mkschema` before the `encode` step.
 
-### Parallel Execution
-bio2zarr is designed for multi-core systems.
-- Use the `-p` or `--workers` flag to specify the number of concurrent processes.
-- Ensure the temporary directory used during the `explode` step has sufficient IOPS and disk space, as it stores uncompressed intermediate representations.
+### Handling Metadata
+- **Consolidated Metadata**: As of version 0.1.8, bio2zarr no longer automatically generates consolidated metadata. If your downstream tools require it, you must generate it using the standard Zarr Python library after conversion.
+- **Contig Merging**: If processing multiple VCFs, bio2zarr supports merging contig IDs to ensure consistency across the resulting Zarr dataset.
 
-## Expert Tips
-- **Validation**: Always run `bio2zarr vcf2zarr inspect` on your VCF before conversion to identify potential schema inconsistencies or malformed headers.
-- **Remote Storage**: While bio2zarr writes to local disk, the resulting Zarr store is highly optimized for migration to S3 or Google Cloud Storage for use in distributed clusters.
-- **Filtering**: Perform quality control (QC) and filtering on your VCF/PLINK files *before* converting to Zarr to minimize the footprint of the final store.
+### Troubleshooting
+- **ICF Compatibility**: If you upgrade bio2zarr, existing Intermediate Chunked Format (ICF) directories may need to be recreated due to schema version bumps (e.g., the transition to NumPy 2.0 support).
+- **Progress Tracking**: Use `-Q` or `--no-progress` in CI/CD environments or logs to suppress the interactive progress bar.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| plink2zarr | Convert plink fileset(s) to VCF Zarr format |
+| vcf2zarr | Convert VCF file(s) to VCF Zarr format. |
 
 ## Reference documentation
-- [bio2zarr Documentation](./references/sgkit-dev_github_io_bio2zarr.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_bio2zarr_overview.md)
+- [bio2zarr README](./references/github_com_sgkit-dev_bio2zarr_blob_main_README.md)
+- [bio2zarr Changelog](./references/github_com_sgkit-dev_bio2zarr_blob_main_CHANGELOG.md)

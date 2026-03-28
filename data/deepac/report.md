@@ -395,3 +395,6 @@ usage: deepac templates [-h]
 deepac templates: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
+
+## Metadata
+- **Skill**: generated

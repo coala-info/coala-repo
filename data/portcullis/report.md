@@ -221,3 +221,6 @@ Options:
   --help                                Produce help message
 ```
 
+
+## Metadata
+- **Skill**: generated

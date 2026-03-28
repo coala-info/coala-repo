@@ -1,6 +1,6 @@
 ---
 name: methurator
-description: Methurator assesses the saturation of CpG site discovery in DNA methylation experiments by analyzing the relationship between sequencing depth and detected sites. Use when user asks to estimate CpG discovery saturation, calculate statistical estimators for library completeness, or generate saturation curve plots from BAM files.
+description: Methurator estimates DNA methylation sequencing saturation and predicts the discovery of additional CpG sites using Chao's estimator. Use when user asks to assess methylome coverage comprehensiveness, predict future CpG discovery from BAM files, or generate interactive saturation plots for WGBS and RRBS data.
 homepage: https://github.com/VIBTOBIlab/methurator
 ---
 
@@ -8,48 +8,63 @@ homepage: https://github.com/VIBTOBIlab/methurator
 # methurator
 
 ## Overview
-Methurator is a specialized bioinformatics tool designed to assess the saturation of CpG site discovery in DNA methylation experiments. By analyzing aligned sequencing data (BAM files), it calculates the relationship between sequencing depth and the number of unique CpG sites detected. It employs statistical estimators to extrapolate discovery curves beyond the observed data, helping researchers determine the "completeness" of their library and predict how many additional sites would be found with deeper sequencing.
+Methurator is a specialized bioinformatics tool designed to assess whether a DNA methylation sequencing experiment has reached sufficient depth. It uses Chao's estimator to predict how many additional CpG sites would be discovered if sequencing depth were increased. This is essential for determining the cost-effectiveness of further sequencing and for validating the comprehensiveness of methylome coverage in both Whole Genome Bisulfite Sequencing (WGBS) and Reduced Representation Bisulfite Sequencing (RRBS) workflows.
 
-## Installation
-The recommended way to install methurator is via Bioconda:
+## Core Workflows
+
+### 1. Estimating Saturation (Chao's Estimator)
+The primary command `gt-estimator` processes BAM files to calculate the current saturation and predict future discovery.
+
 ```bash
-conda create -n methurator_env methurator
-conda activate methurator_env
+# Basic estimation for a single sample
+methurator gt-estimator --genome hg19 input_sample.bam
+
+# Estimation with bootstrap confidence intervals (recommended for publication)
+methurator gt-estimator --genome mm10 --compute_ci sample.bam
+
+# Processing multiple samples simultaneously
+methurator gt-estimator --genome hg38 sample1.bam sample2.bam sample3.bam
 ```
 
-## Core Workflow
-
-### 1. Estimating Saturation
-The primary command for calculating saturation metrics is `gt-estimator`. This command processes the BAM file and produces a summary of observed and predicted CpG discovery.
+### 2. Visualizing Results
+After running the estimator, use the generated summary file to create interactive HTML plots.
 
 ```bash
-# Basic estimation
-methurator gt-estimator --genome hg38 sample.bam
-
-# Estimation with bootstrap confidence intervals
-methurator gt-estimator --genome hg19 --compute_ci sample.bam
-```
-
-**Key Arguments:**
-- `--genome`: (Required) Specify the reference genome build (e.g., hg19, hg38, mm10).
-- `--compute_ci`: Enables bootstrap confidence intervals for the saturation curve.
-- `input.bam`: The aligned reads file (positional argument).
-
-### 2. Generating Visualizations
-Once the estimation is complete, use the `plot` command to generate interactive HTML reports. This command uses the summary file generated in the previous step to avoid re-calculating the saturation curve.
-
-```bash
+# Generate plots from the summary YAML
 methurator plot --summary output/methurator_summary.yml
 ```
 
-## Expert Tips and Best Practices
-- **Efficiency**: Always use the `methurator plot` command with the `.yml` summary file rather than re-running the estimator on the raw BAM file. The summary file contains all necessary metadata and pre-calculated points for the curve.
-- **Genome Consistency**: Ensure the `--genome` flag matches the reference used during the alignment of your BAM file to avoid incorrect CpG site mapping.
-- **Positional Arguments**: In recent versions (v0.1.7+), BAM input files are treated as positional arguments.
-- **Reproducibility**: The `methurator_summary.yml` file includes tool versioning, run dates, and the specific options used, making it the primary asset for documenting the analysis pipeline.
-- **Progress Tracking**: The tool uses dynamic progress bars; when running in headless environments or logs, be aware that these may generate significant stdout noise unless piped or silenced.
+## CLI Reference and Best Practices
+
+### Command: `gt-estimator`
+*   **`--genome`**: Required. Specify the reference genome (e.g., hg19, hg38, mm10).
+*   **`--compute_ci`**: Optional. Enables bootstrap resampling to provide confidence intervals for the extrapolation. Note: This increases computation time.
+*   **`--rrbs`**: Use this flag for RRBS data. It ensures `MethylDackel` (the underlying engine) keeps duplicates, which is standard practice for RRBS to avoid losing signal in high-density regions.
+*   **`--threads`**: Adjust based on your environment. The tool uses a dynamic progress bar and supports multi-threading for BAM processing.
+
+### Command: `plot`
+*   **Input**: Requires the `methurator_summary.yml` file produced by `gt-estimator`.
+*   **Output**: Produces interactive HTML files showing the sequencing saturation curve, distinguishing between interpolated data (observed) and extrapolated data (predicted).
+*   **Asymptote**: The tool automatically calculates the theoretical maximum number of CpGs (asymptote) at an extrapolation factor of $t = 1000$.
+
+### Legacy Support
+*   The `downsample` command is maintained for backward compatibility with older workflows but has been superseded by `gt-estimator` for more accurate saturation modeling.
+
+## Expert Tips
+*   **Saturation Metrics**: Check the summary YAML for the "saturation" value. This is calculated relative to the theoretical asymptote; a value near 1.0 indicates that further sequencing will yield negligible new CpG discovery.
+*   **HPC Usage**: When running in High-Performance Computing environments, ensure the `--threads` parameter matches your allocated cores to optimize the `MethylDackel` extraction phase.
+*   **Multi-Sample Summaries**: If you provide multiple BAM files to a single `gt-estimator` run, the tool generates a consolidated `methurator_summary.yml`. The `plot` command will then generate a comparison plot containing all samples.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| downsample | Downsample BAM files and estimate sequencing saturation. |
+| gt-estimator | Fit the Chao estimator. |
+| plot | Plot the sequencing saturation curve from downsampling results. |
 
 ## Reference documentation
-- [methurator - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_methurator_overview.md)
-- [GitHub - VIBTOBIlab/methurator](./references/github_com_VIBTOBIlab_methurator.md)
-- [Tags · VIBTOBIlab/methurator](./references/github_com_VIBTOBIlab_methurator_tags.md)
+- [Main README](./references/github_com_VIBTOBIlab_methurator_blob_main_README.md)
+- [Changelog and Version History](./references/github_com_VIBTOBIlab_methurator_blob_main_CHANGELOG.md)

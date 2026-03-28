@@ -382,3 +382,6 @@ No inputs — do not generate CWL.
 COBS version 0.3.1
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: bayestyper
-description: BayesTyper genotypes a wide range of genomic variations using a k-mer-based variant graph approach to reduce reference bias. Use when user asks to genotype SNPs and structural variants, cluster variants for genotyping, or estimate genotypes from k-mer counts.
+description: BayesTyper is a probabilistic genotyping framework that uses k-mer alignment to genotype diverse variation types across a variant graph. Use when user asks to genotype SNPs and structural variants, perform k-mer based variant calling, or estimate genotypes for complex genomic regions.
 homepage: https://github.com/bioinformatics-centre/BayesTyper
 ---
 
@@ -9,67 +9,55 @@ homepage: https://github.com/bioinformatics-centre/BayesTyper
 
 ## Overview
 
-BayesTyper is a specialized tool for genotyping a wide spectrum of genomic variations, ranging from single nucleotide polymorphisms (SNPs) to large structural variants (SVs). Unlike traditional callers that rely on linear read alignments, BayesTyper uses a variant graph approach. It decomposes candidate variants and the reference sequence into k-mers and uses a probabilistic model to estimate genotypes based on k-mer counts. This method is particularly effective at reducing reference bias and improving sensitivity for non-SNP variants.
+BayesTyper is a probabilistic genotyping framework designed to handle diverse variation types, ranging from simple SNPs to complex structural variants (SVs). By representing variants in a graph and performing exact alignment of k-mers, it bypasses the reference bias often inherent in standard linear alignment-based callers. The tool is particularly useful when working with complex genomic regions where traditional realignment might fail. It typically operates in a multi-step workflow: candidate variant generation, k-mer counting, and the final genotyping inference.
 
-## Installation and Setup
+## Command Line Usage and Best Practices
 
-The most efficient way to install BayesTyper is via Bioconda:
+### Core Genotyping
+The primary command for inference is `bayesTyper genotype`.
 
-```bash
-conda install bioconda::bayestyper
-```
+*   **Noise Estimation**: For most large-scale human datasets, the default noise estimation is stable. However, for smaller genomes or variant sets with very few SNVs, use the `--noise-genotyping` flag. This mode estimates noise parameters and genotypes jointly, which is more robust for small datasets but increases memory and time requirements.
+*   **Ploidy Handling**: By default, BayesTyper assumes human ploidy. For other organisms or specific sex chromosome analysis, provide a ploidy file using `--chromosome-ploidy-file`. Supported levels are 0, 1 (haploid), and 2 (diploid).
+*   **Haplotype Candidates**: If genotyping a small number of samples, consider increasing `--max-number-of-sample-haplotypes` (default is 32) to improve sensitivity, though this may increase computation time in complex clusters.
 
-**Note on k-mer size:** The default k-mer size is typically 55. If your research requires a different k-mer size, the tool must be compiled from source as the k-mer size is determined at compile-time.
+### Sample Batching and Merging
+BayesTyper is optimized for batches of up to 30 samples. To process larger cohorts:
+1.  Generate a unified candidate variant set across all samples.
+2.  Run `bayesTyper genotype` on separate batches (≤ 30 samples each) using the same candidate set.
+3.  Compress the resulting VCFs using `bgzip`.
+4.  Merge batches using `bcftools`:
+    ```bash
+    bcftools merge --filter-logic x --info-rules ACP:max -O z -o merged_output.vcf.gz batch1.vcf.gz batch2.vcf.gz
+    ```
+    *Note: Non-PASS filters may not be consistent after merging.*
 
-## Core Workflow
+### Filtering and Refinement
+BayesTyper applies several "hard" filters by default, including Genotype Posterior Probability (GPP < 0.99) and k-mer coverage thresholds (NAK/FAK).
 
-The BayesTyper pipeline generally consists of three main stages: k-mer counting, variant clustering, and genotyping.
+*   **Refiltering**: Use `bayesTyperTools filter` to adjust stringency without rerunning the full genotyping stage.
+    ```bash
+    bayesTyperTools filter -v <input.vcf> -o <output_prefix> -z \
+        --min-genotype-posterior 0.95 \
+        --kmer-coverage-file <prefix>_genomic_parameters.txt
+    ```
+*   **Unfiltered Calls**: To retrieve all calls (e.g., for downstream sensitivity analysis), set all filter thresholds to 0.
 
-### 1. K-mer Counting
-Before genotyping, you must generate k-mer counts from your raw sequencing reads (FASTQ/BAM). While BayesTyper is k-mer source agnostic, it is designed to work with counts from tools like KMC.
+### Tool-Specific Tips
+*   **K-mer Size**: The k-mer size (default 55) is fixed at compile-time. If your read length or complexity requires a different size (e.g., k=31 for shorter reads), you must recompile from source using `-DKMER_SIZE=<value>`.
+*   **Insertion Alleles**: When converting alleles from other callers (like Manta), ensure insertion sequences are provided in the `SEQ` or `SVINSSEQ` attributes, or provide a fasta file to `bayesTyperTools convertAllele`.
+*   **Memory Management**: Complex variant clusters can significantly increase memory usage. If the tool crashes on specific regions, check the complexity of the input VCF in those clusters.
 
-### 2. Variant Clustering (`bayesTyper cluster`)
-This stage groups variants into clusters based on their proximity and k-mer sharing. This is a prerequisite for the genotyping engine.
 
-### 3. Genotyping (`bayesTyper genotype`)
-The final stage performs the actual inference.
 
-**Standard Pattern:**
-```bash
-bayesTyper genotype --variant-clusters <clusters.bin> --kmer-counts <counts.bloom> --output-prefix <sample_id> --reference <ref.fa>
-```
+## Subcommands
 
-## Expert CLI Patterns and Tips
-
-### Handling Complex Organisms and Ploidy
-By default, BayesTyper assumes human ploidy levels. For other organisms or specific sex chromosomes, use a ploidy file:
-
-```bash
-bayesTyper genotype ... --chromosome-ploidy-file <ploidy.txt>
-```
-*The ploidy file should define the ploidy of each chromosome for both male and female individuals.*
-
-### Optimizing for Small Variant Sets or Small Genomes
-If your variant set contains very few SNVs (common when genotyping only specific SVs), use the noise genotyping mode to jointly estimate noise parameters and genotypes:
-
-```bash
-bayesTyper genotype ... --noise-genotyping
-```
-*Note: This mode is more computationally intensive but provides better posterior estimates when noise parameters are unstable.*
-
-### Managing Complex Clusters
-For regions with high variant density, you can adjust the maximum number of candidate haplotypes per sample. The default is 32, but increasing it can improve accuracy for complex clusters at the cost of runtime:
-
-```bash
-bayesTyper genotype ... --max-number-of-sample-haplotypes 64
-```
-
-### Filtering and Utility Operations
-Use `bayesTyperTools` for pre- and post-processing tasks:
-
-*   **Convert Alleles:** Use `convertAllele` to prepare SV insertions for genotyping. It supports sequences stored in `SEQ` or `SVINSSEQ` attributes.
-*   **Filter by Origin:** Use the `filterAlleleCallsetOrigin` script to filter alleles based on their source (ACO attribute) if you are merging multiple candidate callsets.
+| Command | Description |
+|---------|-------------|
+| bayestyper | BayesTyper (v1.5 ) |
+| bayestyper_bayesTyperTools | BayesTyperTools (v1.5 ) |
 
 ## Reference documentation
-- [BayesTyper GitHub Overview](./references/github_com_bioinformatics-centre_BayesTyper.md)
-- [Bioconda BayesTyper Package](./references/anaconda_org_channels_bioconda_packages_bayestyper_overview.md)
+- [BayesTyper Main Repository](./references/github_com_bioinformatics-centre_BayesTyper.md)
+- [Executing BayesTyper on sample batches](./references/github_com_bioinformatics-centre_BayesTyper_wiki_Executing-BayesTyper-on-sample-batches.md)
+- [Filtering Guide](./references/github_com_bioinformatics-centre_BayesTyper_wiki_Filtering.md)
+- [Building from Source (K-mer configuration)](./references/github_com_bioinformatics-centre_BayesTyper_wiki_Building-BayesTyper-from-source.md)

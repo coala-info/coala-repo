@@ -337,3 +337,6 @@ Options:
 	-b STR		folder with metagenomic bins in fasta format
 ```
 
+
+## Metadata
+- **Skill**: generated

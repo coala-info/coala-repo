@@ -1,6 +1,6 @@
 ---
 name: feelnc
-description: FEELnc is a specialized pipeline for identifying and classifying long non-coding RNAs from RNA-seq transcriptomes. Use when user asks to filter transcript candidates, calculate coding potential scores, or classify lncRNAs based on their genomic location.
+description: FEELnc is a bioinformatics pipeline for the automated annotation and classification of long non-coding RNAs from reconstructed transcripts. Use when user asks to filter transcripts against protein-coding exons, calculate coding potential using k-mer models, or classify lncRNAs based on their genomic localization.
 homepage: https://github.com/tderrien/FEELnc
 ---
 
@@ -8,56 +8,76 @@ homepage: https://github.com/tderrien/FEELnc
 # feelnc
 
 ## Overview
-FEELnc (FlExible Extraction of Long non-coding RNAs) is a specialized pipeline for identifying lncRNAs in transcriptomes reconstructed from RNA-seq data, with or without a reference genome. It provides a modular workflow to distinguish between new protein-coding isoforms and true non-coding transcripts, evaluate the likelihood of a sequence being non-coding, and provide functional context through genomic classification.
 
-## Core Modules and Workflow
+FEELnc (FlExible Extraction of LncRNA) is a specialized bioinformatics pipeline for the automated annotation of lncRNAs from reconstructed transcripts (e.g., from StringTie or Cufflinks). It operates through three primary stages: filtering out transcripts that overlap with known protein-coding exons, calculating the coding potential of candidates using a k-mer based model, and classifying the resulting lncRNAs based on their genomic relationship to neighboring genes (such as intergenic, antisense, or intronic).
 
-The pipeline consists of three primary modules that are typically executed in sequence.
+## Core Modules and CLI Usage
 
-### 1. Filtering Candidates (`FEELnc_filter.pl`)
-This module removes spurious transcripts and those overlapping sense exons of reference protein-coding genes, which are likely just new mRNA isoforms.
+The pipeline can be run as individual modules for fine-grained control or via a wrapper script for standard workflows.
 
-*   **Basic Usage:**
+### 1. Filtering (FEELnc_filter.pl)
+Extracts candidate transcripts by removing those that overlap with reference protein-coding exons.
+
+*   **Basic Pattern:**
     ```bash
-    FEELnc_filter.pl -i transcripts.gtf -a reference_annotation.gtf -b transcript_biotype=protein_coding > candidates.gtf
+    FEELnc_filter.pl -i transcripts.gtf -a reference_annotation.gtf > candidates.gtf
     ```
-*   **Best Practice:** Always use the `-b` (biotype) option to specify `protein_coding`. This prevents the tool from accidentally filtering out transcripts that overlap known lncRNAs or pseudogenes in your reference.
-*   **Stranded Data:** If using a stranded protocol, you can include antisense monoexonic lncRNAs by adding `--monoex=-1`.
-
-### 2. Coding Potential Calculation (`FEELnc_codpot.pl`)
-This module computes a coding potential score for the filtered candidates. It uses a Random Forest model trained on k-mer frequencies.
-
-*   **Basic Usage:**
+*   **Best Practice:** Always use the `--biotype` option to ensure you are only filtering against protein-coding mRNAs, preventing the accidental removal of known lncRNAs present in your reference.
     ```bash
-    FEELnc_codpot.pl -i candidates.gtf -a reference_annotation.gtf -g genome.fa --mode=shuffle
+    FEELnc_filter.pl -i transcripts.gtf -a reference.gtf -b transcript_biotype=protein_coding > candidates.gtf
     ```
-*   **Modes:**
-    *   `shuffle`: Recommended when you lack a high-quality non-coding training set; it generates a "null" set by shuffling the input.
-    *   `intergenic`: Uses known lincRNAs as the non-coding training set.
-*   **Performance Tip:** Use the `--proc` argument to specify the number of threads for faster k-mer counting.
-
-### 3. Genomic Classification (`FEELnc_classifier.pl`)
-This module categorizes lncRNAs based on their position relative to the nearest protein-coding genes.
-
-*   **Basic Usage:**
+*   **Stranded Data:** If using a stranded protocol, include antisense monoexonic transcripts which are often filtered by default.
     ```bash
-    FEELnc_classifier.pl -i lncRNAs.gtf -a reference_annotation.gtf > classification.txt
+    FEELnc_filter.pl -i transcripts.gtf -a reference.gtf --monoex=-1 > candidates.gtf
     ```
-*   **Output:** The resulting file provides the relationship (e.g., `lincRNA`, `antisense`, `intronic`) and the distance to the neighboring gene.
 
-## Integrated Pipeline
-For a standard run, use the provided wrapper script to execute all three steps at once:
+### 2. Coding Potential (FEELnc_codpot.pl)
+Computes the probability of a transcript being non-coding.
+
+*   **Standard Mode (with Genome):**
+    ```bash
+    FEELnc_codpot.pl -i candidates.gtf -a reference.gtf -g genome.fa --mode=shuffle
+    ```
+*   **De Novo/Reference-free:** If a reference genome is unavailable, this module can run directly on FASTA files.
+*   **Performance:** Use the `-proc` argument (if available in your version) to specify the number of threads for k-mer counting.
+
+### 3. Classification (FEELnc_classifier.pl)
+Categorizes lncRNAs based on their genomic localization relative to other transcripts.
+
+*   **Usage:**
+    ```bash
+    FEELnc_classifier.pl -i lncRNA.gtf -a reference.gtf > classification_results.txt
+    ```
+*   **Output:** This generates a detailed table describing the type of lncRNA (e.g., lincRNA, antisense, intronic) and the distance to the nearest partner gene.
+
+### 4. Integrated Pipeline (FEELnc_pipeline.sh)
+A wrapper script to execute all three steps in a single command.
 
 ```bash
-FEELnc_pipeline.sh --candidate=transcripts.gtf --reference=annotation.gtf \
-    --genome=genome.fa --outname=project_name --outdir=output_directory
+FEELnc_pipeline.sh --candidate=transcripts.gtf \
+                   --reference=reference.gtf \
+                   --genome=genome.fa \
+                   --outname=project_name \
+                   --outdir=output_directory
 ```
 
-## Expert Tips
-*   **Input Preparation:** Ensure your reference annotation GTF contains `transcript_biotype` or `gene_biotype` attributes. If it doesn't, you may need to pre-process the file to add these tags or use a simplified GTF containing only protein-coding genes.
-*   **Memory Management:** When working with large genomes, ensure the directory containing individual chromosome FASTA files is passed to the `-g` argument if a single large FASTA file causes memory issues.
-*   **Environment Setup:** If installing via Git instead of Conda, you must export the `PERL5LIB` and `FEELNCPATH` variables to ensure the modules can locate the required libraries and binaries.
+## Expert Tips and Best Practices
+
+*   **Reference Preparation:** When providing a reference GTF, it is highly recommended to subselect only `protein_coding` biotypes to serve as the "gold standard" for what is NOT a lncRNA.
+*   **K-mer Shuffling:** The `--mode=shuffle` in `FEELnc_codpot.pl` is effective for generating a null model of coding potential by shuffling the input sequences while preserving k-mer frequencies.
+*   **Environment Setup:** Ensure `PERL5LIB` is correctly exported to include the FEELnc `lib` directory, and that `KmerInShort` and `fasta_ushuffle` binaries are in your `PATH`.
+*   **Input Formats:** Ensure your input GTF files follow standard formatting (9 columns). FEELnc is sensitive to the attribute column for biotype filtering.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| FEELnc_classifier.pl | Classifies lncRNAs based on their genomic context and overlap with protein-coding genes. |
+| FEELnc_codpot.pl | FEELnc_codpot.pl is a tool for predicting lncRNA transcripts. |
+| FEELnc_filter.pl | Filter candidate lncRNA transcripts based on a GTF annotation file. |
+| FEELnc_pipeline.sh | FEELnc pipeline for transcript model annotation. |
 
 ## Reference documentation
 - [FEELnc GitHub Repository](./references/github_com_tderrien_FEELnc.md)
-- [FEELnc Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_feelnc_overview.md)

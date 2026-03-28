@@ -1,6 +1,6 @@
 ---
 name: graphtyper
-description: Graphtyper is a graph-based variant caller that genotypes genomic variations by aligning sequence reads to a pangenome graph. Use when user asks to genotype SNPs and small indels, genotype structural variants from a VCF, or merge regional VCF results into a population-scale file.
+description: Graphtyper performs population-scale genotyping by re-aligning sequence reads to a pangenome graph representation of a reference genome and known variants. Use when user asks to genotype SNPs, small indels, structural variants, or HLA alleles across large cohorts using pangenome graphs.
 homepage: https://github.com/DecodeGenetics/graphtyper
 ---
 
@@ -9,47 +9,95 @@ homepage: https://github.com/DecodeGenetics/graphtyper
 
 ## Overview
 
-Graphtyper is a graph-based variant caller designed for population-scale genomic analysis. Unlike traditional linear reference callers, it represents the reference genome and known variants as an acyclic pangenome graph. By re-aligning high-throughput sequence reads to this graph structure, it achieves high sensitivity and specificity for discovering and genotyping SNPs, small indels, and structural variations. It is particularly useful for large-scale projects where consistency across many samples is required.
+Graphtyper is a specialized tool designed for population-scale genotyping using pangenome graphs. Unlike traditional callers that use a linear reference, Graphtyper represents the reference genome and known variants as an acyclic graph. High-throughput sequence reads are re-aligned to this graph to discover and genotype SNPs, small indels, and structural variants (SVs). This approach is particularly powerful for complex genomic regions, such as the HLA locus, and for improving the accuracy of variant calls across large cohorts.
 
 ## Core Workflows
 
-### Small Variant Genotyping (SNPs and Indels)
-To genotype small variants within a specific genomic region, use the `genotype` subcommand. This requires a reference FASTA and a list of BAM or CRAM files.
+### 1. Small Variant Genotyping (SNPs and Indels)
+The `genotype` subcommand is the standard method for discovering and genotyping small variants.
 
 ```bash
 graphtyper genotype <REFERENCE.fa> \
-  --sams=<BAMLIST_OR_CRAMLIST> \
-  --region=<chrA:begin-end> \
+  --sams=<BAM_OR_CRAM_LIST.txt> \
+  --region=<chr:start-end> \
+  --threads=<T>
+```
+*   **Input**: A FASTA reference and a text file containing paths to BAM/CRAM files (one per line).
+*   **Parallelization**: Always specify a `--region` to process the genome in manageable chunks.
+
+### 2. Structural Variant (SV) Genotyping
+The `genotype_sv` subcommand genotypes a provided set of candidate structural variants.
+
+```bash
+graphtyper genotype_sv <REFERENCE.fa> <CANDIDATE_SVs.vcf.gz> \
+  --sams=<BAM_OR_CRAM_LIST.txt> \
+  --region=<chr:start-end> \
+  --threads=<T>
+```
+*   **Requirement**: You must provide a VCF containing the SVs you wish to genotype.
+
+### 3. HLA Genotyping
+Graphtyper includes a specialized workflow for the highly polymorphic HLA region (GRCh38 only).
+
+```bash
+# Requires HLA reference data from the Graphtyper releases
+graphtyper genotype_hla <REFERENCE.fa> <HLA_GENE_DATA.vcf.gz> \
+  --region=<chr:start-end> \
+  --sams=<BAM_OR_CRAM_LIST.txt> \
   --threads=<T>
 ```
 
-### Structural Variant (SV) Genotyping
-For structural variants, use the `genotype_sv` subcommand. This requires an input VCF containing the SV candidates to be genotyped.
+### 4. SARS-CoV-2 Amplicon Genotyping
+For viral genotyping using amplicon data, specific filters must be disabled to account for primer bias and high impurity.
 
 ```bash
-graphtyper genotype_sv <REFERENCE.fa> <input.vcf.gz> \
-  --sams=<BAMLIST_OR_CRAMLIST> \
-  --region=<chrA:begin-end> \
-  --threads=<T>
-```
-
-### Merging Results
-After running genotyping on multiple regions or batches, use `vcf_merge` to aggregate the results into a single population VCF.
-
-```bash
-graphtyper vcf_merge <VCF_FILES...> --output=<merged.vcf.gz>
+graphtyper genotype <COVID_REF.fa> \
+  --sams=<BAM_LIST.txt> \
+  --region=NC_045512.2 \
+  --advanced \
+  --no_filter_on_read_bias \
+  --no_filter_on_strand_bias \
+  --no_filter_on_coverage \
+  --impurity_threshold=1.0 \
+  --primer_bedpe=<PRIMERS.bedpe> \
+  --genotype_aln_min_support_ratio=0.6 \
+  --genotype_aln_min_support=4 \
+  --is_discovery_only_for_paired_reads \
+  --no_filter_on_begin_pos \
+  --is_only_cigar_discovery \
+  --no_asterisks \
+  --is_all_biallelic
 ```
 
 ## Expert Tips and Best Practices
 
-- **Input Lists**: The `--sams` argument can take a text file containing a list of paths to BAM/CRAM files (one per line). This is the preferred method for population-scale runs.
-- **Region Parallelization**: Graphtyper is designed to be run in parallel across genomic regions. For whole-genome analysis, split the genome into chunks (e.g., 1MB or by chromosome) and execute separate tasks.
-- **Bamshrink**: Graphtyper often uses an internal tool called `bamshrink` to reduce data volume. If you have already pre-processed your alignments or wish to skip this step to save time on specific infrastructures, use the `--no_bamshrink` flag.
-- **Memory Management**: When genotyping large cohorts, ensure the `--threads` parameter matches your available CPU cores, but monitor memory usage as graph-based alignment is more memory-intensive than linear alignment.
-- **PopVCF Encoding**: For very large cohorts, consider using the `--popvcf` encoding option during `genotype_sv` or `vcf_merge` to produce more compact VCF representations.
-- **Filtering**: After genotyping, apply filters based on the quality metrics provided in the VCF (e.g., FT, QUAL). Refer to the version-specific filtering guides in the wiki for recommended thresholds.
+*   **Input Lists**: Use the `--sams` flag with a text file containing file paths rather than passing individual files to the CLI to avoid argument length limits in large cohorts.
+*   **Memory Management**: When processing many samples, ensure the system has sufficient RAM for the graph representation of the specific region.
+*   **VCF Merging**: After genotyping regions in parallel, use the `vcf_merge` subcommand to combine the resulting VCFs into a single cohort-level file.
+*   **Filtering**: For versions 2.6 and newer, pay close attention to the `FT` (Filter) tag in the output VCF. Common filters include `LowQual`, `ReadPosBias`, and `StrandBias`.
+*   **Environment**: Ensure `BOOST_ROOT` is set correctly if building from source, as Graphtyper links with Boost dynamically.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| call | Call variants of a graph. |
+| check | Check a GraphTyper graph (useful for debugging). |
+| genotype | Run the SNP/indel genotyping pipeline. |
+| genotype_hla | Run the HLA genotyping pipeline. |
+| genotype_sv | Run the structural variant (SV) genotyping pipeline. |
+| graphtyper | GraphTyper |
+| graphtyper | Construct a graph. |
+| graphtyper | GraphTyper |
+| graphtyper | GraphTyper |
+| graphtyper | GraphTyper |
+| graphtyper_vcf_concatenate | Concatenates VCF files generated by Graphtyper. |
+| vcf_break_down | Break down/decompose a VCF file. |
 
 ## Reference documentation
-- [Main README](./references/github_com_DecodeGenetics_graphtyper.md)
-- [Graphtyper Wiki](./references/github_com_DecodeGenetics_graphtyper_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_graphtyper_overview.md)
+- [Graphtyper GitHub Repository](./references/github_com_DecodeGenetics_graphtyper.md)
+- [HLA Genotyping Guide](./references/github_com_DecodeGenetics_graphtyper_wiki_HLA-genotyping.md)
+- [SARS-CoV-2 Amplicon Genotyping](./references/github_com_DecodeGenetics_graphtyper_wiki_Amplicon-SARS-CoV-2-genotyping.md)
+- [User Guide](./references/github_com_DecodeGenetics_graphtyper_wiki_User-guide.md)

@@ -143,3 +143,6 @@ If only a single file is provided general QC information returned.
       --version              Print version information.
 ```
 
+
+## Metadata
+- **Skill**: generated

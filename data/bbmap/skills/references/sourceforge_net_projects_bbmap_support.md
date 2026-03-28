@@ -120,8 +120,6 @@ Your Opt-Out Rights
 [Privacy](https://slashdotmedia.com/privacy-statement/ "Privacy")
 [Advertise](https://slashdotmedia.com/contact/ "Advertise")
 
-![Retool Logo](//a.fsdn.com/con/img/retool.png)
-
 ![Retool Logo](https://a.fsdn.com/con/img/retool.png)
 
 ✕

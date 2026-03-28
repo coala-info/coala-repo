@@ -1,6 +1,6 @@
 ---
 name: ephemeris
-description: Ephemeris automates the administrative bootstrapping and management of Galaxy servers, including tool installation, workflow deployment, and data library setup. Use when user asks to install tools from the Tool Shed, extract tool lists from workflows or instances, setup data libraries, or validate Galaxy configurations.
+description: Ephemeris automates the management of Galaxy servers by programmatically installing tools, workflows, and reference data. Use when user asks to install tools from the Tool Shed, manage reference data via Data Managers, import workflows, or extract tool lists from a Galaxy instance.
 homepage: https://github.com/galaxyproject/ephemeris
 ---
 
@@ -8,39 +8,75 @@ homepage: https://github.com/galaxyproject/ephemeris
 # ephemeris
 
 ## Overview
-Ephemeris is a specialized Python library and suite of command-line utilities designed to automate the administrative "bootstrapping" of a Galaxy server. It streamlines the process of managing Galaxy plugins—specifically tools from the Tool Shed, data libraries, and workflows. This skill enables the programmatic setup of Galaxy instances, allowing administrators to move away from manual GUI-based configurations toward reproducible, scriptable infrastructure.
+Ephemeris is a specialized Python library and CLI toolset designed to automate the "day 1" and "day 2" operations of a Galaxy server. It provides a bridge between a fresh Galaxy installation and a fully functional bioinformatics platform by programmatically handling the installation of tools from the Tool Shed, managing reference data via Data Managers, and importing complex workflows. It is the standard tool for Galaxy administrators to ensure reproducible environment setups.
 
-## CLI Usage and Best Practices
+## Core Commands and Usage
 
-### Tool Management with `shed-tools`
-The `shed-tools` command is the primary utility for interacting with the Galaxy Tool Shed.
-- **Installation**: Use `shed-tools install` to automate the deployment of tools to a Galaxy instance.
-- **Testing**: Use `shed-tools test` to verify that installed tools are functioning correctly within the environment.
-- **Filtering**: When targeting specific tools, use the `--name` and `--owner` flags to narrow the scope of the operation.
-- **Error Handling**: Be aware that `shed-tools` may not always return a non-zero exit code on installation errors; always verify the output logs in critical automation paths.
+### Waiting for Galaxy Connectivity
+Before running any automation scripts (especially in Docker or CI environments), use `galaxy-wait` to ensure the API is reachable.
+```bash
+# Wait for a local Galaxy instance with a 60-second timeout
+galaxy-wait -g http://localhost:8080 --timeout 60 -v
+```
 
-### Extracting and Converting Tool Lists
-- **`get-tool-list`**: Use this to extract a list of currently installed tools from a running Galaxy instance. This is essential for "cloning" the tool state of one server to another.
-- **`workflow-to-tool`**: Use this to parse a Galaxy workflow file (`.ga`) and generate a list of all tools required to run that workflow. This ensures that an instance is prepared to execute specific pipelines.
+### Tool Management
+The `shed-tools` command is the primary interface for installing and updating tools from the Galaxy Tool Shed.
 
-### Data Library Setup
-- **`setup-data-library`**: Use this to automate the creation of data libraries and the uploading of datasets.
-- **Optimization**: Use the `--link` flag (where supported) to link to data files rather than copying them, which saves significant disk space and reduces I/O overhead during bootstrapping.
+*   **Install tools from a list:**
+    ```bash
+    shed-tools install -g https://galaxy-url.org -a <API_KEY> -t tool_list.yaml
+    ```
+*   **Update all installed tools to the latest revision:**
+    ```bash
+    shed-tools update -g https://galaxy-url.org -a <API_KEY>
+    ```
+*   **Test installed tools:**
+    ```bash
+    shed-tools test -g https://galaxy-url.org -a <API_KEY> --test-user admin@example.org
+    ```
 
-### Instance Configuration and Validation
-- **`check_galaxy_config`**: Use this utility when upgrading a Galaxy instance to validate the configuration and ensure compatibility with the new version.
-- **`galaxy-tool-test`**: A dedicated command for running functional tests on tools already integrated into the Galaxy instance.
+### Extracting Tool Lists
+To replicate an environment, use `get-tool-list` to generate a YAML file representing all tools currently on a Galaxy instance.
+```bash
+get-tool-list -g https://usegalaxy.org -o my_tools.yaml --include-tool-panel-id
+```
 
-### Expert Tips
-- **Verbosity**: Use the `--verbose` argument during initial script development to capture detailed transaction logs between Ephemeris and the Galaxy API.
-- **Workflow Integration**: When building a new Galaxy environment, the recommended pattern is:
-    1. Extract tool requirements from workflows using `workflow-to-tool`.
-    2. Install those tools using `shed-tools install`.
-    3. Populate required reference data using `setup-data-library`.
-- **SSL Verification**: If working with local or development Galaxy instances using self-signed certificates, look for flags to skip SSL verification to prevent connection failures.
+### Workflow and Data Management
+*   **Install Workflows:** Import `.ga` files into a Galaxy instance.
+    ```bash
+    workflow-install -g https://galaxy-url.org -a <API_KEY> -w ./my_workflows/ --publish-workflows
+    ```
+*   **Generate Tool Lists from Workflows:** Extract a list of required tools from a workflow file to ensure they are installed before the workflow is run.
+    ```bash
+    workflow-to-tools -w workflow.ga -o required_tools.yaml -l "Workflow Tools"
+    ```
+*   **Setup Data Libraries:** Bulk upload data into Galaxy Data Libraries using a folder or file.
+    ```bash
+    setup-data-libraries -g https://galaxy-url.org -a <API_KEY> -i data_manifest.yaml
+    ```
+*   **Run Data Managers:** Automate the indexing of reference genomes.
+    ```bash
+    run-data-managers -g https://galaxy-url.org -a <API_KEY> --config data_manager_config.yaml
+    ```
+
+## Expert Tips
+*   **API Keys:** Most commands require a Galaxy Admin API key. Ensure the user associated with the key has administrative privileges.
+*   **Tool Panel Organization:** When installing tools via `shed-tools`, use the `--section-label` argument to automatically create or place tools into specific categories in the Galaxy UI.
+*   **Idempotency:** `run-data-managers` checks if a data table entry (like a genome index) already exists before running, making it safe to run repeatedly in setup scripts.
+*   **Verbosity:** Use the `-v` flag to debug connection issues or monitor the progress of long-running tool installations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| galaxy-tool-test | Script to quickly run a tool test against a running Galaxy instance. |
+| get-tool-list | Generates a tool_list.yml file for Galaxy. |
+| shed-tools | A command-line tool for managing tools in Galaxy from the Tool Shed. |
 
 ## Reference documentation
-- [Ephemeris Overview (Bioconda)](./references/anaconda_org_channels_bioconda_packages_ephemeris_overview.md)
-- [Galaxy Project Ephemeris Repository](./references/github_com_galaxyproject_ephemeris.md)
-- [Ephemeris Issues and Command References](./references/github_com_galaxyproject_ephemeris_issues.md)
-- [Ephemeris Pull Requests and Feature Updates](./references/github_com_galaxyproject_ephemeris_pulls.md)
+- [Ephemeris Commands Overview](./references/ephemeris_readthedocs_io_en_latest_commands.html.md)
+- [Galaxy-wait Documentation](./references/ephemeris_readthedocs_io_en_latest_commands_galaxy-wait.html.md)
+- [Shed-tools Documentation](./references/ephemeris_readthedocs_io_en_latest_commands_shed-tools.html.md)
+- [Run-data-managers Documentation](./references/ephemeris_readthedocs_io_en_latest_commands_run-data-managers.html.md)

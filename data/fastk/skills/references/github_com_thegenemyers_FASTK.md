@@ -1,1 +1,290 @@
-GitHub - thegenemyers/FASTK: A fast K-mer counter for high-fidelity shotgun datasets Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} thegenemyers / FASTK Public Notifications You must be signed in to change notification settings Fork 19 Star 140 A fast K-mer counter for high-fidelity shotgun datasets License View license 140 stars 19 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 14 Pull requests 4 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights thegenemyers/FASTK master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 112 Commits 112 Commits HTSLIB HTSLIB LIBDEFLATE LIBDEFLATE FastK.c FastK.c FastK.h FastK.h Fastcat.c Fastcat.c Fastmerge.c Fastmerge.c Fastrm.c Fastrm.c Fastxfer.c Fastxfer.c Haplex.c Haplex.c Histex.c Histex.c Homex.c Homex.c KmerMap.c KmerMap.c LICENSE LICENSE LSDsort.c LSDsort.c Logex.c Logex.c MSDsort.c MSDsort.c Makefile Makefile ONElib.c ONElib.c ONElib.h ONElib.h Profex.c Profex.c README.md README.md Symmex.c Symmex.c Tabex.c Tabex.c Vennex.c Vennex.c count.c count.c gene_core.c gene_core.c gene_core.h gene_core.h io.c io.c libfastk.c libfastk.c libfastk.h libfastk.h merge.c merge.c split.c split.c table.c table.c View all files Repository files navigation README License FastK: A K-mer counter (for HQ assembly data sets) Author: Gene Myers First: July 22, 2020 Current: April 18, 2021 Command Line FastK Fastrm, Fastcp, &amp; Fastmv Fastmerge Fastcat HPC Operation Core Applications Histex : Display a FastK histogram or convert to 1-code Tabex : List, Check, find a k‑mer in a FastK table, or convert to 1-code Profex : Display a FastK profile or convert to 1-code Logex : Combine kmer,count tables with logical expressions &amp; filter with count cutoffs Symmex : Produce a symmetric k-mer table from a canonical one KmerMap : Produce a .bed file showing all the regions in a target covered by a set of k-mers C-Library Interface K-mer Histogram Class K-mer Table Class K-mer Stream Class K-mer Profile Class File Encodings .hist : K-mer Histogram File .ktab : K-mer Table Files .prof : K-mer Profile Files Command Line FastK is a k‑mer counter that is optimized for processing high quality DNA assembly data sets such as those produced with an Illumina instrument or a PacBio run in HiFi mode. For example it is about 2 times faster than KMC3 when counting 40-mers in a 50X HiFi data set. Its relative speedup decreases with increasing error rate or increasing values of k, but regardless is a general program that works for any DNA sequence data set and choice of k. It is further designed to handle data sets of arbitrarily large size, e.g. a 100X data set of a 32GB Axolotl genome (3.2Tbp) can be performed on a machine with just 12GB of memory provided it has ~6.5TB of disk space available. FastK can produce the following outputs: a histogram of the frequency with which each k‑mer in the data set occurs. a table of k‑mer/count pairs sorted lexicographically on the k‑mer where a &lt; c &lt; g &lt; t. a k‑mer count profile of every sequence in the data set. A profile is the sequence of counts of the n-(k-1) consecutive k‑mers of a sequence of length n. a relative profile of every sequence in the data set against a FastK table produced for another data set. Note carefully, that in order to accommodate the unknown orientation of a sequencing read, a k‑mer and its Watson Crick complement are considered to be the same k‑mer by FastK, where the lexicograpahically smaller of the two alternatives is termed canonical . The histogram is always produced whereas the production of a k‑mer table (2.) and profiles (3.&amp;4.) are controlled by command line options. The table (2.) is over just the canonical k‑mers present in the data set. Producing profiles (3.&amp;4.) as part of the underlying sort is much more efficient than producing them after the fact using a table or hash of all k‑mers such as is necessitated when using other k‑mer counter programs. The profiles are recorded in a space-efficient compressed form, e.g. about 4.7-bits per base for a recent 50X HiFi asssembly data set. 1. FastK [-k&lt;int(40)&gt;] [-t[&lt;int(1)&gt;]] [-p[:&lt;table&gt;[.ktab]]] [-c] [-bc&lt;int&gt;] [-v] [-N&lt;path_name&gt;] [-P&lt;dir($TMPDIR)&gt;] [-M&lt;int(12)&gt;] [-T&lt;int(4)&gt;] &lt;source&gt;[.cram|.[bs]am|.db|.dam|.f[ast][aq][.gz]] ... FastK counts the number of k‑mers in a corpus of DNA sequences over the alphabet {a,c,g,t} for a specified k‑mer size, 40 by default. The input data can be in one or more CRAM, BAM, SAM, fasta, or fastq files, where the later two can be gzip'd. The data can also be in Dazzler databases . The type of the file is determined by its extension (and not its contents). The extension need not be given if the root name suffices to uniquely identify a file. If more than one source file is given they must all be of the same type in the current implementation. FastK produces a number of outputs depending on the setting of its options. By default, the outputs will be placed in the same directory as that of the first input and begin with the prefix &lt;source&gt; which is the first path name absent any suffix extensions. For example, if the input is ../BLUE/foo.fastq then &lt;source&gt; is ../BLUE/foo , the outputs will be placed in directory ../BLUE , and all result file names will begin with foo . If the ‑N option is specified then the path name specified is used as &lt;source&gt;. One can select any value of k ≥ 5 with the ‑k option. FastK always outputs a file with path name &lt;source&gt;.hist that contains a histogram of the k‑mer frequency distribution where the highest possible count is 2 15 -1 = 32,767 -- FastK clips all higher values to this upper limit. Its exact format is described in the section on Data Encodings. One can optionally request, by specifying the ‑t option, that FastK produce a sorted table of all canonical k‑mers along with their counts. If an integer follows then only those k‑mers that occur ‑t or more times where the default threshold is 1. In those applications where low count k‑mers are not needed this can save significant time and space as most such k‑mers are error‑mers. The output is placed in a single stub file with path name &lt;source&gt;.ktab and N roughly equal-sized hidden files with the path names &lt;dir&gt;/.&lt;base&gt;.ktab.# assuming &lt;source&gt; = &lt;dir&gt;/&lt;base&gt; and where # is a thread number between 1 and N where N is the number of threads used by FastK (4 by default). The exact format of the N‑part table is described in the section on Data Encodings. One can also ask FastK to produce a k‑mer count profile of each sequence in the input data set by specifying the ‑p option. A single stub file with path name &lt;source&gt;.prof is output along with 2N roughly equal-sized pairs of hidden files with path names &lt;dir&gt;/.&lt;base&gt;.pidx.# and &lt;dir&gt;/.&lt;base&gt;.prof.# in the order of the sequences in the input assuming &lt;source&gt; = &lt;dir&gt;/&lt;base&gt;. The profiles are individually compressed and the exact format of these files is described in the section on Data Encodings. If the data file contains sequences with letters other than upper or lower case a, c, g, or t, then all k-mers involving these letters are considered invalid and they are not counted. Specifically, the do not occur in the k-mer table and in profiles they are regions of 2k-1 or more 0's. So for example, if one passes a fasta "assembly"
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fthegenemyers%2FFASTK)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fthegenemyers%2FFASTK)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=thegenemyers%2FFASTK)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[thegenemyers](/thegenemyers)
+/
+**[FASTK](/thegenemyers/FASTK)**
+Public
+
+* [Notifications](/login?return_to=%2Fthegenemyers%2FFASTK) You must be signed in to change notification settings
+* [Fork
+  19](/login?return_to=%2Fthegenemyers%2FFASTK)
+* [Star
+   143](/login?return_to=%2Fthegenemyers%2FFASTK)
+
+* [Code](/thegenemyers/FASTK)
+* [Issues
+  14](/thegenemyers/FASTK/issues)
+* [Pull requests
+  4](/thegenemyers/FASTK/pulls)
+* [Actions](/thegenemyers/FASTK/actions)
+* [Projects](/thegenemyers/FASTK/projects)
+* [Security
+  0](/thegenemyers/FASTK/security)
+* [Insights](/thegenemyers/FASTK/pulse)
+
+Additional navigation options
+
+* [Code](/thegenemyers/FASTK)
+* [Issues](/thegenemyers/FASTK/issues)
+* [Pull requests](/thegenemyers/FASTK/pulls)
+* [Actions](/thegenemyers/FASTK/actions)
+* [Projects](/thegenemyers/FASTK/projects)
+* [Security](/thegenemyers/FASTK/security)
+* [Insights](/thegenemyers/FASTK/pulse)
+
+# thegenemyers/FASTK
+
+master
+
+[Branches](/thegenemyers/FASTK/branches)[Tags](/thegenemyers/FASTK/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[112 Commits](/thegenemyers/FASTK/commits/master/)   112 Commits | | |
+| [HTSLIB](/thegenemyers/FASTK/tree/master/HTSLIB "HTSLIB") | | [HTSLIB](/thegenemyers/FASTK/tree/master/HTSLIB "HTSLIB") |  |  |
+| [LIBDEFLATE](/thegenemyers/FASTK/tree/master/LIBDEFLATE "LIBDEFLATE") | | [LIBDEFLATE](/thegenemyers/FASTK/tree/master/LIBDEFLATE "LIBDEFLATE") |  |  |
+| [FastK.c](/thegenemyers/FASTK/blob/master/FastK.c "FastK.c") | | [FastK.c](/thegenemyers/FASTK/blob/master/FastK.c "FastK.c") |  |  |
+| [FastK.h](/thegenemyers/FASTK/blob/master/FastK.h "FastK.h") | | [FastK.h](/thegenemyers/FASTK/blob/master/FastK.h "FastK.h") |  |  |
+| [Fastcat.c](/thegenemyers/FASTK/blob/master/Fastcat.c "Fastcat.c") | | [Fastcat.c](/thegenemyers/FASTK/blob/master/Fastcat.c "Fastcat.c") |  |  |
+| [Fastmerge.c](/thegenemyers/FASTK/blob/master/Fastmerge.c "Fastmerge.c") | | [Fastmerge.c](/thegenemyers/FASTK/blob/master/Fastmerge.c "Fastmerge.c") |  |  |
+| [Fastrm.c](/thegenemyers/FASTK/blob/master/Fastrm.c "Fastrm.c") | | [Fastrm.c](/thegenemyers/FASTK/blob/master/Fastrm.c "Fastrm.c") |  |  |
+| [Fastxfer.c](/thegenemyers/FASTK/blob/master/Fastxfer.c "Fastxfer.c") | | [Fastxfer.c](/thegenemyers/FASTK/blob/master/Fastxfer.c "Fastxfer.c") |  |  |
+| [Haplex.c](/thegenemyers/FASTK/blob/master/Haplex.c "Haplex.c") | | [Haplex.c](/thegenemyers/FASTK/blob/master/Haplex.c "Haplex.c") |  |  |
+| [Histex.c](/thegenemyers/FASTK/blob/master/Histex.c "Histex.c") | | [Histex.c](/thegenemyers/FASTK/blob/master/Histex.c "Histex.c") |  |  |
+| [Homex.c](/thegenemyers/FASTK/blob/master/Homex.c "Homex.c") | | [Homex.c](/thegenemyers/FASTK/blob/master/Homex.c "Homex.c") |  |  |
+| [KmerMap.c](/thegenemyers/FASTK/blob/master/KmerMap.c "KmerMap.c") | | [KmerMap.c](/thegenemyers/FASTK/blob/master/KmerMap.c "KmerMap.c") |  |  |
+| [LICENSE](/thegenemyers/FASTK/blob/master/LICENSE "LICENSE") | | [LICENSE](/thegenemyers/FASTK/blob/master/LICENSE "LICENSE") |  |  |
+| [LSDsort.c](/thegenemyers/FASTK/blob/master/LSDsort.c "LSDsort.c") | | [LSDsort.c](/thegenemyers/FASTK/blob/master/LSDsort.c "LSDsort.c") |  |  |
+| [Logex.c](/thegenemyers/FASTK/blob/master/Logex.c "Logex.c") | | [Logex.c](/thegenemyers/FASTK/blob/master/Logex.c "Logex.c") |  |  |
+| [MSDsort.c](/thegenemyers/FASTK/blob/master/MSDsort.c "MSDsort.c") | | [MSDsort.c](/thegenemyers/FASTK/blob/master/MSDsort.c "MSDsort.c") |  |  |
+| [Makefile](/thegenemyers/FASTK/blob/master/Makefile "Makefile") | | [Makefile](/thegenemyers/FASTK/blob/master/Makefile "Makefile") |  |  |
+| [ONElib.c](/thegenemyers/FASTK/blob/master/ONElib.c "ONElib.c") | | [ONElib.c](/thegenemyers/FASTK/blob/master/ONElib.c "ONElib.c") |  |  |
+| [ONElib.h](/thegenemyers/FASTK/blob/master/ONElib.h "ONElib.h") | | [ONElib.h](/thegenemyers/FASTK/blob/master/ONElib.h "ONElib.h") |  |  |
+| [Profex.c](/thegenemyers/FASTK/blob/master/Profex.c "Profex.c") | | [Profex.c](/thegenemyers/FASTK/blob/master/Profex.c "Profex.c") |  |  |
+| [README.md](/thegenemyers/FASTK/blob/master/README.md "README.md") | | [README.md](/thegenemyers/FASTK/blob/master/README.md "README.md") |  |  |
+| [Symmex.c](/thegenemyers/FASTK/blob/master/Symmex.c "Symmex.c") | | [Symmex.c](/thegenemyers/FASTK/blob/master/Symmex.c "Symmex.c") |  |  |
+| [Tabex.c](/thegenemyers/FASTK/blob/master/Tabex.c "Tabex.c") | | [Tabex.c](/thegenemyers/FASTK/blob/master/Tabex.c "Tabex.c") |  |  |
+| [Vennex.c](/thegenemyers/FASTK/blob/master/Vennex.c "Vennex.c") | | [Vennex.c](/thegenemyers/FASTK/blob/master/Vennex.c "Vennex.c") |  |  |
+| [count.c](/thegenemyers/FASTK/blob/master/count.c "count.c") | | [count.c](/thegenemyers/FASTK/blob/master/count.c "count.c") |  |  |
+| [gene\_core.c](/thegenemyers/FASTK/blob/master/gene_core.c "gene_core.c") | | [gene\_core.c](/thegenemyers/FASTK/blob/master/gene_core.c "gene_core.c") |  |  |
+| [gene\_core.h](/thegenemyers/FASTK/blob/master/gene_core.h "gene_core.h") | | [gene\_core.h](/thegenemyers/FASTK/blob/master/gene_core.h "gene_core.h") |  |  |
+| [io.c](/thegenemyers/FASTK/blob/master/io.c "io.c") | | [io.c](/thegenemyers/FASTK/blob/master/io.c "io.c") |  |  |
+| [libfastk.c](/thegenemyers/FASTK/blob/master/libfastk.c "libfastk.c") | | [libfastk.c](/thegenemyers/FASTK/blob/master/libfastk.c "libfastk.c") |  |  |
+| [libfastk.h](/thegenemyers/FASTK/blob/master/libfastk.h "libfastk.h") | | [libfastk.h](/thegenemyers/FASTK/blob/master/libfastk.h "libfastk.h") |  |  |
+| [merge.c](/thegenemyers/FASTK/blob/master/merge.c "merge.c") | | [merge.c](/thegenemyers/FASTK/blob/master/merge.c "merge.c") |  |  |
+| [split.c](/thegenemyers/FASTK/blob/master/split.c "split.c") | | [split.c](/thegenemyers/FASTK/blob/master/split.c "split.c") |  |  |
+| [table.c](/thegenemyers/FASTK/blob/master/table.c "table.c") | | [table.c](/thegenemyers/FASTK/blob/master/table.c "table.c") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# FastK: A K-mer counter (for HQ assembly data sets)
+
+***Author: Gene Myers***
+***First: July 22, 2020***
+***Current: April 18, 2021***
+
+* [Command Line](#command-line)
+
+  + [FastK](#fastk)
+  + [Fastrm, Fastcp, & Fastmv](#fastrm)
+  + [Fastmerge](#fastmerge)
+  + [Fastcat](#fastcat)
+* [HPC Operation](#hpc)
+* [Core Applications](#core-applications)
+
+  + [Histex](#histex): Display a FastK histogram or convert to 1-code
+  + [Tabex](#tabex): List, Check, find a k‑mer in a FastK table, or convert to 1-code
+  + [Profex](#profex): Display a FastK profile or convert to 1-code
+  + [Logex](#logex): Combine kmer,count tables with logical expressions & filter with count cutoffs
+  + [Symmex](#symmex): Produce a symmetric k-mer table from a canonical one
+  + [KmerMap](#kmermap): Produce a .bed file showing all the regions in a target covered by a set of k-mers
+* [C-Library Interface](#c-library-interface)
+
+  + [K-mer Histogram Class](#k-mer-histogram-class)
+  + [K-mer Table Class](#k-mer-table-class)
+  + [K-mer Stream Class](#k-mer-stream-class)
+  + [K-mer Profile Class](#k-mer-profile-class)
+* [File Encodings](#file-encodings)
+
+  + [`.hist`: K-mer Histogram File](#k-mer-histogram-file)
+  + [`.ktab`: K-mer Table Files](#k-mer-table-files)
+  + [`.prof`: K-mer Profile Files](#k-mer-profile-files)
+
+## Command Line
+
+FastK is a k‑mer counter that is optimized for processing high quality DNA assembly data
+sets such as those produced with an Illumina instrument or a PacBio run in HiFi mode.
+For example it is about 2 times faster than KMC3 when counting 40-mers in a 50X HiFi data
+set. Its relative speedup decreases with increasing error rate or increasing values of k,
+but regardless is a general program that works for any DNA sequence data set and choice of k.
+It is further designed to handle data sets of arbitrarily large size, e.g. a 100X data
+set of a 32GB Axolotl genome (3.2Tbp) can be performed on a machine with just 12GB of memory
+provided it has ~6.5TB of disk space available.
+
+FastK can produce the following outputs:
+
+1. a histogram of the frequency with which each k‑mer in the data set occurs.
+2. a table of k‑mer/count pairs sorted lexicographically on the k‑mer where a < c < g < t.
+3. a k‑mer count profile of every sequence in the data set. A **profile** is the sequence of counts of the n-(k-1) consecutive k‑mers of a sequence of length n.
+4. a **relative profile** of every sequence in the data set against a FastK table produced for another data set.
+
+Note carefully, that in order to accommodate the unknown orientation of a sequencing read,
+a k‑mer and its Watson Crick complement are considered to be the same k‑mer by FastK, where the
+lexicograpahically smaller of the two alternatives is termed **canonical**.
+The histogram is always produced whereas the production of a k‑mer table (2.) and profiles (3.&4.)
+are controlled by command
+line options. The table (2.) is over just the *canonical* k‑mers present in the data set. Producing profiles (3.&4.) as part of the underlying sort is much more efficient than producing them after the fact using a table or hash of all k‑mers such as is necessitated when using other k‑mer counter programs. The profiles are reco

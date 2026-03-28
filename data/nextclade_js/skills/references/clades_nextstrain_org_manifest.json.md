@@ -1,0 +1,22 @@
+{
+"short\_name": "Nextclade",
+"name": "Nextclade",
+"description": "Genetic sequence alignment, clade assignment, mutation calling, phylogenetic placement, and quality checks for SARS-CoV-2, Influenza (Flu), Monkeypox, Respiratory Syncytial Virus (RSV) and other pathogens",
+"theme\_color": "#ffffff",
+"background\_color": "#ffffff",
+"start\_url": "/?source=pwa",
+"display": "standalone",
+"scope": "/",
+"icons": [
+{
+"src": "/icons/android-chrome-192x192.png",
+"sizes": "192x192",
+"type": "image/png"
+},
+{
+"src": "/icons/android-chrome-512x512.png",
+"sizes": "512x512",
+"type": "image/png"
+}
+]
+}

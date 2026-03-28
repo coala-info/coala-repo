@@ -1,47 +1,68 @@
+---
 name: agc
-description: High-efficiency compression and management of de-novo assembled genome collections. Use this skill when you need to (1) compress multiple FASTA files into a single archive, (2) add new genomes to an existing archive, (3) extract specific samples or contigs without decompressing the entire collection, or (4) inspect the contents and statistics of an AGC archive.
+description: The Assembled Genomes Compressor (AGC) performs multi-genome compression of de-novo assemblies while providing rapid random access to specific sequences. Use when user asks to create compressed genome archives, append new assemblies to existing collections, extract specific samples or contigs, and list metadata from compressed datasets.
+homepage: https://github.com/refresh-bio/agc
+---
 
-# Assembled Genomes Compressor (AGC)
 
-AGC is designed for high-ratio compression of genomic datasets (viruses to humans) while maintaining fast random access to samples and contigs.
+# agc
+
+## Overview
+The Assembled Genomes Compressor (AGC) is a specialized tool for the multi-genome compression of de-novo assemblies. Unlike general-purpose compressors, AGC leverages the high similarity between genomes in a collection to achieve massive space savings—often reducing hundreds of gigabytes to just a few gigabytes—while maintaining random access to individual samples or contigs. Use this skill to automate the creation of `.agc` archives, append new assemblies to existing collections, and perform targeted extraction of sequences without decompressing the entire dataset.
 
 ## Core Workflows
 
 ### Creating Archives
-Create a new archive by providing a reference genome and additional FASTA files.
+To create a new compressed collection, you must provide a reference genome followed by the target genomes.
+
 - **Basic creation**: `agc create ref.fa sample1.fa sample2.fa > collection.agc`
-- **Using a file list**: `agc create -i file_list.txt ref.fa -o collection.agc` (where `file_list.txt` contains one FASTA path per line).
-- **Bacterial/Diverse data**: Use adaptive mode for better ratios on non-human/diverse datasets: `agc create -a ref.fa samples.fa > collection.agc`
-- **Concatenated input**: If multiple samples are in one file, use `-c`: `agc create -c ref.fa all_samples.fa > collection.agc`
+- **Using an input list**: If you have many files, list them in a text file (one per line) and use the `-i` flag:
+  `agc create -i file_list.txt -o collection.agc ref.fa`
+- **Bacterial/Diverse data**: Use the **adaptive mode** (`-a`) for datasets with lower similarity or smaller genomes (e.g., bacteria) to optimize the compression ratio:
+  `agc create -a -i bacteria_list.txt ref.fa > bacteria.agc`
 
 ### Appending Data
-Add new genomes to an existing archive without recompressing the whole set.
-- **Basic append**: `agc append in.agc new_sample.fa > out.agc`
-- **In-place style**: `agc append -i new_list.txt in.agc -o out.agc`
+AGC allows adding new genomes to an existing archive without full re-compression.
+- `agc append existing.agc new_sample.fa > updated.agc`
+- **In-place style**: `agc append -i new_list.txt existing.agc -o updated.agc`
 
 ### Extraction and Retrieval
-Extract data to stdout or specific files.
-- **Full collection**: `agc getcol in.agc > all.fa`
-- **Specific samples**: `agc getset in.agc sample1 sample2 > subset.fa`
-- **Specific contigs**: `agc getctg in.agc contig1 contig2 > contigs.fa`
-- **Coordinate-based**: `agc getctg in.agc contig1:100-500 > fragment.fa`
-- **Disambiguation**: If contig names are not unique across samples, use `@`: `agc getctg in.agc contig1@sampleA > specific.fa`
+Extraction is the primary advantage of AGC, allowing for sub-second retrieval of specific sequences.
 
-### Inspection
-- **List samples**: `agc listset in.agc`
-- **List contigs in samples**: `agc listctg in.agc sample1 sample2`
-- **Archive stats**: `agc info in.agc` (shows compression parameters and command history)
+- **Extract specific samples**: `agc getset collection.agc sample_name1 sample_name2 > output.fa`
+- **Extract specific contigs**: `agc getctg collection.agc contig_id > contig.fa`
+- **Extract by genome-specific contig**: Use the `@` syntax if contig names are not unique across the archive:
+  `agc getctg collection.agc contig_id@genome_id > output.fa`
+- **Partial extraction**: Extract specific coordinates using the `:from-to` syntax:
+  `agc getctg collection.agc contig_id:1000-5000 > fragment.fa`
 
-## Expert Tips & Optimization
+### Inspection and Metadata
+- **List genomes**: `agc listset collection.agc`
+- **List contigs in a genome**: `agc listctg collection.agc genome_id`
+- **Archive info**: `agc info collection.agc` (Displays compression parameters, stats, and the command history used to build the archive).
 
-### Performance Tuning
-- **Threads**: Use `-t <int>` to specify CPU threads (default is usually auto-detected).
-- **Memory vs. Speed**: In v3.2+, use `--stream` during decompression to reduce memory footprint at the cost of speed.
-- **Manual Parameters**: For specialized needs, adjust k-mer size (`-k`) and segment length (`-l`). Default `k=31, l=20` is optimized for human pangenomes.
+## Expert Tips and Best Practices
+- **Reference Selection**: The first genome provided during `create` is the reference. For best compression, choose a high-quality, representative assembly as the reference.
+- **Memory Management**: In version 3.2+, use the streaming mode if working in memory-constrained environments, though it may be slower than the default mode.
+- **Multi-threading**: Use the `-t` parameter to specify the number of threads. AGC scales well with high core counts during compression.
+- **Gzipped Input**: AGC natively supports `.fa.gz` files. You do not need to decompress them before adding them to an archive.
+- **File Extensions**: While AGC often outputs to stdout, it is best practice to use the `.agc` extension for archives to distinguish them from standard compressed formats like `.gz` or `.bz2`.
 
-### Input Handling
-- **Gzipped input**: AGC natively supports `.fa.gz` files.
-- **Reference Selection**: The first genome provided to `create` is the reference. Choosing a high-quality, representative genome as the reference significantly improves compression ratios for the rest of the collection.
 
-### Adaptive Mode (`-a`)
-Always use `-a` for bacterial datasets or collections with high sequence diversity. It enables a more flexible matching strategy that handles shorter, more fragmented assemblies better than the default pangenome-optimized mode.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| append | Assembled Genomes Compressor - append genomes to an existing archive |
+| create | AGC (Assembled Genomes Compressor) - Create a compressed archive from assembled genomes in FASTA format. |
+| getcol | Assembled Genomes Compressor - get collection of sequences |
+| getctg | Extract contigs from an AGC (Assembled Genomes Compressor) file. Supports various formats for specifying contigs, samples, and ranges. |
+| getset | Assembled Genomes Compressor - extract a set of samples from an AGC file |
+| info | AGC (Assembled Genomes Compressor) - Get information about an AGC file |
+| listctg | List contigs in an AGC (Assembled Genomes Compressor) file for specified samples. |
+| listref | List reference genomes in an AGC (Assembled Genomes Compressor) file |
+| listset | List datasets in an Assembled Genomes Compressor (AGC) file |
+
+## Reference documentation
+- [Assembled Genomes Compressor README](./references/github_com_refresh-bio_agc_blob_main_README.md)

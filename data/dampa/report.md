@@ -333,3 +333,6 @@ General settings:
                         number of threads (default: 1)
 ```
 
+
+## Metadata
+- **Skill**: generated

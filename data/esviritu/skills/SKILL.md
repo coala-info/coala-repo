@@ -1,6 +1,6 @@
 ---
 name: esviritu
-description: EsViritu is a bioinformatics pipeline designed to detect and reconstruct viral sequences within complex metagenomic datasets. Use when user asks to identify viruses in metagenomic samples, map reads against viral genome databases, filter host contamination, or generate interactive summary reports of detected viral taxa.
+description: EsViritu identifies and quantifies viruses in metagenomic samples by aligning reads to a curated database and providing detailed taxonomic profiling. Use when user asks to identify viral pathogens in metagenomes, quantify viral abundance using RPKMF, or generate interactive viral detection reports.
 homepage: https://github.com/cmmr/EsViritu
 ---
 
@@ -9,74 +9,84 @@ homepage: https://github.com/cmmr/EsViritu
 
 ## Overview
 
-EsViritu is a specialized bioinformatics pipeline designed for the sensitive detection of viral sequences within complex metagenomic datasets. It maps short reads against a curated database of nearly 20,000 high-quality viral genomes, providing both presence/absence data and detailed assembly-aware reconstructions. It is particularly effective for identifying viruses with at least 80% Average Nucleotide Identity (ANI) to reference sequences and produces interactive HTML reports for visualizing genome coverage.
+EsViritu is a specialized bioinformatics tool designed to identify viruses within complex metagenomic samples. It works by aligning short reads against a curated database of viral genomes, dereplicating candidate references to find the "best" match, and providing detailed quantification metrics like RPKMF (Reads Per Kilobase per Million Filtered reads). It is particularly effective for clinical diagnostics or environmental surveillance where high sensitivity and specificity for viral pathogens are required.
 
-## Installation and Setup
+## Core Workflows
 
-EsViritu is primarily distributed via Bioconda.
+### Running the Pipeline
 
-```bash
-# Create and activate environment
-mamba create -n EsViritu bioconda::esviritu
-conda activate EsViritu
-```
+The primary command is `EsViritu`. It requires a sample name, an output directory, and input FASTQ files.
 
-### Database Management
-The tool requires a specific curated database. As of version 1.1.6, database v3.2.4 is recommended.
-
-1. **Download**: Obtain the database tarball from Zenodo.
-2. **Configuration**: Set the `ESVIRITU_DB` environment variable to avoid specifying the path in every command.
-
-```bash
-conda env config vars set ESVIRITU_DB=/path/to/esviritu_DB/v3.2.4
-# Re-activate environment to apply changes
-conda activate EsViritu
-```
-
-## Command Line Usage
-
-### Basic Execution
-The primary command is `EsViritu`. You must specify the read type (paired or unpaired).
-
-**Unpaired Reads:**
+**Single-end/Unpaired reads:**
 ```bash
 EsViritu -r sample.fastq -s SampleID -o output_dir -p unpaired
 ```
 
-**Paired-End Reads:**
+**Paired-end reads:**
 ```bash
 EsViritu -r R1.fastq R2.fastq -s SampleID -o output_dir -p paired
 ```
 
-### Advanced Filtering Options
-For clinical or environmental samples with high host contamination or low-quality reads, use the pre-filtering flags:
-
-*   `-q True`: Enables quality trimming/filtering.
-*   `-f True`: Enables host read filtering (requires host reference).
-*   `--dedup`: (v1.1.4+) Optional flag for PCR duplicate removal.
-
+**Quality Filtering and Host Removal:**
+To remove human/spike-in reads and perform quality trimming (requires `ESVIRITU_FILTER` environment variable to be set), use:
 ```bash
-EsViritu -r sample.fastq -s SampleID -o output_dir -p unpaired -q True -f True
+EsViritu -r reads.fastq -s SampleID -o output_dir -q True -f True -p unpaired
 ```
 
 ### Batch Summarization
-After running multiple samples into the same output directory, use the collation script to generate a project-wide summary.
 
+After running multiple samples into the same parent output directory, generate a consolidated report and interactive HTML table:
 ```bash
-summarize_esv_runs output_dir
+summarize_esv_runs path/to/output_dir
 ```
-This generates:
-*   `batch_detected_viruses.html`: A searchable, interactive table of all findings.
-*   `tax_profile.tsv`: Taxonomic distribution across the batch.
-*   `detected_virus.info.tsv`: Detailed metrics for each detection.
 
-## Expert Tips and Best Practices
+### Custom Database Creation
 
-*   **Read Length**: Ensure input reads are at least 100 nt for optimal sensitivity.
-*   **Memory Management**: When running large custom reference databases, monitor RAM usage as the mapping step can be resource-intensive.
-*   **Visualization**: To see genome coverage sparklines in the HTML reports, ensure the R package `dataui` is installed in your environment.
-*   **Sensitivity**: EsViritu is sensitive enough to detect a virus from a single read, but always verify "low-hit" detections using the breadth of coverage metrics in the HTML report.
+If the default database (human/animal/plant viruses) is insufficient, follow this sequence:
+
+1.  **Prepare Accession Table**: Create a TSV with `Accession`, `Organism_Name`, and `Length`.
+2.  **Generate Metadata**:
+    ```bash
+    esv_create_taxonomy -i accessions.tsv -o metadata.tsv -a acc2taxid.tsv.gz -t taxdump/
+    ```
+3.  **Index Sequences**:
+    ```bash
+    minimap2 -x sr -d custom_db.mmi custom_db.fna
+    ```
+4.  **Run with Custom DB**:
+    ```bash
+    EsViritu -r reads.fastq -s SampleID -o output_dir --db /path/to/custom_db_folder
+    ```
+
+## Interpreting Results
+
+The pipeline produces several key TSV files in the output directory:
+
+*   **`*.detected_virus.info.tsv`**: The most granular view. Look at `avg_read_identity` and `covered_bases`.
+*   **`*.tax_profile.tsv`**: Aggregated taxonomic view.
+    *   **Species Level**: Generally requires >90% ANI.
+    *   **Subspecies Level**: Generally requires >95% ANI.
+*   **`*.reactable.html`**: An interactive report. Use this to visualize coverage breadth across the genome to rule out false positives caused by conserved regions or recombinants.
+
+## Expert Tips
+
+*   **Environment Variables**: Set `ESVIRITU_DB` and `ESVIRITU_FILTER` in your conda environment to avoid passing long paths to every command.
+*   **Recombinants**: If a virus is a recombinant not in the database, EsViritu may report both parental strains. Always check the coverage sparklines in the HTML report; a "split" coverage pattern (5' end of one, 3' end of another) confirms a recombinant.
+*   **Abundance**: Use RPKMF for cross-sample comparisons as it normalizes for both genome length and sequencing depth.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| EsViritu | EsViritu is a read mapping pipeline for detection and measurement of human, animal, and plat virus pathogens from short read libraries. It is useful for clinical and environmental samples. Version 1.1.6 |
+| summarize_esv_runs | Summarize EsViritu run outputs across a directory. |
 
 ## Reference documentation
-- [EsViritu Overview](./references/anaconda_org_channels_bioconda_packages_esviritu_overview.md)
-- [EsViritu GitHub Repository](./references/github_com_cmmr_EsViritu.md)
+
+- [Using EsViritu](./references/esviritu_readthedocs_io_en_latest_esviritu-usage.md)
+- [Data Directory and Output Reference](./references/esviritu_readthedocs_io_en_latest_data-directory.md)
+- [Making Custom Databases](./references/esviritu_readthedocs_io_en_latest_custom-database.md)
+- [Interpreting Outputs](./references/esviritu_readthedocs_io_en_latest_interpretting-outputs.md)
+- [Pipeline Description](./references/esviritu_readthedocs_io_en_latest_pipeline-description.md)

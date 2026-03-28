@@ -1,6 +1,6 @@
 ---
 name: qax
-description: The Qiime2 Artifact eXtractor provides fast, lightweight access to the contents and metadata of Qiime2 artifacts without requiring a full Qiime2 environment. Use when user asks to list artifact properties, extract raw data, view file contents in the terminal, inspect provenance, consolidate citations, or create visualization artifacts.
+description: qax is a high-performance utility for inspecting, extracting, and managing Qiime2 artifacts and visualizations without requiring the full Qiime2 framework. Use when user asks to list artifact metadata, extract raw data files, view internal content, generate provenance graphs, collect BibTeX citations, or create visualization artifacts from HTML directories.
 homepage: https://github.com/telatin/qax
 ---
 
@@ -8,41 +8,57 @@ homepage: https://github.com/telatin/qax
 # qax
 
 ## Overview
-The Qiime2 Artifact eXtractor (`qax`) is a high-performance utility designed to provide fast, lightweight access to the contents of Qiime2 artifacts. While Qiime2 typically requires a large environment and specific versions to read its data, `qax` allows you to list properties, extract raw data (like FASTA or BIOM files), and view provenance information directly from the command line. It is significantly faster than the native Qiime2 CLI for metadata operations and is compatible across different Qiime2 release versions.
 
-## Core Command Patterns
+qax (Qiime Artifact eXtractor) is a high-performance, standalone utility designed to interface with Qiime2 data formats. It treats artifacts as structured archives, allowing for rapid metadata inspection and data retrieval. It is significantly faster than the native Qiime2 CLI for metadata tasks and is ideal for integrating Qiime2 outputs into general-purpose bioinformatics pipelines that do not support the .qza format natively.
 
-### Listing Artifact Properties
-The `list` command is the default behavior. Use it to quickly identify the UUID, type, and format of one or more artifacts.
-- **Basic list**: `qax input_file.qza`
-- **Batch list**: `qax input/*.qza`
-- **Clean output for scripts**: Use `-b` (brief) or `-u` (unformatted) to make the output easier to parse with `awk` or `cut`.
+## Core Workflows
 
-### Data Extraction
-Use `extract` (or the alias `x`) to retrieve the underlying data files from the compressed artifact.
-- **Extract to current directory**: `qax extract -o ./ feature_table.qza`
-- **Extract visualization**: `qax x -o ./ taxonomy_plot.qzv` (This creates a directory containing the HTML/JS assets).
+### Inspecting Artifacts
+Use the `list` command (default) to view the ID, Type, and Format of one or multiple artifacts.
+- List all artifacts in a directory: `qax list input/*.qza`
+- Show UUIDs and clean formatting: `qax list -b -u *.qza`
+- Find a specific artifact by its internal ID: `qax list --find [UUID] .`
 
-### Terminal Inspection
-The `view` command prints the content of the data file within the artifact directly to STDOUT. This is powerful for piping into other CLI tools.
-- **Count sequences**: `qax view rep-seqs.qza | grep -c '>'`
-- **Peek at a table**: `qax view table.qza | head`
+### Extracting Data
+Use `extract` (or `x`) to retrieve the raw data files stored inside an artifact.
+- Extract to a specific directory: `qax extract -o ./output_folder/ data.qza`
+- If an artifact contains multiple files, qax automatically creates a subdirectory to prevent file clutter.
 
-### Provenance and Citations
-`qax` can reconstruct the history of an artifact or gather all necessary citations for publication.
-- **View provenance summary**: `qax provenance artifact.qza`
-- **Generate Graphviz dot file**: `qax p -o workflow_graph.dot artifact.qza`
-- **Consolidate bibliography**: `qax citations project_files/*.qza > references.bib` (This automatically removes duplicates across multiple artifacts).
+### Viewing Content Directly
+Use `view` to stream the content of internal files to the terminal without manual extraction.
+- Count sequences in a FASTA artifact: `qax view rep-seqs.qza | grep -c '>'`
+- Inspect the first few lines of a feature table: `qax view table.qza | head`
+
+### Managing Provenance and Citations
+- **Generate Provenance Graphs**: Create a Graphviz DOT file for publication-grade visualization: `qax provenance -o workflow.dot artifact.qza`
+- **Summarize History**: View a text summary of how an artifact was created: `qax provenance artifact.qzv`
+- **Collect Bibliography**: Aggregate all software citations from multiple artifacts into a single BibTeX file: `qax citations project_files/*.qza > bibliography.bib`
 
 ### Creating Visualizations
-If you have a directory containing a web-based report (with an `index.html`), you can wrap it into a Qiime2 visualization artifact.
-- **Create .qzv**: `qax make -o my_report.qzv ./path/to/report_dir/`
+Convert a directory containing an `index.html` and associated assets into a Qiime2 visualization artifact:
+- `qax make -o custom_report.qzv ./html_report_dir/`
 
 ## Expert Tips
-- **Speed Advantage**: Use `qax` instead of `qiime tools inspect` when working with large numbers of files; it is optimized for speed and does not need to load the Qiime2 framework.
-- **Version Independence**: `qax` can often read artifacts created by different Qiime2 versions that might otherwise be incompatible with your current environment.
-- **Pipeline Integration**: Use `qax view` to feed sequences directly into aligners or search tools (e.g., `qax view seqs.qza | blastn -db ...`) to avoid creating intermediate temporary files.
+- **Performance**: Use qax for metadata listing in loops; it is roughly 100x faster than `qiime tools inspect`.
+- **Automation**: Since qax does not require a Conda environment or the Qiime2 framework, use it in lightweight Docker containers or CI/CD runners for data validation.
+- **File Selection**: When using `view` on artifacts with multiple files, run `qax view artifact.qza` without arguments to see a list of available internal paths, then specify the desired file.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| citations | Retrieve BibTeX citations from input files. |
+| extract | Extract the artifact data. If multiple files are present, a new directory will be created (artifact name), otherwise the artifact name will be used to rename the single file (unless -k is specified). |
+| list | List artifacts |
+| make | Create a Qiime Visualization Artifact from a directory with files. By default, will create a "Visualization", thus requiring an "index.html" file in the root of the input directory. |
+| provenance | Print ancestry of an artifact |
+| view | View (a la `cat`) the content of data files in one artifact. |
 
 ## Reference documentation
-- [Qiime2 Artifact eXtractor Overview](./references/github_com_telatin_qax.md)
-- [qax on Bioconda](./references/anaconda_org_channels_bioconda_packages_qax_overview.md)
+- [Qiime Artifact eXtractor Overview](./references/github_com_telatin_qax_blob_main_README.md)
+- [General Usage Guide](./references/telatin_github_io_qax_usage.md)
+- [List Command Details](./references/github_com_telatin_qax_blob_main_pages_list.md)
+- [Extract Command Details](./references/github_com_telatin_qax_blob_main_pages_extract.md)
+- [Provenance and Graphing](./references/github_com_telatin_qax_blob_main_pages_provenance.md)

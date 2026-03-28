@@ -117,3 +117,6 @@ No inputs — do not generate CWL.
 }
 ```
 
+
+## Metadata
+- **Skill**: generated

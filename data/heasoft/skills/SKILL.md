@@ -1,6 +1,6 @@
 ---
 name: heasoft
-description: HEASoft is a software suite used for processing and analyzing data from X-ray and Gamma-ray observatories. Use when user asks to initialize the HEASoft environment, manipulate FITS files with FTOOLS, perform spectral modeling in XSPEC, or extract lightcurves and spectra using XSELECT.
+description: HEASoft is a comprehensive software suite designed for the analysis of X-ray and Gamma-ray data from high-energy astrophysics observatories. Use when user asks to perform spectral fitting, manipulate FITS files, analyze timing and imaging data, or script astrophysical workflows using Python.
 homepage: https://heasarc.gsfc.nasa.gov/lheasoft/
 ---
 
@@ -8,37 +8,75 @@ homepage: https://heasarc.gsfc.nasa.gov/lheasoft/
 # heasoft
 
 ## Overview
-HEASoft is the standard software suite for processing and analyzing data from X-ray and Gamma-ray observatories (e.g., Swift, NuSTAR, NICER). It integrates FTOOLS for general FITS file handling with specialized packages like XSPEC for spectral modeling. This skill provides the essential environment configuration and command-line patterns required to execute these tools within a shell or Conda environment.
+
+HEASoft is the primary software environment used by the high-energy astrophysics community to analyze data from X-ray and Gamma-ray observatories. It integrates several specialized packages—Xspec (spectral fitting), Xronos (timing), Ximage (imaging), and XSTAR (photoionization)—with the FTOOLS library for general FITS file manipulation. The system is built on a robust parameter interface (PIL) that allows for consistent command-line behavior and easy scripting.
 
 ## Environment Initialization
-Before running any HEASoft command (e.g., `xspec`, `fkeyprint`, `xselect`), the environment must be initialized. For Conda-based installations, use the following sequence:
 
-```bash
-# 1. Set the HEADAS directory (path varies by architecture)
-export HEADAS=$(ls -d "${CONDA_PREFIX}/x86_64-pc-linux-gnu-libc"*/ | head -n 1)
+Before running any HEASoft tools, the environment must be initialized. This sets up necessary environment variables like `$HEADAS` and updates the system `PATH`.
 
-# 2. Source the initialization script
-source "${HEADAS}/headas-init.sh"
+- **Linux (bash/zsh):** `source $HEADAS/headas-init.sh`
+- **Linux (tcsh/csh):** `source $HEADAS/headas-init.csh`
+- **Docker:** Containers typically initialize the environment automatically in a `tcsh` shell.
 
-# 3. Point to the Conda Perl interpreter (Required for many FTOOLS)
-export LHEAPERL="${CONDA_PREFIX}/bin/perl"
+## Parameter Management (PIL)
+
+HEASoft tasks use `.par` files to store and retrieve parameters. Understanding the Parameter Interface Library (PIL) is essential for automation.
+
+- **View parameters:** `plist <taskname>` shows all parameters and their current values.
+- **Reset parameters:** `punlearn <taskname>` resets parameters to their system defaults.
+- **Get/Set values:** Use `pget <taskname> <parameter>` and `pset <taskname> <parameter>=<value>`.
+- **Query Mode:** Most tasks have a `mode` parameter. Set `mode=h` (hidden) to suppress interactive prompts and use current or command-line values only.
+
+## Common CLI Patterns
+
+### FITS File Inspection (FTOOLS)
+- **List Header:** `ftlist <filename> option=H` (Lists all HDU summaries).
+- **List Keywords:** `ftlist <filename>+1 option=K` (Lists keywords for the first extension).
+- **List Data:** `ftlist <filename> option=T` (Lists table data).
+- **Copy File:** `fcopy <infile> <outfile>` (Useful for filtering extensions, e.g., `fcopy "in.fits[EVENTS]" out.fits`).
+
+### Spectral Analysis (Xspec)
+Xspec is often run interactively but can be scripted using command files (`.xcm`).
+- **Run script:** `xspec - <script.xcm>`
+- **Common commands:**
+  - `data 1:1 spectrum.pha` (Load data)
+  - `model phabs(powerlaw)` (Define model)
+  - `fit` (Perform Levenberg-Marquardt optimization)
+  - `plot ldata delchi` (Visualize data and residuals)
+
+## HEASoftPy (Python Interface)
+
+HEASoftPy provides a modern Python 3 wrapper for HEASoft tasks, allowing integration into Jupyter notebooks or data science pipelines.
+
+```python
+import heasoftpy as hsp
+
+# Call a task directly
+result = hsp.ftlist(infile='data.fits', option='H')
+
+# Check status and output
+if result.returncode == 0:
+    print(result.stdout)
 ```
 
-## Core Component Usage
-- **FTOOLS**: Use for FITS header manipulation and data extraction.
-  - `fkeyprint infile+1`: Display keywords of the first extension.
-  - `fstruct infile`: Show the structure of a FITS file.
-- **XSPEC**: Interactive X-ray spectral fitting.
-  - Launch with `xspec`.
-  - **Critical**: If XSPEC fails due to missing models, you must manually install the `modelData` directory (~5.9GB) from the HEASoft source tarball into `${CONDA_PREFIX}/spectral/`.
-- **XSELECT**: Used for filtering event files and creating spectra/lightcurves.
-  - Common workflow: `read events` -> `filter column` -> `extract spectrum`.
+### Best Practices for Scripting
+- **Parallelization:** When running tasks in parallel, ensure each process has its own `PFILES` directory to avoid parameter file corruption.
+- **CALDB:** Use remote CALDB access if a local installation is too large. Set `CALDB=https://heasarc.gsfc.nasa.gov/FTP/caldb` in your environment.
+- **Error Handling:** Always check the exit status of a task. In Python, check `result.returncode`.
 
-## Best Practices and Tips
-- **Parameter Files (.par)**: HEASoft tools store state in `.par` files. If a tool behaves unexpectedly, check your `PFILES` environment variable or run `punlearn <toolname>` to reset defaults.
-- **Mission Specifics**: While HEASoft provides the framework, specific missions (like NuSTAR or IXPE) often require additional calibration files (CALDB) to be indexed and pointed to via the `CALDB` environment variable.
-- **Scripting**: Most HEASoft commands can be scripted by passing arguments directly or using "hidden" parameters (e.g., `toolname param1=value1 param2=value2`).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fkeyprint | Display the value of a keyword in a FITS file header. (Note: The provided help text contained a system error; parameters are based on standard tool documentation). |
+| punlearn | Resets the parameter file for a specific HEASoft task to its system defaults. |
 
 ## Reference documentation
-- [Bioconda HEAsoft Overview](./references/anaconda_org_channels_bioconda_packages_heasoft_overview.md)
-- [HEASARC HEASoft Documentation](./references/heasarc_gsfc_nasa_gov_docs_software_lheasoft.md)
+
+- [HEASoft Overview](./references/heasarc_gsfc_nasa_gov_docs_software_lheasoft.md)
+- [HEASoftPy Guide](./references/heasarc_gsfc_nasa_gov_docs_software_lheasoft_heasoftpy.md)
+- [PIL (Parameter Interface Library)](./references/heasarc_gsfc_nasa_gov_docs_software_lheasoft_headas_pil.md)
+- [Docker Usage](./references/heasarc_gsfc_nasa_gov_docs_software_lheasoft_docker.html.md)

@@ -1,6 +1,6 @@
 ---
 name: bwa
-description: BWA maps DNA sequences against a large reference genome using the Burrows-Wheeler transform. Use when user asks to index a reference genome, align short or long sequencing reads, or generate SAM files for downstream genomic analysis.
+description: BWA is a bioinformatics tool suite used for aligning DNA sequences against a reference genome. Use when user asks to index a reference genome, align short or long reads using BWA-MEM, or map sequences to references with ALT contigs.
 homepage: https://github.com/lh3/bwa
 ---
 
@@ -8,64 +8,58 @@ homepage: https://github.com/lh3/bwa
 # bwa
 
 ## Overview
+BWA is a foundational bioinformatics tool suite designed for aligning DNA sequences against a reference genome. It is particularly effective for short-read data (Illumina) but has evolved to support long-read technologies. This skill provides the procedural knowledge required to navigate its different algorithms—primarily BWA-MEM, BWA-backtrack, and BWA-SW—to ensure high-accuracy genomic mapping and proper handling of modern reference assemblies like GRCh38.
 
-BWA (Burrows-Wheeler Aligner) is a software package for mapping DNA sequences against a large reference genome, such as the human genome. It consists of three main algorithms: BWA-backtrack (for short reads up to 100bp), BWA-SW (for longer reads with more errors), and BWA-MEM (the latest and generally recommended algorithm for high-quality queries). This skill provides the necessary command-line patterns to execute the full alignment workflow, from reference indexing to generating SAM files.
+## Core Workflows
 
-## Core Workflow
+### 1. Reference Indexing
+Before alignment, the reference FASTA must be indexed.
+- **Standard Indexing**: `bwa index ref.fa`
+- **Large Genomes**: For very large references (e.g., BLAST nt database), use `-b` to tune batch size: `bwa index -b 1000000000 ref.fa`
+- **Algorithm Selection**: BWA typically chooses the construction algorithm automatically, but `bwtsw` is preferred for human-sized genomes.
 
-### 1. Indexing the Reference
-Before alignment, the reference genome (FASTA format) must be indexed. This is a one-time operation per reference.
+### 2. Choosing the Right Algorithm
+- **BWA-MEM**: The industry standard for high-quality queries (70bp to 1Mbp). It is faster, more accurate, and supports split alignments.
+- **BWA-backtrack**: Best for Illumina reads up to 100bp (`aln`, `samse`, `sampe` commands).
+- **BWA-SW**: Designed for long reads with higher error rates or frequent indels.
 
+### 3. Alignment with BWA-MEM
+BWA-MEM is the most versatile command for modern sequencing data.
+
+**Illumina Paired-End:**
 ```bash
-# Standard indexing
-bwa index reference.fa
-
-# For very large genomes (e.g., BLAST nt database), use a larger batch size
-bwa index -b 1000000000 reference.fa
+bwa mem -t 8 ref.fa read1.fq read2.fq > aln.sam
 ```
 
-### 2. Aligning Reads with BWA-MEM
-BWA-MEM is the preferred algorithm for 70bp-1Mbp reads. It is robust to sequencing errors and supports split alignments.
+**Long-Read Presets:**
+Use the `-x` flag to apply optimized heuristics for specific platforms:
+- **PacBio**: `bwa mem -x pacbio ref.fa reads.fq`
+- **Oxford Nanopore (2D)**: `bwa mem -x ont2d ref.fa reads.fq`
 
-**Paired-end alignment:**
+**Smart Interleaving:**
+If using an interleaved FASTQ, use `-p`. BWA-MEM identifies adjacent reads with the same name as a pair.
+
+### 4. Advanced Mapping Scenarios
+
+#### Handling ALT Contigs (GRCh38)
+When mapping to references with ALT contigs, BWA-MEM identifies hits to these regions.
+- Use the `bwakit` wrapper for a complete pipeline that includes post-processing of ALT hits.
+- The `AH:*` tag in the SAM header SQ lines indicates alternate haplotypes.
+
+#### Hi-C Pipelines
+For Hi-C data, use the `-5` option (which automatically applies `-q`) to preserve mapping quality for split alignments where the 5'-end has a lower score than the primary alignment.
+
+#### Adding Read Groups
+Always include Read Group information for downstream GATK/Samtools compatibility:
 ```bash
-bwa mem -t 8 reference.fa read1.fq read2.fq > aligned.sam
+bwa mem -R '@RG\tID:foo\tSM:bar\tLB:library1' ref.fa reads.fq
 ```
 
-**Single-end alignment:**
-```bash
-bwa mem -t 8 reference.fa reads.fq > aligned.sam
-```
-
-### 3. Handling Specific Data Types
-BWA-MEM includes presets for different sequencing technologies using the `-x` flag:
-
-*   **PacBio subreads:** `bwa mem -x pacbio reference.fa pb_reads.fq`
-*   **Oxford Nanopore 2D reads:** `bwa mem -x ont2d reference.fa ont_reads.fq`
-*   **Illumina linked-reads:** `bwa mem -p reference.fa interleaved.fq` (Use `-p` if the input is an interleaved FASTQ where adjacent reads form a pair).
-
-## Expert Tips and Best Practices
-
-### Performance Optimization
-*   **Multi-threading:** Always use the `-t` option to specify the number of CPU cores. BWA-MEM scales well with threads.
-*   **Piping to Samtools:** To save disk space and I/O time, pipe the SAM output directly to Samtools to create a compressed BAM file:
-    ```bash
-    bwa mem -t 8 reference.fa r1.fq r2.fq | samtools view -Sb - > aligned.bam
-    ```
-
-### Read Group Information
-For downstream tools like GATK, you must add Read Group information during alignment:
-```bash
-bwa mem -t 8 -R '@RG\tID:foo\tSM:bar\tPL:ILLUMINA' reference.fa r1.fq r2.fq > aligned.sam
-```
-
-### Working with ALT Contigs
-If using GRCh38 with ALT contigs, BWA-MEM handles them by mapping reads to the best location. For the best results with ALT contigs, use the `bwakit` wrapper or ensure your reference is formatted correctly with a `.alt` file.
-
-### Alignment Scoring and Tags
-*   **XB Tag:** In version 0.7.18+, BWA can output the XB tag to show alignment score and mapping quality.
-*   **Hard Clipping:** Use `-H` in BWA-MEM to use hard clipping in the SAM output, which can reduce file size for long reads with many split alignments.
-*   **Marking Shorter Splits:** Use `-M` to mark shorter split hits as secondary (for Picard/GATK compatibility).
+## Expert Tips
+- **I/O Optimization**: Modern BWA-MEM (v0.7.11+) uses a separate thread for I/O. This significantly reduces wall-clock time when piping data to `samtools view`.
+- **Memory Management**: BWA-MEM requires approximately 5GB of RAM for the human genome index.
+- **Alignment Scores**: Use the `XB` tag (introduced in v0.7.18) to output alignment scores and mapping quality for detailed QC.
+- **Hard Clipping**: Use `-M` to mark shorter split hits as secondary for Picard/GATK compatibility.
 
 
 
@@ -89,6 +83,6 @@ If using GRCh38 with ALT contigs, BWA-MEM handles them by mapping reads to the b
 | shm | Manage BWA indices in shared memory |
 
 ## Reference documentation
-- [BWA News and Version History](./references/github_com_lh3_bwa_blob_master_NEWS.md)
-- [BWA Repository Overview](./references/github_com_lh3_bwa.md)
-- [BWA Makefile and Build Configuration](./references/github_com_lh3_bwa_blob_master_Makefile.md)
+- [BWA README and Usage](./references/github_com_lh3_bwa_blob_master_README.md)
+- [BWA Release News and Version History](./references/github_com_lh3_bwa_blob_master_NEWS.md)
+- [BWA-ALT Mapping Guide](./references/github_com_lh3_bwa_blob_master_README-alt.md)

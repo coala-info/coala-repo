@@ -42,3 +42,6 @@ usage: m6anet [-h] [-v]
 m6anet: error: argument command: invalid choice: 'additional' (choose from 'dataprep', 'inference', 'train', 'compute_norm_factors', 'convert')
 ```
 
+
+## Metadata
+- **Skill**: generated

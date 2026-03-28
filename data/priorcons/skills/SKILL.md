@@ -1,6 +1,6 @@
 ---
 name: priorcons
-description: priorcons generates high-quality viral consensus sequences by filling gaps in mapping-based assemblies with evolutionary-verified sequences. Use when user asks to build evolutionary priors from a multiple sequence alignment, integrate consensus sequences to fill gaps, or refine viral genome assemblies using statistical models of genetic variation.
+description: PriorCons fills gaps in viral consensus sequences by integrating candidate sequences into trusted sequences using evolutionary priors to validate variation. Use when user asks to build a priors database from viral sequences, integrate consensus sequences to fill N-gaps, or perform quality control on integrated viral genomes.
 homepage: https://github.com/GERMAN00VP/priorcons
 ---
 
@@ -8,58 +8,71 @@ homepage: https://github.com/GERMAN00VP/priorcons
 # priorcons
 
 ## Overview
-priorcons is a specialized bioinformatics tool designed to produce high-quality viral consensus sequences. It addresses the common issue of missing data in mapping-based assemblies by strategically filling gaps with sequences from ABACAS. Unlike simple merging, priorcons uses a sliding-window approach to verify the evolutionary likelihood of the filler sequence against empirical priors (statistical models of expected genetic variation). This prevents the incorporation of low-quality or biologically improbable fragments into the final genome.
 
-## Installation
-The tool can be installed via Bioconda or pip:
-```bash
-conda install bioconda::priorcons
-# OR
-pip install priorcons
-```
+PriorCons is a bioinformatics tool designed to fill gaps in viral consensus sequences. It works by comparing a "trusted" but potentially incomplete sequence (full of Ns) against a "candidate" sequence that is more complete but less certain. To ensure the integrated result is accurate, PriorCons uses a database of evolutionary priors—statistical models of expected variation derived from known genomes of the same virus. If a candidate sequence's variation falls within a 95th percentile likelihood threshold based on these priors, it is accepted into the final consensus.
 
-## Core Workflows
+## CLI Usage and Best Practices
 
-### 1. Building Evolutionary Priors
-Before integrating sequences, you must generate a priors table from a large multiple sequence alignment (MSA) of related sequences. This models the "normal" variation for each genomic window.
+### 1. Building the Priors Database
+Before integration, you must create a statistical model of the virus's expected variation.
+
+*   **Input Requirement**: A FASTA file containing a large collection of relevant viral sequences (e.g., from GISAID or NCBI).
+*   **Critical Step**: Sequences must be aligned to the reference genome. Use MAFFT in reference-anchored mode to maintain coordinate consistency.
 
 ```bash
-priorcons build-priors \
-  --input sequences.fasta \
-  --ref REFERENCE_ID \
-  --output priors.parquet \
-  --win 100 \
-  --overlap 10
+# Build the priors file (JSON or Parquet)
+priorcons build-priors --input database_aligned.fasta --output virus_priors.json
 ```
-- **Expert Tip**: Use a diverse but representative MSA to ensure the negative log-likelihood (nLL) thresholds accurately reflect the expected variation of your target sample.
 
-### 2. Integrating Consensus Sequences
-This is the main refinement step. It requires a three-sequence alignment file.
+### 2. Preparing Sequences for Integration
+You must align three specific sequences before running the integration command:
+1.  **Trusted**: High-confidence sequence (stringent filtering, contains Ns).
+2.  **Candidate**: Less conservative sequence (relaxed filtering, more informative).
+3.  **Reference**: The reference genome used during assembly.
+
+**Recommended Alignment Strategy**:
+Use MAFFT with high-sensitivity settings for these three sequences:
+```bash
+mafft --localpair --maxiterate 1000 input.fasta > aligned_input.fasta
+```
+
+### 3. Integrating the Consensus
+Run the integration to produce the final sequence.
 
 ```bash
 priorcons integrate-consensus \
-  --input sample_alignment.aln \
-  --ref REFERENCE_ID \
-  --prior priors.parquet \
-  --output_dir results_folder
+    --aligned-fasta aligned_input.fasta \
+    --priors virus_priors.json \
+    --output output_dir
 ```
 
-**Critical Requirement**: The input `.aln` file must contain sequences in this exact order:
-1. Reference sequence
-2. Mapping consensus sequence (the baseline)
-3. ABACAS consensus sequence (the source for gap-filling)
+### 4. Quality Control (QC)
+After integration, analyze the results to identify recovery hotspots and performance metrics.
 
-## Output Analysis
-The tool generates three primary files in the output directory:
-- **`<basename>-INTEGRATED.fasta`**: The final refined consensus.
-- **`windows_trace.csv`**: A per-window log showing which regions passed QC and why ABACAS fragments were accepted or rejected (based on `WINDOW_SCORE_nLL` vs `WINDOW_PRIOR_nLL_p95`).
-- **`qc.json`**: Summary metrics comparing the mapping baseline to the final integrated sequence, including coverage gains and substitution counts.
+```bash
+priorcons qc --input_dir output_dir --output_dir qc_results
+```
 
-## Best Practices
-- **Window Fragmentation**: priorcons rejects ABACAS windows if they are too fragmented (typically > 3 fragments). If you see many "False" decisions in the trace file due to fragmentation, check the quality of your de novo assembly.
-- **Reference Consistency**: Ensure the `REFERENCE_ID` used in `build-priors` matches the reference sequence ID used in the integration alignment.
-- **Insertion Handling**: The tool automatically restores mapping-specific insertions into the final integrated consensus to maintain consistency with the baseline mapping.
+## Expert Tips and Workflow Details
+
+*   **Window-Based Evaluation**: PriorCons slides overlapping windows across the genome. It only evaluates windows where the trusted sequence has missing regions (Ns).
+*   **Statistical Thresholds**: The tool calculates a normalized negative log-likelihood (nLL). Windows exceeding the 95th percentile of the empirical distribution are rejected as "atypical" to prevent the introduction of sequencing artifacts.
+*   **Output Interpretation**:
+    *   `{sample_name}-INTEGRATED.fasta`: Your final optimized sequence.
+    *   `qc.json`: Summary statistics of the integration.
+    *   `windows_trace.csv`: Detailed records of which windows were accepted or rejected and why.
+*   **Coordinate Consistency**: Always ensure your priors database and your integration input use the exact same reference genome coordinates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| Ellipsis | Integrates prior information into consensus sequence generation. |
+| priorcons | Build empirical priors from alignment |
 
 ## Reference documentation
-- [PriorCons GitHub Repository](./references/github_com_GERMAN00VP_PriorCons.md)
-- [priorcons Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_priorcons_overview.md)
+- [PriorCons README](./references/github_com_GERMAN00VP_PriorCons_blob_main_README.md)
+- [PriorCons Changelog](./references/github_com_GERMAN00VP_PriorCons_blob_main_CHANGELOG.md)
+- [PriorCons Project Configuration](./references/github_com_GERMAN00VP_PriorCons_blob_main_pyproject.toml.md)

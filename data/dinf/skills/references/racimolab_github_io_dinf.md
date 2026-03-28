@@ -1,0 +1,1 @@
+Redirecting to [latest documentation](latest/index.html).

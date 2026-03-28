@@ -329,3 +329,6 @@ options:
   -D, --deterministic   Use a stable MD5-based suffix derived from the sequence and header instead of a random alphanumeric code (default). Ensures reproducible IDs across runs
 ```
 
+
+## Metadata
+- **Skill**: generated

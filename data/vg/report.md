@@ -786,3 +786,6 @@ general options:
   -h, --help                print this help message to stderr and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

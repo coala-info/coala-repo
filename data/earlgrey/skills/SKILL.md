@@ -1,6 +1,6 @@
 ---
 name: earlgrey
-description: Earl Grey is a fully automated pipeline for identifying, curating, and annotating transposable elements in genome assemblies. Use when user asks to identify transposable elements, construct de novo repeat libraries, annotate genome assemblies, or visualize repeat landscapes.
+description: Earl Grey is a fully automated pipeline for the comprehensive annotation and discovery of transposable elements in genome assemblies. Use when user asks to annotate transposable elements, build consensus libraries, or perform repeat masking on a genome.
 homepage: https://github.com/TobyBaril/EarlGrey
 ---
 
@@ -9,55 +9,66 @@ homepage: https://github.com/TobyBaril/EarlGrey
 
 ## Overview
 
-Earl Grey is a comprehensive, fully automated pipeline designed to identify, curate, and annotate transposable elements (TEs) in genome assemblies. It integrates industry-standard tools like RepeatModeler and RepeatMasker with a specialized consensus elongation process (BEAT) to refine de novo consensus sequences. This tool is particularly effective for non-model organisms where existing repeat libraries may be insufficient. It produces detailed GFF outputs, summary tables, and "Repeat Landscape" plots to visualize TE divergence and genomic impact.
+Earl Grey is a fully automated pipeline designed for the comprehensive annotation of transposable elements (TEs) in genome assemblies. It integrates widely-used TE discovery tools with a specialized consensus elongation process to better define de novo consensus sequences. This skill should be used to guide the execution of TE annotation workflows, manage resource-intensive genomic computations, and troubleshoot common issues related to repeat masking and library construction.
 
 ## Core Workflows
 
-### Initial Configuration
-After installation, you must configure the Dfam and/or RepBase partitions. Earl Grey will generate a configuration script upon its first run.
-- **Action**: Run the generated script to specify which taxonomic partitions to include.
-- **Tip**: Choose partitions carefully; including too many irrelevant partitions can increase runtime and lead to false positives, while too few may result in under-annotation.
+### 1. Full TE Annotation Pipeline
+The primary `earlGrey` script performs the full suite of discovery, elongation, and annotation.
 
-### Main Pipeline Execution
-The primary command for a full run (library construction + annotation) is `earlGrey`.
+*   **Standard Run**: Provide the input genome, a name for the run, and the number of CPU threads.
+*   **Library Integration**: Use the `-l` flag to provide an existing TE library to supplement de novo discovery.
+*   **Search Term**: Use `-r` to specify a search term (e.g., "Arthropoda") for Dfam/RepBase filtering.
 
+### 2. Annotation Only
+Use `earlGreyAnnotationOnly` when a curated TE library is already available and you only need to mask and annotate the genome without performing new discovery.
+
+### 3. Library Construction
+Use `earlGreyLibConstruct` to focus specifically on building and elongating the TE consensus library for a given assembly.
+
+## Expert Tips and Best Practices
+
+### Resource Management
+TE annotation is extremely RAM-intensive. Follow these hardware guidelines to avoid Out-of-Memory (OOM) errors:
+*   **RAM Ratio**: Allocate at least **3GB of RAM per thread**. For example, a 16-thread run requires a minimum of 48GB of RAM.
+*   **Thread Throttling**: If you encounter `OpenBLAS` or `pthread_create` errors ("Resource temporarily unavailable"), reduce the number of threads.
+*   **Runtime Expectations**: Small genomes (40Mb) take ~1 day; large genomes (3Gb+) typically take a week or more.
+
+### Configuration and Setup
+*   **Dfam Partitions**: After installation, you must configure Dfam partitions. Earl Grey provides a script for this during the first run. Results are highly dependent on choosing the correct partitions for your target taxa.
+*   **Checkpointing**: The pipeline uses checkpoints for each step. If a run is interrupted by server limits or crashes, resubmit the exact same command to resume from the last completed step.
+
+### Troubleshooting
+*   **OOM Kills**: Check logs specifically for `TEstrainer` and the `divergence calculator`, as these are the most memory-hungry components.
+*   **Empty Directories**: Ensure the output directory is writable. Version 7.2.1+ automatically handles directory creation for curated libraries, but manual verification is recommended if using older versions.
+
+## Common CLI Patterns
+
+**Full Pipeline Execution:**
 ```bash
-# Basic execution pattern
-earlGrey -g genome.fasta -s species_name -o output_dir -t threads
+earlGrey -g genome.fasta -s species_name -o output_dir -t 16 -r "Taxa_Name"
 ```
 
-### Specialized Sub-pipelines
-- **Library Construction Only**: Use `earlGreyLibConstruct` when you only need to generate a de novo TE library for a genome without performing the full annotation.
-- **Annotation Only**: Use `earlGreyAnnotationOnly` if you already have a curated TE library (e.g., from a previous run or a related species) and want to mask a new assembly.
+**Annotation with Existing Library:**
+```bash
+earlGreyAnnotationOnly -g genome.fasta -l curated_te_library.fasta -s species_name -o output_dir -t 8
+```
 
-## Resource Management and Performance
+**Resuming a Failed Run:**
+Simply repeat the original command. Earl Grey will detect existing files in the output directory and skip finished modules.
 
-Earl Grey is highly resource-intensive. Follow these guidelines to prevent job failures:
 
-- **RAM Requirements**: Allocate at least **3GB of RAM per thread**. For a 16-thread run, ensure at least 48GB of available RAM.
-- **Runtime Expectations**: 
-    - Small genomes (~40Mb): Hours to 1 day.
-    - Medium genomes (~400Mb): 4-5 days.
-    - Large genomes (~3Gb): ~1 week.
-    - Very large genomes (>20Gb): Several weeks.
-- **Checkpointing**: The pipeline uses checkpoints for each step. If a run is interrupted (e.g., due to server limits or OOM errors), resubmit the exact same command to resume from the last successful step.
-- **OpenBLAS Errors**: If you see `pthread_create failed` or `Resource temporarily unavailable` errors, reduce the thread count or set the environment variable: `export OPENBLAS_NUM_THREADS=1`.
 
-## Interpreting Results (Version 7.0+)
+## Subcommands
 
-Version 7 introduced significant changes to how nested TEs are handled:
-
-- **Nested TEs**: Identified iteratively and labeled in the GFF with `nested=FULLY_NESTED`.
-- **Coverage Calculations**: Nested TEs are excluded from the primary "Total Interspersed Repeat" percentage in pie charts to prevent double-counting genomic space.
-- **Summary Tables**: Look for `-nested` categories (e.g., `LINE-nested`) in the summary files to see the specific base-pair contribution of nested elements.
-- **Repeat Landscapes**: Use the generated plots to analyze TE divergence. Version 7.0.2+ includes specific landscapes for Penelope-like elements and SINEs.
-
-## Best Practices
-
-- **Input Cleaning**: Ensure your input FASTA headers are simple and do not contain special characters or spaces that might break downstream tools like RepeatMasker.
-- **SINE Detection**: In v7.0.2+, the `-norna` option is no longer default, improving the detection of small tRNA-derived SINEs. Do not manually add `-norna` unless you specifically wish to ignore these elements.
-- **Monitoring**: Check logs frequently for "OOM" (Out of Memory) errors, especially during the `TEstrainer` and divergence calculation steps.
+| Command | Description |
+|---------|-------------|
+| earlGreyAnnotationOnly | earlGrey version 7.0.2 (AnnotationOnly) |
+| earlgrey_earlGrey | A script for modification and automation of RepeatMasker configuration with Dfam 3.9. |
+| earlgrey_earlGreyLibConstruct | A script for modification and automation of Dfam configuration steps for RepeatMasker. |
 
 ## Reference documentation
-- [Earl Grey Main Documentation](./references/github_com_TobyBaril_EarlGrey.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_earlgrey_overview.md)
+- [Main README and Usage Guide](./references/github_com_TobyBaril_EarlGrey_blob_main_README.md)
+- [Main Pipeline Script Details](./references/github_com_TobyBaril_EarlGrey_blob_main_earlGrey.md)
+- [Annotation-Only Workflow](./references/github_com_TobyBaril_EarlGrey_blob_main_earlGreyAnnotationOnly.md)
+- [Library Construction Module](./references/github_com_TobyBaril_EarlGrey_blob_main_earlGreyLibConstruct.md)

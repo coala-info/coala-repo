@@ -1,89 +1,69 @@
 ---
 name: metaphlan
-description: "MetaPhlAn profiles the composition of microbial communities from metagenomic shotgun sequencing data. Use when user asks to profile microbial communities, identify microbial taxa, or perform strain-level analysis."
+description: "MetaPhlAn profiles the taxonomic composition of microbial communities from shotgun metagenomic data by mapping reads to clade-specific marker genes. Use when user asks to profile taxonomic abundances, generate species-level compositions from FastQ files, or merge multiple metagenomic profiles into a single table."
 homepage: https://github.com/biobakery/metaphlan
 ---
 
 
 # metaphlan
 
-metaphlan/SKILL.md
-```yaml
-name: metaphlan
-description: |
-  Profiles the composition of microbial communities (Bacteria, Archaea, Eukaryotes, and Viruses) from metagenomic shotgun sequencing data with species-level resolution. Use when analyzing metagenomic data to identify microbial taxa present in a sample. Also supports strain-level identification and tracking with StrainPhlAn.
-```
 ## Overview
-This skill provides instructions for using MetaPhlAn, a powerful command-line tool for analyzing metagenomic sequencing data. MetaPhlAn excels at identifying the microbial species present in a sample, offering species-level resolution for bacteria, archaea, eukaryotes, and viruses. It also includes StrainPhlAn for more granular strain-level analysis. Use this skill when you need to understand the taxonomic composition of a microbial community from shotgun sequencing data.
 
-## Usage Instructions
+MetaPhlAn (Metagenomic Phylogenetic Analysis) is a computational tool designed to profile the composition of microbial communities (bacteria, archaea, eukaryotes, and viruses) from shotgun metagenomic data. It works by mapping reads against a pre-computed database of clade-specific marker genes, allowing for unambiguous taxonomic assignment and accurate estimation of relative abundances at the species level or higher. Use this skill to execute profiling workflows, handle intermediate alignment files, and aggregate results across multiple samples.
 
-MetaPhlAn is primarily used via its command-line interface. The core functionality involves providing input sequences and specifying output formats.
+## Installation and Database Management
 
-### Basic Usage: Species Profiling
-
-The most common use case is to profile the species composition of a metagenomic sample.
+Install MetaPhlAn via Bioconda to ensure all dependencies (like Bowtie2) are correctly configured.
 
 ```bash
-metaphlan <input_sequences> --input_type <type> -o <output_file>
+# Install via conda
+conda install -c bioconda metaphlan
+
+# Download/Update the latest marker database
+metaphlan --install
 ```
 
-*   `<input_sequences>`: Path to your input file (e.g., FASTQ, FASTA).
-*   `--input_type <type>`: Specifies the format of the input file. Common types include `fastq`, `fasta`, `bowtie2out`, `unmapped`.
-*   `-o <output_file>`: Specifies the output file name. The default output format is tab-separated values (TSV).
+## Common CLI Patterns
 
-**Example:**
+### Basic Taxonomic Profiling
+The most common use case is converting raw FastQ files into a tab-separated taxonomic profile.
 
 ```bash
-metaphlan reads.fastq --input_type fastq -o profile.txt
+# Profile a single FastQ file
+metaphlan input.fastq --input_type fastq -o profiled_metagenome.txt
+
+# Profile paired-end data (provide as comma-separated list)
+metaphlan forward.fastq,reverse.fastq --input_type fastq --nproc 8 -o profiled_metagenome.txt
 ```
 
-### Output Formats
-
-MetaPhlAn supports various output formats to suit different downstream analyses.
-
-*   **TSV (default):** Tab-separated values, providing taxonomic assignments and relative abundances.
-*   **BIOM:** For compatibility with tools like QIIME 2. Use the `--biom` flag.
-*   **JSON:** For programmatic parsing. Use the `--json` flag.
-*   **NCL:** Newick format for phylogenetic trees. Use the `--ncl` flag.
-
-**Example (BIOM output):**
+### Efficient Re-processing
+To avoid re-running the computationally expensive Bowtie2 alignment, always save the intermediate alignment file.
 
 ```bash
-metaphlan reads.fastq --input_type fastq --biom profile.biom
+# Step 1: Profile and save Bowtie2 output
+metaphlan sample.fastq --input_type fastq --bowtie2out sample.bowtie2.bz2 -o profile.txt
+
+# Step 2: Re-generate profile with different parameters using the intermediate file
+metaphlan sample.bowtie2.bz2 --input_type bowtie2out -o new_profile.txt
 ```
 
-### Strain-Level Analysis with StrainPhlAn
-
-StrainPhlAn is a companion tool for identifying and tracking microbial strains. It typically requires pre-aligned reads or consensus genomes.
+### Merging Multiple Samples
+After profiling individual samples, merge them into a single abundance matrix for statistical analysis.
 
 ```bash
-strainphlan <input_files> --output_dir <output_directory>
+merge_metaphlan_tables.py sample1.txt sample2.txt sample3.txt > merged_abundance_table.txt
 ```
 
-*   `<input_files>`: Paths to input files (e.g., BAM files, FASTA consensus genomes).
-*   `--output_dir <output_directory>`: Directory to store StrainPhlAn results.
+## Expert Tips and Best Practices
 
-**Note:** StrainPhlAn usage is more complex and often involves pre-processing steps. Refer to the StrainPhlAn documentation for detailed instructions.
-
-### Key Command-Line Options and Tips
-
-*   **`--bowtie2out <output_file>`**: Output alignments in Bowtie2 format. Useful for subsequent analyses.
-*   **`--unmapped <output_file>`**: Save unmapped reads to a file.
-*   **`--nreads <number>`**: Limit the number of reads to process. Useful for testing or large datasets.
-*   **`--nproc <number>`**: Number of parallel processes to use.
-*   **`--force`**: Overwrite output files if they already exist.
-*   **`--verbose`**: Increase output verbosity for debugging.
-*   **Database Selection**: MetaPhlAn uses a built-in database. For specific needs, ensure you are using the appropriate version or consider custom database options if available.
-
-### Common Workflows
-
-1.  **Species Profiling:**
-    ```bash
-    metaphlan sample1.fastq.gz --input_type fastq -o sample1_profile.tsv
-    metaphlan sample2.fastq.gz --input_type fastq -o sample2_profile.tsv
-    ```
-2.  **Comparing Profiles:** After generating TSV profiles, you can use tools like `merge_metaphlan_tables.py` (often distributed with MetaPhlAn or bioBakery) to combine and compare profiles across multiple samples.
+- **Resource Allocation**: Always use the `--nproc` parameter to match the available CPU cores, as the Bowtie2 alignment step is highly parallelizable.
+- **Taxonomic Resolution**: MetaPhlAn 4 introduces Species-level Genome Bins (SGBs). If you require traditional NCBI taxonomy, ensure your database version is compatible with your downstream analysis tools.
+- **Viral Profiling**: When specifically interested in viruses, ensure you are using MetaPhlAn 4+ which includes a significantly expanded viral module.
+- **Strain-Level Analysis**: If the user requires strain-level genomics, pivot to using **StrainPhlAn**, which is bundled within the MetaPhlAn installation but requires a different workflow (extracting markers first).
+- **Unknowns**: Use the `--unclassified_estimation` flag if you need to account for the fraction of reads that do not map to any known reference markers in the database.
 
 ## Reference documentation
-- [MetaPhlAn documentation](./references/github_com_biobakery_metaphlan_wiki.md)
+
+- [MetaPhlAn GitHub Repository](./references/github_com_biobakery_metaphlan.md)
+- [MetaPhlAn Wiki](./references/github_com_biobakery_metaphlan_wiki.md)
+- [Segata Lab MetaPhlAn Page](./references/segatalab_cibio_unitn_it_tools_metaphlan_index.html.md)

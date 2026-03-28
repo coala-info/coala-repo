@@ -217,7 +217,7 @@ Application options:
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## elastic-blast
 

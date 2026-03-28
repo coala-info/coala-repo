@@ -1397,3 +1397,6 @@ Usage: rsem-generate-data-matrix sampleA.[alleles/genes/isoforms].results sample
 All result files should have the same file type. The 'expected_count' columns of every result file are extracted to form the data matrix.
 ```
 
+
+## Metadata
+- **Skill**: generated

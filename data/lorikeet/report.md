@@ -123,3 +123,6 @@ Usage: java -jar lorikeet.jar fix-lineages [options]
         Fraction of closest neighbors that need to agree to perform change. [Default=0.6]
 ```
 
+
+## Metadata
+- **Skill**: generated

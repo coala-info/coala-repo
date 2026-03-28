@@ -248,3 +248,6 @@ Command-wise optional arguments:
  -W, --write-message-to-file  Store all message into a file. (default: None)
 ```
 
+
+## Metadata
+- **Skill**: generated

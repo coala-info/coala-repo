@@ -1,6 +1,6 @@
 ---
 name: changeo
-description: Change-O is a bioinformatics suite for processing and standardizing B cell and T cell receptor repertoire alignment data. Use when user asks to convert alignment outputs to AIRR databases, filter sequence records, assign sequences to clonal lineages, or reconstruct ancestral germline sequences.
+description: Change-O is a suite of command-line utilities for processing B cell and T cell receptor repertoires and standardizing V(D)J alignment data. Use when user asks to convert alignment tool outputs to AIRR format, filter or manipulate repertoire databases, assign sequences to clonal lineages, or reconstruct ancestral germline sequences.
 homepage: http://changeo.readthedocs.io
 ---
 
@@ -8,48 +8,85 @@ homepage: http://changeo.readthedocs.io
 # changeo
 
 ## Overview
-Change-O is a specialized bioinformatics suite designed for the post-alignment processing of B cell and T cell receptor repertoires. It serves as the foundational toolkit for the Immcantation framework, transforming raw alignment data into standardized, analysis-ready databases. Its primary utility lies in its ability to handle large-scale sequencing data, providing robust methods for clonal clustering and germline inference while maintaining compliance with Adaptive Immune Receptor Repertoire (AIRR) standards.
 
-## Core Workflows and CLI Patterns
+Change-O is a specialized suite of command-line utilities designed for the advanced processing of B cell and T cell receptor repertoires. It serves as the bridge between initial V(D)J alignment tools and downstream statistical analysis. The toolkit excels at transforming raw alignment files into a standardized tabular format (AIRR Community Rearrangement standard), clustering sequences into clonal lineages based on shared ancestry, and reconstructing ancestral germline sequences to facilitate the study of somatic hypermutation.
+
+## Core Workflow and CLI Patterns
 
 ### 1. Database Generation (MakeDb.py)
-The first step in any Change-O pipeline is converting alignment tool output into the Change-O/AIRR database format.
+The first step is converting alignment tool output into a Change-O/AIRR compliant TSV file.
 
-*   **From IgBLAST:**
-    `MakeDb.py igblast -i alignment.fmt7 -s sequences.fasta -o output.tsv`
-*   **From IMGT/HighV-QUEST:**
-    `MakeDb.py imgt -i imgt_output.zip -s sequences.fasta`
-*   **Key Tip:** Always ensure your input FASTA headers match the IDs in the alignment output. Use the `--format airr` flag (default in v1.0+) to ensure compatibility with modern downstream tools.
+**From IgBLAST output:**
+```bash
+MakeDb.py igblast -i input.fmt7 -s input.fasta -r IMGT_V.fasta IMGT_D.fasta IMGT_J.fasta --extended
+```
+*   **Tip**: The `-r` reference sequences must be IMGT-gapped to ensure correct junction (CDR3) parsing.
+*   **Tip**: Use `--extended` to include IMGT-gapped CDR/FWR regions and alignment metrics.
 
-### 2. Filtering and Manipulation (ParseDb.py / FilterDb.py)
-Clean your data before clonal assignment to remove low-quality or irrelevant sequences.
+**From IMGT/HighV-QUEST output:**
+```bash
+MakeDb.py imgt -i output.txz -s input.fasta --extended
+```
 
-*   **Filter by field value:**
-    `FilterDb.py select -d database.tsv -f V_CALL -u "IGHV" --regex`
-*   **Remove sequences with junctions not divisible by 3:**
-    `FilterDb.py junction -d database.tsv`
-*   **Split database by a column:**
-    `ParseDb.py split -d database.tsv -f SAMPLE`
+### 2. Data Filtering and Manipulation (ParseDb.py)
+Use `ParseDb.py` to clean your database before clonal assignment.
+
+**Filter for productive sequences:**
+```bash
+ParseDb.py select -d database.tsv -f productive -u T
+```
+
+**Split by locus (e.g., Heavy vs Light chains):**
+```bash
+ParseDb.py select -d database.tsv -f locus -u "IGH" --logic all --regex --outname heavy
+```
 
 ### 3. Clonal Assignment (DefineClones.py)
-Assigning sequences to clonal lineages is typically based on V-gene, J-gene, and Junction length homology.
+Groups sequences into clones based on V-gene, J-gene, and junction length similarity.
 
-*   **Standard Hamming distance clustering:**
-    `DefineClones.py -d database.tsv --act set --model ham --norm len --dist 0.1`
-*   **Expert Tip:** The distance threshold (`--dist`) is critical. It is recommended to determine this threshold using the `shazam` R package's distance-to-nearest distribution analysis before running `DefineClones.py`.
+**Standard Hamming distance clustering:**
+```bash
+DefineClones.py -d database_pass.tsv --act set --model ham --norm len --dist 0.16
+```
+*   **Expert Tip**: The `--dist` threshold is critical. For BCR data, a threshold around 0.1 to 0.2 is common, but should be determined using the `distToNearest` function in the SHazaM R package.
+*   **T-Cell Tip**: For TCR data, use `--dist 0` or a very low value, as T cells do not undergo somatic hypermutation.
 
 ### 4. Germline Reconstruction (CreateGermlines.py)
-Reconstruct the unmutated ancestral sequences for each clone.
+Reconstructs the unmutated ancestral sequence for each record or clone.
 
-*   **Using a reference genome:**
-    `CreateGermlines.py -d database.tsv -g references/ -r imgt_germlines.fasta`
-*   **Note:** This requires the specific V, D, and J segment libraries used during the initial alignment.
+**Generate germlines with D-segment masking:**
+```bash
+CreateGermlines.py -d database_clones.tsv -g dmask -r IMGT_V.fasta IMGT_D.fasta IMGT_J.fasta
+```
+*   **Note**: Use `-g dmask` (default) to place Ns in the D-segment, which is safer when D-assignment confidence is low. Use `--cloned` if you have already run `DefineClones.py` to ensure a consensus germline for the entire clone.
 
-## Best Practices
-*   **Standardization:** Use the AIRR Community Rearrangement standard format for all outputs to ensure interoperability with other tools like TIgGER, SHazaM, and Alakazam.
-*   **Memory Management:** For very large repertoires (millions of sequences), use `ParseDb.py split` to process samples or specific gene families in parallel to reduce memory overhead.
-*   **Sequence Integrity:** Always run `FilterDb.py junction` before clonal assignment to ensure that non-functional or out-of-frame sequences do not skew clonal grouping.
+### 5. Format Conversion (ConvertDb.py)
+Export data for external tools or submission.
+
+**Export to FASTA with annotations in the header:**
+```bash
+ConvertDb.py fasta -d database.tsv --if sequence_id --sf sequence_alignment --mf v_call duplicate_count
+```
+
+## Expert Tips and Best Practices
+
+*   **AIRR Standard**: As of v1.0.0, Change-O defaults to the AIRR Community Rearrangement standard. If working with older pipelines, use `--format changeo` to maintain compatibility with legacy Change-O columns (e.g., `V_CALL` vs `v_call`).
+*   **10X Genomics**: To process 10X V(D)J data, use `MakeDb.py` with the `--10x` flag to incorporate the `filtered_contig_annotations.csv` file provided by Cell Ranger.
+*   **Memory Management**: For very large datasets, use `ParseDb.py split` to divide the database into smaller chunks (e.g., by sample or locus) before running computationally intensive tasks like `DefineClones.py`.
+*   **Reference Consistency**: Always ensure the reference fasta files passed to `MakeDb.py` and `CreateGermlines.py` are identical to those used by the initial aligner (IgBLAST/IMGT).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| DefineClones.py | Assigns Ig sequences to clonal groups based on junction sequence similarity. |
+| ParseDb.py | A utility to parse, filter, and manipulate Change-O tab-delimited database files. |
 
 ## Reference documentation
-- [Change-O Documentation](./references/changeo_readthedocs_io_en_stable.md)
-- [Bioconda Change-O Overview](./references/anaconda_org_channels_bioconda_packages_changeo_overview.md)
+- [Commandline Usage](./references/changeo_readthedocs_io_en_stable_usage.html.md)
+- [Using IgBLAST](./references/changeo_readthedocs_io_en_stable_examples_igblast.html.md)
+- [Clustering sequences into clonal groups](./references/changeo_readthedocs_io_en_stable_examples_cloning.html.md)
+- [Parsing 10X Genomics V(D)J data](./references/changeo_readthedocs_io_en_stable_examples_10x.html.md)
+- [Reconstructing germline sequences](./references/changeo_readthedocs_io_en_stable_examples_germlines.html.md)

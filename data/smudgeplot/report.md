@@ -223,3 +223,6 @@ options:
   --verbose   verbose mode
 ```
 
+
+## Metadata
+- **Skill**: generated

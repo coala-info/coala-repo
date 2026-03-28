@@ -157,3 +157,6 @@ Output:
 	directory/velvet_asm.afg	: (if requested) AMOS compatible assembly file
 ```
 
+
+## Metadata
+- **Skill**: generated

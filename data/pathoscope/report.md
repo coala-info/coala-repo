@@ -258,4 +258,4 @@ Running without mySQLdb library
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

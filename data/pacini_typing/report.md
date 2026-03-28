@@ -68,3 +68,6 @@ options:
                         file: -o output
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -79,3 +79,6 @@ Commands:
   scatter    Whole-genome scatter plot
 ```
 
+
+## Metadata
+- **Skill**: generated

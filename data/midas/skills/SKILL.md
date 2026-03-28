@@ -1,6 +1,6 @@
 ---
 name: midas
-description: MIDAS is a pipeline for quantifying bacterial species abundance and strain-level variation from metagenomic sequencing data. Use when user asks to estimate species abundance, predict pan-genome gene content, or call single nucleotide polymorphisms across metagenomic samples.
+description: MIDAS is a pipeline for high-resolution metagenomics that quantifies species abundance, gene content, and strain-level genetic variation from shotgun sequencing data. Use when user asks to estimate species-level abundance, quantify pangenome gene presence, or call single-nucleotide polymorphisms within bacterial populations.
 homepage: https://github.com/snayfach/MIDAS
 ---
 
@@ -8,59 +8,56 @@ homepage: https://github.com/snayfach/MIDAS
 # midas
 
 ## Overview
-MIDAS (Metagenomic Intra-Species Diversity Analysis System) is a specialized pipeline for high-resolution metagenomics. While many tools stop at species-level classification, MIDAS enables the quantification of strain-level variation, including gene presence/absence and single nucleotide polymorphisms (SNPs). It functions by mapping metagenomic reads against a comprehensive database of reference genomes, making it ideal for longitudinal strain tracking and population genetic studies in microbial ecology.
 
-## Installation and Setup
-Install MIDAS via Bioconda for the most stable environment:
-```bash
-conda install bioconda::midas
-```
+MIDAS (Metagenomic Intra-species Diversity Analysis System) is a specialized pipeline for high-resolution metagenomics. While many tools stop at taxonomic classification, MIDAS enables the study of bacterial population genetics directly from shotgun sequencing data. It leverages a massive database of reference genomes to provide three primary types of data: species-level abundance, gene-level presence/absence within a species' pangenome, and strain-level SNP calling. This allows for advanced workflows like strain tracking between hosts, biogeography studies, and analyzing the evolutionary dynamics of microbial communities.
 
-Before running analyses, you must provide a reference database. You can download the default database or build a custom one using the provided scripts in the `bin/` directory.
+## Core Workflow
 
-## Core CLI Workflows
+The MIDAS pipeline typically follows a two-stage process: per-sample processing followed by multi-sample merging.
 
-### 1. Single Sample Analysis
-Analysis is typically performed in three stages: species abundance, gene content, and SNP calling.
+### 1. Per-Sample Analysis
+Run the primary script `run_midas.py` for each metagenomic sample.
 
-**Estimate Species Abundance:**
-```bash
-run_midas.py species <output_dir> -1 <reads_1.fastq.gz> -2 <reads_2.fastq.gz>
-```
+*   **Species Abundance**: Estimates the relative abundance of species.
+    `run_midas.py species <output_dir> -1 <reads_1.fq.gz> -2 <reads_2.fq.gz>`
+*   **Gene Content**: Quantifies the coverage of pangenome genes for specific species.
+    `run_midas.py genes <output_dir> -1 <reads_1.fq.gz> -2 <reads_2.fq.gz>`
+*   **SNP Calling**: Identifies single-nucleotide polymorphisms within species.
+    `run_midas.py snps <output_dir> -1 <reads_1.fq.gz> -2 <reads_2.fq.gz>`
 
-**Predict Pan-genome Gene Content:**
-```bash
-run_midas.py genes <output_dir> -1 <reads_1.fastq.gz> -2 <reads_2.fastq.gz>
-```
+### 2. Merging Results
+After processing individual samples, use `merge_midas.py` to create a unified dataset for comparative analysis.
 
-**Call SNPs:**
-```bash
-run_midas.py snps <output_dir> -1 <reads_1.fastq.gz> -2 <reads_2.fastq.gz>
-```
+*   **Merge Species**: `merge_midas.py species <merged_dir> -i <sample_dir1,sample_dir2,...>`
+*   **Merge Genes**: `merge_midas.py genes <merged_dir> -i <sample_dir1,sample_dir2,...>`
+*   **Merge SNPs**: `merge_midas.py snps <merged_dir> -i <sample_dir1,sample_dir2,...>`
 
-### 2. Merging Results Across Samples
-After processing individual samples, use `merge_midas.py` to create a global matrix for comparative analysis.
+## CLI Best Practices and Expert Tips
 
-```bash
-# Merge species abundance
-merge_midas.py species <merged_dir> -i <sample_dir_1>,<sample_dir_2>,<sample_dir_n>
+*   **Resuming Jobs**: Metagenomic pipelines are computationally intensive. Use the `--resume` flag to restart a failed or interrupted run without re-processing completed steps.
+*   **Alignment Filtering**: To improve the quality of SNP calls and gene content estimation, use the `--aln_cov` flag to set a minimum alignment coverage threshold.
+*   **Handling Long Genes**: If working with assemblies or specific pangenomes containing exceptionally long sequences, use `--max_length` to prevent issues with underlying aligners like VSEARCH.
+*   **SNP Type Selection**: Use the `--snp_type` flag to restrict analysis to specific categories of SNPs (e.g., synonymous vs. non-synonymous) depending on the downstream evolutionary analysis.
+*   **Database Management**: MIDAS requires a reference database. While a default database of ~30,000 genomes is available, you can build a custom database using `build_midas_db.py` if your environment (e.g., soil or seawater) is poorly represented in standard human microbiome sets.
+*   **Parallelization**: MIDAS supports multi-threading. Always specify the number of available cores to significantly reduce runtime for the alignment and SNP calling phases.
 
-# Merge gene content
-merge_midas.py genes <merged_dir> -i <sample_dir_1>,<sample_dir_2>
+## Common Downstream Analyses
 
-# Merge SNPs
-merge_midas.py snps <merged_dir> -i <sample_dir_1>,<sample_dir_2>
-```
+Once results are merged, the output files (typically tab-delimited) can be used for:
+*   **Strain Tracking**: Using rare SNPs to identify identical strains across different samples or time points.
+*   **Phylogenetic Trees**: Building core-genome trees from the merged SNP data.
+*   **Pangenome Dynamics**: Analyzing gene gain/loss events across different environments or host conditions.
 
-## Expert Tips and Best Practices
 
-- **Resuming Interrupted Runs:** Use the `--resume` flag to pick up where a process left off without re-calculating completed steps.
-- **Handling Long Genes:** If encountering issues with VSEARCH during gene content prediction, use the `--max_length` flag to prevent errors associated with exceptionally long sequences.
-- **Alignment Filtering:** Use the `--aln_cov` flag to set a minimum alignment coverage threshold, ensuring that only high-quality mappings contribute to SNP and gene calls.
-- **SNP Types:** You can specify the type of SNPs to report (e.g., synonymous vs. non-synonymous) using the `--snp_type` flag during the SNP calling or merging phase.
-- **Parallelization:** MIDAS supports multi-threading. Always specify the number of available cores to significantly reduce execution time for the mapping steps.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| merge_midas.py | merge MIDAS results across metagenomic samples |
+| run_midas.py | Estimate species abundance and intra-species genomic variation from an individual metagenome |
 
 ## Reference documentation
-- [MIDAS Main Repository](./references/github_com_snayfach_MIDAS.md)
-- [Bioconda MIDAS Overview](./references/anaconda_org_channels_bioconda_packages_midas_overview.md)
-- [MIDAS Documentation Index](./references/github_com_snayfach_MIDAS_tree_master_docs.md)
+- [An integrated metagenomics pipeline for strain profiling reveals novel patterns of bacterial transmission and biogeography](./references/genome_cshlp_org_content_26_11_1612.md)
+- [MIDAS GitHub Repository Overview](./references/github_com_snayfach_MIDAS.md)
+- [MIDAS Commit History and Flag Updates](./references/github_com_snayfach_MIDAS_commits_master.md)

@@ -1,59 +1,57 @@
 ---
 name: batch_brb
-description: Automates best reciprocal BLAST and phylogenetic analysis using FastTree. Use when user asks to identify orthologs across multiple sequences and organisms.
+description: batch_brb automates a two-way reciprocal BLAST process to identify orthologous sequences between different organisms. Use when user asks to identify orthologs, perform best reciprocal BLAST, or automate sequence alignment and tree generation for divergent sequences.
 homepage: https://github.com/erin-r-butterfield/batch_brb
 ---
 
 
 # batch_brb
 
-yaml
-name: batch_brb
-description: Automates best reciprocal BLAST and phylogenetic analysis using FastTree. Use when needing to identify orthologs across multiple sequences and organisms, especially for large-scale analyses where manual searching is impractical.
----
 ## Overview
 
-batch_brb is a command-line tool designed to streamline the process of identifying orthologs through best reciprocal BLAST. It automates the search and filtering steps, making it efficient for analyzing a moderate to large number of sequences. The tool helps overcome limitations of standard ortholog identification methods by handling organism availability and divergent sequences, though user oversight for excluding false positives is still recommended.
+`batch_brb` is a command-line tool designed to overcome the limitations of manual ortholog searching, particularly when dealing with divergent sequences or organisms not well-represented in standard databases. It automates a two-way BLAST process: first searching query sequences against a target database, then performing a reverse BLAST of those hits back against the original source organism. Sequences are confirmed as orthologs only when these hits match reciprocally. This tool is especially useful for researchers needing to maintain high flexibility in hit selection criteria (coverage and hit count) while processing moderate to large datasets.
 
-## Usage Instructions
+## Installation and Setup
 
-batch_brb is available as a Bioconda package. Ensure you have Conda and Bioconda installed.
-
-### Installation
+The tool is distributed via Bioconda. To initialize the environment:
 
 ```bash
+# Create and activate the environment
 conda create -n batch_brb batch_brb
 conda activate batch_brb
+
+# Run the setup script in your desired working directory
+batch_brb_setup
 ```
 
-### Core Functionality: Best Reciprocal BLAST
+## Core Workflow
 
-The primary function of batch_brb is to perform best reciprocal BLAST to identify orthologs. This involves a two-step BLAST process:
+The Best Reciprocal BLAST procedure follows these logic steps:
 
-1.  **Initial BLAST:** Search query sequences against a user-defined database.
-2.  **Reciprocal BLAST:** Search the top hits from the initial BLAST back against the organism of the original query sequences.
+1.  **Forward BLAST**: Search query sequences against a user-created database.
+2.  **Filtering**: Extract the top *x* hits per query per organism, filtered by a minimum query coverage *y*.
+3.  **Reverse BLAST**: Search the extracted hits back against the genome/proteome of the original query sequences.
+4.  **Reciprocal Validation**: Identify matches where the reverse BLAST top hit corresponds to the original query.
+5.  **Phylogeny**: Automate sequence alignment and tree generation using FastTree.
 
-Sequences are considered orthologs if they are reciprocal best hits and meet user-defined criteria for coverage.
+## CLI Best Practices
 
-### Key Parameters and Workflow
+*   **Database Preparation**: Ensure your target databases are properly formatted for BLAST+ before running the batch process.
+*   **Hit Selection (x)**: Start with a lower number of hits (e.g., top 1-5) to reduce noise, increasing only if searching for complex gene families or highly divergent sequences.
+*   **Coverage Filtering (y)**: Use a coverage threshold (e.g., 50-70%) to ensure hits represent functional orthologs rather than isolated conserved domains.
+*   **Manual Verification**: Because `batch_brb` is designed for maximum coverage, always perform a post-run analysis of the output to exclude potential paralogs or "mishits" that passed the reciprocal filter.
+*   **Phylogenetic Analysis**: The tool integrates with FastTree; ensure your input sequences are of sufficient quality and length for meaningful tree topology.
 
-While specific command-line arguments are not detailed in the provided documentation, the general workflow involves:
 
-1.  **Preparing your database:** Ensure your target sequences are in a format suitable for BLAST.
-2.  **Running batch_brb:** Execute the tool with your query sequences and database.
-3.  **Specifying criteria:** The tool allows users to define:
-    *   `x`: The number of top hits to extract per query per organism in the initial BLAST.
-    *   `y`: The minimum query coverage percentage required for hits.
-    *   Identical hits are excluded from the hit count.
 
-### Best Practices and Expert Tips
+## Subcommands
 
-*   **Leverage Bioconda:** Installing via Conda simplifies dependency management.
-*   **Understand the Parameters:** Carefully choose `x` (number of hits) and `y` (query coverage) to balance sensitivity and specificity. Higher `x` and `y` values can increase the stringency of ortholog identification.
-*   **User Analysis is Crucial:** batch_brb automates data collection but requires user interpretation to exclude false positives and paralogs. Review the identified orthologs carefully.
-*   **Consult the Manual:** For detailed usage instructions, command-line options, and advanced configurations, refer to the `batch_brb_manual` located in the `documentation` folder of the repository.
+| Command | Description |
+|---------|-------------|
+| Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, with options to use LOESS-based methods. |
+| Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, can call different underlying batch correction methods. |
 
 ## Reference documentation
 
-- [batch_brb README](./references/github_com_erin-r-butterfield_batch_brb.md)
-- [batch_brb Documentation Folder](./references/github_com_erin-r-butterfield_batch_brb_tree_main_documentation.md)
+- [batch_brb GitHub Repository](./references/github_com_erin-r-butterfield_batch_brb_blob_main_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_batch_brb_overview.md)

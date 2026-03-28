@@ -1,6 +1,6 @@
 ---
 name: mkdesigner
-description: MKDesigner automates the design of laboratory-ready PCR primers from NGS data by integrating variant calling, primer design, and specificity checking. Use when user asks to identify genetic markers between lines, design SNP or INDEL primers, or generate physical maps for fine mapping.
+description: MKDesigner is a bioinformatics pipeline that automates the identification of genomic polymorphisms and the design of specific PCR primers for genotyping. Use when user asks to call SNPs or InDels, design primers for markers, or generate physical maps for fine mapping projects.
 homepage: https://github.com/KChigira/mkdesigner/
 ---
 
@@ -9,52 +9,59 @@ homepage: https://github.com/KChigira/mkdesigner/
 
 ## Overview
 
-MKDesigner is a specialized bioinformatics tool designed to automate the transition from raw Next-Generation Sequencing (NGS) data to laboratory-ready PCR primers. It replaces the laborious process of manual primer design and specificity checking by integrating variant calling, Primer3-based design, and BLAST-based specificity searches into a streamlined command-line workflow. Use this skill to identify markers for fine mapping, variety identification, or any application requiring physical DNA markers between two or more genetic lines.
+MKDesigner is a specialized bioinformatics pipeline that automates the transition from raw genomic data to lab-ready PCR primers. It streamlines the identification of polymorphic markers—specifically Single Nucleotide Polymorphisms (SNPs) and Insertion-Deletions (InDels)—between different plant or animal lines. By integrating variant calling, primer design, and physical mapping, it eliminates the manual labor of designing primers one-by-one for fine mapping or genotyping projects.
 
 ## Core Workflow
 
-The tool follows a deterministic three-step procedure. Each step generates the input required for the next.
+The tool operates in three sequential stages. Each stage generates an output directory used by the subsequent command.
 
-### 1. Variant Calling (mkvcf)
-Generate a multi-sample VCF file from aligned reads (BAM files).
-- **Command**: `mkvcf -r <ref.fasta> -b <lineA.bam> -b <lineB.bam> -n lineA -n lineB -O <output_prefix> --cpu <int>`
-- **Requirement**: You must provide at least two BAM files and corresponding names to identify polymorphisms between them.
+### 1. Haplotype Calling (`mkvcf`)
+Generates a VCF file from aligned BAM files.
+- **Requirement**: At least two BAM files are needed to identify polymorphisms between lines.
+- **Key Pattern**:
+  ```bash
+  mkvcf -r ref.fasta -b lineA.bam -b lineB.bam -n lineA -n lineB -O project_prefix --cpu 4
+  ```
+- **Tip**: Ensure variety names (`-n`) match the order of BAM files (`-b`).
 
-### 2. Primer Design (mkprimer)
-Design primers for the variants identified in the previous step.
-- **Command**: `mkprimer -r <ref.fasta> -V <input.vcf> -n1 <lineA> -n2 <lineB> -O <output_prefix> --type <SNP|INDEL>`
-- **Key Parameters**:
-    - `--type`: Specify `SNP` or `INDEL` depending on the desired marker type.
-    - `--target`: Focus on a specific region (e.g., `chr01:1000000-2000000`) for fine mapping.
-    - `--mindep` / `--maxdep`: Filter variants based on read depth to ensure high-quality calls.
-    - `--limit`: Set the maximum number of primer design attempts to balance runtime and discovery.
+### 2. Primer Design (`mkprimer`)
+Identifies markers and designs primers using Primer3, then checks specificity with BLAST.
+- **Key Pattern**:
+  ```bash
+  mkprimer -r ref.fasta -V project_mkvcf/output.vcf -n1 lineA -n2 lineB -O project_prefix --type SNP
+  ```
+- **Optimization Parameters**:
+  - `--type`: Choose `SNP` or `INDEL`.
+  - `--target`: Focus on a specific region (e.g., `chr01:1000000-2000000`) to save time.
+  - `--min_prodlen` / `--max_prodlen`: Set based on your intended gel electrophoresis resolution (default range is typically 150-280bp).
+  - `--limit`: Use to cap the number of attempts if the genome is highly polymorphic.
 
-### 3. Marker Selection and Visualization (mkselect)
-Filter the designed primers to a manageable number and generate a physical map.
-- **Command**: `mkselect -i <ref.fai> -V <primers.vcf> -n <int> -O <output_prefix>`
-- **Output**: Produces a `.tsv` file with primer sequences and amplicon data, and a `.png` visualization of marker distribution across chromosomes.
+### 3. Marker Selection and Mapping (`mkselect`)
+Filters the designed primers to a manageable number and generates a physical map.
+- **Key Pattern**:
+  ```bash
+  mkselect -i project_mkprimer/for_draw.fai -V project_mkprimer/output_added.vcf -n 20 -O project_prefix
+  ```
+- **Output**: Produces a `.tsv` file with final primer sequences and a `.png` visualization of marker distribution across chromosomes.
 
-## Expert CLI Patterns
+## Expert Tips
 
-### Designing Common Markers for Multiple Varieties
-To find markers that are common across several lines (e.g., comparing a group of resistant lines against a group of susceptible lines), specify multiple names for the `-n1` and `-n2` parameters:
-`mkprimer -r ref.fa -V all.vcf -n1 Res1 -n1 Res2 -n2 Sus1 -n2 Sus2 -O common_markers --type SNP`
+- **Environment**: Always run within a dedicated conda environment to manage dependencies like GATK4, Picard, and Primer3.
+- **Depth Filtering**: Use `--mindep` and `--maxdep` in `mkprimer` to exclude low-confidence variants or repetitive regions that might cause PCR failure.
+- **Phased Data**: Version 0.5.3+ supports phased genotypes (e.g., `0|0`, `1|1`), which is critical for accurate marker design in heterozygous or polyploid species.
+- **Specificity**: If `mkprimer` is slow, it is likely performing BLAST searches for primer specificity. Use `--blast_timeout` to skip markers in highly repetitive regions.
 
-### Optimizing for Specific PCR Conditions
-Adjust product length and primer size to match laboratory protocols:
-`mkprimer ... --min_prodlen 150 --opt_prodlen 200 --max_prodlen 300 --primer_min_size 20 --primer_opt_size 24 --primer_max_size 28`
 
-### Handling Repetitive Regions
-If the BLAST specificity search is taking too long due to repetitive sequences, use the `--blast_timeout` parameter (default 60.0s) to skip problematic variants:
-`mkprimer ... --blast_timeout 30.0`
 
-## Best Practices
+## Subcommands
 
-- **Environment**: Install via Bioconda (`conda install mkdesigner -c bioconda -c conda-forge`) to ensure all dependencies like GATK4, BLAST, and Primer3 are correctly configured.
-- **Memory**: Ensure the system has >16 GB RAM, especially for large reference genomes or high-depth BAM files.
-- **Input Quality**: Use sorted and indexed BAM files. The `mkvcf` command expects standard alignment formats.
-- **Marker Density**: When using `mkselect`, if you need to see all designed markers on the map regardless of the count, set `-n` to a very high number (e.g., `10000`).
+| Command | Description |
+|---------|-------------|
+| mkprimer | MKDesigner version 0.5.3 |
+| mkselect | Selects markers based on various criteria. |
+| mkvcf | MKDesigner version 0.5.3 |
 
 ## Reference documentation
-- [MKDesigner User Guide](./references/github_com_KChigira_mkdesigner.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_mkdesigner_overview.md)
+
+- [MKDesigner User Guide](./references/github_com_KChigira_mkdesigner_blob_main_README.md)
+- [MKDesigner Repository Overview](./references/github_com_KChigira_mkdesigner.md)

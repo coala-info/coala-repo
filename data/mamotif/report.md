@@ -178,3 +178,6 @@ MotifScan results for both samples:
     mamotif integrate -i B_MAvalues.xls -m B_motifscan/motif_sites_numbers.xls -n -o <path>
 ```
 
+
+## Metadata
+- **Skill**: not generated

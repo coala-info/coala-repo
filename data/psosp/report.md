@@ -56,3 +56,6 @@ options:
                         checkv reference database path (optional)
 ```
 
+
+## Metadata
+- **Skill**: generated

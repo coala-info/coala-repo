@@ -1,6 +1,6 @@
 ---
 name: genview
-description: genview automates the retrieval of genomic sequences and the alignment of gene-centric flanking regions to visualize synteny. Use when user asks to build a database of genetic environments, fetch genomes from NCBI by taxa or accession, or generate comparative maps of target genes.
+description: GEnView automates the extraction of genomic flanking sequences and generates phylogeny-aware interactive visualizations to compare gene synteny across multiple organisms. Use when user asks to build genomic databases from NCBI or local files, investigate the genomic context of target proteins, or generate comparative visualizations of gene neighborhoods.
 homepage: https://github.com/EbmeyerSt/GEnView.git
 ---
 
@@ -9,62 +9,57 @@ homepage: https://github.com/EbmeyerSt/GEnView.git
 
 ## Overview
 
-genview (GEnView) is a specialized tool for gene-centric comparative genomics. It automates the process of fetching genomic sequences, identifying target genes, extracting their flanking regions (typically 20kbp), and aligning these environments to visualize synteny. The workflow is split into two primary phases: database construction (`genview-makedb`) and interactive visualization (`genview-visualize`).
+GEnView is a specialized tool for investigating the genomic context of target proteins across multiple organisms. It automates the process of fetching genomic data from NCBI (or using local files), identifying target genes, extracting their flanking sequences (typically 20kbp), and performing multi-sequence alignments. The final output is a phylogeny-aware interactive visualization that allows researchers to compare gene content and synteny visually. Use this skill to guide the creation of genomic databases and the generation of comparative visualizations.
 
-## Database Construction (genview-makedb)
+## Core Workflow
 
-The first step involves searching for target genes and building a local SQLite3 database of their genetic environments.
+### 1. Database Creation (`genview-makedb`)
+The first step is to build a SQLite database containing the target genes and their environments.
 
-### Common CLI Patterns
-
-**1. Searching NCBI by Taxon**
-To download and process all genomes for a specific genus or species:
+**Basic command structure:**
 ```bash
-genview-makedb -d output_dir -db target_genes.fasta --taxa "Aeromonas" --assemblies --plasmids
+genview-makedb -d <output_dir> -db <ref_proteins.fasta> --taxa '<species_name>' --assemblies --plasmids
 ```
 
-**2. Using Local Genomes**
-To analyze your own assembly files instead of downloading from NCBI:
+**Key Parameters:**
+- `-db`: A FASTA file containing **amino acid sequences** of the proteins you are looking for.
+- `--taxa`: Specify one or more taxa (e.g., `'Escherichia coli' 'Salmonella'`). Use `'all'` with caution as it can trigger massive downloads.
+- `--accessions`: Use a CSV file with one NCBI accession per row instead of taxa names.
+- `--local`: Path to a directory of local FASTA files if not using NCBI.
+- `--flanking_length`: Distance to extract upstream/downstream (default is 20000 bp).
+- `--uniprot_db`: Path to a Diamond-indexed UniProt database for annotating flanking ORFs. If omitted, the tool will attempt to download it.
+
+### 2. Visualization (`genview-visualize`)
+Once the database is created, generate the interactive HTML comparison.
+
+**Basic command structure:**
 ```bash
-genview-makedb -d output_dir -db target_genes.fasta --local /path/to/local/fasta_files/
+genview-visualize -db <path_to_db> -gene '<gene_name>' -id <identity_cutoff>
 ```
 
-**3. Processing Specific Accessions**
-Use a CSV file containing one NCBI accession per row (e.g., GCA_006364295.1):
-```bash
-genview-makedb -d output_dir -db target_genes.fasta --accessions accessions.csv --assemblies
-```
+**Key Parameters:**
+- `-gene`: The name/prefix of the gene to extract (e.g., `per-` to find PER-1, PER-2, etc.).
+- `--compress`: Highly recommended for large datasets; it removes sequences that are >95% identical to simplify the visualization.
+- `--custom_colors`: Path to a tab-separated file to color-code specific gene classes (e.g., `transporter [tab] mfs,pump [tab] rgb(255,0,0)`).
 
-### Expert Tips for Database Creation
-*   **Identity and Coverage:** Use `-id` (identity) and `-scov` (subject coverage) to filter hits. For example, `-id 90 -scov 80` ensures only high-quality matches are stored.
-*   **Flanking Regions:** The default flanking length is 20kb. Adjust this using `--flanking_length` if you need to see more or less of the surrounding genetic context.
-*   **Performance:** Use the `-p` flag to specify the number of CPU cores for parallel processing.
-*   **Annotation:** If you have a local UniprotKB diamond database, provide it via `--uniprot_db` to speed up the annotation of flanking ORFs.
+## Expert Tips and Best Practices
 
-## Visualization (genview-visualize)
+- **Reference FASTA Headers**: Keep headers in your reference protein FASTA file extremely simple. Avoid special characters and the pipe (`|`) symbol. GEnView uses these names to group genes during visualization.
+- **Local File Headers**: When using `--local`, ensure headers are clean. GEnView splits headers at the first space; the first string must be unique.
+- **Identity Cutoffs**: Use `-id` and `-scov` (subject coverage) in `genview-makedb` to filter out weak hits early. A common starting point is 80% for both.
+- **Updating Databases**: Use the `--update` flag with `genview-makedb` to add new genomes to an existing directory without rebuilding the entire database.
+- **Memory Management**: For large-scale searches, specify the number of CPU cores using `-p`.
+- **Interactive Exploration**: The output `interactive_visualization.html` allows you to click on genes to see nucleotide sequences or click the lines between genes to see the full flanking sequence.
 
-Once the database is created, use the visualization tool to generate the comparative maps.
 
-### Common CLI Patterns
 
-**1. Basic Visualization**
-```bash
-genview-visualize -gene "target_gene_name" -db output_dir/genview.db -id 90
-```
+## Subcommands
 
-**2. Filtering and Customization**
-Limit the visualization to specific taxa or change the node connection style:
-```bash
-genview-visualize -gene "target_gene_name" -db output_dir/genview.db -id 90 --taxa "Escherichia coli" --nodes solid
-```
-
-## Best Practices and Warnings
-
-*   **Avoid `--taxa 'all'`:** This command will attempt to download the entire NCBI database (>4TB), which can take days and exhaust storage. Always specify target taxa or accessions.
-*   **Pre-analysis:** If you are unsure which taxa contain your gene, perform a manual BLAST on the NCBI website first to identify relevant groups before running `genview-makedb`.
-*   **Database Updates:** Use the `--update` flag with `genview-makedb` to add new genomes to an existing project directory without re-processing everything.
-*   **Clean Runs:** If a previous run failed or you want to start fresh in the same directory, use the `--clean` flag to remove temporary files.
+| Command | Description |
+|---------|-------------|
+| genview-makedb | Creates sqlite3 database with genetic environment from genomes containing the provided reference gene(s). |
+| genview-visualize | Extract, visualize and annotate genes and genetic environments from genview database |
 
 ## Reference documentation
-- [GEnView GitHub Repository](./references/github_com_EbmeyerSt_GEnView.md)
-- [genview Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_genview_overview.md)
+- [GEnView GitHub Wiki](./references/github_com_EbmeyerSt_GEnView_wiki.md)
+- [GEnView Repository Overview](./references/github_com_EbmeyerSt_GEnView.md)

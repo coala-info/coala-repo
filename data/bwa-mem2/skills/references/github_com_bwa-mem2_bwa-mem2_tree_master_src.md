@@ -1,0 +1,291 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbwa-mem2%2Fbwa-mem2%2Ftree%2Fmaster%2Fsrc)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbwa-mem2%2Fbwa-mem2%2Ftree%2Fmaster%2Fsrc)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=bwa-mem2%2Fbwa-mem2)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bwa-mem2](/bwa-mem2)
+/
+**[bwa-mem2](/bwa-mem2/bwa-mem2)**
+Public
+
+* [Notifications](/login?return_to=%2Fbwa-mem2%2Fbwa-mem2) You must be signed in to change notification settings
+* [Fork
+  122](/login?return_to=%2Fbwa-mem2%2Fbwa-mem2)
+* [Star
+   825](/login?return_to=%2Fbwa-mem2%2Fbwa-mem2)
+
+* [Code](/bwa-mem2/bwa-mem2)
+* [Issues
+  100](/bwa-mem2/bwa-mem2/issues)
+* [Pull requests
+  12](/bwa-mem2/bwa-mem2/pulls)
+* [Actions](/bwa-mem2/bwa-mem2/actions)
+* [Security
+  0](/bwa-mem2/bwa-mem2/security)
+* [Insights](/bwa-mem2/bwa-mem2/pulse)
+
+Additional navigation options
+
+* [Code](/bwa-mem2/bwa-mem2)
+* [Issues](/bwa-mem2/bwa-mem2/issues)
+* [Pull requests](/bwa-mem2/bwa-mem2/pulls)
+* [Actions](/bwa-mem2/bwa-mem2/actions)
+* [Security](/bwa-mem2/bwa-mem2/security)
+* [Insights](/bwa-mem2/bwa-mem2/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [bwa-mem2](/bwa-mem2/bwa-mem2/tree/master)
+
+/
+
+# src
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/bwa-mem2/bwa-mem2/commits/master/src)
+
+History
+
+master
+
+## Breadcrumbs
+
+1. [bwa-mem2](/bwa-mem2/bwa-mem2/tree/master)
+
+/
+
+# src
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/bwa-mem2/bwa-mem2/tree/master) | | |
+| [FMI\_search.cpp](/bwa-mem2/bwa-mem2/blob/master/src/FMI_search.cpp "FMI_search.cpp") | | [FMI\_search.cpp](/bwa-mem2/bwa-mem2/blob/master/src/FMI_search.cpp "FMI_search.cpp") |  |  |
+| [FMI\_search.h](/bwa-mem2/bwa-mem2/blob/master/src/FMI_search.h "FMI_search.h") | | [FMI\_search.h](/bwa-mem2/bwa-mem2/blob/master/src/FMI_search.h "FMI_search.h") |  |  |
+| [bandedSWA.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bandedSWA.cpp "bandedSWA.cpp") | | [bandedSWA.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bandedSWA.cpp "bandedSWA.cpp") |  |  |
+| [bandedSWA.h](/bwa-mem2/bwa-mem2/blob/master/src/bandedSWA.h "bandedSWA.h") | | [bandedSWA.h](/bwa-mem2/bwa-mem2/blob/master/src/bandedSWA.h "bandedSWA.h") |  |  |
+| [bntseq.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bntseq.cpp "bntseq.cpp") | | [bntseq.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bntseq.cpp "bntseq.cpp") |  |  |
+| [bntseq.h](/bwa-mem2/bwa-mem2/blob/master/src/bntseq.h "bntseq.h") | | [bntseq.h](/bwa-mem2/bwa-mem2/blob/master/src/bntseq.h "bntseq.h") |  |  |
+| [bwa.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwa.cpp "bwa.cpp") | | [bwa.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwa.cpp "bwa.cpp") |  |  |
+| [bwa.h](/bwa-mem2/bwa-mem2/blob/master/src/bwa.h "bwa.h") | | [bwa.h](/bwa-mem2/bwa-mem2/blob/master/src/bwa.h "bwa.h") |  |  |
+| [bwamem.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwamem.cpp "bwamem.cpp") | | [bwamem.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwamem.cpp "bwamem.cpp") |  |  |
+| [bwamem.h](/bwa-mem2/bwa-mem2/blob/master/src/bwamem.h "bwamem.h") | | [bwamem.h](/bwa-mem2/bwa-mem2/blob/master/src/bwamem.h "bwamem.h") |  |  |
+| [bwamem\_extra.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwamem_extra.cpp "bwamem_extra.cpp") | | [bwamem\_extra.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwamem_extra.cpp "bwamem_extra.cpp") |  |  |
+| [bwamem\_pair.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwamem_pair.cpp "bwamem_pair.cpp") | | [bwamem\_pair.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwamem_pair.cpp "bwamem_pair.cpp") |  |  |
+| [bwt.h](/bwa-mem2/bwa-mem2/blob/master/src/bwt.h "bwt.h") | | [bwt.h](/bwa-mem2/bwa-mem2/blob/master/src/bwt.h "bwt.h") |  |  |
+| [bwtindex.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwtindex.cpp "bwtindex.cpp") | | [bwtindex.cpp](/bwa-mem2/bwa-mem2/blob/master/src/bwtindex.cpp "bwtindex.cpp") |  |  |
+| [fastmap.cpp](/bwa-mem2/bwa-mem2/blob/master/src/fastmap.cpp "fastmap.cpp") | | [fastmap.cpp](/bwa-mem2/bwa-mem2/blob/master/src/fastmap.cpp "fastmap.cpp") |  |  |
+| [fastmap.h](/bwa-mem2/bwa-mem2/blob/master/src/fastmap.h "fastmap.h") | | [fastmap.h](/bwa-mem2/bwa-mem2/blob/master/src/fastmap.h "fastmap.h") |  |  |
+| [kbtree.h](/bwa-mem2/bwa-mem2/blob/master/src/kbtree.h "kbtree.h") | | [kbtree.h](/bwa-mem2/bwa-mem2/blob/master/src/kbtree.h "kbtree.h") |  |  |
+| [khash.h](/bwa-mem2/bwa-mem2/blob/master/src/khash.h "khash.h") | | [khash.h](/bwa-mem2/bwa-mem2/blob/master/src/khash.h "khash.h") |  |  |
+| [kopen.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kopen.cpp "kopen.cpp") | | [kopen.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kopen.cpp "kopen.cpp") |  |  |
+| [kseq.h](/bwa-mem2/bwa-mem2/blob/master/src/kseq.h "kseq.h") | | [kseq.h](/bwa-mem2/bwa-mem2/blob/master/src/kseq.h "kseq.h") |  |  |
+| [ksort.h](/bwa-mem2/bwa-mem2/blob/master/src/ksort.h "ksort.h") | | [ksort.h](/bwa-mem2/bwa-mem2/blob/master/src/ksort.h "ksort.h") |  |  |
+| [kstring.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kstring.cpp "kstring.cpp") | | [kstring.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kstring.cpp "kstring.cpp") |  |  |
+| [kstring.h](/bwa-mem2/bwa-mem2/blob/master/src/kstring.h "kstring.h") | | [kstring.h](/bwa-mem2/bwa-mem2/blob/master/src/kstring.h "kstring.h") |  |  |
+| [ksw.cpp](/bwa-mem2/bwa-mem2/blob/master/src/ksw.cpp "ksw.cpp") | | [ksw.cpp](/bwa-mem2/bwa-mem2/blob/master/src/ksw.cpp "ksw.cpp") |  |  |
+| [ksw.h](/bwa-mem2/bwa-mem2/blob/master/src/ksw.h "ksw.h") | | [ksw.h](/bwa-mem2/bwa-mem2/blob/master/src/ksw.h "ksw.h") |  |  |
+| [kswv.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kswv.cpp "kswv.cpp") | | [kswv.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kswv.cpp "kswv.cpp") |  |  |
+| [kswv.h](/bwa-mem2/bwa-mem2/blob/master/src/kswv.h "kswv.h") | | [kswv.h](/bwa-mem2/bwa-mem2/blob/master/src/kswv.h "kswv.h") |  |  |
+| [kthread.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kthread.cpp "kthread.cpp") | | [kthread.cpp](/bwa-mem2/bwa-mem2/blob/master/src/kthread.cpp "kthread.cpp") |  |  |
+| [kthread.h](/bwa-mem2/bwa-mem2/blob/master/src/kthread.h "kthread.h") | | [kthread.h](/bwa-mem2/bwa-mem2/blob/master/src/kthread.h "kthread.h") |  |  |
+| [kvec.h](/bwa-mem2/bwa-mem2/blob/master/src/kvec.h "kvec.h") | | [kvec.h](/bwa-mem2/bwa-mem2/blob/master/src/kvec.h "kvec.h") |  |  |
+| [macro.h](/bwa-mem2/bwa-mem2/blob/master/src/macro.h "macro.h") | | [macro.h](/bwa-mem2/bwa-mem2/blob/master/src/macro.h "macro.h") |  |  |
+| [main.cpp](/bwa-mem2/bwa-mem2/blob/master/src/main.cpp "main.cpp") | | [main.cpp](/bwa-mem2/bwa-mem2/blob/master/src/main.cpp "main.cpp") |  |  |
+| [main.h](/bwa-mem2/bwa-mem2/blob/master/src/main.h "main.h") | | [main.h](/bwa-mem2/bwa-mem2/blob/master/src/main.h "main.h") |  |  |
+| [memcpy\_bwamem.cpp](/bwa-mem2/bwa-mem2/blob/master/src/memcpy_bwamem.cpp "memcpy_bwamem.cpp") | | [memcpy\_bwamem.cpp](/bwa-mem2/bwa-mem2/blob/master/src/memcpy_bwamem.cpp "memcpy_bwamem.cpp") |  |  |
+| [memcpy\_bwamem.h](/bwa-mem2/bwa-mem2/blob/master/src/memcpy_bwamem.h "memcpy_bwamem.h") | | [memcpy\_bwamem.h](/bwa-mem2/bwa-mem2/blob/master/src/memcpy_bwamem.h "memcpy_bwamem.h") |  |  |
+| [profiling.cpp](/bwa-mem2/bwa-mem2/blob/master/src/profiling.cpp "profiling.cpp") | | [profiling.cpp](/bwa-mem2/bwa-mem2/blob/master/src/profiling.cpp "profiling.cpp") |  |  |
+| [profiling.h](/bwa-mem2/bwa-mem2/blob/master/src/profiling.h "profiling.h") | | [profiling.h](/bwa-mem2/bwa-mem2/blob/master/src/profiling.h "profiling.h") |  |  |
+| [read\_index\_ele.cpp](/bwa-mem2/bwa-mem2/blob/master/src/read_index_ele.cpp "read_index_ele.cpp") | | [read\_index\_ele.cpp](/bwa-mem2/bwa-mem2/blob/master/src/read_index_ele.cpp "read_index_ele.cpp") |  |  |
+| [read\_index\_ele.h](/bwa-mem2/bwa-mem2/blob/master/src/read_index_ele.h "read_index_ele.h") | | [read\_index\_ele.h](/bwa-mem2/bwa-mem2/blob/master/src/read_index_ele.h "read_index_ele.h") |  |  |
+| [runsimd.cpp](/bwa-mem2/bwa-mem2/blob/master/src/runsimd.cpp "runsimd.cpp") | | [runsimd.cpp](/bwa-mem2/bwa-mem2/blob/master/src/runsimd.cpp "runsimd.cpp") |  |  |
+| [sais.h](/bwa-mem2/bwa-mem2/blob/master/src/sais.h "sais.h") | | [sais.h](/bwa-mem2/bwa-mem2/blob/master/src/sais.h "sais.h") |  |  |
+| [utils.cpp](/bwa-mem2/bwa-mem2/blob/master/src/utils.cpp "utils.cpp") | | [utils.cpp](/bwa-mem2/bwa-mem2/blob/master/src/utils.cpp "utils.cpp") |  |  |
+| [utils.h](/bwa-mem2/bwa-mem2/blob/master/src/utils.h "utils.h") | | [utils.h](/bwa-mem2/bwa-mem2/blob/master/src/utils.h "utils.h") |  |  |
+| View all files | | |
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

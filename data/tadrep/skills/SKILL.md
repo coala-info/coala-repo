@@ -1,6 +1,6 @@
 ---
 name: tadrep
-description: TaDReP is a bioinformatics tool used to identify and reconstruct plasmid sequences from draft genome assemblies using a reference-based approach. Use when user asks to setup plasmid databases, extract reference sequences, characterize and cluster plasmids, detect plasmids in draft assemblies, or visualize plasmid reconstructions.
+description: TaDReP is a bioinformatics tool that detects and reconstructs plasmid sequences from fragmented bacterial draft genomes using a reference-based alignment approach. Use when user asks to identify plasmids in draft assemblies, reconstruct plasmid scaffolds from contigs, or visualize plasmid alignments against reference backbones.
 homepage: https://github.com/oschwengers/tadrep
 ---
 
@@ -8,70 +8,73 @@ homepage: https://github.com/oschwengers/tadrep
 # tadrep
 
 ## Overview
-TaDReP (Targeted Detection and Reconstruction of Plasmids) is a specialized bioinformatics tool designed to bridge the gap between draft genome assemblies and complete plasmid sequences. It uses a reference-based approach to identify plasmid-associated contigs, filter them based on coverage and identity thresholds, and reconstruct them into scaffolds or pseudomolecules. This skill provides the necessary command-line patterns to manage the full workflow, from database preparation to final visualization.
 
-## Core Workflow & CLI Patterns
+TaDReP (Targeted Detection and Reconstruction of Plasmids) is a specialized bioinformatics tool designed to resolve plasmid sequences within fragmented bacterial draft genomes. Instead of relying on de novo plasmid assembly, which often fails in short-read data, TaDReP uses a reference-based approach. It aligns draft contigs to known plasmid backbones using Blast+, applies rigorous coverage and identity filters, and then reorders and merges matching contigs into scaffolds or pseudomolecules.
 
-### 1. Environment Setup
-Before running analyses, initialize the required incompatibility (Inc) type databases.
+## Installation and Setup
+
+Install TaDReP via Conda to ensure all third-party dependencies (like Blast+) are correctly configured:
+
 ```bash
-tadrep setup -o <output_dir> --verbose
+conda install -c conda-forge -c bioconda tadrep
 ```
 
-### 2. Reference Acquisition
-You can either download public databases or extract your own references from existing genomes.
+Alternatively, use pip for the Python package:
 
-**Download Public Databases:**
 ```bash
-# Download RefSeq plasmid database
-tadrep database --type refseq -o <output_dir>
-
-# Download PLSDB database
-tadrep database --type plsdb -o <output_dir>
+python3 -m pip install --user tadrep
 ```
 
-**Extract Custom References:**
-```bash
-# Extract all sequences except the longest (usually the chromosome)
-tadrep extract --type genome --discard-longest 1 --files complete_genome.fna -o <output_dir>
+## Core Workflow and CLI Usage
 
-# Extract sequences based on specific header keywords (e.g., "plasmid")
-tadrep extract --type draft --header "plasmid" --files assembly.fna -o <output_dir>
+TaDReP operates through a series of submodules. The typical workflow involves preparing a reference database and then running detection on draft assemblies.
+
+### 1. Database Preparation
+Before detection, you must have reference plasmid sequences. Use the `extract` submodule to pull sequences from existing closed genomes or public databases (RefSeq/PLSDB).
+
+### 2. Detecting Plasmids
+The primary command for screening genomes. Provide your draft assemblies and the reference plasmid database.
+
+```bash
+TaDReP detect --threads 8 --output ./results --input draft_genomes/*.fasta --db reference_plasmids.fasta
 ```
 
-### 3. Reference Processing
-Process your extracted or downloaded references to make them searchable and categorized.
-```bash
-# Characterize plasmids (GC content, Inc types, conjugation genes)
-tadrep characterize -o <output_dir>
+### 3. Visualizing Results
+Generate PDF maps showing how your draft contigs align against the reference plasmid backbone.
 
-# Cluster related plasmids to reduce redundancy
-tadrep cluster -o <output_dir>
+```bash
+TaDReP visualize --input ./results/summary.tsv --output ./plots
 ```
 
-### 4. Detection and Reconstruction
-This is the primary analysis step where draft genomes are screened against the processed references.
-```bash
-# Detect plasmids in one or more draft assemblies
-tadrep detect --threads 8 -o <output_dir> --files draft_1.fna draft_2.fna.gz
-```
+## Key Outputs
 
-### 5. Visualization
-Generate PDF maps showing how draft contigs align against the detected reference plasmid backbones.
-```bash
-tadrep visualize -o <output_dir>
-```
+TaDReP generates several files for each analyzed genome:
+- **Summary TSV**: `<genome>-summary.tsv` contains detailed per-contig alignment statistics.
+- **Reconstructed Contigs**: `<genome>-<plasmid>-contigs.fna` provides the ordered and rearranged contigs.
+- **Pseudomolecule**: `<genome>-<plasmid>-pseudo.fna` contains the N-merged scaffold of the reconstructed plasmid.
+- **Visual Map**: `<genome>-<plasmid>.pdf` provides a graphical representation of the alignment.
+- **Cohort Analysis**: If multiple genomes are processed, `plasmids.tsv` provides a presence/absence matrix across the entire set.
 
-## Expert Tips & Best Practices
+## Expert Tips and Best Practices
 
-- **Thread Management**: Use the `--threads` (or `-t`) flag during the `detect` step, as Blast+ alignments are computationally intensive.
-- **Input Formats**: TaDReP natively supports gzipped fasta files (`.fna.gz`), saving disk space during large cohort studies.
-- **Output Interpretation**:
-    - `<genome>-summary.tsv`: Use this for per-contig alignment statistics.
-    - `<genome>-<plasmid>-pseudo.fna`: This is the best file for downstream comparative genomics as it represents the reconstructed plasmid sequence.
-    - `plasmids.tsv`: A presence/absence matrix ideal for population-scale plasmid epidemiology.
-- **Filtering Logic**: If `extract --type genome` is capturing the chromosome, increase `--discard-longest` to ensure only smaller extrachromosomal elements are kept as references.
+- **Thread Optimization**: Always use the `--threads` (or `-t`) flag to speed up the Blast+ alignment phase, especially when processing large cohorts.
+- **Reference Selection**: The quality of reconstruction depends heavily on the similarity between your draft plasmid and the reference. Use the `cluster` submodule to reduce redundancy in your reference database if it is very large.
+- **Filtering Thresholds**: TaDReP uses strict default thresholds for coverage and identity. If you suspect a plasmid is present but not being detected, check the `tadrep.log` file to see if contigs were filtered out during the alignment phase.
+- **Input Formats**: TaDReP natively handles zipped fasta files, saving disk space when working with large genomic datasets.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| tadrep characterize | Import json file from a given database path into working directory |
+| tadrep_cluster | Cluster plasmids based on sequence identity and length difference. |
+| tadrep_database | Import external databases for TaDReP. |
+| tadrep_detect | Detects plasmids in a draft genome. |
+| tadrep_extract | Extracts sequences from input files based on specified criteria. |
+| tadrep_visualize | Visualize TaDReP results |
 
 ## Reference documentation
-- [TaDReP GitHub Repository](./references/github_com_oschwengers_tadrep.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_tadrep_overview.md)
+- [TaDReP Main README](./references/github_com_oschwengers_tadrep_blob_main_README.md)
+- [TaDReP Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_tadrep_overview.md)

@@ -513,3 +513,6 @@ required arguments:
   --fasta FASTA  fasta file
 ```
 
+
+## Metadata
+- **Skill**: generated

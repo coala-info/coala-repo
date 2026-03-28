@@ -56,3 +56,6 @@ more information on each of the possible RapMap
 commands.
 ```
 
+
+## Metadata
+- **Skill**: generated

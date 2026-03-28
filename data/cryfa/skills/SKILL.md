@@ -1,6 +1,6 @@
 ---
 name: cryfa
-description: Cryfa secures genomic data by combining AES encryption with sequence compaction for FASTA and FASTQ formats. Use when user asks to encrypt or decrypt genomic files, compact sequence data, or generate secure encryption keys.
+description: "Cryfa is a security and compression utility that encrypts genomic data and compacts FASTA/FASTQ sequences. Use when user asks to encrypt or decrypt genomic files, compress FASTA or FASTQ datasets, or generate secure cryptographic keys for data protection."
 homepage: https://github.com/smortezah/cryfa
 ---
 
@@ -8,60 +8,64 @@ homepage: https://github.com/smortezah/cryfa
 # cryfa
 
 ## Overview
-Cryfa is a specialized security tool for genomic data that combines AES encryption with sequence compaction. While it can encrypt any text-based genomic format (such as VCF or SAM), it features a unique capability to compact FASTA and FASTQ sequences by approximately a factor of 3 during the encryption process. It is designed to be used within bioinformatics pipelines, utilizing standard output streams for easy integration with other tools.
 
-## Installation
-The most efficient way to install cryfa is via Bioconda:
+Cryfa is a specialized security and compression utility tailored for genomic datasets. It serves two primary functions: providing robust encryption for text-based genomic formats (including VCF, SAM, and BAM) and compacting FASTA/FASTQ sequences by a factor of approximately 3x. The tool is designed to be pipeline-friendly, utilizing standard output streams and offering multithreaded performance for large-scale data processing.
+
+## Command Line Usage
+
+### Basic Operations
+
+**Encrypt and Compact (FASTA/FASTQ)**
+Cryfa automatically detects the format and applies compaction to FASTA/FASTQ files during encryption.
 ```bash
-conda install bioconda::cryfa
+./cryfa -k pass.txt input.fq > compressed_encrypted.cryfa
 ```
 
-## Key Management
-Cryfa requires a key file containing a password of at least 8 characters. For maximum security, use the included `keygen` utility to generate a strong password.
-
-1. Run the generator: `./keygen`
-2. Enter a raw password when prompted.
-3. Specify a filename (e.g., `key.txt`) to save the generated strong key.
-
-## Common CLI Patterns
-
-### FASTA/FASTQ Compaction and Encryption
-Cryfa automatically detects sequence formats and applies compaction by default.
+**Decrypt and Unpack**
+Use the `-d` flag to reverse the process.
 ```bash
-# Compact and encrypt a sequence file
-cryfa -k key.txt input.fastq > encrypted_data.cryfa
+./cryfa -k pass.txt -d compressed_encrypted.cryfa > original.fq
 ```
 
-### Decrypting and Unpacking
-Use the `-d` flag to return the data to its original state.
+**Encrypt Generic Genomic Data (VCF/SAM/BAM)**
+For non-sequence formats, Cryfa provides encryption without sequence-specific compaction.
 ```bash
-# Decrypt and restore original sequence data
-cryfa -k key.txt -d encrypted_data.cryfa > original.fastq
+./cryfa -k pass.txt input.vcf > encrypted.vcf.cryfa
 ```
 
-### Encrypting Non-Sequence Genomic Data
-For formats like VCF, SAM, or BAM, cryfa performs encryption without compaction.
-```bash
-# Encrypt a VCF file
-cryfa -k key.txt input.vcf > encrypted_vcf.cryfa
-```
+### Key Management
 
-### Forcing Encryption Without Compaction
-If you have a FASTA/FASTQ file but wish to skip the compaction step (e.g., for faster processing when storage is not a concern), use the `--force` flag.
-```bash
-# Encrypt sequence data without compacting
-cryfa -k key.txt -f input.fa > encrypted_only.cryfa
-```
+Cryfa requires a key file containing a password of at least 8 characters.
 
-## Expert Tips
-- **Threading**: For large genomic datasets, use the `-t` option to specify the number of threads and significantly decrease processing time.
-- **Format Agnosticism**: Cryfa detects file types by content rather than extension. You do not need to worry about specific file suffixes for the tool to recognize FASTA or FASTQ headers.
-- **Pipeline Integration**: Since cryfa outputs to `stdout`, you can pipe the results directly into other tools or compression utilities:
-  ```bash
-  cryfa -k key.txt input.fq | gzip > final_output.cryfa.gz
-  ```
-- **Shuffling**: By default, cryfa shuffles data for extra security. If your workflow requires maintaining specific block orders or you want to reduce CPU overhead, use `-s` to stop shuffling.
+1.  **Recommended Method (keygen):** Use the included `keygen` utility to generate a cryptographically strong password.
+    ```bash
+    ./keygen
+    ```
+    Follow the prompts to enter a raw password and specify a filename to save the generated strong key.
+
+2.  **Manual Method:** Create a simple text file with your password.
+    ```bash
+    echo "YourStrongPassword123!" > pass.txt
+    ```
+
+### Advanced Options
+
+| Option | Description |
+| :--- | :--- |
+| `-t [NUMBER]` | Set the number of threads for parallel processing. |
+| `-f`, `--force` | Force the tool to treat input as non-FASTA/FASTQ (disables compaction, performs shuffle and encryption only). |
+| `-s`, `--stop_shuffle` | Disables the shuffling phase of the encryption process. |
+| `-v`, `--verbose` | Enables verbose mode for detailed processing information. |
+
+## Expert Tips and Best Practices
+
+*   **Format Agnosticism:** Cryfa identifies file types by inspecting file headers rather than extensions. You do not need to rename files for the tool to recognize FASTA or FASTQ structures.
+*   **Pipeline Integration:** Since Cryfa outputs to `stdout`, it can be piped directly into other tools or compression utilities:
+    ```bash
+    ./cryfa -k pass.txt input.fa | gzip > final_output.fa.cryfa.gz
+    ```
+*   **Security Standards:** For maximum security, always use the `keygen` utility. A "strong" password should be at least 12 characters and include a mix of cases, digits, and symbols.
+*   **Performance:** When working with high-throughput sequencing data (large FASTQ files), always specify the `-t` flag matching your available CPU cores to significantly reduce processing time.
 
 ## Reference documentation
-- [Cryfa GitHub Repository](./references/github_com_smortezah_cryfa.md)
-- [Bioconda Cryfa Package Overview](./references/anaconda_org_channels_bioconda_packages_cryfa_overview.md)
+- [Cryfa GitHub README](./references/github_com_smortezah_cryfa_blob_master_README.md)

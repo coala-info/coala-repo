@@ -1,6 +1,6 @@
 ---
 name: magetab-curation-scripts
-description: This package provides a suite of Perl-based tools for validating, processing, and managing MAGE-TAB files and array designs. Use when user asks to validate IDF and SDRF files, check Expression Atlas eligibility, manage Array Design Files, or run automated submission tracking daemons.
+description: The magetab-curation-scripts suite provides Perl-based utilities for the validation and curation of functional genomics experiment metadata in MAGE-TAB format. Use when user asks to validate MAGE-TAB files, check array design format files, verify Expression Atlas eligibility, or perform curation tasks for genomics databases.
 homepage: https://github.com/ebi-gene-expression-group/perl-curation-scripts
 ---
 
@@ -9,74 +9,73 @@ homepage: https://github.com/ebi-gene-expression-group/perl-curation-scripts
 
 ## Overview
 
-The magetab-curation-scripts package provides a suite of Perl-based tools for handling MAGE-TAB (MicroArray Gene Expression Tabular) files. It enables curators to perform rigorous validation of Investigation Description Format (IDF) and Sample and Data Relationship Format (SDRF) files. Beyond simple syntax checking, the toolset evaluates experiments for Expression Atlas eligibility, processes Array Design Files (ADF), and manages automated submission daemons.
+The `magetab-curation-scripts` suite is a collection of Perl-based utilities specifically designed for the curation and validation of functional genomics experiments. It is primarily used by curators for the ArrayExpress and Expression Atlas databases to ensure that MAGE-TAB (MicroArray Gene Expression Tabular) files—including Investigation Description Format (IDF), Sample and Data Relationship Format (SDRF), and Array Design Format (ADF) files—are structurally sound, internally consistent, and meet the specific requirements for database ingestion.
 
-## Installation and Environment
-
-The scripts are available via Bioconda and require the `perl-atlas-modules` package to function correctly.
-
-```bash
-conda install -c bioconda magetab-curation-scripts
-```
-
-**Configuration Requirement:**
-Before running validation scripts, the `ArrayExpressSiteConfig.yml` file must be configured. Key parameters include:
-- `ADF_CHECKED_LIST` and `ATLAS_EXPT_CHECKED_LIST` for tracking.
-- `AUTOSUBS_DSN`, `AUTOSUBS_USERNAME`, and `AUTOSUBS_PASSWORD` for MySQL database interaction.
-- `AE2_LOAD_DIR` for specifying the loading directory.
-
-## Common CLI Patterns
+## Core CLI Patterns
 
 ### MAGE-TAB Validation
+The primary tool for experiment validation is `validate_magetab.pl`.
 
-The `validate_magetab.pl` script is the primary tool for checking submissions.
+*   **Full Validation**: Performs format checks, curation rules, data file existence checks, and Atlas eligibility.
+    ```bash
+    validate_magetab.pl -i path/to/idf.txt -d path/to/data_dir -c
+    ```
+*   **Lightweight Validation**: Runs only MAGE-TAB format and ArrayExpress loading checks (skips data files and Atlas checks).
+    ```bash
+    validate_magetab.pl -i /path/to/idf.txt -d path/to/sdrf_dir -x
+    ```
 
-**Full Validation:**
-Runs MAGE-TAB format validation, curation checks, data file verification, and Atlas eligibility checks.
+### Array Design (ADF) Checking
+Use `adf_checker.pl` to validate array design files for formatting and content errors.
+
 ```bash
-validate_magetab.pl -i path/to/idf.txt -d path/to/sdrf_and_data_dir -c
+adf_checker.pl -i <ADF_filename> -o <log_file>
 ```
+*   If `-o` is omitted, the script defaults to `<adf_name>.report`.
+*   The script returns exit code 0 for success, 1 for warnings, and 2 for errors.
 
-**Loading Check Only:**
-Runs only MAGE-TAB format and ArrayExpress (AE) loading checks, skipping data files and Atlas eligibility.
+### Expression Atlas Eligibility
+To specifically check if an experiment is suitable for the Expression Atlas:
+
 ```bash
-validate_magetab.pl -i /path/to/idf.txt -d path/to/sdrf_dir -x
+check_atlas_eligibility.pl -i <IDF_file> -d <data_dir>
 ```
+*   Use `-v` for verbose output to debug specific eligibility failures.
+*   Use `-m` if working with a merged IDF/SDRF file instead of separate files.
 
-### Array Design Management
+### Curation Utilities
+*   **Excluding Assays**: To comment out specific assays in an Atlas experiment XML configuration (e.g., due to low quality):
+    ```bash
+    comment_out_assays.pl -c experiment-configuration.xml -l missing_assays.txt -m "Excluded due to low quality"
+    ```
+*   **Manual ADF Insertion**: To insert an array design into the tracking database:
+    ```bash
+    magetab_insert_array.pl -f adf_file.txt -l <username>
+    ```
 
-To manually insert a new Array Design File (ADF) into the tracking system and trigger validation:
-```bash
-magetab_insert_array.pl -f adf_file_name.txt -l <username>
-```
+## Expert Tips and Best Practices
 
-### Submission Tracking Daemons
+*   **Configuration Dependency**: These scripts require `perl-atlas-modules` and a properly configured `ArrayExpressSiteConfig.yml`. Ensure that `ADF_CHECKED_LIST`, `ONTO_TERMS_LIST`, and database connection parameters (`AUTOSUBS_DSN`) are correctly defined in your environment.
+*   **Data Directory Resolution**: When running `validate_magetab.pl`, the `-d` flag is critical. If your SDRF and raw data files are not in the same directory as the IDF, you must explicitly point to their location.
+*   **Daemon Management**: For high-volume curation environments, use `launch_tracking_daemons.pl -p MAGE-TAB` to start a background process that monitors the submission database for "Waiting" experiments. Use the `-k` flag to safely kill running daemons before updates.
+*   **Single-Pass Processing**: If you need to process all pending submissions without leaving a persistent daemon running, use:
+    ```bash
+    single_use_tracking_daemon.pl -p MAGE-TAB -s
+    ```
 
-For automated processing of submissions marked as "Waiting" in the tracking database:
 
-**Start a MAGE-TAB checker daemon:**
-```bash
-launch_tracking_daemons.pl -p MAGE-TAB
-```
 
-**Single-run processing:**
-Processes all eligible experiments once and then exits without maintaining a persistent daemon instance.
-```bash
-single_use_tracking_daemon.pl -p MAGE-TAB -s
-```
+## Subcommands
 
-**Stop all daemons:**
-```bash
-launch_tracking_daemons.pl -k
-```
-
-## Expert Tips
-
-- **Eligibility Checks:** Use the `-c` flag in `validate_magetab.pl` specifically when the goal is to determine if an experiment meets the metadata requirements for inclusion in the Expression Atlas.
-- **Assay Management:** If specific assays need to be excluded from processing without deleting them from the SDRF, use `comment_out_assays.pl`.
-- **Format Conversion:** For legacy formats or specific platforms, utilize `gal2adf.pl` (GenePix Array List) or `nimblegen2adf.pl` to generate standard ADF files.
-- **Database Connectivity:** Most scripts interact with a MySQL backend. Ensure your environment has the necessary database drivers and that the credentials in the site configuration have appropriate read/write permissions for the `AUTOSUBS` tables.
+| Command | Description |
+|---------|-------------|
+| gal2adf.pl | Converts a GAL file to an ADF file. |
+| magetab_insert_array.pl | You must specify an ADF filename. |
+| validate_magetab.pl | Validates MAGE-TAB files. |
 
 ## Reference documentation
-- [Perl curation scripts README](./references/github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_README.md)
-- [magetab-curation-scripts Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_magetab-curation-scripts_overview.md)
+- [github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_README.md](./references/github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_README.md)
+- [github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_validate_magetab.pl.md](./references/github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_validate_magetab.pl.md)
+- [github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_adf_checker.pl.md](./references/github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_adf_checker.pl.md)
+- [github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_check_atlas_eligibility.pl.md](./references/github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_check_atlas_eligibility.pl.md)
+- [github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_comment_out_assays.pl.md](./references/github_com_ebi-gene-expression-group_perl-curation-scripts_blob_main_comment_out_assays.pl.md)

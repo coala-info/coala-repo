@@ -106,3 +106,6 @@ Outputs:
 - {out_dir}/hap2.vs.hap1.tsv: The Mapping between hap2 and hap1 names.
 ```
 
+
+## Metadata
+- **Skill**: generated

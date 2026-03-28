@@ -1,6 +1,6 @@
 ---
 name: metagraph
-description: MetaGraph is a high-performance genomic indexing framework used to build, annotate, and query massive de Bruijn graphs from large-scale sequence data. Use when user asks to build de Bruijn graphs, annotate graphs with source information, transform annotations into efficient formats, query sequences against an index, or assemble unitigs.
+description: MetaGraph is a bioinformatics suite that constructs, manipulates, and queries large-scale sequence graphs using succinct data structures. Use when user asks to build de Bruijn graphs, clean sequencing errors, annotate graph nodes, or align reads to a graph index.
 homepage: https://github.com/ratschlab/metagraph
 ---
 
@@ -8,76 +8,65 @@ homepage: https://github.com/ratschlab/metagraph
 # metagraph
 
 ## Overview
-MetaGraph is a high-performance genomic indexing framework designed for petabase-scale sequence data. It utilizes succinct data structures to represent massive de Bruijn graphs with trillions of nodes and millions of annotation labels. This skill provides the procedural knowledge required to build graphs, annotate them with source information, transform those annotations for efficiency, and perform high-speed sequence queries or alignments.
 
-## Installation and Environment
-MetaGraph is available via Bioconda or Docker.
+MetaGraph is a high-performance bioinformatics suite designed to handle massive sequence datasets using succinct data structures. It represents genomic or protein data as annotated graphs, enabling efficient search and alignment across millions of samples. It is particularly effective for petabase-scale sequence repositories where traditional indexing methods fail due to memory or storage constraints.
 
-- **Conda**: `conda install -c bioconda -c conda-forge metagraph`
-- **Docker**: `docker pull ghcr.io/ratschlab/metagraph:master`
-- **Alphabets**: The default `metagraph` binary uses the DNA alphabet {A,C,G,T}. For other alphabets, use:
-  - `metagraph_DNA5` for {A,C,G,T,N}
-  - `metagraph_Protein` for amino acids
+## CLI Usage Patterns
 
-## Core Workflow Patterns
+### Alphabet Selection
+MetaGraph uses specialized binaries for different alphabets to optimize performance. Ensure you call the correct binary for your data type:
+- `metagraph`: Default binary, optimized for DNA {A, C, G, T}.
+- `metagraph_DNA5`: Use for DNA sequences including the ambiguity code {A, C, G, T, N}.
+- `metagraph_Protein`: Use for amino acid sequences.
 
-### 1. Graph Construction
-Build a de Bruijn graph from FASTA/FASTQ files or KMC k-mer counters.
-
+### Graph Construction
+Build a de Bruijn graph from FASTA/FASTQ files.
 ```bash
-# Basic build
-metagraph build -k 20 -p 30 --mem-cap-gb 10 -o graph_output input_data/*.fasta.gz
+metagraph build -k <kmer_size> -o <output_prefix> <input_fasta>
+```
+- **Expert Tip**: Use `-v` (verbose) for large builds to monitor progress.
+- **K-mer Size**: Choose `k` based on the complexity of the organism and sequencing error rate (commonly 21-31 for genomes).
 
-# Build with disk swap to limit RAM usage
-metagraph build -k 20 -p 30 --mem-cap-gb 10 --disk-swap /tmp/swap_dir -o graph_output input_data/*.fasta.gz
+### Cleaning and Error Correction
+Remove sequencing errors (low-frequency k-mers) to simplify the graph.
+```bash
+metagraph clean -i <input_graph> -o <cleaned_graph> --fallback <threshold>
 ```
 
-### 2. Annotation
-Map sequences or labels onto the constructed graph.
-
+### Annotation
+Add labels or metadata (e.g., sample IDs, expression counts) to the graph nodes.
 ```bash
-# Annotate using filenames as labels
-metagraph annotate -i graph_output.dbg --anno-filename -o annotation_output input_data/*.fa
+metagraph annotate -i <graph_file> --anno-label <label_name> -o <output_anno> <input_files>
 ```
 
-### 3. Annotation Transformation
-Convert raw column-compressed annotations into more efficient formats like Multi-BRWT (Bit-Sliced Range Weaving Tree) for faster querying.
-
+### Querying and Alignment
+Search for sequences or align reads against the constructed graph.
 ```bash
-# Step A: Cluster columns (requires linkage file)
-metagraph transform_anno -o linkage.txt --linkage --greedy --subsample 1000 -p 16 annotation_output.column.annodbg
+# Query k-mer presence
+metagraph query -i <graph_file> -a <annotation_file> <query_fasta>
 
-# Step B: Construct Multi-BRWT
-metagraph transform_anno --anno-type brwt --linkage-file linkage.txt -o final_index -p 16 annotation_output.column.annodbg
+# Sequence-to-graph alignment
+metagraph align -i <graph_file> -a <annotation_file> <reads_fastq>
 ```
 
-### 4. Querying and Alignment
-Search for sequences within the annotated graph.
+## Best Practices
 
-```bash
-# Query for label presence (e.g., 80% k-mer match threshold)
-metagraph query -i graph.dbg -a final_index.brwt.annodbg --min-kmers-fraction-label 0.8 query_sequences.fa
+- **Batch Operations**: MetaGraph's succinct data structures are highly optimized for batched operations. Always prefer processing multiple sequences in a single command rather than calling the tool repeatedly for individual sequences.
+- **Memory Management**: For extremely large graphs, MetaGraph utilizes `mmap` and `jemalloc`. Ensure your system has sufficient virtual memory address space.
+- **Server Mode**: For repetitive queries, use the server mode to keep the index in memory and interact via the Python API.
+- **Custom Alphabets**: If working with non-standard sequences, MetaGraph supports custom alphabet definitions during the build phase.
 
-# Align sequences to the graph
-metagraph align -i graph.dbg query_sequences.fa
-```
 
-### 5. Assembly
-Extract sequences or unitigs from the graph.
 
-```bash
-# Assemble unitigs
-metagraph assemble -i graph.dbg -o assembled_unitigs.fa --unitigs
-```
+## Subcommands
 
-## Expert Tips and Best Practices
-
-- **Memory Management**: Always set `--mem-cap-gb` to prevent the process from being killed by the OS OOM (Out Of Memory) killer. If the dataset exceeds RAM, use `--disk-swap`.
-- **Parallelization**: Use `-p` or `--parallel` to specify the number of threads. MetaGraph is highly optimized for multi-core systems.
-- **K-mer Selection**: For most genomic applications, $k=21$ to $k=31$ is standard. Smaller $k$ values increase graph connectivity but may introduce ambiguity.
-- **Batch Operations**: MetaGraph prefers batched operations. When querying, provide a single file containing all query sequences rather than running the command multiple times.
-- **Cleaning Graphs**: Use the cleaning algorithms to remove sequencing errors (low-abundance k-mers) before annotation to significantly reduce index size.
+| Command | Description |
+|---------|-------------|
+| metagraph | metagraph is a tool for working with sequence graphs. |
+| metagraph | metagraph is a tool for working with graphs constructed from sequence data. |
+| metagraph | metagraph is a tool for constructing, manipulating, and querying sequence graphs. |
 
 ## Reference documentation
 - [MetaGraph GitHub Repository](./references/github_com_ratschlab_metagraph.md)
-- [Bioconda MetaGraph Package](./references/anaconda_org_channels_bioconda_packages_metagraph_overview.md)
+- [MetaGraph README](./references/github_com_ratschlab_metagraph_blob_master_README.md)
+- [MetaGraph Dockerfile (Build Instructions)](./references/github_com_ratschlab_metagraph_blob_master_Dockerfile.md)

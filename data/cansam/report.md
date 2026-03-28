@@ -131,3 +131,6 @@ Template and output file expansions:
 The output TEMPLATE defaults to "%*-%ID.%."
 ```
 
+
+## Metadata
+- **Skill**: generated

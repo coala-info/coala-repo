@@ -1,1 +1,329 @@
-# STOCKHOLM 1.0 #=GF PI 0.567308 X72588.1/6990-7093 ....GCGGCCACAGCGGCGGGGCGACUCCCGUACCCAUCCCGAACACGGC D00059.1/1-118 AUGAACGGUCAUAUCACGUAAACUGCACCCGGUCUCGUCC.GAUCCCGGA #=GC SS_cons .............>>.>>>>>...>>..>>>>>>....... >....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>....>>.>>>>.>...>>..>>>>>>...... .>>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>..>>>>.>>....... >.>>....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>...>>>>>>....... >>.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>.....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>..>.>>...>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>..... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>...... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>...>.>>................. >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >.>>>>>...>>..>>>>>>....... >.>>...>.>>.....>.... >>>>>>>....>>.>>>>>...>>...>>>>>>....... >>.>>....>.>>.................. >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>...>.>>...>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>...... >>>>>>>....>>.>>>>>...>>...>>>>>>....... >>.>>....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>...... >.>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>...... >>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... ..>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>.....>...... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>................. >>>>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>..... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>...>.>>.....>...... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>...>.>>....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.................. >>>>>>....>>.>>>>.>...>>..>>>>>>...... .>>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>...>.>>...>>.... >>>>>>....>>.>>>>.>...>>..>>>>>>...... .>>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... .>>.>>...>.>>....>...... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.................. AF034619.1/5584-5700 GGAAAUCCGGUUC..GCCGCCA... X05524.1/5-117 UGAA.AGUAGG..UCAUCGUCAGGC #=GC SS_cons >>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.................. AF034619.1/5584-5700 GGAAAUCCGGUUC.GCCGCCA... M35166.1/2-110 CGAA.AGUAGG..UAUCGCCGGAU #=GC SS_cons >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>...>.>>.....>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>..>.>>.....>...... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >.>>>>>...>>..>>>>>>....... >....>.>>.....>>.... >>>>....>>.>>>>.>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>................. .>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... ..>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>................. >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>...... >>>>>>>....>>.>>>>>...>>...>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>....>>.>>>>.>...>>..>>>>>>...... .>>.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.................. AF034619.1/5584-5700 GGAAAUCCGGUUC..GCCGCCA... AJ131586.1/3-115 UGAA.AGUAGG..UCAUCGUCAAGC #=GC SS_cons >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>......>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>.....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.................. >>>>>....>>.>>>>.>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>......>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>...... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>.....>.>>.....>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... ..>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... ...>.....>.>>.....>>.... >>>>>>..>>>>....... >>>>....... >>> L07095.1/5327-5261 GUUUAAAUCCUCUUUUUACCA X12631.1/1944-2014 GUUAGACUCCUUUUCUUACUA #=GC SS_cons >....... >>>>>>..>>>>.......... >>>>....... >>>>....... >>>>>>..>>>>......... >>>>....... X04779.1/1-73 CUGGUUCGAUUCCGGCUCGAAGGA AP000397.1/130600-130527 GUGGUUCGAAUCCACUUCUAAGCG #=GC SS_cons >>>>....... >>>>>>..>>>>......... >>>>....... >>>>....... >>>>>>..>>>>........... >>>>....... >>>>....... >>>>>>..>>>>....... >>>>....... >>> AB031213.1/2678-2748 GUUCGAUUCCCAUCACCCGCU AF158101.6/72364-72294 GUUCGAUUCUCAUUAUCCGCU #=GC SS_cons >....... >>>>>>..>>>>......... >>>>....... AE005196.1/3290-3363 CGGGUUCGAGUCCCGUCCGUUCCG X01676.1/804-877 CGGGUUCGAGUCCCGUCAGUCCCG #=GC SS_cons >>>>....... >>>>>>..>>>>........ >>>>....... > J01440.1/394-465 CAGUUCGAGCCUGAUUAUCCCUA M21373.1/208-280 CAGUUCGAGUCUGCUUAUCUCCA #=GC SS_cons >>>....... >>>>>>..>>>>....... >>>>....... >>> AF314016.1/506-436 GUUCAAUUCCUAUCUCUUUAG X16886.1/1215-1285 GUUCAACUCUUAUCUUUCUAA #=GC SS_cons >....... >>>>>>..>>>>.......... >>>....... >>>>....... >>>>>>..>>>>........ >>>>....... > X55342.1/30-101 GGGUUCGAGUCCCGUACGGAACG AE003677.3/170128-170056 AGGUUCGACUCCUGGCAGGAUCG #=GC SS_cons >>>....... >>>>>>..>>>>......... >>>>....... AF186372.1/596-669 CAGGUUCAAAUCCUGUCCCCGCUA X63088.1/299-371 CAGGUUCAAGUCCUGCUAUACCCA #=GC SS_cons >>>>....... >>>>>>..>>>>......... >>>>....... U67528.1/1221-1293 GCGGUUCGAAUCCGCGCCGGGCUA AC084153.1/28467-28538 GUGGAUCGAAACCACUCGCUGCUA #=GC SS_cons >>>>....... >>>>>>..>>>>........ >>>>....... >> AL590385.23/26487-26416 GGUUCGAUUCCCGGCCAACGCA AC018907.5/9587-9517 GGUUCGAUUCCCGGCUGGUGCA #=GC SS_cons >>....... >>>>>>..>>>>......... >>>>....... M26977.1/276-348 CGGGUUCAAAUCCCGCCCGAGGCU X12631.1/1014-1084 AGGGUAAACU.CCCUCUCAAGGCU #=GC SS_cons >>>>....... >>>>>>..>>>>........ >>>>....... >> X03602.1/660-731 GGUUCGAUUCCCGGUACGGGAA AL590385.23/26129-26058 GGUUCGAUUCCCGGUCAGGGAA #=GC SS_cons >>....... >>>>>>..>>>>........ >>>>....... > X70810.2/102843-102771 CGGUUCGAAUCCGUUUGCCCUCA X15768.1/211-283 CGGUUCGAGUCCGCUUACCUCCA #=GC SS_cons >>>....... >..>>>>......... >>>>....... U67538.1/10143-10207 CCGGUUCGAAUCCGGCUGGG.... X15768.1/211-283 GCGGUUCGAGUCCGCUUACCUCCA #=GC SS_cons >>>>....... >>>>>>..>>>>......... >>>>....... D00552.1/73-146 GAAGUUCGAGCCUUCUCGUGGGCA X69660.1/114-186 GGGGUUCGAGCCCCCCUUUGGGCG #=GC SS_cons >>>>....... >>>>>>..>>>>....... >>>>....... >> J01390.1/13362-13432 AGUUCAAUUCUAGGUAUCCACC X54552.1/66-137 GGUUCGAUUCCAAGUAAUCACC #=GC SS_cons >>....... >>>>>>..>>>>........ >>>>....... > K00281.1/1-72 CGGUUCAAAUCCGAUAAGGGGCU X12889.1/644-572 UGGUUCAAAUCCAAUAGUAGGUA #=GC SS_cons >>>....... >>>>>>..>>>>........ >>>>....... >> AF346998.1/4403-4470 GGUUAUAC.CCUUCCCGUACUA X12631.1/1795-1866 GGAUAAAAACCUCCCUCUACUU #=GC SS_cons >>....... >>>>>>..>>>>......... >>>>....... M68929.1/174348-174275 GUGGUUCGAAUCCACUUCUAAACA Z00044.1/50240-50312 CCAGUUCAAAUCUGGUUCCUGGCA #=GC SS_cons >>>>....... >>>>>>..>>>>........ >>>>....... > X07379.1/305-375 CAGUUCAAAUCUGGGUGCCGCCU Z00044.1/50240-50312 CAGUUCAAAUCUGGUUCCUGGCA #=GC SS_cons >>>....... >>>>>>..>>>>......... >>>>.......
+# STOCKHOLM 1.0
+#=GF PI 0.567308
+X72588.1/6990-7093 ....GCGGCCACAGCGGCGGGGCGACUCCCGUACCCAUCCCGAACACGGC
+D00059.1/1-118 AUGAACGGUCAUAUCACGUAAACUGCACCCGGUCUCGUCC.GAUCCCGGA
+#=GC SS\_cons .............>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+X72588.1/6990-7093 AGAUAAGCCCGCCAGCGUUCCAGCGAGUACUGGAGUGUGCGAACCUCUGG
+D00059.1/1-118 AGUUAAGCUGCGUCGAG.UCCAGCCAGUAGUACGGUGCGUGAGCACGUGC
+#=GC SS\_cons .<<....<<<<<..<<.....>>....>.>>.....>>....<<.....<
+X72588.1/6990-7093 GAAAACUG............
+D00059.1/1-118 GAAGCCUGGGUACUGUUCGU
+#=GC SS\_cons <.<..<<.............
+//
+# STOCKHOLM 1.0
+#=GF PI 0.740741
+Z11820.1/5-112 ....GUGGAUUAGGCGAAGAGGUUACACCCGUUCCCAUCCCGAACACAGC
+X06578.1/1-116 UCCGGUGACGAUAGCGAGAAGGUCACACCCGUUCCCAUACCGAACACGGA
+#=GC SS\_cons ....>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+Z11820.1/5-112 CGAGAAACUCUUCAGCGCCGAUGGUAGUUGG.GGGUCUCCCCCUGUGAGA
+X06578.1/1-116 AGUGAAGCUUCUCAGCGCCGACGGUAGUUCGGGGCUGCCCUCCCGUGAGA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>>....<<.....<<.<.
+Z11820.1/5-112 GCAGGACGCCGCU...
+X06578.1/1-116 GUAGGACGUUGCCGGC
+#=GC SS\_cons <<.<<<.<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.551724
+M16530.1/8-123 ..ACCCGGCAAUAGGCGCCGGUGCUACGCCCGGUCUCUUCAGAACCCGGA
+X55697.1/1-119 GGAUGCGAUCAUACCAGCAC.UAACGCACCGGAUCCCAUCAGAACUCCGA
+#=GC SS\_cons ..>>>>>>>....>>.>>>>.>...>>..>>>>>>......<<..<<<<.
+M16530.1/8-123 AGCUAAGGCCGGCGCCGCGGACGGGAGUACUGGGGUCCGCGAGGCCCCGG
+X55697.1/1-119 AGUUAAGCGUGCUUGGG.CGAGAGUAGUACUAGGAUGGGUGACCCCCUGG
+#=GC SS\_cons .<<....<<<<<..<<>.>>.>>....>.>>.....>>....<<.....<
+M16530.1/8-123 GAAACCGCCGUGCUGGGA...
+X55697.1/1-119 GAAGUCCUCGUGUUGCAUCCC
+#=GC SS\_cons <.<..<<.<<<<<<<<<<...
+//
+# STOCKHOLM 1.0
+#=GF PI 0.554622
+X03407.1/5927-6048 UAAGGCGGCCAUAGCGGUGGGGUUACUCCCGUACCCAUCCCGAACACGGA
+X01535.1/1-119 GUCUACGACCAUACCACGUUGAAAACACCGGUUCUCGUCC.GAUCACCGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+X03407.1/5927-6048 AGAUAAGCCCGCCUGCGUUCCGGUCAGUACUGGAGUGCGCGAGCCUCUGG
+X01535.1/1-119 AGUUAAGCAACGUAGGG.CCUGCCCAGUACUUGGAUGGGUGACCGCCUGG
+#=GC SS\_cons .<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....<
+X03407.1/5927-6048 GAAAUCCGGUUC.GCCGCCUACU
+X01535.1/1-119 GAACAGCAGG..UGUUGUAGACU
+#=GC SS\_cons <.<..<<.<<...<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.547009
+L27163.1/1-119 .GUAGCGGCCACAGCGGUGGGGUUCCUCCCGU.ACCCAUCCCGAACACGG
+X02236.1/3-119 CCUGGCGACCAUAGUGUUUUGGACCCACCUGACUUCCAUGCCGAACUCAG
+#=GC SS\_cons .>>>>>>>>....>>.>>>>>...>>..>>>>.>>.......<<..<<<<
+L27163.1/1-119 AAGAUAAGCCCACCAGCGUUCCGGGGAGUACUGGAGUGCGCGACCCUCUG
+X02236.1/3-119 AAGUGAAACGAAAUAGCG.CCGAUG..GUAGUGUG..GGGUUUCCCCAUG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....
+L27163.1/1-119 GGAAACCGGGUUC..GCCGCUAC..
+X02236.1/3-119 UGAGAGUAGG...ACAUCGCCAGGC
+#=GC SS\_cons <<.<.<<.<<.....<<<<<<<<..
+//
+# STOCKHOLM 1.0
+#=GF PI 0.550847
+L27170.1/1-120 AGUGGUGGCCAUAUCGGCGGGGUUCCUCCCCGUACCCAUCCUGAACACGG
+X00069.1/1-118 AUCUGCGGCCAUAGAACCGUGAAAAUAC.CGCAUCCCGUCC.GAUCUGCG
+#=GC SS\_cons .>>>>>>>>....>>.>>>>>...>>...>>>>>>.......<<..<<<<
+L27170.1/1-120 AAGAUAAGCCCGCCAGCGUCCGGCAAGUACUGGAGUGCGCGAGCCUCUGG
+X00069.1/1-118 AAGUCAAGCACGGUAUCGCCUAGUCAGUACUGCGGUGGGGGACCACGCGG
+#=GC SS\_cons ..<<....<<<<<..<<>>>.>>....>.>>.....>>....<<.....<
+L27170.1/1-120 GAAAUCCGGUUCGCCGCCAC.
+X00069.1/1-118 GAAUCCUGGGU.GCUGCAGUU
+#=GC SS\_cons <.<..<<.<<<.<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.547009
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+D10526.1/1-121 GGUUGCGGCCAUACCAAGUGGAAAA.UACUGUUUCCCGUCC.GAUCAACG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 A.AGAUAAGCCCACCAGCGUUCCAGG.GAGUACUGGAGUGCGCGAGCCUC
+D10526.1/1-121 UUAGUCAAGCCACUUAGGG.CCACAGUGAGUAAUACAGUGGGAGACCAUG
+#=GC SS\_cons ...<<....<<<<<..<<..>>.>>.....>.>>.....>>....<<...
+AF034619.1/5584-5700 UGGGAAAUCCGGUUC.GCCGCCA...
+D10526.1/1-121 UGUGAAAUUGUGG..UGCUGCAAUCU
+#=GC SS\_cons ..<<.<..<<.<<...<<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.557522
+L27163.1/1-119 .GUAGCGGCCACAGCGGUGGGGUUCCUCCCGUACCCAUCCCGAACACGGA
+X16194.1/2-114 CCUGAUGACCAUAGCGAUUUGGUACCACUCCUUCCCAUCCCGAACAGGAC
+#=GC SS\_cons .>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+L27163.1/1-119 AGAUAAGCCCACCAGCGUUCCGGGGAGUACUGGAGUGCGCGACCCUCUGG
+X16194.1/2-114 AGUGAAACGAAUUUGCG.CCGAUGA..UAGUGC...GGGU.UCCC.GUGU
+#=GC SS\_cons .<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....<
+L27163.1/1-119 GAAACCGGGUUC..GCCGCUAC..
+X16194.1/2-114 GAAAGUAGG...UCAUCGUCAGGC
+#=GC SS\_cons <.<.<<.<<.....<<<<<<<<..
+//
+# STOCKHOLM 1.0
+#=GF PI 0.801724
+AF170176.1/1092-1207 CCUGGCGGCACUAGCGCGGUGGUCCCACCUGACCCCAUGCCGAACUCAGA
+X02237.1/3-118 CCUGGCGACCAUAGUGUUUUGGACCCACCUGAUUCCAUUCCGAACUCAGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+AF170176.1/1092-1207 AGUGAAACGCCGUAGCGCCGAUGGUAGUGUGGGGUCUCCCCAUGCGAGAG
+X02237.1/3-118 AGUGAAACGAAACAGCGUCGAUGGUAGUGUGGGGUUUCCCCAUGUGAGAG
+#=GC SS\_cons .<<....<<<<<..<<.>>.>>..>.>>...>>....<<.....<<.<.<
+AF170176.1/1092-1207 UAGGG.AACUGCCAGGC
+X02237.1/3-118 UAGA.ACAUCGCCAGGC
+#=GC SS\_cons <.<<...<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.551724
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+X02237.1/3-118 CCUGGCGACCAUAGUGUUUUGGACC.CACCUGAUUCCAUUCCGAACUCAG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 AAGAUAAGCCCACCAGCGUUCCAGGGAGUACUGGAGUGCGCGAGCCUCUG
+X02237.1/3-118 AAGUGAAACGAAACAGCG.UCGAUG..GUAGUGUG..GGGUUUCCCCAUG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....
+AF034619.1/5584-5700 GGAAAUCCGGUUC..GCCGCCA...
+X02237.1/3-118 UGAG.AGUAGA..ACAUCGCCAGGC
+#=GC SS\_cons <<.<..<<.<<....<<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.632479
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+X52301.1/1-117 UCGGGUGGCAAUGUCGGAGGGGUCA.CACCCGUUCCCAUCCCGAACACGG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 AAGAUAAGCCCACCAGCGUUCCAGGGAGUACUGGAGUGCGCGAGCCUCUG
+X52301.1/1-117 AAGUUAAGCCCUCCAGAG.CCGAUG..GUACUCCGC.GGGAAACCGCGUG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....
+AF034619.1/5584-5700 GGAAAUCCGGUUC..GCCGCCA...
+X52301.1/1-117 GGAG.AGUAGG..UCGCUGCCGGAU
+#=GC SS\_cons <<.<..<<.<<....<<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.735043
+M27245.1/5773-5889 UUCGGUGGUCAUAGCGUUAGGGAAACGCCCGGUUACAUUCCGAACCCGGA
+X52303.1/2-118 UCCGGUGGUGAUAUCAAGAAGGCUACACCCGAUCCCAUACCGAACUCGGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M27245.1/5773-5889 AGCUAAGCCUUACAGCGCCGAUGGUACUGCAGGGGGGACCCUGUGGGAGA
+X52303.1/2-118 AGUUAAGCUUCUUGGAGCCGAUGGUACUGCCAGGGCAACCUGGUGGGAGA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>>....<<.....<<.<.
+M27245.1/5773-5889 GUAGGACGCCGCCGAAC
+X52303.1/2-118 GUAGGACGCCGCCGGGA
+#=GC SS\_cons <<.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.743590
+AF114036.1/6058-6174 UUCGGUGGUCAUAGCGUGAGGGAAACGCCCGGUUACAUUCCGAACCCGGA
+X52303.1/2-118 UCCGGUGGUGAUAUCAAGAAGGCUACACCCGAUCCCAUACCGAACUCGGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+AF114036.1/6058-6174 AGCUAAGCCUCAGAGCGCCCAUGGUACUGCAGGGGGGACCCUGUGGGAGA
+X52303.1/2-118 AGUUAAGCUUCUUGGAGCCGAUGGUACUGCCAGGGCAACCUGGUGGGAGA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>>....<<.....<<.<.
+AF114036.1/6058-6174 GUAGGACGCCGCCGAAC
+X52303.1/2-118 GUAGGACGCCGCCGGGA
+#=GC SS\_cons <<.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.564103
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+M10432.1/1-119 GGGUGCGAUCAUACCAGCGUUAGUG.CACCGGAUCCCAUCA.GAACUCCG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 AAGAUAAGCCCACCAGCGUUCCAGGGAGUACUGGAGUGCGCGAGCCUCUG
+M10432.1/1-119 CAGUUAAGCGCGCUUGGG.CCGGAGUAGUACUGGGAUGGGUGACCUCCCG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....
+AF034619.1/5584-5700 GGAAAUCCGGUUC.GCCGCCA...
+M10432.1/1-119 GGAAGUCCCGG..UAUUGCACCCU
+#=GC SS\_cons <<.<..<<.<<...<<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.700855
+M55343.1/5620-5736 UUCGGUGGUUUUGGCGAAGGGGAAACGCCCGGUCUCAUUCCGAACCCGGA
+AB001721.1/2735-2851 CCCGGUGACUAUAGAGAGAGGGCCACACCCGUUCCCAUCCCGAACACGGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M55343.1/5620-5736 AGCUAAGCUCUUCAGCGCCGAUGGUACUGCAUGGGGGACUGUGUGGGAGA
+AB001721.1/2735-2851 AGUUAAGCCUCUCAUCGCUGAUGGUACUAUGUGGUUCGCUGCAUGGGAGA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>>....<<.....<<.<.
+M55343.1/5620-5736 GUAGGACGCCGCCGGAC
+AB001721.1/2735-2851 GUAGGACGUUGCCGGGU
+#=GC SS\_cons <<.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.800000
+M34771.1/2-116 CCUGGCGGCCUGAGCGGUGUGGAAGAACCCGAUCCCAUCUCGAACUCGGC
+X02044.1/4-118 CCUGGUGGUCAUUGCGGGCUCGAAACACCCGAUCCCAUCCCGAACUCGGC
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M34771.1/2-116 CGUUAAACACACCAGCGCCGAUGGUACUGUGUCUC.AAGACACGGGAGAG
+X02044.1/4-118 CGUGAAAGAGCCCUGCGCCAAUGGUACUGCGUCU.UAAGGCGUGGGAGAG
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>.....<.....<<.<.<
+M34771.1/2-116 UCGGUCGCCGCCAGGC
+X02044.1/4-118 UAGGUCGCCGCCAGGC
+#=GC SS\_cons <.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.605042
+L27169.1/1-121 GUAGGCGGCCAGAGCGGUAGGGAAACACCCGUACCCAUUCCGAACACGGA
+V01420.1/2-120 UGAUACGGUCAUACCACCAGGAAAACAGGCGAUCCCAUCU.GAACUCGCA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+L27169.1/1-121 AGUUAAGCCUACCAGCGUAUCGUGAAGUACUGGAGUGAGCGAUCCUCUGG
+V01420.1/2-120 ACUUAAGCCUGGUUGGG.CAGGAUUAGUACUGGGCUGAGUGAUCUCCUGG
+#=GC SS\_cons .<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....<
+L27169.1/1-121 GAACCACGAGUC.GCCGCCUAC.
+V01420.1/2-120 GAAUCCCCUG..UGCUGUAUCGC
+#=GC SS\_cons <.<..<<.<<...<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.578947
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+X03903.1/4-117 CCUGGUGGUUCUAGCGAGGAGCCUG.AACCCGUUCCCAUCCCGAACACGG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 AAGAUAAGCCCACCAGCGUUCCAGGGAGUACUGGAGUGCGCGAGCCUCUG
+X03903.1/4-117 CCGUUAAACUCCUCAGCG.CCAAUG..GUACUCCG.UCUC.AA.GACGCG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>......<.....
+AF034619.1/5584-5700 GGAAAUCCGGUUC.GCCGCCA...
+X03903.1/4-117 GGAG.AGUAGG..UGCCGCCAGGC
+#=GC SS\_cons <<.<..<<.<<...<<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.601770
+M16177.1/4-120 GUCGGUGGUUAUAGCGGUGGGGUCACGCCCGGUCCCAUUCCGAACCCGGA
+X02629.1/3-115 CCUGAUGACCAUAGCGAGUCGGUCCCACCCCUUCCCAUCCCGAACAGGAC
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M16177.1/4-120 AGCUAAGCCCACCUGCGCCGAUG.GUACUGCACCUGGGAGGGUGUGGGAG
+X02629.1/3-115 CGUGAAACGACUCUACGCCGAUGA.UAGUGCG....GAUUCCCGUGUGAA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>...>.>>.................<<.<
+M16177.1/4-120 AGUAGGUCACCGCCGGCC
+X02629.1/3-115 AGUAGGUAAUCGUCAGGC
+#=GC SS\_cons .<<.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.760684
+AF114034.1/6052-6168 UUCGGUGGUCAUACCGUGAGGGAAACGCCCGGUUACAUUCCGAACCCGGA
+X52303.1/2-118 UCCGGUGGUGAUAUCAAGAAGGCUACACCCGAUCCCAUACCGAACUCGGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+AF114034.1/6052-6168 AGCUAAGCCUCAUAGCGCCGAUGGUACUGCAGGGGGGACCCUGUGGGAGA
+X52303.1/2-118 AGUUAAGCUUCUUGGAGCCGAUGGUACUGCCAGGGCAACCUGGUGGGAGA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>>....<<.....<<.<.
+AF114034.1/6052-6168 GUAGGACGCCGCCGAAC
+X52303.1/2-118 GUAGGACGCCGCCGGGA
+#=GC SS\_cons <<.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.555556
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+X06849.1/1-119 AUCUGCGGCCAUACCGCGAUGAACC.CUCCGCGUCUCGUCC.GAUCCGCG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 AAGAUAAGCCCACCAGCGUUCCAGGGAGUACUGGAGUGCGCGAGCCUCUG
+X06849.1/1-119 CAGAUAAGCAUCGCAGGG.GCCAGAGAGUAUUGACGUGGGUGACCAGUCG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....
+AF034619.1/5584-5700 GGAAAUCCGGUUC.GCCGCCA..
+X06849.1/1-119 AGAACACUGUGC.UGCCGCAGGU
+#=GC SS\_cons <<.<..<<.<<...<<<<<<...
+//
+# STOCKHOLM 1.0
+#=GF PI 0.802083
+M34769.1/10-105 .......AUUAUGGCGGGGUGGCUGCACCCGAUCCCAUUCCGAACUCGGC
+M76573.1/4-118 CCUGGUGGCUAUGGCGGGAGAGAUCCACCCGAUCCCAUCCCGAACUCGGC
+#=GC SS\_cons .............>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M34769.1/10-105 CGUGAAACGCCCCUGCGCCGAUG.GUACUUCG.UCUUAAGACGCGGGAGA
+M76573.1/4-118 CGUGAAAACCCCCAGCGCCUAUGA.UACUGCGG.CUUAAGCCGUGGGAAA
+#=GC SS\_cons .<<....<<<<<..<<.>>.>>...>.>>.....>....<.....<<.<.
+M34769.1/10-105 GUAGG............
+M76573.1/4-118 GUCGGUCGCCGCCAGGU
+#=GC SS\_cons <<.<<............
+//
+# STOCKHOLM 1.0
+#=GF PI 0.548673
+L27170.1/1-120 AGUGGUGGCCAUAUCGGCGGGGUUCCUCCCCGUACCCAUCCUGAACACGG
+AJ131600.1/3-115 CCUGGUGACCAUAGCGAGUCGGUACCAC.CCCUUCCCAUCCCGAACAGGA
+#=GC SS\_cons .>>>>>>>>....>>.>>>>>...>>...>>>>>>.......<<..<<<<
+L27170.1/1-120 AAGAUAAGCCCGCCAGCGUCCGGCAAGUACUGGAGUGCGCGAGCCUCUGG
+AJ131600.1/3-115 CCGUGAAACGACUCCGCGCCGAUGA..UAGUGCG.....GAUUCCCGUGU
+#=GC SS\_cons ..<<....<<<<<..<<>>>.>>....>.>>..................<
+L27170.1/1-120 GAAAUCCGGUUCGCCGCCAC..
+AJ131600.1/3-115 GAA.AGUAGGUCAUCGUCAGGC
+#=GC SS\_cons <.<..<<.<<<.<<<<<<<<..
+//
+# STOCKHOLM 1.0
+#=GF PI 0.552632
+L27343.1/3-116 ....GCGGCCAGGGCGGAGGGGAAACACCCGUACCCAUUCCGAACACGGA
+K03161.1/1-118 AUCCACGGCCAUAGGACUGUGAAAGCACCGCAUCCCGUCU.GAUCUGCGC
+#=GC SS\_cons ....>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+L27343.1/3-116 AGUGAAGCCCUCCAGCGAACCAGCUAGUACUAGAGUGGGAGACCCUCUGG
+K03161.1/1-118 AGUUAAACACAGUGCCG.CCUAGUUAGUACCAUGGUGGGGGACCACAUGG
+#=GC SS\_cons .<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....<
+L27343.1/3-116 GAGCGCUGGUUC.GCCGCC...
+K03161.1/1-118 GAAUCCUGGG..UGCUGUGGUU
+#=GC SS\_cons <.<..<<.<<...<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.655172
+M16176.1/4-120 GUCGGUGGUGUUAGCGGUGGGGUCACGCCCGGUCCCUUUCCGAACCCGGA
+X06578.1/1-116 UCCGGUGACGAUAGCGAGAAGGUCACACCCGUUCCCAUACCGAACACGGA
+#=GC SS\_cons >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M16176.1/4-120 AGCUAAGCCUGCCUGCGCCGAUGGUACUGCACCUGGGAGGGUGUGGGAGA
+X06578.1/1-116 AGUGAAGCUUCUCAGCGCCGACGGUAGUUCGGGGCUGCCCUCCCGUGAGA
+#=GC SS\_cons .<<....<<<<<..<<>>>.>>..>.>>....>>....<<.....<<.<.
+M16176.1/4-120 GUAGGACCCCGCCGGCA
+X06578.1/1-116 GUAGGACGUUGCCGGC.
+#=GC SS\_cons <<.<<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GF PI 0.561404
+L27343.1/3-116 ....GCGGCCAGGGCGGAGGGGAAACACCCGUACCCAUUCCGAACACGGA
+X00071.1/1-118 AUCUGCGGCCAUAGAACCUUGAAAGCACCGCAUCCCGUCC.GAUCUGCGA
+#=GC SS\_cons ....>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+L27343.1/3-116 AGUGAAGCCCUCCAGCGAACCAGCUAGUACUAGAGUGGGAGACCCUCUGG
+X00071.1/1-118 AGUUAACCAAGGUAUCG.CUCAGUUAGUACUGCGGUGGGGGACCACGCGG
+#=GC SS\_cons .<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....<
+L27343.1/3-116 GAGCGCUGGUUC.GCCGCC...
+X00071.1/1-118 GAAUCCUGAG..UGCUGCAGUU
+#=GC SS\_cons <.<..<<.<<...<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.560345
+AF034619.1/5584-5700 ...GGCGGCCACAGCGGUGGGGUUGCCUCCCGUACCCAUCCCGAACACGG
+X00932.1/3-118 CCUGGCGACCAUAGUGUUGUGGACC.CACCUGAUUCCAUGCCGAACUCAG
+#=GC SS\_cons ...>>>>>>....>>.>>>>>...>.>..>>>>>>.......<<..<<<<
+AF034619.1/5584-5700 AAGAUAAGCCCACCAGCGUUCCAGGGAGUACUGGAGUGCGCGAGCCUCUG
+X00932.1/3-118 AAGUGAAACACAACAGCG.CCGAUG..GUAGUGUG..GGGUCUCCCCAUG
+#=GC SS\_cons ..<<....<<<<<..<<..>>.>>....>.>>.....>>....<<.....
+AF034619.1/5584-5700 GGAAAUCCGGUUC..GCCGCCA...
+X00932.1/3-118 UGAG.AGUAGG..ACAUCGCCAGGC
+#=GC SS\_cons <<.<..<<.<<....<<<<<<....
+//
+# STOCKHOLM 1.0
+#=GF PI 0.803571
+AJ131598.1/3-114 CCUGACGACCAUAGCGAGUUGGUCCCACUCCUUCCCAUCCCGAACAGGAC
+X02247.1/3-118 CCUGGCGACCAUAGCGAUUUGGACCCACCUGAUUCCAUGCCGAACUCAGU
+#=GC SS

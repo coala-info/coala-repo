@@ -1737,3 +1737,6 @@ plus an extra option for the HMM model file like `macs3 hmmratac
 --model new_model.json`
 ```
 
+
+## Metadata
+- **Skill**: generated

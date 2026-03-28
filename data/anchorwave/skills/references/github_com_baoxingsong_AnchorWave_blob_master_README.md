@@ -1,0 +1,346 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbaoxingsong%2FAnchorWave%2Fblob%2Fmaster%2FREADME.md)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbaoxingsong%2FAnchorWave%2Fblob%2Fmaster%2FREADME.md)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=baoxingsong%2FAnchorWave)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[baoxingsong](/baoxingsong)
+/
+**[AnchorWave](/baoxingsong/AnchorWave)**
+Public
+
+* [Notifications](/login?return_to=%2Fbaoxingsong%2FAnchorWave) You must be signed in to change notification settings
+* [Fork
+  19](/login?return_to=%2Fbaoxingsong%2FAnchorWave)
+* [Star
+   189](/login?return_to=%2Fbaoxingsong%2FAnchorWave)
+
+* [Code](/baoxingsong/AnchorWave)
+* [Issues
+  31](/baoxingsong/AnchorWave/issues)
+* [Pull requests
+  0](/baoxingsong/AnchorWave/pulls)
+* [Actions](/baoxingsong/AnchorWave/actions)
+* [Projects](/baoxingsong/AnchorWave/projects)
+* [Security
+  0](/baoxingsong/AnchorWave/security)
+* [Insights](/baoxingsong/AnchorWave/pulse)
+
+Additional navigation options
+
+* [Code](/baoxingsong/AnchorWave)
+* [Issues](/baoxingsong/AnchorWave/issues)
+* [Pull requests](/baoxingsong/AnchorWave/pulls)
+* [Actions](/baoxingsong/AnchorWave/actions)
+* [Projects](/baoxingsong/AnchorWave/projects)
+* [Security](/baoxingsong/AnchorWave/security)
+* [Insights](/baoxingsong/AnchorWave/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [AnchorWave](/baoxingsong/AnchorWave/tree/master)
+
+/
+
+# README.md
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/baoxingsong/AnchorWave/commits/master/README.md)
+
+History
+
+403 lines (358 loc) · 24.9 KB
+
+master
+
+## Breadcrumbs
+
+1. [AnchorWave](/baoxingsong/AnchorWave/tree/master)
+
+/
+
+# README.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+403 lines (358 loc) · 24.9 KB
+
+[Raw](https://github.com/baoxingsong/AnchorWave/raw/refs/heads/master/README.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# AnchorWave · [![license](https://camo.githubusercontent.com/7013272bd27ece47364536a221edb554cd69683b68a46fc0ee96881174c4214c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667)](/baoxingsong/AnchorWave/blob/master/LICENSE) [![install with bioconda](https://camo.githubusercontent.com/9940610b859f8e4dd2daade6d2f4fb4c45d56afedc37ae98d8617daf79c1f836/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/anchorwave/README.html)
+
+[![](/baoxingsong/AnchorWave/raw/master/doc/small_logo.jpg)](/baoxingsong/AnchorWave/blob/master/doc/small_logo.jpg)
+
+## Description
+
+AnchorWave (Anchored Wavefront Alignment) identifies collinear regions via conserved anchors (full-length CDS and full-length exon have been implemented currently) and breaks collinear regions into shorter fragments, i.e., anchor and inter-anchor intervals.
+By performing sensitive sequence alignment for each shorter interval via a 2-piece affine gap cost strategy and merging them together, AnchorWave generates a whole-genome alignment for each collinear block. AnchorWave implements commands to guide collinear block identification with or without chromosomal rearrangements and provides options to use known polyploidy levels or whole-genome duplications to inform alignment.
+
+## Principle of the AnchorWave process
+
+[![](/baoxingsong/AnchorWave/raw/master/doc/workflow.png)](/baoxingsong/AnchorWave/blob/master/doc/workflow.png)
+
+AnchorWave takes the reference genome sequence and gene annotation in GFF3 format as input and extracts reference full-length coding sequences (CDS) to use as anchors.
+Using a splice aware alignment program (minimap2 and GMAP have been tested) to lift over the start and end position of reference full-length CDS to the query genome (step 1).
+AnchorWave then identifies collinear anchors using one of three user-specified algorithm options (step 2) and uses the [WFA](https://github.com/smarco/WFA2-lib) and [minimap2](https://github.com/lh3/minimap2) algorithm to perform alignment for each anchor and inter anchor interval (step 4). Some anchor/inter-anchor regions cannot be aligned using our standard approach due to high memory and computational time costs. For these, AnchorWave either identifies novel anchors within long inter-anchor regions (step 3), or for those that cannot be split by novel anchors, aligns using the ksw\_extd2 function implemented in minimap2 or a reimplemented sliding window approach (step 4). AnchorWave concatenates base pair sequence alignment for each anchor and inter-anchor region and outputs the alignment in MAF format (step 5).
+
+# Table of Contents
+
+1. [Installation](#Installation)
+   1. [Installation from source code](#Installation-from-source-code)
+      1. [Dependencies](#Dependencies)
+      2. [Compile](#Compile)
+   2. [Installation using conda](#Installation-using-conda)
+   3. [Installation using Docker](#Installation-using-Docker)
+2. [Usage](#Usage)
+   1. [Lift over the reference CDS coordinates to the query genome](#lift-over-the-reference-cds-coordinates-to-the-query-genome-command-1-3)
+   2. [Genome alignment without chromosomal rearrangement](#genome-alignment-without-chromosomal-rearrangement-an-option-of-command-4)
+   3. [Genome alignment without translocation rearrangement while with inversions](#genome-alignment-without-translocation-rearrangement-while-with-inversions-an-option-of-command-4)
+   4. [Genome alignment with relocation variation, chromosome fusion or whole genome duplication](#genome-alignment-with-relocation-variation-chromosome-fusion-or-whole-genome-duplication-an-option-of-command-4)
+3. [Tips for following analysis](#tips-for-following-analysis)
+4. [Guidelines](#walkthrough-guidelines)
+5. [FAQ](#FAQ)
+6. [Contact](#Contact)
+7. [Founding](#Founding)
+8. [Citation](#Citation)
+
+## Installation
+
+### Installation from source code
+
+#### Dependencies
+
+GNU GCC >=7.0
+Cmake >= 3.0
+[minimap2](https://github.com/lh3/minimap2) or [GMAP](http://research-pub.gene.com/gmap/)
+Operating System: Linux or MAC
+Memory: > 20 Gb
+
+If you would like to take the advantage of modern CPU to speed up please refer [the document for advanced installation](/baoxingsong/AnchorWave/blob/master/installation.md).
+If you are working on a machine with ARM CPU, for example a MAC machine with M1/M2 CPU, please also refer [the document for advanced installation](/baoxingsong/AnchorWave/blob/master/installation.md).
+If you are using old x86\_64 CPUs without SSE4.1 but with SSE2, please also refer [the document for advanced installation](/baoxingsong/AnchorWave/blob/master/installation.md).
+
+#### Compile
+
+```
+git clone https://github.com/baoxingsong/anchorwave.git
+cd anchorwave
+cmake ./
+make
+```
+
+You will get an executable file named `anchorwave` .
+The code has been tested under Ubuntu 20.2 and CentOS 7 with intel/AMD CPU. It should work well on other REDHAT or Debian based Linux Distributions.
+
+### Installation using conda
+
+```
+conda install -c bioconda -c conda-forge anchorwave
+```
+
+### Installation using Docker
+
+Compile using your local docker with the Dockerfile in this package:
+`docker build -f docker/Dockerfile -t anchorwave ./`
+Test the installation:
+`docker run -it anchorwave anchorwave`
+`docker run -it anchorwave anchorwave gff2seq`
+
+## Usage
+
+In general, totally four commands are need to run through the whole pipeline.
+
+1. extract CDS
+2. align CDS to the reference genome
+3. align CDS to the query genome
+4. perform genome alignment
+
+### Note
+
+* [AnchorWave use prior informations about whole genome duplication, chromosome rearrangement etc to guide the genome alignment, while AnchorWave could not figure out those evolution events automatically. Users need to know those informations before running AnchorWave and tune the parameters accordingly. Users might need to draw some plots to figure out if you would like to use `genoAli` or `proali`. If `genoAli` is proper, then need to think about if you would like to set `IV`.
+  If `proali` is proper, then need to think about how to set the values of `R`, `Q` and maybe `-e`.](#Note)
+  Could refer [guideline.pdf](/baoxingsong/AnchorWave/blob/master/doc/guideline.pdf) or [#16](/baoxingsong/AnchorWave/blob/master/issues/16) for how to do that.
+* To alignment highly diverse genomes, the command 4 might cost a couple of CPU days. If you have large memory available, this step could be paralyzed. Without heavily parameters turning, for highly diverse genomes, using a single thread, AnchorWave uses ~20Gb memory. Increasing a thread would cost an extra ~10Gb memory. If the two genomes have very similar sequences, the time and memory cost would be significantly less.
+
+Options:
+
+```
+Program anchorwave
+Usage: anchorwave <command> [options]
+Commands:
+    gff2seq     get the longest full-length CDS for each gene
+    genoAli     whole chromosome global alignment and variant calling
+    proali      genome alignment with relocation variation, chromosome fusion or whole genome duplication
+    ali         perform global alignment for a pair of sequences using the 2-piece affine gap cost strategy
+```
+
+### Lift over the reference full-length CDS start/stop coordinates to the query genome (command 1-3)
+
+When extracting full-length CDS, if for a gene, there are multiple transcript isoforms, only the transcript with longest full-length CDS would be used.
+The `gff2seq` output the concatenated full-length CDSs.
+Options of

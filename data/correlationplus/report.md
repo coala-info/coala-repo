@@ -325,3 +325,6 @@ You can get more information about each individual app as follows:
 correlationplus analyze -h
 ```
 
+
+## Metadata
+- **Skill**: generated

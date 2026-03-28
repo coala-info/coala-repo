@@ -1,6 +1,6 @@
 ---
 name: fastkit
-description: FastKit formats and validates biological sequence files to prepare them for downstream analysis. Use when user asks to format FASTA headers, normalize sequence case, validate DNA or protein sequences, or check sequence counts.
+description: FastKit is a utility for formatting and validating biological sequence data in FASTA files. Use when user asks to format sequences, normalize character case, strip header spaces, or validate DNA and protein data integrity.
 homepage: https://github.com/neoformit/fastkit
 ---
 
@@ -9,18 +9,18 @@ homepage: https://github.com/neoformit/fastkit
 
 ## Overview
 
-FastKit is a specialized utility designed to handle the routine, often repetitive tasks required to prepare biological sequence files for downstream analysis. Rather than reinventing core algorithms, it acts as a wrapper for established libraries like Biopython and SeqTK, providing a consistent interface for formatting and validation. Its primary design philosophy is to output to `stdout`, allowing users to chain operations via pipes and maintain transparent control over file naming.
+FastKit is a specialized utility designed to handle the routine, repetitive tasks associated with biological sequence data preparation. It acts as a wrapper for established libraries like Biopython to provide a consistent interface for formatting and validating FASTA files. By writing results directly to standard output, it integrates seamlessly into command-line pipes, allowing users to clean and verify data without creating unnecessary intermediate files.
 
-## Core CLI Usage
+## Command Usage and Patterns
 
 ### Formatting Sequences
-The `format` subcommand prepares FASTA files for tool execution by cleaning headers and normalizing sequence characters.
+Use the `format` subcommand to normalize FASTA files. This is particularly useful for tools that are sensitive to header formatting or character case.
 
-*   **Strip Header Spaces**: Replaces spaces in FASTA titles with underscores. This is critical for tools that only read the first string of a header as the sequence ID.
+*   **Strip Header Spaces**: Replaces spaces in FASTA titles with underscores to prevent parsing errors in downstream tools.
     ```bash
     fastkit format input.fasta --strip-header-space > cleaned.fasta
     ```
-*   **Case Normalization**: Converts all sequence characters to uppercase to ensure consistency across different datasets.
+*   **Normalize Case**: Converts all sequence characters to uppercase to ensure consistency.
     ```bash
     fastkit format input.fasta --uppercase > normalized.fasta
     ```
@@ -29,36 +29,42 @@ The `format` subcommand prepares FASTA files for tool execution by cleaning head
     fastkit format input.fasta --strip-header-space --uppercase > final.fasta
     ```
 
-### Validating Data
-The `validate` subcommand checks the integrity of FASTA files without altering their content. It raises errors or returns boolean values based on the specified constraints.
+### Validating Data Integrity
+Use the `validate` subcommand to ensure files meet specific biological standards. These commands return boolean results or raise exceptions rather than modifying the file.
 
-*   **DNA/Protein Validation**: Ensures sequences conform to IUPAC standards.
+*   **DNA Validation**: Check if the file contains valid IUPAC DNA characters.
     ```bash
-    # Validate as DNA
     fastkit validate input.fasta --dna
-
-    # Validate as Protein
+    ```
+*   **Protein Validation**: Check for valid IUPAC protein sequences.
+    ```bash
     fastkit validate input.fasta --protein
     ```
-*   **Strict Character Checking**: Use `--no-unknown` to prohibit ambiguous characters (like `N` in DNA or `X` in Protein). This requires either the `--dna` or `--protein` flag.
+*   **Strict Validation**: Prohibit unknown characters (like N or X) by combining flags.
     ```bash
     fastkit validate input.fasta --dna --no-unknown
     ```
-*   **Sequence Count Constraints**: Verify that a file does not exceed a specific number of sequences.
+*   **Sequence Count Limits**: Verify that a file does not exceed a specific number of sequences.
     ```bash
     fastkit validate input.fasta --sequence-count 100
     ```
 
 ## Expert Tips and Best Practices
 
-*   **Piping for Efficiency**: Since FastKit writes to `stdout`, you can pipe multiple subcommands together to perform complex pre-processing in a single line without creating intermediate files.
-    ```bash
-    fastkit format input.fasta --strip-header-space | fastkit format - --uppercase > processed.fasta
-    ```
-*   **Validation First**: Always run `validate` before `format` in a pipeline. This ensures you are not wasting compute resources formatting data that is fundamentally invalid or contains too many sequences for your target tool.
-*   **IUPAC Compliance**: Use the `--no-unknown` flag when preparing data for sensitive alignment or phylogenetics tools that may misinterpret or crash on ambiguous characters.
-*   **Filename Inference**: FastKit is designed to infer datatypes from filenames. Ensure your files have standard extensions (`.fasta`, `.fas`, `.fastq`) to allow the tool to process them correctly without manual type declarations.
+*   **Pipe Integration**: Since FastKit writes to `stdout`, always use redirection (`>`) to save your results or pipe (`|`) directly into the next tool in your pipeline.
+*   **Filename Inference**: FastKit automatically infers datatypes from filenames. Ensure your files have standard extensions (e.g., `.fasta`, `.fas`, `.fastq`) for the best results.
+*   **Pre-flight Checks**: Run `validate` as the first step in any automated pipeline. Catching a non-IUPAC character or an empty file early saves significant compute time on downstream alignment or assembly tasks.
+*   **Header Sanitization**: Many legacy bioinformatics tools fail when encountering spaces or special characters in FASTA headers. Always use `--strip-header-space` when preparing data for older software.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fastkit validate | Validate FASTA files in preparation for tool execution. |
+| fastkit_format | Reformat FASTA files in preparation for tool execution. |
 
 ## Reference documentation
-- [FastKit GitHub Repository](./references/github_com_neoformit_fastkit.md)
-- [FastKit Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_fastkit_overview.md)
+- [FastKit README](./references/github_com_neoformit_fastkit_blob_main_README.md)
+- [FastKit Setup and CLI Entrypoints](./references/github_com_neoformit_fastkit_blob_main_setup.py.md)

@@ -1,6 +1,6 @@
 ---
 name: parascopy
-description: Parascopy resolves duplicated genomic regions by estimating copy numbers and identifying variants across highly similar paralogs. Use when user asks to estimate aggregate or paralog-specific copy numbers, identify variants in homologous regions, or analyze complex gene families like SMN1 and SMN2.
+description: Parascopy is a bioinformatics suite designed to analyze duplicated genomic regions by distinguishing between paralogous sequences. Use when user asks to build homology tables, estimate aggregate or paralog-specific copy numbers, and call variants in complex duplicated regions.
 homepage: https://github.com/tprodanov/parascopy
 ---
 
@@ -8,74 +8,91 @@ homepage: https://github.com/tprodanov/parascopy
 # parascopy
 
 ## Overview
-Parascopy is a specialized bioinformatics suite designed to resolve the complexities of duplicated genomic regions. In standard WGS analysis, reads from highly similar paralogs are often mismapped or assigned low mapping quality. Parascopy overcomes this by using a multi-locus approach to estimate copy numbers and identify variants specific to individual paralogs. Use this skill when you need to process BAM/CRAM files to distinguish between gene copies (e.g., SMN1/SMN2) or analyze regions with high homology.
 
-## Installation and Environment
-Parascopy requires Python ≥ 3.6 and several external tools (samtools, tabix, bgzip, bwa). For variant calling, a modified version of Freebayes is required.
-
-```bash
-# Recommended installation via Bioconda
-conda install -c bioconda parascopy
-```
+Parascopy is a specialized bioinformatics suite designed to resolve the complexities of duplicated genomic regions. While standard tools often struggle with "dead zones" caused by paralogous sequences, Parascopy uses a multi-locus approach to distinguish between different copies of a gene. It provides workflows for building homology tables, calculating background depth, estimating copy numbers (both aggregate and paralog-specific), and calling variants in these challenging regions.
 
 ## Core Workflow
 
-### 1. Constructing a Homology Table
-Before analysis, you must define the duplicated regions. The reference genome must be indexed with `samtools faidx` and `bwa index`.
-
+### 1. Homology Table Construction
+Before analysis, you must define the duplications in the reference genome.
 ```bash
-# Step 1: Generate pre-table
+# Step A: Identify duplications
 parascopy pretable -f genome.fa -o pretable.bed.gz
 
-# Step 2: Generate final homology table
+# Step B: Construct the formal homology table
 parascopy table -i pretable.bed.gz -f genome.fa -o table.bed.gz
 ```
-*Tip: For human data (GRCh37, GRCh38, CHM13), use precomputed homology tables to save time.*
+*Note: The reference genome must be indexed with `samtools faidx` and `bwa index`.*
 
-### 2. Background Read Depth Calculation
-Calculate the expected depth to normalize copy number estimations.
+### 2. Copy Number Estimation
+This is a two-step process involving depth normalization followed by CN estimation.
 
+**Calculate Background Depth:**
 ```bash
-# -I accepts a text file with one BAM/CRAM path per line
-parascopy depth -I input.list -g hg38 -f genome.fa -o depth_output
+parascopy depth -I input.list -g hg38 -f genome.fa -o depth_dir
 ```
 
-### 3. Estimating Copy Number (agCN and psCN)
-This is the primary analysis step to determine the total and paralog-specific copy numbers.
-
+**Estimate agCN and psCN:**
 ```bash
-parascopy cn -I input.list -t table.bed.gz -f genome.fa -R regions.bed -d depth_output -o cn_analysis
+parascopy cn -I input.list -t table.bed.gz -f genome.fa -R regions.bed -d depth_dir -o output_dir
 ```
 
-### 4. Variant Calling
-Variant calling is performed on top of a completed copy number analysis.
-
+### 3. Variant Calling
+Variant calling is performed as an extension of a completed copy number analysis.
 ```bash
-parascopy call -p cn_analysis -f genome.fa -t table.bed.gz
+parascopy call -p output_dir -f genome.fa -t table.bed.gz
 ```
 
 ## Expert Tips and Best Practices
 
-### Handling Sex Chromosomes
-By default, Parascopy treats X and Y as regular autosomes. Use the `--modify-ref` argument with a BED file to specify correct reference copy numbers for male/female samples.
-*   **Format**: `CHROM START END SAMPLES CN`
-*   **Example**: `chrX 0 inf SAMPLE_MALE 1`
+### Input Handling
+- **Sample Naming**: You can override sample names in the input list using the format `path/to/file.bam::SampleName`.
+- **File Formats**: Both BAM and CRAM are supported, but they must be sorted and indexed.
 
-### Working with ALT Contigs
-If your BAM/CRAM files were mapped to a reference containing ALT contigs, you must:
-1. Use a homology table constructed on that specific reference.
-2. Use `--modify-ref` to set the reference copy number of all ALT contigs to 0.
+### Handling Sex Chromosomes
+By default, Parascopy treats X and Y as regular autosomes. For accurate results in males (1 copy of X/Y) or females (2 copies of X, 0 of Y), use the `--modify-ref` flag with a BED file:
+```text
+# Example modify-ref.bed
+chrX    0    inf    MaleSample1,MaleSample2    1
+chrY    0    inf    MaleSample1,MaleSample2    1
+chrY    0    inf    FemaleSample1              0
+```
 
 ### Reusing Model Parameters
-For large cohorts or clinical pipelines, you can speed up analysis by using model parameters from a previous run:
+If analyzing new samples using the same sequencing protocol, you can speed up the process by using parameters from a previous run:
 ```bash
 parascopy cn-using previous_analysis/model -I new_samples.list -t table.bed.gz -f genome.fa -d new_depth -o new_analysis
 ```
 
-### Input Handling
-*   **Sample Naming**: Override or provide sample names using the syntax `path/to/file.bam::SampleName` in your input list.
-*   **File Formats**: Both BAM and CRAM are supported; ensure they are sorted and indexed.
+### Interpreting Output
+- **res.samples.bed.gz**: The primary output for copy number. Look at `agCN` for total copies and `psCN` for the breakdown per paralog.
+- **variants.vcf.gz**: Contains paralog-specific genotypes. The `pos2` INFO field is critical as it lists all homologous positions for that variant.
+- **overlPSV**: In the VCF, this field indicates if a variant overlaps a Paralogous Sequence Variant (PSV), which can affect calling confidence.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| call | Call variants in duplicated regions. |
+| cn | Find aggregate and paralog-specific copy number for given unique and duplicated regions. |
+| cn-using | Find aggregate and paralog-specific copy number for given unique and duplicated regions. |
+| depth | Calculate read depth and variance in given genomic windows. |
+| examine | Split input regions by reference copy number. |
+| msa | Visualize multiple sequence alignment of homologous regions. |
+| parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call. |
+| parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call. |
+| parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call. |
+| parascopy | A tool for analyzing paralogous genes and their copy number variations. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call. |
+| parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call. |
+| pool | Pool reads from various copies of a duplication. |
+| pretable | Create homology pre-table. This command aligns genomic regions back to the genome to find homologous regions. |
+| psvs | Output PSVs (paralogous-sequence variants) between homologous regions. |
+| table | Convert homology pre-table into homology table. This command combines overlapping homologous regions into longer duplications. |
+| view | View and filter homology table. |
 
 ## Reference documentation
-- [Parascopy Main Documentation](./references/github_com_tprodanov_parascopy.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_parascopy_overview.md)
+- [Main README](./references/github_com_tprodanov_parascopy_blob_main_README.md)
+- [Copy Number Output Details](./references/github_com_tprodanov_parascopy_blob_main_docs_cn_output.md)
+- [Variant Calling Output Details](./references/github_com_tprodanov_parascopy_blob_main_docs_call_output.md)

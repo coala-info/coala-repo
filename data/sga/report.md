@@ -916,3 +916,6 @@ If src is a sequence file output forward and reverse counts for each kmer in the
 Report bugs to js18@sanger.ac.uk
 ```
 
+
+## Metadata
+- **Skill**: generated

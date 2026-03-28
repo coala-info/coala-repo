@@ -334,3 +334,6 @@ Options:
 For each sample from the list, a binary file with *.minhash* extension containing filtered k-mers is created
 ```
 
+
+## Metadata
+- **Skill**: generated

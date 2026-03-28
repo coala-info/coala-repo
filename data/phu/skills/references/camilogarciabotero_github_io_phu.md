@@ -1,0 +1,203 @@
+[ ]
+[ ]
+
+[Skip to content](#phu-phage-utilities)
+
+phu
+
+Home
+
+Initializing search
+
+[camilogarciabotero/phu](https://github.com/camilogarciabotero/phu "Go to repository")
+
+phu
+
+[camilogarciabotero/phu](https://github.com/camilogarciabotero/phu "Go to repository")
+
+* [ ]
+
+  Home
+
+  [Home](.)
+
+  Table of contents
+  + [What is phu?](#what-is-phu)
+
+    - [Key Features](#key-features)
+  + [Quick Start](#quick-start)
+
+    - [Installation](#installation)
+    - [Basic Usage](#basic-usage)
+  + [Available Commands](#available-commands)
+
+    - [screen - Protein Family Screening](#screen-protein-family-screening)
+    - [cluster - Sequence Clustering](#cluster-sequence-clustering)
+    - [simplify-taxa - Taxonomy Simplification](#simplify-taxa-taxonomy-simplification)
+  + [Use Cases](#use-cases)
+  + [Contributing](#contributing)
+  + [Citation](#citation)
+  + [References](#references)
+* [ ]
+
+  Commands
+
+  Commands
+  + [cluster](commands/cluster/)
+  + [simplify-taxa](commands/simplify-taxa/)
+  + [screen](commands/screen/)
+
+Table of contents
+
+* [What is phu?](#what-is-phu)
+
+  + [Key Features](#key-features)
+* [Quick Start](#quick-start)
+
+  + [Installation](#installation)
+  + [Basic Usage](#basic-usage)
+* [Available Commands](#available-commands)
+
+  + [screen - Protein Family Screening](#screen-protein-family-screening)
+  + [cluster - Sequence Clustering](#cluster-sequence-clustering)
+  + [simplify-taxa - Taxonomy Simplification](#simplify-taxa-taxonomy-simplification)
+* [Use Cases](#use-cases)
+* [Contributing](#contributing)
+* [Citation](#citation)
+* [References](#references)
+
+# phu - Phage Utilities[¶](#phu-phage-utilities "Permanent link")
+
+**A modular toolkit for viral genomics workflows**
+
+---
+
+## What is phu?[¶](#what-is-phu "Permanent link")
+
+**phu** (phage utilities) is a command-line toolkit designed to streamline viral genomics workflows. It provides intuitive commands that wrap complex bioinformatics utilities behind a consistent interface, making phage and viral sequence analysis more accessible and reproducible.
+
+### Key Features[¶](#key-features "Permanent link")
+
+* **Modular Design**: Clean, focused commands for specific tasks.
+* **Easy Installation**: Available through Bioconda, PyPI.
+* **Reproducible**: Consistent interface across different utilities.
+* **Well Documented**: Comprehensive documentation and examples.
+
+## Quick Start[¶](#quick-start "Permanent link")
+
+### Installation[¶](#installation "Permanent link")
+
+Install `phu` using mamba or conda from the bioconda channel:
+
+```
+mamba create -n phu bioconda::phu
+mamba activate phu
+```
+
+### Basic Usage[¶](#basic-usage "Permanent link")
+
+```
+phu -h
+
+ Usage: phu [OPTIONS] COMMAND [ARGS]...
+
+ Phage utilities CLI
+
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                                              │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ─────────────────────────────────────────────────────────────────────────────────╮
+│ screen          Screen contigs for a protein family using HMMER on predicted CDS.          │
+│ cluster         Sequence clustering wrapper around external 'vclust' with three modes.     │
+│ simplify-taxa   Simplify vContact taxonomy prediction columns into compact lineage codes.  │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## Available Commands[¶](#available-commands "Permanent link")
+
+### `screen` - Protein Family Screening[¶](#screen-protein-family-screening "Permanent link")
+
+Screen DNA contigs for specific protein families using HMMER on predicted coding sequences. This is particularly useful for identifying viral contigs in metagenomic assemblies or filtering assemblies based on protein content.
+
+**Example:**
+
+```
+ phu screen --input-contigs assembly.fasta --combine-mode all viral_capsid.hmm portal.hmm
+```
+
+[Learn more about protein screening →](commands/screen/)
+
+### `cluster` - Sequence Clustering[¶](#cluster-sequence-clustering "Permanent link")
+
+Cluster viral sequences into operational taxonomic units with three specialized modes:
+
+* **`dereplication`** - Remove duplicate sequences
+* **`votu`** - Group sequences into viral Operational Taxonomic Units
+* **`species`** - Create species-level clusters
+
+**Example:**
+
+```
+phu cluster --mode votu --input-contigs viral-genomes.fasta
+```
+
+[Learn more about clustering →](commands/cluster/)
+
+### `simplify-taxa` - Taxonomy Simplification[¶](#simplify-taxa-taxonomy-simplification "Permanent link")
+
+Simplify verbose vContact taxonomy predictions into compact lineage codes for easier analysis and visualization.
+**Example:**
+
+```
+phu simplify-taxa -i final_assignments.csv -o simplified_taxonomy.csv
+```
+
+[Learn more about taxonomy simplification →](commands/simplify-taxa/)
+
+## Use Cases[¶](#use-cases "Permanent link")
+
+* **Viral Identification**: Screen metagenomic assemblies for viral contigs using protein markers
+* **Multi-marker Analysis**: Find contigs with complete sets of viral proteins (e.g., capsid, portal, primase, terminase)
+* **Viral Metagenomics**: Dereplicate and cluster viral contigs from metagenomic assemblies
+* **Phage Genomics**: Organize phage genomes into taxonomic groups
+* **Comparative Analysis**: Prepare datasets for phylogenetic and comparative genomic studies
+* **Database Construction**: Build reference databases of viral sequences
+
+## Contributing[¶](#contributing "Permanent link")
+
+We welcome contributions! Whether it's bug reports, feature requests, or code contributions, please check out our [GitHub repository](https://github.com/camilogarciabotero/phu).
+
+## Citation[¶](#citation "Permanent link")
+
+If you use phu in your research, please cite:
+
+```
+García-Botero, C. (2025). phu: Phage Utilities - A modular toolkit for viral genomics workflows.
+GitHub repository: https://github.com/camilogarciabotero/phu
+```
+
+## References[¶](#references "Permanent link")
+
+This program uses several key tools and libraries, make sure to acknowledge them when using `phu`:
+
+* [vclust](https://github.com/refresh-bio/vclust): A high-performance clustering tool for viral sequences:
+
+  > Zielezinski A, Gudyś A, Barylski J, Siminski K, Rozwalak P, Dutilh BE, Deorowicz S. Ultrafast and accurate sequence alignment and clustering of viral genomes. Nat Methods. https://doi.org/10.1038/s41592-025-02701-7
+* [seqkit](https://bioinf.shenwei.me/seqkit/): A toolkit for FASTA/Q file manipulation.
+
+  > Wei Shen\*, Botond Sipos, and Liuyang Zhao. 2024. SeqKit2: A Swiss Army Knife for Sequence and Alignment Processing. iMeta e191. doi:10.1002/imt2.191.
+* [Prodigal](https://github.com/hyattpd/prodigal): A gene prediction tool for prokaryotic genomes.
+
+  > Hyatt, D., Chen, G. L., LoCascio, P. F., Land, M. L., Larimer, F. W., & Hauser, L. J. (2010). Prodigal: prokaryotic gene recognition and translation initiation site identification. BMC bioinformatics, 11(1), 119. https://doi.org/10.1186/1471-2105-11-119
+* [pyrodigal](https://pyrodigal.readthedocs.io/en/stable/): A tool for gene prediction in prokaryotic genomes.
+
+  > Larralde, M., (2022). Pyrodigal: Python bindings and interface to Prodigal, an efficient method for gene prediction in prokaryotes. Journal of Open Source Software, 7(72), 4296, https://doi.org/10.21105/joss.04296
+* [HMMER](http://hmmer.org/): A suite of tools for sequence analysis using profile hidden Markov models.
+
+  > Eddy, S. R. (2011). Accelerated Profile HMM Searches. PLoS Computational Biology, 7(10), e1002195. https://doi.org/10.1371/journal.pcbi.1002195
+* [pyHMMER](https://pyhmmer.readthedocs.io/en/latest/): Python bindings for HMMER.
+
+  > Larralde, M., & Zeller, G. (2023). PyHMMER: a Python library binding to HMMER for efficient sequence analysis. Bioinformatics, 39(5). https://doi.org/10.1093/bioinformatics/btad214
+
+Made with
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)

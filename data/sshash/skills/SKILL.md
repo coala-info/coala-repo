@@ -1,6 +1,6 @@
 ---
 name: sshash
-description: sshash is a high-performance tool for building space-efficient associative dictionaries to store and query large sets of k-mers. Use when user asks to index genomic unitigs, perform fast sequence membership lookups, or extract k-mer frequency counts from a dataset.
+description: SSHash is a high-performance C++ data structure designed to store and query large sets of DNA k-mers using a compressed dictionary. Use when user asks to build a k-mer index, query k-mer membership, retrieve k-mer weights, or perform navigational queries for genome analysis.
 homepage: https://github.com/jermp/sshash
 ---
 
@@ -8,52 +8,94 @@ homepage: https://github.com/jermp/sshash
 # sshash
 
 ## Overview
-sshash is a high-performance tool designed to store and query large sets of k-mers (DNA strings of length k) with extreme space efficiency. It utilizes Sparse and Skew Hashing to create a compressed, associative dictionary. This skill enables agents to index genomic unitigs, perform fast lookups to determine if specific sequences exist in a dataset, and extract frequency counts (weights) associated with those sequences. It is particularly useful for pangenome analysis and sequence search where memory footprint is a constraint.
 
-## Installation and Setup
-The tool can be installed via Bioconda or compiled from source for maximum performance.
+SSHash (Sparse and Skew Hashing) is a high-performance C++ data structure designed to store and query large sets of DNA k-mers efficiently. It functions as a compressed dictionary that maps k-mers to unique identifiers or frequency counts (weights). By utilizing sparse and skew hashing techniques, it achieves a significantly lower memory footprint than traditional hash tables while maintaining high query throughput. This tool is particularly useful for bioinformatics applications such as genome assembly verification, sequence search, and k-mer counting.
 
-- **Conda**: `conda install bioconda::sshash`
-- **Source Build**:
-  ```bash
-  mkdir build && cd build
-  cmake .. -D SSHASH_USE_ARCH_NATIVE=On
-  make -j
-  ```
-- **K-mer Length**: By default, k is limited to 31. For k up to 63, compile with `-DSSHASH_USE_MAX_KMER_LENGTH_63=On`.
+## Usage Instructions
 
-## Core CLI Workflows
+### Installation and Setup
 
-### 1. Building an Index
-To create a dictionary, you must provide a file of stitched unitigs. The value of `k` must match the value used to generate the unitigs.
+SSHash can be installed via Bioconda or built from source using CMake.
 
-- **Basic Build**:
-  `./sshash build -i input.fa.gz -k 31 -m 13 -o index.sshash`
-- **Weighted Build** (to store k-mer frequencies):
-  `./sshash build -i input.fa.gz -k 31 -m 13 --weighted -o index.sshash`
-- **Parameters**:
-  - `-k`: K-mer length.
-  - `-m`: Minimizer length (typically $m < k$).
-  - `--check`: Validates the index integrity after construction.
+**Bioconda:**
+```bash
+conda install -c bioconda sshash
+```
 
-### 2. Querying the Index
-Once an index is built, you can perform various lookups.
+**Build from Source:**
+```bash
+git clone --recursive https://github.com/jermp/sshash.git
+cd sshash
+mkdir build && cd build
+cmake ..
+make -j
+```
+*Note: To support k-mers longer than 31 (up to 63), use `cmake .. -D SSHASH_USE_MAX_KMER_LENGTH_63=On`.*
 
-- **Membership/Benchmark**:
-  `./sshash bench -i index.sshash`
-- **Streaming Queries**:
-  Process a DNA file to check which k-mers are present in the dictionary.
-  `./sshash query -i index.sshash -f query.fasta`
-- **Navigational Queries**:
-  Explore the neighborhood of a k-mer or string to find adjacent sequences in the graph.
+### Building an Index
 
-## Expert Tips and Best Practices
-- **Memory Management**: For large-scale indexing, increase the file descriptor limit using `ulimit -n 2048` before running the build command.
-- **Nucleotide Encoding**: sshash uses a specific 2-bit encoding (A=00, C=01, G=11, T=10). If integrating with tools expecting traditional encoding (G=10, T=11), recompile with `-DSSHASH_USE_TRADITIONAL_NUCLEOTIDE_ENCODING=On`.
-- **Reverse Complements**: The tool assumes a k-mer and its reverse complement are identical. You do not need to manually provide both orientations.
-- **Input Preparation**: Use "stitched unitigs" as input. If starting from raw reads, k-mers must be assembled into unitigs first (e.g., using BCALM2 or UST) before indexing with sshash.
-- **Thresholding**: For membership queries on long sequences, use the coverage threshold `E`. A sequence is considered "present" if at least $E \times (|S| - k + 1)$ of its k-mers are found.
+To use SSHash, you must first build an index from a FASTA or FASTQ file.
+
+```bash
+# Basic build
+./sshash build -i input.fasta -k 31 -m 13 -o index.sshash
+
+# Weighted build (to store k-mer frequencies)
+./sshash build -i input.fasta -k 31 -m 13 --weighted -o index.weighted.sshash
+```
+
+**Key Parameters:**
+- `-k`: The length of the k-mers (default is 31).
+- `-m`: The minimizer length (must be less than $k$). A common choice is $m \approx \log_4(N)$ where $N$ is the number of k-mers.
+- `-l`: The sparse index step (default is 1). Increasing this reduces memory but slows down queries.
+- `--weighted`: Required if you need to perform `Weight(i)` queries to retrieve k-mer counts.
+
+### Querying the Index
+
+Once the index is built, you can perform various lookups.
+
+**Membership and Lookup:**
+```bash
+./sshash query -i index.sshash -q queries.fasta
+```
+
+**Supported Query Types:**
+- **Lookup(x)**: Returns the unique identifier $i \in [0, n)$ for k-mer $x$, or -1 if not found.
+- **Access(i)**: Returns the k-mer string associated with identifier $i$.
+- **Weight(i)**: Returns the frequency count of the k-mer (requires a weighted index).
+- **Membership**: Checks if a k-mer exists in the dictionary.
+
+### Advanced CLI Patterns
+
+**Streaming Queries:**
+Process all k-mers in a DNA file to determine their presence in the dictionary:
+```bash
+./sshash query -i index.sshash -q input.fastq --stream
+```
+
+**Navigational Queries:**
+Determine the forward or backward neighborhood of a k-mer (useful for graph traversal):
+```bash
+# Check for x[2..k] + {A,C,G,T} and {A,C,G,T} + x[1..k-1]
+./sshash navigate -i index.sshash -q queries.fasta
+```
+
+### Expert Tips
+
+1. **Memory Optimization**: If memory is tight, increase the `-l` parameter during the build phase. This increases the "sparseness" of the index.
+2. **Canonical K-mers**: SSHash assumes that a k-mer and its reverse complement are identical. Ensure your input data follows this convention or use the tool's default behavior which handles canonical representation.
+3. **Minimizer Selection**: The choice of $m$ significantly impacts performance. If queries are slow, try adjusting $m$ relative to your dataset size.
+4. **Architecture Native**: For maximum performance on your specific CPU, compile with `-D SSHASH_USE_ARCH_NATIVE=On`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sshash permute | Permute the order of sequences in a FASTA file. |
+| sshash_build | Build a shash index from a FASTA file. |
 
 ## Reference documentation
-- [sshash GitHub Repository](./references/github_com_jermp_sshash.md)
-- [Bioconda sshash Overview](./references/anaconda_org_channels_bioconda_packages_sshash_overview.md)
+- [SSHash GitHub Repository](./references/github_com_jermp_sshash_blob_master_README.md)
+- [SSHash Build Configuration](./references/github_com_jermp_sshash_blob_master_CMakeLists.txt.md)

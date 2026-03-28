@@ -1,1 +1,337 @@
-GitHub - ebi-gene-expression-group/atlas-data-import Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ebi-gene-expression-group / atlas-data-import Public Notifications You must be signed in to change notification settings Fork 2 Star 0 0 stars 2 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights ebi-gene-expression-group/atlas-data-import develop Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 38 Commits 38 Commits .github/ workflows .github/ workflows .gitignore .gitignore README.md README.md data_import_post_install_tests.bats data_import_post_install_tests.bats data_import_post_install_tests.sh data_import_post_install_tests.sh get_experiment_data.R get_experiment_data.R import_classification_data.R import_classification_data.R test-environment.yml test-environment.yml View all files Repository files navigation README atlas-data-import Scripts for extracting expression- and metadata from SCXA in a programmatic way. Installation Package is installed via conda. To avoid dependency conflicts, it is recommended to install into fresh environment: conda create -n &lt;env_name&gt; conda activate &lt;env_name&gt; conda install -c bioconda atlas-data-import Obtain study data from Single Cell Expression Atlas get_experiment_data.R\ --accession-code &lt;accession code of the dataset to be extracted&gt;\ --get-expression-data &lt;should expression data be imported?&gt;\ --matrix-type &lt;type of expression data to download&gt;\ --decorated-rows &lt;boolean; use decorated row names?&gt;\ --output-dir-name &lt;name of the output directory&gt;\ --use-default-names &lt;should default names be used?&gt;\ --exp-data-dir &lt;name for expression data directory&gt;\ --get-sdrf &lt;boolean; should SDRF files be imported?&gt;\ --get-condensed-sdrf &lt;boolean; should condensed SDRF be imported?&gt;\ --get-idf &lt;boolean; should IDF files be imported?&gt;\ --get-marker-genes &lt;boolean; should marker genes be imported?&gt;\ --markers-cell-grouping &lt;what type of cell grouping is used for marker gene file?&gt;\ --use-full-names &lt;should non-expression data files be named with full file names? Default: FALSE&gt;\ --experiments-prefix &lt;URL prefix for scxa experiments&gt; Import pre-trained classifiers and SDRF files for a range of studies User can provide a yaml-formatted config file (see example ) with specific datasets for which to import classifiers. Otherwise, all available classifiers of a given type are imported. import_classification_data.R\ --accession-code &lt;comma-separated string of datasets for which to extract the classifiers&gt;\ --tool &lt;which tool's classifiers should be imported&gt;\ --species &lt;for which species classifier(s) should be imported?&gt;\ --classifiers-output-dir &lt;output directory for downloaded classifiers&gt;\ --get-sdrf &lt;should SDRF file(s) be downloaded?&gt;\ --condensed-sdrf &lt;if --get-sdrf is set to TRUE, import condensed SDRF? by default, a normal version is imported&gt;\ --sdrf-output-dir &lt;output path for imported SDRF files directory&gt;\ --get-tool-perf-table &lt;should tool performance table be imported?&gt;\ --tool-perf-table-output-path &lt;output path for tool performance table&gt; About No description, website, or topics provided. Resources Readme Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 0 stars Watchers 1 watching Forks 2 forks Report repository Releases 2 Group classifiers by species Latest Jun 21, 2021 + 1 release Packages 0 No packages published Contributors 2 &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages R 81.1% Shell 18.9% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Febi-gene-expression-group%2Fatlas-data-import)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Febi-gene-expression-group%2Fatlas-data-import)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ebi-gene-expression-group%2Fatlas-data-import)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ebi-gene-expression-group](/ebi-gene-expression-group)
+/
+**[atlas-data-import](/ebi-gene-expression-group/atlas-data-import)**
+Public
+
+* [Notifications](/login?return_to=%2Febi-gene-expression-group%2Fatlas-data-import) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2Febi-gene-expression-group%2Fatlas-data-import)
+* [Star
+   0](/login?return_to=%2Febi-gene-expression-group%2Fatlas-data-import)
+
+* [Code](/ebi-gene-expression-group/atlas-data-import)
+* [Issues
+  0](/ebi-gene-expression-group/atlas-data-import/issues)
+* [Pull requests
+  1](/ebi-gene-expression-group/atlas-data-import/pulls)
+* [Actions](/ebi-gene-expression-group/atlas-data-import/actions)
+* [Projects](/ebi-gene-expression-group/atlas-data-import/projects)
+* [Security
+  0](/ebi-gene-expression-group/atlas-data-import/security)
+* [Insights](/ebi-gene-expression-group/atlas-data-import/pulse)
+
+Additional navigation options
+
+* [Code](/ebi-gene-expression-group/atlas-data-import)
+* [Issues](/ebi-gene-expression-group/atlas-data-import/issues)
+* [Pull requests](/ebi-gene-expression-group/atlas-data-import/pulls)
+* [Actions](/ebi-gene-expression-group/atlas-data-import/actions)
+* [Projects](/ebi-gene-expression-group/atlas-data-import/projects)
+* [Security](/ebi-gene-expression-group/atlas-data-import/security)
+* [Insights](/ebi-gene-expression-group/atlas-data-import/pulse)
+
+# ebi-gene-expression-group/atlas-data-import
+
+develop
+
+[Branches](/ebi-gene-expression-group/atlas-data-import/branches)[Tags](/ebi-gene-expression-group/atlas-data-import/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[38 Commits](/ebi-gene-expression-group/atlas-data-import/commits/develop/)   38 Commits | | |
+| [.github/workflows](/ebi-gene-expression-group/atlas-data-import/tree/develop/.github/workflows "This path skips through empty directories") | | [.github/workflows](/ebi-gene-expression-group/atlas-data-import/tree/develop/.github/workflows "This path skips through empty directories") |  |  |
+| [.gitignore](/ebi-gene-expression-group/atlas-data-import/blob/develop/.gitignore ".gitignore") | | [.gitignore](/ebi-gene-expression-group/atlas-data-import/blob/develop/.gitignore ".gitignore") |  |  |
+| [README.md](/ebi-gene-expression-group/atlas-data-import/blob/develop/README.md "README.md") | | [README.md](/ebi-gene-expression-group/atlas-data-import/blob/develop/README.md "README.md") |  |  |
+| [data\_import\_post\_install\_tests.bats](/ebi-gene-expression-group/atlas-data-import/blob/develop/data_import_post_install_tests.bats "data_import_post_install_tests.bats") | | [data\_import\_post\_install\_tests.bats](/ebi-gene-expression-group/atlas-data-import/blob/develop/data_import_post_install_tests.bats "data_import_post_install_tests.bats") |  |  |
+| [data\_import\_post\_install\_tests.sh](/ebi-gene-expression-group/atlas-data-import/blob/develop/data_import_post_install_tests.sh "data_import_post_install_tests.sh") | | [data\_import\_post\_install\_tests.sh](/ebi-gene-expression-group/atlas-data-import/blob/develop/data_import_post_install_tests.sh "data_import_post_install_tests.sh") |  |  |
+| [get\_experiment\_data.R](/ebi-gene-expression-group/atlas-data-import/blob/develop/get_experiment_data.R "get_experiment_data.R") | | [get\_experiment\_data.R](/ebi-gene-expression-group/atlas-data-import/blob/develop/get_experiment_data.R "get_experiment_data.R") |  |  |
+| [import\_classification\_data.R](/ebi-gene-expression-group/atlas-data-import/blob/develop/import_classification_data.R "import_classification_data.R") | | [import\_classification\_data.R](/ebi-gene-expression-group/atlas-data-import/blob/develop/import_classification_data.R "import_classification_data.R") |  |  |
+| [test-environment.yml](/ebi-gene-expression-group/atlas-data-import/blob/develop/test-environment.yml "test-environment.yml") | | [test-environment.yml](/ebi-gene-expression-group/atlas-data-import/blob/develop/test-environment.yml "test-environment.yml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+
+# atlas-data-import
+
+Scripts for extracting expression- and metadata from SCXA in a programmatic way.
+
+### Installation
+
+Package is installed via conda. To avoid dependency conflicts, it is recommended to install into fresh environment:
+
+```
+conda create -n <env_name>
+conda activate <env_name>
+conda install -c bioconda atlas-data-import
+```
+
+### Obtain study data from Single Cell Expression Atlas
+
+```
+get_experiment_data.R\
+            --accession-code <accession code of the dataset to be extracted>\
+            --get-expression-data <should expression data be imported?>\
+            --matrix-type <type of expression data to download>\
+            --decorated-rows <boolean; use decorated row names?>\
+            --output-dir-name <name of the output directory>\
+            --use-default-names <should default names be used?>\
+            --exp-data-dir <name for expression data directory>\
+            --get-sdrf <boolean; should SDRF files be imported?>\
+            --get-condensed-sdrf <boolean; should condensed SDRF be imported?>\
+            --get-idf <boolean; should IDF files be imported?>\
+            --get-marker-genes <boolean; should marker genes be imported?>\
+            --markers-cell-grouping <what type of cell grouping is used for marker gene file?>\
+            --use-full-names <should non-expression data files be named with full file names? Default: FALSE>\
+            --experiments-prefix <URL prefix for scxa experiments>
+```
+
+### Import pre-trained classifiers and SDRF files for a range of studies
+
+User can provide a yaml-formatted config file (see [example](/ebi-gene-expression-group/atlas-data-import/blob/develop/example_user_config.yaml)) with specific datasets for which to import classifiers. Otherwise, all available classifiers of a given type are imported.
+
+```
+import_classification_data.R\
+            --accession-code <comma-separated string of datasets for which to extract the classifiers>\
+            --tool <which tool's classifiers should be imported>\
+            --species <for which species classifier(s) should be imported?>\
+            --classifiers-output-dir <output directory for downloaded classifiers>\
+            --get-sdrf <should SDRF file(s) be downloaded?>\
+            --condensed-sdrf <if --get-sdrf is set to TRUE, import condensed SDRF? by default, a normal version is imported>\
+            --sdrf-output-dir <output path for imported SDRF files directory>\
+            --get-tool-perf-table <should tool performance table be imported?>\
+            --tool-perf-table-output-path <output path for tool performance table>
+```
+
+## About
+
+No description, website, or topics provided.
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/ebi-gene-expression-group/atlas-data-import/activity)
+
+[Custom properties](/ebi-gene-expression-group/atlas-data-import/custom-properties)
+
+### Stars
+
+[**0**
+stars](/ebi-gene-expression-group/atlas-data-import/stargazers)
+
+### Watchers
+
+[**1**
+watching](/ebi-gene-expression-group/atlas-data-import/watchers)
+
+### Forks
+
+[**2**
+forks](/ebi-gene-expression-group/atlas-data-import/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Febi-gene-expression-group%2Fatlas-data-import&report=ebi-gene-expression-group+%28user%29)
+
+## [Releases 2](/ebi-gene-expression-group/atlas-data-import/releases)
+
+[Group classifiers by species
+
+Latest
+
+Jun 21, 2021](/ebi-gene-expression-group/atlas-data-import/releases/tag/0.1.1)
+
+[+ 1 release](/ebi-gene-expression-group/atlas-data-import/releases)
+
+## [Packages 0](/orgs/ebi-gene-expression-group/packages?repo_name=atlas-data-import)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/ebi-gene-expression-group/atlas-data-import/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [R
+  81.1%](/ebi-gene-expression-group/atlas-data-import/search?l=r)
+* [Shell
+  18.9%](/ebi-gene-expression-group/atlas-data-import/search?l=shell)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

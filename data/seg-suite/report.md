@@ -120,3 +120,6 @@ Options:
   -V, --version  show version number and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

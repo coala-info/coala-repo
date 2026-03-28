@@ -53,3 +53,6 @@ ERROR: Option '-reads' is mandatory
        -verbose     (1 arg) :    verbosity level  [default '1']
 ```
 
+
+## Metadata
+- **Skill**: generated

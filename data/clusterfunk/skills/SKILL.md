@@ -1,6 +1,6 @@
 ---
 name: clusterfunk
-description: "clusterfunk is a suite of tools for manipulating phylogenetic trees and integrating them with tabular metadata. Use when user asks to annotate tips, relabel taxa, prune trees, reconstruct ancestral states, graft trees, or assign phylotypes."
+description: Clusterfunk provides a suite of subcommands for manipulating phylogenetic trees and integrating them with metadata. Use when user asks to annotate or relabel tree tips, prune or graft trees, perform ancestral reconstruction, assign phylotypes, or extract taxa and annotations.
 homepage: https://github.com/cov-ert/clusterfunk
 ---
 
@@ -8,68 +8,99 @@ homepage: https://github.com/cov-ert/clusterfunk
 # clusterfunk
 
 ## Overview
-clusterfunk is a specialized suite of tools for phylogenetic tree manipulation, often used in genomic epidemiology workflows. It excels at bridging the gap between tree structures (Newick/Nexus) and tabular metadata. Use this skill to automate the processing of large trees, specifically when you need to propagate traits across nodes, filter trees for specific taxa, or merge multiple trees into a single guide structure.
+The `clusterfunk` utility provides a specialized set of subcommands designed to bridge the gap between phylogenetic trees and metadata. It is particularly useful for genomic epidemiology and large-scale viral surveillance workflows where trees need to be decorated with traits, filtered based on specific taxa, or merged (grafted) to maintain updated evolutionary contexts. This skill guides the execution of these phylogenetic "funk" operations via the command line.
 
 ## Core CLI Patterns
 
 ### Tip Annotation and Relabeling
-To map metadata from a CSV/TSV file onto the tips of a tree (using NEXUS metacomment format):
-```bash
-clusterfunk annotate_tips \
-  --in-metadata metadata.csv \
-  --index-column sequence_name \
-  --trait-columns country date lineage \
-  --input input.tree \
-  --output annotated.tree
-```
-To rename the tips themselves using metadata fields:
-```bash
-clusterfunk relabel_tips \
-  --in-metadata metadata.csv \
-  --index-column sequence_name \
-  --trait-columns lineage date \
-  --input input.tree \
-  --output relabeled.tree
-```
+One of the most common tasks is mapping CSV/TSV metadata onto tree tips.
+- **Annotate Tips**: Adds metadata as NEXUS metacomments without changing taxon names.
+  ```bash
+  clusterfunk annotate_tips \
+    --in-metadata metadata.csv \
+    --index-column sequence_name \
+    --trait-columns location date lineage \
+    --input input.tree \
+    --output annotated.tree
+  ```
+- **Relabel Tips**: Physically changes the taxon labels in the tree file to include metadata.
+  ```bash
+  clusterfunk relabel_tips \
+    --in-metadata metadata.csv \
+    --index-column sequence_name \
+    --trait-columns location \
+    --input input.tree \
+    --output relabeled.tree
+  ```
 
-### Pruning and Filtering
-You can prune trees by providing a list of taxa to keep or remove, or by using metadata attributes.
-- **By list:** `clusterfunk prune --input in.tree --output out.tree --taxa taxa_to_keep.txt`
-- **By metadata:** Use the `--extract-tip-annotations` command first to identify targets if complex logic is needed, then prune.
+### Tree Manipulation
+- **Pruning**: Remove or keep specific taxa. You can provide a list via a fasta, text file, or metadata.
+  ```bash
+  clusterfunk prune --extract --fasta sequences.fasta --input full.tree --output subset.tree
+  ```
+- **Grafting**: Insert "scion" trees into a "guide" tree at the MRCA of shared tips.
+  ```bash
+  clusterfunk graft --input guide.tree --scion scion.tree --output merged.tree
+  ```
 
-### Ancestral State Reconstruction
-To reconstruct traits on internal nodes using the Fitch parsimony algorithm:
-```bash
-clusterfunk ancestral_reconstruction \
-  --trait country \
-  --input annotated.tree \
-  --output reconstructed.tree
-```
+### Analysis and Reconstruction
+- **Ancestral Reconstruction**: Uses the Fitch parsimony algorithm to infer internal node states for a given trait.
+  ```bash
+  clusterfunk ancestral_reconstruction --trait location --input annotated.tree --output reconstructed.tree
+  ```
+- **Phylotyping**: Assign clusters based on a branch length threshold.
+  ```bash
+  clusterfunk phylotype --threshold 0.001 --input tree.nwk --output phylotypes.csv
+  ```
+- **Label Transitions**: Identify and count where traits change across the tree branches.
+  ```bash
+  clusterfunk label_transitions --trait host --input reconstructed.tree --output transitions.tree
+  ```
 
-### Tree Grafting
-To merge "scion" trees onto a "guide" tree. The tool identifies the MRCA of shared tips and replaces the guide tree's clade with the scion:
-```bash
-clusterfunk graft \
-  --input guide.tree \
-  --scion scion.tree \
-  --output merged.tree
-```
-
-### Phylotype Assignment
-Assign clusters based on a branch length threshold:
-```bash
-clusterfunk phylotype \
-  --threshold 0.0005 \
-  --input input.tree \
-  --output phylotyped.tree
-```
+### Data Extraction
+- **Get Taxa**: Quickly list all tip labels.
+  ```bash
+  clusterfunk get_taxa --input tree.nwk > taxa_list.txt
+  ```
+- **Extract Annotations**: Convert tree metacomments back into a flat CSV format.
+  ```bash
+  clusterfunk extract_tip_annotations --traits location lineage --input annotated.tree --output extracted_metadata.csv
+  ```
 
 ## Expert Tips
-- **Format Consistency:** Ensure all trees in a `graft` operation are in the same format (e.g., all Newick or all Nexus).
-- **Trait Propagation:** Use `push_annotations_to_tips` after ancestral reconstruction if you need to label all descendants of a node that has reached a specific trait state.
-- **Metadata Matching:** The `--index-column` in your metadata must exactly match the taxon labels in the tree file for annotations to succeed.
-- **Extraction:** Use `extract_tip_annotations` to quickly generate a CSV of all current tree metadata for validation before performing complex prunes or grafts.
+- **Format Consistency**: When grafting, ensure the guide tree and all scion trees are in the same format (e.g., all NEXUS or all Newick).
+- **Trait Pushing**: Use `push_annotations_to_tips` to propagate internal node labels (like lineage assignments) down to all descendant tips.
+- **Basal Taxon**: Use `return_basal` to identify a representative taxon from the base of a cluster, which is useful for rooting or outgroup selection.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ancestral_reconstruction | Reconstruct ancestral states on a phylogenetic tree using ACCTRAN or DELTRAN rules. |
+| annotate | Annotate tips and nodes in a phylogenetic tree using taxon labels, metadata files, or MRCA rules. |
+| annotate_tips_from_nodes | Annotate tips of a tree from its nodes based on specified traits. |
+| at | A tool for annotating and manipulating phylogenetic trees. Note: The provided help text indicates 'at' is an invalid subcommand choice. |
+| clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A tool for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A tool for phylogenetic tree manipulation and annotation. The provided help text indicates an invalid subcommand choice and lists available subcommands. |
+| clusterfunk | A tool for manipulating and annotating phylogenetic trees. Available subcommands include phylotype, ancestral_reconstruction, prune, graft, and others. |
+| clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A tool for tree manipulation and annotation |
+| clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A tool for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
+| clusterfunk | A tool for phylogenetic tree manipulation and annotation. |
+| clusterfunk | A tool for phylogenetic tree manipulation and annotation. It provides various subcommands to process, prune, graft, and annotate trees. |
+| extract_annotations | Extract tip annotations from a phylogenetic tree file into a CSV. |
+| get_taxa | Extract taxa from a tree file. |
+| graft | Graft incoming trees onto an input guide tree. |
+| label_transitions | Label transitions of a trait on a phylogenetic tree and optionally output exploded trees for each transition. |
+| phylotype | Assign phylotypes to a tree based on branch length thresholds. |
+| prune | Prune or extract subtrees from a phylogenetic tree based on taxa sets, metadata, or traits. |
 
 ## Reference documentation
-- [clusterfunk GitHub Repository](./references/github_com_snake-flu_clusterfunk.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_clusterfunk_overview.md)
+- [Clusterfunk README](./references/github_com_snake-flu_clusterfunk_blob_master_README.md)
+- [Clusterfunk Overview](./references/github_com_snake-flu_clusterfunk.md)

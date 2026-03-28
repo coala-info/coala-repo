@@ -1,6 +1,6 @@
 ---
 name: ribotricer
-description: "Ribotricer identifies translating open reading frames in Ribo-seq data by analyzing the sub-codon periodicity of mapped reads. Use when user asks to prepare candidate ORF indices, detect active translation in short or overlapping ORFs, or calculate phase scores for ribosome profiling data."
+description: Ribotricer identifies actively translating open reading frames by analyzing the sub-codon periodicity of ribosome profiling data. Use when user asks to prepare candidate ORF indices, detect translating ORFs from BAM files, or determine optimal phase-score cutoffs for Ribo-seq analysis.
 homepage: https://github.com/smithlabcode/ribotricer
 ---
 
@@ -8,71 +8,81 @@ homepage: https://github.com/smithlabcode/ribotricer
 # ribotricer
 
 ## Overview
-Ribotricer is a specialized bioinformatics tool for Ribo-seq analysis that identifies translating ORFs by assessing the sub-codon periodicity of mapped reads. Unlike tools that rely solely on read density, Ribotricer uses a phase-score based on the 3-nt movement of the ribosome. This allows for the detection of active translation in short ORFs (uORFs, dORFs) and overlapping ORFs that are often missed by standard RNA-seq pipelines.
-
-The workflow consists of two primary phases:
-1.  **Index Generation**: Identifying all potential candidate ORFs from the genome and annotation.
-2.  **ORF Detection**: Evaluating the periodicity of Ribo-seq reads across those candidates to determine translation status.
+Ribotricer is a specialized bioinformatics tool designed to identify active translation at the ORF level using Ribo-seq (Ribosome Profiling) data. Unlike tools that focus on read counts alone, ribotricer leverages the sub-codon periodicity of RPFs to distinguish between actively translating regions and background noise or non-coding occupancy. The workflow typically involves two main stages: indexing candidate ORFs from a reference genome and then scoring those candidates against experimental alignment data to determine translation status.
 
 ## Core Workflow
 
-### 1. Prepare Candidate ORFs
-Generate a candidate ORF index from your reference files. This step identifies all possible start-to-stop sequences.
+### 1. Preparing Candidate ORFs
+Before analyzing Ribo-seq data, you must generate a candidate ORF index. This step identifies all potential start-to-stop sequences based on your annotation.
 
 ```bash
-ribotricer prepare-orfs \
-    --gtf genome_annotation.gtf \
-    --fasta reference_genome.fasta \
-    --prefix study_index
+ribotricer prepare-orfs --gtf {ANNOTATION.gtf} --fasta {GENOME.fasta} --prefix {INDEX_NAME}
 ```
 
 **Expert Tips:**
-*   **Start Codons**: By default, it only looks for 'ATG'. For non-canonical translation studies, use `--start_codons ATG,CTG,GTG`.
-*   **ORF Length**: The default minimum length is 60 nts. Adjust with `--min_orf_length` if searching for small peptides (sORFs).
+* **Custom Start Codons:** By default, it only uses 'ATG'. For non-canonical starts, use `--start_codons ATG,CTG,GTG`.
+* **ORF Length:** The default minimum length is 60 nt. Adjust this using `--min_orf_length` if you are specifically looking for small ORFs (sORFs).
+* **Output:** This generates `{INDEX_NAME}_candidate_orfs.tsv`, which is required for the detection step.
 
-### 2. Detect Translating ORFs
-Run the detection algorithm on your alignment data.
+### 2. Detecting Translating ORFs
+This step assesses the periodicity of RPFs within the candidate ORFs to identify those that are actively translating.
 
 ```bash
-ribotricer detect-orfs \
-    --bam alignment.bam \
-    --ribotricer_index study_index_candidate_orfs.tsv \
-    --prefix sample_output \
-    --phase_score_cutoff 0.440
+ribotricer detect-orfs --bam {ALIGNMENT.bam} --ribotricer_index {INDEX_NAME}_candidate_orfs.tsv --prefix {OUTPUT_PREFIX}
 ```
 
-## Species-Specific Phase Score Cutoffs
-The phase score cutoff is critical for accuracy. Use these recommended values based on your organism:
+**Critical Parameters:**
+* **Phase Score Cutoff:** The default is 0.428. However, this should be adjusted based on the species and data quality.
+* **Filtering Flags:** Use these to increase stringency:
+    * `--min_valid_codons_ratio`: Minimum ratio of codons with at least one read.
+    * `--min_reads_per_codon`: Minimum average reads per codon.
+    * `--min_read_density`: Total reads divided by ORF length.
 
-| Species | Recommended Cutoff |
+## Species-Specific Recommended Cutoffs
+Using the correct phase-score cutoff is vital for accuracy. Use the following table for the `--phase_score_cutoff` parameter:
+
+| Species | Cutoff |
 | :--- | :--- |
 | Human | 0.440 |
 | Mouse | 0.418 |
 | Rat | 0.453 |
 | Baker's Yeast | 0.318 |
 | Arabidopsis | 0.330 |
-| Zebrafish | 0.249 |
+| Zebrafish | 0.240 |
 | C. elegans | 0.239 |
 | Drosophila | 0.181 |
 
-## Advanced Filtering and Quality Control
+## Advanced Usage
 
-### Translation Status Filters
-By default, an ORF is marked "translating" if its phase score exceeds the cutoff and it has at least 5 codons with non-zero reads. You can tighten these requirements:
-*   `--min_valid_codons_ratio`: Set to `0.75` to ensure reads cover at least 75% of the ORF's length.
-*   `--min_read_density`: Use to filter out very lowly expressed ORFs.
+### Learning Dataset-Specific Parameters
+If your species is not listed or you have unique library prep conditions, use the `learn-cutoff` command to determine the optimal parameters from your data:
 
-### Handling Strandedness
-Ribotricer automatically infers protocol strandedness, but for complex libraries, it is safer to specify it:
-*   `--stranded yes`: Standard stranded protocol.
-*   `--stranded reverse`: For "reverse-stranded" (e.g., Illumina TruSeq) protocols.
+```bash
+ribotricer learn-cutoff --ribo_bam {RIBO.bam} --rna_bam {RNA.bam} --gtf {GTF} --fasta {FASTA}
+```
 
-### Quality Control Outputs
-After running `detect-orfs`, always inspect the following files:
-*   `{prefix}_read_length_dist.pdf`: Check if the RPF length distribution matches expected sizes (typically 28-30nt for eukaryotes).
-*   `{prefix}_metagene_plots.pdf`: Ensure strong 3-nt periodicity is visible at the start codon of annotated CDS regions.
-*   `{prefix}_psite_offsets.txt`: Verify the P-site offsets calculated for each read length.
+### Metagene Analysis
+To visualize the periodicity and quality of your Ribo-seq library, you can generate metagene plots. When doing so, consider the `--meta_min_reads` parameter to filter out low-coverage transcripts that might skew the aggregate profile.
+
+## Best Practices
+* **Uniquely Mapping Reads:** Ribotricer expects uniquely mapping reads. While it will issue a warning rather than aborting for multi-mappers, it is best practice to pre-filter your BAM file for unique alignments (e.g., using the `NH:i:1` tag).
+* **GTF Compatibility:** The tool is designed to handle various GTF formats, including GENCODE and Ensembl. If using a non-conventional GTF, ensure the `transcript_id` and `gene_id` attributes are correctly formatted.
+* **Protein Extraction:** If you need the amino acid sequences of the detected ORFs, use the `--protein` flag during the detection or sequence extraction phase.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ribotricer count-orfs | Count reads for detected ORFs at gene level |
+| ribotricer count-orfs-codon | Count reads for detected ORFs at codon level |
+| ribotricer detect-orfs | Detect translating ORFs from BAM file |
+| ribotricer learn-cutoff | Learn phase score cutoff from BAM/TSV file |
+| ribotricer orfs-seq | Generate sequence for ORFs in ribotricer's index |
+| ribotricer prepare-orfs | Extract candidate ORFS based on GTF and FASTA files |
 
 ## Reference documentation
-- [ribotricer GitHub README](./references/github_com_smithlabcode_ribotricer.md)
-- [ribotricer Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ribotricer_overview.md)
+- [ribotricer Main Documentation](./references/github_com_smithlabcode_ribotricer.md)
+- [Version History and Parameter Updates](./references/github_com_smithlabcode_ribotricer_blob_master_HISTORY.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_ribotricer_overview.md)

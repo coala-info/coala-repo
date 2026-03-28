@@ -1,6 +1,6 @@
 ---
 name: plasmidid
-description: PlasmidID is a hybrid pipeline that combines read mapping and de novo assembly to identify and reconstruct plasmid sequences within bacterial samples. Use when user asks to identify plasmidic composition, reconstruct plasmids from reads or contigs, or generate circular visualizations of plasmid sequences.
+description: PlasmidID is a mapping-based and assembly-assisted tool designed to identify and visualize plasmids within bacterial samples by reconstructing them against a reference database. Use when user asks to identify plasmids in genomic data, map reads to a plasmid database, or generate circular visualizations of plasmidic composition.
 homepage: https://github.com/BU-ISCIII/plasmidID
 ---
 
@@ -8,68 +8,70 @@ homepage: https://github.com/BU-ISCIII/plasmidID
 # plasmidid
 
 ## Overview
-PlasmidID is a hybrid pipeline that combines read mapping and de novo assembly to accurately identify plasmid sequences within bacterial samples. By using a reference database as a scaffold, it clusters sequences to reduce redundancy and provides a graphical circular representation (via Circos) of the results. This tool is essential when you need to determine the plasmidic composition of a sample, especially when dealing with complex datasets where simple assembly might fail to resolve individual plasmids.
+
+PlasmidID is a mapping-based and assembly-assisted tool designed to identify plasmids within bacterial samples. It works by mapping genomic reads against a reference plasmid database, using the most covered sequences as scaffolds for reconstruction. The tool integrates mapping, assembly, and annotation data into a circular visualization (Circos-based), allowing for a clear determination of the plasmidic composition of a sample. It is particularly useful for identifying known plasmids, determining their coverage, and visualizing how assembly contigs align with reference sequences.
 
 ## Core Workflows
 
-### 1. Database Preparation
-Before running the pipeline, you must have a formatted plasmid database.
+### 1. Standard Illumina Paired-End Analysis
+The most common use case involves providing raw or trimmed reads along with a reference database.
+
 ```bash
-# Download and prepare the default plasmid database
-download_plasmid_database.py -o /path/to/database_folder
+plasmidID.sh -1 SAMPLE_R1.fastq.gz -2 SAMPLE_R2.fastq.gz -d plasmid_db.fasta -s SAMPLE_NAME
 ```
 
-### 2. Standard Paired-End Analysis
-The most common use case involves providing raw or trimmed Illumina reads and a reference database.
+### 2. Assembly-Assisted Analysis (Recommended)
+If you already have an assembly, providing the contigs significantly speeds up the process and improves accuracy by allowing the tool to skip the internal assembly step.
+
 ```bash
-plasmidID \
-  -1 SAMPLE_R1.fastq.gz \
-  -2 SAMPLE_R2.fastq.gz \
-  -d database.fasta \
-  -s SAMPLE_NAME \
-  -g GROUP_NAME
+plasmidID.sh -1 R1.fq.gz -2 R2.fq.gz -d database.fasta -c assembled_contigs.fasta -s SAMPLE_NAME --no-trim
 ```
 
-### 3. Assembly-Assisted Analysis (Recommended)
-If you already have assembled contigs, providing them significantly improves the reconstruction accuracy and speed.
-```bash
-plasmidID \
-  -1 SAMPLE_R1.fastq.gz \
-  -2 SAMPLE_R2.fastq.gz \
-  -c assembled_contigs.fasta \
-  -d database.fasta \
-  -s SAMPLE_NAME \
-  --no-trim
-```
+### 3. Long-Read / Contig-Only Mode
+For SMRT sequencing or when only assembled sequences are available, you can run the tool without raw reads.
 
-### 4. Contig-Only Reconstruction
-For SMRT sequencing or when only assemblies are available, use the `--only-reconstruct` flag.
 ```bash
-plasmidID \
-  -d database.fasta \
-  -c SAMPLE_contigs.fasta \
-  -s SAMPLE_NAME \
-  --only-reconstruct
+plasmidID.sh -d database.fasta -c SAMPLE_contigs.fasta -s SAMPLE_NAME --only-reconstruct
 ```
 
 ## Expert Tips and Best Practices
 
-- **Sample Naming**: Ensure the sample name (`-s`) is less than 37 characters to avoid issues with downstream visualization tools like Circos.
-- **Sensitivity Tuning**: 
-    - Use `--explore` to relax default parameters if you suspect the presence of plasmids with low homology to your database.
-    - Adjust `-C` (coverage-cutoff, default 80) if you are looking for partial plasmid matches or highly divergent sequences.
-- **Performance**: Use `-T` to specify the number of threads and `-M` to limit memory usage in HPC environments.
-- **Clustering**: If your database contains many nearly identical sequences, adjust `-f` (clustering identity, default 0.5) to group them and simplify the output.
-- **Batch Reporting**: If processing multiple samples in a single group, use the summary script to aggregate results:
-  ```bash
-  summary_report_pid.py -i GROUP_FOLDER/
-  ```
+- **Database Preparation**: Use the provided utility script to fetch the latest plasmid sequences: `download_plasmid_database.py -o FOLDER`.
+- **Parameter Tuning**:
+    - **--explore**: Use this flag if you suspect distant relationships or low-homology plasmids; it relaxes default alignment parameters.
+    - **-C (Coverage Cutoff)**: Default is 80%. If you are looking for partial plasmids or mobile elements, lower this value.
+    - **-f (Clustering)**: Default is 0.8 (80%). Adjust this to group similar reference plasmids together in the output.
+- **Relaunching**: PlasmidID is designed to be "restart-aware." If you change visualization parameters (like `-i` or `-l`) and rerun the command in the same directory, it will skip the expensive mapping/assembly steps and only regenerate the images and tables.
+- **Sample Names**: Keep sample names under 37 characters and avoid using dots (`.`) in the name to prevent potential parsing issues in the pipeline.
+- **Output Interpretation**:
+    - The `SAMPLE_final_results.html` is the primary file for results.
+    - **MAPPING %**: Indicates how much of the reference is covered by reads.
+    - **Contig Track**: Shows how your assembly matches the reference scaffold. If the "complete contig track" matches the "contig track," it indicates high-quality, full-length alignment.
 
-## Output Interpretation
-- **SAMPLE_final_results.html**: The primary interactive report containing the circular images.
-- **MAPPING %**: Indicates how much of the reference sequence was covered by your reads.
-- **Contig Track**: Shows how your assembled contigs align back to the reference scaffold.
+## Common CLI Options
+
+| Option | Description | Default |
+| :--- | :--- | :--- |
+| `-g | --group` | Group name for organizing multiple samples | `NO_GROUP` |
+| `-o` | Output directory | Current directory |
+| `-T | --threads` | Number of CPU threads to use | 1 |
+| `-M | --memory` | Maximum memory allowed | - |
+| `--no-trim` | Skip Trimmomatic quality trimming | Off |
+| `-i` | Minimum identity % for contig annotation | 90 |
+| `-l` | Minimum length % for contig annotation | 20 |
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| download_plasmid_database.py | Download up to date plasmid database from ncbi ftp |
+| plasmidID | reconstruct and annotate the most likely plasmids present in one sample |
+| summary_report_pid.py | Creates a summary report in tsv and hml from plasmidID execution |
 
 ## Reference documentation
-- [PlasmidID Main Documentation](./references/github_com_BU-ISCIII_plasmidID.md)
-- [PlasmidID Wiki and Workflow](./references/github_com_BU-ISCIII_plasmidID_wiki.md)
+- [Execution Guide](./references/github_com_BU-ISCIII_plasmidID_wiki_Execution.md)
+- [How to choose the right plasmids](./references/github_com_BU-ISCIII_plasmidID_wiki_How-to-chose-the-right-plasmids.md)
+- [Plasmid Database Setup](./references/github_com_BU-ISCIII_plasmidID_wiki_Plasmid-Database.md)
+- [Summary Table and Images](./references/github_com_BU-ISCIII_plasmidID_wiki_Summary-table-and-summary-image.md)

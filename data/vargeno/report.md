@@ -46,3 +46,6 @@ index   Generate index            <input FASTA> <input SNPs in VCF> <index_prefi
 geno    Perform genotyping        <index_prefix> <input FASTQ> <input SNPs in VCF> <output file in VCF>
 ```
 
+
+## Metadata
+- **Skill**: generated

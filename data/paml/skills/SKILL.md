@@ -1,6 +1,6 @@
 ---
 name: paml
-description: PAML is a suite of programs used for phylogenetic analysis of DNA or protein sequences using maximum likelihood. Use when user asks to detect positive selection, estimate synonymous and nonsynonymous substitution rates, or simulate sequences under evolutionary models.
+description: PAML is a suite of programs for the statistical analysis of DNA and protein sequences using maximum likelihood. Use when user asks to estimate synonymous and non-synonymous substitution rates, detect positive selection, perform Bayesian estimation of species divergence times, or simulate sequence data.
 homepage: https://evomics.org/resources/software/molecular-evolution-software/paml
 ---
 
@@ -8,49 +8,99 @@ homepage: https://evomics.org/resources/software/molecular-evolution-software/pa
 # paml
 
 ## Overview
-PAML (Phylogenetic Analysis by Maximum Likelihood) is a specialized suite of programs for molecular evolution research. It is the industry standard for detecting positive selection at the molecular level and estimating synonymous and nonsynonymous substitution rates. This skill provides guidance on configuring control files and executing the core programs to perform robust evolutionary tests.
 
-## Core Programs
-- **codeml**: The most versatile program; used for codon-based models (selection analysis) and amino acid sequences.
-- **baseml**: Used for nucleotide-based models and estimating branch lengths or substitution parameters.
-- **yn00**: Implements the Yang and Nielsen (2000) method for estimating dN and dS.
-- **evolver**: Used for simulating DNA or protein sequences under specific evolutionary models.
+PAML (Phylogenetic Analysis by Maximum Likelihood) is a specialized suite of programs designed for the statistical analysis of DNA and protein sequences. While it is not primarily a tree-building tool, it is the industry standard for testing evolutionary hypotheses, estimating synonymous and non-synonymous substitution rates ($\omega = d_N/d_S$), and performing Bayesian estimation of species divergence times. The package relies heavily on text-based control files to define model parameters and analysis workflows.
 
-## Workflow and Best Practices
+## Core Programs and Usage
 
-### 1. Input Requirements
-PAML requires three primary components for most analyses:
-- **Sequence Data**: Typically in PHYLIP format (interleaved or sequential).
-- **Tree File**: A Newick-formatted tree. Note that for many tests (like branch-site models), you must label "foreground" branches using symbols like `$1` or `#1`.
-- **Control File (.ctl)**: A text file containing parameters and file paths.
+The PAML package consists of several distinct executables. Most programs look for a default control file in the current directory if no argument is provided.
 
-### 2. Running the Tools
-Execute the programs by passing the control file as the first argument:
+- **`codeml`**: The most widely used program. It handles both codon-based models (to detect positive selection) and amino acid-based models.
+- **`baseml`**: Used for nucleotide-based maximum likelihood analysis and testing various substitution models (JC69, HKY85, GTR, etc.).
+- **`mcmctree`**: Performs Bayesian estimation of divergence times using relaxed-clock models and fossil calibrations.
+- **`evolver`**: A multi-purpose tool for simulating sequence data, generating random trees, and calculating clade support.
+- **`yn00`**: Implements the Yang and Nielsen (2000) method for estimating $d_N$ and $d_S$.
+
+### Execution Patterns
+
+Run programs from the terminal by calling the executable followed by the control file:
+
 ```bash
-codeml codeml.ctl
+codeml my_analysis.ctl
 baseml baseml.ctl
-yn00 yn00.ctl
+mcmctree mcmctree.ctl
 ```
 
-### 3. Control File Configuration
-The `.ctl` file is sensitive to formatting. Key parameters include:
-- `seqfile`: Path to the alignment.
-- `treefile`: Path to the Newick tree.
-- `outfile`: Path where results will be written.
-- `noisy`: Set to `3` or `9` for detailed output during debugging.
-- `verbose`: Set to `1` or `2` to see more detail in the output file.
-- `runmode`: `0` uses the user-provided tree; `-2` performs pairwise comparisons.
+For `evolver`, you can use the interactive menu or command-line arguments:
+```bash
+evolver 9 <MaintreeFile> <TreesFile>  # Calculate clade support
+```
 
-### 4. Testing for Selection (codeml)
-To test for positive selection, you must typically run two models and compare them using a Likelihood Ratio Test (LRT):
-- **Site Models**: Compare M1a (nearly neutral) vs. M2a (positive selection) or M7 (beta) vs. M8 (beta & omega).
-- **Branch-Site Models**: Compare "Model A" against a null model where omega for the foreground branch is fixed at 1 (`fix_omega = 1`).
+## Data Formatting Requirements
 
-### 5. Common Pitfalls
-- **Convergence**: ML optimization can get stuck in local optima. Always run the same analysis multiple times with different `small_diff` or `method` values, or varying initial `omega` values (`omega = 0.5`, `omega = 1.5`).
-- **Sequence Naming**: Ensure sequence names in the PHYLIP file match the tree file exactly and do not exceed 30 characters (depending on the version).
-- **Data Type**: Ensure `seqtype` is set correctly: `1` for codons, `2` for amino acids, `3` for translations.
+PAML is strict regarding input formats. Errors often stem from minor formatting issues.
+
+### Sequence Data (PHYLIP format)
+- **Native Format**: PAML uses a variation of the PHYLIP format.
+- **Species Names**: Maximum 30 characters. Do not use special symbols like `:`, `(`, `)`, `#`, or `$`.
+- **The Two-Space Rule**: PAML identifies the end of a species name by **two consecutive spaces**. Ensure your names do not contain double spaces, and separate the name from the sequence with at least two spaces.
+- **Special Characters**: 
+  - `.` (dot): Same character as the first sequence.
+  - `-` (dash): Alignment gap.
+  - `?` (question mark): Undetermined site.
+
+### Tree Files (Newick format)
+- Trees must be in Newick format.
+- For `codeml` branch or branch-site models, use labels (e.g., `#1`) within the tree string to identify foreground branches.
+
+## Control File (.ctl) Best Practices
+
+Control files are plain text files containing `variable = value` pairs.
+
+- **Mandatory Spaces**: You **must** include spaces on both sides of the equal sign (e.g., `seqfile = data.nuc`).
+- **Comments**: Use `*` at the start of a line or after a value to add comments.
+- **Paths**: Use absolute or relative paths. If a path contains spaces, escape them with a backslash (`\`).
+- **Common Variables**:
+  - `seqfile`: Path to sequence data.
+  - `treefile`: Path to the Newick tree.
+  - `outfile`: Path where results will be written.
+  - `noisy`: Controls screen output (0-3).
+  - `verbose`: Controls output file detail (0-2).
+  - `cleandata`: Set to `1` to remove sites with gaps or ambiguity; `0` to treat them as missing data.
+
+## Expert Tips for Analysis
+
+### Detecting Positive Selection (`codeml`)
+To test for positive selection, you typically perform a Likelihood Ratio Test (LRT) between a null model and an alternative model:
+- **Site Models**: Compare M1a (Nearly Neutral) vs. M2a (Positive Selection) or M7 (beta) vs. M8 (beta & $\omega$).
+- **Branch-Site Models**: Compare Model A (alternative) vs. Model A with $\omega_2 = 1$ fixed (null).
+
+### Handling Large Datasets
+- For `baseml`, use the discrete-gamma model (`baseml`) instead of the continuous-gamma model (`baseml1g`) for significantly faster computation.
+- In `mcmctree`, use the **approximate likelihood calculation** (Hessian matrix) to speed up divergence time estimation on phylogenomic-scale data.
+
+### Troubleshooting
+- If a program aborts immediately, check for:
+  - Missing spaces around `=` in the `.ctl` file.
+  - Hidden special characters in the PHYLIP sequence names.
+  - Mismatch between the number of species/sites declared in the first line of the PHYLIP file and the actual data.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| baseml | BASEML is a program for Maximum Likelihood analysis of nucleotide sequences, part of the PAML (Phylogenetic Analysis by Maximum Likelihood) package. It uses a control file to specify parameters for the analysis. |
+| codeml | codeml is a program in the PAML (Phylogenetic Analysis by Maximum Likelihood) package that analyzes DNA or protein sequences using maximum likelihood. |
+| evolver | A program from the PAML suite used for simulating DNA, codon, and amino acid sequences, as well as generating random trees and calculating tree distances. |
+| yn00 | YN00 in paml version 4.10.10, 29 Jan 2026. Estimating synonymous and nonsynonymous substitution rates between two sequences. |
 
 ## Reference documentation
-- [PAML Overview and Installation](./references/anaconda_org_channels_bioconda_packages_paml_overview.md)
-- [PAML Program Descriptions and Usage](./references/evomics_org_resources_software_molecular-evolution-software_paml.md)
+
+- [Data formatting](./references/github_com_abacus-gene_paml_wiki_Data-formatting.md)
+- [BASEML Guide](./references/github_com_abacus-gene_paml_wiki_BASEML.md)
+- [CODEML Guide](./references/github_com_abacus-gene_paml_wiki_CODEML.md)
+- [Evolver Guide](./references/github_com_abacus-gene_paml_wiki_Evolver.md)
+- [MCMCtree Guide](./references/github_com_abacus-gene_paml_wiki_MCMCtree.md)
+- [Substitution Models](./references/github_com_abacus-gene_paml_wiki_Substitution-models.md)

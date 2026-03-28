@@ -1,6 +1,6 @@
 ---
 name: mtsv-tools
-description: mtsv-tools is a high-performance suite for the taxonomic assignment of metagenomic sequencing reads using custom indices and SIMD-accelerated alignment. Use when user asks to chunk reference databases, build metagenomic indices, bin reads against a reference, or collapse taxonomic assignment results.
+description: MTSv Tools is a high-performance computational engine designed for the rapid assignment of sequencing reads to taxonomic IDs using a custom FM-index. Use when user asks to prepare reference databases, build genomic indices, bin sequencing reads to taxa, aggregate results into summary reports, or partition reads into matched and unmatched sets.
 homepage: https://github.com/FofanovLab/mtsv_tools
 ---
 
@@ -9,57 +9,80 @@ homepage: https://github.com/FofanovLab/mtsv_tools
 
 ## Overview
 
-MTSv (Metagenomic Taxonomic Sequence viewer tools) is a high-performance suite designed for the taxonomic assignment of metagenomic sequencing reads. It utilizes a custom metagenomic index (MG-index) based on the FM-index data structure and performs full-alignment using a q-gram filter followed by SIMD-accelerated Smith-Waterman alignment. This skill assists in navigating the multi-step pipeline required to transform raw reference sequences into searchable indices and subsequently binning query reads against those indices.
+MTSv (Metagenomic Taxon Selection and Verification) Tools is a high-performance computational engine designed for the rapid assignment of sequencing reads to taxonomic IDs. It utilizes a custom FM-index (MG-index) to enable memory-efficient and highly parallelizable workflows. The toolset is modular, allowing users to scale from small datasets to massive reference databases by chunking the reference and processing reads in parallel across multiple indices.
 
-## Reference Database Preparation
+## Core Workflow
 
-Before building indices, reference FASTA files must adhere to a strict header format to ensure the binner can map sequences to taxonomic identifiers.
-
-- **Header Format**: `SEQID-TAXID`
-- **Example**: A sequence with unique ID `12345` belonging to NCBI TaxID `987` must have the header `>12345-987`.
-- **Requirement**: The TaxID must be an integer.
-
-## Core Workflow and CLI Patterns
-
-### 1. Chunking the Reference Database
-Large reference databases should be split into smaller chunks to reduce memory overhead and enable parallel index generation.
+### 1. Reference Preparation (`mtsv-chunk`)
+To maintain performance and manage memory, split large FASTA reference databases into smaller chunks (typically 1-2 GB).
 
 ```bash
-mtsv-chunk --input /path/to/ref.fasta --output /path/to/chunks/ --gb 1.0
+mtsv-chunk --input ref_db.fasta --output ./chunks/ --gb 1.0
 ```
-- **Expert Tip**: Use the `--gb` flag to set the chunk size based on your available RAM. MTSv indices typically require ~3.6x the RAM of the original FASTA size during the binning step.
 
-### 2. Building the MG-Index
-Each chunked FASTA file must be converted into an MG-index. This process generates the Suffix Array, BWT, and FM-index.
+### 2. Index Construction (`mtsv-build`)
+Build an MG-index for each FASTA chunk. This step requires a mapping between sequence headers and NCBI TaxIDs.
+
+**Default Header Format:** `>InternalID-TaxID` (e.g., `>12345-987`)
+
+**Using External Mapping:**
+If headers are not in the default format, provide a TSV/CSV mapping file with columns: `header`, `taxid`, and `seqid`.
 
 ```bash
-mtsv-build --fasta /path/to/chunk1.fasta --index /path/to/chunk1.index
+mtsv-build --fasta ./chunks/ref_0.fasta --index ./indices/ref_0.index --mapping map.tsv
 ```
 
-**Performance Tuning:**
-- `--sample-interval <INT>`: Controls BWT occurrence sampling (default: 64). Lower values speed up queries but increase index size.
-- `--sa-sample <INT>`: Controls Suffix Array sampling (default: 32). Lower values reduce query time at the cost of memory.
+*   **Performance Tip:** Adjust `--sample-interval` (default 64) and `--sa-sample` (default 32). Lower values increase index size but speed up queries.
 
-### 3. Binning Reads
-The `mtsv-binner` command assigns reads to the reference sequences. You must run the binner against each MG-index generated in the previous step.
-
-**Key Parameters:**
-- `--seed-size`: The size of the exact match substrings used for initial filtering.
-- `--seed-interval`: The offset between seeds extracted from query sequences.
-- `--min-hits`: Minimum number of seed hits required to trigger a full Smith-Waterman alignment for a candidate region.
-
-### 4. Collapsing Results
-After binning reads against multiple indices, use `mtsv-collapse` to aggregate the hits and finalize taxonomic assignments.
+### 3. Read Binning (`mtsv-binner`)
+Assign sequencing reads to the generated indices. MTSv supports gzipped FASTQ/FASTA inputs and features automatic resume capabilities.
 
 ```bash
-mtsv-collapse --input /path/to/binning_results/ --output /path/to/final_report/ --threads 8
+mtsv-binner --input reads.fastq.gz --index ./indices/ --output results.bin
 ```
 
-## Best Practices
-- **Parallelization**: Run `mtsv-binner` instances in parallel across different nodes or cores, each targeting a different index chunk, to significantly decrease total processing time.
-- **Memory Management**: If you encounter out-of-memory errors during `mtsv-build` or `mtsv-binner`, increase the sampling intervals or decrease the chunk size in `mtsv-chunk`.
-- **Logging**: Use the `-v` flag across all tools to trigger debug-level logging for troubleshooting complex alignment issues.
+*   **Long-form Output:** Use this mode to record Genome ID and alignment offsets for downstream functional annotation.
+*   **Checkpointing:** If a run is interrupted, `mtsv-binner` will detect partially completed output and resume from the last processed read.
+
+### 4. Result Aggregation (`mtsv-collapse`)
+Consolidate binning results into human-readable taxon-level summary reports.
+
+```bash
+mtsv-collapse --input results.bin --output summary.tsv --report
+```
+
+*   **Precision:** The `--report` flag provides detailed percentage columns with 6 decimal places for high-resolution analysis.
+
+## Utility Operations
+
+### Read Partitioning (`mtsv-partition`)
+Separate reads into "matched" and "unmatched" sets based on binning results. This is essential for iterative filtering (e.g., removing host contamination).
+
+```bash
+mtsv-partition --input reads.fastq.gz --results results.bin --matched matched.fastq.gz --unmatched unmatched.fastq.gz
+```
+
+### Reference Management (`mtsv-reference`)
+Use this utility for general reference database maintenance and metadata tasks.
+
+## Expert Tips
+
+*   **Memory Management:** Total RAM usage during binning is approximately 3.5x the size of the reference FASTA chunk. Ensure your `--gb` setting in `mtsv-chunk` aligns with your available hardware.
+*   **Parallelization:** Since indices are independent, you can run multiple `mtsv-binner` instances across different nodes or CPU cores for different index chunks, then combine results.
+*   **Gzip Handling:** MTSv tools (v2.1.1+) correctly handle multi-member gzip files. You can safely use concatenated `.gz` files as input.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mtsv-binner | Metagenomic and metatranscriptomic assignment tool. |
+| mtsv-build | Index construction for mtsv metagenomic and metatranscriptomic assignment tool. |
+| mtsv-chunk | Split a FASTA reference database into chunks for index generation. |
+| mtsv-collapse | Tool for combining the output of multiple separate mtsv runs. |
 
 ## Reference documentation
-- [MTSv Tools GitHub Repository](./references/github_com_FofanovLab_mtsv_tools.md)
-- [mtsv-tools Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_mtsv-tools_overview.md)
+
+- [MTSv Tools README](./references/github_com_FofanovLab_mtsv_tools_blob_master_README.md)
+- [MTSv Tools Changelog](./references/github_com_FofanovLab_mtsv_tools_blob_master_CHANGELOG.md)

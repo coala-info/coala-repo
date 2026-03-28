@@ -248,3 +248,6 @@ Plot pancore matrix
 -a 	 save snapshots for animations in dir   (optional, example: -a animation)
 ```
 
+
+## Metadata
+- **Skill**: generated

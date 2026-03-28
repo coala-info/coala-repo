@@ -1,6 +1,6 @@
 ---
 name: antismash-lite
-description: "antiSMASH-lite identifies and annotates secondary metabolite biosynthesis gene clusters in genomic sequences. Use when user asks to discover biosynthetic gene clusters, characterize specialized metabolism, or identify genetic architecture for bioactive compounds."
+description: This tool identifies and characterizes biosynthetic gene clusters in genomic sequences to map secondary metabolism. Use when user asks to run antiSMASH, identify biosynthetic gene clusters, configure detection strictness, develop custom detection rules, or create new analysis modules.
 homepage: https://docs.antismash.secondarymetabolites.org/intro/
 ---
 
@@ -8,56 +8,54 @@ homepage: https://docs.antismash.secondarymetabolites.org/intro/
 # antismash-lite
 
 ## Overview
-The `antismash-lite` skill enables the automated discovery and characterization of secondary metabolite biosynthesis gene clusters. It transforms raw genomic sequences into annotated maps of specialized metabolism, identifying the genetic architecture behind bioactive compounds. This skill provides procedural knowledge for running the "antibiotics and Secondary Metabolite Analysis SHell" (antiSMASH) via the command line, focusing on efficient resource usage and comprehensive metabolic profiling.
 
-## Installation and Setup
-Install the lightweight version of antiSMASH via Bioconda:
-```bash
-conda install bioconda::antismash-lite
-```
-Note: The `lite` version may require separate downloads of essential databases (e.g., Pfam, ClusterBlast, MIBiG) using the `download-antismash-databases` script before the first run.
+This skill provides procedural knowledge for operating antiSMASH, the gold-standard software for the automated identification and characterization of biosynthetic gene clusters (BGCs). It transforms genomic sequences into annotated maps of secondary metabolism by identifying core biosynthetic enzymes (via HMM profiles) and their genomic neighborhoods. Use this skill to navigate the local installation, configure detection strictness, and extend the tool's capabilities through custom rules and modules.
 
-## Common CLI Patterns
+## Core Workflows
 
-### Basic Genome Scan
-To run a standard analysis on a GenBank file with default settings:
-```bash
-antismash input_genome.gbk
-```
+### Running antiSMASH-lite
+The "lite" version typically refers to the core engine without the heavy pre-computed databases. 
+- **Input**: Supports GenBank, FASTA, or EMBL formats.
+- **Basic Execution**: `antismash input_file.gbk`
+- **Strictness Levels**: Use `--hmmdetection-strictness [strict, relaxed, loose]` to control the sensitivity of cluster detection. "Loose" includes rules defined in `loose.txt` for broader discovery.
 
-### High-Sensitivity Discovery
-For a thorough search including comparative genomics and specialized domain analysis:
-```bash
-antismash --cb-general --cb-knownclusters --cb-subclusters --asf --pfam2go --genefinding-tool prodigal input.fasta
-```
+### Developing Detection Rules
+Rules define the logic for identifying "protoclusters" based on co-located genes.
+1. **Rule Structure**: Defined in a domain-specific language. Key fields include:
+   - `CONDITIONS`: The core logic (e.g., `cds(PKS_AT and not ANY_KS)`).
+   - `CUTOFF`: Max range (kb) to search for satisfying conditions.
+   - `NEIGHBOURHOOD`: Genomic context range for surrounding genes.
+2. **HMM Integration**: New profiles must be added to `hmmdetails.txt` in the format: `<name> <description> <cutoff> <filename>`.
+3. **Dynamic Profiles**: For complex patterns, implement a Python class subclassing `DynamicProfile`.
 
-### Targeted Analysis for Specific Taxa
-Optimize gene finding by specifying the taxonomic origin:
-```bash
-antismash --taxon bacteria --genefinding-tool prodigal input.gbk
-# Use 'fungi' for fungal genomes to trigger appropriate HMMs
-antismash --taxon fungi input.fasta
-```
+### Creating Analysis Modules
+To add new types of sequence analysis, create a directory in `antismash/modules/` with an `__init__.py` containing:
+- `get_arguments()`: Define CLI options using `ModuleArgs`.
+- `check_options()`: Validate user input.
+- `run_on_record()`: Execute the primary analysis logic.
+- `ModuleResults` subclass: Handle JSON serialization and record annotation.
 
-## Expert Tips and Best Practices
+## Expert Tips & Best Practices
 
-### Input Requirements
-- **Preferred Format**: Use GenBank (.gbk) files that already contain gene annotations for the most accurate results.
-- **FASTA Inputs**: If providing FASTA, antiSMASH will run `prodigal` (bacteria) or `glimmerhmm` (fungi) to predict genes. Ensure the `--genefinding-tool` flag matches your organism type.
+- **Avoid Redundancy**: When writing modules, do not duplicate functions from `antismash.common`. Use `common.subprocessing` for external calls and `common.secmet` for record manipulation.
+- **Data Integrity**: Never modify the `Record` object directly during analysis; store data in a `ModuleResults` object and use the `add_to_record()` method only after all analysis modules have finished.
+- **Performance**: Avoid reloading static data or using strings as data structures. Use type hints (`mypy`) to ensure code reliability.
+- **Testing**: 
+  - Use `test_` prefix for unit tests (no external binaries).
+  - Use `integration_` prefix for tests involving external commands.
+  - Run `pytest` from the module's `test/` subdirectory.
 
-### Managing Output
-- **Output Directory**: Use `--output-dir <directory>` to keep results organized, especially when running batch jobs.
-- **HTML Results**: The primary output is `index.html`. View this in a browser to navigate the "Region" concept, which groups related protoclusters into functional units.
 
-### Performance Optimization
-- **CPU Allocation**: Use `-c <threads>` to speed up HMM searches and ClusterBlast.
-- **Minimal Run**: If only basic detection is needed without comparative analysis, omit the `--cb-*` flags to significantly reduce runtime and memory usage.
 
-### Interpreting Results
-- **Protoclusters**: These are the basic units of detection based on core biosynthetic enzymes.
-- **Regions**: These represent the full genomic context. One region may contain multiple overlapping or adjacent protoclusters.
-- **NRPS/PKS Analysis**: Pay close attention to the "Monomer prediction" in the results for Non-Ribosomal Peptide Synthetases and Polyketide Synthases to predict the chemical structure of the metabolite.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| antismash | antiSMASH 8.0.1 |
+| download-antismash-databases | Base directory for the antiSMASH databases |
 
 ## Reference documentation
-- [antiSMASH - the antibiotics and Secondary Metabolite Analysis SHell](./references/anaconda_org_channels_bioconda_packages_antismash-lite_overview.md)
-- [Introduction - antiSMASH Documentation](./references/docs_antismash_secondarymetabolites_org_intro.md)
+
+- [Core Data Structures](./references/github_com_antismash_antismash_wiki_Core-Data-Structures.md)
+- [Creating detection rules](./references/github_com_antismash_antismash_wiki_Creating-detection-rules.md)
+- [Analysis module template](./references/github_com_antismash_antismash_wiki_Analysis-module-template.md)

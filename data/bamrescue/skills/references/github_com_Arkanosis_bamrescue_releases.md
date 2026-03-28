@@ -1,0 +1,509 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FArkanosis%2Fbamrescue%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FArkanosis%2Fbamrescue%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=Arkanosis%2Fbamrescue)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[Arkanosis](/Arkanosis)
+/
+**[bamrescue](/Arkanosis/bamrescue)**
+Public
+
+* [Notifications](/login?return_to=%2FArkanosis%2Fbamrescue) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2FArkanosis%2Fbamrescue)
+* [Star
+   8](/login?return_to=%2FArkanosis%2Fbamrescue)
+
+* [Code](/Arkanosis/bamrescue)
+* [Issues
+  15](/Arkanosis/bamrescue/issues)
+* [Pull requests
+  0](/Arkanosis/bamrescue/pulls)
+* [Actions](/Arkanosis/bamrescue/actions)
+* [Security
+  0](/Arkanosis/bamrescue/security)
+* [Insights](/Arkanosis/bamrescue/pulse)
+
+Additional navigation options
+
+* [Code](/Arkanosis/bamrescue)
+* [Issues](/Arkanosis/bamrescue/issues)
+* [Pull requests](/Arkanosis/bamrescue/pulls)
+* [Actions](/Arkanosis/bamrescue/actions)
+* [Security](/Arkanosis/bamrescue/security)
+* [Insights](/Arkanosis/bamrescue/pulse)
+
+# Releases: Arkanosis/bamrescue
+
+[Releases](/Arkanosis/bamrescue/releases)
+[Tags](/Arkanosis/bamrescue/tags)
+
+Releases · Arkanosis/bamrescue
+
+## Third public pre-release
+
+23 Feb 02:11
+
+![@Arkanosis](https://avatars.githubusercontent.com/u/124583?s=40&v=4)
+[Arkanosis](/Arkanosis)
+
+[v0.3.0](/Arkanosis/bamrescue/tree/v0.3.0)
+
+This tag was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: ED0E0AF11A71F498
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+[`dbdf153`](/Arkanosis/bamrescue/commit/dbdf153accff05779e8b8b64d3d46a8ae2426f3e)
+
+This commit was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: F5939DCF68242090
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/Arkanosis/bamrescue/tags)
+
+[Third public pre-release](/Arkanosis/bamrescue/releases/tag/v0.3.0)
+
+Pre-release
+
+Pre-release
+
+This third pre-release of bamrescue adds a man page, as well as bash and zsh completions.
+
+While not production ready yet, it is already usable if you need to work with corrupted bam files.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Second public pre-release
+
+18 Jun 01:01
+
+![@Arkanosis](https://avatars.githubusercontent.com/u/124583?s=40&v=4)
+
+[v0.2.0](/Arkanosis/bamrescue/tree/v0.2.0)
+
+This tag was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: 5813907B9E3D07BB
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+[`76608a2`](/Arkanosis/bamrescue/commit/76608a27ef6a87b825b445c3132ee9b9c468afe1)
+
+This commit was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: ED0E0AF11A71F498
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/Arkanosis/bamrescue/tags)
+
+[Second public pre-release](/Arkanosis/bamrescue/releases/tag/v0.2.0)
+
+Pre-release
+
+Pre-release
+
+This second pre-release of bamrescue is able to rescue non-corrupted bgzf block from corrupted bam files and write them to new, non-corrupted bam files that are ready for use.
+
+It also features a progress bar showing the number of corrupted bgzf blocks as they are found while checking.
+
+While not production ready yet, it is already usable if you need to work with corrupted bam files.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## First public pre-release
+
+21 Jul 03:03
+
+![@Arkanosis](https://avatars.githubusercontent.com/u/124583?s=40&v=4)
+
+[v0.1.0](/Arkanosis/bamrescue/tree/v0.1.0)
+
+This tag was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: 5813907B9E3D07BB
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+[`9e07934`](/Arkanosis/bamrescue/commit/9e0793496b59015e61e88d101c4dfdda0484ae11)
+
+This commit was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: ED0E0AF11A71F498
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/Arkanosis/bamrescue/tags)
+
+[First public pre-release](/Arkanosis/bamrescue/releases/tag/v0.1.0)
+
+Pre-release
+
+Pre-release
+
+This first pre-release of bamrescue is able to check bam files for all kinds of corruptions (including truncation, bitflips, bad sectors and frameshifts) and outputs statistics about bgzf blocks and lost data.
+
+It is a bit slower than `gzip -t` on a single thread, but much faster with more threads.
+
+While not production ready yet, it is already a viable replacement for `gzip -t`, giving more information in less time.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Bootstrap
+
+21 Jul 02:58
+
+![@Arkanosis](https://avatars.githubusercontent.com/u/124583?s=40&v=4)
+
+[v0.0.1](/Arkanosis/bamrescue/tree/v0.0.1)
+
+This tag was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: 5813907B9E3D07BB
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+[`c6d725a`](/Arkanosis/bamrescue/commit/c6d725a7b89a599f51c047af7175f1b0db66d907)
+
+This commit was signed with the committer’s **verified signature**.
+
+[![](https://avatars.githubusercontent.com/u/124583?s=64&v=4)](/Arkanosis)
+
+[Arkanosis](/Arkanosis)
+Jérémie Roquet
+
+GPG key ID: ED0E0AF11A71F498
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/Arkanosis/bamrescue/tags)
+
+[Bootstrap](/Arkanosis/bamrescue/releases/tag/v0.0.1)
+
+Pre-release
+
+Pre-release
+
+```
+v0.0.1
+
+v0.0.1
+```
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

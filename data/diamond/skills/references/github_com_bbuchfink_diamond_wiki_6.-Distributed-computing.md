@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -157,7 +158,7 @@ Public
 
 * [Code](/bbuchfink/diamond)
 * [Issues
-  207](/bbuchfink/diamond/issues)
+  211](/bbuchfink/diamond/issues)
 * [Pull requests
   0](/bbuchfink/diamond/pulls)
 * [Discussions](/bbuchfink/diamond/discussions)
@@ -421,5 +422,4 @@ performed successfully.
   + [Distributed computing](https://github.com/bbuchfink/diamond/wiki/6.-Distributed-computing)
   + [Miscellaneous](https://github.com/bbuchfink/diamond/wiki/5.-Advanced-topics)
   + [Deprecated options](https://github.com/bbuchfink/diamond/wiki/Deprecated-options)
-* [Benchmarks](https://github.com/bbuchfink/diamond/wiki/Benchmarks)
- 
+* [Benchmarks](https://

@@ -1,89 +1,60 @@
 ---
 name: locidex
-description: Locidex is a search engine for similarity-based typing applications, particularly for gene-by-gene analysis. Use when user asks to perform similarity searches against custom databases for MLST, cgMLST, wgMLST, antimicrobial resistance gene detection, virulence gene detection, and in silico phenotype predictions.
+description: Locidex is a search engine and allele-calling tool designed for bacterial genomics and public health surveillance. Use when user asks to build genomic databases, search for loci within assemblies, extract sequence regions, or generate merged allele profiles for phylogenetic analysis.
 homepage: https://pypi.org/project/locidex/
 ---
 
 
 # locidex
 
-A common search engine for similarity-based typing applications, particularly useful for gene-by-gene analysis in bacterial typing. Use when Claude needs to perform similarity searches against custom databases for applications like MLST, cgMLST, wgMLST, antimicrobial resistance gene detection, virulence gene detection, and in silico phenotype predictions. Also useful for decentralized allele calling and managing custom criteria filtering by loci.
----
 ## Overview
 
-Locidex is a powerful command-line tool designed to act as a common search engine for various similarity-based typing applications. It excels in gene-by-gene analysis, enabling tasks such as identifying specific target sequences, performing phylogenetic analysis, detecting antimicrobial resistance and virulence genes, and predicting phenotypes. Locidex is particularly valuable for decentralized allele calling, offering flexibility in input sequence data and custom criteria filtering by loci. It is optimized for routine operational-level searching and provides multiple output formats for downstream applications.
+Locidex is a specialized search engine and allele-calling tool designed for bacterial genomics and public health surveillance. It provides a robust framework for identifying target sequences within genomic assemblies to facilitate phylogenetic analysis and phenotype prediction (such as serotyping or AMR detection). 
 
-## Usage Instructions
+A key innovation of Locidex is its use of MD5 cryptographic hashes to generate decentralized allele identifiers. This allows different laboratories to compare genetic similarity without a centralized authority issuing allele numbers, ensuring interoperability while maintaining data privacy. The tool is built to be HPC-compatible, avoiding file-locking issues during parallel processing.
 
-Locidex is primarily used via its command-line interface. The core functionalities involve building databases, extracting sequence information, and performing searches.
+## Core Workflows and CLI Usage
 
-### Core Commands and Patterns
+Locidex operates through several functional modules. The typical workflow involves building a database, searching query sequences, and generating reports or merged profiles.
 
-The general workflow involves preparing your sequence data, building a locidex database, and then using that database for extraction or searching.
+### 1. Database Management
+Before searching, you must have a Locidex database.
+- **build**: Used to construct a new database from reference sequences.
+- **manifest**: Use this module to manage and track multiple databases across different species or typing schemes.
+- **format**: Standardizes input data for database construction.
 
-#### Database Preparation and Building
+### 2. Search and Extraction
+- **search**: Performs similarity searching using the BLAST interface. It identifies loci within your assembly or contig input.
+- **extract**: Pulls specific sequence regions of interest from the input data based on search hits. This is useful for de novo annotations or when working with unannotated contigs.
 
-Locidex supports various input formats and can extract regions of interest. It leverages existing annotations from tools like Prodigal, Prokka, and Bakta, but also has built-in support for extracting sequence regions directly.
+### 3. Reporting and Analysis
+- **report**: Generates a structured analysis of the search results. 
+    - **Expert Tip**: Always check the quality metrics included in the report (v0.4.0+) to validate the confidence of allele calls.
+- **merge**: Aggregates results from multiple samples into a single profile (e.g., `profile.tsv`).
+    - **Profile Referencing**: Use `--profile_ref` or `-p` to correct or change the profile used in the output based on an MLST profile key.
+    - **Loci Selection**: You can select specific loci to include in the final `profile.tsv` output to reduce noise or focus on specific markers.
 
-*   **Building a database:**
-    The `locidex build` command is used to create a locidex database. You can specify input files, output directory, and various parameters to control the database structure and matching criteria.
+## Best Practices
 
-    ```bash
-    locidex build --input <input_files> --output <database_dir> [options]
-    ```
+- **Decentralized Identification**: Favor the MD5 hashing approach when collaborating across jurisdictions. This allows for the comparison of "hamming distances" based on hashes rather than sharing raw sequence data.
+- **Input Flexibility**: Locidex supports existing sequence annotations, de novo annotations from contigs, and raw sequence extraction. Choose the input method that matches your assembly quality.
+- **Database Integrity**: Ensure your database directory contains the required `config.json`, `meta.json`, and the associated BLAST database files. Locidex relies on these for metadata and search logic.
+- **HPC Environments**: Locidex is designed for high-throughput environments. You can trigger multiple search processes simultaneously without encountering the database locking issues common in other typing tools.
 
-    *   `--input`: Path to input sequence files (e.g., FASTA, annotated files). Can be a single file or a directory.
-    *   `--output`: Directory to store the generated locidex database.
-    *   **Customizing Loci Matching:** Locidex allows control over identity and coverage thresholds at a locus level. These can be specified during database building or overridden later.
 
-#### Sequence Extraction and Searching
 
-Locidex can extract specific sequence regions or perform similarity searches against its databases.
+## Subcommands
 
-*   **Extracting sequences:**
-    The `locidex extract` command is used to pull out specific sequence regions based on defined criteria.
-
-    ```bash
-    locidex extract --db <database_dir> --query <query_file> --output <output_file> [options]
-    ```
-
-    *   `--db`: Path to the locidex database.
-    *   `--query`: File containing sequences to query against the database.
-    *   `--output`: File to save the extracted sequences.
-
-*   **Performing similarity searches:**
-    The `locidex search` command performs similarity searches using NCBI BLAST against the locidex database.
-
-    ```bash
-    locidex search --db <database_dir> --query <query_file> --output <output_file> [options]
-    ```
-
-    *   `--db`: Path to the locidex database.
-    *   `--query`: File containing sequences for searching.
-    *   `--output`: File to save the search results.
-
-#### Reporting and Filtering
-
-Locidex provides a `report` module for filtering and customizing the output of search results.
-
-*   **Generating reports and filtering:**
-    The `locidex report` command allows for post-processing of search results, enabling filtering by various parameters and generating output in multiple formats.
-
-    ```bash
-    locidex report --input <search_results> --output <report_file> [options]
-    ```
-
-    *   `--input`: Results from a `locidex search` command.
-    *   `--output`: File to save the formatted report.
-    *   **Custom Filtering:** You can apply custom criteria filtering by loci, identity, coverage, and other attributes directly within the report generation.
-
-### Expert Tips
-
-*   **Input Flexibility:** Locidex is designed to handle various input types, including existing annotations, de novo annotations, and direct extraction of sequence regions of interest. Leverage this flexibility to prepare your data efficiently.
-*   **Database Structure:** The database structure in locidex allows for the inclusion of additional fields beyond sequence identifiers, such as functional properties and phenotypic effects. Consider how to best structure your database to capture this rich metadata.
-*   **Reproducibility and Flexibility:** Locidex aims to provide default parameters for reproducibility while allowing flexibility. Use the reporting module to explore different thresholds without recomputing BLAST searches.
-*   **HPC Compatibility:** Locidex is designed to be compatible with HPC environments and avoid locking issues, making it suitable for large-scale analyses.
+| Command | Description |
+|---------|-------------|
+| locidex build | Build a locidex database |
+| locidex manifest | Create a multi-database folder manifest |
+| locidex_extract | Extract loci from a genome based on a locidex database |
+| locidex_format | Format fasta files from other MLST databases for use with locidex build |
+| locidex_merge | Merge a set of gene profiles into a standard profile format |
+| locidex_report | Filter a sequence store and produce and extract of blast results and gene profile |
+| locidex_search | Query set of Loci/Genes against a database to produce a sequence store for downstream processing |
 
 ## Reference documentation
-
-- [Locidex: Common search engine for similarity based typing applications](./references/github_com_phac-nml_locidex.md)
+- [Locidex Main Documentation](./references/github_com_phac-nml_locidex_blob_main_README.md)
+- [Locidex Changelog and Version Features](./references/github_com_phac-nml_locidex_blob_main_CHANGELOG.md)

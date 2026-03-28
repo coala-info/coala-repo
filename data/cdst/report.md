@@ -126,3 +126,6 @@ options:
   -o, --output OUTPUT  Output directory
 ```
 
+
+## Metadata
+- **Skill**: generated

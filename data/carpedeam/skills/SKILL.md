@@ -1,6 +1,6 @@
 ---
 name: carpedeam
-description: Carpedeam is a de novo metagenome assembler designed to reconstruct contigs from ancient DNA datasets by incorporating damage-aware correction for post-mortem chemical degradation. Use when user asks to assemble ancient metagenomes, perform damage-aware de novo assembly, or reconstruct contigs from heavily damaged aDNA reads.
+description: Carpedeam is a specialized metagenomic assembler designed to reconstruct genomes from ancient DNA by incorporating empirical damage profiles into the assembly process. Use when user asks to assemble ancient metagenomes, configure the ancient_assemble command, optimize iteration parameters for fragmented reads, or troubleshoot damage matrix formatting.
 homepage: https://github.com/LouisPwr/CarpeDeam
 ---
 
@@ -8,9 +8,10 @@ homepage: https://github.com/LouisPwr/CarpeDeam
 # carpedeam
 
 ## Overview
-CarpeDeam is a specialized de novo metagenome assembler designed to handle the unique challenges of ancient DNA (aDNA). Standard assemblers often struggle with the high frequency of C-to-T and G-to-A substitutions caused by post-mortem chemical degradation. CarpeDeam incorporates a damage-aware correction step to reconstruct contigs from these heavily damaged datasets more accurately than general-purpose tools.
 
-## Core Assembly Workflow
+CarpeDeam is a specialized metagenomic assembler built to handle the unique challenges of ancient DNA, such as high fragmentation and chemical damage (e.g., C-to-T transitions). By incorporating empirical damage profiles into the assembly process, it achieves higher precision and longer contigs in datasets where standard assemblers often fail. Use this skill to configure the `ancient_assemble` command, optimize iteration parameters for specific sample types, and ensure input files meet the tool's strict formatting requirements.
+
+## Core Workflow
 
 The primary command for assembling ancient metagenomes is `ancient_assemble`.
 
@@ -18,39 +19,47 @@ The primary command for assembling ancient metagenomes is `ancient_assemble`.
 carpedeam ancient_assemble [reads.fastq.gz] [output.fasta] [tmp_dir] --ancient-damage [damage_prefix]
 ```
 
-### Essential Parameters
-- `--ancient-damage`: The path prefix to your damage profiles. The tool expects two files at this location: `[prefix]_5p.prof` and `[prefix]_3p.prof`.
-- `--num-iter-reads-only`: Sets the number of damage-aware iterations using only raw reads. This produces short but highly precise contigs. Recommended range: 3 to 5.
-- `--num-iterations`: The total number of iterations, including both read-only and contig-merging phases. Recommended range: 9 to 12.
-- `--min-merge-seq-id`: The identity threshold for overlapping sequences during merging. Lowering this below 0.99 increases contig length but raises the risk of misassemblies.
-- `--unsafe`: Enable this to maximize sensitivity and contig length if you are willing to accept a higher risk of chimeric contigs.
+### Critical Preprocessing
+1.  **Merge Reads**: Always merge paired-end reads before assembly. Merging improves read quality and provides better context for damage assessment.
+2.  **Length Filtering**: You must filter out extremely short reads (e.g., < 20bp) to prevent segmentation faults during the correction step.
+    *   *Example using seqkit*: `seqkit seq -m 20 input.fastq > filtered.fastq`
+3.  **Damage Matrix Suffixes**: The tool expects two specific files for the damage profile using the prefix provided in `--ancient-damage`:
+    *   `[prefix]_5p.prof` (Five-prime end substitutions)
+    *   `[prefix]_3p.prof` (Three-prime end substitutions)
 
-## Data Preparation and Best Practices
+## Parameter Optimization
 
-### Read Pre-processing
-- **Merging**: Always merge paired-end reads before assembly. Merging improves read quality and provides a clearer damage signal for the assembler.
-- **Length Filtering**: CarpeDeam may encounter segmentation faults if reads are too short (e.g., 1bp). Filter your input to ensure all reads are at least 20bp long.
-  - Example using seqkit: `seqkit seq -m 20 input.fastq > filtered.fastq`
+| Parameter | Recommended Value | Purpose |
+| :--- | :--- | :--- |
+| `--num-iter-reads-only` | 3 to 5 | Initial iterations using only raw reads. Produces short but highly precise contigs. |
+| `--num-iterations` | 9 to 12 | Total iterations (including reads-only). Higher values result in longer contigs through merging. |
+| `--min-merge-seq-id` | 0.99 (99%) | Identity threshold for merging. Lowering this increases contig length but raises the risk of misassemblies. |
+| `--unsafe` | 0 (Default) | Set to 1 to maximize sensitivity and length if chimeric contigs are not a primary concern. |
 
-### Damage Matrix Requirements
-The tool is highly sensitive to the formatting of the `.prof` files. They must be strictly tab-separated with no trailing whitespaces.
+## Troubleshooting & Best Practices
 
-**Format Specifications:**
-- Must contain a header line with 12 substitution types (A>C, A>G, A>T, C>A, C>G, C>T, G>A, G>C, G>T, T>A, T>C, T>G).
-- One line per position.
-- 5p profile: Focuses on C-to-T substitutions starting at position 1.
-- 3p profile: Focuses on G-to-A substitutions starting at position 1.
+### Damage Matrix Formatting
+CarpeDeam is extremely sensitive to the format of `.prof` files. They must be strictly tab-separated with no trailing whitespaces or empty tabs at the end of lines. If you encounter the error `Profile not 12 fields uniq1`, fix your matrices with:
 
-**Fixing Formatting Errors:**
-If you receive the error "Profile not 12 fields uniq1", use `sed` to normalize the tabs and remove trailing spaces:
 ```bash
-sed -E 's/[[:space:]]+/\t/g; s/\t$//' input_damage.prof > fixed_damage.prof
+sed -E 's/[[:space:]]+/\t/g; s/\t$//' input.prof > fixed_input.prof
 ```
 
-## Hardware Considerations
-- **Memory**: CarpeDeam requires approximately 1 byte of RAM per residue. It scales its consumption based on available system memory.
-- **CPU**: Requires a processor supporting at least the SSE4.1 instruction set.
+### Hardware Considerations
+*   **Memory**: Ensure the system has roughly 1 byte of RAM per residue in the dataset.
+*   **CPU**: The binary requires a CPU supporting at least the SSE4.1 instruction set.
+*   **Scaling**: The tool automatically scales memory consumption based on available system RAM.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ancient_correction | By Louis Kraft <lokraf@dtu.dk> |
+| carpedeam ancient_assemble | By Louis Kraft <lokraf@dtu.dk> |
+| nuclassemble | By Louis Kraft <lokraf@dtu.dk> and Annika Jochheim <annika.jochheim@mpinat.mpg.de> |
 
 ## Reference documentation
-- [CarpeDeam GitHub Repository](./references/github_com_LouisPwr_CarpeDeam.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_carpedeam_overview.md)
+
+- [CarpeDeam Main Documentation](./references/github_com_LouisPwr_CarpeDeam_blob_main_README.md)

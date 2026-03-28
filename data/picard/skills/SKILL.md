@@ -1,6 +1,6 @@
 ---
 name: picard
-description: Picard is a toolkit for manipulating high-throughput sequencing data and formats like SAM, BAM, and VCF. Use when user asks to mark duplicates, sort and index files, add read groups, or collect quality control metrics.
+description: Picard is a suite of Java-based command-line utilities used for manipulating, validating, and analyzing high-throughput sequencing data in SAM, BAM, and VCF formats. Use when user asks to mark duplicates, add or replace read groups, validate SAM or BAM files, sort sequencing data, or prepare files for downstream variant calling.
 homepage: http://broadinstitute.github.io/picard/
 ---
 
@@ -9,36 +9,35 @@ homepage: http://broadinstitute.github.io/picard/
 
 ## Overview
 
-Picard is a specialized toolkit designed for the rigorous manipulation of Next-Generation Sequencing (NGS) data. It is widely used in bioinformatics pipelines to ensure data integrity and prepare files for downstream analysis (like GATK variant calling). Its primary strengths lie in its strict adherence to SAM specifications, its robust duplicate marking algorithms, and its extensive library of QC metrics tools.
+Picard is a robust suite of Java-based command-line utilities designed for the manipulation and analysis of high-throughput sequencing data. It is widely recognized for its strict adherence to the SAM format specification, making it the primary tool for validating file integrity and preparing data for downstream variant calling (e.g., GATK). Unlike many bioinformatics tools that use POSIX-style flags, Picard uses a specific `KEY=VALUE` syntax for its arguments.
 
-## Command Line Syntax
+## Core Command Syntax
 
-Picard uses a specific "Keyword=Value" parameter syntax. Unlike many other CLI tools, options do not typically use leading dashes (except for standard Java/JVM arguments).
+Execute Picard tools using the following pattern:
 
-**Basic Template:**
 ```bash
 java [jvm-args] -jar picard.jar [ToolName] OPTION1=value1 OPTION2=value2 ...
 ```
 
-**Common JVM Arguments:**
-- `-Xmx2g`: Sets the maximum Java heap size. Most Picard tools require at least 2GB; large files may require 8GB or more.
-- `-XX:ParallelGCThreads=1`: Limits the number of threads used for garbage collection to prevent Picard from consuming all available CPU cores on a shared system.
+### Essential JVM Arguments
+*   **Memory Allocation**: Always specify the maximum heap size using `-Xmx`. For most tools, `-Xmx2g` to `-Xmx4g` is sufficient, but `MarkDuplicates` and `SortSam` may require more for large datasets.
+*   **Garbage Collection**: To prevent Picard from consuming all available CPU cores for background tasks, use `-XX:ParallelGCThreads=1`.
 
-## Standard Options
+## Standard Options and Best Practices
 
-These options are applicable to almost all Picard tools and are critical for workflow stability:
+Most Picard tools support a set of common parameters that significantly impact performance and reliability:
 
-| Option | Description | Recommended Setting |
-| --- | --- | --- |
-| `VALIDATION_STRINGENCY` | How to handle non-compliant SAM records. | `LENIENT` (for non-standard aligners) or `SILENT`. |
-| `MAX_RECORDS_IN_RAM` | Number of records to store in RAM before spilling to disk. | 250,000 per GB of heap (e.g., 500,000 for `-Xmx2g`). |
-| `CREATE_INDEX` | Automatically create a BAM index (.bai) when writing a sorted BAM. | `true` |
-| `TMP_DIR` | Directory for temporary files during sorting. | Use a high-speed local scratch disk. |
+| Option | Recommendation |
+| :--- | :--- |
+| `VALIDATION_STRINGENCY` | Use `STRICT` (default) for production. Use `LENIENT` or `SILENT` if dealing with non-standard aligner output that causes minor validation errors. |
+| `CREATE_INDEX` | Set to `true` when writing coordinate-sorted BAM files to generate the `.bai` index automatically. |
+| `MAX_RECORDS_IN_RAM` | Adjust based on available memory. A rule of thumb is 250,000 records per 1GB of JVM heap. |
+| `TMP_DIR` | Specify a high-performance scratch directory for tools that perform disk-based sorting (e.g., `SortSam`, `MarkDuplicates`). |
 
-## High-Utility CLI Patterns
+## High-Utility Workflows
 
 ### Marking Duplicates
-The most common Picard task. It identifies reads originating from the same DNA fragment.
+`MarkDuplicates` identifies PCR or optical duplicates. It is memory-intensive because it tracks read-end coordinates.
 ```bash
 java -Xmx4g -jar picard.jar MarkDuplicates \
       I=input.bam \
@@ -47,45 +46,38 @@ java -Xmx4g -jar picard.jar MarkDuplicates \
       CREATE_INDEX=true
 ```
 
-### Sorting and Indexing
-Ensures the BAM file is coordinate-sorted, which is required for most analysis tools.
-```bash
-java -Xmx2g -jar picard.jar SortSam \
-      I=input.sam \
-      O=sorted.bam \
-      SORT_ORDER=coordinate \
-      CREATE_INDEX=true
-```
-
-### Adding Read Groups
-Many tools require a `@RG` header. This tool adds or replaces that information.
+### Adding or Replacing Read Groups
+Many downstream tools require specific Read Group (`@RG`) information in the BAM header.
 ```bash
 java -jar picard.jar AddOrReplaceReadGroups \
       I=input.bam \
       O=output.bam \
-      RGID=4 RGLB=lib1 RGPL=illumina RGPU=unit1 RGSM=sample01
+      RGID=4 RGLB=lib1 RGPL=illumina RGPU=unit1 RGSM=sample1
 ```
 
-### Piping Data
-To avoid unnecessary disk I/O, you can pipe data into or out of Picard using `/dev/stdin` and `/dev/stdout`.
-- **Note**: Use `QUIET=true` to prevent status messages from corrupting the data stream.
-- **Note**: Use `COMPRESSION_LEVEL=0` when piping to another tool to save CPU cycles.
-
+### Validating SAM/BAM Files
+Use `ValidateSamFile` to troubleshoot errors or ensure a file is ready for GATK.
 ```bash
-samtools view -h input.cram | java -jar picard.jar SortSam \
+java -jar picard.jar ValidateSamFile \
+      I=input.bam \
+      MODE=SUMMARY
+```
+
+### Piping and Streaming
+To read from stdin or write to stdout, use `/dev/stdin` and `/dev/stdout`. Set `QUIET=true` to prevent log messages from corrupting the stdout stream.
+```bash
+samtools view -u input.bam | java -jar picard.jar SortSam \
       I=/dev/stdin \
       O=/dev/stdout \
       SORT_ORDER=coordinate \
-      QUIET=true \
-      COMPRESSION_LEVEL=0 | samtools view -b > output.bam
+      QUIET=true > sorted.bam
 ```
 
-## Expert Tips & Troubleshooting
-
-1.  **Validation Errors**: If Picard fails with "CIGAR M operator maps off the end of reference," use `CleanSam` to soft-clip the problematic reads or set `VALIDATION_STRINGENCY=LENIENT`.
-2.  **Memory Management**: If you encounter `OutOfMemoryError` during sorting, increase `-Xmx` and ensure `MAX_RECORDS_IN_RAM` is tuned. If the system has a hard memory limit, keep `-Xmx` at least 2GB below that limit to allow for overhead.
-3.  **Duplicate Marking Logic**: `MarkDuplicates` chooses the "best" read pair based on the sum of base qualities (Q ≥ 15). It handles inter-chromosomal duplicates, unlike `samtools rmdup`.
-4.  **Standardizing Aligner Output**: If an aligner produces BAMs that Picard finds "invalid" (e.g., missing unmapped reads or incorrect mate info), use `MergeBamAlignment` to merge the aligned BAM with the original unmapped BAM (uBAM).
+## Expert Tips
+*   **Cleaning Files**: If a file has alignments extending past the end of a reference contig, use `CleanSam` to soft-clip the offending reads.
+*   **Duplicate Removal**: By default, `MarkDuplicates` only flags reads. To physically remove them, set `REMOVE_DUPLICATES=true`.
+*   **Sorting Performance**: If `SortSam` is slow, increase `MAX_RECORDS_IN_RAM` and ensure `TMP_DIR` points to a fast local disk (SSD) rather than a slow network mount.
+*   **CRAM Support**: Picard supports CRAM, but you must provide the `REFERENCE_SEQUENCE` path for both reading and writing.
 
 
 
@@ -216,4 +208,4 @@ samtools view -h input.cram | java -jar picard.jar SortSam \
 ## Reference documentation
 - [Picard Command Line Overview](./references/broadinstitute_github_io_picard_command-line-overview.html.md)
 - [Picard FAQ](./references/broadinstitute_github_io_picard_faq.html.md)
-- [Picard Index/Quick Start](./references/broadinstitute_github_io_picard_index.html.md)
+- [Picard Index](./references/broadinstitute_github_io_picard_index.html.md)

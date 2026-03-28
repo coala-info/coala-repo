@@ -1,6 +1,6 @@
 ---
 name: glimpse-bio
-description: GLIMPSE2 is a suite of tools for phasing and imputing missing genotypes from low-coverage sequencing data using large reference panels. Use when user asks to chunk the genome, prepare binary reference panels, perform genotype imputation from reads or likelihoods, or ligate imputed genomic chunks.
+description: GLIMPSE2 recovers high-density genotype and haplotype information from low-coverage sequencing data. Use when user asks to impute genotypes, phase haplotypes, define imputation chunks, prepare binary reference panels, or ligate processed genomic chunks.
 homepage: https://odelaneau.github.io/GLIMPSE/
 ---
 
@@ -8,76 +8,104 @@ homepage: https://odelaneau.github.io/GLIMPSE/
 # glimpse-bio
 
 ## Overview
-GLIMPSE2 is a specialized suite of tools designed for population-scale genetics. It excels at "imputation-from-reads," allowing researchers to infer missing genotypes and phase haplotypes directly from low-coverage data (often <1x coverage) by leveraging large reference panels (e.g., UK Biobank). The workflow typically involves defining genomic chunks, preparing a binary reference panel, performing the actual phasing/imputation, and ligating the results back into chromosome-wide files.
+
+GLIMPSE2 (Genotype Likelihoods IMputation and PhaSing mEthod) is a specialized suite of tools designed to recover high-density genotype and haplotype information from low-coverage sequencing data. It is particularly optimized for modern reference panels containing hundreds of thousands of samples and excels at imputing rare variants. 
+
+The toolset follows a modular workflow:
+1. **Chunking**: Dividing chromosomes into manageable overlapping windows.
+2. **Reference Splitting**: Converting reference panels into a fast-loading binary format for specific windows.
+3. **Phasing**: The core HMM-based imputation engine.
+4. **Ligation**: Stitching phased chunks back into a single chromosome-wide file.
 
 ## Core Workflow and CLI Patterns
 
-### 1. Chunking the Genome
-Before processing, the chromosome must be split into manageable windows with overlapping buffers to ensure consistency across boundaries.
+### 1. Defining Imputation Chunks
+Use `GLIMPSE2_chunk` to define regions. Providing a genetic map is highly recommended for accurate window placement.
 
 ```bash
-GLIMPSE2_chunk --input target_chr20.bcf \
-               --map chr20.gmap.gz \
-               --region chr20 \
+GLIMPSE2_chunk --input reference_sites.vcf.gz \
+               --region chr22 \
                --sequential \
-               --output chunks_chr20.txt
+               --map genetic_map_chr22.gmap.gz \
+               --output chunks_chr22.txt
 ```
-*   **Best Practice**: Use `--sequential` for most standard WGS/WES datasets.
-*   **Parameters**: `--window-cm` (default 4.0) and `--buffer-cm` (default 0.5) control the size of the imputation windows and their overlaps.
+*   **Expert Tip**: Use `--sequential` (recommended) to ensure windows are balanced by variant count or genetic distance.
 
-### 2. Preparing the Reference Panel
-GLIMPSE2 uses a specific binary format for the reference panel to minimize memory usage and speed up loading.
+### 2. Preparing Binary Reference Panels
+`GLIMPSE2_split_reference` converts a standard VCF/BCF reference panel into a binary format (`.bin`) that `GLIMPSE2_phase` can load near-instantaneously.
 
 ```bash
 GLIMPSE2_split_reference --reference reference_panel.bcf \
-                         --map chr20.gmap.gz \
-                         --input-region chr20:7702567-12266861 \
-                         --output-region chr20:7952603-12016861 \
-                         --output binary_reference_panel
+                         --map genetic_map_chr22.gmap.gz \
+                         --input-region chr22:10000-20000 \
+                         --output-region chr22:12000-18000 \
+                         --output bin_ref_prefix
 ```
-*   **Note**: The `input-region` should include the buffer, while `output-region` is the core window defined in the chunking step.
+*   **Note**: The `input-region` includes the buffer, while `output-region` is the target imputation window.
 
-### 3. Phasing and Imputation
-This is the main computational step. It can take BAM/CRAM files directly or VCF files containing genotype likelihoods (GL).
+### 3. Imputation and Phasing
+`GLIMPSE2_phase` is the primary tool. It can take BAM/CRAM files directly or VCF files containing genotype likelihoods (GL).
 
-**From BAM/CRAM list:**
+**Directly from BAM:**
 ```bash
-GLIMPSE2_phase --bam-list bams.txt \
-               --reference binary_reference_panel_chr20.bin \
-               --map chr20.gmap.gz \
-               --input-region chr20:7702567-12266861 \
-               --output-region chr20:7952603-12016861 \
-               --output imputed_chunk.bcf \
-               --threads 8
+GLIMPSE2_phase --bam-file sample.bam \
+               --reference bin_ref_chr22_chunk1.bin \
+               --output sample_imputed_chunk1.bcf \
+               --threads 4
 ```
 
 **From Genotype Likelihoods (VCF):**
 ```bash
-GLIMPSE2_phase --input-gl target_gls.vcf.gz \
-               --reference binary_reference_panel_chr20.bin \
-               --output imputed_chunk.bcf
+GLIMPSE2_phase --input-gl sample_gls.vcf.gz \
+               --reference bin_ref_chr22_chunk1.bin \
+               --output sample_imputed_chunk1.bcf
 ```
 
-### 4. Ligation
-After all chunks for a chromosome are processed, ligate them to restore the full chromosome phase.
+### 4. Ligating Chunks
+After all chunks for a chromosome are processed, use `GLIMPSE2_ligate` to merge them.
 
 ```bash
 # Create a list of files in genomic order
-ls -1v chr20/*.imputed.bcf > list_chunks.txt
+ls -1v *_chunk*.bcf > chunk_list.txt
 
-GLIMPSE2_ligate --input list_chunks.txt \
-                --output ligated_chr20.bcf
+GLIMPSE2_ligate --input chunk_list.txt \
+                --output sample_chr22_final.bcf
 ```
 
-## Expert Tips
-*   **Memory Management**: Always use the binary reference format (`split_reference`) when working with large panels (thousands of samples) to avoid massive RAM consumption.
-*   **CRAM Files**: When using CRAM input, you must provide the reference genome fasta using `-F` or `--fasta`.
-*   **Ploidy**: For sex chromosomes, use `--samples-file` to specify ploidy (1 for males on X/Y, 2 for females on X). GLIMPSE assumes diploid (2) by default.
-*   **Rare Variants**: The `--sparse-maf` parameter (default 0.001) is an expert setting that controls the threshold for rare variant handling in the model.
+## Expert Parameters and Best Practices
+
+### Handling Ploidy
+For sex chromosomes or haploid organisms, use a samples file to specify ploidy:
+*   `--samples-file ploidy_info.txt` (Format: `SampleID [1 or 2]`)
+*   GLIMPSE2 does not automatically infer sex from BAM headers; ploidy must be explicit.
+
+### Rare Variant Settings
+*   `--sparse-maf [float]`: Sets the threshold for rare variants (default 0.001). Adjust this if working with extremely large reference panels where rare variant density is high.
+
+### Input Optimization
+*   **BCF over VCF**: Always prefer BCF format for reference panels and intermediate files to significantly reduce I/O overhead.
+*   **CRAM Requirements**: When using CRAM input, you must provide the reference genome fasta using `-F` or `--fasta`.
+
+### Quality Control
+Use `GLIMPSE2_concordance` to validate imputation accuracy if you have high-coverage "truth" data for a subset of samples.
+*   Requires a file listing: `region`, `frequencies`, `validation_vcf`, and `imputed_vcf`.
+*   Use `--min-val-dp` to filter validation sites by depth to ensure the "truth" set is reliable.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| glimpse-bio_GLIMPSE2_chunk | Split chromosomes into chunks |
+| glimpse-bio_GLIMPSE2_ligate | Ligate multiple output files into chromosome-wide files |
+| glimpse-bio_GLIMPSE2_phase | [GLIMPSE2] Phase and impute low coverage sequencing data |
+| glimpse-bio_GLIMPSE2_split_reference | Split reference panel into binary GLIMPSE2 files |
 
 ## Reference documentation
-- [GLIMPSE2 Home](./references/odelaneau_github_io_GLIMPSE.md)
-- [Chunking Documentation](./references/odelaneau_github_io_GLIMPSE_docs_documentation_chunk.md)
-- [Phasing Documentation](./references/odelaneau_github_io_GLIMPSE_docs_documentation_phase.md)
-- [Ligation Documentation](./references/odelaneau_github_io_GLIMPSE_docs_documentation_ligate.md)
-- [Split Reference Documentation](./references/odelaneau_github_io_GLIMPSE_docs_documentation_split_reference.md)
+- [GLIMPSE2 Documentation Overview](./references/odelaneau_github_io_GLIMPSE_docs_documentation.md)
+- [GLIMPSE2_chunk Manual](./references/odelaneau_github_io_GLIMPSE_docs_documentation_chunk.md)
+- [GLIMPSE2_phase Manual](./references/odelaneau_github_io_GLIMPSE_docs_documentation_phase.md)
+- [GLIMPSE2_split_reference Manual](./references/odelaneau_github_io_GLIMPSE_docs_documentation_split_reference.md)
+- [GLIMPSE2_ligate Manual](./references/odelaneau_github_io_GLIMPSE_docs_documentation_ligate.md)
+- [Tutorial: Getting Started](./references/odelaneau_github_io_GLIMPSE_docs_tutorials_getting_started.md)

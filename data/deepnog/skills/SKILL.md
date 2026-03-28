@@ -1,6 +1,6 @@
 ---
 name: deepnog
-description: DeepNOG assigns proteins to orthologous groups using deep neural networks for rapid genomic and metagenomic analysis. Use when user asks to assign proteins to orthologous groups, perform protein group inference, or train custom models for specific taxonomic levels.
+description: DeepNOG uses deep convolutional neural networks to assign protein sequences to orthologous groups. Use when user asks to infer orthologous groups for protein sequences, train custom protein classification models, or target specific taxonomic levels for protein annotation.
 homepage: https://github.com/univieCUBE/deepnog
 ---
 
@@ -9,60 +9,55 @@ homepage: https://github.com/univieCUBE/deepnog
 
 ## Overview
 
-DeepNOG is a specialized bioinformatics tool for the rapid assignment of proteins to orthologous groups (such as eggNOG 5.0 or COG 2020) using deep neural networks. It is designed to handle large-scale genomic and metagenomic datasets by bypassing the computational overhead of traditional sequence alignment. Use this skill to perform protein group inference on CPUs or GPUs, or to train custom models for specific taxonomic levels.
+DeepNOG is a specialized bioinformatics tool that leverages deep convolutional neural networks to assign protein sequences to orthologous groups (OGs). It serves as a high-performance alternative to alignment-based methods like HMMER, offering comparable accuracy with significantly faster processing speeds. This skill provides the procedural knowledge required to perform inference on FASTA files, manage taxonomic levels, and train custom models for specific protein databases.
 
-## Installation and Setup
+## Core Workflows
 
-Install deepnog via bioconda or pip:
+### Protein Orthologous Group Inference
 
-```bash
-conda install bioconda::deepnog
-# OR
-pip install deepnog
-```
+The primary use case for DeepNOG is predicting the orthologous group for a set of protein sequences.
 
-DeepNOG automatically downloads pre-trained models to `~/deepnog_data/`. To change this location, set the environment variable:
-`export DEEPNOG_DATA=/path/to/custom/cache`
+*   **Basic Inference**: Run prediction on a FASTA file using the default eggNOG 5 bacteria level.
+    ```bash
+    deepnog infer proteins.faa --out prediction.csv
+    ```
+*   **Taxonomic Specificity**: Target a specific taxonomic level using the `-t` (tax) and `-db` flags.
+    ```bash
+    # Example: Target Gammaproteobacteria (TaxID 1236)
+    deepnog infer proteins.faa -db eggNOG5 -t 1236
+    ```
+*   **Confidence Filtering**: Use the `-c` flag to discard predictions that fall below a specific probability threshold.
+    ```bash
+    deepnog infer proteins.faa -c 0.95
+    ```
 
-## Inference Patterns
+### Model Training
 
-Perform orthologous group assignment using the `infer` command.
+DeepNOG allows for the creation of custom models if the pre-computed ones do not meet your specific taxonomic or database needs.
 
-### Basic Inference
-Assign proteins in a FASTA file to the default eggNOG5 bacteria level:
-`deepnog infer proteins.faa --out predictions.csv`
+*   **Standard Training**: Requires training/validation sequences (FASTA) and their corresponding group assignments (CSV).
+    ```bash
+    deepnog train train.fa val.fa train.csv val.csv -e 15 --shuffle -db eggNOG5 -t 3 -o ./output_models
+    ```
+*   **Reproducibility**: Always set a random seed (`-r`) when training to ensure consistent results across runs.
 
-### Advanced Inference Options
-- **Specify Database and Taxonomy**: Use `-db` and `-t` (TaxID) to target specific levels.
-  `deepnog infer proteins.faa -db eggNOG5 -t 1236` (Gammaproteobacteria)
-- **Confidence Thresholding**: Discard low-confidence assignments using `-c`.
-  `deepnog infer proteins.faa -c 0.99`
-- **Verbosity**: Increase output detail for progress tracking.
-  `deepnog infer proteins.faa -V 3`
+## Expert Tips and Best Practices
 
-## Training Custom Models
+*   **Data Management**: DeepNOG downloads models automatically to `~/deepnog_data/`. If working in a restricted environment or a cluster with shared storage, redirect this using the `DEEPNOG_DATA` environment variable.
+*   **Performance Tuning**: Use the `-V` flag (verbosity) to monitor progress during long-running inference tasks. `-V 3` provides a detailed report.
+*   **File Formats**: While DeepNOG supports various formats via Biopython's SeqIO, FASTA (raw, .gz, or .xz) is the only format officially tested and preferred for stability.
+*   **Hardware Acceleration**: DeepNOG automatically detects and utilizes GPUs via PyTorch. Ensure your environment has the appropriate CUDA drivers if performance is a bottleneck.
 
-Use the `train` command to create models for specific taxonomic levels or custom datasets.
 
-### Training Workflow
-Provide training and validation sequences (FASTA) along with their corresponding group assignments (CSV):
-`deepnog train train.fa val.fa train.csv val.csv -a deepnog -e 15 --shuffle -o ./output_model_dir`
 
-### Key Training Arguments
-- `-a`: Architecture (default is `deepnog`).
-- `-e`: Number of epochs.
-- `-r`: Set a random seed for reproducibility.
-- `-db` / `-t`: Define the database and taxonomic level the model represents.
+## Subcommands
 
-## Expert Tips
-
-- **Hardware Acceleration**: DeepNOG automatically detects and uses GPUs via PyTorch. Ensure your environment has `cuda` available for significant speedups on large datasets.
-- **File Formats**: While FASTA is the primary tested format, DeepNOG supports any format compatible with Biopython's `SeqIO` (including compressed `.gz` or `.xz` files).
-- **Memory Management**: For extremely large FASTA files, monitor RAM usage as the tool loads sequences for batch processing.
-- **Help Commands**: Access detailed parameter descriptions for specific subcommands:
-  `deepnog infer --help`
-  `deepnog train --help`
+| Command | Description |
+|---------|-------------|
+| deepnog train | Train a DeepNOG model. |
+| deepnog_infer | Infer orthologous groups for protein sequences. |
 
 ## Reference documentation
-- [DeepNOG GitHub Repository](./references/github_com_univieCUBE_deepnog.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_deepnog_overview.md)
+
+- [DeepNOG GitHub Repository](./references/github_com_univieCUBE_deepnog_blob_master_README.md)
+- [DeepNOG Bioconda Package](./references/anaconda_org_channels_bioconda_packages_deepnog_overview.md)

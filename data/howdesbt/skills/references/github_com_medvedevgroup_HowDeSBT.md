@@ -1,1 +1,235 @@
-GitHub - medvedevgroup/HowDeSBT: Sequence Bloom Tree, supporting determined/how split filters Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} medvedevgroup / HowDeSBT Public Notifications You must be signed in to change notification settings Fork 4 Star 10 Sequence Bloom Tree, supporting determined/how split filters License MIT license 10 stars 4 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 2 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights medvedevgroup/HowDeSBT master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 317 Commits 317 Commits reproduce reproduce scripts scripts tutorial tutorial .gitignore .gitignore LICENSE LICENSE Makefile Makefile Makefile_full Makefile_full README.md README.md bit_utilities.cc bit_utilities.cc bit_utilities.h bit_utilities.h bit_vector.cc bit_vector.cc bit_vector.h bit_vector.h bloom_filter.cc bloom_filter.cc bloom_filter.h bloom_filter.h bloom_filter_file.h bloom_filter_file.h bloom_tree.cc bloom_tree.cc bloom_tree.h bloom_tree.h cmd_bf_distance.cc cmd_bf_distance.cc cmd_bf_distance.h cmd_bf_distance.h cmd_bf_operate.cc cmd_bf_operate.cc cmd_bf_operate.h cmd_bf_operate.h cmd_bit_stats.cc cmd_bit_stats.cc cmd_bit_stats.h cmd_bit_stats.h cmd_build_sbt.cc cmd_build_sbt.cc cmd_build_sbt.h cmd_build_sbt.h cmd_bv_operate.cc cmd_bv_operate.cc cmd_bv_operate.h cmd_bv_operate.h cmd_cluster.cc cmd_cluster.cc cmd_cluster.h cmd_cluster.h cmd_combine_bf.cc cmd_combine_bf.cc cmd_combine_bf.h cmd_combine_bf.h cmd_compress_bf.cc cmd_compress_bf.cc cmd_compress_bf.h cmd_compress_bf.h cmd_dump_bf.cc cmd_dump_bf.cc cmd_dump_bf.h cmd_dump_bf.h cmd_dump_bv.cc cmd_dump_bv.cc cmd_dump_bv.h cmd_dump_bv.h cmd_load_test.cc cmd_load_test.cc cmd_load_test.h cmd_load_test.h cmd_make_bf.cc cmd_make_bf.cc cmd_make_bf.h cmd_make_bf.h cmd_make_bv.cc cmd_make_bv.cc cmd_make_bv.h cmd_make_bv.h cmd_node_stats.cc cmd_node_stats.cc cmd_node_stats.h cmd_node_stats.h cmd_query.cc cmd_query.cc cmd_query.h cmd_query.h cmd_query_bf.cc cmd_query_bf.cc cmd_query_bf.h cmd_query_bf.h cmd_random_bv.cc cmd_random_bv.cc cmd_random_bv.h cmd_random_bv.h cmd_sabuhash_test.cc cmd_sabuhash_test.cc cmd_sabuhash_test.h cmd_sabuhash_test.h cmd_validate_rrr.cc cmd_validate_rrr.cc cmd_validate_rrr.h cmd_validate_rrr.h cmd_validate_tree.cc cmd_validate_tree.cc cmd_validate_tree.h cmd_validate_tree.h cmd_version.cc cmd_version.cc cmd_version.h cmd_version.h commands.h commands.h file_manager.cc file_manager.cc file_manager.h file_manager.h hash.h hash.h howdesbt.cc howdesbt.cc jelly_kmers.h jelly_kmers.h jellyhash.h jellyhash.h prng.cc prng.cc prng.h prng.h query.cc query.cc query.h query.h sabuhash.h sabuhash.h support.cc support.cc support.h support.h utilities.cc utilities.cc utilities.h utilities.h View all files Repository files navigation README MIT license HowDeSBT Sequence Bloom Tree, supporting determined/how split filters Dependencies Jellyfish (Version 2.2.0 or later) SDSL-lite (Has to be cloned from github.com/simongog/sdsl-lite after April 2017; earlier versions had a problem with RRR in certain configurations) CRoaring ( https://github.com/RoaringBitmap/CRoaring ) The tutorial makes use of ntCard ( https://github.com/bcgsc/ntCard ) Installation To install HowDeSBT from the source: 1a. Download the latest version of subutan using Github git clone https://github.com/medvedevgroup/HowDeSBT 1b. Modify the Makefile If you have installed the dependencies somewhere other than ${HOME} , you need to modify the Makefile. Specifically, in both the CXXFLAGS and LDFLAGS definitions $${HOME} should be changed to your install path. 1c. Jellyfish install workaround (There are other ways to accomplish this, see the note at the end of this step.) Jellyfish installation requires an extra step for its include directory. After you have installed Jellyfish, do cd ${HOME} /include ls | grep jellyfish You should see something like jellyfish-2.2.6 where 2.2.6 is the version of Jellyfish you've installed. Then make a symbolic link named 'jellyfish' that points to the includes directory for the version you've installed: cd ${HOME} /include ln -s jellyfish-2.2.6/jellyfish jellyfish Note: the symbolic link is a workaround for the way that Jellyfish installs its files. That install expects the user to have the program pkg-config installed and an environment variable PKG_CONFIG_PATH defined. The Makefile here woud then use pkg-config to get the path to the include files. While that paradigm is apparently widespread it isn't universal. The symbolic link workaround seems less of a burden than requiring that users install another package and set up an environment variable. See gmarcais/Jellyfish#139 for more details. 2. Compile: cd HowDeSBT make 3. Install: cd HowDeSBT cp howdesbt ${HOME} /bin Another alternative is to make sure the path to the HowDeSBT directory is in your PATH environment variable. 4. Validation: The quick start tutorial shows expected results which can be compared against your tutorial results. Quick Start A usage tutorial can be found at https://github.com/medvedevgroup/HowDeSBT/tree/master/tutorial The command howdesbt ? will show a list of subcommands with brief descriptions. As of this writing, that will look like this: $ howdesbt ? makebf-- convert a sequence file to a bloom filter cluster-- determine a tree topology by clustering bloom filters build-- build a sequence bloom tree from a topology file and leaves query-- query a sequence bloom tree version-- report this program ' s version The command howdesbt ?&lt;subcommand&gt; will give a more detailed description of a subcommand. For example, howdesbt ?makebf gives details for how to convert a sequence file to a bloom filter. Citation If you use HowDeSBT, please cite Robert S Harris and Paul Medvedev, Improved representation of sequence bloom trees, Bioinformatics, btz662 About Sequence Bloom Tree, supporting determined/how split filters Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 10 stars Watchers 6 watching Forks 4 forks Report repository Releases 10 Additional functionality in bfdistance command Latest Apr 19, 2024 + 9 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 3 &nbsp; &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages C++ 85.9% Python 12.7% Other 1.4% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmedvedevgroup%2FHowDeSBT)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmedvedevgroup%2FHowDeSBT)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=medvedevgroup%2FHowDeSBT)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[medvedevgroup](/medvedevgroup)
+/
+**[HowDeSBT](/medvedevgroup/HowDeSBT)**
+Public
+
+* [Notifications](/login?return_to=%2Fmedvedevgroup%2FHowDeSBT) You must be signed in to change notification settings
+* [Fork
+  4](/login?return_to=%2Fmedvedevgroup%2FHowDeSBT)
+* [Star
+   10](/login?return_to=%2Fmedvedevgroup%2FHowDeSBT)
+
+* [Code](/medvedevgroup/HowDeSBT)
+* [Issues
+  2](/medvedevgroup/HowDeSBT/issues)
+* [Pull requests
+  0](/medvedevgroup/HowDeSBT/pulls)
+* [Actions](/medvedevgroup/HowDeSBT/actions)
+* [Projects](/medvedevgroup/HowDeSBT/projects)
+* [Security
+  0](/medvedevgroup/HowDeSBT/security)
+* [Insights](/medvedevgroup/HowDeSBT/pulse)
+
+Additional navigation options
+
+* [Code](/medvedevgroup/HowDeSBT)
+* [Issues](/medvedevgroup/HowDeSBT/issues)
+* [Pull requests](/medvedevgroup/HowDeSBT/pulls)
+* [Actions](/medvedevgroup/HowDeSBT/actions)
+* [Projects](/medvedevgroup/HowDeSBT/projects)
+* [Security](/medvedevgroup/HowDeSBT/security)
+* [Insights](/medvedevgroup/HowDeSBT/pulse)
+
+# medvedevgroup/HowDeSBT
+
+master
+
+[Branches](/medvedevgroup/HowDeSBT/branches)[Tags](/medvedevgroup/HowDeSBT/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[317 Commits](/medvedevgroup/HowDeSBT/commits/master/)   317 Commits | | |
+| [reproduce](/medvedevgroup/HowDeSBT/tree/master/reproduce "reproduce") | | [reproduce](/medvedevgroup/HowDeSBT/tree/master/reproduce "reproduce") |  |  |
+| [scripts](/medvedevgroup/HowDeSBT/tree/master/scripts "scripts") | | [scripts](/medvedevgroup/HowDeSBT/tree/master/scripts "scripts") |  |  |
+| [tutorial](/medvedevgroup/HowDeSBT/tree/master/tutorial "tutorial") | | [tutorial](/medvedevgroup/HowDeSBT/tree/master/tutorial "tutorial") |  |  |
+| [.gitignore](/medvedevgroup/HowDeSBT/blob/master/.gitignore ".gitignore") | | [.gitignore](/medvedevgroup/HowDeSBT/blob/master/.gitignore ".gitignore") |  |  |
+| [LICENSE](/medvedevgroup/HowDeSBT/blob/master/LICENSE "LICENSE") | | [LICENSE](/medvedevgroup/HowDeSBT/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile](/medvedevgroup/HowDeSBT/blob/master/Makefile "Makefile") | | [Makefile](/medvedevgroup/HowDeSBT/blob/master/Makefile "Makefile") |  |  |
+| [Makefile\_full](/medvedevgroup/HowDeSBT/blob/master/Makefile_full "Makefile_full") | | [Makefile\_full](/medvedevgroup/HowDeSBT/blob/master/Makefile_full "Makefile_full") |  |  |
+| [README.md](/medvedevgroup/HowDeSBT/blob/master/README.md "README.md") | | [README.md](/medvedevgroup/HowDeSBT/blob/master/README.md "README.md") |  |  |
+| [bit\_utilities.cc](/medvedevgroup/HowDeSBT/blob/master/bit_utilities.cc "bit_utilities.cc") | | [bit\_utilities.cc](/medvedevgroup/HowDeSBT/blob/master/bit_utilities.cc "bit_utilities.cc") |  |  |
+| [bit\_utilities.h](/medvedevgroup/HowDeSBT/blob/master/bit_utilities.h "bit_utilities.h") | | [bit\_utilities.h](/medvedevgroup/HowDeSBT/blob/master/bit_utilities.h "bit_utilities.h") |  |  |
+| [bit\_vector.cc](/medvedevgroup/HowDeSBT/blob/master/bit_vector.cc "bit_vector.cc") | | [bit\_vector.cc](/medvedevgroup/HowDeSBT/blob/master/bit_vector.cc "bit_vector.cc") |  |  |
+| [bit\_vector.h](/medvedevgroup/HowDeSBT/blob/master/bit_vector.h "bit_vector.h") | | [bit\_vector.h](/medvedevgroup/HowDeSBT/blob/master/bit_vector.h "bit_vector.h") |  |  |
+| [bloom\_filter.cc](/medvedevgroup/HowDeSBT/blob/master/bloom_filter.cc "bloom_filter.cc") | | [bloom\_filter.cc](/medvedevgroup/HowDeSBT/blob/master/bloom_filter.cc "bloom_filter.cc") |  |  |
+| [bloom\_filter.h](/medvedevgroup/HowDeSBT/blob/master/bloom_filter.h "bloom_filter.h") | | [bloom\_filter.h](/medvedevgroup/HowDeSBT/blob/master/bloom_filter.h "bloom_filter.h") |  |  |
+| [bloom\_filter\_file.h](/medvedevgroup/HowDeSBT/blob/master/bloom_filter_file.h "bloom_filter_file.h") | | [bloom\_filter\_file.h](/medvedevgroup/HowDeSBT/blob/master/bloom_filter_file.h "bloom_filter_file.h") |  |  |
+| [bloom\_tree.cc](/medvedevgroup/HowDeSBT/blob/master/bloom_tree.cc "bloom_tree.cc") | | [bloom\_tree.cc](/medvedevgroup/HowDeSBT/blob/master/bloom_tree.cc "bloom_tree.cc") |  |  |
+| [bloom\_tree.h](/medvedevgroup/HowDeSBT/blob/master/bloom_tree.h "bloom_tree.h") | | [bloom\_tree.h](/medvedevgroup/HowDeSBT/blob/master/bloom_tree.h "bloom_tree.h") |  |  |
+| [cmd\_bf\_distance.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_distance.cc "cmd_bf_distance.cc") | | [cmd\_bf\_distance.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_distance.cc "cmd_bf_distance.cc") |  |  |
+| [cmd\_bf\_distance.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_distance.h "cmd_bf_distance.h") | | [cmd\_bf\_distance.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_distance.h "cmd_bf_distance.h") |  |  |
+| [cmd\_bf\_operate.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_operate.cc "cmd_bf_operate.cc") | | [cmd\_bf\_operate.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_operate.cc "cmd_bf_operate.cc") |  |  |
+| [cmd\_bf\_operate.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_operate.h "cmd_bf_operate.h") | | [cmd\_bf\_operate.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bf_operate.h "cmd_bf_operate.h") |  |  |
+| [cmd\_bit\_stats.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bit_stats.cc "cmd_bit_stats.cc") | | [cmd\_bit\_stats.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bit_stats.cc "cmd_bit_stats.cc") |  |  |
+| [cmd\_bit\_stats.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bit_stats.h "cmd_bit_stats.h") | | [cmd\_bit\_stats.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bit_stats.h "cmd_bit_stats.h") |  |  |
+| [cmd\_build\_sbt.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_build_sbt.cc "cmd_build_sbt.cc") | | [cmd\_build\_sbt.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_build_sbt.cc "cmd_build_sbt.cc") |  |  |
+| [cmd\_build\_sbt.h](/medvedevgroup/HowDeSBT/blob/master/cmd_build_sbt.h "cmd_build_sbt.h") | | [cmd\_build\_sbt.h](/medvedevgroup/HowDeSBT/blob/master/cmd_build_sbt.h "cmd_build_sbt.h") |  |  |
+| [cmd\_bv\_operate.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bv_operate.cc "cmd_bv_operate.cc") | | [cmd\_bv\_operate.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_bv_operate.cc "cmd_bv_operate.cc") |  |  |
+| [cmd\_bv\_operate.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bv_operate.h "cmd_bv_operate.h") | | [cmd\_bv\_operate.h](/medvedevgroup/HowDeSBT/blob/master/cmd_bv_operate.h "cmd_bv_operate.h") |  |  |
+| [cmd\_cluster.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_cluster.cc "cmd_cluster.cc") | | [cmd\_cluster.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_cluster.cc "cmd_cluster.cc") |  |  |
+| [cmd\_cluster.h](/medvedevgroup/HowDeSBT/blob/master/cmd_cluster.h "cmd_cluster.h") | | [cmd\_cluster.h](/medvedevgroup/HowDeSBT/blob/master/cmd_cluster.h "cmd_cluster.h") |  |  |
+| [cmd\_combine\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_combine_bf.cc "cmd_combine_bf.cc") | | [cmd\_combine\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_combine_bf.cc "cmd_combine_bf.cc") |  |  |
+| [cmd\_combine\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_combine_bf.h "cmd_combine_bf.h") | | [cmd\_combine\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_combine_bf.h "cmd_combine_bf.h") |  |  |
+| [cmd\_compress\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_compress_bf.cc "cmd_compress_bf.cc") | | [cmd\_compress\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_compress_bf.cc "cmd_compress_bf.cc") |  |  |
+| [cmd\_compress\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_compress_bf.h "cmd_compress_bf.h") | | [cmd\_compress\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_compress_bf.h "cmd_compress_bf.h") |  |  |
+| [cmd\_dump\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bf.cc "cmd_dump_bf.cc") | | [cmd\_dump\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bf.cc "cmd_dump_bf.cc") |  |  |
+| [cmd\_dump\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bf.h "cmd_dump_bf.h") | | [cmd\_dump\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bf.h "cmd_dump_bf.h") |  |  |
+| [cmd\_dump\_bv.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bv.cc "cmd_dump_bv.cc") | | [cmd\_dump\_bv.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bv.cc "cmd_dump_bv.cc") |  |  |
+| [cmd\_dump\_bv.h](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bv.h "cmd_dump_bv.h") | | [cmd\_dump\_bv.h](/medvedevgroup/HowDeSBT/blob/master/cmd_dump_bv.h "cmd_dump_bv.h") |  |  |
+| [cmd\_load\_test.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_load_test.cc "cmd_load_test.cc") | | [cmd\_load\_test.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_load_test.cc "cmd_load_test.cc") |  |  |
+| [cmd\_load\_test.h](/medvedevgroup/HowDeSBT/blob/master/cmd_load_test.h "cmd_load_test.h") | | [cmd\_load\_test.h](/medvedevgroup/HowDeSBT/blob/master/cmd_load_test.h "cmd_load_test.h") |  |  |
+| [cmd\_make\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_make_bf.cc "cmd_make_bf.cc") | | [cmd\_make\_bf.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_make_bf.cc "cmd_make_bf.cc") |  |  |
+| [cmd\_make\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_make_bf.h "cmd_make_bf.h") | | [cmd\_make\_bf.h](/medvedevgroup/HowDeSBT/blob/master/cmd_make_bf.h "cmd_make_bf.h") |  |  |
+| [cmd\_make\_bv.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_make_bv.cc "cmd_make_bv.cc") | | [cmd\_make\_bv.cc](/medvedevgroup/HowDeSBT/blob/master/cmd_make_bv.cc "cmd_make_bv.cc") 

@@ -1,6 +1,6 @@
 ---
 name: raiss
-description: RAISS imputes missing Z-scores in GWAS summary statistics by leveraging linkage disequilibrium information from a reference panel. Use when user asks to impute missing variants, precompute LD matrices, optimize imputation parameters via grid search, or perform sanity checks on imputed summary statistics.
+description: RAISS predicts missing SNP Z-scores in GWAS datasets by leveraging the linkage disequilibrium structure of neighboring variants. Use when user asks to impute missing summary statistics, precompute LD matrices, optimize imputation parameters via grid search, or perform sanity checks on imputed genetic data.
 homepage: http://statistical-genetics.pages.pasteur.fr/raiss/
 ---
 
@@ -8,76 +8,86 @@ homepage: http://statistical-genetics.pages.pasteur.fr/raiss/
 # raiss
 
 ## Overview
-RAISS is a Python-based tool designed to fill in missing Z-scores in GWAS summary statistics by leveraging the correlation structure of neighboring SNPs. It uses a reference panel (like 1000 Genomes) to calculate Linkage Disequilibrium (LD) and provides statistical confidence for each imputed variant. This skill helps you navigate the multi-step process of preparing LD matrices, running the imputation engine, and validating results through grid searches and sanity checks.
 
-## Core Workflow
+RAISS (Robust and Accurate Imputation from Summary Statistics) is a tool designed to predict missing SNP Z-scores by leveraging the correlation structure of neighboring SNPs. This is essential for harmonizing GWAS datasets with varying coverage or for increasing the resolution of association studies without requiring raw genotype data. The tool optimizes execution time by using precomputed LD matrices and provides robust statistical frameworks to ensure imputation accuracy.
+
+## Input Requirements
+
+Ensure GWAS input files are tab-separated and follow the naming convention `z_{GWAS_TAG}_chr{1..22}.txt`. Files must contain these specific headers:
+- `rsID`: SNP identifier
+- `pos`: Genomic position
+- `A0`: Reference allele
+- `A1`: Alternative allele
+- `Z`: Z-score
+
+## Core Workflows
 
 ### 1. Precomputing LD Matrices
-Before imputation, you must generate LD correlation matrices. RAISS uses specific genomic regions (e.g., Berisa blocks) to limit computation.
+Before imputation, compute LD correlation matrices from a reference panel (e.g., 1000 Genomes). This requires PLINK 1.9.
 
 ```python
 import raiss
-# Example Python snippet for LD generation
-raiss.LD.generate_genome_matrices(
-    region_file="/path/to/Region_LD.csv",
-    ref_folder="/path/to/plink_ref_panel",
-    ld_folder_out="/path/to/output_ld_dir"
-)
-```
-*   **Input**: Plink binary files (.bed, .fam, .bim) split by chromosome.
-*   **Output**: Tabular or scipy sparse matrix (.npz) files.
-
-### 2. Input Data Formatting
-GWAS files must be tab-separated and named using the pattern: `z_{GWAS_TAG}_chr{1..22}.txt`.
-Required columns: `rsID`, `pos`, `A0`, `A1`, `Z`.
-
-### 3. Running Imputation
-Execute imputation on a per-chromosome basis. This is the primary command for generating results.
-
-```bash
-raiss --chrom chr22 \
-      --gwas MY_STUDY_TAG \
-      --ld-folder /path/to/ld_matrices \
-      --ref-folder /path/to/reference_panel \
-      --zscore-folder /path/to/input_zscores \
-      --output-folder /path/to/results \
-      --eigen-threshold 0.000001
+# Define paths to regions, reference panel (PLINK format), and output
+raiss.LD.generate_genome_matrices(region_files, ref_folder, ld_folder_out)
 ```
 
-### 4. Parameter Optimization (Grid Search)
-To find the best balance between imputation error and coverage, run a performance grid search on a small chromosome (e.g., chr22).
+### 2. Optimizing Parameters (Grid Search)
+Imputation quality depends heavily on the `--eigen-threshold` and `--minimum-ld`. Use the `performance-grid-search` subcommand to find the best trade-off between the fraction of SNPs imputed and the mean absolute error.
 
 ```bash
-raiss --ld-folder ${LD_DIR} \
-      --ref-folder ${REF_DIR} \
-      --gwas MY_STUDY \
+raiss --ld-folder ${LD_PATH} \
+      --ref-folder ${REF_PATH} \
+      --gwas ${TAG} \
       --chrom chr22 \
       performance-grid-search \
-      --harmonized-folder ${INPUT_DIR} \
-      --masked-folder ${TEMP_MASKED_DIR} \
-      --imputed-folder ${TEMP_IMPUTED_DIR} \
-      --output-path ./perf_report.csv \
+      --harmonized-folder ${INPUT_PATH} \
+      --masked-folder ${TEMP_MASK_PATH} \
+      --output-path ${REPORT_FILE} \
       --eigen-ratio-grid '[0.000001, 0.001, 0.1]' \
       --ld-threshold-grid '[0, 10, 20]'
 ```
-*   **Key Metric**: Look for a high `cor` (correlation) and a high `fraction_imputed`.
 
-### 5. Sanity Checks
-After imputation, verify that the distribution of signal is coherent and that the tool hasn't introduced excessive false positives.
+### 3. Executing Imputation
+Run the main imputation command for a specific chromosome.
+
+```bash
+raiss --chrom chr22 \
+      --gwas ${TAG} \
+      --ld-folder ${LD_PATH} \
+      --ref-folder ${REF_PATH} \
+      --zscore-folder ${INPUT_PATH} \
+      --output-folder ${OUTPUT_PATH} \
+      --eigen-threshold 0.000001
+```
+
+### 4. Sanity Checks
+After imputation, verify that the distribution of the imputed signal is coherent and that the number of new significant hits is reasonable.
 
 ```bash
 raiss sanity-check \
-      --trait z_MY_STUDY \
-      --harmonized-folder /path/to/input_data \
-      --imputed-folder /path/to/imputed_results
+      --trait z_{TAG} \
+      --harmonized-folder ${INPUT_PATH} \
+      --imputed-folder ${OUTPUT_PATH}
 ```
-*   **Check**: The `imputed_hit_OR` should be near 1.0, indicating the number of new hits is proportional to the increased coverage.
 
-## Expert Tips
-*   **Eigen Threshold**: This is the most critical parameter. If your reference panel is small or mismatched, increase the `--eigen-threshold` to be more conservative.
-*   **Parallelization**: RAISS is optimized for cluster environments. Always process chromosomes in parallel across different nodes to save time.
-*   **Variance Column**: In the output, a `Var` value of `-1` indicates the SNP was present in the original input (not imputed).
-*   **LD Type**: If using modern sparse formats, specify `--ld-type scipy` in the command line.
+## Expert Tips and Best Practices
+
+- **Parameter Tuning**: Always run the grid search on Chromosome 22 first. It is computationally efficient and parameters typically generalize well to other chromosomes.
+- **Variance Interpretation**: In the output files, a `Var` value of `-1` indicates the variant was already present in the input dataset (not imputed).
+- **Reference Panel Match**: Ensure the ancestry of your reference panel matches your GWAS population. Significant mismatches will lead to false positives and poor imputation R2.
+- **LD Blocks**: Use approximately LD-independent regions (e.g., Berisa and Pickrell regions) to limit the number of SNP pairs and speed up matrix generation.
+- **Parallelization**: For large-scale GWAS, launch imputation for each chromosome as a separate job on a cluster (e.g., using SLURM) to minimize wall-clock time.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| raiss performance-grid-search | Performs a grid search for RAISS performance tuning. |
+| sanity-check | Sanity check for RAISS imputation. |
 
 ## Reference documentation
-- [RAISS Documentation and Usage Guide](./references/statistical-genetics_pages_pasteur_fr_raiss.md)
+- [RAISS Main Documentation](./references/statistical-genetics_pages_pasteur_fr_raiss.md)
+- [RAISS Index Source](./references/statistical-genetics_pages_pasteur_fr_raiss__sources_index.rst.txt.md)
+- [Imputation R2 Evaluation](./references/statistical-genetics_pages_pasteur_fr_raiss__autosummary_raiss.imputation_R2.html.md)

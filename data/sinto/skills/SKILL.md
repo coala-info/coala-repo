@@ -1,6 +1,6 @@
 ---
 name: sinto
-description: Sinto is a toolkit for processing single-cell data that handles barcode manipulation, BAM file filtering, and fragment file generation. Use when user asks to generate scATAC-seq fragment files, filter BAM files by cell barcode, or move barcodes from FASTQ files into read names.
+description: Sinto is a suite of command-line utilities designed to manipulate single-cell alignment files and generate fragment files based on cell-level metadata. Use when user asks to filter BAM files by barcode, create scATAC-seq fragment files, add or move BAM tags, or process FASTQ files for single-cell analysis.
 homepage: https://timoast.github.io/sinto/
 ---
 
@@ -9,52 +9,87 @@ homepage: https://timoast.github.io/sinto/
 
 ## Overview
 
-Sinto is a specialized toolkit designed to handle the "plumbing" of single-cell data processing. It bridges the gap between initial sequence alignment and downstream analysis by providing deterministic tools for barcode manipulation and fragment file generation. Use this skill to perform high-performance filtering of BAM files by cell identity, to generate standardized BED-format fragment files for ATAC-seq, or to reformat FASTQ files so that barcodes are stored in read names for easier tracking through alignment pipelines.
+Sinto is a specialized suite of command-line utilities designed to handle the unique requirements of single-cell sequencing data. It provides efficient methods for manipulating alignment files (BAM) based on cell-level metadata. It is particularly useful for scATAC-seq workflows where fragment files are required, or for scRNA-seq tasks involving the management of Cell Barcode (CB) and Unique Molecular Identifier (UB/UMI) tags.
 
-## Core CLI Patterns
+## Basic Usage and Installation
 
-### 1. Creating scATAC-seq Fragment Files
-The `fragments` command is the most common use case for scATAC-seq data. It converts a position-sorted, indexed BAM into a collapsed fragment file.
-
-```bash
-# Basic fragment generation
-sinto fragments -b input.sort.bam -f fragments.bed --barcode_regex "[^:]*"
-
-# Post-processing (Required for downstream tools like Signac/ArchR)
-sort -k 1,1 -k2,2n fragments.bed > fragments.sort.bed
-bgzip fragments.sort.bed
-tabix -p bed fragments.sort.bed.gz
-```
-
-### 2. Filtering BAMs by Cell Barcode
-Use `filterbarcodes` to subset a BAM file. This is useful for creating "pseudo-bulk" alignments or extracting specific clusters.
+Install sinto via pip or bioconda:
 
 ```bash
-# Filter for a specific list of barcodes
-sinto filterbarcodes -b input.bam -c cell_barcodes.txt -p 8
+pip install sinto
+# OR
+conda install -c bioconda sinto
 ```
 
-### 3. Pre-alignment Barcode Attachment
-If barcodes are in a separate FASTQ (e.g., Index read), use `barcode` to move them into the read names of the genomic FASTQs before mapping.
+All commands follow the pattern: `sinto <command> [options]`
+
+## Core Command Patterns
+
+### Subsetting BAM Files by Barcode
+Use `filterbarcodes` to create a new BAM file containing only reads from specific cells or to split a BAM by cluster.
 
 ```bash
-# Move 12bp barcode from R1 to the read names of R2 and R3
-sinto barcode -b 12 --barcode_fastq R1.fastq --read1 R2.fastq --read2 R3.fastq
+# Filter BAM for specific barcodes listed in a file
+sinto filterbarcodes -b input.bam -c barcodes.txt -o filtered.bam
+
+# Split BAM into multiple files based on a mapping file (barcode <tab> cluster)
+sinto filterbarcodes -b input.bam -c metadata.tsv -p 8
+```
+*   **Tip**: The barcode file can be gzipped.
+*   **Tip**: Use `-p` to specify the number of processors for faster execution.
+
+### Creating scATAC-seq Fragment Files
+The `fragments` command is the standard way to generate a fragment file from an aligned scATAC-seq BAM.
+
+```bash
+sinto fragments -b input.bam -f fragments.tsv.gz
+```
+*   **Requirement**: The BAM file must be indexed.
+*   **Best Practice**: Always use the `.gz` extension for the output to ensure the file is compressed, as fragment files can be very large.
+
+### Manipulating Barcodes and Tags
+Sinto can move barcodes between read names and BAM tags, which is often necessary when switching between different pipeline requirements (e.g., CellRanger vs. custom scripts).
+
+```bash
+# Copy barcode from read name to the 'CB' tag
+sinto barcode -b input.bam -o output.bam --barcode_readname
+
+# Add tags to a BAM file from a CSV file
+sinto addtags -b input.bam -c tags.csv -o tagged.bam
 ```
 
-## Expert Tips and Best Practices
+### Processing FASTQ Files
+Add cell barcodes directly to FASTQ read names before alignment.
 
-- **Parallelization Strategy**: The `--nproc` parameter parallelizes by chromosome. Do not set `--nproc` higher than the number of contigs/chromosomes in your BAM file, as it will provide no additional benefit.
-- **Memory Management**: If encountering memory issues during `fragments` generation, decrease the `--chunksize` (default is 500,000). Conversely, increase it for faster processing if RAM is abundant.
-- **Tn5 Shift**: By default, `sinto fragments` applies a +4/-5 bp shift to account for Tn5 transposase stagger. If your data is already shifted or requires different parameters, use `--shift_plus` and `--shift_minus`.
-- **Barcode Extraction**: 
-  - If barcodes are in a BAM tag (default "CB"), ensure the tag exists.
-  - If barcodes are in the read name (common in SNARE-seq or custom pipelines), use `--barcode_regex`. For example, `^[^:]*` matches everything before the first colon.
-- **Duplicate Handling**: By default, Sinto collapses fragments with the same coordinates across all cells. To only collapse duplicates within the same cell barcode, use the `--collapse_within` flag.
-- **Performance**: The `barcode` function is significantly faster on uncompressed FASTQ files. If processing large datasets, unzip the FASTQs before running `sinto barcode`.
+```bash
+sinto fastq -r1 read1.fastq.gz -r2 read2.fastq.gz -b barcodes.fastq.gz -o output_prefix
+```
+
+## Expert Tips
+
+1.  **Multi-threading**: Most sinto commands support the `-p` or `--nproc` argument. Increasing this is the most effective way to speed up processing of large single-cell datasets.
+2.  **Memory Management**: When using `filterbarcodes` with many output files (e.g., splitting by 20+ clusters), ensure your system's file descriptor limit (`ulimit -n`) is high enough to handle the simultaneous open BAM files.
+3.  **Read Group Integration**: Use `tag2rg` to convert a BAM tag (like a cluster ID) into a Read Group (RG). This allows you to use standard tools like GATK or Samtools that operate on Read Groups rather than custom tags.
+4.  **Tag Copying**: Use `copytag` to duplicate information between tags (e.g., copying `CB` to `CR`) without re-processing the entire file through a heavy pipeline.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| addtags | Add read tags to reads from individual cells |
+| nametotag | Copy cell barcode sequences from read name to read tag |
+| sinto fragments | Create ATAC-seq fragment file from BAM file |
+| sinto_barcode | Add cell barcode sequences to read names in FASTQ file. |
+| sinto_blocks | Create scRNA-seq block file from BAM file |
+| sinto_filterbarcodes | Filter reads based on input list of cell barcodes |
+| sinto_tagtoname | Copy cell barcode sequences from tag to read names. Cell barcodes will be added as a readname prefix, followed by ":" |
+| sinto_tagtotag | Copies BAM entries to a new file while copying a read tag to another read tag and optionally deleting the originating tag. |
+| tagtorg | Append a read tag to the read group ID of each read. Also appends the read tag to the SM field of the read group. |
 
 ## Reference documentation
 
-- [Sinto Overview](./references/timoast_github_io_sinto.md)
-- [Basic Usage Guide](./references/timoast_github_io_sinto_basic_usage.html.md)
-- [Processing scATAC-seq Data](./references/timoast_github_io_sinto_scatac.html.md)
+- [Sinto: single-cell analysis tools](./references/github_com_timoast_sinto_blob_master_README.rst.md)
+- [Basic Usage](./references/timoast_github_io_sinto_basic_usage.html.md)
+- [scATAC-seq Fragments](./references/timoast_github_io_sinto_scatac.html.md)

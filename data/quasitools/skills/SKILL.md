@@ -1,6 +1,6 @@
 ---
 name: quasitools
-description: Quasitools is a bioinformatics suite designed for the analysis and characterization of viral quasispecies populations. Use when user asks to perform quality control on sequencing data, call nucleotide or amino acid variants, measure genetic diversity, identify drug resistance mutations, calculate evolutionary metrics like dN/dS ratios, or generate consensus sequences.
+description: Quasitools is a bioinformatics suite designed to analyze genetic diversity and evolutionary metrics within viral quasispecies populations using NGS data. Use when user asks to call nucleotide or amino acid variants, measure quasispecies complexity, calculate dN/dS ratios, or identify HIV drug resistance mutations.
 homepage: https://github.com/phac-nml/quasitools/
 ---
 
@@ -9,51 +9,70 @@ homepage: https://github.com/phac-nml/quasitools/
 
 ## Overview
 
-Quasitools is a specialized suite of bioinformatics tools designed to handle the unique challenges of viral population analysis. Unlike standard genomic tools that often focus on a single consensus sequence, quasitools is built to characterize the "quasispecies"—the diverse cloud of related but non-identical viral variants within a single host. It provides a comprehensive workflow from raw FASTQ quality control to advanced evolutionary metrics like angular cosine distance and Shannon entropy.
+Quasitools is a specialized bioinformatics suite designed for the study of viral populations, known as quasispecies. Unlike standard genomic tools that focus on a single consensus, quasitools characterizes the genetic diversity within a sample. It processes Next-Generation Sequencing (NGS) data to measure evolutionary metrics, calculate dN/dS ratios, and detect clinically relevant mutations. It is an essential tool for researchers working with highly variable viruses where low-frequency variants are biologically or medically significant.
 
-## Core Workflows and CLI Patterns
+## Common CLI Patterns
 
-The general syntax for the suite is: `quasitools <subcommand> [options] <arguments>`
+### Variant Calling
+Identify variations between an NGS dataset (BAM) and a reference sequence (FASTA).
 
-### 1. Quality Control and Pre-processing
-Before analysis, use the `quality` tool to filter and trim raw sequencing data.
-- **Command**: `quasitools quality [options] <fastq_file>`
-- **Tip**: Always perform QC to remove low-quality reads that could be mistaken for low-frequency variants in the quasispecies.
+*   **Nucleotide Variants:**
+    `quasitools call ntvar <sample.bam> <reference.fasta>`
+*   **Amino Acid Variants:**
+    `quasitools call aavar <sample.bam> <reference.fasta>`
+*   **Codon Variants:**
+    `quasitools call codonvar <sample.bam> <reference.fasta>`
 
-### 2. Variant Calling (Nucleotide, Amino Acid, and Codon)
-Quasitools provides three distinct levels of variant calling from aligned BAM files:
-- **Nucleotide**: `quasitools ntvar <bam_file> <reference_fasta>`
-- **Amino Acid**: `quasitools aavar <bam_file> <reference_fasta> <genes_bed>`
-- **Codon**: `quasitools codonvar <bam_file> <reference_fasta> <genes_bed>`
-- **Best Practice**: Use the `genes_bed` file to define specific regions of interest (e.g., Pol or Gag genes) to ensure variants are mapped to the correct reading frames.
+### Quasispecies Complexity
+Measure the diversity of the viral population.
 
-### 3. Population Complexity and Diversity
-To measure the genetic diversity of the viral population:
-- **Command**: `quasitools complexity [options] <bam_file>`
-- **Expert Tip (v0.7.0+)**: Use the filtering options to exclude low-frequency haplotypes that may be the result of sequencing errors. This tool calculates measures such as Shannon entropy to quantify the "cloud" of variants.
+*   **From Aligned Reads:**
+    `quasitools complexity bam <sample.bam> <reference.fasta>`
+*   **From Haplotypes:**
+    `quasitools complexity fasta <haplotypes.fasta>`
+*   **Filtering:** Use the frequency filter option in `complexity` to ignore low-frequency haplotypes that may be sequencing artifacts.
 
-### 4. Drug Resistance and Mutations
-For clinical or research applications involving drug resistance:
-- **Hydra (HIV Specific)**: `quasitools hydra <bam_file> <reference_fasta>`
-  - This is a specialized tool for identifying HIV drug resistance mutations (DRMs) from NGS data.
-- **General Mutations**: `quasitools drmutations <bam_file> <reference_fasta>`
-  - Identifies amino acid mutations relative to the reference.
+### Evolutionary Analysis
+*   **Distance:** Calculate the angular cosine distance between multiple quasispecies to generate a distance matrix.
+    `quasitools distance <sample1.bam> <sample2.bam> [sampleN.bam ...]`
+*   **dN/dS:** Calculate the ratio of non-synonymous to synonymous substitutions per coding region.
+    `quasitools dnds <codonvar_output> <regions.bed>`
 
-### 5. Evolutionary Analysis
-- **dN/dS Ratios**: `quasitools dnds <bam_file> <reference_fasta> <genes_bed>`
-  - Calculates the ratio of non-synonymous to synonymous substitutions to detect selective pressure.
-- **Distance**: `quasitools distance <bam_file1> <bam_file2>`
-  - Measures the angular cosine distance between two quasispecies populations to determine how much they have diverged.
+### Specialized HIV Analysis (Hydra)
+The `hydra` command is a high-level workflow specifically for identifying HIV drug resistance mutations. It performs quality control, mapping, and mutation calling in a single pipeline.
+`quasitools hydra <reads.fastq> <reference.fasta>`
 
-### 6. Consensus Generation
-- **Command**: `quasitools consensus <bam_file>`
-- Generates a consensus sequence from the aligned reads. This is often a prerequisite for downstream comparative analysis.
+### Consensus and Coverage
+*   **Generate Consensus:** Create a consensus sequence from a BAM file.
+    `quasitools consensus <sample.bam> <reference.fasta>`
+*   **Amino Acid Coverage:** Build an amino acid consensus and report coverage.
+    `quasitools aacoverage <sample.bam> <reference.fasta>`
 
-## Best Practices
-- **Reference Selection**: Ensure your reference FASTA is closely related to the expected viral strain to minimize alignment artifacts.
-- **Coverage Analysis**: Use `quasitools aacoverage` to verify that your sequencing depth is sufficient across the entire gene of interest before trusting variant calls.
-- **Bioconda Installation**: The most reliable way to manage dependencies (like samtools) is via Bioconda: `conda install -c bioconda quasitools`.
+## Expert Tips and Best Practices
+
+*   **Quality Control First:** Always run `quasitools quality <reads.fastq>` before analysis to perform quality control on raw FASTQ reads, especially if not using the integrated `hydra` pipeline.
+*   **Reference Alignment:** Ensure your BAM files are sorted and indexed. Quasitools relies on accurate alignments to the provided reference FASTA.
+*   **Output Formats:** Note that `call aavar` and `hydra` produce Amino Acid Variation Format (AAVF) files. These are standard for representing viral mutations and are preferred over the deprecated HMCF format.
+*   **Handling Indels:** When using `complexity`, be aware that version 0.7.0+ includes specific fixes for parsing haplotypes with insertions and deletions (indels).
+*   **Memory Management:** For large BAM files or many samples in `distance` calculations, ensure sufficient system memory as pileup generation can be resource-intensive.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| aacoverage | This script builds an amino acid census and returns its coverage. The BAM alignment file corresponds to a pileup of sequences aligned to the REFERENCE. A BAM index file (.bai) must also be present and, except for the extension, have the same name as the BAM file. The REFERENCE must be in FASTA format. The BED4_FILE must be a BED file with at least 4 columns and specify the gene locations within the REFERENCE. The output is in CSV format. |
+| call | Call nucleotide variants from a BAM file. |
+| consensus | Generate consensus sequences from BAM files. |
+| distance | Quasitools distance produces a measure of evolutionary distance [0 - 1] between quasispecies, computed using the angular cosine distance function defined below. |
+| dnds | Calculate dN/dS ratios for coding sequences. |
+| drmutations | Detects drug-resistant mutations from BAM files. |
+| hydra | Generate a mixed base consensus sequence. |
+| quality | Quasitools quality performs quality control on FASTQ reads and outputs the   filtered FASTQ reads in the specified directory. |
+| quasitools | A command-line tool for manipulating and analyzing quasigenomes. |
+| quasitools complexity | Reports the per-amplicon (fasta) or k-mer complexity of the pileup, for each k-mer position in the reference complexity (bam and reference) of a quasispecies using several measures outlined in the following work: |
 
 ## Reference documentation
-- [github_com_phac-nml_quasitools.md](./references/github_com_phac-nml_quasitools.md)
-- [anaconda_org_channels_bioconda_packages_quasitools_overview.md](./references/anaconda_org_channels_bioconda_packages_quasitools_overview.md)
+- [Quasitools README](./references/github_com_phac-nml_quasitools_blob_master_README.md)
+- [Quasitools Changelog](./references/github_com_phac-nml_quasitools_blob_master_CHANGELOG.md)

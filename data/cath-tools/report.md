@@ -490,3 +490,6 @@ PDB files source:
 Please tell us your cath-tools bugs/suggestions : https://github.com/UCLOrengoGroup/cath-tools/issues/new
 ```
 
+
+## Metadata
+- **Skill**: generated

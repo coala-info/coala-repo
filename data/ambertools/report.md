@@ -168,3 +168,6 @@ Traceback (most recent call last):
 TypeError: expected str, bytes or os.PathLike object, not NoneType
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -186,3 +186,6 @@ Examples:
 For more comprehensive instructions, please refer to the documentation at https://maryam-haghani.github.io/NEFFy.
 ```
 
+
+## Metadata
+- **Skill**: generated

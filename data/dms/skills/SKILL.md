@@ -1,6 +1,6 @@
 ---
 name: dms
-description: Dynamic Meta-Storms quantifies differences between metagenomic communities by incorporating phylogenetic relationships into species-level abundance comparisons. Use when user asks to calculate distance matrices for metagenomic samples, compare species-level profiles, or generate phylogenetic-based community distances.
+description: Dynamic Meta-Storms is a bioinformatics suite that calculates phylogenetically-aware dissimilarity between metagenomic samples at the species level. Use when user asks to merge MetaPhlAn profiles into abundance tables, compute pairwise distance matrices, or create customized phylogenetic reference files.
 homepage: https://github.com/qibebt-bioinfo/dynamic-meta-storms
 ---
 
@@ -8,62 +8,73 @@ homepage: https://github.com/qibebt-bioinfo/dynamic-meta-storms
 # dms
 
 ## Overview
-Dynamic Meta-Storms (DMS) is a bioinformatics tool used to quantify the differences between metagenomic communities. Unlike simple abundance comparisons, DMS incorporates phylogenetic relationships, allowing for a more biologically meaningful analysis of species-level shotgun metagenomics data. It is particularly useful when you have species-level profiles (typically from MetaPhlAn) and need to generate a distance matrix for downstream clustering or ordination (like PCoA).
 
-## Core Workflow
+Dynamic Meta-Storms (DMS) is a specialized bioinformatics suite for comparing metagenomic samples at the species level. Unlike simple abundance-based comparisons, DMS incorporates phylogenetic relationships to provide a more comprehensive measure of dissimilarity. It is particularly effective at handling unclassified organisms by dynamically placing them at virtual internal nodes within a taxonomic hierarchy. Use this skill to process species-level abundance tables and generate pairwise distance matrices for downstream ecological or comparative analysis.
 
-### 1. Prepare Input Profiles
-DMS requires species-level relative abundance profiles. If starting from raw sequences or BowTie2 outputs, use MetaPhlAn to generate the `.txt` profiles:
+## Core Workflow and CLI Patterns
 
-```bash
-# Example MetaPhlAn2 command for DMS compatibility
-metaphlan2.py sample.fasta --input_type fasta --tax_lev s --ignore_viruses --ignore_eukaryotes --ignore_archaea > sample_profile.txt
-```
+### 1. Preparing the Input Table
+If you have individual MetaPhlAn profiling files, you must first merge them into a single abundance table.
 
-### 2. Create a Sample List
-To process multiple samples, create a tab-delimited list file (e.g., `samples.list.txt`) where the first column is the Sample ID and the second is the file path:
+**Create a list file (`samples.list.txt`):**
+The file must be tab-delimited with the sample ID in the first column and the file path in the second.
 ```text
-Sample_A    /path/to/sample_A_profile.txt
-Sample_B    /path/to/sample_B_profile.txt
+Sample_A    /path/to/sample_A.txt
+Sample_B    /path/to/sample_B.txt
 ```
 
-### 3. Generate Abundance Table
-Merge the individual profiles into a single table:
+**Merge profiles:**
 ```bash
 MS-single-to-table -l samples.list.txt -o samples.sp.table
 ```
 
-### 4. Calculate Distance Matrix
-Compute the pairwise distance matrix. By default, DMS uses the MetaPhlAn2 reference tree.
+### 2. Computing the Distance Matrix
+The primary tool for distance calculation is `MS-comp-taxa-dynamic`.
 
-**For MetaPhlAn2 data:**
+**Standard calculation (MetaPhlAn2 default):**
 ```bash
 MS-comp-taxa-dynamic -T samples.sp.table -o samples.sp.dist
 ```
 
-**For MetaPhlAn3 data:**
+**Using MetaPhlAn3 references:**
+If your data was profiled using MetaPhlAn3, specify the database version using the `-D` flag.
 ```bash
 MS-comp-taxa-dynamic -D M -T samples.sp.table -o samples.sp.dist
 ```
 
-## Advanced Usage: Customized References
-If working with non-standard organisms or custom databases, you can provide your own phylogeny and taxonomy:
+### 3. Creating Customized References
+If you have a specific phylogenetic tree and taxonomy, you can build a custom `.dms` reference file.
 
-1.  **Prepare Reference Files**: You need a Newick format tree (`tree.newick`) and a tabular taxonomy file (`tree.taxonomy`).
-2.  **Build DMS Reference**:
-    ```bash
-    MS-make-ref -i tree.newick -r tree.taxonomy -o custom_tree.dms
-    ```
-3.  **Run Comparison**:
-    ```bash
-    MS-comp-taxa-dynamic -D custom_tree.dms -T samples.sp.table -o samples.sp.dist
-    ```
+**Build the reference:**
+```bash
+MS-make-ref -i tree.newick -r tree.taxonomy -o custom_tree.dms
+```
+*   **Tree:** Must be in Newick format with species names as tip nodes.
+*   **Taxonomy:** A tabular file containing the full hierarchy (Kingdom to Species).
 
-## Best Practices
-- **Taxonomic Level**: Ensure all input profiles are strictly at the species level (`--tax_lev s` in MetaPhlAn).
-- **Memory Management**: While DMS is efficient (requiring ~2GB RAM for typical runs), use the `-p` parameter (if available in your version) or environment variables to manage OpenMP threads for large-scale comparisons.
-- **Distance Types**: Use `MS-comp-taxa-dynamic` for the "Dynamic Meta-Storms" algorithm, which better handles unclassified species by placing them at virtual internal nodes. Use `MS-comp-taxa` only if you require the standard, non-dynamic Meta-Storms calculation.
+**Compute distance with custom reference:**
+```bash
+MS-comp-taxa-dynamic -D custom_tree.dms -T samples.sp.table -o samples.sp.dist
+```
+
+## Expert Tips and Best Practices
+
+*   **Input Profiling:** Ensure MetaPhlAn is run with the `-tax_lev s` flag to generate species-level profiles, as DMS is optimized for this resolution.
+*   **Parallelization:** The tools utilize OpenMP for parallel computing. Ensure your environment has the necessary libraries (e.g., `libgomp`) to take advantage of multi-core performance.
+*   **Memory Management:** For typical datasets, 2GB of RAM is sufficient, but for very large abundance tables (hundreds of samples), 8GB+ is recommended for optimal performance.
+*   **Taxonomy Formatting:** When creating custom references, the taxonomy file must follow the specific prefix convention (e.g., `k__`, `p__`, `c__`, `o__`, `f__`, `g__`, `s__`) to be parsed correctly by `MS-make-ref`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| MS-make-ref | Make customized reference for dynamic-meta-storms |
+| dms_MS-single-to-table | Converts MS-single output to a table format. |
 
 ## Reference documentation
-- [Dynamic Meta-Storms Overview](./references/github_com_qibebt-bioinfo_dynamic-meta-storms.md)
-- [Bioconda dms Package](./references/anaconda_org_channels_bioconda_packages_dms_overview.md)
+
+- [Dynamic Meta-Storms GitHub README](./references/github_com_qibebt-bioinfo_dynamic-meta-storms_blob_master_README.md)
+- [DMS Installation and Environment Guide](./references/github_com_qibebt-bioinfo_dynamic-meta-storms_blob_master_install.sh.md)
+- [DMS Makefile and Binary Definitions](./references/github_com_qibebt-bioinfo_dynamic-meta-storms_blob_master_Makefile.md)

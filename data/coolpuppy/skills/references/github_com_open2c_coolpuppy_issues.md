@@ -1,1 +1,297 @@
-GitHub · Where software is built Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} open2c / coolpuppy Public Notifications You must be signed in to change notification settings Fork 13 Star 80 Code Issues 10 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Issues Search Issues is : issue state : open is:issue state:open Search Labels Milestones New issue Search results Open Closed [BUG]error running plotpup.py Status: Open. #166 In open2c/coolpuppy; · wangmhan opened on Apr 10, 2025 [Q]can plotpup.py show log2FC Status: Open. #165 In open2c/coolpuppy; · BenxiaHu opened on Mar 16, 2025 Dividing pileups with multiple categories Status: Open. #163 In open2c/coolpuppy; · rikrdo89 opened on Mar 4, 2025 Values &amp;lt;1 for &lt;code&gt;rescale_flank&lt;/code&gt; cause &lt;code&gt;assertion error&lt;/code&gt; when including central pixel score Status: Open. #161 In open2c/coolpuppy; · rikrdo89 opened on Mar 2, 2025 [Q] Centromere Trans Pileup Status: Open. #157 In open2c/coolpuppy; · LucasMcNU opened on Oct 29, 2024 [Q] How to test significance of change between pileups? Status: Open. #148 In open2c/coolpuppy; · AudreyBaguette opened on Jun 3, 2024 &lt;code&gt;pu.pileupsWithControl&lt;/code&gt; might skip some pile-up regions or raise vague &lt;code&gt;domain_score not in dict2&lt;/code&gt; AssertionError Status: Open. #146 In open2c/coolpuppy; · nvaulin opened on May 25, 2024 To access a value by position, use &lt;code&gt;ser.iloc[pos]&lt;/code&gt; chroffset = self.clr.offset(region[0]) Status: Open. #144 In open2c/coolpuppy; · jiangshan529 opened on Apr 15, 2024 [Q] Question on normalization between 2 conditions before coolpups Status: Open. #139 In open2c/coolpuppy; · Lucas446 opened on Dec 9, 2023 plotpup.py TypeError: __init__() got an unexpected keyword argument &#x27;add_all&#x27; Status: Open. #73 In open2c/coolpuppy; · odovgusha opened on Jun 10, 2022 Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fopen2c%2Fcoolpuppy%2Fissues)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fopen2c%2Fcoolpuppy%2Fissues)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fissues%2Findex&source=header-repo&source_repo=open2c%2Fcoolpuppy)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[open2c](/open2c)
+/
+**[coolpuppy](/open2c/coolpuppy)**
+Public
+
+* [Notifications](/login?return_to=%2Fopen2c%2Fcoolpuppy) You must be signed in to change notification settings
+* [Fork
+  13](/login?return_to=%2Fopen2c%2Fcoolpuppy)
+* [Star
+   81](/login?return_to=%2Fopen2c%2Fcoolpuppy)
+
+* [Code](/open2c/coolpuppy)
+* [Issues
+  11](/open2c/coolpuppy/issues)
+* [Pull requests
+  1](/open2c/coolpuppy/pulls)
+* [Actions](/open2c/coolpuppy/actions)
+* [Projects](/open2c/coolpuppy/projects)
+* [Security
+  0](/open2c/coolpuppy/security)
+* [Insights](/open2c/coolpuppy/pulse)
+
+Additional navigation options
+
+* [Code](/open2c/coolpuppy)
+* [Issues](/open2c/coolpuppy/issues)
+* [Pull requests](/open2c/coolpuppy/pulls)
+* [Actions](/open2c/coolpuppy/actions)
+* [Projects](/open2c/coolpuppy/projects)
+* [Security](/open2c/coolpuppy/security)
+* [Insights](/open2c/coolpuppy/pulse)
+
+# Issues
+
+Search Issues
+
+is:issue state:open
+
+is:issue state:open
+
+Search
+
+[Labels](/open2c/coolpuppy/labels)[Milestones](/open2c/coolpuppy/milestones)[New issue](/login?return_to=https://github.com/open2c/coolpuppy/issues)
+
+## Search results
+
+OpenClosed
+
+* ### [[Q]Regarding the value in the top-left corner](/open2c/coolpuppy/issues/168)
+
+  Status: Open.
+
+  #168 In open2c/coolpuppy;
+
+  · [oganesson123](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Aoganesson123)  opened on Mar 26, 2026
+
+* ### [[BUG]error running plotpup.py](/open2c/coolpuppy/issues/166)
+
+  Status: Open.
+
+  #166 In open2c/coolpuppy;
+
+  · [wangmhan](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Awangmhan)  opened on Apr 10, 2025
+
+* ### [[Q]can plotpup.py show log2FC](/open2c/coolpuppy/issues/165)
+
+  Status: Open.
+
+  #165 In open2c/coolpuppy;
+
+  · [BenxiaHu](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3ABenxiaHu)  opened on Mar 16, 2025
+
+* ### [Dividing pileups with multiple categories](/open2c/coolpuppy/issues/163)
+
+  Status: Open.
+
+  #163 In open2c/coolpuppy;
+
+  · [rikrdo89](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Arikrdo89)  opened on Mar 4, 2025
+
+* ### [Values <1 for `rescale_flank` cause `assertion error` when including central pixel score](/open2c/coolpuppy/issues/161)
+
+  Status: Open.
+
+  #161 In open2c/coolpuppy;
+
+  · [rikrdo89](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Arikrdo89)  opened on Mar 2, 2025
+
+* ### [[Q] Centromere Trans Pileup](/open2c/coolpuppy/issues/157)
+
+  Status: Open.
+
+  #157 In open2c/coolpuppy;
+
+  · [LucasMcNU](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3ALucasMcNU)  opened on Oct 29, 2024
+
+* ### [[Q] How to test significance of change between pileups?](/open2c/coolpuppy/issues/148)
+
+  Status: Open.
+
+  #148 In open2c/coolpuppy;
+
+  · [AudreyBaguette](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3AAudreyBaguette)  opened on Jun 3, 2024
+
+* ### [`pu.pileupsWithControl` might skip some pile-up regions or raise vague `domain_score not in dict2` AssertionError](/open2c/coolpuppy/issues/146)
+
+  Status: Open.
+
+  #146 In open2c/coolpuppy;
+
+  · [nvaulin](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Anvaulin)  opened on May 25, 2024
+
+* ### [To access a value by position, use `ser.iloc[pos]` chroffset = self.clr.offset(region[0])](/open2c/coolpuppy/issues/144)
+
+  Status: Open.
+
+  #144 In open2c/coolpuppy;
+
+  · [jiangshan529](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Ajiangshan529)  opened on Apr 15, 2024
+
+* ### [[Q] Question on normalization between 2 conditions before coolpups](/open2c/coolpuppy/issues/139)
+
+  Status: Open.
+
+  #139 In open2c/coolpuppy;
+
+  · [Lucas446](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3ALucas446)  opened on Dec 9, 2023
+
+* ### [plotpup.py TypeError: \_\_init\_\_() got an unexpected keyword argument 'add\_all'](/open2c/coolpuppy/issues/73)
+
+  Status: Open.
+
+  #73 In open2c/coolpuppy;
+
+  · [odovgusha](/open2c/coolpuppy/issues?q=is%3Aissue%20state%3Aopen%20author%3Aodovgusha)  opened on Jun 10, 2022
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

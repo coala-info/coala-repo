@@ -1,6 +1,6 @@
 ---
 name: tecount
-description: tecount aggregates RNA-seq read alignments across transposable element hierarchies to generate count tables for subfamilies, families, and classes. Use when user asks to quantify transposable elements, generate TE count tables from BAM files, or analyze TE expression levels across different hierarchical classifications.
+description: TEcount quantifies bulk RNA-seq reads aligned to transposable elements at the subfamily, family, and class levels. Use when user asks to count reads mapping to transposable elements, quantify TE expression from BAM files, or analyze TE activation across different hierarchical levels.
 homepage: https://github.com/bodegalab/tecount
 ---
 
@@ -9,41 +9,55 @@ homepage: https://github.com/bodegalab/tecount
 
 ## Overview
 
-tecount is a specialized bioinformatics tool designed to aggregate RNA-seq read alignments across transposable element hierarchies. While standard tools often struggle with the repetitive nature of TEs, tecount provides a streamlined workflow to generate count tables for TE subfamilies, families, and classes. It is essential for researchers investigating TE activation, genomic stability, or non-canonical transcript variants in transcriptomic datasets.
+TEcount is a specialized bioinformatics tool designed for bulk RNA-seq analysis. It quantifies reads aligned to transposable elements (TEs) at three hierarchical levels: subfamily, family, and class. It is particularly useful for researchers studying TE activation or regulation, as it handles the complexities of multi-mapping reads by ensuring each alignment is counted only once per feature type. The tool supports both single-end and paired-end data and can account for library strandedness.
 
-## Installation and Requirements
+## Usage Guidelines
 
-The tool relies on `samtools` (>= 1.14) and `bedtools` (>= 2.30.0). It is most reliably installed via Conda:
+### Core Requirements
 
+To use TEcount effectively, ensure your input files meet the following specifications:
+- **BAM File**: Must be sorted by coordinates.
+- **Reference BED File**: Must be in `bed6+3` format. Specifically, columns 7, 8, and 9 must contain the TE Subfamily, Family, and Class respectively.
+- **Dependencies**: `samtools` (>=1.14) and `bedtools` (>=2.30.0) must be available in your system PATH.
+
+### Common CLI Patterns
+
+**Basic Quantification**
+Run the standard counting workflow with a sorted BAM and a RepeatMasker (rmsk) BED file:
 ```bash
-conda create -n tecount -c conda-forge -c bioconda tecount
-conda activate tecount
+TEcount -b sorted_alignments.bam -r rmsk_reference.bed
 ```
 
-## Core Usage Patterns
-
-### Basic Quantification
-The primary command requires a coordinate-sorted BAM file and a specific BED6+3 reference file where columns 7, 8, and 9 represent the TE subfamily, family, and class respectively.
-
+**Strand-Specific Counting**
+If your RNA-seq library is stranded, specify the protocol to ensure accurate TE quantification:
 ```bash
-TEcount -b input_sorted.bam -r reference_rmsk.bed
+# For stranded data, use the -s flag (check --help for specific orientation options)
+TEcount -b sorted_alignments.bam -r rmsk_reference.bed -s
 ```
 
-### Input Preparation
-1. **BAM Sorting**: Ensure your BAM file is sorted by coordinates, not by read name.
-   ```bash
-   samtools sort input.bam -o input_sorted.bam
-   ```
-2. **Reference BED**: The reference file (often derived from RepeatMasker) must contain the hierarchical classification in the trailing columns. If using the test datasets provided by the developers, these are typically formatted as `rmsk.bed`.
+**Filtering by Overlap**
+To increase the stringency of what constitutes a "hit" on a TE, adjust the minimum overlap requirement:
+```bash
+# Example: require a specific overlap threshold
+TEcount -b sorted_alignments.bam -r rmsk_reference.bed -o <float>
+```
 
-## Expert Tips and Best Practices
+### Expert Tips
 
-- **Multi-mapping Strategy**: tecount handles reads aligning to multiple TE loci by counting only one alignment occurrence for each specific feature (subfamily, family, or class). This prevents over-inflation of counts in highly repetitive regions.
-- **Strand Specificity**: If your RNA-seq library is stranded, ensure you check the strand-specific options using `TEcount --help` to match your library preparation (e.g., dUTP/Forward-Probable).
-- **Overlap Filtering**: You can fine-tune the sensitivity of the tool by adjusting the minimum read-TE overlap requirements. This is useful when trying to exclude spurious alignments that only partially cover a TE locus.
-- **Output Structure**: The tool generates separate output files for each hierarchical level. When performing downstream differential expression analysis (e.g., with DESeq2 or EdgeR), ensure you select the level (subfamily vs. class) that matches your biological hypothesis.
-- **Paired-End Data**: The tool natively supports both single-end and paired-end BAM files. For paired-end data, it correctly handles fragment counts rather than double-counting individual mates.
+1. **Multi-mapping Strategy**: TEcount is designed to handle reads aligning to multiple TE loci by counting only one alignment occurrence for each feature level (subfamily, family, or class). This prevents over-inflation of counts due to the repetitive nature of TEs.
+2. **Reference Preparation**: The most common source of errors is an incorrectly formatted BED file. Ensure your RepeatMasker BED file has the TE hierarchy in the extra columns (7-9).
+3. **Environment Management**: It is highly recommended to run TEcount within a dedicated Conda environment to manage the specific versions of `samtools` and `bedtools` required for stable performance.
+4. **Output Handling**: TEcount generates separate output files for each hierarchy level. Ensure your downstream differential expression tools (like DESeq2 or EdgeR) are pointed to the specific level (e.g., subfamily) relevant to your biological question.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| TEcount | Count reads mapping on Transposable Elements subfamilies, families and classes. |
+| samtools | Tools for alignments in the SAM format |
 
 ## Reference documentation
-- [tecount - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_tecount_overview.md)
-- [GitHub - bodegalab/tecount](./references/github_com_bodegalab_tecount.md)
+- [TEcount README](./references/github_com_bodegalab_tecount_blob_main_README.md)
+- [TEcount Configuration and Metadata](./references/github_com_bodegalab_tecount_blob_main_setup.cfg.md)

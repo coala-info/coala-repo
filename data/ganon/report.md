@@ -505,3 +505,6 @@ filter arguments:
   --taxids [ ...]       One or more taxids to report (including children taxa) (default: [])
 ```
 
+
+## Metadata
+- **Skill**: generated

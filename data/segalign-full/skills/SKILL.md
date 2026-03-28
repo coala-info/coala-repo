@@ -1,6 +1,6 @@
 ---
 name: segalign-full
-description: SegAlign is a GPU-accelerated tool for high-performance pairwise whole genome alignment and genomic comparison. Use when user asks to perform pairwise whole genome alignment, run repeat masking on genomic sequences, or accelerate genomic comparisons using NVIDIA GPUs.
+description: SegAlign is a GPU-accelerated system designed for high-performance pairwise whole-genome alignments and repeat masking. Use when user asks to perform pairwise genome alignment, identify repetitive sequences, or run GPU-accelerated sequence comparisons.
 homepage: https://github.com/gsneha26/SegAlign
 ---
 
@@ -8,64 +8,59 @@ homepage: https://github.com/gsneha26/SegAlign
 # segalign-full
 
 ## Overview
-SegAlign is a high-performance genomic alignment tool designed to leverage NVIDIA GPUs to accelerate the comparison of whole genomes. It implements the seed-filter-extend paradigm used by LASTZ but provides significant speedups through parallelization on GPU architectures. This skill should be used when you need to perform pairwise alignments or repeat masking on large genomic datasets where traditional CPU-based tools like LASTZ are too slow.
 
-## Installation
-The most reliable way to install the tool is via Bioconda:
-```bash
-conda install bioconda::segalign-full
-```
+SegAlign is a high-performance, GPU-accelerated system designed for pairwise whole-genome alignments. It implements the seed-filter-extend paradigm used by LASTZ but leverages GPU parallelization to significantly reduce processing time. This skill provides the necessary command-line patterns to execute both the primary alignment tool (`run_segalign`) and the specialized repeat masking tool (`run_segalign_repeat_masker`). It is particularly effective on AWS G3 and P3 instances or any environment equipped with NVIDIA CUDA-enabled GPUs.
 
 ## Core Workflows
 
-### 1. Pairwise Whole Genome Alignment
-The primary command for alignment is `run_segalign`. It requires a target genome and a query genome in FASTA format.
+### 1. Preparing Genomic Data
+SegAlign requires input sequences in FASTA format. If your data is in `.2bit` format, use the included `kentUtils` to convert them first.
 
-**Basic Pattern:**
 ```bash
-run_segalign target.fa query.fa --output=alignments.maf
+# Convert 2bit to FASTA
+twoBitToFa target.2bit target.fa
+twoBitToFa query.2bit query.fa
 ```
 
-**Common Options:**
-- `--output`: Specify the output file (defaults to MAF format).
-- `--help`: View all available scoring and filtering parameters.
+### 2. Pairwise Genome Alignment
+Use `run_segalign` to align a query genome against a target genome.
 
-### 2. Repeat Masking
-Before alignment, it is often necessary to identify and mask repetitive elements using `run_segalign_repeat_masker`.
-
-**Basic Pattern:**
 ```bash
-run_segalign_repeat_masker sequence.fa --output=masked_intervals.seg
+# Basic alignment
+run_segalign target.fa query.fa --output=alignment_results.maf
+
+# View all available parameters
+run_segalign --help
+```
+
+### 3. GPU-Accelerated Repeat Masking
+Use `run_segalign_repeat_masker` to identify and mask repetitive sequences within a single genome.
+
+```bash
+# Basic repeat masking
+run_segalign_repeat_masker sequence.fa --output=masked_output.seg
+
+# View all available parameters
+run_segalign_repeat_masker --help
 ```
 
 ## Expert Tips and Best Practices
 
-### Data Preparation
-SegAlign often works alongside `kentUtils`. If your source data is in `.2bit` format, convert it to FASTA first:
-```bash
-twoBitToFa genome.2bit genome.fa
-```
+*   **GPU Environment**: Ensure the environment has NVIDIA CUDA 10.2+ installed. If using Docker, always include the `--gpus all` and `--ipc=host` flags to allow the container to access the hardware and shared memory correctly.
+*   **Output Formats**: The default output for alignments is often MAF (Multiple Alignment Format). Ensure you have sufficient disk space as whole-genome MAF files can become quite large.
+*   **Performance Tuning**: SegAlign is optimized for AWS G3 and P3 instances. If running on custom hardware, ensure the `arch` flag in the build configuration matches your GPU architecture (default is `sm_52`).
+*   **Dependency Management**: If running natively, ensure `LASTZ`, `parallel`, and `zlib` are in your system PATH, as `run_segalign` acts as a wrapper that coordinates these components.
 
-### GPU Execution via Docker
-When running SegAlign in a Docker container, specific flags are required to ensure the container can access the GPU and shared memory:
-- Use `--gpus all` to enable CUDA support.
-- Use `--ipc=host` to prevent memory allocation errors during the "extend" phase.
 
-**Example Docker Command:**
-```bash
-docker run --ipc=host --gpus all -v $(pwd):/data gsneha/segalign:v0.1.2 \
-run_segalign /data/target.fa /data/query.fa --output=/data/output.maf
-```
 
-### Hardware Requirements
-- **GPU**: Tested on AWS G3 and P3 instances (NVIDIA Tesla M60, V100).
-- **CUDA**: Requires CUDA 10.2 or compatible drivers.
-- **Memory**: Ensure sufficient system RAM for the Intel TBB library to manage parallel tasks effectively.
+## Subcommands
 
-### Troubleshooting
-- **Command Not Found**: If installed via Conda, ensure the environment is active. If using the source build, ensure the `scripts` directory is in your `$PATH`.
-- **Segmentation Faults**: Often caused by insufficient GPU memory or missing `--ipc=host` flag in containerized environments.
+| Command | Description |
+|---------|-------------|
+| run_segalign | You must specify a target file and a query file |
+| segalign_repeat_masker | You must specify a sequence file |
 
 ## Reference documentation
-- [SegAlign Overview](./references/anaconda_org_channels_bioconda_packages_segalign-full_overview.md)
-- [SegAlign GitHub Documentation](./references/github_com_gsneha26_SegAlign.md)
+- [SegAlign GitHub README](./references/github_com_gsneha26_SegAlign_blob_main_README.md)
+- [SegAlign Docker Configuration](./references/github_com_gsneha26_SegAlign_blob_main_Dockerfile.md)
+- [SegAlign Build Configuration](./references/github_com_gsneha26_SegAlign_blob_main_CMakeLists.txt.md)

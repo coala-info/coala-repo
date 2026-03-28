@@ -1,6 +1,6 @@
 ---
 name: mhcflurry
-description: MHCflurry predicts the binding affinity and presentation scores of peptides to MHC Class I molecules. Use when user asks to predict peptide-MHC interactions, scan protein sequences for epitopes, or simulate antigen processing.
+description: MHCflurry predicts the binding affinity and presentation scores of peptides to MHC Class I molecules across thousands of alleles. Use when user asks to predict peptide-MHC binding, scan protein sequences for potential epitopes, or calculate antigen processing and presentation scores.
 homepage: https://github.com/hammerlab/mhcflurry
 ---
 
@@ -8,50 +8,88 @@ homepage: https://github.com/hammerlab/mhcflurry
 # mhcflurry
 
 ## Overview
-MHCflurry is a specialized toolset for predicting the interaction between peptides and Major Histocompatibility Complex (MHC) Class I molecules. Unlike basic affinity predictors, MHCflurry incorporates multiple models to simulate the biological pipeline of antigen presentation, including proteasomal cleavage (antigen processing) and a composite presentation score. It is designed for researchers performing epitope discovery, vaccine design, or immunopeptidomics analysis.
 
-## Installation and Data Setup
-Before running predictions, you must download the trained models and datasets.
+MHCflurry is a specialized toolset for predicting the binding affinity of peptides to MHC Class I molecules. It features pan-allele predictors supporting over 14,000 MHC alleles and includes experimental models for antigen processing (proteasomal cleavage) and a composite presentation score. It is a core tool for computational immunology, neoantigen screening, and vaccine development workflows.
+
+## Setup and Model Management
+
+Before running predictions, you must download the trained models. The `models_class1_presentation` set is recommended as it includes binding affinity, processing, and presentation predictors.
 
 ```bash
-# Install via pip
-pip install mhcflurry
+# Fetch the latest presentation models
+mhcflurry-downloads fetch models_class1_presentation
 
-# Download required models (mandatory for first-time use)
-mhcflurry-downloads fetch
+# Check available and downloaded data
+mhcflurry-downloads info
 ```
 
-If you encounter connection issues during the fetch command, use `mhcflurry-downloads url <model_name>` to get the direct link, download it via `wget`, and then use the `--already-downloaded-dir` flag to install.
+## Command-Line Usage Patterns
 
-## Common CLI Patterns
-
-### Predicting Binding Affinity for Specific Peptides
-Use `mhcflurry-predict` when you have a defined list of peptides and target alleles.
+### Basic Peptide Prediction
+Predict binding for specific peptides and alleles. Results include affinity (nM), percentile rank, processing score, and presentation score.
 
 ```bash
 mhcflurry-predict \
-  --alleles HLA-A0201 HLA-A0301 \
-  --peptides SIINFEKL SIINFEKD SIINFEKQ \
-  --out predictions.csv
+    --alleles HLA-A0201 HLA-A0301 \
+    --peptides SIINFEKL SIINFEKD \
+    --out predictions.csv
 ```
 
-### Scanning Protein Sequences for Epitopes
-Use `mhcflurry-predict-scan` to find high-affinity binders within a full protein sequence. This automatically fragments the sequence into overlapping peptides (k-mers).
+### Scanning Protein Sequences
+Scan FASTA or CSV protein sequences for potential epitopes. By default, it scans for 8-11mer peptides.
 
 ```bash
 mhcflurry-predict-scan \
-  --sequences MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHS \
-  --alleles HLA-A*02:01 \
-  --out scan_results.csv
+    input.fasta \
+    --alleles HLA-A*02:01,HLA-B*07:02 \
+    --threshold-affinity 500 \
+    --results-filtered affinity
+```
+
+### Working with Genotypes
+You can provide a comma-separated list of alleles to represent a sample's genotype. MHCflurry will report the tightest binding affinity across all alleles in that genotype for each peptide.
+
+```bash
+mhcflurry-predict --peptides SIINFEKL --alleles HLA-A*02:01,HLA-A*03:01,HLA-B*57:01
+```
+
+## Python Library Integration
+
+For complex pipelines, use the Python API to load predictors and process dataframes directly.
+
+```python
+from mhcflurry import Class1PresentationPredictor
+
+# Load the default downloaded predictor
+predictor = Class1PresentationPredictor.load()
+
+# Predict for a list of peptides and a genotype
+results = predictor.predict(
+    peptides=["SIINFEKL", "NLVPMVATV"],
+    alleles=["HLA-A0201", "HLA-A0301"]
+)
 ```
 
 ## Expert Tips and Best Practices
 
-- **Presentation Scores vs. Binding Affinity**: While binding affinity (IC50) is the traditional metric, the "presentation score" provided by MHCflurry 2.0 is often more accurate for identifying naturally presented ligands as it accounts for processing constraints.
-- **Allele Nomenclature**: MHCflurry is flexible with HLA nomenclature, but using the standard format (e.g., `HLA-A*02:01` or `HLA-A0201`) is recommended for consistency.
-- **Batch Processing**: For large-scale genomic or proteomic screens, pipe sequences into `mhcflurry-predict-scan` or provide a text file with one sequence per line to maximize throughput.
-- **Model Selection**: By default, MHCflurry uses the latest released models. If you need to replicate results from older studies, use the `mhcflurry-downloads` tool to inspect and fetch specific model versions.
+- **Affinity Thresholds**: A common threshold for potential immunogenicity is **< 500 nM**. For percentile ranks, **< 2%** is typically used to identify strong binders.
+- **Flanking Sequences**: When using the presentation or processing predictors, provide N-terminal and C-terminal flanking sequences (the amino acids immediately adjacent to the peptide in the source protein) to significantly improve cleavage prediction accuracy.
+- **Performance**: If you only need binding affinity and not processing/presentation scores, use the `--affinity-only` flag in the CLI to reduce computation time.
+- **Allele Naming**: MHCflurry uses the `mhcnames` package for normalization. It accepts various formats (e.g., `HLA-A0201`, `A*02:01`, `A02:01`) and converts them to a standard format automatically.
+- **Memory Management**: If encountering out-of-memory errors with pan-allele models, set the environment variable `MHCFLURRY_OPTIMIZATION_LEVEL=0`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mhcflurry-downloads | Download MHCflurry released datasets and trained models. |
+| mhcflurry-predict | Run MHCflurry predictor on specified peptides. |
+| mhcflurry-predict-scan | Scan protein sequences using the MHCflurry presentation predictor. |
 
 ## Reference documentation
-- [MHCflurry Overview and Installation](./references/anaconda_org_channels_bioconda_packages_mhcflurry_overview.md)
-- [MHCflurry GitHub Repository and Usage Examples](./references/github_com_openvax_mhcflurry.md)
+- [Command-line reference](./references/openvax_github_io_mhcflurry_commandline_tools.html.md)
+- [Command-line tutorial](./references/openvax_github_io_mhcflurry_commandline_tutorial.html.md)
+- [Python library tutorial](./references/openvax_github_io_mhcflurry_python_tutorial.html.md)
+- [Introduction and setup](./references/openvax_github_io_mhcflurry_intro.html.md)

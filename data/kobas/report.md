@@ -163,3 +163,6 @@ Options:
                         before running kobas
 ```
 
+
+## Metadata
+- **Skill**: generated

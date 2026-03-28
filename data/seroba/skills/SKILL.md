@@ -1,6 +1,6 @@
 ---
 name: seroba
-description: SeroBA is a k-mer based pipeline that identifies Streptococcus pneumoniae serotypes directly from raw Illumina paired-end sequencing data. Use when user asks to identify capsular types, run serotyping on pneumococcal reads, or summarize serotype predictions from multiple samples.
+description: SeroBA identifies Streptococcus pneumoniae serotypes from raw Illumina sequencing reads by analyzing the capsular polysaccharide locus. Use when user asks to predict pneumococcal serotypes, create a k-mer database for serotyping, or summarize serotype results from multiple samples.
 homepage: https://github.com/sanger-pathogens/seroba
 ---
 
@@ -8,54 +8,64 @@ homepage: https://github.com/sanger-pathogens/seroba
 # seroba
 
 ## Overview
-SeroBA (Serotype By Ariba) is a high-throughput k-mer based pipeline designed to identify serotypes directly from raw Illumina paired-end sequencing data. It is primarily used for identifying the capsular type of *Streptococcus pneumoniae* by targeting the *cps* locus. The tool is highly efficient, capable of processing large sample sets rapidly, and maintains high accuracy even at low sequencing coverage (down to 10x).
+SeroBA (Serotype By Ariba) is a specialized pipeline designed for the rapid and accurate identification of *Streptococcus pneumoniae* serotypes. By leveraging k-mer based identification of the capsular polysaccharide (cps) locus, it achieves high concordance with traditional methods even at low sequencing coverage (as low as 10x). It is particularly effective for high-throughput processing of raw Illumina reads, capable of handling thousands of samples in a single day on standard server hardware.
 
-## Core Workflow
+## Core Workflows
 
-### 1. Database Preparation
-Before running serotyping, you must initialize and index a reference database.
-
-*   **Download PneumoCaT references**:
-    ```bash
-    seroba getPneumocat <database_dir>
-    ```
-*   **Index the database**:
-    Use a k-mer size of 71 (recommended for optimal sensitivity and specificity).
-    ```bash
-    seroba createDBs <database_dir> 71
-    ```
-
-### 2. Running Serotyping
-Execute the serotyping pipeline on paired-end reads.
+### 1. Database Initialization
+Before running predictions, you must create the local k-mer database. This step downloads references (typically from PneumoCaT) and prepares them for Ariba.
 
 ```bash
-seroba runSerotyping <database_dir> <read_1.fastq.gz> <read_2.fastq.gz> <output_prefix>
+# Create the database (71 is the recommended k-mer size)
+seroba createDBs database_dir 71
 ```
 
-**Key Options:**
-*   `--coverage <int>`: Set the threshold for k-mer coverage of the reference sequence (default is 20).
-*   `--noclean`: Keep intermediate files, such as local assemblies and Ariba reports, which is useful for troubleshooting "untypable" results.
-
-### 3. Summarizing Results
-After processing multiple samples, aggregate the findings into a single report.
+### 2. Single Sample Prediction
+To identify the serotype of a single sample, provide the prepared database and the paired-end fastq files.
 
 ```bash
-seroba summary <directory_containing_output_folders>
+# Run prediction on a sample
+seroba run database_dir/ read_1.fastq.gz read_2.fastq.gz output_prefix
 ```
-This generates a `summary.tsv` file containing Sample ID, predicted serotype, and relevant comments.
 
-## Output Interpretation
-Each run produces an output folder named after your `<output_prefix>` containing:
-*   **pred.tsv**: The primary prediction file containing the identified serotype.
-*   **detailed_serogroup_info.txt**: Contains granular data on SNPs, genes, and alleles detected in the reads.
-*   **untypable**: If a sample does not match any known reference in the database, it is labeled as "untypable" (in versions 0.1.3+).
+### 3. Batch Processing
+For multiple samples, it is most efficient to run the `run` command in parallel or via a loop. After processing, use the summary script to aggregate results.
 
-## Expert Tips & Best Practices
-*   **Low Coverage Samples**: While SeroBA works at 10x, if you receive "untypable" results on known samples, try lowering the `--coverage` threshold to 10 or 15.
-*   **Custom Serotypes**: You can extend the database by adding custom reference sequences to the `references.fasta` file within the database folder before running `seroba createDBs`.
-*   **Disk Space**: SeroBA generates significant intermediate data. Unless you are debugging, avoid using `--noclean` to save storage space.
-*   **Input Validation**: Ensure read pairs are properly matched; SeroBA will fail if the forward and reverse read headers do not correspond.
+```bash
+# Summarize results from multiple output directories
+seroba summary output_dir_1 output_dir_2 output_dir_3
+```
+
+## CLI Reference and Parameters
+
+| Command | Description | Key Arguments |
+| :--- | :--- | :--- |
+| `createDBs` | Downloads and builds the k-mer database. | `<outdir> <kmer_size>` |
+| `run` | Predicts serotype for a sample. | `<db_dir> <read1> <read2> <prefix>` |
+| `summary` | Aggregates results into a TSV file. | `<list_of_output_folders>` |
+| `getPneumoCaT` | Specifically fetches PneumoCaT references. | `<outdir>` |
+
+## Expert Tips and Best Practices
+- **K-mer Selection**: While the default k-mer size is often 71, you may need to adjust this based on read length. Ensure the k-mer size is smaller than your shortest read.
+- **Coverage Requirements**: SeroBA is robust down to 10x coverage, but for clinical-grade certainty, 20x-30x is preferred to ensure the cps locus is fully represented in the k-mer set.
+- **Database Updates**: Periodically rebuild your database if new serotype references (like 6E, 6F, or 11E) are added to the source repositories to maintain 98%+ concordance.
+- **Output Interpretation**: The primary output is a `serotype.txt` file within the output directory. If the tool identifies a "NT" (Non-Typeable) result, check the assembly quality in the Ariba sub-folders to distinguish between a true NT and low-quality data.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| seroba | Seroba command-line tool |
+| seroba | Seroba command-line tool |
+| seroba | Serotyping analysis tool |
+| seroba createDBs | Creates a Database for kmc and ariba |
+| seroba getPneumocat | Downlaods PneumoCat and build an tsv formated meta data file out of it |
+| seroba runSerotyping | identify serotype of your input data |
+| seroba summary | writes all predictions in one tsv file |
 
 ## Reference documentation
-- [SeroBA GitHub Repository](./references/github_com_sanger-pathogens_seroba.md)
-- [SeroBA Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_seroba_overview.md)
+- [SeroBA GitHub Repository](./references/github_com_sanger-pathogens_seroba_blob_master_README.md)
+- [Installation and Dependencies](./references/github_com_sanger-pathogens_seroba_blob_master_install_dependencies.sh.md)
+- [Version History and Bug Fixes](./references/github_com_sanger-pathogens_seroba_blob_master_CHANGELOG.md)

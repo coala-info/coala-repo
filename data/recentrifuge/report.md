@@ -535,3 +535,6 @@ retaxdump  - Release 2.1.1 - Feb 2026
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
 
+
+## Metadata
+- **Skill**: generated

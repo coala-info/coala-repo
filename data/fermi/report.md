@@ -473,3 +473,6 @@ example: invalid option -- 'h'
 Usage: fermi example [-ceU] [-k ecKmer] [-l utgKmer] <in.fq>
 ```
 
+
+## Metadata
+- **Skill**: not generated

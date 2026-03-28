@@ -1,6 +1,6 @@
 ---
 name: bioconda-utils
-description: Bioconda-utils is a toolkit for linting, building, and managing bioinformatics package recipes within the Bioconda ecosystem. Use when user asks to lint recipes for errors, build packages locally, update dependency pinnings, or check for new upstream software versions.
+description: Bioconda-utils is a command-line toolkit used to automate the linting, building, and maintenance of bioinformatics software recipes within the Bioconda ecosystem. Use when user asks to lint recipes for quality standards, build packages in isolated Docker environments, update Bioconductor skeletons, or manage recipe dependencies and build failures.
 homepage: http://bioconda.github.io/build-system.html
 ---
 
@@ -8,31 +8,56 @@ homepage: http://bioconda.github.io/build-system.html
 # bioconda-utils
 
 ## Overview
-This skill provides procedural knowledge for using `bioconda-utils`, the core toolkit used by the Bioconda project to maintain its massive repository of bioinformatics packages. It is designed to help automate the linting and building process, ensuring that recipes meet community standards before they are submitted or merged. Use this tool to identify structural issues in `meta.yaml` files, manage environment dependencies, and simulate the CI/CD pipeline locally.
+`bioconda-utils` is the primary toolkit used by the Bioconda community to maintain the integrity of the bioinformatics software ecosystem. It provides a suite of command-line tools to automate the lifecycle of a Conda recipe—from initial skeleton generation to linting for best practices and performing multi-architecture builds. This skill helps ensure that recipes meet Bioconda's strict quality standards and function correctly across different platforms.
 
 ## Common CLI Patterns
 
-### Linting Recipes
-The most frequent use case is checking recipes for errors or style violations.
-- **Lint all recipes in a directory**: `bioconda-utils lint recipes/ config.yaml`
-- **Lint a specific recipe**: `bioconda-utils lint recipes/ config.yaml --packages <package_name>`
-- **List available linters**: `bioconda-utils lint --list-linters`
+### Recipe Validation and Linting
+Before attempting a build, always lint the recipe to catch common errors such as missing compilers, incorrect versioning, or non-standard metadata.
+- **Basic linting**: `bioconda-utils lint --packages <package_name>`
+- **Linting against specific recipes**: Point the tool to your local `bioconda-recipes` directory to check specific sub-folders.
 
-### Building and Testing
-Simulate the build process to ensure the recipe is functional.
-- **Build a specific package**: `bioconda-utils build recipes/ config.yaml --packages <package_name>`
-- **Build with a specific docker image**: Use the `--docker` flag to ensure a clean, reproducible environment.
-- **Dry run**: Use `--dry-run` to see what would be built without executing the actual build.
+### Building Recipes
+Bioconda uses isolated environments to ensure reproducibility.
+- **Standard build**: `bioconda-utils build --packages <package_name> --docker --mulled-test`
+- **Docker-based builds**: Use the `--docker` flag to build in a containerized environment (typically based on `linux-anvil`) to avoid host-system contamination.
+- **Mulled tests**: Use `--mulled-test` to run tests in a minimal, auto-generated container that only contains the package and its requirements.
 
-### Dependency Management
-- **Update dependencies**: `bioconda-utils update-pinning` can be used to align recipes with the latest global pinnings in the Bioconda distribution.
-- **Check for updates**: `bioconda-utils autobump` identifies if a new version of the upstream software is available.
+### Managing Bioconductor Recipes
+The tool includes specialized logic for the Bioconductor ecosystem.
+- **Update Bioconductor recipes**: `bioconda-utils bioconductor-skeleton update-recipes --bioc-version <version>`
+- **Patching**: When updating Bioconductor packages, the tool can be configured to keep existing patches while bumping versions.
+
+### Resource Monitoring
+Recent versions of the tool allow for tracking resource consumption during the build process.
+- **Usage reporting**: Monitor the output for resource usage statistics before and after builds to identify memory-intensive bioinformatics tools.
 
 ## Expert Tips
-- **Config Files**: Always ensure you have a valid `config.yaml` (usually found in the root of the bioconda-recipes repo) as most commands require it to define channels and build parameters.
-- **Filtering**: Use the `--exclude` flag to skip problematic recipes or those that require heavy resources during bulk operations.
-- **Log Levels**: When debugging complex dependency resolution issues, use `--loglevel debug` to see the underlying solver logic.
-- **Local Testing**: Before submitting a PR to Bioconda, run the linting command locally to catch "easy" fixes like trailing whitespace, missing homepages, or incorrect license strings.
+- **Strict Channel Priority**: Ensure your environment is configured with `conda-forge` and `bioconda` channels, with `strict` priority enabled to prevent dependency conflicts.
+- **Redundant Solvers**: In version 4.1.0+, host-side solver runs are minimized for Docker builds to speed up the process.
+- **Environment TTL**: When running extensive tests, set `local_repodata_ttl` to a higher value (e.g., 3600) to prevent constant re-indexing of the Conda channels.
+- **Compiler Lints**: Always include `{{ compiler('c') }}` or `{{ compiler('cxx') }}` in the `host` section for compiled code; `bioconda-utils` will flag missing compilers via the `should_use_compilers` lint.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate-build-failures | Annotate build failures for recipes. |
+| autobump | Updates recipes in recipe_folder |
+| bioconda-utils build | Build packages for Bioconda. |
+| bioconda-utils dependent | Print recipes dependent on a package |
+| bioconda-utils duplicates | Detect packages in bioconda that have duplicates in the other defined channels. |
+| bioconda-utils lint | Lint recipes |
+| bioconda-utils list-build-failures | List recipes with build failure records |
+| bioconductor-skeleton | Build a Bioconductor recipe. The recipe will be created in the 'recipes' directory and will be prefixed by "bioconductor-". If --recursive is set, then any R dependency recipes will be prefixed by "r-". |
+| clean-cran-skeleton | Cleans skeletons created by ``conda skeleton cran``. |
+| dag | Export the DAG of packages to a graph format file for visualization |
+| handle-merged-pr | Handle merged pull requests for Bioconda recipes. |
+| update-pinning | Bump a package build number and all dependencies as required due to a change in pinnings |
 
 ## Reference documentation
-- [Bioconda Utils Overview](./references/anaconda_org_channels_bioconda_packages_bioconda-utils_overview.md)
+- [Bioconda-utils README](./references/github_com_bioconda_bioconda-utils_blob_master_README.md)
+- [Bioconda-utils Changelog](./references/github_com_bioconda_bioconda-utils_blob_master_CHANGELOG.md)
+- [Bioconda-utils Dockerfile](./references/github_com_bioconda_bioconda-utils_blob_master_Dockerfile.md)

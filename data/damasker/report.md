@@ -123,3 +123,6 @@ Usage: HPC.REPmask [-vbd] [-t<int>] [-w<int(6)>] [-l<int(1000)>] [-s<int(100)>] 
       -f: Place script bundles in separate files with prefix <name>
 ```
 
+
+## Metadata
+- **Skill**: generated

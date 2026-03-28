@@ -453,3 +453,6 @@ Global Flags:
 Use "lexicmap utils [command] --help" for more information about a command.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,0 +1,55 @@
+[![](/assets/logo.png)
+Awesome Go](/)
+
+[Categories](/#contents)
+[GitHub](https://github.com/avelino/awesome-go)
+
+[Home](/)
+/
+Nullable Types
+
+# Nullable Types
+
+* [nan - Zero allocation Nullable structures in one library with handy conversion functions, marshallers and unmarshallers.](/nullable-types/nan-kak-tus-github/)
+* [null - Nullable Go types that can be marshalled/unmarshalled to/from JSON.](/nullable-types/null-emvi-github/)
+* [typ - Null Types, Safe primitive type conversion and fetching value from complex structures.](/nullable-types/typ-gurukami-github/)
+* [deheap - Doubly-ended heap (min-max heap) with O(log n) access to both minimum and maximum elements.](/nullable-types/deheap-aalpar-github/)
+* [deque - A highly optimized double-ended queue.](/nullable-types/deque-edwingeng-github/)
+* [deque - Fast ring-buffer deque (double-ended queue).](/nullable-types/deque-gammazero-github/)
+* [dqueue - Simple, in memory, zero dependency and battle tested, thread-safe deferred queue.](/nullable-types/dqueue-vodolaz095-github/)
+* [goconcurrentqueue - Concurrent FIFO queue.](/nullable-types/goconcurrentqueue-enriquebris-github/)
+* [hatchet - Distributed, Fault-tolerant task queue.](/nullable-types/hatchet-hatchet-dev-github/)
+* [list - A generic, thread-safe doubly linked list with full iterator support and an intrusive singly linked list for embedded use; a feature-rich replacement for container/list.](/nullable-types/list-koss-null-github/)
+* [memlog - An easy to use, lightweight, thread-safe and append-only in-memory data structure inspired by Apache Kafka.](/nullable-types/memlog-embano1-github/)
+* [queue - Multiple thread-safe, generic queue implementations for Go.](/nullable-types/queue-adrianbrad-github/)
+* [dsu - Disjoint Set data structure implementation in Go.](/nullable-types/dsu-ihebu-github/)
+* [golang-set - Thread-Safe and Non-Thread-Safe high-performance sets for Go.](/nullable-types/golang-set-deckarep-github/)
+* [goset - A useful Set collection implementation for Go.](/nullable-types/goset-zoumo-github/)
+* [set - Simple set data structure implementation in Go using LinkedHashMap.](/nullable-types/set-studiosol-github/)
+* [bleve - Modern text indexing library for go.](/nullable-types/bleve-blevesearch-github/)
+* [go-adaptive-radix-tree - Go implementation of Adaptive Radix Tree.](/nullable-types/go-adaptive-radix-tree-plar-github/)
+* [go-edlib - Go string comparison and edit distance algorithms library (Levenshtein, LCS, Hamming, Damerau levenshtein, Jaro-Winkler, etc.) compatible with Unicode.](/nullable-types/go-edlib-hbollon-github/)
+* [levenshtein - Levenshtein distance and similarity metrics with customizable edit costs and Winkler-like bonus for common prefix.](/nullable-types/levenshtein-agext-github/)
+* [levenshtein - Implementation to calculate levenshtein distance in Go.](/nullable-types/levenshtein-agnivade-github/)
+* [mspm - Multi-String Pattern Matching Algorithm for information retrieval.](/nullable-types/mspm-blackrabbitt-github/)
+* [parsefields - Tools for parse JSON-like logs for collecting unique fields and events.](/nullable-types/parsefields-monaxgt-github/)
+* [ptrie - An implementation of prefix tree.](/nullable-types/ptrie-viant-github/)
+* [trie - Trie implementation in Go.](/nullable-types/trie-derekparker-github/)
+* [graphlib - Topological sort lib,Sorting and pruning of DAG graphs.](/nullable-types/graphlib-aio-arch-github/)
+* [hashsplit - Split byte streams into chunks, and arrange chunks into trees, with boundaries determined by content, not position.](/nullable-types/hashsplit-bobg-github/)
+* [merkle - Space-efficient computation of Merkle root hashes and inclusion proofs.](/nullable-types/merkle-bobg-github/)
+* [skiplist - Very fast Go Skiplist implementation.](/nullable-types/skiplist-mauricegit-github/)
+* [skiplist - Skiplist implementation in Go.](/nullable-types/skiplist-gansidui-github/)
+* [treemap - Generic key-sorted map using a red-black tree under the hood.](/nullable-types/treemap-igrmk-github/)
+* [ordered-concurrently - Go module that processes work concurrently and returns output in a channel in the order of input.](/nullable-types/ordered-concurrently-tejzpr-github/)
+* [parapipe - FIFO Pipeline which parallels execution on each stage while maintaining the order of messages and results.](/nullable-types/parapipe-nazar256-github/)
+* [pipeline - An implementation of pipelines with fan-in and fan-out.](/nullable-types/pipeline-hyfather-github/)
+* [pipelines - Generic pipeline functions for concurrent processing.](/nullable-types/pipelines-nxdir-s-github/)
+
+[← All categories](/)
+
+[GitHub](https://github.com/avelino/awesome-go)
+[Contributing](https://github.com/avelino/awesome-go/blob/main/CONTRIBUTING.md)
+[Sitemap](https://awesome-go.com/sitemap.xml)
+
+Maintained by the [awesome-go community](https://github.com/avelino/awesome-go/graphs/contributors)

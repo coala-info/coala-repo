@@ -1,6 +1,6 @@
 ---
 name: pypgatk
-description: pypgatk is a Python framework for proteogenomics that generates customized protein sequence databases from genomic variants and non-canonical sources. Use when user asks to download reference data from Ensembl or COSMIC, translate genomic variants into protein databases, perform three-frame translations, generate decoy sequences for FDR estimation, or prepare input files for DeepLC and MSRescore.
+description: pypgatk is a proteogenomics toolkit used to generate customized protein search databases from genomic variants, non-canonical reading frames, and alternative transcripts. Use when user asks to download reference data, translate VCF variants to protein databases, perform three-frame translation, generate decoy databases, or map peptides back to genomic coordinates.
 homepage: http://github.com/bigbio/py-pgatk
 ---
 
@@ -9,49 +9,105 @@ homepage: http://github.com/bigbio/py-pgatk
 
 ## Overview
 
-The `pypgatk` (Python ProteoGenomics Analysis Toolkit) is a specialized framework designed to bridge the gap between genomics and proteomics. It provides a suite of tools to create customized protein sequence databases that include non-canonical peptides, mutations, and variants derived from genomic sources. This is essential for mass spectrometry workflows where standard reference databases (like UniProt) fail to capture the full diversity of the proteome, such as cancer-specific mutations or novel translation products.
+pypgatk (ProteoGenomics Analysis Toolkit) is a specialized suite of tools designed to bridge the gap between genomics and proteomics. It enables the creation of search-ready FASTA databases that incorporate variants, non-canonical reading frames, and alternative transcripts. This is essential for identifying novel proteoforms and mutations in mass spectrometry data that are typically absent from standard reference proteomes. The toolkit handles the entire pipeline from data acquisition and sequence translation to post-identification genomic mapping.
 
-## Core CLI Usage
+## Core CLI Workflows
 
-The primary entry point for the toolkit is the `pypgatk` command.
+The toolkit is accessed via the `pgatk` command followed by specific subcommands.
 
-### Data Acquisition
-Use the downloader modules to fetch reference data from major repositories:
-- **Ensembl**: `pypgatk ensembl-downloader --help`
-- **COSMIC**: `pypgatk cosmic-downloader --help`
-- **cBioPortal**: `pypgatk cbioportal-downloader --help`
+### 1. Data Acquisition
+Download reference genomes, annotations, and variant files for specific species using Taxonomy IDs.
 
-### Database Generation
-Transform genomic variants and sequences into protein databases (FASTA format):
-- **VCF to Protein**: Generate peptides based on DNA variants.
-  `pypgatk vcf-to-proteindb --vcf input.vcf --input_fasta reference.fasta --output_fasta output.fasta`
-- **Three-frame Translation**: Perform 3-frame translation of nucleotide sequences.
-  `pypgatk threeframe-translation --input_fasta transcripts.fasta --output_fasta translated.fasta`
-- **cBioPortal/COSMIC to Protein**: Translate specific mutation records into searchable protein databases.
-  `pypgatk cosmic-to-proteindb --input_mutation cosmic_mutations.tsv --output_fasta cosmic_proteins.fasta`
+```bash
+# Download Ensembl data for Human (TaxID: 9606)
+pgatk ensembl-downloader -t 9606 -o ensembl_human
 
-### Post-Processing and Validation
-- **Decoy Generation**: Create decoy sequences for False Discovery Rate (FDR) estimation using methods like Reverse, Shuffled, or DecoyPYrat.
-  `pypgatk generate-decoy --input_fasta proteins.fasta --output_fasta decoys.fasta --method reverse`
-- **Ensembl Integrity**: Check Ensembl databases for stop codons or gaps before proceeding with analysis.
-  `pypgatk ensembl-check --input_fasta proteins.fasta`
-- **FDR Calculation**: Compute peptide class-specific FDR.
-  `pypgatk peptide-class-fdr --input_psm results.tsv --output_fdr filtered_results.tsv`
+# Download cancer mutations from cBioPortal
+pgatk cbioportal-downloader --download_all --output_directory cbioportal_data
+```
 
-### Integration with Other Tools
-- **DeepLC**: Generate input files for DeepLC retention time prediction from idXML, mzTab, or consensusXML.
-  `pypgatk generate-deeplc --input_file identification.idXML --output_file deeplc_input.csv`
-- **MSRescore**: Generate configuration files for MSRescore from idXML files.
-  `pypgatk msrescore-configuration --input_file identification.idXML`
+### 2. Variant-to-Protein Translation
+Translate genomic variants into protein sequences. This usually requires a transcript FASTA (often generated via `gffread`) and a GTF annotation file.
 
-## Expert Tips
+```bash
+# Translate VCF variants to a protein database
+pgatk vcf-to-proteindb \
+    --vcf input.vcf.gz \
+    --input_fasta transcripts.fa \
+    --gene_annotations_gtf annotations.gtf \
+    --output_proteindb variant_proteins.fa
+```
 
-1. **Pre-Translation Validation**: Always run `ensembl-check` on downloaded Ensembl data to identify potential issues with stop codons or sequence gaps that could lead to incorrect peptide identifications.
-2. **Decoy Strategy**: When generating decoys for proteogenomics, ensure the decoy method matches the search engine requirements. The `reverse` method is generally preferred for standard proteomics, but `shuffled` may be more appropriate for specific non-canonical searches.
-3. **Memory Management**: When processing large VCF files or whole-genome translations, ensure the environment has sufficient RAM, as these operations can be memory-intensive depending on the number of variants.
-4. **Container Usage**: For reproducible environments, use the official BioContainers Docker image: `docker pull quay.io/biocontainers/pypgatk:<version>`.
+### 3. Non-Canonical ORF Discovery
+Generate databases for proteogenomics by translating DNA sequences in multiple frames or targeting specific biotypes.
+
+```bash
+# Three-frame translation of transcript sequences
+pgatk threeframe-translation \
+    --input_fasta transcripts.fa \
+    --output_proteindb threeframe_db.fa
+
+# Translate DNA sequences with biotype filtering (e.g., lncRNAs)
+pgatk dnaseq-to-proteindb \
+    --input_fasta genome.fa \
+    --config_file config.yaml \
+    --output_proteindb non_canonical.fa
+```
+
+### 4. Database Refinement and Decoys
+Prepare the final database for search engines by adding decoys and validating sequences.
+
+```bash
+# Generate target-decoy database using DecoyPYrat (recommended for proteogenomics)
+pgatk generate-decoy \
+    --input target_proteins.fa \
+    --output target_decoy.fa \
+    --method decoypyrat
+
+# Filter short sequences and handle stop codons
+pgatk ensembl-check \
+    --input_fasta database.fa \
+    --output_fasta cleaned_database.fa
+```
+
+### 5. Post-Processing and Genomic Mapping
+Map identified peptides back to the genome for visualization in browsers like IGV or UCSC.
+
+```bash
+# Map identified peptides to genomic coordinates
+pgatk map-peptide2genome \
+    --input_psm identifications.tsv \
+    --input_gtf annotations.gtf \
+    --output_gff3 peptides_on_genome.gff3
+```
+
+## Expert Tips and Best Practices
+
+- **Transcript Preparation**: Before running `vcf-to-proteindb`, use `gffread` to extract transcript sequences from the genome FASTA using the GTF file. This ensures coordinate consistency.
+- **Decoy Strategy**: For proteogenomics, the `decoypyrat` method is generally preferred over simple reversal to maintain similar amino acid composition and peptide length distributions in the decoy set.
+- **Variant Filtering**: When using `vcf-to-proteindb`, ensure the VCF contains consequence annotations (e.g., from VEP) if you want to filter for specific mutation types, though the tool can often process raw VCFs by intersecting with GTF coordinates.
+- **Memory Management**: For large VCFs (like gnomAD), use the chromosome-specific processing options if available to reduce memory overhead.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cbioportal-downloader | Download data from cBioPortal |
+| cbioportal-to-proteindb | Configuration for cbioportal to proteindb tool |
+| cosmic-downloader | Download mutation data from COSMIC |
+| ensembl-check | Perform Ensembl database check |
+| ensembl-downloader | This tool enables to download from enseml ftp the FASTA and GTF files |
+| pgatk generate-decoy | Generate decoy protein sequences for a target protein database. |
+| pypgatk blast_get_position | Get the position of peptides in a reference database. |
+| pypgatk cosmic-to-proteindb | Convert COSMIC mutation data to a protein database. |
+| pypgatk dnaseq-to-proteindb | Configuration to perform conversion between ENSEMBL Files |
+| pypgatk peptide-class-fdr | The peptide_class_fdr allows to filter the peptide psm files (IdXML files) using two different FDR threshold types: - Global FDR - Global FDR + Peptide Class FDR The peptide classes can be defined in two ways as simple class: - "altorf,pseudo,ncRNA,COSMIC,cbiomut,var_mut,var_rs" where each class represent only one kind of peptide source pseudo gene, ncRNA, etc. The second for of representing peptide classes is using groups of classes: - "{ non_canonical:[altorf,pseudo,ncRNA];mutations:[COSMIC,cbiomut];variants:[var _mut,var_rs]}" in this case a class is a group of peptide sources for example: mutations with two difference sources as COSMIC and cbiomut (CBioportal mutation) . |
+| pypgatk validate_peptides | Validate peptides using the pypgatk pipeline. |
+| pypgatk_mztab_class_fdr | Filter peptides by global-fdr and class-fdr |
+| vcf-to-proteindb | Configuration to perform conversion between ENSEMBL Files |
 
 ## Reference documentation
-
-- [pypgatk Overview](./references/anaconda_org_channels_bioconda_packages_pypgatk_overview.md)
-- [pypgatk GitHub Repository](./references/github_com_bigbio_py-pgatk.md)
+- [pgatk -- ProteoGenomics Analysis Toolkit](./references/github_com_bigbio_pgatk_blob_master_README.md)
+- [pypgatk Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pypgatk_overview.md)

@@ -1,44 +1,58 @@
 ---
 name: flexsweep
-description: Flexsweep is a tool for detecting selective sweeps in genomic data. Use when user asks to detect selective sweeps in genomic data or analyze genomic data to identify regions under selection.
+description: Flexsweep is a machine learning tool used to identify genomic regions that have undergone natural selection by detecting selective sweeps. Use when user asks to simulate training data, train a CNN model for population genetics, or classify genomic loci as neutral or under selection.
 homepage: https://github.com/jmurga/flexsweep
 ---
 
 
 # flexsweep
 
-yaml
-name: flexsweep
-description: A tool for detecting selective sweeps in genomic data. Use when analyzing genomic data to identify regions that have undergone recent positive selection.
----
 ## Overview
-Flexsweep is a bioinformatics tool designed to detect selective sweeps in genomic data. It utilizes a convolutional neural network (CNN) to classify genomic loci as either neutral or under selection. The process involves simulating data under various demographic models and selection scenarios, then training the CNN to identify these patterns. This skill is useful for researchers analyzing population genetics data to understand evolutionary processes.
+Flexsweep is a machine learning-based population genetics tool designed to identify genomic regions that have undergone natural selection. It specifically focuses on "selective sweeps," where a beneficial mutation increases in frequency, reducing genetic variation in nearby regions. 
 
-## Usage Instructions
+The tool operates through a multi-stage workflow:
+1. **Simulation**: Generating synthetic data that mimics the target population's history.
+2. **Training**: Building a CNN model capable of distinguishing between neutral evolution and various types of sweeps (hard, soft, complete, or incomplete).
+3. **Classification**: Applying the model to empirical data to predict selection at specific genomic loci.
 
-Flexsweep is typically used via its command-line interface. The core functionality involves simulating data and then classifying regions based on these simulations.
+## CLI Usage and Best Practices
 
-### Core Workflow
+### Core Command Structure
+The primary entry point for the tool is the `flexsweep` command. It uses a sub-command architecture for different stages of the analysis.
 
-1.  **Simulation**: Generate genomic data under specific demographic models and selection parameters.
-2.  **Classification**: Use a trained model to classify simulated or real genomic regions as neutral or under selection.
+```bash
+# General syntax
+flexsweep [OPTIONS] COMMAND [ARGS]...
+```
 
-### Key Parameters and Options
+### Key Sub-commands
+*   **Simulation**: Used to generate training data. It often interfaces with simulators like `discoal` or `msprime` to create the necessary feature matrices.
+*   **Training**: Processes simulated data to train the CNN.
+*   **Prediction/Classification**: Runs the trained model on VCF or other genomic formats to identify sweeps.
 
-While specific command-line arguments are not detailed in the provided documentation, common patterns for such tools involve:
+### Expert Tips for Genomic Analysis
+*   **Demographic Modeling**: Ensure your simulations reflect the demographic history (bottlenecks, expansions) of your target population. A model trained on a constant population size will produce high false-positive rates when applied to a population that has undergone a bottleneck.
+*   **Feature Normalization**: Flexsweep relies on summary statistics and windowed genomic data. Ensure your input data is normalized consistently with the training set to maintain classification accuracy.
+*   **GPU Acceleration**: Since the tool uses TensorFlow, ensure CUDA dependencies are correctly configured to significantly speed up the training and prediction phases.
+*   **Memory Management**: For large-scale genomic sweeps, use the tool's ability to process data in windows to avoid exceeding RAM limits, especially when working with high-density SNP data.
 
-*   **Input Data**: Specifying input files for genomic data (e.g., VCF, FASTA) or simulation parameters.
-*   **Model Specification**: Indicating the demographic model and selection parameters for simulations.
-*   **Output**: Defining output file formats and locations for classified regions or simulation results.
-*   **Model Training/Loading**: Options to train a new CNN model or load a pre-trained one.
+### Common Workflow Pattern
+1.  Define the demographic model using `demes` or simulation parameters.
+2.  Generate neutral and sweep simulations (varying age and strength).
+3.  Train the CNN using the `flexsweep` training module.
+4.  Scan the empirical genome using a sliding window approach to generate predictions.
 
-### Best Practices and Expert Tips
 
-*   **Understand Your Data**: Before running flexsweep, ensure you have a clear understanding of your genomic data and the evolutionary hypotheses you want to test. This will guide your choice of demographic models and selection parameters.
-*   **Parameter Tuning**: Experiment with different demographic models and selection parameters (sweep strength, age, starting allele frequency, completeness) to accurately reflect your biological system.
-*   **Computational Resources**: Simulation and model training can be computationally intensive. Ensure you have adequate computational resources and consider using parallel processing if available.
-*   **Consult Documentation**: For detailed command-line arguments, specific file formats, and advanced options, always refer to the official flexsweep documentation.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cnn | Run the Flexsweep CNN for training or prediction. |
+| flexsweep simulator | Run the discoal Simulator with user-specified parameters. |
+| fvs-discoal | Estimate summary statistics from discoal simulations and build feature vectors. |
+| fvs-vcf | Estimate summary statistics from VCF files and build feature vectors. |
 
 ## Reference documentation
-- [GitHub Repository](https://github.com/jmurga/flexsweep)
-- [Anaconda.org Overview](https://anaconda.org/bioconda/flexsweep)
+- [Flexsweep GitHub Repository](./references/github_com_jmurga_flexsweep_blob_main_README.md)
+- [Project Configuration and Dependencies](./references/github_com_jmurga_flexsweep_blob_main_pyproject.toml.md)

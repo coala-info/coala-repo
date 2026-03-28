@@ -1,6 +1,6 @@
 ---
 name: bigscape
-description: BiG-SCAPE clusters and visualizes biosynthetic gene clusters into families by calculating pairwise distances based on protein domain content and sequence identity. Use when user asks to cluster BGCs into families, query sequences against a database, dereplicate redundant datasets, or benchmark clustering results.
+description: BiG-SCAPE is a bioinformatics pipeline that calculates pairwise distances between biosynthetic gene clusters to organize them into chemically meaningful families and similarity networks. Use when user asks to cluster biosynthetic gene clusters into families, search for similar sequences using a query, dereplicate redundant genomic data, or benchmark clustering results.
 homepage: https://github.com/medema-group/BiG-SCAPE
 ---
 
@@ -8,60 +8,59 @@ homepage: https://github.com/medema-group/BiG-SCAPE
 # bigscape
 
 ## Overview
-
-BiG-SCAPE (Biosynthetic Gene Similarity Clustering and Prospecting Engine) is a specialized bioinformatics tool used to organize and visualize the diversity of secondary metabolite biosynthetic pathways. It transforms BGCs—typically predicted by antiSMASH—into a network of protein domains. By calculating pairwise distances based on domain content, order, and sequence identity, it clusters related BGCs into Gene Cluster Families (GCFs). Use this skill to navigate the four primary workflows of BiG-SCAPE 2: clustering, querying, dereplication, and benchmarking.
+BiG-SCAPE is a bioinformatics pipeline designed to explore the diversity of secondary metabolism. It calculates pairwise distances between BGCs by comparing protein domain content, order, copy number, and sequence identity. It is primarily used to organize large genomic datasets into chemically meaningful families (GCFs) and visualize their relationships through similarity networks.
 
 ## Core Workflows
+BiG-SCAPE 2 operates through four distinct subcommands:
 
-BiG-SCAPE 2 is invoked using `python bigscape.py [workflow] [options]`.
+- **cluster**: The primary mode for grouping BGCs into GCFs (replaces BiG-SCAPE 1's `bigscape.py`).
+- **query**: Searches for BGCs similar to a specific user-provided query sequence.
+- **dereplicate**: Performs protein-sequence-based redundancy analysis to remove near-identical sequences.
+- **benchmark**: Validates clustering results against a known set of BGC-to-GCF assignments.
 
-### 1. Cluster Mode
-The primary workflow for generating similarity networks and GCFs.
-- **Basic Command**: `python bigscape.py cluster --inputdir <path_to_gbks> --outputdir <results_path> --pfam_dir <pfam_db_path>`
-- **Mixing Classes**: By default, BiG-SCAPE bins BGCs by antiSMASH class. Use `--mix` to group all BGCs into a single bin for a global network.
-- **Cutoffs**: Define the stringency of clustering. You can provide multiple values to see how families split or merge: `--cutoffs 0.3 0.4 0.5`.
+## CLI Usage Patterns
 
-### 2. Query Mode
-Search for BGCs similar to a specific sequence of interest.
-- **Command**: `python bigscape.py query --query <query_bgc.gbk> --target <database_dir>`
-- Useful for identifying homologs of a known pathway within a new set of genomes.
+### Basic Clustering
+To run a standard clustering analysis, you must provide an input directory (containing antiSMASH .gbk files), an output directory, and a path to a profile HMM database (typically Pfam).
 
-### 3. Dereplicate Mode
-Identify and remove near-identical sequences to reduce computational load or redundancy in datasets.
-- **Command**: `python bigscape.py dereplicate --inputdir <path>`
-- This performs a protein sequence-based redundancy analysis.
-
-### 4. Benchmark Mode
-Validate clustering results against a "gold standard" set of BGC-to-GCF assignments.
-- **Command**: `python bigscape.py benchmark --inputdir <results> --reference <assignments.csv>`
-
-## Expert Tips and Best Practices
-
-- **Pfam Database**: Ensure your Pfam database is properly pressed for HMMER (`hmmpress`). BiG-SCAPE relies on `hmmscan` to identify domains.
-- **Input Validation**: BiG-SCAPE 2 is stricter with input validation than version 1. Ensure your GenBank files are properly formatted antiSMASH outputs.
-- **Comparable Regions**: If your BGCs are on short contigs or are fragmented, pay attention to the alignment mode. BiG-SCAPE uses these to define the "comparable region" between two clusters.
-- **Output Analysis**:
-    - **HTML Visualization**: Open the `index.html` in the output directory for an interactive network view.
-    - **SQLite Database**: For large-scale data mining, use the generated SQLite database which contains all pairwise distances and GCF assignments.
-- **Performance**: For very large datasets, the `hmmscan` step is the bottleneck. BiG-SCAPE 2 includes optimizations, but ensure you allocate sufficient CPU cores using the `--cores` flag.
-
-## Common CLI Patterns
-
-**Run a standard analysis with MIBiG references:**
 ```bash
-python bigscape.py cluster -i ./my_bgcs -o ./results --pfam_dir ./pfam --mibig
+bigscape cluster -i ./input_bgcs -o ./results -p ./pfam/Pfam-A.hmm
 ```
 
-**Force a specific antiSMASH version compatibility:**
-```bash
-python bigscape.py cluster -i ./my_bgcs -o ./results --pfam_dir ./pfam --antismash_version 7
-```
+### Common Parameters
+- `--mix`: By default, BiG-SCAPE separates BGCs by antiSMASH class (e.g., Polyketide, Terpene). Use `--mix` to group all BGCs into a single bin for analysis.
+- `--cutoffs`: Define one or more distance thresholds for clustering (default is 0.3).
+  ```bash
+  bigscape cluster -i ./in -o ./out -p ./pfam --cutoffs 0.3 0.4 0.5
+  ```
+- `--clans-off`: Disables the grouping of GCFs into higher-order BiG-SCAPE Clans.
+- `--label`: Adds a specific label to the run, useful for tracking iterations in the SQLite database.
 
-**Include specific reference BGCs from a local folder:**
-```bash
-python bigscape.py cluster -i ./my_bgcs -o ./results --pfam_dir ./pfam --extra_proximal_libs ./my_references
-```
+### Resource Management
+BiG-SCAPE can be computationally intensive during the `hmmscan` and distance calculation phases.
+- `--cores`: Specify the number of CPU cores to use (e.g., `--cores 16`).
+
+## Input Requirements
+- **antiSMASH Files**: BiG-SCAPE is optimized for GenBank files generated by antiSMASH. It recursively searches the input directory for `.gbk` files.
+- **Pfam Database**: Ensure the Pfam-A.hmm file is pressed using `hmmpress` before running BiG-SCAPE to speed up domain detection.
+
+## Expert Tips
+- **Incremental Runs**: BiG-SCAPE 2 utilizes an SQLite database to store results. Subsequent runs on the same output directory can leverage previously calculated domain hits and distances.
+- **Mismatched Versions**: If using data from different antiSMASH versions, ensure the record types are compatible. BiG-SCAPE 2 handles modern antiSMASH record types more robustly than version 1.
+- **Visualization**: The tool generates a rich HTML visualization. Open `index.html` in the output folder to explore the similarity network and multi-locus phylogenies.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| benchmark | Benchmarking mode - Compare a BiG-SCAPE or BiG-SLICE BGC clustering against a known/expected set of BGC <-> GCF assignments. For a more comprehensive help menu and tutorials see GitHub Wiki. |
+| bigscape cluster | Clustering mode - BiG-SCAPE performs clustering of BGCs into GCFs. For a more comprehensive help menu and tutorials see GitHub Wiki. |
+| bigscape_dereplicate | Dereplicate mode - BiG-SCAPE performs a pairwise comparison of BGCs based on the protein sequence comparison tool sourmash, clusters them based on a similarity threshold, and selects a representative BGC per cluster. |
+| query | Query BGC mode - BiG-SCAPE queries a set of BGCs based on a single BGC query in a one-vs-all comparison. For a more comprehensive help menu and tutorials see GitHub Wiki. |
 
 ## Reference documentation
-- [BiG-SCAPE Wiki](./references/github_com_medema-group_BiG-SCAPE_wiki.md)
-- [BiG-SCAPE Main Repository](./references/github_com_medema-group_BiG-SCAPE.md)
+- [BiG-SCAPE Workflows](./references/github_com_medema-group_BiG-SCAPE_wiki_02.-BiG-SCAPE-Workflows.md)
+- [Installing and Running BiG-SCAPE](./references/github_com_medema-group_BiG-SCAPE_wiki_01.-Installing-and-Running-BiG-SCAPE.md)
+- [BiG-SCAPE Parameters](./references/github_com_medema-group_BiG-SCAPE_wiki_13.-parameters.md)

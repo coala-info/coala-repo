@@ -1,6 +1,6 @@
 ---
 name: ivar
-description: iVar analyzes viral genomic data from amplicon-based sequencing to perform primer trimming, variant calling, and consensus sequence generation. Use when user asks to trim primers from alignments, identify SNVs and indels, or generate a consensus genome from viral sequencing data.
+description: iVar is a computational toolkit designed to process viral amplicon sequencing data by trimming primers, calling variants, and generating consensus sequences. Use when user asks to trim primer sequences from alignments, identify intrahost single nucleotide variants, generate a consensus FASTA, or filter variants across multiple replicates.
 homepage: https://andersen-lab.github.io/ivar/html/
 ---
 
@@ -8,53 +8,73 @@ homepage: https://andersen-lab.github.io/ivar/html/
 # ivar
 
 ## Overview
-The `ivar` skill provides procedural knowledge for analyzing viral genomic data, specifically optimized for amplicon-based sequencing (like PrimalSeq). It transforms raw alignments into high-quality variants and consensus genomes by accounting for primer interference and sequencing artifacts common in viral studies.
+iVar is a specialized toolkit designed for the analysis of viral sequencing data, specifically optimized for amplicon-based approaches like PrimalSeq. It provides a streamlined workflow to transform raw alignments into high-quality genomic insights by removing technical artifacts (primers and low-quality bases) and accurately identifying both majority consensus sequences and low-frequency intrahost single nucleotide variants (iSNVs).
 
-## Core Workflows
+## Core Workflows and CLI Patterns
 
 ### 1. Primer Trimming and Quality Filtering
-Use `ivar trim` to remove primer sequences (based on a BED file) and perform quality-based soft-clipping.
-- **Standard Pattern**: `ivar trim -i input.sorted.bam -b primers.bed -p output_prefix -q 20 -m 30`
-- **Key Parameters**:
-    - `-b`: BED file containing primer positions.
-    - `-q`: Minimum quality threshold (sliding window).
-    - `-m`: Minimum length to retain a read after trimming.
-    - `-e`: (Optional) Include reads that do not overlap with any primers.
+iVar trims primers by soft-clipping reads in an aligned BAM file based on coordinates provided in a BED file.
 
-### 2. Variant Calling
-iVar identifies SNVs and indels by processing the output of `samtools mpileup`.
-- **Standard Pattern**: 
-  ```bash
-  samtools mpileup -aa -A -d 0 -B -Q 0 --reference ref.fa input.bam | ivar variants -p output_prefix -r ref.fa -g annotations.gff
-  ```
-- **Best Practices**:
-    - Always use the `-B` flag in `samtools mpileup` to disable BAQ, as iVar handles quality scores internally.
-    - Provide a GFF3 file (`-g`) to enable amino acid translation of identified variants.
-    - Adjust `-t` (frequency threshold, default 0.03) for low-frequency variant detection.
+*   **Basic Trimming:**
+    ```bash
+    ivar trim -i input.bam -b primers.bed -p output_prefix -q 20 -m 30 -s 4
+    ```
+*   **Expert Tip:** Always sort and index your BAM file using `samtools` before running `ivar trim`. If you need to filter by amplicon pairs to ensure reads only come from valid primer sets, use the `-f` flag with a primer pair information file.
+*   **Piping Pattern:** You can pipe directly from an aligner to save disk space:
+    ```bash
+    bwa mem ref.fa r1.fq r2.fq | ivar trim -b primers.bed -p trimmed_output
+    ```
 
-### 3. Consensus Generation
-Generate a consensus sequence from an aligned BAM file.
-- **Standard Pattern**:
-  ```bash
-  samtools mpileup -aa -A -d 0 -B -Q 0 input.bam | ivar consensus -p output_prefix -n N -t 0.5
-  ```
-- **Key Parameters**:
-    - `-t`: Threshold for calling a base (e.g., 0.5 for majority rule).
-    - `-m`: Minimum depth to call a base; positions below this will be filled with the character specified by `-n` (usually 'N').
+### 2. Variant Calling (iSNVs and Indels)
+iVar identifies variants by processing the output of `samtools mpileup`.
 
-### 4. Multi-step Pipeline (One-liner)
-For efficient processing from alignment to consensus:
-```bash
-bwa mem ref.fa R1.fq R2.fq | ivar trim -b primers.bed | samtools sort - | samtools mpileup -aa -A -Q 0 -d 0 - | ivar consensus -p consensus_out
-```
+*   **Standard Variant Call:**
+    ```bash
+    samtools mpileup -aa -A -d 600000 -B -Q 0 --reference ref.fa input.trimmed.bam | ivar variants -p output_prefix -q 20 -t 0.03 -r ref.fa
+    ```
+*   **Critical Requirement:** You must use the `-B` flag in `samtools mpileup` to disable Base Alignment Quality (BAQ) calculation, as BAQ can interfere with iVar's ability to process the reference base quality correctly.
+*   **Translation:** To enable amino acid translation of variants, provide a GFF3 file using the `-g` flag.
 
-## Expert Tips
-- **Sorting Requirement**: Input BAM files for `ivar trim` must be sorted. Use `samtools sort` before trimming.
-- **GFF3 Format**: Ensure GFF files contain "ID" attributes in the attributes column for proper amino acid mapping.
-- **RNA Polymerase Slippage**: For viruses like Ebola, add `EditPosition` and `EditSequence` to the GFF attributes to help iVar maintain the correct open reading frame during translation.
-- **Variant Filtering**: Use `ivar filtervariants` to find the intersection of variants across multiple replicates to reduce false positives.
+### 3. Consensus Sequence Generation
+Generates a consensus FASTA from an aligned BAM.
+
+*   **Command:**
+    ```bash
+    samtools mpileup -aa -A -d 600000 -B -Q 0 input.trimmed.bam | ivar consensus -p consensus_prefix -q 20 -t 0.5 -m 10 -n N
+    ```
+*   **Parameters:**
+    *   `-t`: Threshold for the majority base (e.g., 0.5 for >50%).
+    *   `-m`: Minimum depth required to call a base; otherwise, the character specified by `-n` (usually 'N' or '-') is used.
+
+### 4. Multi-Replicate Filtering
+Filter variants across multiple replicates to increase confidence in low-frequency iSNVs.
+
+*   **Command:**
+    ```bash
+    ivar filtervariants -p filtered_output -t 0.5 rep1.tsv rep2.tsv rep3.tsv
+    ```
+*   **Logic:** The `-t 0.5` flag ensures only variants present in at least 50% of the provided files are retained in the final output.
+
+### 5. Handling Primer Mismatches
+For samples where the virus has mutated at the primer binding site, use `getmasked` and `removereads` to prevent biased frequency calculations.
+
+1.  **Identify masked amplicons:** `ivar getmasked -i input.bam -b primers.bed -f pairs.txt -p masked_primers`
+2.  **Remove affected reads:** `ivar removereads -i input.bam -p filtered_bam -t masked_primers.txt`
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ivar filtervariants | Filters variant TSV files across multiple replicates. |
+| ivar trim | Trim primers and quality from aligned reads in a BAM file. |
+| ivar_consensus | Generates a consensus sequence from pileup data. |
+| ivar_getmasked | This step is used only for amplicon-based sequencing. |
+| ivar_removereads | This step is used only for amplicon-based sequencing. |
+| ivar_variants | Call variants from a mpileup file |
 
 ## Reference documentation
 - [iVar Manual](./references/andersen-lab_github_io_ivar_html_manualpage.html.md)
-- [iVar Cookbook](./references/andersen-lab_github_io_ivar_html_cookbookpage.html.md)
-- [iVar Installation](./references/andersen-lab_github_io_ivar_html_installpage.html.md)
+- [iVar Cookbook and Pipelines](./references/andersen-lab_github_io_ivar_html_cookbookpage.html.md)
+- [iVar Installation and Dependencies](./references/andersen-lab_github_io_ivar_html_installpage.html.md)

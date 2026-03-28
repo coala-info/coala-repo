@@ -1,0 +1,495 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbgruening%2Fgalaxy_ie_helpers%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbgruening%2Fgalaxy_ie_helpers%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=bgruening%2Fgalaxy_ie_helpers)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bgruening](/bgruening)
+/
+**[galaxy\_ie\_helpers](/bgruening/galaxy_ie_helpers)**
+Public
+
+* [Notifications](/login?return_to=%2Fbgruening%2Fgalaxy_ie_helpers) You must be signed in to change notification settings
+* [Fork
+  7](/login?return_to=%2Fbgruening%2Fgalaxy_ie_helpers)
+* [Star
+   0](/login?return_to=%2Fbgruening%2Fgalaxy_ie_helpers)
+
+* [Code](/bgruening/galaxy_ie_helpers)
+* [Issues
+  1](/bgruening/galaxy_ie_helpers/issues)
+* [Pull requests
+  1](/bgruening/galaxy_ie_helpers/pulls)
+* [Actions](/bgruening/galaxy_ie_helpers/actions)
+* [Projects](/bgruening/galaxy_ie_helpers/projects)
+* [Security
+  0](/bgruening/galaxy_ie_helpers/security)
+* [Insights](/bgruening/galaxy_ie_helpers/pulse)
+
+Additional navigation options
+
+* [Code](/bgruening/galaxy_ie_helpers)
+* [Issues](/bgruening/galaxy_ie_helpers/issues)
+* [Pull requests](/bgruening/galaxy_ie_helpers/pulls)
+* [Actions](/bgruening/galaxy_ie_helpers/actions)
+* [Projects](/bgruening/galaxy_ie_helpers/projects)
+* [Security](/bgruening/galaxy_ie_helpers/security)
+* [Insights](/bgruening/galaxy_ie_helpers/pulse)
+
+# Releases: bgruening/galaxy\_ie\_helpers
+
+[Releases](/bgruening/galaxy_ie_helpers/releases)
+[Tags](/bgruening/galaxy_ie_helpers/tags)
+
+Releases · bgruening/galaxy\_ie\_helpers
+
+## v0.2.7
+
+22 Jan 17:14
+
+![@bgruening](https://avatars.githubusercontent.com/u/469983?s=40&v=4)
+[bgruening](/bgruening)
+
+[v0.2.7](/bgruening/galaxy_ie_helpers/tree/v0.2.7)
+
+[`67073b2`](/bgruening/galaxy_ie_helpers/commit/67073b23ed434b21ea07a2b7cb1e92c5f8718f16)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bgruening/galaxy_ie_helpers/tags)
+
+[v0.2.7](/bgruening/galaxy_ie_helpers/releases/tag/v0.2.7)
+
+[Latest](/bgruening/galaxy_ie_helpers/releases/latest)
+
+[Latest](/bgruening/galaxy_ie_helpers/releases/latest)
+
+* combat with bioblend 1.0
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v0.2.6 release
+
+26 Jun 12:59
+
+![@bgruening](https://avatars.githubusercontent.com/u/469983?s=40&v=4)
+[bgruening](/bgruening)
+
+[v0.2.6](/bgruening/galaxy_ie_helpers/tree/v0.2.6)
+
+[`d7b548e`](/bgruening/galaxy_ie_helpers/commit/d7b548ead4a169176448f790834c52205ae4ab3f)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bgruening/galaxy_ie_helpers/tags)
+
+[v0.2.6 release](/bgruening/galaxy_ie_helpers/releases/tag/v0.2.6)
+
+* functionality to return the datatype of an imported file (by [@astrovsky01](https://github.com/astrovsky01))
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v0.2.5
+
+01 Dec 13:13
+
+![@bgruening](https://avatars.githubusercontent.com/u/469983?s=40&v=4)
+[bgruening](/bgruening)
+
+[v0.2.5](/bgruening/galaxy_ie_helpers/tree/v0.2.5)
+
+[`f881ca0`](/bgruening/galaxy_ie_helpers/commit/f881ca0815515a23fc5b42351a85447a4023eade)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bgruening/galaxy_ie_helpers/tags)
+
+[v0.2.5](/bgruening/galaxy_ie_helpers/releases/tag/v0.2.5)
+
+```
+Update setup.py
+```
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## adding regex option
+
+13 Nov 15:49
+
+![@bgruening](https://avatars.githubusercontent.com/u/469983?s=40&v=4)
+[bgruening](/bgruening)
+
+[v0.2.3](/bgruening/galaxy_ie_helpers/tree/v0.2.3)
+
+[`22fe44d`](/bgruening/galaxy_ie_helpers/commit/22fe44d482cda2ad0e1114ab7d6e9a4f58d5695e)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bgruening/galaxy_ie_helpers/tags)
+
+[adding regex option](/bgruening/galaxy_ie_helpers/releases/tag/v0.2.3)
+
+```
+Merge pull request #7 from mtekman/master
+
+Find matching history items in notebooks
+```
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## 2018-10 release
+
+08 Oct 19:51
+
+![@bgruening](https://avatars.githubusercontent.com/u/469983?s=40&v=4)
+[bgruening](/bgruening)
+
+[v0.2.2](/bgruening/galaxy_ie_helpers/tree/v0.2.2)
+
+[`ffd00b1`](/bgruening/galaxy_ie_helpers/commit/ffd00b11added49dd951c9622d98a2855cbe171e)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/bgruening/galaxy_ie_helpers/tags)
+
+[2018-10 release](/bgruening/galaxy_ie_helpers/releases/tag/v0.2.2)
+
+```
+Merge pull request #5 from ValentinChCloud/get_user_history
+
+Get user history
+```
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

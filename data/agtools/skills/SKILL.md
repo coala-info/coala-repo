@@ -1,6 +1,6 @@
 ---
 name: agtools
-description: agtools is a Python framework for manipulating, analyzing, and converting assembly graphs in formats like GFA, FASTG, and ASQG. Use when user asks to convert graph formats, extract specific components, filter segments, clean graphs, or generate graph statistics and adjacency matrices.
+description: agtools is a toolkit for manipulating assembly graph files and performing topological queries for metagenomic analysis. Use when user asks to generate graph metrics, filter segments, clean GFA files against FASTA sequences, rename elements for concatenation, or extract connected components.
 homepage: https://github.com/Vini2/agtools
 ---
 
@@ -8,37 +8,73 @@ homepage: https://github.com/Vini2/agtools
 # agtools
 
 ## Overview
-`agtools` is a Python-based framework specifically built for the manipulation and analysis of assembly graphs, with a primary focus on the Graphical Fragment Assembly (GFA) format. It bridges the gap between different assembly tools by providing conversion utilities and allows researchers to simplify complex graphs through filtering and component extraction. Use this skill to streamline metagenomic workflows, extract specific genomic neighborhoods, or generate adjacency matrices for custom graph theory applications.
 
-## Common CLI Patterns
+agtools is a specialized toolkit designed to bridge the gap between raw assembly graph files and downstream metagenomic analysis. It provides both a Command-Line Interface (CLI) for rapid file manipulation and a Python API for complex topological queries. It is particularly useful for handling Graphical Fragment Assembly (GFA) files, allowing users to "clean" graphs against FASTA sequences, rename elements for concatenation, and identify structural features like circular plasmids or bacteriophage candidates.
 
-### Format Conversion
-Convert various assembly graph formats to GFA or visualization formats:
-- **FASTG to GFA**: `agtools fastg2gfa input.fastg output.gfa`
-- **ASQG to GFA**: `agtools asqg2gfa input.asqg output.gfa`
-- **GFA to GraphViz DOT**: `agtools gfa2dot input.gfa output.dot`
+## CLI Usage and Best Practices
 
-### Graph Manipulation and Extraction
-- **Extract Component**: Isolate a specific connected component containing a target segment:
-  `agtools component --segment <SEGMENT_ID> input.gfa --output component.gfa`
-- **Filter Segments**: Remove specific segments from the graph:
-  `agtools filter --segments <SEG_ID1,SEG_ID2> input.gfa --output filtered.gfa`
-- **Clean Graph**: Synchronize a GFA file with a FASTA file (keeping only segments present in the FASTA):
-  `agtools clean --fasta sequences.fasta input.gfa --output cleaned.gfa`
+The `agtools` CLI is the primary entry point for batch processing and file preparation.
 
-### Analysis and Export
-- **Statistics**: Generate a summary of the graph (nodes, edges, N50, etc.):
-  `agtools stats input.gfa`
-- **Sequence Extraction**: Convert GFA segments back to FASTA format:
-  `agtools gfa2fasta input.gfa output.fasta`
-- **Adjacency Matrix**: Export the graph structure for mathematical analysis:
-  `agtools gfa2adj input.gfa output.csv`
+### Essential Commands
+- **`stats`**: Generates both graph-based (node degree, components) and sequence-based (N50, L50, GC%) metrics.
+- **`filter`**: Removes segments shorter than a specified length (`-l`). Note that this also removes all associated links, paths, and walks to maintain graph integrity.
+- **`clean`**: Synchronizes a GFA file with a FASTA file. It removes segments missing from the FASTA and populates missing sequences in the GFA `S` tags.
+- **`component`**: Extracts only the subgraph connected to a specific segment ID (`-s`).
+- **`rename`**: Prepends a prefix to all segment, path, and walk IDs. **Crucial step** before using `concat` to avoid ID collisions.
 
-## Best Practices
-- **Component Extraction**: When investigating a specific gene or contig of interest, use the `component` command to reduce the graph size to only the relevant neighborhood, making visualization much clearer.
-- **Renaming**: Use `agtools rename` to standardize segment IDs across different assembly versions or tools to maintain consistency in multi-step pipelines.
-- **Graph Cleaning**: Always run `agtools clean` if you have performed external filtering on your contig sequences to ensure the assembly graph accurately reflects the current state of your data.
+### Common Workflow: Preparing Multiple Samples
+When merging graphs from different assembly runs:
+1. Run `agtools rename -g sample1.gfa -p S1 -o ./` for each sample.
+2. Run `agtools concat -g S1_sample1.gfa -g S2_sample2.gfa -o ./merged/`.
+
+## Python API Integration
+
+For advanced analysis, use the `UnitigGraph` and `ContigGraph` classes.
+
+### Loading Graphs
+```python
+from agtools.core.unitig_graph import UnitigGraph
+from agtools.assemblers import spades, megahit, flye
+
+# Standard GFA
+ug = UnitigGraph.from_gfa("assembly.gfa")
+
+# Assembler-specific contig graphs (handles naming nuances)
+cg = spades.get_contig_graph("graph.gfa", "contigs.fasta", "contigs.paths")
+```
+
+### Topological Analysis Patterns
+- **Finding Neighbors**: `ug.get_neighbors("segment_id")` returns adjacent segment names.
+- **Connected Components**: `ug.get_connected_components()` returns lists of internal IDs, useful for binning contigs by connectivity.
+- **Sequence Retrieval**: `ug.get_segment_sequence("name")` uses byte offsets to retrieve DNA without loading the entire graph into memory.
+- **Oriented Graphs**: To perform pathfinding or cycle detection, build a directed graph where each segment has two nodes (`+` and `-`). Use `ug.oriented_links` to populate edges.
+
+## Expert Tips
+- **Memory Efficiency**: agtools uses byte offsets for sequence access. When working with large metagenomes, prefer `get_segment_sequence()` over manual FASTA parsing.
+- **Graph Simplification**: The `ecount` (edge count) in agtools may differ from `lcount` (link lines) because agtools simplifies the graph by removing multiple edges and self-loops for standard graph operations.
+- **Format Conversion**: Use `fastg2gfa` or `asqg2gfa` to standardize inputs before performing analysis, as most `agtools` functions are optimized for GFA1.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| asqg2gfa | Convert ASQG file to GFA format |
+| clean | Clean a GFA file based on segments in a FASTA file |
+| component | Extract a component containing a given segment |
+| concat | Concatenate two or more GFA files |
+| fastg2gfa | Convert FASTG file to GFA format |
+| filter | Filter segments from GFA file |
+| gfa2adj | Get adjacency matrix of the assembly graph |
+| gfa2dot | Convert GFA file to DOT format (GraphViz) |
+| gfa2fasta | Get segments in FASTA format |
+| rename | Rename segments, paths and walks in a GFA file |
+| stats | Compute statistics about the graph |
 
 ## Reference documentation
-- [agtools GitHub Repository](./references/github_com_Vini2_agtools.md)
-- [agtools Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_agtools_overview.md)
+- [agtools CLI Reference](./references/agtools_readthedocs_io_en_latest_cli.md)
+- [agtools API Documentation](./references/agtools_readthedocs_io_en_latest_api.md)
+- [Assembler-specific Examples](./references/agtools_readthedocs_io_en_latest_assemblerexamples.md)
+- [Example Applications (Binning, Plasmids, Phages)](./references/agtools_readthedocs_io_en_latest_exampleapplications.md)
+- [File Formats (GFA, FASTG, ASQG, DOT)](./references/agtools_readthedocs_io_en_latest_fileformats.md)

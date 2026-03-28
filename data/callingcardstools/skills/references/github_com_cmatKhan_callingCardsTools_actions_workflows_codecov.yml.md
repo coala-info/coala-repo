@@ -1,0 +1,428 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FcmatKhan%2FcallingCardsTools%2Factions%2Fworkflows%2Fcodecov.yml)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FcmatKhan%2FcallingCardsTools%2Factions%2Fworkflows%2Fcodecov.yml)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=cmatKhan%2FcallingCardsTools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[cmatKhan](/cmatKhan)
+/
+**[callingCardsTools](/cmatKhan/callingCardsTools)**
+Public
+
+* [Notifications](/login?return_to=%2FcmatKhan%2FcallingCardsTools) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2FcmatKhan%2FcallingCardsTools)
+* [Star
+   0](/login?return_to=%2FcmatKhan%2FcallingCardsTools)
+
+* [Code](/cmatKhan/callingCardsTools)
+* [Issues
+  8](/cmatKhan/callingCardsTools/issues)
+* [Pull requests
+  0](/cmatKhan/callingCardsTools/pulls)
+* [Actions](/cmatKhan/callingCardsTools/actions)
+* [Projects](/cmatKhan/callingCardsTools/projects)
+* [Security
+  0](/cmatKhan/callingCardsTools/security)
+* [Insights](/cmatKhan/callingCardsTools/pulse)
+
+Additional navigation options
+
+* [Code](/cmatKhan/callingCardsTools)
+* [Issues](/cmatKhan/callingCardsTools/issues)
+* [Pull requests](/cmatKhan/callingCardsTools/pulls)
+* [Actions](/cmatKhan/callingCardsTools/actions)
+* [Projects](/cmatKhan/callingCardsTools/projects)
+* [Security](/cmatKhan/callingCardsTools/security)
+* [Insights](/cmatKhan/callingCardsTools/pulse)
+
+# Actions: cmatKhan/callingCardsTools
+
+## Actions
+
+## callingCardsTools Test Coverage callingCardsTools Test Coverage Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Show workflow options
+
+* Create status badge
+
+# Create status badge
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[codecov.yml](/cmatKhan/callingCardsTools/blob/main/.github/workflows/codecov.yml)
+
+will be ignored since log searching is not yet available
+
+**9 workflow runs**
+
+**9 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Merge pull request #18 from cmatKhan/v1.8.1](/cmatKhan/callingCardsTools/actions/runs/13730848841)
+
+callingCardsTools Test Coverage
+#138:
+Commit [033b541](/cmatKhan/callingCardsTools/commit/033b541d65b78429733aad2ec71c7af323e9bcb5)
+pushed
+by
+[cmatKhan](/cmatKhan)
+
+1m 13s
+[v1.8.1](/cmatKhan/callingCardsTools/tree/refs/tags/v1.8.1 "v1.8.1")
+
+[v1.8.1](/cmatKhan/callingCardsTools/tree/refs/tags/v1.8.1 "v1.8.1")
+
+1m 13s
+
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730848841/workflow)
+
+[Merge pull request #18 from cmatKhan/v1.8.1](/cmatKhan/callingCardsTools/actions/runs/13730837171)
+
+callingCardsTools Test Coverage
+#137:
+Commit [033b541](/cmatKhan/callingCardsTools/commit/033b541d65b78429733aad2ec71c7af323e9bcb5)
+pushed
+by
+[cmatKhan](/cmatKhan)
+
+1m 11s
+[main](/cmatKhan/callingCardsTools/tree/refs/heads/main "main")
+
+[main](/cmatKhan/callingCardsTools/tree/refs/heads/main "main")
+
+1m 11s
+
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730837171/workflow)
+
+[V1.8.1](/cmatKhan/callingCardsTools/actions/runs/13730835686)
+
+callingCardsTools Test Coverage
+#136:
+Pull request [#18](/cmatKhan/callingCardsTools/pull/18)
+opened
+by
+[cmatKhan](/cmatKhan)
+
+1m 10s
+[v1.8.1](/cmatKhan/callingCardsTools/tree/refs/heads/v1.8.1 "v1.8.1")
+
+[v1.8.1](/cmatKhan/callingCardsTools/tree/refs/heads/v1.8.1 "v1.8.1")
+
+1m 10s
+
+* [View #18](/cmatKhan/callingCardsTools/pull/18)
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730835686/workflow)
+
+[update changelog](/cmatKhan/callingCardsTools/actions/runs/13730830803)
+
+callingCardsTools Test Coverage
+#135:
+Commit [d798381](/cmatKhan/callingCardsTools/commit/d79838153426bc8c97841a5604175a0446e9f2c5)
+pushed
+by
+[cmatKhan](/cmatKhan)
+
+1m 9s
+[v1.8.1](/cmatKhan/callingCardsTools/tree/refs/heads/v1.8.1 "v1.8.1")
+
+[v1.8.1](/cmatKhan/callingCardsTools/tree/refs/heads/v1.8.1 "v1.8.1")
+
+1m 9s
+
+* [View #18](/cmatKhan/callingCardsTools/pull/18)
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730830803/workflow)
+
+[Merge pull request #17 from cmatKhan/fix\_poisson\_pval](/cmatKhan/callingCardsTools/actions/runs/13730795385)
+
+callingCardsTools Test Coverage
+#134:
+Commit [f542165](/cmatKhan/callingCardsTools/commit/f542165c480b117617f83e0f25eacc882c5a1923)
+pushed
+by
+[cmatKhan](/cmatKhan)
+
+1m 11s
+[main](/cmatKhan/callingCardsTools/tree/refs/heads/main "main")
+
+[main](/cmatKhan/callingCardsTools/tree/refs/heads/main "main")
+
+1m 11s
+
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730795385/workflow)
+
+[fix error in poisson pvalue calculation](/cmatKhan/callingCardsTools/actions/runs/13730338704)
+
+callingCardsTools Test Coverage
+#133:
+Pull request [#17](/cmatKhan/callingCardsTools/pull/17)
+synchronize
+by
+[cmatKhan](/cmatKhan)
+
+1m 9s
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+1m 9s
+
+* [View #17](/cmatKhan/callingCardsTools/pull/17)
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730338704/workflow)
+
+[updating tests](/cmatKhan/callingCardsTools/actions/runs/13730338360)
+
+callingCardsTools Test Coverage
+#132:
+Commit [d288e56](/cmatKhan/callingCardsTools/commit/d288e56d15c0aefb006381da1ef8b21ca207f305)
+pushed
+by
+[cmatKhan](/cmatKhan)
+
+1m 11s
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+1m 11s
+
+* [View #17](/cmatKhan/callingCardsTools/pull/17)
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13730338360/workflow)
+
+[fix error in poisson pvalue calculation](/cmatKhan/callingCardsTools/actions/runs/13728294221)
+
+callingCardsTools Test Coverage
+#131:
+Pull request [#17](/cmatKhan/callingCardsTools/pull/17)
+opened
+by
+[cmatKhan](/cmatKhan)
+
+1m 12s
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+1m 12s
+
+* [View #17](/cmatKhan/callingCardsTools/pull/17)
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13728294221/workflow)
+
+[fix error in poisson pvalue calculation](/cmatKhan/callingCardsTools/actions/runs/13728292003)
+
+callingCardsTools Test Coverage
+#130:
+Commit [4e02539](/cmatKhan/callingCardsTools/commit/4e0253913fb88ad481cb98390cb29379d224453c)
+pushed
+by
+[cmatKhan](/cmatKhan)
+
+1m 11s
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+[fix\_poisson\_pval](/cmatKhan/callingCardsTools/tree/refs/heads/fix_poisson_pval "fix_poisson_pval")
+
+1m 11s
+
+* [View workflow file](/cmatKhan/callingCardsTools/actions/runs/13728292003/workflow)
+
+You can’t perform that action at this time.

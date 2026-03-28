@@ -1,64 +1,54 @@
 ---
 name: rdp-readseq
-description: "This tool converts sequence data between various bioinformatics formats. Use when user asks to convert sequence files between formats like FASTA, PHYLIP, or NEXUS."
+description: rdp-readseq converts and manipulates ribosomal RNA sequence data between various bioinformatics formats. Use when user asks to convert sequence formats, resample sequence files, reverse complement DNA, remove redundant sequences, split files, or select sequences by ID.
 homepage: https://anaconda.org/channels/bioconda/packages/rdp-readseq/overview
 ---
 
 
 # rdp-readseq
 
-rdp-readseq/SKILL.md
-```yaml
-name: rdp-readseq
-description: |
-  A tool for reading and processing sequence data, particularly for phylogenetic analysis.
-  Use when Claude needs to perform tasks related to sequence alignment, manipulation, or preparation for phylogenetic inference, especially when working with data formats commonly used in bioinformatics.
-  This skill is specifically for the `rdp-readseq` command-line tool.
-```
 ## Overview
-The `rdp-readseq` tool is designed for reading and processing sequence data, commonly used in bioinformatics for tasks such as sequence alignment and preparation for phylogenetic analysis. It handles various sequence formats and can be used to manipulate sequence data for downstream analyses.
+The `rdp-readseq` tool is a specialized utility for bioinformaticians working with microbial sequence data. It bridges the gap between the Ribosomal Database Project's specific data structures and common sequence analysis formats. Use this skill to automate the conversion of large rRNA datasets, ensuring that metadata and sequence integrity are preserved during format transitions.
 
-## Usage Instructions
+## Command Line Usage
+The tool typically operates as a Java-based utility. The primary syntax follows this pattern:
 
-`rdp-readseq` is a command-line utility. The primary function is to convert sequence data between different formats.
+`java -jar readseq.jar [options] [input-file]`
 
-### Basic Usage: Format Conversion
+### Common Conversion Patterns
+*   **FASTA Conversion**: To convert an RDP-formatted file to FASTA (the most common requirement for BLAST or alignment tools):
+    `rdp-readseq -f8 input_file > output.fasta`
+*   **Format Identification**: To check the format of an unknown sequence file:
+    `rdp-readseq -i input_file`
+*   **Multiple Sequences**: The tool can process files containing multiple entries, outputting them as a concatenated stream in the target format.
 
-The most common use case is converting a sequence file from one format to another.
+### Format Flags
+Use these flags with the `-f` option to specify output formats:
+*   `-f1`: IG/Stanford
+*   `-f2`: GenBank
+*   `-f3`: EMBL
+*   `-f8`: FASTA
+*   `-f12`: Phylip
 
-**Syntax:**
+## Expert Tips
+*   **Piping**: `rdp-readseq` supports standard streams. You can pipe the output directly into alignment tools like `mafft` or `clustalo` to save disk space and time.
+*   **Memory Management**: For very large RDP database files, increase the Java heap size using `-Xmx` (e.g., `java -Xmx2g -jar readseq.jar ...`).
+*   **Header Preservation**: When converting to FASTA, RDP-specific identifiers are often truncated or modified. Always verify that your downstream tools can parse the resulting headers, especially if they contain taxonomic information.
 
-```bash
-rdp-readseq -fmt <output_format> -i <input_file> -o <output_file>
-```
 
-**Key Options:**
 
-*   `-fmt <output_format>`: Specifies the desired output format. Common formats include:
-    *   `fasta`
-    *   `phylip`
-    *   `nexus`
-    *   `clustal`
-    *   `msf` (Multiple Sequence Format)
-*   `-i <input_file>`: The path to the input sequence file.
-*   `-o <output_file>`: The path where the converted output file will be saved.
+## Subcommands
 
-**Example:** Convert a FASTA file to PHYLIP format.
-
-```bash
-rdp-readseq -fmt phylip -i input.fasta -o output.phylip
-```
-
-### Handling Input Files
-
-*   `rdp-readseq` can typically infer the input format from the file extension, but it's good practice to be explicit if there are ambiguities.
-*   Ensure your input file is correctly formatted according to its declared type.
-
-### Expert Tips
-
-*   **Batch Processing:** For converting multiple files, consider using shell scripting (e.g., a `for` loop in Bash) to iterate through your input files and apply `rdp-readseq` to each.
-*   **Format Compatibility:** Always verify the output format requirements of the downstream software you intend to use. `rdp-readseq` supports many common formats, but subtle differences can exist.
-*   **Error Handling:** If `rdp-readseq` encounters an error, it will usually print a message to standard error. Check these messages carefully for clues about malformed input or incorrect options.
+| Command | Description |
+|---------|-------------|
+| ResampleSeqFile | ResampleSeqFile |
+| RevComplement | Reverse complement a DNA sequence |
+| RmRedundantSeqs | Remove redundant sequences from a FASTA file. |
+| SeqFileSplitter | Splits a sequence file into smaller files. |
+| SequenceSelector | Selects sequences from input files based on a list of IDs. |
+| rdp-readseq_to-fastq | Converts sequence files to FASTQ format. |
+| to-fasta | Converts RDP readseq format to FASTA format. |
+| to-stk | Converts a readseq file to a Stockholm format file. |
 
 ## Reference documentation
-- [rdp-readseq Overview](./references/anaconda_org_channels_bioconda_packages_rdp-readseq_overview.md)
+- [Bioconda rdp-readseq Overview](./references/anaconda_org_channels_bioconda_packages_rdp-readseq_overview.md)

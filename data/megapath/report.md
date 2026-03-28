@@ -94,3 +94,6 @@ Note: To use BWA, you need to first index the genome with `bwa index'.
       first. Please `man ./bwa.1' for the manual.
 ```
 
+
+## Metadata
+- **Skill**: generated

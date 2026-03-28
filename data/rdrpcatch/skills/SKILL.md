@@ -1,6 +1,6 @@
 ---
 name: rdrpcatch
-description: RdRpCATCH is a bioinformatic pipeline designed to discover and annotate RNA viruses by searching sequences against consolidated RNA-dependent RNA polymerase profile HMM databases. Use when user asks to identify divergent viral sequences in metagenomic datasets, scan nucleotide or protein sequences for RdRp motifs, or perform taxonomic classification of RNA viruses.
+description: RdRpCATCH is a bioinformatic pipeline designed to discover and characterize RNA viruses by searching sequences against multiple profile Hidden Markov Model databases. Use when user asks to identify divergent viral sequences, scan metatranscriptomic data for RdRp signatures, or perform taxonomic assignment of viral hits.
 homepage: https://github.com/dimitris-karapliafis/RdRpCATCH
 ---
 
@@ -9,60 +9,87 @@ homepage: https://github.com/dimitris-karapliafis/RdRpCATCH
 
 ## Overview
 
-RdRpCATCH (RNA-dependent RNA polymerase Collaborative Analysis Tool with Collections of pHMMs) is a specialized bioinformatic pipeline for the discovery and annotation of RNA viruses. It consolidates multiple publicly available RdRp profile HMM (pHMM) databases into a single workflow, using pyHMMER3 for sequence searching and MMseqs2 for taxonomic classification against a custom Riboviria database. It is particularly effective for identifying divergent viral sequences in metagenomic or metatranscriptomic datasets by reporting the best hit across all included databases based on bitscore.
+RdRpCATCH (RNA-dependent RNA polymerase Collaborative Analysis Tool with Collections of pHMMs) is a specialized bioinformatic pipeline designed for the discovery and characterization of RNA viruses. It streamlines the process of searching sequences against an aggregate of major public pHMM databases (such as NeoRdRp, RVMT, and RdRp-Scan). 
 
-## Database Management
+The tool is particularly useful for researchers working with metatranscriptomic data who need to identify highly divergent viral sequences that might be missed by standard BLAST searches. It provides a unified output containing the best hits across all databases, taxonomic assignments via MMseqs2, and profile coverage information.
 
-Before running scans, you must download the required pHMM databases. These files are large (~3 GB).
+## Installation and Setup
 
-```bash
-# Download and initialize databases
-rdrpcatch databases --destination-dir /path/to/database_folder
-```
-
-If the automated download fails due to SSL issues, manually download the pre-compiled databases from Zenodo (10.5281/zenodo.15463729) and extract them.
-
-## Common CLI Patterns
-
-### Basic Sequence Scanning
-The tool accepts both nucleotide (nt) and protein (aa) sequences in multi-fasta format.
+RdRpCATCH is available via Bioconda. It requires Python 3.12+ and external dependencies `mmseqs2` and `seqkit`.
 
 ```bash
-# Scan protein sequences
-rdrpcatch scan -i input.faa -o results_dir -db-dir /path/to/database_folder --seq-type aa
-
-# Scan nucleotide sequences
-rdrpcatch scan -i input.fna -o results_dir -db-dir /path/to/database_folder --seq-type nt
+# Recommended installation via Conda
+conda create -n rdrpcatch -c bioconda rdrpcatch
+conda activate rdrpcatch
 ```
 
-### Selecting Specific Databases
-You can limit the search to specific pHMM collections using the `--db-options` flag. Supported databases include: `NeoRdRp`, `NeoRdRp2`, `RVMT`, `RdRp-Scan`, `TSA_Olendraite_fam`, `TSA_Olendraite_gen`, `LucaProt_HMM`, and `Zayed_HMM`.
+### Database Initialization
+Before scanning, you must download the pre-compiled pHMM and taxonomy databases. These are approximately 3GB.
 
 ```bash
-# Search only against NeoRdRp2 and RVMT
-rdrpcatch scan -i input.faa -o results_dir -db-dir /path/to/db --db-options NeoRdRp2 RVMT
+rdrpcatch databases --destination-dir path/to/db_folder
+```
+*Note: If you encounter sporadic SSL errors during download, re-initiating the command usually resolves the issue.*
+
+## Core CLI Usage
+
+### Basic Scanning
+The `scan` command is the primary entry point for analysis. It accepts both nucleotide (nt) and amino acid (aa) sequences in multi-FASTA format.
+
+```bash
+rdrpcatch scan -i input.fasta -o output_dir -db-dir path/to/db_folder
 ```
 
-### Using Custom pHMMs
-To include your own pHMM files in the analysis:
+### Database Selection
+By default, RdRpCATCH searches all supported databases. You can limit the search to specific collections using `--db-options`.
 
-1. Add the custom database to the RdRpCATCH environment:
+**Supported Database Keys:**
+- `NeoRdRp` / `NeoRdRp2`
+- `RVMT`
+- `RdRp-Scan`
+- `Olendraite_fam` / `Olendraite_gen`
+- `LucaProt_HMM`
+- `Zayed_HMM`
+
+```bash
+# Example: Search only NeoRdRp2 and RVMT
+rdrpcatch scan -i input.fasta -o out -db-dir db/ --db-options NeoRdRp2 RVMT
+```
+
+### Working with Custom Databases
+You can integrate your own pHMMs into the workflow.
+
+1. **Add the database:**
    ```bash
-   rdrpcatch databases --add-custom-db /path/to/my_models.hmm --db-name my_custom_db
+   rdrpcatch databases --add-custom-db path/to/my_models.hmm --db-name MyCustomDB
    ```
-2. Run the scan including the custom database:
+2. **Search only custom models:**
    ```bash
-   rdrpcatch scan -i input.faa -o results_dir -db-dir /path/to/db --custom-dbs my_custom_db
+   rdrpcatch scan -i input.fasta -o out -db-dir db/ --db-options none --custom-dbs MyCustomDB
    ```
 
 ## Expert Tips and Best Practices
 
-*   **Default HMMER Thresholds**: Use the `--default-hmmsearch-params` flag to override tool-specific heuristics and use standard HMMER thresholds (E=10.0, domE=10.0). This is useful for highly sensitive searches for extremely divergent viruses.
-*   **Extended Output**: Use the `--extended-output` flag to retain additional HMM score columns in the final results, which is helpful for manual validation of borderline hits.
-*   **Taxonomy Overrides**: If you have a specific MMseqs2 taxonomy database you prefer, use `--alt-mmseqs-tax-db` to point to the path of your pressed MMseqs2 database.
-*   **Sequence Type**: While the tool can attempt to auto-detect sequence type, explicitly setting `--seq-type` (aa or nt) prevents errors in ambiguous metagenomic assemblies.
-*   **Bitscore Priority**: RdRpCATCH identifies the "best hit" by comparing bitscores across all selected databases. If a sequence matches multiple profiles, the output will prioritize the one with the highest statistical support.
+### Sensitivity and Thresholds
+- **Default HMMER Params:** Use the `--default-hmmsearch-params` flag to override tool-specific heuristics and use standard HMMER thresholds (E=10.0, domE=10.0). This is useful for maximum sensitivity when looking for extremely divergent viruses.
+- **Z-Value:** Use `--zvalue` to manually set the search space size for E-value calculations if you are comparing results across different dataset sizes.
+
+### Output Optimization
+- **Extended Output:** Always use the `--extended-output` flag if you plan to perform downstream statistical filtering, as it preserves additional HMM score columns that are otherwise truncated.
+- **Taxonomy:** If you have a specific local taxonomy database, use `--alt-mmseqs-tax-db` to point to a custom MMseqs2-formatted database instead of the default RefSeq Riboviria set.
+
+### Performance
+- RdRpCATCH uses `pyHMMER`, which is significantly faster than standard HMMER3. However, for very large metatranscriptomes, ensure you have sufficient RAM (at least 8GB-16GB) to load the larger pHMM collections like NeoRdRp2.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rdrpcatch databases | Download & update RdRpCATCH databases. If databases are already installed in the specified directory, it will check for updates and download the latest version if available. |
+| rdrpcatch_scan | Scan sequences for RdRps. |
 
 ## Reference documentation
-- [RdRpCATCH GitHub Repository](./references/github_com_dimitris-karapliafis_RdRpCATCH.md)
-- [Bioconda rdrpcatch Overview](./references/anaconda_org_channels_bioconda_packages_rdrpcatch_overview.md)
+- [RdRpCATCH README](./references/github_com_dimitris-karapliafis_RdRpCATCH_blob_main_README.md)
+- [Bioconda Package Metadata](./references/github_com_dimitris-karapliafis_RdRpCATCH_blob_main_meta.yaml.md)

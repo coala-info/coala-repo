@@ -44,3 +44,6 @@ Try 'epicore --help' for help.
 Error: Missing option '--reference_proteome'.
 ```
 
+
+## Metadata
+- **Skill**: generated

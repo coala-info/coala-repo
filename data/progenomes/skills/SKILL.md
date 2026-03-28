@@ -1,6 +1,6 @@
 ---
 name: progenomes
-description: The progenomes tool programmatically fetches genomic assemblies, functional annotations, and metadata from the proGenomes database. Use when user asks to download bacterial or archaeal genomes, fetch functional annotations, or inspect genomic metadata.
+description: The progenomes tool enables researchers to access, download, and inspect high-quality annotated prokaryotic genomes from the proGenomes dataset. Use when user asks to download genomic datasets, view proGenomes database content, or retrieve prokaryotic metadata for bioinformatics pipelines.
 homepage: https://github.com/BigDataBiology/progenomes-cli
 ---
 
@@ -8,55 +8,62 @@ homepage: https://github.com/BigDataBiology/progenomes-cli
 # progenomes
 
 ## Overview
-
-The `progenomes` command-line tool provides a streamlined interface for interacting with the proGenomes database, which contains over 2 million accurately annotated bacterial and archaeal genomes. It allows researchers to bypass manual web downloads by programmatically fetching genomic assemblies and functional annotations directly to a local environment.
+The `progenomes` CLI is a specialized tool designed for researchers to access and explore the proGenomes dataset, which contains over 2 million accurately and consistently annotated high-quality prokaryotic genomes. It simplifies the process of retrieving genomic data and performing initial inspections of the downloaded files, serving as a bridge between the proGenomes web database and local bioinformatics pipelines.
 
 ## Installation
-
-The tool can be installed via pip or conda:
+The tool is available via Python's package manager or Conda.
 
 ```bash
-# Using pip
+# Via pip
 pip install progenomes
 
-# Using conda (bioconda channel)
+# Via bioconda
 conda install -c bioconda progenomes
 ```
 
-## Core Commands
+## Command Usage and Best Practices
 
-The CLI is structured around two primary subcommands: `download` and `view`.
+### Downloading Data
+The `download` subcommand is the primary way to retrieve genomic information. 
 
-### Downloading Genome Data
-Use the `download` command to fetch specific datasets. This is the primary method for localizing proGenomes data.
-
-```bash
-progenomes download [options]
-```
-
-*   **Tip**: Ensure you are using version 0.3.0 or later, as this version updated server locations following a post-publication change.
-*   **Context**: The tool supports specific habitat mappings (e.g., soil) and taxonomic groupings.
+- **Update Check**: Ensure you are using version 0.3.0 or later, as server locations for the proGenomes dataset changed after the initial paper publication.
+- **Command Pattern**:
+  ```bash
+  progenomes download [options]
+  ```
+- **Tip**: Always check the specific dataset version or habitat mapping you require (e.g., soil, human gut) if the CLI supports filtering by environment.
 
 ### Inspecting Data
-Use the `view` command to inspect metadata or verify the contents of downloaded datasets.
+Once data is retrieved, use the `view` subcommand to verify the integrity and content of the files.
 
+- **Command Pattern**:
+  ```bash
+  progenomes view [options]
+  ```
+- **Data Handling**: The tool utilizes `polars` and `pyarrow` internally, making it efficient at handling large-scale genomic metadata. If you are processing the output further in Python, these formats are preferred for performance.
+
+### Getting Help
+To see all available flags for specific subcommands (such as filtering by taxonomic ID or quality scores):
 ```bash
-progenomes view [options]
+progenomes --help
+progenomes download --help
+progenomes view --help
 ```
 
-*   **Known Issue**: Be aware that `progenomes view functional-annotations` has been reported to fail in some environments; verify your local installation if this specific feature is required.
+## Expert Tips
+- **Citation**: If using data retrieved via this tool for publication, cite the proGenomes4 paper (Fullam et al., 2025, Nucleic Acids Research).
+- **Environment Management**: Since the tool depends on specific versions of data-science libraries like `pandas` and `polars`, it is best practice to install it within a dedicated virtual environment or Conda environment to avoid dependency conflicts with other bioinformatics tools.
 
-## Best Practices
 
-1.  **Help Discovery**: The CLI is self-documenting. Use the `--help` flag at both the global and subcommand levels to see available filters and arguments.
-    ```bash
-    progenomes --help
-    progenomes download --help
-    ```
-2.  **Version Management**: Because the proGenomes database is frequently updated and server locations may change, always verify your version with `pip show progenomes` or `conda list progenomes`.
-3.  **Citation**: If using data retrieved via this tool for publication, cite the proGenomes4 paper (Fullam et al., 2025, Nucleic Acids Research).
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| progenomes_download | Download datasets from Progenomes |
+| view | View datasets within the Progenomes database. |
 
 ## Reference documentation
-
-- [proGenomes-cli GitHub Repository](./references/github_com_BigDataBiology_progenomes-cli.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_progenomes_overview.md)
+- [proGenomes-cli README](./references/github_com_BigDataBiology_progenomes-cli_blob_main_README.md)
+- [proGenomes-cli ChangeLog](./references/github_com_BigDataBiology_progenomes-cli_blob_main_ChangeLog.md)
+- [proGenomes-cli pyproject.toml](./references/github_com_BigDataBiology_progenomes-cli_blob_main_pyproject.toml.md)

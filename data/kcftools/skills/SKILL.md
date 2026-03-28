@@ -1,6 +1,6 @@
 ---
 name: kcftools
-description: kcftools is a Java-based suite for rapid genomic variation analysis that identifies gaps and hits by comparing k-mer counts against a reference genome without traditional alignment. Use when user asks to detect genomic variations, perform introgression screening, identify identity-by-state regions, or generate genotype tables from k-mer databases.
+description: kcftools identifies genomic variations by analyzing k-mer presence or absence between a reference genome and query samples. Use when user asks to detect variants using k-mers, merge sample data into cohorts, or convert k-mer identity scores into genotype and PLINK formats.
 homepage: https://github.com/sivasubramanics/kcftools
 ---
 
@@ -8,68 +8,82 @@ homepage: https://github.com/sivasubramanics/kcftools
 # kcftools
 
 ## Overview
-kcftools is a Java-based suite designed for rapid genomic variation analysis without the need for traditional sequence alignment. By comparing k-mer counts from a query sample (stored in KMC databases) against a reference genome, it identifies gaps and hits to calculate identity scores. This approach is highly effective for population genetics, introgression screening, and GWAS, providing a faster alternative to BWA/SAMtools workflows for specific comparative tasks.
 
-## Core Workflow
+kcftools is a Java-based toolset designed to identify genomic variations by analyzing the presence or absence of k-mers between a reference genome and query samples. By leveraging fast k-mer counting databases (KMC3), it calculates identity scores based on k-mer ratios and gap distances (inner and tail distances). This approach is particularly useful for large-scale comparative genomics, population genetics, and identifying regions of high similarity or divergence across cohorts.
 
-### 1. Prepare the KMC Database
-Before using kcftools, you must generate a k-mer database using KMC3. 
-**Critical Requirement**: You must use the `-p 9` (signature length) flag for compatibility.
+## Core Workflows and CLI Patterns
 
-```bash
-# For FASTA files
-kmc -k31 -m4 -t2 -ci0 -p9 -fm <input_fasta> <output_prefix> tmp/
-
-# For FASTQ files
-kmc -k31 -m4 -t2 -ci0 -p9 -fq <input_fastq> <output_prefix> tmp/
-```
-
-### 2. Detect Variations
-The `getVariations` command is the primary tool for comparing a sample against the reference.
+### 1. Variant Detection (getVariations)
+The primary entry point for analyzing a single sample against a reference. It splits the reference into windows (fixed-length or feature-based) and screens them against a KMC database.
 
 ```bash
-kcftools getVariations \
-  --reference <ref.fasta> \
-  --kmc <kmc_db_prefix> \
-  --sample <sample_name> \
-  --feature window \
-  --window 1000 \
-  --output <sample.kcf>
+# Basic usage with fixed windows
+kcftools getVariations -r reference.fasta -i query_kmc_db -w 100 -o sample.kcf
+
+# Using a GTF file for feature-based windows (genes/transcripts)
+kcftools getVariations -r reference.fasta -i query_kmc_db -g features.gtf -o sample_features.kcf
 ```
 
-*   **Feature Types**: `window` (fixed-length), `gene`, or `transcript` (requires `--gtf`).
-*   **Weights**: You can adjust the identity score calculation using `--wi` (inner distance), `--wt` (tail distance), and `--wr` (k-mer ratio).
+**Expert Tips:**
+* **KMC Compatibility**: Ensure your KMC database was built with KMC version 3.0.0 or higher.
+* **Sliding Windows**: Use the sliding window option added in v0.3.0 for higher resolution analysis of transition boundaries.
+* **Weights**: You can adjust the identity score calculation by tuning weights for k-mer ratio ($W_o$), inner distance ($W_i$), and tail distance ($W_t$).
 
-### 3. Cohort Analysis
-To analyze multiple samples together, merge individual `.kcf` files into a single cohort.
+### 2. Cohort Management
+Once individual `.kcf` files are generated, they can be merged into a single matrix for population-level analysis.
 
 ```bash
-kcftools cohort -i <sample1.kcf> <sample2.kcf> -o <combined.kcf>
+# Merge multiple sample KCF files into a cohort
+kcftools cohort -i sample1.kcf sample2.kcf sample3.kcf -o population.kcf
 ```
 
-### 4. Downstream Processing
-*   **Identify IBS Regions**: Use `findIBS` to find Identity-by-State windows across the cohort.
-*   **Export to TSV**: Use `kcf2tsv` for general data inspection or compatibility with IBSpy-like workflows.
-*   **Genotype Generation**: Use `kcf2gt` to convert k-mer variation data into a population-level genotype table.
+### 3. Downstream Analysis and Conversion
+kcftools provides several utilities to format data for external tools like Tassel, GAPIT, or PLINK.
 
-## Performance and Memory Management
-kcftools is memory-intensive when loading large KMC databases.
+* **Genotype Table**: Convert KCF data to a genotype matrix.
+  ```bash
+  kcftools kcf2gt -i population.kcf -o genotype_table.txt
+  ```
+* **PLINK Format**: Export to PED/MAP format for association studies.
+  ```bash
+  kcftools kcf2plink -i population.kcf -o study_prefix
+  ```
+* **TSV Export**: Replicate IBSpy-like output for manual inspection or R/Python analysis.
+  ```bash
+  kcftools kcf2tsv -i sample.kcf -o sample.tsv
+  ```
 
-*   **JVM Heap**: Always specify the maximum heap size to avoid `OutOfMemoryError`.
-    ```bash
-    export KCFTOOLS_HEAP_SIZE=16G
-    # OR
-    java -Xmx16G -jar kcftools.jar <command>
-    ```
-*   **In-Memory Mode**: Use the `--memory` or `-m` flag in `getVariations` to load the entire KMC DB into RAM for significantly faster processing, provided you have sufficient heap space.
-*   **Parallelization**: Use the `--threads` or `-t` option to speed up k-mer screening.
+### 4. Refinement and Statistics
+* **scoreRecalc**: If you decide to change the importance of k-mer counts vs. gap distances after the initial run, use `scoreRecalc` to update the identity scores without re-running the k-mer screening.
+* **getAttributes**: Use this to generate summary statistics and metadata about the KCF files.
+* **increaseWindow**: Compose larger genomic windows from fine-grained KCF data (e.g., moving from 100bp windows to 1kb windows).
 
-## Best Practices
-*   **KMC Version**: Ensure KMC version 3.0.0 or higher is used.
-*   **Signature Length**: Double-check that KMC was run with `-p 9`. Other signature lengths will cause kcftools to fail or produce incorrect results.
-*   **Feature Selection**: Use `window` for discovery of unknown introgressions and `gene`/`transcript` (with a GTF) when looking for presence/absence variations in specific coding sequences.
-*   **Sample Names**: Avoid special characters in sample names to prevent parsing issues in downstream cohort files.
+## Identity Score Formula
+The tool calculates similarity using:
+$Identity Score = W_o \cdot (\frac{obs}{total}) + W_i \cdot (1 - \frac{inner}{eff}) + W_t \cdot (1 - \frac{tail}{eff}) \cdot 100$
+
+Where:
+* **obs/total**: Ratio of reference k-mers found in the query.
+* **inner dist**: Bases not covered by k-mers between hits.
+* **tail dist**: Uncovered bases at window edges.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| kcf2gt | Convert KCF to Genotype Table |
+| kcf2plink | Convert KCF windows to PED format |
+| kcftools getVariations | Screen for reference kmers that are not present in the KMC database, and detect variation |
+| kcftools kcf2tsv | Convert KCF file to TSV file (IBSpy like) |
+| kcftools_cohort | Create a cohort of samples kcf files |
+| kcftools_findIBS | Find IBS windows in a KCF file |
+| kcftools_getAttributes | Extract attributes from KCF files |
+| kcftools_increaseWindow | Increase the window size of a KCF file by merging windows |
+| kcftools_scoreRecalc | Recalculate scores in a KCF file |
+| kcftools_splitKCF | Split KCF file for each chromosome |
 
 ## Reference documentation
-- [github_com_sivasubramanics_kcftools.md](./references/github_com_sivasubramanics_kcftools.md)
-- [anaconda_org_channels_bioconda_packages_kcftools_overview.md](./references/anaconda_org_channels_bioconda_packages_kcftools_overview.md)
+- [KCFTOOLS Main README](./references/github_com_sivasubramanics_kcftools_blob_main_README.md)
+- [Changelog and Plugin Updates](./references/github_com_sivasubramanics_kcftools_blob_main_CHANGELOG.md)

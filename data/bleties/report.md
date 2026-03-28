@@ -225,3 +225,6 @@ optional arguments:
   -o OUT, --out OUT     Output filename prefix (default: insert.test)
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -168,3 +168,6 @@ Options: -h        Print detailed usage.
          -r INT    Random seed used by the program [0]
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: metapi
-description: metapi is a modular metagenomics data mining system that automates the processing of raw sequencing data into genomic bins and gene catalogs. Use when user asks to initialize metagenomic projects, configure sample sheets, run Metagenome-Assembled Genome pipelines, or perform gene-centric workflows.
+description: metapi is a Snakemake-based pipeline designed to streamline metagenomics data mining and bioinformatics workflows. Use when user asks to initialize a metagenomics project, configure sample metadata, or execute workflows for genome assembly, binning, and gene-centric analysis.
 homepage: https://github.com/ohmeta/metapi
 ---
 
@@ -9,73 +9,77 @@ homepage: https://github.com/ohmeta/metapi
 
 ## Overview
 
-metapi is a modular metagenomics data mining system designed to automate the transition from raw sequencing data to refined genomic bins and gene catalogs. It leverages a subcommand-based architecture to handle project initialization, read simulation, and the execution of Metagenome-Assembled Genome (MAG) or gene-centric pipelines. This skill assists in configuring the necessary sample sheets and navigating the CLI to run specific stages of the metagenomic workflow, from quality control to taxonomic classification.
-
-## Installation
-
-The recommended method for installing metapi is via Mamba to ensure all dependencies are correctly resolved:
-
-```bash
-mamba install -c conda-forge -c bioconda metapi=3.0.0
-```
+metapi is a specialized metagenomics data mining system designed for robust microbiome research. It streamlines complex bioinformatics workflows by wrapping various tools into a cohesive Snakemake-based pipeline. You should use this skill to manage the lifecycle of a metagenomics project, from initial project setup and sample metadata configuration to the execution of Metagenome-Assembled Genome (MAG) or gene-centric workflows. It is particularly useful for researchers needing to run standardized, reproducible analyses across multiple samples using different assemblers (e.g., MetaSPAdes, MegaHit) and binners (e.g., MetaBAT2, CONCOCT).
 
 ## Project Initialization
 
-Every metapi project must begin with the `init` command. This creates the required directory structure, including logs, results, and environment configurations.
+The first step in any metapi workflow is creating the project structure.
 
-### Sample Sheet Requirements
-A `samples.tsv` file is mandatory. The header format depends on your starting point:
-- **Standard (FastQ):** `sample_id, assembly_group, binning_group, fq1, fq2`
-- **SRA-based:** `sample_id, assembly_group, binning_group, sra`
-- **Simulation:** `id, genome, abundance, reads_num, model`
+- **Basic Initialization**: Run `metapi init -s samples.tsv -d <workdir>` to generate the necessary directory structure (`envs/`, `logs/`, `results/`, `profiles/`) and the core configuration file.
+- **Defining the Entry Point**: Use the `-b` or `--begin` flag to specify where the pipeline should start based on your data's current state:
+  - `simulate`: Start by generating synthetic reads.
+  - `trimming`: Start with raw fastq files (default).
+  - `rmhost`: Start with quality-controlled reads that need host sequence removal.
+  - `assembly`: Start with clean, non-host reads.
+  - `binning`: Start with existing assemblies and reads for binning.
+- **Tool Selection**: You can pre-configure preferred tools during init:
+  - `--trimmer {fastp,sickle,trimmomatic}`
+  - `--rmhoster {bowtie2,bwa,minimap2,kraken2,kneaddata}`
+  - `--assembler {metaspades,megahit,idba-ud,opera-ms}`
 
-### Common Initialization Patterns
-Initialize a project starting from quality control (trimming):
-```bash
-metapi init -s samples.tsv -d ./project_dir -b trimming --trimmer fastp --rmhoster bowtie2
-```
+## Sample Sheet Configuration
 
-Initialize a project starting directly from binning (requires existing assemblies):
-```bash
-metapi init -s samples.tsv -d ./project_dir -b binning --assembler metaspades --binner metabat2 concoct
-```
+The `samples.tsv` file is the most critical input. It must be a tab-separated file with specific headers depending on the starting point.
 
-## Workflow Execution
+- **Standard Fastq Input**:
+  Header: `sample_id`, `assembly_group`, `binning_group`, `fq1`, `fq2`
+- **SRA Input**:
+  Header: `sample_id`, `assembly_group`, `binning_group`, `sra`
+- **Simulation Input**:
+  Header: `id`, `genome`, `abundance`, `reads_num`, `model`
 
-metapi uses `mag_wf` for genome-centric workflows and `gene_wf` for gene-centric workflows.
+*Note: `assembly_group` and `binning_group` allow you to control which samples are co-assembled or co-binned.*
 
-### Executing the MAG Pipeline
-The `mag_wf` command requires a `TASK` positional argument to define the endpoint. If no task is specified, it defaults to `all`.
+## Executing Workflows
 
-- **Run the full pipeline:**
-  ```bash
-  metapi mag_wf -d ./project_dir --use-conda
-  ```
+Once initialized, use the workflow subcommands to run the analysis.
 
-- **Run up to a specific stage (e.g., Assembly only):**
-  ```bash
-  metapi mag_wf assembly_all -d ./project_dir --use-conda
-  ```
+- **MAG Workflow**: `metapi mag_wf`
+- **Gene Workflow**: `metapi gene_wf`
+- **Simulation Workflow**: `metapi simulate_wf`
 
-- **Run Binning and CheckM only:**
-  ```bash
-  metapi mag_wf binning_all checkm_all -d ./project_dir --use-conda
-  ```
+### Common Execution Flags
+- `--use-conda`: Essential for allowing metapi to manage tool dependencies automatically.
+- `--cluster-engine`: Specify a scheduler (`slurm`, `sge`, `lsf`, `pbs-torque`) for high-performance computing environments.
+- `--check-samples`: Validates the sample sheet before starting the run.
 
-### Cluster Integration
-metapi supports various cluster engines. Use the `--cluster-engine` flag to specify your environment:
-```bash
-metapi mag_wf --cluster-engine slurm --use-conda
-```
-Supported engines: `slurm`, `sge`, `lsf`, `pbs-torque`.
+### Targeted Task Execution
+Instead of running the entire pipeline (`all`), you can target specific endpoints to save time or troubleshoot:
+- `trimming_all`: Run only quality control.
+- `assembly_all`: Run only the assembly stage.
+- `binning_all`: Run only the binning and refinement stage.
+- `taxonomic_all`: Run GTDB-Tk for taxonomic assignment.
+- `checkm_all`: Run quality assessment of bins.
 
-## Expert Tips and Best Practices
+## Expert Tips
 
-- **Begin Points:** Use the `-b` flag during `init` to skip unnecessary steps. For example, if your reads are already filtered for host DNA, start at `assembly`.
-- **Tool Selection:** metapi supports multiple tools for the same task (e.g., `sickle`, `fastp`, or `trimmomatic` for trimming). Specify your preference during `init` to avoid using defaults that may not suit your data.
-- **Dry Runs:** Since metapi is powered by Snakemake, you can often verify the execution plan by checking the generated `config.yaml` in the project directory after initialization.
-- **Environment Management:** Always use the `--use-conda` flag when running workflows to ensure that metapi can automatically manage the specific software versions required for each step of the pipeline.
+- **Environment Management**: If you need to update a specific tool version, modify the environment files located in the `envs/` directory created during `metapi init`.
+- **Resuming Projects**: Use `metapi sync` to synchronize project states if files have been moved or if you are updating the sample list.
+- **Resource Allocation**: For cluster users, edit the `cluster.yaml` file within the generated `profiles/` directory to fine-tune CPU and memory requests for specific rules.
+- **Co-assembly Logic**: To perform co-assembly, assign the same `assembly_group` name to multiple samples in your `samples.tsv`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| metapi init | Initialize a metapi project. |
+| metapi mag_wf | Metagenomic MAG workflow |
+| metapi simulate | Pipeline end point. Allowed values are simulate_all, all (default: all) |
+| metapi sync | Sync project to a directory |
+| metapi_gene_wf | Pipeline end point. Allowed values are prepare_reads_all, raw_fastqc_all, raw_report_all, raw_all, trimming_sickle_all, trimming_fastp_all, trimming_trimmomatic_all, trimming_report_all, trimming_all, rmhost_bwa_all, rmhost_bowtie2_all, rmhost_minimap2_all, rmhost_report_all, rmhost_all, qcreport_all, assebmly_megahit_all, assembly_idba_ud_all, assembly_metaspades_all, assembly_spades_all, assembly_plass_all, assembly_metaquast_all, assembly_report_all, predict_scaftigs_gene_prodigal_all, predict_scaftigs_gene_prokka_all, predict_scafitgs_gene_all, predict_all, dereplicate_gene_cdhit_all, dereplicate_gene_all, upload_sequencing_all, upload_assembly_all, upload_all, all (default: all) |
 
 ## Reference documentation
-- [metapi GitHub Repository](./references/github_com_ohmeta_metapi.md)
+- [metapi Main Documentation](./references/github_com_ohmeta_metapi.md)
 - [metapi Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_metapi_overview.md)

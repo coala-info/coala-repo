@@ -1,1 +1,438 @@
-aertslab scenicplus · Discussions · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} aertslab / scenicplus Public Notifications You must be signed in to change notification settings Fork 52 Star 245 Code Issues 189 Pull requests 9 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights aertslab scenicplus Discussions Search all discussions Clear Sort by: Latest activity Latest activity Date created Top: Past day Top: Past week Top: Past month Top: Past year Top: All Label Filter by label Sorry, something went wrong. Filter Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . No labels found. Sorry about that. Use alt + click/return to exclude labels. Filter: Open Open Closed Locked Unlocked Answered Unanswered Verified All Categories, most helpful, and community links Categories View all discussions 📣 Announcements 💬 General 💡 Ideas 🗳️ Polls 🙏 Q&amp;A 🙌 Show and tell Loading Uh oh! There was an error while loading. Please reload this page . Community links Community guidelines Discussions 1 You must be logged in to vote 🙏 General questions rosadiego asked Feb 4, 2026 in Q&amp;A · Unanswered 3 1 You must be logged in to vote 💬 Interpreting SCENIC regulons when the TF’s own motif is not enriched mportela95 started Feb 4, 2026 in General 2 5 You must be logged in to vote 🙏 Converting mudata output to old-style SCENIC+ object: issues with create_nx_tables for visualization of nerworks laurajohanne asked Apr 29, 2024 in Q&amp;A · Unanswered 5 1 You must be logged in to vote 🙏 Differential testing of Gene-based and Region-based AUC scores AmosFong1 asked Dec 19, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 SCENIC+ Outputs OverstimulatedHope asked Nov 24, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 💬 Low regulon recovery in pySCENIC ctx for two butterfly scRNA-seq datasets francicco started Oct 27, 2025 in General 0 2 You must be logged in to vote 🙏 Meaning of +/- in output sarah-chapin asked Jan 15, 2025 in Q&amp;A · Unanswered 3 3 You must be logged in to vote 🙏 Request for Updated Tutorial Link for Creating cisTopic Object from Count Matrix RuofanZhang8 asked Jul 22, 2025 in Q&amp;A · Unanswered 1 1 You must be logged in to vote 🙏 Which eRegulons to show in Dotplot? jakob-arnold asked Aug 13, 2025 in Q&amp;A · Unanswered 0 3 You must be logged in to vote 🙏 eRegulon difference between two groups in specific cell type ianhsu99 asked Mar 6, 2023 in Q&amp;A · Unanswered 12 4 You must be logged in to vote 🙏 why would a known TF and it's motif not show up in our results? sid5427 asked Jul 14, 2023 in Q&amp;A · Unanswered 4 1 You must be logged in to vote 🙏 rho/importance thresholds choosing June6699 asked Jun 20, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 Running scenic+ on non-model organisms SharonKartika asked Jun 5, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 SCENIC+ parameter modification for non-model organism nunezosc asked Apr 7, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 💬 SCENIC+ on bulk RNA+ATAC data itraniello started Apr 23, 2024 in General 10 2 You must be logged in to vote 💬 Interpretation of repressors corbettberry started Apr 1, 2025 in General 0 1 You must be logged in to vote 🙏 Perturbation simulation choice of dimensionality reduction fstrijth asked Mar 25, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 If I only have scRNA data, can I use SCENIC+ for GRN velocity analysis? lzh-fugwaa asked Mar 10, 2025 in Q&amp;A · Unanswered 1 1 You must be logged in to vote 🙏 GRN velocity gilgolan73 asked Nov 28, 2024 in Q&amp;A · Unanswered 1 1 You must be logged in to vote 💬 region vs gene UMAP evin-padhi started Feb 27, 2025 in General 0 1 You must be logged in to vote 🙏 generating celltype specific TF to gene table sid5427 asked Mar 14, 2023 in Q&amp;A · Answered 7 1 You must be logged in to vote 🙏 About TF Activity sugiYag asked Jan 15, 2025 in Q&amp;A · Unanswered 1 2 You must be logged in to vote 💬 Advanced Downstream Analysis with new mudata object cedmo001 started May 23, 2024 in General 11 1 You must be logged in to vote 🙏 The nans in CTX and DEM outputs samuelheczko asked Jan 9, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 💬 Creating scenicplus_obj Umaarasu started Mar 7, 2023 in General 7 Previous 1 2 3 4 5 6 Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Faertslab%2Fscenicplus%2Fdiscussions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Faertslab%2Fscenicplus%2Fdiscussions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fdiscussions%2Findex&source=header-repo&source_repo=aertslab%2Fscenicplus)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[aertslab](/aertslab)
+/
+**[scenicplus](/aertslab/scenicplus)**
+Public
+
+* [Notifications](/login?return_to=%2Faertslab%2Fscenicplus) You must be signed in to change notification settings
+* [Fork
+  53](/login?return_to=%2Faertslab%2Fscenicplus)
+* [Star
+   249](/login?return_to=%2Faertslab%2Fscenicplus)
+
+* [Code](/aertslab/scenicplus)
+* [Issues
+  192](/aertslab/scenicplus/issues)
+* [Pull requests
+  9](/aertslab/scenicplus/pulls)
+* [Discussions](/aertslab/scenicplus/discussions)
+* [Actions](/aertslab/scenicplus/actions)
+* [Projects](/aertslab/scenicplus/projects)
+* [Security
+  0](/aertslab/scenicplus/security)
+* [Insights](/aertslab/scenicplus/pulse)
+
+Additional navigation options
+
+* [Code](/aertslab/scenicplus)
+* [Issues](/aertslab/scenicplus/issues)
+* [Pull requests](/aertslab/scenicplus/pulls)
+* [Discussions](/aertslab/scenicplus/discussions)
+* [Actions](/aertslab/scenicplus/actions)
+* [Projects](/aertslab/scenicplus/projects)
+* [Security](/aertslab/scenicplus/security)
+* [Insights](/aertslab/scenicplus/pulse)
+
+# aertslab scenicplus Discussions
+
+Search all discussions
+
+Clear
+
+Sort by:
+Latest activity
+
+[Latest activity](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen)
+[Date created](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+sort%3Adate_created)
+[Top: Past day](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-26)
+[Top: Past week](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-20)
+[Top: Past month](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-02-25)
+[Top: Past year](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2025-03-27)
+[Top: All](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+sort%3Atop)
+
+Label
+
+# Filter by label
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No labels found. Sorry about that.
+
+Use `alt` + `click/return` to exclude labels.
+
+Filter: Open
+
+* [Open](/aertslab/scenicplus/discussions)
+* [Closed](/aertslab/scenicplus/discussions?discussions_q=is%3Aclosed)
+* [Locked](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+is%3Alocked)
+* [Unlocked](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+is%3Aunlocked)
+* [Answered](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+is%3Aanswered)
+* [Unanswered](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+is%3Aunanswered)
+* [Verified](/aertslab/scenicplus/discussions?discussions_q=is%3Aopen+is%3Averified)
+* [All](/aertslab/scenicplus/discussions?discussions_q=)
+
+## Categories, most helpful, and community links
+
+### Categories
+
+* [View all discussions](/aertslab/scenicplus/discussions)
+* [📣
+
+  Announcements](/aertslab/scenicplus/discussions/categories/announcements)
+* [💬
+
+  General](/aertslab/scenicplus/discussions/categories/general)
+* [💡
+
+  Ideas](/aertslab/scenicplus/discussions/categories/ideas)
+* [🗳️
+
+  Polls](/aertslab/scenicplus/discussions/categories/polls)
+* [🙏
+
+  Q&A](/aertslab/scenicplus/discussions/categories/q-a)
+* [🙌
+
+  Show and tell](/aertslab/scenicplus/discussions/categories/show-and-tell)
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+### Community links
+
+* [Community guidelines](https://docs.github.com/articles/github-community-guidelines)
+
+## Discussions
+
+* 2
+   You must be logged in to vote
+
+  🙏
+
+  ### [How do I generate heatmap-dotplot presented in SCENIC+ paper](/aertslab/scenicplus/discussions/497)
+
+  [kennethho04](/kennethho04)
+  asked
+  Oct 29, 2024
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@kennethho04](https://avatars.githubusercontent.com/u/183950954?s=60&v=4)](/kennethho04)
+  [![@SeppeDeWinter](https://avatars.githubusercontent.com/u/5092871?s=60&v=4)](/SeppeDeWinter)[![@liangliangjin](https://avatars.githubusercontent.com/u/68639252?s=60&v=4)](/liangliangjin)
+
+  [![@kennethho04](https://avatars.githubusercontent.com/u/183950954?s=60&v=4)](/kennethho04)
+  [![@SeppeDeWinter](https://avatars.githubusercontent.com/u/5092871?s=60&v=4)](/SeppeDeWinter)[![@liangliangjin](https://avatars.githubusercontent.com/u/68639252?s=60&v=4)](/liangliangjin)
+
+  [7](/aertslab/scenicplus/discussions/497)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [scenicplus vs chromVAR](/aertslab/scenicplus/discussions/630)
+
+  [jfouyang](/jfouyang)
+  asked
+  Mar 11, 2026
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@jfouyang](https://avatars.githubusercontent.com/u/29743749?s=60&v=4)](/jfouyang)
+
+  [![@jfouyang](https://avatars.githubusercontent.com/u/29743749?s=60&v=4)](/jfouyang)
+
+  [0](/aertslab/scenicplus/discussions/630)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [General questions](/aertslab/scenicplus/discussions/624)
+
+  [rosadiego](/rosadiego)
+  asked
+  Feb 4, 2026
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@rosadiego](https://avatars.githubusercontent.com/u/202944145?s=60&v=4)](/rosadiego)
+  [![@SeppeDeWinter](https://avatars.githubusercontent.com/u/5092871?s=60&v=4)](/SeppeDeWinter)
+
+  [![@rosadiego](https://avatars.githubusercontent.com/u/202944145?s=60&v=4)](/rosadiego)
+  [![@SeppeDeWinter](https://avatars.githubusercontent.com/u/5092871?s=60&v=4)](/SeppeDeWinter)
+
+  [3](/aertslab/scenicplus/discussions/624)
+* 1
+   You must be logged in to vote
+
+  💬
+
+  ### [Interpreting SCENIC regulons when the TF’s own motif is not enriched](/aertslab/scenicplus/discussions/625)
+
+  [mportela95](/mportela95)
+  started
+  Feb 4, 2026
+   in
+  [General](/aertslab/scenicplus/discussions/categories/general?discussions_q=is%3Aopen+category%3AGeneral)
+
+  [![@mportela95](https://avatars.githubusercontent.com/u/200284278?s=60&v=4)](/mportela95)
+  [![@SeppeDeWinter](https://avatars.githubusercontent.com/u/5092871?s=60&v=4)](/SeppeDeWinter)
+
+  [![@mportela95](https://avatars.githubusercontent.com/u/200284278?s=60&v=4)](/mportela95)
+  [![@SeppeDeWinter](https://avatars.githubusercontent.com/u/5092871?s=60&v=4)](/SeppeDeWinter)
+
+  [2](/aertslab/scenicplus/discussions/625)
+* 5
+   You must be logged in to vote
+
+  🙏
+
+  ### [Converting mudata output to old-style SCENIC+ object: issues with create\_nx\_tables for visualization of nerworks](/aertslab/scenicplus/discussions/378)
+
+  [laurajohanne](/laurajohanne)
+  asked
+  Apr 29, 2024
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@laurajohanne](https://avatars.githubusercontent.com/u/125036200?s=60&v=4)](/laurajohanne)
+  [![@my0916](https://avatars.githubusercontent.com/u/13286535?s=60&v=4)](/my0916)[![@kangjiajinlong](https://avatars.githubusercontent.com/u/40263037?s=60&v=4)](/kangjiajinlong)
+
+  [![@laurajohanne](https://avatars.githubusercontent.com/u/125036200?s=60&v=4)](/laurajohanne)
+  [![@my0916](https://avatars.githubusercontent.com/u/13286535?s=60&v=4)](/my0916)[![@kangjiajinlong](https://avatars.githubusercontent.com/u/40263037?s=60&v=4)](/kangjiajinlong)
+
+  [5](/aertslab/scenicplus/discussions/378)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [Differential testing of Gene-based and Region-based AUC scores](/aertslab/scenicplus/discussions/620)
+
+  [AmosFong1](/AmosFong1)
+  asked
+  Dec 19, 2025
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@AmosFong1](https://avatars.githubusercontent.com/u/140565108?s=60&v=4)](/AmosFong1)
+
+  [![@AmosFong1](https://avatars.githubusercontent.com/u/140565108?s=60&v=4)](/AmosFong1)
+
+  [0](/aertslab/scenicplus/discussions/620)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [SCENIC+ Outputs](/aertslab/scenicplus/discussions/613)
+
+  [OverstimulatedHope](/OverstimulatedHope)
+  asked
+  Nov 24, 2025
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@OverstimulatedHope](https://avatars.githubusercontent.com/u/223548341?s=60&v=4)](/OverstimulatedHope)
+
+  [![@OverstimulatedHope](https://avatars.githubusercontent.com/u/223548341?s=60&v=4)](/OverstimulatedHope)
+
+  [0](/aertslab/scenicplus/discussions/613)
+* 1
+   You must be logged in to vote
+
+  💬
+
+  ### [Low regulon recovery in pySCENIC ctx for two butterfly scRNA-seq datasets](/aertslab/scenicplus/discussions/609)
+
+  [francicco](/francicco)
+  started
+  Oct 27, 2025
+   in
+  [General](/aertslab/scenicplus/discussions/categories/general?discussions_q=is%3Aopen+category%3AGeneral)
+
+  [![@francicco](https://avatars.githubusercontent.com/u/9006870?s=60&v=4)](/francicco)
+
+  [![@francicco](https://avatars.githubusercontent.com/u/9006870?s=60&v=4)](/francicco)
+
+  [0](/aertslab/scenicplus/discussions/609)
+* 2
+   You must be logged in to vote
+
+  🙏
+
+  ### [Meaning of +/- in output](/aertslab/scenicplus/discussions/536)
+
+  [sarah-chapin](/sarah-chapin)
+  asked
+  Jan 15, 2025
+   in
+  [Q&A](/aertslab/scenicplus/discussions/categories/q-a?disc

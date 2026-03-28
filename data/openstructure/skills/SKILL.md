@@ -1,6 +1,6 @@
 ---
 name: openstructure
-description: OpenStructure is a modular framework for computational structural biology used to manipulate molecular structures, density maps, and sequences. Use when user asks to calculate lDDT scores, clean PDB files with Molck, perform structural superpositions, or automate structural analysis via its Python API.
+description: OpenStructure is a modular framework for structural bioinformatics that provides tools for manipulating macromolecular structures, sequences, and density maps. Use when user asks to clean and validate PDB files, calculate lDDT scores, perform structural selections, or automate structural data processing via a Python interface.
 homepage: https://openstructure.org
 ---
 
@@ -9,83 +9,91 @@ homepage: https://openstructure.org
 
 ## Overview
 
-OpenStructure (OST) is a modular, open-source framework designed for computational structural biology. It provides a powerful environment for method developers and bioinformaticians to manipulate molecular structures, density maps, and sequences. Use this skill to perform high-accuracy model quality assessments (like lDDT), clean problematic PDB files, perform structural superpositions, and automate complex structural analysis via its Python API or command-line "actions."
+OpenStructure (OST) is a modular, high-performance framework tailored for structural bioinformatics. It moves beyond simple visualization to provide a comprehensive toolkit for method developers. It excels at handling macromolecular structures (proteins, nucleic acids, ligands), sequences, and density maps through a unified Python interface. Use this skill to automate structural data cleaning, perform superposition-free model evaluations, and manipulate structural entities using a powerful query language.
 
 ## Core CLI Usage
 
-The primary entry point for OpenStructure is the `ost` binary. It can be used to run custom scripts or execute built-in "actions."
+The primary entry point for OpenStructure is the `ost` command, which acts as a Python interpreter pre-configured with the OST environment.
 
-### Running Scripts
-To execute a Python script within the OpenStructure environment (which pre-configures the necessary search paths and environment variables):
-```bash
-ost your_script.py
-```
-
-### Built-in Actions
-OpenStructure includes several specialized command-line tools for common tasks:
-
-*   **lDDT**: Calculate the Local Distance Difference Test score to compare a model against a reference structure without needing superposition.
-    ```bash
-    ost lDDT <model_file> <reference_file>
-    ```
-*   **Molck**: The Molecular Checker tool for cleaning and validating PDB files (e.g., handling non-standard residues or missing atoms).
-    ```bash
-    ost molck <input_file>
-    ```
-*   **Structure Comparison**: Compare two macromolecular structures or structures with ligands.
-    ```bash
-    ost compare-structures --model <model.pdb> --reference <ref.pdb>
-    ```
+- **Run a script**: `ost script.py`
+- **Interactive Shell**: `ost` (Launches an interactive Python environment with `ost` modules available).
+- **Molecular Checker (Molck)**: Use the `molck` action to clean and validate PDB files.
+  ```bash
+  ost molck input.pdb
+  ```
+- **lDDT Scoring**: Calculate the Local Distance Difference Test score via the CLI.
+  ```bash
+  ost lddt <model> <reference>
+  ```
+- **Graphical Interface**: Launch the DNG (Dino/DeepView Next Generation) GUI for interactive visualization.
+  ```bash
+  dng
+  ```
 
 ## Python API Best Practices
 
-When writing scripts for `ost`, use the following patterns for efficiency and reliability.
+When writing scripts for the `ost` interpreter, follow these patterns for efficiency and reliability.
 
 ### Loading Structures
-Standard PDB files often contain errors. Use the `fault_tolerant` flag to skip erroneous records.
+Always consider the quality of your input data. For legacy PDB files with potential errors, use the fault-tolerant loader.
 ```python
 from ost import io
 
-# Load a PDB file, skipping errors
-ent = io.LoadPDB('structure.pdb', fault_tolerant=True)
+# Standard loading
+ent = io.LoadPDB('protein.pdb')
 
-# Load an mmCIF file (preferred for large structures)
-ent = io.LoadMMCIF('structure.cif')
+# Loading "crappy" or non-standard PDBs
+ent = io.LoadPDB('messy.pdb', fault_tolerant=True)
+
+# Loading mmCIF (preferred for modern structures)
+ent = io.LoadPDB('structure.cif')
 ```
 
 ### Selection and Queries
-OpenStructure uses a dedicated query language to create `EntityViews` (subsets of structures).
+OST uses a dedicated query language to create `EntityView` objects, which are lightweight references to subsets of a structure.
 ```python
-# Select all Carbon-alpha atoms in chain A
-ca_atoms = ent.Select('chain=A and aname=CA')
+# Select specific chains and residue ranges
+view = ent.Select('chain=A and rnum=10:50')
 
-# Select residues within a specific range
-binding_site = ent.Select('rnum=10:25')
+# Select by chemical property
+hydrophobic = ent.Select('rname=ALA,ILE,LEU,VAL')
 
-# Select by property (e.g., B-factor)
-high_bfactor = ent.Select('eleme=C and bfactor > 50')
+# Select atoms within a radius of a point or another selection
+nearby = ent.Select('5 < [chain=L]')
 ```
 
-### Scoring and Comparison
-For programmatic model evaluation:
+### Sequence and Alignment
+OST allows tight integration between sequences and 3D coordinates.
 ```python
-from ost.mol.alg import lDDT
+from ost import seq
 
-# Compute lDDT score
-# model and reference should be EntityViews or Entities
-score = lDDT(model_view, reference_view, inclusion_radius=15.0)
+# Load a fasta file
+s = io.LoadSequence('seq.fasta')
+
+# Create an alignment
+aln = seq.CreateAlignment()
+aln.AddSequence(s1)
+aln.AddSequence(s2)
 ```
 
 ## Expert Tips
 
-*   **Environment Variables**: If using OpenStructure modules from a standard Python interpreter instead of the `ost` binary, ensure `PYTHONPATH` includes the OST `site-packages` directory (e.g., `export PYTHONPATH="/path/to/ost/lib64/python3.10/site-packages/:$PYTHONPATH"`).
-*   **Compound Library**: For proper connectivity and bond handling, ensure the compound library is loaded. This is critical when working with ligands or non-standard residues.
-*   **Density Maps**: Use the `img` module for 3D density map processing. You can convert molecular structures into density maps for cross-correlation analysis.
-*   **Fault Tolerance**: Always use `fault_tolerant=True` when batch processing PDB files from the PDB archive to prevent script crashes on legacy formatting issues.
+- **Environment Setup**: If using OST as a library in a standard Python environment (outside the `ost` binary), ensure your `PYTHONPATH` includes the `site-packages` directory of your OST installation.
+- **Connectivity**: If bonds are missing or incorrect, use the `conop` (Connectivity Optimizer) module to re-assign connectivity based on the compound library.
+- **Memory Management**: When working with large trajectories or many structures, prefer `EntityView` over copying `EntityHandle` objects to save memory.
+- **Scoring Complex Models**: For oligomeric structures, use the `QS-score` (Quaternary Structure score) to evaluate the interface accuracy between models and references.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| molck | the molecule checker |
+| ost | OpenStructure command-line interface |
 
 ## Reference documentation
-
-- [OpenStructure Documentation](./references/openstructure_org_docs_2.11.md)
+- [OpenStructure documentation](./references/openstructure_org_docs_2.11.md)
+- [A gentle introduction to OpenStructure](./references/openstructure_org_docs_2.11_intro.md)
 - [Frequently Asked Questions](./references/openstructure_org_faq.md)
-- [Features Overview](./references/openstructure_org_features.md)
-- [Installation Guide](./references/openstructure_org_install.md)
+- [OpenStructure Features](./references/openstructure_org_features.md)

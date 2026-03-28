@@ -1,6 +1,6 @@
 ---
 name: fasta3
-description: "fasta3 is a suite of programs used for comparing biological sequences through various heuristic and rigorous alignment algorithms. Use when user asks to perform protein or DNA sequence searches, conduct Smith-Waterman local alignments, or compare translated DNA sequences against protein databases."
+description: The fasta3 tool compares biological sequences to identify homologous proteins or nucleic acids using various alignment algorithms. Use when user asks to search sequence databases, perform Smith-Waterman alignments, compare DNA to protein sequences, or identify distant evolutionary relationships.
 homepage: http://faculty.virginia.edu/wrpearson/fasta
 ---
 
@@ -8,46 +8,65 @@ homepage: http://faculty.virginia.edu/wrpearson/fasta
 # fasta3
 
 ## Overview
-The FASTA3 package is a comprehensive suite of programs designed for biological sequence comparison. Unlike BLAST, which uses a seed-and-extend heuristic, the FASTA suite provides a range of algorithms from the rapid heuristic `fasta36` to the rigorous Smith-Waterman implementation `ssearch36`. It is particularly valued for its accurate statistical estimates (E-values) and its ability to perform various alignment types, including global-local and global-global comparisons.
+The `fasta3` skill provides expert guidance for using the FASTA36 software suite to compare biological sequences. It is designed to help identify homologous proteins or nucleic acids by searching a query sequence against local or remote databases. This toolset is particularly effective for identifying distant evolutionary relationships through local alignment (FASTA), global-local alignment (GLSEARCH), or rigorous Smith-Waterman searches (SSEARCH).
 
-## Common Programs
-- **fasta36**: The standard heuristic search for protein or DNA.
-- **ssearch36**: Rigorous Smith-Waterman local alignment (slower but more sensitive).
-- **ggsearch36**: Global-global alignment (Needleman-Wunsch).
-- **glsearch36**: Global-local alignment (global in the query, local in the library).
-- **tfastx36/tfasty36**: Compares a protein query against a DNA database translated in three frames.
-- **fastx36/fasty36**: Compares a DNA query (translated) against a protein database.
+## Command Line Patterns
 
-## Command Line Usage
-
-### Basic Search Syntax
-The standard syntax for most programs in the suite is:
+### Basic Sequence Search
+To search a protein database with a protein query:
 ```bash
-program_name [options] query_file library_file
+fasta36 query.fasta database.lib
 ```
 
-### Common CLI Patterns
-- **Standard Protein Search**:
-  `fasta36 query.pro proteins.lib`
-- **Rigorous Smith-Waterman Search**:
-  `ssearch36 query.pro proteins.lib`
-- **DNA Search with E-value threshold**:
-  `fasta36 -E 0.001 query.fna dna.lib`
-- **Specify Scoring Matrix**:
-  `fasta36 -s BL62 query.pro proteins.lib` (Uses BLOSUM62)
+### Rigorous Smith-Waterman Search
+Use `ssearch36` for maximum sensitivity when looking for distant homologs:
+```bash
+ssearch36 -s BL62 query.fasta database.lib
+```
 
-### Output Formatting (`-m`)
-- `-m 0`: Default text alignment.
-- `-m 8`: BLAST-like tabular output (Query, Subject, %id, length, etc.).
-- `-m 9`: Tabular output with comment lines.
-- `-m 10`: Parsable format for scripts.
+### Global-Local Alignment
+Use `glsearch36` to search for a query sequence that matches a database sequence from end-to-end:
+```bash
+glsearch36 query.fasta database.lib
+```
+
+### Finding Multiple Local Alignments
+Use `lalign36` to find multiple non-overlapping regions of similarity between two sequences:
+```bash
+lalign36 seq1.fasta seq2.fasta
+```
 
 ## Expert Tips and Best Practices
-- **Sensitivity vs. Speed**: Use `fasta36` for initial high-throughput screening. Use `ssearch36` when looking for distant homologs (twilight zone) where heuristic methods might fail.
-- **Statistical Significance**: Always pay attention to the E-value. FASTA3 programs calculate these based on the distribution of scores in the actual library search, making them highly reliable.
-- **Library Formats**: FASTA3 supports various formats. If using a large database, ensure it is indexed or in a standard FASTA format.
-- **Translation Searches**: When searching DNA against protein, `fasty36` is generally preferred over `fastx36` as it allows for frameshifts within a codon, making it more robust for sequencing errors.
-- **Gap Penalties**: For protein searches, the default is usually `-10` for gap opening and `-2` for extension. Adjust these using `-f` (open) and `-g` (extend) if you expect many indels.
+
+- **E-value Interpretation**: Focus on the Expectation (E) value. An E-value < 0.01 is generally considered statistically significant, suggesting homology rather than a chance match.
+- **Scoring Matrices**: 
+  - For proteins, use `-s BL62` (BLOSUM62) for general searches.
+  - Use `-s VT20` or `-s BL80` for very similar sequences.
+  - Use `-s P250` (PAM250) for very distant relationships.
+- **Output Formatting**: Use the `-m` flag to change output styles:
+  - `-m 9`: Tabular output with comments (ideal for parsing).
+  - `-m 10`: Script-friendly machine-readable format.
+  - `-m 8`: BLAST-like tabular format.
+- **Heuristic vs. Rigorous**: 
+  - Use `fasta36` for fast, heuristic searches of large databases.
+  - Use `ssearch36` when sensitivity is more important than speed.
+- **Library Formats**: Ensure your database file is in FASTA format. If using a specialized library format, specify the library type with the `-t` option.
+- **Statistical Estimates**: FASTA programs calculate shuffles by default to estimate significance. If a match seems "too good to be true" but has a poor E-value, check if the sequences have low-complexity regions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fasta36 | FASTA searches a protein or DNA sequence data bank |
+| fastx36 | FASTX compares a DNA sequence to a protein sequence data bank |
+| fasty36 | FASTY compares a DNA sequence to a protein sequence data bank |
+| ggsearch36 | GGSEARCH performs a global/global database searches |
+| glsearch36 | GLSEARCH performs a global-query/local-library search |
+| ssearch36 | SSEARCH performs a Smith-Waterman search |
+| tfastx36 | TFASTX compares a protein to a translated DNA data bank |
+| tfasty36 | TFASTY compares a protein to a translated DNA data bank |
 
 ## Reference documentation
-- [fasta3 - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_fasta3_overview.md)
+- [FASTA3 Overview](./references/anaconda_org_channels_bioconda_packages_fasta3_overview.md)

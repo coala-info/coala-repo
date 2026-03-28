@@ -1,6 +1,6 @@
 ---
 name: scran-cli
-description: "scran-cli provides a command-line interface for performing single-cell RNA-seq normalization, variance modeling, and clustering using the scran R package. Use when user asks to normalize single-cell data, model gene variance, denoise PCA results, build SNN graphs, or identify marker genes."
+description: The scran-cli toolset provides a command-line interface for performing low-level analysis of single-cell transcriptomics data using the scran Bioconductor package. Use when user asks to normalize single-cell data, model gene variance, denoise PCA results, build SNN graphs for clustering, or identify marker genes.
 homepage: https://github.com/ebi-gene-expression-group/scran-cli
 ---
 
@@ -9,61 +9,81 @@ homepage: https://github.com/ebi-gene-expression-group/scran-cli
 
 ## Overview
 
-The `scran-cli` toolset provides a bridge between the specialized single-cell analysis functions of the `scran` R package and standard shell-based bioinformatics pipelines. It is particularly useful for researchers who need to integrate robust R-based normalization and clustering methods into automated workflows. The tool operates primarily on `SingleCellExperiment` (SCE) objects stored in `.rds` format, allowing for a modular approach to scRNA-seq processing.
+The `scran-cli` toolset provides a command-line interface for the Bioconductor `scran` package, which is essential for the low-level analysis of single-cell transcriptomics data. It allows users to perform complex R-based workflows—such as deconvolution-based normalization, technical noise removal, and SNN graph construction—directly from the terminal. This is particularly useful for building reproducible bioinformatics pipelines where data is passed between steps as serialized R objects (.rds).
 
-## Core Workflows and Commands
+## Core Workflow Patterns
 
 ### 1. Normalization
-Normalization is essential to remove cell-specific biases.
-
-*   **Deconvolution (Sum Factors):** Use when you assume most genes are not differentially expressed.
-    ```bash
-    scran-compute-sum-factors.R -i input.rds -a counts -o normalized.rds
-    ```
-*   **Spike-in Normalization:** Use when you have ERCC or other spike-ins and want to preserve differences in total RNA content.
-    ```bash
-    scran-compute-spike-factors.R -i input.rds -s "ERCC" -o spike_normalized.rds
-    ```
-
-### 2. Variance Modeling and Denoising
-Identify highly variable genes and reduce technical noise.
-
-*   **Modeling Variance:** Note that `scran-trend-var.R` is for older versions (v1.12). For newer versions (v1.14+), use `scran-model-gene-var.R`.
-    ```bash
-    scran-model-gene-var.R -i normalized.rds -o var_model.rds
-    ```
-*   **PCA Denoising:** Remove principal components that represent technical noise based on the variance model.
-    ```bash
-    scran-denoise-pca.R -i normalized.rds -t var_model.rds -o denoised_pca.rds
-    ```
-
-### 3. Clustering and Graph Building
-`scran-cli` uses a two-step process for clustering: building a graph and then extracting clusters.
-
-*   **Build SNN Graph:** Creates a shared nearest-neighbor graph.
-    ```bash
-    scran-build-snn-graph.R -i denoised_pca.rds -s TRUE -o snn_graph.rds
-    ```
-*   **Extract Clusters:** Converts the igraph object back into cluster annotations within the SCE object.
-    ```bash
-    igraph_extract_clusters.R -i snn_graph.rds -s denoised_pca.rds -o clustered_sce.rds
-    ```
-
-### 4. Marker Gene Identification
-Find genes that define your clusters.
+Normalization removes cell-specific biases. Use `scran-compute-sum-factors.R` for standard scaling normalization or `scran-compute-spike-factors.R` if using spike-in transcripts.
 
 ```bash
-scran-find-markers.R -i clustered_sce.rds -c "cluster" -o markers.rds
+# Scaling normalization by deconvolving size factors
+scran-compute-sum-factors.R -i input_sce.rds -a counts -o normalized_sce.rds
+
+# Normalization based on spike-ins (e.g., ERCC)
+scran-compute-spike-factors.R -i input_sce.rds -s "ERCC" -o normalized_sce.rds
 ```
-*   **Tip:** If using raw counts, ensure you use `test.type="binom"`. For log-normalized data, "wilcox" or "t" tests are standard.
+
+### 2. Variance Modeling and Denoising
+Identify highly variable genes (HVGs) and reduce dimensionality by removing technical noise.
+
+*   **Note on Versions**: Use `scran-model-gene-var.R` for modern workflows (scran 1.14+). `scran-trend-var.R` is deprecated.
+
+```bash
+# Model gene variance
+scran-model-gene-var.R -i normalized_sce.rds -o variance_stats.rds
+
+# Denoise PCA based on the variance model
+scran-denoise-pca.R -i normalized_sce.rds -t variance_stats.rds -o denoised_sce.rds
+```
+
+### 3. Clustering
+Clustering in `scran` typically involves building a Shared Nearest Neighbor (SNN) graph and then extracting clusters.
+
+```bash
+# Build SNN graph (outputs an igraph object)
+scran-build-snn-graph.R -i denoised_sce.rds -s TRUE -o snn_graph.rds
+
+# Extract clusters and add them back to the SCE object
+igraph_extract_clusters.R -i snn_graph.rds -s denoised_sce.rds -o final_clustered_sce.rds
+```
+
+### 4. Marker Detection and Correlation
+Identify genes that define your clusters or find significantly correlated gene pairs.
+
+```bash
+# Find marker genes for clusters
+scran-find-markers.R -i final_clustered_sce.rds -c "cluster" -o markers_list.rds
+
+# Identify significantly correlated gene pairs
+scran-correlate-pairs.R -i final_clustered_sce.rds -o pairwise_correlations.txt
+```
 
 ## Expert Tips and Best Practices
 
-*   **Assay Selection:** Always verify which assay you are targeting (e.g., `counts`, `logcounts`) using the `-a` flag. Most downstream tools expect log-normalized data.
-*   **Version Awareness:** The transition from `scran` 1.12 to 1.14 introduced significant changes. If `scran-trend-var.R` fails or is unavailable, switch to `scran-model-gene-var.R`.
-*   **File Formats:** All inputs and outputs are typically `.rds` files. Ensure your upstream tools (like `Seurat` or `Scanpy`) have converted data to `SingleCellExperiment` format before using this CLI.
-*   **Memory Management:** Single-cell objects can be large. When running these scripts in a high-performance computing (HPC) environment, ensure you allocate sufficient RAM for R to load the entire SCE object into memory.
+*   **Input Format**: All scripts expect the input to be a serialized R `SingleCellExperiment` object in `.rds` format.
+*   **Assay Selection**: When using `scran-compute-sum-factors.R`, ensure the `-a` flag points to the correct assay (usually `counts`).
+*   **Downstream Compatibility**: Use `scran-convert-to.R` to export your SCE object to other popular frameworks like `edgeR`, `DESeq2`, or `monocle`.
+    ```bash
+    scran-convert-to.R -i final_sce.rds -o "DESeq2"
+    ```
+*   **Cluster Extraction**: The `igraph_extract_clusters.R` script uses the Walktrap community detection algorithm by default to define clusters from the SNN graph.
+*   **Memory Management**: Single-cell objects can be large. Ensure your environment has sufficient RAM, especially during the `scran-build-snn-graph.R` and `scran-correlate-pairs.R` steps.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/igraph_extract_clusters.R | Extracts cluster annotations from an igraph object and adds them to a SingleCellExperiment object. |
+| scran-build-snn-graph.R | Builds a Shared Nearest Neighbor (SNN) graph or a k-Nearest Neighbor (kNN) graph from a Single-Cell Experiment (SCE) object. |
+| scran-cli_scran-denoise-pca.R | Performs PCA-based denoising on a SingleCellExperiment object. |
+| scran-compute-spike-factors.R | Compute spike-in size factors for SingleCellExperiment objects. |
+| scran-compute-sum-factors.R | Computes size factors for single-cell RNA-seq data. |
+| scran-find-markers.R | Finds marker genes for each cluster/group in a SingleCellExperiment object. |
+| scran-model-gene-var.R | Model gene variance using scran |
 
 ## Reference documentation
-- [scran-cli Overview](./references/anaconda_org_channels_bioconda_packages_scran-cli_overview.md)
-- [scran-cli GitHub Repository](./references/github_com_ebi-gene-expression-group_scran-cli.md)
+- [Wrapper scripts for components of the scran package](./references/github_com_ebi-gene-expression-group_scran-cli_blob_develop_README.md)
+- [Extract clustering annotation from igraph class object](./references/github_com_ebi-gene-expression-group_scran-cli_blob_develop_igraph_extract_clusters.R.md)

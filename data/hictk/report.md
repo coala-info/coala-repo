@@ -605,3 +605,6 @@ SUBCOMMANDS:
                               multi-resolution by coarsening.
 ```
 
+
+## Metadata
+- **Skill**: generated

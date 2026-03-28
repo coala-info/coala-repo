@@ -116,7 +116,7 @@ Usage: Rscript  batch_correction_wrapper.R {args}
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## batch_correction
 

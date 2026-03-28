@@ -1,1 +1,1 @@
-Redirecting to Latest Trinotate Wiki Documentation .
+Redirecting to [Latest Trinotate Wiki Documentation](https://github.com/Trinotate/Trinotate/wiki).

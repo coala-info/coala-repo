@@ -61,3 +61,6 @@ visualize     Visualizes regions to manually inspect breaks or joins
 test          Short test
 ```
 
+
+## Metadata
+- **Skill**: generated

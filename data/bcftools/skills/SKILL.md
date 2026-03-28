@@ -1,6 +1,6 @@
 ---
 name: bcftools
-description: BCFtools is a high-performance suite for calling, filtering, normalizing, and manipulating genomic variants in VCF and BCF formats. Use when user asks to call variants, filter records by quality or depth, normalize indels, merge datasets, or extract specific fields into text formats.
+description: bcftools is a comprehensive suite of utilities for manipulating, filtering, and calling genetic variants in VCF and BCF formats. Use when user asks to call variants, filter records by quality or depth, query specific fields, manage samples, or generate consensus sequences.
 homepage: https://github.com/samtools/bcftools
 ---
 
@@ -8,56 +8,77 @@ homepage: https://github.com/samtools/bcftools
 # bcftools
 
 ## Overview
-BCFtools is the industry-standard suite for handling Variant Call Format (VCF) and Binary Variant Call Format (BCF) files. It provides high-performance utilities for the entire variant processing pipeline—from initial calling and normalization to complex filtering and data extraction. It works transparently with both text-based VCFs and binary BCFs, supporting streaming via pipes and indexed random access for large-scale genomic datasets.
 
-## Core CLI Patterns and Best Practices
+bcftools is a comprehensive suite of utilities designed for high-performance manipulation of genetic variant files. It handles both text-based VCF and its indexed binary counterpart, BCF. Use this skill to execute common bioinformatics workflows including variant calling (via mpileup), quality control filtering, sample management, and consensus sequence generation.
 
-### Efficient Piping and File Formats
-For multi-step workflows, use uncompressed BCF (`-Ou`) for intermediate pipes to maximize speed and minimize CPU overhead from compression/decompression.
-*   **Output uncompressed BCF:** `bcftools <command> -Ou -o output.bcf`
-*   **Output compressed BCF (default/preferred for storage):** `bcftools <command> -Ob -o output.bcf.gz`
-*   **Output compressed VCF:** `bcftools <command> -Oz -o output.vcf.gz`
+## Core Command Patterns
 
-### Filtering with Expressions
-Use `-i` (include) and `-e` (exclude) to filter variants based on INFO or FORMAT tags.
-*   **Filter by Quality and Depth:** `bcftools view -i 'QUAL>30 && INFO/DP>10' in.vcf.gz`
-*   **Handle Missing Values:** Use regex to target or avoid missing data.
-    *   Exclude missing: `-e 'TAG="."'`
-    *   Negation of missing: `-i 'TAG!~"\."'`
-*   **Sample-specific filters:** Use `SMPL_` or `FMT/` prefixes.
-    *   `bcftools view -i 'FMT/GQ>20' in.vcf.gz`
+### Variant Calling
+To call variants from aligned sequence data, pipe the output of `samtools mpileup` into `bcftools call`.
+- **Standard Calling**: `samtools mpileup -uf ref.fa aln.bam | bcftools call -mv -Oz -o calls.vcf.gz`
+- **Options**: Use `-m` for the multiallelic caller (recommended) and `-v` to output only variant sites.
 
-### Normalization and Multiallelic Sites
-Always normalize variants before merging or comparing datasets to ensure consistent representation of indels.
-*   **Left-align and normalize:** `bcftools norm -f reference.fa in.vcf.gz`
-*   **Split multiallelic sites:** `bcftools norm -m -any in.vcf.gz`
-*   **Join biallelic sites into multiallelic:** `bcftools norm -m +any in.vcf.gz`
+### Filtering and Statistics
+Filtering is performed using expressions with `-i` (include) or `-e` (exclude).
+- **Basic Filter**: `bcftools filter -i'%QUAL>20 && DP>10' in.vcf.gz`
+- **Complex Expressions**: `bcftools filter -e'RPB<0.1 || %MAX(DV)<=3' in.vcf.gz`
+- **Generate Stats**: `bcftools stats file.vcf.gz > file.stats`
+- **Visualize Stats**: Use `plot-vcfstats` on the resulting stats file to create graphical reports.
 
-### Data Extraction with Query
-The `query` command is the most efficient way to convert VCF data into TSV or custom text formats.
-*   **Extract specific fields:** `bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' in.vcf.gz`
-*   **Using functions in query:** You can use functions like `SUM`, `MAX`, or `sCOUNT` (sample count).
-    *   `bcftools query -f '%CHROM:%POS \t %SUM(FMT/AD)\n' in.vcf.gz`
+### Querying and Sample Management
+- **List Samples**: `bcftools query -l file.vcf.gz`
+- **Extract Fields**: `bcftools query -f'%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' file.vcf.gz`
+- **Subset Samples**: `bcftools view -s sample1,sample2 -Oz -o subset.vcf.gz file.vcf.gz`
 
-### Merging and Concatenating
-*   **Merge (different samples):** Combines files with different sample sets into a single multisample VCF. Requires indexed files.
-    *   `bcftools merge file1.vcf.gz file2.vcf.gz -o merged.vcf.gz`
-*   **Concat (same samples):** Joins files containing different genomic regions (e.g., different chromosomes) for the same samples.
-    *   `bcftools concat file_chr1.vcf.gz file_chr2.vcf.gz -o all_chrs.vcf.gz`
+### Annotating and Reheadering
+- **Add Header Lines**: `bcftools annotate -h header_lines.txt in.vcf.gz`
+- **Annotate from BED/TAB**: `bcftools annotate -a annots.bed.gz -c CHROM,FROM,TO,TAG -h annots.hdr in.vcf.gz`
+- **Rename Samples**: `bcftools reheader -s samples.txt -o out.vcf.gz in.vcf.gz`
 
-### Annotation
-Add or modify tags using external tab-delimited files.
-*   **Basic annotation:** `bcftools annotate -a annotations.tsv.gz -c CHROM,POS,REF,ALT,INFO/TAG in.vcf.gz`
-*   **Rename samples:** `bcftools reheader -s samples.txt -o out.vcf.gz in.vcf.gz`
+### Consensus and Normalization
+- **Create Consensus**: `cat ref.fa | bcftools consensus file.vcf.gz > consensus.fa`
+- **Normalize Indels**: `bcftools norm -f ref.fa in.vcf.gz` (Left-aligns and normalizes indels).
 
 ## Expert Tips
-*   **Unlimited Depth:** When running `mpileup`, use `-d 0` to set the maximum depth to unlimited, which is critical for high-depth sequencing or amplicon data.
-*   **Index First:** Most BCFtools commands that involve random access or merging require the input files to be indexed (`bcftools index file.vcf.gz`).
-*   **Plugin Power:** Use the `+` syntax to access plugins for specialized tasks.
-    *   `bcftools +fill-tags`: Automatically calculates and adds common INFO tags like AF, AC, and HWE.
-    *   `bcftools +split-vep`: Parses complex VEP (Variant Effect Predictor) strings into individual tags.
+
+- **Output Compression**: Always use `-Oz` for compressed VCF output and `-Ob` for compressed BCF output to save space and enable indexing.
+- **Indexing**: Most random-access operations require an index. Use `bcftools index file.vcf.gz`.
+- **Missing Values**: In filtering expressions, refer to missing values using `"."`. For example, `-i'ID!="."'` includes only sites with an ID.
+- **Performance**: When processing large datasets, use the `--threads` option to parallelize compression/decompression.
+- **Numerical Functions**: Recent versions support functions like `SUM(FORMAT/AD)`, `MAX(INFO/DP)`, and `smpl_COUNT()` within query and filter expressions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate and edit VCF/BCF files. |
+| call | SNP/indel variant calling from VCF/BCF. To be used in conjunction with  bcftools mpileup. This command replaces the former 'bcftools view' caller. |
+| cnv | Copy number variation caller, requires Illumina's B-allele frequency (BAF) and Log R Ratio intensity (LRR). The HMM considers the following copy number states: CN 2 (normal), 1 (single-copy loss), 0 (complete loss), 3 (single-copy gain) |
+| concat | Concatenate or combine VCF/BCF files. All source files must have the same sample columns appearing in the same order. The input files must be sorted by chr and position. |
+| consensus | Create consensus sequence by applying VCF variants to a reference fasta  file. By default, the program will apply all ALT variants. Using the --samples (and, optionally, --haplotype) option will apply genotype (or haplotype) calls from FORMAT/GT. |
+| convert | Converts VCF/BCF to other formats and back. |
+| csq | Haplotype-aware consequence caller. |
+| filter | Apply fixed-threshold filters. |
+| gtcheck | Check sample identity. With no -g BCF given, multi-sample cross-check is performed. |
+| head | Displays VCF/BCF headers and optionally the first few variant records |
+| index | Index VCF or BCF files for random access. |
+| isec | Create intersections, unions and complements of VCF files. |
+| merge | Merge multiple VCF/BCF files from non-overlapping sample sets to create one multi-sample file. Note that only records from different files can be merged,  never from the same file. |
+| mpileup | Generate VCF or BCF containing genotype likelihoods for one or multiple BAM files |
+| norm | Left-align and normalize indels; check if REF alleles match the reference;  split multiallelic sites into multiple rows; recover multiallelics from  multiple rows. |
+| plugin | Run user defined plugin |
+| polysomy | Detect number of chromosomal copies from Illumina's B-allele frequency (BAF) |
+| query | Extracts fields from VCF/BCF file and prints them in user-defined format |
+| reheader | Modify header of VCF/BCF files, change sample names. |
+| roh | HMM model for detecting runs of autozygosity. |
+| sort | Sort VCF/BCF file. |
+| stats | Parses VCF or BCF and produces stats which can be plotted using plot-vcfstats. When two files are given, the program generates separate stats for intersection and the complements. |
+| view | VCF/BCF conversion, view, subset and filter VCF/BCF files. |
 
 ## Reference documentation
-- [BCFtools Overview and Installation](./references/anaconda_org_channels_bioconda_packages_bcftools_overview.md)
-- [BCFtools GitHub Repository and Documentation](./references/github_com_samtools_bcftools.md)
-- [BCFtools Release Tags and Version History](./references/github_com_samtools_bcftools_tags.md)
+
+- [BCFtools HOWTOs](./references/github_com_samtools_bcftools_wiki_HOWTOs.md)
+- [BCFtools Release Tags and Changes](./references/github_com_samtools_bcftools_tags.md)
+- [BCFtools Documentation Overview](./references/samtools_github_io_bcftools.md)

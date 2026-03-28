@@ -1,6 +1,6 @@
 ---
 name: sr2silo
-description: "sr2silo converts short-read alignments into compressed SILO-formatted NDJSON files for viral surveillance and database submission. Use when user asks to translate nucleotide reads into amino acids, process BAM files for LAPIS-SILO, or submit sequencing data to Loculus."
+description: The sr2silo tool converts BAM alignment files into the LAPIS-SILO NDJSON format by extracting and translating nucleotide sequences into amino acids. Use when user asks to process BAM files into SILO format, translate viral reads to amino acid sequences, or submit processed genomic data to a Loculus backend.
 homepage: https://github.com/cbg-ethz/sr2silo
 ---
 
@@ -9,62 +9,75 @@ homepage: https://github.com/cbg-ethz/sr2silo
 
 ## Overview
 
-`sr2silo` is a specialized utility for the bioinformatics domain that bridges the gap between raw short-read alignments and the SILO data format. It automates the translation of nucleotide reads into amino acids and packages them into compressed NDJSON files compatible with LAPIS-SILO v0.8.0+. This tool is essential for researchers and clinicians who need to wrangle sequencing data for viral surveillance and database submission.
+The `sr2silo` tool is a specialized bioinformatics utility designed to bridge the gap between raw nucleotide alignments (BAM files) and the LAPIS-SILO database format. It automates the complex workflow of extracting reads, translating them into amino acid sequences based on specific gene annotations, and formatting the results into newline-delimited JSON (NDJSON). It is particularly useful for viral surveillance pipelines where short-read data must be converted into a "cleartext" alignment format for downstream analysis and public health reporting.
 
-## Installation
+## Core Workflows
 
-The tool is primarily distributed via Bioconda:
-
-```bash
-conda install -c bioconda sr2silo
-```
-
-## Core CLI Usage
-
-### Processing BAM Data
-The primary command for data conversion is `process-from-vpipe`. This command handles the translation and alignment of reads.
+### 1. Processing BAM to SILO Format
+The primary command for data transformation is `process-from-vpipe`. This command handles the extraction, translation, and formatting.
 
 ```bash
 sr2silo process-from-vpipe \
-  --input-file path/to/input.bam \
-  --sample-id SAMPLE_NAME \
-  --timeline-file timeline.tsv \
-  --organism covid \
-  --output-fp output.ndjson.zst
+    --input-file input.bam \
+    --sample-id "SAMPLE_001" \
+    --timeline-file timeline.tsv \
+    --organism covid \
+    --output-fp output.ndjson.zst
 ```
 
-**Key Arguments:**
-- `--organism`: Supported organisms include `covid` and `rsva`.
-- `--timeline-file`: A TSV file containing temporal metadata for the sample.
-- `--output-fp`: It is recommended to use the `.ndjson.zst` extension for Zstandard compression, which is natively supported.
+**Expert Tips:**
+- **Reference Accessions**: If your BAM contains multiple references (e.g., a combined RSV-A/B index), use `--reference-accession "ACCESSION_ID"` to prevent mixed-organism errors.
+- **Resource Management**: Processing requires ~6GB RAM (3GB for batching + 3GB for Diamond). Set `TMPDIR` to a high-performance disk with at least 50GB free space for Diamond's temporary files.
+- **Batching**: The tool processes 100k reads per batch by default. You can adjust this via `--chunk-size` if memory is constrained.
 
-### Filtering by Reference Accession
-In cases where reads might cross-align between similar viruses (e.g., RSV-A and RSV-B), use the `--reference-accession` flag to ensure data integrity.
+### 2. Reference Handling
+`sr2silo` requires both nucleotide (`.fasta`) and amino acid (`.fasta`) reference files.
 
-```bash
-sr2silo process-from-vpipe \
-  --input-file input.bam \
-  --reference-accession "NC_038235.1" \
-  --organism rsva \
-  --output-fp filtered_output.ndjson.zst
-```
+- **Auto-fetch**: Use `--lapis-url` to automatically download and cache the correct references for the specified organism.
+- **Manual**: Provide paths via `--nuc-ref` and `--aa-ref` to override defaults or work offline.
+- **Caching**: References are stored in `~/.cache/sr2silo/references/`. Clear this directory if you suspect outdated reference metadata.
 
-### Submitting to Loculus
-Once processed, data can be submitted directly to a Loculus instance.
+### 3. Submitting to Loculus
+Once processed, data can be uploaded to a Loculus backend.
 
 ```bash
 sr2silo submit-to-loculus \
-  --processed-file output.ndjson.zst \
-  --auto-release
+    --processed-file output.ndjson.zst \
+    --nucleotide-alignment input.bam \
+    --group-id 1 \
+    --auto-release
 ```
 
-## Expert Tips and Best Practices
+**Configuration via Environment Variables:**
+To avoid passing sensitive credentials in the CLI, set these variables:
+- `USERNAME` / `PASSWORD`: Loculus credentials.
+- `BACKEND_URL`: The API endpoint for the SILO backend.
+- `KEYCLOAK_TOKEN_URL`: The authentication endpoint.
 
-- **Compression**: Always use `.zst` for output files. The tool handles the compression internally, and it significantly reduces the storage footprint for large-scale surveillance data.
-- **Reference Handling**: If you encounter a `ZeroFilteredReadsError`, verify that your `--reference-accession` matches the headers in your BAM file exactly.
-- **Environment Variables**: For automated deployments, `sr2silo` can be configured via environment variables to avoid passing repetitive CLI flags in cluster environments.
-- **V-PIPE Integration**: While `sr2silo` is a standalone tool, it is optimized to consume outputs from the V-PIPE pipeline. Ensure your BAM files are coordinate-sorted and indexed for optimal performance.
+## Supported Organisms
+The tool includes built-in logic for:
+- `covid`: SARS-CoV-2
+- `rsva`: Respiratory Syncytial Virus A
+
+To add a new organism, you must provide a directory in `resources/references/{organism_id}/` containing `nuc_ref.fasta` and `aa_ref.fasta`.
+
+## Troubleshooting
+- **ZeroFilteredReadsError**: Occurs when `--reference-accession` is used but no reads in the BAM match that ID. Verify the ID using `samtools view -H file.bam | grep @SQ`.
+- **Authentication Failures**: Ensure `KEYCLOAK_TOKEN_URL` is correct for the specific Loculus instance you are targeting.
+- **Memory Issues**: If the process is killed, reduce `--chunk-size` or ensure `TMPDIR` is not pointing to a full partition.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sr2silo process-from-vpipe | V-PIPE to SILO conversion with amino acids and special metadata. Processing only - use 'submit-to-loculus' command to upload and submit to SILO. |
+| sr2silo_submit-to-loculus | Upload processed file to S3 and submit to SILO/Loculus. |
 
 ## Reference documentation
-- [sr2silo Main Repository](./references/github_com_cbg-ethz_sr2silo.md)
-- [Version 1.7.0/1.8.0 Release Notes and CLI Updates](./references/github_com_cbg-ethz_sr2silo_tags.md)
+- [Usage Configuration](./references/cbg-ethz_github_io_sr2silo_usage_configuration.md)
+- [Multi-Organism Support](./references/cbg-ethz_github_io_sr2silo_usage_organisms.md)
+- [Resource Requirements](./references/cbg-ethz_github_io_sr2silo_usage_resource_requirements.md)
+- [Loculus API Integration](./references/cbg-ethz_github_io_sr2silo_api_loculus.md)
+- [Processing API](./references/cbg-ethz_github_io_sr2silo_api_process.md)

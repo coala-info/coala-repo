@@ -1,6 +1,6 @@
 ---
 name: pygtftk
-description: pygtftk is a high-performance toolkit for manipulating Gene Transfer Format files and performing genomic overlap statistics. Use when user asks to handle GTF files, extract transcript sequences, convert genomic formats, or perform Monte Carlo simulations for overlap analysis.
+description: pygtftk is a high-performance suite for the manipulation, analysis, and enrichment testing of GTF and GFF2.0 genomic annotation files. Use when user asks to extract genomic features, retrieve transcript sequences, filter annotations, or perform overlap analysis using OLOGRAM.
 homepage: http://github.com/dputhier/pygtftk
 ---
 
@@ -9,45 +9,47 @@ homepage: http://github.com/dputhier/pygtftk
 
 ## Overview
 
-The Python GTF toolkit (`pygtftk`) is a high-performance suite designed to streamline the handling of Gene Transfer Format (GTF) files. Built upon a C-based core library (`libgtftk`), it provides a comprehensive command-line interface (`gtftk`) for atomic operations such as data extraction, format conversion, and complex genomic overlap statistics. It is specifically optimized for GFF2.0/GTF standards and is a go-to tool for bioinformaticians working with Ensembl-style annotations who need to validate genomic region enrichments using Monte Carlo simulations.
+The Python GTF toolkit (`pygtftk`) is a high-performance suite designed specifically for the manipulation and analysis of GTF/GFF2.0 files. While it provides a Python API, its primary interface is the `gtftk` command-line program, which offers a wide array of atomic tools for genomic data science. It is particularly robust for handling large-scale annotations like those from Ensembl. A standout feature is the OLOGRAM (OverLap Of Genomic Regions Analysis using Monte Carlo) command, which allows for sophisticated enrichment analysis of genomic regions and their n-wise combinations.
 
-## Core CLI Usage and Best Practices
+## Core CLI Usage and Patterns
 
-### Getting Started and Discovery
-The primary entry point is the `gtftk` command. 
-- **List all tools**: Run `gtftk -h` to see the available subcommands.
-- **Plugin Information**: Use `gtftk -p` to view functional tests and plugin-specific details.
-- **Access Example Data**: Use the built-in downloader to retrieve test datasets:
-  ```bash
-  # List help for example downloader
-  gtftk get_example -h
-  
-  # Download all files from the 'simple' dataset
-  gtftk get_example -d simple -f "*"
-  ```
+The primary entry point is the `gtftk` executable. Most operations follow a subcommand structure.
 
-### Working with GTF Files
-- **Format Compatibility**: Ensure your input is GTF or GFF2.0. Note that `pygtftk` **does not support GFF3**.
-- **Memory Management**: For large genomes (e.g., Human Ensembl releases), ensure the environment has at least 16GB of RAM, especially when piping multiple `gtftk` commands.
-- **Sequence Extraction**: Use `gtftk get_tx_seq` to extract transcript sequences. Ensure your FASTA chromosome names match the GTF chromosome names exactly to avoid "No genes found" errors.
+### Getting Started and Examples
+To explore the tool's capabilities or retrieve test data:
+- List all subcommands: `gtftk -h`
+- Retrieve example datasets: `gtftk get_example -d simple -f "*"`
+- List functional tests for plugins: `gtftk -p`
+
+### Common Workflow Operations
+- **Feature Extraction**: Use specific subcommands to isolate exons, promoters, terminators, or introns from a master GTF file.
+- **Sequence Retrieval**: Use `gtftk get_tx_seq` to extract transcript sequences, ensuring your FASTA chromosome names match your GTF.
+- **Filtering**: Filter GTF entries based on keys/values (e.g., `gene_biotype`) or numeric thresholds.
 
 ### OLOGRAM (Overlap Analysis)
-OLOGRAM is used to compute overlap statistics between user-supplied BED regions and GTF-derived annotations (exons, promoters, etc.).
-- **Monte Carlo Simulations**: It uses Monte Carlo shifts to determine if overlaps are statistically significant.
-- **N-wise Combinations**: Use the latest version of OLOGRAM to find correlation groups (e.g., enrichment of A+B or A+B+C combinations).
-- **Custom Keys**: You can use custom keys/values within the GTF (like gene biotypes or discretized numeric values) to define the regions for overlap analysis.
+OLOGRAM is used to compute overlap statistics between user-supplied BED files and GTF-derived annotations.
+- **Basic Overlap**: Compare peaks/regions against gene-centric features.
+- **N-wise Combinations**: Analyze groups of regions (e.g., A+B+C) to find correlation groups.
+- **Custom Keys**: You can add numeric values to genes and discretize them to create custom classes for enrichment testing.
 
-### Common Workflow Patterns
-1. **Filtering**: Use atomic tools to filter GTF files by specific attributes (e.g., `gene_biotype`) before performing downstream analysis.
-2. **Conversion**: Convert between genomic formats while preserving specific GTF attributes.
-3. **Validation**: Always run `gtftk -h` after a new installation to allow the tool to initialize plugins in the `~/.gtftk` directory.
+## Expert Tips and Best Practices
 
-## Expert Tips
-- **Conda Preference**: Always prefer installation via Conda (`conda install bioconda::pygtftk`) to ensure all C-library dependencies and external tools like `bedtools` and `graphviz` are correctly linked.
-- **Chromosome Naming**: If you encounter errors regarding multiple chromosomes for a single gene ID, ensure you are using non-ambiguous identifiers (like Ensembl IDs) rather than common gene symbols.
-- **Parallel Testing**: If developing or validating an installation, use `make test_para -j <cores>` to run functional tests in parallel.
+- **Format Constraints**: `pygtftk` specifically supports GTF and GFF2.0. It does **not** support GFF3. If you have GFF3 files, convert them to GTF before using this toolkit.
+- **Memory Management**: Processing human-scale Ensembl annotations (e.g., Release 91+) is memory-intensive. A minimum of 16GB of RAM is recommended, especially when piping multiple `gtftk` commands together.
+- **Piping**: `gtftk` is designed to work with UNIX pipes. You can chain multiple filtering and transformation commands to avoid creating massive intermediate files.
+- **Plugin Architecture**: The toolkit is extensible. If a specific atomic operation is missing, it can be added via the plugin system located in `~/.gtftk`.
+- **Chromosome Naming**: When using sequence-based tools like `get_tx_seq`, ensure that the chromosome naming convention (e.g., "chr1" vs "1") is consistent between your GTF and your reference FASTA to avoid "No genes found" errors.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| get_example | Print example files including GTF. |
+| get_tx_seq | Get transcripts sequences in a flexible fasta format from a GTF file. |
+| gtftk | A toolbox to handle GTF files. |
 
 ## Reference documentation
-- [Main Repository and Documentation](./references/github_com_dputhier_pygtftk.md)
-- [Installation and Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pygtftk_overview.md)
-- [Developer Wiki and Release Notes](./references/github_com_dputhier_pygtftk_wiki.md)
+- [Python GTF toolkit (pygtftk) Overview](./references/github_com_dputhier_pygtftk.md)
+- [pygtftk Wiki and Developer Guide](./references/github_com_dputhier_pygtftk_wiki.md)

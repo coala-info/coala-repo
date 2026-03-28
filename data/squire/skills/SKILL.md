@@ -1,6 +1,6 @@
 ---
 name: squire
-description: SQuIRE is a comprehensive pipeline for the locus-specific quantification and differential expression analysis of transposable element expression from RNA-seq data. Use when user asks to download genome-specific repeat data, clean repeat annotations, align reads to transposable elements, quantify specific repeat loci, or perform differential expression analysis of repeats.
+description: SQuIRE is a pipeline for the locus-specific quantification and differential expression analysis of transposable elements from RNA-seq data. Use when user asks to fetch genomic resources, clean repeat annotations, map reads to a reference, quantify locus-specific repeat expression, or call differential expression of transposable elements.
 homepage: https://github.com/wyang17/SQuIRE
 ---
 
@@ -8,61 +8,72 @@ homepage: https://github.com/wyang17/SQuIRE
 # squire
 
 ## Overview
-SQuIRE (Software for Quantifying Interspersed Repeat Expression) is a comprehensive pipeline designed to provide a locus-specific view of transposable element expression. Unlike tools that aggregate TE counts at the subfamily level, SQuIRE allows researchers to identify which specific genomic instances of a repeat are transcriptionally active. The workflow is divided into preparation (Fetch, Clean), quantification (Map, Count), and analysis (Call, Draw, Seek) stages.
+SQuIRE (Software for Quantifying Interspersed Repeat Expression) is a comprehensive pipeline designed to provide locus-specific quantification of transposable elements. Unlike tools that only provide subfamily-level summaries, SQuIRE uses an expectation-maximization algorithm to disambiguate multi-mapping reads, allowing researchers to identify exactly which genomic instances of a repeat are transcriptionally active. It is particularly useful for studying the regulatory roles of specific TEs in development, disease, or stress responses.
 
-## Installation and Environment
-SQuIRE relies on specific versions of bioinformatics tools (STAR 2.5.3a, bedtools 2.25.0, samtools 1.1, stringtie 1.3.3, and DESeq2 1.16.1) and runs on Python 2.7.
+## Core Workflow and CLI Patterns
 
-```bash
-# Recommended installation via mamba
-mamba create -n squire -c bioconda squire
-conda activate squire
-```
-
-## Core Workflow Commands
+The SQuIRE pipeline is divided into four main stages: Preparation, Quantification, Analysis, and Follow-up.
 
 ### 1. Preparation Stage
-Before processing samples, you must download genome-specific data and clean the repeat annotations.
+Before processing RNA-seq data, you must fetch genomic resources and clean the repeat annotations.
 
-*   **Fetch**: Downloads UCSC genome files and generates a STAR index.
+*   **Fetch Resources**: Downloads chromosome fastas, RefGene annotations, and RepeatMasker files.
     ```bash
     squire Fetch -b hg38 -f -c -r -g -x -p 8
     ```
-    *   `-b`: UCSC build (e.g., hg38, mm10).
-    *   `-x`: Create STAR index (resource intensive).
-    *   `-p`: Number of threads.
-
-*   **Clean**: Filters and collapses overlapping repeats from RepeatMasker.
+    *   `-b`: UCSC genome build (e.g., hg38, mm10).
+    *   `-x`: Generates the STAR index (resource intensive).
+*   **Clean Annotations**: Filters and formats the RepeatMasker file into a BED file.
     ```bash
-    squire Clean -b hg38 -c DNA,LTR -o squire_clean_hg38
+    squire Clean -b hg38 -c DNA,LTR -o squire_clean_folder
     ```
-    *   `-c`: Comma-separated repeat classes to include (e.g., 'DNA,LTR,SINE').
+    *   `-c`: Specify repeat classes (e.g., LTR, DNA, SINE, LINE). Wildcards are supported.
 
 ### 2. Quantification Stage
-Align your RNA-seq data and quantify the reads.
+This stage aligns your reads and assigns them to specific TE loci.
 
-*   **Map**: Aligns reads using STAR with parameters optimized for multi-mapping repeats.
+*   **Map Reads**: Uses STAR to align RNA-seq data.
     ```bash
-    squire Map -1 sample_R1.fastq.gz -2 sample_R2.fastq.gz -o map_output -p 8
+    squire Map -1 sample_R1.fastq.gz -2 sample_R2.fastq.gz -o map_out -p 8 -r 100 -b hg38
     ```
-
-*   **Count**: Assigns reads to specific TE loci using an Expectation-Maximization (EM) algorithm.
+    *   `-r`: Read length is required for proper alignment parameters.
+*   **Count Loci**: Quantifies reads using an EM algorithm to handle multi-mappers.
     ```bash
-    squire Count -m map_output -c squire_clean_hg38 -o count_output -p 8
+    squire Count -m map_out -c squire_clean_folder -o count_out -p 8 -b hg38
     ```
 
 ### 3. Analysis Stage
-*   **Call**: Performs differential expression analysis using DESeq2. Requires a experimental design file.
+*   **Call Differential Expression**: Compiles counts and runs DESeq2.
     ```bash
-    squire Call -d design_matrix.txt -o de_results
+    squire Call -n control,control,treat,treat -o call_out -p 8
     ```
+    *   `-n`: Comma-separated labels for your samples.
 
-## Best Practices and Tips
-*   **One-Time Setup**: `Fetch` and `Clean` only need to be run once per genome build. Reuse these outputs for all subsequent samples.
-*   **Resource Management**: The `Fetch -x` (indexing) and `Map` steps are memory-intensive. Ensure your environment has at least 32GB of RAM for human/mouse genomes.
-*   **Software Compatibility**: If you encounter issues with conda-installed dependencies, use `squire Build -s all` to manually compile compatible versions of STAR, bedtools, and samtools.
-*   **Wildcards**: When using `Clean`, you can use UNIX wildcard patterns for repeat classes or families (e.g., `ERV*`).
+### 4. Follow-up Stage
+*   **Draw**: Generates BigWig/BedGraph files for visualization in genome browsers.
+*   **Seek**: Extracts the actual sequences of the quantified TEs.
+
+## Expert Tips and Best Practices
+
+*   **Software Compatibility**: SQuIRE is highly sensitive to dependency versions (e.g., STAR 2.5.3a, Python 2.7). It is strongly recommended to use the provided Conda/Mamba environment or run `squire Build -s all` if manual installation fails.
+*   **Memory Management**: The `Fetch -x` (indexing) and `Map` steps are memory-intensive. Ensure your environment has at least 32GB of RAM for human or mouse genomes.
+*   **Read Length**: Always provide the correct read length (`-r`) in the `Map` step, as SQuIRE uses this to calculate the appropriate `sjdbOverhang` for STAR.
+*   **Multi-mapping**: SQuIRE's strength is its EM algorithm. If you have very short reads (e.g., <50bp), the ability to uniquely assign TE expression decreases significantly due to the repetitive nature of the sequences.
+*   **Custom Repeats**: You can incorporate non-reference TE sequences by providing them in the appropriate format during the `Clean` stage.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| squire | squire: error: invalid choice: 'build' (choose from 'Build', 'Fetch', 'Clean', 'Map', 'Count', 'Call', 'Draw', 'Seek') |
+| squire | squire: error: invalid choice: 'clean' (choose from 'Build', 'Fetch', 'Clean', 'Map', 'Count', 'Call', 'Draw', 'Seek') |
+| squire | A command-line tool for genomic analysis. |
+| squire | squire: error: invalid choice: 'fetch' (choose from 'Build', 'Fetch', 'Clean', 'Map', 'Count', 'Call', 'Draw', 'Seek') |
+| squire | A command-line tool for genomic analysis. |
+| squire | A command-line tool for genomic analysis. |
 
 ## Reference documentation
-- [SQuIRE GitHub Repository](./references/github_com_wyang17_SQuIRE.md)
-- [Bioconda SQuIRE Package](./references/anaconda_org_channels_bioconda_packages_squire_overview.md)
+- [SQuIRE README and Pipeline Overview](./references/github_com_wyang17_SQuIRE_blob_master_README.md)
+- [SQuIRE Repository Structure](./references/github_com_wyang17_SQuIRE.md)

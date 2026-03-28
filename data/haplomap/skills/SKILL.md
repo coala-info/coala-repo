@@ -1,6 +1,6 @@
 ---
 name: haplomap
-description: Haplomap is an automated graph-based pipeline designed to identify genetic loci associated with specific phenotypes in inbred populations. Use when user asks to perform genetic mapping, identify genetic drivers of complex traits, or process murine phenotype and variant data.
+description: Haplomap performs haplotype-based computational genetic mapping to identify genomic regions associated with specific phenotypes in inbred populations. Use when user asks to perform genetic mapping, identify genomic regions associated with phenotypes, or analyze haplotype blocks in mouse populations.
 homepage: https://github.com/zqfang/haplomap
 ---
 
@@ -8,62 +8,88 @@ homepage: https://github.com/zqfang/haplomap
 # haplomap
 
 ## Overview
-The haplomap tool is a modern successor to the Haplotype-based Computational Genetic Mapping (HBCGM) project. It implements an automated, multi-modal graph-based pipeline designed to identify genetic loci associated with specific phenotypes in inbred populations. It is primarily utilized in murine research to process large-scale datasets (such as those from the Mouse Phenome Database) by integrating variant calling, strain metadata, and gene expression data to discover genetic drivers of complex traits.
 
-## Installation and Environment Setup
-The most efficient way to deploy haplomap is via the Bioconda channel.
+Haplomap is a specialized tool for Haplotype-Based Computational Genetic Mapping (HBCGM). It is designed to identify genomic regions associated with specific phenotypes in inbred populations, such as those found in the Mouse Phenome Database (MPD). By analyzing haplotype blocks rather than individual SNPs, it provides a more robust framework for genetic discovery. This skill provides guidance on setting up the environment, preparing input data, and executing the core mapping workflows.
 
-```bash
-# Install via conda
-conda install -c bioconda haplomap
+## Environment Setup
 
-# Create the specific environment from the repository's environment file
-conda create -n hbcgm -f environment.yaml
-conda activate hbcgm
-```
+Haplomap requires a specific set of dependencies for both the core mapping and the preceding variant calling steps.
 
 ### Core Dependencies
-Ensure the following tools are available in your path for the full pipeline:
-- **Mapping/Calling**: GATK 4.x, BWA, SAMtools, BCFtools
-- **Genomics Utilities**: BEDtools, svtools
-- **Workflow Management**: Snakemake
-- **System**: GSL (GNU Scientific Library), GCC >= 4.8
+- **GSL**: GNU Scientific Library (Required for C++ backend)
+- **C++11**: GCC >= 4.8 or Clang >= 11.0.3
+- **Python**: For workflow management and data processing
 
-## Workflow Execution Patterns
-
-### 1. Variant Calling
-Before mapping, variants must be called and annotated. The pipeline supports BCFtools and GATK.
-
+### Installation via Conda
+The most efficient way to install haplomap and its dependencies is through Bioconda:
 ```bash
-# Run variant calling using BCFtools with 12 cores
-snakemake -s workflows/bcftools.call.smk --configfile config.yaml -k -p -j 12
+conda install -c bioconda haplomap
 ```
 
-### 2. Preparing Input Data
-Haplomap requires specific input formats for phenotype and strain data:
-- **Trait IDs**: A file with one ID per row, suffixed with `-m` (male) or `-f` (female) (e.g., `26720-m`).
-- **Strain Metadata**: A CSV mapping strain abbreviations to full names and JAX IDs.
-- **VCF/VEP**: Filtered VCF files and Ensembl-VEP output from the variant calling step.
+## Data Preparation
 
-### 3. Running the Mapping Pipeline
-The main mapping procedure is executed through Snakemake.
+Before running the mapping, you must prepare your trait data and genomic variants.
 
+### 1. Trait ID File
+Create a text file containing Mouse Phenome Database (MPD) `measnum` IDs.
+- Format: One ID per row.
+- Suffixes: Use `-m` for male and `-f` for female data.
+- Example:
+  ```text
+  26720-m
+  26720-f
+  9940-f
+  ```
+
+### 2. Genomic Input Requirements
+Haplomap relies on high-quality variant data. Ensure you have the following ready:
+- **VCF Files**: Filtered VCFs containing the variants for your population.
+- **VEP Output**: Ensembl Variant Effect Predictor results for functional annotation.
+- **Genetic Relation File**: (Optional) PLink output (`.rel`) to account for population structure.
+- **Gene Expression**: (Optional) Compact expression data to support multi-modal discovery.
+
+## Execution Patterns
+
+### Standalone Usage
+For direct execution of the `haplomap` binary, ensure your GSL library path is exported if you installed from source:
 ```bash
-# Execute the haplomap pipeline with 24 cores
+export LD_LIBRARY_PATH="${HOME}/program/gsl/lib:$LD_LIBRARY_PATH"
+```
+
+### Snakemake Workflow Integration
+Haplomap is typically run as part of a Snakemake pipeline to handle the multi-step nature of genetic mapping.
+
+**Local Execution:**
+Run the pipeline using the provided Snakemake file and configuration:
+```bash
 snakemake -s workflows/haplomap.smk --configfile workflows/config.yaml -k -p -j 24
 ```
 
-## Configuration Best Practices
-When configuring the workflow, pay attention to these critical parameters:
-- **USE_RAWDATA**: Set to `false` to use strain means (default) or `true` to use individual animal data.
-- **GENETIC_REL**: Provide a genetic relation file (e.g., PLINK output) to account for population structure.
-- **GENE_EXPRS**: Including a gene expression file allows for multi-modal integration during the discovery process.
+**HPC Execution (SLURM):**
+For large-scale MPD datasets, use the SLURM submission script:
+```bash
+sbatch slurm.submit.sh
+```
 
-## Expert Tips
-- **HPC Execution**: For large-scale MPD datasets (>10k datasets), use the provided SLURM submission scripts (`slurm.submit.sh`) to manage resource allocation on clusters like Stanford Sherlock.
-- **Standalone Mode**: While the Snakemake workflow is recommended for reproducibility, the `haplomap` binary can be run standalone for specific sub-tasks.
-- **Memory Management**: Genetic mapping is memory-intensive. When running on a local node, ensure at least 24 cores and proportional RAM are available for the haplotype construction phase.
+## Best Practices
+
+- **Strain Annotation**: Ensure your `STRAIN_ANNO` metadata file correctly maps strain abbreviations to full names and JAX IDs.
+- **Raw Data vs. Means**: By default, the tool uses strain means. Set `USE_RAWDATA: true` in your configuration if you need to analyze individual animal data.
+- **Resource Allocation**: Genetic mapping is computationally intensive. When running on local nodes, use at least 12-24 cores (`-j` flag) to handle the parallel processing of multiple traits.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Convert ensembl-vep to eblocks (-g) input |
+| convert | Convert VCF to NIEHS compact format |
+| eblocks | Finds haploblocks from a set of strains, alleles, and gene annotations. |
+| ghmap | Output gene-summaried results by default. |
+| pca | Perform reduction on the data dimension (rows) |
 
 ## Reference documentation
-- [Haplomap GitHub Repository](./references/github_com_zqfang_haplomap.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_haplomap_overview.md)
+- [Haplomap Main README](./references/github_com_zqfang_haplomap_blob_master_README.md)
+- [Environment Configuration](./references/github_com_zqfang_haplomap_blob_master_environment.yaml.md)
+- [SLURM Submission Guide](./references/github_com_zqfang_haplomap_blob_master_slurm.submit.sh.md)

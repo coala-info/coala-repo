@@ -1,6 +1,6 @@
 ---
 name: ale
-description: ALE evaluates the quality of a genome assembly by calculating a likelihood score based on how well sequenced reads support the assembly. Use when user asks to assess assembly quality without a reference, calculate assembly likelihood scores, or identify base-level inconsistencies in a genome.
+description: ALE evaluates the accuracy of genomic assemblies by calculating a likelihood score based on read mapping and sequencing data. Use when user asks to assess assembly quality, identify misassembled regions, or convert ALE output to wiggle format for visualization.
 homepage: https://github.com/sc932/ALE
 ---
 
@@ -8,39 +8,46 @@ homepage: https://github.com/sc932/ALE
 # ale
 
 ## Overview
-ALE (Assembly Likelihood Estimator) is a tool designed to assess the quality of a genome assembly without a reference genome. It uses a probabilistic framework to determine how well a set of sequenced reads (provided as a BAM file) supports a given assembly (provided as a FASTA file). The tool generates a likelihood score that accounts for various factors including insert size distributions, read orientations, and base-level accuracy.
+ALE (Assembly Likelihood Estimator) is a reference-independent tool for assessing the accuracy of genomic assemblies. It calculates a likelihood score by integrating multiple lines of evidence from the sequencing data, including read mapping quality, mate-pair orientations, insert size distributions, and depth of coverage. By analyzing these factors, ALE provides a quantitative measure of how well the assembly represents the underlying read data, helping researchers identify specific regions that require further polishing or manual intervention.
 
-## Usage Guidelines
+## Usage and CLI Patterns
 
-### Primary Workflow
-The standard workflow for ALE involves mapping your reads to the assembly and then running the estimator.
+### Core Command
+The primary execution requires a reference assembly and a corresponding alignment file.
+```bash
+ale <assembly.fasta> <alignments.bam> <output.ale>
+```
 
-1.  **Map Reads**: Use a standard aligner (like BWA or Bowtie2) to map your reads to the assembly FASTA. Ensure the output is a sorted BAM file.
-2.  **Run ALE**: Execute the main tool by providing the alignment and the assembly.
-    ```bash
-    ALE mapping.bam assembly.fasta output.ale
-    ```
-3.  **Visualization**: Convert the raw ALE scores into a format compatible with genome browsers.
-    ```bash
-    python ale2wiggle.py output.ale
-    ```
+### Common Options and Flags
+Based on the tool's development history, the following flags are used to modify behavior:
+- `-h`: Display help and usage information.
+- `--realign`: Perform local realignment of reads to improve accuracy around indels or complex regions.
+- `--SNPreport`: Generate a report specifically focusing on single nucleotide polymorphisms and potential base errors.
+- `--pl`: Enable specific placement likelihood calculations.
 
-### Key CLI Options and Flags
-*   `--realign`: Use this flag to perform a local realignment of reads, which can improve the accuracy of the likelihood score in complex regions.
-*   `--SNPreport`: Generates a report on potential SNPs and base-level inconsistencies identified during the evaluation.
-*   `--pl`: Used to specify or adjust parameters related to the library's insert size distribution.
+### Post-Processing and Visualization
+ALE output is typically stored in a `.ale` format, which contains the likelihood scores. For visual inspection in tools like IGV (Integrative Genomics Viewer):
+1. **Convert to Wiggle**: Use the provided utility script to transform the raw scores into a standard genomic track format.
+   ```bash
+   python ale2wiggle.py <output.ale>
+   ```
+2. **BigWig Conversion**: For large genomes, it is recommended to convert the resulting `.wig` files to `.bw` (BigWig) format using `wigToBigWig` to improve loading performance in genome browsers.
 
-### Visualization and Interpretation
-*   **IGV Integration**: The authors recommend using the Integrative Genomics Viewer (IGV). You should load the assembly FASTA, the BAM file, and the generated `.wig` files.
-*   **Wiggle Conversion**: Use `ale2wiggle.py` to transform the `.ale` output. For very large genomes, it is a best practice to convert the resulting `.wig` files into the `BigWig` format for better performance in browsers.
-*   **Plotting**: For advanced statistical plotting, `plotter4.py` is available but requires a specific Python environment including `numpy`, `matplotlib`, and `pymix`.
+## Best Practices
+- **BAM Preparation**: Ensure your BAM file is properly indexed. While ALE can sometimes autodetect sorting orders, coordinate-sorted BAMs are the standard for most downstream analysis.
+- **Read Validation**: ALE is sensitive to secondary alignments. For the most accurate likelihood estimation, use BAM files where primary alignments are clearly defined.
+- **Visual Inspection**: Always load the assembly FASTA, the BAM file, and the converted ALE Wiggle tracks into IGV simultaneously. Look for sharp drops in the ALE score, as these typically correlate with assembly breakpoints or misjoined contigs.
+- **Environment**: ALE relies on specific Python libraries for its plotting utilities (`plotter4.py`), including `numpy`, `matplotlib`, and `pymix`. Ensure these are available in your environment if generating automated plots.
 
-### Expert Tips
-*   **Secondary Alignments**: Recent versions of ALE (20180904+) are configured to ignore secondary alignments and focus on validating mate pairs to ensure the structural integrity of the assembly is accurately reflected in the score.
-*   **Input Validation**: Ensure your BAM file is indexed and sorted. If the tool encounters minor issues with MD tags or mate pair consistency, it will typically issue a warning rather than aborting, but these warnings should be reviewed to ensure the validity of the likelihood score.
-*   **Legacy Note**: This tool is no longer in active development. If you encounter segfaults when running without arguments or with missing files, ensure you are using the latest bioconda release (v20180904) which addressed several of these stability issues.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ALE | Assembly Likelihood Estimator for evaluating genome assemblies using read alignments. |
+| ale2wiggle.py | Converts ALE (Assembly Likelihood Evaluation) output files to Wiggle format. |
 
 ## Reference documentation
-- [github_com_sc932_ALE.md](./references/github_com_sc932_ALE.md)
-- [anaconda_org_channels_bioconda_packages_ale_overview.md](./references/anaconda_org_channels_bioconda_packages_ale_overview.md)
-- [github_com_sc932_ALE_commits_master.md](./references/github_com_sc932_ALE_commits_master.md)
+- [ALE Repository Overview](./references/github_com_sc932_ALE.md)
+- [ALE Commit History and Flag Updates](./references/github_com_sc932_ALE_commits_master.md)

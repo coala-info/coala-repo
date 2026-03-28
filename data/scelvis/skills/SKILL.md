@@ -1,6 +1,6 @@
 ---
 name: scelvis
-description: SCelVis provides interactive, web-based visualization and exploration of single-cell transcriptomics data. Use when user asks to launch a visualization server, explore cell clusters and gene expression patterns, or convert data formats like MTX and Loom into AnnData files.
+description: SCelVis is an interactive web-based tool for visualizing and exploring single-cell transcriptomics data. Use when user asks to start a visualization server, convert single-cell data formats to AnnData, or explore gene expression patterns through an interactive dashboard.
 homepage: https://github.com/bihealth/scelvis
 ---
 
@@ -8,54 +8,73 @@ homepage: https://github.com/bihealth/scelvis
 # scelvis
 
 ## Overview
-SCelVis is a specialized tool designed for the interactive, web-based visualization of single-cell transcriptomics data. It allows researchers to explore cell clusters, gene expression patterns, and metadata through a browser-based dashboard. Use this skill to quickly set up the environment, convert raw data formats (like MTX or Loom) into compatible AnnData files, and host a local or containerized visualization server.
+SCelVis (Single-Cell Visualization) is a specialized tool for the interactive exploration of single-cell transcriptomics data. It provides a web-based environment—built on the Dash framework—that allows researchers to visualize cell clusters, examine gene expression patterns, and perform on-the-fly filtering and differential expression analysis. It is particularly useful for transitioning from static analysis files (like AnnData objects) to a shareable, interactive dashboard.
 
-## Installation
-SCelVis can be installed via multiple package managers or run directly as a container:
+## Installation and Setup
+SCelVis can be installed via standard Python package managers or run via containerization:
 
-- **Conda (Recommended):**
-  ```bash
-  conda install -c bioconda scelvis
-  ```
-- **Pip:**
-  ```bash
-  pip install scelvis
-  ```
-- **Docker:**
-  ```bash
-  docker run -p 8050:8050 ghcr.io/bihealth/scelvis:0.8.9-0
-  ```
+- **Pip**: `pip install scelvis`
+- **Conda**: `conda install -c bioconda scelvis`
+- **Docker**: `docker run -p 8050:8050 ghcr.io/bihealth/scelvis:0.8.8-0 scelvis run --data-source /data`
 
 ## Common CLI Patterns
 
-### Launching the Visualization Server
-The primary use case is starting the web server to view your data.
+### Running the Visualization Server
+The primary command to start the web interface is `scelvis run`.
+
 ```bash
-# Run the server pointing to a directory containing your datasets
-scelvis run --data-dir /path/to/your/data/
-```
-By default, the server usually listens on port 8050. You can access the interface at `http://localhost:8050`.
+# Run with a local directory containing data files
+scelvis run --data-source ./path/to/data_dir/
 
-### Data Conversion and Preparation
-SCelVis works best with `.h5ad` (AnnData) files. If your data is in other formats, use the conversion utilities:
+# Run pointing to a single AnnData (.h5ad) file
+scelvis run --data-source ./experiment_data.h5ad
 
-- **From MTX:** Convert sparse matrix files to the internal format.
-- **From Loom:** Convert Loom files to H5AD. Note that there is a known warning during Loom to H5AD conversion that may require checking the output integrity.
-- **Downsampling:** When dealing with extremely large datasets, use the downsampling flag during conversion to improve web interface responsiveness.
-
-### Checking Version and Help
-```bash
-scelvis --version
-scelvis --help
+# Specify a custom port (default is usually 8050)
+scelvis run --data-source ./data --port 8080
 ```
 
-## Expert Tips
-- **Coordinate Mapping:** Ensure your dimensionality reduction coordinates (UMAP, t-SNE) are stored in `ad.obsm` within your H5AD files. SCelVis relies on these for spatial rendering of cell clusters.
-- **Data Directory Structure:** When using `--data-dir`, SCelVis scans the directory for compatible files. Organizing your files with clear naming conventions helps the tool populate the dataset selection dropdown effectively.
-- **Memory Management:** For large-scale atlases, running SCelVis via Docker with resource limits can prevent the web server from consuming excessive system memory during high-concurrency access.
-- **Troubleshooting Conda:** If you encounter dependency issues during conda installation (specifically regarding `loompy`), ensure your channels are prioritized with `conda-forge` and `bioconda`.
+### Data Conversion
+SCelVis includes utilities to prepare data for visualization, specifically converting various formats into the preferred `.h5ad` (AnnData) format.
+
+```bash
+# Convert a Loom file to H5AD
+scelvis convert --input-file data.loom --output-file data.h5ad
+
+# Convert MTX (Matrix Market) files
+scelvis convert --input-file ./mtx_dir/ --output-file data.h5ad
+
+# Enable downsampling during conversion for large datasets
+scelvis convert --input-file large_data.h5ad --output-file small_data.h5ad --downsample 1000
+```
+
+### Working with Remote Data
+SCelVis supports loading datasets from remote protocols, which is useful for centralized data repositories.
+
+- **iRODS**: Use the iRODS URI scheme. If using tickets for access, append them to the query string:
+  `scelvis run --data-source "irods:///zone/path/to/data?ticket=YOUR_TICKET"`
+- **SFTP/FTP**: Load data directly via SFTP:
+  `scelvis run --data-source "sftp://user:pass@host/path/to/data"`
+- **HTTP/HTTPS**: Point to a hosted H5AD file:
+  `scelvis run --data-source "https://example.com/data.h5ad"`
+
+## Expert Tips and Best Practices
+
+- **Metadata Embedding**: For a better user experience, embed an `about.md` file within your data directory or as metadata in the AnnData object. SCelVis will display this on the home screen to provide context for the dataset.
+- **Sparse Matrices**: When preparing data, avoid converting sparse matrices to dense formats. SCelVis is optimized to handle sparse data to minimize memory consumption.
+- **Categorical Data**: Ensure your cluster assignments and metadata are stored as `categorical` types in the AnnData object to ensure they are correctly parsed as discrete filters in the UI.
+- **Gene Expression Source**: SCelVis prefers using the `ad.raw` attribute of an AnnData object if present. Ensure your normalized/log-transformed data is stored there for accurate visualization of expression levels.
+- **Performance**: For very large datasets (>100k cells), use the downsampling feature during the `convert` step to maintain a responsive web interface.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| scelvis_convert | Convert scELVIS output to .h5ad format. |
+| scelvis_run | Run the scelvis server. |
 
 ## Reference documentation
 - [SCelVis GitHub Repository](./references/github_com_bihealth_scelvis.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_scelvis_overview.md)
-- [Known Issues and TODOs](./references/github_com_bihealth_scelvis_issues.md)
+- [SCelVis README](./references/github_com_bihealth_scelvis_blob_master_README.rst.md)
+- [Version History and Features](./references/github_com_bihealth_scelvis_blob_master_HISTORY.rst.md)

@@ -106,3 +106,6 @@ Options:
 --min-map-quality, -q  UINT         Minimum mapping quality to include a read in pileup                        [0]
 ```
 
+
+## Metadata
+- **Skill**: generated

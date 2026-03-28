@@ -1,6 +1,6 @@
 ---
 name: abricate
-description: ABRicate identifies antibiotic resistance and virulence genes within DNA contigs by screening assembly files against integrated databases. Use when user asks to screen contigs for resistance genes, list available databases, or generate presence/absence matrices from screening results.
+description: "ABRicate identifies acquired antibiotic resistance and virulence genes in genomic assemblies using BLASTN against curated databases. Use when user asks to screen contigs for resistance factors, identify virulence genes, list available databases, or generate a gene presence/absence summary matrix."
 homepage: https://github.com/tseemann/abricate
 ---
 
@@ -9,39 +9,50 @@ homepage: https://github.com/tseemann/abricate
 
 ## Overview
 
-ABRicate is a command-line tool designed for the rapid identification of acquired antibiotic resistance and virulence genes within DNA contigs. It functions by screening assembly files (FASTA, Genbank, or EMBL) against a variety of integrated databases. This skill provides the necessary procedural knowledge to execute screenings, manage databases, and aggregate results into presence/absence matrices. Note that ABRicate detects acquired genes via DNA-to-DNA search and is not intended for detecting point mutations or analyzing raw FASTQ reads.
+ABRicate is a specialized tool for the rapid identification of acquired resistance and virulence factors within genomic contigs. It utilizes a DNA-based approach (blastn) to match input sequences against a variety of integrated databases. This skill should be used to automate the screening of assemblies, manage database updates, and generate presence/absence matrices for comparative genomic analysis. It is important to note that ABRicate identifies acquired genes rather than chromosomal point mutations and requires assembled contigs rather than raw FASTQ reads.
 
-## Usage and CLI Patterns
+## Functional Guidance
 
 ### Database Management
-Before running an analysis, verify available databases and their synchronization status.
-- **List databases**: `abricate --list` (Shows sequences, type, and last update date).
-- **Check dependencies**: `abricate --check` (Ensures BLAST+ and any2fasta are functional).
-- **Update/Download**: `abricate-get_db --db [dbname] --force` (Forces a fresh download of the specified database).
+Before running an analysis, verify the available databases and their last update timestamps.
+- **List databases**: `abricate --list`
+- **Update a specific database**: `abricate-get_db --db ncbi --force`
+- **Check dependencies**: `abricate --check`
 
-### Screening Contigs
-ABRicate accepts single files, multiple files, or a "File of File Names" (FOFN).
-- **Basic screening**: `abricate assembly.fasta > results.tab`
-- **Specify a database**: `abricate --db card assembly.fasta` (Default is `ncbi`).
-- **Batch processing**: `abricate *.fna > combined_results.tab`
-- **Using a FOFN**: `abricate --fofn list_of_files.txt`
+### Common CLI Patterns
 
-### Generating Summaries
-To compare gene presence across multiple samples, use the summary mode.
-- **Create matrix**: `abricate --summary results.tab > summary.tab`
-- **Identity-based matrix**: `abricate --summary --identity results.tab` (Uses %IDENTITY instead of %COVERAGE in the matrix).
+**Basic Screening**
+Run a default scan (usually against the NCBI database) on a single assembly:
+`abricate assembly.fasta > results.tab`
+
+**Using Specific Databases**
+To screen for virulence factors or specific AMR sets, specify the database:
+`abricate --db vfdb assembly.fasta`
+`abricate --db card assembly.fasta`
+
+**Batch Processing**
+ABRicate handles multiple files efficiently. You can use wildcards or a File of File Names (FOFN):
+`abricate *.fna > combined_results.tab`
+`abricate --fofn list_of_files.txt > combined_results.tab`
+
+**Generating Summary Reports**
+To create a gene presence/absence matrix across multiple samples (useful for pangenome or population studies):
+`abricate --summary combined_results.tab > summary_matrix.tab`
+
+### Output Filtering and Refinement
+- **Identity and Coverage**: By default, ABRicate uses a 80% threshold for both. Adjust these for higher stringency:
+  `abricate --minid 95 --mincov 90 assembly.fasta`
+- **CSV Output**: If TSV is not preferred, use the `--csv` flag.
+- **Quiet Mode**: Use `--quiet` to suppress status messages during pipeline execution.
 
 ## Expert Tips and Best Practices
 
-- **Input Formats**: ABRicate uses `any2fasta` internally. You can provide gzipped (`.gz`) or bzipped (`.bz2`) files directly without manual decompression.
-- **Filtering Thresholds**: The default thresholds are 80% identity and 80% coverage. Adjust these for stricter or more relaxed searching:
-  - `abricate --minid 95 --mincov 95 assembly.fasta`
-- **Output Interpretation**:
-  - **GAPS**: If the GAPS column shows values (e.g., 1/4), the hit might be a pseudogene or contain a frameshift.
-  - **COVERAGE_MAP**: Use this visual representation in the TSV output to quickly identify if a gene is fragmented across contig boundaries.
-- **Performance**: Use the `--threads [N]` flag to speed up BLAST+ searches on multi-core systems.
-- **Suppression**: Use `--quiet` to suppress status messages to stderr, which is useful when piping output to other tools.
+1. **Input Formats**: ABRicate uses `any2fasta`, meaning it can accept Genbank and EMBL files directly without manual conversion. It also supports `.gz` and `.bz2` compressed files.
+2. **Point Mutations**: Always remember that ABRicate will not find resistance caused by SNPs (e.g., gyrA mutations). For those cases, consider tools like AMRFinderPlus or PointFinder.
+3. **Summary Metrics**: When using `--summary`, the values in the matrix represent the `%COVERAGE`. If you prefer to see the `%IDENTITY`, add the `--identity` flag to the summary command.
+4. **Database Selection**: For general AMR screening, `ncbi` or `card` are standard. For E. coli specific virulence, `ecoli_vf` or `ecoh` provide more granular results than the general `vfdb`.
 
 ## Reference documentation
-- [ABRicate GitHub Repository](./references/github_com_tseemann_abricate.md)
-- [Bioconda ABRicate Package](./references/anaconda_org_channels_bioconda_packages_abricate_overview.md)
+
+- [ABRicate Main Documentation](./references/github_com_tseemann_abricate.md)
+- [ABRicate Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_abricate_overview.md)

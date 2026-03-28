@@ -46,3 +46,6 @@ usage: ezcharts [-h] [--debug | --quiet] [-v]
 ezcharts: error: argument command: invalid choice: 'additional' (choose from params, nextclade, fastcat, dss, modkit, mosdepth, clinvar, bcfstats, status, demo, plots, ideogram)
 ```
 
+
+## Metadata
+- **Skill**: generated

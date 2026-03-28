@@ -1,61 +1,75 @@
 ---
 name: mtsv
-description: MTSv is a suite of tools for metagenomic binning and analysis. Use when user asks to identify taxa present in DNA sequencing samples by analyzing signature reads, binning contigs into potential genomes, or profiling taxonomic abundance.
+description: MTSv is a metagenomic analysis suite that identifies taxa in shotgun sequencing samples by finding signature reads unique to specific organisms. Use when user asks to prepare reference databases, run a taxonomic classification pipeline, or extract reads associated with specific TaxIDs.
 homepage: https://github.com/FofanovLab/MTSv
 ---
 
 
 # mtsv
 
-yaml
-name: mtsv
-description: A suite of tools for metagenomic binning and analysis. Use when you need to identify taxa present in DNA sequencing samples by analyzing signature reads, particularly for shotgun or short-read formats. This skill is useful for tasks such as binning, taxonomic profiling, and analyzing metagenomic datasets.
-```
 ## Overview
-MTSv is a powerful suite of tools designed for metagenomic binning and analysis. It excels at identifying the taxonomic composition of DNA sequencing samples by pinpointing unique reads associated with specific taxa. This is particularly effective for short-read data, such as shotgun sequencing. Use MTSv when you need to perform tasks like binning contigs into potential genomes, profiling the abundance of different taxa, or generally analyzing the microbial communities within a sample.
 
-## Usage and Best Practices
+MTSv is a high-performance metagenomic analysis suite designed to identify taxa in shotgun sequencing samples by finding signature reads unique to specific organisms. The tool operates through a two-stage process: first, a one-time setup of sequence databases (GenBank/RefSeq) using `mtsv_setup`, followed by a modular analysis pipeline using the `mtsv` command. It leverages Snakemake for workflow management, allowing for scalable execution on local machines or high-performance computing clusters.
 
-MTSv is primarily a command-line tool. Installation is recommended via Conda.
+## Database Setup and Management
 
-### Installation
+Before running analysis, you must prepare the reference database. This is handled by the `mtsv_setup` utility.
 
-```bash
-conda install mtsv -c bioconda -c conda-forge
-```
+### Standard Database Creation
+Download and build the default GenBank and RefSeq "Complete Genome" databases:
+`mtsv_setup database --path ./db_dir --thread 8`
 
-### Core Workflow
+### Custom Database Partitions
+To focus on specific organisms and speed up analysis, create custom FM-indices using TaxIDs:
+- **Include specific TaxIDs**: `mtsv_setup custom_db --path ./db_dir --partition 1396,1392`
+- **Exclude specific TaxIDs**: Use the minus sign (e.g., Bacilli 91061 excluding B. anthracis 1392): `mtsv_setup custom_db --path ./db_dir --partition 91061-1392`
 
-The MTSv pipeline generally involves two main stages:
+## Analysis Workflow
 
-1.  **Sequence Database Setup (One-time or infrequent):** Downloading and preparing reference sequence databases.
-2.  **Binning and Analysis (Per sample):** Processing new read sets through the binning and analysis pipeline.
+The analysis pipeline requires a configuration file (`mtsv.cfg`) generated during initialization.
 
-### Key Commands and Concepts
+### 1. Initialization
+Generate the required config file by pointing to the database artifacts:
+`mtsv init /path/to/database/artifacts/genbank.json`
 
-While the full command-line interface can be extensive, understanding the core components is crucial. MTSv is written in Python and utilizes compiled Rust binaries for performance.
+### 2. Running the Pipeline
+Execute the full suite from quality control to statistical analysis:
+`mtsv pipeline --configfile mtsv.cfg --cores 16`
 
-**General Usage Pattern:**
+### 3. Modular Execution
+You can run specific stages of the pipeline independently:
+- **Readprep**: QC and kmer generation: `mtsv readprep --configfile mtsv.cfg`
+- **Binning**: Alignment-based classification: `mtsv binning --configfile mtsv.cfg`
+- **Summary**: Taxa hit summarization: `mtsv summary --configfile mtsv.cfg`
+- **Analyze**: Statistical validation: `mtsv analyze --configfile mtsv.cfg`
 
-```bash
-mtsv [command] [options] <input_files>
-```
+## Expert Tips and Best Practices
 
-**Important Considerations:**
+- **Input Format**: MTSv typically expects raw FASTQ files. Note that some versions may not support gzipped FASTQ directly; if errors occur, decompress files before running `readprep`.
+- **Snakemake Integration**: Since `mtsv` wraps Snakemake, you can pass native Snakemake arguments like `--dry-run`, `--unlock`, or `--rerun-incomplete` directly to the `mtsv pipeline` command.
+- **Cluster Execution**: For HPC environments, use `mtsv cluster-init` to generate a `cluster.cfg`. Execute using the `--cluster` flag to map Snakemake rules to your scheduler (e.g., SLURM).
+- **Extracting Reads**: Use `mtsv extract --taxid <ID>` to pull all queries that aligned to a specific taxon for downstream validation or assembly.
+- **Unaligned Reads**: Use `mtsv extract-unaligned` to isolate reads that failed to match the database, which is useful for identifying novel organisms or contamination.
 
-*   **Input Data:** MTSv typically expects short-read data, often in `.fastq` or `.fastq.gz` format.
-*   **Databases:** The tool relies on reference databases for taxonomic assignment. Ensure these are correctly set up or downloaded. The `install.sh` script might be relevant for initial database setup.
-*   **Environment:** It's recommended to run MTSv within a Python 3.6 Conda environment.
 
-### Expert Tips
 
-*   **Database Management:** For offline or air-gapped systems, refer to the issue tracker for discussions on creating offline mirrors of databases.
-*   **Performance:** MTSv leverages Rust binaries for core functions, indicating a focus on performance. Consider the `--cpus` or similar parameters for multi-threading where applicable, especially for analysis steps.
-*   **Custom Databases:** The tool supports building custom databases. Refer to the issue tracker for specific discussions on custom database creation from lists of files or using custom flat files.
-*   **Troubleshooting:** If encountering issues, check the GitHub issue tracker for similar problems, especially regarding Conda installations or specific command executions.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mtsv | mtsv: error: argument COMMAND: invalid choice: 'COMMAND' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline') |
+| mtsv | mtsv: error: argument COMMAND: invalid choice: 'coming' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline') |
+| mtsv analyze | Additional Snakemake commands may also be provided |
+| mtsv binning | Additional Snakemake commands may also be provided |
+| mtsv extract | Extracts reads based on taxonomic IDs and other criteria. |
+| mtsv init | Initialize mtsv project |
+| mtsv readprep | Additional Snakemake commands may also be provided |
+| mtsv_pipeline | Additional Snakemake commands may also be provided |
+| summary | Additional Snakemake commands may also be provided |
 
 ## Reference documentation
-- [MTSv Overview (Anaconda.org)](./references/anaconda_org_channels_bioconda_packages_mtsv_overview.md)
-- [MTSv GitHub Repository](./references/github_com_FofanovLab_MTSv.md)
-- [MTSv Issues](./references/github_com_FofanovLab_MTSv_issues.md)
-- [MTSv Wiki](./references/github_com_FofanovLab_MTSv_wiki.md)
+
+- [Binning and Analysis Quick Start Guide](./references/github_com_FofanovLab_MTSv_wiki_Binning-and-Analysis-Quick-Start-Guide.md)
+- [Sequence Download and Setup Quick Start Guide](./references/github_com_FofanovLab_MTSv_wiki_Sequence-Download-and-Setup-Quick-Start-Guide.md)
+- [Custom Partitioning of Selected Database](./references/github_com_FofanovLab_MTSv_wiki_Custom-Partitioning-of-Selected-Database.md)
+- [Installation Guide](./references/github_com_FofanovLab_MTSv_wiki_Installation.md)

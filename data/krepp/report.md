@@ -200,3 +200,6 @@ Options:
   --hdist-th UINT:NONNEGATIVE Maximum Hamming distance for a k-mer to match. [4]
 ```
 
+
+## Metadata
+- **Skill**: generated

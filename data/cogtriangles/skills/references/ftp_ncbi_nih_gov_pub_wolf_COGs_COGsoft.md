@@ -1,1 +1,18 @@
-Index of /pub/wolf/COGs/COGsoft Index of /pub/wolf/COGs/COGsoft Name Last modified Size Parent Directory - COGsoft.200705.tar 2007-05-22 17:27 140K COGsoft.200803.tar 2008-03-26 12:07 200K COGsoft.200806.tar 2008-06-25 14:50 200K COGsoft.200807.tar 2008-07-22 12:15 200K COGsoft.201204.tar 2012-04-20 11:30 220K HHS Vulnerability Disclosure
+# Index of /pub/wolf/COGs/COGsoft
+
+```
+Name                    Last modified      Size
+
+---
+
+Parent Directory                             -
+COGsoft.200705.tar      2007-05-22 17:27  140K
+COGsoft.200803.tar      2008-03-26 12:07  200K
+COGsoft.200806.tar      2008-06-25 14:50  200K
+COGsoft.200807.tar      2008-07-22 12:15  200K
+COGsoft.201204.tar      2012-04-20 11:30  220K
+
+---
+```
+
+[HHS Vulnerability Disclosure](https://www.hhs.gov/vulnerability-disclosure-policy/index.html)

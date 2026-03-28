@@ -1,6 +1,6 @@
 ---
 name: lra
-description: lra aligns long reads from single-molecule sequencing platforms and megabase-scale assembly contigs to a reference genome using a two-tiered seeding strategy. Use when user asks to index a reference genome, align PacBio or Oxford Nanopore reads, or map assembly contigs to detect structural variations.
+description: lra is a specialized alignment tool designed to map long-read sequencing data and assembly contigs to a reference genome with high sensitivity for structural variations. Use when user asks to index a reference genome, align PacBio or Oxford Nanopore reads, map assembly contigs, or identify genomic inversions and structural variants.
 homepage: https://github.com/ChaissonLab/LRA
 ---
 
@@ -8,71 +8,71 @@ homepage: https://github.com/ChaissonLab/LRA
 # lra
 
 ## Overview
-lra (Long Read Aligner) is a specialized tool designed for the alignment of long reads from single-molecule sequencing (SMS) platforms and megabase-scale assembly contigs. It utilizes a two-tiered seeding strategy—combining global minimizer-based seeds with local refinement using smaller matches—and a concave gap function. This approach makes it highly sensitive to structural variations, especially in Oxford Nanopore (ONT) datasets and de novo assemblies, where it often outperforms general-purpose aligners in SV detection accuracy.
+lra (Long Read Aligner) is a specialized alignment tool designed for the unique characteristics of single-molecule sequencing (SMS) data. It utilizes a two-tiered seeding strategy—combining global minimizer-based seeds with local refinement using smaller k-mer matches—to achieve high sensitivity in complex genomic regions. While comparable in speed to other long-read aligners, lra is particularly effective at identifying structural variations and inversions that other tools might miss, making it an ideal choice for clinical or comparative genomics workflows focused on SV detection.
 
-## Installation
-The recommended way to install lra is via Bioconda:
-```bash
-conda install -c bioconda lra
-```
-
-## Core Workflow
+## Usage Guidelines
 
 ### 1. Indexing the Reference
-Before alignment, you must generate a two-tiered index. You must specify the data type to optimize the index parameters.
+Before alignment, you must generate a two-tiered index for your reference genome. The indexing parameters are automatically tuned based on the sequencing technology you intend to map.
 
 ```bash
-# Syntax: lra index -[MODE] <reference.fa>
-lra index -ONT hg38.fa
-```
+# General syntax
+lra index -[MODE] <ref.fa>
 
-**Available Modes:**
-- `-CCS`: PacBio HiFi/Circular Consensus Sequencing
-- `-CLR`: PacBio Continuous Long Reads
-- `-ONT`: Oxford Nanopore Technologies reads
-- `-CONTIG`: Megabase-scale assembly contigs
+# Examples by data type
+lra index -CCS ref.fa     # For PacBio HiFi/CCS reads
+lra index -CLR ref.fa     # For PacBio legacy CLR reads
+lra index -ONT ref.fa     # For Oxford Nanopore reads
+lra index -CONTIG ref.fa  # For assembly contigs
+```
 
 ### 2. Aligning Reads
-Align your sequences using the same mode used for indexing.
+Alignment requires specifying the same mode used during indexing. lra supports FASTA, FASTQ, and BAM input formats.
 
 ```bash
-# Syntax: lra align -[MODE] <reference.fa> <reads.fa/fq/bam> -t <threads> -p <format>
-lra align -ONT hg38.fa reads.fastq -t 16 -p s > output.sam
+# Basic alignment to SAM (default)
+lra align -CCS ref.fa reads.fq -t 16 > output.sam
+
+# Output to different formats using the -p flag
+lra align -ONT ref.fa reads.fq -p p > output.paf  # PAF format
+lra align -ONT ref.fa reads.fq -p b > output.bed  # BED format
+
+# Handling compressed input
+zcat reads.fq.gz | lra align -ONT ref.fa /dev/stdin -t 16 -p s > output.sam
 ```
 
-**Output Format Options (`-p`):**
-- `s`: SAM format (default)
-- `p`: PAF format
-- `b`: BED format
-- `a`: Pairwise alignment
+### 3. Parameter Selection (Modes)
+Choosing the correct mode is critical for alignment accuracy:
+- **CCS**: Use for high-accuracy PacBio HiFi reads.
+- **CLR**: Use for noisier, long PacBio subreads.
+- **ONT**: Use for Oxford Nanopore data.
+- **CONTIG**: Use for megabase-scale assembly contigs; this mode is optimized for very long, relatively accurate sequences.
 
-## Expert Tips and Best Practices
-
-### Mode Selection
-Always match the mode to your input data's error profile and length:
-- Use **-CCS** for high-accuracy long reads (HiFi).
-- Use **-ONT** or **-CLR** for noisier raw reads.
-- Use **-CONTIG** when aligning assembled sequences to a reference to maximize sensitivity for large-scale rearrangements.
-
-### Handling Compressed Inputs
-lra can accept input from stdin, which is useful for gzipped files:
-```bash
-zcat reads.fastq.gz | lra align -ONT ref.fa /dev/stdin -t 16 -p s > output.sam
-```
-
-### Interpreting Custom Tags
-lra adds specific tags to SAM/PAF output that are useful for downstream SV filtering:
-- `NM`: Total edit distance (mismatches + indels).
+### 4. Interpreting Custom Tags
+lra includes specialized tags in SAM/PAF output to assist in downstream SV calling:
+- `NM`: Total edit distance (mismatches + insertions + deletions).
 - `NX`: Number of mismatches.
-- `NI` / `ND`: Total bases of insertions / deletions.
-- `TI` / `TD`: Total number of insertion / deletion events.
+- `NI` / `ND`: Number of inserted/deleted bases.
+- `TI` / `TD`: Number of insertion/deletion events.
 - `TP`: Type of alignment (P=Primary, S=Secondary, I=Inversion).
-- `AO`: Order of the segment in a split-read alignment.
+- `AO`: Order of the aligned segment for split-read mappings.
 
-### Performance Optimization
-- **Multithreading**: Use the `-t` flag to scale with available CPU cores. Alignment is the most computationally intensive step.
-- **Memory**: Indexing a human-scale genome typically takes a few minutes; ensure sufficient RAM is available for the two-tiered minimizer index.
+## Best Practices
+- **Threading**: Use the `-t` flag to specify CPU cores. lra scales well with increased thread counts.
+- **Memory**: Indexing the human genome takes a few minutes; ensure sufficient RAM is available for the two-tiered index (global and local).
+- **SV Discovery**: If using lra for structural variant calling, ensure you use the SAM output to preserve the custom tags (`NI`, `ND`, `TP`) which provide more granular detail than standard CIGAR strings for some SV callers.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| align | Align reads to a genome. The genome should be indexed using the 'lra index' program. 'reads' may be either fasta, sam, or bam, and multiple input files may be given. |
+| global | Index global reference |
+| global | Index global reference for aligning reads |
+| lra_global | Index global reference for aligning reads or contigs |
 
 ## Reference documentation
-- [LRA GitHub Repository](./references/github_com_ChaissonLab_LRA.md)
-- [LRA Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_lra_overview.md)
+- [LRA Main Documentation](./references/github_com_ChaissonLab_LRA.md)
+- [LRA Installation and Overview](./references/anaconda_org_channels_bioconda_packages_lra_overview.md)

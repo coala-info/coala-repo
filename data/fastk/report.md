@@ -130,3 +130,6 @@ Usage: Logex  [-T<int(4)>] [-[hH][<int(1)>:]<int(32767)>]
       -H: Generate histograms only, no tables.
 ```
 
+
+## Metadata
+- **Skill**: generated

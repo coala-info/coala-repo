@@ -247,3 +247,6 @@ options:
    --pore STR                 r9, r10 or rna004
 ```
 
+
+## Metadata
+- **Skill**: generated

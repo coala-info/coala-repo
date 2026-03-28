@@ -1,1 +1,286 @@
-GitHub - CoBrALab/RABIES: fMRI preprocessing pipeline and analysis tools adapted for rodent images. Visit the full documentation at https://rabies.readthedocs.io/ Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} CoBrALab / RABIES Public Notifications You must be signed in to change notification settings Fork 22 Star 50 fMRI preprocessing pipeline and analysis tools adapted for rodent images. Visit the full documentation at https://rabies.readthedocs.io/ License View license 50 stars 22 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 53 Pull requests 6 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights CoBrALab/RABIES master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,132 Commits 1,132 Commits .github .github docs docs minc-toolkit-extras @ 652d264 minc-toolkit-extras @ 652d264 optimized_antsMultivariateTemplateConstruction @ f12e6dc optimized_antsMultivariateTemplateConstruction @ f12e6dc patch patch rabies rabies scripts scripts .dockerignore .dockerignore .gitignore .gitignore .gitmodules .gitmodules .readthedocs.yml .readthedocs.yml CITATION.cff CITATION.cff Dockerfile Dockerfile LICENSE LICENSE MANIFEST.in MANIFEST.in README.md README.md dependencies.txt dependencies.txt rabies_environment.dev.yml rabies_environment.dev.yml rabies_environment.yml rabies_environment.yml setup.py setup.py View all files Repository files navigation README Contributing License RABIES: Rodent Automated Bold Improvement of EPI Sequences. RABIES is an open source image processing pipeline for rodent fMRI. It conducts state-of-the-art preprocessing and confound correction, and supplies standard resting-state functional connectivity analyses. Visit our documentation at https://rabies.readthedocs.io/en/latest/ . What you can do with RABIES The primary purpose of RABIES is to provide rodent fMRI research with a standard, flexible, and reliable image processing platform. The package is complemented with informative data diagnostic features for confound characterization and encourages best practices for quality control and reproducibility. The RABIES software is structured into three main processing stages: preprocessing , confound correction and analysis . Preprocessing The preprocessing workflow regroups essential fMRI preprocessing steps prior to analysis. It includes a robust registration workflow with automatically-adapting parameters allowing to succesfully process diverse acquisition types (i.e. rodent species, scan field strength, coil type, ...), and can conduct the following preprocessing steps: head motion correction susceptibility distortion correction resampling to native or common space brain parcellation slice timing correction (optional) despiking (optional) visual assessment of registration for quality control Confound correction Following preprocessing, a range of strategies to correct fMRI confounds (e.g. motion) can then be conducted within RABIES: linear detrending confound regression (with several options for nuisance regressors) frequency filtering (highpass, lowpass, bandpass) frame censoring (or scrubbing) ICA-AROMA spatial smoothing Analysis Simple resting-state connectivity analyses are made available after preprocessing and confound correction. RABIES also provides a 'data diagnosis' workflow, which generates several indices of data quality and potential confounds, and conversaly, aims to improve the correction of confounds and transparency with regards to data quality: seed-based functional connectivity whole-brain connectivity matrix group-ICA dual regression data diagnosis Notes on software design Nipype workflows : The image processing pipelines are structured using the Nipype library , which allows to build dynamic workflows in the form of a computational graph. Each node in the graph consists of a processing step, and the required inputs/outputs define the links between nodes. In addition to supporting code organization, Nipype workflows also handle several plugin architectures for parallel execution as well as memory management. The computational time to run the entire RABIES pipeline will vary substantially depending on data size, but for most uses, it will range from a few hours to a day when using proper computational resources and parallel execution. Reproducible and transparent research : RABIES aims to follow best practices for reproducible and transparent research, including the following: open source code https://github.com/CoBrALab/RABIES standardized input data format with BIDS easily shared, automatically-generated visual outputs for quality control containerized distribution of the software hosted on Docker Hub which can be downloaded via Docker and Apptainer platforms Citation Citing RABIES : Please cite the official publication Desrosiers-Grégoire, et al. Nat Commun 15, 6708 (2024). when referencing the software. Boilerplate : a boilerplate summarizing the preprocessing and confound correction operations is automatically generated in the output folder. You can use the boilerplate to help describe your methods in a paper. License The RABIES license allows for uses in academic and educational environments only. Commercial use requires a commercial license from CoBrALab contact@cobralab.ca , http://cobralab.ca Acknowledgements This software was developped by the CoBrALab , located at the Cerebral Imaging Center of the Douglas Mental Health University Institute, Montreal, Canada, in affiliation with McGill University, Montreal, Canada. This work was supported by funding from Healthy Brains, Healthy Lives (HBHL), the Fonds de recherche du Québec - Santé (FRQS) and - Nature et technologies (FRQNT), and the Natural Sciences and Engineering Research Council (NSERC) of Canada. fMRIPrep was an important inspirational source for this project, in particular with regards to best practices for software reproducibility and code design using Nipype. We also thank the organizers of BrainHack School Montreal , which guided the initial steps of this project in 2018. Ask for help If you need support in using the software or experience issues that are not documented, we'll provide support on the Github discussion . Contributing to RABIES Read our dedicated documentation About fMRI preprocessing pipeline and analysis tools adapted for rodent images. Visit the full documentation at https://rabies.readthedocs.io/ Resources Readme License View license Contributing Contributing Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 50 stars Watchers 3 watching Forks 22 forks Report repository Releases 11 0.5.5 Latest Dec 23, 2025 + 10 releases Packages 0 &nbsp; &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Uh oh! There was an error while loading. Please reload this page . Contributors 11 Languages Python 95.7% Shell 3.8% Dockerfile 0.5% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FCoBrALab%2FRABIES)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FCoBrALab%2FRABIES)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=CoBrALab%2FRABIES)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[CoBrALab](/CoBrALab)
+/
+**[RABIES](/CoBrALab/RABIES)**
+Public
+
+* [Notifications](/login?return_to=%2FCoBrALab%2FRABIES) You must be signed in to change notification settings
+* [Fork
+  22](/login?return_to=%2FCoBrALab%2FRABIES)
+* [Star
+   52](/login?return_to=%2FCoBrALab%2FRABIES)
+
+* [Code](/CoBrALab/RABIES)
+* [Issues
+  54](/CoBrALab/RABIES/issues)
+* [Pull requests
+  7](/CoBrALab/RABIES/pulls)
+* [Discussions](/CoBrALab/RABIES/discussions)
+* [Actions](/CoBrALab/RABIES/actions)
+* [Projects](/CoBrALab/RABIES/projects)
+* [Security
+  0](/CoBrALab/RABIES/security)
+* [Insights](/CoBrALab/RABIES/pulse)
+
+Additional navigation options
+
+* [Code](/CoBrALab/RABIES)
+* [Issues](/CoBrALab/RABIES/issues)
+* [Pull requests](/CoBrALab/RABIES/pulls)
+* [Discussions](/CoBrALab/RABIES/discussions)
+* [Actions](/CoBrALab/RABIES/actions)
+* [Projects](/CoBrALab/RABIES/projects)
+* [Security](/CoBrALab/RABIES/security)
+* [Insights](/CoBrALab/RABIES/pulse)
+
+# CoBrALab/RABIES
+
+master
+
+[Branches](/CoBrALab/RABIES/branches)[Tags](/CoBrALab/RABIES/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[1,220 Commits](/CoBrALab/RABIES/commits/master/)   1,220 Commits | | |
+| [.github](/CoBrALab/RABIES/tree/master/.github ".github") | | [.github](/CoBrALab/RABIES/tree/master/.github ".github") |  |  |
+| [docs](/CoBrALab/RABIES/tree/master/docs "docs") | | [docs](/CoBrALab/RABIES/tree/master/docs "docs") |  |  |
+| [minc-toolkit-extras @ 652d264](/CoBrALab/minc-toolkit-extras/tree/652d26495a99a3e869736ebfc0e14cf9574ab484 "minc-toolkit-extras") | | [minc-toolkit-extras @ 652d264](/CoBrALab/minc-toolkit-extras/tree/652d26495a99a3e869736ebfc0e14cf9574ab484 "minc-toolkit-extras") |  |  |
+| [optimized\_antsMultivariateTemplateConstruction @ f12e6dc](/Gab-D-G/optimized_antsMultivariateTemplateConstruction/tree/f12e6dce70b14fc895807da779d6b13f2ca93b47 "optimized_antsMultivariateTemplateConstruction") | | [optimized\_antsMultivariateTemplateConstruction @ f12e6dc](/Gab-D-G/optimized_antsMultivariateTemplateConstruction/tree/f12e6dce70b14fc895807da779d6b13f2ca93b47 "optimized_antsMultivariateTemplateConstruction") |  |  |
+| [patch](/CoBrALab/RABIES/tree/master/patch "patch") | | [patch](/CoBrALab/RABIES/tree/master/patch "patch") |  |  |
+| [rabies](/CoBrALab/RABIES/tree/master/rabies "rabies") | | [rabies](/CoBrALab/RABIES/tree/master/rabies "rabies") |  |  |
+| [scripts](/CoBrALab/RABIES/tree/master/scripts "scripts") | | [scripts](/CoBrALab/RABIES/tree/master/scripts "scripts") |  |  |
+| [.dockerignore](/CoBrALab/RABIES/blob/master/.dockerignore ".dockerignore") | | [.dockerignore](/CoBrALab/RABIES/blob/master/.dockerignore ".dockerignore") |  |  |
+| [.gitignore](/CoBrALab/RABIES/blob/master/.gitignore ".gitignore") | | [.gitignore](/CoBrALab/RABIES/blob/master/.gitignore ".gitignore") |  |  |
+| [.gitmodules](/CoBrALab/RABIES/blob/master/.gitmodules ".gitmodules") | | [.gitmodules](/CoBrALab/RABIES/blob/master/.gitmodules ".gitmodules") |  |  |
+| [.readthedocs.yml](/CoBrALab/RABIES/blob/master/.readthedocs.yml ".readthedocs.yml") | | [.readthedocs.yml](/CoBrALab/RABIES/blob/master/.readthedocs.yml ".readthedocs.yml") |  |  |
+| [CITATION.cff](/CoBrALab/RABIES/blob/master/CITATION.cff "CITATION.cff") | | [CITATION.cff](/CoBrALab/RABIES/blob/master/CITATION.cff "CITATION.cff") |  |  |
+| [Dockerfile](/CoBrALab/RABIES/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/CoBrALab/RABIES/blob/master/Dockerfile "Dockerfile") |  |  |
+| [LICENSE](/CoBrALab/RABIES/blob/master/LICENSE "LICENSE") | | [LICENSE](/CoBrALab/RABIES/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/CoBrALab/RABIES/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/CoBrALab/RABIES/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/CoBrALab/RABIES/blob/master/README.md "README.md") | | [README.md](/CoBrALab/RABIES/blob/master/README.md "README.md") |  |  |
+| [dependencies.txt](/CoBrALab/RABIES/blob/master/dependencies.txt "dependencies.txt") | | [dependencies.txt](/CoBrALab/RABIES/blob/master/dependencies.txt "dependencies.txt") |  |  |
+| [rabies\_environment.dev.yml](/CoBrALab/RABIES/blob/master/rabies_environment.dev.yml "rabies_environment.dev.yml") | | [rabies\_environment.dev.yml](/CoBrALab/RABIES/blob/master/rabies_environment.dev.yml "rabies_environment.dev.yml") |  |  |
+| [rabies\_environment.yml](/CoBrALab/RABIES/blob/master/rabies_environment.yml "rabies_environment.yml") | | [rabies\_environment.yml](/CoBrALab/RABIES/blob/master/rabies_environment.yml "rabies_environment.yml") |  |  |
+| [setup.py](/CoBrALab/RABIES/blob/master/setup.py "setup.py") | | [setup.py](/CoBrALab/RABIES/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Contributing
+* License
+
+# RABIES: Rodent Automated Bold Improvement of EPI Sequences.
+
+RABIES is an open source image processing pipeline for rodent fMRI. It conducts state-of-the-art preprocessing and confound correction, and supplies standard resting-state functional connectivity analyses. Visit our documentation at <https://rabies.readthedocs.io/en/latest/>.
+
+[![RABIES Schema](https://raw.githubusercontent.com/CoBrALab/RABIES/master/docs/pics/RABIES_schema.png)](https://raw.githubusercontent.com/CoBrALab/RABIES/master/docs/pics/RABIES_schema.png)
+
+## What you can do with RABIES
+
+The primary purpose of RABIES is to provide rodent fMRI research with a standard, flexible, and reliable image processing platform. The package is complemented with informative data diagnostic features for confound characterization and encourages best practices for quality control and reproducibility. The RABIES software is structured into three main processing stages: **preprocessing**, **confound correction** and **analysis**.
+
+### Preprocessing
+
+The preprocessing workflow regroups essential fMRI preprocessing steps prior to analysis. It includes a robust registration workflow with automatically-adapting parameters allowing to succesfully process diverse acquisition types (i.e. rodent species, scan field strength, coil type, ...), and can conduct the following preprocessing steps:
+
+* head motion correction
+* susceptibility distortion correction
+* resampling to native or common space
+* brain parcellation
+* slice timing correction (optional)
+* despiking (optional)
+* visual assessment of registration for quality control
+
+### Confound correction
+
+Following preprocessing, a range of strategies to correct fMRI confounds (e.g. motion) can then be conducted within RABIES:
+
+* linear detrending
+* confound regression (with several options for nuisance regressors)
+* frequency filtering (highpass, lowpass, bandpass)
+* frame censoring (or scrubbing)
+* ICA-AROMA
+* spatial smoothing
+
+### Analysis
+
+Simple resting-state connectivity analyses are made available after preprocessing and confound correction. RABIES also provides a 'data diagnosis' workflow, which generates several indices of data quality and potential confounds, and conversaly, aims to improve the correction of confounds and transparency with regards to data quality:
+
+* seed-based functional connectivity
+* whole-brain connectivity matrix
+* group-ICA
+* dual regression
+* data diagnosis
+
+## Notes on software design
+
+**Nipype workflows**: The image processing pipelines are structured using the [Nipype library](https://nipype.readthedocs.io/en/latest/), which allows to build dynamic workflows in the form of a computational graph. Each node in the graph consists of a processing step, and the required inputs/outputs define the links between nodes. In addition to supporting code organization, Nipype workflows also handle several [plugin architectures](https://nipype.readthedocs.io/en/0.11.0/users/plugins.html) for parallel execution as well as memory management. The computational time to run the entire RABIES pipeline will vary substantially depending on data size, but for most uses, it will range **from a few hours to a day** when using proper computational resources and parallel execution.
+
+**Reproducible and transparent research**: RABIES aims to follow best practices for reproducible and transparent research, including the following:
+
+* open source code <https://github.com/CoBrALab/RABIES>
+* standardized input data format with [BIDS](https://bids.neuroimaging.io/)
+* easily shared, automatically-generated visual outputs for quality control
+* containerized distribution of the software hosted on [Docker Hub](https://hub.docker.com/r/gabdesgreg/rabies) which can be downloaded via Docker and Apptainer platforms
+
+## Citation
+
+**Citing RABIES**: Please cite the official publication [Desrosiers-Grégoire, et al. Nat Commun 15, 6708 (2024).](https://doi.org/10.1038/s41467-024-50826-8) when referencing the software.
+
+**Boilerplate**: a boilerplate summarizing the preprocessing and confound correction operations is automatically generated in the output folder. You can use the boilerplate to help describe your methods in a paper.
+
+## License
+
+The [RABIES license](https://github.com/CoBrALab/RABIES/blob/master/LICENSE) allows for uses in academic and educational environments only. Commercial use requires a commercial license from

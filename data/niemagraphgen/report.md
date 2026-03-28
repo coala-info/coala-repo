@@ -148,3 +148,6 @@ NiemaGraphGen v1.0.6 (FAVITES Output Format) (32-bit) (Ring Lattice)
 USAGE: ngg_ring_lattice <num_nodes> <degree>
 ```
 
+
+## Metadata
+- **Skill**: generated

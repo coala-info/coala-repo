@@ -110,3 +110,6 @@ options:
   --version             Print version and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

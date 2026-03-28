@@ -1,1 +1,365 @@
-GitHub - snake-flu/datafunk: Miscellaneous data manipulation tools Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} snake-flu / datafunk Public Notifications You must be signed in to change notification settings Fork 2 Star 9 Miscellaneous data manipulation tools 9 stars 2 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights snake-flu/datafunk master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 332 Commits 332 Commits datafunk datafunk tests tests .DS_Store .DS_Store .gitignore .gitignore MANIFEST.in MANIFEST.in README.md README.md setup.py setup.py View all files Repository files navigation README datafunk Miscellaneous data manipulation tools Install Either pip install using command pip install . or use python setup.py install and test with python setup.py test Adding functions to this suite Ideally the function name should be used as the filename and the argparse group. In the following example, the function name is remove_dat_junk . Add your script to directory datafunk e.g. datafunk/remove_dat_junk.py Update datafunk/__init__.py and datafunk/subcommands/__init__.py by adding the command name to the all lists Add a new command line parameter section to datafunk/__main__.py This should start by defining a new argparse group, e.g. subparser_remove_dat_junk = subparsers.add_parser( "remove_dat_junk", usage="datafunk remove_dat_junk -i &lt;input&gt;", help="Example command", ) then include all the arguments, e.g. subparser_remove_dat_junk.add_argument( "-i", "--input_file", dest="input_file", action="store", type=str, help="Input file: something about the input file format", ) and end with the entry point subparser_remove_dat_junk.set_defaults(func=datafunk.subcommands.remove_dat_junk.run) Create file datafunk/subcommands/remove_dat_junk.py which defines how to run given the command line parameters. Alternatively, specify the entrypoint within the main script file. If you have tests, add the test data to a subdirectory e.g. tests/data/remove_dat_junk , and add the test file tests/remove_dat_junk_test.py . This file should contain unit tests which have names test_* and ideally be informative about which function they test/the result. If the script has any new dependencies, update install_requires section of setup.py - this means that it can be pip installed from a conda environment file without a hitch. Function List - clean_names - merge_fasta - remove_fasta - filter_low_coverage - process_gisaid_data - sam_2_fasta - phylotype_consensus About Miscellaneous data manipulation tools Resources Readme Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 9 stars Watchers 5 watching Forks 2 forks Report repository Releases 11 v0.1.0 Latest May 30, 2021 + 10 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 6 Uh oh! There was an error while loading. Please reload this page . Languages Python 100.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsnake-flu%2Fdatafunk)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsnake-flu%2Fdatafunk)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=snake-flu%2Fdatafunk)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[snake-flu](/snake-flu)
+/
+**[datafunk](/snake-flu/datafunk)**
+Public
+
+* [Notifications](/login?return_to=%2Fsnake-flu%2Fdatafunk) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2Fsnake-flu%2Fdatafunk)
+* [Star
+   9](/login?return_to=%2Fsnake-flu%2Fdatafunk)
+
+* [Code](/snake-flu/datafunk)
+* [Issues
+  0](/snake-flu/datafunk/issues)
+* [Pull requests
+  0](/snake-flu/datafunk/pulls)
+* [Actions](/snake-flu/datafunk/actions)
+* [Projects](/snake-flu/datafunk/projects)
+* [Security
+  0](/snake-flu/datafunk/security)
+* [Insights](/snake-flu/datafunk/pulse)
+
+Additional navigation options
+
+* [Code](/snake-flu/datafunk)
+* [Issues](/snake-flu/datafunk/issues)
+* [Pull requests](/snake-flu/datafunk/pulls)
+* [Actions](/snake-flu/datafunk/actions)
+* [Projects](/snake-flu/datafunk/projects)
+* [Security](/snake-flu/datafunk/security)
+* [Insights](/snake-flu/datafunk/pulse)
+
+# snake-flu/datafunk
+
+master
+
+[Branches](/snake-flu/datafunk/branches)[Tags](/snake-flu/datafunk/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[332 Commits](/snake-flu/datafunk/commits/master/)   332 Commits | | |
+| [datafunk](/snake-flu/datafunk/tree/master/datafunk "datafunk") | | [datafunk](/snake-flu/datafunk/tree/master/datafunk "datafunk") |  |  |
+| [tests](/snake-flu/datafunk/tree/master/tests "tests") | | [tests](/snake-flu/datafunk/tree/master/tests "tests") |  |  |
+| [.DS\_Store](/snake-flu/datafunk/blob/master/.DS_Store ".DS_Store") | | [.DS\_Store](/snake-flu/datafunk/blob/master/.DS_Store ".DS_Store") |  |  |
+| [.gitignore](/snake-flu/datafunk/blob/master/.gitignore ".gitignore") | | [.gitignore](/snake-flu/datafunk/blob/master/.gitignore ".gitignore") |  |  |
+| [MANIFEST.in](/snake-flu/datafunk/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/snake-flu/datafunk/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/snake-flu/datafunk/blob/master/README.md "README.md") | | [README.md](/snake-flu/datafunk/blob/master/README.md "README.md") |  |  |
+| [setup.py](/snake-flu/datafunk/blob/master/setup.py "setup.py") | | [setup.py](/snake-flu/datafunk/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+
+# datafunk
+
+Miscellaneous data manipulation tools
+
+## Install
+
+Either pip install using command
+
+```
+pip install .
+```
+
+or use
+
+```
+python setup.py install
+```
+
+and test with
+
+```
+python setup.py test
+```
+
+## Adding functions to this suite
+
+Ideally the function name should be used as the filename and the argparse group. In the following example,
+the function name is `remove_dat_junk`.
+
+1. Add your script to directory `datafunk` e.g. `datafunk/remove_dat_junk.py`
+2. Update `datafunk/__init__.py` and `datafunk/subcommands/__init__.py` by adding the command name to the `all` lists
+3. Add a new command line parameter section to `datafunk/__main__.py`
+   This should start by defining a new argparse group, e.g.
+
+```
+subparser_remove_dat_junk = subparsers.add_parser(
+        "remove_dat_junk",
+        usage="datafunk remove_dat_junk -i <input>",
+        help="Example command",
+    )
+```
+
+then include all the arguments, e.g.
+
+```
+    subparser_remove_dat_junk.add_argument(
+        "-i",
+        "--input_file",
+        dest="input_file",
+        action="store",
+        type=str,
+        help="Input file: something about the input file format",
+    )
+```
+
+and end with the entry point
+
+```
+    subparser_remove_dat_junk.set_defaults(func=datafunk.subcommands.remove_dat_junk.run)
+```
+
+4. Create file `datafunk/subcommands/remove_dat_junk.py` which defines how to `run` given the command line parameters. Alternatively, specify the entrypoint within the main script file.
+5. If you have tests, add the test data to a subdirectory e.g. `tests/data/remove_dat_junk`, and add the test file
+   `tests/remove_dat_junk_test.py`. This file should contain unit tests which have names `test_*` and ideally be informative about which function they test/the result.
+6. If the script has any new dependencies, update `install_requires` section of `setup.py` - this means that it can be pip installed from a conda environment file without a hitch.
+
+Function List
+
+```
+   - clean_names
+   - merge_fasta
+   - remove_fasta
+   - filter_low_coverage
+   - process_gisaid_data
+   - sam_2_fasta
+   - phylotype_consensus
+```
+
+## About
+
+Miscellaneous data manipulation tools
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/snake-flu/datafunk/activity)
+
+[Custom properties](/snake-flu/datafunk/custom-properties)
+
+### Stars
+
+[**9**
+stars](/snake-flu/datafunk/stargazers)
+
+### Watchers
+
+[**5**
+watching](/snake-flu/datafunk/watchers)
+
+### Forks
+
+[**2**
+forks](/snake-flu/datafunk/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fsnake-flu%2Fdatafunk&report=snake-flu+%28user%29)
+
+## [Releases 11](/snake-flu/datafunk/releases)
+
+[v0.1.0
+
+Latest
+
+May 30, 2021](/snake-flu/datafunk/releases/tag/v0.1.0)
+
+[+ 10 releases](/snake-flu/datafunk/releases)
+
+## [Packages 0](/orgs/snake-flu/packages?repo_name=datafunk)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/snake-flu/datafunk/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [Python
+  100.0%](/snake-flu/datafunk/search?l=python)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

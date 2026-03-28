@@ -1,6 +1,6 @@
 ---
 name: hormon
-description: HORmon identifies alpha-satellite monomers and annotates Higher-Order Repeat patterns within human centromeric sequences. Use when user asks to characterize centromere architecture, infer monomers from centromeric sequences, or perform Higher-Order Repeat decomposition.
+description: HORmon is a bioinformatics pipeline that identifies alpha-satellite monomers and extracts higher-order repeat structures from human centromeric sequences. Use when user asks to infer draft monomers, refine monomer sequences, or map the organizational architecture of centromeres.
 homepage: https://github.com/ablab/HORmon
 ---
 
@@ -8,50 +8,58 @@ homepage: https://github.com/ablab/HORmon
 # hormon
 
 ## Overview
-HORmon is a specialized bioinformatics suite designed to characterize the repetitive architecture of centromeres in human genome assemblies. It automates the transition from raw centromeric sequences to structured Higher-Order Repeat (HOR) annotations. The tool operates in two primary stages: first, it identifies individual alpha-satellite monomers based on a consensus template; second, it polishes these monomers and determines how they organize into the larger, repeating patterns that define centromeric structure.
 
-## Usage Workflow
+HORmon is a specialized bioinformatics pipeline for the structural analysis of human centromeres. It automates the identification of alpha-satellite monomers and the higher-order repeat (HOR) structures they form. The tool operates in two distinct phases: first, it infers draft monomers using a consensus template; second, it refines these monomers and maps the organizational architecture of the centromere. This is essential for understanding centromere evolution and ensuring the accuracy of satellite DNA annotations in complex genomic assemblies.
+
+## Command Line Usage
+
+The workflow consists of two primary executable modules: `monomer_inference` and `HORmon`.
 
 ### 1. Monomer Inference
-The first step extracts draft monomers from your centromeric sequence using a known alpha-satellite consensus template.
+This stage extracts draft monomers from a centromeric sequence based on a provided alpha-satellite template.
 
 ```bash
-monomer_inference -seq <centromere_sequence.fa> -mon <alpha_sat_template.fa> -o <output_directory>
+monomer_inference -seq <centromere_sequence.fa> -mon <alpha_sat_template.fa> -o <output_dir>
 ```
 
 **Key Outputs:**
-- `final/monomers.fa`: The inferred monomers.
+- `final/monomers.fa`: The extracted draft monomers.
 - `final/final_decomposition.tsv`: Initial sequence annotation.
 
-### 2. HOR Decomposition
-The second step uses the inferred monomers to identify and decompose the sequence into Higher-Order Repeats.
+### 2. HORmon (Polishing and HOR Extraction)
+This stage refines the monomers and identifies the Higher-Order Repeat structures.
 
 ```bash
-HORmon --seq <centromere_sequence.fa> \
-       --mon <output_directory>/final/monomers.fa \
-       --cen-id <id> \
-       --monomer-thr 2 \
-       --edge-thr 2 \
-       --min-traversals 2 \
-       -o <hor_output_directory>
+HORmon --seq <centromere_sequence.fa> --mon <inference_output/final/monomers.fa> --cen-id <ID> --monomer-thr 2 --edge-thr 2 --min-traversals 2 -o <output_dir>
 ```
+
+**Parameters:**
+- `--cen-id`: A unique identifier for the centromere (e.g., chromosome number) used for output labeling.
+- `--monomer-thr`: Minimum number of occurrences required for a monomer to be considered.
+- `--edge-thr`: Minimum number of occurrences for monomer pairs.
+- `--min-traversals`: Minimum number of occurrences for a sequence to be classified as an HOR.
 
 **Key Outputs:**
 - `mn.fa`: Final polished monomers.
-- `final_decomposition.tsv`: Final monomer decomposition.
-- `HORs.tsv`: Description of identified HORs.
-- `HORdecomposition.tsv`: Full HOR decomposition of the sequence.
+- `HORs.tsv`: Detailed description of identified HORs.
+- `HORdecomposition.tsv`: The final decomposition of the centromere into HOR units.
 
-## Best Practices and Expert Tips
-- **Isolate Centromeres**: Always run HORmon on each centromere independently. The tool is not designed to process a whole-genome assembly simultaneously and may produce unreliable results if centromeres are not separated.
-- **Input Requirements**: Ensure the input sequence is specifically the centromeric region. Providing an entire chromosome may lead to excessive noise or processing failure.
-- **Threshold Tuning**:
-    - `--monomer-thr`: Minimum occurrences required for a monomer to be considered valid.
-    - `--edge-thr`: Minimum occurrences for monomer pairs.
-    - `--min-traversals`: Minimum number of times a pattern must repeat to be classified as an HOR.
-- **Environment**: HORmon is natively supported on Linux. If working on macOS or Windows, use a Linux-based container or environment.
-- **Conda Installation**: The most reliable way to manage dependencies (like `stringdecomposer` and `clustalo`) is via bioconda: `conda install -c bioconda hormon`.
+## Expert Tips and Best Practices
+
+- **Independent Processing**: Always run HORmon on each centromere independently. Processing multiple centromeres simultaneously in a single run is not supported and may lead to inaccurate results.
+- **Input Requirements**: Ensure the input sequence is a FASTA file containing centromeric or alpha-satellite-rich regions.
+- **Monomer Thresholds**: If the centromere is highly divergent or contains rare variants, consider lowering the `--monomer-thr` and `--edge-thr` values to capture less frequent structures, though this may increase noise.
+- **Dependencies**: HORmon relies on `stringdecomposer` and `clustalo` for its internal alignment and decomposition logic. Ensure these are available in the environment path.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| HORmon | updating monomers to make it consistent with CE postulate, and canonical HOR inferencing |
+| monomer_inference | Monomer Inference Problem: complement monomers set |
 
 ## Reference documentation
-- [HORmon GitHub Repository](./references/github_com_ablab_HORmon.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_hormon_overview.md)
+- [HORmon README](./references/github_com_ablab_HORmon_blob_main_README.md)
+- [HORmon Setup and Entry Points](./references/github_com_ablab_HORmon_blob_main_setup.py.md)

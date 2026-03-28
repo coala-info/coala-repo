@@ -1,6 +1,6 @@
 ---
 name: gemini
-description: GEMINI integrates VCF files and genome annotations into a relational database to facilitate the exploration and analysis of genetic variation. Use when user asks to load VCF files into a database, query genetic variants using SQL, or identify inheritance patterns such as autosomal recessive, de novo, and compound heterozygote mutations.
+description: GEMINI is a lightweight database framework that converts VCF files into a relational SQLite database enriched with functional annotations for integrative genetic variation analysis. Use when user asks to load VCF files into a database, query variants using SQL, or identify variants following specific inheritance patterns like autosomal recessive or de novo mutations.
 homepage: https://github.com/arq5x/gemini
 ---
 
@@ -8,41 +8,102 @@ homepage: https://github.com/arq5x/gemini
 # gemini
 
 ## Overview
-GEMINI (GEnome MINIing) is a specialized framework for exploring genetic variation in personal and medical genetics. It integrates VCF files with a wide array of genome annotations into a unified SQLite database. By transforming flat VCF files into a relational structure, it enables the use of expressive SQL queries and built-in tools to identify variants of interest, particularly those following specific inheritance patterns in family-based studies.
+GEMINI (GEnome MINIing) is a lightweight database framework designed for the integrative exploration of genetic variation. It functions by converting VCF files into a relational SQLite database, which is then enriched with a wide array of functional annotations (e.g., CADD scores, ClinVar, population frequencies). This allows you to move away from complex command-line "one-liners" and instead use the expressive power of SQL and built-in inheritance tools to identify variants of interest in personal or medical genetics studies.
 
-## Core Workflows and CLI Patterns
+## Core Workflow
+1. **Data Preparation**: Ensure your VCF is annotated with either SnpEff or VEP.
+2. **Loading**: Use the `load` command to create a GEMINI database from your VCF and an optional PED file for family relationships.
+3. **Analysis**: Execute specific inheritance model tools or perform custom SQL queries.
 
-### Installation and Setup
-The preferred method for installation is via Bioconda or the dedicated automated script.
-- **Conda**: `conda install bioconda::gemini`
-- **Automated Script**: Use `gemini_install.py` to install the tool along with required third-party dependencies and large annotation data files.
+## Common CLI Patterns
 
 ### Loading Data
-To begin analysis, you must load a VCF file into a GEMINI database. It is highly recommended to provide a PED file during this step to enable family-based analysis.
-- **Basic Load**: `gemini load -v input.vcf -t <annotation_tool> output.db`
-- **Parallel Loading**: Use the `--cores` flag to speed up the process for large datasets.
-- **Annotation Types**: Specify the tool used for VCF annotation (e.g., `snpEff` or `VEP`) using the `-t` flag.
-- **Example**: `gemini load --cores 4 -t snpEff -v my_variants.vcf my_variants.db`
+The `load` command is the entry point for all GEMINI analyses.
+```bash
+# Basic load with SnpEff annotations and multi-core support
+gemini load -v input.vcf -t snpEff --cores 4 output.db
 
-### Querying the Database
-The `query` command is the primary interface for extracting specific variants using SQL syntax.
-- **Basic Query**: `gemini query -q "SELECT chrom, start, end, ref, alt FROM variants WHERE is_coding = 1" my_variants.db`
-- **Filtering by Frequency**: `gemini query -q "SELECT * FROM variants WHERE aaf_esp_all < 0.01" my_variants.db`
+# Loading with a PED file to enable inheritance modeling
+gemini load -v input.vcf -p family.ped -t VEP output.db
+```
 
-### Inheritance Pattern Analysis
-GEMINI includes dedicated modules for common inheritance models. These tools automatically utilize the family relationships defined in the PED file.
-- **Autosomal Recessive**: `gemini autosomal_recessive my_variants.db`
-- **Autosomal Dominant**: `gemini autosomal_dominant my_variants.db`
-- **De Novo Mutations**: `gemini de_novo my_variants.db`
-- **Compound Heterozygotes**: `gemini comp_hets my_variants.db`
+### Inheritance Modeling
+GEMINI includes pre-defined tools for common inheritance patterns. These require a PED file to have been provided during the `load` step.
+```bash
+# Find autosomal recessive variants
+gemini autosomal_recessive output.db
+
+# Find potential compound heterozygotes
+gemini comp_hets output.db
+
+# Find de novo mutations in a trio
+gemini de_novo output.db
+```
+
+### Custom SQL Queries
+The `query` tool allows for arbitrary filtering using SQL syntax.
+```bash
+# Query specific columns for rare, high-impact variants
+gemini query -q "SELECT chrom, start, ref, alt, gene FROM variants WHERE filter IS NULL AND aaf_esp_all < 0.01 AND impact_severity = 'HIGH'" output.db
+
+# Export results to CSV
+gemini query -q "SELECT * FROM variants" --header --csv output.db
+```
+
+### Statistics and Summaries
+```bash
+# Get a high-level summary of the variants in the database
+gemini stats output.db
+
+# List the samples present in the database
+gemini list_samples output.db
+```
 
 ## Expert Tips
-- **Normalization**: Ensure your VCF is normalized (e.g., using `vt` or `bcftools`) before loading to ensure consistent representation of indels.
-- **PED Files**: Always include a PED file if you have sample metadata or family structures; without it, the inheritance-based tools will not function.
-- **Performance**: For very large datasets, GEMINI may experience performance bottlenecks. In such cases, consider the tool `slivar` as a more modern, high-performance alternative for filtering.
-- **CADD Scores**: GEMINI supports CADD scores for functional prediction, but ensure you have the appropriate license for commercial applications.
+- **Normalization**: Always decompose and normalize your VCF (using tools like `vt` or `bcftools`) before loading into GEMINI to ensure variants are represented consistently.
+- **Performance**: For very large datasets (e.g., 1,000+ samples), GEMINI may encounter performance bottlenecks. In these cases, consider using `slivar`, which is the recommended successor for modern rare-disease analysis pipelines.
+- **Annotation Versions**: Be mindful of the annotation data versions used during the `gemini_install.py` process, as these will dictate the population frequencies and clinical significance data available in your database.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| autosomal_dominant | Identify candidate variants for autosomal dominant inheritance. |
+| autosomal_recessive | Find autosomal recessive variants. |
+| bcolz_index | Index a Gemini database with bcolz. |
+| db_info | Show information about a GEMINI database. |
+| de_novo | Find de novo mutations |
+| fusions | Query the database for fusion events. |
+| gemini actionable_mutations | Query the database for actionable mutations. |
+| gemini amend | Amend a Gemini database. |
+| gemini annotate | Annotate a gemini database with information from a TABIX'ed BED file. |
+| gemini browser | Launch the Gemini browser |
+| gemini comp_hets | Find compound heterozygous variants. |
+| gemini dump | Report all rows/columns from the variants table. |
+| gemini gene_wise | Perform gene-wise analysis on a GEMINI database. |
+| gemini interactions | Query gemini database for interactions |
+| gemini merge_chunks | Merge multiple chunked databases into a single database. |
+| gemini pathways | Report pathways for indivs/genes/sites with LoF variants |
+| gemini qc | Run quality control tests on a Gemini database. |
+| gemini query | Query the GEMINI database. |
+| gemini roh | Finds regions of homozygosity (ROH) in a VCF file. |
+| gemini update | Update GEMINI database and associated tools. |
+| gemini windower | Window a database for analysis. |
+| gemini x_linked_de_novo | Find X-linked de novo variants |
+| gemini x_linked_dominant | Identify candidate variants for X-linked dominant inheritance. |
+| gemini x_linked_recessive | Find X-linked recessive variants |
+| gemini_burden | Calculate burden statistics for variants in a GEMINI database. |
+| gemini_load | Load variants and annotations from a VCF file into a GEMINI database. |
+| gemini_load_chunk | Load a VCF file into a GEMINI database. |
+| gemini_region | Query regions in a GEMINI database. |
+| gemini_stats | Report statistics about variants in a GEMINI database. |
+| lof_interactions | Finds interactions for genes that harbor LoF variants. |
+| lof_sieve | Queries the database for LOF variants. |
+| mendel_errors | Identify mendelian errors in a family structure. |
+| set_somatic | Set the is_somatic flag for variants in a gemini database. |
 
 ## Reference documentation
-- [GEMINI Overview](./references/anaconda_org_channels_bioconda_packages_gemini_overview.md)
-- [GitHub Repository README](./references/github_com_arq5x_gemini.md)
-- [Issue Tracker CLI Examples](./references/github_com_arq5x_gemini_issues.md)
+- [GEMINI - integrative exploration of genetic variation and genome annotations.](./references/github_com_arq5x_gemini.md)
+- [GEMINI load error with MuTect2 vcf 4.2](./references/github_com_arq5x_gemini_issues.md)

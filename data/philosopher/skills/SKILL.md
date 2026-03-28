@@ -1,6 +1,6 @@
 ---
 name: philosopher
-description: Philosopher is a high-performance toolkit for the downstream analysis, validation, and reporting of shotgun proteomics data. Use when user asks to initialize workspaces, manage UniProt databases, validate peptide-spectrum matches, perform protein inference, apply FDR filtering, or generate quantification reports.
+description: Philosopher is a bioinformatics suite for the post-processing, validation, and quantification of shotgun proteomics data. Use when user asks to initialize a proteomics workspace, manage protein databases, validate peptide-spectrum matches, perform protein inference, filter results by false discovery rate, or generate quantitative reports.
 homepage: https://github.com/Nesvilab/philosopher
 ---
 
@@ -8,73 +8,85 @@ homepage: https://github.com/Nesvilab/philosopher
 # philosopher
 
 ## Overview
-Philosopher is a high-performance toolkit designed for the downstream analysis of shotgun proteomics data. It serves as both a standalone suite and a dependency-free wrapper for the Trans-Proteomic Pipeline (TPP), integrating tools like PeptideProphet, iProphet, and ProteinProphet into a cohesive command-line interface. It is the engine behind the FragPipe GUI but can be used independently to automate database management, FDR control, and multi-level reporting.
 
-## Core Workflow and CLI Patterns
+Philosopher is a high-performance bioinformatics suite designed for the post-processing of shotgun proteomics data. It provides a streamlined command-line interface for validating peptide-spectrum matches, inferring protein groups, and calculating false discovery rates (FDR). By acting as a dependency-free wrapper for the Trans-Proteomic Pipeline (TPP) and offering its own advanced filtering and reporting algorithms, it enables researchers to move from raw search results to publication-ready quantitative tables.
+
+## Core Workflow and Best Practices
 
 ### 1. Workspace Initialization
-Before running any analysis, initialize a workspace to manage metadata and temporary files.
-```bash
-philosopher workspace --init
-```
+Always initialize a workspace in the directory containing your MS search results before running other commands. This sets up the local environment and metadata tracking.
+
+- **Initialize**: `philosopher workspace --init`
+- **Disable Analytics**: If working in a restricted environment, use `philosopher workspace --init --analytics false` to prevent usage reporting.
+- **Clean Workspace**: Use `philosopher workspace --clean` to remove temporary files and reset the state.
 
 ### 2. Database Management
-Download and prepare protein sequence databases directly from UniProt.
-```bash
-# Download UniProt database for a specific organism (e.g., human)
-philosopher database --uniprot human --contam
+Use the `database` command to automate the downloading and formatting of protein sequence databases.
 
-# Format an existing FASTA file for use with search engines
-philosopher database --custom your_database.fasta
-```
+- **Download from UniProt**: `philosopher database --uniprot <species_code> --contam` (e.g., `human` or `mouse`).
+- **Add Decoys**: Ensure your FASTA file has decoys. If not, use the `--decoy` flag to generate them using the default `rev_` prefix.
 
 ### 3. Validation and Inference
-Process search results (pepXML/protXML) through the TPP modules.
-```bash
-# Validate peptide-spectrum matches
-philosopher peptideprophet --database your_db.fasta --nonparam [files.pepXML]
+Philosopher wraps TPP tools to validate search engine outputs (pepXML/protXML).
 
-# Combine multiple runs and refine probabilities
-philosopher iprophet [files.pepXML]
-
-# Perform protein inference
-philosopher proteinprophet [files.pepXML]
-```
+- **PeptideProphet**: Run `philosopher peptideprophet --database <fasta> <pepXML_files>` to calculate PSM probabilities.
+- **ProteinProphet**: Run `philosopher proteinprophet <pepXML_files>` to perform protein-level inference.
+- **PTMProphet**: Use for site localization of modifications: `philosopher ptmprophet --channel <mod_mass> <pepXML_files>`.
 
 ### 4. FDR Filtering
-Apply False Discovery Rate (FDR) filtering at the PSM, peptide, and protein levels. Philosopher supports a "picked" FDR approach for more accurate estimation.
-```bash
-# Apply 1% FDR at all levels
-philosopher filter --psm 0.01 --peptide 0.01 --protein 0.01 --database your_db.fasta [files]
-```
+The `filter` command is critical for controlling the quality of your identifications.
 
-### 5. Quantification
-Philosopher handles both label-free (MS1 intensity/spectral counting) and label-based (TMT/iTRAQ) workflows.
-```bash
-# Label-free quantification (LFQ)
-philosopher freequant --dir .
+- **Standard Filtering**: `philosopher filter --psm 0.01 --peptide 0.01 --protein 0.01` to apply a 1% FDR at all levels.
+- **Picked FDR**: Use the `--picked` flag for more accurate protein FDR estimation by treating protein-level decoys and targets as pairs.
+- **Sequential FDR**: For very large datasets, use sequential estimation to maintain sensitivity.
 
-# TMT/isobaric labeling quantification
-philosopher labelquant --isobaric TMT10 --dir .
-```
+### 5. Quantification and Reporting
+Generate final tables for downstream statistical analysis.
 
-### 6. Reporting
-Generate comprehensive TSV reports for downstream statistical analysis.
-```bash
-philosopher report
-```
-This produces several files, including:
-- `psm.tsv`: Detailed PSM information including localization scores and probabilities.
-- `peptide.tsv`: Unique peptide sequences and their associated metadata.
-- `protein.tsv`: Protein groups, coverage, and quantification values.
+- **Label-Free (MS1)**: Use `philosopher freequant` to extract intensities from mzML/RAW files.
+- **Isobaric Labeling (TMT/iTRAQ)**: Use `philosopher labelquant --unimod <id> <pepXML_files>` to extract reporter ion intensities.
+- **Aggregation (Abacus)**: To combine multiple experiments into a single matrix:
+  `philosopher abacus --protein --peptide --folders <exp1> <exp2> <exp3>`
+- **Final Reports**: Generate TSV files using `philosopher report`. This produces `psm.tsv`, `peptide.tsv`, and `protein.tsv`.
+
+### 6. Automated Pipeline
+For standard workflows, use the `pipeline` command to execute the entire process (workspace, database, validation, filtering, and reporting) in a single call.
+
+- **Example**: `philosopher pipeline --config <config_file> <data_directory>`
 
 ## Expert Tips
-- **Sequential FDR**: For extremely large datasets, use the sequential FDR estimation feature to maintain sensitivity while controlling for false positives across multiple filtered lists.
-- **Two-Dimensional Filtering**: Use the `filter` command to simultaneously control PSM and Protein FDR levels, which is more robust than filtering them independently.
-- **PTM Localization**: When working with modified peptides, ensure `ptmprophet` is run before `filter` to include site localization scores in your final `psm.tsv` report.
-- **Clean Up**: Use `philosopher workspace --clean` to remove intermediate files after a successful pipeline run to save disk space.
+- **Decoy Tagging**: Ensure the `--tag` flag matches your database decoy prefix (default is `rev_`). If your search engine used a different prefix (like `DECOY_`), you must specify it.
+- **Memory Management**: For large-scale datasets (thousands of files), ensure you have sufficient RAM, as ProteinProphet and Abacus can be memory-intensive during the grouping phase.
+- **Razor Peptides**: When running `abacus`, use the `--razor` flag to assign shared peptides to the protein group with the most evidence, improving quantification accuracy.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| abacus | Generates abacus reports. |
+| bioquant | Bioquant |
+| completion | Generate the autocompletion script for philosopher for the specified shell. |
+| filter | Filter peptides and proteins based on FDR levels and other criteria. |
+| freequant | Quantify peaks using free energy calculations. |
+| iprophet | iprophet |
+| peptideprophet | peptideprophet |
+| philosopher comet | Run comet |
+| philosopher database | Process a database for peptide identification. |
+| philosopher labelquant | Quantify isobaric labeling experiments. |
+| philosopher msfragger | MSFragger is a fast and accurate mass spectrometry data analysis tool for peptide identification. |
+| philosopher report | Generate reports from philosopher runs. |
+| philosopher workspace | Manage the experiment workspace for the analysis |
+| philosopher_pipeline | Executes a pipeline. |
+| proteinprophet | Runs ProteinProphet on Philosopher results. |
+| ptmprophet | PTMProphet is a tool for PTM localization. |
+| slack | Send messages to Slack |
+| tmtintegrator | Integrates TMT quantification results from Philosopher. |
 
 ## Reference documentation
-- [Philosopher GitHub Repository](./references/github_com_Nesvilab_philosopher.md)
-- [Philosopher Wiki and Command Overview](./references/github_com_Nesvilab_philosopher_wiki.md)
-- [Bioconda Package Information](./references/anaconda_org_channels_bioconda_packages_philosopher_overview.md)
+- [Philosopher Wiki Home](./references/github_com_Nesvilab_philosopher_wiki.md)
+- [Abacus Command Guide](./references/github_com_Nesvilab_philosopher_wiki_Abacus.md)
+- [FDR Filter Guide](./references/github_com_Nesvilab_philosopher_wiki_filter.md)
+- [Workspace Management](./references/github_com_Nesvilab_philosopher_wiki_workspace.md)
+- [Pipeline Automation](./references/github_com_Nesvilab_philosopher_wiki_pipeline.md)

@@ -134,3 +134,6 @@ Commands:
      depad          convert padded BAM to unpadded BAM
 ```
 
+
+## Metadata
+- **Skill**: generated

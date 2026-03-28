@@ -95,3 +95,6 @@ bpcomp [-cox] ChainName1 ChainName2 ...
 	 and build consensus based on merged lists of trees
 ```
 
+
+## Metadata
+- **Skill**: generated

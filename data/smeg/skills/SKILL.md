@@ -1,6 +1,6 @@
 ---
 name: smeg
-description: SMEG measures the replication rates of specific microbial strains within metagenomic samples by identifying cluster-specific unique SNPs. Use when user asks to build a strain-level species database, estimate microbial growth rates from metagenomic reads, or differentiate between closely related strains in environmental or clinical samples.
+description: SMEG is a bioinformatics pipeline that estimates strain-level growth rates in microbial communities by analyzing the frequency of unique single nucleotide polymorphisms. Use when user asks to build a species database from genomes, estimate bacterial replication rates from metagenomic reads, or track growth dynamics of closely related subspecies.
 homepage: https://github.com/ohlab/SMEG
 ---
 
@@ -8,50 +8,72 @@ homepage: https://github.com/ohlab/SMEG
 # smeg
 
 ## Overview
-SMEG (Strain-level Metagenomic Estimation of Growth rate) is a specialized bioinformatics tool for measuring the replication rates of specific microbial strains within complex environmental or clinical samples. Unlike tools that provide bulk species-level growth estimates, SMEG differentiates between closely related strains by identifying cluster-specific unique SNPs. The tool operates in two main phases: first, it constructs a species database from a collection of genomes (requiring at least one complete reference); second, it uses this database to infer growth rates from metagenomic reads.
+SMEG is a bioinformatics pipeline designed to resolve growth rates at the strain level within complex microbial communities. It operates by identifying unique Single Nucleotide Polymorphisms (SNPs) that characterize specific bacterial clusters and then analyzing the frequency of these SNPs across the genome to infer replication rates. 
 
-## Installation and Environment
-SMEG requires specific versions of dependencies to ensure compatibility.
-- **Conda Installation**: `conda install smeg=1.1.5 prokka=1.11 r-base=3.5.1`
-- **System Dependency**: The `rename` utility is often required on Linux systems: `sudo apt-get install -y rename`
-- **Singularity**: An image is available for containerized execution: `singularity exec smeg.sif smeg -h`
+The tool is particularly useful for:
+- Identifying novel or uncharacterized strains in a sample before growth estimation.
+- Comparing growth dynamics of closely related subspecies.
+- Analyzing metagenomic data where high-resolution strain tracking is required.
 
-## Database Construction (build_species)
-The `build_species` module prepares the reference data needed for growth estimation.
+## Species Database Construction
+Before estimating growth, you must build a database for the species of interest using `build_species`.
 
-### Critical Requirements
-- **Genome Completeness**: You must provide at least one **COMPLETE** reference genome in the input directory.
-- **Draft Genomes**: If using draft genomes, they should be reordered (e.g., using Mauve) against a closely related complete genome to minimize fragmentation issues.
-- **File Extensions**: Input genomes must have `.fna`, `.fa`, or `.fasta` extensions.
+### Requirements
+- A directory of genomes in `.fna`, `.fa`, or `.fasta` format.
+- At least one **complete** reference genome must be present in the input set.
 
-### Common CLI Patterns
-- **Standard Build**:
-  `smeg build_species -g /path/to/genomes -o /path/to/output -p 8`
-- **Auto-Mode (Recommended)**:
-  `smeg build_species -g /path/to/genomes -o /path/to/output -a`
-  *Note: The `-a` flag tests multiple SNP assignment thresholds in parallel, allowing you to select the most robust database based on the `log.txt` summary.*
-- **Custom SNP Sensitivity**:
-  `smeg build_species -g ./genomes -o ./db -s 0.8 -t 100`
-  *Sets the SNP assignment threshold to 80% and the iterative clustering threshold to 100 SNPs.*
+### Common Patterns
+Build a standard database with default settings:
+```bash
+smeg build_species -g /path/to/genomes -o /path/to/output_db
+```
 
-### Parameter Guide
-- `-g`: Directory containing strain genomes.
-- `-o`: Output directory for the database.
-- `-s`: SNP assignment threshold (0.1 - 1.0). Higher values increase specificity but may reduce the number of usable SNPs.
-- `-t`: Minimum number of unique SNPs required before attempting iterative sub-clustering.
-- `-r`: Specify a specific representative genome (must be a complete genome).
+Use "auto-mode" to test multiple SNP assignment thresholds (recommended for initial runs):
+```bash
+smeg build_species -g /path/to/genomes -o /path/to/output_db -a
+```
 
-## Growth Estimation (growth_est)
-Once the database is built, use the `growth_est` module to process metagenomic samples.
-- **Reference-based**: Uses the pre-built database to map reads and calculate growth.
-- **De novo**: Capable of identifying uncharacterized strains in the sample prior to estimation.
+Specify a representative genome and increase threading:
+```bash
+smeg build_species -g /path/to/genomes -o /path/to/output_db -r complete_genome_id -p 8
+```
 
-## Expert Tips and Best Practices
-- **Species with High Strain Counts**: For species like *E. coli* (>700 strains), it is more efficient and accurate to build the database using only strains with complete genomes.
-- **Interpreting log.txt**: When using auto-mode, check the `log.txt` file. Databases are stored in folders labeled `T.{threshold}` (iterative clustering ignored) or `F.{threshold}` (iterative clustering active).
-- **Phylogenetic Outliers**: SMEG automatically excludes strains with pairwise distances 30 times above the median to prevent taxonomic misclassification or contamination from affecting the growth model.
-- **SNP Assignment**: A unique SNP is only identified if it is present in the specified proportion of cluster members (defined by `-s`) and absent in all other clusters.
+## Growth Rate Estimation
+Use the `growth_est` module to analyze metagenomic reads against your built database.
+
+### De Novo Approach (Default)
+Best for samples where the specific strains present are not pre-defined.
+```bash
+smeg growth_est -r /path/to/reads -x fastq.gz -s /path/to/species_db -o /path/to/results -m 0
+```
+
+### Reference-Based Approach
+Use when you have specific reference genomes you want to track.
+```bash
+smeg growth_est -r /path/to/reads -s /path/to/species_db -o /path/to/results -m 1 -g ref_list.txt
+```
+
+### Key Parameters for Accuracy
+- `-c FLOAT`: Coverage cutoff (default 0.5). Increase this for higher confidence in low-abundance environments.
+- `-u INT`: Minimum number of SNPs required to estimate growth (default 100). Lowering this may allow detection of rare strains but reduces statistical power.
+- `-d FLOAT`: Cluster detection threshold (0.1 - 1). Adjusts how sensitive the tool is to detecting strain clusters in the sample.
+
+## Expert Tips
+- **Genome Selection**: For species with a massive number of available strains (e.g., *E. coli*), only include strains with complete genomes in the `build_species` step to improve database quality and reduce computational overhead.
+- **Auto-Mode Selection**: When using `-a`, check the `log.txt` in the output. Look for the highest SNP assignment threshold that still maintains a sufficient number of unique SNPs for most clusters.
+- **Contig Reordering**: If you only have draft genomes, SMEG uses Mauve to reorder them against the complete reference. Ensure Mauve is in your PATH.
+- **Coverage Requirements**: Always verify the coverage of your strains in the output log before interpreting growth rates; low coverage can lead to erratic growth estimates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| smeg_build_species | Builds a species database for SMEG. |
+| smeg_growth_est | Estimate growth rate of bacterial populations from sequencing reads. |
 
 ## Reference documentation
-- [SMEG GitHub Repository](./references/github_com_ohlab_SMEG.md)
-- [Bioconda SMEG Overview](./references/anaconda_org_channels_bioconda_packages_smeg_overview.md)
+- [SMEG Main Documentation](./references/github_com_ohlab_SMEG_blob_master_README.md)
+- [Species Database Module](./references/github_com_ohlab_SMEG_blob_master_build_sp.md)
+- [Growth Estimation Logic](./references/github_com_ohlab_SMEG_blob_master_SNP_method.R.md)

@@ -1,6 +1,6 @@
 ---
 name: cblaster
-description: cblaster detects clusters of homologous sequences that are physically co-located on a genome. Use when user asks to identify gene clusters, perform remote or local searches for genomic neighborhoods, or generate presence/absence matrices of homologous sequences.
+description: cblaster identifies co-located clusters of homologous sequences by combining sequence similarity searches with genomic proximity analysis. Use when user asks to find biosynthetic gene clusters, perform remote or local searches for homologous gene groups, generate presence/absence matrices, or visualize genomic neighborhoods.
 homepage: https://github.com/gamcil/cblaster
 ---
 
@@ -8,50 +8,69 @@ homepage: https://github.com/gamcil/cblaster
 # cblaster
 
 ## Overview
-`cblaster` is a specialized tool designed to detect clusters of homologous sequences that are physically co-located on a genome. Unlike standard BLAST searches that return individual hits, `cblaster` parses these hits to identify instances where multiple query sequences land in close proximity within a subject genome. This is essential for researchers studying operons, gene clusters, or conserved genomic neighborhoods.
 
-## Configuration
-Before performing remote searches, you must configure `cblaster` with your email address to comply with NCBI API requirements.
+cblaster is a specialized bioinformatics tool designed to detect clusters of homologous sequences that are physically co-located on a genome. It simplifies the workflow of identifying biosynthetic gene clusters (BGCs) or operons by combining sequence similarity searching with genomic proximity analysis. It can perform remote searches against NCBI databases or local searches using DIAMOND, subsequently filtering hits based on user-defined thresholds and generating presence/absence matrices or interactive visualizations.
+
+## Configuration and Setup
+
+Before performing remote searches, you must provide an email address to comply with NCBI API requirements.
 
 ```bash
-cblaster config --email your.email@domain.com
+cblaster config --email your_email@domain.com
 ```
 
 ## Common CLI Patterns
 
 ### Remote Search
-To search a set of query sequences against the NCBI `nr` database remotely:
+Perform a search against the NCBI `nr` database using a query FASTA file. This is the most common entry point for identifying clusters in public data.
+
 ```bash
-cblaster search --query_file queries.fasta
+cblaster search --query_file query.fasta
 ```
 
 ### Local Search
-For faster processing or searching against private datasets, use local mode. This requires `diamond` to be installed and available in your PATH.
+Use `DIAMOND` for faster, local searches against a custom database. Ensure `diamond` is in your system PATH.
+
 ```bash
-cblaster search --query_file queries.fasta --database local_db.dmnd
+cblaster search --query_file query.fasta --database local_db.dmnd --local
 ```
 
-### Generating Comparative Matrices
-To generate a presence/absence matrix (binary table) showing which query sequences are present in which identified clusters:
+### Generating a Binary Presence/Absence Matrix
+To see which organisms contain which parts of your query cluster in a tabular format, use the `--binary` flag.
+
 ```bash
-cblaster search --query_file queries.fasta --binary
+cblaster search -qf query.fasta --binary output_matrix.csv
 ```
 
 ### Filtering Results
-Refine your search by setting thresholds for identity, coverage, and e-value to reduce noise in the cluster detection:
+Refine your search by setting strict thresholds for identity, coverage, and e-value to reduce noise in the cluster detection.
+
 ```bash
-cblaster search -qf queries.fasta --min_identity 30 --min_coverage 50 --max_evalue 0.01
+cblaster search -qf query.fasta -id 50 -cv 80 -ev 1e-10
 ```
 
 ## Expert Tips
-- **Genomic Context**: `cblaster` automatically fetches genomic coordinates from the NCBI Identical Protein Group (IPG) database during remote searches to determine if hits are co-located.
-- **Interactive Visualizations**: Use the tool's ability to generate HTML-based interactive plots to explore gene cluster architectures visually.
-- **Downstream Integration**:
-    - Use **CAGEcleaner** to filter redundancy in results using ANI-based clustering.
-    - Use **SyntenyQC** for filtering based on reciprocal best hits (RBH).
-    - Use **blastCblast_stats** to visualize the taxonomic spread of your identified clusters.
-- **Database Selection**: When performing remote searches, you can specify different NCBI databases (e.g., `refseq_protein`) to target specific subsets of genomic data.
+
+- **Input Flexibility**: cblaster accepts both FASTA files and NCBI accession numbers/GIs. You can mix these in your query input.
+- **Genomic Context**: The tool automatically fetches coordinates from the Identical Protein Group (IPG) database. If a search returns many hits but no clusters, consider relaxing the distance parameters for what constitutes a "cluster."
+- **Visualization**: Use the interactive HTML visualizations generated by cblaster to explore gene orientations and intergenic distances, which are often more intuitive than the raw text summary.
+- **Local Database Prep**: When running local searches, ensure your local database is indexed correctly for DIAMOND (`diamond makedb`) to avoid execution errors.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cblaster | A tool for finding homologous sequences in a database using BLAST. |
+| cblaster extract | Extract information from session files |
+| cblaster gne | Gene neighbourhood estimation. Repeatedly recomputes homologue clusters with different --gap values. |
+| cblaster_config | Configure cblaster (e.g. for setting NCBI e-mail addresses or API keys) |
+| cblaster_makedb | Generate local databases from genome files |
+| extract_clusters | Extract clusters from a session file |
+| plot_clusters | Plot clusters using clinker |
+| search | Remote/local cblaster searches. |
 
 ## Reference documentation
-- [cblaster GitHub Repository](./references/github_com_gamcil_cblaster.md)
-- [cblaster Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_cblaster_overview.md)
+- [cblaster README](./references/github_com_gamcil_cblaster_blob_master_README.md)
+- [cblaster Repository Overview](./references/github_com_gamcil_cblaster.md)

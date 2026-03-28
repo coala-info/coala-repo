@@ -193,3 +193,6 @@ ERROR: No input file provided
         use this flag to print a summary of transcript/gene clusters used to genearte the transcriptome
 ```
 
+
+## Metadata
+- **Skill**: generated

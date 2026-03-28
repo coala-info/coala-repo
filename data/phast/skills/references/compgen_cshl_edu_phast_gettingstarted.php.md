@@ -1,1 +1,78 @@
-PHAST PHAST:Downloads Toggle navigation Home Downloads Getting Started Resources Extras PHAST Phylogenetic Analysis with Space/Time Models Install PHAST You can either download the Phast binaries or compile Phast from source. Binaries are generally the easiest way to get up and running with Phast and are suggested for new users. PHAST is written in standard C and should compile cleanly on any standard UNIX platform (including Mac OS X). PHAST is mostly self-contained, but it does depend on the LAPACK package for certain matrix operations (diagonalization and inversion). On Mac OS X (version 10.3 or later) LAPACK is built-in, but on other platforms, the C port of LAPACK, called CLAPACK , must be installed for PHAST to be fully functional. Install PHAST using Binaries PHAST binaries for Windows, MacOSX, and Linux can be downloaded from here . Compiling PHAST from Source MacOSX &nbsp;1. Download a copy of Phast from here and extract the file phast*.tgz using 'tar -xvzf phast*.tgz' &nbsp;2. Change directory to 'phast/src/' and run the command 'make' &nbsp;3. The Phast binaries should be located in the 'phast/bin/' directory. Linux Part 1 - Installing Clapack - (If you already have Clapack installed, skip to Part 2) &nbsp;1. Download Clapack from the following URL http://www.netlib.org/clapack/clapack.tgz &nbsp;2. Unzip clapack.tgz with the command 'tar -xvzf clapack.tgz' &nbsp;3. Go into the newly created Clapack directory (i.e. 'cd CLAPACK-3.2.1') and type 'cp make.inc.example make.inc && make f2clib && make blaslib && make lib' Note: Building Clapack can take several minutes depending on your system Part 2 - Installing Phast &nbsp;4. Download a copy of Phast from http://compgen.cshl.edu/phast/ and extract the contents of phast*.tgz using 'tar -xvzf phast*.tgz' &nbsp;5. Change directory to 'phast/src/' and run 'make CLAPACKPATH=/usr/local/software/clapack' replacing '/usr/local/software/clapack' with the path of your Clapack install (e.g., CLAPACKPATH=/home/username/CLAPACK-3.2.1) &nbsp;6. The Phast binaries should be created in the '../bin/' directory Windows &nbsp;PHAST can be compiled under Windows using the Cygwin linux-like environment, but some users have reported difficulties in making this work. We recommend using the provided binaries for Windows, unless you have a good reason to compile the package from source. The Phast package should compile cleanly in most standard linux or linux-like environments (including MacOS). If you encounter problems compiling, please report them to phasthelp@cshl.edu . We'll do our best to help you work around them and to avoid similar problems in the future. PHAST runs on the command line through which you can access all available tools and utilities. More information on each of these is available on the Resources page. PHAST is funded by NIH Grant R35 GM127070-01 Last modified: February 25 2025
+PHAST
+
+PHAST:Downloads
+
+Toggle navigation
+
+* [#### Home](http://compgen.cshl.edu/phast/)
+* [#### Downloads](http://compgen.cshl.edu/phast/downloads.php)
+* [#### Getting Started](http://compgen.cshl.edu/phast/gettingstarted.php)
+* [#### Resources](http://compgen.cshl.edu/phast/resources.php)* [#### Extras](http://compgen.cshl.edu/phast/references.php)
+
+# PHAST ![](http://compgen.cshl.edu/phast/phast3d.png)
+
+#### **Phylogenetic Analysis with Space/Time Models**
+
+#### Install PHAST
+
+You can either download the Phast binaries or compile Phast from source.
+Binaries are generally the easiest way to get up and running with Phast
+and are suggested for new users.
+
+PHAST is written in standard C and should compile cleanly on any standard UNIX platform (including Mac OS X). PHAST is mostly self-contained, but it does depend on the [LAPACK](http://www.netlib.org/lapack/) package for certain matrix operations (diagonalization and inversion). On Mac OS X (version 10.3 or later) LAPACK is built-in, but on other platforms, the C port of LAPACK, called [CLAPACK](http://www.netlib.org/clapack/), must be installed for PHAST to be fully functional.
+
+#### **Install PHAST using Binaries**
+
+PHAST binaries for Windows, MacOSX, and Linux can be downloaded from [here](http://compgen.cshl.edu/phast/downloads.php).
+
+#### **Compiling PHAST from Source**
+
+**MacOSX**
+
+ 1. Download a copy of Phast from [here](http://compgen.cshl.edu/phast/downloads.php)
+and extract the file phast\*.tgz using 'tar -xvzf phast\*.tgz'
+
+  2. Change directory to 'phast/src/' and run the command 'make'
+
+  3. The Phast binaries should be located in the 'phast/bin/' directory.
+
+**Linux**
+
+Part 1 - Installing Clapack - (If you already have Clapack installed, skip to Part 2)
+ 1. Download Clapack from the following URL http://www.netlib.org/clapack/clapack.tgz
+ 2. Unzip clapack.tgz with the command 'tar -xvzf clapack.tgz'
+ 3. Go into the newly created Clapack directory (i.e. 'cd CLAPACK-3.2.1')
+and type 'cp make.inc.example make.inc && make f2clib && make blaslib && make lib'
+Note: Building Clapack can take several minutes depending on your system
+
+Part 2 - Installing Phast
+ 4. Download a copy of Phast from http://compgen.cshl.edu/phast/
+and extract the contents of phast\*.tgz using 'tar -xvzf phast\*.tgz'
+ 5. Change directory to 'phast/src/' and run 'make CLAPACKPATH=/usr/local/software/clapack'
+replacing '/usr/local/software/clapack' with the path of your
+Clapack install (e.g., CLAPACKPATH=/home/username/CLAPACK-3.2.1)
+ 6. The Phast binaries should be created in the '../bin/' directory
+
+**Windows**
+
+ PHAST can be compiled under Windows using the Cygwin linux-like
+environment, but some users have reported difficulties in making this
+work. We recommend using the provided binaries for Windows, unless you
+have a good reason to compile the package from source.
+
+The Phast package should compile cleanly in most standard linux or
+linux-like environments (including MacOS).
+If you encounter problems
+compiling, please report them to phasthelp@cshl.edu. We'll do our
+best to help you work around them and to avoid similar problems in the
+future.
+
+PHAST runs on the command line through which you can access all available tools and utilities.
+
+More information on each of these is available on the [Resources](http://compgen.cshl.edu/phast/resources.php) page.
+
+#### **PHAST is funded by NIH Grant R35 GM127070-01**
+
+![](http://siepellab.labsites.cshl.edu/wp-content/uploads/sites/40/SiepelLab1.png)
+
+ **Last modified:** February 25 2025

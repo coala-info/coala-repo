@@ -146,3 +146,6 @@ options:
   -v, --verbose         Verbose output for debugging
 ```
 
+
+## Metadata
+- **Skill**: generated

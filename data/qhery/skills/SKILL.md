@@ -1,6 +1,6 @@
 ---
 name: qhery
-description: qhery identifies amino acid changes in SARS-CoV-2 samples and cross-references them against the Stanford resistance database to assess antiviral and monoclonal antibody effectiveness. Use when user asks to identify resistance mutations, list amino acid changes, check supported treatments, or analyze variant data for drug resistance.
+description: qhery identifies amino acid changes in SARS-CoV-2 samples and cross-references them against the Stanford Coronavirus Resistance Database to detect drug resistance markers. Use when user asks to perform a resistance analysis, identify available treatments, or extract amino acid mutations from genomic variants.
 homepage: http://github.com/mjsull/qhery/
 ---
 
@@ -8,63 +8,73 @@ homepage: http://github.com/mjsull/qhery/
 # qhery
 
 ## Overview
+qhery is a specialized genomic tool designed to bridge the gap between raw SARS-CoV-2 sequence data and clinical relevance. It automates the process of identifying amino acid changes from genomic variants and cross-referencing them against the Stanford Coronavirus Resistance Database. This skill enables the rapid assessment of whether a specific viral sample contains known resistance markers or mutations within drug epitopes, while filtering out common lineage-defining mutations to highlight unique or concerning variants.
 
-qhery is a bioinformatics pipeline developed by the Queensland Health Q-PHIRE Genomics team. It automates the identification of amino acid changes in SARS-CoV-2 samples and cross-references them against the Stanford resistance database. By integrating variant data with lineage information and sequencing depth, it helps researchers determine if specific mutations might reduce the effectiveness of monoclonal antibodies or antiviral treatments.
+## Core Workflows
 
-## Command Line Usage
+### 1. Resistance Analysis
+To perform a full resistance check, use the `run` subcommand. This requires a VCF file called against the Wuhan-Hu-1 reference (MN908947.3).
 
-### 1. Identify Available Treatments
-Before running an analysis, check which drugs are currently supported in the local or remote database.
-```bash
-qhery list_rx --database_dir ./qhery_db
-```
-
-### 2. Standard Resistance Analysis
-Run the full pipeline using a VCF file. This identifies mutations and compares them to the resistance list for specified treatments.
 ```bash
 qhery run \
-  --sample_name "Sample01" \
-  --vcf sample.vcf \
-  --lineage "BA.1" \
-  --rx_list Sotrovimab Remdesivir \
-  --database_dir ./qhery_db \
-  --pipeline_dir ./results
+  --sample_name <name> \
+  --vcf <sample.vcf> \
+  --lineage <e.g., BA.5> \
+  --rx_list <Drug1> <Drug2> \
+  --database_dir <path/to/db> \
+  --pipeline_dir <output_dir>
 ```
 
-### 3. Enhanced Analysis with Minor Alleles and Coverage
-To increase confidence and detect low-frequency variants, provide a BAM file and a consensus FASTA. This enables `lofreq` for minor allele detection and `samtools` to verify if a position has sufficient depth (default 20x) to report a mutation.
+*   **Best Practice**: Always include the `--bam` file if available. qhery will use `lofreq` to detect minor alleles (sub-consensus variants) that might be missed in a standard VCF but are critical for early detection of resistance.
+*   **Coverage Check**: Providing a BAM file also allows `samtools` to verify if a "missing" resistance mutation is truly absent or simply lacks sufficient sequencing depth (default 20x) to be called.
+
+### 2. Identifying Available Treatments
+Before running an analysis, check which drugs are currently supported in the local or downloaded database:
+
 ```bash
-qhery run \
-  --sample_name "Sample01" \
-  --vcf sample.vcf \
-  --bam sample.sorted.bam \
-  --fasta sample.fasta \
-  --lineage "BA.2" \
-  --rx_list Sotrovimab \
-  --database_dir ./qhery_db \
-  --pipeline_dir ./results
+qhery list_rx --database_dir <path/to/db>
 ```
 
-### 4. Mutation Listing Only
-If resistance data is not required, use the `mutations` subcommand to simply generate a list of detected amino acid changes.
+### 3. Mutation-Only Extraction
+If you only need to annotate the amino acid changes in a sample without performing the resistance database lookup:
+
 ```bash
 qhery mutations \
-  --sample_name "Sample01" \
-  --vcf sample.vcf \
-  --bam sample.sorted.bam \
-  --lineage "Delta" \
-  --pipeline_dir ./mutations_out
+  --sample_name <name> \
+  --vcf <sample.vcf> \
+  --lineage <lineage> \
+  --pipeline_dir <output_dir>
 ```
 
-## Best Practices and Tips
+## Interpreting Results
+qhery generates two primary TSV files:
+*   **`<sample>.full.tsv`**: A complete list of all detected mutations and all known resistance mutations for the requested drugs.
+*   **`<sample>.final.tsv`**: A filtered list containing only:
+    1.  Detected mutations in resistance-associated genes that are **not** lineage-defining.
+    2.  Known resistance mutations that had insufficient coverage to be called.
 
-- **Lineage Accuracy**: Always provide the correct `--lineage` (e.g., BA.1, BA.5, Delta). qhery uses this to distinguish between "lineage-defining" mutations and novel resistance mutations in the `final.tsv` output.
-- **Coverage Validation**: Providing a BAM file is highly recommended. Without it, the tool cannot confirm if a "missing" resistance mutation is truly absent or simply not covered by sequencing reads.
-- **Database Management**: The `--database_dir` should point to a persistent location. If the Stanford resistance database is missing or outdated, qhery will attempt to download the latest version automatically.
-- **Output Interpretation**:
-    - `*.full.tsv`: Contains every mutation detected plus all known resistance mutations for the selected drugs.
-    - `*.final.tsv`: A filtered list containing only mutations in resistance-associated genes that are NOT lineage-defining, or positions with insufficient coverage (<20x).
+### Key Output Columns
+| Column | Significance |
+| :--- | :--- |
+| `in_variant` | If `True`, the mutation is a standard part of that lineage (e.g., Omicron). |
+| `resistance_mutation` | If `True`, there is documented evidence of reduced drug susceptibility. |
+| `fold_reduction` | The specific magnitude of resistance as reported in the database. |
+| `in_epitope` | For Monoclonal Antibodies (MABs), indicates if the mutation is in the binding site. |
+
+## Expert Tips
+*   **Reference Genome**: Ensure your VCF/BAM files are mapped to **Wuhan-Hu-1 (MN908947.3)**. Using other references will result in incorrect coordinate mapping and amino acid predictions.
+*   **Database Updates**: qhery automatically attempts to download the latest Stanford resistance database if it isn't found in the `--database_dir`. Ensure the environment has internet access or pre-populate this directory.
+*   **Visualization**: If `ncbi-blast+` is installed, use the `--fasta` argument during a `run` to generate a BLASTx alignment, which is useful for manual verification of complex insertion/deletion events.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| list_rx | List resistance genes from the Stanford resistance database. |
+| qhery run | Run the QHERY pipeline. |
+| qhery_mutations | Analyze mutations using the qhery tool. |
 
 ## Reference documentation
-- [qhery GitHub Repository](./references/github_com_mjsull_qhery.md)
-- [qhery Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_qhery_overview.md)
+- [qhery README](./references/github_com_mjsull_qhery_blob_main_README.md)

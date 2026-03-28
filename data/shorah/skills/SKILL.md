@@ -1,6 +1,6 @@
 ---
 name: shorah
-description: ShoRAH is a bioinformatics suite used to characterize genetic diversity by reconstructing local haplotypes and estimating their frequencies from next-generation sequencing data. Use when user asks to identify individual haplotypes, perform error correction via Dirichlet process mixture models, or detect single nucleotide variants in viral populations.
+description: ShoRAH is a bioinformatics suite designed to characterize genetic diversity and reconstruct haplotypes from heterogeneous mixtures or viral quasi-species. Use when user asks to analyze shotgun or amplicon sequencing data, perform error correction on aligned reads, or call single nucleotide variants in complex samples.
 homepage: https://github.com/cbg-ethz/shorah
 ---
 
@@ -8,57 +8,54 @@ homepage: https://github.com/cbg-ethz/shorah
 # shorah
 
 ## Overview
+ShoRAH is a specialized bioinformatics software suite designed to characterize the genetic diversity within a single sample. Unlike standard variant callers that assume diploidy or haploidy, ShoRAH is built for "quasi-species" or heterogeneous mixtures where multiple related genetic variants coexist. It processes aligned reads (BAM files) to correct sequencing errors and reconstruct the underlying haplotypes, making it particularly effective for studying viral evolution and low-frequency mutations.
 
-ShoRAH (Short Reads Assembly into Haplotypes) is a specialized bioinformatics suite designed to characterize the genetic diversity within a sample, such as a viral population. By processing next-generation sequencing (NGS) data, it identifies individual haplotypes and estimates their relative frequencies. The tool utilizes a window-based approach to perform local haplotype reconstruction, error correction via Dirichlet process mixture models, and strand-bias-aware SNV calling.
+## Core Workflows
 
-## Installation
+### 1. Shotgun Sequencing Analysis
+For standard shotgun genomic data, use the `shotgun` command. This performs window-based analysis to reconstruct local haplotypes.
+- **Basic Command**: `shorah shotgun -b input_sorted.bam -f reference.fasta`
+- **Key Input**: Requires a coordinate-sorted BAM file and the corresponding reference FASTA.
+- **Process**: The tool automatically splits the alignment into overlapping windows, performs error correction using `diri_sampler`, and calls SNVs.
 
-The recommended method for installing ShoRAH is via Bioconda to ensure all C++ and Python dependencies (HTSlib, Boost, Biopython, and NumPy) are correctly configured.
+### 2. Amplicon Sequencing Analysis
+For data generated via targeted PCR amplification (amplicons), use the `amplicon` command.
+- **Basic Command**: `shorah amplicon -b input_sorted.bam -f reference.fasta`
+- **Usage**: This mode is optimized for the specific error profiles and coverage patterns found in amplicon-based deep sequencing.
 
-```bash
-conda install bioconda::shorah
-```
+### 3. Single Nucleotide Variant (SNV) Calling
+ShoRAH includes a specific tool for SNV detection that accounts for strand bias, which is a common source of false positives in NGS.
+- **Tool**: `shorah snv`
+- **Feature**: It uses a strand bias test (`fil`) to ensure that variants are supported by reads in both directions.
 
-## Core CLI Usage
+## Tool-Specific Best Practices
 
-ShoRAH is primarily used through its wrapper scripts for different sequencing strategies. The primary input required is a **sorted BAM file** and a corresponding **reference FASTA file**.
+- **Input Preparation**: Always ensure your BAM file is sorted and indexed. ShoRAH relies on HTSlib for efficient file access.
+- **Local vs. Global Reconstruction**: In ShoRAH2 (v1.99+), global haplotype reconstruction is disabled. Focus on local analysis for high-confidence variant calling. For global reconstruction, the developers recommend using the V-pipe pipeline.
+- **Windowing**: The `b2w` tool is used internally to split shotgun data into overlapping windows. If manual intervention is needed, ensure windows overlap sufficiently to allow for consistent haplotype linking.
+- **Error Correction**: The `diri_sampler` component uses Gibbs sampling. For very high coverage or complex regions, compilation with multiple threads (e.g., `make -j4`) during installation is recommended to handle the computational load.
+- **Strand Bias**: If you encounter high false-positive rates, verify the `fil` (strand bias test) parameters to ensure variants are not artifacts of the sequencing process.
 
-### Shotgun Sequencing Analysis
-Use this for randomly fragmented genomic data.
-```bash
-shorah shotgun -b input_sorted.bam -f reference.fasta
-```
+## Common CLI Components
 
-### Amplicon Sequencing Analysis
-Use this for targeted sequencing data.
-```bash
-shorah amplicon -b input_sorted.bam -f reference.fasta
-```
+| Tool | Function |
+| :--- | :--- |
+| `shorah` | Main wrapper for shotgun and amplicon workflows. |
+| `b2w` | Splits shotgun BAM files into overlapping windows. |
+| `diri_sampler` | Performs Gibbs sampling for error correction. |
+| `shorah snv` | Detects single nucleotide variants with strand bias filtering. |
+| `fil` | Standalone tool for the strand bias test. |
 
-### Manual Component Execution
-While the wrappers are preferred, individual components can be invoked for specific tasks:
-- **snv**: Detects single nucleotide variants with strand bias testing.
-- **b2w**: Splits a shotgun BAM file into multiple overlapping windows for localized analysis.
-- **diri_sampler**: Performs Gibbs sampling for error correction.
 
-## Best Practices and Expert Tips
 
-### Input Preparation
-- **Sorting and Indexing**: Always ensure your BAM file is coordinate-sorted and indexed (`samtools index`) before running ShoRAH.
-- **Reference Matching**: The reference FASTA used for ShoRAH must be the same one used during the initial read mapping/alignment.
+## Subcommands
 
-### Version Considerations
-- **Local vs. Global Reconstruction**: ShoRAH 2.x (v1.99+) currently has global haplotype reconstruction disabled. It focuses on high-accuracy local reconstruction. If your workflow requires global reconstruction, use version 1.1.3 or integrate ShoRAH into the V-pipe pipeline.
-- **Output Formats**: Modern versions of ShoRAH (1.99.0+) support VCF output for SNV calling, making it compatible with standard downstream variant analysis tools.
-
-### Performance and Reproducibility
-- **Parallelization**: When compiling from source, use `make -j<threads>` to speed up the process. For execution, ShoRAH handles window-based processing which can be resource-intensive; ensure sufficient memory is available for the `diri_sampler` component.
-- **Random Seeds**: Use the `-S` flag to set a random seed if you need to attempt to reproduce Gibbs sampling results, though be aware that some stochasticity is inherent to the Dirichlet process mixture model.
-
-### Troubleshooting
-- **Empty Regions**: If the tool encounters regions with no read coverage, it may skip them or produce warnings. Ensure your BAM file has sufficient coverage for the regions of interest.
-- **Strand Bias**: If you observe high false-positive rates in SNV calling, check the `fil` (strand bias test) output to see if the variants are heavily biased toward one sequencing direction.
+| Command | Description |
+|---------|-------------|
+| shorah | Call SNVs from amplicon sequencing data |
+| shotgun | Call SNVs from shotgun sequencing data. |
+| snv | Call SNVs from BAM files. |
 
 ## Reference documentation
-- [ShoRAH Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_shorah_overview.md)
 - [ShoRAH GitHub Repository](./references/github_com_cbg-ethz_shorah.md)
+- [Bioconda ShoRAH Package](./references/anaconda_org_channels_bioconda_packages_shorah_overview.md)

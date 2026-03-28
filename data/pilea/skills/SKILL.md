@@ -1,6 +1,6 @@
 ---
 name: pilea
-description: Pilea profiles bacterial growth dynamics from metagenomic datasets by using sketching algorithms to estimate peak-to-trough ratios. Use when user asks to profile metagenomes, estimate bacterial growth rates, index custom genomes, or fetch reference databases.
+description: Pilea profiles bacterial growth dynamics from metagenomic short-read data by estimating Peak-to-Trough Ratios using sketching algorithms. Use when user asks to estimate bacterial replication rates, profile metagenomes, or index custom genomes for growth rate analysis.
 homepage: https://github.com/xinehc/pilea
 ---
 
@@ -8,10 +8,13 @@ homepage: https://github.com/xinehc/pilea
 # pilea
 
 ## Overview
-Pilea is a high-performance bioinformatics tool that leverages sketching algorithms to profile bacterial growth dynamics from metagenomic datasets. Unlike traditional alignment-heavy methods, Pilea uses sketching to significantly speed up the estimation of Peak-to-Trough Ratios (PTR), which serve as a proxy for instantaneous growth rates. The workflow typically involves preparing a reference database (either from custom MAGs or GTDB) and then profiling metagenomic reads against that database.
 
-## Installation
-Install Pilea via Bioconda for the most stable environment:
+Pilea is a specialized bioinformatics tool designed to profile bacterial growth dynamics from metagenomic short-read data. It utilizes sketching algorithms to provide fast and memory-efficient estimates of the Peak-to-Trough Ratio (PTR), which serves as a proxy for bacterial replication rates. This tool is ideal for researchers who need to process large metagenomes against extensive reference sets (like the GTDB) or custom-assembled genomes while minimizing the computational overhead typically associated with traditional alignment-based methods.
+
+## Installation and Setup
+
+Install Pilea via Conda using the bioconda and conda-forge channels:
+
 ```bash
 conda create -n pilea -c bioconda -c conda-forge pilea
 conda activate pilea
@@ -20,41 +23,62 @@ conda activate pilea
 ## Core Workflows
 
 ### 1. Database Preparation
-You can either download a pre-built database or index your own Metagenome-Assembled Genomes (MAGs).
 
-**Fetching GTDB:**
-If you do not have specific MAGs, download the pre-built GTDB database:
+You can either download a pre-built database or create a custom index from your own Metagenome-Assembled Genomes (MAGs).
+
+**Download GTDB Reference:**
+Use the `fetch` command to retrieve the pre-built GTDB reference database from Zenodo.
 ```bash
 pilea fetch
 ```
 
-**Indexing Custom MAGs:**
-To use your own genomes, provide the directory containing FASTA files.
+**Create Custom Index:**
+Index your own MAGs (files must end in `.fa`, `.fna`, or `.fasta`).
 ```bash
-pilea index path/to/mags/*.fna -o my_database
+# -a: Optional taxonomy mapping (e.g., GTDB-Tk summary)
+# -o: Output database directory
+pilea index mags/*.fna -a gtdbtk.bac120.summary.tsv -o custom_db
 ```
-*   **Expert Tip:** If you have taxonomy information (e.g., from GTDB-Tk), provide it using `-a/--taxonomy`. This file should be a tab-separated file where the first column is the genome name and the second is the taxonomy.
 
 ### 2. Profiling Metagenomes
-The `profile` command estimates PTR and metadata for genomes that pass quality filters.
+
+The `profile` command processes short reads against the indexed database. It supports both FASTA and FASTQ formats.
 
 **Standard Profiling:**
 ```bash
-pilea profile samples/*.fasta -d my_database -o output_dir
+# -d: Path to the database directory
+# -o: Output directory for results (output.tsv)
+pilea profile samples/*.fastq.gz -d custom_db -o results/
 ```
 
-**Single-end Reads:**
-By default, Pilea looks for paired-end patterns (`_1`, `_R1`, etc.). For single-end data, use the flag:
+**Single-End Reads:**
+By default, Pilea attempts to identify paired-end patterns (e.g., `_R1`/`_R2`). Use the `--single` flag if your data is single-end.
 ```bash
-pilea profile sample.fastq -d my_database -o . --single
+pilea profile single_reads.fasta --single -d custom_db -o .
 ```
 
-## Best Practices and Expert Tips
-*   **Batch Processing:** When processing multiple samples, pass them all in a single command (e.g., `*.fasta`). This prevents Pilea from reloading the database into memory for every individual file, which is a significant time-saver for large reference sets.
-*   **File Extensions:** Ensure your MAGs use standard extensions: `.fa`, `.fna`, or `.fasta`.
-*   **Taxonomy Filtering:** When providing a taxonomy mapping file, ensure it contains only bacteria. Pilea is optimized for bacterial growth dynamics; archaea or non-prokaryotes should be filtered out of the mapping file to avoid noise.
-*   **Memory Management:** Sketching is memory-efficient, but the initial indexing of a very large number of MAGs can be resource-intensive. Ensure your environment has sufficient RAM for the `index` step if working with thousands of genomes.
+## Expert Tips and Best Practices
+
+- **Batch Processing:** When dealing with multiple samples, pass them all in a single command (e.g., `*.fasta`). This prevents the overhead of reloading the database for every individual sample, which is critical when using large reference sets.
+- **Taxonomy Mapping:** If providing a taxonomy file with `-a`, ensure it is a tab-separated file where the first column is the genome ID and the second is the taxonomy string. Pilea is designed to work specifically with bacterial genomes; exclude archaea or non-prokaryotes for optimal results.
+- **Memory Management:** Pilea uses sketching to reduce memory usage, but peak memory can still be high during indexing of very large, redundant databases. Recent versions (v1.3.1+) include optimized decoders to mitigate this.
+- **Output Interpretation:** The primary output is `output.tsv`. As of v1.3.8, the tool outputs PTR values as `log2(PTR)`.
+- **Filtering:** Pilea uses Interquartile Range (IQR) filtering rather than IDR for quality control of the growth estimates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pilea | pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'bacterial' (choose from index, fetch, profile, rebuild) |
+| pilea | pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'new' (choose from index, fetch, profile, rebuild) |
+| pilea fetch | Fetch data from Pilea. |
+| pilea profile | Profile genomes from fasta or fastq files. |
+| pilea rebuild | Rebuilds a sketch database. |
+| pilea_index | Index fasta files for Pilea. |
 
 ## Reference documentation
-- [Pilea Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pilea_overview.md)
-- [Pilea GitHub Repository](./references/github_com_xinehc_pilea.md)
+
+- [Pilea README](./references/github_com_xinehc_pilea_blob_master_README.md)
+- [Pilea Changelog](./references/github_com_xinehc_pilea_blob_master_CHANGELOG.md)

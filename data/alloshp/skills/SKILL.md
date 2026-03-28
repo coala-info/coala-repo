@@ -1,6 +1,6 @@
 ---
 name: alloshp
-description: AlloSHP is a bioinformatics pipeline that resolves the subgenomes of allopolyploid organisms by extracting homeologous polymorphisms from mapped reads. Use when user asks to identify syntenic regions between diploid references, extract subgenome-specific alignments from VCF files, or reconstruct phylogenies for complex polyploid systems.
+description: AlloSHP identifies homeologous polymorphisms in allopolyploid species by comparing polyploid VCF data against diploid ancestral genomes. Use when user asks to perform whole-genome alignments between progenitors, convert VCF data into alignments, or generate synteny-aware multiple sequence alignments for polyploid phylogenetics.
 homepage: https://github.com/eead-csic-compbio/AlloSHP
 ---
 
@@ -9,62 +9,54 @@ homepage: https://github.com/eead-csic-compbio/AlloSHP
 
 ## Overview
 
-AlloSHP is a specialized bioinformatics pipeline designed to resolve the subgenomes of allopolyploid organisms. By comparing mapped reads against syntenic regions of diploid reference genomes, it extracts polymorphisms that distinguish homeologous chromosomes. This process transforms raw mapped data into clean, subgenome-specific alignments, which are essential for accurate phylogenetic reconstruction in complex diploid-polyploid systems.
-
-## Installation
-
-The most reliable way to install AlloSHP and its dependencies (Cgaln, GSAlign, Red, etc.) is via Bioconda:
-
-```bash
-conda install bioconda::alloshp
-```
+AlloSHP is a specialized bioinformatics suite designed for the study of allopolyploid species. It facilitates the identification of homeologous polymorphisms by comparing polyploid sequence data (VCF) against the genomes of their diploid ancestors. The workflow typically follows a three-stage process: performing whole-genome alignments (WGA) between diploid progenitors, converting VCF data into alignments, and finally generating synteny-aware multiple sequence alignments. This tool is essential for researchers working on genome evolution, subgenome differentiation, and polyploid phylogenetics.
 
 ## Core Workflow and CLI Usage
 
-The pipeline consists of three primary stages. You must provide FASTA files for the diploid progenitor genomes and a VCF file containing reads mapped to the concatenated references.
-
 ### 1. Whole-Genome Alignment (WGA)
+Before processing VCF data, you must identify syntenic regions between your diploid reference genomes.
 
-The `WGA` script identifies syntenic segments between the diploid reference genomes.
-
-**Common Pattern:**
-```bash
-WGA -A speciesA.fna.gz -B speciesB.fna.gz -o output_folder -n 4
-```
-
-**Key Flags:**
-- `-A`, `-B`: Paths to the diploid reference FASTA files (can be gzipped).
-- `-g`: Use the multithreaded GSAlign algorithm instead of the default CGaln.
-- `-m`: Skip soft-masking if the input files are already masked.
-- `-l`: Minimum contig length in Mbp (default is 1).
-- `-M`: Tuning parameters for coordinate mapping (e.g., `-M '0.25 0.05'`).
+*   **Basic Alignment**:
+    `WGA -A progenitor_A.fna.gz -B progenitor_B.fna.gz -o output_folder`
+*   **Using GSAlign**: Add the `-g` flag to use GSAlign instead of the default CGaln.
+*   **Masking**: By default, the tool uses `Red` for soft-masking. If your genomes are already soft-masked, use the `-m` flag to save time.
+*   **Contig Filtering**: Use `-l [Mbp]` to set the minimum contig length (default is often 10 Mbp for major assemblies).
 
 ### 2. VCF to Alignment (vcf2alignment)
+This step extracts sequence information from the VCF file based on the syntenic segments identified in the WGA step.
 
-This step extracts the polymorphisms based on the synteny defined in the WGA step. It requires a `config.tsv` file.
-
-**Usage:**
-```bash
-vcf2alignment -v input.vcf.gz -c config.tsv -o alignments_dir
-```
+*   **Standard Execution**:
+    `vcf2alignment -v polyploid_data.vcf.gz -c config.tsv -l analysis_log.gz -d 5 -m 3`
+*   **Key Parameters**:
+    *   `-d [int]`: Minimum depth of coverage required to consider a site.
+    *   `-m [int]`: Minimum number of individuals that must have data at a site.
+    *   `-c [file]`: Path to the configuration TSV defining the relationship between VCF samples and subgenomes.
 
 ### 3. VCF to Synteny (vcf2synteny)
+The final step produces the Multiple Sequence Alignment (MSA) files used for downstream phylogenetic or population genetic analysis.
 
-The final step produces the multiple sequence alignments (MSA) for the subgenomes. It requires a synteny configuration file (e.g., `config.synteny.tsv`).
-
-**Usage:**
-```bash
-vcf2synteny -i alignments_dir -s config.synteny.tsv -o final_results
-```
+*   **Generating MSA**:
+    `vcf2synteny -v polyploid_data.vcf.gz -c config.synteny.tsv -l analysis_log.gz -r ReferenceName -o subgenome_msa.fasta`
+*   **Outgroup Support**: Use a configuration file that includes outgroup specifications (e.g., `config.outg.synteny.tsv`) to include a reference outgroup in the final MSA.
 
 ## Expert Tips and Best Practices
 
-- **Reference Selection**: Designate the highest quality assembly as the "master" reference (Genome A) in the `WGA` step to ensure the most stable coordinate system for mapping.
-- **Soft-Masking**: AlloSHP uses `Red` for soft-masking by default. If you have pre-masked genomes, use the `-m` flag to save significant processing time.
-- **Memory Management**: For large datasets, ensure you are using the latest version (2025.09.12 or later), as recent updates to `mapcoords.pl` have reduced RAM footprints by 30-50% using tied hashes.
-- **Visualization**: Check the `.dot.pdf` file generated by `WGA` to verify the quality of the syntenic blocks before proceeding to the VCF processing steps.
-- **Chromosome Naming**: Ensure that chromosome/scaffold names are unique across all input FASTA files to prevent collisions during the mapping phase.
+*   **Unique Chromosome Names**: Ensure that every chromosome/scaffold across all input FASTA files has a unique identifier. Concatenating genomes with overlapping names (e.g., both having "Chr01") will cause the pipeline to fail or produce incorrect mappings.
+*   **Configuration Accuracy**: The `config.tsv` file is the most common source of error. Double-check that the sample names in the VCF exactly match the entries in your configuration files.
+*   **Memory Management**: WGA of large plant genomes is memory-intensive. Use the `-n` flag in the `WGA` script to specify the number of CPU cores, but monitor RAM usage closely when aligning assemblies larger than 1Gb.
+*   **Soft-masking**: If the alignment step is taking too long or producing too many non-syntenic hits, ensure your reference genomes are properly soft-masked to ignore repetitive elements.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/WGA | Whole Genome Alignment tool for comparing two genomes |
+| vcf2alignment | Convert VCF files to multiple sequence alignments (MSA) with optional filtering and configuration. |
+| vcf2synteny | Convert VCF files to synteny FASTA/VCF formats based on a configuration file and reference genome. |
 
 ## Reference documentation
-- [AlloSHP GitHub Repository](./references/github_com_eead-csic-compbio_AlloSHP.md)
-- [Bioconda alloshp Overview](./references/anaconda_org_channels_bioconda_packages_alloshp_overview.md)
+- [AlloSHP Repository Overview](./references/github_com_eead-csic-compbio_AlloSHP.md)
+- [AlloSHP README and Pipeline Guide](./references/github_com_eead-csic-compbio_AlloSHP_blob_master_README.md)
+- [Makefile Test Examples](./references/github_com_eead-csic-compbio_AlloSHP_blob_master_Makefile.md)

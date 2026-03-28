@@ -1,6 +1,6 @@
 ---
 name: sprai
-description: Sprai corrects sequencing errors in long, noisy reads to improve assembly continuity. Use when user asks to correct PacBio CLR reads, pre-process reads for the Celera Assembler, or improve N50 for long-read assemblies.
+description: "Sprai corrects high error rates in PacBio single-pass reads to improve the continuity of de novo assemblies. Use when user asks to correct PacBio sequencing errors, perform de novo assembly of long reads, or generate consensus sequences for improved assembly contiguity."
 homepage: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
 ---
 
@@ -8,43 +8,70 @@ homepage: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
 # sprai
 
 ## Overview
-Sprai (Single-Pass Read Accuracy Improver) is a specialized bioinformatics pipeline designed to correct sequencing errors in long, noisy reads. While many correctors focus on base-level identity, Sprai is optimized for the specific downstream goal of assembly continuity. It is most effective when working with PacBio Continuous Long Reads (CLRs) and serves as a pre-processing step before running assemblers like Celera Assembler.
+Sprai is a specialized tool designed to correct the high error rates (typically ~15%) found in PacBio single-pass reads. Unlike tools that prioritize absolute per-read accuracy, Sprai focuses on improving the continuity of de novo assemblies. It functions by generating multiple alignments and consensus sequences, leveraging the random nature of PacBio sequencing errors. The workflow typically involves error correction followed by assembly via the Celera Assembler (wgs-assembler).
 
-## Common CLI Patterns
+## Core Workflow
 
-### Basic Error Correction Workflow
-The primary entry point for Sprai is the `ezez_vx1.pl` script (or `ezez4qsub_vx1.pl` for SGE clusters). This script automates the alignment, trimming, and correction phases.
+### 1. Data Preparation
+Sprai requires **subreads** in FASTQ format. Raw reads containing adapters must be processed first.
+- Combine all input FASTQ files: `cat *.fastq > all.fq`
+- Ensure you have `ec.spec` (Sprai parameters) and `pbasm.spec` (Celera Assembler parameters) in your working directory.
 
+### 2. Configuration (ec.spec)
+Key parameters to set in `ec.spec`:
+- `input_fastq`: Path to your combined FASTQ file.
+- `estimated_genome_size`: Target genome size (use `1e12` if unknown).
+- `estimated_depth`: Coverage depth (use `0` if unknown).
+- `partition`: Number of CPU cores to utilize.
+- `ca_path`: Full path to the Celera Assembler `bin` directory.
+
+### 3. Execution Modes
+
+**Standard Pipeline (Correction + Assembly):**
+Runs the full pipeline on a single node using multiple cores.
 ```bash
-# Standard execution
-ezez_vx1.pl input.fastq ec.spec
+ezez_vx1.pl ec.spec pbasm.spec > log.txt 2>&1 &
 ```
 
-### Configuration (ec.spec)
-Sprai requires a specification file (`ec.spec`) to define parameters. Key parameters include:
-- `input_fastq`: Path to your raw reads.
-- `estimated_genome_size`: Crucial for calculating coverage and overlap parameters.
-- `target_coverage`: Usually set to 20-30x for the corrected output.
-- `use_one_subread`: Set to `1` (default in newer versions) to use only the longest subread per molecule, reducing bias.
-
-### Running in "Correction Only" Mode
-If you intend to use a different assembler (like Flye or Canu) after correction, run Sprai in error-correction-only mode:
-
+**Error Correction Only:**
+Use this if you plan to use a different assembler (e.g., Canu, Flye) after correction.
 ```bash
-ezez_vx1.pl -ec_only input.fastq ec.spec
+ezez_vx1.pl ec.spec -ec_only > log.txt 2>&1 &
 ```
 
-### Post-Processing and Assembly
-After correction, Sprai typically generates a corrected FASTQ file. If using the full pipeline with Celera Assembler:
-1. The script will generate a `.frg` file.
-2. It will invoke `runCA` (Celera Assembler) automatically unless `-ec_only` is specified.
+**Restartable Make Mode:**
+Recommended for long-running jobs to allow resuming from failures.
+```bash
+ezez4makefile_v4.pl ec.spec pbasm.spec
+make -j <threads> -f Makefile > log.txt 2>&1 &
+```
 
-## Expert Tips
-- **Memory Management**: For large genomes, ensure `blastn` is constrained. Sprai uses BLAST for overlaps; newer versions use `-max_target_seqs 100` to reduce memory overhead.
-- **Circularization**: If assembling small genomes (e.g., plasmids or phage), use the `check_circularity.pl` utility provided in the Sprai bin directory to verify contig ends.
-- **N50 Optimization**: If your N50 is lower than expected, check the `trim_len` parameter in your spec file. Increasing the minimum trim length can sometimes improve continuity at the cost of total throughput.
-- **Input Quality**: Sprai is designed for CLRs. If you have circular consensus sequences (CCS/HiFi), Sprai is generally unnecessary as those reads are already high-accuracy.
+**Cluster Mode (SGE/UGE):**
+Submits jobs to a grid engine.
+```bash
+ezez4qsub_vx1.pl ec.spec pbasm.spec > log.txt 2>&1 &
+```
+
+## Expert Tips & Best Practices
+- **High Core Counts:** If using >1000 processors, use the `pre_partition` parameter in `ec.spec` to manage job distribution effectively.
+- **Output Files:** 
+  - Corrected reads: `c01.fin.idfq.gz`
+  - Assembled contigs: `CA/9-terminator/asm.ctg.fasta`
+- **Memory Management:** For large genomes (>400Mbp), you can often achieve high-quality results with 30x-40x coverage. Depths above 200x rarely provide additional benefits and increase computational load.
+- **Hybrid Assembly:** Sprai does not support Illumina reads directly. To perform hybrid assembly, correct the PacBio reads with Sprai first, then feed the output `idfq.gz` file into an assembler that supports mixed technologies.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| check_circurarity.pl | Check for circularity in a FASTA assembly. |
+| runCA | CA formatted fragment file |
+| sprai_ezez4qsub_vx1.pl | Error correction and assembly pipeline |
+| sprai_ezez_vx1.pl | Error correction and assembly tool |
 
 ## Reference documentation
-- [Sprai Documentation](./references/kasahara-lab_github_io_sprai_doc.md)
-- [Bioconda Sprai Package Overview](./references/anaconda_org_channels_bioconda_packages_sprai_overview.md)
+- [Sprai README](./references/kasahara-lab_github_io_sprai_doc_README.html.md)
+- [Sprai Example Workflow](./references/kasahara-lab_github_io_sprai_doc_Example.html.md)
+- [Sprai FAQ](./references/kasahara-lab_github_io_sprai_doc_FAQ.html.md)

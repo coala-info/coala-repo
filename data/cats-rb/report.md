@@ -123,3 +123,6 @@ General options:
 -h: Show usage information
 ```
 
+
+## Metadata
+- **Skill**: generated

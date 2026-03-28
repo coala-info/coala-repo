@@ -1,1 +1,414 @@
-Commits · PacificBiosciences/pbmm2 · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} PacificBiosciences / pbmm2 Public Notifications You must be signed in to change notification settings Fork 34 Star 210 Code Pull requests 2 Actions Security 0 Insights Additional navigation options Code Pull requests Actions Security Insights Commits Branch selector develop User selector All users All time Commit History Commits on Jan 23, 2026 Update changelog for v26.1.0 Jessica Mattick authored and armintoepfer committed c37987b Copy full SHA for c37987b Commits on Nov 14, 2025 Fix minimap2 version information in README armintoepfer authored 333c854 Copy full SHA for 333c854 Revise parameter sets documentation in README armintoepfer authored 2d49beb Copy full SHA for 2d49beb Commits on Sep 17, 2025 minor update to README.md jocelyne-pacbio authored and armintoepfer committed 4032e6f Copy full SHA for 4032e6f Commits on Feb 25, 2025 Update docs for v1.17.0 (#18) Show description for d3e292e jmattick and Jessica Mattick authored d3e292e Copy full SHA for d3e292e Commits on Dec 13, 2024 Update docs for v1.16.99 (#16) Show description for 98311c2 jmattick and Jessica Mattick authored 98311c2 Copy full SHA for 98311c2 Commits on Oct 29, 2024 Release version 1.16.0 armintoepfer committed 7fb01ec Copy full SHA for 7fb01ec Commits on Jun 11, 2024 Update README for v1.14.99 armintoepfer committed fbc6873 Copy full SHA for fbc6873 Commits on Nov 7, 2023 [BFX-644] Fix README armintoepfer committed f7cbb14 Copy full SHA for f7cbb14 Commits on Nov 2, 2023 [BFX-758] Switch to pbtestutils pb-dseifert committed d0838d6 Copy full SHA for d0838d6 Commits on Oct 30, 2023 [BFX-751] Switch `Cigar::ToStdString()` → `Data::ToStdString(std::span&lt;CigarOperation&gt;)` pb-dseifert committed 39c263e Copy full SHA for 39c263e Commits on Sep 25, 2023 [BFX-644] Release version 1.13.1 armintoepfer committed 4f18ea9 Copy full SHA for 4f18ea9 Commits on Aug 14, 2023 [BFX-534] Update cram tests for mm2.26 Robert Vaser committed bcd99f5 Copy full SHA for bcd99f5 [BFX-533] Update README armintoepfer committed a193c7b Copy full SHA for a193c7b [BFX-533] Release version 1.13.0 armintoepfer committed 184c5ec Copy full SHA for 184c5ec Commits on Aug 8, 2023 [BFX-533] Sync HiFi settings with mm2 recomendations Show description for d87a48b armintoepfer committed d87a48b Copy full SHA for d87a48b [BFX-533] Update to mm2 2.26 armintoepfer committed 9a20679 Copy full SHA for 9a20679 [BFX-353] Do not rely in mm2 binary armintoepfer committed c8ba5ba Copy full SHA for c8ba5ba [BFX-535] Add cram armintoepfer committed 5313e71 Copy full SHA for 5313e71 Commits on Jun 9, 2023 [BFX-402] Version 1.12.0 armintoepfer committed dc27bd5 Copy full SHA for dc27bd5 Commits on Jun 7, 2023 [BFX-394] Set --preset CCS as default Robert Vaser committed d25a11e Copy full SHA for d25a11e [BFX-390] Add known multithreading issues to README Robert Vaser committed a4dce7d Copy full SHA for a4dce7d Commits on Jun 6, 2023 [BFX-361] Fix repeated matches trimming Robert Vaser committed 24cb8ba Copy full SHA for 24cb8ba Commits on Jun 5, 2023 [BFX-361] Add cram test for tag rm:i:&lt;int&gt; Robert Vaser committed ae3f174 Copy full SHA for ae3f174 Commits on Apr 24, 2023 [BFX-258] Develop version 1.11.9 armintoepfer committed 1b5a417 Copy full SHA for 1b5a417 [BFX-258] Release version 1.11.0 armintoepfer committed 531b781 Copy full SHA for 531b781 Commits on Apr 1, 2023 [BFX-192] Update {gtest,htslib,zlib}.wrap pb-dseifert committed 4337dfc Copy full SHA for 4337dfc Commits on Jan 26, 2023 [BFX-50] Add new logo armintoepfer committed 4356bbf Copy full SHA for 4356bbf [BFX-50] Update README armintoepfer committed 0fb9934 Copy full SHA for 0fb9934 [BFX-50] Inc develop version armintoepfer committed cf1a5f6 Copy full SHA for cf1a5f6 Commits on Jan 25, 2023 [BFX-12] Strip hifi kinetic tags Robert Vaser committed 086d7b6 Copy full SHA for 086d7b6 Commits on Jan 2, 2023 [TAG-5920] Release version 1.10.0 armintoepfer committed 0bc7f84 Copy full SHA for 0bc7f84 Commits on Dec 28, 2022 [TAG-5913] Store number of mismatches, tag NM armintoepfer committed 6f08701 Copy full SHA for 6f08701 Commits on Dec 27, 2022 [TAK-1796] Do not allow overwriting input files armintoepfer committed 97c0369 Copy full SHA for 97c0369 Commits on Dec 25, 2022 [TAG-5905] Add cram test for unaligned RC input armintoepfer committed 22e594c Copy full SHA for 22e594c Pagination Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FPacificBiosciences%2Fpbmm2%2Fcommits%2Fdevelop%2F)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FPacificBiosciences%2Fpbmm2%2Fcommits%2Fdevelop%2F)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fcommits%2Fshow&source=header-repo&source_repo=PacificBiosciences%2Fpbmm2)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[PacificBiosciences](/PacificBiosciences)
+/
+**[pbmm2](/PacificBiosciences/pbmm2)**
+Public
+
+* [Notifications](/login?return_to=%2FPacificBiosciences%2Fpbmm2) You must be signed in to change notification settings
+* [Fork
+  34](/login?return_to=%2FPacificBiosciences%2Fpbmm2)
+* [Star
+   212](/login?return_to=%2FPacificBiosciences%2Fpbmm2)
+
+* [Code](/PacificBiosciences/pbmm2)
+* [Pull requests
+  0](/PacificBiosciences/pbmm2/pulls)
+* [Actions](/PacificBiosciences/pbmm2/actions)
+* [Security
+  0](/PacificBiosciences/pbmm2/security)
+* [Insights](/PacificBiosciences/pbmm2/pulse)
+
+Additional navigation options
+
+* [Code](/PacificBiosciences/pbmm2)
+* [Pull requests](/PacificBiosciences/pbmm2/pulls)
+* [Actions](/PacificBiosciences/pbmm2/actions)
+* [Security](/PacificBiosciences/pbmm2/security)
+* [Insights](/PacificBiosciences/pbmm2/pulse)
+
+# Commits
+
+## Branch selector
+
+develop
+
+## User selector
+
+All users
+
+All time
+
+## Commit History
+
+### Commits on Mar 4, 2026
+
+* #### [Release version 26.1.99 for --secondary](/PacificBiosciences/pbmm2/commit/0260bcef6fd2e8d3769bf246db50dc434e913e7a)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [0260bce](/PacificBiosciences/pbmm2/commit/0260bcef6fd2e8d3769bf246db50dc434e913e7a)
+
+  Copy full SHA for 0260bce
+
+### Commits on Jan 23, 2026
+
+* #### [Update changelog for v26.1.0](/PacificBiosciences/pbmm2/commit/c37987bdd5a6d2e3b4fc23b1fba16440bb51a0cd)
+
+  ![Jessica Mattick](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)
+
+  Jessica Mattick
+
+  authored and
+
+  [armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [c37987b](/PacificBiosciences/pbmm2/commit/c37987bdd5a6d2e3b4fc23b1fba16440bb51a0cd)
+
+  Copy full SHA for c37987b
+
+### Commits on Nov 14, 2025
+
+* #### [Fix minimap2 version information in README](/PacificBiosciences/pbmm2/commit/333c8540826ac8deee8cec889255093e1288828b)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  authored
+
+  [333c854](/PacificBiosciences/pbmm2/commit/333c8540826ac8deee8cec889255093e1288828b)
+
+  Copy full SHA for 333c854
+* #### [Revise parameter sets documentation in README](/PacificBiosciences/pbmm2/commit/2d49beb3357432f684e11a6921e83cc88eada656)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  authored
+
+  [2d49beb](/PacificBiosciences/pbmm2/commit/2d49beb3357432f684e11a6921e83cc88eada656)
+
+  Copy full SHA for 2d49beb
+
+### Commits on Sep 17, 2025
+
+* #### [minor update to README.md](/PacificBiosciences/pbmm2/commit/4032e6f325e93e304eed89e0572e22d1d440910a)
+
+  ![jocelyne-pacbio](https://avatars.githubusercontent.com/u/124290860?v=4&size=32)![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)
+
+  [jocelyne-pacbio](/PacificBiosciences/pbmm2/commits?author=jocelyne-pacbio)
+
+  authored and
+
+  [armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [4032e6f](/PacificBiosciences/pbmm2/commit/4032e6f325e93e304eed89e0572e22d1d440910a)
+
+  Copy full SHA for 4032e6f
+
+### Commits on Feb 25, 2025
+
+* #### [Update docs for v1.17.0 (#18)](/PacificBiosciences/pbmm2/commit/d3e292e701d35d1458abf878107cef6a6828bbbe)
+
+  Show description for d3e292e
+
+  ![jmattick](https://avatars.githubusercontent.com/u/19544292?v=4&size=32)![Jessica Mattick](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  [jmattick](/PacificBiosciences/pbmm2/commits?author=jmattick)
+
+  and
+
+  Jessica Mattick
+
+  authored
+
+  [d3e292e](/PacificBiosciences/pbmm2/commit/d3e292e701d35d1458abf878107cef6a6828bbbe)
+
+  Copy full SHA for d3e292e
+
+### Commits on Dec 13, 2024
+
+* #### [Update docs for v1.16.99 (#16)](/PacificBiosciences/pbmm2/commit/98311c254edc1afdc4ac46c2aa66df86a90cfd6e)
+
+  Show description for 98311c2
+
+  ![jmattick](https://avatars.githubusercontent.com/u/19544292?v=4&size=32)![Jessica Mattick](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  [jmattick](/PacificBiosciences/pbmm2/commits?author=jmattick)
+
+  and
+
+  Jessica Mattick
+
+  authored
+
+  [98311c2](/PacificBiosciences/pbmm2/commit/98311c254edc1afdc4ac46c2aa66df86a90cfd6e)
+
+  Copy full SHA for 98311c2
+
+### Commits on Oct 29, 2024
+
+* #### [Release version 1.16.0](/PacificBiosciences/pbmm2/commit/7fb01ec1373423b4d918a5406b356b12de02a9f5)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [7fb01ec](/PacificBiosciences/pbmm2/commit/7fb01ec1373423b4d918a5406b356b12de02a9f5)
+
+  Copy full SHA for 7fb01ec
+
+### Commits on Jun 11, 2024
+
+* #### [Update README for v1.14.99](/PacificBiosciences/pbmm2/commit/fbc6873dbfe7e4276fcb6dabb74c93e1e4d61d05)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [fbc6873](/PacificBiosciences/pbmm2/commit/fbc6873dbfe7e4276fcb6dabb74c93e1e4d61d05)
+
+  Copy full SHA for fbc6873
+
+### Commits on Nov 7, 2023
+
+* #### [[BFX-644] Fix README](/PacificBiosciences/pbmm2/commit/f7cbb14ababd959a29fa8410f5e79876111768d4)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [f7cbb14](/PacificBiosciences/pbmm2/commit/f7cbb14ababd959a29fa8410f5e79876111768d4)
+
+  Copy full SHA for f7cbb14
+
+### Commits on Nov 2, 2023
+
+* #### [[BFX-758] Switch to pbtestutils](/PacificBiosciences/pbmm2/commit/d0838d6ee38ef7d71f24c32bee2f649b497c5aa6)
+
+  [![pb-dseifert](https://avatars.githubusercontent.com/u/39679069?v=4&size=32)](/pb-dseifert)[pb-dseifert](/PacificBiosciences/pbmm2/commits?author=pb-dseifert)
+
+  committed
+
+  [d0838d6](/PacificBiosciences/pbmm2/commit/d0838d6ee38ef7d71f24c32bee2f649b497c5aa6)
+
+  Copy full SHA for d0838d6
+
+### Commits on Oct 30, 2023
+
+* #### [[BFX-751] Switch `Cigar::ToStdString()` → `Data::ToStdString(std::span<CigarOperation>)`](/PacificBiosciences/pbmm2/commit/39c263eb6f0202663e014ce6c80cd4bf533f9132)
+
+  [![pb-dseifert](https://avatars.githubusercontent.com/u/39679069?v=4&size=32)](/pb-dseifert)[pb-dseifert](/PacificBiosciences/pbmm2/commits?author=pb-dseifert)
+
+  committed
+
+  [39c263e](/PacificBiosciences/pbmm2/commit/39c263eb6f0202663e014ce6c80cd4bf533f9132)
+
+  Copy full SHA for 39c263e
+
+### Commits on Sep 25, 2023
+
+* #### [[BFX-644] Release version 1.13.1](/PacificBiosciences/pbmm2/commit/4f18ea9e92bca313161d2d529ff20f8230cc4039)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [4f18ea9](/PacificBiosciences/pbmm2/commit/4f18ea9e92bca313161d2d529ff20f8230cc4039)
+
+  Copy full SHA for 4f18ea9
+
+### Commits on Aug 14, 2023
+
+* #### [[BFX-534] Update cram tests for mm2.26](/PacificBiosciences/pbmm2/commit/bcd99f5add9a1e125a3ea6a7b2a2144cad45a6cc)
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Robert Vaser
+
+  committed
+
+  [bcd99f5](/PacificBiosciences/pbmm2/commit/bcd99f5add9a1e125a3ea6a7b2a2144cad45a6cc)
+
+  Copy full SHA for bcd99f5
+* #### [[BFX-533] Update README](/PacificBiosciences/pbmm2/commit/a193c7bf8b95e0482bf172019ecfb92404f445e7)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [a193c7b](/PacificBiosciences/pbmm2/commit/a193c7bf8b95e0482bf172019ecfb92404f445e7)
+
+  Copy full SHA for a193c7b
+* #### [[BFX-533] Release version 1.13.0](/PacificBiosciences/pbmm2/commit/184c5eccf056669de880c74293fdddc2c1563670)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [184c5ec](/PacificBiosciences/pbmm2/commit/184c5eccf056669de880c74293fdddc2c1563670)
+
+  Copy full SHA for 184c5ec
+
+### Commits on Aug 8, 2023
+
+* #### [[BFX-533] Sync HiFi settings with mm2 recomendations](/PacificBiosciences/pbmm2/commit/d87a48b86661ecb53802969a9351bf323f7c1995)
+
+  Show description for d87a48b
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences/pbmm2/commits?author=armintoepfer)
+
+  committed
+
+  [d87a48b](/PacificBiosciences/pbmm2/commit/d87a48b86661ecb53802969a9351bf323f7c1995)
+
+  Copy full SHA for d87a48b
+* #### [[BFX-533] Update to mm2 2.26](/PacificBiosciences/pbmm2/commit/9a20679a0d79f427e8efbe264bf8bca3ad1df8ae)
+
+  [![armintoepfer](https://avatars.githubusercontent.com/u/1433286?v=4&size=32)](/armintoepfer)[armintoepfer](/PacificBiosciences

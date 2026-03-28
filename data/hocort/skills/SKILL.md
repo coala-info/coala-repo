@@ -1,6 +1,6 @@
 ---
 name: hocort
-description: HoCoRT automates the removal of host contamination from sequencing data by mapping reads against a reference genome. Use when user asks to remove host DNA from FastQ files, filter contaminant sequences, or extract specific organism reads using various bioinformatic aligners.
+description: "HoCoRT identifies and removes contaminant host sequences from sequencing data by mapping reads against a reference genome using various aligners. Use when user asks to remove host contamination, build reference indexes for mapping, extract specific organism sequences, or filter sequencing reads."
 homepage: https://github.com/ignasrum/hocort
 ---
 
@@ -8,66 +8,62 @@ homepage: https://github.com/ignasrum/hocort
 # hocort
 
 ## Overview
+HoCoRT (Host Contamination Removal Tool) is a specialized Linux-based utility designed to clean sequencing data by identifying and removing reads belonging to specific "contaminant" organisms, typically the host. It functions as a wrapper for several industry-standard aligners and classifiers, providing a unified interface to map reads against a reference genome and filter the results. By default, it is used to subtract host DNA to reduce file size and improve downstream analysis of microbial or non-host sequences.
 
-HoCoRT (Host Contamination Removal Tool) is a specialized wrapper designed to simplify the process of cleaning sequencing data. It automates the workflow of mapping reads against a reference genome and separating the "contaminant" (host) sequences from the sequences of interest. It is particularly useful in microbiome research to ensure human DNA is removed before analysis or public release. The tool supports both single-end and paired-end FastQ files, handles compressed inputs automatically, and allows for fine-tuned control over underlying bioinformatic aligners.
+## Core Workflows
 
-## Installation and Setup
-
-HoCoRT is best managed via Conda to handle its numerous dependencies (Bowtie2, HISAT2, Kraken2, etc.).
+### 1. Building Indexes
+Before filtering, you must create an index for the specific pipeline you intend to use. If you need to remove multiple organisms, concatenate their FASTA files into a single reference before indexing.
 
 ```bash
-# Create a dedicated environment to avoid dependency conflicts
-conda create -n hocort -c conda-forge -c bioconda hocort
-conda activate hocort
+# General syntax
+hocort index <pipeline_name> --input genome.fasta --output dir/basename
+
+# Example: Building a Bowtie2 index
+hocort index bowtie2 --input human_reference.fasta --output indexes/human
 ```
 
-## Common CLI Patterns
-
-### 1. Building an Index
-Before filtering, you must build an index for the organism(s) you wish to remove. If removing multiple organisms, concatenate their FASTA files first.
+### 2. Removing Host Contamination
+To remove host sequences, map your reads against the host index and set `--filter true`. This tells HoCoRT to output only the reads that **did not** map to the reference.
 
 ```bash
-# Combine multiple genomes if necessary
-cat human_chr1.fasta human_chr2.fasta > combined_host.fasta
+# Paired-end reads (removes host)
+hocort map bowtie2 -x indexes/human -i read1.fastq read2.fastq -o clean1.fastq clean2.fastq --filter true
 
-# Build the index (example using bowtie2)
-hocort index bowtie2 --input combined_host.fasta --output indexes/host_idx
-```
-
-### 2. Removing Host Contamination (Filtering)
-To remove reads that match the index, set `--filter true`. This outputs only the unmapped reads.
-
-```bash
-# Paired-end filtering with Bowtie2
-hocort map bowtie2 -x indexes/host_idx -i input_R1.fastq.gz input_R2.fastq.gz -o clean_R1.fastq.gz clean_R2.fastq.gz --filter true
-
-# Single-end filtering
-hocort map bowtie2 -x indexes/host_idx -i input.fastq -o clean.fastq --filter true
+# Single-end reads (removes host)
+hocort map bowtie2 -x indexes/human -i input.fastq -o output.fastq --filter true
 ```
 
 ### 3. Extracting Specific Organisms
-To keep only the reads that match the index (e.g., extracting specific viral reads from a sample), set `--filter false`.
+To do the opposite—extracting only the reads that match your reference—set `--filter false`.
 
 ```bash
-hocort map bowtie2 -x indexes/target_idx -i input.fastq -o target_only.fastq --filter false
+# Extracting specific sequences matching the index
+hocort map bowtie2 -x indexes/target_organism -i input.fastq -o extracted.fastq --filter false
 ```
 
 ## Expert Tips and Best Practices
 
-- **Pipeline Selection**: Choose the underlying tool based on your needs:
-  - `bowtie2` or `hisat2`: Standard for high-accuracy mapping.
-  - `kraken2`: Fast classification-based filtering.
-  - `minimap2`: Preferred for long-read data (Oxford Nanopore/PacBio).
-  - `kraken2bowtie2`: A hybrid pipeline for increased sensitivity.
-- **Passing Native Arguments**: Use the `-c` or `--config` flag to pass specific parameters directly to the underlying tool.
-  ```bash
-  # Example: Using Bowtie2's local alignment mode for higher sensitivity
-  hocort map bowtie2 -x idx -i in.fq -o out.fq -c="--local --very-fast-local"
+- **Pipeline Selection**: Choose your pipeline based on the underlying tool's strengths. Use `bowtie2` or `hisat2` for high accuracy with short reads, or `minimap2` for long reads or faster, less sensitive mapping.
+- **Compressed Files**: HoCoRT handles `.gz` files natively. Simply use the `.gz` extension in your output filenames to trigger compression, which saves significant disk space.
+- **Advanced Tool Configuration**: You can pass raw arguments directly to the underlying aligner using the `-c` or `--config` flag. This is useful for adjusting sensitivity or local vs. end-to-end alignment.
+  - Example: `hocort map bowtie2 -c="--very-fast-local" ...`
+- **Python Integration**: For complex workflows, HoCoRT can be imported as a Python module. This allows you to capture return codes and programmatically configure options.
+  ```python
+  import hocort.pipelines.bowtie2 as Bowtie2
+  Bowtie2().run(idx, seq1, out1, seq2=seq2, out2=out2, options=["--local"])
   ```
-- **Compression**: HoCoRT detects `.gz` extensions automatically. Always use compressed formats for large sequencing datasets to save disk space and I/O time.
-- **Memory Management**: Some aligners (like Kraken2 with large databases) require significant RAM. Ensure your environment has sufficient resources before starting the mapping process.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| index | build index/-es for supported tools |
+| map | map reads to a reference genome and output mapped/unmapped reads |
 
 ## Reference documentation
-- [HoCoRT GitHub README](./references/github_com_ignasrum_hocort.md)
-- [HoCoRT Wiki](./references/github_com_ignasrum_hocort_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_hocort_overview.md)
+- [HoCoRT GitHub Repository](./references/github_com_ignasrum_hocort.md)
+- [HoCoRT Wiki Home](./references/github_com_ignasrum_hocort_wiki.md)
+- [How HoCoRT Works](./references/github_com_ignasrum_hocort_wiki_How-HoCoRT-works.md)

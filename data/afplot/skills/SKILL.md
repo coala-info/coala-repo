@@ -1,6 +1,6 @@
 ---
 name: afplot
-description: afplot extracts and plots allele frequencies from VCF files to visualize variant data through histograms, scatter plots, and distance-to-theoretical-frequency plots. Use when user asks to plot allele frequencies, visualize VCF data for specific genomic regions, or generate whole-genome allele frequency distributions.
+description: afplot visualizes allele frequency distributions from VCF files to identify genomic patterns such as sample contamination, deletions, or loss of heterozygosity. Use when user asks to plot allele frequencies, detect sample contamination, identify genomic deletions, or generate whole-genome allele frequency visualizations.
 homepage: https://github.com/sndrtj/afplot
 ---
 
@@ -8,72 +8,67 @@ homepage: https://github.com/sndrtj/afplot
 # afplot
 
 ## Overview
-afplot is a command-line utility designed to extract and plot allele frequencies from VCF files. It transforms raw variant data into interpretable visualizations, including histograms with kernel density estimates, scatter plots along genomic coordinates, and distance-to-theoretical-frequency plots. The tool is particularly effective for diploid organisms and supports comparative analysis by allowing multiple VCF files to be grouped and plotted together.
+The `afplot` tool is a specialized bioinformatics utility designed to visualize allele frequency (AF) distributions. It is particularly useful for identifying patterns in sequencing data, such as detecting sample contamination, verifying diploidy, or spotting large-scale genomic deletions and duplications. It operates by extracting depth information from the `AD` (Allele Depth) field in VCF files and supports both targeted region plotting and automated whole-genome visualization.
 
-## Core Subcommands and Modes
-afplot operates using two primary subcommands, each supporting three visualization modes.
+## Core Subcommands
+- `regions`: Generates plots for specific genomic coordinates or regions defined in a BED file.
+- `whole-genome`: Generates a separate image for every chromosome/contig found in the VCF header.
 
-### Subcommands
-- `regions`: Generates plots for specific genomic coordinates or regions defined in a BED file. Output is typically a directory of images.
-- `whole-genome`: Creates a single image representing the entire genome (one plot per chromosome).
+## Plotting Modes
+Each subcommand supports three distinct visualization modes:
+- `histogram`: Displays AF distribution with a kernel density estimate (KDE). Ideal for checking overall sample quality and expected peaks (e.g., 0.5 for heterozygotes).
+- `scatter`: Plots AF values along the genomic position. Useful for identifying localized loss of heterozygosity (LOH).
+- `distance`: Plots the distance from the observed AF to the nearest theoretical diploid AF (0.0, 0.5, or 1.0). This is specifically for autosomes of diploid organisms.
 
-### Plotting Modes
-- `histogram`: Creates a histogram of allele frequencies with an overlaid kernel density plot.
-- `scatter`: Plots allele frequencies along the length of the region or chromosome.
-- `distance`: Plots the distance to theoretical allele frequencies (0.0, 0.5, 1.0). This mode is specifically intended for autosomes in diploid organisms.
+## CLI Patterns and Best Practices
 
-## Usage Patterns and Examples
-
-### Prerequisites
-- VCF files must be indexed with `tabix`.
-- VCF headers must contain contig definitions.
-- The `FORMAT` field must contain an `AD` (Allele Depth) column, with the reference allele depth listed first.
-
-### Region-Specific Plotting
-To plot a single region with a histogram:
+### Targeted Region Analysis
+To plot a specific locus (e.g., a suspected deletion), use the `regions` subcommand.
 ```bash
 afplot regions histogram -v input.vcf.gz -o output_dir -R chr1:1000000-2000000
 ```
 
-To plot multiple regions defined in a BED file:
+### Processing BED Files
+When analyzing multiple specific targets, provide a BED file. `afplot` will create a directory of plots.
 ```bash
-afplot regions scatter -v input.vcf.gz -o output_dir -L regions.bed
+afplot regions scatter -v input.vcf.gz -o output_dir -L targets.bed
 ```
 
-### Whole-Genome Plotting
-To generate a whole-genome histogram for a specific sample:
+### Whole-Genome Visualization
+For a global view of the sample, use `whole-genome`. You must specify a label and sample name.
 ```bash
-afplot whole-genome histogram -v input.vcf.gz -l sample_label -s sample_name -o output_plot.png
+afplot whole-genome histogram -v input.vcf.gz -l sample_id -s sample_name -o genome_af.png
 ```
 
-### Comparative Analysis
-You can plot multiple VCF files simultaneously. Use identical labels to group samples together:
+### Multi-Sample Comparison
+You can overlay multiple VCFs in a single whole-genome plot by repeating the `-v`, `-l`, and `-s` flags. Samples with the same label will be grouped/colored together.
 ```bash
 afplot whole-genome histogram \
-  -v file1.vcf.gz -l Group1 -s Sample1 \
-  -v file2.vcf.gz -l Group1 -s Sample2 \
-  -v file3.vcf.gz -l Group2 -s Sample3 \
-  -o comparison_plot.png
+  -v control.vcf.gz -l control -s sample1 \
+  -v tumor.vcf.gz -l tumor -s sample2 \
+  -o comparison.png
 ```
 
-## Expert Tips and Best Practices
-
-### Filtering Noise
-VCF files often contain many small, unplaced, or decoy contigs that clutter whole-genome plots. Use the `-e` flag with a regular expression to exclude them:
+### Filtering Contigs
+VCF headers often contain many small unplaced scaffolds that clutter whole-genome plots. Use the `-e` flag with a regex to exclude them.
 ```bash
-# Exclude all contigs containing "gl" or "random"
-afplot whole-genome histogram -v input.vcf.gz -e '.*gl.*|.*random.*' -o clean_plot.png
+# Exclude all contigs containing "random" or "Un"
+afplot whole-genome histogram -v input.vcf.gz -e '.*random.*|.*Un.*' -o filtered_plot.png
 ```
 
-### Color Coding
-By default, afplot colors variants based on call type (`hom_alt`, `het`, `hom_ref`). However, when multiple VCF files are supplied, the tool automatically switches to coloring by the label provided via the `-l` flag.
+## Expert Tips
+- **Input Requirements**: Ensure your VCF is compressed with `bgzip` and indexed with `tabix`. The tool requires the `AD` format field to calculate frequencies (Reference Depth / Total Depth).
+- **Headless Environments**: `afplot` (v0.2.1+) uses the Matplotlib `agg` backend by default, making it safe for use in SSH sessions or automated pipelines without an X11 display.
+- **Diploid Assumption**: The `distance` mode is mathematically tuned for diploid organisms. Using it on polyploid samples or sex chromosomes in males may yield misleading results.
 
-### Headless Environments
-If running on a server without a display, ensure you are using version 0.2.1 or later, as it defaults to the `agg` backend for Matplotlib to prevent crashes.
 
-### Data Requirements
-Only one sample per VCF file can be plotted at a time. If your VCF contains multiple samples, specify the target sample using the `-s` flag.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| regions | Create plots for regions of interest for one VCF. Plots will be colored on call type (het/hom_alt/hom_ref). Your VCF file MUST contain an AD column in the FORMAT field, have contig names and lengths in the header, and be indexed with tabix. |
+| whole-genome | Create whole-genome plots for one or multiple VCFs. If only one VCF is supplied, plots will be colored on call type (het/hom_ref/hom_alt). If multiple VCF files are supplied, plots will be colored per file/label. Only one sample per VCF file can be plotted. |
 
 ## Reference documentation
-- [afplot - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_afplot_overview.md)
-- [GitHub - sndrtj/afplot: Plot allele frequencies in VCF files](./references/github_com_sndrtj_afplot.md)
+- [afplot GitHub Repository](./references/github_com_sndrtj_afplot_blob_master_README.md)

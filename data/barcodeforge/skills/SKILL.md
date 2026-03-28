@@ -1,6 +1,6 @@
 ---
 name: barcodeforge
-description: "barcodeforge generates custom lineage-defining mutation barcodes from phylogenetic trees for use with the Freyja genomic deconvolution tool. Use when user asks to create custom barcodes from mutation-annotated trees, identify lineage-defining mutations, or adapt Freyja for specific pathogens."
+description: BarcodeForge automates the extraction of lineage-defining mutations from phylogenetic trees and alignments to create standardized barcode files for the Freyja demixing tool. Use when user asks to generate custom barcodes for pathogen variants, extract lineage mutations from genomic data, or prepare input files for wastewater demixing analysis.
 homepage: https://github.com/andersen-lab/BarcodeForge
 ---
 
@@ -9,48 +9,53 @@ homepage: https://github.com/andersen-lab/BarcodeForge
 
 ## Overview
 
-barcodeforge is a specialized command-line utility designed to extend the capabilities of Freyja, a tool used for recovering lineage abundances from mixed genomic samples (primarily wastewater). It automates the process of identifying lineage-defining mutations from phylogenetic trees—typically UShER (Ultrafast Sample placement on Existing trees) mutation-annotated trees. By generating these "barcodes," researchers can adapt Freyja to track specific pathogens or variants beyond the default SARS-CoV-2 datasets.
+BarcodeForge is a specialized CLI tool designed to bridge the gap between genomic surveillance data and the Freyja demixing tool. It automates the extraction of lineage-defining mutations from phylogenetic trees and alignments, producing the standardized barcode formats required for identifying specific pathogen variants in mixed samples (like wastewater). This skill provides the procedural knowledge to prepare inputs and execute the barcode generation pipeline effectively.
 
-## Installation and Environment
+## Workflow and Best Practices
 
-Ensure you are using Python 3.10 or higher. The tool is most easily managed via Conda:
+### 1. Input Preparation
+Ensure all four required input files are present and correctly formatted:
+- **Reference Genome**: A FASTA file containing the single reference sequence used for the alignment.
+- **Multiple Sequence Alignment (MSA)**: A FASTA file containing all sequences that represent the lineages you wish to barcode.
+- **Phylogenetic Tree**: A Newick or Nexus file. The leaf names in this tree must match the sequence IDs in your alignment and lineage table.
+- **Lineage Table**: A TSV file with two columns: `lineage<TAB>sequence_id`. This maps specific sequences to their broader lineage designations.
 
-```bash
-conda install bioconda::barcodeforge
-```
-
-## Common CLI Patterns
-
-The primary entry point for the tool is the `barcode` command.
-
-### Generating Custom Barcodes
-To create a new barcode set from a mutation-annotated tree:
+### 2. Command Execution
+The primary command is `barcodeforge barcode`. Use the following pattern for standard execution:
 
 ```bash
-barcodeforge barcode --tree <input_tree.pb> --prefix <output_name> --threads 8
+barcodeforge barcode \
+    REFERENCE_GENOME.fasta \
+    ALIGNMENT.fasta \
+    TREE.nwk \
+    LINEAGES.tsv \
+    --tree_format newick \
+    --threads 4 \
+    --prefix PATHOGEN_NAME
 ```
 
-### Key Arguments and Options
-- `--tree-format`: Specify the format of the input phylogenetic tree (e.g., UShER protobuf).
-- `--usher-args`: Pass specific flags directly to the underlying UShER execution.
-- `--threads`: Set the number of CPU cores for processing large trees.
-- `--plot-chunk-size`: Adjust this if the generated barcode plots are too dense or need to be split across multiple pages/sections.
-- `--debug`: Use this flag to troubleshoot lineage processing or to see detailed logs of the `process_and_reroot_lineages` function.
+### 3. Advanced Configuration
+- **Tree Formats**: Explicitly set `--tree_format nexus` if your tree is not in Newick format to avoid parsing errors.
+- **Lineage Prefixes**: Use the `--prefix` flag (e.g., `--prefix RSVa`) to ensure the output files and the internal lineage names are easily distinguishable when combined with other barcode sets.
+- **Performance**: Increase `--threads` based on available CPU cores to speed up the mutation annotation process.
+- **UShER Integration**: If specific tree-processing behavior is required, pass extra flags to the underlying UShER engine using `--usher-args "<args>"`.
 
-## Expert Tips and Best Practices
+### 4. Output Management
+Upon successful completion, the tool generates:
+- `[prefix]-barcodes.csv`: The machine-readable barcode file for Freyja.
+- `[prefix]-barcodes.html`: An interactive visualization of the mutations defining each lineage.
+- `barcodeforge_workdir/`: A directory containing intermediate files. It is recommended to delete this folder after verifying results to save disk space.
 
-### Output Management
-- **Metadata Format**: As of version 1.1.2, the tool defaults to **TSV** (Tab-Separated Values) for metadata output. Ensure downstream scripts or manual inspections account for tabs rather than commas.
-- **Visual Verification**: The tool generates barcode plots in **PDF** format using Seaborn and Matplotlib. Always review these plots to ensure that the lineage-defining mutations are distinct and that the "unclassified" lineages have been appropriately handled (the tool automatically drops unclassified data for cleaner outputs).
 
-### Lineage Processing
-- **Missing Samples**: The tool is designed to be resilient. If a specific lineage or sample is missing from the tree during processing, it will skip that individual entry and continue with the rest of the batch rather than failing the entire run.
-- **Tree Compatibility**: If you encounter a `ValueError` regarding unsupported tree formats, verify that your tree file matches the expected UShER protobuf or Newick standards supported by your specific version of `barcodeforge`.
 
-### Integration with Freyja
-The files generated by `barcodeforge` (the barcode CSV and the lineages metadata) are intended to be passed to Freyja's deconvolution commands. Ensure the `--prefix` used in `barcodeforge` matches the naming convention expected by your Freyja workflow.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| barcodeforge barcode | Process barcode data, including VCF generation, tree formatting, USHER placement, matUtils annotation, and matUtils extraction. |
+| extract-auspice-data | Extract metadata and tree from an Auspice JSON file. Inspired by Dr. John Huddleston's Gist on processing Auspice JSON files. Source: https://gist.github.com/huddlej/5d7bd023d3807c698bd18c706974f2db |
 
 ## Reference documentation
-- [barcodeforge - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_barcodeforge_overview.md)
-- [andersen-lab/BarcodeForge: A CLI tool for generating pathogen-specific barcodes for Freyja](./references/github_com_andersen-lab_BarcodeForge.md)
-- [Releases · andersen-lab/BarcodeForge](./references/github_com_andersen-lab_BarcodeForge_tags.md)
+- [Creating custom barcodes](./references/andersen-lab_github_io_Freyja_src_wiki_custom_barcodes.html.md)
+- [BarcodeForge Project Overview](./references/github_com_andersen-lab_BarcodeForge_blob_main_README.md)
+- [CLI Dependencies and Requirements](./references/github_com_andersen-lab_BarcodeForge_blob_main_pyproject.toml.md)

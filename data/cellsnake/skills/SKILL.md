@@ -1,6 +1,6 @@
 ---
 name: cellsnake
-description: cellsnake is a Snakemake-based tool that automates single-cell RNA sequencing analysis workflows including quality control, clustering, and visualization. Use when user asks to process scRNA-seq data, integrate multiple datasets, perform differential expression analysis, or determine optimal clustering resolutions.
+description: Cellsnake is a command-line tool that automates Snakemake workflows for single-cell RNA sequencing analysis, including quality control, integration, and annotation. Use when user asks to process raw count matrices, perform sample integration, run Seurat-based clustering, or conduct metagenomic analysis on single-cell data.
 homepage: https://github.com/sinanugur/cellsnake
 ---
 
@@ -9,50 +9,74 @@ homepage: https://github.com/sinanugur/cellsnake
 
 ## Overview
 
-cellsnake is a Snakemake-based command-line tool designed to streamline and automate single-cell RNA sequencing (scRNA-seq) analysis. It wraps complex bioinformatic pipelines into simple commands, handling tasks from initial quality control and filtering to cluster detection and visualization. It is ideal for researchers seeking a reproducible, "batteries-included" approach to processing single-sample data or integrating multiple datasets using established frameworks like Seurat.
+Cellsnake is a command-line interface (CLI) tool that wraps complex Snakemake workflows for single-cell analysis. It streamlines the transition from raw count matrices (e.g., 10X Genomics output) to fully annotated and integrated datasets. Built primarily on Seurat, it automates multi-step procedures like mitochondrial gene filtering, doublet detection, dimension reduction (UMAP/tSNE), and cluster resolution optimization. It is particularly useful for researchers needing a scalable, reproducible pipeline that handles both individual samples and large-scale integrated cohorts.
 
-## Core Workflows
+## Core Workflow Patterns
 
-cellsnake operates using specific "modes" depending on the stage of your analysis:
+### 1. Initial Processing
+Always start with a `minimal` run to inspect quality control metrics before committing to heavy downstream analysis.
 
-- **Standard Workflow**: The primary entry point for processing raw data folders.
-  `cellsnake standard <data_folder>`
-- **Integration**: Used to merge multiple samples that have already been processed individually.
-  `cellsnake integrate <data_folder>`
-- **Integrated Analysis**: Used to run downstream analysis on an already integrated RDS object.
-  `cellsnake integrated standard <integrated_rds_file>`
-- **Minimal/Clustree**: Useful for quickly testing parameters or determining optimal clustering resolution.
-  `cellsnake integrated minimal <integrated_rds_file>`
+*   **Dry Run**: `cellsnake minimal data/ --dry` (Check detected samples and planned outputs).
+*   **Minimal Run**: `cellsnake minimal data/ -j 5` (Generates QC, technical plots, and ClusTree).
+*   **Standard Run**: `cellsnake standard data/` (Includes cell type annotations and enrichment).
 
-## Common CLI Patterns
+### 2. Sample Integration
+After processing individual samples, merge them into a single study object.
 
-### Initial Setup
-Before running your first analysis, ensure all required R dependencies are present:
-`cellsnake --install-packages`
+*   **Integrate**: `cellsnake integrate data/`
+*   **Output**: Creates `integrated.rds` in the `analyses_integrated/seurat/` directory.
 
-### Processing Single or Batch Samples
-If a directory containing multiple datasets is provided as the input, cellsnake automatically enables batch mode.
-`cellsnake standard ./my_data_dir/`
+### 3. Analyzing Integrated Data
+Once integrated, use the `integrated` command prefix to run workflows on the combined RDS file.
 
-### Adjusting Filtering and Clustering
-Fine-tune the analysis by overriding default QC and clustering parameters:
-- **Mitochondrial Threshold**: `--percent_mt 5` (default is 10; use `auto` for automated detection).
-- **Resolution**: `--resolution 0.5` (default is 0.8; use `auto` for automated selection, though this is slower).
-- **Feature Limits**: `--min_features 500 --max_features 4000`
+*   **Standard Analysis**: `cellsnake integrated standard analyses_integrated/seurat/integrated.rds --resolution 0.7`
+*   **Advanced Analysis**: `cellsnake integrated advanced analyses_integrated/seurat/integrated.rds --resolution auto`
 
-### Differential Expression and Metadata
-To perform differential expression analysis between groups, provide a metadata file:
-`cellsnake standard ./data/ --metadata metadata.csv --metadata_column condition`
+## Key CLI Arguments and Options
+
+### Parameter Tuning
+*   **Resolution**: Use `--resolution auto` for automated cluster detection or a specific float (e.g., `0.8`).
+*   **Mitochondrial Filtering**: Use `--percent_mt auto` for sample-specific automated trimming or a fixed percentage like `10`.
+*   **Doublet Filtering**: Enabled by default (`--doublet_filter True`).
+
+### Visualization
+*   **Gene Plots**: Generate publication-ready plots for specific markers:
+    `cellsnake integrated standard <file.rds> --gene AHSP`
+*   **Batch Genes**: Provide a text file with one gene per line:
+    `cellsnake integrated standard <file.rds> --gene markers.txt`
+
+### Metagenomics (Kraken2)
+If you have Kraken2 databases, Cellsnake can perform microbiome analysis on the "unmapped" reads from Cellranger.
+*   **Command**: `cellsnake standard data/ --kraken_db_folder /path/to/kraken_db`
+*   **Refinement**: Use `--confidence 0.5` and `--min_hit_groups 2` to reduce false positives.
 
 ## Expert Tips
 
-- **Resolution Selection**: Run the `clustree` command first to visualize how clusters split at different resolutions. This helps you pick the most stable `--resolution` value for your final `standard` run.
-- **Template Generation**: Use `cellsnake --generate-template` to create boilerplate metadata and configuration files. This ensures your CSV headers and formatting match what the tool expects.
-- **Dry Runs**: Use the `--dry` flag to see which steps Snakemake will execute without actually running the heavy computation.
-- **Resource Management**: If a run is interrupted, use the `--unlock` flag to clear the directory lock before restarting.
-- **Apple Silicon (M1/M2/M3)**: If installing via Conda on Mac, you must force the `osx-64` architecture for compatibility with certain R dependencies:
-  `CONDA_SUBDIR=osx-64 mamba create -n cellsnake -c bioconda -c conda-forge cellsnake`
+*   **Resource Management**: Use `-j` or `--jobs` to specify CPU cores. For large datasets, ensure you provide enough memory if running via Docker/Podman (e.g., `-m 20g`).
+*   **Resolution Selection**: Run the `clustree` mode first. Inspect the ClusTree plot in the `technicals` folder to identify the resolution where clusters remain stable before running the `advanced` workflow.
+*   **Metadata Integration**: For differential expression between groups (e.g., Control vs. Treatment), provide a metadata CSV:
+    `cellsnake integrated standard <file.rds> --metadata metadata.csv --metadata_column condition`
+*   **Stalled Jobs**: If a run is interrupted, use the `--unlock` flag to rescue the Snakemake working directory.
+*   **Cleanup**: Use `--remove` to delete output files and restart a pipeline without affecting your raw input data.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
+| cellsnake | Main cellsnake executable |
 
 ## Reference documentation
-- [cellsnake Overview](./references/anaconda_org_channels_bioconda_packages_cellsnake_overview.md)
-- [cellsnake GitHub Repository](./references/github_com_sinanugur_cellsnake.md)
+- [Options and Arguments](./references/cellsnake_readthedocs_io_en_latest_options.html.md)
+- [Quick start example](./references/cellsnake_readthedocs_io_en_latest_quickstart.html.md)
+- [Metagenomics analysis](./references/cellsnake_readthedocs_io_en_latest_kraken.html.md)
+- [Example run on Fetal Brain dataset](./references/cellsnake_readthedocs_io_en_latest_fetalbrain.html.md)

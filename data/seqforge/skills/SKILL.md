@@ -1,6 +1,6 @@
 ---
 name: seqforge
-description: SeqForge is a modular bioinformatics toolkit for large-scale BLAST operations, motif mining, and genomic sequence extraction. Use when user asks to sanitize sequence files, create BLAST databases, perform batch queries, conduct motif mining, extract genomic sequences, or calculate assembly metrics.
+description: "SeqForge is a modular bioinformatics pipeline for microbial genomics that provides parallelized BLAST querying, motif mining, and FASTA file manipulation. Use when user asks to build BLAST databases, run parallelized sequence queries, perform regex-based motif searches, sanitize FASTA headers, or calculate assembly metrics."
 homepage: https://github.com/ERBringHorvath/SeqForge
 ---
 
@@ -8,51 +8,85 @@ homepage: https://github.com/ERBringHorvath/SeqForge
 # seqforge
 
 ## Overview
-SeqForge is a modular bioinformatics toolkit designed to scale genomic analysis from raw sequence data to refined biological insights. It provides a streamlined pipeline for managing large-scale BLAST operations, performing regex-based motif mining across protein hits, and extracting genomic context (contigs or padded sequences) based on search results. The tool is optimized for power users who need to process directories of FASTA files or compressed archives efficiently without complex dependencies.
 
-## Core Workflow and CLI Patterns
+SeqForge is a modular bioinformatics pipeline designed for scale and flexibility in microbial genomics. It streamlines the transition from raw FASTA data to searchable databases and filtered results. Its primary strength lies in its parallelized BLAST wrapper and specialized motif mining capabilities, which allow for the detection of conserved domains even in diverse or low-identity sequence families. Beyond searching, it provides a suite of utility functions for FASTA file "hygiene," such as sanitizing headers, splitting multi-FASTA files, and generating assembly statistics.
 
-### 1. Data Preparation (Mandatory Step)
-Before running any search or database operations, input files must be sanitized to remove special characters that break BLAST+ compatibility.
-- **Sanitize files in place:** `seqforge sanitize -i <input_dir_or_file> --in-place`
-- **Sanitize to new directory:** `seqforge sanitize -i <input_dir> -o <output_dir>`
+## Core Workflows
 
-### 2. Genome Search Module
-Manage BLAST databases and execute parallelized queries.
-- **Create Databases:** `seqforge makedb -i <fasta_dir> -o <db_output_dir>`
-  - Supports nucleotide and protein databases.
-  - Automatically uses multiprocessing for large datasets.
-- **Batch Querying:** `seqforge query -d <db_dir> -q <query_dir> -o <results_dir> -f <fasta_dir>`
-  - **Filtering:** Use `--identity`, `--coverage`, or `--evalue` to threshold results.
-  - **Visualization:** Add `--visualize` to generate heatmaps (for hits) or sequence logos (for motifs). PDF is the recommended output format.
+### 1. Genome Search & Database Management
+SeqForge automates the creation and querying of BLAST databases.
 
-### 3. Advanced Motif Mining
-Perform regex-based searches on amino acid sequences during `blastp` runs.
-- **Unlinked Search:** `seqforge query ... --motif GHXXGE TAXXSS` (Searches all queries for both motifs).
-- **Linked Search:** `seqforge query ... --motif GHXXGE{AT_domain} TAXXSS{KS_domain}`
-  - This restricts the search for `GHXXGE` only to hits associated with the `AT_domain.faa` query file.
-- **Exporting Motifs:** Use `--motif-fasta-out` to save matches, and optionally `--motif-only` to extract just the motif string rather than the full sequence.
+*   **Build a Database**: Use `makedb` to prepare nucleotide or protein datasets.
+    ```bash
+    seqforge makedb -i <input_fasta_or_dir> -o <db_output_path> -dbtype <nucl|prot>
+    ```
+*   **Parallelized Querying**: Run queries against multiple databases simultaneously. The tool auto-detects the appropriate BLAST flavor based on input.
+    ```bash
+    seqforge query -d <DB_DIR> -q <Query_DIR> -o <RESULTS_DIR>
+    ```
+*   **Filtering Results**: Apply thresholds for identity, coverage, or e-value directly in the command.
+    ```bash
+    seqforge query -d <DB_DIR> -q <Query_DIR> --min-id 80 --min-cov 70 -o <RESULTS_DIR>
+    ```
 
-### 4. Sequence Investigation
-Extract specific regions identified during the query phase.
-- **Padded Extraction:** `seqforge extract -i <query_results> -f <fasta_dir> --upstream 500 --downstream 500`
-  - Useful for analyzing promoter regions or flanking genes.
-- **Contig Extraction:** `seqforge extract-contig -i <query_results> -f <fasta_dir>`
-  - Extracts the entire contig containing a hit. For `.faa` files, it extracts the full protein sequence.
+### 2. Advanced Motif Mining
+For protein searches (`blastp`), SeqForge can perform regex-based motif searches across BLAST hits.
 
-### 5. Utility Commands
-- **Assembly Metrics:** `seqforge fasta-metrics -i <input_dir>`
-  - Calculates N50, L50, auN, GC content, and contig size distributions.
-- **Unique Headers:** `seqforge unique-headers -i <fasta_file>`
-  - Appends a unique alphanumeric barcode and filename to every header to prevent collisions in merged datasets.
-- **Split Multi-FASTA:** `seqforge split-fasta -i <large_file> -n 100`
-  - Splits a file into chunks of 100 sequences each.
+*   **Basic Motif Search**: Search for specific amino acid patterns (e.g., catalytic triads).
+    ```bash
+    seqforge query -d <DB_DIR> -q <Query_DIR> --motif "GHXXGE" "WXWXIP"
+    ```
+*   **Linked Query Search**: Restrict specific motifs to specific query files using brackets.
+    ```bash
+    seqforge query -d <DB_DIR> -q <Query_DIR> --motif "GHXXGE{AT_domain}" "TAXXSS{KS_domain}"
+    ```
+*   **Motif Extraction**: Export only the matching motif strings to a new FASTA file.
+    ```bash
+    seqforge query [args] --motif "GHXXGE" --motif-fasta-out --motif-only
+    ```
+
+### 3. Sequence Manipulation & Metrics
+Use these utilities to clean and analyze FASTA data before or after searching.
+
+*   **Sanitize Headers**: Remove problematic characters (like `|`) from FASTA headers to ensure compatibility with downstream tools.
+    ```bash
+    seqforge sanitize -i <input_file> -o <output_file>
+    ```
+*   **Assembly Metrics**: Generate N50, L50, and total base counts for genome assemblies.
+    ```bash
+    seqforge metrics -i <fasta_dir_or_file>
+    ```
+*   **Split Multi-FASTA**: Break a large file into individual sequences.
+    ```bash
+    seqforge split -i <multi_fasta> -o <output_directory>
+    ```
+*   **Unique Barcoding**: Generate unique, deterministic headers for sequences.
+    ```bash
+    seqforge barcode -i <input_fasta> -o <output_fasta>
+    ```
 
 ## Expert Tips
-- **Input Flexibility:** SeqForge natively handles `.gz` and `.zip` files, as well as directories and `.tar.gz` archives. You do not need to decompress files manually before processing.
-- **Translation:** When using `extract`, you can use the `--translate` flag to convert nucleotide hits to protein, but only do this for full gene alignments.
-- **Performance:** For large-scale searches, ensure your `--fasta_dir` (passed to `query`) contains the same sanitized files used to create the database to ensure coordinate consistency during extraction.
+
+*   **Input Flexibility**: SeqForge handles single files, directories, and compressed archives (.gz, .zip, .tar.gz) natively. You do not need to decompress files manually before running modules.
+*   **Visualization**: Use the `--visualize` flag with the `query` module to generate heatmaps of percent identity across genomes or sequence logos for motif matches. PDF format is recommended for high-resolution publication-quality plots.
+*   **Strongest Match**: When dealing with repetitive hits, use the flag to report only the strongest match per query per genome to simplify the output table.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| extract | Extract sequences based on SeqForge Query results. |
+| extract-contig | Extract entire contigs containing matching sequences. |
+| fasta-metrics | Compute FASTA statistics (e.g., N50, GC content). |
+| makedb | Create a BLAST database from a FASTA file. |
+| query | Run BLAST queries in parallel. |
+| sanitize | Remove special characters from input file names (content unchanged; needed for BLAST+). |
+| search | Extract metadata from GenBank or JSON files. |
+| split-fasta | Split a multi-FASTA into per-record files or fixed-size fragments. |
+| unique-headers | Append source and a unique suffix to FASTA headers (supports --deterministic). |
 
 ## Reference documentation
-- [SeqForge GitHub Repository](./references/github_com_ERBringHorvath_SeqForge.md)
-- [SeqForge Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_seqforge_overview.md)
+- [SeqForge README](./references/github_com_ERBringHorvath_SeqForge_blob_main_README.md)
+- [SeqForge Project Overview](./references/github_com_ERBringHorvath_SeqForge.md)

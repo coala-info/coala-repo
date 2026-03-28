@@ -1,158 +1,59 @@
 ---
 name: python
-description: This skill provides guidance and best practices for using the Python programming language and its ecosystem. Use when user asks to write, debug, or execute Python code, understand Python syntax, libraries, or frameworks, interact with Python packages and environments, leverage Python for scripting, data analysis, web development, or other programming tasks, or find relevant Python libraries for specific functionalities.
+description: This tool manages the Awesome Python ecosystem by maintaining the README source of truth and executing the Python-based build pipeline for the project website. Use when user asks to add new library entries, update GitHub star counts, build the website, or run local previews and tests.
 homepage: https://github.com/vinta/awesome-python
 ---
 
 
 # python
 
-This skill provides guidance and best practices for using the Python programming language and its ecosystem.
-  Use this skill when Claude needs to:
-  - Write, debug, or execute Python code.
-  - Understand Python syntax, libraries, or frameworks.
-  - Interact with Python packages and environments.
-  - Leverage Python for scripting, data analysis, web development, or other programming tasks.
-  - Find relevant Python libraries for specific functionalities.
-body: |
-  ## Overview
-  This skill is designed to assist with all aspects of Python programming. It covers fundamental concepts, common usage patterns, and expert tips for leveraging Python's extensive libraries and tools. Whether you're writing a simple script, developing a complex application, or analyzing data, this skill can provide the necessary guidance.
+## Overview
+This skill provides the procedural knowledge required to manage the Awesome Python ecosystem. It focuses on maintaining the single source of truth (README.md), ensuring all library entries meet strict "Rising Star" or "Hidden Gem" criteria, and using the Python-based build pipeline to generate the awesome-python.com website. It is designed to help maintainers and contributors follow the project's specific formatting rules and automation workflows.
 
-  ## Core Python Usage and Best Practices
+## Maintenance and Development Patterns
 
-  Python is a versatile, high-level, interpreted programming language known for its readability and extensive standard library.
+### Environment Management
+The project uses `uv` for dependency management and requires Python 3.13+.
+- **Initialize environment**: Run `make install` to sync dependencies via `uv`.
+- **Update star counts**: Run `make fetch_github_stars` to refresh the GitHub star data stored in `website/data/`.
 
-  ### Basic Syntax and Concepts
+### Adding New Entries
+All entries must be added to `README.md` following these strict formatting rules:
+- **Format**: `- [pypi-name](https://github.com/owner/repo) - Description ending with period.`
+- **Naming**: Use the canonical PyPI package name as the display name. If the project is not on PyPI, use the GitHub repository name.
+- **Ordering**: Entries must be placed in alphabetical order within their respective categories or subcategories.
+- **Standard Library**: For built-in modules, use the format: `- [module](https://docs.python.org/3/library/module.html) - (Python standard library) Description.`
 
-  *   **Variables and Data Types**: Python is dynamically typed. Common types include integers (`int`), floating-point numbers (`float`), strings (`str`), lists (`list`), tuples (`tuple`), dictionaries (`dict`), and booleans (`bool`).
-  *   **Control Flow**: Use `if`, `elif`, `else` for conditional execution, and `for`, `while` loops for iteration.
-  *   **Functions**: Define functions using `def`. They can accept arguments and return values.
-  *   **Modules and Packages**: Organize code into modules (`.py` files) and packages (directories with `__init__.py`). Import them using `import` or `from ... import ...`.
-  *   **Object-Oriented Programming**: Python supports classes and objects. Define classes using `class`.
+### Quality Requirements
+Before adding a project, verify it meets the following:
+- **Activity**: Commits within the last 12 months.
+- **Stability**: Production-ready (not alpha/beta).
+- **Popularity**: Generally 100+ stars. "Rising Stars" should have 5,000+ stars in < 2 years.
+- **Hidden Gems**: Require strong justification and must be at least 6 months old.
 
-  ### Common CLI Patterns
+### Build and Test Workflow
+- **Build Website**: Run `make build` to execute `website/build.py`. This parses the README and renders HTML using Jinja2.
+- **Local Preview**: Run `make preview`. This builds the site, starts a local server at `127.0.0.1:8000`, and watches for file changes to trigger auto-rebuilds.
+- **Testing**: Run `make test` to execute the pytest suite located in `website/tests/`. This validates the build pipeline and README parsing logic.
 
-  When interacting with Python from the command line, consider these patterns:
+### Repository Structure
+- `README.md`: The source of truth for all content.
+- `website/`: Contains the static site generator logic.
+- `Makefile`: The primary interface for all maintenance tasks.
+- `pyproject.toml`: Defines dependencies and tool configurations.
 
-  *   **Running a Python script**:
-      ```bash
-      python your_script.py
-      ```
-      or
-      ```bash
-      python3 your_script.py
-      ```
-      (depending on your system's configuration)
 
-  *   **Interactive Python interpreter**:
-      ```bash
-      python
-      ```
-      or
-      ```bash
-      python3
-      ```
-      This opens a REPL (Read-Eval-Print Loop) where you can execute Python code interactively.
 
-  *   **Executing a single Python command**:
-      ```bash
-      python -c "print('Hello, world!')"
-      ```
+## Subcommands
 
-  *   **Executing a Python file directly (if it has a shebang line)**:
-      Make the script executable:
-      ```bash
-      chmod +x your_script.py
-      ```
-      Then run it:
-      ```bash
-      ./your_script.py
-      ```
-      (Ensure the shebang line, e.g., `#!/usr/bin/env python3`, is at the top of `your_script.py`)
+| Command | Description |
+|---------|-------------|
+| chmod | Change file mode bits |
+| pip | Manage the Python package index. |
+| python3 | Execute Python scripts or modules. |
 
-  ### Package Management with pip
-
-  `pip` is the standard package installer for Python.
-
-  *   **Install a package**:
-      ```bash
-      pip install package_name
-      ```
-      For specific versions:
-      ```bash
-      pip install package_name==1.2.3
-      ```
-      Or a version range:
-      ```bash
-      pip install "package_name>=1.0,<2.0"
-      ```
-
-  *   **Uninstall a package**:
-      ```bash
-      pip uninstall package_name
-      ```
-
-  *   **List installed packages**:
-      ```bash
-      pip list
-      ```
-
-  *   **Freeze installed packages (to a requirements file)**:
-      ```bash
-      pip freeze > requirements.txt
-      ```
-
-  *   **Install packages from a requirements file**:
-      ```bash
-      pip install -r requirements.txt
-      ```
-
-  ### Virtual Environments
-
-  Virtual environments are crucial for managing project dependencies and avoiding conflicts.
-
-  *   **Creating a virtual environment (using `venv`)**:
-      ```bash
-      python -m venv myenv
-      ```
-      (Replace `myenv` with your desired environment name)
-
-  *   **Activating a virtual environment**:
-      *   On Windows:
-          ```bash
-          myenv\Scripts\activate
-          ```
-      *   On macOS/Linux:
-          ```bash
-          source myenv/bin/activate
-          ```
-
-  *   **Deactivating a virtual environment**:
-      ```bash
-      deactivate
-      ```
-
-  ### Expert Tips and Libraries
-
-  *   **Readability**: Python emphasizes readable code. Use meaningful variable names, consistent indentation, and comments where necessary.
-  *   **Standard Library**: Leverage Python's rich standard library for common tasks (e.g., `os`, `sys`, `datetime`, `json`, `re`).
-  *   **Awesome Python**: For a curated list of Python frameworks, libraries, software, and resources, refer to the `awesome-python` repository. This is an excellent resource for discovering tools for various domains like web development, data science, machine learning, and more.
-      *   **Web Frameworks**: Django, Flask, FastAPI.
-      *   **Data Science**: NumPy, Pandas, SciPy, Matplotlib, Scikit-learn.
-      *   **Machine Learning**: TensorFlow, PyTorch, Keras.
-      *   **Natural Language Processing**: NLTK, spaCy, Hugging Face Transformers.
-      *   **Web Scraping**: Beautiful Soup, Scrapy, Selenium.
-  *   **Error Handling**: Use `try`, `except`, `finally` blocks for robust error management.
-  *   **List Comprehensions and Generator Expressions**: These provide concise ways to create lists and iterators, often improving performance and readability.
-      ```python
-      # List comprehension
-      squares = [x**2 for x in range(10)]
-
-      # Generator expression
-      squares_gen = (x**2 for x in range(10))
-      ```
-  *   **Decorators**: Use decorators (`@decorator_name`) to modify or enhance functions or methods.
-
-  ## Reference documentation
-  - [Awesome Python](./references/github_com_vinta_awesome-python.md)
-  - [Python Overview](./references/anaconda_org_channels_main_packages_python_overview.md)
+## Reference documentation
+- [CLAUDE.md](./references/github_com_vinta_awesome-python_blob_master_CLAUDE.md)
+- [CONTRIBUTING.md](./references/github_com_vinta_awesome-python_blob_master_CONTRIBUTING.md)
+- [Makefile](./references/github_com_vinta_awesome-python_blob_master_Makefile.md)
+- [README.md](./references/github_com_vinta_awesome-python_blob_master_README.md)

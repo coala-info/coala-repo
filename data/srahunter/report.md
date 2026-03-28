@@ -97,3 +97,6 @@ options:
   --list, -i LIST  Accession list from SRA (file path)
 ```
 
+
+## Metadata
+- **Skill**: generated

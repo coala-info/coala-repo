@@ -108,3 +108,6 @@ optional arguments:
   --gff_file GFF_FILE   GFF file used to extract protein-coding genes
 ```
 
+
+## Metadata
+- **Skill**: generated

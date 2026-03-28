@@ -74,3 +74,6 @@ Commands:
   standardize        Move barcodes to BX+VX sequence header tags
 ```
 
+
+## Metadata
+- **Skill**: generated

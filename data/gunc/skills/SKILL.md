@@ -1,6 +1,6 @@
 ---
 name: gunc
-description: GUNC performs quality control of prokaryotic genomes by evaluating taxonomic consistency to detect chimeras and contamination. Use when user asks to assess genome quality, calculate GUNC scores, or identify taxonomic entropy in metagenome-assembled genomes.
+description: GUNC assesses the quality of prokaryotic genomes by detecting chimerism and taxonomic contamination. Use when user asks to download reference databases, check environment dependencies, run the analysis pipeline, visualize taxonomic assignments, or rescore existing results.
 homepage: https://github.com/grp-bork/gunc
 ---
 
@@ -9,54 +9,73 @@ homepage: https://github.com/grp-bork/gunc
 
 ## Overview
 
-GUNC (Genome Unclutterer) is a specialized tool for quality control of prokaryotic genomes. While traditional tools like CheckM focus on the redundancy of single-copy marker genes to estimate contamination, GUNC evaluates the taxonomic "entropy" or consistency across the entire genome. It maps genes to a reference database (like GTDB) and calculates a GUNC score; a high score indicates that genes in the genome are assigned to widely different taxonomic groups, suggesting the genome is a chimera or heavily contaminated.
+GUNC (Genome Unclutterer) is a diagnostic tool used to assess the quality of prokaryotic genomes by detecting chimerism and taxonomic contamination. It operates by calling genes from input fasta files, mapping them against a reference database using Diamond, and calculating a Closeness Score (CSS). A high CSS indicates that a genome likely contains sequences from multiple distinct taxonomic sources, suggesting it is chimeric or contaminated.
 
-## CLI Usage and Best Practices
+## Core Workflows
 
 ### 1. Database Management
-Before running analysis, you must download the reference database. GUNC supports both a standard database and the Genome Taxonomy Database (GTDB).
+Before running an analysis, you must download a reference database.
+- **Standard Databases**: `progenomes_3` (default) or `gtdb_214`.
+- **Test Data**: Use `test_data` for a minimal set to verify installation.
 
 ```bash
-# Download the default GUNC database
-gunc download_db [output_directory]
+gunc download_db --db progenomes_3
 ```
 
-### 2. Basic Analysis
-The primary workflow involves running GUNC against a FASTA file (nucleotide) or a set of gene calls (protein).
+### 2. Environment Validation
+Use the `check` subcommand to validate tool dependencies (Diamond, Prodigal), database integrity, and output directory permissions before starting long-running jobs.
 
 ```bash
-# Run analysis on a single genome (FASTA)
-gunc run -f genome.fna --gunc_db [path_to_db]
-
-# Run analysis using pre-computed gene calls (FAA)
-gunc run -f genes.faa --gene_calls --gunc_db [path_to_db]
+gunc check --db progenomes_3
 ```
 
-### 3. Batch Processing
-GUNC is optimized for high-throughput analysis of MAGs. You can provide a directory or a list of files.
+### 3. Running the Pipeline
+The `run` command executes the full pipeline: gene calling, Diamond mapping, and score calculation.
 
 ```bash
-# Run on multiple genomes in a directory
-gunc run -f /path/to/genomes/*.fna --gunc_db [path_to_db] --threads 8
+# Run on a directory of genomes
+gunc run --input_dir ./genomes --db progenomes_3 --threads 8
+
+# Run on a single genome file
+gunc run --input_fasta genome.fa --db progenomes_3
 ```
 
-### 4. Visualization and Interpretation
-GUNC provides visualization tools to help inspect problematic genomes.
+### 4. Visualization
+Generate interactive plots to inspect taxonomic assignments across contigs.
 
 ```bash
-# Generate plots for specific contigs or all contigs
-gunc plot -i gunc_output.tsv --plot_all_contigs
+# Plot specific contigs or all contigs
+gunc plot --gunc_file GUNC.progenomes_3.maxCSS_level.tsv --plot_all_contigs
 ```
 
-### Key Parameters and Tips
-- **Input Formats**: Use the `--gene_calls` flag if your input is a protein FASTA (`.faa`). GUNC can handle gzipped input files.
-- **Contamination Cutoff**: You can adjust the sensitivity of the tool using the `--contamination_portion` flag to define the threshold for what is considered a contaminating fraction.
-- **Temporary Files**: Use `--temp_dir` to specify a location for intermediate files, especially when working on clusters with limited `/tmp` space.
-- **Output Files**: 
-    - `GUNC.progenomes_2.maxCSS.tsv`: The main summary file containing the GUNC score.
-    - `contig_assignments.tsv`: Detailed taxonomic assignments for every contig, useful for manual binning refinement.
+### 5. Summarization and Rescoring
+Use `rescore` (formerly `summarise`) to re-evaluate results or change thresholds without re-running the mapping.
+
+```bash
+gunc rescore --gunc_file GUNC.progenomes_3.maxCSS_level.tsv
+```
+
+## Expert Tips and Best Practices
+
+- **Chimerism Threshold**: GUNC uses a default CSS chimeric threshold of **0.45**. Genomes exceeding this value are typically flagged as chimeric.
+- **Diamond Version**: GUNC strictly enforces Diamond version **2.1.24**. If you must bypass this check, set the environment variable `GUNC_SKIP_DIAMOND_VERSION_CHECK=1`.
+- **Custom Taxonomy**: If using a non-standard reference, provide a custom mapping file using `--custom_genome2taxonomy`.
+- **Contig Details**: Use the `--contig_taxonomy_output` flag during a run to get a detailed breakdown of taxonomic assignments per contig, which is essential for manual binning refinement.
+- **Handling Failures**: In batch mode, GUNC will report the number of failed genomes. Check the logs if genomes fail Diamond mapping or gene calling.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| download_db | Download the GUNC database. |
+| gunc merge_checkm | Merge GUNC and CheckM results |
+| gunc_plot | Plotting tool for GUNC results. |
+| gunc_run | Run GUNC analysis |
+| gunc_summarise | Summarize GUNC results. |
 
 ## Reference documentation
-- [Anaconda Bioconda GUNC Overview](./references/anaconda_org_channels_bioconda_packages_gunc_overview.md)
-- [GUNC GitHub Repository](./references/github_com_grp-bork_gunc.md)
-- [GUNC Release Tags and Changelog](./references/github_com_grp-bork_gunc_tags.md)
+
+- [GUNC Main Repository](./references/github_com_grp-bork_gunc_blob_master_README.rst.md)
+- [GUNC Changelog and CLI Features](./references/github_com_grp-bork_gunc_blob_master_CHANGELOG.rst.md)

@@ -1,6 +1,6 @@
 ---
 name: savvy
-description: Savvy is a high-performance toolset for converting, subsetting, and managing genomic variant data using the optimized SAV file format. Use when user asks to convert VCF or BCF files to SAV, filter variants by genomic region or sample ID, perform slice queries by record offset, concatenate files, or modify header metadata.
+description: Savvy is a high-performance toolset for converting, querying, and manipulating genomic variant data in VCF, BCF, and SAV formats. Use when user asks to convert genomic files to SAV format, query variants by region or record slice, concatenate files, sort variants, or extract file statistics and headers.
 homepage: https://github.com/statgen/savvy
 ---
 
@@ -8,73 +8,68 @@ homepage: https://github.com/statgen/savvy
 # savvy
 
 ## Overview
-The `savvy` toolset provides a high-performance C++ library and command-line interface (CLI) for interacting with genomic variant data. While it supports standard VCF and BCF formats, its primary strength lies in the SAV format. SAV files utilize S1R indices to enable not only genomic region queries but also "slice" queries (accessing records by their numerical offset). This skill focuses on the `sav` CLI for efficient file conversion, subsetting, and metadata management in bioinformatics workflows.
 
-## Installation
-The most reliable way to install the `savvy` CLI is via bioconda:
-```bash
-conda install -c bioconda savvy
-```
+Savvy is a high-performance toolset and C++ library designed for the SAV genomic variant format. It provides a seamless interface for handling VCF, BCF, and SAV files, with a focus on efficient storage and rapid random access. The `sav` command-line interface (CLI) allows for fast conversion between formats and advanced querying capabilities using S1R indices, which support both traditional genomic region lookups and record-offset (slice) queries.
 
-## Common CLI Patterns
+## CLI Usage and Patterns
 
 ### File Conversion and Import
-To convert standard formats into the optimized SAV format (which automatically generates an S1R index):
-```bash
-sav import input.bcf output.sav
-```
+The `import` command is the primary way to create SAV files. It automatically generates and appends an S1R index.
+- **Convert BCF/VCF to SAV**: `sav import input.bcf output.sav`
 
-### Exporting and Subsetting
-The `export` command is the primary way to filter data or convert SAV back to VCF/BCF.
+### Data Export and Querying
+The `export` command converts SAV back to VCF/BCF or filters the data.
+- **Basic Export**: `sav export file.sav > output.vcf`
+- **Genomic Region Query**: `sav export --regions chr1,chr2:10000-20000 file.sav`
+- **Sample Subsetting**: `sav export --sample-ids ID1,ID2,ID3 file.sav`
+- **Slice Query (Record Offsets)**: Use this for fast access to specific record ranges regardless of coordinates.
+  - First 1,000 records: `sav export --slice 0:1000 file.sav`
+  - Records 1,000 to 1,999: `sav export --slice 1000:2000 file.sav`
 
-**Filter by Genomic Region:**
-```bash
-sav export --regions chr1,chr2:10000-20000 input.sav > output.vcf
-```
+### File Manipulation
+- **Fast Concatenation**: Performs a byte-for-byte copy of compressed blocks (similar to `bcftools concat --naive`).
+  - `sav concat file1.sav file2.sav > combined.sav`
+- **Sorting**: Sort variants by chromosome and position.
+  - Ascending: `sav sort unsorted.sav > sorted.sav`
+  - Descending: `sav sort --direction desc unsorted.sav > reversed.sav`
 
-**Filter by Sample IDs:**
-```bash
-sav export --sample-ids ID1,ID2,ID3 input.sav > subset.vcf
-```
+### Header Management
+- **View Header**: `sav head file.sav`
+- **Extract Sample IDs**: `sav head --sample-ids file.sav`
+- **Replace Header Samples**: `sav rehead --sample-ids new_ids.txt old.sav new.sav`
 
-**Slice Queries (Record Offsets):**
-Unique to SAV/S1R, this allows extracting specific ranges of records regardless of genomic position.
-```bash
-# Export the first 1,000 records
-sav export --slice 0:1000 input.sav > first_1k.vcf
-```
+### Analysis and Statistics
+- **Full File Stats**: Parses the entire file for detailed metrics.
+  - `sav stat file.sav`
+- **Fast Index Stats**: Parses only the S1R index (useful for record counts and chromosome lists).
+  - `sav stat-index file.sav`
 
-### High-Speed Concatenation
-For SAV files, `concat` performs a "naive" byte-for-byte copy of compressed blocks, making it significantly faster than re-processing records.
-```bash
-sav concat file1.sav file2.sav > combined.sav
-```
+## Expert Tips and Best Practices
 
-### Metadata and Headers
-**View Header or Samples:**
-```bash
-# View full header
-sav head input.sav
+- **Performance Trade-offs**: 
+  - Increasing **block size** reduces file size (especially with PBWT) but makes random access less precise.
+  - Increasing **compression level** yields smaller files but slows down the initial import; decompression speed remains largely unaffected.
+- **PBWT Encoding**: Enable PBWT for significantly smaller file sizes on datasets with many samples, though it increases CPU usage during read/write.
+- **Index Efficiency**: Always prefer `sav stat-index` over `sav stat` when you only need high-level metadata like record counts, as it avoids decompressing the variant data.
+- **Version Compatibility**: Savvy 2.0+ supports reading SAV 1.x files but only writes SAV 2.0+ formats.
 
-# List only sample IDs
-sav head --sample-ids input.sav
-```
 
-**Modify Headers:**
-Use `rehead` to replace sample IDs or other header metadata without recompressing the entire variant data block.
-```bash
-sav rehead --sample-ids new_ids.txt old.sav new.sav
-```
 
-### Statistics and Analysis
-*   **`sav stat`**: Parses the entire file to provide detailed statistics.
-*   **`sav stat-index`**: Only parses the S1R index. Use this for near-instant counts of variant records and chromosome distributions.
+## Subcommands
 
-## Expert Tips
-*   **Sorting**: If your SAV file is unsorted, use `sav sort unsorted.sav > sorted.sav`. You can also sort in descending order (`--direction desc`), which is natively supported by the S1R index.
-*   **Compression Trade-offs**: When creating SAV files, you can enable PBWT (Positional Burrows-Wheeler Transform) for significantly smaller file sizes, though this may slightly increase decompression time during reading.
-*   **Index Efficiency**: Always prefer `sav stat-index` over `sav stat` if you only need high-level metadata (like record counts), as it avoids the CPU overhead of decompressing variant blocks.
+| Command | Description |
+|---------|-------------|
+| concat | Concatenates SAV files. |
+| export | Export SAV data to VCF, VCF.GZ, or SAV format. |
+| head | Print headers or sample IDs from a Savvy file |
+| import | Import data into SAV format |
+| rehead | Replace headers in a SAV file. |
+| sav | Missing sub-command |
+| sort | Sorts a SAV file. |
+| stat | Too few arguments |
+| stat-index | Index a SAV file for fast random access. |
 
 ## Reference documentation
-- [Savvy GitHub Repository](./references/github_com_statgen_savvy.md)
-- [Savvy Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_savvy_overview.md)
+- [Savvy Library Overview](./references/github_com_statgen_savvy_blob_master_README.md)
+- [SAV v2 Specification](./references/github_com_statgen_savvy_blob_master_sav_spec_v2.md)
+- [S1R Index Specification](./references/github_com_statgen_savvy_blob_master_s1r_spec.md)

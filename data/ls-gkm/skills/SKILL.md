@@ -1,6 +1,6 @@
 ---
 name: ls-gkm
-description: ls-gkm is a high-performance tool that identifies functional regulatory elements in DNA sequences by training SVM classifiers on gapped k-mer features. Use when user asks to train a sequence-based SVM model, score DNA sequences for regulatory potential, or perform cross-validation on genomic datasets.
+description: LS-GKM is a gapped k-mer support vector machine tool used to predict the regulatory potential of DNA sequences. Use when user asks to train a sequence classifier, score genomic sequences for functional potential, perform cross-validation, or predict the impact of genetic variants using DeltaSVM.
 homepage: https://github.com/Dongwon-Lee/lsgkm
 ---
 
@@ -8,55 +8,62 @@ homepage: https://github.com/Dongwon-Lee/lsgkm
 # ls-gkm
 
 ## Overview
-ls-gkm (Large-Scale Gapped K-mer SVM) is a high-performance tool designed to identify functional regulatory elements in DNA sequences. It improves upon the original gkm-SVM by offering better scalability for large datasets and advanced kernel functions. The tool operates by learning the sequence features (gapped k-mers) that distinguish a set of positive sequences (e.g., ChIP-seq peaks) from negative sequences (e.g., genomic background or non-binding sites).
+LS-GKM (Large-Scale Gapped k-mer SVM) is a specialized tool for predicting the regulatory potential of DNA sequences. It improves upon original gkm-SVM implementations by offering better scalability for large genomic datasets and advanced kernel functions. It is primarily used in bioinformatics to identify enhancers, promoters, and other regulatory elements by learning the "vocabulary" of gapped k-mers that distinguish functional sequences from genomic backgrounds.
 
 ## Core Workflows
 
-### 1. Model Training (gkmtrain)
-The primary step is training a SVM classifier using positive and negative sequence sets in FASTA format.
+### Training a Model
+Use `gkmtrain` to build a classifier. You must provide a positive set (e.g., ChIP-seq peaks) and a negative set (e.g., flanking regions or GC-matched random sequences).
 
 **Basic Command:**
 ```bash
 gkmtrain <posfile.fa> <negfile.fa> <outprefix>
 ```
 
-**Key Parameters and Tuning:**
-- **Kernel Selection (`-t`)**: 
-  - `4` (Default): Center-weighted gkm (wgkm). Generally provides the best accuracy for most regulatory elements.
-  - `2`: Standard gkm-SVM kernel.
-  - `3` or `5`: RBF kernels. Use these with `-c 10 -g 2.0` for optimal performance.
-- **Word Parameters**:
-  - `-l`: Word length (default 11, range 3-12).
-  - `-k`: Number of informative columns (default 7).
-  - `-d`: Maximum mismatches (default 3).
-- **Performance Tuning**:
-  - `-T`: Set threads to `1`, `4`, or `16` for parallel processing.
-  - `-m`: Cache memory in MB. For large datasets, `>4000` (4GB) is highly recommended to significantly reduce runtime.
+**Key Parameters:**
+- `-t <0-5>`: Kernel selection. Default is **4 (wgkm)**, which is center-weighted and generally provides the highest accuracy.
+- `-l <int>`: Word length (default: 11). Range 3-12.
+- `-k <int>`: Number of informative columns (default: 7).
+- `-d <int>`: Maximum mismatches (default: 3).
+- `-m <float>`: Cache memory in MB. **Expert Tip**: Set this to `4000` or higher (if RAM allows) to significantly reduce runtime on large datasets.
+- `-T <1|4|16>`: Number of threads. Only specific values (1, 4, 16) are supported.
 
-### 2. Sequence Scoring (gkmpredict)
-Once a model is trained (generating `<prefix>.model.txt`), use it to score new sequences.
+### Cross-Validation
+To evaluate model performance before full deployment, use the `-x` flag.
+```bash
+gkmtrain -x 5 <pos.fa> <neg.fa> <outprefix>
+```
+The results will be stored in `<outprefix>.cvpred.txt`.
+
+### Scoring Sequences
+Use `gkmpredict` to apply a trained model to new sequences.
 
 **Basic Command:**
 ```bash
-gkmpredict <test_seqfile.fa> <model_file.txt> <output_file.txt>
+gkmpredict <test_seq.fa> <model_file.txt> <output.txt>
 ```
 
-### 3. Validation and Evaluation
-To assess model performance without a separate test set, use the N-fold cross-validation mode.
-
-**Cross-Validation:**
-```bash
-gkmtrain -x 5 <posfile.fa> <negfile.fa> <outprefix>
-```
-The output `<outprefix>.cvpred.txt` contains SVM scores and labels for each sequence in the training set.
+### DeltaSVM (Variant Effect Prediction)
+To predict the impact of a mutation (SNP):
+1. Generate all possible non-redundant k-mers using the provided python script: `python scripts/nrkmers.py`.
+2. Score these k-mers using `gkmpredict`.
+3. Use the resulting weights with the `deltasvm.pl` script to calculate the difference in scores between reference and alternate alleles.
 
 ## Expert Tips and Best Practices
+- **Kernel Selection**: If using RBF kernels (`-t 3` or `-t 5`), it is recommended to set `-c 10` and `-g 2` for optimal performance.
+- **Reverse Complement**: By default, the tool considers the reverse complement as the same feature. If your data is strand-specific and this behavior is not desired, use the `-R` flag.
+- **Sequence Length**: If sequences exceed the internal `MAX_SEQ_LENGTH`, the tool will issue a warning and only process the first N nucleotides. Ensure your input FASTA sequences are trimmed to the relevant functional window (e.g., 200-1000bp).
+- **Memory Management**: For large-scale datasets (hundreds of thousands of sequences), the default 100MB cache is insufficient. Always scale `-m` to the maximum available system memory to avoid heavy disk I/O.
 
-- **Reverse Complement (`-R`)**: By default, ls-gkm considers reverse complements as the same feature. If the biological signal is strand-specific, use `-R` to treat them as distinct features.
-- **Imbalanced Data (`-w`)**: If your positive and negative sets are significantly different in size, use `-w <float>` to adjust the weight of the regularization parameter for the positive set.
-- **DeltaSVM Preparation**: To generate weights for deltaSVM (predicting the impact of variants), first generate all non-redundant k-mers using the provided `scripts/nrkmers.py`, then score them using `gkmpredict`.
-- **Memory Management**: If the tool crashes on large datasets, ensure the `-m` parameter is set to a value your system can support, as the default 100MB is often insufficient for modern genomic scales.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gkmpredict | Predict functional genomic elements using gapped k-mer SVM (ls-gkm). |
+| gkmtrain | Train a Gapped K-mer Support Vector Machine (gkm-SVM) model using positive and negative training sequences. |
 
 ## Reference documentation
-- [ls-gkm GitHub Repository](./references/github_com_Dongwon-Lee_lsgkm.md)
-- [Bioconda ls-gkm Overview](./references/anaconda_org_channels_bioconda_packages_ls-gkm_overview.md)
+- [LS-GKM GitHub Repository](./references/github_com_Dongwon-Lee_lsgkm.md)
+- [LS-GKM Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ls-gkm_overview.md)

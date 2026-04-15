@@ -1,7 +1,9 @@
 ---
 name: metaphlan
-description: "MetaPhlAn profiles the taxonomic composition of microbial communities from shotgun metagenomic data by mapping reads to clade-specific marker genes. Use when user asks to profile taxonomic abundances, generate species-level compositions from FastQ files, or merge multiple metagenomic profiles into a single table."
+description: MetaPhlAn profiles the taxonomic composition of microbial communities from shotgun metagenomic data by mapping reads to clade-specific marker genes. Use when user asks to profile taxonomic abundances, generate species-level compositions from FastQ files, or merge multiple metagenomic profiles into a single table.
 homepage: https://github.com/biobakery/metaphlan
+metadata:
+  docker_image: "quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0"
 ---
 
 # metaphlan

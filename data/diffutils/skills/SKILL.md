@@ -2,6 +2,8 @@
 name: diffutils
 description: This tool compares files and directories to identify differences in content or byte-level data. Use when user asks to compare file contents, generate unified diffs for patches, perform recursive directory comparisons, or conduct byte-by-byte binary analysis.
 homepage: https://github.com/uutils/diffutils
+metadata:
+  docker_image: "quay.io/biocontainers/diffutils:3.10"
 ---
 
 # diffutils

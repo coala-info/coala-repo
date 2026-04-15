@@ -2,6 +2,8 @@
 name: seqnado
 description: Seqnado fetches, organizes, and processes genomic sequence data from public databases. Use when user asks to fetch raw reads by accession ID, download FASTQ files from GEO or SRA, or run data processing pipelines.
 homepage: https://alsmith151.github.io/SeqNado/
+metadata:
+  docker_image: "quay.io/biocontainers/seqnado:1.0.4--pyhdfd78af_0"
 ---
 
 # seqnado

@@ -4,7 +4,6 @@ description: The R package poppr provides specialized tools for the genetic anal
 homepage: https://cloud.r-project.org/web/packages/poppr/index.html
 ---
 
-
 # r-poppr
 
 name: r-poppr

@@ -2,8 +2,9 @@
 name: transcriptm
 description: The transcriptm tool processes raw metatranscriptomic reads to generate normalized gene expression counts against a reference metagenome. Use when user asks to 'process metatranscriptomic data', 'quantify gene expression in microbial populations', 'map metatranscriptomic reads to a metagenome', or 'normalize gene expression counts'.
 homepage: https://github.com/elfrouin/transcriptM
+metadata:
+  docker_image: "quay.io/biocontainers/transcriptm:0.2--pyhdfd78af_0"
 ---
-
 
 # transcriptm
 

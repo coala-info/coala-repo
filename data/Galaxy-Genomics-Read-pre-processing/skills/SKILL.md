@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-1-read-pre-processing-with-download
-description: "This workflow downloads raw SARS-CoV-2 sequencing data from SRA using Illumina and ONT accessions and performs quality control and read filtering using tools like fastp, FastQC, and BWA-MEM. Use this skill when you need to retrieve public COVID-19 datasets and generate high-quality, filtered read sets for genomic surveillance or viral evolution studies."
-homepage: https://workflowhub.eu/workflows/2
+description: This workflow downloads raw SARS-CoV-2 sequencing data from SRA using Illumina and ONT accessions and performs quality control and read filtering using tools like fastp, FastQC, and BWA-MEM. Use this skill when you need to retrieve public COVID-19 datasets and generate high-quality, filtered read sets for genomic surveillance or viral evolution studies.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [1] Read pre-processing with download
+# covid-19-genomics-1-read-pre-processing-with-download
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: svmlight
-description: "svmlight is a toolset for training and applying Support Vector Machines optimized for high-dimensional sparse data. Use when user asks to train classification or regression models, perform preference ranking, or classify new data using a trained model."
+description: svmlight is a toolset for training and applying Support Vector Machines optimized for high-dimensional sparse data. Use when user asks to train classification or regression models, perform preference ranking, or classify new data using a trained model.
 homepage: http://svmlight.joachims.org/
+metadata:
+  docker_image: "quay.io/biocontainers/svmlight:6.02--h7b50bb2_8"
 ---
-
 
 # svmlight
 

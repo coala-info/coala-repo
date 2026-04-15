@@ -4,7 +4,6 @@ description: MDTS is an R package that identifies de novo deletions in targeted 
 homepage: https://bioconductor.org/packages/release/bioc/html/MDTS.html
 ---
 
-
 # bioconductor-mdts
 
 ## Overview

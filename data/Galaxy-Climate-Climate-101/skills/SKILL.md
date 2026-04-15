@@ -1,10 +1,12 @@
 ---
 name: climate-101
-description: "This climate science workflow processes city-specific temperature CSV files using Copernicus Essential Climate Variables tools, Datamash, and visualization utilities like climate stripes and psy_maps. Use this skill when you need to analyze historical temperature trends and generate visual representations like warming stripes or geographic map plots to communicate climate change impacts for specific urban areas."
-homepage: https://workflowhub.eu/workflows/42
+description: This climate science workflow processes city-specific temperature CSV files using Copernicus Essential Climate Variables tools, Datamash, and visualization utilities like climate stripes and psy_maps. Use this skill when you need to analyze historical temperature trends and generate visual representations like warming stripes or geographic map plots to communicate climate change impacts for specific urban areas.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Climate 101
+# climate-101
 
 ## Overview
 

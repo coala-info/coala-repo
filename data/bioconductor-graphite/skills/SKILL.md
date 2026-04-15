@@ -4,7 +4,6 @@ description: This tool retrieves biological pathways from multiple databases and
 homepage: https://bioconductor.org/packages/release/bioc/html/graphite.html
 ---
 
-
 # bioconductor-graphite
 
 name: bioconductor-graphite

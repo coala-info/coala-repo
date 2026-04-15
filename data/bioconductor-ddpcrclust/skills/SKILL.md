@@ -4,7 +4,6 @@ description: This tool automates the analysis, clustering, and visualization of 
 homepage: https://bioconductor.org/packages/release/bioc/html/ddPCRclust.html
 ---
 
-
 # bioconductor-ddpcrclust
 
 name: bioconductor-ddpcrclust

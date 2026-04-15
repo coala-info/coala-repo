@@ -4,7 +4,6 @@ description: MicrobiomeProfiler performs functional enrichment analysis for micr
 homepage: https://bioconductor.org/packages/release/bioc/html/MicrobiomeProfiler.html
 ---
 
-
 # bioconductor-microbiomeprofiler
 
 name: bioconductor-microbiomeprofiler

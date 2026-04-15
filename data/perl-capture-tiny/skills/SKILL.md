@@ -1,9 +1,10 @@
 ---
 name: perl-capture-tiny
-description: "perl-capture-tiny intercepts and captures data sent to standard output and standard error streams. Use when user asks to capture output from external system calls, intercept stdout and stderr, or verify command-line interface output in testing suites."
+description: perl-capture-tiny intercepts and captures data sent to standard output and standard error streams. Use when user asks to capture output from external system calls, intercept stdout and stderr, or verify command-line interface output in testing suites.
 homepage: https://github.com/dagolden/Capture-Tiny
+metadata:
+  docker_image: "quay.io/biocontainers/perl-capture-tiny:0.48--pl526_0"
 ---
-
 
 # perl-capture-tiny
 

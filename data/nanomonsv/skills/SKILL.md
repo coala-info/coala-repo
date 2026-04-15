@@ -1,7 +1,9 @@
 ---
 name: nanomonsv
-description: "nanomonsv detects somatic structural variations from long-read sequencing data by comparing tumor and control samples. Use when user asks to detect somatic structural variations, parse long-read alignment files, or classify mobile element insertions."
+description: nanomonsv detects somatic structural variations from long-read sequencing data by comparing tumor and control samples. Use when user asks to detect somatic structural variations, parse long-read alignment files, or classify mobile element insertions.
 homepage: https://github.com/friend1ws/nanomonsv
+metadata:
+  docker_image: "quay.io/biocontainers/nanomonsv:0.8.1--pyhdfd78af_0"
 ---
 
 # nanomonsv

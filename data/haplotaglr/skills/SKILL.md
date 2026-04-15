@@ -2,8 +2,9 @@
 name: haplotaglr
 description: HaplotagLR assigns individual long DNA sequencing reads to specific parental haplotypes by comparing them against pre-phased variants. Use when user asks to haplotag long-read data, assign reads to a specific chromosome, or perform allele-specific analysis.
 homepage: https://github.com/Boyle-Lab/HaplotagLR.git
+metadata:
+  docker_image: "quay.io/biocontainers/haplotaglr:1.1.13--pyhdfd78af_0"
 ---
-
 
 # haplotaglr
 

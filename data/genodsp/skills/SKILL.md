@@ -2,6 +2,8 @@
 name: genodsp
 description: GenoDSP is a high-performance workbench that treats genomic data as digital signals to perform complex vector-based processing and transformations. Use when user asks to calculate genomic coverage, smooth signals, identify local maxima, or apply statistical thresholding to interval data.
 homepage: https://github.com/rsharris/genodsp
+metadata:
+  docker_image: "quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1"
 ---
 
 # genodsp

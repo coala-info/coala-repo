@@ -4,7 +4,6 @@ description: This tool identifies differentially methylated CpG sites in bisulfi
 homepage: https://bioconductor.org/packages/release/bioc/html/DMCHMM.html
 ---
 
-
 # bioconductor-dmchmm
 
 name: bioconductor-dmchmm

@@ -4,7 +4,6 @@ description: This tool provides a unified API for parallel and distributed proce
 homepage: https://cloud.r-project.org/web/packages/future/index.html
 ---
 
-
 # r-future
 
 name: r-future

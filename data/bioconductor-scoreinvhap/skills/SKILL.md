@@ -4,7 +4,6 @@ description: This tool genotypes genomic inversions from SNP data using a superv
 homepage: https://bioconductor.org/packages/release/bioc/html/scoreInvHap.html
 ---
 
-
 # bioconductor-scoreinvhap
 
 name: bioconductor-scoreinvhap

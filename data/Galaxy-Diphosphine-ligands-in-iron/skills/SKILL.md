@@ -1,10 +1,12 @@
 ---
 name: paper_2_diphosphine-wf
-description: "This workflow processes X-ray absorption spectroscopy data for iron-diphosphine complexes using Larch Athena for data reduction and Larch Plot for visualization. Use this skill when you need to characterize the local atomic structure and oxidation states of iron-based catalysts or complexes containing diphosphine ligands through XAS analysis."
-homepage: https://workflowhub.eu/workflows/1799
+description: This workflow processes X-ray absorption spectroscopy data for iron-diphosphine complexes using Larch Athena for data reduction and Larch Plot for visualization. Use this skill when you need to characterize the local atomic structure and oxidation states of iron-based catalysts or complexes containing diphosphine ligands through XAS analysis.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Paper_2_Diphosphine-WF
+# paper_2_diphosphine-wf
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: aroma.core provides the foundational classes and methods for the Ar
 homepage: https://cran.r-project.org/web/packages/aroma.core/index.html
 ---
 
-
 # r-aroma.core
 
 ## Overview

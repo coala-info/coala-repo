@@ -4,7 +4,6 @@ description: The GSVAdata package provides curated gene expression datasets, gen
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSVAdata.html
 ---
 
-
 # bioconductor-gsvadata
 
 ## Overview

@@ -4,6 +4,8 @@ description: This pipeline performs somatic analysis on PacBio HiFi read data by
 homepage: https://github.com/nf-core/pacsomatic
 ---
 
+# pacsomatic
+
 ## Overview
 nf-core/pacsomatic is a bioinformatics pipeline designed for the somatic analysis of cancer genomes using PacBio HiFi long-read data. It automates the pairing of tumor and normal alignments to facilitate comparative studies that provide insights into cancer biology.
 

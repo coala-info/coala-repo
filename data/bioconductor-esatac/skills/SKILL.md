@@ -4,7 +4,6 @@ description: bioconductor-esatac provides a systematic, end-to-end pipeline for 
 homepage: https://bioconductor.org/packages/release/bioc/html/esATAC.html
 ---
 
-
 # bioconductor-esatac
 
 name: bioconductor-esatac

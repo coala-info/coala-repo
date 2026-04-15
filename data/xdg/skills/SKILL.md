@@ -2,8 +2,9 @@
 name: xdg
 description: xdg helps applications find standard filesystem paths for user-specific configuration, data, and cache files. Use when user asks to get the configuration directory, find the data directory, locate the cache directory, determine the state directory, or retrieve the runtime directory.
 homepage: https://github.com/srstevenson/xdg
+metadata:
+  docker_image: "quay.io/biocontainers/xdg:1.0.5--py35_0"
 ---
-
 
 # xdg
 

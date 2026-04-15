@@ -2,8 +2,9 @@
 name: gassst
 description: GASSST performs fast gapped alignments of DNA sequences against large reference databases for reads up to 1000bp. Use when user asks to map DNA sequences to a reference, perform gapped alignments, or convert GASSST results to SAM format.
 homepage: https://www.irisa.fr/symbiose/projects/gassst/
+metadata:
+  docker_image: "quay.io/biocontainers/gassst:1.28--h503566f_3"
 ---
-
 
 # gassst
 

@@ -4,7 +4,6 @@ description: This tool performs fast quality control and visualization for high-
 homepage: https://bioconductor.org/packages/3.5/bioc/html/qrqc.html
 ---
 
-
 # bioconductor-qrqc
 
 name: bioconductor-qrqc

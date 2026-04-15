@@ -2,6 +2,8 @@
 name: olivar
 description: Olivar automates the design of tiled amplicon schemes for multiplex PCR by integrating genomic variation and specificity data to minimize primer risk. Use when user asks to build a reference index from sequence alignments, design tiled primer sets for pathogen sequencing, or validate primer specificity against background genomes.
 homepage: https://gitlab.com/treangenlab/olivar
+metadata:
+  docker_image: "quay.io/biocontainers/olivar:1.3.3--pyhdfd78af_0"
 ---
 
 # olivar

@@ -4,7 +4,6 @@ description: The odseq package detects outlier sequences in biological datasets 
 homepage: https://bioconductor.org/packages/release/bioc/html/odseq.html
 ---
 
-
 # bioconductor-odseq
 
 ## Overview

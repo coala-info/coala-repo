@@ -4,6 +4,8 @@ description: This pipeline performs amplicon sequencing analysis from FASTQ file
 homepage: https://github.com/nf-core/ampliseq
 ---
 
+# ampliseq
+
 ## Overview
 nf-core/ampliseq is designed for the denoising and taxonomic classification of amplicon sequencing data, supporting markers such as 16S, ITS, CO1, and 18S. It addresses the biological challenge of profiling microbial or environmental communities by converting raw sequencing reads into high-resolution Amplicon Sequence Variants (ASVs).
 

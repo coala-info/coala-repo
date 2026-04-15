@@ -4,7 +4,6 @@ description: This tool transforms one-dimensional data into a two-dimensional sp
 homepage: https://bioconductor.org/packages/release/bioc/html/HilbertCurve.html
 ---
 
-
 # bioconductor-hilbertcurve
 
 name: bioconductor-hilbertcurve

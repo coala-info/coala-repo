@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis of RNA-Seq coun
 homepage: https://cran.r-project.org/web/packages/nbpseq/index.html
 ---
 
-
 # r-nbpseq
 
 name: r-nbpseq

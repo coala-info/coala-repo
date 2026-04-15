@@ -4,7 +4,6 @@ description: This tool normalizes two-channel array Comparative Genomic Hybridiz
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHnormaliter.html
 ---
 
-
 # bioconductor-cghnormaliter
 
 name: bioconductor-cghnormaliter

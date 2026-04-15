@@ -1,10 +1,12 @@
 ---
 name: music-stage-1-create-pseudobulk-and-actual-proportions
-description: "This Galaxy workflow processes expression data and metadata using Awk and MuSiC-based subworkflows to generate pseudobulk profiles and their corresponding ground-truth cell type proportions. Use this skill when you need to benchmark deconvolution algorithms by creating synthetic bulk datasets from single-cell RNA sequencing data with known cell type compositions."
-homepage: https://workflowhub.eu/workflows/1563
+description: This Galaxy workflow processes expression data and metadata using Awk and MuSiC-based subworkflows to generate pseudobulk profiles and their corresponding ground-truth cell type proportions. Use this skill when you need to benchmark deconvolution algorithms by creating synthetic bulk datasets from single-cell RNA sequencing data with known cell type compositions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Music Stage 1 - Create pseudobulk and actual proportions
+# music-stage-1-create-pseudobulk-and-actual-proportions
 
 ## Overview
 

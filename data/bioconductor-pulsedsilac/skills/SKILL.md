@@ -4,7 +4,6 @@ description: This package analyzes protein turnover and degradation rates from p
 homepage: https://bioconductor.org/packages/3.10/bioc/html/pulsedSilac.html
 ---
 
-
 # bioconductor-pulsedsilac
 
 ## Overview

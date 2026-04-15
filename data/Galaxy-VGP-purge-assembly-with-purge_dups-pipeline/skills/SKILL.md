@@ -1,10 +1,12 @@
 ---
 name: vgp-purge-assembly-with-purge_dups-pipeline
-description: "This VGP workflow utilizes PacBio reads and Hifiasm assemblies to identify and remove haplotypic duplications and overlaps using minimap2 and the purge_dups pipeline. Use this skill when you need to refine a phased genome assembly by purging redundant contigs and artifacts to ensure a highly contiguous and accurate primary representation."
-homepage: https://workflowhub.eu/workflows/321
+description: This VGP workflow utilizes PacBio reads and Hifiasm assemblies to identify and remove haplotypic duplications and overlaps using minimap2 and the purge_dups pipeline. Use this skill when you need to refine a phased genome assembly by purging redundant contigs and artifacts to ensure a highly contiguous and accurate primary representation.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP purge assembly with purge_dups pipeline
+# vgp-purge-assembly-with-purge_dups-pipeline
 
 ## Overview
 

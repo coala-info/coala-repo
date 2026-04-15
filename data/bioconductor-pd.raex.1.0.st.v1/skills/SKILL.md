@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.raex.1.0.st.v1.html
 ---
 
-
 # bioconductor-pd.raex.1.0.st.v1
 
 name: bioconductor-pd.raex.1.0.st.v1

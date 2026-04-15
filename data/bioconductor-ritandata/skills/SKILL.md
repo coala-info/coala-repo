@@ -4,7 +4,6 @@ description: This package provides a curated collection of gene sets, pathway an
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RITANdata.html
 ---
 
-
 # bioconductor-ritandata
 
 ## Overview

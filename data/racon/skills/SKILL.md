@@ -2,8 +2,9 @@
 name: racon
 description: Racon is a standalone consensus module that polishes raw contigs and performs read error correction to generate high-quality consensus sequences. Use when user asks to polish a genome assembly, perform read error correction, or generate a consensus sequence from long-read sequencing data.
 homepage: https://github.com/lbcb-sci/racon
+metadata:
+  docker_image: "quay.io/biocontainers/racon:1.5.0--h077b44d_8"
 ---
-
 
 # racon
 

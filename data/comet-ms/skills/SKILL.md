@@ -2,8 +2,9 @@
 name: comet-ms
 description: Comet-ms is an open-source search engine that matches experimental mass spectra against theoretical spectra from a sequence database for proteomics data analysis. Use when user asks to perform peptide identification, generate search parameter files, or execute high-throughput database searches of mass spectrometry data.
 homepage: http://comet-ms.sourceforge.net/
+metadata:
+  docker_image: "quay.io/biocontainers/comet-ms:2024011--hb319eff_0"
 ---
-
 
 # comet-ms
 

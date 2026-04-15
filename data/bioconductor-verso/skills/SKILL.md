@@ -4,7 +4,6 @@ description: VERSO is an algorithmic framework that reconstructs phylogenetic mo
 homepage: https://bioconductor.org/packages/release/bioc/html/VERSO.html
 ---
 
-
 # bioconductor-verso
 
 ## Overview

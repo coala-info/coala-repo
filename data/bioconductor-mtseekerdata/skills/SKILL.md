@@ -4,7 +4,6 @@ description: This package provides mitochondrial DNA experiment data and annotat
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/MTseekerData.html
 ---
 
-
 # bioconductor-mtseekerdata
 
 name: bioconductor-mtseekerdata

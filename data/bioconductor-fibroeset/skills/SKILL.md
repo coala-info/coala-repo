@@ -4,7 +4,6 @@ description: This package provides access to the Karaman et al. (2003) fibroblas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fibroEset.html
 ---
 
-
 # bioconductor-fibroeset
 
 name: bioconductor-fibroeset

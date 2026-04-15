@@ -4,7 +4,6 @@ description: This package provides comprehensive genome-wide annotations and ide
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Sc.sgd.db.html
 ---
 
-
 # bioconductor-org.sc.sgd.db
 
 ## Overview

@@ -4,7 +4,6 @@ description: Bioconductor-omixer provides multivariate randomization of samples 
 homepage: https://bioconductor.org/packages/release/bioc/html/Omixer.html
 ---
 
-
 # bioconductor-omixer
 
 name: bioconductor-omixer

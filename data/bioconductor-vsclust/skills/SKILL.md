@@ -1,9 +1,8 @@
 ---
 name: bioconductor-vsclust
-description: "This tool performs variance-sensitive fuzzy c-means clustering on quantitative omics data to identify patterns while accounting for measurement uncertainty. Use when user asks to perform variance-sensitive clustering, estimate the optimal number of clusters, or identify common patterns in replicated omics data."
+description: This tool performs variance-sensitive fuzzy c-means clustering on quantitative omics data to identify patterns while accounting for measurement uncertainty. Use when user asks to perform variance-sensitive clustering, estimate the optimal number of clusters, or identify common patterns in replicated omics data.
 homepage: https://bioconductor.org/packages/release/bioc/html/vsclust.html
 ---
-
 
 # bioconductor-vsclust
 

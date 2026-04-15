@@ -4,7 +4,6 @@ description: PathNet is an R package that performs pathway enrichment analysis b
 homepage: https://bioconductor.org/packages/release/bioc/html/PathNet.html
 ---
 
-
 # bioconductor-pathnet
 
 ## Overview

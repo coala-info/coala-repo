@@ -2,8 +2,9 @@
 name: mlpy
 description: mlpy is a high-performance Python library for machine learning that provides efficient implementations of classification, regression, and dimensionality reduction algorithms. Use when user asks to implement predictive models, perform feature selection, analyze time-series data with Dynamic Time Warping, or apply wavelet transforms for signal processing.
 homepage: http://mlpy.sourceforge.net/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/mlpy:3.5.0--py36h2ad2d48_3"
 ---
-
 
 # mlpy
 

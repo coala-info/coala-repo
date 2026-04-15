@@ -4,7 +4,6 @@ description: The r-shinyace package provides R Shiny bindings for the Ace text e
 homepage: https://cran.r-project.org/web/packages/shinyace/index.html
 ---
 
-
 # r-shinyace
 
 ## Overview

@@ -4,7 +4,6 @@ description: The mumosa package provides utilities for integrating and analyzing
 homepage: https://bioconductor.org/packages/release/bioc/html/mumosa.html
 ---
 
-
 # bioconductor-mumosa
 
 ## Overview

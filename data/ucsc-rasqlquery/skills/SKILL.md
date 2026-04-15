@@ -2,8 +2,9 @@
 name: ucsc-rasqlquery
 description: ucsc-rasqlquery queries Record-Attribute (RA) files using SQL-like syntax. Use when user asks to extract specific fields, filter records, join multiple RA files, or audit track configuration files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-rasqlquery:482--h0b57e2e_0"
 ---
-
 
 # ucsc-rasqlquery
 

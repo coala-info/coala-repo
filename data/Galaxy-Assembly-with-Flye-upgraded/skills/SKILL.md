@@ -1,10 +1,12 @@
 ---
 name: assembly-with-flye-upgraded
-description: "This Galaxy workflow performs de novo assembly of long-read sequencing data using Flye and evaluates the resulting assembly with Quast, Fasta Statistics, and Bandage visualization. Use this skill when you need to generate high-quality contiguous sequences from PacBio or Oxford Nanopore reads and assess the structural integrity and completeness of the genomic assembly."
-homepage: https://workflowhub.eu/workflows/1595
+description: This Galaxy workflow performs de novo assembly of long-read sequencing data using Flye and evaluates the resulting assembly with Quast, Fasta Statistics, and Bandage visualization. Use this skill when you need to generate high-quality contiguous sequences from PacBio or Oxford Nanopore reads and assess the structural integrity and completeness of the genomic assembly.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly with Flye - upgraded
+# assembly-with-flye-upgraded
 
 ## Overview
 

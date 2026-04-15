@@ -1,10 +1,12 @@
 ---
 name: obis-biodiversity-indicator-on-asian-pacific
-description: "This Galaxy workflow processes South Pacific occurrence CSV data using text manipulation tools and the OBIS indicators package to calculate marine biodiversity metrics. Use this skill when you need to evaluate ecological health or species richness in the Asia-Pacific region by generating standardized ocean biodiversity indicators from occurrence records."
-homepage: https://workflowhub.eu/workflows/662
+description: This Galaxy workflow processes South Pacific occurrence CSV data using text manipulation tools and the OBIS indicators package to calculate marine biodiversity metrics. Use this skill when you need to evaluate ecological health or species richness in the Asia-Pacific region by generating standardized ocean biodiversity indicators from occurrence records.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Obis biodiversity indicator on Asian pacific
+# obis-biodiversity-indicator-on-asian-pacific
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: perl-module-load
 description: This tool provides a unified interface for dynamically loading Perl modules and files using a single function. Use when user asks to load a Perl module from a variable, include a file path, or handle conditional dependencies without complex require syntax.
 homepage: http://metacpan.org/pod/Module::Load
+metadata:
+  docker_image: "quay.io/biocontainers/perl-module-load:0.34--pl5321hdfd78af_0"
 ---
-
 
 # perl-module-load
 

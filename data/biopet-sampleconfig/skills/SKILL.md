@@ -1,7 +1,9 @@
 ---
 name: biopet-sampleconfig
-description: "biopet-sampleconfig manages and converts sample metadata between flat TSV files and structured JSON or YAML configurations for sequencing pipelines. Use when user asks to convert TSV files to sample sheets, extract metadata into TSV format, format configurations for WDL pipelines, or validate case-control experimental designs."
+description: biopet-sampleconfig manages and converts sample metadata between flat TSV files and structured JSON or YAML configurations for sequencing pipelines. Use when user asks to convert TSV files to sample sheets, extract metadata into TSV format, format configurations for WDL pipelines, or validate case-control experimental designs.
 homepage: https://github.com/biopet/sampleconfig
+metadata:
+  docker_image: "quay.io/biocontainers/biopet-sampleconfig:0.3--0"
 ---
 
 # biopet-sampleconfig

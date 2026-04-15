@@ -1,9 +1,8 @@
 ---
 name: bioconductor-rhdf5
-description: "This tool provides an R interface for creating, reading, and writing data in the HDF5 format. Use when user asks to store large datasets in a hierarchical structure, read specific subsets of data from disk, manage HDF5 groups and datasets, or access HDF5 files stored in S3 buckets."
+description: This tool provides an R interface for creating, reading, and writing data in the HDF5 format. Use when user asks to store large datasets in a hierarchical structure, read specific subsets of data from disk, manage HDF5 groups and datasets, or access HDF5 files stored in S3 buckets.
 homepage: https://bioconductor.org/packages/release/bioc/html/rhdf5.html
 ---
-
 
 # bioconductor-rhdf5
 

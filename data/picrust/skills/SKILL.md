@@ -1,7 +1,9 @@
 ---
 name: picrust
-description: "PICRUSt predicts the functional profile of a microbial community based on its marker gene composition. Use when user asks to normalize OTU abundances by copy number, predict metagenome functional content, or categorize predicted genes into metabolic pathways."
+description: PICRUSt predicts the functional profile of a microbial community based on its marker gene composition. Use when user asks to normalize OTU abundances by copy number, predict metagenome functional content, or categorize predicted genes into metabolic pathways.
 homepage: http://picrust.github.com
+metadata:
+  docker_image: "quay.io/biocontainers/picrust:1.1.4--pyh24bf2e0_0"
 ---
 
 # picrust

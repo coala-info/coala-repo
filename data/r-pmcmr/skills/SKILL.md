@@ -4,7 +4,6 @@ description: This tool performs non-parametric pairwise multiple comparisons of 
 homepage: https://cran.r-project.org/web/packages/pmcmr/index.html
 ---
 
-
 # r-pmcmr
 
 name: r-pmcmr

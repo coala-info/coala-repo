@@ -2,8 +2,9 @@
 name: realphy
 description: Realphy performs sequence alignment and phylogenetic tree construction. Use when user asks to align DNA or protein sequences, infer evolutionary relationships, or generate phylogenetic trees.
 homepage: https://realphy.unibas.ch/fcgi/realphy
+metadata:
+  docker_image: "quay.io/biocontainers/realphy:1.13--hdfd78af_1"
 ---
-
 
 # realphy
 

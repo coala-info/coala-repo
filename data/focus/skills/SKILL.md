@@ -2,8 +2,9 @@
 name: focus
 description: FOCUS characterizes the microbial composition of metagenomic samples using k-mer frequencies for agile profiling. Use when user asks to profile metagenomic samples, generate taxonomic summaries, or identify the relative abundance of organisms in a dataset.
 homepage: https://edwards.sdsu.edu/FOCUS
+metadata:
+  docker_image: "quay.io/biocontainers/focus:1.8--pyhdfd78af_0"
 ---
-
 
 # focus
 

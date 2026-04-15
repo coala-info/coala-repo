@@ -2,8 +2,9 @@
 name: quicktree
 description: QuickTree rapidly infers phylogenetic trees from large alignments or distance matrices using Neighbor-Joining or UPGMA methods. Use when user asks to construct a phylogeny, generate a Newick tree from a Stockholm alignment, perform bootstrap analysis, or build a tree from a PHYLIP distance matrix.
 homepage: https://github.com/khowe/quicktree
+metadata:
+  docker_image: "quay.io/biocontainers/quicktree:2.5--h7b50bb2_9"
 ---
-
 
 # quicktree
 

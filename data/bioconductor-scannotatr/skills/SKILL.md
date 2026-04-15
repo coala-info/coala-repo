@@ -4,7 +4,6 @@ description: scAnnotatR performs automated cell type identification and classifi
 homepage: https://bioconductor.org/packages/release/bioc/html/scAnnotatR.html
 ---
 
-
 # bioconductor-scannotatr
 
 name: bioconductor-scannotatr

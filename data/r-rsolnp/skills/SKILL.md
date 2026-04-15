@@ -4,7 +4,6 @@ description: The r-rsolnp package provides a robust general non-linear solver fo
 homepage: https://cran.r-project.org/web/packages/rsolnp/index.html
 ---
 
-
 # r-rsolnp
 
 ## Overview

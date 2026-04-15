@@ -1,10 +1,12 @@
 ---
 name: locked-generating-a-single-cell-matrix-using-alevin
-description: "This single-cell RNA-seq workflow processes raw sequencing reads, reference FASTA, and GTF files using Alevin and DropletUtils to generate a quantified gene expression matrix. Use this skill when you need to perform transcript quantification from droplet-based sequencing data, filter out empty droplets, and prepare a standardized AnnData object for downstream single-cell analysis."
-homepage: https://workflowhub.eu/workflows/1537
+description: This single-cell RNA-seq workflow processes raw sequencing reads, reference FASTA, and GTF files using Alevin and DropletUtils to generate a quantified gene expression matrix. Use this skill when you need to perform transcript quantification from droplet-based sequencing data, filter out empty droplets, and prepare a standardized AnnData object for downstream single-cell analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# LOCKED | Generating a single cell matrix using Alevin
+# locked-generating-a-single-cell-matrix-using-alevin
 
 ## Overview
 

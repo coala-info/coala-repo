@@ -4,7 +4,6 @@ description: This package provides access to the breastCancerVDX Bioconductor ex
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerVDX.html
 ---
 
-
 # bioconductor-breastcancervdx
 
 name: bioconductor-breastcancervdx

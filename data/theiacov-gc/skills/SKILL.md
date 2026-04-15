@@ -1,9 +1,10 @@
 ---
 name: theiacov-gc
-description: "This tool performs genomic characterization and epidemiological analysis for viral pathogens, primarily SARS-CoV-2. Use when user asks to perform command-line based genomic characterization, epidemiological analysis, or prepare submission data for viral pathogens."
+description: This tool performs genomic characterization and epidemiological analysis for viral pathogens, primarily SARS-CoV-2. Use when user asks to perform command-line based genomic characterization, epidemiological analysis, or prepare submission data for viral pathogens.
 homepage: https://github.com/theiagen/public_health_viral_genomics
+metadata:
+  docker_image: "quay.io/biocontainers/theiacov-gc:2.3.2--hdfd78af_0"
 ---
-
 
 # theiacov-gc
 

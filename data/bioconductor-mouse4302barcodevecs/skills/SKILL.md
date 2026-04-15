@@ -4,7 +4,6 @@ description: This package provides pre-calculated parameter estimates for the Af
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mouse4302barcodevecs.html
 ---
 
-
 # bioconductor-mouse4302barcodevecs
 
 ## Overview

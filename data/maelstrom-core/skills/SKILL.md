@@ -1,7 +1,9 @@
 ---
 name: maelstrom-core
-description: "maelstrom-core extracts and normalizes depth-of-coverage data from alignment files for structural variant analysis. Use when user asks to collect depth of coverage from BAM files, normalize coverage data, or process large genomic cohorts efficiently."
+description: maelstrom-core extracts and normalizes depth-of-coverage data from alignment files for structural variant analysis. Use when user asks to collect depth of coverage from BAM files, normalize coverage data, or process large genomic cohorts efficiently.
 homepage: https://github.com/bihealth/maelstrom-core
+metadata:
+  docker_image: "quay.io/biocontainers/maelstrom-core:0.1.1--he3973ca_3"
 ---
 
 # maelstrom-core

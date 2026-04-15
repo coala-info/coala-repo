@@ -2,8 +2,9 @@
 name: htseqqc
 description: htseqqc is an automated preprocessing tool that filters, trims, and generates quality control reports for Illumina sequencing data. Use when user asks to filter low-quality reads, trim adapter sequences, or generate visual quality assessment reports for FASTQ files.
 homepage: https://reneshbedre.github.io/blog/htseqqc.html
+metadata:
+  docker_image: "quay.io/biocontainers/htseqqc:v1.0--pyh5bfb8f1_0"
 ---
-
 
 # htseqqc
 

@@ -4,7 +4,6 @@ description: This tool normalizes quantification matrices from proteomics or RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/CONSTANd.html
 ---
 
-
 # bioconductor-constand
 
 name: bioconductor-constand

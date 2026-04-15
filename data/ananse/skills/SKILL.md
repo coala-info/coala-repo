@@ -2,8 +2,9 @@
 name: ananse
 description: ANANSE is a computational framework that integrates enhancer activity and gene expression data to map gene regulatory networks and identify master regulators of cell fate changes. Use when user asks to predict transcription factor binding, infer gene regulatory networks, calculate transcription factor influence between cell states, or inspect ANANSE HDF5 files.
 homepage: https://github.com/vanheeringen-lab/ANANSE
+metadata:
+  docker_image: "quay.io/biocontainers/ananse:0.5.1--pyhdfd78af_0"
 ---
-
 
 # ananse
 

@@ -1,7 +1,9 @@
 ---
 name: metasbt
-description: "MetaSBT indexes large-scale microbial genomes into Sequence Bloom Trees for rapid taxonomic assignment and database management. Use when user asks to list or download public databases, index reference genomes, profile unknown sequences, update existing databases with new MAGs, or export data for Kraken2 integration."
+description: MetaSBT indexes large-scale microbial genomes into Sequence Bloom Trees for rapid taxonomic assignment and database management. Use when user asks to list or download public databases, index reference genomes, profile unknown sequences, update existing databases with new MAGs, or export data for Kraken2 integration.
 homepage: https://github.com/cumbof/MetaSBT
+metadata:
+  docker_image: "quay.io/biocontainers/metasbt:0.1.5--pyhdfd78af_0"
 ---
 
 # metasbt

@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-computer-assignment-rna-se
-description: "This RNA-seq workflow processes transcriptomic count data and metadata using DESeq2, goseq, and various visualization tools to identify differentially expressed genes and enriched biological pathways. Use this skill when you need to compare gene expression profiles between experimental conditions, such as irradiated versus mock-treated samples, to uncover significant transcriptional changes and their functional implications."
-homepage: https://workflowhub.eu/workflows/1708
+description: This RNA-seq workflow processes transcriptomic count data and metadata using DESeq2, goseq, and various visualization tools to identify differentially expressed genes and enriched biological pathways. Use this skill when you need to compare gene expression profiles between experimental conditions, such as irradiated versus mock-treated samples, to uncover significant transcriptional changes and their functional implications.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'Computer assignment RNA seq analysis and visualisation -BMW2 - attempt 3'
+# workflow-constructed-from-history-computer-assignment-rna-se
 
 ## Overview
 

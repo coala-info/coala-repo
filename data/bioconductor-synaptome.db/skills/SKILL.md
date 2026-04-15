@@ -4,7 +4,6 @@ description: This tool queries and analyzes a comprehensive database of the syna
 homepage: https://bioconductor.org/packages/release/data/annotation/html/synaptome.db.html
 ---
 
-
 # bioconductor-synaptome.db
 
 name: bioconductor-synaptome.db

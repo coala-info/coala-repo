@@ -4,7 +4,6 @@ description: The ampir package predicts antimicrobial peptides from protein sequ
 homepage: https://cran.r-project.org/web/packages/ampir/index.html
 ---
 
-
 # r-ampir
 
 ## Overview

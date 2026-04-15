@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Murine Gen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74c.db.html
 ---
 
-
 # bioconductor-mgu74c.db
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs genome-wide liquid association analysis to ident
 homepage: https://bioconductor.org/packages/release/bioc/html/fastLiquidAssociation.html
 ---
 
-
 # bioconductor-fastliquidassociation
 
 name: bioconductor-fastliquidassociation

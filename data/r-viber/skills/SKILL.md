@@ -4,7 +4,6 @@ description: r-viber fits multi-variate Binomial mixture models to count data us
 homepage: https://cran.r-project.org/web/packages/viber/index.html
 ---
 
-
 # r-viber
 
 name: r-viber

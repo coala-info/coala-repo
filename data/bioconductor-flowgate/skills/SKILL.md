@@ -4,7 +4,6 @@ description: This tool provides a Shiny-based interactive interface for manual g
 homepage: https://bioconductor.org/packages/release/bioc/html/flowGate.html
 ---
 
-
 # bioconductor-flowgate
 
 name: bioconductor-flowgate

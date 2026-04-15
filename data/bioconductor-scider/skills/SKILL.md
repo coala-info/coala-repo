@@ -4,7 +4,6 @@ description: The scider package models global cell density in spatial transcript
 homepage: https://bioconductor.org/packages/release/bioc/html/scider.html
 ---
 
-
 # bioconductor-scider
 
 ## Overview

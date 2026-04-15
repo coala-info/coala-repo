@@ -4,7 +4,6 @@ description: This package provides example GWAS p-value and functional annotatio
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gpaExample.html
 ---
 
-
 # bioconductor-gpaexample
 
 name: bioconductor-gpaexample

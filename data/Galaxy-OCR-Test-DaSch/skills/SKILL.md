@@ -1,10 +1,12 @@
 ---
 name: ocr-test-dasch
-description: "This workflow processes historical German newspaper images from DaSch using Tesseract OCR, regex cleaning tools, and wordcloud visualization to transform visual text into machine-readable data. Use this skill when you need to digitize archival documents, remove noise and punctuation from extracted text, and identify prominent themes through visual word frequency analysis."
-homepage: https://workflowhub.eu/workflows/2014
+description: This workflow processes historical German newspaper images from DaSch using Tesseract OCR, regex cleaning tools, and wordcloud visualization to transform visual text into machine-readable data. Use this skill when you need to digitize archival documents, remove noise and punctuation from extracted text, and identify prominent themes through visual word frequency analysis.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# OCR Test DaSch
+# ocr-test-dasch
 
 ## Overview
 

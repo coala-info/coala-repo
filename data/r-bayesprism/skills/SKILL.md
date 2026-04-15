@@ -4,7 +4,6 @@ description: BayesPrism performs Bayesian deconvolution of bulk RNA-seq data usi
 homepage: https://cran.r-project.org/web/packages/bayesprism/index.html
 ---
 
-
 # r-bayesprism
 
 name: r-bayesprism

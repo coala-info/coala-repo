@@ -4,7 +4,6 @@ description: This tool processes and analyzes Illumina DNA methylation data from
 homepage: https://bioconductor.org/packages/release/bioc/html/methylumi.html
 ---
 
-
 # bioconductor-methylumi
 
 name: bioconductor-methylumi

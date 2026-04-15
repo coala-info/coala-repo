@@ -4,6 +4,8 @@ description: This pipeline detects aberrant expression, aberrant splicing, and m
 homepage: https://github.com/nf-core/drop
 ---
 
+# nf-core-drop
+
 ## Overview
 nf-core/drop (Detection of RNA Outliers Pipeline) is an integrative workflow designed to identify rare transcriptomic events that may indicate underlying genetic causes of disease. It provides a standardized framework for detecting expression outliers, splicing defects, and mono-allelic expression (MAE) by comparing individual samples against a cohort.
 

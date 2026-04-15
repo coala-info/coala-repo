@@ -4,7 +4,6 @@ description: This package provides annotation data and platform-specific constan
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human650v3aCrlmm.html
 ---
 
-
 # bioconductor-human650v3acrlmm
 
 name: bioconductor-human650v3acrlmm

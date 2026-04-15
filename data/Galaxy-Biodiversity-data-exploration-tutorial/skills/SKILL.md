@@ -1,10 +1,12 @@
 ---
 name: biodiversity-data-exploration-tutorial
-description: "This ecology workflow processes tabular fish survey data using tools for spatial anonymization, variable exploration, and statistical analysis of presence-absence, abundance, and beta diversity. Use this skill when you need to evaluate species distribution patterns, verify statistical assumptions for ecological modeling, or identify sites with unique contributions to regional biodiversity."
-homepage: https://workflowhub.eu/workflows/656
+description: This ecology workflow processes tabular fish survey data using tools for spatial anonymization, variable exploration, and statistical analysis of presence-absence, abundance, and beta diversity. Use this skill when you need to evaluate species distribution patterns, verify statistical assumptions for ecological modeling, or identify sites with unique contributions to regional biodiversity.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Biodiversity data exploration tutorial
+# biodiversity-data-exploration-tutorial
 
 ## Overview
 

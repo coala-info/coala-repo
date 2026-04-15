@@ -2,8 +2,9 @@
 name: cosi2
 description: cosi2 is a high-performance coalescent simulator that models the ancestral history of genetic samples under complex evolutionary scenarios. Use when user asks to simulate genetic data, model natural selection, incorporate recombination maps, or define demographic events like population splits and migration.
 homepage: https://www.broadinstitute.org/mpg/cosi2/
+metadata:
+  docker_image: "quay.io/biocontainers/cosi2:2.3.0rc3--py35_0"
 ---
-
 
 # cosi2
 

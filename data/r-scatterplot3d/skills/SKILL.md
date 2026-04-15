@@ -4,7 +4,6 @@ description: This R package generates 3D scatter plots and point clouds using pa
 homepage: https://cloud.r-project.org/web/packages/scatterplot3d/index.html
 ---
 
-
 # r-scatterplot3d
 
 name: r-scatterplot3d

@@ -2,8 +2,9 @@
 name: dbgraph
 description: The dbgraph toolset utilizes assembly graphs to generate protein databases and identify peptides from metaproteomics mass spectrometry data. Use when user asks to generate a FASTA database from a FASTG file, run the graph2pro-var pipeline, or identify peptides using a graph-centric approach.
 homepage: https://github.com/COL-IU/graph2pro-var/tree/master/Graph2Pro
+metadata:
+  docker_image: "quay.io/biocontainers/dbgraph:v1.0.0--h6bb024c_1"
 ---
-
 
 # dbgraph
 

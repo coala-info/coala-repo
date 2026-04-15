@@ -2,6 +2,8 @@
 name: gxformat2
 description: gxformat2 converts Galaxy workflows between native JSON and human-friendly YAML formats while providing tools for validation and visualization. Use when user asks to convert workflows between formats, lint workflow logic, visualize workflow structures, or export abstract workflow representations.
 homepage: https://github.com/jmchilton/gxformat2
+metadata:
+  docker_image: "quay.io/biocontainers/gxformat2:0.22.0--pyhdfd78af_0"
 ---
 
 # gxformat2

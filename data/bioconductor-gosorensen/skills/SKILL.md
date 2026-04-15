@@ -4,7 +4,6 @@ description: This tool performs equivalence testing and calculates functional di
 homepage: https://bioconductor.org/packages/release/bioc/html/goSorensen.html
 ---
 
-
 # bioconductor-gosorensen
 
 name: bioconductor-gosorensen

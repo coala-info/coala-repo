@@ -1,9 +1,10 @@
 ---
 name: ucsc-pslprottornacoords
-description: "This tool converts protein alignment coordinates to nucleotide coordinates. Use when user asks to 'convert protein alignment coordinates to nucleotide coordinates', 'transform protein alignments for RNA analysis', 'map protein alignments to transcript-level variants'."
+description: This tool converts protein alignment coordinates to nucleotide coordinates. Use when user asks to 'convert protein alignment coordinates to nucleotide coordinates', 'transform protein alignments for RNA analysis', 'map protein alignments to transcript-level variants'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslprottornacoords:482--h0b57e2e_0"
 ---
-
 
 # ucsc-pslprottornacoords
 

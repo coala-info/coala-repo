@@ -4,7 +4,6 @@ description: This package provides access to pre-computed transcriptional regula
 homepage: https://bioconductor.org/packages/release/data/experiment/html/aracne.networks.html
 ---
 
-
 # bioconductor-aracne.networks
 
 name: bioconductor-aracne.networks

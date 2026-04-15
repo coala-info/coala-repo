@@ -4,7 +4,6 @@ description: This tool provides a standardized framework for Bioconductor packag
 homepage: https://bioconductor.org/packages/release/bioc/html/basilisk.utils.html
 ---
 
-
 # bioconductor-basilisk.utils
 
 ## Overview

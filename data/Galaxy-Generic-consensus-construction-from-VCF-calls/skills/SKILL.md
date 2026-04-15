@@ -1,10 +1,12 @@
 ---
 name: generic-consensus-construction-from-vcf-calls
-description: "This bioinformatics workflow generates a consensus FASTA sequence from a reference genome and VCF variant calls by integrating depth-based masking and allele-frequency filtering using bcftools, bedtools, and SnpSift. Use this skill when you need to reconstruct a sample-specific genome sequence that incorporates high-confidence variants while masking low-coverage regions and ambiguous sites to ensure downstream comparative genomic accuracy."
-homepage: https://workflowhub.eu/workflows/356
+description: This bioinformatics workflow generates a consensus FASTA sequence from a reference genome and VCF variant calls by integrating depth-based masking and allele-frequency filtering using bcftools, bedtools, and SnpSift. Use this skill when you need to reconstruct a sample-specific genome sequence that incorporates high-confidence variants while masking low-coverage regions and ambiguous sites to ensure downstream comparative genomic accuracy.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Generic consensus construction from VCF calls
+# generic-consensus-construction-from-vcf-calls
 
 ## Overview
 

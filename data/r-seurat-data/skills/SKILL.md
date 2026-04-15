@@ -4,7 +4,6 @@ description: This tool provides access to the SeuratData R package for loading c
 homepage: https://cran.r-project.org/web/packages/seurat-data/index.html
 ---
 
-
 # r-seurat-data
 
 name: r-seurat-data

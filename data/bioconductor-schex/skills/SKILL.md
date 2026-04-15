@@ -4,7 +4,6 @@ description: This tool provides hexagonal binning and visualization to summarize
 homepage: https://bioconductor.org/packages/release/bioc/html/schex.html
 ---
 
-
 # bioconductor-schex
 
 name: bioconductor-schex

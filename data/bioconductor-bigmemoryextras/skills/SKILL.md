@@ -4,7 +4,6 @@ description: This package manages large, file-backed matrices in R using the Big
 homepage: https://bioconductor.org/packages/3.8/bioc/html/bigmemoryExtras.html
 ---
 
-
 # bioconductor-bigmemoryextras
 
 name: bioconductor-bigmemoryextras

@@ -4,7 +4,6 @@ description: This tool performs Penalized Multivariate Analysis in R to identify
 homepage: https://cloud.r-project.org/web/packages/PMA/index.html
 ---
 
-
 # r-pma
 
 name: r-pma

@@ -2,8 +2,9 @@
 name: genesplicer
 description: Predicts splice sites in DNA sequences. Use when user asks to predict splice sites or identify exon-intron boundaries.
 homepage: https://github.com/heliocentric/genesplicer
+metadata:
+  docker_image: "quay.io/biocontainers/genesplicer:1.0--1"
 ---
-
 
 # genesplicer
 

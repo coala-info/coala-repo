@@ -4,7 +4,6 @@ description: The qpcR package provides a comprehensive toolset for the mechanist
 homepage: https://cran.r-project.org/web/packages/qpcr/index.html
 ---
 
-
 # r-qpcr
 
 ## Overview

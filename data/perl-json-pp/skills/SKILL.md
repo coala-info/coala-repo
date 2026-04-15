@@ -1,9 +1,10 @@
 ---
 name: perl-json-pp
-description: "perl-json-pp provides a pure-Perl implementation for encoding and decoding JSON data. Use when user asks to pretty-print JSON, validate JSON files, convert JSON to Perl Data::Dumper format, or programmatically handle JSON data within Perl scripts."
+description: perl-json-pp provides a pure-Perl implementation for encoding and decoding JSON data. Use when user asks to pretty-print JSON, validate JSON files, convert JSON to Perl Data::Dumper format, or programmatically handle JSON data within Perl scripts.
 homepage: http://metacpan.org/pod/JSON::PP
+metadata:
+  docker_image: "quay.io/biocontainers/perl-json-pp:4.11--pl5321hdfd78af_0"
 ---
-
 
 # perl-json-pp
 

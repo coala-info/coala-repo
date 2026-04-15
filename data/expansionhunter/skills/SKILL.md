@@ -2,8 +2,9 @@
 name: expansionhunter
 description: ExpansionHunter genotypes short tandem repeats by analyzing sequence graphs to identify expansions that exceed the sequencing read length. Use when user asks to genotype STRs, identify repeat expansions, or estimate the size of repetitive genomic regions from BAM or CRAM files.
 homepage: https://github.com/Illumina/ExpansionHunter
+metadata:
+  docker_image: "quay.io/biocontainers/expansionhunter:5.0.0--hc26b3af_5"
 ---
-
 
 # expansionhunter
 

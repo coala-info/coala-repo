@@ -4,7 +4,6 @@ description: Bioconductor-splicegear provides a framework for managing, visualiz
 homepage: https://bioconductor.org/packages/3.5/bioc/html/splicegear.html
 ---
 
-
 # bioconductor-splicegear
 
 name: bioconductor-splicegear

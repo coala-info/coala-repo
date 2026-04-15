@@ -1,10 +1,12 @@
 ---
 name: gtn-chip-seq-formation-of-super-structures-on-xi
-description: "This epigenetics workflow processes paired-end ChIP-seq reads and BAM files for histone marks and transcription factors using Trim Galore, Bowtie2, MACS2, and deepTools to analyze chromatin structures. Use this skill when investigating the formation of large-scale chromatin superstructures on the inactive X chromosome or identifying enrichment patterns of H3K4me3, H3K27me3, and CTCF."
-homepage: https://workflowhub.eu/workflows/1615
+description: This epigenetics workflow processes paired-end ChIP-seq reads and BAM files for histone marks and transcription factors using Trim Galore, Bowtie2, MACS2, and deepTools to analyze chromatin structures. Use this skill when investigating the formation of large-scale chromatin superstructures on the inactive X chromosome or identifying enrichment patterns of H3K4me3, H3K27me3, and CTCF.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN - ChIP Seq - Formation Of Super Structures On Xi
+# gtn-chip-seq-formation-of-super-structures-on-xi
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides the CDF environment and probe mapping data fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene10stv1cdf.html
 ---
 
-
 # bioconductor-mogene10stv1cdf
 
 ## Overview

@@ -2,8 +2,9 @@
 name: genoflu
 description: GenoFLU is a bioinformatics pipeline that classifies highly pathogenic avian influenza H5N1 genotypes by comparing viral gene segments against a curated reference database. Use when user asks to classify H5N1 influenza genotypes, identify viral reassortment events, or analyze avian influenza genome segments using BLAST.
 homepage: https://github.com/USDA-VS/GenoFLU
+metadata:
+  docker_image: "quay.io/biocontainers/genoflu:1.06--hdfd78af_0"
 ---
-
 
 # genoflu
 

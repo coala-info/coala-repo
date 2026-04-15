@@ -2,6 +2,8 @@
 name: hapbin
 description: hapbin is a high-performance software suite used to detect signatures of natural selection in large-scale genomic datasets using haplotype-based statistics. Use when user asks to calculate EHH, perform genome-wide iHS scans, compare populations using XP-EHH, or convert haplotype files into binary format.
 homepage: https://github.com/evotools/hapbin
+metadata:
+  docker_image: "quay.io/biocontainers/hapbin:1.3.0--h503566f_6"
 ---
 
 # hapbin

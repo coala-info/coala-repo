@@ -2,8 +2,9 @@
 name: biobb_md
 description: The biobb_md tool provides a standardized interface for executing molecular dynamics tasks and GROMACS simulation workflows. Use when user asks to convert PDB files to topologies, define simulation boxes, solvate structures, or execute molecular dynamics simulations.
 homepage: https://github.com/bioexcel/biobb_md
+metadata:
+  docker_image: "quay.io/biocontainers/biobb_structure_checking:3.15.6--pyhdc42f0e_0"
 ---
-
 
 # biobb_md
 

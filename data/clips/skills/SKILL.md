@@ -1,9 +1,10 @@
 ---
 name: clips
-description: "CLIP connects images and text using a multimodal neural network to perform zero-shot classification and feature extraction. Use when user asks to perform zero-shot image classification, encode images or text into embeddings, calculate similarity between visual and textual data, or load pre-trained CLIP models."
+description: CLIP connects images and text using a multimodal neural network to perform zero-shot classification and feature extraction. Use when user asks to perform zero-shot image classification, encode images or text into embeddings, calculate similarity between visual and textual data, or load pre-trained CLIP models.
 homepage: https://github.com/openai/CLIP
+metadata:
+  docker_image: "biocontainers/clips:v1.0.7.348clips-4-deb-py2_cv1"
 ---
-
 
 # clips
 

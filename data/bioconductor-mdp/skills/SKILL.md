@@ -4,7 +4,6 @@ description: The mdp package quantifies the molecular degree of perturbation by 
 homepage: https://bioconductor.org/packages/release/bioc/html/mdp.html
 ---
 
-
 # bioconductor-mdp
 
 ## Overview

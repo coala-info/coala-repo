@@ -1,9 +1,12 @@
 ---
 name: testentrytitlenew
-description: "This CWL workflow imports raw cryo-electron microscopy movies using pwem and manages their deposition to the EMPIAR database. Use this skill when you need to archive structural biology datasets or share raw microscopy data with the scientific community for peer review and reproducibility."
+description: This CWL workflow imports raw cryo-electron microscopy movies using pwem and manages their deposition to the EMPIAR database. Use this skill when you need to archive structural biology datasets or share raw microscopy data with the scientific community for peer review and reproducibility.
 homepage: https://workflowhub.eu/workflows/183
+metadata:
+  docker_image: "N/A"
 ---
-# testEntryTitleNew
+
+# testentrytitlenew
 
 ## Overview
 

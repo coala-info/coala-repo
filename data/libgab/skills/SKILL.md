@@ -1,9 +1,10 @@
 ---
 name: libgab
-description: "libgab is a C++ library providing optimized subroutines and classes for bioinformatics data processing and genomic file manipulation. Use when user asks to parse FastQ sequences, modify BAM headers, reconstruct reference sequences from alignments, or manage the library's compilation and bamtools dependencies."
+description: libgab is a C++ library providing optimized subroutines and classes for bioinformatics data processing and genomic file manipulation. Use when user asks to parse FastQ sequences, modify BAM headers, reconstruct reference sequences from alignments, or manage the library's compilation and bamtools dependencies.
 homepage: https://github.com/grenaud/libgab
+metadata:
+  docker_image: "quay.io/biocontainers/libgab:1.0.5--h06902ac_15"
 ---
-
 
 # libgab
 

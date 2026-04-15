@@ -2,8 +2,9 @@
 name: rust-overlaps
 description: rust-overlaps identifies approximate suffix-prefix overlaps between sequences for constructing overlap graphs in de novo assembly. Use when user asks to find sequence overlaps, solve the approximate suffix-prefix overlap problem, or identify matches between sequence suffixes and prefixes with a specific error rate.
 homepage: https://github.com/jbaaijens/rust-overlaps
+metadata:
+  docker_image: "quay.io/biocontainers/rust-overlaps:0.1.1--h577a1d6_10"
 ---
-
 
 # rust-overlaps
 

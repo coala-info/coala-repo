@@ -4,7 +4,6 @@ description: DEScan2 provides an integrated framework for identifying differenti
 homepage: https://bioconductor.org/packages/release/bioc/html/DEScan2.html
 ---
 
-
 # bioconductor-descan2
 
 ## Overview

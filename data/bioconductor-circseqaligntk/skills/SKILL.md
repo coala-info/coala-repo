@@ -4,7 +4,6 @@ description: This tool performs end-to-end analysis of RNA-Seq data from circula
 homepage: https://bioconductor.org/packages/release/bioc/html/CircSeqAlignTk.html
 ---
 
-
 # bioconductor-circseqaligntk
 
 name: bioconductor-circseqaligntk

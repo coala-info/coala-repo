@@ -1,9 +1,10 @@
 ---
 name: polymutt
-description: "Detects de novo mutations in families and performs variant calling. Use when user asks to detect de novo mutations or call variants in families."
+description: Detects de novo mutations in families and performs variant calling. Use when user asks to detect de novo mutations or call variants in families.
 homepage: https://genome.sph.umich.edu/wiki/Polymutt
+metadata:
+  docker_image: "quay.io/biocontainers/polymutt:0.18--0"
 ---
-
 
 # polymutt
 

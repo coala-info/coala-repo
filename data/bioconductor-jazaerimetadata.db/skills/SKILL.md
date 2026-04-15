@@ -4,7 +4,6 @@ description: This tool provides comprehensive annotation data and mappings for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JazaeriMetaData.db.html
 ---
 
-
 # bioconductor-jazaerimetadata.db
 
 name: bioconductor-jazaerimetadata.db

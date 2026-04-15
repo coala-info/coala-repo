@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cytogenetics.array.html
 ---
 
-
 # bioconductor-pd.cytogenetics.array
 
 name: bioconductor-pd.cytogenetics.array

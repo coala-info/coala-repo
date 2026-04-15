@@ -4,7 +4,6 @@ description: This package provides proteomics benchmark datasets formatted as MS
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DAPARdata.html
 ---
 
-
 # bioconductor-dapardata
 
 name: bioconductor-dapardata

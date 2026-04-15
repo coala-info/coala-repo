@@ -4,7 +4,6 @@ description: This tool provides a scoped logging utility for R based on the log4
 homepage: https://cloud.r-project.org/web/packages/futile.logger/index.html
 ---
 
-
 # r-futile.logger
 
 name: r-futile.logger

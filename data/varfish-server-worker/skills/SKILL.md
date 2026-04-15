@@ -2,6 +2,8 @@
 name: varfish-server-worker
 description: VarFish Server Worker processes genomic data by converting VCF files into optimized internal formats, building reference databases, and executing high-speed variant queries. Use when user asks to ingest sequence or structural variants, execute variant filtration queries, aggregate carrier counts, or compile reference databases into binary formats.
 homepage: https://github.com/bihealth/varfish-server-worker
+metadata:
+  docker_image: "quay.io/biocontainers/varfish-server-worker:0.17.3--h13c227e_0"
 ---
 
 # varfish-server-worker

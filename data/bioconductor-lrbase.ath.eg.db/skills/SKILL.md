@@ -4,7 +4,6 @@ description: This package provides a unified interface and tools for managing li
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Ath.eg.db.html
 ---
 
-
 # bioconductor-lrbase.ath.eg.db
 
 name: bioconductor-lrbase.ath.eg.db

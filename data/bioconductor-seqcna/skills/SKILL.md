@@ -4,7 +4,6 @@ description: This tool performs copy number analysis on high-throughput sequenci
 homepage: https://bioconductor.org/packages/3.9/bioc/html/seqCNA.html
 ---
 
-
 # bioconductor-seqcna
 
 name: bioconductor-seqcna

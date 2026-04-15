@@ -2,8 +2,9 @@
 name: stringtie
 description: StringTie assembles RNA-Seq alignments into full-length transcripts and quantifies their expression levels using a network flow algorithm. Use when user asks to assemble transcripts, quantify gene expression, merge multiple sample assemblies, or process long-read and hybrid RNA-Seq datasets.
 homepage: https://ccb.jhu.edu/software/stringtie
+metadata:
+  docker_image: "quay.io/biocontainers/stringtie:3.0.3--h29c0135_0"
 ---
-
 
 # stringtie
 

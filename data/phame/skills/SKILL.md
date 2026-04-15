@@ -2,8 +2,9 @@
 name: phame
 description: PhaME is a bioinformatics pipeline that automates SNP extraction and phylogenetic tree reconstruction from genomic data. Use when user asks to identify SNPs, build high-resolution phylogenetic trees, or detect signatures of positive selection in coding sequences.
 homepage: https://github.com/LANL-Bioinformatics/PhaME
+metadata:
+  docker_image: "quay.io/biocontainers/phame:1.0.3--pl5321hdfd78af_3"
 ---
-
 
 # phame
 

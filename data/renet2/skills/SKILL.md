@@ -2,6 +2,8 @@
 name: renet2
 description: RENET2 is a deep learning framework designed to extract gene-disease relationships from full-text scientific articles. Use when user asks to identify gene-disease associations, train custom relation extraction models, or evaluate performance using cross-validation on annotated biomedical text.
 homepage: https://github.com/sujunhao/RENET2
+metadata:
+  docker_image: "quay.io/biocontainers/renet2:1.2--py_0"
 ---
 
 # renet2

@@ -1,9 +1,10 @@
 ---
 name: tesseract
-description: "Tesseract is an open-source OCR engine that extracts text from images in over 100 languages. Use when user asks to extract text from images, create searchable PDFs, generate hOCR or TSV files, or perform OCR using specific page segmentation modes."
+description: Tesseract is an open-source OCR engine that extracts text from images in over 100 languages. Use when user asks to extract text from images, create searchable PDFs, generate hOCR or TSV files, or perform OCR using specific page segmentation modes.
 homepage: https://github.com/tesseract-ocr/tesseract
+metadata:
+  docker_image: "quay.io/biocontainers/tesseract:5.5.1"
 ---
-
 
 # tesseract
 

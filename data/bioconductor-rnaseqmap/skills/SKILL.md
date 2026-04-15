@@ -4,7 +4,6 @@ description: The rnaSeqMap package provides a middleware API for RNA-seq seconda
 homepage: https://bioconductor.org/packages/3.5/bioc/html/rnaSeqMap.html
 ---
 
-
 # bioconductor-rnaseqmap
 
 name: bioconductor-rnaseqmap

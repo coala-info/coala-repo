@@ -2,8 +2,9 @@
 name: sicer
 description: SICER identifies significant domains of enrichment in ChIP-Seq data, specifically targeting broad histone modifications through a spatial clustering approach. Use when user asks to call broad peaks, identify enriched genomic regions, or analyze histone modification data.
 homepage: http://home.gwu.edu/~wpeng/Software.htm
+metadata:
+  docker_image: "quay.io/biocontainers/sicer:1.1--py27_2"
 ---
-
 
 # sicer
 

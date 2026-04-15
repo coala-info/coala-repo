@@ -4,7 +4,6 @@ description: This package provides annotation data and probe mappings for the Af
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.guigene.1.0.st.html
 ---
 
-
 # bioconductor-pd.guigene.1.0.st
 
 name: bioconductor-pd.guigene.1.0.st

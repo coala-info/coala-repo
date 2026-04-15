@@ -4,7 +4,6 @@ description: The r-rtfbs tool identifies transcription factor binding sites in g
 homepage: https://cran.r-project.org/web/packages/rtfbs/index.html
 ---
 
-
 # r-rtfbs
 
 name: r-rtfbs

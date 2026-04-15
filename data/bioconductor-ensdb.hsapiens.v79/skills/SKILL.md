@@ -4,7 +4,6 @@ description: This package provides Ensembl-based genome annotations for Homo sap
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Hsapiens.v79.html
 ---
 
-
 # bioconductor-ensdb.hsapiens.v79
 
 name: bioconductor-ensdb.hsapiens.v79

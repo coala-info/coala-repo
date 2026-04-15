@@ -4,7 +4,6 @@ description: GenomeInfoDb provides a standardized interface for mapping, convert
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomeInfoDb.html
 ---
 
-
 # bioconductor-genomeinfodb
 
 ## Overview

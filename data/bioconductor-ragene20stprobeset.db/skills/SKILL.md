@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation data for mapping Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene20stprobeset.db.html
 ---
 
-
 # bioconductor-ragene20stprobeset.db
 
 ## Overview

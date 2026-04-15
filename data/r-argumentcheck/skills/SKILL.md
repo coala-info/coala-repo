@@ -4,7 +4,6 @@ description: This R package collects multiple argument validation errors and war
 homepage: https://cloud.r-project.org/web/packages/ArgumentCheck/index.html
 ---
 
-
 # r-argumentcheck
 
 name: r-argumentcheck

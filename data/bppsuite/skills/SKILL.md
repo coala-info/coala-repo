@@ -2,6 +2,8 @@
 name: bppsuite
 description: bppsuite is a modular collection of command-line tools for phylogenetics and molecular evolution research. Use when user asks to estimate model parameters, simulate molecular sequences, reconstruct ancestral states, or compute population genetics statistics.
 homepage: https://github.com/BioPP/bppsuite
+metadata:
+  docker_image: "biocontainers/bppsuite:v2.4.1-1-deb_cv1"
 ---
 
 # bppsuite

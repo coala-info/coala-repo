@@ -4,7 +4,6 @@ description: This package implements a hierarchical ensemble method using factor
 homepage: https://bioconductor.org/packages/release/bioc/html/fgga.html
 ---
 
-
 # bioconductor-fgga
 
 ## Overview

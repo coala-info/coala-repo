@@ -4,7 +4,6 @@ description: This package provides human functional interaction datasets derived
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FIs.html
 ---
 
-
 # bioconductor-fis
 
 name: bioconductor-fis

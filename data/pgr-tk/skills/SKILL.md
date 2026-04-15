@@ -2,8 +2,9 @@
 name: pgr-tk
 description: The PanGenomic Research Tool Kit performs multiscale analysis and structural decomposition of pangenomes to quantify complex genomic diversity. Use when user asks to construct minimizer databases, query genomic sequences, generate principal bundle decompositions, or visualize structural variants and genome rearrangements.
 homepage: https://github.com/Sema4-Research/pgr-tk
+metadata:
+  docker_image: "quay.io/biocontainers/pgr-tk:0.5.1--py38hfa1e82d_1"
 ---
-
 
 # pgr-tk
 

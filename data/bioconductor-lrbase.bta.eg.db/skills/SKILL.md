@@ -4,7 +4,6 @@ description: This Bioconductor package manages ligand-receptor interaction data 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Bta.eg.db.html
 ---
 
-
 # bioconductor-lrbase.bta.eg.db
 
 name: bioconductor-lrbase.bta.eg.db

@@ -2,8 +2,9 @@
 name: mantis-msi2
 description: MANTIS2 identifies microsatellite instability by comparing repeat lengths between matched tumor and normal BAM files. Use when user asks to identify MSI, calculate instability scores, or detect microsatellite loci differences between paired samples.
 homepage: https://github.com/nh13/MANTIS2/
+metadata:
+  docker_image: "quay.io/biocontainers/mantis-msi2:2.0.0--h9948957_3"
 ---
-
 
 # mantis-msi2
 

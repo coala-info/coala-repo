@@ -4,7 +4,6 @@ description: This tool performs biological activity inference from omics data by
 homepage: https://bioconductor.org/packages/release/bioc/html/decoupleR.html
 ---
 
-
 # bioconductor-decoupler
 
 name: bioconductor-decoupler

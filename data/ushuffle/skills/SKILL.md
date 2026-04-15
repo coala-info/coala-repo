@@ -1,9 +1,10 @@
 ---
 name: ushuffle
-description: "ushuffle randomizes biological sequences while preserving k-mer counts. Use when user asks to shuffle DNA, RNA, or protein sequences while preserving k-mer counts."
+description: ushuffle randomizes biological sequences while preserving k-mer counts. Use when user asks to shuffle DNA, RNA, or protein sequences while preserving k-mer counts.
 homepage: http://digital.cs.usu.edu/~mjiang/ushuffle/
+metadata:
+  docker_image: "quay.io/biocontainers/ushuffle:1.2.2--py312h0fa9677_10"
 ---
-
 
 # ushuffle
 

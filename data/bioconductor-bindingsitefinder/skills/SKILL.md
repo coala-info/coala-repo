@@ -4,7 +4,6 @@ description: BindingSiteFinder defines, filters, and visualizes RNA-binding prot
 homepage: https://bioconductor.org/packages/release/bioc/html/BindingSiteFinder.html
 ---
 
-
 # bioconductor-bindingsitefinder
 
 name: bioconductor-bindingsitefinder

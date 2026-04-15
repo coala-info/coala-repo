@@ -2,8 +2,9 @@
 name: taxburst
 description: taxburst generates interactive sunburst plots to visualize taxonomic data and metagenomic community composition. Use when user asks to create interactive taxonomic visualizations, plot Sourmash or SingleM results, or generate web-based sunburst charts from lineage annotations.
 homepage: https://github.com/taxburst/taxburst
+metadata:
+  docker_image: "quay.io/biocontainers/taxburst:0.3.2--pyhdfd78af_0"
 ---
-
 
 # taxburst
 

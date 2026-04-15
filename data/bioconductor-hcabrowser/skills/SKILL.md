@@ -4,7 +4,6 @@ description: This tool provides an R interface to search, filter, and retrieve s
 homepage: https://bioconductor.org/packages/3.9/bioc/html/HCABrowser.html
 ---
 
-
 # bioconductor-hcabrowser
 
 name: bioconductor-hcabrowser

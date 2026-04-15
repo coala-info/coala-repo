@@ -4,7 +4,6 @@ description: This package provides platform design annotation for the Affymetrix
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ragene.1.0.st.v1.html
 ---
 
-
 # bioconductor-pd.ragene.1.0.st.v1
 
 name: bioconductor-pd.ragene.1.0.st.v1

@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of colony formation assays,
 homepage: https://bioconductor.org/packages/release/bioc/html/CFAssay.html
 ---
 
-
 # bioconductor-cfassay
 
 name: bioconductor-cfassay

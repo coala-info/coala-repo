@@ -1,10 +1,12 @@
 ---
 name: erga-ontillumina-assemblyqc-nextdenovohypo-v2403-wf2
-description: "This ERGA workflow performs hybrid de novo genome assembly using ONT long reads and Illumina short reads, utilizing NextDenovo for initial assembly and HyPo for polishing alongside comprehensive QC tools like BUSCO and Merqury. Use this skill when you need to generate a high-quality, polished eukaryotic genome assembly from a combination of long-read and short-read sequencing data while rigorously assessing assembly completeness and base-level accuracy."
-homepage: https://workflowhub.eu/workflows/789
+description: This ERGA workflow performs hybrid de novo genome assembly using ONT long reads and Illumina short reads, utilizing NextDenovo for initial assembly and HyPo for polishing alongside comprehensive QC tools like BUSCO and Merqury. Use this skill when you need to generate a high-quality, polished eukaryotic genome assembly from a combination of long-read and short-read sequencing data while rigorously assessing assembly completeness and base-level accuracy.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA ONT+Illumina Assembly+QC NextDenovo+HyPo v2403 (WF2)
+# erga-ontillumina-assemblyqc-nextdenovohypo-v2403-wf2
 
 ## Overview
 

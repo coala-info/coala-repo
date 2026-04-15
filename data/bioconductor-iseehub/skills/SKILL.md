@@ -4,7 +4,6 @@ description: iSEEhub provides an interactive interface for browsing and visualiz
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEhub.html
 ---
 
-
 # bioconductor-iseehub
 
 name: bioconductor-iseehub

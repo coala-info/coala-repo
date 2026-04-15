@@ -1,10 +1,12 @@
 ---
 name: influenza-a-isolate-subtyping-and-consensus-sequence-generat
-description: "This workflow performs subtyping and consensus sequence generation for batches of Illumina paired-end Influenza A isolates by using VAPOR, bwa-mem, and iVar to identify and map reads against the best-matching reference segments. Use this skill when you need to determine HA/NA subtypes, generate high-quality consensus genomes from variable viral samples, and perform phylogenetic analysis or SNP visualization across multiple influenza isolates."
-homepage: https://workflowhub.eu/workflows/1260
+description: This workflow performs subtyping and consensus sequence generation for batches of Illumina paired-end Influenza A isolates by using VAPOR, bwa-mem, and iVar to identify and map reads against the best-matching reference segments. Use this skill when you need to determine HA/NA subtypes, generate high-quality consensus genomes from variable viral samples, and perform phylogenetic analysis or SNP visualization across multiple influenza isolates.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Influenza A isolate subtyping and consensus sequence generation
+# influenza-a-isolate-subtyping-and-consensus-sequence-generat
 
 ## Overview
 

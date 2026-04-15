@@ -1,9 +1,8 @@
 ---
 name: bioconductor-cosmiq
-description: "bioconductor-cosmiq preprocesses liquid- or gas-chromatography mass spectrometry data to improve signal-to-noise ratios and detect peaks. Use when user asks to preprocess LCMS or GCMS data, combine mass spectra into a master spectrum, or perform peak picking using continuous wavelet transformation."
+description: bioconductor-cosmiq preprocesses liquid- or gas-chromatography mass spectrometry data to improve signal-to-noise ratios and detect peaks. Use when user asks to preprocess LCMS or GCMS data, combine mass spectra into a master spectrum, or perform peak picking using continuous wavelet transformation.
 homepage: https://bioconductor.org/packages/release/bioc/html/cosmiq.html
 ---
-
 
 # bioconductor-cosmiq
 

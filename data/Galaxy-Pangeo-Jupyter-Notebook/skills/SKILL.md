@@ -1,10 +1,12 @@
 ---
 name: pangeo-jupyter-notebook
-description: "This Galaxy workflow launches an interactive Pangeo Jupyter Notebook environment tailored for geosciences and climate science using the Xarray library. Use this skill when you need to analyze large-scale multidimensional environmental datasets or perform high-performance computations on big data in the atmospheric and oceanic sciences."
-homepage: https://workflowhub.eu/workflows/1423
+description: This Galaxy workflow launches an interactive Pangeo Jupyter Notebook environment tailored for geosciences and climate science using the Xarray library. Use this skill when you need to analyze large-scale multidimensional environmental datasets or perform high-performance computations on big data in the atmospheric and oceanic sciences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pangeo Jupyter Notebook
+# pangeo-jupyter-notebook
 
 ## Overview
 

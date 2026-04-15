@@ -2,8 +2,9 @@
 name: digestiflow-cli
 description: The digestiflow-cli tool automates the registration and synchronization of Illumina sequencing flow cells with the Digestiflow management system. Use when user asks to ingest flow cell directories, update sequencing run metadata, or generate adapter index histograms for quality control.
 homepage: https://github.com/bihealth/digestiflow-cli
+metadata:
+  docker_image: "quay.io/biocontainers/digestiflow-cli:0.5.8--hc234bb7_7"
 ---
-
 
 # digestiflow-cli
 

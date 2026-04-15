@@ -4,7 +4,6 @@ description: This package provides annotation data and SQLite-based infrastructu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mapping50k.hind240.html
 ---
 
-
 # bioconductor-pd.mapping50k.hind240
 
 name: bioconductor-pd.mapping50k.hind240

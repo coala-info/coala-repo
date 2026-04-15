@@ -4,7 +4,6 @@ description: This package provides platform design and annotation information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.maize.html
 ---
 
-
 # bioconductor-pd.maize
 
 name: bioconductor-pd.maize

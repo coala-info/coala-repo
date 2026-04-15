@@ -4,7 +4,6 @@ description: This package provides a collection of microbiome datasets with know
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MicrobiomeBenchmarkData.html
 ---
 
-
 # bioconductor-microbiomebenchmarkdata
 
 ## Overview

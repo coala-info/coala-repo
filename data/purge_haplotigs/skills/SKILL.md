@@ -2,8 +2,9 @@
 name: purge_haplotigs
 description: The purge_haplotigs pipeline identifies and removes redundant genomic segments from a diploid assembly to create a cleaner haploid representation. Use when user asks to generate read depth histograms, analyze contig coverage, or purge redundant haplotigs from a genome assembly.
 homepage: https://bitbucket.org/mroachawri/purge_haplotigs/
+metadata:
+  docker_image: "quay.io/biocontainers/purge-dups-runner:2019.12.20--pyhdfd78af_0"
 ---
-
 
 # purge_haplotigs
 

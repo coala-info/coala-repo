@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Rattus norvegic
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Rnorvegicus.UCSC.rn5.html
 ---
 
-
 # bioconductor-bsgenome.rnorvegicus.ucsc.rn5
 
 name: bioconductor-bsgenome.rnorvegicus.ucsc.rn5

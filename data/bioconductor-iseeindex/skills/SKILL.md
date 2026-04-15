@@ -4,7 +4,6 @@ description: This tool creates interactive landing pages for collections of Bioc
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEindex.html
 ---
 
-
 # bioconductor-iseeindex
 
 name: bioconductor-iseeindex

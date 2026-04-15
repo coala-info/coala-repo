@@ -2,8 +2,9 @@
 name: fis-gtm
 description: FIS GT.M is a high-performance, hierarchical database engine optimized for transaction processing. Use when user asks to compile the engine from source, configure the build environment, or create a distributable package.
 homepage: https://github.com/luisibanez/fis-gtm
+metadata:
+  docker_image: "biocontainers/fis-gtm:v6.3-007-1-deb_cv1"
 ---
-
 
 # fis-gtm
 

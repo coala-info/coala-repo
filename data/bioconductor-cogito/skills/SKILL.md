@@ -4,7 +4,6 @@ description: This tool automates the comparison and reporting of multi-omics gen
 homepage: https://bioconductor.org/packages/release/bioc/html/Cogito.html
 ---
 
-
 # bioconductor-cogito
 
 name: bioconductor-cogito

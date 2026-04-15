@@ -4,7 +4,6 @@ description: This tool calculates Chromosome Instability (CIN) indices from DNA 
 homepage: https://bioconductor.org/packages/release/bioc/html/CINdex.html
 ---
 
-
 # bioconductor-cindex
 
 name: bioconductor-cindex

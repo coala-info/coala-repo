@@ -2,8 +2,9 @@
 name: ucsc-localtime
 description: ucsc-localtime translates Unix epoch integers into human-readable local date and time strings. Use when user asks to convert Unix timestamps to local time, process multiple timestamps, or extract and convert timestamps from files.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-localtime:482--h0b57e2e_0"
 ---
-
 
 # ucsc-localtime
 

@@ -2,10 +2,9 @@
 name: tiddit
 description: TIDDIT is a structural variant caller that also calculates genomic coverage. Use when user asks to detect structural variants, identify chromosomal rearrangements, calculate genomic coverage, or identify copy number variations.
 homepage: https://github.com/SciLifeLab/TIDDIT
+metadata:
+  docker_image: "quay.io/biocontainers/tiddit:3.9.4--py311h93dcfea_0"
 ---
-
-
-
 
 # tiddit
 

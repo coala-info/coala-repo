@@ -2,6 +2,8 @@
 name: pbstarphase
 description: pbstarphase is a pharmacogenomic diplotyper that uses phased PacBio HiFi sequencing data to accurately assign star-allele nomenclature to genes. Use when user asks to call PGx diplotypes, identify star alleles from long-read data, or generate PharmCAT-compatible outputs.
 homepage: https://github.com/PacificBiosciences/pb-StarPhase
+metadata:
+  docker_image: "quay.io/biocontainers/pbstarphase:2.0.1--h9ee0642_0"
 ---
 
 # pbstarphase

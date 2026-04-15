@@ -4,7 +4,6 @@ description: This package provides gene expression datasets and analysis pipelin
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Fletcher2013a.html
 ---
 
-
 # bioconductor-fletcher2013a
 
 name: bioconductor-fletcher2013a

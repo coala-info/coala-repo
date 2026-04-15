@@ -4,6 +4,8 @@ description: This pipeline processes SAMMY-seq data from FASTQ files using a sam
 homepage: https://github.com/nf-core/sammyseq
 ---
 
+# sammyseq
+
 ## Overview
 SAMMY-seq (Sequential Analysis of MacroMolecules accessibilitY sequencing) is a methodology used to analyze chromatin state and genome compartmentalization. The nf-core/sammyseq pipeline automates the processing of these sequencing libraries, providing a standardized workflow for mapping biochemical properties of chromatin domains.
 

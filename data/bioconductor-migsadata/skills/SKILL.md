@@ -4,7 +4,6 @@ description: This package provides breast cancer datasets and pre-computed resul
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/MIGSAdata.html
 ---
 
-
 # bioconductor-migsadata
 
 name: bioconductor-migsadata

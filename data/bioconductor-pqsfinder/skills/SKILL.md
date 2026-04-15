@@ -4,7 +4,6 @@ description: The pqsfinder package provides an efficient scoring-based algorithm
 homepage: https://bioconductor.org/packages/release/bioc/html/pqsfinder.html
 ---
 
-
 # bioconductor-pqsfinder
 
 ## Overview

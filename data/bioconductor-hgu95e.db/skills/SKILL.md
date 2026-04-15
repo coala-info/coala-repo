@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Affymet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95e.db.html
 ---
 
-
 # bioconductor-hgu95e.db
 
 name: bioconductor-hgu95e.db

@@ -2,8 +2,9 @@
 name: cnvpytor
 description: CNVpytor is a Python-based tool for copy number variation analysis using read-depth and allele imbalance signals from sequencing data. Use when user asks to initialize pytor files, generate histograms, partition data, call variations, or analyze SNP and B-allele frequency data.
 homepage: https://github.com/abyzovlab/CNVpytor
+metadata:
+  docker_image: "quay.io/biocontainers/cnvpytor:1.3.2--pyhdfd78af_0"
 ---
-
 
 # cnvpytor
 

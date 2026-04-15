@@ -4,7 +4,6 @@ description: Bioconductor-scfind indexes and searches single-cell RNA-seq data t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/scfind.html
 ---
 
-
 # bioconductor-scfind
 
 name: bioconductor-scfind

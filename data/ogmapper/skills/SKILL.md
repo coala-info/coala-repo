@@ -1,9 +1,10 @@
 ---
 name: ogmapper
-description: "ogmapper is a fast and memory-efficient tool for mapping short DNA or RNA sequencing reads to a reference genome. Use when user asks to map short reads to a reference genome or generate SAM files for downstream analysis."
+description: ogmapper is a fast and memory-efficient tool for mapping short DNA or RNA sequencing reads to a reference genome. Use when user asks to map short reads to a reference genome or generate SAM files for downstream analysis.
 homepage: https://github.com/vtrevino/ogmapper
+metadata:
+  docker_image: "quay.io/biocontainers/ogmapper:1.0.0--h077b44d_0"
 ---
-
 
 # ogmapper
 

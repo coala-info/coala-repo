@@ -4,7 +4,6 @@ description: This tool performs soft clustering of gene expression data using fu
 homepage: https://bioconductor.org/packages/release/bioc/html/Mfuzz.html
 ---
 
-
 # bioconductor-mfuzz
 
 name: bioconductor-mfuzz

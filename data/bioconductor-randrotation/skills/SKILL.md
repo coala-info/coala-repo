@@ -4,7 +4,6 @@ description: This package generates randomly rotated data to resample null distr
 homepage: https://bioconductor.org/packages/release/bioc/html/randRotation.html
 ---
 
-
 # bioconductor-randrotation
 
 ## Overview

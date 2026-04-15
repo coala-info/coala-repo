@@ -4,7 +4,6 @@ description: This tool detects, classifies, and locates Uniparental Disomy (UPD)
 homepage: https://bioconductor.org/packages/release/bioc/html/UPDhmm.html
 ---
 
-
 # bioconductor-updhmm
 
 name: bioconductor-updhmm

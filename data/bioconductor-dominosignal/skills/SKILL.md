@@ -4,7 +4,6 @@ description: This tool analyzes intra- and intercellular signaling in single-cel
 homepage: https://bioconductor.org/packages/release/bioc/html/dominoSignal.html
 ---
 
-
 # bioconductor-dominosignal
 
 name: bioconductor-dominosignal

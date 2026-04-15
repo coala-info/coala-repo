@@ -4,7 +4,6 @@ description: This tool provides a standardized command-line interface toolkit fo
 homepage: https://cran.r-project.org/web/packages/acidcli/index.html
 ---
 
-
 # r-acidcli
 
 name: r-acidcli

@@ -2,8 +2,9 @@
 name: biosyntax
 description: bioSyntax provides syntax highlighting for computational biology file formats to improve the manual inspection of genomic data. Use when user asks to view highlighted biological files in the terminal, inspect SAM or VCF records with color-coding, or pipe bioinformatics tool outputs into a formatted viewer.
 homepage: https://github.com/bioSyntax/bioSyntax
+metadata:
+  docker_image: "biocontainers/biosyntax:v1.0.0b-1-deb_cv1"
 ---
-
 
 # biosyntax
 

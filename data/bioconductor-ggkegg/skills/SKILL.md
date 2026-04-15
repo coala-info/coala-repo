@@ -4,7 +4,6 @@ description: This tool visualizes KEGG pathways, modules, and networks using the
 homepage: https://bioconductor.org/packages/release/bioc/html/ggkegg.html
 ---
 
-
 # bioconductor-ggkegg
 
 name: bioconductor-ggkegg

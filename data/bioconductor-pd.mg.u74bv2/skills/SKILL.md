@@ -4,7 +4,6 @@ description: This package provides platform design information for Affymetrix Mo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mg.u74bv2.html
 ---
 
-
 # bioconductor-pd.mg.u74bv2
 
 name: bioconductor-pd.mg.u74bv2

@@ -4,7 +4,6 @@ description: This Bioconductor package provides genomic positions and IUPAC ambi
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/SNPlocs.Hsapiens.dbSNP151.GRCh38.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp151.grch38
 
 ## Overview

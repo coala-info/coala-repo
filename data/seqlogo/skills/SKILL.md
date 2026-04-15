@@ -1,9 +1,10 @@
 ---
 name: seqlogo
-description: "seqlogo generates information-rich sequence logos from various position matrix formats for DNA, RNA, and protein sequences. Use when user asks to visualize sequence motifs, convert between position matrices like PPM and PWM, or render genomic site data into logo images."
+description: seqlogo generates information-rich sequence logos from various position matrix formats for DNA, RNA, and protein sequences. Use when user asks to visualize sequence motifs, convert between position matrices like PPM and PWM, or render genomic site data into logo images.
 homepage: https://github.com/betteridiot/seqlogo
+metadata:
+  docker_image: "quay.io/biocontainers/seqlogo:5.29.11--pyhdfd78af_0"
 ---
-
 
 # seqlogo
 

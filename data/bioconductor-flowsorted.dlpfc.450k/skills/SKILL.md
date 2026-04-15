@@ -4,7 +4,6 @@ description: This package provides a reference DNA methylation dataset of flow-s
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.DLPFC.450k.html
 ---
 
-
 # bioconductor-flowsorted.dlpfc.450k
 
 name: bioconductor-flowsorted.dlpfc.450k

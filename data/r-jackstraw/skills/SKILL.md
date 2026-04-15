@@ -4,7 +4,6 @@ description: This tool performs statistical inference for unsupervised learning 
 homepage: https://cran.r-project.org/web/packages/jackstraw/index.html
 ---
 
-
 # r-jackstraw
 
 name: r-jackstraw

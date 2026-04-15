@@ -4,7 +4,6 @@ description: The sigFeature package provides a hybrid feature selection approach
 homepage: https://bioconductor.org/packages/release/bioc/html/sigFeature.html
 ---
 
-
 # bioconductor-sigfeature
 
 ## Overview

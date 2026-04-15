@@ -4,7 +4,6 @@ description: This tool interfaces with NeEstimator 2.1 to estimate contemporary 
 homepage: https://cran.r-project.org/web/packages/rldne/index.html
 ---
 
-
 # r-rldne
 
 name: r-rldne

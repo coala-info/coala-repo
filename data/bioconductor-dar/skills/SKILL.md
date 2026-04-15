@@ -4,7 +4,6 @@ description: The dar package provides a recipe-based framework for performing an
 homepage: https://bioconductor.org/packages/release/bioc/html/dar.html
 ---
 
-
 # bioconductor-dar
 
 ## Overview

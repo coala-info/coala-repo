@@ -2,8 +2,9 @@
 name: deepfplearn
 description: DeepFPlearn predicts associations between small molecules and biological targets using fingerprint-based or graph neural network models. Use when user asks to train machine learning models for drug discovery, predict molecular properties, or convert chemical structures into binary fingerprints.
 homepage: https://github.com/yigbt/deepFPlearn
+metadata:
+  docker_image: "quay.io/biocontainers/deepfplearn:2.1--pyh42286b9_1"
 ---
-
 
 # deepfplearn
 

@@ -4,7 +4,6 @@ description: This package provides a transcript database object for Drosophila m
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Dmelanogaster.UCSC.dm6.ensGene.html
 ---
 
-
 # bioconductor-txdb.dmelanogaster.ucsc.dm6.ensgene
 
 name: bioconductor-txdb.dmelanogaster.ucsc.dm6.ensgene

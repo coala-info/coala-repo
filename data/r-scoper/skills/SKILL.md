@@ -4,7 +4,6 @@ description: The scoper package provides computational methods for B cell clonal
 homepage: https://cran.r-project.org/web/packages/scoper/index.html
 ---
 
-
 # r-scoper
 
 ## Overview

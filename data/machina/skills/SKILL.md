@@ -2,6 +2,8 @@
 name: machina
 description: MACHINA is a computational framework that reconstructs the migration history of cancer cells by inferring seeding events between primary tumors and metastases. Use when user asks to infer migration patterns, resolve clone tree polytomies, or visualize clonal migration graphs and trees.
 homepage: https://github.com/raphael-group/machina
+metadata:
+  docker_image: "quay.io/biocontainers/machina:1.2--h21ec9f0_7"
 ---
 
 # machina

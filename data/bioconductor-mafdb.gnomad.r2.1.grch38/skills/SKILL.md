@@ -4,7 +4,6 @@ description: This package provides minor allele frequencies from gnomAD release 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.gnomAD.r2.1.GRCh38.html
 ---
 
-
 # bioconductor-mafdb.gnomad.r2.1.grch38
 
 ## Overview

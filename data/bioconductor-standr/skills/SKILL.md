@@ -4,7 +4,6 @@ description: This tool provides a comprehensive toolkit for the quality control,
 homepage: https://bioconductor.org/packages/release/bioc/html/standR.html
 ---
 
-
 # bioconductor-standr
 
 name: bioconductor-standr

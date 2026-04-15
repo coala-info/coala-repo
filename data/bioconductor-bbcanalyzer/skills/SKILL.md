@@ -4,7 +4,6 @@ description: BBCAnalyzer visualizes base counts, deletions, and insertions from 
 homepage: https://bioconductor.org/packages/release/bioc/html/BBCAnalyzer.html
 ---
 
-
 # bioconductor-bbcanalyzer
 
 name: bioconductor-bbcanalyzer

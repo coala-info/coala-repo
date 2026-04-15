@@ -1,10 +1,12 @@
 ---
 name: mags-binning-evaluation
-description: "This workflow performs multi-algorithm metagenomic binning on short reads and assemblies using CONCOCT, MetaBAT2, SemiBin, and MaxBin2, then optimizes results with DAS Tool and Binette. Use this skill when you need to benchmark different binning strategies against a gold standard to identify the most accurate metagenome-assembled genomes using CAMI AMBER performance metrics and HTML reports."
-homepage: https://workflowhub.eu/workflows/2100
+description: This workflow performs multi-algorithm metagenomic binning on short reads and assemblies using CONCOCT, MetaBAT2, SemiBin, and MaxBin2, then optimizes results with DAS Tool and Binette. Use this skill when you need to benchmark different binning strategies against a gold standard to identify the most accurate metagenome-assembled genomes using CAMI AMBER performance metrics and HTML reports.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MAGs binning evaluation
+# mags-binning-evaluation
 
 ## Overview
 

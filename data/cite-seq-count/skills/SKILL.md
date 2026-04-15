@@ -1,9 +1,10 @@
 ---
 name: cite-seq-count
-description: "cite-seq-count quantifies Antibody-Derived Tags or Hashtag Oligos from raw FASTQ files to create UMI-based count matrices for multimodal single-cell analysis. Use when user asks to quantify ADTs or HTOs, configure barcode positions for different sequencing chemistries, or prepare tag count matrices for Seurat and Scanpy."
+description: cite-seq-count quantifies Antibody-Derived Tags or Hashtag Oligos from raw FASTQ files to create UMI-based count matrices for multimodal single-cell analysis. Use when user asks to quantify ADTs or HTOs, configure barcode positions for different sequencing chemistries, or prepare tag count matrices for Seurat and Scanpy.
 homepage: https://hoohm.github.io/CITE-seq-Count/
+metadata:
+  docker_image: "quay.io/biocontainers/cite-seq-count:1.4.5--pyhdfd78af_0"
 ---
-
 
 # cite-seq-count
 

@@ -2,8 +2,9 @@
 name: scoary
 description: Scoary performs microbial pan-genome wide association studies by calculating the statistical association between gene presence/absence and binary phenotypic traits. Use when user asks to identify genes associated with a specific phenotype, perform a pan-genome wide association study, or convert VCF files into a format suitable for association analysis.
 homepage: https://github.com/AdmiralenOla/Scoary
+metadata:
+  docker_image: "biocontainers/scoary:v1.6.16-1-deb_cv1"
 ---
-
 
 # scoary
 

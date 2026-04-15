@@ -4,7 +4,6 @@ description: This tool provides biological identifier mapping and annotation for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mwgcod.db.html
 ---
 
-
 # bioconductor-mwgcod.db
 
 name: bioconductor-mwgcod.db

@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.s.aureus.html
 ---
 
-
 # bioconductor-pd.s.aureus
 
 name: bioconductor-pd.s.aureus

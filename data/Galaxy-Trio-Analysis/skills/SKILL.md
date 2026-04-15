@@ -1,10 +1,12 @@
 ---
 name: trio-analysis-tutorial
-description: "This workflow performs genomic trio analysis by processing pedigree files and VCF data through EGA download tools, bcftools normalization, SnpEff annotation, and GEMINI inheritance pattern modeling. Use this skill when you need to identify causative genetic variants and determine inheritance patterns within family trios to investigate the molecular basis of rare diseases or hereditary conditions."
-homepage: https://workflowhub.eu/workflows/363
+description: This workflow performs genomic trio analysis by processing pedigree files and VCF data through EGA download tools, bcftools normalization, SnpEff annotation, and GEMINI inheritance pattern modeling. Use this skill when you need to identify causative genetic variants and determine inheritance patterns within family trios to investigate the molecular basis of rare diseases or hereditary conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Trio Analysis Tutorial
+# trio-analysis-tutorial
 
 ## Overview
 

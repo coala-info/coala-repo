@@ -2,8 +2,9 @@
 name: irma
 description: IRMA is a specialized pipeline for the assembly and analysis of RNA virus genomes using an iterative refinement process. Use when user asks to assemble influenza or other viral genomes, perform variant calling on viral sequencing data, or generate consensus sequences from RNA virus reads.
 homepage: https://wonder.cdc.gov/amd/flu/irma/
+metadata:
+  docker_image: "quay.io/biocontainers/irma:1.2.0--pl5321hdfd78af_0"
 ---
-
 
 # irma
 

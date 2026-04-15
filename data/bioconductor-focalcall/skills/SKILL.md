@@ -4,7 +4,6 @@ description: This tool identifies and annotates focal copy number aberrations in
 homepage: https://bioconductor.org/packages/3.6/bioc/html/focalCall.html
 ---
 
-
 # bioconductor-focalcall
 
 name: bioconductor-focalcall

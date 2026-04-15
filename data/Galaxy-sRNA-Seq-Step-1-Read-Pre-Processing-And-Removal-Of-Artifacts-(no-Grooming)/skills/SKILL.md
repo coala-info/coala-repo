@@ -1,10 +1,12 @@
 ---
 name: srna-seq-step-1-read-pre-processing-and-removal-of-artifacts
-description: "This transcriptomics workflow processes small RNA-seq dataset collections by performing quality control with FastQC, adapter trimming via Trim Galore!, and removal of rRNA and miRNA hairpin artifacts using HISAT2 and Samtools. Use this skill when you need to clean raw sRNA sequencing data by removing sequencing adapters and filtering out non-target RNA contaminants to prepare high-quality reads for downstream expression analysis."
-homepage: https://workflowhub.eu/workflows/1673
+description: This transcriptomics workflow processes small RNA-seq dataset collections by performing quality control with FastQC, adapter trimming via Trim Galore!, and removal of rRNA and miRNA hairpin artifacts using HISAT2 and Samtools. Use this skill when you need to clean raw sRNA sequencing data by removing sequencing adapters and filtering out non-target RNA contaminants to prepare high-quality reads for downstream expression analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# sRNA Seq Step 1: Read Pre Processing And Removal Of Artifacts (no Grooming)
+# srna-seq-step-1-read-pre-processing-and-removal-of-artifacts
 
 ## Overview
 

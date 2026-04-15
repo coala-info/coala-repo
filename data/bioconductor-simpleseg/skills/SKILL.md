@@ -4,7 +4,6 @@ description: bioconductor-simpleseg provides a streamlined pipeline for segmenti
 homepage: https://bioconductor.org/packages/release/bioc/html/simpleSeg.html
 ---
 
-
 # bioconductor-simpleseg
 
 ## Overview

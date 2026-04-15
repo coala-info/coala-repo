@@ -1,9 +1,10 @@
 ---
 name: deltapd
-description: "DeltaPD identifies gene trees that significantly deviate from a reference tree. Use when user asks to find outlier gene trees compared to a reference tree."
+description: DeltaPD identifies gene trees that significantly deviate from a reference tree. Use when user asks to find outlier gene trees compared to a reference tree.
 homepage: https://github.com/Ecogenomics/DeltaPD
+metadata:
+  docker_image: "quay.io/biocontainers/deltapd:0.1.5--py39h918f1d6_7"
 ---
-
 
 # deltapd
 

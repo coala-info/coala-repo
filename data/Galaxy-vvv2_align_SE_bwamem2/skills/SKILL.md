@@ -1,10 +1,12 @@
 ---
 name: vvv2_align_se_bwamem2
-description: "This viral genomics workflow processes single-end sequencing reads using BWA-MEM2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries of genomic features. Use this skill when you need to identify significant variants in viral samples, annotate protein-coding regions, and visualize the relationship between coverage depth and mutations across a viral genome."
-homepage: https://workflowhub.eu/workflows/1739
+description: This viral genomics workflow processes single-end sequencing reads using BWA-MEM2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries of genomic features. Use this skill when you need to identify significant variants in viral samples, annotate protein-coding regions, and visualize the relationship between coverage depth and mutations across a viral genome.
+homepage: https://www.anses.fr
+metadata:
+  docker_image: "N/A"
 ---
 
-# vvv2_align_SE_bwamem2
+# vvv2_align_se_bwamem2
 
 ## Overview
 

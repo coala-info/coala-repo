@@ -2,6 +2,8 @@
 name: deacon
 description: Deacon is a high-performance bioinformatics tool used for the rapid classification, searching, and filtering of DNA sequences using SIMD-accelerated minimizer comparison. Use when user asks to build or fetch sequence indexes, perform host depletion, search for matching reads, or filter paired-end sequencing data.
 homepage: https://github.com/bede/deacon
+metadata:
+  docker_image: "quay.io/biocontainers/deacon:0.13.2--h7ef3eeb_1"
 ---
 
 # deacon

@@ -1,9 +1,10 @@
 ---
 name: scythe
-description: "Scythe tracks the execution of specific code paths in production to help developers identify and prune legacy or dead code. Use when user asks to instrument code with probes, gather probe definitions from source directories, analyze the time since a probe was last triggered, or delete tracked probes."
+description: Scythe tracks the execution of specific code paths in production to help developers identify and prune legacy or dead code. Use when user asks to instrument code with probes, gather probe definitions from source directories, analyze the time since a probe was last triggered, or delete tracked probes.
 homepage: https://github.com/michaelfeathers/scythe
+metadata:
+  docker_image: "biocontainers/scythe:v0.994-4-deb_cv1"
 ---
-
 
 # scythe
 

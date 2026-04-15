@@ -2,6 +2,8 @@
 name: metaphor
 description: Metaphor is a Snakemake-based bioinformatics pipeline that automates the transition from raw metagenomic reads to annotated genomic bins. Use when user asks to process metagenomic reads, perform de novo assembly, bin contigs into metagenome-assembled genomes, or generate functional annotations.
 homepage: https://github.com/vinisalazar/metaphor
+metadata:
+  docker_image: "quay.io/biocontainers/metaphor:1.7.14--pyhdfd78af_0"
 ---
 
 # metaphor

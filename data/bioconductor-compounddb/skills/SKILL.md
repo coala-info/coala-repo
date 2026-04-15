@@ -4,7 +4,6 @@ description: The CompoundDb package provides a flexible infrastructure for manag
 homepage: https://bioconductor.org/packages/release/bioc/html/CompoundDb.html
 ---
 
-
 # bioconductor-compounddb
 
 ## Overview

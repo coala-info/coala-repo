@@ -2,8 +2,9 @@
 name: ucsc-maftoaxt
 description: This tool converts Multiple Alignment Format (MAF) files into axt format. Use when user asks to convert MAF to axt, extract pairwise alignments from a MAF file, prepare MAF for pairwise analysis, or remove database prefixes from sequence names.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-maftoaxt:482--h0b57e2e_0"
 ---
-
 
 # ucsc-maftoaxt
 

@@ -2,8 +2,9 @@
 name: ucsc-genepredtobiggenepred
 description: This tool converts gene prediction files from genePred or genePredExt format into bigGenePred format. Use when user asks to convert gene prediction files, transform gene models, or prepare data for bigGenePred tracks in the UCSC Genome Browser.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-genepredtobiggenepred:482--h0b57e2e_0"
 ---
-
 
 # ucsc-genepredtobiggenepred
 

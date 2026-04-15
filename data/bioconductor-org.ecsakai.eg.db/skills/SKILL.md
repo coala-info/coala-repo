@@ -4,7 +4,6 @@ description: This package provides organism-level genome annotations for Escheri
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.EcSakai.eg.db.html
 ---
 
-
 # bioconductor-org.ecsakai.eg.db
 
 ## Overview

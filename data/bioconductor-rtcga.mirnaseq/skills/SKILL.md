@@ -4,7 +4,6 @@ description: This tool provides access to pre-processed miRNA expression data fr
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.miRNASeq.html
 ---
 
-
 # bioconductor-rtcga.mirnaseq
 
 name: bioconductor-rtcga.mirnaseq

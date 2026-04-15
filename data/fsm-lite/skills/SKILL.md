@@ -2,8 +2,9 @@
 name: fsm-lite
 description: fsm-lite performs frequency-based string mining to identify and count substrings across genomic sequence populations. Use when user asks to identify k-mers in a set of genomes, perform comparative genomics through string mining, or record substring occurrences across multiple samples.
 homepage: https://github.com/nvalimak/fsm-lite
+metadata:
+  docker_image: "biocontainers/fsm-lite:v1.0-3-deb_cv1"
 ---
-
 
 # fsm-lite
 

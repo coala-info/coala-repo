@@ -4,7 +4,6 @@ description: This package provides example phenotype and genotype data from Dive
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MUGAExampleData.html
 ---
 
-
 # bioconductor-mugaexampledata
 
 name: bioconductor-mugaexampledata

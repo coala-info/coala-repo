@@ -4,7 +4,6 @@ description: The biodbChebi package provides a programmatic interface to the ChE
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbChebi.html
 ---
 
-
 # bioconductor-biodbchebi
 
 ## Overview

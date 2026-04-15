@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Danio rerio bas
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer6.html
 ---
 
-
 # bioconductor-bsgenome.drerio.ucsc.danrer6
 
 name: bioconductor-bsgenome.drerio.ucsc.danrer6

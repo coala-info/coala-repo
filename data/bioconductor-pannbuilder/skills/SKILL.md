@@ -4,7 +4,6 @@ description: PAnnBuilder automates the assembly of proteomic annotation data and
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PAnnBuilder.html
 ---
 
-
 # bioconductor-pannbuilder
 
 name: bioconductor-pannbuilder

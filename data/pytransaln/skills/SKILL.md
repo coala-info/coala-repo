@@ -1,7 +1,9 @@
 ---
 name: pytransaln
-description: "pytransaln aligns nucleotide sequences by translating them into amino acids to maintain codon structure and identify potential pseudogenes. Use when user asks to perform codon-aware sequence alignment, screen for pseudogenes, or detect frameshift mutations in coding sequences."
+description: pytransaln aligns nucleotide sequences by translating them into amino acids to maintain codon structure and identify potential pseudogenes. Use when user asks to perform codon-aware sequence alignment, screen for pseudogenes, or detect frameshift mutations in coding sequences.
 homepage: https://github.com/monagrland/pytransaln
+metadata:
+  docker_image: "quay.io/biocontainers/pytransaln:0.2.2--pyh7e72e81_0"
 ---
 
 # pytransaln

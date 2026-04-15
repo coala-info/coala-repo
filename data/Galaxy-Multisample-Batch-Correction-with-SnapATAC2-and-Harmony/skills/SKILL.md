@@ -1,10 +1,12 @@
 ---
 name: multisample-batch-correction-with-snapatac2-and-harmony
-description: "This workflow processes multi-sample single-cell ATAC-seq fragment collections through a pipeline of preprocessing, filtering, and dimension reduction using SnapATAC2 and Harmony. Use this skill when you need to integrate epigenomic data from multiple biological replicates or batches to remove technical noise and identify shared cell clusters through Leiden clustering."
-homepage: https://workflowhub.eu/workflows/1561
+description: This workflow processes multi-sample single-cell ATAC-seq fragment collections through a pipeline of preprocessing, filtering, and dimension reduction using SnapATAC2 and Harmony. Use this skill when you need to integrate epigenomic data from multiple biological replicates or batches to remove technical noise and identify shared cell clusters through Leiden clustering.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Multisample Batch Correction with SnapATAC2 and Harmony
+# multisample-batch-correction-with-snapatac2-and-harmony
 
 ## Overview
 

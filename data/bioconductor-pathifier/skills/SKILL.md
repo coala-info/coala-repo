@@ -4,7 +4,6 @@ description: Pathifier calculates pathway deregulation scores for individual sam
 homepage: https://bioconductor.org/packages/release/bioc/html/pathifier.html
 ---
 
-
 # bioconductor-pathifier
 
 ## Overview

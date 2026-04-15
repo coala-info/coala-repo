@@ -4,7 +4,6 @@ description: The bioconductor-hmdbquery package provides an interface to retriev
 homepage: https://bioconductor.org/packages/release/bioc/html/hmdbQuery.html
 ---
 
-
 # bioconductor-hmdbquery
 
 ## Overview

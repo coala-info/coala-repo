@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rtu34cdf.html
 ---
 
-
 # bioconductor-rtu34cdf
 
 name: bioconductor-rtu34cdf

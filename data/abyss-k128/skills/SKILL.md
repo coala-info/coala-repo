@@ -2,8 +2,9 @@
 name: abyss-k128
 description: abyss-k128 is a parallelized de Bruijn graph assembler designed to assemble genomic sequences from short-read data using k-mer lengths up to 128. Use when user asks to perform de novo genome assembly, optimize memory usage with Bloom filters, or manage multi-library scaffolding for complex datasets.
 homepage: http://www.bcgsc.ca/platform/bioinfo/software/abyss
+metadata:
+  docker_image: "quay.io/biocontainers/abyss-k128:2.0.2--boost1.64_2"
 ---
-
 
 # abyss-k128
 

@@ -2,6 +2,8 @@
 name: rsrq
 description: rsrq is a lightweight, high-performance job queueing system that uses Redis to manage and distribute shell commands across multiple worker processes. Use when user asks to enqueue command-line tasks from text files, spawn parallel workers to process jobs, monitor queue status, or integrate job submission with Snakemake.
 homepage: https://github.com/aaronmussig/rsrq
+metadata:
+  docker_image: "quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0"
 ---
 
 # rsrq

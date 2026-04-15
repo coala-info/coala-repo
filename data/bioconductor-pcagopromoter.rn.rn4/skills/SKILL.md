@@ -4,7 +4,6 @@ description: This package provides promoter sequences and transcription factor b
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/pcaGoPromoter.Rn.rn4.html
 ---
 
-
 # bioconductor-pcagopromoter.rn.rn4
 
 name: bioconductor-pcagopromoter.rn.rn4

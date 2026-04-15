@@ -2,6 +2,8 @@
 name: gsearch
 description: gsearch performs large-scale genomic comparisons and searches using locality-sensitive hashing and graph-based indexing. Use when user asks to build a searchable genomic database, search query genomes against a reference index, or update an existing database with new sequences.
 homepage: https://github.com/jean-pierreBoth/gsearch
+metadata:
+  docker_image: "quay.io/biocontainers/gsearch:0.3.4--hafc0c1d_0"
 ---
 
 # gsearch

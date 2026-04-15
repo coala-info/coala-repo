@@ -4,7 +4,6 @@ description: This package provides a collection of R scripts that wrap Seurat fu
 homepage: https://cran.r-project.org/web/packages/seurat-scripts/index.html
 ---
 
-
 # r-seurat-scripts
 
 ## Overview

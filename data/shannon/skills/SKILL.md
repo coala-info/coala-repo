@@ -2,8 +2,9 @@
 name: shannon
 description: Shannon is a transcript assembler that uses information theory to reconstruct RNA-Seq data into transcripts. Use when user asks to assemble transcripts from single-ended or paired-end reads, configure assembly parameters, or assess assembly quality against a reference.
 homepage: http://sreeramkannan.github.io/Shannon/
+metadata:
+  docker_image: "quay.io/biocontainers/shannon:0.0.2--py_0"
 ---
-
 
 # shannon
 

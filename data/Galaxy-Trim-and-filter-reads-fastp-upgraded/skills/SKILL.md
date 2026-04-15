@@ -1,10 +1,12 @@
 ---
 name: trim-and-filter-reads-fastp-upgraded
-description: "This Galaxy workflow processes Illumina paired-end reads and long reads using the fastp tool to perform quality trimming and filtering. Use this skill when you need to improve the quality of raw sequencing data by removing adapters and low-quality bases before proceeding with downstream genomic analysis."
-homepage: https://workflowhub.eu/workflows/1589
+description: This Galaxy workflow processes Illumina paired-end reads and long reads using the fastp tool to perform quality trimming and filtering. Use this skill when you need to improve the quality of raw sequencing data by removing adapters and low-quality bases before proceeding with downstream genomic analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Trim and filter reads - fastp - upgraded
+# trim-and-filter-reads-fastp-upgraded
 
 ## Overview
 

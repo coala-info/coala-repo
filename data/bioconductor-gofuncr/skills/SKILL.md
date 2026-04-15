@@ -4,7 +4,6 @@ description: This tool performs Gene Ontology (GO) enrichment analysis using the
 homepage: https://bioconductor.org/packages/release/bioc/html/GOfuncR.html
 ---
 
-
 # bioconductor-gofuncr
 
 name: bioconductor-gofuncr

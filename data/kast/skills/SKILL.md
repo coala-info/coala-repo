@@ -1,9 +1,10 @@
 ---
 name: kast
-description: "Manages Conda packages and environments, primarily for the bioconda channel. Use when user asks to install, update, remove, or search for bioconda packages, or when managing Conda environments for bioinformatics workflows."
+description: Manages Conda packages and environments, primarily for the bioconda channel. Use when user asks to install, update, remove, or search for bioconda packages, or when managing Conda environments for bioinformatics workflows.
 homepage: https://github.com/DelphiWorlds/Kastri
+metadata:
+  docker_image: "biocontainers/kast:1.0.1_cv1"
 ---
-
 
 # kast
 

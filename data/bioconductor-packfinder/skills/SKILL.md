@@ -4,7 +4,6 @@ description: The packFinder package performs de novo prediction of Pack-TYPE tra
 homepage: https://bioconductor.org/packages/release/bioc/html/packFinder.html
 ---
 
-
 # bioconductor-packfinder
 
 ## Overview

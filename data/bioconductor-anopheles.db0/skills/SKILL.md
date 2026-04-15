@@ -4,7 +4,6 @@ description: This package provides the base SQLite databases required by sqlForg
 homepage: https://bioconductor.org/packages/release/data/annotation/html/anopheles.db0.html
 ---
 
-
 # bioconductor-anopheles.db0
 
 name: bioconductor-anopheles.db0

@@ -4,7 +4,6 @@ description: bioconductor-spillr compensates signal spillover in mass cytometry 
 homepage: https://bioconductor.org/packages/release/bioc/html/spillR.html
 ---
 
-
 # bioconductor-spillr
 
 name: bioconductor-spillr

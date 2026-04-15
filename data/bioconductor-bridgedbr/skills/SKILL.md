@@ -4,7 +4,6 @@ description: BridgeDbR provides an R interface to the BridgeDb framework for map
 homepage: https://bioconductor.org/packages/release/bioc/html/BridgeDbR.html
 ---
 
-
 # bioconductor-bridgedbr
 
 ## Overview

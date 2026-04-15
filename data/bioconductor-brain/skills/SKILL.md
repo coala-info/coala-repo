@@ -4,7 +4,6 @@ description: This tool calculates isotopic distributions, monoisotopic masses, a
 homepage: https://bioconductor.org/packages/release/bioc/html/BRAIN.html
 ---
 
-
 # bioconductor-brain
 
 name: bioconductor-brain

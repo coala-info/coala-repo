@@ -1,10 +1,12 @@
 ---
 name: de-novo
-description: "This workflow performs de novo assembly of Illumina amplicon pool sequencing data using PEAR for merging, MEGAHIT for assembly, and CAP3 for contig refinement. Use this skill when you need to reconstruct consensus sequences from pooled amplicons without a reference genome to identify genetic variants or characterize unknown sequences."
-homepage: https://workflowhub.eu/workflows/2038
+description: This workflow performs de novo assembly of Illumina amplicon pool sequencing data using PEAR for merging, MEGAHIT for assembly, and CAP3 for contig refinement. Use this skill when you need to reconstruct consensus sequences from pooled amplicons without a reference genome to identify genetic variants or characterize unknown sequences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# De novo
+# de-novo
 
 ## Overview
 

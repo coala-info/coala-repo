@@ -4,7 +4,6 @@ description: This package provides core utility functions for metabolomics data 
 homepage: https://bioconductor.org/packages/release/bioc/html/MetaboCoreUtils.html
 ---
 
-
 # bioconductor-metabocoreutils
 
 name: bioconductor-metabocoreutils

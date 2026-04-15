@@ -4,7 +4,6 @@ description: This tool estimates ternary network models from steady-state pertur
 homepage: https://bioconductor.org/packages/release/bioc/html/ternarynet.html
 ---
 
-
 # bioconductor-ternarynet
 
 name: bioconductor-ternarynet

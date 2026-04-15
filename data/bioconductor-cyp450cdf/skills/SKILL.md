@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environments a
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cyp450cdf.html
 ---
 
-
 # bioconductor-cyp450cdf
 
 ## Overview

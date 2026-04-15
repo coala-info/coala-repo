@@ -2,8 +2,9 @@
 name: autodock-vina
 description: AutoDock Vina predicts the preferred binding orientation and affinity of ligands to receptors using computational docking. Use when user asks to perform molecular docking, conduct virtual screening of ligand libraries, or calculate binding scores for protein-ligand complexes.
 homepage: https://github.com/ccsb-scripps/AutoDock-Vina
+metadata:
+  docker_image: "biocontainers/autodock-vina:v1.1.2-3b6-deb_cv1"
 ---
-
 
 # autodock-vina
 

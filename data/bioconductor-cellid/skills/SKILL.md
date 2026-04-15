@@ -4,7 +4,6 @@ description: Bioconductor-cellid extracts per-cell gene signatures and performs 
 homepage: https://bioconductor.org/packages/release/bioc/html/CelliD.html
 ---
 
-
 # bioconductor-cellid
 
 name: bioconductor-cellid

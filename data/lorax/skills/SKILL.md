@@ -2,6 +2,8 @@
 name: lorax
 description: Lorax is a specialized toolbox for identifying and extracting read evidence for complex structural rearrangements and pan-genome graph operations in long-read sequencing data. Use when user asks to identify templated insertion threads, analyze telomere-associated rearrangements, select reads for targeted amplicon assembly, or manipulate GFA and GAF files.
 homepage: https://github.com/tobiasrausch/lorax
+metadata:
+  docker_image: "quay.io/biocontainers/lorax:0.5.1--h4d20210_0"
 ---
 
 # lorax

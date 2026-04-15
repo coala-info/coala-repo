@@ -4,7 +4,6 @@ description: This tool quantifies RNA-Seq data by summarizing BAM files into gen
 homepage: https://bioconductor.org/packages/release/bioc/html/easyRNASeq.html
 ---
 
-
 # bioconductor-easyrnaseq
 
 name: bioconductor-easyrnaseq

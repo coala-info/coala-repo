@@ -1,9 +1,8 @@
 ---
 name: bioconductor-mafh5.gnomad.r3.0.grch38
-description: "This Bioconductor package provides access to Minor Allele Frequency data from gnomAD v3.0 for the GRCh38 genome build. Use when user asks to annotate human genetic variants with population frequency data, query allele frequencies by genomic coordinates or rsID, or retrieve gnomAD v3.0 data for the GRCh38 assembly."
+description: This Bioconductor package provides access to Minor Allele Frequency data from gnomAD v3.0 for the GRCh38 genome build. Use when user asks to annotate human genetic variants with population frequency data, query allele frequencies by genomic coordinates or rsID, or retrieve gnomAD v3.0 data for the GRCh38 assembly.
 homepage: https://bioconductor.org/packages/3.11/data/annotation/html/MafH5.gnomAD.r3.0.GRCh38.html
 ---
-
 
 # bioconductor-mafh5.gnomad.r3.0.grch38
 

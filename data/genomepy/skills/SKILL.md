@@ -1,7 +1,9 @@
 ---
 name: genomepy
-description: "genomepy streamlines the acquisition, management, and preprocessing of genomic data from multiple providers. Use when user asks to search for assemblies, download genome sequences and annotations, or manage local genome installations and aligner indexes."
+description: genomepy streamlines the acquisition, management, and preprocessing of genomic data from multiple providers. Use when user asks to search for assemblies, download genome sequences and annotations, or manage local genome installations and aligner indexes.
 homepage: https://github.com/vanheeringen-lab/genomepy
+metadata:
+  docker_image: "quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0"
 ---
 
 # genomepy

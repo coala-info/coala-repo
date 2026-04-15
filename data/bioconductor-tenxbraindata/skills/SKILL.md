@@ -4,7 +4,6 @@ description: This package provides access to the 1.3 million mouse brain cell sc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TENxBrainData.html
 ---
 
-
 # bioconductor-tenxbraindata
 
 name: bioconductor-tenxbraindata

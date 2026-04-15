@@ -2,8 +2,9 @@
 name: multigps
 description: This tool simulates and analyzes genomic regions. Use when user asks to simulate genomic regions, analyze positional distribution of genomic features, or generate synthetic genomic data.
 homepage: https://github.com/shaunmahony/multigps-archive
+metadata:
+  docker_image: "quay.io/biocontainers/multigps:0.74--r3.3.1_0"
 ---
-
 
 # multigps
 

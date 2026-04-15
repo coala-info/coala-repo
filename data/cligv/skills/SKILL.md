@@ -1,9 +1,10 @@
 ---
 name: cligv
-description: "cligv is a terminal-based interactive genome viewer for visualizing genomic regions, read alignments, and variants. Use when user asks to browse genomic regions, inspect read coverage, verify variants, or visualize BAM and VCF files in the command line."
+description: cligv is a terminal-based interactive genome viewer for visualizing genomic regions, read alignments, and variants. Use when user asks to browse genomic regions, inspect read coverage, verify variants, or visualize BAM and VCF files in the command line.
 homepage: https://github.com/jonasfreudig/cligv
+metadata:
+  docker_image: "quay.io/biocontainers/cligv:0.1.0--pyhdfd78af_0"
 ---
-
 
 # cligv
 

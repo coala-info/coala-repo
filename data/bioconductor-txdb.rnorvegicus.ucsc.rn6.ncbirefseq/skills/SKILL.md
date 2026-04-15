@@ -4,7 +4,6 @@ description: This package provides a TxDb object containing Rattus norvegicus ge
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn6.ncbiRefSeq.html
 ---
 
-
 # bioconductor-txdb.rnorvegicus.ucsc.rn6.ncbirefseq
 
 name: bioconductor-txdb.rnorvegicus.ucsc.rn6.ncbirefseq

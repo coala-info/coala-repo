@@ -1,9 +1,10 @@
 ---
 name: fastq-groupmerge
-description: "fastq-groupmerge automates the concatenation of raw sequencing reads into groups based on a metadata table. Use when user asks to merge FASTQ files by sample groups, concatenate sequencing reads using a metadata file, or combine multiple sequencing runs into single files."
+description: fastq-groupmerge automates the concatenation of raw sequencing reads into groups based on a metadata table. Use when user asks to merge FASTQ files by sample groups, concatenate sequencing reads using a metadata file, or combine multiple sequencing runs into single files.
 homepage: https://github.com/SantaMcCloud/fastq-groupmerge
+metadata:
+  docker_image: "quay.io/biocontainers/fastq-groupmerge:1.0.2--pyhdfd78af_0"
 ---
-
 
 # fastq-groupmerge
 

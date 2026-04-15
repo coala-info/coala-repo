@@ -4,7 +4,6 @@ description: The bioconductor-bettr package provides tools for the visual explor
 homepage: https://bioconductor.org/packages/release/bioc/html/bettr.html
 ---
 
-
 # bioconductor-bettr
 
 name: bioconductor-bettr

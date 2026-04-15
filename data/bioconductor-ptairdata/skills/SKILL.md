@@ -4,7 +4,6 @@ description: This package provides raw PTR-TOF-MS mass spectrometry datasets in 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ptairData.html
 ---
 
-
 # bioconductor-ptairdata
 
 name: bioconductor-ptairdata

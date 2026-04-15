@@ -4,7 +4,6 @@ description: This package provides probe sequences and genomic location data for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/RaExExonProbesetLocation.html
 ---
 
-
 # bioconductor-raexexonprobesetlocation
 
 name: bioconductor-raexexonprobesetlocation

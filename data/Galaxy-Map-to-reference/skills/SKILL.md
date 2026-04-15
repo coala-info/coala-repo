@@ -1,10 +1,12 @@
 ---
 name: map-to-reference
-description: "This workflow processes paired-end Illumina amplicon pool sequencing data by performing quality control, merging reads with Pear, and mapping them to a reference sequence using Bowtie2 to generate a consensus sequence and coverage statistics. Use this skill when you need to reconstruct specific genetic sequences from amplicon libraries, evaluate mapping depth across a reference, or isolate unmapped reads for further assembly and analysis."
-homepage: https://workflowhub.eu/workflows/2036
+description: This workflow processes paired-end Illumina amplicon pool sequencing data by performing quality control, merging reads with Pear, and mapping them to a reference sequence using Bowtie2 to generate a consensus sequence and coverage statistics. Use this skill when you need to reconstruct specific genetic sequences from amplicon libraries, evaluate mapping depth across a reference, or isolate unmapped reads for further assembly and analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Map-to-reference
+# map-to-reference
 
 ## Overview
 

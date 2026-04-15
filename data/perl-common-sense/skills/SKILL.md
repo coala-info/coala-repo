@@ -2,8 +2,9 @@
 name: perl-common-sense
 description: The perl-common-sense module provides a standardized set of modern Perl pragmas and features while reducing boilerplate code. Use when user asks to enable strict mode and warnings, reduce memory overhead in Perl scripts, or simplify script headers with a single boilerplate reducer.
 homepage: http://search.cpan.org/~mlehmann/common-sense-3.74/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-common-sense:3.75--pl5321hdfd78af_0"
 ---
-
 
 # perl-common-sense
 

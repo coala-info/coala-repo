@@ -2,8 +2,9 @@
 name: proteomiqon-mzmltomzlite
 description: This tool converts mzML files into the SQLite-based mzLite format to enable faster data access and initial preprocessing for proteomics workflows. Use when user asks to convert mzML to mzLite, perform peak picking on mass spectra, or filter proteomics data by retention time.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-mzmltomzlite:0.0.8--hdfd78af_0"
 ---
-
 
 # proteomiqon-mzmltomzlite
 

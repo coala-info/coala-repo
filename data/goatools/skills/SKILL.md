@@ -1,9 +1,10 @@
 ---
 name: goatools
-description: "goatools is a Python suite for analyzing Gene Ontology data through enrichment analysis and DAG manipulation. Use when user asks to perform gene ontology enrichment analysis, visualize GO hierarchies, map terms to GOslim, or explore the gene ontology DAG."
+description: goatools is a Python suite for analyzing Gene Ontology data through enrichment analysis and DAG manipulation. Use when user asks to perform gene ontology enrichment analysis, visualize GO hierarchies, map terms to GOslim, or explore the gene ontology DAG.
 homepage: https://github.com/tanghaibao/goatools
+metadata:
+  docker_image: "quay.io/biocontainers/goatools:1.2.3--pyh7cba7a3_2"
 ---
-
 
 # goatools
 

@@ -4,7 +4,6 @@ description: This tool performs robust statistical inference for quantitative LC
 homepage: https://cran.r-project.org/web/packages/msqrob/index.html
 ---
 
-
 # r-msqrob
 
 name: r-msqrob

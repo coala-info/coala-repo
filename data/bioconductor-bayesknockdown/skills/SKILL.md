@@ -4,7 +4,6 @@ description: This tool uses a Bayesian framework to estimate the posterior proba
 homepage: https://bioconductor.org/packages/release/bioc/html/BayesKnockdown.html
 ---
 
-
 # bioconductor-bayesknockdown
 
 ## Overview

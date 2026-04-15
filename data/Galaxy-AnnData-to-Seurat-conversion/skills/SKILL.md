@@ -1,10 +1,12 @@
 ---
 name: anndata-to-seurat-conversion
-description: "This Galaxy workflow converts single-cell transcriptomics data from AnnData format to a Seurat object using AnnData Inspect, DropletUtils, and Seurat Read10x tools. Use this skill when you need to transition single-cell analysis from Python-based Scanpy pipelines to R-based Seurat workflows for downstream visualization or differential expression analysis."
-homepage: https://workflowhub.eu/workflows/1527
+description: This Galaxy workflow converts single-cell transcriptomics data from AnnData format to a Seurat object using AnnData Inspect, DropletUtils, and Seurat Read10x tools. Use this skill when you need to transition single-cell analysis from Python-based Scanpy pipelines to R-based Seurat workflows for downstream visualization or differential expression analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# AnnData to Seurat conversion
+# anndata-to-seurat-conversion
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: bioconductor-metaseqr2 is a modular RNA-Seq analysis pipeline that 
 homepage: https://bioconductor.org/packages/release/bioc/html/metaseqR2.html
 ---
 
-
 # bioconductor-metaseqr2
 
 name: bioconductor-metaseqr2

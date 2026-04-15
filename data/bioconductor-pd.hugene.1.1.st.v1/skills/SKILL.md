@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hugene.1.1.st.v1.html
 ---
 
-
 # bioconductor-pd.hugene.1.1.st.v1
 
 name: bioconductor-pd.hugene.1.1.st.v1

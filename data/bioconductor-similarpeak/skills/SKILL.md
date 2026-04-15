@@ -4,7 +4,6 @@ description: The similaRpeak package provides a suite of metrics to quantify and
 homepage: https://bioconductor.org/packages/release/bioc/html/similaRpeak.html
 ---
 
-
 # bioconductor-similarpeak
 
 ## Overview

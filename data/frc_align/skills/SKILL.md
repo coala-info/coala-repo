@@ -2,8 +2,9 @@
 name: frc_align
 description: frc_align assesses the quality of de novo genome assemblies by analyzing the distribution of assembly features and generating Feature Response Curves. Use when user asks to evaluate assembly quality, identify potential assembly errors, or compare different genome assembly versions.
 homepage: https://github.com/vezzi/FRC_align
+metadata:
+  docker_image: "quay.io/biocontainers/frc:5b3f53e--boost1.64_0"
 ---
-
 
 # frc_align
 

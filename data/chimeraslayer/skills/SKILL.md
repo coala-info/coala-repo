@@ -1,9 +1,10 @@
 ---
 name: chimeraslayer
-description: "Manages bioinformatics packages and environments using the chimeraslayer tool. Use when user asks to install, update, search, or list chimeraslayer packages or manage bioinformatics environments."
+description: Manages bioinformatics packages and environments using the chimeraslayer tool. Use when user asks to install, update, search, or list chimeraslayer packages or manage bioinformatics environments.
 homepage: https://anaconda.org/channels/bioconda/packages/chimeraslayer/overview
+metadata:
+  docker_image: "biocontainers/chimeraslayer:v20101212dfsg1-2-deb_cv1"
 ---
-
 
 # chimeraslayer
 

@@ -2,8 +2,9 @@
 name: ucsc-hgloadchain
 description: `hgLoadChain` parses generic chain files and imports them into a structured SQL table. Use when user asks to import chain files into a database, load chain files for genome assembly hubs, prepare chain files for comparative genomics, or visualize synteny and cross-species mappings.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-hgloadchain:482--h0b57e2e_0"
 ---
-
 
 # ucsc-hgloadchain
 

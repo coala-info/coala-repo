@@ -1,9 +1,10 @@
 ---
 name: scar
-description: "Removes ambient signal noise from droplet-based single-cell omics data. Use when user asks to denoise ambient signals from single-cell RNA-seq, CITE-seq, scATAC-seq, or scCRISPRseq data."
+description: Removes ambient signal noise from droplet-based single-cell omics data. Use when user asks to denoise ambient signals from single-cell RNA-seq, CITE-seq, scATAC-seq, or scCRISPRseq data.
 homepage: https://github.com/Novartis/scAR
+metadata:
+  docker_image: "quay.io/biocontainers/scar:0.7.0--pyhdfd78af_0"
 ---
-
 
 # scar
 

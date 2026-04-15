@@ -2,6 +2,8 @@
 name: gromacs_mddb
 description: gromacs_mddb is a molecular dynamics suite that simulates biochemical systems and exports binary topology files into a structured JSON format. Use when user asks to perform molecular dynamics simulations, convert TPR files to JSON, or preprocess and analyze biochemical system trajectories.
 homepage: https://www.gromacs.org/
+metadata:
+  docker_image: "quay.io/biocontainers/gromacs:2022"
 ---
 
 # gromacs_mddb

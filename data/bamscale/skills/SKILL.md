@@ -1,9 +1,10 @@
 ---
 name: bamscale
-description: "BAMscale processes BAM files to generate normalized genomic tracks and quantification matrices for sequencing data analysis. Use when user asks to quantify signal across genomic regions, generate scaled BigWig files, calculate log2 ratios between samples, or process specialized assays like RNA-seq, OK-seq, and END-seq."
+description: BAMscale processes BAM files to generate normalized genomic tracks and quantification matrices for sequencing data analysis. Use when user asks to quantify signal across genomic regions, generate scaled BigWig files, calculate log2 ratios between samples, or process specialized assays like RNA-seq, OK-seq, and END-seq.
 homepage: https://github.com/ncbi/BAMscale
+metadata:
+  docker_image: "quay.io/biocontainers/bamscale:0.0.9--hf9495ce_0"
 ---
-
 
 # bamscale
 

@@ -1,10 +1,12 @@
 ---
 name: tutorial-workflow
-description: "This Galaxy workflow processes an input dataset collection by reversing the line order with the tac tool and extracting the top lines using the Select first tool. Use this skill when you need to isolate the final entries of a dataset or perform basic text manipulation on large collections of genomic or tabular data."
-homepage: https://workflowhub.eu/workflows/1392
+description: This Galaxy workflow processes an input dataset collection by reversing the line order with the tac tool and extracting the top lines using the Select first tool. Use this skill when you need to isolate the final entries of a dataset or perform basic text manipulation on large collections of genomic or tabular data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Tutorial workflow
+# tutorial-workflow
 
 ## Overview
 

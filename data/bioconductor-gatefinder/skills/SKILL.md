@@ -4,7 +4,6 @@ description: This tool identifies optimal gating strategies for flow and mass cy
 homepage: https://bioconductor.org/packages/release/bioc/html/GateFinder.html
 ---
 
-
 # bioconductor-gatefinder
 
 name: bioconductor-gatefinder

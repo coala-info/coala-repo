@@ -4,7 +4,6 @@ description: The bioconductor-mosaics package implements a model-based framework
 homepage: https://bioconductor.org/packages/release/bioc/html/mosaics.html
 ---
 
-
 # bioconductor-mosaics
 
 ## Overview

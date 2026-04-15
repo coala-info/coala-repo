@@ -4,7 +4,6 @@ description: The celaref package annotates single-cell RNA-seq clusters by compa
 homepage: https://bioconductor.org/packages/release/bioc/html/celaref.html
 ---
 
-
 # bioconductor-celaref
 
 ## Overview

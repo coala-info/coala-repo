@@ -4,7 +4,6 @@ description: This package provides the CDF environment for the Xenopus laevis Af
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xlaevis2cdf.html
 ---
 
-
 # bioconductor-xlaevis2cdf
 
 name: bioconductor-xlaevis2cdf

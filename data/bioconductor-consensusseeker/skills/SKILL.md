@@ -4,7 +4,6 @@ description: The consensusSeekeR package identifies consensus genomic regions ac
 homepage: https://bioconductor.org/packages/release/bioc/html/consensusSeekeR.html
 ---
 
-
 # bioconductor-consensusseeker
 
 ## Overview

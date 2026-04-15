@@ -4,7 +4,6 @@ description: This tool provides expert guidance for spatial dependence analysis 
 homepage: https://cloud.r-project.org/web/packages/spdep/index.html
 ---
 
-
 # r-spdep
 
 name: r-spdep

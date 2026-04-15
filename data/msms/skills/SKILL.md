@@ -2,8 +2,9 @@
 name: msms
 description: The MSMS tool computes molecular surfaces from molecular structures. Use when user asks to compute molecular surfaces, generate solvent excluded surfaces, or generate solvent accessible surfaces.
 homepage: https://github.com/MotorolaMobilityLLC/kernel-msm
+metadata:
+  docker_image: "quay.io/biocontainers/msms:2.6.1--h9ee0642_3"
 ---
-
 
 # msms
 

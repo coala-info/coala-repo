@@ -4,6 +4,8 @@ description: This pipeline analyzes total RNA sequencing data to perform back-sp
 homepage: https://github.com/nf-core/circrna
 ---
 
+# nf-core-circrna
+
 ## Overview
 nf-core/circrna is designed for the comprehensive analysis of circular RNAs (circRNAs) from total RNA sequencing data. It addresses the challenge of identifying and quantifying non-linear splicing events by detecting back-splice junctions (BSJ) across multiple specialized algorithms.
 

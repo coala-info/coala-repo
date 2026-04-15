@@ -4,7 +4,6 @@ description: This tool quantifies nonlinear dependence between variables in biol
 homepage: https://bioconductor.org/packages/release/bioc/html/Informeasure.html
 ---
 
-
 # bioconductor-informeasure
 
 name: bioconductor-informeasure

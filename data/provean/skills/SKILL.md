@@ -2,8 +2,9 @@
 name: provean
 description: PROVEAN predicts the functional impact of amino acid substitutions, insertions, and deletions on protein biological function. Use when user asks to predict the effect of protein variants, filter non-synonymous mutations, or analyze the impact of indels on protein function.
 homepage: https://www.jcvi.org/research/provean
+metadata:
+  docker_image: "quay.io/biocontainers/provean:1.1.5--h503566f_3"
 ---
-
 
 # provean
 

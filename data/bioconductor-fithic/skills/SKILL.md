@@ -4,7 +4,6 @@ description: FitHiC identifies statistically significant chromatin interactions 
 homepage: https://bioconductor.org/packages/release/bioc/html/FitHiC.html
 ---
 
-
 # bioconductor-fithic
 
 ## Overview

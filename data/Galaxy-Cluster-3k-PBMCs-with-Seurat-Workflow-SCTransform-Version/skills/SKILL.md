@@ -1,10 +1,12 @@
 ---
 name: cluster-3k-pbmcs-with-seurat-workflow-sctransform-version
-description: "This single-cell RNA-seq workflow processes PBMC count matrices and marker lists using Seurat tools to perform SCTransform-based normalization, dimensionality reduction, and cluster identification. Use this skill when you need to identify distinct cell populations in peripheral blood mononuclear cell datasets while applying SCTransform to improve signal-to-noise ratios and stabilize variance."
-homepage: https://workflowhub.eu/workflows/1555
+description: This single-cell RNA-seq workflow processes PBMC count matrices and marker lists using Seurat tools to perform SCTransform-based normalization, dimensionality reduction, and cluster identification. Use this skill when you need to identify distinct cell populations in peripheral blood mononuclear cell datasets while applying SCTransform to improve signal-to-noise ratios and stabilize variance.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Cluster 3k PBMCs with Seurat - Workflow - SCTransform Version
+# cluster-3k-pbmcs-with-seurat-workflow-sctransform-version
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs stepwise and sequential normalization for cDNA m
 homepage: https://bioconductor.org/packages/release/bioc/html/stepNorm.html
 ---
 
-
 # bioconductor-stepnorm
 
 name: bioconductor-stepnorm

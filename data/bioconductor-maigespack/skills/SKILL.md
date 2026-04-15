@@ -4,7 +4,6 @@ description: The maigesPack package provides a comprehensive toolkit for the pre
 homepage: https://bioconductor.org/packages/3.6/bioc/html/maigesPack.html
 ---
 
-
 # bioconductor-maigespack
 
 ## Overview

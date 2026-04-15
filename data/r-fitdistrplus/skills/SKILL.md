@@ -4,7 +4,6 @@ description: The r-fitdistrplus package provides a comprehensive toolbox for fit
 homepage: https://cloud.r-project.org/web/packages/fitdistrplus/index.html
 ---
 
-
 # r-fitdistrplus
 
 ## Overview

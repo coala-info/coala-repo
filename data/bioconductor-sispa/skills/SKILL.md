@@ -1,9 +1,8 @@
 ---
 name: bioconductor-sispa
-description: "SISPA defines sample groups with similar gene set enrichment profiles by applying change point models to molecular data. Use when user asks to identify active versus inactive sample groups, calculate gene set enrichment scores, or partition samples based on integrated molecular profiles."
+description: SISPA defines sample groups with similar gene set enrichment profiles by applying change point models to molecular data. Use when user asks to identify active versus inactive sample groups, calculate gene set enrichment scores, or partition samples based on integrated molecular profiles.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SISPA.html
 ---
-
 
 # bioconductor-sispa
 

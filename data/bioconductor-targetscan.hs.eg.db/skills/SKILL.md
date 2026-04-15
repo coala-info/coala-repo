@@ -4,7 +4,6 @@ description: This package provides human miRNA target predictions from the Targe
 homepage: https://bioconductor.org/packages/3.7/data/annotation/html/targetscan.Hs.eg.db.html
 ---
 
-
 # bioconductor-targetscan.hs.eg.db
 
 name: bioconductor-targetscan.hs.eg.db

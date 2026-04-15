@@ -4,7 +4,6 @@ description: This package provides an R interface to the scvi-tools Python libra
 homepage: https://bioconductor.org/packages/release/bioc/html/scviR.html
 ---
 
-
 # bioconductor-scvir
 
 name: bioconductor-scvir

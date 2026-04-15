@@ -4,7 +4,6 @@ description: This package provides the RDP Classifier training data required for
 homepage: https://bioconductor.org/packages/release/data/experiment/html/rRDPData.html
 ---
 
-
 # bioconductor-rrdpdata
 
 ## Overview

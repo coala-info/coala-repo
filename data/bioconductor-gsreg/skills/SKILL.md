@@ -4,7 +4,6 @@ description: This tool analyzes gene set expression variability and dysregulatio
 homepage: https://bioconductor.org/packages/release/bioc/html/GSReg.html
 ---
 
-
 # bioconductor-gsreg
 
 name: bioconductor-gsreg

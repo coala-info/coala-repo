@@ -4,7 +4,6 @@ description: This package provides subsetted BAM files and chromosome sequences 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pasillaBamSubset.html
 ---
 
-
 # bioconductor-pasillabamsubset
 
 name: bioconductor-pasillabamsubset

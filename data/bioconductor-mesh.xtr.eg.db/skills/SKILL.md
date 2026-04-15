@@ -4,7 +4,6 @@ description: This package provides mappings between Medical Subject Headings (Me
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Xtr.eg.db.html
 ---
 
-
 # bioconductor-mesh.xtr.eg.db
 
 name: bioconductor-mesh.xtr.eg.db

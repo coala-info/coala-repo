@@ -4,7 +4,6 @@ description: The iGC package performs integrated analysis of gene expression and
 homepage: https://bioconductor.org/packages/release/bioc/html/iGC.html
 ---
 
-
 # bioconductor-igc
 
 ## Overview

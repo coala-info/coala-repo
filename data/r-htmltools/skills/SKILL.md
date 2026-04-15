@@ -4,7 +4,6 @@ description: The r-htmltools package provides tools to programmatically generate
 homepage: https://cloud.r-project.org/web/packages/htmltools/index.html
 ---
 
-
 # r-htmltools
 
 name: r-htmltools

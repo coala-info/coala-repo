@@ -4,7 +4,6 @@ description: NOISeq is a non-parametric tool for identifying differential expres
 homepage: https://bioconductor.org/packages/release/bioc/html/NOISeq.html
 ---
 
-
 # bioconductor-noiseq
 
 ## Overview

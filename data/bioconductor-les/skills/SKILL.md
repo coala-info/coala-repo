@@ -4,7 +4,6 @@ description: This tool identifies differential effects in tiling microarray data
 homepage: https://bioconductor.org/packages/release/bioc/html/les.html
 ---
 
-
 # bioconductor-les
 
 name: bioconductor-les

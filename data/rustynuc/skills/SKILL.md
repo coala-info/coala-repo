@@ -1,9 +1,10 @@
 ---
 name: rustynuc
-description: "rustynuc identifies 8-oxoG oxidative damage artifacts in sequencing data by analyzing strand orientation bias. Use when user asks to scan BAM files for potential damage sites, annotate existing VCF variants with damage likelihood, or identify G>T sequencing artifacts."
+description: rustynuc identifies 8-oxoG oxidative damage artifacts in sequencing data by analyzing strand orientation bias. Use when user asks to scan BAM files for potential damage sites, annotate existing VCF variants with damage likelihood, or identify G>T sequencing artifacts.
 homepage: https://github.com/bjohnnyd/rustynuc
+metadata:
+  docker_image: "quay.io/biocontainers/rustynuc:0.3.1--h577a1d6_3"
 ---
-
 
 # rustynuc
 

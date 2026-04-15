@@ -1,9 +1,10 @@
 ---
 name: dawg
-description: "Dawg simulates the evolution of DNA sequences by modeling substitutions and length-dependent gap formation across a phylogeny. Use when user asks to simulate recombinant DNA sequences, generate true alignments for benchmarking, or model sequence evolution using GTR and indel models."
+description: Dawg simulates the evolution of DNA sequences by modeling substitutions and length-dependent gap formation across a phylogeny. Use when user asks to simulate recombinant DNA sequences, generate true alignments for benchmarking, or model sequence evolution using GTR and indel models.
 homepage: https://github.com/reedacartwright/dawg
+metadata:
+  docker_image: "quay.io/biocontainers/dawg:2.0.beta1--h81a73ca_1"
 ---
-
 
 # dawg
 

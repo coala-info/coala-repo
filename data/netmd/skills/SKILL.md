@@ -2,8 +2,9 @@
 name: netmd
 description: NetMD extracts shared patterns and consensus behaviors from ensembles of molecular dynamics simulations using graph-based embeddings and trajectory alignment. Use when user asks to identify a consensus barycenter, align molecular dynamics trajectories, or extract shared structural patterns from protein conformations.
 homepage: https://github.com/mazzalab/NetMD
+metadata:
+  docker_image: "quay.io/biocontainers/netmd:1.0.3--pyh3c853c9_0"
 ---
-
 
 # netmd
 

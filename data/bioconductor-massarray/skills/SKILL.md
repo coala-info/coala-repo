@@ -4,7 +4,6 @@ description: This tool analyzes MassArray data for DNA methylation and SNP detec
 homepage: https://bioconductor.org/packages/release/bioc/html/MassArray.html
 ---
 
-
 # bioconductor-massarray
 
 name: bioconductor-massarray

@@ -4,7 +4,6 @@ description: This tool performs genomewide epistasis and co-selection analysis i
 homepage: https://cran.r-project.org/web/packages/ldweaver/index.html
 ---
 
-
 # r-ldweaver
 
 name: r-ldweaver

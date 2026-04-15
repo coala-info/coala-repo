@@ -2,6 +2,8 @@
 name: sylph
 description: Sylph performs rapid metagenomic profiling and containment ANI estimation using abundance-corrected k-mer sketching. Use when user asks to sketch sequencing data, profile metagenomic samples for taxonomic abundance, or perform ANI queries against reference databases.
 homepage: https://github.com/bluenote-1577/sylph
+metadata:
+  docker_image: "quay.io/biocontainers/sylph:0.9.0--ha6fb395_0"
 ---
 
 # sylph

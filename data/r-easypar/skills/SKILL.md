@@ -4,7 +4,6 @@ description: This tool enables parallel execution of R functions on local multi-
 homepage: https://cran.r-project.org/web/packages/easypar/index.html
 ---
 
-
 # r-easypar
 
 name: r-easypar

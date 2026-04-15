@@ -2,8 +2,9 @@
 name: treemaker
 description: `treemaker` transforms flat, comma-separated classification strings into hierarchical tree structures. Use when user asks to create hierarchical trees, convert classification strings to Newick or Nexus format, or include internal node labels.
 homepage: https://github.com/SimonGreenhill/treemaker
+metadata:
+  docker_image: "quay.io/biocontainers/treemaker:1.4--pyh9f0ad1d_0"
 ---
-
 
 # treemaker
 

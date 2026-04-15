@@ -4,7 +4,6 @@ description: This package provides access to Minor Allele Frequency data from th
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MafDb.ESP6500SI.V2.SSA137.hs37d5.html
 ---
 
-
 # bioconductor-mafdb.esp6500si.v2.ssa137.hs37d5
 
 name: bioconductor-mafdb.esp6500si.v2.ssa137.hs37d5

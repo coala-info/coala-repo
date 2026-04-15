@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the hgua
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hguatlas13k.db.html
 ---
 
-
 # bioconductor-hguatlas13k.db
 
 name: bioconductor-hguatlas13k.db

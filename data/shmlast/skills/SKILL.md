@@ -2,6 +2,8 @@
 name: shmlast
 description: shmlast identifies orthologous sequences between a transcriptome and a protein database using the Conditional Reciprocal Best Hits algorithm. Use when user asks to find orthologs, perform conditional reciprocal best hits, or run reciprocal best hits between two species.
 homepage: https://github.com/camillescott/shmlast
+metadata:
+  docker_image: "quay.io/biocontainers/shmlast:1.6--py_0"
 ---
 
 # shmlast

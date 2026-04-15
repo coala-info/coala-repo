@@ -1,10 +1,12 @@
 ---
 name: partial-de-novo-workflow-ustacks-only
-description: "This Galaxy workflow processes RAD-seq dataset collections using the Stacks2 ustacks tool to identify unique loci and SNPs within individual samples for de novo analysis. Use this skill when you need to process specific batches of samples independently while maintaining unique sample identifiers for later integration into a complete de novo assembly pipeline."
-homepage: https://workflowhub.eu/workflows/349
+description: This Galaxy workflow processes RAD-seq dataset collections using the Stacks2 ustacks tool to identify unique loci and SNPs within individual samples for de novo analysis. Use this skill when you need to process specific batches of samples independently while maintaining unique sample identifiers for later integration into a complete de novo assembly pipeline.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Partial de novo workflow: ustacks only
+# partial-de-novo-workflow-ustacks-only
 
 ## Overview
 

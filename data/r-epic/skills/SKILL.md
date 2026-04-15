@@ -4,7 +4,6 @@ description: r-epic estimates the proportions of immune, stromal, endothelial, a
 homepage: https://cran.r-project.org/web/packages/epic/index.html
 ---
 
-
 # r-epic
 
 name: r-epic

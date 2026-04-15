@@ -2,8 +2,9 @@
 name: floco
 description: Floco estimates individual node copy numbers on pangenome graphs by formulating sequence-to-graph alignment data as an integer linear programming problem. Use when user asks to call node copy numbers on genome graphs, estimate ploidy states from GAF alignments, or solve network flow problems for graph-based copy number determination.
 homepage: https://github.com/hugocarmaga/floco
+metadata:
+  docker_image: "quay.io/biocontainers/floco:1.1.0--pyhdfd78af_0"
 ---
-
 
 # floco
 

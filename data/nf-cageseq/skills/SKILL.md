@@ -4,6 +4,8 @@ description: The pipeline processes raw demultiplexed FASTQ files using cutadapt
 homepage: https://github.com/nf-core/cageseq
 ---
 
+# cageseq
+
 ## Overview
 nf-core/cageseq is a bioinformatics analysis pipeline designed for CAGE-seq (Cap Analysis Gene Expression) sequencing data. It solves the problem of identifying and quantifying transcription start sites by processing raw reads, removing technical artifacts like linkers and ribosomal RNA, and clustering the resulting CAGE tags.
 

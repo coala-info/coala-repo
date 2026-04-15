@@ -4,7 +4,6 @@ description: bioconductor-scone provides a comprehensive framework for normalizi
 homepage: https://bioconductor.org/packages/release/bioc/html/scone.html
 ---
 
-
 # bioconductor-scone
 
 name: bioconductor-scone

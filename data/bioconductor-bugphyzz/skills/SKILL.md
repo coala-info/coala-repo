@@ -4,7 +4,6 @@ description: This tool imports harmonized microbial trait data and creates signa
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bugphyzz.html
 ---
 
-
 # bioconductor-bugphyzz
 
 name: bioconductor-bugphyzz

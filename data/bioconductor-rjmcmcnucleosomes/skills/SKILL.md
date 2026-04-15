@@ -4,7 +4,6 @@ description: This tool performs Bayesian profiling of nucleosome positions from 
 homepage: https://bioconductor.org/packages/release/bioc/html/RJMCMCNucleosomes.html
 ---
 
-
 # bioconductor-rjmcmcnucleosomes
 
 name: bioconductor-rjmcmcnucleosomes

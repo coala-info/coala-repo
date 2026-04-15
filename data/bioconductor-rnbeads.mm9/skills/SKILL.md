@@ -4,7 +4,6 @@ description: This package provides genomic annotation data for the mouse mm9 ass
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.mm9.html
 ---
 
-
 # bioconductor-rnbeads.mm9
 
 name: bioconductor-rnbeads.mm9

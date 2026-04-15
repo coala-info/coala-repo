@@ -4,7 +4,6 @@ description: This package provides datasets and utility functions for geneplast 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/geneplast.data.html
 ---
 
-
 # bioconductor-geneplast.data
 
 name: bioconductor-geneplast.data

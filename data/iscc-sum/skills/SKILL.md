@@ -1,9 +1,10 @@
 ---
 name: iscc-sum
-description: "iscc-sum is a high-performance implementation of the ISCC hashing standard used for content identification and similarity detection. Use when user asks to generate ISCC codes, verify file integrity, find similar files based on content, or process large datasets for similarity matching."
+description: iscc-sum is a high-performance implementation of the ISCC hashing standard used for content identification and similarity detection. Use when user asks to generate ISCC codes, verify file integrity, find similar files based on content, or process large datasets for similarity matching.
 homepage: https://github.com/bio-codes/iscc-sum
+metadata:
+  docker_image: "quay.io/biocontainers/iscc-sum:0.1.0--py314hc1c3326_0"
 ---
-
 
 # iscc-sum
 

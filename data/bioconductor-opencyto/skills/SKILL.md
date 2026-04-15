@@ -4,7 +4,6 @@ description: This tool provides a data-driven framework for automated, hierarchi
 homepage: https://bioconductor.org/packages/release/bioc/html/openCyto.html
 ---
 
-
 # bioconductor-opencyto
 
 name: bioconductor-opencyto

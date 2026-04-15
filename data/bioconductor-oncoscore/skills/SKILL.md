@@ -4,7 +4,6 @@ description: OncoScore measures the oncogenic potential of genes by analyzing th
 homepage: https://bioconductor.org/packages/release/bioc/html/OncoScore.html
 ---
 
-
 # bioconductor-oncoscore
 
 ## Overview

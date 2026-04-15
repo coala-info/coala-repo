@@ -1,10 +1,12 @@
 ---
 name: chip-seq-analysis-single-end-read-processing
-description: "This Galaxy workflow processes single-end ChIP-seq FASTQ files through adapter trimming with fastp, Bowtie2 alignment, and MACS2 peak calling to identify protein-DNA binding sites. Use this skill when you need to characterize transcription factor binding or histone modifications from single-end sequencing data by generating high-quality alignment files, peak calls, and normalized coverage profiles."
-homepage: https://workflowhub.eu/workflows/397
+description: This Galaxy workflow processes single-end ChIP-seq FASTQ files through adapter trimming with fastp, Bowtie2 alignment, and MACS2 peak calling to identify protein-DNA binding sites. Use this skill when you need to characterize transcription factor binding or histone modifications from single-end sequencing data by generating high-quality alignment files, peak calls, and normalized coverage profiles.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ChIP-seq Analysis: Single-End Read Processing
+# chip-seq-analysis-single-end-read-processing
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool provides functions for multivariate analysis and graphica
 homepage: https://bioconductor.org/packages/release/bioc/html/made4.html
 ---
 
-
 # bioconductor-made4
 
 ## Overview

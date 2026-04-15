@@ -4,7 +4,6 @@ description: This package provides RNA modification data for the human genome as
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EpiTxDb.Hs.hg38.html
 ---
 
-
 # bioconductor-epitxdb.hs.hg38
 
 ## Overview

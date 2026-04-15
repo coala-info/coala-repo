@@ -2,8 +2,9 @@
 name: gwyddion
 description: Gwyddion is a tool for visualization and analysis of scanning probe microscopy (SPM) data. Use when user asks to process, analyze, or visualize SPM data files, perform operations like leveling, filtering, feature extraction, or generate reports from SPM datasets.
 homepage: https://github.com/christian-sahlmann/gwyddion
+metadata:
+  docker_image: "biocontainers/gwyddion:v2.52-1-deb_cv1"
 ---
-
 
 # gwyddion
 

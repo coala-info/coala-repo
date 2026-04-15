@@ -4,7 +4,6 @@ description: The rlist package provides a comprehensive set of tools for manipul
 homepage: https://cloud.r-project.org/web/packages/rlist/index.html
 ---
 
-
 # r-rlist
 
 name: r-rlist

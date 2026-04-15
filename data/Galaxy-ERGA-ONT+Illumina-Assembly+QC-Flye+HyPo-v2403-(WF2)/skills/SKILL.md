@@ -1,10 +1,12 @@
 ---
 name: erga-ontillumina-assemblyqc-flyehypo-v2403-wf2
-description: "This Galaxy workflow performs hybrid de novo genome assembly and quality control using ONT and Illumina reads, integrating Flye for assembly, HyPo for polishing, and tools like BUSCO and Merqury for validation. Use this skill when you need to produce high-quality eukaryotic reference genomes that require both long-read structural resolution and short-read sequence accuracy to ensure high completeness and low error rates."
-homepage: https://workflowhub.eu/workflows/788
+description: This Galaxy workflow performs hybrid de novo genome assembly and quality control using ONT and Illumina reads, integrating Flye for assembly, HyPo for polishing, and tools like BUSCO and Merqury for validation. Use this skill when you need to produce high-quality eukaryotic reference genomes that require both long-read structural resolution and short-read sequence accuracy to ensure high completeness and low error rates.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA ONT+Illumina Assembly+QC Flye+HyPo v2403 (WF2)
+# erga-ontillumina-assemblyqc-flyehypo-v2403-wf2
 
 ## Overview
 

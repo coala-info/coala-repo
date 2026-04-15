@@ -1,10 +1,12 @@
 ---
 name: erga-ontillumina-collapsed-purgeqc-v2311-wf3
-description: "This ERGA workflow refines genome assemblies by processing GFA contigs and ONT reads with purge_dups and minimap2, followed by comprehensive quality control using BUSCO, Merqury, and gfastats. Use this skill when you need to eliminate redundant haplotigs from a collapsed assembly and evaluate the biological completeness and k-mer accuracy of the resulting genomic sequence."
-homepage: https://workflowhub.eu/workflows/701
+description: This ERGA workflow refines genome assemblies by processing GFA contigs and ONT reads with purge_dups and minimap2, followed by comprehensive quality control using BUSCO, Merqury, and gfastats. Use this skill when you need to eliminate redundant haplotigs from a collapsed assembly and evaluate the biological completeness and k-mer accuracy of the resulting genomic sequence.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA ONT+Illumina Collapsed Purge+QC v2311 (WF3)
+# erga-ontillumina-collapsed-purgeqc-v2311-wf3
 
 ## Overview
 

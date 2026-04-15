@@ -2,8 +2,9 @@
 name: fpocket
 description: fpocket is a toolset for protein pocket detection and druggability prediction based on Voronoi tessellation. Use when user asks to identify binding cavities, analyze molecular dynamics trajectories for transient pockets, or calculate geometric descriptors for protein structures.
 homepage: https://github.com/Discngine/fpocket
+metadata:
+  docker_image: "quay.io/biocontainers/fpocket:4.0.0"
 ---
-
 
 # fpocket
 

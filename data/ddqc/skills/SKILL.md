@@ -2,8 +2,9 @@
 name: ddqc
 description: The ddqc tool provides a data-driven framework for performing dynamic quality control in scRNA-seq pipelines by calculating filtering thresholds based on specific cell clusters. Use when user asks to perform quality control on single-cell data, calculate dynamic filtering thresholds, or filter cells based on mitochondrial and ribosomal content.
 homepage: https://github.com/ayshwaryas/ddqc
+metadata:
+  docker_image: "quay.io/biocontainers/ddqc:1.0--pyh7e72e81_0"
 ---
-
 
 # ddqc
 

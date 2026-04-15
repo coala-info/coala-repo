@@ -2,8 +2,9 @@
 name: zorro
 description: ZORRO identifies and scores the reliability of individual columns within a multiple sequence alignment. Use when user asks to score a multiple sequence alignment, specify sampling parameters, use a custom guide tree, ignore gaps, or adjust weighting for alignment scoring.
 homepage: https://sourceforge.net/projects/probmask/
+metadata:
+  docker_image: "quay.io/biocontainers/zorro:2011.12.01--h7b50bb2_5"
 ---
-
 
 # zorro
 

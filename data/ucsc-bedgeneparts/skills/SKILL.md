@@ -2,8 +2,9 @@
 name: ucsc-bedgeneparts
 description: The ucsc-bedgeneparts tool decomposes gene models in BED format into their constituent parts. Use when user asks to extract promoter regions, extract first exons, or extract intronic regions.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedgeneparts:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedgeneparts
 

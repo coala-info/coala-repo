@@ -4,7 +4,6 @@ description: This tool manages a containerized Orthanc PACS environment for medi
 homepage: https://github.com/ThalesMMS/Orthanc-PACS
 ---
 
-
 # orthanc-dicomweb
 
 ## Overview

@@ -2,6 +2,8 @@
 name: nwkit
 description: nwkit is a toolkit for the programmatic manipulation, rooting, pruning, and analysis of Newick-formatted phylogenetic trees. Use when user asks to root trees, prune leaves, rename nodes, calculate topological distances, or convert between Newick and tabular formats.
 homepage: https://github.com/kfuku52/nwkit
+metadata:
+  docker_image: "quay.io/biocontainers/nwkit:0.21.1--pyhdfd78af_0"
 ---
 
 # nwkit

@@ -4,7 +4,6 @@ description: This tool provides access to 34 curated and harmonized breast cance
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedBreastData.html
 ---
 
-
 # bioconductor-curatedbreastdata
 
 name: bioconductor-curatedbreastdata

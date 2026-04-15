@@ -4,7 +4,6 @@ description: This tool provides an interface for interactive network visualizati
 homepage: https://bioconductor.org/packages/release/bioc/html/RCyjs.html
 ---
 
-
 # bioconductor-rcyjs
 
 name: bioconductor-rcyjs

@@ -4,7 +4,6 @@ description: This tool identifies active modules in single-layer and multi-layer
 homepage: https://bioconductor.org/packages/release/bioc/html/AMOUNTAIN.html
 ---
 
-
 # bioconductor-amountain
 
 name: bioconductor-amountain

@@ -4,7 +4,6 @@ description: The bioconductor-biodbuniprot package provides a connector to the U
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbUniprot.html
 ---
 
-
 # bioconductor-biodbuniprot
 
 ## Overview

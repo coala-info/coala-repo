@@ -4,7 +4,6 @@ description: bioconductor-cydar performs differential abundance analysis for mas
 homepage: https://bioconductor.org/packages/release/bioc/html/cydar.html
 ---
 
-
 # bioconductor-cydar
 
 name: bioconductor-cydar

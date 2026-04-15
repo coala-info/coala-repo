@@ -4,7 +4,6 @@ description: This machine learning framework predicts 3D chromatin domain bounda
 homepage: https://bioconductor.org/packages/release/bioc/html/preciseTAD.html
 ---
 
-
 # bioconductor-precisetad
 
 name: bioconductor-precisetad

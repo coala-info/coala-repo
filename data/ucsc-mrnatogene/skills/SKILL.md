@@ -2,8 +2,9 @@
 name: ucsc-mrnatogene
 description: The ucsc-mrnatogene tool converts mRNA-to-genome alignments from PSL format into gene structure definitions in GenePred format. Use when user asks to convert mRNA alignments to gene structures, build custom gene sets, validate transcript models, or convert PSL files to GenePred format.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-mrnatogene:482--h0b57e2e_0"
 ---
-
 
 # ucsc-mrnatogene
 

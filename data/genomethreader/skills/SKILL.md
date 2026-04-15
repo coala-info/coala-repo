@@ -2,8 +2,9 @@
 name: genomethreader
 description: GenomeThreader performs similarity-based gene prediction by mapping transcriptomic or proteomic sequences onto genomic templates. Use when user asks to predict gene structures, align cDNA or protein sequences to a genome, or generate consensus gene models using splice site models.
 homepage: http://genomethreader.org/
+metadata:
+  docker_image: "quay.io/biocontainers/genomethreader:1.7.1--h87f3376_4"
 ---
-
 
 # genomethreader
 

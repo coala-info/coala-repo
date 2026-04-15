@@ -4,7 +4,6 @@ description: BiGGR is an R package for constraint-based modeling, flux balance a
 homepage: https://bioconductor.org/packages/release/bioc/html/BiGGR.html
 ---
 
-
 # bioconductor-biggr
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool analyzes pooled CRISPR screening data to perform quality 
 homepage: https://bioconductor.org/packages/release/bioc/html/gCrisprTools.html
 ---
 
-
 # bioconductor-gcrisprtools
 
 name: bioconductor-gcrisprtools

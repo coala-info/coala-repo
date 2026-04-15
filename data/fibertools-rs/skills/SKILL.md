@@ -1,9 +1,10 @@
 ---
 name: fibertools-rs
-description: "fibertools-rs processes Fiber-seq data to predict epigenetic features like m6A sites and nucleosome positions. Use when user asks to predict m6A sites, identify nucleosome positions, extract Fiber-seq features into text formats, or center reads for visualization."
+description: fibertools-rs processes Fiber-seq data to predict epigenetic features like m6A sites and nucleosome positions. Use when user asks to predict m6A sites, identify nucleosome positions, extract Fiber-seq features into text formats, or center reads for visualization.
 homepage: https://github.com/mrvollger/fibertools-rs
+metadata:
+  docker_image: "quay.io/biocontainers/fibertools-rs:0.8.2--h3b373d1_0"
 ---
-
 
 # fibertools-rs
 

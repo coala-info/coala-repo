@@ -2,8 +2,9 @@
 name: vafator
 description: VAFator enriches VCF files with site-specific evidence from raw sequencing data by calculating metrics like Allele Frequency and Depth from BAM files. Use when user asks to 'enrich VCF files with evidence', 'calculate allele frequency', 'calculate depth', 'perform rank-sum tests', 'analyze multi-sample data', or 'determine somatic mutation detection power'.
 homepage: https://github.com/tron-bioinformatics/vafator
+metadata:
+  docker_image: "quay.io/biocontainers/vafator:2.2.2--pyhdfd78af_0"
 ---
-
 
 # vafator
 

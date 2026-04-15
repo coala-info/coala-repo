@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-rrna-prediction
-description: "This metagenomics workflow identifies and classifies SSU and LSU rRNA sequences from processed amplicon data and clan information using Infernal cmsearch, MAPseq, and the SILVA database. Use this skill when you need to perform taxonomic profiling of environmental samples by extracting ribosomal RNA regions and generating OTU tables or Krona visualizations."
-homepage: https://workflowhub.eu/workflows/1842
+description: This metagenomics workflow identifies and classifies SSU and LSU rRNA sequences from processed amplicon data and clan information using Infernal cmsearch, MAPseq, and the SILVA database. Use this skill when you need to perform taxonomic profiling of environmental samples by extracting ribosomal RNA regions and generating OTU tables or Krona visualizations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - rRNA prediction
+# mgnifys-amplicon-pipeline-v50-rrna-prediction
 
 ## Overview
 

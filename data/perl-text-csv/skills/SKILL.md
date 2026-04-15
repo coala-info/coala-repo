@@ -2,8 +2,9 @@
 name: perl-text-csv
 description: This tool provides a robust interface for parsing, generating, and manipulating CSV data within Perl scripts. Use when user asks to parse CSV files with complex formatting, convert data between arrays and CSV strings, or handle multi-line fields and quoted separators in Perl.
 homepage: http://metacpan.org/pod/Text::CSV
+metadata:
+  docker_image: "quay.io/biocontainers/perl-text-csv:2.01--pl5321hdfd78af_0"
 ---
-
 
 # perl-text-csv
 

@@ -1,10 +1,12 @@
 ---
 name: differential-peak-analysis-with-snapatac2
-description: "This workflow utilizes SnapATAC2 and MACS3 to perform peak calling and differential accessibility analysis on cell-type annotated AnnData objects from single-cell ATAC-seq experiments. Use this skill when you need to identify cell-type-specific marker regions or compare chromatin accessibility profiles between two specific cell populations or against a global background."
-homepage: https://workflowhub.eu/workflows/1089
+description: This workflow utilizes SnapATAC2 and MACS3 to perform peak calling and differential accessibility analysis on cell-type annotated AnnData objects from single-cell ATAC-seq experiments. Use this skill when you need to identify cell-type-specific marker regions or compare chromatin accessibility profiles between two specific cell populations or against a global background.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Differential peak analysis with SnapATAC2
+# differential-peak-analysis-with-snapatac2
 
 ## Overview
 

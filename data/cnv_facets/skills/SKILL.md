@@ -2,8 +2,9 @@
 name: cnv_facets
 description: cnv_facets performs somatic copy number analysis by comparing tumor and normal sequencing samples using the facets R package. Use when user asks to identify somatic copy number variants, estimate tumor purity and ploidy, or process BAM files to determine total and minor copy numbers.
 homepage: https://github.com/wwcrc/cnv_facets
+metadata:
+  docker_image: "quay.io/biocontainers/cnv-phenopacket:1.0.2"
 ---
-
 
 # cnv_facets
 

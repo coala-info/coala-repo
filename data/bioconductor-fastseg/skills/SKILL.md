@@ -4,7 +4,6 @@ description: bioconductor-fastseg performs fast and efficient segmentation of ge
 homepage: https://bioconductor.org/packages/release/bioc/html/fastseg.html
 ---
 
-
 # bioconductor-fastseg
 
 name: bioconductor-fastseg

@@ -1,9 +1,10 @@
 ---
 name: tantan
-description: "tantan identifies and masks simple regions and tandem repeats in DNA or protein sequences. Use when user asks to mask repetitive regions, identify tandem repeats, or soft-mask sequences for homology searches."
+description: tantan identifies and masks simple regions and tandem repeats in DNA or protein sequences. Use when user asks to mask repetitive regions, identify tandem repeats, or soft-mask sequences for homology searches.
 homepage: http://cbrc3.cbrc.jp/~martin/tantan/
+metadata:
+  docker_image: "quay.io/biocontainers/tantan:51--h5ca1c30_1"
 ---
-
 
 # tantan
 

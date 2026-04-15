@@ -1,9 +1,10 @@
 ---
 name: mira
-description: "MIRA is a bioinformatics tool for assembling DNA and RNA sequencing data. Use when user asks to assemble sequencing data, perform de novo assembly, or map reads to a reference."
+description: MIRA is a bioinformatics tool for assembling DNA and RNA sequencing data. Use when user asks to assemble sequencing data, perform de novo assembly, or map reads to a reference.
 homepage: https://github.com/DrMicrobit/mira
+metadata:
+  docker_image: "quay.io/biocontainers/mira:5.0.0rc2--hb5a7bbe_0"
 ---
-
 
 # mira
 

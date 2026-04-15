@@ -4,7 +4,6 @@ description: This tool performs comprehensive analysis and visualization of muta
 homepage: https://bioconductor.org/packages/release/bioc/html/MutationalPatterns.html
 ---
 
-
 # bioconductor-mutationalpatterns
 
 name: bioconductor-mutationalpatterns

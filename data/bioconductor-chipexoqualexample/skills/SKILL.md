@@ -4,7 +4,6 @@ description: ChIPexoQualExample provides subsetted ChIP-exo data for demonstrati
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChIPexoQualExample.html
 ---
 
-
 # bioconductor-chipexoqualexample
 
 ## Overview

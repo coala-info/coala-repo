@@ -1,10 +1,12 @@
 ---
 name: chromeister-chromosome-comparison
-description: "This Galaxy workflow performs large-scale comparative genomics by aligning query and reference chromosomes using the CHROMEISTER tool to generate dotplots and detected event reports. Use this skill when you need to visualize synteny, identify large-scale genomic rearrangements, or compare chromosome-level assemblies between different species or strains."
-homepage: https://workflowhub.eu/workflows/1545
+description: This Galaxy workflow performs large-scale comparative genomics by aligning query and reference chromosomes using the CHROMEISTER tool to generate dotplots and detected event reports. Use this skill when you need to visualize synteny, identify large-scale genomic rearrangements, or compare chromosome-level assemblies between different species or strains.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CHROMEISTER chromosome comparison
+# chromeister-chromosome-comparison
 
 ## Overview
 

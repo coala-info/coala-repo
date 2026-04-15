@@ -4,7 +4,6 @@ description: This package implements the Position-Dependent Nearest Neighbor met
 homepage: https://bioconductor.org/packages/3.5/bioc/html/affypdnn.html
 ---
 
-
 # bioconductor-affypdnn
 
 name: bioconductor-affypdnn

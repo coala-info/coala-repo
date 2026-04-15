@@ -4,7 +4,6 @@ description: The bioconductor-chipseqspike package normalizes ChIP-seq data usin
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ChIPSeqSpike.html
 ---
 
-
 # bioconductor-chipseqspike
 
 ## Overview

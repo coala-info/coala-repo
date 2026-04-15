@@ -2,8 +2,9 @@
 name: uniprot-id-mapper
 description: The uniprot-id-mapper converts UniProt protein accessions to identifiers from other databases and retrieves associated metadata. Use when user asks to map protein IDs, retrieve protein metadata, query proteins by attributes, or list available mapping databases and fields.
 homepage: https://github.com/David-Araripe/UniProtMapper
+metadata:
+  docker_image: "quay.io/biocontainers/uniprot-id-mapper:1.1.4--pyh7e72e81_0"
 ---
-
 
 # uniprot-id-mapper
 

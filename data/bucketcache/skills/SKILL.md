@@ -1,9 +1,10 @@
 ---
 name: bucketcache
-description: "bucketcache is a Python library that provides persistent file-based caching for serializable objects and function return values. Use when user asks to create a persistent dictionary for data, cache function or method results to disk, or manage cache expiration with TTL."
+description: bucketcache is a Python library that provides persistent file-based caching for serializable objects and function return values. Use when user asks to create a persistent dictionary for data, cache function or method results to disk, or manage cache expiration with TTL.
 homepage: https://github.com/RazerM/bucketcache
+metadata:
+  docker_image: "quay.io/biocontainers/bucketcache:0.12.0--py36_0"
 ---
-
 
 # bucketcache
 

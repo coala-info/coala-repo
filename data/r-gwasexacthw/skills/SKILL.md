@@ -4,7 +4,6 @@ description: This tool performs exact Hardy-Weinberg Equilibrium testing for SNP
 homepage: https://cran.r-project.org/web/packages/gwasexacthw/index.html
 ---
 
-
 # r-gwasexacthw
 
 name: r-gwasexacthw

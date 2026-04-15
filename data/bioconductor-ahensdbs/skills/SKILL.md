@@ -4,7 +4,6 @@ description: This package provides metadata for discovering and retrieving Ensem
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHEnsDbs.html
 ---
 
-
 # bioconductor-ahensdbs
 
 ## Overview

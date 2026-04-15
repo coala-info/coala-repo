@@ -4,7 +4,6 @@ description: This package provides annotation data and probe mappings for the Af
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.canine.2.html
 ---
 
-
 # bioconductor-pd.canine.2
 
 name: bioconductor-pd.canine.2

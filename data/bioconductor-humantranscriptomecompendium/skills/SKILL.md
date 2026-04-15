@@ -4,7 +4,6 @@ description: This package provides programmatic access to a large-scale collecti
 homepage: https://bioconductor.org/packages/3.9/bioc/html/HumanTranscriptomeCompendium.html
 ---
 
-
 # bioconductor-humantranscriptomecompendium
 
 ## Overview

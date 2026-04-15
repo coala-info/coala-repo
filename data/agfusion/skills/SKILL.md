@@ -2,6 +2,8 @@
 name: agfusion
 description: AGFusion annotates and visualizes gene fusion events to predict their functional impact on protein structure. Use when user asks to annotate specific gene fusion junctions, batch process results from fusion-calling algorithms, or generate domain maps for chimeric proteins.
 homepage: https://github.com/murphycj/AGFusion
+metadata:
+  docker_image: "quay.io/biocontainers/agfusion:1.252--py_0"
 ---
 
 # agfusion

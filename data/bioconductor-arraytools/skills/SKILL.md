@@ -4,7 +4,6 @@ description: This tool performs comprehensive analysis of Affymetrix GeneChip da
 homepage: https://bioconductor.org/packages/3.5/bioc/html/ArrayTools.html
 ---
 
-
 # bioconductor-arraytools
 
 name: bioconductor-arraytools

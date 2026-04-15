@@ -1,9 +1,10 @@
 ---
 name: virulign
-description: "Performs codon-correct pairwise alignments of viral genomes and annotates alignments with protein positions. Use when user asks to align viral sequences while preserving codon integrity and incorporating protein-level annotations."
+description: Performs codon-correct pairwise alignments of viral genomes and annotates alignments with protein positions. Use when user asks to align viral sequences while preserving codon integrity and incorporating protein-level annotations.
 homepage: https://github.com/rega-cev/virulign
+metadata:
+  docker_image: "quay.io/biocontainers/virulign:1.1.1--hf316886_6"
 ---
-
 
 # virulign
 

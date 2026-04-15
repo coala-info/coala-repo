@@ -1,9 +1,10 @@
 ---
 name: chromograph
-description: "Chromograph transforms raw genomic data into PNG visualizations such as ideograms and coverage plots. Use when user asks to generate chromosomal ideograms, visualize coverage depth, plot regions of autozygosity, or visualize uniparental disomy."
+description: Chromograph transforms raw genomic data into PNG visualizations such as ideograms and coverage plots. Use when user asks to generate chromosomal ideograms, visualize coverage depth, plot regions of autozygosity, or visualize uniparental disomy.
 homepage: https://github.com/Clinical-Genomics/chromograph
+metadata:
+  docker_image: "quay.io/biocontainers/chromograph:1.3.1--pyhdfd78af_2"
 ---
-
 
 # chromograph
 

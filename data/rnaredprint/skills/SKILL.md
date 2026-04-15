@@ -2,8 +2,9 @@
 name: rnaredprint
 description: RNARedPrint is a computational tool that uses Boltzmann sampling and tree-decomposition algorithms to design RNA sequences compatible with multiple target secondary structures. Use when user asks to design RNA sequences for multiple conformations, generate sequences with specific energy profiles across different structures, or perform multi-state RNA design.
 homepage: https://github.com/yannponty/RNARedPrint
+metadata:
+  docker_image: "quay.io/biocontainers/rnaredprint:0.3--h9948957_2"
 ---
-
 
 # rnaredprint
 

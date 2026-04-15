@@ -4,7 +4,6 @@ description: This package provides probe sequence and location data for the Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/riceprobe.html
 ---
 
-
 # bioconductor-riceprobe
 
 name: bioconductor-riceprobe

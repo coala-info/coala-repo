@@ -2,8 +2,9 @@
 name: proteomiqon-proteininference
 description: This tool aggregates peptide-level identifications into protein groups to resolve sequence redundancies and calculate protein-level statistics. Use when user asks to perform protein inference, group peptides into protein identifications, or assign peptide evidence for quantification.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-proteininference:0.0.7--hdfd78af_1"
 ---
-
 
 # proteomiqon-proteininference
 

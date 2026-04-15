@@ -1,10 +1,12 @@
 ---
 name: subworkflow
-description: "This Galaxy workflow processes an input dataset collection through multiple nested subworkflows and a data pasting tool to consolidate results. Use this skill when you need to perform modular data analysis on large collections by chaining reusable sub-components into a unified output."
-homepage: https://workflowhub.eu/workflows/1393
+description: This Galaxy workflow processes an input dataset collection through multiple nested subworkflows and a data pasting tool to consolidate results. Use this skill when you need to perform modular data analysis on large collections by chaining reusable sub-components into a unified output.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Subworkflow
+# subworkflow
 
 ## Overview
 

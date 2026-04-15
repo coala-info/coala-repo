@@ -2,8 +2,9 @@
 name: scanindel
 description: ScanIndel is a bioinformatics pipeline that detects insertions and deletions by performing BLAT re-alignment and de novo assembly on soft-clipped reads. Use when user asks to identify indels in complex regions, detect variants from soft-clipped sequences, or run an indel detection pipeline using BAM or FastQ files.
 homepage: https://github.com/cauyrd/ScanIndel
+metadata:
+  docker_image: "quay.io/biocontainers/scanindel:1.3--py27_0"
 ---
-
 
 # scanindel
 

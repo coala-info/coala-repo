@@ -4,7 +4,6 @@ description: This package provides example mass spectrometry data, compound list
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RMassBankData.html
 ---
 
-
 # bioconductor-rmassbankdata
 
 name: bioconductor-rmassbankdata

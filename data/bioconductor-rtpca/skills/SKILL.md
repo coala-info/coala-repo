@@ -4,7 +4,6 @@ description: This package implements Thermal Proximity Co-aggregation to analyze
 homepage: https://bioconductor.org/packages/release/bioc/html/Rtpca.html
 ---
 
-
 # bioconductor-rtpca
 
 ## Overview

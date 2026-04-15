@@ -2,8 +2,9 @@
 name: perl-params-validate
 description: This tool provides a framework for validating subroutine parameters in Perl against defined schemas and types. Use when user asks to validate positional or named arguments, enforce data types for function inputs, or implement custom validation callbacks in Perl code.
 homepage: http://metacpan.org/pod/Params-Validate
+metadata:
+  docker_image: "quay.io/biocontainers/perl-params-validate:1.31--pl5321h7b50bb2_5"
 ---
-
 
 # perl-params-validate
 

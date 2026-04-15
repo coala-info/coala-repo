@@ -4,7 +4,6 @@ description: This package provides a breast cancer gene expression dataset from 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/mAPKLData.html
 ---
 
-
 # bioconductor-mapkldata
 
 ## Overview

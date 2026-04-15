@@ -4,7 +4,6 @@ description: This tool detects transcription factor binding sites by integrating
 homepage: https://bioconductor.org/packages/release/bioc/html/Motif2Site.html
 ---
 
-
 # bioconductor-motif2site
 
 name: bioconductor-motif2site

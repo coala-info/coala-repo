@@ -1,9 +1,10 @@
 ---
 name: fastcov
-description: "fastcov is a high-performance utility that transforms indexed BAM files into visual coverage plots or CSV data. Use when user asks to generate genomic coverage plots, visualize depth across specific regions, or export alignment coverage to CSV format."
+description: fastcov is a high-performance utility that transforms indexed BAM files into visual coverage plots or CSV data. Use when user asks to generate genomic coverage plots, visualize depth across specific regions, or export alignment coverage to CSV format.
 homepage: https://github.com/RaverJay/fastcov
+metadata:
+  docker_image: "quay.io/biocontainers/fastcov:0.1.3--hdfd78af_0"
 ---
-
 
 # fastcov
 

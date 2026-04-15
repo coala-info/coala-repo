@@ -4,7 +4,6 @@ description: This R package generates highly customizable, publication-quality h
 homepage: https://cloud.r-project.org/web/packages/pheatmap/index.html
 ---
 
-
 # r-pheatmap
 
 name: r-pheatmap

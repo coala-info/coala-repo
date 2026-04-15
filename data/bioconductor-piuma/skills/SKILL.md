@@ -4,7 +4,6 @@ description: This tool performs Topological Data Analysis on high-dimensional bi
 homepage: https://bioconductor.org/packages/release/bioc/html/PIUMA.html
 ---
 
-
 # bioconductor-piuma
 
 name: bioconductor-piuma

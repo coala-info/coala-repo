@@ -2,8 +2,9 @@
 name: conservation
 description: The conservation tool quantifies and visualizes the evolutionary conservation of genetic sequences by comparing protein domains against coding sequences across multiple species. Use when user asks to quantify evolutionary conservation, calculate codon substitution matrices, perform statistical tests on sequence conservation, or visualize conservation patterns across species.
 homepage: https://github.com/hanjunlee21/conservation
+metadata:
+  docker_image: "quay.io/biocontainers/conservation:1.0.1--pyhdfd78af_0"
 ---
-
 
 # conservation
 

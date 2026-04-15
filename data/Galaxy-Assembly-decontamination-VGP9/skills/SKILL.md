@@ -1,10 +1,12 @@
 ---
 name: assembly-decontamination-vgp9
-description: "This workflow decontaminates scaffolded genome assemblies by identifying non-target sequences and mitochondrial DNA using Kraken2, NCBI BLAST+, and gfastats. Use this skill when you need to clean a draft vertebrate genome assembly by removing foreign biological contaminants and mis-scaffolded mitochondrial sequences to ensure high-quality curated results."
-homepage: https://workflowhub.eu/workflows/1594
+description: This workflow decontaminates scaffolded genome assemblies by identifying non-target sequences and mitochondrial DNA using Kraken2, NCBI BLAST+, and gfastats. Use this skill when you need to clean a draft vertebrate genome assembly by removing foreign biological contaminants and mis-scaffolded mitochondrial sequences to ensure high-quality curated results.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly-decontamination-VGP9
+# assembly-decontamination-vgp9
 
 ## Overview
 

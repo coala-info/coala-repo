@@ -4,7 +4,6 @@ description: pfamAnalyzeR identifies and classifies protein domain isotypes from
 homepage: https://bioconductor.org/packages/release/bioc/html/pfamAnalyzeR.html
 ---
 
-
 # bioconductor-pfamanalyzer
 
 ## Overview

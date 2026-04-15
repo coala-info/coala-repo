@@ -4,7 +4,6 @@ description: This package provides a Bioconductor annotation suite for the Human
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HDO.db.html
 ---
 
-
 # bioconductor-hdo.db
 
 name: bioconductor-hdo.db

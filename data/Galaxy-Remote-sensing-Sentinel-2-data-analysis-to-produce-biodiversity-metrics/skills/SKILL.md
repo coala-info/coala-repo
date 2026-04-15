@@ -1,10 +1,12 @@
 ---
 name: remote-sensing-sentinel-2-data-analysis-to-produce-biodivers
-description: "This workflow processes Sentinel 2 satellite imagery to calculate spectral and biodiversity indices and generate diversity maps using specialized remote sensing preprocessing and analysis tools. Use this skill when you need to quantify ecosystem diversity and monitor environmental health by deriving spatial biodiversity metrics from multi-spectral satellite data."
-homepage: https://workflowhub.eu/workflows/657
+description: This workflow processes Sentinel 2 satellite imagery to calculate spectral and biodiversity indices and generate diversity maps using specialized remote sensing preprocessing and analysis tools. Use this skill when you need to quantify ecosystem diversity and monitor environmental health by deriving spatial biodiversity metrics from multi-spectral satellite data.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Remote sensing Sentinel 2 data analysis to produce biodiversity metrics
+# remote-sensing-sentinel-2-data-analysis-to-produce-biodivers
 
 ## Overview
 

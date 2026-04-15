@@ -2,6 +2,8 @@
 name: krepp
 description: krepp analyzes sequencing reads using k-mer frequencies and maximum likelihood models to estimate evolutionary distances and perform phylogenetic placement. Use when user asks to index reference genomes, estimate distances between reads and references, perform phylogenetic placement, or sketch and seek sequences.
 homepage: https://github.com/bo1929/krepp
+metadata:
+  docker_image: "quay.io/biocontainers/krepp:0.7.1--hdb29145_0"
 ---
 
 # krepp

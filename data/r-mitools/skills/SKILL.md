@@ -4,7 +4,6 @@ description: The r-mitools package provides a framework for managing, analyzing,
 homepage: https://cloud.r-project.org/web/packages/mitools/index.html
 ---
 
-
 # r-mitools
 
 name: r-mitools

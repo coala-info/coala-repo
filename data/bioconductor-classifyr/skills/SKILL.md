@@ -4,7 +4,6 @@ description: ClassifyR provides a standardized framework for cross-validated cla
 homepage: https://bioconductor.org/packages/release/bioc/html/ClassifyR.html
 ---
 
-
 # bioconductor-classifyr
 
 name: bioconductor-classifyr

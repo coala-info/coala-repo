@@ -4,7 +4,6 @@ description: The MuData package provides a Bioconductor interface for reading an
 homepage: https://bioconductor.org/packages/release/bioc/html/MuData.html
 ---
 
-
 # bioconductor-mudata
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: music-pre-grouping-cell-types
-description: "This transcriptomics workflow utilizes MuSiC tools to process single-cell and bulk RNA-seq datasets alongside specific marker genes for hierarchical cell type estimation. Use this skill when you need to accurately estimate cell type proportions in bulk samples by grouping closely related cell populations to overcome high collinearity in gene expression profiles."
-homepage: https://workflowhub.eu/workflows/1553
+description: This transcriptomics workflow utilizes MuSiC tools to process single-cell and bulk RNA-seq datasets alongside specific marker genes for hierarchical cell type estimation. Use this skill when you need to accurately estimate cell type proportions in bulk samples by grouping closely related cell populations to overcome high collinearity in gene expression profiles.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Music: Pre-grouping cell types
+# music-pre-grouping-cell-types
 
 ## Overview
 

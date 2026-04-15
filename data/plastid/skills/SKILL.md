@@ -1,7 +1,9 @@
 ---
 name: plastid
-description: "Plastid is a toolkit for high-resolution analysis of sequencing data that maps read alignments to specific functional sites like the ribosomal P-site. Use when user asks to estimate P-site offsets, generate metagene profiles, quantify gene expression and translation efficiency, or create visualization track files."
+description: Plastid is a toolkit for high-resolution analysis of sequencing data that maps read alignments to specific functional sites like the ribosomal P-site. Use when user asks to estimate P-site offsets, generate metagene profiles, quantify gene expression and translation efficiency, or create visualization track files.
 homepage: http://plastid.readthedocs.io/en/latest/
+metadata:
+  docker_image: "quay.io/biocontainers/plastid:0.6.1--py38h7d1810a_2"
 ---
 
 # plastid

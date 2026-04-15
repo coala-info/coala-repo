@@ -2,8 +2,9 @@
 name: justbackoff
 description: The justbackoff tool implements exponential backoff and retry strategies to manage wait times between failed operations in Python applications. Use when user asks to implement retry logic, manage exponential backoff, handle transient failures, or add jitter to network requests.
 homepage: https://github.com/admiralobvious/justbackoff
+metadata:
+  docker_image: "quay.io/biocontainers/justbackoff:0.4.0--py36_0"
 ---
-
 
 # justbackoff
 

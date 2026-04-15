@@ -2,8 +2,9 @@
 name: sequana
 description: Sequana is a Python-based framework and suite of Snakemake pipelines designed for the analysis and processing of high-throughput sequencing data. Use when user asks to analyze genome coverage, perform differential expression analysis, identify species taxonomy, or manage bioinformatics workflows for raw FASTQ files.
 homepage: https://sequana.readthedocs.io
+metadata:
+  docker_image: "quay.io/biocontainers/sequana:0.19.6--pyhdfd78af_0"
 ---
-
 
 # sequana
 

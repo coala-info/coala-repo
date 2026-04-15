@@ -1,9 +1,12 @@
 ---
 name: nmr-pipe
-description: "This CWL workflow processes 2D 1H 15N HSQC NMR spectra using NMRPipe tools to convert raw data into peak lists containing 1H and 15N chemical shift values. Use this skill when characterizing protein-ligand binding sites or identifying chemical shift perturbations across multiple experimental samples."
+description: This CWL workflow processes 2D 1H 15N HSQC NMR spectra using NMRPipe tools to convert raw data into peak lists containing 1H and 15N chemical shift values. Use this skill when characterizing protein-ligand binding sites or identifying chemical shift perturbations across multiple experimental samples.
 homepage: https://workflowhub.eu/workflows/43
+metadata:
+  docker_image: "N/A"
 ---
-# NMR pipe
+
+# nmr-pipe
 
 ## Overview
 

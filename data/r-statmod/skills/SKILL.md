@@ -4,7 +4,6 @@ description: The r-statmod package provides specialized algorithms for advanced 
 homepage: https://cloud.r-project.org/web/packages/statmod/index.html
 ---
 
-
 # r-statmod
 
 name: r-statmod

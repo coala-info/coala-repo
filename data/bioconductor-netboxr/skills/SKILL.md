@@ -4,7 +4,6 @@ description: This tool identifies pathway modules by mapping altered genes onto 
 homepage: https://bioconductor.org/packages/3.11/bioc/html/netboxr.html
 ---
 
-
 # bioconductor-netboxr
 
 ## Overview

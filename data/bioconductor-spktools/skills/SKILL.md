@@ -4,7 +4,6 @@ description: This tool analyzes and visualizes microarray spike-in data to compa
 homepage: https://bioconductor.org/packages/release/bioc/html/spkTools.html
 ---
 
-
 # bioconductor-spktools
 
 name: bioconductor-spktools

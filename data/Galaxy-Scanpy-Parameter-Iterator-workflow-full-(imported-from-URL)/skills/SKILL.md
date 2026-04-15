@@ -1,10 +1,12 @@
 ---
 name: scanpy-parameter-iterator-workflow-full-imported-from-url
-description: "This single-cell RNA-seq workflow utilizes Scanpy tools and parameter iterators on AnnData objects to automate the generation of multiple clustering and dimensionality reduction results across a range of settings. Use this skill when you need to systematically evaluate how varying hyperparameters like resolution, perplexity, and neighbor counts impact cell population identification and visualization in transcriptomic data."
-homepage: https://workflowhub.eu/workflows/1510
+description: This single-cell RNA-seq workflow utilizes Scanpy tools and parameter iterators on AnnData objects to automate the generation of multiple clustering and dimensionality reduction results across a range of settings. Use this skill when you need to systematically evaluate how varying hyperparameters like resolution, perplexity, and neighbor counts impact cell population identification and visualization in transcriptomic data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Scanpy Parameter Iterator workflow full (imported from URL)
+# scanpy-parameter-iterator-workflow-full-imported-from-url
 
 ## Overview
 

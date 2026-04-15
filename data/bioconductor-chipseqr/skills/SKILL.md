@@ -4,7 +4,6 @@ description: This tool identifies nucleosome positions and DNA-binding sites fro
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPseqR.html
 ---
 
-
 # bioconductor-chipseqr
 
 name: bioconductor-chipseqr

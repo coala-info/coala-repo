@@ -4,7 +4,6 @@ description: This package provides a framework for benchmarking differential abu
 homepage: https://bioconductor.org/packages/release/bioc/html/benchdamic.html
 ---
 
-
 # bioconductor-benchdamic
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs generalized Mann-Whitney type tests using probab
 homepage: https://cran.r-project.org/web/packages/gmwt/index.html
 ---
 
-
 # r-gmwt
 
 name: r-gmwt

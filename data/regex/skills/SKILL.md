@@ -2,8 +2,9 @@
 name: regex
 description: This tool identifies and manipulates specific patterns within text using a specialized syntax. Use when user asks to build or interpret patterns, clean data, validate structural formats like emails, or perform automated text editing.
 homepage: https://github.com/ziishaned/learn-regex
+metadata:
+  docker_image: "quay.io/biocontainers/regex:2016.06.24--py36_1"
 ---
-
 
 # regex
 

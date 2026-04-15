@@ -4,7 +4,6 @@ description: bioconductor-katdetectr detects, characterizes, and visualizes loca
 homepage: https://bioconductor.org/packages/release/bioc/html/katdetectr.html
 ---
 
-
 # bioconductor-katdetectr
 
 name: bioconductor-katdetectr

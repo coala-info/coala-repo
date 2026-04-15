@@ -1,10 +1,12 @@
 ---
 name: ndvi-with-openeo
-description: "This workflow processes satellite imagery from the Copernicus Data Space Ecosystem using OpenEO to calculate the Normalized Difference Vegetation Index and generates interactive time-series visualizations with Holoviz. Use this skill when you need to monitor vegetation health over time or analyze seasonal changes in land cover using Earth observation data."
-homepage: https://workflowhub.eu/workflows/759
+description: This workflow processes satellite imagery from the Copernicus Data Space Ecosystem using OpenEO to calculate the Normalized Difference Vegetation Index and generates interactive time-series visualizations with Holoviz. Use this skill when you need to monitor vegetation health over time or analyze seasonal changes in land cover using Earth observation data.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# NDVI with OpenEO
+# ndvi-with-openeo
 
 ## Overview
 

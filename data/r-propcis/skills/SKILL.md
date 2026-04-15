@@ -4,7 +4,6 @@ description: This tool computes specialized confidence intervals for single, pai
 homepage: https://cloud.r-project.org/web/packages/PropCIs/index.html
 ---
 
-
 # r-propcis
 
 name: r-propcis

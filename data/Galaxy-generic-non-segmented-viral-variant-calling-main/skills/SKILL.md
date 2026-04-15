@@ -1,10 +1,12 @@
 ---
 name: variant-calling-and-consensus-construction-from-paired-end-s
-description: "This workflow performs variant calling and consensus sequence generation for non-segmented viruses from Illumina paired-end data using fastp, BWA-MEM, iVar, and SnpEff. Use this skill when you need to identify genomic variants, annotate their functional effects, and reconstruct consensus genomes for viral isolates like Morbilliviruses using either ampliconic or non-ampliconic sequencing approaches."
-homepage: https://workflowhub.eu/workflows/1876
+description: This workflow performs variant calling and consensus sequence generation for non-segmented viruses from Illumina paired-end data using fastp, BWA-MEM, iVar, and SnpEff. Use this skill when you need to identify genomic variants, annotate their functional effects, and reconstruct consensus genomes for viral isolates like Morbilliviruses using either ampliconic or non-ampliconic sequencing approaches.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Variant calling and consensus construction from paired end short read data of non-segmented viral genomes
+# variant-calling-and-consensus-construction-from-paired-end-s
 
 ## Overview
 

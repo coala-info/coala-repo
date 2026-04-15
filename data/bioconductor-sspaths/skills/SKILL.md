@@ -4,7 +4,6 @@ description: bioconductor-sspaths estimates single-sample pathway deviation scor
 homepage: https://bioconductor.org/packages/release/bioc/html/ssPATHS.html
 ---
 
-
 # bioconductor-sspaths
 
 name: bioconductor-sspaths

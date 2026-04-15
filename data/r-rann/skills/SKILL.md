@@ -4,7 +4,6 @@ description: This tool performs fast exact or approximate k-nearest neighbour an
 homepage: https://cloud.r-project.org/web/packages/RANN/index.html
 ---
 
-
 # r-rann
 
 name: r-rann

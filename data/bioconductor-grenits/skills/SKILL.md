@@ -4,7 +4,6 @@ description: This tool infers gene regulatory networks from time-series gene exp
 homepage: https://bioconductor.org/packages/release/bioc/html/GRENITS.html
 ---
 
-
 # bioconductor-grenits
 
 name: bioconductor-grenits

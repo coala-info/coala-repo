@@ -1,9 +1,10 @@
 ---
 name: scallop-lr
-description: "Scallop-LR assembles long-read RNA-seq data into transcripts using a reference genome. Use when user asks to assemble long-read RNA-seq data to transcripts."
+description: Scallop-LR assembles long-read RNA-seq data into transcripts using a reference genome. Use when user asks to assemble long-read RNA-seq data to transcripts.
 homepage: https://github.com/Kingsford-Group/lrassemblyanalysis
+metadata:
+  docker_image: "quay.io/biocontainers/scallop-lr:0.9.2--h503566f_10"
 ---
-
 
 # scallop-lr
 

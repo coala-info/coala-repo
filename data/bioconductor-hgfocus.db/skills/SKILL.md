@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Human Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgfocus.db.html
 ---
 
-
 # bioconductor-hgfocus.db
 
 name: bioconductor-hgfocus.db

@@ -2,8 +2,9 @@
 name: perl-moosex-clone
 description: This tool provides a flexible mechanism for duplicating Moose-based objects with fine-grained control over attribute behavior. Use when user asks to clone Moose objects, perform deep copies of object graphs, or exclude specific attributes from being copied.
 homepage: https://github.com/moose/MooseX-Clone
+metadata:
+  docker_image: "quay.io/biocontainers/perl-moosex-clone:0.06--0"
 ---
-
 
 # perl-moosex-clone
 

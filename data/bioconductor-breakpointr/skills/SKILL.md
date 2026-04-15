@@ -4,7 +4,6 @@ description: This tool analyzes Strand-seq data to detect template strand inheri
 homepage: https://bioconductor.org/packages/release/bioc/html/breakpointR.html
 ---
 
-
 # bioconductor-breakpointr
 
 name: bioconductor-breakpointr

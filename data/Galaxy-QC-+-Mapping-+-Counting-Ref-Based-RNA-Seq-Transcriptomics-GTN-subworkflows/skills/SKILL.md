@@ -1,10 +1,12 @@
 ---
 name: qc-mapping-counting-ref-based-rna-seq-transcriptomics-gtn-su
-description: "This transcriptomics workflow processes paired-end RNA-Seq FASTQ reads and GTF annotations using Cutadapt, STAR, and featureCounts to perform quality control, mapping, and gene expression quantification. Use this skill when you need to transform raw sequencing reads into count matrices for downstream differential expression analysis in studies involving organisms with a reference genome."
-homepage: https://workflowhub.eu/workflows/1711
+description: This transcriptomics workflow processes paired-end RNA-Seq FASTQ reads and GTF annotations using Cutadapt, STAR, and featureCounts to perform quality control, mapping, and gene expression quantification. Use this skill when you need to transform raw sequencing reads into count matrices for downstream differential expression analysis in studies involving organisms with a reference genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# QC + Mapping + Counting - Ref Based RNA Seq - Transcriptomics - GTN - subworkflows
+# qc-mapping-counting-ref-based-rna-seq-transcriptomics-gtn-su
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: haslr
 description: HASLR performs fast hybrid assembly of genomic data by combining long reads with short reads to produce accurate consensus sequences. Use when user asks to perform hybrid genome assembly, assemble long and short reads together, or generate a consensus sequence from multi-technology sequencing data.
 homepage: https://github.com/vpc-ccg/haslr
+metadata:
+  docker_image: "quay.io/biocontainers/haslr:0.8a1--py310h275bdba_6"
 ---
-
 
 # haslr
 

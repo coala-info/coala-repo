@@ -4,7 +4,6 @@ description: This tool identifies Transcriptional Regulatory Modules by integrat
 homepage: https://bioconductor.org/packages/release/bioc/html/rTRM.html
 ---
 
-
 # bioconductor-rtrm
 
 name: bioconductor-rtrm

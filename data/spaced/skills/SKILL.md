@@ -2,8 +2,9 @@
 name: spaced
 description: Manages and organizes files across multiple devices, clouds, and platforms using a virtual distributed filesystem. Use when user asks to access and manage files from a unified interface, leverage content-aware addressing for file identification and deduplication, perform transactional file operations with previews, utilize peer-to-peer synchronization without central servers, integrate cloud storage as first-class volumes, or benefit from local-first sync and offline access.
 homepage: https://github.com/spacedriveapp/spacedrive
+metadata:
+  docker_image: "biocontainers/spaced:v1.2.0-201605dfsg-1-deb_cv1"
 ---
-
 
 # spaced
 

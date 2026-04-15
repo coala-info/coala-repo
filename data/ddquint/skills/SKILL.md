@@ -1,9 +1,10 @@
 ---
 name: ddquint
-description: "ddquint analyzes multiplex digital droplet PCR data to detect chromosomal copy number variations and aneuploidy. Use when user asks to analyze quintuplex ddPCR data, perform HDBSCAN-based clustering on droplet amplitudes, or generate chromosomal copy number reports."
+description: ddquint analyzes multiplex digital droplet PCR data to detect chromosomal copy number variations and aneuploidy. Use when user asks to analyze quintuplex ddPCR data, perform HDBSCAN-based clustering on droplet amplitudes, or generate chromosomal copy number reports.
 homepage: https://github.com/globuzzz2000/ddQuint
+metadata:
+  docker_image: "quay.io/biocontainers/ddquint:0.1.0--pyhdfd78af_0"
 ---
-
 
 # ddquint
 

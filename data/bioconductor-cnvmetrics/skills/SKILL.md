@@ -4,7 +4,6 @@ description: bioconductor-cnvmetrics quantifies the similarity between copy numb
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVMetrics.html
 ---
 
-
 # bioconductor-cnvmetrics
 
 name: bioconductor-cnvmetrics

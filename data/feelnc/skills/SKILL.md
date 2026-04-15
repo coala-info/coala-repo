@@ -2,6 +2,8 @@
 name: feelnc
 description: FEELnc is a bioinformatics pipeline for the automated annotation and classification of long non-coding RNAs from reconstructed transcripts. Use when user asks to filter transcripts against protein-coding exons, calculate coding potential using k-mer models, or classify lncRNAs based on their genomic localization.
 homepage: https://github.com/tderrien/FEELnc
+metadata:
+  docker_image: "quay.io/biocontainers/feelnc:0.2--pl526_0"
 ---
 
 # feelnc

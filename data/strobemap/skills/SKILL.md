@@ -2,8 +2,9 @@
 name: strobemap
 description: Strobemap generates strobemers, which are fuzzy seeds used to improve sensitivity in biological sequence analysis and read mapping. Use when user asks to generate strobemers, create seeds for sequence alignment, or index biological sequences using randstrobes.
 homepage: https://github.com/ksahlin/strobemers
+metadata:
+  docker_image: "quay.io/biocontainers/strobemap:0.0.2--h077b44d_4"
 ---
-
 
 # strobemap
 

@@ -1,9 +1,12 @@
 ---
 name: sciwin-client-demo
-description: "This Common Workflow Language pipeline downloads election data, extracts feature information, and utilizes Python scripts and GDAL tools to generate bar plots and choropleth maps from geospatial and tabular datasets. Use this skill when you need to visualize regional voting results, analyze demographic distributions across administrative districts, or characterize spatial patterns in electoral data."
-homepage: https://workflowhub.eu/workflows/1808
+description: This Common Workflow Language pipeline downloads election data, extracts feature information, and utilizes Python scripts and GDAL tools to generate bar plots and choropleth maps from geospatial and tabular datasets. Use this skill when you need to visualize regional voting results, analyze demographic distributions across administrative districts, or characterize spatial patterns in electoral data.
+homepage: https://github.com/fairagro/m4.4_sciwin_client
+metadata:
+  docker_image: "N/A"
 ---
-# SciWIn Client Demo
+
+# sciwin-client-demo
 
 ## Overview
 

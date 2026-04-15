@@ -1,10 +1,12 @@
 ---
 name: erga-dataqc-ont-v2505-wf0
-description: "This ERGA workflow performs quality control on Oxford Nanopore (ONT) raw sequencing reads using NanoPlot and SeqKit statistics to assess read length and quality distributions. Use this skill when you need to evaluate the technical success of a long-read sequencing run and ensure the data meets the quality standards required for high-quality reference genome assembly."
-homepage: https://workflowhub.eu/workflows/697
+description: This ERGA workflow performs quality control on Oxford Nanopore (ONT) raw sequencing reads using NanoPlot and SeqKit statistics to assess read length and quality distributions. Use this skill when you need to evaluate the technical success of a long-read sequencing run and ensure the data meets the quality standards required for high-quality reference genome assembly.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA DataQC ONT v2505 (WF0)
+# erga-dataqc-ont-v2505-wf0
 
 ## Overview
 

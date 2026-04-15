@@ -1,9 +1,10 @@
 ---
 name: cstag-cli
-description: "cstag-cli generates and appends compact string (cs) tags to genomic alignment data in SAM or BAM files. Use when user asks to append cs tags to alignments, convert between short and long cs tag formats, or process genomic data requiring mismatch and indel descriptions."
+description: cstag-cli generates and appends compact string (cs) tags to genomic alignment data in SAM or BAM files. Use when user asks to append cs tags to alignments, convert between short and long cs tag formats, or process genomic data requiring mismatch and indel descriptions.
 homepage: https://github.com/akikuno/cstag-cli
+metadata:
+  docker_image: "quay.io/biocontainers/cstag-cli:1.0.0--pyhdfd78af_1"
 ---
-
 
 # cstag-cli
 

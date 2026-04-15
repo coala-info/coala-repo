@@ -1,10 +1,12 @@
 ---
 name: galaxy-intro-strands
-description: "This genomic workflow processes gene datasets using filtering, intersection, and concatenation tools to perform basic interval manipulations. Use this skill when you need to identify specific subsets of genes based on genomic coordinates or strand orientation during a foundational bioinformatics analysis."
-homepage: https://workflowhub.eu/workflows/1475
+description: This genomic workflow processes gene datasets using filtering, intersection, and concatenation tools to perform basic interval manipulations. Use this skill when you need to identify specific subsets of genes based on genomic coordinates or strand orientation during a foundational bioinformatics analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy Intro Strands
+# galaxy-intro-strands
 
 ## Overview
 

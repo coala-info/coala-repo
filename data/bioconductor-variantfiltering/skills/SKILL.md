@@ -4,7 +4,6 @@ description: This tool filters and functionally annotates genetic variants from 
 homepage: https://bioconductor.org/packages/release/bioc/html/VariantFiltering.html
 ---
 
-
 # bioconductor-variantfiltering
 
 name: bioconductor-variantfiltering

@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/huex10sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-huex10sttranscriptcluster.db
 
 name: bioconductor-huex10sttranscriptcluster.db

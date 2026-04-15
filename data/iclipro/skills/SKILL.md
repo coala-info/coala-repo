@@ -2,6 +2,8 @@
 name: iclipro
 description: iCLIPro is a diagnostic tool that analyzes iCLIP data to determine the most accurate cross-link site position by comparing read length groups. Use when user asks to analyze iCLIP fragment length bias, determine the optimal reference point for binding sites, or generate start site overlap maps from BAM files.
 homepage: http://www.biolab.si/iCLIPro/doc/
+metadata:
+  docker_image: "quay.io/biocontainers/iclipro:0.1.1--py27_0"
 ---
 
 # iclipro

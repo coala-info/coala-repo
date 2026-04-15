@@ -4,7 +4,6 @@ description: This tool provides an interactive WebSocket-based interface for vis
 homepage: https://bioconductor.org/packages/3.6/bioc/html/metavizr.html
 ---
 
-
 # bioconductor-metavizr
 
 name: bioconductor-metavizr

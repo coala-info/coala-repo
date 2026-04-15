@@ -2,8 +2,9 @@
 name: mmvc
 description: mmvc is a bioinformatics tool that identifies genetic variants using a Bayesian multinomial mixture model. Use when user asks to call genetic variants, distinguish biological variations from sequencing noise, or perform probabilistic variant calling on FASTA files.
 homepage: https://github.com/veg/mmvc
+metadata:
+  docker_image: "quay.io/biocontainers/mmvc:1.0.2--0"
 ---
-
 
 # mmvc
 

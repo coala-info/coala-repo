@@ -4,7 +4,6 @@ description: This tool performs gene set enrichment analysis by accounting for i
 homepage: https://bioconductor.org/packages/release/bioc/html/qusage.html
 ---
 
-
 # bioconductor-qusage
 
 name: bioconductor-qusage

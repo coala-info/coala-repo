@@ -2,6 +2,8 @@
 name: teloclip
 description: Teloclip identifies and extracts overhanging soft-clipped reads from BAM files to extend draft contigs into complete chromosome-level assemblies. Use when user asks to filter for telomeric reads, extract overhanging sequences, or automatically extend genome assemblies using long-read alignments.
 homepage: https://github.com/Adamtaranto/teloclip
+metadata:
+  docker_image: "quay.io/biocontainers/teloclip:0.3.4--pyhdfd78af_0"
 ---
 
 # teloclip

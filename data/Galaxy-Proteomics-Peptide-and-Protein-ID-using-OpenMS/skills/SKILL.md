@@ -1,10 +1,12 @@
 ---
 name: proteomics-peptide-and-protein-id-using-openms
-description: "This proteomics workflow processes mzML mass spectrometry data and FASTA protein sequences to perform peptide and protein identification using OpenMS tools such as XTandemAdapter, PeptideIndexer, and FidoAdapter. Use this skill when you need to identify proteins in a biological sample by matching experimental spectra against a sequence database while controlling for false discovery rates and calculating posterior error probabilities."
-homepage: https://workflowhub.eu/workflows/1446
+description: This proteomics workflow processes mzML mass spectrometry data and FASTA protein sequences to perform peptide and protein identification using OpenMS tools such as XTandemAdapter, PeptideIndexer, and FidoAdapter. Use this skill when you need to identify proteins in a biological sample by matching experimental spectra against a sequence database while controlling for false discovery rates and calculating posterior error probabilities.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteomics: Peptide and Protein ID using OpenMS
+# proteomics-peptide-and-protein-id-using-openms
 
 ## Overview
 

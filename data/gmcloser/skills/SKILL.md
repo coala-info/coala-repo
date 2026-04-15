@@ -1,9 +1,10 @@
 ---
 name: gmcloser
-description: "GMcloser is a bioinformatics tool designed to fill and close gaps in scaffold assemblies. Use when user asks to close gaps in genome assemblies."
+description: GMcloser is a bioinformatics tool designed to fill and close gaps in scaffold assemblies. Use when user asks to close gaps in genome assemblies.
 homepage: https://sourceforge.net/projects/gmcloser/
+metadata:
+  docker_image: "quay.io/biocontainers/gmcloser:1.6.2--0"
 ---
-
 
 # gmcloser
 

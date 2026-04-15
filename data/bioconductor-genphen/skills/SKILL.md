@@ -4,7 +4,6 @@ description: This tool quantifies genotype-phenotype associations using a combin
 homepage: https://bioconductor.org/packages/3.8/bioc/html/genphen.html
 ---
 
-
 # bioconductor-genphen
 
 name: bioconductor-genphen

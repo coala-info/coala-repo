@@ -1,10 +1,12 @@
 ---
 name: segmentation-of-anatomical-structures-in-medical-images
-description: "This medical imaging workflow processes DICOM series to segment anatomical structures like bones and the aortic bifurcation using thresholding, ridge filtering, and feature-based label filtering. Use this skill when you need to automatically identify and isolate skeletal structures or vascular landmarks from radiological scans for clinical analysis or morphometric studies."
-homepage: https://workflowhub.eu/workflows/2107
+description: This medical imaging workflow processes DICOM series to segment anatomical structures like bones and the aortic bifurcation using thresholding, ridge filtering, and feature-based label filtering. Use this skill when you need to automatically identify and isolate skeletal structures or vascular landmarks from radiological scans for clinical analysis or morphometric studies.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Segmentation of Anatomical Structures in Medical Images
+# segmentation-of-anatomical-structures-in-medical-images
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: bicseq2-norm
 description: BICseq2-norm normalizes read counts by accounting for GC-content and mappability biases using a Generalized Additive Model. Use when user asks to normalize sequencing data, correct for GC-content bias, or prepare read count data for CNV detection.
 homepage: http://compbio.med.harvard.edu/BIC-seq/
+metadata:
+  docker_image: "quay.io/biocontainers/bicseq2-norm:0.2.4--h7b50bb2_6"
 ---
-
 
 # bicseq2-norm
 

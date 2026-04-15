@@ -1,7 +1,9 @@
 ---
 name: flavivirushelicase_proteindrugcomplex
-description: "This workflow automates molecular dynamics simulations of Flavivirus helicase-drug complexes using ligand frcmod/mol2 files and protein-ligand PDB structures with tLEaP, acpype, and GROMACS. Use this skill when you need to characterize the binding stability and conformational changes of small molecule inhibitors within the Flavivirus helicase active site through trajectory analysis."
-homepage: https://workflowhub.eu/workflows/761
+description: This workflow automates molecular dynamics simulations of Flavivirus helicase-drug complexes using ligand frcmod/mol2 files and protein-ligand PDB structures with tLEaP, acpype, and GROMACS. Use this skill when you need to characterize the binding stability and conformational changes of small molecule inhibitors within the Flavivirus helicase active site through trajectory analysis.
+homepage: https://zenodo.org/records/7493015
+metadata:
+  docker_image: "N/A"
 ---
 
 # flavivirushelicase_proteindrugcomplex

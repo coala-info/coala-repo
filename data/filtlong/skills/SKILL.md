@@ -2,8 +2,9 @@
 name: filtlong
 description: Filtlong filters and subsamples long-read sequencing data based on quality and length to create high-quality datasets. Use when user asks to filter Nanopore reads, subsample data to a target volume, or prioritize high-quality reads using external reference data.
 homepage: http://http://canu.readthedocs.org/
+metadata:
+  docker_image: "quay.io/biocontainers/filtlong:0.3.1--h077b44d_0"
 ---
-
 
 # filtlong
 

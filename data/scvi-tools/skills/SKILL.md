@@ -1,9 +1,10 @@
 ---
 name: scvi-tools
-description: "scvi-tools provides deep generative models for the probabilistic analysis and integration of single-cell omics data. Use when user asks to perform batch correction, reduce dimensionality, annotate cell types, detect doublets, or conduct differential expression analysis on single-cell datasets."
+description: scvi-tools provides deep generative models for the probabilistic analysis and integration of single-cell omics data. Use when user asks to perform batch correction, reduce dimensionality, annotate cell types, detect doublets, or conduct differential expression analysis on single-cell datasets.
 homepage: https://github.com/YosefLab/scvi-tools
+metadata:
+  docker_image: "quay.io/biocontainers/scvi-tools:0.14.5--pyhdfd78af_0"
 ---
-
 
 # scvi-tools
 

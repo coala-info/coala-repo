@@ -1,10 +1,12 @@
 ---
 name: partial-ref-guided-workflow-bwa-mem-only
-description: "This workflow maps demultiplexed RAD-seq FASTQ reads to a reference genome using BWA-MEM2 and generates filtered BAM files and quality reports via Samtools and MultiQC. Use this skill when you need to perform the alignment step of a reference-guided Stacks analysis to prepare genomic data for downstream SNP discovery and population genetic studies."
-homepage: https://workflowhub.eu/workflows/351
+description: This workflow maps demultiplexed RAD-seq FASTQ reads to a reference genome using BWA-MEM2 and generates filtered BAM files and quality reports via Samtools and MultiQC. Use this skill when you need to perform the alignment step of a reference-guided Stacks analysis to prepare genomic data for downstream SNP discovery and population genetic studies.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Partial ref-guided workflow - bwa mem only
+# partial-ref-guided-workflow-bwa-mem-only
 
 ## Overview
 

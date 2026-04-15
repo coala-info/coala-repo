@@ -2,8 +2,9 @@
 name: libidn
 description: The libidn tool converts internationalized domain names between Unicode and ASCII Punycode formats using the IDNA2008 and TR46 specifications. Use when user asks to convert Unicode domains to Punycode, decode Punycode to Unicode, or validate domain names for registration and lookup.
 homepage: https://github.com/libidn/libidn2
+metadata:
+  docker_image: "quay.io/biocontainers/libidn:7.45.0--h503566f_10"
 ---
-
 
 # libidn
 

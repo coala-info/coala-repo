@@ -1,10 +1,12 @@
 ---
 name: pathway-analysis
-description: "This Galaxy workflow processes rpSBML and GEM SBML files to perform flux balance analysis, thermodynamic evaluation, and global scoring of metabolic pathways using rpFBA, rpThermo, and rpGlobalScore. Use this skill when you need to identify the most promising biosynthetic routes for a target compound by evaluating their metabolic flux and thermodynamic favorability within a genome-scale model."
-homepage: https://workflowhub.eu/workflows/22
+description: This Galaxy workflow processes rpSBML and GEM SBML files to perform flux balance analysis, thermodynamic evaluation, and global scoring of metabolic pathways using rpFBA, rpThermo, and rpGlobalScore. Use this skill when you need to identify the most promising biosynthetic routes for a target compound by evaluating their metabolic flux and thermodynamic favorability within a genome-scale model.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pathway Analysis
+# pathway-analysis
 
 ## Overview
 

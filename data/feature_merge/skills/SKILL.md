@@ -2,8 +2,9 @@
 name: feature_merge
 description: This tool consolidates genomic annotation features from GFF or GTF files based on spatial proximity, feature types, and strand orientation. Use when user asks to merge genomic features, consolidate overlapping annotations, handle ID collisions between annotation files, or remove redundant sub-features.
 homepage: https://github.com/brinkmanlab/feature_merge
+metadata:
+  docker_image: "quay.io/biocontainers/feature_merge:1.3.0--pyh3252c3a_0"
 ---
-
 
 # feature_merge
 

@@ -2,6 +2,8 @@
 name: geno2phenotb
 description: geno2phenotb predicts drug resistance in *Mycobacterium tuberculosis* by processing raw genomic data through an automated machine learning pipeline. Use when user asks to predict drug resistance from FASTQ files, extract resistance-related genomic features, or perform targeted drug analysis for tuberculosis isolates.
 homepage: https://github.com/msmdev/geno2phenoTB
+metadata:
+  docker_image: "quay.io/biocontainers/geno2phenotb:1.0.1--pyhdfd78af_1"
 ---
 
 # geno2phenotb

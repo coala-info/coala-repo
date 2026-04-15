@@ -2,8 +2,9 @@
 name: wgsim
 description: wgsim generates synthetic paired-end or single-end sequencing reads from a FASTA reference. Use when user asks to generate synthetic reads, simulate diploid genomes, introduce polymorphisms and errors, or evaluate read mappers.
 homepage: https://github.com/lh3/wgsim
+metadata:
+  docker_image: "quay.io/biocontainers/wgsim:1.0--h577a1d6_10"
 ---
-
 
 # wgsim
 

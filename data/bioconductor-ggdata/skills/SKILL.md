@@ -4,7 +4,6 @@ description: This package provides access to integrated HapMap CEU genomic and t
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/GGdata.html
 ---
 
-
 # bioconductor-ggdata
 
 name: bioconductor-ggdata

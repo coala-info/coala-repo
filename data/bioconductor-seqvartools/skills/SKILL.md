@@ -4,7 +4,6 @@ description: SeqVarTools provides a high-level interface for the efficient analy
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqVarTools.html
 ---
 
-
 # bioconductor-seqvartools
 
 ## Overview

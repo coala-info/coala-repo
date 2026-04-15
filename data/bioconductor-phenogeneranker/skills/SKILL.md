@@ -4,7 +4,6 @@ description: PhenoGeneRanker implements a Random Walk with Restart algorithm on 
 homepage: https://bioconductor.org/packages/release/bioc/html/PhenoGeneRanker.html
 ---
 
-
 # bioconductor-phenogeneranker
 
 ## Overview

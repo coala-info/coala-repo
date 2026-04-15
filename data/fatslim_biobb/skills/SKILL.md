@@ -2,8 +2,9 @@
 name: fatslim_biobb
 description: This tool performs rapid, memory-efficient analysis of lipid membrane molecular dynamics trajectories across various morphologies and force fields. Use when user asks to identify membrane leaflets, calculate membrane thickness, or determine area per lipid for bilayers and vesicles.
 homepage: https://fatslim.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/fatslim_biobb:0.2.2--py39hbcbf7aa_1"
 ---
-
 
 # fatslim_biobb
 

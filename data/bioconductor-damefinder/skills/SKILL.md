@@ -1,9 +1,8 @@
 ---
 name: bioconductor-damefinder
-description: "DAMEfinder identifies regions of differential allele-specific methylation (DAME) from genomic data. Use when user asks to detect sequence-dependent ASM linked to SNPs, identify SNP-independent ASM using methtuple data, or find differential regions between experimental groups."
+description: DAMEfinder identifies regions of differential allele-specific methylation (DAME) from genomic data. Use when user asks to detect sequence-dependent ASM linked to SNPs, identify SNP-independent ASM using methtuple data, or find differential regions between experimental groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/DAMEfinder.html
 ---
-
 
 # bioconductor-damefinder
 

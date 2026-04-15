@@ -4,7 +4,6 @@ description: This package provides annotation data for the hg38 genome assembly 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.hg38.html
 ---
 
-
 # bioconductor-rnbeads.hg38
 
 name: bioconductor-rnbeads.hg38

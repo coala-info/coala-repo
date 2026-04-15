@@ -4,7 +4,6 @@ description: The r-adegenet package provides tools for the exploratory and multi
 homepage: https://cloud.r-project.org/web/packages/adegenet/index.html
 ---
 
-
 # r-adegenet
 
 name: r-adegenet

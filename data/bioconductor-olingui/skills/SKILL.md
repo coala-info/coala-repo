@@ -4,7 +4,6 @@ description: This tool provides a graphical user interface and functions for the
 homepage: https://bioconductor.org/packages/release/bioc/html/OLINgui.html
 ---
 
-
 # bioconductor-olingui
 
 name: bioconductor-olingui

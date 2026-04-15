@@ -4,7 +4,6 @@ description: DeMAND identifies the mechanism of action of a compound by detectin
 homepage: https://bioconductor.org/packages/release/bioc/html/DeMAND.html
 ---
 
-
 # bioconductor-demand
 
 ## Overview

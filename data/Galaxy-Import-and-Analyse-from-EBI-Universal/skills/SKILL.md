@@ -1,10 +1,12 @@
 ---
 name: locked-import-and-analyse-from-ebi-universal
-description: "This single-cell RNA-seq workflow imports datasets from the EBI Single Cell Expression Atlas using experiment accessions and performs a comprehensive Scanpy-based analysis including filtering, normalization, and dimensionality reduction. Use this skill when you need to retrieve public single-cell data to identify cell clusters, visualize gene expression patterns via UMAP or tSNE, and discover marker genes for specific biological observations."
-homepage: https://workflowhub.eu/workflows/1356
+description: This single-cell RNA-seq workflow imports datasets from the EBI Single Cell Expression Atlas using experiment accessions and performs a comprehensive Scanpy-based analysis including filtering, normalization, and dimensionality reduction. Use this skill when you need to retrieve public single-cell data to identify cell clusters, visualize gene expression patterns via UMAP or tSNE, and discover marker genes for specific biological observations.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# LOCKED | Import and Analyse from EBI - Universal
+# locked-import-and-analyse-from-ebi-universal
 
 ## Overview
 

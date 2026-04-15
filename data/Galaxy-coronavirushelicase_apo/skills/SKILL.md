@@ -1,7 +1,9 @@
 ---
 name: coronavirushelicase_apo
-description: "This workflow processes protein PDB files and specialized force field parameters using tLEaP, ACPYPE, and GROMACS to perform molecular dynamics simulations and trajectory analysis. Use this skill when you need to model the structural dynamics, stability, and conformational changes of the coronavirus helicase protein in its apo state."
-homepage: https://workflowhub.eu/workflows/764
+description: This workflow processes protein PDB files and specialized force field parameters using tLEaP, ACPYPE, and GROMACS to perform molecular dynamics simulations and trajectory analysis. Use this skill when you need to model the structural dynamics, stability, and conformational changes of the coronavirus helicase protein in its apo state.
+homepage: https://zenodo.org/records/7492987
+metadata:
+  docker_image: "N/A"
 ---
 
 # coronavirushelicase_apo

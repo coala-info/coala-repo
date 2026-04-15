@@ -2,6 +2,8 @@
 name: riboraptor
 description: Riboraptor is a Python package for analyzing ribosome profiling data. Use when user asks to process and analyze ribosome profiling data, download SRA datasets, or manage dependencies for ribo-seq analysis.
 homepage: https://github.com/saketkc/riboraptor
+metadata:
+  docker_image: "quay.io/biocontainers/riboraptor:0.2.2--py36_0"
 ---
 
 # riboraptor

@@ -2,8 +2,9 @@
 name: fuma
 description: FuMa harmonizes and matches fusion gene detection results from multiple tools using gene annotations. Use when user asks to merge multi-tool fusion outputs, identify recurrent fusions across cohorts, or compare fusion predictions using different matching strategies.
 homepage: https://github.com/yhoogstrate/fuma/
+metadata:
+  docker_image: "quay.io/biocontainers/fuma:4.0.0--pyhb7b1952_0"
 ---
-
 
 # fuma
 

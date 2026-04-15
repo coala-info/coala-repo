@@ -2,8 +2,9 @@
 name: manta
 description: Manta identifies structural variants and indels from paired-end sequencing reads using an integrated discovery, assembly, and scoring workflow. Use when user asks to detect large-scale structural variants, call germline or somatic indels, or analyze genomic rearrangements in tumor-normal pairs.
 homepage: https://github.com/Illumina/manta
+metadata:
+  docker_image: "quay.io/biocontainers/manta:1.6.0--py27h9948957_6"
 ---
-
 
 # manta
 

@@ -4,7 +4,6 @@ description: The lambda.r package provides a functional programming framework fo
 homepage: https://cloud.r-project.org/web/packages/lambda.r/index.html
 ---
 
-
 # r-lambda.r
 
 ## Overview

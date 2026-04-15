@@ -4,7 +4,6 @@ description: The proBatch package provides a comprehensive pipeline for diagnosi
 homepage: https://bioconductor.org/packages/3.9/bioc/html/proBatch.html
 ---
 
-
 # bioconductor-probatch
 
 ## Overview

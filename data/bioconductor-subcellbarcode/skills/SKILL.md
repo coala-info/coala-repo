@@ -4,7 +4,6 @@ description: This tool maps protein subcellular localization and identifies diff
 homepage: https://bioconductor.org/packages/release/bioc/html/SubCellBarCode.html
 ---
 
-
 # bioconductor-subcellbarcode
 
 name: bioconductor-subcellbarcode

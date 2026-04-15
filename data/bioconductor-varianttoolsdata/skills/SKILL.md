@@ -4,7 +4,6 @@ description: This package provides example genomic datasets and raw files for th
 homepage: https://bioconductor.org/packages/release/data/experiment/html/VariantToolsData.html
 ---
 
-
 # bioconductor-varianttoolsdata
 
 ## Overview

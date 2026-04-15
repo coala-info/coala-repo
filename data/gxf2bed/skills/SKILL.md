@@ -1,9 +1,10 @@
 ---
 name: gxf2bed
-description: "gxf2bed is a high-speed utility that converts GTF or GFF gene annotation files into BED format. Use when user asks to convert GTF to BED, transform GFF3 files to BED12, or extract specific genomic features and attributes into a BED file."
+description: gxf2bed is a high-speed utility that converts GTF or GFF gene annotation files into BED format. Use when user asks to convert GTF to BED, transform GFF3 files to BED12, or extract specific genomic features and attributes into a BED file.
 homepage: https://github.com/alejandrogzi/gxf2bed
+metadata:
+  docker_image: "quay.io/biocontainers/gxf2bed:0.3.2--ha6fb395_0"
 ---
-
 
 # gxf2bed
 

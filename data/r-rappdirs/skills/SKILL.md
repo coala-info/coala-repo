@@ -4,7 +4,6 @@ description: This tool determines standard, platform-specific system directories
 homepage: https://cloud.r-project.org/web/packages/rappdirs/index.html
 ---
 
-
 # r-rappdirs
 
 name: r-rappdirs

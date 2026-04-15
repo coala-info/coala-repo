@@ -2,8 +2,9 @@
 name: graphicsmagick
 description: GraphicsMagick is a multi-threaded image processing system used to convert, transform, and inspect images across numerous formats. Use when user asks to convert image formats, resize images, batch process files, extract metadata, create montages, or composite images.
 homepage: http://www.graphicsmagick.org/
+metadata:
+  docker_image: "quay.io/biocontainers/graphicsmagick:1.3.46"
 ---
-
 
 # graphicsmagick
 

@@ -4,7 +4,6 @@ description: The scMerge package merges and normalizes single-cell RNA-seq data 
 homepage: https://bioconductor.org/packages/release/bioc/html/scMerge.html
 ---
 
-
 # bioconductor-scmerge
 
 ## Overview

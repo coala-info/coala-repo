@@ -4,7 +4,6 @@ description: This tool provides biological annotations and identifier mapping fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SomaScan.db.html
 ---
 
-
 # bioconductor-somascan.db
 
 name: bioconductor-somascan.db

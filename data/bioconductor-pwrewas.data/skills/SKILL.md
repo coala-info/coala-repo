@@ -4,7 +4,6 @@ description: This package provides reference datasets of CpG-specific means and 
 homepage: https://bioconductor.org/packages/3.10/data/experiment/html/pwrEWAS.data.html
 ---
 
-
 # bioconductor-pwrewas.data
 
 ## Overview

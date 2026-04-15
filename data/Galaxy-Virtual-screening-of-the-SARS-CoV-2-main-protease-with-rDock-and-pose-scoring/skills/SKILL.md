@@ -1,10 +1,12 @@
 ---
 name: virtual-screening-of-the-sars-cov-2-main-protease-with-rdock
-description: "This computational chemistry workflow performs virtual screening of candidate ligands against the SARS-CoV-2 main protease using rDock for molecular docking and TransFS or SuCOS for advanced pose scoring. Use this skill when you need to identify potential inhibitors for the SARS-CoV-2 main protease by docking large libraries of chemical compounds and ranking them based on predicted binding poses and structural similarity to known active fragments."
-homepage: https://workflowhub.eu/workflows/1658
+description: This computational chemistry workflow performs virtual screening of candidate ligands against the SARS-CoV-2 main protease using rDock for molecular docking and TransFS or SuCOS for advanced pose scoring. Use this skill when you need to identify potential inhibitors for the SARS-CoV-2 main protease by docking large libraries of chemical compounds and ranking them based on predicted binding poses and structural similarity to known active fragments.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Virtual screening of the SARS-CoV-2 main protease with rDock and pose scoring
+# virtual-screening-of-the-sars-cov-2-main-protease-with-rdock
 
 ## Overview
 

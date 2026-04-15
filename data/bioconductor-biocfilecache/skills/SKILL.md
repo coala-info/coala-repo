@@ -4,7 +4,6 @@ description: BiocFileCache manages local and remote resource files by providing 
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocFileCache.html
 ---
 
-
 # bioconductor-biocfilecache
 
 ## Overview

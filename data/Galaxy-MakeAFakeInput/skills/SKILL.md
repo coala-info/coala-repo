@@ -1,10 +1,12 @@
 ---
 name: makeafakeinput
-description: "This Galaxy workflow processes paired-end FASTQ sequencing data using Bowtie2, Cutadapt, and seqtk to generate downsampled, representative datasets. Use this skill when you need to create small, functional subsets of genomic data that maintain specific biological characteristics for educational tutorials or tool testing."
-homepage: https://workflowhub.eu/workflows/1629
+description: This Galaxy workflow processes paired-end FASTQ sequencing data using Bowtie2, Cutadapt, and seqtk to generate downsampled, representative datasets. Use this skill when you need to create small, functional subsets of genomic data that maintain specific biological characteristics for educational tutorials or tool testing.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MakeAFakeInput
+# makeafakeinput
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs position-dependent kernel association testing to
 homepage: https://bioconductor.org/packages/release/bioc/html/podkat.html
 ---
 
-
 # bioconductor-podkat
 
 name: bioconductor-podkat

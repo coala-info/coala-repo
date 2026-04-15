@@ -4,7 +4,6 @@ description: This tool performs optimized local intensity-dependent normalizatio
 homepage: https://bioconductor.org/packages/release/bioc/html/OLIN.html
 ---
 
-
 # bioconductor-olin
 
 name: bioconductor-olin

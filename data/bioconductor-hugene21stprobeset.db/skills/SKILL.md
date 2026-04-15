@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Affymetrix Human 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene21stprobeset.db.html
 ---
 
-
 # bioconductor-hugene21stprobeset.db
 
 name: bioconductor-hugene21stprobeset.db

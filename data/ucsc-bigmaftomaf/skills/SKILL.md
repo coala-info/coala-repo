@@ -2,8 +2,9 @@
 name: ucsc-bigmaftomaf
 description: The ucsc-bigmaftomaf tool converts genomic alignments from bigMaf format to MAF format. Use when user asks to convert bigMaf to MAF, restore genomic alignments, or prepare bigMaf files for command-line analysis.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigmaftomaf:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigmaftomaf
 

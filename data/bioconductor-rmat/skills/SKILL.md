@@ -4,7 +4,6 @@ description: This tool analyzes Affymetrix tiling array data from ChIP-chip expe
 homepage: https://bioconductor.org/packages/3.5/bioc/html/rMAT.html
 ---
 
-
 # bioconductor-rmat
 
 name: bioconductor-rmat

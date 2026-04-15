@@ -2,6 +2,8 @@
 name: domainator
 description: Domainator is a modular bioinformatics suite for domain-centric analysis and annotation of genetic data using HMM profiles. Use when user asks to annotate sequences with functional domains, extract genomic neighborhoods, search for specific domains, cluster sequences, or perform comparative genomics.
 homepage: https://github.com/nebiolabs/domainator
+metadata:
+  docker_image: "quay.io/biocontainers/domainator:0.8.1--pyhdfd78af_0"
 ---
 
 # domainator

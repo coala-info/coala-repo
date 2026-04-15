@@ -4,7 +4,6 @@ description: This tool infers genomic instability and copy number variation from
 homepage: https://bioconductor.org/packages/release/bioc/html/genomicInstability.html
 ---
 
-
 # bioconductor-genomicinstability
 
 name: bioconductor-genomicinstability

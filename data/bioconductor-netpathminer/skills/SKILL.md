@@ -4,7 +4,6 @@ description: NetPathMiner constructs, processes, and mines genome-scale biologic
 homepage: https://bioconductor.org/packages/release/bioc/html/NetPathMiner.html
 ---
 
-
 # bioconductor-netpathminer
 
 ## Overview

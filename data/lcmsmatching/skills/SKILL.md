@@ -2,8 +2,9 @@
 name: lcmsmatching
 description: The lcmsmatching tool matches experimental mass spectrometry data against reference databases to facilitate metabolite identification. Use when user asks to match m/z and retention time values, query metabolite databases, or identify compounds using local or remote libraries.
 homepage: https://github.com/workflow4metabolomics/lcmsmatching
+metadata:
+  docker_image: "biocontainers/lcmsmatching:phenomenal-v3.4.3_cv1.5.70"
 ---
-
 
 # lcmsmatching
 

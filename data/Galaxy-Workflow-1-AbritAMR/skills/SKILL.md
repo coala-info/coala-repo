@@ -1,10 +1,12 @@
 ---
 name: abritamr
-description: "This Galaxy workflow utilizes the abriTAMR tool to perform antimicrobial resistance gene detection and classification from bacterial genomic assemblies. Use this skill when you need to identify resistance genes and determine the AMR profile of bacterial isolates for clinical or epidemiological surveillance."
-homepage: https://workflowhub.eu/workflows/634
+description: This Galaxy workflow utilizes the abriTAMR tool to perform antimicrobial resistance gene detection and classification from bacterial genomic assemblies. Use this skill when you need to identify resistance genes and determine the AMR profile of bacterial isolates for clinical or epidemiological surveillance.
+homepage: https://erasmusmc-bioinformatics.github.io/benchAMRking/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AbritAMR
+# abritamr
 
 ## Overview
 

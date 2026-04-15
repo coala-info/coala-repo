@@ -4,7 +4,6 @@ description: This package retrieves and transforms protein-protein interaction d
 homepage: https://bioconductor.org/packages/3.6/data/experiment/html/ppiData.html
 ---
 
-
 # bioconductor-ppidata
 
 name: bioconductor-ppidata

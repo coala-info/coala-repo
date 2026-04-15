@@ -4,7 +4,6 @@ description: Bioconductor-genomation is a toolkit for the annotation and visuali
 homepage: https://bioconductor.org/packages/release/bioc/html/genomation.html
 ---
 
-
 # bioconductor-genomation
 
 name: bioconductor-genomation

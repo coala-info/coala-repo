@@ -4,7 +4,6 @@ description: DESpace identifies spatially variable genes and differential spatia
 homepage: https://bioconductor.org/packages/release/bioc/html/DESpace.html
 ---
 
-
 # bioconductor-despace
 
 name: bioconductor-despace

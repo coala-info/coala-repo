@@ -2,6 +2,8 @@
 name: groopm
 description: GroopM is an automated tool for binning metagenomic contigs into individual microbial genomes using differential coverage and sequence composition. Use when user asks to parse BAM files into profiles, generate core bins, recruit contigs to existing bins, or extract binned sequences into FASTA files.
 homepage: https://ecogenomics.github.io/GroopM/
+metadata:
+  docker_image: "quay.io/biocontainers/groopm:0.3.4--pyhdfd78af_2"
 ---
 
 # groopm

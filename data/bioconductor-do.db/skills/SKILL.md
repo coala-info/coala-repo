@@ -4,7 +4,6 @@ description: This tool provides access to the Disease Ontology (DO) to retrieve 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/DO.db.html
 ---
 
-
 # bioconductor-do.db
 
 name: bioconductor-do.db

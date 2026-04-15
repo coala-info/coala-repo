@@ -4,7 +4,6 @@ description: This tool connects to ImmPort databases to load and map immunology 
 homepage: https://bioconductor.org/packages/release/bioc/html/RImmPort.html
 ---
 
-
 # bioconductor-rimmport
 
 name: bioconductor-rimmport

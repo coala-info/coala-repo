@@ -1,10 +1,12 @@
 ---
 name: sars-cov-2-illumina-amplicon-pipeline-ivar-based
-description: "This workflow processes paired-end Illumina amplicon sequencing data to identify SARS-CoV-2 variants and assign lineages using iVar, BWA-MEM, Pangolin, and Nextclade. Use this skill when you need to perform rapid genomic surveillance, generate consensus sequences, and classify viral clades from ARTIC-protocol COVID-19 samples."
-homepage: https://workflowhub.eu/workflows/155
+description: This workflow processes paired-end Illumina amplicon sequencing data to identify SARS-CoV-2 variants and assign lineages using iVar, BWA-MEM, Pangolin, and Nextclade. Use this skill when you need to perform rapid genomic surveillance, generate consensus sequences, and classify viral clades from ARTIC-protocol COVID-19 samples.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# SARS-CoV-2 Illumina Amplicon pipeline - iVar based
+# sars-cov-2-illumina-amplicon-pipeline-ivar-based
 
 ## Overview
 

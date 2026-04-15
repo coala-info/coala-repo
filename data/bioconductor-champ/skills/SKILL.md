@@ -4,7 +4,6 @@ description: ChAMP is a comprehensive pipeline for the analysis of Illumina Meth
 homepage: https://bioconductor.org/packages/release/bioc/html/ChAMP.html
 ---
 
-
 # bioconductor-champ
 
 name: bioconductor-champ

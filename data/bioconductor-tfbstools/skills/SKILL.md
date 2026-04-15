@@ -1,9 +1,8 @@
 ---
 name: bioconductor-tfbstools
-description: "TFBSTools provides a computational framework for the analysis and manipulation of transcription factor binding sites. Use when user asks to create or convert position matrices, search DNA sequences for motifs, interface with the JASPAR database, or perform phylogenetic footprinting."
+description: TFBSTools provides a computational framework for the analysis and manipulation of transcription factor binding sites. Use when user asks to create or convert position matrices, search DNA sequences for motifs, interface with the JASPAR database, or perform phylogenetic footprinting.
 homepage: https://bioconductor.org/packages/release/bioc/html/TFBSTools.html
 ---
-
 
 # bioconductor-tfbstools
 

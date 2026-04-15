@@ -1,10 +1,12 @@
 ---
 name: brew3r
-description: "This workflow extends an existing GTF annotation file using de novo transcript assembly from a collection of bulk RNA-seq BAM files via StringTie and the BREW3R.r package. Use this skill when you need to reannotate or extend 3' UTR regions of genes to better reflect experimental evidence in specific biological samples or tissues."
-homepage: https://workflowhub.eu/workflows/1051
+description: This workflow extends an existing GTF annotation file using de novo transcript assembly from a collection of bulk RNA-seq BAM files via StringTie and the BREW3R.r package. Use this skill when you need to reannotate or extend 3' UTR regions of genes to better reflect experimental evidence in specific biological samples or tissues.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# BREW3R
+# brew3r
 
 ## Overview
 

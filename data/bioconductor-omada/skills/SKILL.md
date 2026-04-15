@@ -4,7 +4,6 @@ description: The omada package provides an automated pipeline for unsupervised c
 homepage: https://bioconductor.org/packages/release/bioc/html/omada.html
 ---
 
-
 # bioconductor-omada
 
 ## Overview

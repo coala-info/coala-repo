@@ -4,6 +4,8 @@ description: This pipeline aligns one or more query genomes to a target genome u
 homepage: https://github.com/nf-core/pairgenomealign
 ---
 
+# pairgenomealign
+
 ## Overview
 nf-core/pairgenomealign facilitates the comparison of genomic sequences by aligning multiple query assemblies against a common target reference. It addresses the need for visualizing large-scale synteny and structural variations through dotplots while providing standardized alignment formats for downstream analysis.
 

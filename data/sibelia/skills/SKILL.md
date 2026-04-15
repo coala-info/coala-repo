@@ -2,8 +2,9 @@
 name: sibelia
 description: Sibelia identifies synteny blocks and genomic variants by comparing closely related microbial sequences using de Bruijn graphs. Use when user asks to find conserved regions across multiple genomes, perform pairwise genome comparisons, or detect SNPs and indels in bacterial datasets.
 homepage: https://github.com/bioinf/Sibelia
+metadata:
+  docker_image: "quay.io/biocontainers/sibelia:3.0.7--0"
 ---
-
 
 # sibelia
 

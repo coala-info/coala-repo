@@ -1,10 +1,12 @@
 ---
 name: metatranscriptomics-analysis-using-microbiome-rna-seq-data-w
-description: "This metatranscriptomics workflow processes interlaced RNA-seq reads and taxonomic profiles using the HUMAnN tool suite to characterize microbial functional potential. Use this skill when you need to quantify gene family abundances, metabolic pathway activities, and Gene Ontology terms within complex microbial communities."
-homepage: https://workflowhub.eu/workflows/1456
+description: This metatranscriptomics workflow processes interlaced RNA-seq reads and taxonomic profiles using the HUMAnN tool suite to characterize microbial functional potential. Use this skill when you need to quantify gene family abundances, metabolic pathway activities, and Gene Ontology terms within complex microbial communities.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metatranscriptomics analysis using microbiome RNA-seq data - Workflow 3: Functional Information
+# metatranscriptomics-analysis-using-microbiome-rna-seq-data-w
 
 ## Overview
 

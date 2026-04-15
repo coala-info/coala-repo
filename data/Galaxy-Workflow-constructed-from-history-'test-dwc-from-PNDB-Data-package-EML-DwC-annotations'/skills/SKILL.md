@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-test-dwc-from-pndb-data-pa
-description: "This workflow integrates marine mammal observation tables and EML metadata using text processing tools like joins, regex replacements, and transpositions to generate Darwin Core compliant datasets. Use this skill when you need to harmonize raw biodiversity survey data and metadata into standardized formats for international data repositories or ecological monitoring programs."
-homepage: https://workflowhub.eu/workflows/117
+description: This workflow integrates marine mammal observation tables and EML metadata using text processing tools like joins, regex replacements, and transpositions to generate Darwin Core compliant datasets. Use this skill when you need to harmonize raw biodiversity survey data and metadata into standardized formats for international data repositories or ecological monitoring programs.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'test dwc from PNDB Data package EML DwC annotations'
+# workflow-constructed-from-history-test-dwc-from-pndb-data-pa
 
 ## Overview
 

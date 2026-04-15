@@ -4,7 +4,6 @@ description: This tool creates and manages Bioconductor Hub-style packages for h
 homepage: https://bioconductor.org/packages/release/bioc/html/HubPub.html
 ---
 
-
 # bioconductor-hubpub
 
 name: bioconductor-hubpub

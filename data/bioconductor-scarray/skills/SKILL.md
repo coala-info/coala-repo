@@ -4,7 +4,6 @@ description: SCArray manages large-scale single-cell omics data by providing a m
 homepage: https://bioconductor.org/packages/release/bioc/html/SCArray.html
 ---
 
-
 # bioconductor-scarray
 
 ## Overview

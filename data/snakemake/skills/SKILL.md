@@ -1,9 +1,10 @@
 ---
 name: snakemake
-description: "Snakemake is a workflow management system used to create reproducible and scalable data analysis pipelines through a Python-based declarative language. Use when user asks to write Snakefiles, define rules with wildcards, manage software dependencies via Conda or containers, and execute complex data processing workflows."
+description: Snakemake is a workflow management system used to create reproducible and scalable data analysis pipelines through a Python-based declarative language. Use when user asks to write Snakefiles, define rules with wildcards, manage software dependencies via Conda or containers, and execute complex data processing workflows.
 homepage: https://snakemake.github.io
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake:9.16.3--hdfd78af_0"
 ---
-
 
 # snakemake
 

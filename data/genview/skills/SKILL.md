@@ -2,6 +2,8 @@
 name: genview
 description: GEnView automates the extraction of genomic flanking sequences and generates phylogeny-aware interactive visualizations to compare gene synteny across multiple organisms. Use when user asks to build genomic databases from NCBI or local files, investigate the genomic context of target proteins, or generate comparative visualizations of gene neighborhoods.
 homepage: https://github.com/EbmeyerSt/GEnView.git
+metadata:
+  docker_image: "quay.io/biocontainers/genview:0.2--pyhdfd78af_0"
 ---
 
 # genview

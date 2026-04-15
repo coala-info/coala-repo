@@ -2,8 +2,9 @@
 name: perl-statistics-distributions
 description: This Perl module performs basic and advanced statistical analysis on numerical datasets using memory-efficient or full-data modes. Use when user asks to calculate mean, median, variance, or percentiles from data using Perl.
 homepage: https://github.com/shlomif/perl-Statistics-Descriptive
+metadata:
+  docker_image: "quay.io/biocontainers/perl-statistics-distributions:1.02--0"
 ---
-
 
 # perl-statistics-distributions
 

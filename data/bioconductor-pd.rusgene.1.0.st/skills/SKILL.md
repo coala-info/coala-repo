@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rusgene.1.0.st.html
 ---
 
-
 # bioconductor-pd.rusgene.1.0.st
 
 name: bioconductor-pd.rusgene.1.0.st

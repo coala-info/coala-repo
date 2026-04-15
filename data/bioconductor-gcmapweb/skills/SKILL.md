@@ -4,7 +4,6 @@ description: This tool provides a web interface and R framework for connectivity
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gCMAPWeb.html
 ---
 
-
 # bioconductor-gcmapweb
 
 name: bioconductor-gcmapweb

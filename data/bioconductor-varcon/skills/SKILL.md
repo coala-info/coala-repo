@@ -4,7 +4,6 @@ description: VarCon analyzes the functional impact of single nucleotide variants
 homepage: https://bioconductor.org/packages/release/bioc/html/VarCon.html
 ---
 
-
 # bioconductor-varcon
 
 ## Overview

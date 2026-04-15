@@ -2,6 +2,8 @@
 name: msproteomicstools
 description: msproteomicstools is a suite of Python utilities designed for high-throughput proteomics data alignment, conversion, and visualization. Use when user asks to align peptide peak groups across mass spectrometry datasets, convert spectral libraries to TSV format, or visualize chromatograms.
 homepage: https://github.com/msproteomicstools/msproteomicstools
+metadata:
+  docker_image: "quay.io/biocontainers/msproteomicstools:0.11.0--py27h6d73bfa_0"
 ---
 
 # msproteomicstools

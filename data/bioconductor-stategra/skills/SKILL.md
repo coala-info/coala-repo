@@ -1,9 +1,8 @@
 ---
 name: bioconductor-stategra
-description: "STATegRa is a framework for the integration and analysis of multiple omics datasets using component analysis, clustering, and differential expression. Use when user asks to integrate multi-omics data, decompose variability into common and distinctive components, cluster features across different data types, or combine p-values using non-parametric combination."
+description: STATegRa is a framework for the integration and analysis of multiple omics datasets using component analysis, clustering, and differential expression. Use when user asks to integrate multi-omics data, decompose variability into common and distinctive components, cluster features across different data types, or combine p-values using non-parametric combination.
 homepage: https://bioconductor.org/packages/release/bioc/html/STATegRa.html
 ---
-
 
 # bioconductor-stategra
 

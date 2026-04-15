@@ -4,7 +4,6 @@ description: This package provides raw and pre-processed 1H NMR metabolomic data
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PepsNMRData.html
 ---
 
-
 # bioconductor-pepsnmrdata
 
 name: bioconductor-pepsnmrdata

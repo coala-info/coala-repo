@@ -1,9 +1,10 @@
 ---
 name: patchify
-description: "patchify tiles large images or 3D volumes into smaller patches and merges them back into their original dimensions. Use when user asks to split images into patches, reconstruct images from tiles, or handle large medical and satellite imagery for model processing."
+description: patchify tiles large images or 3D volumes into smaller patches and merges them back into their original dimensions. Use when user asks to split images into patches, reconstruct images from tiles, or handle large medical and satellite imagery for model processing.
 homepage: https://github.com/dovahcrow/patchify.py
+metadata:
+  docker_image: "quay.io/biocontainers/patchify:0.2.3--pyhdfd78af_0"
 ---
-
 
 # patchify
 

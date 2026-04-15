@@ -1,10 +1,12 @@
 ---
 name: heatmap2-workflow
-description: "This transcriptomics workflow integrates differential expression results and normalized counts using data processing tools and ggplot2_heatmap2 to generate publication-quality heatmaps. Use this skill when you need to visualize expression patterns for specific genes of interest or identify trends among the most significantly differentially expressed genes in an RNA-seq study."
-homepage: https://workflowhub.eu/workflows/1718
+description: This transcriptomics workflow integrates differential expression results and normalized counts using data processing tools and ggplot2_heatmap2 to generate publication-quality heatmaps. Use this skill when you need to visualize expression patterns for specific genes of interest or identify trends among the most significantly differentially expressed genes in an RNA-seq study.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Heatmap2 Workflow
+# heatmap2-workflow
 
 ## Overview
 

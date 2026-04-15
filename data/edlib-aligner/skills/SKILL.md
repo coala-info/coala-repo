@@ -1,9 +1,10 @@
 ---
 name: edlib-aligner
-description: "Performs sequence alignment using edit (Levenshtein) distance. Use when user asks to calculate edit distance between sequences, find optimal alignment paths, or determine alignment start/end locations."
+description: Performs sequence alignment using edit (Levenshtein) distance. Use when user asks to calculate edit distance between sequences, find optimal alignment paths, or determine alignment start/end locations.
 homepage: https://github.com/Martinsos/edlib/
+metadata:
+  docker_image: "biocontainers/edlib-aligner:v1.2.4-1-deb_cv1"
 ---
-
 
 # edlib-aligner
 

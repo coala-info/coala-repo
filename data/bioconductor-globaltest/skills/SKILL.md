@@ -4,7 +4,6 @@ description: This tool performs statistical testing of groups of covariates to d
 homepage: https://bioconductor.org/packages/release/bioc/html/globaltest.html
 ---
 
-
 # bioconductor-globaltest
 
 name: bioconductor-globaltest

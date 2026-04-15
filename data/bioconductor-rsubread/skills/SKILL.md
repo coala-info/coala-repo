@@ -4,7 +4,6 @@ description: Bioconductor-rsubread provides high-performance tools for read alig
 homepage: https://bioconductor.org/packages/release/bioc/html/Rsubread.html
 ---
 
-
 # bioconductor-rsubread
 
 name: bioconductor-rsubread

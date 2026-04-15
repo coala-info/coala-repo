@@ -4,7 +4,6 @@ description: The r-changepoint package provides frequentist and non-parametric m
 homepage: https://cloud.r-project.org/web/packages/changepoint/index.html
 ---
 
-
 # r-changepoint
 
 ## Overview

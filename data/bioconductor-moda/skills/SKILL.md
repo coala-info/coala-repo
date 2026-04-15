@@ -4,7 +4,6 @@ description: MODA performs module differential analysis to identify and compare 
 homepage: https://bioconductor.org/packages/release/bioc/html/MODA.html
 ---
 
-
 # bioconductor-moda
 
 name: bioconductor-moda

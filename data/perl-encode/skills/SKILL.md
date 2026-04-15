@@ -2,8 +2,9 @@
 name: perl-encode
 description: This tool manages character encodings by translating between raw bytes and Perl strings using the Encode module and the piconv utility. Use when user asks to convert file encodings, list supported character sets, or handle character encoding and decoding within Perl scripts.
 homepage: http://metacpan.org/pod/Encode
+metadata:
+  docker_image: "quay.io/biocontainers/perl-encode:3.19--pl5321hec16e2b_1"
 ---
-
 
 # perl-encode
 

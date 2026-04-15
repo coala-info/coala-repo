@@ -2,8 +2,9 @@
 name: ucsc-bigwigaverageoverbed
 description: The tool calculates the average signal from a BigWig file over genomic regions defined in a BED file. Use when user asks to calculate average expression, quantify binding levels, or get signal statistics for genomic features.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigwigaverageoverbed:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigwigaverageoverbed
 

@@ -4,7 +4,6 @@ description: The r-ff tool provides memory-efficient storage and fast access for
 homepage: https://cloud.r-project.org/web/packages/ff/index.html
 ---
 
-
 # r-ff
 
 name: r-ff

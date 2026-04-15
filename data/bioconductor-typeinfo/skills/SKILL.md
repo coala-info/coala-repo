@@ -4,7 +4,6 @@ description: This tool annotates R functions with argument and return type infor
 homepage: https://bioconductor.org/packages/3.8/bioc/html/TypeInfo.html
 ---
 
-
 # bioconductor-typeinfo
 
 name: bioconductor-typeinfo

@@ -4,7 +4,6 @@ description: AnVILBase provides standardized S4 generics and cloud platform abst
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILBase.html
 ---
 
-
 # bioconductor-anvilbase
 
 name: bioconductor-anvilbase

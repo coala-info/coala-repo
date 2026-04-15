@@ -1,10 +1,12 @@
 ---
 name: galaxy-workflow-galaxy-hi-c
-description: "This workflow processes paired-end FASTQ reads and epigenetic tracks to analyze chromatin conformation in Drosophila melanogaster using BWA-MEM and the HiCExplorer suite. Use this skill when you need to identify Topologically Associating Domains (TADs), analyze A/B compartments via PCA, and visualize the spatial organization of the genome in relation to specific epigenetic modifications."
-homepage: https://workflowhub.eu/workflows/1610
+description: This workflow processes paired-end FASTQ reads and epigenetic tracks to analyze chromatin conformation in Drosophila melanogaster using BWA-MEM and the HiCExplorer suite. Use this skill when you need to identify Topologically Associating Domains (TADs), analyze A/B compartments via PCA, and visualize the spatial organization of the genome in relation to specific epigenetic modifications.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy Workflow Galaxy Hi C
+# galaxy-workflow-galaxy-hi-c
 
 ## Overview
 

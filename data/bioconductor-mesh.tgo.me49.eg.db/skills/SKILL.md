@@ -4,7 +4,6 @@ description: This package provides mappings between MeSH identifiers and Entrez 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Tgo.ME49.eg.db.html
 ---
 
-
 # bioconductor-mesh.tgo.me49.eg.db
 
 name: bioconductor-mesh.tgo.me49.eg.db

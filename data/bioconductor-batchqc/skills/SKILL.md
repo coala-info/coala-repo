@@ -4,7 +4,6 @@ description: BatchQC identifies, evaluates, and corrects batch effects in high-t
 homepage: https://bioconductor.org/packages/release/bioc/html/BatchQC.html
 ---
 
-
 # bioconductor-batchqc
 
 ## Overview

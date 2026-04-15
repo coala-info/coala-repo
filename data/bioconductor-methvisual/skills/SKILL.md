@@ -4,7 +4,6 @@ description: This tool performs visualization and exploratory statistical analys
 homepage: https://bioconductor.org/packages/3.8/bioc/html/methVisual.html
 ---
 
-
 # bioconductor-methvisual
 
 name: bioconductor-methvisual

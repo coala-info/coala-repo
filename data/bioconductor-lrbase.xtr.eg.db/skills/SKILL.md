@@ -4,7 +4,6 @@ description: This package provides infrastructure for creating and querying liga
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Xtr.eg.db.html
 ---
 
-
 # bioconductor-lrbase.xtr.eg.db
 
 name: bioconductor-lrbase.xtr.eg.db

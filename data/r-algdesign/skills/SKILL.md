@@ -4,7 +4,6 @@ description: The r-algdesign package calculates optimal experimental designs by 
 homepage: https://cloud.r-project.org/web/packages/AlgDesign/index.html
 ---
 
-
 # r-algdesign
 
 ## Overview

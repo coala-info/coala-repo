@@ -4,7 +4,6 @@ description: This package provides sample ChIP-seq and Bisulfite-seq data from h
 homepage: https://bioconductor.org/packages/release/data/experiment/html/genomationData.html
 ---
 
-
 # bioconductor-genomationdata
 
 name: bioconductor-genomationdata

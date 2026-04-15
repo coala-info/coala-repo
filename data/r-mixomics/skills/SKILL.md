@@ -4,7 +4,6 @@ description: This tool provides multivariate analysis and integration of large b
 homepage: https://cran.r-project.org/web/packages/mixomics/index.html
 ---
 
-
 # r-mixomics
 
 name: r-mixomics

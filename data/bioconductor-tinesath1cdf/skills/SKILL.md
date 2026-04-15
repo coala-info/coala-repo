@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tinesath1cdf.html
 ---
 
-
 # bioconductor-tinesath1cdf
 
 name: bioconductor-tinesath1cdf

@@ -4,7 +4,6 @@ description: This tool performs multiple testing corrections for hypotheses with
 homepage: https://cran.r-project.org/web/packages/structssi/index.html
 ---
 
-
 # r-structssi
 
 name: r-structssi

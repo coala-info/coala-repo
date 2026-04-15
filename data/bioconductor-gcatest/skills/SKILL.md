@@ -4,7 +4,6 @@ description: This tool performs genetic association testing in structured popula
 homepage: https://bioconductor.org/packages/release/bioc/html/gcatest.html
 ---
 
-
 # bioconductor-gcatest
 
 name: bioconductor-gcatest

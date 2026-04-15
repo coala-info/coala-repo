@@ -2,8 +2,9 @@
 name: perl-symbol-util
 description: This Perl module provides a functional interface for safely manipulating the Perl symbol table and managing package stashes. Use when user asks to fetch stashes, delete specific subroutines or typeglob slots, and perform dynamic symbol exporting or namespace cleanup between packages.
 homepage: https://github.com/dex4er/perl-Symbol-Util
+metadata:
+  docker_image: "quay.io/biocontainers/perl-symbol-util:0.0203--pl526_1"
 ---
-
 
 # perl-symbol-util
 

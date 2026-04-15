@@ -2,8 +2,9 @@
 name: bbmapy
 description: bbmapy provides a Pythonic interface for executing the BBTools suite of bioinformatics utilities. Use when user asks to align reads to a reference, perform quality trimming and filtering, or manage Java-based genomic data processing within Python pipelines.
 homepage: https://github.com/urineri/bbmapy
+metadata:
+  docker_image: "quay.io/biocontainers/bbmapy:0.0.51--pyhdfd78af_0"
 ---
-
 
 # bbmapy
 

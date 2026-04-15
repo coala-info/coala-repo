@@ -4,7 +4,6 @@ description: This package implements a classification pipeline for Affymetrix mi
 homepage: https://bioconductor.org/packages/release/bioc/html/maPredictDSC.html
 ---
 
-
 # bioconductor-mapredictdsc
 
 name: bioconductor-mapredictdsc

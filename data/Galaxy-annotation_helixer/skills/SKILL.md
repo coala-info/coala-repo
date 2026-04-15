@@ -1,7 +1,9 @@
 ---
 name: annotation_helixer
-description: "This genome annotation workflow takes a genomic sequence to predict gene models using Helixer and evaluates the results using BUSCO, OMArk, and GFFRead. Use this skill when you need to generate high-quality gene predictions for a newly assembled genome and validate the structural and functional completeness of the resulting annotation."
-homepage: https://workflowhub.eu/workflows/1500
+description: This genome annotation workflow takes a genomic sequence to predict gene models using Helixer and evaluates the results using BUSCO, OMArk, and GFFRead. Use this skill when you need to generate high-quality gene predictions for a newly assembled genome and validate the structural and functional completeness of the resulting annotation.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # annotation_helixer

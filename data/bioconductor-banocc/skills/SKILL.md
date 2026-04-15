@@ -4,7 +4,6 @@ description: BAnOCC infers correlation structures in compositional data using a 
 homepage: https://bioconductor.org/packages/release/bioc/html/banocc.html
 ---
 
-
 # bioconductor-banocc
 
 name: bioconductor-banocc

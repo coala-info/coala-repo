@@ -4,7 +4,6 @@ description: BayesPeak performs Bayesian analysis of ChIP-seq data to identify g
 homepage: https://bioconductor.org/packages/3.11/bioc/html/BayesPeak.html
 ---
 
-
 # bioconductor-bayespeak
 
 name: bioconductor-bayespeak

@@ -4,7 +4,6 @@ description: This tool provides an interface to visualize and manipulate biologi
 homepage: https://bioconductor.org/packages/3.6/bioc/html/RCytoscape.html
 ---
 
-
 # bioconductor-rcytoscape
 
 name: bioconductor-rcytoscape

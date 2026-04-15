@@ -2,8 +2,9 @@
 name: resmico
 description: ResMiCo is a deep learning framework used to detect and filter misassembled contigs in metagenomic assemblies. Use when user asks to identify assembly errors, extract features from BAM files, evaluate assembly quality, or filter out misassembled genomic sequences.
 homepage: https://github.com/leylabmpi/ResMiCo
+metadata:
+  docker_image: "quay.io/biocontainers/resmico:1.2.2--py310hc8f18ef_0"
 ---
-
 
 # resmico
 

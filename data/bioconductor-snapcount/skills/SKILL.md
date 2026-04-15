@@ -4,7 +4,6 @@ description: The snapcount package provides an R interface to Snaptron web servi
 homepage: https://bioconductor.org/packages/release/bioc/html/snapcount.html
 ---
 
-
 # bioconductor-snapcount
 
 ## Overview

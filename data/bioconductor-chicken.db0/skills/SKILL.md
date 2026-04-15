@@ -4,7 +4,6 @@ description: This package provides the base SQLite databases required to build c
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chicken.db0.html
 ---
 
-
 # bioconductor-chicken.db0
 
 name: bioconductor-chicken.db0

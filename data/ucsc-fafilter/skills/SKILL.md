@@ -2,8 +2,9 @@
 name: ucsc-fafilter
 description: This tool filters FASTA files by extracting or excluding sequence records based on user-defined criteria. Use when user asks to filter sequences by length, filter sequences by name pattern, exclude sequences by name, or filter sequences by N-content.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fafilter:482--h0b57e2e_0"
 ---
-
 
 # ucsc-fafilter
 

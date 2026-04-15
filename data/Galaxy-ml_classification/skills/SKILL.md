@@ -1,7 +1,9 @@
 ---
 name: ml_classification
-description: "This machine learning workflow processes CSV datasets to perform classification using Scikit-learn pipelines, hyperparameter searching, and multiple algorithms including SVMs, ensemble methods, and nearest neighbors. Use this skill when you need to develop predictive models for categorical outcomes in fields like cheminformatics or statistics and require comprehensive performance metrics like ROC curves and confusion matrices."
-homepage: https://workflowhub.eu/workflows/1588
+description: This machine learning workflow processes CSV datasets to perform classification using Scikit-learn pipelines, hyperparameter searching, and multiple algorithms including SVMs, ensemble methods, and nearest neighbors. Use this skill when you need to develop predictive models for categorical outcomes in fields like cheminformatics or statistics and require comprehensive performance metrics like ROC curves and confusion matrices.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # ml_classification

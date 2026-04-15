@@ -4,7 +4,6 @@ description: This package provides access to the example dataset of text-convert
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CONFESSdata.html
 ---
 
-
 # bioconductor-confessdata
 
 name: bioconductor-confessdata

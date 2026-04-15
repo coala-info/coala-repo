@@ -1,9 +1,10 @@
 ---
 name: cellqc
-description: "cellqc automates quality control for single-cell RNA-Seq data by integrating empty droplet filtering, ambient RNA removal, and doublet detection. Use when user asks to perform quality control on single-cell RNA-Seq data, filter empty droplets, remove ambient RNA, or detect doublets."
+description: cellqc automates quality control for single-cell RNA-Seq data by integrating empty droplet filtering, ambient RNA removal, and doublet detection. Use when user asks to perform quality control on single-cell RNA-Seq data, filter empty droplets, remove ambient RNA, or detect doublets.
 homepage: https://github.com/lijinbio/cellqc
+metadata:
+  docker_image: "quay.io/biocontainers/cellqc:0.1.0--pyh7e72e81_0"
 ---
-
 
 # cellqc
 

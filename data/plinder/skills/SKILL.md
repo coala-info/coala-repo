@@ -2,8 +2,9 @@
 name: plinder
 description: PLINDER provides a curated dataset and evaluation framework for protein-ligand interaction modeling and benchmarking. Use when user asks to retrieve protein-ligand systems, perform similarity searches on interaction fingerprints or pockets, filter structures by quality or state, or benchmark docking and binding affinity models using standardized splits and evaluation harnesses.
 homepage: https://www.plinder.sh
+metadata:
+  docker_image: "quay.io/biocontainers/plinder:0.2.26--pyhdfd78af_0"
 ---
-
 
 # plinder
 

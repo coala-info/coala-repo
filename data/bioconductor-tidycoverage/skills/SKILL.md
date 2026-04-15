@@ -4,7 +4,6 @@ description: This tool extracts, aggregates, and visualizes genomic coverage dat
 homepage: https://bioconductor.org/packages/release/bioc/html/tidyCoverage.html
 ---
 
-
 # bioconductor-tidycoverage
 
 name: bioconductor-tidycoverage

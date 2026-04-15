@@ -4,7 +4,6 @@ description: This tool creates interactive HTML reports for visualizing and comp
 homepage: https://bioconductor.org/packages/release/bioc/html/RepViz.html
 ---
 
-
 # bioconductor-repviz
 
 name: bioconductor-repviz

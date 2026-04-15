@@ -4,7 +4,6 @@ description: DEWSeq is a Bioconductor package that identifies RBP binding sites 
 homepage: https://bioconductor.org/packages/release/bioc/html/DEWSeq.html
 ---
 
-
 # bioconductor-dewseq
 
 ## Overview

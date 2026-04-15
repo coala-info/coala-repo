@@ -2,8 +2,9 @@
 name: seqan-dev
 description: This tool provides specialized knowledge for developing high-performance biological sequence analysis applications using the SeqAn C++ library. Use when user asks to implement efficient genomic algorithms, perform SIMD-accelerated sequence alignments, manage high-throughput sequencing I/O, or build tools within the Bioconda ecosystem.
 homepage: http://www.seqan.de/
+metadata:
+  docker_image: "biocontainers/seqan-dev:v1.4.2dfsg-3-deb_cv1"
 ---
-
 
 # seqan-dev
 

@@ -1,7 +1,9 @@
 ---
 name: cnvetti
-description: "CNVetti is a toolkit designed for clinical copy number variation calling using BAM and BCF files. Use when user asks to call CNVs, build genomic models, extract coverage, normalize data, or convert coverage files for visualization in IGV."
+description: CNVetti is a toolkit designed for clinical copy number variation calling using BAM and BCF files. Use when user asks to call CNVs, build genomic models, extract coverage, normalize data, or convert coverage files for visualization in IGV.
 homepage: https://github.com/bihealth/cnvetti
+metadata:
+  docker_image: "quay.io/biocontainers/cnvetti:0.2.0--he4cf2ce_0"
 ---
 
 # cnvetti

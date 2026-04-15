@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data and identifier 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoli2.db.html
 ---
 
-
 # bioconductor-ecoli2.db
 
 name: bioconductor-ecoli2.db

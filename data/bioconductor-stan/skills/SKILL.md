@@ -4,7 +4,6 @@ description: This tool performs genomic state annotation and genome segmentation
 homepage: https://bioconductor.org/packages/3.6/bioc/html/STAN.html
 ---
 
-
 # bioconductor-stan
 
 name: bioconductor-stan

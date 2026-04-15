@@ -4,7 +4,6 @@ description: The RTN package provides a computational framework for reconstructi
 homepage: https://bioconductor.org/packages/release/bioc/html/RTN.html
 ---
 
-
 # bioconductor-rtn
 
 ## Overview

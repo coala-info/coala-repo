@@ -1,10 +1,12 @@
 ---
 name: gtn-pangeo-101-for-everyone-xarray
-description: "This workflow processes Copernicus CAMS NetCDF air quality data using Xarray tools to perform spatial selections, coordinate transformations, and generate visualizations such as map plots and climate stripes. Use this skill when you need to analyze atmospheric particulate matter concentrations over specific geographic regions and create time-series or spatial forecast visualizations from multidimensional climate datasets."
-homepage: https://workflowhub.eu/workflows/1432
+description: This workflow processes Copernicus CAMS NetCDF air quality data using Xarray tools to perform spatial selections, coordinate transformations, and generate visualizations such as map plots and climate stripes. Use this skill when you need to analyze atmospheric particulate matter concentrations over specific geographic regions and create time-series or spatial forecast visualizations from multidimensional climate datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN 'Pangeo 101 for everyone - Xarray'
+# gtn-pangeo-101-for-everyone-xarray
 
 ## Overview
 

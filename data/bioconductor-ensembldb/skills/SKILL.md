@@ -4,7 +4,6 @@ description: The ensembldb package creates and queries Ensembl-based annotation 
 homepage: https://bioconductor.org/packages/release/bioc/html/ensembldb.html
 ---
 
-
 # bioconductor-ensembldb
 
 name: bioconductor-ensembldb

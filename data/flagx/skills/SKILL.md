@@ -2,8 +2,9 @@
 name: flagx
 description: FLAG-X is a Python toolbox that automates the end-to-end processing, machine learning-based gating, and visualization of flow cytometry data. Use when user asks to train classification models, perform automated gating on new samples, align channels, or generate dimensionality reduction visualizations like UMAP and t-SNE.
 homepage: https://github.com/bionetslab/FLAG-X
+metadata:
+  docker_image: "quay.io/biocontainers/flagx:0.2.0--pyhdfd78af_0"
 ---
-
 
 # flagx
 

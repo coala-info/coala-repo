@@ -1,9 +1,10 @@
 ---
 name: sabre
-description: "sabre demultiplexes barcoded FastQ files into separate sample files while removing barcode sequences. Use when user asks to demultiplex single-end or paired-end reads, partition multiplexed FastQ files based on barcodes, or strip barcode sequences from sequencing data."
+description: sabre demultiplexes barcoded FastQ files into separate sample files while removing barcode sequences. Use when user asks to demultiplex single-end or paired-end reads, partition multiplexed FastQ files based on barcodes, or strip barcode sequences from sequencing data.
 homepage: https://github.com/najoshi/sabre/
+metadata:
+  docker_image: "quay.io/biocontainers/sabre:1.000--h577a1d6_6"
 ---
-
 
 # sabre
 

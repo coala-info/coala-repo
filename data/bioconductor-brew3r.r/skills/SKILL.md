@@ -4,7 +4,6 @@ description: BREW3R.r improves transcriptomic annotations by extending the 3' en
 homepage: https://bioconductor.org/packages/release/bioc/html/BREW3R.r.html
 ---
 
-
 # bioconductor-brew3r.r
 
 ## Overview

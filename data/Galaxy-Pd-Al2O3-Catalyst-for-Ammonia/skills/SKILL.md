@@ -1,10 +1,12 @@
 ---
 name: paper_6-pdal2o3_100c_175c_300c
-description: "This workflow processes X-ray absorption spectroscopy project files for Pd/Al2O3 catalysts at multiple reaction temperatures using Larch Athena and Larch Plot. Use this skill when you need to characterize the structural changes and chemical states of palladium catalysts during ammonia-related reactions across a temperature gradient from 100°C to 300°C."
-homepage: https://workflowhub.eu/workflows/1803
+description: This workflow processes X-ray absorption spectroscopy project files for Pd/Al2O3 catalysts at multiple reaction temperatures using Larch Athena and Larch Plot. Use this skill when you need to characterize the structural changes and chemical states of palladium catalysts during ammonia-related reactions across a temperature gradient from 100°C to 300°C.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Paper_6-PdAl2O3_100C_175C_300C
+# paper_6-pdal2o3_100c_175c_300c
 
 ## Overview
 

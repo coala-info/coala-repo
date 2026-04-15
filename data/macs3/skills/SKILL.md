@@ -2,6 +2,8 @@
 name: macs3
 description: MACS3 is a suite of tools designed to identify genomic regions of enrichment and analyze chromatin accessibility from sequencing data. Use when user asks to call narrow or broad peaks, identify open chromatin regions via HMMRATAC, or perform differential binding analysis between conditions.
 homepage: https://pypi.org/project/MACS3/
+metadata:
+  docker_image: "quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0"
 ---
 
 # macs3

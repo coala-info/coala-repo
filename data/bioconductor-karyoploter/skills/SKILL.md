@@ -4,7 +4,6 @@ description: karyoploteR is a Bioconductor package for creating highly customiza
 homepage: https://bioconductor.org/packages/release/bioc/html/karyoploteR.html
 ---
 
-
 # bioconductor-karyoploter
 
 ## Overview

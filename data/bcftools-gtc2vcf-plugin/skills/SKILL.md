@@ -2,8 +2,9 @@
 name: bcftools-gtc2vcf-plugin
 description: This tool converts proprietary Illumina and Affymetrix microarray data formats into standard VCF files. Use when user asks to convert GTC or IDAT files to VCF, process Affymetrix CHP files, or generate BAF and LRR intensity metrics from array data.
 homepage: https://github.com/freeseek/gtc2vcf
+metadata:
+  docker_image: "quay.io/biocontainers/bcftools-gtc2vcf-plugin:1.22--hb66fcc3_0"
 ---
-
 
 # bcftools-gtc2vcf-plugin
 

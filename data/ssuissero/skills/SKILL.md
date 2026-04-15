@@ -2,8 +2,9 @@
 name: ssuissero
 description: ssuissero automates the genomic characterization and serotyping of Streptococcus suis from Nanopore reads or assemblies. Use when user asks to assemble Streptococcus suis genomes, perform serotyping, or resolve highly similar serotypes like 2 versus 1/2.
 homepage: https://github.com/jimmyliu1326/SsuisSero
+metadata:
+  docker_image: "quay.io/biocontainers/ssuissero:1.0.1--hdfd78af_1"
 ---
-
 
 # ssuissero
 

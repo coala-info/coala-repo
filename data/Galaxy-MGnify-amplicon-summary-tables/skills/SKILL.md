@@ -1,10 +1,12 @@
 ---
 name: mgnify-amplicon-summary-tables
-description: "This metagenomics workflow processes OTU tables using Query Tabular, awk text reformatting, and column joining to generate comprehensive taxonomic abundance summary tables. Use this skill when you need to aggregate amplicon sequencing results into structured phylum-level and general taxonomic profiles for comparative microbiome analysis."
-homepage: https://workflowhub.eu/workflows/1851
+description: This metagenomics workflow processes OTU tables using Query Tabular, awk text reformatting, and column joining to generate comprehensive taxonomic abundance summary tables. Use this skill when you need to aggregate amplicon sequencing results into structured phylum-level and general taxonomic profiles for comparative microbiome analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify amplicon summary tables
+# mgnify-amplicon-summary-tables
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool provides high-performance R bindings to C++ libraries for
 homepage: https://bioconductor.org/packages/release/bioc/html/scrapper.html
 ---
 
-
 # bioconductor-scrapper
 
 name: bioconductor-scrapper

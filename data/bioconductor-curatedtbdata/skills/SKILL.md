@@ -4,7 +4,6 @@ description: This tool provides access to a standardized collection of curated t
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedTBData.html
 ---
 
-
 # bioconductor-curatedtbdata
 
 name: bioconductor-curatedtbdata

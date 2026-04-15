@@ -4,7 +4,6 @@ description: The bioconductor-tnt package creates interactive, web-based genomic
 homepage: https://bioconductor.org/packages/release/bioc/html/TnT.html
 ---
 
-
 # bioconductor-tnt
 
 ## Overview

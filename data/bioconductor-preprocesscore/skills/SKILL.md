@@ -4,7 +4,6 @@ description: This package provides core routines for preprocessing genomic data,
 homepage: https://bioconductor.org/packages/release/bioc/html/preprocessCore.html
 ---
 
-
 # bioconductor-preprocesscore
 
 ## Overview

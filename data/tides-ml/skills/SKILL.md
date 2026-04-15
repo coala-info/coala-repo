@@ -2,10 +2,9 @@
 name: tides-ml
 description: tides-ml is a machine learning tool that identifies protein-coding regions and classifies sequences in transcriptomes. Use when user asks to 'predict ORFs', 'classify ORFs', 'decontaminate transcriptomes', or 'apply pre-trained models'.
 homepage: https://github.com/xxmalcala/TIdeS
+metadata:
+  docker_image: "quay.io/biocontainers/tides-ml:1.3.5--pyhdfd78af_0"
 ---
-
-
-
 
 # tides-ml
 

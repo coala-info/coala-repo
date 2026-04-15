@@ -4,7 +4,6 @@ description: The digest package generates consistent hash digests and message au
 homepage: https://cloud.r-project.org/web/packages/digest/index.html
 ---
 
-
 # r-digest
 
 ## Overview

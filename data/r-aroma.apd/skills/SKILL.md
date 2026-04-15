@@ -4,7 +4,6 @@ description: The aroma.apd package provides tools for managing Affymetrix Probe-
 homepage: https://cran.r-project.org/web/packages/aroma.apd/index.html
 ---
 
-
 # r-aroma.apd
 
 name: r-aroma.apd

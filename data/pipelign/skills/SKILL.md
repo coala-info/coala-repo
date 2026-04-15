@@ -2,8 +2,9 @@
 name: pipelign
 description: Pipelign is a bioinformatics pipeline designed to create high-quality alignments for diverse viral sequences and genomic fragments. Use when user asks to align viral sequences, handle partial genomic fragments, cluster sequences using profile HMMs, or convert GenBank files to FASTA format.
 homepage: https://github.com/asmmhossain/pipelign/
+metadata:
+  docker_image: "quay.io/biocontainers/pipelign:0.2--py36_0"
 ---
-
 
 # pipelign
 

@@ -4,7 +4,6 @@ description: This tool analyzes transcription start site profiling data to ident
 homepage: https://bioconductor.org/packages/3.8/bioc/html/TSRchitect.html
 ---
 
-
 # bioconductor-tsrchitect
 
 name: bioconductor-tsrchitect

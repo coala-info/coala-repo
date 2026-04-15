@@ -4,7 +4,6 @@ description: This package provides tools for the integrative visualization of mu
 homepage: https://bioconductor.org/packages/3.8/bioc/html/caOmicsV.html
 ---
 
-
 # bioconductor-caomicsv
 
 name: bioconductor-caomicsv

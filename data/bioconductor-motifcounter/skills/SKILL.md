@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of transcription factor bin
 homepage: https://bioconductor.org/packages/release/bioc/html/motifcounter.html
 ---
 
-
 # bioconductor-motifcounter
 
 name: bioconductor-motifcounter

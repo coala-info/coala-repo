@@ -1,9 +1,8 @@
 ---
 name: bioconductor-citefuse
-description: "CiteFuse provides a comprehensive framework for integrating and analyzing multimodal CITE-seq data using Similarity Network Fusion. Use when user asks to integrate RNA and surface protein measurements, perform cell hashing for doublet detection, cluster cells using a fused similarity matrix, or identify important ADT markers."
+description: CiteFuse provides a comprehensive framework for integrating and analyzing multimodal CITE-seq data using Similarity Network Fusion. Use when user asks to integrate RNA and surface protein measurements, perform cell hashing for doublet detection, cluster cells using a fused similarity matrix, or identify important ADT markers.
 homepage: https://bioconductor.org/packages/release/bioc/html/CiteFuse.html
 ---
-
 
 # bioconductor-citefuse
 

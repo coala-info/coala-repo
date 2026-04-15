@@ -4,7 +4,6 @@ description: bioconductor-bcseq performs fast sequence alignment for high-throug
 homepage: https://bioconductor.org/packages/release/bioc/html/bcSeq.html
 ---
 
-
 # bioconductor-bcseq
 
 name: bioconductor-bcseq

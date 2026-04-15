@@ -4,7 +4,6 @@ description: This tool computes various confidence intervals and simultaneous co
 homepage: https://cloud.r-project.org/web/packages/km.ci/index.html
 ---
 
-
 # r-km.ci
 
 name: r-km.ci

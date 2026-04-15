@@ -1,9 +1,10 @@
 ---
 name: slicedimage
-description: "This tool provides efficient access to large, multi-dimensional imaging datasets stored in a tiled format. Use when user asks to load image sets, access specific slices or subsets of data, or work with tiled imaging data."
+description: This tool provides efficient access to large, multi-dimensional imaging datasets stored in a tiled format. Use when user asks to load image sets, access specific slices or subsets of data, or work with tiled imaging data.
 homepage: https://github.com/spacetx/slicedimage
+metadata:
+  docker_image: "quay.io/biocontainers/slicedimage:3.1.2--py_0"
 ---
-
 
 # slicedimage
 

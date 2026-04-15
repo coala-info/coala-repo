@@ -4,7 +4,6 @@ description: This tool processes raw Flow Injection Analysis coupled to High-Res
 homepage: https://bioconductor.org/packages/3.5/bioc/html/proFIA.html
 ---
 
-
 # bioconductor-profia
 
 name: bioconductor-profia

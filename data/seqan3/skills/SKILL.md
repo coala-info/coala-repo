@@ -2,8 +2,9 @@
 name: seqan3
 description: SeqAn3 is a modern C++ template library designed for high-performance biological sequence analysis and bioinformatics application development. Use when user asks to install the library via Bioconda, perform sequence alignment, query large nucleotide collections with Raptor, or call structural variants using iGenVar.
 homepage: https://www.seqan.de
+metadata:
+  docker_image: "quay.io/biocontainers/seqan3:3.4.0--haf24da9_0"
 ---
-
 
 # seqan3
 

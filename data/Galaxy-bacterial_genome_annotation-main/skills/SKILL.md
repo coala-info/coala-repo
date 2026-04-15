@@ -1,10 +1,12 @@
 ---
 name: bacterial-genome-annotation
-description: "This workflow performs comprehensive annotation of assembled bacterial genomes by integrating Bakta, IntegronFinder, PlasmidFinder, and ISEScan to identify genes, integrons, plasmids, and insertion sequences. Use this skill when you need to characterize the functional landscape of a bacterial isolate, specifically to detect mobile genetic elements and structural features associated with horizontal gene transfer or antimicrobial resistance."
-homepage: https://workflowhub.eu/workflows/1050
+description: This workflow performs comprehensive annotation of assembled bacterial genomes by integrating Bakta, IntegronFinder, PlasmidFinder, and ISEScan to identify genes, integrons, plasmids, and insertion sequences. Use this skill when you need to characterize the functional landscape of a bacterial isolate, specifically to detect mobile genetic elements and structural features associated with horizontal gene transfer or antimicrobial resistance.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Bacterial Genome Annotation
+# bacterial-genome-annotation
 
 ## Overview
 

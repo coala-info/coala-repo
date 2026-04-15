@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu6500subacdf.html
 ---
 
-
 # bioconductor-mu6500subacdf
 
 name: bioconductor-mu6500subacdf

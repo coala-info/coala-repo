@@ -2,8 +2,9 @@
 name: vawk
 description: vawk is a VCF parser that mimics awk's functionality for efficient data extraction and manipulation. Use when user asks to filter, transform, or extract specific fields from VCF files using pattern matching and scripting.
 homepage: https://www.gnu.org/software/gawk/
+metadata:
+  docker_image: "quay.io/biocontainers/vawk:0.0.2--py27_0"
 ---
-
 
 # vawk
 

@@ -4,7 +4,6 @@ description: BiocDockerManager provides an R interface to manage and interact wi
 homepage: https://bioconductor.org/packages/3.11/bioc/html/BiocDockerManager.html
 ---
 
-
 # bioconductor-biocdockermanager
 
 name: bioconductor-biocdockermanager

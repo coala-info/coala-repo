@@ -4,7 +4,6 @@ description: The r-phewas package provides a pipeline for conducting Phenome-Wid
 homepage: https://cran.r-project.org/web/packages/phewas/index.html
 ---
 
-
 # r-phewas
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool parses PSI-MI XML 2.5 molecular interaction data into R g
 homepage: https://bioconductor.org/packages/3.6/bioc/html/RpsiXML.html
 ---
 
-
 # bioconductor-rpsixml
 
 name: bioconductor-rpsixml

@@ -1,9 +1,10 @@
 ---
 name: duplomap
-description: "DuploMap refines long-read alignments to improve accuracy in segmental duplication regions. Use when user asks to improve long-read alignment accuracy in segmental duplications."
+description: DuploMap refines long-read alignments to improve accuracy in segmental duplication regions. Use when user asks to improve long-read alignment accuracy in segmental duplications.
 homepage: https://gitlab.com/tprodanov/duplomap
+metadata:
+  docker_image: "quay.io/biocontainers/duplomap:0.9.5--h577a1d6_4"
 ---
-
 
 # duplomap
 

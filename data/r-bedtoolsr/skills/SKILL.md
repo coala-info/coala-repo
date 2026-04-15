@@ -4,7 +4,6 @@ description: bedtoolsr is an R wrapper for the bedtools suite that enables genom
 homepage: https://cran.r-project.org/web/packages/bedtoolsr/index.html
 ---
 
-
 # r-bedtoolsr
 
 ## Overview

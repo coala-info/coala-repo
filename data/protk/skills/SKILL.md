@@ -2,6 +2,8 @@
 name: protk
 description: Protk is a Ruby-based suite of tools that provides a consistent command-line interface for managing proteomics workflows and third-party search engines. Use when user asks to run MS/MS searches, perform protein inference, manage protein databases, or convert proteomics data formats.
 homepage: https://github.com/iracooke/protk
+metadata:
+  docker_image: "quay.io/biocontainers/protk:1.4.4a--hc9114bc_1"
 ---
 
 # protk

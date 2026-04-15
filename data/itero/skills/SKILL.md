@@ -2,6 +2,8 @@
 name: itero
 description: itero is a bioinformatics pipeline designed for the iterative, guided assembly of target enrichment data using reference seeds. Use when user asks to assemble ultraconserved elements, perform guided assembly of hybrid enrichment data, or recover sequences from target enrichment reads.
 homepage: https://github.com/faircloth-lab/itero
+metadata:
+  docker_image: "quay.io/biocontainers/itero:1.1.2--py27_0"
 ---
 
 # itero

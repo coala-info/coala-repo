@@ -4,7 +4,6 @@ description: This package provides a curated collection of standardized gene exp
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedBladderData.html
 ---
 
-
 # bioconductor-curatedbladderdata
 
 ## Overview

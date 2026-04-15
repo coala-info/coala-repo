@@ -4,7 +4,6 @@ description: GEOexplorer is an R package and Shiny application for the automated
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOexplorer.html
 ---
 
-
 # bioconductor-geoexplorer
 
 ## Overview

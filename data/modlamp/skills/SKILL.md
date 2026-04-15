@@ -2,8 +2,9 @@
 name: modlamp
 description: The modlamp tool provides a Python framework for the design, analysis, and physical-chemical characterization of peptide and protein sequences. Use when user asks to generate peptide libraries, calculate molecular descriptors, train machine learning models for biological activity prediction, or visualize helical wheel projections.
 homepage: http://modlamp.org
+metadata:
+  docker_image: "quay.io/biocontainers/modlamp:4.3.2--pyh7e72e81_0"
 ---
-
 
 # modlamp
 

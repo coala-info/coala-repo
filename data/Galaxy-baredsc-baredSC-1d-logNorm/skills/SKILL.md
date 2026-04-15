@@ -1,10 +1,12 @@
 ---
 name: single-cell-mixture-analysis-baredsc-1d-log-normalized-model
-description: "This workflow applies the baredSC algorithm to log-normalized single-cell expression data to fit and combine one-dimensional Gaussian mixture models for a specific gene of interest. Use this skill when you need to identify distinct cellular subpopulations or characterize expression heterogeneity within a population by statistically determining the optimal number of Gaussian components."
-homepage: https://workflowhub.eu/workflows/615
+description: This workflow applies the baredSC algorithm to log-normalized single-cell expression data to fit and combine one-dimensional Gaussian mixture models for a specific gene of interest. Use this skill when you need to identify distinct cellular subpopulations or characterize expression heterogeneity within a population by statistically determining the optimal number of Gaussian components.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Single-Cell Mixture Analysis: baredSC 1D Log-Normalized Models
+# single-cell-mixture-analysis-baredsc-1d-log-normalized-model
 
 ## Overview
 

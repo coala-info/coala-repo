@@ -4,7 +4,6 @@ description: rGADEM implements a genetic algorithm to discover de novo motifs in
 homepage: https://bioconductor.org/packages/release/bioc/html/rGADEM.html
 ---
 
-
 # bioconductor-rgadem
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: pygmes
-description: "pygmes is a Python wrapper for GeneMark-ES that simplifies gene prediction on fragmented and incomplete genomes. Use when user asks to predict genes in genomic or metagenomic data."
+description: pygmes is a Python wrapper for GeneMark-ES that simplifies gene prediction on fragmented and incomplete genomes. Use when user asks to predict genes in genomic or metagenomic data.
 homepage: https://github.com/openpaul/pygmes
+metadata:
+  docker_image: "quay.io/biocontainers/pygmes:0.1.7--py_0"
 ---
-
 
 # pygmes
 

@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of RNA-Seq data to identify
 homepage: https://cran.r-project.org/web/packages/sleuth/index.html
 ---
 
-
 # r-sleuth
 
 name: r-sleuth

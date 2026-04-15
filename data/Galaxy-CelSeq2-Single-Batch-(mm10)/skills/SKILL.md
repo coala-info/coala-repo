@@ -1,10 +1,12 @@
 ---
 name: celseq2-single-batch-mm10
-description: "This transcriptomics workflow processes CelSeq2 single-cell RNA-seq batches using UMI-tools for barcode extraction and counting, RNA STAR for alignment to the mm10 genome, and featureCounts for gene quantification. Use this skill when you need to generate gene expression count matrices from raw mouse scRNA-seq data to analyze cellular heterogeneity or differential expression."
-homepage: https://workflowhub.eu/workflows/1494
+description: This transcriptomics workflow processes CelSeq2 single-cell RNA-seq batches using UMI-tools for barcode extraction and counting, RNA STAR for alignment to the mm10 genome, and featureCounts for gene quantification. Use this skill when you need to generate gene expression count matrices from raw mouse scRNA-seq data to analyze cellular heterogeneity or differential expression.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CelSeq2: Single Batch (mm10)
+# celseq2-single-batch-mm10
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: mc_covid19like_assembly_reads
-description: "This Galaxy workflow processes paired-end sequencing reads for COVID-19-like viral genomics using fastp for quality control, Bowtie2 for read filtering, and Unicycler and SPAdes for de novo assembly. Use this skill when you need to reconstruct high-quality viral consensus sequences or scaffolds from raw Illumina reads during an outbreak investigation or genomic surveillance."
-homepage: https://workflowhub.eu/workflows/68
+description: This Galaxy workflow processes paired-end sequencing reads for COVID-19-like viral genomics using fastp for quality control, Bowtie2 for read filtering, and Unicycler and SPAdes for de novo assembly. Use this skill when you need to reconstruct high-quality viral consensus sequences or scaffolds from raw Illumina reads during an outbreak investigation or genomic surveillance.
+homepage: https://covid19.galaxyproject.org/genomics/2-assembly/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MC_COVID19like_Assembly_Reads
+# mc_covid19like_assembly_reads
 
 ## Overview
 

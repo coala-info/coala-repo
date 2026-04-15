@@ -4,7 +4,6 @@ description: This tool performs gene selection and classification modeling using
 homepage: https://bioconductor.org/packages/release/bioc/html/MiPP.html
 ---
 
-
 # bioconductor-mipp
 
 name: bioconductor-mipp

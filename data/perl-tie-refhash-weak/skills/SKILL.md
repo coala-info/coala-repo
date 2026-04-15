@@ -2,8 +2,9 @@
 name: perl-tie-refhash-weak
 description: This Perl module allows references to be used as hash keys without incrementing their reference count to prevent memory leaks. Use when user asks to use objects as hash keys, implement inside-out objects, or create caches that do not interfere with garbage collection.
 homepage: http://metacpan.org/pod/Tie::RefHash::Weak
+metadata:
+  docker_image: "quay.io/biocontainers/perl-tie-refhash-weak:0.09--pl526_2"
 ---
-
 
 # perl-tie-refhash-weak
 

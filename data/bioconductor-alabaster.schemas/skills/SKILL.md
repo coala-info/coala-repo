@@ -4,7 +4,6 @@ description: This tool provides access to JSON metadata schemas for validating a
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.schemas.html
 ---
 
-
 # bioconductor-alabaster.schemas
 
 name: bioconductor-alabaster.schemas

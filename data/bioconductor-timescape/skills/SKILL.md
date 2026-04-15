@@ -4,7 +4,6 @@ description: This tool creates interactive visualizations of clonal evolution in
 homepage: https://bioconductor.org/packages/release/bioc/html/timescape.html
 ---
 
-
 # bioconductor-timescape
 
 ## Overview

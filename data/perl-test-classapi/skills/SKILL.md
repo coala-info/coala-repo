@@ -2,8 +2,9 @@
 name: perl-test-classapi
 description: Test::ClassAPI is a Perl testing utility that verifies the structural correctness and API consistency of software libraries by checking class loading, inheritance, and method existence. Use when user asks to verify class manifests, check method implementation across inheritance trees, or perform structural API testing for Perl modules.
 homepage: https://github.com/karenetheridge/Test-ClassAPI
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-classapi:1.07--pl526_0"
 ---
-
 
 # perl-test-classapi
 

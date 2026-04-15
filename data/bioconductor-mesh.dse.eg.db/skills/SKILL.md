@@ -4,7 +4,6 @@ description: This package provides mappings between MeSH disease identifiers and
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Dse.eg.db.html
 ---
 
-
 # bioconductor-mesh.dse.eg.db
 
 name: bioconductor-mesh.dse.eg.db

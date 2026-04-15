@@ -2,8 +2,9 @@
 name: quantms-utils
 description: quantms-utils provides a suite of command-line tools and Python helpers for proteomics data transformation, quality control metric extraction, and experimental design validation. Use when user asks to convert DIA-NN results to mzTab, extract mass spectrometry statistics into parquet files, validate SDRF sample sheets, or convert idXML files to CSV.
 homepage: https://www.github.com/bigbio/quantms-utils
+metadata:
+  docker_image: "quay.io/biocontainers/quantms-utils:0.0.24--pyh7e72e81_0"
 ---
-
 
 # quantms-utils
 

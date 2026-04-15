@@ -4,7 +4,6 @@ description: bioconductor-flowcatchr tracks and analyzes flowing blood cells in 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowcatchR.html
 ---
 
-
 # bioconductor-flowcatchr
 
 name: bioconductor-flowcatchr

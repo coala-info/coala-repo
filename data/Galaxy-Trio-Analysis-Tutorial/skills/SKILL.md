@@ -1,10 +1,12 @@
 ---
 name: trio-analysis-tutorial
-description: "This workflow performs trio-based variant analysis on genomic data using pedigree files and VCFs processed through the EGA Download Client, bcftools, SnpEff, and GEMINI. Use this skill when you need to identify candidate pathogenic mutations in rare disease cases by evaluating inheritance patterns across family members."
-homepage: https://workflowhub.eu/workflows/1636
+description: This workflow performs trio-based variant analysis on genomic data using pedigree files and VCFs processed through the EGA Download Client, bcftools, SnpEff, and GEMINI. Use this skill when you need to identify candidate pathogenic mutations in rare disease cases by evaluating inheritance patterns across family members.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Trio Analysis Tutorial
+# trio-analysis-tutorial
 
 ## Overview
 

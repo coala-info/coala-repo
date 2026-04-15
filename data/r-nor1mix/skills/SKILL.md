@@ -1,9 +1,8 @@
 ---
 name: r-nor1mix
-description: "The r-nor1mix package provides tools for creating, fitting, and visualizing one-dimensional normal mixture models. Use when user asks to create normal mixture objects, fit models using EM or MLE algorithms, calculate mixture densities, or access Marron-Wand benchmark densities."
+description: The r-nor1mix package provides tools for creating, fitting, and visualizing one-dimensional normal mixture models. Use when user asks to create normal mixture objects, fit models using EM or MLE algorithms, calculate mixture densities, or access Marron-Wand benchmark densities.
 homepage: https://cloud.r-project.org/web/packages/nor1mix/index.html
 ---
-
 
 # r-nor1mix
 

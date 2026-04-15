@@ -4,7 +4,6 @@ description: The methylMnM package provides a statistical framework for the join
 homepage: https://bioconductor.org/packages/release/bioc/html/methylMnM.html
 ---
 
-
 # bioconductor-methylmnm
 
 ## Overview

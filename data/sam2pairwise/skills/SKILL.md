@@ -1,9 +1,10 @@
 ---
 name: sam2pairwise
-description: "sam2pairwise converts SAM alignment records into a human-readable, four-line pairwise alignment format using CIGAR strings and MD tags. Use when user asks to visualize read alignments, convert SAM or BAM files to pairwise format, or reconstruct reference sequences from alignment data."
+description: sam2pairwise converts SAM alignment records into a human-readable, four-line pairwise alignment format using CIGAR strings and MD tags. Use when user asks to visualize read alignments, convert SAM or BAM files to pairwise format, or reconstruct reference sequences from alignment data.
 homepage: https://github.com/mlafave/sam2pairwise
+metadata:
+  docker_image: "quay.io/biocontainers/sam2pairwise:1.0.0--h9948957_1"
 ---
-
 
 # sam2pairwise
 

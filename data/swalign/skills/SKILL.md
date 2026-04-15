@@ -1,9 +1,10 @@
 ---
 name: swalign
-description: "swalign performs local sequence alignment using the Smith-Waterman algorithm with support for custom scoring and gap penalties. Use when user asks to perform local sequence alignment, align nucleotide or protein sequences, or calculate optimal alignments with affine gap penalties and gap decay."
+description: swalign performs local sequence alignment using the Smith-Waterman algorithm with support for custom scoring and gap penalties. Use when user asks to perform local sequence alignment, align nucleotide or protein sequences, or calculate optimal alignments with affine gap penalties and gap decay.
 homepage: https://github.com/mbreese/swalign/
+metadata:
+  docker_image: "quay.io/biocontainers/swalign:0.3.7--pyhdfd78af_0"
 ---
-
 
 # swalign
 

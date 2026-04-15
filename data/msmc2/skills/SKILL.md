@@ -2,8 +2,9 @@
 name: msmc2
 description: msmc2 reconstructs demographic history and estimates changes in effective population sizes by analyzing coalescence times between multiple haplotypes. Use when user asks to estimate population size history, calculate cross-population coalescence rates, or analyze population divergence from genomic data.
 homepage: https://github.com/stschiff/msmc2
+metadata:
+  docker_image: "quay.io/biocontainers/msmc2:2.1.4--hdfd78af_0"
 ---
-
 
 # msmc2
 

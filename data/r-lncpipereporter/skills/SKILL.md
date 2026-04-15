@@ -4,7 +4,6 @@ description: The lncpipereporter package compiles lncRNA sequencing analysis res
 homepage: https://cran.r-project.org/web/packages/lncpipereporter/index.html
 ---
 
-
 # r-lncpipereporter
 
 ## Overview

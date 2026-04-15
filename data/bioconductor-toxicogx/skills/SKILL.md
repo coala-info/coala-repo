@@ -4,7 +4,6 @@ description: ToxicoGx provides a standardized framework for the integrated analy
 homepage: https://bioconductor.org/packages/release/bioc/html/ToxicoGx.html
 ---
 
-
 # bioconductor-toxicogx
 
 ## Overview

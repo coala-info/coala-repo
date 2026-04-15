@@ -1,10 +1,12 @@
 ---
 name: amr-seqsero2sistr
-description: "This workflow processes sequencing dataset collections for Salmonella serotyping and antimicrobial resistance analysis using SeqSero2, SISTR, Shovill, and hamronize. Use this skill when you need to determine Salmonella serovars and identify associated resistance genes or plasmid sequences for food safety or clinical pathogen surveillance."
-homepage: https://workflowhub.eu/workflows/407
+description: This workflow processes sequencing dataset collections for Salmonella serotyping and antimicrobial resistance analysis using SeqSero2, SISTR, Shovill, and hamronize. Use this skill when you need to determine Salmonella serovars and identify associated resistance genes or plasmid sequences for food safety or clinical pathogen surveillance.
+homepage: https://erasmusmc-bioinformatics.github.io/benchAMRking/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AMR - SeqSero2/SISTR
+# amr-seqsero2sistr
 
 ## Overview
 

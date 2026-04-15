@@ -4,7 +4,6 @@ description: This tool performs high-throughput parallelized regression analyses
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RegParallel.html
 ---
 
-
 # bioconductor-regparallel
 
 name: bioconductor-regparallel

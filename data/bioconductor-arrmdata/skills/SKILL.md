@@ -4,7 +4,6 @@ description: This package provides example datasets, including raw Beta values a
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ARRmData.html
 ---
 
-
 # bioconductor-arrmdata
 
 name: bioconductor-arrmdata

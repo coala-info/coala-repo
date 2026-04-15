@@ -4,7 +4,6 @@ description: The netbiov package provides specialized layout algorithms for the 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/netbiov.html
 ---
 
-
 # bioconductor-netbiov
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs post hoc cell type classification to refine and 
 homepage: https://bioconductor.org/packages/release/bioc/html/scReClassify.html
 ---
 
-
 # bioconductor-screclassify
 
 name: bioconductor-screclassify

@@ -1,9 +1,12 @@
 ---
 name: cutnrun-data-processing-workflow
-description: "This Common Workflow Language pipeline processes raw CUT'N'RUN sequencing reads into genome-wide accessibility tracks and peaks using trimGalore, bowtie2, and MACS2. Use this skill when you need to map protein-DNA interaction sites and characterize chromatin accessibility patterns across the genome to understand epigenetic regulation."
-homepage: https://workflowhub.eu/workflows/1765
+description: This Common Workflow Language pipeline processes raw CUT'N'RUN sequencing reads into genome-wide accessibility tracks and peaks using trimGalore, bowtie2, and MACS2. Use this skill when you need to map protein-DNA interaction sites and characterize chromatin accessibility patterns across the genome to understand epigenetic regulation.
+homepage: https://eosc4cancer.eu
+metadata:
+  docker_image: "N/A"
 ---
-# CUT'N'RUN data processing workflow
+
+# cutnrun-data-processing-workflow
 
 ## Overview
 

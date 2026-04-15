@@ -4,7 +4,6 @@ description: This package provides an EpiTxDb object containing RNA modification
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EpiTxDb.Mm.mm10.html
 ---
 
-
 # bioconductor-epitxdb.mm.mm10
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides the Barnes benchmark Illumina titration datas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/lumiBarnes.html
 ---
 
-
 # bioconductor-lumibarnes
 
 name: bioconductor-lumibarnes

@@ -1,9 +1,12 @@
 ---
 name: humann-3-workflow
-description: "This CWL workflow processes paired-end metagenomic reads using MetaPhlAn 4 and HUMAnN 3 to perform taxonomic profiling and functional metabolic pathway quantification. Use this skill when you need to characterize the metabolic potential and functional diversity of microbial communities within complex environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/2013
+description: This CWL workflow processes paired-end metagenomic reads using MetaPhlAn 4 and HUMAnN 3 to perform taxonomic profiling and functional metabolic pathway quantification. Use this skill when you need to characterize the metabolic potential and functional diversity of microbial communities within complex environmental or clinical samples.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# HUMAnN 3 workflow
+
+# humann-3-workflow
 
 ## Overview
 

@@ -2,6 +2,8 @@
 name: toil
 description: Toil is a scalable pipeline management system designed to execute complex scientific workflows across distributed computing environments. Use when user asks to optimize autoscaling performance, manage resource reservations, or execute high-throughput processing tasks using CLI best practices.
 homepage: https://toil.ucsc-cgl.org/
+metadata:
+  docker_image: "quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0"
 ---
 
 # toil

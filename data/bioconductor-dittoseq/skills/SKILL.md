@@ -1,9 +1,8 @@
 ---
 name: bioconductor-dittoseq
-description: "bioconductor-dittoseq provides color-blind friendly visualization and analysis for single-cell and bulk RNA-sequencing data. Use when user asks to create dimensionality reduction plots, analyze cell composition with bar plots, generate heatmaps, or visualize gene expression distributions from Seurat and Bioconductor objects."
+description: bioconductor-dittoseq provides color-blind friendly visualization and analysis for single-cell and bulk RNA-sequencing data. Use when user asks to create dimensionality reduction plots, analyze cell composition with bar plots, generate heatmaps, or visualize gene expression distributions from Seurat and Bioconductor objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/dittoSeq.html
 ---
-
 
 # bioconductor-dittoseq
 

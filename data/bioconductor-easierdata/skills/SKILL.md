@@ -4,7 +4,6 @@ description: The easierData package provides essential datasets and model parame
 homepage: https://bioconductor.org/packages/release/data/experiment/html/easierData.html
 ---
 
-
 # bioconductor-easierdata
 
 ## Overview

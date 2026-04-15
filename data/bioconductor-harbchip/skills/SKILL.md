@@ -4,7 +4,6 @@ description: This package provides yeast upstream sequences and genome-wide tran
 homepage: https://bioconductor.org/packages/release/data/experiment/html/harbChIP.html
 ---
 
-
 # bioconductor-harbchip
 
 ## Overview

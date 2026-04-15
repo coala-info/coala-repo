@@ -1,10 +1,12 @@
 ---
 name: mags-taxonomy-annotation
-description: "This metagenomics workflow performs taxonomic classification on a collection of metagenome-assembled genomes (MAGs) using GTDB-Tk and maps the resulting lineages to NCBI names and taxIDs. Use this skill when you need to identify the phylogenetic origin of microbial bins and reconcile GTDB-based classifications with NCBI nomenclature for standardized reporting or database submission."
-homepage: https://workflowhub.eu/workflows/2099
+description: This metagenomics workflow performs taxonomic classification on a collection of metagenome-assembled genomes (MAGs) using GTDB-Tk and maps the resulting lineages to NCBI names and taxIDs. Use this skill when you need to identify the phylogenetic origin of microbial bins and reconcile GTDB-based classifications with NCBI nomenclature for standardized reporting or database submission.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MAGs taxonomy annotation
+# mags-taxonomy-annotation
 
 ## Overview
 

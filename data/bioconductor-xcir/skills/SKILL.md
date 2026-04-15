@@ -4,7 +4,6 @@ description: This tool performs statistical modeling of X-chromosome inactivatio
 homepage: https://bioconductor.org/packages/3.10/bioc/html/XCIR.html
 ---
 
-
 # bioconductor-xcir
 
 name: bioconductor-xcir

@@ -2,8 +2,9 @@
 name: simphyni
 description: SimPhyNI detects associations between binary traits by accounting for phylogenetic structure through evolutionary simulations. Use when user asks to infer trait associations, detect genotype-phenotype relationships, or perform phylogenetically-corrected trait analysis.
 homepage: https://github.com/jpeyemi/SimPhyNI
+metadata:
+  docker_image: "quay.io/biocontainers/simphyni:1.0.2--pyhdfd78af_0"
 ---
-
 
 # simphyni
 

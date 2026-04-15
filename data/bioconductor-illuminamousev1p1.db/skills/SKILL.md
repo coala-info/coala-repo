@@ -4,7 +4,6 @@ description: This package provides biological annotation and re-annotation data 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaMousev1p1.db.html
 ---
 
-
 # bioconductor-illuminamousev1p1.db
 
 name: bioconductor-illuminamousev1p1.db

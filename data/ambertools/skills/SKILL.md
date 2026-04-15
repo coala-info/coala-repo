@@ -2,6 +2,8 @@
 name: ambertools
 description: AmberTools is a collection of programs for preparing, parameterizing, and analyzing biomolecular simulations. Use when user asks to parameterize small molecules with GAFF, set up protein-ligand complexes using TLEAP, or perform binding free energy calculations like MMGBSA and MMPBSA.
 homepage: https://github.com/quantaosun/Ambertools-OpenMM-MD
+metadata:
+  docker_image: "quay.io/biocontainers/ambertools:21.10"
 ---
 
 # ambertools

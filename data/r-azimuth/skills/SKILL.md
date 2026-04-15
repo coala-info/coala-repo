@@ -4,7 +4,6 @@ description: This tool performs automated cell type annotation and mapping of si
 homepage: https://cran.r-project.org/web/packages/azimuth/index.html
 ---
 
-
 # r-azimuth
 
 name: r-azimuth

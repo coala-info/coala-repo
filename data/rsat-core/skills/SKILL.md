@@ -2,8 +2,9 @@
 name: rsat-core
 description: The rsat-core tool provides a suite for identifying and characterizing cis-regulatory elements and DNA motifs within genomic sequences. Use when user asks to retrieve genomic sequences, perform motif discovery, scan sequences for patterns using matrices, or cluster and compare DNA motifs.
 homepage: http://rsat.eu/
+metadata:
+  docker_image: "quay.io/biocontainers/rsat-core:2025.04.04--hb2a3317_1"
 ---
-
 
 # rsat-core
 

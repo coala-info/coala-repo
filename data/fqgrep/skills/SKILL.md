@@ -2,8 +2,9 @@
 name: fqgrep
 description: fqgrep is a high-performance, sequence-aware utility designed for searching and filtering FASTQ files using regular expressions or fixed strings. Use when user asks to search for sequences in FASTQ files, filter paired-end reads, count matching records, or identify reverse complement matches.
 homepage: https://github.com/fulcrumgenomics/fqgrep
+metadata:
+  docker_image: "quay.io/biocontainers/fqgrep:1.1.1--ha6fb395_0"
 ---
-
 
 # fqgrep
 

@@ -4,7 +4,6 @@ description: Bioconductor-cytopipeline automates and visualizes flow cytometry d
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoPipeline.html
 ---
 
-
 # bioconductor-cytopipeline
 
 name: bioconductor-cytopipeline

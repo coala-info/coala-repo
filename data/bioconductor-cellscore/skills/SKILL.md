@@ -4,7 +4,6 @@ description: This tool evaluates cell identity and differentiation success by co
 homepage: https://bioconductor.org/packages/release/bioc/html/CellScore.html
 ---
 
-
 # bioconductor-cellscore
 
 name: bioconductor-cellscore

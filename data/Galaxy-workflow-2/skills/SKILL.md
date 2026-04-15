@@ -1,7 +1,9 @@
 ---
 name: workflow-2
-description: "This synthetic biology workflow processes DNA assembly datasets and new sequences using tools for sequence sculpting, part domestication, and cloning simulation. Use this skill when you need to standardize genetic parts by removing internal restriction sites or incompatible sequences before virtually verifying a multi-fragment DNA assembly."
-homepage: https://workflowhub.eu/workflows/1784
+description: This synthetic biology workflow processes DNA assembly datasets and new sequences using tools for sequence sculpting, part domestication, and cloning simulation. Use this skill when you need to standardize genetic parts by removing internal restriction sites or incompatible sequences before virtually verifying a multi-fragment DNA assembly.
+homepage: https://parisbiofoundry.org/the-asu-biofoundry/
+metadata:
+  docker_image: "N/A"
 ---
 
 # workflow-2

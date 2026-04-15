@@ -1,10 +1,12 @@
 ---
 name: 1-plant-virus-detection-with-kraken2-se
-description: "This Galaxy workflow processes single-end sequencing data for plant virus detection using Kraken2, Kraken2Tax, and Krona pie charts. Use this skill when you need to identify viral pathogens in plant samples and visualize the taxonomic distribution of sequences to assess infection status."
-homepage: https://workflowhub.eu/workflows/124
+description: This Galaxy workflow processes single-end sequencing data for plant virus detection using Kraken2, Kraken2Tax, and Krona pie charts. Use this skill when you need to identify viral pathogens in plant samples and visualize the taxonomic distribution of sequences to assess infection status.
+homepage: https://www.gembloux.ulg.ac.be/phytopathologie/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 1: Plant virus detection with kraken2 (SE)
+# 1-plant-virus-detection-with-kraken2-se
 
 ## Overview
 

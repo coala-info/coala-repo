@@ -4,7 +4,6 @@ description: This package provides access to classic social network analysis dat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SNAData.html
 ---
 
-
 # bioconductor-snadata
 
 name: bioconductor-snadata

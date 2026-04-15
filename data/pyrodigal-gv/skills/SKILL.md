@@ -2,8 +2,9 @@
 name: pyrodigal-gv
 description: pyrodigal-gv is a gene-calling tool optimized for identifying genes in viruses, phages, and giant viruses using specialized metagenomic models. Use when user asks to predict genes in viral sequences, identify open reading frames in giant viruses, or handle alternative genetic codes in viral metagenomes.
 homepage: https://github.com/althonos/pyrodigal-gv
+metadata:
+  docker_image: "quay.io/biocontainers/pyrodigal-gv:0.3.2--pyh7e72e81_0"
 ---
-
 
 # pyrodigal-gv
 

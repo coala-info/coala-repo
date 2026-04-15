@@ -1,10 +1,12 @@
 ---
 name: workflow-standard-processing-of-10x-single-cell-atac-seq-dat
-description: "This Galaxy workflow performs standard processing of 10X single-cell ATAC-seq data from fragment or BAM files using SnapATAC2 and Scanpy for filtering, dimensionality reduction, and embedding. Use this skill when you need to analyze single-cell chromatin accessibility to identify cell clusters, visualize marker gene activity, and annotate cell types within complex biological samples."
-homepage: https://workflowhub.eu/workflows/1551
+description: This Galaxy workflow performs standard processing of 10X single-cell ATAC-seq data from fragment or BAM files using SnapATAC2 and Scanpy for filtering, dimensionality reduction, and embedding. Use this skill when you need to analyze single-cell chromatin accessibility to identify cell clusters, visualize marker gene activity, and annotate cell types within complex biological samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow - Standard processing of 10X single cell ATAC-seq data with SnapATAC2
+# workflow-standard-processing-of-10x-single-cell-atac-seq-dat
 
 ## Overview
 

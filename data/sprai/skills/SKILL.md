@@ -1,7 +1,9 @@
 ---
 name: sprai
-description: "Sprai corrects high error rates in PacBio single-pass reads to improve the continuity of de novo assemblies. Use when user asks to correct PacBio sequencing errors, perform de novo assembly of long reads, or generate consensus sequences for improved assembly contiguity."
+description: Sprai corrects high error rates in PacBio single-pass reads to improve the continuity of de novo assemblies. Use when user asks to correct PacBio sequencing errors, perform de novo assembly of long reads, or generate consensus sequences for improved assembly contiguity.
 homepage: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
+metadata:
+  docker_image: "quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0"
 ---
 
 # sprai

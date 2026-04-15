@@ -4,7 +4,6 @@ description: This tool provides EM algorithms for analyzing parametric, semipara
 homepage: https://cloud.r-project.org/web/packages/mixtools/index.html
 ---
 
-
 # r-mixtools
 
 name: r-mixtools

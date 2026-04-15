@@ -4,7 +4,6 @@ description: This tool audits NCBI GEO datasets to determine if they contain hea
 homepage: https://bioconductor.org/packages/release/data/experiment/html/healthyControlsPresenceChecker.html
 ---
 
-
 # bioconductor-healthycontrolspresencechecker
 
 ## Overview

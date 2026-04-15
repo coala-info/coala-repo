@@ -4,7 +4,6 @@ description: proActiv identifies and quantifies promoter activity from RNA-Seq d
 homepage: https://bioconductor.org/packages/release/bioc/html/proActiv.html
 ---
 
-
 # bioconductor-proactiv
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: repeatmasker
-description: "This genome annotation workflow processes raw genome sequences to identify and mask repetitive elements using the Red and RepeatMasker tools. Use this skill when you need to identify transposable elements and low-complexity regions to prepare a draft assembly for downstream gene prediction or comparative genomics."
-homepage: https://workflowhub.eu/workflows/753
+description: This genome annotation workflow processes raw genome sequences to identify and mask repetitive elements using the Red and RepeatMasker tools. Use this skill when you need to identify transposable elements and low-complexity regions to prepare a draft assembly for downstream gene prediction or comparative genomics.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# RepeatMasker
+# repeatmasker
 
 ## Overview
 

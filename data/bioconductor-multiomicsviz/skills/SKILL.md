@@ -4,7 +4,6 @@ description: This package identifies and visualizes significant correlations bet
 homepage: https://bioconductor.org/packages/3.5/bioc/html/multiOmicsViz.html
 ---
 
-
 # bioconductor-multiomicsviz
 
 ## Overview

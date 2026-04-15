@@ -2,8 +2,9 @@
 name: cgecore
 description: This module provides standardized utility functions and genomic data processing tools for the Center for Genomic Epidemiology software suite. Use when user asks to validate FASTA or FASTQ inputs, parse CGE tool outputs, or manage database directories for tools like ResFinder and VirulenceFinder.
 homepage: https://bitbucket.org/genomicepidemiology/cge_core_module
+metadata:
+  docker_image: "quay.io/biocontainers/cgecore:2.0.1--pyhdfd78af_0"
 ---
-
 
 # cgecore
 

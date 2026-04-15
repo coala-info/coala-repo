@@ -4,7 +4,6 @@ description: The ReadqPCR package provides a standardized framework for importin
 homepage: https://bioconductor.org/packages/release/bioc/html/ReadqPCR.html
 ---
 
-
 # bioconductor-readqpcr
 
 ## Overview

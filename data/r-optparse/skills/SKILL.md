@@ -4,7 +4,6 @@ description: The r-optparse package enables R developers to create command-line 
 homepage: https://cloud.r-project.org/web/packages/optparse/index.html
 ---
 
-
 # r-optparse
 
 ## Overview

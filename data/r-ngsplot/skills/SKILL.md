@@ -4,7 +4,6 @@ description: r-ngsplot visualizes Next-Generation Sequencing data by generating 
 homepage: https://cran.r-project.org/web/packages/ngsplot/index.html
 ---
 
-
 # r-ngsplot
 
 name: r-ngsplot

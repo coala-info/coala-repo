@@ -4,7 +4,6 @@ description: This tool computes and compares diffusion-based scores on biologica
 homepage: https://bioconductor.org/packages/release/bioc/html/diffuStats.html
 ---
 
-
 # bioconductor-diffustats
 
 name: bioconductor-diffustats

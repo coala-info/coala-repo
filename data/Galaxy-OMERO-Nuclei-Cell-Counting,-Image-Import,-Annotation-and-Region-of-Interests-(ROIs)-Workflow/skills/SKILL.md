@@ -1,10 +1,12 @@
 ---
 name: 2024_nuclei_counting_w_omero_upload
-description: "This bioimage analysis workflow processes image collections using histogram equalization, automated thresholding, and particle analysis to count nuclei and extract morphological features. Use this skill when you need to quantify cellular populations in microscopy datasets and automatically archive the images, segmentation regions, and metadata in an OMERO server for standardized research data management."
-homepage: https://workflowhub.eu/workflows/1259
+description: This bioimage analysis workflow processes image collections using histogram equalization, automated thresholding, and particle analysis to count nuclei and extract morphological features. Use this skill when you need to quantify cellular populations in microscopy datasets and automatically archive the images, segmentation regions, and metadata in an OMERO server for standardized research data management.
+homepage: https://zenodo.org/records/14205500
+metadata:
+  docker_image: "N/A"
 ---
 
-# 2024_Nuclei_counting_w_OMERO_upload
+# 2024_nuclei_counting_w_omero_upload
 
 ## Overview
 

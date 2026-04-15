@@ -4,7 +4,6 @@ description: This package facilitates the design and statistical analysis of fac
 homepage: https://bioconductor.org/packages/release/bioc/html/daMA.html
 ---
 
-
 # bioconductor-dama
 
 name: bioconductor-dama

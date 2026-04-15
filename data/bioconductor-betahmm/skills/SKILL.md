@@ -4,7 +4,6 @@ description: This tool models DNA methylation beta values using Hidden Markov Mo
 homepage: https://bioconductor.org/packages/release/bioc/html/betaHMM.html
 ---
 
-
 # bioconductor-betahmm
 
 name: bioconductor-betahmm

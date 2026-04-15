@@ -4,7 +4,6 @@ description: This tool detects DNA copy number variations from off-target reads 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CopywriteR.html
 ---
 
-
 # bioconductor-copywriter
 
 name: bioconductor-copywriter

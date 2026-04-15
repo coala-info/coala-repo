@@ -4,7 +4,6 @@ description: This package provides annotation data for Illumina Omni1 Quad v1b a
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanomni1quadv1bCrlmm.html
 ---
 
-
 # bioconductor-humanomni1quadv1bcrlmm
 
 name: bioconductor-humanomni1quadv1bcrlmm

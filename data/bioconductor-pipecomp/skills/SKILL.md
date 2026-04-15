@@ -4,7 +4,6 @@ description: This tool benchmarks and evaluates multi-step computational pipelin
 homepage: https://bioconductor.org/packages/release/bioc/html/pipeComp.html
 ---
 
-
 # bioconductor-pipecomp
 
 name: bioconductor-pipecomp

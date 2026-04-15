@@ -4,7 +4,6 @@ description: This tool visualizes and annotates BioCarta pathway images in R by 
 homepage: https://bioconductor.org/packages/release/bioc/html/BioCartaImage.html
 ---
 
-
 # bioconductor-biocartaimage
 
 name: bioconductor-biocartaimage

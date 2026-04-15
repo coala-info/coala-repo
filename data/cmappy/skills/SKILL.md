@@ -2,8 +2,9 @@
 name: cmappy
 description: cmappy is a Python suite for processing and manipulating Connectivity Map data in GCT and GCTX formats. Use when user asks to parse or write GCT/GCTX files, perform memory-efficient subsetting of genomic matrices, or convert between biological data formats.
 homepage: https://github.com/cmap/cmapPy
+metadata:
+  docker_image: "quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8"
 ---
-
 
 # cmappy
 

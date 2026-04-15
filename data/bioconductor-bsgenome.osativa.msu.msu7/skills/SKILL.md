@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Oryza sativa (Ri
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Osativa.MSU.MSU7.html
 ---
 
-
 # bioconductor-bsgenome.osativa.msu.msu7
 
 name: bioconductor-bsgenome.osativa.msu.msu7

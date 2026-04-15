@@ -1,9 +1,10 @@
 ---
 name: rrparser
-description: "rrparser parses and filters synthetic biology reaction rules from local files or the RetroRules repository. Use when user asks to parse reaction rules, filter rules by diameter or directionality, or fetch data from RetroRules."
+description: rrparser parses and filters synthetic biology reaction rules from local files or the RetroRules repository. Use when user asks to parse reaction rules, filter rules by diameter or directionality, or fetch data from RetroRules.
 homepage: https://github.com/brsynth/RRParser
+metadata:
+  docker_image: "quay.io/biocontainers/rrparser:2.7.0"
 ---
-
 
 # rrparser
 

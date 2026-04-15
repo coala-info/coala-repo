@@ -4,7 +4,6 @@ description: The hummingbird package identifies differentially methylated region
 homepage: https://bioconductor.org/packages/release/bioc/html/hummingbird.html
 ---
 
-
 # bioconductor-hummingbird
 
 ## Overview

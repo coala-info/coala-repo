@@ -4,7 +4,6 @@ description: This tool performs multiple sequence alignment of DNA, RNA, or amin
 homepage: https://bioconductor.org/packages/release/bioc/html/muscle.html
 ---
 
-
 # bioconductor-muscle
 
 name: bioconductor-muscle

@@ -2,6 +2,8 @@
 name: dmtools
 description: dmtools is a high-performance suite for processing bisulfite sequencing data and managing methylation information using an efficient binary format. Use when user asks to convert BAM files to dm format, calculate methylation levels, identify differentially methylated regions, or generate genomic methylation profiles.
 homepage: https://github.com/ZhouQiangwei/dmtools
+metadata:
+  docker_image: "quay.io/biocontainers/dmtools:0.2.6--hda3def1_0"
 ---
 
 # dmtools

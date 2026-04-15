@@ -2,8 +2,9 @@
 name: mokapot
 description: mokapot uses semi-supervised machine learning to rescore peptide-spectrum matches and improve peptide identifications in proteomics workflows. Use when user asks to rescore PSMs, enhance peptide identification confidence, or apply the Percolator algorithm using custom machine learning classifiers.
 homepage: https://github.com/wfondrie/mokapot
+metadata:
+  docker_image: "quay.io/biocontainers/mokapot:0.10.0--pyhdfd78af_0"
 ---
-
 
 # mokapot
 

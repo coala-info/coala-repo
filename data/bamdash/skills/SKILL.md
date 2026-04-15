@@ -2,8 +2,9 @@
 name: bamdash
 description: BAMdash creates interactive dashboards and visualizations from viral sequencing data by integrating BAM files with genomic feature tracks. Use when user asks to create interactive dashboards, visualize sequencing coverage, overlay genomic features, calculate genome recovery, annotate variants, or export publication-ready images.
 homepage: https://github.com/jonas-fuchs/BAMdash
+metadata:
+  docker_image: "quay.io/biocontainers/bamdash:0.4.5--pyhdfd78af_0"
 ---
-
 
 # bamdash
 

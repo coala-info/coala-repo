@@ -4,7 +4,6 @@ description: This package provides EpiTxDb objects containing RNA modification d
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EpiTxDb.Sc.sacCer3.html
 ---
 
-
 # bioconductor-epitxdb.sc.saccer3
 
 ## Overview

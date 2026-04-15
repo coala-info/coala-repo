@@ -1,10 +1,12 @@
 ---
 name: intro_to_rnn_v1_0_10_0
-description: "This Galaxy workflow processes training and testing datasets to build, train, and evaluate Recurrent Neural Network models using Keras-based deep learning tools and visualization extensions. Use this skill when you need to analyze sequential or time-series data by developing deep learning architectures that capture temporal dependencies and evaluating their predictive performance."
-homepage: https://workflowhub.eu/workflows/1724
+description: This Galaxy workflow processes training and testing datasets to build, train, and evaluate Recurrent Neural Network models using Keras-based deep learning tools and visualization extensions. Use this skill when you need to analyze sequential or time-series data by developing deep learning architectures that capture temporal dependencies and evaluating their predictive performance.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Intro_To_RNN_v1_0_10_0
+# intro_to_rnn_v1_0_10_0
 
 ## Overview
 

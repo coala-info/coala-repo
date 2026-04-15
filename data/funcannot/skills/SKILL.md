@@ -1,9 +1,10 @@
 ---
 name: funcannot
-description: "This tool annotates genetic variants in a VCF file with functional information like cDNA, protein, and mutation types. Use when user asks to annotate variants in a VCF file with functional information."
+description: This tool annotates genetic variants in a VCF file with functional information like cDNA, protein, and mutation types. Use when user asks to annotate variants in a VCF file with functional information.
 homepage: https://github.com/BioTools-Tek/funcannot
+metadata:
+  docker_image: "quay.io/biocontainers/funcannot:v2.8--0"
 ---
-
 
 # funcannot
 

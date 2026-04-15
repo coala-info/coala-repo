@@ -4,7 +4,6 @@ description: bioconductor-loci2path performs pathway enrichment analysis on geno
 homepage: https://bioconductor.org/packages/release/bioc/html/loci2path.html
 ---
 
-
 # bioconductor-loci2path
 
 name: bioconductor-loci2path

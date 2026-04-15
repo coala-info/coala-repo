@@ -4,7 +4,6 @@ description: This R package performs cell type deconvolution and cell type-speci
 homepage: https://cran.r-project.org/web/packages/spacexr/index.html
 ---
 
-
 # r-spacexr
 
 name: r-spacexr

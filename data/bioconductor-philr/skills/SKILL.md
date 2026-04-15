@@ -4,7 +4,6 @@ description: PhILR transforms compositional microbiome data into an orthogonal s
 homepage: https://bioconductor.org/packages/release/bioc/html/philr.html
 ---
 
-
 # bioconductor-philr
 
 ## Overview

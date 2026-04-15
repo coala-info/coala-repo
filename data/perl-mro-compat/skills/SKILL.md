@@ -2,8 +2,9 @@
 name: perl-mro-compat
 description: This Perl module provides modern method resolution order functionality while maintaining compatibility with older Perl versions. Use when user asks to set C3 method resolution order, retrieve linear inheritance hierarchies, or ensure consistent method resolution across different Perl installations.
 homepage: https://metacpan.org/release/MRO-Compat
+metadata:
+  docker_image: "quay.io/biocontainers/perl-mro-compat:0.15--pl5321hdfd78af_0"
 ---
-
 
 # perl-mro-compat
 

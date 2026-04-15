@@ -4,7 +4,6 @@ description: This tool provides an R interface to the Global Biodiversity Inform
 homepage: https://cloud.r-project.org/web/packages/rgbif/index.html
 ---
 
-
 # r-rgbif
 
 name: r-rgbif

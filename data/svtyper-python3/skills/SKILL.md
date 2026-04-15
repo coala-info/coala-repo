@@ -2,6 +2,8 @@
 name: svtyper-python3
 description: SVTyper genotypes structural variants by analyzing discordant and concordant read alignments at specific breakpoints. Use when user asks to genotype structural variants, perform single-sample parallelized genotyping, or generate library statistics from BAM files.
 homepage: https://github.com/hall-lab/svtyper
+metadata:
+  docker_image: "quay.io/biocontainers/svtyper-python3:0.7.1--pyhdfd78af_0"
 ---
 
 # svtyper-python3

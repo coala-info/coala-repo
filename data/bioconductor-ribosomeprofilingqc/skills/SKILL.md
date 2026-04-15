@@ -4,7 +4,6 @@ description: The ribosomeProfilingQC package provides a comprehensive toolkit fo
 homepage: https://bioconductor.org/packages/release/bioc/html/ribosomeProfilingQC.html
 ---
 
-
 # bioconductor-ribosomeprofilingqc
 
 ## Overview

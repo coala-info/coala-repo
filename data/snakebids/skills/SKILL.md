@@ -2,6 +2,8 @@
 name: snakebids
 description: Snakebids is a framework that extends Snakemake to build portable BIDS Apps for neuroimaging data processing. Use when user asks to create BIDS-compliant workflows, automate path construction, filter participants for analysis, or generate Boutiques descriptors.
 homepage: https://github.com/khanlab/snakebids
+metadata:
+  docker_image: "quay.io/biocontainers/snakebids:0.15.0--pyhdfd78af_0"
 ---
 
 # snakebids

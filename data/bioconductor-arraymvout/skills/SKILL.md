@@ -4,7 +4,6 @@ description: This tool identifies outlying Affymetrix microarrays by applying mu
 homepage: https://bioconductor.org/packages/release/bioc/html/arrayMvout.html
 ---
 
-
 # bioconductor-arraymvout
 
 name: bioconductor-arraymvout

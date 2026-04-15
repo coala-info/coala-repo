@@ -4,6 +4,8 @@ description: Processes paired-end FASTQ files and reference annotations to analy
 homepage: https://github.com/nf-core/hicar
 ---
 
+# hicar
+
 ## Overview
 nf-core/hicar is designed for HiC on Accessible Regulatory DNA (HiCAR) data, a method that combines Transposase-Accessible Chromatin assays with Hi-C to map regulatory interactions without antibodies. It provides a comprehensive suite for mapping reads, filtering pairs, and calling peaks, loops, TADs, and A/B compartments.
 

@@ -4,7 +4,6 @@ description: This package performs hierarchical meta-analysis for gene expressio
 homepage: https://bioconductor.org/packages/release/bioc/html/metahdep.html
 ---
 
-
 # bioconductor-metahdep
 
 ## Overview

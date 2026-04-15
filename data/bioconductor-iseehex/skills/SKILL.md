@@ -4,7 +4,6 @@ description: This tool creates hexagonal binning plots within the iSEE interacti
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEhex.html
 ---
 
-
 # bioconductor-iseehex
 
 name: bioconductor-iseehex

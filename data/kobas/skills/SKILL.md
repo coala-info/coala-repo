@@ -1,7 +1,9 @@
 ---
 name: kobas
-description: "KOBAS performs functional annotation and pathway enrichment analysis to identify statistically significant biological pathways and GO terms. Use when user asks to annotate sequences with functional information, perform over-representation analysis, or identify enriched pathways from gene lists."
+description: KOBAS performs functional annotation and pathway enrichment analysis to identify statistically significant biological pathways and GO terms. Use when user asks to annotate sequences with functional information, perform over-representation analysis, or identify enriched pathways from gene lists.
 homepage: http://kobas.cbi.pku.edu.cn
+metadata:
+  docker_image: "quay.io/biocontainers/kobas:3.0.3--py27_1"
 ---
 
 # kobas

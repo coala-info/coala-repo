@@ -4,7 +4,6 @@ description: This tool visualizes genome-wide data and annotations along linear 
 homepage: https://bioconductor.org/packages/release/bioc/html/chromPlot.html
 ---
 
-
 # bioconductor-chromplot
 
 name: bioconductor-chromplot

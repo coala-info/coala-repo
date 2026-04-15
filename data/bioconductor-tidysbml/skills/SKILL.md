@@ -4,7 +4,6 @@ description: This tool converts Systems Biology Markup Language (SBML) files int
 homepage: https://bioconductor.org/packages/release/bioc/html/tidysbml.html
 ---
 
-
 # bioconductor-tidysbml
 
 name: bioconductor-tidysbml

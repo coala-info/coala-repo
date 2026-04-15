@@ -4,7 +4,6 @@ description: This package provides example LC-MS/MS and GC-MS datasets for testi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CluMSIDdata.html
 ---
 
-
 # bioconductor-clumsiddata
 
 name: bioconductor-clumsiddata

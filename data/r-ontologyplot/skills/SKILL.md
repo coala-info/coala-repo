@@ -4,7 +4,6 @@ description: This tool visualizes ontological terms and their relationships as D
 homepage: https://cran.r-project.org/web/packages/ontologyplot/index.html
 ---
 
-
 # r-ontologyplot
 
 name: r-ontologyplot

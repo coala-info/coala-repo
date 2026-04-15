@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Chlamydomonas re
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Creinhardtii.JGI.v5.6.html
 ---
 
-
 # bioconductor-bsgenome.creinhardtii.jgi.v5.6
 
 name: bioconductor-bsgenome.creinhardtii.jgi.v5.6

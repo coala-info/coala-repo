@@ -4,7 +4,6 @@ description: This tool provides an R interface for the MACS3 toolkit to perform 
 homepage: https://bioconductor.org/packages/release/bioc/html/MACSr.html
 ---
 
-
 # bioconductor-macsr
 
 name: bioconductor-macsr

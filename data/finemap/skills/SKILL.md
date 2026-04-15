@@ -2,6 +2,8 @@
 name: finemap
 description: FINEMAP identifies causal variants in genomic regions by integrating GWAS summary statistics with linkage disequilibrium information using a Bayesian framework. Use when user asks to perform statistical fine-mapping, identify causal SNPs, or process large-scale correlation matrices using binary formats.
 homepage: http://www.christianbenner.com
+metadata:
+  docker_image: "quay.io/biocontainers/finemap:1.4.2--hb192632_1"
 ---
 
 # finemap

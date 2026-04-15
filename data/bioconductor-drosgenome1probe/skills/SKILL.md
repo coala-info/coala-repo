@@ -4,7 +4,6 @@ description: This package provides probe sequence and layout data for the Affyme
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosgenome1probe.html
 ---
 
-
 # bioconductor-drosgenome1probe
 
 name: bioconductor-drosgenome1probe

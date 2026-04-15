@@ -1,7 +1,9 @@
 ---
 name: bakdrive
-description: "Bakdrive identifies a minimal set of driver species from metagenomic samples and simulates fecal microbial transplantation. Use when user asks to identify driver species in metagenomic data or simulate fecal microbial transplantation."
+description: Bakdrive identifies a minimal set of driver species from metagenomic samples and simulates fecal microbial transplantation. Use when user asks to identify driver species in metagenomic data or simulate fecal microbial transplantation.
 homepage: https://gitlab.com/treangenlab/bakdrive
+metadata:
+  docker_image: "quay.io/biocontainers/bakdrive:1.0.4--hdfd78af_0"
 ---
 
 # bakdrive

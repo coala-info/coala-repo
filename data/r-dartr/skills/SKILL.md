@@ -4,7 +4,6 @@ description: The r-dartr package imports, filters, and analyzes SNP and SilicoDA
 homepage: https://cran.r-project.org/web/packages/dartr/index.html
 ---
 
-
 # r-dartr
 
 name: r-dartr

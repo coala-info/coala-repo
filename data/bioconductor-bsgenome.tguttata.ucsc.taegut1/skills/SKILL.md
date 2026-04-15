@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the Zebra finch
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Tguttata.UCSC.taeGut1.html
 ---
 
-
 # bioconductor-bsgenome.tguttata.ucsc.taegut1
 
 name: bioconductor-bsgenome.tguttata.ucsc.taegut1

@@ -4,7 +4,6 @@ description: Bioconductor-mops identifies and characterizes periodic fluctuation
 homepage: https://bioconductor.org/packages/3.5/bioc/html/MoPS.html
 ---
 
-
 # bioconductor-mops
 
 name: bioconductor-mops

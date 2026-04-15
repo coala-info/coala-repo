@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Affymet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene21stprobeset.db.html
 ---
 
-
 # bioconductor-mogene21stprobeset.db
 
 name: bioconductor-mogene21stprobeset.db

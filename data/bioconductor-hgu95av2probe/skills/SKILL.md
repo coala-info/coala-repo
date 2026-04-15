@@ -4,7 +4,6 @@ description: This package provides probe sequence data and array coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2probe.html
 ---
 
-
 # bioconductor-hgu95av2probe
 
 name: bioconductor-hgu95av2probe

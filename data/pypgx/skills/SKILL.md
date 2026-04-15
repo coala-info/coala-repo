@@ -2,6 +2,8 @@
 name: pypgx
 description: PyPGx automates the translation of genomic variants into pharmacogenomic star alleles and functional phenotypes while detecting structural variations. Use when user asks to call star alleles, predict metabolizer phenotypes, detect gene deletions or duplications, and process NGS or SNP array data for pharmacogenomics.
 homepage: https://github.com/sbslee/pypgx
+metadata:
+  docker_image: "quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0"
 ---
 
 # pypgx

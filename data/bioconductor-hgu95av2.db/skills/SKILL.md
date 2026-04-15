@@ -4,7 +4,6 @@ description: This package provides gene annotation and mapping for the Affymetri
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2.db.html
 ---
 
-
 # bioconductor-hgu95av2.db
 
 name: bioconductor-hgu95av2.db

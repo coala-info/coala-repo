@@ -2,8 +2,9 @@
 name: perl-devel-cover
 description: This tool generates and analyzes code coverage metrics for Perl applications to identify untested code paths. Use when user asks to collect statement or branch coverage, generate HTML coverage reports, analyze POD documentation coverage, or convert gcov data for Perl XS extensions.
 homepage: http://www.pjcj.net/perl.html
+metadata:
+  docker_image: "quay.io/biocontainers/perl-devel-cover:1.33--pl526h14c3975_0"
 ---
-
 
 # perl-devel-cover
 

@@ -2,6 +2,8 @@
 name: pacu_snp
 description: PACU is a bioinformatics pipeline for generating phylogenetic trees from Illumina and ONT sequencing data through variant calling and filtering. Use when user asks to map reads to a reference genome, call and filter SNPs, mask recombination regions, or infer phylogenetic relationships.
 homepage: https://github.com/BioinformaticsPlatformWIV-ISP/PACU
+metadata:
+  docker_image: "quay.io/biocontainers/pacu_snp:1.0.0--pyhdfd78af_0"
 ---
 
 # pacu_snp

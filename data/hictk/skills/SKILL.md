@@ -1,7 +1,9 @@
 ---
 name: hictk
-description: "hictk is a high-performance toolkit for processing and converting between .hic and .cool Hi-C data formats. Use when user asks to convert between Hi-C file formats, extract interaction matrices, normalize contact maps using balancing algorithms, or create multi-resolution files."
+description: hictk is a high-performance toolkit for processing and converting between .hic and .cool Hi-C data formats. Use when user asks to convert between Hi-C file formats, extract interaction matrices, normalize contact maps using balancing algorithms, or create multi-resolution files.
 homepage: https://github.com/paulsengroup/hictk
+metadata:
+  docker_image: "quay.io/biocontainers/hictk:2.2.0--h75fee6f_0"
 ---
 
 # hictk

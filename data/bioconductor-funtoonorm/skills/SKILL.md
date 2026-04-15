@@ -4,7 +4,6 @@ description: This tool normalizes Illumina HumanMethylation450 BeadChip data whi
 homepage: https://bioconductor.org/packages/release/bioc/html/funtooNorm.html
 ---
 
-
 # bioconductor-funtoonorm
 
 name: bioconductor-funtoonorm

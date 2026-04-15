@@ -4,7 +4,6 @@ description: This Bioconductor package provides genome-wide annotations for Chim
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Pt.eg.db.html
 ---
 
-
 # bioconductor-org.pt.eg.db
 
 ## Overview

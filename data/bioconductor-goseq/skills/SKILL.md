@@ -4,7 +4,6 @@ description: The goseq package performs functional enrichment analysis on RNA-se
 homepage: https://bioconductor.org/packages/release/bioc/html/goseq.html
 ---
 
-
 # bioconductor-goseq
 
 ## Overview

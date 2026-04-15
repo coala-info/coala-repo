@@ -4,7 +4,6 @@ description: This tool identifies optimal numeric cutoffs for quantitative data 
 homepage: https://bioconductor.org/packages/release/bioc/html/kmcut.html
 ---
 
-
 # bioconductor-kmcut
 
 name: bioconductor-kmcut

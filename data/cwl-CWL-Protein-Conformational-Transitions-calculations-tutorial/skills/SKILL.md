@@ -1,9 +1,12 @@
 ---
 name: cwl-protein-conformational-transitions-calculations-tutorial
-description: "This Common Workflow Language workflow utilizes BioExcel Building Blocks and the GOdMD tool to calculate the conformational transition pathway between two distinct structural states of a protein. Use this skill when you need to characterize the structural rearrangements and dynamic pathways between known protein conformations to understand functional mechanisms or allosteric transitions."
-homepage: https://workflowhub.eu/workflows/549
+description: This Common Workflow Language workflow utilizes BioExcel Building Blocks and the GOdMD tool to calculate the conformational transition pathway between two distinct structural states of a protein. Use this skill when you need to characterize the structural rearrangements and dynamic pathways between known protein conformations to understand functional mechanisms or allosteric transitions.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Protein Conformational Transitions calculations tutorial
+
+# cwl-protein-conformational-transitions-calculations-tutorial
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: nseg
 description: This tool identifies and masks regions of low complexity in nucleic acid sequences. Use when user asks to mask low complexity regions in DNA or RNA sequences.
 homepage: https://github.com/jebrosen/nseg
+metadata:
+  docker_image: "quay.io/biocontainers/nseg:1.0.1--h516909a_0"
 ---
-
 
 # nseg
 

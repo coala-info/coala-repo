@@ -4,7 +4,6 @@ description: This tool manages large-scale genomic variant data by providing a m
 homepage: https://bioconductor.org/packages/release/bioc/html/VariantExperiment.html
 ---
 
-
 # bioconductor-variantexperiment
 
 name: bioconductor-variantexperiment

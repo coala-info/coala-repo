@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Gallus gallus (
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal3.html
 ---
 
-
 # bioconductor-bsgenome.ggallus.ucsc.galgal3
 
 name: bioconductor-bsgenome.ggallus.ucsc.galgal3

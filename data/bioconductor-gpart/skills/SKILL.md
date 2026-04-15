@@ -4,7 +4,6 @@ description: This tool partitions SNP sequences based on Linkage Disequilibrium 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gpart.html
 ---
 
-
 # bioconductor-gpart
 
 ## Overview

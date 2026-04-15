@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-2-active-site-generation
-description: "This cheminformatics workflow processes protein PDB structures and ligand SDF files using Open Babel and rDock to generate a defined active site cavity. Use this skill when you need to precisely define the binding pocket of a viral protease to prepare for structure-based drug design or virtual screening."
-homepage: https://workflowhub.eu/workflows/13
+description: This cheminformatics workflow processes protein PDB structures and ligand SDF files using Open Babel and rDock to generate a defined active site cavity. Use this skill when you need to precisely define the binding pocket of a viral protease to prepare for structure-based drug design or virtual screening.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [2] Active site generation
+# covid-19-cheminformatics-2-active-site-generation
 
 ## Overview
 

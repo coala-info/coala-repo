@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the mu19ksu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu19ksubc.db.html
 ---
 
-
 # bioconductor-mu19ksubc.db
 
 name: bioconductor-mu19ksubc.db

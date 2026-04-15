@@ -1,10 +1,12 @@
 ---
 name: covid-19-stringtie-assembly-and-annotation
-description: "This workflow performs transcript assembly and functional annotation for SARS-CoV-2 using Illumina sequencing accessions and reference data through tools including StringTie, HISAT2, and TransDecoder. Use this skill when you need to characterize the viral transcriptome, identify novel isoforms, or predict protein-coding regions and gene clusters from COVID-19 genomic data."
-homepage: https://workflowhub.eu/workflows/39
+description: This workflow performs transcript assembly and functional annotation for SARS-CoV-2 using Illumina sequencing accessions and reference data through tools including StringTie, HISAT2, and TransDecoder. Use this skill when you need to characterize the viral transcriptome, identify novel isoforms, or predict protein-coding regions and gene clusters from COVID-19 genomic data.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: StringTie assembly and annotation
+# covid-19-stringtie-assembly-and-annotation
 
 ## Overview
 

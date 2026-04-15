@@ -2,8 +2,9 @@
 name: perl-cache-cache
 description: This tool provides a standardized interface for persistent and volatile data caching within Perl environments. Use when user asks to store data across script invocations, manage object expiration, or implement file-based and memory-based caching in Perl.
 homepage: http://metacpan.org/pod/Cache::Cache
+metadata:
+  docker_image: "quay.io/biocontainers/perl-cache-cache:1.08--pl526_0"
 ---
-
 
 # perl-cache-cache
 

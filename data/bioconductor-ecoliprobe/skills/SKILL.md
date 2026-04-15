@@ -4,7 +4,6 @@ description: This package provides probe sequence data and physical coordinates 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliprobe.html
 ---
 
-
 # bioconductor-ecoliprobe
 
 name: bioconductor-ecoliprobe

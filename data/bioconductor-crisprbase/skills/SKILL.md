@@ -4,7 +4,6 @@ description: The bioconductor-crisprbase package provides foundational S4 classe
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprBase.html
 ---
 
-
 # bioconductor-crisprbase
 
 name: bioconductor-crisprbase

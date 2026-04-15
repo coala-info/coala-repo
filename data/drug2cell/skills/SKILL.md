@@ -1,9 +1,10 @@
 ---
 name: drug2cell
-description: "drug2cell evaluates drug-target activity and gene group enrichment in single-cell transcriptomics data. Use when user asks to calculate per-cell drug activity scores, perform drug enrichment analysis on cell clusters, or map custom gene sets onto single-cell manifolds."
+description: drug2cell evaluates drug-target activity and gene group enrichment in single-cell transcriptomics data. Use when user asks to calculate per-cell drug activity scores, perform drug enrichment analysis on cell clusters, or map custom gene sets onto single-cell manifolds.
 homepage: https://github.com/teichlab/drug2cell/
+metadata:
+  docker_image: "quay.io/biocontainers/drug2cell:0.1.2--pyhdfd78af_0"
 ---
-
 
 # drug2cell
 

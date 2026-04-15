@@ -4,7 +4,6 @@ description: LRBaseDbi provides a generic interface and database class for manag
 homepage: https://bioconductor.org/packages/release/bioc/html/LRBaseDbi.html
 ---
 
-
 # bioconductor-lrbasedbi
 
 ## Overview

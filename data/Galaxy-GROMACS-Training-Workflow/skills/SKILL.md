@@ -1,10 +1,12 @@
 ---
 name: gromacs-training-workflow
-description: "This Galaxy workflow automates molecular dynamics simulations in computational chemistry by retrieving PDB files and utilizing GROMACS tools for system setup, solvation, energy minimization, and production runs. Use this skill when you need to investigate the thermodynamic stability, conformational changes, or atomic-level interactions of a protein within a solvated environment."
-homepage: https://workflowhub.eu/workflows/1645
+description: This Galaxy workflow automates molecular dynamics simulations in computational chemistry by retrieving PDB files and utilizing GROMACS tools for system setup, solvation, energy minimization, and production runs. Use this skill when you need to investigate the thermodynamic stability, conformational changes, or atomic-level interactions of a protein within a solvated environment.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GROMACS Training Workflow
+# gromacs-training-workflow
 
 ## Overview
 

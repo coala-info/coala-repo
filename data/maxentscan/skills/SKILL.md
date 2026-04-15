@@ -1,9 +1,10 @@
 ---
 name: maxentscan
-description: "MaxEntScan calculates the strength of 5' and 3' splice site signals based on the Maximum Entropy principle. Use when user asks to score donor or acceptor splice sites, evaluate the impact of mutations on splicing, or quantify the strength of short sequence motifs."
+description: MaxEntScan calculates the strength of 5' and 3' splice site signals based on the Maximum Entropy principle. Use when user asks to score donor or acceptor splice sites, evaluate the impact of mutations on splicing, or quantify the strength of short sequence motifs.
 homepage: https://github.com/esebesty/maxentscan
+metadata:
+  docker_image: "quay.io/biocontainers/maxentscan:0_2004.04.21--pl526_1"
 ---
-
 
 # maxentscan
 

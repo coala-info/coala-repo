@@ -4,7 +4,6 @@ description: This package provides example SNP genotype and intensity data from 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GWASdata.html
 ---
 
-
 # bioconductor-gwasdata
 
 ## Overview

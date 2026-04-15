@@ -4,7 +4,6 @@ description: The microbiomeExplorer package provides a suite of tools for explor
 homepage: https://bioconductor.org/packages/release/bioc/html/microbiomeExplorer.html
 ---
 
-
 # bioconductor-microbiomeexplorer
 
 ## Overview

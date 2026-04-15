@@ -4,7 +4,6 @@ description: The r-matlab package provides R functions that emulate the syntax a
 homepage: https://cloud.r-project.org/web/packages/matlab/index.html
 ---
 
-
 # r-matlab
 
 ## Overview

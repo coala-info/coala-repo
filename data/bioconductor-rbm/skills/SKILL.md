@@ -4,7 +4,6 @@ description: This tool performs resampling-based empirical Bayes analysis to ide
 homepage: https://bioconductor.org/packages/release/bioc/html/RBM.html
 ---
 
-
 # bioconductor-rbm
 
 name: bioconductor-rbm

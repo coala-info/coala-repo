@@ -2,8 +2,9 @@
 name: mqc
 description: The mqc tool assesses the quality of ribosome profiling experiments by analyzing triplet periodicity and P-site offsets in aligned reads. Use when user asks to evaluate Ribo-seq data quality, determine P-site offsets, or generate diagnostic reports for ribosome protected fragments.
 homepage: https://github.com/Biobix/mQC
+metadata:
+  docker_image: "quay.io/biocontainers/mqc:1.10--py27pl5.22.0r3.4.1_0"
 ---
-
 
 # mqc
 

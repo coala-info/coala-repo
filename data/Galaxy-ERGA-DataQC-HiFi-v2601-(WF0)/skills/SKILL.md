@@ -1,10 +1,12 @@
 ---
 name: erga-dataqc-hifi-v2601-wf0
-description: "This ERGA workflow performs quality control and preprocessing on PacBio HiFi raw reads using FastQC, Cutadapt, and SeqKit to generate trimmed sequences and summary statistics. Use this skill when you need to assess the quality of long-read sequencing data and remove adapter sequences to ensure high-quality inputs for downstream de novo genome assembly."
-homepage: https://workflowhub.eu/workflows/602
+description: This ERGA workflow performs quality control and preprocessing on PacBio HiFi raw reads using FastQC, Cutadapt, and SeqKit to generate trimmed sequences and summary statistics. Use this skill when you need to assess the quality of long-read sequencing data and remove adapter sequences to ensure high-quality inputs for downstream de novo genome assembly.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA DataQC HiFi v2601 (WF0)
+# erga-dataqc-hifi-v2601-wf0
 
 ## Overview
 

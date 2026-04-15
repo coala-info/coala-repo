@@ -1,9 +1,10 @@
 ---
 name: microphaser
-description: "Microphaser phases somatic and germline variants from tumor BAM files to generate and filter mutated peptide sequences for neoantigen discovery. Use when user asks to phase somatic mutations, generate neopeptide sequences, build a healthy peptidome reference, or filter candidate neoantigens against a normal background."
+description: Microphaser phases somatic and germline variants from tumor BAM files to generate and filter mutated peptide sequences for neoantigen discovery. Use when user asks to phase somatic mutations, generate neopeptide sequences, build a healthy peptidome reference, or filter candidate neoantigens against a normal background.
 homepage: https://github.com/koesterlab/microphaser
+metadata:
+  docker_image: "quay.io/biocontainers/microphaser:0.8.0--hdc3fcad_2"
 ---
-
 
 # microphaser
 

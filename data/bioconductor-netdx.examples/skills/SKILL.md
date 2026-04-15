@@ -4,7 +4,6 @@ description: This package provides companion multi-omic datasets and grouping in
 homepage: https://bioconductor.org/packages/3.11/data/experiment/html/netDx.examples.html
 ---
 
-
 # bioconductor-netdx.examples
 
 name: bioconductor-netdx.examples

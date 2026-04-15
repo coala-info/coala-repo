@@ -2,8 +2,9 @@
 name: bmge
 description: BMGE identifies and extracts phylogenetically informative regions from multiple sequence alignments while removing noisy or gap-rich sites. Use when user asks to trim sequence alignments, filter noisy regions for phylogenetics, or remove gaps and high-entropy sites from DNA or protein data.
 homepage: https://bioweb.pasteur.fr/packages/pack@BMGE@1.12
+metadata:
+  docker_image: "quay.io/biocontainers/bmge:1.12--0"
 ---
-
 
 # bmge
 

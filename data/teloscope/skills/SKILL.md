@@ -2,8 +2,9 @@
 name: teloscope
 description: Teloscope identifies and quantifies terminal and interstitial telomeric repeats within genome assemblies to generate BED-formatted annotations. Use when user asks to annotate telomeres, detect interstitial telomeric sequences, or calculate repeat density and sequence metrics across sliding windows.
 homepage: https://github.com/vgl-hub/teloscope
+metadata:
+  docker_image: "quay.io/biocontainers/teloscope:0.1.3--h35c04b2_0"
 ---
-
 
 # teloscope
 

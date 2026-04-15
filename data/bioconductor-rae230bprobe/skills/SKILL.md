@@ -4,7 +4,6 @@ description: This package provides probe sequence and coordinate data for the Af
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230bprobe.html
 ---
 
-
 # bioconductor-rae230bprobe
 
 name: bioconductor-rae230bprobe

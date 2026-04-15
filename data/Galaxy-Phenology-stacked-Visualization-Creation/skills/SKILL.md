@@ -1,10 +1,12 @@
 ---
 name: phenology-stacked-visualization-creation
-description: "This ecology workflow processes flight curve datasets using filtering and pasting tools to generate a stacked phenology visualization based on regional Generalized Additive Models. Use this skill when you need to visualize and compare seasonal timing patterns of species across different geographic regions to identify phenological shifts."
-homepage: https://workflowhub.eu/workflows/1705
+description: This ecology workflow processes flight curve datasets using filtering and pasting tools to generate a stacked phenology visualization based on regional Generalized Additive Models. Use this skill when you need to visualize and compare seasonal timing patterns of species across different geographic regions to identify phenological shifts.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Phenology "stacked" Visualization Creation
+# phenology-stacked-visualization-creation
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: tdrmapper
 description: tDRmapper is a bioinformatics pipeline for aligning and quantifying tRNA-derived RNAs using a tiered mapping strategy. Use when user asks to map and quantify tRNA-derived RNAs, analyze tDR species from small RNA-seq data, or visualize tDR expression.
 homepage: https://github.com/sararselitsky/tDRmapper
+metadata:
+  docker_image: "quay.io/biocontainers/tdrmapper:1.1--pl526_3"
 ---
-
 
 # tdrmapper
 

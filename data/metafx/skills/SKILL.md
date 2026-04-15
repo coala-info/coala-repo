@@ -2,6 +2,8 @@
 name: metafx
 description: MetaFX transforms raw metagenomic reads into numerical features using de Bruijn graph components for sample differentiation and analysis. Use when user asks to extract metagenomic features, identify sequences that distinguish sample groups, perform PCA for sample clustering, or train machine learning models for classification and prediction.
 homepage: https://github.com/ctlab/metafx
+metadata:
+  docker_image: "quay.io/biocontainers/metafx:1.1.0--hdfd78af_0"
 ---
 
 # metafx

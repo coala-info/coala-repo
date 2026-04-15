@@ -4,7 +4,6 @@ description: The bioconductor-mantelcorr package performs variable selection and
 homepage: https://bioconductor.org/packages/release/bioc/html/MantelCorr.html
 ---
 
-
 # bioconductor-mantelcorr
 
 ## Overview

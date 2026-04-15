@@ -4,7 +4,6 @@ description: The MultimodalExperiment package provides a storage-efficient S4 cl
 homepage: https://bioconductor.org/packages/release/bioc/html/MultimodalExperiment.html
 ---
 
-
 # bioconductor-multimodalexperiment
 
 ## Overview

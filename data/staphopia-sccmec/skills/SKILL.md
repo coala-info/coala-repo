@@ -2,8 +2,9 @@
 name: staphopia-sccmec
 description: staphopia-sccmec identifies the Staphylococcal Cassette Chromosome mec type in Staphylococcus aureus genomic assemblies using a primer-based scheme. Use when user asks to predict SCCmec types, identify MRSA subtypes, or analyze Staphopia pipeline results.
 homepage: https://github.com/staphopia/staphopia-sccmec
+metadata:
+  docker_image: "quay.io/biocontainers/staphopia-sccmec:1.0.0--hdfd78af_0"
 ---
-
 
 # staphopia-sccmec
 

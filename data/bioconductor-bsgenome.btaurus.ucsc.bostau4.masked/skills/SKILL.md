@@ -4,7 +4,6 @@ description: This package provides the full masked genome sequences for Bos taur
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Btaurus.UCSC.bosTau4.masked.html
 ---
 
-
 # bioconductor-bsgenome.btaurus.ucsc.bostau4.masked
 
 name: bioconductor-bsgenome.btaurus.ucsc.bostau4.masked

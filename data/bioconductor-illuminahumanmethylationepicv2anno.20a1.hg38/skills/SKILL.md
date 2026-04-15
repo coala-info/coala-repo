@@ -4,7 +4,6 @@ description: This package provides hg38-based genomic annotations for Illumina M
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICv2anno.20a1.hg38.html
 ---
 
-
 # bioconductor-illuminahumanmethylationepicv2anno.20a1.hg38
 
 name: bioconductor-illuminahumanmethylationepicv2anno.20a1.hg38

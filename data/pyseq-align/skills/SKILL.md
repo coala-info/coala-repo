@@ -2,8 +2,9 @@
 name: pyseq-align
 description: pyseq-align provides a high-performance Cython interface for performing fast pairwise sequence alignments using C-based implementations. Use when user asks to perform global alignment with the Needleman-Wunsch algorithm or local alignment with the Smith-Waterman algorithm.
 homepage: https://github.com/Lioscro/pyseq-align
+metadata:
+  docker_image: "quay.io/biocontainers/pyseq-align:1.0.2--py39hbcbf7aa_5"
 ---
-
 
 # pyseq-align
 

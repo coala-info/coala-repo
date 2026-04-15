@@ -1,10 +1,12 @@
 ---
 name: purge-duplicates-from-hifiasm-assembly-v10
-description: "This Galaxy workflow processes a HiFiASM primary assembly and raw HiFi reads using minimap2 and purge_dups to identify and remove haplotypic duplications. Use this skill when you need to refine a draft genome assembly by purging redundant sequences and false duplications to achieve a more accurate haploid representation."
-homepage: https://workflowhub.eu/workflows/237
+description: This Galaxy workflow processes a HiFiASM primary assembly and raw HiFi reads using minimap2 and purge_dups to identify and remove haplotypic duplications. Use this skill when you need to refine a draft genome assembly by purging redundant sequences and false duplications to achieve a more accurate haploid representation.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Purge duplicates from hifiasm assembly v1.0
+# purge-duplicates-from-hifiasm-assembly-v10
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: ucsc-pslreps
 description: ucsc-pslreps filters local alignments in PSL format to identify the best genomic hits and analyze repetitive sequences. Use when user asks to filter PSL alignments, find the best genomic hits for query sequences, identify repetitive elements, analyze repeats, or set alignment filtering thresholds.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslreps:482--h0b57e2e_0"
 ---
-
 
 # ucsc-pslreps
 

@@ -2,8 +2,9 @@
 name: pycoqc
 description: pycoqc generates interactive quality control reports and visualizations for Oxford Nanopore sequencing data. Use when user asks to evaluate sequencing yield, generate HTML quality reports from summary files, or analyze alignment-based metrics.
 homepage: https://github.com/EnrightLab/pycoQC
+metadata:
+  docker_image: "quay.io/biocontainers/pycoqc:2.5.2--py_0"
 ---
-
 
 # pycoqc
 

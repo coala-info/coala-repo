@@ -4,7 +4,6 @@ description: This package provides processed gene expression data and pre-traine
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ccdata.html
 ---
 
-
 # bioconductor-ccdata
 
 name: bioconductor-ccdata

@@ -4,7 +4,6 @@ description: The r-ggdendro package extracts plot data from R model objects to c
 homepage: https://cloud.r-project.org/web/packages/ggdendro/index.html
 ---
 
-
 # r-ggdendro
 
 name: r-ggdendro

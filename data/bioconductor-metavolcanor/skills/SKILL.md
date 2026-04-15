@@ -4,7 +4,6 @@ description: MetaVolcanoR performs meta-analysis of differential gene expression
 homepage: https://bioconductor.org/packages/3.10/bioc/html/MetaVolcanoR.html
 ---
 
-
 # bioconductor-metavolcanor
 
 name: bioconductor-metavolcanor

@@ -1,10 +1,12 @@
 ---
 name: copy-of-genome-wide-alternative-splicing-analysis
-description: "This transcriptomics workflow performs genome-wide alternative splicing analysis by processing a reference genome and annotation through RNA STAR for alignment, StringTie for assembly, and IsoformSwitchAnalyzeR for statistical evaluation. Use this skill when you need to identify functional isoform switches and characterize alternative splicing events to understand their biological impact on gene expression and protein diversity."
-homepage: https://workflowhub.eu/workflows/483
+description: This transcriptomics workflow performs genome-wide alternative splicing analysis by processing a reference genome and annotation through RNA STAR for alignment, StringTie for assembly, and IsoformSwitchAnalyzeR for statistical evaluation. Use this skill when you need to identify functional isoform switches and characterize alternative splicing events to understand their biological impact on gene expression and protein diversity.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Copy of Genome-wide alternative splicing analysis
+# copy-of-genome-wide-alternative-splicing-analysis
 
 ## Overview
 

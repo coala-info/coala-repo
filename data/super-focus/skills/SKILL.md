@@ -2,8 +2,9 @@
 name: super-focus
 description: SUPER-FOCUS performs rapid functional profiling of shotgun metagenomic datasets using a reduced database of protein families. Use when user asks to annotate metagenomic reads, perform functional profiling of subsystems, or download the required protein database.
 homepage: https://edwards.sdsu.edu/SUPERFOCUS
+metadata:
+  docker_image: "quay.io/biocontainers/super-focus:1.6--pyhdfd78af_1"
 ---
-
 
 # super-focus
 

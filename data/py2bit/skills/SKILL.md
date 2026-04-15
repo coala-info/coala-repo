@@ -1,9 +1,10 @@
 ---
 name: py2bit
-description: "py2bit provides efficient random access to genomic sequences and metadata stored in the 2bit file format. Use when user asks to extract genomic sequences, retrieve chromosome lengths, calculate base composition, or identify masked regions from 2bit files."
+description: py2bit provides efficient random access to genomic sequences and metadata stored in the 2bit file format. Use when user asks to extract genomic sequences, retrieve chromosome lengths, calculate base composition, or identify masked regions from 2bit files.
 homepage: https://github.com/deeptools/py2bit
+metadata:
+  docker_image: "quay.io/biocontainers/py2bit:0.3.3--py311haab0aaa_1"
 ---
-
 
 # py2bit
 

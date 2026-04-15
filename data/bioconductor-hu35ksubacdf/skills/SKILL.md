@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubacdf.html
 ---
 
-
 # bioconductor-hu35ksubacdf
 
 ## Overview

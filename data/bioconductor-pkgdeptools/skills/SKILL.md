@@ -4,7 +4,6 @@ description: This tool computes and analyzes dependency relationships among R pa
 homepage: https://bioconductor.org/packages/3.5/bioc/html/pkgDepTools.html
 ---
 
-
 # bioconductor-pkgdeptools
 
 name: bioconductor-pkgdeptools

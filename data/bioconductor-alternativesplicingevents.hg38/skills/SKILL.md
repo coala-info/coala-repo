@@ -4,7 +4,6 @@ description: This package provides comprehensive alternative splicing event anno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/alternativeSplicingEvents.hg38.html
 ---
 
-
 # bioconductor-alternativesplicingevents.hg38
 
 name: bioconductor-alternativesplicingevents.hg38

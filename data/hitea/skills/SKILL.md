@@ -2,8 +2,9 @@
 name: hitea
 description: HiTea detects non-reference transposable element insertions using Hi-C sequencing data. Use when user asks to identify mobile element activity, detect transposable element insertions, or analyze genomic structural variations from proximity ligation assays.
 homepage: https://github.com/parklab/HiTea
+metadata:
+  docker_image: "quay.io/biocontainers/hitea:0.1.5--hdfd78af_1"
 ---
-
 
 # hitea
 

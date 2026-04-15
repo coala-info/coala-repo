@@ -2,8 +2,9 @@
 name: ucsc-maffrags
 description: ucsc-maffrags extracts alignment blocks from a MAF file based on genomic intervals defined in a BED file. Use when user asks to extract alignment blocks from a MAF file, retrieve alignments for specific genomic regions, or get exonic alignments.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-maffrags:482--h0b57e2e_0"
 ---
-
 
 # ucsc-maffrags
 

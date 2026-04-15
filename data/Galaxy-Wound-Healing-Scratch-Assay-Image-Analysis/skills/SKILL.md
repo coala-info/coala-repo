@@ -1,10 +1,12 @@
 ---
 name: wound-healing-scrath-assay-analysis
-description: "This Galaxy workflow processes image dataset collections to perform wound healing scratch assay analysis using the woundhealing_scratch_assay tool to generate TIF visualizations and CSV data. Use this skill when you need to quantify cell migration, wound closure rates, or tissue repair dynamics from microscopy images in regenerative medicine or oncology research."
-homepage: https://workflowhub.eu/workflows/782
+description: This Galaxy workflow processes image dataset collections to perform wound healing scratch assay analysis using the woundhealing_scratch_assay tool to generate TIF visualizations and CSV data. Use this skill when you need to quantify cell migration, wound closure rates, or tissue repair dynamics from microscopy images in regenerative medicine or oncology research.
+homepage: https://www.embl.org/about/info/data-science-centre/bioimage-analysis-services/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Wound Healing Scrath Assay Analysis
+# wound-healing-scrath-assay-analysis
 
 ## Overview
 

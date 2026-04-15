@@ -4,7 +4,6 @@ description: AffiXcan estimates the genetic component of gene expression by mode
 homepage: https://bioconductor.org/packages/release/bioc/html/AffiXcan.html
 ---
 
-
 # bioconductor-affixcan
 
 name: bioconductor-affixcan

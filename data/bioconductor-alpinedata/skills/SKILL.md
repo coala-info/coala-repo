@@ -4,7 +4,6 @@ description: The alpineData package provides subsetted RNA-seq alignment data fr
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/alpineData.html
 ---
 
-
 # bioconductor-alpinedata
 
 ## Overview

@@ -4,7 +4,6 @@ description: r-scavenge optimizes the inference of functional and genetic associ
 homepage: https://cran.r-project.org/web/packages/scavenge/index.html
 ---
 
-
 # r-scavenge
 
 name: r-scavenge

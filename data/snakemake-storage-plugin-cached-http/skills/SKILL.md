@@ -2,8 +2,9 @@
 name: snakemake-storage-plugin-cached-http
 description: This plugin provides high-reliability downloads for Snakemake with local caching, automatic checksum verification, and rate-limit handling for providers like Zenodo and PyPSA. Use when user asks to download remote datasets with caching, verify file integrity via checksums, or manage rate-limited HTTP transfers in Snakemake workflows.
 homepage: https://github.com/PyPSA/snakemake-storage-plugin-cached-http
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-storage-plugin-cached-http:0.3--pyhdfd78af_0"
 ---
-
 
 # snakemake-storage-plugin-cached-http
 

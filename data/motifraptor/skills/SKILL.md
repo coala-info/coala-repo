@@ -2,8 +2,9 @@
 name: motifraptor
 description: MotifRaptor is a computational tool used to identify how genetic variants disrupt transcription factor binding and gene regulation across different cell types. Use when user asks to identify affected transcription factors, prioritize cell types for specific variants, index SNPs for motif scanning, or generate radar plots of SNP-motif interactions.
 homepage: https://github.com/pinellolab/MotifRaptor
+metadata:
+  docker_image: "quay.io/biocontainers/motifraptor:0.3.0--py36h40b2fa4_5"
 ---
-
 
 # motifraptor
 

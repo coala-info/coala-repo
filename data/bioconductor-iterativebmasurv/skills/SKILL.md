@@ -4,7 +4,6 @@ description: This tool performs gene selection and survival analysis on high-dim
 homepage: https://bioconductor.org/packages/release/bioc/html/iterativeBMAsurv.html
 ---
 
-
 # bioconductor-iterativebmasurv
 
 name: bioconductor-iterativebmasurv

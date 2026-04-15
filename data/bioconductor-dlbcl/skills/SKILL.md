@@ -4,7 +4,6 @@ description: This package provides diffuse large B-cell lymphoma expression data
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DLBCL.html
 ---
 
-
 # bioconductor-dlbcl
 
 name: bioconductor-dlbcl

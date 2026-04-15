@@ -4,7 +4,6 @@ description: The gtrellis package arranges genomic categories into a Trellis lay
 homepage: https://bioconductor.org/packages/release/bioc/html/gtrellis.html
 ---
 
-
 # bioconductor-gtrellis
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides a centralized collection of high-performance 
 homepage: https://bioconductor.org/packages/release/bioc/html/assorthead.html
 ---
 
-
 # bioconductor-assorthead
 
 name: bioconductor-assorthead

@@ -1,9 +1,10 @@
 ---
 name: msaboot
-description: "Generates bootstrapping replicates for multiple sequence alignment data. Use when user asks to generate bootstrapping replicates for multiple sequence alignment data."
+description: Generates bootstrapping replicates for multiple sequence alignment data. Use when user asks to generate bootstrapping replicates for multiple sequence alignment data.
 homepage: https://github.com/phac-nml/msaboot
+metadata:
+  docker_image: "quay.io/biocontainers/msaboot:0.1.2--py_1"
 ---
-
 
 # msaboot
 

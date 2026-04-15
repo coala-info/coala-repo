@@ -1,10 +1,12 @@
 ---
 name: music-deconvolution-data-generation-bulk-eset
-description: "This transcriptomics workflow processes raw bulk expression matrices and metadata using tools like annotateMyIDs and music_construct_eset to generate standardized ExpressionSet objects. Use this skill when you need to prepare bulk RNA-seq datasets for MuSiC deconvolution by mapping gene identifiers and structuring expression data into compatible R objects."
-homepage: https://workflowhub.eu/workflows/1542
+description: This transcriptomics workflow processes raw bulk expression matrices and metadata using tools like annotateMyIDs and music_construct_eset to generate standardized ExpressionSet objects. Use this skill when you need to prepare bulk RNA-seq datasets for MuSiC deconvolution by mapping gene identifiers and structuring expression data into compatible R objects.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MuSiC-Deconvolution: Data generation | bulk | ESet
+# music-deconvolution-data-generation-bulk-eset
 
 ## Overview
 

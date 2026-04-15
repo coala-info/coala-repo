@@ -2,8 +2,9 @@
 name: perl-statistics-descriptive
 description: This tool provides basic descriptive statistical functions for numerical datasets using the Perl Statistics::Descriptive module. Use when user asks to calculate statistical summaries, generate frequency distributions, or perform memory-efficient data analysis in Perl.
 homepage: http://web-cpan.shlomifish.org/modules/Statistics-Descriptive/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-statistics-descriptive:3.0801--pl5321hdfd78af_0"
 ---
-
 
 # perl-statistics-descriptive
 

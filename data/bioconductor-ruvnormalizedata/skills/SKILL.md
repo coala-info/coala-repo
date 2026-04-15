@@ -4,7 +4,6 @@ description: This package provides a curated gene expression dataset and negativ
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RUVnormalizeData.html
 ---
 
-
 # bioconductor-ruvnormalizedata
 
 ## Overview

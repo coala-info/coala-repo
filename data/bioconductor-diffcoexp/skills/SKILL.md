@@ -4,7 +4,6 @@ description: This tool identifies differentially coexpressed links and genes fro
 homepage: https://bioconductor.org/packages/release/bioc/html/diffcoexp.html
 ---
 
-
 # bioconductor-diffcoexp
 
 name: bioconductor-diffcoexp

@@ -4,7 +4,6 @@ description: This package provides genome-wide annotations and identifier mappin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.EcK12.eg.db.html
 ---
 
-
 # bioconductor-org.eck12.eg.db
 
 name: bioconductor-org.eck12.eg.db

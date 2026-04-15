@@ -1,9 +1,10 @@
 ---
 name: msgf_plus
-description: "MS-GF+ is a sensitive and universal MS/MS database search tool for peptide identification. Use when user asks to identify peptides from LC-MS/MS datasets by searching MS/MS spectra against a protein sequence database."
+description: MS-GF+ is a sensitive and universal MS/MS database search tool for peptide identification. Use when user asks to identify peptides from LC-MS/MS datasets by searching MS/MS spectra against a protein sequence database.
 homepage: https://msgfplus.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/msgf_plus:2024.03.26--hdfd78af_0"
 ---
-
 
 # msgf_plus
 

@@ -2,6 +2,8 @@
 name: alloshp
 description: AlloSHP identifies homeologous polymorphisms in allopolyploid species by comparing polyploid VCF data against diploid ancestral genomes. Use when user asks to perform whole-genome alignments between progenitors, convert VCF data into alignments, or generate synteny-aware multiple sequence alignments for polyploid phylogenetics.
 homepage: https://github.com/eead-csic-compbio/AlloSHP
+metadata:
+  docker_image: "quay.io/biocontainers/alloshp:2025.09.12--h7b50bb2_0"
 ---
 
 # alloshp

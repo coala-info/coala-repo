@@ -4,7 +4,6 @@ description: Bioconductor-debrowser provides an interactive Shiny-based interfac
 homepage: https://bioconductor.org/packages/release/bioc/html/debrowser.html
 ---
 
-
 # bioconductor-debrowser
 
 name: bioconductor-debrowser

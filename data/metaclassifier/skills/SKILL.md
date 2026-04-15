@@ -2,8 +2,9 @@
 name: metaclassifier
 description: MetaClassifier automates the classification and quantification of DNA metabarcoding data to produce taxonomic lineage information and abundance metrics. Use when user asks to classify DNA metabarcoding reads, quantify taxonomic abundance, or search sequences against marker databases.
 homepage: https://github.com/ewafula/MetaClassifier
+metadata:
+  docker_image: "quay.io/biocontainers/metaclassifier:v1.0.1--py_0"
 ---
-
 
 # metaclassifier
 

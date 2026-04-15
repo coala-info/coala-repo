@@ -2,8 +2,9 @@
 name: perl-par
 description: The perl-par tool bundles Perl scripts and their dependencies into stand-alone executables or PAR archives for easy distribution. Use when user asks to create stand-alone executables, bundle additional resources, force module inclusion, or create PAR archives.
 homepage: https://github.com/rschupp/PAR-Packer
+metadata:
+  docker_image: "quay.io/biocontainers/perl-par:1.014--pl5.22.0_0"
 ---
-
 
 # perl-par
 

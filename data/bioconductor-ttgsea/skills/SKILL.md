@@ -4,7 +4,6 @@ description: This tool predicts enrichment scores for gene set tokens and new fu
 homepage: https://bioconductor.org/packages/release/bioc/html/ttgsea.html
 ---
 
-
 # bioconductor-ttgsea
 
 name: bioconductor-ttgsea

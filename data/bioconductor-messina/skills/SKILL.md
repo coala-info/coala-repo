@@ -4,7 +4,6 @@ description: The messina package provides algorithms for generating optimal sing
 homepage: https://bioconductor.org/packages/release/bioc/html/messina.html
 ---
 
-
 # bioconductor-messina
 
 ## Overview

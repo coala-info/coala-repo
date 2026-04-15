@@ -4,7 +4,6 @@ description: This package provides experimental data and analysis tools for stud
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/DmelSGI.html
 ---
 
-
 # bioconductor-dmelsgi
 
 name: bioconductor-dmelsgi

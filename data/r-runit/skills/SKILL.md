@@ -4,7 +4,6 @@ description: This tool implements unit testing in R using the RUnit framework to
 homepage: https://cran.r-project.org/web/packages/runit/index.html
 ---
 
-
 # r-runit
 
 name: r-runit

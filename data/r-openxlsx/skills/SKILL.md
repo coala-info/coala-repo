@@ -4,7 +4,6 @@ description: The openxlsx package provides a high-level interface for creating, 
 homepage: https://cloud.r-project.org/web/packages/openxlsx/index.html
 ---
 
-
 # r-openxlsx
 
 ## Overview

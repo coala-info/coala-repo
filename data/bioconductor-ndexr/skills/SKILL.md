@@ -4,7 +4,6 @@ description: This package provides an R interface to the Network Data Exchange (
 homepage: https://bioconductor.org/packages/release/bioc/html/ndexr.html
 ---
 
-
 # bioconductor-ndexr
 
 name: bioconductor-ndexr

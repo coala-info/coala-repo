@@ -2,8 +2,9 @@
 name: fastq-filter
 description: fastq-filter performs rapid quality control and filtering of sequencing data based on average error rates or Phred scores. Use when user asks to filter FASTQ files by quality, remove short reads, or process paired-end genomic data.
 homepage: https://github.com/LUMC/fastq-filter
+metadata:
+  docker_image: "quay.io/biocontainers/fastq-filter:0.3.0--py312h0fa9677_4"
 ---
-
 
 # fastq-filter
 

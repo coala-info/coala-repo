@@ -4,7 +4,6 @@ description: PowerExplorer performs power and sample size estimation for RNA-Seq
 homepage: https://bioconductor.org/packages/3.8/bioc/html/PowerExplorer.html
 ---
 
-
 # bioconductor-powerexplorer
 
 name: bioconductor-powerexplorer

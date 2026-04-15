@@ -1,9 +1,10 @@
 ---
 name: geneimpacts
-description: "geneimpacts normalizes and compares the severity of genomic variant consequences from SnpEff, VEP, and BCFTools annotations. Use when user asks to normalize variant impact categories, compare the severity of different genomic annotations, or identify the most severe effect for a variant."
+description: geneimpacts normalizes and compares the severity of genomic variant consequences from SnpEff, VEP, and BCFTools annotations. Use when user asks to normalize variant impact categories, compare the severity of different genomic annotations, or identify the most severe effect for a variant.
 homepage: https://github.com/brentp/geneimpacts
+metadata:
+  docker_image: "quay.io/biocontainers/geneimpacts:0.3.7--py36_0"
 ---
-
 
 # geneimpacts
 

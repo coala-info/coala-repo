@@ -4,7 +4,6 @@ description: This tool identifies somatic mutation clustering in proteins by int
 homepage: https://bioconductor.org/packages/3.6/bioc/html/iPAC.html
 ---
 
-
 # bioconductor-ipac
 
 name: bioconductor-ipac

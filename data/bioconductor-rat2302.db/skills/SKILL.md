@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rat Expres
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rat2302.db.html
 ---
 
-
 # bioconductor-rat2302.db
 
 name: bioconductor-rat2302.db

@@ -4,7 +4,6 @@ description: gdtools provides utilities for computing font metrics and managing 
 homepage: https://cloud.r-project.org/web/packages/gdtools/index.html
 ---
 
-
 # r-gdtools
 
 ## Overview

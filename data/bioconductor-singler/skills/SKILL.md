@@ -4,7 +4,6 @@ description: SingleR provides automated cell type annotation for single-cell RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleR.html
 ---
 
-
 # bioconductor-singler
 
 name: bioconductor-singler

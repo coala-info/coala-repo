@@ -4,7 +4,6 @@ description: This package provides example microarray and RNA-seq datasets for t
 homepage: https://bioconductor.org/packages/release/data/experiment/html/biotmleData.html
 ---
 
-
 # bioconductor-biotmledata
 
 name: bioconductor-biotmledata

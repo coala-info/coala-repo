@@ -4,7 +4,6 @@ description: This tool provides a statistical quality control pipeline for ChIP-
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPexoQual.html
 ---
 
-
 # bioconductor-chipexoqual
 
 name: bioconductor-chipexoqual

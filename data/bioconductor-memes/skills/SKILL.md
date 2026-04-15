@@ -1,9 +1,8 @@
 ---
 name: bioconductor-memes
-description: "bioconductor-memes provides a tidy R interface for performing motif analysis using the MEME Suite. Use when user asks to perform de-novo motif discovery, test for motif enrichment, scan sequences for motif occurrences, or compare motifs against databases."
+description: bioconductor-memes provides a tidy R interface for performing motif analysis using the MEME Suite. Use when user asks to perform de-novo motif discovery, test for motif enrichment, scan sequences for motif occurrences, or compare motifs against databases.
 homepage: https://bioconductor.org/packages/release/bioc/html/memes.html
 ---
-
 
 # bioconductor-memes
 

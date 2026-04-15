@@ -1,9 +1,8 @@
 ---
 name: bioconductor-scdataviz
-description: "bioconductor-scdataviz provides specialized visualization and analysis tools for high-dimensional single-cell data such as CyTOF, flow cytometry, and scRNA-seq. Use when user asks to process FCS files, perform dimensionality reduction, identify cell clusters via k-NN, or generate publication-quality plots like contour plots and marker expression maps."
+description: bioconductor-scdataviz provides specialized visualization and analysis tools for high-dimensional single-cell data such as CyTOF, flow cytometry, and scRNA-seq. Use when user asks to process FCS files, perform dimensionality reduction, identify cell clusters via k-NN, or generate publication-quality plots like contour plots and marker expression maps.
 homepage: https://bioconductor.org/packages/release/bioc/html/scDataviz.html
 ---
-
 
 # bioconductor-scdataviz
 

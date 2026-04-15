@@ -4,7 +4,6 @@ description: Bioconductor-geecc performs gene set enrichment analysis using log-
 homepage: https://bioconductor.org/packages/3.8/bioc/html/geecc.html
 ---
 
-
 # bioconductor-geecc
 
 name: bioconductor-geecc

@@ -1,9 +1,10 @@
 ---
 name: refseq-plasmid-dl
-description: "Downloads, filters, and curates plasmid sequences from the NCBI RefSeq database. Use when user asks to download plasmid DNA sequences with specific metadata or sequence property criteria, and generate associated reports and metadata files."
+description: Downloads, filters, and curates plasmid sequences from the NCBI RefSeq database. Use when user asks to download plasmid DNA sequences with specific metadata or sequence property criteria, and generate associated reports and metadata files.
 homepage: https://github.com/erinyoung/refseq-plasmid-dl
+metadata:
+  docker_image: "quay.io/biocontainers/refseq-plasmid-dl:0.1.0--pyhdfd78af_0"
 ---
-
 
 # refseq-plasmid-dl
 

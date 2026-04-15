@@ -1,10 +1,12 @@
 ---
 name: wgs2protein-v300
-description: "This Galaxy workflow extracts specific protein-coding sequences from raw paired-end whole genome sequencing reads using Shovill for assembly, Prokka for annotation, and pattern-based selection tools. Use this skill when you need to transform raw genomic data into annotated protein datasets for comparative genomics, phylogenetics, or functional analysis of specific gene families."
-homepage: https://workflowhub.eu/workflows/1767
+description: This Galaxy workflow extracts specific protein-coding sequences from raw paired-end whole genome sequencing reads using Shovill for assembly, Prokka for annotation, and pattern-based selection tools. Use this skill when you need to transform raw genomic data into annotated protein datasets for comparative genomics, phylogenetics, or functional analysis of specific gene families.
+homepage: https://zenodo.org/me/requests/ab4f4344-2d61-42c1-b446-550aa20a4089
+metadata:
+  docker_image: "N/A"
 ---
 
-# WGS2Protein v3.0.0
+# wgs2protein-v300
 
 ## Overview
 

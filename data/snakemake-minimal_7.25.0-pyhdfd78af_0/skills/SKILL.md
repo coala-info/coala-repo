@@ -2,8 +2,9 @@
 name: snakemake-minimal_7.25.0-pyhdfd78af_0
 description: Snakemake provides a framework for automating complex data processing pipelines using a Python-based domain-specific language. Use when user asks to define workflow rules, manage file dependencies, automate data processing pipelines, or scale computations across different computing environments.
 homepage: https://snakemake.github.io
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake:9.16.3--hdfd78af_0"
 ---
-
 
 # snakemake-minimal_7.25.0-pyhdfd78af_0
 

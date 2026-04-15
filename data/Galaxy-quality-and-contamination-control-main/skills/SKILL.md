@@ -1,10 +1,12 @@
 ---
 name: quality-and-contamination-control-for-genome-assembly
-description: "This genomics workflow processes paired-end Illumina FASTQ reads to perform quality control, trimming, and taxonomic classification using fastp, Kraken2, Bracken, and Recentrifuge. Use this skill when you need to evaluate the purity of bacterial sequencing data, remove low-quality sequences, and identify potential contaminants before proceeding with genome assembly."
-homepage: https://workflowhub.eu/workflows/1052
+description: This genomics workflow processes paired-end Illumina FASTQ reads to perform quality control, trimming, and taxonomic classification using fastp, Kraken2, Bracken, and Recentrifuge. Use this skill when you need to evaluate the purity of bacterial sequencing data, remove low-quality sequences, and identify potential contaminants before proceeding with genome assembly.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Quality and Contamination Control For Genome Assembly
+# quality-and-contamination-control-for-genome-assembly
 
 ## Overview
 

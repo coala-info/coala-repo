@@ -4,7 +4,6 @@ description: This package defines and identifies the specific Bioconductor repos
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocVersion.html
 ---
 
-
 # bioconductor-biocversion
 
 name: bioconductor-biocversion

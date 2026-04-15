@@ -1,9 +1,10 @@
 ---
 name: snipit
-description: "snipit summarizes and visualizes genetic variation by plotting mutations in nucleotide or protein sequences relative to a reference. Use when user asks to visualize SNPs, create mutation plots from alignments, highlight specific genomic regions, or perform recombination analysis."
+description: snipit summarizes and visualizes genetic variation by plotting mutations in nucleotide or protein sequences relative to a reference. Use when user asks to visualize SNPs, create mutation plots from alignments, highlight specific genomic regions, or perform recombination analysis.
 homepage: https://github.com/aineniamh/snipit
+metadata:
+  docker_image: "quay.io/biocontainers/snipit:1.7--pyhdfd78af_0"
 ---
-
 
 # snipit
 

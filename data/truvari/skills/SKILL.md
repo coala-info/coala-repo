@@ -2,8 +2,9 @@
 name: truvari
 description: Truvari is a suite for comparing, manipulating, and benchmarking structural variants (SVs). Use when user asks to benchmark structural variants, compare SV callsets, collapse redundant variants, refine SV benchmarking results, convert VCFs to analysis-ready data, or annotate structural variants.
 homepage: https://github.com/spiralgenetics/truvari
+metadata:
+  docker_image: "quay.io/biocontainers/truvari:5.4.0--pyhdfd78af_0"
 ---
-
 
 # truvari
 

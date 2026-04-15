@@ -2,6 +2,8 @@
 name: dashing
 description: Dashing is a high-performance tool that uses HyperLogLog sketches to estimate genomic distances and sequence similarities. Use when user asks to calculate Jaccard similarity, estimate Mash distances, determine containment indices, or perform fast k-mer based comparisons across large genomic datasets.
 homepage: https://github.com/dnbaker/dashing
+metadata:
+  docker_image: "quay.io/biocontainers/dashing:1.0--h5b0a936_3"
 ---
 
 # dashing

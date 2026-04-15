@@ -1,9 +1,12 @@
 ---
 name: var-pe
-description: "This CWL workflow identifies genomic variations in SARS-CoV-2 paired-end sequencing data using fastp, Picard, Samtools, and LoFreq. Use this skill when you need to characterize intra-host viral diversity, identify low-frequency mutations, or monitor the evolution of specific viral lineages within individual samples."
-homepage: https://workflowhub.eu/workflows/28
+description: This CWL workflow identifies genomic variations in SARS-CoV-2 paired-end sequencing data using fastp, Picard, Samtools, and LoFreq. Use this skill when you need to characterize intra-host viral diversity, identify low-frequency mutations, or monitor the evolution of specific viral lineages within individual samples.
+homepage: https://github.com/fjrmoreews/cwl-workflow-SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
-# var-PE
+
+# var-pe
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: ucsc-pslfilter
 description: ucsc-pslfilter processes and filters PSL alignment files to refine results based on quality thresholds. Use when user asks to filter alignments by minimum score, ensure a minimum query coverage, or remove redundant overlapping mappings.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslfilter:482--h0b57e2e_0"
 ---
-
 
 # ucsc-pslfilter
 

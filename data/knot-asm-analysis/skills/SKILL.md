@@ -2,6 +2,8 @@
 name: knot-asm-analysis
 description: knot-asm-analysis resolves fragmented bacterial genome assemblies by identifying paths between contig extremities using long-read data to produce an augmented assembly graph. Use when user asks to resolve fragmented assemblies, identify adjacencies between contigs, or generate visual analysis reports for genome scaffolding.
 homepage: https://github.com/natir/knot
+metadata:
+  docker_image: "quay.io/biocontainers/knot-asm-analysis:1.3.0--py_0"
 ---
 
 # knot-asm-analysis

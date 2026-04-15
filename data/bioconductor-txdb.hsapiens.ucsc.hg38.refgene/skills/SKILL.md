@@ -4,7 +4,6 @@ description: This package provides genomic annotation data for the human genome 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Hsapiens.UCSC.hg38.refGene.html
 ---
 
-
 # bioconductor-txdb.hsapiens.ucsc.hg38.refgene
 
 name: bioconductor-txdb.hsapiens.ucsc.hg38.refgene

@@ -2,6 +2,8 @@
 name: cnmf
 description: Consensus Non-negative Matrix Factorization decomposes single-cell gene expression matrices into gene expression programs and cell usage matrices to identify overlapping biological processes. Use when user asks to decompose expression matrices, identify gene expression programs, find overlapping biological states, or perform consensus NMF.
 homepage: https://github.com/dylkot/cNMF
+metadata:
+  docker_image: "quay.io/biocontainers/cnmf:1.7.0--pyhdfd78af_0"
 ---
 
 # cnmf

@@ -1,9 +1,10 @@
 ---
 name: cryptogenotyper
-description: "CryptoGenotyper identifies Cryptosporidium genotypes and subtypes from DNA sequences using SSU rRNA and gp60 gene markers. Use when user asks to identify Cryptosporidium species, perform gp60 subtyping, or process Sanger electropherogram files for genotype analysis."
+description: CryptoGenotyper identifies Cryptosporidium genotypes and subtypes from DNA sequences using SSU rRNA and gp60 gene markers. Use when user asks to identify Cryptosporidium species, perform gp60 subtyping, or process Sanger electropherogram files for genotype analysis.
 homepage: https://github.com/phac-nml/CryptoGenotyper
+metadata:
+  docker_image: "quay.io/biocontainers/cryptogenotyper:1.5.0--pyhdfd78af_3"
 ---
-
 
 # cryptogenotyper
 

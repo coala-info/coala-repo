@@ -2,6 +2,8 @@
 name: riboseed
 description: riboSeed is a bioinformatics pipeline that uses reference-based subassemblies to resolve identical ribosomal RNA operons in bacterial genome assemblies. Use when user asks to improve bacterial genome assembly, resolve rDNA repeats, or perform iterative subassemblies using a reference genome.
 homepage: https://github.com/nickp60/riboSeed
+metadata:
+  docker_image: "quay.io/biocontainers/riboseed:0.4.90--py_0"
 ---
 
 # riboseed

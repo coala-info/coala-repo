@@ -2,6 +2,8 @@
 name: srf-n-trf
 description: srf-n-trf identifies and filters satellite DNA monomers and regions by bridging SRF and TRF outputs to isolate specific repeat periodicities. Use when user asks to identify tandem repeat monomers, filter SRF motifs by length, or merge and filter genomic regions based on monomer composition.
 homepage: https://github.com/koisland/srf-n-trf
+metadata:
+  docker_image: "quay.io/biocontainers/srf-n-trf:0.1.2--h4349ce8_0"
 ---
 
 # srf-n-trf

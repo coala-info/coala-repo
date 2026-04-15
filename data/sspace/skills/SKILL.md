@@ -1,9 +1,10 @@
 ---
 name: sspace
-description: "Manages and organizes personal learning resources, notes, and coding practice. Use when user asks to access, organize, or retrieve information related to personal study materials, coding challenges, or technical notes."
+description: Manages and organizes personal learning resources, notes, and coding practice. Use when user asks to access, organize, or retrieve information related to personal study materials, coding challenges, or technical notes.
 homepage: https://github.com/imhuay/sspace
+metadata:
+  docker_image: "biocontainers/sspace:v2.1.1dfsg-4-deb_cv1"
 ---
-
 
 # sspace
 

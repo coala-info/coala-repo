@@ -2,8 +2,9 @@
 name: ucsc-hgloadbed
 description: The `ucsc-hgloadbed` tool transforms flat BED files into database tables for the UCSC Genome Browser. Use when user asks to load BED files into a database, upload genomic annotations, create database tables for genomic data, or load custom BED fields.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-hgloadbed:482--h0b57e2e_1"
 ---
-
 
 # ucsc-hgloadbed
 

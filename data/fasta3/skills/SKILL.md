@@ -2,6 +2,8 @@
 name: fasta3
 description: The fasta3 tool compares biological sequences to identify homologous proteins or nucleic acids using various alignment algorithms. Use when user asks to search sequence databases, perform Smith-Waterman alignments, compare DNA to protein sequences, or identify distant evolutionary relationships.
 homepage: http://faculty.virginia.edu/wrpearson/fasta
+metadata:
+  docker_image: "quay.io/biocontainers/fasta3:36.3.8--0"
 ---
 
 # fasta3

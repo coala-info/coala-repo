@@ -1,9 +1,10 @@
 ---
 name: hatchet
-description: "HATCHet infers allele and clone-specific copy-number aberrations, clone proportions, and whole-genome duplications from tumor samples. Use when user asks to analyze tumor genomics data, infer copy-number aberrations, or characterize tumor heterogeneity."
+description: HATCHet infers allele and clone-specific copy-number aberrations, clone proportions, and whole-genome duplications from tumor samples. Use when user asks to analyze tumor genomics data, infer copy-number aberrations, or characterize tumor heterogeneity.
 homepage: https://github.com/raphael-group/hatchet
+metadata:
+  docker_image: "quay.io/biocontainers/hatchet:2.1.2--py310h184ae93_0"
 ---
-
 
 # hatchet
 

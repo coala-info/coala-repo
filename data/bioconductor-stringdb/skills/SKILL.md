@@ -4,7 +4,6 @@ description: This tool provides an R interface to access and analyze protein-pro
 homepage: https://bioconductor.org/packages/release/bioc/html/STRINGdb.html
 ---
 
-
 # bioconductor-stringdb
 
 name: bioconductor-stringdb

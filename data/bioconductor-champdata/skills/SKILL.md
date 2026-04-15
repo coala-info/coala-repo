@@ -4,7 +4,6 @@ description: This package provides essential datasets, probe annotations, and re
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChAMPdata.html
 ---
 
-
 # bioconductor-champdata
 
 name: bioconductor-champdata

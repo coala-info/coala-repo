@@ -2,8 +2,9 @@
 name: scarap
 description: The scarap toolkit automates prokaryotic comparative genomics by identifying orthologous groups and performing phylogenetic reconstruction. Use when user asks to identify orthologous groups, extract core genomes, or generate phylogenetic trees from bacterial genomic data.
 homepage: https://pypi.org/project/scarap
+metadata:
+  docker_image: "quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0"
 ---
-
 
 # scarap
 

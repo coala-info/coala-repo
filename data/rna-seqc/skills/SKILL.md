@@ -2,8 +2,9 @@
 name: rna-seqc
 description: RNA-SeQC is a high-performance tool for quality control and gene-level quantification of RNA-Seq data. Use when user asks to evaluate library quality metrics, generate gene expression estimates like TPM or RPKM, or analyze transcript coverage and strand specificity.
 homepage: https://github.com/broadinstitute/rnaseqc
+metadata:
+  docker_image: "quay.io/biocontainers/rna-seqc:2.4.2--h29c0135_1"
 ---
-
 
 # rna-seqc
 

@@ -4,7 +4,6 @@ description: DFplyr provides a dplyr-compatible interface for performing data ma
 homepage: https://bioconductor.org/packages/release/bioc/html/DFplyr.html
 ---
 
-
 # bioconductor-dfplyr
 
 name: bioconductor-dfplyr

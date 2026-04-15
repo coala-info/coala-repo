@@ -1,9 +1,8 @@
 ---
 name: bioconductor-bobafit
-description: "This tool refits and recalibrates tumor copy number profiles to correct diploid region assessments. Use when user asks to recalibrate tumor copy number segments, identify stable chromosomal arms, refit diploid regions, or visualize corrected copy number profiles."
+description: This tool refits and recalibrates tumor copy number profiles to correct diploid region assessments. Use when user asks to recalibrate tumor copy number segments, identify stable chromosomal arms, refit diploid regions, or visualize corrected copy number profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/BOBaFIT.html
 ---
-
 
 # bioconductor-bobafit
 

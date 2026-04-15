@@ -2,8 +2,9 @@
 name: sccaf
 description: SCCAF is a machine learning-based method used to validate and refine cell-type clusters in single-cell RNA-seq datasets. Use when user asks to assess clustering quality, optimize cluster resolution by merging indistinct groups, or regress out batch effects from gene expression data.
 homepage: https://github.com/SCCAF/sccaf
+metadata:
+  docker_image: "quay.io/biocontainers/sccaf:0.0.10--py_0"
 ---
-
 
 # sccaf
 

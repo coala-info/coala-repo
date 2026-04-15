@@ -1,10 +1,12 @@
 ---
 name: qcxms-spectra-prediction-from-sdf
-description: "This Galaxy workflow predicts electron ionization mass spectra from 3D molecular structures in SDF format using Open Babel and the QCxMS simulation suite. Use this skill when you need to generate theoretical fragmentation patterns for chemical compounds to assist in structure elucidation or to supplement experimental mass spectrometry libraries."
-homepage: https://workflowhub.eu/workflows/1350
+description: This Galaxy workflow predicts electron ionization mass spectra from 3D molecular structures in SDF format using Open Babel and the QCxMS simulation suite. Use this skill when you need to generate theoretical fragmentation patterns for chemical compounds to assist in structure elucidation or to supplement experimental mass spectrometry libraries.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# QCxMS Spectra Prediction from SDF
+# qcxms-spectra-prediction-from-sdf
 
 ## Overview
 

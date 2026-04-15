@@ -2,8 +2,9 @@
 name: perl-test-script
 description: The perl-test-script tool validates the syntax, runnability, and command-line interface behavior of Perl scripts. Use when user asks to verify script compilation, test command-line arguments, or check script output and exit codes.
 homepage: https://metacpan.org/pod/Test::Script
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-script:1.31--pl5321hdfd78af_0"
 ---
-
 
 # perl-test-script
 

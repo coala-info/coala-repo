@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequences for the F
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.feinberg.hg18.me.hx1.html
 ---
 
-
 # bioconductor-pd.feinberg.hg18.me.hx1
 
 name: bioconductor-pd.feinberg.hg18.me.hx1

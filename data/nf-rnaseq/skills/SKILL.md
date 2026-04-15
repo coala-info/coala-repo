@@ -4,6 +4,8 @@ description: The pipeline processes RNA sequencing data from FASTQ or pre-aligne
 homepage: https://github.com/nf-core/rnaseq
 ---
 
+# rnaseq
+
 ## Overview
 nf-core/rnaseq is designed for the end-to-end analysis of RNA sequencing data, focusing on gene and transcript quantification and comprehensive quality control. It addresses the need for reproducible processing of raw reads into expression matrices suitable for downstream statistical analysis in environments like R or Julia.
 

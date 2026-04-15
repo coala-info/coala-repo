@@ -4,7 +4,6 @@ description: Bioconductor-sushi is an R package for creating publication-quality
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Sushi.html
 ---
 
-
 # bioconductor-sushi
 
 name: bioconductor-sushi

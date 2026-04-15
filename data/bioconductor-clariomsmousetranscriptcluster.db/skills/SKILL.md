@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping Clar
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomsmousetranscriptcluster.db.html
 ---
 
-
 # bioconductor-clariomsmousetranscriptcluster.db
 
 name: bioconductor-clariomsmousetranscriptcluster.db

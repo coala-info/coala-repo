@@ -4,6 +4,8 @@ description: This pipeline performs assembly and intra-host variant calling for 
 homepage: https://github.com/nf-core/viralrecon
 ---
 
+# viralrecon
+
 ## Overview
 nf-core/viralrecon is designed for the analysis of viral sequencing data, supporting both Illumina short-read and Nanopore long-read platforms. It addresses the need for high-throughput identification of intra-host variants, *de novo* assembly of viral genomes, and automated lineage assignment for pathogens such as SARS-CoV-2.
 

@@ -4,7 +4,6 @@ description: The gpls package performs classification using Generalized Partial 
 homepage: https://bioconductor.org/packages/release/bioc/html/gpls.html
 ---
 
-
 # bioconductor-gpls
 
 ## Overview

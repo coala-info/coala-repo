@@ -4,7 +4,6 @@ description: This tool performs gene set analysis on differential expression res
 homepage: https://bioconductor.org/packages/release/bioc/html/zenith.html
 ---
 
-
 # bioconductor-zenith
 
 name: bioconductor-zenith

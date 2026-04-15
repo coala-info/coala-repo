@@ -2,8 +2,9 @@
 name: ucsc-subcolumn
 description: The `ucsc-subcolumn` tool replaces values in a specified column of a tab-separated file using a lookup table. Use when user asks to 'map internal IDs to public accessions', 'update chromosome names', or 'replace specific data fields'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-subcolumn:482--h0b57e2e_0"
 ---
-
 
 # ucsc-subcolumn
 

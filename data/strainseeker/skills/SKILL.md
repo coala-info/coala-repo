@@ -1,9 +1,10 @@
 ---
 name: strainseeker
-description: "StrainSeeker identifies bacterial strains from raw sequencing reads by mapping them to a hierarchical k-mer database. Use when user asks to identify bacterial strains, detect novel strains in metagenomic data, or map sequencing reads to a taxonomic guide tree."
+description: StrainSeeker identifies bacterial strains from raw sequencing reads by mapping them to a hierarchical k-mer database. Use when user asks to identify bacterial strains, detect novel strains in metagenomic data, or map sequencing reads to a taxonomic guide tree.
 homepage: http://bioinfo.ut.ee/strainseeker
+metadata:
+  docker_image: "quay.io/biocontainers/strainseeker:1.5.1--h7b50bb2_5"
 ---
-
 
 # strainseeker
 

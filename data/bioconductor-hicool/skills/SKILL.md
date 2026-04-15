@@ -4,7 +4,6 @@ description: HiCool processes, normalizes, and visualizes Hi-C data by interfaci
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCool.html
 ---
 
-
 # bioconductor-hicool
 
 name: bioconductor-hicool

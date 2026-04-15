@@ -4,7 +4,6 @@ description: The qmtools package provides a suite of tools for the post-processi
 homepage: https://bioconductor.org/packages/release/bioc/html/qmtools.html
 ---
 
-
 # bioconductor-qmtools
 
 ## Overview

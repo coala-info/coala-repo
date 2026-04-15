@@ -4,7 +4,6 @@ description: This package provides specialized tools for the preprocessing, norm
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MmPalateMiRNA.html
 ---
 
-
 # bioconductor-mmpalatemirna
 
 name: bioconductor-mmpalatemirna

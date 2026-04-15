@@ -4,7 +4,6 @@ description: bioconductor-smoothclust identifies spatial domains in spatial tran
 homepage: https://bioconductor.org/packages/release/bioc/html/smoothclust.html
 ---
 
-
 # bioconductor-smoothclust
 
 ## Overview

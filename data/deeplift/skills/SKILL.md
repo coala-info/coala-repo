@@ -2,8 +2,9 @@
 name: deeplift
 description: DeepLIFT is a framework for decomposing deep neural network predictions to explain the contribution of input features relative to a reference. Use when user asks to explain model predictions, compute feature importance scores, identify regulatory motifs in genomics, or handle gradient saturation in deep learning models.
 homepage: https://github.com/kundajelab/deeplift
+metadata:
+  docker_image: "quay.io/biocontainers/deeplift:0.6.13.0--pyh3252c3a_0"
 ---
-
 
 # deeplift
 

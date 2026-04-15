@@ -4,7 +4,6 @@ description: MPRAnalyze is an R package that uses a nested generalized linear mo
 homepage: https://bioconductor.org/packages/release/bioc/html/MPRAnalyze.html
 ---
 
-
 # bioconductor-mpranalyze
 
 ## Overview

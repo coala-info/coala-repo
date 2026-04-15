@@ -4,7 +4,6 @@ description: This package provides the full masked genome sequences for the Cani
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cfamiliaris.UCSC.canFam3.masked.html
 ---
 
-
 # bioconductor-bsgenome.cfamiliaris.ucsc.canfam3.masked
 
 name: bioconductor-bsgenome.cfamiliaris.ucsc.canfam3.masked

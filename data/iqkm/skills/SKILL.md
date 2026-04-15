@@ -2,8 +2,9 @@
 name: iqkm
 description: iqKM is a bioinformatics pipeline that performs gene prediction, protein annotation, and quantification of KEGG modules from genomic or metagenomic sequences. Use when user asks to identify KEGG modules, perform functional profiling of metagenomes, or quantify the abundance of metabolic pathways from raw reads.
 homepage: https://github.com/lijingdi/iqKM
+metadata:
+  docker_image: "quay.io/biocontainers/iqkm:1.0--pyhdfd78af_0"
 ---
-
 
 # iqkm
 

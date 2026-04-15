@@ -2,8 +2,9 @@
 name: medaka
 description: Medaka creates consensus sequences and identifies variants from Nanopore sequencing data using neural networks applied to basecalled reads. Use when user asks to polish a draft assembly, generate consensus sequences, or call variants from Nanopore data.
 homepage: https://github.com/nanoporetech/medaka
+metadata:
+  docker_image: "quay.io/biocontainers/medaka:2.2.0--py311h1d3aea1_0"
 ---
-
 
 # medaka
 

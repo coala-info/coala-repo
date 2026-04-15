@@ -4,7 +4,6 @@ description: This tool provides annotation data for mouse gene locations, includ
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouseCHRLOC.html
 ---
 
-
 # bioconductor-mousechrloc
 
 name: bioconductor-mousechrloc

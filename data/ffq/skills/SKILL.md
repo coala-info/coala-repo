@@ -2,8 +2,9 @@
 name: ffq
 description: The ffq tool retrieves sequencing metadata and file download links from biological accessions or DOIs. Use when user asks to retrieve sequencing metadata, find file download links for biological accessions, or discover data associated with a DOI.
 homepage: https://github.com/pachterlab/ffq
+metadata:
+  docker_image: "quay.io/biocontainers/ffq:0.3.1--pyhdfd78af_0"
 ---
-
 
 # ffq
 

@@ -2,8 +2,9 @@
 name: amrfior
 description: AMRfíor is an orchestration framework that identifies antimicrobial resistance genes in genomic data by running multiple alignment tools against curated databases. Use when user asks to identify AMR genes, configure search workflows with specific tools and databases, adjust detection thresholds without rerunning alignments, or extract sequences matching resistance markers.
 homepage: https://github.com/NickJD/AMRfior
+metadata:
+  docker_image: "quay.io/biocontainers/amrfior:0.5.1--pyhdfd78af_0"
 ---
-
 
 # amrfior
 

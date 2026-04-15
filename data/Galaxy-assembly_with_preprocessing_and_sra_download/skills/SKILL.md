@@ -1,7 +1,9 @@
 ---
 name: assembly_with_preprocessing_and_sra_download
-description: "This workflow automates the retrieval of Illumina and Oxford Nanopore sequencing data from the SRA to perform quality control, preprocessing with fastp and NanoPlot, and hybrid de novo assembly using Unicycler. Use this skill when you need to generate high-quality bacterial or small genome assemblies by combining short-read accuracy with long-read connectivity directly from public accessions."
-homepage: https://workflowhub.eu/workflows/1616
+description: This workflow automates the retrieval of Illumina and Oxford Nanopore sequencing data from the SRA to perform quality control, preprocessing with fastp and NanoPlot, and hybrid de novo assembly using Unicycler. Use this skill when you need to generate high-quality bacterial or small genome assemblies by combining short-read accuracy with long-read connectivity directly from public accessions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # assembly_with_preprocessing_and_sra_download

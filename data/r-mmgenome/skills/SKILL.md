@@ -4,7 +4,6 @@ description: The r-mmgenome package provides tools for extracting individual gen
 homepage: https://cran.r-project.org/web/packages/mmgenome/index.html
 ---
 
-
 # r-mmgenome
 
 name: r-mmgenome

@@ -4,7 +4,6 @@ description: MSstats performs statistical analysis of quantitative proteomics da
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstats.html
 ---
 
-
 # bioconductor-msstats
 
 ## Overview

@@ -2,6 +2,8 @@
 name: pbaa
 description: The pbaa tool performs reference-aided clustering and consensus generation for PacBio HiFi amplicon data to resolve complex mixtures of alleles. Use when user asks to cluster HiFi reads using guide sequences, generate consensus sequences for amplicons, or visualize read assignments in a BAM file.
 homepage: https://github.com/PacificBiosciences/pbAA
+metadata:
+  docker_image: "quay.io/biocontainers/pbaa:1.2.0--h9ee0642_0"
 ---
 
 # pbaa

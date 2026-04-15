@@ -4,7 +4,6 @@ description: This tool analyzes high-throughput flow cytometry data organized in
 homepage: https://bioconductor.org/packages/3.8/bioc/html/plateCore.html
 ---
 
-
 # bioconductor-platecore
 
 name: bioconductor-platecore

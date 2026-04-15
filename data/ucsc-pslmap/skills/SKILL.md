@@ -2,8 +2,9 @@
 name: ucsc-pslmap
 description: ucsc-pslmap projects alignments from one genomic coordinate system to another. Use when user asks to map alignments, lift alignments, project alignments, or map alignments across different genomic backgrounds or species.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0"
 ---
-
 
 # ucsc-pslmap
 

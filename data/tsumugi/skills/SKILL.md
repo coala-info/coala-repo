@@ -1,7 +1,9 @@
 ---
 name: tsumugi
-description: "TSUMUGI identifies gene modules and functional relationships by analyzing phenotypic similarities in knockout mouse data. Use when user asks to identify gene clusters based on shared phenotypes, build network graphs for visualization, or find human disease models using Mammalian Phenotype Ontology data."
+description: TSUMUGI identifies gene modules and functional relationships by analyzing phenotypic similarities in knockout mouse data. Use when user asks to identify gene clusters based on shared phenotypes, build network graphs for visualization, or find human disease models using Mammalian Phenotype Ontology data.
 homepage: https://github.com/akikuno/TSUMUGI-dev
+metadata:
+  docker_image: "quay.io/biocontainers/tsumugi:1.0.2--pyhdfd78af_0"
 ---
 
 # tsumugi

@@ -4,7 +4,6 @@ description: This tool creates and forges BSgenome data packages for efficient g
 homepage: https://bioconductor.org/packages/release/bioc/html/BSgenomeForge.html
 ---
 
-
 # bioconductor-bsgenomeforge
 
 name: bioconductor-bsgenomeforge

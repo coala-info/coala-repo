@@ -2,8 +2,9 @@
 name: esme_mvapich_4_0
 description: This tool provides a curated bundle of high-performance computing libraries and climate science software optimized for the MVAPICH MPI implementation. Use when user asks to verify library installations, check netCDF or ESMF configurations, and run MPI performance benchmarks.
 homepage: https://github.com/j34ni/bioconda-recipes
+metadata:
+  docker_image: "quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0"
 ---
-
 
 # esme_mvapich_4_0
 

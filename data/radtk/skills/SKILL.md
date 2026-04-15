@@ -2,6 +2,8 @@
 name: radtk
 description: radtk is a performant toolkit for processing and inspecting binary RAD files. Use when user asks to concatenate multiple RAD files, split a RAD file into multiple outputs, or view a textual representation of RAD file records.
 homepage: https://github.com/COMBINE-lab/radtk
+metadata:
+  docker_image: "quay.io/biocontainers/radtk:0.2.0--ha6fb395_1"
 ---
 
 # radtk

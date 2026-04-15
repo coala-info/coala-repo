@@ -2,8 +2,9 @@
 name: parsinsert
 description: ParsInsert places microbial sequences into established phylogenetic frameworks to provide taxonomic assignments and updated tree structures. Use when user asks to insert sequences into a reference tree, classify microbial reads, or perform parsimonious phylogenetic placement.
 homepage: https://github.com/dark2dark/parsinsert
+metadata:
+  docker_image: "biocontainers/parsinsert:v1.04-4-deb_cv1"
 ---
-
 
 # parsinsert
 

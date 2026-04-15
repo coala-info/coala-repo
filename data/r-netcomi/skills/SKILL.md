@@ -4,7 +4,6 @@ description: NetCoMi provides a comprehensive workflow for the construction, ana
 homepage: https://cran.r-project.org/web/packages/netcomi/index.html
 ---
 
-
 # r-netcomi
 
 name: r-netcomi

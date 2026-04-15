@@ -1,10 +1,12 @@
 ---
 name: scrna-plant-analysis
-description: "This Galaxy workflow performs downstream single-cell RNA-seq analysis for plant transcriptomics by processing CSV count matrices through ScanPy tools for filtering, normalization, and clustering. Use this skill when you need to identify distinct cell populations and compare gene expression profiles between wild-type and mutant plant tissues using single-cell transcriptomic data."
-homepage: https://workflowhub.eu/workflows/1485
+description: This Galaxy workflow performs downstream single-cell RNA-seq analysis for plant transcriptomics by processing CSV count matrices through ScanPy tools for filtering, normalization, and clustering. Use this skill when you need to identify distinct cell populations and compare gene expression profiles between wild-type and mutant plant tissues using single-cell transcriptomic data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# scRNA Plant Analysis
+# scrna-plant-analysis
 
 ## Overview
 

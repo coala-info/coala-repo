@@ -4,7 +4,6 @@ description: This tool performs gene set enrichment analysis using moment-based 
 homepage: https://bioconductor.org/packages/release/bioc/html/npGSEA.html
 ---
 
-
 # bioconductor-npgsea
 
 name: bioconductor-npgsea

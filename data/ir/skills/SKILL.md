@@ -2,8 +2,9 @@
 name: ir
 description: This tool calculates the repetitiveness of DNA sequences. Use when user asks to analyze DNA sequences for repetitive elements.
 homepage: http://guanine.evolbio.mpg.de/cgi-bin/ir/ir.cgi.pl
+metadata:
+  docker_image: "quay.io/biocontainers/ir:2.8.0--h7b50bb2_8"
 ---
-
 
 # ir
 

@@ -1,10 +1,12 @@
 ---
 name: exome-seq-training-pre-mapped-w-cached-ref
-description: "This workflow processes pre-mapped exome sequencing data from a family trio using Samtools, FreeBayes, SnpEff, and GEMINI to identify and annotate genetic variants. Use this skill when you need to identify candidate pathogenic mutations in a proband by analyzing inheritance patterns across a family trio to diagnose potential genetic disorders."
-homepage: https://workflowhub.eu/workflows/1672
+description: This workflow processes pre-mapped exome sequencing data from a family trio using Samtools, FreeBayes, SnpEff, and GEMINI to identify and annotate genetic variants. Use this skill when you need to identify candidate pathogenic mutations in a proband by analyzing inheritance patterns across a family trio to diagnose potential genetic disorders.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Exome Seq Training Pre-Mapped W Cached Ref
+# exome-seq-training-pre-mapped-w-cached-ref
 
 ## Overview
 

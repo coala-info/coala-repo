@@ -2,8 +2,9 @@
 name: dfast
 description: DFAST is a high-speed annotation pipeline for identifying genomic features and assigning functional annotations to prokaryotic genomes. Use when user asks to annotate a genome assembly, generate GFF3 or GenBank files, or prepare data for DDBJ submission.
 homepage: https://dfast.nig.ac.jp
+metadata:
+  docker_image: "quay.io/biocontainers/dfast:1.3.8--h5ca1c30_0"
 ---
-
 
 # dfast
 

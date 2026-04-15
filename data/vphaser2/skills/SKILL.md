@@ -1,9 +1,10 @@
 ---
 name: vphaser2
-description: "vphaser2 identifies genetic variants in genetically heterogeneous populations from ultra-deep sequence data. Use when user asks to call variants in mixed populations from deep sequencing data."
+description: vphaser2 identifies genetic variants in genetically heterogeneous populations from ultra-deep sequence data. Use when user asks to call variants in mixed populations from deep sequencing data.
 homepage: https://anaconda.org/channels/bioconda/packages/vphaser2/overview
+metadata:
+  docker_image: "quay.io/biocontainers/vphaser2:2.0--h2bd4fab_16"
 ---
-
 
 # vphaser2
 

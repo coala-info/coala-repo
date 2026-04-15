@@ -4,7 +4,6 @@ description: SCnorm performs robust normalization of single-cell RNA-seq data by
 homepage: https://bioconductor.org/packages/release/bioc/html/SCnorm.html
 ---
 
-
 # bioconductor-scnorm
 
 name: bioconductor-scnorm

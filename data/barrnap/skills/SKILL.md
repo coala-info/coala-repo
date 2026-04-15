@@ -1,9 +1,10 @@
 ---
 name: barrnap
-description: "Barrnap predicts the location of ribosomal RNA and other RNA features in genomic sequences using profile Hidden Markov Models. Use when user asks to identify rRNA genes, locate RNA features in a FASTA file, or annotate ribosomal subunits in genomic assemblies."
+description: Barrnap predicts the location of ribosomal RNA and other RNA features in genomic sequences using profile Hidden Markov Models. Use when user asks to identify rRNA genes, locate RNA features in a FASTA file, or annotate ribosomal subunits in genomic assemblies.
 homepage: https://github.com/tseemann/barrnap
+metadata:
+  docker_image: "quay.io/biocontainers/barrnap:0.9--1"
 ---
-
 
 # barrnap
 

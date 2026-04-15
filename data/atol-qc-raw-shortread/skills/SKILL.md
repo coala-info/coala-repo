@@ -2,8 +2,9 @@
 name: atol-qc-raw-shortread
 description: This tool performs quality control, adapter trimming, and filtering for Illumina short-read sequencing data. Use when user asks to process raw FASTQ files, trim adapters from Hi-C libraries, perform quality-based filtering, or generate read processing statistics.
 homepage: https://github.com/TomHarrop/atol-qc-raw-shortread
+metadata:
+  docker_image: "quay.io/biocontainers/atol-qc-raw-shortread:0.2.2--pyhdfd78af_0"
 ---
-
 
 # atol-qc-raw-shortread
 

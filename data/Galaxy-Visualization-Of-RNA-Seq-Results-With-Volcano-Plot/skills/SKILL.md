@@ -1,10 +1,12 @@
 ---
 name: visualization-of-rna-seq-results-with-volcano-plot
-description: "This transcriptomics workflow processes differential expression results and specific gene lists using the Volcano Plot tool to generate comprehensive PDF visualizations. Use this skill when you need to identify statistically significant gene expression changes and visualize the relationship between fold change and p-values across experimental conditions."
-homepage: https://workflowhub.eu/workflows/1709
+description: This transcriptomics workflow processes differential expression results and specific gene lists using the Volcano Plot tool to generate comprehensive PDF visualizations. Use this skill when you need to identify statistically significant gene expression changes and visualize the relationship between fold change and p-values across experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Visualization Of RNA-Seq Results With Volcano Plot
+# visualization-of-rna-seq-results-with-volcano-plot
 
 ## Overview
 

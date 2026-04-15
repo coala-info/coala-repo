@@ -4,7 +4,6 @@ description: This tool performs meta-analysis of microarray data to combine resu
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneMeta.html
 ---
 
-
 # bioconductor-genemeta
 
 name: bioconductor-genemeta

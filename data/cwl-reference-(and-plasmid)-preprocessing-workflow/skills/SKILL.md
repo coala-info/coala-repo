@@ -1,9 +1,12 @@
 ---
 name: reference-and-plasmid-preprocessing-workflow
-description: "This bioinformatics workflow processes genomic reference data by fetching GenBank files from NCBI or merging provided plasmid sequences to generate unified FASTA and GFF3 files. Use this skill when preparing comprehensive reference genomes that integrate chromosomal and plasmid sequences for downstream comparative genomics or metabolic modeling."
-homepage: https://workflowhub.eu/workflows/1818
+description: This bioinformatics workflow processes genomic reference data by fetching GenBank files from NCBI or merging provided plasmid sequences to generate unified FASTA and GFF3 files. Use this skill when preparing comprehensive reference genomes that integrate chromosomal and plasmid sequences for downstream comparative genomics or metabolic modeling.
+homepage: https://www.wur.nl/en/research-results/chair-groups/agrotechnology-and-food-sciences/biomolecular-sciences/laboratory-of-systems-and-synthetic-biology.htm
+metadata:
+  docker_image: "N/A"
 ---
-# reference (and plasmid) preprocessing workflow
+
+# reference-and-plasmid-preprocessing-workflow
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: ucsc-hubpubliccheck
 description: The `ucsc-hubpubliccheck` tool verifies label consistency between a Track Hub's configuration and the `hubPublic` database. Use when user asks to check Track Hub label consistency, validate Track Hub label metadata, or synchronize Track Hub labels.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-hubpubliccheck:482--h0b57e2e_0"
 ---
-
 
 # ucsc-hubpubliccheck
 

@@ -2,8 +2,9 @@
 name: ucsc-rowstocols
 description: The `ucsc-rowstocols` tool transposes the rows and columns of a delimited text file. Use when user asks to transpose a file, rotate a data matrix, switch between wide and long data formats, or convert rows to columns.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-rowstocols:482--h0b57e2e_0"
 ---
-
 
 # ucsc-rowstocols
 

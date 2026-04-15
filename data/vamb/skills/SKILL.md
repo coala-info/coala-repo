@@ -2,6 +2,8 @@
 name: vamb
 description: Vamb is a metagenomic binning tool that uses deep learning to group contigs into bins based on sequence composition and co-abundance patterns. Use when user asks to bin metagenomic contigs, perform semi-supervised taxonomic binning, or refine taxonomic predictions using composition and abundance data.
 homepage: https://github.com/RasmussenLab/vamb
+metadata:
+  docker_image: "quay.io/biocontainers/vamb:5.0.4--pyhdfd78af_0"
 ---
 
 # vamb

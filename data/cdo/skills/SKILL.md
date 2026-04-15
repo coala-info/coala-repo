@@ -2,8 +2,9 @@
 name: cdo
 description: CDO provides tools for manipulating and analyzing climate and NWP model data. Use when user asks to merge, resample, calculate statistics, extract subsets, perform arithmetic operations, or convert climate data formats.
 homepage: https://github.com/cxong/cdogs-sdl
+metadata:
+  docker_image: "quay.io/biocontainers/cdo:2.0.0"
 ---
-
 
 # cdo
 

@@ -4,7 +4,6 @@ description: This tool provides comprehensive annotation data for mapping betwee
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine.db.html
 ---
 
-
 # bioconductor-canine.db
 
 name: bioconductor-canine.db

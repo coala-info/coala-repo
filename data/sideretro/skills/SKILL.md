@@ -2,8 +2,9 @@
 name: sideretro
 description: sideRETRO identifies somatic insertions of de novo retrocopies within genomic data by analyzing discordant and abnormal reads. Use when user asks to process alignment files to extract abnormal reads, merge and call retrocopy insertion events, or generate a VCF file of detected retrotranspositions.
 homepage: https://github.com/galantelab/sideRETRO
+metadata:
+  docker_image: "quay.io/biocontainers/sideretro:1.1.6--hb728cf0_0"
 ---
-
 
 # sideretro
 

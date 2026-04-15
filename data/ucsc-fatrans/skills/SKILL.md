@@ -2,8 +2,9 @@
 name: ucsc-fatrans
 description: The ucsc-fatrans tool translates DNA sequences from FASTA format into amino acid sequences. Use when user asks to translate DNA sequences, generate protein products, translate in a specific reading frame, perform six-frame translation, or find open reading frames.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fatrans:482--h0b57e2e_0"
 ---
-
 
 # ucsc-fatrans
 

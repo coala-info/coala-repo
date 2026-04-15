@@ -4,7 +4,6 @@ description: This tool provides a programmatic interface to explore and analyze 
 homepage: https://bioconductor.org/packages/release/bioc/html/rsemmed.html
 ---
 
-
 # bioconductor-rsemmed
 
 name: bioconductor-rsemmed

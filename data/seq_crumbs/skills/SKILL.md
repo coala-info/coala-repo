@@ -2,8 +2,9 @@
 name: seq_crumbs
 description: seq_crumbs is a collection of lightweight bioinformatics utilities designed for processing and filtering sequence data within Unix pipelines. Use when user asks to filter reads by quality or length, trim adapter sequences, convert sequence formats, or synchronize paired-end data.
 homepage: https://github.com/JoseBlanca/seq_crumbs
+metadata:
+  docker_image: "quay.io/biocontainers/sequana_pipetools:1.3.1--pyhdfd78af_0"
 ---
-
 
 # seq_crumbs
 

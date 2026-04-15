@@ -4,7 +4,6 @@ description: The EnrichmentBrowser package provides a unified pipeline for perfo
 homepage: https://bioconductor.org/packages/release/bioc/html/EnrichmentBrowser.html
 ---
 
-
 # bioconductor-enrichmentbrowser
 
 ## Overview

@@ -4,7 +4,6 @@ description: The ks package provides tools for multivariate kernel smoothing and
 homepage: https://cloud.r-project.org/web/packages/ks/index.html
 ---
 
-
 # r-ks
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs mixture model analysis and normalization for non
 homepage: https://bioconductor.org/packages/release/bioc/html/metabomxtr.html
 ---
 
-
 # bioconductor-metabomxtr
 
 name: bioconductor-metabomxtr

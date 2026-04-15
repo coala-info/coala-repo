@@ -1,7 +1,9 @@
 ---
 name: mzspeclib
-description: "This tool handles the creation, validation, and manipulation of mzSpecLib spectral library files. Use when user asks to create mzSpecLib spectral libraries, validate mzSpecLib spectral libraries, or convert spectral libraries to the mzSpecLib format."
+description: This tool handles the creation, validation, and manipulation of mzSpecLib spectral library files. Use when user asks to create mzSpecLib spectral libraries, validate mzSpecLib spectral libraries, or convert spectral libraries to the mzSpecLib format.
 homepage: https://github.com/HUPO-PSI/mzSpecLib
+metadata:
+  docker_image: "quay.io/biocontainers/mzspeclib:1.0.7--pyhdfd78af_0"
 ---
 
 # mzspeclib

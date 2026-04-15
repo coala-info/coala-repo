@@ -4,7 +4,6 @@ description: This package performs hybrid multiple hypothesis testing by combini
 homepage: https://bioconductor.org/packages/release/bioc/html/HybridMTest.html
 ---
 
-
 # bioconductor-hybridmtest
 
 ## Overview

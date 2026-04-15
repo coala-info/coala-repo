@@ -4,7 +4,6 @@ description: This package provides annotation data for the Feinberg Mouse MM8 ME
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.feinberg.mm8.me.hx1.html
 ---
 
-
 # bioconductor-pd.feinberg.mm8.me.hx1
 
 name: bioconductor-pd.feinberg.mm8.me.hx1

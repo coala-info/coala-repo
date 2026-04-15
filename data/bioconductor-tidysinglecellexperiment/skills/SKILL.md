@@ -4,7 +4,6 @@ description: This tool provides a bridge between Bioconductor's SingleCellExperi
 homepage: https://bioconductor.org/packages/release/bioc/html/tidySingleCellExperiment.html
 ---
 
-
 # bioconductor-tidysinglecellexperiment
 
 name: bioconductor-tidysinglecellexperiment

@@ -4,7 +4,6 @@ description: This tool performs gene-level GWAS meta-analysis by aggregating var
 homepage: https://bioconductor.org/packages/release/bioc/html/rqt.html
 ---
 
-
 # bioconductor-rqt
 
 name: bioconductor-rqt

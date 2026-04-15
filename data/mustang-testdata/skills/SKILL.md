@@ -4,7 +4,6 @@ description: MUSTANG performs multiple structural alignment of protein structure
 homepage: http://lcb.infotech.monash.edu.au/mustang/
 ---
 
-
 # mustang-testdata
 
 ## Overview

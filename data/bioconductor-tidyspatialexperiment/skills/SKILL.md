@@ -4,7 +4,6 @@ description: This tool provides a tidyverse-compatible interface for SpatialExpe
 homepage: https://bioconductor.org/packages/release/bioc/html/tidySpatialExperiment.html
 ---
 
-
 # bioconductor-tidyspatialexperiment
 
 ## Overview

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-scgps
-description: "bioconductor-scgps provides a framework for stable clustering and relationship prediction between cell subpopulations in single-cell transcriptomics data. Use when user asks to identify stable cell clusters using bagging and bootstrapping, find cluster marker genes, or estimate transition potentials between subpopulations using supervised learning."
+description: bioconductor-scgps provides a framework for stable clustering and relationship prediction between cell subpopulations in single-cell transcriptomics data. Use when user asks to identify stable cell clusters using bagging and bootstrapping, find cluster marker genes, or estimate transition potentials between subpopulations using supervised learning.
 homepage: https://bioconductor.org/packages/release/bioc/html/scGPS.html
 ---
-
 
 # bioconductor-scgps
 

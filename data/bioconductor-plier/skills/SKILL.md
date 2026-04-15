@@ -4,7 +4,6 @@ description: The bioconductor-plier package implements the Affymetrix PLIER algo
 homepage: https://bioconductor.org/packages/release/bioc/html/plier.html
 ---
 
-
 # bioconductor-plier
 
 ## Overview

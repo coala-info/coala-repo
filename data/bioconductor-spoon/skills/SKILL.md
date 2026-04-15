@@ -4,7 +4,6 @@ description: The spoon package mitigates the mean-variance technical bias in spa
 homepage: https://bioconductor.org/packages/release/bioc/html/spoon.html
 ---
 
-
 # bioconductor-spoon
 
 ## Overview

@@ -4,7 +4,6 @@ description: The motifStack package provides flexible graphical representations 
 homepage: https://bioconductor.org/packages/release/bioc/html/motifStack.html
 ---
 
-
 # bioconductor-motifstack
 
 ## Overview

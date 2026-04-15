@@ -2,8 +2,9 @@
 name: vitap
 description: VITAP classifies viral genetic fragments and assigns taxonomic lineages using alignment and graph algorithms. Use when user asks to classify viral sequences, assign viral taxonomy, or update viral databases.
 homepage: https://github.com/DrKaiyangZheng/VITAP/
+metadata:
+  docker_image: "quay.io/biocontainers/vitap:1.10--pyhdfd78af_0"
 ---
-
 
 # vitap
 

@@ -4,7 +4,6 @@ description: Bioconductor-ccplotr visualizes cell-cell interactions predicted fr
 homepage: https://bioconductor.org/packages/release/bioc/html/CCPlotR.html
 ---
 
-
 # bioconductor-ccplotr
 
 name: bioconductor-ccplotr

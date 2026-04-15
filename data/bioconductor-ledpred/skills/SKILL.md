@@ -4,7 +4,6 @@ description: This tool predicts cis-regulatory modules by building Support Vecto
 homepage: https://bioconductor.org/packages/release/bioc/html/LedPred.html
 ---
 
-
 # bioconductor-ledpred
 
 name: bioconductor-ledpred

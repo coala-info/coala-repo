@@ -4,7 +4,6 @@ description: This package provides a statistical framework for determining the o
 homepage: https://bioconductor.org/packages/release/bioc/html/selectKSigs.html
 ---
 
-
 # bioconductor-selectksigs
 
 ## Overview

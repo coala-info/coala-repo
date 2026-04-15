@@ -4,7 +4,6 @@ description: This Bioconductor package provides SQLite-based annotation data for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MmAgilentDesign026655.db.html
 ---
 
-
 # bioconductor-mmagilentdesign026655.db
 
 ## Overview

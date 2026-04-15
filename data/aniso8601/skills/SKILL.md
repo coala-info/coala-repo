@@ -1,9 +1,10 @@
 ---
 name: aniso8601
-description: "aniso8601 is a Python library for parsing ISO 8601 strings into native Python date and time objects. Use when user asks to parse ISO 8601 strings, handle fractional time elements, convert durations and intervals to Python objects, or process repeating date patterns."
+description: aniso8601 is a Python library for parsing ISO 8601 strings into native Python date and time objects. Use when user asks to parse ISO 8601 strings, handle fractional time elements, convert durations and intervals to Python objects, or process repeating date patterns.
 homepage: https://github.com/sloanlance/aniso8601
+metadata:
+  docker_image: "quay.io/biocontainers/aniso8601:1.1.0--py35_0"
 ---
-
 
 # aniso8601
 

@@ -2,8 +2,9 @@
 name: gcta
 description: GCTA analyzes complex trait variation and estimates heritability using large-scale genome-wide association study data. Use when user asks to calculate genetic relationship matrices, estimate SNP-based heritability, perform mixed linear model association analysis, or conduct conditional and joint analysis of summary statistics.
 homepage: https://cnsgenomics.com/software/gcta/
+metadata:
+  docker_image: "quay.io/biocontainers/gcta:1.94.1--h9ee0642_0"
 ---
-
 
 # gcta
 

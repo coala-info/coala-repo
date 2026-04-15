@@ -4,7 +4,6 @@ description: This package provides the Java and Scala libraries required to supp
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RGMQLlib.html
 ---
 
-
 # bioconductor-rgmqllib
 
 name: bioconductor-rgmqllib

@@ -1,9 +1,10 @@
 ---
 name: macaron
-description: "MACARON identifies and re-annotates phased variants within the same codon to provide accurate protein-level effect predictions. Use when user asks to re-annotate phased variants, correct amino acid change predictions for adjacent SNVs, or integrate GATK and SnpEff for functional genomic annotation."
+description: MACARON identifies and re-annotates phased variants within the same codon to provide accurate protein-level effect predictions. Use when user asks to re-annotate phased variants, correct amino acid change predictions for adjacent SNVs, or integrate GATK and SnpEff for functional genomic annotation.
 homepage: https://github.com/waqasuddinkhan/MACARON-GenMed-LabEx
+metadata:
+  docker_image: "quay.io/biocontainers/macaron:1.0--pyh864c0ab_1"
 ---
-
 
 # macaron
 

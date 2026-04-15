@@ -2,8 +2,9 @@
 name: jaligner
 description: JAligner performs local and global alignments of biological sequences using the Smith-Waterman algorithm with affine gap penalties. Use when user asks to align two sequences, apply substitution matrices, or configure gap opening and extension penalties.
 homepage: https://github.com/ahmedmoustafa/JAligner
+metadata:
+  docker_image: "biocontainers/jaligner:v1.0dfsg-6-deb_cv1"
 ---
-
 
 # jaligner
 

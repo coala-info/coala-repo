@@ -4,7 +4,6 @@ description: This tool visualizes KEGG and Biocarta pathways as graphs and maps 
 homepage: https://bioconductor.org/packages/release/bioc/html/pathRender.html
 ---
 
-
 # bioconductor-pathrender
 
 name: bioconductor-pathrender

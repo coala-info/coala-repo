@@ -4,7 +4,6 @@ description: This package provides pre-compiled genomic background models and mo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PWMEnrich.Dmelanogaster.background.html
 ---
 
-
 # bioconductor-pwmenrich.dmelanogaster.background
 
 name: bioconductor-pwmenrich.dmelanogaster.background

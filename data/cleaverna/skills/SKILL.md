@@ -2,8 +2,9 @@
 name: cleaverna
 description: CleaveRNA predicts the cleavage efficiency of DNAzymes on target RNA sequences using machine learning and structural features. Use when user asks to predict DNAzyme cleavage sites, evaluate candidate site accessibility, or train custom models using experimental cleavage data.
 homepage: https://github.com/reyhaneh-tavakoli/CleaveRNA
+metadata:
+  docker_image: "quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0"
 ---
-
 
 # cleaverna
 

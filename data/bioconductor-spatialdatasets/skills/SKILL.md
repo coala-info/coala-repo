@@ -4,7 +4,6 @@ description: This package provides a curated collection of publicly available sp
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SpatialDatasets.html
 ---
 
-
 # bioconductor-spatialdatasets
 
 ## Overview

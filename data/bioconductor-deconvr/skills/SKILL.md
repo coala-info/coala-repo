@@ -4,7 +4,6 @@ description: The deconvR package performs computational deconvolution of bulk om
 homepage: https://bioconductor.org/packages/release/bioc/html/deconvR.html
 ---
 
-
 # bioconductor-deconvr
 
 ## Overview

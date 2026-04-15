@@ -2,6 +2,8 @@
 name: rd-analyzer
 description: RD-Analyzer detects Regions of Difference in Mycobacterium tuberculosis complex genomes to identify lineages and strains from raw sequence reads. Use when user asks to detect genomic deletions, identify MTBC strains, or analyze custom RD markers using sequence data.
 homepage: https://github.com/xiaeryu/RD-Analyzer
+metadata:
+  docker_image: "quay.io/biocontainers/rd-analyzer:1.01--hdfd78af_0"
 ---
 
 # rd-analyzer

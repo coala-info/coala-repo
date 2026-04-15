@@ -4,7 +4,6 @@ description: This package provides the genomic database and annotation tables re
 homepage: https://cran.r-project.org/web/packages/ngsplotdb-hg19/index.html
 ---
 
-
 # r-ngsplotdb-hg19
 
 name: r-ngsplotdb-hg19

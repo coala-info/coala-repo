@@ -4,7 +4,6 @@ description: This package provides access to pre-trained model weights and file 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/crisprScoreData.html
 ---
 
-
 # bioconductor-crisprscoredata
 
 name: bioconductor-crisprscoredata

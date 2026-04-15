@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-braker3
-description: "This Galaxy workflow performs automated genome annotation by integrating a masked genome sequence, RNA-seq alignments, and protein evidence using Braker3, BUSCO, and JBrowse. Use this skill when you need to generate high-quality structural gene predictions for a newly sequenced eukaryotic genome and visualize the results alongside comprehensive quality assessment metrics."
-homepage: https://workflowhub.eu/workflows/1509
+description: This Galaxy workflow performs automated genome annotation by integrating a masked genome sequence, RNA-seq alignments, and protein evidence using Braker3, BUSCO, and JBrowse. Use this skill when you need to generate high-quality structural gene predictions for a newly sequenced eukaryotic genome and visualize the results alongside comprehensive quality assessment metrics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome annotation with Braker3
+# genome-annotation-with-braker3
 
 ## Overview
 

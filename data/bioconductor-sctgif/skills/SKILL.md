@@ -4,7 +4,6 @@ description: This tool performs functional annotation of single-cell RNA-Seq dat
 homepage: https://bioconductor.org/packages/release/bioc/html/scTGIF.html
 ---
 
-
 # bioconductor-sctgif
 
 name: bioconductor-sctgif

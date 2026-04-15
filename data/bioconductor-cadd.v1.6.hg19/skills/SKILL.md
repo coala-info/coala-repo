@@ -4,7 +4,6 @@ description: This tool retrieves CADD v1.6 pathogenicity scores for human geneti
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cadd.v1.6.hg19.html
 ---
 
-
 # bioconductor-cadd.v1.6.hg19
 
 name: bioconductor-cadd.v1.6.hg19

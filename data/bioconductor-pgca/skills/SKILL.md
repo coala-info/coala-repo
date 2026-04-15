@@ -4,7 +4,6 @@ description: This tool implements the Protein Group Code Algorithm to merge prot
 homepage: https://bioconductor.org/packages/release/bioc/html/pgca.html
 ---
 
-
 # bioconductor-pgca
 
 name: bioconductor-pgca

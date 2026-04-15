@@ -4,7 +4,6 @@ description: This tool simplifies the creation and management of S3 generic func
 homepage: https://cloud.r-project.org/web/packages/R.methodsS3/index.html
 ---
 
-
 # r-r.methodss3
 
 name: r-r.methodss3

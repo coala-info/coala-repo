@@ -2,6 +2,8 @@
 name: epydoc
 description: Generates API documentation for Python projects. Use when user asks to generate documentation for Python code.
 homepage: https://github.com/nltk/epydoc
+metadata:
+  docker_image: "quay.io/biocontainers/epydoc:3.0.1--py27_0"
 ---
 
 # epydoc

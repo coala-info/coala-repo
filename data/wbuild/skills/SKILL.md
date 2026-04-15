@@ -2,8 +2,9 @@
 name: wbuild
 description: wbuild streamlines the creation of R-based report galleries by generating a Snakemake workflow from R-markdown files. Use when user asks to create R-based report galleries, initialize a wbuild project, generate a sample project, build R-markdown reports, or organize R scripts for web output.
 homepage: https://github.com/gagneurlab/wBuild
+metadata:
+  docker_image: "quay.io/biocontainers/wbuild:1.8.2--pyhdfd78af_0"
 ---
-
 
 # wbuild
 

@@ -2,6 +2,8 @@
 name: fgsv
 description: The fgsv toolkit detects and aggregates genomic breakpoint evidence from sequencing alignments to identify structural variants. Use when user asks to detect structural variant breakpoints, aggregate and merge breakpoint evidence, or convert structural variant data to BEDPE format.
 homepage: https://github.com/fulcrumgenomics/fgsv
+metadata:
+  docker_image: "quay.io/biocontainers/fgsv:0.2.1--hdfd78af_1"
 ---
 
 # fgsv

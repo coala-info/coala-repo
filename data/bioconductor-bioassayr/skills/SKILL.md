@@ -4,7 +4,6 @@ description: This tool analyzes and manages small molecule bioactivity data from
 homepage: https://bioconductor.org/packages/release/bioc/html/bioassayR.html
 ---
 
-
 # bioconductor-bioassayr
 
 name: bioconductor-bioassayr

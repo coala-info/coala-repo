@@ -2,8 +2,9 @@
 name: k8
 description: k8 is a specialized JavaScript shell built on the Google V8 engine designed for high-performance, synchronous CLI text processing and bioinformatics tasks. Use when user asks to run JavaScript scripts for heavy data processing, perform efficient file I/O on large datasets, or calculate reverse complements of DNA sequences.
 homepage: https://github.com/attractivechaos/k8
+metadata:
+  docker_image: "quay.io/biocontainers/k8:1.2--he8db53b_6"
 ---
-
 
 # k8
 

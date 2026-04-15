@@ -2,8 +2,9 @@
 name: extract-sv-reads
 description: This tool isolates discordant and split reads from coordinate-sorted BAM or CRAM files to provide evidence for structural variations. Use when user asks to extract reads for structural variant discovery, generate splitter and discordant BAM files, or filter alignments for SV calling pipelines.
 homepage: https://github.com/hall-lab/extract_sv_reads
+metadata:
+  docker_image: "quay.io/biocontainers/extract-sv-reads:1.3.0--pl5321h9948957_6"
 ---
-
 
 # extract-sv-reads
 

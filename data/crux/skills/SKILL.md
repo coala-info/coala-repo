@@ -2,6 +2,8 @@
 name: crux
 description: Crux is a framework for building cross-platform applications with a shared Rust core and native UI shells. Use when user asks to implement shared business logic in Rust, generate foreign language bindings for mobile or web, or manage side effects using a functional architecture.
 homepage: https://github.com/redbadger/crux
+metadata:
+  docker_image: "biocontainers/crux:v3.2_cv3"
 ---
 
 # crux

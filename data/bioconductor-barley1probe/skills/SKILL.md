@@ -4,7 +4,6 @@ description: This package provides probe sequence data and spatial coordinates f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/barley1probe.html
 ---
 
-
 # bioconductor-barley1probe
 
 name: bioconductor-barley1probe

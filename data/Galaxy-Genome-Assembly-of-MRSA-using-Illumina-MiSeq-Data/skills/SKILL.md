@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-of-mrsa-using-illumina-miseq-data
-description: "This workflow performs de novo genome assembly of MRSA from paired-end Illumina MiSeq data using fastp for preprocessing, Shovill for assembly, and Quast and Bandage for quality evaluation. Use this skill when you need to reconstruct a bacterial genome from short-read sequencing data and assess the structural integrity and quality of the resulting assembly."
-homepage: https://workflowhub.eu/workflows/1602
+description: This workflow performs de novo genome assembly of MRSA from paired-end Illumina MiSeq data using fastp for preprocessing, Shovill for assembly, and Quast and Bandage for quality evaluation. Use this skill when you need to reconstruct a bacterial genome from short-read sequencing data and assess the structural integrity and quality of the resulting assembly.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly of MRSA using Illumina MiSeq Data
+# genome-assembly-of-mrsa-using-illumina-miseq-data
 
 ## Overview
 

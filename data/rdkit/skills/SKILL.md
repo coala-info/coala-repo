@@ -2,8 +2,9 @@
 name: rdkit
 description: RDKit is a cheminformatics toolkit used to manipulate chemical structures, calculate molecular properties, and perform substructure searches. Use when user asks to process SMILES or SDF files, generate molecular fingerprints, calculate descriptors, or perform 3D conformer generation and molecular standardization.
 homepage: https://github.com/rdkit/rdkit
+metadata:
+  docker_image: "quay.io/biocontainers/rdkit:2021.03.4"
 ---
-
 
 # rdkit
 

@@ -2,8 +2,9 @@
 name: msaprobs
 description: MSAProbs is a protein multiple sequence alignment tool that uses pair hidden Markov models and partition functions to achieve high accuracy. Use when user asks to align protein sequences, generate alignments in FASTA or ClustalW format, or optimize alignment performance using multi-threading.
 homepage: http://msaprobs.sourceforge.net/homepage.htm
+metadata:
+  docker_image: "quay.io/biocontainers/msaprobs:0.9.7--h5ca1c30_5"
 ---
-
 
 # msaprobs
 

@@ -4,7 +4,6 @@ description: millefy is an R package for visualizing single-cell RNA-seq read co
 homepage: https://cran.r-project.org/web/packages/millefy/index.html
 ---
 
-
 # r-millefy
 
 ## Overview

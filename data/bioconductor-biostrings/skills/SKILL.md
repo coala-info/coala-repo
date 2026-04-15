@@ -4,7 +4,6 @@ description: Biostrings provides memory-efficient infrastructure for representin
 homepage: https://bioconductor.org/packages/release/bioc/html/Biostrings.html
 ---
 
-
 # bioconductor-biostrings
 
 name: bioconductor-biostrings

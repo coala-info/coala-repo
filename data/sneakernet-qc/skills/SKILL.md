@@ -2,6 +2,8 @@
 name: sneakernet-qc
 description: sneakernet-qc automates the QA/QC process for primary genomic sequencing data by transforming raw reads into structured project directories and executing analysis plugins. Use when user asks to initialize project directories from raw sequencer output, run the standard suite of genomic analysis plugins, or skip specific pipeline steps like data egress.
 homepage: https://github.com/lskatz/sneakernet
+metadata:
+  docker_image: "quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0"
 ---
 
 # sneakernet-qc

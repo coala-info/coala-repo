@@ -1,10 +1,12 @@
 ---
 name: end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms
-description: "This Galaxy workflow predicts in-silico EI+ mass spectra from SMILES strings using OpenBabel for conformer generation, xtb for molecular optimization, and the QCxMS suite for semi-empirical quantum chemical simulations. Use this skill when you need to generate reference mass spectra for identifying unknown compounds in GC-MS metabolomics or exposomics studies where experimental standards are unavailable."
-homepage: https://workflowhub.eu/workflows/1597
+description: This Galaxy workflow predicts in-silico EI+ mass spectra from SMILES strings using OpenBabel for conformer generation, xtb for molecular optimization, and the QCxMS suite for semi-empirical quantum chemical simulations. Use this skill when you need to generate reference mass spectra for identifying unknown compounds in GC-MS metabolomics or exposomics studies where experimental standards are unavailable.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# End-to-end EI+ mass spectra prediction workflow using QCxMS
+# end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms
 
 ## Overview
 

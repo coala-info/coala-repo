@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the Rattus norv
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Rnorvegicus.UCSC.rn6.html
 ---
 
-
 # bioconductor-bsgenome.rnorvegicus.ucsc.rn6
 
 name: bioconductor-bsgenome.rnorvegicus.ucsc.rn6

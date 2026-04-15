@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Pan paniscus (B
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ppaniscus.UCSC.panPan1.html
 ---
 
-
 # bioconductor-bsgenome.ppaniscus.ucsc.panpan1
 
 name: bioconductor-bsgenome.ppaniscus.ucsc.panpan1

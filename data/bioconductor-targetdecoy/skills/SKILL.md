@@ -4,7 +4,6 @@ description: This tool generates diagnostic plots to evaluate the quality of the
 homepage: https://bioconductor.org/packages/release/bioc/html/TargetDecoy.html
 ---
 
-
 # bioconductor-targetdecoy
 
 name: bioconductor-targetdecoy

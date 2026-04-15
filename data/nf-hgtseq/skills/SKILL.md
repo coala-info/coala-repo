@@ -4,6 +4,8 @@ description: This pipeline identifies horizontal gene transfer by performing met
 homepage: https://github.com/nf-core/hgtseq
 ---
 
+# hgtseq
+
 ## Overview
 nf-core/hgtseq is designed to investigate horizontal gene transfer (HGT) events using next-generation sequencing data. It identifies non-host microbial sequences within read pairs and infers potential integration sites into the host genome by analyzing alignments against a reference.
 

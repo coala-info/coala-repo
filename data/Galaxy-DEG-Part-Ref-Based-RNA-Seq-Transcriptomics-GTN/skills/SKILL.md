@@ -1,10 +1,12 @@
 ---
 name: deg-part-ref-based-rna-seq-transcriptomics-gtn
-description: "This transcriptomics workflow processes RNA-Seq count collections and GTF annotations using DESeq2, goseq, and Pathview to identify differentially expressed genes and enriched biological pathways. Use this skill when you need to determine the statistical significance of gene expression changes across experimental conditions and visualize the resulting functional enrichment through heatmaps and pathway diagrams."
-homepage: https://workflowhub.eu/workflows/1713
+description: This transcriptomics workflow processes RNA-Seq count collections and GTF annotations using DESeq2, goseq, and Pathview to identify differentially expressed genes and enriched biological pathways. Use this skill when you need to determine the statistical significance of gene expression changes across experimental conditions and visualize the resulting functional enrichment through heatmaps and pathway diagrams.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# DEG Part - Ref Based RNA Seq - Transcriptomics - GTN
+# deg-part-ref-based-rna-seq-transcriptomics-gtn
 
 ## Overview
 

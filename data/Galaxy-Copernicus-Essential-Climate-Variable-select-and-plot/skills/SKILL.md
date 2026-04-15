@@ -1,10 +1,12 @@
 ---
 name: workflow-with-copernicus-essential-climate-variable-select-a
-description: "This climate science workflow retrieves Copernicus Essential Climate Variables, processes the NetCDF data using xarray tools, and generates scatterplots with ggplot2. Use this skill when you need to analyze long-term climate trends or visualize specific atmospheric and oceanic variables from the Copernicus Climate Data Store."
+description: This climate science workflow retrieves Copernicus Essential Climate Variables, processes the NetCDF data using xarray tools, and generates scatterplots with ggplot2. Use this skill when you need to analyze long-term climate trends or visualize specific atmospheric and oceanic variables from the Copernicus Climate Data Store.
 homepage: https://workflowhub.eu/workflows/46
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow with Copernicus Essential Climate Variable - select and plot
+# workflow-with-copernicus-essential-climate-variable-select-a
 
 ## Overview
 

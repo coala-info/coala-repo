@@ -4,7 +4,6 @@ description: CNVPanelizer detects copy number variations in amplicon-based targe
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVPanelizer.html
 ---
 
-
 # bioconductor-cnvpanelizer
 
 name: bioconductor-cnvpanelizer

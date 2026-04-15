@@ -4,7 +4,6 @@ description: RCSL is an R package for unsupervised clustering and trajectory inf
 homepage: https://bioconductor.org/packages/release/bioc/html/RCSL.html
 ---
 
-
 # bioconductor-rcsl
 
 ## Overview

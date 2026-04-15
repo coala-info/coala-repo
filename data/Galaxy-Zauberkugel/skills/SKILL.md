@@ -1,10 +1,12 @@
 ---
 name: zauberkugel
-description: "This cheminformatics workflow predicts protein targets for a query ligand by performing hydrogen addition with Open Babel, conformer generation via RDConf, and pharmacophore alignment against a library using Align-it. Use this skill when you need to identify potential protein targets for a bioactive molecule or investigate its polypharmacology through pharmacophore-based virtual screening."
-homepage: https://workflowhub.eu/workflows/1691
+description: This cheminformatics workflow predicts protein targets for a query ligand by performing hydrogen addition with Open Babel, conformer generation via RDConf, and pharmacophore alignment against a library using Align-it. Use this skill when you need to identify potential protein targets for a bioactive molecule or investigate its polypharmacology through pharmacophore-based virtual screening.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Zauberkugel
+# zauberkugel
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: capturing-mitoflashes
-description: "This workflow processes time-lapse microscopy images to automatically detect and measure mitoflashes using spot detection, nearest neighbor linking, and curve fitting tools. Use this skill when you need to quantify transient mitochondrial activity or track the dynamics of small, spot-like organelles across a temporal image sequence."
-homepage: https://workflowhub.eu/workflows/1499
+description: This workflow processes time-lapse microscopy images to automatically detect and measure mitoflashes using spot detection, nearest neighbor linking, and curve fitting tools. Use this skill when you need to quantify transient mitochondrial activity or track the dynamics of small, spot-like organelles across a temporal image sequence.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Capturing mitoflashes
+# capturing-mitoflashes
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs fold-change-specific Gene Ontology enrichment an
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FoldGO.html
 ---
 
-
 # bioconductor-foldgo
 
 name: bioconductor-foldgo

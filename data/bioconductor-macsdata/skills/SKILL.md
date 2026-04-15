@@ -4,7 +4,6 @@ description: This package provides access to test datasets from the MACS3 projec
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MACSdata.html
 ---
 
-
 # bioconductor-macsdata
 
 name: bioconductor-macsdata

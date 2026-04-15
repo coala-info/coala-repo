@@ -4,7 +4,6 @@ description: This tool provides comprehensive routines for 1D, 2D, and 3D wavele
 homepage: https://cloud.r-project.org/web/packages/waveslim/index.html
 ---
 
-
 # r-waveslim
 
 name: r-waveslim

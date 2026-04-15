@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Tran
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mta10probeset.db.html
 ---
 
-
 # bioconductor-mta10probeset.db
 
 name: bioconductor-mta10probeset.db

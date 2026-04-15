@@ -4,7 +4,6 @@ description: This Bioconductor package provides SQLite-based annotation data for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomsrattranscriptcluster.db.html
 ---
 
-
 # bioconductor-clariomsrattranscriptcluster.db
 
 ## Overview

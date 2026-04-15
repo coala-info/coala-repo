@@ -4,7 +4,6 @@ description: This package provides a comprehensive gene set knowledgebase for mo
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/gskb.html
 ---
 
-
 # bioconductor-gskb
 
 name: bioconductor-gskb

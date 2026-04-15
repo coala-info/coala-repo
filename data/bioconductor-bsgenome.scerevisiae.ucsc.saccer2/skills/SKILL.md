@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Saccharomyces ce
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Scerevisiae.UCSC.sacCer2.html
 ---
 
-
 # bioconductor-bsgenome.scerevisiae.ucsc.saccer2
 
 name: bioconductor-bsgenome.scerevisiae.ucsc.saccer2

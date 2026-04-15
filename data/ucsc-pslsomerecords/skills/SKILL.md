@@ -2,6 +2,8 @@
 name: ucsc-pslsomerecords
 description: This tool extracts specific alignment records from a PSL file based on a provided list of identifiers. Use when user asks to filter PSL files, subset sequence alignments by query or target name, or extract specific alignment blocks using a list of names.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslsomerecords:482--h0b57e2e_0"
 ---
 
 # ucsc-pslsomerecords

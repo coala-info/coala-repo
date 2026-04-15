@@ -1,7 +1,9 @@
 ---
 name: fanc
-description: "FAN-C is a modular Python framework for the complete processing, analysis, and visualization of Hi-C data. Use when user asks to process mapped reads into contact matrices, normalize Hi-C data, call genomic features like TADs and compartments, or generate genomic plots."
+description: FAN-C is a modular Python framework for the complete processing, analysis, and visualization of Hi-C data. Use when user asks to process mapped reads into contact matrices, normalize Hi-C data, call genomic features like TADs and compartments, or generate genomic plots.
 homepage: https://github.com/vaquerizaslab/fanc
+metadata:
+  docker_image: "quay.io/biocontainers/fanc:0.9.0--py37h73a75cf_1"
 ---
 
 # fanc

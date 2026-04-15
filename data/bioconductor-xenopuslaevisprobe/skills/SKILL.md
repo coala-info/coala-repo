@@ -1,9 +1,8 @@
 ---
 name: bioconductor-xenopuslaevisprobe
-description: "This package provides probe sequence data and spatial coordinates for the Affymetrix Xenopus laevis microarray. Use when user asks to retrieve probe sequences, map probe identifiers to physical coordinates, or perform sequence-specific analysis for African clawed frog microarray data."
+description: This package provides probe sequence data and spatial coordinates for the Affymetrix Xenopus laevis microarray. Use when user asks to retrieve probe sequences, map probe identifiers to physical coordinates, or perform sequence-specific analysis for African clawed frog microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xenopuslaevisprobe.html
 ---
-
 
 # bioconductor-xenopuslaevisprobe
 

@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Affymet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene10sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-hugene10sttranscriptcluster.db
 
 name: bioconductor-hugene10sttranscriptcluster.db

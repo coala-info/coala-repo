@@ -2,8 +2,9 @@
 name: variant-effect-predictor
 description: The Ensembl Variant Effect Predictor determines the functional impact of genetic variation. Use when user asks to predict variant consequences, annotate genetic variants, filter variant consequences, analyze phased haplotypes, or translate variant identifiers.
 homepage: https://github.com/Ensembl/ensembl-vep
+metadata:
+  docker_image: "quay.io/biocontainers/variant-effect-predictor:87--pl5.22.0_1"
 ---
-
 
 # variant-effect-predictor
 

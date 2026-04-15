@@ -4,7 +4,6 @@ description: This tool analyzes meso-scale changes in chromatin conformation fro
 homepage: https://bioconductor.org/packages/release/bioc/html/deltaCaptureC.html
 ---
 
-
 # bioconductor-deltacapturec
 
 name: bioconductor-deltacapturec

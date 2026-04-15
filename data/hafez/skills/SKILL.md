@@ -2,8 +2,9 @@
 name: hafez
 description: hafeZ identifies actively replicating or induced prophages by mapping sequencing reads to a host assembly and calculating Z-scores for read depth. Use when user asks to identify active prophages, detect induced viral elements in bacterial genomes, or analyze read coverage peaks for prophage validation.
 homepage: https://github.com/Chrisjrt/hafeZ
+metadata:
+  docker_image: "quay.io/biocontainers/hafez:1.0.4--pyh7cba7a3_0"
 ---
-
 
 # hafez
 

@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501cdf.html
 ---
 
-
 # bioconductor-ath1121501cdf
 
 name: bioconductor-ath1121501cdf

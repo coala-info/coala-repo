@@ -4,7 +4,6 @@ description: This package provides a Bioconductor Transcript Database object for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Scerevisiae.UCSC.sacCer2.sgdGene.html
 ---
 
-
 # bioconductor-txdb.scerevisiae.ucsc.saccer2.sgdgene
 
 name: bioconductor-txdb.scerevisiae.ucsc.saccer2.sgdgene

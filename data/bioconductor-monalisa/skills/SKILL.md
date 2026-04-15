@@ -1,9 +1,8 @@
 ---
 name: bioconductor-monalisa
-description: "bioconductor-monalisa identifies transcription factor motifs associated with experimental data using binned enrichment analysis or stability selection regression. Use when user asks to perform binned motif enrichment analysis, identify motifs using randomized Lasso stability selection, scan sequences for known motif hits, or analyze k-mer enrichments in genomic regions."
+description: bioconductor-monalisa identifies transcription factor motifs associated with experimental data using binned enrichment analysis or stability selection regression. Use when user asks to perform binned motif enrichment analysis, identify motifs using randomized Lasso stability selection, scan sequences for known motif hits, or analyze k-mer enrichments in genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/monaLisa.html
 ---
-
 
 # bioconductor-monalisa
 

@@ -4,7 +4,6 @@ description: This package provides annotation and control data for the MEEBO mic
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MEEBOdata.html
 ---
 
-
 # bioconductor-meebodata
 
 name: bioconductor-meebodata

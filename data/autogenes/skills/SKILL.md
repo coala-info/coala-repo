@@ -1,9 +1,10 @@
 ---
 name: autogenes
-description: "Autogenes automates the selection of informative gene sets for bulk RNA-seq deconvolution using multi-objective optimization. Use when user asks to select marker genes, optimize cell type signatures, or perform deconvolution on bulk RNA-seq data."
+description: Autogenes automates the selection of informative gene sets for bulk RNA-seq deconvolution using multi-objective optimization. Use when user asks to select marker genes, optimize cell type signatures, or perform deconvolution on bulk RNA-seq data.
 homepage: https://github.com/theislab/AutoGeneS
+metadata:
+  docker_image: "quay.io/biocontainers/autogenes:1.0.4--pyhdfd78af_0"
 ---
-
 
 # autogenes
 

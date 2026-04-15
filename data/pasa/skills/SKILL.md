@@ -1,9 +1,10 @@
 ---
 name: pasa
-description: "PASA assembles transcript alignments into coherent gene models to refine and validate genomic annotations. Use when user asks to assemble spliced alignments, update existing gene annotations, or classify alternative splicing events."
+description: PASA assembles transcript alignments into coherent gene models to refine and validate genomic annotations. Use when user asks to assemble spliced alignments, update existing gene annotations, or classify alternative splicing events.
 homepage: https://pasapipeline.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/pasa:2.5.3--h4ac6f70_0"
 ---
-
 
 # pasa
 

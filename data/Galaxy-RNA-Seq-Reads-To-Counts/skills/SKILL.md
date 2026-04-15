@@ -1,10 +1,12 @@
 ---
 name: rna-seq-reads-to-counts
-description: "This transcriptomics workflow processes raw FASTQ read collections and reference gene BED files using FastQC, Cutadapt, HISAT2, and featureCounts to generate gene-level expression counts. Use this skill when you need to transform raw RNA-Seq sequencing data into a count matrix for downstream differential gene expression analysis while performing comprehensive quality control and alignment."
-homepage: https://workflowhub.eu/workflows/1692
+description: This transcriptomics workflow processes raw FASTQ read collections and reference gene BED files using FastQC, Cutadapt, HISAT2, and featureCounts to generate gene-level expression counts. Use this skill when you need to transform raw RNA-Seq sequencing data into a count matrix for downstream differential gene expression analysis while performing comprehensive quality control and alignment.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA Seq Reads To Counts
+# rna-seq-reads-to-counts
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The cogeqc package provides a suite of tools for comparative genomi
 homepage: https://bioconductor.org/packages/release/bioc/html/cogeqc.html
 ---
 
-
 # bioconductor-cogeqc
 
 ## Overview

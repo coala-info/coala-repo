@@ -4,7 +4,6 @@ description: This tool mines association rules between transcription factors in 
 homepage: https://bioconductor.org/packages/release/bioc/html/TFARM.html
 ---
 
-
 # bioconductor-tfarm
 
 name: bioconductor-tfarm

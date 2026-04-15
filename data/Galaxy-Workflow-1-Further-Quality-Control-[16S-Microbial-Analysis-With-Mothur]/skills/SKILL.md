@@ -1,10 +1,12 @@
 ---
 name: workflow-1-gucfg2galaxy-further-quality-control-16s-microbia
-description: "This metagenomics workflow processes 16S microbial contigs and group files using Mothur tools to perform sequence screening, dereplication, and quality reporting. Use this skill when you need to filter out sequences with ambiguous bases or undesired lengths and identify unique sequences to reduce computational redundancy in microbial diversity studies."
-homepage: https://workflowhub.eu/workflows/648
+description: This metagenomics workflow processes 16S microbial contigs and group files using Mothur tools to perform sequence screening, dereplication, and quality reporting. Use this skill when you need to filter out sequences with ambiguous bases or undesired lengths and identify unique sequences to reduce computational redundancy in microbial diversity studies.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 1 [gucfg2galaxy]: Further Quality Control [16S Microbial Analysis With Mothur]
+# workflow-1-gucfg2galaxy-further-quality-control-16s-microbia
 
 ## Overview
 

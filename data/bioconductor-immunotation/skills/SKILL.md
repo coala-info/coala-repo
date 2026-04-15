@@ -4,7 +4,6 @@ description: This package provides tools for HLA nomenclature mapping, gene anno
 homepage: https://bioconductor.org/packages/release/bioc/html/immunotation.html
 ---
 
-
 # bioconductor-immunotation
 
 name: bioconductor-immunotation

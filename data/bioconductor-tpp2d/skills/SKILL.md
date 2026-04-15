@@ -4,7 +4,6 @@ description: The TPP2D package implements a functional analysis approach to dete
 homepage: https://bioconductor.org/packages/release/bioc/html/TPP2D.html
 ---
 
-
 # bioconductor-tpp2d
 
 ## Overview

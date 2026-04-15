@@ -1,9 +1,10 @@
 ---
 name: h5sparse
-description: "h5sparse provides a specialized interface for storing and managing Scipy sparse matrices in HDF5 format. Use when user asks to store sparse data in HDF5, perform partial reads via slicing, or append new rows to existing sparse datasets."
+description: h5sparse provides a specialized interface for storing and managing Scipy sparse matrices in HDF5 format. Use when user asks to store sparse data in HDF5, perform partial reads via slicing, or append new rows to existing sparse datasets.
 homepage: https://github.com/appier/h5sparse
+metadata:
+  docker_image: "quay.io/biocontainers/h5sparse:0.1.0--pyh086e186_0"
 ---
-
 
 # h5sparse
 

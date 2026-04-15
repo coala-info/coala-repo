@@ -2,6 +2,8 @@
 name: votuderep
 description: votuderep is a command-line tool designed to curate viral metagenomic data by filtering sequences based on quality and performing dereplication to define non-redundant viral populations. Use when user asks to dereplicate viral sequences, cluster sequences into vOTUs, or filter contigs based on CheckV quality, completeness, and contamination metrics.
 homepage: https://github.com/quadram-institute-bioscience/votuderep
+metadata:
+  docker_image: "quay.io/biocontainers/votuderep:0.6.0--pyhdfd78af_0"
 ---
 
 # votuderep

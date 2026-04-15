@@ -4,7 +4,6 @@ description: This tool quantifies the temporal stability of microbial communitie
 homepage: https://bioconductor.org/packages/release/bioc/html/microSTASIS.html
 ---
 
-
 # bioconductor-microstasis
 
 name: bioconductor-microstasis

@@ -2,8 +2,9 @@
 name: strvctvre
 description: StrVCTVRE predicts the clinical impact of structural variants that overlap exons using a machine learning framework. Use when user asks to predict the pathogenicity of structural variants, annotate VCF or BED files with impact scores, or classify exonic deletions and duplications.
 homepage: https://github.com/andrewSharo/StrVCTVRE/tree/master
+metadata:
+  docker_image: "quay.io/biocontainers/strvctvre:1.10--pyh7e72e81_0"
 ---
-
 
 # strvctvre
 

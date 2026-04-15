@@ -4,7 +4,6 @@ description: This tool constructs and analyzes gene co-expression networks by in
 homepage: https://bioconductor.org/packages/release/bioc/html/SGCP.html
 ---
 
-
 # bioconductor-sgcp
 
 name: bioconductor-sgcp

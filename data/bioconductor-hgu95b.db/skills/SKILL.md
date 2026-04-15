@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95b.db.html
 ---
 
-
 # bioconductor-hgu95b.db
 
 name: bioconductor-hgu95b.db

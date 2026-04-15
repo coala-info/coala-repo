@@ -2,8 +2,9 @@
 name: perl-parse-yapp
 description: This tool generates LALR parsers for Perl by compiling context-free grammar files into standalone modules or scripts. Use when user asks to build a custom parser, define a context-free grammar in a .yp file, or resolve shift/reduce conflicts in a Perl-based language processor.
 homepage: http://metacpan.org/pod/Parse::Yapp
+metadata:
+  docker_image: "quay.io/biocontainers/perl-parse-yapp:1.21--pl526_0"
 ---
-
 
 # perl-parse-yapp
 

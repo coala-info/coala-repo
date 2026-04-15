@@ -2,8 +2,9 @@
 name: illumina-cleanup
 description: This tool processes raw Illumina sequencing data through a standardized pipeline of quality assessment, adapter trimming, and error correction. Use when user asks to clean raw FASTQ files, remove sequencing artifacts, perform k-mer based error correction, or downsample reads to a specific coverage level.
 homepage: https://github.com/rpetit3/illumina-cleanup
+metadata:
+  docker_image: "quay.io/biocontainers/illumina-cleanup:1.0.0--0"
 ---
-
 
 # illumina-cleanup
 

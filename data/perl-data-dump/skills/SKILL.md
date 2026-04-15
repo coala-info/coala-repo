@@ -1,9 +1,10 @@
 ---
 name: perl-data-dump
-description: "This tool provides a readable and concise way to pretty-print Perl data structures as valid code. Use when user asks to pretty-print variables, debug complex data structures, or generate string representations of Perl memory objects."
+description: This tool provides a readable and concise way to pretty-print Perl data structures as valid code. Use when user asks to pretty-print variables, debug complex data structures, or generate string representations of Perl memory objects.
 homepage: https://metacpan.org/pod/Data::Dump
+metadata:
+  docker_image: "quay.io/biocontainers/perl-data-dump:1.25--pl5321h7b50bb2_2"
 ---
-
 
 # perl-data-dump
 

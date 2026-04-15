@@ -1,9 +1,10 @@
 ---
 name: gmap-fusion
-description: "GMAP-fusion identifies gene fusions within de novo assembled transcript sequences by integrating chimeric alignments and raw read validation. Use when user asks to discover gene fusions from assembled transcripts, identify chimeric alignments using GMAP, or validate fusion candidates with raw reads."
+description: GMAP-fusion identifies gene fusions within de novo assembled transcript sequences by integrating chimeric alignments and raw read validation. Use when user asks to discover gene fusions from assembled transcripts, identify chimeric alignments using GMAP, or validate fusion candidates with raw reads.
 homepage: https://github.com/GMAP-fusion/GMAP-fusion
+metadata:
+  docker_image: "quay.io/biocontainers/gmap-fusion:0.4.0--hdfd78af_3"
 ---
-
 
 # gmap-fusion
 

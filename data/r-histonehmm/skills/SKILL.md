@@ -4,7 +4,6 @@ description: This tool analyzes ChIP-seq data for histone modifications with bro
 homepage: https://cran.r-project.org/web/packages/histonehmm/index.html
 ---
 
-
 # r-histonehmm
 
 name: r-histonehmm

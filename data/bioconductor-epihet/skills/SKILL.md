@@ -4,7 +4,6 @@ description: This tool analyzes epigenetic heterogeneity in cancer cells by calc
 homepage: https://bioconductor.org/packages/3.9/bioc/html/epihet.html
 ---
 
-
 # bioconductor-epihet
 
 name: bioconductor-epihet

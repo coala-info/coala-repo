@@ -2,8 +2,9 @@
 name: perl-regexp-common
 description: This tool provides a library of pre-defined, reliable regular expressions for common patterns like numbers, quoted strings, and balanced delimiters. Use when user asks to match real numbers, find balanced parentheses, extract quoted strings, or perform complex pattern-based substitutions in Perl.
 homepage: http://metacpan.org/pod/Regexp::Common
+metadata:
+  docker_image: "quay.io/biocontainers/perl-regexp-common:2017060201--pl526_0"
 ---
-
 
 # perl-regexp-common
 

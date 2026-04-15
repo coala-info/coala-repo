@@ -1,9 +1,12 @@
 ---
 name: genomic-variants-snps-and-indels-detection-using-varscan2
-description: "This CWL workflow identifies SNPs and INDELs from Illumina RNA-seq reads by aligning sequences to a reference genome using Bowtie2 and calling variants with VarScan2. Use this skill when you need to characterize genetic diversity, identify mutations in viral genomes like SARS-CoV-2, or detect small insertions and deletions within genomic sequences."
-homepage: https://workflowhub.eu/workflows/31
+description: This CWL workflow identifies SNPs and INDELs from Illumina RNA-seq reads by aligning sequences to a reference genome using Bowtie2 and calling variants with VarScan2. Use this skill when you need to characterize genetic diversity, identify mutations in viral genomes like SARS-CoV-2, or detect small insertions and deletions within genomic sequences.
+homepage: https://github.com/fjrmoreews/cwl-workflow-SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
-# Genomic variants - SNPs and INDELs detection using VARSCAN2.
+
+# genomic-variants-snps-and-indels-detection-using-varscan2
 
 ## Overview
 

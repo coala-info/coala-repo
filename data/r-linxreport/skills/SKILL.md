@@ -4,7 +4,6 @@ description: This R package generates HTML reports and parses data tables from t
 homepage: https://cran.r-project.org/web/packages/linxreport/index.html
 ---
 
-
 # r-linxreport
 
 name: r-linxreport

@@ -4,7 +4,6 @@ description: Uniquorn identifies cancer cell lines by comparing somatic mutation
 homepage: https://bioconductor.org/packages/release/bioc/html/Uniquorn.html
 ---
 
-
 # bioconductor-uniquorn
 
 ## Overview

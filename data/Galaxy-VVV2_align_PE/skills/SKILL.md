@@ -1,10 +1,12 @@
 ---
 name: vvv2_align_pe
-description: "This viral genomics workflow processes paired-end sequencing data through fastp, BWA-MEM, and bcftools to perform reference-based alignment, haploid variant calling, and VADR-based annotation. Use this skill when you need to generate consensus sequences, identify mutations, and visualize SNP proportions for viral samples while ensuring precise genomic annotation and coverage analysis."
-homepage: https://workflowhub.eu/workflows/518
+description: This viral genomics workflow processes paired-end sequencing data through fastp, BWA-MEM, and bcftools to perform reference-based alignment, haploid variant calling, and VADR-based annotation. Use this skill when you need to generate consensus sequences, identify mutations, and visualize SNP proportions for viral samples while ensuring precise genomic annotation and coverage analysis.
+homepage: https://www.anses.fr
+metadata:
+  docker_image: "N/A"
 ---
 
-# VVV2_align_PE
+# vvv2_align_pe
 
 ## Overview
 

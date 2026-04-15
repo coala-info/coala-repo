@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for performing Froze
 homepage: https://bioconductor.org/packages/release/data/annotation/html/huex.1.0.st.v2frmavecs.html
 ---
 
-
 # bioconductor-huex.1.0.st.v2frmavecs
 
 name: bioconductor-huex.1.0.st.v2frmavecs

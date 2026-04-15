@@ -4,7 +4,6 @@ description: This tool provides expert guidance for the R package 'calibrate' to
 homepage: https://cloud.r-project.org/web/packages/calibrate/index.html
 ---
 
-
 # r-calibrate
 
 name: r-calibrate

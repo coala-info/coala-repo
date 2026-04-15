@@ -4,7 +4,6 @@ description: This package provides the full masked genome sequences for Sus scro
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Sscrofa.UCSC.susScr3.masked.html
 ---
 
-
 # bioconductor-bsgenome.sscrofa.ucsc.susscr3.masked
 
 name: bioconductor-bsgenome.sscrofa.ucsc.susscr3.masked

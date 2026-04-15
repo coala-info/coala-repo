@@ -4,7 +4,6 @@ description: This package provides annotation data for the Clariom S Mouse HT Tr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomsmousehttranscriptcluster.db.html
 ---
 
-
 # bioconductor-clariomsmousehttranscriptcluster.db
 
 name: bioconductor-clariomsmousehttranscriptcluster.db

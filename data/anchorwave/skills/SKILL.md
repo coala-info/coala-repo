@@ -2,6 +2,8 @@
 name: anchorwave
 description: AnchorWave performs sensitive genome-to-genome alignment by identifying conserved anchors and refining them using the wavefront alignment algorithm. Use when user asks to align genomes with high sequence diversity, perform collinear or rearrangement-aware genome alignment, or compare polyploid species.
 homepage: https://github.com/baoxingsong/AnchorWave
+metadata:
+  docker_image: "quay.io/biocontainers/anchorwave:1.2.6--h077b44d_0"
 ---
 
 # anchorwave

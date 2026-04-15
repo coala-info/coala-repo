@@ -4,7 +4,6 @@ description: The cleaver package performs in-silico digestion of polypeptide seq
 homepage: https://bioconductor.org/packages/release/bioc/html/cleaver.html
 ---
 
-
 # bioconductor-cleaver
 
 ## Overview

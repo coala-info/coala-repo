@@ -2,8 +2,9 @@
 name: crb-blast
 description: CRB-BLAST identifies orthologous sequences between two datasets by applying a conditional reciprocal best hit approach to improve sensitivity over standard methods. Use when user asks to identify orthologs between a transcriptome and a proteome, find reciprocal best hits with improved sensitivity, or perform conditional reciprocal best BLAST.
 homepage: https://github.com/cboursnell/crb-blast
+metadata:
+  docker_image: "quay.io/biocontainers/crb-blast:0.6.9--hdfd78af_0"
 ---
-
 
 # crb-blast
 

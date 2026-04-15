@@ -4,7 +4,6 @@ description: This package provides exemplary GC-MS data from E. coli salt stress
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TargetSearchData.html
 ---
 
-
 # bioconductor-targetsearchdata
 
 name: bioconductor-targetsearchdata

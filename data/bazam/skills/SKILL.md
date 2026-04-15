@@ -1,9 +1,10 @@
 ---
 name: bazam
-description: "Bazam extracts paired reads from coordinate-sorted BAM files and streams them into interleaved FASTQ format for efficient re-alignment. Use when user asks to extract read pairs from a BAM file, pipe reads directly into an aligner like BWA, or filter reads by genomic region or custom criteria."
+description: Bazam extracts paired reads from coordinate-sorted BAM files and streams them into interleaved FASTQ format for efficient re-alignment. Use when user asks to extract read pairs from a BAM file, pipe reads directly into an aligner like BWA, or filter reads by genomic region or custom criteria.
 homepage: https://github.com/ssadedin/bazam
+metadata:
+  docker_image: "quay.io/biocontainers/bazam:1.0.1--0"
 ---
-
 
 # bazam
 

@@ -4,7 +4,6 @@ description: This tool provides a local SQLite interface to access and query the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JASPAR2024.html
 ---
 
-
 # bioconductor-jaspar2024
 
 name: bioconductor-jaspar2024

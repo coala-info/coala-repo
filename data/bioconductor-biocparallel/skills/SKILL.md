@@ -4,7 +4,6 @@ description: BiocParallel provides a unified interface for performing parallel c
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocParallel.html
 ---
 
-
 # bioconductor-biocparallel
 
 ## Overview

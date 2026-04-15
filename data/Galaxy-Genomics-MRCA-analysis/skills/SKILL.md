@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-3-mrca-analysis
-description: "This workflow processes SARS-CoV-2 accession dates to download sequences from NCBI, perform multiple sequence alignment with MAFFT, and generate a phylogenetic tree using FastTree. Use this skill when you need to estimate the date of the most recent common ancestor for viral samples to reconstruct the evolutionary history and early transmission dynamics of an outbreak."
-homepage: https://workflowhub.eu/workflows/6
+description: This workflow processes SARS-CoV-2 accession dates to download sequences from NCBI, perform multiple sequence alignment with MAFFT, and generate a phylogenetic tree using FastTree. Use this skill when you need to estimate the date of the most recent common ancestor for viral samples to reconstruct the evolutionary history and early transmission dynamics of an outbreak.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [3] MRCA analysis
+# covid-19-genomics-3-mrca-analysis
 
 ## Overview
 

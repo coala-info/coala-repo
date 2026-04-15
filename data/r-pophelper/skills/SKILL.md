@@ -4,7 +4,6 @@ description: The r-pophelper package processes and visualizes population genetic
 homepage: https://cran.r-project.org/web/packages/pophelper/index.html
 ---
 
-
 # r-pophelper
 
 ## Overview

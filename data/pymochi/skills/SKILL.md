@@ -2,6 +2,8 @@
 name: pymochi
 description: Pymochi infers latent biophysical traits from deep mutational scanning datasets using neural network models of global epistasis. Use when user asks to infer additive traits like folding or binding free energies, model the relationship between protein variants and fitness, or perform thermodynamic analysis of mutational data.
 homepage: https://github.com/lehner-lab/MoCHI
+metadata:
+  docker_image: "quay.io/biocontainers/pymochi:1.1--pyhdfd78af_0"
 ---
 
 # pymochi

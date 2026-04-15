@@ -4,7 +4,6 @@ description: This tool performs non-parametric statistical analysis of omics dat
 homepage: https://bioconductor.org/packages/release/bioc/html/RankProd.html
 ---
 
-
 # bioconductor-rankprod
 
 name: bioconductor-rankprod

@@ -4,7 +4,6 @@ description: This package provides a TxDb annotation object for the dog genome b
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Cfamiliaris.UCSC.canFam6.refGene.html
 ---
 
-
 # bioconductor-txdb.cfamiliaris.ucsc.canfam6.refgene
 
 name: bioconductor-txdb.cfamiliaris.ucsc.canfam6.refgene

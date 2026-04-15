@@ -2,8 +2,9 @@
 name: ucsc-bamtopsl
 description: The ucsc-bamtopsl utility converts BAM alignment files into the PSL format used by the UCSC Genome Browser. Use when user asks to convert BAM to PSL, translate binary alignments to a human-readable format, or extract read sequences into FASTA files during conversion.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bamtopsl:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bamtopsl
 

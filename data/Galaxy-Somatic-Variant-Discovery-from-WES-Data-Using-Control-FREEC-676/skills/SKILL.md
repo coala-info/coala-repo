@@ -1,10 +1,12 @@
 ---
 name: somatic-variant-discovery-from-wes-data-using-control-freec
-description: "This Galaxy workflow processes paired-end tumor and normal whole exome sequencing (WES) FASTQ files to detect somatic copy number variations using BWA-MEM for alignment and Control-FREEC for variant calling. Use this skill when you need to identify human copy number alterations and visualize genomic structural variations between matched tumor and control samples."
-homepage: https://workflowhub.eu/workflows/676
+description: This Galaxy workflow processes paired-end tumor and normal whole exome sequencing (WES) FASTQ files to detect somatic copy number variations using BWA-MEM for alignment and Control-FREEC for variant calling. Use this skill when you need to identify human copy number alterations and visualize genomic structural variations between matched tumor and control samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC
+# somatic-variant-discovery-from-wes-data-using-control-freec
 
 ## Overview
 

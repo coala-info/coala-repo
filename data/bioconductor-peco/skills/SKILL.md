@@ -4,7 +4,6 @@ description: This tool predicts the cell cycle phase of single cells as a contin
 homepage: https://bioconductor.org/packages/release/bioc/html/peco.html
 ---
 
-
 # bioconductor-peco
 
 name: bioconductor-peco

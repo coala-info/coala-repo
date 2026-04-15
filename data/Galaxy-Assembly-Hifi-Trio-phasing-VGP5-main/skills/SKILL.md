@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-with-pacbio-hifi-reads-and-trio-data-for-pha
-description: "This Galaxy workflow generates phased diploid genome assemblies using PacBio HiFi reads and parental Illumina k-mer data via Hifiasm, gfastats, and BUSCO. Use this skill when you need to produce high-quality, haplotype-resolved contigs for a diploid organism by leveraging trio-binning to separate maternal and paternal lineages."
-homepage: https://workflowhub.eu/workflows/642
+description: This Galaxy workflow generates phased diploid genome assemblies using PacBio HiFi reads and parental Illumina k-mer data via Hifiasm, gfastats, and BUSCO. Use this skill when you need to produce high-quality, haplotype-resolved contigs for a diploid organism by leveraging trio-binning to separate maternal and paternal lineages.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly with Pacbio Hifi reads and Trio data for phasing - VGP5
+# genome-assembly-with-pacbio-hifi-reads-and-trio-data-for-pha
 
 ## Overview
 

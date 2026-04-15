@@ -4,7 +4,6 @@ description: GloScope calculates statistical distances between scRNA-Seq samples
 homepage: https://bioconductor.org/packages/release/bioc/html/GloScope.html
 ---
 
-
 # bioconductor-gloscope
 
 ## Overview

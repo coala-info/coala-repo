@@ -2,6 +2,8 @@
 name: pairtools
 description: pairtools processes paired-end sequence alignments from Hi-C experiments into standardized contact maps. Use when user asks to parse SAM/BAM files into .pairs format, sort pairs, remove duplicates, filter ligation junctions, or generate library statistics.
 homepage: https://github.com/mirnylab/pairtools
+metadata:
+  docker_image: "quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0"
 ---
 
 # pairtools

@@ -2,8 +2,9 @@
 name: ltr_retriever
 description: LTR_retriever is a bioinformatics pipeline that filters raw LTR retrotransposon candidates to produce high-quality annotations and genome assembly quality metrics. Use when user asks to identify intact LTR retrotransposons, generate a non-redundant LTR library, or calculate the LTR Assembly Index to assess genome assembly quality.
 homepage: https://github.com/oushujun/LTR_retriever
+metadata:
+  docker_image: "quay.io/biocontainers/ltr_harvest_parallel:1.2--hdfd78af_2"
 ---
-
 
 # ltr_retriever
 

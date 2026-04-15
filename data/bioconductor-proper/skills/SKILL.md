@@ -4,7 +4,6 @@ description: This tool performs simulation-based power and sample size assessmen
 homepage: https://bioconductor.org/packages/release/bioc/html/PROPER.html
 ---
 
-
 # bioconductor-proper
 
 name: bioconductor-proper

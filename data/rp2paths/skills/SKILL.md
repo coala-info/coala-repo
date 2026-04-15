@@ -2,8 +2,9 @@
 name: rp2paths
 description: The rp2paths tool decomposes metabolic scope files from RetroPath2.0 into individual linear or branched biosynthetic pathways. Use when user asks to extract pathways for target compounds, generate pathway visualizations, or produce structured data for flux analysis.
 homepage: https://github.com/brsynth/rp2paths
+metadata:
+  docker_image: "quay.io/biocontainers/rp2paths:2.1.4"
 ---
-
 
 # rp2paths
 

@@ -1,10 +1,12 @@
 ---
 name: sentinel5-volcanic-data
-description: "This Galaxy workflow processes Copernicus Sentinel 5P satellite data to analyze the atmospheric impact of volcanic activity using the Copernicus Data Space Ecosystem notebook and Panoply visualization tool. Use this skill when you need to monitor volcanic sulfur dioxide emissions or visualize the dispersion of atmospheric pollutants resulting from volcanic eruptions."
-homepage: https://workflowhub.eu/workflows/1440
+description: This Galaxy workflow processes Copernicus Sentinel 5P satellite data to analyze the atmospheric impact of volcanic activity using the Copernicus Data Space Ecosystem notebook and Panoply visualization tool. Use this skill when you need to monitor volcanic sulfur dioxide emissions or visualize the dispersion of atmospheric pollutants resulting from volcanic eruptions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Sentinel5 volcanic data
+# sentinel5-volcanic-data
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool provides high-performance row and column summary statisti
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedMatrixStats.html
 ---
 
-
 # bioconductor-delayedmatrixstats
 
 name: bioconductor-delayedmatrixstats

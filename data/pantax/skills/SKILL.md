@@ -2,8 +2,9 @@
 name: pantax
 description: PanTax performs high-resolution taxonomic profiling of microbial strains in metagenomic samples using pangenome graphs and path abundance optimization. Use when user asks to preprocess reference genomes, construct pangenome databases, or perform species and strain-level profiling on metagenomic reads.
 homepage: https://github.com/LuoGroup2023/PanTax
+metadata:
+  docker_image: "quay.io/biocontainers/pantax:2.0.1--py310h3e1df6f_1"
 ---
-
 
 # pantax
 

@@ -4,7 +4,6 @@ description: This tool implements Gaussian process differential equation models 
 homepage: https://bioconductor.org/packages/release/bioc/html/tigre.html
 ---
 
-
 # bioconductor-tigre
 
 name: bioconductor-tigre

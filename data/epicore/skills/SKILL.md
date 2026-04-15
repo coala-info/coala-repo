@@ -2,6 +2,8 @@
 name: epicore
 description: Epicore identifies and visualizes shared consensus epitopes by grouping overlapping peptide sequences from evidence files against a reference proteome. Use when user asks to generate consensus epitopes, visualize protein landscapes, map immunogenic regions, or group overlapping peptides from peptide data.
 homepage: https://github.com/AG-Walz/epicore
+metadata:
+  docker_image: "quay.io/biocontainers/epicore:0.1.7--pyhdfd78af_0"
 ---
 
 # epicore

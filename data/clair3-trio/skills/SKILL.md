@@ -2,8 +2,9 @@
 name: clair3-trio
 description: Clair3-Trio is a variant caller that performs joint genomic analysis on family trios using Nanopore long-read sequencing data. Use when user asks to call variants from a trio, perform pedigree-based genomic analysis, or identify SNPs and Indels using Mendelian inheritance priors.
 homepage: https://github.com/HKU-BAL/Clair3-Trio
+metadata:
+  docker_image: "quay.io/biocontainers/clair3-trio:0.7--py39hd649744_2"
 ---
-
 
 # clair3-trio
 

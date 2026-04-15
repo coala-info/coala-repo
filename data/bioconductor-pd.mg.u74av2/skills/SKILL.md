@@ -4,7 +4,6 @@ description: This package provides annotation data and chip layout metadata for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mg.u74av2.html
 ---
 
-
 # bioconductor-pd.mg.u74av2
 
 name: bioconductor-pd.mg.u74av2

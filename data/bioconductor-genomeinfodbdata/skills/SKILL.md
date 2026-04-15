@@ -4,7 +4,6 @@ description: This package provides species and taxonomy ID lookup tables for Bio
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GenomeInfoDbData.html
 ---
 
-
 # bioconductor-genomeinfodbdata
 
 name: bioconductor-genomeinfodbdata

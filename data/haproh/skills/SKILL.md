@@ -2,8 +2,9 @@
 name: haproh
 description: haproh identifies long autozygous segments and estimates contamination rates in ancient genomic data using modern haplotype reference panels. Use when user asks to identify runs of homozygosity, detect parental relatedness, or estimate contamination in male ancient samples.
 homepage: https://github.com/hringbauer/hapROH
+metadata:
+  docker_image: "quay.io/biocontainers/haproh:0.64--py310h1fe012e_4"
 ---
-
 
 # haproh
 

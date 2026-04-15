@@ -4,7 +4,6 @@ description: This tool analyzes, visualizes, and manipulates data produced by th
 homepage: https://cran.r-project.org/web/packages/psminer/index.html
 ---
 
-
 # r-psminer
 
 name: r-psminer

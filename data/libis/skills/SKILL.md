@@ -2,8 +2,9 @@
 name: libis
 description: LiBis is an ultrasensitive alignment tool that rescues informative reads from low-input whole genome bisulfite sequencing data through dynamic clipping and remapping. Use when user asks to align fragmented bisulfite sequencing reads, optimize clipping parameters, or generate methylation calls and reports.
 homepage: https://github.com/Dangertrip/LiBis
+metadata:
+  docker_image: "quay.io/biocontainers/libis:0.1.6--py_0"
 ---
-
 
 # libis
 

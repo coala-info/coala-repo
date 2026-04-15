@@ -4,7 +4,6 @@ description: The r-rspectral package implements the Spectral Modularity graph cl
 homepage: https://cran.r-project.org/web/packages/rspectral/index.html
 ---
 
-
 # r-rspectral
 
 ## Overview

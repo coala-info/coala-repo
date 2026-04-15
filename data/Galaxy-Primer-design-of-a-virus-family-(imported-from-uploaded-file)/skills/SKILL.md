@@ -1,10 +1,12 @@
 ---
 name: primer-design-of-a-virus-family-imported-from-uploaded-file
-description: "This workflow performs multiple sequence alignment on viral gene sequences using MAFFT and designs optimized primers with varVAMP. Use this skill when you need to develop diagnostic primers or amplification assays that target conserved regions across a diverse family of related virus sequences."
-homepage: https://workflowhub.eu/workflows/1627
+description: This workflow performs multiple sequence alignment on viral gene sequences using MAFFT and designs optimized primers with varVAMP. Use this skill when you need to develop diagnostic primers or amplification assays that target conserved regions across a diverse family of related virus sequences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Primer design of a virus family (imported from uploaded file)
+# primer-design-of-a-virus-family-imported-from-uploaded-file
 
 ## Overview
 

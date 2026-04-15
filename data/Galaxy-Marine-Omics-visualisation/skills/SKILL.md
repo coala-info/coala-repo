@@ -1,10 +1,12 @@
 ---
 name: marine-omics-visualisation
-description: "This workflow retrieves marine occurrence data from the Ocean Biodiversity Information System and processes it using text manipulation and specialized indicator tools to generate ecological biodiversity metrics. Use this skill when you need to assess marine ecosystem health or analyze spatial patterns of biodiversity using standardized indicators derived from global ocean observation records."
-homepage: https://workflowhub.eu/workflows/1698
+description: This workflow retrieves marine occurrence data from the Ocean Biodiversity Information System and processes it using text manipulation and specialized indicator tools to generate ecological biodiversity metrics. Use this skill when you need to assess marine ecosystem health or analyze spatial patterns of biodiversity using standardized indicators derived from global ocean observation records.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Marine Omics visualisation
+# marine-omics-visualisation
 
 ## Overview
 

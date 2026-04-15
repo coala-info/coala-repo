@@ -4,7 +4,6 @@ description: The bioconductor-rfarm tool provides an R interface to query the Rf
 homepage: https://bioconductor.org/packages/release/bioc/html/rfaRm.html
 ---
 
-
 # bioconductor-rfarm
 
 name: bioconductor-rfarm

@@ -4,7 +4,6 @@ description: The exomePeak2 package performs peak calling and differential modif
 homepage: https://bioconductor.org/packages/3.11/bioc/html/exomePeak2.html
 ---
 
-
 # bioconductor-exomepeak2
 
 ## Overview

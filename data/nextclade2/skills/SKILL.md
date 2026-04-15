@@ -1,9 +1,10 @@
 ---
 name: nextclade2
-description: "Performs viral genome alignment, mutation calling, clade assignment, and quality checks. Use when user asks to analyze viral genomic sequences for evolutionary and epidemiological studies, identify lineages, track mutations, or assess sequence quality."
+description: Performs viral genome alignment, mutation calling, clade assignment, and quality checks. Use when user asks to analyze viral genomic sequences for evolutionary and epidemiological studies, identify lineages, track mutations, or assess sequence quality.
 homepage: https://github.com/nextstrain/nextclade
+metadata:
+  docker_image: "quay.io/biocontainers/nextclade2:2.14.0--h9ee0642_2"
 ---
-
 
 # nextclade2
 

@@ -1,9 +1,10 @@
 ---
 name: cosap
-description: "Cosap is a tool for building and running comparative sequencing analysis pipelines. Use when user asks to perform comparative sequencing analysis, build reproducible analysis pipelines, or compare the results of different bioinformatics tools."
+description: Cosap is a tool for building and running comparative sequencing analysis pipelines. Use when user asks to perform comparative sequencing analysis, build reproducible analysis pipelines, or compare the results of different bioinformatics tools.
 homepage: https://github.com/MBaysanLab/cosap
+metadata:
+  docker_image: "quay.io/biocontainers/cosap:0.1.0--pyh026a95a_0"
 ---
-
 
 # cosap
 

@@ -4,7 +4,6 @@ description: This tool detects differential interactions from Hi-C data by count
 homepage: https://bioconductor.org/packages/release/bioc/html/diffHic.html
 ---
 
-
 # bioconductor-diffhic
 
 name: bioconductor-diffhic

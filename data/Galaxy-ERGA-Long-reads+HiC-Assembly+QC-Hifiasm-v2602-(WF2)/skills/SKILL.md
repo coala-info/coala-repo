@@ -1,10 +1,12 @@
 ---
 name: erga-long-readshic-assemblyqc-hifiasm-v2602-wf2
-description: "This ERGA workflow performs de novo genome assembly using PacBio HiFi or ONT long reads integrated with Hi-C data, utilizing Hifiasm for assembly and BUSCO, Merqury, and gfastats for comprehensive quality control. Use this skill when you need to generate high-quality, chromosome-level phased genome assemblies for eukaryotic species and evaluate their completeness and accuracy using standard reference metrics."
-homepage: https://workflowhub.eu/workflows/605
+description: This ERGA workflow performs de novo genome assembly using PacBio HiFi or ONT long reads integrated with Hi-C data, utilizing Hifiasm for assembly and BUSCO, Merqury, and gfastats for comprehensive quality control. Use this skill when you need to generate high-quality, chromosome-level phased genome assemblies for eukaryotic species and evaluate their completeness and accuracy using standard reference metrics.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA Long reads+HiC Assembly+QC Hifiasm v2602 (WF2)
+# erga-long-readshic-assemblyqc-hifiasm-v2602-wf2
 
 ## Overview
 

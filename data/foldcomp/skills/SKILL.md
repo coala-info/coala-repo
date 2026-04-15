@@ -2,6 +2,8 @@
 name: foldcomp
 description: Foldcomp compresses protein structure data by encoding backbone and side-chain torsion angles to significantly reduce file sizes. Use when user asks to compress PDB or mmCIF files, decompress structures, extract pLDDT scores or sequences, and calculate RMSD between structures.
 homepage: https://github.com/steineggerlab/foldcomp
+metadata:
+  docker_image: "quay.io/biocontainers/foldcomp:1.0.0--h7f5d12c_0"
 ---
 
 # foldcomp

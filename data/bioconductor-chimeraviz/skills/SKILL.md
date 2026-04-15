@@ -4,7 +4,6 @@ description: The chimeraviz package visualizes gene fusions by importing data fr
 homepage: https://bioconductor.org/packages/release/bioc/html/chimeraviz.html
 ---
 
-
 # bioconductor-chimeraviz
 
 ## Overview

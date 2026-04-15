@@ -1,7 +1,9 @@
 ---
 name: ml_regression
-description: "This machine learning workflow performs regression analysis on tabular training and testing datasets using Scikit-learn pipelines, ensemble methods, and hyperparameter optimization. Use this skill when you need to predict continuous numerical outcomes from structured data and evaluate model accuracy through residual plots and performance curves."
-homepage: https://workflowhub.eu/workflows/1633
+description: This machine learning workflow performs regression analysis on tabular training and testing datasets using Scikit-learn pipelines, ensemble methods, and hyperparameter optimization. Use this skill when you need to predict continuous numerical outcomes from structured data and evaluate model accuracy through residual plots and performance curves.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # ml_regression

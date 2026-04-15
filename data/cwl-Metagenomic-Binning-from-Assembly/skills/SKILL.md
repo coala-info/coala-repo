@@ -1,9 +1,12 @@
 ---
 name: metagenomic-binning-from-assembly
-description: "This CWL workflow processes metagenomic assembly FASTA and BAM files using tools like MetaBAT2, MaxBin2, and Binette to group contigs into discrete bins. Use this skill when you need to reconstruct high-quality metagenome-assembled genomes from complex microbial communities to characterize taxonomic diversity and metabolic potential."
-homepage: https://workflowhub.eu/workflows/64
+description: This CWL workflow processes metagenomic assembly FASTA and BAM files using tools like MetaBAT2, MaxBin2, and Binette to group contigs into discrete bins. Use this skill when you need to reconstruct high-quality metagenome-assembled genomes from complex microbial communities to characterize taxonomic diversity and metabolic potential.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Metagenomic Binning from Assembly
+
+# metagenomic-binning-from-assembly
 
 ## Overview
 

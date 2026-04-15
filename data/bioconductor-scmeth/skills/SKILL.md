@@ -4,7 +4,6 @@ description: This tool performs quality control and preprocessing for single-cel
 homepage: https://bioconductor.org/packages/release/bioc/html/scmeth.html
 ---
 
-
 # bioconductor-scmeth
 
 name: bioconductor-scmeth

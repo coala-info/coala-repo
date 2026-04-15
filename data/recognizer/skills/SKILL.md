@@ -2,8 +2,9 @@
 name: recognizer
 description: reCOGnizer performs functional characterization of proteomes by comparing protein sequences against conserved domain databases using RPS-BLAST. Use when user asks to annotate protein sequences, map hits to functional categories, or perform metabolic reconstruction and comparative genomics.
 homepage: https://github.com/iquasere/reCOGnizer
+metadata:
+  docker_image: "quay.io/biocontainers/recognizer:1.11.1--hdfd78af_0"
 ---
-
 
 # recognizer
 

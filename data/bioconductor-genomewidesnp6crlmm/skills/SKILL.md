@@ -4,7 +4,6 @@ description: This package provides annotation data and parameters for processing
 homepage: https://bioconductor.org/packages/release/data/annotation/html/genomewidesnp6Crlmm.html
 ---
 
-
 # bioconductor-genomewidesnp6crlmm
 
 name: bioconductor-genomewidesnp6crlmm

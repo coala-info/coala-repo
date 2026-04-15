@@ -4,7 +4,6 @@ description: BRGenomics provides tools for the efficient analysis and visualizat
 homepage: https://bioconductor.org/packages/3.11/bioc/html/BRGenomics.html
 ---
 
-
 # bioconductor-brgenomics
 
 name: bioconductor-brgenomics

@@ -2,8 +2,9 @@
 name: ctxcore
 description: ctxcore provides the core computational logic for motif enrichment and transcription factor mapping within the SCENIC suite. Use when user asks to perform motif enrichment analysis, map transcription factors to target genes, or prune co-expression modules into regulons.
 homepage: https://scenic.aertslab.org
+metadata:
+  docker_image: "quay.io/biocontainers/ctxcore:0.2.0--pyh7e72e81_1"
 ---
-
 
 # ctxcore
 

@@ -4,7 +4,6 @@ description: This Bioconductor package provides platform design and probe sequen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.chigene.1.1.st.html
 ---
 
-
 # bioconductor-pd.chigene.1.1.st
 
 name: bioconductor-pd.chigene.1.1.st

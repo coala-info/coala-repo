@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Illumina Humanv3 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html
 ---
 
-
 # bioconductor-illuminahumanv3.db
 
 name: bioconductor-illuminahumanv3.db

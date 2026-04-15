@@ -4,7 +4,6 @@ description: The r-reshape package provides a framework for transforming data be
 homepage: https://cloud.r-project.org/web/packages/reshape/index.html
 ---
 
-
 # r-reshape
 
 ## Overview

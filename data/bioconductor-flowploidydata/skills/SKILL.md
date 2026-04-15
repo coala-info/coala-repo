@@ -4,7 +4,6 @@ description: This package provides example flow cytometry data files in LMD form
 homepage: https://bioconductor.org/packages/release/data/experiment/html/flowPloidyData.html
 ---
 
-
 # bioconductor-flowploidydata
 
 name: bioconductor-flowploidydata

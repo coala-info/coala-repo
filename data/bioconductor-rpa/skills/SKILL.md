@@ -4,7 +4,6 @@ description: This tool implements the Robust Probabilistic Averaging algorithm f
 homepage: https://bioconductor.org/packages/release/bioc/html/RPA.html
 ---
 
-
 # bioconductor-rpa
 
 name: bioconductor-rpa

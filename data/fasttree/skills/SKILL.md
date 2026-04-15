@@ -2,8 +2,9 @@
 name: fasttree
 description: FastTree infers approximately-maximum-likelihood phylogenetic trees from protein or nucleotide sequence alignments. Use when user asks to build a phylogenetic tree, infer evolutionary relationships from sequence alignments, or perform high-throughput phylogenetics on large genomic datasets.
 homepage: https://morgannprice.github.io/fasttree
+metadata:
+  docker_image: "quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1"
 ---
-
 
 # fasttree
 

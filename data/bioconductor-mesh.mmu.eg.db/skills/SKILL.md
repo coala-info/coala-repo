@@ -4,7 +4,6 @@ description: This package maps Medical Subject Headings (MeSH) identifiers to En
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Mmu.eg.db.html
 ---
 
-
 # bioconductor-mesh.mmu.eg.db
 
 name: bioconductor-mesh.mmu.eg.db

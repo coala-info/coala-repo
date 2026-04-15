@@ -2,8 +2,9 @@
 name: count_constant_sites
 description: This tool counts the number of constant nucleotide sites in a FASTA-formatted multiple sequence alignment. Use when user asks to count constant A, C, G, and T sites or provide constant site counts for phylogenetic tree reconstruction tools like IQ-TREE.
 homepage: https://github.com/pvanheus/count_constant_sites
+metadata:
+  docker_image: "quay.io/biocontainers/count_constant_sites:0.1.1--0"
 ---
-
 
 # count_constant_sites
 

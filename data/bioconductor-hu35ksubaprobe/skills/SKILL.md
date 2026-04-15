@@ -4,7 +4,6 @@ description: This package provides probe sequence data and array coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubaprobe.html
 ---
 
-
 # bioconductor-hu35ksubaprobe
 
 name: bioconductor-hu35ksubaprobe

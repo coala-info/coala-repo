@@ -2,8 +2,9 @@
 name: ksnp
 description: The ksnp tool performs haplotype assembly and variant phasing using a k-mer based approach on aligned reads. Use when user asks to phase heterozygous variants, reconstruct individual haplotypes, or update a VCF file with phasing information.
 homepage: https://github.com/zhouqiansolab/KSNP
+metadata:
+  docker_image: "quay.io/biocontainers/ksnp:1.0.3--h077b44d_2"
 ---
-
 
 # ksnp
 

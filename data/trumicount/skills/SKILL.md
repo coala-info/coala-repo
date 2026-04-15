@@ -2,8 +2,9 @@
 name: trumicount
 description: TRUmiCount corrects for PCR amplification bias to provide accurate molecule counts from indexed BAM files. Use when user asks to get bias-corrected transcript counts, process BAM files for corrected gene counts, handle specific UMI formats, or apply filtering thresholds to counts.
 homepage: https://cibiv.github.io/trumicount/
+metadata:
+  docker_image: "quay.io/biocontainers/trumicount:0.9.14--r44hdfd78af_3"
 ---
-
 
 # trumicount
 

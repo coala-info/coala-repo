@@ -4,6 +4,8 @@ description: This pipeline fits evolutionary models and performs hypothesis test
 homepage: https://github.com/nf-core/genephylomodeler
 ---
 
+# genephylomodeler
+
 ## Overview
 nf-core/genephylomodeler is a bioinformatics pipeline designed to automate the application of evolutionary models to multiple sequence alignments of coding genes. It facilitates complex phylogenetic analyses such as detecting episodic diversifying selection, site-specific selection, and the relaxation or intensification of selection pressures across different branches of a tree.
 

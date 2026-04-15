@@ -2,8 +2,9 @@
 name: fastlmm
 description: FaST-LMM performs large-scale genome-wide association studies and heritability estimation while controlling for population structure using linear mixed models. Use when user asks to perform univariate GWAS, estimate narrow-sense heritability, test for epistasis, or conduct set-based association tests.
 homepage: http://research.microsoft.com/en-us/um/redmond/projects/mscompbio/fastlmm/
+metadata:
+  docker_image: "quay.io/biocontainers/fastlmm:0.2.32--py27_0"
 ---
-
 
 # fastlmm
 

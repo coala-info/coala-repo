@@ -1,7 +1,9 @@
 ---
 name: gs-tama
-description: "gs-tama processes long-read transcriptomic mappings to produce refined, non-redundant transcript annotations. Use when user asks to collapse mapped reads into transcript models, merge multiple annotation files, or assign CDS and UTR regions to BED files."
+description: gs-tama processes long-read transcriptomic mappings to produce refined, non-redundant transcript annotations. Use when user asks to collapse mapped reads into transcript models, merge multiple annotation files, or assign CDS and UTR regions to BED files.
 homepage: https://github.com/sguizard/gs-tama
+metadata:
+  docker_image: "quay.io/biocontainers/gs-tama:1.0.3--hdfd78af_0"
 ---
 
 # gs-tama

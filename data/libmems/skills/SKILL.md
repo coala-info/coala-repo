@@ -2,8 +2,9 @@
 name: libmems
 description: libmems provides algorithms for identifying conserved segments and maximal exact matches across multiple DNA sequences. Use when user asks to find maximal exact matches, detect synteny blocks, identify genomic rearrangements, or index sequences using suffix structures.
 homepage: http://darlinglab.org/mauve/
+metadata:
+  docker_image: "quay.io/biocontainers/libmems:1.6.0--h9948957_8"
 ---
-
 
 # libmems
 

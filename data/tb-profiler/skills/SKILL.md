@@ -2,6 +2,8 @@
 name: tb-profiler
 description: tb-profiler profiles Mycobacterium tuberculosis from whole genome sequencing data to determine lineages and predict drug resistance. Use when user asks to profile TB samples, predict phenotypic resistance, determine lineages, or update the resistance database.
 homepage: https://github.com/jodyphelan/TBProfiler
+metadata:
+  docker_image: "quay.io/biocontainers/tb-profiler:6.6.6--pyhdfd78af_0"
 ---
 
 # tb-profiler

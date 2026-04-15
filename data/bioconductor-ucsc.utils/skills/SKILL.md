@@ -4,7 +4,6 @@ description: This tool provides low-level utilities for retrieving genomic data 
 homepage: https://bioconductor.org/packages/release/bioc/html/UCSC.utils.html
 ---
 
-
 # bioconductor-ucsc.utils
 
 name: bioconductor-ucsc.utils

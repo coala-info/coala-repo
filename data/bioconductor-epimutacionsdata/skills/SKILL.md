@@ -4,7 +4,6 @@ description: This package provides example DNA methylation datasets and candidat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/epimutacionsData.html
 ---
 
-
 # bioconductor-epimutacionsdata
 
 name: bioconductor-epimutacionsdata

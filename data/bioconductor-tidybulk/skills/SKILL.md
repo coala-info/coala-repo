@@ -4,7 +4,6 @@ description: bioconductor-tidybulk performs modular transcriptomic data analysis
 homepage: https://bioconductor.org/packages/release/bioc/html/tidybulk.html
 ---
 
-
 # bioconductor-tidybulk
 
 name: bioconductor-tidybulk

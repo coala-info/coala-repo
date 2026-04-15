@@ -4,7 +4,6 @@ description: This tool generates interactive web-based visualizations and portab
 homepage: https://bioconductor.org/packages/release/bioc/html/Rvisdiff.html
 ---
 
-
 # bioconductor-rvisdiff
 
 name: bioconductor-rvisdiff

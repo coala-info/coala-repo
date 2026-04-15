@@ -4,7 +4,6 @@ description: This tool automates the creation of annotated HTML reports, gene-le
 homepage: https://bioconductor.org/packages/release/bioc/html/affycoretools.html
 ---
 
-
 # bioconductor-affycoretools
 
 name: bioconductor-affycoretools

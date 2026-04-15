@@ -4,7 +4,6 @@ description: This tool provides access to harmonized colorectal cancer transcrip
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FieldEffectCrc.html
 ---
 
-
 # bioconductor-fieldeffectcrc
 
 name: bioconductor-fieldeffectcrc

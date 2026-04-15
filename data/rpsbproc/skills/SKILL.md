@@ -2,8 +2,9 @@
 name: rpsbproc
 description: This tool post-processes RPS-BLAST search results to provide non-redundant domain annotations. Use when user asks to analyze RPS-BLAST output, obtain non-redundant domain hits, or annotate query sequences with domain superfamily and functional site information.
 homepage: https://ftp.ncbi.nih.gov/pub/mmdb/cdd/rpsbproc/README
+metadata:
+  docker_image: "quay.io/biocontainers/rpsbproc:0.5.1--hd6d6fdc_0"
 ---
-
 
 # rpsbproc
 

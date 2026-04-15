@@ -1,9 +1,10 @@
 ---
 name: corsid
-description: "CORSID identifies transcription regulatory sequences and gene boundaries in coronavirus genomes. Use when user asks to identify TRS sites, predict viral gene architecture, or validate existing annotations in unannotated or annotated coronavirus FASTA sequences."
+description: CORSID identifies transcription regulatory sequences and gene boundaries in coronavirus genomes. Use when user asks to identify TRS sites, predict viral gene architecture, or validate existing annotations in unannotated or annotated coronavirus FASTA sequences.
 homepage: http://github.com/elkebir-group/CORSID
+metadata:
+  docker_image: "quay.io/biocontainers/corsid:0.1.3--pyh5e36f6f_0"
 ---
-
 
 # corsid
 

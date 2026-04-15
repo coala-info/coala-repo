@@ -4,7 +4,6 @@ description: The r-qqman package provides functions for visualizing genome-wide 
 homepage: https://cloud.r-project.org/web/packages/qqman/index.html
 ---
 
-
 # r-qqman
 
 ## Overview

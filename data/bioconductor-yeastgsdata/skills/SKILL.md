@@ -4,7 +4,6 @@ description: This package provides access to curated gold standard protein-prote
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastGSData.html
 ---
 
-
 # bioconductor-yeastgsdata
 
 name: bioconductor-yeastgsdata

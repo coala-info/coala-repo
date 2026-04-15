@@ -4,7 +4,6 @@ description: This package provides sequence and coordinate information for probe
 homepage: https://bioconductor.org/packages/release/data/annotation/html/soybeanprobe.html
 ---
 
-
 # bioconductor-soybeanprobe
 
 ## Overview

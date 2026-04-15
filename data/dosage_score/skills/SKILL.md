@@ -2,8 +2,9 @@
 name: dosage_score
 description: This tool estimates the dosage of genomic regions from NGS alignment data to analyze subgenome contributions in polyploid or hybrid organisms. Use when user asks to calculate dosage scores from BAM files, analyze genomic coverage across sliding windows, or visualize dosage metrics for specific chromosomes.
 homepage: https://github.com/SegawaTenta/Dosage-score
+metadata:
+  docker_image: "quay.io/biocontainers/dosage_score:1.0.0--pyhdfd78af_0"
 ---
-
 
 # dosage_score
 

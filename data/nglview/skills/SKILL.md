@@ -2,8 +2,9 @@
 name: nglview
 description: nglview renders 3D molecular structures and trajectories interactively within computational notebooks. Use when user asks to visualize protein structures, display molecular dynamics trajectories, apply molecular representations, or inspect docking results.
 homepage: https://github.com/arose/nglview
+metadata:
+  docker_image: "quay.io/biocontainers/nglview:1.1.7--py_0"
 ---
-
 
 # nglview
 

@@ -4,7 +4,6 @@ description: This package provides annotation data and metadata for the Illumina
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation27kanno.ilmn12.hg19.html
 ---
 
-
 # bioconductor-illuminahumanmethylation27kanno.ilmn12.hg19
 
 ## Overview

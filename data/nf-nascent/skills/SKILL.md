@@ -4,6 +4,8 @@ description: This pipeline processes nascent transcript and Transcriptional Star
 homepage: https://github.com/nf-core/nascent
 ---
 
+# nascent
+
 ## Overview
 nf-core/nascent is a bioinformatics best-practice analysis pipeline for nascent transcript (NT) and Transcriptional Start Site (TSS) assays. It solves the problem of mapping and quantifying RNA that is actively being transcribed, providing a standardized workflow for various specialized sequencing protocols.
 

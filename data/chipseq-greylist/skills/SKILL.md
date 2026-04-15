@@ -2,8 +2,9 @@
 name: chipseq-greylist
 description: This tool identifies sample-specific problematic genomic regions with anomalously high coverage from ChIP-seq control BAM files. Use when user asks to generate a greylist, identify high-depth artifacts in control samples, or reduce false discovery rates in peak calling.
 homepage: https://github.com/roryk/chipseq-greylist
+metadata:
+  docker_image: "quay.io/biocontainers/chipseq-greylist:1.0.2--pyh145b6a8_1"
 ---
-
 
 # chipseq-greylist
 

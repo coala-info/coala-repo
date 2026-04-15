@@ -1,9 +1,10 @@
 ---
 name: nanocaller
-description: "NanoCaller identifies genomic variants in long-read sequencing data using deep convolutional neural networks and haplotype information. Use when user asks to call variants from long-read datasets, generate phased VCF files, or perform technology-specific variant calling for ONT and PacBio data."
+description: NanoCaller identifies genomic variants in long-read sequencing data using deep convolutional neural networks and haplotype information. Use when user asks to call variants from long-read datasets, generate phased VCF files, or perform technology-specific variant calling for ONT and PacBio data.
 homepage: https://github.com/WGLab/NanoCaller
+metadata:
+  docker_image: "quay.io/biocontainers/nanocaller:3.6.2--h42286b9_0"
 ---
-
 
 # nanocaller
 

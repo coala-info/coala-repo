@@ -1,10 +1,12 @@
 ---
 name: vgp-hifi-phased-assembly-with-hifiasm-and-hic-data
-description: "This Galaxy workflow performs high-quality de novo genome assembly by integrating PacBio HiFi reads with Hi-C data using hifiasm, followed by comprehensive quality assessment with BUSCO, Merqury, and QUAST. Use this skill when you need to generate chromosome-level, haplotype-phased assemblies for complex diploid genomes to support Vertebrate Genomes Project standards."
-homepage: https://workflowhub.eu/workflows/325
+description: This Galaxy workflow performs high-quality de novo genome assembly by integrating PacBio HiFi reads with Hi-C data using hifiasm, followed by comprehensive quality assessment with BUSCO, Merqury, and QUAST. Use this skill when you need to generate chromosome-level, haplotype-phased assemblies for complex diploid genomes to support Vertebrate Genomes Project standards.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP HiFi phased assembly with hifiasm and HiC data
+# vgp-hifi-phased-assembly-with-hifiasm-and-hic-data
 
 ## Overview
 

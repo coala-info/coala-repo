@@ -1,10 +1,12 @@
 ---
 name: metaproteomics_gtn
-description: "This metaproteomics workflow processes mass spectrometry MGF files and protein FASTA sequences using Search GUI and Peptide Shaker for protein identification, followed by Unipept for taxonomic and functional annotation. Use this skill when you need to characterize the taxonomic composition and functional profile of complex microbial communities from environmental or clinical proteomic samples."
-homepage: https://workflowhub.eu/workflows/1443
+description: This metaproteomics workflow processes mass spectrometry MGF files and protein FASTA sequences using Search GUI and Peptide Shaker for protein identification, followed by Unipept for taxonomic and functional annotation. Use this skill when you need to characterize the taxonomic composition and functional profile of complex microbial communities from environmental or clinical proteomic samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metaproteomics_GTN
+# metaproteomics_gtn
 
 ## Overview
 

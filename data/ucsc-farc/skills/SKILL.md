@@ -2,8 +2,9 @@
 name: ucsc-farc
 description: The ucsc-farc tool generates the reverse complement of DNA sequences in FASTA format. Use when user asks to 'reverse complement DNA sequences'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-farc:482--h0b57e2e_0"
 ---
-
 
 # ucsc-farc
 

@@ -4,7 +4,6 @@ description: This tool provides a flexible and extensible framework for clusteri
 homepage: https://bioconductor.org/packages/release/bioc/html/bluster.html
 ---
 
-
 # bioconductor-bluster
 
 name: bioconductor-bluster

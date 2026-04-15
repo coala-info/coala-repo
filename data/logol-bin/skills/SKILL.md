@@ -4,7 +4,6 @@ description: Logol is a biological pattern matching tool that uses a grammar lan
 homepage: https://github.com/genouest/logol
 ---
 
-
 # logol-bin
 
 ## Overview

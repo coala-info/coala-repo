@@ -4,7 +4,6 @@ description: This tool performs Rare Variant Sharing (RVS) analysis to test asso
 homepage: https://bioconductor.org/packages/release/bioc/html/RVS.html
 ---
 
-
 # bioconductor-rvs
 
 name: bioconductor-rvs

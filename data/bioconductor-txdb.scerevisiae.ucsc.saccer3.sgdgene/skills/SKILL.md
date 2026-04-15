@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object for Saccharomyces 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Scerevisiae.UCSC.sacCer3.sgdGene.html
 ---
 
-
 # bioconductor-txdb.scerevisiae.ucsc.saccer3.sgdgene
 
 name: bioconductor-txdb.scerevisiae.ucsc.saccer3.sgdgene

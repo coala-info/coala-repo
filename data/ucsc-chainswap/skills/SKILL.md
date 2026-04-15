@@ -2,6 +2,8 @@
 name: ucsc-chainswap
 description: The ucsc-chainswap utility reverses the target and query roles within a genomic chain alignment file. Use when user asks to swap the target and query in a chain file, reverse alignment coordinates, or perform reciprocal genome analysis without re-aligning.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainswap:482--h0b57e2e_0"
 ---
 
 # ucsc-chainswap

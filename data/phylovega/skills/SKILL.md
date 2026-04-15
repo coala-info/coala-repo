@@ -2,8 +2,9 @@
 name: phylovega
 description: Phylovega is a Python library that creates interactive, web-based phylogenetic tree visualizations using the Vega grammar. Use when user asks to visualize Newick-formatted trees, customize tree styling parameters programmatically, or render interactive charts in JupyterLab.
 homepage: https://github.com/Zsailer/phylovega
+metadata:
+  docker_image: "quay.io/biocontainers/phylovega:0.3--py_0"
 ---
-
 
 # phylovega
 

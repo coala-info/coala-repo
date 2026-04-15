@@ -4,7 +4,6 @@ description: The mobyle skill integrates the Mobylette gem into Ruby on Rails to
 homepage: https://github.com/tscolari/mobylette
 ---
 
-
 # mobyle
 
 ## Overview

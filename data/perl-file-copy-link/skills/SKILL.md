@@ -2,8 +2,9 @@
 name: perl-file-copy-link
 description: This tool replaces symbolic links with copies of their target files. Use when user asks to transform symlinks into regular files, replace a link with its actual content, or freeze a linked resource.
 homepage: https://metacpan.org/pod/File::Copy::Link
+metadata:
+  docker_image: "quay.io/biocontainers/perl-file-copy-link:0.200--pl5321h7b50bb2_0"
 ---
-
 
 # perl-file-copy-link
 

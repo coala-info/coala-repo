@@ -2,8 +2,9 @@
 name: sciphi
 description: SCIPhI identifies somatic mutations and infers tumor phylogeny from single-cell sequencing data using a joint probabilistic model. Use when user asks to call mutations in single cells, estimate evolutionary trees, or account for allelic dropout in sequencing data.
 homepage: https://github.com/cbg-ethz/SCIPhI
+metadata:
+  docker_image: "quay.io/biocontainers/sciphi:0.1.7--h077b44d_6"
 ---
-
 
 # sciphi
 

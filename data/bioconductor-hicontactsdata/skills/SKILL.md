@@ -4,7 +4,6 @@ description: This package provides programmatic access to processed Hi-C and Mic
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiContactsData.html
 ---
 
-
 # bioconductor-hicontactsdata
 
 name: bioconductor-hicontactsdata

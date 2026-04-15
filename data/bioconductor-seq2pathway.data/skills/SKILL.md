@@ -4,7 +4,6 @@ description: This package provides genomic resources, demo datasets, and pre-pro
 homepage: https://bioconductor.org/packages/release/data/experiment/html/seq2pathway.data.html
 ---
 
-
 # bioconductor-seq2pathway.data
 
 ## Overview

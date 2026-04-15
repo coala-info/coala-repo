@@ -1,10 +1,12 @@
 ---
 name: amr-pathfinder-v47
-description: "This Galaxy workflow integrates multiple antimicrobial resistance (AMR) detection tools, including AbritAMR, SRST2, and StarAMR, to analyze paired-end FASTQ sequencing data and genome assemblies against the CARD and ResFinder databases. Use this skill when you need to benchmark different AMR gene detection methods or generate a consensus report of resistance genes and their percent identity across diverse bacterial isolates."
-homepage: https://workflowhub.eu/workflows/1189
+description: This Galaxy workflow integrates multiple antimicrobial resistance (AMR) detection tools, including AbritAMR, SRST2, and StarAMR, to analyze paired-end FASTQ sequencing data and genome assemblies against the CARD and ResFinder databases. Use this skill when you need to benchmark different AMR gene detection methods or generate a consensus report of resistance genes and their percent identity across diverse bacterial isolates.
+homepage: https://erasmusmc-bioinformatics.github.io/benchAMRking/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AMR-Pathfinder v4.7
+# amr-pathfinder-v47
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: bifidoannotator
 description: Bifidoannotator provides hierarchical functional annotation and classification of glycoside hydrolases specifically for bifidobacterial genomes. Use when user asks to annotate protein sequences, classify enzymes into functional clusters, or generate comparative heatmaps of bifidobacterial metabolic capabilities.
 homepage: https://github.com/nicholaspucci/bifidoAnnotator
+metadata:
+  docker_image: "quay.io/biocontainers/bifidoannotator:1.0.2--pyhdfd78af_0"
 ---
-
 
 # bifidoannotator
 

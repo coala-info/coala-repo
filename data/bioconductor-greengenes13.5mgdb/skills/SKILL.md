@@ -4,7 +4,6 @@ description: This package provides access to the Greengenes 13.5 16S rRNA databa
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/greengenes13.5MgDb.html
 ---
 
-
 # bioconductor-greengenes13.5mgdb
 
 name: bioconductor-greengenes13.5mgdb

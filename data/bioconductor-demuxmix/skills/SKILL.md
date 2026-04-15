@@ -4,7 +4,6 @@ description: demuxmix uses negative binomial regression mixture models to demult
 homepage: https://bioconductor.org/packages/release/bioc/html/demuxmix.html
 ---
 
-
 # bioconductor-demuxmix
 
 ## Overview

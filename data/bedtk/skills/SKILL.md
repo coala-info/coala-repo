@@ -1,7 +1,9 @@
 ---
 name: bedtk
-description: "bedtk is a high-performance utility for the rapid manipulation, filtering, and intersection of genomic intervals in BED, VCF, and PAF formats. Use when user asks to filter VCF files against BED annotations, merge overlapping records, calculate breadth of coverage, or perform interval subtraction and sorting."
+description: bedtk is a high-performance utility for the rapid manipulation, filtering, and intersection of genomic intervals in BED, VCF, and PAF formats. Use when user asks to filter VCF files against BED annotations, merge overlapping records, calculate breadth of coverage, or perform interval subtraction and sorting.
 homepage: https://github.com/lh3/bedtk
+metadata:
+  docker_image: "quay.io/biocontainers/bedtk:1.2--h9990f68_0"
 ---
 
 # bedtk

@@ -2,8 +2,9 @@
 name: icescreen
 description: ICEscreen is a bioinformatic pipeline that automates the discovery and annotation of Integrative and Conjugative Elements (ICEs) and Integrative and Mobilizable Elements (IMEs) in bacterial genomes. Use when user asks to detect ICEs or IMEs, identify signature proteins associated with conjugation and mobilization, or define the boundaries of mobile genetic elements.
 homepage: https://forgemia.inra.fr/ices_imes_analysis/icescreen
+metadata:
+  docker_image: "quay.io/biocontainers/icescreen:1.3.3--py312h7e72e81_0"
 ---
-
 
 # icescreen
 

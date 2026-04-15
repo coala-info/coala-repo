@@ -2,8 +2,9 @@
 name: crnsimulator
 description: The crnsimulator tool converts chemical reaction networks into executable Python scripts for numerical ODE simulation. Use when user asks to simulate chemical reaction kinetics, generate ODE models from reaction equations, or plot molecular concentration profiles over time.
 homepage: https://github.com/bad-ants-fleet/crnsimulator
+metadata:
+  docker_image: "quay.io/biocontainers/crnsimulator:0.9--pyh5bfb8f1_0"
 ---
-
 
 # crnsimulator
 

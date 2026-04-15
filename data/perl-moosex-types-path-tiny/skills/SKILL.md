@@ -2,8 +2,9 @@
 name: perl-moosex-types-path-tiny
 description: This tool integrates Path::Tiny types into the Moose type system to provide automatic path coercion and validation for class attributes. Use when user asks to define Moose attributes as Path::Tiny objects, automatically convert strings to absolute paths, or validate that filesystem paths exist as files or directories.
 homepage: https://github.com/moose/MooseX-Types-Path-Tiny
+metadata:
+  docker_image: "quay.io/biocontainers/perl-moosex-types-path-tiny:0.012--pl526_1"
 ---
-
 
 # perl-moosex-types-path-tiny
 

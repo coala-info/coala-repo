@@ -4,7 +4,6 @@ description: bioconductor-prince is a computational pipeline for reconstructing 
 homepage: https://bioconductor.org/packages/release/bioc/html/PrInCE.html
 ---
 
-
 # bioconductor-prince
 
 ## Overview

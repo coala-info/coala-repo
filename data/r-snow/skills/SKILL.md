@@ -4,7 +4,6 @@ description: The r-snow package provides a high-level interface for executing pa
 homepage: https://cloud.r-project.org/web/packages/snow/index.html
 ---
 
-
 # r-snow
 
 ## Overview

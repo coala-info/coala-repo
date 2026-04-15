@@ -2,6 +2,8 @@
 name: fade
 description: FADE detects and eliminates sequencing artifacts introduced by enzymatic DNA fragmentation. Use when user asks to annotate BAM files for artifacts, filter or clip artifact-containing reads, report artifact statistics, or extract artifact sequences.
 homepage: https://github.com/blachlylab/fade
+metadata:
+  docker_image: "quay.io/biocontainers/fade:0.6.0--h9ee0642_0"
 ---
 
 # fade

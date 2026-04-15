@@ -2,8 +2,9 @@
 name: panoct
 description: PanOCT clusters orthologous genes across multiple bacterial genomes by combining BLAST sequence similarity with conserved gene neighborhood information. Use when user asks to identify orthologs, perform pan-genome clustering, or distinguish between orthologs and paralogs using synteny data.
 homepage: https://panoct.sourceforge.io/
+metadata:
+  docker_image: "quay.io/biocontainers/panoct:3.23--pl5.22.0_0"
 ---
-
 
 # panoct
 

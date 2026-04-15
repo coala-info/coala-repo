@@ -2,8 +2,9 @@
 name: longcallr_nn
 description: longcallr_nn uses a deep learning architecture to perform high-precision variant calling on long-read RNA sequencing data. Use when user asks to call variants from long-read RNA-seq data, download pre-trained genomic models, or perform neural network inference on extracted features.
 homepage: https://github.com/huangnengCSU/longcallR-nn
+metadata:
+  docker_image: "quay.io/biocontainers/longcallr_nn:0.0.2--pyhdfd78af_0"
 ---
-
 
 # longcallr_nn
 

@@ -4,7 +4,6 @@ description: This package provides pre-processed biological pathways from the NC
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NCIgraphData.html
 ---
 
-
 # bioconductor-ncigraphdata
 
 name: bioconductor-ncigraphdata

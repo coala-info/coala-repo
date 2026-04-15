@@ -4,7 +4,6 @@ description: SNPRelate is a Bioconductor package for high-performance genomic da
 homepage: https://bioconductor.org/packages/release/bioc/html/SNPRelate.html
 ---
 
-
 # bioconductor-snprelate
 
 ## Overview

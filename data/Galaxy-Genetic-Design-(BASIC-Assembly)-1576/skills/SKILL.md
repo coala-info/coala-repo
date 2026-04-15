@@ -1,10 +1,12 @@
 ---
 name: genetic-design-basic-assembly
-description: "This synthetic biology workflow automates the design of plasmids for metabolic pathways using SBML files, taxon IDs, and linkers via Selenzyme, BasicDesign, and DNA-Bot. Use this skill when you need to translate predicted biochemical pathways into physical genetic constructs and generate executable instructions for automated DNA assembly using the BASIC method."
-homepage: https://workflowhub.eu/workflows/1576
+description: This synthetic biology workflow automates the design of plasmids for metabolic pathways using SBML files, taxon IDs, and linkers via Selenzyme, BasicDesign, and DNA-Bot. Use this skill when you need to translate predicted biochemical pathways into physical genetic constructs and generate executable instructions for automated DNA assembly using the BASIC method.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genetic Design (BASIC Assembly)
+# genetic-design-basic-assembly
 
 ## Overview
 

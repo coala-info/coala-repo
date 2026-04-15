@@ -4,7 +4,6 @@ description: The RTCGA package provides a streamlined interface for downloading,
 homepage: https://bioconductor.org/packages/release/bioc/html/RTCGA.html
 ---
 
-
 # bioconductor-rtcga
 
 ## Overview

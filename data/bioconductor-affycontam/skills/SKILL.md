@@ -4,7 +4,6 @@ description: This tool simulates quality issues in Affymetrix microarray data by
 homepage: https://bioconductor.org/packages/release/bioc/html/affyContam.html
 ---
 
-
 # bioconductor-affycontam
 
 name: bioconductor-affycontam

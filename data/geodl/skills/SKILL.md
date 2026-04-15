@@ -2,8 +2,9 @@
 name: geodl
 description: geodl automates the retrieval and renaming of raw sequencing data from GEO or ENA using metadata to provide descriptive filenames. Use when user asks to download FASTQ files from GEO or ENA accessions, fetch sequencing data using specific sample IDs, or rename SRR files using experimental sample names.
 homepage: https://github.com/jduc/geoDL
+metadata:
+  docker_image: "quay.io/biocontainers/geodl:1.0b5.1--py36_0"
 ---
-
 
 # geodl
 

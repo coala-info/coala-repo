@@ -4,7 +4,6 @@ description: The r-airr package provides tools to read, write, and validate Adap
 homepage: https://cloud.r-project.org/web/packages/airr/index.html
 ---
 
-
 # r-airr
 
 name: r-airr

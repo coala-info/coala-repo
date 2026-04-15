@@ -1,7 +1,9 @@
 ---
 name: scvis
-description: "scvis performs dimension reduction on high-dimensional biological data. Use when user asks to reduce dimensionality of scRNA-seq data or other high-dimensional biological datasets."
+description: scvis performs dimension reduction on high-dimensional biological data. Use when user asks to reduce dimensionality of scRNA-seq data or other high-dimensional biological datasets.
 homepage: https://bitbucket.org/jerry00/scvis-dev/commits/all
+metadata:
+  docker_image: "quay.io/biocontainers/scvis:0.1.0--scvis_0"
 ---
 
 # scvis

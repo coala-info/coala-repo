@@ -2,8 +2,9 @@
 name: peregrine-2021
 description: Peregrine-2021 is a high-speed genome assembler designed for efficient assembly of long-read sequencing data like PacBio HiFi reads. Use when user asks to assemble a genome from long reads, perform fast human genome assembly, or use the SHIMMER approach for sequence mapping.
 homepage: https://github.com/cschin/peregrine-2021
+metadata:
+  docker_image: "quay.io/biocontainers/peregrine-2021:0.4.13--ha6fb395_6"
 ---
-
 
 # peregrine-2021
 

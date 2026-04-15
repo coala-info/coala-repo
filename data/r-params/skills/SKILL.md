@@ -4,7 +4,6 @@ description: The params package provides a streamlined system for managing, load
 homepage: https://cloud.r-project.org/web/packages/params/index.html
 ---
 
-
 # r-params
 
 ## Overview

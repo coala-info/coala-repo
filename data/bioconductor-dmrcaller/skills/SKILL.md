@@ -4,7 +4,6 @@ description: DMRcaller identifies differentially methylated regions (DMRs) from 
 homepage: https://bioconductor.org/packages/release/bioc/html/DMRcaller.html
 ---
 
-
 # bioconductor-dmrcaller
 
 name: bioconductor-dmrcaller

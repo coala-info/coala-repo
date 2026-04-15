@@ -2,8 +2,9 @@
 name: sarscov2formatter
 description: This tool processes and formats metadata for SARS-CoV-2 selection analysis workflows. Use when user asks to format SARS-CoV-2 metadata for analysis.
 homepage: https://github.com/nickeener/sarscov2formatter
+metadata:
+  docker_image: "quay.io/biocontainers/sarscov2formatter:1.0--pyhdfd78af_0"
 ---
-
 
 # sarscov2formatter
 

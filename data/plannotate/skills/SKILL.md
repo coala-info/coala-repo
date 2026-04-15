@@ -2,6 +2,8 @@
 name: plannotate
 description: pLannotate automatically annotates engineered genetic constructs and plasmids to identify functional features like promoters and markers. Use when user asks to annotate DNA sequences, generate interactive plasmid maps, create GenBank files, or identify features in synthetic DNA fragments.
 homepage: https://github.com/barricklab/pLannotate
+metadata:
+  docker_image: "quay.io/biocontainers/plannotate:1.2.4--pyhdfd78af_0"
 ---
 
 # plannotate

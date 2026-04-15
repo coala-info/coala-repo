@@ -4,7 +4,6 @@ description: MEIGOR provides a suite of global optimization solvers designed to 
 homepage: https://bioconductor.org/packages/release/bioc/html/MEIGOR.html
 ---
 
-
 # bioconductor-meigor
 
 ## Overview

@@ -4,7 +4,6 @@ description: The midasHLA package provides a comprehensive pipeline for performi
 homepage: https://bioconductor.org/packages/release/bioc/html/midasHLA.html
 ---
 
-
 # bioconductor-midashla
 
 name: bioconductor-midashla

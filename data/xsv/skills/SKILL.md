@@ -1,7 +1,9 @@
 ---
 name: xsv
-description: "xsv is a high-performance command-line toolkit for indexing, slicing, filtering, and transforming CSV files. Use when user asks to view headers, count records, calculate column statistics, filter rows with regex, select specific columns, join multiple CSV files, or sample data from large datasets."
+description: xsv is a high-performance command-line toolkit for indexing, slicing, filtering, and transforming CSV files. Use when user asks to view headers, count records, calculate column statistics, filter rows with regex, select specific columns, join multiple CSV files, or sample data from large datasets.
 homepage: https://github.com/BurntSushi/xsv
+metadata:
+  docker_image: "quay.io/biocontainers/xsv:0.10.3--0"
 ---
 
 # xsv

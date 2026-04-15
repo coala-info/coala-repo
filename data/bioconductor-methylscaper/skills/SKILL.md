@@ -4,7 +4,6 @@ description: The methylscaper package provides tools for the joint visualization
 homepage: https://bioconductor.org/packages/release/bioc/html/methylscaper.html
 ---
 
-
 # bioconductor-methylscaper
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool prioritizes SNPs for gene-gene and gene-environment inter
 homepage: https://bioconductor.org/packages/release/bioc/html/GEWIST.html
 ---
 
-
 # bioconductor-gewist
 
 name: bioconductor-gewist

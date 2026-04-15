@@ -4,7 +4,6 @@ description: The biodbNcbi package provides specialized connectors to integrate 
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbNcbi.html
 ---
 
-
 # bioconductor-biodbncbi
 
 ## Overview

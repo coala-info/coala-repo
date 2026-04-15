@@ -2,8 +2,9 @@
 name: avro
 description: Avro is a data serialization system and RPC framework. Use when user asks to understand Avro's core functionalities, install and use its command-line tools, get information about its development, or explore its language bindings.
 homepage: https://github.com/apache/avro
+metadata:
+  docker_image: "quay.io/biocontainers/avro:1.8.0--py35_0"
 ---
-
 
 # avro
 

@@ -4,7 +4,6 @@ description: This tool manages and retrieves transcript-centric genomic annotati
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html
 ---
 
-
 # bioconductor-genomicfeatures
 
 name: bioconductor-genomicfeatures

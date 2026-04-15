@@ -4,7 +4,6 @@ description: This tool provides functions to calculate alpha, beta, and phylogen
 homepage: https://cran.r-project.org/web/packages/abdiv/index.html
 ---
 
-
 # r-abdiv
 
 name: r-abdiv

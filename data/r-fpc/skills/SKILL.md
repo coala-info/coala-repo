@@ -4,7 +4,6 @@ description: The fpc package provides a comprehensive suite of flexible procedur
 homepage: https://cloud.r-project.org/web/packages/fpc/index.html
 ---
 
-
 # r-fpc
 
 ## Overview

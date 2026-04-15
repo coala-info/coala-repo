@@ -4,7 +4,6 @@ description: bioconductor-skewr visualizes and analyzes Illumina Human Methylati
 homepage: https://bioconductor.org/packages/release/bioc/html/skewr.html
 ---
 
-
 # bioconductor-skewr
 
 name: bioconductor-skewr

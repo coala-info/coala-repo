@@ -2,8 +2,9 @@
 name: gfa1
 description: The gfa1 toolkit is a C library and command-line utility designed to parse, validate, and simplify Graphical Fragment Assembly version 1 files. Use when user asks to clean assembly graphs, perform unitigging, trim tips, pop bubbles, or convert GFA1 files with flexible overlap definitions.
 homepage: https://github.com/lh3/gfa1
+metadata:
+  docker_image: "quay.io/biocontainers/gfa1:0.53.alpha--h577a1d6_3"
 ---
-
 
 # gfa1
 

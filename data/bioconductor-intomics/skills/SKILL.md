@@ -4,7 +4,6 @@ description: bioconductor-intomics infers regulatory networks by integrating mul
 homepage: https://bioconductor.org/packages/3.17/bioc/html/IntOMICS.html
 ---
 
-
 # bioconductor-intomics
 
 name: bioconductor-intomics

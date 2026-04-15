@@ -4,7 +4,6 @@ description: The r-seqmagick package provides utilities for sequence manipulatio
 homepage: https://cran.r-project.org/web/packages/seqmagick/index.html
 ---
 
-
 # r-seqmagick
 
 ## Overview

@@ -2,8 +2,9 @@
 name: rnacode
 description: RNAcode identifies protein-coding regions within multiple sequence alignments by detecting evolutionary signatures and coding potential. Use when user asks to identify protein-coding genes, predict open reading frames from alignments, or generate GTF annotations for coding regions.
 homepage: https://github.com/ViennaRNA/RNAcode
+metadata:
+  docker_image: "quay.io/biocontainers/rnacode:0.3.1--h7b50bb2_0"
 ---
-
 
 # rnacode
 

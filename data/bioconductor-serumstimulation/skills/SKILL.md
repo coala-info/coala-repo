@@ -4,7 +4,6 @@ description: This package provides a processed microarray dataset tracking the t
 homepage: https://bioconductor.org/packages/release/data/experiment/html/serumStimulation.html
 ---
 
-
 # bioconductor-serumstimulation
 
 name: bioconductor-serumstimulation

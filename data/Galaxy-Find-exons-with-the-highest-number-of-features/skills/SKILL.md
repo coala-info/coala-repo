@@ -1,10 +1,12 @@
 ---
 name: find-exons-with-the-highest-number-of-features
-description: "This genomic workflow identifies exons with the highest number of overlapping features by processing exon and feature datasets using bedtools Intersect, Datamash, and sorting utilities. Use this skill when you need to prioritize specific genomic regions based on the density of overlapping biological annotations or experimental signals."
-homepage: https://workflowhub.eu/workflows/1493
+description: This genomic workflow identifies exons with the highest number of overlapping features by processing exon and feature datasets using bedtools Intersect, Datamash, and sorting utilities. Use this skill when you need to prioritize specific genomic regions based on the density of overlapping biological annotations or experimental signals.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Find exons with the highest number of features
+# find-exons-with-the-highest-number-of-features
 
 ## Overview
 

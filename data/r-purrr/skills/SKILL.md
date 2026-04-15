@@ -4,7 +4,6 @@ description: This tool provides functional programming tools in R for consistent
 homepage: https://cloud.r-project.org/web/packages/purrr/index.html
 ---
 
-
 # r-purrr
 
 name: r-purrr

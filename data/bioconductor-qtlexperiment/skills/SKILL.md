@@ -4,7 +4,6 @@ description: The QTLExperiment package provides an S4 class container for storin
 homepage: https://bioconductor.org/packages/release/bioc/html/QTLExperiment.html
 ---
 
-
 # bioconductor-qtlexperiment
 
 ## Overview

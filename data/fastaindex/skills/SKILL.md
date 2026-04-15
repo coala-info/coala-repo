@@ -2,6 +2,8 @@
 name: fastaindex
 description: fastaindex is a utility that manages FASTA indices with extended base counts and provides high-performance sequence retrieval and assembly statistics. Use when user asks to create a samtools-compatible index, extract specific genomic regions, or calculate assembly metrics like N50 and L50.
 homepage: https://github.com/lpryszcz/FastaIndex
+metadata:
+  docker_image: "quay.io/biocontainers/fastaindex:0.11c--py36_0"
 ---
 
 # fastaindex

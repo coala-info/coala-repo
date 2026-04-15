@@ -4,7 +4,6 @@ description: HarmanData provides curated microarray and methylation datasets for
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HarmanData.html
 ---
 
-
 # bioconductor-harmandata
 
 ## Overview

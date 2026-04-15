@@ -2,8 +2,9 @@
 name: ucsc-qatoqac
 description: The ucsc-qatoqac tool compresses uncompressed quality score files (.qa) into a binary compressed format (.qac). Use when user asks to compress quality score files, or convert .qa files to .qac format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-qatoqac:482--h0b57e2e_0"
 ---
-
 
 # ucsc-qatoqac
 

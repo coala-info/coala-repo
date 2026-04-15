@@ -2,8 +2,9 @@
 name: auriclass
 description: AuriClass identifies *Candida auris* clades from genomic data using Mash distances against a reference database. Use when user asks to classify *Candida auris* samples into clades, identify outgroups, or analyze FastQ and FastA files for species identification.
 homepage: https://rivm-bioinformatics.github.io/auriclass/
+metadata:
+  docker_image: "quay.io/biocontainers/auriclass:0.5.4--pyhdfd78af_0"
 ---
-
 
 # auriclass
 

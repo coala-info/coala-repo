@@ -4,7 +4,6 @@ description: This tool performs power analysis for CyTOF experiments to predict 
 homepage: https://bioconductor.org/packages/release/bioc/html/CyTOFpower.html
 ---
 
-
 # bioconductor-cytofpower
 
 name: bioconductor-cytofpower

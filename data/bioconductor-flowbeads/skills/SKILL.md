@@ -4,7 +4,6 @@ description: This tool performs bead-based normalization for flow cytometry data
 homepage: https://bioconductor.org/packages/release/bioc/html/flowBeads.html
 ---
 
-
 # bioconductor-flowbeads
 
 name: bioconductor-flowbeads

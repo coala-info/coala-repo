@@ -2,8 +2,9 @@
 name: ensembl-vep
 description: Ensembl VEP annotates genomic variants and predicts their functional impact on biological features. Use when user asks to annotate VCF files, predict variant consequences, or extract biological insights from sequencing datasets.
 homepage: https://www.ensembl.org/info/docs/tools/vep/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/ensembl-vep:115.2--pl5321h2a3209d_1"
 ---
-
 
 # ensembl-vep
 

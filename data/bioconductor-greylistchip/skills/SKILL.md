@@ -4,7 +4,6 @@ description: This tool identifies and generates sample-specific grey lists of an
 homepage: https://bioconductor.org/packages/release/bioc/html/GreyListChIP.html
 ---
 
-
 # bioconductor-greylistchip
 
 name: bioconductor-greylistchip

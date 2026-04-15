@@ -4,7 +4,6 @@ description: The r-genemodel package creates publication-quality visualizations 
 homepage: https://cloud.r-project.org/web/packages/genemodel/index.html
 ---
 
-
 # r-genemodel
 
 ## Overview

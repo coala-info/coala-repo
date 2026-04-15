@@ -1,10 +1,12 @@
 ---
 name: erga-bge-genome-report-asm-analyses-one-asm-hifi-hic
-description: "This workflow performs comprehensive genome assembly evaluation by retrieving NCBI assembly and read data to run analyses using BUSCO, BlobToolKit, Merqury, and HiCExplorer. Use this skill when you need to validate the quality, completeness, and chromosomal structure of a eukaryotic genome assembly as part of the ERGA-BGE biodiversity genomics initiative."
-homepage: https://workflowhub.eu/workflows/1104
+description: This workflow performs comprehensive genome assembly evaluation by retrieving NCBI assembly and read data to run analyses using BUSCO, BlobToolKit, Merqury, and HiCExplorer. Use this skill when you need to validate the quality, completeness, and chromosomal structure of a eukaryotic genome assembly as part of the ERGA-BGE biodiversity genomics initiative.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA-BGE Genome Report ASM analyses (one-asm HiFi + HiC)
+# erga-bge-genome-report-asm-analyses-one-asm-hifi-hic
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: isescan
-description: "ISEScan is a computational pipeline that automates the identification and annotation of Insertion Sequence elements in prokaryotic genomes and metagenomes. Use when user asks to identify insertion sequences, find terminal inverted repeats, or annotate transposable elements in DNA sequences."
+description: ISEScan is a computational pipeline that automates the identification and annotation of Insertion Sequence elements in prokaryotic genomes and metagenomes. Use when user asks to identify insertion sequences, find terminal inverted repeats, or annotate transposable elements in DNA sequences.
 homepage: https://github.com/xiezhq/ISEScan
+metadata:
+  docker_image: "quay.io/biocontainers/isescan:1.7.3--h7b50bb2_0"
 ---
-
 
 # isescan
 

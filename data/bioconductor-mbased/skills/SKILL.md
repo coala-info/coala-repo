@@ -4,7 +4,6 @@ description: This tool detects allele-specific gene expression from RNA-seq coun
 homepage: https://bioconductor.org/packages/release/bioc/html/MBASED.html
 ---
 
-
 # bioconductor-mbased
 
 name: bioconductor-mbased

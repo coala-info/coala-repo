@@ -1,9 +1,10 @@
 ---
 name: imagej
-description: "ImageJ is a powerful open-source image processing program for scientific data analysis. Use when user asks to analyze, manipulate, or process scientific images, especially multidimensional ones."
+description: ImageJ is a powerful open-source image processing program for scientific data analysis. Use when user asks to analyze, manipulate, or process scientific images, especially multidimensional ones.
 homepage: https://github.com/imagej/imagej2
+metadata:
+  docker_image: "biocontainers/imagej:v1.51idfsg-2-deb_cv1"
 ---
-
 
 # imagej
 

@@ -4,7 +4,6 @@ description: This tool implements Hidden Variable Dynamic Modelling to predict t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/rHVDM.html
 ---
 
-
 # bioconductor-rhvdm
 
 name: bioconductor-rhvdm

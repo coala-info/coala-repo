@@ -4,7 +4,6 @@ description: The r-wicket package provides high-performance R functions for vali
 homepage: https://cloud.r-project.org/web/packages/wicket/index.html
 ---
 
-
 # r-wicket
 
 ## Overview

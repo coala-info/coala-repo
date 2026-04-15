@@ -2,8 +2,9 @@
 name: blaze2
 description: blaze2 demultiplexes Nanopore long-read single-cell data by identifying and error-correcting cell barcodes and UMIs. Use when user asks to demultiplex long-read single-cell RNA-seq data, extract cell barcodes and UMIs, or prepare Nanopore reads for isoform-level analysis.
 homepage: https://github.com/shimlab/BLAZE
+metadata:
+  docker_image: "quay.io/biocontainers/blaze2:2.5.1--pyhdfd78af_0"
 ---
-
 
 # blaze2
 

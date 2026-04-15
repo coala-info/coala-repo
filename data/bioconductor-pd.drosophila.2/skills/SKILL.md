@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.drosophila.2.html
 ---
 
-
 # bioconductor-pd.drosophila.2
 
 name: bioconductor-pd.drosophila.2

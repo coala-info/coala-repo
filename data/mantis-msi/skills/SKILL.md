@@ -1,9 +1,10 @@
 ---
 name: mantis-msi
-description: "MANTIS identifies microsatellite instability by comparing repeat length distributions between matched tumor and normal sequencing samples. Use when user asks to detect microsatellite instability, calculate MSI scores, or analyze microsatellite loci in paired-end sequencing data."
+description: MANTIS identifies microsatellite instability by comparing repeat length distributions between matched tumor and normal sequencing samples. Use when user asks to detect microsatellite instability, calculate MSI scores, or analyze microsatellite loci in paired-end sequencing data.
 homepage: https://github.com/OSU-SRLab/MANTIS/
+metadata:
+  docker_image: "quay.io/biocontainers/mantis-msi:1.0.5--h4ac6f70_2"
 ---
-
 
 # mantis-msi
 

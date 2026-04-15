@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix htmg430pm 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430pm.db.html
 ---
 
-
 # bioconductor-htmg430pm.db
 
 name: bioconductor-htmg430pm.db

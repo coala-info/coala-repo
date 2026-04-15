@@ -4,7 +4,6 @@ description: This R package implements neutral theory models to analyze biodiver
 homepage: https://cran.r-project.org/web/packages/guilds/index.html
 ---
 
-
 # r-guilds
 
 name: r-guilds

@@ -4,7 +4,6 @@ description: This tool provides S4 classes and methods for representing and mani
 homepage: https://bioconductor.org/packages/release/bioc/html/hypergraph.html
 ---
 
-
 # bioconductor-hypergraph
 
 name: bioconductor-hypergraph

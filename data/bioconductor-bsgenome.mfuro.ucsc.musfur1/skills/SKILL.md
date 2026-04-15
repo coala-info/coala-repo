@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the domestic fe
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mfuro.UCSC.musFur1.html
 ---
 
-
 # bioconductor-bsgenome.mfuro.ucsc.musfur1
 
 name: bioconductor-bsgenome.mfuro.ucsc.musfur1

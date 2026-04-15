@@ -4,7 +4,6 @@ description: The mbQTL package identifies associations between microbial taxa ab
 homepage: https://bioconductor.org/packages/release/bioc/html/mbQTL.html
 ---
 
-
 # bioconductor-mbqtl
 
 ## Overview

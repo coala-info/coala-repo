@@ -1,9 +1,12 @@
 ---
 name: metabolome-annotation-workflow-maw
-description: "This CWL workflow performs metabolome annotation on MS2 .mzML data files by integrating spectral dereplication via the R Spectra package with compound database searching through SIRIUS or MetFrag and RDKit-based candidate selection. Use this skill when identifying unknown metabolites from mass spectrometry data to characterize the chemical diversity and metabolic profiles of biological samples."
+description: This CWL workflow performs metabolome annotation on MS2 .mzML data files by integrating spectral dereplication via the R Spectra package with compound database searching through SIRIUS or MetFrag and RDKit-based candidate selection. Use this skill when identifying unknown metabolites from mass spectrometry data to characterize the chemical diversity and metabolic profiles of biological samples.
 homepage: https://workflowhub.eu/workflows/510
+metadata:
+  docker_image: "N/A"
 ---
-# Metabolome Annotation Workflow (MAW)
+
+# metabolome-annotation-workflow-maw
 
 ## Overview
 

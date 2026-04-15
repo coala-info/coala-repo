@@ -4,7 +4,6 @@ description: The r-gmodels package provides a collection of R programming tools 
 homepage: https://cloud.r-project.org/web/packages/gmodels/index.html
 ---
 
-
 # r-gmodels
 
 name: r-gmodels

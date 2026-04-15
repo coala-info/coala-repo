@@ -4,7 +4,6 @@ description: This tool solves Mixed-Integer Linear Programming (MILP) problems u
 homepage: https://bioconductor.org/packages/release/bioc/html/lpsymphony.html
 ---
 
-
 # bioconductor-lpsymphony
 
 name: bioconductor-lpsymphony

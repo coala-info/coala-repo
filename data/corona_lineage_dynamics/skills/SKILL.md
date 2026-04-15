@@ -2,8 +2,9 @@
 name: corona_lineage_dynamics
 description: This tool processes SARS-CoV-2 metadata to calculate lineage frequencies and generate interactive trajectory visualizations. Use when user asks to analyze Pangolin lineage dynamics, visualize genomic surveillance data, or identify predominant lineages based on frequency thresholds.
 homepage: https://github.com/hzi-bifo/corona_lineage_dynamics
+metadata:
+  docker_image: "quay.io/biocontainers/corona_lineage_dynamics:0.1.7--r44h6a1216f_0"
 ---
-
 
 # corona_lineage_dynamics
 

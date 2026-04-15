@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hcg110cdf.html
 ---
 
-
 # bioconductor-hcg110cdf
 
 name: bioconductor-hcg110cdf

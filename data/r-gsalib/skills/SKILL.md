@@ -4,7 +4,6 @@ description: The r-gsalib package provides utility functions to read and parse G
 homepage: https://cloud.r-project.org/web/packages/gsalib/index.html
 ---
 
-
 # r-gsalib
 
 name: r-gsalib

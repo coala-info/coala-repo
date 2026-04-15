@@ -4,6 +4,8 @@ description: This pipeline processes Dual RNA-seq data from FASTQ inputs by merg
 homepage: https://github.com/nf-core/dualrnaseq
 ---
 
+# dualrnaseq
+
 ## Overview
 nf-core/dualrnaseq is a bioinformatics pipeline designed for the simultaneous analysis of host and pathogen transcriptomes. It solves the biological problem of interrogating host-pathogen interactions by processing RNA-seq data that contains transcripts from two different organisms in a single sample.
 

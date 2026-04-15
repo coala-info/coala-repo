@@ -4,7 +4,6 @@ description: This tool creates modular anatomical diagrams and tissue visualizat
 homepage: https://cran.r-project.org/web/packages/gganatogram/index.html
 ---
 
-
 # r-gganatogram
 
 name: r-gganatogram

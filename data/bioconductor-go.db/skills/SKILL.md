@@ -4,7 +4,6 @@ description: This tool provides access to the Gene Ontology (GO) annotation data
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GO.db.html
 ---
 
-
 # bioconductor-go.db
 
 name: bioconductor-go.db

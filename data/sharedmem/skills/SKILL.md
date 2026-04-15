@@ -1,9 +1,10 @@
 ---
 name: sharedmem
-description: "sharedmem is a multiprocessing library that enables efficient memory sharing between Python processes using fork and shared NumPy arrays. Use when user asks to perform parallel processing with shared memory, create writable shared NumPy arrays, or execute MapReduce workflows without serialization overhead."
+description: sharedmem is a multiprocessing library that enables efficient memory sharing between Python processes using fork and shared NumPy arrays. Use when user asks to perform parallel processing with shared memory, create writable shared NumPy arrays, or execute MapReduce workflows without serialization overhead.
 homepage: http://github.com/rainwoodman/sharedmem
+metadata:
+  docker_image: "quay.io/biocontainers/sharedmem:0.3.6--py_0"
 ---
-
 
 # sharedmem
 

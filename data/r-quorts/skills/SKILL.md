@@ -4,7 +4,6 @@ description: This tool provides quality control, data management, and visualizat
 homepage: https://cran.r-project.org/web/packages/quorts/index.html
 ---
 
-
 # r-quorts
 
 name: r-quorts

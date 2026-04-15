@@ -4,7 +4,6 @@ description: The shinyBS package integrates Bootstrap components such as tooltip
 homepage: https://cloud.r-project.org/web/packages/shinyBS/index.html
 ---
 
-
 # r-shinybs
 
 ## Overview

@@ -2,6 +2,8 @@
 name: cmseq
 description: cmseq extracts high-resolution coverage statistics, identifies polymorphic sites, and generates consensus sequences from BAM files. Use when user asks to calculate breadth and depth of coverage, detect synonymous and non-synonymous mutations, or reconstruct sequences from alignment data.
 homepage: https://github.com/SegataLab/cmseq
+metadata:
+  docker_image: "quay.io/biocontainers/cmseq:1.0.4--pyhb7b1952_0"
 ---
 
 # cmseq

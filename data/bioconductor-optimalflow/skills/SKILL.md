@@ -4,7 +4,6 @@ description: This package implements an optimal-transport approach to analyze fl
 homepage: https://bioconductor.org/packages/release/bioc/html/optimalFlow.html
 ---
 
-
 # bioconductor-optimalflow
 
 ## Overview

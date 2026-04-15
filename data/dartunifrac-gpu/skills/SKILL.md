@@ -2,8 +2,9 @@
 name: dartunifrac-gpu
 description: DartUniFrac-GPU provides ultra-fast unweighted and weighted UniFrac distance estimation for large-scale microbiome datasets using GPU acceleration. Use when user asks to calculate UniFrac distances, estimate diversity metrics for millions of samples, or perform rapid Principle Coordinate Analysis.
 homepage: https://github.com/jianshu93/DartUniFrac
+metadata:
+  docker_image: "quay.io/biocontainers/dartunifrac-gpu:0.3.0--hd7384ae_0"
 ---
-
 
 # dartunifrac-gpu
 

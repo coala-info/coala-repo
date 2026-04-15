@@ -4,7 +4,6 @@ description: This package provides a reference dataset and tools for estimating 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.Blood.EPIC.html
 ---
 
-
 # bioconductor-flowsorted.blood.epic
 
 ## Overview

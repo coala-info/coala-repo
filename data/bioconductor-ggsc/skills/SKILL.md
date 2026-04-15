@@ -4,7 +4,6 @@ description: This tool creates ggplot2-based visualizations for single-cell RNA-
 homepage: https://bioconductor.org/packages/release/bioc/html/ggsc.html
 ---
 
-
 # bioconductor-ggsc
 
 name: bioconductor-ggsc

@@ -4,7 +4,6 @@ description: This tool filters, summarizes, and visualizes genetic variation dat
 homepage: https://bioconductor.org/packages/release/bioc/html/TVTB.html
 ---
 
-
 # bioconductor-tvtb
 
 name: bioconductor-tvtb

@@ -4,7 +4,6 @@ description: This Bioconductor package provides annotation mappings between Clar
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomshumanhttranscriptcluster.db.html
 ---
 
-
 # bioconductor-clariomshumanhttranscriptcluster.db
 
 ## Overview

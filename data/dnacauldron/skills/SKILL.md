@@ -2,8 +2,9 @@
 name: dnacauldron
 description: DNA Cauldron is a cloning simulation framework that models restriction enzyme digestion and homology-based recombination to verify genetic assembly strategies. Use when user asks to simulate Golden Gate or Gibson assemblies, validate DNA constructs in silico, detect unwanted restriction sites, or generate assembly reports from sequence repositories.
 homepage: https://github.com/Edinburgh-Genome-Foundry/DnaCauldron
+metadata:
+  docker_image: "quay.io/biocontainers/dnacauldron:2.0.12--pyh7e72e81_0"
 ---
-
 
 # dnacauldron
 

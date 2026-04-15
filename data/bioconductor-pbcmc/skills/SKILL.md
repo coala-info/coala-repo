@@ -4,7 +4,6 @@ description: The pbcmc package provides a permutation-based framework to assess 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pbcmc.html
 ---
 
-
 # bioconductor-pbcmc
 
 ## Overview

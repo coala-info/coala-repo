@@ -1,9 +1,10 @@
 ---
 name: maq
-description: "Maq maps short DNA sequencing reads to a reference genome and calls consensus sequences and SNPs. Use when user asks to map short reads, convert sequence formats to binary, call SNPs, or merge alignment files."
+description: Maq maps short DNA sequencing reads to a reference genome and calls consensus sequences and SNPs. Use when user asks to map short reads, convert sequence formats to binary, call SNPs, or merge alignment files.
 homepage: https://maq.sourceforge.net/maq-man.shtml
+metadata:
+  docker_image: "biocontainers/maq:v0.7.1-8-deb_cv1"
 ---
-
 
 # maq
 

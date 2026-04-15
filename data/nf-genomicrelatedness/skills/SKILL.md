@@ -4,6 +4,8 @@ description: This pipeline estimates genetic relatedness from low-coverage whole
 homepage: https://github.com/nf-core/genomicrelatedness
 ---
 
+# genomicrelatedness
+
 ## Overview
 nf-core/genomicrelatedness is designed for estimating genetic relatedness from low-coverage whole-genome sequencing (sWGS) data. It addresses the challenge of analyzing non-model organisms where high-confidence variant sets are often missing by providing an automated multi-round bootstrapping workflow to generate and refine them.
 

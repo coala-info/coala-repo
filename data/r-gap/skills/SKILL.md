@@ -4,7 +4,6 @@ description: The r-gap package provides a comprehensive suite of tools for genet
 homepage: https://cloud.r-project.org/web/packages/gap/index.html
 ---
 
-
 # r-gap
 
 ## Overview

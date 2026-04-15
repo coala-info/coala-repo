@@ -2,8 +2,9 @@
 name: tpmcalculator
 description: tpmcalculator precisely quantifies transcriptomic features and alternative splicing events from alignment data. Use when user asks to 'quantify gene expression', 'quantify transcript expression', 'quantify exon expression', 'quantify intron expression', or 'identify intron retention events'.
 homepage: https://github.com/ncbi/TPMCalculator
+metadata:
+  docker_image: "quay.io/biocontainers/tpmcalculator:0.0.6--h2bd4fab_0"
 ---
-
 
 # tpmcalculator
 

@@ -1,8 +1,10 @@
 ---
 name: createtaxdb
 description: This pipeline automates the parallel construction of custom metagenomic classifier databases for multiple tools like Kraken2, DIAMOND, and Centrifuge using a CSV samplesheet of reference genomes and NCBI-style taxonomy files. Use when you need to generate consistent, multi-tool reference databases from the same input genome set for taxonomic profiling workflows or as a companion to nf-core/taxprofiler.
-
+homepage: 
 ---
+
+# createtaxdb
 
 ## Overview
 nf-core/createtaxdb solves the challenge of manually building reference databases for various metagenomic classifiers by automating the process from a single set of input genomes. It supports a wide array of nucleotide and protein-based profilers, ensuring that different tools use the exact same reference versions and taxonomic metadata.

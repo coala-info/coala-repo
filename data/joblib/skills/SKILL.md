@@ -1,9 +1,10 @@
 ---
 name: joblib
-description: "Joblib provides tools for lightweight pipelining in Python through transparent disk-based caching and parallel computing. Use when user asks to parallelize loops, cache function results to disk, or efficiently save and load large NumPy arrays."
+description: Joblib provides tools for lightweight pipelining in Python through transparent disk-based caching and parallel computing. Use when user asks to parallelize loops, cache function results to disk, or efficiently save and load large NumPy arrays.
 homepage: https://github.com/joblib/joblib
+metadata:
+  docker_image: "quay.io/biocontainers/joblib:0.9.3--py36_0"
 ---
-
 
 # joblib
 

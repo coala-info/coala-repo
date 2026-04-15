@@ -2,8 +2,9 @@
 name: haplocheck
 description: Haplocheck is a phylogeny-based tool that identifies contamination in sequencing studies by analyzing mitochondrial DNA content. Use when user asks to detect sample contamination, estimate mitochondrial purity, or identify multiple haplogroups in VCF or BAM files.
 homepage: https://github.com/genepi/haplocheck
+metadata:
+  docker_image: "quay.io/biocontainers/haplocheck:1.3.3--h2a3209d_2"
 ---
-
 
 # haplocheck
 

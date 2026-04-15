@@ -1,10 +1,12 @@
 ---
 name: retrosynthesis
-description: "This synthetic biology workflow takes a target molecule as input and utilizes RetroPath2.0, RP2paths, and RPcompletion to predict theoretical metabolic pathways for its production within a specific SBML host model. Use this skill when you need to identify potential enzymatic reaction sequences to synthesize a target metabolite from a host organism's endogenous precursors."
-homepage: https://workflowhub.eu/workflows/1581
+description: This synthetic biology workflow takes a target molecule as input and utilizes RetroPath2.0, RP2paths, and RPcompletion to predict theoretical metabolic pathways for its production within a specific SBML host model. Use this skill when you need to identify potential enzymatic reaction sequences to synthesize a target metabolite from a host organism's endogenous precursors.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RetroSynthesis
+# retrosynthesis
 
 ## Overview
 

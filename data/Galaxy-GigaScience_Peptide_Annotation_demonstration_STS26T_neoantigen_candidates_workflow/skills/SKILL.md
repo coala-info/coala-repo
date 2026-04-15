@@ -1,10 +1,12 @@
 ---
 name: gigascience_peptide_annotation_demonstration_sts26t_neoantig
-description: "This proteogenomics workflow annotates novel peptides and identifies neoantigen candidates by processing Fragpipe reports and genomic GTF/BED data through Query Tabular and PepPointer. Use this skill when you need to map mass spectrometry-derived peptide sequences to genomic coordinates to characterize potential neoantigens for cancer immunotherapy research."
-homepage: https://workflowhub.eu/workflows/1790
+description: This proteogenomics workflow annotates novel peptides and identifies neoantigen candidates by processing Fragpipe reports and genomic GTF/BED data through Query Tabular and PepPointer. Use this skill when you need to map mass spectrometry-derived peptide sequences to genomic coordinates to characterize potential neoantigens for cancer immunotherapy research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GigaScience_Peptide_Annotation_demonstration_STS26T_neoantigen_candidates_workflow
+# gigascience_peptide_annotation_demonstration_sts26t_neoantig
 
 ## Overview
 

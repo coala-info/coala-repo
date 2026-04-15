@@ -1,10 +1,12 @@
 ---
 name: ont-workflow-wick-etal
-description: "This workflow performs de novo genome assembly on Oxford Nanopore sequencing data using Unicycler and SPAdes, followed by assembly graph visualization and assessment with Bandage. Use this skill when you need to generate high-quality bacterial genome assemblies from long-read data and evaluate the connectivity and quality of the resulting assembly graphs."
+description: This workflow performs de novo genome assembly on Oxford Nanopore sequencing data using Unicycler and SPAdes, followed by assembly graph visualization and assessment with Bandage. Use this skill when you need to generate high-quality bacterial genome assemblies from long-read data and evaluate the connectivity and quality of the resulting assembly graphs.
 homepage: https://workflowhub.eu/workflows/52
+metadata:
+  docker_image: "N/A"
 ---
 
-# ONT - Workflow-Wick-et.al.
+# ont-workflow-wick-etal
 
 ## Overview
 

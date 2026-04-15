@@ -1,9 +1,10 @@
 ---
 name: json2isatab
-description: "This tool converts ISA-JSON data into the ISA-Tab format. Use when user asks to convert ISA-JSON to ISA-Tab."
+description: This tool converts ISA-JSON data into the ISA-Tab format. Use when user asks to convert ISA-JSON to ISA-Tab.
 homepage: https://github.com/phnmnl/container-json2isatab
+metadata:
+  docker_image: "biocontainers/json2isatab:phenomenal-v0.9.4_cv0.5.39"
 ---
-
 
 # json2isatab
 

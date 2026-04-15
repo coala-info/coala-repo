@@ -4,7 +4,6 @@ description: This package provides a curated collection of gene expression datas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedOvarianData.html
 ---
 
-
 # bioconductor-curatedovariandata
 
 name: bioconductor-curatedovariandata

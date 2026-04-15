@@ -4,7 +4,6 @@ description: This tool performs sample size estimation and power analysis for mi
 homepage: https://bioconductor.org/packages/release/bioc/html/ssize.html
 ---
 
-
 # bioconductor-ssize
 
 name: bioconductor-ssize

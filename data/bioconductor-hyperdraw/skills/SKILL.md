@@ -4,7 +4,6 @@ description: This package provides a specialized algorithm for visualizing hyper
 homepage: https://bioconductor.org/packages/release/bioc/html/hyperdraw.html
 ---
 
-
 # bioconductor-hyperdraw
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides access to the ecoliLeucine Bioconductor exper
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ecoliLeucine.html
 ---
 
-
 # bioconductor-ecolileucine
 
 name: bioconductor-ecolileucine

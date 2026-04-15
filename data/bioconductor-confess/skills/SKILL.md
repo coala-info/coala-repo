@@ -4,7 +4,6 @@ description: bioconductor-confess performs cell detection and fluorescence signa
 homepage: https://bioconductor.org/packages/release/bioc/html/CONFESS.html
 ---
 
-
 # bioconductor-confess
 
 name: bioconductor-confess

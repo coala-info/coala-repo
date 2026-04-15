@@ -2,8 +2,9 @@
 name: oxbow
 description: Oxbow is a high-performance data I/O library that translates genomic file formats into Apache Arrow for efficient analysis in modern data ecosystems. Use when user asks to stream genomic data into in-memory data frames, read NGS formats like BAM or VCF into Apache Arrow, or integrate genomic datasets with tools like Pandas and Polars.
 homepage: https://github.com/abdenlab/oxbow
+metadata:
+  docker_image: "quay.io/biocontainers/oxbow:0.5.1--py310hec43fc7_0"
 ---
-
 
 # oxbow
 

@@ -4,7 +4,6 @@ description: The InTAD package integrates transcriptomic and epigenomic data wit
 homepage: https://bioconductor.org/packages/release/bioc/html/InTAD.html
 ---
 
-
 # bioconductor-intad
 
 ## Overview

@@ -2,8 +2,9 @@
 name: annembed
 description: annembed is a scalable, non-linear dimension reduction tool used to transform high-dimensional biological data into low-dimensional embeddings. Use when user asks to perform ultra-fast dimension reduction, generate UMAP-like visualizations for microbial genomes, or create embeddings from k-mer sketches.
 homepage: https://github.com/jean-pierreBoth/gsearch
+metadata:
+  docker_image: "quay.io/biocontainers/annembed:0.2.6--h3dc2dae_0"
 ---
-
 
 # annembed
 

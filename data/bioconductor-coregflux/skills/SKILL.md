@@ -4,7 +4,6 @@ description: Bioconductor-coregflux integrates gene regulatory networks and tran
 homepage: https://bioconductor.org/packages/3.9/bioc/html/CoRegFlux.html
 ---
 
-
 # bioconductor-coregflux
 
 name: bioconductor-coregflux

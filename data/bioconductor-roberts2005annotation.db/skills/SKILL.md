@@ -4,7 +4,6 @@ description: This package provides a SQLite-based interface for mapping manufact
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Roberts2005Annotation.db.html
 ---
 
-
 # bioconductor-roberts2005annotation.db
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: ena-reads-and-assembly-submission-workflow
-description: "This Galaxy workflow facilitates the submission of raw sequencing reads and consensus assemblies to the European Nucleotide Archive (ENA) using the ENA upload tool and Webin CLI based on Excel metadata and sample checklists. Use this skill when you need to archive genomic datasets and assemblies in a public repository to meet publication requirements and ensure data FAIRness."
-homepage: https://workflowhub.eu/workflows/2008
+description: This Galaxy workflow facilitates the submission of raw sequencing reads and consensus assemblies to the European Nucleotide Archive (ENA) using the ENA upload tool and Webin CLI based on Excel metadata and sample checklists. Use this skill when you need to archive genomic datasets and assemblies in a public repository to meet publication requirements and ensure data FAIRness.
+homepage: https://www.elixir-belgium.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ENA Reads and Assembly Submission Workflow
+# ena-reads-and-assembly-submission-workflow
 
 ## Overview
 

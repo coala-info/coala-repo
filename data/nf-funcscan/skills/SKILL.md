@@ -4,6 +4,8 @@ description: This pipeline screens assembled nucleotide contigs for functional c
 homepage: https://github.com/nf-core/funcscan
 ---
 
+# nf-core-funcscan
+
 ## Overview
 nf-core/funcscan is designed for the automated discovery of functional genes within genomic and metagenomic sequences. It provides a unified framework to run multiple specialized screening tools simultaneously, handling the complexities of taxonomic classification, gene prediction, and result aggregation.
 

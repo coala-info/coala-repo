@@ -4,7 +4,6 @@ description: The fail package provides a file abstraction interface layer that t
 homepage: https://cloud.r-project.org/web/packages/fail/index.html
 ---
 
-
 # r-fail
 
 ## Overview

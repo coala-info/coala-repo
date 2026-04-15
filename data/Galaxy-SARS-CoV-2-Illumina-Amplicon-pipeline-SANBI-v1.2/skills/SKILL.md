@@ -1,10 +1,12 @@
 ---
 name: sars-cov-2-illumina-amplicon-pipeline-sanbi-v12
-description: "This workflow processes Illumina paired-end amplicon sequencing data for SARS-CoV-2 using tools like fastp, BBMap, iVar, and SnpEff to perform read filtering, alignment, and variant calling against a reference genome. Use this skill when you need to generate high-quality consensus genomes and identify annotated variants from COVID-19 clinical samples to track lineage evolution or public health outbreaks."
-homepage: https://workflowhub.eu/workflows/519
+description: This workflow processes Illumina paired-end amplicon sequencing data for SARS-CoV-2 using tools like fastp, BBMap, iVar, and SnpEff to perform read filtering, alignment, and variant calling against a reference genome. Use this skill when you need to generate high-quality consensus genomes and identify annotated variants from COVID-19 clinical samples to track lineage evolution or public health outbreaks.
+homepage: https://www.sanbi.ac.za/
+metadata:
+  docker_image: "N/A"
 ---
 
-# SARS-CoV-2 Illumina Amplicon pipeline - SANBI - v1.2
+# sars-cov-2-illumina-amplicon-pipeline-sanbi-v12
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool parses, validates, and builds variant descriptor strings 
 homepage: https://cran.r-project.org/web/packages/hgvsparser/index.html
 ---
 
-
 # r-hgvsparser
 
 name: r-hgvsparser

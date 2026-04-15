@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-eodie-sentinel
-description: "This workflow processes Sentinel-2 satellite imagery and parcel geometries using the EODIE toolkit to extract object-based time series information. Use this skill when you need to monitor vegetation dynamics or analyze land cover changes across specific geographic parcels using multi-temporal satellite data."
-homepage: https://workflowhub.eu/workflows/274
+description: This workflow processes Sentinel-2 satellite imagery and parcel geometries using the EODIE toolkit to extract object-based time series information. Use this skill when you need to monitor vegetation dynamics or analyze land cover changes across specific geographic parcels using multi-temporal satellite data.
+homepage: https://gitlab.com/fgi_nls/public/EODIE
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'EODIE Sentinel'
+# workflow-constructed-from-history-eodie-sentinel
 
 ## Overview
 

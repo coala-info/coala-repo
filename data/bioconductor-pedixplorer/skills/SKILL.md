@@ -4,7 +4,6 @@ description: Pedixplorer is a Bioconductor package for creating, analyzing, and 
 homepage: https://bioconductor.org/packages/release/bioc/html/Pedixplorer.html
 ---
 
-
 # bioconductor-pedixplorer
 
 name: bioconductor-pedixplorer

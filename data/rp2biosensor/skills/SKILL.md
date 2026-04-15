@@ -1,9 +1,10 @@
 ---
 name: rp2biosensor
-description: "This tool builds sensing-enabling metabolic pathways from RetroPath2.0 output. Use when user asks to process RetroPath2.0 results to generate metabolic pathways for biosensor design."
+description: This tool builds sensing-enabling metabolic pathways from RetroPath2.0 output. Use when user asks to process RetroPath2.0 results to generate metabolic pathways for biosensor design.
 homepage: https://github.com/conda-forge/rp2biosensor-feedstock
+metadata:
+  docker_image: "quay.io/biocontainers/rp2biosensor:3.2.1"
 ---
-
 
 # rp2biosensor
 

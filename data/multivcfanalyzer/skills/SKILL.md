@@ -1,9 +1,10 @@
 ---
 name: multivcfanalyzer
-description: "MultiVCFAnalyzer aggregates and filters SNP calls from multiple VCF files to produce alignments and tables for phylogenetic and population genetic analyses. Use when user asks to aggregate SNP calls from multiple VCFs, filter variants for ancient DNA workflows, or generate SNP alignments for phylogenetic reconstruction."
+description: MultiVCFAnalyzer aggregates and filters SNP calls from multiple VCF files to produce alignments and tables for phylogenetic and population genetic analyses. Use when user asks to aggregate SNP calls from multiple VCFs, filter variants for ancient DNA workflows, or generate SNP alignments for phylogenetic reconstruction.
 homepage: https://github.com/alexherbig/MultiVCFAnalyzer
+metadata:
+  docker_image: "quay.io/biocontainers/multivcfanalyzer:0.88.1--hdfd78af_0"
 ---
-
 
 # multivcfanalyzer
 

@@ -4,7 +4,6 @@ description: This tool provides a high-performance replacement for R's built-in 
 homepage: https://cloud.r-project.org/web/packages/fastmatch/index.html
 ---
 
-
 # r-fastmatch
 
 name: r-fastmatch

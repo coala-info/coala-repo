@@ -4,7 +4,6 @@ description: The flowClust package performs robust clustering of flow cytometry 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowClust.html
 ---
 
-
 # bioconductor-flowclust
 
 ## Overview

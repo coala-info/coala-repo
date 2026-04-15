@@ -4,7 +4,6 @@ description: The bioconductor-sights package provides statistical tools and diag
 homepage: https://bioconductor.org/packages/release/bioc/html/sights.html
 ---
 
-
 # bioconductor-sights
 
 ## Overview

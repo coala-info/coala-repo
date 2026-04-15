@@ -4,7 +4,6 @@ description: This tool identifies and analyzes genomic interaction nodes or hot 
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicInteractionNodes.html
 ---
 
-
 # bioconductor-genomicinteractionnodes
 
 name: bioconductor-genomicinteractionnodes

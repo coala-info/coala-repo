@@ -4,7 +4,6 @@ description: ClustAll performs robust patient stratification and multi-method cl
 homepage: https://bioconductor.org/packages/release/bioc/html/ClustAll.html
 ---
 
-
 # bioconductor-clustall
 
 name: bioconductor-clustall

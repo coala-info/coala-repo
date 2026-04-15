@@ -4,7 +4,6 @@ description: This package provides ID mapping for Illumina Rat expression chips,
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiRatIDMapping.html
 ---
 
-
 # bioconductor-lumiratidmapping
 
 name: bioconductor-lumiratidmapping

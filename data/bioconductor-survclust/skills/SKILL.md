@@ -4,7 +4,6 @@ description: bioconductor-survclust performs outcome-weighted integrative superv
 homepage: https://bioconductor.org/packages/release/bioc/html/survClust.html
 ---
 
-
 # bioconductor-survclust
 
 name: bioconductor-survclust

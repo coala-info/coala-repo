@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for the Affymetrix M
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse4302frmavecs.html
 ---
 
-
 # bioconductor-mouse4302frmavecs
 
 name: bioconductor-mouse4302frmavecs

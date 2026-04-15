@@ -4,7 +4,6 @@ description: The r-dendextend package provides a comprehensive set of tools for 
 homepage: https://cloud.r-project.org/web/packages/dendextend/index.html
 ---
 
-
 # r-dendextend
 
 name: r-dendextend

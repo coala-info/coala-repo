@@ -4,7 +4,6 @@ description: This tool analyzes label-free proteomics data from Synapt G2 mass s
 homepage: https://bioconductor.org/packages/3.6/bioc/html/synapter.html
 ---
 
-
 # bioconductor-synapter
 
 name: bioconductor-synapter

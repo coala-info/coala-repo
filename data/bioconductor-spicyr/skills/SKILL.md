@@ -4,7 +4,6 @@ description: This package analyzes spatial relationships between cell types in m
 homepage: https://bioconductor.org/packages/release/bioc/html/spicyR.html
 ---
 
-
 # bioconductor-spicyr
 
 ## Overview

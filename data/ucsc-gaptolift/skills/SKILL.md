@@ -2,8 +2,9 @@
 name: ucsc-gaptolift
 description: The ucsc-gaptolift utility generates lift files from genomic gap data to facilitate coordinate transformations across assembly structures. Use when user asks to create lift files from gap tables, generate mapping files for liftUp, or convert assembly gap coordinates into lift format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-gaptolift:482--h0b57e2e_0"
 ---
-
 
 # ucsc-gaptolift
 

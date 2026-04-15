@@ -4,7 +4,6 @@ description: Bioconductor-iseq performs ChIP-seq peak calling using Bayesian hie
 homepage: https://bioconductor.org/packages/release/bioc/html/iSeq.html
 ---
 
-
 # bioconductor-iseq
 
 name: bioconductor-iseq

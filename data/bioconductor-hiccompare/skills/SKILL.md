@@ -4,7 +4,6 @@ description: This tool performs joint normalization and differential chromatin i
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCcompare.html
 ---
 
-
 # bioconductor-hiccompare
 
 name: bioconductor-hiccompare

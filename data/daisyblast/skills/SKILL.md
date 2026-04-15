@@ -2,8 +2,9 @@
 name: daisyblast
 description: daisyblast is a bioinformatics pipeline that performs all-vs-all BLAST searches and uses a Union-Find algorithm to identify and visualize syntenic groups across multiple genomes. Use when user asks to identify conserved genomic architecture, perform daisy-chaining synteny analysis, or generate linear and circular plots of shared sequence groups.
 homepage: https://github.com/erinyoung/daisyblast
+metadata:
+  docker_image: "quay.io/biocontainers/daisyblast:0.2.0--pyhdfd78af_0"
 ---
-
 
 # daisyblast
 

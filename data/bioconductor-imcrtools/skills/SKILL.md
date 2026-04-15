@@ -4,7 +4,6 @@ description: This tool performs spatial analysis and processing of highly multip
 homepage: https://bioconductor.org/packages/release/bioc/html/imcRtools.html
 ---
 
-
 # bioconductor-imcrtools
 
 name: bioconductor-imcrtools

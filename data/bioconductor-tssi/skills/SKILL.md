@@ -4,7 +4,6 @@ description: The TSSi package provides a statistical framework for identifying t
 homepage: https://bioconductor.org/packages/3.5/bioc/html/TSSi.html
 ---
 
-
 # bioconductor-tssi
 
 ## Overview

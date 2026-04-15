@@ -2,8 +2,9 @@
 name: gfinisher
 description: gfinisher is a bioinformatics tool for specific computational biology tasks. Use when user asks to install gfinisher or understand its command-line usage.
 homepage: https://anaconda.org/channels/bioconda/packages/gfinisher/overview
+metadata:
+  docker_image: "quay.io/biocontainers/gfinisher:1.4--py27_0"
 ---
-
 
 # gfinisher
 

@@ -4,7 +4,6 @@ description: This tool detects nuclear-mitochondrial DNA fusions from structural
 homepage: https://bioconductor.org/packages/release/bioc/html/svaNUMT.html
 ---
 
-
 # bioconductor-svanumt
 
 name: bioconductor-svanumt

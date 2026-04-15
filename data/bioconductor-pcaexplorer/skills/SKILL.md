@@ -4,7 +4,6 @@ description: pcaExplorer provides an interactive Shiny application and R functio
 homepage: https://bioconductor.org/packages/release/bioc/html/pcaExplorer.html
 ---
 
-
 # bioconductor-pcaexplorer
 
 ## Overview

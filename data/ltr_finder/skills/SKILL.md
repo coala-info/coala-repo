@@ -2,8 +2,9 @@
 name: ltr_finder
 description: ltr_finder identifies long terminal repeat (LTR) retrotransposons in genomic sequences using structural features and functional motifs. Use when user asks to detect LTR retrotransposons, identify protein domains like reverse transcriptase, or find target site repeats and primer binding sites in a genome.
 homepage: https://github.com/NBISweden/LTR_Finder/
+metadata:
+  docker_image: "quay.io/biocontainers/ltr_harvest_parallel:1.2--hdfd78af_2"
 ---
-
 
 # ltr_finder
 

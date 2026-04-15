@@ -4,7 +4,6 @@ description: The BiocSingular package provides a unified interface for performin
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocSingular.html
 ---
 
-
 # bioconductor-biocsingular
 
 ## Overview

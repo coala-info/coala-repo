@@ -1,9 +1,10 @@
 ---
 name: pycsg
-description: "pycsg is a Python library for performing constructive solid geometry operations to create complex 3D shapes from simpler meshes. Use when user asks to perform boolean operations on 3D solids, create primitive shapes like cubes or spheres, or generate manifold geometry programmatically."
+description: pycsg is a Python library for performing constructive solid geometry operations to create complex 3D shapes from simpler meshes. Use when user asks to perform boolean operations on 3D solids, create primitive shapes like cubes or spheres, or generate manifold geometry programmatically.
 homepage: https://github.com/timknip/pycsg
+metadata:
+  docker_image: "quay.io/biocontainers/pycsg:0.3.12--py36_0"
 ---
-
 
 # pycsg
 

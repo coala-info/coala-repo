@@ -4,7 +4,6 @@ description: This package provides a BAM file containing off-target sequencing r
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SCLCBam.html
 ---
 
-
 # bioconductor-sclcbam
 
 name: bioconductor-sclcbam

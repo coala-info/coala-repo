@@ -2,6 +2,8 @@
 name: taxpasta
 description: Taxpasta standardises and merges taxonomic profiles from various metagenomic profilers into a unified format. Use when user asks to standardise profiler outputs, aggregate multiple samples into a single matrix, or convert taxonomic results to BIOM, Parquet, or Excel formats.
 homepage: https://github.com/taxprofiler/taxpasta
+metadata:
+  docker_image: "quay.io/biocontainers/taxpasta:0.7.0--pyhdfd78af_1"
 ---
 
 # taxpasta

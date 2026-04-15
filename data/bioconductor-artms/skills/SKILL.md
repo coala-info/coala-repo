@@ -1,9 +1,8 @@
 ---
 name: bioconductor-artms
-description: "bioconductor-artms analyzes and integrates large-scale mass-spectrometry-based proteomics datasets obtained from MaxQuant. Use when user asks to perform quality control, relative quantification using MSstats, downstream enrichment analysis, or convert MaxQuant evidence files for specialized PTM and AP-MS tools."
+description: bioconductor-artms analyzes and integrates large-scale mass-spectrometry-based proteomics datasets obtained from MaxQuant. Use when user asks to perform quality control, relative quantification using MSstats, downstream enrichment analysis, or convert MaxQuant evidence files for specialized PTM and AP-MS tools.
 homepage: https://bioconductor.org/packages/release/bioc/html/artMS.html
 ---
-
 
 # bioconductor-artms
 

@@ -1,9 +1,10 @@
 ---
 name: gsort
-description: "gsort reorders genomic data files based on a custom sequence of chromosomes while preserving file headers. Use when user asks to sort genomic files by a specific chromosome order, manage memory during large file sorts, or ensure parent-child record ordering in GFF files."
+description: gsort reorders genomic data files based on a custom sequence of chromosomes while preserving file headers. Use when user asks to sort genomic files by a specific chromosome order, manage memory during large file sorts, or ensure parent-child record ordering in GFF files.
 homepage: https://github.com/brentp/gsort
+metadata:
+  docker_image: "quay.io/biocontainers/gsort:0.1.5--he881be0_0"
 ---
-
 
 # gsort
 

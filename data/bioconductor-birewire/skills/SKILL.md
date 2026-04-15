@@ -4,7 +4,6 @@ description: BiRewire randomizes bipartite, undirected, or directed signed netwo
 homepage: https://bioconductor.org/packages/release/bioc/html/BiRewire.html
 ---
 
-
 # bioconductor-birewire
 
 ## Overview

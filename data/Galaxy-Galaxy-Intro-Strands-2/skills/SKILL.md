@@ -1,10 +1,12 @@
 ---
 name: galaxy-intro-strands-2
-description: "This genomics workflow processes gene input files to extract specific genomic features like exons and introns using filtering, intersection, and concatenation tools. Use this skill when you need to isolate specific functional elements of genes or identify overlapping genomic regions for comparative analysis."
-homepage: https://workflowhub.eu/workflows/1544
+description: This genomics workflow processes gene input files to extract specific genomic features like exons and introns using filtering, intersection, and concatenation tools. Use this skill when you need to isolate specific functional elements of genes or identify overlapping genomic regions for comparative analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy Intro Strands 2
+# galaxy-intro-strands-2
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: perl-bio-kmer
 description: This tool performs k-mer counting and frequency analysis for genomic sequence data. Use when user asks to count k-mers, estimate genome size, or generate k-mer histograms for sequencing depth assessment.
 homepage: https://metacpan.org/pod/Bio::Kmer
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-kmer:0.55--pl5321h031d066_0"
 ---
-
 
 # perl-bio-kmer
 

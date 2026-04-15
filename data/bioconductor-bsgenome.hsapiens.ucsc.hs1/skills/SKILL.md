@@ -4,7 +4,6 @@ description: This package provides the full genomic sequences for the human T2T-
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hs1.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hs1
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hs1

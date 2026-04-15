@@ -1,10 +1,12 @@
 ---
 name: extract-sra-spades
-description: "This workflow downloads raw sequencing data from the NCBI Sequence Read Archive using fasterq-dump and performs de novo assembly of viral genomes using rnaviralSPAdes. Use this skill when you need to reconstruct viral transcripts or assemble complete viral genomes from publicly available short-read sequencing datasets."
-homepage: https://workflowhub.eu/workflows/434
+description: This workflow downloads raw sequencing data from the NCBI Sequence Read Archive using fasterq-dump and performs de novo assembly of viral genomes using rnaviralSPAdes. Use this skill when you need to reconstruct viral transcripts or assemble complete viral genomes from publicly available short-read sequencing datasets.
+homepage: https://www.gembloux.ulg.ac.be/phytopathologie/
+metadata:
+  docker_image: "N/A"
 ---
 
-# extract SRA + spades
+# extract-sra-spades
 
 ## Overview
 

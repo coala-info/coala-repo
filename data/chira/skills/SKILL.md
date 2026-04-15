@@ -2,8 +2,9 @@
 name: chira
 description: ChiRA is a framework for processing and analyzing chimeric RNA reads from interactome mapping experiments to identify RNA-RNA interactions. Use when user asks to deduplicate chimeric reads, map reads to a transcriptome, define read-concentrated loci, quantify chimeric abundance, or extract statistically supported RNA interactions.
 homepage: https://github.com/pavanvidem/chira/
+metadata:
+  docker_image: "quay.io/biocontainers/chira:1.4.3--hdfd78af_2"
 ---
-
 
 # chira
 

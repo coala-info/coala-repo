@@ -4,7 +4,6 @@ description: TargetSearch performs pre-processing and targeted metabolite identi
 homepage: https://bioconductor.org/packages/release/bioc/html/TargetSearch.html
 ---
 
-
 # bioconductor-targetsearch
 
 name: bioconductor-targetsearch

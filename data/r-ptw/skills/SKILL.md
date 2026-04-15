@@ -4,7 +4,6 @@ description: This tool performs Parametric Time Warping to align signals or peak
 homepage: https://cloud.r-project.org/web/packages/ptw/index.html
 ---
 
-
 # r-ptw
 
 name: r-ptw

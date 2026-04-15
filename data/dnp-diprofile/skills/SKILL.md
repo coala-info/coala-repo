@@ -2,8 +2,9 @@
 name: dnp-diprofile
 description: This tool calculates the frequency of dinucleotide occurrences in aligned FASTA sequences. Use when user asks to analyze dinucleotide composition of DNA sequences.
 homepage: https://github.com/erinijapranckeviciene/dnpatterntools
+metadata:
+  docker_image: "quay.io/biocontainers/dnp-diprofile:1.0--hd6d6fdc_7"
 ---
-
 
 # dnp-diprofile
 

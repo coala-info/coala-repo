@@ -4,7 +4,6 @@ description: scROSHI identifies cell types in single-cell expression data using 
 homepage: https://cran.r-project.org/web/packages/scroshi/index.html
 ---
 
-
 # r-scroshi
 
 ## Overview

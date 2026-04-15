@@ -1,9 +1,10 @@
 ---
 name: pyfiglet
-description: "pyfiglet transforms standard text into large, artistic ASCII banners using various font styles. Use when user asks to generate ASCII art text, render banners in the terminal, or create decorative text in Python scripts."
+description: pyfiglet transforms standard text into large, artistic ASCII banners using various font styles. Use when user asks to generate ASCII art text, render banners in the terminal, or create decorative text in Python scripts.
 homepage: https://github.com/pwaller/pyfiglet
+metadata:
+  docker_image: "quay.io/biocontainers/pyfiglet:0.7.5--py34_0"
 ---
-
 
 # pyfiglet
 

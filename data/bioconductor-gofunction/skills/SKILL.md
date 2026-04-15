@@ -4,7 +4,6 @@ description: This tool performs Gene Ontology enrichment analysis while treating
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GOFunction.html
 ---
 
-
 # bioconductor-gofunction
 
 name: bioconductor-gofunction

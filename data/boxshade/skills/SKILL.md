@@ -4,7 +4,6 @@ description: Boxshade transforms multiple sequence alignments into formatted fig
 homepage: https://github.com/mdbaron42/pyBoxshade
 ---
 
-
 # boxshade
 
 ## Overview

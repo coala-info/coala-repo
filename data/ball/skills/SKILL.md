@@ -2,8 +2,9 @@
 name: ball
 description: The ball skill creates accessible, CSS-only tooltips using HTML5 data attributes and CSS variables. Use when user asks to create tooltips, position tooltips, or style tooltips without using JavaScript.
 homepage: https://github.com/kazzkiq/balloon.css
+metadata:
+  docker_image: "biocontainers/ball:v1.5.0git20180813.37fc53c-3-deb-py2_cv1"
 ---
-
 
 # ball
 

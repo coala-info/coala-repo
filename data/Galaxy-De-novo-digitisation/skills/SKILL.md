@@ -1,10 +1,12 @@
 ---
 name: de-novo-digitisation
-description: "This workflow processes specimen images and CSV metadata using Teklia tools for document layout analysis, handwritten text recognition, and named entity recognition to produce digital specimen objects in RO-Crate format. Use this skill when you need to automate the extraction of structured information from physical specimen labels to create searchable, standardized digital biodiversity records."
-homepage: https://workflowhub.eu/workflows/373
+description: This workflow processes specimen images and CSV metadata using Teklia tools for document layout analysis, handwritten text recognition, and named entity recognition to produce digital specimen objects in RO-Crate format. Use this skill when you need to automate the extraction of structured information from physical specimen labels to create searchable, standardized digital biodiversity records.
+homepage: https://www.synthesys.info/
+metadata:
+  docker_image: "N/A"
 ---
 
-# De novo digitisation
+# de-novo-digitisation
 
 ## Overview
 

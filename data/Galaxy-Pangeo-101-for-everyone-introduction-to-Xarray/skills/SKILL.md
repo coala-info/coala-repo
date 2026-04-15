@@ -1,10 +1,12 @@
 ---
 name: gtn-pangeo-101-for-everyone-xarray
-description: "This climate science workflow processes NetCDF atmospheric data using Xarray tools to extract metadata, perform spatial selections, and generate visualizations including map plots, climate stripes, and scatterplots. Use this skill when you need to analyze PM2.5 air quality forecasts, visualize spatio-temporal atmospheric data, or generate climate stripes to represent environmental changes over time."
+description: This climate science workflow processes NetCDF atmospheric data using Xarray tools to extract metadata, perform spatial selections, and generate visualizations including map plots, climate stripes, and scatterplots. Use this skill when you need to analyze PM2.5 air quality forecasts, visualize spatio-temporal atmospheric data, or generate climate stripes to represent environmental changes over time.
 homepage: https://workflowhub.eu/workflows/252
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN 'Pangeo 101 for everyone - Xarray'
+# gtn-pangeo-101-for-everyone-xarray
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: vcf2cytosure
 description: vcf2cytosure converts structural variant data from VCF files into a CytoSure-compatible XML format for cytogenetic analysis and visualization. Use when user asks to 'convert VCF structural variants to CytoSure format', 'visualize coverage or copy number', 'include SNV data for B-allele frequency', 'manage display resolution', or 'map VCF metadata'.
 homepage: https://github.com/NBISweden/vcf2cytosure
+metadata:
+  docker_image: "quay.io/biocontainers/vcf2cytosure:0.9.3--pyh7e72e81_0"
 ---
-
 
 # vcf2cytosure
 

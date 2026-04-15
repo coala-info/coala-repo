@@ -4,7 +4,6 @@ description: DeepBlueR provides an R interface to the DeepBlue Epigenomics Data 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DeepBlueR.html
 ---
 
-
 # bioconductor-deepbluer
 
 ## Overview

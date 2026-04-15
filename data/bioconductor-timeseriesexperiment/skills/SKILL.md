@@ -4,7 +4,6 @@ description: This tool provides a specialized workflow for analyzing RNA-seq tim
 homepage: https://bioconductor.org/packages/3.8/bioc/html/TimeSeriesExperiment.html
 ---
 
-
 # bioconductor-timeseriesexperiment
 
 name: bioconductor-timeseriesexperiment

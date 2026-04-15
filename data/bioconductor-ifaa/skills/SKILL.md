@@ -4,7 +4,6 @@ description: bioconductor-ifaa identifies robust associations between covariates
 homepage: https://bioconductor.org/packages/release/bioc/html/IFAA.html
 ---
 
-
 # bioconductor-ifaa
 
 name: bioconductor-ifaa

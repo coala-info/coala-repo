@@ -2,6 +2,8 @@
 name: reseq
 description: ReSeq simulates Illumina sequencing reads by extracting error profiles and biases from real BAM mappings to create realistic synthetic datasets. Use when user asks to simulate genomic reads, replicate sequencing biases from a BAM file, or generate ground truth datasets with specific variants.
 homepage: https://github.com/schmeing/ReSeq/tree/devel
+metadata:
+  docker_image: "quay.io/biocontainers/reseq:1.1--py310hfb68e69_5"
 ---
 
 # reseq

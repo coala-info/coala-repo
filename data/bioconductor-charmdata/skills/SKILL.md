@@ -4,7 +4,6 @@ description: This package provides a subsetted dataset of raw Nimblegen files an
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/charmData.html
 ---
 
-
 # bioconductor-charmdata
 
 ## Overview

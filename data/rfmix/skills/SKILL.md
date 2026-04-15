@@ -1,9 +1,10 @@
 ---
 name: rfmix
-description: "RFMix performs local ancestry deconvolution to identify the ancestral background of genomic segments in admixed individuals. Use when user asks to infer local ancestry, perform ancestry deconvolution, or assign ancestral origins to chromosomal segments using phased VCF data."
+description: RFMix performs local ancestry deconvolution to identify the ancestral background of genomic segments in admixed individuals. Use when user asks to infer local ancestry, perform ancestry deconvolution, or assign ancestral origins to chromosomal segments using phased VCF data.
 homepage: https://github.com/slowkoni/rfmix
+metadata:
+  docker_image: "quay.io/biocontainers/rfmix:2.03.r0.9505bfa--h503566f_8"
 ---
-
 
 # rfmix
 

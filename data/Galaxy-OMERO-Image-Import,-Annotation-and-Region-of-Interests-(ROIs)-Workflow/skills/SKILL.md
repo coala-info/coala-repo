@@ -1,10 +1,12 @@
 ---
 name: 2024_omero_basic_upload
-description: "This workflow automates the transfer of bioimaging data, associated metadata files, and regions of interest into an OMERO repository using the OMERO Import, Metadata, and ROI tools. Use this skill when you need to archive microscopy images alongside their experimental metadata and spatial annotations in a centralized database to ensure FAIR data management and collaborative analysis."
-homepage: https://workflowhub.eu/workflows/1258
+description: This workflow automates the transfer of bioimaging data, associated metadata files, and regions of interest into an OMERO repository using the OMERO Import, Metadata, and ROI tools. Use this skill when you need to archive microscopy images alongside their experimental metadata and spatial annotations in a centralized database to ensure FAIR data management and collaborative analysis.
+homepage: https://zenodo.org/records/14205500
+metadata:
+  docker_image: "N/A"
 ---
 
-# 2024_OMERO_Basic_Upload
+# 2024_omero_basic_upload
 
 ## Overview
 

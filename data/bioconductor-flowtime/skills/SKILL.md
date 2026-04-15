@@ -4,7 +4,6 @@ description: The flowTime package analyzes flow cytometry data from budding yeas
 homepage: https://bioconductor.org/packages/release/bioc/html/flowTime.html
 ---
 
-
 # bioconductor-flowtime
 
 ## Overview

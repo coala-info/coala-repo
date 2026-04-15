@@ -4,7 +4,6 @@ description: This package provides probe sequence data and chip coordinates for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74cv2probe.html
 ---
 
-
 # bioconductor-mgu74cv2probe
 
 name: bioconductor-mgu74cv2probe

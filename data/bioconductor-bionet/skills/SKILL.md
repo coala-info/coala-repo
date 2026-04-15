@@ -4,7 +4,6 @@ description: BioNet identifies functional modules in biological networks by inte
 homepage: https://bioconductor.org/packages/release/bioc/html/BioNet.html
 ---
 
-
 # bioconductor-bionet
 
 name: bioconductor-bionet

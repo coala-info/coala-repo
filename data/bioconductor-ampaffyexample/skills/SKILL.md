@@ -4,7 +4,6 @@ description: This package provides a sample AffyBatch dataset for comparing ampl
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AmpAffyExample.html
 ---
 
-
 # bioconductor-ampaffyexample
 
 name: bioconductor-ampaffyexample

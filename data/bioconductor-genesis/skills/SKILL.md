@@ -4,7 +4,6 @@ description: The GENESIS package performs genetic association testing and popula
 homepage: https://bioconductor.org/packages/release/bioc/html/GENESIS.html
 ---
 
-
 # bioconductor-genesis
 
 name: bioconductor-genesis

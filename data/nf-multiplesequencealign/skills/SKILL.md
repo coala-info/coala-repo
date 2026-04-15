@@ -4,6 +4,8 @@ description: This pipeline deploys and benchmarks Multiple Sequence Alignment (M
 homepage: https://github.com/nf-core/multiplesequencealign
 ---
 
+# multiplesequencealign
+
 ## Overview
 nf-core/multiplesequencealign is designed to automate the deployment and benchmarking of popular Multiple Sequence Alignment (MSA) tools. It addresses the challenge of selecting and evaluating the most effective alignment strategy for specific biological datasets by providing a unified framework for running multiple tools in parallel.
 

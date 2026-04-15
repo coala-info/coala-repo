@@ -4,7 +4,6 @@ description: Bioconductor-seqarray provides high-performance data management and
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqArray.html
 ---
 
-
 # bioconductor-seqarray
 
 name: bioconductor-seqarray

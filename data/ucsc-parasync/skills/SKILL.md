@@ -2,8 +2,9 @@
 name: ucsc-parasync
 description: ucsc-parasync mirrors remote directories to a local path using parallelized downloads. Use when user asks to mirror remote directories, synchronize large data repositories, or download UCSC Genome Browser files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-parasync:482--h0b57e2e_0"
 ---
-
 
 # ucsc-parasync
 

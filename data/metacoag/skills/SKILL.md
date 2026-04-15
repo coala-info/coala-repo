@@ -2,8 +2,9 @@
 name: metacoag
 description: MetaCoAG is a metagenomic binning tool that reconstructs microbial genomes by combining contig composition and coverage with assembly graph connectivity. Use when user asks to bin metagenomic contigs, reconstruct microbial genomes from assembly graphs, or refine binning results using single-copy marker genes.
 homepage: https://github.com/metagentools/MetaCoAG
+metadata:
+  docker_image: "quay.io/biocontainers/metacoag:1.2.2--py312h9ee0642_0"
 ---
-
 
 # metacoag
 

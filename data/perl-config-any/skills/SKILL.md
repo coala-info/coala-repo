@@ -2,8 +2,9 @@
 name: perl-config-any
 description: This tool provides a unified interface for loading configuration files across multiple formats into a standardized Perl hash. Use when user asks to load configuration files, detect file formats automatically, or parse multiple configuration stems and directories.
 homepage: http://metacpan.org/pod/Config-Any
+metadata:
+  docker_image: "quay.io/biocontainers/perl-config-any:0.33--pl5321h7b50bb2_5"
 ---
-
 
 # perl-config-any
 

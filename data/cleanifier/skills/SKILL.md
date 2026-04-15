@@ -2,8 +2,9 @@
 name: cleanifier
 description: Cleanifier removes contaminant sequences from biological data using k-mer analysis. Use when user asks to remove contamination from sequencing data or filter biological sequences.
 homepage: https://gitlab.com/rahmannlab/cleanifier
+metadata:
+  docker_image: "quay.io/biocontainers/cleanifier:1.2.0--pyhdfd78af_0"
 ---
-
 
 # cleanifier
 

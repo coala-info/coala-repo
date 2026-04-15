@@ -4,7 +4,6 @@ description: BiocPkgTools provides a tidy data interface for accessing and analy
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocPkgTools.html
 ---
 
-
 # bioconductor-biocpkgtools
 
 name: bioconductor-biocpkgtools

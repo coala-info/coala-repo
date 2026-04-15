@@ -1,10 +1,12 @@
 ---
 name: taxonomy-profiling-and-visualization-with-krona
-description: "This Galaxy workflow performs taxonomic profiling on preprocessed sequencing read collections using Kraken2 and generates interactive visualizations with Krona pie charts. Use this skill when you need to identify the microbial composition of microbiome samples or detect specific foodborne pathogens and their relative abundances across multiple datasets."
-homepage: https://workflowhub.eu/workflows/1059
+description: This Galaxy workflow performs taxonomic profiling on preprocessed sequencing read collections using Kraken2 and generates interactive visualizations with Krona pie charts. Use this skill when you need to identify the microbial composition of microbiome samples or detect specific foodborne pathogens and their relative abundances across multiple datasets.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Taxonomy Profiling and Visualization with Krona
+# taxonomy-profiling-and-visualization-with-krona
 
 ## Overview
 

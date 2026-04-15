@@ -4,7 +4,6 @@ description: The r-psych package provides a comprehensive set of tools for multi
 homepage: https://cloud.r-project.org/web/packages/psych/index.html
 ---
 
-
 # r-psych
 
 ## Overview

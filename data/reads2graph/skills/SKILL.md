@@ -2,8 +2,9 @@
 name: reads2graph
 description: reads2graph constructs graphs from sequencing reads where nodes represent unique sequences and edges represent a defined edit distance. Use when user asks to build a read graph, identify sequence relationships based on edit distance, or perform efficient pairwise read comparisons using minimizer bucketing.
 homepage: https://github.com/Jappy0/reads2graph
+metadata:
+  docker_image: "quay.io/biocontainers/reads2graph:1.0.0--h503566f_1"
 ---
-
 
 # reads2graph
 

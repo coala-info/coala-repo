@@ -1,10 +1,12 @@
 ---
 name: fpocket-protein-ligand-docking
-description: "This Galaxy workflow performs automated protein-ligand docking by identifying potential binding sites with Fpocket and calculating binding affinities using AutoDock Vina from input PDB and SDF files. Use this skill when you need to predict the binding pose and affinity of a small molecule within the most probable cavities of a target protein structure for drug discovery applications."
-homepage: https://workflowhub.eu/workflows/296
+description: This Galaxy workflow performs automated protein-ligand docking by identifying potential binding sites with Fpocket and calculating binding affinities using AutoDock Vina from input PDB and SDF files. Use this skill when you need to predict the binding pose and affinity of a small molecule within the most probable cavities of a target protein structure for drug discovery applications.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Fpocket Protein-Ligand Docking
+# fpocket-protein-ligand-docking
 
 ## Overview
 

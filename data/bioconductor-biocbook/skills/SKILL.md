@@ -4,7 +4,6 @@ description: This tool facilitates the creation, containerization, and publishin
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocBook.html
 ---
 
-
 # bioconductor-biocbook
 
 name: bioconductor-biocbook

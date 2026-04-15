@@ -2,8 +2,9 @@
 name: emeraldbgc
 description: emeraldbgc detects small molecule biosynthetic gene clusters in genomic sequences using protein domain annotations and probability scoring. Use when user asks to identify biosynthetic gene clusters, find the nearest known MiBIG cluster, or generate GFF3-formatted cluster predictions.
 homepage: https://github.com/Finn-Lab/emeraldBGC
+metadata:
+  docker_image: "quay.io/biocontainers/emeraldbgc:0.2.4.1--pyhdfd78af_0"
 ---
-
 
 # emeraldbgc
 

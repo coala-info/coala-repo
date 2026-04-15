@@ -4,7 +4,6 @@ description: This tool provides fast and light-weight memoization for R objects 
 homepage: https://cloud.r-project.org/web/packages/R.cache/index.html
 ---
 
-
 # r-r.cache
 
 name: r-r.cache

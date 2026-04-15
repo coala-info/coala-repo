@@ -4,7 +4,6 @@ description: The scran package provides specialized methods for the low-level an
 homepage: https://bioconductor.org/packages/release/bioc/html/scran.html
 ---
 
-
 # bioconductor-scran
 
 ## Overview

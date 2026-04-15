@@ -4,6 +4,8 @@ description: This pipeline processes SLAMSeq sequencing datasets using Slamdunk 
 homepage: https://github.com/nf-core/slamseq
 ---
 
+# slamseq
+
 ## Overview
 The nf-core/slamseq pipeline is designed for the analysis of SLAMSeq (Thiol-linked Alkylation for the Metabolic Sequencing of RNA) data. It addresses the biological challenge of distinguishing between pre-existing and newly synthesized RNA by identifying characteristic T-to-C conversions introduced during metabolic labeling.
 

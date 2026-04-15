@@ -2,8 +2,9 @@
 name: vvv2_display
 description: The `vvv2_display` tool creates a PNG image visualizing genomic variants relative to genes and features by integrating VarDict and VADR data. Use when user asks to visualize genomic variants, display variant locations relative to genes and features, or generate a variant visualization image.
 homepage: https://github.com/ANSES_Ploufragan/vvv2_display/
+metadata:
+  docker_image: "quay.io/biocontainers/vvv2_display:0.2.5.0--pyhdfd78af_0"
 ---
-
 
 # vvv2_display
 

@@ -1,10 +1,12 @@
 ---
 name: biomarkers4paris-workflow
-description: "This proteomics workflow identifies biomarker candidates by integrating tissue-specific expression data from HPA and MS/MS observations from PeptideAtlas using ProteoRE tools and Venn diagrams. Use this skill when you need to prioritize potential protein biomarkers by cross-referencing experimental data with tissue-specific expression profiles and functional protein features."
-homepage: https://workflowhub.eu/workflows/1403
+description: This proteomics workflow identifies biomarker candidates by integrating tissue-specific expression data from HPA and MS/MS observations from PeptideAtlas using ProteoRE tools and Venn diagrams. Use this skill when you need to prioritize potential protein biomarkers by cross-referencing experimental data with tissue-specific expression profiles and functional protein features.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# 'Biomarkers4Paris' Workflow
+# biomarkers4paris-workflow
 
 ## Overview
 

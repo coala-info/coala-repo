@@ -1,9 +1,10 @@
 ---
 name: svgwrite
-description: "svgwrite is a pure-Python library for creating SVG documents through an object-oriented interface. Use when user asks to generate vector graphics, create SVG files programmatically, or draw shapes and text using Python."
+description: svgwrite is a pure-Python library for creating SVG documents through an object-oriented interface. Use when user asks to generate vector graphics, create SVG files programmatically, or draw shapes and text using Python.
 homepage: https://github.com/mozman/svgwrite
+metadata:
+  docker_image: "quay.io/biocontainers/svgwrite:1.1.6--py35_0"
 ---
-
 
 # svgwrite
 

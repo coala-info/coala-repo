@@ -2,6 +2,8 @@
 name: vcf-validator
 description: The vcf-validator suite verifies that VCF files adhere to official specifications and match reference genome sequences. Use when user asks to validate VCF syntax, check for specification errors or warnings, generate validation reports, or verify that reference alleles match a FASTA file.
 homepage: https://github.com/EBIVariation/vcf-validator
+metadata:
+  docker_image: "quay.io/biocontainers/vcf-validator:0.10.2--h7a61d87_0"
 ---
 
 # vcf-validator

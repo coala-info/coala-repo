@@ -2,8 +2,9 @@
 name: manorm
 description: MAnorm quantitatively compares and normalizes ChIP-Seq samples to identify differential binding events between two conditions. Use when user asks to normalize ChIP-Seq signal intensities, calculate M-values and A-values, or identify cell-type-specific binding sites.
 homepage: https://github.com/shao-lab/MAnorm
+metadata:
+  docker_image: "quay.io/biocontainers/manorm:1.3.0--py_0"
 ---
-
 
 # manorm
 

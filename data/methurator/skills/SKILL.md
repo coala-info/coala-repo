@@ -2,6 +2,8 @@
 name: methurator
 description: Methurator estimates DNA methylation sequencing saturation and predicts the discovery of additional CpG sites using Chao's estimator. Use when user asks to assess methylome coverage comprehensiveness, predict future CpG discovery from BAM files, or generate interactive saturation plots for WGBS and RRBS data.
 homepage: https://github.com/VIBTOBIlab/methurator
+metadata:
+  docker_image: "quay.io/biocontainers/methurator:2.1.1--pyhdfd78af_0"
 ---
 
 # methurator

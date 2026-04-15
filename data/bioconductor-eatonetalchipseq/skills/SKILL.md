@@ -4,7 +4,6 @@ description: This package provides access to ChIP-seq alignments and peak calls 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/EatonEtAlChIPseq.html
 ---
 
-
 # bioconductor-eatonetalchipseq
 
 name: bioconductor-eatonetalchipseq

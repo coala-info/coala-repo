@@ -4,7 +4,6 @@ description: This tool generates enhanced reports and annotation tables for micr
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Reporting.html
 ---
 
-
 # bioconductor-a4reporting
 
 name: bioconductor-a4reporting

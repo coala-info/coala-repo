@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequence mappings f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ecoli.asv2.html
 ---
 
-
 # bioconductor-pd.ecoli.asv2
 
 name: bioconductor-pd.ecoli.asv2

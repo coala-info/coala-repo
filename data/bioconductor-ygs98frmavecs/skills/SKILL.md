@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for performing Froze
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ygs98frmavecs.html
 ---
 
-
 # bioconductor-ygs98frmavecs
 
 name: bioconductor-ygs98frmavecs

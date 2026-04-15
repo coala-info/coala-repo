@@ -4,7 +4,6 @@ description: This package provides harmonized multi-omic affinity matrices and s
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HarmonizedTCGAData.html
 ---
 
-
 # bioconductor-harmonizedtcgadata
 
 ## Overview

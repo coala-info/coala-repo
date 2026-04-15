@@ -1,9 +1,8 @@
 ---
 name: bioconductor-mergeomics
-description: "Mergeomics integrates summary-level association data with biological pathways and gene regulatory networks to identify causal mechanisms and key driver genes. Use when user asks to perform marker set enrichment analysis, identify key driver genes within a network context, integrate GWAS or EWAS results with functional genomics, or conduct meta-analysis across independent omics studies."
+description: Mergeomics integrates summary-level association data with biological pathways and gene regulatory networks to identify causal mechanisms and key driver genes. Use when user asks to perform marker set enrichment analysis, identify key driver genes within a network context, integrate GWAS or EWAS results with functional genomics, or conduct meta-analysis across independent omics studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/Mergeomics.html
 ---
-
 
 # bioconductor-mergeomics
 

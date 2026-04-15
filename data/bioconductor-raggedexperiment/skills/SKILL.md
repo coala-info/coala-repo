@@ -4,7 +4,6 @@ description: This tool manages and transforms ragged genomic data, such as copy 
 homepage: https://bioconductor.org/packages/release/bioc/html/RaggedExperiment.html
 ---
 
-
 # bioconductor-raggedexperiment
 
 name: bioconductor-raggedexperiment

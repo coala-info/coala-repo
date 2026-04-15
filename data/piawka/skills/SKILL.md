@@ -1,9 +1,10 @@
 ---
 name: piawka
-description: "piawka is a high-performance tool for calculating within- and between-population nucleotide diversity statistics from VCF files. Use when user asks to calculate Fst, Tajima's D, heterozygosity, Dxy, or Watterson's theta for diploid or polyploid data."
+description: piawka is a high-performance tool for calculating within- and between-population nucleotide diversity statistics from VCF files. Use when user asks to calculate Fst, Tajima's D, heterozygosity, Dxy, or Watterson's theta for diploid or polyploid data.
 homepage: https://github.com/novikovalab/piawka
+metadata:
+  docker_image: "quay.io/biocontainers/piawka:0.8.11--hdfd78af_0"
 ---
-
 
 # piawka
 

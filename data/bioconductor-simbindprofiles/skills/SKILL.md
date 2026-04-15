@@ -4,7 +4,6 @@ description: This tool analyzes genome tiling array data to identify common and 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SimBindProfiles.html
 ---
 
-
 # bioconductor-simbindprofiles
 
 name: bioconductor-simbindprofiles

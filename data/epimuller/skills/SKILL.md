@@ -1,9 +1,10 @@
 ---
 name: epimuller
-description: "epimuller visualizes the evolution and frequency of viral lineages over time by generating Muller plots that integrate phylogenetic hierarchy. Use when user asks to visualize viral clade evolution, generate Muller plots from Nextstrain or TreeTime data, or track the frequency of specific amino acid mutations and lineages."
+description: epimuller visualizes the evolution and frequency of viral lineages over time by generating Muller plots that integrate phylogenetic hierarchy. Use when user asks to visualize viral clade evolution, generate Muller plots from Nextstrain or TreeTime data, or track the frequency of specific amino acid mutations and lineages.
 homepage: https://github.com/jennifer-bio/epimuller
+metadata:
+  docker_image: "quay.io/biocontainers/epimuller:0.0.8--pyhdfd78af_0"
 ---
-
 
 # epimuller
 

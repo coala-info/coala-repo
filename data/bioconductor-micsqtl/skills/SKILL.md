@@ -4,7 +4,6 @@ description: bioconductor-micsqtl performs integrative analysis of matched bulk 
 homepage: https://bioconductor.org/packages/release/bioc/html/MICSQTL.html
 ---
 
-
 # bioconductor-micsqtl
 
 ## Overview

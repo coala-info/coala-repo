@@ -4,7 +4,6 @@ description: ChemmineOB provides an R interface to the OpenBabel C++ library for
 homepage: https://bioconductor.org/packages/release/bioc/html/ChemmineOB.html
 ---
 
-
 # bioconductor-chemmineob
 
 ## Overview

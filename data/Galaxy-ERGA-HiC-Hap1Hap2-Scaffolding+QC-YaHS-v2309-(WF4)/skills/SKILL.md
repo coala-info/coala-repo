@@ -1,10 +1,12 @@
 ---
 name: erga-hic-hap1hap2-scaffoldingqc-yahs-v2309-wf4
-description: "This Galaxy workflow performs Hi-C scaffolding and quality control for dual-haplotype genome assemblies using Hap1 and Hap2 GFA files and Hi-C reads processed through BWA-MEM2, YAHS, and Bellerophon. Use this skill when you need to scaffold haplotype-resolved assemblies into chromosome-level sequences and evaluate their completeness, continuity, and phasing accuracy using BUSCO, Merqury, and Pretext visualizations."
-homepage: https://workflowhub.eu/workflows/608
+description: This Galaxy workflow performs Hi-C scaffolding and quality control for dual-haplotype genome assemblies using Hap1 and Hap2 GFA files and Hi-C reads processed through BWA-MEM2, YAHS, and Bellerophon. Use this skill when you need to scaffold haplotype-resolved assemblies into chromosome-level sequences and evaluate their completeness, continuity, and phasing accuracy using BUSCO, Merqury, and Pretext visualizations.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA HiC Hap1Hap2 Scaffolding+QC YaHS v2309 (WF4)
+# erga-hic-hap1hap2-scaffoldingqc-yahs-v2309-wf4
 
 ## Overview
 

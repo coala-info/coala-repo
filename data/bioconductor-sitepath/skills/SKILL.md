@@ -4,7 +4,6 @@ description: The sitePath package identifies evolutionary shifts and fixation si
 homepage: https://bioconductor.org/packages/release/bioc/html/sitePath.html
 ---
 
-
 # bioconductor-sitepath
 
 ## Overview

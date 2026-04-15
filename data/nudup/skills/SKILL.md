@@ -2,8 +2,9 @@
 name: nudup
 description: nudup identifies and removes PCR duplicates from sequencing data by incorporating Molecular Tag (UMI) information. Use when user asks to remove PCR duplicates using UMIs, process NuGEN sequencing data, or distinguish biological duplicates from PCR artifacts.
 homepage: http://nugentechnologies.github.io/nudup/
+metadata:
+  docker_image: "quay.io/biocontainers/nudup:2.3.3--py27_0"
 ---
-
 
 # nudup
 

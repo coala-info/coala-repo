@@ -1,9 +1,10 @@
 ---
 name: dnp-mapping
-description: "Maps nucleosome positions within a DNA sequence based on defined patterns. Use when user asks to map nucleosome positions or analyze nucleosome occupancy."
+description: Maps nucleosome positions within a DNA sequence based on defined patterns. Use when user asks to map nucleosome positions or analyze nucleosome occupancy.
 homepage: https://github.com/erinijapranckeviciene/mapping_CC
+metadata:
+  docker_image: "quay.io/biocontainers/dnp-mapping:1.0--h9948957_4"
 ---
-
 
 # dnp-mapping
 

@@ -2,8 +2,9 @@
 name: wlogdate
 description: wLogDate estimates divergence times in phylogenetic trees. Use when user asks to estimate divergence times, produce a unit ultrametric tree, date a tree using sampling times, or date a tree using internal node calibrations.
 homepage: https://github.com/uym2/wLogDate
+metadata:
+  docker_image: "quay.io/biocontainers/wlogdate:1.0.4--pyhdfd78af_0"
 ---
-
 
 # wlogdate
 

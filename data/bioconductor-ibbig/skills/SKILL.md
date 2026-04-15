@@ -4,7 +4,6 @@ description: iBBiG is a bi-clustering algorithm optimized for identifying overla
 homepage: https://bioconductor.org/packages/release/bioc/html/iBBiG.html
 ---
 
-
 # bioconductor-ibbig
 
 ## Overview

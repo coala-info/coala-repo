@@ -2,8 +2,9 @@
 name: autogrid
 description: AutoGrid pre-calculates interaction energy grid maps between a macromolecule and various probe atoms to facilitate rapid molecular docking simulations. Use when user asks to generate grid maps, define grid box parameters, or prepare a receptor for AutoDock simulations.
 homepage: http://autodock.scripps.edu/
+metadata:
+  docker_image: "biocontainers/autogrid:v4.2.6-6-deb_cv1"
 ---
-
 
 # autogrid
 

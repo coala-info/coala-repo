@@ -4,7 +4,6 @@ description: bioconductor-dexus identifies differentially expressed transcripts 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/dexus.html
 ---
 
-
 # bioconductor-dexus
 
 ## Overview

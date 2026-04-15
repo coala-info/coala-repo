@@ -1,9 +1,10 @@
 ---
 name: rapsearch
-description: "RAPSearch2 performs high-speed protein similarity searches using a reduced amino acid alphabet to align query sequences against a reference database. Use when user asks to index a protein database, perform a fast protein similarity search, or align translated nucleotide queries against a protein index."
+description: RAPSearch2 performs high-speed protein similarity searches using a reduced amino acid alphabet to align query sequences against a reference database. Use when user asks to index a protein database, perform a fast protein similarity search, or align translated nucleotide queries against a protein index.
 homepage: https://github.com/zhaoyanswill/RAPSearch2
+metadata:
+  docker_image: "quay.io/biocontainers/rapsearch:2.24--1"
 ---
-
 
 # rapsearch
 

@@ -4,7 +4,6 @@ description: InterCellar analyzes and visualizes cell-cell communication results
 homepage: https://bioconductor.org/packages/release/bioc/html/InterCellar.html
 ---
 
-
 # bioconductor-intercellar
 
 ## Overview

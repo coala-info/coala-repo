@@ -4,6 +4,8 @@ description: The pipeline performs taxonomic classification and abundance estima
 homepage: https://github.com/nf-core/taxprofiler
 ---
 
+# taxprofiler
+
 ## Overview
 nf-core/taxprofiler is designed for the taxonomic identification of reads or taxonomic abundance estimation from metagenomic datasets. It addresses the challenge of tool-specific output formats by providing standardized taxonomic tables, allowing researchers to compare results across different algorithms and reference databases within a single execution.
 

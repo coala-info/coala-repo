@@ -1,7 +1,9 @@
 ---
 name: fairy
-description: "Fairy provides fast, alignment-free estimation of contig coverage for metagenomic binning using k-mer sketching. Use when user asks to calculate contig coverage, sketch metagenomic reads, or generate coverage profiles for MetaBAT2, MaxBin2, and SemiBin2."
+description: Fairy provides fast, alignment-free estimation of contig coverage for metagenomic binning using k-mer sketching. Use when user asks to calculate contig coverage, sketch metagenomic reads, or generate coverage profiles for MetaBAT2, MaxBin2, and SemiBin2.
 homepage: https://github.com/bluenote-1577/fairy
+metadata:
+  docker_image: "quay.io/biocontainers/fairy:0.5.8--hc1c3326_0"
 ---
 
 # fairy

@@ -1,9 +1,10 @@
 ---
 name: smithwaterman
-description: "Performs local sequence alignment using the Smith-Waterman-Gotoh algorithm. Use when user asks to find local similarities between two biological sequences."
+description: Performs local sequence alignment using the Smith-Waterman-Gotoh algorithm. Use when user asks to find local similarities between two biological sequences.
 homepage: https://github.com/ekg/smithwaterman
+metadata:
+  docker_image: "quay.io/biocontainers/smithwaterman:1.0.0--h9948957_0"
 ---
-
 
 # smithwaterman
 

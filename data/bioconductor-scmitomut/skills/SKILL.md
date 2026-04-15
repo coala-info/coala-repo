@@ -4,7 +4,6 @@ description: This tool identifies and visualizes lineage-related mitochondrial D
 homepage: https://bioconductor.org/packages/release/bioc/html/scMitoMut.html
 ---
 
-
 # bioconductor-scmitomut
 
 name: bioconductor-scmitomut

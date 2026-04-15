@@ -4,7 +4,6 @@ description: The bioconductor-enrichplot package provides a suite of visualizati
 homepage: https://bioconductor.org/packages/release/bioc/html/enrichplot.html
 ---
 
-
 # bioconductor-enrichplot
 
 name: bioconductor-enrichplot

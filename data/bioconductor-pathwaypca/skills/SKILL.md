@@ -4,7 +4,6 @@ description: This tool performs integrative pathway analysis using Principal Com
 homepage: https://bioconductor.org/packages/release/bioc/html/pathwayPCA.html
 ---
 
-
 # bioconductor-pathwaypca
 
 name: bioconductor-pathwaypca

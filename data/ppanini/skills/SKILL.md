@@ -1,9 +1,10 @@
 ---
 name: ppanini
-description: "PPANINI prioritizes microbial genes based on their metagenomic properties. Use when user asks to analyze microbial gene importance from metagenomic data, identify novel and important genes, or generate prioritized gene lists for further analysis."
+description: PPANINI prioritizes microbial genes based on their metagenomic properties. Use when user asks to analyze microbial gene importance from metagenomic data, identify novel and important genes, or generate prioritized gene lists for further analysis.
 homepage: http://huttenhower.sph.harvard.edu/ppanini
+metadata:
+  docker_image: "quay.io/biocontainers/ppanini:0.7.4--py_0"
 ---
-
 
 # ppanini
 

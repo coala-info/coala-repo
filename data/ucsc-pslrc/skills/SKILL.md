@@ -2,8 +2,9 @@
 name: ucsc-pslrc
 description: The `ucsc-pslrc` tool transforms PSL alignment files by reverse-complementing the query sequences. Use when user asks to 'reverse-complement query sequences in PSL files', 'recalculate coordinates in PSL files', or 'recalculate strand information in PSL files'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslrc:482--h0b57e2e_0"
 ---
-
 
 # ucsc-pslrc
 

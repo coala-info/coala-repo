@@ -2,6 +2,8 @@
 name: dunovo
 description: The dunovo pipeline transforms raw duplex sequencing reads into high-fidelity consensus sequences by grouping reads into families based on molecular barcodes. Use when user asks to form read families, perform barcode error correction, align read families, or generate duplex consensus sequences.
 homepage: https://github.com/galaxyproject/dunovo
+metadata:
+  docker_image: "quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4"
 ---
 
 # dunovo

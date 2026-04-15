@@ -2,8 +2,9 @@
 name: perl-scalar-list-utils
 description: This tool provides high-performance C-based implementations for common functional programming routines and scalar variable introspection in Perl. Use when user asks to find elements in a list, calculate numeric sums or extremes, shuffle arrays, inspect variable types, or manage weak references to prevent memory leaks.
 homepage: http://metacpan.org/pod/Scalar-List-Utils
+metadata:
+  docker_image: "quay.io/biocontainers/perl-scalar-list-utils:1.62--pl5321hec16e2b_1"
 ---
-
 
 # perl-scalar-list-utils
 

@@ -2,6 +2,8 @@
 name: scelvis
 description: SCelVis is an interactive web-based tool for visualizing and exploring single-cell transcriptomics data. Use when user asks to start a visualization server, convert single-cell data formats to AnnData, or explore gene expression patterns through an interactive dashboard.
 homepage: https://github.com/bihealth/scelvis
+metadata:
+  docker_image: "quay.io/biocontainers/scelvis:0.8.9--pyhdfd78af_0"
 ---
 
 # scelvis

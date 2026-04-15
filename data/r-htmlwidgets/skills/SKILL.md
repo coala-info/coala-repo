@@ -4,7 +4,6 @@ description: The htmlwidgets package provides a framework for creating R binding
 homepage: https://cloud.r-project.org/web/packages/htmlwidgets/index.html
 ---
 
-
 # r-htmlwidgets
 
 ## Overview

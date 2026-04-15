@@ -2,8 +2,9 @@
 name: migmap
 description: MiGMAP processes immune repertoire sequencing data by mapping reads to germline segments and extracting CDR3 regions. Use when user asks to assemble clonotype abundance tables, perform per-read mapping, or filter sequencing data based on quality and coding properties.
 homepage: https://github.com/mikessh/migmap
+metadata:
+  docker_image: "quay.io/biocontainers/migmap:1.0.3--0"
 ---
-
 
 # migmap
 

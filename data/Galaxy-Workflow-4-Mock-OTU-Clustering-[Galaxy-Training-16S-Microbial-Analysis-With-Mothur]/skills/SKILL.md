@@ -1,10 +1,12 @@
 ---
 name: workflow-4-mock-otu-clustering-galaxy-training-16s-microbial
-description: "This microbiome workflow processes mock sequences and count tables using mothur tools to perform distance calculation, OTU clustering, and rarefaction analysis. Use this skill when you need to evaluate the accuracy of your 16S rRNA gene sequencing pipeline by analyzing a control sample with a known microbial composition."
-homepage: https://workflowhub.eu/workflows/1408
+description: This microbiome workflow processes mock sequences and count tables using mothur tools to perform distance calculation, OTU clustering, and rarefaction analysis. Use this skill when you need to evaluate the accuracy of your 16S rRNA gene sequencing pipeline by analyzing a control sample with a known microbial composition.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 4: Mock OTU Clustering [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-4-mock-otu-clustering-galaxy-training-16s-microbial
 
 ## Overview
 

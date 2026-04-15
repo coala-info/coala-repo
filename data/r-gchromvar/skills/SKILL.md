@@ -4,7 +4,6 @@ description: The gchromvar package performs enrichment analyses of genome-wide c
 homepage: https://cran.r-project.org/web/packages/gchromvar/index.html
 ---
 
-
 # r-gchromvar
 
 name: r-gchromvar

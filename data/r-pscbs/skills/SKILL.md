@@ -4,7 +4,6 @@ description: This tool performs parent-specific DNA copy-number segmentation on 
 homepage: https://cran.r-project.org/web/packages/pscbs/index.html
 ---
 
-
 # r-pscbs
 
 name: r-pscbs

@@ -4,7 +4,6 @@ description: This tool analyzes multi-condition single-cell RNA-seq data using g
 homepage: https://bioconductor.org/packages/release/bioc/html/lemur.html
 ---
 
-
 # bioconductor-lemur
 
 ## Overview

@@ -4,7 +4,6 @@ description: The ratCHRLOC package provides genomic location mappings and chromo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ratCHRLOC.html
 ---
 
-
 # bioconductor-ratchrloc
 
 ## Overview

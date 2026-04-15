@@ -4,7 +4,6 @@ description: The speckle package provides statistical methods for analyzing diff
 homepage: https://bioconductor.org/packages/release/bioc/html/speckle.html
 ---
 
-
 # bioconductor-speckle
 
 ## Overview

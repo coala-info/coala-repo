@@ -4,7 +4,6 @@ description: This tool automates an RNA-Seq pipeline that integrates differentia
 homepage: https://bioconductor.org/packages/release/bioc/html/rgsepd.html
 ---
 
-
 # bioconductor-rgsepd
 
 name: bioconductor-rgsepd

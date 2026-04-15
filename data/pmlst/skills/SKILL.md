@@ -2,8 +2,9 @@
 name: pmlst
 description: pmlst identifies plasmid types by comparing genomic sequences against a database of plasmid-specific housekeeping genes. Use when user asks to identify plasmid sequence types, perform plasmid multilocus sequence typing, or track the epidemiology of plasmid-mediated outbreaks.
 homepage: https://bitbucket.org/genomicepidemiology/pmlst
+metadata:
+  docker_image: "quay.io/biocontainers/pmlst:2.0.3--hdfd78af_0"
 ---
-
 
 # pmlst
 

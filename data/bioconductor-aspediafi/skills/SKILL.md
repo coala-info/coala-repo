@@ -4,7 +4,6 @@ description: ASpediaFI performs functional interaction analysis of alternative s
 homepage: https://bioconductor.org/packages/3.10/bioc/html/ASpediaFI.html
 ---
 
-
 # bioconductor-aspediafi
 
 name: bioconductor-aspediafi

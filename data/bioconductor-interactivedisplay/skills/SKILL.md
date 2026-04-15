@@ -4,7 +4,6 @@ description: This tool provides a Shiny-based framework for the interactive visu
 homepage: https://bioconductor.org/packages/release/bioc/html/interactiveDisplay.html
 ---
 
-
 # bioconductor-interactivedisplay
 
 name: bioconductor-interactivedisplay

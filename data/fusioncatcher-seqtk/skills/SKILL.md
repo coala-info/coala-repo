@@ -1,9 +1,10 @@
 ---
 name: fusioncatcher-seqtk
-description: "fusioncatcher-seqtk is a lightweight utility for manipulating, converting, and subsampling genomic sequence files in FASTA and FASTQ formats. Use when user asks to convert FASTQ to FASTA, reverse complement sequences, extract or exclude sequences by name or region, subsample reads, or perform quality-based and fixed-length trimming."
+description: fusioncatcher-seqtk is a lightweight utility for manipulating, converting, and subsampling genomic sequence files in FASTA and FASTQ formats. Use when user asks to convert FASTQ to FASTA, reverse complement sequences, extract or exclude sequences by name or region, subsample reads, or perform quality-based and fixed-length trimming.
 homepage: https://github.com/ndaniel/seqtk
+metadata:
+  docker_image: "quay.io/biocontainers/fusioncatcher-seqtk:1.2--h577a1d6_7"
 ---
-
 
 # fusioncatcher-seqtk
 

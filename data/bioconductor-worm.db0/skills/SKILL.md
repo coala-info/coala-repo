@@ -4,7 +4,6 @@ description: This package provides raw SQLite databases for Caenorhabditis elega
 homepage: https://bioconductor.org/packages/release/data/annotation/html/worm.db0.html
 ---
 
-
 # bioconductor-worm.db0
 
 name: bioconductor-worm.db0

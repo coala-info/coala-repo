@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Drosophila melan
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm2.html
 ---
 
-
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm2
 
 name: bioconductor-bsgenome.dmelanogaster.ucsc.dm2

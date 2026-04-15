@@ -4,7 +4,6 @@ description: The trena package provides a framework for inferring gene regulator
 homepage: https://bioconductor.org/packages/3.8/bioc/html/trena.html
 ---
 
-
 # bioconductor-trena
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool analyzes RNA degradation kinetics from time-course data u
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAdecay.html
 ---
 
-
 # bioconductor-rnadecay
 
 name: bioconductor-rnadecay

@@ -4,7 +4,6 @@ description: This tool provides an interface to the MSKCC Cancer Genomics Data S
 homepage: https://bioconductor.org/packages/release/bioc/html/canceR.html
 ---
 
-
 # bioconductor-cancer
 
 name: bioconductor-cancer

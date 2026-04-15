@@ -4,7 +4,6 @@ description: This tool normalizes spotted microarray data using a physically mot
 homepage: https://bioconductor.org/packages/3.5/bioc/html/CALIB.html
 ---
 
-
 # bioconductor-calib
 
 name: bioconductor-calib

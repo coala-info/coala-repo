@@ -4,7 +4,6 @@ description: The iASeq package provides a Bayesian hierarchical model for detect
 homepage: https://bioconductor.org/packages/release/bioc/html/iASeq.html
 ---
 
-
 # bioconductor-iaseq
 
 ## Overview

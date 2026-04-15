@@ -2,8 +2,9 @@
 name: flask-basicauth
 description: flask-basicauth is a Flask extension that provides simple HTTP basic access authentication for protecting web applications or specific routes. Use when user asks to add password protection to a Flask app, require authentication for specific view functions, or secure a staging environment with a global username and password.
 homepage: https://github.com/jpvanhal/flask-basicauth
+metadata:
+  docker_image: "quay.io/biocontainers/flask-basicauth:0.2.0--py36_0"
 ---
-
 
 # flask-basicauth
 

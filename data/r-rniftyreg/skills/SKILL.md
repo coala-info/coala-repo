@@ -4,7 +4,6 @@ description: This tool provides an R interface to the NiftyReg library for perfo
 homepage: https://cloud.r-project.org/web/packages/RNiftyReg/index.html
 ---
 
-
 # r-rniftyreg
 
 name: r-rniftyreg

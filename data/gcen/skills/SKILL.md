@@ -2,8 +2,9 @@
 name: gcen
 description: gcen is a toolkit for constructing gene co-expression networks and predicting gene functions from RNA-Seq data. Use when user asks to build co-expression networks, identify functional gene modules, or predict the functions of uncharacterized genes like lncRNAs.
 homepage: https://www.biochen.com/gcen/
+metadata:
+  docker_image: "quay.io/biocontainers/gcen:0.6.3--h9f5acd7_3"
 ---
-
 
 # gcen
 

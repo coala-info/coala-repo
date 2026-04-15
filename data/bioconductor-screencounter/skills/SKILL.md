@@ -4,7 +4,6 @@ description: The screenCounter package quantifies barcode frequencies from raw F
 homepage: https://bioconductor.org/packages/release/bioc/html/screenCounter.html
 ---
 
-
 # bioconductor-screencounter
 
 ## Overview

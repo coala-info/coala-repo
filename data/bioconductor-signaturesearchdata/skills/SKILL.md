@@ -4,7 +4,6 @@ description: This package provides preprocessed gene expression signatures from 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/signatureSearchData.html
 ---
 
-
 # bioconductor-signaturesearchdata
 
 ## Overview

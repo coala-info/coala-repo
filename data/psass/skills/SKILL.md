@@ -1,7 +1,9 @@
 ---
 name: psass
-description: "PSASS detects genomic signatures of sex determination and calculates population genetic metrics from pooled sequencing datasets. Use when user asks to generate nucleotide counts from alignment files, identify sex-specific SNPs, or calculate Fst and depth metrics across sliding windows or genes."
+description: PSASS detects genomic signatures of sex determination and calculates population genetic metrics from pooled sequencing datasets. Use when user asks to generate nucleotide counts from alignment files, identify sex-specific SNPs, or calculate Fst and depth metrics across sliding windows or genes.
 homepage: https://github.com/RomainFeron/PSASS
+metadata:
+  docker_image: "quay.io/biocontainers/psass:3.1.0--hf5e1c6e_4"
 ---
 
 # psass

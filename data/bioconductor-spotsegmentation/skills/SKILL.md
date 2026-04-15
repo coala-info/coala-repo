@@ -4,7 +4,6 @@ description: This package performs automated microarray image segmentation using
 homepage: https://bioconductor.org/packages/3.6/bioc/html/spotSegmentation.html
 ---
 
-
 # bioconductor-spotsegmentation
 
 ## Overview

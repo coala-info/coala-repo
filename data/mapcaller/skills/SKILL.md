@@ -2,8 +2,9 @@
 name: mapcaller
 description: MapCaller integrates NGS short-read alignment with variant identification to detect germline and somatic mutations. Use when user asks to index a reference genome, align reads, or call variants from sequencing data.
 homepage: https://github.com/hsinnan75/MapCaller
+metadata:
+  docker_image: "quay.io/biocontainers/mapcaller:0.9.9.41--h13024bc_6"
 ---
-
 
 # mapcaller
 

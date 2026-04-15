@@ -4,7 +4,6 @@ description: bioconductor-mariner is an R/Bioconductor package for the high-perf
 homepage: https://bioconductor.org/packages/release/bioc/html/mariner.html
 ---
 
-
 # bioconductor-mariner
 
 name: bioconductor-mariner

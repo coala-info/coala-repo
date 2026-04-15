@@ -4,7 +4,6 @@ description: This package provides annotation data for the Agilent Human Genome 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4100a.db.html
 ---
 
-
 # bioconductor-hgug4100a.db
 
 name: bioconductor-hgug4100a.db

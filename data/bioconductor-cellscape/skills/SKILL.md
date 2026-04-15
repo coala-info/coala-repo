@@ -4,7 +4,6 @@ description: Bioconductor-cellscape creates interactive visualizations that inte
 homepage: https://bioconductor.org/packages/release/bioc/html/cellscape.html
 ---
 
-
 # bioconductor-cellscape
 
 name: bioconductor-cellscape

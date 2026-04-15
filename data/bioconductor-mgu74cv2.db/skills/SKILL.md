@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74cv2.db.html
 ---
 
-
 # bioconductor-mgu74cv2.db
 
 name: bioconductor-mgu74cv2.db

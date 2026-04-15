@@ -2,8 +2,9 @@
 name: perl-tree-dag_node
 description: This tool provides a framework for managing and manipulating N-ary tree structures within Directed Acyclic Graphs. Use when user asks to represent complex hierarchies, perform tree traversals, or generate ASCII visualizations of nested data structures.
 homepage: http://metacpan.org/pod/Tree-DAG_Node
+metadata:
+  docker_image: "quay.io/biocontainers/perl:5.32"
 ---
-
 
 # perl-tree-dag_node
 

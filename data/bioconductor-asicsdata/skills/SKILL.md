@@ -4,7 +4,6 @@ description: This package provides a subset of 1D NMR spectra from human subject
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ASICSdata.html
 ---
 
-
 # bioconductor-asicsdata
 
 name: bioconductor-asicsdata

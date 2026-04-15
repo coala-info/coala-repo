@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rhegene.1.1.st.html
 ---
 
-
 # bioconductor-pd.rhegene.1.1.st
 
 name: bioconductor-pd.rhegene.1.1.st

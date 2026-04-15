@@ -2,8 +2,9 @@
 name: comparems2
 description: comparems2 performs global comparisons of tandem mass spectrometry datasets by calculating the similarity between raw MS/MS spectra. Use when user asks to compare MS/MS datasets without peptide identification, differentiate samples based on spectral similarity, or perform phylogenetic studies using mass spectrometry data.
 homepage: http://www.ms-utils.org/compareMS2.html
+metadata:
+  docker_image: "quay.io/biocontainers/comparems2:1--h7b50bb2_7"
 ---
-
 
 # comparems2
 

@@ -4,7 +4,6 @@ description: This tool performs statistical testing for associations between RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/globalSeq.html
 ---
 
-
 # bioconductor-globalseq
 
 name: bioconductor-globalseq

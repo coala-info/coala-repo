@@ -2,6 +2,8 @@
 name: mamotif
 description: MAmotif identifies transcription factors that drive differential genomic binding by integrating quantitative peak comparison with motif scanning. Use when user asks to identify transcription factors driving differential binding, compare genomic binding profiles between two conditions, or find motifs enriched in biased peaks.
 homepage: https://github.com/shao-lab/MAmotif
+metadata:
+  docker_image: "quay.io/biocontainers/mamotif:1.1.0--py_0"
 ---
 
 # mamotif

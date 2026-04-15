@@ -1,9 +1,10 @@
 ---
 name: biosigner
-description: "Identifies significant and stable molecular signatures from omics data. Use when user asks to discover patterns or biomarkers within high-dimensional biological datasets."
+description: Identifies significant and stable molecular signatures from omics data. Use when user asks to discover patterns or biomarkers within high-dimensional biological datasets.
 homepage: https://github.com/workflow4metabolomics/biosigner
+metadata:
+  docker_image: "biocontainers/biosigner:phenomenal-v2.2.8_cv1.4.26"
 ---
-
 
 # biosigner
 

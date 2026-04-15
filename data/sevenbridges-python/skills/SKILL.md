@@ -2,8 +2,9 @@
 name: sevenbridges-python
 description: The sevenbridges-python tool provides a programmatic interface for managing resources and automating bioinformatics workflows on Seven Bridges genomics platforms. Use when user asks to manage project files, query datasets, initialize API connections, or monitor analysis tasks.
 homepage: https://github.com/sbg/sevenbridges-python
+metadata:
+  docker_image: "quay.io/biocontainers/sevenbridges-python:2.11.2--pyhdfd78af_0"
 ---
-
 
 # sevenbridges-python
 

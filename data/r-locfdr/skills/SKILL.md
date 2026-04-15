@@ -4,7 +4,6 @@ description: The locfdr package computes the local false discovery rate for a ve
 homepage: https://cloud.r-project.org/web/packages/locfdr/index.html
 ---
 
-
 # r-locfdr
 
 ## Overview

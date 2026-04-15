@@ -2,8 +2,9 @@
 name: isatab2json
 description: Converts ISA-Tab formatted data files into JSON format. Use when user asks to convert ISA-Tab data to JSON.
 homepage: https://github.com/bio-agents/isatab2json_docker
+metadata:
+  docker_image: "biocontainers/isatab2json:phenomenal-v0.10.0_cv0.6.1.69"
 ---
-
 
 # isatab2json
 

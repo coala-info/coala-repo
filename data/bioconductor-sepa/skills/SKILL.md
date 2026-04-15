@@ -4,7 +4,6 @@ description: This tool analyzes and visualizes gene expression patterns in singl
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SEPA.html
 ---
 
-
 # bioconductor-sepa
 
 name: bioconductor-sepa

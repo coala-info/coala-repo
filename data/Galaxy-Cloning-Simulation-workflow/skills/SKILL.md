@@ -1,10 +1,12 @@
 ---
 name: cloning-simulation-workflow-v2
-description: "This synthetic biology workflow simulates Golden Gate assembly by processing assembly plans and JSON parameters through sequence retrieval, manufacturability evaluation, and cloning simulation tools. Use this skill when you need to validate the feasibility of complex DNA assembly designs and predict the final sequence of recombinant constructs before laboratory implementation."
-homepage: https://workflowhub.eu/workflows/2000
+description: This synthetic biology workflow simulates Golden Gate assembly by processing assembly plans and JSON parameters through sequence retrieval, manufacturability evaluation, and cloning simulation tools. Use this skill when you need to validate the feasibility of complex DNA assembly designs and predict the final sequence of recombinant constructs before laboratory implementation.
+homepage: https://parisbiofoundry.org/the-asu-biofoundry/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Cloning Simulation workflow v2
+# cloning-simulation-workflow-v2
 
 ## Overview
 

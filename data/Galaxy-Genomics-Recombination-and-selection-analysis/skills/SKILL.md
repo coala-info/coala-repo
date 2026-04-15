@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-6-recombination-and-selection-analysis
-description: "This workflow processes COVID-19 nucleotide sequences to perform evolutionary analysis using MAFFT for alignment, FastTree for phylogenetic reconstruction, and HyPhy tools for recombination and selection detection. Use this skill when you need to identify genomic recombination breakpoints and determine if specific lineages or sites in a viral population are undergoing adaptive evolution."
-homepage: https://workflowhub.eu/workflows/10
+description: This workflow processes COVID-19 nucleotide sequences to perform evolutionary analysis using MAFFT for alignment, FastTree for phylogenetic reconstruction, and HyPhy tools for recombination and selection detection. Use this skill when you need to identify genomic recombination breakpoints and determine if specific lineages or sites in a viral population are undergoing adaptive evolution.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [6] Recombination and selection analysis
+# covid-19-genomics-6-recombination-and-selection-analysis
 
 ## Overview
 

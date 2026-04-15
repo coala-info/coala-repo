@@ -1,9 +1,10 @@
 ---
 name: pretextsnapshot
-description: "pretextsnapshot converts Pretext Hi-C contact maps into static image formats like PNG, BMP, or JPEG. Use when user asks to generate images of genomic contact maps, visualize specific chromosome interactions, or export Hi-C data for publication."
+description: pretextsnapshot converts Pretext Hi-C contact maps into static image formats like PNG, BMP, or JPEG. Use when user asks to generate images of genomic contact maps, visualize specific chromosome interactions, or export Hi-C data for publication.
 homepage: https://github.com/wtsi-hpag/PretextSnapshot
+metadata:
+  docker_image: "quay.io/biocontainers/pretextsnapshot:0.0.5--h9948957_0"
 ---
-
 
 # pretextsnapshot
 

@@ -2,8 +2,9 @@
 name: ripcal
 description: RIPCAL analyzes repeat-induced point mutations in fungal genome sequences. Use when user asks to perform RIP analysis on fungal genome sequences.
 homepage: https://sourceforge.net/projects/ripcal
+metadata:
+  docker_image: "quay.io/biocontainers/ripcal:2.0--hdfd78af_0"
 ---
-
 
 # ripcal
 

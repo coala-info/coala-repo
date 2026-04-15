@@ -1,9 +1,8 @@
 ---
 name: bioconductor-rnu34.db
-description: "This package provides Bioconductor annotation data for the Rattus norvegicus rnu34 platform. Use when user asks to map manufacturer probe identifiers to biological metadata, retrieve gene symbols, or access functional annotations like GO terms and KEGG pathways for rat data."
+description: This package provides Bioconductor annotation data for the Rattus norvegicus rnu34 platform. Use when user asks to map manufacturer probe identifiers to biological metadata, retrieve gene symbols, or access functional annotations like GO terms and KEGG pathways for rat data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rnu34.db.html
 ---
-
 
 # bioconductor-rnu34.db
 

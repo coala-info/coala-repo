@@ -1,10 +1,12 @@
 ---
 name: by-covid-data-download
-description: "This Galaxy workflow takes a two-column sample table of SRR identifiers and uses tools like Cut, Grep, and fasterq-dump to download and extract raw FASTQ reads from NCBI. Use this skill when you need to automate the retrieval of public viral sequencing datasets for large-scale genomic analysis or pandemic monitoring efforts."
-homepage: https://workflowhub.eu/workflows/1679
+description: This Galaxy workflow takes a two-column sample table of SRR identifiers and uses tools like Cut, Grep, and fasterq-dump to download and extract raw FASTQ reads from NCBI. Use this skill when you need to automate the retrieval of public viral sequencing datasets for large-scale genomic analysis or pandemic monitoring efforts.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# BY-COVID: Data Download
+# by-covid-data-download
 
 ## Overview
 

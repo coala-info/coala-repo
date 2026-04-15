@@ -4,7 +4,6 @@ description: This tool evaluates the technical performance of gene expression ex
 homepage: https://bioconductor.org/packages/release/bioc/html/erccdashboard.html
 ---
 
-
 # bioconductor-erccdashboard
 
 name: bioconductor-erccdashboard

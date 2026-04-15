@@ -2,8 +2,9 @@
 name: ucsc-bigpsltopsl
 description: This tool converts bigPsl binary alignment files into the psl text format. Use when user asks to convert bigPsl to psl, transform bigPsl alignment data, or revert binary alignment tracks to text format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigpsltopsl:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigpsltopsl
 

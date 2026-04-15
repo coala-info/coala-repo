@@ -2,8 +2,9 @@
 name: clair3
 description: Clair3 is a high-performance germline small variant caller designed for long-read sequencing technologies. Use when user asks to call germline variants from long-read data, perform ONT signal-aware calling, or generate GVCF files for joint calling.
 homepage: https://github.com/HKU-BAL/Clair3
+metadata:
+  docker_image: "quay.io/biocontainers/clair3:1.2.0--py310h779eee5_0"
 ---
-
 
 # clair3
 

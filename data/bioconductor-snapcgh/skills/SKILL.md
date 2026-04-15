@@ -4,7 +4,6 @@ description: This tool provides a comprehensive pipeline for the segmentation, n
 homepage: https://bioconductor.org/packages/3.9/bioc/html/snapCGH.html
 ---
 
-
 # bioconductor-snapcgh
 
 name: bioconductor-snapcgh

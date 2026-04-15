@@ -2,8 +2,9 @@
 name: metaprokka
 description: Metaprokka is a specialized annotation pipeline designed for viral and metagenomic data that utilizes Prodigal-GV for improved gene prediction. Use when user asks to annotate phage genomes, process fragmented metagenomic assemblies, or perform large-scale annotations with reduced disk usage.
 homepage: https://github.com/telatin/metaprokka
+metadata:
+  docker_image: "quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0"
 ---
-
 
 # metaprokka
 

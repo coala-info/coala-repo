@@ -2,8 +2,9 @@
 name: sam
 description: The sam skill provides an interface for the Samtools ecosystem to manipulate high-throughput sequencing alignment files and perform variant calling. Use when user asks to convert FASTQ to CRAM, mark duplicates, call SNPs and indels, or optimize genomic file compression.
 homepage: https://www.htslib.org/
+metadata:
+  docker_image: "quay.io/biocontainers/sam:3.5--0"
 ---
-
 
 # sam
 

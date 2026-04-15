@@ -2,8 +2,9 @@
 name: matlock
 description: Matlock is a toolkit for filtering Hi-C alignments and converting them into formats required for scaffolding and visualization tools. Use when user asks to filter Hi-C BAM files, convert alignments to Juicer or Lachesis formats, create binary matrices, or count DNA motifs in a reference genome.
 homepage: https://github.com/phasegenomics/matlock
+metadata:
+  docker_image: "quay.io/biocontainers/matlock:20181227--h665f8ca_8"
 ---
-
 
 # matlock
 

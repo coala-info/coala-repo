@@ -2,8 +2,9 @@
 name: proot
 description: This tool manages Linux distributions on Android via Termux without requiring root privileges. Use when user asks to list, install, remove, login to, backup, or restore Linux distributions.
 homepage: https://github.com/termux/proot-distro
+metadata:
+  docker_image: "quay.io/biocontainers/proot:5.1.0--0"
 ---
-
 
 # proot
 

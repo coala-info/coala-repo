@@ -4,7 +4,6 @@ description: This package provides access to curated somatic mutation data from 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SomaticCancerAlterations.html
 ---
 
-
 # bioconductor-somaticcanceralterations
 
 name: bioconductor-somaticcanceralterations

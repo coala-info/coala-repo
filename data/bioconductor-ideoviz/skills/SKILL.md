@@ -4,7 +4,6 @@ description: bioconductor-ideoviz visualizes continuous or discrete genomic data
 homepage: https://bioconductor.org/packages/release/bioc/html/IdeoViz.html
 ---
 
-
 # bioconductor-ideoviz
 
 name: bioconductor-ideoviz

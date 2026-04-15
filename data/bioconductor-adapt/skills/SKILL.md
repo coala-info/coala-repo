@@ -4,7 +4,6 @@ description: ADAPT is a Bioconductor package for microbiome differential abundan
 homepage: https://bioconductor.org/packages/release/bioc/html/ADAPT.html
 ---
 
-
 # bioconductor-adapt
 
 ## Overview

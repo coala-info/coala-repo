@@ -4,7 +4,6 @@ description: This package provides mapping between (x,y)-coordinates and probe i
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74acdf.html
 ---
 
-
 # bioconductor-mgu74acdf
 
 name: bioconductor-mgu74acdf

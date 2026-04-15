@@ -4,7 +4,6 @@ description: omXplore provides a suite of interactive Shiny modules for visualiz
 homepage: https://bioconductor.org/packages/release/bioc/html/omXplore.html
 ---
 
-
 # bioconductor-omxplore
 
 ## Overview

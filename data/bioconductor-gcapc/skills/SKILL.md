@@ -4,7 +4,6 @@ description: This tool performs GC-content bias correction for ChIP-seq data usi
 homepage: https://bioconductor.org/packages/release/bioc/html/gcapc.html
 ---
 
-
 # bioconductor-gcapc
 
 name: bioconductor-gcapc

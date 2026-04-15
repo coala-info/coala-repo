@@ -4,7 +4,6 @@ description: This package provides ligand-receptor interaction data for Gallus g
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Gga.eg.db.html
 ---
 
-
 # bioconductor-lrbase.gga.eg.db
 
 name: bioconductor-lrbase.gga.eg.db

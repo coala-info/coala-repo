@@ -1,9 +1,10 @@
 ---
 name: feems
-description: "FEEMS infers and visualizes migration patterns and long-range gene flow from spatial population genetic data. Use when user asks to estimate effective migration surfaces, fit spatial graphs to genotype data, or perform admixture analysis using FEEMSmix."
+description: FEEMS infers and visualizes migration patterns and long-range gene flow from spatial population genetic data. Use when user asks to estimate effective migration surfaces, fit spatial graphs to genotype data, or perform admixture analysis using FEEMSmix.
 homepage: https://github.com/NovembreLab/feems
+metadata:
+  docker_image: "quay.io/biocontainers/feems:2.0.1--pyhdfd78af_0"
 ---
-
 
 # feems
 

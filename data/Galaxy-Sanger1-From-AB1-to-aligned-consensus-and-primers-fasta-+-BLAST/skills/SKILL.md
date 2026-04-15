@@ -1,10 +1,12 @@
 ---
 name: sanger1-from-ab1-to-aligned-consensus-and-primers-fasta-blas
-description: "This Galaxy workflow processes forward and reverse Sanger sequencing chromatograms in AB1 format using primers to perform quality trimming, sequence alignment with QIIME, and taxonomic identification via NCBI BLAST+. Use this skill when you need to transform raw DNA trace files into validated consensus sequences for biodiversity monitoring or species-level identification."
-homepage: https://workflowhub.eu/workflows/1630
+description: This Galaxy workflow processes forward and reverse Sanger sequencing chromatograms in AB1 format using primers to perform quality trimming, sequence alignment with QIIME, and taxonomic identification via NCBI BLAST+. Use this skill when you need to transform raw DNA trace files into validated consensus sequences for biodiversity monitoring or species-level identification.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Sanger1 : From AB1 to aligned consensus and primers fasta + BLAST
+# sanger1-from-ab1-to-aligned-consensus-and-primers-fasta-blas
 
 ## Overview
 

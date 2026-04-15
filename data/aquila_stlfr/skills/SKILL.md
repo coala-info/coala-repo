@@ -2,8 +2,9 @@
 name: aquila_stlfr
 description: Aquila_stLFR reconstructs diploid human genomes and generates haplotype-resolved assemblies from stLFR linked-read data. Use when user asks to generate phased contigs, perform local assembly of linked-reads, or detect assembly-based variants from stLFR sequencing runs.
 homepage: https://github.com/maiziex/Aquila_stLFR
+metadata:
+  docker_image: "quay.io/biocontainers/aquila:1.0.0--py_0"
 ---
-
 
 # aquila_stlfr
 

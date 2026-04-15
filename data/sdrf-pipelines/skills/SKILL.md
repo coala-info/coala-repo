@@ -2,8 +2,9 @@
 name: sdrf-pipelines
 description: sdrf-pipelines validates Sample and Data Relationship Format files and converts them into configuration files for proteomics analysis workflows. Use when user asks to validate SDRF metadata, check ontology terms, or generate configuration files for OpenMS, MaxQuant, and MSstats.
 homepage: https://github.com/bigbio/sdrf-pipelines
+metadata:
+  docker_image: "quay.io/biocontainers/sdrf-pipelines:0.0.33--pyhdfd78af_0"
 ---
-
 
 # sdrf-pipelines
 

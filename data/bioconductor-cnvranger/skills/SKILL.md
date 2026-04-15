@@ -4,7 +4,6 @@ description: CNVRanger summarizes individual CNV calls into population-level reg
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVRanger.html
 ---
 
-
 # bioconductor-cnvranger
 
 ## Overview

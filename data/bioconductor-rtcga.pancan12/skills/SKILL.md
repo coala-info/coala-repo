@@ -4,7 +4,6 @@ description: This package provides a unified collection of clinical, expression,
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.PANCAN12.html
 ---
 
-
 # bioconductor-rtcga.pancan12
 
 ## Overview

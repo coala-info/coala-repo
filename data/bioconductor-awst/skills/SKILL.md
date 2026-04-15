@@ -4,7 +4,6 @@ description: This tool regularizes RNA-seq read counts using per-sample standard
 homepage: https://bioconductor.org/packages/release/bioc/html/awst.html
 ---
 
-
 # bioconductor-awst
 
 name: bioconductor-awst

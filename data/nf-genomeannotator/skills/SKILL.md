@@ -4,6 +4,8 @@ description: This pipeline annotates eukaryote genomes using a genome assembly, 
 homepage: https://github.com/nf-core/genomeannotator
 ---
 
+# genomeannotator
+
 ## Overview
 nf-core/genomeannotator is a bioinformatics pipeline designed for the structural annotation of eukaryote genomes, with a specific focus on metazoans. It addresses the challenge of identifying gene structures by integrating multiple lines of evidence, including protein alignments, transcript data, and ab-initio predictions.
 

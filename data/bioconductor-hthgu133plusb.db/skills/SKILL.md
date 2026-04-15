@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Affymet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133plusb.db.html
 ---
 
-
 # bioconductor-hthgu133plusb.db
 
 name: bioconductor-hthgu133plusb.db

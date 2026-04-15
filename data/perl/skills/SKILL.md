@@ -2,8 +2,9 @@
 name: perl
 description: Perl is a high-level programming language used here to run the MySQLTuner script for auditing database health and performance. Use when user asks to analyze database configuration, optimize MySQL or MariaDB performance, and identify security vulnerabilities or memory allocation issues.
 homepage: https://github.com/major/MySQLTuner-perl
+metadata:
+  docker_image: "quay.io/biocontainers/perl:5.32"
 ---
-
 
 # perl
 

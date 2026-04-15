@@ -4,7 +4,6 @@ description: This tool performs high-throughput functional analysis of signaling
 homepage: https://bioconductor.org/packages/release/bioc/html/hipathia.html
 ---
 
-
 # bioconductor-hipathia
 
 name: bioconductor-hipathia

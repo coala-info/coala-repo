@@ -4,7 +4,6 @@ description: PING performs probabilistic inference to identify nucleosome positi
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PING.html
 ---
 
-
 # bioconductor-ping
 
 ## Overview

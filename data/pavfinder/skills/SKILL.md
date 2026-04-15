@@ -2,8 +2,9 @@
 name: pavfinder
 description: PAVFinder identifies structural variations and gene fusions by analyzing the alignment of assembled contigs against a reference genome. Use when user asks to detect genomic structural variants, identify gene fusions, or characterize transcript splice variants.
 homepage: https://github.com/bcgsc/pavfinder
+metadata:
+  docker_image: "quay.io/biocontainers/pavfinder:1.8.5--pyhdfd78af_0"
 ---
-
 
 # pavfinder
 

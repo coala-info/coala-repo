@@ -4,7 +4,6 @@ description: GeneNetworkBuilder integrates transcription factor binding data wit
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneNetworkBuilder.html
 ---
 
-
 # bioconductor-genenetworkbuilder
 
 name: bioconductor-genenetworkbuilder

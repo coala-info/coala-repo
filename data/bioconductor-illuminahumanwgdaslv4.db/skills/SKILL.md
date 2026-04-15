@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Illumin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanWGDASLv4.db.html
 ---
 
-
 # bioconductor-illuminahumanwgdaslv4.db
 
 name: bioconductor-illuminahumanwgdaslv4.db

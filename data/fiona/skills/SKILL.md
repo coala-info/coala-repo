@@ -1,7 +1,9 @@
 ---
 name: fiona
-description: "Fiona is a Python library and CLI tool for reading, writing, and filtering geospatial vector data using simple mappings. Use when user asks to read or write GIS vector layers, convert between spatial file formats, filter features by attribute or bounding box, or process GeoJSON-like records in Python."
+description: Fiona is a Python library and CLI tool for reading, writing, and filtering geospatial vector data using simple mappings. Use when user asks to read or write GIS vector layers, convert between spatial file formats, filter features by attribute or bounding box, or process GeoJSON-like records in Python.
 homepage: https://github.com/Toblerity/Fiona
+metadata:
+  docker_image: "quay.io/biocontainers/fiona:1.8.6"
 ---
 
 # fiona

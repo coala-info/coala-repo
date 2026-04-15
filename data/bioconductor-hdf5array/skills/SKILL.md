@@ -4,7 +4,6 @@ description: This tool provides a framework for representing and manipulating la
 homepage: https://bioconductor.org/packages/release/bioc/html/HDF5Array.html
 ---
 
-
 # bioconductor-hdf5array
 
 name: bioconductor-hdf5array

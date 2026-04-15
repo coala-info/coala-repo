@@ -4,7 +4,6 @@ description: This package compares RNA half-life and intensity data across two c
 homepage: https://bioconductor.org/packages/release/bioc/html/rifiComparative.html
 ---
 
-
 # bioconductor-rificomparative
 
 ## Overview

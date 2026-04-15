@@ -4,7 +4,6 @@ description: This tool identifies chromosomal alterations and copy number varian
 homepage: https://bioconductor.org/packages/release/bioc/html/VanillaICE.html
 ---
 
-
 # bioconductor-vanillaice
 
 name: bioconductor-vanillaice

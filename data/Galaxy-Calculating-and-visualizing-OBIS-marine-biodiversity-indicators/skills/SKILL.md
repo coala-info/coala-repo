@@ -1,10 +1,12 @@
 ---
 name: obis-indicators
-description: "This Galaxy workflow processes marine occurrence data from a CSV file using text processing tools and the OBIS indicators tool to calculate biodiversity metrics. Use this skill when you need to analyze marine species occurrence records to derive standardized biodiversity indicators for ecological monitoring or conservation assessments."
-homepage: https://workflowhub.eu/workflows/758
+description: This Galaxy workflow processes marine occurrence data from a CSV file using text processing tools and the OBIS indicators tool to calculate biodiversity metrics. Use this skill when you need to analyze marine species occurrence records to derive standardized biodiversity indicators for ecological monitoring or conservation assessments.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Obis indicators
+# obis-indicators
 
 ## Overview
 

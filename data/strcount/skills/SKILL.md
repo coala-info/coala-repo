@@ -2,8 +2,9 @@
 name: strcount
 description: strcount counts repeat motifs within tandem repeat expansions using long-read data aligned to a reference graph. Use when user asks to count short tandem repeats, analyze long-read expansion data, or quantify motifs in specific genomic loci.
 homepage: https://github.com/sabiqali/strcount
+metadata:
+  docker_image: "quay.io/biocontainers/strcount:0.1.1--py310h7cba7a3_1"
 ---
-
 
 # strcount
 

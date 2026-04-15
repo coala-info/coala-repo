@@ -4,7 +4,6 @@ description: This tool computes the distribution function of quadratic forms in 
 homepage: https://cran.r-project.org/web/packages/compquadform/index.html
 ---
 
-
 # r-compquadform
 
 name: r-compquadform

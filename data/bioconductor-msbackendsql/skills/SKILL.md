@@ -4,7 +4,6 @@ description: The MsBackendSql package provides a high-performance infrastructure
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendSql.html
 ---
 
-
 # bioconductor-msbackendsql
 
 ## Overview

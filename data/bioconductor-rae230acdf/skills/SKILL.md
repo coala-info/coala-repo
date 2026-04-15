@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment an
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230acdf.html
 ---
 
-
 # bioconductor-rae230acdf
 
 name: bioconductor-rae230acdf

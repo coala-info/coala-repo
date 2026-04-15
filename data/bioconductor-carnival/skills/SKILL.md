@@ -4,7 +4,6 @@ description: CARNIVAL identifies signaling network topologies that explain obser
 homepage: https://bioconductor.org/packages/release/bioc/html/CARNIVAL.html
 ---
 
-
 # bioconductor-carnival
 
 name: bioconductor-carnival

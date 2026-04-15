@@ -4,7 +4,6 @@ description: This package provides the van't Veer and Van de Vijver breast cance
 homepage: https://bioconductor.org/packages/release/data/experiment/html/seventyGeneData.html
 ---
 
-
 # bioconductor-seventygenedata
 
 ## Overview

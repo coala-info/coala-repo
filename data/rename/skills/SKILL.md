@@ -2,8 +2,9 @@
 name: rename
 description: The rename tool performs sophisticated batch renaming of files using Perl-based transformations and regular expressions. Use when user asks to change file cases, sanitize filenames, perform search-and-replace substitutions, manage file extensions, or dynamically reorganize files into directory structures.
 homepage: http://plasmasturm.org/code/rename
+metadata:
+  docker_image: "quay.io/biocontainers/rename:1.601--0"
 ---
-
 
 # rename
 

@@ -4,7 +4,6 @@ description: microbiomeDASim simulates longitudinal microbiome sequencing data t
 homepage: https://bioconductor.org/packages/release/bioc/html/microbiomeDASim.html
 ---
 
-
 # bioconductor-microbiomedasim
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool processes and analyzes microRNA expression data from MiCh
 homepage: https://bioconductor.org/packages/release/bioc/html/MiChip.html
 ---
 
-
 # bioconductor-michip
 
 name: bioconductor-michip

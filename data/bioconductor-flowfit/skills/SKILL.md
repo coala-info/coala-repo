@@ -4,7 +4,6 @@ description: This tool analyzes cell proliferation tracking dye data from flow c
 homepage: https://bioconductor.org/packages/3.8/bioc/html/flowFit.html
 ---
 
-
 # bioconductor-flowfit
 
 name: bioconductor-flowfit

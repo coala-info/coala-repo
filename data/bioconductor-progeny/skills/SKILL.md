@@ -4,7 +4,6 @@ description: This tool infers signaling pathway activities from bulk or single-c
 homepage: https://bioconductor.org/packages/release/bioc/html/progeny.html
 ---
 
-
 # bioconductor-progeny
 
 name: bioconductor-progeny

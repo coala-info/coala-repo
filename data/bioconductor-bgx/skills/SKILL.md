@@ -4,7 +4,6 @@ description: This tool performs Bayesian hierarchical modeling for Affymetrix Ge
 homepage: https://bioconductor.org/packages/release/bioc/html/bgx.html
 ---
 
-
 # bioconductor-bgx
 
 name: bioconductor-bgx

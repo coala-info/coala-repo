@@ -2,8 +2,9 @@
 name: pandas
 description: Pandas provides high-performance data structures and tools for manipulating, cleaning, and analyzing relational or labeled datasets in Python. Use when user asks to load data from various formats, handle missing values, transform dataframes, or perform complex data aggregations and merges.
 homepage: https://github.com/pandas-dev/pandas
+metadata:
+  docker_image: "quay.io/biocontainers/pandas:2.2.1"
 ---
-
 
 # pandas
 

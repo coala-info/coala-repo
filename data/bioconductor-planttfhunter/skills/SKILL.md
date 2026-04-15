@@ -4,7 +4,6 @@ description: This tool identifies and classifies plant transcription factors fro
 homepage: https://bioconductor.org/packages/release/bioc/html/planttfhunter.html
 ---
 
-
 # bioconductor-planttfhunter
 
 name: bioconductor-planttfhunter

@@ -4,7 +4,6 @@ description: This tool provides pre-computed whole-genome mappability tracks and
 homepage: https://bioconductor.org/packages/release/data/experiment/html/WGSmapp.html
 ---
 
-
 # bioconductor-wgsmapp
 
 name: bioconductor-wgsmapp

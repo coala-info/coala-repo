@@ -2,8 +2,9 @@
 name: simlord
 description: SimLoRD simulates long-read sequencing data from a reference genome with realistic PacBio error profiles and read-length distributions. Use when user asks to generate synthetic long reads, simulate PacBio sequencing data, or create realistic datasets for benchmarking and tool development.
 homepage: https://bitbucket.org/genomeinformatics/simlord/
+metadata:
+  docker_image: "quay.io/biocontainers/simlord:1.0.4--py39hbcbf7aa_5"
 ---
-
 
 # simlord
 

@@ -4,7 +4,6 @@ description: This package provides a genomic annotation database for Arabidopsis
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Athaliana.BioMart.plantsmart22.html
 ---
 
-
 # bioconductor-txdb.athaliana.biomart.plantsmart22
 
 name: bioconductor-txdb.athaliana.biomart.plantsmart22

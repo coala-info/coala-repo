@@ -4,7 +4,6 @@ description: This tool provides a framework for analyzing matrices with precisio
 homepage: https://bioconductor.org/packages/release/bioc/html/weitrix.html
 ---
 
-
 # bioconductor-weitrix
 
 name: bioconductor-weitrix

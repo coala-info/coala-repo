@@ -2,6 +2,8 @@
 name: predex
 description: Predex is a data preprocessing utility that prepares expression matrices and sequencing data for differential gene expression analysis. Use when user asks to format count data for the dgeAnalysis pipeline, process IPA files, perform sample comparisons, or generate experimental designs and annotations.
 homepage: https://github.com/tomkuipers1402/predex
+metadata:
+  docker_image: "quay.io/biocontainers/predex:0.9.3--pyh5e36f6f_0"
 ---
 
 # predex

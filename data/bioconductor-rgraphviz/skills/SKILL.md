@@ -4,7 +4,6 @@ description: This tool provides an interface to the Graphviz library for the vis
 homepage: https://bioconductor.org/packages/release/bioc/html/Rgraphviz.html
 ---
 
-
 # bioconductor-rgraphviz
 
 name: bioconductor-rgraphviz

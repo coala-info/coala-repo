@@ -4,7 +4,6 @@ description: This tool provides R wrappers for Bowtie2 and AdapterRemoval to per
 homepage: https://bioconductor.org/packages/release/bioc/html/Rbowtie2.html
 ---
 
-
 # bioconductor-rbowtie2
 
 name: bioconductor-rbowtie2

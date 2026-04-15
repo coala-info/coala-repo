@@ -2,6 +2,8 @@
 name: metabat2
 description: MetaBAT2 reconstructs individual microbial genomes from metagenomic assemblies by clustering contigs based on sequence composition and abundance profiles. Use when user asks to bin metagenomic contigs, generate metagenome-assembled genomes, or calculate contig depth profiles for binning.
 homepage: https://bitbucket.org/berkeleylab/metabat
+metadata:
+  docker_image: "quay.io/biocontainers/metabat2:2.18--h6f16272_0"
 ---
 
 # metabat2

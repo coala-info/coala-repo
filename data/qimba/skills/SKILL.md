@@ -2,6 +2,8 @@
 name: qimba
 description: Qimba is a bioinformatics toolkit for managing and processing metabarcoding sequencing workflows. Use when user asks to generate sample mapping files, merge paired-end reads, dereplicate sequences, or convert DADA2 outputs.
 homepage: https://github.com/quadram-institute-bioscience/qimba
+metadata:
+  docker_image: "quay.io/biocontainers/qimba:0.4.0--pyhdfd78af_0"
 ---
 
 # qimba

@@ -4,7 +4,6 @@ description: This tool performs dynamical modelling of cell-cycle phenotypes by 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/mitoODE.html
 ---
 
-
 # bioconductor-mitoode
 
 name: bioconductor-mitoode

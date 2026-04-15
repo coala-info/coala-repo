@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-iwtomics-workflow
-description: "This genomics workflow processes BED files and tabular feature headers using the IWTomics suite to perform interval-wise testing and visualization of omics data. Use this skill when you need to identify significant differences in the distribution of genomic features across different types of regions using functional data analysis."
-homepage: https://workflowhub.eu/workflows/1719
+description: This genomics workflow processes BED files and tabular feature headers using the IWTomics suite to perform interval-wise testing and visualization of omics data. Use this skill when you need to identify significant differences in the distribution of genomic features across different types of regions using functional data analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow Constructed From History 'IWTomics Workflow'
+# workflow-constructed-from-history-iwtomics-workflow
 
 ## Overview
 

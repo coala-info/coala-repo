@@ -4,7 +4,6 @@ description: This tool removes unwanted variation and batch effects from RNA-Seq
 homepage: https://bioconductor.org/packages/release/bioc/html/RUVSeq.html
 ---
 
-
 # bioconductor-ruvseq
 
 name: bioconductor-ruvseq

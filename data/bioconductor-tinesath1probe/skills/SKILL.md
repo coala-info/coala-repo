@@ -4,7 +4,6 @@ description: This package provides probe sequence data for the Affymetrix tinesa
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tinesath1probe.html
 ---
 
-
 # bioconductor-tinesath1probe
 
 name: bioconductor-tinesath1probe

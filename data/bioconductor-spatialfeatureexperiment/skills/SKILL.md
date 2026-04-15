@@ -4,7 +4,6 @@ description: This tool provides an S4 class that integrates spatial transcriptom
 homepage: https://bioconductor.org/packages/release/bioc/html/SpatialFeatureExperiment.html
 ---
 
-
 # bioconductor-spatialfeatureexperiment
 
 name: bioconductor-spatialfeatureexperiment

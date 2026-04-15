@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Illumin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation27k.db.html
 ---
 
-
 # bioconductor-illuminahumanmethylation27k.db
 
 name: bioconductor-illuminahumanmethylation27k.db

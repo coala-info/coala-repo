@@ -1,9 +1,12 @@
 ---
 name: metagenomic-gems-from-assembly
-description: "This CWL workflow reconstructs genome-scale metabolic models from metagenomic assemblies using Prodigal for gene prediction, CarveMe for model generation, and SMETANA for interaction analysis. Use this skill when you need to characterize the metabolic potential of microbial populations, infer inter-species metabolic interactions, and assess the quality of reconstructed models from metagenomic bins."
-homepage: https://workflowhub.eu/workflows/372
+description: This CWL workflow reconstructs genome-scale metabolic models from metagenomic assemblies using Prodigal for gene prediction, CarveMe for model generation, and SMETANA for interaction analysis. Use this skill when you need to characterize the metabolic potential of microbial populations, infer inter-species metabolic interactions, and assess the quality of reconstructed models from metagenomic bins.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Metagenomic GEMs from Assembly
+
+# metagenomic-gems-from-assembly
 
 ## Overview
 

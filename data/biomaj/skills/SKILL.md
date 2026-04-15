@@ -2,8 +2,9 @@
 name: biomaj
 description: BioMAJ is a workflow engine designed to automate the synchronization, update, and post-processing of local mirrors for biological datasets. Use when user asks to maintain local databank mirrors, automate biological data downloads, or manage the lifecycle of public database updates.
 homepage: https://github.com/genouest/biomaj
+metadata:
+  docker_image: "quay.io/biocontainers/biomaj:3.0.19--py35_0"
 ---
-
 
 # biomaj
 

@@ -4,7 +4,6 @@ description: FGNet transforms functional enrichment analysis results into functi
 homepage: https://bioconductor.org/packages/release/bioc/html/FGNet.html
 ---
 
-
 # bioconductor-fgnet
 
 ## Overview

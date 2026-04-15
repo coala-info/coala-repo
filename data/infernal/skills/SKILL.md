@@ -2,6 +2,8 @@
 name: infernal
 description: Infernal uses profile stochastic context-free grammars to identify and align RNA homologs by accounting for both sequence consensus and secondary structure. Use when user asks to build or calibrate covariance models, search sequence databases for RNA homologs, scan sequences against model libraries, or create structural RNA alignments.
 homepage: http://eddylab.org/infernal
+metadata:
+  docker_image: "quay.io/biocontainers/infernal:1.1.5--pl5321h7b50bb2_4"
 ---
 
 # infernal

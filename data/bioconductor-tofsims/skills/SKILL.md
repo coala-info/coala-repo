@@ -4,7 +4,6 @@ description: This tool processes and analyzes Time-of-Flight Secondary Ion Mass 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/tofsims.html
 ---
 
-
 # bioconductor-tofsims
 
 name: bioconductor-tofsims

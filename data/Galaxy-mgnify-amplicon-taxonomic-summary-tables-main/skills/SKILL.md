@@ -1,10 +1,12 @@
 ---
 name: mgnify-amplicon-summary-tables
-description: "This metagenomics workflow utilizes Query Tabular and column joining tools to transform OTU table collections into standardized taxonomic abundance summary tables. Use this skill when you need to synthesize amplicon sequencing data into phylum-level and multi-level taxonomic profiles to compare microbial community compositions across multiple datasets."
-homepage: https://workflowhub.eu/workflows/1269
+description: This metagenomics workflow utilizes Query Tabular and column joining tools to transform OTU table collections into standardized taxonomic abundance summary tables. Use this skill when you need to synthesize amplicon sequencing data into phylum-level and multi-level taxonomic profiles to compare microbial community compositions across multiple datasets.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify amplicon summary tables
+# mgnify-amplicon-summary-tables
 
 ## Overview
 

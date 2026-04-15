@@ -2,6 +2,8 @@
 name: aquila
 description: Aquila performs diploid genome assembly and comprehensive variant discovery using linked-read sequencing data. Use when user asks to perform diploid genome assembly, partition genomic fragments into haplotypes, call assembly-based variants, or phase genomic variants.
 homepage: https://github.com/maiziex/Aquila
+metadata:
+  docker_image: "quay.io/biocontainers/aquila:1.0.0--py_0"
 ---
 
 # aquila

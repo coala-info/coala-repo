@@ -4,7 +4,6 @@ description: MAST is a Bioconductor package that performs differential expressio
 homepage: https://bioconductor.org/packages/release/bioc/html/MAST.html
 ---
 
-
 # bioconductor-mast
 
 ## Overview

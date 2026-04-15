@@ -2,8 +2,9 @@
 name: solote
 description: SoloTE quantifies transposable element expression at single-cell resolution by re-annotating alignments from scRNA-seq data. Use when user asks to quantify TE expression in single cells, generate TE count matrices from BAM files, or convert RepeatMasker files to BED format.
 homepage: https://github.com/bvaldebenitom/SoloTE
+metadata:
+  docker_image: "quay.io/biocontainers/solote:1.09--hdfd78af_0"
 ---
-
 
 # solote
 

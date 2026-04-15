@@ -2,8 +2,9 @@
 name: reprof
 description: ReproFed manages Fedora systems using a declarative profile model to ensure the installed packages match a desired state. Use when user asks to apply a system profile, list available configurations, update the tool, or synchronize system state to eliminate configuration drift.
 homepage: https://github.com/ephmo/reprofed
+metadata:
+  docker_image: "biocontainers/reprof:v1.0.1-6-deb_cv1"
 ---
-
 
 # reprof
 

@@ -4,7 +4,6 @@ description: This package provides aggregated microRNA target prediction data fr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/miRNAtap.db.html
 ---
 
-
 # bioconductor-mirnatap.db
 
 name: bioconductor-mirnatap.db

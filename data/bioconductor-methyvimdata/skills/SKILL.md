@@ -4,7 +4,6 @@ description: This package provides example DNA methylation data in a GenomicRati
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/methyvimData.html
 ---
 
-
 # bioconductor-methyvimdata
 
 name: bioconductor-methyvimdata

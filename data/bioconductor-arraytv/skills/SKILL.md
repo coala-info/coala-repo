@@ -1,9 +1,8 @@
 ---
 name: bioconductor-arraytv
-description: "ArrayTV corrects GC content bias and wave artifacts in microarray signal intensity data. Use when user asks to remove GC-related waves from genomic data, perform GC correction on microarray intensities, or calculate total variance scores for optimal window selection."
+description: ArrayTV corrects GC content bias and wave artifacts in microarray signal intensity data. Use when user asks to remove GC-related waves from genomic data, perform GC correction on microarray intensities, or calculate total variance scores for optimal window selection.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ArrayTV.html
 ---
-
 
 # bioconductor-arraytv
 

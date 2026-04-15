@@ -1,10 +1,12 @@
 ---
 name: amber-protein-md-setup
-description: "This workflow automates the preparation and simulation of protein structures using the AMBER force field, taking a PDB file as input and utilizing BioBB tools for system setup, solvation, energy minimization, and MD equilibration. Use this skill when you need to generate stable molecular dynamics trajectories for a protein to study its structural stability, conformational changes, or thermodynamic properties in an aqueous environment."
-homepage: https://workflowhub.eu/workflows/297
+description: This workflow automates the preparation and simulation of protein structures using the AMBER force field, taking a PDB file as input and utilizing BioBB tools for system setup, solvation, energy minimization, and MD equilibration. Use this skill when you need to generate stable molecular dynamics trajectories for a protein to study its structural stability, conformational changes, or thermodynamic properties in an aqueous environment.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AMBER Protein MD Setup
+# amber-protein-md-setup
 
 ## Overview
 

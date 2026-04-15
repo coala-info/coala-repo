@@ -1,9 +1,10 @@
 ---
 name: generax
-description: "GeneRax infers gene family trees by modeling duplication, transfer, and loss events and can reconcile them with a species tree. Use when user asks to infer gene family trees, reconcile gene trees with species trees, or infer species trees from gene trees."
+description: GeneRax infers gene family trees by modeling duplication, transfer, and loss events and can reconcile them with a species tree. Use when user asks to infer gene family trees, reconcile gene trees with species trees, or infer species trees from gene trees.
 homepage: https://github.com/benoitmorel/generax
+metadata:
+  docker_image: "quay.io/biocontainers/generax:2.1.3--hf316886_3"
 ---
-
 
 # generax
 

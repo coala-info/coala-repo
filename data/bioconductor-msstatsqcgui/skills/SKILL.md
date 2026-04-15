@@ -4,7 +4,6 @@ description: MSstatsQCgui provides a Shiny-based graphical user interface for th
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsQCgui.html
 ---
 
-
 # bioconductor-msstatsqcgui
 
 ## Overview

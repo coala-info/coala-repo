@@ -1,9 +1,8 @@
 ---
 name: r-r2html
-description: "This tool exports R objects, console output, and plots into formatted HTML reports and files. Use when user asks to generate HTML-based statistical reports, redirect R console output to HTML in real-time, create sortable data tables, or embed R plots and LaTeX equations into HTML documents."
+description: This tool exports R objects, console output, and plots into formatted HTML reports and files. Use when user asks to generate HTML-based statistical reports, redirect R console output to HTML in real-time, create sortable data tables, or embed R plots and LaTeX equations into HTML documents.
 homepage: https://cloud.r-project.org/web/packages/R2HTML/index.html
 ---
-
 
 # r-r2html
 

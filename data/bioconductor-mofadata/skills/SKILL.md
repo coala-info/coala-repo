@@ -4,7 +4,6 @@ description: This package provides access to multi-omic datasets and gene set in
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MOFAdata.html
 ---
 
-
 # bioconductor-mofadata
 
 name: bioconductor-mofadata

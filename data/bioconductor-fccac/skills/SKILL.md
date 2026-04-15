@@ -4,7 +4,6 @@ description: This tool assesses covariance and reproducibility between nucleic a
 homepage: https://bioconductor.org/packages/release/bioc/html/fCCAC.html
 ---
 
-
 # bioconductor-fccac
 
 name: bioconductor-fccac

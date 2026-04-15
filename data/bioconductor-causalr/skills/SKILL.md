@@ -4,7 +4,6 @@ description: Bioconductor-causalr performs causal reasoning and network analysis
 homepage: https://bioconductor.org/packages/release/bioc/html/CausalR.html
 ---
 
-
 # bioconductor-causalr
 
 name: bioconductor-causalr

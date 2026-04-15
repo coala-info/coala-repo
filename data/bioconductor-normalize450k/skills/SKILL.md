@@ -4,7 +4,6 @@ description: This R package reads and normalizes Illumina Infinium HumanMethylat
 homepage: https://bioconductor.org/packages/release/bioc/html/normalize450K.html
 ---
 
-
 # bioconductor-normalize450k
 
 name: bioconductor-normalize450k

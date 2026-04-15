@@ -1,9 +1,10 @@
 ---
 name: pdb2fasta
-description: "pdb2fasta extracts protein sequences from PDB structural coordinate files and converts them into FASTA format. Use when user asks to convert PDB files to FASTA, extract sequences from protein structures, or perform batch conversion of structural data to sequence format."
+description: pdb2fasta extracts protein sequences from PDB structural coordinate files and converts them into FASTA format. Use when user asks to convert PDB files to FASTA, extract sequences from protein structures, or perform batch conversion of structural data to sequence format.
 homepage: https://github.com/kad-ecoli/pdb2fasta
+metadata:
+  docker_image: "quay.io/biocontainers/pdb2fasta:1.0--h7b50bb2_0"
 ---
-
 
 # pdb2fasta
 

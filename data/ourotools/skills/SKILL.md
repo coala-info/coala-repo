@@ -2,8 +2,9 @@
 name: ourotools
 description: Ouro-Tools is a computational pipeline designed for processing and normalizing single-cell long-read RNA-sequencing data. Use when user asks to filter raw reads, normalize size distributions, analyze 5' mRNA cap sites, or generate strand-specific coverage files.
 homepage: https://github.com/ahs2202/ouro-tools
+metadata:
+  docker_image: "quay.io/biocontainers/ourotools:0.2.9--pyhdfd78af_0"
 ---
-
 
 # ourotools
 

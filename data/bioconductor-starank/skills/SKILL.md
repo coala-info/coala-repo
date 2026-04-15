@@ -4,7 +4,6 @@ description: The bioconductor-starank package identifies variables that consiste
 homepage: https://bioconductor.org/packages/3.5/bioc/html/staRank.html
 ---
 
-
 # bioconductor-starank
 
 ## Overview

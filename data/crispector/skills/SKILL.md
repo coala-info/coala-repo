@@ -2,8 +2,9 @@
 name: crispector
 description: Crispector detects and quantifies genome editing activity and translocations by applying Bayesian inference to multiplex-PCR NGS data. Use when user asks to detect NHEJ activity, estimate editing rates from treatment and mock samples, or identify genomic rearrangements.
 homepage: https://github.com/YakhiniGroup/crispector
+metadata:
+  docker_image: "quay.io/biocontainers/crispector:1.0.7--pyhdfd78af_0"
 ---
-
 
 # crispector
 

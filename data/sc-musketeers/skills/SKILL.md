@@ -2,8 +2,9 @@
 name: sc-musketeers
 description: sc-musketeers is a deep learning framework for single-cell atlas reconstruction, cell type label transfer, and data integration. Use when user asks to annotate unlabeled cells, transfer labels from a reference to a query dataset, or identify rare cell populations while mitigating batch effects.
 homepage: https://sc-musketeers.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/sc-musketeers:0.4.2--pyhdfd78af_0"
 ---
-
 
 # sc-musketeers
 

@@ -2,8 +2,9 @@
 name: gnomic
 description: Gnomic provides a standardized grammar and Python tool for parsing, tracking, and formatting microbial genotypes and genetic modifications. Use when user asks to parse genotype strings, track genetic changes across generations, or generate standardized genetic descriptions.
 homepage: https://github.com/biosustain/gnomic
+metadata:
+  docker_image: "quay.io/biocontainers/gnomic:1.0.1--py_0"
 ---
-
 
 # gnomic
 

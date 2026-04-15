@@ -4,7 +4,6 @@ description: This package provides language-agnostic storage and retrieval for M
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.mae.html
 ---
 
-
 # bioconductor-alabaster.mae
 
 ## Overview

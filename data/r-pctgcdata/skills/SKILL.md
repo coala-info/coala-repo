@@ -4,7 +4,6 @@ description: This package provides GC percentage data for human and mouse genome
 homepage: https://cran.r-project.org/web/packages/pctgcdata/index.html
 ---
 
-
 # r-pctgcdata
 
 name: r-pctgcdata

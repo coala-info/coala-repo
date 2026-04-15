@@ -2,8 +2,9 @@
 name: pacbio_falcon
 description: FALCON is a suite of tools designed for the efficient assembly and haplotig resolution of long-read sequencing data. Use when user asks to assemble long reads, phase diploid genomes, or convert assembly graphs to GFA format.
 homepage: https://github.com/PacificBiosciences/FALCON
+metadata:
+  docker_image: "quay.io/biocontainers/pacbio_falcon:052016--py27_1"
 ---
-
 
 # pacbio_falcon
 

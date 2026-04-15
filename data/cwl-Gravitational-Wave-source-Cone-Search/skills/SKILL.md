@@ -1,9 +1,12 @@
 ---
 name: gravitational-wave-source-cone-search
-description: "This CWL workflow performs a spatial cone search for gravitational wave sources by querying astronomical databases using sky coordinates and search radii. Use this skill when identifying potential electromagnetic counterparts to gravitational wave events or characterizing the spatial distribution of detected mergers within a specific region of the sky."
-homepage: https://workflowhub.eu/workflows/415
+description: This CWL workflow performs a spatial cone search for gravitational wave sources by querying astronomical databases using sky coordinates and search radii. Use this skill when identifying potential electromagnetic counterparts to gravitational wave events or characterizing the spatial distribution of detected mergers within a specific region of the sky.
+homepage: https://github.com/oda-hub
+metadata:
+  docker_image: "N/A"
 ---
-# Gravitational Wave source Cone Search
+
+# gravitational-wave-source-cone-search
 
 ## Overview
 

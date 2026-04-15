@@ -4,7 +4,6 @@ description: This tool provides a model-based approach to perform quality contro
 homepage: https://bioconductor.org/packages/release/bioc/html/cytofQC.html
 ---
 
-
 # bioconductor-cytofqc
 
 ## Overview

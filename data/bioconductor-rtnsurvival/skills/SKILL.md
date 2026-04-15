@@ -4,7 +4,6 @@ description: This package integrates transcriptional regulatory networks with su
 homepage: https://bioconductor.org/packages/release/bioc/html/RTNsurvival.html
 ---
 
-
 # bioconductor-rtnsurvival
 
 ## Overview

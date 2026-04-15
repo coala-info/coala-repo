@@ -1,9 +1,10 @@
 ---
 name: gimbleprep
-description: "gimbleprep preprocesses and filters VCF and BAM files to prepare genomic datasets for the gIMble analysis suite. Use when user asks to decompose MNPs, filter variants for site frequency spectrum analyses, or synchronize VCF and BED files for gIMble."
+description: gimbleprep preprocesses and filters VCF and BAM files to prepare genomic datasets for the gIMble analysis suite. Use when user asks to decompose MNPs, filter variants for site frequency spectrum analyses, or synchronize VCF and BED files for gIMble.
 homepage: https://github.com/LohseLab/gimbleprep
+metadata:
+  docker_image: "quay.io/biocontainers/gimbleprep:0.0.2--pyhdfd78af_0"
 ---
-
 
 # gimbleprep
 

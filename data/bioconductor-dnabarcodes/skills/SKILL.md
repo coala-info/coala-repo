@@ -4,7 +4,6 @@ description: This tool creates, analyzes, and demultiplexes DNA barcodes with er
 homepage: https://bioconductor.org/packages/release/bioc/html/DNABarcodes.html
 ---
 
-
 # bioconductor-dnabarcodes
 
 name: bioconductor-dnabarcodes

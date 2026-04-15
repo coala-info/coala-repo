@@ -1,10 +1,12 @@
 ---
 name: nanopore-preprocessing
-description: "This microbiome workflow processes Nanopore sequencing collections through adapter trimming, quality control, host sequence removal, and taxonomic classification using tools like Porechop, minimap2, Kraken2, and fastp. Use this skill when you need to clean raw long-read sequencing data by removing host contamination and assessing microbial composition for downstream pathogen identification or metagenomic analysis."
-homepage: https://workflowhub.eu/workflows/1492
+description: This microbiome workflow processes Nanopore sequencing collections through adapter trimming, quality control, host sequence removal, and taxonomic classification using tools like Porechop, minimap2, Kraken2, and fastp. Use this skill when you need to clean raw long-read sequencing data by removing host contamination and assessing microbial composition for downstream pathogen identification or metagenomic analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Nanopore Preprocessing
+# nanopore-preprocessing
 
 ## Overview
 

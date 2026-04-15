@@ -4,7 +4,6 @@ description: netDx is a machine learning framework that builds patient classifie
 homepage: https://bioconductor.org/packages/3.11/bioc/html/netDx.html
 ---
 
-
 # bioconductor-netdx
 
 name: bioconductor-netdx

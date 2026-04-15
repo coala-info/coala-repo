@@ -4,7 +4,6 @@ description: This package provides HapMap Phase II YRI genotype and GENEVAR expr
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/hmyriB36.html
 ---
 
-
 # bioconductor-hmyrib36
 
 name: bioconductor-hmyrib36

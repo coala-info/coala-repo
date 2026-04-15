@@ -1,10 +1,12 @@
 ---
 name: music-stage-4-compute-metrics
-description: "This Galaxy workflow calculates performance metrics for cell type deconvolution by processing cell proportion data using Table Compute and column manipulation tools. Use this skill when you need to evaluate the accuracy of deconvolution results by calculating statistical indicators like Squared Error and Pearson Correlation between predicted and expected cell type proportions."
-homepage: https://workflowhub.eu/workflows/1567
+description: This Galaxy workflow calculates performance metrics for cell type deconvolution by processing cell proportion data using Table Compute and column manipulation tools. Use this skill when you need to evaluate the accuracy of deconvolution results by calculating statistical indicators like Squared Error and Pearson Correlation between predicted and expected cell type proportions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Music Stage 4 - Compute metrics
+# music-stage-4-compute-metrics
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs pathway enrichment analysis for miRNA expression
 homepage: https://bioconductor.org/packages/release/bioc/html/miRNApath.html
 ---
 
-
 # bioconductor-mirnapath
 
 name: bioconductor-mirnapath

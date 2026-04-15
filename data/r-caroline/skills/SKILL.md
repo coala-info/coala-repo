@@ -4,7 +4,6 @@ description: The caroline R package provides a collection of utilities for datab
 homepage: https://cloud.r-project.org/web/packages/caroline/index.html
 ---
 
-
 # r-caroline
 
 name: r-caroline

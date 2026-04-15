@@ -4,7 +4,6 @@ description: This tool performs genome-wide survival analysis on large-scale gen
 homepage: https://bioconductor.org/packages/release/bioc/html/gwasurvivr.html
 ---
 
-
 # bioconductor-gwasurvivr
 
 name: bioconductor-gwasurvivr

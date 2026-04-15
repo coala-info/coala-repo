@@ -2,6 +2,8 @@
 name: sequencetools
 description: sequencetools generates genotype calls from BAM files using read-sampling methods like random haploid or majority calling. Use when user asks to generate genotypes from low-coverage sequencing data, call SNPs using pileupCaller, or convert BAM files to EIGENSOFT and PLINK formats.
 homepage: https://github.com/stschiff/sequenceTools
+metadata:
+  docker_image: "quay.io/biocontainers/sequencetools:1.6.0.0--hebebf5b_0"
 ---
 
 # sequencetools

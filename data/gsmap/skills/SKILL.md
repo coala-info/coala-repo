@@ -2,8 +2,9 @@
 name: gsmap
 description: The gsmap tool projects human complex trait information onto spatial transcriptomic maps to identify where specific traits are biologically active within a tissue. Use when user asks to perform genetically informed spatial mapping, run spatial LDSC analyses, calculate gene specificity scores, or visualize trait-tissue associations from summary statistics.
 homepage: https://github.com/LeonSong1995/gsMap
+metadata:
+  docker_image: "quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0"
 ---
-
 
 # gsmap
 

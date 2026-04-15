@@ -4,7 +4,6 @@ description: This tool fits the Parallel Mixed Model to identify hits and compar
 homepage: https://bioconductor.org/packages/release/bioc/html/pmm.html
 ---
 
-
 # bioconductor-pmm
 
 name: bioconductor-pmm

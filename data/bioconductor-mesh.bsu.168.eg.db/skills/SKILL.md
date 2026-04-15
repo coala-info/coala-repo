@@ -4,7 +4,6 @@ description: This package provides mapping between Entrez Gene identifiers and M
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Bsu.168.eg.db.html
 ---
 
-
 # bioconductor-mesh.bsu.168.eg.db
 
 ## Overview

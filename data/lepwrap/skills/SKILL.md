@@ -2,8 +2,9 @@
 name: lepwrap
 description: LepWrap is a Snakemake-based pipeline that streamlines linkage mapping and genomic scaffold anchoring using Lep-Map3 and LepAnchor. Use when user asks to build linkage maps, anchor scaffolds into chromosomes, or orient genomic data.
 homepage: https://github.com/pdimens/LepWrap/
+metadata:
+  docker_image: "quay.io/biocontainers/lepwrap:5.0--hdfd78af_0"
 ---
-
 
 # lepwrap
 

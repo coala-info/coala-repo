@@ -4,7 +4,6 @@ description: This tool queries the Drug-Gene Interaction Database (DGIdb) to ide
 homepage: https://bioconductor.org/packages/3.5/bioc/html/rDGIdb.html
 ---
 
-
 # bioconductor-rdgidb
 
 name: bioconductor-rdgidb

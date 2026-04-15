@@ -4,7 +4,6 @@ description: This tool infers microRNA targets by integrating fold-change data a
 homepage: https://bioconductor.org/packages/release/bioc/html/TargetScore.html
 ---
 
-
 # bioconductor-targetscore
 
 name: bioconductor-targetscore

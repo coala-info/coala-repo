@@ -4,7 +4,6 @@ description: This package provides pre-trained deep learning models and methylat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cfToolsData.html
 ---
 
-
 # bioconductor-cftoolsdata
 
 name: bioconductor-cftoolsdata

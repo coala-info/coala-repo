@@ -2,8 +2,9 @@
 name: isotools
 description: Isotools is a Python library for the analysis, classification, and visualization of long-read transcriptomics data. Use when user asks to import long-read BAM files, classify novel transcripts against a reference, or perform differential splicing analysis.
 homepage: https://github.com/MatthiasLienhard/isotools
+metadata:
+  docker_image: "quay.io/biocontainers/isotools:2.0.0--pyhdfd78af_0"
 ---
-
 
 # isotools
 

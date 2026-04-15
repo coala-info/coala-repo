@@ -4,7 +4,6 @@ description: Dino normalizes high-throughput single-cell RNA-seq data by modelin
 homepage: https://bioconductor.org/packages/release/bioc/html/Dino.html
 ---
 
-
 # bioconductor-dino
 
 ## Overview

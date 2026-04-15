@@ -2,6 +2,8 @@
 name: graphtyper
 description: Graphtyper performs population-scale genotyping by re-aligning sequence reads to a pangenome graph representation of a reference genome and known variants. Use when user asks to genotype SNPs, small indels, structural variants, or HLA alleles across large cohorts using pangenome graphs.
 homepage: https://github.com/DecodeGenetics/graphtyper
+metadata:
+  docker_image: "quay.io/biocontainers/graphtyper:2.7.7--h7594796_1"
 ---
 
 # graphtyper

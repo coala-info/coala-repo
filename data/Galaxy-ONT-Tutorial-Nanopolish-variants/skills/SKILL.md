@@ -1,10 +1,12 @@
 ---
 name: ont-tutorial-nanopolish-variants
-description: "This Nanopore sequencing workflow processes FASTA reads, FAST5 signal data, and a draft assembly using minimap2 and Nanopolish to identify genomic variants. Use this skill when you need to polish a draft genome assembly or call high-confidence variants by leveraging the raw signal information from Oxford Nanopore reads."
+description: This Nanopore sequencing workflow processes FASTA reads, FAST5 signal data, and a draft assembly using minimap2 and Nanopolish to identify genomic variants. Use this skill when you need to polish a draft genome assembly or call high-confidence variants by leveraging the raw signal information from Oxford Nanopore reads.
 homepage: https://workflowhub.eu/workflows/50
+metadata:
+  docker_image: "N/A"
 ---
 
-# ONT --Tutorial-Nanopolish-variants
+# ont-tutorial-nanopolish-variants
 
 ## Overview
 

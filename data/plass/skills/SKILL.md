@@ -2,6 +2,8 @@
 name: plass
 description: PLASS is a specialized tool that assembles protein sequences directly from metagenomic sequencing reads or performs protein-guided nucleotide assembly. Use when user asks to assemble protein sequences from DNA reads, perform protein-guided nucleotide assembly, or recover protein sequences from low-coverage environmental samples.
 homepage: https://github.com/soedinglab/plass
+metadata:
+  docker_image: "quay.io/biocontainers/plass:5.cf8933--hd6d6fdc_3"
 ---
 
 # plass

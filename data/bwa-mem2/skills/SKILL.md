@@ -2,6 +2,8 @@
 name: bwa-mem2
 description: bwa-mem2 is a high-performance tool for aligning DNA sequences against a large reference genome using hardware-level acceleration. Use when user asks to index a reference genome, map single-end or paired-end reads, or perform fast sequence alignment to a reference.
 homepage: https://github.com/bwa-mem2/bwa-mem2
+metadata:
+  docker_image: "quay.io/biocontainers/bwa-mem2:2.3--he70b90d_0"
 ---
 
 # bwa-mem2

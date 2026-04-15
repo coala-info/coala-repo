@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-imported-testpourgcc
-description: "This metabolomics workflow processes LC-MS data from mzML files using XCMS for peak picking and alignment, CAMERA for feature annotation, and statistical tools for batch correction and univariate analysis. Use this skill when you need to identify and quantify metabolic features in complex biological samples to discover biomarkers or characterize metabolic profiles using the Human Metabolome Database."
-homepage: https://workflowhub.eu/workflows/1584
+description: This metabolomics workflow processes LC-MS data from mzML files using XCMS for peak picking and alignment, CAMERA for feature annotation, and statistical tools for batch correction and univariate analysis. Use this skill when you need to identify and quantify metabolic features in complex biological samples to discover biomarkers or characterize metabolic profiles using the Human Metabolome Database.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow Constructed From History 'imported: testpourGCC'
+# workflow-constructed-from-history-imported-testpourgcc
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The LoomExperiment package provides a bridge between the Loom file 
 homepage: https://bioconductor.org/packages/release/bioc/html/LoomExperiment.html
 ---
 
-
 # bioconductor-loomexperiment
 
 ## Overview

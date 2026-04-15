@@ -1,10 +1,12 @@
 ---
 name: yolo-training-and-segmentation-workflow
-description: "This bioimage analysis workflow processes image collections and YOLO class files using histogram equalization, AnyLabeling for interactive annotation, and YOLO for model training and segmentation. Use this skill when you need to perform automated object detection or segmentation on biological images by annotating custom datasets and training a YOLO-based model for precise feature analysis."
-homepage: https://workflowhub.eu/workflows/1840
+description: This bioimage analysis workflow processes image collections and YOLO class files using histogram equalization, AnyLabeling for interactive annotation, and YOLO for model training and segmentation. Use this skill when you need to perform automated object detection or segmentation on biological images by annotating custom datasets and training a YOLO-based model for precise feature analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# YOLO training and segmentation workflow
+# yolo-training-and-segmentation-workflow
 
 ## Overview
 

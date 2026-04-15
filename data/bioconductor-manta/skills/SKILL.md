@@ -4,7 +4,6 @@ description: The manta package extends edgeR to support comparative metatranscri
 homepage: https://bioconductor.org/packages/3.5/bioc/html/manta.html
 ---
 
-
 # bioconductor-manta
 
 ## Overview

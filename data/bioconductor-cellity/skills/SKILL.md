@@ -4,7 +4,6 @@ description: The cellity package identifies low-quality cells in scRNA-seq data 
 homepage: https://bioconductor.org/packages/release/bioc/html/cellity.html
 ---
 
-
 # bioconductor-cellity
 
 ## Overview

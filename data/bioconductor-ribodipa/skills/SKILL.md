@@ -4,7 +4,6 @@ description: RiboDiPA identifies differential ribosome occupancy patterns along 
 homepage: https://bioconductor.org/packages/release/bioc/html/RiboDiPA.html
 ---
 
-
 # bioconductor-ribodipa
 
 ## Overview

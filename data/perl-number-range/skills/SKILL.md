@@ -2,8 +2,9 @@
 name: perl-number-range
 description: This tool manages and tests numerical sets containing multiple intervals and discrete points using the Number::Range Perl extension. Use when user asks to define complex numerical ranges, check if values fall within specific bounds, or filter data based on coordinate regions.
 homepage: http://metacpan.org/pod/Number::Range
+metadata:
+  docker_image: "quay.io/biocontainers/perl-number-range:0.12--pl526_0"
 ---
-
 
 # perl-number-range
 

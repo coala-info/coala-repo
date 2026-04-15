@@ -4,7 +4,6 @@ description: scDesign3 fits probabilistic models to single-cell data to generate
 homepage: https://bioconductor.org/packages/release/bioc/html/scDesign3.html
 ---
 
-
 # bioconductor-scdesign3
 
 ## Overview

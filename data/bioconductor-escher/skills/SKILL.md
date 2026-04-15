@@ -4,7 +4,6 @@ description: This tool creates multi-dimensional spatial visualizations for spat
 homepage: https://bioconductor.org/packages/release/bioc/html/escheR.html
 ---
 
-
 # bioconductor-escher
 
 name: bioconductor-escher

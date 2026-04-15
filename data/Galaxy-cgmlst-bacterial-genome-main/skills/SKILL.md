@@ -1,10 +1,12 @@
 ---
 name: core-genome-multilocus-sequence-typing-cgmlst-of-bacterial-g
-description: "This workflow performs core genome multilocus sequence typing on bacterial genome contigs by applying curated reference schemes through CoreProfiler and ToolDistillator. Use this skill when you need to characterize bacterial strains, identify allelic profiles, or perform high-resolution genotyping for epidemiological surveillance and comparative genomics."
-homepage: https://workflowhub.eu/workflows/2055
+description: This workflow performs core genome multilocus sequence typing on bacterial genome contigs by applying curated reference schemes through CoreProfiler and ToolDistillator. Use this skill when you need to characterize bacterial strains, identify allelic profiles, or perform high-resolution genotyping for epidemiological surveillance and comparative genomics.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# core genome Multilocus Sequence Typing (cgMLST) of bacterial genome
+# core-genome-multilocus-sequence-typing-cgmlst-of-bacterial-g
 
 ## Overview
 

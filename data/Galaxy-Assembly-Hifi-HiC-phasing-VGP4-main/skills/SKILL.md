@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-from-hifi-reads-with-hic-phasing-vgp4
-description: "This workflow generates phased, haplotype-resolved genome assemblies from PacBio HiFi and Hi-C reads using Hifiasm and provides comprehensive quality metrics via Merqury and Compleasm. Use this skill when you need to reconstruct high-quality diploid genomes to resolve allelic variation and structural complexity in complex eukaryotic organisms."
-homepage: https://workflowhub.eu/workflows/641
+description: This workflow generates phased, haplotype-resolved genome assemblies from PacBio HiFi and Hi-C reads using Hifiasm and provides comprehensive quality metrics via Merqury and Compleasm. Use this skill when you need to reconstruct high-quality diploid genomes to resolve allelic variation and structural complexity in complex eukaryotic organisms.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly from Hifi reads with HiC phasing - VGP4
+# genome-assembly-from-hifi-reads-with-hic-phasing-vgp4
 
 ## Overview
 

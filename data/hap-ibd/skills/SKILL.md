@@ -1,9 +1,10 @@
 ---
 name: hap-ibd
-description: "hap-ibd identifies identity-by-descent (IBD) and homozygosity-by-descent (HBD) segments in phased genomic data. Use when user asks to detect shared genomic segments between individuals, analyze recent ancestry, or identify runs of homozygosity."
+description: hap-ibd identifies identity-by-descent (IBD) and homozygosity-by-descent (HBD) segments in phased genomic data. Use when user asks to detect shared genomic segments between individuals, analyze recent ancestry, or identify runs of homozygosity.
 homepage: https://github.com/browning-lab/hap-ibd
+metadata:
+  docker_image: "quay.io/biocontainers/hap-ibd:1.0.rev20May22.818--hdfd78af_0"
 ---
-
 
 # hap-ibd
 

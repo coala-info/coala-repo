@@ -4,7 +4,6 @@ description: This tool performs multi-class classification on high-dimensional b
 homepage: https://bioconductor.org/packages/release/bioc/html/vbmp.html
 ---
 
-
 # bioconductor-vbmp
 
 name: bioconductor-vbmp

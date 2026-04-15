@@ -2,8 +2,9 @@
 name: transrate-tools
 description: transrate-tools parses BAM files to aggregate read mapping information by contig for transcriptome assembly evaluation. Use when user asks to evaluate transcriptome assembly quality, get read mapping metrics per contig, or calculate scores like mean MAPQ and proper pair counts.
 homepage: https://github.com/blahah/transrate-tools
+metadata:
+  docker_image: "biocontainers/transrate-tools:v1.0.0-2-deb_cv1"
 ---
-
 
 # transrate-tools
 

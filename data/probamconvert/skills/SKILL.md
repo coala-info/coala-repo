@@ -2,8 +2,9 @@
 name: probamconvert
 description: The probamconvert tool transforms proteomics identification files into proBAM or proBED formats to enable genomic visualization and integration. Use when user asks to convert mzIdentML, pepXML, or mzTAB files to proBAM, map peptides to genomic coordinates, or visualize proteomics data in genome browsers.
 homepage: https://github.com/Biobix/proBAMconvert
+metadata:
+  docker_image: "quay.io/biocontainers/probamconvert:1.0.2--py27_1"
 ---
-
 
 # probamconvert
 

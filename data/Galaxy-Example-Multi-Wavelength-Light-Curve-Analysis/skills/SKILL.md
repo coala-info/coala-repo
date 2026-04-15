@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-unnamed-history
-description: "This multi-wavelength light curve analysis workflow processes astronomical data to detect Gamma-Ray Bursts and analyze their temporal evolution using HESS and specialized lightcurve analysis tools. Use this skill when you need to characterize the high-energy emission profiles of transient astrophysical events and compare light curves across different energy bands."
-homepage: https://workflowhub.eu/workflows/766
+description: This multi-wavelength light curve analysis workflow processes astronomical data to detect Gamma-Ray Bursts and analyze their temporal evolution using HESS and specialized lightcurve analysis tools. Use this skill when you need to characterize the high-energy emission profiles of transient astrophysical events and compare light curves across different energy bands.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'Unnamed history'
+# workflow-constructed-from-history-unnamed-history
 
 ## Overview
 

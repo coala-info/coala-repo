@@ -4,7 +4,6 @@ description: Bioconductor-atsnp identifies SNPs that disrupt transcription facto
 homepage: https://bioconductor.org/packages/release/bioc/html/atSNP.html
 ---
 
-
 # bioconductor-atsnp
 
 name: bioconductor-atsnp

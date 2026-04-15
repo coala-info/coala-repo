@@ -2,8 +2,9 @@
 name: metaquant
 description: Metaquant performs quantitative analysis on the function and taxonomy of microbiomes. Use when user asks to perform quantitative analysis on microbiomes, install via Bioconda, or use the command-line interface.
 homepage: The package home page
+metadata:
+  docker_image: "quay.io/biocontainers/metaquant:0.1.2--py35_0"
 ---
-
 
 # metaquant
 

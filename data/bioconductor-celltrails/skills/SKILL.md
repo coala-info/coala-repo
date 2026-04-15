@@ -4,7 +4,6 @@ description: CellTrails performs de novo chronological ordering and trajectory r
 homepage: https://bioconductor.org/packages/release/bioc/html/CellTrails.html
 ---
 
-
 # bioconductor-celltrails
 
 ## Overview

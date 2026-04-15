@@ -4,7 +4,6 @@ description: This tool provides a graphical user interface for managing systemPi
 homepage: https://bioconductor.org/packages/release/bioc/html/systemPipeShiny.html
 ---
 
-
 # bioconductor-systempipeshiny
 
 name: bioconductor-systempipeshiny

@@ -4,7 +4,6 @@ description: The dowser package provides a comprehensive toolkit for B cell rece
 homepage: https://cran.r-project.org/web/packages/dowser/index.html
 ---
 
-
 # r-dowser
 
 ## Overview

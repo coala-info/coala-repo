@@ -4,7 +4,6 @@ description: This package provides compiled C and C++ HDF5 libraries for R packa
 homepage: https://bioconductor.org/packages/release/bioc/html/Rhdf5lib.html
 ---
 
-
 # bioconductor-rhdf5lib
 
 name: bioconductor-rhdf5lib

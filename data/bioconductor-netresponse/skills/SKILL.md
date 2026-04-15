@@ -4,7 +4,6 @@ description: The netresponse package identifies functional subnetworks and chara
 homepage: https://bioconductor.org/packages/release/bioc/html/netresponse.html
 ---
 
-
 # bioconductor-netresponse
 
 ## Overview

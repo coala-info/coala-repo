@@ -4,7 +4,6 @@ description: This package combines p-values from non-independent tests by using 
 homepage: https://bioconductor.org/packages/release/bioc/html/EmpiricalBrownsMethod.html
 ---
 
-
 # bioconductor-empiricalbrownsmethod
 
 ## Overview

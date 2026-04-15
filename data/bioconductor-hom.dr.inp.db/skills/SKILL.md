@@ -4,7 +4,6 @@ description: This Bioconductor package provides orthology and paralogy mappings 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Dr.inp.db.html
 ---
 
-
 # bioconductor-hom.dr.inp.db
 
 name: bioconductor-hom.dr.inp.db

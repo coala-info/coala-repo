@@ -1,10 +1,12 @@
 ---
 name: end-to-end-tissue-microarray-analysis
-description: "This workflow processes raw cyclic immunofluorescence images and marker metadata using ASHLAR, Mesmer, and Scimap to perform illumination correction, registration, and cell phenotyping for tissue microarray analysis. Use this skill when you need to transform raw multiplexed tissue microarray images into quantified single-cell data and interactive visualizations to study spatial protein expression and cell phenotypes."
-homepage: https://workflowhub.eu/workflows/1337
+description: This workflow processes raw cyclic immunofluorescence images and marker metadata using ASHLAR, Mesmer, and Scimap to perform illumination correction, registration, and cell phenotyping for tissue microarray analysis. Use this skill when you need to transform raw multiplexed tissue microarray images into quantified single-cell data and interactive visualizations to study spatial protein expression and cell phenotypes.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# End-to-End Tissue Microarray Analysis
+# end-to-end-tissue-microarray-analysis
 
 ## Overview
 

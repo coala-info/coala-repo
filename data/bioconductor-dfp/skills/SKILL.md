@@ -4,7 +4,6 @@ description: This tool performs gene selection and data reduction on microarray 
 homepage: https://bioconductor.org/packages/release/bioc/html/DFP.html
 ---
 
-
 # bioconductor-dfp
 
 name: bioconductor-dfp

@@ -4,7 +4,6 @@ description: The ggbio package extends the grammar of graphics to visualize geno
 homepage: https://bioconductor.org/packages/release/bioc/html/ggbio.html
 ---
 
-
 # bioconductor-ggbio
 
 name: bioconductor-ggbio

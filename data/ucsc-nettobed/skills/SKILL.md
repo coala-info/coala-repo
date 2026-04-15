@@ -2,8 +2,9 @@
 name: ucsc-nettobed
 description: ucsc-nettobed converts alignment net files into BED files to display target genome coverage. Use when user asks to convert alignment net files to BED, extract target genome coverage from alignment nets, or visualize alignment coverage.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-nettobed:482--h0b57e2e_0"
 ---
-
 
 # ucsc-nettobed
 

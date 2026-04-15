@@ -4,7 +4,6 @@ description: Bioconductor-depecher performs automated clustering and group diffe
 homepage: https://bioconductor.org/packages/release/bioc/html/DepecheR.html
 ---
 
-
 # bioconductor-depecher
 
 name: bioconductor-depecher

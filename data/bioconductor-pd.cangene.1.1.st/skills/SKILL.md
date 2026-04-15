@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cangene.1.1.st.html
 ---
 
-
 # bioconductor-pd.cangene.1.1.st
 
 name: bioconductor-pd.cangene.1.1.st

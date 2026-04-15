@@ -4,7 +4,6 @@ description: The ggmsa package provides a ggplot2-based framework for visualizin
 homepage: https://bioconductor.org/packages/release/bioc/html/ggmsa.html
 ---
 
-
 # bioconductor-ggmsa
 
 ## Overview

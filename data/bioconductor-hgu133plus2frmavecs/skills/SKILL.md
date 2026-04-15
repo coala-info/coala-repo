@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for the fRMA algorit
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133plus2frmavecs.html
 ---
 
-
 # bioconductor-hgu133plus2frmavecs
 
 name: bioconductor-hgu133plus2frmavecs

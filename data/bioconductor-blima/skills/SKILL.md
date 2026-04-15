@@ -4,7 +4,6 @@ description: This tool performs preprocessing and analysis of Illumina microarra
 homepage: https://bioconductor.org/packages/release/bioc/html/blima.html
 ---
 
-
 # bioconductor-blima
 
 name: bioconductor-blima

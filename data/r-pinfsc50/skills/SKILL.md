@@ -4,7 +4,6 @@ description: The r-pinfsc50 package provides a subset of genomic data from Phyto
 homepage: https://cloud.r-project.org/web/packages/pinfsc50/index.html
 ---
 
-
 # r-pinfsc50
 
 ## Overview

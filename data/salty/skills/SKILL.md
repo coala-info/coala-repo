@@ -2,8 +2,9 @@
 name: salty
 description: SaLTy assigns lineages to *Staphylococcus aureus* genomic data by screening for specific markers and alleles. Use when user asks to assign lineages to *S. aureus* assemblies or raw reads, track genomic epidemiology, or perform MLST-based lineage inference.
 homepage: https://github.com/LanLab/salty
+metadata:
+  docker_image: "quay.io/biocontainers/salty:1.0.6--pyhdfd78af_0"
 ---
-
 
 # salty
 

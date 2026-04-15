@@ -1,7 +1,9 @@
 ---
 name: pyensembl
-description: "Pyensembl provides a Python interface for downloading, indexing, and querying Ensembl reference genome metadata and sequences. Use when user asks to retrieve genomic features by ID or name, find genes at specific chromosomal coordinates, or access protein sequences from Ensembl releases."
+description: Pyensembl provides a Python interface for downloading, indexing, and querying Ensembl reference genome metadata and sequences. Use when user asks to retrieve genomic features by ID or name, find genes at specific chromosomal coordinates, or access protein sequences from Ensembl releases.
 homepage: https://github.com/openvax/pyensembl
+metadata:
+  docker_image: "quay.io/biocontainers/pyensembl:2.3.13--pyh7cba7a3_0"
 ---
 
 # pyensembl

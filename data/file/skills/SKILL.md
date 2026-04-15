@@ -2,8 +2,9 @@
 name: file
 description: This tool converts unstructured or complex binary files into structured Markdown text while preserving semantic elements like headings and tables. Use when user asks to convert documents to Markdown, extract text from images or audio, or process files for RAG workflows.
 homepage: https://github.com/microsoft/markitdown
+metadata:
+  docker_image: "quay.io/biocontainers/file:5.39"
 ---
-
 
 # file
 

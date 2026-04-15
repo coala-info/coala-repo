@@ -1,9 +1,10 @@
 ---
 name: fasta-splitter
-description: "fasta-splitter segments large FASTA files into smaller, approximately equal-sized parts while ensuring individual sequence records remain intact. Use when user asks to split genomic datasets into a specific number of files, partition sequences by count or total length, or manage large files for parallel processing."
+description: fasta-splitter segments large FASTA files into smaller, approximately equal-sized parts while ensuring individual sequence records remain intact. Use when user asks to split genomic datasets into a specific number of files, partition sequences by count or total length, or manage large files for parallel processing.
 homepage: http://kirill-kryukov.com/study/tools/fasta-splitter/
+metadata:
+  docker_image: "quay.io/biocontainers/fasta-splitter:0.2.6--0"
 ---
-
 
 # fasta-splitter
 

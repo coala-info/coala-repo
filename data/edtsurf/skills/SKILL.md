@@ -1,9 +1,10 @@
 ---
 name: edtsurf
-description: "EDTSurf constructs macromolecular surfaces and calculates structural metrics using Euclidean Distance Transforms. Use when user asks to generate molecular surfaces, calculate protein depth, identify internal cavities, or create triangulated meshes from PDB files."
+description: EDTSurf constructs macromolecular surfaces and calculates structural metrics using Euclidean Distance Transforms. Use when user asks to generate molecular surfaces, calculate protein depth, identify internal cavities, or create triangulated meshes from PDB files.
 homepage: https://github.com/UnixJunkie/EDTSurf
+metadata:
+  docker_image: "biocontainers/edtsurf:v0.2009-6-deb_cv1"
 ---
-
 
 # edtsurf
 

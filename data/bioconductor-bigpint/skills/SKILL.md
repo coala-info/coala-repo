@@ -4,7 +4,6 @@ description: The bigPint package provides specialized static and interactive vis
 homepage: https://bioconductor.org/packages/3.9/bioc/html/bigPint.html
 ---
 
-
 # bioconductor-bigpint
 
 ## Overview

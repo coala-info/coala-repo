@@ -2,8 +2,9 @@
 name: fastani
 description: FastANI calculates the Average Nucleotide Identity between genome pairs using a high-throughput MinHash-based sequence mapping engine. Use when user asks to calculate ANI between microbial genomes, perform pairwise or batch genome comparisons, generate a similarity matrix for phylogenomic analysis, or visualize conserved regions between two genomes.
 homepage: https://github.com/ParBLiSS/FastANI
+metadata:
+  docker_image: "quay.io/biocontainers/fastani:1.34--h4dfc31f_4"
 ---
-
 
 # fastani
 

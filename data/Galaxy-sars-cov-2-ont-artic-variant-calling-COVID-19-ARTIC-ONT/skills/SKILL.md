@@ -1,10 +1,12 @@
 ---
 name: covid-19-variation-analysis-of-artic-ont-data
-description: "This workflow processes Oxford Nanopore ARTIC sequencing data to identify SARS-CoV-2 variants using minimap2 for alignment, ivar for primer trimming, and medaka for consensus and variant calling. Use this skill when you need to perform high-accuracy variant calling and consensus sequence generation from noisy long-read nanopore data generated through the ARTIC network protocol for viral surveillance."
-homepage: https://workflowhub.eu/workflows/111
+description: This workflow processes Oxford Nanopore ARTIC sequencing data to identify SARS-CoV-2 variants using minimap2 for alignment, ivar for primer trimming, and medaka for consensus and variant calling. Use this skill when you need to perform high-accuracy variant calling and consensus sequence generation from noisy long-read nanopore data generated through the ARTIC network protocol for viral surveillance.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: variation analysis of ARTIC ONT data
+# covid-19-variation-analysis-of-artic-ont-data
 
 ## Overview
 

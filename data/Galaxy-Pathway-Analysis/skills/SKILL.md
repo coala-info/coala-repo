@@ -1,10 +1,12 @@
 ---
 name: pathway-analysis
-description: "This workflow evaluates heterologous pathways within a microbial chassis using flux balance analysis, thermodynamic constraints, and scoring tools to rank metabolic routes. Use this skill when you need to identify and prioritize the most viable synthetic pathways for producing a target compound based on predicted yield and thermodynamic feasibility."
-homepage: https://workflowhub.eu/workflows/2005
+description: This workflow evaluates heterologous pathways within a microbial chassis using flux balance analysis, thermodynamic constraints, and scoring tools to rank metabolic routes. Use this skill when you need to identify and prioritize the most viable synthetic pathways for producing a target compound based on predicted yield and thermodynamic feasibility.
+homepage: https://www.micalis.fr/equipe/galaxy-synbiocad/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pathway Analysis
+# pathway-analysis
 
 ## Overview
 

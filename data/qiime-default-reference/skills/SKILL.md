@@ -2,8 +2,9 @@
 name: qiime-default-reference
 description: This tool provides programmatic access to standardized Greengenes 16S rRNA reference data and file paths for QIIME-based analyses. Use when user asks to retrieve absolute paths for reference sequences, PyNAST template alignments, phylogenetic trees, or taxonomy mappings.
 homepage: https://github.com/biocore/qiime-default-reference
+metadata:
+  docker_image: "quay.io/biocontainers/qiime-default-reference:0.1.3--py36_0"
 ---
-
 
 # qiime-default-reference
 

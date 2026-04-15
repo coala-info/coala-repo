@@ -4,7 +4,6 @@ description: This package provides platform design information and probe sequenc
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.porcine.html
 ---
 
-
 # bioconductor-pd.porcine
 
 name: bioconductor-pd.porcine

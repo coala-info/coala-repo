@@ -1,9 +1,10 @@
 ---
 name: bandage
-description: "Bandage visualizes and analyzes the graph structures of de novo genome assemblies to identify connections between contigs. Use when user asks to visualize assembly graphs, generate assembly statistics, or create images of contig connections."
+description: Bandage visualizes and analyzes the graph structures of de novo genome assemblies to identify connections between contigs. Use when user asks to visualize assembly graphs, generate assembly statistics, or create images of contig connections.
 homepage: https://github.com/rrwick/Bandage
+metadata:
+  docker_image: "quay.io/biocontainers/bandage:0.9.0--h9948957_0"
 ---
-
 
 # bandage
 

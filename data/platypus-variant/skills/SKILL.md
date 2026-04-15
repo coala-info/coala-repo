@@ -1,9 +1,10 @@
 ---
 name: platypus-variant
-description: "Platypus is a haplotype-based tool designed for efficient and accurate variant detection and joint-calling across multiple samples. Use when user asks to call variants from BAM files, perform joint-calling on multiple samples, or detect complex genomic variations using local assembly."
+description: Platypus is a haplotype-based tool designed for efficient and accurate variant detection and joint-calling across multiple samples. Use when user asks to call variants from BAM files, perform joint-calling on multiple samples, or detect complex genomic variations using local assembly.
 homepage: http://www.well.ox.ac.uk/platypus
+metadata:
+  docker_image: "quay.io/biocontainers/platypus-variant:0.8.1.2--py27h4fe4a89_4"
 ---
-
 
 # platypus-variant
 

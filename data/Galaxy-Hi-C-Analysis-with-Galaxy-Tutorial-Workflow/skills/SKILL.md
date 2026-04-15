@@ -1,10 +1,12 @@
 ---
 name: hi-c-analysis-with-galaxy-tutorial-workflow
-description: "This epigenetics workflow processes raw Hi-C sequencing reads and reference genomes using Bowtie2 and HiCExplorer to build contact matrices, identify Topologically Associating Domains, and detect chromatin loops. Use this skill when you need to characterize the three-dimensional architecture of the genome or investigate how chromatin folding and spatial interactions relate to gene regulation and epigenetic features."
-homepage: https://workflowhub.eu/workflows/1847
+description: This epigenetics workflow processes raw Hi-C sequencing reads and reference genomes using Bowtie2 and HiCExplorer to build contact matrices, identify Topologically Associating Domains, and detect chromatin loops. Use this skill when you need to characterize the three-dimensional architecture of the genome or investigate how chromatin folding and spatial interactions relate to gene regulation and epigenetic features.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Hi-C Analysis with Galaxy Tutorial Workflow
+# hi-c-analysis-with-galaxy-tutorial-workflow
 
 ## Overview
 

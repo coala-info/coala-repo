@@ -2,8 +2,9 @@
 name: qualitymetrics
 description: This tool computes and assesses the quality of individual neural units from electrophysiology data. Use when user asks to calculate neural unit quality metrics.
 homepage: https://github.com/SteinmetzLab/qualityMetrics
+metadata:
+  docker_image: "biocontainers/qualitymetrics:phenomenal-v2.2.11_cv1.0.11"
 ---
-
 
 # qualitymetrics
 

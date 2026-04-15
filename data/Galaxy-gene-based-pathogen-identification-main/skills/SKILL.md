@@ -1,10 +1,12 @@
 ---
 name: gene-based-pathogen-identification
-description: "This workflow processes preprocessed Nanopore sequencing collections to perform genome assembly and polishing using Flye and Medaka, followed by gene-based screening with ABRicate and Bandage. Use this skill when you need to identify pathogenic organisms in genomic samples by detecting virulence factors and antimicrobial resistance genes while generating high-quality consensus contigs."
-homepage: https://workflowhub.eu/workflows/1062
+description: This workflow processes preprocessed Nanopore sequencing collections to perform genome assembly and polishing using Flye and Medaka, followed by gene-based screening with ABRicate and Bandage. Use this skill when you need to identify pathogenic organisms in genomic samples by detecting virulence factors and antimicrobial resistance genes while generating high-quality consensus contigs.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gene-based Pathogen Identification
+# gene-based-pathogen-identification
 
 ## Overview
 

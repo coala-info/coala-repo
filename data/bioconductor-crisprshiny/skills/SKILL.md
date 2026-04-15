@@ -4,7 +4,6 @@ description: This tool provides an interactive Shiny-based interface for visuali
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprShiny.html
 ---
 
-
 # bioconductor-crisprshiny
 
 name: bioconductor-crisprshiny

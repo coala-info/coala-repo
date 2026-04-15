@@ -4,7 +4,6 @@ description: COHCAP analyzes single-nucleotide resolution DNA methylation data t
 homepage: https://bioconductor.org/packages/3.6/bioc/html/COHCAP.html
 ---
 
-
 # bioconductor-cohcap
 
 name: bioconductor-cohcap

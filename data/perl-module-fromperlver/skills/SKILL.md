@@ -2,8 +2,9 @@
 name: perl-module-fromperlver
 description: This tool installs Perl modules that match the version and capabilities of the active Perl interpreter. Use when user asks to install compatible Perl modules, verify module compatibility, or generate version-specific dependency lists.
 homepage: http://metacpan.org/pod/Module::FromPerlVer
+metadata:
+  docker_image: "quay.io/biocontainers/perl-module-fromperlver:0.008002--0"
 ---
-
 
 # perl-module-fromperlver
 

@@ -4,7 +4,6 @@ description: This tool performs 3D to 2D image projections by identifying the fo
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MaxContrastProjection.html
 ---
 
-
 # bioconductor-maxcontrastprojection
 
 name: bioconductor-maxcontrastprojection

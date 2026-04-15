@@ -1,10 +1,12 @@
 ---
 name: apollo-load-test
-description: "This workflow integrates genomic scaffolds, GFF3 annotations, and BAM or BigWig evidence tracks into a collaborative environment using JBrowse and Apollo. Use this skill when you need to perform manual curation and structural refinement of gene models to improve the accuracy of a genome assembly's functional annotations."
-homepage: https://workflowhub.eu/workflows/1554
+description: This workflow integrates genomic scaffolds, GFF3 annotations, and BAM or BigWig evidence tracks into a collaborative environment using JBrowse and Apollo. Use this skill when you need to perform manual curation and structural refinement of gene models to improve the accuracy of a genome assembly's functional annotations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Apollo Load Test
+# apollo-load-test
 
 ## Overview
 

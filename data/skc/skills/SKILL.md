@@ -1,9 +1,10 @@
 ---
 name: skc
-description: "skc finds exact k-mer matches between two genomes and provides their frequencies and genomic coordinates. Use when user asks to find shared k-mers between genomes, identify exact sequence matches, or analyze k-mer content across two FASTA files."
+description: skc finds exact k-mer matches between two genomes and provides their frequencies and genomic coordinates. Use when user asks to find shared k-mers between genomes, identify exact sequence matches, or analyze k-mer content across two FASTA files.
 homepage: https://github.com/mbhall88/skc
+metadata:
+  docker_image: "quay.io/biocontainers/skc:0.1.0--h7b50bb2_1"
 ---
-
 
 # skc
 

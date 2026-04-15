@@ -4,7 +4,6 @@ description: The r-autospill package calculates spillover coefficients for flow 
 homepage: https://cran.r-project.org/web/packages/autospill/index.html
 ---
 
-
 # r-autospill
 
 name: r-autospill

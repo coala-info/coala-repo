@@ -1,10 +1,12 @@
 ---
 name: metaprosip-openms-28
-description: "This Galaxy workflow performs automated inference of stable isotope incorporation rates in proteins using centroided LC-MS datasets and FASTA databases via OpenMS tools like FeatureFinderMultiplex and MetaProSIP. Use this skill when you need to quantify elemental fluxes and metabolic activity within microbial communities by analyzing isotopic enrichment in metaproteomic samples."
-homepage: https://workflowhub.eu/workflows/613
+description: This Galaxy workflow performs automated inference of stable isotope incorporation rates in proteins using centroided LC-MS datasets and FASTA databases via OpenMS tools like FeatureFinderMultiplex and MetaProSIP. Use this skill when you need to quantify elemental fluxes and metabolic activity within microbial communities by analyzing isotopic enrichment in metaproteomic samples.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MetaProSIP OpenMS 2.8
+# metaprosip-openms-28
 
 ## Overview
 

@@ -1,9 +1,12 @@
 ---
 name: variantcaller_gatk36
-description: "This CWL workflow processes raw FASTQ sequencing data through adapter removal, alignment, and duplicate marking using tools like Cutadapt, BWA-MEM, Picard, and GATK 3.6. Use this skill when you need to identify genetic variants and generate gVCF files from raw genomic data to characterize potential disease-causing mutations in rare disease research."
-homepage: https://workflowhub.eu/workflows/107
+description: This CWL workflow processes raw FASTQ sequencing data through adapter removal, alignment, and duplicate marking using tools like Cutadapt, BWA-MEM, Picard, and GATK 3.6. Use this skill when you need to identify genetic variants and generate gVCF files from raw genomic data to characterize potential disease-causing mutations in rare disease research.
+homepage: https://www.eosc-life.eu/services/demonstrators/
+metadata:
+  docker_image: "N/A"
 ---
-# VariantCaller_GATK3.6
+
+# variantcaller_gatk36
 
 ## Overview
 

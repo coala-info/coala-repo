@@ -2,8 +2,9 @@
 name: lambda-align
 description: Lambda-align performs high-throughput local alignment of protein sequences against large databases with optimized speed and memory efficiency. Use when user asks to index protein databases, perform sequence searches, or conduct taxonomic LCA binning and annotation.
 homepage: http://seqan.github.io/lambda/
+metadata:
+  docker_image: "biocontainers/lambda-align:v1.0.3-5-deb_cv1"
 ---
-
 
 # lambda-align
 

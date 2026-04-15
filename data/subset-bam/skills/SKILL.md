@@ -1,9 +1,10 @@
 ---
 name: subset-bam
-description: "subset-bam efficiently extracts alignments from 10x Genomics BAM files based on specific cell barcodes or other BAM tags. Use when user asks to subset a BAM file by cell barcodes, extract specific alignments using BAM tags, or reduce the size of sequencing files for specific biological subsets."
+description: subset-bam efficiently extracts alignments from 10x Genomics BAM files based on specific cell barcodes or other BAM tags. Use when user asks to subset a BAM file by cell barcodes, extract specific alignments using BAM tags, or reduce the size of sequencing files for specific biological subsets.
 homepage: https://github.com/10XGenomics/subset-bam
+metadata:
+  docker_image: "quay.io/biocontainers/subset-bam:1.1.0--h4349ce8_0"
 ---
-
 
 # subset-bam
 

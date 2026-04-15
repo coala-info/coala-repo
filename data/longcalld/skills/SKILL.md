@@ -2,8 +2,9 @@
 name: longcalld
 description: longcalld performs joint calling of small variants and structural variants using local haplotagging on long-read sequencing data. Use when user asks to call variants from PacBio or ONT reads, detect mosaic variants, identify mobile element insertions, or generate phased VCFs.
 homepage: https://github.com/yangao07/longcallD
+metadata:
+  docker_image: "quay.io/biocontainers/longcalld:0.0.9--hbc58adc_0"
 ---
-
 
 # longcalld
 

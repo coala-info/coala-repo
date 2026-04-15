@@ -2,8 +2,9 @@
 name: pyngost
 description: pyngoST performs simultaneous multi-locus sequence typing of Neisseria gonorrhoeae genomic assemblies using the Aho-Corasick algorithm. Use when user asks to perform MLST, NG-STAR, or NG-MAST typing, identify antimicrobial resistance-associated lineages, or manage gonococcal allele databases.
 homepage: https://github.com/leosanbu/pyngoST
+metadata:
+  docker_image: "quay.io/biocontainers/pyngost:1.1.3--pyh7e72e81_0"
 ---
-
 
 # pyngost
 

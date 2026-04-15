@@ -2,8 +2,9 @@
 name: perl-test-needs
 description: This tool facilitates conditional testing in Perl by skipping tests when required modules or specific interpreter versions are unavailable. Use when user asks to implement conditional test skipping, check for CPAN module availability during testing, or require specific Perl versions for test execution.
 homepage: http://metacpan.org/pod/Test::Needs
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-needs:0.002009--pl5321hdfd78af_0"
 ---
-
 
 # perl-test-needs
 

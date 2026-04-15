@@ -2,8 +2,9 @@
 name: rnabridge-denovo
 description: rnabridge-denovo reconstructs the full sequences of RNA-seq fragments from paired-end reads using de Bruijn graphs. Use when user asks to reconstruct transcript fragments, bridge paired-end RNA-seq reads, or perform de novo fragment assembly.
 homepage: https://github.com/Shao-Group/rnabridge-denovo
+metadata:
+  docker_image: "quay.io/biocontainers/rnabridge-denovo:1.0.1--hc9558a2_0"
 ---
-
 
 # rnabridge-denovo
 

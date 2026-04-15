@@ -2,8 +2,9 @@
 name: rscape
 description: R-scape is a statistical tool that evaluates RNA alignments to determine if base pairs show significant covariation above what is expected from phylogenetic history. Use when user asks to verify conserved RNA structures, predict new structures using CaCoFold, or evaluate and improve existing structural models from Stockholm alignments.
 homepage: http://eddylab.org/R-scape/
+metadata:
+  docker_image: "quay.io/biocontainers/rscape:2.0.4.a--h503566f_1"
 ---
-
 
 # rscape
 

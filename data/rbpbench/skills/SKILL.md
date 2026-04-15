@@ -2,6 +2,8 @@
 name: rbpbench
 description: RBPBench is a toolkit for mapping RNA-binding protein motifs onto genomic regions and analyzing their functional context. Use when user asks to search for RBP motifs in CLIP-seq data, perform motif enrichment analysis, or analyze the co-occurrence of multiple binding proteins.
 homepage: https://github.com/michauhl/RBPBench
+metadata:
+  docker_image: "quay.io/biocontainers/rbpbench:1.1.0--pyhdfd78af_0"
 ---
 
 # rbpbench

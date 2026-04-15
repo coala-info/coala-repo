@@ -4,7 +4,6 @@ description: The gemini package implements a variational Bayes approach to ident
 homepage: https://bioconductor.org/packages/release/bioc/html/gemini.html
 ---
 
-
 # bioconductor-gemini
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: visualise-amount-of-objects-in-museum-collection
-description: "This workflow processes tabular museum collection data and English stop words using text mining tools, Datamash, and visualization utilities to generate bar charts and word clouds. Use this skill when you need to analyze cultural heritage datasets to identify which years contributed the most items to a collection and visualize the most frequent object descriptions."
-homepage: https://workflowhub.eu/workflows/1884
+description: This workflow processes tabular museum collection data and English stop words using text mining tools, Datamash, and visualization utilities to generate bar charts and word clouds. Use this skill when you need to analyze cultural heritage datasets to identify which years contributed the most items to a collection and visualize the most frequent object descriptions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Visualise amount of objects in Museum Collection
+# visualise-amount-of-objects-in-museum-collection
 
 ## Overview
 

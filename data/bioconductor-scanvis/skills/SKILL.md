@@ -4,7 +4,6 @@ description: SCANVIS scores, annotates, and visualizes splice junctions from RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/SCANVIS.html
 ---
 
-
 # bioconductor-scanvis
 
 name: bioconductor-scanvis

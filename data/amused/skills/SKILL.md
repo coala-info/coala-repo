@@ -2,8 +2,9 @@
 name: amused
 description: AMUSED discovers enriched and depleted DNA motifs by performing statistical analysis on k-mer frequencies within sequence data. Use when user asks to identify transcription factor binding sites, analyze regulatory elements, or perform background-corrected k-mer enrichment analysis.
 homepage: https://github.com/Carldeboer/AMUSED
+metadata:
+  docker_image: "quay.io/biocontainers/amused:1.0--1"
 ---
-
 
 # amused
 

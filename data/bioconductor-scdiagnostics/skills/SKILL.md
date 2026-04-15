@@ -4,7 +4,6 @@ description: This tool provides diagnostic utilities for evaluating single-cell 
 homepage: https://bioconductor.org/packages/release/bioc/html/scDiagnostics.html
 ---
 
-
 # bioconductor-scdiagnostics
 
 name: bioconductor-scdiagnostics

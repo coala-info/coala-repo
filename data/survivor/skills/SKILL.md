@@ -1,9 +1,10 @@
 ---
 name: survivor
-description: "SURVIVOR manages structural variation data by merging results from multiple callers, simulating datasets, and evaluating variant calling performance. Use when user asks to merge VCF files into a consensus set, simulate structural variations, evaluate SV callers against a truth set, or convert between VCF and BED formats."
+description: SURVIVOR manages structural variation data by merging results from multiple callers, simulating datasets, and evaluating variant calling performance. Use when user asks to merge VCF files into a consensus set, simulate structural variations, evaluate SV callers against a truth set, or convert between VCF and BED formats.
 homepage: https://github.com/fritzsedlazeck/SURVIVOR
+metadata:
+  docker_image: "quay.io/biocontainers/survivor:1.0.7--h077b44d_7"
 ---
-
 
 # survivor
 

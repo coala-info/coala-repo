@@ -4,7 +4,6 @@ description: The UniProt.ws package provides a Bioconductor-standard interface t
 homepage: https://bioconductor.org/packages/release/bioc/html/UniProt.ws.html
 ---
 
-
 # bioconductor-uniprot.ws
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: ludwig-image-recognition-model-mnist
-description: "This Galaxy workflow utilizes the PyCaret Model Comparison tool to evaluate Chowell training and test response datasets for the generation of a LORIS LLR6 predictive model. Use this skill when you need to identify the most accurate machine learning model for predicting patient response to immunotherapy based on clinical and genomic data."
-homepage: https://workflowhub.eu/workflows/1600
+description: This Galaxy workflow utilizes the PyCaret Model Comparison tool to evaluate Chowell training and test response datasets for the generation of a LORIS LLR6 predictive model. Use this skill when you need to identify the most accurate machine learning model for predicting patient response to immunotherapy based on clinical and genomic data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ludwig - Image recognition model - MNIST
+# ludwig-image-recognition-model-mnist
 
 ## Overview
 

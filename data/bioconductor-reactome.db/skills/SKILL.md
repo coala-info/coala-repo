@@ -4,7 +4,6 @@ description: This tool provides a Bioconductor interface to map between Entrez G
 homepage: https://bioconductor.org/packages/release/data/annotation/html/reactome.db.html
 ---
 
-
 # bioconductor-reactome.db
 
 name: bioconductor-reactome.db

@@ -2,8 +2,9 @@
 name: bcbio-nextgen-vm
 description: bcbio-nextgen-vm is a containerized wrapper that executes complex genomic analysis pipelines using Docker and virtual machines to ensure reproducibility. Use when user asks to install genomic tools and reference data, run local or distributed bioinformatics analyses, or update the bcbio-nextgen software environment.
 homepage: https://github.com/chapmanb/bcbio-nextgen-vm
+metadata:
+  docker_image: "quay.io/biocontainers/bcbio-nextgen-vm:0.1.6--py37_0"
 ---
-
 
 # bcbio-nextgen-vm
 

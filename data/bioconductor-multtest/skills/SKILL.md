@@ -4,7 +4,6 @@ description: This tool performs resampling-based multiple hypothesis testing to 
 homepage: https://bioconductor.org/packages/release/bioc/html/multtest.html
 ---
 
-
 # bioconductor-multtest
 
 name: bioconductor-multtest

@@ -4,7 +4,6 @@ description: The ExpressionAtlas package provides a programmatic interface to se
 homepage: https://bioconductor.org/packages/release/bioc/html/ExpressionAtlas.html
 ---
 
-
 # bioconductor-expressionatlas
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: king-probe
-description: "This tool analyzes high-throughput SNP data for kinship-based inference, population structure, and relationship identification. Use when user asks to estimate kinship coefficients, infer population structure, identify familial relationships, or perform GWAS with family data."
+description: This tool analyzes high-throughput SNP data for kinship-based inference, population structure, and relationship identification. Use when user asks to estimate kinship coefficients, infer population structure, identify familial relationships, or perform GWAS with family data.
 homepage: http://people.virginia.edu/~wc9c/KING/
+metadata:
+  docker_image: "biocontainers/king-probe:v2.16.160404git20180613.a09b012-1-deb_cv1"
 ---
-
 
 # king-probe
 

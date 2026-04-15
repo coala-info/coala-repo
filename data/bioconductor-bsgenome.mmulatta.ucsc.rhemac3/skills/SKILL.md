@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the Rhesus monk
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac3.html
 ---
 
-
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac3
 
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac3

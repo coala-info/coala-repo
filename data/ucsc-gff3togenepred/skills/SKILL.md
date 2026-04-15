@@ -2,8 +2,9 @@
 name: ucsc-gff3togenepred
 description: The tool converts gene annotations from GFF3 format to genePred format. Use when user asks to convert GFF3 files to genePred, prepare custom annotation tracks, or convert Ensembl/NCBI annotations for UCSC-compatible pipelines.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-gff3togenepred:482--h0b57e2e_0"
 ---
-
 
 # ucsc-gff3togenepred
 

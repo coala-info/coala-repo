@@ -4,7 +4,6 @@ description: This package provides an automated pipeline for proteogenomics by c
 homepage: https://bioconductor.org/packages/3.8/bioc/html/PGA.html
 ---
 
-
 # bioconductor-pga
 
 name: bioconductor-pga

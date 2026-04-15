@@ -4,7 +4,6 @@ description: This tool calculates modern population differentiation statistics a
 homepage: https://cloud.r-project.org/web/packages/mmod/index.html
 ---
 
-
 # r-mmod
 
 name: r-mmod

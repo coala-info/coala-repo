@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of quantitative proteomics 
 homepage: https://bioconductor.org/packages/release/bioc/html/Prostar.html
 ---
 
-
 # bioconductor-prostar
 
 name: bioconductor-prostar

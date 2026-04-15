@@ -4,7 +4,6 @@ description: The r-rsm tool provides expert guidance for designing experiments a
 homepage: https://cloud.r-project.org/web/packages/rsm/index.html
 ---
 
-
 # r-rsm
 
 name: r-rsm

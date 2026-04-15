@@ -4,7 +4,6 @@ description: This package provides platform design annotation data for the Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hc.g110.html
 ---
 
-
 # bioconductor-pd.hc.g110
 
 name: bioconductor-pd.hc.g110

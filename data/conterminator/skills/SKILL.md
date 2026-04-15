@@ -2,6 +2,8 @@
 name: conterminator
 description: Conterminator identifies and flags sequences assigned to the wrong taxonomic kingdom by performing ungapped local alignments across genomic datasets. Use when user asks to detect cross-taxon contamination, identify misclassified sequences in FASTA files, or clean genomic databases using taxonomy mapping.
 homepage: https://github.com/martin-steinegger/conterminator
+metadata:
+  docker_image: "quay.io/biocontainers/conterminator:1.c74b5--h9cf7dee_0"
 ---
 
 # conterminator

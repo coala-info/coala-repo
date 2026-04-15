@@ -4,7 +4,6 @@ description: This package provides miRNA target gene tables, gene ID conversion 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/miRNATarget.html
 ---
 
-
 # bioconductor-mirnatarget
 
 name: bioconductor-mirnatarget

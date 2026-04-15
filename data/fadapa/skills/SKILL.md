@@ -1,9 +1,10 @@
 ---
 name: fadapa
-description: "fadapa is a Python tool designed to parse and extract structured data from FastQC output files. Use when user asks to parse FastQC results, extract quality control module data, or summarize sequencing quality statuses."
+description: fadapa is a Python tool designed to parse and extract structured data from FastQC output files. Use when user asks to parse FastQC results, extract quality control module data, or summarize sequencing quality statuses.
 homepage: https://github.com/ChillarAnand/fadapa
+metadata:
+  docker_image: "quay.io/biocontainers/fadapa:0.3.1--py36_0"
 ---
-
 
 # fadapa
 

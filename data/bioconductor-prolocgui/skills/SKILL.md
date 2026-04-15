@@ -4,7 +4,6 @@ description: The bioconductor-prolocgui package provides interactive Shiny appli
 homepage: https://bioconductor.org/packages/release/bioc/html/pRolocGUI.html
 ---
 
-
 # bioconductor-prolocgui
 
 ## Overview

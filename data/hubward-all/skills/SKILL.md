@@ -2,8 +2,9 @@
 name: hubward-all
 description: The hubward-all tool provides instructions for using the BWA suite to map low-divergent DNA sequences against a large reference genome. Use when user asks to index a reference genome, align short or long sequencing reads, perform single-end or paired-end mapping, or optimize alignment workflows using multi-threading.
 homepage: https://github.com/lh3/bwa
+metadata:
+  docker_image: "quay.io/biocontainers/hubward-all:0.2.1--1"
 ---
-
 
 # hubward-all
 

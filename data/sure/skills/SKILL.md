@@ -2,8 +2,9 @@
 name: sure
 description: Sure is a Python testing utility that provides a fluent, English-like syntax for assertions and a dedicated test runner. Use when user asks to implement BDD-style assertions, write readable test cases using the expects or should patterns, or execute tests via the CLI.
 homepage: http://github.com/gabrielfalcao/sure
+metadata:
+  docker_image: "quay.io/biocontainers/sure:2.0.1--pyh7cba7a3_0"
 ---
-
 
 # sure
 

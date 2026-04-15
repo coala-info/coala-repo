@@ -2,8 +2,9 @@
 name: mpa-server
 description: mpa-server processes and interprets proteomics and metaproteomics MS/MS spectrum data using multiple search engines and post-processing workflows. Use when user asks to analyze metaproteomic datasets, perform taxonomic and functional protein analysis, or group protein hits into meta-proteins.
 homepage: https://github.com/compomics/meta-proteome-analyzer
+metadata:
+  docker_image: "quay.io/biocontainers/mpa-server:3.4--0"
 ---
-
 
 # mpa-server
 

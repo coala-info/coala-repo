@@ -4,7 +4,6 @@ description: r-numbat performs haplotype-aware copy number variation analysis an
 homepage: https://cran.r-project.org/web/packages/numbat/index.html
 ---
 
-
 # r-numbat
 
 name: r-numbat

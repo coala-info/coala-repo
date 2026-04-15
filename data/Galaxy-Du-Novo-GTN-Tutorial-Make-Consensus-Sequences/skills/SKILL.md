@@ -1,10 +1,12 @@
 ---
 name: du-novo-gtn-tutorial-make-consensus-sequences
-description: "This workflow processes raw forward and reverse duplex sequencing reads using the Du Novo suite and Sequence Content Trimmer to generate high-accuracy duplex consensus sequences. Use this skill when you need to eliminate PCR and sequencing errors to identify extremely low-frequency genetic variants or ultra-rare mutations in complex samples."
-homepage: https://workflowhub.eu/workflows/1664
+description: This workflow processes raw forward and reverse duplex sequencing reads using the Du Novo suite and Sequence Content Trimmer to generate high-accuracy duplex consensus sequences. Use this skill when you need to eliminate PCR and sequencing errors to identify extremely low-frequency genetic variants or ultra-rare mutations in complex samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Du Novo GTN Tutorial - Make Consensus Sequences
+# du-novo-gtn-tutorial-make-consensus-sequences
 
 ## Overview
 

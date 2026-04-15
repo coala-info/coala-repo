@@ -1,9 +1,8 @@
 ---
 name: bioconductor-bsgenome.mmusculus.ucsc.mm9.masked
-description: "This package provides full masked genome sequences for the Mus musculus UCSC mm9 build. Use when user asks to access mouse genomic sequences, retrieve masked DNA strings, or perform sequence analysis excluding assembly gaps and repeats."
+description: This package provides full masked genome sequences for the Mus musculus UCSC mm9 build. Use when user asks to access mouse genomic sequences, retrieve masked DNA strings, or perform sequence analysis excluding assembly gaps and repeats.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm9.masked.html
 ---
-
 
 # bioconductor-bsgenome.mmusculus.ucsc.mm9.masked
 

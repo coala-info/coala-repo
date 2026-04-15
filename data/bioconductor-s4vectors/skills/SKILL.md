@@ -4,7 +4,6 @@ description: The S4Vectors package provides foundational S4 classes for memory-e
 homepage: https://bioconductor.org/packages/release/bioc/html/S4Vectors.html
 ---
 
-
 # bioconductor-s4vectors
 
 name: bioconductor-s4vectors

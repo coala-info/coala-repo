@@ -4,7 +4,6 @@ description: This tool performs Singular Value Decomposition on high-throughput 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/biosvd.html
 ---
 
-
 # bioconductor-biosvd
 
 name: bioconductor-biosvd

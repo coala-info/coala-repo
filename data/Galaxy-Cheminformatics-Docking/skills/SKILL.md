@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-3-docking
-description: "This cheminformatics workflow performs molecular docking of a ligand collection into a specific receptor active site using OpenBabel for compound conversion and rDock for binding simulations. Use this skill when you need to identify potential therapeutic candidates by predicting the binding affinity and orientation of small molecules against a target protein structure."
-homepage: https://workflowhub.eu/workflows/14
+description: This cheminformatics workflow performs molecular docking of a ligand collection into a specific receptor active site using OpenBabel for compound conversion and rDock for binding simulations. Use this skill when you need to identify potential therapeutic candidates by predicting the binding affinity and orientation of small molecules against a target protein structure.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [3] Docking
+# covid-19-cheminformatics-3-docking
 
 ## Overview
 

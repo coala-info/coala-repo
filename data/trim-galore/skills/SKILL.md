@@ -2,8 +2,9 @@
 name: trim-galore
 description: Trim Galore! pre-processes FastQ files by automating quality trimming and adapter removal. Use when user asks to trim sequencing reads, remove adapter sequences, perform quality trimming, process single-end or paired-end reads, handle bisulfite sequencing data, filter reads by length, or generate quality control reports.
 homepage: https://github.com/FelixKrueger/TrimGalore
+metadata:
+  docker_image: "quay.io/biocontainers/trim-galore:0.6.10--hdfd78af_2"
 ---
-
 
 # trim-galore
 

@@ -4,7 +4,6 @@ description: This tool automates the creation of Galaxy tool wrappers from R fun
 homepage: https://bioconductor.org/packages/3.14/bioc/html/RGalaxy.html
 ---
 
-
 # bioconductor-rgalaxy
 
 name: bioconductor-rgalaxy

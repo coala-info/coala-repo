@@ -2,8 +2,9 @@
 name: haphic
 description: HapHiC scaffolds fragmented genome contigs into chromosome-scale pseudomolecules using Hi-C proximity ligation data. Use when user asks to scaffold a genome assembly, cluster and orient contigs, generate Hi-C contact maps, or perform reference-based sorting.
 homepage: https://github.com/zengxiaofei/HapHiC
+metadata:
+  docker_image: "quay.io/biocontainers/haphic:1.0.7--hdfd78af_0"
 ---
-
 
 # haphic
 

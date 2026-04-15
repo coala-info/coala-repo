@@ -4,7 +4,6 @@ description: bioconductor-rqc performs quality control and assessment of high-th
 homepage: https://bioconductor.org/packages/release/bioc/html/Rqc.html
 ---
 
-
 # bioconductor-rqc
 
 name: bioconductor-rqc

@@ -1,9 +1,10 @@
 ---
 name: codingorf
-description: "Identifies translatable Open Reading Frames (ORFs) from DNA or RNA sequences. Use when user asks to find potential protein-coding regions in a genetic sequence."
+description: Identifies translatable Open Reading Frames (ORFs) from DNA or RNA sequences. Use when user asks to find potential protein-coding regions in a genetic sequence.
 homepage: https://github.com/Woosub-Kim/codingorf
+metadata:
+  docker_image: "quay.io/biocontainers/codingorf:v1.0.0--pyh5e36f6f_0"
 ---
-
 
 # codingorf
 

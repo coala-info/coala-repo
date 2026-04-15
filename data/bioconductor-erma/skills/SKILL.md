@@ -4,7 +4,6 @@ description: The erma package provides a streamlined interface for accessing and
 homepage: https://bioconductor.org/packages/3.8/bioc/html/erma.html
 ---
 
-
 # bioconductor-erma
 
 ## Overview

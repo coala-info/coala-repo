@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation data for mapping manu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hi16cod.db.html
 ---
 
-
 # bioconductor-hi16cod.db
 
 name: bioconductor-hi16cod.db

@@ -4,7 +4,6 @@ description: NetSAM identifies hierarchical modules in networks and optimizes le
 homepage: https://bioconductor.org/packages/release/bioc/html/NetSAM.html
 ---
 
-
 # bioconductor-netsam
 
 name: bioconductor-netsam

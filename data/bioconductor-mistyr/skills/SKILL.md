@@ -4,7 +4,6 @@ description: bioconductor-mistyr is a multiview machine learning framework for a
 homepage: https://bioconductor.org/packages/release/bioc/html/mistyR.html
 ---
 
-
 # bioconductor-mistyr
 
 name: bioconductor-mistyr

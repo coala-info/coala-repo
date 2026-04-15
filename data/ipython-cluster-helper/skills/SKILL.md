@@ -2,8 +2,9 @@
 name: ipython-cluster-helper
 description: ipython-cluster-helper automates the setup and management of IPython Parallel clusters for distributed task execution on batch schedulers. Use when user asks to run Python functions in parallel, distribute tasks across a compute cluster, or manage temporary IPython profiles for SLURM, LSF, or SGE.
 homepage: https://github.com/roryk/ipython-cluster-helper
+metadata:
+  docker_image: "quay.io/biocontainers/ipython-cluster-helper:0.6.4--py_0"
 ---
-
 
 # ipython-cluster-helper
 

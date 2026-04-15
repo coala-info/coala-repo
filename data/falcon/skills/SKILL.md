@@ -2,8 +2,9 @@
 name: falcon
 description: Falcon is a minimalist Python web framework designed for building high-performance REST APIs and microservices. Use when user asks to build RESTful APIs, create microservices, implement resource-oriented routing, or develop high-performance web applications using WSGI or ASGI.
 homepage: https://github.com/falconry/falcon
+metadata:
+  docker_image: "biocontainers/falcon:v1.8.6-1.1-deb_cv1"
 ---
-
 
 # falcon
 

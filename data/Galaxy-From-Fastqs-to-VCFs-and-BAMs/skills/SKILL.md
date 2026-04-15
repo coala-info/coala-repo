@@ -1,10 +1,12 @@
 ---
 name: from-fastqs-to-vcfs-and-bams
-description: "This Galaxy workflow processes single-end and paired-end FASTQ sequencing data using Trimmomatic, Snippy, and TB Variant Filter to produce aligned BAM files and filtered VCF variant calls against a Mycobacterium tuberculosis reference. Use this skill when you need to identify high-quality genomic variants and SNPs in bacterial samples to analyze evolutionary patterns or investigate pathogen outbreaks."
-homepage: https://workflowhub.eu/workflows/1573
+description: This Galaxy workflow processes single-end and paired-end FASTQ sequencing data using Trimmomatic, Snippy, and TB Variant Filter to produce aligned BAM files and filtered VCF variant calls against a Mycobacterium tuberculosis reference. Use this skill when you need to identify high-quality genomic variants and SNPs in bacterial samples to analyze evolutionary patterns or investigate pathogen outbreaks.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# From Fastqs to VCFs and BAMs
+# from-fastqs-to-vcfs-and-bams
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rat Genome
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgu34a.db.html
 ---
 
-
 # bioconductor-rgu34a.db
 
 name: bioconductor-rgu34a.db

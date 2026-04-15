@@ -4,7 +4,6 @@ description: This package provides a unified interface for managing human ligand
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Hsa.eg.db.html
 ---
 
-
 # bioconductor-lrbase.hsa.eg.db
 
 name: bioconductor-lrbase.hsa.eg.db

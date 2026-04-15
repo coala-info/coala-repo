@@ -4,7 +4,6 @@ description: This package provides DNA methylation reference data for sorted cel
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBlood.450k.html
 ---
 
-
 # bioconductor-flowsorted.cordblood.450k
 
 name: bioconductor-flowsorted.cordblood.450k

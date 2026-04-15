@@ -4,7 +4,6 @@ description: This tool analyzes high-density tiling microarray data to measure t
 homepage: https://bioconductor.org/packages/release/bioc/html/tilingArray.html
 ---
 
-
 # bioconductor-tilingarray
 
 name: bioconductor-tilingarray

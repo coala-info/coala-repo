@@ -2,8 +2,9 @@
 name: ucsc-gmtime
 description: The ucsc-gmtime tool translates Unix timestamps (integer seconds) into a standardized GMT/UTC calendar format. Use when user asks to convert Unix timestamps to GMT/UTC, get the current GMT time, process multiple timestamps from a file, or verify data currency from database timestamps.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-gmtime:482--h0b57e2e_0"
 ---
-
 
 # ucsc-gmtime
 

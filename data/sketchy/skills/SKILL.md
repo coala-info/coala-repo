@@ -2,6 +2,8 @@
 name: sketchy
 description: Sketchy performs rapid genomic neighbor typing and lineage calling by comparing query sequences against reference sketches using MinHash. Use when user asks to predict genotypes from reads, create genomic sketches, or identify the closest lineage of a sequence.
 homepage: https://github.com/esteinig/sketchy
+metadata:
+  docker_image: "quay.io/biocontainers/sketchy:0.6.0--h7b50bb2_3"
 ---
 
 # sketchy

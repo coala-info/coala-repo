@@ -4,7 +4,6 @@ description: FlowSOM performs unsupervised clustering and visualization of high-
 homepage: https://bioconductor.org/packages/release/bioc/html/FlowSOM.html
 ---
 
-
 # bioconductor-flowsom
 
 name: bioconductor-flowsom

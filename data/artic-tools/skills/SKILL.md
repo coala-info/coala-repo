@@ -2,6 +2,8 @@
 name: artic-tools
 description: artic-tools provides utilities for managing primer schemes and processing amplicon-based sequencing data within the ARTIC bioinformatics pipeline. Use when user asks to download or validate primer schemes, softmask primer sites in alignments, or filter VCF files for viral genomics.
 homepage: https://github.com/will-rowe/artic-tools
+metadata:
+  docker_image: "quay.io/biocontainers/artic-tools:0.3.1--hf9554c4_7"
 ---
 
 # artic-tools

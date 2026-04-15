@@ -4,7 +4,6 @@ description: The r-combinat package provides utilities for combinatorial computi
 homepage: https://cloud.r-project.org/web/packages/combinat/index.html
 ---
 
-
 # r-combinat
 
 ## Overview

@@ -4,7 +4,6 @@ description: ROSeq performs differential expression analysis in scRNA-seq data u
 homepage: https://bioconductor.org/packages/release/bioc/html/ROSeq.html
 ---
 
-
 # bioconductor-roseq
 
 ## Overview

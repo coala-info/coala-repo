@@ -4,7 +4,6 @@ description: This package provides minor allele frequency data from the ExAC v1.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.ExAC.r1.0.nonTCGA.GRCh38.html
 ---
 
-
 # bioconductor-mafdb.exac.r1.0.nontcga.grch38
 
 ## Overview

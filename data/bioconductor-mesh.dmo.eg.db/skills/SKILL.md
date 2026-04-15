@@ -4,7 +4,6 @@ description: This package provides mapping between MeSH identifiers and Entrez G
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Dmo.eg.db.html
 ---
 
-
 # bioconductor-mesh.dmo.eg.db
 
 name: bioconductor-mesh.dmo.eg.db

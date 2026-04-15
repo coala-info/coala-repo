@@ -4,7 +4,6 @@ description: This package provides comprehensive SQLite-based annotation data fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chicken.db.html
 ---
 
-
 # bioconductor-chicken.db
 
 name: bioconductor-chicken.db

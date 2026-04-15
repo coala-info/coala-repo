@@ -2,8 +2,9 @@
 name: pybbi
 description: pybbi provides high-performance Python bindings for reading BigWig and BigBed genomic data files into NumPy and Pandas. Use when user asks to fetch quantitative signal from BigWig files, retrieve intervals from BigBed files, inspect genomic file metadata, or generate stacked heatmaps from multiple genomic regions.
 homepage: https://github.com/nvictus/pybbi
+metadata:
+  docker_image: "quay.io/biocontainers/pybbi:0.4.2--py39h2d95d83_0"
 ---
-
 
 # pybbi
 

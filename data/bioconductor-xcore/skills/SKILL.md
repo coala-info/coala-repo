@@ -4,7 +4,6 @@ description: Bioconductor-xcore models transcription factor activities by perfor
 homepage: https://bioconductor.org/packages/release/bioc/html/xcore.html
 ---
 
-
 # bioconductor-xcore
 
 name: bioconductor-xcore

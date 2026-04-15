@@ -4,7 +4,6 @@ description: CytoTree is an R package for analyzing multidimensional flow and ma
 homepage: https://bioconductor.org/packages/3.12/bioc/html/CytoTree.html
 ---
 
-
 # bioconductor-cytotree
 
 ## Overview

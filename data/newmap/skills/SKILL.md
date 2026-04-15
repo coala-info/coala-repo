@@ -2,6 +2,8 @@
 name: newmap
 description: Newmap determines genome mappability by identifying the shortest unique k-mer at every genomic position to generate single-read and multi-read tracks. Use when user asks to index a genome, search for unique k-mer lengths, or generate mappability tracks in BED and WIG formats.
 homepage: https://github.com/hoffmangroup/newmap
+metadata:
+  docker_image: "quay.io/biocontainers/newmap:0.2--py312h9c9b0c2_1"
 ---
 
 # newmap

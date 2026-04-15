@@ -4,7 +4,6 @@ description: This package provides probe sequence data and coordinate mapping fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/plasmodiumanophelesprobe.html
 ---
 
-
 # bioconductor-plasmodiumanophelesprobe
 
 name: bioconductor-plasmodiumanophelesprobe

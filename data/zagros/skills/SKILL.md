@@ -2,8 +2,9 @@
 name: zagros
 description: Zagros is a lightweight, high-performance web server built with the Zig programming language. Use when user asks to initialize the server, configure its settings, manage its configuration, implement custom request handlers, serve static assets, handle form data, or optimize content delivery.
 homepage: https://github.com/Aryvyo/Zagros
+metadata:
+  docker_image: "quay.io/biocontainers/zagros:1.0.0--ha24e720_10"
 ---
-
 
 # zagros
 

@@ -4,7 +4,6 @@ description: This tool calculates context-specific functional scores for genes i
 homepage: https://bioconductor.org/packages/release/bioc/html/wppi.html
 ---
 
-
 # bioconductor-wppi
 
 name: bioconductor-wppi

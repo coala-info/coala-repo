@@ -4,7 +4,6 @@ description: MapScape visualizes the spatial distribution of cancer clones by in
 homepage: https://bioconductor.org/packages/release/bioc/html/mapscape.html
 ---
 
-
 # bioconductor-mapscape
 
 ## Overview

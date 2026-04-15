@@ -4,7 +4,6 @@ description: This tool represents VCF files as memory-efficient DelayedArray obj
 homepage: https://bioconductor.org/packages/release/bioc/html/VCFArray.html
 ---
 
-
 # bioconductor-vcfarray
 
 name: bioconductor-vcfarray

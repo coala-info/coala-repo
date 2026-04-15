@@ -4,7 +4,6 @@ description: This package provides a specialized toolkit for the integrative ana
 homepage: https://bioconductor.org/packages/release/bioc/html/compEpiTools.html
 ---
 
-
 # bioconductor-compepitools
 
 name: bioconductor-compepitools

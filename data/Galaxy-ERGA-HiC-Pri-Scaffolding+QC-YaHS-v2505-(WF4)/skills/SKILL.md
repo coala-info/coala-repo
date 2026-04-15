@@ -1,10 +1,12 @@
 ---
 name: erga-hic-pri-scaffoldingqc-yahs-v2505-wf4
-description: "This ERGA workflow performs Hi-C scaffolding of primary and alternate purged contigs using YAHS, BWA-MEM2, and Pairtools, followed by comprehensive quality control with BUSCO, Merqury, and Pretext. Use this skill when you need to organize genomic contigs into chromosome-scale scaffolds using Hi-C proximity data while validating the assembly's structural integrity, completeness, and k-mer consistency."
-homepage: https://workflowhub.eu/workflows/1164
+description: This ERGA workflow performs Hi-C scaffolding of primary and alternate purged contigs using YAHS, BWA-MEM2, and Pairtools, followed by comprehensive quality control with BUSCO, Merqury, and Pretext. Use this skill when you need to organize genomic contigs into chromosome-scale scaffolds using Hi-C proximity data while validating the assembly's structural integrity, completeness, and k-mer consistency.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA HiC Pri Scaffolding+QC YaHS v2505 (WF4)
+# erga-hic-pri-scaffoldingqc-yahs-v2505-wf4
 
 ## Overview
 

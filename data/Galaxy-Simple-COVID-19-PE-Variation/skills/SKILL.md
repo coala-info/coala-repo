@@ -1,10 +1,12 @@
 ---
 name: simple-covid-19-pe-variation
-description: "This workflow processes paired-end Illumina COVID-19 sequencing data from SRA manifests using BWA-MEM for alignment, LoFreq for sensitive variant calling, and SnpEff for functional annotation against the NC_045512.2 reference. Use this skill when you need to identify low-frequency intra-host variations or characterize the mutational profile of SARS-CoV-2 samples to monitor viral evolution and lineage diversity."
-homepage: https://workflowhub.eu/workflows/1642
+description: This workflow processes paired-end Illumina COVID-19 sequencing data from SRA manifests using BWA-MEM for alignment, LoFreq for sensitive variant calling, and SnpEff for functional annotation against the NC_045512.2 reference. Use this skill when you need to identify low-frequency intra-host variations or characterize the mutational profile of SARS-CoV-2 samples to monitor viral evolution and lineage diversity.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Simple COVID-19 - PE Variation
+# simple-covid-19-pe-variation
 
 ## Overview
 

@@ -1,7 +1,9 @@
 ---
 name: liftofftools
-description: "LiftoffTools evaluates the quality and functional changes of gene annotations transferred between genome assemblies. Use when user asks to identify variant effects in protein-coding genes, compare gene synteny, cluster paralogs to find copy number variations, or perform a comprehensive annotation quality analysis."
+description: LiftoffTools evaluates the quality and functional changes of gene annotations transferred between genome assemblies. Use when user asks to identify variant effects in protein-coding genes, compare gene synteny, cluster paralogs to find copy number variations, or perform a comprehensive annotation quality analysis.
 homepage: https://github.com/agshumate/LiftoffTools
+metadata:
+  docker_image: "quay.io/biocontainers/liftofftools:0.4.4--pyhdfd78af_0"
 ---
 
 # liftofftools

@@ -2,8 +2,9 @@
 name: ucsc-chainsort
 description: The ucsc-chainsort tool organizes pairwise genomic alignment records within .chain files. Use when user asks to organize genomic alignment records, sort .chain files, or prepare alignment data for comparative genomics workflows.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chainsort
 

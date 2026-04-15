@@ -2,8 +2,9 @@
 name: targqc
 description: targqc evaluates the coverage quality of targeted sequencing experiments by processing alignment files against specific genomic regions. Use when user asks to assess sequencing depth, identify coverage cold spots in capture assays, or generate quality control reports for targeted genomic data.
 homepage: https://github.com/vladsaveliev/TargQC
+metadata:
+  docker_image: "quay.io/biocontainers/targqc:1.8.1--py37hb3f55d8_0"
 ---
-
 
 # targqc
 

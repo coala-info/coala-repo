@@ -4,7 +4,6 @@ description: This tool performs non-parametric classification and similarity ana
 homepage: https://bioconductor.org/packages/release/bioc/html/RGSEA.html
 ---
 
-
 # bioconductor-rgsea
 
 name: bioconductor-rgsea

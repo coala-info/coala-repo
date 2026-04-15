@@ -2,8 +2,9 @@
 name: ucsc-bigwigtowig
 description: This tool converts binary bigWig files into the text-based wiggle (wig) format. Use when user asks to convert bigWig to wig, extract specific genomic regions from a bigWig file, or maintain specific wiggle format structures.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigwigtowig:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigwigtowig
 

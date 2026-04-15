@@ -1,9 +1,10 @@
 ---
 name: skewer
-description: "Skewer provides a live development environment for web development by bridging Emacs to one or more browser tabs. Use when user asks to evaluate JavaScript snippets, update CSS rules in real-time, or modify HTML tags directly in a live browser instance."
+description: Skewer provides a live development environment for web development by bridging Emacs to one or more browser tabs. Use when user asks to evaluate JavaScript snippets, update CSS rules in real-time, or modify HTML tags directly in a live browser instance.
 homepage: https://github.com/skeeto/skewer-mode
+metadata:
+  docker_image: "quay.io/biocontainers/skewer:0.2.2--h2d50403_2"
 ---
-
 
 # skewer
 

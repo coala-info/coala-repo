@@ -4,7 +4,6 @@ description: The r-chromvarmotifs package provides curated collections of transc
 homepage: https://cran.r-project.org/web/packages/chromvarmotifs/index.html
 ---
 
-
 # r-chromvarmotifs
 
 ## Overview

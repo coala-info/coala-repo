@@ -4,7 +4,6 @@ description: This package provides metadata-only SummarizedExperiment shells for
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/restfulSEData.html
 ---
 
-
 # bioconductor-restfulsedata
 
 name: bioconductor-restfulsedata

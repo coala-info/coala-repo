@@ -4,7 +4,6 @@ description: Bioconductor-rnaeditr identifies differentially edited RNA genomic 
 homepage: https://bioconductor.org/packages/release/bioc/html/rnaEditr.html
 ---
 
-
 # bioconductor-rnaeditr
 
 name: bioconductor-rnaeditr

@@ -4,7 +4,6 @@ description: This tool provides quality control and visualization for gene expre
 homepage: https://bioconductor.org/packages/release/bioc/html/ffpe.html
 ---
 
-
 # bioconductor-ffpe
 
 name: bioconductor-ffpe

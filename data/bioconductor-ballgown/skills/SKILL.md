@@ -4,7 +4,6 @@ description: The ballgown package performs statistical analysis and visualizatio
 homepage: https://bioconductor.org/packages/release/bioc/html/ballgown.html
 ---
 
-
 # bioconductor-ballgown
 
 ## Overview

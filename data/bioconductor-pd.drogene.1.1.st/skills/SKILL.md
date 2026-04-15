@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequences for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.drogene.1.1.st.html
 ---
 
-
 # bioconductor-pd.drogene.1.1.st
 
 name: bioconductor-pd.drogene.1.1.st

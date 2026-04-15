@@ -1,9 +1,8 @@
 ---
 name: r-kinship2
-description: "This tool manages pedigree data, calculates kinship matrices, and generates automated pedigree visualizations in R. Use when user asks to create pedigree objects, calculate kinship coefficients for autosomal or X-chromosomes, plot family trees, or clean pedigree data structures."
+description: This tool manages pedigree data, calculates kinship matrices, and generates automated pedigree visualizations in R. Use when user asks to create pedigree objects, calculate kinship coefficients for autosomal or X-chromosomes, plot family trees, or clean pedigree data structures.
 homepage: https://cloud.r-project.org/web/packages/kinship2/index.html
 ---
-
 
 # r-kinship2
 

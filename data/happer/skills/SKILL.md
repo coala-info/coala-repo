@@ -1,9 +1,10 @@
 ---
 name: happer
-description: "happer generates haplotype-specific sequences by applying phased alleles from a BED file to a reference genome. Use when user asks to create personalized reference genomes, simulate variants, or transform a reference sequence into individual-specific haplotypes."
+description: happer generates haplotype-specific sequences by applying phased alleles from a BED file to a reference genome. Use when user asks to create personalized reference genomes, simulate variants, or transform a reference sequence into individual-specific haplotypes.
 homepage: https://github.com/bioforensics/happer/
+metadata:
+  docker_image: "quay.io/biocontainers/happer:0.1.1--py_0"
 ---
-
 
 # happer
 

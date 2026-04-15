@@ -2,8 +2,9 @@
 name: namfinder
 description: namfinder identifies shared regions between query and reference sequences using strobemer seeds to find approximate matches. Use when user asks to map sequences, identify shared genomic regions, or perform transcript-to-genome alignment.
 homepage: https://github.com/ksahlin/namfinder
+metadata:
+  docker_image: "quay.io/biocontainers/namfinder:0.1.3--h077b44d_2"
 ---
-
 
 # namfinder
 

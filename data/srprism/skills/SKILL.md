@@ -2,6 +2,8 @@
 name: srprism
 description: SRPRISM aligns short DNA sequences to a reference genome. Use when user asks to align reads to a reference genome.
 homepage: https://github.com/ncbi/SRPRISM
+metadata:
+  docker_image: "quay.io/biocontainers/srprism:2.4.24--hd6d6fdc_6"
 ---
 
 # srprism

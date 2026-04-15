@@ -1,10 +1,12 @@
 ---
 name: hi-c_fastqtocool_hicup_cooler
-description: "This workflow processes paired-end Hi-C or Hi-ChIP FASTQ files using HiCUP for mapping and filtering, followed by cooler for generating balanced contact matrices and pyGenomeTracks for visualization. Use this skill when you need to analyze chromatin conformation data to identify genomic interactions, generate normalized contact maps at specific resolutions, or visualize 3D genome architecture."
-homepage: https://workflowhub.eu/workflows/420
+description: This workflow processes paired-end Hi-C or Hi-ChIP FASTQ files using HiCUP for mapping and filtering, followed by cooler for generating balanced contact matrices and pyGenomeTracks for visualization. Use this skill when you need to analyze chromatin conformation data to identify genomic interactions, generate normalized contact maps at specific resolutions, or visualize 3D genome architecture.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Hi-C_fastqToCool_hicup_cooler
+# hi-c_fastqtocool_hicup_cooler
 
 ## Overview
 

@@ -4,6 +4,8 @@ description: The pipeline processes raw FASTQ reads, assembled FASTA sequences, 
 homepage: https://github.com/nf-core/airrflow
 ---
 
+# airrflow
+
 ## Overview
 nf-core/airrflow is a bioinformatics pipeline designed for the end-to-end analysis of B-cell receptor (BCR) and T-cell receptor (TCR) repertoires. It addresses the complexity of adaptive immune receptor sequencing (AIRR-seq) by providing standardized processing for both bulk and single-cell data, including sequence assembly, quality control, and advanced clonal analysis.
 

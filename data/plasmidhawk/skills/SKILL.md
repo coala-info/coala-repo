@@ -1,7 +1,9 @@
 ---
 name: plasmidhawk
-description: "Plasmidhawk detects the lab-of-origin for input plasmids by building an annotated pangenome of training plasmids. Use when user asks to predict the lab-of-origin for plasmids."
+description: Plasmidhawk detects the lab-of-origin for input plasmids by building an annotated pangenome of training plasmids. Use when user asks to predict the lab-of-origin for plasmids.
 homepage: https://gitlab.com/treangenlab/plasmidhawk
+metadata:
+  docker_image: "quay.io/biocontainers/plasmidhawk:1.0.3--hdfd78af_0"
 ---
 
 # plasmidhawk

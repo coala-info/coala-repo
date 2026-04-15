@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/test1cdf.html
 ---
 
-
 # bioconductor-test1cdf
 
 name: bioconductor-test1cdf

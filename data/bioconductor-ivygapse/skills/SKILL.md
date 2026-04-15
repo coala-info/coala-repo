@@ -4,7 +4,6 @@ description: This package provides a SummarizedExperiment container for accessin
 homepage: https://bioconductor.org/packages/release/bioc/html/ivygapSE.html
 ---
 
-
 # bioconductor-ivygapse
 
 name: bioconductor-ivygapse

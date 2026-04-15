@@ -4,7 +4,6 @@ description: This tool generates synthetic gene expression data using Variationa
 homepage: https://bioconductor.org/packages/release/bioc/html/VAExprs.html
 ---
 
-
 # bioconductor-vaexprs
 
 name: bioconductor-vaexprs

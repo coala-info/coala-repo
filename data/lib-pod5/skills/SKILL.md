@@ -1,9 +1,10 @@
 ---
 name: lib-pod5
-description: "lib-pod5 provides tools and Python bindings for managing and manipulating high-performance POD5 nanopore sequencing data. Use when user asks to inspect file metadata, subset reads by ID, merge multiple files, or convert data to tabular formats."
+description: lib-pod5 provides tools and Python bindings for managing and manipulating high-performance POD5 nanopore sequencing data. Use when user asks to inspect file metadata, subset reads by ID, merge multiple files, or convert data to tabular formats.
 homepage: https://github.com/nanoporetech/pod5-file-format
+metadata:
+  docker_image: "quay.io/biocontainers/lib-pod5:0.3.33--py311h25590d1_0"
 ---
-
 
 # lib-pod5
 

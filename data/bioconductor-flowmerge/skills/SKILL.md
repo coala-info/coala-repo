@@ -4,7 +4,6 @@ description: This tool performs automated gating and cluster merging for flow cy
 homepage: https://bioconductor.org/packages/release/bioc/html/flowMerge.html
 ---
 
-
 # bioconductor-flowmerge
 
 name: bioconductor-flowmerge

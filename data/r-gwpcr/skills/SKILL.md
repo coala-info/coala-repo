@@ -4,7 +4,6 @@ description: The gwpcr package provides an R implementation of a mechanistic mod
 homepage: https://cran.r-project.org/web/packages/gwpcr/index.html
 ---
 
-
 # r-gwpcr
 
 ## Overview

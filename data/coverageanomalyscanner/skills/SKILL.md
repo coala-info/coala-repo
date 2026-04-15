@@ -2,8 +2,9 @@
 name: coverageanomalyscanner
 description: The coverageanomalyscanner tool identifies and interprets unexpected changes in genomic read coverage to predict structural variants like duplications and deletions. Use when user asks to scan alignment data for coverage anomalies, identify putative structural variants, or visualize coverage metadata.
 homepage: https://github.com/rki-mf1/CoverageAnomalyScanner
+metadata:
+  docker_image: "quay.io/biocontainers/coverageanomalyscanner:0.2.3--h69ac913_4"
 ---
-
 
 # coverageanomalyscanner
 

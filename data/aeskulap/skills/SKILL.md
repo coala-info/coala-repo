@@ -1,9 +1,10 @@
 ---
 name: aeskulap
-description: "Aeskulap is a DICOM viewer and network client for medical imaging. Use when user asks to view DICOM files, query a PACS, or fetch DICOM studies from a PACS."
+description: Aeskulap is a DICOM viewer and network client for medical imaging. Use when user asks to view DICOM files, query a PACS, or fetch DICOM studies from a PACS.
 homepage: https://github.com/pipelka/aeskulap
+metadata:
+  docker_image: "biocontainers/aeskulap:v0.2.2-beta2git20180219.8787e95-2-deb_cv1"
 ---
-
 
 # aeskulap
 

@@ -4,7 +4,6 @@ description: This tool performs feature selection in high-dimensional biological
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FCBF.html
 ---
 
-
 # bioconductor-fcbf
 
 name: bioconductor-fcbf

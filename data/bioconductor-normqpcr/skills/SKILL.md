@@ -4,7 +4,6 @@ description: This tool provides functions for the normalization and analysis of 
 homepage: https://bioconductor.org/packages/release/bioc/html/NormqPCR.html
 ---
 
-
 # bioconductor-normqpcr
 
 name: bioconductor-normqpcr

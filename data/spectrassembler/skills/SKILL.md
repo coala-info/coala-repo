@@ -1,9 +1,10 @@
 ---
 name: spectrassembler
-description: "spectrassembler computes genome assembly layouts and consensus sequences from uncorrected long-reads using a spectral algorithm. Use when user asks to assemble genomes from long-reads, compute read ordering layouts, or generate consensus sequences from pairwise overlaps."
+description: spectrassembler computes genome assembly layouts and consensus sequences from uncorrected long-reads using a spectral algorithm. Use when user asks to assemble genomes from long-reads, compute read ordering layouts, or generate consensus sequences from pairwise overlaps.
 homepage: https://github.com/antrec/spectrassembler
+metadata:
+  docker_image: "quay.io/biocontainers/spectrassembler:0.0.1a1--py27_1"
 ---
-
 
 # spectrassembler
 

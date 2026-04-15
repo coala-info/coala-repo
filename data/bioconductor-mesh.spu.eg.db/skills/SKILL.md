@@ -4,7 +4,6 @@ description: This Bioconductor package provides mappings between MeSH identifier
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Spu.eg.db.html
 ---
 
-
 # bioconductor-mesh.spu.eg.db
 
 name: bioconductor-mesh.spu.eg.db

@@ -2,8 +2,9 @@
 name: libdeflate
 description: libdeflate is a high-performance library and toolset for fast, whole-buffer compression and decompression using DEFLATE, zlib, and gzip formats. Use when user asks to compress or decompress files quickly, benchmark compression performance, or calculate Adler-32 and CRC-32 checksums.
 homepage: https://github.com/ebiggers/libdeflate
+metadata:
+  docker_image: "quay.io/biocontainers/libdeflate:1.2--h516909a_1"
 ---
-
 
 # libdeflate
 

@@ -4,7 +4,6 @@ description: scHOT identifies changes in higher order structures such as variabi
 homepage: https://bioconductor.org/packages/release/bioc/html/scHOT.html
 ---
 
-
 # bioconductor-schot
 
 name: bioconductor-schot

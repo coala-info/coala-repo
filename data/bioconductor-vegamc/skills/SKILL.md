@@ -4,7 +4,6 @@ description: VegaMC identifies driver chromosomal imbalances such as deletions, 
 homepage: https://bioconductor.org/packages/release/bioc/html/VegaMC.html
 ---
 
-
 # bioconductor-vegamc
 
 name: bioconductor-vegamc

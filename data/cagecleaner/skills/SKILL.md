@@ -2,8 +2,9 @@
 name: cagecleaner
 description: This tool removes genomic redundancy from cblaster hit sets. Use when user asks to filter redundant gene clusters from cblaster results.
 homepage: https://github.com/LucoDevro/CAGEcleaner
+metadata:
+  docker_image: "quay.io/biocontainers/cagecleaner:1.4.5--pyhdfd78af_0"
 ---
-
 
 # cagecleaner
 

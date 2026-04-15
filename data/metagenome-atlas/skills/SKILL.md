@@ -2,8 +2,9 @@
 name: metagenome-atlas
 description: Metagenome-Atlas is a Snakemake-powered pipeline that automates the processing of raw metagenomic reads into annotated contigs and Metagenome-Assembled Genomes. Use when user asks to perform quality control, assemble metagenomes, perform genomic binning, or generate taxonomic and functional annotations.
 homepage: https://github.com/metagenome-atlas
+metadata:
+  docker_image: "quay.io/biocontainers/metagenome-atlas:19.0.1--pyhdfd78af_0"
 ---
-
 
 # metagenome-atlas
 

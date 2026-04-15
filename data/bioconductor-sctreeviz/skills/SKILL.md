@@ -4,7 +4,6 @@ description: scTreeViz provides an interactive dashboard for exploring hierarchi
 homepage: https://bioconductor.org/packages/release/bioc/html/scTreeViz.html
 ---
 
-
 # bioconductor-sctreeviz
 
 ## Overview

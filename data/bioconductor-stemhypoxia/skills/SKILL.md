@@ -4,7 +4,6 @@ description: This package provides access to the Prado-Lopez et al. (2010) gene 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/stemHypoxia.html
 ---
 
-
 # bioconductor-stemhypoxia
 
 name: bioconductor-stemhypoxia

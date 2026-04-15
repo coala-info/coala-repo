@@ -4,7 +4,6 @@ description: This package provides the Google Protocol Buffers C++ library and h
 homepage: https://bioconductor.org/packages/release/bioc/html/RProtoBufLib.html
 ---
 
-
 # bioconductor-rprotobuflib
 
 name: bioconductor-rprotobuflib

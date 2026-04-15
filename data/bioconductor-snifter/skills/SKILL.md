@@ -1,9 +1,8 @@
 ---
 name: bioconductor-snifter
-description: "snifter provides an R wrapper for the fast interpolated t-SNE implementation to perform dimensionality reduction on large datasets. Use when user asks to run t-SNE embeddings, project new data points into an existing embedding, or perform fast manifold learning using the openTSNE backend."
+description: snifter provides an R wrapper for the fast interpolated t-SNE implementation to perform dimensionality reduction on large datasets. Use when user asks to run t-SNE embeddings, project new data points into an existing embedding, or perform fast manifold learning using the openTSNE backend.
 homepage: https://bioconductor.org/packages/release/bioc/html/snifter.html
 ---
-
 
 # bioconductor-snifter
 

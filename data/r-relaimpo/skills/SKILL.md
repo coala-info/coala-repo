@@ -4,7 +4,6 @@ description: This tool assesses the relative importance of regressors in linear 
 homepage: https://cloud.r-project.org/web/packages/relaimpo/index.html
 ---
 
-
 # r-relaimpo
 
 name: r-relaimpo

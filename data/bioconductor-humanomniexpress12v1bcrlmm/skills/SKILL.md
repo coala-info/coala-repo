@@ -4,7 +4,6 @@ description: This package provides metadata and annotation data for the Illumina
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanomniexpress12v1bCrlmm.html
 ---
 
-
 # bioconductor-humanomniexpress12v1bcrlmm
 
 name: bioconductor-humanomniexpress12v1bcrlmm

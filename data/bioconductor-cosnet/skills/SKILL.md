@@ -4,7 +4,6 @@ description: This tool predicts binary labels in partially-labeled graphs using 
 homepage: https://bioconductor.org/packages/release/bioc/html/COSNet.html
 ---
 
-
 # bioconductor-cosnet
 
 name: bioconductor-cosnet

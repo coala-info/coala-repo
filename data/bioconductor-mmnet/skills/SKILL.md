@@ -4,7 +4,6 @@ description: This tool performs metagenomic analysis of microbiome metabolic net
 homepage: https://bioconductor.org/packages/3.5/bioc/html/mmnet.html
 ---
 
-
 # bioconductor-mmnet
 
 name: bioconductor-mmnet

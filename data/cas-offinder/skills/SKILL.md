@@ -2,8 +2,9 @@
 name: cas-offinder
 description: Cas-OFFinder is an ultrafast algorithm used to predict off-target effects in CRISPR-Cas9 and other RGEN systems by performing exhaustive genomic searches. Use when user asks to predict off-target sites, account for degenerate PAM sequences, or identify potential DNA and RNA bulges.
 homepage: https://github.com/snugel/cas-offinder
+metadata:
+  docker_image: "quay.io/biocontainers/cas-offinder:2.4.1--h503566f_0"
 ---
-
 
 # cas-offinder
 

@@ -4,7 +4,6 @@ description: This package provides probe sequence data and metadata for the Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htratfocusprobe.html
 ---
 
-
 # bioconductor-htratfocusprobe
 
 name: bioconductor-htratfocusprobe

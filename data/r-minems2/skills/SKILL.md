@@ -4,7 +4,6 @@ description: This tool extracts frequent fragmentation patterns from MS/MS spect
 homepage: https://cran.r-project.org/web/packages/minems2/index.html
 ---
 
-
 # r-minems2
 
 name: r-minems2

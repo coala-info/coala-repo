@@ -4,7 +4,6 @@ description: This tool provides automated quality control and comprehensive repo
 homepage: https://bioconductor.org/packages/release/bioc/html/arrayQualityMetrics.html
 ---
 
-
 # bioconductor-arrayqualitymetrics
 
 name: bioconductor-arrayqualitymetrics

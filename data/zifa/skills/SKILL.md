@@ -2,8 +2,9 @@
 name: zifa
 description: ZIFA performs dimensionality reduction on single-cell gene expression data, specifically modeling zero-inflated counts. Use when user asks to reduce dimensionality of single-cell gene expression data, visualize cell populations, cluster cells, or identify biological trajectories.
 homepage: https://github.com/epierson9/ZIFA
+metadata:
+  docker_image: "quay.io/biocontainers/zifa:0.1.0--py36_0"
 ---
-
 
 # zifa
 

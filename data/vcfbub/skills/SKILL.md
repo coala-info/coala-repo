@@ -2,8 +2,9 @@
 name: vcfbub
 description: vcfbub cleans and simplifies complex, nested VCF outputs from pangenome graph deconstruction. Use when user asks to filter VCFs by variant nesting level, remove large structural variants while retaining nested variants, or prepare pangenome VCFs for downstream analysis.
 homepage: https://github.com/pangenome/vcfbub
+metadata:
+  docker_image: "quay.io/biocontainers/vcfbub:0.1.2--hc1c3326_1"
 ---
-
 
 # vcfbub
 

@@ -4,7 +4,6 @@ description: The stageR package implements a statistical framework for stage-wis
 homepage: https://bioconductor.org/packages/release/bioc/html/stageR.html
 ---
 
-
 # bioconductor-stager
 
 ## Overview

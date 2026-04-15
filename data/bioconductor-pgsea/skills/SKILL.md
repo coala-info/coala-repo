@@ -1,9 +1,8 @@
 ---
 name: bioconductor-pgsea
-description: "PGSEA calculates sample-specific enrichment scores for gene signatures within expression data using a parametric z-score approach. Use when user asks to perform parametric gene set enrichment analysis, calculate enrichment scores for individual samples, or visualize gene set activity across a dataset."
+description: PGSEA calculates sample-specific enrichment scores for gene signatures within expression data using a parametric z-score approach. Use when user asks to perform parametric gene set enrichment analysis, calculate enrichment scores for individual samples, or visualize gene set activity across a dataset.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PGSEA.html
 ---
-
 
 # bioconductor-pgsea
 

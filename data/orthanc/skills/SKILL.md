@@ -4,7 +4,6 @@ description: Orthanc is an open-source DICOM server that provides a standalone V
 homepage: https://github.com/jodogne/OrthancDocker
 ---
 
-
 # orthanc
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool analyzes GRO-seq data using Hidden Markov Models to ident
 homepage: https://bioconductor.org/packages/release/bioc/html/groHMM.html
 ---
 
-
 # bioconductor-grohmm
 
 name: bioconductor-grohmm

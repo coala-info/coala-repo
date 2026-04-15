@@ -4,7 +4,6 @@ description: This package provides raw rat liver microarray data from carbon tet
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CCl4.html
 ---
 
-
 # bioconductor-ccl4
 
 name: bioconductor-ccl4

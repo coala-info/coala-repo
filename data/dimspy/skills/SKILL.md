@@ -2,8 +2,9 @@
 name: dimspy
 description: DIMSpy is a Python framework for processing and aligning direct infusion mass spectrometry data into peak matrices. Use when user asks to process raw spectral scans, filter technical replicates, align samples into a single matrix, or perform blank and sample filtering.
 homepage: https://github.com/computational-metabolomics/dimspy
+metadata:
+  docker_image: "quay.io/biocontainers/dimspy:2.0.0--pyhdfd78af_1"
 ---
-
 
 # dimspy
 

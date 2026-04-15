@@ -4,7 +4,6 @@ description: This tool provides annotation data for mapping PartheenMetaData pla
 homepage: https://bioconductor.org/packages/release/data/annotation/html/PartheenMetaData.db.html
 ---
 
-
 # bioconductor-partheenmetadata.db
 
 name: bioconductor-partheenmetadata.db

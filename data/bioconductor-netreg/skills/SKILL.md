@@ -1,9 +1,8 @@
 ---
 name: bioconductor-netreg
-description: "bioconductor-netreg fits network-regularized generalized linear models by incorporating external biological or chemical network information into the regression process. Use when user asks to perform network-regularized regression, integrate affinity matrices into GLMs, or smooth regression coefficients using graph Laplacians."
+description: bioconductor-netreg fits network-regularized generalized linear models by incorporating external biological or chemical network information into the regression process. Use when user asks to perform network-regularized regression, integrate affinity matrices into GLMs, or smooth regression coefficients using graph Laplacians.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/netReg.html
 ---
-
 
 # bioconductor-netreg
 

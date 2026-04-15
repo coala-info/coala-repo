@@ -4,7 +4,6 @@ description: This tool performs optimal p-value weighting to increase power in m
 homepage: https://bioconductor.org/packages/release/bioc/html/OPWeight.html
 ---
 
-
 # bioconductor-opweight
 
 name: bioconductor-opweight

@@ -4,7 +4,6 @@ description: This tool computes functional rarity indices to quantify species di
 homepage: https://cran.r-project.org/web/packages/funrar/index.html
 ---
 
-
 # r-funrar
 
 name: r-funrar

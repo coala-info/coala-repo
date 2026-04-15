@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Gene
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene21sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-mogene21sttranscriptcluster.db
 
 name: bioconductor-mogene21sttranscriptcluster.db

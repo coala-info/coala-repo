@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation data for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74bv2.db.html
 ---
 
-
 # bioconductor-mgu74bv2.db
 
 ## Overview

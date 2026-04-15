@@ -4,7 +4,6 @@ description: This package provides probe filtering resources and genomic annotat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DMRcatedata.html
 ---
 
-
 # bioconductor-dmrcatedata
 
 name: bioconductor-dmrcatedata

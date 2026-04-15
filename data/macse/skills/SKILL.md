@@ -1,7 +1,9 @@
 ---
 name: macse
-description: "MACSE aligns coding nucleotide sequences by using their amino acid translations to account for frameshifts and premature stop codons. Use when user asks to align protein-coding genes, handle frameshifts in nucleotide sequences, enrich an existing alignment with new sequences, or translate nucleotide sequences into codon-aware amino acid sequences."
+description: MACSE aligns coding nucleotide sequences by using their amino acid translations to account for frameshifts and premature stop codons. Use when user asks to align protein-coding genes, handle frameshifts in nucleotide sequences, enrich an existing alignment with new sequences, or translate nucleotide sequences into codon-aware amino acid sequences.
 homepage: https://bioweb.supagro.inra.fr/macse/
+metadata:
+  docker_image: "quay.io/biocontainers/macse:2.07--hdfd78af_0"
 ---
 
 # macse

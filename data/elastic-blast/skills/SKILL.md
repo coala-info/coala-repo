@@ -1,7 +1,9 @@
 ---
 name: elastic-blast
-description: "Accelerates BLAST searches by distributing them across multiple cloud instances. Use when user asks to perform large-scale BLAST searches faster than stand-alone BLAST+ or when NCBI WebBLAST limitations are encountered."
+description: Accelerates BLAST searches by distributing them across multiple cloud instances. Use when user asks to perform large-scale BLAST searches faster than stand-alone BLAST+ or when NCBI WebBLAST limitations are encountered.
 homepage: https://pypi.org/project/elastic-blast/
+metadata:
+  docker_image: "quay.io/biocontainers/elastic-blast:1.5.0--pyhdfd78af_0"
 ---
 
 # elastic-blast

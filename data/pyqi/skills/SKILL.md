@@ -1,7 +1,9 @@
 ---
 name: pyqi
-description: "pyqi provides APIs for generating, parsing, and evaluating Quantum Intermediate Representation (QIR). Use when Claude needs to work with QIR, integrate QIR toolchains into Python frontends, or run generated QIR."
+description: pyqi provides APIs for generating, parsing, and evaluating Quantum Intermediate Representation (QIR). Use when Claude needs to work with QIR, integrate QIR toolchains into Python frontends, or run generated QIR.
 homepage: https://github.com/qir-alliance/pyqir
+metadata:
+  docker_image: "quay.io/biocontainers/pyqi:0.3.2--py27_1"
 ---
 
 # pyqi

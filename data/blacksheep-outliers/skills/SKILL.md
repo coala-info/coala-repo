@@ -2,8 +2,9 @@
 name: blacksheep-outliers
 description: BlackSheep performs differential extreme-value analysis to identify features with outlier signals in specific sample subsets. Use when user asks to binarize metadata, call outliers based on interquartile ranges, or compare groups to find enrichment of extreme biological signals.
 homepage: https://github.com/ruggleslab/blackSheep/
+metadata:
+  docker_image: "quay.io/biocontainers/blacksheep-outliers:0.0.8--py_0"
 ---
-
 
 # blacksheep-outliers
 

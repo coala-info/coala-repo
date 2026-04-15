@@ -4,7 +4,6 @@ description: The r-viridislite tool generates colorblind-friendly and perceptual
 homepage: https://cloud.r-project.org/web/packages/viridisLite/index.html
 ---
 
-
 # r-viridislite
 
 name: r-viridislite

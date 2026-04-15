@@ -1,10 +1,12 @@
 ---
 name: cancer-variant-annotation-hg38-vep-based
-description: "This workflow performs comprehensive cancer variant annotation on hg38 genomic data using Ensembl VEP, vcfanno, and SnpSift to integrate clinical evidence from databases like CIViC and CGI. Use this skill when you need to identify pathogenic somatic mutations, assess loss of heterozygosity, or prioritize clinically actionable variants and biomarkers in cancer research datasets."
-homepage: https://workflowhub.eu/workflows/607
+description: This workflow performs comprehensive cancer variant annotation on hg38 genomic data using Ensembl VEP, vcfanno, and SnpSift to integrate clinical evidence from databases like CIViC and CGI. Use this skill when you need to identify pathogenic somatic mutations, assess loss of heterozygosity, or prioritize clinically actionable variants and biomarkers in cancer research datasets.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Cancer variant annotation (hg38 VEP-based)
+# cancer-variant-annotation-hg38-vep-based
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides a structured interface to access and manage t
 homepage: https://bioconductor.org/packages/release/data/experiment/html/msigdb.html
 ---
 
-
 # bioconductor-msigdb
 
 name: bioconductor-msigdb

@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data and identifier 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/porcine.db.html
 ---
 
-
 # bioconductor-porcine.db
 
 name: bioconductor-porcine.db

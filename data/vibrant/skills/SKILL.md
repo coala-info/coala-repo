@@ -2,8 +2,9 @@
 name: vibrant
 description: VIBRANT identifies viruses and integrated prophages in genomic data. Use when user asks to identify viruses, distinguish viral sequences from microbial backgrounds, annotate viral sequences, identify circular viral sequences, or extract prophages.
 homepage: https://github.com/AnantharamanLab/VIBRANT
+metadata:
+  docker_image: "quay.io/biocontainers/vibrant:1.2.1--hdfd78af_4"
 ---
-
 
 # vibrant
 

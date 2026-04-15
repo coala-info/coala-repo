@@ -4,7 +4,6 @@ description: The r-bipartite tool visualizes bipartite networks and calculates e
 homepage: https://cloud.r-project.org/web/packages/bipartite/index.html
 ---
 
-
 # r-bipartite
 
 name: r-bipartite

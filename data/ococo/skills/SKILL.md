@@ -2,8 +2,9 @@
 name: ococo
 description: Ococo performs online variant calling and consensus generation by processing sequence alignments in a stream using memory-efficient bit-counters. Use when user asks to call variants in VCF format, generate consensus sequences in FASTA format, or process alignment data from a pipe without intermediate storage.
 homepage: http://github.com/karel-brinda/ococo
+metadata:
+  docker_image: "quay.io/biocontainers/ococo:0.1.2.7--h077b44d_10"
 ---
-
 
 # ococo
 

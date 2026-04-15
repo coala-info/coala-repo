@@ -4,7 +4,6 @@ description: bioconductor-diffutr provides a framework for analyzing differentia
 homepage: https://bioconductor.org/packages/release/bioc/html/diffUTR.html
 ---
 
-
 # bioconductor-diffutr
 
 ## Overview

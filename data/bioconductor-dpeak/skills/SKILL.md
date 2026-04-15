@@ -4,7 +4,6 @@ description: Bioconductor-dpeak identifies high-resolution protein binding sites
 homepage: https://bioconductor.org/packages/3.11/bioc/html/dpeak.html
 ---
 
-
 # bioconductor-dpeak
 
 name: bioconductor-dpeak

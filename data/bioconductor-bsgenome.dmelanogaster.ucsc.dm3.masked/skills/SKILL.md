@@ -4,7 +4,6 @@ description: This package provides the full masked genome sequences for Drosophi
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm3.masked.html
 ---
 
-
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm3.masked
 
 name: bioconductor-bsgenome.dmelanogaster.ucsc.dm3.masked

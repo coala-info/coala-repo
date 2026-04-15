@@ -2,6 +2,8 @@
 name: pubmlst_client
 description: The pubmlst_client tool interacts with the pubMLST REST API to browse and download genomic typing schemes and allele definitions. Use when user asks to list available typing schemes, filter schemes by organism, or download locus sequences and profiles for species-specific characterization.
 homepage: https://github.com/Public-Health-Bioinformatics/pubmlst_client
+metadata:
+  docker_image: "quay.io/biocontainers/pubmlst_client:0.2.0--py_0"
 ---
 
 # pubmlst_client

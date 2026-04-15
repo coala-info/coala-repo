@@ -1,7 +1,9 @@
 ---
 name: ngs-smap
-description: "ngs-smap processes stack-based NGS data to define genomic loci and identify haplotypes from raw alignments. Use when user asks to delineate loci, call haplotypes, calculate genetic relationship matrices, or compare merged clusters."
+description: ngs-smap processes stack-based NGS data to define genomic loci and identify haplotypes from raw alignments. Use when user asks to delineate loci, call haplotypes, calculate genetic relationship matrices, or compare merged clusters.
 homepage: https://gitlab.com/truttink/smap
+metadata:
+  docker_image: "quay.io/biocontainers/ngs-smap:5.0.1--pyhdfd78af_0"
 ---
 
 # ngs-smap

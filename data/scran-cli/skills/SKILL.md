@@ -2,6 +2,8 @@
 name: scran-cli
 description: The scran-cli toolset provides a command-line interface for performing low-level analysis of single-cell transcriptomics data using the scran Bioconductor package. Use when user asks to normalize single-cell data, model gene variance, denoise PCA results, build SNN graphs for clustering, or identify marker genes.
 homepage: https://github.com/ebi-gene-expression-group/scran-cli
+metadata:
+  docker_image: "quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1"
 ---
 
 # scran-cli

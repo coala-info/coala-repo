@@ -4,7 +4,6 @@ description: OrganismDbi provides a unified interface to integrate and query mul
 homepage: https://bioconductor.org/packages/release/bioc/html/OrganismDbi.html
 ---
 
-
 # bioconductor-organismdbi
 
 ## Overview

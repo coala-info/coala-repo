@@ -4,7 +4,6 @@ description: This package provides mappings between MeSH identifiers and Entrez 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Mtr.eg.db.html
 ---
 
-
 # bioconductor-mesh.mtr.eg.db
 
 name: bioconductor-mesh.mtr.eg.db

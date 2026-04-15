@@ -1,9 +1,10 @@
 ---
 name: svtopo
-description: "Tool for complex structural variant (SV) visualization from HiFi sequencing data. Use when user asks to visualize complex structural variants, determine connections between SV breakends, or generate images of structural rearrangements."
+description: Tool for complex structural variant (SV) visualization from HiFi sequencing data. Use when user asks to visualize complex structural variants, determine connections between SV breakends, or generate images of structural rearrangements.
 homepage: https://github.com/PacificBiosciences/HiFi-SVTopo
+metadata:
+  docker_image: "quay.io/biocontainers/svtopo:0.3.0--h9ee0642_0"
 ---
-
 
 # svtopo
 

@@ -1,10 +1,12 @@
 ---
 name: generic-variation-analysis-on-wgs-pe-data
-description: "This workflow performs variant analysis on paired-end whole genome sequencing data by mapping reads with BWA-MEM and calling variants with LoFreq against a GenBank-formatted reference genome. Use this skill when you need to identify and annotate genetic variations across a wide range of allele frequencies in viral or bacterial samples using sensitive calling and SnpEff functional annotation."
-homepage: https://workflowhub.eu/workflows/357
+description: This workflow performs variant analysis on paired-end whole genome sequencing data by mapping reads with BWA-MEM and calling variants with LoFreq against a GenBank-formatted reference genome. Use this skill when you need to identify and annotate genetic variations across a wide range of allele frequencies in viral or bacterial samples using sensitive calling and SnpEff functional annotation.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Generic variation analysis on WGS PE data
+# generic-variation-analysis-on-wgs-pe-data
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool visualizes univariate data distributions by combining den
 homepage: https://cloud.r-project.org/web/packages/beanplot/index.html
 ---
 
-
 # r-beanplot
 
 name: r-beanplot

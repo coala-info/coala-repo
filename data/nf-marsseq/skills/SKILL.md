@@ -4,6 +4,8 @@ description: This pipeline preprocesses single-cell MARS-seq v2.0 data using FAS
 homepage: https://github.com/nf-core/marsseq
 ---
 
+# nf-core-marsseq
+
 ## Overview
 nf-core/marsseq is a bioinformatics pipeline designed for the preprocessing of single-cell RNA sequencing data generated using the MARS-seq v2.0 protocol. It handles the complexities of plate-based techniques, often combined with FACS, to study rare cell populations.
 

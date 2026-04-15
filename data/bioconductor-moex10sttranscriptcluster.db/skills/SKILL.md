@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moex10sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-moex10sttranscriptcluster.db
 
 name: bioconductor-moex10sttranscriptcluster.db

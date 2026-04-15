@@ -4,7 +4,6 @@ description: This package provides auxiliary datasets and curated gene set colle
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gageData.html
 ---
 
-
 # bioconductor-gagedata
 
 name: bioconductor-gagedata

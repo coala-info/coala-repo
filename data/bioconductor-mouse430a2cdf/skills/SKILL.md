@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2cdf.html
 ---
 
-
 # bioconductor-mouse430a2cdf
 
 name: bioconductor-mouse430a2cdf

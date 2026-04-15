@@ -1,7 +1,9 @@
 ---
 name: msisensor
-description: "MSIsensor detects replication slippage variants at microsatellite regions and differentiates them as somatic or germline. Use when analyzing tumor-normal paired sequence data to identify microsatellite instability (MSI)."
+description: MSIsensor detects replication slippage variants at microsatellite regions and differentiates them as somatic or germline. Use when analyzing tumor-normal paired sequence data to identify microsatellite instability (MSI).
 homepage: https://github.com/ding-lab/msisensor
+metadata:
+  docker_image: "quay.io/biocontainers/msisensor:0.5--hc755212_3"
 ---
 
 # msisensor

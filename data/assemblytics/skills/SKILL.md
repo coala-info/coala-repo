@@ -2,8 +2,9 @@
 name: assemblytics
 description: Assemblytics identifies six classes of genomic variants by analyzing alignment signatures between a de novo assembly and a reference genome. Use when user asks to identify structural variants from assembly alignments, call genomic variants using MUMmer delta files, or detect tandem and repeat expansions and contractions.
 homepage: http://assemblytics.com/
+metadata:
+  docker_image: "quay.io/biocontainers/assemblytics:1.2.1--0"
 ---
-
 
 # assemblytics
 

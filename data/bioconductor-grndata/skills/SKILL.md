@@ -4,7 +4,6 @@ description: This Bioconductor package provides synthetic gene expression datase
 homepage: https://bioconductor.org/packages/release/data/experiment/html/grndata.html
 ---
 
-
 # bioconductor-grndata
 
 ## Overview

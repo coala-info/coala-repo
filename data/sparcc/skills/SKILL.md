@@ -2,8 +2,9 @@
 name: sparcc
 description: SparCC estimates correlation coefficients between components in compositional datasets where only relative abundances are available. Use when user asks to calculate correlation matrices from microbial count tables, generate bootstrap replicates for significance testing, or compute pseudo-p-values for taxonomic interactions.
 homepage: https://bitbucket.org/yonatanf/sparcc
+metadata:
+  docker_image: "quay.io/biocontainers/sparcc:0.1.0--0"
 ---
-
 
 # sparcc
 

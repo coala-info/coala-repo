@@ -4,7 +4,6 @@ description: This package provides annotation mappings for the Affymetrix Human 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/huex10stprobeset.db.html
 ---
 
-
 # bioconductor-huex10stprobeset.db
 
 ## Overview

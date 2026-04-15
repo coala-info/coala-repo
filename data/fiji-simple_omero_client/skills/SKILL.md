@@ -2,8 +2,9 @@
 name: fiji-simple_omero_client
 description: This Java library provides a simplified API for interacting with OMERO servers within Fiji and ImageJ environments. Use when user asks to connect to an OMERO server, transfer images and metadata between ImageJ and OMERO, or manage ROIs and annotations programmatically.
 homepage: https://github.com/GReD-Clermont/simple-omero-client
+metadata:
+  docker_image: "quay.io/biocontainers/fiji:20250206--h9ee0642_1"
 ---
-
 
 # fiji-simple_omero_client
 

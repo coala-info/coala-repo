@@ -4,7 +4,6 @@ description: Bioconductor-egad evaluates gene networks and predicts gene functio
 homepage: https://bioconductor.org/packages/release/bioc/html/EGAD.html
 ---
 
-
 # bioconductor-egad
 
 name: bioconductor-egad

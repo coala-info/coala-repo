@@ -1,9 +1,8 @@
 ---
 name: bioconductor-nugomm1a520177.db
-description: "This package provides functional annotation data for the nugomm1a520177 mouse microarray platform. Use when user asks to map manufacturer probe identifiers to gene symbols, Entrez Gene IDs, MGI identifiers, GO terms, or KEGG pathways for Mus musculus data."
+description: This package provides functional annotation data for the nugomm1a520177 mouse microarray platform. Use when user asks to map manufacturer probe identifiers to gene symbols, Entrez Gene IDs, MGI identifiers, GO terms, or KEGG pathways for Mus musculus data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugomm1a520177.db.html
 ---
-
 
 # bioconductor-nugomm1a520177.db
 

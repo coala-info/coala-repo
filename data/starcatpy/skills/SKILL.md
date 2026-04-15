@@ -2,8 +2,9 @@
 name: starcatpy
 description: starcatpy annotates scRNA-Seq data by mapping cells onto established gene expression programs using a reference-based approach. Use when user asks to annotate single-cell RNA sequencing data, map cells to gene expression programs, or classify cell states using pre-built or custom references.
 homepage: https://github.com/immunogenomics/starCAT
+metadata:
+  docker_image: "quay.io/biocontainers/starcatpy:1.0.9--pyh7e72e81_0"
 ---
-
 
 # starcatpy
 

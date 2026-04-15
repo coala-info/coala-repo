@@ -4,7 +4,6 @@ description: The r-scistreer package infers maximum-likelihood phylogenetic tree
 homepage: https://cran.r-project.org/web/packages/scistreer/index.html
 ---
 
-
 # r-scistreer
 
 ## Overview

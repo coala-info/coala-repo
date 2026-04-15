@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File mapping for the Suga
 homepage: https://bioconductor.org/packages/release/data/annotation/html/sugarcanecdf.html
 ---
 
-
 # bioconductor-sugarcanecdf
 
 name: bioconductor-sugarcanecdf

@@ -1,9 +1,10 @@
 ---
 name: var-agg
-description: "This tool combines multiple VCF files into a single aggregated VCF. Use when user asks to combine VCF files, aggregate variants, or merge VCF data."
+description: This tool combines multiple VCF files into a single aggregated VCF. Use when user asks to combine VCF files, aggregate variants, or merge VCF data.
 homepage: https://github.com/bihealth/var-agg
+metadata:
+  docker_image: "quay.io/biocontainers/var-agg:0.1.1--h2c42bab_0"
 ---
-
 
 # var-agg
 

@@ -4,7 +4,6 @@ description: The geiger package provides tools for macroevolutionary analysis by
 homepage: https://cloud.r-project.org/web/packages/geiger/index.html
 ---
 
-
 # r-geiger
 
 ## Overview

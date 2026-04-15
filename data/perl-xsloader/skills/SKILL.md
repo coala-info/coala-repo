@@ -1,9 +1,10 @@
 ---
 name: perl-xsloader
-description: "XSLoader pulls compiled C or C++ code into a Perl namespace to enable the use of XS extensions. Use when user asks to load shared libraries into Perl modules, implement bootstrap calls for XS-based distributions, or use a lightweight alternative to DynaLoader."
+description: XSLoader pulls compiled C or C++ code into a Perl namespace to enable the use of XS extensions. Use when user asks to load shared libraries into Perl modules, implement bootstrap calls for XS-based distributions, or use a lightweight alternative to DynaLoader.
 homepage: https://metacpan.org/module/XSLoader
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xsloader:0.24--pl526_0"
 ---
-
 
 # perl-xsloader
 

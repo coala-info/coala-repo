@@ -2,8 +2,9 @@
 name: cyntenator
 description: Cyntenator identifies synteny and conserved gene order across multiple genomes by performing local alignments of gene sequences. Use when user asks to identify conserved gene blocks, perform multi-species synteny alignment, or find optimal gene order alignments using phylogenetic distances.
 homepage: https://github.com/dieterich-lab/cyntenator
+metadata:
+  docker_image: "quay.io/biocontainers/cyntenator:0.0.r2326--h9948957_4"
 ---
-
 
 # cyntenator
 

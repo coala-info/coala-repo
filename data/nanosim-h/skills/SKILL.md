@@ -1,9 +1,10 @@
 ---
 name: nanosim-h
-description: "NanoSim-H simulates Oxford Nanopore sequencing reads by capturing technology-specific error profiles and read length distributions. Use when user asks to simulate ONT reads, generate perfect reads from a reference, model circular genomes, or adjust specific error rates for nanopore data."
+description: NanoSim-H simulates Oxford Nanopore sequencing reads by capturing technology-specific error profiles and read length distributions. Use when user asks to simulate ONT reads, generate perfect reads from a reference, model circular genomes, or adjust specific error rates for nanopore data.
 homepage: https://github.com/karel-brinda/NanoSim-H
+metadata:
+  docker_image: "quay.io/biocontainers/nanosim-h:1.1.0.4--pyr341h24bf2e0_0"
 ---
-
 
 # nanosim-h
 

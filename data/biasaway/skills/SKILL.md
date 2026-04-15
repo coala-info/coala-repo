@@ -2,8 +2,9 @@
 name: biasaway
 description: BiasAway generates control sequence sets that match the nucleotide composition and GC content of a target set of genomic sequences. Use when user asks to generate shuffled background sequences, create GC-matched control sets from a genomic pool, or perform k-mer shuffling to preserve sequence properties.
 homepage: https://github.com/asntech/biasaway
+metadata:
+  docker_image: "quay.io/biocontainers/biasaway:3.3.0--py_0"
 ---
-
 
 # biasaway
 

@@ -4,7 +4,6 @@ description: MetMashR is an R package designed to manage, standardize, and merge
 homepage: https://bioconductor.org/packages/release/bioc/html/MetMashR.html
 ---
 
-
 # bioconductor-metmashr
 
 ## Overview

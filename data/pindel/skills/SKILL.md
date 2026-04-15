@@ -2,6 +2,8 @@
 name: pindel
 description: Pindel detects structural genomic variations such as deletions, insertions, and inversions by analyzing split-read alignments. Use when user asks to detect structural variants, identify genomic breakpoints, or convert Pindel output to VCF format.
 homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/pindel:0.2.5b9--h077b44d_12"
 ---
 
 # pindel

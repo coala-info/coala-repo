@@ -4,7 +4,6 @@ description: The heatmaps package visualizes functional genomics data and sequen
 homepage: https://bioconductor.org/packages/release/bioc/html/heatmaps.html
 ---
 
-
 # bioconductor-heatmaps
 
 ## Overview

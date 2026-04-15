@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Affymetrix Human 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene11sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-hugene11sttranscriptcluster.db
 
 name: bioconductor-hugene11sttranscriptcluster.db

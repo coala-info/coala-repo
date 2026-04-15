@@ -1,10 +1,12 @@
 ---
 name: 2025_2d_spot_detection
-description: "This bioimaging workflow retrieves images from the Image Data Resource by ID to perform 2D spot detection on specific channels and z-stacks using histogram equalization and automated blob detection tools. Use this skill when you need to identify and visualize punctate signals or smFISH spots within specific focal planes of large-scale public biological datasets."
-homepage: https://workflowhub.eu/workflows/1528
+description: This bioimaging workflow retrieves images from the Image Data Resource by ID to perform 2D spot detection on specific channels and z-stacks using histogram equalization and automated blob detection tools. Use this skill when you need to identify and visualize punctate signals or smFISH spots within specific focal planes of large-scale public biological datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# 2025_2D_spot_detection
+# 2025_2d_spot_detection
 
 ## Overview
 

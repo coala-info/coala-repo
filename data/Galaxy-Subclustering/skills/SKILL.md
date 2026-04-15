@@ -1,10 +1,12 @@
 ---
 name: subclustering
-description: "This single-cell RNA-seq workflow processes AnnData objects to isolate and re-analyze specific clusters using Scanpy tools for normalization, dimensionality reduction, and marker gene identification. Use this skill when you need to resolve finer cellular heterogeneity or identify distinct sub-states within a broad cell population identified during initial clustering."
-homepage: https://workflowhub.eu/workflows/1362
+description: This single-cell RNA-seq workflow processes AnnData objects to isolate and re-analyze specific clusters using Scanpy tools for normalization, dimensionality reduction, and marker gene identification. Use this skill when you need to resolve finer cellular heterogeneity or identify distinct sub-states within a broad cell population identified during initial clustering.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Subclustering
+# subclustering
 
 ## Overview
 

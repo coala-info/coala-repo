@@ -4,7 +4,6 @@ description: This tool performs segmentation and visualization of copy number da
 homepage: https://bioconductor.org/packages/3.5/bioc/html/copynumber.html
 ---
 
-
 # bioconductor-copynumber
 
 name: bioconductor-copynumber

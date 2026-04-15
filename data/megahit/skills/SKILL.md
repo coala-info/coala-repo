@@ -1,9 +1,10 @@
 ---
 name: megahit
-description: "MEGAHIT is a memory-efficient de Bruijn graph assembler designed for large-scale metagenomic sequencing data. Use when user asks to assemble contigs from metagenomic libraries, optimize assembly for high-diversity samples, or resume an interrupted assembly workflow."
+description: MEGAHIT is a memory-efficient de Bruijn graph assembler designed for large-scale metagenomic sequencing data. Use when user asks to assemble contigs from metagenomic libraries, optimize assembly for high-diversity samples, or resume an interrupted assembly workflow.
 homepage: https://github.com/voutcn/megahit
+metadata:
+  docker_image: "quay.io/biocontainers/megahit:1.2.9--haf24da9_8"
 ---
-
 
 # megahit
 

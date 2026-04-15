@@ -1,9 +1,10 @@
 ---
 name: nifflr
-description: "NIFFLR reconstructs and quantifies the transcriptome by aligning reference exons to long-read sequencing data to identify known and novel isoforms. Use when user asks to reconstruct the transcriptome, quantify transcript expression, identify novel isoforms, or detect high-confidence splicing events from long-read sequencing data."
+description: NIFFLR reconstructs and quantifies the transcriptome by aligning reference exons to long-read sequencing data to identify known and novel isoforms. Use when user asks to reconstruct the transcriptome, quantify transcript expression, identify novel isoforms, or detect high-confidence splicing events from long-read sequencing data.
 homepage: https://github.com/alguoo314/NIFFLR
+metadata:
+  docker_image: "quay.io/biocontainers/nifflr:2.0.0--pl5321haf24da9_0"
 ---
-
 
 # nifflr
 

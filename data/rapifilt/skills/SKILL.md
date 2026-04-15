@@ -2,8 +2,9 @@
 name: rapifilt
 description: rapifilt is a high-performance utility used for quality filtering and trimming DNA sequences in FASTQ files. Use when user asks to filter low-quality sequences, trim bases based on quality thresholds, or remove reads that do not meet minimum length requirements.
 homepage: https://github.com/andvides/RAPIFILT.git
+metadata:
+  docker_image: "quay.io/biocontainers/rapifilt:1.0--h5ca1c30_7"
 ---
-
 
 # rapifilt
 

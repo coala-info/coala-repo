@@ -1,10 +1,12 @@
 ---
 name: gigascience_database_merge_fragpipe_sts26t_demonstration
-description: "This workflow merges fusion and non-normal transcript databases to perform discovery peptidomics on RAW mass spectrometry data using FragPipe. Use this skill when you need to identify neoantigen candidates by searching proteomic data against customized databases containing fusion proteins and non-standard transcripts."
-homepage: https://workflowhub.eu/workflows/1793
+description: This workflow merges fusion and non-normal transcript databases to perform discovery peptidomics on RAW mass spectrometry data using FragPipe. Use this skill when you need to identify neoantigen candidates by searching proteomic data against customized databases containing fusion proteins and non-standard transcripts.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GigaScience_Database_merge_FragPipe_STS26T_demonstration
+# gigascience_database_merge_fragpipe_sts26t_demonstration
 
 ## Overview
 

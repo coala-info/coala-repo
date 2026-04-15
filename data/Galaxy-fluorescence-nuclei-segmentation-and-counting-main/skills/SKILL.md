@@ -1,10 +1,12 @@
 ---
 name: segmentation-and-counting-of-cell-nuclei-in-fluorescence-mic
-description: "This Galaxy workflow processes fluorescence microscopy images to segment and count cell nuclei using 2-D filtering, histogram equalization, and Otsu thresholding. Use this skill when you need to automate the identification of individual nuclei and obtain precise object counts or label maps from single-channel biological imaging data."
-homepage: https://workflowhub.eu/workflows/771
+description: This Galaxy workflow processes fluorescence microscopy images to segment and count cell nuclei using 2-D filtering, histogram equalization, and Otsu thresholding. Use this skill when you need to automate the identification of individual nuclei and obtain precise object counts or label maps from single-channel biological imaging data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Segmentation and counting of cell nuclei in fluorescence microscopy images
+# segmentation-and-counting-of-cell-nuclei-in-fluorescence-mic
 
 ## Overview
 

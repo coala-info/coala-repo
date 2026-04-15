@@ -4,7 +4,6 @@ description: This tool performs automated quality control and outlier detection 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/QUALIFIER.html
 ---
 
-
 # bioconductor-qualifier
 
 name: bioconductor-qualifier

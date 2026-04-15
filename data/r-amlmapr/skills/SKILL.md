@@ -4,7 +4,6 @@ description: This tool predicts transcriptional Acute Myeloid Leukemia subtypes 
 homepage: https://cran.r-project.org/web/packages/amlmapr/index.html
 ---
 
-
 # r-amlmapr
 
 name: r-amlmapr

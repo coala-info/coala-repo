@@ -2,8 +2,9 @@
 name: gdmicro
 description: GDmicro is a machine learning framework that classifies host disease status and identifies microbial biomarkers using graph convolutional networks and domain adaptation. Use when user asks to classify disease status from microbial abundance data, perform cross-study analysis, or identify top species contributing to a disease state.
 homepage: https://github.com/liaoherui/GDmicro
+metadata:
+  docker_image: "quay.io/biocontainers/gdmicro:1.0.10--pyhdfd78af_0"
 ---
-
 
 # gdmicro
 

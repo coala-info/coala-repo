@@ -2,8 +2,9 @@
 name: nanocall
 description: NanoCaller uses deep convolutional neural networks to detect SNPs and indels in long-read sequencing data from ONT and PacBio platforms. Use when user asks to call variants, perform local realignment for indels, or generate phased VCF and BAM files from long-read alignments.
 homepage: https://github.com/WGLab/NanoCaller
+metadata:
+  docker_image: "quay.io/biocontainers/nanocall:v0.7.4--0"
 ---
-
 
 # nanocall
 

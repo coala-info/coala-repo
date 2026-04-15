@@ -4,7 +4,6 @@ description: The receptLoss package identifies and quantifies the loss of recept
 homepage: https://bioconductor.org/packages/release/bioc/html/receptLoss.html
 ---
 
-
 # bioconductor-receptloss
 
 name: bioconductor-receptloss

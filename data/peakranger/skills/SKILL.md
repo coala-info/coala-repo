@@ -2,6 +2,8 @@
 name: peakranger
 description: PeakRanger is a high-performance software suite designed to analyze ChIP-Seq data by identifying enriched genomic regions and discovering precise summits. Use when user asks to call narrow or broad peaks, estimate library complexity, calculate signal-to-noise ratios, or generate wiggle files for visualization.
 homepage: https://anaconda.org/channels/bioconda/packages/peakranger/overview
+metadata:
+  docker_image: "quay.io/biocontainers/peakranger:1.18--hdcf5f25_9"
 ---
 
 # peakranger

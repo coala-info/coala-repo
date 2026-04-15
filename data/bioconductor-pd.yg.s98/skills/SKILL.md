@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.yg.s98.html
 ---
 
-
 # bioconductor-pd.yg.s98
 
 name: bioconductor-pd.yg.s98

@@ -2,8 +2,9 @@
 name: krakmeopen
 description: krakmeopen is a toolkit for calculating quality metrics and k-mer distribution statistics from Kraken 2 or StringMeUp taxonomic classifications. Use when user asks to analyze classification confidence, calculate lineage ratios, or aggregate k-mer tallies across multiple samples to identify false positive taxonomic assignments.
 homepage: https://github.com/danisven/KrakMeOpen
+metadata:
+  docker_image: "quay.io/biocontainers/krakmeopen:0.1.5--pyh3252c3a_0"
 ---
-
 
 # krakmeopen
 

@@ -2,8 +2,9 @@
 name: sompy
 description: sompy is a NumPy-based library for implementing Self-Organizing Maps to project high-dimensional data onto a lower-dimensional grid. Use when user asks to initialize SOM models, train competitive learning algorithms, or visualize topological properties of input data.
 homepage: https://github.com/ttlg/sompy
+metadata:
+  docker_image: "quay.io/biocontainers/sompy:0.1.1--py27h24bf2e0_0"
 ---
-
 
 # sompy
 

@@ -2,8 +2,9 @@
 name: scanpy-scripts
 description: Scanpy-scripts provides a command-line interface for executing single-cell RNA sequencing analysis workflows using the Scanpy library. Use when user asks to ingest 10x Genomics data, filter cells, normalize expression levels, perform dimensionality reduction, cluster cell populations, or identify marker genes.
 homepage: https://github.com/ebi-gene-expression-group/scanpy-scripts
+metadata:
+  docker_image: "quay.io/biocontainers/scanpy-scripts:1.9.301--pyhdfd78af_0"
 ---
-
 
 # scanpy-scripts
 

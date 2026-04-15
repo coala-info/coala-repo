@@ -1,10 +1,12 @@
 ---
 name: cutamprun
-description: "This epigenetics workflow processes CUT&RUN sequencing collections and reference ChIP-seq peaks using Trim Galore, Bowtie2, and MACS2 to perform alignment, peak calling, and motif discovery. Use this skill when you need to identify high-resolution protein-DNA interaction sites, analyze chromatin occupancy, or discover enriched sequence motifs in low-input genomic samples."
-homepage: https://workflowhub.eu/workflows/1562
+description: This epigenetics workflow processes CUT&RUN sequencing collections and reference ChIP-seq peaks using Trim Galore, Bowtie2, and MACS2 to perform alignment, peak calling, and motif discovery. Use this skill when you need to identify high-resolution protein-DNA interaction sites, analyze chromatin occupancy, or discover enriched sequence motifs in low-input genomic samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CUT&amp;RUN
+# cutamprun
 
 ## Overview
 

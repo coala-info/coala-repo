@@ -2,8 +2,9 @@
 name: perl-task-weaken
 description: This tool verifies that a Perl environment supports weak references to prevent memory leaks from circular dependencies. Use when user asks to verify weak reference support, audit Perl environments for memory management capabilities, or resolve dependencies for legacy Perl systems.
 homepage: http://metacpan.org/pod/Task-Weaken
+metadata:
+  docker_image: "quay.io/biocontainers/perl-task-weaken:1.06--pl526_0"
 ---
-
 
 # perl-task-weaken
 

@@ -4,7 +4,6 @@ description: This tool pre-processes raw 1H NMR metabolomic data to transform Br
 homepage: https://bioconductor.org/packages/release/bioc/html/PepsNMR.html
 ---
 
-
 # bioconductor-pepsnmr
 
 name: bioconductor-pepsnmr

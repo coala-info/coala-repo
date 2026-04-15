@@ -4,7 +4,6 @@ description: LowMACA identifies functional protein regions and mutation hotspots
 homepage: https://bioconductor.org/packages/3.8/bioc/html/LowMACA.html
 ---
 
-
 # bioconductor-lowmaca
 
 ## Overview

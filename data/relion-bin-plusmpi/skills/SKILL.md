@@ -2,8 +2,9 @@
 name: relion-bin-plusmpi
 description: RELION-bin-plusmpi performs 3D reconstruction and 2D class averaging for cryo-electron microscopy using MPI-parallelized and GPU-accelerated processing. Use when user asks to refine 3D reconstructions, perform 2D class averaging, execute MPI-parallelized image processing, or manage GPU-accelerated workflows in RELION 5.0.
 homepage: https://github.com/3dem/relion
+metadata:
+  docker_image: "biocontainers/relion-bin-plusmpi:v1.4dfsg-4-deb_cv1"
 ---
-
 
 # relion-bin-plusmpi
 

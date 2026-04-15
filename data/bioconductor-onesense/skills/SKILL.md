@@ -4,7 +4,6 @@ description: This tool performs one-dimensional stochastic embedding to visualiz
 homepage: https://bioconductor.org/packages/3.8/bioc/html/oneSENSE.html
 ---
 
-
 # bioconductor-onesense
 
 name: bioconductor-onesense

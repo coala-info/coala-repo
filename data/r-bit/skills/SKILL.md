@@ -4,7 +4,6 @@ description: The r-bit package provides memory-efficient boolean data classes an
 homepage: https://cloud.r-project.org/web/packages/bit/index.html
 ---
 
-
 # r-bit
 
 ## Overview

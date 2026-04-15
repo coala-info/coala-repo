@@ -1,7 +1,9 @@
 ---
 name: bedtools
-description: "bedtools is a suite of tools for performing genomic arithmetic and set theory operations on interval files. Use when user asks to intersect genomic features, merge overlapping intervals, find the closest features, calculate coverage, or manipulate BED, VCF, and BAM files."
+description: bedtools is a suite of tools for performing genomic arithmetic and set theory operations on interval files. Use when user asks to intersect genomic features, merge overlapping intervals, find the closest features, calculate coverage, or manipulate BED, VCF, and BAM files.
 homepage: http://bedtools.readthedocs.org/
+metadata:
+  docker_image: "quay.io/biocontainers/bedtools:2.31.1--h13024bc_3"
 ---
 
 # bedtools

@@ -4,7 +4,6 @@ description: This tool generates and customizes annotated heatmaps from Summariz
 homepage: https://bioconductor.org/packages/release/bioc/html/sechm.html
 ---
 
-
 # bioconductor-sechm
 
 name: bioconductor-sechm

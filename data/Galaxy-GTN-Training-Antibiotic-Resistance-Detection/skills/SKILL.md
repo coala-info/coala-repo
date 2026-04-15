@@ -1,10 +1,12 @@
 ---
 name: copy-of-gtn-training-antibiotic-resistance-detection
-description: "This metagenomics workflow processes Nanopore plasmid sequencing data using tools like NanoPlot, Unicycler, PlasFlow, and staramr to assemble sequences and identify antibiotic resistance genes. Use this skill when you need to characterize plasmid-borne antimicrobial resistance genes and reconstruct plasmid sequences from long-read metagenomic datasets."
-homepage: https://workflowhub.eu/workflows/406
+description: This metagenomics workflow processes Nanopore plasmid sequencing data using tools like NanoPlot, Unicycler, PlasFlow, and staramr to assemble sequences and identify antibiotic resistance genes. Use this skill when you need to characterize plasmid-borne antimicrobial resistance genes and reconstruct plasmid sequences from long-read metagenomic datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Copy Of GTN Training - Antibiotic Resistance Detection
+# copy-of-gtn-training-antibiotic-resistance-detection
 
 ## Overview
 

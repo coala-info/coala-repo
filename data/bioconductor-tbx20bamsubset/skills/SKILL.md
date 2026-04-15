@@ -4,7 +4,6 @@ description: This tool provides access to a subset of RNA-Seq BAM files and phen
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TBX20BamSubset.html
 ---
 
-
 # bioconductor-tbx20bamsubset
 
 name: bioconductor-tbx20bamsubset

@@ -4,7 +4,6 @@ description: This Bioconductor package provides programmatic access to miRBase m
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/mirbase.db.html
 ---
 
-
 # bioconductor-mirbase.db
 
 ## Overview

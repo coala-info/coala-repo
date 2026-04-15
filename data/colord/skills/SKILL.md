@@ -2,6 +2,8 @@
 name: colord
 description: colord is a genomic data utility designed to compress and decompress long-read sequencing data from Oxford Nanopore and PacBio platforms. Use when user asks to compress ONT or PacBio reads, manage quality score preservation, perform reference-based compression, or decompress colord archives.
 homepage: https://github.com/refresh-bio/colord
+metadata:
+  docker_image: "quay.io/biocontainers/colord:1.1.0--h9ee0642_0"
 ---
 
 # colord

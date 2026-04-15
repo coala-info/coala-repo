@@ -4,7 +4,6 @@ description: Imetagene provides a graphical and programmatic interface for analy
 homepage: https://bioconductor.org/packages/3.8/bioc/html/Imetagene.html
 ---
 
-
 # bioconductor-imetagene
 
 ## Overview

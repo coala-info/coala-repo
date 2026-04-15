@@ -1,10 +1,12 @@
 ---
 name: tb-variant-analysis-v10
-description: "This workflow processes Illumina sequence reads and a reference genome to identify Mycobacterium tuberculosis variants and drug resistance profiles using tools like fastp, snippy, Kraken2, and TB-Profiler. Use this skill when you need to characterize genetic diversity, detect lineage-specific mutations, or predict antibiotic susceptibility from clinical or environmental tuberculosis samples."
-homepage: https://workflowhub.eu/workflows/1035
+description: This workflow processes Illumina sequence reads and a reference genome to identify Mycobacterium tuberculosis variants and drug resistance profiles using tools like fastp, snippy, Kraken2, and TB-Profiler. Use this skill when you need to characterize genetic diversity, detect lineage-specific mutations, or predict antibiotic susceptibility from clinical or environmental tuberculosis samples.
+homepage: https://www.sanbi.ac.za/
+metadata:
+  docker_image: "N/A"
 ---
 
-# TB Variant Analysis v1.0
+# tb-variant-analysis-v10
 
 ## Overview
 

@@ -1,9 +1,12 @@
 ---
 name: covid-19-pubseq-pangenome-generate
-description: "This CWL workflow processes SARS-CoV-2 sequence data to construct, visualize, and index pangenome graphs using tools for read overlapping, graph induction, and odgi-based analysis. Use this skill when characterizing the evolutionary landscape of viral variants or identifying conserved and divergent genomic regions within large-scale COVID-19 sequence datasets."
-homepage: https://workflowhub.eu/workflows/63
+description: This CWL workflow processes SARS-CoV-2 sequence data to construct, visualize, and index pangenome graphs using tools for read overlapping, graph induction, and odgi-based analysis. Use this skill when characterizing the evolutionary landscape of viral variants or identifying conserved and divergent genomic regions within large-scale COVID-19 sequence datasets.
+homepage: http://covid-19.genenetwork.org/
+metadata:
+  docker_image: "N/A"
 ---
-# COVID-19 PubSeq Pangenome Generate
+
+# covid-19-pubseq-pangenome-generate
 
 ## Overview
 

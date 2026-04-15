@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-maker-short
-description: "This Galaxy workflow performs genome annotation by integrating genome sequences, EST/cDNA, and protein data using Maker, while validating results with Busco and visualizing them in JBrowse. Use this skill when you need to identify gene structures in a newly assembled genome and assess the completeness of the resulting gene set using ortholog benchmarks."
-homepage: https://workflowhub.eu/workflows/1549
+description: This Galaxy workflow performs genome annotation by integrating genome sequences, EST/cDNA, and protein data using Maker, while validating results with Busco and visualizing them in JBrowse. Use this skill when you need to identify gene structures in a newly assembled genome and assess the completeness of the resulting gene set using ortholog benchmarks.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome annotation with Maker (short)
+# genome-annotation-with-maker-short
 
 ## Overview
 

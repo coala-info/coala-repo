@@ -4,7 +4,6 @@ description: This tool simulates structural variations including deletions, inse
 homepage: https://bioconductor.org/packages/release/bioc/html/RSVSim.html
 ---
 
-
 # bioconductor-rsvsim
 
 name: bioconductor-rsvsim

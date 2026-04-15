@@ -4,7 +4,6 @@ description: This package manages MS/MS peptide-to-spectrum matches and optimize
 homepage: https://bioconductor.org/packages/release/bioc/html/MSnID.html
 ---
 
-
 # bioconductor-msnid
 
 name: bioconductor-msnid

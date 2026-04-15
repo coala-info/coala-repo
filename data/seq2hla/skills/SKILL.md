@@ -2,8 +2,9 @@
 name: seq2hla
 description: seq2HLA is an automated pipeline that performs HLA profiling and genotype identification from RNA-Seq sequence reads. Use when user asks to determine HLA genotypes, perform immune profiling from transcriptomic data, or estimate HLA allele expression levels.
 homepage: https://github.com/TRON-Bioinformatics/seq2HLA
+metadata:
+  docker_image: "quay.io/biocontainers/seq2hla:2.3--hdfd78af_1"
 ---
-
 
 # seq2hla
 

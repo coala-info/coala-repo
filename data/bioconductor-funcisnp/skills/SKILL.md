@@ -4,7 +4,6 @@ description: FunciSNP integrates GWAS association data with functional genomic f
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FunciSNP.html
 ---
 
-
 # bioconductor-funcisnp
 
 name: bioconductor-funcisnp

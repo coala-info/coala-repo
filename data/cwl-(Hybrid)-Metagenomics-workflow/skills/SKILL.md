@@ -1,9 +1,12 @@
 ---
 name: hybrid-metagenomics-workflow
-description: "This CWL workflow processes Illumina and long-read sequencing data to perform taxonomic classification, hybrid assembly, and binning using tools such as SPAdes, Flye, Kraken2, and Metabat2. Use this skill when you need to reconstruct high-quality metagenome-assembled genomes from complex microbial communities, assign taxonomic identities, and characterize the metabolic potential of individual species."
-homepage: https://workflowhub.eu/workflows/367
+description: This CWL workflow processes Illumina and long-read sequencing data to perform taxonomic classification, hybrid assembly, and binning using tools such as SPAdes, Flye, Kraken2, and Metabat2. Use this skill when you need to reconstruct high-quality metagenome-assembled genomes from complex microbial communities, assign taxonomic identities, and characterize the metabolic potential of individual species.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# (Hybrid) Metagenomics workflow
+
+# hybrid-metagenomics-workflow
 
 ## Overview
 

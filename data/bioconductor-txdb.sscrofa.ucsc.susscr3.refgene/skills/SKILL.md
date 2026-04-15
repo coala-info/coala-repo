@@ -1,9 +1,8 @@
 ---
 name: bioconductor-txdb.sscrofa.ucsc.susscr3.refgene
-description: "This package provides a TxDb object containing UCSC susScr3 refGene annotations for the pig genome. Use when user asks to access pig genomic coordinates, extract gene models, retrieve transcript structures, or perform genomic overlaps for the susScr3 assembly."
+description: This package provides a TxDb object containing UCSC susScr3 refGene annotations for the pig genome. Use when user asks to access pig genomic coordinates, extract gene models, retrieve transcript structures, or perform genomic overlaps for the susScr3 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Sscrofa.UCSC.susScr3.refGene.html
 ---
-
 
 # bioconductor-txdb.sscrofa.ucsc.susscr3.refgene
 

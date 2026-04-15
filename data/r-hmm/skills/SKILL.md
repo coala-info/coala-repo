@@ -4,7 +4,6 @@ description: This tool uses the R package HMM to build, simulate, and analyze di
 homepage: https://cran.r-project.org/web/packages/hmm/index.html
 ---
 
-
 # r-hmm
 
 name: r-hmm

@@ -2,6 +2,8 @@
 name: atlas-fastq-provider
 description: The atlas-fastq-provider is a suite of shell scripts designed to automate the retrieval and validation of genomic sequencing data from sources like ENA and the Human Cell Atlas. Use when user asks to download FASTQ files, validate remote file existence, fetch entire ENA libraries, or symlink local sequencing data into a project structure.
 homepage: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
+metadata:
+  docker_image: "quay.io/biocontainers/atlas-fastq-provider:0.4.8--hdfd78af_0"
 ---
 
 # atlas-fastq-provider

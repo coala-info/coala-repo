@@ -2,8 +2,9 @@
 name: dinosaur
 description: Dinosaur detects peptide features in MS1 mass spectrometry data. Use when user asks to detect peptide features, process mzML files, or perform isotope pattern clustering for proteomics analysis.
 homepage: https://github.com/fickludd/dinosaur
+metadata:
+  docker_image: "quay.io/biocontainers/dinosaur:1.2.0--hdfd78af_1"
 ---
-
 
 # dinosaur
 

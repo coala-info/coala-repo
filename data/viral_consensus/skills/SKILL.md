@@ -2,8 +2,9 @@
 name: viral_consensus
 description: ViralConsensus calls consensus sequences directly from read alignments. Use when user asks to call consensus sequences, reconstruct a genome, trim primer sequences, or generate base and insertion counts.
 homepage: https://github.com/niemasd/ViralConsensus
+metadata:
+  docker_image: "quay.io/biocontainers/viral-host-hunter:0.2.0--pyhdfd78af_1"
 ---
-
 
 # viral_consensus
 

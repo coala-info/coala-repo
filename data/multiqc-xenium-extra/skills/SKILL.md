@@ -2,8 +2,9 @@
 name: multiqc-xenium-extra
 description: This MultiQC plugin provides enhanced reporting and granular metrics for Xenium spatial transcriptomics datasets. Use when user asks to generate quality control reports for Xenium experiments, assess probe performance and cell segmentation, or identify batch effects in spatial transcriptomics data.
 homepage: https://seqera.io/multiqc
+metadata:
+  docker_image: "quay.io/biocontainers/multiqc-xenium-extra:1.0.2--pyhdfd78af_0"
 ---
-
 
 # multiqc-xenium-extra
 

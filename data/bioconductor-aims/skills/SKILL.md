@@ -4,7 +4,6 @@ description: This tool assigns breast cancer molecular subtypes to gene expressi
 homepage: https://bioconductor.org/packages/release/bioc/html/AIMS.html
 ---
 
-
 # bioconductor-aims
 
 name: bioconductor-aims

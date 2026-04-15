@@ -4,7 +4,6 @@ description: This tool provides an R interface to the WikiPathways API for query
 homepage: https://bioconductor.org/packages/release/bioc/html/rWikiPathways.html
 ---
 
-
 # bioconductor-rwikipathways
 
 name: bioconductor-rwikipathways

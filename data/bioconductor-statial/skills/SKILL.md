@@ -4,7 +4,6 @@ description: Statial performs context-aware statistical analysis of spatial rela
 homepage: https://bioconductor.org/packages/release/bioc/html/Statial.html
 ---
 
-
 # bioconductor-statial
 
 ## Overview

@@ -4,7 +4,6 @@ description: The r-micropan tool provides a comprehensive set of R functions for
 homepage: https://cran.r-project.org/web/packages/micropan/index.html
 ---
 
-
 # r-micropan
 
 name: r-micropan

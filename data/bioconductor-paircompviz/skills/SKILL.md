@@ -4,7 +4,6 @@ description: This tool visualizes multiple pairwise comparison test results usin
 homepage: https://bioconductor.org/packages/release/bioc/html/paircompviz.html
 ---
 
-
 # bioconductor-paircompviz
 
 name: bioconductor-paircompviz

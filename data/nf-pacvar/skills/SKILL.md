@@ -4,6 +4,8 @@ description: This pipeline processes PacBio long-read sequencing data from a sam
 homepage: https://github.com/nf-core/pacvar
 ---
 
+# pacvar
+
 ## Overview
 nf-core/pacvar is designed to handle the specific requirements of PacBio long-read data, offering specialized workflows for both whole-genome sequencing (WGS) and PureTarget expansion panels. It addresses the biological challenge of accurately identifying small variants, structural variants, and complex tandem repeats by leveraging PacBio-specific tools like pbmm2 and TRGT.
 

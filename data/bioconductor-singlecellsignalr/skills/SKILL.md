@@ -4,7 +4,6 @@ description: SingleCellSignalR is an R package designed to infer and visualize c
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleCellSignalR.html
 ---
 
-
 # bioconductor-singlecellsignalr
 
 ## Overview

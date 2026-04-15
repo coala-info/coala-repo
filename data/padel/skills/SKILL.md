@@ -2,8 +2,9 @@
 name: padel
 description: The padel tool applies computer vision to game recordings to track players and the ball while classifying specific strokes and movements. Use when user asks to analyze padel match videos, track player positions on a 2D court, or generate performance metrics like error rates and heatmaps.
 homepage: https://github.com/Joao-M-Silva/padel_analytics
+metadata:
+  docker_image: "quay.io/biocontainers/padel:2.21"
 ---
-
 
 # padel
 

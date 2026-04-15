@@ -2,6 +2,8 @@
 name: deepbgc
 description: DeepBGC uses deep learning to identify and classify biosynthetic gene clusters in genomic sequences. Use when user asks to detect novel secondary metabolite clusters, train custom BGC models, or prepare Pfam domain annotations from genomic data.
 homepage: https://github.com/Merck/DeepBGC
+metadata:
+  docker_image: "quay.io/biocontainers/deepbgc:0.1.31--pyhca03a8a_0"
 ---
 
 # deepbgc

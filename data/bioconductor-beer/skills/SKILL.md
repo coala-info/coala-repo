@@ -4,7 +4,6 @@ description: This tool analyzes Phage immuno-precipitation sequencing (PhIP-seq)
 homepage: https://bioconductor.org/packages/release/bioc/html/beer.html
 ---
 
-
 # bioconductor-beer
 
 name: bioconductor-beer

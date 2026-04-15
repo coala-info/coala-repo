@@ -2,6 +2,8 @@
 name: ema
 description: EMA is a specialized alignment tool that leverages shared barcode information to resolve mapping ambiguities in linked-read sequencing data. Use when user asks to count barcodes, preprocess binned reads, or align barcoded FASTQ files to a reference genome using a latent variable model.
 homepage: http://ema.csail.mit.edu/
+metadata:
+  docker_image: "quay.io/biocontainers/ema:0.7.0--h5ca1c30_2"
 ---
 
 # ema

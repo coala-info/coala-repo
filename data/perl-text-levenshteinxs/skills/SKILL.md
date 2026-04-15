@@ -2,8 +2,9 @@
 name: perl-text-levenshteinxs
 description: This tool provides a high-performance C-based implementation for calculating the Levenshtein edit distance between strings. Use when user asks to calculate string similarity, perform spell-checking logic, or deduplicate data using the Levenshtein algorithm in Perl.
 homepage: http://metacpan.org/pod/Text::LevenshteinXS
+metadata:
+  docker_image: "quay.io/biocontainers/perl-text-levenshteinxs:0.03--pl526h14c3975_0"
 ---
-
 
 # perl-text-levenshteinxs
 

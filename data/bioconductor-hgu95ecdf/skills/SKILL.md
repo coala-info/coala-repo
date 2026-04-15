@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95ecdf.html
 ---
 
-
 # bioconductor-hgu95ecdf
 
 name: bioconductor-hgu95ecdf

@@ -2,8 +2,9 @@
 name: haplotype-lso
 description: The haplotype-lso tool identifies and haplotypes Candidatus Liberibacter solanacearum from Sanger sequencing data. Use when user asks to identify Lso species, assign haplotypes to Sanger sequences, or process sequence data according to the IPPC DP 21 standard.
 homepage: https://github.com/holtgrewe/haplotype-lso
+metadata:
+  docker_image: "quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4"
 ---
-
 
 # haplotype-lso
 

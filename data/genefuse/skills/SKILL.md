@@ -2,8 +2,9 @@
 name: genefuse
 description: GeneFuse detects gene fusions directly from raw FASTQ files without requiring prior alignment to a reference genome. Use when user asks to detect gene fusions, identify druggable or COSMIC-curated fusions, or generate visualizations of fusion breakpoints and supporting reads.
 homepage: https://github.com/OpenGene/genefuse
+metadata:
+  docker_image: "quay.io/biocontainers/genefuse:0.8.0--h5ca1c30_4"
 ---
-
 
 # genefuse
 

@@ -1,10 +1,12 @@
 ---
 name: proteome-annotation
-description: "This proteomics workflow processes protein lists from LC-MS/MS experiments using ID conversion, tissue-specific expression mapping, GO enrichment, and pathway analysis tools. Use this skill when you need to functionally annotate identified proteins, compare multiple proteomic datasets via Venn diagrams, and identify enriched biological pathways or tissue-specific expression patterns in your samples."
-homepage: https://workflowhub.eu/workflows/1414
+description: This proteomics workflow processes protein lists from LC-MS/MS experiments using ID conversion, tissue-specific expression mapping, GO enrichment, and pathway analysis tools. Use this skill when you need to functionally annotate identified proteins, compare multiple proteomic datasets via Venn diagrams, and identify enriched biological pathways or tissue-specific expression patterns in your samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# 'Proteome Annotation'
+# proteome-annotation
 
 ## Overview
 

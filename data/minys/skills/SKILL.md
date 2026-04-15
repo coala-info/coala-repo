@@ -2,6 +2,8 @@
 name: minys
 description: MinYS extracts and assembles specific bacterial genomes from metagenomic datasets by using a reference genome as bait to recruit relevant reads. Use when user asks to assemble symbiont genomes from metagenomes, fill gaps in genomic assemblies, or convert GFA files to FASTA format.
 homepage: https://github.com/cguyomar/MinYS
+metadata:
+  docker_image: "quay.io/biocontainers/minys:1.1--hc9558a2_1"
 ---
 
 # minys

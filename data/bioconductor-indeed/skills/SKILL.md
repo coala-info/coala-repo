@@ -4,7 +4,6 @@ description: The bioconductor-indeed package identifies biomarkers by integratin
 homepage: https://bioconductor.org/packages/release/bioc/html/INDEED.html
 ---
 
-
 # bioconductor-indeed
 
 ## Overview

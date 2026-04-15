@@ -2,8 +2,9 @@
 name: pronto
 description: Pronto manages, parses, and exports ontology data through a high-level Python interface. Use when user asks to load ontologies from files or URLs, navigate class hierarchies, create or edit ontological terms, and convert between formats like OWL and OBO.
 homepage: https://github.com/althonos/pronto
+metadata:
+  docker_image: "quay.io/biocontainers/pronto:2.6.0--pyhdfd78af_0"
 ---
-
 
 # pronto
 

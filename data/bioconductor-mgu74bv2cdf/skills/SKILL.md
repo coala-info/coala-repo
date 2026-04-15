@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74bv2cdf.html
 ---
 
-
 # bioconductor-mgu74bv2cdf
 
 name: bioconductor-mgu74bv2cdf

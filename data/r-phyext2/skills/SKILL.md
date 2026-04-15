@@ -4,7 +4,6 @@ description: The r-phyext2 package provides specialized classes and methods for 
 homepage: https://cran.r-project.org/web/packages/phyext2/index.html
 ---
 
-
 # r-phyext2
 
 ## Overview

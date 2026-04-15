@@ -4,7 +4,6 @@ description: This package provides metadata to link MassBank database releases w
 homepage: https://bioconductor.org/packages/release/bioc/html/AHMassBank.html
 ---
 
-
 # bioconductor-ahmassbank
 
 ## Overview

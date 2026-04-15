@@ -1,9 +1,10 @@
 ---
 name: pneumocat
-description: "PneumoCaT assigns serotypes to *Streptococcus pneumoniae* genomic data using a hierarchical mapping and variant-calling approach. Use when user asks to assign serotypes to pneumococcal genomic data, differentiate between serotypes within a serogroup, or perform capsular typing on Illumina fastq files."
+description: PneumoCaT assigns serotypes to *Streptococcus pneumoniae* genomic data using a hierarchical mapping and variant-calling approach. Use when user asks to assign serotypes to pneumococcal genomic data, differentiate between serotypes within a serogroup, or perform capsular typing on Illumina fastq files.
 homepage: https://github.com/phe-bioinformatics/pneumocat/archive/v1.1.tar.gz
+metadata:
+  docker_image: "quay.io/biocontainers/pneumocat:1.2.1--0"
 ---
-
 
 # pneumocat
 

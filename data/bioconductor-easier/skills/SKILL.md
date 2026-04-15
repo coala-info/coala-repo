@@ -4,7 +4,6 @@ description: This tool analyzes tumor RNA-seq data to predict patient response t
 homepage: https://bioconductor.org/packages/release/bioc/html/easier.html
 ---
 
-
 # bioconductor-easier
 
 name: bioconductor-easier

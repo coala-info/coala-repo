@@ -4,7 +4,6 @@ description: R/qtl provides an interactive environment for mapping quantitative 
 homepage: https://cloud.r-project.org/web/packages/qtl/index.html
 ---
 
-
 # r-qtl
 
 name: r-qtl

@@ -4,7 +4,6 @@ description: This tool visualizes genomic signal distributions by creating coord
 homepage: https://bioconductor.org/packages/release/bioc/html/epistack.html
 ---
 
-
 # bioconductor-epistack
 
 name: bioconductor-epistack

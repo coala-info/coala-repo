@@ -2,8 +2,9 @@
 name: socru
 description: socru describes and compares the macro-structure of bacterial genomes by using ribosomal operons as genomic landmarks to determine the order and orientation of intervening sequences. Use when user asks to characterize genomic rearrangements, determine the structural profile of a complete assembly, or identify novel chromosomal orientations.
 homepage: https://github.com/quadram-institute-bioscience/socru
+metadata:
+  docker_image: "quay.io/biocontainers/socru:2.2.5--pyhdfd78af_0"
 ---
-
 
 # socru
 

@@ -2,8 +2,9 @@
 name: pydpi
 description: pydpi calculates structural and physicochemical descriptors for small molecules and proteins to facilitate drug-protein interaction modeling. Use when user asks to calculate molecular descriptors from SMILES, extract features from protein sequences, or generate integrated feature vectors for chemogenomics and machine learning.
 homepage: http://cbdd.csu.edu.cn/index
+metadata:
+  docker_image: "quay.io/biocontainers/pydpi:1.0--py_0"
 ---
-
 
 # pydpi
 

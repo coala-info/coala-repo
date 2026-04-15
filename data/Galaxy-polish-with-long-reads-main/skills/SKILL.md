@@ -1,10 +1,12 @@
 ---
 name: assembly-polishing-with-long-reads
-description: "This workflow performs four rounds of iterative genome assembly polishing by mapping long reads to a draft assembly with minimap2 and generating consensus sequences using Racon. Use this skill when you need to improve the base-level accuracy and correct errors in a draft genome assembly using PacBio or Oxford Nanopore sequencing data."
-homepage: https://workflowhub.eu/workflows/563
+description: This workflow performs four rounds of iterative genome assembly polishing by mapping long reads to a draft assembly with minimap2 and generating consensus sequences using Racon. Use this skill when you need to improve the base-level accuracy and correct errors in a draft genome assembly using PacBio or Oxford Nanopore sequencing data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly polishing with long reads
+# assembly-polishing-with-long-reads
 
 ## Overview
 

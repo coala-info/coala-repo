@@ -4,7 +4,6 @@ description: This tool performs meta-analysis by combining independent p-values 
 homepage: https://cran.r-project.org/web/packages/metap/index.html
 ---
 
-
 # r-metap
 
 name: r-metap

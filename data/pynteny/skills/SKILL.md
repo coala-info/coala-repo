@@ -2,6 +2,8 @@
 name: pynteny
 description: Pynteny searches for syntenic blocks and conserved gene arrangements within prokaryotic sequence data using profile HMMs. Use when user asks to identify operons, search for specific genomic structures, or find groups of genes with defined relative positions and orientations.
 homepage: http://github.com/robaina/Pynteny
+metadata:
+  docker_image: "quay.io/biocontainers/pynteny:1.0.0--py310hec16e2b_0"
 ---
 
 # pynteny

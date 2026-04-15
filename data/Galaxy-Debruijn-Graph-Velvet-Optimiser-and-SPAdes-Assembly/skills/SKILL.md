@@ -1,10 +1,12 @@
 ---
 name: debruijn-graph-velvet-optimiser-and-spades-assembly
-description: "This Galaxy workflow performs de novo genome assembly on paired-end FASTQ reads using VelvetOptimiser and SPAdes to generate contigs, assembly statistics, and visualization plots. Use this skill when you need to reconstruct a microbial or small genome from short-read sequencing data and compare the performance of different De Bruijn graph-based assembly algorithms."
-homepage: https://workflowhub.eu/workflows/2047
+description: This Galaxy workflow performs de novo genome assembly on paired-end FASTQ reads using VelvetOptimiser and SPAdes to generate contigs, assembly statistics, and visualization plots. Use this skill when you need to reconstruct a microbial or small genome from short-read sequencing data and compare the performance of different De Bruijn graph-based assembly algorithms.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Debruijn Graph Velvet Optimiser and SPAdes Assembly
+# debruijn-graph-velvet-optimiser-and-spades-assembly
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: spliceai-wrapper
 description: This tool accelerates SpliceAI variant annotation by using a caching layer and a precomputed SQLite3 database to avoid redundant computations. Use when user asks to annotate VCF files with splice site predictions, prepare a precomputed database of scores, or speed up variant interpretation pipelines.
 homepage: https://github.com/bihealth/spliceai-wrapper
+metadata:
+  docker_image: "quay.io/biocontainers/spliceai-wrapper:0.1.0--0"
 ---
-
 
 # spliceai-wrapper
 

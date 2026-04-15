@@ -4,6 +4,8 @@ description: This pipeline generates proteogenomics protein databases by integra
 homepage: https://github.com/nf-core/proteogenomicsdb
 ---
 
+# proteogenomicsdb
+
 ## Overview
 nf-core/pgdb addresses the need for comprehensive protein databases in proteogenomics by combining standard reference proteomes with non-canonical and variant-derived sequences. It leverages the pypgatk framework to translate genomic information into protein-level sequences suitable for mass spectrometry search engines.
 

@@ -1,10 +1,12 @@
 ---
 name: assembly-polishing
-description: "This bioinformatics workflow improves the accuracy of a draft genome assembly using long and short reads through iterative polishing with Racon and Medaka. Use this skill when you need to correct base-call errors and improve the consensus sequence of a de novo assembly using a hybrid approach of nanopore and Illumina sequencing data."
-homepage: https://workflowhub.eu/workflows/226
+description: This bioinformatics workflow improves the accuracy of a draft genome assembly using long and short reads through iterative polishing with Racon and Medaka. Use this skill when you need to correct base-call errors and improve the consensus sequence of a de novo assembly using a hybrid approach of nanopore and Illumina sequencing data.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly polishing
+# assembly-polishing
 
 ## Overview
 

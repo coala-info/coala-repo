@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the M
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.medicago.html
 ---
 
-
 # bioconductor-pd.medicago
 
 name: bioconductor-pd.medicago

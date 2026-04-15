@@ -1,9 +1,10 @@
 ---
 name: isospecpy
-description: "isospecpy calculates the isotopic distribution and fine structure of molecules using the IsoSpec++ library. Use when user asks to calculate isotopic envelopes, determine mass spectrometry peak probabilities, or find the isotopic distribution of a chemical formula."
+description: isospecpy calculates the isotopic distribution and fine structure of molecules using the IsoSpec++ library. Use when user asks to calculate isotopic envelopes, determine mass spectrometry peak probabilities, or find the isotopic distribution of a chemical formula.
 homepage: http://matteolacki.github.io/IsoSpec/
+metadata:
+  docker_image: "quay.io/biocontainers/isospecpy:2.2.2--py311h8ddd9a4_2"
 ---
-
 
 # isospecpy
 

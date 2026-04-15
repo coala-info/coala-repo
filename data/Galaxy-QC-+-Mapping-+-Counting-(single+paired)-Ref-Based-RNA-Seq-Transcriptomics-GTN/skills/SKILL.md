@@ -1,10 +1,12 @@
 ---
 name: qc-mapping-counting-singlepaired-ref-based-rna-seq-transcrip
-description: "This transcriptomics workflow processes single-end and paired-end RNA-Seq FASTQ files through quality control, adapter trimming with Cutadapt, reference-based alignment using RNA STAR, and gene-level quantification with featureCounts. Use this skill when you need to generate expression count matrices and quality metrics from raw sequencing data to support downstream differential gene expression analysis in reference-based transcriptomic studies."
-homepage: https://workflowhub.eu/workflows/1715
+description: This transcriptomics workflow processes single-end and paired-end RNA-Seq FASTQ files through quality control, adapter trimming with Cutadapt, reference-based alignment using RNA STAR, and gene-level quantification with featureCounts. Use this skill when you need to generate expression count matrices and quality metrics from raw sequencing data to support downstream differential gene expression analysis in reference-based transcriptomic studies.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# QC + Mapping + Counting (single+paired) - Ref Based RNA Seq - Transcriptomics - GTN
+# qc-mapping-counting-singlepaired-ref-based-rna-seq-transcrip
 
 ## Overview
 

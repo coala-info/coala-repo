@@ -4,7 +4,6 @@ description: This tool queries the Expression Atlas RDF store to retrieve gene e
 homepage: https://bioconductor.org/packages/3.5/bioc/html/AtlasRDF.html
 ---
 
-
 # bioconductor-atlasrdf
 
 name: bioconductor-atlasrdf

@@ -2,8 +2,9 @@
 name: gnparser
 description: The gnparser tool transforms unstructured biological scientific names into structured data by identifying components like genus, specific epithet, and authority information. Use when user asks to parse taxonomic names, clean taxonomic lists, or convert scientific names into JSON, CSV, or TSV formats.
 homepage: https://parser.globalnames.org/
+metadata:
+  docker_image: "quay.io/biocontainers/gnparser:1.14.2--he881be0_0"
 ---
-
 
 # gnparser
 

@@ -4,7 +4,6 @@ description: This package performs gene-set enrichment analysis for rare copy nu
 homepage: https://bioconductor.org/packages/release/bioc/html/cnvGSA.html
 ---
 
-
 # bioconductor-cnvgsa
 
 ## Overview

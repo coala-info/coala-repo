@@ -2,8 +2,9 @@
 name: perl-sql-abstract
 description: This tool generates SQL statements from Perl data structures. Use when user asks to generate SQL queries from Perl hashes, build complex WHERE clauses, or create INSERT, UPDATE, and DELETE statements programmatically.
 homepage: http://metacpan.org/pod/SQL-Abstract
+metadata:
+  docker_image: "quay.io/biocontainers/perl-sql-abstract:2.000001--pl5321hdfd78af_0"
 ---
-
 
 # perl-sql-abstract
 

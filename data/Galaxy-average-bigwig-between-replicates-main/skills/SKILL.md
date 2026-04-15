@@ -1,10 +1,12 @@
 ---
 name: average-bigwig-between-replicates
-description: "This Galaxy workflow processes a collection of normalized BigWig files by grouping them based on sample name suffixes and calculating an average coverage track using deepTools bigwigAverage. Use this skill when you need to merge biological replicates into a single representative coverage profile per experimental condition for downstream visualization or comparative genomics."
-homepage: https://workflowhub.eu/workflows/579
+description: This Galaxy workflow processes a collection of normalized BigWig files by grouping them based on sample name suffixes and calculating an average coverage track using deepTools bigwigAverage. Use this skill when you need to merge biological replicates into a single representative coverage profile per experimental condition for downstream visualization or comparative genomics.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Average Bigwig between replicates
+# average-bigwig-between-replicates
 
 ## Overview
 

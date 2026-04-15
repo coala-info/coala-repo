@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis of digital gene
 homepage: https://bioconductor.org/packages/release/bioc/html/edgeR.html
 ---
 
-
 # bioconductor-edger
 
 name: bioconductor-edger

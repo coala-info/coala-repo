@@ -4,7 +4,6 @@ description: This Bioconductor package provides a comprehensive annotation resou
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HPO.db.html
 ---
 
-
 # bioconductor-hpo.db
 
 ## Overview

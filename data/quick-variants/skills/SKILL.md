@@ -2,8 +2,9 @@
 name: quick-variants
 description: quick-variants extracts variant information from sequence alignments to generate VCF or tabular mutation formats. Use when user asks to call variants from SAM files, filter mutations based on depth and fraction thresholds, or optimize memory usage for ordered and unordered sequence data.
 homepage: https://github.com/caozhichongchong/QuickVariants
+metadata:
+  docker_image: "quay.io/biocontainers/quick-variants:1.2.4--hdfd78af_0"
 ---
-
 
 # quick-variants
 

@@ -4,7 +4,6 @@ description: This tool performs quality control and generates summary statistics
 homepage: https://cran.r-project.org/web/packages/minionqc/index.html
 ---
 
-
 # r-minionqc
 
 name: r-minionqc

@@ -1,10 +1,12 @@
 ---
 name: image-learner-ham10000
-description: "This Galaxy workflow utilizes the Image Learner tool to perform deep learning classification on skin lesion datasets using HAM10000 image metadata and resized image archives. Use this skill when you need to automate the identification and categorization of pigmented skin lesions from dermatoscopic imagery for medical imaging research."
-homepage: https://workflowhub.eu/workflows/2073
+description: This Galaxy workflow utilizes the Image Learner tool to perform deep learning classification on skin lesion datasets using HAM10000 image metadata and resized image archives. Use this skill when you need to automate the identification and categorization of pigmented skin lesions from dermatoscopic imagery for medical imaging research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Image Learner - HAM10000
+# image-learner-ham10000
 
 ## Overview
 

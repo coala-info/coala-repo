@@ -2,8 +2,9 @@
 name: quicksnp
 description: QuickSNP constructs Neighbor Joining trees from pre-computed SNP distance matrices. Use when user asks to build a Neighbor Joining tree, generate a Newick file from a square distance matrix, or create a phylogenetic tree from SNP distances.
 homepage: https://github.com/k-florek/QuickSNP
+metadata:
+  docker_image: "quay.io/biocontainers/quicksnp:1.0.1--py311hdfd78af_0"
 ---
-
 
 # quicksnp
 

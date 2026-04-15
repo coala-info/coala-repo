@@ -2,8 +2,9 @@
 name: pyinotify
 description: Pyinotify provides a Python interface to the Linux kernel's inotify mechanism for monitoring filesystem events. Use when user asks to monitor directories or files for changes, receive real-time notifications of file system events, or replace polling-based file monitoring with event-driven scripts.
 homepage: https://github.com/seb-m/pyinotify
+metadata:
+  docker_image: "quay.io/biocontainers/pyinotify:0.9.6--py36_0"
 ---
-
 
 # pyinotify
 

@@ -4,7 +4,6 @@ description: This tool provides access to tidy-formatted DNA methylation data fr
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.methylation.html
 ---
 
-
 # bioconductor-rtcga.methylation
 
 name: bioconductor-rtcga.methylation

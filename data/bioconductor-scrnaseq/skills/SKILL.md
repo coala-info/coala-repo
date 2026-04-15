@@ -4,7 +4,6 @@ description: This tool provides access to curated single-cell RNA-seq datasets a
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html
 ---
 
-
 # bioconductor-scrnaseq
 
 name: bioconductor-scrnaseq

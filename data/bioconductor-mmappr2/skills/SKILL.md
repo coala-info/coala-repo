@@ -4,7 +4,6 @@ description: MMAPPR2 identifies causative mutations from forward genetic screens
 homepage: https://bioconductor.org/packages/3.10/bioc/html/MMAPPR2.html
 ---
 
-
 # bioconductor-mmappr2
 
 ## Overview

@@ -1,7 +1,9 @@
 ---
 name: rustyread
-description: "rustyread is a high-performance long-read simulator that generates synthetic sequencing reads from a reference genome. Use when user asks to simulate long reads, generate synthetic Nanopore data, or create reads with specific error profiles and fragment lengths."
+description: rustyread is a high-performance long-read simulator that generates synthetic sequencing reads from a reference genome. Use when user asks to simulate long reads, generate synthetic Nanopore data, or create reads with specific error profiles and fragment lengths.
 homepage: https://github.com/natir/rustyread
+metadata:
+  docker_image: "quay.io/biocontainers/rustyread:0.4.1--heebf65f_4"
 ---
 
 # rustyread

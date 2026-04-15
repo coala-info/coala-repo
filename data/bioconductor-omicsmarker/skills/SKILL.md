@@ -4,7 +4,6 @@ description: This tool performs classification and feature selection for high-di
 homepage: https://bioconductor.org/packages/3.8/bioc/html/OmicsMarkeR.html
 ---
 
-
 # bioconductor-omicsmarker
 
 name: bioconductor-omicsmarker

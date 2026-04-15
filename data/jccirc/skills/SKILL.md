@@ -2,6 +2,8 @@
 name: jccirc
 description: JCcirc reconstructs full-length circular RNA sequences by integrating back-splice junction information with de novo assembled transcript contigs. Use when user asks to reconstruct full-length circRNA sequences, identify alternative splicing isoforms in circRNAs, or simulate circRNA datasets for benchmarking.
 homepage: https://github.com/cbbzhang/JCcirc
+metadata:
+  docker_image: "quay.io/biocontainers/jccirc:1.0.0--hdfd78af_1"
 ---
 
 # jccirc

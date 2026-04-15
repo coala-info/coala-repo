@@ -1,9 +1,10 @@
 ---
 name: samclip
-description: "samclip filters sequence alignments by removing reads with excessive soft or hard clipping while preserving those at contig edges. Use when user asks to clean SAM files, filter clipped reads, or remove alignment noise before variant calling."
+description: samclip filters sequence alignments by removing reads with excessive soft or hard clipping while preserving those at contig edges. Use when user asks to clean SAM files, filter clipped reads, or remove alignment noise before variant calling.
 homepage: https://github.com/tseemann/samclip
+metadata:
+  docker_image: "quay.io/biocontainers/samclip:0.4.0--hdfd78af_1"
 ---
-
 
 # samclip
 

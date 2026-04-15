@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine2cdf.html
 ---
 
-
 # bioconductor-canine2cdf
 
 name: bioconductor-canine2cdf

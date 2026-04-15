@@ -1,10 +1,12 @@
 ---
 name: animal-dive-prediction-using-deep-learning
-description: "This workflow processes animal movement features and labels using Keras deep learning tools and Scikit-learn to build, train, and evaluate predictive models for diving behavior. Use this skill when you need to automate the classification of animal diving activities or predict behavioral states from ecological sensor data using neural networks."
-homepage: https://workflowhub.eu/workflows/659
+description: This workflow processes animal movement features and labels using Keras deep learning tools and Scikit-learn to build, train, and evaluate predictive models for diving behavior. Use this skill when you need to automate the classification of animal diving activities or predict behavioral states from ecological sensor data using neural networks.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Animal dive prediction using deep learning
+# animal-dive-prediction-using-deep-learning
 
 ## Overview
 

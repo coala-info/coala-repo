@@ -2,8 +2,9 @@
 name: sibeliaz
 description: SibeliaZ is a high-performance pipeline for whole-genome alignment and the construction of locally collinear blocks across multiple similar genomes. Use when user asks to align multiple genomes, identify conserved regions, generate synteny blocks, or produce alignments in MAF and GFF formats.
 homepage: https://github.com/medvedevgroup/SibeliaZ
+metadata:
+  docker_image: "quay.io/biocontainers/sibeliaz:1.2.7--h9948957_0"
 ---
-
 
 # sibeliaz
 

@@ -4,7 +4,6 @@ description: This package provides supporting datasets and ID mapping tables req
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SBGNview.data.html
 ---
 
-
 # bioconductor-sbgnview.data
 
 ## Overview

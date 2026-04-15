@@ -4,7 +4,6 @@ description: This tool provides a network-based framework for analyzing synteny 
 homepage: https://bioconductor.org/packages/release/bioc/html/syntenet.html
 ---
 
-
 # bioconductor-syntenet
 
 ## Overview

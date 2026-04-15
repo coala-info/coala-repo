@@ -2,8 +2,9 @@
 name: prinseq
 description: PRINSEQ++ is a high-performance tool used for filtering, trimming, and cleaning sequencing reads to improve data quality. Use when user asks to filter reads by quality or length, trim adapters and poly-A tails, remove low-complexity sequences, or deduplicate sequencing data.
 homepage: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
+metadata:
+  docker_image: "quay.io/biocontainers/prinseq:0.20.4--4"
 ---
-
 
 # prinseq
 

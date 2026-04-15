@@ -1,10 +1,12 @@
 ---
 name: qiime2-ia-multiplexed-data-single-end
-description: "This workflow imports single-end multiplexed FASTQ sequences and barcode files into QIIME2 using the Earth Microbiome Project protocol and demultiplexes them based on provided metadata. Use this skill when you have raw microbiome sequencing data where all samples are contained in a single file and require separation into individual samples using barcode sequences before downstream taxonomic analysis."
-homepage: https://workflowhub.eu/workflows/893
+description: This workflow imports single-end multiplexed FASTQ sequences and barcode files into QIIME2 using the Earth Microbiome Project protocol and demultiplexes them based on provided metadata. Use this skill when you have raw microbiome sequencing data where all samples are contained in a single file and require separation into individual samples using barcode sequences before downstream taxonomic analysis.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# QIIME2 Ia: multiplexed data (single-end)
+# qiime2-ia-multiplexed-data-single-end
 
 ## Overview
 

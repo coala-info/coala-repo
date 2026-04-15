@@ -4,7 +4,6 @@ description: The DOSE package performs disease-centric enrichment analysis and c
 homepage: https://bioconductor.org/packages/release/bioc/html/DOSE.html
 ---
 
-
 # bioconductor-dose
 
 ## Overview

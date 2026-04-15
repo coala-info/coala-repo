@@ -4,7 +4,6 @@ description: This package provides a Transcript Database object for Arabidopsis 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Athaliana.BioMart.plantsmart28.html
 ---
 
-
 # bioconductor-txdb.athaliana.biomart.plantsmart28
 
 name: bioconductor-txdb.athaliana.biomart.plantsmart28

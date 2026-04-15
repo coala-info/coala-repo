@@ -1,7 +1,9 @@
 ---
 name: concoord
-description: "CONCOORD samples protein conformations by generating structural ensembles based on interatomic distance constraints. Use when user asks to predict protein flexibility, generate diverse structural ensembles, or define geometric constraints from a starting structure."
+description: CONCOORD samples protein conformations by generating structural ensembles based on interatomic distance constraints. Use when user asks to predict protein flexibility, generate diverse structural ensembles, or define geometric constraints from a starting structure.
 homepage: https://www3.mpibpc.mpg.de/groups/de_groot/concoord
+metadata:
+  docker_image: "quay.io/biocontainers/concoord:2.1.2--h9ee0642_4"
 ---
 
 # concoord

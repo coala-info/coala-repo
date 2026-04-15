@@ -4,7 +4,6 @@ description: ExpressionView visualizes and optimizes the arrangement of overlapp
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ExpressionView.html
 ---
 
-
 # bioconductor-expressionview
 
 ## Overview

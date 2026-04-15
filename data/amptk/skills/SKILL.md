@@ -2,6 +2,8 @@
 name: amptk
 description: AMPtk is a suite of scripts designed to process raw amplicon sequencing data into filtered OTU tables and taxonomic assignments. Use when user asks to demultiplex NGS data, cluster sequences into OTUs or ASVs, filter index-bleed artifacts, or assign taxonomy to fungal and bacterial amplicons.
 homepage: https://github.com/nextgenusfs/amptk
+metadata:
+  docker_image: "quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0"
 ---
 
 # amptk

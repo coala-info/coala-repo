@@ -2,8 +2,9 @@
 name: piper
 description: Piper is a Python toolkit for building and managing restartable command-line pipelines. Use when user asks to build robust workflows, manage pipeline checkpoints, or resume interrupted computational tasks.
 homepage: https://github.com/databio/pypiper/
+metadata:
+  docker_image: "quay.io/biocontainers/piper:0.14.5--pyhdfd78af_0"
 ---
-
 
 # piper
 

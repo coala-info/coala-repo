@@ -4,7 +4,6 @@ description: The cmapR package provides tools for interacting with Connectivity 
 homepage: https://bioconductor.org/packages/release/bioc/html/cmapR.html
 ---
 
-
 # bioconductor-cmapr
 
 ## Overview

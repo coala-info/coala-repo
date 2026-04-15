@@ -4,7 +4,6 @@ description: This package provides Model-View-Controller structures for managing
 homepage: https://bioconductor.org/packages/release/bioc/html/BioMVCClass.html
 ---
 
-
 # bioconductor-biomvcclass
 
 name: bioconductor-biomvcclass

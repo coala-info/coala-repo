@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of differential variant usa
 homepage: https://bioconductor.org/packages/release/bioc/html/kissDE.html
 ---
 
-
 # bioconductor-kissde
 
 name: bioconductor-kissde

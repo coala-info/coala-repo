@@ -4,7 +4,6 @@ description: This package provides a DelayedArray backend for TileDB to enable m
 homepage: https://bioconductor.org/packages/release/bioc/html/TileDBArray.html
 ---
 
-
 # bioconductor-tiledbarray
 
 name: bioconductor-tiledbarray

@@ -1,10 +1,12 @@
 ---
 name: training-16s-rrna-sequencing-with-mothur-main-tutorial
-description: "This microbiome workflow processes raw 16S rRNA FASTQ pairs using the mothur suite and SILVA reference databases to perform sequence quality control, alignment, and taxonomic classification. Use this skill when you need to characterize microbial community composition, calculate alpha and beta diversity metrics, and generate visualizations like Krona charts or heatmaps from environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/1465
+description: This microbiome workflow processes raw 16S rRNA FASTQ pairs using the mothur suite and SILVA reference databases to perform sequence quality control, alignment, and taxonomic classification. Use this skill when you need to characterize microbial community composition, calculate alpha and beta diversity metrics, and generate visualizations like Krona charts or heatmaps from environmental or clinical samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Training: 16S rRNA Sequencing With Mothur: Main Tutorial
+# training-16s-rrna-sequencing-with-mothur-main-tutorial
 
 ## Overview
 

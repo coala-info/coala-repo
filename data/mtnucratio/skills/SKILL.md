@@ -2,8 +2,9 @@
 name: mtnucratio
 description: This tool calculates the ratio of mitochondrial to nuclear sequencing reads from a BAM file. Use when user asks to calculate mitochondrial to nuclear read ratio.
 homepage: https://github.com/apeltzer/MTNucRatioCalculator
+metadata:
+  docker_image: "quay.io/biocontainers/mtnucratio:0.7.1--hdfd78af_0"
 ---
-
 
 # mtnucratio
 

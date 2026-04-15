@@ -1,10 +1,12 @@
 ---
 name: rna-seq-differential-expression-analysis-with-visualization
-description: "This transcriptomics workflow identifies differentially expressed genes between two experimental conditions using DESeq2, processing count tables and gene annotations to generate filtered results and publication-quality visualizations like volcano plots and heatmaps. Use this skill when you need to statistically compare gene expression levels between a treatment and control group to discover significant biological changes and visualize the distribution of up- and down-regulated genes."
-homepage: https://workflowhub.eu/workflows/1201
+description: This transcriptomics workflow identifies differentially expressed genes between two experimental conditions using DESeq2, processing count tables and gene annotations to generate filtered results and publication-quality visualizations like volcano plots and heatmaps. Use this skill when you need to statistically compare gene expression levels between a treatment and control group to discover significant biological changes and visualize the distribution of up- and down-regulated genes.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA-Seq Differential Expression Analysis with Visualization
+# rna-seq-differential-expression-analysis-with-visualization
 
 ## Overview
 

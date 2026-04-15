@@ -4,7 +4,6 @@ description: GIGSEA performs gene set enrichment analysis by integrating GWAS su
 homepage: https://bioconductor.org/packages/release/bioc/html/GIGSEA.html
 ---
 
-
 # bioconductor-gigsea
 
 ## Overview

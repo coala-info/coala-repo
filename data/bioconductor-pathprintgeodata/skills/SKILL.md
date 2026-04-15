@@ -4,7 +4,6 @@ description: This package provides a repository of pathway fingerprints derived 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/pathprintGEOData.html
 ---
 
-
 # bioconductor-pathprintgeodata
 
 ## Overview

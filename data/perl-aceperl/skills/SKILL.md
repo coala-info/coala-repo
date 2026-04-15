@@ -2,8 +2,9 @@
 name: perl-aceperl
 description: AcePerl provides a specialized Perl interface for interacting with ACEDB object-oriented databases. Use when user asks to connect to local or remote ACEDB instances, retrieve genomic objects, or write Perl scripts for managing biological data.
 homepage: https://github.com/WormBase/AcePerl
+metadata:
+  docker_image: "quay.io/biocontainers/perl-aceperl:1.92--pl5321h7b50bb2_8"
 ---
-
 
 # perl-aceperl
 

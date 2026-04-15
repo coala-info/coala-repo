@@ -1,9 +1,10 @@
 ---
 name: neptune-signature
-description: "Neptune identifies genomic signatures that are present in an inclusion group and absent from an exclusion group using probabilistic models and k-mer matching. Use when user asks to discover genomic signatures, identify sequences unique to specific groups, or find loci that delineate isolates from a background population."
+description: Neptune identifies genomic signatures that are present in an inclusion group and absent from an exclusion group using probabilistic models and k-mer matching. Use when user asks to discover genomic signatures, identify sequences unique to specific groups, or find loci that delineate isolates from a background population.
 homepage: https://github.com/phac-nml/neptune
+metadata:
+  docker_image: "quay.io/biocontainers/neptune-signature:2.0.0--pyhdfd78af_0"
 ---
-
 
 # neptune-signature
 

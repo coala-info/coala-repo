@@ -4,7 +4,6 @@ description: This package provides a subset of the Illumina MicroArray Quality C
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/MAQCsubsetILM.html
 ---
 
-
 # bioconductor-maqcsubsetilm
 
 ## Overview

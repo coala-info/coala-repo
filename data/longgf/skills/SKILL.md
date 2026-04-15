@@ -2,8 +2,9 @@
 name: longgf
 description: LongGF detects gene fusions from long-read transcriptome sequencing data by analyzing overlaps between alignment records and gene definitions. Use when user asks to identify gene fusions in long-read cDNA or direct mRNA sequencing data, detect fusions from name-sorted BAM files, or find reads spanning multiple gene loci.
 homepage: https://github.com/WGLab/LongGF
+metadata:
+  docker_image: "quay.io/biocontainers/longgf:0.1.2--h84372a0_6"
 ---
-
 
 # longgf
 

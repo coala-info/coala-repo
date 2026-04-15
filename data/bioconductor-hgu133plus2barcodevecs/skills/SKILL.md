@@ -4,7 +4,6 @@ description: This package provides pre-computed parameter estimates for the barc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu133plus2barcodevecs.html
 ---
 
-
 # bioconductor-hgu133plus2barcodevecs
 
 name: bioconductor-hgu133plus2barcodevecs

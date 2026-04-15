@@ -1,10 +1,12 @@
 ---
 name: goseq-go-kegg-enrichment-analysis
-description: "This Galaxy workflow performs GO and KEGG enrichment analysis using the goseq tool by processing differential expression results, gene lengths, and pathway annotations. Use this skill when you need to identify overrepresented biological processes, molecular functions, or metabolic pathways in a set of differentially expressed genes while accounting for gene length bias."
-homepage: https://workflowhub.eu/workflows/1194
+description: This Galaxy workflow performs GO and KEGG enrichment analysis using the goseq tool by processing differential expression results, gene lengths, and pathway annotations. Use this skill when you need to identify overrepresented biological processes, molecular functions, or metabolic pathways in a set of differentially expressed genes while accounting for gene length bias.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Goseq GO-KEGG Enrichment Analysis
+# goseq-go-kegg-enrichment-analysis
 
 ## Overview
 

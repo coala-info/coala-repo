@@ -1,9 +1,10 @@
 ---
 name: squizz
-description: "Squizz validates and converts sequence and alignment file formats. Use when user asks to check sequence file format or convert between sequence file formats."
+description: Squizz validates and converts sequence and alignment file formats. Use when user asks to check sequence file format or convert between sequence file formats.
 homepage: http://ftp.pasteur.fr/pub/gensoft/projects/squizz/
+metadata:
+  docker_image: "biocontainers/squizz:v0.99ddfsg-2-deb_cv1"
 ---
-
 
 # squizz
 

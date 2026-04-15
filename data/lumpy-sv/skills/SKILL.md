@@ -2,8 +2,9 @@
 name: lumpy-sv
 description: Lumpy-sv is a probabilistic framework that detects structural variants by integrating multiple signals from high-throughput sequencing data. Use when user asks to detect structural variants, extract discordant or split reads, or run a streamlined variant discovery workflow using lumpyexpress.
 homepage: https://github.com/arq5x/lumpy-sv
+metadata:
+  docker_image: "quay.io/biocontainers/lumpy-sv:0.3.1--3"
 ---
-
 
 # lumpy-sv
 

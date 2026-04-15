@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for the honey bee (A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.BeeBase.assembly4.html
 ---
 
-
 # bioconductor-bsgenome.amellifera.beebase.assembly4
 
 name: bioconductor-bsgenome.amellifera.beebase.assembly4

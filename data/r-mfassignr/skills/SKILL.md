@@ -4,7 +4,6 @@ description: MFAssignR provides expert guidance for assigning multi-element mole
 homepage: https://cran.r-project.org/web/packages/mfassignr/index.html
 ---
 
-
 # r-mfassignr
 
 name: r-mfassignr

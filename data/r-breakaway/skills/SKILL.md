@@ -4,7 +4,6 @@ description: The r-breakaway package provides statistical models to estimate spe
 homepage: https://cloud.r-project.org/web/packages/breakaway/index.html
 ---
 
-
 # r-breakaway
 
 ## Overview

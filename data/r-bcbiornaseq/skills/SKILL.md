@@ -4,7 +4,6 @@ description: The bcbioRNASeq package provides a streamlined workflow for analyzi
 homepage: https://cran.r-project.org/web/packages/bcbiornaseq/index.html
 ---
 
-
 # r-bcbiornaseq
 
 ## Overview

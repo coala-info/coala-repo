@@ -4,7 +4,6 @@ description: This tool provides a probabilistic framework to associate different
 homepage: https://bioconductor.org/packages/release/bioc/html/DegCre.html
 ---
 
-
 # bioconductor-degcre
 
 name: bioconductor-degcre

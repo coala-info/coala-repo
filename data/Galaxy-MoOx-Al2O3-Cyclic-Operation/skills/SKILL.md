@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-for-reproduction-of-paper-7
-description: "This Galaxy workflow processes multiple X-ray absorption spectroscopy data files of MoOx/Al2O3 catalysts using Larch Athena for data reduction and Larch Plot for visualization. Use this skill when analyzing the structural evolution and oxidation states of molybdenum-based catalysts during cyclic chemical operations or activation processes."
-homepage: https://workflowhub.eu/workflows/1804
+description: This Galaxy workflow processes multiple X-ray absorption spectroscopy data files of MoOx/Al2O3 catalysts using Larch Athena for data reduction and Larch Plot for visualization. Use this skill when analyzing the structural evolution and oxidation states of molybdenum-based catalysts during cyclic chemical operations or activation processes.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed for reproduction of paper 7
+# workflow-constructed-for-reproduction-of-paper-7
 
 ## Overview
 

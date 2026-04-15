@@ -2,6 +2,8 @@
 name: taxonkit
 description: TaxonKit is a high-performance command-line tool for processing and manipulating NCBI taxonomy data. Use when user asks to retrieve taxonomic lineages, convert scientific names to TaxIds, reformat lineage strings, find the lowest common ancestor, or filter TaxIds by rank.
 homepage: https://github.com/shenwei356/taxonkit
+metadata:
+  docker_image: "quay.io/biocontainers/taxonkit:0.20.0--h9ee0642_1"
 ---
 
 # taxonkit

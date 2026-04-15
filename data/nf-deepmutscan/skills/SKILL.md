@@ -4,6 +4,8 @@ description: This pipeline processes deep mutational scanning data from FASTQ or
 homepage: https://github.com/nf-core/deepmutscan
 ---
 
+# deepmutscan
+
 ## Overview
 nf-core/deepmutscan is a workflow designed for the analysis of deep mutational scanning (DMS) data, specifically optimized for shotgun sequencing of long open reading frames (ORFs). It standardizes the complex bioinformatics steps required to measure the fitness effects of thousands of gene variants simultaneously, helping to classify disease-causing mutants and learn rules of protein architecture or viral evolution.
 

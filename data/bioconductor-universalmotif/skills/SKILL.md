@@ -4,7 +4,6 @@ description: This package provides a standardized interface in R for importing, 
 homepage: https://bioconductor.org/packages/release/bioc/html/universalmotif.html
 ---
 
-
 # bioconductor-universalmotif
 
 name: bioconductor-universalmotif

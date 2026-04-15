@@ -2,8 +2,9 @@
 name: cosg
 description: COSG identifies highly specific marker genes across single-cell data modalities using an ultrafast cosine similarity-based method. Use when user asks to identify marker genes, find cell type-specific markers, or visualize marker gene specificity using dot plots and dendrograms.
 homepage: https://github.com/genecell/COSG
+metadata:
+  docker_image: "quay.io/biocontainers/cosg:1.0.3--pyhdfd78af_0"
 ---
-
 
 # cosg
 

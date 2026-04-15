@@ -1,10 +1,12 @@
 ---
 name: post-assembly-workflow
-description: "This Galaxy workflow performs comprehensive quality control on primary genome assemblies using long-read and Hi-C data with tools including BlobToolKit, BUSCO, Merqury, and GenomeScope. Use this skill when you need to assess the biological integrity, completeness, and potential contamination of a newly assembled reference genome to ensure it meets high-quality standards for biodiversity genomics."
-homepage: https://workflowhub.eu/workflows/1641
+description: This Galaxy workflow performs comprehensive quality control on primary genome assemblies using long-read and Hi-C data with tools including BlobToolKit, BUSCO, Merqury, and GenomeScope. Use this skill when you need to assess the biological integrity, completeness, and potential contamination of a newly assembled reference genome to ensure it meets high-quality standards for biodiversity genomics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Post-assembly workflow
+# post-assembly-workflow
 
 ## Overview
 

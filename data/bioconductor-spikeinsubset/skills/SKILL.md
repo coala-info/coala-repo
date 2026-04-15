@@ -4,7 +4,6 @@ description: This package provides access to subsetted data from Affymetrix HGU9
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SpikeInSubset.html
 ---
 
-
 # bioconductor-spikeinsubset
 
 name: bioconductor-spikeinsubset

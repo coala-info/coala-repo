@@ -4,7 +4,6 @@ description: This tool detects, analyzes, and visualizes genetic crossover event
 homepage: https://bioconductor.org/packages/release/bioc/html/comapr.html
 ---
 
-
 # bioconductor-comapr
 
 name: bioconductor-comapr

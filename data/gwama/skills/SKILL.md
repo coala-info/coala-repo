@@ -2,8 +2,9 @@
 name: gwama
 description: The gwama tool performs meta-analyses of genome-wide association study results to aggregate data across multiple cohorts. Use when user asks to meta-analyze GWAS results, calculate pooled effect sizes, or assess heterogeneity across genetic studies.
 homepage: https://www.geenivaramu.ee/en/tools/gwama
+metadata:
+  docker_image: "quay.io/biocontainers/gwama:2.2.2--h077b44d_5"
 ---
-
 
 # gwama
 

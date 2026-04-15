@@ -4,7 +4,6 @@ description: This package provides example datasets from the Illumina Human Meth
 homepage: https://bioconductor.org/packages/release/data/experiment/html/minfiDataEPIC.html
 ---
 
-
 # bioconductor-minfidataepic
 
 name: bioconductor-minfidataepic

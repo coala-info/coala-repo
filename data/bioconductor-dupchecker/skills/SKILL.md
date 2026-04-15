@@ -4,7 +4,6 @@ description: Bioconductor-dupchecker identifies and manages duplicated high-thro
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DupChecker.html
 ---
 
-
 # bioconductor-dupchecker
 
 name: bioconductor-dupchecker

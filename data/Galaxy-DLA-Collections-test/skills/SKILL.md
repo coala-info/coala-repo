@@ -1,10 +1,12 @@
 ---
 name: dla-collections-test
-description: "This workflow processes input datasets for document layout analysis using the SDR Teklia worker-dla tool, file splitting, and specimen data object creation. Use this skill when you need to automate the identification and extraction of structural elements from digitized specimen collections or historical documents."
-homepage: https://workflowhub.eu/workflows/374
+description: This workflow processes input datasets for document layout analysis using the SDR Teklia worker-dla tool, file splitting, and specimen data object creation. Use this skill when you need to automate the identification and extraction of structural elements from digitized specimen collections or historical documents.
+homepage: https://www.synthesys.info/
+metadata:
+  docker_image: "N/A"
 ---
 
-# DLA-Collections-test
+# dla-collections-test
 
 ## Overview
 

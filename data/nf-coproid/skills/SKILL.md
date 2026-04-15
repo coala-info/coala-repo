@@ -4,6 +4,8 @@ description: This pipeline identifies the biological source of Illumina sequence
 homepage: https://github.com/nf-core/coproid
 ---
 
+# coproid
+
 ## Overview
 nf-core/coproid (COPROlite host IDentification) solves the problem of identifying the "true maker" of faecal samples, particularly in archaeological contexts where host DNA may be degraded or contaminated. It integrates host DNA mapping against multiple candidate genomes with metagenomic profiling to provide a robust prediction of the sample's origin.
 

@@ -4,7 +4,6 @@ description: This tool saves and loads common bioinformatics file formats within
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.files.html
 ---
 
-
 # bioconductor-alabaster.files
 
 name: bioconductor-alabaster.files

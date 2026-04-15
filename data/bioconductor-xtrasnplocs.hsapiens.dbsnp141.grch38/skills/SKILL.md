@@ -4,7 +4,6 @@ description: This package provides access to non-single-base substitution SNP lo
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/XtraSNPlocs.Hsapiens.dbSNP141.GRCh38.html
 ---
 
-
 # bioconductor-xtrasnplocs.hsapiens.dbsnp141.grch38
 
 name: bioconductor-xtrasnplocs.hsapiens.dbsnp141.grch38

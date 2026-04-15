@@ -4,7 +4,6 @@ description: This tool identifies and classifies genes with differential express
 homepage: https://bioconductor.org/packages/release/bioc/html/scDD.html
 ---
 
-
 # bioconductor-scdd
 
 name: bioconductor-scdd

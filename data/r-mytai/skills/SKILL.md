@@ -4,7 +4,6 @@ description: This tool performs evolutionary transcriptomics analysis by integra
 homepage: https://cran.r-project.org/web/packages/mytai/index.html
 ---
 
-
 # r-mytai
 
 name: r-mytai

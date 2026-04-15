@@ -4,7 +4,6 @@ description: This tool analyzes transcription factor binding motifs in genomic s
 homepage: https://bioconductor.org/packages/release/bioc/html/motifTestR.html
 ---
 
-
 # bioconductor-motiftestr
 
 name: bioconductor-motiftestr

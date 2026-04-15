@@ -4,7 +4,6 @@ description: epidecodeR integrates epigenomic or epitranscriptomic event data wi
 homepage: https://bioconductor.org/packages/release/bioc/html/epidecodeR.html
 ---
 
-
 # bioconductor-epidecoder
 
 ## Overview

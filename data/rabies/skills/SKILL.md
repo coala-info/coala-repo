@@ -2,6 +2,8 @@
 name: rabies
 description: RABIES is an image processing pipeline designed to transform raw rodent functional MRI data into analyzed connectivity maps. Use when user asks to preprocess rodent fMRI scans, apply confound correction, or perform functional connectivity analyses like seed-based correlation and group ICA.
 homepage: https://github.com/CoBrALab/RABIES
+metadata:
+  docker_image: "quay.io/biocontainers/rabies:0.5.5--pyhdfd78af_0"
 ---
 
 # rabies

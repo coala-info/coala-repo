@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-5-analysis-of-s-protein-polymorphism
-description: "This Galaxy workflow processes SARS-CoV-2 nucleotide sequences to analyze S-protein polymorphisms using EMBOSS transeq for translation, MAFFT for protein alignment, and EMBOSS tranalign for codon-aware nucleotide alignment. Use this skill when you need to identify amino acid variations in the SARS-CoV-2 spike protein and generate high-quality codon-based alignments to study viral evolution or mutation patterns."
-homepage: https://workflowhub.eu/workflows/9
+description: This Galaxy workflow processes SARS-CoV-2 nucleotide sequences to analyze S-protein polymorphisms using EMBOSS transeq for translation, MAFFT for protein alignment, and EMBOSS tranalign for codon-aware nucleotide alignment. Use this skill when you need to identify amino acid variations in the SARS-CoV-2 spike protein and generate high-quality codon-based alignments to study viral evolution or mutation patterns.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [5] Analysis of S-protein polymorphism
+# covid-19-genomics-5-analysis-of-s-protein-polymorphism
 
 ## Overview
 

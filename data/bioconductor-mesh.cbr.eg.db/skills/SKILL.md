@@ -4,7 +4,6 @@ description: This tool provides mapping between MeSH identifiers and Entrez Gene
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Cbr.eg.db.html
 ---
 
-
 # bioconductor-mesh.cbr.eg.db
 
 name: bioconductor-mesh.cbr.eg.db

@@ -2,6 +2,8 @@
 name: csvtk
 description: csvtk is a high-performance, header-aware toolkit for manipulating, processing, and analyzing tabular data in CSV or TSV format. Use when user asks to filter rows, join files, select columns, generate summary statistics, or transform data formats.
 homepage: https://github.com/shenwei356/csvtk
+metadata:
+  docker_image: "quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0"
 ---
 
 # csvtk

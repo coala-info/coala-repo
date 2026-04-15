@@ -4,7 +4,6 @@ description: Bioconductor-pviz visualizes protein sequences and amino-acid based
 homepage: https://bioconductor.org/packages/release/bioc/html/Pviz.html
 ---
 
-
 # bioconductor-pviz
 
 name: bioconductor-pviz

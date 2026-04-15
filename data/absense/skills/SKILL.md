@@ -2,8 +2,9 @@
 name: absense
 description: abSENSE calculates the probability that a gene is undetected in a species due to technical limitations rather than biological loss. Use when user asks to calculate detection failure probabilities, predict expected bitscores across evolutionary distances, or distinguish between gene loss and search sensitivity limitations.
 homepage: https://github.com/caraweisman/abSENSE
+metadata:
+  docker_image: "quay.io/biocontainers/absense:1.0.1--pyhdfd78af_0"
 ---
-
 
 # absense
 

@@ -4,7 +4,6 @@ description: This tool generates interactive Sankey diagrams to visualize multi-
 homepage: https://bioconductor.org/packages/3.6/bioc/html/Director.html
 ---
 
-
 # bioconductor-director
 
 name: bioconductor-director

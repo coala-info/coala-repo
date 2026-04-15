@@ -4,7 +4,6 @@ description: This tool validates R packages against Bioconductor-specific guidel
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocCheck.html
 ---
 
-
 # bioconductor-bioccheck
 
 name: bioconductor-bioccheck

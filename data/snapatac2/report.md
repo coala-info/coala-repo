@@ -10,6 +10,7 @@ FAIL to generate CWL: snapatac2 not found in Docker image. The image may not pro
 - **Homepage**: https://github.com/kaizhang/SnapATAC2
 - **Package**: https://anaconda.org/channels/bioconda/packages/snapatac2/overview
 - **Validation**: FAIL (generation failed)
+- **tutorial**: https://scverse.org/SnapATAC2/tutorials/index.html
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snapatac2/overview
 - **Total Downloads**: 13.1K
@@ -32,3 +33,6 @@ FAIL to generate CWL: snapatac2 not found in Docker image. The image may not pro
 
 ```
 
+
+## Metadata
+- **Skill**: generated

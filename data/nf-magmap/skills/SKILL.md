@@ -4,6 +4,8 @@ description: nf-core/magmap maps metagenomic or metatranscriptomic reads to larg
 homepage: https://github.com/nf-core/magmap
 ---
 
+# magmap
+
 ## Overview
 nf-core/magmap is designed for the analysis of complex microbial communities by mapping reads to extensive collections of genomes. It addresses the need for quantifying gene features in metatranscriptomic and metagenomic datasets where a single reference genome is insufficient.
 

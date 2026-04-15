@@ -4,7 +4,6 @@ description: Garnett is an R package for automated cell type classification of s
 homepage: https://cran.r-project.org/web/packages/garnett/index.html
 ---
 
-
 # r-garnett
 
 name: r-garnett

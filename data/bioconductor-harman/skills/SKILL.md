@@ -4,7 +4,6 @@ description: Harman removes batch effects from biological datasets using PCA and
 homepage: https://bioconductor.org/packages/release/bioc/html/Harman.html
 ---
 
-
 # bioconductor-harman
 
 name: bioconductor-harman

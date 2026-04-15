@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for performing Froze
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133afrmavecs.html
 ---
 
-
 # bioconductor-hthgu133afrmavecs
 
 name: bioconductor-hthgu133afrmavecs

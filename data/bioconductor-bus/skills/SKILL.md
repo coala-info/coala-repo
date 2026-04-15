@@ -4,7 +4,6 @@ description: This tool computes similarities using correlation or mutual informa
 homepage: https://bioconductor.org/packages/release/bioc/html/BUS.html
 ---
 
-
 # bioconductor-bus
 
 name: bioconductor-bus

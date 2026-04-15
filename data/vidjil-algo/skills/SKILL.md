@@ -2,8 +2,9 @@
 name: vidjil-algo
 description: Vidjil-algo processes high-throughput sequencing data to identify and quantify V(D)J recombinations in B and T cells. Use when user asks to identify V(D)J recombinations, quantify V(D)J recombinations, process sequencing data, identify clones, merge paired-end reads, or analyze multiple genomes.
 homepage: https://gitlab.inria.fr/vidjil/vidjil
+metadata:
+  docker_image: "quay.io/biocontainers/vidjil-algo:2025.02--h077b44d_0"
 ---
-
 
 # vidjil-algo
 

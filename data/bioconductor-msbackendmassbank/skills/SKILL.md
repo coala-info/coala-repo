@@ -4,7 +4,6 @@ description: This tool provides backends for the Spectra package to import, mana
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendMassbank.html
 ---
 
-
 # bioconductor-msbackendmassbank
 
 name: bioconductor-msbackendmassbank

@@ -1,10 +1,12 @@
 ---
 name: ont-metagenomics-kraken2-krona
-description: "This metagenomics workflow processes raw Oxford Nanopore fast5 signal data to perform taxonomic classification using Kraken2 and generates interactive visualizations with Krona pie charts. Use this skill when you need to characterize the taxonomic composition of a complex microbial community and visualize the relative abundance of species from raw nanopore sequencing reads."
+description: This metagenomics workflow processes raw Oxford Nanopore fast5 signal data to perform taxonomic classification using Kraken2 and generates interactive visualizations with Krona pie charts. Use this skill when you need to characterize the taxonomic composition of a complex microbial community and visualize the relative abundance of species from raw nanopore sequencing reads.
 homepage: https://workflowhub.eu/workflows/53
+metadata:
+  docker_image: "N/A"
 ---
 
-# ONT -- Metagenomics-Kraken2-Krona
+# ont-metagenomics-kraken2-krona
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: generating-a-single-cell-matrix-using-alevin
-description: "This single-cell transcriptomics workflow processes raw sequencing reads, a reference FASTA, and a GTF file using Alevin and DropletUtils to generate a gene-cell count matrix. Use this skill when you need to perform transcript-level quantification and cell barcode demultiplexing for droplet-based single-cell RNA-seq data to produce downstream-ready expression matrices."
-homepage: https://workflowhub.eu/workflows/1533
+description: This single-cell transcriptomics workflow processes raw sequencing reads, a reference FASTA, and a GTF file using Alevin and DropletUtils to generate a gene-cell count matrix. Use this skill when you need to perform transcript-level quantification and cell barcode demultiplexing for droplet-based single-cell RNA-seq data to produce downstream-ready expression matrices.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Generating a single cell matrix using Alevin
+# generating-a-single-cell-matrix-using-alevin
 
 ## Overview
 

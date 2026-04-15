@@ -2,8 +2,9 @@
 name: irissv
 description: Iris refines the sequence accuracy of structural variant calls by generating high-quality consensus sequences from supporting reads. Use when user asks to improve the precision of insertion or deletion calls, perform local assembly of structural variants, or refine VCF entries using Racon or FalconSense.
 homepage: https://github.com/mkirsche/Iris
+metadata:
+  docker_image: "quay.io/biocontainers/irissv:1.0.5--hdfd78af_0"
 ---
-
 
 # irissv
 

@@ -2,8 +2,9 @@
 name: amos
 description: AMOS maps tensor computations to hardware-specific intrinsics by automatically configuring and transforming compute loops. Use when user asks to translate tensor expressions into hardware instructions, perform ISA-aware mapping, or automate the tensorization of computations for spatial accelerators.
 homepage: https://github.com/pku-liang/AMOS
+metadata:
+  docker_image: "quay.io/biocontainers/amos:3.1.0--py27pl5.22.0_3"
 ---
-
 
 # amos
 

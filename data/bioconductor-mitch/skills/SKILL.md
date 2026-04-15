@@ -1,9 +1,8 @@
 ---
 name: bioconductor-mitch
-description: "bioconductor-mitch implements a rank-MANOVA approach to detect enriched gene sets across multi-dimensional biological data. Use when user asks to integrate multiple differential expression contrasts, perform multi-omics pathway enrichment analysis, or identify gene sets consistently altered across different experimental layers."
+description: bioconductor-mitch implements a rank-MANOVA approach to detect enriched gene sets across multi-dimensional biological data. Use when user asks to integrate multiple differential expression contrasts, perform multi-omics pathway enrichment analysis, or identify gene sets consistently altered across different experimental layers.
 homepage: https://bioconductor.org/packages/release/bioc/html/mitch.html
 ---
-
 
 # bioconductor-mitch
 

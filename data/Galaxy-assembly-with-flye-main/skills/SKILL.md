@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-with-flye
-description: "This workflow assembles long-read sequencing data from PacBio or Oxford Nanopore using Flye and generates quality metrics and visualizations via Quast, Fasta Statistics, and Bandage. Use this skill when you need to generate a de novo genome assembly from noisy or high-fidelity long reads and evaluate the resulting contiguity and assembly graph structure."
-homepage: https://workflowhub.eu/workflows/750
+description: This workflow assembles long-read sequencing data from PacBio or Oxford Nanopore using Flye and generates quality metrics and visualizations via Quast, Fasta Statistics, and Bandage. Use this skill when you need to generate a de novo genome assembly from noisy or high-fidelity long reads and evaluate the resulting contiguity and assembly graph structure.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome assembly with Flye
+# genome-assembly-with-flye
 
 ## Overview
 

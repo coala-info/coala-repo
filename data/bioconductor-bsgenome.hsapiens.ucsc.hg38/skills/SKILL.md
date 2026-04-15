@@ -4,7 +4,6 @@ description: This package provides the full genomic sequences for the Homo sapie
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg38
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38

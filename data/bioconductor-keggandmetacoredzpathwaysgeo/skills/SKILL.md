@@ -4,7 +4,6 @@ description: This package provides curated disease-related gene expression datas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/KEGGandMetacoreDzPathwaysGEO.html
 ---
 
-
 # bioconductor-keggandmetacoredzpathwaysgeo
 
 name: bioconductor-keggandmetacoredzpathwaysgeo

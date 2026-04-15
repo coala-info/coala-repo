@@ -1,10 +1,12 @@
 ---
 name: calling-variants-in-non-diploid-systems
-description: "This workflow performs variant calling on paired-end FASTQ reads from non-diploid samples using BWA-MEM for mapping and FreeBayes for identifying genetic polymorphisms. Use this skill when analyzing genomic data from organisms with complex ploidy levels, viral quasispecies, or pooled samples where traditional diploid genotype models are inappropriate."
-homepage: https://workflowhub.eu/workflows/1659
+description: This workflow performs variant calling on paired-end FASTQ reads from non-diploid samples using BWA-MEM for mapping and FreeBayes for identifying genetic polymorphisms. Use this skill when analyzing genomic data from organisms with complex ploidy levels, viral quasispecies, or pooled samples where traditional diploid genotype models are inappropriate.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Calling variants in non-diploid systems
+# calling-variants-in-non-diploid-systems
 
 ## Overview
 

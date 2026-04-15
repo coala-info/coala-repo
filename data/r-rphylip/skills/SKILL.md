@@ -4,7 +4,6 @@ description: The Rphylip package provides an R interface for executing PHYLIP pr
 homepage: https://cloud.r-project.org/web/packages/Rphylip/index.html
 ---
 
-
 # r-rphylip
 
 ## Overview

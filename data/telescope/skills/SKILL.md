@@ -2,6 +2,8 @@
 name: telescope
 description: Telescope resolves the ambiguity of multi-mapping reads to provide locus-specific expression profiling of repetitive elements like transposable elements. Use when user asks to reassign ambiguous fragments to their most likely locus of origin, quantify transposable element expression, or generate updated alignment files with final locus assignments.
 homepage: https://github.com/mlbendall/telescope
+metadata:
+  docker_image: "quay.io/biocontainers/telescope:1.0.3--py36h14c3975_0"
 ---
 
 # telescope

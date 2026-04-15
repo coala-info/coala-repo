@@ -4,7 +4,6 @@ description: The lfa package implements Logistic Factor Analysis to model popula
 homepage: https://bioconductor.org/packages/release/bioc/html/lfa.html
 ---
 
-
 # bioconductor-lfa
 
 ## Overview

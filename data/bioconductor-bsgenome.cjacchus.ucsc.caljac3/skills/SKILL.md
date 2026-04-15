@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for the Common marmo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cjacchus.UCSC.calJac3.html
 ---
 
-
 # bioconductor-bsgenome.cjacchus.ucsc.caljac3
 
 name: bioconductor-bsgenome.cjacchus.ucsc.caljac3

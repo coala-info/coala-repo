@@ -4,7 +4,6 @@ description: This package provides sample CEL files from the HapMap Project for 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmap100khind.html
 ---
 
-
 # bioconductor-hapmap100khind
 
 name: bioconductor-hapmap100khind

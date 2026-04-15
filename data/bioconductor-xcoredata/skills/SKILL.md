@@ -4,7 +4,6 @@ description: This package provides curated FANTOM5 promoter annotations and ReMa
 homepage: https://bioconductor.org/packages/release/data/experiment/html/xcoredata.html
 ---
 
-
 # bioconductor-xcoredata
 
 name: bioconductor-xcoredata

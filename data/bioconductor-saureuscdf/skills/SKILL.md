@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for mapp
 homepage: https://bioconductor.org/packages/release/data/annotation/html/saureuscdf.html
 ---
 
-
 # bioconductor-saureuscdf
 
 name: bioconductor-saureuscdf

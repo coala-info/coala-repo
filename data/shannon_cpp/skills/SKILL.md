@@ -2,8 +2,9 @@
 name: shannon_cpp
 description: shannon_cpp is a high-performance tool for de novo RNA-Seq transcriptome assembly using a k-mer based graph approach. Use when user asks to perform de novo assembly of RNA-Seq data, reconstruct transcriptomes from raw sequencing reads, or detect isoforms without a reference genome.
 homepage: https://github.com/bx3/shannon_cpp.git
+metadata:
+  docker_image: "quay.io/biocontainers/shannon:0.0.2--py_0"
 ---
-
 
 # shannon_cpp
 

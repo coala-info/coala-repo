@@ -2,8 +2,9 @@
 name: gromacs
 description: GROMACS is a high-performance molecular dynamics package used to simulate the Newtonian equations of motion for molecular systems. Use when user asks to prepare molecular topologies, define simulation boxes, solvate systems, add ions, or execute and optimize molecular dynamics simulations.
 homepage: https://www.gromacs.org/
+metadata:
+  docker_image: "quay.io/biocontainers/gromacs:2022"
 ---
-
 
 # gromacs
 

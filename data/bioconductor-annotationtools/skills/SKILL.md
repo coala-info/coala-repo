@@ -4,7 +4,6 @@ description: This tool annotates DNA microarray data and integrates gene express
 homepage: https://bioconductor.org/packages/release/bioc/html/annotationTools.html
 ---
 
-
 # bioconductor-annotationtools
 
 name: bioconductor-annotationtools

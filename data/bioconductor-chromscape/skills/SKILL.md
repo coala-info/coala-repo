@@ -4,7 +4,6 @@ description: ChromSCape performs comprehensive analysis of single-cell epigenomi
 homepage: https://bioconductor.org/packages/release/bioc/html/ChromSCape.html
 ---
 
-
 # bioconductor-chromscape
 
 name: bioconductor-chromscape

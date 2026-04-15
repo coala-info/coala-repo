@@ -1,10 +1,12 @@
 ---
 name: erga-bge-genome-report-annot-analyses
-description: "This workflow retrieves Ensembl genome and GFF3 data to perform comprehensive annotation quality assessments using AGAT, BUSCO, and OMArk. Use this skill when you need to evaluate the completeness and structural integrity of a eukaryotic gene annotation set according to ERGA-BGE genome reporting standards."
+description: This workflow retrieves Ensembl genome and GFF3 data to perform comprehensive annotation quality assessments using AGAT, BUSCO, and OMArk. Use this skill when you need to evaluate the completeness and structural integrity of a eukaryotic gene annotation set according to ERGA-BGE genome reporting standards.
 homepage: https://workflowhub.eu/workflows/1096
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA-BGE Genome Report ANNOT analyses
+# erga-bge-genome-report-annot-analyses
 
 ## Overview
 

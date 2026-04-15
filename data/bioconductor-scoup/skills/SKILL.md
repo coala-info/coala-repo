@@ -4,7 +4,6 @@ description: The scoup package simulates codon-based genetic sequences under var
 homepage: https://bioconductor.org/packages/release/bioc/html/scoup.html
 ---
 
-
 # bioconductor-scoup
 
 ## Overview

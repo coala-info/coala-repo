@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.u133.x3p.html
 ---
 
-
 # bioconductor-pd.u133.x3p
 
 name: bioconductor-pd.u133.x3p

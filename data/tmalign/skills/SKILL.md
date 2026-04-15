@@ -2,9 +2,9 @@
 name: tmalign
 description: TM-align compares the 3D shapes of proteins and quantifies their structural similarity using the TM-score. Use when user asks to align protein structures, compare protein 3D shapes, calculate TM-scores, superpose protein models, or visualize structural alignments.
 homepage: https://zhanglab.ccmb.med.umich.edu/TM-align/
+metadata:
+  docker_image: "quay.io/biocontainers/tmalign:20220227--h9948957_0"
 ---
-
-
 
 # tmalign
 

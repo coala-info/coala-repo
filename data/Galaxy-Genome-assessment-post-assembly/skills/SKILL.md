@@ -1,10 +1,12 @@
 ---
 name: galaxy-workflow-genome_assessment_post_assembly
-description: "This Galaxy workflow performs comprehensive quality control on primary genome assemblies using filtered sequencing reads and tools including Quast, BUSCO, Meryl, Merqury, and Fasta Statistics. Use this skill when you need to evaluate the completeness, continuity, and accuracy of a de novo genome assembly by calculating k-mer based consensus quality, gene ortholog recovery, and structural assembly metrics."
-homepage: https://workflowhub.eu/workflows/403
+description: This Galaxy workflow performs comprehensive quality control on primary genome assemblies using filtered sequencing reads and tools including Quast, BUSCO, Meryl, Merqury, and Fasta Statistics. Use this skill when you need to evaluate the completeness, continuity, and accuracy of a de novo genome assembly by calculating k-mer based consensus quality, gene ortholog recovery, and structural assembly metrics.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy-Workflow-Genome_assessment_post_assembly
+# galaxy-workflow-genome_assessment_post_assembly
 
 ## Overview
 

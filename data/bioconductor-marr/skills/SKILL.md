@@ -4,7 +4,6 @@ description: The marr package implements a nonparametric method to identify and 
 homepage: https://bioconductor.org/packages/release/bioc/html/marr.html
 ---
 
-
 # bioconductor-marr
 
 ## Overview

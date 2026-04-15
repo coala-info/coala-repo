@@ -1,9 +1,10 @@
 ---
 name: hmtnote
-description: "hmtnote annotates human mitochondrial variants in VCF files with functional, population, and pathogenicity metadata. Use when user asks to annotate mitochondrial VCF files, retrieve pathogenicity predictions, or export variant metadata to CSV format."
+description: hmtnote annotates human mitochondrial variants in VCF files with functional, population, and pathogenicity metadata. Use when user asks to annotate mitochondrial VCF files, retrieve pathogenicity predictions, or export variant metadata to CSV format.
 homepage: https://github.com/robertopreste/hmtnote
+metadata:
+  docker_image: "quay.io/biocontainers/hmtnote:0.7.2--pyhdfd78af_1"
 ---
-
 
 # hmtnote
 

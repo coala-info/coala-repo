@@ -1,7 +1,9 @@
 ---
 name: seqhax
-description: "seqhax is a toolkit for manipulating FASTA/FASTQ files and analyzing VCF/BCF data through specialized subcommands. Use when user asks to interleave read pairs, verify paired-end synchronization, rename sequence headers, convert file formats, or generate histograms for variant metrics and missingness."
+description: seqhax is a toolkit for manipulating FASTA/FASTQ files and analyzing VCF/BCF data through specialized subcommands. Use when user asks to interleave read pairs, verify paired-end synchronization, rename sequence headers, convert file formats, or generate histograms for variant metrics and missingness.
 homepage: https://github.com/kdmurray91/seqhax
+metadata:
+  docker_image: "quay.io/biocontainers/seqhax:0.8.6--h43eeafb_1"
 ---
 
 # seqhax

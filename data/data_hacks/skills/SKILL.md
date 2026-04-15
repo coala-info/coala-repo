@@ -2,8 +2,9 @@
 name: data_hacks
 description: Data_hacks provides a suite of command-line utilities for performing quick statistical analysis and generating ASCII visualizations from data streams. Use when user asks to generate histograms, create bar charts, calculate the 95th percentile, or sample data directly in the terminal.
 homepage: https://github.com/bitly/data_hacks
+metadata:
+  docker_image: "quay.io/biocontainers/data_hacks:0.3.1--py27_0"
 ---
-
 
 # data_hacks
 

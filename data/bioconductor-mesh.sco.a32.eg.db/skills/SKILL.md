@@ -4,7 +4,6 @@ description: This package provides annotation mapping between MeSH identifiers a
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Sco.A32.eg.db.html
 ---
 
-
 # bioconductor-mesh.sco.a32.eg.db
 
 name: bioconductor-mesh.sco.a32.eg.db

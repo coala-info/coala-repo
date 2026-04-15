@@ -4,7 +4,6 @@ description: This tool infers Posterior Association Networks and functional gene
 homepage: https://bioconductor.org/packages/release/bioc/html/PANR.html
 ---
 
-
 # bioconductor-panr
 
 name: bioconductor-panr

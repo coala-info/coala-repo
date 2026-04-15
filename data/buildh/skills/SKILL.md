@@ -2,8 +2,9 @@
 name: buildh
 description: The buildh tool reconstructs hydrogen atoms from united-atom lipid simulations and calculates carbon-deuterium order parameters. Use when user asks to recover atomic-level detail for hydrogen positions, calculate Scd order parameters, or convert united-atom trajectories to all-atom representations.
 homepage: https://github.com/patrickfuchs/buildH
+metadata:
+  docker_image: "quay.io/biocontainers/buildh:1.6.1--pyhdfd78af_0"
 ---
-
 
 # buildh
 

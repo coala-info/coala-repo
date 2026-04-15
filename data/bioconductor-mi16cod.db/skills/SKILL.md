@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the mi16
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mi16cod.db.html
 ---
 
-
 # bioconductor-mi16cod.db
 
 name: bioconductor-mi16cod.db

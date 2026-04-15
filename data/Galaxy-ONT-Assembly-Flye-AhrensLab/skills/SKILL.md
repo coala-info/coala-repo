@@ -1,10 +1,12 @@
 ---
 name: ont-assembly-flye-ahrenslab
-description: "This workflow performs de novo genome assembly of Oxford Nanopore long-read data using Filtlong for quality filtering, Flye for assembly, and Racon and Nanopolish for iterative sequence polishing. Use this skill when you need to generate a high-quality consensus genome sequence from raw nanopore signal and read data by correcting assembly errors through signal-level polishing."
+description: This workflow performs de novo genome assembly of Oxford Nanopore long-read data using Filtlong for quality filtering, Flye for assembly, and Racon and Nanopolish for iterative sequence polishing. Use this skill when you need to generate a high-quality consensus genome sequence from raw nanopore signal and read data by correcting assembly errors through signal-level polishing.
 homepage: https://workflowhub.eu/workflows/51
+metadata:
+  docker_image: "N/A"
 ---
 
-# ONT -- Assembly-Flye-AhrensLab
+# ont-assembly-flye-ahrenslab
 
 ## Overview
 

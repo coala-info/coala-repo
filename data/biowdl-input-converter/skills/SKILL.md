@@ -1,9 +1,10 @@
 ---
 name: biowdl-input-converter
-description: "biowdl-input-converter converts sample lists into JSON structs for BioWDL pipelines while validating file presence and integrity. Use when user asks to convert a samplesheet to JSON, validate sequencing file paths, or check MD5 checksums before running a BioWDL workflow."
+description: biowdl-input-converter converts sample lists into JSON structs for BioWDL pipelines while validating file presence and integrity. Use when user asks to convert a samplesheet to JSON, validate sequencing file paths, or check MD5 checksums before running a BioWDL workflow.
 homepage: https://github.com/biowdl/biowdl-input-converter
+metadata:
+  docker_image: "quay.io/biocontainers/biowdl-input-converter:0.3.0--pyhdfd78af_0"
 ---
-
 
 # biowdl-input-converter
 

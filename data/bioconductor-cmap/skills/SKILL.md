@@ -4,7 +4,6 @@ description: This tool provides access to molecular interactions, molecule metad
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cMAP.html
 ---
 
-
 # bioconductor-cmap
 
 name: bioconductor-cmap

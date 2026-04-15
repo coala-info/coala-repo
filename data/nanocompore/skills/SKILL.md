@@ -2,8 +2,9 @@
 name: nanocompore
 description: Nanocompore identifies RNA modifications by comparing raw nanopore signal distributions between control and test samples. Use when user asks to detect RNA modifications from dRNA-Seq data, collapse eventalign data, or perform comparative signal analysis between biological replicates.
 homepage: https://github.com/tleonardi/nanocompore
+metadata:
+  docker_image: "quay.io/biocontainers/nanocompore:1.0.4--pyhdfd78af_0"
 ---
-
 
 # nanocompore
 

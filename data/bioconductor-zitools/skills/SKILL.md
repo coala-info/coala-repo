@@ -4,7 +4,6 @@ description: This tool analyzes zero-inflated count data by fitting mixture mode
 homepage: https://bioconductor.org/packages/release/bioc/html/zitools.html
 ---
 
-
 # bioconductor-zitools
 
 name: bioconductor-zitools

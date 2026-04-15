@@ -1,7 +1,9 @@
 ---
 name: workflow-generate-dataset-for-assembly-tutorial
-description: "This Galaxy workflow processes paired-end FASTQ reads through adapter trimming with Cutadapt, de novo assembly with MEGAHIT, and read mapping with Bowtie2 to produce a refined, subsampled genomic dataset. Use this skill when you need to extract a representative and manageable subset of sequencing data from a large metagenomic sample for use in assembly benchmarking or bioinformatics training tutorials."
-homepage: https://workflowhub.eu/workflows/1631
+description: This Galaxy workflow processes paired-end FASTQ reads through adapter trimming with Cutadapt, de novo assembly with MEGAHIT, and read mapping with Bowtie2 to produce a refined, subsampled genomic dataset. Use this skill when you need to extract a representative and manageable subset of sequencing data from a large metagenomic sample for use in assembly benchmarking or bioinformatics training tutorials.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # workflow-generate-dataset-for-assembly-tutorial

@@ -1,7 +1,9 @@
 ---
 name: allhic
-description: "ALLHIC scaffolds polyploid or highly heterozygous diploid genome assemblies using Hi-C contact data to partition, order, and orient contigs. Use when user asks to scaffold a genome assembly, partition contigs into linkage groups using Hi-C data, or optimize the order and orientation of contigs for polyploid genomes."
+description: ALLHIC scaffolds polyploid or highly heterozygous diploid genome assemblies using Hi-C contact data to partition, order, and orient contigs. Use when user asks to scaffold a genome assembly, partition contigs into linkage groups using Hi-C data, or optimize the order and orientation of contigs for polyploid genomes.
 homepage: https://github.com/tanghaibao/allhic
+metadata:
+  docker_image: "quay.io/biocontainers/allhic:0.9.14--he881be0_0"
 ---
 
 # allhic

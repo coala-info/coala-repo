@@ -1,9 +1,10 @@
 ---
 name: trinculo
-description: "Trinculo is a toolkit for genetic association analysis of multi-category phenotypes. Use when user asks to perform multinomial and ordinal association studies, incorporate covariates, perform conditional analysis, apply priors, or fine-map genetic associations."
+description: Trinculo is a toolkit for genetic association analysis of multi-category phenotypes. Use when user asks to perform multinomial and ordinal association studies, incorporate covariates, perform conditional analysis, apply priors, or fine-map genetic associations.
 homepage: https://github.com/Trinculo54/trinculo54.github.io
+metadata:
+  docker_image: "quay.io/biocontainers/trinculo:0.96--h470a237_2"
 ---
-
 
 # trinculo
 

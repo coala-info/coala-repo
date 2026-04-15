@@ -2,6 +2,8 @@
 name: ebisearch
 description: EBI Search provides high-performance text search and automated data retrieval from biological databases hosted at the European Bioinformatics Institute. Use when user asks to search biological data, retrieve specific database entries, find cross-referenced records, or get metadata from domains like UniProt, Ensembl, and ChEBI.
 homepage: https://github.com/ebi-wp/EBISearch-webservice-clients
+metadata:
+  docker_image: "quay.io/biocontainers/ebisearch:0.0.3--py27_1"
 ---
 
 # ebisearch

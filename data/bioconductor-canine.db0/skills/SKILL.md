@@ -4,7 +4,6 @@ description: This package provides a base annotation database for the canine gen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine.db0.html
 ---
 
-
 # bioconductor-canine.db0
 
 name: bioconductor-canine.db0

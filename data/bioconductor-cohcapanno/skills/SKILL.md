@@ -4,7 +4,6 @@ description: This package provides annotation data for Illumina 27k and 450k met
 homepage: https://bioconductor.org/packages/release/data/experiment/html/COHCAPanno.html
 ---
 
-
 # bioconductor-cohcapanno
 
 name: bioconductor-cohcapanno

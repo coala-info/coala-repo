@@ -1,10 +1,12 @@
 ---
 name: abundance-index-stacked-visualization-creation
-description: "This ecology workflow processes abundance index files using filtering and pasting tools to generate a stacked visualization for regional Generalized Additive Models. Use this skill when you need to compare population trends across different regions or time periods by stacking abundance indices into a single visual representation."
-homepage: https://workflowhub.eu/workflows/1710
+description: This ecology workflow processes abundance index files using filtering and pasting tools to generate a stacked visualization for regional Generalized Additive Models. Use this skill when you need to compare population trends across different regions or time periods by stacking abundance indices into a single visual representation.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Abundance Index "stacked" Visualization Creation
+# abundance-index-stacked-visualization-creation
 
 ## Overview
 

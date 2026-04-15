@@ -4,6 +4,8 @@ description: This pipeline detects and visualizes fusion genes from RNA-seq data
 homepage: https://github.com/nf-core/rnafusion
 ---
 
+# rnafusion
+
 ## Overview
 nf-core/rnafusion is a bioinformatics analysis pipeline designed for the comprehensive detection and visualization of fusion genes from RNA sequencing data. It integrates several specialized tools to identify fusion events, provides transcript assembly with StringTie, and detects cancer-related splicing aberrations via CTAT-SPLICING.
 

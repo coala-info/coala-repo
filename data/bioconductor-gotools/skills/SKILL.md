@@ -4,7 +4,6 @@ description: This tool performs functional annotation and comparison of gene set
 homepage: https://bioconductor.org/packages/release/bioc/html/goTools.html
 ---
 
-
 # bioconductor-gotools
 
 name: bioconductor-gotools

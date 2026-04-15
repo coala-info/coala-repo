@@ -1,10 +1,12 @@
 ---
 name: ml-phylogenetic-reconstruction
-description: "This Galaxy workflow performs maximum likelihood phylogenetic reconstruction from input alignment collections using ClipKIT for trimming, PhyKit for concatenation, and IQ-TREE and ASTRAL-III for tree estimation. Use this skill when you need to infer evolutionary relationships from genome-wide or single-gene data while accounting for sequence quality and species tree estimation from multiple gene trees."
-homepage: https://workflowhub.eu/workflows/359
+description: This Galaxy workflow performs maximum likelihood phylogenetic reconstruction from input alignment collections using ClipKIT for trimming, PhyKit for concatenation, and IQ-TREE and ASTRAL-III for tree estimation. Use this skill when you need to infer evolutionary relationships from genome-wide or single-gene data while accounting for sequence quality and species tree estimation from multiple gene trees.
+homepage: https://usegalaxy.be/workflows/list_published
+metadata:
+  docker_image: "N/A"
 ---
 
-# ML phylogenetic reconstruction
+# ml-phylogenetic-reconstruction
 
 ## Overview
 

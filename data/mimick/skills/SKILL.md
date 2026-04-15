@@ -1,9 +1,10 @@
 ---
 name: mimick
-description: "Mimick simulates linked-read sequencing data in FASTQ format. Use when user asks to generate synthetic linked-read data for testing or developing bioinformatics pipelines."
+description: Mimick simulates linked-read sequencing data in FASTQ format. Use when user asks to generate synthetic linked-read data for testing or developing bioinformatics pipelines.
 homepage: https://github.com/pdimens/mimick
+metadata:
+  docker_image: "quay.io/biocontainers/mimick:3.0.1--pyh7e72e81_0"
 ---
-
 
 # mimick
 

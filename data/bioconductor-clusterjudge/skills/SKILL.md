@@ -4,7 +4,6 @@ description: This tool evaluates the quality of cluster analysis by measuring it
 homepage: https://bioconductor.org/packages/release/bioc/html/ClusterJudge.html
 ---
 
-
 # bioconductor-clusterjudge
 
 ## Overview

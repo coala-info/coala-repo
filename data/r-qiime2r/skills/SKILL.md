@@ -4,7 +4,6 @@ description: This tool imports and analyzes QIIME2 artifacts directly in R by co
 homepage: https://cran.r-project.org/web/packages/qiime2r/index.html
 ---
 
-
 # r-qiime2r
 
 name: r-qiime2r

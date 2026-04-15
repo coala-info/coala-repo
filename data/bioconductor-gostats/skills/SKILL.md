@@ -4,7 +4,6 @@ description: This tool performs functional enrichment analysis using hypergeomet
 homepage: https://bioconductor.org/packages/release/bioc/html/GOstats.html
 ---
 
-
 # bioconductor-gostats
 
 name: bioconductor-gostats

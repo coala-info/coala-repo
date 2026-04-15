@@ -4,7 +4,6 @@ description: This tool calculates Interaction Based Homogeneity to evaluate the 
 homepage: https://bioconductor.org/packages/release/bioc/html/ibh.html
 ---
 
-
 # bioconductor-ibh
 
 name: bioconductor-ibh

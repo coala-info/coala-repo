@@ -4,7 +4,6 @@ description: This tool predicts m6A sites from miCLIP2 sequencing data using an 
 homepage: https://bioconductor.org/packages/release/bioc/html/m6Aboost.html
 ---
 
-
 # bioconductor-m6aboost
 
 name: bioconductor-m6aboost

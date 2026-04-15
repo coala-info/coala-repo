@@ -1,9 +1,10 @@
 ---
 name: wgfast
-description: "WG-FAST genotypes unknown samples against a reference set for phylogenetic analysis. Use when user asks to genotype samples against a reference, place samples phylogenetically, or analyze pathogen populations."
+description: WG-FAST genotypes unknown samples against a reference set for phylogenetic analysis. Use when user asks to genotype samples against a reference, place samples phylogenetically, or analyze pathogen populations.
 homepage: https://github.com/jasonsahl/wgfast
+metadata:
+  docker_image: "quay.io/biocontainers/wgfast:1.0.4--py_0"
 ---
-
 
 # wgfast
 

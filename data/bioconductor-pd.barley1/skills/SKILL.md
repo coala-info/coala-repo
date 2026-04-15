@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.barley1.html
 ---
 
-
 # bioconductor-pd.barley1
 
 name: bioconductor-pd.barley1

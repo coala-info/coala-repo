@@ -1,9 +1,10 @@
 ---
 name: paraphase
-description: "Paraphase analyzes genomic regions with high homology using HiFi long reads to perform gene-family-centered realignment, phasing, and copy number estimation. Use when user asks to phase complex gene families, estimate copy number in segmental duplications, or call variants in dark regions of the genome."
+description: Paraphase analyzes genomic regions with high homology using HiFi long reads to perform gene-family-centered realignment, phasing, and copy number estimation. Use when user asks to phase complex gene families, estimate copy number in segmental duplications, or call variants in dark regions of the genome.
 homepage: https://github.com/PacificBiosciences/paraphase
+metadata:
+  docker_image: "quay.io/biocontainers/paraphase:3.4.0--pyhdfd78af_0"
 ---
-
 
 # paraphase
 

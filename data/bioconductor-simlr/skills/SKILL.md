@@ -1,9 +1,8 @@
 ---
 name: bioconductor-simlr
-description: "SIMLR performs clustering, visualization, and feature ranking for single-cell RNA-seq data by learning a multi-kernel distance metric. Use when user asks to estimate the number of clusters, perform single-cell clustering, generate 2D visualizations of cell populations, or rank genes based on their contribution to similarity structure."
+description: SIMLR performs clustering, visualization, and feature ranking for single-cell RNA-seq data by learning a multi-kernel distance metric. Use when user asks to estimate the number of clusters, perform single-cell clustering, generate 2D visualizations of cell populations, or rank genes based on their contribution to similarity structure.
 homepage: https://bioconductor.org/packages/release/bioc/html/SIMLR.html
 ---
-
 
 # bioconductor-simlr
 

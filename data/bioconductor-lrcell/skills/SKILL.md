@@ -4,7 +4,6 @@ description: LRcell identifies specific cell types responsible for differential 
 homepage: https://bioconductor.org/packages/release/bioc/html/LRcell.html
 ---
 
-
 # bioconductor-lrcell
 
 ## Overview

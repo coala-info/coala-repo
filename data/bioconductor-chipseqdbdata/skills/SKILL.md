@@ -4,7 +4,6 @@ description: This package provides curated ChIP-seq datasets as BAM files and me
 homepage: https://bioconductor.org/packages/release/data/experiment/html/chipseqDBData.html
 ---
 
-
 # bioconductor-chipseqdbdata
 
 name: bioconductor-chipseqdbdata

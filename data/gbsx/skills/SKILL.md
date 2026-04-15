@@ -2,8 +2,9 @@
 name: gbsx
 description: GBSX is a toolkit designed for demultiplexing genotyping-by-sequencing data and assisting in experimental design. Use when user asks to demultiplex reads with inline barcodes, predict restriction enzyme fragment distributions, or generate optimized barcode sets.
 homepage: https://github.com/GenomicsCoreLeuven/GBSX
+metadata:
+  docker_image: "quay.io/biocontainers/gbsx:1.3--0"
 ---
-
 
 # gbsx
 

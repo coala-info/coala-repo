@@ -4,7 +4,6 @@ description: SparseSignatures extracts mutational signatures from point mutation
 homepage: https://bioconductor.org/packages/release/bioc/html/SparseSignatures.html
 ---
 
-
 # bioconductor-sparsesignatures
 
 ## Overview

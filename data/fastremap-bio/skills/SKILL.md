@@ -1,9 +1,10 @@
 ---
 name: fastremap-bio
-description: "FastRemap converts genomic coordinates between different assembly versions using UCSC chain files. Use when user asks to remap coordinates between genome assemblies, convert BAM, SAM, or BED files to a new reference version, or migrate legacy datasets to updated builds."
+description: FastRemap converts genomic coordinates between different assembly versions using UCSC chain files. Use when user asks to remap coordinates between genome assemblies, convert BAM, SAM, or BED files to a new reference version, or migrate legacy datasets to updated builds.
 homepage: https://github.com/CMU-SAFARI/FastRemap
+metadata:
+  docker_image: "quay.io/biocontainers/fastremap-bio:1.0.0--h077b44d_2"
 ---
-
 
 # fastremap-bio
 

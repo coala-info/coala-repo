@@ -1,9 +1,10 @@
 ---
 name: python3-cutadapt
-description: "Cutadapt removes adapter sequences, primers, and low-quality bases from high-throughput sequencing reads. Use when user asks to trim adapters, strip PCR primers, filter reads by quality or length, or demultiplex sequencing data."
+description: Cutadapt removes adapter sequences, primers, and low-quality bases from high-throughput sequencing reads. Use when user asks to trim adapters, strip PCR primers, filter reads by quality or length, or demultiplex sequencing data.
 homepage: https://cutadapt.readthedocs.io/
+metadata:
+  docker_image: "biocontainers/python3-cutadapt:v1.12-2-deb_cv1"
 ---
-
 
 # python3-cutadapt
 

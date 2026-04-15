@@ -4,7 +4,6 @@ description: This package provides probe sequence data and chip coordinates for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/celegansprobe.html
 ---
 
-
 # bioconductor-celegansprobe
 
 name: bioconductor-celegansprobe

@@ -4,7 +4,6 @@ description: The IntEREst package estimates and compares splicing efficiency acr
 homepage: https://bioconductor.org/packages/release/bioc/html/IntEREst.html
 ---
 
-
 # bioconductor-interest
 
 ## Overview

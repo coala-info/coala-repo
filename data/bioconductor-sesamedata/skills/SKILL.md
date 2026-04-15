@@ -4,7 +4,6 @@ description: This tool provides annotation data and processing functions for ana
 homepage: https://bioconductor.org/packages/release/data/experiment/html/sesameData.html
 ---
 
-
 # bioconductor-sesamedata
 
 name: bioconductor-sesamedata

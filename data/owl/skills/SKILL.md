@@ -2,6 +2,8 @@
 name: owl
 description: Owl detects and quantifies microsatellite instability using high-fidelity long-read sequencing data. Use when user asks to profile microsatellite repeats, score microsatellite instability, or analyze MSI from HiFi reads.
 homepage: https://github.com/PacificBiosciences/owl
+metadata:
+  docker_image: "quay.io/biocontainers/owl:0.4.0--h9ee0642_0"
 ---
 
 # owl

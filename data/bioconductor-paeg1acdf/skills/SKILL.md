@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/paeg1acdf.html
 ---
 
-
 # bioconductor-paeg1acdf
 
 name: bioconductor-paeg1acdf

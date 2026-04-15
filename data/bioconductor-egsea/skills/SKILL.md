@@ -4,7 +4,6 @@ description: This tool performs Ensemble of Gene Set Enrichment Analysis by inte
 homepage: https://bioconductor.org/packages/release/bioc/html/EGSEA.html
 ---
 
-
 # bioconductor-egsea
 
 name: bioconductor-egsea

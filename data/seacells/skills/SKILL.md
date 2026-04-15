@@ -2,8 +2,9 @@
 name: seacells
 description: SEACells identifies metacells by aggregating highly similar single cells into granular groups to overcome data sparsity while preserving biological heterogeneity. Use when user asks to identify metacells, aggregate single-cell data into dense cellular states, or perform high-resolution trajectory and regulatory analysis.
 homepage: https://github.com/dpeerlab/SEACells
+metadata:
+  docker_image: "quay.io/biocontainers/seacells:0.3.3--pyhdfd78af_0"
 ---
-
 
 # seacells
 

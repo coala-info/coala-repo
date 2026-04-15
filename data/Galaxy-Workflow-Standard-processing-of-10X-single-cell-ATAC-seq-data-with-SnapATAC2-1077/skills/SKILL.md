@@ -1,10 +1,12 @@
 ---
 name: standard-processing-of-single-cell-atac-seq-data-with-snapat
-description: "This workflow processes single-cell ATAC-seq fragment or BAM files using SnapATAC2 and Scanpy to perform quality control filtering, dimensionality reduction, and leiden clustering. Use this skill when you need to identify cell-specific chromatin accessibility patterns, visualize clusters via UMAP, and annotate cell types based on gene activity matrices in epigenetic studies."
-homepage: https://workflowhub.eu/workflows/1077
+description: This workflow processes single-cell ATAC-seq fragment or BAM files using SnapATAC2 and Scanpy to perform quality control filtering, dimensionality reduction, and leiden clustering. Use this skill when you need to identify cell-specific chromatin accessibility patterns, visualize clusters via UMAP, and annotate cell types based on gene activity matrices in epigenetic studies.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Standard processing of single cell ATAC-seq data with SnapATAC2
+# standard-processing-of-single-cell-atac-seq-data-with-snapat
 
 ## Overview
 

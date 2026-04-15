@@ -4,7 +4,6 @@ description: This tool provides access to minor allele frequency data from gnomA
 homepage: https://bioconductor.org/packages/3.13/data/annotation/html/MafH5.gnomAD.v3.1.1.GRCh38.html
 ---
 
-
 # bioconductor-mafh5.gnomad.v3.1.1.grch38
 
 name: bioconductor-mafh5.gnomad.v3.1.1.grch38

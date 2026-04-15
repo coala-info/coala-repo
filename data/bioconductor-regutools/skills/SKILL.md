@@ -4,7 +4,6 @@ description: This tool provides programmatic access to RegulonDB for extracting 
 homepage: https://bioconductor.org/packages/release/bioc/html/regutools.html
 ---
 
-
 # bioconductor-regutools
 
 name: bioconductor-regutools

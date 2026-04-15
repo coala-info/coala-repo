@@ -2,6 +2,8 @@
 name: bpipe
 description: Bpipe is a tool for defining and running modular, large-scale computational pipelines using a Groovy-based domain-specific language. Use when user asks to define pipeline stages, manage bioinformatics file flows, parallelize tasks across chromosomes, or resume failed workflows.
 homepage: http://docs.bpipe.org/
+metadata:
+  docker_image: "quay.io/biocontainers/bpipe:0.9.13--hdfd78af_0"
 ---
 
 # bpipe

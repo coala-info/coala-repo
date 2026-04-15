@@ -2,8 +2,9 @@
 name: simwalk2
 description: simwalk2 performs stochastic statistical analysis of qualitative traits. Use when user asks to perform complex genetic analyses on qualitative traits, particularly for population genetics and quantitative genetics research, involving simulations and statistical modeling.
 homepage: http://www.genetics.ucla.edu/software/
+metadata:
+  docker_image: "quay.io/biocontainers/simwalk2:2.91--h2761816_7"
 ---
-
 
 # simwalk2
 

@@ -4,7 +4,6 @@ description: This package provides annotation data for the Rat Toxicology Array 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rta10probeset.db.html
 ---
 
-
 # bioconductor-rta10probeset.db
 
 name: bioconductor-rta10probeset.db

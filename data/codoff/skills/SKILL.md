@@ -1,9 +1,10 @@
 ---
 name: codoff
-description: "codoff measures the irregularity of codon usage in a specific genomic region compared to its host genome using Monte Carlo simulations. Use when user asks to quantify codon usage discordance, identify potential horizontal gene transfer, or compare a focal genomic region against a host genome's background distribution."
+description: codoff measures the irregularity of codon usage in a specific genomic region compared to its host genome using Monte Carlo simulations. Use when user asks to quantify codon usage discordance, identify potential horizontal gene transfer, or compare a focal genomic region against a host genome's background distribution.
 homepage: https://github.com/Kalan-Lab/codoff
+metadata:
+  docker_image: "quay.io/biocontainers/codoff:1.2.3--pyhdfd78af_0"
 ---
-
 
 # codoff
 

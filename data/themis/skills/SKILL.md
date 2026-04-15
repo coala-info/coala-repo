@@ -2,6 +2,8 @@
 name: themis
 description: Themis extracts deep quality metrics and validates the integrity of genomic alignment files. Use when user asks to perform quality control, calculate coverage depth, assess library complexity, or profile microbial communities.
 homepage: https://github.com/xujialupaoli/Themis
+metadata:
+  docker_image: "quay.io/biocontainers/themis:0.1.0--py314h0cb7dc8_0"
 ---
 
 # themis

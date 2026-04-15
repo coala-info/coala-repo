@@ -4,7 +4,6 @@ description: This tool validates p-value distributions and performs False Discov
 homepage: https://cran.r-project.org/web/packages/cp4p/index.html
 ---
 
-
 # r-cp4p
 
 name: r-cp4p

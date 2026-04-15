@@ -2,8 +2,9 @@
 name: beads
 description: Beads provides a persistent, graph-based memory system that tracks task dependencies and project states directly within a repository. Use when user asks to initialize a task tracking system, create or update tasks, manage dependencies between items, or view ready-to-work tasks in a structured graph format.
 homepage: https://github.com/steveyegge/beads
+metadata:
+  docker_image: "biocontainers/beads:v1.1.18dfsg-3-deb_cv1"
 ---
-
 
 # beads
 

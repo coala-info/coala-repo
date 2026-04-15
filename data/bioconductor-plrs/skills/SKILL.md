@@ -4,7 +4,6 @@ description: This tool models the association between DNA copy number and gene e
 homepage: https://bioconductor.org/packages/3.8/bioc/html/plrs.html
 ---
 
-
 # bioconductor-plrs
 
 name: bioconductor-plrs

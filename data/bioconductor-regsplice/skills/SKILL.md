@@ -4,7 +4,6 @@ description: The regsplice package implements a computationally efficient method
 homepage: https://bioconductor.org/packages/release/bioc/html/regsplice.html
 ---
 
-
 # bioconductor-regsplice
 
 ## Overview

@@ -4,7 +4,6 @@ description: The r-rismed tool extracts bibliographic data and metadata from NCB
 homepage: https://cran.r-project.org/web/packages/rismed/index.html
 ---
 
-
 # r-rismed
 
 name: r-rismed

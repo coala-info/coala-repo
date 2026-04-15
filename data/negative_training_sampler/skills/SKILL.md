@@ -2,8 +2,9 @@
 name: negative_training_sampler
 description: This tool performs GC-content distribution matching to select negative genomic samples that mirror the profile of positive samples. Use when user asks to generate balanced negative training sets, match GC content across genomic regions, or preprocess BED files for machine learning.
 homepage: https://github.com/kircherlab/negative_training_sampler
+metadata:
+  docker_image: "quay.io/biocontainers/negative_training_sampler:0.3.1--py_0"
 ---
-
 
 # negative_training_sampler
 

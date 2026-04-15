@@ -1,9 +1,8 @@
 ---
 name: bioconductor-doqtl
-description: "DOQTL performs Quantitative Trait Locus (QTL) mapping and haplotype reconstruction in Diversity Outbred mice. Use when user asks to perform linkage mapping, calculate kinship matrices, run permutation tests, visualize founder effects, or conduct association mapping in Diversity Outbred populations."
+description: DOQTL performs Quantitative Trait Locus (QTL) mapping and haplotype reconstruction in Diversity Outbred mice. Use when user asks to perform linkage mapping, calculate kinship matrices, run permutation tests, visualize founder effects, or conduct association mapping in Diversity Outbred populations.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DOQTL.html
 ---
-
 
 # bioconductor-doqtl
 

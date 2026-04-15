@@ -4,7 +4,6 @@ description: The minet package provides a framework for inferring gene regulator
 homepage: https://bioconductor.org/packages/release/bioc/html/minet.html
 ---
 
-
 # bioconductor-minet
 
 ## Overview

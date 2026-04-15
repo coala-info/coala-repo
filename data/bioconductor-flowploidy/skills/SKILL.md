@@ -4,7 +4,6 @@ description: The flowPloidy package provides automated analysis of DNA flow cyto
 homepage: https://bioconductor.org/packages/release/bioc/html/flowPloidy.html
 ---
 
-
 # bioconductor-flowploidy
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides supporting reference data, gene annotations, 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TCGAbiolinksGUI.data.html
 ---
 
-
 # bioconductor-tcgabiolinksgui.data
 
 name: bioconductor-tcgabiolinksgui.data

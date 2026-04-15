@@ -2,8 +2,9 @@
 name: shapeit
 description: SHAPEIT is a high-performance tool used for haplotype estimation and phasing of large-scale genomic data. Use when user asks to phase genotypes, estimate haplotypes, integrate read-based phase information, or configure population-based phasing runs.
 homepage: https://github.com/odelaneau/shapeit4
+metadata:
+  docker_image: "quay.io/biocontainers/shapeit:2.r837--h09b0a5c_1"
 ---
-
 
 # shapeit
 

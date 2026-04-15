@@ -4,7 +4,6 @@ description: This tool flexibly restructures and aggregates data in R by transfo
 homepage: https://cloud.r-project.org/web/packages/reshape/index.html
 ---
 
-
 # r-reshape2
 
 name: r-reshape2

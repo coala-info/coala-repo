@@ -4,7 +4,6 @@ description: The LEA package provides optimized algorithms for landscape genomic
 homepage: https://bioconductor.org/packages/release/bioc/html/LEA.html
 ---
 
-
 # bioconductor-lea
 
 ## Overview

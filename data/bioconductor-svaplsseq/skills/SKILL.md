@@ -4,7 +4,6 @@ description: This tool identifies and corrects for hidden sources of variability
 homepage: https://bioconductor.org/packages/3.6/bioc/html/SVAPLSseq.html
 ---
 
-
 # bioconductor-svaplsseq
 
 name: bioconductor-svaplsseq

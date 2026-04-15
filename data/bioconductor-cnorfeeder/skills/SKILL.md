@@ -4,7 +4,6 @@ description: CNORfeeder integrates literature-based prior knowledge networks wit
 homepage: https://bioconductor.org/packages/release/bioc/html/CNORfeeder.html
 ---
 
-
 # bioconductor-cnorfeeder
 
 name: bioconductor-cnorfeeder

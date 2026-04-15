@@ -2,8 +2,9 @@
 name: qtlseq
 description: qtlseq identifies genomic regions associated with specific traits by calculating SNP-indices from bulked segregant analysis data. Use when user asks to map reads to a reference, calculate SNP-indices for bulked populations, perform statistical simulations to identify QTLs, or predict SNP impacts using SnpEff.
 homepage: https://github.com/YuSugihara/QTL-seq
+metadata:
+  docker_image: "quay.io/biocontainers/qtlseq:2.2.9--pyhdfd78af_0"
 ---
-
 
 # qtlseq
 

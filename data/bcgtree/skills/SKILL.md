@@ -2,8 +2,9 @@
 name: bcgtree
 description: bcgtree is a wrapper tool that automates the construction of phylogenetic trees from bacterial genomes by identifying core genes and performing sequence alignment and tree inference. Use when user asks to build a phylogenetic tree from proteomes or genomes, identify core genes using HMMER, or automate the pipeline for multi-locus sequence analysis.
 homepage: https://github.com/molbiodiv/bcgtree
+metadata:
+  docker_image: "quay.io/biocontainers/bcgtree:1.2.1--pl5321hdfd78af_0"
 ---
-
 
 # bcgtree
 

@@ -2,8 +2,9 @@
 name: scglue
 description: scglue is a framework for integrating multi-omics data by learning a shared latent space through a guidance graph. Use when user asks to integrate single-cell RNA and ATAC data, construct genomic guidance graphs, or infer gene regulatory networks.
 homepage: https://github.com/gao-lab/GLUE
+metadata:
+  docker_image: "quay.io/biocontainers/scglue:0.4.0--pyhdfd78af_0"
 ---
-
 
 # scglue
 

@@ -4,7 +4,6 @@ description: This tool provides an automated six-step pipeline for conducting en
 homepage: https://bioconductor.org/packages/3.8/bioc/html/RNASeqR.html
 ---
 
-
 # bioconductor-rnaseqr
 
 name: bioconductor-rnaseqr

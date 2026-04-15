@@ -2,6 +2,8 @@
 name: flowcraft
 description: FlowCraft is a pipeline composer that builds reproducible genomics workflows by stitching together bioinformatics components into Nextflow files. Use when user asks to build a sequencing pipeline, generate a Nextflow workflow from specific tools, or inspect and report on active genomic analysis runs.
 homepage: https://github.com/assemblerflow/flowcraft
+metadata:
+  docker_image: "quay.io/biocontainers/flowcraft:1.4.1--py_1"
 ---
 
 # flowcraft

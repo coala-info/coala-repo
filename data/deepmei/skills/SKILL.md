@@ -2,8 +2,9 @@
 name: deepmei
 description: Deepmei detects mobile element insertions in biological sequences. Use when user asks to detect mobile element insertions in genomic data.
 homepage: https://github.com/Kanglu123/deepmei
+metadata:
+  docker_image: "quay.io/biocontainers/deepmei:1.6.24--hdfd78af_1"
 ---
-
 
 # deepmei
 

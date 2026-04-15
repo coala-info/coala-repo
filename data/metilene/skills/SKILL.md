@@ -2,8 +2,9 @@
 name: metilene
 description: metilene identifies differentially methylated regions (DMRs) in bisulfite sequencing data using a binary segmentation algorithm and statistical testing. Use when user asks to call DMRs, analyze whole-genome bisulfite sequencing data, or compare methylation levels between two groups.
 homepage: http://www.bioinf.uni-leipzig.de/Software/metilene
+metadata:
+  docker_image: "quay.io/biocontainers/metilene:0.2.9--h7b50bb2_0"
 ---
-
 
 # metilene
 

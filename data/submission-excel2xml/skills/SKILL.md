@@ -2,8 +2,9 @@
 name: submission-excel2xml
 description: This tool converts Excel spreadsheets into DDBJ-compliant XML files for metadata submission and validation. Use when user asks to generate DRA metadata XMLs, validate metadata against XSD schemas, or convert Excel templates to JGA or AGD submission formats.
 homepage: https://github.com/ddbj/submission-excel2xml
+metadata:
+  docker_image: "quay.io/biocontainers/submission-excel2xml:3.6.2--hdfd78af_0"
 ---
-
 
 # submission-excel2xml
 

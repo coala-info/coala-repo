@@ -1,10 +1,12 @@
 ---
 name: proteomics-database-handling
-description: "This proteomics workflow downloads protein FASTA databases, merges and filters unique sequences, and generates decoy entries using tools like dbbuilder and DecoyDatabase. Use this skill when you need to construct a comprehensive, non-redundant target-decoy search database for identifying proteins and estimating false discovery rates in mass spectrometry data analysis."
-homepage: https://workflowhub.eu/workflows/1434
+description: This proteomics workflow downloads protein FASTA databases, merges and filters unique sequences, and generates decoy entries using tools like dbbuilder and DecoyDatabase. Use this skill when you need to construct a comprehensive, non-redundant target-decoy search database for identifying proteins and estimating false discovery rates in mass spectrometry data analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteomics: database handling
+# proteomics-database-handling
 
 ## Overview
 

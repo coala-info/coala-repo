@@ -4,7 +4,6 @@ description: CNAqc performs quality control for bulk cancer sequencing data by i
 homepage: https://cran.r-project.org/web/packages/cnaqc/index.html
 ---
 
-
 # r-cnaqc
 
 name: r-cnaqc

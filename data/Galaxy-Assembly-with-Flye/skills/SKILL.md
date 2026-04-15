@@ -1,10 +1,12 @@
 ---
 name: assembly-with-flye
-description: "This Galaxy workflow performs de novo assembly of long-read sequencing data using Flye and evaluates the resulting contigs with Quast, Bandage, and Fasta Statistics. Use this skill when you need to reconstruct a genome from noisy long reads and require comprehensive quality metrics and visual representations of the assembly graph."
-homepage: https://workflowhub.eu/workflows/225
+description: This Galaxy workflow performs de novo assembly of long-read sequencing data using Flye and evaluates the resulting contigs with Quast, Bandage, and Fasta Statistics. Use this skill when you need to reconstruct a genome from noisy long reads and require comprehensive quality metrics and visual representations of the assembly graph.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly with Flye
+# assembly-with-flye
 
 ## Overview
 

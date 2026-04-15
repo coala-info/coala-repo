@@ -4,7 +4,6 @@ description: This package provides access to transcription factor binding profil
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JASPAR2020.html
 ---
 
-
 # bioconductor-jaspar2020
 
 name: bioconductor-jaspar2020

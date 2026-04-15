@@ -1,10 +1,12 @@
 ---
 name: debruijn-graph-velvet-full-and-spades-assembly
-description: "This Galaxy workflow performs de novo genome assembly on paired-end FASTQ reads using the De Bruijn graph-based tools Velvet and SPAdes, providing assembly statistics and Bandage visualizations for quality assessment. Use this skill when you need to reconstruct a microbial genome from short-read sequencing data and evaluate the structural integrity of the resulting contigs through comparative assembly methods."
-homepage: https://workflowhub.eu/workflows/2048
+description: This Galaxy workflow performs de novo genome assembly on paired-end FASTQ reads using the De Bruijn graph-based tools Velvet and SPAdes, providing assembly statistics and Bandage visualizations for quality assessment. Use this skill when you need to reconstruct a microbial genome from short-read sequencing data and evaluate the structural integrity of the resulting contigs through comparative assembly methods.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Debruijn Graph Velvet Full and SPAdes Assembly
+# debruijn-graph-velvet-full-and-spades-assembly
 
 ## Overview
 

@@ -2,6 +2,8 @@
 name: bctools
 description: bctools is a suite of scripts designed to manage barcodes and UMIs by extracting, filtering, and deduplicating technical sequences in NGS pipelines. Use when user asks to extract barcodes from reads, merge PCR duplicates, filter spurious UMIs, remove paired-end tails, or convert barcodes to binary RY-space.
 homepage: https://github.com/dmaticzka/bctools
+metadata:
+  docker_image: "quay.io/biocontainers/bctools:0.2.2--pl5.22.0_0"
 ---
 
 # bctools

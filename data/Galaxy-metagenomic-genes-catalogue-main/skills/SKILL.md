@@ -1,10 +1,12 @@
 ---
 name: metagenomic-genes-catalogue-analysis
-description: "This workflow processes trimmed metagenomic reads through assembly with MEGAHIT, gene prediction via Prodigal, and comprehensive annotation using tools like MMseqs2, eggNOG-mapper, and AMRFinderPlus. Use this skill when you need to construct a non-redundant gene catalogue from environmental or clinical samples to characterize taxonomic composition, functional potential, and antimicrobial resistance profiles."
-homepage: https://workflowhub.eu/workflows/2024
+description: This workflow processes trimmed metagenomic reads through assembly with MEGAHIT, gene prediction via Prodigal, and comprehensive annotation using tools like MMseqs2, eggNOG-mapper, and AMRFinderPlus. Use this skill when you need to construct a non-redundant gene catalogue from environmental or clinical samples to characterize taxonomic composition, functional potential, and antimicrobial resistance profiles.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metagenomic Genes Catalogue Analysis
+# metagenomic-genes-catalogue-analysis
 
 ## Overview
 

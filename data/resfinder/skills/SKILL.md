@@ -1,9 +1,10 @@
 ---
 name: resfinder
-description: "ResFinder identifies antimicrobial resistance genes and chromosomal mutations in bacterial sequence data. Use when user asks to detect AMR determinants, identify point mutations, or profile resistance from assemblies and raw reads."
+description: ResFinder identifies antimicrobial resistance genes and chromosomal mutations in bacterial sequence data. Use when user asks to detect AMR determinants, identify point mutations, or profile resistance from assemblies and raw reads.
 homepage: https://bitbucket.org/genomicepidemiology/resfinder
+metadata:
+  docker_image: "quay.io/biocontainers/resfinder:4.7.2--pyhdfd78af_0"
 ---
-
 
 # resfinder
 

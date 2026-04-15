@@ -4,7 +4,6 @@ description: KnowSeq provides a comprehensive pipeline for processing and analyz
 homepage: https://bioconductor.org/packages/release/bioc/html/KnowSeq.html
 ---
 
-
 # bioconductor-knowseq
 
 name: bioconductor-knowseq

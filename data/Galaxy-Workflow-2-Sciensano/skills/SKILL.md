@@ -1,10 +1,12 @@
 ---
 name: stec-pipeline
-description: "This Galaxy workflow processes FASTQ sequencing data to characterize Shiga toxin-producing Escherichia coli (STEC) using the STEC pipeline 1.0 and BLAST-based analysis. Use this skill when you need to identify virulence genes, determine serotypes, or perform molecular characterization of STEC isolates from genomic sequencing data."
-homepage: https://workflowhub.eu/workflows/644
+description: This Galaxy workflow processes FASTQ sequencing data to characterize Shiga toxin-producing Escherichia coli (STEC) using the STEC pipeline 1.0 and BLAST-based analysis. Use this skill when you need to identify virulence genes, determine serotypes, or perform molecular characterization of STEC isolates from genomic sequencing data.
+homepage: https://erasmusmc-bioinformatics.github.io/benchAMRking/
+metadata:
+  docker_image: "N/A"
 ---
 
-# STEC pipeline
+# stec-pipeline
 
 ## Overview
 

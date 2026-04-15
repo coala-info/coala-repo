@@ -4,7 +4,6 @@ description: This tool benchmarks and compares differential expression methods f
 homepage: https://bioconductor.org/packages/release/bioc/html/compcodeR.html
 ---
 
-
 # bioconductor-compcoder
 
 name: bioconductor-compcoder

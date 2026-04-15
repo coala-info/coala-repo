@@ -4,7 +4,6 @@ description: This tool models associations between multiple genotypes and traits
 homepage: https://bioconductor.org/packages/release/bioc/html/ASGSCA.html
 ---
 
-
 # bioconductor-asgsca
 
 name: bioconductor-asgsca

@@ -4,7 +4,6 @@ description: The r-ore package provides an interface to the Onigmo regular expre
 homepage: https://cloud.r-project.org/web/packages/ore/index.html
 ---
 
-
 # r-ore
 
 name: r-ore

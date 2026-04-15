@@ -4,7 +4,6 @@ description: ImpulseDE2 identifies differentially expressed genes in longitudina
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ImpulseDE2.html
 ---
 
-
 # bioconductor-impulsede2
 
 ## Overview

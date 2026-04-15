@@ -4,7 +4,6 @@ description: This package provides supporting data, CpG annotations, and automat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/EpiMix.data.html
 ---
 
-
 # bioconductor-epimix.data
 
 name: bioconductor-epimix.data

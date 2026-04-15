@@ -2,8 +2,9 @@
 name: perl-data-lock
 description: This tool manages Perl variable mutability by manipulating internal scalar value flags to lock and unlock data structures efficiently. Use when user asks to make variables immutable, lock scalars or references, or prevent modification of data structures without the performance overhead of tied variables.
 homepage: http://metacpan.org/pod/Data::Lock
+metadata:
+  docker_image: "quay.io/biocontainers/perl-data-lock:1.03--pl526_0"
 ---
-
 
 # perl-data-lock
 

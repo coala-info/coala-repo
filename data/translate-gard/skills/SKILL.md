@@ -2,8 +2,9 @@
 name: translate-gard
 description: `translate-gard` converts HyPhy GARD output files into a modern JSON format. Use when user asks to 'convert GARD output to JSON', 'prepare GARD data for visualization', or 'make GARD results compatible with modern data formats'.
 homepage: https://github.com/veg/translate-gard/
+metadata:
+  docker_image: "quay.io/biocontainers/translate-gard:1.0.4--0"
 ---
-
 
 # translate-gard
 

@@ -4,7 +4,6 @@ description: This package provides a Bioconductor Transcript Database object for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ggallus.UCSC.galGal5.refGene.html
 ---
 
-
 # bioconductor-txdb.ggallus.ucsc.galgal5.refgene
 
 name: bioconductor-txdb.ggallus.ucsc.galgal5.refgene

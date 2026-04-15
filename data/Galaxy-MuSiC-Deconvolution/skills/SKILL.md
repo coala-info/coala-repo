@@ -1,10 +1,12 @@
 ---
 name: music-deconvolution
-description: "This transcriptomics workflow utilizes the MuSiC tool suite to perform bulk RNA-seq deconvolution by integrating single-cell and bulk RNA assay and phenotype data. Use this skill when you need to estimate the relative proportions of different cell types within heterogeneous bulk RNA-seq samples using a multi-subject single-cell reference."
-homepage: https://workflowhub.eu/workflows/1557
+description: This transcriptomics workflow utilizes the MuSiC tool suite to perform bulk RNA-seq deconvolution by integrating single-cell and bulk RNA assay and phenotype data. Use this skill when you need to estimate the relative proportions of different cell types within heterogeneous bulk RNA-seq samples using a multi-subject single-cell reference.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MuSiC: Deconvolution
+# music-deconvolution
 
 ## Overview
 

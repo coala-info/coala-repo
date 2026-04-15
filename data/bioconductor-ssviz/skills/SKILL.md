@@ -4,7 +4,6 @@ description: Bioconductor-ssviz is a specialized toolkit for the visualization a
 homepage: https://bioconductor.org/packages/release/bioc/html/ssviz.html
 ---
 
-
 # bioconductor-ssviz
 
 name: bioconductor-ssviz

@@ -2,8 +2,9 @@
 name: wheezy.template
 description: Wheezy.template is a minimalist, high-performance templating system for dynamic content generation in Python. Use when user asks to generate dynamic content, evaluate expressions, implement conditional logic or loops in templates, compile templates, or render templates.
 homepage: https://bitbucket.org/akorn/wheezy.template
+metadata:
+  docker_image: "quay.io/biocontainers/wheezy.template:3.2.5--pyhdfd78af_0"
 ---
-
 
 # wheezy.template
 

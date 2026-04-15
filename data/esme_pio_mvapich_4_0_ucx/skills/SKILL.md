@@ -2,8 +2,9 @@
 name: esme_pio_mvapich_4_0_ucx
 description: This library provides a high-level interface for performing parallel I/O using netCDF or PnetCDF formats on HPC systems. Use when user asks to perform parallel I/O for structured grid applications, optimize I/O performance using MVAPICH and UCX, or configure asynchronous I/O processors.
 homepage: https://github.com/NCAR/ParallelIO
+metadata:
+  docker_image: "quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0"
 ---
-
 
 # esme_pio_mvapich_4_0_ucx
 

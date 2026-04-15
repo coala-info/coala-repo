@@ -1,9 +1,10 @@
 ---
 name: doubletdetection
-description: "DoubletDetection identifies and removes doublets from scRNA-seq data by training a classifier on synthetic doublets. Use when user asks to detect doublets in single-cell data, remove artifacts from count matrices, or filter out hybrid transcriptomes."
+description: DoubletDetection identifies and removes doublets from scRNA-seq data by training a classifier on synthetic doublets. Use when user asks to detect doublets in single-cell data, remove artifacts from count matrices, or filter out hybrid transcriptomes.
 homepage: https://github.com/JonathanShor/DoubletDetection
+metadata:
+  docker_image: "quay.io/biocontainers/doubletdetection:4.3.0.post1--pyhdfd78af_0"
 ---
-
 
 # doubletdetection
 

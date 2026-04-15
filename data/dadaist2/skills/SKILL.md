@@ -1,9 +1,10 @@
 ---
 name: dadaist2
-description: "dadaist2 is a command-line wrapper for the DADA2 package to generate feature tables and representative sequences from paired-end Illumina reads. Use when user asks to perform amplicon sequence variant (ASV) analysis, taxonomic profiling, or generate ecological analyses from metabarcoding data."
+description: dadaist2 is a command-line wrapper for the DADA2 package to generate feature tables and representative sequences from paired-end Illumina reads. Use when user asks to perform amplicon sequence variant (ASV) analysis, taxonomic profiling, or generate ecological analyses from metabarcoding data.
 homepage: https://github.com/quadram-institute-bioscience/dadaist2
+metadata:
+  docker_image: "quay.io/biocontainers/dadaist2:1.3.1--hdfd78af_2"
 ---
-
 
 # dadaist2
 

@@ -4,7 +4,6 @@ description: This tool provides an interactive interface for visualizing genomic
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizr.html
 ---
 
-
 # bioconductor-epivizr
 
 name: bioconductor-epivizr

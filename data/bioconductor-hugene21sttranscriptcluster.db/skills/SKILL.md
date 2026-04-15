@@ -4,7 +4,6 @@ description: This package provides genomic annotation for the Affymetrix Human G
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene21sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-hugene21sttranscriptcluster.db
 
 name: bioconductor-hugene21sttranscriptcluster.db

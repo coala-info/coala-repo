@@ -4,7 +4,6 @@ description: statTarget provides signal drift correction and statistical analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/statTarget.html
 ---
 
-
 # bioconductor-stattarget
 
 name: bioconductor-stattarget

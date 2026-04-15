@@ -4,7 +4,6 @@ description: This tool manages biological networks in the Cytoscape Exchange (CX
 homepage: https://bioconductor.org/packages/release/bioc/html/RCX.html
 ---
 
-
 # bioconductor-rcx
 
 name: bioconductor-rcx

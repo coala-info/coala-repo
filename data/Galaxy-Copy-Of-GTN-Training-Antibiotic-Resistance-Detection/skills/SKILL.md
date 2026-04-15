@@ -1,10 +1,12 @@
 ---
 name: copy-of-gtn-training-antibiotic-resistance-detection
-description: "This microbiome workflow processes Nanopore plasmid sequencing data using tools like Unicycler for assembly, PlasFlow for classification, and staramr for antibiotic resistance gene detection. Use this skill when you need to assemble long-read plasmid sequences and characterize the presence of antimicrobial resistance determinants within microbial communities."
-homepage: https://workflowhub.eu/workflows/1477
+description: This microbiome workflow processes Nanopore plasmid sequencing data using tools like Unicycler for assembly, PlasFlow for classification, and staramr for antibiotic resistance gene detection. Use this skill when you need to assemble long-read plasmid sequences and characterize the presence of antimicrobial resistance determinants within microbial communities.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Copy Of GTN Training - Antibiotic Resistance Detection
+# copy-of-gtn-training-antibiotic-resistance-detection
 
 ## Overview
 

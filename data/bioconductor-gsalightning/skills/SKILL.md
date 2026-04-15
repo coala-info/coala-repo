@@ -4,7 +4,6 @@ description: GSALightning performs ultra-fast permutation-based gene set analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/GSALightning.html
 ---
 
-
 # bioconductor-gsalightning
 
 name: bioconductor-gsalightning

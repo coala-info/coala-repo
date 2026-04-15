@@ -2,8 +2,9 @@
 name: gait-gm
 description: gait-gm is a bioinformatics suite used to model and identify relationships between gene expression levels and metabolite concentrations. Use when user asks to perform Sparse Partial Least Squares regression, conduct all-by-all correlation analysis, or map biological data to KEGG pathways.
 homepage: https://github.com/secimTools/gait-gm
+metadata:
+  docker_image: "quay.io/biocontainers/gait-gm:21.7.22--pyhdfd78af_0"
 ---
-
 
 # gait-gm
 

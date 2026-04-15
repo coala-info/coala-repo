@@ -1,9 +1,10 @@
 ---
 name: kyototycoon
-description: "Kyoto Tycoon provides a high-performance network interface for the Kyoto Cabinet key-value database engine. Use when user asks to configure the ktserver daemon, tune database parameters for performance or durability, manage remote keys, or enable memcached protocol compatibility."
+description: Kyoto Tycoon provides a high-performance network interface for the Kyoto Cabinet key-value database engine. Use when user asks to configure the ktserver daemon, tune database parameters for performance or durability, manage remote keys, or enable memcached protocol compatibility.
 homepage: https://github.com/alticelabs/kyoto
+metadata:
+  docker_image: "quay.io/biocontainers/kyototycoon:20170410--hbed32c3_5"
 ---
-
 
 # kyototycoon
 

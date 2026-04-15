@@ -2,8 +2,9 @@
 name: shapemapper
 description: ShapeMapper automates the processing of raw sequencing data into RNA reactivity profiles by identifying chemical adducts through mutational profiling. Use when user asks to process SHAPE-MaP or DMS-MaP data, calculate RNA chemical probing reactivities, or align mutational profiling reads to a reference sequence.
 homepage: https://github.com/Weeks-UNC/shapemapper2
+metadata:
+  docker_image: "quay.io/biocontainers/shapemapper:1.2--py27_0"
 ---
-
 
 # shapemapper
 

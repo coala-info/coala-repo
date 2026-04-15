@@ -4,7 +4,6 @@ description: This tool performs joint analysis of ChIP-seq replicates to rescue 
 homepage: https://bioconductor.org/packages/release/bioc/html/rmspc.html
 ---
 
-
 # bioconductor-rmspc
 
 name: bioconductor-rmspc

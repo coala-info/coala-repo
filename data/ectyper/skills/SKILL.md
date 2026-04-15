@@ -2,8 +2,9 @@
 name: ectyper
 description: Ectyper performs species identification, serotyping, and pathotyping for Escherichia coli using raw sequencing reads or assembled genomes. Use when user asks to identify E. coli species, determine O and H antigens, perform pathotyping, or conduct Shiga toxin subtyping.
 homepage: https://github.com/phac-nml/ecoli_serotyping
+metadata:
+  docker_image: "quay.io/biocontainers/ectyper:2.0.0--pyhdfd78af_4"
 ---
-
 
 # ectyper
 

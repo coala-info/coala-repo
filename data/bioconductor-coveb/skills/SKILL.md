@@ -4,7 +4,6 @@ description: This tool implements an empirical Bayes approach to estimate and re
 homepage: https://bioconductor.org/packages/release/bioc/html/covEB.html
 ---
 
-
 # bioconductor-coveb
 
 ## Overview

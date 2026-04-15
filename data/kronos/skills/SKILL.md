@@ -2,6 +2,8 @@
 name: kronos
 description: Kronos is a workflow assembler and manager that orchestrates complex genome informatics and cancer genome analytics pipelines. Use when user asks to assemble multi-step workflows, manage task dependencies using Ruffus, or execute genomic pipelines on local systems and clusters.
 homepage: https://github.com/jtaghiyar/kronos
+metadata:
+  docker_image: "quay.io/biocontainers/kronos:2.3.0--py_0"
 ---
 
 # kronos

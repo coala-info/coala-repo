@@ -2,8 +2,9 @@
 name: perl-type-tiny
 description: perl-type-tiny provides a lightweight and efficient type constraint system for Perl that works across Moo, Moose, and Mouse frameworks. Use when user asks to define type constraints, validate data structures, or implement type coercions in Perl applications.
 homepage: https://metacpan.org/release/Type-Tiny
+metadata:
+  docker_image: "quay.io/biocontainers/perl-type-tiny:1.016006--pl5321hdfd78af_0"
 ---
-
 
 # perl-type-tiny
 

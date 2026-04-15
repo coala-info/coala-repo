@@ -4,7 +4,6 @@ description: bioconductor-synmut creates synonymous mutant DNA sequences by modi
 homepage: https://bioconductor.org/packages/release/bioc/html/SynMut.html
 ---
 
-
 # bioconductor-synmut
 
 ## Overview

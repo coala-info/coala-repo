@@ -1,9 +1,10 @@
 ---
 name: blat
-description: "BLAT is a high-speed sequence alignment tool designed to map DNA or protein sequences to genomic assemblies. Use when user asks to map mRNA or cDNA sequences to a genome, find genomic coordinates for sequences, or identify gene families."
+description: BLAT is a high-speed sequence alignment tool designed to map DNA or protein sequences to genomic assemblies. Use when user asks to map mRNA or cDNA sequences to a genome, find genomic coordinates for sequences, or identify gene families.
 homepage: https://genome.ucsc.edu/FAQ/FAQblat.html
+metadata:
+  docker_image: "quay.io/biocontainers/blat:36--0"
 ---
-
 
 # blat
 

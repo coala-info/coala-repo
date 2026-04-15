@@ -2,8 +2,9 @@
 name: trnanalysis
 description: The trnanalysis tool maps and analyzes tRNA reads from small RNA sequencing data. Use when user asks to map tRNA reads, analyze tRNA reads, perform differential expression analysis, or generate reports.
 homepage: https://trnanalysis.readthedocs.io/en/latest/
+metadata:
+  docker_image: "quay.io/biocontainers/trnanalysis:0.1.10--py_0"
 ---
-
 
 # trnanalysis
 

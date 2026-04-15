@@ -4,7 +4,6 @@ description: The CNEr package provides a pipeline for the large-scale identifica
 homepage: https://bioconductor.org/packages/release/bioc/html/CNEr.html
 ---
 
-
 # bioconductor-cner
 
 ## Overview

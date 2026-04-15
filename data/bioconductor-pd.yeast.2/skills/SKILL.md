@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.yeast.2.html
 ---
 
-
 # bioconductor-pd.yeast.2
 
 name: bioconductor-pd.yeast.2

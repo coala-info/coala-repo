@@ -2,8 +2,9 @@
 name: lagan
 description: Lagan is a model-first Content Management System that automatically generates database tables and administration panels from PHP class definitions. Use when user asks to architect content objects, handle data persistence via the RedBean ORM, or develop front-end routes and templates.
 homepage: https://github.com/lutsen/lagan
+metadata:
+  docker_image: "biocontainers/lagan:v2.0-3-deb_cv1"
 ---
-
 
 # lagan
 

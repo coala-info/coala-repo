@@ -4,7 +4,6 @@ description: The splitstackshape package provides high-performance functions for
 homepage: https://cloud.r-project.org/web/packages/splitstackshape/index.html
 ---
 
-
 # r-splitstackshape
 
 ## Overview

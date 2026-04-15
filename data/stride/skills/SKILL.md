@@ -2,8 +2,9 @@
 name: stride
 description: Stride is a high-performance C# game engine used for realistic rendering, VR applications, and procedural engine development. Use when user asks to clone the repository with Git LFS, restore dependencies, build the engine or Game Studio via command line, and troubleshoot environment issues.
 homepage: https://github.com/stride3d/stride
+metadata:
+  docker_image: "quay.io/biocontainers/stride:1.0--1"
 ---
-
 
 # stride
 

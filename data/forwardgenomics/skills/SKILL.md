@@ -2,6 +2,8 @@
 name: forwardgenomics
 description: Forward Genomics identifies genomic regions associated with the loss of specific traits by comparing divergence patterns across a phylogenetic tree. Use when user asks to link phenotypic trait loss to genomic changes, prepare phylogenetic input files, or execute the Perfect Match, GLS, and Branch analysis methods.
 homepage: https://github.com/hillerlab/ForwardGenomics
+metadata:
+  docker_image: "quay.io/biocontainers/forwardgenomics:1.0--hdfd78af_0"
 ---
 
 # forwardgenomics

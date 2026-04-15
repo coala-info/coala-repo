@@ -4,7 +4,6 @@ description: This package provides access to the Broad Institute's Connectivity 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ConnectivityMap.html
 ---
 
-
 # bioconductor-connectivitymap
 
 name: bioconductor-connectivitymap

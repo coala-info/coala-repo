@@ -2,8 +2,9 @@
 name: proteinortho
 description: This tool detects orthologous genes within different species. Use when user asks to find orthologous genes, identify gene families conserved across multiple organisms, or find species-specific gene expansions.
 homepage: https://gitlab.com/paulklemm_PHD/proteinortho/
+metadata:
+  docker_image: "quay.io/biocontainers/proteinortho:6.3.6--h2b77389_0"
 ---
-
 
 # proteinortho
 

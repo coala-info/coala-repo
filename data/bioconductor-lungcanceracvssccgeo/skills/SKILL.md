@@ -4,7 +4,6 @@ description: This package provides lung cancer microarray data and metadata for 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/LungCancerACvsSCCGEO.html
 ---
 
-
 # bioconductor-lungcanceracvssccgeo
 
 name: bioconductor-lungcanceracvssccgeo

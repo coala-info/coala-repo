@@ -4,7 +4,6 @@ description: This package provides a transcript database for human lincRNA trans
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Hsapiens.UCSC.hg19.lincRNAsTranscripts.html
 ---
 
-
 # bioconductor-txdb.hsapiens.ucsc.hg19.lincrnastranscripts
 
 ## Overview

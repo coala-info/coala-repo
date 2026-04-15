@@ -4,7 +4,6 @@ description: This tool queries and navigates NCBI Gene Expression Omnibus (GEO) 
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOmetadb.html
 ---
 
-
 # bioconductor-geometadb
 
 name: bioconductor-geometadb

@@ -4,7 +4,6 @@ description: This tool performs robust mutational signature analysis using regul
 homepage: https://bioconductor.org/packages/release/bioc/html/RESOLVE.html
 ---
 
-
 # bioconductor-resolve
 
 name: bioconductor-resolve

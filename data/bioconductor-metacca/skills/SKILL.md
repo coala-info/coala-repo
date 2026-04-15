@@ -4,7 +4,6 @@ description: This tool performs multivariate meta-analysis of genome-wide associ
 homepage: https://bioconductor.org/packages/release/bioc/html/metaCCA.html
 ---
 
-
 # bioconductor-metacca
 
 name: bioconductor-metacca

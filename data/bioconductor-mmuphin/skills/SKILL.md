@@ -4,7 +4,6 @@ description: MMUPHin performs meta-analysis of microbiome datasets by providing 
 homepage: https://bioconductor.org/packages/release/bioc/html/MMUPHin.html
 ---
 
-
 # bioconductor-mmuphin
 
 name: bioconductor-mmuphin

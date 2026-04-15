@@ -2,8 +2,9 @@
 name: scikit-learn
 description: Scikit-learn is a Python library for classical machine learning that provides tools for regression, classification, clustering, and dimensionality reduction. Use when user asks to train models, preprocess data using transformers, build machine learning pipelines, or evaluate model performance.
 homepage: https://github.com/scikit-learn/scikit-learn
+metadata:
+  docker_image: "quay.io/biocontainers/scikit-learn:0.20.2"
 ---
-
 
 # scikit-learn
 

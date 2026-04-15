@@ -1,10 +1,12 @@
 ---
 name: yolo-tail-analysis-training-workflow
-description: "This bioimage analysis workflow processes image collections and class files using histogram equalization, AnyLabeling for interactive annotation, and YOLO for training segmentation and detection models. Use this skill when you need to train a custom deep learning model to automatically detect and segment tail structures in biological image datasets."
-homepage: https://workflowhub.eu/workflows/1811
+description: This bioimage analysis workflow processes image collections and class files using histogram equalization, AnyLabeling for interactive annotation, and YOLO for training segmentation and detection models. Use this skill when you need to train a custom deep learning model to automatically detect and segment tail structures in biological image datasets.
+homepage: https://www.embl.org/about/info/data-science-centre/bioimage-analysis-services/
+metadata:
+  docker_image: "N/A"
 ---
 
-# YOLO - Tail analysis training workflow
+# yolo-tail-analysis-training-workflow
 
 ## Overview
 

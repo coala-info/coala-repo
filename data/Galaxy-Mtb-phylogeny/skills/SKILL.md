@@ -1,10 +1,12 @@
 ---
 name: mtb-phylogeny
-description: "This workflow estimates a phylogenetic tree for Mycobacterium tuberculosis from an input sequence alignment using RAxML and RStudio. Use this skill when you need to reconstruct the evolutionary history or analyze the genetic diversity of Mycobacterium tuberculosis strains based on whole genome sequencing data."
-homepage: https://workflowhub.eu/workflows/1577
+description: This workflow estimates a phylogenetic tree for Mycobacterium tuberculosis from an input sequence alignment using RAxML and RStudio. Use this skill when you need to reconstruct the evolutionary history or analyze the genetic diversity of Mycobacterium tuberculosis strains based on whole genome sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mtb phylogeny
+# mtb-phylogeny
 
 ## Overview
 

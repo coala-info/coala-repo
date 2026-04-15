@@ -1,9 +1,10 @@
 ---
 name: bioframe
-description: "Bioframe is a library that extends Pandas to perform spatial operations and arithmetic on genomic interval data. Use when user asks to find overlaps between genomic datasets, merge contiguous regions, calculate coverage, or find the closest intervals."
+description: Bioframe is a library that extends Pandas to perform spatial operations and arithmetic on genomic interval data. Use when user asks to find overlaps between genomic datasets, merge contiguous regions, calculate coverage, or find the closest intervals.
 homepage: https://github.com/mirnylab/bioframe
+metadata:
+  docker_image: "quay.io/biocontainers/bioframe:0.8.0--pyhdfd78af_0"
 ---
-
 
 # bioframe
 

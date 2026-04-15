@@ -2,8 +2,9 @@
 name: perl-text-balanced
 description: This tool extracts balanced substrings, nested brackets, and tagged text from strings while handling Perl-specific syntax. Use when user asks to extract nested parentheses, parse delimited quotes, identify Perl code blocks, or handle tagged XML-style structures.
 homepage: https://metacpan.org/pod/Text::Balanced
+metadata:
+  docker_image: "quay.io/biocontainers/perl-text-balanced:2.07--pl5321hdfd78af_0"
 ---
-
 
 # perl-text-balanced
 

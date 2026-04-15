@@ -1,10 +1,12 @@
 ---
 name: vvv2_align_se_bwamem2_nanopore
-description: "This viral genomics workflow processes Nanopore single-end reads using BWA-MEM2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries. Use this skill when you need to characterize viral genetic diversity, identify significant mutations in Nanopore sequencing data, and produce annotated visualizations of variant proportions alongside genomic features."
-homepage: https://workflowhub.eu/workflows/1740
+description: This viral genomics workflow processes Nanopore single-end reads using BWA-MEM2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries. Use this skill when you need to characterize viral genetic diversity, identify significant mutations in Nanopore sequencing data, and produce annotated visualizations of variant proportions alongside genomic features.
+homepage: https://www.anses.fr
+metadata:
+  docker_image: "N/A"
 ---
 
-# vvv2_align_SE_bwamem2_nanopore
+# vvv2_align_se_bwamem2_nanopore
 
 ## Overview
 

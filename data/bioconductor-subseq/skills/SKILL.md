@@ -4,7 +4,6 @@ description: The bioconductor-subseq package performs downsampling on RNA-Seq co
 homepage: https://bioconductor.org/packages/release/bioc/html/subSeq.html
 ---
 
-
 # bioconductor-subseq
 
 ## Overview

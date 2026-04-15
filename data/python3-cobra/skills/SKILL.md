@@ -2,8 +2,9 @@
 name: python3-cobra
 description: python3-cobra is a high-performance realtime messaging server that provides PubSub and key-value store functionality using WebSockets and Redis. Use when user asks to initialize the server, manage authentication, publish or subscribe to channels, and read or write data using keys.
 homepage: https://github.com/machinezone/cobra
+metadata:
+  docker_image: "biocontainers/python3-cobra:v0.5.9-1-deb_cv1"
 ---
-
 
 # python3-cobra
 

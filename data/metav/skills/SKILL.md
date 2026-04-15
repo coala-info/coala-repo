@@ -2,8 +2,9 @@
 name: metav
 description: metav is a command-line tool for the high-throughput identification and taxonomic classification of viruses within metagenomic datasets. Use when user asks to identify viruses in metagenomic data, perform host and plasmid decontamination, or map reads to viral protein databases.
 homepage: https://github.com/ZhijianZhou01/metav
+metadata:
+  docker_image: "quay.io/biocontainers/metav:2.0.0--pyhdfd78af_0"
 ---
-
 
 # metav
 

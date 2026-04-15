@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of multi-experiment aCGH da
 homepage: https://bioconductor.org/packages/release/bioc/html/KCsmart.html
 ---
 
-
 # bioconductor-kcsmart
 
 name: bioconductor-kcsmart

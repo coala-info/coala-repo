@@ -1,10 +1,12 @@
 ---
 name: qiime2-iia-denoising-sequence-quality-control-and-feature-ta
-description: "This Galaxy workflow utilizes DADA2 to process demultiplexed single-end amplicon sequences and metadata into denoised feature tables and representative sequences. Use this skill when you need to perform sequence quality control by correcting Illumina errors, filtering chimeras, and identifying amplicon sequence variants for downstream microbial community profiling."
-homepage: https://workflowhub.eu/workflows/892
+description: This Galaxy workflow utilizes DADA2 to process demultiplexed single-end amplicon sequences and metadata into denoised feature tables and representative sequences. Use this skill when you need to perform sequence quality control by correcting Illumina errors, filtering chimeras, and identifying amplicon sequence variants for downstream microbial community profiling.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# QIIME2 IIa: Denoising (sequence quality control) and feature table creation (single-end)
+# qiime2-iia-denoising-sequence-quality-control-and-feature-ta
 
 ## Overview
 

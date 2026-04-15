@@ -4,7 +4,6 @@ description: The r-checkpoint tool manages R package reproducibility by installi
 homepage: https://cloud.r-project.org/web/packages/checkpoint/index.html
 ---
 
-
 # r-checkpoint
 
 name: r-checkpoint

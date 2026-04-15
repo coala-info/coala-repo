@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation data for mapping POCR
 homepage: https://bioconductor.org/packages/release/data/annotation/html/POCRCannotation.db.html
 ---
 
-
 # bioconductor-pocrcannotation.db
 
 name: bioconductor-pocrcannotation.db

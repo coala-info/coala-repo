@@ -1,9 +1,8 @@
 ---
 name: bioconductor-dasper
-description: "bioconductor-dasper detects aberrant splicing events from RNA-sequencing data by integrating junction counts and coverage information. Use when user asks to process RNA-seq junction data, annotate junctions with reference genomes, normalize counts, integrate coverage data from BigWig files, or perform outlier detection to identify pathogenic splicing."
+description: bioconductor-dasper detects aberrant splicing events from RNA-sequencing data by integrating junction counts and coverage information. Use when user asks to process RNA-seq junction data, annotate junctions with reference genomes, normalize counts, integrate coverage data from BigWig files, or perform outlier detection to identify pathogenic splicing.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/dasper.html
 ---
-
 
 # bioconductor-dasper
 

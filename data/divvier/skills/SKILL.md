@@ -2,8 +2,9 @@
 name: divvier
 description: Divvier improves the quality of multiple sequence alignments by identifying and filtering regions of alignment uncertainty. Use when user asks to clean multiple sequence alignments, perform divvying or partial filtering, and prepare alignments for phylogenetic tree construction.
 homepage: https://github.com/simonwhelan/Divvier
+metadata:
+  docker_image: "quay.io/biocontainers/divvier:1.01--h5ca1c30_5"
 ---
-
 
 # divvier
 

@@ -4,7 +4,6 @@ description: This package provides the complete genome sequence for the Zebrafis
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer11.html
 ---
 
-
 # bioconductor-bsgenome.drerio.ucsc.danrer11
 
 ## Overview

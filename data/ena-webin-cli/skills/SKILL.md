@@ -2,8 +2,9 @@
 name: ena-webin-cli
 description: The ena-webin-cli tool validates and submits biological data and metadata to the European Nucleotide Archive. Use when user asks to submit genome or transcriptome assemblies, validate submission manifests, or upload raw read data to ENA.
 homepage: https://github.com/enasequence/webin-cli
+metadata:
+  docker_image: "quay.io/biocontainers/ena-webin-cli:9.0.3--hdfd78af_0"
 ---
-
 
 # ena-webin-cli
 

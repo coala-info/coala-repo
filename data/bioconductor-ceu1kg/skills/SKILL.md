@@ -4,7 +4,6 @@ description: This tool provides access to 1000 Genomes Project genotype data and
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ceu1kg.html
 ---
 
-
 # bioconductor-ceu1kg
 
 name: bioconductor-ceu1kg

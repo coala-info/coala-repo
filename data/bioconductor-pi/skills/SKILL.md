@@ -4,7 +4,6 @@ description: This tool prioritizes drug targets by integrating GWAS data with fu
 homepage: https://bioconductor.org/packages/3.8/bioc/html/Pi.html
 ---
 
-
 # bioconductor-pi
 
 name: bioconductor-pi

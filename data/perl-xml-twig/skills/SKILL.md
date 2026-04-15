@@ -2,8 +2,9 @@
 name: perl-xml-twig
 description: perl-xml-twig is a Perl module and suite of command-line tools designed for processing, searching, and splitting extremely large XML files using a memory-efficient tree-based approach. Use when user asks to search XML with XPath-like expressions, split massive XML files into smaller chunks, merge XML segments, or tidy and reformat XML documents.
 homepage: http://metacpan.org/pod/XML-Twig
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xml-twig:3.52--pl526_1"
 ---
-
 
 # perl-xml-twig
 

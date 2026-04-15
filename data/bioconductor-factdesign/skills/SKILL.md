@@ -4,7 +4,6 @@ description: This tool analyzes factorial designed microarray experiments using 
 homepage: https://bioconductor.org/packages/release/bioc/html/factDesign.html
 ---
 
-
 # bioconductor-factdesign
 
 name: bioconductor-factdesign

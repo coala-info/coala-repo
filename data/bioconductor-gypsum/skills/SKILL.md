@@ -4,7 +4,6 @@ description: The gypsum package provides an R client for interacting with the gy
 homepage: https://bioconductor.org/packages/release/bioc/html/gypsum.html
 ---
 
-
 # bioconductor-gypsum
 
 name: bioconductor-gypsum

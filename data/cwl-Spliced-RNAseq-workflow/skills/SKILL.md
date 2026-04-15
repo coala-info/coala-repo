@@ -1,9 +1,12 @@
 ---
 name: spliced-rnaseq-workflow
-description: "This Common Workflow Language pipeline processes spliced RNA-seq data through quality control with FastQC and fastp, read mapping with STAR, and transcript quantification using featureCounts and kallisto. Use this skill when you need to quantify gene expression levels and generate transcript counts from raw sequencing reads to characterize the transcriptomic profile of biological samples."
-homepage: https://workflowhub.eu/workflows/95
+description: This Common Workflow Language pipeline processes spliced RNA-seq data through quality control with FastQC and fastp, read mapping with STAR, and transcript quantification using featureCounts and kallisto. Use this skill when you need to quantify gene expression levels and generate transcript counts from raw sequencing reads to characterize the transcriptomic profile of biological samples.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Spliced RNAseq workflow
+
+# spliced-rnaseq-workflow
 
 ## Overview
 

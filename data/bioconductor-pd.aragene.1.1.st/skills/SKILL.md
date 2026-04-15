@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.aragene.1.1.st.html
 ---
 
-
 # bioconductor-pd.aragene.1.1.st
 
 name: bioconductor-pd.aragene.1.1.st

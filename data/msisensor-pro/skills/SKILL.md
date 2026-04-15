@@ -2,6 +2,8 @@
 name: msisensor-pro
 description: MSIsensor-pro quantifies microsatellite instability by analyzing polymerase slippages in sequencing data using a multinomial distribution model. Use when user asks to scan a reference genome for microsatellites, perform paired tumor-normal MSI analysis, conduct tumor-only MSI detection, or build a baseline from normal samples.
 homepage: https://github.com/xjtu-omics/msisensor-pro
+metadata:
+  docker_image: "quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1"
 ---
 
 # msisensor-pro

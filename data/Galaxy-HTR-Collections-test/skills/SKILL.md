@@ -1,10 +1,12 @@
 ---
 name: htr-collections-test
-description: "This workflow processes input datasets through a pipeline that utilizes Teklia workers for document layout analysis and handwritten text recognition to generate structured specimen data objects. Use this skill when you need to digitize historical specimen collections by automatically identifying layouts and transcribing handwritten text from large batches of archival documents."
-homepage: https://workflowhub.eu/workflows/375
+description: This workflow processes input datasets through a pipeline that utilizes Teklia workers for document layout analysis and handwritten text recognition to generate structured specimen data objects. Use this skill when you need to digitize historical specimen collections by automatically identifying layouts and transcribing handwritten text from large batches of archival documents.
+homepage: https://www.synthesys.info/
+metadata:
+  docker_image: "N/A"
 ---
 
-# HTR-Collections-test
+# htr-collections-test
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: qc-report
-description: "This transcriptomics workflow processes BAM files and reference genes using RSeQC, Picard, and Samtools to generate a comprehensive MultiQC quality control report. Use this skill when you need to evaluate the quality of aligned RNA-seq reads, identify PCR duplicates, and determine the strandedness of your sequencing library."
-homepage: https://workflowhub.eu/workflows/1695
+description: This transcriptomics workflow processes BAM files and reference genes using RSeQC, Picard, and Samtools to generate a comprehensive MultiQC quality control report. Use this skill when you need to evaluate the quality of aligned RNA-seq reads, identify PCR duplicates, and determine the strandedness of your sequencing library.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# QC report
+# qc-report
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides standardized peptide collections and physicoc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pepDat.html
 ---
 
-
 # bioconductor-pepdat
 
 name: bioconductor-pepdat

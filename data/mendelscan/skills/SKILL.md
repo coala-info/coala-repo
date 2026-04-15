@@ -2,6 +2,8 @@
 name: mendelscan
 description: MendelScan prioritizes disease-causing variants in Mendelian disorder studies by integrating variant calls with pedigree data, functional annotations, and gene expression profiles. Use when user asks to score and rank variants, identify candidate genes for genetic diseases, or calculate IBD segments for sibling pairs.
 homepage: https://github.com/genome/mendelscan
+metadata:
+  docker_image: "quay.io/biocontainers/mendelscan:v1.2.2--0"
 ---
 
 # mendelscan

@@ -1,7 +1,9 @@
 ---
 name: seqmagick
-description: "seqmagick provides a streamlined interface for biological sequence processing tasks including format conversion, modification, and summary statistics. Use when user asks to convert sequence file formats, filter sequences by length or pattern, generate reverse complements, translate DNA to protein, or summarize sequence file information."
+description: seqmagick provides a streamlined interface for biological sequence processing tasks including format conversion, modification, and summary statistics. Use when user asks to convert sequence file formats, filter sequences by length or pattern, generate reverse complements, translate DNA to protein, or summarize sequence file information.
 homepage: http://github.com/fhcrc/seqmagick
+metadata:
+  docker_image: "quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0"
 ---
 
 # seqmagick

@@ -4,7 +4,6 @@ description: This tool performs data-driven filtering of replicated high-through
 homepage: https://bioconductor.org/packages/release/bioc/html/HTSFilter.html
 ---
 
-
 # bioconductor-htsfilter
 
 name: bioconductor-htsfilter

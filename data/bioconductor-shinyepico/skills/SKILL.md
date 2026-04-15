@@ -4,7 +4,6 @@ description: shinyÉPICo provides an interactive graphical pipeline for the anal
 homepage: https://bioconductor.org/packages/release/bioc/html/shinyepico.html
 ---
 
-
 # bioconductor-shinyepico
 
 ## Overview

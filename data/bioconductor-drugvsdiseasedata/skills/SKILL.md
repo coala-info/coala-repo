@@ -4,7 +4,6 @@ description: This package provides curated gene expression profiles, disease clu
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DrugVsDiseasedata.html
 ---
 
-
 # bioconductor-drugvsdiseasedata
 
 ## Overview

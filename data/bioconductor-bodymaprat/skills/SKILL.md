@@ -4,7 +4,6 @@ description: This package provides a transcriptomic dataset of raw RNA-Seq count
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bodymapRat.html
 ---
 
-
 # bioconductor-bodymaprat
 
 ## Overview

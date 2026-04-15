@@ -1,10 +1,12 @@
 ---
 name: alignment-and-phylogeny
-description: "This transcriptomics workflow integrates outgroup, selected, and reference protein sequences using MAFFT for alignment, ClipKIT for trimming, and IQ-TREE for phylogenetic tree reconstruction. Use this skill when you need to investigate the evolutionary history of gene families or determine the phylogenetic placement of specific protein sequences within a broader taxonomic context."
-homepage: https://workflowhub.eu/workflows/1839
+description: This transcriptomics workflow integrates outgroup, selected, and reference protein sequences using MAFFT for alignment, ClipKIT for trimming, and IQ-TREE for phylogenetic tree reconstruction. Use this skill when you need to investigate the evolutionary history of gene families or determine the phylogenetic placement of specific protein sequences within a broader taxonomic context.
+homepage: https://crustybase.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Alignment and Phylogeny
+# alignment-and-phylogeny
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides processed miRNA-overexpression data, TargetSc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TargetScoreData.html
 ---
 
-
 # bioconductor-targetscoredata
 
 name: bioconductor-targetscoredata

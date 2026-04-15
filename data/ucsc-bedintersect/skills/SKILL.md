@@ -1,7 +1,9 @@
 ---
 name: ucsc-bedintersect
-description: "ucsc-bedintersect identifies and extracts genomic regions from one BED file that overlap with regions in another BED file. Use when user asks to find overlapping genomic intervals, filter BED records based on a mask, or perform binary overlap intersections between two datasets."
+description: ucsc-bedintersect identifies and extracts genomic regions from one BED file that overlap with regions in another BED file. Use when user asks to find overlapping genomic intervals, filter BED records based on a mask, or perform binary overlap intersections between two datasets.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedintersect:482--h0b57e2e_0"
 ---
 
 # ucsc-bedintersect

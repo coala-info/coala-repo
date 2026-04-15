@@ -1,10 +1,12 @@
 ---
 name: protein-conformational-transitions-calculations
-description: "This Galaxy workflow calculates protein conformational transitions between two PDB structures using BioBB utility tools and the GO-dmd discrete molecular dynamics engine. Use this skill when you need to simulate the transition pathway between two known protein conformations to understand the structural dynamics and intermediate states involved in biological processes."
-homepage: https://workflowhub.eu/workflows/558
+description: This Galaxy workflow calculates protein conformational transitions between two PDB structures using BioBB utility tools and the GO-dmd discrete molecular dynamics engine. Use this skill when you need to simulate the transition pathway between two known protein conformations to understand the structural dynamics and intermediate states involved in biological processes.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Protein conformational transitions calculations
+# protein-conformational-transitions-calculations
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs copy-number variation analysis using Illumina 45
 homepage: https://bioconductor.org/packages/release/bioc/html/conumee.html
 ---
 
-
 # bioconductor-conumee
 
 name: bioconductor-conumee

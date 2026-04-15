@@ -4,7 +4,6 @@ description: This tool identifies mutation-specific synthetic lethal partners by
 homepage: https://bioconductor.org/packages/release/bioc/html/mslp.html
 ---
 
-
 # bioconductor-mslp
 
 name: bioconductor-mslp

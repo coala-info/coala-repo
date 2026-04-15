@@ -2,8 +2,9 @@
 name: hippunfold-dev
 description: This tool models the topological structure of the human hippocampus by transforming 3D anatomy into a flattened 2D coordinate system for high-precision surface analysis. Use when user asks to unfold hippocampal anatomy, perform subfield-specific morphometry, or map quantitative MRI data across hippocampal layers.
 homepage: https://github.com/khanlab/hippunfold
+metadata:
+  docker_image: "quay.io/biocontainers/hippunfold-dev:2.0.0--pyh7e72e81_0"
 ---
-
 
 # hippunfold-dev
 

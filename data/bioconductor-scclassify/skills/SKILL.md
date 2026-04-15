@@ -4,7 +4,6 @@ description: scClassify is a Bioconductor package for the automated classificati
 homepage: https://bioconductor.org/packages/release/bioc/html/scClassify.html
 ---
 
-
 # bioconductor-scclassify
 
 ## Overview

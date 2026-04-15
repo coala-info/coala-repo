@@ -4,7 +4,6 @@ description: This package provides experimental DnaseI hypersensitivity data and
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HelloRangesData.html
 ---
 
-
 # bioconductor-hellorangesdata
 
 name: bioconductor-hellorangesdata

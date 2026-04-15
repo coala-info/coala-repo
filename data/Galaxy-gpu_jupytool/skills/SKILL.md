@@ -1,7 +1,9 @@
 ---
 name: gpu_jupytool
-description: "This Galaxy workflow processes tabular test data and labels using filtering and cutting tools before launching a GPU-enabled interactive Jupyter Notebook for machine learning tasks. Use this skill when you need to perform computationally intensive machine learning analysis or model training that requires GPU acceleration within an interactive notebook environment."
-homepage: https://workflowhub.eu/workflows/1579
+description: This Galaxy workflow processes tabular test data and labels using filtering and cutting tools before launching a GPU-enabled interactive Jupyter Notebook for machine learning tasks. Use this skill when you need to perform computationally intensive machine learning analysis or model training that requires GPU acceleration within an interactive notebook environment.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # gpu_jupytool

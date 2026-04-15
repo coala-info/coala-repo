@@ -4,7 +4,6 @@ description: This tool fits probe-level models to Affymetrix GeneChip data for e
 homepage: https://bioconductor.org/packages/release/bioc/html/affyPLM.html
 ---
 
-
 # bioconductor-affyplm
 
 name: bioconductor-affyplm

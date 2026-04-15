@@ -1,9 +1,8 @@
 ---
 name: bioconductor-mesh.eco.55989.eg.db
-description: "This package maps MeSH terms to Entrez Gene identifiers for *Escherichia coli* strain 55989. Use when user asks to map gene IDs to MeSH categories, retrieve biological metadata for E. coli strain 55989, or query MeSH term associations."
+description: This package maps MeSH terms to Entrez Gene identifiers for *Escherichia coli* strain 55989. Use when user asks to map gene IDs to MeSH categories, retrieve biological metadata for E. coli strain 55989, or query MeSH term associations.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Eco.55989.eg.db.html
 ---
-
 
 # bioconductor-mesh.eco.55989.eg.db
 

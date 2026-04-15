@@ -1,10 +1,12 @@
 ---
 name: mitogenome-assembly-vgp0
-description: "This Galaxy workflow assembles and annotates mitochondrial genomes from PacBio sequencing data and a species name using the MitoHiFi tool suite. Use this skill when you need to generate a high-quality, circularized, and annotated mitochondrial genome assembly for a target organism from long-read sequencing reads."
-homepage: https://workflowhub.eu/workflows/1648
+description: This Galaxy workflow assembles and annotates mitochondrial genomes from PacBio sequencing data and a species name using the MitoHiFi tool suite. Use this skill when you need to generate a high-quality, circularized, and annotated mitochondrial genome assembly for a target organism from long-read sequencing reads.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mitogenome-Assembly-VGP0
+# mitogenome-assembly-vgp0
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides data and workflows for analyzing single-cell 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Single.mTEC.Transcriptomes.html
 ---
 
-
 # bioconductor-single.mtec.transcriptomes
 
 name: bioconductor-single.mtec.transcriptomes

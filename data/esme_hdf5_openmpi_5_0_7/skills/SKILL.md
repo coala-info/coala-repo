@@ -2,8 +2,9 @@
 name: esme_hdf5_openmpi_5_0_7
 description: This tool provides the HDF5 1.14.5 library and utilities optimized for parallel data management using OpenMPI 5.0.7. Use when user asks to install HDF5 with parallel support, inspect HDF5 file contents, or compile and run parallel HDF5 applications.
 homepage: https://www.hdfgroup.org/
+metadata:
+  docker_image: "quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0"
 ---
-
 
 # esme_hdf5_openmpi_5_0_7
 

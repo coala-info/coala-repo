@@ -1,9 +1,10 @@
 ---
 name: hicap
-description: "hicap identifies and characterizes the Haemophilus influenzae capsule locus to determine capsular serotypes from genome assemblies. Use when user asks to identify serotypes, annotate cap locus regions, or visualize the structural organization of Haemophilus influenzae assemblies."
+description: hicap identifies and characterizes the Haemophilus influenzae capsule locus to determine capsular serotypes from genome assemblies. Use when user asks to identify serotypes, annotate cap locus regions, or visualize the structural organization of Haemophilus influenzae assemblies.
 homepage: https://github.com/scwatts/hicap
+metadata:
+  docker_image: "quay.io/biocontainers/hicap:1.0.4--pyhdfd78af_2"
 ---
-
 
 # hicap
 

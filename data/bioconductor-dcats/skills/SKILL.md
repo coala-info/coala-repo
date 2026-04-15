@@ -4,7 +4,6 @@ description: DCATS performs differential cell type abundance analysis for single
 homepage: https://bioconductor.org/packages/release/bioc/html/DCATS.html
 ---
 
-
 # bioconductor-dcats
 
 name: bioconductor-dcats

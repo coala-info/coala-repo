@@ -2,8 +2,9 @@
 name: rich-msa
 description: rich-msa provides colorful, high-quality Multiple Sequence Alignment visualization directly in the terminal. Use when user asks to visualize sequence alignments, identify conserved regions, or render color-coded MSA data in the command line.
 homepage: https://github.com/althonos/rich-msa
+metadata:
+  docker_image: "quay.io/biocontainers/rich-msa:0.1.0--pyhdfd78af_0"
 ---
-
 
 # rich-msa
 

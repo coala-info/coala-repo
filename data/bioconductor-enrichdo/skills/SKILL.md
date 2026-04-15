@@ -4,7 +4,6 @@ description: This tool performs Disease Ontology enrichment analysis using a glo
 homepage: https://bioconductor.org/packages/release/bioc/html/EnrichDO.html
 ---
 
-
 # bioconductor-enrichdo
 
 name: bioconductor-enrichdo

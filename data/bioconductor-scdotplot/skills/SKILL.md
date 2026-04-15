@@ -4,7 +4,6 @@ description: This tool creates hierarchical clustered dot plots with integrated 
 homepage: https://bioconductor.org/packages/release/bioc/html/scDotPlot.html
 ---
 
-
 # bioconductor-scdotplot
 
 name: bioconductor-scdotplot

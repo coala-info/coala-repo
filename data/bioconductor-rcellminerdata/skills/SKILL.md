@@ -4,7 +4,6 @@ description: This package provides molecular profiling and drug response data fo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/rcellminerData.html
 ---
 
-
 # bioconductor-rcellminerdata
 
 name: bioconductor-rcellminerdata

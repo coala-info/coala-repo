@@ -2,8 +2,9 @@
 name: guessmylt
 description: GUESSmyLT infers the library preparation method and strandedness of RNA-Seq datasets by analyzing read mapping orientations. Use when user asks to identify library strandedness, determine read orientation, or infer the library type of RNA-Seq data.
 homepage: https://github.com/NBISweden/GUESSmyLT
+metadata:
+  docker_image: "quay.io/biocontainers/guessmylt:0.2.5--py_0"
 ---
-
 
 # guessmylt
 

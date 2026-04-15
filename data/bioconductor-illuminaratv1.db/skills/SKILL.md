@@ -4,7 +4,6 @@ description: This package provides annotation data for the Illumina Ratv1 microa
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaRatv1.db.html
 ---
 
-
 # bioconductor-illuminaratv1.db
 
 name: bioconductor-illuminaratv1.db

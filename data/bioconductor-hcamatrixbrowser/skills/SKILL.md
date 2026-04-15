@@ -4,7 +4,6 @@ description: This tool provides an R interface to the Human Cell Atlas Matrix Se
 homepage: https://bioconductor.org/packages/3.12/bioc/html/HCAMatrixBrowser.html
 ---
 
-
 # bioconductor-hcamatrixbrowser
 
 name: bioconductor-hcamatrixbrowser

@@ -4,7 +4,6 @@ description: This package provides low-level infrastructure and standardized too
 homepage: https://bioconductor.org/packages/release/bioc/html/TrajectoryUtils.html
 ---
 
-
 # bioconductor-trajectoryutils
 
 ## Overview

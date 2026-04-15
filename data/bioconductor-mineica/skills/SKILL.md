@@ -4,7 +4,6 @@ description: MineICA provides a framework for the biological interpretation and 
 homepage: https://bioconductor.org/packages/release/bioc/html/MineICA.html
 ---
 
-
 # bioconductor-mineica
 
 ## Overview

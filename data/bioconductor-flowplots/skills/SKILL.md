@@ -4,7 +4,6 @@ description: The flowPlots package provides tools for the graphical display and 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowPlots.html
 ---
 
-
 # bioconductor-flowplots
 
 ## Overview

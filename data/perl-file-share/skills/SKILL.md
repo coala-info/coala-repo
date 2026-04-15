@@ -2,8 +2,9 @@
 name: perl-file-share
 description: This tool provides a development-aware way to locate and access non-code data files associated with Perl distributions. Use when user asks to locate shared distribution directories, access data files in a Perl project, or manage file paths during Perl module development.
 homepage: https://github.com/ingydotnet/file-share-pm
+metadata:
+  docker_image: "quay.io/biocontainers/perl-file-share:0.25--pl526_1"
 ---
-
 
 # perl-file-share
 

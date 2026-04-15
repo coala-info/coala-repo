@@ -4,7 +4,6 @@ description: The cBioPortalData package provides a programmatic interface to dow
 homepage: https://bioconductor.org/packages/release/bioc/html/cBioPortalData.html
 ---
 
-
 # bioconductor-cbioportaldata
 
 ## Overview

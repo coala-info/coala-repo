@@ -1,10 +1,12 @@
 ---
 name: gtn-sequence-analyses-quality-control-imported-from-uploaded
-description: "This Galaxy workflow performs quality control on paired-end sequencing reads using FastQC for assessment, Cutadapt for adapter trimming, and MultiQC for aggregated reporting. Use this skill when you need to evaluate the quality of raw genomic data and remove technical artifacts like adapter sequences to prepare high-quality reads for downstream bioinformatics applications."
-homepage: https://workflowhub.eu/workflows/1640
+description: This Galaxy workflow performs quality control on paired-end sequencing reads using FastQC for assessment, Cutadapt for adapter trimming, and MultiQC for aggregated reporting. Use this skill when you need to evaluate the quality of raw genomic data and remove technical artifacts like adapter sequences to prepare high-quality reads for downstream bioinformatics applications.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN - Sequence Analyses - Quality Control (imported from uploaded file)
+# gtn-sequence-analyses-quality-control-imported-from-uploaded
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides access to and workflows for the RNA-Seq datas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/airway.html
 ---
 
-
 # bioconductor-airway
 
 name: bioconductor-airway

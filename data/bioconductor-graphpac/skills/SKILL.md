@@ -4,7 +4,6 @@ description: This tool identifies clusters of mutated amino acids in protein ter
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GraphPAC.html
 ---
 
-
 # bioconductor-graphpac
 
 name: bioconductor-graphpac

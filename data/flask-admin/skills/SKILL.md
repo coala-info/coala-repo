@@ -2,8 +2,9 @@
 name: flask-admin
 description: Flask-Admin automates the creation of customizable administrative backends and CRUD interfaces for Flask web applications. Use when user asks to create an admin dashboard, manage database records through a web UI, secure administrative routes, or implement file management features.
 homepage: https://github.com/pallets-eco/flask-admin
+metadata:
+  docker_image: "quay.io/biocontainers/flask-admin:1.4.0--py36_0"
 ---
-
 
 # flask-admin
 

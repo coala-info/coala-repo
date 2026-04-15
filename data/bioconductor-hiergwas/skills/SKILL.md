@@ -4,7 +4,6 @@ description: This tool performs statistical significance testing in Genome-Wide 
 homepage: https://bioconductor.org/packages/release/bioc/html/hierGWAS.html
 ---
 
-
 # bioconductor-hiergwas
 
 name: bioconductor-hiergwas

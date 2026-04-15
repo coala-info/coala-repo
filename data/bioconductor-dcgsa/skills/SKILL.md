@@ -4,7 +4,6 @@ description: This tool performs distance-correlation based gene set analysis for
 homepage: https://bioconductor.org/packages/release/bioc/html/dcGSA.html
 ---
 
-
 # bioconductor-dcgsa
 
 name: bioconductor-dcgsa

@@ -4,7 +4,6 @@ description: This package provides annotation data and metadata for the Illumina
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humancytosnp12v2p1hCrlmm.html
 ---
 
-
 # bioconductor-humancytosnp12v2p1hcrlmm
 
 ## Overview

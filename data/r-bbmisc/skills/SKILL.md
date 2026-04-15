@@ -4,7 +4,6 @@ description: The r-bbmisc package provides a collection of miscellaneous helper 
 homepage: https://cloud.r-project.org/web/packages/BBmisc/index.html
 ---
 
-
 # r-bbmisc
 
 name: r-bbmisc

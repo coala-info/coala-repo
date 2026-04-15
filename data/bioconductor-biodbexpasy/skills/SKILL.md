@@ -4,7 +4,6 @@ description: This tool provides a connector to access and query the Expasy ENZYM
 homepage: https://bioconductor.org/packages/3.16/bioc/html/biodbExpasy.html
 ---
 
-
 # bioconductor-biodbexpasy
 
 name: bioconductor-biodbexpasy

@@ -1,7 +1,9 @@
 ---
 name: make_prg
-description: "make_prg constructs and maintains Population Reference Graphs from multiple sequence alignments to represent genetic diversity. Use when user asks to create a PRG from MSAs or update an existing PRG database with new sequences."
+description: make_prg constructs and maintains Population Reference Graphs from multiple sequence alignments to represent genetic diversity. Use when user asks to create a PRG from MSAs or update an existing PRG database with new sequences.
 homepage: https://github.com/rmcolq/make_prg
+metadata:
+  docker_image: "quay.io/biocontainers/make_prg:0.5.0--pyhdfd78af_0"
 ---
 
 # make_prg

@@ -1,10 +1,12 @@
 ---
 name: end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms
-description: "This workflow predicts in-silico electron ionization mass spectra from SMILES strings using OpenBabel for conformer generation, xtb for molecular optimization, and QCxMS for semi-empirical quantum chemical simulations. Use this skill when you need to generate reference mass spectra for identifying unknown compounds in metabolomics or exposomics studies where experimental standards are unavailable."
-homepage: https://workflowhub.eu/workflows/897
+description: This workflow predicts in-silico electron ionization mass spectra from SMILES strings using OpenBabel for conformer generation, xtb for molecular optimization, and QCxMS for semi-empirical quantum chemical simulations. Use this skill when you need to generate reference mass spectra for identifying unknown compounds in metabolomics or exposomics studies where experimental standards are unavailable.
+homepage: https://www.recetox.muni.cz/en/services/data-services-2/spectrometric-data-processing-and-analysis
+metadata:
+  docker_image: "N/A"
 ---
 
-# End-to-end EI+ mass spectra prediction workflow using QCxMS
+# end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms
 
 ## Overview
 

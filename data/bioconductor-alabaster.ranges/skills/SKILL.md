@@ -4,7 +4,6 @@ description: This package serializes genomic ranges and associated metadata into
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.ranges.html
 ---
 
-
 # bioconductor-alabaster.ranges
 
 ## Overview

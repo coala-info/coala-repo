@@ -1,9 +1,10 @@
 ---
 name: shigatyper
-description: "ShigaTyper identifies Shigella species and serotypes directly from raw sequencing reads using a mapping-based approach. Use when user asks to identify Shigella serotypes, differentiate between Shigella and EIEC, or detect the presence of the ipaB virulence gene."
+description: ShigaTyper identifies Shigella species and serotypes directly from raw sequencing reads using a mapping-based approach. Use when user asks to identify Shigella serotypes, differentiate between Shigella and EIEC, or detect the presence of the ipaB virulence gene.
 homepage: https://github.com/CFSAN-Biostatistics/shigatyper
+metadata:
+  docker_image: "quay.io/biocontainers/shigatyper:2.0.5--pyhdfd78af_0"
 ---
-
 
 # shigatyper
 

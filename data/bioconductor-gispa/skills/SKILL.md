@@ -4,7 +4,6 @@ description: GISPA defines and ranks gene sets that satisfy a predefined molecul
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GISPA.html
 ---
 
-
 # bioconductor-gispa
 
 ## Overview

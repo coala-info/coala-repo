@@ -4,7 +4,6 @@ description: The bioconductor-rcwl package provides an R interface to the Common
 homepage: https://bioconductor.org/packages/release/bioc/html/Rcwl.html
 ---
 
-
 # bioconductor-rcwl
 
 name: bioconductor-rcwl

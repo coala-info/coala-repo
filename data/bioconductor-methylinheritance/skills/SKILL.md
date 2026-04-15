@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of inherited DNA methylatio
 homepage: https://bioconductor.org/packages/release/bioc/html/methylInheritance.html
 ---
 
-
 # bioconductor-methylinheritance
 
 name: bioconductor-methylinheritance

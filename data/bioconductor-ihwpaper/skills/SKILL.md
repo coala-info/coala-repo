@@ -4,7 +4,6 @@ description: This package provides data, scripts, and workflows to reproduce the
 homepage: https://bioconductor.org/packages/release/data/experiment/html/IHWpaper.html
 ---
 
-
 # bioconductor-ihwpaper
 
 ## Overview

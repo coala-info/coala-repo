@@ -4,7 +4,6 @@ description: This package provides infrastructure for memory-efficient access, m
 homepage: https://bioconductor.org/packages/release/bioc/html/BSgenome.html
 ---
 
-
 # bioconductor-bsgenome
 
 name: bioconductor-bsgenome

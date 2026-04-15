@@ -4,7 +4,6 @@ description: The r-plsgenomics package provides partial least squares methods fo
 homepage: https://cran.r-project.org/web/packages/plsgenomics/index.html
 ---
 
-
 # r-plsgenomics
 
 ## Overview

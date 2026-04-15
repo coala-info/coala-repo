@@ -4,7 +4,6 @@ description: This package provides metadata and quantification workflows for the
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PasillaTranscriptExpr.html
 ---
 
-
 # bioconductor-pasillatranscriptexpr
 
 name: bioconductor-pasillatranscriptexpr

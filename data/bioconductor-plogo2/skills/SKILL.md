@@ -4,7 +4,6 @@ description: Bioconductor-plogo2 performs comparative analysis and visualization
 homepage: https://bioconductor.org/packages/3.11/bioc/html/PloGO2.html
 ---
 
-
 # bioconductor-plogo2
 
 name: bioconductor-plogo2

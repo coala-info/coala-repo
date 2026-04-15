@@ -2,8 +2,9 @@
 name: islandpath
 description: IslandPath-DIMOB identifies genomic islands in prokaryotic genomes by analyzing dinucleotide bias and the presence of mobility genes. Use when user asks to identify genomic islands, detect dinucleotide bias, or locate mobility-related genes in GenBank files.
 homepage: http://www.pathogenomics.sfu.ca/islandpath/
+metadata:
+  docker_image: "quay.io/biocontainers/islandpath:1.0.6--hdfd78af_0"
 ---
-
 
 # islandpath
 

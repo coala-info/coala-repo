@@ -2,8 +2,9 @@
 name: nanoqc
 description: nanoqc generates interactive quality control visualizations for long-read sequencing data to evaluate base call quality distributions. Use when user asks to perform quality control on Oxford Nanopore reads, generate interactive QC plots, or analyze base quality at the start and end of long reads.
 homepage: https://github.com/wdecoster/nanoQC
+metadata:
+  docker_image: "quay.io/biocontainers/nanoqc:0.10.0--pyhdfd78af_0"
 ---
-
 
 # nanoqc
 

@@ -1,10 +1,12 @@
 ---
 name: iscc-image-analysis-workflow-example
-description: "This bioimaging workflow processes original images and segmented data using channel splitting, Otsu thresholding, and ISCC-CODE generation to verify the integrity of image analysis steps. Use this skill when you need to ensure the reproducibility and consistency of image processing results by validating that segmented outputs correspond correctly to the source data through digital fingerprinting."
-homepage: https://workflowhub.eu/workflows/2089
+description: This bioimaging workflow processes original images and segmented data using channel splitting, Otsu thresholding, and ISCC-CODE generation to verify the integrity of image analysis steps. Use this skill when you need to ensure the reproducibility and consistency of image processing results by validating that segmented outputs correspond correctly to the source data through digital fingerprinting.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# ISCC - image analysis workflow example
+# iscc-image-analysis-workflow-example
 
 ## Overview
 

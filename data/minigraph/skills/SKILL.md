@@ -1,9 +1,10 @@
 ---
 name: minigraph
-description: "Minigraph constructs pangenome graphs and maps sequences to these graph structures. Use when user asks to build a pangenome graph from multiple assemblies, map long reads or assemblies to a graph, or call structural variations."
+description: Minigraph constructs pangenome graphs and maps sequences to these graph structures. Use when user asks to build a pangenome graph from multiple assemblies, map long reads or assemblies to a graph, or call structural variations.
 homepage: https://github.com/lh3/minigraph
+metadata:
+  docker_image: "quay.io/biocontainers/minigraph:0.21--h577a1d6_3"
 ---
-
 
 # minigraph
 

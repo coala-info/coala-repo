@@ -2,6 +2,8 @@
 name: ete3
 description: The ETE Toolkit is a Python framework and command-line suite for the analysis, manipulation, and visualization of phylogenetic trees. Use when user asks to visualize trees, prune taxa, root trees, annotate nodes with NCBI taxonomy, or perform evolutionary analysis.
 homepage: http://etetoolkit.org/
+metadata:
+  docker_image: "quay.io/biocontainers/ete3:3.1.2"
 ---
 
 # ete3

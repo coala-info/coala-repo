@@ -1,9 +1,10 @@
 ---
 name: argutils
-description: "argutils synchronizes command-line argument parsing with configuration file management using a single specification file. Use when user asks to define program interfaces, generate argparsers from specifications, or sync CLI flags with configuration files."
+description: argutils synchronizes command-line argument parsing with configuration file management using a single specification file. Use when user asks to define program interfaces, generate argparsers from specifications, or sync CLI flags with configuration files.
 homepage: https://github.com/eclarke/argutils
+metadata:
+  docker_image: "quay.io/biocontainers/argutils:0.3.2--py36_1"
 ---
-
 
 # argutils
 

@@ -2,6 +2,8 @@
 name: deepaccess
 description: DeepAccess is a deep learning framework for predicting chromatin accessibility and interpreting genomic sequence patterns using ensemble convolutional neural networks. Use when user asks to train models on genomic coordinates or sequences, identify influential DNA motifs, analyze sequence pattern spacing, or generate nucleotide-level saliency maps.
 homepage: https://github.com/gifford-lab/deepaccess-package
+metadata:
+  docker_image: "quay.io/biocontainers/deepaccess:0.1.3--pyhdfd78af_0"
 ---
 
 # deepaccess

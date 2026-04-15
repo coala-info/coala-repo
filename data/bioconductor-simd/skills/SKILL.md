@@ -4,7 +4,6 @@ description: This tool performs statistical inference to detect differentially e
 homepage: https://bioconductor.org/packages/release/bioc/html/SIMD.html
 ---
 
-
 # bioconductor-simd
 
 name: bioconductor-simd

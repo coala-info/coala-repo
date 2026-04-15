@@ -4,7 +4,6 @@ description: This package identifies genomic high accumulation zones or hotspots
 homepage: https://bioconductor.org/packages/release/bioc/html/TFHAZ.html
 ---
 
-
 # bioconductor-tfhaz
 
 ## Overview

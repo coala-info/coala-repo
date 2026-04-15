@@ -4,7 +4,6 @@ description: The GenomicFiles package provides a framework for parallel Map-Redu
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicFiles.html
 ---
 
-
 # bioconductor-genomicfiles
 
 name: bioconductor-genomicfiles

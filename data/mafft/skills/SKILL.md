@@ -1,9 +1,10 @@
 ---
 name: mafft
-description: "MAFFT is a high-performance bioinformatics tool used to perform multiple sequence alignments for DNA, RNA, or protein datasets. Use when user asks to align multiple sequences, add new sequences or fragments to an existing alignment, or perform structural RNA alignments."
+description: MAFFT is a high-performance bioinformatics tool used to perform multiple sequence alignments for DNA, RNA, or protein datasets. Use when user asks to align multiple sequences, add new sequences or fragments to an existing alignment, or perform structural RNA alignments.
 homepage: http://mafft.cbrc.jp/alignment/software/
+metadata:
+  docker_image: "quay.io/biocontainers/mafft:7.525--h031d066_1"
 ---
-
 
 # mafft
 

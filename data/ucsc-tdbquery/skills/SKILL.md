@@ -2,8 +2,9 @@
 name: ucsc-tdbquery
 description: The ucsc-tdbquery tool queries and filters metadata from the UCSC Genome Browser's track database. Use when user asks to select track fields, filter tracks by type or keywords, or extract track configuration parameters.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-tdbquery:482--h0b57e2e_0"
 ---
-
 
 # ucsc-tdbquery
 

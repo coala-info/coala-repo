@@ -1,9 +1,8 @@
 ---
 name: bioconductor-clonotyper
-description: "bioconductor-clonotyper analyzes and compares T cell antigen receptor clonotypes from high-throughput sequence libraries. Use when user asks to process TCR sequences, generate clonotype count tables, identify shared or private clonotypes, and apply Yassai nomenclature."
+description: bioconductor-clonotyper analyzes and compares T cell antigen receptor clonotypes from high-throughput sequence libraries. Use when user asks to process TCR sequences, generate clonotype count tables, identify shared or private clonotypes, and apply Yassai nomenclature.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/clonotypeR.html
 ---
-
 
 # bioconductor-clonotyper
 

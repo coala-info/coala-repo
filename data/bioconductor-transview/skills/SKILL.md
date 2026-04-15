@@ -4,7 +4,6 @@ description: This tool analyzes and visualizes read density profiles from NGS da
 homepage: https://bioconductor.org/packages/release/bioc/html/TransView.html
 ---
 
-
 # bioconductor-transview
 
 name: bioconductor-transview

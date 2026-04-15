@@ -4,7 +4,6 @@ description: The r-sbpiper tool provides functions to analyze and visualize repe
 homepage: https://cran.r-project.org/web/packages/sbpiper/index.html
 ---
 
-
 # r-sbpiper
 
 name: r-sbpiper

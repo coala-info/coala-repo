@@ -4,7 +4,6 @@ description: This tool fits and visualizes row-linear models to evaluate the per
 homepage: https://bioconductor.org/packages/release/bioc/html/consensus.html
 ---
 
-
 # bioconductor-consensus
 
 name: bioconductor-consensus

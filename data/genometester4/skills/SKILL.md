@@ -2,6 +2,8 @@
 name: genometester4
 description: GenomeTester4 is a toolkit for k-mer based genomic analysis that performs frequency counting and set operations on sequencing data. Use when user asks to count k-mers, perform set operations like intersections or unions on k-mer lists, and query specific k-mer frequencies.
 homepage: https://github.com/bioinfo-ut/GenomeTester4
+metadata:
+  docker_image: "quay.io/biocontainers/genometester4:4.0--hec16e2b_4"
 ---
 
 # genometester4

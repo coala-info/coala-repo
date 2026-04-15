@@ -2,8 +2,9 @@
 name: gambitcore
 description: gambitcore performs taxonomic identification and quality assessment of bacterial genome assemblies by comparing k-mer profiles against a reference database. Use when user asks to identify bacterial species, assess assembly completeness, or perform quality control on genomic FASTA files.
 homepage: https://github.com/gambit-suite/gambitcore
+metadata:
+  docker_image: "quay.io/biocontainers/gambitcore:0.0.2--py310h1fe012e_0"
 ---
-
 
 # gambitcore
 

@@ -4,7 +4,6 @@ description: This package provides probe sequence and genomic location data for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuExExonProbesetLocation.html
 ---
 
-
 # bioconductor-huexexonprobesetlocation
 
 name: bioconductor-huexexonprobesetlocation

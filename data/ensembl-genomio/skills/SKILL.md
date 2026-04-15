@@ -2,8 +2,9 @@
 name: ensembl-genomio
 description: The ensembl-genomio toolset standardizes genomic sequences and annotations for compatibility with the Ensembl ecosystem. Use when user asks to convert GFF3 files to Ensembl core databases, format FASTA headers for Ensembl compliance, or generate manifest files for genomic data submission.
 homepage: https://www.ensembl.org/
+metadata:
+  docker_image: "quay.io/biocontainers/ensembl-genomio:1.6.2--pyhdfd78af_0"
 ---
-
 
 # ensembl-genomio
 

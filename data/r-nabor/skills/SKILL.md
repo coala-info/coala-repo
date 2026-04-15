@@ -4,7 +4,6 @@ description: This R package provides fast K-nearest neighbor search functionalit
 homepage: https://cloud.r-project.org/web/packages/nabor/index.html
 ---
 
-
 # r-nabor
 
 ## Overview

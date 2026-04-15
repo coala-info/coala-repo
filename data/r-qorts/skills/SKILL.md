@@ -4,7 +4,6 @@ description: The r-qorts tool performs quality control, data management, and vis
 homepage: https://cran.r-project.org/web/packages/qorts/index.html
 ---
 
-
 # r-qorts
 
 name: r-qorts

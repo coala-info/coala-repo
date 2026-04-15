@@ -2,8 +2,9 @@
 name: duphist
 description: This tool reconstructs the duplication history of gene families by calculating synonymous substitution rates and performing hierarchical clustering. Use when user asks to reconstruct gene duplication history, calculate Ks values between paralogs, or generate duplication dendrograms.
 homepage: https://github.com/minjeongjj/DupHIST
+metadata:
+  docker_image: "quay.io/biocontainers/duphist:1.1.0--hdfd78af_1"
 ---
-
 
 # duphist
 

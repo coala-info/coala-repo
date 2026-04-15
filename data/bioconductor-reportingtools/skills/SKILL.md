@@ -4,7 +4,6 @@ description: ReportingTools automates the creation of interactive HTML reports a
 homepage: https://bioconductor.org/packages/release/bioc/html/ReportingTools.html
 ---
 
-
 # bioconductor-reportingtools
 
 ## Overview

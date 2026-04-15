@@ -1,9 +1,8 @@
 ---
 name: bioconductor-cftools
-description: "bioconductor-cftools analyzes cell-free DNA methylation data for cancer detection and tissue deconvolution. Use when user asks to estimate tumor burden, infer tissue-of-origin composition from plasma samples, or perform supervised sorting of human tissues."
+description: bioconductor-cftools analyzes cell-free DNA methylation data for cancer detection and tissue deconvolution. Use when user asks to estimate tumor burden, infer tissue-of-origin composition from plasma samples, or perform supervised sorting of human tissues.
 homepage: https://bioconductor.org/packages/release/bioc/html/cfTools.html
 ---
-
 
 # bioconductor-cftools
 

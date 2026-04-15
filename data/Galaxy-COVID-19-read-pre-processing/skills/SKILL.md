@@ -1,10 +1,12 @@
 ---
 name: covid-19-read-pre-processing
-description: "This Galaxy workflow processes forward and reverse COVID-19 sequencing reads using Trim Galore! for quality trimming, BWA-MEM for mapping, and Samtools for filtering and extraction. Use this skill when you need to clean raw SARS-CoV-2 sequencing data and remove human genomic contamination to prepare high-quality reads for downstream variant calling or genome assembly."
-homepage: https://workflowhub.eu/workflows/99
+description: This Galaxy workflow processes forward and reverse COVID-19 sequencing reads using Trim Galore! for quality trimming, BWA-MEM for mapping, and Samtools for filtering and extraction. Use this skill when you need to clean raw SARS-CoV-2 sequencing data and remove human genomic contamination to prepare high-quality reads for downstream variant calling or genome assembly.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: read pre-processing
+# covid-19-read-pre-processing
 
 ## Overview
 

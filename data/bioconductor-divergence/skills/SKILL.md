@@ -4,7 +4,6 @@ description: This package transforms high-dimensional omics data into a digital 
 homepage: https://bioconductor.org/packages/release/bioc/html/divergence.html
 ---
 
-
 # bioconductor-divergence
 
 ## Overview

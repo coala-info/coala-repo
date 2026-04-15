@@ -1,10 +1,12 @@
 ---
 name: metagenomics-taxonomic-and-antibiotic-resistance-gene-arg-pr
-description: "This workflow processes quality-filtered metagenomic short-read collections to perform taxonomic profiling and antibiotic resistance gene prediction using Sylph, Groot, deepARG, and argNorm. Use this skill when you need to characterize the microbial composition of environmental or clinical samples while identifying and standardizing the nomenclature of antibiotic resistance genes across different detection tools."
-homepage: https://workflowhub.eu/workflows/2068
+description: This workflow processes quality-filtered metagenomic short-read collections to perform taxonomic profiling and antibiotic resistance gene prediction using Sylph, Groot, deepARG, and argNorm. Use this skill when you need to characterize the microbial composition of environmental or clinical samples while identifying and standardizing the nomenclature of antibiotic resistance genes across different detection tools.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metagenomics Taxonomic and Antibiotic Resistance Gene (ARG) Profiling
+# metagenomics-taxonomic-and-antibiotic-resistance-gene-arg-pr
 
 ## Overview
 

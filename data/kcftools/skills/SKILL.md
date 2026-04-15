@@ -2,6 +2,8 @@
 name: kcftools
 description: kcftools identifies genomic variations by analyzing k-mer presence or absence between a reference genome and query samples. Use when user asks to detect variants using k-mers, merge sample data into cohorts, or convert k-mer identity scores into genotype and PLINK formats.
 homepage: https://github.com/sivasubramanics/kcftools
+metadata:
+  docker_image: "quay.io/biocontainers/kcftools:0.4.0--hdfd78af_0"
 ---
 
 # kcftools

@@ -4,7 +4,6 @@ description: TSCAN performs pseudotime analysis on single-cell RNA-seq data to r
 homepage: https://bioconductor.org/packages/release/bioc/html/TSCAN.html
 ---
 
-
 # bioconductor-tscan
 
 name: bioconductor-tscan

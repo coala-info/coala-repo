@@ -1,9 +1,10 @@
 ---
 name: amplisim
-description: "amplisim simulates synthetic amplicon sequences from a reference genome and a primer scheme. Use when user asks to generate synthetic FASTA data, simulate amplicon-based sequencing assays, or model PCR dropout and replication depth."
+description: amplisim simulates synthetic amplicon sequences from a reference genome and a primer scheme. Use when user asks to generate synthetic FASTA data, simulate amplicon-based sequencing assays, or model PCR dropout and replication depth.
 homepage: https://github.com/rki-mf1/amplisim
+metadata:
+  docker_image: "quay.io/biocontainers/amplisim:0.2.1--h69ac913_3"
 ---
-
 
 # amplisim
 

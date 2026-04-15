@@ -2,8 +2,9 @@
 name: ezfastq
 description: ezfastq automates the discovery and organization of FASTQ files by scanning directories for specific sample names. Use when user asks to extract specific samples from a data repository, organize sequencing files into a destination directory, or stage FASTQ files using symbolic links.
 homepage: https://github.com/bioforensics/ezfastq/
+metadata:
+  docker_image: "quay.io/biocontainers/ezfastq:0.2--pyhdfd78af_0"
 ---
-
 
 # ezfastq
 

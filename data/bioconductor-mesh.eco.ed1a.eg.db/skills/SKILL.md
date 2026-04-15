@@ -4,7 +4,6 @@ description: This tool provides mapping between MeSH identifiers and Entrez Gene
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Eco.ED1a.eg.db.html
 ---
 
-
 # bioconductor-mesh.eco.ed1a.eg.db
 
 start_thoughtname: bioconductor-mesh.eco.ed1a.eg.db

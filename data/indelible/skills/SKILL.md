@@ -2,8 +2,9 @@
 name: indelible
 description: InDelible identifies intermediate-sized genomic insertions and deletions by leveraging split-read analysis and active learning quality control. Use when user asks to detect intermediate-sized variants, identify de novo mutations in clinical diagnostics, or perform structural variant calling on whole exome sequencing data.
 homepage: https://github.com/HurlesGroupSanger/indelible
+metadata:
+  docker_image: "biocontainers/indelible:v1.03-4-deb_cv1"
 ---
-
 
 # indelible
 

@@ -2,6 +2,8 @@
 name: metapi
 description: metapi is a Snakemake-based pipeline designed to streamline metagenomics data mining and bioinformatics workflows. Use when user asks to initialize a metagenomics project, configure sample metadata, or execute workflows for genome assembly, binning, and gene-centric analysis.
 homepage: https://github.com/ohmeta/metapi
+metadata:
+  docker_image: "quay.io/biocontainers/metapi:3.0.0--pyhdfd78af_0"
 ---
 
 # metapi

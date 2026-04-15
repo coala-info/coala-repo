@@ -4,7 +4,6 @@ description: CoRegNet reconstructs and analyzes large-scale transcription factor
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CoRegNet.html
 ---
 
-
 # bioconductor-coregnet
 
 ## Overview

@@ -4,7 +4,6 @@ description: DChIPRep performs differential analysis of chromatin modification C
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DChIPRep.html
 ---
 
-
 # bioconductor-dchiprep
 
 name: bioconductor-dchiprep

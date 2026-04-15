@@ -4,7 +4,6 @@ description: This R package converts finemapping results into AnnData objects an
 homepage: https://cran.r-project.org/web/packages/flanders/index.html
 ---
 
-
 # r-flanders
 
 name: r-flanders

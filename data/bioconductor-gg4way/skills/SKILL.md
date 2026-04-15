@@ -4,7 +4,6 @@ description: This tool creates 4-way plots to compare log-fold change values bet
 homepage: https://bioconductor.org/packages/release/bioc/html/gg4way.html
 ---
 
-
 # bioconductor-gg4way
 
 name: bioconductor-gg4way

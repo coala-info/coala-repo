@@ -2,8 +2,9 @@
 name: pycoverm
 description: pycoverm provides high-performance Python bindings for calculating metagenomic contig coverage from BAM files using a Rust-based engine. Use when user asks to estimate contig coverage, calculate mean coverage across multiple BAM files, or validate if BAM files are coordinate-sorted.
 homepage: https://github.com/apcamargo/pycoverm
+metadata:
+  docker_image: "quay.io/biocontainers/pycoverm:0.6.2--py39h52a3210_0"
 ---
-
 
 # pycoverm
 

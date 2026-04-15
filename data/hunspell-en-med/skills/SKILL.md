@@ -2,8 +2,9 @@
 name: hunspell-en-med
 description: This tool provides specialized medical spell-checking capabilities by integrating drug names, clinical codes, and anatomical terms into the Hunspell dictionary. Use when user asks to spell-check medical documents, validate clinical terminology, or install specialized medical dictionaries for Hunspell.
 homepage: https://github.com/glutanimate/hunspell-en-med-glut
+metadata:
+  docker_image: "biocontainers/hunspell-en-med:v0.0.20140410-1-deb_cv1"
 ---
-
 
 # hunspell-en-med
 

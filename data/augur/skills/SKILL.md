@@ -2,6 +2,8 @@
 name: augur
 description: Augur is a modular bioinformatics toolkit designed for analyzing pathogen evolution and building comprehensive phylogenetic models. Use when user asks to curate and filter sequence data, align sequences, infer and refine phylogenetic trees, reconstruct ancestral states, or export results for visualization in Auspice.
 homepage: https://github.com/nextstrain/augur
+metadata:
+  docker_image: "quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0"
 ---
 
 # augur

@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubdcdf.html
 ---
 
-
 # bioconductor-hu35ksubdcdf
 
 name: bioconductor-hu35ksubdcdf

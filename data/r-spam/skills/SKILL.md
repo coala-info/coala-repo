@@ -4,7 +4,6 @@ description: The spam package provides functions for performing fast and scalabl
 homepage: https://cloud.r-project.org/web/packages/spam/index.html
 ---
 
-
 # r-spam
 
 ## Overview

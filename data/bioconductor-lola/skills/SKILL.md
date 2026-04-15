@@ -4,7 +4,6 @@ description: bioconductor-lola performs functional enrichment analysis for genom
 homepage: https://bioconductor.org/packages/release/bioc/html/LOLA.html
 ---
 
-
 # bioconductor-lola
 
 ## Overview

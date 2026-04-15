@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the C
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cyrgene.1.1.st.html
 ---
 
-
 # bioconductor-pd.cyrgene.1.1.st
 
 name: bioconductor-pd.cyrgene.1.1.st

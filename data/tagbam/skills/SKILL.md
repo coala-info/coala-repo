@@ -1,9 +1,10 @@
 ---
 name: tagbam
-description: "tagbam appends a specific tag and value to every read in a BAM file. Use when user asks to add metadata to alignment records, inject custom tags into BAM files, or label reads with specific values like haplotype assignments."
+description: tagbam appends a specific tag and value to every read in a BAM file. Use when user asks to add metadata to alignment records, inject custom tags into BAM files, or label reads with specific values like haplotype assignments.
 homepage: https://github.com/fellen31/tagbam
+metadata:
+  docker_image: "quay.io/biocontainers/tagbam:0.1.0--h3ab6199_0"
 ---
-
 
 # tagbam
 

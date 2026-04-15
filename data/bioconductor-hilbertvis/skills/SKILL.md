@@ -4,7 +4,6 @@ description: This tool visualizes long genomic data vectors by mapping them onto
 homepage: https://bioconductor.org/packages/release/bioc/html/HilbertVis.html
 ---
 
-
 # bioconductor-hilbertvis
 
 name: bioconductor-hilbertvis

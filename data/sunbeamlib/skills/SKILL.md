@@ -2,8 +2,9 @@
 name: sunbeamlib
 description: Sunbeamlib is a Snakemake-based framework for end-to-end metagenomic data processing, including quality control, assembly, and taxonomic profiling. Use when user asks to initialize a project, execute the pipeline for QC or assembly, manage extensions, or perform dry runs of the workflow.
 homepage: https://github.com/sunbeam-labs/sunbeam
+metadata:
+  docker_image: "quay.io/biocontainers/sunbeamlib:5.2.2--pyhdfd78af_0"
 ---
-
 
 # sunbeamlib
 

@@ -1,9 +1,10 @@
 ---
 name: snpsplit
-description: "SNPsplit sorts aligned reads into allele-specific categories based on known SNP positions. Use when user asks to categorize reads into genome-specific groups, perform allele-specific sorting, or prepare N-masked reference genomes for bioinformatics pipelines."
+description: SNPsplit sorts aligned reads into allele-specific categories based on known SNP positions. Use when user asks to categorize reads into genome-specific groups, perform allele-specific sorting, or prepare N-masked reference genomes for bioinformatics pipelines.
 homepage: https://www.bioinformatics.babraham.ac.uk/projects/SNPsplit/
+metadata:
+  docker_image: "quay.io/biocontainers/snpsplit:0.6.0--hdfd78af_0"
 ---
-
 
 # snpsplit
 

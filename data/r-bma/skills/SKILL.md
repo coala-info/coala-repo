@@ -4,7 +4,6 @@ description: This tool performs Bayesian Model Averaging to account for model un
 homepage: https://cloud.r-project.org/web/packages/BMA/index.html
 ---
 
-
 # r-bma
 
 name: r-bma

@@ -4,7 +4,6 @@ description: The bioconductor-chipseq package provides a framework for analyzing
 homepage: https://bioconductor.org/packages/release/bioc/html/chipseq.html
 ---
 
-
 # bioconductor-chipseq
 
 name: bioconductor-chipseq

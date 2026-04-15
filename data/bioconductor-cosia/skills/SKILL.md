@@ -4,7 +4,6 @@ description: CoSIA is an R package for comparative transcriptomics that enables 
 homepage: https://bioconductor.org/packages/release/bioc/html/CoSIA.html
 ---
 
-
 # bioconductor-cosia
 
 ## Overview

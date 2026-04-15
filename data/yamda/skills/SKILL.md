@@ -1,7 +1,9 @@
 ---
 name: yamda
-description: "Yamda is a GPU-accelerated software package designed for the rapid identification of DNA motifs in large-scale genomic data. Use when user asks to discover DNA motifs, perform motif discovery on ChIP-seq or DGF data, or preprocess FASTA files to remove low-complexity sequences."
+description: Yamda is a GPU-accelerated software package designed for the rapid identification of DNA motifs in large-scale genomic data. Use when user asks to discover DNA motifs, perform motif discovery on ChIP-seq or DGF data, or preprocess FASTA files to remove low-complexity sequences.
 homepage: https://github.com/daquang/YAMDA
+metadata:
+  docker_image: "quay.io/biocontainers/yamda:0.1.00e9c9d--py_0"
 ---
 
 # yamda

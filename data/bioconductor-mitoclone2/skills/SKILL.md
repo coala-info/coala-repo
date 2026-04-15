@@ -4,7 +4,6 @@ description: This tool identifies clonal populations and reconstructs phylogenet
 homepage: https://bioconductor.org/packages/release/bioc/html/mitoClone2.html
 ---
 
-
 # bioconductor-mitoclone2
 
 name: bioconductor-mitoclone2

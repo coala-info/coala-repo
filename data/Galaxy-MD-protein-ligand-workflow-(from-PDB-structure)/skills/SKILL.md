@@ -1,10 +1,12 @@
 ---
 name: md-protein-ligand-workflow-from-pdb-structure
-description: "This computational chemistry workflow automates the preparation and execution of molecular dynamics simulations for protein-ligand complexes starting from a PDB code using GROMACS, ACPYPE, and OpenBabel. Use this skill when you need to investigate the structural stability and atomic-level interactions of a specific small molecule bound to a protein target over time."
-homepage: https://workflowhub.eu/workflows/1686
+description: This computational chemistry workflow automates the preparation and execution of molecular dynamics simulations for protein-ligand complexes starting from a PDB code using GROMACS, ACPYPE, and OpenBabel. Use this skill when you need to investigate the structural stability and atomic-level interactions of a specific small molecule bound to a protein target over time.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MD protein-ligand workflow (from PDB structure)
+# md-protein-ligand-workflow-from-pdb-structure
 
 ## Overview
 

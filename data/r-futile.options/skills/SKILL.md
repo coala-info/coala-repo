@@ -4,7 +4,6 @@ description: The r-futile.options package provides a scoped options management f
 homepage: https://cloud.r-project.org/web/packages/futile.options/index.html
 ---
 
-
 # r-futile.options
 
 name: r-futile.options

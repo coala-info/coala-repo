@@ -2,8 +2,9 @@
 name: perl-string-random
 description: This tool generates random strings based on specific patterns or regular expressions. Use when user asks to generate random passwords, create formatted random strings, or produce random data matching a specific character template.
 homepage: http://metacpan.org/release/String-Random
+metadata:
+  docker_image: "quay.io/biocontainers/perl-string-random:0.30--pl522_0"
 ---
-
 
 # perl-string-random
 

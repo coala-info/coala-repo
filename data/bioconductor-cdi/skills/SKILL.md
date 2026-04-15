@@ -4,7 +4,6 @@ description: This tool evaluates and selects optimal clustering labels for singl
 homepage: https://bioconductor.org/packages/release/bioc/html/CDI.html
 ---
 
-
 # bioconductor-cdi
 
 name: bioconductor-cdi

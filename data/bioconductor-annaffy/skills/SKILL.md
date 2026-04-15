@@ -4,7 +4,6 @@ description: This tool provides an interface for annotating Affymetrix microarra
 homepage: https://bioconductor.org/packages/release/bioc/html/annaffy.html
 ---
 
-
 # bioconductor-annaffy
 
 name: bioconductor-annaffy

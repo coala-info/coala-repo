@@ -4,7 +4,6 @@ description: The bioconductor-rain package provides a robust non-parametric meth
 homepage: https://bioconductor.org/packages/release/bioc/html/rain.html
 ---
 
-
 # bioconductor-rain
 
 ## Overview

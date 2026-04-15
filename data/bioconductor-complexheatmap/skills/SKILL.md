@@ -4,7 +4,6 @@ description: This tool creates, customizes, and concatenates complex heatmaps an
 homepage: https://bioconductor.org/packages/release/bioc/html/ComplexHeatmap.html
 ---
 
-
 # bioconductor-complexheatmap
 
 name: bioconductor-complexheatmap

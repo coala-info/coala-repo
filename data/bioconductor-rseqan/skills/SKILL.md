@@ -4,7 +4,6 @@ description: This tool provides the SeqAn C++ library as a header-only Bioconduc
 homepage: https://bioconductor.org/packages/release/bioc/html/RSeqAn.html
 ---
 
-
 # bioconductor-rseqan
 
 name: bioconductor-rseqan

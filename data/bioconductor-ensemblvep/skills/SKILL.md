@@ -4,7 +4,6 @@ description: The ensemblVEP package provides an R interface to the Ensembl Varia
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ensemblVEP.html
 ---
 
-
 # bioconductor-ensemblvep
 
 ## Overview

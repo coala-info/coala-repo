@@ -4,7 +4,6 @@ description: This tool provides an R interface to the Ribosomal Database Project
 homepage: https://bioconductor.org/packages/release/bioc/html/rRDP.html
 ---
 
-
 # bioconductor-rrdp
 
 name: bioconductor-rrdp

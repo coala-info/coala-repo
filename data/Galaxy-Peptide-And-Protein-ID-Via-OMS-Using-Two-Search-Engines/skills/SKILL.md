@@ -1,10 +1,12 @@
 ---
 name: peptide-and-protein-id-via-oms-using-two-search-engines
-description: "This proteomics workflow processes mzML mass spectrometry data and protein databases to identify peptides and proteins using OpenMS tools including XTandemAdapter, MSGFPlusAdapter, and ConsensusID. Use this skill when you want to improve the reliability of peptide identifications by integrating results from multiple search algorithms and performing statistical validation through posterior error probabilities and false discovery rate analysis."
-homepage: https://workflowhub.eu/workflows/1452
+description: This proteomics workflow processes mzML mass spectrometry data and protein databases to identify peptides and proteins using OpenMS tools including XTandemAdapter, MSGFPlusAdapter, and ConsensusID. Use this skill when you want to improve the reliability of peptide identifications by integrating results from multiple search algorithms and performing statistical validation through posterior error probabilities and false discovery rate analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Peptide And Protein ID Via OMS Using Two Search Engines
+# peptide-and-protein-id-via-oms-using-two-search-engines
 
 ## Overview
 

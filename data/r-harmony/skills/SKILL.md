@@ -4,7 +4,6 @@ description: This tool integrates single-cell RNA-seq data by performing batch c
 homepage: https://cloud.r-project.org/web/packages/harmony/index.html
 ---
 
-
 # r-harmony
 
 name: r-harmony

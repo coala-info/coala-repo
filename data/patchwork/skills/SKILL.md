@@ -4,7 +4,6 @@ description: Patchwork is a decentralized peer-to-peer messaging and social shar
 homepage: https://github.com/ssbc/patchwork
 ---
 
-
 # patchwork
 
 ## Overview

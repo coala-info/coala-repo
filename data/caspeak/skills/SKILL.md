@@ -2,6 +2,8 @@
 name: caspeak
 description: CasPeak identifies mobile element insertions from targeted Nanopore sequencing data by combining read alignment, peak detection, and local assembly. Use when user asks to identify non-reference insertions, detect coverage peaks from Cas9-targeted sequencing, or validate insertion events through local assembly and dotplot visualization.
 homepage: https://github.com/Rye-lxy/CasPeak
+metadata:
+  docker_image: "quay.io/biocontainers/caspeak:1.1.5--pyhdfd78af_0"
 ---
 
 # caspeak

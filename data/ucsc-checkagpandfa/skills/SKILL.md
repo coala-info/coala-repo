@@ -2,8 +2,9 @@
 name: ucsc-checkagpandfa
 description: This tool verifies the structural integrity of a genome assembly by cross-referencing AGP instructions with FASTA sequence data. Use when user asks to verify genome assembly integrity, cross-reference AGP and FASTA files, or check for synchronization errors between assembly instructions and sequence data.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-checkagpandfa:482--h0b57e2e_0"
 ---
-
 
 # ucsc-checkagpandfa
 

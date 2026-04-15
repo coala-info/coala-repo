@@ -1,10 +1,12 @@
 ---
 name: ai-cellfree-core
-description: "This workflow processes fluorescence and luminescence data using the iCFree suite to extract, calibrate, and learn from cell-free system experiments while generating plate designs and instructions for subsequent iterations. Use this skill when you need to automate the analysis of cell-free expression data and generate optimized experimental designs for active learning in synthetic biology."
-homepage: https://workflowhub.eu/workflows/2003
+description: This workflow processes fluorescence and luminescence data using the iCFree suite to extract, calibrate, and learn from cell-free system experiments while generating plate designs and instructions for subsequent iterations. Use this skill when you need to automate the analysis of cell-free expression data and generate optimized experimental designs for active learning in synthetic biology.
+homepage: https://www.micalis.fr/equipe/cell-free/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AI-CellFree - Core
+# ai-cellfree-core
 
 ## Overview
 

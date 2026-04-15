@@ -1,9 +1,10 @@
 ---
 name: pbmarkdup
-description: "pbmarkdup identifies and marks or removes PCR duplicates from PacBio HiFi reads using a reference-free hierarchical comparison workflow. Use when user asks to mark duplicate reads, remove PCR duplicates from HiFi data, or perform cross-library deduplication."
+description: pbmarkdup identifies and marks or removes PCR duplicates from PacBio HiFi reads using a reference-free hierarchical comparison workflow. Use when user asks to mark duplicate reads, remove PCR duplicates from HiFi data, or perform cross-library deduplication.
 homepage: https://github.com/PacificBiosciences/pbmarkdup
+metadata:
+  docker_image: "quay.io/biocontainers/pbmarkdup:1.2.0--h9ee0642_0"
 ---
-
 
 # pbmarkdup
 

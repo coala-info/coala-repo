@@ -1,9 +1,10 @@
 ---
 name: seq2squiggle
-description: "seq2squiggle simulates realistic nanopore signals from DNA sequences using deep learning transformers. Use when user asks to generate synthetic nanopore datasets, simulate specific sequencing chemistries, or transform FASTA/FASTQ sequences into raw signal squiggles."
+description: seq2squiggle simulates realistic nanopore signals from DNA sequences using deep learning transformers. Use when user asks to generate synthetic nanopore datasets, simulate specific sequencing chemistries, or transform FASTA/FASTQ sequences into raw signal squiggles.
 homepage: https://github.com/ZKI-PH-ImageAnalysis/seq2squiggle
+metadata:
+  docker_image: "quay.io/biocontainers/seq2squiggle:0.3.4--pyhdfd78af_0"
 ---
-
 
 # seq2squiggle
 

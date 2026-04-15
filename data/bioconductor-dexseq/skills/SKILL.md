@@ -4,7 +4,6 @@ description: This Bioconductor package identifies differential exon usage in RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/DEXSeq.html
 ---
 
-
 # bioconductor-dexseq
 
 ## Overview

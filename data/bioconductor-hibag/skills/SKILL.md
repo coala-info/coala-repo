@@ -1,9 +1,8 @@
 ---
 name: bioconductor-hibag
-description: "HIBAG predicts HLA genotypes from SNP data using an ensemble classifier approach. Use when user asks to impute HLA alleles from GWAS data, build custom HLA prediction models, or perform HLA-specific association testing at the allele and amino acid levels."
+description: HIBAG predicts HLA genotypes from SNP data using an ensemble classifier approach. Use when user asks to impute HLA alleles from GWAS data, build custom HLA prediction models, or perform HLA-specific association testing at the allele and amino acid levels.
 homepage: https://bioconductor.org/packages/release/bioc/html/HIBAG.html
 ---
-
 
 # bioconductor-hibag
 

@@ -4,7 +4,6 @@ description: The bioconductor-pipeframe package provides a framework for buildin
 homepage: https://bioconductor.org/packages/release/bioc/html/pipeFrame.html
 ---
 
-
 # bioconductor-pipeframe
 
 name: bioconductor-pipeframe

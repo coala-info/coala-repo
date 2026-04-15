@@ -1,9 +1,10 @@
 ---
 name: wigeon
-description: "Manages and analyzes biological data, particularly related to genomics and bioinformatics. Use when user asks to analyze genomic sequences, process biological datasets, interact with bioinformatics databases or tools, or perform custom biological data manipulations."
+description: Manages and analyzes biological data, particularly related to genomics and bioinformatics. Use when user asks to analyze genomic sequences, process biological datasets, interact with bioinformatics databases or tools, or perform custom biological data manipulations.
 homepage: https://github.com/alexmaybar/wigeonDB
+metadata:
+  docker_image: "biocontainers/wigeon:v20101212dfsg1-2-deb_cv1"
 ---
-
 
 # wigeon
 

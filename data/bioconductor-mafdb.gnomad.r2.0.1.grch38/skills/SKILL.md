@@ -4,7 +4,6 @@ description: This package provides access to minor allele frequency data from gn
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MafDb.gnomAD.r2.0.1.GRCh38.html
 ---
 
-
 # bioconductor-mafdb.gnomad.r2.0.1.grch38
 
 name: bioconductor-mafdb.gnomad.r2.0.1.grch38

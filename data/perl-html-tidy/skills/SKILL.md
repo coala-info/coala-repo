@@ -2,8 +2,9 @@
 name: perl-html-tidy
 description: This tool validates, cleans, and repairs HTML and XHTML markup using the Perl interface or the webtidy command-line utility. Use when user asks to clean up messy HTML, identify syntax errors, or programmatically ensure documents adhere to specific web standards.
 homepage: http://github.com/petdance/html-tidy
+metadata:
+  docker_image: "quay.io/biocontainers/perl-html-tidy:1.60--pl5321h7b50bb2_7"
 ---
-
 
 # perl-html-tidy
 

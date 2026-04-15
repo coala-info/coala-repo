@@ -1,9 +1,10 @@
 ---
 name: nanosv
-description: "NanoSV identifies structural variations in long-read sequencing data by analyzing split- and gapped-aligned reads. Use when user asks to detect deletions, insertions, inversions, or translocations from Oxford Nanopore or other long-read datasets."
+description: NanoSV identifies structural variations in long-read sequencing data by analyzing split- and gapped-aligned reads. Use when user asks to detect deletions, insertions, inversions, or translocations from Oxford Nanopore or other long-read datasets.
 homepage: https://github.com/mroosmalen/nanosv
+metadata:
+  docker_image: "quay.io/biocontainers/nanosv:1.2.4--py_0"
 ---
-
 
 # nanosv
 

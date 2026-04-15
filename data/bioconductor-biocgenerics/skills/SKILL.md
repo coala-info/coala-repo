@@ -4,7 +4,6 @@ description: BiocGenerics provides S4 generic functions and promotes base R func
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocGenerics.html
 ---
 
-
 # bioconductor-biocgenerics
 
 name: bioconductor-biocgenerics

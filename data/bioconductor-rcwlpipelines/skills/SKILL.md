@@ -4,7 +4,6 @@ description: This package provides a collection of pre-built Common Workflow Lan
 homepage: https://bioconductor.org/packages/release/bioc/html/RcwlPipelines.html
 ---
 
-
 # bioconductor-rcwlpipelines
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides access to uniformly re-processed TCGA RNA-Seq
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSE62944.html
 ---
 
-
 # bioconductor-gse62944
 
 name: bioconductor-gse62944

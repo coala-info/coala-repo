@@ -4,7 +4,6 @@ description: This tool creates enriched heatmaps in R to visualize genomic signa
 homepage: https://bioconductor.org/packages/release/bioc/html/EnrichedHeatmap.html
 ---
 
-
 # bioconductor-enrichedheatmap
 
 name: bioconductor-enrichedheatmap

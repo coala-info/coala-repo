@@ -2,8 +2,9 @@
 name: blastbesties
 description: blastbesties automates the discovery of reciprocal best hits from bidirectional BLAST results to identify putative orthologs. Use when user asks to identify reciprocal best hits, find orthologous sequence pairs, or process bidirectional BLAST tabular files.
 homepage: https://github.com/Adamtaranto/blast-besties
+metadata:
+  docker_image: "quay.io/biocontainers/blastbesties:1.2.0--pyhdfd78af_0"
 ---
-
 
 # blastbesties
 

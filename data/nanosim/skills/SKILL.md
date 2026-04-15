@@ -2,6 +2,8 @@
 name: nanosim
 description: NanoSim simulates realistic Oxford Nanopore sequencing reads by learning statistical profiles from real datasets. Use when user asks to simulate nanopore reads, characterize ONT datasets, or generate synthetic genomic and transcriptomic data for benchmarking.
 homepage: https://github.com/bcgsc/NanoSim
+metadata:
+  docker_image: "quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0"
 ---
 
 # nanosim

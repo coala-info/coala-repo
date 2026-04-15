@@ -2,8 +2,9 @@
 name: ucsc-genepredtomafframes
 description: This tool calculates the reading frame for each exon in a gene prediction relative to a MAF alignment. Use when user asks to calculate reading frames for gene exons, verify if alignments preserve open reading frames, or generate mafFrames tables.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-genepredtomafframes:482--h0b57e2e_0"
 ---
-
 
 # ucsc-genepredtomafframes
 

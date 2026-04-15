@@ -4,7 +4,6 @@ description: The DelayedRandomArray package implements DelayedArray subclasses t
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedRandomArray.html
 ---
 
-
 # bioconductor-delayedrandomarray
 
 ## Overview

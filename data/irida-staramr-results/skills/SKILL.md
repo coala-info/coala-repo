@@ -2,8 +2,9 @@
 name: irida-staramr-results
 description: This tool automates the retrieval and consolidation of StarAMR analysis results from the IRIDA platform into structured spreadsheets. Use when user asks to download AMR data from IRIDA projects, extract StarAMR outputs via the command line, or filter and export antimicrobial resistance results by date.
 homepage: https://github.com/phac-nml/irida-staramr-results
+metadata:
+  docker_image: "quay.io/biocontainers/irida-staramr-results:0.3.1--pyh5e36f6f_0"
 ---
-
 
 # irida-staramr-results
 

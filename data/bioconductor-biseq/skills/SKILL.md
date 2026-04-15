@@ -4,7 +4,6 @@ description: BiSeq analyzes targeted bisulfite sequencing data to detect differe
 homepage: https://bioconductor.org/packages/release/bioc/html/BiSeq.html
 ---
 
-
 # bioconductor-biseq
 
 name: bioconductor-biseq

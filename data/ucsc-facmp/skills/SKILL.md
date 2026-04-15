@@ -2,8 +2,9 @@
 name: ucsc-facmp
 description: The ucsc-facmp tool compares two FASTA files record-by-record. Use when user asks to compare two FASTA files, verify FASTA file identity, find differences between FASTA files, perform quality control on genome assemblies, or verify sequence manipulation script output.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-facmp:482--h0b57e2e_0"
 ---
-
 
 # ucsc-facmp
 

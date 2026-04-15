@@ -4,7 +4,6 @@ description: This tool provides an R interface to programmatically query and ret
 homepage: https://bioconductor.org/packages/3.6/bioc/html/InterMineR.html
 ---
 
-
 # bioconductor-interminer
 
 name: bioconductor-interminer

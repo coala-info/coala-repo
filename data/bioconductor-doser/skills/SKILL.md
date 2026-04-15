@@ -4,7 +4,6 @@ description: bioconductor-doser analyzes dosage compensation by comparing gene e
 homepage: https://bioconductor.org/packages/release/bioc/html/doseR.html
 ---
 
-
 # bioconductor-doser
 
 ## Overview

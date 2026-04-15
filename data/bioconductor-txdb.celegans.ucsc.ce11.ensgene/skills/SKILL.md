@@ -4,7 +4,6 @@ description: This package provides genomic annotation data for Caenorhabditis el
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Celegans.UCSC.ce11.ensGene.html
 ---
 
-
 # bioconductor-txdb.celegans.ucsc.ce11.ensgene
 
 name: bioconductor-txdb.celegans.ucsc.ce11.ensgene

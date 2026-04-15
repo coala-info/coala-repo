@@ -4,7 +4,6 @@ description: The struct package provides an object-oriented framework for buildi
 homepage: https://bioconductor.org/packages/release/bioc/html/struct.html
 ---
 
-
 # bioconductor-struct
 
 name: bioconductor-struct

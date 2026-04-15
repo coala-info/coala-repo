@@ -2,8 +2,9 @@
 name: pastml
 description: PastML reconstructs ancestral states by mapping discrete characters onto rooted phylogenetic trees and generating interactive visualizations. Use when user asks to reconstruct ancestral scenarios, map discrete characters onto phylogenetic trees, select inference models like MPPA, or generate interactive HTML visualizations.
 homepage: https://pastml.pasteur.fr
+metadata:
+  docker_image: "quay.io/biocontainers/pastml:1.9.51--pyhdfd78af_0"
 ---
-
 
 # pastml
 

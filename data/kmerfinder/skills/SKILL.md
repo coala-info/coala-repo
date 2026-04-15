@@ -2,8 +2,9 @@
 name: kmerfinder
 description: Kmerfinder identifies the species of bacterial samples by matching genomic K-mer signatures against a reference database. Use when user asks to identify species from genomic data, perform taxonomic classification, or match K-mers against a reference database.
 homepage: https://bitbucket.org/genomicepidemiology/kmerfinder
+metadata:
+  docker_image: "quay.io/biocontainers/kmerfinder:3.0.2--hdfd78af_0"
 ---
-
 
 # kmerfinder
 

@@ -4,7 +4,6 @@ description: This package provides platform design annotation data for the Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u95av2.html
 ---
 
-
 # bioconductor-pd.hg.u95av2
 
 name: bioconductor-pd.hg.u95av2

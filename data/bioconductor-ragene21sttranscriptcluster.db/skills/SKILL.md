@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Affymetrix Rat Ge
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene21sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-ragene21sttranscriptcluster.db
 
 name: bioconductor-ragene21sttranscriptcluster.db

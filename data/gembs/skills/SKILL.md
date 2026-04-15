@@ -2,6 +2,8 @@
 name: gembs
 description: gemBS is a bioinformatics pipeline for high-throughput bisulfite sequencing data analysis that performs read mapping, methylation calling, and genomic variant extraction. Use when user asks to process large-scale bisulfite sequencing datasets, align reads to a reference genome, or extract methylation levels and SNVs.
 homepage: https://github.com/heathsc/gemBS
+metadata:
+  docker_image: "quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8"
 ---
 
 # gembs

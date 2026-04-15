@@ -4,7 +4,6 @@ description: This package provides processed RNA-seq gene expression data from T
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.rnaseq.html
 ---
 
-
 # bioconductor-rtcga.rnaseq
 
 ## Overview

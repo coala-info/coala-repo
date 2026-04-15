@@ -1,10 +1,12 @@
 ---
 name: convert-formats-tsi
-description: "This workflow converts TransDecoder peptide and nucleotide FASTA files into .pro, .dat, and .cdna formats using a suite of text processing tools including awk, sed, and seqtk. Use this skill when you need to reformat protein and coding sequence outputs from TransDecoder to meet the specific input requirements of the Fgenesh gene prediction tool."
-homepage: https://workflowhub.eu/workflows/880
+description: This workflow converts TransDecoder peptide and nucleotide FASTA files into .pro, .dat, and .cdna formats using a suite of text processing tools including awk, sed, and seqtk. Use this skill when you need to reformat protein and coding sequence outputs from TransDecoder to meet the specific input requirements of the Fgenesh gene prediction tool.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Convert formats - TSI
+# convert-formats-tsi
 
 ## Overview
 

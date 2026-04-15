@@ -1,10 +1,12 @@
 ---
 name: identification-of-the-micro-organisms-in-a-beer-using-nanopo
-description: "This workflow processes raw Nanopore sequencing reads through quality control and adapter trimming using FastQC, Porechop, and fastp before performing taxonomic classification with Kraken2 and visualizing results with Krona. Use this skill when you need to identify the microbial composition of a fermented beverage or environmental sample to detect specific bacteria and yeast species."
-homepage: https://workflowhub.eu/workflows/1439
+description: This workflow processes raw Nanopore sequencing reads through quality control and adapter trimming using FastQC, Porechop, and fastp before performing taxonomic classification with Kraken2 and visualizing results with Krona. Use this skill when you need to identify the microbial composition of a fermented beverage or environmental sample to detect specific bacteria and yeast species.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Identification of the micro-organisms in a beer using Nanopore sequencing
+# identification-of-the-micro-organisms-in-a-beer-using-nanopo
 
 ## Overview
 

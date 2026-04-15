@@ -1,9 +1,10 @@
 ---
 name: bcool
-description: "BCOOL improves the accuracy of NGS reads by aligning them to a de Bruijn graph to correct sequencing errors. Use when user asks to correct sequencing artifacts in NGS data, improve read accuracy for downstream assembly, or filter noise from genomic reads using graph alignment."
+description: BCOOL improves the accuracy of NGS reads by aligning them to a de Bruijn graph to correct sequencing errors. Use when user asks to correct sequencing artifacts in NGS data, improve read accuracy for downstream assembly, or filter noise from genomic reads using graph alignment.
 homepage: https://github.com/Malfoy/BCOOL
+metadata:
+  docker_image: "quay.io/biocontainers/bcool:1.0.0--py35_0"
 ---
-
 
 # bcool
 

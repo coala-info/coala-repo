@@ -1,10 +1,12 @@
 ---
 name: celseq2-multi-batch-mm10
-description: "This transcriptomics workflow processes multiple batches of single-cell RNA sequencing data from FACS-sorted mouse cells using the CelSeq2 pipeline and UCSC GTF annotations to generate a consolidated expression matrix. Use this skill when you need to perform demultiplexing, mapping, and quantification across several sequencing runs to analyze gene expression profiles in mouse tissues."
-homepage: https://workflowhub.eu/workflows/1491
+description: This transcriptomics workflow processes multiple batches of single-cell RNA sequencing data from FACS-sorted mouse cells using the CelSeq2 pipeline and UCSC GTF annotations to generate a consolidated expression matrix. Use this skill when you need to perform demultiplexing, mapping, and quantification across several sequencing runs to analyze gene expression profiles in mouse tissues.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CelSeq2: Multi Batch (mm10)
+# celseq2-multi-batch-mm10
 
 ## Overview
 

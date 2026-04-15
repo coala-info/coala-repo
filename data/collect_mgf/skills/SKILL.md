@@ -2,8 +2,9 @@
 name: collect_mgf
 description: This tool consolidates individual MS/MS spectra from a nested directory structure into a single MGF file while mapping precursor information from a results file. Use when user asks to collect spectra from XMass experiments, consolidate multiple MGF files, or aggregate proteomics data with precursor mass and charge state mapping.
 homepage: http://www.ms-utils.org/collect_mgf.c
+metadata:
+  docker_image: "quay.io/biocontainers/collect_mgf:1.0--h7b50bb2_7"
 ---
-
 
 # collect_mgf
 

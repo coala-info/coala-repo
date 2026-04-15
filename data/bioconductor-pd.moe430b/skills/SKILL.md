@@ -4,7 +4,6 @@ description: This package provides platform design information and probe mapping
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.moe430b.html
 ---
 
-
 # bioconductor-pd.moe430b
 
 ## Overview

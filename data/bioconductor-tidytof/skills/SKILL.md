@@ -4,7 +4,6 @@ description: The tidytof package provides a tidy data interface for analyzing hi
 homepage: https://bioconductor.org/packages/release/bioc/html/tidytof.html
 ---
 
-
 # bioconductor-tidytof
 
 name: bioconductor-tidytof

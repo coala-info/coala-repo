@@ -2,6 +2,8 @@
 name: omamer
 description: OMAmer is a bioinformatics tool that uses an alignment-free k-mer approach to rapidly assign protein sequences to Hierarchical Orthologous Groups within the OMA ecosystem. Use when user asks to assign proteins to ancestral subfamilies, annotate new proteomes, or place sequences into a phylogenomic context using OMA databases.
 homepage: https://github.com/DessimozLab/omamer
+metadata:
+  docker_image: "quay.io/biocontainers/omamer:2.1.2--pyhdfd78af_0"
 ---
 
 # omamer

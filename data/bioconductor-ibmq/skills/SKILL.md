@@ -4,7 +4,6 @@ description: This package implements a hierarchical Bayesian model for large-sca
 homepage: https://bioconductor.org/packages/release/bioc/html/iBMQ.html
 ---
 
-
 # bioconductor-ibmq
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides access to 10X Genomics Visium spatial gene expre
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TENxVisiumData.html
 ---
 
-
 # bioconductor-tenxvisiumdata
 
 name: bioconductor-tenxvisiumdata

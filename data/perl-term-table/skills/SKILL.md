@@ -2,8 +2,9 @@
 name: perl-term-table
 description: This tool renders structured data into aligned ASCII tables for terminal display using the Term::Table Perl module. Use when user asks to format array-based data into tables, manage terminal column alignment, or collapse empty columns in a dataset.
 homepage: http://metacpan.org/pod/Term::Table
+metadata:
+  docker_image: "quay.io/biocontainers/perl-term-table:0.028--pl5321hdfd78af_0"
 ---
-
 
 # perl-term-table
 

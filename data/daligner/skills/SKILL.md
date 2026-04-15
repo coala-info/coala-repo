@@ -2,6 +2,8 @@
 name: daligner
 description: daligner identifies local alignments and overlaps between long-read sequencing datasets with high error rates. Use when user asks to find overlaps between reads, perform self-comparison of database blocks, or generate local alignment files for long-read assembly pipelines.
 homepage: https://github.com/thegenemyers/DALIGNER
+metadata:
+  docker_image: "quay.io/biocontainers/daligner:2.0.20240118--h7b50bb2_0"
 ---
 
 # daligner

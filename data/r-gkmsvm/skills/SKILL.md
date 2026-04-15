@@ -4,7 +4,6 @@ description: This tool provides a gapped k-mer Support Vector Machine for DNA se
 homepage: https://cran.r-project.org/web/packages/gkmsvm/index.html
 ---
 
-
 # r-gkmsvm
 
 name: r-gkmsvm

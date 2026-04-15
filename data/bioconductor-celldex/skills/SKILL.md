@@ -4,7 +4,6 @@ description: The celldex package provides a standardized interface for retrievin
 homepage: https://bioconductor.org/packages/release/data/experiment/html/celldex.html
 ---
 
-
 # bioconductor-celldex
 
 ## Overview

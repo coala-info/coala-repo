@@ -4,7 +4,6 @@ description: The r-goeveg package provides utilities for community data analysis
 homepage: https://cloud.r-project.org/web/packages/goeveg/index.html
 ---
 
-
 # r-goeveg
 
 ## Overview

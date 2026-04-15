@@ -1,10 +1,12 @@
 ---
 name: sentinel5-volcanic-data
-description: "This Galaxy workflow processes Copernicus Sentinel-5P satellite data using an interactive notebook and Panoply to visualize the atmospheric impact of volcanic activity. Use this skill when you need to analyze trace gas concentrations or aerosol distributions resulting from volcanic eruptions to assess their environmental consequences."
-homepage: https://workflowhub.eu/workflows/756
+description: This Galaxy workflow processes Copernicus Sentinel-5P satellite data using an interactive notebook and Panoply to visualize the atmospheric impact of volcanic activity. Use this skill when you need to analyze trace gas concentrations or aerosol distributions resulting from volcanic eruptions to assess their environmental consequences.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Sentinel5 volcanic data
+# sentinel5-volcanic-data
 
 ## Overview
 

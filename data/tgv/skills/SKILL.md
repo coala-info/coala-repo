@@ -2,6 +2,8 @@
 name: tgv
 description: The Terminal Genome Viewer (tgv) is a lightweight, command-line tool for navigating and visualizing genomic datasets using Vim-like keybindings. Use when user asks to browse genomes in the terminal, view BAM or VCF files, jump to specific genes or coordinates, or access remote genomic data from S3 buckets.
 homepage: https://github.com/zeqianli/tgv
+metadata:
+  docker_image: "quay.io/biocontainers/tgv:0.1.0--h521fa98_0"
 ---
 
 # tgv

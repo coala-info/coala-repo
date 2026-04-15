@@ -2,8 +2,9 @@
 name: spades
 description: SPAdes is a genome assembly toolkit designed to reconstruct sequences from various sequencing technologies, particularly for small genomes like bacteria and viruses. Use when user asks to assemble genomes from Illumina or long-read data, perform metagenomic or single-cell assembly, or identify plasmids and transcriptomes.
 homepage: https://github.com/ablab/spades
+metadata:
+  docker_image: "quay.io/biocontainers/spades:4.2.0--h8d6e82b_2"
 ---
-
 
 # spades
 

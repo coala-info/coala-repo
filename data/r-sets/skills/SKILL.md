@@ -4,7 +4,6 @@ description: The r-sets tool provides data structures and operations for finite 
 homepage: https://cloud.r-project.org/web/packages/sets/index.html
 ---
 
-
 # r-sets
 
 name: r-sets

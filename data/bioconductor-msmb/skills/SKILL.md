@@ -4,7 +4,6 @@ description: This package provides access to datasets, images, and scripts assoc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MSMB.html
 ---
 
-
 # bioconductor-msmb
 
 name: bioconductor-msmb

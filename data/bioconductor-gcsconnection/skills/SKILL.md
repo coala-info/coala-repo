@@ -4,7 +4,6 @@ description: This tool provides an R connection interface to read, write, and ma
 homepage: https://bioconductor.org/packages/3.11/bioc/html/GCSConnection.html
 ---
 
-
 # bioconductor-gcsconnection
 
 name: bioconductor-gcsconnection

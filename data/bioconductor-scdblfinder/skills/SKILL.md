@@ -4,7 +4,6 @@ description: This tool identifies doublets in single-cell RNA-seq and ATAC-seq d
 homepage: https://bioconductor.org/packages/release/bioc/html/scDblFinder.html
 ---
 
-
 # bioconductor-scdblfinder
 
 name: bioconductor-scdblfinder

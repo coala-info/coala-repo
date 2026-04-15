@@ -4,7 +4,6 @@ description: The ITALICS package implements an iterative method to normalize Aff
 homepage: https://bioconductor.org/packages/release/bioc/html/ITALICS.html
 ---
 
-
 # bioconductor-italics
 
 ## Overview

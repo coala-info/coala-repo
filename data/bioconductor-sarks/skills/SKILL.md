@@ -4,7 +4,6 @@ description: bioconductor-sarks identifies sequence motifs and multi-motif domai
 homepage: https://bioconductor.org/packages/release/bioc/html/sarks.html
 ---
 
-
 # bioconductor-sarks
 
 name: bioconductor-sarks

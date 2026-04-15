@@ -2,8 +2,9 @@
 name: satrap
 description: Satrap converts color-space sequencing data from ABI SOLiD sequencers into standard base-space DNA sequences. Use when user asks to translate color-space assemblies, convert di-base encoded reads to base-space, or process SOLiD sequencer output for use with standard bioinformatics tools.
 homepage: http://satrap.cribi.unipd.it/cgi-bin/satrap.pl
+metadata:
+  docker_image: "quay.io/biocontainers/satrap:0.2--h9948957_7"
 ---
-
 
 # satrap
 

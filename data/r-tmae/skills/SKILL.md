@@ -4,7 +4,6 @@ description: The r-tmae package identifies allelic imbalance in allele-specific 
 homepage: https://cran.r-project.org/web/packages/tmae/index.html
 ---
 
-
 # r-tmae
 
 ## Overview

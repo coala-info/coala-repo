@@ -4,7 +4,6 @@ description: This tool performs local regression, likelihood, and density estima
 homepage: https://cloud.r-project.org/web/packages/locfit/index.html
 ---
 
-
 # r-locfit
 
 name: r-locfit

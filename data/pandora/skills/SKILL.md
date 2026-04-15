@@ -2,6 +2,8 @@
 name: pandora
 description: Pandora performs nucleotide-resolution bacterial pangenomics by mapping reads to a pangenome reference graph to identify loci and call variants. Use when user asks to index a pangenome reference graph, map long or short reads to a graph, compare multiple samples to generate a pangenome matrix, or discover novel variants.
 homepage: https://github.com/rmcolq/pandora
+metadata:
+  docker_image: "quay.io/biocontainers/pandora:0.9.2--h4ac6f70_0"
 ---
 
 # pandora

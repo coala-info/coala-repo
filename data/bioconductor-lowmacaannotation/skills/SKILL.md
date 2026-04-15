@@ -4,7 +4,6 @@ description: This package provides curated annotation datasets for mapping genes
 homepage: https://bioconductor.org/packages/release/data/annotation/html/LowMACAAnnotation.html
 ---
 
-
 # bioconductor-lowmacaannotation
 
 name: bioconductor-lowmacaannotation

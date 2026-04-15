@@ -4,7 +4,6 @@ description: PopGenome is an R package for efficient population genetics and evo
 homepage: https://cran.r-project.org/web/packages/popgenome/index.html
 ---
 
-
 # r-popgenome
 
 name: r-popgenome

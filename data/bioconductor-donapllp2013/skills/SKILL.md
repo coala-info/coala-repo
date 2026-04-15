@@ -4,7 +4,6 @@ description: This package provides data and code to reproduce lifetime-ratio flu
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DonaPLLP2013.html
 ---
 
-
 # bioconductor-donapllp2013
 
 name: bioconductor-donapllp2013

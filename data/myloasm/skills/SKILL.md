@@ -1,9 +1,10 @@
 ---
 name: myloasm
-description: "Myloasm is a high-resolution metagenome assembler for noisy long reads. Use when user asks to assemble metagenomic data from long-read sequencing."
+description: Myloasm is a high-resolution metagenome assembler for noisy long reads. Use when user asks to assemble metagenomic data from long-read sequencing.
 homepage: https://github.com/bluenote-1577/myloasm
+metadata:
+  docker_image: "quay.io/biocontainers/myloasm:0.4.0--ha6fb395_0"
 ---
-
 
 # myloasm
 

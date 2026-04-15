@@ -4,7 +4,6 @@ description: This package provides sequence-level information and array coordina
 homepage: https://bioconductor.org/packages/release/data/annotation/html/wheatprobe.html
 ---
 
-
 # bioconductor-wheatprobe
 
 name: bioconductor-wheatprobe

@@ -2,8 +2,9 @@
 name: ucsc-chainsplit
 description: The `ucsc-chainsplit` tool partitions a single `.chain` file into multiple files based on sequence names. Use when user asks to split a chain file by target sequence, split a chain file by query sequence, or group sequences in a chain file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainsplit:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chainsplit
 

@@ -2,8 +2,9 @@
 name: coconet-binning
 description: CoCoNet is a bioinformatic tool that uses a neural network to bin viral contigs based on k-mer composition and read coverage. Use when user asks to bin viral contigs, cluster metagenomic fragments, or predict if contig pairs originate from the same genome.
 homepage: https://github.com/Puumanamana/CoCoNet
+metadata:
+  docker_image: "quay.io/biocontainers/coconet-binning:1.1.0--py_0"
 ---
-
 
 # coconet-binning
 

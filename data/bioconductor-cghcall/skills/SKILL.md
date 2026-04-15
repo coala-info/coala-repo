@@ -4,7 +4,6 @@ description: This tool performs preprocessing, segmentation, and statistical cal
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHcall.html
 ---
 
-
 # bioconductor-cghcall
 
 name: bioconductor-cghcall

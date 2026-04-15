@@ -2,8 +2,9 @@
 name: coregenebuilder
 description: CoreGeneBuilder identifies the conserved core genome of a bacterial species by comparing multiple genomic assemblies against a reference. Use when user asks to identify core genes, perform pangenome analysis, or extract conserved genetic sequences from bacterial assemblies.
 homepage: https://github.com/C3BI-pasteur-fr/CoreGeneBuilder
+metadata:
+  docker_image: "biocontainers/coregenebuilder:v1.0_cv2"
 ---
-
 
 # coregenebuilder
 

@@ -4,7 +4,6 @@ description: Bioconductor-sesame provides a comprehensive suite of tools for pro
 homepage: https://bioconductor.org/packages/release/bioc/html/sesame.html
 ---
 
-
 # bioconductor-sesame
 
 name: bioconductor-sesame

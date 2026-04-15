@@ -1,9 +1,12 @@
 ---
 name: molecular-dynamics-simulation
-description: "This CWL workflow automates the preparation and execution of molecular dynamics simulations for protein structures using GROMACS to perform system topology creation, solvation, and equilibration. Use this skill when you need to investigate the conformational dynamics of proteins or evaluate the structural impact of specific amino acid mutations under physiological conditions."
-homepage: https://workflowhub.eu/workflows/121
+description: This CWL workflow automates the preparation and execution of molecular dynamics simulations for protein structures using GROMACS to perform system topology creation, solvation, and equilibration. Use this skill when you need to investigate the conformational dynamics of proteins or evaluate the structural impact of specific amino acid mutations under physiological conditions.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# Molecular Dynamics Simulation
+
+# molecular-dynamics-simulation
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: PharmacoGx provides a unified framework for integrating and analyzi
 homepage: https://bioconductor.org/packages/release/bioc/html/PharmacoGx.html
 ---
 
-
 # bioconductor-pharmacogx
 
 ## Overview

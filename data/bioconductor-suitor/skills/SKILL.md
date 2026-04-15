@@ -4,7 +4,6 @@ description: SUITOR selects the optimal number of mutational signatures and extr
 homepage: https://bioconductor.org/packages/release/bioc/html/SUITOR.html
 ---
 
-
 # bioconductor-suitor
 
 name: bioconductor-suitor

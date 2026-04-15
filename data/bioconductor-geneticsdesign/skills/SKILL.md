@@ -4,7 +4,6 @@ description: This tool performs power calculations and experimental design for g
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GeneticsDesign.html
 ---
 
-
 # bioconductor-geneticsdesign
 
 name: bioconductor-geneticsdesign

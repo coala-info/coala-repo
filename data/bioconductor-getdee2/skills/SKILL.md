@@ -4,7 +4,6 @@ description: This package provides an R interface to retrieve pre-processed gene
 homepage: https://bioconductor.org/packages/release/bioc/html/getDEE2.html
 ---
 
-
 # bioconductor-getdee2
 
 ## Overview

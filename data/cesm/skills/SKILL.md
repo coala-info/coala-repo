@@ -2,8 +2,9 @@
 name: cesm
 description: The Community Earth System Model (CESM) simulates Earth's climate system through a coupled modular architecture. Use when user asks to set up a CESM sandbox, manage model components, or initialize the CIME infrastructure.
 homepage: https://github.com/ESCOMP/cesm
+metadata:
+  docker_image: "quay.io/biocontainers/cesm:2.1.3--py39hd40aa7f_3"
 ---
-
 
 # cesm
 

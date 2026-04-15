@@ -1,9 +1,10 @@
 ---
 name: biobb_gromacs
-description: "biobb_gromacs provides Python-based wrappers for GROMACS utilities to create modular and reproducible molecular dynamics pipelines. Use when user asks to perform system setup, configure simulations with grompp, run molecular dynamics with mdrun, or manage restraints and selections."
+description: biobb_gromacs provides Python-based wrappers for GROMACS utilities to create modular and reproducible molecular dynamics pipelines. Use when user asks to perform system setup, configure simulations with grompp, run molecular dynamics with mdrun, or manage restraints and selections.
 homepage: https://github.com/bioexcel/biobb_gromacs
+metadata:
+  docker_image: "quay.io/biocontainers/biobb_gromacs:5.2.0--pyhdfd78af_0"
 ---
-
 
 # biobb_gromacs
 

@@ -4,7 +4,6 @@ description: The r-ggrepel tool provides ggplot2 geometries that automatically p
 homepage: https://cloud.r-project.org/web/packages/ggrepel/index.html
 ---
 
-
 # r-ggrepel
 
 name: r-ggrepel

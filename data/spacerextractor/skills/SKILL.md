@@ -2,6 +2,8 @@
 name: spacerextractor
 description: Extracts CRISPR spacers from metagenome short reads. Use when user asks to extract CRISPR spacers from metagenomic data.
 homepage: https://code.jgi.doe.gov/SRoux/spacerextractor
+metadata:
+  docker_image: "quay.io/biocontainers/spacerextractor:0.9.8--pyhdfd78af_0"
 ---
 
 # spacerextractor

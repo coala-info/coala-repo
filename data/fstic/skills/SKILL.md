@@ -2,8 +2,9 @@
 name: fstic
 description: fstic is a high-performance utility that computes genetic distance matrices from variant data using various estimators. Use when user asks to calculate genetic differentiation, generate distance matrices from VCF files, or perform phylogenetic analysis using metrics like FST and Nei’s D.
 homepage: https://github.com/PathoGenOmics-Lab/fstic
+metadata:
+  docker_image: "quay.io/biocontainers/fstic:1.0.0--h4349ce8_0"
 ---
-
 
 # fstic
 

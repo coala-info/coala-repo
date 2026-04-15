@@ -1,9 +1,10 @@
 ---
 name: libbigwig
-description: "libbigwig is a C library for high-performance reading and writing of bigWig and bigBed genomic track files. Use when user asks to read or write bigWig files, calculate summary statistics across genomic bins, or access remote genomic data via URLs."
+description: libbigwig is a C library for high-performance reading and writing of bigWig and bigBed genomic track files. Use when user asks to read or write bigWig files, calculate summary statistics across genomic bins, or access remote genomic data via URLs.
 homepage: https://github.com/dpryan79/libBigWig
+metadata:
+  docker_image: "quay.io/biocontainers/libbigwig:0.4.8--h44aa6d8_0"
 ---
-
 
 # libbigwig
 

@@ -2,6 +2,8 @@
 name: yacrd
 description: yacrd identifies and processes chimeric reads in long-read sequencing data by analyzing pile-up coverage from all-against-all alignments. Use when user asks to detect chimeric sequences, filter low-quality reads, or scrub bad regions from genome assembly datasets.
 homepage: https://github.com/natir/yacrd
+metadata:
+  docker_image: "quay.io/biocontainers/yacrd:1.0.0--hc308579_0"
 ---
 
 # yacrd

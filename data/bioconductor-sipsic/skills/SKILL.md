@@ -4,7 +4,6 @@ description: SiPSiC calculates biological pathway activity scores for individual
 homepage: https://bioconductor.org/packages/release/bioc/html/SiPSiC.html
 ---
 
-
 # bioconductor-sipsic
 
 name: bioconductor-sipsic

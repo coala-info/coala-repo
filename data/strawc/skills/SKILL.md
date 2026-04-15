@@ -1,9 +1,10 @@
 ---
 name: strawc
-description: "strawc extracts contact frequency data from Hi-C files in a sparse triplet format with high performance and minimal memory overhead. Use when user asks to access Hi-C contact maps, extract specific matrix slices from .hic files, or stream remote genomic interaction data."
+description: strawc extracts contact frequency data from Hi-C files in a sparse triplet format with high performance and minimal memory overhead. Use when user asks to access Hi-C contact maps, extract specific matrix slices from .hic files, or stream remote genomic interaction data.
 homepage: https://github.com/aidenlab/straw
+metadata:
+  docker_image: "quay.io/biocontainers/strawc:0.0.2.1--py36h092b462_1"
 ---
-
 
 # strawc
 

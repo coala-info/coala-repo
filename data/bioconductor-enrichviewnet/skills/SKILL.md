@@ -4,7 +4,6 @@ description: This tool visualizes functional enrichment results from gprofiler2 
 homepage: https://bioconductor.org/packages/release/bioc/html/enrichViewNet.html
 ---
 
-
 # bioconductor-enrichviewnet
 
 name: bioconductor-enrichviewnet

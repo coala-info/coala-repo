@@ -4,7 +4,6 @@ description: This package provides experimental flow cytometry data and XML work
 homepage: https://bioconductor.org/packages/release/data/experiment/html/flowWorkspaceData.html
 ---
 
-
 # bioconductor-flowworkspacedata
 
 name: bioconductor-flowworkspacedata

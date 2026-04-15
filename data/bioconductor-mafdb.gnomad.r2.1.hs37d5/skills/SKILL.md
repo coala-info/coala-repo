@@ -4,7 +4,6 @@ description: This package provides access to minor allele frequency data from gn
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.gnomAD.r2.1.hs37d5.html
 ---
 
-
 # bioconductor-mafdb.gnomad.r2.1.hs37d5
 
 name: bioconductor-mafdb.gnomad.r2.1.hs37d5

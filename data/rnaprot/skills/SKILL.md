@@ -2,6 +2,8 @@
 name: rnaprot
 description: RNAProt is a computational framework that models the binding preferences of RNA-binding proteins using deep learning. Use when user asks to generate datasets for RBP studies, train custom models for specific proteins, or predict potential binding sites on genomic regions or transcript sequences.
 homepage: https://github.com/BackofenLab/RNAProt
+metadata:
+  docker_image: "quay.io/biocontainers/rnaprot:0.5--pyhdfd78af_1"
 ---
 
 # rnaprot

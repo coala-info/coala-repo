@@ -1,10 +1,12 @@
 ---
 name: segmentation_values_testing
-description: "This imaging workflow evaluates nuclei segmentation performance by processing input images with varying Gaussian sigma values using 2D filtering, histogram equalization, and automated thresholding tools. Use this skill when you need to determine the optimal pre-processing parameters for accurate biological object detection by comparing automated segmentation results against a reference ground truth."
-homepage: https://workflowhub.eu/workflows/1517
+description: This imaging workflow evaluates nuclei segmentation performance by processing input images with varying Gaussian sigma values using 2D filtering, histogram equalization, and automated thresholding tools. Use this skill when you need to determine the optimal pre-processing parameters for accurate biological object detection by comparing automated segmentation results against a reference ground truth.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Segmentation_Values_Testing
+# segmentation_values_testing
 
 ## Overview
 

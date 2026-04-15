@@ -4,7 +4,6 @@ description: This package provides comprehensive functional and genomic annotati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ygs98.db.html
 ---
 
-
 # bioconductor-ygs98.db
 
 name: bioconductor-ygs98.db

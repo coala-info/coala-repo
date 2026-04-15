@@ -4,7 +4,6 @@ description: This tool analyzes dose-response microarray experiments using order
 homepage: https://bioconductor.org/packages/3.8/bioc/html/IsoGeneGUI.html
 ---
 
-
 # bioconductor-isogenegui
 
 name: bioconductor-isogenegui

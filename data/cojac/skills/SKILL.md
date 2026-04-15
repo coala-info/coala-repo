@@ -1,7 +1,9 @@
 ---
 name: cojac
-description: "cojac identifies viral lineages in complex samples by analyzing the co-occurrence of mutations on the same sequencing reads. Use when user asks to scan alignments for viral variants of concern, identify co-occurring mutations in wastewater samples, or generate lineage definitions from covSPECTRUM."
+description: cojac identifies viral lineages in complex samples by analyzing the co-occurrence of mutations on the same sequencing reads. Use when user asks to scan alignments for viral variants of concern, identify co-occurring mutations in wastewater samples, or generate lineage definitions from covSPECTRUM.
 homepage: https://github.com/cbg-ethz/cojac
+metadata:
+  docker_image: "quay.io/biocontainers/cojac:0.9.3--pyh7e72e81_0"
 ---
 
 # cojac

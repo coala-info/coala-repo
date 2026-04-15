@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-tuto-obitools
-description: "This ecology workflow processes raw metabarcoding sequence data from compressed archives using the OBITools suite and NCBI BLAST+ to perform sequence filtering, taxonomic assignment, and data cleaning. Use this skill when you need to analyze environmental DNA samples to identify species composition and biodiversity through high-throughput sequencing data processing."
-homepage: https://workflowhub.eu/workflows/1702
+description: This ecology workflow processes raw metabarcoding sequence data from compressed archives using the OBITools suite and NCBI BLAST+ to perform sequence filtering, taxonomic assignment, and data cleaning. Use this skill when you need to analyze environmental DNA samples to identify species composition and biodiversity through high-throughput sequencing data processing.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'Tuto Obitools'
+# workflow-constructed-from-history-tuto-obitools
 
 ## Overview
 

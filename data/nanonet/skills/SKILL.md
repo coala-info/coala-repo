@@ -2,8 +2,9 @@
 name: nanonet
 description: Nanonet provides a framework for multi-object tracking using the DeepSORT algorithm to maintain object identities across video frames. Use when user asks to track objects across frames, implement DeepSORT for multi-object tracking, or train custom feature extractors for object re-identification.
 homepage: https://github.com/abhyantrika/nanonets_object_tracking
+metadata:
+  docker_image: "quay.io/biocontainers/nanonet:2.0.0--boost1.60_0"
 ---
-
 
 # nanonet
 

@@ -2,8 +2,9 @@
 name: bioformats2raw
 description: bioformats2raw converts proprietary microscopy image formats into chunked, multi-scale OME-Zarr structures. Use when user asks to convert microscopy files to Zarr, create pyramidal image representations, or generate OME-NGFF compliant datasets.
 homepage: https://github.com/glencoesoftware/bioformats2raw
+metadata:
+  docker_image: "quay.io/biocontainers/bioformats2raw:0.9"
 ---
-
 
 # bioformats2raw
 

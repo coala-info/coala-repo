@@ -2,8 +2,9 @@
 name: psdm
 description: psdm computes pairwise SNP distance matrices from one or two FASTA alignment files. Use when user asks to calculate SNP distances, generate distance matrices, compare sequences between two different alignments, or format distance data into long-form or tab-delimited outputs.
 homepage: https://github.com/mbhall88/psdm
+metadata:
+  docker_image: "quay.io/biocontainers/psdm:0.3.0--hc1c3326_2"
 ---
-
 
 # psdm
 

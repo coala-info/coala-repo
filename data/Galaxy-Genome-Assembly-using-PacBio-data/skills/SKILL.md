@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-using-pacbio-data
-description: "This Galaxy workflow performs de novo genome assembly from PacBio long reads and a reference genome using the Flye assembler followed by quality assessment with BUSCO and QUAST. Use this skill when you need to reconstruct a complete genome from long-read sequencing data and evaluate the biological completeness and structural accuracy of the resulting assembly."
-homepage: https://workflowhub.eu/workflows/1621
+description: This Galaxy workflow performs de novo genome assembly from PacBio long reads and a reference genome using the Flye assembler followed by quality assessment with BUSCO and QUAST. Use this skill when you need to reconstruct a complete genome from long-read sequencing data and evaluate the biological completeness and structural accuracy of the resulting assembly.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly using PacBio data
+# genome-assembly-using-pacbio-data
 
 ## Overview
 

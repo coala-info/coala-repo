@@ -4,7 +4,6 @@ description: This tool calculates differential gene expression significance scor
 homepage: https://bioconductor.org/packages/3.10/bioc/html/GCSscore.html
 ---
 
-
 # bioconductor-gcsscore
 
 name: bioconductor-gcsscore

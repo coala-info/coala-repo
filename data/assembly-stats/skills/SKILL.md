@@ -1,9 +1,10 @@
 ---
 name: assembly-stats
-description: "assembly-stats generates summary statistics and continuity metrics for genomic data in FASTA or FASTQ formats. Use when user asks to calculate N50 values, count assembly gaps, or generate summary statistics for sequence files."
+description: assembly-stats generates summary statistics and continuity metrics for genomic data in FASTA or FASTQ formats. Use when user asks to calculate N50 values, count assembly gaps, or generate summary statistics for sequence files.
 homepage: https://github.com/sanger-pathogens/assembly-stats
+metadata:
+  docker_image: "quay.io/biocontainers/assembly-stats:1.0.1--h9948957_10"
 ---
-
 
 # assembly-stats
 

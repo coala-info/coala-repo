@@ -4,7 +4,6 @@ description: OTUbase provides a structured framework for the management and anal
 homepage: https://bioconductor.org/packages/release/bioc/html/OTUbase.html
 ---
 
-
 # bioconductor-otubase
 
 name: bioconductor-otubase

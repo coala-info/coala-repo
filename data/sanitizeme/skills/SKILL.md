@@ -2,6 +2,8 @@
 name: sanitizeme
 description: SanitizeMe removes unwanted genetic material from sequencing reads by filtering out sequences that align to a provided reference genome. Use when user asks to clean sequencing data, remove host DNA, or sanitize FASTQ files for privacy and signal improvement.
 homepage: https://github.com/jiangweiyao/SanitizeMe
+metadata:
+  docker_image: "quay.io/biocontainers/sanitizeme:1.1--hdfd78af_2"
 ---
 
 # sanitizeme

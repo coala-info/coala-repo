@@ -1,9 +1,10 @@
 ---
 name: assembly-scan
-description: "assembly-scan generates quality metrics and composition summaries for genomic assemblies from FASTA files. Use when user asks to calculate N50, determine assembly length, or extract nucleotide percentages from assembly files."
+description: assembly-scan generates quality metrics and composition summaries for genomic assemblies from FASTA files. Use when user asks to calculate N50, determine assembly length, or extract nucleotide percentages from assembly files.
 homepage: https://github.com/rpetit3/assembly-scan
+metadata:
+  docker_image: "quay.io/biocontainers/assembly-scan:1.0.0--pyhdfd78af_0"
 ---
-
 
 # assembly-scan
 

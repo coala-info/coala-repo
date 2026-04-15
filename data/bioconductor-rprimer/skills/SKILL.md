@@ -4,7 +4,6 @@ description: This tool designs degenerate primers and probes for sequence-variab
 homepage: https://bioconductor.org/packages/release/bioc/html/rprimer.html
 ---
 
-
 # bioconductor-rprimer
 
 name: bioconductor-rprimer

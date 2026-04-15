@@ -2,6 +2,8 @@
 name: harpy
 description: Harpy is a bioinformatics pipeline designed to process linked-read and whole-genome sequencing data into phased haplotypes and assemblies. Use when user asks to perform quality control, demultiplex reads, align sequences to a reference, call SNPs, phase haplotypes, or simulate linked-read data.
 homepage: https://github.com/pdimens/harpy/
+metadata:
+  docker_image: "quay.io/biocontainers/harpy:3.2--pyhdfd78af_0"
 ---
 
 # harpy

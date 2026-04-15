@@ -4,7 +4,6 @@ description: This tool identifies, validates, and visualizes transcription facto
 homepage: https://bioconductor.org/packages/3.11/bioc/html/MotIV.html
 ---
 
-
 # bioconductor-motiv
 
 name: bioconductor-motiv

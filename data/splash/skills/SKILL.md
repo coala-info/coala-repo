@@ -2,8 +2,9 @@
 name: splash
 description: SPLASH is a reference-free framework that identifies sample-specific sequence variations by analyzing the statistical composition of k-mer pairs. Use when user asks to identify sequence variations without a reference genome, perform supervised metadata testing, or analyze single-cell and spatial transcriptomics data.
 homepage: https://github.com/refresh-bio/splash
+metadata:
+  docker_image: "quay.io/biocontainers/splash:2.11.0--py313h9ee0642_0"
 ---
-
 
 # splash
 

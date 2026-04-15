@@ -2,8 +2,9 @@
 name: cazy_webscraper
 description: cazy_webscraper scrapes CAZyme data from the CAZy database and organizes it into a local SQLite3 database for downstream analysis. Use when user asks to scrape CAZy data, build a local CAZyme database, retrieve protein sequences and structures, or enrich CAZy datasets with UniProt and GTDB metadata.
 homepage: https://hobnobmancer.github.io/cazy_webscraper/
+metadata:
+  docker_image: "quay.io/biocontainers/cazy_webscraper:2.3.0.4--pyhdfd78af_0"
 ---
-
 
 # cazy_webscraper
 

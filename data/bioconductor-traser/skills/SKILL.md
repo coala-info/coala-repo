@@ -4,7 +4,6 @@ description: bioconductor-traser performs trait-associated SNP enrichment analys
 homepage: https://bioconductor.org/packages/release/bioc/html/traseR.html
 ---
 
-
 # bioconductor-traser
 
 name: bioconductor-traser

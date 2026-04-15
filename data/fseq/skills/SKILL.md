@@ -2,8 +2,9 @@
 name: fseq
 description: fseq transforms discrete sequence tags into a continuous density signal using a Parzen window density estimator to identify functional genomic elements. Use when user asks to call peaks from sequence data, generate density estimates, or identify regions of open chromatin and transcription factor binding sites.
 homepage: http://fureylab.web.unc.edu/software/fseq/
+metadata:
+  docker_image: "quay.io/biocontainers/fseq:1.84--py35pl5.22.0_0"
 ---
-
 
 # fseq
 

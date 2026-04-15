@@ -1,10 +1,12 @@
 ---
 name: a-workflow-demonstrating-the-run-interpolation-based-on-idw
-description: "This geospatial workflow processes CSV and GeoJSON data using Inverse Distance Weighting interpolation and image comparison tools to analyze spatial distributions. Use this skill when you need to estimate environmental variables across a continuous surface from discrete point samples or validate the accuracy of spatial interpolation models."
+description: This geospatial workflow processes CSV and GeoJSON data using Inverse Distance Weighting interpolation and image comparison tools to analyze spatial distributions. Use this skill when you need to estimate environmental variables across a continuous surface from discrete point samples or validate the accuracy of spatial interpolation models.
 homepage: https://workflowhub.eu/workflows/807
+metadata:
+  docker_image: "N/A"
 ---
 
-# A workflow demonstrating the 'Run interpolation based on IDW' tool
+# a-workflow-demonstrating-the-run-interpolation-based-on-idw
 
 ## Overview
 

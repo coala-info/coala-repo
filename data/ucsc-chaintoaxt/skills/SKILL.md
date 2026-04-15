@@ -2,8 +2,9 @@
 name: ucsc-chaintoaxt
 description: `ucsc-chaintoaxt` converts alignment data from `.chain` format to `.axt` format. Use when user asks to convert alignment data from chain format to axt format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chaintoaxt:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chaintoaxt
 

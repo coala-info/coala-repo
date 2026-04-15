@@ -2,6 +2,8 @@
 name: neat
 description: NEAT is a high-fidelity read simulator that generates genomic data and ground-truth files by learning empirical models from existing datasets. Use when user asks to simulate sequencing reads, generate fragment length or error models, or compare variant calling results against a golden VCF.
 homepage: https://github.com/ncsa/NEAT/
+metadata:
+  docker_image: "quay.io/biocontainers/neat:4.3.5--pyhdfd78af_0"
 ---
 
 # neat

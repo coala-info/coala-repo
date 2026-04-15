@@ -1,10 +1,12 @@
 ---
 name: circos-for-e-coli
-description: "This workflow generates a circular visualization of a microbial genome using Circos by integrating genomic sequences, GFF3 annotations, RNA-seq and DNA-seq coverage data, and variant information. Use this skill when you need to create a comprehensive circular plot to analyze the spatial distribution of sequencing depth, GC content, and gene annotations across a bacterial genome."
-homepage: https://workflowhub.eu/workflows/1419
+description: This workflow generates a circular visualization of a microbial genome using Circos by integrating genomic sequences, GFF3 annotations, RNA-seq and DNA-seq coverage data, and variant information. Use this skill when you need to create a comprehensive circular plot to analyze the spatial distribution of sequencing depth, GC content, and gene annotations across a bacterial genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Circos for E. Coli
+# circos-for-e-coli
 
 ## Overview
 

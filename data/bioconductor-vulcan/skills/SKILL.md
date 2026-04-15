@@ -4,7 +4,6 @@ description: VULCAN identifies transcription factor co-regulators by integrating
 homepage: https://bioconductor.org/packages/release/bioc/html/vulcan.html
 ---
 
-
 # bioconductor-vulcan
 
 name: bioconductor-vulcan

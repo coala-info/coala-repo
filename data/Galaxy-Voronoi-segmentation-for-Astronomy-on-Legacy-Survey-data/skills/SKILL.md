@@ -1,10 +1,12 @@
 ---
 name: voronoi-segmentation-for-astronomy-on-legacy-survey-data
-description: "This astronomy workflow retrieves DESI Legacy Survey images using coordinate and band inputs to perform Voronoi segmentation and feature extraction through astropy and image processing tools. Use this skill when you need to partition astronomical images into discrete regions to identify celestial objects, calculate their spatial features, and analyze the morphology of survey data."
-homepage: https://workflowhub.eu/workflows/1730
+description: This astronomy workflow retrieves DESI Legacy Survey images using coordinate and band inputs to perform Voronoi segmentation and feature extraction through astropy and image processing tools. Use this skill when you need to partition astronomical images into discrete regions to identify celestial objects, calculate their spatial features, and analyze the morphology of survey data.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Voronoi segmentation for Astronomy on Legacy Survey data
+# voronoi-segmentation-for-astronomy-on-legacy-survey-data
 
 ## Overview
 

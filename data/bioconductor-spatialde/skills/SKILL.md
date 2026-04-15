@@ -4,7 +4,6 @@ description: This package identifies genes with significant spatial variation in
 homepage: https://bioconductor.org/packages/release/bioc/html/spatialDE.html
 ---
 
-
 # bioconductor-spatialde
 
 ## Overview

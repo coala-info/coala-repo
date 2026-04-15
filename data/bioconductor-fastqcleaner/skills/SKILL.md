@@ -1,9 +1,8 @@
 ---
 name: bioconductor-fastqcleaner
-description: "FastqCleaner performs quality control and pre-processing of FASTQ files through an interactive interface or programmatic R functions. Use when user asks to filter low-quality reads, remove adapters, trim sequences, eliminate low-complexity reads, or remove duplicates from NGS data."
+description: FastqCleaner performs quality control and pre-processing of FASTQ files through an interactive interface or programmatic R functions. Use when user asks to filter low-quality reads, remove adapters, trim sequences, eliminate low-complexity reads, or remove duplicates from NGS data.
 homepage: https://bioconductor.org/packages/release/bioc/html/FastqCleaner.html
 ---
-
 
 # bioconductor-fastqcleaner
 

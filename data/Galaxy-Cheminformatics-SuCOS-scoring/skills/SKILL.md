@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-4-sucos-scoring
-description: "This cheminformatics workflow calculates SuCOS scores for a collection of ligands against reference molecules using tools like SuCOS max score and SDF sort and filter. Use this skill when you need to rank potential inhibitors based on their structural and chemical feature overlap with known active compounds to prioritize candidates for further screening."
-homepage: https://workflowhub.eu/workflows/15
+description: This cheminformatics workflow calculates SuCOS scores for a collection of ligands against reference molecules using tools like SuCOS max score and SDF sort and filter. Use this skill when you need to rank potential inhibitors based on their structural and chemical feature overlap with known active compounds to prioritize candidates for further screening.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [4] SuCOS scoring
+# covid-19-cheminformatics-4-sucos-scoring
 
 ## Overview
 

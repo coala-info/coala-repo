@@ -4,7 +4,6 @@ description: The r-locuszoomr package creates publication-ready gene locus plots
 homepage: https://cran.r-project.org/web/packages/locuszoomr/index.html
 ---
 
-
 # r-locuszoomr
 
 name: r-locuszoomr

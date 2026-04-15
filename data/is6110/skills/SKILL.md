@@ -2,8 +2,9 @@
 name: is6110
 description: is6110 detects the presence and location of insertion sequences within Mycobacterium tuberculosis genomes using BAM alignment files. Use when user asks to detect IS6110 insertions, identify gene disruptions caused by mobile genetic elements, or scan specific genomic regions for insertion sequences.
 homepage: https://github.com/jodyphelan/is6110
+metadata:
+  docker_image: "quay.io/biocontainers/is6110:0.5.0--pyh7e72e81_0"
 ---
-
 
 # is6110
 

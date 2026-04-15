@@ -2,6 +2,8 @@
 name: paladin
 description: PALADIN aligns metagenomic sequencing reads to protein reference databases by detecting and translating open reading frames. Use when user asks to index protein references, align reads to protein databases, or perform functional characterization of metagenomic samples.
 homepage: https://github.com/ToniWestbrook/paladin
+metadata:
+  docker_image: "quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0"
 ---
 
 # paladin

@@ -2,9 +2,9 @@
 name: tifffile
 description: Tifffile is a library for high-performance reading, writing, and managing TIFF image data, especially large and complex scientific formats. Use when user asks to 'read TIFF images', 'write TIFF images', 'handle large TIFF files', 'inspect TIFF metadata', 'preview TIFF images', 'compress TIFF files', or 'write OME-TIFF files'.
 homepage: https://github.com/cgohlke/tifffile
+metadata:
+  docker_image: "biocontainers/tifffile:v20181128-1-deb_cv1"
 ---
-
-
 
 # tifffile
 

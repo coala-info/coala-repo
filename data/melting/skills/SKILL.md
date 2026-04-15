@@ -2,8 +2,9 @@
 name: melting
 description: Melting Pot provides a suite of test scenarios for evaluating the social interaction and cooperation capabilities of AI agents. Use when user asks to install the dm-meltingpot library, interactively explore substrates using human player scripts, or train agents using RLlib examples.
 homepage: https://github.com/google-deepmind/meltingpot
+metadata:
+  docker_image: "biocontainers/melting:v5.2.0-1-deb_cv1"
 ---
-
 
 # melting
 

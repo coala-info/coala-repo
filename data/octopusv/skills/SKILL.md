@@ -1,7 +1,9 @@
 ---
 name: octopusv
-description: "OctopuSV harmonizes and standardizes structural variant caller outputs into a unified format for downstream analysis and merging. Use when user asks to standardize VCF files, resolve breakend notations into standard SV types, merge variant calls from multiple tools, perform somatic variant calling, or benchmark structural variants against a truth set."
+description: OctopuSV harmonizes and standardizes structural variant caller outputs into a unified format for downstream analysis and merging. Use when user asks to standardize VCF files, resolve breakend notations into standard SV types, merge variant calls from multiple tools, perform somatic variant calling, or benchmark structural variants against a truth set.
 homepage: https://github.com/ylab-hi/octopusV
+metadata:
+  docker_image: "quay.io/biocontainers/octopusv:0.3.0--pyhdfd78af_0"
 ---
 
 # octopusv

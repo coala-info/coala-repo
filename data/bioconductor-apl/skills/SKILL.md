@@ -4,7 +4,6 @@ description: This tool performs correspondence analysis and identifies cluster-s
 homepage: https://bioconductor.org/packages/release/bioc/html/APL.html
 ---
 
-
 # bioconductor-apl
 
 name: bioconductor-apl

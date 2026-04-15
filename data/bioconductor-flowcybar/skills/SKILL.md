@@ -4,7 +4,6 @@ description: The flowCyBar package implements cytometric barcoding to analyze an
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCyBar.html
 ---
 
-
 # bioconductor-flowcybar
 
 ## Overview

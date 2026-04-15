@@ -2,8 +2,9 @@
 name: monopogen
 description: Monopogen is a computational framework for calling germline and somatic single-nucleotide variants from sparse single-cell sequencing data using reference panels and linkage disequilibrium. Use when user asks to preprocess single-cell BAM files, call germline SNVs with imputation, or identify somatic mutations through statistical phasing.
 homepage: https://github.com/KChen-lab/Monopogen
+metadata:
+  docker_image: "quay.io/biocontainers/monopogen:1.6.0--pyhdfd78af_0"
 ---
-
 
 # monopogen
 

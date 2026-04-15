@@ -4,7 +4,6 @@ description: This tool accesses the BrainStars database to retrieve and analyze 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/BrainStars.html
 ---
 
-
 # bioconductor-brainstars
 
 name: bioconductor-brainstars

@@ -2,8 +2,9 @@
 name: marker-magu
 description: Marker-MAGu is a trans-kingdom marker gene pipeline used to quantify phages, bacteria, and archaea in metagenomic samples. Use when user asks to perform taxonomic profiling, manage marker gene databases, or adjust detection sensitivity for human-derived metagenomic data.
 homepage: https://github.com/cmmr/Marker-MAGu
+metadata:
+  docker_image: "quay.io/biocontainers/marker-magu:0.4.0--pyhdfd78af_1"
 ---
-
 
 # marker-magu
 

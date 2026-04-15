@@ -4,7 +4,6 @@ description: This tool performs multiple sequence alignment for protein, DNA, or
 homepage: https://bioconductor.org/packages/release/bioc/html/msa.html
 ---
 
-
 # bioconductor-msa
 
 name: bioconductor-msa

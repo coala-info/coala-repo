@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.medgene.1.1.st.html
 ---
 
-
 # bioconductor-pd.medgene.1.1.st
 
 name: bioconductor-pd.medgene.1.1.st

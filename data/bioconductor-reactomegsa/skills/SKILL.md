@@ -4,7 +4,6 @@ description: The ReactomeGSA package provides a client interface to perform mult
 homepage: https://bioconductor.org/packages/release/bioc/html/ReactomeGSA.html
 ---
 
-
 # bioconductor-reactomegsa
 
 ## Overview

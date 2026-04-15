@@ -2,8 +2,9 @@
 name: marti
 description: MARTi processes and analyzes metagenomic sequencing data in real time to provide taxonomic profiles and antimicrobial resistance insights. Use when user asks to analyze streaming Nanopore data, generate taxonomic classifications, detect AMR genes, or visualize metagenomic results through a web-based GUI.
 homepage: https://github.com/richardmleggett/MARTi
+metadata:
+  docker_image: "quay.io/biocontainers/marti:0.9.29--hdfd78af_0"
 ---
-
 
 # marti
 

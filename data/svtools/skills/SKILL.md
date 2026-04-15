@@ -1,9 +1,10 @@
 ---
 name: svtools
-description: "svtools is a suite of utilities designed to manage, merge, and genotype structural variation data at scale. Use when user asks to merge individual VCFs into a cohort, convert between VCF and BEDPE formats, calculate allele frequencies, or reclassify variants based on read depth."
+description: svtools is a suite of utilities designed to manage, merge, and genotype structural variation data at scale. Use when user asks to merge individual VCFs into a cohort, convert between VCF and BEDPE formats, calculate allele frequencies, or reclassify variants based on read depth.
 homepage: https://github.com/hall-lab/svtools
+metadata:
+  docker_image: "quay.io/biocontainers/svtools:0.5.1--py_0"
 ---
-
 
 # svtools
 

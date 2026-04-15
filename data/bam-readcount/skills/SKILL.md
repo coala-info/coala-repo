@@ -1,9 +1,10 @@
 ---
 name: bam-readcount
-description: "bam-readcount generates detailed, base-by-base metrics and allele counts from aligned sequencing data at specific genomic positions. Use when user asks to count alleles at specific sites, extract base-level quality metrics from a BAM file, or validate variant calls using site-specific read statistics."
+description: bam-readcount generates detailed, base-by-base metrics and allele counts from aligned sequencing data at specific genomic positions. Use when user asks to count alleles at specific sites, extract base-level quality metrics from a BAM file, or validate variant calls using site-specific read statistics.
 homepage: https://github.com/genome/bam-readcount
+metadata:
+  docker_image: "quay.io/biocontainers/bam-readcount:1.0.1--h9aeec6d_3"
 ---
-
 
 # bam-readcount
 

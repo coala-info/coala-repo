@@ -2,8 +2,9 @@
 name: polars
 description: Polars is a high-performance analytical query engine designed for efficient data processing and manipulation of large datasets. Use when user asks to process large datasets, optimize data pipelines with lazy execution, perform fast analytical queries, or handle data that exceeds memory limits using streaming.
 homepage: https://github.com/pola-rs/polars
+metadata:
+  docker_image: "quay.io/biocontainers/polars:0.18.15"
 ---
-
 
 # polars
 

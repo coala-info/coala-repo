@@ -4,7 +4,6 @@ description: This tool identifies regional expression biases in gene expression 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/reb.html
 ---
 
-
 # bioconductor-reb
 
 name: bioconductor-reb

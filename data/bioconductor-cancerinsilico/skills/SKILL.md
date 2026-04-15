@@ -4,7 +4,6 @@ description: This package provides an R interface for running and analyzing cell
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CancerInSilico.html
 ---
 
-
 # bioconductor-cancerinsilico
 
 name: bioconductor-cancerinsilico

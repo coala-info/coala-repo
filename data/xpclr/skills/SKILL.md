@@ -2,8 +2,9 @@
 name: xpclr
 description: xpclr infers natural selection by identifying genomic regions with selective sweeps in one population compared to another. Use when user asks to infer natural selection, identify selective sweeps, or compare populations for selection signatures.
 homepage: https://github.com/hardingnj/xpclr
+metadata:
+  docker_image: "quay.io/biocontainers/xpclr:1.1.2--py_0"
 ---
-
 
 # xpclr
 

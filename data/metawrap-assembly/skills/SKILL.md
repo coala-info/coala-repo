@@ -2,8 +2,9 @@
 name: metawrap-assembly
 description: The metawrap-assembly module provides a unified interface for performing metagenomic assembly using either metaSPAdes or MegaHit. Use when user asks to assemble metagenomic reads into contigs, run metaSPAdes or MegaHit through MetaWRAP, or generate a final assembly fasta file for downstream binning.
 homepage: https://github.com/bxlab/metaWRAP
+metadata:
+  docker_image: "quay.io/biocontainers/metawrap-assembly:1.3.0--hdfd78af_3"
 ---
-
 
 # metawrap-assembly
 

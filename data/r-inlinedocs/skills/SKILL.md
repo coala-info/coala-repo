@@ -4,7 +4,6 @@ description: This tool generates R documentation files from inline comments with
 homepage: https://cloud.r-project.org/web/packages/inlinedocs/index.html
 ---
 
-
 # r-inlinedocs
 
 name: r-inlinedocs

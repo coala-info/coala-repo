@@ -4,7 +4,6 @@ description: This package provides access to sample genomic and epigenomic datas
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rGenomeTracksData.html
 ---
 
-
 # bioconductor-rgenometracksdata
 
 name: bioconductor-rgenometracksdata

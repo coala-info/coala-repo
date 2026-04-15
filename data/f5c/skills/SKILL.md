@@ -2,6 +2,8 @@
 name: f5c
 description: f5c is an optimized tool for processing Oxford Nanopore raw signal data to perform methylation calling and event alignment. Use when user asks to index nanopore reads, call methylated bases, align raw signals to a reference genome, or calculate methylation frequencies.
 homepage: https://github.com/hasindu2008/f5c
+metadata:
+  docker_image: "quay.io/biocontainers/f5c:1.6--hee927d3_0"
 ---
 
 # f5c

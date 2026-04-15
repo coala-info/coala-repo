@@ -2,8 +2,9 @@
 name: fitter
 description: The fitter tool identifies the best-fitting probability distribution for a dataset by testing it against multiple statistical models. Use when user asks to fit data to probability distributions, find the best statistical model for a sample, or rank distributions based on goodness-of-fit metrics.
 homepage: https://github.com/cokelaer/fitter
+metadata:
+  docker_image: "quay.io/biocontainers/fitter:1.4.1--pyh5e36f6f_0"
 ---
-
 
 # fitter
 

@@ -4,7 +4,6 @@ description: This package provides an R interface for managing AnVIL resources a
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILAz.html
 ---
 
-
 # bioconductor-anvilaz
 
 name: bioconductor-anvilaz

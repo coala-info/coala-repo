@@ -1,9 +1,10 @@
 ---
 name: rdeval
-description: "rdeval calculates quality metrics and transforms genomic read data across various sequence formats. Use when user asks to calculate read N50 or GC content, estimate genome coverage, convert sequence file formats, or perform in-silico digestion of PacBio CiFi reads."
+description: rdeval calculates quality metrics and transforms genomic read data across various sequence formats. Use when user asks to calculate read N50 or GC content, estimate genome coverage, convert sequence file formats, or perform in-silico digestion of PacBio CiFi reads.
 homepage: https://github.com/vgl-hub/rdeval
+metadata:
+  docker_image: "quay.io/biocontainers/rdeval:0.0.8--r44h35c04b2_1"
 ---
-
 
 # rdeval
 

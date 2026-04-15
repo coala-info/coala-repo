@@ -2,8 +2,9 @@
 name: scalop
 description: SCALOP provides rapid structural annotation of antibody Complementarity Determining Regions by mapping sequences to known canonical loop clusters. Use when user asks to annotate antibody CDR structures, predict canonical loop clusters from sequences, or perform structural annotation for antibody engineering.
 homepage: https://github.com/oxpig/SCALOP
+metadata:
+  docker_image: "quay.io/biocontainers/scalop:2021.01.27--py_0"
 ---
-
 
 # scalop
 

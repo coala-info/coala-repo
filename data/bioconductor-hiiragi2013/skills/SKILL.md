@@ -4,7 +4,6 @@ description: This package provides experimental data and analysis workflows for 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Hiiragi2013.html
 ---
 
-
 # bioconductor-hiiragi2013
 
 name: bioconductor-hiiragi2013

@@ -4,7 +4,6 @@ description: This tool performs Bayesian Dirichlet-multinomial regression meta-a
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BDMMAcorrect.html
 ---
 
-
 # bioconductor-bdmmacorrect
 
 name: bioconductor-bdmmacorrect

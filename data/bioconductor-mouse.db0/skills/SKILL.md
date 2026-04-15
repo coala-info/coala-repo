@@ -4,7 +4,6 @@ description: This package provides the base SQLite databases used to build custo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse.db0.html
 ---
 
-
 # bioconductor-mouse.db0
 
 name: bioconductor-mouse.db0

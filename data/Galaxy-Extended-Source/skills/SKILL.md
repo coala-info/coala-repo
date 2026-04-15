@@ -1,10 +1,12 @@
 ---
 name: extended-source
-description: "This workflow simulates extended gamma-ray source halos using CRbeam and astrophysical parameters such as redshift, IGMF, and EBL to produce spectral plots and source images. Use this skill when you need to analyze the impact of the intergalactic magnetic field on the observable spatial and energy distributions of secondary gamma-ray emission from distant point sources."
+description: This workflow simulates extended gamma-ray source halos using CRbeam and astrophysical parameters such as redshift, IGMF, and EBL to produce spectral plots and source images. Use this skill when you need to analyze the impact of the intergalactic magnetic field on the observable spatial and energy distributions of secondary gamma-ray emission from distant point sources.
 homepage: https://workflowhub.eu/workflows/1369
+metadata:
+  docker_image: "N/A"
 ---
 
-# Extended Source
+# extended-source
 
 ## Overview
 

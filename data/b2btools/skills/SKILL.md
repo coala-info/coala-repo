@@ -2,8 +2,9 @@
 name: b2btools
 description: b2btools predicts protein biophysical properties and disorder from sequence data using a suite of specialized predictors. Use when user asks to predict protein dynamics, identify disordered regions, estimate aggregation propensity, or detect early folding events.
 homepage: https://bio2byte.be/
+metadata:
+  docker_image: "quay.io/biocontainers/b2btools:3.0.7--py311h39195ad_3"
 ---
-
 
 # b2btools
 

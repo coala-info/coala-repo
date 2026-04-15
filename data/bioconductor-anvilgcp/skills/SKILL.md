@@ -4,7 +4,6 @@ description: This package provides an R interface for managing Google Cloud Plat
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILGCP.html
 ---
 
-
 # bioconductor-anvilgcp
 
 name: bioconductor-anvilgcp

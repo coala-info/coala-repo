@@ -2,8 +2,9 @@
 name: vcf2genome
 description: vcf2genome transforms VCF call sets into sample-specific draft genomes in FASTA format. Use when user asks to transform VCF to draft genome, reconstruct a genome from VCF, or create a sample-specific genome FASTA.
 homepage: https://github.com/apeltzer/vcf2genome
+metadata:
+  docker_image: "quay.io/biocontainers/vcf2genome:0.91--py36_0"
 ---
-
 
 # vcf2genome
 

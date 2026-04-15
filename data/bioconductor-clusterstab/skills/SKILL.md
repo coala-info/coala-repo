@@ -4,7 +4,6 @@ description: The clusterStab package provides resampling-based tools to determin
 homepage: https://bioconductor.org/packages/release/bioc/html/clusterStab.html
 ---
 
-
 # bioconductor-clusterstab
 
 ## Overview

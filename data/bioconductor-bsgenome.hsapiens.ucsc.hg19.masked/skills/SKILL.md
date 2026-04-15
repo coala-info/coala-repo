@@ -4,7 +4,6 @@ description: This package provides masked human genome sequences for the hg19 as
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg19.masked.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg19.masked
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg19.masked

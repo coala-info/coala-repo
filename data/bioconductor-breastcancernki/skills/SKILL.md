@@ -4,7 +4,6 @@ description: This package provides a standardized ExpressionSet containing gene 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerNKI.html
 ---
 
-
 # bioconductor-breastcancernki
 
 ## Overview

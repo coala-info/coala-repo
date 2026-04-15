@@ -2,6 +2,8 @@
 name: last-align
 description: LAST performs high-sensitivity sequence alignment and comparison for large genomes using adaptive scoring parameters. Use when user asks to align sequences, perform genome-to-genome comparisons, conduct translated DNA-to-protein alignments, or train custom substitution matrices.
 homepage: https://gitlab.com/mcfrith/last
+metadata:
+  docker_image: "biocontainers/last-align:v963-2-deb_cv1"
 ---
 
 # last-align

@@ -4,7 +4,6 @@ description: This package provides access to example Illumina HumanMethylation45
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TCGAMethylation450k.html
 ---
 
-
 # bioconductor-tcgamethylation450k
 
 name: bioconductor-tcgamethylation450k

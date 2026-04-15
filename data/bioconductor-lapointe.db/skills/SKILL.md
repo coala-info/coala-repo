@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping LAPOINTE platform
 homepage: https://bioconductor.org/packages/release/data/annotation/html/LAPOINTE.db.html
 ---
 
-
 # bioconductor-lapointe.db
 
 name: bioconductor-lapointe.db

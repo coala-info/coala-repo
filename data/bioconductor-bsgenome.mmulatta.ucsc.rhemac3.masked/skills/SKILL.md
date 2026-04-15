@@ -4,7 +4,6 @@ description: This package provides masked genome sequences for the Macaca mulatt
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac3.masked.html
 ---
 
-
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac3.masked
 
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac3.masked

@@ -1,10 +1,12 @@
 ---
 name: biomarker-screening-in-preeclampsia
-description: "This Galaxy workflow performs biomarker screening for preeclampsia by processing RNA-sequencing data from the Sequence Read Archive using Bowtie2 for alignment, featureCounts for quantification, and DESeq2 for differential expression analysis. Use this skill when you need to identify diagnostic biomarkers or analyze differential gene expression patterns in patients with preeclampsia using transcriptomic data from multiple clinical studies."
+description: This Galaxy workflow performs biomarker screening for preeclampsia by processing RNA-sequencing data from the Sequence Read Archive using Bowtie2 for alignment, featureCounts for quantification, and DESeq2 for differential expression analysis. Use this skill when you need to identify diagnostic biomarkers or analyze differential gene expression patterns in patients with preeclampsia using transcriptomic data from multiple clinical studies.
 homepage: https://workflowhub.eu/workflows/338
+metadata:
+  docker_image: "N/A"
 ---
 
-# Biomarker screening in preeclampsia
+# biomarker-screening-in-preeclampsia
 
 ## Overview
 

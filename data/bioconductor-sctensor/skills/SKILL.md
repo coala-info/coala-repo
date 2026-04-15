@@ -4,7 +4,6 @@ description: scTensor detects and visualizes cell-cell interactions from single-
 homepage: https://bioconductor.org/packages/release/bioc/html/scTensor.html
 ---
 
-
 # bioconductor-sctensor
 
 name: bioconductor-sctensor

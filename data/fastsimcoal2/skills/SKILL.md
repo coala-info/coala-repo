@@ -2,8 +2,9 @@
 name: fastsimcoal2
 description: fastsimcoal2 simulates genetic data under complex demographic histories using a continuous-time sequential Markovian coalescent approximation. Use when user asks to simulate genomic regions, model population migrations and fissions, or perform composite likelihood-based demographic inference using the site frequency spectrum.
 homepage: http://cmpg.unibe.ch/software/fastsimcoal27/
+metadata:
+  docker_image: "quay.io/biocontainers/fastsimcoal2:27093--hdfd78af_0"
 ---
-
 
 # fastsimcoal2
 

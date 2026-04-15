@@ -4,7 +4,6 @@ description: This tool performs differential binding analysis for ChIP-seq data 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DBChIP.html
 ---
 
-
 # bioconductor-dbchip
 
 name: bioconductor-dbchip

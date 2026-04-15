@@ -4,7 +4,6 @@ description: This package provides access to raw gene expression data and clinic
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mammaPrintData.html
 ---
 
-
 # bioconductor-mammaprintdata
 
 name: bioconductor-mammaprintdata

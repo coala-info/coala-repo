@@ -2,8 +2,9 @@
 name: hts-nim-tools
 description: hts-nim-tools provides high-speed bioinformatics utilities for filtering alignments, counting reads, and validating variant calling data. Use when user asks to filter BAM or CRAM files using expressions, count reads overlapping genomic intervals, or identify missing data in VCF files.
 homepage: https://github.com/brentp/hts-nim-tools
+metadata:
+  docker_image: "quay.io/biocontainers/hts-nim-tools:0.3.11--hbeb723e_0"
 ---
-
 
 # hts-nim-tools
 

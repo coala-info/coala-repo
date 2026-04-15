@@ -2,6 +2,8 @@
 name: vg
 description: The vg toolkit performs genome informatics using pangenomic variation graphs to represent populations of genomes as networks. Use when user asks to build graphs from FASTA or VCF files, map reads using Giraffe, call variants, or project graph alignments back to linear coordinates.
 homepage: https://github.com/vgteam/vg
+metadata:
+  docker_image: "quay.io/biocontainers/vg:1.70.0--h9ee0642_0"
 ---
 
 # vg

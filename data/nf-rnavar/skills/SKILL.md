@@ -4,6 +4,8 @@ description: nf-core/rnavar processes FASTQ, BAM, or CRAM inputs to identify SNP
 homepage: https://github.com/nf-core/rnavar
 ---
 
+# nf-core-rnavar
+
 ## Overview
 nf-core/rnavar is a bioinformatics pipeline designed for the identification of genetic variants, specifically SNPs and small indels, directly from RNA sequencing data. It implements the GATK4 "Best Practices" for RNA-seq variant calling, which includes specialized handling for reads spanning splice junctions and base quality score recalibration to ensure high-call accuracy.
 

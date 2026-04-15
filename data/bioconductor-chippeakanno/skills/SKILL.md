@@ -4,7 +4,6 @@ description: This tool provides expert guidance for the ChIPpeakAnno R package t
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPpeakAnno.html
 ---
 
-
 # bioconductor-chippeakanno
 
 name: bioconductor-chippeakanno

@@ -4,7 +4,6 @@ description: GWENA performs gene co-expression network analysis to identify modu
 homepage: https://bioconductor.org/packages/release/bioc/html/GWENA.html
 ---
 
-
 # bioconductor-gwena
 
 name: bioconductor-gwena

@@ -2,8 +2,9 @@
 name: lotus2
 description: LotuS2 is a high-performance pipeline for the end-to-end analysis of amplicon sequencing data from raw files to abundance tables and phylogenetic trees. Use when user asks to process raw amplicon sequences, generate OTU or ASV tables, perform taxonomic classification, or create phylogenetic trees.
 homepage: http://lotus2.earlham.ac.uk/
+metadata:
+  docker_image: "quay.io/biocontainers/lotus2:2.34.1--hdfd78af_1"
 ---
-
 
 # lotus2
 

@@ -1,9 +1,10 @@
 ---
 name: mfqe
-description: "mfqe extracts specific sequences from FASTA and FASTQ files based on provided lists of sequence identifiers. Use when user asks to extract reads from genomic data, filter sequences by name, or isolate specific reads for targeted assembly."
+description: mfqe extracts specific sequences from FASTA and FASTQ files based on provided lists of sequence identifiers. Use when user asks to extract reads from genomic data, filter sequences by name, or isolate specific reads for targeted assembly.
 homepage: https://github.com/wwood/mfqe
+metadata:
+  docker_image: "quay.io/biocontainers/mfqe:0.5.0--h7b50bb2_5"
 ---
-
 
 # mfqe
 

@@ -4,6 +4,8 @@ description: The pipeline processes FASTQ, BAM, or CRAM inputs through alignment
 homepage: https://github.com/nf-core/sarek
 ---
 
+# sarek
+
 ## Overview
 nf-core/sarek is a comprehensive workflow for detecting variants in whole genome or targeted sequencing data. It handles germline analysis as well as somatic analysis of tumor/normal pairs, supporting various species beyond its initial human and mouse focus.
 

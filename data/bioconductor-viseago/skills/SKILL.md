@@ -4,7 +4,6 @@ description: ViSEAGO performs Gene Ontology enrichment analysis and clusters res
 homepage: https://bioconductor.org/packages/release/bioc/html/ViSEAGO.html
 ---
 
-
 # bioconductor-viseago
 
 ## Overview

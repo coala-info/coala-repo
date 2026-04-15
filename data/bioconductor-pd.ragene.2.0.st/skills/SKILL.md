@@ -4,7 +4,6 @@ description: This package provides platform design annotation and metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ragene.2.0.st.html
 ---
 
-
 # bioconductor-pd.ragene.2.0.st
 
 name: bioconductor-pd.ragene.2.0.st

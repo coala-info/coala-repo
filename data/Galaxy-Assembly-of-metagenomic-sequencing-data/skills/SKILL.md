@@ -1,10 +1,12 @@
 ---
 name: assembly-of-metagenomic-sequencing-data
-description: "This metagenomics workflow processes QC-controlled sequencing reads to perform de novo assembly using metaSPAdes and MEGAHIT, followed by contig evaluation and visualization with Bowtie2, CoverM, Quast, and Bandage. Use this skill when you need to reconstruct microbial genomes from complex environmental samples to characterize the taxonomic diversity and functional potential of a microbiome."
-homepage: https://workflowhub.eu/workflows/1390
+description: This metagenomics workflow processes QC-controlled sequencing reads to perform de novo assembly using metaSPAdes and MEGAHIT, followed by contig evaluation and visualization with Bowtie2, CoverM, Quast, and Bandage. Use this skill when you need to reconstruct microbial genomes from complex environmental samples to characterize the taxonomic diversity and functional potential of a microbiome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly of metagenomic sequencing data
+# assembly-of-metagenomic-sequencing-data
 
 ## Overview
 

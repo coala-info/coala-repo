@@ -1,10 +1,12 @@
 ---
 name: clm-fates_-alp1-simulation-5-years
-description: "This workflow executes a five-year CLM-FATES terrestrial ecosystem simulation using input datasets and restart files via the CTSM/FATES-EMERALD tool, followed by xarray data processing and ggplot2 visualization. Use this skill when you need to model vegetation demographics and land-surface interactions over a multi-year period to analyze ecosystem dynamics and carbon cycling."
+description: This workflow executes a five-year CLM-FATES terrestrial ecosystem simulation using input datasets and restart files via the CTSM/FATES-EMERALD tool, followed by xarray data processing and ggplot2 visualization. Use this skill when you need to model vegetation demographics and land-surface interactions over a multi-year period to analyze ecosystem dynamics and carbon cycling.
 homepage: https://workflowhub.eu/workflows/65
+metadata:
+  docker_image: "N/A"
 ---
 
-# CLM-FATES_ ALP1 simulation (5 years)
+# clm-fates_-alp1-simulation-5-years
 
 ## Overview
 

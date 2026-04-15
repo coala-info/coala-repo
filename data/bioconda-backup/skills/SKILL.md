@@ -2,8 +2,9 @@
 name: bioconda-backup
 description: Manages backups of bioconda channels and packages. Use when user asks to create a backup of a bioconda channel, restore a bioconda channel from a backup, list available backups, or inspect the contents of a backup.
 homepage: https://anaconda.org/channels/bioconda/packages/bioconda-backup/overview
+metadata:
+  docker_image: "biocontainers/bioconda-backup:latest"
 ---
-
 
 # bioconda-backup
 

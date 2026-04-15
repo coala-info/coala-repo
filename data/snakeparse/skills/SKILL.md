@@ -2,8 +2,9 @@
 name: snakeparse
 description: Snakeparse is a wrapper for Snakemake that provides a command-line interface for executing workflows using Python's argparse logic. Use when user asks to run Snakemake workflows with custom command-line arguments, manage multiple pipelines, or define argument parsers within Snakefiles.
 homepage: https://github.com/nh13/snakeparse
+metadata:
+  docker_image: "quay.io/biocontainers/snakeparse:0.1.0--py36_1"
 ---
-
 
 # snakeparse
 

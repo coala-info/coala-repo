@@ -2,6 +2,8 @@
 name: ganon
 description: Ganon classifies DNA sequences and performs metagenomic analysis using indexed reference databases. Use when user asks to build or update taxonomic databases, assign taxonomic labels to sequencing reads, generate abundance reports, or create multi-sample contingency tables.
 homepage: https://github.com/pirovc/ganon
+metadata:
+  docker_image: "quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0"
 ---
 
 # ganon

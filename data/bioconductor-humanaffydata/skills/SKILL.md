@@ -4,7 +4,6 @@ description: This package provides integrated and normalized human gene expressi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HumanAffyData.html
 ---
 
-
 # bioconductor-humanaffydata
 
 name: bioconductor-humanaffydata

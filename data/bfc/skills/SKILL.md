@@ -2,8 +2,9 @@
 name: bfc
 description: bfc is a high-performance Brainfuck compiler that uses LLVM to optimize and generate standalone native executables. Use when user asks to compile Brainfuck source code, optimize binary performance, or generate small standalone executables with modern diagnostics.
 homepage: https://github.com/Wilfred/bfc
+metadata:
+  docker_image: "quay.io/biocontainers/bfc:r181--h577a1d6_12"
 ---
-
 
 # bfc
 

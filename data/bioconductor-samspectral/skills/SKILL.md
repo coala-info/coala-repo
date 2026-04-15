@@ -4,7 +4,6 @@ description: SamSPECTRAL performs modified spectral clustering on large flow cyt
 homepage: https://bioconductor.org/packages/release/bioc/html/SamSPECTRAL.html
 ---
 
-
 # bioconductor-samspectral
 
 name: bioconductor-samspectral

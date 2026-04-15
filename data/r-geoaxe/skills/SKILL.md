@@ -4,7 +4,6 @@ description: This R package subdivides large geospatial objects into smaller, mo
 homepage: https://cran.r-project.org/web/packages/geoaxe/index.html
 ---
 
-
 # r-geoaxe
 
 ## Overview

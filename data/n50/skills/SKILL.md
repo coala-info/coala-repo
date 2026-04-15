@@ -2,8 +2,9 @@
 name: n50
 description: The n50 tool calculates N50 values and other contiguity metrics to assess the quality of genomic sequence assemblies. Use when user asks to calculate N50 or auN metrics, assess assembly quality, or generate statistics for FASTA and FASTQ files.
 homepage: http://metacpan.org/pod/Proch::N50
+metadata:
+  docker_image: "quay.io/biocontainers/n50:1.9.3--h577a1d6_0"
 ---
-
 
 # n50
 

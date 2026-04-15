@@ -4,7 +4,6 @@ description: This package provides sequence information and metadata for probes 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canineprobe.html
 ---
 
-
 # bioconductor-canineprobe
 
 ## Overview

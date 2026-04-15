@@ -2,8 +2,9 @@
 name: esme_netcdf-c_openmpi_4_1_6
 description: This tool provides the NetCDF-C interface integrated with OpenMPI for managing and processing array-oriented scientific data in parallel computing environments. Use when user asks to compile C applications with parallel NetCDF support, perform collective parallel I/O operations, or use utilities like ncdump and ncgen to manage NetCDF files.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
+metadata:
+  docker_image: "quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0"
 ---
-
 
 # esme_netcdf-c_openmpi_4_1_6
 

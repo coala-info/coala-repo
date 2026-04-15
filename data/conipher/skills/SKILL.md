@@ -2,8 +2,9 @@
 name: conipher
 description: CONIPHER automates the grouping of somatic mutations into subclonal clusters and reconstructs the phylogenetic evolutionary history of tumors. Use when user asks to infer subclonal architecture, cluster mutations from multi-region sequencing data, or build tumor phylogenetic trees.
 homepage: https://github.com/McGranahanLab/CONIPHER/
+metadata:
+  docker_image: "quay.io/biocontainers/conipher:2.2.0--r40hdfd78af_0"
 ---
-
 
 # conipher
 

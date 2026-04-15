@@ -1,10 +1,12 @@
 ---
 name: workflow-biodiversity-data-exploration-tuto
-description: "This ecology workflow processes tabular fish survey data using tools for spatial anonymization, statistical normality testing, and abundance analysis to explore biodiversity patterns. Use this skill when you need to evaluate species presence-absence, calculate local contributions to beta diversity, and assess the statistical properties of ecological survey datasets."
-homepage: https://workflowhub.eu/workflows/1693
+description: This ecology workflow processes tabular fish survey data using tools for spatial anonymization, statistical normality testing, and abundance analysis to explore biodiversity patterns. Use this skill when you need to evaluate species presence-absence, calculate local contributions to beta diversity, and assess the statistical properties of ecological survey datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 'Biodiversity data exploration tuto'
+# workflow-biodiversity-data-exploration-tuto
 
 ## Overview
 

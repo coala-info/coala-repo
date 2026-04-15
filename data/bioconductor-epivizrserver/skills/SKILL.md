@@ -4,7 +4,6 @@ description: This package provides WebSocket infrastructure to manage communicat
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrServer.html
 ---
 
-
 # bioconductor-epivizrserver
 
 ## Overview

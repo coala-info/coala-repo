@@ -1,10 +1,12 @@
 ---
 name: du-novo-gtn-tutorial-variant-calling
-description: "This workflow performs variant calling on paired-end trimmed consensus reads using BWA-MEM for mapping, BamLeftAlign for realignment, and the Naive Variant Caller for identifying genetic variations. Use this skill when you need to identify high-accuracy variants or low-frequency mutations from duplex consensus sequences to distinguish true biological variation from sequencing errors."
-homepage: https://workflowhub.eu/workflows/1660
+description: This workflow performs variant calling on paired-end trimmed consensus reads using BWA-MEM for mapping, BamLeftAlign for realignment, and the Naive Variant Caller for identifying genetic variations. Use this skill when you need to identify high-accuracy variants or low-frequency mutations from duplex consensus sequences to distinguish true biological variation from sequencing errors.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Du Novo GTN Tutorial - Variant Calling
+# du-novo-gtn-tutorial-variant-calling
 
 ## Overview
 

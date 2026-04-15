@@ -1,9 +1,12 @@
 ---
 name: cwl-based-multi-sample-workflow-for-germline-variant-calling
-description: "This Common Workflow Language pipeline processes Illumina whole-genome or whole-exome sequencing data to identify germline SNPs and small INDELs using tools like BWA-MEM, GATK, and ANNOVAR. Use this skill when you need to identify inherited genetic variations across multiple samples, assess their clinical or population-level significance, and characterize the genomic landscape of a cohort."
-homepage: https://workflowhub.eu/workflows/526
+description: This Common Workflow Language pipeline processes Illumina whole-genome or whole-exome sequencing data to identify germline SNPs and small INDELs using tools like BWA-MEM, GATK, and ANNOVAR. Use this skill when you need to identify inherited genetic variations across multiple samples, assess their clinical or population-level significance, and characterize the genomic landscape of a cohort.
+homepage: https://biodataanalysisgroup.github.io/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL-based (multi-sample) workflow for germline variant calling
+
+# cwl-based-multi-sample-workflow-for-germline-variant-calling
 
 ## Overview
 

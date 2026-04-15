@@ -1,7 +1,9 @@
 ---
 name: hocort
-description: "HoCoRT identifies and removes contaminant host sequences from sequencing data by mapping reads against a reference genome using various aligners. Use when user asks to remove host contamination, build reference indexes for mapping, extract specific organism sequences, or filter sequencing reads."
+description: HoCoRT identifies and removes contaminant host sequences from sequencing data by mapping reads against a reference genome using various aligners. Use when user asks to remove host contamination, build reference indexes for mapping, extract specific organism sequences, or filter sequencing reads.
 homepage: https://github.com/ignasrum/hocort
+metadata:
+  docker_image: "quay.io/biocontainers/hocort:1.2.2--py39hdfd78af_0"
 ---
 
 # hocort

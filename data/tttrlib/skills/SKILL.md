@@ -2,6 +2,8 @@
 name: tttrlib
 description: tttrlib is a high-performance library for analyzing time-resolved photon streams and bridging proprietary data formats with open-source pipelines. Use when user asks to read TTTR files, perform correlation analysis, generate FLIM images, or process large-scale fluorescence data.
 homepage: https://github.com/fluorescence-tools/tttrlib
+metadata:
+  docker_image: "quay.io/biocontainers/tttrlib:0.25.1--py312hd82e9f0_1"
 ---
 
 # tttrlib

@@ -2,8 +2,9 @@
 name: episcanpy
 description: episcanpy is a Python framework for analyzing single-cell epigenomic data such as scATAC-seq and scBS-seq within the Scanpy ecosystem. Use when user asks to build count matrices from fragment files, calculate TSS enrichment, estimate gene activity, annotate peaks, or perform motif enrichment and footprinting analysis.
 homepage: http://github.com/colomemaria/epiScanpy
+metadata:
+  docker_image: "quay.io/biocontainers/episcanpy:0.4.0--pyhdfd78af_0"
 ---
-
 
 # episcanpy
 

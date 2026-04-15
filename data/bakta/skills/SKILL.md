@@ -2,8 +2,9 @@
 name: bakta
 description: Bakta provides comprehensive functional annotation of bacterial genomes, plasmids, and metagenome-assembled genomes using a high-throughput, database-driven approach. Use when user asks to annotate bacterial sequences, identify specialized features like ncRNAs and CRISPR arrays, or generate FAIR-compliant annotations with extensive database cross-references.
 homepage: https://github.com/oschwengers/bakta
+metadata:
+  docker_image: "quay.io/biocontainers/bakta:1.12.0--pyhdfd78af_0"
 ---
-
 
 # bakta
 

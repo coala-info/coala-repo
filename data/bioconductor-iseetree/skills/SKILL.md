@@ -4,7 +4,6 @@ description: bioconductor-iseetree provides an interactive interface for visuali
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEtree.html
 ---
 
-
 # bioconductor-iseetree
 
 name: bioconductor-iseetree

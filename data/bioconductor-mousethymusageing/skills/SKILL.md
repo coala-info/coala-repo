@@ -4,7 +4,6 @@ description: This package provides access to single-cell RNA sequencing datasets
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MouseThymusAgeing.html
 ---
 
-
 # bioconductor-mousethymusageing
 
 name: bioconductor-mousethymusageing

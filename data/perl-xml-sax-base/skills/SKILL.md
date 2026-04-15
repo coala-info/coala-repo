@@ -2,8 +2,9 @@
 name: perl-xml-sax-base
 description: This tool provides a base class for creating XML SAX drivers and filters in Perl. Use when user asks to build SAX-based XML parsers, implement XML event filters, or manage SAX2 method delegations and state transitions.
 homepage: http://metacpan.org/pod/XML-SAX-Base
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xml-sax-base:1.09--pl526_0"
 ---
-
 
 # perl-xml-sax-base
 

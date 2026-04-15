@@ -4,7 +4,6 @@ description: This tool performs cell type enrichment analysis to estimate the ab
 homepage: https://cran.r-project.org/web/packages/xcell/index.html
 ---
 
-
 # r-xcell
 
 name: r-xcell

@@ -2,8 +2,9 @@
 name: perl-svg
 description: This tool programmatically generates Scalable Vector Graphics (SVG) documents using a Perl-based object-oriented interface. Use when user asks to create vector images, build SVG DOM structures, render shapes and paths, or generate data visualizations in Perl.
 homepage: http://metacpan.org/pod/SVG
+metadata:
+  docker_image: "quay.io/biocontainers/perl-svg:2.87--pl5321hdfd78af_0"
 ---
-
 
 # perl-svg
 

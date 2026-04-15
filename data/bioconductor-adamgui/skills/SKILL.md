@@ -4,7 +4,6 @@ description: ADAMgui provides a graphical user interface for the Activity and Di
 homepage: https://bioconductor.org/packages/release/bioc/html/ADAMgui.html
 ---
 
-
 # bioconductor-adamgui
 
 name: bioconductor-adamgui

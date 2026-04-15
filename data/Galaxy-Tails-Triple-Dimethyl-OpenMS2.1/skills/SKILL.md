@@ -1,10 +1,12 @@
 ---
 name: tails-triple-dimethyl-openms21
-description: "This proteomics workflow processes mzML files and UniProt FASTA databases using OpenMS tools like FeatureFinderMultiplex and MSGFPlusAdapter to detect and quantify N-termini via N-TAILS. Use this skill when you need to perform degradomics studies to identify and quantify protein N-termini and protease cleavage sites in samples labeled with triple dimethyl reagents."
-homepage: https://workflowhub.eu/workflows/1424
+description: This proteomics workflow processes mzML files and UniProt FASTA databases using OpenMS tools like FeatureFinderMultiplex and MSGFPlusAdapter to detect and quantify N-termini via N-TAILS. Use this skill when you need to perform degradomics studies to identify and quantify protein N-termini and protease cleavage sites in samples labeled with triple dimethyl reagents.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Tails Triple Dimethyl OpenMS2.1
+# tails-triple-dimethyl-openms21
 
 ## Overview
 

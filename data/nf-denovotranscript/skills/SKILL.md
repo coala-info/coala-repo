@@ -4,6 +4,8 @@ description: This pipeline performs de novo transcriptome assembly from paired-e
 homepage: https://github.com/nf-core/denovotranscript
 ---
 
+# denovotranscript
+
 ## Overview
 nf-core/denovotranscript addresses the challenge of reconstructing transcriptomes in the absence of a reference genome. It processes raw paired-end RNA-seq reads to generate a non-redundant set of transcripts and their corresponding expression levels, facilitating research in non-model organisms or complex biological systems.
 

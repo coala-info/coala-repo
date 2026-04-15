@@ -4,7 +4,6 @@ description: plotGrouper is a Bioconductor package that provides a Shiny-based g
 homepage: https://bioconductor.org/packages/release/bioc/html/plotGrouper.html
 ---
 
-
 # bioconductor-plotgrouper
 
 ## Overview

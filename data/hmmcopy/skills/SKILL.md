@@ -2,8 +2,9 @@
 name: hmmcopy
 description: The hmmcopy suite extracts binned read counts, GC content, and mappability data from genomic files for copy number analysis. Use when user asks to extract read counts from BAM files, calculate GC content from FASTA files, or generate mappability scores for genomic bins.
 homepage: http://compbio.bccrc.ca/software/hmmcopy/
+metadata:
+  docker_image: "quay.io/biocontainers/hmmcopy:0.1.1--h5b0a936_12"
 ---
-
 
 # hmmcopy
 

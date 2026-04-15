@@ -4,7 +4,6 @@ description: This package provides base annotation data for Arabidopsis thaliana
 homepage: https://bioconductor.org/packages/release/data/annotation/html/arabidopsis.db0.html
 ---
 
-
 # bioconductor-arabidopsis.db0
 
 name: bioconductor-arabidopsis.db0

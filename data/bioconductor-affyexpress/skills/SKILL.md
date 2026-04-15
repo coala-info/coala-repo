@@ -4,7 +4,6 @@ description: This package provides an integrated pipeline for quality control, p
 homepage: https://bioconductor.org/packages/3.5/bioc/html/AffyExpress.html
 ---
 
-
 # bioconductor-affyexpress
 
 ## Overview

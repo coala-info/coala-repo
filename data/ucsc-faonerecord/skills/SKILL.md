@@ -2,8 +2,9 @@
 name: ucsc-faonerecord
 description: This tool extracts a single sequence record from a FASTA file. Use when user asks to extract a single sequence record from a FASTA file, extract a specific chromosome, or extract a scaffold.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-faonerecord:482--h0b57e2e_0"
 ---
-
 
 # ucsc-faonerecord
 

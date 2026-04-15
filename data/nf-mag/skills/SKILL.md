@@ -4,6 +4,8 @@ description: This pipeline performs metagenome assembly, binning, and annotation
 homepage: https://github.com/nf-core/mag
 ---
 
+# mag
+
 ## Overview
 nf-core/mag is a bioinformatics best-practice analysis pipeline designed for the assembly, binning, and annotation of metagenomes. It handles the complexity of metagenomic data by providing a streamlined workflow that transitions from raw sequencing reads to refined, taxonomically annotated genome bins.
 

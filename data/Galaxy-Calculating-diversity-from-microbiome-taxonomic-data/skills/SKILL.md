@@ -1,10 +1,12 @@
 ---
 name: calculating-diversity-from-microbiome-taxonomic-data
-description: "This microbiome workflow processes Bracken taxonomic classification data using Krakentools to calculate multiple alpha diversity indices and Bray-Curtis beta diversity. Use this skill when you need to quantify species richness and evenness within samples or compare microbial community composition across different environmental or clinical conditions."
-homepage: https://workflowhub.eu/workflows/1431
+description: This microbiome workflow processes Bracken taxonomic classification data using Krakentools to calculate multiple alpha diversity indices and Bray-Curtis beta diversity. Use this skill when you need to quantify species richness and evenness within samples or compare microbial community composition across different environmental or clinical conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Calculating diversity from microbiome taxonomic data
+# calculating-diversity-from-microbiome-taxonomic-data
 
 ## Overview
 

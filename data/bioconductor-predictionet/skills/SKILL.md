@@ -4,7 +4,6 @@ description: This tool infers predictive gene interaction networks by integratin
 homepage: https://bioconductor.org/packages/3.8/bioc/html/predictionet.html
 ---
 
-
 # bioconductor-predictionet
 
 name: bioconductor-predictionet

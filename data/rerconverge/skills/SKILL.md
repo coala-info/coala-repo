@@ -2,8 +2,9 @@
 name: rerconverge
 description: RERconverge identifies genes whose evolutionary rates correlate with the convergent evolution of specific traits across a phylogeny. Use when user asks to calculate relative evolutionary rates, associate genomic changes with binary or continuous phenotypes, or identify the molecular basis of convergent evolution.
 homepage: https://github.com/nclark-lab/RERconverge
+metadata:
+  docker_image: "quay.io/biocontainers/rerconverge:0.3.0--r44h7b50bb2_3"
 ---
-
 
 # rerconverge
 

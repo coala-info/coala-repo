@@ -2,8 +2,9 @@
 name: viralmsa
 description: ViralMSA performs high-performance alignment of viral sequences against a reference genome. Use when user asks to align viral sequences to a reference, fetch a reference by accession, use a preselected or local reference, align with a specific mapping algorithm, list available references, or omit the reference from the final alignment.
 homepage: https://github.com/niemasd/ViralMSA
+metadata:
+  docker_image: "quay.io/biocontainers/viralmsa:1.1.46--hdfd78af_0"
 ---
-
 
 # viralmsa
 

@@ -4,6 +4,8 @@ description: This pipeline ingests TIFF images and experimental metadata via a s
 homepage: https://github.com/nf-core/cellpainting
 ---
 
+# cellpainting
+
 ## Overview
 nf-core/cellpainting is designed for the automated analysis of image-based profiling experiments, most notably the Cell Painting assay. It addresses the need for scalable and reproducible processing of large-scale microscopy datasets by orchestrating image analysis software in a high-performance computing environment.
 

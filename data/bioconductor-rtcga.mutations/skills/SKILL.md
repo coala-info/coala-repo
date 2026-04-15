@@ -4,7 +4,6 @@ description: This package provides somatic mutation data from various cancer coh
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.mutations.html
 ---
 
-
 # bioconductor-rtcga.mutations
 
 ## Overview

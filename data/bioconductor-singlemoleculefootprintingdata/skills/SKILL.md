@@ -4,7 +4,6 @@ description: This package provides access to example data and BAM files for Sing
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SingleMoleculeFootprintingData.html
 ---
 
-
 # bioconductor-singlemoleculefootprintingdata
 
 name: bioconductor-singlemoleculefootprintingdata

@@ -1,9 +1,10 @@
 ---
 name: degenotate
-description: "degenotate characterizes evolutionary constraints on coding sites by calculating their degeneracy from genome assemblies and structural annotations. Use when user asks to annotate site-by-site degeneracy, perform standard or imputed McDonald-Kreitman tests, or extract specific coding sequences and degenerate sites."
+description: degenotate characterizes evolutionary constraints on coding sites by calculating their degeneracy from genome assemblies and structural annotations. Use when user asks to annotate site-by-site degeneracy, perform standard or imputed McDonald-Kreitman tests, or extract specific coding sequences and degenerate sites.
 homepage: https://github.com/harvardinformatics/degenotate
+metadata:
+  docker_image: "quay.io/biocontainers/degenotate:1.3--pyhdfd78af_0"
 ---
-
 
 # degenotate
 

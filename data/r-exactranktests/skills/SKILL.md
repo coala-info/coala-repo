@@ -4,7 +4,6 @@ description: This package computes exact conditional p-values and quantiles for 
 homepage: https://cran.r-project.org/web/packages/exactranktests/index.html
 ---
 
-
 # r-exactranktests
 
 ## Overview

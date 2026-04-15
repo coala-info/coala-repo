@@ -4,7 +4,6 @@ description: This tool performs variance stabilization for flow cytometry and mi
 homepage: https://bioconductor.org/packages/release/bioc/html/flowVS.html
 ---
 
-
 # bioconductor-flowvs
 
 ## Overview

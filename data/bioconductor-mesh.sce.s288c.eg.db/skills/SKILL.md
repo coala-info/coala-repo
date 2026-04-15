@@ -4,7 +4,6 @@ description: This package provides mappings between MeSH identifiers and Entrez 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Sce.S288c.eg.db.html
 ---
 
-
 # bioconductor-mesh.sce.s288c.eg.db
 
 name: bioconductor-mesh.sce.s288c.eg.db

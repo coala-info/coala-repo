@@ -4,7 +4,6 @@ description: This package provides infrastructure for managing and interrogating
 homepage: https://bioconductor.org/packages/release/data/experiment/html/leeBamViews.html
 ---
 
-
 # bioconductor-leebamviews
 
 ## Overview

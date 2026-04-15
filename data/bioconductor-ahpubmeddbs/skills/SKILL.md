@@ -4,7 +4,6 @@ description: This package provides metadata and access to structured PubMed data
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHPubMedDbs.html
 ---
 
-
 # bioconductor-ahpubmeddbs
 
 ## Overview

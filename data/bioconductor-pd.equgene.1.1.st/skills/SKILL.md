@@ -4,7 +4,6 @@ description: This package provides annotation and platform-specific design infor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.equgene.1.1.st.html
 ---
 
-
 # bioconductor-pd.equgene.1.1.st
 
 name: bioconductor-pd.equgene.1.1.st

@@ -4,7 +4,6 @@ description: This tool provides pre-computed SIFT and PROVEAN scores for human c
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SIFT.Hsapiens.dbSNP137.html
 ---
 
-
 # bioconductor-sift.hsapiens.dbsnp137
 
 name: bioconductor-sift.hsapiens.dbsnp137

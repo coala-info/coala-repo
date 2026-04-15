@@ -1,10 +1,12 @@
 ---
 name: tutorial-regionalgam-complete-multispecies
-description: "This ecology workflow processes multispecies CSV datasets using regionalGAM flight-curve tools and data manipulation utilities to analyze population trends. Use this skill when you need to estimate seasonal abundance indices and flight curves for multiple species across different regions to monitor biodiversity trends."
-homepage: https://workflowhub.eu/workflows/1704
+description: This ecology workflow processes multispecies CSV datasets using regionalGAM flight-curve tools and data manipulation utilities to analyze population trends. Use this skill when you need to estimate seasonal abundance indices and flight curves for multiple species across different regions to monitor biodiversity trends.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Tutorial regionalGAM Complete Multispecies
+# tutorial-regionalgam-complete-multispecies
 
 ## Overview
 

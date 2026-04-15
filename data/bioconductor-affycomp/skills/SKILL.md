@@ -4,7 +4,6 @@ description: The affycomp package benchmarks Affymetrix GeneChip expression meas
 homepage: https://bioconductor.org/packages/release/bioc/html/affycomp.html
 ---
 
-
 # bioconductor-affycomp
 
 ## Overview

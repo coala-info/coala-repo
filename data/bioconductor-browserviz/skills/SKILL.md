@@ -4,7 +4,6 @@ description: BrowserViz provides a base class for message passing between R and 
 homepage: https://bioconductor.org/packages/release/bioc/html/BrowserViz.html
 ---
 
-
 # bioconductor-browserviz
 
 ## Overview

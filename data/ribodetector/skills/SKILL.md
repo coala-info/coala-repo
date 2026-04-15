@@ -2,8 +2,9 @@
 name: ribodetector
 description: RiboDetector is a deep learning tool designed to rapidly identify and filter rRNA sequences from sequencing data. Use when user asks to detect ribosomal RNA, remove rRNA contamination, or filter reads for transcriptomic analysis.
 homepage: https://github.com/hzi-bifo/RiboDetector
+metadata:
+  docker_image: "quay.io/biocontainers/ribodetector:0.3.3--pyhdfd78af_0"
 ---
-
 
 # ribodetector
 

@@ -1,10 +1,12 @@
 ---
 name: boulder-fields-indicators
-description: "This ecology workflow processes boulder field data from champbloc_ivr.csv, champbloc_qecb.csv, and ficheterrain.csv using IVR, QECB-Dissimilarity, and Diversity tools to calculate ecological indicators. Use this skill when you need to evaluate the ecological status, species diversity, and community dissimilarity of intertidal boulder field habitats."
-homepage: https://workflowhub.eu/workflows/661
+description: This ecology workflow processes boulder field data from champbloc_ivr.csv, champbloc_qecb.csv, and ficheterrain.csv using IVR, QECB-Dissimilarity, and Diversity tools to calculate ecological indicators. Use this skill when you need to evaluate the ecological status, species diversity, and community dissimilarity of intertidal boulder field habitats.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Boulder fields indicators
+# boulder-fields-indicators
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: FactoMineR is an R package for multivariate exploratory data analys
 homepage: https://cran.r-project.org/web/packages/factominer/index.html
 ---
 
-
 # r-factominer
 
 ## Overview

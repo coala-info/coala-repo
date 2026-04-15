@@ -4,7 +4,6 @@ description: This tool segments high-coverage whole-genome bisulfite-sequencing 
 homepage: https://bioconductor.org/packages/release/bioc/html/MethylSeekR.html
 ---
 
-
 # bioconductor-methylseekr
 
 name: bioconductor-methylseekr

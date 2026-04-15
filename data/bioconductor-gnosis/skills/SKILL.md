@@ -4,7 +4,6 @@ description: GNOSIS provides a workflow for the statistical and survival analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/GNOSIS.html
 ---
 
-
 # bioconductor-gnosis
 
 ## Overview

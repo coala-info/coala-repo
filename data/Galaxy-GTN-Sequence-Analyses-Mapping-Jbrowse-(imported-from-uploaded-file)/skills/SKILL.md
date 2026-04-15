@@ -1,10 +1,12 @@
 ---
 name: gtn-sequence-analyses-mapping-jbrowse-imported-from-uploaded
-description: "This sequence analysis workflow processes paired-end reads through quality control with FastQC and Trim Galore!, performs genomic mapping using Bowtie2, and generates an interactive visualization with JBrowse. Use this skill when you need to assess the quality of raw sequencing data, align reads to a reference genome, and visually inspect the resulting alignments for genomic features or variants."
-homepage: https://workflowhub.eu/workflows/1657
+description: This sequence analysis workflow processes paired-end reads through quality control with FastQC and Trim Galore!, performs genomic mapping using Bowtie2, and generates an interactive visualization with JBrowse. Use this skill when you need to assess the quality of raw sequencing data, align reads to a reference genome, and visually inspect the resulting alignments for genomic features or variants.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN - Sequence Analyses - Mapping - Jbrowse (imported from uploaded file)
+# gtn-sequence-analyses-mapping-jbrowse-imported-from-uploaded
 
 ## Overview
 

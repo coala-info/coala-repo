@@ -4,7 +4,6 @@ description: The magpie package is a simulation-based tool for performing power 
 homepage: https://bioconductor.org/packages/release/bioc/html/magpie.html
 ---
 
-
 # bioconductor-magpie
 
 ## Overview

@@ -2,8 +2,9 @@
 name: perl-io-interactive
 description: This tool provides functions to detect and manage interactive terminal sessions within Perl scripts. Use when user asks to check if a script is running in a terminal, suppress output in non-interactive environments, or manage terminal-aware I/O.
 homepage: https://github.com/briandfoy/io-interactive
+metadata:
+  docker_image: "quay.io/biocontainers/perl-io-interactive:1.027--pl5321hdfd78af_0"
 ---
-
 
 # perl-io-interactive
 

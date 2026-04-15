@@ -4,7 +4,6 @@ description: EBImage provides general-purpose functionality for image processing
 homepage: https://bioconductor.org/packages/release/bioc/html/EBImage.html
 ---
 
-
 # bioconductor-ebimage
 
 name: bioconductor-ebimage

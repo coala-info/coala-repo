@@ -4,7 +4,6 @@ description: This package provides annotation data and identifier mappings for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaMousev1.db.html
 ---
 
-
 # bioconductor-illuminamousev1.db
 
 name: bioconductor-illuminamousev1.db

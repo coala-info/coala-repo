@@ -4,7 +4,6 @@ description: SARC performs statistical ratification and confidence flagging of C
 homepage: https://bioconductor.org/packages/release/bioc/html/SARC.html
 ---
 
-
 # bioconductor-sarc
 
 name: bioconductor-sarc

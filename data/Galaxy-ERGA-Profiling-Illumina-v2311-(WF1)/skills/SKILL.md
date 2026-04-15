@@ -1,10 +1,12 @@
 ---
 name: erga-profiling-illumina-v2311-wf1
-description: "This workflow processes trimmed Illumina sequencing collections using Meryl, Smudgeplot, and GenomeScope to perform k-mer based genomic profiling. Use this skill when you need to estimate genome size, heterozygosity, and ploidy levels to assess sample complexity before proceeding with de novo genome assembly."
-homepage: https://workflowhub.eu/workflows/698
+description: This workflow processes trimmed Illumina sequencing collections using Meryl, Smudgeplot, and GenomeScope to perform k-mer based genomic profiling. Use this skill when you need to estimate genome size, heterozygosity, and ploidy levels to assess sample complexity before proceeding with de novo genome assembly.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA Profiling Illumina v2311 (WF1)
+# erga-profiling-illumina-v2311-wf1
 
 ## Overview
 

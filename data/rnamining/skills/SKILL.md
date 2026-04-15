@@ -2,8 +2,9 @@
 name: rnamining
 description: RNAmining predicts potential coding regions within RNA sequences. Use when user asks to find coding regions in RNA sequences.
 homepage: https://github.com/lfreitasl/RNAmining/tree/pypackage
+metadata:
+  docker_image: "quay.io/biocontainers/rnamining:1.0.4--pyhdfd78af_0"
 ---
-
 
 # rnamining
 

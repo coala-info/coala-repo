@@ -1,7 +1,9 @@
 ---
 name: rdfextras
-description: "rdfextras provides supplemental utilities and a SPARQL implementation for RDFLib to facilitate RDF data transformation and visualization. Use when user asks to convert CSV files to RDF, visualize RDF graphs as DOT files, parse or serialize RDF data using rdfpipe, or execute SPARQL queries in legacy RDFLib environments."
+description: rdfextras provides supplemental utilities and a SPARQL implementation for RDFLib to facilitate RDF data transformation and visualization. Use when user asks to convert CSV files to RDF, visualize RDF graphs as DOT files, parse or serialize RDF data using rdfpipe, or execute SPARQL queries in legacy RDFLib environments.
 homepage: https://github.com/RDFLib/rdfextras
+metadata:
+  docker_image: "quay.io/biocontainers/rdfextras:0.4--py27_2"
 ---
 
 # rdfextras

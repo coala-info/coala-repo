@@ -2,8 +2,9 @@
 name: hapflk
 description: The hapflk toolset identifies genomic regions under selection by analyzing haplotype differentiation and population structure. Use when user asks to detect selection in multiple populations, compute FLK statistics from allele frequencies, analyze Pool-seq data, or construct population trees.
 homepage: https://github.com/BertrandServin/hapflk
+metadata:
+  docker_image: "quay.io/biocontainers/hapflk:1.3.0--py27_0"
 ---
-
 
 # hapflk
 

@@ -2,8 +2,9 @@
 name: perl-ensembl-variation
 description: This tool provides programmatic access to the Ensembl Variation database using an object-oriented Perl interface. Use when user asks to retrieve variant information, fetch genotypes or phenotypes, and calculate variant consequences on transcripts.
 homepage: https://www.ensembl.org/info/docs/api/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/perl-ensembl-variation:98--0"
 ---
-
 
 # perl-ensembl-variation
 

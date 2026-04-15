@@ -2,6 +2,8 @@
 name: prosic
 description: Prosic infers protein-level significance from peptide-spectrum matches using a Bayesian framework to address the protein inference problem. Use when user asks to calculate protein-level scores, manage decoy databases for FDR estimation, or generate statistically sound protein rankings from proteomics datasets.
 homepage: https://prosic.github.io
+metadata:
+  docker_image: "quay.io/biocontainers/prosic:2.1.2--hc7800f0_1"
 ---
 
 # prosic

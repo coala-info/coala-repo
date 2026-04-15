@@ -2,8 +2,9 @@
 name: aptardi
 description: aptardi uses machine learning to improve the annotation of 3' transcript boundaries by predicting polyA sites from DNA sequences and RNA-Seq data. Use when user asks to refine 3' terminal exons, identify new transcript isoforms, or improve transcriptome annotations.
 homepage: https://github.com/luskry/aptardi
+metadata:
+  docker_image: "quay.io/biocontainers/aptardi:1.4--pyh5e36f6f_0"
 ---
-
 
 # aptardi
 

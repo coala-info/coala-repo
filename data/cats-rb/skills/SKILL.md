@@ -2,6 +2,8 @@
 name: cats-rb
 description: CATS-rb is a benchmarking framework that evaluates transcriptome assembly quality by mapping transcripts to a reference genome and calculating biological completeness scores. Use when user asks to index a reference genome, map assembled transcripts, or perform relative and annotation-based completeness comparisons between assemblies.
 homepage: https://github.com/bodulic/CATS-rb
+metadata:
+  docker_image: "quay.io/biocontainers/cats-rb:1.0.3--hdfd78af_0"
 ---
 
 # cats-rb

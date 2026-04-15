@@ -4,7 +4,6 @@ description: This package provides pre-computed parameter vectors for performing
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501frmavecs.html
 ---
 
-
 # bioconductor-ath1121501frmavecs
 
 ## Overview

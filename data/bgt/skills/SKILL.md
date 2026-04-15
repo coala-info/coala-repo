@@ -1,7 +1,9 @@
 ---
 name: bgt
-description: "This tool provides flexible genotype querying across large whole-genome datasets. Use when user asks to query genotypes, filter genetic variations, or search genomic data."
+description: This tool provides flexible genotype querying across large whole-genome datasets. Use when user asks to query genotypes, filter genetic variations, or search genomic data.
 homepage: https://github.com/Dysman/bgTools-playerPrefsEditor
+metadata:
+  docker_image: "quay.io/biocontainers/bgt:r283--h577a1d6_7"
 ---
 
 # bgt

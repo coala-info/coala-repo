@@ -4,7 +4,6 @@ description: This tool downloads and parses data from the NCBI Gene Expression O
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOquery.html
 ---
 
-
 # bioconductor-geoquery
 
 name: bioconductor-geoquery

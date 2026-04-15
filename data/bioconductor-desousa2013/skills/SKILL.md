@@ -4,7 +4,6 @@ description: This package provides a pipeline for the molecular classification o
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DeSousa2013.html
 ---
 
-
 # bioconductor-desousa2013
 
 name: bioconductor-desousa2013

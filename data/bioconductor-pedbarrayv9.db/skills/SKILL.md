@@ -4,7 +4,6 @@ description: This package provides functional and genomic annotation data for th
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pedbarrayv9.db.html
 ---
 
-
 # bioconductor-pedbarrayv9.db
 
 name: bioconductor-pedbarrayv9.db

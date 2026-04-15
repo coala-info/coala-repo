@@ -4,7 +4,6 @@ description: The r-cellosaurus package provides an R interface to the Cellosauru
 homepage: https://cran.r-project.org/web/packages/cellosaurus/index.html
 ---
 
-
 # r-cellosaurus
 
 ## Overview

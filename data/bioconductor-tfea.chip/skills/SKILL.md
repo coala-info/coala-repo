@@ -4,7 +4,6 @@ description: This tool identifies transcription factors enriched in gene sets by
 homepage: https://bioconductor.org/packages/release/bioc/html/TFEA.ChIP.html
 ---
 
-
 # bioconductor-tfea.chip
 
 name: bioconductor-tfea.chip

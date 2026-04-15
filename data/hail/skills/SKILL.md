@@ -2,8 +2,9 @@
 name: hail
 description: Hail is a high-performance Python framework for the scalable analysis and exploration of massive genomic datasets. Use when user asks to ingest genomic data, perform quality control, annotate variants, or run statistical analyses like GWAS and PCA.
 homepage: https://hail.is
+metadata:
+  docker_image: "quay.io/biocontainers/hail:0.2.61--py311h9948957_3"
 ---
-
 
 # hail
 

@@ -1,10 +1,12 @@
 ---
 name: unnamed-workflow
-description: "This workflow processes assembly plans and JSON parameters to perform sequence retrieval, manufacturability evaluation, and cloning simulation using Maystro and database integration tools. Use this skill when you need to validate the feasibility of synthetic DNA designs and simulate assembly protocols to ensure constructs can be successfully manufactured and cloned."
-homepage: https://workflowhub.eu/workflows/1877
+description: This workflow processes assembly plans and JSON parameters to perform sequence retrieval, manufacturability evaluation, and cloning simulation using Maystro and database integration tools. Use this skill when you need to validate the feasibility of synthetic DNA designs and simulate assembly protocols to ensure constructs can be successfully manufactured and cloned.
+homepage: https://parisbiofoundry.org/the-asu-biofoundry/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Unnamed Workflow
+# unnamed-workflow
 
 ## Overview
 

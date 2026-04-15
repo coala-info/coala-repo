@@ -4,7 +4,6 @@ description: IHW performs independent hypothesis weighting to increase statistic
 homepage: https://bioconductor.org/packages/release/bioc/html/IHW.html
 ---
 
-
 # bioconductor-ihw
 
 ## Overview

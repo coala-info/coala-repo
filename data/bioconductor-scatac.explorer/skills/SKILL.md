@@ -4,7 +4,6 @@ description: scATAC.Explorer provides a standardized interface to discover and d
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scATAC.Explorer.html
 ---
 
-
 # bioconductor-scatac.explorer
 
 ## Overview

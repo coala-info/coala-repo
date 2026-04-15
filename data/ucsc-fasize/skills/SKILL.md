@@ -2,8 +2,9 @@
 name: ucsc-fasize
 description: The `ucsc-fasize` tool calculates rapid sequence statistics from FASTA files. Use when user asks to summarize FASTA file statistics, get individual sequence sizes from a FASTA file, output FASTA statistics in a tab-separated format, or get combined FASTA statistics for multiple files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fasize:482--h0b57e2e_0"
 ---
-
 
 # ucsc-fasize
 

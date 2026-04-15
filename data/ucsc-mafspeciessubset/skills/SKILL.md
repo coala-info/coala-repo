@@ -2,6 +2,8 @@
 name: ucsc-mafspeciessubset
 description: This tool filters Multiple Alignment Format (MAF) files to extract sequences for a specific subset of species. Use when user asks to subset a MAF file by species, isolate specific organisms from a multi-species alignment, or prune alignment blocks to include only sequences of interest.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0"
 ---
 
 # ucsc-mafspeciessubset

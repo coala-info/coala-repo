@@ -4,7 +4,6 @@ description: This package provides a transcript-centric annotation database for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Athaliana.BioMart.plantsmart51.html
 ---
 
-
 # bioconductor-txdb.athaliana.biomart.plantsmart51
 
 name: bioconductor-txdb.athaliana.biomart.plantsmart51

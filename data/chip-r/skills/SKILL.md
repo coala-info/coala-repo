@@ -2,6 +2,8 @@
 name: chip-r
 description: ChIP-R identifies reproducible genomic regions across multiple biological replicates using a rank product statistic. Use when user asks to find consistent ChIP-seq peaks, evaluate peak significance across replicates, or identify high-confidence genomic regions without using IDR.
 homepage: https://github.com/rhysnewell/ChIP-R
+metadata:
+  docker_image: "quay.io/biocontainers/chip-r:1.2.0--pyh3252c3a_0"
 ---
 
 # chip-r

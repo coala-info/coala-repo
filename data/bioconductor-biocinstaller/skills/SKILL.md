@@ -4,7 +4,6 @@ description: This tool manages the installation, update, and versioning of Bioco
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BiocInstaller.html
 ---
 
-
 # bioconductor-biocinstaller
 
 name: bioconductor-biocinstaller

@@ -4,7 +4,6 @@ description: The r-tidyr package provides tools for reshaping and tidying R data
 homepage: https://cloud.r-project.org/web/packages/tidyr/index.html
 ---
 
-
 # r-tidyr
 
 name: r-tidyr

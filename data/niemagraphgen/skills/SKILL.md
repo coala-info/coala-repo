@@ -1,7 +1,9 @@
 ---
 name: niemagraphgen
-description: "NiemaGraphGen generates massive graphs by streaming edges directly to standard output to minimize memory usage. Use when user asks to generate large-scale networks, simulate graph models like Barabási–Albert or Erdős–Rényi, or stream graph data into a processing pipeline."
+description: NiemaGraphGen generates massive graphs by streaming edges directly to standard output to minimize memory usage. Use when user asks to generate large-scale networks, simulate graph models like Barabási–Albert or Erdős–Rényi, or stream graph data into a processing pipeline.
 homepage: https://github.com/niemasd/NiemaGraphGen
+metadata:
+  docker_image: "quay.io/biocontainers/niemagraphgen:1.0.6--hdbdd923_0"
 ---
 
 # niemagraphgen

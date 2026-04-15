@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Drosophila viril
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dvirilis.Ensembl.dvircaf1.html
 ---
 
-
 # bioconductor-bsgenome.dvirilis.ensembl.dvircaf1
 
 name: bioconductor-bsgenome.dvirilis.ensembl.dvircaf1

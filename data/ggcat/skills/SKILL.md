@@ -1,7 +1,9 @@
 ---
 name: ggcat
-description: "GGCAT constructs and queries compacted and colored de Bruijn graphs from genomic sequencing data. Use when user asks to build a compacted de Bruijn graph, create colored graphs for multi-sample analysis, or query sequences for k-mer presence."
+description: GGCAT constructs and queries compacted and colored de Bruijn graphs from genomic sequencing data. Use when user asks to build a compacted de Bruijn graph, create colored graphs for multi-sample analysis, or query sequences for k-mer presence.
 homepage: https://github.com/algbio/ggcat
+metadata:
+  docker_image: "quay.io/biocontainers/ggcat:2.0.0--ha96b9cd_0"
 ---
 
 # ggcat

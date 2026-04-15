@@ -1,8 +1,11 @@
 ---
 name: beacon-workflow
-description: "This CWL workflow employs the beacon-oneshot tool to execute standardized genomic and clinical data queries against datasets structured according to the OMOP Common Data Model. Use this skill when you need to facilitate federated discovery of patient cohorts or share sensitive clinical observations across standardized medical research networks."
-homepage: https://workflowhub.eu/workflows/882
+description: This CWL workflow employs the beacon-oneshot tool to execute standardized genomic and clinical data queries against datasets structured according to the OMOP Common Data Model. Use this skill when you need to facilitate federated discovery of patient cohorts or share sensitive clinical observations across standardized medical research networks.
+homepage: https://trefx.uk/
+metadata:
+  docker_image: "N/A"
 ---
+
 # beacon-workflow
 
 ## Overview

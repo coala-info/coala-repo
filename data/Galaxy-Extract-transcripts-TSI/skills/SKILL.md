@@ -1,10 +1,12 @@
 ---
 name: extract-transcripts-tsi
-description: "This workflow processes merged transcriptome FASTA files using TransDecoder to identify coding sequences and longest open reading frames, followed by a BUSCO analysis to evaluate assembly completeness. Use this skill when you need to extract high-quality protein-coding transcripts from a de novo transcriptome assembly and verify the biological quality of the resulting proteome."
-homepage: https://workflowhub.eu/workflows/879
+description: This workflow processes merged transcriptome FASTA files using TransDecoder to identify coding sequences and longest open reading frames, followed by a BUSCO analysis to evaluate assembly completeness. Use this skill when you need to extract high-quality protein-coding transcripts from a de novo transcriptome assembly and verify the biological quality of the resulting proteome.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Extract transcripts - TSI
+# extract-transcripts-tsi
 
 ## Overview
 

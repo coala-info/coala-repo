@@ -4,6 +4,8 @@ description: This pipeline processes single or paired-end FASTQ files through qu
 homepage: https://github.com/nf-core/demo
 ---
 
+# demo
+
 ## Overview
 nf-core/demo is a streamlined bioinformatics pipeline built for workshops and demonstrations. It addresses the need for a fast-running example workflow that mimics standard production pipelines while remaining accessible for educational purposes.
 

@@ -4,7 +4,6 @@ description: This tool performs mean/median-balanced quantile normalization on o
 homepage: https://bioconductor.org/packages/release/bioc/html/MBQN.html
 ---
 
-
 # bioconductor-mbqn
 
 name: bioconductor-mbqn

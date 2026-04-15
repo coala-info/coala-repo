@@ -4,7 +4,6 @@ description: This package provides access to the Schmidt et al. (2008) breast ca
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerMAINZ.html
 ---
 
-
 # bioconductor-breastcancermainz
 
 name: bioconductor-breastcancermainz

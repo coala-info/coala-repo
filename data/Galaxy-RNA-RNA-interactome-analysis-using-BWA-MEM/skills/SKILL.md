@@ -1,10 +1,12 @@
 ---
 name: rna-rna-interactome-analysis-using-bwa-mem
-description: "This transcriptomics workflow performs RNA-RNA interactome analysis by processing FASTQ reads against reference and genomic FASTA files using Cutadapt, BWA-MEM, and the ChiRA tool suite. Use this skill when you need to identify and quantify chimeric RNA-RNA interactions from high-throughput sequencing data to characterize complex regulatory networks between different RNA species."
-homepage: https://workflowhub.eu/workflows/66
+description: This transcriptomics workflow performs RNA-RNA interactome analysis by processing FASTQ reads against reference and genomic FASTA files using Cutadapt, BWA-MEM, and the ChiRA tool suite. Use this skill when you need to identify and quantify chimeric RNA-RNA interactions from high-throughput sequencing data to characterize complex regulatory networks between different RNA species.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA-RNA interactome analysis using BWA-MEM
+# rna-rna-interactome-analysis-using-bwa-mem
 
 ## Overview
 

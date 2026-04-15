@@ -4,7 +4,6 @@ description: VeloViz creates RNA-velocity-informed 2D embeddings to visualize ce
 homepage: https://bioconductor.org/packages/release/bioc/html/veloviz.html
 ---
 
-
 # bioconductor-veloviz
 
 name: bioconductor-veloviz

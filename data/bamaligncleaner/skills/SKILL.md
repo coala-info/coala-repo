@@ -2,8 +2,9 @@
 name: bamaligncleaner
 description: This tool removes unused reference sequences from BAM or CRAM alignment files to reduce header bloat and file size. Use when user asks to remove references with zero mapped reads, filter alignment files using a list of reference names, or clean up genomic alignment headers.
 homepage: https://github.com/maxibor/bamAlignCleaner
+metadata:
+  docker_image: "quay.io/biocontainers/bamaligncleaner:0.3--pyhdfd78af_0"
 ---
-
 
 # bamaligncleaner
 

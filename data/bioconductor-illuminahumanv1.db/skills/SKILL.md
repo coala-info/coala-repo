@@ -4,7 +4,6 @@ description: This package provides annotation data and re-annotation quality gra
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html
 ---
 
-
 # bioconductor-illuminahumanv1.db
 
 name: bioconductor-illuminahumanv1.db

@@ -2,8 +2,9 @@
 name: perl-class-method-modifiers
 description: This tool provides a lightweight way to hook into existing Perl methods using before, after, around, or fresh modifiers. Use when user asks to add hooks to methods, modify method behavior without using Moose, or execute code before or after a specific subroutine.
 homepage: https://github.com/moose/Class-Method-Modifiers
+metadata:
+  docker_image: "quay.io/biocontainers/perl-class-method-modifiers:2.13--pl5321hdfd78af_0"
 ---
-
 
 # perl-class-method-modifiers
 

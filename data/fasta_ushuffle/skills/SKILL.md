@@ -1,9 +1,10 @@
 ---
 name: fasta_ushuffle
-description: "fasta_ushuffle shuffles DNA, RNA, or protein sequences in FASTA files while preserving specific k-mer frequencies. Use when user asks to shuffle sequences, preserve dinucleotide or trinucleotide counts, or generate shuffled control sequences for statistical testing."
+description: fasta_ushuffle shuffles DNA, RNA, or protein sequences in FASTA files while preserving specific k-mer frequencies. Use when user asks to shuffle sequences, preserve dinucleotide or trinucleotide counts, or generate shuffled control sequences for statistical testing.
 homepage: https://github.com/agordon/fasta_ushuffle
+metadata:
+  docker_image: "quay.io/biocontainers/fasta-splitter:0.2.6--0"
 ---
-
 
 # fasta_ushuffle
 

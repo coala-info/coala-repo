@@ -1,7 +1,9 @@
 ---
 name: assembly_with_preprocessing
-description: "This workflow performs hybrid genome assembly by preprocessing paired short-reads and long-reads using fastp and NanoPlot before generating assemblies with Unicycler and visualizing graphs with Bandage. Use this skill when you need to reconstruct complete and accurate microbial genomes by integrating high-fidelity short-read data with long-read sequences to resolve complex genomic repeats."
-homepage: https://workflowhub.eu/workflows/1612
+description: This workflow performs hybrid genome assembly by preprocessing paired short-reads and long-reads using fastp and NanoPlot before generating assemblies with Unicycler and visualizing graphs with Bandage. Use this skill when you need to reconstruct complete and accurate microbial genomes by integrating high-fidelity short-read data with long-read sequences to resolve complex genomic repeats.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # assembly_with_preprocessing

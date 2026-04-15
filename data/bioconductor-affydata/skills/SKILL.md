@@ -4,7 +4,6 @@ description: This package provides the Dilution example dataset for demonstratin
 homepage: https://bioconductor.org/packages/release/data/experiment/html/affydata.html
 ---
 
-
 # bioconductor-affydata
 
 name: bioconductor-affydata

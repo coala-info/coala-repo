@@ -4,7 +4,6 @@ description: This tool provides an R interface to the iDigBio Data API for searc
 homepage: https://cloud.r-project.org/web/packages/ridigbio/index.html
 ---
 
-
 # r-ridigbio
 
 name: r-ridigbio

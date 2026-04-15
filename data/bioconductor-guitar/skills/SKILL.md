@@ -4,7 +4,6 @@ description: This tool visualizes the distribution of RNA-related genomic featur
 homepage: https://bioconductor.org/packages/release/bioc/html/Guitar.html
 ---
 
-
 # bioconductor-guitar
 
 name: bioconductor-guitar

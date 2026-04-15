@@ -4,7 +4,6 @@ description: This package provides annotation and sequence data for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u95b.html
 ---
 
-
 # bioconductor-pd.hg.u95b
 
 name: bioconductor-pd.hg.u95b

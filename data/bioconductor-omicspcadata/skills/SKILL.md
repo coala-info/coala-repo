@@ -4,7 +4,6 @@ description: This package provides integrated transcriptomic and epigenomic data
 homepage: https://bioconductor.org/packages/release/data/experiment/html/OMICsPCAdata.html
 ---
 
-
 # bioconductor-omicspcadata
 
 ## Overview

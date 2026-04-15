@@ -4,7 +4,6 @@ description: This package provides the base SQLite annotation database for Malar
 homepage: https://bioconductor.org/packages/release/data/annotation/html/malaria.db0.html
 ---
 
-
 # bioconductor-malaria.db0
 
 name: bioconductor-malaria.db0

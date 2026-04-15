@@ -4,7 +4,6 @@ description: This package provides access to fitness consequence (fitCons) score
 homepage: https://bioconductor.org/packages/release/data/annotation/html/fitCons.UCSC.hg19.html
 ---
 
-
 # bioconductor-fitcons.ucsc.hg19
 
 name: bioconductor-fitcons.ucsc.hg19

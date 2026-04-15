@@ -2,8 +2,9 @@
 name: perl-par-packer
 description: The perl-par-packer tool bundles Perl scripts and their dependencies into single, portable executables or self-contained scripts. Use when user asks to create stand-alone binaries, package Perl applications with dependencies, or distribute scripts to systems without required modules.
 homepage: https://github.com/rschupp/PAR-Packer
+metadata:
+  docker_image: "quay.io/biocontainers/perl-par-packer:1.036--pl5321h7b50bb2_6"
 ---
-
 
 # perl-par-packer
 

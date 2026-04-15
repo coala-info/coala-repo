@@ -4,7 +4,6 @@ description: This tool performs joint adaptive mean-variance regularization and 
 homepage: https://cran.r-project.org/web/packages/mvr/index.html
 ---
 
-
 # r-mvr
 
 name: r-mvr

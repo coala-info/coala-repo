@@ -4,7 +4,6 @@ description: This tool manages and retrieves sharded cis-eQTL association statis
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/geuvStore2.html
 ---
 
-
 # bioconductor-geuvstore2
 
 name: bioconductor-geuvstore2

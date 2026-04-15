@@ -1,10 +1,12 @@
 ---
 name: gtn-training-workflow-reports
-description: "This Galaxy workflow processes the Iris dataset using Datamash for statistical aggregation and ggplot2 for generating comparative sepal and petal scatterplots. Use this skill when you need to perform exploratory data analysis on morphological measurements to identify species-specific patterns through automated data cleaning and visualization."
-homepage: https://workflowhub.eu/workflows/1402
+description: This Galaxy workflow processes the Iris dataset using Datamash for statistical aggregation and ggplot2 for generating comparative sepal and petal scatterplots. Use this skill when you need to perform exploratory data analysis on morphological measurements to identify species-specific patterns through automated data cleaning and visualization.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN Training: Workflow Reports
+# gtn-training-workflow-reports
 
 ## Overview
 

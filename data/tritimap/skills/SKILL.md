@@ -2,6 +2,8 @@
 name: tritimap
 description: Triti-Map is a bioinformatics pipeline designed to identify trait-associated genomic regions and candidate genes in large-genome Triticeae species. Use when user asks to identify trait association intervals, detect mutations, or assemble genes absent from a reference genome.
 homepage: https://github.com/fei0810/Triti-Map
+metadata:
+  docker_image: "quay.io/biocontainers/tritimap:0.9.7--pyh5e36f6f_0"
 ---
 
 # tritimap

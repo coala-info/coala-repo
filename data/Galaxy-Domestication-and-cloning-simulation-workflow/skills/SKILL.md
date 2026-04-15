@@ -1,10 +1,12 @@
 ---
 name: domestication-and-cloning-simulation-workflow-v2
-description: "This synthetic biology workflow processes genetic fragments and simulation plans using tools like Sculpt Sequences and Domestication Of New Parts to prepare DNA for Golden Gate assembly. Use this skill when you need to automate the domestication of novel genetic parts by removing restricted enzyme sites and verifying manufacturability before simulating complex cloning procedures."
-homepage: https://workflowhub.eu/workflows/2001
+description: This synthetic biology workflow processes genetic fragments and simulation plans using tools like Sculpt Sequences and Domestication Of New Parts to prepare DNA for Golden Gate assembly. Use this skill when you need to automate the domestication of novel genetic parts by removing restricted enzyme sites and verifying manufacturability before simulating complex cloning procedures.
+homepage: https://parisbiofoundry.org/the-asu-biofoundry/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Domestication and cloning simulation workflow v2
+# domestication-and-cloning-simulation-workflow-v2
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The r-dgeclustering package automates diagnostic plotting for RNA-s
 homepage: https://cran.r-project.org/web/packages/dgeclustering/index.html
 ---
 
-
 # r-dgeclustering
 
 ## Overview

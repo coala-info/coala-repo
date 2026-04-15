@@ -4,7 +4,6 @@ description: This tool visualizes genomic data and microarray expression levels 
 homepage: https://bioconductor.org/packages/release/bioc/html/geneplotter.html
 ---
 
-
 # bioconductor-geneplotter
 
 name: bioconductor-geneplotter

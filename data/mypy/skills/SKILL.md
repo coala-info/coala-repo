@@ -1,9 +1,10 @@
 ---
 name: mypy
-description: "Mypy performs static type checking for Python code to identify errors before runtime. Use when user asks to check types, perform static analysis, catch type-related bugs, or run mypy in strict mode."
+description: Mypy performs static type checking for Python code to identify errors before runtime. Use when user asks to check types, perform static analysis, catch type-related bugs, or run mypy in strict mode.
 homepage: https://github.com/python/mypy
+metadata:
+  docker_image: "biocontainers/mypy:v0.670-2-deb-py3_cv1"
 ---
-
 
 # mypy
 

@@ -2,9 +2,9 @@
 name: tksm
 description: tksm is a modular toolkit for simulating long-read RNA sequencing workflows and generating synthetic reads. Use when user asks to simulate long-read RNA sequencing, generate synthetic reads, simulate bulk RNA-seq, simulate single-cell barcodes, apply PCR amplification, add polyA tails, simulate molecule truncation, add adapters or TSO, generate reads with errors, or simulate non-strand-specific libraries.
 homepage: https://github.com/vpc-ccg/tksm
+metadata:
+  docker_image: "quay.io/biocontainers/tksm:0.6.1--py310ha025fb0_1"
 ---
-
-
 
 # tksm
 

@@ -1,10 +1,12 @@
 ---
 name: gigascience_fusions_demonstration_sts26t-gent_workflow
-description: "This workflow processes paired-end RNA-Seq reads, a human reference genome, and GTF annotations using STAR and Arriba to identify gene fusions and generate a protein fusion database. Use this skill when you need to detect chimeric transcripts and translate them into potential neoantigen sequences for cancer immunotherapy research."
-homepage: https://workflowhub.eu/workflows/1442
+description: This workflow processes paired-end RNA-Seq reads, a human reference genome, and GTF annotations using STAR and Arriba to identify gene fusions and generate a protein fusion database. Use this skill when you need to detect chimeric transcripts and translate them into potential neoantigen sequences for cancer immunotherapy research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gigascience_Fusions_demonstration_STS26T-Gent_Workflow
+# gigascience_fusions_demonstration_sts26t-gent_workflow
 
 ## Overview
 

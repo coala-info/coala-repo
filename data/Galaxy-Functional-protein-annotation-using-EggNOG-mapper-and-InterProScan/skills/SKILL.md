@@ -1,10 +1,12 @@
 ---
 name: functional-annotation
-description: "This Galaxy workflow performs functional annotation of protein sequences using eggNOG Mapper and InterProScan to identify orthologous groups and conserved protein domains. Use this skill when you need to characterize the biological roles, metabolic pathways, and molecular functions of predicted proteins from a genome annotation project."
-homepage: https://workflowhub.eu/workflows/755
+description: This Galaxy workflow performs functional annotation of protein sequences using eggNOG Mapper and InterProScan to identify orthologous groups and conserved protein domains. Use this skill when you need to characterize the biological roles, metabolic pathways, and molecular functions of predicted proteins from a genome annotation project.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Functional annotation
+# functional-annotation
 
 ## Overview
 

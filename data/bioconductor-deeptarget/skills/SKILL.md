@@ -4,7 +4,6 @@ description: This tool integrates drug sensitivity profiles with genetic knockou
 homepage: https://bioconductor.org/packages/release/bioc/html/DeepTarget.html
 ---
 
-
 # bioconductor-deeptarget
 
 name: bioconductor-deeptarget

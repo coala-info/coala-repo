@@ -4,7 +4,6 @@ description: This package provides the ttf2pt1 utility to convert TrueType fonts
 homepage: https://cloud.r-project.org/web/packages/Rttf2pt1/index.html
 ---
 
-
 # r-rttf2pt1
 
 name: r-rttf2pt1

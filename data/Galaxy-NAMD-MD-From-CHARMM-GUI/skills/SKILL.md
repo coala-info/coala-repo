@@ -1,10 +1,12 @@
 ---
 name: namd-md-from-charmm-gui
-description: "This computational chemistry workflow executes molecular dynamics simulations using NAMD based on PDB, PSF, STR, and PRM files provided by CHARMM-GUI. Use this skill when you need to perform NVT and NPT equilibration or production runs on solvated molecular systems to study their structural dynamics and thermodynamic properties."
-homepage: https://workflowhub.eu/workflows/1700
+description: This computational chemistry workflow executes molecular dynamics simulations using NAMD based on PDB, PSF, STR, and PRM files provided by CHARMM-GUI. Use this skill when you need to perform NVT and NPT equilibration or production runs on solvated molecular systems to study their structural dynamics and thermodynamic properties.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# NAMD MD From CHARMM GUI
+# namd-md-from-charmm-gui
 
 ## Overview
 

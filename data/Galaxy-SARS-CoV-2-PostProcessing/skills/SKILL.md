@@ -1,10 +1,12 @@
 ---
 name: sars-cov-2-postprocessing
-description: "This SARS-CoV-2 genomics workflow processes consensus genomes and aligned reads using Nextclade for clade assignment and JBrowse for visual inspection against reference annotations and amplicons. Use this skill when you need to assign viral lineages, identify mutations, and visually validate genomic variants within the context of SARS-CoV-2 surveillance."
-homepage: https://workflowhub.eu/workflows/520
+description: This SARS-CoV-2 genomics workflow processes consensus genomes and aligned reads using Nextclade for clade assignment and JBrowse for visual inspection against reference annotations and amplicons. Use this skill when you need to assign viral lineages, identify mutations, and visually validate genomic variants within the context of SARS-CoV-2 surveillance.
+homepage: https://www.sanbi.ac.za/
+metadata:
+  docker_image: "N/A"
 ---
 
-# SARS-CoV-2 PostProcessing
+# sars-cov-2-postprocessing
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: ucsc-coltransform
 description: ucsc-coltransform performs rapid arithmetic modification of specific columns in tabular data. Use when user asks to normalize signal tracks, convert units, scale data, multiply a column, shift data, add a constant to a column, or apply combined arithmetic transformations.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-coltransform:482--h0b57e2e_0"
 ---
-
 
 # ucsc-coltransform
 

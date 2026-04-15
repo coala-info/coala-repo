@@ -4,7 +4,6 @@ description: This R package performs Receiver Operating Characteristic analysis 
 homepage: https://bioconductor.org/packages/release/bioc/html/ROC.html
 ---
 
-
 # bioconductor-roc
 
 name: bioconductor-roc

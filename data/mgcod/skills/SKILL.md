@@ -2,8 +2,9 @@
 name: mgcod
 description: mgcod recognizes genetic codes and annotates protein-coding regions in prokaryotic and phage DNA. Use when user asks to annotate genes, detect genetic code switches, identify stop codon reassignments, or generate gene isoforms in viral genomes.
 homepage: https://github.com/gatech-genemark/Mgcod
+metadata:
+  docker_image: "quay.io/biocontainers/mgcod:1.0.2--hdfd78af_0"
 ---
-
 
 # mgcod
 

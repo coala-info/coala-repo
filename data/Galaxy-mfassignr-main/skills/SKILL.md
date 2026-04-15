@@ -1,10 +1,12 @@
 ---
 name: molecular-formula-assignment-and-recalibration-with-mfassign
-description: "This metabolomics workflow processes mass spectrometry feature tables using the MFAssignR package to perform noise estimation, mass recalibration, and multi-element molecular formula assignment. Use this skill when you need to improve mass accuracy through recalibration and identify unambiguous molecular formulas in ultrahigh-resolution mass spectra of complex chemical mixtures."
-homepage: https://workflowhub.eu/workflows/1351
+description: This metabolomics workflow processes mass spectrometry feature tables using the MFAssignR package to perform noise estimation, mass recalibration, and multi-element molecular formula assignment. Use this skill when you need to improve mass accuracy through recalibration and identify unambiguous molecular formulas in ultrahigh-resolution mass spectra of complex chemical mixtures.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Molecular formula assignment and recalibration with MFAssignR package.
+# molecular-formula-assignment-and-recalibration-with-mfassign
 
 ## Overview
 

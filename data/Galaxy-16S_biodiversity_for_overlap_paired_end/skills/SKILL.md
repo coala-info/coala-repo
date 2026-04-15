@@ -1,10 +1,12 @@
 ---
 name: 16s_biodiversity_for_overlap_paired_end
-description: "This Galaxy workflow processes paired-end 16S metagenomic dataset collections through quality control, read merging with Pear, and OTU clustering with VSearch to perform differential abundance and biodiversity analysis using Phyloseq and DESeq2. Use this skill when you need to identify taxonomic shifts between microbial communities, calculate alpha and beta diversity metrics, or detect differentially abundant taxa in overlapping paired-end sequencing data."
-homepage: https://workflowhub.eu/workflows/232
+description: This Galaxy workflow processes paired-end 16S metagenomic dataset collections through quality control, read merging with Pear, and OTU clustering with VSearch to perform differential abundance and biodiversity analysis using Phyloseq and DESeq2. Use this skill when you need to identify taxonomic shifts between microbial communities, calculate alpha and beta diversity metrics, or detect differentially abundant taxa in overlapping paired-end sequencing data.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 16S_biodiversity_for_overlap_paired_end
+# 16s_biodiversity_for_overlap_paired_end
 
 ## Overview
 

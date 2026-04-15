@@ -4,7 +4,6 @@ description: This tool provides SIFT functional predictions for human non-synony
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SIFT.Hsapiens.dbSNP132.html
 ---
 
-
 # bioconductor-sift.hsapiens.dbsnp132
 
 name: bioconductor-sift.hsapiens.dbsnp132

@@ -2,8 +2,9 @@
 name: nemo
 description: Nemo is a specialized simulation framework for modeling evolutionary biology and complex meta-population dynamics. Use when user asks to configure life-cycle events, run individual-based genetic simulations, or model the evolution of multiple traits under varying environmental scenarios.
 homepage: http://nemo2.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/nemo:2.3.51--h1c77041_2"
 ---
-
 
 # nemo
 

@@ -1,10 +1,12 @@
 ---
 name: workflow-3-functional-information-quick
-description: "This metatranscriptomics workflow processes taxon, gene family, and pathway abundance data using HUMAnN and MetaPhlAn tools to normalize, regroup, and rename functional features. Use this skill when you need to characterize the functional potential of a microbial community by linking specific metabolic pathways and gene families to the taxonomic groups responsible for them."
-homepage: https://workflowhub.eu/workflows/1447
+description: This metatranscriptomics workflow processes taxon, gene family, and pathway abundance data using HUMAnN and MetaPhlAn tools to normalize, regroup, and rename functional features. Use this skill when you need to characterize the functional potential of a microbial community by linking specific metabolic pathways and gene families to the taxonomic groups responsible for them.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 3: Functional Information (quick)
+# workflow-3-functional-information-quick
 
 ## Overview
 

@@ -2,6 +2,8 @@
 name: mtgrasp
 description: mtGrasp automates the assembly and standardization of high-quality mitochondrial genomes from Illumina paired-end sequencing data. Use when user asks to generate reference-grade mitogenome assemblies, annotate mitochondrial sequences using MITOS, or optimize de novo assembly parameters for mitochondrial DNA.
 homepage: https://github.com/bcgsc/mtGrasp
+metadata:
+  docker_image: "quay.io/biocontainers/mtgrasp:1.1.8--py312h7e72e81_0"
 ---
 
 # mtgrasp

@@ -4,7 +4,6 @@ description: This package provides masked genome sequences for the Gasterosteus 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Gaculeatus.UCSC.gasAcu1.masked.html
 ---
 
-
 # bioconductor-bsgenome.gaculeatus.ucsc.gasacu1.masked
 
 name: bioconductor-bsgenome.gaculeatus.ucsc.gasacu1.masked

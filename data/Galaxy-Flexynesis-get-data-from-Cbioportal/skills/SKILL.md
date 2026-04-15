@@ -1,10 +1,12 @@
 ---
 name: flexynesis-get-data-from-cbioportal
-description: "This Galaxy workflow retrieves cancer genomics datasets from cBioPortal and processes them using Flexynesis import tools, Table Compute, and text processing utilities to generate structured training and testing data. Use this skill when you need to automate the acquisition and preprocessing of clinical or molecular profiles from cBioPortal for downstream multi-omic data integration and machine learning model development."
-homepage: https://workflowhub.eu/workflows/1849
+description: This Galaxy workflow retrieves cancer genomics datasets from cBioPortal and processes them using Flexynesis import tools, Table Compute, and text processing utilities to generate structured training and testing data. Use this skill when you need to automate the acquisition and preprocessing of clinical or molecular profiles from cBioPortal for downstream multi-omic data integration and machine learning model development.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Flexynesis - get data from Cbioportal
+# flexynesis-get-data-from-cbioportal
 
 ## Overview
 

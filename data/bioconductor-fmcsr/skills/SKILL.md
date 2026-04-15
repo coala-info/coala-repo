@@ -1,9 +1,8 @@
 ---
 name: bioconductor-fmcsr
-description: "This tool performs mismatch-tolerant Maximum Common Substructure searching and structural similarity analysis for small molecules. Use when user asks to compare chemical structures, identify common subgraphs with atom or bond mismatches, perform MCS-based clustering, or visualize shared substructures between compounds."
+description: This tool performs mismatch-tolerant Maximum Common Substructure searching and structural similarity analysis for small molecules. Use when user asks to compare chemical structures, identify common subgraphs with atom or bond mismatches, perform MCS-based clustering, or visualize shared substructures between compounds.
 homepage: https://bioconductor.org/packages/release/bioc/html/fmcsR.html
 ---
-
 
 # bioconductor-fmcsr
 

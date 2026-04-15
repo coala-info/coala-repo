@@ -4,7 +4,6 @@ description: This tool enables tidy data manipulation for SummarizedExperiment o
 homepage: https://bioconductor.org/packages/release/bioc/html/plyxp.html
 ---
 
-
 # bioconductor-plyxp
 
 name: bioconductor-plyxp

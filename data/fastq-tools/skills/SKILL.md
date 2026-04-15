@@ -2,6 +2,8 @@
 name: fastq-tools
 description: fastq-tools is a collection of high-speed utilities for processing, filtering, and summarizing Next-Generation Sequencing data in FASTQ format. Use when user asks to generate read statistics, filter by quality, trim sequences, convert to FASTA, sample reads, or sort datasets.
 homepage: http://homes.cs.washington.edu/~dcjones/fastq-tools/
+metadata:
+  docker_image: "quay.io/biocontainers/fastq-tools:0.8.3--h1104d80_7"
 ---
 
 # fastq-tools

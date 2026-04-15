@@ -1,9 +1,10 @@
 ---
 name: kounta
-description: "kounta generates a unified matrix of k-mer counts from multiple genomic datasets using kmc and Unix utilities. Use when user asks to create a k-mer count matrix, identify shared genomic signatures across samples, or generate a presence-absence matrix from assemblies or reads."
+description: kounta generates a unified matrix of k-mer counts from multiple genomic datasets using kmc and Unix utilities. Use when user asks to create a k-mer count matrix, identify shared genomic signatures across samples, or generate a presence-absence matrix from assemblies or reads.
 homepage: https://github.com/tseemann/kounta
+metadata:
+  docker_image: "quay.io/biocontainers/kounta:0.2.3--0"
 ---
-
 
 # kounta
 

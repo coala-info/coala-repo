@@ -4,7 +4,6 @@ description: This package provides access to curated long-read Oxford Nanopore R
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NanoporeRNASeq.html
 ---
 
-
 # bioconductor-nanoporernaseq
 
 name: bioconductor-nanoporernaseq

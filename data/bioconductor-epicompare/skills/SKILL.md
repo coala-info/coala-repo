@@ -4,7 +4,6 @@ description: EpiCompare is an R package for benchmarking and quality control of 
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiCompare.html
 ---
 
-
 # bioconductor-epicompare
 
 ## Overview

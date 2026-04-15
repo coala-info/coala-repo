@@ -4,7 +4,6 @@ description: bioconductor-fella performs network-based enrichment analysis for m
 homepage: https://bioconductor.org/packages/release/bioc/html/FELLA.html
 ---
 
-
 # bioconductor-fella
 
 name: bioconductor-fella

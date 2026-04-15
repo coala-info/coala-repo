@@ -1,9 +1,12 @@
 ---
 name: cwl-macromolecular-coarse-grained-flexibility-tutorial
-description: "This CWL workflow utilizes BioExcel Building Blocks to generate protein conformational ensembles from 3D structures using Brownian Dynamics, Discrete Molecular Dynamics, and Normal Mode Analysis tools. Use this skill when you need to characterize macromolecular flexibility or explore the conformational landscape of a protein to understand its dynamic behavior and biological function."
-homepage: https://workflowhub.eu/workflows/552
+description: This CWL workflow utilizes BioExcel Building Blocks to generate protein conformational ensembles from 3D structures using Brownian Dynamics, Discrete Molecular Dynamics, and Normal Mode Analysis tools. Use this skill when you need to characterize macromolecular flexibility or explore the conformational landscape of a protein to understand its dynamic behavior and biological function.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Macromolecular Coarse-Grained Flexibility tutorial
+
+# cwl-macromolecular-coarse-grained-flexibility-tutorial
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool estimates the number of susceptibility loci and effect si
 homepage: https://bioconductor.org/packages/release/bioc/html/INPower.html
 ---
 
-
 # bioconductor-inpower
 
 name: bioconductor-inpower

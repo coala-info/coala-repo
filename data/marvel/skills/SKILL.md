@@ -2,8 +2,9 @@
 name: marvel
 description: MARVEL identifies bacteriophage sequences within metagenomic bins using functional annotation and protein domain searching. Use when user asks to predict phage genomes from metagenomic bins, adjust classification confidence thresholds, or filter bins by size.
 homepage: http://github.com/quadram-institute-bioscience/marvel/
+metadata:
+  docker_image: "quay.io/biocontainers/marvel:0.2--py39hdfd78af_4"
 ---
-
 
 # marvel
 

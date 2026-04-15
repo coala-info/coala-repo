@@ -4,7 +4,6 @@ description: SCArray.sat extends the Seurat framework to support large-scale sin
 homepage: https://bioconductor.org/packages/release/bioc/html/SCArray.sat.html
 ---
 
-
 # bioconductor-scarray.sat
 
 ## Overview

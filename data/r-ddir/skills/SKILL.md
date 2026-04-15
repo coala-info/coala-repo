@@ -4,7 +4,6 @@ description: This tool accesses and retrieves multi-omics dataset metadata from 
 homepage: https://cran.r-project.org/web/packages/ddir/index.html
 ---
 
-
 # r-ddir
 
 name: r-ddir

@@ -2,8 +2,9 @@
 name: paragone
 description: ParaGone is a bioinformatics pipeline that resolves paralogs and extracts orthologous sequences from gene families for phylogenetic analysis. Use when user asks to resolve paralogy, infer orthologs from target capture datasets, or process HybPiper outputs into aligned fasta files.
 homepage: https://github.com/chrisjackson-pellicle/ParaGone
+metadata:
+  docker_image: "quay.io/biocontainers/paragone:1.1.3--pyhdfd78af_2"
 ---
-
 
 # paragone
 

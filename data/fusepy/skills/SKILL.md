@@ -1,9 +1,10 @@
 ---
 name: fusepy
-description: "fusepy provides Python bindings for FUSE to create custom filesystems in user space by mapping system calls to Python methods. Use when user asks to implement the Operations interface, mount virtual drives, or create filesystems in Python."
+description: fusepy provides Python bindings for FUSE to create custom filesystems in user space by mapping system calls to Python methods. Use when user asks to implement the Operations interface, mount virtual drives, or create filesystems in Python.
 homepage: http://github.com/terencehonles/fusepy
+metadata:
+  docker_image: "quay.io/biocontainers/fusepy:2.0.4--py36_0"
 ---
-
 
 # fusepy
 

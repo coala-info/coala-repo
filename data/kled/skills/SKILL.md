@@ -1,9 +1,10 @@
 ---
 name: kled
-description: "kled is a high-performance structural variant caller designed for long-read sequencing data. Use when user asks to identify structural variants from long-read BAM files, call variants using technology-specific presets for ONT or PacBio, or perform haplotype-aware variant calling."
+description: kled is a high-performance structural variant caller designed for long-read sequencing data. Use when user asks to identify structural variants from long-read BAM files, call variants using technology-specific presets for ONT or PacBio, or perform haplotype-aware variant calling.
 homepage: https://github.com/CoREse/kled
+metadata:
+  docker_image: "quay.io/biocontainers/kled:1.2.10--h4f462e4_0"
 ---
-
 
 # kled
 

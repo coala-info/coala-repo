@@ -4,7 +4,6 @@ description: This package provides tools and datasets to reproduce transcription
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Fletcher2013b.html
 ---
 
-
 # bioconductor-fletcher2013b
 
 name: bioconductor-fletcher2013b

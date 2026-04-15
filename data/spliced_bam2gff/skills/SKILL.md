@@ -2,8 +2,9 @@
 name: spliced_bam2gff
 description: This tool converts BAM alignment files into GFF2 format while correctly interpreting spliced alignments to define exon and intron boundaries. Use when user asks to convert BAM to GFF2, process spliced RNA-seq alignments, or partition genomic alignments into loci for parallel processing.
 homepage: https://github.com/nanoporetech/spliced_bam2gff
+metadata:
+  docker_image: "quay.io/biocontainers/spliced_bam2gff:1.3--he881be0_1"
 ---
-
 
 # spliced_bam2gff
 

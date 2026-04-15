@@ -2,8 +2,9 @@
 name: embl-api-validator
 description: This tool validates ENA flat files for submission compliance. Use when user asks to validate ENA flat files.
 homepage: http://www.ebi.ac.uk/ena/software/flat-file-validator
+metadata:
+  docker_image: "quay.io/biocontainers/embl-api-validator:1.1.180--1"
 ---
-
 
 # embl-api-validator
 

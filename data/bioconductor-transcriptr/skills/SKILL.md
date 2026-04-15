@@ -4,7 +4,6 @@ description: The transcriptR package identifies and quantifies primary transcrip
 homepage: https://bioconductor.org/packages/release/bioc/html/transcriptR.html
 ---
 
-
 # bioconductor-transcriptr
 
 ## Overview

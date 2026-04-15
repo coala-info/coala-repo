@@ -4,7 +4,6 @@ description: The r-taxa tool provides a framework for storing, manipulating, and
 homepage: https://cloud.r-project.org/web/packages/taxa/index.html
 ---
 
-
 # r-taxa
 
 name: r-taxa

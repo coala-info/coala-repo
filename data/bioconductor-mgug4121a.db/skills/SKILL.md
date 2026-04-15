@@ -4,7 +4,6 @@ description: This package provides annotation data for the Agilent Mouse Genome 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgug4121a.db.html
 ---
 
-
 # bioconductor-mgug4121a.db
 
 name: bioconductor-mgug4121a.db

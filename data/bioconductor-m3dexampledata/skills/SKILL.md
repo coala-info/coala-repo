@@ -4,7 +4,6 @@ description: This package provides example single-cell RNA-Seq data from mouse e
 homepage: https://bioconductor.org/packages/release/data/experiment/html/M3DExampleData.html
 ---
 
-
 # bioconductor-m3dexampledata
 
 name: bioconductor-m3dexampledata

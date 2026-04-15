@@ -2,8 +2,9 @@
 name: crisper_recognition_tool
 description: The CRISPR Recognition Tool automatically identifies CRISPR arrays within nucleotide sequences by locating clusters of short repeats and unique spacers. Use when user asks to find CRISPR arrays in FASTA files, annotate genomic sequences, or detect prokaryotic immune system components.
 homepage: http://www.room220.com/crt/
+metadata:
+  docker_image: "quay.io/biocontainers/crisper_recognition_tool:1.2--py35_0"
 ---
-
 
 # crisper_recognition_tool
 

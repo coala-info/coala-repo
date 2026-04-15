@@ -2,8 +2,9 @@
 name: yasm
 description: Yasm is a high-performance assembler that transforms assembly source files into linkable object files or flat binaries. Use when user asks to assemble assembly files, create object files, create flat binaries, specify assembly syntax, set machine architecture, generate debug information, preprocess assembly files, define macros, add include paths, or specify output format.
 homepage: https://github.com/yasm/yasm
+metadata:
+  docker_image: "quay.io/biocontainers/yasm:1.3.0--0"
 ---
-
 
 # yasm
 

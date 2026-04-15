@@ -2,8 +2,9 @@
 name: ucsc-bigbednameditems
 description: The ucsc-bigbednameditems tool extracts specific features from a bigBed file by their names. Use when user asks to extract specific features from a bigBed file by name, retrieve multiple features from a list of names, or query a bigBed file for named items.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigbednameditems:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigbednameditems
 

@@ -1,10 +1,12 @@
 ---
 name: anndata-to-singlecellexperiment-sce-conversion
-description: "This Galaxy workflow converts single-cell transcriptomics data from AnnData format to a SingleCellExperiment object using AnnData Inspect and DropletUtils. Use this skill when you need to migrate single-cell datasets from Python-based Scanpy environments to R-based Bioconductor pipelines for specialized downstream statistical analysis."
-homepage: https://workflowhub.eu/workflows/1523
+description: This Galaxy workflow converts single-cell transcriptomics data from AnnData format to a SingleCellExperiment object using AnnData Inspect and DropletUtils. Use this skill when you need to migrate single-cell datasets from Python-based Scanpy environments to R-based Bioconductor pipelines for specialized downstream statistical analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# AnnData to SingleCellExperiment (SCE) conversion
+# anndata-to-singlecellexperiment-sce-conversion
 
 ## Overview
 

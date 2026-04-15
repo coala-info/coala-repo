@@ -4,7 +4,6 @@ description: The r-bit64 tool provides support for 64-bit signed integers in R u
 homepage: https://cloud.r-project.org/web/packages/bit64/index.html
 ---
 
-
 # r-bit64
 
 name: r-bit64

@@ -4,7 +4,6 @@ description: This package provides access to benchmarking results and datasets f
 homepage: https://bioconductor.org/packages/release/data/experiment/html/benchmarkfdrData2019.html
 ---
 
-
 # bioconductor-benchmarkfdrdata2019
 
 name: bioconductor-benchmarkfdrdata2019

@@ -2,8 +2,9 @@
 name: aletsch
 description: Aletsch is a meta-assembler that reconstructs transcripts from multiple RNA-seq experiments by leveraging shared information across samples. Use when user asks to reconstruct transcripts from multiple samples, perform meta-assembly of RNA-seq data, or assemble low-abundance transcripts from short-read and long-read sequencing technologies.
 homepage: https://github.com/Shao-Group/aletsch
+metadata:
+  docker_image: "quay.io/biocontainers/aletsch:1.1.3--h503566f_1"
 ---
-
 
 # aletsch
 

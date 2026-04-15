@@ -2,8 +2,9 @@
 name: askocli
 description: askocli is a command-line interface for ingesting genomic and tabular data into an AskOmics server. Use when user asks to integrate files into AskOmics, upload GFF or BED data, perform bulk data ingestion, or configure data visibility and metadata for an AskOmics instance.
 homepage: https://github.com/askomics/askocli
+metadata:
+  docker_image: "quay.io/biocontainers/askocli:0.5--py_0"
 ---
-
 
 # askocli
 

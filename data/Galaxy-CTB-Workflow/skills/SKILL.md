@@ -1,10 +1,12 @@
 ---
 name: ctb-workflow
-description: "This computational chemistry workflow retrieves online chemical data and utilizes OpenBabel and ChemFP tools to perform molecular cleaning, filtering, and fingerprint-based clustering. Use this skill when you need to prepare a high-quality compound library by removing fragments and duplicates, assessing natural product likeness, or identifying structural relationships between molecules."
-homepage: https://workflowhub.eu/workflows/1649
+description: This computational chemistry workflow retrieves online chemical data and utilizes OpenBabel and ChemFP tools to perform molecular cleaning, filtering, and fingerprint-based clustering. Use this skill when you need to prepare a high-quality compound library by removing fragments and duplicates, assessing natural product likeness, or identifying structural relationships between molecules.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CTB Workflow
+# ctb-workflow
 
 ## Overview
 

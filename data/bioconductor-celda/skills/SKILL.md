@@ -4,7 +4,6 @@ description: This tool provides Bayesian hierarchical models for bi-clustering s
 homepage: https://bioconductor.org/packages/release/bioc/html/celda.html
 ---
 
-
 # bioconductor-celda
 
 name: bioconductor-celda

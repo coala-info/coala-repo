@@ -4,7 +4,6 @@ description: This package provides example microarray datasets and utility funct
 homepage: https://bioconductor.org/packages/release/data/experiment/html/dyebiasexamples.html
 ---
 
-
 # bioconductor-dyebiasexamples
 
 name: bioconductor-dyebiasexamples

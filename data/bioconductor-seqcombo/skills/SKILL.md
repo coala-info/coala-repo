@@ -4,7 +4,6 @@ description: This tool visualizes genetic reassortment events by creating hybrid
 homepage: https://bioconductor.org/packages/release/bioc/html/seqcombo.html
 ---
 
-
 # bioconductor-seqcombo
 
 name: bioconductor-seqcombo

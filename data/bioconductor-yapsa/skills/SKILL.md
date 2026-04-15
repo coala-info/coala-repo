@@ -4,7 +4,6 @@ description: This tool performs supervised mutational signature analysis using L
 homepage: https://bioconductor.org/packages/release/bioc/html/YAPSA.html
 ---
 
-
 # bioconductor-yapsa
 
 name: bioconductor-yapsa

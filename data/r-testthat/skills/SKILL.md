@@ -4,7 +4,6 @@ description: The testthat package provides a structured framework for performing
 homepage: https://cloud.r-project.org/web/packages/testthat/index.html
 ---
 
-
 # r-testthat
 
 ## Overview

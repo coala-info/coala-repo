@@ -1,10 +1,12 @@
 ---
 name: rna-seq-analysis-single-end-read-processing-and-quantificati
-description: "This workflow processes single-end FASTQ collections through quality control with fastp, alignment via STAR, and multi-method quantification using featureCounts, StringTie, and Cufflinks. Use this skill when you need to determine gene expression levels, normalized FPKM/TPM values, and genomic coverage tracks from transcriptomic data while accounting for specific library strandedness and annotation requirements."
-homepage: https://workflowhub.eu/workflows/400
+description: This workflow processes single-end FASTQ collections through quality control with fastp, alignment via STAR, and multi-method quantification using featureCounts, StringTie, and Cufflinks. Use this skill when you need to determine gene expression levels, normalized FPKM/TPM values, and genomic coverage tracks from transcriptomic data while accounting for specific library strandedness and annotation requirements.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA-Seq Analysis: Single-End Read Processing and Quantification
+# rna-seq-analysis-single-end-read-processing-and-quantificati
 
 ## Overview
 

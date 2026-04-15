@@ -4,7 +4,6 @@ description: This tool encodes biological or symbolic sequences into Chaos Game 
 homepage: https://cran.r-project.org/web/packages/kaos/index.html
 ---
 
-
 # r-kaos
 
 name: r-kaos

@@ -2,8 +2,9 @@
 name: setuptools_scm
 description: setuptools_scm automates Python package versioning by extracting metadata from source code management systems like Git or Mercurial. Use when user asks to automate versioning, manage package versions using Git tags, or include SCM-tracked files in a source distribution.
 homepage: https://github.com/pypa/setuptools-scm
+metadata:
+  docker_image: "quay.io/biocontainers/setuptools_cython:0.2.1--py27_1"
 ---
-
 
 # setuptools_scm
 

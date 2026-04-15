@@ -2,8 +2,9 @@
 name: spacepharer
 description: SpacePHARER detects interactions between prokaryotes and phages by performing sensitive homology searches between CRISPR spacers and viral genomes. Use when user asks to predict phage-host interactions, identify which phages infect specific hosts, or search CRISPR spacer databases against phage sequences.
 homepage: https://github.com/soedinglab/spacepharer
+metadata:
+  docker_image: "quay.io/biocontainers/spacepharer:5.c2e680a--hd6d6fdc_7"
 ---
-
 
 # spacepharer
 

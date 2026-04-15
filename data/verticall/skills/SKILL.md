@@ -2,6 +2,8 @@
 name: verticall
 description: Verticall reconstructs the vertical evolutionary history of bacteria by identifying and excluding horizontally acquired DNA sequences from genomic datasets. Use when user asks to identify vertical inheritance patterns, mask horizontal gene transfer in alignments, or generate distance matrices for large-scale bacterial phylogenetics.
 homepage: https://github.com/rrwick/Verticall
+metadata:
+  docker_image: "quay.io/biocontainers/verticall:0.4.3--pyhdfd78af_0"
 ---
 
 # verticall

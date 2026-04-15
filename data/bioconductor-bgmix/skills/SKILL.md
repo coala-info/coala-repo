@@ -4,7 +4,6 @@ description: bioconductor-bgmix performs Bayesian mixture modeling to identify d
 homepage: https://bioconductor.org/packages/3.5/bioc/html/BGmix.html
 ---
 
-
 # bioconductor-bgmix
 
 name: bioconductor-bgmix

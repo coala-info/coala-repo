@@ -4,7 +4,6 @@ description: scMAGeCK analyzes single-cell CRISPR screens by linking guide RNA p
 homepage: https://bioconductor.org/packages/3.11/bioc/html/scMAGeCK.html
 ---
 
-
 # bioconductor-scmageck
 
 ## Overview

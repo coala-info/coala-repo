@@ -4,7 +4,6 @@ description: This package provides specialized algorithms for normalizing high-t
 homepage: https://bioconductor.org/packages/release/bioc/html/qpcrNorm.html
 ---
 
-
 # bioconductor-qpcrnorm
 
 ## Overview

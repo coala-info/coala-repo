@@ -4,6 +4,8 @@ description: This pipeline aggregates RNA-seq and microarray count datasets from
 homepage: https://github.com/nf-core/stableexpression
 ---
 
+# stableexpression
+
 ## Overview
 The nf-core/stableexpression pipeline addresses the challenge of identifying highly stable genes across multiple transcriptomic datasets, which is a critical step for selecting reliable RT-qPCR reference genes. It automates the retrieval of public data, standardizes gene identifiers, and applies robust statistical scoring to rank genes by their expression stability.
 

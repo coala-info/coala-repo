@@ -4,7 +4,6 @@ description: This package provides probe sequence data and microarray coordinate
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ygs98probe.html
 ---
 
-
 # bioconductor-ygs98probe
 
 name: bioconductor-ygs98probe

@@ -2,8 +2,9 @@
 name: cistrome_beta
 description: This tool integrates ChIP-seq binding peaks with differential expression data to identify direct target genes and determine a transcription factor's regulatory function. Use when user asks to identify direct target genes, calculate regulatory potential scores, or integrate ChIP-seq and transcriptome data using BETA.
 homepage: https://github.com/hanfeisun/BETA
+metadata:
+  docker_image: "quay.io/biocontainers/cistrome-ceas:1.0.2b1--py27_1"
 ---
-
 
 # cistrome_beta
 

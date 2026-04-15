@@ -1,9 +1,10 @@
 ---
 name: enzymm
-description: "Detects catalytic enzyme residues in protein structures by matching a library of known templates. Use when user asks to identify potential catalytic sites within protein structures, analyze enzyme mechanisms, or compare enzyme active site geometries."
+description: Detects catalytic enzyme residues in protein structures by matching a library of known templates. Use when user asks to identify potential catalytic sites within protein structures, analyze enzyme mechanisms, or compare enzyme active site geometries.
 homepage: https://pypi.org/project/enzymm/
+metadata:
+  docker_image: "quay.io/biocontainers/enzymm:0.3.1--pyhdfd78af_1"
 ---
-
 
 # enzymm
 

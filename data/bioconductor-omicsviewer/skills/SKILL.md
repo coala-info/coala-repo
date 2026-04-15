@@ -4,7 +4,6 @@ description: This tool provides an interactive Shiny-based interface for explori
 homepage: https://bioconductor.org/packages/release/bioc/html/omicsViewer.html
 ---
 
-
 # bioconductor-omicsviewer
 
 ## Overview

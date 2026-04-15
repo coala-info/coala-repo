@@ -2,8 +2,9 @@
 name: perl-return-multilevel
 description: This tool provides a way to exit from deeply nested call stacks back to a specific higher-level point using a scoped return callback. Use when user asks to perform a multi-level return, escape nested callbacks, or implement non-local control flow without using exceptions.
 homepage: http://metacpan.org/pod/Return::MultiLevel
+metadata:
+  docker_image: "quay.io/biocontainers/perl-return-multilevel:0.08--pl5321hdfd78af_0"
 ---
-
 
 # perl-return-multilevel
 

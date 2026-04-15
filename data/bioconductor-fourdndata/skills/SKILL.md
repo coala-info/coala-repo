@@ -4,7 +4,6 @@ description: This package provides programmatic access to uniformly processed 4D
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fourDNData.html
 ---
 
-
 # bioconductor-fourdndata
 
 name: bioconductor-fourdndata

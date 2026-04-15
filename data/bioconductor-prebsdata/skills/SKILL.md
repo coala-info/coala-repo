@@ -4,7 +4,6 @@ description: This package provides sample BAM files and experiment data for the 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prebsdata.html
 ---
 
-
 # bioconductor-prebsdata
 
 name: bioconductor-prebsdata

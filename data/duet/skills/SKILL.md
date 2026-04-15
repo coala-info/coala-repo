@@ -2,8 +2,9 @@
 name: duet
 description: Duet performs SNP calling, phasing, and structural variant detection for Oxford Nanopore long-read data to produce high-confidence phased structural variants. Use when user asks to call phased structural variants, integrate SNP and SV signatures, or detect variants in low-coverage ONT datasets.
 homepage: https://github.com/yekaizhou/duet
+metadata:
+  docker_image: "quay.io/biocontainers/duet:1.0--pyhdfd78af_0"
 ---
-
 
 # duet
 

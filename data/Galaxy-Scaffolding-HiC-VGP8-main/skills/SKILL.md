@@ -1,10 +1,12 @@
 ---
 name: scaffolding-with-hi-c-data-vgp8
-description: "This workflow performs genome assembly scaffolding by integrating Hi-C paired-end reads with GFA-format assemblies using YAHS, BWA-MEM2, and PretextMap. Use this skill when you need to organize genomic contigs into chromosome-scale scaffolds and validate the structural integrity of a de novo assembly using chromatin contact data."
-homepage: https://workflowhub.eu/workflows/625
+description: This workflow performs genome assembly scaffolding by integrating Hi-C paired-end reads with GFA-format assemblies using YAHS, BWA-MEM2, and PretextMap. Use this skill when you need to organize genomic contigs into chromosome-scale scaffolds and validate the structural integrity of a de novo assembly using chromatin contact data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Scaffolding with Hi-C data VGP8
+# scaffolding-with-hi-c-data-vgp8
 
 ## Overview
 

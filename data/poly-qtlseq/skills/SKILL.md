@@ -2,6 +2,8 @@
 name: poly-qtlseq
 description: PolyploidQtlSeq identifies genomic regions associated with specific traits in polyploid species by automating read mapping, variant detection, and SNP-index calculation. Use when user asks to perform QTL-seq analysis on polyploid organisms, calculate QTL detection thresholds using simulation-based approaches, or automate the pipeline from raw reads to statistical plotting.
 homepage: https://github.com/TatsumiMizubayashi/PolyploidQtlSeq
+metadata:
+  docker_image: "quay.io/biocontainers/poly-qtlseq:1.2.6--hdfd78af_0"
 ---
 
 # poly-qtlseq

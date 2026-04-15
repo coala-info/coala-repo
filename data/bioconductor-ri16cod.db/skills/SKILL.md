@@ -4,7 +4,6 @@ description: This package provides annotation data for the ri16cod platform to m
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ri16cod.db.html
 ---
 
-
 # bioconductor-ri16cod.db
 
 name: bioconductor-ri16cod.db

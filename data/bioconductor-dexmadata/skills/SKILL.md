@@ -4,7 +4,6 @@ description: This package provides essential data objects, gene ID mapping table
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DExMAdata.html
 ---
 
-
 # bioconductor-dexmadata
 
 name: bioconductor-dexmadata

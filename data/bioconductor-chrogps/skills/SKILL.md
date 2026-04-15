@@ -4,7 +4,6 @@ description: This tool visualizes and analyzes epigenome maps using Multi-Dimens
 homepage: https://bioconductor.org/packages/3.8/bioc/html/chroGPS.html
 ---
 
-
 # bioconductor-chrogps
 
 name: bioconductor-chrogps

@@ -1,9 +1,10 @@
 ---
 name: lirtmats
-description: "lirtmats identifies metabolites by matching experimental LC-MS data against retention time libraries. Use when user asks to identify metabolites, match retention times, or process LC-MS data using a CLI or GUI."
+description: lirtmats identifies metabolites by matching experimental LC-MS data against retention time libraries. Use when user asks to identify metabolites, match retention times, or process LC-MS data using a CLI or GUI.
 homepage: https://pypi.org/project/lirtmats/
+metadata:
+  docker_image: "quay.io/biocontainers/lirtmats:1.0.0--pyhdfd78af_0"
 ---
-
 
 # lirtmats
 

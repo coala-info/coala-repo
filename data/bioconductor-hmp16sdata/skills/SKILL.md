@@ -4,7 +4,6 @@ description: This package provides access to Human Microbiome Project 16S rRNA s
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HMP16SData.html
 ---
 
-
 # bioconductor-hmp16sdata
 
 name: bioconductor-hmp16sdata

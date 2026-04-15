@@ -1,9 +1,10 @@
 ---
 name: ampliconnoise
-description: "Ampliconnoise denoises high-throughput amplicon sequencing data from the 454 platform to remove sequencing artifacts. Use when user asks to split multiplexed SFF files, denoise flowgrams using PyroNoise, truncate sequences, or denoise sequences using SeqNoise."
+description: Ampliconnoise denoises high-throughput amplicon sequencing data from the 454 platform to remove sequencing artifacts. Use when user asks to split multiplexed SFF files, denoise flowgrams using PyroNoise, truncate sequences, or denoise sequences using SeqNoise.
 homepage: https://github.com/fhcrc/ampliconnoise
+metadata:
+  docker_image: "biocontainers/ampliconnoise:v1.29-8-deb_cv1"
 ---
-
 
 # ampliconnoise
 

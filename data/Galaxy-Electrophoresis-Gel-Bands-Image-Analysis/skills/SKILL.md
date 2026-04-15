@@ -1,10 +1,12 @@
 ---
 name: electrophoresis-gel-bands-image-analysis
-description: "This bioimaging workflow processes electrophoresis gel images using QuPath and feature extraction tools to quantify band intensities from regions of interest. Use this skill when you need to perform precise densitometry or comparative quantification of molecular bands to analyze protein expression or nucleic acid concentrations."
-homepage: https://workflowhub.eu/workflows/1848
+description: This bioimaging workflow processes electrophoresis gel images using QuPath and feature extraction tools to quantify band intensities from regions of interest. Use this skill when you need to perform precise densitometry or comparative quantification of molecular bands to analyze protein expression or nucleic acid concentrations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Electrophoresis-Gel-Bands-Image-Analysis
+# electrophoresis-gel-bands-image-analysis
 
 ## Overview
 

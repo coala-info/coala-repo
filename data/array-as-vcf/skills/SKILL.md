@@ -2,8 +2,9 @@
 name: array-as-vcf
 description: This tool converts proprietary SNP array text exports into the standard Variant Call Format. Use when user asks to convert Affymetrix or Lumi array files to VCF, auto-detect array formats, or generate allele lookup tables for genomic data.
 homepage: https://github.com/LUMC/array-as-vcf
+metadata:
+  docker_image: "quay.io/biocontainers/array-as-vcf:1.1.0--pyhdfd78af_0"
 ---
-
 
 # array-as-vcf
 

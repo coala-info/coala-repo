@@ -1,10 +1,12 @@
 ---
 name: climate-101
-description: "This climate science workflow processes city-specific temperature data and ensemble means using Copernicus Essential Climate Variables, climate stripes, and psy_maps to generate visual representations of climate change. Use this skill when you need to analyze historical temperature variations, create climate stripes for specific locations, or visualize essential climate variables through maps and scatterplots."
-homepage: https://workflowhub.eu/workflows/1441
+description: This climate science workflow processes city-specific temperature data and ensemble means using Copernicus Essential Climate Variables, climate stripes, and psy_maps to generate visual representations of climate change. Use this skill when you need to analyze historical temperature variations, create climate stripes for specific locations, or visualize essential climate variables through maps and scatterplots.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Climate 101
+# climate-101
 
 ## Overview
 

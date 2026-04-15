@@ -1,9 +1,10 @@
 ---
 name: enzbert
-description: "Enzbert predicts the functional annotation of enzymes from protein sequences. Use when user asks to predict enzyme function from protein sequence."
+description: Enzbert predicts the functional annotation of enzymes from protein sequences. Use when user asks to predict enzyme function from protein sequence.
 homepage: https://gitlab.inria.fr/nbuton/tfpc/-/tree/EnzBert_conda
+metadata:
+  docker_image: "quay.io/biocontainers/enzbert:1.1--pyh7e72e81_0"
 ---
-
 
 # enzbert
 

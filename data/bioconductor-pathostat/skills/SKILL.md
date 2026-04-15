@@ -1,9 +1,8 @@
 ---
 name: bioconductor-pathostat
-description: "PathoStat performs statistical analysis and visualization of metagenomic data from taxonomic profiling reports. Use when user asks to perform data filtering, visualize relative abundance, calculate alpha or beta diversity, identify differential expression, or find biomarkers in microbiome data."
+description: PathoStat performs statistical analysis and visualization of metagenomic data from taxonomic profiling reports. Use when user asks to perform data filtering, visualize relative abundance, calculate alpha or beta diversity, identify differential expression, or find biomarkers in microbiome data.
 homepage: https://bioconductor.org/packages/release/bioc/html/PathoStat.html
 ---
-
 
 # bioconductor-pathostat
 

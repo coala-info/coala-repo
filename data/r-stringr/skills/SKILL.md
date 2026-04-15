@@ -4,7 +4,6 @@ description: The r-stringr package provides a consistent and cohesive set of fun
 homepage: https://cloud.r-project.org/web/packages/stringr/index.html
 ---
 
-
 # r-stringr
 
 name: r-stringr

@@ -4,7 +4,6 @@ description: StabMap performs mosaic single-cell data integration by projecting 
 homepage: https://bioconductor.org/packages/release/bioc/html/StabMap.html
 ---
 
-
 # bioconductor-stabmap
 
 ## Overview

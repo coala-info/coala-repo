@@ -2,6 +2,8 @@
 name: tracs
 description: TRACS infers transmission links and genetic distances between bacterial samples by analyzing metagenomic data with an empirical Bayes approach. Use when user asks to build a reference database, align reads, calculate SNP distances, or identify transmission clusters and outbreaks.
 homepage: https://github.com/gtonkinhill/tracs
+metadata:
+  docker_image: "quay.io/biocontainers/tracs:1.0.1--py312h43eeafb_1"
 ---
 
 # tracs

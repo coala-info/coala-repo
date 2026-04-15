@@ -2,8 +2,9 @@
 name: ucsc-fasplit
 description: ucsc-fasplit partitions FASTA files into smaller segments based on record count, sequence name, or base pair size while maintaining header-sequence pairings. Use when user asks to split FASTA files into a specific number of chunks, divide sequences by name, or break genomic data into pieces of a certain size or at gaps.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fasplit:482--h0b57e2e_0"
 ---
-
 
 # ucsc-fasplit
 

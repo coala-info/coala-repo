@@ -1,10 +1,12 @@
 ---
 name: generate-nx-and-size-plots-for-multiple-assemblies
-description: "This bioinformatics workflow processes a collection of FASTA genome assemblies using gfastats and ggplot2 to generate comparative Nx and size distribution plots. Use this skill when you need to evaluate and visualize the improvement of assembly contiguity and quality across different stages of the scaffolding process."
-homepage: https://workflowhub.eu/workflows/1057
+description: This bioinformatics workflow processes a collection of FASTA genome assemblies using gfastats and ggplot2 to generate comparative Nx and size distribution plots. Use this skill when you need to evaluate and visualize the improvement of assembly contiguity and quality across different stages of the scaffolding process.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Generate Nx and Size plots for multiple assemblies
+# generate-nx-and-size-plots-for-multiple-assemblies
 
 ## Overview
 

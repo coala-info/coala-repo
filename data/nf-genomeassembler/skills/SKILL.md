@@ -4,6 +4,8 @@ description: This pipeline performs de novo genome assembly, polishing, and scaf
 homepage: https://github.com/nf-core/genomeassembler
 ---
 
+# genomeassembler
+
 ## Overview
 nf-core/genomeassembler addresses the challenge of generating high-quality de novo genome assemblies from long-read sequencing data. It streamlines the process of selecting assemblers, applying polishing algorithms to correct errors, and using scaffolding tools to increase assembly continuity.
 

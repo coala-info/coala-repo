@@ -1,9 +1,10 @@
 ---
 name: perl-spreadsheet-parseexcel
-description: "This tool reads and extracts data from legacy Excel binary files in the .xls format. Use when user asks to parse Excel BIFF files, extract cell values from spreadsheets, or convert .xls data into machine-readable formats."
+description: This tool reads and extracts data from legacy Excel binary files in the .xls format. Use when user asks to parse Excel BIFF files, extract cell values from spreadsheets, or convert .xls data into machine-readable formats.
 homepage: http://github.com/runrig/spreadsheet-parseexcel/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-spreadsheet-parseexcel:0.66--pl5321hdfd78af_0"
 ---
-
 
 # perl-spreadsheet-parseexcel
 

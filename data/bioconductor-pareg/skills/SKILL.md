@@ -4,7 +4,6 @@ description: This tool performs pathway enrichment analysis by regressing gene-l
 homepage: https://bioconductor.org/packages/3.16/bioc/html/pareg.html
 ---
 
-
 # bioconductor-pareg
 
 name: bioconductor-pareg

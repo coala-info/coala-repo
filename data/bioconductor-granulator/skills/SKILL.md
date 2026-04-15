@@ -4,7 +4,6 @@ description: The granulator package provides a unified interface for estimating 
 homepage: https://bioconductor.org/packages/release/bioc/html/granulator.html
 ---
 
-
 # bioconductor-granulator
 
 ## Overview

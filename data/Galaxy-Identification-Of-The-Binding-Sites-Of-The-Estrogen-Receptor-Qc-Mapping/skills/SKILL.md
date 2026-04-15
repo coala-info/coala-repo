@@ -1,10 +1,12 @@
 ---
 name: identification-of-the-binding-sites-of-the-estrogen-receptor
-description: "This Galaxy workflow processes FASTQ sequencing data to identify Estrogen Receptor binding sites using FastQC for quality control, Trim Galore! for adapter trimming, and Bowtie2 for genomic mapping. Use this skill when you need to perform quality assessment and alignment of ChIP-seq data to characterize the epigenetic landscape of Estrogen Receptor interactions in clinical samples."
-homepage: https://workflowhub.eu/workflows/1619
+description: This Galaxy workflow processes FASTQ sequencing data to identify Estrogen Receptor binding sites using FastQC for quality control, Trim Galore! for adapter trimming, and Bowtie2 for genomic mapping. Use this skill when you need to perform quality assessment and alignment of ChIP-seq data to characterize the epigenetic landscape of Estrogen Receptor interactions in clinical samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Identification Of The Binding Sites Of The Estrogen Receptor - Qc Mapping
+# identification-of-the-binding-sites-of-the-estrogen-receptor
 
 ## Overview
 

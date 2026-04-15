@@ -1,10 +1,12 @@
 ---
 name: mitogenome-assembly-vgp0
-description: "This workflow assembles mitochondrial genomes from PacBio HiFi reads using MitoHiFi by leveraging a species' Latin name to automatically retrieve reference data. Use this skill when you need to generate a high-quality, annotated mitogenome assembly and associated coverage statistics for a specific organism as part of a comparative genomics or biodiversity study."
-homepage: https://workflowhub.eu/workflows/738
+description: This workflow assembles mitochondrial genomes from PacBio HiFi reads using MitoHiFi by leveraging a species' Latin name to automatically retrieve reference data. Use this skill when you need to generate a high-quality, annotated mitogenome assembly and associated coverage statistics for a specific organism as part of a comparative genomics or biodiversity study.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mitogenome Assembly VGP0
+# mitogenome-assembly-vgp0
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: MMDiff2 is an R package for the statistical comparison of ChIP-seq 
 homepage: https://bioconductor.org/packages/release/bioc/html/MMDiff2.html
 ---
 
-
 # bioconductor-mmdiff2
 
 ## Overview

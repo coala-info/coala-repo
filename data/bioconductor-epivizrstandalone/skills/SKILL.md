@@ -4,7 +4,6 @@ description: This tool runs the Epiviz interactive genomic visualization applica
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrStandalone.html
 ---
 
-
 # bioconductor-epivizrstandalone
 
 name: bioconductor-epivizrstandalone

@@ -4,7 +4,6 @@ description: The ggmanh package generates Manhattan plots from GWAS or PWAS resu
 homepage: https://bioconductor.org/packages/release/bioc/html/ggmanh.html
 ---
 
-
 # bioconductor-ggmanh
 
 ## Overview

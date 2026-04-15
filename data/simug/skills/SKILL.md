@@ -1,9 +1,10 @@
 ---
 name: simug
-description: "simuG generates synthetic genomes by introducing a full spectrum of genomic variations into an existing reference sequence. Use when user asks to generate synthetic genomes, simulate random mutations, create personalized reference genomes from VCF files, or model mutation parameters from real-world datasets."
+description: simuG generates synthetic genomes by introducing a full spectrum of genomic variations into an existing reference sequence. Use when user asks to generate synthetic genomes, simulate random mutations, create personalized reference genomes from VCF files, or model mutation parameters from real-world datasets.
 homepage: https://github.com/yjx1217/simuG
+metadata:
+  docker_image: "quay.io/biocontainers/simug:1.0.1--hdfd78af_0"
 ---
-
 
 # simug
 

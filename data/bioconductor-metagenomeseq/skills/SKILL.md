@@ -4,7 +4,6 @@ description: bioconductor-metagenomeseq performs statistical analysis and normal
 homepage: https://bioconductor.org/packages/release/bioc/html/metagenomeSeq.html
 ---
 
-
 # bioconductor-metagenomeseq
 
 name: bioconductor-metagenomeseq

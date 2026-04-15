@@ -4,7 +4,6 @@ description: This tool performs automated quality control and reproducibility an
 homepage: https://bioconductor.org/packages/3.6/bioc/html/yaqcaffy.html
 ---
 
-
 # bioconductor-yaqcaffy
 
 name: bioconductor-yaqcaffy

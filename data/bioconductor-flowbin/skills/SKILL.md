@@ -4,7 +4,6 @@ description: This tool combines multi-tube flow cytometry data into a unified ex
 homepage: https://bioconductor.org/packages/release/bioc/html/flowBin.html
 ---
 
-
 # bioconductor-flowbin
 
 name: bioconductor-flowbin

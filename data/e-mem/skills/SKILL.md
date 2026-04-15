@@ -2,8 +2,9 @@
 name: e-mem
 description: e-mem is a memory operating system that transforms conversation logs into structured episodic and profile-based long-term memory for AI agents. Use when user asks to start memory services, store structured message data, or retrieve relevant past context using hybrid search.
 homepage: https://github.com/EverMind-AI/EverMemOS
+metadata:
+  docker_image: "biocontainers/e-mem:v1.0.1-2-deb_cv1"
 ---
-
 
 # e-mem
 

@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of microarray experiments u
 homepage: https://bioconductor.org/packages/3.5/bioc/html/maanova.html
 ---
 
-
 # bioconductor-maanova
 
 name: bioconductor-maanova

@@ -1,7 +1,9 @@
 ---
 name: pbmm2
-description: "pbmm2 is a high-performance wrapper for minimap2 designed to align Pacific Biosciences reads to a reference genome. Use when user asks to align PacBio subreads or HiFi data, index a reference genome, or generate sorted and indexed BAM files for downstream analysis."
+description: pbmm2 is a high-performance wrapper for minimap2 designed to align Pacific Biosciences reads to a reference genome. Use when user asks to align PacBio subreads or HiFi data, index a reference genome, or generate sorted and indexed BAM files for downstream analysis.
 homepage: https://github.com/PacificBiosciences/pbmm2
+metadata:
+  docker_image: "quay.io/biocontainers/pbmm2:26.1.0--h9ee0642_0"
 ---
 
 # pbmm2

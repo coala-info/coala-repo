@@ -4,7 +4,6 @@ description: This package provides comprehensive mappings between manufacturer-s
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pedbarrayv10.db.html
 ---
 
-
 # bioconductor-pedbarrayv10.db
 
 name: bioconductor-pedbarrayv10.db

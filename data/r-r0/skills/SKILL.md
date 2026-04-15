@@ -4,7 +4,6 @@ description: This tool estimates basic and real-time reproduction numbers from e
 homepage: https://cran.r-project.org/web/packages/r0/index.html
 ---
 
-
 # r-r0
 
 name: r-r0

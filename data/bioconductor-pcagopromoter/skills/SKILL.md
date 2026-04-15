@@ -4,7 +4,6 @@ description: The pcaGoPromoter package interprets high-dimensional biological da
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pcaGoPromoter.html
 ---
 
-
 # bioconductor-pcagopromoter
 
 ## Overview

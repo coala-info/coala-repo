@@ -1,10 +1,12 @@
 ---
 name: sentinel-2-example
-description: "This workflow processes Sentinel-2 satellite imagery to calculate spectral and biodiversity indices and generate diversity maps using specialized ecology tools. Use this skill when you need to analyze satellite-derived spectral data to monitor ecosystem health or map spatial patterns of biodiversity across a landscape."
-homepage: https://workflowhub.eu/workflows/1669
+description: This workflow processes Sentinel-2 satellite imagery to calculate spectral and biodiversity indices and generate diversity maps using specialized ecology tools. Use this skill when you need to analyze satellite-derived spectral data to monitor ecosystem health or map spatial patterns of biodiversity across a landscape.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Sentinel 2 example
+# sentinel-2-example
 
 ## Overview
 

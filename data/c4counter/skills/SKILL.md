@@ -2,8 +2,9 @@
 name: c4counter
 description: c4counter identifies and characterizes human C4 gene copies and structural variations from sequence data. Use when user asks to count C4A and C4B genes, detect HERV-K(C4) insertions, or visualize the C4 locus structure.
 homepage: https://github.com/irunonayran/c4counter.git
+metadata:
+  docker_image: "quay.io/biocontainers/c4counter:0.0.2--pyhdfd78af_0"
 ---
-
 
 # c4counter
 

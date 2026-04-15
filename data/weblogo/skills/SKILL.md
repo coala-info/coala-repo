@@ -2,8 +2,9 @@
 name: weblogo
 description: Generates sequence logos from multiple sequence alignments. Use when user asks to visualize sequence conservation and patterns in biological sequences.
 homepage: https://github.com/WebLogo/weblogo
+metadata:
+  docker_image: "quay.io/biocontainers/weblogo:3.7.9--pyhdfd78af_0"
 ---
-
 
 # weblogo
 

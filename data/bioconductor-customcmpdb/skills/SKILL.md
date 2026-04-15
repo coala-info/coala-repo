@@ -4,7 +4,6 @@ description: This package provides a unified interface to query small molecule a
 homepage: https://bioconductor.org/packages/release/bioc/html/customCMPdb.html
 ---
 
-
 # bioconductor-customcmpdb
 
 ## Overview

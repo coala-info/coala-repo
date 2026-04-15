@@ -4,7 +4,6 @@ description: This tool performs statistical meta-analysis of microarray data usi
 homepage: https://bioconductor.org/packages/3.5/bioc/html/metaArray.html
 ---
 
-
 # bioconductor-metaarray
 
 name: bioconductor-metaarray

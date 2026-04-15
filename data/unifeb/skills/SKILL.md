@@ -2,8 +2,9 @@
 name: unifeb
 description: `unifeb` embeds ecological datasets into low-dimensional space using UniFrac distances and Approximate Nearest Neighbor graphs. Use when user asks to embed ecological datasets, visualize ecological data, perform UniFrac analysis, or perform hierarchical embedding.
 homepage: https://github.com/jianshu93/unifeb.git
+metadata:
+  docker_image: "quay.io/biocontainers/unifeb:0.1.1--h3ab6199_0"
 ---
-
 
 # unifeb
 

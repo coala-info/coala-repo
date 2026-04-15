@@ -1,9 +1,10 @@
 ---
 name: ci-proxy
-description: "This tool manages Conda packages, specifically for the bioconda channel. Use when user asks to search for packages, retrieve package information, or understand package availability within the bioconda channel."
+description: This tool manages Conda packages, specifically for the bioconda channel. Use when user asks to search for packages, retrieve package information, or understand package availability within the bioconda channel.
 homepage: https://github.com/cirosantilli/china-dictatorship
+metadata:
+  docker_image: "biocontainers/ci-proxy:latest"
 ---
-
 
 # ci-proxy
 

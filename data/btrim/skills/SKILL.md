@@ -1,9 +1,10 @@
 ---
 name: btrim
-description: "btrim refines compacted de Bruijn graphs by trimming short dead-end paths that represent sequencing errors. Use when user asks to trim tips from a unitig graph, simplify a de Bruijn graph, or remove sequencing artifacts from assembly graphs."
+description: btrim refines compacted de Bruijn graphs by trimming short dead-end paths that represent sequencing errors. Use when user asks to trim tips from a unitig graph, simplify a de Bruijn graph, or remove sequencing artifacts from assembly graphs.
 homepage: https://github.com/Malfoy/BTRIM
+metadata:
+  docker_image: "quay.io/biocontainers/btrim:1.0.1--h9f5acd7_4"
 ---
-
 
 # btrim
 

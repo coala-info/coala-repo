@@ -4,7 +4,6 @@ description: The IWTomics package implements interval-wise testing for functiona
 homepage: https://bioconductor.org/packages/release/bioc/html/IWTomics.html
 ---
 
-
 # bioconductor-iwtomics
 
 ## Overview

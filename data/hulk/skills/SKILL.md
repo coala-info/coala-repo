@@ -1,7 +1,9 @@
 ---
 name: hulk
-description: "HULK creates compact histosketched representations of metagenomic data streams for rapid k-mer frequency analysis. Use when user asks to sketch sequencing reads, calculate pairwise distances between metagenomic datasets, or generate similarity matrices for microbiome samples."
+description: HULK creates compact histosketched representations of metagenomic data streams for rapid k-mer frequency analysis. Use when user asks to sketch sequencing reads, calculate pairwise distances between metagenomic datasets, or generate similarity matrices for microbiome samples.
 homepage: https://github.com/will-rowe/hulk
+metadata:
+  docker_image: "quay.io/biocontainers/hulk:1.0.0--h375a9b1_0"
 ---
 
 # hulk

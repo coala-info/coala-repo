@@ -4,7 +4,6 @@ description: GenomicDistributions provides functions to summarize and visualize 
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicDistributions.html
 ---
 
-
 # bioconductor-genomicdistributions
 
 ## Overview

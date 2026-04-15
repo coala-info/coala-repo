@@ -1,9 +1,10 @@
 ---
 name: bcbio_monitor
-description: "bcbio_monitor provides a web-based interface to visualize and track the real-time progress of bcbio-nextgen sequencing pipelines. Use when user asks to monitor bcbio-nextgen logs, visualize execution flowcharts, or track the status of remote and local bioinformatics analyses."
+description: bcbio_monitor provides a web-based interface to visualize and track the real-time progress of bcbio-nextgen sequencing pipelines. Use when user asks to monitor bcbio-nextgen logs, visualize execution flowcharts, or track the status of remote and local bioinformatics analyses.
 homepage: https://github.com/guillermo-carrasco/bcbio-nextgen-monitor
+metadata:
+  docker_image: "biocontainers/bcbio:v1.1.2-3-deb-py3_cv1"
 ---
-
 
 # bcbio_monitor
 

@@ -4,7 +4,6 @@ description: This package provides genome-wide annotation mappings for the Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomdhumantranscriptcluster.db.html
 ---
 
-
 # bioconductor-clariomdhumantranscriptcluster.db
 
 name: bioconductor-clariomdhumantranscriptcluster.db

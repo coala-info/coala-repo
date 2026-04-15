@@ -4,7 +4,6 @@ description: The r-diagram tool visualizes networks, flowcharts, and ecological 
 homepage: https://cloud.r-project.org/web/packages/diagram/index.html
 ---
 
-
 # r-diagram
 
 name: r-diagram

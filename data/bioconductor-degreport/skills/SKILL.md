@@ -4,7 +4,6 @@ description: DEGreport provides a suite of tools for the post-processing, qualit
 homepage: https://bioconductor.org/packages/release/bioc/html/DEGreport.html
 ---
 
-
 # bioconductor-degreport
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs supervised normalization of microarray data by m
 homepage: https://bioconductor.org/packages/release/bioc/html/snm.html
 ---
 
-
 # bioconductor-snm
 
 name: bioconductor-snm

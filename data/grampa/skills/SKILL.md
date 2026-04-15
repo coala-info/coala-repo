@@ -2,8 +2,9 @@
 name: grampa
 description: GRAMPA reconciles gene trees with species trees using MUL-trees to analyze gene duplications and losses in polyploid species. Use when user asks to identify polyploidy events, perform gene-tree reconciliation with subgenomes, or test specific hypotheses for parental lineages.
 homepage: https://github.com/gwct/grampa
+metadata:
+  docker_image: "quay.io/biocontainers/grampa:1.4.4--pyhdfd78af_0"
 ---
-
 
 # grampa
 

@@ -4,7 +4,6 @@ description: ChIPComp performs quantitative comparison of multiple ChIP-seq data
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPComp.html
 ---
 
-
 # bioconductor-chipcomp
 
 name: bioconductor-chipcomp

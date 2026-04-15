@@ -4,7 +4,6 @@ description: This tool generates spectral libraries for targeted proteomics by c
 homepage: https://bioconductor.org/packages/release/bioc/html/specL.html
 ---
 
-
 # bioconductor-specl
 
 name: bioconductor-specl

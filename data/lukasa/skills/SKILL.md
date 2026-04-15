@@ -2,8 +2,9 @@
 name: lukasa
 description: Lukasa maps protein evidence to eukaryotic genomes using a splice-aware alignment workflow. Use when user asks to map protein sequences to a genome, perform splice-aware protein alignment, or generate GFF3 files for genome annotation.
 homepage: https://github.com/pvanheus/lukasa
+metadata:
+  docker_image: "quay.io/biocontainers/lukasa:0.15.0--py310hdfd78af_0"
 ---
-
 
 # lukasa
 

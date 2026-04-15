@@ -4,7 +4,6 @@ description: This package provides access to AlphaMissense pathogenicity scores 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AlphaMissense.v2023.hg19.html
 ---
 
-
 # bioconductor-alphamissense.v2023.hg19
 
 ## Overview

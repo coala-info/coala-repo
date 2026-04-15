@@ -2,8 +2,9 @@
 name: fastagap
 description: fastagap is a utility for cleaning FASTA files by selectively removing or replacing leading, trailing, and internal gaps. Use when user asks to remove gaps from sequences, trim ragged ends of alignments, filter sequences by missing data percentage, or count gaps in FASTA files.
 homepage: https://github.com/nylander/fastagap
+metadata:
+  docker_image: "quay.io/biocontainers/fastagap:1.0.1--hdfd78af_0"
 ---
-
 
 # fastagap
 

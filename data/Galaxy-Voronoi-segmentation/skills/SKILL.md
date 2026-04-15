@@ -1,10 +1,12 @@
 ---
 name: voronoi-segmentation
-description: "This Galaxy workflow performs Voronoi segmentation on planar RGB TIFF images and seed maps using tools for tessellation, thresholding, and feature extraction. Use this skill when you need to partition an image into distinct regions based on proximity to specific seed points to analyze individual object morphology and spatial distribution in biological or material samples."
-homepage: https://workflowhub.eu/workflows/1522
+description: This Galaxy workflow performs Voronoi segmentation on planar RGB TIFF images and seed maps using tools for tessellation, thresholding, and feature extraction. Use this skill when you need to partition an image into distinct regions based on proximity to specific seed points to analyze individual object morphology and spatial distribution in biological or material samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Voronoi segmentation
+# voronoi-segmentation
 
 ## Overview
 

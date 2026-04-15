@@ -4,7 +4,6 @@ description: This package converts SBML models into R-native data structures for
 homepage: https://bioconductor.org/packages/release/bioc/html/SBMLR.html
 ---
 
-
 # bioconductor-sbmlr
 
 ## Overview

@@ -4,7 +4,6 @@ description: The magrene package identifies and analyzes network motifs to quant
 homepage: https://bioconductor.org/packages/release/bioc/html/magrene.html
 ---
 
-
 # bioconductor-magrene
 
 ## Overview

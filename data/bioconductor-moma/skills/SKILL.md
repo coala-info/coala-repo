@@ -4,7 +4,6 @@ description: Bioconductor-moma identifies master regulator proteins that act as 
 homepage: https://bioconductor.org/packages/release/bioc/html/MOMA.html
 ---
 
-
 # bioconductor-moma
 
 name: bioconductor-moma

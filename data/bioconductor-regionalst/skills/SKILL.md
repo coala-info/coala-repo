@@ -4,7 +4,6 @@ description: RegionalST identifies biologically relevant regions of interest in 
 homepage: https://bioconductor.org/packages/release/bioc/html/RegionalST.html
 ---
 
-
 # bioconductor-regionalst
 
 ## Overview

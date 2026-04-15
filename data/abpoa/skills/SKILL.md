@@ -2,8 +2,9 @@
 name: abpoa
 description: abPOA is a high-performance tool that performs multiple sequence alignment and consensus calling using adaptive banded partial order graphs. Use when user asks to generate consensus sequences from noisy long-reads, create multiple sequence alignments, output alignment graphs in GFA format, or align protein sequences.
 homepage: https://github.com/yangao07/abPOA
+metadata:
+  docker_image: "quay.io/biocontainers/abpoa:1.5.5--h577a1d6_0"
 ---
-
 
 # abpoa
 

@@ -4,7 +4,6 @@ description: This package provides probe sequence data and spatial coordinates f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74aprobe.html
 ---
 
-
 # bioconductor-mgu74aprobe
 
 name: bioconductor-mgu74aprobe

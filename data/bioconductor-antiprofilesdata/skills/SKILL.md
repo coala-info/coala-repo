@@ -4,7 +4,6 @@ description: This package provides curated gene expression z-scores from normal 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/antiProfilesData.html
 ---
 
-
 # bioconductor-antiprofilesdata
 
 ## Overview

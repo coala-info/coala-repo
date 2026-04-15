@@ -4,7 +4,6 @@ description: This R package provides access to a comprehensive database of oncol
 homepage: https://cran.r-project.org/web/packages/oncopharmadb/index.html
 ---
 
-
 # r-oncopharmadb
 
 name: r-oncopharmadb

@@ -4,7 +4,6 @@ description: This package provides brain maps, image masks, and gene expression 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/brainImageRdata.html
 ---
 
-
 # bioconductor-brainimagerdata
 
 name: bioconductor-brainimagerdata

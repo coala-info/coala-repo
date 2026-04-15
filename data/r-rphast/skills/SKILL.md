@@ -4,7 +4,6 @@ description: r-rphast provides an R interface to the PHAST library for comparati
 homepage: https://cran.r-project.org/web/packages/rphast/index.html
 ---
 
-
 # r-rphast
 
 name: r-rphast

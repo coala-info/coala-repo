@@ -4,7 +4,6 @@ description: The GenomicDataCommons package provides an R interface for searchin
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicDataCommons.html
 ---
 
-
 # bioconductor-genomicdatacommons
 
 ## Overview

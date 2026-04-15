@@ -4,7 +4,6 @@ description: This tool creates, manipulates, and visualizes splicing graphs from
 homepage: https://bioconductor.org/packages/release/bioc/html/SplicingGraphs.html
 ---
 
-
 # bioconductor-splicinggraphs
 
 name: bioconductor-splicinggraphs

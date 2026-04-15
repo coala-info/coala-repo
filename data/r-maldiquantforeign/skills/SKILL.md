@@ -4,7 +4,6 @@ description: This tool provides import and export routines for mass spectrometry
 homepage: https://cloud.r-project.org/web/packages/MALDIquantForeign/index.html
 ---
 
-
 # r-maldiquantforeign
 
 name: r-maldiquantforeign

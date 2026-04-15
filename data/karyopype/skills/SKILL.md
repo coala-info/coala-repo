@@ -1,9 +1,10 @@
 ---
 name: karyopype
-description: "karyopype is a Python tool for visualizing genomic intervals and BED files on chromosomal ideograms. Use when user asks to plot genomic regions on a chromosome map, visualize the distribution of ChIP-seq peaks, or create genome-wide ideogram plots."
+description: karyopype is a Python tool for visualizing genomic intervals and BED files on chromosomal ideograms. Use when user asks to plot genomic regions on a chromosome map, visualize the distribution of ChIP-seq peaks, or create genome-wide ideogram plots.
 homepage: http://github.com/jakevc/karyopype
+metadata:
+  docker_image: "quay.io/biocontainers/karyopype:0.1.6--py_0"
 ---
-
 
 # karyopype
 

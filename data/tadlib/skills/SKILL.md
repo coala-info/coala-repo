@@ -2,6 +2,8 @@
 name: tadlib
 description: TADLib is a bioinformatics library for identifying and quantifying structural patterns such as Topologically Associating Domains in Hi-C interaction matrices. Use when user asks to detect hierarchical TADs, calculate aggregation preference, or analyze nested chromatin organization within cooler data files.
 homepage: https://github.com/XiaoTaoWang/TADLib/
+metadata:
+  docker_image: "quay.io/biocontainers/tadlib:0.4.5.post1--pyhdfd78af_1"
 ---
 
 # tadlib

@@ -4,7 +4,6 @@ description: The nleqslv package provides a robust solver for systems of nonline
 homepage: https://cloud.r-project.org/web/packages/nleqslv/index.html
 ---
 
-
 # r-nleqslv
 
 ## Overview

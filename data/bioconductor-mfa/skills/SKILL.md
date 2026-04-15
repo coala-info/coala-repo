@@ -4,7 +4,6 @@ description: This tool performs Bayesian inference of bifurcating gene expressio
 homepage: https://bioconductor.org/packages/release/bioc/html/mfa.html
 ---
 
-
 # bioconductor-mfa
 
 name: bioconductor-mfa

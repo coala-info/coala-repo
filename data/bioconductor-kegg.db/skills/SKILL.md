@@ -4,7 +4,6 @@ description: This tool provides access to legacy KEGG pathway annotation data fo
 homepage: https://bioconductor.org/packages/3.11/data/annotation/html/KEGG.db.html
 ---
 
-
 # bioconductor-kegg.db
 
 name: bioconductor-kegg.db

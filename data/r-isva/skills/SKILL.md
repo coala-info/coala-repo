@@ -4,7 +4,6 @@ description: The isva package performs feature selection by identifying and acco
 homepage: https://cran.r-project.org/web/packages/isva/index.html
 ---
 
-
 # r-isva
 
 ## Overview

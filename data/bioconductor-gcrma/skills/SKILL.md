@@ -4,7 +4,6 @@ description: This tool performs background adjustment and summarization for Affy
 homepage: https://bioconductor.org/packages/release/bioc/html/gcrma.html
 ---
 
-
 # bioconductor-gcrma
 
 name: bioconductor-gcrma

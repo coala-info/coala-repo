@@ -4,7 +4,6 @@ description: FISHalyseR provides automated processing of fluorescence in situ hy
 homepage: https://bioconductor.org/packages/release/bioc/html/FISHalyseR.html
 ---
 
-
 # bioconductor-fishalyser
 
 ## Overview

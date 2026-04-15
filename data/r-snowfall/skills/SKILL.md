@@ -4,7 +4,6 @@ description: The snowfall package provides a simplified wrapper for parallel com
 homepage: https://cloud.r-project.org/web/packages/snowfall/index.html
 ---
 
-
 # r-snowfall
 
 name: r-snowfall

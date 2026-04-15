@@ -4,7 +4,6 @@ description: This package provides tools for reading, writing, filtering, and an
 homepage: https://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html
 ---
 
-
 # bioconductor-variantannotation
 
 name: bioconductor-variantannotation

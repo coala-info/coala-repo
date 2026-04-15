@@ -2,8 +2,9 @@
 name: digestiflow-demux
 description: Digestiflow-demux automates Illumina sequencing demultiplexing by integrating raw data processing with the Digestiflow web platform for metadata management and quality tracking. Use when user asks to execute demultiplexing runs, configure API access, perform dry runs, or push quality metrics to a Digestiflow server.
 homepage: https://github.com/bihealth/digestiflow-demux
+metadata:
+  docker_image: "quay.io/biocontainers/digestiflow-demux:0.5.3--pyhdfd78af_0"
 ---
-
 
 # digestiflow-demux
 

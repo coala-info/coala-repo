@@ -2,8 +2,9 @@
 name: metatree
 description: metatree maps and visualizes polyphyletic groups by comparing query phylogenetic trees against a reference tree to identify topological conflicts. Use when user asks to identify taxonomic inconsistencies across multiple trees, visualize polyphyly, or compare query tree topologies to a designated reference.
 homepage: https://github.com/aaronmussig/metatree
+metadata:
+  docker_image: "quay.io/biocontainers/metatree:0.0.1--py_0"
 ---
-
 
 # metatree
 

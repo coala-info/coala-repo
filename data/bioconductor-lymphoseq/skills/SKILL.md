@@ -4,7 +4,6 @@ description: This tool analyzes high-throughput sequencing data of T-cell and B-
 homepage: https://bioconductor.org/packages/release/bioc/html/LymphoSeq.html
 ---
 
-
 # bioconductor-lymphoseq
 
 name: bioconductor-lymphoseq

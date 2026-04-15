@@ -4,7 +4,6 @@ description: This tool performs statistical analysis and comparison of gene list
 homepage: https://bioconductor.org/packages/release/bioc/html/goProfiles.html
 ---
 
-
 # bioconductor-goprofiles
 
 name: bioconductor-goprofiles

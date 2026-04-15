@@ -2,8 +2,9 @@
 name: scispacy
 description: ScispaCy is a specialized library for processing and analyzing scientific and biomedical text using pre-trained spaCy pipelines. Use when user asks to identify medical entities, perform sentence segmentation on research papers, or link mentions to biomedical databases.
 homepage: https://allenai.github.io/scispacy
+metadata:
+  docker_image: "quay.io/biocontainers/scispacy:0.6.2--pyhdfd78af_1"
 ---
-
 
 # scispacy
 

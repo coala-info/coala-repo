@@ -2,8 +2,9 @@
 name: beast-mcmc
 description: BEAST performs Bayesian MCMC analysis to reconstruct time-scaled phylogenies and test evolutionary hypotheses from molecular sequences. Use when user asks to reconstruct rooted trees, sample from a posterior distribution of phylogenies, summarize trees with TreeAnnotator, or merge MCMC logs.
 homepage: https://beast.community
+metadata:
+  docker_image: "biocontainers/beast-mcmc:v1.10.4dfsg-1-deb_cv1"
 ---
-
 
 # beast-mcmc
 

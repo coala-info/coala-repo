@@ -2,8 +2,9 @@
 name: parnas
 description: PARNAS identifies the most representative taxa in a phylogenetic tree to capture maximum evolutionary diversity or cover the tree within a specific divergence radius. Use when user asks to select representative strains, downsample a large phylogeny, determine optimal sample sizes for diversity coverage, or identify new representatives while accounting for existing ones.
 homepage: https://github.com/flu-crew/parnas
+metadata:
+  docker_image: "quay.io/biocontainers/parnas:0.1.7--pyhdfd78af_0"
 ---
-
 
 # parnas
 

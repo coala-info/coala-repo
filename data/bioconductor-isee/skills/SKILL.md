@@ -4,7 +4,6 @@ description: The iSEE package provides an interactive Shiny interface for explor
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEE.html
 ---
 
-
 # bioconductor-isee
 
 ## Overview

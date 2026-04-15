@@ -4,7 +4,6 @@ description: This package provides platform design annotation and probe-level me
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u133a.html
 ---
 
-
 # bioconductor-pd.hg.u133a
 
 name: bioconductor-pd.hg.u133a

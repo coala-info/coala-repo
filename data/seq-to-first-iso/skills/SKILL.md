@@ -2,8 +2,9 @@
 name: seq-to-first-iso
 description: This tool predicts the isotopic distribution and theoretical mass of peptides under natural abundance and 12C-enriched metabolic labeling conditions. Use when user asks to predict M0 and M1 isotopologue intensities, calculate peptide masses for SLIM-labeling experiments, or account for auxotrophic amino acids in isotopic simulations.
 homepage: https://github.com/pierrepo/seq-to-first-iso
+metadata:
+  docker_image: "quay.io/biocontainers/seq-to-first-iso:1.1.0--py_0"
 ---
-
 
 # seq-to-first-iso
 

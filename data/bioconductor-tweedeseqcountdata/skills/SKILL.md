@@ -4,7 +4,6 @@ description: This package provides RNA-seq count data from the Pickrell et al. (
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tweeDEseqCountData.html
 ---
 
-
 # bioconductor-tweedeseqcountdata
 
 name: bioconductor-tweedeseqcountdata

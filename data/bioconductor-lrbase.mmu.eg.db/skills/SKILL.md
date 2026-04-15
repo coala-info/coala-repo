@@ -4,7 +4,6 @@ description: This package provides a mapping of ligand-receptor gene pairs for M
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Mmu.eg.db.html
 ---
 
-
 # bioconductor-lrbase.mmu.eg.db
 
 ## Overview

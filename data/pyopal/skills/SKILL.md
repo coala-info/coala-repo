@@ -2,8 +2,9 @@
 name: pyopal
 description: PyOpal provides SIMD-accelerated Python bindings for the Opal library to perform fast sequence alignments using multi-sequence vectorization. Use when user asks to align sequences, search a query against a database, or perform high-throughput protein and nucleotide sequence comparisons.
 homepage: https://github.com/althonos/pyopal
+metadata:
+  docker_image: "quay.io/biocontainers/pyopal:0.7.3--py312h9c9b0c2_0"
 ---
-
 
 # pyopal
 

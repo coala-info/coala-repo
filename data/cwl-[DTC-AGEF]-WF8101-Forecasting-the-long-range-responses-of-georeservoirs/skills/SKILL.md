@@ -1,9 +1,12 @@
 ---
 name: dtc-agef-wf8101-forecasting-the-long-range-responses-of-geor
-description: "This CWL workflow utilizes the EPISODES platform and specialized tools for phase association and catalog homogenization to transform raw seismic data into a standardized earthquake catalog with calculated magnitudes of completeness. Use this skill when you need to forecast the long-range responses of georeservoirs or perform spatial and temporal density analyses based on a consistent and homogenized seismic record."
-homepage: https://workflowhub.eu/workflows/1983
+description: This CWL workflow utilizes the EPISODES platform and specialized tools for phase association and catalog homogenization to transform raw seismic data into a standardized earthquake catalog with calculated magnitudes of completeness. Use this skill when you need to forecast the long-range responses of georeservoirs or perform spatial and temporal density analyses based on a consistent and homogenized seismic record.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-AGEF] WF8101: Forecasting the long range responses of georeservoirs
+
+# dtc-agef-wf8101-forecasting-the-long-range-responses-of-geor
 
 ## Overview
 

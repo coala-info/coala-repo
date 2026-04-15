@@ -4,7 +4,6 @@ description: NeuCA performs neural-network based cell type annotation for single
 homepage: https://bioconductor.org/packages/3.14/bioc/html/NeuCA.html
 ---
 
-
 # bioconductor-neuca
 
 name: bioconductor-neuca

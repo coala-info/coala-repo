@@ -4,7 +4,6 @@ description: This tool implements a hybrid gene selection method using multiple 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/mAPKL.html
 ---
 
-
 # bioconductor-mapkl
 
 name: bioconductor-mapkl

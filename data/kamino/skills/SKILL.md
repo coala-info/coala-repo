@@ -2,8 +2,9 @@
 name: kamino
 description: Kamino is a reference-free tool that constructs amino-acid alignments from proteome sequences using a global assembly graph. Use when user asks to construct amino-acid alignments, generate phylogenomic datasets from proteomes, or perform alignment-free sequence analysis.
 homepage: https://github.com/rderelle/kamino
+metadata:
+  docker_image: "quay.io/biocontainers/kamino:0.7.0--h4349ce8_0"
 ---
-
 
 # kamino
 

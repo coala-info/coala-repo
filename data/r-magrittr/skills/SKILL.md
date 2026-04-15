@@ -4,7 +4,6 @@ description: The magrittr package provides the forward-pipe operator and related
 homepage: https://cloud.r-project.org/web/packages/magrittr/index.html
 ---
 
-
 # r-magrittr
 
 name: r-magrittr

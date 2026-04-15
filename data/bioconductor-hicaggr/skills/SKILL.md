@@ -4,7 +4,6 @@ description: bioconductor-hicaggr performs Aggregated Peak Analysis (APA) to vis
 homepage: https://bioconductor.org/packages/release/bioc/html/HicAggR.html
 ---
 
-
 # bioconductor-hicaggr
 
 name: bioconductor-hicaggr

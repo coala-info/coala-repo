@@ -4,7 +4,6 @@ description: This R package analyzes, summarizes, and visualizes outputs from th
 homepage: https://cran.r-project.org/web/packages/pathosurveilr/index.html
 ---
 
-
 # r-pathosurveilr
 
 name: r-pathosurveilr

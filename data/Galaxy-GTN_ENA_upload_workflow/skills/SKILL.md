@@ -1,10 +1,12 @@
 ---
 name: gtn_ena_upload_workflow
-description: "This Galaxy workflow automates the submission of SARS-CoV-2 genomic sequences and metadata to the European Nucleotide Archive using the ENA Upload tool. Use this skill when you need to share viral surveillance data with the global scientific community by depositing raw sequencing reads and study information into public repositories."
-homepage: https://workflowhub.eu/workflows/1409
+description: This Galaxy workflow automates the submission of SARS-CoV-2 genomic sequences and metadata to the European Nucleotide Archive using the ENA Upload tool. Use this skill when you need to share viral surveillance data with the global scientific community by depositing raw sequencing reads and study information into public repositories.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN_ENA_upload_workflow
+# gtn_ena_upload_workflow
 
 ## Overview
 

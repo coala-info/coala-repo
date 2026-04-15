@@ -4,7 +4,6 @@ description: This package provides probe sequence data and location information 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95cprobe.html
 ---
 
-
 # bioconductor-hgu95cprobe
 
 name: bioconductor-hgu95cprobe

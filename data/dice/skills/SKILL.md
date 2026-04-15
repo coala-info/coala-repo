@@ -1,9 +1,10 @@
 ---
 name: dice
-description: "DICE infers the evolutionary history and phylogenetic trees of cells using copy number profiles. Use when user asks to infer copy-number evolution, reconstruct phylogenetic trees from allele-specific or total copy number data, or calculate distance matrices between cells."
+description: DICE infers the evolutionary history and phylogenetic trees of cells using copy number profiles. Use when user asks to infer copy-number evolution, reconstruct phylogenetic trees from allele-specific or total copy number data, or calculate distance matrices between cells.
 homepage: https://github.com/samsonweiner/DICE
+metadata:
+  docker_image: "quay.io/biocontainers/dice:1.1.0--pyhdfd78af_0"
 ---
-
 
 # dice
 

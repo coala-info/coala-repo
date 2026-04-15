@@ -2,6 +2,8 @@
 name: seq2c
 description: Seq2C is a gene-centric framework that identifies copy number variations and genomic imbalances by comparing read depths across targeted sequencing regions. Use when user asks to call CNVs from NGS panels, detect intragenic deletions or amplifications, and normalize sequencing coverage using cohort-based statistics.
 homepage: https://github.com/AstraZeneca-NGS/Seq2C
+metadata:
+  docker_image: "quay.io/biocontainers/seq2c:2019.05.30--pl526_0"
 ---
 
 # seq2c

@@ -1,9 +1,10 @@
 ---
 name: cthreepo
-description: "cthreepo converts sequence identifiers between RefSeq, UCSC, and Ensembl styles for various genomic file formats. Use when user asks to resolve sequence ID mismatches, interconvert chromosome naming conventions, or map identifiers across different assembly reports."
+description: cthreepo converts sequence identifiers between RefSeq, UCSC, and Ensembl styles for various genomic file formats. Use when user asks to resolve sequence ID mismatches, interconvert chromosome naming conventions, or map identifiers across different assembly reports.
 homepage: https://github.com/vkkodali/cthreepo
+metadata:
+  docker_image: "quay.io/biocontainers/cthreepo:0.1.3--pyh7cba7a3_0"
 ---
-
 
 # cthreepo
 

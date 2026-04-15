@@ -4,7 +4,6 @@ description: NanoStringDiff performs differential expression analysis of NanoStr
 homepage: https://bioconductor.org/packages/release/bioc/html/NanoStringDiff.html
 ---
 
-
 # bioconductor-nanostringdiff
 
 ## Overview

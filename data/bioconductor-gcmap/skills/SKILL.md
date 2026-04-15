@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis and gene set en
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gCMAP.html
 ---
 
-
 # bioconductor-gcmap
 
 name: bioconductor-gcmap

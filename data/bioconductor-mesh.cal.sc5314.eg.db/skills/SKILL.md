@@ -4,7 +4,6 @@ description: This package provides mapping between Entrez Gene IDs and Medical S
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Cal.SC5314.eg.db.html
 ---
 
-
 # bioconductor-mesh.cal.sc5314.eg.db
 
 name: bioconductor-mesh.cal.sc5314.eg.db

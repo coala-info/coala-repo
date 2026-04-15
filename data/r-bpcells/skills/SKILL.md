@@ -4,7 +4,6 @@ description: BPCells performs high-performance, memory-efficient single-cell ana
 homepage: https://cran.r-project.org/web/packages/bpcells/index.html
 ---
 
-
 # r-bpcells
 
 name: r-bpcells

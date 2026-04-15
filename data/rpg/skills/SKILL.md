@@ -1,9 +1,10 @@
 ---
 name: rpg
-description: "This tool is a framework for creating Jin Yong-style RPG games with extensive modding support. Use when user asks to develop, mod, or play games built with the 'rpg' framework, or when discussing its technical aspects, development plans, or community contributions."
+description: This tool is a framework for creating Jin Yong-style RPG games with extensive modding support. Use when user asks to develop, mod, or play games built with the 'rpg' framework, or when discussing its technical aspects, development plans, or community contributions.
 homepage: https://github.com/jynew/jynew
+metadata:
+  docker_image: "biocontainers/rpg:v1.1.0_cv1"
 ---
-
 
 # rpg
 

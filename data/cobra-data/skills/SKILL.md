@@ -2,8 +2,9 @@
 name: cobra-data
 description: This tool performs constraint-based reconstruction and analysis of metabolic networks using COBRApy. Use when user asks to load genome-scale models, perform flux balance analysis, simulate gene knockouts, or analyze metabolic flux variability.
 homepage: https://opencobra.github.io/cobrapy
+metadata:
+  docker_image: "biocontainers/cobra-data:v0.14.1-1-deb-py2_cv1"
 ---
-
 
 # cobra-data
 

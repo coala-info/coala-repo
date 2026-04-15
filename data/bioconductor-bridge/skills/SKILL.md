@@ -4,7 +4,6 @@ description: This tool performs robust Bayesian testing for differential gene ex
 homepage: https://bioconductor.org/packages/3.6/bioc/html/bridge.html
 ---
 
-
 # bioconductor-bridge
 
 name: bioconductor-bridge

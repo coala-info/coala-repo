@@ -4,7 +4,6 @@ description: bioconductor-damsel provides an end-to-end workflow for the analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/Damsel.html
 ---
 
-
 # bioconductor-damsel
 
 name: bioconductor-damsel

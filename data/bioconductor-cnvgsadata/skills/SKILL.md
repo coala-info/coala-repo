@@ -4,7 +4,6 @@ description: This package provides demonstration datasets and example files for 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cnvGSAdata.html
 ---
 
-
 # bioconductor-cnvgsadata
 
 name: bioconductor-cnvgsadata

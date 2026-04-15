@@ -2,8 +2,9 @@
 name: cyushuffle
 description: cyushuffle is a high-performance Cython wrapper that randomizes biological sequences while preserving their exact k-let composition. Use when user asks to shuffle sequences, generate null sequences for statistical significance testing, or preserve dinucleotide and trinucleotide frequencies in randomized controls.
 homepage: https://github.com/guma44/ushuffle
+metadata:
+  docker_image: "quay.io/biocontainers/cyushuffle:1.1.2--py39hbcbf7aa_7"
 ---
-
 
 # cyushuffle
 

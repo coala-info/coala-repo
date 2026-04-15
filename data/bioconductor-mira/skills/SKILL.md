@@ -4,7 +4,6 @@ description: This tool aggregates DNA methylation data across genomic region set
 homepage: https://bioconductor.org/packages/release/bioc/html/MIRA.html
 ---
 
-
 # bioconductor-mira
 
 name: bioconductor-mira

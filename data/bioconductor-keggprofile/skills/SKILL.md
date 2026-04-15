@@ -4,7 +4,6 @@ description: KEGGprofile integrates multi-omics data with KEGG pathway maps to v
 homepage: https://bioconductor.org/packages/3.8/bioc/html/KEGGprofile.html
 ---
 
-
 # bioconductor-keggprofile
 
 ## Overview

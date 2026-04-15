@@ -1,9 +1,10 @@
 ---
 name: bamdst
-description: "bamdst is a specialized utility for analyzing sequencing depth and coverage statistics within defined genomic regions. Use when user asks to calculate target enrichment efficiency, evaluate mapping quality, or identify poorly covered genomic regions from BAM files."
+description: bamdst is a specialized utility for analyzing sequencing depth and coverage statistics within defined genomic regions. Use when user asks to calculate target enrichment efficiency, evaluate mapping quality, or identify poorly covered genomic regions from BAM files.
 homepage: https://github.com/shiquan/bamdst
+metadata:
+  docker_image: "biocontainers/bamdst:1.0.9_cv1"
 ---
-
 
 # bamdst
 

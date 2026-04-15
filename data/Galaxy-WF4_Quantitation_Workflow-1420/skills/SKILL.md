@@ -1,10 +1,12 @@
 ---
 name: wf4_quantitation_workflow
-description: "This Galaxy workflow performs protein quantification from raw mass spectrometry data using MaxQuant, a protein database, and an experimental design file. Use this skill when you need to identify and quantify proteins across multiple samples to analyze differential expression or protein abundance in discovery-based proteomics studies."
-homepage: https://workflowhub.eu/workflows/1420
+description: This Galaxy workflow performs protein quantification from raw mass spectrometry data using MaxQuant, a protein database, and an experimental design file. Use this skill when you need to identify and quantify proteins across multiple samples to analyze differential expression or protein abundance in discovery-based proteomics studies.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF4_Quantitation_Workflow
+# wf4_quantitation_workflow
 
 ## Overview
 

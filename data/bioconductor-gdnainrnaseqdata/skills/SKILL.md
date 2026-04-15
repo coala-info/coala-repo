@@ -4,7 +4,6 @@ description: This package provides access to RNA-seq BAM files with specific lev
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gDNAinRNAseqData.html
 ---
 
-
 # bioconductor-gdnainrnaseqdata
 
 name: bioconductor-gdnainrnaseqdata

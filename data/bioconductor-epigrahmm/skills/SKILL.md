@@ -4,7 +4,6 @@ description: epigraHMM performs consensus and differential peak calling in epige
 homepage: https://bioconductor.org/packages/release/bioc/html/epigraHMM.html
 ---
 
-
 # bioconductor-epigrahmm
 
 name: bioconductor-epigrahmm

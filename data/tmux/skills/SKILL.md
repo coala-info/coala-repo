@@ -2,8 +2,9 @@
 name: tmux
 description: tmux is a terminal multiplexer that allows you to create, access, and control multiple terminals from a single screen. Use when user asks to create, attach, or detach terminal sessions, manage windows and panes, query session or pane information, programmatically control tmux, or debug tmux issues.
 homepage: https://github.com/tmux/tmux
+metadata:
+  docker_image: "quay.io/biocontainers/tmux:2.1--1"
 ---
-
 
 # tmux
 

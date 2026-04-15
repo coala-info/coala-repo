@@ -4,7 +4,6 @@ description: NewWave performs dimensionality reduction and batch effect removal 
 homepage: https://bioconductor.org/packages/release/bioc/html/NewWave.html
 ---
 
-
 # bioconductor-newwave
 
 ## Overview

@@ -2,6 +2,8 @@
 name: taxmapper
 description: Taxmapper is a bioinformatics tool used for the taxonomic assignment and classification of DNA sequences against a reference database. Use when user asks to map reads to taxa, search for taxonomic assignments, filter mapping files, or plot taxonomic data.
 homepage: https://bitbucket.org/dbeisser/taxmapper
+metadata:
+  docker_image: "quay.io/biocontainers/taxmapper:1.0.2--py36_0"
 ---
 
 # taxmapper

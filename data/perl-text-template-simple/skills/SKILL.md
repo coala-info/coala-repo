@@ -2,8 +2,9 @@
 name: perl-text-template-simple
 description: This tool provides a high-performance templating engine that embeds native Perl logic and expressions into static text files. Use when user asks to generate dynamic reports, automate boilerplate code creation, or process text templates using Perl flow control.
 homepage: http://metacpan.org/pod/Text::Template::Simple
+metadata:
+  docker_image: "quay.io/biocontainers/perl-text-template-simple:0.91--pl526_0"
 ---
-
 
 # perl-text-template-simple
 

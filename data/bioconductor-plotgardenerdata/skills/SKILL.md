@@ -4,7 +4,6 @@ description: This package provides sample genomic datasets and raw files for the
 homepage: https://bioconductor.org/packages/release/data/experiment/html/plotgardenerData.html
 ---
 
-
 # bioconductor-plotgardenerdata
 
 name: bioconductor-plotgardenerdata

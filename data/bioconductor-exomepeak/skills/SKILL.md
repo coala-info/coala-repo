@@ -4,7 +4,6 @@ description: This tool analyzes MeRIP-seq and m6A-seq data to identify RNA methy
 homepage: https://bioconductor.org/packages/3.6/bioc/html/exomePeak.html
 ---
 
-
 # bioconductor-exomepeak
 
 name: bioconductor-exomepeak

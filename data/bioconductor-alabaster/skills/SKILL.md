@@ -4,7 +4,6 @@ description: The alabaster package serves as an umbrella for the alabaster frame
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.html
 ---
 
-
 # bioconductor-alabaster
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package compares biological states by converting gene expressi
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneExpressionSignature.html
 ---
 
-
 # bioconductor-geneexpressionsignature
 
 ## Overview

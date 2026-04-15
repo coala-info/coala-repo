@@ -1,9 +1,10 @@
 ---
 name: graphaligner
-description: "GraphAligner maps long genomic reads to graph-based reference structures such as GFA or VG formats. Use when user asks to align long reads to a genome graph, map sequences to a variation or de Bruijn graph, or generate alignments in GAF or GAM formats."
+description: GraphAligner maps long genomic reads to graph-based reference structures such as GFA or VG formats. Use when user asks to align long reads to a genome graph, map sequences to a variation or de Bruijn graph, or generate alignments in GAF or GAM formats.
 homepage: https://github.com/maickrau/GraphAligner
+metadata:
+  docker_image: "quay.io/biocontainers/graphaligner:1.0.20--h06902ac_1"
 ---
-
 
 # graphaligner
 

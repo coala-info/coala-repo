@@ -1,10 +1,12 @@
 ---
 name: adam
 description: ADAM is a distributed genomics analysis platform that parallelizes bioinformatics workflows using Apache Spark and schema-aligned Parquet data. Use when user asks to convert legacy genomic files to Parquet, mark duplicates, recalibrate base quality scores, sort reads, or perform large-scale genomic transformations.
+homepage: https://github.com/bigdatagenomics/adam
+metadata:
+  docker_image: "quay.io/biocontainers/adam:1.0.1--hdfd78af_0"
 ---
 
-
-# ADAM: Distributed Genomics Analysis
+# adam
 
 ADAM parallelizes genomic analysis by leveraging Apache Spark. It replaces traditional single-node bioinformatics tools with distributed workflows that use schema-aligned data.
 

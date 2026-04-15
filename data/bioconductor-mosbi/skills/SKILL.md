@@ -4,7 +4,6 @@ description: This tool implements a modular ensemble biclustering framework to i
 homepage: https://bioconductor.org/packages/release/bioc/html/mosbi.html
 ---
 
-
 # bioconductor-mosbi
 
 name: bioconductor-mosbi

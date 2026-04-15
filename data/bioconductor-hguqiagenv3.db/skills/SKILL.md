@@ -4,7 +4,6 @@ description: This package provides SQLite-based mappings between Qiagen Human Ge
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hguqiagenv3.db.html
 ---
 
-
 # bioconductor-hguqiagenv3.db
 
 ## Overview

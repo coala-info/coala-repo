@@ -4,7 +4,6 @@ description: The scrm package provides a highly efficient coalescent simulator f
 homepage: https://cloud.r-project.org/web/packages/scrm/index.html
 ---
 
-
 # r-scrm
 
 ## Overview

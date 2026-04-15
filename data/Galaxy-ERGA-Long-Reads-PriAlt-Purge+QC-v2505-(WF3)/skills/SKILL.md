@@ -1,10 +1,12 @@
 ---
 name: erga-long-reads-prialt-purgeqc-v2505-wf3
-description: "This Galaxy workflow processes primary and alternate contig GFAs using HiFi or ONT long reads to perform haplotig purging and quality assessment via purge_dups, minimap2, BUSCO, and Merqury. Use this skill when you need to remove false duplications and haplotypic overlaps from a draft genome assembly while validating its biological completeness and consensus accuracy."
-homepage: https://workflowhub.eu/workflows/1163
+description: This Galaxy workflow processes primary and alternate contig GFAs using HiFi or ONT long reads to perform haplotig purging and quality assessment via purge_dups, minimap2, BUSCO, and Merqury. Use this skill when you need to remove false duplications and haplotypic overlaps from a draft genome assembly while validating its biological completeness and consensus accuracy.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA Long Reads PriAlt Purge+QC v2505 (WF3)
+# erga-long-reads-prialt-purgeqc-v2505-wf3
 
 ## Overview
 

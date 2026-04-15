@@ -2,6 +2,8 @@
 name: cirtap
 description: cirtap is a command-line utility for mirroring, indexing, and managing large-scale genomic data from the PATRIC FTP server. Use when user asks to mirror the PATRIC database, select high-quality representative genomes, or extract specific sequence sets into consolidated FASTA files.
 homepage: https://github.com/MGXlab/cirtap/
+metadata:
+  docker_image: "quay.io/biocontainers/cirtap:0.3.1--pyh5e36f6f_0"
 ---
 
 # cirtap

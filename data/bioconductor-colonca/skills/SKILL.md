@@ -4,7 +4,6 @@ description: This package provides access to the Alon et al. (1999) colon cancer
 homepage: https://bioconductor.org/packages/release/data/experiment/html/colonCA.html
 ---
 
-
 # bioconductor-colonca
 
 name: bioconductor-colonca

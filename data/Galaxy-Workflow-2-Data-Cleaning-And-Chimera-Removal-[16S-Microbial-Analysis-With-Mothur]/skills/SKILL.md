@@ -1,10 +1,12 @@
 ---
 name: workflow-2-gucfg2galaxy-data-cleaning-and-chimera-removal-16
-description: "This metagenomics workflow processes aligned 16S rRNA sequences and count tables using the Mothur toolset to perform sequence screening, filtering, pre-clustering, and chimera detection via VSEARCH. Use this skill when you need to refine 16S microbial datasets by removing sequencing artifacts, redundant sequences, and chimeric reads to improve the accuracy of downstream diversity and taxonomic analyses."
-homepage: https://workflowhub.eu/workflows/649
+description: This metagenomics workflow processes aligned 16S rRNA sequences and count tables using the Mothur toolset to perform sequence screening, filtering, pre-clustering, and chimera detection via VSEARCH. Use this skill when you need to refine 16S microbial datasets by removing sequencing artifacts, redundant sequences, and chimeric reads to improve the accuracy of downstream diversity and taxonomic analyses.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 2 [gucfg2galaxy]: Data Cleaning And Chimera Removal [16S Microbial Analysis With Mothur]
+# workflow-2-gucfg2galaxy-data-cleaning-and-chimera-removal-16
 
 ## Overview
 

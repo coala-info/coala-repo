@@ -2,8 +2,9 @@
 name: autodock-getdata
 description: This tool installs the AutoDock suite for molecular docking simulations via the Bioconda distribution channel. Use when user asks to install AutoDock, set up a computational environment for docking, or acquire the AutoDock and AutoGrid tools.
 homepage: http://autodock.scripps.edu/
+metadata:
+  docker_image: "biocontainers/autodock-getdata:v4.2.6-6-deb_cv1"
 ---
-
 
 # autodock-getdata
 

@@ -2,6 +2,8 @@
 name: pomoxis
 description: Pomoxis is a suite of bioinformatics utilities designed to streamline the analysis, assembly, and quality assessment of Oxford Nanopore sequencing data. Use when user asks to align reads to a reference, generate draft assemblies, filter or subsample BAM files, and assess assembly accuracy or error profiles.
 homepage: https://github.com/nanoporetech/pomoxis
+metadata:
+  docker_image: "quay.io/biocontainers/pomoxis:0.3.16--pyhdfd78af_0"
 ---
 
 # pomoxis

@@ -4,7 +4,6 @@ description: This package provides modular access to a comprehensive single-cell
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HCATonsilData.html
 ---
 
-
 # bioconductor-hcatonsildata
 
 ## Overview

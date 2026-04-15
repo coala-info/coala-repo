@@ -1,10 +1,12 @@
 ---
 name: 2-plant-virus-confirmation
-description: "This plant virology workflow processes paired-end FASTQ reads using Minimap2 for mapping, Shovill for de novo assembly, and NCBI BLAST+ for sequence identification. Use this skill when you need to validate a preliminary taxonomic classification of a plant virus by assembling mapped reads into contigs and identifying the closest genomic matches."
-homepage: https://workflowhub.eu/workflows/102
+description: This plant virology workflow processes paired-end FASTQ reads using Minimap2 for mapping, Shovill for de novo assembly, and NCBI BLAST+ for sequence identification. Use this skill when you need to validate a preliminary taxonomic classification of a plant virus by assembling mapped reads into contigs and identifying the closest genomic matches.
+homepage: https://www.gembloux.ulg.ac.be/phytopathologie/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 2: Plant virus confirmation
+# 2-plant-virus-confirmation
 
 ## Overview
 

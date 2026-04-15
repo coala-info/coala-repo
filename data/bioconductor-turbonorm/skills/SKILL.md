@@ -4,7 +4,6 @@ description: TurboNorm performs fast microarray normalization and scatterplot sm
 homepage: https://bioconductor.org/packages/release/bioc/html/TurboNorm.html
 ---
 
-
 # bioconductor-turbonorm
 
 name: bioconductor-turbonorm

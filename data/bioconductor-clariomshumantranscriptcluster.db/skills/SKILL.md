@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation data for mapping Clar
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomshumantranscriptcluster.db.html
 ---
 
-
 # bioconductor-clariomshumantranscriptcluster.db
 
 ## Overview

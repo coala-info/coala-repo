@@ -4,7 +4,6 @@ description: OmicsLonDA identifies significant time intervals in longitudinal om
 homepage: https://bioconductor.org/packages/3.9/bioc/html/OmicsLonDA.html
 ---
 
-
 # bioconductor-omicslonda
 
 ## Overview

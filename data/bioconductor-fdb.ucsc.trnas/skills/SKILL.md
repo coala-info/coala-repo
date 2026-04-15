@@ -4,7 +4,6 @@ description: This package provides prefabricated FeatureDb objects for tRNA anno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.UCSC.tRNAs.html
 ---
 
-
 # bioconductor-fdb.ucsc.trnas
 
 name: bioconductor-fdb.ucsc.trnas

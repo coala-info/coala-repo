@@ -4,6 +4,8 @@ description: This pipeline generates Panel of Normals and reference models for C
 homepage: https://github.com/nf-core/createpanelrefs
 ---
 
+# createpanelrefs
+
 ## Overview
 nf-core/createpanelrefs is a bioinformatics helper pipeline designed to create the necessary background models and "Panel of Normals" (PoN) required by various variant calling and copy number analysis tools. It processes multiple input samples to establish a baseline, which is then used in downstream analyses to filter out systematic noise and artifacts.
 

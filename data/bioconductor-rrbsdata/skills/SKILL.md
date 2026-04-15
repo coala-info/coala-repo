@@ -4,7 +4,6 @@ description: The RRBSdata package provides a high-quality reduced representation
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RRBSdata.html
 ---
 
-
 # bioconductor-rrbsdata
 
 ## Overview

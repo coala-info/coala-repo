@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for the mguatlas
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mguatlas5k.db.html
 ---
 
-
 # bioconductor-mguatlas5k.db
 
 name: bioconductor-mguatlas5k.db

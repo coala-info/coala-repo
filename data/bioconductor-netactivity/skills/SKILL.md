@@ -1,9 +1,8 @@
 ---
 name: bioconductor-netactivity
-description: "NetActivity computes gene set activity scores from gene expression data using pre-trained sparsely-connected autoencoder models. Use when user asks to compute pathway activity levels, project gene expression into a lower-dimensional biological space, or identify differentially active gene sets using GTEx or TCGA weights."
+description: NetActivity computes gene set activity scores from gene expression data using pre-trained sparsely-connected autoencoder models. Use when user asks to compute pathway activity levels, project gene expression into a lower-dimensional biological space, or identify differentially active gene sets using GTEx or TCGA weights.
 homepage: https://bioconductor.org/packages/release/bioc/html/NetActivity.html
 ---
-
 
 # bioconductor-netactivity
 

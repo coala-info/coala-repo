@@ -2,8 +2,9 @@
 name: markov_clustering
 description: This tool implements the Markov Clustering algorithm to identify clusters in graphs by simulating stochastic flow. Use when user asks to perform graph clustering, run the MCL algorithm, extract clusters from an adjacency matrix, or tune clustering granularity using inflation parameters.
 homepage: https://github.com/GuyAllard/markov_clustering
+metadata:
+  docker_image: "quay.io/biocontainers/markov_clustering:0.0.6--py_0"
 ---
-
 
 # markov_clustering
 

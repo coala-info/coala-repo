@@ -4,7 +4,6 @@ description: This tool performs quality control for target enrichment sequencing
 homepage: https://bioconductor.org/packages/release/bioc/html/TEQC.html
 ---
 
-
 # bioconductor-teqc
 
 name: bioconductor-teqc

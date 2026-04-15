@@ -1,9 +1,10 @@
 ---
 name: chain2paf
-description: "chain2paf converts genomic alignments from the CHAIN format into the PAF format. Use when user asks to convert CHAIN files to PAF, generate CIGAR strings for genomic alignments, or transform gap-oriented alignments into sequence-level coordinate formats."
+description: chain2paf converts genomic alignments from the CHAIN format into the PAF format. Use when user asks to convert CHAIN files to PAF, generate CIGAR strings for genomic alignments, or transform gap-oriented alignments into sequence-level coordinate formats.
 homepage: https://github.com/AndreaGuarracino/chain2paf
+metadata:
+  docker_image: "quay.io/biocontainers/chain2paf:0.1.1--h3ab6199_0"
 ---
-
 
 # chain2paf
 

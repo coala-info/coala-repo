@@ -4,7 +4,6 @@ description: This tool performs quality control and evaluation of human sequence
 homepage: https://bioconductor.org/packages/3.8/bioc/html/genotypeeval.html
 ---
 
-
 # bioconductor-genotypeeval
 
 name: bioconductor-genotypeeval

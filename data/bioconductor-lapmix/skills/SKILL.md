@@ -4,7 +4,6 @@ description: This tool performs differential gene expression analysis using Lapl
 homepage: https://bioconductor.org/packages/release/bioc/html/lapmix.html
 ---
 
-
 # bioconductor-lapmix
 
 name: bioconductor-lapmix

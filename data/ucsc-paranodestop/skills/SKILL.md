@@ -2,8 +2,9 @@
 name: ucsc-paranodestop
 description: This tool remotely terminates the `paraNode` daemon on multiple compute nodes in a Parasol cluster. Use when user asks to stop paraNode daemons, shut down a Parasol cluster, reconfigure a Parasol cluster, or perform cluster maintenance.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-paranodestop:482--h0b57e2e_0"
 ---
-
 
 # ucsc-paranodestop
 

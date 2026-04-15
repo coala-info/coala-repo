@@ -1,7 +1,9 @@
 ---
 name: paplot
-description: "Paplot converts genomic data text files into interactive, browser-based visualization reports. Use when user asks to generate mutation reports, visualize structural variants, create quality control charts, or analyze mutational signatures."
+description: Paplot converts genomic data text files into interactive, browser-based visualization reports. Use when user asks to generate mutation reports, visualize structural variants, create quality control charts, or analyze mutational signatures.
 homepage: https://github.com/Genomon-Project/paplot.git
+metadata:
+  docker_image: "quay.io/biocontainers/paplot:0.5.6--pyh5e36f6f_0"
 ---
 
 # paplot

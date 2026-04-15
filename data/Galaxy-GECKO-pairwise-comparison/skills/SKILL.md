@@ -1,10 +1,12 @@
 ---
 name: gecko-pairwise-comparison
-description: "This Galaxy workflow performs pairwise sequence comparison between query and reference sequences using GECKO to identify similarities and ClustalW for multiple sequence alignment. Use this skill when you need to detect repetitive elements, identify conserved genomic regions, or analyze structural variations between two biological sequences."
-homepage: https://workflowhub.eu/workflows/1541
+description: This Galaxy workflow performs pairwise sequence comparison between query and reference sequences using GECKO to identify similarities and ClustalW for multiple sequence alignment. Use this skill when you need to detect repetitive elements, identify conserved genomic regions, or analyze structural variations between two biological sequences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GECKO pairwise comparison
+# gecko-pairwise-comparison
 
 ## Overview
 

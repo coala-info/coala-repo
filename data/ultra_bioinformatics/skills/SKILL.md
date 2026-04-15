@@ -2,8 +2,9 @@
 name: ultra_bioinformatics
 description: uLTRA aligns long RNA-seq reads to a genome using exon annotations for superior accuracy. Use when user asks to index a genome, index GTF annotations, align long RNA-seq reads, align Oxford Nanopore reads, align PacBio Iso-Seq reads, or run an all-in-one alignment pipeline.
 homepage: https://github.com/ksahlin/uLTRA
+metadata:
+  docker_image: "quay.io/biocontainers/ultra:1.2.1--h9948957_0"
 ---
-
 
 # ultra_bioinformatics
 

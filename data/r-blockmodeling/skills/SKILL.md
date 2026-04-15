@@ -4,7 +4,6 @@ description: The r-blockmodeling package performs generalized blockmodeling and 
 homepage: https://cloud.r-project.org/web/packages/blockmodeling/index.html
 ---
 
-
 # r-blockmodeling
 
 ## Overview

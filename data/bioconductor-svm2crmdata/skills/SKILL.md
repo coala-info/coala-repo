@@ -4,7 +4,6 @@ description: This package provides experimental ChIP-seq data and pre-processed 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SVM2CRMdata.html
 ---
 
-
 # bioconductor-svm2crmdata
 
 name: bioconductor-svm2crmdata

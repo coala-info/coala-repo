@@ -2,8 +2,9 @@
 name: perl-test-lectrotest
 description: This tool provides a property-based testing framework for Perl that automatically generates random test cases to verify logical assertions. Use when user asks to define properties for code behavior, generate random test data for stress-testing, or find edge cases using automated trial runs.
 homepage: http://metacpan.org/pod/Test::LectroTest
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-lectrotest:0.5001--pl526_0"
 ---
-
 
 # perl-test-lectrotest
 

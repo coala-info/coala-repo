@@ -4,7 +4,6 @@ description: The parody package provides a unified interface for identifying out
 homepage: https://bioconductor.org/packages/release/bioc/html/parody.html
 ---
 
-
 # bioconductor-parody
 
 ## Overview

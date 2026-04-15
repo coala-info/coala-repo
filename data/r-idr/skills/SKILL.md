@@ -4,7 +4,6 @@ description: The idr package implements the Irreproducible Discovery Rate framew
 homepage: https://cloud.r-project.org/web/packages/idr/index.html
 ---
 
-
 # r-idr
 
 ## Overview

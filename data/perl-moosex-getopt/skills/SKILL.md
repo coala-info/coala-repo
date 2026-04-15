@@ -1,9 +1,10 @@
 ---
 name: perl-moosex-getopt
-description: "MooseX::Getopt automatically processes command-line arguments to initialize Moose class attributes. Use when user asks to create a command-line interface for Moose-based Perl applications, map CLI flags to object attributes, or handle command-line options using the new_with_options constructor."
+description: MooseX::Getopt automatically processes command-line arguments to initialize Moose class attributes. Use when user asks to create a command-line interface for Moose-based Perl applications, map CLI flags to object attributes, or handle command-line options using the new_with_options constructor.
 homepage: https://github.com/moose/MooseX-Getopt
+metadata:
+  docker_image: "quay.io/biocontainers/perl-moosex-getopt:0.78--pl5321hdfd78af_0"
 ---
-
 
 # perl-moosex-getopt
 

@@ -1,7 +1,9 @@
 ---
 name: abricate
-description: "ABRicate identifies acquired antibiotic resistance and virulence genes in genomic assemblies using BLASTN against curated databases. Use when user asks to screen contigs for resistance factors, identify virulence genes, list available databases, or generate a gene presence/absence summary matrix."
+description: ABRicate identifies acquired antibiotic resistance and virulence genes in genomic assemblies using BLASTN against curated databases. Use when user asks to screen contigs for resistance factors, identify virulence genes, list available databases, or generate a gene presence/absence summary matrix.
 homepage: https://github.com/tseemann/abricate
+metadata:
+  docker_image: "quay.io/biocontainers/abricate:1.2.0--h05cac1d_0"
 ---
 
 # abricate

@@ -4,7 +4,6 @@ description: The r-ellipse package provides routines for computing and drawing e
 homepage: https://cloud.r-project.org/web/packages/ellipse/index.html
 ---
 
-
 # r-ellipse
 
 ## Overview

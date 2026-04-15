@@ -1,9 +1,10 @@
 ---
 name: snakefmt
-description: "snakefmt is an opinionated code formatter that automatically styles Snakemake files according to a deterministic standard. Use when user asks to format Snakemake files, check for style compliance, or preview formatting changes with a diff."
+description: snakefmt is an opinionated code formatter that automatically styles Snakemake files according to a deterministic standard. Use when user asks to format Snakemake files, check for style compliance, or preview formatting changes with a diff.
 homepage: https://github.com/snakemake/snakefmt
+metadata:
+  docker_image: "quay.io/biocontainers/snakefmt:0.11.3--pyha6daafd_0"
 ---
-
 
 # snakefmt
 

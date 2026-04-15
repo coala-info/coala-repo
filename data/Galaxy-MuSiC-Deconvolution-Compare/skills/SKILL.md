@@ -1,10 +1,12 @@
 ---
 name: music-deconvolution-compare
-description: "This transcriptomics workflow utilizes the MuSiC Compare tool to analyze single-cell and bulk ExpressionSet objects by performing three distinct deconvolution comparisons between healthy and diseased samples. Use this skill when you need to evaluate how the selection of healthy or diseased single-cell references impacts the accuracy of cell type proportion estimates in bulk transcriptomic data."
-homepage: https://workflowhub.eu/workflows/1498
+description: This transcriptomics workflow utilizes the MuSiC Compare tool to analyze single-cell and bulk ExpressionSet objects by performing three distinct deconvolution comparisons between healthy and diseased samples. Use this skill when you need to evaluate how the selection of healthy or diseased single-cell references impacts the accuracy of cell type proportion estimates in bulk transcriptomic data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MuSiC-Deconvolution: Compare
+# music-deconvolution-compare
 
 ## Overview
 

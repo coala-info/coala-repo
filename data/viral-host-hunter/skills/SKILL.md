@@ -2,8 +2,9 @@
 name: viral-host-hunter
 description: Viral-Host-Hunter predicts phage-host interactions from protein and DNA sequences. Use when user asks to predict phage-host interactions, specify the protein type, define the phage source environment, or set the taxonomic prediction level.
 homepage: https://github.com/YuehuaOu/Viral-Host-Hunter
+metadata:
+  docker_image: "quay.io/biocontainers/viral-host-hunter:0.2.0--pyhdfd78af_1"
 ---
-
 
 # viral-host-hunter
 

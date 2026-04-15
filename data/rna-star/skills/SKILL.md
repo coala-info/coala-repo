@@ -2,8 +2,9 @@
 name: rna-star
 description: STAR aligns RNA-seq reads to a reference genome while accounting for splicing events. Use when user asks to align RNA-seq reads, generate a genome index, perform 2-pass mapping for junction discovery, or process single-cell RNA-seq data using STARsolo.
 homepage: https://github.com/alexdobin/STAR
+metadata:
+  docker_image: "biocontainers/rna-star:v2.7.0adfsg-1-deb_cv1"
 ---
-
 
 # rna-star
 

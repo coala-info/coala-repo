@@ -4,7 +4,6 @@ description: This package provides curated DNA copy number, mRNA expression, and
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerTaylor.html
 ---
 
-
 # bioconductor-prostatecancertaylor
 
 ## Overview

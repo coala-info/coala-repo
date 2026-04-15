@@ -1,9 +1,12 @@
 ---
 name: act-seq-data-processing-workflow
-description: "This CWL workflow processes raw bulk ACT-Seq sequencing reads into genome-wide accessibility tracks and peak calls using trimGalore, bowtie2, and MACS2. Use this skill when you need to map chromatin accessibility landscapes and identify enriched genomic regions from ACT-Seq experiments to characterize epigenetic regulation."
-homepage: https://workflowhub.eu/workflows/1766
+description: This CWL workflow processes raw bulk ACT-Seq sequencing reads into genome-wide accessibility tracks and peak calls using trimGalore, bowtie2, and MACS2. Use this skill when you need to map chromatin accessibility landscapes and identify enriched genomic regions from ACT-Seq experiments to characterize epigenetic regulation.
+homepage: https://eosc4cancer.eu
+metadata:
+  docker_image: "N/A"
 ---
-# ACT-Seq data processing workflow
+
+# act-seq-data-processing-workflow
 
 ## Overview
 

@@ -2,6 +2,8 @@
 name: centroid_rna_package
 description: The centroid_rna_package predicts RNA secondary structures using the gamma-centroid estimator for single sequences and multiple sequence alignments. Use when user asks to predict RNA secondary structures, find consensus structures from alignments, or use the gamma-centroid estimator to balance prediction sensitivity and specificity.
 homepage: https://github.com/satoken/centroid-rna-package
+metadata:
+  docker_image: "quay.io/biocontainers/centroid_rna_package:0.0.16--0"
 ---
 
 # centroid_rna_package

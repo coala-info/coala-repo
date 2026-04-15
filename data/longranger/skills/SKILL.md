@@ -4,7 +4,6 @@ description: The longranger tool transforms a long-range HID reader into a wirel
 homepage: https://github.com/linuz/LongRangeReader
 ---
 
-
 # longranger
 
 ## Overview

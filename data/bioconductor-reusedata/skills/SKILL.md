@@ -1,9 +1,8 @@
 ---
 name: bioconductor-reusedata
-description: "ReUseData provides a standardized framework for managing genomic data through workflow-based recipes and a curated local or cloud-based data hub. Use when user asks to search for data recipes, generate curated genomic datasets, manage local data caches with metadata, or download pre-generated resources from the cloud."
+description: ReUseData provides a standardized framework for managing genomic data through workflow-based recipes and a curated local or cloud-based data hub. Use when user asks to search for data recipes, generate curated genomic datasets, manage local data caches with metadata, or download pre-generated resources from the cloud.
 homepage: https://bioconductor.org/packages/release/bioc/html/ReUseData.html
 ---
-
 
 # bioconductor-reusedata
 

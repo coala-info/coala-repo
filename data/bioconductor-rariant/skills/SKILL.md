@@ -4,7 +4,6 @@ description: This tool identifies single nucleotide variants by comparing mismat
 homepage: https://bioconductor.org/packages/3.6/bioc/html/Rariant.html
 ---
 
-
 # bioconductor-rariant
 
 name: bioconductor-rariant

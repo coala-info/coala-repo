@@ -4,7 +4,6 @@ description: The phenoTest package provides a framework for testing associations
 homepage: https://bioconductor.org/packages/release/bioc/html/phenoTest.html
 ---
 
-
 # bioconductor-phenotest
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides a Flow Injection Analysis High-Resolution Mas
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/plasFIA.html
 ---
 
-
 # bioconductor-plasfia
 
 name: bioconductor-plasfia

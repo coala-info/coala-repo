@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of paired count data from s
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MIMOSA.html
 ---
 
-
 # bioconductor-mimosa
 
 name: bioconductor-mimosa

@@ -2,8 +2,9 @@
 name: mzml2isa
 description: The mzml2isa tool automates the generation of ISA-Tab metadata files from raw mass spectrometry data in mzML or imzML formats. Use when user asks to convert mzML files to ISA-Tab format, extract technical metadata from mass spectrometry files, or generate structured metadata for metabolomics studies.
 homepage: https://github.com/ISA-tools/mzml2isa
+metadata:
+  docker_image: "quay.io/biocontainers/mzml2isa:1.1.1--pyhdfd78af_0"
 ---
-
 
 # mzml2isa
 

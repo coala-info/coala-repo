@@ -4,7 +4,6 @@ description: The r-wrassp package provides high-performance signal processing fu
 homepage: https://cloud.r-project.org/web/packages/wrassp/index.html
 ---
 
-
 # r-wrassp
 
 ## Overview

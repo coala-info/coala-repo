@@ -2,6 +2,8 @@
 name: consent
 description: CONSENT performs self-correction and assembly polishing for long-read sequencing data using multiple sequence alignment and local de Bruijn graphs. Use when user asks to perform self-correction on raw long reads or refine a draft assembly using long reads.
 homepage: https://github.com/morispi/CONSENT
+metadata:
+  docker_image: "quay.io/biocontainers/consent:2.2.2--h3452944_6"
 ---
 
 # consent

@@ -1,10 +1,12 @@
 ---
 name: source-halo
-description: "This astrophysics workflow utilizes the CRbeam simulation tool and data processing utilities to calculate extended gamma-ray source halos from inputs including celestial coordinates, energy spectra, and intergalactic magnetic field parameters. Use this skill when you need to model the spatial distribution of secondary gamma rays to investigate the influence of intergalactic magnetic fields on high-energy emissions from distant cosmic sources."
+description: This astrophysics workflow utilizes the CRbeam simulation tool and data processing utilities to calculate extended gamma-ray source halos from inputs including celestial coordinates, energy spectra, and intergalactic magnetic field parameters. Use this skill when you need to model the spatial distribution of secondary gamma rays to investigate the influence of intergalactic magnetic fields on high-energy emissions from distant cosmic sources.
 homepage: https://workflowhub.eu/workflows/1267
+metadata:
+  docker_image: "N/A"
 ---
 
-# Source halo
+# source-halo
 
 ## Overview
 

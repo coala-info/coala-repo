@@ -4,7 +4,6 @@ description: This package classifies gene expression profiles from microarray an
 homepage: https://bioconductor.org/packages/release/bioc/html/sampleClassifier.html
 ---
 
-
 # bioconductor-sampleclassifier
 
 ## Overview

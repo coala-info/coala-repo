@@ -4,7 +4,6 @@ description: The bioconductor-spiky package provides a workflow for the absolute
 homepage: https://bioconductor.org/packages/release/bioc/html/spiky.html
 ---
 
-
 # bioconductor-spiky
 
 ## Overview

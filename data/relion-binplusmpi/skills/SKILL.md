@@ -2,8 +2,9 @@
 name: relion-binplusmpi
 description: RELION performs cryo-EM structure determination through MPI-parallelized workflows including 3D auto-refinement, motion correction, and Bayesian polishing. Use when user asks to perform high-resolution reconstruction, estimate CTF parameters, or analyze conformational heterogeneity using version 5.0 features like Blush and ModelAngelo.
 homepage: https://github.com/3dem/relion
+metadata:
+  docker_image: "biocontainers/relion-binplusmpi:v1.4dfsg-2b2-deb_cv1"
 ---
-
 
 # relion-binplusmpi
 

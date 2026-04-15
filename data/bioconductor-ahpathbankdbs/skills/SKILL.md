@@ -4,7 +4,6 @@ description: This tool provides access to PathBank pathway annotation databases 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHPathbankDbs.html
 ---
 
-
 # bioconductor-ahpathbankdbs
 
 name: bioconductor-ahpathbankdbs

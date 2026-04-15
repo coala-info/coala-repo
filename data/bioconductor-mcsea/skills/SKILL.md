@@ -4,7 +4,6 @@ description: Bioconductor-mcsea identifies differentially methylated regions fro
 homepage: https://bioconductor.org/packages/release/bioc/html/mCSEA.html
 ---
 
-
 # bioconductor-mcsea
 
 name: bioconductor-mcsea

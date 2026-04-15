@@ -1,9 +1,10 @@
 ---
 name: megadepth
-description: "Megadepth is a high-speed utility for quantifying genomic coverage and processing BigWig, BAM, or CRAM files. Use when user asks to calculate coverage, generate BigWig files, summarize intervals, or count junctions from genomic data."
+description: Megadepth is a high-speed utility for quantifying genomic coverage and processing BigWig, BAM, or CRAM files. Use when user asks to calculate coverage, generate BigWig files, summarize intervals, or count junctions from genomic data.
 homepage: https://github.com/ChristopherWilks/megadepth
+metadata:
+  docker_image: "quay.io/biocontainers/megadepth:1.2.0--h5ca1c30_7"
 ---
-
 
 # megadepth
 

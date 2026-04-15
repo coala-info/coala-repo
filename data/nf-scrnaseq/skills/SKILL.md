@@ -4,6 +4,8 @@ description: This pipeline processes 10x Genomics single-cell RNA-seq data using
 homepage: https://github.com/nf-core/scrnaseq
 ---
 
+# scrnaseq
+
 ## Overview
 nf-core/scrnaseq is a bioinformatics pipeline designed for the analysis of single-cell RNA-seq data, specifically optimized for 10x Genomics platforms. It handles the transition from raw sequencing reads to processed count matrices, enabling researchers to perform downstream clustering and differential expression analysis.
 

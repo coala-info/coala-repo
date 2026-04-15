@@ -4,7 +4,6 @@ description: This tool identifies drug-target interactions and retrieves bioacti
 homepage: https://bioconductor.org/packages/release/bioc/html/drugTargetInteractions.html
 ---
 
-
 # bioconductor-drugtargetinteractions
 
 name: bioconductor-drugtargetinteractions

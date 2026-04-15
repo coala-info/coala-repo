@@ -4,7 +4,6 @@ description: SOMNiBUS identifies differentially methylated regions in targeted b
 homepage: https://bioconductor.org/packages/release/bioc/html/SOMNiBUS.html
 ---
 
-
 # bioconductor-somnibus
 
 ## Overview

@@ -2,8 +2,9 @@
 name: bx-tools
 description: The bx-tools suite leverages ELF relocation entries to perform complex computations and inject logic via the dynamic linker. Use when user asks to compile Brainfuck into relocation-based ELF binaries, debug the dynamic loading process, or create backdoors using ELF metadata.
 homepage: https://github.com/bx/elf-bf-tools
+metadata:
+  docker_image: "biocontainers/bx-tools:v0.8.2-1-deb-py2_cv1"
 ---
-
 
 # bx-tools
 

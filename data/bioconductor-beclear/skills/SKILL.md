@@ -4,7 +4,6 @@ description: BEclear detects and corrects batch effects in DNA methylation data 
 homepage: https://bioconductor.org/packages/release/bioc/html/BEclear.html
 ---
 
-
 # bioconductor-beclear
 
 name: bioconductor-beclear

@@ -1,10 +1,12 @@
 ---
 name: music-deconvolution-data-generation-sc-metadata
-description: "This single-cell transcriptomics workflow retrieves data from the EBI Single Cell Expression Atlas and applies text processing tools to generate the metadata necessary for creating ESet objects. Use this skill when you need to prepare reference datasets for cell type deconvolution analysis to estimate cell proportions in bulk RNA-seq samples."
-homepage: https://workflowhub.eu/workflows/1552
+description: This single-cell transcriptomics workflow retrieves data from the EBI Single Cell Expression Atlas and applies text processing tools to generate the metadata necessary for creating ESet objects. Use this skill when you need to prepare reference datasets for cell type deconvolution analysis to estimate cell proportions in bulk RNA-seq samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MuSiC-Deconvolution: Data generation | sc | metadata
+# music-deconvolution-data-generation-sc-metadata
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: evaluation-ia-biodiv-workflow
-description: "This Galaxy workflow processes participant results and reference attribute files from the IA-Biodiv challenge using an interactive JupyterLab notebook to calculate performance scores for each consortium. Use this skill when you need to assess the accuracy of biodiversity identification models or generate standardized evaluation metrics for competitive AI benchmarks."
-homepage: https://workflowhub.eu/workflows/1181
+description: This Galaxy workflow processes participant results and reference attribute files from the IA-Biodiv challenge using an interactive JupyterLab notebook to calculate performance scores for each consortium. Use this skill when you need to assess the accuracy of biodiversity identification models or generate standardized evaluation metrics for competitive AI benchmarks.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Evaluation IA-Biodiv workflow
+# evaluation-ia-biodiv-workflow
 
 ## Overview
 

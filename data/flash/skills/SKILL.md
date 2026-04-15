@@ -2,8 +2,9 @@
 name: flash
 description: FlashAttention provides IO-aware algorithms to accelerate Transformer training and inference by optimizing memory usage and computation speed on modern GPUs. Use when user asks to install FlashAttention, optimize attention mechanisms for speed and memory efficiency, or implement high-performance attention kernels for Ampere and Hopper architectures.
 homepage: https://github.com/Dao-AILab/flash-attention
+metadata:
+  docker_image: "quay.io/biocontainers/flash:1.2.11--ha92aebf_2"
 ---
-
 
 # flash
 

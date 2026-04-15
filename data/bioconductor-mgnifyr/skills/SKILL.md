@@ -4,7 +4,6 @@ description: This R package provides an interface to search and retrieve microbi
 homepage: https://bioconductor.org/packages/release/bioc/html/MGnifyR.html
 ---
 
-
 # bioconductor-mgnifyr
 
 name: bioconductor-mgnifyr

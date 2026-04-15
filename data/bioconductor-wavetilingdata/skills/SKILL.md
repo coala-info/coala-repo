@@ -4,7 +4,6 @@ description: This package provides experimental datasets and pre-computed wavele
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/waveTilingData.html
 ---
 
-
 # bioconductor-wavetilingdata
 
 name: bioconductor-wavetilingdata

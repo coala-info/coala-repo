@@ -4,7 +4,6 @@ description: This R package provides genomic databases and annotation tables for
 homepage: https://cran.r-project.org/web/packages/ngsplotdb-mm10/index.html
 ---
 
-
 # r-ngsplotdb-mm10
 
 name: r-ngsplotdb-mm10

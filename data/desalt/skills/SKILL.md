@@ -2,8 +2,9 @@
 name: desalt
 description: deSALT is a specialized alignment tool designed to map long-read RNA-seq data to a reference genome using a two-pass strategy. Use when user asks to index a reference genome for long-read transcriptome mapping, align long RNA-seq reads to a reference, or identify splice junctions and exons in large eukaryotic genomes.
 homepage: https://github.com/ydLiu-HIT/
+metadata:
+  docker_image: "quay.io/biocontainers/desalt:1.5.6--h577a1d6_7"
 ---
-
 
 # desalt
 

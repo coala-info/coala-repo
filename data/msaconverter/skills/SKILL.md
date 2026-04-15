@@ -1,9 +1,10 @@
 ---
 name: msaconverter
-description: "msaconverter transforms Multiple Sequence Alignment files across various bioinformatics formats using the Biopython AlignIO engine. Use when user asks to convert MSA files between formats like FASTA, PHYLIP, or Nexus, reformat alignments for phylogenetic software, or handle relaxed naming conventions in sequence data."
+description: msaconverter transforms Multiple Sequence Alignment files across various bioinformatics formats using the Biopython AlignIO engine. Use when user asks to convert MSA files between formats like FASTA, PHYLIP, or Nexus, reformat alignments for phylogenetic software, or handle relaxed naming conventions in sequence data.
 homepage: https://github.com/linzhi2013/msaconverter
+metadata:
+  docker_image: "quay.io/biocontainers/msaconverter:0.0.4--pyhdfd78af_0"
 ---
-
 
 # msaconverter
 

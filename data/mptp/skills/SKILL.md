@@ -1,9 +1,8 @@
 ---
 name: mptp
-description: "mPTP delimits species from a rooted phylogenetic tree using multi-rate Poisson Tree Processes. Use when user asks to delimit species boundaries, perform maximum likelihood or Bayesian species delimitation, or assess delimitation confidence with MCMC support values."
+description: mPTP delimits species from a rooted phylogenetic tree using multi-rate Poisson Tree Processes. Use when user asks to delimit species boundaries, perform maximum likelihood or Bayesian species delimitation, or assess delimitation confidence with MCMC support values.
 homepage: https://github.com/Pas-Kapli/mptp
 ---
-
 
 # mptp
 

@@ -2,8 +2,9 @@
 name: netifaces
 description: The netifaces tool provides a portable way to access network interface information and routing gateways on a local machine. Use when user asks to list network interfaces, retrieve IP or MAC addresses for a specific interface, or identify system default gateways.
 homepage: https://github.com/al45tair/netifaces
+metadata:
+  docker_image: "quay.io/biocontainers/netifaces:0.10.4--py36_1"
 ---
-
 
 # netifaces
 

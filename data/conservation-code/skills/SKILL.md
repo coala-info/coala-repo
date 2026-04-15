@@ -2,8 +2,9 @@
 name: conservation-code
 description: This tool analyzes evolutionary pressure by comparing coding DNA sequences against protein domains to identify conserved residues. Use when user asks to analyze evolutionary conservation, calculate substitution frequencies, or identify functionally critical protein regions across species.
 homepage: https://github.com/hanjunlee21/conservation
+metadata:
+  docker_image: "biocontainers/conservation-code:v20110309.0-7-deb_cv1"
 ---
-
 
 # conservation-code
 

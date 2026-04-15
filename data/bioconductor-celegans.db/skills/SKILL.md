@@ -4,7 +4,6 @@ description: This package provides a comprehensive annotation database for C. el
 homepage: https://bioconductor.org/packages/release/data/annotation/html/celegans.db.html
 ---
 
-
 # bioconductor-celegans.db
 
 ## Overview

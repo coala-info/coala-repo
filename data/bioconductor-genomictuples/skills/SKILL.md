@@ -4,7 +4,6 @@ description: This tool manages and manipulates genomic tuples representing sets 
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicTuples.html
 ---
 
-
 # bioconductor-genomictuples
 
 name: bioconductor-genomictuples

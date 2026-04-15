@@ -2,8 +2,9 @@
 name: bolt
 description: Bolt is a high-performance structural variant caller optimized for short-read sequencing data. Use when user asks to call structural variants, format command-line arguments for SV detection, or manage the tool's installation and dependencies.
 homepage: https://github.com/sakkayaphab/bolt
+metadata:
+  docker_image: "quay.io/biocontainers/bolt:0.3.0--h3889886_0"
 ---
-
 
 # bolt
 

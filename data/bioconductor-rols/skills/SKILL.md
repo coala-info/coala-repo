@@ -4,7 +4,6 @@ description: This tool provides an R interface to the EMBL-EBI Ontology Lookup S
 homepage: https://bioconductor.org/packages/release/bioc/html/rols.html
 ---
 
-
 # bioconductor-rols
 
 name: bioconductor-rols

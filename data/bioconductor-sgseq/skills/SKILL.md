@@ -4,7 +4,6 @@ description: SGSeq analyzes alternative splicing in RNA-seq data using a splice 
 homepage: https://bioconductor.org/packages/release/bioc/html/SGSeq.html
 ---
 
-
 # bioconductor-sgseq
 
 ## Overview

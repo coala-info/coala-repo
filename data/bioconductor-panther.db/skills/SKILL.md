@@ -4,7 +4,6 @@ description: This tool provides a Bioconductor interface to access and query the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/PANTHER.db.html
 ---
 
-
 # bioconductor-panther.db
 
 name: bioconductor-panther.db

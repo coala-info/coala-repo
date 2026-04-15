@@ -4,7 +4,6 @@ description: This package provides orthology and paralogy mappings between human
 homepage: https://bioconductor.org/packages/3.11/data/annotation/html/hom.Hs.inp.db.html
 ---
 
-
 # bioconductor-hom.hs.inp.db
 
 name: bioconductor-hom.hs.inp.db

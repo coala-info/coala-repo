@@ -2,8 +2,9 @@
 name: sbg-cwl-runner
 description: The sbg-cwl-runner tool acts as a shim that allows the Seven Bridges platform to function as a standard CWL runner for local development and execution. Use when user asks to run CWL workflows on the platform from a local environment, perform CWL conformance testing, or automate file staging and task monitoring.
 homepage: https://github.com/kaushik-work/sbg-cwl-runner
+metadata:
+  docker_image: "quay.io/biocontainers/sbg-cwl-runner:2018.11--py_0"
 ---
-
 
 # sbg-cwl-runner
 

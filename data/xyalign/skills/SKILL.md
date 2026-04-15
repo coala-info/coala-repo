@@ -1,7 +1,9 @@
 ---
 name: xyalign
-description: "XYalign infers ploidy and corrects for sex chromosome complement in NGS data. Use when user asks to infer ploidy, correct for sex chromosome complement, or analyze NGS data with sex chromosome biases."
+description: XYalign infers ploidy and corrects for sex chromosome complement in NGS data. Use when user asks to infer ploidy, correct for sex chromosome complement, or analyze NGS data with sex chromosome biases.
 homepage: https://github.com/WilsonSayresLab/XYalign
+metadata:
+  docker_image: "quay.io/biocontainers/xyalign:1.1.5--py_1"
 ---
 
 # xyalign

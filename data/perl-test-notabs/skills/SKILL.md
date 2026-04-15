@@ -2,8 +2,9 @@
 name: perl-test-notabs
 description: This tool scans Perl source code files to ensure they do not contain hard tabs. Use when user asks to check files for tab characters, enforce no-tabs policies in Perl projects, or integrate tab testing into a Test::More suite.
 homepage: http://metacpan.org/pod/Test-NoTabs
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-notabs:2.02--pl526_0"
 ---
-
 
 # perl-test-notabs
 

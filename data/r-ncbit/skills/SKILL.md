@@ -4,7 +4,6 @@ description: This tool retrieves, builds, and searches NCBI taxonomic data local
 homepage: https://cloud.r-project.org/web/packages/ncbit/index.html
 ---
 
-
 # r-ncbit
 
 name: r-ncbit

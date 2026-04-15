@@ -4,7 +4,6 @@ description: This tool provides programmatic control of the igv.js genome browse
 homepage: https://bioconductor.org/packages/release/bioc/html/igvR.html
 ---
 
-
 # bioconductor-igvr
 
 name: bioconductor-igvr

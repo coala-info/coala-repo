@@ -4,7 +4,6 @@ description: This tool detects programmed ribosomal frameshifting events from BL
 homepage: https://bioconductor.org/packages/3.12/bioc/html/FScanR.html
 ---
 
-
 # bioconductor-fscanr
 
 name: bioconductor-fscanr

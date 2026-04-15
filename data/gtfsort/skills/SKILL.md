@@ -2,8 +2,9 @@
 name: gtfsort
 description: gtfsort is a high-performance tool for the lexicographical and coordinate-based sorting of GTF and GFF3 files while maintaining feature hierarchy. Use when user asks to sort genomic annotation files, organize parent-child feature relationships, or prepare GTF and GFF3 files for downstream analysis.
 homepage: https://github.com/alejandrogzi/gtfsort
+metadata:
+  docker_image: "quay.io/biocontainers/gtfsort:0.2.2--ha6fb395_2"
 ---
-
 
 # gtfsort
 

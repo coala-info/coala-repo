@@ -1,9 +1,12 @@
 ---
 name: sparql-query-in-a-file-on-graph-database
-description: "This Common Workflow Language workflow executes a SPARQL query from a local file against a remote graph database endpoint to extract structured data from RDF repositories. Use this skill when you need to retrieve specific biological annotations, integrate disparate datasets from linked data sources, or characterize molecular entities using knowledge graphs."
+description: This Common Workflow Language workflow executes a SPARQL query from a local file against a remote graph database endpoint to extract structured data from RDF repositories. Use this skill when you need to retrieve specific biological annotations, integrate disparate datasets from linked data sources, or characterize molecular entities using knowledge graphs.
 homepage: https://workflowhub.eu/workflows/122
+metadata:
+  docker_image: "N/A"
 ---
-# SPARQL query (in a file) on graph database
+
+# sparql-query-in-a-file-on-graph-database
 
 ## Overview
 

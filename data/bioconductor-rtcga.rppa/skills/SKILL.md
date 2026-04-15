@@ -4,7 +4,6 @@ description: This tool provides access to pre-processed Reverse Phase Protein Ar
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.RPPA.html
 ---
 
-
 # bioconductor-rtcga.rppa
 
 name: bioconductor-rtcga.rppa

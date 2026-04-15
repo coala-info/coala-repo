@@ -4,7 +4,6 @@ description: This tool provides probe sequences and genomic reannotation data fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation450kprobe.html
 ---
 
-
 # bioconductor-illuminahumanmethylation450kprobe
 
 name: bioconductor-illuminahumanmethylation450kprobe

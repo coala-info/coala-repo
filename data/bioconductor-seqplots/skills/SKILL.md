@@ -4,7 +4,6 @@ description: This tool visualizes average genomic track signals and sequence mot
 homepage: https://bioconductor.org/packages/3.8/bioc/html/seqplots.html
 ---
 
-
 # bioconductor-seqplots
 
 name: bioconductor-seqplots

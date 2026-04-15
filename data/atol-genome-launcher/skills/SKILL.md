@@ -2,6 +2,8 @@
 name: atol-genome-launcher
 description: The atol-genome-launcher automates the lifecycle of genomic assembly workflows by managing directory structures, data transfers, and pipeline deployments. Use when user asks to deploy assembly pipelines, download sequencing reads from BioPlatforms Australia, or upload assembly results to S3 storage.
 homepage: https://github.com/TomHarrop/atol-genome-launcher
+metadata:
+  docker_image: "quay.io/biocontainers/atol-genome-launcher:0.4.1--pyhdfd78af_0"
 ---
 
 # atol-genome-launcher

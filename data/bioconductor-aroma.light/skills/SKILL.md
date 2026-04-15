@@ -4,7 +4,6 @@ description: This package provides robust methods for the normalization and cali
 homepage: https://bioconductor.org/packages/release/bioc/html/aroma.light.html
 ---
 
-
 # bioconductor-aroma.light
 
 name: bioconductor-aroma.light

@@ -2,8 +2,9 @@
 name: gpatch
 description: GPatch upgrades draft contig assemblies into chromosome-scale pseudoassemblies by filling gaps with sequences from a reference genome. Use when user asks to upgrade draft assemblies, fill gaps between contigs using a reference, or create reference-guided scaffolds.
 homepage: https://github.com/adadiehl/GPatch.git
+metadata:
+  docker_image: "quay.io/biocontainers/gpatch:0.4.0--pyhdfd78af_0"
 ---
-
 
 # gpatch
 

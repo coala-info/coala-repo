@@ -4,7 +4,6 @@ description: This package provides a framework for implementing the Model-View-C
 homepage: https://bioconductor.org/packages/release/bioc/html/MVCClass.html
 ---
 
-
 # bioconductor-mvcclass
 
 name: bioconductor-mvcclass

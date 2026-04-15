@@ -4,7 +4,6 @@ description: This package provides a framework for investigating allele-specific
 homepage: https://bioconductor.org/packages/release/bioc/html/AllelicImbalance.html
 ---
 
-
 # bioconductor-allelicimbalance
 
 name: bioconductor-allelicimbalance

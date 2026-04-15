@@ -1,9 +1,10 @@
 ---
 name: methplotlib
-description: "methplotlib creates interactive or static visualizations of DNA methylation data across specific genomic regions. Use when user asks to plot methylation calls, compare modification patterns across multiple samples, visualize phased methylation, or align methylation data with gene models."
+description: methplotlib creates interactive or static visualizations of DNA methylation data across specific genomic regions. Use when user asks to plot methylation calls, compare modification patterns across multiple samples, visualize phased methylation, or align methylation data with gene models.
 homepage: https://github.com/wdecoster/methplotlib
+metadata:
+  docker_image: "quay.io/biocontainers/methplotlib:0.21.2--pyhdfd78af_0"
 ---
-
 
 # methplotlib
 

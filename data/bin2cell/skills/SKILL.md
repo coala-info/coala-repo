@@ -2,8 +2,9 @@
 name: bin2cell
 description: bin2cell reconstructs individual cells from high-resolution Visium HD spatial transcriptomics data by mapping 2um bins to segmentation masks. Use when user asks to perform nuclear segmentation on morphology images, map transcriptomic bins to cells, or correct technical striping effects in spatial data.
 homepage: https://github.com/Teichlab/bin2cell
+metadata:
+  docker_image: "quay.io/biocontainers/bin2cell:0.3.4--pyhdfd78af_0"
 ---
-
 
 # bin2cell
 

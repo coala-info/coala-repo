@@ -2,6 +2,8 @@
 name: segul
 description: segul is a high-performance tool designed for the efficient manipulation, filtering, and summary of genomic and phylogenomic datasets. Use when user asks to convert alignment formats, filter loci by quality metrics, generate sequence summary statistics, or manage sequence identifiers.
 homepage: https://github.com/hhandika/segul
+metadata:
+  docker_image: "quay.io/biocontainers/segul:0.23.2--hc1c3326_0"
 ---
 
 # segul

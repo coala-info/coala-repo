@@ -1,9 +1,10 @@
 ---
 name: slncky
-description: "slncky is a tool for discovering and analyzing long non-coding RNAs from RNA-Seq data. Use when user asks to discover lncRNAs, find lncRNA orthologs, or assess lncRNA evolutionary conservation."
+description: slncky is a tool for discovering and analyzing long non-coding RNAs from RNA-Seq data. Use when user asks to discover lncRNAs, find lncRNA orthologs, or assess lncRNA evolutionary conservation.
 homepage: https://github.com/slncky/slncky
+metadata:
+  docker_image: "quay.io/biocontainers/slncky:1.0.4--1"
 ---
-
 
 # slncky
 

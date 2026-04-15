@@ -2,6 +2,8 @@
 name: tadtool
 description: TADtool identifies and visualizes Topologically Associating Domains from Hi-C contact matrices using interactive parameter exploration and automated calling algorithms. Use when user asks to call TADs, visualize Hi-C data alongside domain boundaries, explore optimal window size parameters, or subset large contact matrices.
 homepage: https://github.com/vaquerizaslab/tadtool
+metadata:
+  docker_image: "quay.io/biocontainers/tadtool:0.84--pyh7cba7a3_0"
 ---
 
 # tadtool

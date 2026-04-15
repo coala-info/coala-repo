@@ -1,9 +1,10 @@
 ---
 name: perl-io-zlib
-description: "This tool provides an IO-style interface for reading and writing compressed files in Perl. Use when user asks to read or write gzipped files, manage compressed filehandles, or handle transparent decompression in Perl scripts."
+description: This tool provides an IO-style interface for reading and writing compressed files in Perl. Use when user asks to read or write gzipped files, manage compressed filehandles, or handle transparent decompression in Perl scripts.
 homepage: https://metacpan.org/pod/IO::Zlib
+metadata:
+  docker_image: "quay.io/biocontainers/perl-io-zlib:1.15--pl5321hdfd78af_1"
 ---
-
 
 # perl-io-zlib
 

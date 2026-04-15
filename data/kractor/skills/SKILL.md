@@ -1,9 +1,10 @@
 ---
 name: kractor
-description: "kractor extracts raw sequence data from FASTQ or FASTA files based on Kraken2 taxonomic classifications. Use when user asks to extract reads for specific taxon IDs, filter out host sequences, or include taxonomic children in sequence extraction."
+description: kractor extracts raw sequence data from FASTQ or FASTA files based on Kraken2 taxonomic classifications. Use when user asks to extract reads for specific taxon IDs, filter out host sequences, or include taxonomic children in sequence extraction.
 homepage: https://github.com/Sam-Sims/kractor
+metadata:
+  docker_image: "quay.io/biocontainers/kractor:4.0.0--h4349ce8_0"
 ---
-
 
 # kractor
 

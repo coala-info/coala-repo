@@ -4,7 +4,6 @@ description: This tool calculates total binding affinity and occupancy for trans
 homepage: https://bioconductor.org/packages/release/bioc/html/MatrixRider.html
 ---
 
-
 # bioconductor-matrixrider
 
 name: bioconductor-matrixrider

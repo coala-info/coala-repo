@@ -1,10 +1,12 @@
 ---
 name: metatranscriptomics-analysis-using-microbiome-rna-seq-data-w
-description: "This metatranscriptomics workflow processes raw paired-end microbiome RNA-seq reads using FastQC, Cutadapt, and SortMeRNA to perform quality control, adapter trimming, and ribosomal RNA depletion. Use this skill when you need to clean raw environmental or clinical sequencing data by removing sequencing adapters and contaminating rRNA sequences to prepare for downstream functional profiling."
-homepage: https://workflowhub.eu/workflows/1444
+description: This metatranscriptomics workflow processes raw paired-end microbiome RNA-seq reads using FastQC, Cutadapt, and SortMeRNA to perform quality control, adapter trimming, and ribosomal RNA depletion. Use this skill when you need to clean raw environmental or clinical sequencing data by removing sequencing adapters and contaminating rRNA sequences to prepare for downstream functional profiling.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metatranscriptomics analysis using microbiome RNA-seq data - Workflow 1: Preprocessing
+# metatranscriptomics-analysis-using-microbiome-rna-seq-data-w
 
 ## Overview
 

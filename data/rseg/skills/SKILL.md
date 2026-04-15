@@ -2,8 +2,9 @@
 name: rseg
 description: rseg is a Ruby implementation for Chinese word segmentation that transforms continuous strings into discrete words using a dictionary-based approach. Use when user asks to segment Chinese text into words, integrate Chinese word segmentation into Ruby applications, or run a segmentation server for improved performance.
 homepage: https://github.com/yzhang/rseg
+metadata:
+  docker_image: "quay.io/biocontainers/rseg:0.4.9--he941832_1"
 ---
-
 
 # rseg
 

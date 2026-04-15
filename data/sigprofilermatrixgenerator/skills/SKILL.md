@@ -2,8 +2,9 @@
 name: sigprofilermatrixgenerator
 description: SigProfilerMatrixGenerator transforms raw somatic mutation calls into structured matrices for mutational signature extraction across various reference genomes. Use when user asks to generate mutational matrices, classify SBS, DBS, or ID mutations, perform transcriptional strand bias tests, or visualize mutational profiles.
 homepage: https://github.com/AlexandrovLab/SigProfilerMatrixGenerator.git
+metadata:
+  docker_image: "quay.io/biocontainers/sigprofilermatrixgenerator:1.3.3--pyhdfd78af_1"
 ---
-
 
 # sigprofilermatrixgenerator
 

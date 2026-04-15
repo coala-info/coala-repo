@@ -1,10 +1,12 @@
 ---
 name: vgp-hybrid-scaffolding-with-hic-data
-description: "This Galaxy workflow performs genomic scaffolding by integrating HiC paired-end reads with existing contigs or Bionano scaffolds using BWA-MEM2, SALSA, and PretextMap. Use this skill when you need to improve the continuity of a draft genome assembly to chromosome-level scale and validate the resulting scaffolds with BUSCO and QUAST metrics."
-homepage: https://workflowhub.eu/workflows/324
+description: This Galaxy workflow performs genomic scaffolding by integrating HiC paired-end reads with existing contigs or Bionano scaffolds using BWA-MEM2, SALSA, and PretextMap. Use this skill when you need to improve the continuity of a draft genome assembly to chromosome-level scale and validate the resulting scaffolds with BUSCO and QUAST metrics.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP hybrid scaffolding with HiC data
+# vgp-hybrid-scaffolding-with-hic-data
 
 ## Overview
 

@@ -1,7 +1,9 @@
 ---
 name: tqdist
-description: "tqdist computes triplet distances for rooted trees and quartet distances for unrooted trees to compare phylogenetic topologies. Use when user asks to calculate triplet distances, compute quartet distances, or perform all-pairs distance comparisons between phylogenetic trees."
+description: tqdist computes triplet distances for rooted trees and quartet distances for unrooted trees to compare phylogenetic topologies. Use when user asks to calculate triplet distances, compute quartet distances, or perform all-pairs distance comparisons between phylogenetic trees.
 homepage: http://users-cs.au.dk/cstorm/software/tqdist/
+metadata:
+  docker_image: "quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1"
 ---
 
 # tqdist

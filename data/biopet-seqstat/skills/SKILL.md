@@ -1,7 +1,9 @@
 ---
 name: biopet-seqstat
-description: "Biopet-seqstat generates, merges, and validates quality metrics and nucleotide statistics from FASTQ sequencing data. Use when user asks to generate sequencing statistics, merge multiple stats files, or validate the integrity of stats JSON files."
+description: Biopet-seqstat generates, merges, and validates quality metrics and nucleotide statistics from FASTQ sequencing data. Use when user asks to generate sequencing statistics, merge multiple stats files, or validate the integrity of stats JSON files.
 homepage: https://github.com/biopet/seqstat
+metadata:
+  docker_image: "quay.io/biocontainers/biopet-seqstat:1.0.1--0"
 ---
 
 # biopet-seqstat

@@ -1,9 +1,10 @@
 ---
 name: talon
-description: "TALON identifies and quantifies transcripts in long-read sequencing datasets by categorizing alignments into known or novel isoforms. Use when user asks to label internal priming artifacts, initialize a transcript database from a GTF, run the TALON annotator, or filter and quantify isoforms from long-read SAM files."
+description: TALON identifies and quantifies transcripts in long-read sequencing datasets by categorizing alignments into known or novel isoforms. Use when user asks to label internal priming artifacts, initialize a transcript database from a GTF, run the TALON annotator, or filter and quantify isoforms from long-read SAM files.
 homepage: https://github.com/mortazavilab/TALON
+metadata:
+  docker_image: "quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0"
 ---
-
 
 # talon
 

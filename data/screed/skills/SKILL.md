@@ -2,6 +2,8 @@
 name: screed
 description: Screed provides a lightweight database layer for FASTA and FASTQ files to enable rapid random access and efficient sequence parsing. Use when user asks to create sequence databases, convert between FASTA and FASTQ formats, or perform memory-efficient iteration and lookups of sequencing data.
 homepage: http://github.com/dib-lab/screed/
+metadata:
+  docker_image: "quay.io/biocontainers/screed:1.0.4--py_0"
 ---
 
 # screed

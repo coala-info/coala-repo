@@ -2,8 +2,9 @@
 name: ezclermont
 description: ezclermont automates the Clermont 2013 phylotyping method to categorize E. coli strains from genomic assemblies. Use when user asks to determine E. coli phylotypes, identify genetic markers from FASTA files, or perform in silico Clermont phylotyping.
 homepage: https://github.com/nickp60/ezclermont
+metadata:
+  docker_image: "quay.io/biocontainers/ezclermont:0.7.0--pyhdfd78af_0"
 ---
-
 
 # ezclermont
 

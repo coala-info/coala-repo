@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of mixed ploidy populations
 homepage: https://cloud.r-project.org/web/packages/StAMPP/index.html
 ---
 
-
 # r-stampp
 
 name: r-stampp

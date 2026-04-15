@@ -4,7 +4,6 @@ description: This package provides pre-computed quartet effects and genomic anno
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ITALICSData.html
 ---
 
-
 # bioconductor-italicsdata
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool parses and visualizes Illumina sequencing run diagnostic 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/savR.html
 ---
 
-
 # bioconductor-savr
 
 name: bioconductor-savr

@@ -1,9 +1,12 @@
 ---
 name: tissue-segmentation-workflow
-description: "This Common Workflow Language pipeline utilizes AI-based extraction tools to perform automated tissue segmentation on H&E-stained whole slide images. Use this skill when you need to isolate relevant biological regions from background artifacts in digital pathology slides to facilitate accurate downstream diagnostic or spatial analysis."
+description: This Common Workflow Language pipeline utilizes AI-based extraction tools to perform automated tissue segmentation on H&E-stained whole slide images. Use this skill when you need to isolate relevant biological regions from background artifacts in digital pathology slides to facilitate accurate downstream diagnostic or spatial analysis.
 homepage: https://workflowhub.eu/workflows/1328
+metadata:
+  docker_image: "N/A"
 ---
-# Tissue segmentation workflow
+
+# tissue-segmentation-workflow
 
 ## Overview
 

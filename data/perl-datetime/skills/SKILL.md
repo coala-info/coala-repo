@@ -2,8 +2,9 @@
 name: perl-datetime
 description: The perl-datetime skill provides an object-oriented framework for complex date and time manipulation, arithmetic, and timezone handling in Perl. Use when user asks to create date objects, perform date arithmetic, format timestamps, or compare different time points.
 homepage: https://metacpan.org/dist/DateTime
+metadata:
+  docker_image: "quay.io/biocontainers/perl-datetime:1.66--pl5321h9948957_0"
 ---
-
 
 # perl-datetime
 

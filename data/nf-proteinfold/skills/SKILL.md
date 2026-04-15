@@ -4,6 +4,8 @@ description: This pipeline predicts protein 3D structures using AlphaFold2, Cola
 homepage: https://github.com/nf-core/proteinfold
 ---
 
+# proteinfold
+
 ## Overview
 nf-core/proteinfold is a bioinformatics best-practice analysis pipeline for Protein 3D structure prediction. It provides a unified interface to run several state-of-the-art folding algorithms including AlphaFold2, ColabFold, and ESMFold, handling the complex environment and database requirements for each.
 

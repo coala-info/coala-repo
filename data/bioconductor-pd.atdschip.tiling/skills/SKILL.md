@@ -4,7 +4,6 @@ description: This package provides platform design information and probe sequenc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pd.atdschip.tiling.html
 ---
 
-
 # bioconductor-pd.atdschip.tiling
 
 name: bioconductor-pd.atdschip.tiling

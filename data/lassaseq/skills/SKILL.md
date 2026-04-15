@@ -1,9 +1,10 @@
 ---
 name: lassaseq
-description: "lassaseq retrieves, filters, and analyzes Lassa virus genomic data to generate alignments and phylogenetic trees. Use when user asks to download Lassa virus sequences, filter data by host or geography, and perform phylogenetic analysis on L and S segments."
+description: lassaseq retrieves, filters, and analyzes Lassa virus genomic data to generate alignments and phylogenetic trees. Use when user asks to download Lassa virus sequences, filter data by host or geography, and perform phylogenetic analysis on L and S segments.
 homepage: https://github.com/DaanJansen94/LassaSeq
+metadata:
+  docker_image: "quay.io/biocontainers/lassaseq:0.1.2--pyhdfd78af_0"
 ---
-
 
 # lassaseq
 

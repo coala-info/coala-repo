@@ -1,9 +1,10 @@
 ---
 name: seq2onehot
-description: "seq2onehot converts biological sequences from FASTA files into one-hot encoded NumPy arrays for use in deep learning models. Use when user asks to transform DNA, RNA, or protein sequences into 3D arrays, encode sequences for TensorFlow or PyTorch, or convert FASTA files to one-hot format."
+description: seq2onehot converts biological sequences from FASTA files into one-hot encoded NumPy arrays for use in deep learning models. Use when user asks to transform DNA, RNA, or protein sequences into 3D arrays, encode sequences for TensorFlow or PyTorch, or convert FASTA files to one-hot format.
 homepage: https://github.com/akikuno/seq2onehot
+metadata:
+  docker_image: "quay.io/biocontainers/seq2onehot:0.0.1--pyhfa5458b_0"
 ---
-
 
 # seq2onehot
 

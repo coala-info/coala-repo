@@ -4,7 +4,6 @@ description: This package provides an S4 class for managing and analyzing spatia
 homepage: https://bioconductor.org/packages/release/bioc/html/SpatialExperiment.html
 ---
 
-
 # bioconductor-spatialexperiment
 
 name: bioconductor-spatialexperiment

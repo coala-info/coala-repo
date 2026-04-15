@@ -4,7 +4,6 @@ description: This tool estimates misclassification error rates in high-dimension
 homepage: https://bioconductor.org/packages/3.6/bioc/html/MCRestimate.html
 ---
 
-
 # bioconductor-mcrestimate
 
 name: bioconductor-mcrestimate

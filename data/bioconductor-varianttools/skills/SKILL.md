@@ -4,7 +4,6 @@ description: This tool detects, filters, and analyzes genetic variants such as S
 homepage: https://bioconductor.org/packages/release/bioc/html/VariantTools.html
 ---
 
-
 # bioconductor-varianttools
 
 name: bioconductor-varianttools

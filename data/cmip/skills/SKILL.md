@@ -2,8 +2,9 @@
 name: cmip
 description: CMIP calculates classical molecular interaction potentials between a target molecule and a probe across a 3D grid. Use when user asks to calculate molecular interaction potentials, predict structural water positions, or identify favorable interaction sites on protein surfaces.
 homepage: http://mmb.irbbarcelona.org/gitlab/gelpi/CMIP
+metadata:
+  docker_image: "quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0"
 ---
-
 
 # cmip
 

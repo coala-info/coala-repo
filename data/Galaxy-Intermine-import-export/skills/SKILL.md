@@ -1,10 +1,12 @@
 ---
 name: intermine-importexport
-description: "This Galaxy workflow utilizes the InterMine Galaxy Exchange tool to transform input datasets into the InterMine Interchange format for biological data sharing. Use this skill when you need to export processed genomic results to an InterMine database to facilitate integrated data mining and comparative biological queries."
-homepage: https://workflowhub.eu/workflows/1398
+description: This Galaxy workflow utilizes the InterMine Galaxy Exchange tool to transform input datasets into the InterMine Interchange format for biological data sharing. Use this skill when you need to export processed genomic results to an InterMine database to facilitate integrated data mining and comparative biological queries.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Intermine import/export
+# intermine-importexport
 
 ## Overview
 

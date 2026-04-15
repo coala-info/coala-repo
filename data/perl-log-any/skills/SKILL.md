@@ -1,9 +1,10 @@
 ---
 name: perl-log-any
-description: "Log::Any provides a transparent logging interface for Perl that decouples log production in modules from log consumption in applications. Use when user asks to implement a standardized logging API, add logging to Perl modules, or configure log adapters to direct output to specific destinations."
+description: Log::Any provides a transparent logging interface for Perl that decouples log production in modules from log consumption in applications. Use when user asks to implement a standardized logging API, add logging to Perl modules, or configure log adapters to direct output to specific destinations.
 homepage: https://github.com/preaction/Log-Any
+metadata:
+  docker_image: "quay.io/biocontainers/perl-log-any:1.718--pl5321hdfd78af_0"
 ---
-
 
 # perl-log-any
 

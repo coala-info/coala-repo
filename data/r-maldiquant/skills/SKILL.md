@@ -4,7 +4,6 @@ description: MALDIquant is an R package providing a complete analysis pipeline f
 homepage: https://cloud.r-project.org/web/packages/MALDIquant/index.html
 ---
 
-
 # r-maldiquant
 
 ## Overview

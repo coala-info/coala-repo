@@ -4,7 +4,6 @@ description: epitrace is an R package that infers the relative mitotic age of ce
 homepage: https://cran.r-project.org/web/packages/epitrace/index.html
 ---
 
-
 # r-epitrace
 
 ## Overview

@@ -4,6 +4,8 @@ description: This pipeline identifies and filters specific taxonomic sequences f
 homepage: https://github.com/nf-core/detaxizer
 ---
 
+# detaxizer
+
 ## Overview
 nf-core/detaxizer addresses the challenge of taxonomic contamination in genomic and metagenomic datasets. It processes short and long reads to detect and optionally remove sequences belonging to a target taxon—defaulting to *Homo sapiens*—or an entire taxonomic subtree, producing "clean" FASTQ files ready for downstream analysis.
 

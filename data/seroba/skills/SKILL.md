@@ -2,6 +2,8 @@
 name: seroba
 description: SeroBA identifies Streptococcus pneumoniae serotypes from raw Illumina sequencing reads by analyzing the capsular polysaccharide locus. Use when user asks to predict pneumococcal serotypes, create a k-mer database for serotyping, or summarize serotype results from multiple samples.
 homepage: https://github.com/sanger-pathogens/seroba
+metadata:
+  docker_image: "quay.io/biocontainers/seroba:1.0.2--pyhdfd78af_1"
 ---
 
 # seroba

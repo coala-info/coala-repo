@@ -1,9 +1,10 @@
 ---
 name: covtobed
-description: "covtobed converts sorted BAM files into BED files by collapsing adjacent bases with identical coverage into single genomic intervals. Use when user asks to transform BAM files to BED format, identify zero-coverage gaps, filter regions by depth and length, or calculate physical coverage for paired-end reads."
+description: covtobed converts sorted BAM files into BED files by collapsing adjacent bases with identical coverage into single genomic intervals. Use when user asks to transform BAM files to BED format, identify zero-coverage gaps, filter regions by depth and length, or calculate physical coverage for paired-end reads.
 homepage: https://github.com/telatin/covtobed/
+metadata:
+  docker_image: "quay.io/biocontainers/covtobed:1.4.0--h077b44d_0"
 ---
-
 
 # covtobed
 

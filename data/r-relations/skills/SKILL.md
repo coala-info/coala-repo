@@ -4,7 +4,6 @@ description: This tool provides data structures and algorithms for creating, man
 homepage: https://cloud.r-project.org/web/packages/relations/index.html
 ---
 
-
 # r-relations
 
 name: r-relations

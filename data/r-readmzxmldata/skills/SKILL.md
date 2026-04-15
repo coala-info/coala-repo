@@ -4,7 +4,6 @@ description: The readMzXmlData package extracts mass spectrometry spectral data 
 homepage: https://cloud.r-project.org/web/packages/readMzXmlData/index.html
 ---
 
-
 # r-readmzxmldata
 
 ## Overview

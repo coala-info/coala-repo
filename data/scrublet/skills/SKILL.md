@@ -2,8 +2,9 @@
 name: scrublet
 description: Scrublet predicts and identifies doublets in single-cell RNA-seq data by simulating synthetic doublets and calculating a doublet score for each cell. Use when user asks to identify doublets, calculate doublet scores, or remove multiplets from scRNA-seq datasets.
 homepage: https://github.com/allonkleinlab/scrublet
+metadata:
+  docker_image: "quay.io/biocontainers/scrublet:0.2.3--pyh5e36f6f_1"
 ---
-
 
 # scrublet
 

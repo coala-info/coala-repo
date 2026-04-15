@@ -4,7 +4,6 @@ description: r-sequenza analyzes tumor DNA sequencing data to estimate genomic a
 homepage: https://cran.r-project.org/web/packages/sequenza/index.html
 ---
 
-
 # r-sequenza
 
 name: r-sequenza

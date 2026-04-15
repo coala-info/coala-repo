@@ -2,6 +2,8 @@
 name: predictosaurus
 description: Predictosaurus is a haplotype-based bioinformatics tool that constructs variant graphs to predict genomic variant effects and extract peptide sequences. Use when user asks to build variant graphs from VCF files, process genomic features to calculate haplotype scores, or extract peptide sequences for neoantigen discovery.
 homepage: https://github.com/fxwiegand/predictosaurus
+metadata:
+  docker_image: "quay.io/biocontainers/predictosaurus:0.8.4--hbcba35e_0"
 ---
 
 # predictosaurus

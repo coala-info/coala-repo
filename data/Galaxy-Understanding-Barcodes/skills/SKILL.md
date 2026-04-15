@@ -1,10 +1,12 @@
 ---
 name: understanding-barcodes
-description: "This single-cell sequencing workflow processes FastQ data and filter lists using FastQC, sequence filtering, and UMI-tools extract to prepare reads for downstream analysis. Use this skill when you need to perform quality control on raw single-cell sequencing reads and extract barcode or UMI information while filtering out unwanted sequences."
-homepage: https://workflowhub.eu/workflows/1507
+description: This single-cell sequencing workflow processes FastQ data and filter lists using FastQC, sequence filtering, and UMI-tools extract to prepare reads for downstream analysis. Use this skill when you need to perform quality control on raw single-cell sequencing reads and extract barcode or UMI information while filtering out unwanted sequences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Understanding Barcodes
+# understanding-barcodes
 
 ## Overview
 

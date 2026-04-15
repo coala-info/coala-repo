@@ -2,8 +2,9 @@
 name: verkko
 description: Verkko automates the generation of phased, diploid, and telomere-to-telomere genome assemblies. Use when user asks to generate genome assemblies, integrate phasing data (Trio, Hi-C, or Pore-C), specify telomere motifs, or perform reference-guided scaffolding.
 homepage: https://github.com/marbl/verkko
+metadata:
+  docker_image: "quay.io/biocontainers/verkko:2.3--h03b467c_1"
 ---
-
 
 # verkko
 

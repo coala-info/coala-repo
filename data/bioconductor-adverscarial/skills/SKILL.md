@@ -4,7 +4,6 @@ description: This tool evaluates the robustness of scRNA-seq cell-type classifie
 homepage: https://bioconductor.org/packages/release/bioc/html/adverSCarial.html
 ---
 
-
 # bioconductor-adverscarial
 
 name: bioconductor-adverscarial

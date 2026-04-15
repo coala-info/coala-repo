@@ -1,7 +1,9 @@
 ---
 name: gfold
-description: "gfold provides a read-only overview of local Git repositories to track their status, branches, and uncommitted changes. Use when user asks to scan directories for Git repository statuses, identify uncommitted changes across multiple projects, or display a summary of local Git ecosystems in various formats."
+description: gfold provides a read-only overview of local Git repositories to track their status, branches, and uncommitted changes. Use when user asks to scan directories for Git repository statuses, identify uncommitted changes across multiple projects, or display a summary of local Git ecosystems in various formats.
 homepage: https://github.com/nickgerace/gfold
+metadata:
+  docker_image: "quay.io/biocontainers/gfold:1.1.4--gsl1.16_1"
 ---
 
 # gfold

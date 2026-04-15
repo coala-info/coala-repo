@@ -1,10 +1,12 @@
 ---
 name: gigascience_fusions_demonstration_sts26t-gent_workflow
-description: "This cancer genomics workflow processes paired-end RNA-Seq reads against a human reference genome using STAR and Arriba to identify gene fusions and generate a protein fusion database. Use this skill when you need to detect chimeric transcripts and translate them into protein sequences for neoantigen prediction or the study of oncogenic fusion events in tumor samples."
-homepage: https://workflowhub.eu/workflows/1792
+description: This cancer genomics workflow processes paired-end RNA-Seq reads against a human reference genome using STAR and Arriba to identify gene fusions and generate a protein fusion database. Use this skill when you need to detect chimeric transcripts and translate them into protein sequences for neoantigen prediction or the study of oncogenic fusion events in tumor samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gigascience_Fusions_demonstration_STS26T-Gent_Workflow
+# gigascience_fusions_demonstration_sts26t-gent_workflow
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: peglit
 description: peglit identifies optimal linker sequences for engineered pegRNAs to prevent internal base-pairing interference using simulated annealing. Use when user asks to identify linkers for epegRNAs, score existing epegRNA designs, or perform batch processing of pegRNA sequences.
 homepage: https://github.com/sshen8/peglit/
+metadata:
+  docker_image: "quay.io/biocontainers/peglit:1.1.0--pyh7cba7a3_0"
 ---
-
 
 # peglit
 

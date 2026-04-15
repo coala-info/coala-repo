@@ -4,7 +4,6 @@ description: Staden is a Logseq-inspired outliner tool for managing markdown not
 homepage: https://github.com/oshikiri/staden-outliner
 ---
 
-
 # staden
 
 ## Overview

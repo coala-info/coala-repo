@@ -2,6 +2,8 @@
 name: comebin
 description: COMEBin is a deep learning framework that bins metagenomic contigs by integrating nucleotide composition and coverage profiles through contrastive multi-view representation learning. Use when user asks to bin metagenomic contigs, recover genomes from microbial communities, or generate genomic bins from assembly and coverage data.
 homepage: https://github.com/ziyewang/COMEBin
+metadata:
+  docker_image: "quay.io/biocontainers/comebin:1.0.4--hdfd78af_1"
 ---
 
 # comebin

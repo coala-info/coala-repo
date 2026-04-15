@@ -4,7 +4,6 @@ description: This R package provides an interface to the MyVariant.info services
 homepage: https://bioconductor.org/packages/release/bioc/html/myvariant.html
 ---
 
-
 # bioconductor-myvariant
 
 name: bioconductor-myvariant

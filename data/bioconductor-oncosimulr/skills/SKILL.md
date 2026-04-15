@@ -4,7 +4,6 @@ description: This tool performs individual-based forward genetic simulations in 
 homepage: https://bioconductor.org/packages/release/bioc/html/OncoSimulR.html
 ---
 
-
 # bioconductor-oncosimulr
 
 name: bioconductor-oncosimulr

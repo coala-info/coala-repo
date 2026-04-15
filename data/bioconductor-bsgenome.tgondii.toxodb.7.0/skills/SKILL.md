@@ -4,7 +4,6 @@ description: This tool provides the full genome sequence for Toxoplasma gondii M
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Tgondii.ToxoDB.7.0.html
 ---
 
-
 # bioconductor-bsgenome.tgondii.toxodb.7.0
 
 name: bioconductor-bsgenome.tgondii.toxodb.7.0

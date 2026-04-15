@@ -4,7 +4,6 @@ description: This package provides example ChIP-seq datasets and genomic covaria
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mosaicsExample.html
 ---
 
-
 # bioconductor-mosaicsexample
 
 name: bioconductor-mosaicsexample

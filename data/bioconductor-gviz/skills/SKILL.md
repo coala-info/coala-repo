@@ -4,7 +4,6 @@ description: This tool creates high-quality, track-based genomic visualizations 
 homepage: https://bioconductor.org/packages/release/bioc/html/Gviz.html
 ---
 
-
 # bioconductor-gviz
 
 name: bioconductor-gviz

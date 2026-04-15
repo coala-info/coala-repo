@@ -2,8 +2,9 @@
 name: segmentation-fold
 description: This tool analyzes RNA sequences to predict secondary structures and folding energies. Use when user asks to predict RNA secondary structures, calculate folding energies, or segment RNA sequences for structural analysis.
 homepage: https://github.com/shreyapamecha/Speed-Estimation-of-Vehicles-with-Plate-Detection
+metadata:
+  docker_image: "quay.io/biocontainers/segmentation-fold:1.7.0--py27_0"
 ---
-
 
 # segmentation-fold
 

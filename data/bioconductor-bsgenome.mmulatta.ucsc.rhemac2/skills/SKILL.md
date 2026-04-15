@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the Rhesus maca
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac2.html
 ---
 
-
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac2
 
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac2

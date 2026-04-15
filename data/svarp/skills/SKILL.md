@@ -2,8 +2,9 @@
 name: svarp
 description: SVarp identifies and resolves haplotype-resolved structural variants within a pangenome graph context using long-read sequencing data. Use when user asks to discover structural variants in a pangenome, generate local assemblies of SV alleles, or perform phased SV discovery using GAF alignments and GFA graphs.
 homepage: https://github.com/asylvz/SVarp
+metadata:
+  docker_image: "quay.io/biocontainers/svarp:1.1.1--h077b44d_0"
 ---
-
 
 # svarp
 

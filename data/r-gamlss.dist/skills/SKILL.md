@@ -4,7 +4,6 @@ description: This package provides over 100 probability distributions and utilit
 homepage: https://cloud.r-project.org/web/packages/gamlss.dist/index.html
 ---
 
-
 # r-gamlss.dist
 
 name: r-gamlss.dist

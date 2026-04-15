@@ -4,7 +4,6 @@ description: This tool performs probabilistic quality control for single-cell RN
 homepage: https://bioconductor.org/packages/release/bioc/html/miQC.html
 ---
 
-
 # bioconductor-miqc
 
 name: bioconductor-miqc

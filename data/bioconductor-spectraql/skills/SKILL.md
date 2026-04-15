@@ -4,7 +4,6 @@ description: The SpectraQL package implements Mass Spec Query Language support f
 homepage: https://bioconductor.org/packages/release/bioc/html/SpectraQL.html
 ---
 
-
 # bioconductor-spectraql
 
 ## Overview

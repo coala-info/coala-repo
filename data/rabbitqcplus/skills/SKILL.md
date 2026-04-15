@@ -2,8 +2,9 @@
 name: rabbitqcplus
 description: RabbitQCPlus is a high-performance quality control and error correction tool for processing Next-Generation and Third-Generation sequencing data. Use when user asks to perform quality control, filter reads, correct sequencing errors, or generate QC reports for FASTQ files.
 homepage: https://github.com/RabbitBio/RabbitQCPlus
+metadata:
+  docker_image: "quay.io/biocontainers/rabbitqcplus:2.3.0--h5ca1c30_1"
 ---
-
 
 # rabbitqcplus
 

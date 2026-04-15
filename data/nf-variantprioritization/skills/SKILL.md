@@ -4,6 +4,8 @@ description: This pipeline performs functional annotation and clinical interpret
 homepage: https://github.com/nf-core/variantprioritization
 ---
 
+# variantprioritization
+
 ## Overview
 nf-core/variantprioritization automates the clinical interpretation of genomic variants in cancer research. It bridges the gap between raw variant calls and actionable clinical insights by integrating somatic and germline annotation frameworks to identify clinically relevant mutations, mutational signatures, and tumor mutational burden.
 

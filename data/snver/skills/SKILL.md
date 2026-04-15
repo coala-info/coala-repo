@@ -2,8 +2,9 @@
 name: snver
 description: SNVer is a statistical framework for identifying common and rare genetic variants in individual or pooled next-generation sequencing datasets. Use when user asks to call variants from BAM or SAM files, perform pooled variant calling, or calculate p-values for candidate loci using a binomial-binomial model.
 homepage: http://snver.sourceforge.net/
+metadata:
+  docker_image: "quay.io/biocontainers/snver:0.5.3--0"
 ---
-
 
 # snver
 

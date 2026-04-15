@@ -4,6 +4,8 @@ description: This pipeline analyzes CRISPR edited data from targeted NGS or pool
 homepage: https://github.com/nf-core/crisprseq
 ---
 
+# crisprseq
+
 ## Overview
 nf-core/crisprseq is a bioinformatics pipeline designed for the analysis of CRISPR gene editing experiments. It supports two distinct analysis modes: `targeted` for evaluating specific genomic edits such as knockouts, knock-ins, base editing, and prime editing, and `screening` for identifying essential genes in pooled CRISPR-Cas9, CRISPRa, or CRISPRi screens.
 

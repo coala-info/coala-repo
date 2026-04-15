@@ -1,9 +1,8 @@
 ---
 name: r-ggplot2
-description: "This tool creates declarative data visualizations in R based on the grammar of graphics. Use when user asks to create plots, customize themes, map data to aesthetics, or programmatically generate visualizations."
+description: This tool creates declarative data visualizations in R based on the grammar of graphics. Use when user asks to create plots, customize themes, map data to aesthetics, or programmatically generate visualizations.
 homepage: https://cloud.r-project.org/web/packages/ggplot2/index.html
 ---
-
 
 # r-ggplot2
 

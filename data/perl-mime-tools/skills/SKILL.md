@@ -2,8 +2,9 @@
 name: perl-mime-tools
 description: This tool parses, decomposes, and creates complex multi-part MIME email messages using Perl. Use when user asks to parse email attachments, extract data from MIME structures, or programmatically build multi-part email messages.
 homepage: https://metacpan.org/pod/MIME-tools
+metadata:
+  docker_image: "quay.io/biocontainers/perl-mime-tools:5.515--pl5321hdfd78af_0"
 ---
-
 
 # perl-mime-tools
 

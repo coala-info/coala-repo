@@ -4,7 +4,6 @@ description: This package provides genomic annotation data for the Rattus norveg
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn5.refGene.html
 ---
 
-
 # bioconductor-txdb.rnorvegicus.ucsc.rn5.refgene
 
 name: bioconductor-txdb.rnorvegicus.ucsc.rn5.refgene

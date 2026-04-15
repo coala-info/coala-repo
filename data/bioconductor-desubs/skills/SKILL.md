@@ -4,7 +4,6 @@ description: DEsubs extracts and analyzes disease-perturbed subpathways from RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/DEsubs.html
 ---
 
-
 # bioconductor-desubs
 
 ## Overview

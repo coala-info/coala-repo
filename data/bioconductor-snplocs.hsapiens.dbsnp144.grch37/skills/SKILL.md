@@ -1,9 +1,8 @@
 ---
 name: bioconductor-snplocs.hsapiens.dbsnp144.grch37
-description: "This package provides access to SNP positions and alleles for Homo sapiens from NCBI dbSNP Build 144 mapped to the GRCh37 reference genome. Use when user asks to retrieve SNP locations by rsID, get SNPs for specific chromosomes, or inject SNPs into a BSgenome object for genomic analysis."
+description: This package provides access to SNP positions and alleles for Homo sapiens from NCBI dbSNP Build 144 mapped to the GRCh37 reference genome. Use when user asks to retrieve SNP locations by rsID, get SNPs for specific chromosomes, or inject SNPs into a BSgenome object for genomic analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SNPlocs.Hsapiens.dbSNP144.GRCh37.html
 ---
-
 
 # bioconductor-snplocs.hsapiens.dbsnp144.grch37
 

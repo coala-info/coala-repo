@@ -4,7 +4,6 @@ description: GSEAmining visualizes and clusters Gene Set Enrichment Analysis res
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEAmining.html
 ---
 
-
 # bioconductor-gseamining
 
 name: bioconductor-gseamining

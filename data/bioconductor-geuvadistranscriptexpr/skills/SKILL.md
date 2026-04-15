@@ -4,7 +4,6 @@ description: This package provides preprocessed GEUVADIS project transcript expr
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GeuvadisTranscriptExpr.html
 ---
 
-
 # bioconductor-geuvadistranscriptexpr
 
 name: bioconductor-geuvadistranscriptexpr

@@ -4,7 +4,6 @@ description: The extrafont package enables the use of system TrueType fonts in R
 homepage: https://cloud.r-project.org/web/packages/extrafont/index.html
 ---
 
-
 # r-extrafont
 
 ## Overview

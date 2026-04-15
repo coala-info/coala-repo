@@ -1,10 +1,12 @@
 ---
 name: repeat-masking-with-repeatmodeler-and-repeatmasker
-description: "This Galaxy workflow performs de novo identification and masking of transposable elements in a FASTA genome using RepeatModeler to build repeat libraries and RepeatMasker to annotate and mask sequences. Use this skill when you need to characterize the repetitive landscape of a newly assembled genome or mask interleaved repeats and low-complexity DNA to improve the accuracy of downstream gene annotation."
-homepage: https://workflowhub.eu/workflows/575
+description: This Galaxy workflow performs de novo identification and masking of transposable elements in a FASTA genome using RepeatModeler to build repeat libraries and RepeatMasker to annotate and mask sequences. Use this skill when you need to characterize the repetitive landscape of a newly assembled genome or mask interleaved repeats and low-complexity DNA to improve the accuracy of downstream gene annotation.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Repeat masking with RepeatModeler and RepeatMasker
+# repeat-masking-with-repeatmodeler-and-repeatmasker
 
 ## Overview
 

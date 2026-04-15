@@ -4,7 +4,6 @@ description: This tool performs statistical power and sample size calculations f
 homepage: https://bioconductor.org/packages/release/bioc/html/RNASeqPower.html
 ---
 
-
 # bioconductor-rnaseqpower
 
 name: bioconductor-rnaseqpower

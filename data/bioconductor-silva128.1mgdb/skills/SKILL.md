@@ -4,7 +4,6 @@ description: This package provides a database object containing SILVA SSU rRNA s
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/silva128.1MgDb.html
 ---
 
-
 # bioconductor-silva128.1mgdb
 
 ## Overview

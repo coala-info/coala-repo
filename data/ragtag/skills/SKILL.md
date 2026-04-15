@@ -2,8 +2,9 @@
 name: ragtag
 description: RagTag is a suite of tools used to improve genome assemblies by leveraging homology with reference genomes. Use when user asks to correct misassemblies, scaffold contigs, merge multiple assembly maps, or patch gaps using related sequences.
 homepage: https://github.com/malonge/RagTag
+metadata:
+  docker_image: "quay.io/biocontainers/ragtag:2.1.0--pyhb7b1952_0"
 ---
-
 
 # ragtag
 

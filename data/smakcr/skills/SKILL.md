@@ -1,9 +1,10 @@
 ---
 name: smakcr
-description: "SmaKCR efficiently counts short k-mers in DNA sequences. Use when user asks to count short k-mers in DNA sequences."
+description: SmaKCR efficiently counts short k-mers in DNA sequences. Use when user asks to count short k-mers in DNA sequences.
 homepage: https://github.com/julibeg/smakcr
+metadata:
+  docker_image: "quay.io/biocontainers/smakcr:0.1.0--h4349ce8_0"
 ---
-
 
 # smakcr
 

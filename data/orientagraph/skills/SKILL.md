@@ -2,8 +2,9 @@
 name: orientagraph
 description: OrientAGraph builds and refines admixture graphs by optimizing the orientation of migration edges using Maximum Likelihood Network Orientation. Use when user asks to estimate admixture graphs with migration edges, optimize the orientation of gene flow events, or score and reorient existing population models.
 homepage: https://github.com/sriramlab/OrientAGraph
+metadata:
+  docker_image: "quay.io/biocontainers/orientagraph:1.1--h3b735ea_0"
 ---
-
 
 # orientagraph
 

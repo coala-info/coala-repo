@@ -4,7 +4,6 @@ description: This package provides annotation data for the hguDKFZ31 platform to
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hguDKFZ31.db.html
 ---
 
-
 # bioconductor-hgudkfz31.db
 
 name: bioconductor-hgudkfz31.db

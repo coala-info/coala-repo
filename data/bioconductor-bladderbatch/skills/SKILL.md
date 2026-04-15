@@ -4,7 +4,6 @@ description: This package provides a curated gene expression dataset from a blad
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bladderbatch.html
 ---
 
-
 # bioconductor-bladderbatch
 
 name: bioconductor-bladderbatch

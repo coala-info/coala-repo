@@ -2,8 +2,9 @@
 name: phybin
 description: PhyBin organizes large collections of phylogenetic trees by grouping them based on topological similarity or Robinson-Foulds distance. Use when user asks to bin identical trees, perform hierarchical clustering, calculate Robinson-Foulds distances, or normalize taxa names across multiple gene trees.
 homepage: https://github.com/rrnewton/PhyBin
+metadata:
+  docker_image: "biocontainers/phybin:v0.3-3-deb_cv1"
 ---
-
 
 # phybin
 

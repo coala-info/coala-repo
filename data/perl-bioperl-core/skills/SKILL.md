@@ -2,8 +2,9 @@
 name: perl-bioperl-core
 description: The perl-bioperl-core package provides an object-oriented framework for processing biological data and managing sequence objects in Perl. Use when user asks to parse biological file formats, manipulate sequence data, or perform bioinformatics tasks like reverse complementation and translation.
 homepage: http://metacpan.org/pod/BioPerl
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bioperl-core:1.007002--pl526_0"
 ---
-
 
 # perl-bioperl-core
 

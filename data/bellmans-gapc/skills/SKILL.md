@@ -2,8 +2,9 @@
 name: bellmans-gapc
 description: Bellman's GAP compiles high-level declarative descriptions of dynamic programming algorithms into optimized C++ code. Use when user asks to define grammars and algebras for sequence analysis, compile .gap files, or generate efficient dynamic programming implementations.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/gapc
+metadata:
+  docker_image: "quay.io/biocontainers/bellmans-gapc:2024.01.12--h3053a90_5"
 ---
-
 
 # bellmans-gapc
 

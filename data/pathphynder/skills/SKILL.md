@@ -2,8 +2,9 @@
 name: pathphynder
 description: pathPhynder places low-coverage or ancient DNA samples into high-coverage reference phylogenies by evaluating informative markers. Use when user asks to assign ancient samples to branches of a tree, perform phylogenetic placement for haploid data, or mitigate deamination effects in aDNA analysis.
 homepage: https://github.com/ruidlpm/pathPhynder
+metadata:
+  docker_image: "quay.io/biocontainers/pathphynder:1.2.4--py313hdfd78af_0"
 ---
-
 
 # pathphynder
 

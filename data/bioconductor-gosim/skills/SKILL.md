@@ -4,7 +4,6 @@ description: This tool calculates functional similarities between Gene Ontology 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GOSim.html
 ---
 
-
 # bioconductor-gosim
 
 name: bioconductor-gosim

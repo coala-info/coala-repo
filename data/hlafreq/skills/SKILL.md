@@ -2,8 +2,9 @@
 name: hlafreq
 description: hlafreq automates the collection, standardization, and meta-analysis of Human Leukocyte Antigen (HLA) allele frequency data. Use when user asks to fetch data from the Allele Frequency Net Database, filter studies for quality, standardize allele resolution, or calculate combined frequency estimates.
 homepage: https://github.com/Vaccitech/HLAfreq
+metadata:
+  docker_image: "quay.io/biocontainers/hlafreq:0.0.5--pyhdfd78af_0"
 ---
-
 
 # hlafreq
 

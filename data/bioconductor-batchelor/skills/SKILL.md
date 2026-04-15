@@ -4,7 +4,6 @@ description: The batchelor package provides methods for correcting batch effects
 homepage: https://bioconductor.org/packages/release/bioc/html/batchelor.html
 ---
 
-
 # bioconductor-batchelor
 
 ## Overview

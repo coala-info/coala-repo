@@ -2,8 +2,9 @@
 name: fastq_utils
 description: fastq_utils is a suite of utilities for processing and manipulating FASTQ files, with a focus on scRNA-seq barcode extraction and read synchronization. Use when user asks to validate FASTQ integrity, filter reads by N-content, trim poly-A/T tails, synchronize paired-end files, or extract and transfer scRNA-seq barcodes to BAM tags.
 homepage: https://github.com/nunofonseca/fastq_utils
+metadata:
+  docker_image: "quay.io/biocontainers/fastq:2.0.4--pyhdfd78af_0"
 ---
-
 
 # fastq_utils
 

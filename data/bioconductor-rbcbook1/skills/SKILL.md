@@ -4,7 +4,6 @@ description: This package provides infrastructure, datasets, and graph objects f
 homepage: https://bioconductor.org/packages/release/bioc/html/RbcBook1.html
 ---
 
-
 # bioconductor-rbcbook1
 
 name: bioconductor-rbcbook1

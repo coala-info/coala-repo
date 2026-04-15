@@ -4,7 +4,6 @@ description: This tool performs gene set analysis for GWAS data by aggregating i
 homepage: https://bioconductor.org/packages/release/bioc/html/cpvSNP.html
 ---
 
-
 # bioconductor-cpvsnp
 
 name: bioconductor-cpvsnp

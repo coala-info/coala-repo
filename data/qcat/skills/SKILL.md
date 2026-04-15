@@ -2,8 +2,9 @@
 name: qcat
 description: qcat is a command-line utility used to demultiplex and sort Oxford Nanopore reads into separate files based on detected barcodes. Use when user asks to demultiplex FASTQ files, sort ONT reads by barcode, or replicate EPI2ME demultiplexing logic locally.
 homepage: https://github.com/nanoporetech/qcat
+metadata:
+  docker_image: "quay.io/biocontainers/qcat:1.1.0--py_0"
 ---
-
 
 # qcat
 

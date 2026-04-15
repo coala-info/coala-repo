@@ -2,8 +2,9 @@
 name: perl-lockfile-simple
 description: This tool manages advisory file locking in Perl by creating physical lockfiles containing process IDs and hostnames. Use when user asks to implement file locking, manage stale locks, or handle concurrent file access in NFS environments.
 homepage: http://metacpan.org/pod/LockFile::Simple
+metadata:
+  docker_image: "quay.io/biocontainers/perl-lockfile-simple:0.208--0"
 ---
-
 
 # perl-lockfile-simple
 

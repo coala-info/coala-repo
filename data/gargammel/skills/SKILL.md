@@ -2,8 +2,9 @@
 name: gargammel
 description: gargammel is a simulation suite that generates synthetic ancient DNA sequencing reads by modeling degradation, deamination, and contamination. Use when user asks to simulate ancient DNA fragments, model post-mortem damage, or generate synthetic sequencing datasets with specific contamination levels.
 homepage: https://github.com/grenaud/gargammel
+metadata:
+  docker_image: "quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0"
 ---
-
 
 # gargammel
 

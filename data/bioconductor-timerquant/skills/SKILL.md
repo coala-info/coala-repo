@@ -4,7 +4,6 @@ description: This tool analyzes and simulates tandem fluorescent protein timers 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TimerQuant.html
 ---
 
-
 # bioconductor-timerquant
 
 name: bioconductor-timerquant

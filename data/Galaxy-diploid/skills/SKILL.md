@@ -1,7 +1,9 @@
 ---
 name: diploid
-description: "This workflow performs variant calling and annotation for diploid systems using BAM alignments and tabular metadata as inputs, utilizing FreeBayes for discovery and GEMINI for downstream analysis. Use this skill when you need to identify genomic variants from sequence alignments and perform functional annotation or complex queries to understand the genetic basis of traits in diploid populations."
-homepage: https://workflowhub.eu/workflows/1655
+description: This workflow performs variant calling and annotation for diploid systems using BAM alignments and tabular metadata as inputs, utilizing FreeBayes for discovery and GEMINI for downstream analysis. Use this skill when you need to identify genomic variants from sequence alignments and perform functional annotation or complex queries to understand the genetic basis of traits in diploid populations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # diploid

@@ -1,7 +1,9 @@
 ---
 name: crussmap
-description: "crussmap performs genomic coordinate liftover between different assembly versions using UCSC chain files. Use when user asks to lift over genomic coordinates, convert BED files between assemblies, or inspect chain file contents."
+description: crussmap performs genomic coordinate liftover between different assembly versions using UCSC chain files. Use when user asks to lift over genomic coordinates, convert BED files between assemblies, or inspect chain file contents.
 homepage: https://github.com/wjwei-handsome/crussmap
+metadata:
+  docker_image: "quay.io/biocontainers/crussmap:1.0.1--h5c46d4b_0"
 ---
 
 # crussmap

@@ -4,7 +4,6 @@ description: The loomR package provides an R interface for memory-efficient stor
 homepage: https://cran.r-project.org/web/packages/loomr/index.html
 ---
 
-
 # r-loomr
 
 ## Overview

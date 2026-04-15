@@ -1,10 +1,12 @@
 ---
 name: regional-gam-workflow
-description: "This ecology workflow processes regional monitoring data from a CSV file using Generalized Additive Models to calculate flight curves, abundance indices, and temporal trends. Use this skill when you need to analyze species population dynamics over time to identify significant ecological trends and account for seasonal phenology in monitoring datasets."
-homepage: https://workflowhub.eu/workflows/1707
+description: This ecology workflow processes regional monitoring data from a CSV file using Generalized Additive Models to calculate flight curves, abundance indices, and temporal trends. Use this skill when you need to analyze species population dynamics over time to identify significant ecological trends and account for seasonal phenology in monitoring datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Regional GAM Workflow
+# regional-gam-workflow
 
 ## Overview
 

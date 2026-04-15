@@ -4,7 +4,6 @@ description: This package provides base annotation databases for Zebrafish (Dani
 homepage: https://bioconductor.org/packages/release/data/annotation/html/zebrafish.db0.html
 ---
 
-
 # bioconductor-zebrafish.db0
 
 name: bioconductor-zebrafish.db0

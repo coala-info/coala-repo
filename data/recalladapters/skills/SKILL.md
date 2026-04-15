@@ -1,9 +1,10 @@
 ---
 name: recalladapters
-description: "Identifies and extracts adapter sequences from PacBio sequencing data. Use when dealing with PacBio FASTQ or BAM files and needing to identify or remove adapter sequences for downstream analysis."
+description: Identifies and extracts adapter sequences from PacBio sequencing data. Use when dealing with PacBio FASTQ or BAM files and needing to identify or remove adapter sequences for downstream analysis.
 homepage: https://github.com/PacificBiosciences/pbbioconda
+metadata:
+  docker_image: "quay.io/biocontainers/recalladapters:9.0.0--h9ee0642_1"
 ---
-
 
 # recalladapters
 

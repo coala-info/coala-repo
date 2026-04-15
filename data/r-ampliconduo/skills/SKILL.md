@@ -4,7 +4,6 @@ description: AmpliconDuo analyzes and filters amplicon sequencing data by compar
 homepage: https://cran.r-project.org/web/packages/ampliconduo/index.html
 ---
 
-
 # r-ampliconduo
 
 ## Overview

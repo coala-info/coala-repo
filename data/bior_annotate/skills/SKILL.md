@@ -2,8 +2,9 @@
 name: bior_annotate
 description: The bior_annotate tool enriches VCF files with metadata from external genomic catalogs using a configuration file to specify field extraction. Use when user asks to annotate variants, enrich VCF files with genomic metadata, or extract information from BioR catalogs based on genomic overlap.
 homepage: https://github.com/michaelmeiners/biorAnnotateLite
+metadata:
+  docker_image: "biocontainers/bior_annotate:v2.1.1_cv3"
 ---
-
 
 # bior_annotate
 

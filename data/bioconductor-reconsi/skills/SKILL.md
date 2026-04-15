@@ -4,7 +4,6 @@ description: This tool performs simultaneous inference and False Discovery Rate 
 homepage: https://bioconductor.org/packages/release/bioc/html/reconsi.html
 ---
 
-
 # bioconductor-reconsi
 
 name: bioconductor-reconsi

@@ -4,7 +4,6 @@ description: This tool extracts biclusters from high-dimensional data using spar
 homepage: https://bioconductor.org/packages/release/bioc/html/fabia.html
 ---
 
-
 # bioconductor-fabia
 
 name: bioconductor-fabia

@@ -4,7 +4,6 @@ description: This package performs rotation-based gene set analysis using linear
 homepage: https://bioconductor.org/packages/release/bioc/html/roastgsa.html
 ---
 
-
 # bioconductor-roastgsa
 
 ## Overview

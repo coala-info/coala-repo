@@ -2,6 +2,8 @@
 name: deepnog
 description: DeepNOG uses deep convolutional neural networks to assign protein sequences to orthologous groups. Use when user asks to infer orthologous groups for protein sequences, train custom protein classification models, or target specific taxonomic levels for protein annotation.
 homepage: https://github.com/univieCUBE/deepnog
+metadata:
+  docker_image: "quay.io/biocontainers/deepnog:1.2.4--pyh7e72e81_0"
 ---
 
 # deepnog

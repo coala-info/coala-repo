@@ -4,7 +4,6 @@ description: This package provides pre-configured workflow templates and sample 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/systemPipeRdata.html
 ---
 
-
 # bioconductor-systempiperdata
 
 ## Overview

@@ -1,9 +1,12 @@
 ---
 name: multiaffinity
-description: "This CWL workflow utilizes RNA-seq data and community detection tools to model how gene dysregulation propagates across multilayer biological networks. Use this skill when you need to identify key driver genes and characterize the functional consequences of molecular alterations in pediatric cancer or other complex diseases."
-homepage: https://workflowhub.eu/workflows/250
+description: This CWL workflow utilizes RNA-seq data and community detection tools to model how gene dysregulation propagates across multilayer biological networks. Use this skill when you need to identify key driver genes and characterize the functional consequences of molecular alterations in pediatric cancer or other complex diseases.
+homepage: https://ipc-project.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# multiAffinity
+
+# multiaffinity
 
 ## Overview
 

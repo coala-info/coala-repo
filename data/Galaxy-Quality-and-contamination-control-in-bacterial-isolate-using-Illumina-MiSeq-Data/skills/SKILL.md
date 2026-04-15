@@ -1,10 +1,12 @@
 ---
 name: quality-and-contamination-control-in-bacterial-isolate-using
-description: "This Galaxy workflow processes paired-end Illumina MiSeq reads from bacterial isolates to perform quality assessment and taxonomic classification using Falco, fastp, Kraken2, Bracken, and Recentrifuge. Use this skill when you need to verify the purity of a bacterial sample, identify potential microbial contaminants, and estimate the relative abundance of species within an isolate."
-homepage: https://workflowhub.eu/workflows/2043
+description: This Galaxy workflow processes paired-end Illumina MiSeq reads from bacterial isolates to perform quality assessment and taxonomic classification using Falco, fastp, Kraken2, Bracken, and Recentrifuge. Use this skill when you need to verify the purity of a bacterial sample, identify potential microbial contaminants, and estimate the relative abundance of species within an isolate.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Quality and contamination control in bacterial isolate using Illumina MiSeq Data
+# quality-and-contamination-control-in-bacterial-isolate-using
 
 ## Overview
 

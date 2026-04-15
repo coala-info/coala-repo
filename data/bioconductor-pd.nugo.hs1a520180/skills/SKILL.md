@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the N
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.nugo.hs1a520180.html
 ---
 
-
 # bioconductor-pd.nugo.hs1a520180
 
 ## Overview

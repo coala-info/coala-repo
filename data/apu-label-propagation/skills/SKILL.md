@@ -2,8 +2,9 @@
 name: apu-label-propagation
 description: This tool implements a three-stage machine learning pipeline to identify disease-associated genes using network-diffusion features and adaptive positive-unlabelled label propagation. Use when user asks to calculate NeDBIT features from PPI networks, perform adaptive label propagation to identify reliable negatives, or train classifiers for disease gene discovery.
 homepage: https://github.com/AndMastro/NIAPU
+metadata:
+  docker_image: "quay.io/biocontainers/apu-label-propagation:1.2--h7b50bb2_3"
 ---
-
 
 # apu-label-propagation
 

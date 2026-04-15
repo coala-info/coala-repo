@@ -2,8 +2,9 @@
 name: perl-test-memory-cycle
 description: This Perl testing utility checks objects and data structures for circular references to prevent memory leaks. Use when user asks to verify that objects have no memory cycles, check for expected circular references, or integrate memory leak testing into a Test::More suite.
 homepage: http://metacpan.org/pod/Test::Memory::Cycle
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-memory-cycle:1.06--pl526_0"
 ---
-
 
 # perl-test-memory-cycle
 

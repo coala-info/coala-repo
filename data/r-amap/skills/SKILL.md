@@ -4,7 +4,6 @@ description: This tool provides optimized and parallelized implementations for h
 homepage: https://cloud.r-project.org/web/packages/amap/index.html
 ---
 
-
 # r-amap
 
 name: r-amap

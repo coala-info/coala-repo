@@ -1,9 +1,10 @@
 ---
 name: fgpyo
-description: "fgpyo provides a suite of utilities for high-performance genomic data manipulation and sequence processing. Use when user asks to extract UMIs, demultiplex FASTQ files, filter BAM alignments, or perform genomic interval operations."
+description: fgpyo provides a suite of utilities for high-performance genomic data manipulation and sequence processing. Use when user asks to extract UMIs, demultiplex FASTQ files, filter BAM alignments, or perform genomic interval operations.
 homepage: https://pypi.org/project/fgpyo/
+metadata:
+  docker_image: "quay.io/biocontainers/fgpyo:1.5.0--pyhdfd78af_0"
 ---
-
 
 # fgpyo
 

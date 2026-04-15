@@ -4,7 +4,6 @@ description: This package provides example ChIA-PET data from human Chromosome 1
 homepage: https://bioconductor.org/packages/release/data/experiment/html/diffloopdata.html
 ---
 
-
 # bioconductor-diffloopdata
 
 ## Overview

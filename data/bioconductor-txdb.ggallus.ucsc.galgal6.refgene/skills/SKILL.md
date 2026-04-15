@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object containing genomic
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ggallus.UCSC.galGal6.refGene.html
 ---
 
-
 # bioconductor-txdb.ggallus.ucsc.galgal6.refgene
 
 name: bioconductor-txdb.ggallus.ucsc.galgal6.refgene

@@ -4,7 +4,6 @@ description: The demuxSNP package provides a supervised approach to demultiplexi
 homepage: https://bioconductor.org/packages/release/bioc/html/demuxSNP.html
 ---
 
-
 # bioconductor-demuxsnp
 
 ## Overview

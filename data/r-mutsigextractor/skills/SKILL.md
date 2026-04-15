@@ -4,7 +4,6 @@ description: The mutSigExtractor R package extracts mutation contexts and fits m
 homepage: https://cran.r-project.org/web/packages/mutsigextractor/index.html
 ---
 
-
 # r-mutsigextractor
 
 ## Overview

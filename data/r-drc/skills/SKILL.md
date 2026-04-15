@@ -4,7 +4,6 @@ description: This tool provides expert assistance for dose-response curve analys
 homepage: https://cloud.r-project.org/web/packages/drc/index.html
 ---
 
-
 # r-drc
 
 name: r-drc

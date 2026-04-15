@@ -2,8 +2,9 @@
 name: perl-json-parse
 description: This tool converts JSON strings and files into native Perl data structures using a fast and strict parser. Use when user asks to parse JSON strings, convert JSON files to Perl variables, or validate JSON syntax within Perl scripts.
 homepage: http://metacpan.org/pod/JSON::Parse
+metadata:
+  docker_image: "quay.io/biocontainers/perl-json-parse:0.62--pl5321h9948957_5"
 ---
-
 
 # perl-json-parse
 

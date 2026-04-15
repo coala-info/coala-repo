@@ -4,7 +4,6 @@ description: SPOTlight deconvolutes cell-type proportions in spatial transcripto
 homepage: https://bioconductor.org/packages/release/bioc/html/SPOTlight.html
 ---
 
-
 # bioconductor-spotlight
 
 name: bioconductor-spotlight

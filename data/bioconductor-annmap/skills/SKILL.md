@@ -4,7 +4,6 @@ description: The annmap package provides an R interface to the Annmap database f
 homepage: https://bioconductor.org/packages/release/bioc/html/annmap.html
 ---
 
-
 # bioconductor-annmap
 
 ## Overview

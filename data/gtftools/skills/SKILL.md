@@ -2,8 +2,9 @@
 name: gtftools
 description: GTFtools is a command-line utility designed to parse GTF files and extract functional genomic data such as gene lengths and specific feature coordinates. Use when user asks to calculate non-overlapping exonic lengths, extract introns or UTRs, define promoter regions, or identify splice sites.
 homepage: https://github.com/RacconC/gtftools
+metadata:
+  docker_image: "quay.io/biocontainers/gtftools:0.9.0--pyh5e36f6f_0"
 ---
-
 
 # gtftools
 

@@ -4,7 +4,6 @@ description: This tool provides interactive visualization and quality control fo
 homepage: https://bioconductor.org/packages/release/bioc/html/shinyMethyl.html
 ---
 
-
 # bioconductor-shinymethyl
 
 name: bioconductor-shinymethyl

@@ -4,7 +4,6 @@ description: SCATE is a statistical framework that enhances sparse single-cell A
 homepage: https://bioconductor.org/packages/3.12/bioc/html/SCATE.html
 ---
 
-
 # bioconductor-scate
 
 ## Overview

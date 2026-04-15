@@ -2,6 +2,8 @@
 name: cdskit
 description: cdskit is a toolkit for processing protein-coding DNA sequences that performs codon-aware operations to preserve open reading frames. Use when user asks to pad sequences to multiples of three, mask stop codons, back-translate protein alignments, trim codon-based alignments, extract degenerate sites, or find the longest open reading frame.
 homepage: https://github.com/kfuku52/cdskit
+metadata:
+  docker_image: "quay.io/biocontainers/cdskit:0.16.1--pyhdfd78af_0"
 ---
 
 # cdskit

@@ -4,7 +4,6 @@ description: SNPhood analyzes and visualizes the molecular phenotype shape and b
 homepage: https://bioconductor.org/packages/release/bioc/html/SNPhood.html
 ---
 
-
 # bioconductor-snphood
 
 ## Overview

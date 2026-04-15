@@ -1,7 +1,9 @@
 ---
 name: varlinker
-description: "varlinker maps genomic coordinates from VCF files to biological features including genes, exons, transcripts, and clinical evidence. Use when user asks to link variants to genomic features, annotate VCFs with ClinVar records, perform allele-specific extraction, or map genes to phenotypes and OMIM evidence."
+description: varlinker maps genomic coordinates from VCF files to biological features including genes, exons, transcripts, and clinical evidence. Use when user asks to link variants to genomic features, annotate VCFs with ClinVar records, perform allele-specific extraction, or map genes to phenotypes and OMIM evidence.
 homepage: https://github.com/IBCHgenomic/varlinker
+metadata:
+  docker_image: "quay.io/biocontainers/varlinker:0.1.0--h4349ce8_0"
 ---
 
 # varlinker

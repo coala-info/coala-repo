@@ -2,8 +2,9 @@
 name: notramp
 description: The notramp tool performs coverage normalization and primer trimming for multiplexed amplicon sequencing data. Use when user asks to downsample over-represented amplicons, clip reads to amplicon boundaries, or prepare raw reads for variant calling and assembly.
 homepage: https://github.com/simakro/NoTrAmp.git
+metadata:
+  docker_image: "quay.io/biocontainers/notramp:1.1.9--pyh7e72e81_0"
 ---
-
 
 # notramp
 

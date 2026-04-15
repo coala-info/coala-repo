@@ -1,9 +1,12 @@
 ---
 name: genomic-variants-snps-and-indels-detection-using-gatk4-spark
-description: "This CWL workflow identifies SNPs and INDELs from Illumina RNA-seq reads by aligning sequences to a reference genome using Bowtie2 and performing variant calling with GATK4 Spark-based tools. Use this skill when you need to characterize the genetic diversity of SARS-CoV-2 samples or identify specific mutations that may influence viral pathogenicity and transmission."
-homepage: https://workflowhub.eu/workflows/33
+description: This CWL workflow identifies SNPs and INDELs from Illumina RNA-seq reads by aligning sequences to a reference genome using Bowtie2 and performing variant calling with GATK4 Spark-based tools. Use this skill when you need to characterize the genetic diversity of SARS-CoV-2 samples or identify specific mutations that may influence viral pathogenicity and transmission.
+homepage: https://github.com/fjrmoreews/cwl-workflow-SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
-# Genomic variants - SNPs and INDELs detection using GATK4 spark based tools.
+
+# genomic-variants-snps-and-indels-detection-using-gatk4-spark
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: perl-sys-sigaction
-description: "Sys::SigAction provides a consistent interface for POSIX signal handling and robust timeouts in Perl. Use when user asks to implement scoped signal handlers, wrap code blocks with timeouts, or interrupt blocking system calls using unsafe signals."
+description: Sys::SigAction provides a consistent interface for POSIX signal handling and robust timeouts in Perl. Use when user asks to implement scoped signal handlers, wrap code blocks with timeouts, or interrupt blocking system calls using unsafe signals.
 homepage: http://metacpan.org/pod/Sys::SigAction
+metadata:
+  docker_image: "quay.io/biocontainers/perl-sys-sigaction:0.23--pl5.22.0_0"
 ---
-
 
 # perl-sys-sigaction
 

@@ -4,7 +4,6 @@ description: This package provides orthology and paralogy mappings for Rattus no
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Rn.inp.db.html
 ---
 
-
 # bioconductor-hom.rn.inp.db
 
 name: bioconductor-hom.rn.inp.db

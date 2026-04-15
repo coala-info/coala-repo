@@ -4,7 +4,6 @@ description: This tool performs power analysis and sample size estimation for Ep
 homepage: https://bioconductor.org/packages/3.10/bioc/html/pwrEWAS.html
 ---
 
-
 # bioconductor-pwrewas
 
 name: bioconductor-pwrewas

@@ -4,7 +4,6 @@ description: The biomartr R package provides a standardized interface for retrie
 homepage: https://cran.r-project.org/web/packages/biomartr/index.html
 ---
 
-
 # r-biomartr
 
 name: r-biomartr

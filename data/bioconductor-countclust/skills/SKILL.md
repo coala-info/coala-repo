@@ -4,7 +4,6 @@ description: This package applies Grade of Membership models to biological count
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CountClust.html
 ---
 
-
 # bioconductor-countclust
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs cell detection in droplet-based single-cell RNA 
 homepage: https://bioconductor.org/packages/release/bioc/html/scCB2.html
 ---
 
-
 # bioconductor-sccb2
 
 name: bioconductor-sccb2

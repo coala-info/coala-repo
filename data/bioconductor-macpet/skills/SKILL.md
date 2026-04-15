@@ -4,7 +4,6 @@ description: bioconductor-macpet is an R package for the comprehensive analysis 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MACPET.html
 ---
 
-
 # bioconductor-macpet
 
 ## Overview

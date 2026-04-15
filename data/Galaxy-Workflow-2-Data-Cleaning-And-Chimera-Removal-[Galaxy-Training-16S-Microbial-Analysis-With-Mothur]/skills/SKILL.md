@@ -1,10 +1,12 @@
 ---
 name: workflow-2-data-cleaning-and-chimera-removal-galaxy-training
-description: "This Galaxy workflow processes aligned 16S rRNA sequences and count tables using mothur tools to perform data cleaning, sequence filtering, and chimera removal via VSEARCH. Use this skill when you need to improve the quality of microbiome datasets by removing sequencing artifacts, poorly aligned reads, and chimeric sequences before performing taxonomic classification."
-homepage: https://workflowhub.eu/workflows/1400
+description: This Galaxy workflow processes aligned 16S rRNA sequences and count tables using mothur tools to perform data cleaning, sequence filtering, and chimera removal via VSEARCH. Use this skill when you need to improve the quality of microbiome datasets by removing sequencing artifacts, poorly aligned reads, and chimeric sequences before performing taxonomic classification.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 2: Data Cleaning And Chimera Removal [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-2-data-cleaning-and-chimera-removal-galaxy-training
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: assemblerflow
 description: Assemblerflow is a pipeline composer that builds functional Nextflow genomics workflows by assembling modular bioinformatics components. Use when user asks to build a genomics pipeline, assemble bioinformatics modules into a workflow, or generate Nextflow scripts for reproducible data analysis.
 homepage: https://github.com/ODiogoSilva/assemblerflow
+metadata:
+  docker_image: "quay.io/biocontainers/assemblerflow:1.1.0.post3--py35_1"
 ---
-
 
 # assemblerflow
 

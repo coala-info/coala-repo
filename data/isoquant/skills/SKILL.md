@@ -2,8 +2,9 @@
 name: isoquant
 description: IsoQuant is a bioinformatics pipeline for the genome-based reconstruction and quantification of long-read transcriptomic data. Use when user asks to reconstruct transcript models, quantify isoform abundance, or perform de novo transcript discovery from long RNA reads.
 homepage: https://github.com/ablab/IsoQuant
+metadata:
+  docker_image: "quay.io/biocontainers/isoquant:3.10.0--hdfd78af_0"
 ---
-
 
 # isoquant
 

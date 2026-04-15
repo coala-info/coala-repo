@@ -2,8 +2,9 @@
 name: godmd
 description: GOdMD maps transition pathways between macromolecular structures using discrete molecular dynamics and biasing techniques. Use when user asks to find pathways between initial and target structures, simulate macromolecular transitions, or generate initial pathways for atomistic refinement.
 homepage: http://mmb.irbbarcelona.org/gitlab/adam/GOdMD
+metadata:
+  docker_image: "quay.io/biocontainers/godmd:1.8--hb569540_0"
 ---
-
 
 # godmd
 

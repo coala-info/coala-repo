@@ -2,8 +2,9 @@
 name: emu-pca
 description: emu-pca infers population structure from genetic data with high levels of missingness using an expectation-maximization approach. Use when user asks to perform PCA on low-coverage or ancient DNA, model population structure from PLINK files, or handle missing genetic data using truncated SVD.
 homepage: https://github.com/Rosemeis/emu
+metadata:
+  docker_image: "quay.io/biocontainers/emu-pca:1.5.0--py310h20b60a1_0"
 ---
-
 
 # emu-pca
 

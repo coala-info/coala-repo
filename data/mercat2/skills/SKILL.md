@@ -2,8 +2,9 @@
 name: mercat2
 description: MerCat2 is a k-mer counter and diversity estimator that performs database-independent property analysis for multi-omic datasets. Use when user asks to count k-mers, estimate sequence diversity, calculate physicochemical properties of proteins, or perform PCA on metagenomic and proteomic data.
 homepage: https://github.com/raw-lab/mercat2
+metadata:
+  docker_image: "quay.io/biocontainers/mercat2:1.4.1--pyhdfd78af_0"
 ---
-
 
 # mercat2
 

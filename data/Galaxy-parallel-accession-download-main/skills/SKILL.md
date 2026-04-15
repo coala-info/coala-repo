@@ -1,10 +1,12 @@
 ---
 name: parallel-accession-download
-description: "This Galaxy workflow processes a text file of sequencing run accessions to download FASTQ files in parallel using the fasterq-dump tool. Use this skill when you need to efficiently retrieve large volumes of raw genomic data from public archives for high-throughput sequencing analysis."
-homepage: https://workflowhub.eu/workflows/137
+description: This Galaxy workflow processes a text file of sequencing run accessions to download FASTQ files in parallel using the fasterq-dump tool. Use this skill when you need to efficiently retrieve large volumes of raw genomic data from public archives for high-throughput sequencing analysis.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Parallel Accession Download
+# parallel-accession-download
 
 ## Overview
 

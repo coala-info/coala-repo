@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ye6100subdcdf.html
 ---
 
-
 # bioconductor-ye6100subdcdf
 
 name: bioconductor-ye6100subdcdf

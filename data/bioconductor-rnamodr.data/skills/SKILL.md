@@ -4,7 +4,6 @@ description: This package provides curated experimental datasets, genomic annota
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RNAmodR.Data.html
 ---
 
-
 # bioconductor-rnamodr.data
 
 ## Overview

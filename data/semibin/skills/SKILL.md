@@ -1,9 +1,10 @@
 ---
 name: semibin
-description: "SemiBin is a deep-learning-based tool used for metagenomic binning to cluster contigs into high-quality bins. Use when user asks to bin metagenomic contigs, perform single-sample or multi-sample binning, or process long-read sequencing data for binning."
+description: SemiBin is a deep-learning-based tool used for metagenomic binning to cluster contigs into high-quality bins. Use when user asks to bin metagenomic contigs, perform single-sample or multi-sample binning, or process long-read sequencing data for binning.
 homepage: https://github.com/BigDataBiology/SemiBin
+metadata:
+  docker_image: "quay.io/biocontainers/semibin:2.2.1--pyhdfd78af_0"
 ---
-
 
 # semibin
 

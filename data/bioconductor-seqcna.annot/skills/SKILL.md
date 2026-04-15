@@ -4,7 +4,6 @@ description: This package provides GC content, mappability, and genomic feature 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/seqCNA.annot.html
 ---
 
-
 # bioconductor-seqcna.annot
 
 name: bioconductor-seqcna.annot

@@ -4,7 +4,6 @@ description: This tool provides an R interface for the Basic Local Alignment Sea
 homepage: https://cran.r-project.org/web/packages/rblast/index.html
 ---
 
-
 # r-rblast
 
 name: r-rblast

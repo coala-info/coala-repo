@@ -4,7 +4,6 @@ description: This package provides curated and standardized ovarian cancer trans
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MetaGxOvarian.html
 ---
 
-
 # bioconductor-metagxovarian
 
 name: bioconductor-metagxovarian

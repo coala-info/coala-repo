@@ -4,7 +4,6 @@ description: This Bioconductor package provides specialized tools for the analys
 homepage: https://bioconductor.org/packages/release/bioc/html/XNAString.html
 ---
 
-
 # bioconductor-xnastring
 
 name: bioconductor-xnastring

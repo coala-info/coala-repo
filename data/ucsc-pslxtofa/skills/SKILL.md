@@ -2,8 +2,9 @@
 name: ucsc-pslxtofa
 description: `ucsc-pslxtofa` converts PSLX alignment files, which contain query and target sequences, into standard FASTA format. Use when user asks to extract sequences from PSLX files, convert PSLX to FASTA, reconstruct sequences, perform motif analysis, or verify alignment content.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-pslxtofa:482--h0b57e2e_0"
 ---
-
 
 # ucsc-pslxtofa
 

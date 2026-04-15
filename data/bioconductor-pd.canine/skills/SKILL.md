@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.canine.html
 ---
 
-
 # bioconductor-pd.canine
 
 name: bioconductor-pd.canine

@@ -4,7 +4,6 @@ description: The r-seqminer package efficiently retrieves, annotates, and manipu
 homepage: https://cloud.r-project.org/web/packages/seqminer/index.html
 ---
 
-
 # r-seqminer
 
 name: r-seqminer

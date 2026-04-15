@@ -1,10 +1,12 @@
 ---
 name: allele-based-pathogen-identification
-description: "This workflow performs allele-based pathogen identification by mapping preprocessed Nanopore reads to a reference genome using minimap2, calling variants with Clair3, and generating consensus sequences and coverage statistics with bcftools and samtools. Use this skill when you need to identify novel pathogen strains, track emerging variants through SNP analysis, or calculate mapping depth and coverage for foodborne pathogen detection."
-homepage: https://workflowhub.eu/workflows/1063
+description: This workflow performs allele-based pathogen identification by mapping preprocessed Nanopore reads to a reference genome using minimap2, calling variants with Clair3, and generating consensus sequences and coverage statistics with bcftools and samtools. Use this skill when you need to identify novel pathogen strains, track emerging variants through SNP analysis, or calculate mapping depth and coverage for foodborne pathogen detection.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Allele-based Pathogen Identification
+# allele-based-pathogen-identification
 
 ## Overview
 

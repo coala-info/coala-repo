@@ -2,8 +2,9 @@
 name: potrace
 description: This tool traces bitmaps into smooth, scalable vector graphics. Use when user asks to convert raster images to vector formats.
 homepage: https://github.com/kilobtye/potrace
+metadata:
+  docker_image: "quay.io/biocontainers/potrace:1.11--h577a1d6_7"
 ---
-
 
 # potrace
 

@@ -2,8 +2,9 @@
 name: garli-mpi
 description: This tool manages and executes the GARLI-MPI phylogenetic inference tool. Use when user asks to run GARLI-MPI for phylogenetic tree inference, configure GARLI-MPI parameters, interpret GARLI-MPI output, or troubleshoot GARLI-MPI execution.
 homepage: https://anaconda.org/channels/bioconda/packages/garli-mpi/overview
+metadata:
+  docker_image: "biocontainers/garli-mpi:v2.1-3-deb_cv1"
 ---
-
 
 # garli-mpi
 

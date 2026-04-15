@@ -4,7 +4,6 @@ description: bioconductor-mousefm performs genetic finemapping in inbred mice by
 homepage: https://bioconductor.org/packages/release/bioc/html/MouseFM.html
 ---
 
-
 # bioconductor-mousefm
 
 name: bioconductor-mousefm

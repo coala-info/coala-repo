@@ -2,9 +2,9 @@
 name: tinyalign
 description: tinyalign calculates string distances, including edit and Hamming distance, with a focus on performance for short sequences. Use when user asks to calculate string distance, calculate edit distance, calculate Hamming distance, compare short sequences, or check if string distance is below a certain threshold.
 homepage: https://github.com/marcelm/tinyalign/
+metadata:
+  docker_image: "quay.io/biocontainers/tinyalign:0.2.2--py311haab0aaa_2"
 ---
-
-
 
 # tinyalign
 

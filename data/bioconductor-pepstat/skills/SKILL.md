@@ -4,7 +4,6 @@ description: Bioconductor-pepstat provides a statistical framework for the analy
 homepage: https://bioconductor.org/packages/release/bioc/html/pepStat.html
 ---
 
-
 # bioconductor-pepstat
 
 name: bioconductor-pepstat

@@ -2,8 +2,9 @@
 name: sparseassembler
 description: SparseAssembler is a genome assembly tool that utilizes a sparse k-mer graph to minimize memory consumption during the assembly of large-scale genomic data. Use when user asks to assemble a genome from sequencing reads, reduce memory usage during the assembly process, or build a sparse k-mer graph with specific skip sizes.
 homepage: https://github.com/yechengxi/SparseAssembler
+metadata:
+  docker_image: "quay.io/biocontainers/sparseassembler:20160205--h9948957_11"
 ---
-
 
 # sparseassembler
 

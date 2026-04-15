@@ -2,8 +2,9 @@
 name: ucsc-axttomaf
 description: This tool converts pairwise alignment data from AXT format to MAF format. Use when user asks to convert AXT files to MAF files or transform pairwise alignment data.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-axttomaf:482--h0b57e2e_0"
 ---
-
 
 # ucsc-axttomaf
 

@@ -2,8 +2,9 @@
 name: jmodeltest
 description: jModelTest identifies the most appropriate model of nucleotide substitution for DNA sequence alignments to support phylogenetic inference. Use when user asks to select a substitution model, evaluate information criteria like AIC or BIC, or estimate model-averaged parameters for genomic data.
 homepage: https://github.com/ddarriba/jmodeltest2
+metadata:
+  docker_image: "biocontainers/jmodeltest:v2.1.10dfsg-7-deb_cv1"
 ---
-
 
 # jmodeltest
 

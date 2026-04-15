@@ -4,7 +4,6 @@ description: CHETAH performs hierarchical cell type identification for single-ce
 homepage: https://bioconductor.org/packages/release/bioc/html/CHETAH.html
 ---
 
-
 # bioconductor-chetah
 
 ## Overview

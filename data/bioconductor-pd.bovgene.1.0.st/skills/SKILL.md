@@ -4,7 +4,6 @@ description: This package provides annotation and platform design metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.bovgene.1.0.st.html
 ---
 
-
 # bioconductor-pd.bovgene.1.0.st
 
 name: bioconductor-pd.bovgene.1.0.st

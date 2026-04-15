@@ -4,7 +4,6 @@ description: This tool provides efficient estimation of covariance and partial c
 homepage: https://cloud.r-project.org/web/packages/corpcor/index.html
 ---
 
-
 # r-corpcor
 
 name: r-corpcor

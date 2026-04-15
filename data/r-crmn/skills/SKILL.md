@@ -4,7 +4,6 @@ description: The r-crmn package implements the Cross-contribution Robust Multipl
 homepage: https://cran.r-project.org/web/packages/crmn/index.html
 ---
 
-
 # r-crmn
 
 ## Overview

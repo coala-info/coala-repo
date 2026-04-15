@@ -4,7 +4,6 @@ description: This tool analyzes and visualizes Hi-C chromosome conformation capt
 homepage: https://bioconductor.org/packages/release/bioc/html/HiContacts.html
 ---
 
-
 # bioconductor-hicontacts
 
 name: bioconductor-hicontacts

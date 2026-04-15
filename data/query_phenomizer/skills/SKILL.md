@@ -2,8 +2,9 @@
 name: query_phenomizer
 description: The query_phenomizer tool identifies and ranks syndromes or diseases associated with a provided set of Human Phenotype Ontology (HPO) terms. Use when user asks to search for diseases based on phenotypes, validate HPO identifiers, or perform clinical diagnostic queries.
 homepage: https://www.github.com/moonso/query_phenomizer
+metadata:
+  docker_image: "quay.io/biocontainers/query_phenomizer:1.2.1--pyh7cba7a3_0"
 ---
-
 
 # query_phenomizer
 

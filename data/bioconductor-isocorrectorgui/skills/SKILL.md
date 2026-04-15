@@ -4,7 +4,6 @@ description: IsoCorrectoRGUI corrects mass spectrometry data from stable isotope
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoCorrectoRGUI.html
 ---
 
-
 # bioconductor-isocorrectorgui
 
 name: bioconductor-isocorrectorgui

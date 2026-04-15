@@ -4,7 +4,6 @@ description: The ecolitk package provides specialized data structures and visual
 homepage: https://bioconductor.org/packages/release/bioc/html/ecolitk.html
 ---
 
-
 # bioconductor-ecolitk
 
 ## Overview

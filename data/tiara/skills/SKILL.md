@@ -1,9 +1,10 @@
 ---
 name: tiara
 description: Tiara monitors the Internet Archive for new content by comparing search results against a local database of previously discovered items. Use when user asks to track new archive uploads, automate keyword searches on the Internet Archive, or generate reports on newly discovered digital resources.
-homepage: https://github.com/savetz/tiara
+homepage: https://github.com/ibe-uw/tiara
+metadata:
+  docker_image: "quay.io/biocontainers/tiara:1.0.3"
 ---
-
 
 # tiara
 

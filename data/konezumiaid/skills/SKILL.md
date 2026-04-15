@@ -2,6 +2,8 @@
 name: konezumiaid
 description: konezumiaid automates the identification of optimal gRNA sequences for creating multiplex knockout mouse models via Target-AID base editing. Use when user asks to identify gRNAs for premature termination codons, find splice site disruptions, or perform batch processing of gene symbols and transcript IDs.
 homepage: https://github.com/aki2274/KOnezumi-AID
+metadata:
+  docker_image: "quay.io/biocontainers/konezumiaid:0.3.6.1--pyhdfd78af_0"
 ---
 
 # konezumiaid

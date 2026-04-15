@@ -1,10 +1,12 @@
 ---
 name: population-and-community-metrics-calculation-from-biodiversi
-description: "This biodiversity workflow processes observation and unit data to generate community metrics and presence-absence tables using Generalized Linear Models for population and community analysis. Use this skill when you need to quantify ecological community structures or statistically model species distribution patterns and population dynamics from field observation datasets."
-homepage: https://workflowhub.eu/workflows/49
+description: This biodiversity workflow processes observation and unit data to generate community metrics and presence-absence tables using Generalized Linear Models for population and community analysis. Use this skill when you need to quantify ecological community structures or statistically model species distribution patterns and population dynamics from field observation datasets.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Population and community metrics calculation from Biodiversity data
+# population-and-community-metrics-calculation-from-biodiversi
 
 ## Overview
 

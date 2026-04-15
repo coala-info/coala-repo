@@ -2,8 +2,9 @@
 name: twobitreader
 description: twobitreader efficiently retrieves DNA sequences from .2bit genomic files. Use when user asks to retrieve DNA sequences from .2bit files, extract sequences for genomic regions defined in BED files, convert genomic regions to FASTA, or access specific sequences from a .2bit genome file.
 homepage: https://github.com/benjschiller/twobitreader
+metadata:
+  docker_image: "quay.io/biocontainers/twobitreader:3.1.7--py_0"
 ---
-
 
 # twobitreader
 

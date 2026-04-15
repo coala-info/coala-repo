@@ -4,7 +4,6 @@ description: This tool extracts Inparanoid-based orthology mappings between Dros
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Dm.inp.db.html
 ---
 
-
 # bioconductor-hom.dm.inp.db
 
 name: bioconductor-hom.dm.inp.db

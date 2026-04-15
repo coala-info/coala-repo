@@ -4,7 +4,6 @@ description: The bioconductor-oct4 package provides Salmon quantification result
 homepage: https://bioconductor.org/packages/release/data/experiment/html/oct4.html
 ---
 
-
 # bioconductor-oct4
 
 ## Overview

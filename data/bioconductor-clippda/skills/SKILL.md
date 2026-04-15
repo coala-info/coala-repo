@@ -4,7 +4,6 @@ description: This tool analyzes clinical proteomic mass spectrometry data with t
 homepage: https://bioconductor.org/packages/release/bioc/html/clippda.html
 ---
 
-
 # bioconductor-clippda
 
 name: bioconductor-clippda

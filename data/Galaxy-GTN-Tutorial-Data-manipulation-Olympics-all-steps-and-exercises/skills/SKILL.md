@@ -1,10 +1,12 @@
 ---
 name: gtn-tutorial-data-manipulation-olympics-all-steps-and-exerci
-description: "This workflow processes Olympic Games datasets using a comprehensive suite of tabular data tools including filtering, sorting, joining, and Datamash operations. Use this skill when you need to perform complex data cleaning, multi-file merging, and statistical aggregation on large tabular datasets to derive insights from historical or sports-related records."
-homepage: https://workflowhub.eu/workflows/1601
+description: This workflow processes Olympic Games datasets using a comprehensive suite of tabular data tools including filtering, sorting, joining, and Datamash operations. Use this skill when you need to perform complex data cleaning, multi-file merging, and statistical aggregation on large tabular datasets to derive insights from historical or sports-related records.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN Tutorial: Data manipulation Olympics - all steps and exercises
+# gtn-tutorial-data-manipulation-olympics-all-steps-and-exerci
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: finding-the-muon-stopping-site-pymuon-suite-in-galaxy
-description: "This Galaxy workflow identifies muon stopping sites in crystalline materials using CASTEP structure and density files processed through PyMuonSuite AIRSS UEP optimization and clustering tools. Use this skill when you need to determine the most probable implantation sites of muons within a solid-state system to accurately interpret experimental muon spectroscopy measurements."
-homepage: https://workflowhub.eu/workflows/757
+description: This Galaxy workflow identifies muon stopping sites in crystalline materials using CASTEP structure and density files processed through PyMuonSuite AIRSS UEP optimization and clustering tools. Use this skill when you need to determine the most probable implantation sites of muons within a solid-state system to accurately interpret experimental muon spectroscopy measurements.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Finding the Muon Stopping Site: pymuon-suite in Galaxy
+# finding-the-muon-stopping-site-pymuon-suite-in-galaxy
 
 ## Overview
 

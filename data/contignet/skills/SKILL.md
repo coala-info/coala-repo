@@ -2,8 +2,9 @@
 name: contignet
 description: ContigNet uses a convolutional neural network to predict the likelihood of interactions between phage and bacterial contigs. Use when user asks to predict phage-host interactions, analyze viral ecology, or identify potential hosts for viral sequences in fragmented genomic data.
 homepage: https://github.com/tianqitang1/ContigNet
+metadata:
+  docker_image: "quay.io/biocontainers/contignet:1.0.1.post3--pyh7cba7a3_0"
 ---
-
 
 # contignet
 

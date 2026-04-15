@@ -4,7 +4,6 @@ description: bioconductor-cnviz provides an interactive Shiny application for vi
 homepage: https://bioconductor.org/packages/release/bioc/html/CNViz.html
 ---
 
-
 # bioconductor-cnviz
 
 name: bioconductor-cnviz

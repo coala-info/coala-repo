@@ -4,7 +4,6 @@ description: This package provides access to 10X Genomics peripheral blood monon
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TENxPBMCData.html
 ---
 
-
 # bioconductor-tenxpbmcdata
 
 name: bioconductor-tenxpbmcdata

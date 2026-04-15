@@ -1,10 +1,12 @@
 ---
 name: quality-evaluation-for-trio-assembly
-description: "This workflow utilizes Meryl and GenomeScope to process PacBio HiFi reads alongside maternal and paternal Illumina data for k-mer frequency analysis and haplotype partitioning. Use this skill when you need to estimate genome size, heterozygosity, and repeat content or prepare k-mer databases for high-quality trio-binned diploid genome assemblies."
-homepage: https://workflowhub.eu/workflows/365
+description: This workflow utilizes Meryl and GenomeScope to process PacBio HiFi reads alongside maternal and paternal Illumina data for k-mer frequency analysis and haplotype partitioning. Use this skill when you need to estimate genome size, heterozygosity, and repeat content or prepare k-mer databases for high-quality trio-binned diploid genome assemblies.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Quality Evaluation For Trio Assembly
+# quality-evaluation-for-trio-assembly
 
 ## Overview
 

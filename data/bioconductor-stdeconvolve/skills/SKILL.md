@@ -4,7 +4,6 @@ description: STdeconvolve performs unsupervised deconvolution of multi-cellular 
 homepage: https://bioconductor.org/packages/3.16/bioc/html/STdeconvolve.html
 ---
 
-
 # bioconductor-stdeconvolve
 
 name: bioconductor-stdeconvolve

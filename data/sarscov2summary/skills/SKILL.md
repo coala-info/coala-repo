@@ -2,8 +2,9 @@
 name: sarscov2summary
 description: This tool formats and extracts metadata for SARS-CoV-2 selection analysis workflows. Use when user asks to format SARS-CoV-2 genomic data for selection analysis or prepare sequence data for bioinformatics pipelines.
 homepage: https://github.com/nickeener/sarscov2formatter
+metadata:
+  docker_image: "quay.io/biocontainers/sarscov2summary:0.5--py_1"
 ---
-
 
 # sarscov2summary
 

@@ -1,10 +1,12 @@
 ---
 name: genetic-map-rad-seq-workflow
-description: "This Galaxy workflow processes RAD-Seq FASTA files from parents and progeny using Stacks de novo map and genotypes tools to identify markers and call genotypes. Use this skill when you need to construct a genetic map for a population to study inheritance or genomic architecture in species lacking a reference genome."
-homepage: https://workflowhub.eu/workflows/1683
+description: This Galaxy workflow processes RAD-Seq FASTA files from parents and progeny using Stacks de novo map and genotypes tools to identify markers and call genotypes. Use this skill when you need to construct a genetic map for a population to study inheritance or genomic architecture in species lacking a reference genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genetic Map Rad Seq Workflow
+# genetic-map-rad-seq-workflow
 
 ## Overview
 

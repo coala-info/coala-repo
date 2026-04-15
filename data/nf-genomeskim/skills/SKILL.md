@@ -4,6 +4,8 @@ description: nf-core/genomeskim performs quality control and filtering of genome
 homepage: https://github.com/nf-core/genomeskim
 ---
 
+# genomeskim
+
 ## Overview
 nf-core/genomeskim is a bioinformatics pipeline designed for the analysis of genome skims, which are typically low-coverage sequencing datasets. It solves the problem of inconsistent processing by providing a best-practice workflow for read filtering, quality assessment, and subsequent assembly of organelles or genomic components.
 

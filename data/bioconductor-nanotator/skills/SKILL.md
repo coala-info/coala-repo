@@ -1,9 +1,8 @@
 ---
 name: bioconductor-nanotator
-description: "bioconductor-nanotator annotates and classifies structural variants from Bionano Genomics optical mapping data. Use when user asks to calculate structural variant population frequencies, perform cohort analysis, identify gene overlaps, or prioritize variants based on phenotypic keywords."
+description: bioconductor-nanotator annotates and classifies structural variants from Bionano Genomics optical mapping data. Use when user asks to calculate structural variant population frequencies, perform cohort analysis, identify gene overlaps, or prioritize variants based on phenotypic keywords.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/nanotatoR.html
 ---
-
 
 # bioconductor-nanotator
 

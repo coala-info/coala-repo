@@ -4,7 +4,6 @@ description: The synapsis package automates the analysis of meiotic immunofluore
 homepage: https://bioconductor.org/packages/release/bioc/html/synapsis.html
 ---
 
-
 # bioconductor-synapsis
 
 name: bioconductor-synapsis

@@ -1,10 +1,12 @@
 ---
 name: host-or-contamination-removal-on-long-reads
-description: "This workflow processes Nanopore fastq files by mapping them against a reference genome using Minimap2 and filtering out host or contaminant sequences with BAMtools and Samtools. Use this skill when you need to isolate microbiome sequences from long-read sequencing data by removing human or host DNA contamination to improve downstream analysis accuracy and speed."
-homepage: https://workflowhub.eu/workflows/2027
+description: This workflow processes Nanopore fastq files by mapping them against a reference genome using Minimap2 and filtering out host or contaminant sequences with BAMtools and Samtools. Use this skill when you need to isolate microbiome sequences from long-read sequencing data by removing human or host DNA contamination to improve downstream analysis accuracy and speed.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Host or Contamination Removal on Long-Reads
+# host-or-contamination-removal-on-long-reads
 
 ## Overview
 

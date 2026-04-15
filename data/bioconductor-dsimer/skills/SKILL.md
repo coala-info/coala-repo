@@ -4,7 +4,6 @@ description: The dSimer package provides a framework for measuring and visualizi
 homepage: https://bioconductor.org/packages/3.6/bioc/html/dSimer.html
 ---
 
-
 # bioconductor-dsimer
 
 ## Overview

@@ -2,8 +2,9 @@
 name: fastan
 description: FasTAN is a high-performance utility for the rapid identification of tandem repeats within DNA sequences. Use when user asks to find tandem repeats, detect repetitive structures in genomic data, or generate 1aln alignment files for satellite DNA analysis.
 homepage: https://github.com/thegenemyers/FASTAN
+metadata:
+  docker_image: "quay.io/biocontainers/fastan:0.5--h577a1d6_0"
 ---
-
 
 # fastan
 

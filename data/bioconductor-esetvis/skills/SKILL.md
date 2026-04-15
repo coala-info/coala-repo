@@ -4,7 +4,6 @@ description: This package visualizes Bioconductor containers using Spectral Mapp
 homepage: https://bioconductor.org/packages/release/bioc/html/esetVis.html
 ---
 
-
 # bioconductor-esetvis
 
 ## Overview

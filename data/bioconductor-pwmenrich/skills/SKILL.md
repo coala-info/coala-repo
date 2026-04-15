@@ -4,7 +4,6 @@ description: This tool performs DNA motif enrichment analysis using Position Wei
 homepage: https://bioconductor.org/packages/release/bioc/html/PWMEnrich.html
 ---
 
-
 # bioconductor-pwmenrich
 
 name: bioconductor-pwmenrich

@@ -4,7 +4,6 @@ description: This tool provides a unified framework for the preprocessing and an
 homepage: https://bioconductor.org/packages/release/bioc/html/oligo.html
 ---
 
-
 # bioconductor-oligo
 
 name: bioconductor-oligo

@@ -4,7 +4,6 @@ description: This package provides access to curated meta-cohort survival data a
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mcsurvdata.html
 ---
 
-
 # bioconductor-mcsurvdata
 
 name: bioconductor-mcsurvdata

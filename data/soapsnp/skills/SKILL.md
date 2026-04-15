@@ -2,8 +2,9 @@
 name: soapsnp
 description: SOAPSNP identifies Single Nucleotide Polymorphisms (SNPs) from aligned sequencing data. Use when user asks to call SNPs from sequencing data.
 homepage: https://github.com/zzhangjii/soapsnp
+metadata:
+  docker_image: "biocontainers/soapsnp:v1.03-3-deb_cv1"
 ---
-
 
 # soapsnp
 

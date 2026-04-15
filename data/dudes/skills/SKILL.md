@@ -2,8 +2,9 @@
 name: dudes
 description: DUDes is a taxonomic profiler that converts sequence alignment data into microbial community compositions using a distribution-based approach. Use when user asks to perform metagenomic profiling from SAM files, analyze metaproteomic data from protein alignments, or create custom taxonomic databases.
 homepage: https://github.com/pirovc/dudes
+metadata:
+  docker_image: "quay.io/biocontainers/dudes:0.10.0--pyhdfd78af_0"
 ---
-
 
 # dudes
 

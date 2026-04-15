@@ -4,7 +4,6 @@ description: ELMER.data provides essential metadata, motif occurrence matrices, 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ELMER.data.html
 ---
 
-
 # bioconductor-elmer.data
 
 ## Overview

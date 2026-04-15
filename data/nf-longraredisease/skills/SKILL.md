@@ -4,6 +4,8 @@ description: This pipeline performs structural variant detection, phasing, and c
 homepage: https://github.com/nf-core/longraredisease
 ---
 
+# longraredisease
+
 ## Overview
 nf-core/longraredisease addresses the challenge of identifying complex genetic causes in rare disease diagnostics by leveraging the superior resolution of long-read sequencing. It integrates multiple structural variant (SV) callers to produce a high-confidence consensus, while optionally incorporating single nucleotide variants, copy number variants, and methylation data to provide a comprehensive genomic profile.
 

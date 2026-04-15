@@ -4,7 +4,6 @@ description: This package provides annotation data for the mm24kresogen platform
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mm24kresogen.db.html
 ---
 
-
 # bioconductor-mm24kresogen.db
 
 name: bioconductor-mm24kresogen.db

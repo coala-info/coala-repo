@@ -2,8 +2,9 @@
 name: pyteomics
 description: Pyteomics is a Python framework for parsing proteomics data and calculating physico-chemical properties of polypeptides. Use when user asks to parse mass spectrometry files, calculate peptide masses or isoelectric points, simulate protein digestion, or manage FASTA databases.
 homepage: https://github.com/levitsky/pyteomics
+metadata:
+  docker_image: "quay.io/biocontainers/pyteomics:4.7.5--pyh7e72e81_0"
 ---
-
 
 # pyteomics
 

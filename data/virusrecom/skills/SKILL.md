@@ -2,8 +2,9 @@
 name: virusrecom
 description: virusrecom detects recombination within viral lineages using information theory. Use when user asks to validate potential recombinants, find specific recombination breakpoints, or perform a systematic scan for recombination.
 homepage: https://github.com/ZhijianZhou01/virusrecom
+metadata:
+  docker_image: "quay.io/biocontainers/virusrecom:1.4.0--pyhdfd78af_0"
 ---
-
 
 # virusrecom
 

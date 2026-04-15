@@ -1,10 +1,12 @@
 ---
 name: proteogenomics-2-database-search
-description: "This Galaxy workflow performs proteogenomic database searching by matching MGF mass spectrometry data against a custom FASTA database containing variants and contaminants using Search GUI and Peptide Shaker. Use this skill when you need to identify novel peptides from RNA-Seq derived sequences and filter out known reference proteins to isolate potential neoantigens or uncharacterized protein-coding regions."
-homepage: https://workflowhub.eu/workflows/1429
+description: This Galaxy workflow performs proteogenomic database searching by matching MGF mass spectrometry data against a custom FASTA database containing variants and contaminants using Search GUI and Peptide Shaker. Use this skill when you need to identify novel peptides from RNA-Seq derived sequences and filter out known reference proteins to isolate potential neoantigens or uncharacterized protein-coding regions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteogenomics 2: Database Search
+# proteogenomics-2-database-search
 
 ## Overview
 

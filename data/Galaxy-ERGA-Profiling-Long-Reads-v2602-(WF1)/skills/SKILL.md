@@ -1,10 +1,12 @@
 ---
 name: erga-profiling-long-reads-v2602-wf1
-description: "This ERGA workflow profiles trimmed long reads using Meryl, Smudgeplot, and GenomeScope to characterize genomic properties from sequencing data. Use this skill when you need to estimate genome size, heterozygosity, and ploidy levels to determine the complexity of a target organism before de novo assembly."
-homepage: https://workflowhub.eu/workflows/603
+description: This ERGA workflow profiles trimmed long reads using Meryl, Smudgeplot, and GenomeScope to characterize genomic properties from sequencing data. Use this skill when you need to estimate genome size, heterozygosity, and ploidy levels to determine the complexity of a target organism before de novo assembly.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA Profiling Long Reads v2602 (WF1)
+# erga-profiling-long-reads-v2602-wf1
 
 ## Overview
 

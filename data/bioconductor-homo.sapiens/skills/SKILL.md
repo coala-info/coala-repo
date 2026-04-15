@@ -4,7 +4,6 @@ description: This tool provides integrated genomic annotations for human data by
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html
 ---
 
-
 # bioconductor-homo.sapiens
 
 name: bioconductor-homo.sapiens

@@ -2,8 +2,9 @@
 name: tgsgapcloser
 description: TGS-GapCloser fills gaps in draft genome scaffolds by aligning long reads or contigs to the edges of N-regions. Use when user asks to fill gaps in draft assemblies, close gaps using TGS reads, or polish genome scaffolds with long-read data.
 homepage: https://github.com/BGI-Qingdao/TGS-GapCloser
+metadata:
+  docker_image: "quay.io/biocontainers/tgsgapcloser:1.2.1--h6f25541_3"
 ---
-
 
 # tgsgapcloser
 

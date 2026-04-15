@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133acdf.html
 ---
 
-
 # bioconductor-hgu133acdf
 
 name: bioconductor-hgu133acdf

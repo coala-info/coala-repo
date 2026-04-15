@@ -4,7 +4,6 @@ description: This package provides probe sequence data and chip coordinates for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/paeg1aprobe.html
 ---
 
-
 # bioconductor-paeg1aprobe
 
 name: bioconductor-paeg1aprobe

@@ -4,7 +4,6 @@ description: This package provides statistical tools for analyzing high-throughp
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SAGx.html
 ---
 
-
 # bioconductor-sagx
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides access to SNP positions and alleles for Homo 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SNPlocs.Hsapiens.dbSNP150.GRCh38.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp150.grch38
 
 name: bioconductor-snplocs.hsapiens.dbsnp150.grch38

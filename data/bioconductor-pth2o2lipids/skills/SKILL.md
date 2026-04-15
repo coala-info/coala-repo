@@ -4,7 +4,6 @@ description: This package provides annotated HPLC-ESI-MS lipidomics data from th
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PtH2O2lipids.html
 ---
 
-
 # bioconductor-pth2o2lipids
 
 name: bioconductor-pth2o2lipids

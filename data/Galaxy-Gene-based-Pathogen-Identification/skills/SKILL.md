@@ -1,10 +1,12 @@
 ---
 name: gene-based-pathogen-identification
-description: "This Galaxy workflow processes preprocessed Nanopore sequencing datasets to perform de novo assembly and gene-based pathogen characterization using tools like Flye, medaka, and ABRicate. Use this skill when you need to identify bacterial pathogens, visualize assembly graphs, and detect antimicrobial resistance or virulence factors from long-read genomic data."
-homepage: https://workflowhub.eu/workflows/1495
+description: This Galaxy workflow processes preprocessed Nanopore sequencing datasets to perform de novo assembly and gene-based pathogen characterization using tools like Flye, medaka, and ABRicate. Use this skill when you need to identify bacterial pathogens, visualize assembly graphs, and detect antimicrobial resistance or virulence factors from long-read genomic data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gene-based Pathogen Identification
+# gene-based-pathogen-identification
 
 ## Overview
 

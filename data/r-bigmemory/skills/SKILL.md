@@ -4,7 +4,6 @@ description: The r-bigmemory tool manages massive matrices in R using shared mem
 homepage: https://cloud.r-project.org/web/packages/bigmemory/index.html
 ---
 
-
 # r-bigmemory
 
 name: r-bigmemory

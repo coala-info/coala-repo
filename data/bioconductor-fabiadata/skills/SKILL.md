@@ -4,7 +4,6 @@ description: This package provides gene expression datasets for demonstrating an
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fabiaData.html
 ---
 
-
 # bioconductor-fabiadata
 
 name: bioconductor-fabiadata

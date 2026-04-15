@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Arabidopsis tha
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Athaliana.TAIR.04232008.html
 ---
 
-
 # bioconductor-bsgenome.athaliana.tair.04232008
 
 name: bioconductor-bsgenome.athaliana.tair.04232008

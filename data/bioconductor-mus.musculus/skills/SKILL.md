@@ -4,7 +4,6 @@ description: This package provides a unified interface for mouse genomic annotat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html
 ---
 
-
 # bioconductor-mus.musculus
 
 name: bioconductor-mus.musculus

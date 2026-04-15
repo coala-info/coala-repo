@@ -4,7 +4,6 @@ description: The basilisk package provides a framework for Bioconductor packages
 homepage: https://bioconductor.org/packages/release/bioc/html/basilisk.html
 ---
 
-
 # bioconductor-basilisk
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides access to and analysis of RNA-seq data and physi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ObMiTi.html
 ---
 
-
 # bioconductor-obmiti
 
 name: bioconductor-obmiti

@@ -2,8 +2,9 @@
 name: pyani
 description: pyani calculates genome-scale similarity and average nucleotide identity between microbial sequences to define species boundaries. Use when user asks to calculate ANI, compare microbial genomes, generate identity heatmaps, or automate pairwise genomic alignments.
 homepage: https://github.com/widdowquinn/pyani
+metadata:
+  docker_image: "quay.io/biocontainers/pyani:0.2.13.1--pyhdc42f0e_0"
 ---
-
 
 # pyani
 

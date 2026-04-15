@@ -4,7 +4,6 @@ description: This tool generates fingerprints from multivariate flow cytometry d
 homepage: https://bioconductor.org/packages/release/bioc/html/flowFP.html
 ---
 
-
 # bioconductor-flowfp
 
 name: bioconductor-flowfp

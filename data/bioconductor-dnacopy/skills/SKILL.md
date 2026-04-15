@@ -4,7 +4,6 @@ description: This package implements the Circular Binary Segmentation algorithm 
 homepage: https://bioconductor.org/packages/release/bioc/html/DNAcopy.html
 ---
 
-
 # bioconductor-dnacopy
 
 ## Overview

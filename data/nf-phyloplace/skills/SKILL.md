@@ -4,6 +4,8 @@ description: This pipeline performs phylogenetic placement of query sequences on
 homepage: https://github.com/nf-core/phyloplace
 ---
 
+# phyloplace
+
 ## Overview
 nf-core/phyloplace is a bioinformatics pipeline designed for the efficient placement of sequence reads into a fixed reference phylogenetic tree. It solves the problem of integrating new sequence data into large, established phylogenies by using EPA-NG for placement and GAPPA for downstream processing such as tree grafting and taxonomic classification.
 

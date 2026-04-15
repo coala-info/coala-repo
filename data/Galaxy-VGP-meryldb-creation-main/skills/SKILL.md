@@ -1,10 +1,12 @@
 ---
 name: quality-evaluation
-description: "This genomics workflow processes PacBio HiFi reads using Meryl and GenomeScope to generate a k-mer database and estimate fundamental genomic characteristics. Use this skill when you need to determine genome size, heterozygosity, and repeat content to inform assembly parameters or perform quality control for vertebrate genome projects."
-homepage: https://workflowhub.eu/workflows/366
+description: This genomics workflow processes PacBio HiFi reads using Meryl and GenomeScope to generate a k-mer database and estimate fundamental genomic characteristics. Use this skill when you need to determine genome size, heterozygosity, and repeat content to inform assembly parameters or perform quality control for vertebrate genome projects.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Quality Evaluation
+# quality-evaluation
 
 ## Overview
 

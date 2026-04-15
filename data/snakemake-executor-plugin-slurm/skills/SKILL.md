@@ -2,8 +2,9 @@
 name: snakemake-executor-plugin-slurm
 description: This plugin enables Snakemake to execute workflow tasks as jobs on a SLURM cluster by translating resource requirements into submission commands. Use when user asks to run Snakemake workflows on a SLURM scheduler, submit jobs to a cluster, or manage SLURM resource allocations like partitions and memory.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-slurm
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-executor-plugin-slurm:2.3.1--pyhdfd78af_0"
 ---
-
 
 # snakemake-executor-plugin-slurm
 

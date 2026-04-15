@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-quality-control-se
-description: "This metagenomics workflow performs quality control on single-end amplicon reads using Trimmomatic for trimming, PRINSEQ for ambiguity filtering, and FastQC and MultiQC for data visualization. Use this skill when you need to remove low-quality bases, short sequences, and excessive ambiguous reads from single-end environmental DNA samples to ensure reliable downstream taxonomic profiling."
-homepage: https://workflowhub.eu/workflows/1271
+description: This metagenomics workflow performs quality control on single-end amplicon reads using Trimmomatic for trimming, PRINSEQ for ambiguity filtering, and FastQC and MultiQC for data visualization. Use this skill when you need to remove low-quality bases, short sequences, and excessive ambiguous reads from single-end environmental DNA samples to ensure reliable downstream taxonomic profiling.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - Quality control SE
+# mgnifys-amplicon-pipeline-v50-quality-control-se
 
 ## Overview
 

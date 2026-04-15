@@ -2,6 +2,8 @@
 name: motifscan
 description: MotifScan detects known DNA motifs within genomic regions and performs statistical enrichment analysis. Use when user asks to scan genomic regions for motifs, manage reference genomes, install motif sets, or perform motif enrichment analysis.
 homepage: https://github.com/shao-lab/MotifScan
+metadata:
+  docker_image: "quay.io/biocontainers/motifscan:1.3.0--py310h4b81fae_3"
 ---
 
 # motifscan

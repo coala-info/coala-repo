@@ -4,7 +4,6 @@ description: The sendmailR package provides a portable SMTP client for sending e
 homepage: https://cran.r-project.org/web/packages/sendmailr/index.html
 ---
 
-
 # r-sendmailr
 
 ## Overview

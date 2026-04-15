@@ -2,8 +2,9 @@
 name: ngmlr
 description: ngmlr is a long-read mapper designed to align high-error sequencing data to a reference genome while accurately identifying structural variations. Use when user asks to align PacBio or Oxford Nanopore reads, map long reads for structural variant calling, or perform SV-aware genomic alignment.
 homepage: https://github.com/philres/ngmlr
+metadata:
+  docker_image: "quay.io/biocontainers/ngmlr:0.2.7--he941832_0"
 ---
-
 
 # ngmlr
 

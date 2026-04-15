@@ -4,7 +4,6 @@ description: This package provides a unified annotation resource for Rattus norv
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Rattus.norvegicus.html
 ---
 
-
 # bioconductor-rattus.norvegicus
 
 name: bioconductor-rattus.norvegicus

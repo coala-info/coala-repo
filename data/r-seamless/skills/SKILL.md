@@ -4,7 +4,6 @@ description: This tool deconvolutes bulk Acute Myeloid Leukemia RNA-seq samples 
 homepage: https://cran.r-project.org/web/packages/seamless/index.html
 ---
 
-
 # r-seamless
 
 name: r-seamless

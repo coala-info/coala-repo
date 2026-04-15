@@ -4,7 +4,6 @@ description: This tool provides access to the LymphoSeqDB database containing pr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/LymphoSeqDB.html
 ---
 
-
 # bioconductor-lymphoseqdb
 
 name: bioconductor-lymphoseqdb

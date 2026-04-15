@@ -2,8 +2,9 @@
 name: multivelo
 description: MultiVelo is a mechanistic model that predicts cell state dynamics by integrating chromatin accessibility with RNA velocity. Use when user asks to aggregate peaks into gene-linked accessibility scores, smooth chromatin data, or recover gene expression dynamics from multi-omic data.
 homepage: https://github.com/welch-lab/MultiVelo
+metadata:
+  docker_image: "quay.io/biocontainers/multivelo:0.1.3--pyhdfd78af_0"
 ---
-
 
 # multivelo
 

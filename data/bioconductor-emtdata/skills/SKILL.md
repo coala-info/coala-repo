@@ -4,7 +4,6 @@ description: This tool provides access to curated, pre-processed RNA-seq dataset
 homepage: https://bioconductor.org/packages/release/data/experiment/html/emtdata.html
 ---
 
-
 # bioconductor-emtdata
 
 name: bioconductor-emtdata

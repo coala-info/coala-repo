@@ -1,9 +1,12 @@
 ---
 name: mgnify-amplicon-analysis-pipeline
-description: "This Common Workflow Language pipeline processes amplicon sequencing data through quality control and taxonomic assignment steps to analyze microbial populations in environmental samples. Use this skill when you need to determine the taxonomic diversity of a microbiome or identify specific bacterial and fungal taxa present in diverse ecological niches."
-homepage: https://workflowhub.eu/workflows/361
+description: This Common Workflow Language pipeline processes amplicon sequencing data through quality control and taxonomic assignment steps to analyze microbial populations in environmental samples. Use this skill when you need to determine the taxonomic diversity of a microbiome or identify specific bacterial and fungal taxa present in diverse ecological niches.
+homepage: https://www.ebi.ac.uk/metagenomics/
+metadata:
+  docker_image: "N/A"
 ---
-# MGnify - amplicon analysis pipeline
+
+# mgnify-amplicon-analysis-pipeline
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: mhcgnomes
-description: "mhcgnomes parses and normalizes MHC nomenclature into structured objects to ensure consistency across immunological datasets. Use when user asks to parse MHC strings, normalize allele names, identify serotypes or supertypes, and handle complex MHC entities like heterodimers or mutants."
+description: mhcgnomes parses and normalizes MHC nomenclature into structured objects to ensure consistency across immunological datasets. Use when user asks to parse MHC strings, normalize allele names, identify serotypes or supertypes, and handle complex MHC entities like heterodimers or mutants.
 homepage: https://github.com/til-unc/mhcgnomes
+metadata:
+  docker_image: "quay.io/biocontainers/mhcgnomes:2.0.2--pyh106432d_0"
 ---
-
 
 # mhcgnomes
 

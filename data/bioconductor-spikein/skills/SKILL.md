@@ -4,7 +4,6 @@ description: This tool provides probe-level data from Affymetrix HGU95 and HGU13
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SpikeIn.html
 ---
 
-
 # bioconductor-spikein
 
 name: bioconductor-spikein

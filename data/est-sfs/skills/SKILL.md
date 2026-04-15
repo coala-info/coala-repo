@@ -1,9 +1,10 @@
 ---
 name: est-sfs
-description: "Estimates the unfolded site frequency spectrum and ancestral state probabilities from DNA sequence data. Use when user asks to infer the uSFS from DNA sequence data, determine ancestral state probabilities at polymorphic sites, or analyze population genetics data with outgroup species information."
+description: Estimates the unfolded site frequency spectrum and ancestral state probabilities from DNA sequence data. Use when user asks to infer the uSFS from DNA sequence data, determine ancestral state probabilities at polymorphic sites, or analyze population genetics data with outgroup species information.
 homepage: https://sourceforge.net/projects/est-usfs/
+metadata:
+  docker_image: "quay.io/biocontainers/est-sfs:2.04--h985cbd6_1"
 ---
-
 
 # est-sfs
 

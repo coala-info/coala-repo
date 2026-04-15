@@ -4,7 +4,6 @@ description: This tool performs reference-based RMA normalization for Affymetrix
 homepage: https://bioconductor.org/packages/3.6/bioc/html/RefPlus.html
 ---
 
-
 # bioconductor-refplus
 
 name: bioconductor-refplus

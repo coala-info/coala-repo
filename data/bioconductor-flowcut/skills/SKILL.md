@@ -4,7 +4,6 @@ description: The flowCut package automatically detects and removes technical art
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCut.html
 ---
 
-
 # bioconductor-flowcut
 
 ## Overview

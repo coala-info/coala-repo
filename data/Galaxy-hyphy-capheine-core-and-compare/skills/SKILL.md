@@ -1,10 +1,12 @@
 ---
 name: capheine-combined-hyphy-core-and-compare
-description: "This workflow performs codon-aware alignment and evolutionary selection analysis on viral coding sequences using HyPhy tools like MEME, BUSTED, and FEL, with optional branch-specific comparisons via Contrast-FEL and RELAX. Use this skill when you need to identify sites under diversifying selection or compare evolutionary pressures between specific foreground and background lineages in a multi-gene dataset."
-homepage: https://workflowhub.eu/workflows/2111
+description: This workflow performs codon-aware alignment and evolutionary selection analysis on viral coding sequences using HyPhy tools like MEME, BUSTED, and FEL, with optional branch-specific comparisons via Contrast-FEL and RELAX. Use this skill when you need to identify sites under diversifying selection or compare evolutionary pressures between specific foreground and background lineages in a multi-gene dataset.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# CAPHEINE: Combined HyPhy Core and Compare
+# capheine-combined-hyphy-core-and-compare
 
 ## Overview
 

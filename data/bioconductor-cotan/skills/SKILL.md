@@ -4,7 +4,6 @@ description: COTAN is a statistical tool that analyzes single-cell RNA-seq data 
 homepage: https://bioconductor.org/packages/release/bioc/html/COTAN.html
 ---
 
-
 # bioconductor-cotan
 
 ## Overview

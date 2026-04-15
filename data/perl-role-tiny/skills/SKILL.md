@@ -2,8 +2,9 @@
 name: perl-role-tiny
 description: This tool facilitates the implementation of minimalist roles and trait-based composition in Perl. Use when user asks to define roles, require specific method implementations in classes, or apply roles to objects and packages at runtime.
 homepage: http://metacpan.org/pod/Role-Tiny
+metadata:
+  docker_image: "quay.io/biocontainers/perl-role-tiny:2.002004--pl5321hdfd78af_0"
 ---
-
 
 # perl-role-tiny
 

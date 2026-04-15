@@ -1,10 +1,12 @@
 ---
 name: apollo-load-test
-description: "This workflow integrates FASTA scaffolds, GFF3 annotations, BigWig coverage, and BAM alignments into a JBrowse instance for collaborative refinement using Apollo. Use this skill when you need to manually curate automated gene predictions or resolve structural annotation errors in a prokaryotic genome using evidence-based visual inspection."
-homepage: https://workflowhub.eu/workflows/749
+description: This workflow integrates FASTA scaffolds, GFF3 annotations, BigWig coverage, and BAM alignments into a JBrowse instance for collaborative refinement using Apollo. Use this skill when you need to manually curate automated gene predictions or resolve structural annotation errors in a prokaryotic genome using evidence-based visual inspection.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Apollo Load Test
+# apollo-load-test
 
 ## Overview
 

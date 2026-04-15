@@ -2,8 +2,9 @@
 name: maxbin2
 description: MaxBin2 reconstructs individual microbial genomes from metagenomic assemblies by integrating genomic signatures and abundance patterns. Use when user asks to bin assembled contigs into genomes, perform metagenomic binning using reads or abundance profiles, or improve binning resolution through differential coverage.
 homepage: http://downloads.jbei.org/data/microbial_communities/MaxBin/MaxBin.html
+metadata:
+  docker_image: "quay.io/biocontainers/maxbin2:2.2.7--h503566f_8"
 ---
-
 
 # maxbin2
 

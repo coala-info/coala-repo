@@ -2,8 +2,9 @@
 name: pykofamsearch
 description: pykofamsearch is a high-performance tool that uses PyHMMER to annotate protein sequences with KEGG Orthology terms. Use when user asks to annotate protein sequences using KofamScan, search against the KOfam database, or serialize KOfam models for faster profile HMM searches.
 homepage: https://github.com/jolespin/pykofamsearch
+metadata:
+  docker_image: "quay.io/biocontainers/pykofamsearch:2025.9.5--pyhdfd78af_1"
 ---
-
 
 # pykofamsearch
 

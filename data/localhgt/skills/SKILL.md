@@ -2,6 +2,8 @@
 name: localhgt
 description: This tool manipulates SAM, BAM, and CRAM files. Use when user asks to view, index, sort, merge, or convert sequence alignment files.
 homepage: https://github.com/samtools/samtools
+metadata:
+  docker_image: "quay.io/biocontainers/localhgt:1.0.1--h9948957_3"
 ---
 
 # localhgt

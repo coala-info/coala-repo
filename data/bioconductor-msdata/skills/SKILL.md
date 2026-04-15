@@ -4,7 +4,6 @@ description: This package provides a collection of mass spectrometry raw data fi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/msdata.html
 ---
 
-
 # bioconductor-msdata
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides pre-compiled Gene Ontology gene sets and genomic
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BioMartGOGeneSets.html
 ---
 
-
 # bioconductor-biomartgogenesets
 
 name: bioconductor-biomartgogenesets

@@ -1,10 +1,12 @@
 ---
 name: atacseq
-description: "This workflow processes paired-end ATAC-seq fastq collections through adapter trimming with Cutadapt, Bowtie2 alignment, and rigorous filtering of mitochondrial reads and PCR duplicates before performing MACS2 peak calling and coverage normalization. Use this skill when you need to identify regions of open chromatin, analyze fragment length distributions, and generate normalized bigwig files for epigenetic profiling across a reference genome."
-homepage: https://workflowhub.eu/workflows/399
+description: This workflow processes paired-end ATAC-seq fastq collections through adapter trimming with Cutadapt, Bowtie2 alignment, and rigorous filtering of mitochondrial reads and PCR duplicates before performing MACS2 peak calling and coverage normalization. Use this skill when you need to identify regions of open chromatin, analyze fragment length distributions, and generate normalized bigwig files for epigenetic profiling across a reference genome.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ATACseq
+# atacseq
 
 ## Overview
 

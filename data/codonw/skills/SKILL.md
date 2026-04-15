@@ -2,8 +2,9 @@
 name: codonw
 description: CodonW analyzes codon usage bias and molecular evolution trends in DNA sequences using summary indices and multivariate statistical techniques. Use when user asks to calculate codon adaptation indices, perform correspondence analysis of codon usage, or determine gene-specific parameters like GC content and aromaticity.
 homepage: http://codonw.sourceforge.net
+metadata:
+  docker_image: "biocontainers/codonw:v1.4.4-4-deb_cv1"
 ---
-
 
 # codonw
 

@@ -4,7 +4,6 @@ description: This package provides a unified SQLite database of human microRNA t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/RmiR.Hs.miRNA.html
 ---
 
-
 # bioconductor-rmir.hs.mirna
 
 ## Overview

@@ -4,7 +4,6 @@ description: This Bioconductor package provides a framework for managing ligand-
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Dre.eg.db.html
 ---
 
-
 # bioconductor-lrbase.dre.eg.db
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides access to the JASPAR 2022 database for retrievin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JASPAR2022.html
 ---
 
-
 # bioconductor-jaspar2022
 
 name: bioconductor-jaspar2022

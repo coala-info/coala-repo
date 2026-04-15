@@ -4,7 +4,6 @@ description: This package provides annotation data for Illumina 660kQuad arrays 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human660quadv1aCrlmm.html
 ---
 
-
 # bioconductor-human660quadv1acrlmm
 
 name: bioconductor-human660quadv1acrlmm

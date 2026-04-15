@@ -1,10 +1,12 @@
 ---
 name: analyse-argo-data
-description: "This oceanography workflow retrieves Argo float data and processes it using the Pangeo ecosystem and xarray tools for visualization in Ocean Data View. Use this skill when you need to analyze vertical ocean profiles or temporal variations in seawater properties to understand marine environmental changes."
-homepage: https://workflowhub.eu/workflows/1436
+description: This oceanography workflow retrieves Argo float data and processes it using the Pangeo ecosystem and xarray tools for visualization in Ocean Data View. Use this skill when you need to analyze vertical ocean profiles or temporal variations in seawater properties to understand marine environmental changes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Analyse Argo data
+# analyse-argo-data
 
 ## Overview
 

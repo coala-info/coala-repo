@@ -2,6 +2,8 @@
 name: dbg2olc
 description: DBG2OLC is a hybrid assembly framework that combines short-read contigs with long, noisy reads to efficiently assemble large genomes. Use when user asks to perform hybrid genome assembly, bridge short-read and long-read sequencing data, or generate a consensus backbone from de Bruijn graph contigs and long reads.
 homepage: https://github.com/yechengxi/DBG2OLC
+metadata:
+  docker_image: "quay.io/biocontainers/dbg2olc:20200723--h077b44d_4"
 ---
 
 # dbg2olc

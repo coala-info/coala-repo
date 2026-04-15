@@ -4,7 +4,6 @@ description: This tool analyzes multi-state Quantitative Trait Loci (QTL) summar
 homepage: https://bioconductor.org/packages/release/bioc/html/multistateQTL.html
 ---
 
-
 # bioconductor-multistateqtl
 
 name: bioconductor-multistateqtl

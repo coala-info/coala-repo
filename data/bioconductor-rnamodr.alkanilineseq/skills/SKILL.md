@@ -4,7 +4,6 @@ description: This package detects m7G, m3C, and Dihydrouridine RNA modifications
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAmodR.AlkAnilineSeq.html
 ---
 
-
 # bioconductor-rnamodr.alkanilineseq
 
 ## Overview

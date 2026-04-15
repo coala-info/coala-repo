@@ -1,10 +1,12 @@
 ---
 name: monocle3-workflow
-description: "This transcriptomics workflow performs single-cell RNA-seq trajectory analysis using Monocle3 tools to process expression matrices alongside gene and cell annotations. Use this skill when you need to reconstruct developmental lineages, identify branching points in cell differentiation, or calculate pseudotime to understand gene expression dynamics across biological transitions."
-homepage: https://workflowhub.eu/workflows/1516
+description: This transcriptomics workflow performs single-cell RNA-seq trajectory analysis using Monocle3 tools to process expression matrices alongside gene and cell annotations. Use this skill when you need to reconstruct developmental lineages, identify branching points in cell differentiation, or calculate pseudotime to understand gene expression dynamics across biological transitions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Monocle3 workflow
+# monocle3-workflow
 
 ## Overview
 

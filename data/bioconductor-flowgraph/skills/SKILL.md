@@ -4,7 +4,6 @@ description: The flowGraph package identifies independent biomarker cell populat
 homepage: https://bioconductor.org/packages/release/bioc/html/flowGraph.html
 ---
 
-
 # bioconductor-flowgraph
 
 ## Overview

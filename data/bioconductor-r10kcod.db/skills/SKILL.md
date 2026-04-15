@@ -4,7 +4,6 @@ description: This Bioconductor package provides annotation data for the r10kcod 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/r10kcod.db.html
 ---
 
-
 # bioconductor-r10kcod.db
 
 ## Overview

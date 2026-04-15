@@ -2,6 +2,8 @@
 name: plasnet
 description: Plasnet is a genomic analysis toolset that transforms plasmid evolutionary distance data into graph-based representations to identify communities and subcommunities. Use when user asks to partition plasmid datasets into communities, refine communities into specific types, identify hub plasmids, or visualize plasmid networks.
 homepage: https://github.com/leoisl/plasnet
+metadata:
+  docker_image: "quay.io/biocontainers/plasnet:0.7.0--pyhdfd78af_0"
 ---
 
 # plasnet

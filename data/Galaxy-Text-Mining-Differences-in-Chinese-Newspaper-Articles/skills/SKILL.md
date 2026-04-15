@@ -1,10 +1,12 @@
 ---
 name: text-mining-differences-in-chinese-newspaper-articles
-description: "This digital humanities workflow compares censored and uncensored Chinese newspaper articles using text processing, diff comparison, and word cloud generation tools to identify textual discrepancies. Use this skill when you need to analyze patterns of censorship or editorial changes between different versions of Chinese-language news media."
-homepage: https://workflowhub.eu/workflows/1623
+description: This digital humanities workflow compares censored and uncensored Chinese newspaper articles using text processing, diff comparison, and word cloud generation tools to identify textual discrepancies. Use this skill when you need to analyze patterns of censorship or editorial changes between different versions of Chinese-language news media.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Text-Mining Differences in Chinese Newspaper Articles
+# text-mining-differences-in-chinese-newspaper-articles
 
 ## Overview
 

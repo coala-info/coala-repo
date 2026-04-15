@@ -4,7 +4,6 @@ description: This tool builds multi-class SVM classifiers and associated gene ne
 homepage: https://bioconductor.org/packages/release/bioc/html/geNetClassifier.html
 ---
 
-
 # bioconductor-genetclassifier
 
 name: bioconductor-genetclassifier

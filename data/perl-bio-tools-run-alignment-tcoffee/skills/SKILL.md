@@ -2,8 +2,9 @@
 name: perl-bio-tools-run-alignment-tcoffee
 description: This tool provides a BioPerl wrapper to run the T-Coffee multiple sequence alignment program. Use when user asks to perform consistency-based multiple sequence alignments, integrate structural information into alignments, or generate alignment consistency scores.
 homepage: https://metacpan.org/release/Bio-Tools-Run-Alignment-TCoffee
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-tools-run-alignment-tcoffee:1.7.4--pl526_0"
 ---
-
 
 # perl-bio-tools-run-alignment-tcoffee
 

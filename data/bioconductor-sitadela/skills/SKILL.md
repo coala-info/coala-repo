@@ -1,9 +1,8 @@
 ---
 name: bioconductor-sitadela
-description: "bioconductor-sitadela provides a unified interface for building and managing genomic interval annotations from multiple sources in a local SQLite database. Use when user asks to build genomic annotation databases, retrieve gene or transcript coordinates, manage custom GTF files, or fetch summarized exon data for RNA-Seq analysis."
+description: bioconductor-sitadela provides a unified interface for building and managing genomic interval annotations from multiple sources in a local SQLite database. Use when user asks to build genomic annotation databases, retrieve gene or transcript coordinates, manage custom GTF files, or fetch summarized exon data for RNA-Seq analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/sitadela.html
 ---
-
 
 # bioconductor-sitadela
 

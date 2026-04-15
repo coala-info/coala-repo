@@ -1,9 +1,10 @@
 ---
 name: sumaclust
-description: "This tool clusters biological sequences using an algorithm similar to UCLUST and CD-HIT. Use when user asks to cluster biological sequences, dereplicate sequence datasets, or perform OTU clustering."
+description: This tool clusters biological sequences using an algorithm similar to UCLUST and CD-HIT. Use when user asks to cluster biological sequences, dereplicate sequence datasets, or perform OTU clustering.
 homepage: https://git.metabarcoding.org/obitools/sumaclust/wikis/home
+metadata:
+  docker_image: "biocontainers/sumaclust:v1.0.31-2-deb_cv1"
 ---
-
 
 # sumaclust
 

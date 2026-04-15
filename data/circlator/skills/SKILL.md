@@ -2,6 +2,8 @@
 name: circlator
 description: Circlator is a bioinformatics pipeline designed to circularize genome assemblies using corrected long reads. Use when user asks to circularize chromosomes or plasmids, reorient circular contigs to a specific start gene, or clean redundant sequences from an assembly.
 homepage: https://github.com/sanger-pathogens/circlator
+metadata:
+  docker_image: "biocontainers/circlator:v1.5.5-3-deb_cv1"
 ---
 
 # circlator

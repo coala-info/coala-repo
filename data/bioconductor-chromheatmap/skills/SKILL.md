@@ -4,7 +4,6 @@ description: The ChromHeatMap package visualizes genomic expression data as heat
 homepage: https://bioconductor.org/packages/release/bioc/html/ChromHeatMap.html
 ---
 
-
 # bioconductor-chromheatmap
 
 ## Overview

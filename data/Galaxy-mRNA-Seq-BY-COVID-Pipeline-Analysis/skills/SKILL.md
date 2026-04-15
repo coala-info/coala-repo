@@ -1,10 +1,12 @@
 ---
 name: mrna-seq-by-covid-pipeline-analysis
-description: "This bulk RNA-Seq workflow processes featureCounts data and factor metadata using limma-voom and goseq to perform differential expression and functional enrichment analysis. Use this skill when you need to identify differentially expressed genes and enriched pathways from transcriptomic counts to prepare results for downstream visualization in the MINERVA platform."
-homepage: https://workflowhub.eu/workflows/1684
+description: This bulk RNA-Seq workflow processes featureCounts data and factor metadata using limma-voom and goseq to perform differential expression and functional enrichment analysis. Use this skill when you need to identify differentially expressed genes and enriched pathways from transcriptomic counts to prepare results for downstream visualization in the MINERVA platform.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# mRNA-Seq BY-COVID Pipeline: Analysis
+# mrna-seq-by-covid-pipeline-analysis
 
 ## Overview
 

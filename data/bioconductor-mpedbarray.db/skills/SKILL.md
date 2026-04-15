@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for mapping mpe
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mpedbarray.db.html
 ---
 
-
 # bioconductor-mpedbarray.db
 
 name: bioconductor-mpedbarray.db

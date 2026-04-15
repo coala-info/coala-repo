@@ -4,7 +4,6 @@ description: This package provides a reference dataset of flow-sorted blood cell
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.Blood.450k.html
 ---
 
-
 # bioconductor-flowsorted.blood.450k
 
 ## Overview

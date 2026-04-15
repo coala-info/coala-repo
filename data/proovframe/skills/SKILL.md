@@ -2,6 +2,8 @@
 name: proovframe
 description: Proovframe restores the frame-fidelity of long-read sequencing data by correcting frameshifts and masking premature stop codons using protein-to-DNA alignments. Use when user asks to fix frameshifts in long reads or assemblies, map protein guides to sequences, or prepare sequences for gene prediction and functional annotation.
 homepage: https://github.com/thackl/proovframe
+metadata:
+  docker_image: "quay.io/biocontainers/proovframe:0.9.7--hdfd78af_1"
 ---
 
 # proovframe

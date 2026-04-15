@@ -1,9 +1,12 @@
 ---
 name: cwl-abc-md-setup-tutorial
-description: "This Common Workflow Language workflow automates the preparation of protein molecular dynamics simulation systems by utilizing BioExcel Building Blocks to interface with AmberTools for topology generation, solvation, and neutralization. Use this skill when you need to generate equilibrated protein structures and topologies for atomistic molecular dynamics studies to investigate protein stability or conformational changes."
-homepage: https://workflowhub.eu/workflows/262
+description: This Common Workflow Language workflow automates the preparation of protein molecular dynamics simulation systems by utilizing BioExcel Building Blocks to interface with AmberTools for topology generation, solvation, and neutralization. Use this skill when you need to generate equilibrated protein structures and topologies for atomistic molecular dynamics studies to investigate protein stability or conformational changes.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL ABC MD Setup tutorial
+
+# cwl-abc-md-setup-tutorial
 
 ## Overview
 

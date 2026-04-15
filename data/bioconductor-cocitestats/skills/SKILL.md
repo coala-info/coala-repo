@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of gene co-citation data fr
 homepage: https://bioconductor.org/packages/release/bioc/html/CoCiteStats.html
 ---
 
-
 # bioconductor-cocitestats
 
 name: bioconductor-cocitestats

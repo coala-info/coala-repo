@@ -2,8 +2,9 @@
 name: doit
 description: The doitlive tool simulates live terminal typing by playing back shell scripts during presentations. Use when user asks to play back a shell script as a live demo, record a terminal session, or customize terminal themes for presentations.
 homepage: https://github.com/sloria/doitlive
+metadata:
+  docker_image: "quay.io/biocontainers/doit:0.29.0--py27_0"
 ---
-
 
 # doit
 

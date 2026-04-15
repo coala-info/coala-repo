@@ -2,8 +2,9 @@
 name: ucsc-liftup
 description: ucsc-liftup remaps genomic coordinates within a single genome assembly using a simple mapping file. Use when user asks to transform coordinates from contigs to scaffolds, remap coordinates in PSL, GFF, GTF, AGP, or alignment files, or update feature positions within an assembly.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-liftup:482--h0b57e2e_0"
 ---
-
 
 # ucsc-liftup
 

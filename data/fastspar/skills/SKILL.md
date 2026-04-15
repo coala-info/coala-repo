@@ -2,8 +2,9 @@
 name: fastspar
 description: FastSpar infers correlations in compositional datasets by implementing a scalable and efficient version of the SparCC algorithm. Use when user asks to estimate median correlation and covariance from OTU tables, generate bootstrap samples for significance testing, or calculate p-values for compositional data.
 homepage: https://github.com/scwatts/fastspar
+metadata:
+  docker_image: "quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6"
 ---
-
 
 # fastspar
 

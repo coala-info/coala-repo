@@ -4,7 +4,6 @@ description: The r-misha package provides an efficient framework for managing an
 homepage: https://cran.r-project.org/web/packages/misha/index.html
 ---
 
-
 # r-misha
 
 name: r-misha

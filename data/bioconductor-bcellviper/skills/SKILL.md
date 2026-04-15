@@ -4,7 +4,6 @@ description: This package provides a human B-cell expression dataset and a trans
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bcellViper.html
 ---
 
-
 # bioconductor-bcellviper
 
 name: bioconductor-bcellviper

@@ -4,7 +4,6 @@ description: The ngsReports package parses, visualizes, and manages quality cont
 homepage: https://bioconductor.org/packages/release/bioc/html/ngsReports.html
 ---
 
-
 # bioconductor-ngsreports
 
 ## Overview

@@ -4,7 +4,6 @@ description: bioconductor-lipidr provides a comprehensive framework for the insp
 homepage: https://bioconductor.org/packages/release/bioc/html/lipidr.html
 ---
 
-
 # bioconductor-lipidr
 
 name: bioconductor-lipidr

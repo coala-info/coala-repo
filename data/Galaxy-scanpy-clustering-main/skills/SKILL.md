@@ -1,10 +1,12 @@
 ---
 name: preprocessing-and-clustering-of-single-cell-rna-seq-data-wit
-description: "This workflow processes single-cell RNA-seq count matrices, barcodes, and gene features using Scanpy and AnnData to perform quality control, normalization, dimensionality reduction, and Louvain clustering. Use this skill when you need to identify distinct cell populations, detect cluster-specific marker genes, and generate comprehensive visualizations like UMAPs and dot plots from raw single-cell expression data."
-homepage: https://workflowhub.eu/workflows/1256
+description: This workflow processes single-cell RNA-seq count matrices, barcodes, and gene features using Scanpy and AnnData to perform quality control, normalization, dimensionality reduction, and Louvain clustering. Use this skill when you need to identify distinct cell populations, detect cluster-specific marker genes, and generate comprehensive visualizations like UMAPs and dot plots from raw single-cell expression data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Preprocessing and Clustering of single-cell RNA-seq data with Scanpy
+# preprocessing-and-clustering-of-single-cell-rna-seq-data-wit
 
 ## Overview
 

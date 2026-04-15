@@ -4,7 +4,6 @@ description: The chromhmmData package provides essential auxiliary files, such a
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chromhmmData.html
 ---
 
-
 # bioconductor-chromhmmdata
 
 ## Overview

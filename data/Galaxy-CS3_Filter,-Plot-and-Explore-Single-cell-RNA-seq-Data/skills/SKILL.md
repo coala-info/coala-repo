@@ -1,10 +1,12 @@
 ---
 name: cs3_filter-plot-and-explore-single-cell-rna-seq-data
-description: "This transcriptomics workflow processes mito-counted AnnData using Scanpy tools to perform quality control filtering, normalization, dimensionality reduction, and clustering of single-cell RNA-seq data. Use this skill when you need to remove low-quality cells, identify distinct cell populations through unsupervised clustering, and discover cluster-specific marker genes to characterize cellular heterogeneity."
-homepage: https://workflowhub.eu/workflows/1490
+description: This transcriptomics workflow processes mito-counted AnnData using Scanpy tools to perform quality control filtering, normalization, dimensionality reduction, and clustering of single-cell RNA-seq data. Use this skill when you need to remove low-quality cells, identify distinct cell populations through unsupervised clustering, and discover cluster-specific marker genes to characterize cellular heterogeneity.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CS3_Filter, Plot and Explore Single-cell RNA-seq Data
+# cs3_filter-plot-and-explore-single-cell-rna-seq-data
 
 ## Overview
 

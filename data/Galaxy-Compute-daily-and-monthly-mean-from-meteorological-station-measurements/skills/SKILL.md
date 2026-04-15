@@ -1,10 +1,12 @@
 ---
 name: compute-daily-and-monthly-mean-from-meteorological-station-m
-description: "This Galaxy workflow processes standardized CSV temperature time series from meteorological stations using AWK, Datamash, and climate visualization tools to calculate daily and monthly means. Use this skill when you need to aggregate high-frequency weather observations into periodic averages and generate climate stripes or bar charts to analyze temporal temperature trends."
+description: This Galaxy workflow processes standardized CSV temperature time series from meteorological stations using AWK, Datamash, and climate visualization tools to calculate daily and monthly means. Use this skill when you need to aggregate high-frequency weather observations into periodic averages and generate climate stripes or bar charts to analyze temporal temperature trends.
 homepage: https://workflowhub.eu/workflows/123
+metadata:
+  docker_image: "N/A"
 ---
 
-# Compute daily and monthly mean from meteorological station measurements
+# compute-daily-and-monthly-mean-from-meteorological-station-m
 
 ## Overview
 

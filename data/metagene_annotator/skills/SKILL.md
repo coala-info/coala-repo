@@ -2,8 +2,9 @@
 name: metagene_annotator
 description: MetaGeneAnnotator identifies open reading frames and gene structures in prokaryotic sequences, particularly within metagenomic datasets. Use when user asks to predict genes in metagenomic reads, identify ORFs in bacterial or phage genomes, or analyze prokaryotic sequence structures.
 homepage: http://metagene.cb.k.u-tokyo.ac.jp/
+metadata:
+  docker_image: "quay.io/biocontainers/metagene_annotator:1.0--0"
 ---
-
 
 # metagene_annotator
 

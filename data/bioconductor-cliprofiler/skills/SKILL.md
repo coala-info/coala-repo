@@ -1,9 +1,8 @@
 ---
 name: bioconductor-cliprofiler
-description: "cliProfiler visualizes and analyzes the distribution of CLIP-seq peaks and RNA modification sites across various genomic features. Use when user asks to profile protein-RNA interactions across transcript regions, visualize peak enrichment around splice sites, or analyze sequence motif distributions."
+description: cliProfiler visualizes and analyzes the distribution of CLIP-seq peaks and RNA modification sites across various genomic features. Use when user asks to profile protein-RNA interactions across transcript regions, visualize peak enrichment around splice sites, or analyze sequence motif distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/cliProfiler.html
 ---
-
 
 # bioconductor-cliprofiler
 

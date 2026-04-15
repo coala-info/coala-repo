@@ -4,7 +4,6 @@ description: This package provides 24 human disease datasets from GEO linked to 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/KEGGdzPathwaysGEO.html
 ---
 
-
 # bioconductor-keggdzpathwaysgeo
 
 ## Overview

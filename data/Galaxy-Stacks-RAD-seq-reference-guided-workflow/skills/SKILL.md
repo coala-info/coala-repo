@@ -1,10 +1,12 @@
 ---
 name: stacks-rad-seq-reference-guided-workflow
-description: "This workflow processes demultiplexed RAD-seq fastq reads by mapping them to a reference genome using BWA-MEM2 and Samtools before performing variant calling and population genetic analysis with Stacks2 gstacks and populations. Use this skill when you need to identify SNPs, call haplotypes, and calculate population-level summary statistics for organisms with an available reference genome to investigate genetic diversity or population structure."
-homepage: https://workflowhub.eu/workflows/347
+description: This workflow processes demultiplexed RAD-seq fastq reads by mapping them to a reference genome using BWA-MEM2 and Samtools before performing variant calling and population genetic analysis with Stacks2 gstacks and populations. Use this skill when you need to identify SNPs, call haplotypes, and calculate population-level summary statistics for organisms with an available reference genome to investigate genetic diversity or population structure.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Stacks RAD-seq reference-guided workflow
+# stacks-rad-seq-reference-guided-workflow
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: ramid
 description: ramid mitigates motion-induced blurring and artifacts in dynamic CT scans using piecewise linear interpolation and 4D Total Variation regularization. Use when user asks to perform motion-compensated reconstruction, reduce artifacts in synchrotron or industrial CT data, or augment temporal resolution in dynamic datasets.
 homepage: https://github.com/eboigne/PyRAMID-CT
+metadata:
+  docker_image: "biocontainers/ramid:phenomenal-v1.0_cv1.0.18"
 ---
-
 
 # ramid
 

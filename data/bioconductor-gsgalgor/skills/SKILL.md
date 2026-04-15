@@ -4,7 +4,6 @@ description: GSgalgoR implements a multi-objective genetic algorithm to identify
 homepage: https://bioconductor.org/packages/release/bioc/html/GSgalgoR.html
 ---
 
-
 # bioconductor-gsgalgor
 
 ## Overview

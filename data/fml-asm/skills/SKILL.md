@@ -1,9 +1,10 @@
 ---
 name: fml-asm
-description: "This tool helps analyze the fml-asm library and its role in Minecraft modding environments. Use when user asks to understand modpack dependencies, analyze Java arguments for launching Minecraft with Forge, troubleshoot mod loading issues, or identify coremod and library conflicts."
+description: This tool helps analyze the fml-asm library and its role in Minecraft modding environments. Use when user asks to understand modpack dependencies, analyze Java arguments for launching Minecraft with Forge, troubleshoot mod loading issues, or identify coremod and library conflicts.
 homepage: https://github.com/HurriKane/skyfactory-2.4-faults
+metadata:
+  docker_image: "biocontainers/fml-asm:v0.1-5-deb_cv1"
 ---
-
 
 # fml-asm
 

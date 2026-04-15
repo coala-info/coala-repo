@@ -4,7 +4,6 @@ description: This tool trains and validates K-Top-Scoring-Pair (KTSP) classifier
 homepage: https://bioconductor.org/packages/release/bioc/html/switchBox.html
 ---
 
-
 # bioconductor-switchbox
 
 name: bioconductor-switchbox

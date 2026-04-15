@@ -4,7 +4,6 @@ description: This tool performs multiple testing correction by adaptively estima
 homepage: https://cloud.r-project.org/web/packages/fdrtool/index.html
 ---
 
-
 # r-fdrtool
 
 ## Overview

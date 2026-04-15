@@ -4,7 +4,6 @@ description: This tool visualizes Gene Ontology enrichment results by combining 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GOsummaries.html
 ---
 
-
 # bioconductor-gosummaries
 
 name: bioconductor-gosummaries

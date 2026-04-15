@@ -1,9 +1,10 @@
 ---
 name: bigslice
-description: "BiG-SLiCE is a scalable tool for analyzing Biosynthetic Gene Clusters (BGCs). Use when user asks to cluster BGCs, query BGCs against known families, or predict secondary metabolites."
+description: BiG-SLiCE is a scalable tool for analyzing Biosynthetic Gene Clusters (BGCs). Use when user asks to cluster BGCs, query BGCs against known families, or predict secondary metabolites.
 homepage: https://github.com/satriaphd/bigslice
+metadata:
+  docker_image: "quay.io/biocontainers/bigslice:2.0.2--pyh8ed023e_0"
 ---
-
 
 # bigslice
 

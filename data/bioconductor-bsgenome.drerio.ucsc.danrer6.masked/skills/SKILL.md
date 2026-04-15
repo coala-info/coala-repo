@@ -4,7 +4,6 @@ description: This package provides masked genome sequences for the Danio rerio (
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer6.masked.html
 ---
 
-
 # bioconductor-bsgenome.drerio.ucsc.danrer6.masked
 
 name: bioconductor-bsgenome.drerio.ucsc.danrer6.masked

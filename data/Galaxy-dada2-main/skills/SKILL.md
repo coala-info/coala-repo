@@ -1,10 +1,12 @@
 ---
 name: dada2-amplicon-analysis-pipeline-for-paired-end-data
-description: "This Galaxy workflow processes paired-end FASTQ amplicon sequences using the DADA2 suite to perform quality filtering, error modeling, sequence merging, and taxonomic assignment. Use this skill when you need to resolve high-resolution amplicon sequence variants from microbial community samples and characterize their taxonomic diversity using a reference database."
-homepage: https://workflowhub.eu/workflows/790
+description: This Galaxy workflow processes paired-end FASTQ amplicon sequences using the DADA2 suite to perform quality filtering, error modeling, sequence merging, and taxonomic assignment. Use this skill when you need to resolve high-resolution amplicon sequence variants from microbial community samples and characterize their taxonomic diversity using a reference database.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# dada2 amplicon analysis pipeline - for paired end data
+# dada2-amplicon-analysis-pipeline-for-paired-end-data
 
 ## Overview
 

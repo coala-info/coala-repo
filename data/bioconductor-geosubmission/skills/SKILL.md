@@ -4,7 +4,6 @@ description: The GEOsubmission package prepares microarray data and metadata for
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOsubmission.html
 ---
 
-
 # bioconductor-geosubmission
 
 ## Overview

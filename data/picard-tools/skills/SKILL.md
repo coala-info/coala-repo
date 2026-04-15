@@ -4,7 +4,6 @@ description: Picard-tools is a Java-based toolkit for processing and manipulatin
 homepage: http://broadinstitute.github.io/picard/
 ---
 
-
 # picard-tools
 
 ## Overview

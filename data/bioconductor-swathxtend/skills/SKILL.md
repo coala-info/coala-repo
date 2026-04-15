@@ -4,7 +4,6 @@ description: SwathXtend extends SWATH-MS assay libraries by integrating local se
 homepage: https://bioconductor.org/packages/release/bioc/html/SwathXtend.html
 ---
 
-
 # bioconductor-swathxtend
 
 name: bioconductor-swathxtend

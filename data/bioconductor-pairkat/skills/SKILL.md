@@ -4,7 +4,6 @@ description: This tool performs statistical association tests between high-dimen
 homepage: https://bioconductor.org/packages/release/bioc/html/pairkat.html
 ---
 
-
 # bioconductor-pairkat
 
 name: bioconductor-pairkat

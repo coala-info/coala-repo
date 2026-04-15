@@ -1,9 +1,10 @@
 ---
 name: gbmunge
-description: "gbmunge extracts and cleans metadata from GenBank flat files while standardizing dates and geographic locations into formats suitable for bioinformatics analysis. Use when user asks to extract metadata from GenBank files, standardize collection dates, convert geographic locations to ISO3 codes, or prepare sequence headers for phylodynamic analysis."
+description: gbmunge extracts and cleans metadata from GenBank flat files while standardizing dates and geographic locations into formats suitable for bioinformatics analysis. Use when user asks to extract metadata from GenBank files, standardize collection dates, convert geographic locations to ISO3 codes, or prepare sequence headers for phylodynamic analysis.
 homepage: https://github.com/sdwfrost/gbmunge
+metadata:
+  docker_image: "quay.io/biocontainers/gbmunge:2018.07.06--h7b50bb2_7"
 ---
-
 
 # gbmunge
 

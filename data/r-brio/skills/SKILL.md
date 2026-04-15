@@ -4,7 +4,6 @@ description: The r-brio package provides high-performance functions for reading 
 homepage: https://cloud.r-project.org/web/packages/brio/index.html
 ---
 
-
 # r-brio
 
 name: r-brio

@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the honey bee (
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.UCSC.apiMel2.html
 ---
 
-
 # bioconductor-bsgenome.amellifera.ucsc.apimel2
 
 name: bioconductor-bsgenome.amellifera.ucsc.apimel2

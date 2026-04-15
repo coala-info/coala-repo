@@ -2,6 +2,8 @@
 name: recentrifuge
 description: Recentrifuge is a bioinformatics suite for robust comparative metagenomics and statistical contamination removal. Use when user asks to analyze metagenomic classifier results, subtract contamination using negative controls, identify shared or exclusive taxa, or extract reads by taxonomic ID.
 homepage: https://github.com/khyox/recentrifuge
+metadata:
+  docker_image: "quay.io/biocontainers/recentrifuge:2.1.1--pyhdfd78af_0"
 ---
 
 # recentrifuge

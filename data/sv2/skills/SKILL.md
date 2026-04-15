@@ -2,8 +2,9 @@
 name: sv2
 description: SV2 is a machine learning framework that genotypes and filters structural variants using support vector machines. Use when user asks to genotype deletions and duplications, filter false positive structural variants, or extract features for variant classification.
 homepage: https://github.com/dantaki/SV2
+metadata:
+  docker_image: "quay.io/biocontainers/sv2:1.4.3.4--py27h3010b51_2"
 ---
-
 
 # sv2
 

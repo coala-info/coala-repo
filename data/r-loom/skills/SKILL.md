@@ -4,7 +4,6 @@ description: This R package provides an interface for creating, reading, and man
 homepage: https://cran.r-project.org/web/packages/loom/index.html
 ---
 
-
 # r-loom
 
 name: r-loom

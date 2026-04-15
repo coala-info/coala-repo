@@ -1,9 +1,12 @@
 ---
 name: assemblosis
-description: "This CWL workflow automates the hybrid assembly of eukaryotic genomes using PacBio long-reads and Illumina short-reads through a pipeline of read correction, decontamination, and polishing with tools like Canu and Arrow. Use this skill when you need to generate high-quality de novo genome assemblies for non-model organisms, eliminate redundant haplotypes, and produce masked reference sequences for downstream genomic analysis."
-homepage: https://workflowhub.eu/workflows/334
+description: This CWL workflow automates the hybrid assembly of eukaryotic genomes using PacBio long-reads and Illumina short-reads through a pipeline of read correction, decontamination, and polishing with tools like Canu and Arrow. Use this skill when you need to generate high-quality de novo genome assemblies for non-model organisms, eliminate redundant haplotypes, and produce masked reference sequences for downstream genomic analysis.
+homepage: https://cromwell.readthedocs.io/en/stable
+metadata:
+  docker_image: "N/A"
 ---
-# Assemblosis
+
+# assemblosis
 
 ## Overview
 

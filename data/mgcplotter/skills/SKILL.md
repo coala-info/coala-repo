@@ -2,8 +2,9 @@
 name: mgcplotter
 description: MGCplotter automates the generation of publication-quality circular genome maps from GenBank files using Circos. Use when user asks to create circular genome visualizations, identify genomic islands via GC skew or content, or perform visual comparative genomics across multiple query genomes.
 homepage: https://github.com/moshi4/MGCplotter/
+metadata:
+  docker_image: "quay.io/biocontainers/mgcplotter:1.0.1--pyhdfd78af_0"
 ---
-
 
 # mgcplotter
 

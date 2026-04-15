@@ -4,7 +4,6 @@ description: bioconductor-flowclean performs quality control on flow cytometry d
 homepage: https://bioconductor.org/packages/release/bioc/html/flowClean.html
 ---
 
-
 # bioconductor-flowclean
 
 name: bioconductor-flowclean

@@ -4,7 +4,6 @@ description: The tenXplore package maps cell types to Gene Ontology terms and re
 homepage: https://bioconductor.org/packages/release/bioc/html/tenXplore.html
 ---
 
-
 # bioconductor-tenxplore
 
 ## Overview

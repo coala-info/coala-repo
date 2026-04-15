@@ -2,8 +2,9 @@
 name: dcm2niix
 description: dcm2niix converts medical imaging files from the DICOM format to the NIfTI format while generating BIDS-compliant metadata. Use when user asks to convert DICOM images to NIfTI, generate BIDS JSON sidecars, extract diffusion gradients, or organize neuroimaging data for research analysis.
 homepage: https://github.com/rordenlab/dcm2niix
+metadata:
+  docker_image: "biocontainers/dcm2niix:v1.0.20181125-1-deb_cv1"
 ---
-
 
 # dcm2niix
 

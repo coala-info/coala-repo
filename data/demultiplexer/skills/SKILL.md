@@ -2,8 +2,9 @@
 name: demultiplexer
 description: Demultiplexer sorts Illumina FASTQ files into sample-specific files by identifying inline tags or primer sequences within the read data. Use when user asks to demultiplex complex datasets, sort reads based on inline barcodes, or process sequencing data where standard index-based demultiplexing is insufficient.
 homepage: https://github.com/DominikBuchner/demultiplexer
+metadata:
+  docker_image: "quay.io/biocontainers/demultiplexer:1.2.1--pyhdfd78af_0"
 ---
-
 
 # demultiplexer
 

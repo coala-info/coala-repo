@@ -4,7 +4,6 @@ description: mixKernel is an R package for integrating multiple datasets using k
 homepage: https://cran.r-project.org/web/packages/mixkernel/index.html
 ---
 
-
 # r-mixkernel
 
 ## Overview

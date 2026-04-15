@@ -4,7 +4,6 @@ description: This package implements the alabaster framework for the serializati
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.bumpy.html
 ---
 
-
 # bioconductor-alabaster.bumpy
 
 ## Overview

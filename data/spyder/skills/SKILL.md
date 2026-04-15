@@ -1,9 +1,10 @@
 ---
 name: spyder
-description: "Spyder is a scientific integrated development environment designed for data exploration, interactive execution, and Python development. Use when user asks to launch the IDE, manage development environments, inspect variables, or perform static code analysis and profiling."
+description: Spyder is a scientific integrated development environment designed for data exploration, interactive execution, and Python development. Use when user asks to launch the IDE, manage development environments, inspect variables, or perform static code analysis and profiling.
 homepage: https://github.com/spyder-ide/spyder
+metadata:
+  docker_image: "quay.io/biocontainers/spyder:3.3.1--py35_1"
 ---
-
 
 # spyder
 

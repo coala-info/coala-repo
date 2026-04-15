@@ -2,8 +2,9 @@
 name: deepsvr
 description: DeepSVR refines somatic variant calls in tumor sequencing data using deep learning. Use when user asks to classify somatic variants, distinguish true variants from artifacts, or refine variant calling in cancer genomics.
 homepage: https://github.com/griffithlab/deepsvr
+metadata:
+  docker_image: "quay.io/biocontainers/deepsvr:0.1.0--py_0"
 ---
-
 
 # deepsvr
 

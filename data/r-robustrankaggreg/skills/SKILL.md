@@ -4,7 +4,6 @@ description: This tool aggregates multiple prioritized lists into a single conse
 homepage: https://cran.r-project.org/web/packages/robustrankaggreg/index.html
 ---
 
-
 # r-robustrankaggreg
 
 name: r-robustrankaggreg

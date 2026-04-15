@@ -4,7 +4,6 @@ description: This tool detects copy number variations in microarray data using a
 homepage: https://bioconductor.org/packages/release/bioc/html/cn.farms.html
 ---
 
-
 # bioconductor-cn.farms
 
 name: bioconductor-cn.farms

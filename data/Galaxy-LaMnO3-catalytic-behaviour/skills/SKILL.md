@@ -1,10 +1,12 @@
 ---
 name: lamno3-catalytic-behaviour
-description: "This Galaxy workflow analyzes the catalytic behavior of LaMnO3 by processing Mn K-edge and La L3-edge X-ray absorption time-series data using Larch Athena, Feff, and Artemis tools. Use this skill when you need to investigate dynamic changes in the local atomic structure and oxidation states of perovskite catalysts during chemical reactions."
-homepage: https://workflowhub.eu/workflows/1802
+description: This Galaxy workflow analyzes the catalytic behavior of LaMnO3 by processing Mn K-edge and La L3-edge X-ray absorption time-series data using Larch Athena, Feff, and Artemis tools. Use this skill when you need to investigate dynamic changes in the local atomic structure and oxidation states of perovskite catalysts during chemical reactions.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# LaMnO3 Catalytic Behaviour
+# lamno3-catalytic-behaviour
 
 ## Overview
 

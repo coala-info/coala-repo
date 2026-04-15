@@ -4,7 +4,6 @@ description: RgnTX provides a permutation test framework to statistically estima
 homepage: https://bioconductor.org/packages/release/bioc/html/RgnTX.html
 ---
 
-
 # bioconductor-rgntx
 
 ## Overview

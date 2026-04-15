@@ -2,6 +2,8 @@
 name: phylodeep
 description: PhyloDeep uses deep learning to estimate epidemiological parameters and select transmission models from phylogenetic tree structures. Use when user asks to perform model adequacy checks, select the best-fitting epidemiological model, or infer parameters like R0 and infectious periods from a tree.
 homepage: https://github.com/evolbioinfo/phylodeep
+metadata:
+  docker_image: "quay.io/biocontainers/phylodeep:0.9--pyhdfd78af_0"
 ---
 
 # phylodeep

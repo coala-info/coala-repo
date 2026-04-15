@@ -2,8 +2,9 @@
 name: hyphy-mpi
 description: HyPhy is a comprehensive software package for molecular evolution research that uses sophisticated models to characterize selective pressures on genetic sequences. Use when user asks to detect gene-wide selection, identify branch-specific or site-specific selection, test for selection relaxation, or screen for recombination breakpoints.
 homepage: http://hyphy.org/
+metadata:
+  docker_image: "biocontainers/hyphy-mpi:v2.3.14dfsg-1-deb_cv1"
 ---
-
 
 # hyphy-mpi
 

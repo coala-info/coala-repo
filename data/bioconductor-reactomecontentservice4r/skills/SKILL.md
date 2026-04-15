@@ -4,7 +4,6 @@ description: This tool queries and retrieves biological pathway data from the Re
 homepage: https://bioconductor.org/packages/3.13/bioc/html/ReactomeContentService4R.html
 ---
 
-
 # bioconductor-reactomecontentservice4r
 
 name: bioconductor-reactomecontentservice4r

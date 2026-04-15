@@ -4,7 +4,6 @@ description: DaMiRseq provides a comprehensive pipeline for RNA-Seq data mining,
 homepage: https://bioconductor.org/packages/release/bioc/html/DaMiRseq.html
 ---
 
-
 # bioconductor-damirseq
 
 name: bioconductor-damirseq

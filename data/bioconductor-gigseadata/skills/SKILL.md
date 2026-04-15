@@ -4,7 +4,6 @@ description: This package provides curated discrete and continuous gene set coll
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GIGSEAdata.html
 ---
 
-
 # bioconductor-gigseadata
 
 ## Overview

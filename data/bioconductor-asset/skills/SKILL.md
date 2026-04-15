@@ -4,7 +4,6 @@ description: ASSET performs subset-based meta-analysis to pool association signa
 homepage: https://bioconductor.org/packages/release/bioc/html/ASSET.html
 ---
 
-
 # bioconductor-asset
 
 ## Overview

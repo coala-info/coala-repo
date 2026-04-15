@@ -1,9 +1,10 @@
 ---
 name: mitofinder
-description: "MitoFinder assembles mitochondrial genomes and annotates mitochondrial genes from sequencing data. Use when user asks to assemble mitochondrial genomes or annotate mitochondrial genes."
+description: MitoFinder assembles mitochondrial genomes and annotates mitochondrial genes from sequencing data. Use when user asks to assemble mitochondrial genomes or annotate mitochondrial genes.
 homepage: https://github.com/parklab/xTea
+metadata:
+  docker_image: "quay.io/biocontainers/mitofinder:1.4.1--py27h9801fc8_1"
 ---
-
 
 # mitofinder
 

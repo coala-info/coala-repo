@@ -4,7 +4,6 @@ description: bioconductor-starr analyzes Affymetrix ChIP-chip tiling array data 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Starr.html
 ---
 
-
 # bioconductor-starr
 
 name: bioconductor-starr

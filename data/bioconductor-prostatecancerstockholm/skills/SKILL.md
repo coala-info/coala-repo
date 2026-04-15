@@ -4,7 +4,6 @@ description: This package provides access to the Stockholm prostate cancer valid
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerStockholm.html
 ---
 
-
 # bioconductor-prostatecancerstockholm
 
 name: bioconductor-prostatecancerstockholm

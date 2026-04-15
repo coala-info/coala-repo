@@ -2,8 +2,9 @@
 name: fiji-omero_ij
 description: This tool integrates Fiji/ImageJ with OMERO servers to enable the visualization, manipulation, and import of multidimensional image data and metadata. Use when user asks to launch the OMERO.insight client, import image data into an OMERO server, or configure the OMERO metadata extension.
 homepage: https://github.com/ome/omero-insight
+metadata:
+  docker_image: "quay.io/biocontainers/fiji:20250206--h9ee0642_1"
 ---
-
 
 # fiji-omero_ij
 

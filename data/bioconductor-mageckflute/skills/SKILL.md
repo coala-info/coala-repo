@@ -4,7 +4,6 @@ description: MAGeCKFlute performs downstream analysis and visualization of CRISP
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MAGeCKFlute.html
 ---
 
-
 # bioconductor-mageckflute
 
 name: bioconductor-mageckflute

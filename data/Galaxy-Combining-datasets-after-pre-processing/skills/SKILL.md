@@ -1,10 +1,12 @@
 ---
 name: combining-datasets-after-pre-processing
-description: "This single-cell transcriptomics workflow integrates multiple pre-processed datasets into a unified structure using AnnData manipulation, inspection, and text processing tools. Use this skill when you need to merge several individual sample libraries into a single annotated object while consolidating metadata like genotype and sex for comparative downstream analysis."
-homepage: https://workflowhub.eu/workflows/1539
+description: This single-cell transcriptomics workflow integrates multiple pre-processed datasets into a unified structure using AnnData manipulation, inspection, and text processing tools. Use this skill when you need to merge several individual sample libraries into a single annotated object while consolidating metadata like genotype and sex for comparative downstream analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Combining datasets after pre-processing
+# combining-datasets-after-pre-processing
 
 ## Overview
 

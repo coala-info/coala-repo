@@ -4,7 +4,6 @@ description: RAREsim estimates the expected number of rare variants and their fr
 homepage: https://bioconductor.org/packages/release/bioc/html/RAREsim.html
 ---
 
-
 # bioconductor-raresim
 
 ## Overview

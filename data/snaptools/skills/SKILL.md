@@ -2,6 +2,8 @@
 name: snaptools
 description: Snaptools processes single-cell epigenomics data by managing the creation, manipulation, and analysis of structured .snap files. Use when user asks to index genomes, align sequencing reads, create snap files from BAM files, or generate cell-by-bin, cell-by-peak, and cell-by-gene count matrices.
 homepage: https://github.com/r3fang/SnapTools.git
+metadata:
+  docker_image: "quay.io/biocontainers/snaptools:1.4.8--py_0"
 ---
 
 # snaptools

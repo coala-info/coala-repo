@@ -1,9 +1,10 @@
 ---
 name: stellar
-description: "This tool provides realistic sky rendering and astronomical simulation capabilities. Use when user asks to generate realistic sky views, simulate celestial events, or access astronomical data for visualization."
+description: This tool provides realistic sky rendering and astronomical simulation capabilities. Use when user asks to generate realistic sky views, simulate celestial events, or access astronomical data for visualization.
 homepage: https://github.com/Stellarium/stellarium
+metadata:
+  docker_image: "quay.io/biocontainers/stellar:1.4.9--0"
 ---
-
 
 # stellar
 

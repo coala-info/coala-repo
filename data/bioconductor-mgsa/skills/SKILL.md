@@ -4,7 +4,6 @@ description: The bioconductor-mgsa package performs model-based gene set analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/mgsa.html
 ---
 
-
 # bioconductor-mgsa
 
 ## Overview

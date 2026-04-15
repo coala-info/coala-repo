@@ -2,8 +2,9 @@
 name: collect-columns
 description: This tool consolidates data from multiple tables into a single output by aligning value columns based on a shared feature identifier. Use when user asks to merge count files, aggregate expression data across samples, or append genomic attributes from a GTF file to a combined table.
 homepage: https://github.com/biowdl/collect-columns
+metadata:
+  docker_image: "quay.io/biocontainers/collect-columns:1.0.0--py_0"
 ---
-
 
 # collect-columns
 

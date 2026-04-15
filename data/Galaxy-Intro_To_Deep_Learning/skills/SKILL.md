@@ -1,10 +1,12 @@
 ---
 name: intro_to_deep_learning
-description: "This deep learning workflow processes training and testing datasets to build, train, and evaluate neural network models using Keras-based configuration and visualization tools. Use this skill when you need to implement a supervised machine learning pipeline to identify patterns in structured data or predict outcomes based on historical training sets."
-homepage: https://workflowhub.eu/workflows/1637
+description: This deep learning workflow processes training and testing datasets to build, train, and evaluate neural network models using Keras-based configuration and visualization tools. Use this skill when you need to implement a supervised machine learning pipeline to identify patterns in structured data or predict outcomes based on historical training sets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Intro_To_Deep_Learning
+# intro_to_deep_learning
 
 ## Overview
 

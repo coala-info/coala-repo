@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of signed causal graphs to 
 homepage: https://bioconductor.org/packages/release/bioc/html/QuaternaryProd.html
 ---
 
-
 # bioconductor-quaternaryprod
 
 name: bioconductor-quaternaryprod

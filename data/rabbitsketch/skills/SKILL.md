@@ -2,8 +2,9 @@
 name: rabbitsketch
 description: RabbitSketch is a highly optimized sketching library used to generate genomic sketches and calculate distances between large-scale DNA sequences. Use when user asks to compare DNA sequences, generate sketches using algorithms like MinHash or Kssd, and calculate Jaccard distances between genomic datasets.
 homepage: https://github.com/RabbitBio/RabbitSketch
+metadata:
+  docker_image: "quay.io/biocontainers/rabbitsketch:0.1.1--py39h5ca1c30_0"
 ---
-
 
 # rabbitsketch
 

@@ -4,7 +4,6 @@ description: This tool provides a lightweight search engine for indexing and sea
 homepage: https://bioconductor.org/packages/release/bioc/html/ssrch.html
 ---
 
-
 # bioconductor-ssrch
 
 name: bioconductor-ssrch

@@ -4,7 +4,6 @@ description: IMAS performs integrative analysis of multi-omics data to interpret
 homepage: https://bioconductor.org/packages/release/bioc/html/IMAS.html
 ---
 
-
 # bioconductor-imas
 
 name: bioconductor-imas

@@ -4,7 +4,6 @@ description: The bioconductor-interactionset package provides a framework for re
 homepage: https://bioconductor.org/packages/release/bioc/html/InteractionSet.html
 ---
 
-
 # bioconductor-interactionset
 
 name: bioconductor-interactionset

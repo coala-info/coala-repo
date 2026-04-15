@@ -4,7 +4,6 @@ description: The Orthanc Web Viewer provides high-performance medical image visu
 homepage: https://github.com/orthanc-team/osimis-webviewer-deprecated
 ---
 
-
 # orthanc-webviewer
 
 ## Overview

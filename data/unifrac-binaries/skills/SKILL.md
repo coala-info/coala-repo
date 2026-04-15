@@ -2,6 +2,8 @@
 name: unifrac-binaries
 description: unifrac-binaries is a high-performance suite of tools for calculating phylogenetic diversity metrics and UniFrac distance matrices in microbiome research. Use when user asks to calculate UniFrac distances, compute Faith's Phylogenetic Diversity, or optimize performance using GPU acceleration and multi-threading.
 homepage: https://github.com/biocore/unifrac-binaries
+metadata:
+  docker_image: "quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0"
 ---
 
 # unifrac-binaries

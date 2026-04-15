@@ -4,7 +4,6 @@ description: This tool creates high-quality, publication-ready genomic visualiza
 homepage: https://bioconductor.org/packages/release/bioc/html/rGenomeTracks.html
 ---
 
-
 # bioconductor-rgenometracks
 
 name: bioconductor-rgenometracks

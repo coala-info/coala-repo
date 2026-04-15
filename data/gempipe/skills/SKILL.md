@@ -1,7 +1,9 @@
 ---
 name: gempipe
-description: "Gempipe reconstructs, refines, and analyzes genome-scale metabolic models for microbial strains. Use when user asks to build a metabolic model for a specific microbial strain, curate existing metabolic models, or perform pan-model analysis across multiple strains."
+description: Gempipe reconstructs, refines, and analyzes genome-scale metabolic models for microbial strains. Use when user asks to build a metabolic model for a specific microbial strain, curate existing metabolic models, or perform pan-model analysis across multiple strains.
 homepage: https://github.com/lazzarigioele/gempipe
+metadata:
+  docker_image: "quay.io/biocontainers/gempipe:1.38.5--pyhdfd78af_0"
 ---
 
 # gempipe

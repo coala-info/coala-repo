@@ -4,7 +4,6 @@ description: This package provides an R interface to the libsbml library for par
 homepage: https://bioconductor.org/packages/release/bioc/html/rsbml.html
 ---
 
-
 # bioconductor-rsbml
 
 ## Overview

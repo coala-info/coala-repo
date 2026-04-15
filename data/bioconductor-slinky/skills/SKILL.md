@@ -4,7 +4,6 @@ description: The slinky package provides a streamlined interface for analyzing L
 homepage: https://bioconductor.org/packages/3.8/bioc/html/slinky.html
 ---
 
-
 # bioconductor-slinky
 
 name: bioconductor-slinky

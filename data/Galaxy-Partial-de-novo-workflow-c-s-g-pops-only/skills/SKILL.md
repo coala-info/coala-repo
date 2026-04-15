@@ -1,10 +1,12 @@
 ---
 name: partial-de-novo-workflow-c-s-g-pops-only
-description: "This RAD-seq workflow processes ustacks outputs and a population map using the Stacks2 toolset, including cstacks, sstacks, tsv2bam, gstacks, and populations. Use this skill when you need to build a locus catalog, call variants, and calculate population genetic statistics for species lacking a reference genome."
-homepage: https://workflowhub.eu/workflows/350
+description: This RAD-seq workflow processes ustacks outputs and a population map using the Stacks2 toolset, including cstacks, sstacks, tsv2bam, gstacks, and populations. Use this skill when you need to build a locus catalog, call variants, and calculate population genetic statistics for species lacking a reference genome.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Partial de novo workflow: c-s-g-pops only
+# partial-de-novo-workflow-c-s-g-pops-only
 
 ## Overview
 

@@ -4,6 +4,8 @@ description: nf-core/spatialxe processes and performs quality control on Xenium 
 homepage: https://github.com/nf-core/spatialxe
 ---
 
+# spatialxe
+
 ## Overview
 nf-core/spatialxe is a bioinformatics pipeline designed for the processing and quality control of Xenium spatialomics data. It provides a standardized workflow to handle raw sequencing reads and reference information to produce analysis-ready results.
 

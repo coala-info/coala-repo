@@ -2,8 +2,9 @@
 name: radiant
 description: Radiant maps protein sequences to Pfam domains for fast and efficient proteome annotation. Use when user asks to annotate a proteome, identify protein domains, or map sequences to Pfam.
 homepage: https://domainworld.uni-muenster.de/data/radiant-db/index.html
+metadata:
+  docker_image: "biocontainers/radiant:v2.7dfsg-2-deb_cv1"
 ---
-
 
 # radiant
 

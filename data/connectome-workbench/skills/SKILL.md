@@ -2,6 +2,8 @@
 name: connectome-workbench
 description: Connectome Workbench is a neuroimaging analysis suite for processing and visualizing surface-based and volumetric brain data. Use when user asks to perform surface smoothing, resample mesh densities, map volume data to surfaces, or manipulate CIFTI and GIFTI files.
 homepage: https://www.humanconnectome.org/software/connectome-workbench
+metadata:
+  docker_image: "quay.io/biocontainers/connectome-workbench:1.3.2--h1b11a2a_0"
 ---
 
 # connectome-workbench

@@ -4,7 +4,6 @@ description: This package provides probe sequence data and array coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501probe.html
 ---
 
-
 # bioconductor-ath1121501probe
 
 name: bioconductor-ath1121501probe

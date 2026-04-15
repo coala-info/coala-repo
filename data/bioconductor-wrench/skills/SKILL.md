@@ -1,9 +1,8 @@
 ---
 name: bioconductor-wrench
-description: "Wrench normalizes sparse count data from metagenomic surveys by estimating compositional and normalization factors. Use when user asks to normalize 16S metagenomic data, account for compositional bias in sparse counts, or calculate normalization factors for differential abundance analysis."
+description: Wrench normalizes sparse count data from metagenomic surveys by estimating compositional and normalization factors. Use when user asks to normalize 16S metagenomic data, account for compositional bias in sparse counts, or calculate normalization factors for differential abundance analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/Wrench.html
 ---
-
 
 # bioconductor-wrench
 

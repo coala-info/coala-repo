@@ -4,7 +4,6 @@ description: NuPoP predicts nucleosome positioning and occupancy scores using a 
 homepage: https://bioconductor.org/packages/release/bioc/html/NuPoP.html
 ---
 
-
 # bioconductor-nupop
 
 ## Overview

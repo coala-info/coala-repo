@@ -4,7 +4,6 @@ description: bioconductor-cnvtools performs robust case-control and quantitative
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CNVtools.html
 ---
 
-
 # bioconductor-cnvtools
 
 name: bioconductor-cnvtools

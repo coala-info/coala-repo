@@ -2,8 +2,9 @@
 name: perl-io-socket-inet6
 description: The IO::Socket::INET6 module provides an object-oriented interface for creating and using sockets in both IPv4 and IPv6 domains. Use when user asks to create network client connections, set up listening server sockets, or enable protocol-independent socket programming in Perl.
 homepage: http://metacpan.org/pod/IO::Socket::INET6
+metadata:
+  docker_image: "quay.io/biocontainers/perl-io-socket-inet6:2.73--pl5321hdfd78af_0"
 ---
-
 
 # perl-io-socket-inet6
 

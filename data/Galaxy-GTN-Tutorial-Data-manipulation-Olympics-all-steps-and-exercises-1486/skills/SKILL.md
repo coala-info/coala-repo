@@ -1,10 +1,12 @@
 ---
 name: gtn-tutorial-data-manipulation-olympics-all-steps-and-exerci
-description: "This workflow processes Olympic Games and country information datasets using a comprehensive suite of text manipulation tools including Datamash, regex find-and-replace, filtering, and joining operations. Use this skill when you need to perform complex data cleaning, aggregate statistics across multiple tabular datasets, or transform raw historical records into structured formats for comparative analysis."
-homepage: https://workflowhub.eu/workflows/1486
+description: This workflow processes Olympic Games and country information datasets using a comprehensive suite of text manipulation tools including Datamash, regex find-and-replace, filtering, and joining operations. Use this skill when you need to perform complex data cleaning, aggregate statistics across multiple tabular datasets, or transform raw historical records into structured formats for comparative analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN Tutorial: Data manipulation Olympics - all steps and exercises
+# gtn-tutorial-data-manipulation-olympics-all-steps-and-exerci
 
 ## Overview
 

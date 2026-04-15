@@ -4,7 +4,6 @@ description: This tool performs gene selection and binary classification of high
 homepage: https://bioconductor.org/packages/release/bioc/html/iterativeBMA.html
 ---
 
-
 # bioconductor-iterativebma
 
 name: bioconductor-iterativebma

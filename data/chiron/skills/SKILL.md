@@ -2,8 +2,9 @@
 name: chiron
 description: Chiron is a deep neural network-based tool that translates raw electrical signals from nanopore sequencers into nucleotide sequences. Use when user asks to basecall DNA or RNA samples, optimize basecalling performance with different decoders, or manage multi-directory output structures.
 homepage: https://github.com/haotianteng/chiron
+metadata:
+  docker_image: "quay.io/biocontainers/chiron:0.6.1.1--py_0"
 ---
-
 
 # chiron
 

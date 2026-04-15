@@ -4,6 +4,8 @@ description: This pipeline maps Illumina short reads or Oxford Nanopore long rea
 homepage: https://github.com/nf-core/bactmap
 ---
 
+# bactmap
+
 ## Overview
 nf-core/bactmap is a bioinformatics analysis pipeline designed for mapping bacterial whole genome sequencing (WGS) data to a reference sequence. It supports both short-read (Illumina) and long-read (Oxford Nanopore) data, facilitating the creation of filtered variant calls and the generation of high-quality pseudogenomes.
 

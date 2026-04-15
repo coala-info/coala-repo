@@ -4,7 +4,6 @@ description: This package tests and visualizes associations between sample-level
 homepage: https://bioconductor.org/packages/release/bioc/html/covRNA.html
 ---
 
-
 # bioconductor-covrna
 
 ## Overview

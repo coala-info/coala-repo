@@ -1,10 +1,12 @@
 ---
 name: intro_to_cnn_v10110
-description: "This Galaxy workflow processes training and testing datasets to build, train, and evaluate a convolutional neural network using Keras model configuration and visualization tools. Use this skill when you need to perform image classification or pattern recognition tasks by training a deep learning model on labeled numerical data."
-homepage: https://workflowhub.eu/workflows/1643
+description: This Galaxy workflow processes training and testing datasets to build, train, and evaluate a convolutional neural network using Keras model configuration and visualization tools. Use this skill when you need to perform image classification or pattern recognition tasks by training a deep learning model on labeled numerical data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Intro_To_CNN_v1.0.11.0
+# intro_to_cnn_v10110
 
 ## Overview
 

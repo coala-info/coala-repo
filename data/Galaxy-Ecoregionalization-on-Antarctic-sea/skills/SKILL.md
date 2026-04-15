@@ -1,10 +1,12 @@
 ---
 name: ecoregionalization-on-antarctic-sea
-description: "This workflow processes environmental and taxa data from the Antarctic sea using Boosted Regression Trees, clustering algorithms, and mapping tools to perform ecoregionalization. Use this skill when you need to define distinct ecological zones or map the spatial distribution of marine communities based on species presence and environmental variables."
-homepage: https://workflowhub.eu/workflows/658
+description: This workflow processes environmental and taxa data from the Antarctic sea using Boosted Regression Trees, clustering algorithms, and mapping tools to perform ecoregionalization. Use this skill when you need to define distinct ecological zones or map the spatial distribution of marine communities based on species presence and environmental variables.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ecoregionalization on Antarctic sea
+# ecoregionalization-on-antarctic-sea
 
 ## Overview
 

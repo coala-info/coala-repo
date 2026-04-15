@@ -4,6 +4,8 @@ description: This pipeline processes raw FASTQ sequences to perform comprehensiv
 homepage: https://github.com/nf-core/seqinspector
 ---
 
+# seqinspector
+
 ## Overview
 nf-core/seqinspector is designed for high-throughput quality control of raw sequencing data. It addresses the need for standardized assessment of sequence quality, duplication levels, and potential contaminants across various data types including DNA, RNA, and synthetic sequences.
 

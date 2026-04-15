@@ -4,7 +4,6 @@ description: This tool provides a flexible infrastructure for managing, processi
 homepage: https://bioconductor.org/packages/release/bioc/html/Spectra.html
 ---
 
-
 # bioconductor-spectra
 
 name: bioconductor-spectra

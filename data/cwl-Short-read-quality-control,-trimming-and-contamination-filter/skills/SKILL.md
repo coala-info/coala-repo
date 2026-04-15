@@ -1,9 +1,12 @@
 ---
 name: short-read-quality-control-trimming-and-contamination-filter
-description: "This CWL workflow processes short paired-end Illumina reads through quality control, trimming, and multi-stage contamination filtering using fastp, BBduk, and Hostile. Use this skill when you need to prepare clean, high-quality genomic or transcriptomic datasets by removing sequencing artifacts and unwanted biological contaminants like human, phiX, or ribosomal RNA sequences."
-homepage: https://workflowhub.eu/workflows/336
+description: This CWL workflow processes short paired-end Illumina reads through quality control, trimming, and multi-stage contamination filtering using fastp, BBduk, and Hostile. Use this skill when you need to prepare clean, high-quality genomic or transcriptomic datasets by removing sequencing artifacts and unwanted biological contaminants like human, phiX, or ribosomal RNA sequences.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Short read quality control, trimming and contamination filter
+
+# short-read-quality-control-trimming-and-contamination-filter
 
 ## Overview
 

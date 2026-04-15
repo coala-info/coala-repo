@@ -4,7 +4,6 @@ description: The metaRNASeq package combines p-values from independent RNA-Seq s
 homepage: https://cran.r-project.org/web/packages/metarnaseq/index.html
 ---
 
-
 # r-metarnaseq
 
 ## Overview

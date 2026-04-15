@@ -1,9 +1,10 @@
 ---
 name: annotsv
-description: "AnnotSV provides functional annotation and clinical ranking for structural variations by integrating multiple data sources. Use when user asks to annotate structural variants from VCF or BED files, rank variants according to ACMG guidelines, or interpret the functional impact of deletions, duplications, and translocations."
+description: AnnotSV provides functional annotation and clinical ranking for structural variations by integrating multiple data sources. Use when user asks to annotate structural variants from VCF or BED files, rank variants according to ACMG guidelines, or interpret the functional impact of deletions, duplications, and translocations.
 homepage: https://github.com/lgmgeo/AnnotSV
+metadata:
+  docker_image: "quay.io/biocontainers/annotsv:3.5.3--py313hdfd78af_0"
 ---
-
 
 # annotsv
 

@@ -2,8 +2,9 @@
 name: pylibseq
 description: pylibseq provides high-performance Python bindings for calculating evolutionary statistics on genomic polymorphism data. Use when user asks to calculate population genetic statistics, analyze site frequency spectra, or estimate linkage disequilibrium and haplotype diversity.
 homepage: http://pypi.python.org/pypi/pylibseq
+metadata:
+  docker_image: "quay.io/biocontainers/pylibseq:0.2.3--py39h4994899_8"
 ---
-
 
 # pylibseq
 

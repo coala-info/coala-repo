@@ -1,9 +1,10 @@
 ---
 name: dnaclust
-description: "Analyzes DNA clustering data to identify patterns and relationships within DNA sequences. Use when user asks to filter clusters based on size, prepare clustered DNA data for further analysis, investigate homology, or convert clustered data into formats suitable for other bioinformatics tools."
+description: Analyzes DNA clustering data to identify patterns and relationships within DNA sequences. Use when user asks to filter clusters based on size, prepare clustered DNA data for further analysis, investigate homology, or convert clustered data into formats suitable for other bioinformatics tools.
 homepage: https://github.com/jenhantao/DNACluster
+metadata:
+  docker_image: "biocontainers/dnaclust:v3-4b2-deb_cv1"
 ---
-
 
 # dnaclust
 

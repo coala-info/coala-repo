@@ -4,7 +4,6 @@ description: The rnaseqcomp package provides a framework for comparing and evalu
 homepage: https://bioconductor.org/packages/release/bioc/html/rnaseqcomp.html
 ---
 
-
 # bioconductor-rnaseqcomp
 
 ## Overview

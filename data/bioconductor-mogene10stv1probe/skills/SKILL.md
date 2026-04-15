@@ -4,7 +4,6 @@ description: This package provides probe sequence data and spatial coordinates f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene10stv1probe.html
 ---
 
-
 # bioconductor-mogene10stv1probe
 
 name: bioconductor-mogene10stv1probe

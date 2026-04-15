@@ -4,7 +4,6 @@ description: VirFinder identifies viral sequences from assembled metagenomic dat
 homepage: https://cran.r-project.org/web/packages/virfinder/index.html
 ---
 
-
 # r-virfinder
 
 name: r-virfinder

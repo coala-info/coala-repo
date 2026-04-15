@@ -4,7 +4,6 @@ description: This package provides a streamlined way to load publicly available 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MethylSeqData.html
 ---
 
-
 # bioconductor-methylseqdata
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: pretextmap-generation-from-1-or-2-haplotypes
-description: "This workflow generates Hi-C contact maps in Pretext format from one or two genome haplotypes using Hi-C and PacBio HiFi reads processed with tools like PretextMap, Compleasm, and Teloscope. Use this skill when you need to visualize assembly scaffolds alongside gene annotations, telomere locations, and coverage gaps to perform manual curation and structural error correction of diploid or haploid genomes."
-homepage: https://workflowhub.eu/workflows/1327
+description: This workflow generates Hi-C contact maps in Pretext format from one or two genome haplotypes using Hi-C and PacBio HiFi reads processed with tools like PretextMap, Compleasm, and Teloscope. Use this skill when you need to visualize assembly scaffolds alongside gene annotations, telomere locations, and coverage gaps to perform manual curation and structural error correction of diploid or haploid genomes.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# PretextMap Generation from 1 or 2 haplotypes
+# pretextmap-generation-from-1-or-2-haplotypes
 
 ## Overview
 

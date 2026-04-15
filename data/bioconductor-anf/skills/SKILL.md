@@ -4,7 +4,6 @@ description: This tool performs Affinity Network Fusion to integrate multi-view 
 homepage: https://bioconductor.org/packages/release/bioc/html/ANF.html
 ---
 
-
 # bioconductor-anf
 
 name: bioconductor-anf

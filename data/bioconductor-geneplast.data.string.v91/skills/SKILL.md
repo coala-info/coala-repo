@@ -4,7 +4,6 @@ description: This package provides evolutionary root inference data and phylogen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/geneplast.data.string.v91.html
 ---
 
-
 # bioconductor-geneplast.data.string.v91
 
 name: bioconductor-geneplast.data.string.v91

@@ -4,6 +4,8 @@ description: This pipeline processes raw bisulfite-treated or TAPS sequencing da
 homepage: https://github.com/nf-core/methylseq
 ---
 
+# methylseq
+
 ## Overview
 nf-core/methylseq is a bioinformatics analysis pipeline used for Methylation (Bisulfite) sequencing data. It provides a standardized workflow that pre-processes raw data from FastQ inputs, performs read alignment, and executes extensive quality control. The pipeline supports multiple alignment strategies, including the default Bismark (using Bowtie2 or HISAT2), bwa-meth with MethylDackel, and specialized TAPS data processing using BWA-Mem and rastair.
 

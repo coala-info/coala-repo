@@ -1,9 +1,10 @@
 ---
 name: pbptyper
-description: "pbptyper identifies the penicillin-binding protein (PBP) types of Streptococcus pneumoniae from genome assemblies. Use when user asks to predict PBP types, determine 1A:2B:2X allele profiles, or verify if an assembly is Streptococcus pneumoniae."
+description: pbptyper identifies the penicillin-binding protein (PBP) types of Streptococcus pneumoniae from genome assemblies. Use when user asks to predict PBP types, determine 1A:2B:2X allele profiles, or verify if an assembly is Streptococcus pneumoniae.
 homepage: https://github.com/rpetit3/pbptyper
+metadata:
+  docker_image: "quay.io/biocontainers/pbptyper:2.0.0--hdfd78af_0"
 ---
-
 
 # pbptyper
 

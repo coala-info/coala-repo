@@ -4,7 +4,6 @@ description: r-geomap is an R package for topographic and geologic mapping, coor
 homepage: https://cran.r-project.org/web/packages/geomap/index.html
 ---
 
-
 # r-geomap
 
 name: r-geomap

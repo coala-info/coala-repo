@@ -4,7 +4,6 @@ description: The safe package implements a resampling-based framework for pathwa
 homepage: https://bioconductor.org/packages/release/bioc/html/safe.html
 ---
 
-
 # bioconductor-safe
 
 ## Overview

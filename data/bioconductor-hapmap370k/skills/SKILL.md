@@ -4,7 +4,6 @@ description: This package provides example HapMap dataset files from the Illumin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hapmap370k.html
 ---
 
-
 # bioconductor-hapmap370k
 
 name: bioconductor-hapmap370k

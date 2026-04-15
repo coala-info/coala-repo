@@ -2,8 +2,9 @@
 name: get_orfs
 description: This tool identifies and translates DNA sequences into protein sequences by finding open reading frames. Use when user asks to translate DNA to protein, identify open reading frames, or filter protein sequences by minimum length.
 homepage: https://github.com/linsalrob/get_orfs
+metadata:
+  docker_image: "quay.io/biocontainers/get_orfs:1.1.0--hdcf5f25_0"
 ---
-
 
 # get_orfs
 

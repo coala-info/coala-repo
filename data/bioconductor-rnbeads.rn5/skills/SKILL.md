@@ -4,7 +4,6 @@ description: This package provides annotation data for the Rattus norvegicus gen
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.rn5.html
 ---
 
-
 # bioconductor-rnbeads.rn5
 
 name: bioconductor-rnbeads.rn5

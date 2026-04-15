@@ -4,7 +4,6 @@ description: This tool deconvolutes bulk RNA-seq data using single-cell transcri
 homepage: https://cran.r-project.org/web/packages/bseqsc/index.html
 ---
 
-
 # r-bseqsc
 
 name: r-bseqsc

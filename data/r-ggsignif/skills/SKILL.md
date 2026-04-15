@@ -4,7 +4,6 @@ description: This tool adds significance brackets and annotations to ggplot2 vis
 homepage: https://cloud.r-project.org/web/packages/ggsignif/index.html
 ---
 
-
 # r-ggsignif
 
 name: r-ggsignif

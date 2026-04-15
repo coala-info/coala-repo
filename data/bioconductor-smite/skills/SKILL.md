@@ -4,7 +4,6 @@ description: Bioconductor-smite integrates gene expression and epigenetic data t
 homepage: https://bioconductor.org/packages/release/bioc/html/SMITE.html
 ---
 
-
 # bioconductor-smite
 
 name: bioconductor-smite

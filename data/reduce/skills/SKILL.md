@@ -2,8 +2,9 @@
 name: reduce
 description: The reduce tool adds and corrects hydrogen atoms in Protein Data Bank files. Use when user asks to add hydrogens to a PDB file or correct hydrogens in a PDB file.
 homepage: https://github.com/rlabduke/reduce
+metadata:
+  docker_image: "quay.io/biocontainers/reduce:4.15--py39h2de1943_4"
 ---
-
 
 # reduce
 

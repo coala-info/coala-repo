@@ -4,7 +4,6 @@ description: Rbec performs reference-based error correction and community profil
 homepage: https://bioconductor.org/packages/release/bioc/html/Rbec.html
 ---
 
-
 # bioconductor-rbec
 
 ## Overview

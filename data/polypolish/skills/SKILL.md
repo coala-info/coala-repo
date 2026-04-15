@@ -2,8 +2,9 @@
 name: polypolish
 description: Polypolish is a conservative short-read polishing tool designed to correct consensus errors in repetitive genomic regions. Use when user asks to polish a microbial assembly, resolve errors in repeats, or improve assembly accuracy using all-mapping short reads.
 homepage: https://github.com/rrwick/Polypolish
+metadata:
+  docker_image: "quay.io/biocontainers/polypolish:0.6.1--h3ab6199_0"
 ---
-
 
 # polypolish
 

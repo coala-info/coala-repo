@@ -2,8 +2,9 @@
 name: snakemake-executor-plugin-lsf
 description: This plugin enables Snakemake to submit and manage jobs on IBM Spectrum LSF clusters by translating resource definitions into bsub parameters. Use when user asks to run Snakemake workflows on LSF, map resources like memory and walltime to bsub flags, or configure MPI jobs and custom LSF arguments.
 homepage: https://github.com/befh/snakemake-executor-plugin-lsf
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-executor-plugin-lsf:0.2.6--pyhdfd78af_0"
 ---
-
 
 # snakemake-executor-plugin-lsf
 

@@ -4,7 +4,6 @@ description: RNAsense analyzes time-resolved RNA-seq data to identify stage-spec
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAsense.html
 ---
 
-
 # bioconductor-rnasense
 
 name: bioconductor-rnasense

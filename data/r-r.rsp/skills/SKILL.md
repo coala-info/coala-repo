@@ -4,7 +4,6 @@ description: The R.rsp package implements the R Server Pages markup language to 
 homepage: https://cloud.r-project.org/web/packages/R.rsp/index.html
 ---
 
-
 # r-r.rsp
 
 name: r-r.rsp

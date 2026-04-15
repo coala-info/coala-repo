@@ -4,7 +4,6 @@ description: This tool provides parallelized preprocessing methods for Affymetri
 homepage: https://bioconductor.org/packages/3.8/bioc/html/affyPara.html
 ---
 
-
 # bioconductor-affypara
 
 name: bioconductor-affypara

@@ -2,8 +2,9 @@
 name: atropos
 description: Atropos is a high-performance tool for trimming adapters and quality filtering high-throughput sequencing reads. Use when user asks to trim adapters from single-end or paired-end reads, detect unknown adapter sequences, estimate sequencing error rates, or generate read quality control metrics.
 homepage: https://github.com/jdidion/atropos
+metadata:
+  docker_image: "quay.io/biocontainers/atropos:1.1.32--py312h0fa9677_4"
 ---
-
 
 # atropos
 

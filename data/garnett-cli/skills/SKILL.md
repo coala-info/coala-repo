@@ -1,7 +1,9 @@
 ---
 name: garnett-cli
-description: "Garnett-cli provides command-line tools for automated cell type classification in single-cell transcriptomics data. Use when user asks to parse expression data, transform or validate marker files, train a cell type classifier, classify cells, or export classification results."
+description: Garnett-cli provides command-line tools for automated cell type classification in single-cell transcriptomics data. Use when user asks to parse expression data, transform or validate marker files, train a cell type classifier, classify cells, or export classification results.
 homepage: https://github.com/ebi-gene-expression-group/garnett-cli
+metadata:
+  docker_image: "quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1"
 ---
 
 # garnett-cli

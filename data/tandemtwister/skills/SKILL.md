@@ -2,6 +2,8 @@
 name: tandemtwister
 description: TandemTwister genotypes tandem repeats by leveraging long-read sequencing data to resolve complex repeat regions. Use when user asks to genotype germline tandem repeats, perform assembly-based genotyping, or profile somatic repeat expansions and contractions.
 homepage: https://github.com/Lionward/tandemtwister
+metadata:
+  docker_image: "quay.io/biocontainers/tandemtwister:0.2.0--h9948957_0"
 ---
 
 # tandemtwister

@@ -1,9 +1,10 @@
 ---
 name: elastix
-description: "elastix is a modular toolbox for the automated registration of medical images to find optimal spatial transformations. Use when user asks to register images, compute spatial transformations, apply transformations to images or point sets, or generate deformation fields."
+description: elastix is a modular toolbox for the automated registration of medical images to find optimal spatial transformations. Use when user asks to register images, compute spatial transformations, apply transformations to images or point sets, or generate deformation fields.
 homepage: https://github.com/SuperElastix/elastix
+metadata:
+  docker_image: "biocontainers/elastix:v4.9.0-1-deb_cv1"
 ---
-
 
 # elastix
 

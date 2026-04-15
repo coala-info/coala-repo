@@ -1,9 +1,8 @@
 ---
 name: bioconductor-reactomepa
-description: "ReactomePA performs pathway enrichment and gene set enrichment analysis using the Reactome database. Use when user asks to identify over-represented pathways, perform gene set enrichment analysis, or visualize biological pathways from genomic data."
+description: ReactomePA performs pathway enrichment and gene set enrichment analysis using the Reactome database. Use when user asks to identify over-represented pathways, perform gene set enrichment analysis, or visualize biological pathways from genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ReactomePA.html
 ---
-
 
 # bioconductor-reactomepa
 

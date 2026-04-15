@@ -4,7 +4,6 @@ description: The OmaDB package provides an R interface to the Orthologous MAtrix
 homepage: https://bioconductor.org/packages/release/bioc/html/OmaDB.html
 ---
 
-
 # bioconductor-omadb
 
 ## Overview

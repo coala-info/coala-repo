@@ -4,7 +4,6 @@ description: The r-propr tool performs proportionality analysis to measure assoc
 homepage: https://cran.r-project.org/web/packages/propr/index.html
 ---
 
-
 # r-propr
 
 name: r-propr

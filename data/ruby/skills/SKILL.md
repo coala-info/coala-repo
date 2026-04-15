@@ -2,6 +2,8 @@
 name: ruby
 description: Installs and manages Ruby environments and packages. Use when user asks to install a specific Ruby version, install Ruby gems, run Ruby scripts, or manage Ruby development environments.
 homepage: https://github.com/krahets/hello-algo
+metadata:
+  docker_image: "quay.io/biocontainers/ruby:2.2.3--1"
 ---
 
 # ruby

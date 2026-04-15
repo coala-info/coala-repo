@@ -4,7 +4,6 @@ description: tailfindr is an R package for alignment-free estimation of poly(A)-
 homepage: https://cran.r-project.org/web/packages/tailfindr/index.html
 ---
 
-
 # r-tailfindr
 
 name: r-tailfindr

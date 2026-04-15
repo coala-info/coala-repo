@@ -4,7 +4,6 @@ description: bioconductor-methrix provides a fast and memory-efficient framework
 homepage: https://bioconductor.org/packages/release/bioc/html/methrix.html
 ---
 
-
 # bioconductor-methrix
 
 name: bioconductor-methrix

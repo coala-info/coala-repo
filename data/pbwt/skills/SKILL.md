@@ -1,9 +1,10 @@
 ---
 name: pbwt
-description: "pbwt provides a high-performance environment for managing and analyzing aligned haplotype data using the Positional Burrows-Wheeler Transform. Use when user asks to convert genetic formats to PBWT, find maximal haplotype matches, calculate site frequency spectra, or perform local ancestry inference through painting algorithms."
+description: pbwt provides a high-performance environment for managing and analyzing aligned haplotype data using the Positional Burrows-Wheeler Transform. Use when user asks to convert genetic formats to PBWT, find maximal haplotype matches, calculate site frequency spectra, or perform local ancestry inference through painting algorithms.
 homepage: https://github.com/richarddurbin/pbwt
+metadata:
+  docker_image: "quay.io/biocontainers/pbwt:3.0--hed50d52_1"
 ---
-
 
 # pbwt
 

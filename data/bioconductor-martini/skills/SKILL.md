@@ -4,7 +4,6 @@ description: This tool performs network-guided genome-wide association studies (
 homepage: https://bioconductor.org/packages/release/bioc/html/martini.html
 ---
 
-
 # bioconductor-martini
 
 name: bioconductor-martini

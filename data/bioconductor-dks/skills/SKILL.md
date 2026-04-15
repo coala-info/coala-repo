@@ -4,7 +4,6 @@ description: This tool evaluates the distribution of multiple testing p-values u
 homepage: https://bioconductor.org/packages/release/bioc/html/dks.html
 ---
 
-
 # bioconductor-dks
 
 name: bioconductor-dks

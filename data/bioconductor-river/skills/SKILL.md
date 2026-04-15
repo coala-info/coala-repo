@@ -4,7 +4,6 @@ description: This tool predicts the regulatory impact of rare variants by integr
 homepage: https://bioconductor.org/packages/release/bioc/html/RIVER.html
 ---
 
-
 # bioconductor-river
 
 name: bioconductor-river

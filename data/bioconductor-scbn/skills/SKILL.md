@@ -4,7 +4,6 @@ description: SCBN performs scale-based normalization for cross-species RNA-seq d
 homepage: https://bioconductor.org/packages/release/bioc/html/SCBN.html
 ---
 
-
 # bioconductor-scbn
 
 ## Overview

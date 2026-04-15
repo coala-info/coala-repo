@@ -1,9 +1,10 @@
 ---
 name: perl-extutils-cppguess
-description: "ExtUtils::CppGuess automates the detection of C++ compiler and linker flags for building Perl extensions. Use when user asks to integrate C++ code into Perl modules, configure build flags for ExtUtils::MakeMaker or Module::Build, and detect compiler environments across different operating systems."
+description: ExtUtils::CppGuess automates the detection of C++ compiler and linker flags for building Perl extensions. Use when user asks to integrate C++ code into Perl modules, configure build flags for ExtUtils::MakeMaker or Module::Build, and detect compiler environments across different operating systems.
 homepage: http://metacpan.org/pod/ExtUtils::CppGuess
+metadata:
+  docker_image: "quay.io/biocontainers/perl-extutils-cppguess:0.27--pl5321h9948957_0"
 ---
-
 
 # perl-extutils-cppguess
 

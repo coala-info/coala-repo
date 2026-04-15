@@ -4,7 +4,6 @@ description: MetaScope performs strain-level metagenomic profiling and taxonomic
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MetaScope.html
 ---
 
-
 # bioconductor-metascope
 
 name: bioconductor-metascope

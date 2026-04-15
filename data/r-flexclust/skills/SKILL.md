@@ -4,7 +4,6 @@ description: The r-flexclust package provides a flexible framework for k-centroi
 homepage: https://cloud.r-project.org/web/packages/flexclust/index.html
 ---
 
-
 # r-flexclust
 
 ## Overview

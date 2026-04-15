@@ -4,7 +4,6 @@ description: This tool performs aberrant expression and splicing analysis in bul
 homepage: https://bioconductor.org/packages/release/bioc/html/saseR.html
 ---
 
-
 # bioconductor-saser
 
 name: bioconductor-saser

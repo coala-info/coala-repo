@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-2-assembly-of-genome-sequence
-description: "This Galaxy workflow performs hybrid assembly of SARS-CoV-2 genomes from Illumina and ONT reads using Unicycler and SPAdes, followed by assembly visualization with Bandage. Use this skill when you need to reconstruct a complete viral consensus sequence from pre-processed sequencing data to investigate pathogen evolution or track transmission variants."
-homepage: https://workflowhub.eu/workflows/5
+description: This Galaxy workflow performs hybrid assembly of SARS-CoV-2 genomes from Illumina and ONT reads using Unicycler and SPAdes, followed by assembly visualization with Bandage. Use this skill when you need to reconstruct a complete viral consensus sequence from pre-processed sequencing data to investigate pathogen evolution or track transmission variants.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [2] Assembly of genome sequence
+# covid-19-genomics-2-assembly-of-genome-sequence
 
 ## Overview
 

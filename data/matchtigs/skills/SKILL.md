@@ -2,8 +2,9 @@
 name: matchtigs
 description: Matchtigs reduces the redundancy of k-mer sets by computing efficient paths through a de Bruijn graph to produce compressed genomic representations. Use when user asks to compute matchtigs, generate eulertigs, or compress unitig files into more efficient k-mer representations.
 homepage: https://github.com/algbio/matchtigs.git
+metadata:
+  docker_image: "quay.io/biocontainers/matchtigs:2.1.9--hc1c3326_0"
 ---
-
 
 # matchtigs
 

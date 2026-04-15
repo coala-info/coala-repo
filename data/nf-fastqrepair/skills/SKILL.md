@@ -4,6 +4,8 @@ description: This pipeline recovers corrupted FASTQ.gz files and fixes uncomplia
 homepage: https://github.com/nf-core/fastqrepair
 ---
 
+# fastqrepair
+
 ## Overview
 nf-core/fastqrepair solves the problem of corrupted or malformed sequencing data by attempting to recover reads from damaged compressed files and enforcing structural compliance. It addresses issues such as non-ACGTN characters, truncated files, and desynchronized paired-end reads that often cause downstream analysis tools to fail.
 

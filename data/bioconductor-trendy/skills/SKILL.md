@@ -4,7 +4,6 @@ description: Bioconductor-trendy performs segmented regression analysis to chara
 homepage: https://bioconductor.org/packages/release/bioc/html/Trendy.html
 ---
 
-
 # bioconductor-trendy
 
 name: bioconductor-trendy

@@ -1,10 +1,12 @@
 ---
 name: mapping-and-molecular-identification-of-phenotype-causing-mu
-description: "This Arabidopsis thaliana variant analysis workflow processes reference genomes and aligned reads from outcrossed F2 pools and mapping strains using the MiModD suite and SnpEff to identify phenotype-causing mutations. Use this skill when you need to perform mapping-by-sequencing to pinpoint the genomic location and molecular identity of mutations responsible for observed phenotypes in plant breeding or genetic research."
-homepage: https://workflowhub.eu/workflows/1682
+description: This Arabidopsis thaliana variant analysis workflow processes reference genomes and aligned reads from outcrossed F2 pools and mapping strains using the MiModD suite and SnpEff to identify phenotype-causing mutations. Use this skill when you need to perform mapping-by-sequencing to pinpoint the genomic location and molecular identity of mutations responsible for observed phenotypes in plant breeding or genetic research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mapping And Molecular Identification Of Phenotype Causing Mutations
+# mapping-and-molecular-identification-of-phenotype-causing-mu
 
 ## Overview
 

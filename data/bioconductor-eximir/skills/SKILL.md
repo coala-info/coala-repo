@@ -4,7 +4,6 @@ description: This tool normalizes miRNA expression data from Exiqon and Affymetr
 homepage: https://bioconductor.org/packages/release/bioc/html/ExiMiR.html
 ---
 
-
 # bioconductor-eximir
 
 name: bioconductor-eximir

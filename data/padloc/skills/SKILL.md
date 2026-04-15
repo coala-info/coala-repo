@@ -2,8 +2,9 @@
 name: padloc
 description: PADLOC detects and annotates antiviral defense systems within prokaryotic genomic data by comparing sequences against a curated database of HMMs. Use when user asks to identify defense systems in genomes, update the PADLOC HMM database, or analyze protein and annotation files for immune system mapping.
 homepage: https://github.com/padlocbio/padloc
+metadata:
+  docker_image: "quay.io/biocontainers/padloc:2.0.0--hdfd78af_0"
 ---
-
 
 # padloc
 

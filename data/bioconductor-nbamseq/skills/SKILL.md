@@ -4,7 +4,6 @@ description: NBAMSeq performs differential expression analysis of RNA-Seq data u
 homepage: https://bioconductor.org/packages/release/bioc/html/NBAMSeq.html
 ---
 
-
 # bioconductor-nbamseq
 
 name: bioconductor-nbamseq

@@ -4,7 +4,6 @@ description: The r-flexmix package provides a comprehensive framework for fittin
 homepage: https://cloud.r-project.org/web/packages/flexmix/index.html
 ---
 
-
 # r-flexmix
 
 name: r-flexmix

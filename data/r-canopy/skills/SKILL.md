@@ -4,7 +4,6 @@ description: r-canopy is an R package that uses a Bayesian framework to infer tu
 homepage: https://cran.r-project.org/web/packages/canopy/index.html
 ---
 
-
 # r-canopy
 
 name: r-canopy

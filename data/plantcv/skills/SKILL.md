@@ -2,8 +2,9 @@
 name: plantcv
 description: PlantCV is a modular library for building reproducible image analysis workflows to preprocess plant images and quantify phenotypic traits. Use when user asks to segment plant material from backgrounds, measure morphological features like leaf area or height, analyze color distributions, or process large-scale phenotyping datasets.
 homepage: https://plantcv.danforthcenter.org
+metadata:
+  docker_image: "quay.io/biocontainers/plantcv:3.8.0--py_0"
 ---
-
 
 # plantcv
 

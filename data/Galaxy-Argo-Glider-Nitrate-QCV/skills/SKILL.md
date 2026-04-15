@@ -1,10 +1,12 @@
 ---
 name: argo-glider-nitrate-qcv
-description: "This oceanography workflow processes Argo float or glider NetCDF collections and reference datasets to perform nitrate qualification, calibration, and validation using QCV harmonizers, Ocean Data View, and neural network-based biogeochemical calibration tools. Use this skill when you need to ensure the accuracy of nitrate sensor measurements from autonomous platforms by comparing them against climatology or neural network models to produce high-quality biogeochemical data for marine research."
-homepage: https://workflowhub.eu/workflows/1961
+description: This oceanography workflow processes Argo float or glider NetCDF collections and reference datasets to perform nitrate qualification, calibration, and validation using QCV harmonizers, Ocean Data View, and neural network-based biogeochemical calibration tools. Use this skill when you need to ensure the accuracy of nitrate sensor measurements from autonomous platforms by comparing them against climatology or neural network models to produce high-quality biogeochemical data for marine research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Argo-Glider Nitrate QCV
+# argo-glider-nitrate-qcv
 
 ## Overview
 

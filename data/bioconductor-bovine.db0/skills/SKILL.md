@@ -4,7 +4,6 @@ description: This package provides the base SQLite databases for Bos taurus anno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bovine.db0.html
 ---
 
-
 # bioconductor-bovine.db0
 
 name: bioconductor-bovine.db0

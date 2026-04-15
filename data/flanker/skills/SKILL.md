@@ -1,9 +1,10 @@
 ---
 name: flanker
-description: "Flanker analyzes gene flanking regions for comparative genomics. Use when user asks to compare gene neighborhoods or analyze genomic context around genes."
+description: Flanker analyzes gene flanking regions for comparative genomics. Use when user asks to compare gene neighborhoods or analyze genomic context around genes.
 homepage: https://github.com/wtmatlock/flanker
+metadata:
+  docker_image: "quay.io/biocontainers/flanker:0.1.5--py_0"
 ---
-
 
 # flanker
 

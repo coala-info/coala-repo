@@ -4,7 +4,6 @@ description: This tool provides a simplified pipeline for end-to-end RNA-Seq gen
 homepage: https://bioconductor.org/packages/3.6/bioc/html/sRAP.html
 ---
 
-
 # bioconductor-srap
 
 name: bioconductor-srap

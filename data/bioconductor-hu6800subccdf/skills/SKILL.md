@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment an
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800subccdf.html
 ---
 
-
 # bioconductor-hu6800subccdf
 
 ## Overview

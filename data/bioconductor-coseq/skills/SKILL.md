@@ -4,7 +4,6 @@ description: The coseq package performs co-expression analysis of RNA-seq data b
 homepage: https://bioconductor.org/packages/release/bioc/html/coseq.html
 ---
 
-
 # bioconductor-coseq
 
 ## Overview

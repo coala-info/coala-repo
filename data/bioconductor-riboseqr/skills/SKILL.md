@@ -4,7 +4,6 @@ description: This tool analyzes ribosome profiling data to infer reading frames 
 homepage: https://bioconductor.org/packages/release/bioc/html/riboSeqR.html
 ---
 
-
 # bioconductor-riboseqr
 
 name: bioconductor-riboseqr

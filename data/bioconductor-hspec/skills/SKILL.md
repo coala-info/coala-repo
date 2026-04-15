@@ -4,7 +4,6 @@ description: This package provides coordinate mapping and CDF environment inform
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Hspec.html
 ---
 
-
 # bioconductor-hspec
 
 name: bioconductor-hspec

@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for mapping bet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bovine.db.html
 ---
 
-
 # bioconductor-bovine.db
 
 name: bioconductor-bovine.db

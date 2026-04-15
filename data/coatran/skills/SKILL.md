@@ -2,6 +2,8 @@
 name: coatran
 description: CoaTran simulates coalescent trees that are topologically and temporally constrained by a provided transmission network. Use when user asks to simulate viral phylogenies within a transmission history, generate trees with constant effective population sizes, or create transmission trees where coalescence occurs at infection times.
 homepage: https://github.com/niemasd/CoaTran
+metadata:
+  docker_image: "quay.io/biocontainers/coatran:0.0.4--h503566f_1"
 ---
 
 # coatran

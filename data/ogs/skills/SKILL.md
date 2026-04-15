@@ -1,9 +1,10 @@
 ---
 name: ogs
-description: "Installs and provides guidance for using the OpenGeoSys (OGS) THMC simulator. Use when user asks to install OGS, run THMC simulations, or get guidance on OGS usage."
+description: Installs and provides guidance for using the OpenGeoSys (OGS) THMC simulator. Use when user asks to install OGS, run THMC simulations, or get guidance on OGS usage.
 homepage: https://github.com/OGSR/OGSR-Engine
+metadata:
+  docker_image: "quay.io/biocontainers/ogs:6.5.3"
 ---
-
 
 # ogs
 

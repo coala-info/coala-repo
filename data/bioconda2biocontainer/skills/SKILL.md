@@ -2,6 +2,8 @@
 name: bioconda2biocontainer
 description: bioconda2biocontainer maps Bioconda packages to their corresponding containerized versions and searches the BioContainers registry for tool metadata. Use when user asks to find Docker or Singularity images for specific packages, search for tools by keyword, or retrieve container metadata like image size and download counts.
 homepage: https://github.com/BioContainers/bioconda2biocontainer
+metadata:
+  docker_image: "quay.io/biocontainers/bioconda2biocontainer:0.0.7--pyhdfd78af_0"
 ---
 
 # bioconda2biocontainer

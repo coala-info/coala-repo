@@ -4,7 +4,6 @@ description: DEqMS is an R package that performs differential expression analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/DEqMS.html
 ---
 
-
 # bioconductor-deqms
 
 ## Overview

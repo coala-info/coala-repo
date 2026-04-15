@@ -2,8 +2,9 @@
 name: perl-pod-coverage
 description: This tool checks if the public API of a Perl module is documented by cross-referencing available subroutines with POD documentation. Use when user asks to check Perl module documentation coverage, identify undocumented subroutines, or verify that a library meets documentation standards.
 homepage: https://github.com/richardc/perl-pod-coverage
+metadata:
+  docker_image: "quay.io/biocontainers/perl-pod-coverage:0.23--pl5.22.0_0"
 ---
-
 
 # perl-pod-coverage
 

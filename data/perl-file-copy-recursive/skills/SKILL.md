@@ -2,8 +2,9 @@
 name: perl-file-copy-recursive
 description: This tool performs recursive copying and moving of files and directories while automatically creating missing destination paths. Use when user asks to recursively copy files or directories, move directory trees, or perform pattern-based copying with globbing.
 homepage: https://metacpan.org/pod/File::Copy::Recursive
+metadata:
+  docker_image: "quay.io/biocontainers/perl-file-copy-recursive:0.45--pl5321h7b50bb2_5"
 ---
-
 
 # perl-file-copy-recursive
 

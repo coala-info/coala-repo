@@ -2,8 +2,9 @@
 name: psiclass
 description: PsiCLASS is a reference-based transcriptome assembler that processes single or multiple RNA-seq samples simultaneously to produce individual and consensus transcript annotations. Use when user asks to assemble transcripts from BAM files, perform multi-sample transcriptome reconstruction, or generate a consensus set of meta-annotations from RNA-seq data.
 homepage: https://github.com/splicebox/PsiCLASS
+metadata:
+  docker_image: "quay.io/biocontainers/psiclass:1.0.3--h5ca1c30_6"
 ---
-
 
 # psiclass
 

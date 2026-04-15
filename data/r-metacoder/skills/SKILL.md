@@ -4,7 +4,6 @@ description: Metacoder is a bioinformatics toolset for parsing, manipulating, an
 homepage: https://cloud.r-project.org/web/packages/metacoder/index.html
 ---
 
-
 # r-metacoder
 
 ## Overview

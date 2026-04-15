@@ -4,7 +4,6 @@ description: This tool infers gene regulatory networks from time-series expressi
 homepage: https://bioconductor.org/packages/3.6/bioc/html/networkBMA.html
 ---
 
-
 # bioconductor-networkbma
 
 name: bioconductor-networkbma

@@ -4,7 +4,6 @@ description: scMultiSim simulates multimodal single-cell data including RNA, ATA
 homepage: https://bioconductor.org/packages/release/bioc/html/scMultiSim.html
 ---
 
-
 # bioconductor-scmultisim
 
 ## Overview

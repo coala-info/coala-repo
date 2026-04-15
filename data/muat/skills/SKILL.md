@@ -2,6 +2,8 @@
 name: muat
 description: The Mutation Attention tool identifies tumor origins and subtypes by analyzing somatic mutation patterns from whole genome sequencing data. Use when user asks to predict tumor types from VCF files, perform ensemble predictions for higher accuracy, or preprocess genomic data for deep learning analysis.
 homepage: https://github.com/primasanjaya/muat
+metadata:
+  docker_image: "quay.io/biocontainers/muat:0.1.12--pyh7e72e81_0"
 ---
 
 # muat

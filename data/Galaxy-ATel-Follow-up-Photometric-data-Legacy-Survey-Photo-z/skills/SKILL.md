@@ -1,10 +1,12 @@
 ---
 name: atel-follow-up-photometric-data-legacy-survey-photo-z
-description: "This Galaxy workflow processes astronomical telegram text and IDs using tools like analyse-short-astro-text, DESI Legacy Survey, and PhotoZ_Euclid to extract photometric data and calculate redshifts. Use this skill when you need to automatically retrieve photometric information from the DESI Legacy Survey and estimate photometric redshifts for astronomical sources identified in short text reports or telegrams."
-homepage: https://workflowhub.eu/workflows/1353
+description: This Galaxy workflow processes astronomical telegram text and IDs using tools like analyse-short-astro-text, DESI Legacy Survey, and PhotoZ_Euclid to extract photometric data and calculate redshifts. Use this skill when you need to automatically retrieve photometric information from the DESI Legacy Survey and estimate photometric redshifts for astronomical sources identified in short text reports or telegrams.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ATel Follow-up Photometric data Legacy Survey Photo-z
+# atel-follow-up-photometric-data-legacy-survey-photo-z
 
 ## Overview
 

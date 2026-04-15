@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Human Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubd.db.html
 ---
 
-
 # bioconductor-hu35ksubd.db
 
 name: bioconductor-hu35ksubd.db

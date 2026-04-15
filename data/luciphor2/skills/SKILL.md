@@ -1,9 +1,10 @@
 ---
 name: luciphor2
-description: "Luciphor2 calculates the probability of post-translational modification site assignments to refine site-specific confidence. Use when user asks to score PTM localization, identify the most probable modification sites, or process pepXML and tab-delimited search results for site refinement."
+description: Luciphor2 calculates the probability of post-translational modification site assignments to refine site-specific confidence. Use when user asks to score PTM localization, identify the most probable modification sites, or process pepXML and tab-delimited search results for site refinement.
 homepage: http://luciphor2.sourceforge.net/
+metadata:
+  docker_image: "quay.io/biocontainers/luciphor2:2020_04_03--hdfd78af_1"
 ---
-
 
 # luciphor2
 

@@ -4,7 +4,6 @@ description: This package provides mini example datasets including FASTQ, FASTA,
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/RNASeqRData.html
 ---
 
-
 # bioconductor-rnaseqrdata
 
 name: bioconductor-rnaseqrdata

@@ -4,7 +4,6 @@ description: The r-buencolors package provides curated color palettes and plotti
 homepage: https://cran.r-project.org/web/packages/buencolors/index.html
 ---
 
-
 # r-buencolors
 
 ## Overview

@@ -2,6 +2,8 @@
 name: cooltools
 description: cooltools is a Python-based suite for analyzing genome folding data and characterizing chromatin architecture from Hi-C contact matrices. Use when user asks to calculate contact frequency vs. distance, identify A/B compartments, find TAD boundaries via insulation scores, or perform aggregate peak analysis.
 homepage: https://github.com/mirnylab/cooltools
+metadata:
+  docker_image: "quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3"
 ---
 
 # cooltools

@@ -4,7 +4,6 @@ description: This tool performs Bayesian statistical inference and posterior sim
 homepage: https://cran.r-project.org/web/packages/learnbayes/index.html
 ---
 
-
 # r-learnbayes
 
 name: r-learnbayes

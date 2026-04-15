@@ -4,7 +4,6 @@ description: This package provides annotation data for Illumina Infinium 27k and
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.InfiniumMethylation.hg18.html
 ---
 
-
 # bioconductor-fdb.infiniummethylation.hg18
 
 name: bioconductor-fdb.infiniummethylation.hg18

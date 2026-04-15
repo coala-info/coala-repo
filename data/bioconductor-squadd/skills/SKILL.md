@@ -4,7 +4,6 @@ description: SQUADD processes and visualizes simulation data from SQUAD software
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SQUADD.html
 ---
 
-
 # bioconductor-squadd
 
 ## Overview

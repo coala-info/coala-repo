@@ -4,7 +4,6 @@ description: This tool calculates and visualizes standardized quality control me
 homepage: https://bioconductor.org/packages/release/bioc/html/MsQuality.html
 ---
 
-
 # bioconductor-msquality
 
 name: bioconductor-msquality

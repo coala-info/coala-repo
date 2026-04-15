@@ -4,7 +4,6 @@ description: This tool provides a quality control and statistical analysis pipel
 homepage: https://bioconductor.org/packages/release/bioc/html/iCheck.html
 ---
 
-
 # bioconductor-icheck
 
 name: bioconductor-icheck

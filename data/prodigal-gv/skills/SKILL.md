@@ -2,8 +2,9 @@
 name: prodigal-gv
 description: Prodigal-gv identifies protein-coding sequences in giant viruses and viral lineages with non-standard translation tables. Use when user asks to predict genes in NCLDVs, identify viral proteins using genetic code 15, or run gene calling on giant virus genomes.
 homepage: https://github.com/apcamargo/prodigal-gv
+metadata:
+  docker_image: "quay.io/biocontainers/prodigal-gv:2.11.0--he4a0461_4"
 ---
-
 
 # prodigal-gv
 

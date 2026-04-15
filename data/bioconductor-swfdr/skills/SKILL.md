@@ -4,7 +4,6 @@ description: This package performs multiple hypothesis testing by incorporating 
 homepage: https://bioconductor.org/packages/release/bioc/html/swfdr.html
 ---
 
-
 # bioconductor-swfdr
 
 ## Overview

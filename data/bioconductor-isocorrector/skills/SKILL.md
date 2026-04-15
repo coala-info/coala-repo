@@ -4,7 +4,6 @@ description: IsoCorrectoR corrects mass spectrometry data from stable isotope la
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoCorrectoR.html
 ---
 
-
 # bioconductor-isocorrector
 
 ## Overview

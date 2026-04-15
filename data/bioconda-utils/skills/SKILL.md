@@ -2,6 +2,8 @@
 name: bioconda-utils
 description: Bioconda-utils is a command-line toolkit used to automate the linting, building, and maintenance of bioinformatics software recipes within the Bioconda ecosystem. Use when user asks to lint recipes for quality standards, build packages in isolated Docker environments, update Bioconductor skeletons, or manage recipe dependencies and build failures.
 homepage: http://bioconda.github.io/build-system.html
+metadata:
+  docker_image: "quay.io/biocontainers/bioconda-utils:4.0.0--pyhdfd78af_0"
 ---
 
 # bioconda-utils

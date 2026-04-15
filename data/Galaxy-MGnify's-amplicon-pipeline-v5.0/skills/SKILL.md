@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50
-description: "This Galaxy workflow processes SRA accession lists through MGnify's amplicon pipeline v5.0, utilizing fastp, Trimmomatic, and specialized sub-workflows for rRNA prediction and ITS identification. Use this skill when you need to perform standardized taxonomic profiling and abundance estimation of microbial communities from raw single-end or paired-end amplicon sequencing data."
-homepage: https://workflowhub.eu/workflows/1853
+description: This Galaxy workflow processes SRA accession lists through MGnify's amplicon pipeline v5.0, utilizing fastp, Trimmomatic, and specialized sub-workflows for rRNA prediction and ITS identification. Use this skill when you need to perform standardized taxonomic profiling and abundance estimation of microbial communities from raw single-end or paired-end amplicon sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0
+# mgnifys-amplicon-pipeline-v50
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The flowSpecs package provides tools for processing, unmixing, and 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowSpecs.html
 ---
 
-
 # bioconductor-flowspecs
 
 ## Overview

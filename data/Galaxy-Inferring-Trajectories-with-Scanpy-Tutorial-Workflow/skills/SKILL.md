@@ -1,10 +1,12 @@
 ---
 name: inferring-trajectories-with-scanpy-tutorial-workflow
-description: "This Galaxy workflow processes AnnData objects to perform single-cell trajectory inference using Scanpy tools including PAGA, Diffusion Maps, and Diffusion Pseudotime. Use this skill when you need to model cellular differentiation pathways, identify branching lineages, or calculate pseudotime values to understand the progression of biological processes in single-cell datasets."
-homepage: https://workflowhub.eu/workflows/1529
+description: This Galaxy workflow processes AnnData objects to perform single-cell trajectory inference using Scanpy tools including PAGA, Diffusion Maps, and Diffusion Pseudotime. Use this skill when you need to model cellular differentiation pathways, identify branching lineages, or calculate pseudotime values to understand the progression of biological processes in single-cell datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Inferring Trajectories with Scanpy Tutorial Workflow
+# inferring-trajectories-with-scanpy-tutorial-workflow
 
 ## Overview
 

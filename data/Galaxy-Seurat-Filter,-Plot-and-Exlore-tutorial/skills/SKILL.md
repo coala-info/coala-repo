@@ -1,10 +1,12 @@
 ---
 name: seurat-filter-plot-and-exlore-tutorial
-description: "This single-cell RNA-seq workflow retrieves data from the EBI Single Cell Expression Atlas and performs quality control, normalization, and clustering using the Seurat toolkit. Use this skill when you need to process raw expression matrices to identify distinct cell populations and visualize high-dimensional transcriptomic data through UMAP projections."
-homepage: https://workflowhub.eu/workflows/1570
+description: This single-cell RNA-seq workflow retrieves data from the EBI Single Cell Expression Atlas and performs quality control, normalization, and clustering using the Seurat toolkit. Use this skill when you need to process raw expression matrices to identify distinct cell populations and visualize high-dimensional transcriptomic data through UMAP projections.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Seurat Filter, Plot and Exlore tutorial
+# seurat-filter-plot-and-exlore-tutorial
 
 ## Overview
 

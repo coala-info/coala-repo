@@ -4,7 +4,6 @@ description: The MultiAssayExperiment package provides a coordinated container f
 homepage: https://bioconductor.org/packages/release/bioc/html/MultiAssayExperiment.html
 ---
 
-
 # bioconductor-multiassayexperiment
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides pre-processed differential expression referen
 homepage: https://bioconductor.org/packages/release/data/experiment/html/celarefData.html
 ---
 
-
 # bioconductor-celarefdata
 
 name: bioconductor-celarefdata

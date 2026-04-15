@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Canis lupus fami
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cfamiliaris.UCSC.canFam3.html
 ---
 
-
 # bioconductor-bsgenome.cfamiliaris.ucsc.canfam3
 
 name: bioconductor-bsgenome.cfamiliaris.ucsc.canfam3

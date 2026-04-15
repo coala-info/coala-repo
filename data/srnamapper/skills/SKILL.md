@@ -1,9 +1,10 @@
 ---
 name: srnamapper
-description: "srnamapper aligns small RNA sequencing reads to a genome using the BWA API. Use when user asks to map sRNA-seq reads, configure alignment parameters for small RNAs, or process multiple samples into merged output files."
+description: srnamapper aligns small RNA sequencing reads to a genome using the BWA API. Use when user asks to map sRNA-seq reads, configure alignment parameters for small RNAs, or process multiple samples into merged output files.
 homepage: https://github.com/mzytnicki/srnaMapper
+metadata:
+  docker_image: "quay.io/biocontainers/srnamapper:1.0.12--h577a1d6_0"
 ---
-
 
 # srnamapper
 

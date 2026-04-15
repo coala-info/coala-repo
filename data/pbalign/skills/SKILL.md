@@ -2,8 +2,9 @@
 name: pbalign
 description: pbalign is a wrapper tool that aligns PacBio reads to a reference genome and produces PBBAM-compliant output. Use when user asks to align PacBio subreads to a reference, map reads using dataset XML files, or prepare data for downstream consensus tools like Arrow.
 homepage: https://github.com/PacificBiosciences/pbalign
+metadata:
+  docker_image: "biocontainers/pbalign:v0.3.2-1-deb-py2_cv1"
 ---
-
 
 # pbalign
 

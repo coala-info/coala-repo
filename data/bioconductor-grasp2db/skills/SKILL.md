@@ -4,7 +4,6 @@ description: This package provides a high-performance SQLite interface to the GR
 homepage: https://bioconductor.org/packages/release/data/annotation/html/grasp2db.html
 ---
 
-
 # bioconductor-grasp2db
 
 ## Overview

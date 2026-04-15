@@ -4,7 +4,6 @@ description: This package provides access to phyloP conservation scores for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/phyloP35way.UCSC.mm39.html
 ---
 
-
 # bioconductor-phylop35way.ucsc.mm39
 
 name: bioconductor-phylop35way.ucsc.mm39

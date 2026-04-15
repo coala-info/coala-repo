@@ -4,6 +4,8 @@ description: This pipeline performs differential abundance analysis on data matr
 homepage: https://github.com/nf-core/differentialabundance
 ---
 
+# nf-core-differentialabundance
+
 ## Overview
 The pipeline analyzes data represented as matrices to compare groups of observations and generate differential statistics. It supports various modalities including RNA-seq (counts), Affymetrix arrays (.CEL files), and proteomics data (MaxQuant), producing both static HTML reports and interactive Shiny applications for data exploration.
 

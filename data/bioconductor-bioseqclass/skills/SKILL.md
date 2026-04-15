@@ -4,7 +4,6 @@ description: BioSeqClass provides a comprehensive framework for sequence-based b
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BioSeqClass.html
 ---
 
-
 # bioconductor-bioseqclass
 
 name: bioconductor-bioseqclass

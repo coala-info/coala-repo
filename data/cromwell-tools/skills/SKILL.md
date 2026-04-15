@@ -2,6 +2,8 @@
 name: cromwell-tools
 description: Cromwell-tools provides a Python library and command-line interface for interacting with the Cromwell REST API to manage bioinformatics workflows. Use when user asks to submit WDL workflows, authenticate with Cromwell instances, monitor workflow status, or query workflow metadata.
 homepage: http://github.com/broadinstitute/cromwell-tools
+metadata:
+  docker_image: "quay.io/biocontainers/cromwell-tools:2.4.1--py_0"
 ---
 
 # cromwell-tools

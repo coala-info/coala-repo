@@ -1,9 +1,10 @@
 ---
 name: bellerophon
-description: "Bellerophon filters mapped sequencing reads to retain those spanning a mapping junction, keeping the 5'-side. Use when user asks to filter reads spanning a junction."
+description: Bellerophon filters mapped sequencing reads to retain those spanning a mapping junction, keeping the 5'-side. Use when user asks to filter reads spanning a junction.
 homepage: https://github.com/davebx/bellerophon/
+metadata:
+  docker_image: "quay.io/biocontainers/bellerophon:1.0--pyh5e36f6f_0"
 ---
-
 
 # bellerophon
 

@@ -4,7 +4,6 @@ description: The runibic package provides a high-performance, parallel implement
 homepage: https://bioconductor.org/packages/release/bioc/html/runibic.html
 ---
 
-
 # bioconductor-runibic
 
 ## Overview

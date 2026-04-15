@@ -4,6 +4,8 @@ description: This pipeline constructs locally directed and acyclic pangenome gra
 homepage: https://github.com/nf-core/pangenome
 ---
 
+# pangenome
+
 ## Overview
 The pipeline addresses the challenge of representing multiple genomic sequences in a single graph structure that maintains local linearity. By rendering a collection of sequences into a pangenome graph, it enables interpretation, visualization, and reuse of genomic data while preserving both small and large-scale variations.
 

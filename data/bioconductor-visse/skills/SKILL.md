@@ -4,7 +4,6 @@ description: This tool summarizes and visualizes gene set enrichment analysis re
 homepage: https://bioconductor.org/packages/release/bioc/html/vissE.html
 ---
 
-
 # bioconductor-visse
 
 name: bioconductor-visse

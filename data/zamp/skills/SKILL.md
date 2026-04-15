@@ -2,6 +2,8 @@
 name: zamp
 description: zAMP is a command-line interface for reproducible amplicon-based metagenomics that processes raw sequencing data into taxonomic insights. Use when user asks to prepare reference databases, execute end-to-end analysis pipelines, or generate visualizations for metagenomic datasets.
 homepage: https://github.com/metagenlab/zAMP/
+metadata:
+  docker_image: "quay.io/biocontainers/zamp:1.0.0--pyhdfd78af_1"
 ---
 
 # zamp

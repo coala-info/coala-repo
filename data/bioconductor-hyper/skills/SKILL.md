@@ -4,7 +4,6 @@ description: The hypeR package performs geneset enrichment analysis, visualizati
 homepage: https://bioconductor.org/packages/release/bioc/html/hypeR.html
 ---
 
-
 # bioconductor-hyper
 
 ## Overview

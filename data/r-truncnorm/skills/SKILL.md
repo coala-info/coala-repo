@@ -4,7 +4,6 @@ description: This tool provides functions for calculating the density, probabili
 homepage: https://cloud.r-project.org/web/packages/truncnorm/index.html
 ---
 
-
 # r-truncnorm
 
 name: r-truncnorm

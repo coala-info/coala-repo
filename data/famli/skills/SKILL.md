@@ -2,6 +2,8 @@
 name: famli
 description: FAMLI identifies protein-coding sequences from metagenomic data by resolving multi-mapped reads and filtering by coverage evenness. Use when user asks to filter protein alignments, resolve multi-mapped reads, identify protein-coding sequences, or perform functional profiling of metagenomic data.
 homepage: https://github.com/FredHutch/FAMLI
+metadata:
+  docker_image: "biocontainers/famli:v1.0_cv2"
 ---
 
 # famli

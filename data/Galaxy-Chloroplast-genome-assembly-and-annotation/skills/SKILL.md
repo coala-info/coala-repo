@@ -1,10 +1,12 @@
 ---
 name: chloroplast-genome-assembly-and-annotation
-description: "This workflow performs hybrid assembly and annotation of chloroplast genomes using Illumina and Nanopore sequencing data through tools like Flye, Pilon, and Prokka. Use this skill when you need to reconstruct a complete, polished, and annotated circular organelle genome from a combination of long and short sequencing reads."
-homepage: https://workflowhub.eu/workflows/1617
+description: This workflow performs hybrid assembly and annotation of chloroplast genomes using Illumina and Nanopore sequencing data through tools like Flye, Pilon, and Prokka. Use this skill when you need to reconstruct a complete, polished, and annotated circular organelle genome from a combination of long and short sequencing reads.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Chloroplast-genome-assembly-and-annotation
+# chloroplast-genome-assembly-and-annotation
 
 ## Overview
 

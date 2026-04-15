@@ -1,10 +1,12 @@
 ---
 name: final-unsupervised-analysis-of-bone-marrow-cells
-description: "This Galaxy workflow performs unsupervised classification of bone marrow cells by integrating multi-omics and clinical datasets using the Flexynesis deep learning framework. Use this skill when you need to identify latent cell populations and evaluate clustering consistency across high-dimensional multi-omics datasets from bone marrow samples."
-homepage: https://workflowhub.eu/workflows/1852
+description: This Galaxy workflow performs unsupervised classification of bone marrow cells by integrating multi-omics and clinical datasets using the Flexynesis deep learning framework. Use this skill when you need to identify latent cell populations and evaluate clustering consistency across high-dimensional multi-omics datasets from bone marrow samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Final - Unsupervised Analysis of Bone Marrow Cells
+# final-unsupervised-analysis-of-bone-marrow-cells
 
 ## Overview
 

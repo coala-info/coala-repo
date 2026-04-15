@@ -4,7 +4,6 @@ description: This Bioconductor package provides functional and genomic annotatio
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene11stprobeset.db.html
 ---
 
-
 # bioconductor-hugene11stprobeset.db
 
 name: bioconductor-hugene11stprobeset.db

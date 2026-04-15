@@ -2,8 +2,9 @@
 name: httpretty
 description: HTTPretty is a Python library that mocks HTTP requests by intercepting network traffic at the socket level. Use when user asks to mock API responses, intercept outgoing HTTP requests for testing, or simulate various network conditions like status codes and streaming data.
 homepage: https://github.com/gabrielfalcao/HTTPretty
+metadata:
+  docker_image: "quay.io/biocontainers/httpretty:0.8.10--py36_0"
 ---
-
 
 # httpretty
 

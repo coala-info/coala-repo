@@ -1,7 +1,9 @@
 ---
 name: ropebwt3
-description: "Ropebwt3 transforms massive genomic datasets into a run-length encoded FM-index for efficient storage and sequence querying. Use when user asks to build a pangenome index, find exact matches or SMEMs, perform local alignments with BWA-SW, or estimate haplotype diversity."
+description: Ropebwt3 transforms massive genomic datasets into a run-length encoded FM-index for efficient storage and sequence querying. Use when user asks to build a pangenome index, find exact matches or SMEMs, perform local alignments with BWA-SW, or estimate haplotype diversity.
 homepage: https://github.com/lh3/ropebwt3
+metadata:
+  docker_image: "quay.io/biocontainers/ropebwt3:3.10--h577a1d6_0"
 ---
 
 # ropebwt3

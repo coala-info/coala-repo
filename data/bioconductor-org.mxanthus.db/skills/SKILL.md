@@ -4,7 +4,6 @@ description: This package provides genome-wide functional annotations and identi
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Mxanthus.db.html
 ---
 
-
 # bioconductor-org.mxanthus.db
 
 ## Overview

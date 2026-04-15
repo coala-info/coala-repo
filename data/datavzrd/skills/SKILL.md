@@ -2,8 +2,9 @@
 name: datavzrd
 description: datavzrd creates visual and interactive standalone HTML reports from collections of CSV/TSV tables. Use when user asks to generate interactive data visualizations and reports from tabular data, especially when automatic histogram generation, plot customization, and inter-table linking are desired.
 homepage: https://github.com/datavzrd/datavzrd
+metadata:
+  docker_image: "quay.io/biocontainers/datavzrd:2.23.2"
 ---
-
 
 # datavzrd
 

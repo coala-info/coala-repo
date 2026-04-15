@@ -2,8 +2,9 @@
 name: aquila_umap
 description: aquila_umap calculates the uniqueness of genomic regions by identifying k-mers that map uniquely to a reference assembly. Use when user asks to calculate genomic mapability, generate uniqueness maps for diploid assembly, or identify unique k-mers in a reference genome.
 homepage: https://github.com/maiziex/Aquila_Umap
+metadata:
+  docker_image: "quay.io/biocontainers/aquila:1.0.0--py_0"
 ---
-
 
 # aquila_umap
 

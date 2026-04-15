@@ -4,7 +4,6 @@ description: This tool performs differential co-expression analysis to identify 
 homepage: https://bioconductor.org/packages/release/bioc/html/dcanr.html
 ---
 
-
 # bioconductor-dcanr
 
 name: bioconductor-dcanr

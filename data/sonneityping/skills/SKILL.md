@@ -1,9 +1,10 @@
 ---
 name: sonneityping
-description: "sonneityping parses Mykrobe predict outputs to perform hierarchical genotyping and identify antimicrobial resistance mutations in Shigella sonnei. Use when user asks to genotype Shigella sonnei samples, identify gyrA or parC mutations, or transform Mykrobe JSON results into a structured summary report."
+description: sonneityping parses Mykrobe predict outputs to perform hierarchical genotyping and identify antimicrobial resistance mutations in Shigella sonnei. Use when user asks to genotype Shigella sonnei samples, identify gyrA or parC mutations, or transform Mykrobe JSON results into a structured summary report.
 homepage: https://github.com/katholt/sonneityping
+metadata:
+  docker_image: "quay.io/biocontainers/sonneityping:20210201"
 ---
-
 
 # sonneityping
 

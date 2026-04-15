@@ -2,8 +2,9 @@
 name: conodictor
 description: ConoDictor identifies and classifies conopeptide precursor sequences from transcriptomic data into superfamilies using HMM and PSSM models. Use when user asks to discover bioactive peptides in cone snail venom, classify conopeptide sequences, or identify superfamilies from transcriptomic datasets.
 homepage: https://github.com/koualab/conodictor
+metadata:
+  docker_image: "biocontainers/conodictor:v2.3.1_cv1"
 ---
-
 
 # conodictor
 

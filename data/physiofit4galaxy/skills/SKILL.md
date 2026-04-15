@@ -1,9 +1,10 @@
 ---
 name: physiofit4galaxy
-description: "Calculates extracellular fluxes from metabolite concentrations and biomass data. Use when user asks to perform metabolic modeling and flux analysis based on experimental data."
+description: Calculates extracellular fluxes from metabolite concentrations and biomass data. Use when user asks to perform metabolic modeling and flux analysis based on experimental data.
 homepage: https://github.com/MetaSys-LISBP/PhysioFit4Galaxy
+metadata:
+  docker_image: "quay.io/biocontainers/physiofit4galaxy:2.2.1--pyhdfd78af_1"
 ---
-
 
 # physiofit4galaxy
 

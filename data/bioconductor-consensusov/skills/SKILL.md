@@ -4,7 +4,6 @@ description: The consensusOV package provides a unified interface for molecular 
 homepage: https://bioconductor.org/packages/release/bioc/html/consensusOV.html
 ---
 
-
 # bioconductor-consensusov
 
 ## Overview

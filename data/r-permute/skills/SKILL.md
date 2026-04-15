@@ -4,7 +4,6 @@ description: The permute package generates restricted and hierarchical permutati
 homepage: https://cloud.r-project.org/web/packages/permute/index.html
 ---
 
-
 # r-permute
 
 ## Overview

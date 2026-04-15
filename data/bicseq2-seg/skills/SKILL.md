@@ -2,8 +2,9 @@
 name: bicseq2-seg
 description: BICseq2-seg performs genomic segmentation to detect copy number variations in high-throughput sequencing data using a Bayesian Information Criterion. Use when user asks to identify CNVs, segment read depth data, or compare case and control genomes to filter germline variations.
 homepage: http://compbio.med.harvard.edu/BIC-seq/
+metadata:
+  docker_image: "quay.io/biocontainers/bicseq2-seg:0.7.2--hec16e2b_3"
 ---
-
 
 # bicseq2-seg
 

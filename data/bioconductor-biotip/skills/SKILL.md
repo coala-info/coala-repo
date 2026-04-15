@@ -4,7 +4,6 @@ description: BioTIP identifies critical transition states and tipping points in 
 homepage: https://bioconductor.org/packages/release/bioc/html/BioTIP.html
 ---
 
-
 # bioconductor-biotip
 
 name: bioconductor-biotip

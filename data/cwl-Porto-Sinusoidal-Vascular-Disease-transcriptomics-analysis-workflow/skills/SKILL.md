@@ -1,9 +1,12 @@
 ---
 name: porto-sinusoidal-vascular-disease-transcriptomics-analysis-w
-description: "This CWL workflow performs differential expression, weighted gene co-expression network analysis, and gene set enrichment on transcriptomics data to investigate the molecular basis of Porto-Sinusoidal Vascular Disease. Use this skill when you need to identify functional gene modules, characterize affected biological pathways, and uncover the regulatory mechanisms driving vascular liver disorders."
-homepage: https://workflowhub.eu/workflows/1040
+description: This CWL workflow performs differential expression, weighted gene co-expression network analysis, and gene set enrichment on transcriptomics data to investigate the molecular basis of Porto-Sinusoidal Vascular Disease. Use this skill when you need to identify functional gene modules, characterize affected biological pathways, and uncover the regulatory mechanisms driving vascular liver disorders.
+homepage: https://www.ejprarediseases.org/
+metadata:
+  docker_image: "N/A"
 ---
-# Porto-Sinusoidal Vascular Disease transcriptomics analysis workflow
+
+# porto-sinusoidal-vascular-disease-transcriptomics-analysis-w
 
 ## Overview
 

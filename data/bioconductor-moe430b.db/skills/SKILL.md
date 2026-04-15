@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for mapping Aff
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430b.db.html
 ---
 
-
 # bioconductor-moe430b.db
 
 name: bioconductor-moe430b.db

@@ -4,7 +4,6 @@ description: This tool performs dimension reduction for array Comparative Genomi
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHregions.html
 ---
 
-
 # bioconductor-cghregions
 
 name: bioconductor-cghregions

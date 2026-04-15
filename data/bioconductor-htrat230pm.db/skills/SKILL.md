@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rat Genome
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htrat230pm.db.html
 ---
 
-
 # bioconductor-htrat230pm.db
 
 name: bioconductor-htrat230pm.db

@@ -4,7 +4,6 @@ description: This tool analyzes and explores Affymetrix oligonucleotide array pr
 homepage: https://bioconductor.org/packages/release/bioc/html/affy.html
 ---
 
-
 # bioconductor-affy
 
 name: bioconductor-affy

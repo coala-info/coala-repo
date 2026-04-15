@@ -1,10 +1,12 @@
 ---
 name: covid-19-unicycler-assembly-and-annotation
-description: "This workflow performs de novo assembly and functional annotation of SARS-CoV-2 genomes from Illumina sequencing accessions using Unicycler, Glimmer3, and BLAST+. Use this skill when you need to reconstruct complete viral genomes from raw reads and identify protein-coding sequences or secondary metabolite clusters to characterize novel COVID-19 variants."
-homepage: https://workflowhub.eu/workflows/38
+description: This workflow performs de novo assembly and functional annotation of SARS-CoV-2 genomes from Illumina sequencing accessions using Unicycler, Glimmer3, and BLAST+. Use this skill when you need to reconstruct complete viral genomes from raw reads and identify protein-coding sequences or secondary metabolite clusters to characterize novel COVID-19 variants.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: Unicycler assembly and annotation
+# covid-19-unicycler-assembly-and-annotation
 
 ## Overview
 

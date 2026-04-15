@@ -4,7 +4,6 @@ description: This package provides probe sequence and location data for Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/zebrafishprobe.html
 ---
 
-
 # bioconductor-zebrafishprobe
 
 name: bioconductor-zebrafishprobe

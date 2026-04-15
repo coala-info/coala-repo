@@ -4,7 +4,6 @@ description: This tool performs empirical RNA-seq sample size analysis to determ
 homepage: https://bioconductor.org/packages/release/bioc/html/ERSSA.html
 ---
 
-
 # bioconductor-erssa
 
 name: bioconductor-erssa

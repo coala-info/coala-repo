@@ -2,8 +2,9 @@
 name: dnoise
 description: DnoisE is a parallelizable denoising tool that merges error sequences into true variants while optionally weighting genetic distances based on codon entropy. Use when user asks to denoise Illumina datasets, perform entropy-corrected denoising for coding sequences, or merge sequences using ratio and distance criteria.
 homepage: https://github.com/adriantich/DnoisE
+metadata:
+  docker_image: "quay.io/biocontainers/dnoise:1.4.2--pyhdfd78af_0"
 ---
-
 
 # dnoise
 

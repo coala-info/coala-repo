@@ -4,7 +4,6 @@ description: This package provides tools for the pre-processing, diagnostic visu
 homepage: https://bioconductor.org/packages/release/bioc/html/marray.html
 ---
 
-
 # bioconductor-marray
 
 name: bioconductor-marray

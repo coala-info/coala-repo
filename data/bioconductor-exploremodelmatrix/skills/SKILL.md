@@ -4,7 +4,6 @@ description: This tool provides interactive exploration and visualization of R d
 homepage: https://bioconductor.org/packages/release/bioc/html/ExploreModelMatrix.html
 ---
 
-
 # bioconductor-exploremodelmatrix
 
 name: bioconductor-exploremodelmatrix

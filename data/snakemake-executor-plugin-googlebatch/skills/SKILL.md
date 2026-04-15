@@ -2,8 +2,9 @@
 name: snakemake-executor-plugin-googlebatch
 description: This plugin allows Snakemake to execute workflows as managed jobs on Google Cloud Batch. Use when user asks to run Snakemake rules on GCP, manage cloud resource allocation, or use specialized hardware like GPUs in a cloud environment.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-googlebatch
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-executor-plugin-googlebatch:0.5.1--pyhdfd78af_0"
 ---
-
 
 # snakemake-executor-plugin-googlebatch
 

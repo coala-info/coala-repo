@@ -4,7 +4,6 @@ description: This package provides a curated reference dataset of 837 Affymetrix
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu133plus2CellScore.html
 ---
 
-
 # bioconductor-hgu133plus2cellscore
 
 name: bioconductor-hgu133plus2cellscore

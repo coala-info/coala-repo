@@ -4,7 +4,6 @@ description: The plotrix package provides a wide array of specialized functions 
 homepage: https://cloud.r-project.org/web/packages/plotrix/index.html
 ---
 
-
 # r-plotrix
 
 ## Overview

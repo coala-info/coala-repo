@@ -2,6 +2,8 @@
 name: pbsv
 description: pbsv identifies structural variants from PacBio long-read data by discovering signatures and calling genotypes. Use when user asks to discover structural variant signatures, call and genotype variants from SVSIG files, or perform joint calling on multiple samples.
 homepage: https://github.com/PacificBiosciences/pbsv
+metadata:
+  docker_image: "quay.io/biocontainers/pbsv:2.11.0--h9ee0642_0"
 ---
 
 # pbsv

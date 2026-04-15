@@ -4,7 +4,6 @@ description: The bioconductor-xvector package provides memory-efficient S4 class
 homepage: https://bioconductor.org/packages/release/bioc/html/XVector.html
 ---
 
-
 # bioconductor-xvector
 
 name: bioconductor-xvector

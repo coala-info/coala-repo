@@ -4,6 +4,8 @@ description: This pipeline processes paired-end FASTQ files from CUT&RUN, CUT&Ta
 homepage: https://github.com/nf-core/cutandrun
 ---
 
+# cutandrun
+
 ## Overview
 nf-core/cutandrun is designed for the analysis of CUT&RUN, CUT&Tag, and TIPseq experimental protocols used in epigenomic profiling and the study of protein-DNA interactions. It automates the transition from raw sequencing reads to peak calls and visualization-ready coverage files while handling complex normalization requirements.
 

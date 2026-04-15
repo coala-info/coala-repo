@@ -4,7 +4,6 @@ description: The r-splancs package provides tools for the display and analysis o
 homepage: https://cran.r-project.org/web/packages/splancs/index.html
 ---
 
-
 # r-splancs
 
 ## Overview

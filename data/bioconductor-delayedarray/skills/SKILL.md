@@ -4,7 +4,6 @@ description: The DelayedArray package provides a framework for wrapping large on
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedArray.html
 ---
 
-
 # bioconductor-delayedarray
 
 ## Overview

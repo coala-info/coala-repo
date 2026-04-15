@@ -4,6 +4,8 @@ description: This pipeline builds genomic reference indices and metadata from FA
 homepage: https://github.com/nf-core/references
 ---
 
+# references
+
 ## Overview
 nf-core/references is a bioinformatics pipeline designed to automate the creation of reference genomes and associated indices for various analysis use cases. It handles the generation of alignment indices, transcript sequences, and sequence dictionaries required by downstream tools, ensuring consistency across different genomic workflows.
 

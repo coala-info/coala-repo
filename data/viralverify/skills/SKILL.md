@@ -2,8 +2,9 @@
 name: viralverify
 description: viralverify classifies genomic contigs to identify viral sequences, particularly in metagenomic data. Use when user asks to classify genomic contigs, identify viruses, distinguish viral fragments from host contamination, detect plasmids, or verify results with BLAST.
 homepage: https://github.com/ablab/viralVerify
+metadata:
+  docker_image: "quay.io/biocontainers/viralverify:1.1--hdfd78af_0"
 ---
-
 
 # viralverify
 

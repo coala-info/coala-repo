@@ -1,10 +1,12 @@
 ---
 name: single-cell-qc-with-scater
-description: "This single-cell transcriptomics workflow processes count matrices, annotations, and mitochondrial control lists using Scater to calculate quality control metrics and filter Single Cell Experiment objects. Use this skill when you need to identify and remove low-quality cells from single-cell RNA-seq data based on library size, mitochondrial content, and gene expression patterns to ensure reliable downstream analysis."
-homepage: https://workflowhub.eu/workflows/1511
+description: This single-cell transcriptomics workflow processes count matrices, annotations, and mitochondrial control lists using Scater to calculate quality control metrics and filter Single Cell Experiment objects. Use this skill when you need to identify and remove low-quality cells from single-cell RNA-seq data based on library size, mitochondrial content, and gene expression patterns to ensure reliable downstream analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Single-cell QC with scater
+# single-cell-qc-with-scater
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides platform design and probe sequence informatio
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.mouse.ht.html
 ---
 
-
 # bioconductor-pd.clariom.s.mouse.ht
 
 ## Overview

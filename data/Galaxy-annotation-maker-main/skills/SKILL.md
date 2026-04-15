@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-maker
-description: "This workflow performs comprehensive genome annotation by integrating genome sequences, protein evidence, and ab-initio training data using Maker, BUSCO, and JBrowse. Use this skill when you need to generate high-quality gene models for a newly assembled genome, evaluate the completeness of predicted gene sets, and visualize the resulting annotations in an interactive browser."
-homepage: https://workflowhub.eu/workflows/1323
+description: This workflow performs comprehensive genome annotation by integrating genome sequences, protein evidence, and ab-initio training data using Maker, BUSCO, and JBrowse. Use this skill when you need to generate high-quality gene models for a newly assembled genome, evaluate the completeness of predicted gene sets, and visualize the resulting annotations in an interactive browser.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome annotation with Maker
+# genome-annotation-with-maker
 
 ## Overview
 

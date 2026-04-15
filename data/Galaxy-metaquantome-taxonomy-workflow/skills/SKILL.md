@@ -1,7 +1,9 @@
 ---
 name: metaquantome-taxonomy-workflow
-description: "This metaproteomics workflow processes taxonomic and intensity data using the metaQuantome suite to perform database mapping, statistical analysis, and comprehensive visualization. Use this skill when you need to quantify differential taxonomic abundance and visualize microbial community composition across experimental conditions in a metaproteomics study."
-homepage: https://workflowhub.eu/workflows/1459
+description: This metaproteomics workflow processes taxonomic and intensity data using the metaQuantome suite to perform database mapping, statistical analysis, and comprehensive visualization. Use this skill when you need to quantify differential taxonomic abundance and visualize microbial community composition across experimental conditions in a metaproteomics study.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # metaquantome-taxonomy-workflow

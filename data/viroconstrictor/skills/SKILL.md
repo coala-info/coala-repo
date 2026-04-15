@@ -1,9 +1,10 @@
 ---
 name: viroconstrictor
-description: "ViroConstrictor processes viral sequencing data to generate high-quality consensus genome sequences. Use when user asks to analyze viral sequencing data, generate consensus viral genomes, or trim primer sequences."
+description: ViroConstrictor processes viral sequencing data to generate high-quality consensus genome sequences. Use when user asks to analyze viral sequencing data, generate consensus viral genomes, or trim primer sequences.
 homepage: https://rivm-bioinformatics.github.io/ViroConstrictor/
+metadata:
+  docker_image: "quay.io/biocontainers/viroconstrictor:1.6.4--pyhdfd78af_0"
 ---
-
 
 # viroconstrictor
 

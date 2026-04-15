@@ -2,6 +2,8 @@
 name: homopolish
 description: Homopolish is a genome polisher that uses Support Vector Machines and homologous sequences to correct systematic errors and improve assembly quality. Use when user asks to polish genome assemblies, correct homopolymer errors, or improve assembly accuracy using homologous sequence retrieval.
 homepage: https://github.com/ythuang0522/homopolish
+metadata:
+  docker_image: "quay.io/biocontainers/homopolish:0.4.2--pyhdfd78af_0"
 ---
 
 # homopolish

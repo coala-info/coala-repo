@@ -2,8 +2,9 @@
 name: kipoiseq
 description: kipoiseq provides standardized data-loaders to transform genomic files into tensors for DNA sequence-based models. Use when user asks to extract sequences from FASTA and BED files, perform one-hot encoding, integrate variants from VCF files, or implement parallel data loading for genomic deep learning.
 homepage: https://github.com/kipoi/kipoiseq
+metadata:
+  docker_image: "quay.io/biocontainers/kipoiseq:0.7.1--pyhdfd78af_0"
 ---
-
 
 # kipoiseq
 

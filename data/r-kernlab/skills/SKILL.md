@@ -4,7 +4,6 @@ description: This tool provides a comprehensive framework for kernel-based machi
 homepage: https://cloud.r-project.org/web/packages/kernlab/index.html
 ---
 
-
 # r-kernlab
 
 name: r-kernlab

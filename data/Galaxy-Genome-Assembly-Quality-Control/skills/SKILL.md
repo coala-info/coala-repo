@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-quality-control
-description: "This Galaxy workflow evaluates genome assembly quality using PacBio subreads, assembly files, and a reference genome through tools including Busco, Quast, Chromeister, and Merqury. Use this skill when you need to validate the biological completeness, k-mer consensus accuracy, and structural consistency of de novo assemblies to ensure high-quality genomic data for downstream analysis."
-homepage: https://workflowhub.eu/workflows/1646
+description: This Galaxy workflow evaluates genome assembly quality using PacBio subreads, assembly files, and a reference genome through tools including Busco, Quast, Chromeister, and Merqury. Use this skill when you need to validate the biological completeness, k-mer consensus accuracy, and structural consistency of de novo assemblies to ensure high-quality genomic data for downstream analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly Quality Control
+# genome-assembly-quality-control
 
 ## Overview
 

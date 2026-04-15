@@ -4,7 +4,6 @@ description: This package provides the full genome sequence and metadata for Cry
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1.html
 ---
 
-
 # bioconductor-bsgenome.cneoformansvargrubiikn99.ncbi.asm221672v1
 
 name: bioconductor-bsgenome.cneoformansvargrubiikn99.ncbi.asm221672v1

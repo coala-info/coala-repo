@@ -2,8 +2,9 @@
 name: perl-file-touch
 description: This tool manages file timestamps and creates new files using the Perl File::Touch module. Use when user asks to update file access or modification times, synchronize timestamps with a reference file, or set specific epoch times with sub-second resolution.
 homepage: https://github.com/neilb/File-Touch
+metadata:
+  docker_image: "quay.io/biocontainers/perl-file-touch:0.12--pl5321hdfd78af_0"
 ---
-
 
 # perl-file-touch
 

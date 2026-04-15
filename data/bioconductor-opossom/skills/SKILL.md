@@ -4,7 +4,6 @@ description: This package provides a pipeline for analyzing large-scale transcri
 homepage: https://bioconductor.org/packages/release/bioc/html/oposSOM.html
 ---
 
-
 # bioconductor-opossom
 
 ## Overview

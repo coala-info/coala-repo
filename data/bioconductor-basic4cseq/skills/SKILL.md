@@ -4,7 +4,6 @@ description: Basic4Cseq is an R/Bioconductor package for the end-to-end analysis
 homepage: https://bioconductor.org/packages/release/bioc/html/Basic4Cseq.html
 ---
 
-
 # bioconductor-basic4cseq
 
 ## Overview

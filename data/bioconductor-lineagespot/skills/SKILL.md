@@ -4,7 +4,6 @@ description: This tool identifies SARS-CoV-2 lineages and mutations from VCF fil
 homepage: https://bioconductor.org/packages/release/bioc/html/lineagespot.html
 ---
 
-
 # bioconductor-lineagespot
 
 name: bioconductor-lineagespot

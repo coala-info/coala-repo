@@ -4,7 +4,6 @@ description: This tool manages clinical trial randomization and patient treatmen
 homepage: https://bioconductor.org/packages/release/bioc/html/randPack.html
 ---
 
-
 # bioconductor-randpack
 
 name: bioconductor-randpack

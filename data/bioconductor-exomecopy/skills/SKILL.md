@@ -4,7 +4,6 @@ description: This tool detects copy number variants in exome sequencing data usi
 homepage: https://bioconductor.org/packages/3.5/bioc/html/exomeCopy.html
 ---
 
-
 # bioconductor-exomecopy
 
 name: bioconductor-exomecopy

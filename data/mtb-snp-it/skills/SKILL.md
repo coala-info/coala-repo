@@ -1,9 +1,10 @@
 ---
 name: mtb-snp-it
-description: "mtb-snp-it classifies Mycobacterium tuberculosis complex isolates into specific species and lineages by analyzing single nucleotide polymorphisms. Use when user asks to identify MTBC species, determine lineage from VCF or FASTA files, or perform high-speed speciation of tuberculosis samples."
+description: mtb-snp-it classifies Mycobacterium tuberculosis complex isolates into specific species and lineages by analyzing single nucleotide polymorphisms. Use when user asks to identify MTBC species, determine lineage from VCF or FASTA files, or perform high-speed speciation of tuberculosis samples.
 homepage: https://github.com/samlipworth/snpit
+metadata:
+  docker_image: "quay.io/biocontainers/mtb-snp-it:1.1--py_0"
 ---
-
 
 # mtb-snp-it
 

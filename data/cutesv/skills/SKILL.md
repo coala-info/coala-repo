@@ -1,9 +1,10 @@
 ---
 name: cutesv
-description: "cuteSV detects and genotypes structural variations in human genomes using long-read sequencing data. Use when user asks to detect structural variants, genotype SVs from PacBio or ONT reads, or configure platform-specific parameters for SV discovery."
+description: cuteSV detects and genotypes structural variations in human genomes using long-read sequencing data. Use when user asks to detect structural variants, genotype SVs from PacBio or ONT reads, or configure platform-specific parameters for SV discovery.
 homepage: https://github.com/tjiangHIT/cuteSV
+metadata:
+  docker_image: "quay.io/biocontainers/cutesv:2.1.3--pyhdfd78af_0"
 ---
-
 
 # cutesv
 

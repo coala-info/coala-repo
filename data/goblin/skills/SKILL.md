@@ -2,8 +2,9 @@
 name: goblin
 description: GOBLIN automates the creation of species-specific protein databases by downloading, extracting, and clustering sequences from NCBI. Use when user asks to generate trusted protein sets for bacterial annotation, download GenBank files by organism or taxonomy ID, or create non-redundant protein databases using CD-HIT.
 homepage: https://github.com/rpetit3/goblin
+metadata:
+  docker_image: "quay.io/biocontainers/goblin:1.0.0--hdfd78af_0"
 ---
-
 
 # goblin
 

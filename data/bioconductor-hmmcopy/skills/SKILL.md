@@ -4,7 +4,6 @@ description: Bioconductor-hmmcopy performs copy number estimation and segmentati
 homepage: https://bioconductor.org/packages/release/bioc/html/HMMcopy.html
 ---
 
-
 # bioconductor-hmmcopy
 
 name: bioconductor-hmmcopy

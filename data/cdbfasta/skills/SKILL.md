@@ -1,9 +1,10 @@
 ---
 name: cdbfasta
-description: "cdbfasta creates high-performance indices for FASTA files to enable rapid retrieval of genomic records. Use when user asks to index FASTA files, retrieve specific sequences by accession, perform batch record extraction, or extract sub-sequences from large genomic databases."
+description: cdbfasta creates high-performance indices for FASTA files to enable rapid retrieval of genomic records. Use when user asks to index FASTA files, retrieve specific sequences by accession, perform batch record extraction, or extract sub-sequences from large genomic databases.
 homepage: https://github.com/gpertea/cdbfasta
+metadata:
+  docker_image: "biocontainers/cdbfasta:v0.99-20100722-5-deb_cv1"
 ---
-
 
 # cdbfasta
 

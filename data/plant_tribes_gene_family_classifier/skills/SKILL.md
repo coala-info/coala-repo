@@ -2,8 +2,9 @@
 name: plant_tribes_gene_family_classifier
 description: This tool classifies protein sequences into established orthologous groups using curated plant genome scaffolds. Use when user asks to categorize protein sequences into gene families, assign sequences to orthologous groups, or prepare data for phylogenomic analysis.
 homepage: https://github.com/dePamphilis/PlantTribes
+metadata:
+  docker_image: "quay.io/biocontainers/plant_tribes_gene_family_classifier:1.0.4--0"
 ---
-
 
 # plant_tribes_gene_family_classifier
 

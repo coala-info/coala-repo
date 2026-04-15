@@ -4,7 +4,6 @@ description: This package provides a pre-built database of over 5,000 normalized
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Affyhgu133Plus2Expr.html
 ---
 
-
 # bioconductor-affyhgu133plus2expr
 
 name: bioconductor-affyhgu133plus2expr

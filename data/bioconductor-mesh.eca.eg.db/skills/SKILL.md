@@ -4,7 +4,6 @@ description: This package provides mappings between MeSH identifiers and Entrez 
 homepage: https://bioconductor.org/packages/3.13/data/annotation/html/MeSH.Eca.eg.db.html
 ---
 
-
 # bioconductor-mesh.eca.eg.db
 
 name: bioconductor-mesh.eca.eg.db

@@ -2,8 +2,9 @@
 name: damageprofiler
 description: DamageProfiler quantifies and visualizes chemical degradation patterns in ancient DNA sequences to authenticate paleogenomic data. Use when user asks to calculate C-to-T substitution frequencies, generate damage plots, or validate the authenticity of ancient DNA samples.
 homepage: https://github.com/Integrative-Transcriptomics/dedup
+metadata:
+  docker_image: "quay.io/biocontainers/damageprofiler:1.1--hdfd78af_2"
 ---
-
 
 # damageprofiler
 

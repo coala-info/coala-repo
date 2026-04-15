@@ -4,7 +4,6 @@ description: This package provides a collection of curated reference gene expres
 homepage: https://bioconductor.org/packages/release/data/experiment/html/clustifyrdatahub.html
 ---
 
-
 # bioconductor-clustifyrdatahub
 
 ## Overview

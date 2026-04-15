@@ -2,8 +2,9 @@
 name: ultraheatmap
 description: ultraheatmap creates ordered genomic signal matrices and integrates orthogonal data for enhanced heatmaps. Use when user asks to cluster genomic regions, create ordered matrices, or integrate orthogonal data into a heatmap.
 homepage: https://github.com/maxplanck-ie/ultraheatmap/
+metadata:
+  docker_image: "quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0"
 ---
-
 
 # ultraheatmap
 

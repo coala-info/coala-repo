@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-helixer
-description: "This workflow performs ab initio genome annotation on a masked FASTA sequence using the Helixer deep learning model and evaluates the resulting gene models through BUSCO, OMArk, and JBrowse visualization. Use this skill when you need to generate high-quality gene predictions for a newly sequenced genome without RNA-seq evidence and want to assess the completeness and consistency of the predicted proteome."
-homepage: https://workflowhub.eu/workflows/1255
+description: This workflow performs ab initio genome annotation on a masked FASTA sequence using the Helixer deep learning model and evaluates the resulting gene models through BUSCO, OMArk, and JBrowse visualization. Use this skill when you need to generate high-quality gene predictions for a newly sequenced genome without RNA-seq evidence and want to assess the completeness and consistency of the predicted proteome.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome annotation with Helixer
+# genome-annotation-with-helixer
 
 ## Overview
 

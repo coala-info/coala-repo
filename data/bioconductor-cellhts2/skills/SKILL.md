@@ -4,7 +4,6 @@ description: This tool provides an end-to-end pipeline for analyzing high-throug
 homepage: https://bioconductor.org/packages/3.5/bioc/html/cellHTS2.html
 ---
 
-
 # bioconductor-cellhts2
 
 name: bioconductor-cellhts2

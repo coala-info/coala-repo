@@ -4,7 +4,6 @@ description: This tool performs transcriptome-based supervised classification by
 homepage: https://bioconductor.org/packages/release/bioc/html/SVMDO.html
 ---
 
-
 # bioconductor-svmdo
 
 name: bioconductor-svmdo

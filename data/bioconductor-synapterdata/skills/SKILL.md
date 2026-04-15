@@ -4,7 +4,6 @@ description: This package provides experimental mass spectrometry datasets and e
 homepage: https://bioconductor.org/packages/release/data/experiment/html/synapterdata.html
 ---
 
-
 # bioconductor-synapterdata
 
 name: bioconductor-synapterdata

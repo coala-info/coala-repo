@@ -2,8 +2,9 @@
 name: perl-bio-db-refseq
 description: This tool provides an interface for querying and retrieving genomic, transcript, and protein sequences from the NCBI RefSeq database. Use when user asks to fetch sequences by accession number, retrieve curated RefSeq records, or perform batch downloads of biological sequences into BioPerl objects.
 homepage: https://metacpan.org/release/Bio-DB-RefSeq
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-db-refseq:1.7.4--pl5321hdfd78af_0"
 ---
-
 
 # perl-bio-db-refseq
 

@@ -1,10 +1,12 @@
 ---
 name: clustering-3k-pbmcs-with-seurat-workflow
-description: "This Galaxy workflow processes single-cell RNA-seq data from 3k PBMCs using Seurat tools for normalization, scaling, and clustering based on matrix, gene, and barcode inputs. Use this skill when you need to identify distinct cell populations, perform dimensionality reduction, and characterize immune cell heterogeneity within a peripheral blood mononuclear cell sample."
-homepage: https://workflowhub.eu/workflows/1560
+description: This Galaxy workflow processes single-cell RNA-seq data from 3k PBMCs using Seurat tools for normalization, scaling, and clustering based on matrix, gene, and barcode inputs. Use this skill when you need to identify distinct cell populations, perform dimensionality reduction, and characterize immune cell heterogeneity within a peripheral blood mononuclear cell sample.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clustering 3k PBMCs with Seurat - Workflow
+# clustering-3k-pbmcs-with-seurat-workflow
 
 ## Overview
 

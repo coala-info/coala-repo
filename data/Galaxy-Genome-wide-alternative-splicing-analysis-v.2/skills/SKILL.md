@@ -1,10 +1,12 @@
 ---
 name: genome-wide-alternative-splicing-analysis-human
-description: "This transcriptomics workflow performs genome-wide alternative splicing analysis on human RNA-seq data using RNA STAR for alignment, StringTie for transcript assembly, and IsoformSwitchAnalyzeR for identifying isoform switches. Use this skill when you need to identify differential isoform usage and predict the functional consequences of alternative splicing events, such as protein domain loss or changes in coding potential, between different experimental conditions."
-homepage: https://workflowhub.eu/workflows/482
+description: This transcriptomics workflow performs genome-wide alternative splicing analysis on human RNA-seq data using RNA STAR for alignment, StringTie for transcript assembly, and IsoformSwitchAnalyzeR for identifying isoform switches. Use this skill when you need to identify differential isoform usage and predict the functional consequences of alternative splicing events, such as protein domain loss or changes in coding potential, between different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome-wide alternative splicing analysis: human
+# genome-wide-alternative-splicing-analysis-human
 
 ## Overview
 

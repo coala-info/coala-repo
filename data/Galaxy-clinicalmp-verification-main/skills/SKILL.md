@@ -1,10 +1,12 @@
 ---
 name: clinical-metaproteomics-verification-workflow
-description: "This clinical metaproteomics workflow utilizes PepQuery2 to verify microbial peptides identified in MS/MS datasets against human and contaminant databases using SGPS and MaxQuant reports. Use this skill when you need to statistically validate the presence of specific peptide sequences in complex clinical samples to ensure data accuracy before performing downstream quantitation."
-homepage: https://workflowhub.eu/workflows/1218
+description: This clinical metaproteomics workflow utilizes PepQuery2 to verify microbial peptides identified in MS/MS datasets against human and contaminant databases using SGPS and MaxQuant reports. Use this skill when you need to statistically validate the presence of specific peptide sequences in complex clinical samples to ensure data accuracy before performing downstream quantitation.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clinical Metaproteomics Verification Workflow
+# clinical-metaproteomics-verification-workflow
 
 ## Overview
 

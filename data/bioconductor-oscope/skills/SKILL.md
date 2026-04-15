@@ -4,7 +4,6 @@ description: Oscope identifies co-oscillating genes and reconstructs cyclic cell
 homepage: https://bioconductor.org/packages/release/bioc/html/Oscope.html
 ---
 
-
 # bioconductor-oscope
 
 name: bioconductor-oscope

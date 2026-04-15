@@ -1,9 +1,10 @@
 ---
 name: slimfastq
-description: "slimfastq is a specialized utility for the efficient, lossless compression and decompression of FASTQ files. Use when user asks to compress FASTQ files into sfq format, decompress sfq files, or stream genomic data through pipes for storage and analysis."
+description: slimfastq is a specialized utility for the efficient, lossless compression and decompression of FASTQ files. Use when user asks to compress FASTQ files into sfq format, decompress sfq files, or stream genomic data through pipes for storage and analysis.
 homepage: https://github.com/Infinidat/slimfastq
+metadata:
+  docker_image: "quay.io/biocontainers/slimfastq:2.04--h503566f_5"
 ---
-
 
 # slimfastq
 

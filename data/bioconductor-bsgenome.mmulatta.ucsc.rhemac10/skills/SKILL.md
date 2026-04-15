@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Macaca mulatta 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac10.html
 ---
 
-
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac10
 
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac10

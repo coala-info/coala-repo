@@ -1,10 +1,12 @@
 ---
 name: workflow-5-gucfg2galaxy-otu-clustering-16s-microbial-analysi
-description: "This metagenomics workflow processes 16S rRNA sequences, count tables, and taxonomy data using Mothur tools to perform OTU clustering, taxonomic classification, and sample normalization. Use this skill when you need to group processed microbial sequences into taxonomic clusters and generate shared files for comparing community composition across different environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/651
+description: This metagenomics workflow processes 16S rRNA sequences, count tables, and taxonomy data using Mothur tools to perform OTU clustering, taxonomic classification, and sample normalization. Use this skill when you need to group processed microbial sequences into taxonomic clusters and generate shared files for comparing community composition across different environmental or clinical samples.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 5 [gucfg2galaxy]: OTU Clustering [16S Microbial Analysis With Mothur]
+# workflow-5-gucfg2galaxy-otu-clustering-16s-microbial-analysi
 
 ## Overview
 

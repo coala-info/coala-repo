@@ -1,10 +1,12 @@
 ---
 name: repeatmasker
-description: "This Galaxy workflow processes raw genome sequences to identify and mask repetitive elements using the Red and RepeatMasker tools. Use this skill when you need to annotate repetitive DNA sequences or mask them to improve the accuracy of gene prediction and comparative genomics."
-homepage: https://workflowhub.eu/workflows/1538
+description: This Galaxy workflow processes raw genome sequences to identify and mask repetitive elements using the Red and RepeatMasker tools. Use this skill when you need to annotate repetitive DNA sequences or mask them to improve the accuracy of gene prediction and comparative genomics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RepeatMasker
+# repeatmasker
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides example datasets and utility functions to sup
 homepage: https://bioconductor.org/packages/3.10/data/experiment/html/MMAPPR2data.html
 ---
 
-
 # bioconductor-mmappr2data
 
 ## Overview

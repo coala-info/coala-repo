@@ -2,8 +2,9 @@
 name: ragout
 description: Ragout performs chromosome-level scaffolding of genome assemblies using multiple reference genomes. Use when user asks to scaffold draft genome assemblies to chromosome level or reconstruct genome structure using reference genomes.
 homepage: https://github.com/fenderglass/Ragout
+metadata:
+  docker_image: "quay.io/biocontainers/ragout:2.3--py36hc9558a2_0"
 ---
-
 
 # ragout
 

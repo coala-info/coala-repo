@@ -4,7 +4,6 @@ description: This package provides a standardized S4 container for storing, mani
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
 ---
 
-
 # bioconductor-singlecellexperiment
 
 name: bioconductor-singlecellexperiment

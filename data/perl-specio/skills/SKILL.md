@@ -2,8 +2,9 @@
 name: perl-specio
 description: Specio provides a modern, object-oriented system for defining and enforcing Perl type constraints and data coercions. Use when user asks to define reusable type libraries, apply validation constraints to variables, or automate data transformations between types.
 homepage: http://metacpan.org/release/Specio
+metadata:
+  docker_image: "quay.io/biocontainers/perl-specio:0.53--pl5321hdfd78af_0"
 ---
-
 
 # perl-specio
 

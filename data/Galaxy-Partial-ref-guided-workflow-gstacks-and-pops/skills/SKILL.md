@@ -1,10 +1,12 @@
 ---
 name: partial-ref-guided-workflow-gstacks-and-pops
-description: "This RAD-seq workflow processes BAM files and a population map using the Stacks2 gstacks and populations tools to perform reference-guided variant calling and population genetic analysis. Use this skill when you need to calculate population-level summary statistics, identify variant sites, and export genotype data for evolutionary or conservation genetics studies using a reference-guided approach."
-homepage: https://workflowhub.eu/workflows/352
+description: This RAD-seq workflow processes BAM files and a population map using the Stacks2 gstacks and populations tools to perform reference-guided variant calling and population genetic analysis. Use this skill when you need to calculate population-level summary statistics, identify variant sites, and export genotype data for evolutionary or conservation genetics studies using a reference-guided approach.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Partial ref-guided workflow - gstacks and pops
+# partial-ref-guided-workflow-gstacks-and-pops
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool processes, normalizes, and analyzes Agilent microRNA micr
 homepage: https://bioconductor.org/packages/release/bioc/html/AgiMicroRna.html
 ---
 
-
 # bioconductor-agimicrorna
 
 name: bioconductor-agimicrorna

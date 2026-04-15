@@ -4,7 +4,6 @@ description: This tool performs functional annotation prediction and semantic si
 homepage: https://bioconductor.org/packages/3.9/bioc/html/GAPGOM.html
 ---
 
-
 # bioconductor-gapgom
 
 name: bioconductor-gapgom

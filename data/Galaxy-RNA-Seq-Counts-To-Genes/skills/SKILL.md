@@ -1,10 +1,12 @@
 ---
 name: rna-seq-counts-to-genes
-description: "This transcriptomics workflow processes RNA-seq count data and sample information using annotateMyIDs for gene annotation and limma for differential expression analysis. Use this skill when you need to convert raw transcriptomic count matrices into annotated gene lists and identify differentially expressed genes across different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1703
+description: This transcriptomics workflow processes RNA-seq count data and sample information using annotateMyIDs for gene annotation and limma for differential expression analysis. Use this skill when you need to convert raw transcriptomic count matrices into annotated gene lists and identify differentially expressed genes across different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA Seq Counts To Genes
+# rna-seq-counts-to-genes
 
 ## Overview
 

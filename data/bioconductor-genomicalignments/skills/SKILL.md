@@ -4,7 +4,6 @@ description: The GenomicAlignments package provides efficient containers and met
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html
 ---
 
-
 # bioconductor-genomicalignments
 
 ## Overview

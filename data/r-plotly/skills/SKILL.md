@@ -4,7 +4,6 @@ description: The r-plotly package creates interactive, web-based visualizations 
 homepage: https://cloud.r-project.org/web/packages/plotly/index.html
 ---
 
-
 # r-plotly
 
 ## Overview

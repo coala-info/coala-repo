@@ -2,8 +2,9 @@
 name: perl-test-leaktrace
 description: This tool identifies memory leaks in Perl applications by monitoring scalar value reference counts. Use when user asks to detect circular references, assert that code blocks do not leak memory, or inspect leaked scalar values.
 homepage: http://metacpan.org/pod/Test-LeakTrace
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-leaktrace:0.17--pl5321hec16e2b_1"
 ---
-
 
 # perl-test-leaktrace
 

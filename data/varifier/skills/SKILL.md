@@ -2,6 +2,8 @@
 name: varifier
 description: Varifier assesses the accuracy of variant calls by comparing a query VCF against a truth FASTA sequence using probe mapping and sequence alignment. Use when user asks to evaluate VCF precision and recall, compare variant calls to a truth assembly, or calculate fractional and edit-distance-based accuracy statistics.
 homepage: https://github.com/iqbal-lab-org/varifier
+metadata:
+  docker_image: "quay.io/biocontainers/varifier:0.4.0--pyhdfd78af_0"
 ---
 
 # varifier

@@ -2,8 +2,9 @@
 name: narfmap
 description: NARFMAP is a high-efficiency mapper and aligner that provides the speed and accuracy of the Dragen algorithm in a software-only format. Use when user asks to map or align genomic reads, generate a reference hash table, or perform hardware-agnostic sequence alignment.
 homepage: https://github.com/Emiller88/NARFMAP
+metadata:
+  docker_image: "quay.io/biocontainers/narfmap:1.4.2--h43eeafb_3"
 ---
-
 
 # narfmap
 

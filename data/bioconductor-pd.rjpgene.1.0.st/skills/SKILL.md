@@ -4,7 +4,6 @@ description: This package provides platform design and annotation information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rjpgene.1.0.st.html
 ---
 
-
 # bioconductor-pd.rjpgene.1.0.st
 
 name: bioconductor-pd.rjpgene.1.0.st

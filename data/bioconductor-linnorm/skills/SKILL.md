@@ -4,7 +4,6 @@ description: Linnorm performs normalization, transformation, and downstream anal
 homepage: https://bioconductor.org/packages/release/bioc/html/Linnorm.html
 ---
 
-
 # bioconductor-linnorm
 
 name: bioconductor-linnorm

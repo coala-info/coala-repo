@@ -2,8 +2,9 @@
 name: treebest
 description: TreeBeST reconstructs and reconciles gene trees by leveraging species tree information to minimize gene duplication and loss events. Use when user asks to build phylogenetic trees from codon alignments, infer orthologs with bootstrap support, or back-translate protein alignments into codon-aware DNA alignments.
 homepage: https://github.com/lh3/treebest
+metadata:
+  docker_image: "quay.io/biocontainers/treebest:1.9.2_ep78--hfc679d8_2"
 ---
-
 
 # treebest
 

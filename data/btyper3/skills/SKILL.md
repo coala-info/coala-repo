@@ -2,8 +2,9 @@
 name: btyper3
 description: BTyper3 performs high-resolution taxonomic classification and genomic nomenclature assignment for the Bacillus cereus group using assembled genomes. Use when user asks to classify Bacillus cereus group isolates, perform type strain comparisons using ANI, or assign genomic species and genomospecies definitions.
 homepage: https://github.com/lmc297/BTyper3
+metadata:
+  docker_image: "quay.io/biocontainers/btyper3:3.4.0--pyhdfd78af_0"
 ---
-
 
 # btyper3
 

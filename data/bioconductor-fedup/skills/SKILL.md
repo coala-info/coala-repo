@@ -4,7 +4,6 @@ description: This tool performs pathway enrichment and depletion analysis using 
 homepage: https://bioconductor.org/packages/release/bioc/html/fedup.html
 ---
 
-
 # bioconductor-fedup
 
 name: bioconductor-fedup

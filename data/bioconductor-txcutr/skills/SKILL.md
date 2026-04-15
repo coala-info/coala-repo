@@ -4,7 +4,6 @@ description: This tool truncates transcriptome annotations to a specific length 
 homepage: https://bioconductor.org/packages/release/bioc/html/txcutr.html
 ---
 
-
 # bioconductor-txcutr
 
 name: bioconductor-txcutr

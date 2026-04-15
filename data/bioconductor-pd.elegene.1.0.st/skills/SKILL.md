@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.elegene.1.0.st.html
 ---
 
-
 # bioconductor-pd.elegene.1.0.st
 
 name: bioconductor-pd.elegene.1.0.st

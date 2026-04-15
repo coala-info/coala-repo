@@ -2,6 +2,8 @@
 name: hymet
 description: HYMET is a bioinformatics pipeline designed for high-accuracy taxonomic classification of metagenomic data using a hybrid screening and alignment approach. Use when user asks to classify metagenomic sequences, perform taxonomic assignment, or identify candidate genomes in large datasets.
 homepage: https://github.com/inesbmartins02/HYMET
+metadata:
+  docker_image: "quay.io/biocontainers/hymet:1.3.0--hdfd78af_0"
 ---
 
 # hymet

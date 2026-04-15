@@ -1,10 +1,12 @@
 ---
 name: galaxy-intro-short
-description: "This bioinformatics workflow processes mutant R1 FASTQ sequencing data using FastQC for quality assessment and multiple filtering steps to remove low-quality reads. Use this skill when you need to perform initial quality control and data cleaning on raw sequencing reads to ensure high-quality inputs for downstream genomic analysis."
-homepage: https://workflowhub.eu/workflows/1481
+description: This bioinformatics workflow processes mutant R1 FASTQ sequencing data using FastQC for quality assessment and multiple filtering steps to remove low-quality reads. Use this skill when you need to perform initial quality control and data cleaning on raw sequencing reads to ensure high-quality inputs for downstream genomic analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy Intro Short
+# galaxy-intro-short
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs quality control and filtering of strand-specific
 homepage: https://bioconductor.org/packages/release/bioc/html/strandCheckR.html
 ---
 
-
 # bioconductor-strandcheckr
 
 name: bioconductor-strandcheckr

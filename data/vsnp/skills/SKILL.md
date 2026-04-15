@@ -2,6 +2,8 @@
 name: vsnp
 description: vSNP is a bioinformatics pipeline that transforms raw sequencing data into annotated SNP tables and phylogenetic trees for disease tracing. Use when user asks to align reads to a reference, call SNPs, generate comparative SNP tables, or build evolutionary trees.
 homepage: https://github.com/USDA-VS/vSNP
+metadata:
+  docker_image: "quay.io/biocontainers/vsnp:2.03--hdfd78af_2"
 ---
 
 # vsnp

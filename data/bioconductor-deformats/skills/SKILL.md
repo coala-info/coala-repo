@@ -4,7 +4,6 @@ description: The DEFormats package provides a unified interface for converting d
 homepage: https://bioconductor.org/packages/release/bioc/html/DEFormats.html
 ---
 
-
 # bioconductor-deformats
 
 ## Overview

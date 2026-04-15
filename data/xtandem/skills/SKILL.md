@@ -1,9 +1,10 @@
 ---
 name: xtandem
-description: "Performs tandem mass spectrometry analysis to identify peptides and proteins from mass spectrometry data. Use when Claude needs to analyze raw mass spectrometry data to identify peptides and proteins, or when performing de novo sequencing."
+description: Performs tandem mass spectrometry analysis to identify peptides and proteins from mass spectrometry data. Use when Claude needs to analyze raw mass spectrometry data to identify peptides and proteins, or when performing de novo sequencing.
 homepage: https://github.com/bspratt/xtandem-g
+metadata:
+  docker_image: "quay.io/biocontainers/xtandem:15.12.15.2--0"
 ---
-
 
 # xtandem
 

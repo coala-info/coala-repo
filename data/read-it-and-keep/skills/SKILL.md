@@ -2,8 +2,9 @@
 name: read-it-and-keep
 description: read-it-and-keep removes read contamination by keeping only the sequences that align to a specific target reference genome. Use when user asks to filter reads by positive selection, remove host contamination from clinical samples, or keep reads matching a reference.
 homepage: https://github.com/GenomePathogenAnalysisService/read-it-and-keep
+metadata:
+  docker_image: "quay.io/biocontainers/read-it-and-keep:0.3.0--h5ca1c30_3"
 ---
-
 
 # read-it-and-keep
 

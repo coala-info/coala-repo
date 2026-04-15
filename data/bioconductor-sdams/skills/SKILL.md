@@ -4,7 +4,6 @@ description: This tool performs differential abundance and expression analysis f
 homepage: https://bioconductor.org/packages/release/bioc/html/SDAMS.html
 ---
 
-
 # bioconductor-sdams
 
 name: bioconductor-sdams

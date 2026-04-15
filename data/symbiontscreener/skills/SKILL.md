@@ -2,8 +2,9 @@
 name: symbiontscreener
 description: Symbiont-Screener is a reference-free bioinformatics tool that separates host long reads from non-host DNA using a trio-based screening model. Use when user asks to distinguish host reads from symbionts or contaminants, perform reference-free sequence separation, or screen long-read data using family trios.
 homepage: https://github.com/BGI-Qingdao/Symbiont-Screener
+metadata:
+  docker_image: "quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2"
 ---
-
 
 # symbiontscreener
 

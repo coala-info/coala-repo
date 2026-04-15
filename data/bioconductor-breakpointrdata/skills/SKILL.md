@@ -4,7 +4,6 @@ description: This package provides example BAM files and pre-computed results fo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breakpointRdata.html
 ---
 
-
 # bioconductor-breakpointrdata
 
 name: bioconductor-breakpointrdata

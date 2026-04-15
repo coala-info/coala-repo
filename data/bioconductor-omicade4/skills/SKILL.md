@@ -4,7 +4,6 @@ description: This tool performs Multiple Co-inertia Analysis (MCIA) to integrate
 homepage: https://bioconductor.org/packages/release/bioc/html/omicade4.html
 ---
 
-
 # bioconductor-omicade4
 
 name: bioconductor-omicade4

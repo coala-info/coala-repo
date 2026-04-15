@@ -1,9 +1,10 @@
 ---
 name: mitgard
-description: "MITGARD reconstructs complete or near-complete mitochondrial genomes from RNA-seq data. Use when user asks to assemble mitochondrial genomes from transcriptomic data, process Illumina or long-read RNA-seq libraries, or recover mitogenomes for non-model organisms."
+description: MITGARD reconstructs complete or near-complete mitochondrial genomes from RNA-seq data. Use when user asks to assemble mitochondrial genomes from transcriptomic data, process Illumina or long-read RNA-seq libraries, or recover mitogenomes for non-model organisms.
 homepage: https://github.com/pedronachtigall/MITGARD
+metadata:
+  docker_image: "quay.io/biocontainers/mitgard:1.1--hdfd78af_0"
 ---
-
 
 # mitgard
 

@@ -4,7 +4,6 @@ description: BaalChIP performs Bayesian analysis to identify allele-specific tra
 homepage: https://bioconductor.org/packages/release/bioc/html/BaalChIP.html
 ---
 
-
 # bioconductor-baalchip
 
 name: bioconductor-baalchip

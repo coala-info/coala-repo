@@ -4,7 +4,6 @@ description: This tool performs Differential Extreme Value Analysis (DEVA) to id
 homepage: https://bioconductor.org/packages/release/bioc/html/blacksheepr.html
 ---
 
-
 # bioconductor-blacksheepr
 
 name: bioconductor-blacksheepr

@@ -4,7 +4,6 @@ description: The ggspavis package provides visualization functions for spatial t
 homepage: https://bioconductor.org/packages/release/bioc/html/ggspavis.html
 ---
 
-
 # bioconductor-ggspavis
 
 ## Overview

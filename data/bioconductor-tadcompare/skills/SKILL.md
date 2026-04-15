@@ -4,7 +4,6 @@ description: TADCompare identifies and classifies differential Topologically Ass
 homepage: https://bioconductor.org/packages/release/bioc/html/TADCompare.html
 ---
 
-
 # bioconductor-tadcompare
 
 ## Overview

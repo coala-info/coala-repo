@@ -2,8 +2,9 @@
 name: ssake
 description: SSAKE performs de novo assembly of short DNA sequences using a prefix tree and k-mer searching to extend reads into contigs. Use when user asks to assemble short reads into contigs, perform targeted assembly from a seed sequence, or process linked-read data.
 homepage: https://github.com/warrenlr/SSAKE
+metadata:
+  docker_image: "biocontainers/ssake:v4.0-2-deb_cv1"
 ---
-
 
 # ssake
 

@@ -1,10 +1,12 @@
 ---
 name: tutorial-clipseq-explorer-demultiplexed-peakachu-eclip-hg38
-description: "This transcriptomics workflow processes demultiplexed paired-end eCLIP data using Cutadapt, RNA STAR, and PEAKachu to perform peak calling and motif detection against a background control. Use this skill when you need to identify protein-RNA binding sites, analyze binding motifs, and characterize the functional distribution of cross-linked sites across the human genome."
-homepage: https://workflowhub.eu/workflows/1706
+description: This transcriptomics workflow processes demultiplexed paired-end eCLIP data using Cutadapt, RNA STAR, and PEAKachu to perform peak calling and motif detection against a background control. Use this skill when you need to identify protein-RNA binding sites, analyze binding motifs, and characterize the functional distribution of cross-linked sites across the human genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Tutorial CLIPseq Explorer Demultiplexed PEAKachu eCLIP Hg38
+# tutorial-clipseq-explorer-demultiplexed-peakachu-eclip-hg38
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: covid-19-variation-analysis-on-artic-pe-data
-description: "This workflow processes Illumina paired-end SARS-CoV-2 ARTIC sequencing data using BWA-MEM for mapping, ivar for primer trimming and amplicon bias correction, and lofreq for high-sensitivity variant calling. Use this skill when you need to identify and annotate genomic variants in COVID-19 samples while mitigating the effects of primer-binding site mutations on allele frequency estimates."
-homepage: https://workflowhub.eu/workflows/110
+description: This workflow processes Illumina paired-end SARS-CoV-2 ARTIC sequencing data using BWA-MEM for mapping, ivar for primer trimming and amplicon bias correction, and lofreq for high-sensitivity variant calling. Use this skill when you need to identify and annotate genomic variants in COVID-19 samples while mitigating the effects of primer-binding site mutations on allele frequency estimates.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: variation analysis on ARTIC PE data
+# covid-19-variation-analysis-on-artic-pe-data
 
 ## Overview
 

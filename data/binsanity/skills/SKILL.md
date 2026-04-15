@@ -2,6 +2,8 @@
 name: binsanity
 description: BinSanity transforms metagenomic assemblies into putative genomes using unsupervised clustering based on coverage profiles and sequence composition. Use when user asks to bin metagenomic contigs, generate coverage profiles from BAM files, or refine genomic bins using tetranucleotide frequencies and GC content.
 homepage: https://github.com/edgraham/BinSanity
+metadata:
+  docker_image: "quay.io/biocontainers/binsanity:0.5.4--pyh5e36f6f_0"
 ---
 
 # binsanity

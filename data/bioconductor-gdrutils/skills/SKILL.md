@@ -4,7 +4,6 @@ description: This package provides utility functions and infrastructure for mana
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRutils.html
 ---
 
-
 # bioconductor-gdrutils
 
 ## Overview

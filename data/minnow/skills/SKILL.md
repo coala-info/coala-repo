@@ -2,6 +2,8 @@
 name: minnow
 description: Minnow is a read-level simulation framework that generates raw sequence data for droplet-based single-cell RNA-seq experiments. Use when user asks to index a transcriptome, estimate simulation parameters from experimental data, or simulate synthetic single-cell reads.
 homepage: https://github.com/COMBINE-lab/minnow
+metadata:
+  docker_image: "quay.io/biocontainers/minnow:1.2--h86b0361_0"
 ---
 
 # minnow

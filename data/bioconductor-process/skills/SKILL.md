@@ -4,7 +4,6 @@ description: This tool processes and analyzes SELDI and MALDI mass spectrometry 
 homepage: https://bioconductor.org/packages/release/bioc/html/PROcess.html
 ---
 
-
 # bioconductor-process
 
 name: bioconductor-process

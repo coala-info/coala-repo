@@ -4,7 +4,6 @@ description: MEDIPS analyzes genome-wide sequencing data from DNA enrichment exp
 homepage: https://bioconductor.org/packages/release/bioc/html/MEDIPS.html
 ---
 
-
 # bioconductor-medips
 
 name: bioconductor-medips

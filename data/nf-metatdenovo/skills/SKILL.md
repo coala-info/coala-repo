@@ -4,6 +4,8 @@ description: nf-core/metatdenovo performs de novo assembly and annotation of met
 homepage: https://github.com/nf-core/metatdenovo
 ---
 
+# metatdenovo
+
 ## Overview
 The nf-core/metatdenovo pipeline provides a best-practice workflow for the assembly and annotation of environmental sequencing data. It addresses the challenge of identifying and quantifying genes in samples where reference genomes are missing by utilizing de novo assembly strategies for various organism types, including prokaryotes, eukaryotes, and viruses.
 

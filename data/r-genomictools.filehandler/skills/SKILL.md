@@ -4,7 +4,6 @@ description: This R package provides tools for reading and writing common genomi
 homepage: https://cran.r-project.org/web/packages/genomictools.filehandler/index.html
 ---
 
-
 # r-genomictools.filehandler
 
 name: r-genomictools.filehandler

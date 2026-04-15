@@ -2,8 +2,9 @@
 name: deepmased
 description: DeepMAsED is a deep learning toolset designed to identify structural misassemblies in metagenomic contigs by analyzing read alignment features. Use when user asks to validate metagenome assemblies, detect assembly errors, extract read-level features for misassembly prediction, or train custom models for assembly quality assessment.
 homepage: https://github.com/leylabmpi/DeepMAsED
+metadata:
+  docker_image: "quay.io/biocontainers/deepmased:0.3.1--pyh5ca1d4c_0"
 ---
-
 
 # deepmased
 

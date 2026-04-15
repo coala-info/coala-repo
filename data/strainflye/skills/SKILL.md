@@ -2,8 +2,9 @@
 name: strainflye
 description: strainFlye is a bioinformatics pipeline for identifying and analyzing low-frequency single-nucleotide mutations within metagenomic assemblies. Use when user asks to align reads to contigs, call p-mutations or r-mutations, estimate false discovery rates, identify genomic hotspots, or analyze allele co-occurrence through link graphs.
 homepage: https://github.com/fedarko/strainFlye
+metadata:
+  docker_image: "quay.io/biocontainers/strainflye:0.2.0--pyhca03a8a_0"
 ---
-
 
 # strainflye
 

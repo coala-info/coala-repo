@@ -4,7 +4,6 @@ description: The bioconductor-gcsfilesystem package provides a unified R interfa
 homepage: https://bioconductor.org/packages/3.12/bioc/html/GCSFilesystem.html
 ---
 
-
 # bioconductor-gcsfilesystem
 
 ## Overview

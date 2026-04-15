@@ -4,7 +4,6 @@ description: This package provides the complete genome sequence for the stickleb
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Gaculeatus.UCSC.gasAcu1.html
 ---
 
-
 # bioconductor-bsgenome.gaculeatus.ucsc.gasacu1
 
 ## Overview

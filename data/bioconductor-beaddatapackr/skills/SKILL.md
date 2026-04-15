@@ -4,7 +4,6 @@ description: This tool compresses and decompresses raw Illumina BeadArray data f
 homepage: https://bioconductor.org/packages/release/bioc/html/BeadDataPackR.html
 ---
 
-
 # bioconductor-beaddatapackr
 
 name: bioconductor-beaddatapackr

@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-crispr-tutorial-kenji
-description: "This CRISPR screen analysis workflow processes guide library references and sequencing data collections using FastQC, Cutadapt, and MAGeCK to quantify and test guide enrichment or depletion. Use this skill when you need to identify genes that regulate specific phenotypes by analyzing high-throughput CRISPR screening data for statistically significant changes in guide RNA abundance."
-homepage: https://workflowhub.eu/workflows/1534
+description: This CRISPR screen analysis workflow processes guide library references and sequencing data collections using FastQC, Cutadapt, and MAGeCK to quantify and test guide enrichment or depletion. Use this skill when you need to identify genes that regulate specific phenotypes by analyzing high-throughput CRISPR screening data for statistically significant changes in guide RNA abundance.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'CRISPR tutorial Kenji'
+# workflow-constructed-from-history-crispr-tutorial-kenji
 
 ## Overview
 

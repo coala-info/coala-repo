@@ -4,7 +4,6 @@ description: The r-shape tool provides specialized functions for plotting shaded
 homepage: https://cloud.r-project.org/web/packages/shape/index.html
 ---
 
-
 # r-shape
 
 name: r-shape

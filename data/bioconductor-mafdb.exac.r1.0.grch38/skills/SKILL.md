@@ -4,7 +4,6 @@ description: This package provides access to minor allele frequency data from th
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.ExAC.r1.0.GRCh38.html
 ---
 
-
 # bioconductor-mafdb.exac.r1.0.grch38
 
 name: bioconductor-mafdb.exac.r1.0.grch38

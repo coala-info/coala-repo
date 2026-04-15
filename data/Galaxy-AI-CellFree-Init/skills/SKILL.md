@@ -1,10 +1,12 @@
 ---
 name: ai-cellfree-init
-description: "This Galaxy workflow automates the initial design of experiments for cell-free systems by utilizing the iCFree sampler, plate designer, and instructor tools to generate sampling plans and liquid handling instructions. Use this skill when you need to optimize cell-free reaction conditions through systematic sampling and require precise plate layouts and automated instructions for laboratory robots."
-homepage: https://workflowhub.eu/workflows/2002
+description: This Galaxy workflow automates the initial design of experiments for cell-free systems by utilizing the iCFree sampler, plate designer, and instructor tools to generate sampling plans and liquid handling instructions. Use this skill when you need to optimize cell-free reaction conditions through systematic sampling and require precise plate layouts and automated instructions for laboratory robots.
+homepage: https://www.micalis.fr/equipe/cell-free/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AI-CellFree - Init
+# ai-cellfree-init
 
 ## Overview
 

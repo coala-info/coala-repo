@@ -4,7 +4,6 @@ description: motifbreakR predicts the impact of genetic variants on transcriptio
 homepage: https://bioconductor.org/packages/release/bioc/html/motifbreakR.html
 ---
 
-
 # bioconductor-motifbreakr
 
 name: bioconductor-motifbreakr

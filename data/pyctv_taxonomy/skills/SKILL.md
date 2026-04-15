@@ -1,9 +1,10 @@
 ---
 name: pyctv_taxonomy
-description: "pyctv_taxonomy interfaces with the ICTV Virus Metadata Resource to download, parse, and retrieve viral taxonomic hierarchies and genomic accession mappings. Use when user asks to download the VMR dataset, list viral species with taxonomic prefixes, or map GenBank and RefSeq accessions to official viral classifications."
+description: pyctv_taxonomy interfaces with the ICTV Virus Metadata Resource to download, parse, and retrieve viral taxonomic hierarchies and genomic accession mappings. Use when user asks to download the VMR dataset, list viral species with taxonomic prefixes, or map GenBank and RefSeq accessions to official viral classifications.
 homepage: https://github.com/linsalrob/pyctv
+metadata:
+  docker_image: "quay.io/biocontainers/pyctv_taxonomy:0.25--pyhdfd78af_0"
 ---
-
 
 # pyctv_taxonomy
 

@@ -4,7 +4,6 @@ description: This tool provides a unified interface for RNA-seq data normalizati
 homepage: https://bioconductor.org/packages/release/bioc/html/broadSeq.html
 ---
 
-
 # bioconductor-broadseq
 
 name: bioconductor-broadseq

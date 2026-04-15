@@ -4,7 +4,6 @@ description: This package provides probe sequence data and mapping information f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133bprobe.html
 ---
 
-
 # bioconductor-hgu133bprobe
 
 name: bioconductor-hgu133bprobe

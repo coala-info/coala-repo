@@ -1,7 +1,9 @@
 ---
 name: bam2plot
-description: "bam2plot generates publication-quality depth visualizations and HTML reports from sequence alignment data or raw reads. Use when user asks to visualize BAM coverage, generate coverage plots from FASTQ files, or analyze reference GC content."
+description: bam2plot generates publication-quality depth visualizations and HTML reports from sequence alignment data or raw reads. Use when user asks to visualize BAM coverage, generate coverage plots from FASTQ files, or analyze reference GC content.
 homepage: https://github.com/willros/bam2plot
+metadata:
+  docker_image: "quay.io/biocontainers/bam2plot:0.4.0--pyhdfd78af_0"
 ---
 
 # bam2plot

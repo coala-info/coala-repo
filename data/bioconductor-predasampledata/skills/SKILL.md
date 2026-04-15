@@ -4,7 +4,6 @@ description: This package provides sample datasets including gene expression and
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PREDAsampledata.html
 ---
 
-
 # bioconductor-predasampledata
 
 name: bioconductor-predasampledata

@@ -4,7 +4,6 @@ description: MSstatsSampleSize performs power analysis and sample size estimatio
 homepage: https://bioconductor.org/packages/3.10/bioc/html/MSstatsSampleSize.html
 ---
 
-
 # bioconductor-msstatssamplesize
 
 name: bioconductor-msstatssamplesize

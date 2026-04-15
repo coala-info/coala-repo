@@ -4,7 +4,6 @@ description: This tool quantifies transcriptome instability by calculating aberr
 homepage: https://bioconductor.org/packages/release/bioc/html/TIN.html
 ---
 
-
 # bioconductor-tin
 
 name: bioconductor-tin

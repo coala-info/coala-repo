@@ -1,9 +1,12 @@
 ---
 name: dtc-v2-wf5201-forecast-volcanic-ash-fallout-and-dispersal-in
-description: "This Common Workflow Language workflow integrates meteorological data and eruption source parameters to simulate the atmospheric dispersal and deposition of volcanic ash using the FALL3D transport model. Use this skill when you need to generate deterministic and probabilistic forecasts of volcanic ash clouds and ground fallout to assess environmental hazards or mitigate risks to aviation and infrastructure."
-homepage: https://workflowhub.eu/workflows/1230
+description: This Common Workflow Language workflow integrates meteorological data and eruption source parameters to simulate the atmospheric dispersal and deposition of volcanic ash using the FALL3D transport model. Use this skill when you need to generate deterministic and probabilistic forecasts of volcanic ash clouds and ground fallout to assess environmental hazards or mitigate risks to aviation and infrastructure.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-V2] WF5201: Forecast volcanic ash fallout and dispersal in the atmosphere
+
+# dtc-v2-wf5201-forecast-volcanic-ash-fallout-and-dispersal-in
 
 ## Overview
 

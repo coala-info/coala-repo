@@ -4,7 +4,6 @@ description: This tool provides a graphical interface for gRNA design, off-targe
 homepage: https://bioconductor.org/packages/3.6/bioc/html/crisprseekplus.html
 ---
 
-
 # bioconductor-crisprseekplus
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: vvv2_align_pe_bwamem2
-description: "This viral genomics workflow processes paired-end sequencing reads through fastp, BWA-MEM2, VADR, and VarDict to perform alignment, annotation, and variant calling. Use this skill when you need to identify significant mutations in viral genomes, generate consensus sequences, and visualize the spatial relationship between variants, gene annotations, and coverage depth."
-homepage: https://workflowhub.eu/workflows/1738
+description: This viral genomics workflow processes paired-end sequencing reads through fastp, BWA-MEM2, VADR, and VarDict to perform alignment, annotation, and variant calling. Use this skill when you need to identify significant mutations in viral genomes, generate consensus sequences, and visualize the spatial relationship between variants, gene annotations, and coverage depth.
+homepage: https://www.anses.fr
+metadata:
+  docker_image: "N/A"
 ---
 
-# vvv2_align_PE_bwamem2
+# vvv2_align_pe_bwamem2
 
 ## Overview
 

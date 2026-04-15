@@ -4,7 +4,6 @@ description: This tool provides an R interface to the Bio-Formats library for re
 homepage: https://bioconductor.org/packages/release/bioc/html/RBioFormats.html
 ---
 
-
 # bioconductor-rbioformats
 
 name: bioconductor-rbioformats

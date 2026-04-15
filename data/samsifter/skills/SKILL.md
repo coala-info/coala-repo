@@ -2,8 +2,9 @@
 name: samsifter
 description: samsifter is a command-line tool for defining and managing bioinformatics workflows. Use when user asks to define, edit, or manage bioinformatics workflows.
 homepage: https://anaconda.org/channels/bioconda/packages/samsifter/overview
+metadata:
+  docker_image: "quay.io/biocontainers/samsifter:1.0.0--py35h3978dc7_3"
 ---
-
 
 # samsifter
 

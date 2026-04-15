@@ -1,10 +1,12 @@
 ---
 name: workflow-of-biotranslator-comparative-analysis
-description: "This workflow performs a comparative analysis of gene sets using the BioTranslator tool to generate a distance matrix and a heatmap. Use this skill when you need to quantify and visualize the biological similarities or functional distances between multiple groups of genes to identify patterns across different experimental conditions."
+description: This workflow performs a comparative analysis of gene sets using the BioTranslator tool to generate a distance matrix and a heatmap. Use this skill when you need to quantify and visualize the biological similarities or functional distances between multiple groups of genes to identify patterns across different experimental conditions.
 homepage: https://workflowhub.eu/workflows/193
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow of BioTranslator Comparative Analysis
+# workflow-of-biotranslator-comparative-analysis
 
 ## Overview
 

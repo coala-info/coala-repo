@@ -2,8 +2,9 @@
 name: libgenome
 description: libgenome is a C++ library designed for high-performance genomic sequence manipulation, file format parsing, and annotation data handling. Use when user asks to parse FASTA or GenBank files, manipulate large-scale annotation data, or develop custom tools for comparative genomics.
 homepage: http://darlinglab.org/mauve/
+metadata:
+  docker_image: "quay.io/biocontainers/libgenome:1.3.1--h9948957_9"
 ---
-
 
 # libgenome
 

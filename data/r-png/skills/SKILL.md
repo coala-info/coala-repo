@@ -4,7 +4,6 @@ description: The r-png package provides a streamlined interface for reading and 
 homepage: https://cloud.r-project.org/web/packages/png/index.html
 ---
 
-
 # r-png
 
 ## Overview

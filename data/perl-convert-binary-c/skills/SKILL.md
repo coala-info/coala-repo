@@ -2,8 +2,9 @@
 name: perl-convert-binary-c
 description: This tool converts between raw binary data and Perl data structures using C header file definitions. Use when user asks to pack or unpack binary data, parse C structs for data conversion, or interface Perl with binary formats using C type definitions.
 homepage: http://search.cpan.org/~mhx/Convert-Binary-C/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-convert-binary-c:0.86--pl5321h9948957_0"
 ---
-
 
 # perl-convert-binary-c
 

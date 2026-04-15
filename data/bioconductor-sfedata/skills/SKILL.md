@@ -4,7 +4,6 @@ description: The SFEData package provides a collection of real-world spatial tra
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SFEData.html
 ---
 
-
 # bioconductor-sfedata
 
 ## Overview

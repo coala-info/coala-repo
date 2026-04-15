@@ -1,9 +1,10 @@
 ---
 name: hic-straw
-description: "hic-straw extracts contact matrix data from Juicebox-formatted .hic files at specific resolutions and normalization levels. Use when user asks to stream genomic interaction data, extract contact records from .hic files, or retrieve Hi-C matrices for specific chromosomal regions."
+description: hic-straw extracts contact matrix data from Juicebox-formatted .hic files at specific resolutions and normalization levels. Use when user asks to stream genomic interaction data, extract contact records from .hic files, or retrieve Hi-C matrices for specific chromosomal regions.
 homepage: https://github.com/aidenlab/straw
+metadata:
+  docker_image: "quay.io/biocontainers/hic-straw:1.3.1--py311hb99c5bc_6"
 ---
-
 
 # hic-straw
 

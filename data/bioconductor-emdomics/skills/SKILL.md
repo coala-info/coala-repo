@@ -4,7 +4,6 @@ description: This tool analyzes differences in genomics data between groups usin
 homepage: https://bioconductor.org/packages/release/bioc/html/EMDomics.html
 ---
 
-
 # bioconductor-emdomics
 
 name: bioconductor-emdomics

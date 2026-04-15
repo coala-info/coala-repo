@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-stacks-rad-population-geno
-description: "This workflow performs reference-based RAD-Seq data analysis for population genomics by processing raw FASTQ reads, demultiplexing with Stacks, mapping sequences to a reference genome using BWA, and calculating population-level statistics. Use this skill when you need to identify single nucleotide polymorphisms and assess genetic diversity or population structure in ecological studies where a reference genome is available for the target species."
-homepage: https://workflowhub.eu/workflows/1665
+description: This workflow performs reference-based RAD-Seq data analysis for population genomics by processing raw FASTQ reads, demultiplexing with Stacks, mapping sequences to a reference genome using BWA, and calculating population-level statistics. Use this skill when you need to identify single nucleotide polymorphisms and assess genetic diversity or population structure in ecological studies where a reference genome is available for the target species.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow Constructed From History 'STACKS RAD: Population Genomics With Reference Genome'
+# workflow-constructed-from-history-stacks-rad-population-geno
 
 ## Overview
 

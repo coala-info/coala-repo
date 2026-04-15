@@ -1,9 +1,10 @@
 ---
 name: igphyml
-description: "IgPhyML builds phylogenetic trees and tests evolutionary hypotheses for B cell affinity maturation. Use when user asks to build phylogenetic trees for B cell lineages, test evolutionary hypotheses related to somatic hypermutation, or analyze large B cell repertoires."
+description: IgPhyML builds phylogenetic trees and tests evolutionary hypotheses for B cell affinity maturation. Use when user asks to build phylogenetic trees for B cell lineages, test evolutionary hypotheses related to somatic hypermutation, or analyze large B cell repertoires.
 homepage: https://igphyml.readthedocs.io/en/latest/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/igphyml:1.1.5--h7b50bb2_2"
 ---
-
 
 # igphyml
 

@@ -4,7 +4,6 @@ description: This tool performs virtual drug screening and cancer therapeutic di
 homepage: https://bioconductor.org/packages/release/bioc/html/octad.html
 ---
 
-
 # bioconductor-octad
 
 name: bioconductor-octad

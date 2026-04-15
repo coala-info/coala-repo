@@ -2,6 +2,8 @@
 name: kmtricks
 description: kmtricks is a bioinformatics suite designed to construct and compare k-mer matrices across large-scale sequencing datasets. Use when user asks to construct k-mer count matrices, build Bloom filters for multiple samples, or aggregate k-mer profiles from a file of files.
 homepage: https://github.com/tlemane/kmtricks
+metadata:
+  docker_image: "quay.io/biocontainers/kmtricks:1.5.1--h22625ea_0"
 ---
 
 # kmtricks

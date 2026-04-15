@@ -4,7 +4,6 @@ description: PROMISE identifies genomic features associated with a specific patt
 homepage: https://bioconductor.org/packages/release/bioc/html/PROMISE.html
 ---
 
-
 # bioconductor-promise
 
 ## Overview

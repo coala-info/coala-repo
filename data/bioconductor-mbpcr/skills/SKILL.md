@@ -4,7 +4,6 @@ description: This tool estimates DNA copy number profiles from SNP array data us
 homepage: https://bioconductor.org/packages/release/bioc/html/mBPCR.html
 ---
 
-
 # bioconductor-mbpcr
 
 name: bioconductor-mbpcr

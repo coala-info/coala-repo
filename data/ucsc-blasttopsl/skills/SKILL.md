@@ -2,8 +2,9 @@
 name: ucsc-blasttopsl
 description: This tool converts standard BLAST output to PSL format. Use when user asks to convert BLAST output to PSL format, or prepare BLAST results for the UCSC Genome Browser.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-blasttopsl:482--h0b57e2e_0"
 ---
-
 
 # ucsc-blasttopsl
 

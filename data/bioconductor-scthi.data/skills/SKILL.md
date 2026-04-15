@@ -4,7 +4,6 @@ description: This package provides curated single-cell RNA-seq datasets from gli
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scTHI.data.html
 ---
 
-
 # bioconductor-scthi.data
 
 name: bioconductor-scthi.data

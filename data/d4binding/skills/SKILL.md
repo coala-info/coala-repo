@@ -2,8 +2,9 @@
 name: d4binding
 description: d4binding provides a high-performance interface for converting, querying, and performing statistical analysis on quantitative genomics data in the D4 format. Use when user asks to convert alignment files to D4, extract genomic data, or calculate coverage statistics across specific intervals.
 homepage: https://github.com/38/d4-format
+metadata:
+  docker_image: "quay.io/biocontainers/d4binding:0.3.11--ha986137_4"
 ---
-
 
 # d4binding
 

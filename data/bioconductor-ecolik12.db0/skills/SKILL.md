@@ -4,7 +4,6 @@ description: This package provides the base SQLite annotation database for Esche
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliK12.db0.html
 ---
 
-
 # bioconductor-ecolik12.db0
 
 name: bioconductor-ecolik12.db0

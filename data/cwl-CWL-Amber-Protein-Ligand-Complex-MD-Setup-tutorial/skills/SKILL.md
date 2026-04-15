@@ -1,9 +1,12 @@
 ---
 name: cwl-amber-protein-ligand-complex-md-setup-tutorial
-description: "This Common Workflow Language pipeline automates the structural preparation and equilibration of protein-ligand complexes using AmberTools and BioExcel Building Blocks. Use this skill when you need to generate stable, solvated molecular models to investigate binding affinities, conformational dynamics, or the structural stability of protein-ligand interactions."
-homepage: https://workflowhub.eu/workflows/261
+description: This Common Workflow Language pipeline automates the structural preparation and equilibration of protein-ligand complexes using AmberTools and BioExcel Building Blocks. Use this skill when you need to generate stable, solvated molecular models to investigate binding affinities, conformational dynamics, or the structural stability of protein-ligand interactions.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Amber Protein Ligand Complex MD Setup tutorial
+
+# cwl-amber-protein-ligand-complex-md-setup-tutorial
 
 ## Overview
 

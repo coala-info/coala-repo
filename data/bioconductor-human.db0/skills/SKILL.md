@@ -4,7 +4,6 @@ description: This package provides the base SQLite databases required by Annotat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human.db0.html
 ---
 
-
 # bioconductor-human.db0
 
 name: bioconductor-human.db0

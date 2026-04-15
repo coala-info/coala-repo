@@ -4,7 +4,6 @@ description: Bioconductor-singscore calculates rank-based gene-set enrichment sc
 homepage: https://bioconductor.org/packages/release/bioc/html/singscore.html
 ---
 
-
 # bioconductor-singscore
 
 name: bioconductor-singscore

@@ -2,8 +2,9 @@
 name: xatlas
 description: xatlas is a high-performance small variant caller. Use when user asks to call variants, retrain variant calling models, or filter for strand bias.
 homepage: https://github.com/jfarek/xatlas
+metadata:
+  docker_image: "quay.io/biocontainers/xatlas:0.3--he565470_0"
 ---
-
 
 # xatlas
 

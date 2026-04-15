@@ -2,8 +2,9 @@
 name: pilon
 description: Pilon polishes draft genome assemblies and identifies genomic variations by analyzing inconsistencies between a reference genome and aligned sequencing reads. Use when user asks to polish a genome assembly, correct small-scale errors like SNPs and indels, fill gaps, or resolve local misassemblies.
 homepage: https://github.com/broadinstitute/pilon/
+metadata:
+  docker_image: "quay.io/biocontainers/pilon:1.24--hdfd78af_0"
 ---
-
 
 # pilon
 

@@ -4,7 +4,6 @@ description: This tool identifies dual regulons and analyzes co-regulation patte
 homepage: https://bioconductor.org/packages/release/bioc/html/RTNduals.html
 ---
 
-
 # bioconductor-rtnduals
 
 name: bioconductor-rtnduals

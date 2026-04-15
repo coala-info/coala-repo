@@ -2,6 +2,8 @@
 name: arcs
 description: The arcs tool organizes and orients contigs into larger scaffolds using shared barcodes from linked or long reads. Use when user asks to scaffold a draft assembly, run the ARKS alignment-free pipeline, or link contigs using PacBio or Oxford Nanopore reads.
 homepage: https://github.com/bcgsc/arcs
+metadata:
+  docker_image: "quay.io/biocontainers/arcs:1.2.8--hdcf5f25_0"
 ---
 
 # arcs

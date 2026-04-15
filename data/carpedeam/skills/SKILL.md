@@ -2,6 +2,8 @@
 name: carpedeam
 description: Carpedeam is a specialized metagenomic assembler designed to reconstruct genomes from ancient DNA by incorporating empirical damage profiles into the assembly process. Use when user asks to assemble ancient metagenomes, configure the ancient_assemble command, optimize iteration parameters for fragmented reads, or troubleshoot damage matrix formatting.
 homepage: https://github.com/LouisPwr/CarpeDeam
+metadata:
+  docker_image: "quay.io/biocontainers/carpedeam:1.0.1--hd6d6fdc_0"
 ---
 
 # carpedeam

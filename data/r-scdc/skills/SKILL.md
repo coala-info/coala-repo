@@ -4,7 +4,6 @@ description: SCDC is an R package that deconvolves bulk RNA-seq samples by integ
 homepage: https://cran.r-project.org/web/packages/scdc/index.html
 ---
 
-
 # r-scdc
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: multiplex-tissue-microarray-analysis
-description: "This workflow processes registered OME-TIFF multiplex tissue images using Mesmer, MCQUANT, Scimap, and Squidpy to perform nuclear segmentation, feature quantification, cell phenotyping, and spatial arrangement analysis. Use this skill when you need to characterize cellular phenotypes and their spatial interactions within complex tissue microenvironments from cyclic immunofluorescence or other high-plex imaging datasets."
-homepage: https://workflowhub.eu/workflows/1745
+description: This workflow processes registered OME-TIFF multiplex tissue images using Mesmer, MCQUANT, Scimap, and Squidpy to perform nuclear segmentation, feature quantification, cell phenotyping, and spatial arrangement analysis. Use this skill when you need to characterize cellular phenotypes and their spatial interactions within complex tissue microenvironments from cyclic immunofluorescence or other high-plex imaging datasets.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Multiplex Tissue Microarray Analysis
+# multiplex-tissue-microarray-analysis
 
 ## Overview
 

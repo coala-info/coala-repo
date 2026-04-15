@@ -4,7 +4,6 @@ description: This package provides curated Affymetrix and Illumina microarray da
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mvoutData.html
 ---
 
-
 # bioconductor-mvoutdata
 
 name: bioconductor-mvoutdata

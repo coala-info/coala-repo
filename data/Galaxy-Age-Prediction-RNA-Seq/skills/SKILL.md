@@ -1,10 +1,12 @@
 ---
 name: age-prediction-rna-seq
-description: "This Galaxy workflow performs age prediction from RNA-Seq input datasets using Scikit-learn pipeline building and hyperparameter optimization tools. Use this skill when you need to build and optimize machine learning models to estimate biological age or identify transcriptomic markers of aging from gene expression profiles."
-homepage: https://workflowhub.eu/workflows/1722
+description: This Galaxy workflow performs age prediction from RNA-Seq input datasets using Scikit-learn pipeline building and hyperparameter optimization tools. Use this skill when you need to build and optimize machine learning models to estimate biological age or identify transcriptomic markers of aging from gene expression profiles.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Age Prediction RNA-Seq
+# age-prediction-rna-seq
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: barcode_splitter
 description: This tool demultiplexes FASTQ files by matching sequence barcodes against a user-defined list to assign reads to specific output files. Use when user asks to demultiplex sequencing data, split FASTQ files by barcode, or process paired-end reads with configurable mismatch tolerances.
 homepage: https://bitbucket.org/princeton_genomics/barcode_splitter
+metadata:
+  docker_image: "quay.io/biocontainers/barcode-validator:2.0.10--pyhdfd78af_0"
 ---
-
 
 # barcode_splitter
 

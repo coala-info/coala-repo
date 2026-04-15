@@ -4,7 +4,6 @@ description: RolDE detects longitudinal differential expression between two cond
 homepage: https://bioconductor.org/packages/release/bioc/html/RolDE.html
 ---
 
-
 # bioconductor-rolde
 
 ## Overview

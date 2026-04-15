@@ -1,9 +1,10 @@
 ---
 name: genome2tree
-description: "genome2tree automates the identification, alignment, and concatenation of single-copy orthologous genes from bacterial genomes into a supermatrix for phylogenomic analysis. Use when user asks to identify orthologs, align and trim genomic sequences, or generate a concatenated supermatrix from protein or DNA files."
+description: genome2tree automates the identification, alignment, and concatenation of single-copy orthologous genes from bacterial genomes into a supermatrix for phylogenomic analysis. Use when user asks to identify orthologs, align and trim genomic sequences, or generate a concatenated supermatrix from protein or DNA files.
 homepage: https://github.com/RicoLeiser/Genome2Tree
+metadata:
+  docker_image: "quay.io/biocontainers/genome2tree:1.1.0--pyhdfd78af_0"
 ---
-
 
 # genome2tree
 

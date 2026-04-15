@@ -1,10 +1,12 @@
 ---
 name: microbial-variant-calling
-description: "This microbial variant calling workflow processes paired-end mutant reads against a wildtype reference genome using Snippy to identify variants and JBrowse for visualization. Use this skill when you need to identify single nucleotide polymorphisms, insertions, or deletions in a bacterial strain and visualize their genomic context relative to a reference sequence."
-homepage: https://workflowhub.eu/workflows/1639
+description: This microbial variant calling workflow processes paired-end mutant reads against a wildtype reference genome using Snippy to identify variants and JBrowse for visualization. Use this skill when you need to identify single nucleotide polymorphisms, insertions, or deletions in a bacterial strain and visualize their genomic context relative to a reference sequence.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Microbial Variant Calling
+# microbial-variant-calling
 
 ## Overview
 

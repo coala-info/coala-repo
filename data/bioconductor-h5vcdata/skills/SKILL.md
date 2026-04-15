@@ -4,7 +4,6 @@ description: This package provides example datasets, including HDF5 tally files 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/h5vcData.html
 ---
 
-
 # bioconductor-h5vcdata
 
 name: bioconductor-h5vcdata

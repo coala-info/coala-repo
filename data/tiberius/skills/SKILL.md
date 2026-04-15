@@ -2,10 +2,9 @@
 name: tiberius
 description: Tiberius predicts gene structures from genomic sequences. Use when user asks to predict genes, list available models, extract coding sequences, or extract protein sequences.
 homepage: https://github.com/Gaius-Augustus/Tiberius
+metadata:
+  docker_image: "quay.io/biocontainers/tiberius:1.1.8--pyhdfd78af_0"
 ---
-
-
-
 
 # tiberius
 

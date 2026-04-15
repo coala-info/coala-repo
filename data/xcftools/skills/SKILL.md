@@ -2,8 +2,9 @@
 name: xcftools
 description: xcftools provides command-line utilities for processing GIMP's XCF file format. Use when user asks to inspect XCF file metadata, convert XCF files to PNG or PNM, extract specific layers, flatten images with a background color, or extract an alpha map.
 homepage: https://github.com/j-jorge/xcftools
+metadata:
+  docker_image: "quay.io/biocontainers/xcftools:1.0.7--0"
 ---
-
 
 # xcftools
 

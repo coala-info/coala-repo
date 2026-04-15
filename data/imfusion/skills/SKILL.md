@@ -1,7 +1,9 @@
 ---
 name: imfusion
-description: "Performs image fusion using Discrete Wavelet Transformation (DWT). Use when user asks to merge images, restore images, or morph faces."
+description: Performs image fusion using Discrete Wavelet Transformation (DWT). Use when user asks to merge images, restore images, or morph faces.
 homepage: https://github.com/iamsh4shank/Imfusion
+metadata:
+  docker_image: "quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1"
 ---
 
 # imfusion

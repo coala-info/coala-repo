@@ -4,7 +4,6 @@ description: The r-crbhits package implements the Conditional Reciprocal Best Hi
 homepage: https://cran.r-project.org/web/packages/crbhits/index.html
 ---
 
-
 # r-crbhits
 
 ## Overview

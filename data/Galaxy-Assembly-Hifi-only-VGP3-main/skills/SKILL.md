@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-from-hifi-reads-vgp3
-description: "This VGP-standard workflow utilizes Hifiasm to generate primary and alternate genome assemblies from PacBio HiFi reads, k-mer databases, and GenomeScope profiles. Use this skill when you need to construct high-quality de novo assemblies for diploid or complex organisms and validate their structural accuracy and completeness using standardized quality control metrics."
-homepage: https://workflowhub.eu/workflows/612
+description: This VGP-standard workflow utilizes Hifiasm to generate primary and alternate genome assemblies from PacBio HiFi reads, k-mer databases, and GenomeScope profiles. Use this skill when you need to construct high-quality de novo assemblies for diploid or complex organisms and validate their structural accuracy and completeness using standardized quality control metrics.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly from Hifi reads - VGP3
+# genome-assembly-from-hifi-reads-vgp3
 
 ## Overview
 

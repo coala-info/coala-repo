@@ -4,7 +4,6 @@ description: This tool maps mouse gene identifiers to orthologous genes in other
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Mm.inp.db.html
 ---
 
-
 # bioconductor-hom.mm.inp.db
 
 name: bioconductor-hom.mm.inp.db

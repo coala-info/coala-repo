@@ -4,7 +4,6 @@ description: This tool processes protein microarray data through a workflow of b
 homepage: https://bioconductor.org/packages/release/bioc/html/protGear.html
 ---
 
-
 # bioconductor-protgear
 
 name: bioconductor-protgear

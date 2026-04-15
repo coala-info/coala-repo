@@ -2,8 +2,9 @@
 name: pypore
 description: Pypore is a high-performance signal processing framework for analyzing nanopore translocation data. Use when user asks to install the package via Bioconda, perform programmatic translocation analysis, detect events in raw signal data, or launch the graphical user interface for data exploration.
 homepage: http://parkin.github.io/pypore/
+metadata:
+  docker_image: "quay.io/biocontainers/pypore:0.0.6.dev20161116235131--py27h24bf2e0_1"
 ---
-
 
 # pypore
 

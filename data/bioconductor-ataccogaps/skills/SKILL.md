@@ -4,7 +4,6 @@ description: ATACCoGAPS performs Bayesian Nonnegative Matrix Factorization on si
 homepage: https://bioconductor.org/packages/3.16/bioc/html/ATACCoGAPS.html
 ---
 
-
 # bioconductor-ataccogaps
 
 ## Overview

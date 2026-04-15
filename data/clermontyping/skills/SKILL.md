@@ -2,6 +2,8 @@
 name: clermontyping
 description: ClermonTyping determines the evolutionary phylogroup of *Escherichia* samples by performing digital PCR assays on whole-genome sequencing data. Use when user asks to identify the phylogroup of an E. coli strain, perform digital Clermont PCR assays, or analyze the evolutionary lineage of genomic assemblies.
 homepage: https://github.com/happykhan/ClermonTyping
+metadata:
+  docker_image: "quay.io/biocontainers/clermontyping:24.02--py312hdfd78af_1"
 ---
 
 # clermontyping

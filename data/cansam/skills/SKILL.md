@@ -2,6 +2,8 @@
 name: cansam
 description: cansam is a C++ library and utility suite designed for high-performance manipulation, sorting, and conversion of SAM and BAM alignment files. Use when user asks to convert between SAM and BAM formats, extract header information, sort alignment records, group records by name, or split files into smaller chunks.
 homepage: https://github.com/jmarshall/cansam
+metadata:
+  docker_image: "quay.io/biocontainers/cansam:21d64bb--h4ef8376_2"
 ---
 
 # cansam

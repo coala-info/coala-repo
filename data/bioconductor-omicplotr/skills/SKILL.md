@@ -4,7 +4,6 @@ description: This package provides tools for the exploratory analysis and visual
 homepage: https://bioconductor.org/packages/release/bioc/html/omicplotR.html
 ---
 
-
 # bioconductor-omicplotr
 
 ## Overview

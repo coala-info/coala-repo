@@ -4,7 +4,6 @@ description: MSnbase provides a standardized infrastructure for the manipulation
 homepage: https://bioconductor.org/packages/release/bioc/html/MSnbase.html
 ---
 
-
 # bioconductor-msnbase
 
 ## Overview

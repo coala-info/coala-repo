@@ -4,7 +4,6 @@ description: This tool filters rare and spurious taxa from microbiome datasets u
 homepage: https://bioconductor.org/packages/3.10/bioc/html/PERFect.html
 ---
 
-
 # bioconductor-perfect
 
 name: bioconductor-perfect

@@ -2,8 +2,9 @@
 name: perl-go-perl
 description: This tool provides command-line utilities for processing, converting, and filtering Gene Ontology files and other structured biological ontologies. Use when user asks to convert ontology formats, filter ontologies by namespace, extract subgraphs, or validate OBO file syntax.
 homepage: http://metacpan.org/pod/go-perl
+metadata:
+  docker_image: "quay.io/biocontainers/perl-go-perl:0.15--pl526_3"
 ---
-
 
 # perl-go-perl
 

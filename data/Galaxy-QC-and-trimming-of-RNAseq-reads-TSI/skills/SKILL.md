@@ -1,10 +1,12 @@
 ---
 name: qc-and-trimming-of-rnaseq-reads-tsi
-description: "This RNA-seq workflow processes paired-end read collections through quality control and adapter trimming using FastQC, Trimmomatic, and MultiQC before concatenating the results into merged R1 and R2 files. Use this skill when you need to assess raw sequence quality, remove low-quality bases and TruSeq3 adapters, and prepare clean, consolidated datasets for downstream transcriptomic analysis."
-homepage: https://workflowhub.eu/workflows/876
+description: This RNA-seq workflow processes paired-end read collections through quality control and adapter trimming using FastQC, Trimmomatic, and MultiQC before concatenating the results into merged R1 and R2 files. Use this skill when you need to assess raw sequence quality, remove low-quality bases and TruSeq3 adapters, and prepare clean, consolidated datasets for downstream transcriptomic analysis.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# QC and trimming of RNAseq reads - TSI
+# qc-and-trimming-of-rnaseq-reads-tsi
 
 ## Overview
 

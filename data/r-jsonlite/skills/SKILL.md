@@ -4,7 +4,6 @@ description: The r-jsonlite tool provides fast, bidirectional conversion between
 homepage: https://cloud.r-project.org/web/packages/jsonlite/index.html
 ---
 
-
 # r-jsonlite
 
 name: r-jsonlite

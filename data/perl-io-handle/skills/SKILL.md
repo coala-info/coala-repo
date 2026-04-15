@@ -2,8 +2,9 @@
 name: perl-io-handle
 description: This tool provides an object-oriented interface for managing Perl input/output streams and filehandles. Use when user asks to manage filehandles as objects, control stream buffering, or perform low-level file descriptor operations.
 homepage: http://metacpan.org/pod/IO::Handle
+metadata:
+  docker_image: "quay.io/biocontainers/perl-io-handle:1.42--pl5321hdfd78af_2"
 ---
-
 
 # perl-io-handle
 

@@ -4,7 +4,6 @@ description: The Voyager package provides a framework for exploratory spatial da
 homepage: https://bioconductor.org/packages/release/bioc/html/Voyager.html
 ---
 
-
 # bioconductor-voyager
 
 ## Overview

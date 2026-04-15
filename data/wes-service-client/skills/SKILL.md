@@ -2,8 +2,9 @@
 name: wes-service-client
 description: The `wes-service-client` manages computational workflows on remote execution engines using the GA4GH WES standard. Use when user asks to get service information, submit a workflow, list workflow runs, get workflow run status, or get workflow run logs.
 homepage: https://github.com/common-workflow-language/workflow-service
+metadata:
+  docker_image: "quay.io/biocontainers/wes-service-client:2.7--py_1"
 ---
-
 
 # wes-service-client
 

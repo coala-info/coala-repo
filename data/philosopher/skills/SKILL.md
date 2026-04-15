@@ -2,6 +2,8 @@
 name: philosopher
 description: Philosopher is a bioinformatics suite for the post-processing, validation, and quantification of shotgun proteomics data. Use when user asks to initialize a proteomics workspace, manage protein databases, validate peptide-spectrum matches, perform protein inference, filter results by false discovery rate, or generate quantitative reports.
 homepage: https://github.com/Nesvilab/philosopher
+metadata:
+  docker_image: "quay.io/biocontainers/philosopher:5.1.2--he881be0_0"
 ---
 
 # philosopher

@@ -2,8 +2,9 @@
 name: pan-plaster
 description: Pan-plaster is a high-speed bioinformatics tool designed for the construction of linear pangenomes from genomic sequences. Use when user asks to construct a linear pangenome, compare multiple sequences to identify homologous regions, or assess genetic diversity across a population of sequences.
 homepage: https://gitlab.com/treangenlab/plaster
+metadata:
+  docker_image: "quay.io/biocontainers/pan-plaster:1.2.1--hdfd78af_0"
 ---
-
 
 # pan-plaster
 

@@ -4,7 +4,6 @@ description: This tool provides expert guidance for community ecology analysis a
 homepage: https://cloud.r-project.org/web/packages/vegan/index.html
 ---
 
-
 # r-vegan
 
 name: r-vegan

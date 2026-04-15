@@ -4,7 +4,6 @@ description: This package provides pre-compiled genomic background distributions
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PWMEnrich.Hsapiens.background.html
 ---
 
-
 # bioconductor-pwmenrich.hsapiens.background
 
 name: bioconductor-pwmenrich.hsapiens.background

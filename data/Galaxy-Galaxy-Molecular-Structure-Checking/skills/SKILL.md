@@ -1,10 +1,12 @@
 ---
 name: molecular-structure-checking
-description: "This Galaxy workflow automates the cleaning and validation of protein structures from PDB files using BioBB tools and AMBER to fix structural defects like missing side chains, incorrect chirality, or backbone issues. Use this skill when you need to prepare high-quality, energetically minimized molecular models for downstream molecular dynamics simulations or docking studies by resolving common structural inconsistencies found in experimental data."
-homepage: https://workflowhub.eu/workflows/778
+description: This Galaxy workflow automates the cleaning and validation of protein structures from PDB files using BioBB tools and AMBER to fix structural defects like missing side chains, incorrect chirality, or backbone issues. Use this skill when you need to prepare high-quality, energetically minimized molecular models for downstream molecular dynamics simulations or docking studies by resolving common structural inconsistencies found in experimental data.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Molecular Structure Checking
+# molecular-structure-checking
 
 ## Overview
 

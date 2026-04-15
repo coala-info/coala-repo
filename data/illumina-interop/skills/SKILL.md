@@ -2,8 +2,9 @@
 name: illumina-interop
 description: This tool extracts and analyzes binary metric files from Illumina sequencing systems to monitor run performance and quality control. Use when user asks to generate run summaries, report indexing performance, extract imaging statistics, or convert InterOp binary files into human-readable text formats.
 homepage: http://illumina.github.io/interop/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/illumina-interop:1.9.0--h503566f_0"
 ---
-
 
 # illumina-interop
 

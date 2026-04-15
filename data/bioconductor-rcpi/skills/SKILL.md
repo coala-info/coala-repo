@@ -4,7 +4,6 @@ description: The Rcpi package provides an integrated platform for drug discovery
 homepage: https://bioconductor.org/packages/release/bioc/html/Rcpi.html
 ---
 
-
 # bioconductor-rcpi
 
 ## Overview

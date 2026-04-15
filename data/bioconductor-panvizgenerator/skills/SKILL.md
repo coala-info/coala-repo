@@ -4,7 +4,6 @@ description: Bioconductor-panvizgenerator creates interactive, browser-based vis
 homepage: https://bioconductor.org/packages/3.8/bioc/html/PanVizGenerator.html
 ---
 
-
 # bioconductor-panvizgenerator
 
 name: bioconductor-panvizgenerator

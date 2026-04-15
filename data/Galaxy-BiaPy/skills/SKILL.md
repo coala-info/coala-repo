@@ -1,10 +1,12 @@
 ---
 name: biapy
-description: "This bioimaging workflow processes test data and ground truth using a predefined BiaPy YAML configuration to generate post-processed predictions and 3D image renderings. Use this skill when you need to apply deep learning models to biological image datasets for automated analysis and require high-quality 3D visualizations of the resulting predictions."
-homepage: https://workflowhub.eu/workflows/2088
+description: This bioimaging workflow processes test data and ground truth using a predefined BiaPy YAML configuration to generate post-processed predictions and 3D image renderings. Use this skill when you need to apply deep learning models to biological image datasets for automated analysis and require high-quality 3D visualizations of the resulting predictions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# BiaPy
+# biapy
 
 ## Overview
 

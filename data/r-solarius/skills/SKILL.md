@@ -4,7 +4,6 @@ description: r-solarius provides an R interface to the SOLAR software for perfor
 homepage: https://cran.r-project.org/web/packages/solarius/index.html
 ---
 
-
 # r-solarius
 
 name: r-solarius

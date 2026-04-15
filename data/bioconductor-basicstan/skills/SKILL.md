@@ -4,7 +4,6 @@ description: BASiCStan provides a Stan-based implementation of the BASiCS model 
 homepage: https://bioconductor.org/packages/release/bioc/html/BASiCStan.html
 ---
 
-
 # bioconductor-basicstan
 
 ## Overview

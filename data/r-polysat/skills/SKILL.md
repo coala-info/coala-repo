@@ -4,7 +4,6 @@ description: The r-polysat tool provides a suite of R functions for analyzing po
 homepage: https://cloud.r-project.org/web/packages/polysat/index.html
 ---
 
-
 # r-polysat
 
 name: r-polysat

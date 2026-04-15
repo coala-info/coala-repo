@@ -2,6 +2,8 @@
 name: prophex
 description: ProPhex is a bioinformatics tool for memory-efficient k-mer indexing and sequence read mapping using the Burrows-Wheeler Transform. Use when user asks to build a k-LCP index, query sequencing reads against a reference database, or convert BWT files to FASTA format.
 homepage: https://github.com/prophyle/prophex
+metadata:
+  docker_image: "quay.io/biocontainers/prophex:0.1.1--h5bf99c6_2"
 ---
 
 # prophex

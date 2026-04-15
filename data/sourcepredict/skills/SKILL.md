@@ -2,8 +2,9 @@
 name: sourcepredict
 description: Sourcepredict is a machine learning tool that identifies the origins of metagenomic samples by comparing their taxonomic profiles against a reference dataset. Use when user asks to predict source proportions, perform microbial source tracking, or detect contamination in metagenomic datasets.
 homepage: https://github.com/maxibor/sourcepredict
+metadata:
+  docker_image: "quay.io/biocontainers/sourcepredict:0.5.1--pyhdfd78af_0"
 ---
-
 
 # sourcepredict
 

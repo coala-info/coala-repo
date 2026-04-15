@@ -2,8 +2,9 @@
 name: cdk-inchi-to-svg
 description: This tool converts InChI strings into SVG images to provide visual representations of chemical structures. Use when user asks to render chemical structures from InChI strings, generate SVG files for metabolites, or create high-resolution chemical diagrams for publications.
 homepage: https://github.com/ipb-halle/cdk-inchi-to-svg
+metadata:
+  docker_image: "quay.io/biocontainers/cdk-inchi-to-svg:0.9--hdfd78af_1"
 ---
-
 
 # cdk-inchi-to-svg
 

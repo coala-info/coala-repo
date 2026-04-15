@@ -4,7 +4,6 @@ description: This tool manages command-line argument parsing and parallel batch 
 homepage: https://cloud.r-project.org/web/packages/batch/index.html
 ---
 
-
 # r-batch
 
 name: r-batch

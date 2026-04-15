@@ -2,6 +2,8 @@
 name: fastga
 description: FastGA is a high-performance toolset for aligning genomes using a specialized database format. Use when user asks to convert FASTA files to GDB format, index genomes, perform sequence alignments, or convert alignment results to PAF and PSL formats.
 homepage: https://github.com/thegenemyers/FASTGA
+metadata:
+  docker_image: "quay.io/biocontainers/fastga:1.3.1--h577a1d6_0"
 ---
 
 # fastga

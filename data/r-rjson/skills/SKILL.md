@@ -4,7 +4,6 @@ description: This tool converts R objects to JSON strings and parses JSON data i
 homepage: https://cloud.r-project.org/web/packages/rjson/index.html
 ---
 
-
 # r-rjson
 
 name: r-rjson

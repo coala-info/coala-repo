@@ -2,8 +2,9 @@
 name: fec
 description: fec performs fast error correction on long-read sequencing data using a two-round overlapping and caching strategy. Use when user asks to correct errors in PacBio or Nanopore reads, improve long-read data quality, or perform two-round sequence correction.
 homepage: https://github.com/zhangjuncsu/Fec
+metadata:
+  docker_image: "quay.io/biocontainers/fec:1.0.1--he70b90d_2"
 ---
-
 
 # fec
 

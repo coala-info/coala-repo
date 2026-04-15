@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data and identifier 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiHumanAll.db.html
 ---
 
-
 # bioconductor-lumihumanall.db
 
 name: bioconductor-lumihumanall.db

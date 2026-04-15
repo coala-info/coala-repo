@@ -2,8 +2,9 @@
 name: opentargets-validator
 description: The opentargets-validator verifies that data files conform to the official structural requirements and schemas of the Open Targets Platform. Use when user asks to validate evidence strings, check JSONL files against Open Targets schemas, or verify data formatting before platform ingestion.
 homepage: https://github.com/opentargets/validator
+metadata:
+  docker_image: "quay.io/biocontainers/opentargets-validator:1.0.0--pyhdfd78af_0"
 ---
-
 
 # opentargets-validator
 

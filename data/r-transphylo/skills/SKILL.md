@@ -1,9 +1,8 @@
 ---
 name: r-transphylo
-description: "This R package uses a Bayesian approach to infer transmission trees and identify missing links from dated phylogenies. Use when user asks to infer transmission events from a phylogeny, simulate infectious disease outbreaks, or estimate epidemiological parameters like the reproduction number."
+description: This R package uses a Bayesian approach to infer transmission trees and identify missing links from dated phylogenies. Use when user asks to infer transmission events from a phylogeny, simulate infectious disease outbreaks, or estimate epidemiological parameters like the reproduction number.
 homepage: https://cran.r-project.org/web/packages/transphylo/index.html
 ---
-
 
 # r-transphylo
 

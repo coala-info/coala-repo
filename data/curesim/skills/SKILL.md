@@ -1,9 +1,10 @@
 ---
 name: curesim
-description: "This tool simulates cure models and performs extrapolation studies for survival data. Use when user asks to analyze survival data with a cure fraction or perform simulations to understand model behavior."
+description: This tool simulates cure models and performs extrapolation studies for survival data. Use when user asks to analyze survival data with a cure fraction or perform simulations to understand model behavior.
 homepage: https://github.com/BenKearns/CureSim
+metadata:
+  docker_image: "quay.io/biocontainers/curesim:1.3--0"
 ---
-
 
 # curesim
 

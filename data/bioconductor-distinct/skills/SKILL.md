@@ -4,7 +4,6 @@ description: Bioconductor-distinct performs differential state analysis in singl
 homepage: https://bioconductor.org/packages/release/bioc/html/distinct.html
 ---
 
-
 # bioconductor-distinct
 
 name: bioconductor-distinct

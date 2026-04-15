@@ -1,10 +1,12 @@
 ---
 name: simple-analysis
-description: "This computational chemistry workflow processes protein DCD trajectories and PDB structures using Bio3D tools to perform RMSD, RMSF, and principal component analysis. Use this skill when you need to evaluate the structural stability, residue-level flexibility, and dominant conformational motions of a protein throughout a molecular dynamics simulation."
-homepage: https://workflowhub.eu/workflows/1697
+description: This computational chemistry workflow processes protein DCD trajectories and PDB structures using Bio3D tools to perform RMSD, RMSF, and principal component analysis. Use this skill when you need to evaluate the structural stability, residue-level flexibility, and dominant conformational motions of a protein throughout a molecular dynamics simulation.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Simple Analysis
+# simple-analysis
 
 ## Overview
 

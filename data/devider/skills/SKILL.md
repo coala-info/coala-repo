@@ -1,9 +1,10 @@
 ---
 name: devider
-description: "Devider separates long reads into distinct haplotype groups using a SNP-encoded positional de Bruijn graph approach. Use when user asks to phase long reads locally, separate high-depth sequencing data into haplotypes, or perform haplotagging on high-heterogeneity samples."
+description: Devider separates long reads into distinct haplotype groups using a SNP-encoded positional de Bruijn graph approach. Use when user asks to phase long reads locally, separate high-depth sequencing data into haplotypes, or perform haplotagging on high-heterogeneity samples.
 homepage: https://github.com/bluenote-1577/devider
+metadata:
+  docker_image: "quay.io/biocontainers/devider:0.0.1--ha6fb395_3"
 ---
-
 
 # devider
 

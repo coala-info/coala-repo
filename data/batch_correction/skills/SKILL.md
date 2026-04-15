@@ -2,6 +2,8 @@
 name: batch_correction
 description: This tool applies a single correction or transformation to a collection of files. Use when user asks to preprocess a dataset, apply augmentations to images, or perform command-line batch processing.
 homepage: https://github.com/USTCPCS/CVPR2018_attention
+metadata:
+  docker_image: "biocontainers/batch_correction:phenomenal-v2.2.3_cv1.1.15"
 ---
 
 # batch_correction

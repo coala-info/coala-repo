@@ -4,7 +4,6 @@ description: This tool performs permutation-based statistical testing for multip
 homepage: https://bioconductor.org/packages/release/bioc/html/MultiMed.html
 ---
 
-
 # bioconductor-multimed
 
 name: bioconductor-multimed

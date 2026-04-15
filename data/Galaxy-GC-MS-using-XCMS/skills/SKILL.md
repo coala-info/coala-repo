@@ -1,10 +1,12 @@
 ---
 name: gc-ms-using-xcms
-description: "This metabolomics and exposomics workflow processes raw GC-MS data collections using XCMS for peak detection and alignment, RAMClustR for spectral deconvolution, and matchms for library-based annotation. Use this skill when you need to characterize small molecule profiles in complex samples by performing retention index assignment and spectral similarity matching against reference compound databases."
-homepage: https://workflowhub.eu/workflows/1582
+description: This metabolomics and exposomics workflow processes raw GC-MS data collections using XCMS for peak detection and alignment, RAMClustR for spectral deconvolution, and matchms for library-based annotation. Use this skill when you need to characterize small molecule profiles in complex samples by performing retention index assignment and spectral similarity matching against reference compound databases.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GC MS using XCMS
+# gc-ms-using-xcms
 
 ## Overview
 

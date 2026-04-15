@@ -1,10 +1,12 @@
 ---
 name: abcix-md-setup
-description: "This Galaxy workflow automates the preparation and equilibration of molecular systems for Amber molecular dynamics simulations using BioBB tools to perform topology generation, solvation, and energy minimization from an input PDB file. Use this skill when you need to generate a stable, solvated, and neutralized molecular environment with hydrogen mass repartitioning to ensure reliable production-level MD trajectories."
-homepage: https://workflowhub.eu/workflows/299
+description: This Galaxy workflow automates the preparation and equilibration of molecular systems for Amber molecular dynamics simulations using BioBB tools to perform topology generation, solvation, and energy minimization from an input PDB file. Use this skill when you need to generate a stable, solvated, and neutralized molecular environment with hydrogen mass repartitioning to ensure reliable production-level MD trajectories.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ABCix MD Setup
+# abcix-md-setup
 
 ## Overview
 

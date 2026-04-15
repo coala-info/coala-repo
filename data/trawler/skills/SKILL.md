@@ -2,8 +2,9 @@
 name: trawler
 description: Trawler identifies over-represented DNA sequence motifs and calculates their enrichment. Use when user asks to find DNA sequence motifs, analyze ChIP-seq data, calculate motif enrichment, cluster motifs, or compare motifs to databases.
 homepage: https://trawler.erc.monash.edu.au/help.html
+metadata:
+  docker_image: "quay.io/biocontainers/trawler:2.0--0"
 ---
-
 
 # trawler
 

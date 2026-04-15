@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for the Mouse Gene 1
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene.1.0.st.v1frmavecs.html
 ---
 
-
 # bioconductor-mogene.1.0.st.v1frmavecs
 
 name: bioconductor-mogene.1.0.st.v1frmavecs

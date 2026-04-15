@@ -2,8 +2,9 @@
 name: ucsc-netchainsubset
 description: The ucsc-netchainsubset tool extracts chain records that correspond to a net file. Use when user asks to clean chain files to match nets, subset chain files, or get chains corresponding to filtered nets.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-netchainsubset:482--h0b57e2e_0"
 ---
-
 
 # ucsc-netchainsubset
 

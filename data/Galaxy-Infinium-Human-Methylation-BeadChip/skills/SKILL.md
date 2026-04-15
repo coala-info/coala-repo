@@ -1,10 +1,12 @@
 ---
 name: infinium-human-methylation-beadchip
-description: "This epigenetics workflow processes paired Red and Green IDAT files and phenotype data using the minfi-based Infinium Human Methylation BeadChip tool, ChIPpeakAnno, and Cluster Profiler. Use this skill when you need to identify differentially methylated positions or regions from microarray data and characterize their biological significance through genomic annotation and Gene Ontology enrichment analysis."
-homepage: https://workflowhub.eu/workflows/1624
+description: This epigenetics workflow processes paired Red and Green IDAT files and phenotype data using the minfi-based Infinium Human Methylation BeadChip tool, ChIPpeakAnno, and Cluster Profiler. Use this skill when you need to identify differentially methylated positions or regions from microarray data and characterize their biological significance through genomic annotation and Gene Ontology enrichment analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Infinium Human Methylation BeadChip
+# infinium-human-methylation-beadchip
 
 ## Overview
 

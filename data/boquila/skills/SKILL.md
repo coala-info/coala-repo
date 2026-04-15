@@ -1,9 +1,10 @@
 ---
 name: boquila
-description: "Boquila generates synthetic sequencing reads that preserve the nucleotide profile and k-mer frequencies of a provided model input file. Use when user asks to generate synthetic sequencing reads, create control datasets, simulate sequence-specific biases, or match k-mer frequencies from a model file."
+description: Boquila generates synthetic sequencing reads that preserve the nucleotide profile and k-mer frequencies of a provided model input file. Use when user asks to generate synthetic sequencing reads, create control datasets, simulate sequence-specific biases, or match k-mer frequencies from a model file.
 homepage: https://github.com/CompGenomeLab/boquila
+metadata:
+  docker_image: "quay.io/biocontainers/boquila:0.6.1--hdfd78af_0"
 ---
-
 
 # boquila
 

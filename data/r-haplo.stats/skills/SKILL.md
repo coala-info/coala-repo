@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of haplotypes with traits a
 homepage: https://cloud.r-project.org/web/packages/haplo.stats/index.html
 ---
 
-
 # r-haplo.stats
 
 name: r-haplo.stats

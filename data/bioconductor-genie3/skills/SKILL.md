@@ -4,7 +4,6 @@ description: This tool infers directed gene regulatory networks from gene expres
 homepage: https://bioconductor.org/packages/release/bioc/html/GENIE3.html
 ---
 
-
 # bioconductor-genie3
 
 name: bioconductor-genie3

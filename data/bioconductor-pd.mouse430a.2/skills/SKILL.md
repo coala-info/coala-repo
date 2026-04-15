@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequences for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mouse430a.2.html
 ---
 
-
 # bioconductor-pd.mouse430a.2
 
 name: bioconductor-pd.mouse430a.2

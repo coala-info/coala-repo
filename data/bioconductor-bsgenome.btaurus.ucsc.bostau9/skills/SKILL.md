@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Bos taurus base
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Btaurus.UCSC.bosTau9.html
 ---
 
-
 # bioconductor-bsgenome.btaurus.ucsc.bostau9
 
 name: bioconductor-bsgenome.btaurus.ucsc.bostau9

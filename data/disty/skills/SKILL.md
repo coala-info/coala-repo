@@ -1,9 +1,10 @@
 ---
 name: disty
-description: "disty transforms core genome alignments into distance matrices while providing multiple strategies for handling ambiguous bases. Use when user asks to calculate genetic distances, generate a distance matrix from a FASTA alignment, or handle ambiguous bases in genomic data."
+description: disty transforms core genome alignments into distance matrices while providing multiple strategies for handling ambiguous bases. Use when user asks to calculate genetic distances, generate a distance matrix from a FASTA alignment, or handle ambiguous bases in genomic data.
 homepage: https://github.com/c2-d2/disty
+metadata:
+  docker_image: "quay.io/biocontainers/disty:0.1.0--1"
 ---
-
 
 # disty
 

@@ -2,8 +2,9 @@
 name: recgraph
 description: RecGraph is a high-performance sequence-to-graph aligner that uses exact dynamic programming to find optimal alignments between query strings and variation graphs. Use when user asks to align reads to a variation graph, perform partial order alignment, or model genetic recombinations using recombination mode.
 homepage: https://github.com/AlgoLab/RecGraph
+metadata:
+  docker_image: "quay.io/biocontainers/recgraph:1.0.0--h7b50bb2_1"
 ---
-
 
 # recgraph
 

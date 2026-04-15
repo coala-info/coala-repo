@@ -4,7 +4,6 @@ description: This tool identifies characteristic Gene Ontology terms for groups 
 homepage: https://bioconductor.org/packages/release/bioc/html/GOpro.html
 ---
 
-
 # bioconductor-gopro
 
 ## Overview

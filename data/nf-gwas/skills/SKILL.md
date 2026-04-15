@@ -4,6 +4,8 @@ description: This pipeline processes genotype data in VCF format alongside pheno
 homepage: https://github.com/nf-core/gwas
 ---
 
+# gwas
+
 ## Overview
 The nf-core/gwas pipeline is designed for performing Genome Wide Association Studies (GWAS) to identify statistical associations between genetic variants and specific traits or phenotypes. It automates the processing of genomic data alongside phenotypic information to streamline large-scale association mapping across different study designs.
 

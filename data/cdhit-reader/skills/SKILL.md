@@ -1,9 +1,10 @@
 ---
 name: cdhit-reader
-description: "This tool parses CD-HIT cluster files and compares sequence sets to identify overlaps or redundancies. Use when user asks to parse .clstr files into Python objects, compare FASTA files for shared sequences, or extract statistics from CD-HIT clustering results."
+description: This tool parses CD-HIT cluster files and compares sequence sets to identify overlaps or redundancies. Use when user asks to parse .clstr files into Python objects, compare FASTA files for shared sequences, or extract statistics from CD-HIT clustering results.
 homepage: https://github.com/telatin/cdhit-parser
+metadata:
+  docker_image: "quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0"
 ---
-
 
 # cdhit-reader
 

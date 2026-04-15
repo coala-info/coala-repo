@@ -1,10 +1,12 @@
 ---
 name: biotranslator-workflow
-description: "This BioTranslator workflow processes an input gene list to perform functional annotation and prioritization using the BioTranslator tool. Use this skill when you need to identify enriched Gene Ontology terms, prioritize candidate genes, and generate heatmaps to visualize functional relationships within a specific gene set."
+description: This BioTranslator workflow processes an input gene list to perform functional annotation and prioritization using the BioTranslator tool. Use this skill when you need to identify enriched Gene Ontology terms, prioritize candidate genes, and generate heatmaps to visualize functional relationships within a specific gene set.
 homepage: https://workflowhub.eu/workflows/189
+metadata:
+  docker_image: "N/A"
 ---
 
-# BioTranslator Workflow
+# biotranslator-workflow
 
 ## Overview
 

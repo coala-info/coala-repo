@@ -2,8 +2,9 @@
 name: crispector2
 description: CRISPECTOR2 evaluates genome editing efficiency by using Bayesian inference to distinguish true editing activity from sequencing noise. Use when user asks to quantify NHEJ activity, perform allele-specific analysis, or detect translocations in multiplex-PCR data.
 homepage: https://github.com/theAguy/crispector2
+metadata:
+  docker_image: "quay.io/biocontainers/crispector2:2.1.2--pyhdfd78af_0"
 ---
-
 
 # crispector2
 

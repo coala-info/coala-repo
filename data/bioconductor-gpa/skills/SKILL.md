@@ -4,7 +4,6 @@ description: GPA implements a statistical framework for the joint analysis of mu
 homepage: https://bioconductor.org/packages/release/bioc/html/GPA.html
 ---
 
-
 # bioconductor-gpa
 
 name: bioconductor-gpa

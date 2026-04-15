@@ -4,7 +4,6 @@ description: PoTRA identifies dysregulated biological pathways by analyzing chan
 homepage: https://bioconductor.org/packages/3.9/bioc/html/PoTRA.html
 ---
 
-
 # bioconductor-potra
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: cell-cycle-regression-workflow
-description: "This workflow processes single-cell transcriptomics data in AnnData format using Scanpy tools to score cell cycle phases and regress out their associated variance. Use this skill when biological heterogeneity in your single-cell dataset is masked by cell cycle effects and you need to mitigate these confounding factors to improve downstream clustering and trajectory inference."
-homepage: https://workflowhub.eu/workflows/1550
+description: This workflow processes single-cell transcriptomics data in AnnData format using Scanpy tools to score cell cycle phases and regress out their associated variance. Use this skill when biological heterogeneity in your single-cell dataset is masked by cell cycle effects and you need to mitigate these confounding factors to improve downstream clustering and trajectory inference.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Cell Cycle Regression Workflow
+# cell-cycle-regression-workflow
 
 ## Overview
 

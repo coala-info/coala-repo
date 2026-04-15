@@ -4,6 +4,8 @@ description: This pipeline performs automated quality control of ribonucleoside 
 homepage: https://github.com/nf-core/ribomsqc
 ---
 
+# ribomsqc
+
 ## Overview
 The ribomsqc pipeline solves the problem of manual quality control in ribonucleoside analysis by mass spectrometry. It automates the extraction of ion chromatograms (XIC) and the calculation of QC metrics to ensure mass spectrometer performance remains consistent across experimental runs.
 

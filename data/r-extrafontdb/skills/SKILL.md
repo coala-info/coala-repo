@@ -4,7 +4,6 @@ description: This package manages the persistent font database and metadata stor
 homepage: https://cloud.r-project.org/web/packages/extrafontdb/index.html
 ---
 
-
 # r-extrafontdb
 
 name: r-extrafontdb

@@ -4,7 +4,6 @@ description: This package provides workflows and example datasets for the analys
 homepage: https://bioconductor.org/packages/release/data/experiment/html/BeadArrayUseCases.html
 ---
 
-
 # bioconductor-beadarrayusecases
 
 name: bioconductor-beadarrayusecases

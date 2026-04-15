@@ -2,8 +2,9 @@
 name: viromeqc
 description: ViromeQC is a quality control tool for benchmarking and quantifying the enrichment of viral metagenomes. Use when user asks to analyze viral metagenome enrichment, quantify contamination, calculate enrichment scores, filter reads by quality or length, or adjust processing parameters.
 homepage: https://github.com/SegataLab/viromeqc
+metadata:
+  docker_image: "quay.io/biocontainers/viromeqc:1.0.2--py310h7cba7a3_0"
 ---
-
 
 # viromeqc
 

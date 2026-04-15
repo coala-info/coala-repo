@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Drosophila
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosgenome1.db.html
 ---
 
-
 # bioconductor-drosgenome1.db
 
 ## Overview

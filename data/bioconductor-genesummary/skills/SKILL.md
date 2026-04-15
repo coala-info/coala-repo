@@ -4,7 +4,6 @@ description: This tool retrieves functional gene summaries and biological descri
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GeneSummary.html
 ---
 
-
 # bioconductor-genesummary
 
 name: bioconductor-genesummary

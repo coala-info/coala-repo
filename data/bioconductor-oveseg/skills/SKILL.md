@@ -4,7 +4,6 @@ description: This tool detects tissue or cell-specific marker genes in multi-gro
 homepage: https://bioconductor.org/packages/release/bioc/html/OVESEG.html
 ---
 
-
 # bioconductor-oveseg
 
 name: bioconductor-oveseg

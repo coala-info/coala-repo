@@ -1,10 +1,12 @@
 ---
 name: pathway-ranker
-description: "This metabolic engineering workflow identifies and ranks biosynthetic pathways for a target molecule within a genome-scale metabolic model using RetroPath2.0, flux balance analysis, and global scoring tools. Use this skill when you need to discover the most thermodynamically and stoichiometrically viable enzymatic routes to produce a specific chemical compound in a microbial host."
-homepage: https://workflowhub.eu/workflows/25
+description: This metabolic engineering workflow identifies and ranks biosynthetic pathways for a target molecule within a genome-scale metabolic model using RetroPath2.0, flux balance analysis, and global scoring tools. Use this skill when you need to discover the most thermodynamically and stoichiometrically viable enzymatic routes to produce a specific chemical compound in a microbial host.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pathway Ranker
+# pathway-ranker
 
 ## Overview
 

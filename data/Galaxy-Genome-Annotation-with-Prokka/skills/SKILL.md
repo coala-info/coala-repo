@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-prokka
-description: "This Galaxy workflow performs rapid prokaryotic genome annotation on FASTA contigs using Prokka and generates visualizable results with JBrowse. Use this skill when you need to identify protein-coding genes, tRNA, and rRNA sequences in a newly assembled bacterial or archaeal genome to characterize its functional potential."
-homepage: https://workflowhub.eu/workflows/1497
+description: This Galaxy workflow performs rapid prokaryotic genome annotation on FASTA contigs using Prokka and generates visualizable results with JBrowse. Use this skill when you need to identify protein-coding genes, tRNA, and rRNA sequences in a newly assembled bacterial or archaeal genome to characterize its functional potential.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Annotation with Prokka
+# genome-annotation-with-prokka
 
 ## Overview
 

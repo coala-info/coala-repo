@@ -4,7 +4,6 @@ description: This package provides annotation and platform-specific metadata for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.rat.html
 ---
 
-
 # bioconductor-pd.clariom.s.rat
 
 name: bioconductor-pd.clariom.s.rat

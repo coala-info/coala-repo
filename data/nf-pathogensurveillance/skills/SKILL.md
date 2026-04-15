@@ -4,6 +4,8 @@ description: This pipeline performs pathogen identification and biosurveillance 
 homepage: https://github.com/nf-core/pathogensurveillance
 ---
 
+# pathogensurveillance
+
 ## Overview
 Pathogensurveillance is a population genomics pipeline designed for identifying unknown samples and detecting variants without requiring a pre-defined reference genome. It automates the process of selecting the best reference by generating k-mer sketches from assembled reads and matching them against NCBI RefSeq libraries using sourmash.
 

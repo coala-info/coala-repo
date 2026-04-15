@@ -4,7 +4,6 @@ description: The supraHex package implements a self-organizing map algorithm to 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/supraHex.html
 ---
 
-
 # bioconductor-suprahex
 
 ## Overview

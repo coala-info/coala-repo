@@ -2,6 +2,8 @@
 name: coast
 description: The coast tool identifies and quantifies sequence conservation across diverse genomic datasets using the Conserved Oligonucleotide Alignment Strategy. Use when user asks to identify conserved genomic blocks, perform comparative genomics without traditional alignments, or quantify sequence conservation across multiple genomes.
 homepage: https://gitlab.com/coast_tool/COAST
+metadata:
+  docker_image: "quay.io/biocontainers/coast:0.2.2--pyh5e36f6f_0"
 ---
 
 # coast

@@ -4,7 +4,6 @@ description: The ukbrapR package streamlines phenotype extraction, diagnostic as
 homepage: https://cran.r-project.org/web/packages/ukbrapr/index.html
 ---
 
-
 # r-ukbrapr
 
 ## Overview

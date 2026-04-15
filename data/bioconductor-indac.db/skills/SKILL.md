@@ -4,7 +4,6 @@ description: bioconductor-indac.db provides annotation mappings between manufact
 homepage: https://bioconductor.org/packages/release/data/annotation/html/indac.db.html
 ---
 
-
 # bioconductor-indac.db
 
 ## Overview

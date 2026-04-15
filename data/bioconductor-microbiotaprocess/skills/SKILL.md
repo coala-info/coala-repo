@@ -1,9 +1,8 @@
 ---
 name: bioconductor-microbiotaprocess
-description: "MicrobiotaProcess is a Bioconductor package for tidy microbiome data analysis, integration, and visualization. Use when user asks to import data from QIIME2 or DADA2, calculate alpha and beta diversity, perform taxonomic abundance analysis, or conduct biomarker discovery."
+description: MicrobiotaProcess is a Bioconductor package for tidy microbiome data analysis, integration, and visualization. Use when user asks to import data from QIIME2 or DADA2, calculate alpha and beta diversity, perform taxonomic abundance analysis, or conduct biomarker discovery.
 homepage: https://bioconductor.org/packages/release/bioc/html/MicrobiotaProcess.html
 ---
-
 
 # bioconductor-microbiotaprocess
 

@@ -2,8 +2,9 @@
 name: alcor
 description: AlcoR is a toolkit for characterizing, mapping, and masking low-complexity regions in genomic and proteomic sequences using data compression. Use when user asks to map or mask low-complexity regions, simulate synthetic sequences with repetitive elements, or generate SVG visualizations for comparative genomics.
 homepage: https://cobilab.github.io/alcor/
+metadata:
+  docker_image: "quay.io/biocontainers/alcor:1.9--h077b44d_6"
 ---
-
 
 # alcor
 

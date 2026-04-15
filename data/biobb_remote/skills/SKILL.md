@@ -2,8 +2,9 @@
 name: biobb_remote
 description: This tool manages SSH credentials, transfers data bundles, and executes commands on remote computing resources. Use when user asks to manage remote credentials, transfer files via SFTP, or execute bioinformatics tasks on high-performance computing clusters.
 homepage: https://github.com/bioexcel/biobb_remote
+metadata:
+  docker_image: "quay.io/biocontainers/biobb_structure_checking:3.15.6--pyhdc42f0e_0"
 ---
-
 
 # biobb_remote
 

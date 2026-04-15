@@ -1,9 +1,10 @@
 ---
 name: sbt
-description: "sbt is an interactive build tool for Scala and Java projects that provides incremental compilation and dependency management. Use when user asks to compile code, run tests, manage multi-module builds, inspect project dependencies, or execute tasks within the sbt shell."
+description: sbt is an interactive build tool for Scala and Java projects that provides incremental compilation and dependency management. Use when user asks to compile code, run tests, manage multi-module builds, inspect project dependencies, or execute tasks within the sbt shell.
 homepage: https://github.com/sbt/sbt
+metadata:
+  docker_image: "quay.io/biocontainers/sbt:0.13.12--1"
 ---
-
 
 # sbt
 

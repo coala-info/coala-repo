@@ -1,10 +1,12 @@
 ---
 name: protein-conformational-ensembles-generation
-description: "This Galaxy workflow generates protein conformational ensembles from a PDB structure using a suite of BioBB tools including ProDy, CONCOORD, iMODS, and FlexServ for normal mode analysis and molecular dynamics. Use this skill when you need to explore the structural flexibility and collective motions of a protein to understand its functional dynamics or to sample diverse conformational states for docking and simulation studies."
-homepage: https://workflowhub.eu/workflows/490
+description: This Galaxy workflow generates protein conformational ensembles from a PDB structure using a suite of BioBB tools including ProDy, CONCOORD, iMODS, and FlexServ for normal mode analysis and molecular dynamics. Use this skill when you need to explore the structural flexibility and collective motions of a protein to understand its functional dynamics or to sample diverse conformational states for docking and simulation studies.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Protein conformational ensembles generation
+# protein-conformational-ensembles-generation
 
 ## Overview
 

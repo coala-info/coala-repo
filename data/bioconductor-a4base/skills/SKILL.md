@@ -1,9 +1,8 @@
 ---
 name: bioconductor-a4base
-description: "bioconductor-a4base provides utility functions for the automated analysis and visualization of Affymetrix microarray data. Use when user asks to perform differential expression analysis, filter ExpressionSet objects, create volcano plots, or generate spectral maps."
+description: bioconductor-a4base provides utility functions for the automated analysis and visualization of Affymetrix microarray data. Use when user asks to perform differential expression analysis, filter ExpressionSet objects, create volcano plots, or generate spectral maps.
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Base.html
 ---
-
 
 # bioconductor-a4base
 

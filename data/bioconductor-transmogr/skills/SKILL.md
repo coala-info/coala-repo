@@ -4,7 +4,6 @@ description: This tool creates variant-modified reference genomes and transcript
 homepage: https://bioconductor.org/packages/release/bioc/html/transmogR.html
 ---
 
-
 # bioconductor-transmogr
 
 name: bioconductor-transmogr

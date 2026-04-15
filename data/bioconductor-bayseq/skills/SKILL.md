@@ -4,7 +4,6 @@ description: This tool performs empirical Bayesian analysis to identify patterns
 homepage: https://bioconductor.org/packages/release/bioc/html/baySeq.html
 ---
 
-
 # bioconductor-bayseq
 
 name: bioconductor-bayseq

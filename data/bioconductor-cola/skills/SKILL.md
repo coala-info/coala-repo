@@ -4,7 +4,6 @@ description: This tool performs consensus partitioning to identify stable subgro
 homepage: https://bioconductor.org/packages/release/bioc/html/cola.html
 ---
 
-
 # bioconductor-cola
 
 name: bioconductor-cola

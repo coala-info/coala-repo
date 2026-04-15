@@ -4,7 +4,6 @@ description: This package provides mapping and environment data for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2cdf.html
 ---
 
-
 # bioconductor-hgu95av2cdf
 
 name: bioconductor-hgu95av2cdf

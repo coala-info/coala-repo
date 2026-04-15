@@ -4,7 +4,6 @@ description: This Bioconductor package provides genomic location mapping for pro
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuExExonProbesetLocationHg18.html
 ---
 
-
 # bioconductor-huexexonprobesetlocationhg18
 
 ## Overview

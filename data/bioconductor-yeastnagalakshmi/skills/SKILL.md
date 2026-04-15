@@ -4,7 +4,6 @@ description: This package provides yeast RNA-seq data and transcript annotations
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastNagalakshmi.html
 ---
 
-
 # bioconductor-yeastnagalakshmi
 
 name: bioconductor-yeastnagalakshmi

@@ -4,7 +4,6 @@ description: RaMWAS provides a comprehensive toolset for large-scale methylome-w
 homepage: https://bioconductor.org/packages/release/bioc/html/ramwas.html
 ---
 
-
 # bioconductor-ramwas
 
 name: bioconductor-ramwas

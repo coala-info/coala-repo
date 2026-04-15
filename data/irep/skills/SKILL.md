@@ -2,8 +2,9 @@
 name: irep
 description: The irep tool calculates bacterial replication rates by measuring genome copy number variation from metagenomic data. Use when user asks to measure microbial replication rates, analyze draft or complete genomes for growth activity, or calculate peak-to-trough ratios and GC skew.
 homepage: https://github.com/christophertbrown/iRep
+metadata:
+  docker_image: "quay.io/biocontainers/irep:1.1.7--pyh24bf2e0_1"
 ---
-
 
 # irep
 

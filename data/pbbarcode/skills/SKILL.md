@@ -2,8 +2,9 @@
 name: pbbarcode
 description: pbbarcode manages and demultiplexes barcode information within PacBio sequencing datasets. Use when user asks to label ZMWs, annotate alignments with barcode scores, emit demultiplexed FASTQ or FASTA files, or generate barcode-specific consensus sequences.
 homepage: https://github.com/mlbendall/pbbarcode
+metadata:
+  docker_image: "biocontainers/pbbarcode:v0.8.0-5-deb_cv1"
 ---
-
 
 # pbbarcode
 

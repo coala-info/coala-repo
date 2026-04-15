@@ -1,8 +1,10 @@
 ---
 name: md5sum
 description: md5sum calculates and verifies MD5 message digests to ensure file integrity. Use when user asks to generate a checksum, verify files against a manifest, or recursively hash files within a directory tree.
+homepage: https://www.gnu.org/software/coreutils/
+metadata:
+  docker_image: "ubuntu:latest"
 ---
-
 
 # md5sum
 

@@ -4,7 +4,6 @@ description: This package provides probe sequence data and physical coordinates 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133plus2probe.html
 ---
 
-
 # bioconductor-hgu133plus2probe
 
 name: bioconductor-hgu133plus2probe

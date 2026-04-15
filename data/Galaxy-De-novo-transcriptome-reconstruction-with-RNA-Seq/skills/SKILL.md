@@ -1,10 +1,12 @@
 ---
 name: de-novo-transcriptome-reconstruction-with-rna-seq
-description: "This transcriptomics workflow performs de novo transcriptome reconstruction and differential expression analysis using paired-end RNA-Seq reads and a reference GTF with tools including HISAT2, StringTie, and DESeq2. Use this skill when you need to discover novel transcripts and quantify differential gene expression across multiple biological replicates in organisms with incomplete or evolving genome annotations."
-homepage: https://workflowhub.eu/workflows/1685
+description: This transcriptomics workflow performs de novo transcriptome reconstruction and differential expression analysis using paired-end RNA-Seq reads and a reference GTF with tools including HISAT2, StringTie, and DESeq2. Use this skill when you need to discover novel transcripts and quantify differential gene expression across multiple biological replicates in organisms with incomplete or evolving genome annotations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# De novo transcriptome reconstruction with RNA-Seq
+# de-novo-transcriptome-reconstruction-with-rna-seq
 
 ## Overview
 

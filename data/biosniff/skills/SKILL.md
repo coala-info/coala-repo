@@ -1,9 +1,10 @@
 ---
 name: biosniff
-description: "biosniff detects the underlying format and compression type of biological files by inspecting their content. Use when user asks to identify a file format, detect compression types, or distinguish between different versions of genomic annotation files."
+description: biosniff detects the underlying format and compression type of biological files by inspecting their content. Use when user asks to identify a file format, detect compression types, or distinguish between different versions of genomic annotation files.
 homepage: http://github.com/cokelaer/biosniff/
+metadata:
+  docker_image: "quay.io/biocontainers/biosniff:1.0.0--pyh7cba7a3_0"
 ---
-
 
 # biosniff
 

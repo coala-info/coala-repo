@@ -2,8 +2,9 @@
 name: pgrc
 description: PgRC is a high-performance tool designed to compress DNA sequence data from FASTQ files by building a pseudogenome. Use when user asks to compress single-end or paired-end reads, preserve read order during compression, or decompress .pgrc archives.
 homepage: https://github.com/kowallus/PgRC
+metadata:
+  docker_image: "quay.io/biocontainers/pgrc:2.0.2--h9948957_1"
 ---
-
 
 # pgrc
 

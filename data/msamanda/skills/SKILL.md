@@ -2,8 +2,9 @@
 name: msamanda
 description: MS Amanda is a high-performance scoring system that identifies peptides from tandem mass spectrometry data by searching against protein databases. Use when user asks to identify peptides, search mass spectrometry spectra against a database, or run MS Amanda via the command line.
 homepage: https://github.com/hgb-bin-proteomics/MSAmanda
+metadata:
+  docker_image: "biocontainers/msamanda:v1.0.0.5242_cv4"
 ---
-
 
 # msamanda
 

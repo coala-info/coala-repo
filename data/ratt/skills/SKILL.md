@@ -1,9 +1,10 @@
 ---
 name: ratt
-description: "Transfers genomic annotations from a reference genome to an unannotated query genome. Use when user asks to transfer annotations between genomes."
+description: Transfers genomic annotations from a reference genome to an unannotated query genome. Use when user asks to transfer annotations between genomes.
 homepage: http://ratt.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/ratt:1.1.0--hdfd78af_0"
 ---
-
 
 # ratt
 

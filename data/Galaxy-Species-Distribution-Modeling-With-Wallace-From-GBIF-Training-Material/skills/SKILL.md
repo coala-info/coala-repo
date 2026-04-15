@@ -1,10 +1,12 @@
 ---
 name: species-distribution-modeling-with-wallace-from-gbif-trainin
-description: "This ecology workflow retrieves species occurrence data from GBIF and performs species distribution modeling using the Wallace interactive tool and integrated text processing utilities. Use this skill when you need to predict geographic distributions of species or assess habitat suitability based on environmental variables and historical occurrence records."
-homepage: https://workflowhub.eu/workflows/1687
+description: This ecology workflow retrieves species occurrence data from GBIF and performs species distribution modeling using the Wallace interactive tool and integrated text processing utilities. Use this skill when you need to predict geographic distributions of species or assess habitat suitability based on environmental variables and historical occurrence records.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Species Distribution Modeling With Wallace From GBIF - Training Material
+# species-distribution-modeling-with-wallace-from-gbif-trainin
 
 ## Overview
 

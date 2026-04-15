@@ -2,8 +2,9 @@
 name: itsx
 description: ITSx identifies and extracts ITS1 and ITS2 subregions from eukaryotic ribosomal sequences while trimming conserved rRNA genes. Use when user asks to extract ITS regions, process fungal metabarcoding data, or isolate ribosomal subregions from FASTA files.
 homepage: http://microbiology.se/software/itsx/
+metadata:
+  docker_image: "quay.io/biocontainers/itsx:1.1.3--hdfd78af_1"
 ---
-
 
 # itsx
 

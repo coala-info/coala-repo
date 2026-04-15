@@ -2,8 +2,9 @@
 name: pygenetic_code
 description: pygenetic_code translates nucleotide sequences into proteins using various NCBI genetic codes through a high-performance C-based backend. Use when user asks to translate DNA sequences, perform six-frame translations, or look up amino acid codes for specific codons using alternative translation tables.
 homepage: https://github.com/linsalrob/genetic_codes
+metadata:
+  docker_image: "quay.io/biocontainers/pygenetic_code:0.20.0--py312he4a0461_0"
 ---
-
 
 # pygenetic_code
 

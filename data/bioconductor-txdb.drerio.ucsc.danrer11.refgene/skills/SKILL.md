@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb annotation object for the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Drerio.UCSC.danRer11.refGene.html
 ---
 
-
 # bioconductor-txdb.drerio.ucsc.danrer11.refgene
 
 name: bioconductor-txdb.drerio.ucsc.danrer11.refgene

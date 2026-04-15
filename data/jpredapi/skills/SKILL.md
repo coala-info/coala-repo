@@ -2,6 +2,8 @@
 name: jpredapi
 description: The jpredapi tool provides a programmatic interface for submitting protein sequences to the JPred4 REST API for secondary structure prediction. Use when user asks to submit protein sequences or alignments for prediction, monitor job status, or download prediction results.
 homepage: https://github.com/MoseleyBioinformaticsLab/jpredapi
+metadata:
+  docker_image: "quay.io/biocontainers/jpredapi:1.5.6--py_0"
 ---
 
 # jpredapi

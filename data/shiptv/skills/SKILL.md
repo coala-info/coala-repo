@@ -1,9 +1,10 @@
 ---
 name: shiptv
-description: "shiptv creates interactive HTML visualizations of phylogenetic trees with integrated metadata. Use when user asks to convert Newick files to interactive web-based visualizations, map metadata from TSV or GenBank files onto tree leaves, collapse low support branches, or prune trees for exploration."
+description: shiptv creates interactive HTML visualizations of phylogenetic trees with integrated metadata. Use when user asks to convert Newick files to interactive web-based visualizations, map metadata from TSV or GenBank files onto tree leaves, collapse low support branches, or prune trees for exploration.
 homepage: https://github.com/peterk87/shiptv
+metadata:
+  docker_image: "quay.io/biocontainers/shiptv:0.4.1--pyh5e36f6f_0"
 ---
-
 
 # shiptv
 

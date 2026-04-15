@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-1-enumerate-ligands-for-docking
-description: "This cheminformatics workflow processes input ligand datasets for COVID-19 research by enumerating protonation states and converting chemical formats using tools like Enumerate Charges and OpenBabel. Use this skill when you need to prepare a diverse library of small molecule candidates for virtual screening or molecular docking by generating all relevant ionization states and standardizing chemical structures."
-homepage: https://workflowhub.eu/workflows/12
+description: This cheminformatics workflow processes input ligand datasets for COVID-19 research by enumerating protonation states and converting chemical formats using tools like Enumerate Charges and OpenBabel. Use this skill when you need to prepare a diverse library of small molecule candidates for virtual screening or molecular docking by generating all relevant ionization states and standardizing chemical structures.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [1] Enumerate ligands for docking
+# covid-19-cheminformatics-1-enumerate-ligands-for-docking
 
 ## Overview
 

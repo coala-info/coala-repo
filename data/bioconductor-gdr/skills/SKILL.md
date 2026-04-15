@@ -4,7 +4,6 @@ description: This tool processes drug response screening data to generate normal
 homepage: https://bioconductor.org/packages/release/bioc/html/gDR.html
 ---
 
-
 # bioconductor-gdr
 
 name: bioconductor-gdr

@@ -4,7 +4,6 @@ description: Bioconductor-plsdabatch performs multivariate batch-effect correcti
 homepage: https://bioconductor.org/packages/release/bioc/html/PLSDAbatch.html
 ---
 
-
 # bioconductor-plsdabatch
 
 name: bioconductor-plsdabatch

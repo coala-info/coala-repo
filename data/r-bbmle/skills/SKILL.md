@@ -4,7 +4,6 @@ description: The r-bbmle package provides a flexible framework for performing ge
 homepage: https://cloud.r-project.org/web/packages/bbmle/index.html
 ---
 
-
 # r-bbmle
 
 ## Overview

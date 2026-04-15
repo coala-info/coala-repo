@@ -2,6 +2,8 @@
 name: mity
 description: mity is a bioinformatics pipeline designed to call, normalize, and annotate mitochondrial DNA variants with high sensitivity for low-level heteroplasmy. Use when user asks to call mitochondrial variants from BAM or CRAM files, generate clinical reports in Excel format, or merge mitochondrial calls with nuclear variant files.
 homepage: https://github.com/KCCG/mity
+metadata:
+  docker_image: "quay.io/biocontainers/mity:2.0.1--pyhdfd78af_0"
 ---
 
 # mity

@@ -2,8 +2,9 @@
 name: perl-bio-coordinate
 description: This tool manages and transforms coordinates between different biological scales such as genomic DNA, mRNA, and protein sequences. Use when user asks to map coordinates between different biological systems, handle DNA to protein translation mapping, or manage complex coordinate transformations across multiple exons.
 homepage: https://metacpan.org/release/Bio-Coordinate
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-coordinate:1.007001--pl526_0"
 ---
-
 
 # perl-bio-coordinate
 

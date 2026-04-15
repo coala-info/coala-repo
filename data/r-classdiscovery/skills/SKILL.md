@@ -4,7 +4,6 @@ description: The r-classdiscovery tool provides R-based methods for clustering, 
 homepage: https://cran.r-project.org/web/packages/classdiscovery/index.html
 ---
 
-
 # r-classdiscovery
 
 name: r-classdiscovery

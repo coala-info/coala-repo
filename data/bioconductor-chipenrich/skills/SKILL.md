@@ -4,7 +4,6 @@ description: The chipenrich package performs gene set enrichment analysis on gen
 homepage: https://bioconductor.org/packages/release/bioc/html/chipenrich.html
 ---
 
-
 # bioconductor-chipenrich
 
 ## Overview

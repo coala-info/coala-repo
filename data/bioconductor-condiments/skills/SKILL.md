@@ -4,7 +4,6 @@ description: Bioconductor-condiments analyzes differential trajectory patterns i
 homepage: https://bioconductor.org/packages/release/bioc/html/condiments.html
 ---
 
-
 # bioconductor-condiments
 
 name: bioconductor-condiments

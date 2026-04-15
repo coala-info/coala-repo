@@ -1,9 +1,12 @@
 ---
 name: cnv_pipeline
-description: "This Common Workflow Language pipeline processes raw sequencing reads using BWA, Samtools, and Manta to perform alignment and structural variant calling. Use this skill when you need to identify copy number variations and large-scale genomic rearrangements to characterize the mutational landscape of cancer samples."
-homepage: https://workflowhub.eu/workflows/278
+description: This Common Workflow Language pipeline processes raw sequencing reads using BWA, Samtools, and Manta to perform alignment and structural variant calling. Use this skill when you need to identify copy number variations and large-scale genomic rearrangements to characterize the mutational landscape of cancer samples.
+homepage: https://inb-elixir.es/transbionet
+metadata:
+  docker_image: "N/A"
 ---
-# CNV_pipeline
+
+# cnv_pipeline
 
 ## Overview
 

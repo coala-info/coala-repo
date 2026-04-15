@@ -4,7 +4,6 @@ description: This tool manages Illumina basecalling and demultiplexing data by v
 homepage: https://bioconductor.org/packages/release/bioc/html/basecallQC.html
 ---
 
-
 # bioconductor-basecallqc
 
 name: bioconductor-basecallqc

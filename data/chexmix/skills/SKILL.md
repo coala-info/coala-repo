@@ -2,8 +2,9 @@
 name: chexmix
 description: ChExMix identifies genomic binding locations and categorizes them into distinct subtypes using a mixture modeling framework for ChIP-exo data. Use when user asks to identify protein-DNA binding events, discover crosslinking subtypes, or perform motif-based analysis on ChIP-exo experiments.
 homepage: http://mahonylab.org/software/chexmix/
+metadata:
+  docker_image: "quay.io/biocontainers/chexmix:0.52--hdfd78af_0"
 ---
-
 
 # chexmix
 

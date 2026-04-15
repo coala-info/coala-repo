@@ -4,7 +4,6 @@ description: This package implements the Random Walk with Restart algorithm on m
 homepage: https://bioconductor.org/packages/3.8/bioc/html/RandomWalkRestartMH.html
 ---
 
-
 # bioconductor-randomwalkrestartmh
 
 ## Overview

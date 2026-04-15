@@ -4,7 +4,6 @@ description: This tool identifies and visualizes statistically significant diffe
 homepage: https://bioconductor.org/packages/release/bioc/html/dagLogo.html
 ---
 
-
 # bioconductor-daglogo
 
 name: bioconductor-daglogo

@@ -4,7 +4,6 @@ description: The r-kriging package provides an optimized implementation of the o
 homepage: https://cloud.r-project.org/web/packages/kriging/index.html
 ---
 
-
 # r-kriging
 
 ## Overview

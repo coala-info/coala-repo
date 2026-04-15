@@ -2,8 +2,9 @@
 name: phytest
 description: phytest is a testing framework designed to automate quality control and validation for phylogenetic trees and sequence alignments. Use when user asks to validate sequence alignments, check phylogenetic tree topology, or generate quality control reports for biological data.
 homepage: https://github.com/phytest-devs/phytest
+metadata:
+  docker_image: "quay.io/biocontainers/phytest:1.4.1--pyhdfd78af_0"
 ---
-
 
 # phytest
 

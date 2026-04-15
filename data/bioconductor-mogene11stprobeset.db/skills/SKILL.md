@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Gene
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene11stprobeset.db.html
 ---
 
-
 # bioconductor-mogene11stprobeset.db
 
 name: bioconductor-mogene11stprobeset.db

@@ -4,7 +4,6 @@ description: This package provides genomic annotations and coordinate data for I
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.InfiniumMethylation.hg19.html
 ---
 
-
 # bioconductor-fdb.infiniummethylation.hg19
 
 name: bioconductor-fdb.infiniummethylation.hg19

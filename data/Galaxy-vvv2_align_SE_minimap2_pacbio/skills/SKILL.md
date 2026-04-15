@@ -1,10 +1,12 @@
 ---
 name: vvv2_align_se_minimap2_pacbio
-description: "This workflow processes PacBio single-end viral sequencing data using minimap2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries. Use this skill when you need to characterize viral populations by identifying significant variants, generating consensus sequences, and visualizing the relationship between mutations, gene annotations, and sequencing depth."
-homepage: https://workflowhub.eu/workflows/1741
+description: This workflow processes PacBio single-end viral sequencing data using minimap2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries. Use this skill when you need to characterize viral populations by identifying significant variants, generating consensus sequences, and visualizing the relationship between mutations, gene annotations, and sequencing depth.
+homepage: https://www.anses.fr
+metadata:
+  docker_image: "N/A"
 ---
 
-# vvv2_align_SE_minimap2_pacbio
+# vvv2_align_se_minimap2_pacbio
 
 ## Overview
 

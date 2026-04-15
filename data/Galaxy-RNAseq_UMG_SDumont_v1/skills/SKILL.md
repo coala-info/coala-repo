@@ -1,10 +1,12 @@
 ---
 name: rnaseq_umg_sdumont_v1
-description: "This RNA-seq workflow processes wild-type and knockout Fastq files using Bowtie2 for alignment, htseq-count for gene quantification, and DESeq2 for differential expression analysis against a GTF reference. Use this skill when you need to identify significant changes in gene expression levels between experimental conditions and generate normalized count plots or statistical summaries."
+description: This RNA-seq workflow processes wild-type and knockout Fastq files using Bowtie2 for alignment, htseq-count for gene quantification, and DESeq2 for differential expression analysis against a GTF reference. Use this skill when you need to identify significant changes in gene expression levels between experimental conditions and generate normalized count plots or statistical summaries.
 homepage: https://workflowhub.eu/workflows/412
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNAseq_UMG_SDumont_v1
+# rnaseq_umg_sdumont_v1
 
 ## Overview
 

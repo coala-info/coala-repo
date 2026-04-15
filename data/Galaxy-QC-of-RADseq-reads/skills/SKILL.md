@@ -1,10 +1,12 @@
 ---
 name: qc-of-radseq-reads
-description: "This RAD-seq workflow processes demultiplexed FASTQ reads and adapter sequences using FastQC, Cutadapt, fastp, and MultiQC to perform comprehensive quality control and trimming. Use this skill when you need to assess raw read quality, remove sequencing adapters, and filter low-quality sequences from RAD-seq datasets before proceeding with downstream population genomic analysis."
-homepage: https://workflowhub.eu/workflows/346
+description: This RAD-seq workflow processes demultiplexed FASTQ reads and adapter sequences using FastQC, Cutadapt, fastp, and MultiQC to perform comprehensive quality control and trimming. Use this skill when you need to assess raw read quality, remove sequencing adapters, and filter low-quality sequences from RAD-seq datasets before proceeding with downstream population genomic analysis.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# QC of RADseq reads
+# qc-of-radseq-reads
 
 ## Overview
 

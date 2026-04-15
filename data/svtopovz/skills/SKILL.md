@@ -2,8 +2,9 @@
 name: svtopovz
 description: svtopovz visualizes complex structural variants from sequencing data. Use when user asks to visualize structural variants, plot connected breakends, or analyze structural rearrangements in PacBio HiFi data.
 homepage: https://github.com/PacificBiosciences/HiFi-SVTopo
+metadata:
+  docker_image: "quay.io/biocontainers/svtopovz:0.3.0--pyhdfd78af_0"
 ---
-
 
 # svtopovz
 

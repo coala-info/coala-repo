@@ -2,6 +2,8 @@
 name: ntsm
 description: ntsm is a quality control toolset that determines if genomic samples originate from the same individual by comparing k-mer frequencies at known variant sites. Use when user asks to identify sample swaps, generate k-mer fingerprints from reference genomes, count k-mers at SNP sites, or evaluate the similarity and relatedness between sequencing samples.
 homepage: https://github.com/JustinChu/ntsm
+metadata:
+  docker_image: "quay.io/biocontainers/ntsm:1.2.1--h077b44d_1"
 ---
 
 # ntsm

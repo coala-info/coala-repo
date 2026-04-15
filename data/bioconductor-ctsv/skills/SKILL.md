@@ -4,7 +4,6 @@ description: This tool identifies cell-type-specific spatially variable genes in
 homepage: https://bioconductor.org/packages/release/bioc/html/CTSV.html
 ---
 
-
 # bioconductor-ctsv
 
 name: bioconductor-ctsv

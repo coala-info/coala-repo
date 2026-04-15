@@ -4,7 +4,6 @@ description: The zinbwave package implements a general and flexible model for di
 homepage: https://bioconductor.org/packages/release/bioc/html/zinbwave.html
 ---
 
-
 # bioconductor-zinbwave
 
 ## Overview

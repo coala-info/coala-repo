@@ -2,6 +2,8 @@
 name: syngap
 description: SynGAP refines gene structure annotations and identifies homologous gene pairs by leveraging evolutionary synteny between species. Use when user asks to polish genome annotations, correct gene models using synteny, identify high-confidence ortholog pairs, or perform cross-species transcriptomic analysis.
 homepage: https://github.com/yanyew/SynGAP
+metadata:
+  docker_image: "quay.io/biocontainers/syngap:1.2.5--py312hdfd78af_0"
 ---
 
 # syngap

@@ -1,7 +1,9 @@
 ---
 name: raxml
-description: "RAxML is a high-performance tool for phylogenetic tree inference using Maximum Likelihood. Use when user asks to perform phylogenetic analysis, infer Maximum Likelihood trees, conduct rapid bootstrapping, or run partitioned evolutionary analyses on large datasets."
+description: RAxML is a high-performance tool for phylogenetic tree inference using Maximum Likelihood. Use when user asks to perform phylogenetic analysis, infer Maximum Likelihood trees, conduct rapid bootstrapping, or run partitioned evolutionary analyses on large datasets.
 homepage: http://sco.h-its.org/exelixis/web/software/raxml/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/raxml:8.2.13--h7b50bb2_3"
 ---
 
 # raxml

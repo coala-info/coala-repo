@@ -2,8 +2,9 @@
 name: ped_parser
 description: ped_parser parses, validates, and converts pedigree files into structured formats like JSON or Madeline2. Use when user asks to validate pedigree consistency, convert PED files to JSON or Madeline2 format, or identify family relationships like trios.
 homepage: https://github.com/moonso/ped_parser
+metadata:
+  docker_image: "quay.io/biocontainers/ped_parser:1.6.6--py27_1"
 ---
-
 
 # ped_parser
 

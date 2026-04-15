@@ -2,8 +2,9 @@
 name: primer3
 description: Primer3 selects optimal oligonucleotide primers and hybridization probes for PCR based on specific thermodynamic and sequence criteria. Use when user asks to design PCR primers, pick internal hybridization probes, calculate melting temperatures, or check for primer-dimers and mispriming.
 homepage: https://github.com/primer3-org/primer3
+metadata:
+  docker_image: "quay.io/biocontainers/primer3:2.6.1--pl5262h1b792b2_0"
 ---
-
 
 # primer3
 

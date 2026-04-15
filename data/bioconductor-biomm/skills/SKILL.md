@@ -4,7 +4,6 @@ description: Bioconductor-biomm performs biologically-informed multi-stage machi
 homepage: https://bioconductor.org/packages/3.9/bioc/html/BioMM.html
 ---
 
-
 # bioconductor-biomm
 
 name: bioconductor-biomm

@@ -4,7 +4,6 @@ description: The simona package provides a comprehensive framework for managing,
 homepage: https://bioconductor.org/packages/release/bioc/html/simona.html
 ---
 
-
 # bioconductor-simona
 
 ## Overview

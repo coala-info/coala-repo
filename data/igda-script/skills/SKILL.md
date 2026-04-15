@@ -1,7 +1,9 @@
 ---
 name: igda-script
-description: "igda-script provides a suite of utilities for genomic data post-processing, including long-read alignment, VCF manipulation, and assembly refinement. Use when user asks to align genomes, add genotype quality to VCF files, fill gaps in assembled sequences, or convert haploid assemblies to diploid formats."
+description: igda-script provides a suite of utilities for genomic data post-processing, including long-read alignment, VCF manipulation, and assembly refinement. Use when user asks to align genomes, add genotype quality to VCF files, fill gaps in assembled sequences, or convert haploid assemblies to diploid formats.
 homepage: https://github.com/zhixingfeng/shell
+metadata:
+  docker_image: "quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0"
 ---
 
 # igda-script

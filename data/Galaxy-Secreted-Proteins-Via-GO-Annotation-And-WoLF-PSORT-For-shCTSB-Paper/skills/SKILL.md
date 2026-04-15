@@ -1,10 +1,12 @@
 ---
 name: secreted-proteins-via-go-annotation-and-wolf-psort-for-shcts
-description: "This proteomics workflow identifies secreted proteins from a list of UniProt accessions by integrating Gene Ontology annotations and WoLF PSORT subcellular localization predictions. Use this skill when you need to characterize the secretome of a biological sample to investigate extracellular signaling mechanisms or identify potential protein biomarkers."
-homepage: https://workflowhub.eu/workflows/1417
+description: This proteomics workflow identifies secreted proteins from a list of UniProt accessions by integrating Gene Ontology annotations and WoLF PSORT subcellular localization predictions. Use this skill when you need to characterize the secretome of a biological sample to investigate extracellular signaling mechanisms or identify potential protein biomarkers.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Secreted Proteins Via GO Annotation And WoLF PSORT For shCTSB Paper
+# secreted-proteins-via-go-annotation-and-wolf-psort-for-shcts
 
 ## Overview
 

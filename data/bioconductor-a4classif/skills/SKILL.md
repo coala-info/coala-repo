@@ -4,7 +4,6 @@ description: The a4Classif package provides a streamlined interface for classify
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Classif.html
 ---
 
-
 # bioconductor-a4classif
 
 ## Overview

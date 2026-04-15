@@ -4,7 +4,6 @@ description: seqArchR performs unsupervised discovery of de novo sequence archit
 homepage: https://bioconductor.org/packages/release/bioc/html/seqArchR.html
 ---
 
-
 # bioconductor-seqarchr
 
 name: bioconductor-seqarchr

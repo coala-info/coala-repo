@@ -4,7 +4,6 @@ description: RETROFIT performs reference-free deconvolution of spatial transcrip
 homepage: https://bioconductor.org/packages/release/bioc/html/retrofit.html
 ---
 
-
 # bioconductor-retrofit
 
 name: bioconductor-retrofit

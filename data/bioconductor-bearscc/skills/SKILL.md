@@ -4,7 +4,6 @@ description: bioconductor-bearscc evaluates the robustness of single-cell RNA-se
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BEARscc.html
 ---
 
-
 # bioconductor-bearscc
 
 name: bioconductor-bearscc

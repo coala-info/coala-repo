@@ -1,10 +1,12 @@
 ---
 name: atac-seq-gtm
-description: "This Galaxy workflow processes paired-end ATAC-seq data through adapter trimming with Cutadapt, alignment via Bowtie2, peak calling with MACS2, and visualization using deepTools and pyGenomeTracks. Use this skill when you need to identify open chromatin regions, analyze transcription factor binding sites like CTCF, and generate heatmaps or genomic track plots to assess epigenetic accessibility across the genome."
-homepage: https://workflowhub.eu/workflows/1568
+description: This Galaxy workflow processes paired-end ATAC-seq data through adapter trimming with Cutadapt, alignment via Bowtie2, peak calling with MACS2, and visualization using deepTools and pyGenomeTracks. Use this skill when you need to identify open chromatin regions, analyze transcription factor binding sites like CTCF, and generate heatmaps or genomic track plots to assess epigenetic accessibility across the genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# ATAC-seq GTM
+# atac-seq-gtm
 
 ## Overview
 

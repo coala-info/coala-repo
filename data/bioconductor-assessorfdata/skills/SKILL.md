@@ -4,7 +4,6 @@ description: This package provides mapping and results objects for the AssessORF
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AssessORFData.html
 ---
 
-
 # bioconductor-assessorfdata
 
 name: bioconductor-assessorfdata

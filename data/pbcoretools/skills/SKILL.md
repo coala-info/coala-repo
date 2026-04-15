@@ -2,6 +2,8 @@
 name: pbcoretools
 description: pbcoretools is a collection of Python-based command-line utilities for managing, validating, and manipulating PacBio-specific genomic data formats. Use when user asks to create or split Dataset XML files, subset BAM files with bamsieve, validate file integrity using pbvalidate, or convert legacy BAX.H5 files to BAM format.
 homepage: https://github.com/mpkocher/pbcoretools
+metadata:
+  docker_image: "quay.io/biocontainers/pbcoretools:0.8.1--py_1"
 ---
 
 # pbcoretools

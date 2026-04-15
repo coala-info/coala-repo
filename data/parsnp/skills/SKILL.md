@@ -1,9 +1,10 @@
 ---
 name: parsnp
-description: "Parsnp performs efficient microbial core genome alignment, SNP calling, and phylogenetic reconstruction for large sets of genomes. Use when user asks to align microbial genomes, identify core SNPs, or generate a phylogenetic tree from draft and finished assemblies."
+description: Parsnp performs efficient microbial core genome alignment, SNP calling, and phylogenetic reconstruction for large sets of genomes. Use when user asks to align microbial genomes, identify core SNPs, or generate a phylogenetic tree from draft and finished assemblies.
 homepage: https://github.com/marbl/parsnp
+metadata:
+  docker_image: "quay.io/biocontainers/parsnp:2.1.5--h077b44d_0"
 ---
-
 
 # parsnp
 

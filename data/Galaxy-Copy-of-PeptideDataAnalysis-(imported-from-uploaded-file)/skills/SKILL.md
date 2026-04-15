@@ -1,10 +1,12 @@
 ---
 name: copy-of-peptidedataanalysis-imported-from-uploaded-file
-description: "This proteomics workflow processes peptide library data using PDAUG tools to calculate sequence-based descriptors, perform comparative analysis, and generate statistical visualizations. Use this skill when you need to characterize the physicochemical properties of peptide sequences and identify distinguishing features between different functional classes of peptides for therapeutic or structural research."
-homepage: https://workflowhub.eu/workflows/1389
+description: This proteomics workflow processes peptide library data using PDAUG tools to calculate sequence-based descriptors, perform comparative analysis, and generate statistical visualizations. Use this skill when you need to characterize the physicochemical properties of peptide sequences and identify distinguishing features between different functional classes of peptides for therapeutic or structural research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Copy of PeptideDataAnalysis (imported from uploaded file)
+# copy-of-peptidedataanalysis-imported-from-uploaded-file
 
 ## Overview
 

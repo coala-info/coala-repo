@@ -2,8 +2,9 @@
 name: mygene
 description: The mygene tool provides a Python interface for accessing gene-centric data and functional annotations from the MyGene.Info REST services. Use when user asks to retrieve gene information, perform batch ID mapping, search for genes using Lucene syntax, or normalize gene identifiers across different databases.
 homepage: https://github.com/suLab/mygene.py
+metadata:
+  docker_image: "quay.io/biocontainers/mygene:3.2.2--pyh5e36f6f_0"
 ---
-
 
 # mygene
 

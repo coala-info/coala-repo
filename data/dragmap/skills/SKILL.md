@@ -2,8 +2,9 @@
 name: dragmap
 description: DRAGMAP is an open-source genomic mapper and aligner that implements the DRAGEN algorithm for high-efficiency read mapping. Use when user asks to index reference genomes, build hash tables, or align sequencing reads to a reference.
 homepage: https://github.com/Illumina/DRAGMAP
+metadata:
+  docker_image: "quay.io/biocontainers/dragmap:1.3.0--h5ca1c30_7"
 ---
-
 
 # dragmap
 

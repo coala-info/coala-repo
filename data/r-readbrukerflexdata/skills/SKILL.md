@@ -4,7 +4,6 @@ description: This tool reads raw mass spectrometry data from Bruker Daltonics *f
 homepage: https://cloud.r-project.org/web/packages/readBrukerFlexData/index.html
 ---
 
-
 # r-readbrukerflexdata
 
 name: r-readbrukerflexdata

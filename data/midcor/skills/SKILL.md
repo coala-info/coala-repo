@@ -2,8 +2,9 @@
 name: midcor
 description: Midcore manages a limited lives mechanic and customizable difficulty settings for Minecraft players. Use when user asks to set starting life counts, link maximum health to remaining lives, configure totem failure chances, or apply difficulty presets like OneHearted and UltraSurvival.
 homepage: https://github.com/Sainne/sainne-midcore
+metadata:
+  docker_image: "biocontainers/midcor:phenomenal-v1.0_cv1.0.55"
 ---
-
 
 # midcor
 

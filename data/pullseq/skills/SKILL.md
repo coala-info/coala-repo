@@ -1,9 +1,10 @@
 ---
 name: pullseq
-description: "pullseq extracts and filters sequences from FASTA or FASTQ files based on identifiers, regular expressions, or length constraints. Use when user asks to extract specific reads by ID, filter sequences by length or regex, exclude certain sequences, or identify differences between two sequence files."
+description: pullseq extracts and filters sequences from FASTA or FASTQ files based on identifiers, regular expressions, or length constraints. Use when user asks to extract specific reads by ID, filter sequences by length or regex, exclude certain sequences, or identify differences between two sequence files.
 homepage: https://github.com/bcthomas/pullseq
+metadata:
+  docker_image: "quay.io/biocontainers/pullseq:1.0.2--h1104d80_11"
 ---
-
 
 # pullseq
 

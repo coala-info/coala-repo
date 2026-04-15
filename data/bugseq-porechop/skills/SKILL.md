@@ -1,9 +1,10 @@
 ---
 name: bugseq-porechop
-description: "bugseq-porechop identifies and removes adapter sequences from Oxford Nanopore Technologies sequencing data. Use when user asks to trim adapters from ONT reads, demultiplex barcoded samples, or detect and remove chimeric reads."
+description: bugseq-porechop identifies and removes adapter sequences from Oxford Nanopore Technologies sequencing data. Use when user asks to trim adapters from ONT reads, demultiplex barcoded samples, or detect and remove chimeric reads.
 homepage: https://gitlab.com/bugseq/porechop
+metadata:
+  docker_image: "quay.io/biocontainers/bugseq-porechop:0.3.4pre--py36h2ad2d48_2"
 ---
-
 
 # bugseq-porechop
 

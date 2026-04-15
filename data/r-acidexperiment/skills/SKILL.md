@@ -4,7 +4,6 @@ description: This R package provides a toolkit for extending and enhancing the f
 homepage: https://cran.r-project.org/web/packages/acidexperiment/index.html
 ---
 
-
 # r-acidexperiment
 
 name: r-acidexperiment

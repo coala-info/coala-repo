@@ -2,8 +2,9 @@
 name: ucsc-qacagplift
 description: The `ucsc-qacagplift` tool re-coordinates quality scores from scaffold-level QAC files to chromosome-level QAC files using AGP assembly information. Use when user asks to 're-coordinate quality scores', 'lift quality scores to a new assembly', or 'map quality scores from scaffolds to chromosomes'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-qacagplift:482--h0b57e2e_0"
 ---
-
 
 # ucsc-qacagplift
 

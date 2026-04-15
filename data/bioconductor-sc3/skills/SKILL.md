@@ -4,7 +4,6 @@ description: SC3 performs unsupervised clustering of single-cell RNA-seq data us
 homepage: https://bioconductor.org/packages/release/bioc/html/SC3.html
 ---
 
-
 # bioconductor-sc3
 
 ## Overview

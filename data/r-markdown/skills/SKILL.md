@@ -4,7 +4,6 @@ description: This tool renders Markdown strings or files into HTML, LaTeX, and o
 homepage: https://cloud.r-project.org/web/packages/markdown/index.html
 ---
 
-
 # r-markdown
 
 name: r-markdown

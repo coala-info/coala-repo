@@ -4,7 +4,6 @@ description: ImpulseDE identifies differentially expressed genes in time course 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ImpulseDE.html
 ---
 
-
 # bioconductor-impulsede
 
 ## Overview

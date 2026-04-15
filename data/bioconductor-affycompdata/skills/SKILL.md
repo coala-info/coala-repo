@@ -4,7 +4,6 @@ description: This package provides pre-calculated assessment data for benchmarki
 homepage: https://bioconductor.org/packages/release/data/experiment/html/affycompData.html
 ---
 
-
 # bioconductor-affycompdata
 
 name: bioconductor-affycompdata

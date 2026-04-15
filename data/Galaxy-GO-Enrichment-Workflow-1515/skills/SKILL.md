@@ -1,10 +1,12 @@
 ---
 name: go-enrichment-workflow
-description: "This Galaxy workflow performs Gene Ontology enrichment analysis on marker genes using GOEnrichment and gProfiler GOSt tools based on provided annotation and background datasets. Use this skill when you need to identify statistically significant biological pathways or functional categories associated with a specific set of differentially expressed genes."
-homepage: https://workflowhub.eu/workflows/1515
+description: This Galaxy workflow performs Gene Ontology enrichment analysis on marker genes using GOEnrichment and gProfiler GOSt tools based on provided annotation and background datasets. Use this skill when you need to identify statistically significant biological pathways or functional categories associated with a specific set of differentially expressed genes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GO Enrichment Workflow
+# go-enrichment-workflow
 
 ## Overview
 

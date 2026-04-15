@@ -4,7 +4,6 @@ description: This package provides example whole-genome single-cell sequencing d
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AneuFinderData.html
 ---
 
-
 # bioconductor-aneufinderdata
 
 name: bioconductor-aneufinderdata

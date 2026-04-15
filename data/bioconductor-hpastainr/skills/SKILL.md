@@ -1,9 +1,8 @@
 ---
 name: bioconductor-hpastainr
-description: "HPAStainR queries the Human Protein Atlas to identify cell types and tissues associated with a specific list of genes or proteins. Use when user asks to identify cell-type associations for a gene list, calculate protein expression enrichment scores, or download and analyze Human Protein Atlas staining data."
+description: HPAStainR queries the Human Protein Atlas to identify cell types and tissues associated with a specific list of genes or proteins. Use when user asks to identify cell-type associations for a gene list, calculate protein expression enrichment scores, or download and analyze Human Protein Atlas staining data.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/HPAStainR.html
 ---
-
 
 # bioconductor-hpastainr
 

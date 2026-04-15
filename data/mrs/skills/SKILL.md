@@ -2,6 +2,8 @@
 name: mrs
 description: The MRS UAV System provides a ROS-based ecosystem for developing, simulating, and deploying autonomous multi-rotor helicopter software. Use when user asks to install the MRS environment, initialize catkin workspaces with specific build profiles, or manage multi-drone Gazebo simulation sessions.
 homepage: https://github.com/ctu-mrs/mrs_uav_system
+metadata:
+  docker_image: "biocontainers/mrs:v6.0.5dfsg-2b2-deb_cv1"
 ---
 
 # mrs

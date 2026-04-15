@@ -2,6 +2,8 @@
 name: mtsv
 description: MTSv is a metagenomic analysis suite that identifies taxa in shotgun sequencing samples by finding signature reads unique to specific organisms. Use when user asks to prepare reference databases, run a taxonomic classification pipeline, or extract reads associated with specific TaxIDs.
 homepage: https://github.com/FofanovLab/MTSv
+metadata:
+  docker_image: "quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2"
 ---
 
 # mtsv

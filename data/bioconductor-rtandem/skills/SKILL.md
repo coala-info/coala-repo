@@ -4,7 +4,6 @@ description: This package identifies proteins from tandem mass spectrometry data
 homepage: https://bioconductor.org/packages/3.8/bioc/html/rTANDEM.html
 ---
 
-
 # bioconductor-rtandem
 
 name: bioconductor-rtandem

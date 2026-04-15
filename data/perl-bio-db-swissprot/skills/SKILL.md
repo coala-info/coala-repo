@@ -2,8 +2,9 @@
 name: perl-bio-db-swissprot
 description: This tool provides programmatic access to the UniProtKB/SwissProt database using the BioPerl interface to retrieve protein sequences and annotations. Use when user asks to fetch protein sequences by accession number, perform batch retrieval of SwissProt records, or parse UniProt data into BioPerl objects.
 homepage: https://metacpan.org/release/Bio-DB-SwissProt
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-db-swissprot:1.7.4--pl5321hdfd78af_0"
 ---
-
 
 # perl-bio-db-swissprot
 

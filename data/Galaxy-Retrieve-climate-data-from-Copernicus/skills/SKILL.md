@@ -1,10 +1,12 @@
 ---
 name: retrieve-climate-data-from-copernicus
-description: "This Galaxy workflow retrieves climate datasets from the Copernicus Climate Data Store using an API request file as input. Use this skill when you need to programmatically download large-scale meteorological or environmental datasets for climate modeling and impact assessment."
-homepage: https://workflowhub.eu/workflows/1625
+description: This Galaxy workflow retrieves climate datasets from the Copernicus Climate Data Store using an API request file as input. Use this skill when you need to programmatically download large-scale meteorological or environmental datasets for climate modeling and impact assessment.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Retrieve climate data from Copernicus
+# retrieve-climate-data-from-copernicus
 
 ## Overview
 

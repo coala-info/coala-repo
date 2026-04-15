@@ -2,8 +2,9 @@
 name: proda
 description: ProDA aligns protein sequences with non-global homology to identify conserved local blocks, repeats, and shuffled domains. Use when user asks to align proteins with multiple domains, find local homology blocks, or handle sequences with shuffled architectures and repeats.
 homepage: http://proda.stanford.edu/
+metadata:
+  docker_image: "quay.io/biocontainers/proda:1.0--hdbdd923_5"
 ---
-
 
 # proda
 

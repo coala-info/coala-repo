@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for mapping man
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hcg110.db.html
 ---
 
-
 # bioconductor-hcg110.db
 
 name: bioconductor-hcg110.db

@@ -1,7 +1,9 @@
 ---
 name: malva
-description: "MALVA performs mapping-free genotyping of known variants using k-mer frequencies. Use when user asks to genotype known variants, perform mapping-free variant detection, or run the MALVA genotyping pipeline."
+description: MALVA performs mapping-free genotyping of known variants using k-mer frequencies. Use when user asks to genotype known variants, perform mapping-free variant detection, or run the MALVA genotyping pipeline.
 homepage: https://algolab.github.io/malva/
+metadata:
+  docker_image: "quay.io/biocontainers/malva:2.0.0--h7071971_4"
 ---
 
 # malva

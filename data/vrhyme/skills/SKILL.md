@@ -2,8 +2,9 @@
 name: vrhyme
 description: vRhyme reconstructs viral metagenome-assembled genomes (vMAGs) by analyzing sequence features and coverage variance. Use when user asks to reconstruct viral metagenome-assembled genomes, bin viral sequences, or dereplicate scaffolds.
 homepage: https://github.com/AnantharamanLab/vRhyme
+metadata:
+  docker_image: "quay.io/biocontainers/vrhyme:1.1.0--pyhdfd78af_1"
 ---
-
 
 # vrhyme
 

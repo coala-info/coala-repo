@@ -1,9 +1,10 @@
 ---
 name: sashimi-py
-description: "sashimi-py generates sashimi plots, heatmaps, and coverage diagrams to visualize genomic data from various sequencing platforms. Use when user asks to visualize RNA-seq splicing junctions, generate genomic coverage plots, create single-cell RNA-seq track visualizations, or highlight specific genomic regions in publication-quality images."
+description: sashimi-py generates sashimi plots, heatmaps, and coverage diagrams to visualize genomic data from various sequencing platforms. Use when user asks to visualize RNA-seq splicing junctions, generate genomic coverage plots, create single-cell RNA-seq track visualizations, or highlight specific genomic regions in publication-quality images.
 homepage: https://github.com/ygidtu/sashimi.py
+metadata:
+  docker_image: "quay.io/biocontainers/sashimi-py:0.1.5--pyh7cba7a3_0"
 ---
-
 
 # sashimi-py
 

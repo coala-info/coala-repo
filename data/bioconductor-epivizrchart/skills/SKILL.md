@@ -4,7 +4,6 @@ description: This package creates interactive, linked genomic visualizations and
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrChart.html
 ---
 
-
 # bioconductor-epivizrchart
 
 ## Overview

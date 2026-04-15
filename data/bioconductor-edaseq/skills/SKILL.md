@@ -4,7 +4,6 @@ description: The EDASeq package provides a framework for exploratory data analys
 homepage: https://bioconductor.org/packages/release/bioc/html/EDASeq.html
 ---
 
-
 # bioconductor-edaseq
 
 ## Overview

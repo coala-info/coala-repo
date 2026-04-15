@@ -4,6 +4,8 @@ description: This pipeline processes satellite imagery from Landsat or Sentinel-
 homepage: https://github.com/nf-core/rangeland
 ---
 
+# rangeland
+
 ## Overview
 nf-core/rangeland is a geographical analysis pipeline designed for processing remotely sensed imagery to monitor land-cover changes. It solves the problem of scaling complex Earth Observation workflows by integrating atmospheric correction, linear spectral unmixing, and time series analysis into a single automated framework.
 

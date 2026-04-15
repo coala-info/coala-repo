@@ -2,6 +2,8 @@
 name: svim
 description: SVIM identifies and classifies structural variants from long-read sequencing data by analyzing signatures of large-scale genomic variations. Use when user asks to call structural variants from aligned BAM files, detect genomic variations from raw PacBio or Nanopore reads, or distinguish between tandem and interspersed duplications.
 homepage: https://github.com/eldariont/svim
+metadata:
+  docker_image: "quay.io/biocontainers/svim:2.0.0--pyhdfd78af_0"
 ---
 
 # svim

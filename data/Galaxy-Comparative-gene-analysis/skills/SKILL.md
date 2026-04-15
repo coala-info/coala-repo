@@ -1,10 +1,12 @@
 ---
 name: comparative-gene-analysis
-description: "This workflow performs comparative gene analysis on exon data, Diamond databases, and ORFipy BED files using Diamond for sequence alignment, MAFFT for multiple sequence alignment, and RapidNJ for phylogenetic reconstruction. Use this skill when you need to identify homologous gene sequences across different annotated genomes and analyze their evolutionary relationships through sequence similarity and distance-based tree building."
-homepage: https://workflowhub.eu/workflows/1518
+description: This workflow performs comparative gene analysis on exon data, Diamond databases, and ORFipy BED files using Diamond for sequence alignment, MAFFT for multiple sequence alignment, and RapidNJ for phylogenetic reconstruction. Use this skill when you need to identify homologous gene sequences across different annotated genomes and analyze their evolutionary relationships through sequence similarity and distance-based tree building.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Comparative gene analysis
+# comparative-gene-analysis
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: barriers
 description: The barriers tool identifies the hierarchical structure of local minima and saddle points within energy landscapes to visualize topology via barrier trees. Use when user asks to analyze RNA folding landscapes, identify local minima, generate rate matrices for kinetics simulations, or visualize landscape connectivity.
 homepage: https://www.tbi.univie.ac.at/RNA/Barriers/
+metadata:
+  docker_image: "quay.io/biocontainers/barriers:1.8.1--pl5321h503566f_4"
 ---
-
 
 # barriers
 

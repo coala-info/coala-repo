@@ -4,7 +4,6 @@ description: The macrophage package provides RNA-seq quantification data from a 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/macrophage.html
 ---
 
-
 # bioconductor-macrophage
 
 ## Overview

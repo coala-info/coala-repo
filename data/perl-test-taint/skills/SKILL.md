@@ -2,8 +2,9 @@
 name: perl-test-taint
 description: perl-test-taint provides a framework for verifying Perl's taint-checking mechanism and data security state within unit tests. Use when user asks to verify if data is tainted, assert that variables have been properly sanitized, or simulate untrusted input in Perl scripts.
 homepage: https://metacpan.org/pod/Test::Taint
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-taint:1.08--pl5321h7b50bb2_1"
 ---
-
 
 # perl-test-taint
 

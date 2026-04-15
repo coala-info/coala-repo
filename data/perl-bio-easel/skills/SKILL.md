@@ -2,8 +2,9 @@
 name: perl-bio-easel
 description: This tool provides a Perl interface to the Easel C library for high-performance biological sequence analysis and multiple sequence alignment manipulation. Use when user asks to manipulate multiple sequence alignments, generate consensus sequences, calculate relative entropy, or handle RNA secondary structure data in Stockholm format.
 homepage: https://github.com/nawrockie/Bio-Easel
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-easel:0.17--pl5321h7b50bb2_0"
 ---
-
 
 # perl-bio-easel
 

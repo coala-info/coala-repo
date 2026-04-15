@@ -2,8 +2,9 @@
 name: ucsc-chainbridge
 description: The `ucsc-chainbridge` tool refines genomic alignments by identifying and closing double-sided gaps to extend alignment blocks. Use when user asks to stitch together alignment fragments, refine genomic alignments, or maximize alignment coverage and continuity.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainbridge:377--h199ee4e_0"
 ---
-
 
 # ucsc-chainbridge
 

@@ -4,7 +4,6 @@ description: This tool retrieves metabolite-pathway mapping tables from WikiPath
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHWikipathwaysDbs.html
 ---
 
-
 # bioconductor-ahwikipathwaysdbs
 
 name: bioconductor-ahwikipathwaysdbs

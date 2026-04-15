@@ -4,7 +4,6 @@ description: BaseSpaceR provides an R interface to the Illumina BaseSpace cloud 
 homepage: https://bioconductor.org/packages/release/bioc/html/BaseSpaceR.html
 ---
 
-
 # bioconductor-basespacer
 
 ## Overview

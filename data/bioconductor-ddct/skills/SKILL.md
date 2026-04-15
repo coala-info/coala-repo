@@ -4,7 +4,6 @@ description: This tool analyzes quantitative real-time PCR data using the 2^-ddC
 homepage: https://bioconductor.org/packages/release/bioc/html/ddCt.html
 ---
 
-
 # bioconductor-ddct
 
 name: bioconductor-ddct

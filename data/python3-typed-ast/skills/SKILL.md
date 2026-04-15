@@ -2,8 +2,9 @@
 name: python3-typed-ast
 description: python3-typed-ast parses Python 2 and 3 source code into an abstract syntax tree that includes PEP 484 type comments. Use when user asks to parse legacy Python code, extract type comments from source files, or convert Python 2.7 ASTs to Python 3.
 homepage: https://github.com/pexip/os-python3-typed-ast
+metadata:
+  docker_image: "biocontainers/python3-typed-ast:v0.6.3-1-deb_cv1"
 ---
-
 
 # python3-typed-ast
 

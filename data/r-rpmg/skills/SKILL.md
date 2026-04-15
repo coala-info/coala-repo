@@ -4,7 +4,6 @@ description: The RPMG package provides a lightweight framework for creating inte
 homepage: https://cran.r-project.org/web/packages/rpmg/index.html
 ---
 
-
 # r-rpmg
 
 ## Overview

@@ -2,8 +2,9 @@
 name: chronumental
 description: Chronumental transforms phylogenetic divergence trees into time-trees by estimating chronological branch lengths using a differentiable graph approach. Use when user asks to estimate a time-tree from a large phylogeny, convert genetic distance to chronological time, or perform molecular clock analysis on datasets with millions of nodes.
 homepage: https://github.com/theosanderson/chronumental
+metadata:
+  docker_image: "quay.io/biocontainers/chronumental:0.0.65--pyhdfd78af_0"
 ---
-
 
 # chronumental
 

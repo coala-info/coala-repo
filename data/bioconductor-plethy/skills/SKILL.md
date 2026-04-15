@@ -4,7 +4,6 @@ description: This tool imports, stores, and analyzes Buxco plethysmography data 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/plethy.html
 ---
 
-
 # bioconductor-plethy
 
 name: bioconductor-plethy

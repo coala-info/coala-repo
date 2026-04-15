@@ -2,8 +2,9 @@
 name: scikit-bio
 description: scikit-bio is a Python library that provides data structures, algorithms, and statistical methods for bioinformatics and ecological diversity analysis. Use when user asks to calculate alpha or beta diversity metrics, perform ordination like PCoA, manipulate phylogenetic trees, or process biological sequence data.
 homepage: https://github.com/scikit-bio/scikit-bio
+metadata:
+  docker_image: "quay.io/biocontainers/scikit-bio:0.4.2--np112py27_0"
 ---
-
 
 # scikit-bio
 

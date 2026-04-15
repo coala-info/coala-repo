@@ -4,7 +4,6 @@ description: The r-ggalt package provides specialized geoms, coordinate systems,
 homepage: https://cloud.r-project.org/web/packages/ggalt/index.html
 ---
 
-
 # r-ggalt
 
 ## Overview

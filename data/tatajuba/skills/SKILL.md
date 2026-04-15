@@ -1,9 +1,10 @@
 ---
 name: tatajuba
-description: "Tatajuba explores the heterogeneity and length distribution of homopolymeric tracts within sequencing data. Use when user asks to identify homopolymeric tracts, analyze phase variation in microbial populations, or distinguish biological variation from sequencing artifacts."
+description: Tatajuba explores the heterogeneity and length distribution of homopolymeric tracts within sequencing data. Use when user asks to identify homopolymeric tracts, analyze phase variation in microbial populations, or distinguish biological variation from sequencing artifacts.
 homepage: https://github.com/quadram-institute-bioscience/tatajuba
+metadata:
+  docker_image: "quay.io/biocontainers/tatajuba:1.0.4--h577a1d6_4"
 ---
-
 
 # tatajuba
 

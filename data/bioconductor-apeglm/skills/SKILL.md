@@ -4,7 +4,6 @@ description: This tool calculates empirical Bayes shrinkage estimators for effec
 homepage: https://bioconductor.org/packages/release/bioc/html/apeglm.html
 ---
 
-
 # bioconductor-apeglm
 
 name: bioconductor-apeglm

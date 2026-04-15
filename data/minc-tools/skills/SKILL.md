@@ -2,6 +2,8 @@
 name: minc-tools
 description: minc-tools provides a suite of command-line utilities for the analysis, manipulation, and spatial normalization of N-dimensional medical imaging data. Use when user asks to convert imaging formats, resample volumes, perform voxel-wise arithmetic, correct intensity non-uniformity, or register images to stereotaxic space.
 homepage: https://github.com/BIC-MNI/minc
+metadata:
+  docker_image: "biocontainers/minc-tools:v2.3.00dfsg-1.1b1-deb_cv1"
 ---
 
 # minc-tools

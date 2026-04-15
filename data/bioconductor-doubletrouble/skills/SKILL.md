@@ -4,7 +4,6 @@ description: This tool identifies and classifies duplicated genes from whole-gen
 homepage: https://bioconductor.org/packages/release/bioc/html/doubletrouble.html
 ---
 
-
 # bioconductor-doubletrouble
 
 name: bioconductor-doubletrouble

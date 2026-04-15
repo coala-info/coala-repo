@@ -1,9 +1,8 @@
 ---
 name: bioconductor-metab
-description: "Bioconductor-metab processes and refines GC-MS metabolomics data previously analyzed by AMDIS. Use when user asks to merge AMDIS reports, recalculate metabolite abundances using specific ion fragments from raw CDF files, normalize metabolomics data, or perform statistical tests on GC-MS datasets."
+description: Bioconductor-metab processes and refines GC-MS metabolomics data previously analyzed by AMDIS. Use when user asks to merge AMDIS reports, recalculate metabolite abundances using specific ion fragments from raw CDF files, normalize metabolomics data, or perform statistical tests on GC-MS datasets.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/Metab.html
 ---
-
 
 # bioconductor-metab
 

@@ -2,6 +2,8 @@
 name: vcfkit
 description: VCF-kit is a suite of utilities designed for the analysis, transformation, and evolutionary interpretation of genomic variant data. Use when user asks to calculate population genetics statistics, generate phylogenetic trees, design primers for variants, or convert VCF files to TSV format.
 homepage: https://github.com/AndersenLab/VCF-kit
+metadata:
+  docker_image: "quay.io/biocontainers/vcfkit:0.2.9--pyh5bfb8f1_0"
 ---
 
 # vcfkit

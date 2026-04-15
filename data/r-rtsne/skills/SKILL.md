@@ -4,7 +4,6 @@ description: The Rtsne package provides an R wrapper for the Barnes-Hut implemen
 homepage: https://cloud.r-project.org/web/packages/Rtsne/index.html
 ---
 
-
 # r-rtsne
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: 3-plant-virus-exploration
-description: "This workflow processes raw sequencing reads from plant samples using fastp for quality control and Shovill for de novo assembly to identify viral sequences. Use this skill when you need to detect and characterize known or novel plant viruses within high-throughput sequencing datasets through reference-free assembly."
-homepage: https://workflowhub.eu/workflows/103
+description: This workflow processes raw sequencing reads from plant samples using fastp for quality control and Shovill for de novo assembly to identify viral sequences. Use this skill when you need to detect and characterize known or novel plant viruses within high-throughput sequencing datasets through reference-free assembly.
+homepage: https://www.gembloux.ulg.ac.be/phytopathologie/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 3: Plant virus exploration
+# 3-plant-virus-exploration
 
 ## Overview
 

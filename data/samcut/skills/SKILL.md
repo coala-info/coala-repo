@@ -1,9 +1,10 @@
 ---
 name: samcut
-description: "samcut is a utility that extracts specific fields and tags from SAM files by name and decomposes bitwise flags into readable formats. Use when user asks to select SAM fields by name, extract optional tags, convert bitwise flags to human-readable strings, or expand flags into individual boolean columns."
+description: samcut is a utility that extracts specific fields and tags from SAM files by name and decomposes bitwise flags into readable formats. Use when user asks to select SAM fields by name, extract optional tags, convert bitwise flags to human-readable strings, or expand flags into individual boolean columns.
 homepage: https://github.com/gshiba/samcut
+metadata:
+  docker_image: "quay.io/biocontainers/samcut:0.1.1--h9948957_3"
 ---
-
 
 # samcut
 

@@ -1,10 +1,12 @@
 ---
 name: multigsea
-description: "This Galaxy workflow integrates transcriptome, proteome, and metabolome data to perform multi-omics gene set enrichment analysis using the multiGSEA tool. Use this skill when you need to identify enriched biological pathways across multiple molecular layers to gain a holistic understanding of complex biological systems or disease states."
-homepage: https://workflowhub.eu/workflows/1388
+description: This Galaxy workflow integrates transcriptome, proteome, and metabolome data to perform multi-omics gene set enrichment analysis using the multiGSEA tool. Use this skill when you need to identify enriched biological pathways across multiple molecular layers to gain a holistic understanding of complex biological systems or disease states.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MultiGSEA
+# multigsea
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The SPIA package implements the Signaling Pathway Impact Analysis a
 homepage: https://bioconductor.org/packages/release/bioc/html/SPIA.html
 ---
 
-
 # bioconductor-spia
 
 ## Overview

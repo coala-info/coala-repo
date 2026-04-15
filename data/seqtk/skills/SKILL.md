@@ -2,6 +2,8 @@
 name: seqtk
 description: Seqtk is a fast and lightweight toolkit for processing and transforming genomic sequences in FASTA and FASTQ formats. Use when user asks to convert sequence formats, subsample reads, trim low-quality bases, or extract specific genomic regions and sequences by name.
 homepage: https://github.com/lh3/seqtk
+metadata:
+  docker_image: "quay.io/biocontainers/seqtk:1.5--h577a1d6_1"
 ---
 
 # seqtk

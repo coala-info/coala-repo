@@ -4,7 +4,6 @@ description: This package imports 10X Genomics Visium and Visium HD spatial tran
 homepage: https://bioconductor.org/packages/release/bioc/html/VisiumIO.html
 ---
 
-
 # bioconductor-visiumio
 
 ## Overview

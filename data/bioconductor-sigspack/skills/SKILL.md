@@ -4,7 +4,6 @@ description: SigsPack is an R package for analyzing mutational signatures by tra
 homepage: https://bioconductor.org/packages/release/bioc/html/SigsPack.html
 ---
 
-
 # bioconductor-sigspack
 
 ## Overview

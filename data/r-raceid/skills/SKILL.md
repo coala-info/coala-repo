@@ -4,7 +4,6 @@ description: The RaceID package provides a framework for single-cell RNA-seq ana
 homepage: https://cran.r-project.org/web/packages/raceid/index.html
 ---
 
-
 # r-raceid
 
 ## Overview

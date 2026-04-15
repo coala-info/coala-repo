@@ -4,7 +4,6 @@ description: bioconductor-santa quantifies the functional content of molecular n
 homepage: https://bioconductor.org/packages/release/bioc/html/SANTA.html
 ---
 
-
 # bioconductor-santa
 
 name: bioconductor-santa

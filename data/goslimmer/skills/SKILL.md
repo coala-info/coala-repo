@@ -1,9 +1,10 @@
 ---
 name: goslimmer
-description: "This tool transforms Gene Ontology annotations to a slimmed version. Use when user asks to reduce the complexity of GO annotations by mapping them to a more concise GO slim."
+description: This tool transforms Gene Ontology annotations to a slimmed version. Use when user asks to reduce the complexity of GO annotations by mapping them to a more concise GO slim.
 homepage: https://github.com/DanFaria/GOSlimmer
+metadata:
+  docker_image: "quay.io/biocontainers/goslimmer:1.0--0"
 ---
-
 
 # goslimmer
 

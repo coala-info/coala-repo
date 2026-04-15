@@ -2,6 +2,8 @@
 name: smafa
 description: Smafa is a high-performance sequence aligner and clusterer optimized for fixed-length biological sequences. Use when user asks to cluster sequences by similarity, create a searchable sequence database, or query sequences against a database.
 homepage: https://github.com/wwood/smafa
+metadata:
+  docker_image: "quay.io/biocontainers/smafa:0.8.0--hc1c3326_1"
 ---
 
 # smafa

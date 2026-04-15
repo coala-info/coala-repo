@@ -1,9 +1,8 @@
 ---
 name: r-batchjobs
-description: "BatchJobs provides an abstraction layer for managing and submitting batch computing jobs from R to cluster queuing systems. Use when user asks to create a job registry, submit R functions to a cluster scheduler, monitor job status, or collect results from batch computations."
+description: BatchJobs provides an abstraction layer for managing and submitting batch computing jobs from R to cluster queuing systems. Use when user asks to create a job registry, submit R functions to a cluster scheduler, monitor job status, or collect results from batch computations.
 homepage: https://cloud.r-project.org/web/packages/BatchJobs/index.html
 ---
-
 
 # r-batchjobs
 

@@ -4,7 +4,6 @@ description: APAlyzer analyzes alternative polyadenylation events, including 3'U
 homepage: https://bioconductor.org/packages/release/bioc/html/APAlyzer.html
 ---
 
-
 # bioconductor-apalyzer
 
 ## Overview

@@ -4,6 +4,8 @@ description: This pipeline processes Molecular Cartography data from Resolve Bio
 homepage: https://github.com/nf-core/molkart
 ---
 
+# molkart
+
 ## Overview
 nf-core/molkart is designed for the end-to-end processing of Molecular Cartography data, a combinatorial FISH technology. It addresses the challenge of converting raw image data and transcript spot coordinates into a structured cell-by-gene expression matrix while accounting for technical artifacts like grid patterns.
 

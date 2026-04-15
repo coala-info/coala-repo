@@ -1,9 +1,10 @@
 ---
 name: kwip
-description: "kwip calculates genetic dissimilarity between samples using k-mer weighted inner products from raw sequencing reads. Use when user asks to calculate genetic dissimilarity between samples without a reference genome."
+description: kwip calculates genetic dissimilarity between samples using k-mer weighted inner products from raw sequencing reads. Use when user asks to calculate genetic dissimilarity between samples without a reference genome.
 homepage: https://github.com/kdmurray91/kWIP
+metadata:
+  docker_image: "quay.io/biocontainers/kwip:0.2.0--hd28b015_0"
 ---
-
 
 # kwip
 

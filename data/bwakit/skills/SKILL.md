@@ -1,9 +1,10 @@
 ---
 name: bwakit
-description: "Bwakit provides a streamlined interface for the Burrows-Wheeler Aligner ecosystem to transform raw sequencing data into mapped alignments. Use when user asks to index a reference genome, align short or long reads to a reference, or handle genomic features like ALT contigs."
+description: Bwakit provides a streamlined interface for the Burrows-Wheeler Aligner ecosystem to transform raw sequencing data into mapped alignments. Use when user asks to index a reference genome, align short or long reads to a reference, or handle genomic features like ALT contigs.
 homepage: https://github.com/lh3/bwa/tree/master/bwakit
+metadata:
+  docker_image: "quay.io/biocontainers/bwakit:0.7.18.dev1--hdfd78af_0"
 ---
-
 
 # bwakit
 

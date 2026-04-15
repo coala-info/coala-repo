@@ -1,10 +1,12 @@
 ---
 name: purging-duplicates-in-one-haplotype-vgp6b
-description: "This workflow identifies and removes haplotypic or overlap duplications from a single genomic haplotype using purge_dups, minimap2, and Merqury based on PacBio HiFi reads and k-mer profiles. Use this skill when you need to refine a VGP-style assembly by purging redundant contigs from one haplotype to improve assembly contiguity and accuracy after initial contigging."
-homepage: https://workflowhub.eu/workflows/751
+description: This workflow identifies and removes haplotypic or overlap duplications from a single genomic haplotype using purge_dups, minimap2, and Merqury based on PacBio HiFi reads and k-mer profiles. Use this skill when you need to refine a VGP-style assembly by purging redundant contigs from one haplotype to improve assembly contiguity and accuracy after initial contigging.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Purging duplicates in one haplotype VGP6b
+# purging-duplicates-in-one-haplotype-vgp6b
 
 ## Overview
 

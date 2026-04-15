@@ -2,8 +2,9 @@
 name: miniprot-boundary-scorer
 description: This tool scores and validates splice sites and coding boundaries in miniprot protein-to-genome alignments to improve annotation reliability. Use when user asks to score splice sites, validate coding boundaries in miniprot alignments, or filter exons and introns based on substitution matrices.
 homepage: https://github.com/tomasbruna/miniprot-boundary-scorer
+metadata:
+  docker_image: "quay.io/biocontainers/miniprot-boundary-scorer:1.0.1--h9948957_0"
 ---
-
 
 # miniprot-boundary-scorer
 

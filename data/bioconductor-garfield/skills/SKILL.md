@@ -4,7 +4,6 @@ description: GARFIELD evaluates the enrichment of GWAS association signals in fu
 homepage: https://bioconductor.org/packages/release/bioc/html/garfield.html
 ---
 
-
 # bioconductor-garfield
 
 name: bioconductor-garfield

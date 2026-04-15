@@ -4,7 +4,6 @@ description: Grafana Loki is a high-efficiency log aggregation system that index
 homepage: https://github.com/grafana/loki
 ---
 
-
 # loki
 
 ## Overview

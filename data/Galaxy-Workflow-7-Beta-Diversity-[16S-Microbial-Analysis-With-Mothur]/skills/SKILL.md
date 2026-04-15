@@ -1,10 +1,12 @@
 ---
 name: workflow-7-gucfg2galaxy-beta-diversity-16s-microbial-analysi
-description: "This metagenomics workflow processes shared files from Mothur to perform beta diversity analysis using tools like dist.shared, heatmap.sim, and tree.shared to generate distance matrices and visualizations. Use this skill when you need to compare microbial community composition across different samples and visualize these relationships through heatmaps and phylogenetic trees."
-homepage: https://workflowhub.eu/workflows/653
+description: This metagenomics workflow processes shared files from Mothur to perform beta diversity analysis using tools like dist.shared, heatmap.sim, and tree.shared to generate distance matrices and visualizations. Use this skill when you need to compare microbial community composition across different samples and visualize these relationships through heatmaps and phylogenetic trees.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 7 [gucfg2galaxy] : Beta Diversity [16S Microbial Analysis With Mothur]
+# workflow-7-gucfg2galaxy-beta-diversity-16s-microbial-analysi
 
 ## Overview
 

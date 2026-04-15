@@ -1,9 +1,10 @@
 ---
 name: mutalyzer_hgvs_parser
-description: "Parses HGVS variant descriptions into a structured dictionary model. Use when user asks to parse HGVS variant descriptions."
+description: Parses HGVS variant descriptions into a structured dictionary model. Use when user asks to parse HGVS variant descriptions.
 homepage: The package home page
+metadata:
+  docker_image: "quay.io/biocontainers/mutalyzer_hgvs_parser:0.3.9--pyh7e72e81_0"
 ---
-
 
 # mutalyzer_hgvs_parser
 

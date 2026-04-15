@@ -2,8 +2,9 @@
 name: fqtk
 description: fqtk is a high-performance bioinformatics toolkit used for the rapid demultiplexing of FASTQ files based on custom read structures and metadata. Use when user asks to demultiplex sequencing data, sort reads by sample barcodes, or extract molecular identifiers and cellular barcodes from FASTQ files.
 homepage: https://github.com/fulcrumgenomics/fqtk
+metadata:
+  docker_image: "quay.io/biocontainers/fqtk:0.3.1--ha6fb395_3"
 ---
-
 
 # fqtk
 

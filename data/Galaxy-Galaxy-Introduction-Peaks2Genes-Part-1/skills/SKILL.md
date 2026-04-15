@@ -1,10 +1,12 @@
 ---
 name: galaxy-introduction-peaks2genes-part-1
-description: "This genomics workflow processes peak and gene datasets using text manipulation, flanking region extraction, and interval intersection to identify overlaps between regulatory regions and genetic features. Use this skill when you need to map genomic peaks to their nearest genes or calculate the distribution of identified binding sites across different chromosomes."
-homepage: https://workflowhub.eu/workflows/1478
+description: This genomics workflow processes peak and gene datasets using text manipulation, flanking region extraction, and interval intersection to identify overlaps between regulatory regions and genetic features. Use this skill when you need to map genomic peaks to their nearest genes or calculate the distribution of identified binding sites across different chromosomes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy Introduction Peaks2Genes - Part 1
+# galaxy-introduction-peaks2genes-part-1
 
 ## Overview
 

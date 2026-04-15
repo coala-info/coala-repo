@@ -2,8 +2,9 @@
 name: whokaryote
 description: Whokaryote classifies contigs from metagenomic assemblies as either eukaryotic or prokaryotic. Use when user asks to classify contigs by domain or generate separate fasta files for classified contigs.
 homepage: https://github.com/LottePronk/whokaryote
+metadata:
+  docker_image: "quay.io/biocontainers/whokaryote:1.1.2--pyhdfd78af_0"
 ---
-
 
 # whokaryote
 

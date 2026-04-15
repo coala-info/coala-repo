@@ -4,7 +4,6 @@ description: bioconductor-ramigo interfaces with the AmiGO Visualize web service
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RamiGO.html
 ---
 
-
 # bioconductor-ramigo
 
 name: bioconductor-ramigo

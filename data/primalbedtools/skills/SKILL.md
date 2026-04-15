@@ -2,6 +2,8 @@
 name: primalbedtools
 description: Primalbedtools is a bioinformatic tool for processing, validating, and remapping primer schemes used in amplicon sequencing. Use when user asks to validate primer BED files, upgrade schemes to v3 format, remap coordinates via multiple sequence alignment, or generate amplicon boundaries.
 homepage: https://github.com/ChrisgKent/primalbedtools
+metadata:
+  docker_image: "quay.io/biocontainers/primalbedtools:1.0.0--pyhdfd78af_0"
 ---
 
 # primalbedtools

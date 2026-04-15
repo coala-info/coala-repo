@@ -2,8 +2,9 @@
 name: perl-test-eol
 description: perl-test-eol identifies inconsistent line endings and trailing whitespace in Perl source files to ensure codebase uniformity. Use when user asks to check for Unix-style line endings, validate file encoding consistency, or remove trailing whitespace from scripts.
 homepage: http://metacpan.org/release/Test-EOL
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-eol:2.02--pl5321hdfd78af_0"
 ---
-
 
 # perl-test-eol
 

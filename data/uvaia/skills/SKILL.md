@@ -2,8 +2,9 @@
 name: uvaia
 description: Uvaia performs efficient pairwise sequence alignment and similarity searching for large genomic datasets. Use when user asks to 'align sequences to a reference' or 'search for similar sequences in a database'.
 homepage: https://github.com/quadram-institute-bioscience/uvaia
+metadata:
+  docker_image: "quay.io/biocontainers/uvaia:2.0.1--heee599d_3"
 ---
-
 
 # uvaia
 

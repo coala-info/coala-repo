@@ -4,7 +4,6 @@ description: This package provides scalable robust estimators for multivariate l
 homepage: https://cloud.r-project.org/web/packages/rrcov/index.html
 ---
 
-
 # r-rrcov
 
 name: r-rrcov

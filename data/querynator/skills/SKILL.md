@@ -1,7 +1,9 @@
 ---
 name: querynator
-description: "querynator automates the clinical interpretation of cancer variants by querying the CGI and CIViC knowledgebases. Use when user asks to identify biomarkers of drug response, retrieve expert-curated evidence for genomic alterations, or generate integrated clinical reports from VCF files."
+description: querynator automates the clinical interpretation of cancer variants by querying the CGI and CIViC knowledgebases. Use when user asks to identify biomarkers of drug response, retrieve expert-curated evidence for genomic alterations, or generate integrated clinical reports from VCF files.
 homepage: https://github.com/qbic-pipelines/querynator
+metadata:
+  docker_image: "quay.io/biocontainers/querynator:0.6.0--pyhdfd78af_0"
 ---
 
 # querynator

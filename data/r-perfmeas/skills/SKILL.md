@@ -4,7 +4,6 @@ description: This R package calculates performance metrics for ranking and class
 homepage: https://cran.r-project.org/web/packages/perfmeas/index.html
 ---
 
-
 # r-perfmeas
 
 name: r-perfmeas

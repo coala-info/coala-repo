@@ -4,7 +4,6 @@ description: This package provides sample Affymetrix 500K Sty SNP array data fro
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmap500ksty.html
 ---
 
-
 # bioconductor-hapmap500ksty
 
 name: bioconductor-hapmap500ksty

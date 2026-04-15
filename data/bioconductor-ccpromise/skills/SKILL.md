@@ -4,7 +4,6 @@ description: This tool integrates two types of molecular data to test their asso
 homepage: https://bioconductor.org/packages/release/bioc/html/CCPROMISE.html
 ---
 
-
 # bioconductor-ccpromise
 
 ## Overview

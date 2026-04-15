@@ -2,8 +2,9 @@
 name: tn93
 description: tn93 computes pairwise genetic distances between aligned nucleotide sequences. Use when user asks to compute pairwise genetic distances, identify closely related sequences, compare distances between two datasets, handle ambiguous nucleotides, filter by sequence overlap, specify output format, or count pairs below a threshold.
 homepage: https://github.com/veg/tn93
+metadata:
+  docker_image: "quay.io/biocontainers/tn93:1.0.15--h9948957_0"
 ---
-
 
 # tn93
 

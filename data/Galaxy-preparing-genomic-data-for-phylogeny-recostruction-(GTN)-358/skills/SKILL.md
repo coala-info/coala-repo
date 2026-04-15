@@ -1,10 +1,12 @@
 ---
 name: preparing-genomic-data-for-phylogeny-recostruction-gtn
-description: "This workflow processes a collection of genome assemblies to identify and align orthologous protein sequences using Funannotate for annotation, ProteinOrtho for orthogroup detection, and ClustalW for multiple sequence alignment. Use this skill when you need to prepare high-quality, aligned orthologous datasets from raw genomic assemblies for downstream phylogenetic tree reconstruction and evolutionary analysis."
-homepage: https://workflowhub.eu/workflows/358
+description: This workflow processes a collection of genome assemblies to identify and align orthologous protein sequences using Funannotate for annotation, ProteinOrtho for orthogroup detection, and ClustalW for multiple sequence alignment. Use this skill when you need to prepare high-quality, aligned orthologous datasets from raw genomic assemblies for downstream phylogenetic tree reconstruction and evolutionary analysis.
+homepage: https://usegalaxy.be/workflows/list_published
+metadata:
+  docker_image: "N/A"
 ---
 
-# preparing genomic data for phylogeny recostruction (GTN)
+# preparing-genomic-data-for-phylogeny-recostruction-gtn
 
 ## Overview
 

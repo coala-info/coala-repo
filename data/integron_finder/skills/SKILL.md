@@ -2,8 +2,9 @@
 name: integron_finder
 description: Integron Finder identifies integrons and their essential components like integrases and recombination sites in bacterial genomes. Use when user asks to locate integrons, identify gene cassettes, detect attC sites, or classify integron structures in genomic sequences.
 homepage: https://github.com/gem-pasteur/Integron_Finder
+metadata:
+  docker_image: "biocontainers/integron-finder:v1.5.1_cv2"
 ---
-
 
 # integron_finder
 

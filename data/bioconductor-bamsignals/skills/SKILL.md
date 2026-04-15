@@ -4,7 +4,6 @@ description: This tool efficiently extracts read counts, coverage, and genomic p
 homepage: https://bioconductor.org/packages/release/bioc/html/bamsignals.html
 ---
 
-
 # bioconductor-bamsignals
 
 name: bioconductor-bamsignals

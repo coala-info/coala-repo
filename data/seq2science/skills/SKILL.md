@@ -2,6 +2,8 @@
 name: seq2science
 description: seq2science is a command-line toolset that streamlines functional genomics analysis by wrapping complex Snakemake workflows into a user-friendly interface. Use when user asks to download sequencing data, align reads to a reference, perform RNA-seq or ATAC-seq analysis, call peaks for ChIP-seq, or initialize and run reproducible genomic pipelines.
 homepage: https://vanheeringen-lab.github.io/seq2science
+metadata:
+  docker_image: "quay.io/biocontainers/seq2science:1.2.4--pyhdfd78af_0"
 ---
 
 # seq2science

@@ -4,7 +4,6 @@ description: The matrixStats package provides high-performance functions for cal
 homepage: https://cloud.r-project.org/web/packages/matrixStats/index.html
 ---
 
-
 # r-matrixstats
 
 ## Overview

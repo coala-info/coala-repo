@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object for the Canis fami
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Cfamiliaris.UCSC.canFam5.refGene.html
 ---
 
-
 # bioconductor-txdb.cfamiliaris.ucsc.canfam5.refgene
 
 name: bioconductor-txdb.cfamiliaris.ucsc.canfam5.refgene

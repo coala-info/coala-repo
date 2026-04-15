@@ -2,8 +2,9 @@
 name: hicbrowser
 description: HiCBrowser is a lightweight web-based visualization tool for interactively browsing Hi-C data, TADs, and associated genomic tracks. Use when user asks to visualize chromosome interactions, browse multi-omic data tracks, or launch an interactive web interface for HiCExplorer plots.
 homepage: https://github.com/maxplanck-ie/HiCBrowser
+metadata:
+  docker_image: "quay.io/biocontainers/hicbrowser:1.0--py27_1"
 ---
-
 
 # hicbrowser
 

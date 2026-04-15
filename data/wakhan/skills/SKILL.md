@@ -1,7 +1,9 @@
 ---
 name: wakhan
-description: "Wakhan performs haplotype-specific copy number analysis on long-read genomic data from cancer samples. Use when user asks to resolve haplotype-specific copy number changes, identify large-scale chromosomal alterations, or perform phase-switch correction in tumor samples."
+description: Wakhan performs haplotype-specific copy number analysis on long-read genomic data from cancer samples. Use when user asks to resolve haplotype-specific copy number changes, identify large-scale chromosomal alterations, or perform phase-switch correction in tumor samples.
 homepage: https://github.com/KolmogorovLab/Wakhan
+metadata:
+  docker_image: "quay.io/biocontainers/wakhan:0.4.2--pyhdfd78af_0"
 ---
 
 # wakhan

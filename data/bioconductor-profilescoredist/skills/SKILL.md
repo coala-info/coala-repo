@@ -4,7 +4,6 @@ description: This package calculates probability distributions of log-odds score
 homepage: https://bioconductor.org/packages/release/bioc/html/profileScoreDist.html
 ---
 
-
 # bioconductor-profilescoredist
 
 ## Overview

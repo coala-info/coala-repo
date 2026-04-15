@@ -4,7 +4,6 @@ description: This tool clusters high-throughput sequencing data based on pattern
 homepage: https://bioconductor.org/packages/release/bioc/html/clusterSeq.html
 ---
 
-
 # bioconductor-clusterseq
 
 name: bioconductor-clusterseq

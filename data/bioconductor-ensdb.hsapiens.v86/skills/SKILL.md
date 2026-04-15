@@ -4,7 +4,6 @@ description: This package provides Ensembl release 86 genome annotations for Hom
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Hsapiens.v86.html
 ---
 
-
 # bioconductor-ensdb.hsapiens.v86
 
 name: bioconductor-ensdb.hsapiens.v86

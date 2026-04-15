@@ -4,7 +4,6 @@ description: RareVariantVis is an R suite for the rapid analysis and visualizati
 homepage: https://bioconductor.org/packages/release/bioc/html/RareVariantVis.html
 ---
 
-
 # bioconductor-rarevariantvis
 
 ## Overview

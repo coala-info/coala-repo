@@ -4,7 +4,6 @@ description: The bioconductor-tspair package implements the Top Scoring Pair cla
 homepage: https://bioconductor.org/packages/3.5/bioc/html/tspair.html
 ---
 
-
 # bioconductor-tspair
 
 ## Overview

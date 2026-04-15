@@ -2,6 +2,8 @@
 name: karect
 description: Karect is a bioinformatics tool designed to correct substitution, insertion, and deletion errors in Next-Generation Sequencing reads. Use when user asks to fix errors in raw sequencing data, align reads to a reference genome for evaluation, or calculate error correction accuracy statistics.
 homepage: https://github.com/aminallam/karect
+metadata:
+  docker_image: "quay.io/biocontainers/karect:1.0--h9948957_9"
 ---
 
 # karect

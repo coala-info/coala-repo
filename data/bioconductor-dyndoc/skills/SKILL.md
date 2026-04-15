@@ -4,7 +4,6 @@ description: This tool manages and interacts with dynamic documents and Biocondu
 homepage: https://bioconductor.org/packages/release/bioc/html/DynDoc.html
 ---
 
-
 # bioconductor-dyndoc
 
 name: bioconductor-dyndoc

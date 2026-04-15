@@ -1,10 +1,12 @@
 ---
 name: cp_object_tracking_example
-description: "This workflow processes image datasets using CellProfiler modules to identify, measure, and track biological objects across time-lapse sequences. Use this skill when you need to quantify temporal changes in cell morphology, intensity, or movement and generate tracked visual overlays from microscopy data."
-homepage: https://workflowhub.eu/workflows/115
+description: This workflow processes image datasets using CellProfiler modules to identify, measure, and track biological objects across time-lapse sequences. Use this skill when you need to quantify temporal changes in cell morphology, intensity, or movement and generate tracked visual overlays from microscopy data.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# CP_object_tracking_example
+# cp_object_tracking_example
 
 ## Overview
 

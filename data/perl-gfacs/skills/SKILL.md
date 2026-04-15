@@ -2,8 +2,9 @@
 name: perl-gfacs
 description: gFACs is a Perl-based utility used to process, filter, and convert genome annotation files between various gene prediction and alignment formats. Use when user asks to process annotation files, filter gene models, extract protein sequences, or generate splice tables and statistics.
 homepage: https://gitlab.com/PlantGenomicsLab/gFACs
+metadata:
+  docker_image: "quay.io/biocontainers/perl-gfacs:1.1.1--hdfd78af_1"
 ---
-
 
 # perl-gfacs
 

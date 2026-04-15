@@ -4,7 +4,6 @@ description: This tool visualizes oligonucleotide distributions and motif occurr
 homepage: https://bioconductor.org/packages/release/bioc/html/seqPattern.html
 ---
 
-
 # bioconductor-seqpattern
 
 name: bioconductor-seqpattern

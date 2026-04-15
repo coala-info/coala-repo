@@ -2,8 +2,9 @@
 name: ucsc-axtswap
 description: ucsc-axtswap reorients AXT alignment files by swapping the target and query sequences. Use when user asks to swap target and query sequences in AXT files, generate reciprocal best alignments, or reorient alignments for database integration.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-axtswap:482--h0b57e2e_0"
 ---
-
 
 # ucsc-axtswap
 

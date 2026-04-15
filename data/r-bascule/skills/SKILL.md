@@ -4,7 +4,6 @@ description: r-bascule performs Bayesian inference and clustering of somatic mut
 homepage: https://cran.r-project.org/web/packages/bascule/index.html
 ---
 
-
 # r-bascule
 
 name: r-bascule

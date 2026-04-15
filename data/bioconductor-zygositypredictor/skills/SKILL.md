@@ -4,7 +4,6 @@ description: This tool predicts gene zygosity and the number of affected copy nu
 homepage: https://bioconductor.org/packages/release/bioc/html/ZygosityPredictor.html
 ---
 
-
 # bioconductor-zygositypredictor
 
 name: bioconductor-zygositypredictor

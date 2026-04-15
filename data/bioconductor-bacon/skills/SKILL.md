@@ -4,7 +4,6 @@ description: bioconductor-bacon controls for bias and inflation in large-scale a
 homepage: https://bioconductor.org/packages/release/bioc/html/bacon.html
 ---
 
-
 # bioconductor-bacon
 
 name: bioconductor-bacon

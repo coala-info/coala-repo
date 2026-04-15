@@ -4,7 +4,6 @@ description: XBSeq performs differential expression analysis of RNA-seq data by 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/XBSeq.html
 ---
 
-
 # bioconductor-xbseq
 
 name: bioconductor-xbseq

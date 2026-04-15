@@ -4,7 +4,6 @@ description: This tool provides a framework for launching interactive Shiny-base
 homepage: https://bioconductor.org/packages/release/bioc/html/interactiveDisplayBase.html
 ---
 
-
 # bioconductor-interactivedisplaybase
 
 name: bioconductor-interactivedisplaybase

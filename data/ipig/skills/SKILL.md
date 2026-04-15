@@ -2,8 +2,9 @@
 name: ipig
 description: IPIGuard protects LLM agents from indirect prompt injections by analyzing tool calls through a Tool Dependency Graph. Use when user asks to benchmark agent robustness, simulate adversarial attacks, or validate defense strategies against malicious instructions.
 homepage: https://github.com/Greysahy/ipiguard
+metadata:
+  docker_image: "biocontainers/ipig:v0.0.r5-3-deb_cv1"
 ---
-
 
 # ipig
 

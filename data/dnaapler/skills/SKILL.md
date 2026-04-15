@@ -1,7 +1,9 @@
 ---
 name: dnaapler
-description: "dnaapler reorients circular microbial genome assemblies to begin at a conserved marker gene. Use when user asks to reorient circular contigs, fix arbitrary start points in assemblies, or rotate sequences to start at a specific gene like dnaA."
+description: dnaapler reorients circular microbial genome assemblies to begin at a conserved marker gene. Use when user asks to reorient circular contigs, fix arbitrary start points in assemblies, or rotate sequences to start at a specific gene like dnaA.
 homepage: https://github.com/gbouras13/dnaapler
+metadata:
+  docker_image: "quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0"
 ---
 
 # dnaapler

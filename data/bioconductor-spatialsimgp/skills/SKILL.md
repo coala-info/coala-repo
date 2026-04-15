@@ -4,7 +4,6 @@ description: This tool simulates spatial transcriptomics data using Gaussian Pro
 homepage: https://bioconductor.org/packages/release/bioc/html/spatialSimGP.html
 ---
 
-
 # bioconductor-spatialsimgp
 
 name: bioconductor-spatialsimgp

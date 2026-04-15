@@ -4,7 +4,6 @@ description: bioconductor-limpca performs statistical analysis of multivariate d
 homepage: https://bioconductor.org/packages/release/bioc/html/limpca.html
 ---
 
-
 # bioconductor-limpca
 
 name: bioconductor-limpca

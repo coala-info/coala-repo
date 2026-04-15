@@ -4,7 +4,6 @@ description: This package provides access to the Iyer genomic time series datase
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Iyer517.html
 ---
 
-
 # bioconductor-iyer517
 
 name: bioconductor-iyer517

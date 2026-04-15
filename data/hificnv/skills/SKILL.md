@@ -2,8 +2,9 @@
 name: hificnv
 description: HiFiCNV calls copy number variants and generates depth visualizations from PacBio HiFi reads. Use when user asks to call copy number variants from HiFi sequencing data or generate depth and allele frequency visualizations for CNV analysis.
 homepage: https://github.com/PacificBiosciences/HiFiCNV
+metadata:
+  docker_image: "quay.io/biocontainers/hificnv:1.0.1--h9ee0642_0"
 ---
-
 
 # hificnv
 

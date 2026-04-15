@@ -1,10 +1,12 @@
 ---
 name: mrna-seq-by-covid-pipeline-counts
-description: "This mRNA-Seq transcriptomics workflow processes raw sequence reads and a UCSC genome using Cutadapt, HISAT2, and featureCounts to generate gene-level expression counts. Use this skill when you need to quantify transcript abundance from raw sequencing data to prepare for downstream differential expression analysis in infectious disease research."
-homepage: https://workflowhub.eu/workflows/688
+description: This mRNA-Seq transcriptomics workflow processes raw sequence reads and a UCSC genome using Cutadapt, HISAT2, and featureCounts to generate gene-level expression counts. Use this skill when you need to quantify transcript abundance from raw sequencing data to prepare for downstream differential expression analysis in infectious disease research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# mRNA-Seq BY-COVID Pipeline: Counts
+# mrna-seq-by-covid-pipeline-counts
 
 ## Overview
 

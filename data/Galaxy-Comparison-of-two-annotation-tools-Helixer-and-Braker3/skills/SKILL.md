@@ -1,10 +1,12 @@
 ---
 name: comparison-of-two-annotation-tools-helixer-and-braker3
-description: "This Galaxy workflow performs comparative genome annotation using Helixer and BRAKER3 by processing genome sequences, RNA-seq alignments, and protein data, followed by quality assessment with BUSCO, OMArk, and JBrowse. Use this skill when you need to evaluate and compare the accuracy of different gene prediction methodologies to ensure high-quality structural annotations for a newly sequenced organism."
-homepage: https://workflowhub.eu/workflows/1746
+description: This Galaxy workflow performs comparative genome annotation using Helixer and BRAKER3 by processing genome sequences, RNA-seq alignments, and protein data, followed by quality assessment with BUSCO, OMArk, and JBrowse. Use this skill when you need to evaluate and compare the accuracy of different gene prediction methodologies to ensure high-quality structural annotations for a newly sequenced organism.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Comparison of two annotation tools: Helixer and Braker3
+# comparison-of-two-annotation-tools-helixer-and-braker3
 
 ## Overview
 

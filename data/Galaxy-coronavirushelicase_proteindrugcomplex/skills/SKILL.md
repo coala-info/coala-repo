@@ -1,7 +1,9 @@
 ---
 name: coronavirushelicase_proteindrugcomplex
-description: "This workflow processes protein-ligand complex PDB files and ligand force field parameters using tLEaP, acpype, and GROMACS to perform molecular dynamics simulations and trajectory analysis. Use this skill when investigating the structural stability and binding interactions of potential drug candidates with the coronavirus helicase protein through atomistic molecular dynamics simulations."
-homepage: https://workflowhub.eu/workflows/763
+description: This workflow processes protein-ligand complex PDB files and ligand force field parameters using tLEaP, acpype, and GROMACS to perform molecular dynamics simulations and trajectory analysis. Use this skill when investigating the structural stability and binding interactions of potential drug candidates with the coronavirus helicase protein through atomistic molecular dynamics simulations.
+homepage: https://zenodo.org/records/7492987
+metadata:
+  docker_image: "N/A"
 ---
 
 # coronavirushelicase_proteindrugcomplex

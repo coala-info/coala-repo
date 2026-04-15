@@ -4,7 +4,6 @@ description: This tool provides access to the Synaptic Proteome Database for ret
 homepage: https://bioconductor.org/packages/release/data/annotation/html/synaptome.data.html
 ---
 
-
 # bioconductor-synaptome.data
 
 name: bioconductor-synaptome.data

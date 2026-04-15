@@ -1,7 +1,9 @@
 ---
 name: bcbio-rnaseq
-description: "bcbioRNASeq processes and validates output from the bcbio-nextgen bioinformatics pipeline for downstream analysis in R. Use when user asks to import bcbio RNA-seq data, perform quality control visualization, or convert pipeline results into DESeq2 and edgeR objects."
+description: bcbioRNASeq processes and validates output from the bcbio-nextgen bioinformatics pipeline for downstream analysis in R. Use when user asks to import bcbio RNA-seq data, perform quality control visualization, or convert pipeline results into DESeq2 and edgeR objects.
 homepage: https://github.com/hbc/bcbioRNASeq
+metadata:
+  docker_image: "quay.io/biocontainers/bcbio-rnaseq:1.2.0--r3.3.2_3"
 ---
 
 # bcbio-rnaseq

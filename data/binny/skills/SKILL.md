@@ -2,8 +2,9 @@
 name: binny
 description: binny is an automated binning algorithm that recovers high-quality Metagenome-Assembled Genomes from metagenomic datasets by integrating contig sequences with abundance information. Use when user asks to initialize binning environments, perform dry runs, or execute genome reconstruction workflows on local or cluster environments.
 homepage: https://github.com/a-h-b/binny
+metadata:
+  docker_image: "quay.io/biocontainers/binny:2.2.18--pyhdfd78af_0"
 ---
-
 
 # binny
 

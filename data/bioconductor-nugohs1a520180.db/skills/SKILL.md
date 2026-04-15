@@ -4,7 +4,6 @@ description: This tool provides comprehensive annotation data for the nugohs1a52
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugohs1a520180.db.html
 ---
 
-
 # bioconductor-nugohs1a520180.db
 
 name: bioconductor-nugohs1a520180.db

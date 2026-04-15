@@ -4,7 +4,6 @@ description: This tool provides comprehensive annotation data for the Norway981 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Norway981.db.html
 ---
 
-
 # bioconductor-norway981.db
 
 name: bioconductor-norway981.db

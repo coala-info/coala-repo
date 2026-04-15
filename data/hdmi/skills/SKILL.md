@@ -2,6 +2,8 @@
 name: hdmi
 description: HDMI is a bioinformatics pipeline designed to identify and validate horizontal gene transfer events within metagenomic datasets using read-spanning evidence. Use when user asks to detect HGT events, profile HGT candidates using metagenomic reads, or analyze gene movement between species in MAGs.
 homepage: https://github.com/HaoranPeng21/HDMI
+metadata:
+  docker_image: "quay.io/biocontainers/hdmi:1.0.0--pyhdfd78af_0"
 ---
 
 # hdmi

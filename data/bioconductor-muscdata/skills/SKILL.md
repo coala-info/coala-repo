@@ -4,7 +4,6 @@ description: This tool retrieves multi-sample, multi-group single-cell RNA seque
 homepage: https://bioconductor.org/packages/release/data/experiment/html/muscData.html
 ---
 
-
 # bioconductor-muscdata
 
 name: bioconductor-muscdata

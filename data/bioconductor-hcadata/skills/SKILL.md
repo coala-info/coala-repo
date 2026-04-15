@@ -4,7 +4,6 @@ description: This tool accesses and downloads Human Cell Atlas datasets as Singl
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HCAData.html
 ---
 
-
 # bioconductor-hcadata
 
 name: bioconductor-hcadata

@@ -4,7 +4,6 @@ description: This tool provides algorithms for automated gating, normalization, 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowStats.html
 ---
 
-
 # bioconductor-flowstats
 
 name: bioconductor-flowstats

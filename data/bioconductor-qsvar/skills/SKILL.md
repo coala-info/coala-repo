@@ -4,7 +4,6 @@ description: The bioconductor-qsvar package implements the Quality Surrogate Var
 homepage: https://bioconductor.org/packages/release/bioc/html/qsvaR.html
 ---
 
-
 # bioconductor-qsvar
 
 ## Overview

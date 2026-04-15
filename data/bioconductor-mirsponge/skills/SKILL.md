@@ -4,7 +4,6 @@ description: This tool identifies and analyzes miRNA sponge interaction networks
 homepage: https://bioconductor.org/packages/3.8/bioc/html/miRsponge.html
 ---
 
-
 # bioconductor-mirsponge
 
 name: bioconductor-mirsponge

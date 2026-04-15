@@ -4,7 +4,6 @@ description: This tool performs variance stabilizing transformations on count da
 homepage: https://bioconductor.org/packages/release/bioc/html/transformGamPoi.html
 ---
 
-
 # bioconductor-transformgampoi
 
 name: bioconductor-transformgampoi

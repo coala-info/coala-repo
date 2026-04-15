@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation maps for the Mu15v1 m
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Mu15v1.db.html
 ---
 
-
 # bioconductor-mu15v1.db
 
 ## Overview

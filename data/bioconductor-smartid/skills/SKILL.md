@@ -4,7 +4,6 @@ description: The smartid package identifies group-specific signature genes and c
 homepage: https://bioconductor.org/packages/release/bioc/html/smartid.html
 ---
 
-
 # bioconductor-smartid
 
 name: bioconductor-smartid

@@ -2,6 +2,8 @@
 name: bx-python
 description: bx-python is a high-performance library and suite of scripts designed for rapid genomic analysis and manipulation of large-scale sequence alignments. Use when user asks to process multiple sequence alignments, index genomic files for random access, perform interval arithmetic, or manage memory-efficient chromosome coverage data.
 homepage: https://github.com/bxlab/bx-python
+metadata:
+  docker_image: "quay.io/biocontainers/bx-python:0.14.0--py312h5e9d817_0"
 ---
 
 # bx-python

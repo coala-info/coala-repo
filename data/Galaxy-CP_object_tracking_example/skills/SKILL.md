@@ -1,10 +1,12 @@
 ---
 name: cp_object_tracking_example
-description: "This Galaxy workflow processes image datasets using CellProfiler modules to identify, measure, and track biological objects. Use this skill when you need to monitor the movement and morphological changes of individual cells or organelles across a time-lapse image sequence."
-homepage: https://workflowhub.eu/workflows/1503
+description: This Galaxy workflow processes image datasets using CellProfiler modules to identify, measure, and track biological objects. Use this skill when you need to monitor the movement and morphological changes of individual cells or organelles across a time-lapse image sequence.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CP_object_tracking_example
+# cp_object_tracking_example
 
 ## Overview
 

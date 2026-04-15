@@ -4,7 +4,6 @@ description: This package provides processed Hi-C sequencing data from human lym
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiCDataLymphoblast.html
 ---
 
-
 # bioconductor-hicdatalymphoblast
 
 name: bioconductor-hicdatalymphoblast

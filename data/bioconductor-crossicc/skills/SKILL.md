@@ -4,7 +4,6 @@ description: CrossICC identifies robust biological subtypes across multiple data
 homepage: https://bioconductor.org/packages/3.10/bioc/html/CrossICC.html
 ---
 
-
 # bioconductor-crossicc
 
 ## Overview

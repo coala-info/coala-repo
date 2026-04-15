@@ -4,6 +4,8 @@ description: nf-core/scdownstream processes quantified single-cell RNA-seq data 
 homepage: https://github.com/nf-core/scdownstream
 ---
 
+# scdownstream
+
 ## Overview
 nf-core/scdownstream is designed for the downstream analysis of single-cell RNA-seq data that has already been quantified. It addresses the need for a unified workflow to handle quality control, batch effect correction, and data visualization across multiple samples and formats.
 

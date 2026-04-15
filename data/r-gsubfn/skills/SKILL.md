@@ -4,7 +4,6 @@ description: The r-gsubfn tool provides advanced string manipulation and functio
 homepage: https://cloud.r-project.org/web/packages/gsubfn/index.html
 ---
 
-
 # r-gsubfn
 
 name: r-gsubfn

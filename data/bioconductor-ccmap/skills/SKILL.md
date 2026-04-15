@@ -4,7 +4,6 @@ description: This tool predicts drugs and drug combinations that reverse a speci
 homepage: https://bioconductor.org/packages/release/bioc/html/ccmap.html
 ---
 
-
 # bioconductor-ccmap
 
 name: bioconductor-ccmap

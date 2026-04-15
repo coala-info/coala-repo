@@ -4,7 +4,6 @@ description: This tool provides a low-level analysis pipeline for processing and
 homepage: https://bioconductor.org/packages/release/bioc/html/agilp.html
 ---
 
-
 # bioconductor-agilp
 
 name: bioconductor-agilp

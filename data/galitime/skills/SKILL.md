@@ -2,8 +2,9 @@
 name: galitime
 description: Galitime benchmarks computational experiments by wrapping the GNU Time command to collect consistent performance metrics. Use when user asks to monitor resource usage, generate reproducible performance logs, or compare the efficiency of different algorithms.
 homepage: https://github.com/karel-brinda/galitime
+metadata:
+  docker_image: "quay.io/biocontainers/galitime:0.2.0--pyhdfd78af_0"
 ---
-
 
 # galitime
 

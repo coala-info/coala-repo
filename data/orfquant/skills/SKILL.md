@@ -1,9 +1,10 @@
 ---
 name: orfquant
-description: "orfquant is an R package for the de-novo identification and quantification of open reading frames from ribosome profiling data. Use when user asks to perform de-novo ORF finding, quantify translation at single-ORF resolution, or analyze Ribo-seq data while accounting for alternative splicing."
+description: orfquant is an R package for the de-novo identification and quantification of open reading frames from ribosome profiling data. Use when user asks to perform de-novo ORF finding, quantify translation at single-ORF resolution, or analyze Ribo-seq data while accounting for alternative splicing.
 homepage: https://github.com/ohlerlab/ORFquant
+metadata:
+  docker_image: "quay.io/biocontainers/orfquant:1.1.0--r44h9ee0642_6"
 ---
-
 
 # orfquant
 

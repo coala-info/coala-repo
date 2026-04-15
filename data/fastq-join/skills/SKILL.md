@@ -2,8 +2,9 @@
 name: fastq-join
 description: fastq-join merges paired-end reads by identifying overlapping regions to create longer sequences. Use when user asks to join paired-end sequences, merge overlapping reads, or assemble fastq files.
 homepage: https://github.com/movingpictures83/FastQJoin
+metadata:
+  docker_image: "quay.io/biocontainers/fastq-join:1.3.1--h9948957_8"
 ---
-
 
 # fastq-join
 

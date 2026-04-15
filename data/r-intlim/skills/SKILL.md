@@ -4,7 +4,6 @@ description: This tool integrates metabolomics with other omics data using linea
 homepage: https://cran.r-project.org/web/packages/intlim/index.html
 ---
 
-
 # r-intlim
 
 name: r-intlim

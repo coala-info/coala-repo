@@ -1,9 +1,12 @@
 ---
 name: plant2human-workflow
-description: "This CWL workflow utilizes Foldseek, EMBOSS, and TogoID to perform structural similarity searches between plant protein sequences and the human proteome using AlphaFold Protein Structure Database data. Use this skill when you need to infer the function of understudied plant genes by identifying human orthologs with high structural similarity despite low sequence conservation."
-homepage: https://workflowhub.eu/workflows/1206
+description: This CWL workflow utilizes Foldseek, EMBOSS, and TogoID to perform structural similarity searches between plant protein sequences and the human proteome using AlphaFold Protein Structure Database data. Use this skill when you need to infer the function of understudied plant genes by identifying human orthologs with high structural similarity despite low sequence conservation.
+homepage: https://bonohu.hiroshima-u.ac.jp/index_en.html
+metadata:
+  docker_image: "N/A"
 ---
-# plant2human workflow
+
+# plant2human-workflow
 
 ## Overview
 

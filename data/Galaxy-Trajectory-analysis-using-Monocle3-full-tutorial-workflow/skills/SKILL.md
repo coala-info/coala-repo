@@ -1,10 +1,12 @@
 ---
 name: trajectory-analysis-using-monocle3-full-tutorial-workflow
-description: "This transcriptomics workflow performs single-cell trajectory analysis by processing AnnData inputs through the Monocle3 suite to reconstruct developmental lineages and calculate pseudotime. Use this skill when you need to identify branching points in cell differentiation, discover genes that change along a developmental path, or visualize the progression of single cells through biological processes."
-homepage: https://workflowhub.eu/workflows/1524
+description: This transcriptomics workflow performs single-cell trajectory analysis by processing AnnData inputs through the Monocle3 suite to reconstruct developmental lineages and calculate pseudotime. Use this skill when you need to identify branching points in cell differentiation, discover genes that change along a developmental path, or visualize the progression of single cells through biological processes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Trajectory analysis using Monocle3 - full tutorial workflow
+# trajectory-analysis-using-monocle3-full-tutorial-workflow
 
 ## Overview
 

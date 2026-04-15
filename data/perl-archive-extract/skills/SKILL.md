@@ -2,8 +2,9 @@
 name: perl-archive-extract
 description: This tool provides a generic interface to decompress and unpack various archive formats by automatically detecting the file type. Use when user asks to extract files from archives like tar, zip, or gz, unpack compressed data to a specific directory, or list the contents of an archive.
 homepage: http://metacpan.org/pod/Archive::Extract
+metadata:
+  docker_image: "quay.io/biocontainers/perl-archive-extract:0.88--pl5321hdfd78af_0"
 ---
-
 
 # perl-archive-extract
 

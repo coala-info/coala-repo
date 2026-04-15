@@ -4,7 +4,6 @@ description: This tool performs signature-based clustering and classification of
 homepage: https://bioconductor.org/packages/release/bioc/html/rScudo.html
 ---
 
-
 # bioconductor-rscudo
 
 name: bioconductor-rscudo

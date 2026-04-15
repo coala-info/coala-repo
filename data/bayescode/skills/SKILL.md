@@ -2,6 +2,8 @@
 name: bayescode
 description: BayesCode is a Bayesian MCMC framework for molecular evolution studies that implements mutation-selection models and phylogenetic comparative methods. Use when user asks to estimate selection coefficients, infer changes in effective population size, detect variations in dN/dS ratios across branches, or correlate phenotypic traits with molecular evolutionary rates.
 homepage: https://github.com/ThibaultLatrille/bayescode
+metadata:
+  docker_image: "quay.io/biocontainers/bayescode:1.3.4--h9948957_0"
 ---
 
 # bayescode

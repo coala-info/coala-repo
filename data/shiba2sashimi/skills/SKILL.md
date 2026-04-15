@@ -2,8 +2,9 @@
 name: shiba2sashimi
 description: shiba2sashimi generates Sashimi plots to visualize differential RNA splicing events and isoform-specific expression from Shiba output data. Use when user asks to visualize splicing events, generate Sashimi plots from Shiba results, or compare genomic coverage across experimental groups.
 homepage: https://github.com/Sika-Zheng-Lab/shiba2sashimi
+metadata:
+  docker_image: "quay.io/biocontainers/shiba2sashimi:0.1.7--pyh7e72e81_0"
 ---
-
 
 # shiba2sashimi
 

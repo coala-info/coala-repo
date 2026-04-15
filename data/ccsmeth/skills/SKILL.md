@@ -2,6 +2,8 @@
 name: ccsmeth
 description: ccsmeth identifies DNA methylation patterns in PacBio HiFi reads using deep learning models and kinetic signals. Use when user asks to generate HiFi reads with kinetics, predict 5mCpG methylation sites, align modified reads to a reference, or calculate genomic methylation frequencies.
 homepage: https://github.com/PengNi/ccsmeth
+metadata:
+  docker_image: "quay.io/biocontainers/ccsmeth:0.5.0--pyhdfd78af_0"
 ---
 
 # ccsmeth

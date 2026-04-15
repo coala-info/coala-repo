@@ -4,7 +4,6 @@ description: This tool provides methods for sample size estimation and power ana
 homepage: https://bioconductor.org/packages/release/bioc/html/RnaSeqSampleSize.html
 ---
 
-
 # bioconductor-rnaseqsamplesize
 
 ## Overview

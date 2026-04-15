@@ -4,7 +4,6 @@ description: This tool identifies lipid and oxylipin biomarkers in high-resoluti
 homepage: https://bioconductor.org/packages/release/bioc/html/LOBSTAHS.html
 ---
 
-
 # bioconductor-lobstahs
 
 name: bioconductor-lobstahs

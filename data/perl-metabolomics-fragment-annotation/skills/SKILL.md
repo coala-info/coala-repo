@@ -2,8 +2,9 @@
 name: perl-metabolomics-fragment-annotation
 description: This tool annotates mass spectrometry fragmentation patterns by matching experimental peaks against theoretical chemical masses. Use when user asks to interpret MS/MS spectra, calculate exact masses for fragments, or automate the identification of chemical substructures in metabolomics datasets.
 homepage: https://metacpan.org/pod/Metabolomics::Fragment::Annotation
+metadata:
+  docker_image: "quay.io/biocontainers/perl-metabolomics-fragment-annotation:0.6.9--pl5321hdfd78af_0"
 ---
-
 
 # perl-metabolomics-fragment-annotation
 

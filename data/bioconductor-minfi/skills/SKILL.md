@@ -4,7 +4,6 @@ description: The minfi package provides a comprehensive pipeline for analyzing I
 homepage: https://bioconductor.org/packages/release/bioc/html/minfi.html
 ---
 
-
 # bioconductor-minfi
 
 ## Overview

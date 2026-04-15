@@ -2,6 +2,8 @@
 name: olga
 description: OLGA computes the generation probability of immune receptor sequences and generates synthetic repertoires using V(D)J recombination models. Use when user asks to calculate the probability of specific CDR3 sequences, assess sequence publicness, or generate synthetic baseline repertoires for human or mouse T-cell and B-cell chains.
 homepage: https://github.com/zsethna/OLGA
+metadata:
+  docker_image: "quay.io/biocontainers/olga:1.3.0--pyh7e72e81_0"
 ---
 
 # olga

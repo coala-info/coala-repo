@@ -4,7 +4,6 @@ description: This package provides sequence information and chip coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgfocusprobe.html
 ---
 
-
 # bioconductor-hgfocusprobe
 
 ## Overview

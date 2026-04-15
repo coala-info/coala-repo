@@ -2,8 +2,9 @@
 name: pargenes
 description: ParGenes is a high-performance wrapper that automates phylogenomic pipelines by integrating model selection and tree inference for large-scale datasets. Use when user asks to perform evolutionary model selection, infer gene trees from multiple sequence alignments, or compute species trees using ASTRAL or ASTER.
 homepage: https://github.com/BenoitMorel/ParGenes
+metadata:
+  docker_image: "quay.io/biocontainers/pargenes:1.2.0--py37hf7b2935_0"
 ---
-
 
 # pargenes
 

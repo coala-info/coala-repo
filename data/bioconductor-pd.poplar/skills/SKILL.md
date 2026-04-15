@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequence informatio
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.poplar.html
 ---
 
-
 # bioconductor-pd.poplar
 
 name: bioconductor-pd.poplar

@@ -1,10 +1,12 @@
 ---
 name: query-a-metaplasmidome-database-to-identify-and-annotate-pla
-description: "This metagenomics workflow maps raw sequencing data against a metaplasmidome database using minimap2 to identify plasmid sequences and annotate them with KEGG Orthologs and PFAM domains. Use this skill when you need to characterize the mobile genetic element profile of a microbial community by detecting known plasmids and determining their functional potential through gene annotation."
-homepage: https://workflowhub.eu/workflows/1469
+description: This metagenomics workflow maps raw sequencing data against a metaplasmidome database using minimap2 to identify plasmid sequences and annotate them with KEGG Orthologs and PFAM domains. Use this skill when you need to characterize the mobile genetic element profile of a microbial community by detecting known plasmids and determining their functional potential through gene annotation.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Query a metaplasmidome database to identify and annotate plasmids in metagenomes
+# query-a-metaplasmidome-database-to-identify-and-annotate-pla
 
 ## Overview
 

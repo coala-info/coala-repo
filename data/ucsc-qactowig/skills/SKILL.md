@@ -2,8 +2,9 @@
 name: ucsc-qactowig
 description: This tool converts compressed quality score files (.qac) into wiggle format (.wig). Use when user asks to convert QAC files to WIG format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-qactowig:482--h0b57e2e_0"
 ---
-
 
 # ucsc-qactowig
 

@@ -4,7 +4,6 @@ description: This package implements Cancer Outlier Profile Analysis to identify
 homepage: https://bioconductor.org/packages/release/bioc/html/copa.html
 ---
 
-
 # bioconductor-copa
 
 ## Overview

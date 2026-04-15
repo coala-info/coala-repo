@@ -4,7 +4,6 @@ description: This package provides gene set collections and example datasets for
 homepage: https://bioconductor.org/packages/release/data/experiment/html/EGSEAdata.html
 ---
 
-
 # bioconductor-egseadata
 
 name: bioconductor-egseadata

@@ -2,8 +2,9 @@
 name: clustalo
 description: Clustal Omega is a high-performance tool for performing multiple sequence alignments of protein or nucleotide sequences using seeded guide trees and HMM profile-profile techniques. Use when user asks to align multiple sequences, add new sequences to an existing alignment, or convert between bioinformatics file formats like Clustal, Stockholm, and Vienna.
 homepage: http://www.clustal.org/omega/
+metadata:
+  docker_image: "biocontainers/clustalo:v1.2.4-2-deb_cv1"
 ---
-
 
 # clustalo
 

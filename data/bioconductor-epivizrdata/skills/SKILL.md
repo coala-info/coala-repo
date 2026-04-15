@@ -4,7 +4,6 @@ description: This tool manages and serves genomic data from Bioconductor objects
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrData.html
 ---
 
-
 # bioconductor-epivizrdata
 
 name: bioconductor-epivizrdata

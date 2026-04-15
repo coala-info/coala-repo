@@ -1,9 +1,10 @@
 ---
 name: epic2
-description: "epic2 is a high-performance tool for identifying broad peaks and diffuse domains in ChIP-Seq data. Use when user asks to call broad peaks, identify enriched domains, or perform differential enrichment analysis between conditions."
+description: epic2 is a high-performance tool for identifying broad peaks and diffuse domains in ChIP-Seq data. Use when user asks to call broad peaks, identify enriched domains, or perform differential enrichment analysis between conditions.
 homepage: http://github.com/endrebak/epic2
+metadata:
+  docker_image: "quay.io/biocontainers/epic2:0.0.54--py310h5140242_0"
 ---
-
 
 # epic2
 

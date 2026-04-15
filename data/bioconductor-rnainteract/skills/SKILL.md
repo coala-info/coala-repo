@@ -4,7 +4,6 @@ description: This package analyzes quantitative pairwise genetic interaction scr
 homepage: https://bioconductor.org/packages/3.6/bioc/html/RNAinteract.html
 ---
 
-
 # bioconductor-rnainteract
 
 name: bioconductor-rnainteract

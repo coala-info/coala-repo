@@ -2,6 +2,8 @@
 name: scrappie
 description: Scrappie is a research-oriented basecaller that converts raw electrical signal data from Oxford Nanopore devices into DNA sequences. Use when user asks to perform basecalling on raw fast5 files, call bases from event data, or predict squiggles from sequences.
 homepage: https://github.com/nanoporetech/scrappie
+metadata:
+  docker_image: "quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7"
 ---
 
 # scrappie

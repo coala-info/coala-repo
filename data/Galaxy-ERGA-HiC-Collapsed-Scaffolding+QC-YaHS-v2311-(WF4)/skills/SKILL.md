@@ -1,10 +1,12 @@
 ---
 name: erga-hic-collapsed-scaffoldingqc-yahs-v2311-wf4
-description: "This Galaxy workflow performs Hi-C scaffolding on purged GFA assemblies using YAHS and BWA-MEM2 while integrating comprehensive quality control assessments from BUSCO, Merqury, and Pretext. Use this skill when you need to organize genomic contigs into chromosome-scale scaffolds using chromatin contact data and validate the structural integrity and biological completeness of the resulting assembly."
-homepage: https://workflowhub.eu/workflows/702
+description: This Galaxy workflow performs Hi-C scaffolding on purged GFA assemblies using YAHS and BWA-MEM2 while integrating comprehensive quality control assessments from BUSCO, Merqury, and Pretext. Use this skill when you need to organize genomic contigs into chromosome-scale scaffolds using chromatin contact data and validate the structural integrity and biological completeness of the resulting assembly.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA HiC Collapsed Scaffolding+QC YaHS v2311 (WF4)
+# erga-hic-collapsed-scaffoldingqc-yahs-v2311-wf4
 
 ## Overview
 

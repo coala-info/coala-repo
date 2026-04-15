@@ -4,7 +4,6 @@ description: This package provides biological annotation and identifier mapping 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/m10kcod.db.html
 ---
 
-
 # bioconductor-m10kcod.db
 
 name: bioconductor-m10kcod.db

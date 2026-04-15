@@ -4,6 +4,8 @@ description: This pipeline evaluates the accuracy of genomic variant calling by 
 homepage: https://github.com/nf-core/variantbenchmarking
 ---
 
+# variantbenchmarking
+
 ## Overview
 The nf-core/variantbenchmarking pipeline is designed to evaluate and validate the accuracy of variant calling methods in genomic research. It provides a standardized framework for comparing test variant calls against established truth sets, supporting a wide range of variant types including SNVs, INDELs, Structural Variants (SVs), and Copy Number Variations (CNVs).
 

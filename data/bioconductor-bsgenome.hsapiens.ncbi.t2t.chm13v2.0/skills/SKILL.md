@@ -4,7 +4,6 @@ description: This package provides the complete T2T-CHM13v2.0 human genome assem
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ncbi.t2t.chm13v2.0
 
 name: bioconductor-bsgenome.hsapiens.ncbi.t2t.chm13v2.0

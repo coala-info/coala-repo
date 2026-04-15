@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.drogene.1.0.st.html
 ---
 
-
 # bioconductor-pd.drogene.1.0.st
 
 name: bioconductor-pd.drogene.1.0.st

@@ -4,7 +4,6 @@ description: This package provides genome-wide annotations and identifier mappin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Mmu.eg.db.html
 ---
 
-
 # bioconductor-org.mmu.eg.db
 
 name: bioconductor-org.mmu.eg.db

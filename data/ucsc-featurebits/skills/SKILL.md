@@ -2,8 +2,9 @@
 name: ucsc-featurebits
 description: The `ucsc-featurebits` tool analyzes genomic overlaps and calculates the total non-overlapping bases covered by genomic features. Use when user asks to calculate coverage of genomic features, report feature density, perform set operations (intersection, union, subtraction) on genomic features, find overlaps, or calculate enrichment.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-featurebits:482--h0b57e2e_0"
 ---
-
 
 # ucsc-featurebits
 

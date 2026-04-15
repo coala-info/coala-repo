@@ -4,7 +4,6 @@ description: This tool creates and manages configurable terminal progress bars i
 homepage: https://cloud.r-project.org/web/packages/progress/index.html
 ---
 
-
 # r-progress
 
 name: r-progress

@@ -2,8 +2,9 @@
 name: pyonsite
 description: pyonsite localizes post-translational modifications on peptide sequences using statistical validation and probability-based scoring algorithms. Use when user asks to localize phosphorylation sites, calculate site-specific probabilities, or perform false localization rate estimation for PTMs.
 homepage: https://www.github.com/bigbio/onsite
+metadata:
+  docker_image: "quay.io/biocontainers/pyonsite:0.0.2--pyhdfd78af_0"
 ---
-
 
 # pyonsite
 

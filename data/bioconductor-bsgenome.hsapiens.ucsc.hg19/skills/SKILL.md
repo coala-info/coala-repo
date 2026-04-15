@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the Homo sapien
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg19.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg19
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg19

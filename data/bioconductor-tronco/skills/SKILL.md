@@ -1,9 +1,8 @@
 ---
 name: bioconductor-tronco
-description: "TRONCO infers cancer progression models from genomic data using Suppes-Bayes Causal Networks. Use when user asks to import MAF or GISTIC data, visualize genomic alterations with oncoprints, manipulate cancer datasets, or infer progression models using algorithms like CAPRI and CAPRESE."
+description: TRONCO infers cancer progression models from genomic data using Suppes-Bayes Causal Networks. Use when user asks to import MAF or GISTIC data, visualize genomic alterations with oncoprints, manipulate cancer datasets, or infer progression models using algorithms like CAPRI and CAPRESE.
 homepage: https://bioconductor.org/packages/release/bioc/html/TRONCO.html
 ---
-
 
 # bioconductor-tronco
 

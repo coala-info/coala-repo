@@ -4,7 +4,6 @@ description: This tool performs comprehensive quality control analysis for ChIP-
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ChIC.html
 ---
 
-
 # bioconductor-chic
 
 name: bioconductor-chic

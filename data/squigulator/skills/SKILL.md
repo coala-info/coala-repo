@@ -1,9 +1,10 @@
 ---
 name: squigulator
-description: "squigulator simulates nanopore raw signal data from reference sequences or basecalled reads. Use when user asks to simulate nanopore reads, generate synthetic BLOW5 signal data, or create mock datasets for testing nanopore bioinformatics tools."
+description: squigulator simulates nanopore raw signal data from reference sequences or basecalled reads. Use when user asks to simulate nanopore reads, generate synthetic BLOW5 signal data, or create mock datasets for testing nanopore bioinformatics tools.
 homepage: https://github.com/hasindu2008/squigulator
+metadata:
+  docker_image: "quay.io/biocontainers/squigulator:0.4.0--h5ca1c30_2"
 ---
-
 
 # squigulator
 

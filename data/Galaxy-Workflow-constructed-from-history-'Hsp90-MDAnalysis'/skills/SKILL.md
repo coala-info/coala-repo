@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-hsp90-mdanalysis
-description: "This computational chemistry workflow processes GROMACS structure and trajectory files using Bio3D, MDAnalysis, and VMD to perform comprehensive molecular dynamics analysis. Use this skill when you need to evaluate protein stability, structural fluctuations, and principal component motions from molecular dynamics simulations."
-homepage: https://workflowhub.eu/workflows/1689
+description: This computational chemistry workflow processes GROMACS structure and trajectory files using Bio3D, MDAnalysis, and VMD to perform comprehensive molecular dynamics analysis. Use this skill when you need to evaluate protein stability, structural fluctuations, and principal component motions from molecular dynamics simulations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history 'Hsp90-MDAnalysis'
+# workflow-constructed-from-history-hsp90-mdanalysis
 
 ## Overview
 

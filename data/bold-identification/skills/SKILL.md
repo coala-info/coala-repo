@@ -2,8 +2,9 @@
 name: bold-identification
 description: This tool performs automated taxonomic assignment by matching input sequences against the BOLD Systems reference libraries via API. Use when user asks to identify species from DNA sequences, perform taxonomic classification using COI, ITS, or MATK_RBCL markers, or detect chimeric sequences in barcoding data.
 homepage: https://github.com/linzhi2013/bold_identification
+metadata:
+  docker_image: "quay.io/biocontainers/bold-identification:0.0.27--py_0"
 ---
-
 
 # bold-identification
 

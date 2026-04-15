@@ -2,8 +2,9 @@
 name: pytriangle
 description: pytriangle generates 2D meshes and Constrained Delaunay Triangulations from point sets and Planar Straight Line Graphs. Use when user asks to create 2D meshes, define boundaries and holes, refine mesh density, or interpolate point attributes.
 homepage: https://github.com/pletzer/pytriangle
+metadata:
+  docker_image: "quay.io/biocontainers/pytriangle:1.0.9--py312h0fa9677_10"
 ---
-
 
 # pytriangle
 

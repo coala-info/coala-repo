@@ -2,8 +2,9 @@
 name: structureharvester
 description: This tool automates the extraction of summary statistics and likelihood values from STRUCTURE result files. Use when user asks to parse STRUCTURE results, calculate Delta K using the Evanno method, or prepare data for CLUMPP.
 homepage: http://alumni.soe.ucsc.edu/~dearl/software/structureHarvester/
+metadata:
+  docker_image: "quay.io/biocontainers/structureharvester:0.6.94--py27_0"
 ---
-
 
 # structureharvester
 

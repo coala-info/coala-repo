@@ -2,8 +2,9 @@
 name: jamm
 description: JAMM is a peak-calling algorithm that integrates biological replicates to improve the accuracy of peak detection and boundary definition. Use when user asks to call peaks from multiple replicates, identify enriched genomic regions, or process NGS data for narrow and broad signals.
 homepage: https://github.com/mahmoudibrahim/JAMM
+metadata:
+  docker_image: "quay.io/biocontainers/jamm:1.0.8.0--hdfd78af_1"
 ---
-
 
 # jamm
 

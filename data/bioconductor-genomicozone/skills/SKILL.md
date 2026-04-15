@@ -4,7 +4,6 @@ description: GenomicOZone clusters gene activity into genomic zones to detect di
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicOZone.html
 ---
 
-
 # bioconductor-genomicozone
 
 name: bioconductor-genomicozone

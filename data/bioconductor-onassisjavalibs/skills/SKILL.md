@@ -4,7 +4,6 @@ description: This package provides Java libraries and R interfaces for ontology 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/OnassisJavaLibs.html
 ---
 
-
 # bioconductor-onassisjavalibs
 
 name: bioconductor-onassisjavalibs

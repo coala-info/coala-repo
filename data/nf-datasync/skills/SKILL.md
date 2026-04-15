@@ -4,6 +4,8 @@ description: This system operations pipeline performs data synchronization, chec
 homepage: https://github.com/nf-core/datasync
 ---
 
+# datasync
+
 ## Overview
 nf-core/datasync is a system operations pipeline designed to automate routine data management tasks in large-scale processing environments. It addresses the need for reliable data transfers by providing workflows for synchronizing files, generating cryptographic checksums, and validating data integrity against previously recorded hashes.
 

@@ -4,7 +4,6 @@ description: Bioconductor-cageminer integrates GWAS-derived SNPs with transcript
 homepage: https://bioconductor.org/packages/release/bioc/html/cageminer.html
 ---
 
-
 # bioconductor-cageminer
 
 name: bioconductor-cageminer

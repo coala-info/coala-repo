@@ -4,7 +4,6 @@ description: This package provides access to processed GEUVADIS RNA-seq expressi
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/geuvPack.html
 ---
 
-
 # bioconductor-geuvpack
 
 name: bioconductor-geuvpack

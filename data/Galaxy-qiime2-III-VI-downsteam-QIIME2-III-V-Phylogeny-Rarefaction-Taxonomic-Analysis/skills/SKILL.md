@@ -1,10 +1,12 @@
 ---
 name: qiime2-iii-v-phylogeny-rarefaction-taxonomic-analysis
-description: "This QIIME2 workflow processes representative sequences, feature tables, and metadata to perform phylogenetic tree reconstruction via SEPP fragment insertion, alpha rarefaction analysis, and taxonomic classification using a pre-trained classifier. Use this skill when you need to determine the evolutionary relationships of microbial sequences, assess if sequencing depth is sufficient to capture community diversity, and visualize the taxonomic composition of your samples."
-homepage: https://workflowhub.eu/workflows/1090
+description: This QIIME2 workflow processes representative sequences, feature tables, and metadata to perform phylogenetic tree reconstruction via SEPP fragment insertion, alpha rarefaction analysis, and taxonomic classification using a pre-trained classifier. Use this skill when you need to determine the evolutionary relationships of microbial sequences, assess if sequencing depth is sufficient to capture community diversity, and visualize the taxonomic composition of your samples.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis
+# qiime2-iii-v-phylogeny-rarefaction-taxonomic-analysis
 
 ## Overview
 

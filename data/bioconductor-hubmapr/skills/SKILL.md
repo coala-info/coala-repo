@@ -4,7 +4,6 @@ description: The HuBMAPR package provides an R interface to explore and retrieve
 homepage: https://bioconductor.org/packages/release/bioc/html/HuBMAPR.html
 ---
 
-
 # bioconductor-hubmapr
 
 name: bioconductor-hubmapr

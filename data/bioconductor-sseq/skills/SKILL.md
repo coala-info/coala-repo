@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis for RNA-Seq dat
 homepage: https://bioconductor.org/packages/release/bioc/html/sSeq.html
 ---
 
-
 # bioconductor-sseq
 
 name: bioconductor-sseq

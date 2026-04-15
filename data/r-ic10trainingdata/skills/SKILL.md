@@ -4,7 +4,6 @@ description: This package provides training datasets and genomic annotations for
 homepage: https://cran.r-project.org/web/packages/ic10trainingdata/index.html
 ---
 
-
 # r-ic10trainingdata
 
 name: r-ic10trainingdata

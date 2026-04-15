@@ -4,7 +4,6 @@ description: This package provides the Chip Description File environment for the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/barley1cdf.html
 ---
 
-
 # bioconductor-barley1cdf
 
 name: bioconductor-barley1cdf

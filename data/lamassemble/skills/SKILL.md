@@ -2,8 +2,9 @@
 name: lamassemble
 description: lamassemble produces a high-accuracy consensus sequence from a set of overlapping long DNA reads using a probabilistic framework. Use when user asks to generate a consensus sequence from long reads, perform multiple sequence alignment for error correction, or merge overlapping sequences into a single accurate sequence.
 homepage: https://gitlab.com/mcfrith/lamassemble
+metadata:
+  docker_image: "quay.io/biocontainers/lamassemble:1.7.2--pyh7cba7a3_0"
 ---
-
 
 # lamassemble
 

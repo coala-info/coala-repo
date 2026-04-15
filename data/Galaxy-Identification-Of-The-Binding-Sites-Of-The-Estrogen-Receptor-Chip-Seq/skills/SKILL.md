@@ -1,10 +1,12 @@
 ---
 name: identification-of-the-binding-sites-of-the-estrogen-receptor
-description: "This epigenetics workflow analyzes ChIP-seq BAM files from treatment and control samples to identify Estrogen Receptor binding sites using MACS2 peak calling and deepTools for quality control and visualization. Use this skill when you need to characterize the genomic distribution of transcription factor binding sites and compare epigenetic profiles between patient groups with different clinical outcomes."
-homepage: https://workflowhub.eu/workflows/1620
+description: This epigenetics workflow analyzes ChIP-seq BAM files from treatment and control samples to identify Estrogen Receptor binding sites using MACS2 peak calling and deepTools for quality control and visualization. Use this skill when you need to characterize the genomic distribution of transcription factor binding sites and compare epigenetic profiles between patient groups with different clinical outcomes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Identification Of The Binding Sites Of The Estrogen Receptor - Chip Seq
+# identification-of-the-binding-sites-of-the-estrogen-receptor
 
 ## Overview
 

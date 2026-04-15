@@ -4,7 +4,6 @@ description: PhyloProfile is an R package for visualizing and exploring multi-la
 homepage: https://bioconductor.org/packages/release/bioc/html/PhyloProfile.html
 ---
 
-
 # bioconductor-phyloprofile
 
 name: bioconductor-phyloprofile

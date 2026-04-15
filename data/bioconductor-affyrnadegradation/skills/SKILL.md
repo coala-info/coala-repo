@@ -4,7 +4,6 @@ description: This tool assesses and corrects RNA degradation effects in Affymetr
 homepage: https://bioconductor.org/packages/release/bioc/html/AffyRNADegradation.html
 ---
 
-
 # bioconductor-affyrnadegradation
 
 name: bioconductor-affyrnadegradation

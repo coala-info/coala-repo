@@ -2,6 +2,8 @@
 name: virsorter
 description: VirSorter identifies viral sequences within microbial genomic datasets by scanning contigs for viral hallmark genes and protein enrichment. Use when user asks to detect prophages in genomic data, identify viral contigs in metagenomes, or run the phage contigs sorter pipeline.
 homepage: https://github.com/simroux/VirSorter
+metadata:
+  docker_image: "quay.io/biocontainers/virsorter:2.2.4--pyhdfd78af_2"
 ---
 
 # virsorter

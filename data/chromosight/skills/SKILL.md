@@ -2,6 +2,8 @@
 name: chromosight
 description: Chromosight identifies spatial patterns such as loops and boundaries in chromosome contact maps using computer vision and template matching. Use when user asks to detect chromatin patterns, quantify matching scores for specific coordinates, or generate custom kernels for genomic features.
 homepage: https://github.com/koszullab/chromosight
+metadata:
+  docker_image: "quay.io/biocontainers/chromosight:1.6.3--pyhdfd78af_0"
 ---
 
 # chromosight

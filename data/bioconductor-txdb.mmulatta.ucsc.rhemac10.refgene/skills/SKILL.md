@@ -4,7 +4,6 @@ description: This package provides a Transcript Database object for the Rhesus m
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmulatta.UCSC.rheMac10.refGene.html
 ---
 
-
 # bioconductor-txdb.mmulatta.ucsc.rhemac10.refgene
 
 name: bioconductor-txdb.mmulatta.ucsc.rhemac10.refgene

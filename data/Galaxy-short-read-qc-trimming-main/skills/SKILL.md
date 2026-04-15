@@ -1,10 +1,12 @@
 ---
 name: short-read-quality-control-and-trimming
-description: "This Galaxy workflow processes paired-end Illumina fastq files using fastp for quality control and trimming, followed by MultiQC for aggregate reporting. Use this skill when you need to assess raw sequencing data quality and remove low-quality bases or adapters to prepare genomic and transcriptomic reads for downstream analysis."
-homepage: https://workflowhub.eu/workflows/2025
+description: This Galaxy workflow processes paired-end Illumina fastq files using fastp for quality control and trimming, followed by MultiQC for aggregate reporting. Use this skill when you need to assess raw sequencing data quality and remove low-quality bases or adapters to prepare genomic and transcriptomic reads for downstream analysis.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Short-read quality control and trimming
+# short-read-quality-control-and-trimming
 
 ## Overview
 

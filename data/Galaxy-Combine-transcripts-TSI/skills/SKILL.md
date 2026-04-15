@@ -1,10 +1,12 @@
 ---
 name: combine-transcripts-tsi
-description: "This workflow merges multiple tissue-specific transcriptome GTF files using StringTie, extracts sequences with bedtools, and employs CPAT to identify and filter for high-probability coding transcripts. Use this skill when you need to create a unified, high-confidence coding transcriptome from multiple tissue-specific assemblies while filtering out non-coding sequences."
-homepage: https://workflowhub.eu/workflows/878
+description: This workflow merges multiple tissue-specific transcriptome GTF files using StringTie, extracts sequences with bedtools, and employs CPAT to identify and filter for high-probability coding transcripts. Use this skill when you need to create a unified, high-confidence coding transcriptome from multiple tissue-specific assemblies while filtering out non-coding sequences.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Combine transcripts - TSI
+# combine-transcripts-tsi
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis for Affymetrix 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/plw.html
 ---
 
-
 # bioconductor-plw
 
 name: bioconductor-plw

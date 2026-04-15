@@ -4,7 +4,6 @@ description: The metagene2 package produces metagene plots and heatmaps by aggre
 homepage: https://bioconductor.org/packages/release/bioc/html/metagene2.html
 ---
 
-
 # bioconductor-metagene2
 
 ## Overview

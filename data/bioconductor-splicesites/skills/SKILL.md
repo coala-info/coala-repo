@@ -4,7 +4,6 @@ description: This tool analyzes RNA-seq align-gaps to quantify, annotate, and sc
 homepage: https://bioconductor.org/packages/3.8/bioc/html/spliceSites.html
 ---
 
-
 # bioconductor-splicesites
 
 name: bioconductor-splicesites

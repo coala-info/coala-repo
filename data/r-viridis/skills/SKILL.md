@@ -4,7 +4,6 @@ description: The r-viridis package provides colorblind-friendly and perceptually
 homepage: https://cloud.r-project.org/web/packages/viridis/index.html
 ---
 
-
 # r-viridis
 
 name: r-viridis

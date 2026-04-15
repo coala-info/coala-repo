@@ -1,9 +1,12 @@
 ---
 name: entrytitletest
-description: "This Common Workflow Language workflow imports raw cryo-electron microscopy movies using the pwem tool and manages their deposition into the EMPIAR database. Use this skill when archiving structural biology datasets or sharing raw micrograph data with the scientific community through public repositories."
+description: This Common Workflow Language workflow imports raw cryo-electron microscopy movies using the pwem tool and manages their deposition into the EMPIAR database. Use this skill when archiving structural biology datasets or sharing raw micrograph data with the scientific community through public repositories.
 homepage: https://workflowhub.eu/workflows/188
+metadata:
+  docker_image: "N/A"
 ---
-# entryTitleTest
+
+# entrytitletest
 
 ## Overview
 

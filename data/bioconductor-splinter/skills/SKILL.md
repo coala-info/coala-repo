@@ -1,9 +1,8 @@
 ---
 name: bioconductor-splinter
-description: "Bioconductor-splinter analyzes alternative splicing events and predicts their impact on protein sequences and primer design. Use when user asks to analyze alternative splicing events, predict protein-level impacts like nonsense-mediated decay, or design PCR primers for experimental validation."
+description: Bioconductor-splinter analyzes alternative splicing events and predicts their impact on protein sequences and primer design. Use when user asks to analyze alternative splicing events, predict protein-level impacts like nonsense-mediated decay, or design PCR primers for experimental validation.
 homepage: https://bioconductor.org/packages/release/bioc/html/SPLINTER.html
 ---
-
 
 # bioconductor-splinter
 

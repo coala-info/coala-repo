@@ -2,8 +2,9 @@
 name: smhasher
 description: SMHasher is a comprehensive test suite designed to analyze the quality and performance of non-cryptographic hash functions. Use when user asks to verify hash correctness, benchmark hash algorithm performance, or test for bit distribution flaws and collisions.
 homepage: https://github.com/aappleby/smhasher
+metadata:
+  docker_image: "quay.io/biocontainers/smhasher:0.150.1--py312hf731ba3_11"
 ---
-
 
 # smhasher
 

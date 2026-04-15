@@ -2,8 +2,9 @@
 name: gemma
 description: GEMMA is a software toolkit for performing genome-wide association studies using efficient mixed model algorithms to account for population stratification. Use when user asks to calculate kinship matrices, perform univariate or multivariate linear mixed model association tests, or estimate heritability and predict phenotypes using Bayesian sparse linear mixed models.
 homepage: https://github.com/genetics-statistics/GEMMA
+metadata:
+  docker_image: "quay.io/biocontainers/gemma:0.98.5--ha36d3ea_0"
 ---
-
 
 # gemma
 

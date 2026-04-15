@@ -4,7 +4,6 @@ description: This package analyzes cell growth data by fitting non-parametric an
 homepage: https://bioconductor.org/packages/3.5/bioc/html/cellGrowth.html
 ---
 
-
 # bioconductor-cellgrowth
 
 name: bioconductor-cellgrowth

@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Canine Gen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine2.db.html
 ---
 
-
 # bioconductor-canine2.db
 
 name: bioconductor-canine2.db

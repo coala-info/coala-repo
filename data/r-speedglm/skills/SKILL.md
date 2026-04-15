@@ -4,7 +4,6 @@ description: This tool fits linear and generalized linear models to large datase
 homepage: https://cloud.r-project.org/web/packages/speedglm/index.html
 ---
 
-
 # r-speedglm
 
 name: r-speedglm

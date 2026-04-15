@@ -1,9 +1,8 @@
 ---
 name: bioconductor-metaseqr
-description: "This package provides an integrated pipeline for RNA-Seq differential expression analysis and meta-analysis. Use when user asks to perform multi-algorithm RNA-Seq analysis, combine p-values from different statistical methods, or generate interactive HTML reports for gene expression data."
+description: This package provides an integrated pipeline for RNA-Seq differential expression analysis and meta-analysis. Use when user asks to perform multi-algorithm RNA-Seq analysis, combine p-values from different statistical methods, or generate interactive HTML reports for gene expression data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/metaseqR.html
 ---
-
 
 # bioconductor-metaseqr
 

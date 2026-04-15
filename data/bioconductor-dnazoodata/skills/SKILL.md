@@ -4,7 +4,6 @@ description: This package provides programmatic access to the DNA Zoo Consortium
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DNAZooData.html
 ---
 
-
 # bioconductor-dnazoodata
 
 ## Overview

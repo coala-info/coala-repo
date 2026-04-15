@@ -2,6 +2,8 @@
 name: upd
 description: The upd tool identifies genomic regions where a proband has inherited both alleles from a single parent using trio VCF data. Use when user asks to identify uniparental disomy regions, extract informative inheritance sites, or distinguish between isodisomy and heterodisomy.
 homepage: https://github.com/bjhall/upd
+metadata:
+  docker_image: "quay.io/biocontainers/upd:0.1.1--pyhdfd78af_0"
 ---
 
 # upd

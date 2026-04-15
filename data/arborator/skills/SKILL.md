@@ -1,9 +1,10 @@
 ---
 name: arborator
-description: "Arborator analyzes genomic profiles and metadata for pathogen surveillance and outbreak detection. Use when user asks to identify and cluster pathogen samples, detect outliers, generate dendrograms and clusters, or produce summarized reports of genetic diversity."
+description: Arborator analyzes genomic profiles and metadata for pathogen surveillance and outbreak detection. Use when user asks to identify and cluster pathogen samples, detect outliers, generate dendrograms and clusters, or produce summarized reports of genetic diversity.
 homepage: https://pypi.org/project/arborator/
+metadata:
+  docker_image: "quay.io/biocontainers/arborator:1.2.2--pyhdfd78af_0"
 ---
-
 
 # arborator
 

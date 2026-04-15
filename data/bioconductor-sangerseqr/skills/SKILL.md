@@ -4,7 +4,6 @@ description: This tool processes and analyzes Sanger sequencing data from ABIF a
 homepage: https://bioconductor.org/packages/release/bioc/html/sangerseqR.html
 ---
 
-
 # bioconductor-sangerseqr
 
 name: bioconductor-sangerseqr

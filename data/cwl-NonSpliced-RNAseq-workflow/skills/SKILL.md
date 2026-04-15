@@ -1,9 +1,12 @@
 ---
 name: nonspliced-rnaseq-workflow
-description: "This Common Workflow Language pipeline processes non-spliced RNA-seq data through quality control, trimming, and quantification using tools such as fastp, Bowtie2, FeatureCounts, and Kallisto. Use this skill when you need to quantify gene expression levels or characterize the transcriptomic profile of organisms with non-spliced genes, such as bacteria or specific eukaryotic datasets."
-homepage: https://workflowhub.eu/workflows/77
+description: This Common Workflow Language pipeline processes non-spliced RNA-seq data through quality control, trimming, and quantification using tools such as fastp, Bowtie2, FeatureCounts, and Kallisto. Use this skill when you need to quantify gene expression levels or characterize the transcriptomic profile of organisms with non-spliced genes, such as bacteria or specific eukaryotic datasets.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# NonSpliced RNAseq workflow
+
+# nonspliced-rnaseq-workflow
 
 ## Overview
 

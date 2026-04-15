@@ -1,9 +1,10 @@
 ---
 name: perl-types-standard
-description: "This tool provides a library of standard type constraints for Perl to ensure data integrity and type safety. Use when user asks to define variable constraints, validate subroutine arguments, or enforce object attribute types in Moo or Moose."
+description: This tool provides a library of standard type constraints for Perl to ensure data integrity and type safety. Use when user asks to define variable constraints, validate subroutine arguments, or enforce object attribute types in Moo or Moose.
 homepage: http://search.cpan.org/~tobyink/Type-Tiny-1.002001/lib/Types/Standard.pm
+metadata:
+  docker_image: "quay.io/biocontainers/perl-types-standard:1.002001--pl526_1"
 ---
-
 
 # perl-types-standard
 

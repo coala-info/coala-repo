@@ -2,8 +2,9 @@
 name: uchime
 description: UCHIME identifies chimeric sequences in amplicon sequencing data by comparing query sequences against a trusted reference database. Use when user asks to check sequences for chimeras, benchmark chimera detection, get chimera scores, or view chimera alignments.
 homepage: https://drive5.com/uchime/uchime_download.html
+metadata:
+  docker_image: "quay.io/biocontainers/uchime:4.2--h9948957_0"
 ---
-
 
 # uchime
 

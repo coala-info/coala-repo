@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for the Mus musculus
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.html
 ---
 
-
 # bioconductor-bsgenome.mmusculus.ucsc.mm10
 
 name: bioconductor-bsgenome.mmusculus.ucsc.mm10

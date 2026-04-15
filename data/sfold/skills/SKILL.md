@@ -1,9 +1,10 @@
 ---
 name: sfold
-description: "Performs statistical folding of nucleic acids to predict secondary structures. Use when user asks to predict nucleic acid secondary structures."
+description: Performs statistical folding of nucleic acids to predict secondary structures. Use when user asks to predict nucleic acid secondary structures.
 homepage: https://github.com/Ding-RNA-Lab/Sfold
+metadata:
+  docker_image: "quay.io/biocontainers/sfold:2.2--pl5321r44h7b50bb2_4"
 ---
-
 
 # sfold
 

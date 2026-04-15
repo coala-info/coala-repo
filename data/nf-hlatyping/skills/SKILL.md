@@ -4,6 +4,8 @@ description: This pipeline performs 4-digit HLA genotyping from DNA or RNA seque
 homepage: https://github.com/nf-core/hlatyping
 ---
 
+# hlatyping
+
 ## Overview
 nf-core/hlatyping is designed to solve the problem of Human Leukocyte Antigen (HLA) typing using next-generation sequencing data. It maps reads against a reference of known MHC class I alleles and uses integer linear programming to find allele combinations that maximize the number of explained reads.
 

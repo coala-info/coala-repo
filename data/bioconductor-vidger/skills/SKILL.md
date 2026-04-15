@@ -4,7 +4,6 @@ description: This tool generates information-rich visualizations such as boxplot
 homepage: https://bioconductor.org/packages/release/bioc/html/vidger.html
 ---
 
-
 # bioconductor-vidger
 
 name: bioconductor-vidger

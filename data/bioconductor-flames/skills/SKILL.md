@@ -4,7 +4,6 @@ description: FLAMES is an integrated pipeline for analyzing long-read RNA-seq da
 homepage: https://bioconductor.org/packages/release/bioc/html/FLAMES.html
 ---
 
-
 # bioconductor-flames
 
 ## Overview

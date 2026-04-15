@@ -4,7 +4,6 @@ description: The cellbaseR package provides an R interface to the CellBase RESTf
 homepage: https://bioconductor.org/packages/release/bioc/html/cellbaseR.html
 ---
 
-
 # bioconductor-cellbaser
 
 ## Overview

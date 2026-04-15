@@ -4,7 +4,6 @@ description: The Structstrings package extends Biostrings to handle RNA secondar
 homepage: https://bioconductor.org/packages/release/bioc/html/Structstrings.html
 ---
 
-
 # bioconductor-structstrings
 
 ## Overview

@@ -2,8 +2,9 @@
 name: density-fitness
 description: This tool quantifies the fitness of molecular model residues against experimental electron density by calculating metrics like RSR, RSCC, and EDIAm. Use when user asks to calculate real-space fit statistics, evaluate model quality against density maps or MTZ files, or generate EDIA and OPIA scores for structural models.
 homepage: https://github.com/PDB-REDO/density-fitness
+metadata:
+  docker_image: "quay.io/biocontainers/density-fitness:1.2.0--h077b44d_0"
 ---
-
 
 # density-fitness
 

@@ -2,8 +2,9 @@
 name: coils
 description: Coils identifies potential coiled-coil regions within protein sequences using a sliding window approach. Use when user asks to predict coiled-coil structural motifs, identify heptad repeat positions, or calculate probability scores for alpha-helical wrapping in proteins.
 homepage: https://rostlab.org/owiki/index.php/Packages#Package_overview
+metadata:
+  docker_image: "quay.io/biocontainers/coils:2.2.1--h7b50bb2_5"
 ---
-
 
 # coils
 

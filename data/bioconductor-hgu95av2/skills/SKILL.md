@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Affymetrix Human 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2.html
 ---
 
-
 # bioconductor-hgu95av2
 
 name: bioconductor-hgu95av2

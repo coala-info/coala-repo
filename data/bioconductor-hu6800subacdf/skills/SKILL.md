@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800subacdf.html
 ---
 
-
 # bioconductor-hu6800subacdf
 
 ## Overview

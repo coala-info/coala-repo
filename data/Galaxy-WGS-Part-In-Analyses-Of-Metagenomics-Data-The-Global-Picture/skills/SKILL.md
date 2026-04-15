@@ -1,10 +1,12 @@
 ---
 name: wgs-part-in-analyses-of-metagenomics-data-the-global-picture
-description: "This metagenomics workflow processes FASTA sequencing reads to perform taxonomic and functional profiling using MetaPhlAn2, HUMAnN2, and Krona visualization. Use this skill when you need to identify the microbial species present in a sample and quantify the abundance of metabolic pathways and gene families within that community."
-homepage: https://workflowhub.eu/workflows/1472
+description: This metagenomics workflow processes FASTA sequencing reads to perform taxonomic and functional profiling using MetaPhlAn2, HUMAnN2, and Krona visualization. Use this skill when you need to identify the microbial species present in a sample and quantify the abundance of metabolic pathways and gene families within that community.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WGS Part In "Analyses Of Metagenomics Data - The Global Picture"
+# wgs-part-in-analyses-of-metagenomics-data-the-global-picture
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: csblast
 description: CS-BLAST performs protein sequence searches using context-specific amino acid substitution matrices to increase sensitivity for finding distant evolutionary relationships. Use when user asks to search protein databases for remote homologs, generate context-specific profiles, or perform sensitive sequence alignments.
 homepage: http://wwwuser.gwdg.de/~compbiol/data/csblast/
+metadata:
+  docker_image: "quay.io/biocontainers/csblast:2.2.3--h9948957_4"
 ---
-
 
 # csblast
 

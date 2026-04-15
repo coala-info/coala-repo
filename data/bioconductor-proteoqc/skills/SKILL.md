@@ -4,7 +4,6 @@ description: This tool provides an automated quality control pipeline for mass s
 homepage: https://bioconductor.org/packages/3.8/bioc/html/proteoQC.html
 ---
 
-
 # bioconductor-proteoqc
 
 name: bioconductor-proteoqc

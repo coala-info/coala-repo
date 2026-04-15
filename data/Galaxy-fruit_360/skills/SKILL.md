@@ -1,7 +1,9 @@
 ---
 name: fruit_360
-description: "This workflow performs image classification on the Fruit 360 dataset by processing tabular training and testing data through Keras deep learning architecture, training, and visualization tools. Use this skill when you need to automate the identification of fruit varieties using neural networks and evaluate the performance of image recognition models."
-homepage: https://workflowhub.eu/workflows/1618
+description: This workflow performs image classification on the Fruit 360 dataset by processing tabular training and testing data through Keras deep learning architecture, training, and visualization tools. Use this skill when you need to automate the identification of fruit varieties using neural networks and evaluate the performance of image recognition models.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # fruit_360

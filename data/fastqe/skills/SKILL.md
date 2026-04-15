@@ -1,9 +1,10 @@
 ---
 name: fastqe
-description: "fastqe visualizes FASTQ file quality scores by converting them into a sequence of emojis. Use when user asks to check sequence quality, visualize FASTQ data with emojis, or perform a quick quality triage of sequencing reads."
+description: fastqe visualizes FASTQ file quality scores by converting them into a sequence of emojis. Use when user asks to check sequence quality, visualize FASTQ data with emojis, or perform a quick quality triage of sequencing reads.
 homepage: https://github.com/lonsbio/fastqe
+metadata:
+  docker_image: "quay.io/biocontainers/fastqe:0.5.2--pyhdfd78af_0"
 ---
-
 
 # fastqe
 

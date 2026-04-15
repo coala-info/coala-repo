@@ -1,9 +1,10 @@
 ---
 name: bcbiogff
-description: "bcbiogff parses and writes GFF3 files by converting them into Biopython SeqRecord objects. Use when user asks to parse GFF files, write genomic features to GFF3 format, or filter GFF data by feature type and location."
+description: bcbiogff parses and writes GFF3 files by converting them into Biopython SeqRecord objects. Use when user asks to parse GFF files, write genomic features to GFF3 format, or filter GFF data by feature type and location.
 homepage: https://github.com/chapmanb/bcbb/blob/master/gff
+metadata:
+  docker_image: "quay.io/biocontainers/bcbiogff:0.6.6--py_0"
 ---
-
 
 # bcbiogff
 

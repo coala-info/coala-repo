@@ -1,10 +1,12 @@
 ---
 name: analysis-using-mdanalysis
-description: "This computational chemistry workflow processes DCD and PDB trajectory files using MDAnalysis tools to generate radial distribution functions, cosine content, Ramachandran plots, and various distance or dihedral time series. Use this skill when you need to characterize protein backbone stability, analyze atomic spatial distributions, or evaluate the convergence and conformational sampling of molecular dynamics simulations."
-homepage: https://workflowhub.eu/workflows/1694
+description: This computational chemistry workflow processes DCD and PDB trajectory files using MDAnalysis tools to generate radial distribution functions, cosine content, Ramachandran plots, and various distance or dihedral time series. Use this skill when you need to characterize protein backbone stability, analyze atomic spatial distributions, or evaluate the convergence and conformational sampling of molecular dynamics simulations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Analysis using MDAnalysis
+# analysis-using-mdanalysis
 
 ## Overview
 

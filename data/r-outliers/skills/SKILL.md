@@ -4,7 +4,6 @@ description: The r-outliers package provides a collection of statistical tests a
 homepage: https://cloud.r-project.org/web/packages/outliers/index.html
 ---
 
-
 # r-outliers
 
 ## Overview

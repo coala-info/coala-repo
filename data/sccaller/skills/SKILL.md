@@ -2,8 +2,9 @@
 name: sccaller
 description: sccaller identifies genomic variants and somatic mutations in single-cell sequencing data while accounting for amplification errors and allelic dropout. Use when user asks to call germline variants in single cells, identify somatic mutations by comparing single-cell data to a matched bulk sample, or detect variants using known SNP databases.
 homepage: https://github.com/biosinodx/SCcaller
+metadata:
+  docker_image: "quay.io/biocontainers/sccaller:2.0.0--0"
 ---
-
 
 # sccaller
 

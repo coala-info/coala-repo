@@ -4,7 +4,6 @@ description: The eztune package automates the tuning of hyperparameters for supe
 homepage: https://cran.r-project.org/web/packages/eztune/index.html
 ---
 
-
 # r-eztune
 
 ## Overview

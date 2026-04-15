@@ -1,7 +1,9 @@
 ---
 name: hubward
-description: "hubward maps DNA sequences against large reference genomes using the Burrow-Wheeler Aligner ecosystem. Use when user asks to index a reference genome, align single-end or paired-end reads, or map long-read sequencing data from PacBio or Nanopore."
+description: hubward maps DNA sequences against large reference genomes using the Burrow-Wheeler Aligner ecosystem. Use when user asks to index a reference genome, align single-end or paired-end reads, or map long-read sequencing data from PacBio or Nanopore.
 homepage: https://github.com/lh3/bwa
+metadata:
+  docker_image: "quay.io/biocontainers/hubward:0.2.2--py27_1"
 ---
 
 # hubward

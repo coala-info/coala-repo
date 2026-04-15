@@ -1,10 +1,12 @@
 ---
 name: final-survival-markers-of-lower-grade
-description: "This Galaxy workflow utilizes the Flexynesis machine learning tool to analyze clinical and multi-omics datasets for the identification of survival markers in lower-grade cancers. Use this skill when you need to integrate heterogeneous molecular data to predict patient survival outcomes and visualize risk group stratifications through Kaplan-Meier plots and PCA embeddings."
-homepage: https://workflowhub.eu/workflows/1874
+description: This Galaxy workflow utilizes the Flexynesis machine learning tool to analyze clinical and multi-omics datasets for the identification of survival markers in lower-grade cancers. Use this skill when you need to integrate heterogeneous molecular data to predict patient survival outcomes and visualize risk group stratifications through Kaplan-Meier plots and PCA embeddings.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Final - Survival Markers of Lower Grade
+# final-survival-markers-of-lower-grade
 
 ## Overview
 

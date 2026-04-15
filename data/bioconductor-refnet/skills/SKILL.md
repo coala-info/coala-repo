@@ -4,7 +4,6 @@ description: Bioconductor-refnet queries and curates molecular interaction data 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RefNet.html
 ---
 
-
 # bioconductor-refnet
 
 name: bioconductor-refnet

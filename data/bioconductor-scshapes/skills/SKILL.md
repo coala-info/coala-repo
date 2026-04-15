@@ -4,7 +4,6 @@ description: scShapes models and identifies the distribution shapes of gene expr
 homepage: https://bioconductor.org/packages/release/bioc/html/scShapes.html
 ---
 
-
 # bioconductor-scshapes
 
 ## Overview

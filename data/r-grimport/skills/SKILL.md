@@ -4,7 +4,6 @@ description: This tool imports and manipulates external vector graphics in R by 
 homepage: https://cran.r-project.org/web/packages/grimport/index.html
 ---
 
-
 # r-grimport
 
 name: r-grimport

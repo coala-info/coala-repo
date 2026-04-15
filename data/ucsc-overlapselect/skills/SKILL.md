@@ -2,8 +2,9 @@
 name: ucsc-overlapselect
 description: ucsc-overlapselect identifies and extracts genomic features that intersect with a reference set of regions across various formats like BED, PSL, and GenePred. Use when user asks to identify overlapping genomic features, filter alignments based on overlap thresholds, or generate overlap statistics between two datasets.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-overlapselect:482--h0b57e2e_0"
 ---
-
 
 # ucsc-overlapselect
 

@@ -4,7 +4,6 @@ description: This package provides curated RNA editing atlases and preprocessed 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/raerdata.html
 ---
 
-
 # bioconductor-raerdata
 
 ## Overview

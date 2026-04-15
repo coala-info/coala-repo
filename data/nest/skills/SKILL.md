@@ -2,8 +2,9 @@
 name: nest
 description: NEST is a simulation environment designed for large-scale spiking neural network models. Use when user asks to create neural nodes, establish synaptic connections, simulate network dynamics, or record membrane potentials and spikes.
 homepage: http://www.nest-simulator.org/
+metadata:
+  docker_image: "quay.io/biocontainers/nest:2.14.0--py36_2"
 ---
-
 
 # nest
 

@@ -4,7 +4,6 @@ description: netSmooth implements a network-smoothing framework that uses graph-
 homepage: https://bioconductor.org/packages/release/bioc/html/netSmooth.html
 ---
 
-
 # bioconductor-netsmooth
 
 ## Overview

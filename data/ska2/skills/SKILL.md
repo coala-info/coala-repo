@@ -1,9 +1,10 @@
 ---
 name: ska2
-description: "ska2 aligns closely related genomic sequences by matching split k-mers to identify variants and generate alignments without a reference. Use when user asks to build split k-mer files, create FASTA alignments, map sequences to a reference for VCF output, or perform local assembly for diverged samples."
+description: ska2 aligns closely related genomic sequences by matching split k-mers to identify variants and generate alignments without a reference. Use when user asks to build split k-mer files, create FASTA alignments, map sequences to a reference for VCF output, or perform local assembly for diverged samples.
 homepage: https://github.com/bacpop/ska.rust
+metadata:
+  docker_image: "quay.io/biocontainers/ska2:0.5.1--h4349ce8_0"
 ---
-
 
 # ska2
 

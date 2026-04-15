@@ -1,9 +1,8 @@
 ---
 name: bioconductor-rtcgatoolbox
-description: "RTCGAToolbox provides a unified interface to download, manage, and process pre-processed Level 3 and Level 4 TCGA Firehose data. Use when user asks to download TCGA datasets, access clinical or genomic data from Firehose, or convert Firehose data into Bioconductor-compatible objects."
+description: RTCGAToolbox provides a unified interface to download, manage, and process pre-processed Level 3 and Level 4 TCGA Firehose data. Use when user asks to download TCGA datasets, access clinical or genomic data from Firehose, or convert Firehose data into Bioconductor-compatible objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/RTCGAToolbox.html
 ---
-
 
 # bioconductor-rtcgatoolbox
 

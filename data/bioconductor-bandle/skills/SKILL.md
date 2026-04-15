@@ -4,7 +4,6 @@ description: BANDLE is a Bioconductor package for comparative spatial proteomics
 homepage: https://bioconductor.org/packages/release/bioc/html/bandle.html
 ---
 
-
 # bioconductor-bandle
 
 ## Overview

@@ -4,7 +4,6 @@ description: bioconductor-rat.db0 provides raw SQLite databases used as a base f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rat.db0.html
 ---
 
-
 # bioconductor-rat.db0
 
 ## Overview

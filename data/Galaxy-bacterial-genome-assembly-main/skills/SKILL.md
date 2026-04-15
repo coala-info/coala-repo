@@ -1,10 +1,12 @@
 ---
 name: bacterial-genome-assembly-using-shovill
-description: "This bacterial genomics workflow assembles paired-end trimmed fastq reads into contigs using Shovill and generates assembly visualizations and summaries with Bandage and ToolDistillator. Use this skill when you need to reconstruct a bacterial genome from Illumina short-read data and evaluate the connectivity and quality of the resulting assembly graph."
-homepage: https://workflowhub.eu/workflows/1043
+description: This bacterial genomics workflow assembles paired-end trimmed fastq reads into contigs using Shovill and generates assembly visualizations and summaries with Bandage and ToolDistillator. Use this skill when you need to reconstruct a bacterial genome from Illumina short-read data and evaluate the connectivity and quality of the resulting assembly graph.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Bacterial Genome Assembly using Shovill
+# bacterial-genome-assembly-using-shovill
 
 ## Overview
 

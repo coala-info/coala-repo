@@ -4,7 +4,6 @@ description: SpidermiR facilitates the retrieval, preparation, and integration o
 homepage: https://bioconductor.org/packages/3.6/bioc/html/SpidermiR.html
 ---
 
-
 # bioconductor-spidermir
 
 name: bioconductor-spidermir

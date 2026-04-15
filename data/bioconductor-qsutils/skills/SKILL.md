@@ -4,7 +4,6 @@ description: This tool analyzes viral quasispecies amplicon data from next-gener
 homepage: https://bioconductor.org/packages/release/bioc/html/QSutils.html
 ---
 
-
 # bioconductor-qsutils
 
 name: bioconductor-qsutils

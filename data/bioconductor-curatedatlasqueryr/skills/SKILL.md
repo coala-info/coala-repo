@@ -4,7 +4,6 @@ description: This tool queries and retrieves harmonized single-cell RNA-seq data
 homepage: https://bioconductor.org/packages/release/bioc/html/CuratedAtlasQueryR.html
 ---
 
-
 # bioconductor-curatedatlasqueryr
 
 name: bioconductor-curatedatlasqueryr

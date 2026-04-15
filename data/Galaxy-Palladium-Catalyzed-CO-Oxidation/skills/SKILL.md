@@ -1,10 +1,12 @@
 ---
 name: workflow-palladium-co-oxidation
-description: "This workflow processes X-ray absorption spectroscopy data from palladium-catalyzed CO oxidation experiments using Larch Athena and Larch Plot tools on project files containing various temperature and gas conditions. Use this skill when you need to analyze the electronic and local structural changes of palladium catalysts during CO oxidation under varying thermal and atmospheric environments."
-homepage: https://workflowhub.eu/workflows/1801
+description: This workflow processes X-ray absorption spectroscopy data from palladium-catalyzed CO oxidation experiments using Larch Athena and Larch Plot tools on project files containing various temperature and gas conditions. Use this skill when you need to analyze the electronic and local structural changes of palladium catalysts during CO oxidation under varying thermal and atmospheric environments.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow Palladium CO Oxidation
+# workflow-palladium-co-oxidation
 
 ## Overview
 

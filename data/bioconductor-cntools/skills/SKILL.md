@@ -4,7 +4,6 @@ description: This tool converts segmented DNA copy number data into a matrix for
 homepage: https://bioconductor.org/packages/release/bioc/html/CNTools.html
 ---
 
-
 # bioconductor-cntools
 
 name: bioconductor-cntools

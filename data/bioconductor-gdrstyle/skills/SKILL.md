@@ -4,7 +4,6 @@ description: The gDRstyle package provides a standardized development environmen
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRstyle.html
 ---
 
-
 # bioconductor-gdrstyle
 
 ## Overview

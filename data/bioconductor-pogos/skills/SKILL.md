@@ -4,7 +4,6 @@ description: This tool provides an interface to PharmacoDB for retrieving pharma
 homepage: https://bioconductor.org/packages/release/bioc/html/pogos.html
 ---
 
-
 # bioconductor-pogos
 
 name: bioconductor-pogos

@@ -4,7 +4,6 @@ description: The simpleaffy package provides high-level wrappers for analyzing A
 homepage: https://bioconductor.org/packages/3.5/bioc/html/simpleaffy.html
 ---
 
-
 # bioconductor-simpleaffy
 
 ## Overview

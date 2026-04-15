@@ -2,8 +2,9 @@
 name: ucsc-netsplit
 description: UCSC-netsplit splits large whole-genome alignment net files into chromosome-specific files. Use when user asks to 'split whole-genome alignment net files by chromosome', 'prepare alignment data for chromosome-specific workflows', 'create manageable data chunks for the UCSC Genome Browser', or 'speed up alignment pipelines'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-netsplit:482--h0b57e2e_0"
 ---
-
 
 # ucsc-netsplit
 

@@ -4,7 +4,6 @@ description: This tool parses, validates, and normalizes lipid shorthand nomencl
 homepage: https://bioconductor.org/packages/release/bioc/html/rgoslin.html
 ---
 
-
 # bioconductor-rgoslin
 
 name: bioconductor-rgoslin

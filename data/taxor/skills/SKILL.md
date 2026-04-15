@@ -2,6 +2,8 @@
 name: taxor
 description: Taxor is a bioinformatics tool designed for fast, memory-efficient taxonomic assignment and profiling using hierarchical indexing. Use when user asks to build a k-mer index, search DNA sequences against a reference database, or generate taxonomic abundance profiles.
 homepage: https://github.com/JensUweUlrich/Taxor
+metadata:
+  docker_image: "quay.io/biocontainers/taxor:0.2.1--h4e8ebbd_0"
 ---
 
 # taxor

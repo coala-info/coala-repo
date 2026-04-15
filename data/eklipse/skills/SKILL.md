@@ -2,8 +2,9 @@
 name: eklipse
 description: eKLIPse identifies and quantifies structural variations and rearrangements in mitochondrial DNA by analyzing soft-clipped reads from sequencing data. Use when user asks to detect mtDNA breakpoints, quantify deletion levels, or analyze mitochondrial genomic rearrangements from WES, WGS, or dedicated mtDNA sequencing files.
 homepage: https://github.com/dooguypapua/eKLIPse
+metadata:
+  docker_image: "quay.io/biocontainers/eklipse:1.8--hdfd78af_2"
 ---
-
 
 # eklipse
 

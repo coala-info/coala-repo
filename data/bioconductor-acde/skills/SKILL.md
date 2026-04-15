@@ -4,7 +4,6 @@ description: This tool performs multivariate identification of differentially ex
 homepage: https://bioconductor.org/packages/release/bioc/html/acde.html
 ---
 
-
 # bioconductor-acde
 
 name: bioconductor-acde

@@ -1,9 +1,10 @@
 ---
 name: deap
-description: "DEAP is a flexible Python framework for rapid prototyping and implementation of evolutionary computation algorithms. Use when user asks to implement genetic algorithms, perform multi-objective optimization, develop genetic programming solutions, or use particle swarm optimization."
+description: DEAP is a flexible Python framework for rapid prototyping and implementation of evolutionary computation algorithms. Use when user asks to implement genetic algorithms, perform multi-objective optimization, develop genetic programming solutions, or use particle swarm optimization.
 homepage: https://github.com/DEAP/deap
+metadata:
+  docker_image: "quay.io/biocontainers/deap:1.0.2--py36_0"
 ---
-
 
 # deap
 

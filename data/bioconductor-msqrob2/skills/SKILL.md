@@ -4,7 +4,6 @@ description: bioconductor-msqrob2 provides a robust statistical framework for th
 homepage: https://bioconductor.org/packages/release/bioc/html/msqrob2.html
 ---
 
-
 # bioconductor-msqrob2
 
 ## Overview

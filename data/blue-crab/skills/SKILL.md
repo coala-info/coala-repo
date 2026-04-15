@@ -2,6 +2,8 @@
 name: blue-crab
 description: The blue-crab tool performs bidirectional conversion between ONT POD5 and SLOW5/BLOW5 signal data formats. Use when user asks to convert POD5 files to SLOW5 or BLOW5 format, convert SLOW5 or BLOW5 files back to POD5, or perform real-time conversion of raw nanopore data.
 homepage: https://github.com/Psy-Fer/blue-crab
+metadata:
+  docker_image: "quay.io/biocontainers/blue-crab:0.4.0--pyh05cac1d_1"
 ---
 
 # blue-crab

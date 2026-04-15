@@ -4,7 +4,6 @@ description: This package provides an interface to download and parse SNP, genot
 homepage: https://bioconductor.org/packages/release/bioc/html/SNPediaR.html
 ---
 
-
 # bioconductor-snpediar
 
 name: bioconductor-snpediar

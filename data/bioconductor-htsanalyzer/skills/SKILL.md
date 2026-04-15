@@ -4,7 +4,6 @@ description: This tool performs integrated gene set enrichment and network analy
 homepage: https://bioconductor.org/packages/3.8/bioc/html/HTSanalyzeR.html
 ---
 
-
 # bioconductor-htsanalyzer
 
 name: bioconductor-htsanalyzer

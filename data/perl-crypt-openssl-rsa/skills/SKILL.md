@@ -2,8 +2,9 @@
 name: perl-crypt-openssl-rsa
 description: This tool provides procedural knowledge for the Crypt::OpenSSL::RSA Perl module to perform secure RSA cryptographic operations. Use when user asks to generate RSA key pairs, encrypt or decrypt data, and manage digital signatures using OpenSSL.
 homepage: http://github.com/toddr/Crypt-OpenSSL-RSA
+metadata:
+  docker_image: "quay.io/biocontainers/perl-crypt-openssl-rsa:0.37--pl5321hc234bb7_0"
 ---
-
 
 # perl-crypt-openssl-rsa
 

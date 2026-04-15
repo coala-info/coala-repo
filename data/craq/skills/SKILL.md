@@ -2,8 +2,9 @@
 name: craq
 description: CRAQ assesses genome assembly accuracy and identifies structural errors by integrating mapping signals from short-read and long-read sequencing data without a reference. Use when user asks to evaluate assembly quality, identify regional or structural errors, calculate an Assembly Quality Index, or automatically correct chimeric contigs.
 homepage: https://github.com/JiaoLaboratory/CRAQ
+metadata:
+  docker_image: "quay.io/biocontainers/craq:1.10--hdfd78af_0"
 ---
-
 
 # craq
 

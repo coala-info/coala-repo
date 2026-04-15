@@ -2,6 +2,8 @@
 name: safesim
 description: SafeSim is a UMI-aware toolkit designed to create realistic synthetic datasets for the Safe-Sequencing System by simulating mutations and mixing BAM files. Use when user asks to insert specific mutations from a VCF into a BAM file, simulate low-frequency variants with allele-fraction overdispersion, or merge two BAM files at specific ratios to simulate varying tumor burdens.
 homepage: https://github.com/genetronhealth/safesim
+metadata:
+  docker_image: "quay.io/biocontainers/safesim:0.1.6.8d44580--h7d57edc_4"
 ---
 
 # safesim

@@ -2,8 +2,9 @@
 name: perl-file-slurper
 description: This Perl module provides a simple and efficient way to read or write entire files with proper encoding and line ending handling. Use when user asks to read a file into a string, load file lines into an array, or write text and binary data to a file.
 homepage: http://metacpan.org/pod/File-Slurper
+metadata:
+  docker_image: "quay.io/biocontainers/perl-file-slurper:0.014--pl5321hdfd78af_0"
 ---
-
 
 # perl-file-slurper
 

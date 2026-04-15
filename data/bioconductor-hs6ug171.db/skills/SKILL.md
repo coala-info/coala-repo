@@ -4,7 +4,6 @@ description: This package provides annotation data for the Hs6UG171 microarray p
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Hs6UG171.db.html
 ---
 
-
 # bioconductor-hs6ug171.db
 
 name: bioconductor-hs6ug171.db

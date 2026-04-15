@@ -4,7 +4,6 @@ description: This tool analyzes Copy Number Variation (CNV) data to identify chr
 homepage: https://bioconductor.org/packages/release/bioc/html/oncoscanR.html
 ---
 
-
 # bioconductor-oncoscanr
 
 name: bioconductor-oncoscanr

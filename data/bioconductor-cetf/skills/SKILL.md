@@ -4,7 +4,6 @@ description: This tool performs co-expression network analysis to identify key t
 homepage: https://bioconductor.org/packages/release/bioc/html/CeTF.html
 ---
 
-
 # bioconductor-cetf
 
 name: bioconductor-cetf

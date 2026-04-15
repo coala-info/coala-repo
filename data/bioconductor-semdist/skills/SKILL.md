@@ -4,7 +4,6 @@ description: This tool evaluates multi-label protein function predictors using i
 homepage: https://bioconductor.org/packages/release/bioc/html/SemDist.html
 ---
 
-
 # bioconductor-semdist
 
 name: bioconductor-semdist

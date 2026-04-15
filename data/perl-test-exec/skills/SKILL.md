@@ -2,8 +2,9 @@
 name: perl-test-exec
 description: This tool intercepts Perl's exec calls to allow for testing process-replacement logic without terminating the test runner. Use when user asks to validate that a script calls exec, verify arguments passed to a system execution, or prevent a test script from exiting during an exec call.
 homepage: https://metacpan.org/pod/Test::Exec
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-exec:0.04--pl526_0"
 ---
-
 
 # perl-test-exec
 

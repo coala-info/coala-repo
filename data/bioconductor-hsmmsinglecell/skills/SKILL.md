@@ -4,7 +4,6 @@ description: This tool provides access to single-cell RNA-Seq data from differen
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HSMMSingleCell.html
 ---
 
-
 # bioconductor-hsmmsinglecell
 
 name: bioconductor-hsmmsinglecell

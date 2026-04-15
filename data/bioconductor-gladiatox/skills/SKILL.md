@@ -1,9 +1,8 @@
 ---
 name: bioconductor-gladiatox
-description: "GladiaTOX processes and reports High Content Screening data through automated curve fitting and toxicological modeling. Use when user asks to analyze dose-response data, perform automated curve fitting, calculate Minimal Effective Concentrations, or generate toxicological reports from High Content Screening experiments."
+description: GladiaTOX processes and reports High Content Screening data through automated curve fitting and toxicological modeling. Use when user asks to analyze dose-response data, perform automated curve fitting, calculate Minimal Effective Concentrations, or generate toxicological reports from High Content Screening experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/GladiaTOX.html
 ---
-
 
 # bioconductor-gladiatox
 

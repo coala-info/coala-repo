@@ -2,8 +2,9 @@
 name: camitk-config
 description: This tool configures camitk for various bioinformatics tasks. Use when user asks to set up or modify camitk configurations.
 homepage: https://anaconda.org/channels/bioconda/packages/camitk-config/overview
+metadata:
+  docker_image: "biocontainers/camitk-config:v4.1.2-3-deb_cv1"
 ---
-
 
 # camitk-config
 

@@ -4,7 +4,6 @@ description: This package provides fundamental S4 classes and methods for handli
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHbase.html
 ---
 
-
 # bioconductor-cghbase
 
 name: bioconductor-cghbase

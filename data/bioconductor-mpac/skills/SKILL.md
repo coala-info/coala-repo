@@ -4,7 +4,6 @@ description: bioconductor-mpac integrates multi-omic data with biological pathwa
 homepage: https://bioconductor.org/packages/release/bioc/html/MPAC.html
 ---
 
-
 # bioconductor-mpac
 
 ## Overview

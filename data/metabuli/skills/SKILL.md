@@ -2,8 +2,9 @@
 name: metabuli
 description: Metabuli is a metagenomic classifier that performs taxonomic profiling by simultaneously analyzing DNA and amino acid sequences using a metamer k-mer structure. Use when user asks to classify metagenomic reads, build custom reference databases, refine classification results, or extract reads assigned to specific taxonomic IDs.
 homepage: https://github.com/steineggerlab/Metabuli
+metadata:
+  docker_image: "quay.io/biocontainers/metabuli:1.1.1--pl5321h0bb26bb_0"
 ---
-
 
 # metabuli
 

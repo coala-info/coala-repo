@@ -4,7 +4,6 @@ description: This package provides genomic coordinates and alleles for human SNP
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/SNPlocs.Hsapiens.dbSNP142.GRCh37.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp142.grch37
 
 name: bioconductor-snplocs.hsapiens.dbsnp142.grch37

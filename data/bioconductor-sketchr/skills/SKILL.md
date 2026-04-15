@@ -4,7 +4,6 @@ description: This tool provides an R interface for density-aware geometric sketc
 homepage: https://bioconductor.org/packages/release/bioc/html/sketchR.html
 ---
 
-
 # bioconductor-sketchr
 
 ## Overview

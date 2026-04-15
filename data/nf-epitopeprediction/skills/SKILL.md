@@ -4,6 +4,8 @@ description: The pipeline performs epitope prediction and annotation from varian
 homepage: https://github.com/nf-core/epitopeprediction
 ---
 
+# epitopeprediction
+
 ## Overview
 nf-core/epitopeprediction is a bioinformatics pipeline designed for the prediction and annotation of epitopes. It addresses the need to identify peptides that bind to Major Histocompatibility Complex (MHC) molecules, which is critical for neo-epitope discovery and immunopeptidomics.
 

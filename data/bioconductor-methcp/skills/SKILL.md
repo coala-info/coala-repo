@@ -4,7 +4,6 @@ description: MethCP identifies differentially methylated regions (DMRs) in whole
 homepage: https://bioconductor.org/packages/3.10/bioc/html/MethCP.html
 ---
 
-
 # bioconductor-methcp
 
 name: bioconductor-methcp

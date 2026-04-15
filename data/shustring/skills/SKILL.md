@@ -2,8 +2,9 @@
 name: shustring
 description: This tool finds byte patterns within binary files. Use when user asks to find byte patterns in binary files.
 homepage: https://github.com/CaliforniaEvolutionInsititue/Shustringer
+metadata:
+  docker_image: "quay.io/biocontainers/shustring:2.6--h7b50bb2_8"
 ---
-
 
 # shustring
 

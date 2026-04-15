@@ -1,9 +1,10 @@
 ---
 name: phylopypruner
-description: "PhyloPyPruner refines phylogenomic data by identifying 1:1 orthologs and pruning gene trees to remove paralogs and contaminants. Use when user asks to identify 1:1 orthologs, prune gene trees, filter contaminants, or refine phylogenomic datasets."
+description: PhyloPyPruner refines phylogenomic data by identifying 1:1 orthologs and pruning gene trees to remove paralogs and contaminants. Use when user asks to identify 1:1 orthologs, prune gene trees, filter contaminants, or refine phylogenomic datasets.
 homepage: https://github.com/fethalen/phylopypruner
+metadata:
+  docker_image: "quay.io/biocontainers/phylopypruner:1.2.6--pyhdfd78af_0"
 ---
-
 
 # phylopypruner
 

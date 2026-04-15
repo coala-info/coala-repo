@@ -4,7 +4,6 @@ description: The SCAN.UPC package normalizes gene-expression data at the single-
 homepage: https://bioconductor.org/packages/release/bioc/html/SCAN.UPC.html
 ---
 
-
 # bioconductor-scan.upc
 
 ## Overview

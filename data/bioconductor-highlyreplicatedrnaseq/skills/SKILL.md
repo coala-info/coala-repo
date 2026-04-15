@@ -4,7 +4,6 @@ description: This package provides access to a highly replicated bulk RNA-seq da
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HighlyReplicatedRNASeq.html
 ---
 
-
 # bioconductor-highlyreplicatedrnaseq
 
 ## Overview

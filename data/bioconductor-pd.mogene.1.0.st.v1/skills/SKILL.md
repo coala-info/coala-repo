@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mogene.1.0.st.v1.html
 ---
 
-
 # bioconductor-pd.mogene.1.0.st.v1
 
 name: bioconductor-pd.mogene.1.0.st.v1

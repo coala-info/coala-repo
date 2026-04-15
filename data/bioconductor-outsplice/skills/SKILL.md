@@ -4,7 +4,6 @@ description: OutSplice identifies aberrant splicing events in tumor samples by c
 homepage: https://bioconductor.org/packages/release/bioc/html/OutSplice.html
 ---
 
-
 # bioconductor-outsplice
 
 name: bioconductor-outsplice

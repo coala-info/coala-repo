@@ -1,7 +1,9 @@
 ---
 name: msisensor2
-description: "MSIsensor2 uses machine learning to detect microsatellite instability (MSI) in tumor-only sequencing data without requiring a paired normal sample. Use when user asks to calculate MSI scores, identify somatic microsatellite sites, or determine MSI status from tumor BAM files."
+description: MSIsensor2 uses machine learning to detect microsatellite instability (MSI) in tumor-only sequencing data without requiring a paired normal sample. Use when user asks to calculate MSI scores, identify somatic microsatellite sites, or determine MSI status from tumor BAM files.
 homepage: https://github.com/niu-lab/msisensor2
+metadata:
+  docker_image: "quay.io/biocontainers/msisensor2:0.1--hd03093a_0"
 ---
 
 # msisensor2

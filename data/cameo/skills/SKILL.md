@@ -2,6 +2,8 @@
 name: cameo
 description: Cameo is a computer-aided metabolic engineering and optimization tool. Use when user asks to perform metabolic engineering tasks, analyze metabolic models, or optimize biological pathways.
 homepage: http://cameo.bio
+metadata:
+  docker_image: "quay.io/biocontainers/cameo:0.13.6--pyhdfd78af_0"
 ---
 
 # cameo

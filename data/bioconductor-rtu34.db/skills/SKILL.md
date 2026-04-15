@@ -4,7 +4,6 @@ description: This package provides annotation data for the rtu34 platform to map
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rtu34.db.html
 ---
 
-
 # bioconductor-rtu34.db
 
 name: bioconductor-rtu34.db

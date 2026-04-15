@@ -4,7 +4,6 @@ description: The bioconductor-mbecs package provides a unified framework for ide
 homepage: https://bioconductor.org/packages/release/bioc/html/MBECS.html
 ---
 
-
 # bioconductor-mbecs
 
 name: bioconductor-mbecs

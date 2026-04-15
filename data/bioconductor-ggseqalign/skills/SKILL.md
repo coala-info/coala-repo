@@ -4,7 +4,6 @@ description: The ggseqalign package visualizes pairwise sequence alignments by m
 homepage: https://bioconductor.org/packages/release/bioc/html/ggseqalign.html
 ---
 
-
 # bioconductor-ggseqalign
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: parallel
-description: "This tool executes commands in parallel across multiple CPUs. Use when user asks to run commands in parallel, speed up batch processing, or execute multiple instances of the same command with different arguments."
+description: This tool executes commands in parallel across multiple CPUs. Use when user asks to run commands in parallel, speed up batch processing, or execute multiple instances of the same command with different arguments.
 homepage: https://github.com/PaddlePaddle/Paddle
+metadata:
+  docker_image: "quay.io/biocontainers/parallel:20180322-0"
 ---
-
 
 # parallel
 

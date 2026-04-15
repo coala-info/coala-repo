@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Sus scrofa (Pig
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Sscrofa.UCSC.susScr3.html
 ---
 
-
 # bioconductor-bsgenome.sscrofa.ucsc.susscr3
 
 name: bioconductor-bsgenome.sscrofa.ucsc.susscr3

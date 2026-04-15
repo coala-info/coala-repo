@@ -4,7 +4,6 @@ description: scatterHatch is a Bioconductor package that adds textures and hatch
 homepage: https://bioconductor.org/packages/release/bioc/html/scatterHatch.html
 ---
 
-
 # bioconductor-scatterhatch
 
 ## Overview

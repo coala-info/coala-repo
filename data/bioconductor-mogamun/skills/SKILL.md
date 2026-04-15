@@ -4,7 +4,6 @@ description: bioconductor-mogamun identifies active modules in multiplex biologi
 homepage: https://bioconductor.org/packages/release/bioc/html/MOGAMUN.html
 ---
 
-
 # bioconductor-mogamun
 
 ## Overview

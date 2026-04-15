@@ -4,7 +4,6 @@ description: This tool generates comprehensive multi-page PDF quality control re
 homepage: https://bioconductor.org/packages/3.8/bioc/html/affyQCReport.html
 ---
 
-
 # bioconductor-affyqcreport
 
 name: bioconductor-affyqcreport

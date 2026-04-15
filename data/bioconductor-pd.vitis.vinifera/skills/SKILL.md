@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.vitis.vinifera.html
 ---
 
-
 # bioconductor-pd.vitis.vinifera
 
 name: bioconductor-pd.vitis.vinifera

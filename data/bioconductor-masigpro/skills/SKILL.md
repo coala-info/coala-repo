@@ -4,7 +4,6 @@ description: This tool performs regression-based analysis of single and multiser
 homepage: https://bioconductor.org/packages/release/bioc/html/maSigPro.html
 ---
 
-
 # bioconductor-masigpro
 
 name: bioconductor-masigpro

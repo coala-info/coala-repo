@@ -1,10 +1,12 @@
 ---
 name: covid-19-gatk4
-description: "This workflow downloads Illumina sequencing data and utilizes BWA-MEM, Picard, and GATK4 Mutect2 to perform high-sensitivity variant calling and SnpEff annotation for COVID-19 genomic analysis. Use this skill when you need to identify low-frequency mutations or characterize the genetic diversity of SARS-CoV-2 samples from public repositories or clinical datasets."
-homepage: https://workflowhub.eu/workflows/35
+description: This workflow downloads Illumina sequencing data and utilizes BWA-MEM, Picard, and GATK4 Mutect2 to perform high-sensitivity variant calling and SnpEff annotation for COVID-19 genomic analysis. Use this skill when you need to identify low-frequency mutations or characterize the genetic diversity of SARS-CoV-2 samples from public repositories or clinical datasets.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: GATK4
+# covid-19-gatk4
 
 ## Overview
 

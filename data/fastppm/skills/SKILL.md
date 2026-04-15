@@ -2,8 +2,9 @@
 name: fastppm
 description: fastppm estimates tumor clone frequencies by optimizing convex loss functions over a fixed phylogenetic tree. Use when user asks to regress subclonal frequencies, perform subclonal deconvolution, or fit variant read counts to a known evolutionary structure.
 homepage: https://github.com/elkebir-group/fastppm
+metadata:
+  docker_image: "quay.io/biocontainers/fastppm:1.1.1--py39h2de1943_0"
 ---
-
 
 # fastppm
 

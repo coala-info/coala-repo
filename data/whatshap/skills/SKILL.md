@@ -2,6 +2,8 @@
 name: whatshap
 description: WhatsHap reconstructs haplotypes from sequencing data by phasing genomic variants using individual reads. Use when user asks to phase VCF files, haplotag reads in BAM or CRAM files, perform polyploid or pedigree-integrated phasing, or calculate phasing statistics.
 homepage: https://whatshap.readthedocs.io
+metadata:
+  docker_image: "quay.io/biocontainers/whatshap:2.8--py39h2de1943_0"
 ---
 
 # whatshap

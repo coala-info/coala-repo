@@ -4,7 +4,6 @@ description: bioconductor-splicer classifies alternative splicing events and pre
 homepage: https://bioconductor.org/packages/3.5/bioc/html/spliceR.html
 ---
 
-
 # bioconductor-splicer
 
 name: bioconductor-splicer

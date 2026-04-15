@@ -2,6 +2,8 @@
 name: bwa
 description: BWA is a bioinformatics tool suite used for aligning DNA sequences against a reference genome. Use when user asks to index a reference genome, align short or long reads using BWA-MEM, or map sequences to references with ALT contigs.
 homepage: https://github.com/lh3/bwa
+metadata:
+  docker_image: "quay.io/biocontainers/bwa:0.7.19--h577a1d6_1"
 ---
 
 # bwa

@@ -2,6 +2,8 @@
 name: voronota
 description: Voronota analyzes biological macromolecular structures using Voronoi diagrams to define atomic contacts and surfaces. Use when user asks to calculate interatomic contacts, assess protein model quality, compare structures using CAD-score, detect pockets and cavities, or analyze membrane protein orientations.
 homepage: https://www.voronota.com/
+metadata:
+  docker_image: "quay.io/biocontainers/voronota:1.29.4602--h5755088_0"
 ---
 
 # voronota

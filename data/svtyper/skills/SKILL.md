@@ -2,8 +2,9 @@
 name: svtyper
 description: SVTyper genotypes structural variant candidates by analyzing alignment patterns in Illumina sequencing data. Use when user asks to genotype structural variants, calculate library metrics from BAM files, or perform parallelized single-sample SV genotyping.
 homepage: https://github.com/hall-lab/svtyper
+metadata:
+  docker_image: "quay.io/biocontainers/svtyper:0.7.1--py_0"
 ---
-
 
 # svtyper
 

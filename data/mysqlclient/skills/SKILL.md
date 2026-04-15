@@ -2,8 +2,9 @@
 name: mysqlclient
 description: mysqlclient is a high-performance Python interface for MySQL and MariaDB that provides a C-extension for database connectivity. Use when user asks to install database drivers, connect to MySQL or MariaDB from Python, or resolve C-extension build errors.
 homepage: https://github.com/PyMySQL/mysqlclient-python
+metadata:
+  docker_image: "quay.io/biocontainers/mysqlclient:1.3.10--py36_0"
 ---
-
 
 # mysqlclient
 

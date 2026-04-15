@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosophila2cdf.html
 ---
 
-
 # bioconductor-drosophila2cdf
 
 name: bioconductor-drosophila2cdf

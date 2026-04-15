@@ -4,7 +4,6 @@ description: The smokingMouse package provides access to bulk RNA-sequencing dat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/smokingMouse.html
 ---
 
-
 # bioconductor-smokingmouse
 
 ## Overview

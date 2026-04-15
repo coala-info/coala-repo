@@ -4,7 +4,6 @@ description: This tool creates and manages alternative Chip Definition File (CDF
 homepage: https://bioconductor.org/packages/release/bioc/html/altcdfenvs.html
 ---
 
-
 # bioconductor-altcdfenvs
 
 name: bioconductor-altcdfenvs

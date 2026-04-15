@@ -2,8 +2,9 @@
 name: sigprofilerplotting
 description: SigProfilerPlotting visualizes somatic mutational matrices by creating standardized bar charts and sample portraits for various mutational contexts. Use when user asks to plot single base substitutions, visualize doublet base substitutions, generate indel profiles, or create comprehensive sample portraits from mutational data.
 homepage: https://github.com/alexandrovlab/SigProfilerPlotting
+metadata:
+  docker_image: "quay.io/biocontainers/sigprofilerplotting:1.4.3--pyhdfd78af_0"
 ---
-
 
 # sigprofilerplotting
 

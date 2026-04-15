@@ -4,7 +4,6 @@ description: This package provides infrastructure, data, and utility functions t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BiocCaseStudies.html
 ---
 
-
 # bioconductor-bioccasestudies
 
 name: bioconductor-bioccasestudies

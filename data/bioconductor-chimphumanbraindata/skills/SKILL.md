@@ -4,7 +4,6 @@ description: This package provides raw Affymetrix gene expression data and workf
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChimpHumanBrainData.html
 ---
 
-
 # bioconductor-chimphumanbraindata
 
 ## Overview

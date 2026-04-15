@@ -4,7 +4,6 @@ description: BadRegionFinder identifies and classifies genomic regions with subo
 homepage: https://bioconductor.org/packages/release/bioc/html/BadRegionFinder.html
 ---
 
-
 # bioconductor-badregionfinder
 
 name: bioconductor-badregionfinder

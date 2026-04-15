@@ -1,9 +1,10 @@
 ---
 name: ngshmmalign
-description: "This tool aligns Next-Generation Sequencing reads to a reference genome using profile Hidden Markov Models. Use when user asks to align NGS reads to small, highly variable genomes, or needs sensitive alignments that account for significant indels and point mutations."
+description: This tool aligns Next-Generation Sequencing reads to a reference genome using profile Hidden Markov Models. Use when user asks to align NGS reads to small, highly variable genomes, or needs sensitive alignments that account for significant indels and point mutations.
 homepage: https://github.com/cbg-ethz/ngshmmalign
+metadata:
+  docker_image: "quay.io/biocontainers/ngshmmalign:0.1.1--0"
 ---
-
 
 # ngshmmalign
 

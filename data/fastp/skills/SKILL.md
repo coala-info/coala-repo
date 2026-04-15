@@ -1,9 +1,10 @@
 ---
 name: fastp
-description: "fastp is an all-in-one FASTQ preprocessor that performs quality profiling, adapter trimming, read filtering, and data merging. Use when user asks to preprocess sequencing data, trim adapters, filter reads by quality, merge paired-end reads, or extract unique molecular identifiers."
+description: fastp is an all-in-one FASTQ preprocessor that performs quality profiling, adapter trimming, read filtering, and data merging. Use when user asks to preprocess sequencing data, trim adapters, filter reads by quality, merge paired-end reads, or extract unique molecular identifiers.
 homepage: https://github.com/OpenGene/fastp
+metadata:
+  docker_image: "quay.io/biocontainers/fastp:1.1.0--heae3180_0"
 ---
-
 
 # fastp
 

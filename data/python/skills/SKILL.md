@@ -2,6 +2,8 @@
 name: python
 description: This tool manages the Awesome Python ecosystem by maintaining the README source of truth and executing the Python-based build pipeline for the project website. Use when user asks to add new library entries, update GitHub star counts, build the website, or run local previews and tests.
 homepage: https://github.com/vinta/awesome-python
+metadata:
+  docker_image: "quay.io/biocontainers/python:3.13"
 ---
 
 # python

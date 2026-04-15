@@ -2,8 +2,9 @@
 name: hisat2
 description: HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads to a population of human genomes or a single reference genome. Use when user asks to align RNA-seq or DNA-seq reads, build a genomic index with splice sites and SNPs, or perform nucleotide conversion mapping for bisulfite sequencing.
 homepage: http://daehwankimlab.github.io/hisat2
+metadata:
+  docker_image: "quay.io/biocontainers/hisat2:2.2.2--h503566f_0"
 ---
-
 
 # hisat2
 

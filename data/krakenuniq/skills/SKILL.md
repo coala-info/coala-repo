@@ -2,8 +2,9 @@
 name: krakenuniq
 description: KrakenUniq classifies metagenomic sequences by matching k-mers to a reference database while counting unique k-mer hits to reduce false positives. Use when user asks to classify metagenomic reads, identify taxa in a sample, or validate taxonomic assignments using unique k-mer counts.
 homepage: https://github.com/fbreitwieser/krakenuniq
+metadata:
+  docker_image: "quay.io/biocontainers/krakenuniq:1.0.4--pl5321h668145b_4"
 ---
-
 
 # krakenuniq
 

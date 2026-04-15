@@ -4,7 +4,6 @@ description: This package provides tools for quality control, pre-processing, an
 homepage: https://bioconductor.org/packages/3.6/bioc/html/htSeqTools.html
 ---
 
-
 # bioconductor-htseqtools
 
 ## Overview

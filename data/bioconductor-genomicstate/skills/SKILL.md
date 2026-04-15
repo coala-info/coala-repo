@@ -4,7 +4,6 @@ description: This tool builds and accesses GenomicState objects from Gencode sou
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GenomicState.html
 ---
 
-
 # bioconductor-genomicstate
 
 name: bioconductor-genomicstate

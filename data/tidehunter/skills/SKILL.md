@@ -2,10 +2,9 @@
 name: tidehunter
 description: TideHunter identifies tandemly repeated sequences and calls consensus sequences from long-read genomic data. Use when user asks to identify tandem repeats, call consensus sequences, extract individual repeat units, or find full-length sequences flanked by adapters.
 homepage: https://github.com/yangao07/TideHunter
+metadata:
+  docker_image: "quay.io/biocontainers/tidehunter:1.5.5--h5ca1c30_3"
 ---
-
-
-
 
 # tidehunter
 

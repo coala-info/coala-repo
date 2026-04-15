@@ -2,8 +2,9 @@
 name: perl-extutils-helpers
 description: This tool provides portability utilities for Perl module builders to ensure consistent behavior across different operating systems. Use when user asks to make scripts executable, split strings like a shell, resolve home directory paths, or generate platform-specific man page names.
 homepage: http://metacpan.org/pod/ExtUtils::Helpers
+metadata:
+  docker_image: "quay.io/biocontainers/perl-extutils-helpers:0.026--pl526_0"
 ---
-
 
 # perl-extutils-helpers
 

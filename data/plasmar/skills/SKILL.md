@@ -2,8 +2,9 @@
 name: plasmar
 description: PLASMAR identifies plasmid-like contigs in genomic assemblies and cross-references them with antimicrobial resistance markers. Use when user asks to identify plasmids, filter assembly contigs for mobile genetic elements, or find resistance sequences within plasmid-like structures.
 homepage: https://https://github.com/rastanton/PLASMAR
+metadata:
+  docker_image: "quay.io/biocontainers/plasmar:1.5--hdfd78af_0"
 ---
-
 
 # plasmar
 

@@ -2,6 +2,8 @@
 name: sshmm
 description: ssHMM models the relationship between RNA primary sequences and secondary structures to identify structural motifs using Hidden Markov Models. Use when user asks to preprocess CLIP-seq datasets, train sequence-structure models, or visualize RNA motif architectures.
 homepage: https://github.molgen.mpg.de/heller/ssHMM
+metadata:
+  docker_image: "quay.io/biocontainers/sshmm:1.0.7--py27_0"
 ---
 
 # sshmm

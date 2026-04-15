@@ -4,7 +4,6 @@ description: This package provides a curated reference set of 1309 drug gene exp
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cMap2data.html
 ---
 
-
 # bioconductor-cmap2data
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of gene expression data usi
 homepage: https://cran.r-project.org/web/packages/smvar/index.html
 ---
 
-
 # r-smvar
 
 name: r-smvar

@@ -4,7 +4,6 @@ description: This tool parses GenBank files into semantically useful Bioconducto
 homepage: https://bioconductor.org/packages/3.6/bioc/html/genbankr.html
 ---
 
-
 # bioconductor-genbankr
 
 name: bioconductor-genbankr

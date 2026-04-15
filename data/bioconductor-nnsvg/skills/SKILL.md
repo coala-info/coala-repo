@@ -4,7 +4,6 @@ description: This tool identifies spatially variable genes in spatially-resolved
 homepage: https://bioconductor.org/packages/release/bioc/html/nnSVG.html
 ---
 
-
 # bioconductor-nnsvg
 
 name: bioconductor-nnsvg

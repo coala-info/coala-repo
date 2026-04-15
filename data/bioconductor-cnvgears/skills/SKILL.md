@@ -4,7 +4,6 @@ description: CNVgears provides a framework for integrating, filtering, and analy
 homepage: https://bioconductor.org/packages/3.13/bioc/html/CNVgears.html
 ---
 
-
 # bioconductor-cnvgears
 
 name: bioconductor-cnvgears

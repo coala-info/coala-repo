@@ -2,8 +2,9 @@
 name: setuptools_cython
 description: This tool facilitates the packaging and distribution of Cython-based projects using modern setuptools workflows. Use when user asks to compile extensions in-place, build and install Cython packages, create source distributions, or configure complex build requirements like OpenMP support and AST-based versioning.
 homepage: https://github.com/Technologicat/setup-template-cython
+metadata:
+  docker_image: "quay.io/biocontainers/setuptools_cython:0.2.1--py27_1"
 ---
-
 
 # setuptools_cython
 

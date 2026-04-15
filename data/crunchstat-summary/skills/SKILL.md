@@ -2,8 +2,9 @@
 name: crunchstat-summary
 description: This tool parses Arvados execution logs to provide a human-readable summary of resource consumption such as RAM, CPU, and I/O usage. Use when user asks to summarize resource utilization, identify memory bottlenecks, or optimize compute requirements for Arvados containers.
 homepage: https://arvados.org
+metadata:
+  docker_image: "quay.io/biocontainers/crunchstat-summary:3.2.0--pyhdfd78af_0"
 ---
-
 
 # crunchstat-summary
 

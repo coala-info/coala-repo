@@ -4,7 +4,6 @@ description: The dplyr package provides a grammar for fast and consistent data m
 homepage: https://cloud.r-project.org/web/packages/dplyr/index.html
 ---
 
-
 # r-dplyr
 
 ## Overview

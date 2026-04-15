@@ -4,7 +4,6 @@ description: Bioconductor-switchde identifies genes that follow a sigmoidal expr
 homepage: https://bioconductor.org/packages/release/bioc/html/switchde.html
 ---
 
-
 # bioconductor-switchde
 
 name: bioconductor-switchde

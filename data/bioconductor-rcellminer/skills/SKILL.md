@@ -4,7 +4,6 @@ description: The rcellminer package provides programmatic access to the NCI-60 c
 homepage: https://bioconductor.org/packages/release/bioc/html/rcellminer.html
 ---
 
-
 # bioconductor-rcellminer
 
 ## Overview

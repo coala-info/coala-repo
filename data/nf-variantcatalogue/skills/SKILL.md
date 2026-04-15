@@ -4,6 +4,8 @@ description: This pipeline generates population-level variant catalogues and all
 homepage: https://github.com/nf-core/variantcatalogue
 ---
 
+# variantcatalogue
+
 ## Overview
 nf-core/variantcatalogue is a bioinformatics best-practice analysis pipeline designed to generate variant catalogues from whole genome sequences. It produces a list of variants and their frequencies in a population, facilitating the study of genetic variation across large cohorts.
 

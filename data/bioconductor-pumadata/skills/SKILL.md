@@ -4,7 +4,6 @@ description: This package provides example datasets and data structures for the 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pumadata.html
 ---
 
-
 # bioconductor-pumadata
 
 ## Overview

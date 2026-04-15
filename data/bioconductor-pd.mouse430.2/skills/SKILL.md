@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mouse430.2.html
 ---
 
-
 # bioconductor-pd.mouse430.2
 
 name: bioconductor-pd.mouse430.2

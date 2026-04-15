@@ -1,10 +1,12 @@
 ---
 name: covid-19-variation-analysis-on-wgs-pe-data
-description: "This workflow performs variation analysis on SARS-CoV-2 paired-end whole genome sequencing data using BWA-MEM for mapping, LoFreq for sensitive variant calling, and SnpEff for functional annotation. Use this skill when you need to identify low-frequency mutations and characterize the genetic diversity of COVID-19 samples from Illumina sequencing reads."
-homepage: https://workflowhub.eu/workflows/113
+description: This workflow performs variation analysis on SARS-CoV-2 paired-end whole genome sequencing data using BWA-MEM for mapping, LoFreq for sensitive variant calling, and SnpEff for functional annotation. Use this skill when you need to identify low-frequency mutations and characterize the genetic diversity of COVID-19 samples from Illumina sequencing reads.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: variation analysis on WGS PE data
+# covid-19-variation-analysis-on-wgs-pe-data
 
 ## Overview
 

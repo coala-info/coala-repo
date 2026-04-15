@@ -4,6 +4,8 @@ description: The pipeline ingests single or paired-end FASTQ files via a CSV sam
 homepage: https://github.com/nf-core/troughgraph
 ---
 
+# troughgraph
+
 ## Overview
 nf-core/troughgraph is designed for the quantitative assessment of underlying permafrost landscapes and the extent of permafrost thaw in a region. It bridges genomic data with environmental monitoring by processing sequencing reads against reference genomes to characterize landscape-level changes.
 

@@ -4,7 +4,6 @@ description: This package parses BioPAX files into a flat data table format for 
 homepage: https://bioconductor.org/packages/release/bioc/html/rBiopaxParser.html
 ---
 
-
 # bioconductor-rbiopaxparser
 
 ## Overview

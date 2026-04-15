@@ -1,10 +1,12 @@
 ---
 name: from-bams-to-drug-resistance-prediction-with-tb-profiler
-description: "This Galaxy workflow processes single-end and paired-end Mycobacterium tuberculosis BAM files using Samtools and TB-Profiler to generate a comprehensive summary table of drug-resistance profiles. Use this skill when you need to identify genetic markers of antibiotic resistance and predict phenotypic susceptibility for multiple Mycobacterium tuberculosis isolates from alignment data."
-homepage: https://workflowhub.eu/workflows/1564
+description: This Galaxy workflow processes single-end and paired-end Mycobacterium tuberculosis BAM files using Samtools and TB-Profiler to generate a comprehensive summary table of drug-resistance profiles. Use this skill when you need to identify genetic markers of antibiotic resistance and predict phenotypic susceptibility for multiple Mycobacterium tuberculosis isolates from alignment data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# From BAMs to drug resistance prediction with TB-profiler
+# from-bams-to-drug-resistance-prediction-with-tb-profiler
 
 ## Overview
 

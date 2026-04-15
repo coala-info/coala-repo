@@ -4,7 +4,6 @@ description: concordexR evaluates the quality and homogeneity of cell clusters b
 homepage: https://bioconductor.org/packages/release/bioc/html/concordexR.html
 ---
 
-
 # bioconductor-concordexr
 
 ## Overview

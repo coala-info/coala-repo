@@ -2,8 +2,9 @@
 name: nanopore_simulation
 description: Nanopore SimulatION generates raw ONT MinION signal data in Fast5 format by applying a pore model to a reference genome. Use when user asks to simulate nanopore sequencing data, generate raw Fast5 signals, or test basecalling and mapping pipelines.
 homepage: https://github.com/crohrandt/nanopore_simulation
+metadata:
+  docker_image: "quay.io/biocontainers/nanopore_simulation:0.3--py35_0"
 ---
-
 
 # nanopore_simulation
 

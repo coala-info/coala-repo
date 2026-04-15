@@ -2,8 +2,9 @@
 name: ibdseq
 description: The ibdseq tool identifies and analyzes Identity-By-Descent (IBD) segments in genetic data. Use when user asks to detect IBD segments, perform genetic linkage analysis, or reconstruct pedigrees.
 homepage: https://anaconda.org/channels/bioconda/packages/ibdseq/overview
+metadata:
+  docker_image: "quay.io/biocontainers/ibdseq:r1206--1"
 ---
-
 
 # ibdseq
 

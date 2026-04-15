@@ -4,7 +4,6 @@ description: This package provides gene-based motif rankings and transcription f
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RcisTarget.hg19.motifDBs.cisbpOnly.500bp.html
 ---
 
-
 # bioconductor-rcistarget.hg19.motifdbs.cisbponly.500bp
 
 ## Overview

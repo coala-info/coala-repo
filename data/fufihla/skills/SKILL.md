@@ -2,8 +2,9 @@
 name: fufihla
 description: FuFiHLA is a bioinformatics pipeline that generates high-accuracy HLA allele calls and consensus sequences from long-read sequencing data. Use when user asks to perform HLA typing, prepare IMGT reference data, or generate consensus sequences from PacBio or Nanopore reads.
 homepage: https://github.com/jingqing-hu/FuFiHLA
+metadata:
+  docker_image: "quay.io/biocontainers/fufihla:0.2.4--hdfd78af_0"
 ---
-
 
 # fufihla
 

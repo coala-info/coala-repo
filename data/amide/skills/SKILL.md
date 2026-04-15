@@ -2,8 +2,9 @@
 name: amide
 description: AMIDES is a machine learning framework that detects malicious events and rule evasions by training classifiers on historical benign data and known SIEM rules. Use when user asks to detect attacks that evade static rules, identify malicious variants, or perform rule attribution and ranking.
 homepage: https://github.com/fkie-cad/amides
+metadata:
+  docker_image: "biocontainers/amide:v1.0.5-7-deb_cv1"
 ---
-
 
 # amide
 

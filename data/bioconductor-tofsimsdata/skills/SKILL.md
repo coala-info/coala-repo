@@ -4,7 +4,6 @@ description: This package provides example Time-of-Flight Secondary Ion Mass Spe
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tofsimsData.html
 ---
 
-
 # bioconductor-tofsimsdata
 
 name: bioconductor-tofsimsdata

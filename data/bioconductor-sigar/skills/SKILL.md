@@ -4,7 +4,6 @@ description: This tool performs integrative statistical analysis of multi-platfo
 homepage: https://bioconductor.org/packages/3.6/bioc/html/sigaR.html
 ---
 
-
 # bioconductor-sigar
 
 name: bioconductor-sigar

@@ -4,7 +4,6 @@ description: This tool creates integrative heatmaps for the statistical visualiz
 homepage: https://cran.r-project.org/web/packages/lipidomer/index.html
 ---
 
-
 # r-lipidomer
 
 name: r-lipidomer

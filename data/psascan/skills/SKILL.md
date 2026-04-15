@@ -2,8 +2,9 @@
 name: psascan
 description: psascan is a parallel external memory tool designed to construct suffix arrays for datasets that exceed available system memory. Use when user asks to construct suffix arrays, perform external memory suffix array construction, or process large-scale genomic data with limited RAM.
 homepage: https://www.cs.helsinki.fi/group/pads/pSAscan.html
+metadata:
+  docker_image: "quay.io/biocontainers/psascan:0.1.0--h9948957_5"
 ---
-
 
 # psascan
 

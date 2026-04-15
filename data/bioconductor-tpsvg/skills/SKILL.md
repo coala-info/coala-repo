@@ -4,7 +4,6 @@ description: This tool identifies spatially variable genes in spatially-resolved
 homepage: https://bioconductor.org/packages/release/bioc/html/tpSVG.html
 ---
 
-
 # bioconductor-tpsvg
 
 name: bioconductor-tpsvg

@@ -2,8 +2,9 @@
 name: isonclust2
 description: isONclust2 is a high-performance tool for the de novo clustering of long transcriptomic reads into gene families. Use when user asks to cluster long reads, group transcriptomic data into gene families, or process large-scale datasets from platforms like PromethION.
 homepage: https://github.com/nanoporetech/isonclust2
+metadata:
+  docker_image: "quay.io/biocontainers/isonclust2:2.3--hc9558a2_0"
 ---
-
 
 # isonclust2
 

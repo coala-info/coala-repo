@@ -1,7 +1,9 @@
 ---
 name: sequenza-utils
-description: "sequenza-utils provides a Python-based command-line interface to preprocess genomic data into the compressed seqz format required for copy number analysis. Use when user asks to generate GC-content wiggle files, convert BAM or VCF files to seqz format, or perform binning and merging of seqz files."
+description: sequenza-utils provides a Python-based command-line interface to preprocess genomic data into the compressed seqz format required for copy number analysis. Use when user asks to generate GC-content wiggle files, convert BAM or VCF files to seqz format, or perform binning and merging of seqz files.
 homepage: http://sequenza-utils.readthedocs.org
+metadata:
+  docker_image: "quay.io/biocontainers/sequenza-utils:3.0.0--py311h8ddd9a4_8"
 ---
 
 # sequenza-utils

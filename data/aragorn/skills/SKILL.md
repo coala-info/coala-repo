@@ -2,8 +2,9 @@
 name: aragorn
 description: Aragorn identifies tRNA and tmRNA genes within DNA sequences by searching for conserved secondary structures and sequence motifs. Use when user asks to detect tRNA or tmRNA genes, search circular genomes, specify alternative genetic codes, or output results in GFF format.
 homepage: http://www.ansikte.se/ARAGORN/
+metadata:
+  docker_image: "quay.io/biocontainers/aragorn:1.2.41--h7b50bb2_5"
 ---
-
 
 # aragorn
 

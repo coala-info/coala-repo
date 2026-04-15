@@ -4,7 +4,6 @@ description: This package provides example datasets for the Illumina Human Methy
 homepage: https://bioconductor.org/packages/release/data/experiment/html/minfiData.html
 ---
 
-
 # bioconductor-minfidata
 
 name: bioconductor-minfidata

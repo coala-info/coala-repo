@@ -1,9 +1,12 @@
 ---
 name: allele-specific-expression-network-clustering-analysis-for-h
-description: "This CWL workflow processes transcriptomic data to perform allele-specific expression-network clustering for Huntington's Disease using differential expression analysis, weighted gene co-expression networks, and gene set enrichment. Use this skill when you need to identify co-regulated gene modules and biological pathways that characterize the molecular landscape and regulatory mechanisms of Huntington's Disease."
-homepage: https://workflowhub.eu/workflows/1253
+description: This CWL workflow processes transcriptomic data to perform allele-specific expression-network clustering for Huntington's Disease using differential expression analysis, weighted gene co-expression networks, and gene set enrichment. Use this skill when you need to identify co-regulated gene modules and biological pathways that characterize the molecular landscape and regulatory mechanisms of Huntington's Disease.
+homepage: https://www.ejprarediseases.org/
+metadata:
+  docker_image: "N/A"
 ---
-# Allele-specific expression-network clustering analysis for Huntington's Disease
+
+# allele-specific-expression-network-clustering-analysis-for-h
 
 ## Overview
 

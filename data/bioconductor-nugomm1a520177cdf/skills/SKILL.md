@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugomm1a520177cdf.html
 ---
 
-
 # bioconductor-nugomm1a520177cdf
 
 name: bioconductor-nugomm1a520177cdf

@@ -2,8 +2,9 @@
 name: seqbuster
 description: SeqBuster is a bioinformatic suite designed for the high-throughput analysis and annotation of small RNA datasets, specifically focusing on microRNAs and their isomiR variants. Use when user asks to annotate isomiRs, align small RNA reads to miRBase, or characterize miRNA sequence variations.
 homepage: https://github.com/lpantano/seqbuster
+metadata:
+  docker_image: "quay.io/biocontainers/seqbuster:3.5--0"
 ---
-
 
 # seqbuster
 

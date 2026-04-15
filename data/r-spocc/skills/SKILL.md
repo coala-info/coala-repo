@@ -4,7 +4,6 @@ description: The r-spocc tool provides a unified R interface to retrieve and sta
 homepage: https://cloud.r-project.org/web/packages/spocc/index.html
 ---
 
-
 # r-spocc
 
 name: r-spocc

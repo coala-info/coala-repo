@@ -1,9 +1,10 @@
 ---
 name: komb
-description: "Komb characterizes metagenomes using K-Core decomposition to identify core genomic elements. Use when user asks to analyze microbial community structures, identify core genomic elements, or understand stable components of a microbial ecosystem."
+description: Komb characterizes metagenomes using K-Core decomposition to identify core genomic elements. Use when user asks to analyze microbial community structures, identify core genomic elements, or understand stable components of a microbial ecosystem.
 homepage: https://gitlab.com/treangenlab/komb
+metadata:
+  docker_image: "quay.io/biocontainers/komb:1.0--py310h590eda1_5"
 ---
-
 
 # komb
 

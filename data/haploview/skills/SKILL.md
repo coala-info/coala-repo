@@ -2,8 +2,9 @@
 name: haploview
 description: Haploview is a bioinformatics tool used for the analysis and visualization of linkage disequilibrium and haplotype maps. Use when user asks to calculate LD statistics, perform haplotype block partitioning, select tag SNPs, or conduct genetic association testing and Hardy-Weinberg equilibrium filtering.
 homepage: https://www.broadinstitute.org/haploview/haploview
+metadata:
+  docker_image: "quay.io/biocontainers/haploview:4.2--hdfd78af_1"
 ---
-
 
 # haploview
 

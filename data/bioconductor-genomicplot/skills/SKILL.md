@@ -4,7 +4,6 @@ description: GenomicPlot is an R/Bioconductor package for visualizing and analyz
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicPlot.html
 ---
 
-
 # bioconductor-genomicplot
 
 ## Overview

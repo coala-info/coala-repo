@@ -4,7 +4,6 @@ description: The alakazam package provides tools for high-throughput B cell and 
 homepage: https://cran.r-project.org/web/packages/alakazam/index.html
 ---
 
-
 # r-alakazam
 
 ## Overview

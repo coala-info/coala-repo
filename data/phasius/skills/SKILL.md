@@ -1,9 +1,10 @@
 ---
 name: phasius
-description: "phasius creates interactive phase-block maps from alignment or variant files to visualize genomic phasing consistency. Use when user asks to visualize phase blocks, compare phasing across different data types, or create HTML maps for diploid assembly validation."
+description: phasius creates interactive phase-block maps from alignment or variant files to visualize genomic phasing consistency. Use when user asks to visualize phase blocks, compare phasing across different data types, or create HTML maps for diploid assembly validation.
 homepage: https://github.com/wdecoster/phasius
+metadata:
+  docker_image: "quay.io/biocontainers/phasius:0.7.0--ha6fb395_0"
 ---
-
 
 # phasius
 

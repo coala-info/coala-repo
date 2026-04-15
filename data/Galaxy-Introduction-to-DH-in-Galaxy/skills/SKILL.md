@@ -1,10 +1,12 @@
 ---
 name: introduction-to-dh-in-galaxy
-description: "This digital humanities workflow processes two plain text files using regex-based cleaning, word counting, and grep-based extraction to facilitate comparative literary analysis. Use this skill when you need to identify thematic differences between two documents through word clouds, side-by-side diff visualizations, and targeted keyword extraction."
-homepage: https://workflowhub.eu/workflows/1953
+description: This digital humanities workflow processes two plain text files using regex-based cleaning, word counting, and grep-based extraction to facilitate comparative literary analysis. Use this skill when you need to identify thematic differences between two documents through word clouds, side-by-side diff visualizations, and targeted keyword extraction.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Introduction to DH in Galaxy
+# introduction-to-dh-in-galaxy
 
 ## Overview
 

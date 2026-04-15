@@ -4,7 +4,6 @@ description: This package provides accessory functions and standardized utilitie
 homepage: https://cran.r-project.org/web/packages/workflowscriptscommon/index.html
 ---
 
-
 # r-workflowscriptscommon
 
 name: r-workflowscriptscommon

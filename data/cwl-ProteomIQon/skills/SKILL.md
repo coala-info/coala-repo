@@ -1,9 +1,12 @@
 ---
 name: proteomiqon
-description: "This CWL workflow processes mass spectrometry-derived proteomics data using the ProteomIQon toolset to perform peptide identification, signal detection, and protein quantification. Use this skill when you need to characterize protein expression levels, compare proteomes across different biological samples, or perform high-throughput identification and quantification of peptide ions."
-homepage: https://workflowhub.eu/workflows/2051
+description: This CWL workflow processes mass spectrometry-derived proteomics data using the ProteomIQon toolset to perform peptide identification, signal detection, and protein quantification. Use this skill when you need to characterize protein expression levels, compare proteomes across different biological samples, or perform high-throughput identification and quantification of peptide ions.
+homepage: https://csbiology.github.io/
+metadata:
+  docker_image: "N/A"
 ---
-# ProteomIQon
+
+# proteomiqon
 
 ## Overview
 

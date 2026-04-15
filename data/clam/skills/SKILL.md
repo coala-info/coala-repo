@@ -1,7 +1,9 @@
 ---
 name: clam
-description: "Clam identifies callable genomic regions from sequencing depth to provide accurate denominators for population genetic diversity and divergence calculations. Use when user asks to identify callable loci, calculate windowed population genetic statistics, or generate genomic masks from depth files."
+description: Clam identifies callable genomic regions from sequencing depth to provide accurate denominators for population genetic diversity and divergence calculations. Use when user asks to identify callable loci, calculate windowed population genetic statistics, or generate genomic masks from depth files.
 homepage: https://github.com/cademirch/clam
+metadata:
+  docker_image: "quay.io/biocontainers/clam:1.1.3--h79ce301_0"
 ---
 
 # clam

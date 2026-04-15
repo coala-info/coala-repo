@@ -4,7 +4,6 @@ description: This package provides raw and pre-processed microarray data from a 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bronchialIL13.html
 ---
 
-
 # bioconductor-bronchialil13
 
 ## Overview

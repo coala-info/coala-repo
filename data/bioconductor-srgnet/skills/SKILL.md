@@ -4,7 +4,6 @@ description: SRGnet analyzes synergistic responses to gene mutations by inferrin
 homepage: https://bioconductor.org/packages/3.8/bioc/html/SRGnet.html
 ---
 
-
 # bioconductor-srgnet
 
 name: bioconductor-srgnet

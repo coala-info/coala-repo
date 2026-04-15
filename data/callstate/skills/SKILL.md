@@ -1,9 +1,10 @@
 ---
 name: callstate
-description: "callstate classifies genomic regions into specific callability states based on sequencing depth and alignment quality. Use when user asks to determine if genomic regions are callable, identify regions with low coverage or poor mapping quality, or calculate mean depth statistics for specific intervals."
+description: callstate classifies genomic regions into specific callability states based on sequencing depth and alignment quality. Use when user asks to determine if genomic regions are callable, identify regions with low coverage or poor mapping quality, or calculate mean depth statistics for specific intervals.
 homepage: https://github.com/LuobinY/Callstate
+metadata:
+  docker_image: "quay.io/biocontainers/callstate:0.0.2--h0fde405_1"
 ---
-
 
 # callstate
 

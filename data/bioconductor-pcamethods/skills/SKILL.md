@@ -4,7 +4,6 @@ description: This package provides Principal Component Analysis methods specific
 homepage: https://bioconductor.org/packages/release/bioc/html/pcaMethods.html
 ---
 
-
 # bioconductor-pcamethods
 
 name: bioconductor-pcamethods

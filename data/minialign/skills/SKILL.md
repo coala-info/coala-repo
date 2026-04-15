@@ -2,8 +2,9 @@
 name: minialign
 description: minialign is a long-read alignment tool that maps sequencing data to reference genomes using minimizer-based indexing and SIMD-parallelized extension. Use when user asks to align long reads to a reference, build genome indices, or tune alignment scoring parameters for PacBio and Nanopore data.
 homepage: https://github.com/ocxtal/minialign
+metadata:
+  docker_image: "quay.io/biocontainers/minialign:0.6.0--h577a1d6_0"
 ---
-
 
 # minialign
 

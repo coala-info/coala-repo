@@ -4,7 +4,6 @@ description: The bioconductor-slgi package provides tools for analyzing syntheti
 homepage: https://bioconductor.org/packages/3.6/bioc/html/SLGI.html
 ---
 
-
 # bioconductor-slgi
 
 ## Overview

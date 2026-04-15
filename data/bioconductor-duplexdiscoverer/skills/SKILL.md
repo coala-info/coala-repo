@@ -4,7 +4,6 @@ description: This package provides a workflow for analyzing chimeric reads from 
 homepage: https://bioconductor.org/packages/release/bioc/html/DuplexDiscovereR.html
 ---
 
-
 # bioconductor-duplexdiscoverer
 
 ## Overview

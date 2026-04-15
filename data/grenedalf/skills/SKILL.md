@@ -2,6 +2,8 @@
 name: grenedalf
 description: grenedalf is a high-performance command-line toolkit for the statistical analysis of pool-sequencing data. Use when user asks to calculate genetic diversity metrics, estimate population differentiation, analyze allele frequencies, or convert genomic files into sync format.
 homepage: https://github.com/lczech/grenedalf
+metadata:
+  docker_image: "quay.io/biocontainers/grenedalf:0.6.3--hbefcdb2_0"
 ---
 
 # grenedalf

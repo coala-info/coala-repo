@@ -2,8 +2,9 @@
 name: transformation
 description: This tool applies complex visual effects and transformations to images in Android projects. Use when user asks to blur an image, crop an image, apply rounded corners, convert an image to grayscale, apply a color filter, mask an image, or use GPU-based artistic effects.
 homepage: https://github.com/wasabeef/glide-transformations
+metadata:
+  docker_image: "biocontainers/transformation:phenomenal-v2.2.2_cv1.2.8"
 ---
-
 
 # transformation
 

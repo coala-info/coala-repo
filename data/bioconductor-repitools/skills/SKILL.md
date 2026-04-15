@@ -4,7 +4,6 @@ description: Bioconductor-repitools provides a suite of tools for the analysis a
 homepage: https://bioconductor.org/packages/release/bioc/html/Repitools.html
 ---
 
-
 # bioconductor-repitools
 
 name: bioconductor-repitools

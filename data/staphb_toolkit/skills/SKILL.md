@@ -2,8 +2,9 @@
 name: staphb_toolkit
 description: The StaPH-B ToolKit is a wrapper that simplifies running bioinformatics tools and workflows by automatically managing container execution and file system paths. Use when user asks to run containerized bioinformatics applications, execute curated genomic workflows, or manage environment-specific configurations for public health bioinformatics.
 homepage: https://staphb.org/staphb_toolkit/
+metadata:
+  docker_image: "quay.io/biocontainers/staphb_toolkit:2.0.1--pyhdfd78af_0"
 ---
-
 
 # staphb_toolkit
 

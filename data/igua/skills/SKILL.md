@@ -2,8 +2,9 @@
 name: igua
 description: IGUA groups gene clusters into families using iterative unsupervised clustering of protein sequences. Use when user asks to assign gene clusters to families, identify gene cluster families from GenBank files, or perform content-agnostic clustering of biosynthetic gene clusters.
 homepage: https://github.com/zellerlab/IGUA
+metadata:
+  docker_image: "quay.io/biocontainers/igua:0.1.0--py39h5b94c0b_0"
 ---
-
 
 # igua
 

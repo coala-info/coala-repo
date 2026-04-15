@@ -4,7 +4,6 @@ description: This tool identifies SNP interactions and performs feature selectio
 homepage: https://bioconductor.org/packages/release/bioc/html/logicFS.html
 ---
 
-
 # bioconductor-logicfs
 
 name: bioconductor-logicfs

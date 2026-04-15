@@ -1,9 +1,10 @@
 ---
 name: bwtk
-description: "bwtk is a specialized toolkit for efficiently creating, merging, and manipulating bigWig files in genomics. Use when user asks to convert bedGraph files to bigWig, merge multiple tracks, extract base-resolution scores, or optimize file size through binning and mathematical transformations."
+description: bwtk is a specialized toolkit for efficiently creating, merging, and manipulating bigWig files in genomics. Use when user asks to convert bedGraph files to bigWig, merge multiple tracks, extract base-resolution scores, or optimize file size through binning and mathematical transformations.
 homepage: https://github.com/bjmt/bwtk
+metadata:
+  docker_image: "quay.io/biocontainers/bwtk:1.8.1--h9990f68_0"
 ---
-
 
 # bwtk
 

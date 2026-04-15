@@ -4,7 +4,6 @@ description: This tool scans sequences for miRNA binding sites using biochemical
 homepage: https://bioconductor.org/packages/release/bioc/html/scanMiR.html
 ---
 
-
 # bioconductor-scanmir
 
 name: bioconductor-scanmir

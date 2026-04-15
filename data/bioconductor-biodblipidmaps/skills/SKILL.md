@@ -4,7 +4,6 @@ description: This package provides a connector to the LIPID MAPS Structure Datab
 homepage: https://bioconductor.org/packages/3.14/bioc/html/biodbLipidmaps.html
 ---
 
-
 # bioconductor-biodblipidmaps
 
 ## Overview

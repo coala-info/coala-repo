@@ -2,8 +2,9 @@
 name: pyrle
 description: Pyrle provides a Cython-optimized implementation of Run Length Encoding for memory-efficient storage and arithmetic of genomic data. Use when user asks to perform arithmetic on genomic tracks, store sparse data using Run Length Encoding, or manage memory-intensive vector operations.
 homepage: https://github.com/endrebak/pyrle
+metadata:
+  docker_image: "quay.io/biocontainers/pyrle:0.0.43--py311haab0aaa_0"
 ---
-
 
 # pyrle
 

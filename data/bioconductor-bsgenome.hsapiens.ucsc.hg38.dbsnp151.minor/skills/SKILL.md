@@ -4,7 +4,6 @@ description: This tool provides the human hg38 genome sequence with injected min
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.minor
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.minor

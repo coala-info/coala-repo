@@ -1,9 +1,12 @@
 ---
 name: cwl-protein-ligand-docking-tutorial-fpocket
-description: "This CWL workflow identifies protein active site cavities and performs protein-ligand docking using FPocket, Open Babel, and AutoDock Vina. Use this skill when you need to predict the binding pose of a small molecule inhibitor within a protein's active site or identify potential druggable cavities for drug discovery."
-homepage: https://workflowhub.eu/workflows/259
+description: This CWL workflow identifies protein active site cavities and performs protein-ligand docking using FPocket, Open Babel, and AutoDock Vina. Use this skill when you need to predict the binding pose of a small molecule inhibitor within a protein's active site or identify potential druggable cavities for drug discovery.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Protein-ligand Docking tutorial (Fpocket)
+
+# cwl-protein-ligand-docking-tutorial-fpocket
 
 ## Overview
 

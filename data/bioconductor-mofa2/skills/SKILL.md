@@ -4,7 +4,6 @@ description: MOFA2 integrates heterogeneous multi-omics data sets using an unsup
 homepage: https://bioconductor.org/packages/release/bioc/html/MOFA2.html
 ---
 
-
 # bioconductor-mofa2
 
 name: bioconductor-mofa2

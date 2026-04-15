@@ -2,6 +2,8 @@
 name: psap
 description: PSAP is a machine learning tool that predicts the likelihood of proteins undergoing liquid-liquid phase separation based on sequence-derived biochemical features. Use when user asks to predict phase separation scores, train custom classifiers for specific proteomes, or extract biochemical features from protein sequences.
 homepage: https://github.com/vanheeringen-lab/psap
+metadata:
+  docker_image: "quay.io/biocontainers/psap:1.0.7--pyhdfd78af_0"
 ---
 
 # psap

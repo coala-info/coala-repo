@@ -2,6 +2,8 @@
 name: hiddendomains
 description: hiddendomains uses a Hidden Markov Model to detect broad epigenetic marks and enriched genomic regions from sequencing data. Use when user asks to call broad peaks, identify large domains of enrichment, bin genomic reads, or convert HMM results into BED format.
 homepage: http://hiddendomains.sourceforge.net/
+metadata:
+  docker_image: "quay.io/biocontainers/hiddendomains:3.1--pl526r36_0"
 ---
 
 # hiddendomains

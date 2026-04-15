@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation maps for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene20sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-hugene20sttranscriptcluster.db
 
 ## Overview

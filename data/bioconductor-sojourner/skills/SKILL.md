@@ -4,7 +4,6 @@ description: The sojourner package provides a comprehensive workflow for importi
 homepage: https://bioconductor.org/packages/3.10/bioc/html/sojourner.html
 ---
 
-
 # bioconductor-sojourner
 
 ## Overview

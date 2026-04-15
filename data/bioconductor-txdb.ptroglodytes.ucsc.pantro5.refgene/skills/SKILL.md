@@ -4,7 +4,6 @@ description: This package provides genomic annotation data for the Pan troglodyt
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ptroglodytes.UCSC.panTro5.refGene.html
 ---
 
-
 # bioconductor-txdb.ptroglodytes.ucsc.pantro5.refgene
 
 name: bioconductor-txdb.ptroglodytes.ucsc.pantro5.refgene

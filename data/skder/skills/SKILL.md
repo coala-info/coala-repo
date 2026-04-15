@@ -2,8 +2,9 @@
 name: skder
 description: skder selects representative microbial genomes from large datasets by calculating average nucleotide identity and assembly quality. Use when user asks to dereplicate genomes, select representative strains, or filter mobile genetic elements from genomic datasets.
 homepage: https://github.com/raufs/skDER
+metadata:
+  docker_image: "quay.io/biocontainers/skder:1.3.4--py310h184ae93_1"
 ---
-
 
 # skder
 

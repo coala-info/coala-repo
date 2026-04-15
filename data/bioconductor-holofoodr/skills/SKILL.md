@@ -4,7 +4,6 @@ description: This tool provides an R interface to the HoloFood database for sear
 homepage: https://bioconductor.org/packages/release/bioc/html/HoloFoodR.html
 ---
 
-
 # bioconductor-holofoodr
 
 name: bioconductor-holofoodr

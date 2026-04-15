@@ -4,7 +4,6 @@ description: This Bioconductor package provides mapping between MeSH identifiers
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Eco.IAI39.eg.db.html
 ---
 
-
 # bioconductor-mesh.eco.iai39.eg.db
 
 name: bioconductor-mesh.eco.iai39.eg.db

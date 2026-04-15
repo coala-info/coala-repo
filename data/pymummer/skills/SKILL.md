@@ -1,7 +1,9 @@
 ---
 name: pymummer
-description: "pymummer provides a Python wrapper for the MUMmer suite to automate sequence alignment and parse results into structured objects. Use when user asks to align genomic sequences, filter delta files, detect SNPs, or parse coordinate mapping outputs."
+description: pymummer provides a Python wrapper for the MUMmer suite to automate sequence alignment and parse results into structured objects. Use when user asks to align genomic sequences, filter delta files, detect SNPs, or parse coordinate mapping outputs.
 homepage: https://github.com/sanger-pathogens/pymummer
+metadata:
+  docker_image: "quay.io/biocontainers/pymummer:0.12.0--pyhdfd78af_0"
 ---
 
 # pymummer

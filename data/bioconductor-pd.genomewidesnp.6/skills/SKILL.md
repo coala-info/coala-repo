@@ -4,7 +4,6 @@ description: This package provides the annotation and infrastructure required to
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.genomewidesnp.6.html
 ---
 
-
 # bioconductor-pd.genomewidesnp.6
 
 ## Overview

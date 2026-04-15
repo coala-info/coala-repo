@@ -4,7 +4,6 @@ description: Bioconductor-chipqc performs quality control analysis and generates
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPQC.html
 ---
 
-
 # bioconductor-chipqc
 
 name: bioconductor-chipqc

@@ -4,7 +4,6 @@ description: The TOP package implements a transfer learning framework to build p
 homepage: https://bioconductor.org/packages/release/bioc/html/TOP.html
 ---
 
-
 # bioconductor-top
 
 ## Overview

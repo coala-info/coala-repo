@@ -4,7 +4,6 @@ description: This package provides annotation data and mappings for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu2beta7.html
 ---
 
-
 # bioconductor-hgu2beta7
 
 ## Overview

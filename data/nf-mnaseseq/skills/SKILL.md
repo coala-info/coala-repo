@@ -4,6 +4,8 @@ description: This pipeline processes DNA sequencing data from micrococcal nuclea
 homepage: https://github.com/nf-core/mnaseseq
 ---
 
+# mnaseseq
+
 ## Overview
 nf-core/mnaseseq is a bioinformatics analysis pipeline designed for DNA sequencing data obtained via micrococcal nuclease (MNase) digestion. It automates the transition from raw sequencing reads to high-level analysis of nucleosome positioning and occupancy across the genome.
 

@@ -2,8 +2,9 @@
 name: hhsuite-data
 description: HH-suite3 performs sensitive protein sequence analysis and remote homology detection using HMM-HMM alignment. Use when user asks to perform iterative HMM searches, search HMM databases, filter multiple sequence alignments, or build profile HMMs.
 homepage: https://github.com/soedinglab/hh-suite
+metadata:
+  docker_image: "biocontainers/hhsuite-data:v3.0beta2dfsg-3-deb_cv1"
 ---
-
 
 # hhsuite-data
 

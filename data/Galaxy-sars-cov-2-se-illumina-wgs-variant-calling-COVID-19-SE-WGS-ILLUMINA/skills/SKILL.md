@@ -1,10 +1,12 @@
 ---
 name: covid-19-variation-analysis-on-wgs-se-data
-description: "This workflow processes single-end Illumina whole genome sequencing reads by mapping them to the SARS-CoV-2 reference genome using Bowtie2 and performing sensitive variant calling and annotation with LoFreq and SnpEff. Use this skill when you need to identify low-frequency viral mutations and assess their functional impact in COVID-19 samples to track intra-host diversity or evolutionary trends."
-homepage: https://workflowhub.eu/workflows/112
+description: This workflow processes single-end Illumina whole genome sequencing reads by mapping them to the SARS-CoV-2 reference genome using Bowtie2 and performing sensitive variant calling and annotation with LoFreq and SnpEff. Use this skill when you need to identify low-frequency viral mutations and assess their functional impact in COVID-19 samples to track intra-host diversity or evolutionary trends.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: variation analysis on WGS SE data
+# covid-19-variation-analysis-on-wgs-se-data
 
 ## Overview
 

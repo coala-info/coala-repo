@@ -1,9 +1,10 @@
 ---
 name: comparem2
-description: "CompareM2 is a microbial genomes-to-report pipeline for comprehensive characterization of microbial genomes. Use when user asks to analyze microbial genome assemblies to generate reports with interpretable information and publication-ready graphics."
+description: CompareM2 is a microbial genomes-to-report pipeline for comprehensive characterization of microbial genomes. Use when user asks to analyze microbial genome assemblies to generate reports with interpretable information and publication-ready graphics.
 homepage: https://github.com/cmkobel/comparem2
+metadata:
+  docker_image: "quay.io/biocontainers/comparem2:2.16.2--hdfd78af_0"
 ---
-
 
 # comparem2
 

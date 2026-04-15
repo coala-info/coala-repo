@@ -4,7 +4,6 @@ description: The mina package performs microbial community profiling by integrat
 homepage: https://bioconductor.org/packages/release/bioc/html/mina.html
 ---
 
-
 # bioconductor-mina
 
 ## Overview

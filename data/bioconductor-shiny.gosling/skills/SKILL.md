@@ -4,7 +4,6 @@ description: This package provides an R wrapper for Gosling.js to create interac
 homepage: https://bioconductor.org/packages/release/bioc/html/shiny.gosling.html
 ---
 
-
 # bioconductor-shiny.gosling
 
 ## Overview

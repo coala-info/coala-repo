@@ -4,6 +4,8 @@ description: This pipeline processes raw 2D single-channel 16-bit TIF images fro
 homepage: https://github.com/nf-core/lsmquant
 ---
 
+# lsmquant
+
 ## Overview
 nf-core/lsmquant is designed for the preprocessing and analysis of large-scale light-sheet microscopy images from tissue-cleared samples, such as whole brains. It automates the transition from raw 2D image tiles to a reconstructed 3D volume, enabling high-throughput morphometric analysis.
 

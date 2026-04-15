@@ -4,7 +4,6 @@ description: This package provides reference data, example BAM files, and mappab
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NxtIRFdata.html
 ---
 
-
 # bioconductor-nxtirfdata
 
 ## Overview

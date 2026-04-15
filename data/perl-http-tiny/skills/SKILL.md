@@ -2,8 +2,9 @@
 name: perl-http-tiny
 description: perl-http-tiny is a lightweight HTTP/1.1 client for Perl used for making web requests and retrieving data. Use when user asks to fetch web content, interact with APIs, or perform basic HTTP requests within Perl scripts.
 homepage: https://github.com/chansen/p5-http-tiny
+metadata:
+  docker_image: "quay.io/biocontainers/perl-http-tiny:0.076--pl526_0"
 ---
-
 
 # perl-http-tiny
 

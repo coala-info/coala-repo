@@ -1,10 +1,12 @@
 ---
 name: clinical-metaproteomics-data-interpretation
-description: "This workflow performs taxonomic and functional annotation of quantified peptides using Unipept and conducts differential expression analysis on microbial and human proteins using MSstatsTMT. Use this skill when you need to characterize the microbial composition of clinical samples and identify statistically significant changes in protein abundance across different experimental conditions or patient groups."
-homepage: https://workflowhub.eu/workflows/1219
+description: This workflow performs taxonomic and functional annotation of quantified peptides using Unipept and conducts differential expression analysis on microbial and human proteins using MSstatsTMT. Use this skill when you need to characterize the microbial composition of clinical samples and identify statistically significant changes in protein abundance across different experimental conditions or patient groups.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clinical Metaproteomics Data Interpretation
+# clinical-metaproteomics-data-interpretation
 
 ## Overview
 

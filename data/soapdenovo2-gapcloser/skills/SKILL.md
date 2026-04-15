@@ -2,8 +2,9 @@
 name: soapdenovo2-gapcloser
 description: GapCloser reduces the number of unknown bases in genomic scaffolds by mapping short reads to fill gaps with nucleotide sequences. Use when user asks to close gaps in scaffolds, replace Ns in a genome assembly, or perform post-processing on genomic sequences.
 homepage: 
+metadata:
+  docker_image: "quay.io/biocontainers/soapdenovo2-gapcloser:1.12--h077b44d_3"
 ---
-
 
 # soapdenovo2-gapcloser
 

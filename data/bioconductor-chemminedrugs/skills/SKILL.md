@@ -4,7 +4,6 @@ description: This package provides a curated SQLite database of the DrugBank dat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ChemmineDrugs.html
 ---
 
-
 # bioconductor-chemminedrugs
 
 name: bioconductor-chemminedrugs

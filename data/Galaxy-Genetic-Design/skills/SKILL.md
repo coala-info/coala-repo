@@ -1,10 +1,12 @@
 ---
 name: genetic-design
-description: "This synthetic biology workflow processes rpSBML and GEM SBML files using tools like Selenzyme, Parts Genie, and DNA Weaver to automate the design of genetic constructs for metabolic pathways. Use this skill when you need to select optimal enzymes for a metabolic route, design genetic parts for pathway expression, and generate assembly plans for DNA synthesis."
-homepage: https://workflowhub.eu/workflows/23
+description: This synthetic biology workflow processes rpSBML and GEM SBML files using tools like Selenzyme, Parts Genie, and DNA Weaver to automate the design of genetic constructs for metabolic pathways. Use this skill when you need to select optimal enzymes for a metabolic route, design genetic parts for pathway expression, and generate assembly plans for DNA synthesis.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genetic Design
+# genetic-design
 
 ## Overview
 

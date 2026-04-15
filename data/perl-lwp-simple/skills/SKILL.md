@@ -2,8 +2,9 @@
 name: perl-lwp-simple
 description: This tool provides a procedural interface for fetching web resources and interacting with HTTP servers using Perl. Use when user asks to fetch web content, download and store remote files, mirror resources based on modification dates, or retrieve URL metadata via HEAD requests.
 homepage: https://metacpan.org/pod/LWP::Simple
+metadata:
+  docker_image: "quay.io/biocontainers/perl-lwp-simple:6.67--pl5321hdfd78af_0"
 ---
-
 
 # perl-lwp-simple
 

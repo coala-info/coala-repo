@@ -4,7 +4,6 @@ description: This tool decomposes RNA-seq differential expression contrasts into
 homepage: https://bioconductor.org/packages/release/bioc/html/orthos.html
 ---
 
-
 # bioconductor-orthos
 
 name: bioconductor-orthos

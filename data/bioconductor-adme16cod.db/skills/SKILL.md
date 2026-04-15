@@ -4,7 +4,6 @@ description: This package provides comprehensive SQLite-based annotation mapping
 homepage: https://bioconductor.org/packages/release/data/annotation/html/adme16cod.db.html
 ---
 
-
 # bioconductor-adme16cod.db
 
 name: bioconductor-adme16cod.db

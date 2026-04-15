@@ -2,6 +2,8 @@
 name: merqury
 description: Merqury evaluates genome assembly quality and completeness by comparing assembly k-mer spectra against raw sequencing read k-mer spectra. Use when user asks to quantify assembly accuracy, calculate consensus quality scores, assess k-mer completeness, or perform trio-based phasing evaluation.
 homepage: https://github.com/marbl/merqury
+metadata:
+  docker_image: "quay.io/biocontainers/merqury:1.3--hdfd78af_4"
 ---
 
 # merqury

@@ -1,9 +1,10 @@
 ---
 name: cvlr
-description: "cvlr clusters and visualizes long-read sequencing data based on shared features like methylation patterns or genetic variants. Use when user asks to cluster long reads by CpG methylation, resolve haplotype-specific signals, or generate heatmaps of read clusters."
+description: cvlr clusters and visualizes long-read sequencing data based on shared features like methylation patterns or genetic variants. Use when user asks to cluster long reads by CpG methylation, resolve haplotype-specific signals, or generate heatmaps of read clusters.
 homepage: https://github.com/EmanueleRaineri/releases/
+metadata:
+  docker_image: "quay.io/biocontainers/cvlr:1.0--h61e1b1b_6"
 ---
-
 
 # cvlr
 

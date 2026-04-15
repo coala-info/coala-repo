@@ -4,7 +4,6 @@ description: The MouseGastrulationData package provides streamlined access to an
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MouseGastrulationData.html
 ---
 
-
 # bioconductor-mousegastrulationdata
 
 ## Overview

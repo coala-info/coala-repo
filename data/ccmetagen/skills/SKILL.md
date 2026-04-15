@@ -2,8 +2,9 @@
 name: ccmetagen
 description: CCMetagen is a microbiome classification pipeline that processes KMA alignment data to provide high-accuracy taxonomic identification across all domains of life. Use when user asks to classify metagenomic reads, perform taxonomic profiling, or generate abundance summaries from KMA results.
 homepage: https://github.com/vrmarcelino/CCMetagen
+metadata:
+  docker_image: "quay.io/biocontainers/ccmetagen:1.5.0--pyh7cba7a3_0"
 ---
-
 
 # ccmetagen
 

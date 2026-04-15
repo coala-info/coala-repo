@@ -1,9 +1,10 @@
 ---
 name: cwl2wdl
-description: "cwl2wdl converts Common Workflow Language (CWL) files into Workflow Description Language (WDL) equivalents. Use when user asks to migrate workflows between standards, convert CWL to WDL, or generate WDL code from existing CWL files."
+description: cwl2wdl converts Common Workflow Language (CWL) files into Workflow Description Language (WDL) equivalents. Use when user asks to migrate workflows between standards, convert CWL to WDL, or generate WDL code from existing CWL files.
 homepage: https://github.com/adamstruck/cwl2wdl
+metadata:
+  docker_image: "quay.io/biocontainers/cwl2wdl:0.1dev44--py36_1"
 ---
-
 
 # cwl2wdl
 

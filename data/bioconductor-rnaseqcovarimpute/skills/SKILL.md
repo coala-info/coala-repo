@@ -4,7 +4,6 @@ description: This tool performs linear model analysis for RNA-seq data using mul
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAseqCovarImpute.html
 ---
 
-
 # bioconductor-rnaseqcovarimpute
 
 name: bioconductor-rnaseqcovarimpute

@@ -4,7 +4,6 @@ description: The SNPassoc R package provides tools for performing genetic associ
 homepage: https://cloud.r-project.org/web/packages/SNPassoc/index.html
 ---
 
-
 # r-snpassoc
 
 name: r-snpassoc

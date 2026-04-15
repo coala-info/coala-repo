@@ -4,7 +4,6 @@ description: This package provides probe sequence data and spatial coordinates f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugomm1a520177probe.html
 ---
 
-
 # bioconductor-nugomm1a520177probe
 
 name: bioconductor-nugomm1a520177probe

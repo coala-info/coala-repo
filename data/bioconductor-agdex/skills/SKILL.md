@@ -4,7 +4,6 @@ description: This tool evaluates the agreement of differential expression result
 homepage: https://bioconductor.org/packages/release/bioc/html/AGDEX.html
 ---
 
-
 # bioconductor-agdex
 
 name: bioconductor-agdex

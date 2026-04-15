@@ -4,6 +4,8 @@ description: This pipeline processes Proximity Network Assay (PNA) data from FAS
 homepage: https://github.com/nf-core/pixelator
 ---
 
+# pixelator
+
 ## Overview
 nf-core/pixelator is a bioinformatics pipeline designed for the analysis of Proximity Network Assay (PNA) data. It transforms raw sequencing reads into single-cell protein abundance and interactomics datasets by modeling protein-protein interactions as a graph.
 

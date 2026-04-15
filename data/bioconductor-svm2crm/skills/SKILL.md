@@ -4,7 +4,6 @@ description: SVM2CRM is a computational pipeline that uses Support Vector Machin
 homepage: https://bioconductor.org/packages/3.8/bioc/html/SVM2CRM.html
 ---
 
-
 # bioconductor-svm2crm
 
 ## Overview

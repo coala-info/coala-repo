@@ -2,8 +2,9 @@
 name: cufflinks
 description: Cufflinks connects Pandas DataFrames to Plotly to create interactive web-ready visualizations with minimal code. Use when user asks to generate interactive plots from DataFrames, create financial charts with technical analysis, or use the iplot method for rapid data exploration.
 homepage: https://github.com/santosjorge/cufflinks
+metadata:
+  docker_image: "quay.io/biocontainers/cufflinks:2.2.1--py35_2"
 ---
-
 
 # cufflinks
 

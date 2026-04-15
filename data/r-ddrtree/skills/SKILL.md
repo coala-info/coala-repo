@@ -4,7 +4,6 @@ description: This tool performs dimensionality reduction and principal graph lea
 homepage: https://cran.r-project.org/web/packages/ddrtree/index.html
 ---
 
-
 # r-ddrtree
 
 name: r-ddrtree

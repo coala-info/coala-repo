@@ -2,6 +2,8 @@
 name: evofr
 description: evofr is a Python framework for analyzing evolutionary dynamics and estimating the relative fitness of genetic variants using Bayesian inference. Use when user asks to estimate growth advantages, fit multinomial logistic regression models to sequence counts, or forecast viral lineage frequencies.
 homepage: https://github.com/blab/evofr
+metadata:
+  docker_image: "quay.io/biocontainers/evofr:0.2.0--pyhdfd78af_0"
 ---
 
 # evofr

@@ -2,8 +2,9 @@
 name: floria
 description: Floria resolves genomic variations in metagenomic samples to differentiate closely related microbial strains through haplotype phasing. Use when user asks to resolve strains in metagenomes, perform haplotype phasing on mapped reads, or cluster variants into strain-level haplotypes.
 homepage: https://github.com/bluenote-1577/floria
+metadata:
+  docker_image: "quay.io/biocontainers/floria:0.0.2--ha6fb395_0"
 ---
-
 
 # floria
 

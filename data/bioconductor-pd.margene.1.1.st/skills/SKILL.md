@@ -4,7 +4,6 @@ description: This package provides platform design and annotation information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.margene.1.1.st.html
 ---
 
-
 # bioconductor-pd.margene.1.1.st
 
 name: bioconductor-pd.margene.1.1.st

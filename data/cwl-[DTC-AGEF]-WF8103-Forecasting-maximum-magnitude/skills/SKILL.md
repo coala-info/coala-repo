@@ -1,9 +1,12 @@
 ---
 name: dtc-agef-wf8103-forecasting-maximum-magnitude
-description: "This CWL workflow integrates raw seismic waveform data and hydraulic injection parameters using tools like TRMLoc and multiple deterministic and probabilistic models to forecast maximum earthquake magnitude. Use this skill when assessing seismic hazard risks and forecasting the potential for large-magnitude earthquakes induced by fluid injection activities."
-homepage: https://workflowhub.eu/workflows/1985
+description: This CWL workflow integrates raw seismic waveform data and hydraulic injection parameters using tools like TRMLoc and multiple deterministic and probabilistic models to forecast maximum earthquake magnitude. Use this skill when assessing seismic hazard risks and forecasting the potential for large-magnitude earthquakes induced by fluid injection activities.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-AGEF] WF8103: Forecasting maximum magnitude
+
+# dtc-agef-wf8103-forecasting-maximum-magnitude
 
 ## Overview
 

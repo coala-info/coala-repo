@@ -4,7 +4,6 @@ description: The singleCellTK package provides a comprehensive toolkit for the a
 homepage: https://bioconductor.org/packages/release/bioc/html/singleCellTK.html
 ---
 
-
 # bioconductor-singlecelltk
 
 name: bioconductor-singlecelltk

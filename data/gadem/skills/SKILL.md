@@ -1,9 +1,10 @@
 ---
 name: gadem
-description: "GADEM discovers conserved DNA sequence patterns using a genetic algorithm and an EM algorithm. Use when user asks to identify conserved DNA sequence patterns (motifs) within a set of sequences."
+description: GADEM discovers conserved DNA sequence patterns using a genetic algorithm and an EM algorithm. Use when user asks to identify conserved DNA sequence patterns (motifs) within a set of sequences.
 homepage: https://www.niehs.nih.gov/research/resources/software/biostatistics/gadem/index.cfm
+metadata:
+  docker_image: "quay.io/biocontainers/gadem:1.3.1--h7b50bb2_8"
 ---
-
 
 # gadem
 

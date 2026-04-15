@@ -4,7 +4,6 @@ description: This tool performs meta-analysis by combining p-values from multipl
 homepage: https://bioconductor.org/packages/release/bioc/html/metapod.html
 ---
 
-
 # bioconductor-metapod
 
 name: bioconductor-metapod

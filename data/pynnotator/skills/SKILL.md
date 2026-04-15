@@ -2,8 +2,9 @@
 name: pynnotator
 description: pynnotator is a comprehensive framework that automates the annotation of VCF files by integrating multiple genomic databases and functional prediction tools. Use when user asks to annotate variants for Mendelian disorders, add population frequencies and clinical associations to VCF files, or convert raw genomic data into annotated CSV and VCF formats.
 homepage: http://github.com/raonyguimaraes/pynnotator
+metadata:
+  docker_image: "quay.io/biocontainers/pynnotator:2.0--py_0"
 ---
-
 
 # pynnotator
 

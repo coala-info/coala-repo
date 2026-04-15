@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hta20transcriptcluster.db.html
 ---
 
-
 # bioconductor-hta20transcriptcluster.db
 
 name: bioconductor-hta20transcriptcluster.db

@@ -4,7 +4,6 @@ description: The rebird package provides a programmatic interface to the eBird d
 homepage: https://cloud.r-project.org/web/packages/rebird/index.html
 ---
 
-
 # r-rebird
 
 ## Overview

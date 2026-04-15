@@ -1,9 +1,10 @@
 ---
 name: amulety
-description: "amulety generates high-dimensional embeddings for BCR and TCR sequences using pre-trained immunological language models. Use when user asks to convert immune receptor sequences into embeddings, apply models like AntiBERTa2 or AbLang to AIRR data, or translate nucleotide sequences to amino acids using IgBlast."
+description: amulety generates high-dimensional embeddings for BCR and TCR sequences using pre-trained immunological language models. Use when user asks to convert immune receptor sequences into embeddings, apply models like AntiBERTa2 or AbLang to AIRR data, or translate nucleotide sequences to amino acids using IgBlast.
 homepage: https://github.com/immcantation/amulety
+metadata:
+  docker_image: "quay.io/biocontainers/amulety:2.1.2--pyh6d73907_0"
 ---
-
 
 # amulety
 

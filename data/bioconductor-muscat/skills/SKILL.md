@@ -4,7 +4,6 @@ description: This tool performs differential state analysis to identify cell-typ
 homepage: https://bioconductor.org/packages/release/bioc/html/muscat.html
 ---
 
-
 # bioconductor-muscat
 
 ## Overview

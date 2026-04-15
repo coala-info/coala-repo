@@ -2,8 +2,9 @@
 name: perl-sort-mergesort
 description: This tool merges multiple pre-sorted data streams into a single sorted sequence using a memory-efficient merge-sort algorithm. Use when user asks to merge pre-sorted files, consolidate large-scale genomic data, or perform stable sorting on multiple input iterators.
 homepage: http://metacpan.org/pod/Sort::MergeSort
+metadata:
+  docker_image: "quay.io/biocontainers/perl-sort-mergesort:0.31--pl5321hdfd78af_2"
 ---
-
 
 # perl-sort-mergesort
 

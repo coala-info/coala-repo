@@ -2,8 +2,9 @@
 name: genoboo
 description: Genoboo is a collaborative web-based notebook environment for visualizing, annotating, and sharing comparative genomics data. Use when user asks to start a genomic notebook server, add a genome sequence to the database, or import GFF3 annotations.
 homepage: https://github.com/gogepp/genoboo
+metadata:
+  docker_image: "quay.io/biocontainers/genoboo:0.4.18--h9948957_0"
 ---
-
 
 # genoboo
 

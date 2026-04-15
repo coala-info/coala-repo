@@ -4,7 +4,6 @@ description: This tool performs Bayesian modeling of ChIP-chip data from multipl
 homepage: https://bioconductor.org/packages/release/bioc/html/iChip.html
 ---
 
-
 # bioconductor-ichip
 
 name: bioconductor-ichip

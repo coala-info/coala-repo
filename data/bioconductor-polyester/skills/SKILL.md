@@ -4,7 +4,6 @@ description: Bioconductor-polyester simulates RNA-seq experiments by generating 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/polyester.html
 ---
 
-
 # bioconductor-polyester
 
 name: bioconductor-polyester

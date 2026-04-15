@@ -4,7 +4,6 @@ description: This tool calculates compositionality-corrected p-values and simila
 homepage: https://bioconductor.org/packages/release/bioc/html/ccrepe.html
 ---
 
-
 # bioconductor-ccrepe
 
 name: bioconductor-ccrepe

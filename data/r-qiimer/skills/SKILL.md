@@ -4,7 +4,6 @@ description: This tool imports, parses, and analyzes microbiome data from the QI
 homepage: https://cran.r-project.org/web/packages/qiimer/index.html
 ---
 
-
 # r-qiimer
 
 name: r-qiimer

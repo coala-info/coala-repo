@@ -4,7 +4,6 @@ description: The bioconductor-synlet package provides a pipeline for analyzing s
 homepage: https://bioconductor.org/packages/release/bioc/html/synlet.html
 ---
 
-
 # bioconductor-synlet
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for mapping HuO
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuO22.db.html
 ---
 
-
 # bioconductor-huo22.db
 
 name: bioconductor-huo22.db

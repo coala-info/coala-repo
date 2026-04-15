@@ -4,7 +4,6 @@ description: PanViz integrates summary-level GWAS data with KEGG biochemical rea
 homepage: https://bioconductor.org/packages/3.16/bioc/html/PanViz.html
 ---
 
-
 # bioconductor-panviz
 
 ## Overview

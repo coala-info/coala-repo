@@ -4,7 +4,6 @@ description: This tool detects chromatin state switches in genomic regions betwe
 homepage: https://bioconductor.org/packages/3.8/bioc/html/chromswitch.html
 ---
 
-
 # bioconductor-chromswitch
 
 name: bioconductor-chromswitch

@@ -4,7 +4,6 @@ description: This tool provides a statistical framework to assess the separation
 homepage: https://bioconductor.org/packages/release/bioc/html/ClusterSignificance.html
 ---
 
-
 # bioconductor-clustersignificance
 
 name: bioconductor-clustersignificance

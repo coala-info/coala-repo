@@ -4,7 +4,6 @@ description: This tool models and corrects for technical nucleotide sequence bia
 homepage: https://bioconductor.org/packages/3.8/bioc/html/seqbias.html
 ---
 
-
 # bioconductor-seqbias
 
 name: bioconductor-seqbias

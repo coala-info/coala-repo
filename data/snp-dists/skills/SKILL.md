@@ -2,8 +2,9 @@
 name: snp-dists
 description: snp-dists transforms multiple sequence alignments into pairwise SNP distance matrices. Use when user asks to calculate pairwise SNP distances, generate a distance matrix from FASTA alignments, or compare genomic isolates for relatedness.
 homepage: https://github.com/tseemann/snp-dists
+metadata:
+  docker_image: "quay.io/biocontainers/snp-dists:1.2.0--h577a1d6_0"
 ---
-
 
 # snp-dists
 

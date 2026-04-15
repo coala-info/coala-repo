@@ -2,6 +2,8 @@
 name: haystack_bio
 description: Haystack identifies epigenetic variability hotspots and enriched transcription factor motifs by integrating DNA sequence, epigenomic signals, and transcriptomic data. Use when user asks to identify chromatin variability across cell types, find enriched TF motifs in genomic regions, or correlate motif presence with gene expression.
 homepage: https://github.com/rfarouni/haystack_bio
+metadata:
+  docker_image: "quay.io/biocontainers/haystack_bio:0.5.5--0"
 ---
 
 # haystack_bio

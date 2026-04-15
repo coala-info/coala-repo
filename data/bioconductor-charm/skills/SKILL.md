@@ -4,7 +4,6 @@ description: The charm package analyzes DNA methylation data from the CHARM plat
 homepage: https://bioconductor.org/packages/3.8/bioc/html/charm.html
 ---
 
-
 # bioconductor-charm
 
 ## Overview

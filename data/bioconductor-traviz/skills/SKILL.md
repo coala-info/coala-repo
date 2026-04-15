@@ -4,7 +4,6 @@ description: bioconductor-traviz visualizes single-cell trajectories and gene ex
 homepage: https://bioconductor.org/packages/release/bioc/html/traviz.html
 ---
 
-
 # bioconductor-traviz
 
 name: bioconductor-traviz

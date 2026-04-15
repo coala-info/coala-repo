@@ -2,8 +2,9 @@
 name: perl-moosex-app
 description: MooseX::App is a framework for building complex, multi-command command-line interfaces using Moose. Use when user asks to create CLI tools with subcommands, define command-line flags as class attributes, or generate automatic documentation for Perl utilities.
 homepage: http://metacpan.org/pod/MooseX::App
+metadata:
+  docker_image: "quay.io/biocontainers/perl-moosex-app:1.3701--pl526_0"
 ---
-
 
 # perl-moosex-app
 

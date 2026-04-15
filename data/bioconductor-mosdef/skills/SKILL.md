@@ -4,7 +4,6 @@ description: This tool streamlines the post-processing of differential expressio
 homepage: https://bioconductor.org/packages/release/bioc/html/mosdef.html
 ---
 
-
 # bioconductor-mosdef
 
 name: bioconductor-mosdef

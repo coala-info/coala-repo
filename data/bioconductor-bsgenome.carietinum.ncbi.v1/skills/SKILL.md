@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Cicer arietinum
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Carietinum.NCBI.v1.html
 ---
 
-
 # bioconductor-bsgenome.carietinum.ncbi.v1
 
 name: bioconductor-bsgenome.carietinum.ncbi.v1

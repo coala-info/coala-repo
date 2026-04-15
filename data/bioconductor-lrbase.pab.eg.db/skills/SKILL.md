@@ -4,7 +4,6 @@ description: This package provides the infrastructure for managing Ligand-Recept
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Pab.eg.db.html
 ---
 
-
 # bioconductor-lrbase.pab.eg.db
 
 name: bioconductor-lrbase.pab.eg.db

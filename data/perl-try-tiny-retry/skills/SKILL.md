@@ -2,8 +2,9 @@
 name: perl-try-tiny-retry
 description: This Perl module extends Try::Tiny to provide a retry keyword for handling transient failures with configurable delays and conditions. Use when user asks to implement retry logic in Perl, handle temporary exceptions with exponential backoff, or retry failed operations based on specific error patterns.
 homepage: https://github.com/dagolden/Try-Tiny-Retry
+metadata:
+  docker_image: "quay.io/biocontainers/perl-try-tiny-retry:0.004--pl526_0"
 ---
-
 
 # perl-try-tiny-retry
 

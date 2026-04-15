@@ -4,7 +4,6 @@ description: This package provides platform design and annotation metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg18.60mer.expr.html
 ---
 
-
 # bioconductor-pd.hg18.60mer.expr
 
 name: bioconductor-pd.hg18.60mer.expr

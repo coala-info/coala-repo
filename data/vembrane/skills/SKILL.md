@@ -1,7 +1,9 @@
 ---
 name: vembrane
-description: "vembrane manipulates VCF and BCF files using Python expressions for advanced filtering, sorting, and data extraction. Use when user asks to filter variants with complex logic, extract VCF fields into tabular formats, sort records by custom expressions, or tag variants based on specific criteria."
+description: vembrane manipulates VCF and BCF files using Python expressions for advanced filtering, sorting, and data extraction. Use when user asks to filter variants with complex logic, extract VCF fields into tabular formats, sort records by custom expressions, or tag variants based on specific criteria.
 homepage: https://github.com/vembrane/vembrane
+metadata:
+  docker_image: "quay.io/biocontainers/vembrane:2.4.0--pyhdfd78af_0"
 ---
 
 # vembrane

@@ -2,8 +2,9 @@
 name: riboloco
 description: riboloco analyzes Riboseq data by calculating P-site offsets to map sequencing reads to specific codons for high-resolution monitoring of protein synthesis. Use when user asks to determine P-site offsets, map ribosome-protected fragments to a transcriptome, or analyze triplet periodicity in ribosome profiling datasets.
 homepage: https://github.com/Delayed-Gitification/riboloco.git
+metadata:
+  docker_image: "quay.io/biocontainers/riboloco:0.3.10--pyhdfd78af_0"
 ---
-
 
 # riboloco
 

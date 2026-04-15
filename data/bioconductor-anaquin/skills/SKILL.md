@@ -4,7 +4,6 @@ description: Anaquin is a statistical framework for analyzing synthetic sequenci
 homepage: https://bioconductor.org/packages/release/bioc/html/Anaquin.html
 ---
 
-
 # bioconductor-anaquin
 
 ## Overview

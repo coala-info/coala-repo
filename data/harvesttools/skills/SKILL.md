@@ -1,9 +1,10 @@
 ---
 name: harvesttools
-description: "Converts between Gingr files and various standard text formats. Use when user asks to convert Gingr files to other text formats or vice versa."
+description: Converts between Gingr files and various standard text formats. Use when user asks to convert Gingr files to other text formats or vice versa.
 homepage: https://github.com/marbl/harvest-tools
+metadata:
+  docker_image: "quay.io/biocontainers/harvesttools:1.3--ha9fde67_0"
 ---
-
 
 # harvesttools
 

@@ -2,8 +2,9 @@
 name: kraken
 description: Kraken is a high-speed taxonomic classifier that assigns DNA sequences to taxonomic labels using exact k-mer matches against a genomic database. Use when user asks to classify metagenomic reads, build custom taxonomic databases, or generate reports on the taxonomic distribution of sequencing data.
 homepage: http://ccb.jhu.edu/software/kraken/
+metadata:
+  docker_image: "biocontainers/kraken:v1.1-3-deb_cv1"
 ---
-
 
 # kraken
 

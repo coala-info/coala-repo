@@ -4,7 +4,6 @@ description: bioconductor-flowqb provides a standardized framework for character
 homepage: https://bioconductor.org/packages/3.8/bioc/html/flowQB.html
 ---
 
-
 # bioconductor-flowqb
 
 name: bioconductor-flowqb

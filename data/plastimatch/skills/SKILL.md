@@ -4,7 +4,6 @@ description: Plastimatch is a medical image processing toolset for format conver
 homepage: https://github.com/ImagingDataCommons/pyplastimatch
 ---
 
-
 # plastimatch
 
 ## Overview

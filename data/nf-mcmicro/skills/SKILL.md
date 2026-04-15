@@ -4,6 +4,8 @@ description: This pipeline processes highly-multiplexed imaging data from OME-TI
 homepage: https://github.com/nf-core/mcmicro
 ---
 
+# mcmicro
+
 ## Overview
 nf-core/mcmicro solves the challenge of converting raw, multi-channel whole-slide microscopy images into structured single-cell datasets. It automates the complex tasks of aligning image cycles, identifying cell boundaries, and measuring signal intensities across many markers for technologies such as Cycif, MIBI, and CODEX.
 

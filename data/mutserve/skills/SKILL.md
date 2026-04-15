@@ -2,8 +2,9 @@
 name: mutserve
 description: Mutserve is a specialized variant caller designed to detect homoplasmic and heteroplasmic sites in mitochondrial DNA from alignment data. Use when user asks to call mitochondrial variants, detect low-level heteroplasmy, or annotate mtDNA variants.
 homepage: https://github.com/seppinho/mutserve
+metadata:
+  docker_image: "quay.io/biocontainers/mutserve:2.0.3--hdfd78af_0"
 ---
-
 
 # mutserve
 

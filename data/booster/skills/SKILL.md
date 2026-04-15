@@ -1,9 +1,10 @@
 ---
 name: booster
-description: "BOOSTER calculates Transfer Bootstrap Expectation (TBE) and traditional bootstrap support values for phylogenetic trees. Use when user asks to calculate branch support, analyze bootstrap replicates, identify unstable taxa, or compute transfer bootstrap values for a reference tree."
+description: BOOSTER calculates Transfer Bootstrap Expectation (TBE) and traditional bootstrap support values for phylogenetic trees. Use when user asks to calculate branch support, analyze bootstrap replicates, identify unstable taxa, or compute transfer bootstrap values for a reference tree.
 homepage: https://github.com/evolbioinfo/booster
+metadata:
+  docker_image: "quay.io/biocontainers/booster:0.1.2--hec16e2b_4"
 ---
-
 
 # booster
 

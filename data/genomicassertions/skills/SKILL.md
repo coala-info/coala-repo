@@ -2,8 +2,9 @@
 name: genomicassertions
 description: genomicassertions is a Python testing framework that provides specialized unittest assertions for validating genomic data in VCF and BAM files. Use when user asks to verify variants at specific coordinates, check sample genotypes, validate BAM header metadata, or confirm read coverage levels.
 homepage: https://github.com/ClinSeq/genomicassertions
+metadata:
+  docker_image: "quay.io/biocontainers/genomicassertions:0.2.5--pyh864c0ab_3"
 ---
-
 
 # genomicassertions
 

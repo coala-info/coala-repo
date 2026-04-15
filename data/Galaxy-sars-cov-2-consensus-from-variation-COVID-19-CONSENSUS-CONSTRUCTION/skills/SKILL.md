@@ -1,10 +1,12 @@
 ---
 name: covid-19-consensus-construction
-description: "This workflow generates reliable SARS-CoV-2 consensus sequences from VCF variant calls and aligned reads using bcftools, bedtools, and SnpSift to apply allele-frequency and coverage-based masking. Use this skill when you need to reconstruct high-quality viral genomes that account for intra-sample variation by masking low-coverage regions and ambiguous sites with intermediate allele frequencies."
-homepage: https://workflowhub.eu/workflows/138
+description: This workflow generates reliable SARS-CoV-2 consensus sequences from VCF variant calls and aligned reads using bcftools, bedtools, and SnpSift to apply allele-frequency and coverage-based masking. Use this skill when you need to reconstruct high-quality viral genomes that account for intra-sample variation by masking low-coverage regions and ambiguous sites with intermediate allele frequencies.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: consensus construction
+# covid-19-consensus-construction
 
 ## Overview
 

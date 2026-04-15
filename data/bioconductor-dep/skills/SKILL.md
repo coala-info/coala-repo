@@ -4,7 +4,6 @@ description: The bioconductor-dep package provides an integrated workflow for th
 homepage: https://bioconductor.org/packages/release/bioc/html/DEP.html
 ---
 
-
 # bioconductor-dep
 
 ## Overview

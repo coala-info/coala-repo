@@ -4,7 +4,6 @@ description: The genomeIntervals package provides S4 classes and methods for man
 homepage: https://bioconductor.org/packages/release/bioc/html/genomeIntervals.html
 ---
 
-
 # bioconductor-genomeintervals
 
 ## Overview

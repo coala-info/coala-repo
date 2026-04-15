@@ -4,7 +4,6 @@ description: The GenomicScores package provides a unified interface for efficien
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicScores.html
 ---
 
-
 # bioconductor-genomicscores
 
 ## Overview

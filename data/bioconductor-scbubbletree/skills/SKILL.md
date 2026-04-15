@@ -4,7 +4,6 @@ description: The scBubbletree package visualizes large-scale scRNA-seq data by g
 homepage: https://bioconductor.org/packages/release/bioc/html/scBubbletree.html
 ---
 
-
 # bioconductor-scbubbletree
 
 ## Overview

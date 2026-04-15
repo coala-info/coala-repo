@@ -1,9 +1,8 @@
 ---
 name: bioconductor-usort
-description: "uSORT is an R package that uncovers intrinsic cell progression paths and trajectories from single-cell RNA-seq data. Use when user asks to perform cell ordering, reconstruct developmental trajectories, or identify driver genes from single-cell expression matrices."
+description: uSORT is an R package that uncovers intrinsic cell progression paths and trajectories from single-cell RNA-seq data. Use when user asks to perform cell ordering, reconstruct developmental trajectories, or identify driver genes from single-cell expression matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/uSORT.html
 ---
-
 
 # bioconductor-usort
 

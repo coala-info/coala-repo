@@ -4,7 +4,6 @@ description: This tool performs automated phenotyping of flow cytometry data to 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/flowType.html
 ---
 
-
 # bioconductor-flowtype
 
 name: bioconductor-flowtype

@@ -4,7 +4,6 @@ description: This package provides a processed subset of GTEx RNA-seq data for t
 homepage: https://bioconductor.org/packages/release/data/experiment/html/spqnData.html
 ---
 
-
 # bioconductor-spqndata
 
 name: bioconductor-spqndata

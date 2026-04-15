@@ -2,9 +2,9 @@
 name: tinyfasta
 description: tinyfasta is a minimalist Python utility for parsing, filtering, creating, and writing biological sequences in FASTA format. Use when user asks to parse FASTA files, iterate through sequences, filter records by header, create new FASTA entries, write sequences to files, or work with compressed FASTA files.
 homepage: https://github.com/tjelvar-olsson/tinyfasta
+metadata:
+  docker_image: "quay.io/biocontainers/tinyfasta:0.1.0--py_0"
 ---
-
-
 
 # tinyfasta
 

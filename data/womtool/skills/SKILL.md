@@ -2,8 +2,9 @@
 name: womtool
 description: Womtool provides utilities for static analysis and management of WDL workflows. Use when user asks to validate WDL files, list WDL dependencies, generate WDL input templates, visualize WDL workflow graphs, parse WDL abstract syntax trees, or highlight WDL syntax.
 homepage: https://cromwell.readthedocs.io/en/develop/WOMtool/
+metadata:
+  docker_image: "quay.io/biocontainers/womtool:61--hdfd78af_0"
 ---
-
 
 # womtool
 

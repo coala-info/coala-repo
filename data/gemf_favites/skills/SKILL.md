@@ -2,8 +2,9 @@
 name: gemf_favites
 description: This tool simulates stochastic epidemic processes on contact networks using the Generalized Epidemic Modeling Framework. Use when user asks to simulate disease spread, model state transitions in a contact network, or run GEMF simulations within the FAVITES ecosystem.
 homepage: https://github.com/niemasd/GEMF
+metadata:
+  docker_image: "quay.io/biocontainers/gemf_favites:1.0.3--h7b50bb2_1"
 ---
-
 
 # gemf_favites
 

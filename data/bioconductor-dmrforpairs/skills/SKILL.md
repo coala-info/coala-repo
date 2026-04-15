@@ -4,7 +4,6 @@ description: DMRforPairs identifies differentially methylated regions by compari
 homepage: https://bioconductor.org/packages/3.8/bioc/html/DMRforPairs.html
 ---
 
-
 # bioconductor-dmrforpairs
 
 ## Overview

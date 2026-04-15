@@ -1,10 +1,12 @@
 ---
 name: covid-19-varscan
-description: "This Galaxy workflow automates the identification and annotation of SARS-CoV-2 genomic variants from Illumina sequencing accessions using BWA-MEM, VarScan, and SnpEff. Use this skill when you need to detect low-frequency mutations and assess the functional impact of variants within viral populations to support COVID-19 epidemiological surveillance."
-homepage: https://workflowhub.eu/workflows/36
+description: This Galaxy workflow automates the identification and annotation of SARS-CoV-2 genomic variants from Illumina sequencing accessions using BWA-MEM, VarScan, and SnpEff. Use this skill when you need to detect low-frequency mutations and assess the functional impact of variants within viral populations to support COVID-19 epidemiological surveillance.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: VARSCAN
+# covid-19-varscan
 
 ## Overview
 

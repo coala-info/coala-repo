@@ -4,7 +4,6 @@ description: This package provides the core C++ data structures and headers for 
 homepage: https://bioconductor.org/packages/release/bioc/html/cytolib.html
 ---
 
-
 # bioconductor-cytolib
 
 ## Overview

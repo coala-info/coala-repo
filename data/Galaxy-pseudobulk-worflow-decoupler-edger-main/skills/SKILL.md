@@ -1,10 +1,12 @@
 ---
 name: differential-gene-expression-for-single-cell-data-using-pseu
-description: "This workflow processes annotated AnnData files from single-cell RNA-seq experiments to generate pseudobulk count matrices using decoupler and performs differential gene expression analysis with edgeR and Volcano plot visualization. Use this skill when you need to identify differentially expressed genes between cell populations or experimental conditions while accounting for biological replicates and sample-level variability in single-cell datasets."
-homepage: https://workflowhub.eu/workflows/1207
+description: This workflow processes annotated AnnData files from single-cell RNA-seq experiments to generate pseudobulk count matrices using decoupler and performs differential gene expression analysis with edgeR and Volcano plot visualization. Use this skill when you need to identify differentially expressed genes between cell populations or experimental conditions while accounting for biological replicates and sample-level variability in single-cell datasets.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Differential gene expression for single-cell data using pseudo-bulk counts with edgeR
+# differential-gene-expression-for-single-cell-data-using-pseu
 
 ## Overview
 

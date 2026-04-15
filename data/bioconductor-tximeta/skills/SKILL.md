@@ -4,7 +4,6 @@ description: Bioconductor-tximeta imports transcript-level quantification data i
 homepage: https://bioconductor.org/packages/release/bioc/html/tximeta.html
 ---
 
-
 # bioconductor-tximeta
 
 name: bioconductor-tximeta

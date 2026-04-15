@@ -2,8 +2,9 @@
 name: plasmidtron
 description: PlasmidTron is a comparative genomics tool that isolates and assembles phenotype-specific sequences such as plasmids using a k-mer based approach. Use when user asks to identify sequences correlating with a specific trait, assemble plasmids from trait-positive samples, or perform targeted assembly of mobile genetic elements.
 homepage: https://github.com/sanger-pathogens/plasmidtron
+metadata:
+  docker_image: "quay.io/biocontainers/plasmidtron:0.4.1--py36_1"
 ---
-
 
 # plasmidtron
 

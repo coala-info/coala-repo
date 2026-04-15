@@ -4,7 +4,6 @@ description: SpatialCPie evaluates and visualizes cluster assignments in spatial
 homepage: https://bioconductor.org/packages/release/bioc/html/SpatialCPie.html
 ---
 
-
 # bioconductor-spatialcpie
 
 ## Overview

@@ -2,8 +2,9 @@
 name: perl-xml-simple
 description: This tool converts XML files or strings into nested Perl data structures and transforms Perl hashes or arrays back into XML. Use when user asks to parse XML into Perl hashes, generate XML from Perl data, or configure XML processing options like ForceArray and KeyAttr.
 homepage: http://metacpan.org/pod/XML-Simple
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xml-simple:2.25--pl526_0"
 ---
-
 
 # perl-xml-simple
 

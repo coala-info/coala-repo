@@ -4,7 +4,6 @@ description: The r-hdrcde package provides tools for calculating and visualizing
 homepage: https://cloud.r-project.org/web/packages/hdrcde/index.html
 ---
 
-
 # r-hdrcde
 
 ## Overview

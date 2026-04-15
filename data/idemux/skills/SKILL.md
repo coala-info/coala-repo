@@ -1,9 +1,10 @@
 ---
 name: idemux
-description: "idemux sorts paired-end sequencing reads into individual sample files based on index sequences and provides automated error correction for Lexogen indices. Use when user asks to demultiplex FASTQ files, sort reads by barcode, or process Lexogen unique dual indices."
+description: idemux sorts paired-end sequencing reads into individual sample files based on index sequences and provides automated error correction for Lexogen indices. Use when user asks to demultiplex FASTQ files, sort reads by barcode, or process Lexogen unique dual indices.
 homepage: https://github.com/lexogen-tools/idemux
+metadata:
+  docker_image: "quay.io/biocontainers/idemux:0.1.6--pyhdfd78af_0"
 ---
-
 
 # idemux
 

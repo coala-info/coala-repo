@@ -4,7 +4,6 @@ description: CEMiTool performs automated gene co-expression network analysis, mo
 homepage: https://bioconductor.org/packages/release/bioc/html/CEMiTool.html
 ---
 
-
 # bioconductor-cemitool
 
 name: bioconductor-cemitool

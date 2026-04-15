@@ -4,7 +4,6 @@ description: This tool measures the eubiotic and dysbiotic impacts of microbiome
 homepage: https://bioconductor.org/packages/release/bioc/html/eudysbiome.html
 ---
 
-
 # bioconductor-eudysbiome
 
 name: bioconductor-eudysbiome

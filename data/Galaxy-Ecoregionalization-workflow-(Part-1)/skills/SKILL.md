@@ -1,10 +1,12 @@
 ---
 name: ecoregionalization-workflow-part-1
-description: "This workflow processes species occurrence records and environmental datasets using text processing tools, Boosted Regression Trees, and clustering algorithms to prepare data for ecoregionalization. Use this skill when you need to integrate biodiversity observations with environmental variables to identify spatial patterns and estimate ecological clusters for biogeographic mapping."
-homepage: https://workflowhub.eu/workflows/1208
+description: This workflow processes species occurrence records and environmental datasets using text processing tools, Boosted Regression Trees, and clustering algorithms to prepare data for ecoregionalization. Use this skill when you need to integrate biodiversity observations with environmental variables to identify spatial patterns and estimate ecological clusters for biogeographic mapping.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ecoregionalization workflow (Part 1)
+# ecoregionalization-workflow-part-1
 
 ## Overview
 

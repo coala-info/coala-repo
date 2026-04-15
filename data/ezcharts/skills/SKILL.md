@@ -2,6 +2,8 @@
 name: ezcharts
 description: ezcharts is a Python library for creating interactive web-based visualizations and HTML reports using eCharts or Bokeh backends. Use when user asks to generate genomic analysis plots, build interactive eCharts visualizations, or render comprehensive HTML reports for bioinformatics data.
 homepage: https://github.com/epi2me-labs/ezcharts
+metadata:
+  docker_image: "quay.io/biocontainers/ezcharts:0.15.2--pyhdfd78af_0"
 ---
 
 # ezcharts

@@ -4,7 +4,6 @@ description: This package recreates and visualizes Region of Interest overlays f
 homepage: https://bioconductor.org/packages/release/bioc/html/SpatialOmicsOverlay.html
 ---
 
-
 # bioconductor-spatialomicsoverlay
 
 ## Overview

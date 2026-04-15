@@ -4,7 +4,6 @@ description: EBSEA identifies differentially expressed genes by performing stati
 homepage: https://bioconductor.org/packages/release/bioc/html/EBSEA.html
 ---
 
-
 # bioconductor-ebsea
 
 ## Overview

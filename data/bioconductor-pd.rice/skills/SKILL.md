@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rice.html
 ---
 
-
 # bioconductor-pd.rice
 
 name: bioconductor-pd.rice

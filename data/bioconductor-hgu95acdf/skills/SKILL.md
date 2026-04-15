@@ -4,7 +4,6 @@ description: This package provides the Chip Description File environment and coo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95acdf.html
 ---
 
-
 # bioconductor-hgu95acdf
 
 name: bioconductor-hgu95acdf

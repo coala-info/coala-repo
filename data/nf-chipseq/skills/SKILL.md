@@ -4,6 +4,8 @@ description: This pipeline processes single-end or paired-end ChIP-seq FASTQ dat
 homepage: https://github.com/nf-core/chipseq
 ---
 
+# nf-core-chipseq
+
 ## Overview
 nf-core/chipseq is a bioinformatics analysis pipeline used for Chromatin ImmunoPrecipitation sequencing (ChIP-seq) data. It automates the identification of genomic regions where proteins such as transcription factors or histone modifications interact with DNA, addressing the biological problem of mapping protein-DNA binding sites genome-wide.
 

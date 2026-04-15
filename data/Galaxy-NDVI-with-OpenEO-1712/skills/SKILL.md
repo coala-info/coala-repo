@@ -1,10 +1,12 @@
 ---
 name: ndvi-with-openeo
-description: "This Galaxy workflow calculates the Normalized Difference Vegetation Index using satellite imagery from the Copernicus Data Space Ecosystem processed through OpenEO and visualized with Holoviz. Use this skill when you need to monitor vegetation health, assess crop productivity, or analyze land cover changes over time using cloud-based Earth observation data."
-homepage: https://workflowhub.eu/workflows/1712
+description: This Galaxy workflow calculates the Normalized Difference Vegetation Index using satellite imagery from the Copernicus Data Space Ecosystem processed through OpenEO and visualized with Holoviz. Use this skill when you need to monitor vegetation health, assess crop productivity, or analyze land cover changes over time using cloud-based Earth observation data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# NDVI with OpenEO
+# ndvi-with-openeo
 
 ## Overview
 

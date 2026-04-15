@@ -2,8 +2,9 @@
 name: gffpandas
 description: gffpandas is a Python library that simplifies the handling and analysis of GFF3 files by loading them into a specialized Pandas-like DataFrame structure. Use when user asks to load GFF3 files, filter genomic features by type or length, extract specific attributes into columns, or export filtered annotations to CSV, TSV, or GFF3 formats.
 homepage: https://github.com/foerstner-lab/gffpandas
+metadata:
+  docker_image: "quay.io/biocontainers/gffpandas:1.2.2--pyhdfd78af_0"
 ---
-
 
 # gffpandas
 

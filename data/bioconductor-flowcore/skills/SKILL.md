@@ -4,7 +4,6 @@ description: This tool provides infrastructure for managing, manipulating, and a
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCore.html
 ---
 
-
 # bioconductor-flowcore
 
 name: bioconductor-flowcore

@@ -4,7 +4,6 @@ description: Monocle analyzes single-cell RNA-seq data to model biological proce
 homepage: https://bioconductor.org/packages/release/bioc/html/monocle.html
 ---
 
-
 # bioconductor-monocle
 
 name: bioconductor-monocle

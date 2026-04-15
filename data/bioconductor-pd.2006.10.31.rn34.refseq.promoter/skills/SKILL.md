@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the N
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.2006.10.31.rn34.refseq.promoter.html
 ---
 
-
 # bioconductor-pd.2006.10.31.rn34.refseq.promoter
 
 name: bioconductor-pd.2006.10.31.rn34.refseq.promoter

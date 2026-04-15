@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object containing UCSC mm
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmusculus.UCSC.mm39.knownGene.html
 ---
 
-
 # bioconductor-txdb.mmusculus.ucsc.mm39.knowngene
 
 name: bioconductor-txdb.mmusculus.ucsc.mm39.knowngene

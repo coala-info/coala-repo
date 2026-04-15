@@ -1,10 +1,12 @@
 ---
 name: cancer-variant-annotation-hg38-vep-based-with-maf-export
-description: "This Galaxy workflow annotates human cancer variants using Ensembl VEP, vcfanno, and SnpSift before exporting results in MAF and tabular formats. Use this skill when you need to predict the functional impact of somatic or germline mutations in hg38 genomic data and generate standardized reports for cancer gene analysis."
-homepage: https://workflowhub.eu/workflows/629
+description: This Galaxy workflow annotates human cancer variants using Ensembl VEP, vcfanno, and SnpSift before exporting results in MAF and tabular formats. Use this skill when you need to predict the functional impact of somatic or germline mutations in hg38 genomic data and generate standardized reports for cancer gene analysis.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Cancer variant annotation (hg38 VEP-based) with MAF export
+# cancer-variant-annotation-hg38-vep-based-with-maf-export
 
 ## Overview
 

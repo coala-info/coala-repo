@@ -4,7 +4,6 @@ description: OUTRIDER detects aberrant gene expression outliers in RNA-seq data 
 homepage: https://bioconductor.org/packages/release/bioc/html/OUTRIDER.html
 ---
 
-
 # bioconductor-outrider
 
 name: bioconductor-outrider

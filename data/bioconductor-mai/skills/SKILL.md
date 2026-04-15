@@ -4,7 +4,6 @@ description: The MAI package provides a two-step framework that classifies missi
 homepage: https://bioconductor.org/packages/release/bioc/html/MAI.html
 ---
 
-
 # bioconductor-mai
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: methyldackel
-description: "MethylDackel extracts methylation metrics from aligned bisulfite sequencing data to produce bedGraph files. Use when user asks to extract CpG, CHG, or CHH methylation counts, generate methylation bias plots, or filter methylation calls by quality and mappability."
+description: MethylDackel extracts methylation metrics from aligned bisulfite sequencing data to produce bedGraph files. Use when user asks to extract CpG, CHG, or CHH methylation counts, generate methylation bias plots, or filter methylation calls by quality and mappability.
 homepage: https://github.com/dpryan79/MethylDackel
+metadata:
+  docker_image: "quay.io/biocontainers/methyldackel:0.6.1--h577a1d6_9"
 ---
-
 
 # methyldackel
 

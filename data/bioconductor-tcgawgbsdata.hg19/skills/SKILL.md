@@ -4,7 +4,6 @@ description: This package provides access to TCGA Whole Genome Bisulfite Sequenc
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/tcgaWGBSData.hg19.html
 ---
 
-
 # bioconductor-tcgawgbsdata.hg19
 
 ## Overview

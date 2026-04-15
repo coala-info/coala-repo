@@ -4,7 +4,6 @@ description: This package provides orthology and paralogy mappings for Caenorhab
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Ce.inp.db.html
 ---
 
-
 # bioconductor-hom.ce.inp.db
 
 name: bioconductor-hom.ce.inp.db

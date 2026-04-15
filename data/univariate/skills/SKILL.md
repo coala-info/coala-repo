@@ -2,8 +2,9 @@
 name: univariate
 description: This tool performs univariate time series forecasting using the N-BEATS neural network model. Use when user asks to initialize the environment, prepare datasets, validate metrics, build experiment configurations, train a model, extract trend and seasonality, or calculate performance statistics.
 homepage: https://github.com/ServiceNow/N-BEATS
+metadata:
+  docker_image: "biocontainers/univariate:phenomenal-v2.2.6_cv1.3.32"
 ---
-
 
 # univariate
 

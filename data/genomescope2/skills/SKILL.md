@@ -2,8 +2,9 @@
 name: genomescope2
 description: GenomeScope 2.0 uses a polyploid-aware mixture model to infer global genome properties from k-mer frequency histograms. Use when user asks to estimate genome size, determine ploidy levels, or analyze genomic heterozygosity and repeat content.
 homepage: https://github.com/tbenavi1/genomescope2.0
+metadata:
+  docker_image: "quay.io/biocontainers/genomescope2:2.1.0--py313r44hdfd78af_0"
 ---
-
 
 # genomescope2
 

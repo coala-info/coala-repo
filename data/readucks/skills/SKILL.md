@@ -2,8 +2,9 @@
 name: readucks
 description: readucks is a high-performance demultiplexer for Nanopore sequencing data that uses SIMD-accelerated alignment for precise barcode assignment. Use when user asks to demultiplex raw reads, sort sequences into barcode-specific files, or generate detailed barcode annotation CSVs.
 homepage: https://github.com/artic-network/readucks
+metadata:
+  docker_image: "quay.io/biocontainers/readucks:0.0.3--py_0"
 ---
-
 
 # readucks
 

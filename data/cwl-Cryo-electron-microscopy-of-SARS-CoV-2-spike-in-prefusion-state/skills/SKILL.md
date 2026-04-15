@@ -1,9 +1,12 @@
 ---
 name: cryo-electron-microscopy-of-sars-cov-2-spike-in-prefusion-st
-description: "This CWL workflow processes cryo-electron microscopy movies using pwem and empiar to perform continuous flexibility analysis on SARS-CoV-2 spike proteins in their prefusion state. Use this skill when you need to characterize the conformational landscape and structural dynamics of viral spike proteins to understand their functional mechanisms."
+description: This CWL workflow processes cryo-electron microscopy movies using pwem and empiar to perform continuous flexibility analysis on SARS-CoV-2 spike proteins in their prefusion state. Use this skill when you need to characterize the conformational landscape and structural dynamics of viral spike proteins to understand their functional mechanisms.
 homepage: https://workflowhub.eu/workflows/160
+metadata:
+  docker_image: "N/A"
 ---
-# Cryo electron microscopy of SARS-CoV-2 spike in prefusion state
+
+# cryo-electron-microscopy-of-sars-cov-2-spike-in-prefusion-st
 
 ## Overview
 

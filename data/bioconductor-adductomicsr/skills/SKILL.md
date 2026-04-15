@@ -4,7 +4,6 @@ description: bioconductor-adductomicsr provides a computational pipeline for the
 homepage: https://bioconductor.org/packages/release/bioc/html/adductomicsR.html
 ---
 
-
 # bioconductor-adductomicsr
 
 ## Overview

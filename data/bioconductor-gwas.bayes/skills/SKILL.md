@@ -4,7 +4,6 @@ description: This tool performs Bayesian iterative procedures for the statistica
 homepage: https://bioconductor.org/packages/release/bioc/html/GWAS.BAYES.html
 ---
 
-
 # bioconductor-gwas.bayes
 
 name: bioconductor-gwas.bayes

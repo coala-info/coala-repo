@@ -2,8 +2,9 @@
 name: sirius-csifingerid
 description: This tool processes tandem mass spectra to identify molecular formulas, predict molecular fingerprints, and classify unknown metabolites. Use when user asks to calculate molecular formulas, generate fragmentation trees, perform structural annotation with CSI:FingerID, or classify metabolites using CANOPUS.
 homepage: https://bio.informatik.uni-jena.de/software/sirius/
+metadata:
+  docker_image: "quay.io/biocontainers/sirius-csifingerid:5.8.6--h3bb291f_0"
 ---
-
 
 # sirius-csifingerid
 

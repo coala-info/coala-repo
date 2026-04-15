@@ -2,8 +2,9 @@
 name: probcons
 description: Probcons generates high-accuracy multiple sequence alignments for protein sequences using probabilistic modeling and consistency-based techniques. Use when user asks to align multiple protein sequences, improve alignment accuracy for divergent sequences, or generate protein alignments in ClustalW format.
 homepage: http://probcons.stanford.edu/
+metadata:
+  docker_image: "biocontainers/probcons:v1.12-12-deb_cv1"
 ---
-
 
 # probcons
 

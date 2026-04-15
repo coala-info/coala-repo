@@ -4,7 +4,6 @@ description: This package provides orthology and paralogy mappings for Arabidops
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.At.inp.db.html
 ---
 
-
 # bioconductor-hom.at.inp.db
 
 name: bioconductor-hom.at.inp.db

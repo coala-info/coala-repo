@@ -4,7 +4,6 @@ description: The wateRmelon package provides tools for the quality control, norm
 homepage: https://bioconductor.org/packages/release/bioc/html/wateRmelon.html
 ---
 
-
 # bioconductor-watermelon
 
 ## Overview

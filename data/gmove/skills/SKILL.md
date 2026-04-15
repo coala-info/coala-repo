@@ -2,8 +2,9 @@
 name: gmove
 description: gmove integrates genomic sequences with transcriptomic and proteomic evidence to predict and synthesize gene structures. Use when user asks to predict gene models, integrate RNA-seq or protein evidence into annotations, or filter gene structures based on specific biological constraints.
 homepage: https://github.com/institut-de-genomique/Gmove
+metadata:
+  docker_image: "quay.io/biocontainers/gmove:1.3--h9948957_0"
 ---
-
 
 # gmove
 

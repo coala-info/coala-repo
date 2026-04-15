@@ -4,7 +4,6 @@ description: This package provides access to BioPlex protein-protein interaction
 homepage: https://bioconductor.org/packages/3.14/bioc/html/BioPlex.html
 ---
 
-
 # bioconductor-bioplex
 
 name: bioconductor-bioplex

@@ -4,7 +4,6 @@ description: The densvis package implements density-preserving versions of t-SNE
 homepage: https://bioconductor.org/packages/release/bioc/html/densvis.html
 ---
 
-
 # bioconductor-densvis
 
 ## Overview

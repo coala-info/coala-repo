@@ -1,9 +1,8 @@
 ---
 name: bioconductor-biocor
-description: "BioCor calculates functional similarity between genes, pathways, and clusters based on shared pathway membership. Use when user asks to calculate biological correlation, compare gene clusters using Dice similarity, or integrate functional similarities with gene co-expression network analysis."
+description: BioCor calculates functional similarity between genes, pathways, and clusters based on shared pathway membership. Use when user asks to calculate biological correlation, compare gene clusters using Dice similarity, or integrate functional similarities with gene co-expression network analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioCor.html
 ---
-
 
 # bioconductor-biocor
 

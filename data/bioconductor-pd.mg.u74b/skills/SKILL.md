@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mg.u74b.html
 ---
 
-
 # bioconductor-pd.mg.u74b
 
 name: bioconductor-pd.mg.u74b

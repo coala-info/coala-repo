@@ -1,9 +1,10 @@
 ---
 name: mapseq
-description: "MAPseq is a k-mer based classifier that assigns taxonomic labels to ribosomal RNA sequences. Use when user asks to classify metagenomic reads, assign taxonomy to rRNA sequences, or generate OTU tables from multiple samples."
+description: MAPseq is a k-mer based classifier that assigns taxonomic labels to ribosomal RNA sequences. Use when user asks to classify metagenomic reads, assign taxonomy to rRNA sequences, or generate OTU tables from multiple samples.
 homepage: https://github.com/jfmrod/MAPseq
+metadata:
+  docker_image: "quay.io/biocontainers/mapseq:2.1.1--ha34dc8c_0"
 ---
-
 
 # mapseq
 

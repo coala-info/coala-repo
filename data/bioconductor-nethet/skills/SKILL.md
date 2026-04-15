@@ -4,7 +4,6 @@ description: This tool analyzes biological network heterogeneity from high-dimen
 homepage: https://bioconductor.org/packages/release/bioc/html/nethet.html
 ---
 
-
 # bioconductor-nethet
 
 name: bioconductor-nethet

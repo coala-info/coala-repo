@@ -4,7 +4,6 @@ description: This Bioconductor package identifies genes or transcripts displayin
 homepage: https://bioconductor.org/packages/release/bioc/html/DifferentialRegulation.html
 ---
 
-
 # bioconductor-differentialregulation
 
 ## Overview

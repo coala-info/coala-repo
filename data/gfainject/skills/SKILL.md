@@ -1,9 +1,10 @@
 ---
 name: gfainject
-description: "gfainject projects linear genomic alignments from SAM, BAM, or PAF files onto pangenome graph paths to produce GAF output. Use when user asks to inject alignments into a GFA graph, convert SAM or BAM files to GAF, or map linear coordinates to graph steps."
+description: gfainject projects linear genomic alignments from SAM, BAM, or PAF files onto pangenome graph paths to produce GAF output. Use when user asks to inject alignments into a GFA graph, convert SAM or BAM files to GAF, or map linear coordinates to graph steps.
 homepage: https://github.com/AndreaGuarracino/gfainject
+metadata:
+  docker_image: "quay.io/biocontainers/gfainject:0.2.0--h3ab6199_0"
 ---
-
 
 # gfainject
 

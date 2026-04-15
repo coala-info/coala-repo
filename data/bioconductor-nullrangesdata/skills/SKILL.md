@@ -4,7 +4,6 @@ description: This package provides standardized genomic datasets including DNase
 homepage: https://bioconductor.org/packages/release/data/experiment/html/nullrangesData.html
 ---
 
-
 # bioconductor-nullrangesdata
 
 name: bioconductor-nullrangesdata

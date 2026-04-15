@@ -2,8 +2,9 @@
 name: ucsc-stringify
 description: This tool transforms a file's contents into a formatted C string constant. Use when user asks to convert a file to a C string, embed a file's content into C code, or bundle external assets into an executable.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-stringify:482--hdc0a859_1"
 ---
-
 
 # ucsc-stringify
 

@@ -2,8 +2,9 @@
 name: open-cravat
 description: OpenCRAVAT is a modular framework for annotating and analyzing genomic variant data using functional and clinical databases. Use when user asks to initialize the environment, install or update annotation modules, run variant analysis on VCF files, generate reports, or visualize results in the interactive GUI.
 homepage: http://www.opencravat.org
+metadata:
+  docker_image: "quay.io/biocontainers/open-cravat:2.16.0--pyhdfd78af_0"
 ---
-
 
 # open-cravat
 

@@ -2,6 +2,8 @@
 name: vgp-processcuration
 description: The vgp-processcuration toolkit automates the final processing of curated genome assemblies to generate submission-ready files. Use when user asks to split AGP files by haplotype, reconcile FASTA sequences with curation instructions, assign chromosome names, or reorient secondary haplotypes.
 homepage: https://github.com/vgl-hub/vgl-curation
+metadata:
+  docker_image: "quay.io/biocontainers/vgp-processcuration:1.1--pyhdfd78af_0"
 ---
 
 # vgp-processcuration

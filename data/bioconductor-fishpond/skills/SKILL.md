@@ -4,7 +4,6 @@ description: The fishpond package performs differential analysis of RNA-seq data
 homepage: https://bioconductor.org/packages/release/bioc/html/fishpond.html
 ---
 
-
 # bioconductor-fishpond
 
 ## Overview

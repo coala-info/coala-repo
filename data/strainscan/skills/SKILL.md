@@ -1,9 +1,10 @@
 ---
 name: strainscan
-description: "StrainScan identifies and quantifies bacterial strains within complex microbiome samples using a k-mer based approach. Use when user asks to identify strains in sequencing data, build a custom strain database, or analyze the micro-diversity of microbial communities."
+description: StrainScan identifies and quantifies bacterial strains within complex microbiome samples using a k-mer based approach. Use when user asks to identify strains in sequencing data, build a custom strain database, or analyze the micro-diversity of microbial communities.
 homepage: https://github.com/liaoherui/StrainScan
+metadata:
+  docker_image: "quay.io/biocontainers/strainscan:1.0.14--pyhdfd78af_1"
 ---
-
 
 # strainscan
 

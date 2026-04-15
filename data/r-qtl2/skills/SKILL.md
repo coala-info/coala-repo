@@ -4,7 +4,6 @@ description: The r-qtl2 tool performs Quantitative Trait Locus (QTL) analysis fo
 homepage: https://cran.r-project.org/web/packages/qtl2/index.html
 ---
 
-
 # r-qtl2
 
 name: r-qtl2

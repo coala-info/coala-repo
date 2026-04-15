@@ -4,7 +4,6 @@ description: This tool identifies contiguous genomic regions where a covariate s
 homepage: https://bioconductor.org/packages/release/bioc/html/bumphunter.html
 ---
 
-
 # bioconductor-bumphunter
 
 name: bioconductor-bumphunter

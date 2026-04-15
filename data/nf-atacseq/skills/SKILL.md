@@ -4,6 +4,8 @@ description: This pipeline performs ATAC-seq analysis starting from raw FASTQ fi
 homepage: https://github.com/nf-core/atacseq
 ---
 
+# atacseq
+
 ## Overview
 nf-core/atacseq provides a comprehensive workflow for analyzing ATAC-seq data, addressing the need for reproducible identification of open chromatin regions across biological replicates. It handles the transition from raw sequencing reads to high-level analysis, including library complexity estimation, peak calling, and statistical testing for differential accessibility between conditions.
 

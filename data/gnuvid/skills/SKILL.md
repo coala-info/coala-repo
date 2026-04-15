@@ -2,8 +2,9 @@
 name: gnuvid
 description: gnuvid identifies and classifies SARS-CoV-2 viral genomes by assigning them to Clonal Complexes using exact allele matching and machine learning. Use when user asks to classify SARS-CoV-2 sequences, assign genomes to Clonal Complexes, or identify viral variants from FASTA files.
 homepage: https://github.com/ahmedmagds/GNUVID
+metadata:
+  docker_image: "quay.io/biocontainers/gnuvid:2.4--hdfd78af_0"
 ---
-
 
 # gnuvid
 

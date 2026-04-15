@@ -2,6 +2,8 @@
 name: trinotate
 description: Trinotate is a functional annotation suite that integrates transcriptome data and search results into a structured SQLite database. Use when user asks to functionally annotate a transcriptome, integrate homology and protein domain results, or generate comprehensive annotation reports.
 homepage: https://trinotate.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/trinotate:4.0.2--pl5321hdfd78af_0"
 ---
 
 # trinotate

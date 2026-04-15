@@ -1,9 +1,12 @@
 ---
 name: algae-bloom-for-water-quality-assessment-on-sentinel-2-image
-description: "This Common Workflow Language pipeline filters Sentinel-2 satellite imagery from the Copernicus platform and performs band calculations to detect algae blooms. Use this skill when you need to monitor aquatic ecosystems for harmful algal blooms or assess surface water quality using multispectral satellite data."
-homepage: https://workflowhub.eu/workflows/2032
+description: This Common Workflow Language pipeline filters Sentinel-2 satellite imagery from the Copernicus platform and performs band calculations to detect algae blooms. Use this skill when you need to monitor aquatic ecosystems for harmful algal blooms or assess surface water quality using multispectral satellite data.
+homepage: https://crim.ca
+metadata:
+  docker_image: "N/A"
 ---
-# Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform
+
+# algae-bloom-for-water-quality-assessment-on-sentinel-2-image
 
 ## Overview
 

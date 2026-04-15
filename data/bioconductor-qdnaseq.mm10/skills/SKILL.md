@@ -4,7 +4,6 @@ description: This package provides pre-calculated bin annotations for the mouse 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/QDNAseq.mm10.html
 ---
 
-
 # bioconductor-qdnaseq.mm10
 
 name: bioconductor-qdnaseq.mm10

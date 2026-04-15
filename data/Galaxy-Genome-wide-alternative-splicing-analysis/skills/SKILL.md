@@ -1,10 +1,12 @@
 ---
 name: genome-wide-alternative-splicing-analysis
-description: "This transcriptomics workflow performs genome-wide alternative splicing analysis by processing RNA-seq data through STAR alignment, StringTie assembly, and IsoformSwitchAnalyzeR integration with CPAT and Pfam functional annotations. Use this skill when you need to identify isoform switches with predicted functional consequences, such as changes in protein domains or coding potential, across different biological conditions."
-homepage: https://workflowhub.eu/workflows/472
+description: This transcriptomics workflow performs genome-wide alternative splicing analysis by processing RNA-seq data through STAR alignment, StringTie assembly, and IsoformSwitchAnalyzeR integration with CPAT and Pfam functional annotations. Use this skill when you need to identify isoform switches with predicted functional consequences, such as changes in protein domains or coding potential, across different biological conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome-wide alternative splicing analysis
+# genome-wide-alternative-splicing-analysis
 
 ## Overview
 

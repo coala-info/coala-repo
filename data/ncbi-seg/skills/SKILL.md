@@ -1,9 +1,8 @@
 ---
 name: ncbi-seg
-description: "NCBI seg partitions amino acid or nucleotide sequences into segments of low and high local complexity. Use when user asks to mask low-complexity regions for BLAST, extract specific sequence segments, or generate genomic complexity plots."
+description: NCBI seg partitions amino acid or nucleotide sequences into segments of low and high local complexity. Use when user asks to mask low-complexity regions for BLAST, extract specific sequence segments, or generate genomic complexity plots.
 homepage: https://github.com/abelardoacm/genomic_seg_plots
 ---
-
 
 # ncbi-seg
 

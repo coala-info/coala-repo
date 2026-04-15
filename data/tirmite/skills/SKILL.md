@@ -1,7 +1,9 @@
 ---
 name: tirmite
-description: "tirmite models natural variation in transposon termini to identify and annotate cryptic structural variants like MITEs. Use when user asks to generate profile HMMs for terminal sequences, search genomes for transposon hits, or pair termini to define element boundaries."
+description: tirmite models natural variation in transposon termini to identify and annotate cryptic structural variants like MITEs. Use when user asks to generate profile HMMs for terminal sequences, search genomes for transposon hits, or pair termini to define element boundaries.
 homepage: https://github.com/Adamtaranto/TIRmite
+metadata:
+  docker_image: "quay.io/biocontainers/tirmite:1.3.0--pyhdfd78af_0"
 ---
 
 # tirmite

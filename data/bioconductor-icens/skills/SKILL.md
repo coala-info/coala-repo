@@ -4,7 +4,6 @@ description: This tool computes the Nonparametric Maximum Likelihood Estimator f
 homepage: https://bioconductor.org/packages/release/bioc/html/Icens.html
 ---
 
-
 # bioconductor-icens
 
 name: bioconductor-icens

@@ -1,8 +1,11 @@
 ---
 name: exome-alignment
-description: "This CWL workflow processes raw exome sequencing reads using Cutadapt, BWA-MEM, and Picard to perform adapter trimming, sequence alignment, and duplicate marking. Use this skill when you need to identify genetic variants or characterize the mutational profiles of pediatric cancer patients."
-homepage: https://workflowhub.eu/workflows/239
+description: This CWL workflow processes raw exome sequencing reads using Cutadapt, BWA-MEM, and Picard to perform adapter trimming, sequence alignment, and duplicate marking. Use this skill when you need to identify genetic variants or characterize the mutational profiles of pediatric cancer patients.
+homepage: https://ipc-project.eu/
+metadata:
+  docker_image: "N/A"
 ---
+
 # exome-alignment
 
 ## Overview

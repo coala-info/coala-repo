@@ -4,7 +4,6 @@ description: NGScopy detects copy number variations in next-generation sequencin
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NGScopy.html
 ---
 
-
 # bioconductor-ngscopy
 
 name: bioconductor-ngscopy

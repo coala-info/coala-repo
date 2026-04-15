@@ -1,7 +1,9 @@
 ---
 name: kmercamel
-description: "KmerCamel compresses k-mer sets into masked superstrings to optimize genomic data storage and indexing. Use when user asks to compute masked superstrings, optimize masks for indexing or compression, or convert between masked superstring formats."
+description: KmerCamel compresses k-mer sets into masked superstrings to optimize genomic data storage and indexing. Use when user asks to compute masked superstrings, optimize masks for indexing or compression, or convert between masked superstring formats.
 homepage: https://github.com/OndrejSladky/kmercamel/
+metadata:
+  docker_image: "quay.io/biocontainers/kmercamel:2.2.0--ha119d93_0"
 ---
 
 # kmercamel

@@ -2,6 +2,8 @@
 name: seq-seq-pan
 description: seq-seq-pan is a bioinformatics workflow for sequential whole-genome alignment and the construction of pan-genome data structures. Use when user asks to perform whole-genome alignment, split pangenome alignments, extract specific genomic subregions, or map coordinates and annotations across genomes.
 homepage: https://gitlab.com/chrjan/seq-seq-pan
+metadata:
+  docker_image: "quay.io/biocontainers/seq-seq-pan:1.1.0--py_1"
 ---
 
 # seq-seq-pan

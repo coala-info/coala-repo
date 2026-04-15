@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the mu19
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu19ksuba.db.html
 ---
 
-
 # bioconductor-mu19ksuba.db
 
 name: bioconductor-mu19ksuba.db

@@ -2,8 +2,9 @@
 name: nanopack
 description: NanoPack is a toolkit for processing, filtering, and visualizing long-read sequencing data from fastq, BAM, or summary files. Use when user asks to generate quality control plots, filter or trim reads, compare multiple sequencing runs, or calculate summary statistics for long-read datasets.
 homepage: https://github.com/wdecoster/nanopack
+metadata:
+  docker_image: "quay.io/biocontainers/nanopack:1.1.1--hdfd78af_0"
 ---
-
 
 # nanopack
 

@@ -1,7 +1,9 @@
 ---
 name: flavivirushelicase_apo
-description: "This workflow processes a protein PDB file to perform molecular dynamics simulations of a flavivirus helicase in its apo state using tLEaP for topology generation and GROMACS for solvation, equilibration, and trajectory analysis. Use this skill when you need to investigate the intrinsic flexibility and structural behavior of a viral helicase protein through atomistic simulations to identify potential druggable sites or understand its functional mechanisms."
-homepage: https://workflowhub.eu/workflows/762
+description: This workflow processes a protein PDB file to perform molecular dynamics simulations of a flavivirus helicase in its apo state using tLEaP for topology generation and GROMACS for solvation, equilibration, and trajectory analysis. Use this skill when you need to investigate the intrinsic flexibility and structural behavior of a viral helicase protein through atomistic simulations to identify potential druggable sites or understand its functional mechanisms.
+homepage: https://zenodo.org/records/7493015
+metadata:
+  docker_image: "N/A"
 ---
 
 # flavivirushelicase_apo

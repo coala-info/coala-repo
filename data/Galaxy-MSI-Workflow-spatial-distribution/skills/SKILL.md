@@ -1,10 +1,12 @@
 ---
 name: msi-workflow-spatial-distribution
-description: "This mass spectrometry imaging workflow processes imzML datasets and m/z features using Cardinal tools to perform quality control, filtering, and spatial visualization. Use this skill when you need to visualize the localization of specific metabolites across tissue sections and assess the quality of imaging mass spectrometry data."
-homepage: https://workflowhub.eu/workflows/1593
+description: This mass spectrometry imaging workflow processes imzML datasets and m/z features using Cardinal tools to perform quality control, filtering, and spatial visualization. Use this skill when you need to visualize the localization of specific metabolites across tissue sections and assess the quality of imaging mass spectrometry data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MSI Workflow: spatial distribution
+# msi-workflow-spatial-distribution
 
 ## Overview
 

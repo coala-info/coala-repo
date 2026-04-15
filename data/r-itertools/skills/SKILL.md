@@ -4,7 +4,6 @@ description: The r-itertools package provides advanced iterator tools for R to e
 homepage: https://cloud.r-project.org/web/packages/itertools/index.html
 ---
 
-
 # r-itertools
 
 name: r-itertools

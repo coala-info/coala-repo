@@ -2,8 +2,9 @@
 name: mammal
 description: The mammal tool estimates optimized frequency classes and weights for site-heterogeneous models in protein sequence alignments. Use when user asks to estimate frequency classes, calculate mixture model weights, or generate an ESmodel for IQ-TREE.
 homepage: https://www.mathstat.dal.ca/~tsusko/doc/mammal.pdf
+metadata:
+  docker_image: "quay.io/biocontainers/mammal:1.1.1--h503566f_3"
 ---
-
 
 # mammal
 

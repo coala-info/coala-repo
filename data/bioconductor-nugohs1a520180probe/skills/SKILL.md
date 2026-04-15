@@ -4,7 +4,6 @@ description: This package provides probe sequence data for the Affymetrix nugohs
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugohs1a520180probe.html
 ---
 
-
 # bioconductor-nugohs1a520180probe
 
 name: bioconductor-nugohs1a520180probe

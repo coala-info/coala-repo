@@ -4,7 +4,6 @@ description: This tool automates rhinovirus genotyping and classification using 
 homepage: https://bioconductor.org/packages/release/bioc/html/rhinotypeR.html
 ---
 
-
 # bioconductor-rhinotyper
 
 name: bioconductor-rhinotyper

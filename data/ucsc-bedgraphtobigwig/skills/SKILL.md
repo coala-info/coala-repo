@@ -2,8 +2,9 @@
 name: ucsc-bedgraphtobigwig
 description: ucsc-bedgraphtobigwig transforms bedGraph files into bigWig files. Use when user asks to transform bedGraph to bigWig, convert genomic signal tracks for visualization, or create indexed binary files for large-scale data sharing.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedgraphtobigwig:482--hdc0a859_0"
 ---
-
 
 # ucsc-bedgraphtobigwig
 

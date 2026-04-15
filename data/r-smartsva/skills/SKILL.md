@@ -4,7 +4,6 @@ description: This tool performs fast and robust Surrogate Variable Analysis to i
 homepage: https://cran.r-project.org/web/packages/smartsva/index.html
 ---
 
-
 # r-smartsva
 
 name: r-smartsva

@@ -4,7 +4,6 @@ description: This package provides probe sequence data and physical array coordi
 homepage: https://bioconductor.org/packages/release/data/annotation/html/medicagoprobe.html
 ---
 
-
 # bioconductor-medicagoprobe
 
 name: bioconductor-medicagoprobe

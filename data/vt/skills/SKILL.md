@@ -2,8 +2,9 @@
 name: vt
 description: vt is a toolset for the preprocessing, normalization, and decomposition of genetic variants in VCF files. Use when user asks to normalize variants, decompose multiallelic sites or block substitutions, filter variants, and remove duplicate records.
 homepage: https://genome.sph.umich.edu/wiki/Vt
+metadata:
+  docker_image: "quay.io/biocontainers/vt:2015.11.10--2"
 ---
-
 
 # vt
 

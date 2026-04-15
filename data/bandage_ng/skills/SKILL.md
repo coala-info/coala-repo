@@ -1,9 +1,10 @@
 ---
 name: bandage_ng
-description: "Bandage-NG visualizes and analyzes de novo assembly graphs to show the relationships between contigs. Use when user asks to visualize assembly graphs, generate images of GFA files, or extract assembly statistics like N50 and total length."
+description: Bandage-NG visualizes and analyzes de novo assembly graphs to show the relationships between contigs. Use when user asks to visualize assembly graphs, generate images of GFA files, or extract assembly statistics like N50 and total length.
 homepage: https://github.com/asl/BandageNG
+metadata:
+  docker_image: "quay.io/biocontainers/bandage:0.9.0--h9948957_0"
 ---
-
 
 # bandage_ng
 

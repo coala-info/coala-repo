@@ -4,7 +4,6 @@ description: This tool performs functional data analysis to cluster ChIP-Seq pea
 homepage: https://bioconductor.org/packages/3.6/bioc/html/FunChIP.html
 ---
 
-
 # bioconductor-funchip
 
 name: bioconductor-funchip

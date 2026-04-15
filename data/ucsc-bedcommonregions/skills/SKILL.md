@@ -2,8 +2,9 @@
 name: ucsc-bedcommonregions
 description: `ucsc-bedcommonregions` identifies genomic intervals that are common across all provided input BED files. Use when user asks to find common regions, identify consensus regions, or determine shared genomic features across multiple BED files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedcommonregions:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedcommonregions
 

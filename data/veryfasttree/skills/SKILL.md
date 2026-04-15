@@ -2,8 +2,9 @@
 name: veryfasttree
 description: VeryFastTree infers phylogenetic trees from sequence alignments using a highly optimized FastTree-2 algorithm. Use when user asks to infer phylogenetic trees, optimize performance, handle large datasets, ensure deterministic results, or use specific evolutionary models.
 homepage: https://github.com/citiususc/veryfasttree
+metadata:
+  docker_image: "quay.io/biocontainers/veryfasttree:4.0.5--h9948957_0"
 ---
-
 
 # veryfasttree
 

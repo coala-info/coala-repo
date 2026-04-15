@@ -4,7 +4,6 @@ description: This tool generates realistic simulations of genomic data and perfo
 homepage: https://bioconductor.org/packages/3.8/bioc/html/simulatorZ.html
 ---
 
-
 # bioconductor-simulatorz
 
 name: bioconductor-simulatorz

@@ -4,7 +4,6 @@ description: This package provides high-performance tools for preparing, analyzi
 homepage: https://bioconductor.org/packages/release/bioc/html/TMSig.html
 ---
 
-
 # bioconductor-tmsig
 
 name: bioconductor-tmsig

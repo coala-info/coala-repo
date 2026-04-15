@@ -4,7 +4,6 @@ description: This Bioconductor package provides minor allele frequency data from
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MafDb.gnomADex.r2.0.1.hs37d5.html
 ---
 
-
 # bioconductor-mafdb.gnomadex.r2.0.1.hs37d5
 
 ## Overview

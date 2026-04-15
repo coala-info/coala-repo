@@ -2,8 +2,9 @@
 name: chisel
 description: CHISEL infers haplotype-specific copy numbers and clusters cells into clones from low-coverage single-cell DNA sequencing data. Use when user asks to call copy numbers, identify genomic alterations in single cells, or perform cell clustering based on haplotype profiles.
 homepage: https://github.com/raphael-group/chisel
+metadata:
+  docker_image: "quay.io/biocontainers/chisel:1.1.4--pyhdfd78af_0"
 ---
-
 
 # chisel
 

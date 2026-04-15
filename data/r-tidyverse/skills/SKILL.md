@@ -4,7 +4,6 @@ description: The tidyverse provides a collection of R packages designed for data
 homepage: https://cloud.r-project.org/web/packages/tidyverse/index.html
 ---
 
-
 # r-tidyverse
 
 name: r-tidyverse

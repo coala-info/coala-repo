@@ -4,7 +4,6 @@ description: This package provides gene expression datasets from three major lun
 homepage: https://bioconductor.org/packages/release/data/experiment/html/lungExpression.html
 ---
 
-
 # bioconductor-lungexpression
 
 name: bioconductor-lungexpression

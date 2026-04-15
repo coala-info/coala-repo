@@ -1,9 +1,10 @@
 ---
 name: greenhill
-description: "GreenHill scaffolds and phases contigs into chromosome-scale haplotypes using Hi-C data and optional sequencing reads. Use when user asks to scaffold contigs into chromosome-scale assemblies, phase diploid genomes, or integrate Hi-C data with haplotype-aware assemblies."
+description: GreenHill scaffolds and phases contigs into chromosome-scale haplotypes using Hi-C data and optional sequencing reads. Use when user asks to scaffold contigs into chromosome-scale assemblies, phase diploid genomes, or integrate Hi-C data with haplotype-aware assemblies.
 homepage: https://github.com/ShunOuchi/GreenHill
+metadata:
+  docker_image: "quay.io/biocontainers/greenhill:1.1.0--h663a4a6_3"
 ---
-
 
 # greenhill
 

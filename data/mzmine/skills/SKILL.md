@@ -1,9 +1,10 @@
 ---
 name: mzmine
-description: "MZmine processes and visualizes mass spectrometry data for compound identification. Use when user asks to analyze mass spectrometry data, detect features, or identify compounds."
+description: MZmine processes and visualizes mass spectrometry data for compound identification. Use when user asks to analyze mass spectrometry data, detect features, or identify compounds.
 homepage: http://mzmine.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/mzmine:4.7.29--hdfd78af_0"
 ---
-
 
 # mzmine
 

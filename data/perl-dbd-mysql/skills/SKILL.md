@@ -2,8 +2,9 @@
 name: perl-dbd-mysql
 description: This tool provides the MySQL driver for the Perl5 Database Interface to enable communication between Perl scripts and MySQL databases. Use when user asks to establish database connections, execute SQL queries, handle results, or manage MySQL configurations within a Perl environment.
 homepage: https://dbi.perl.org
+metadata:
+  docker_image: "quay.io/biocontainers/perl-dbd-mysql:5.013--pl5321h0a44790_0"
 ---
-
 
 # perl-dbd-mysql
 

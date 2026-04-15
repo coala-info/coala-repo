@@ -4,7 +4,6 @@ description: The r-oai package provides a client for the OAI-PMH protocol to har
 homepage: https://cloud.r-project.org/web/packages/oai/index.html
 ---
 
-
 # r-oai
 
 ## Overview

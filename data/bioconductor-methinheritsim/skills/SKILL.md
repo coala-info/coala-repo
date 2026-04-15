@@ -4,7 +4,6 @@ description: This package simulates the inheritance of DNA methylation patterns 
 homepage: https://bioconductor.org/packages/release/bioc/html/methInheritSim.html
 ---
 
-
 # bioconductor-methinheritsim
 
 ## Overview

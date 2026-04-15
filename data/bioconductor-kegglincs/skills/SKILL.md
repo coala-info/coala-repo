@@ -4,7 +4,6 @@ description: This package expands KEGG pathway nodes and edges to allow for gran
 homepage: https://bioconductor.org/packages/release/bioc/html/KEGGlincs.html
 ---
 
-
 # bioconductor-kegglincs
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides an R interface to the biobtree utility for high-
 homepage: https://bioconductor.org/packages/release/bioc/html/biobtreeR.html
 ---
 
-
 # bioconductor-biobtreer
 
 name: bioconductor-biobtreer

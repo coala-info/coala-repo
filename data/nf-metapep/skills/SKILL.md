@@ -4,6 +4,8 @@ description: This pipeline predicts MHC/HLA-affinity for peptides derived from m
 homepage: https://github.com/nf-core/metapep
 ---
 
+# metapep
+
 ## Overview
 nf-core/metapep addresses the challenge of identifying immunogenic peptides within complex microbial communities by streamlining the transition from metagenomic sequences to epitope predictions. It automates the extraction of protein sequences from various microbiome data formats and evaluates their binding affinity to specific MHC or HLA alleles.
 

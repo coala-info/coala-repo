@@ -2,8 +2,9 @@
 name: bindashtree
 description: bindashtree builds phylogenetic trees from microbial genomes using densified MinHash and rapid neighbor-joining. Use when user asks to construct a phylogenetic tree, generate a genomic distance matrix, or perform large-scale microbial phylogenomic analysis.
 homepage: https://github.com/jianshu93/bindashtree
+metadata:
+  docker_image: "quay.io/biocontainers/bindashtree:0.1.1--h3ab6199_0"
 ---
-
 
 # bindashtree
 

@@ -2,8 +2,9 @@
 name: shapeshifter
 description: Shapeshifter is a high-performance utility for converting, filtering, and manipulating functional genomics data across various file formats. Use when user asks to convert file formats, filter genomic data by specific criteria, transpose matrices, or export data to Jupyter notebooks.
 homepage: https://github.com/srp33/ShapeShifter
+metadata:
+  docker_image: "quay.io/biocontainers/shapeshifter:1.1.1--pyh24bf2e0_0"
 ---
-
 
 # shapeshifter
 

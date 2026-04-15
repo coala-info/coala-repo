@@ -2,8 +2,9 @@
 name: svanalyzer
 description: SVanalyzer is a suite of tools for the high-resolution analysis, comparison, and refinement of structural variants using sequence-level comparisons. Use when user asks to benchmark SV callers, compare sequence-resolved variants, merge callsets, refine variants from assemblies, or annotate genomic context around breakpoints.
 homepage: http://svanalyzer.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/svanalyzer:0.36--pl5321hdfd78af_2"
 ---
-
 
 # svanalyzer
 

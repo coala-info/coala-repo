@@ -1,10 +1,12 @@
 ---
 name: stochastic-gravitational-wave-backgorund-sgwb-tool
-description: "This Galaxy workflow utilizes the sgwb_astro_tool to model and analyze the stochastic gravitational wave background within the field of astrophysics. Use this skill when you need to characterize the cumulative signal from unresolved gravitational wave sources or investigate the cosmological implications of background noise in interferometric data."
-homepage: https://workflowhub.eu/workflows/815
+description: This Galaxy workflow utilizes the sgwb_astro_tool to model and analyze the stochastic gravitational wave background within the field of astrophysics. Use this skill when you need to characterize the cumulative signal from unresolved gravitational wave sources or investigate the cosmological implications of background noise in interferometric data.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Stochastic Gravitational Wave Backgorund (SGWB) tool
+# stochastic-gravitational-wave-backgorund-sgwb-tool
 
 ## Overview
 

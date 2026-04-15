@@ -4,7 +4,6 @@ description: This package provides annotation and platform design metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rta.1.0.html
 ---
 
-
 # bioconductor-pd.rta.1.0
 
 name: bioconductor-pd.rta.1.0

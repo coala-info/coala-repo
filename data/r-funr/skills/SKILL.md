@@ -4,7 +4,6 @@ description: This tool executes R functions directly from the terminal by wrappi
 homepage: https://cloud.r-project.org/web/packages/funr/index.html
 ---
 
-
 # r-funr
 
 name: r-funr

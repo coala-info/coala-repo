@@ -4,7 +4,6 @@ description: The splots package visualizes high-throughput assay data from micro
 homepage: https://bioconductor.org/packages/release/bioc/html/splots.html
 ---
 
-
 # bioconductor-splots
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for the Affymetrix H
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133afrmavecs.html
 ---
 
-
 # bioconductor-hgu133afrmavecs
 
 name: bioconductor-hgu133afrmavecs

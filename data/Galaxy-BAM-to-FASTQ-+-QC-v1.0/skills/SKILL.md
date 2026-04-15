@@ -1,10 +1,12 @@
 ---
 name: bam-to-fastq-qc-v10
-description: "This Galaxy workflow converts BAM files into FASTQ format using Picard SamToFastq while simultaneously performing quality control and alignment statistics with Samtools flagstat and FastQC. Use this skill when you need to extract raw sequencing reads from an existing BAM file to assess library quality or prepare data for de novo genome assembly pipelines."
-homepage: https://workflowhub.eu/workflows/220
+description: This Galaxy workflow converts BAM files into FASTQ format using Picard SamToFastq while simultaneously performing quality control and alignment statistics with Samtools flagstat and FastQC. Use this skill when you need to extract raw sequencing reads from an existing BAM file to assess library quality or prepare data for de novo genome assembly pipelines.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# BAM to FASTQ + QC v1.0
+# bam-to-fastq-qc-v10
 
 ## Overview
 

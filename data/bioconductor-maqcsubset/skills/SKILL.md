@@ -4,7 +4,6 @@ description: This package provides a curated subset of Affymetrix microarray dat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MAQCsubset.html
 ---
 
-
 # bioconductor-maqcsubset
 
 ## Overview

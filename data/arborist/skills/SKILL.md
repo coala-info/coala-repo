@@ -2,8 +2,9 @@
 name: arborist
 description: Arborist ranks candidate tumor phylogenetic trees by calculating the evidence lower bound using single-cell sequencing data. Use when user asks to rank candidate trees, identify the most likely clonal architecture, or assign cells to specific clones.
 homepage: https://github.com/VanLoo-lab/Arborist
+metadata:
+  docker_image: "quay.io/biocontainers/arborist:1.0.0--pyhdfd78af_0"
 ---
-
 
 # arborist
 

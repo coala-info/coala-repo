@@ -2,8 +2,9 @@
 name: baltic
 description: The baltic tool transforms phylogenetic tree data into navigable Python objects for evolutionary analysis and manipulation. Use when user asks to load Newick or Nexus files, filter branches by traits, extract subtrees, find common ancestors, or visualize phylogenies.
 homepage: https://github.com/evogytis/baltic
+metadata:
+  docker_image: "quay.io/biocontainers/baltic:0.3.0--pyhdfd78af_0"
 ---
-
 
 # baltic
 

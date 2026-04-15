@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object containing Chimpan
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ptroglodytes.UCSC.panTro4.refGene.html
 ---
 
-
 # bioconductor-txdb.ptroglodytes.ucsc.pantro4.refgene
 
 name: bioconductor-txdb.ptroglodytes.ucsc.pantro4.refgene

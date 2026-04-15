@@ -4,7 +4,6 @@ description: The r-biglm package fits linear and generalized linear models to la
 homepage: https://cloud.r-project.org/web/packages/biglm/index.html
 ---
 
-
 # r-biglm
 
 ## Overview

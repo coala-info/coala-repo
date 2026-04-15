@@ -1,9 +1,10 @@
 ---
 name: skesa
-description: "skesa performs de novo sequence assembly using strategic kmer extension. Use when user asks to assemble genomes from sequencing reads."
+description: skesa performs de novo sequence assembly using strategic kmer extension. Use when user asks to assemble genomes from sequencing reads.
 homepage: https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa
+metadata:
+  docker_image: "quay.io/biocontainers/skesa:2.5.1--h077b44d_3"
 ---
-
 
 # skesa
 

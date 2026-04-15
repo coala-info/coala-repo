@@ -4,7 +4,6 @@ description: The r-rseis package provides a comprehensive suite of tools for sei
 homepage: https://cran.r-project.org/web/packages/rseis/index.html
 ---
 
-
 # r-rseis
 
 ## Overview

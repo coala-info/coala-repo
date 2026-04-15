@@ -1,9 +1,8 @@
 ---
 name: bioconductor-methylsig
-description: "bioconductor-methylsig provides a beta-binomial framework for testing differential methylation in WGBS and RRBS experiments. Use when user asks to filter methylation loci by coverage or location, aggregate CpG data into tiles, and perform differential methylation testing for group comparisons or complex experimental designs."
+description: bioconductor-methylsig provides a beta-binomial framework for testing differential methylation in WGBS and RRBS experiments. Use when user asks to filter methylation loci by coverage or location, aggregate CpG data into tiles, and perform differential methylation testing for group comparisons or complex experimental designs.
 homepage: https://bioconductor.org/packages/release/bioc/html/methylSig.html
 ---
-
 
 # bioconductor-methylsig
 

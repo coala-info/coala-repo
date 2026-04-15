@@ -1,7 +1,9 @@
 ---
 name: gpsw
-description: "Tool for analyzing Global Protein Stability (GPS) Profiling data. Use when user asks to process and analyze GPS data to study protein stability or degron identification."
+description: Tool for analyzing Global Protein Stability (GPS) Profiling data. Use when user asks to process and analyze GPS data to study protein stability or degron identification.
 homepage: https://github.com/niekwit/gps-orfeome
+metadata:
+  docker_image: "quay.io/biocontainers/gpsw:0.9.1--pyhdfd78af_0"
 ---
 
 # gpsw

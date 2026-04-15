@@ -4,7 +4,6 @@ description: This package provides high-performance routines for parsing Affymet
 homepage: https://bioconductor.org/packages/release/bioc/html/affyio.html
 ---
 
-
 # bioconductor-affyio
 
 name: bioconductor-affyio

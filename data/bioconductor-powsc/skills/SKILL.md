@@ -4,7 +4,6 @@ description: Bioconductor-powsc performs power analysis and sample size estimati
 homepage: https://bioconductor.org/packages/release/bioc/html/POWSC.html
 ---
 
-
 # bioconductor-powsc
 
 name: bioconductor-powsc

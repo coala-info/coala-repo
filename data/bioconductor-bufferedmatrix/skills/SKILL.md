@@ -4,7 +4,6 @@ description: This tool creates and manages BufferedMatrix objects in R to handle
 homepage: https://bioconductor.org/packages/release/bioc/html/BufferedMatrix.html
 ---
 
-
 # bioconductor-bufferedmatrix
 
 name: bioconductor-bufferedmatrix

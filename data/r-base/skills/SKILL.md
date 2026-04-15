@@ -4,7 +4,6 @@ description: The r-base package provides the fundamental functions, data structu
 homepage: https://cran.r-project.org/web/packages/base/index.html
 ---
 
-
 # r-base
 
 ## Overview

@@ -4,7 +4,6 @@ description: samExploreR assesses the impact of sequencing depth and genomic ann
 homepage: https://bioconductor.org/packages/3.8/bioc/html/samExploreR.html
 ---
 
-
 # bioconductor-samexplorer
 
 ## Overview

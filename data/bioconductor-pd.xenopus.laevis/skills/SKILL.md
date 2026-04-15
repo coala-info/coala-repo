@@ -4,7 +4,6 @@ description: This package provides platform design annotation for the Affymetrix
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.xenopus.laevis.html
 ---
 
-
 # bioconductor-pd.xenopus.laevis
 
 name: bioconductor-pd.xenopus.laevis

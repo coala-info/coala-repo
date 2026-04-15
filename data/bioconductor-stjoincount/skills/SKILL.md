@@ -4,7 +4,6 @@ description: The stJoincount package quantifies spatial relationships between ca
 homepage: https://bioconductor.org/packages/release/bioc/html/stJoincount.html
 ---
 
-
 # bioconductor-stjoincount
 
 ## Overview

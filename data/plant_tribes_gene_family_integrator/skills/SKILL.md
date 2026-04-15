@@ -2,8 +2,9 @@
 name: plant_tribes_gene_family_integrator
 description: This tool integrates classified protein sequences into orthogroup gene families based on specific scaffold datasets and clustering methods. Use when user asks to integrate classified orthogroups, organize gene families for downstream alignment, or prepare protein sequences for phylogenetic analysis.
 homepage: https://github.com/dePamphilis/PlantTribes
+metadata:
+  docker_image: "quay.io/biocontainers/plant_tribes_gene_family_integrator:1.0.4--0"
 ---
-
 
 # plant_tribes_gene_family_integrator
 

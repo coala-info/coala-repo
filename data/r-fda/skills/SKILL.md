@@ -4,7 +4,6 @@ description: This tool provides expert assistance for Functional Data Analysis i
 homepage: https://cloud.r-project.org/web/packages/fda/index.html
 ---
 
-
 # r-fda
 
 name: r-fda

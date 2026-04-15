@@ -4,7 +4,6 @@ description: This tool detects and corrects genomic DNA contamination in RNA-seq
 homepage: https://bioconductor.org/packages/release/bioc/html/CleanUpRNAseq.html
 ---
 
-
 # bioconductor-cleanuprnaseq
 
 name: bioconductor-cleanuprnaseq

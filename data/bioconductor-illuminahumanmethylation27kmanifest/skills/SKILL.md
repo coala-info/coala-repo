@@ -4,7 +4,6 @@ description: This package provides the manifest object containing the array desi
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation27kmanifest.html
 ---
 
-
 # bioconductor-illuminahumanmethylation27kmanifest
 
 name: bioconductor-illuminahumanmethylation27kmanifest

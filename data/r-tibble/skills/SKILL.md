@@ -4,7 +4,6 @@ description: The r-tibble tool provides specialized guidance for creating, manip
 homepage: https://cloud.r-project.org/web/packages/tibble/index.html
 ---
 
-
 # r-tibble
 
 name: r-tibble

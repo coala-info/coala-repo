@@ -1,9 +1,10 @@
 ---
 name: readseq
-description: "readseq converts biosequence data between various file formats while maintaining sequence integrity and metadata. Use when user asks to convert sequence files, translate between biosequence formats, or extract information from sequence data files."
+description: readseq converts biosequence data between various file formats while maintaining sequence integrity and metadata. Use when user asks to convert sequence files, translate between biosequence formats, or extract information from sequence data files.
 homepage: http://iubio.bio.indiana.edu/soft/molbio/readseq/java/
+metadata:
+  docker_image: "quay.io/biocontainers/readseq:2.1.30--1"
 ---
-
 
 # readseq
 

@@ -4,7 +4,6 @@ description: r-pairadise performs statistical analysis of allele-specific altern
 homepage: https://cran.r-project.org/web/packages/pairadise/index.html
 ---
 
-
 # r-pairadise
 
 name: r-pairadise

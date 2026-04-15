@@ -4,7 +4,6 @@ description: This package provides pre-trained classification models for automat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/scAnnotatR.models.html
 ---
 
-
 # bioconductor-scannotatr.models
 
 name: bioconductor-scannotatr.models

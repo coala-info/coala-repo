@@ -4,7 +4,6 @@ description: SCOPE identifies copy number variants in single-cell DNA sequencing
 homepage: https://bioconductor.org/packages/release/bioc/html/SCOPE.html
 ---
 
-
 # bioconductor-scope
 
 name: bioconductor-scope

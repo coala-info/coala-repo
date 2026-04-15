@@ -4,7 +4,6 @@ description: The r-fftwtools package provides a fast R wrapper for the FFTW3 lib
 homepage: https://cloud.r-project.org/web/packages/fftwtools/index.html
 ---
 
-
 # r-fftwtools
 
 ## Overview

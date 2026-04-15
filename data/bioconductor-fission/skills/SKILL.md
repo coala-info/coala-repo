@@ -4,7 +4,6 @@ description: The bioconductor-fission package provides a RangedSummarizedExperim
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fission.html
 ---
 
-
 # bioconductor-fission
 
 ## Overview

@@ -2,8 +2,9 @@
 name: fastdtw
 description: FastDTW provides an efficient linear-time approximation of the Dynamic Time Warping algorithm to find the optimal alignment between two sequences. Use when user asks to calculate the distance between time-series data, find the warping path between sequences, or perform memory-efficient sequence alignment.
 homepage: https://github.com/slaypni/fastdtw
+metadata:
+  docker_image: "quay.io/biocontainers/fastdtw:0.2.0--py35_0"
 ---
-
 
 # fastdtw
 

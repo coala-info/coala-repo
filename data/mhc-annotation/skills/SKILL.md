@@ -2,8 +2,9 @@
 name: mhc-annotation
 description: The mhc-annotation tool identifies and annotates genes and transcripts within human MHC haplotypes to produce structured GFF files. Use when user asks to annotate human MHC sequences, generate GFF files for HLA regions, or validate coding sequence integrity in MHC annotations.
 homepage: https://github.com/DiltheyLab/MHC-annotation
+metadata:
+  docker_image: "quay.io/biocontainers/mhc-annotation:0.1.1--pyhdfd78af_1"
 ---
-
 
 # mhc-annotation
 

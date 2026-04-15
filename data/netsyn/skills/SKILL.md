@@ -2,8 +2,9 @@
 name: netsyn
 description: NetSyn identifies and analyzes synteny by constructing genomic neighborhood graphs from protein sequences or accessions. Use when user asks to identify conserved gene order, analyze genomic neighborhoods, perform functional annotation of protein families, or study operon-like structures across diverse taxa.
 homepage: https://github.com/labgem/netsyn
+metadata:
+  docker_image: "quay.io/biocontainers/netsyn:1.0.0--pyh7e72e81_0"
 ---
-
 
 # netsyn
 

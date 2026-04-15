@@ -4,7 +4,6 @@ description: This tool performs supervised mutational signature analysis to iden
 homepage: https://bioconductor.org/packages/release/bioc/html/supersigs.html
 ---
 
-
 # bioconductor-supersigs
 
 name: bioconductor-supersigs

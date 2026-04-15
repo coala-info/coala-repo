@@ -4,7 +4,6 @@ description: NormalyzerDE identifies the optimal normalization method for mass s
 homepage: https://bioconductor.org/packages/release/bioc/html/NormalyzerDE.html
 ---
 
-
 # bioconductor-normalyzerde
 
 ## Overview

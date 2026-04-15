@@ -4,7 +4,6 @@ description: The scRNAseqApp package provides a framework for building interacti
 homepage: https://bioconductor.org/packages/release/bioc/html/scRNAseqApp.html
 ---
 
-
 # bioconductor-scrnaseqapp
 
 ## Overview

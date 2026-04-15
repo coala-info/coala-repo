@@ -1,9 +1,10 @@
 ---
 name: cellsnp-lite
-description: "cellsnp-lite genotypes single cells by generating allele counts from BAM/SAM files for bi-allelic SNPs. Use when user asks to genotype known SNPs, perform de novo SNP discovery, or generate allele matrices for donor deconvolution and doublet detection."
+description: cellsnp-lite genotypes single cells by generating allele counts from BAM/SAM files for bi-allelic SNPs. Use when user asks to genotype known SNPs, perform de novo SNP discovery, or generate allele matrices for donor deconvolution and doublet detection.
 homepage: https://github.com/single-cell-genetics/cellSNP
+metadata:
+  docker_image: "quay.io/biocontainers/cellsnp-lite:1.2.3--ha0c3a46_6"
 ---
-
 
 # cellsnp-lite
 

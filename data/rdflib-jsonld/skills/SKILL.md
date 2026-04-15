@@ -2,8 +2,9 @@
 name: rdflib-jsonld
 description: This tool enables the parsing and serialization of JSON-LD data within the RDFLib ecosystem for legacy Python and RDFLib environments. Use when user asks to parse JSON-LD documents into an RDF graph, serialize existing graphs to JSON-LD format, or convert between JSON-LD and other RDF formats using rdfpipe.
 homepage: https://github.com/RDFLib/rdflib-jsonld
+metadata:
+  docker_image: "biocontainers/rdflib-jsonld:v0.4.0-4-deb-py3_cv1"
 ---
-
 
 # rdflib-jsonld
 

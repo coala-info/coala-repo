@@ -4,7 +4,6 @@ description: This tool applies linear gene classifiers to gene expression data t
 homepage: https://bioconductor.org/packages/release/bioc/html/geneClassifiers.html
 ---
 
-
 # bioconductor-geneclassifiers
 
 name: bioconductor-geneclassifiers

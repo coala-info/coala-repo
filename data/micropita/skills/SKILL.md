@@ -2,8 +2,9 @@
 name: micropita
 description: microPITA selects a subset of microbiome samples from a larger dataset based on specific ecological or taxonomic criteria to optimize sequencing resources. Use when user asks to select representative samples, maximize diversity, target specific taxa, or identify samples that distinguish between metadata categories.
 homepage: http://huttenhower.sph.harvard.edu/micropita
+metadata:
+  docker_image: "quay.io/biocontainers/micropita:1.1.0--0"
 ---
-
 
 # micropita
 

@@ -4,7 +4,6 @@ description: BayesSpace is a Bayesian statistical method for clustering and enha
 homepage: https://bioconductor.org/packages/release/bioc/html/BayesSpace.html
 ---
 
-
 # bioconductor-bayesspace
 
 ## Overview

@@ -4,7 +4,6 @@ description: GeneTonic integrates RNA-seq differential expression results with f
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneTonic.html
 ---
 
-
 # bioconductor-genetonic
 
 name: bioconductor-genetonic

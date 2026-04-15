@@ -1,9 +1,8 @@
 ---
 name: bioconductor-spatialdecon
-description: "SpatialDecon estimates cell type abundances from spatial transcriptomics data by performing deconvolution against a reference cell profile matrix. Use when user asks to estimate cell type composition in spatial regions, create custom cell profile matrices from single-cell data, or perform deconvolution on GeoMx DSP datasets."
+description: SpatialDecon estimates cell type abundances from spatial transcriptomics data by performing deconvolution against a reference cell profile matrix. Use when user asks to estimate cell type composition in spatial regions, create custom cell profile matrices from single-cell data, or perform deconvolution on GeoMx DSP datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpatialDecon.html
 ---
-
 
 # bioconductor-spatialdecon
 

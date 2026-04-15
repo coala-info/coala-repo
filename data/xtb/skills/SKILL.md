@@ -2,8 +2,9 @@
 name: xtb
 description: The xtb program performs semiempirical electronic structure calculations using GFN-xTB methods. Use when user asks to optimize geometry, calculate frequencies, perform thermochemical analysis, perform molecular dynamics, calculate single point energy, or model solvation.
 homepage: https://github.com/grimme-lab/xtb
+metadata:
+  docker_image: "quay.io/biocontainers/xtb:6.6.1"
 ---
-
 
 # xtb
 

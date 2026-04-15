@@ -4,7 +4,6 @@ description: The ncGTW package provides a non-rigid alignment algorithm for LC-M
 homepage: https://bioconductor.org/packages/release/bioc/html/ncGTW.html
 ---
 
-
 # bioconductor-ncgtw
 
 ## Overview

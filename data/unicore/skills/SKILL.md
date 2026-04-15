@@ -2,6 +2,8 @@
 name: unicore
 description: Unicore performs high-throughput phylogenetic inference by utilizing protein structural information and 3Di alphabets to reconstruct evolutionary relationships. Use when user asks to infer phylogenetic trees from protein structures, identify structural core genes across taxa, or convert amino acid sequences into structural databases.
 homepage: https://github.com/steineggerlab/unicore
+metadata:
+  docker_image: "quay.io/biocontainers/unicore:1.1.1--h7ef3eeb_0"
 ---
 
 # unicore

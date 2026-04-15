@@ -4,7 +4,6 @@ description: This tool performs statistical power analysis for ChIP-seq data usi
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CSSP.html
 ---
 
-
 # bioconductor-cssp
 
 name: bioconductor-cssp

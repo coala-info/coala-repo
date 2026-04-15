@@ -4,7 +4,6 @@ description: This tool performs differential gene expression analysis using the 
 homepage: https://bioconductor.org/packages/release/bioc/html/edge.html
 ---
 
-
 # bioconductor-edge
 
 name: bioconductor-edge

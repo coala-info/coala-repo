@@ -1,10 +1,12 @@
 ---
 name: scatac-seq-count-matrix-filtering
-description: "This Galaxy workflow processes scATAC-seq AnnData objects using epiScanpy and Scanpy to visualize and filter chromatin accessibility data. Use this skill when you need to remove low-quality cells and noisy genomic features from single-cell chromatin accessibility datasets to ensure high-quality downstream analysis."
-homepage: https://workflowhub.eu/workflows/1502
+description: This Galaxy workflow processes scATAC-seq AnnData objects using epiScanpy and Scanpy to visualize and filter chromatin accessibility data. Use this skill when you need to remove low-quality cells and noisy genomic features from single-cell chromatin accessibility datasets to ensure high-quality downstream analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# scATAC-seq Count Matrix Filtering
+# scatac-seq-count-matrix-filtering
 
 ## Overview
 

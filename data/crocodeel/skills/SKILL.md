@@ -2,6 +2,8 @@
 name: crocodeel
 description: CroCoDeEL detects and estimates cross-sample contamination levels in metagenomic datasets using a Random Forest model. Use when user asks to identify contamination events, visualize contamination scatterplots, or train custom models for specific sequencing protocols.
 homepage: https://github.com/metagenopolis/crocodeel
+metadata:
+  docker_image: "quay.io/biocontainers/crocodeel:1.1.0--pyhdfd78af_0"
 ---
 
 # crocodeel

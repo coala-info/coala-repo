@@ -2,8 +2,9 @@
 name: pmdtools
 description: pmdtools quantifies and utilizes chemical degradation patterns in ancient DNA to separate authentic molecules from modern contaminants. Use when user asks to visualize deamination patterns, compute terminal damage frequencies, or filter sequences based on PMD scores to decontaminate ancient genomes.
 homepage: https://github.com/pontussk/PMDtools
+metadata:
+  docker_image: "quay.io/biocontainers/pmdtools:0.60--hdfd78af_3"
 ---
-
 
 # pmdtools
 

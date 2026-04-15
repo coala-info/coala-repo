@@ -2,8 +2,9 @@
 name: phylornn
 description: PhyloRNN is a machine learning framework that uses recurrent neural networks to estimate evolutionary rates from phylogenetic data. Use when user asks to simulate synthetic alignments, train RNN models on phylogenetic data, or predict evolutionary rates for empirical sequences.
 homepage: https://github.com/phyloRNN/phyloRNN
+metadata:
+  docker_image: "quay.io/biocontainers/phylornn:1.1--pyhdfd78af_0"
 ---
-
 
 # phylornn
 

@@ -2,8 +2,9 @@
 name: twilight
 description: TWILIGHT is a high-performance alignment tool designed for massive genomic and proteomic datasets, leveraging progressive alignment and tiling strategies. Use when user asks to perform sequence alignment, add new sequences to an existing alignment, align proteins, align sequences without a guide tree, or align subsets of a larger phylogenetic study.
 homepage: https://github.com/TurakhiaLab/TWILIGHT
+metadata:
+  docker_image: "quay.io/biocontainers/twilight:0.2.3--h6bb9b41_1"
 ---
-
 
 # twilight
 

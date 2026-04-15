@@ -4,7 +4,6 @@ description: This tool identifies and annotates protein mutation hotspots in can
 homepage: https://bioconductor.org/packages/release/bioc/html/DominoEffect.html
 ---
 
-
 # bioconductor-dominoeffect
 
 name: bioconductor-dominoeffect

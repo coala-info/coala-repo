@@ -4,7 +4,6 @@ description: mothur-mpi processes large-scale environmental DNA sequence dataset
 homepage: https://www.mothur.org
 ---
 
-
 # mothur-mpi
 
 ## Overview

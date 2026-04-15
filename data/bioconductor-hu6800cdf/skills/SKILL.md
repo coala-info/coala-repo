@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800cdf.html
 ---
 
-
 # bioconductor-hu6800cdf
 
 name: bioconductor-hu6800cdf

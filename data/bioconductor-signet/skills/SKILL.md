@@ -4,7 +4,6 @@ description: The bioconductor-signet package uses simulated annealing to identif
 homepage: https://bioconductor.org/packages/3.8/bioc/html/signet.html
 ---
 
-
 # bioconductor-signet
 
 ## Overview

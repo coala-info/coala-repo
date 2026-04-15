@@ -4,7 +4,6 @@ description: This package provides reference datasets of curated gene expression
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DvDdata.html
 ---
 
-
 # bioconductor-dvddata
 
 ## Overview

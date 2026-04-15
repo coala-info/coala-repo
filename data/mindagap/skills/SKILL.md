@@ -1,7 +1,9 @@
 ---
 name: mindagap
-description: "MindaGap repairs tiled panorama images by filling grid gaps and identifying duplicate data points in overlapping regions. Use when user asks to fill empty grid lines in microscopy images, create RGB composites from grayscale channels, or find duplicate reads in coordinate-based datasets."
+description: MindaGap repairs tiled panorama images by filling grid gaps and identifying duplicate data points in overlapping regions. Use when user asks to fill empty grid lines in microscopy images, create RGB composites from grayscale channels, or find duplicate reads in coordinate-based datasets.
 homepage: https://github.com/ViriatoII/MindaGap
+metadata:
+  docker_image: "quay.io/biocontainers/mindagap:0.0.2--pyhdfd78af_1"
 ---
 
 # mindagap

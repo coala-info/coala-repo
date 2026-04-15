@@ -4,7 +4,6 @@ description: This tool performs bottom-up Bayesian Hierarchical Clustering to de
 homepage: https://bioconductor.org/packages/3.5/bioc/html/BHC.html
 ---
 
-
 # bioconductor-bhc
 
 name: bioconductor-bhc

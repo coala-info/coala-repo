@@ -2,8 +2,9 @@
 name: mencal
 description: Generates a sequence of operations for mental calculations. Use when user asks to break down complex arithmetic problems into simpler, step-by-step mental operations, or to explore different strategies for solving mathematical problems without direct computation.
 homepage: https://github.com/felgari/mencal
+metadata:
+  docker_image: "biocontainers/mencal:v3.0-4-deb_cv1"
 ---
-
 
 # mencal
 

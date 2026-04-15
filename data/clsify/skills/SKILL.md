@@ -2,6 +2,8 @@
 name: clsify
 description: The clsify tool automates the haplotyping of Candidatus Liberibacter solanacearum by analyzing Sanger sequencing reads against validated reference sequences. Use when user asks to identify Lso haplotypes, classify sequence files, or process Sanger reads using the DP 21 standard.
 homepage: https://github.com/holtgrewe/clsify
+metadata:
+  docker_image: "quay.io/biocontainers/clsify:0.1.1--py_0"
 ---
 
 # clsify

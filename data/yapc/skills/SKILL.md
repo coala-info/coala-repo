@@ -2,8 +2,9 @@
 name: yapc
 description: yapc identifies consistent genomic peaks across multiple experimental conditions. Use when user asks to call genomic peaks or assess reproducibility between replicates.
 homepage: https://github.com/jurgjn/yapc
+metadata:
+  docker_image: "quay.io/biocontainers/yapc:0.1--py_0"
 ---
-
 
 # yapc
 

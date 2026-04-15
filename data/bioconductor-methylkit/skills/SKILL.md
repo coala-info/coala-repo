@@ -4,7 +4,6 @@ description: bioconductor-methylkit is an R package for the analysis and annotat
 homepage: https://bioconductor.org/packages/release/bioc/html/methylKit.html
 ---
 
-
 # bioconductor-methylkit
 
 ## Overview

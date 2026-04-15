@@ -2,8 +2,9 @@
 name: textinput
 description: The textinput package provides an efficient interface for iterating over lines from multiple input streams or standard input. Use when user asks to iterate over file lines, perform in-place file editing, or create Unix-like text processing scripts.
 homepage: http://www.ebi.ac.uk/~hoffman/software/textinput/
+metadata:
+  docker_image: "quay.io/biocontainers/textinput:0.2--py_0"
 ---
-
 
 # textinput
 

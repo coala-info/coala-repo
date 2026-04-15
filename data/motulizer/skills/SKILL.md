@@ -2,6 +2,8 @@
 name: motulizer
 description: mOTUlizer is a bioinformatics suite for clustering metagenome-assembled genomes into taxonomic units and performing Bayesian pangenome analysis. Use when user asks to cluster genomes based on average nucleotide identity, identify species boundaries, or estimate core functional traits while accounting for genome incompleteness.
 homepage: https://github.com/moritzbuck/mOTUlizer/
+metadata:
+  docker_image: "quay.io/biocontainers/motulizer:0.3.2--pyhdfd78af_0"
 ---
 
 # motulizer

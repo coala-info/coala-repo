@@ -4,7 +4,6 @@ description: clustifyr automates the annotation of single-cell RNA-seq clusters 
 homepage: https://bioconductor.org/packages/release/bioc/html/clustifyr.html
 ---
 
-
 # bioconductor-clustifyr
 
 ## Overview

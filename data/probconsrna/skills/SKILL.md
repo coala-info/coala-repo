@@ -1,9 +1,10 @@
 ---
 name: probconsrna
-description: "probconsrna generates high-accuracy multiple sequence alignments for RNA sequences using a consistency-based algorithm. Use when user asks to align RNA sequences, perform multiple sequence alignment with structural conservation, or generate alignments in ClustalW or MFA formats."
+description: probconsrna generates high-accuracy multiple sequence alignments for RNA sequences using a consistency-based algorithm. Use when user asks to align RNA sequences, perform multiple sequence alignment with structural conservation, or generate alignments in ClustalW or MFA formats.
 homepage: http://probcons.stanford.edu/
+metadata:
+  docker_image: "quay.io/biocontainers/probconsrna:1.10--h9f5acd7_4"
 ---
-
 
 # probconsrna
 

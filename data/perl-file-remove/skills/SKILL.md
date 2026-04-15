@@ -2,8 +2,9 @@
 name: perl-file-remove
 description: This tool provides a reliable interface for recursively deleting files and directories and handling complex globbing patterns. Use when user asks to delete files or directories, clear directory contents, or remove files using wildcards and globs.
 homepage: http://metacpan.org/pod/File::Remove
+metadata:
+  docker_image: "quay.io/biocontainers/perl-file-remove:1.57--0"
 ---
-
 
 # perl-file-remove
 

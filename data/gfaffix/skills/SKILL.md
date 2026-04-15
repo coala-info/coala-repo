@@ -1,9 +1,10 @@
 ---
 name: gfaffix
-description: "gfaffix simplifies pangenome variation graphs by collapsing shared sequence affixes while preserving the original genomic walks. Use when user asks to reduce graph complexity, collapse redundant nodes in a GFA file, or refine a pangenome graph while maintaining path consistency."
+description: gfaffix simplifies pangenome variation graphs by collapsing shared sequence affixes while preserving the original genomic walks. Use when user asks to reduce graph complexity, collapse redundant nodes in a GFA file, or refine a pangenome graph while maintaining path consistency.
 homepage: https://github.com/marschall-lab/GFAffix
+metadata:
+  docker_image: "quay.io/biocontainers/gfaffix:0.2.1--hc1c3326_0"
 ---
-
 
 # gfaffix
 

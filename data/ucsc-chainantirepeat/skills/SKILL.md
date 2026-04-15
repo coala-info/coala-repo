@@ -2,8 +2,9 @@
 name: ucsc-chainantirepeat
 description: The `ucsc-chainantirepeat` tool removes repeat-driven alignments from genomic chain files. Use when user asks to remove spurious alignments, filter repeat-heavy chains, or clean up genomic alignment files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainantirepeat:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chainantirepeat
 

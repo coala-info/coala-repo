@@ -4,7 +4,6 @@ description: This tool provides genomic annotation and mapping for the h20kcod p
 homepage: https://bioconductor.org/packages/release/data/annotation/html/h20kcod.db.html
 ---
 
-
 # bioconductor-h20kcod.db
 
 name: bioconductor-h20kcod.db

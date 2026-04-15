@@ -4,7 +4,6 @@ description: BUSseq implements a Bayesian hierarchical model to simultaneously c
 homepage: https://bioconductor.org/packages/release/bioc/html/BUSseq.html
 ---
 
-
 # bioconductor-busseq
 
 ## Overview

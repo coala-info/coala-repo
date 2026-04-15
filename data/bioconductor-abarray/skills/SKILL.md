@@ -4,7 +4,6 @@ description: This tool automates the analysis of Applied Biosystems AB1700 micro
 homepage: https://bioconductor.org/packages/release/bioc/html/ABarray.html
 ---
 
-
 # bioconductor-abarray
 
 name: bioconductor-abarray

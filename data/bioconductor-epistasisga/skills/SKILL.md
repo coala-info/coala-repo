@@ -4,7 +4,6 @@ description: This tool identifies multi-SNP disease associations and gene-by-env
 homepage: https://bioconductor.org/packages/release/bioc/html/epistasisGA.html
 ---
 
-
 # bioconductor-epistasisga
 
 name: bioconductor-epistasisga

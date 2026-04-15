@@ -2,8 +2,9 @@
 name: barcode-validator
 description: The barcode-validator tool performs quality control and taxonomic verification of DNA barcode sequences using structural analysis and external database comparisons. Use when user asks to validate sequence integrity, check for stop codons, verify taxonomic assignments via BOLD or BLAST, or triage multiple assembly attempts for biodiversity genomics.
 homepage: https://github.com/naturalis/barcode_validator
+metadata:
+  docker_image: "quay.io/biocontainers/barcode-validator:2.0.10--pyhdfd78af_0"
 ---
-
 
 # barcode-validator
 

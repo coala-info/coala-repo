@@ -2,6 +2,8 @@
 name: skmer
 description: Skmer estimates genomic distances and identifies samples from low-pass sequencing data using k-mer profiles. Use when user asks to perform genome skimming, create a reference library from genomic files, query samples against a library, or compute distance matrices for phylogenetic analysis.
 homepage: https://github.com/shahab-sarmashghi/Skmer
+metadata:
+  docker_image: "quay.io/biocontainers/skmer:3.3.0--pyh086e186_0"
 ---
 
 # skmer

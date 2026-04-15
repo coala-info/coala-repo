@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mapping250k.sty.html
 ---
 
-
 # bioconductor-pd.mapping250k.sty
 
 name: bioconductor-pd.mapping250k.sty

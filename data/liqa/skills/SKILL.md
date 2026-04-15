@@ -1,9 +1,10 @@
 ---
 name: liqa
-description: "LIQA quantifies isoform-specific expression from long-read RNA-seq data. Use when user asks to quantify isoform expression, detect differential alternative splicing, or analyze long-read RNA-seq data for isoform levels."
+description: LIQA quantifies isoform-specific expression from long-read RNA-seq data. Use when user asks to quantify isoform expression, detect differential alternative splicing, or analyze long-read RNA-seq data for isoform levels.
 homepage: https://github.com/WGLab/LIQA
+metadata:
+  docker_image: "quay.io/biocontainers/liqa:1.3.4--pyhdfd78af_0"
 ---
-
 
 # liqa
 

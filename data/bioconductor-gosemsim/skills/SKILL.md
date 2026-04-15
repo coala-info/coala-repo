@@ -4,7 +4,6 @@ description: GOSemSim calculates semantic similarity between Gene Ontology terms
 homepage: https://bioconductor.org/packages/release/bioc/html/GOSemSim.html
 ---
 
-
 # bioconductor-gosemsim
 
 name: bioconductor-gosemsim

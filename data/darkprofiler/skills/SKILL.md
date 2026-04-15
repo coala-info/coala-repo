@@ -1,7 +1,9 @@
 ---
 name: darkprofiler
-description: "Aligns and classifies peptides from reference-independent de novo peptide sequencing experiments. Use when user asks to align and classify peptides from de novo sequencing data."
+description: Aligns and classifies peptides from reference-independent de novo peptide sequencing experiments. Use when user asks to align and classify peptides from de novo sequencing data.
 homepage: https://pypi.org/project/darkprofiler/
+metadata:
+  docker_image: "quay.io/biocontainers/darkprofiler:0.2.6--pyhdfd78af_0"
 ---
 
 # darkprofiler

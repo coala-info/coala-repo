@@ -4,7 +4,6 @@ description: This package provides mappings between MeSH identifiers and Entrez 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Cre.eg.db.html
 ---
 
-
 # bioconductor-mesh.cre.eg.db
 
 name: bioconductor-mesh.cre.eg.db

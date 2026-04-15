@@ -2,8 +2,9 @@
 name: relion-bin-plusgui
 description: RELION is a comprehensive software suite for processing cryo-electron microscopy image data through tasks like motion correction, CTF estimation, and 3D refinement. Use when user asks to perform particle picking, refine 3D reconstructions, configure GPU-accelerated jobs, or manage cryo-EM workflows via the command-line interface.
 homepage: https://github.com/3dem/relion
+metadata:
+  docker_image: "biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1"
 ---
-
 
 # relion-bin-plusgui
 

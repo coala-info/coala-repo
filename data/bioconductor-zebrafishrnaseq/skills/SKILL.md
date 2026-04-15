@@ -4,7 +4,6 @@ description: This package provides gene-level RNA-Seq counts from a zebrafish ex
 homepage: https://bioconductor.org/packages/release/data/experiment/html/zebrafishRNASeq.html
 ---
 
-
 # bioconductor-zebrafishrnaseq
 
 name: bioconductor-zebrafishrnaseq

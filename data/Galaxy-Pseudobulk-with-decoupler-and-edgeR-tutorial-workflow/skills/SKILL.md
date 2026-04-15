@@ -1,10 +1,12 @@
 ---
 name: pseudobulk-with-decoupler-and-edger-tutorial-workflow
-description: "This Galaxy workflow processes single-cell AnnData files to perform pseudobulk differential expression analysis using Decoupler for sample aggregation and edgeR for statistical testing. Use this skill when you need to identify differentially expressed genes between experimental conditions or cell populations while accounting for biological replicates and the hierarchical structure of single-cell sequencing data."
-homepage: https://workflowhub.eu/workflows/1556
+description: This Galaxy workflow processes single-cell AnnData files to perform pseudobulk differential expression analysis using Decoupler for sample aggregation and edgeR for statistical testing. Use this skill when you need to identify differentially expressed genes between experimental conditions or cell populations while accounting for biological replicates and the hierarchical structure of single-cell sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pseudobulk with decoupler and edgeR tutorial workflow
+# pseudobulk-with-decoupler-and-edger-tutorial-workflow
 
 ## Overview
 

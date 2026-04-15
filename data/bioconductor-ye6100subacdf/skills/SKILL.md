@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ye6100subacdf.html
 ---
 
-
 # bioconductor-ye6100subacdf
 
 name: bioconductor-ye6100subacdf

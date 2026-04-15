@@ -4,7 +4,6 @@ description: This package provides data and functions for microRNA analysis, inc
 homepage: https://bioconductor.org/packages/release/bioc/html/microRNA.html
 ---
 
-
 # bioconductor-microrna
 
 name: bioconductor-microrna

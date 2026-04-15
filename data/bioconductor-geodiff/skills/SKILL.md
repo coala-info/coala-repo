@@ -4,7 +4,6 @@ description: This tool provides statistical analysis and differential expression
 homepage: https://bioconductor.org/packages/release/bioc/html/GeoDiff.html
 ---
 
-
 # bioconductor-geodiff
 
 name: bioconductor-geodiff

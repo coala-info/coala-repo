@@ -4,7 +4,6 @@ description: The r-prettyunits package formats quantities like time, bytes, and 
 homepage: https://cloud.r-project.org/web/packages/prettyunits/index.html
 ---
 
-
 # r-prettyunits
 
 ## Overview

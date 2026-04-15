@@ -2,8 +2,9 @@
 name: sat-bsa
 description: Sat-BSA is a bioinformatics toolkit for extracting reads, performing local de novo assembly, and detecting structural variants in targeted genomic regions. Use when user asks to extract local reads, perform de novo assembly, align long reads to a reference, detect structural variants, or visualize genomic comparison results.
 homepage: https://github.com/SegawaTenta/Sat-BSA
+metadata:
+  docker_image: "quay.io/biocontainers/sat-bsa:1.12--hdfd78af_1"
 ---
-
 
 # sat-bsa
 

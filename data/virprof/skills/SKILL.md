@@ -2,6 +2,8 @@
 name: virprof
 description: VirProf is a bioinformatics pipeline that extracts, identifies, and assembles viral signals from host RNA-Seq data. Use when user asks to extract viral signals from host RNA-Seq data, perform host depletion, identify pathogens, or assemble viral genomes.
 homepage: https://github.com/seiboldlab/virprof
+metadata:
+  docker_image: "quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0"
 ---
 
 # virprof

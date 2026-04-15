@@ -4,7 +4,6 @@ description: PredictProtein predicts protein secondary structure, solvent access
 homepage: https://github.com/Rostlab/predictprotein-docker
 ---
 
-
 # predictprotein
 
 ## Overview

@@ -2,6 +2,8 @@
 name: phylowgs
 description: PhyloWGS reconstructs the clonal evolutionary structure of tumors by integrating mutation frequencies with copy number data. Use when user asks to infer tumor phylogeny, resolve intratumor heterogeneity, or model clonal architectures from genomic sequencing data.
 homepage: https://github.com/morrislab/phylowgs
+metadata:
+  docker_image: "quay.io/biocontainers/phylowgs:20181105--py27ha7db03b_3"
 ---
 
 # phylowgs

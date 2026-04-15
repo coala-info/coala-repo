@@ -4,7 +4,6 @@ description: This R package facilitates the post-processing, quality control, an
 homepage: https://cran.r-project.org/web/packages/bcbiosinglecell/index.html
 ---
 
-
 # r-bcbiosinglecell
 
 name: r-bcbiosinglecell

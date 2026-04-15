@@ -4,7 +4,6 @@ description: This package provides genome-wide annotations and functional metada
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.At.tair.db.html
 ---
 
-
 # bioconductor-org.at.tair.db
 
 name: bioconductor-org.at.tair.db

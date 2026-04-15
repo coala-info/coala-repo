@@ -4,7 +4,6 @@ description: Nebulosa uses weighted kernel density estimation to visualize gene 
 homepage: https://bioconductor.org/packages/release/bioc/html/Nebulosa.html
 ---
 
-
 # bioconductor-nebulosa
 
 ## Overview

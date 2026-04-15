@@ -1,9 +1,8 @@
 ---
 name: bioconductor-cosiadata
-description: "CoSIAdata provides variance stabilizing transformation stabilized RNA-Seq expression data across multiple tissues for six model organisms. Use when user asks to download species-specific expression datasets, access VST stabilized RNA-Seq data from ExperimentHub, or retrieve cross-species genomic data for the CoSIA workflow."
+description: CoSIAdata provides variance stabilizing transformation stabilized RNA-Seq expression data across multiple tissues for six model organisms. Use when user asks to download species-specific expression datasets, access VST stabilized RNA-Seq data from ExperimentHub, or retrieve cross-species genomic data for the CoSIA workflow.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CoSIAdata.html
 ---
-
 
 # bioconductor-cosiadata
 

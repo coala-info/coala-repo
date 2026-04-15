@@ -2,8 +2,9 @@
 name: maaslin3
 description: MaAsLin 3 is a statistical framework for microbiome association discovery that simultaneously tests for feature abundance and prevalence while accounting for compositional data. Use when user asks to perform multivariable association testing, model random effects for repeated measures, or identify microbial biomarkers associated with specific metadata.
 homepage: https://github.com/biobakery/maaslin3
+metadata:
+  docker_image: "quay.io/biocontainers/maaslin3:0.99.16--r44hdfd78af_1"
 ---
-
 
 # maaslin3
 

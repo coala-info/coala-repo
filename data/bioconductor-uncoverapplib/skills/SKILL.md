@@ -4,7 +4,6 @@ description: This tool provides an interactive Shiny application for the clinica
 homepage: https://bioconductor.org/packages/release/bioc/html/uncoverappLib.html
 ---
 
-
 # bioconductor-uncoverapplib
 
 name: bioconductor-uncoverapplib

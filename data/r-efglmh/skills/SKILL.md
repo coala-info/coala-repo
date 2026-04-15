@@ -4,7 +4,6 @@ description: This R package provides specialized functions for manipulating, for
 homepage: https://cran.r-project.org/web/packages/efglmh/index.html
 ---
 
-
 # r-efglmh
 
 name: r-efglmh

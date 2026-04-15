@@ -4,7 +4,6 @@ description: This tool analyzes and manipulates gene structures to evaluate the 
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneStructureTools.html
 ---
 
-
 # bioconductor-genestructuretools
 
 name: bioconductor-genestructuretools

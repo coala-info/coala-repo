@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Glycine max (so
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Gmax.NCBI.Gmv40.html
 ---
 
-
 # bioconductor-bsgenome.gmax.ncbi.gmv40
 
 name: bioconductor-bsgenome.gmax.ncbi.gmv40

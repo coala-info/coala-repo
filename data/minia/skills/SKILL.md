@@ -1,9 +1,10 @@
 ---
 name: minia
-description: "Minia is a de Bruijn graph-based short-read assembler. Use when user asks to assemble genomes or metagenomes from short sequencing reads."
+description: Minia is a de Bruijn graph-based short-read assembler. Use when user asks to assemble genomes or metagenomes from short sequencing reads.
 homepage: https://github.com/GATB/minia
+metadata:
+  docker_image: "quay.io/biocontainers/minia:3.2.6--h22625ea_5"
 ---
-
 
 # minia
 

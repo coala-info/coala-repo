@@ -4,7 +4,6 @@ description: Macarron prioritizes bioactive metabolites from untargeted metabolo
 homepage: https://bioconductor.org/packages/release/bioc/html/Macarron.html
 ---
 
-
 # bioconductor-macarron
 
 name: bioconductor-macarron

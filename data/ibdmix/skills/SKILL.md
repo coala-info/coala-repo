@@ -2,8 +2,9 @@
 name: ibdmix
 description: IBDmix detects archaic admixture in modern human populations using a probabilistic approach that does not require a modern reference population. Use when user asks to identify introgressed regions, merge archaic and modern VCF files, or filter archaic segments based on LOD scores and length.
 homepage: https://github.com/PrincetonUniversity/IBDmix
+metadata:
+  docker_image: "quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2"
 ---
-
 
 # ibdmix
 

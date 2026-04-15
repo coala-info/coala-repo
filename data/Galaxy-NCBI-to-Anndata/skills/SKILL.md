@@ -1,10 +1,12 @@
 ---
 name: ncbi-to-anndata
-description: "This single-cell RNA-seq workflow converts multiple NCBI GEO digital gene expression text files into a unified AnnData object using AnnData import, manipulation, and Scanpy filtering tools. Use this skill when you need to aggregate raw public transcriptomics data from NCBI into a standardized h5ad format for downstream single-cell analysis and visualization."
-homepage: https://workflowhub.eu/workflows/1565
+description: This single-cell RNA-seq workflow converts multiple NCBI GEO digital gene expression text files into a unified AnnData object using AnnData import, manipulation, and Scanpy filtering tools. Use this skill when you need to aggregate raw public transcriptomics data from NCBI into a standardized h5ad format for downstream single-cell analysis and visualization.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# NCBI to Anndata
+# ncbi-to-anndata
 
 ## Overview
 

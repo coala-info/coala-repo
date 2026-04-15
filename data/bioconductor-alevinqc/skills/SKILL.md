@@ -4,7 +4,6 @@ description: alevinQC provides quality control tools and diagnostic reports for 
 homepage: https://bioconductor.org/packages/release/bioc/html/alevinQC.html
 ---
 
-
 # bioconductor-alevinqc
 
 name: bioconductor-alevinqc

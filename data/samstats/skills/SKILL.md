@@ -2,6 +2,8 @@
 name: samstats
 description: samstats computes read-level alignment statistics from SAM or BAM files to report the number of unique fragments sequenced and mapped. Use when user asks to calculate mapping statistics, analyze read-level quality control metrics, or generate alignment reports from queryname-sorted files.
 homepage: https://github.com/kundajelab/SAMstats
+metadata:
+  docker_image: "quay.io/biocontainers/samstats:0.2.2--py_0"
 ---
 
 # samstats

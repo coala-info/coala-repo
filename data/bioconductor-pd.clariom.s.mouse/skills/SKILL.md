@@ -4,7 +4,6 @@ description: This package provides annotation metadata and SQLite-based mapping 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.mouse.html
 ---
 
-
 # bioconductor-pd.clariom.s.mouse
 
 name: bioconductor-pd.clariom.s.mouse

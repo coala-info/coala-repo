@@ -4,7 +4,6 @@ description: bioconductor-mcbiclust performs massively correlating biclustering 
 homepage: https://bioconductor.org/packages/release/bioc/html/MCbiclust.html
 ---
 
-
 # bioconductor-mcbiclust
 
 name: bioconductor-mcbiclust

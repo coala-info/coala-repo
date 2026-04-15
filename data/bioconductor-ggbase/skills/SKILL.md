@@ -4,7 +4,6 @@ description: This tool provides infrastructure and data structures for managing 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GGBase.html
 ---
 
-
 # bioconductor-ggbase
 
 name: bioconductor-ggbase

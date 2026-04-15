@@ -4,7 +4,6 @@ description: This tool performs statistical modeling of RNA structure probing da
 homepage: https://bioconductor.org/packages/release/bioc/html/BUMHMM.html
 ---
 
-
 # bioconductor-bumhmm
 
 name: bioconductor-bumhmm

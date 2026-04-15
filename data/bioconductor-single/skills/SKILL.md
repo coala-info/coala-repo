@@ -4,7 +4,6 @@ description: This tool performs accurate gene consensus calling for nanopore seq
 homepage: https://bioconductor.org/packages/3.16/bioc/html/single.html
 ---
 
-
 # bioconductor-single
 
 name: bioconductor-single

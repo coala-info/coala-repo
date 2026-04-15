@@ -2,8 +2,9 @@
 name: prodigal
 description: Prodigal identifies protein-coding genes in bacterial and archaeal genomes using unsupervised machine learning. Use when user asks to predict genes in prokaryotic sequences, annotate metagenomic contigs, or generate protein translations from genomic FASTA files.
 homepage: https://github.com/hyattpd/Prodigal
+metadata:
+  docker_image: "quay.io/biocontainers/prodigal:2.60--1"
 ---
-
 
 # prodigal
 

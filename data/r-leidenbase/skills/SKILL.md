@@ -4,7 +4,6 @@ description: The r-leidenbase package provides R and C++ wrappers for the Leiden
 homepage: https://cloud.r-project.org/web/packages/leidenbase/index.html
 ---
 
-
 # r-leidenbase
 
 name: r-leidenbase

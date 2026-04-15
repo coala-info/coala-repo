@@ -4,7 +4,6 @@ description: The microbiome package provides specialized tools for the explorati
 homepage: https://bioconductor.org/packages/release/bioc/html/microbiome.html
 ---
 
-
 # bioconductor-microbiome
 
 ## Overview

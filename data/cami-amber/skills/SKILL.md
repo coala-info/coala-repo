@@ -1,7 +1,9 @@
 ---
 name: cami-amber
-description: "AMBER benchmarks metagenomic binning tools by comparing predictions against a gold standard to evaluate performance. Use when user asks to evaluate genome or taxonomic binning results, calculate completeness and contamination metrics, or generate comparative benchmarking reports for metagenomic binners."
+description: AMBER benchmarks metagenomic binning tools by comparing predictions against a gold standard to evaluate performance. Use when user asks to evaluate genome or taxonomic binning results, calculate completeness and contamination metrics, or generate comparative benchmarking reports for metagenomic binners.
 homepage: https://github.com/CAMI-challenge/AMBER
+metadata:
+  docker_image: "quay.io/biocontainers/cami-amber:2.0.7--pyhdfd78af_0"
 ---
 
 # cami-amber

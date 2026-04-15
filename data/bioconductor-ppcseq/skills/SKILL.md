@@ -4,7 +4,6 @@ description: This tool identifies outliers in RNA-seq data using a Bayesian fram
 homepage: https://bioconductor.org/packages/release/bioc/html/ppcseq.html
 ---
 
-
 # bioconductor-ppcseq
 
 ## Overview

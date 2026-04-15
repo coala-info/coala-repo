@@ -1,9 +1,10 @@
 ---
 name: vcflatten
-description: "This tool flattens VCF files into simpler TSV files. Use when user asks to convert VCF files to TSV, simplify variant call format, or prepare VCF data for tabular analysis."
+description: This tool flattens VCF files into simpler TSV files. Use when user asks to convert VCF files to TSV, simplify variant call format, or prepare VCF data for tabular analysis.
 homepage: https://anaconda.org/channels/bioconda/packages/vcflatten/overview
+metadata:
+  docker_image: "quay.io/biocontainers/vcflatten:0.5.2--1"
 ---
-
 
 # vcflatten
 

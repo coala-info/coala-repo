@@ -4,7 +4,6 @@ description: JunctionSeq is a Bioconductor package used to detect differential u
 homepage: https://bioconductor.org/packages/3.6/bioc/html/JunctionSeq.html
 ---
 
-
 # bioconductor-junctionseq
 
 ## Overview

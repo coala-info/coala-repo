@@ -4,7 +4,6 @@ description: This package provides Chip Definition File (CDF) data and coordinat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugohs1a520180cdf.html
 ---
 
-
 # bioconductor-nugohs1a520180cdf
 
 name: bioconductor-nugohs1a520180cdf

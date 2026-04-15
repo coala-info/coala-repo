@@ -1,10 +1,12 @@
 ---
 name: mrna-seq-by-covid-pipeline-counts
-description: "This transcriptomics workflow processes mRNA-Seq read collections and UCSC reference genomes using FastQC, Cutadapt, HISAT2, and featureCounts to generate gene-level count matrices. Use this skill when you need to quantify gene expression levels from raw sequencing data to prepare for downstream differential expression analysis and biological interpretation of infectious disease datasets."
-homepage: https://workflowhub.eu/workflows/1675
+description: This transcriptomics workflow processes mRNA-Seq read collections and UCSC reference genomes using FastQC, Cutadapt, HISAT2, and featureCounts to generate gene-level count matrices. Use this skill when you need to quantify gene expression levels from raw sequencing data to prepare for downstream differential expression analysis and biological interpretation of infectious disease datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# mRNA-Seq BY-COVID Pipeline: Counts
+# mrna-seq-by-covid-pipeline-counts
 
 ## Overview
 

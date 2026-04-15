@@ -1,10 +1,12 @@
 ---
 name: xarray_map_plotting_workflow
-description: "This workflow processes NetCDF climate data using CDO operations and Xarray tools to extract metadata and generate geospatial map visualizations. Use this skill when you need to analyze spatial distributions of climate variables like air temperature and create high-quality map plots from multidimensional environmental datasets."
-homepage: https://workflowhub.eu/workflows/1652
+description: This workflow processes NetCDF climate data using CDO operations and Xarray tools to extract metadata and generate geospatial map visualizations. Use this skill when you need to analyze spatial distributions of climate variables like air temperature and create high-quality map plots from multidimensional environmental datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Xarray_Map_Plotting_Workflow
+# xarray_map_plotting_workflow
 
 ## Overview
 

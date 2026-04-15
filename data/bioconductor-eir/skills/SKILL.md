@@ -4,7 +4,6 @@ description: This tool performs accelerated similarity searching and clustering 
 homepage: https://bioconductor.org/packages/release/bioc/html/eiR.html
 ---
 
-
 # bioconductor-eir
 
 name: bioconductor-eir

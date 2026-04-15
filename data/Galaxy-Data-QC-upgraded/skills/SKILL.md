@@ -1,10 +1,12 @@
 ---
 name: data-qc-upgraded
-description: "This Galaxy workflow performs comprehensive quality control on long reads and paired-end Illumina sequencing data using NanoPlot, FastQC, and MultiQC to generate integrated reports. Use this skill when you need to evaluate the integrity and quality of hybrid sequencing datasets to ensure high-quality inputs for downstream genomic assembly or variant calling."
-homepage: https://workflowhub.eu/workflows/1585
+description: This Galaxy workflow performs comprehensive quality control on long reads and paired-end Illumina sequencing data using NanoPlot, FastQC, and MultiQC to generate integrated reports. Use this skill when you need to evaluate the integrity and quality of hybrid sequencing datasets to ensure high-quality inputs for downstream genomic assembly or variant calling.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Data QC - upgraded
+# data-qc-upgraded
 
 ## Overview
 

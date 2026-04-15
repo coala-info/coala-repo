@@ -4,7 +4,6 @@ description: This tool provides high-performance analysis and memory-efficient s
 homepage: https://bioconductor.org/packages/release/bioc/html/snpStats.html
 ---
 
-
 # bioconductor-snpstats
 
 name: bioconductor-snpstats

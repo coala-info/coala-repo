@@ -2,6 +2,8 @@
 name: mapping-iterative-assembler
 description: The Mapping Iterative Assembler performs reference-assisted assembly of ancient mitochondrial genomes through iterative alignment and consensus calling. Use when user asks to assemble ancient DNA fragments, perform iterative mapping to a reference sequence, or account for chemical damage in ancient samples using substitution matrices.
 homepage: https://github.com/mpieva/mapping-iterative-assembler
+metadata:
+  docker_image: "quay.io/biocontainers/mapping-iterative-assembler:1.0--h503566f_7"
 ---
 
 # mapping-iterative-assembler

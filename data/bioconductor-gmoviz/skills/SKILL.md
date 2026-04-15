@@ -4,7 +4,6 @@ description: This tool creates circular visualizations of complex genomic variat
 homepage: https://bioconductor.org/packages/release/bioc/html/gmoviz.html
 ---
 
-
 # bioconductor-gmoviz
 
 name: bioconductor-gmoviz

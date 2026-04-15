@@ -2,8 +2,9 @@
 name: sickle
 description: Sickle is a Python library that simplifies harvesting metadata from OAI-PMH compliant repositories by automating protocol complexities like resumption tokens and XML parsing. Use when user asks to harvest metadata, list records or identifiers from an OAI-compliant repository, or interact with OAI-PMH verbs using a Pythonic API.
 homepage: http://github.com/mloesch/sickle
+metadata:
+  docker_image: "biocontainers/sickle:v1.33-1b1-deb_cv1"
 ---
-
 
 # sickle
 

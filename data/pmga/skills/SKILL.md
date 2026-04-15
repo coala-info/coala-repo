@@ -1,9 +1,10 @@
 ---
 name: pmga
-description: "This tool annotates genomes of Neisseria species and Haemophilus influenzae. Use when user asks to annotate bacterial genomes, identify MLST alleles, or annotate serogrouping/serotyping genes."
+description: This tool annotates genomes of Neisseria species and Haemophilus influenzae. Use when user asks to annotate bacterial genomes, identify MLST alleles, or annotate serogrouping/serotyping genes.
 homepage: https://github.com/CDCgov/BMGAP
+metadata:
+  docker_image: "quay.io/biocontainers/pmga:3.0.2--hdfd78af_0"
 ---
-
 
 # pmga
 

@@ -4,7 +4,6 @@ description: This tool maps shotgun proteomics peptide-spectrum matches to genom
 homepage: https://bioconductor.org/packages/release/bioc/html/proBAMr.html
 ---
 
-
 # bioconductor-probamr
 
 name: bioconductor-probamr

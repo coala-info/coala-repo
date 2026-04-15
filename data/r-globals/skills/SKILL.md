@@ -4,7 +4,6 @@ description: This tool identifies global objects and functions in R expressions 
 homepage: https://cloud.r-project.org/web/packages/globals/index.html
 ---
 
-
 # r-globals
 
 name: r-globals

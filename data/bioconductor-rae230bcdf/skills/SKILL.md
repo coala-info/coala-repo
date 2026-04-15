@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and prob
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230bcdf.html
 ---
 
-
 # bioconductor-rae230bcdf
 
 name: bioconductor-rae230bcdf

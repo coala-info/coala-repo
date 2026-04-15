@@ -4,7 +4,6 @@ description: The r-trimcluster package performs robust k-means clustering by tri
 homepage: https://cloud.r-project.org/web/packages/trimcluster/index.html
 ---
 
-
 # r-trimcluster
 
 ## Overview

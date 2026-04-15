@@ -4,7 +4,6 @@ description: The bioconductor-ggtreedendro package extends ggtree to visualize a
 homepage: https://bioconductor.org/packages/release/bioc/html/ggtreeDendro.html
 ---
 
-
 # bioconductor-ggtreedendro
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool converts static ComplexHeatmap objects into interactive S
 homepage: https://bioconductor.org/packages/release/bioc/html/InteractiveComplexHeatmap.html
 ---
 
-
 # bioconductor-interactivecomplexheatmap
 
 name: bioconductor-interactivecomplexheatmap

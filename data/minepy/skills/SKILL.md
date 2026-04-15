@@ -2,8 +2,9 @@
 name: minepy
 description: The minepy tool identifies and characterizes complex functional and non-functional relationships in high-dimensional data using MINE statistics. Use when user asks to calculate MIC scores, identify non-linear associations, perform high-throughput screening of pairwise relationships, or rank variables by relationship strength.
 homepage: http://minepy.readthedocs.io
+metadata:
+  docker_image: "quay.io/biocontainers/minepy:1.2.3--py36h14c3975_0"
 ---
-
 
 # minepy
 

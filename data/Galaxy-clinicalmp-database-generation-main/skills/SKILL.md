@@ -1,10 +1,12 @@
 ---
 name: generate-a-clinical-metaproteomics-database
-description: "This Galaxy workflow integrates human, microbial, and contaminant protein databases with tandem mass spectrometry data using MetaNovo to generate a refined, compact FASTA database. Use this skill when you need to characterize the metaproteome of clinical samples where abundant host proteins might otherwise obscure the detection of disease-causing microorganisms."
-homepage: https://workflowhub.eu/workflows/1216
+description: This Galaxy workflow integrates human, microbial, and contaminant protein databases with tandem mass spectrometry data using MetaNovo to generate a refined, compact FASTA database. Use this skill when you need to characterize the metaproteome of clinical samples where abundant host proteins might otherwise obscure the detection of disease-causing microorganisms.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Generate a Clinical Metaproteomics Database
+# generate-a-clinical-metaproteomics-database
 
 ## Overview
 

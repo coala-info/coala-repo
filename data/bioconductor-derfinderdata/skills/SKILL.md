@@ -4,7 +4,6 @@ description: This package provides BrainSpan genomic data and phenotype informat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/derfinderData.html
 ---
 
-
 # bioconductor-derfinderdata
 
 name: bioconductor-derfinderdata

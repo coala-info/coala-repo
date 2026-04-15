@@ -1,7 +1,9 @@
 ---
 name: seqforge
-description: "SeqForge is a modular bioinformatics pipeline for microbial genomics that provides parallelized BLAST querying, motif mining, and FASTA file manipulation. Use when user asks to build BLAST databases, run parallelized sequence queries, perform regex-based motif searches, sanitize FASTA headers, or calculate assembly metrics."
+description: SeqForge is a modular bioinformatics pipeline for microbial genomics that provides parallelized BLAST querying, motif mining, and FASTA file manipulation. Use when user asks to build BLAST databases, run parallelized sequence queries, perform regex-based motif searches, sanitize FASTA headers, or calculate assembly metrics.
 homepage: https://github.com/ERBringHorvath/SeqForge
+metadata:
+  docker_image: "quay.io/biocontainers/seqforge:2.0.0--pyh7e72e81_0"
 ---
 
 # seqforge

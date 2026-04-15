@@ -4,7 +4,6 @@ description: This tool provides functions for differential binding and signal an
 homepage: https://bioconductor.org/packages/release/bioc/html/extraChIPs.html
 ---
 
-
 # bioconductor-extrachips
 
 name: bioconductor-extrachips

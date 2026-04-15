@@ -1,10 +1,12 @@
 ---
 name: investigation-of-lockdown-effect-on-air-quality-between-janu
-description: "This climate workflow utilizes NetCDF xarray selection and Datamash tools to extract air quality data across multiple time periods between 2019 and 2021 for a specific geographic location. Use this skill when you need to analyze the impact of COVID-19 lockdowns on atmospheric composition by comparing mean, minimum, and maximum pollutant levels across consecutive years."
+description: This climate workflow utilizes NetCDF xarray selection and Datamash tools to extract air quality data across multiple time periods between 2019 and 2021 for a specific geographic location. Use this skill when you need to analyze the impact of COVID-19 lockdowns on atmospheric composition by comparing mean, minimum, and maximum pollutant levels across consecutive years.
 homepage: https://workflowhub.eu/workflows/251
+metadata:
+  docker_image: "N/A"
 ---
 
-# Investigation of lockdown effect on air quality between January 2019 to May 2021: RELIANCE DS1-GC0-SC3'
+# investigation-of-lockdown-effect-on-air-quality-between-janu
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: bioconductor-hiannotator provides a framework for annotating genomi
 homepage: https://bioconductor.org/packages/release/bioc/html/hiAnnotator.html
 ---
 
-
 # bioconductor-hiannotator
 
 ## Overview

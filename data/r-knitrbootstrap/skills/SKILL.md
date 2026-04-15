@@ -4,7 +4,6 @@ description: The knitrbootstrap package creates responsive, Bootstrap-styled HTM
 homepage: https://cran.r-project.org/web/packages/knitrbootstrap/index.html
 ---
 
-
 # r-knitrbootstrap
 
 ## Overview

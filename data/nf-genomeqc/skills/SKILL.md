@@ -4,6 +4,8 @@ description: This pipeline compares the quality of multiple genome assemblies an
 homepage: https://github.com/nf-core/genomeqc
 ---
 
+# genomeqc
+
 ## Overview
 nf-core/genomeqc is a bioinformatics pipeline designed to benchmark and compare the quality of multiple genome assemblies and their associated gene annotations. It supports two primary execution modes: a "Genome Only" mode for basic assembly assessment and a "Genome and Annotation" mode that includes functional feature analysis, protein isoform extraction, and orthology-based phylogenetics.
 

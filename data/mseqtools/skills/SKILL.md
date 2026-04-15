@@ -2,6 +2,8 @@
 name: mseqtools
 description: mseqtools is a high-performance C-based toolkit designed for handling and manipulating genomic sequence data with a focus on microbiome workflows. Use when user asks to subset sequences, convert sequence formats, or process large gzipped FASTQ files efficiently.
 homepage: https://github.com/arumugamlab/mseqtools
+metadata:
+  docker_image: "quay.io/biocontainers/mseqtools:0.9.1--h7132678_1"
 ---
 
 # mseqtools

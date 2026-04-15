@@ -4,7 +4,6 @@ description: This tool creates and customizes sequence logos for DNA and RNA seq
 homepage: https://bioconductor.org/packages/release/bioc/html/seqLogo.html
 ---
 
-
 # bioconductor-seqlogo
 
 name: bioconductor-seqlogo

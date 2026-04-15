@@ -4,7 +4,6 @@ description: SeqGate filters lowly expressed features in RNA-Seq data using a da
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqGate.html
 ---
 
-
 # bioconductor-seqgate
 
 ## Overview

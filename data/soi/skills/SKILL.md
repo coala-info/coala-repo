@@ -2,8 +2,9 @@
 name: soi
 description: The soi tool identifies orthologous synteny by integrating synteny detection with orthology inference to calculate an Orthology Index. Use when user asks to visualize syntenic relationships with dot plots, filter genomic noise for high-confidence orthologous blocks, or construct phylogenomic pipelines from syntenic orthogroups.
 homepage: https://github.com/zhangrengang/SOI/
+metadata:
+  docker_image: "quay.io/biocontainers/soi:1.2.3--pyhdfd78af_0"
 ---
-
 
 # soi
 

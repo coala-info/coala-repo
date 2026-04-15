@@ -1,9 +1,10 @@
 ---
 name: isocor
-description: "This tool corrects mass spectrometry data for naturally occurring isotopes and tracer purity. Use when user asks to correct mass spectrometry data for isotopic labeling experiments."
+description: This tool corrects mass spectrometry data for naturally occurring isotopes and tracer purity. Use when user asks to correct mass spectrometry data for isotopic labeling experiments.
 homepage: https://github.com/MetaSys-LISBP/IsoCor/
+metadata:
+  docker_image: "quay.io/biocontainers/isocor:2.2.2--pyhdfd78af_0"
 ---
-
 
 # isocor
 

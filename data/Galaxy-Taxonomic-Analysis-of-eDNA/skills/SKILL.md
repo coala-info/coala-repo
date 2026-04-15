@@ -1,10 +1,12 @@
 ---
 name: taxonomic-analysis-of-edna
-description: "This workflow processes paired-end eDNA FASTQ files through quality control with fastp and sequence alignment using NCBI BLAST+ to generate a taxonomic count table. Use this skill when you need to identify and quantify the biodiversity of environmental samples by mapping genetic sequences to known taxonomic groups."
-homepage: https://workflowhub.eu/workflows/1723
+description: This workflow processes paired-end eDNA FASTQ files through quality control with fastp and sequence alignment using NCBI BLAST+ to generate a taxonomic count table. Use this skill when you need to identify and quantify the biodiversity of environmental samples by mapping genetic sequences to known taxonomic groups.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Taxonomic Analysis of eDNA
+# taxonomic-analysis-of-edna
 
 ## Overview
 

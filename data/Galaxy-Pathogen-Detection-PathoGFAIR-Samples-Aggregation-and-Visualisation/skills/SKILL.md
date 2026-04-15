@@ -1,10 +1,12 @@
 ---
 name: pathogen-detection-pathogfair-samples-aggregation-and-visual
-description: "This workflow aggregates pathogen detection results from multiple samples, including antimicrobial resistance (AMR) genes and virulence factors (VF), using tools like bedtools, ClustalW, and FastTree to generate comparative visualizations. Use this skill when you need to synthesize multi-sample pathogenomic data into comprehensive reports, heatmaps, and phylogenetic trees to analyze the distribution and evolutionary relationships of resistance and virulence markers across a cohort."
-homepage: https://workflowhub.eu/workflows/1487
+description: This workflow aggregates pathogen detection results from multiple samples, including antimicrobial resistance (AMR) genes and virulence factors (VF), using tools like bedtools, ClustalW, and FastTree to generate comparative visualizations. Use this skill when you need to synthesize multi-sample pathogenomic data into comprehensive reports, heatmaps, and phylogenetic trees to analyze the distribution and evolutionary relationships of resistance and virulence markers across a cohort.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pathogen Detection PathoGFAIR Samples Aggregation and Visualisation
+# pathogen-detection-pathogfair-samples-aggregation-and-visual
 
 ## Overview
 

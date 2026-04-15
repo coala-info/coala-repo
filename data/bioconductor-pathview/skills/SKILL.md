@@ -4,7 +4,6 @@ description: This tool integrates and visualizes gene or compound data by mappin
 homepage: https://bioconductor.org/packages/release/bioc/html/pathview.html
 ---
 
-
 # bioconductor-pathview
 
 name: bioconductor-pathview

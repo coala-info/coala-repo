@@ -2,8 +2,9 @@
 name: pythonpy
 description: pythonpy executes Python expressions directly from the command line to transform and process data streams. Use when user asks to evaluate Python code in the shell, manipulate piped input line-by-line, or perform list operations on command output.
 homepage: https://github.com/Russell91/pythonpy
+metadata:
+  docker_image: "quay.io/biocontainers/pythonpy:0.4.11--py_0"
 ---
-
 
 # pythonpy
 

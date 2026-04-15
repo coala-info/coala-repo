@@ -2,6 +2,8 @@
 name: segalign-full
 description: SegAlign is a GPU-accelerated system designed for high-performance pairwise whole-genome alignments and repeat masking. Use when user asks to perform pairwise genome alignment, identify repetitive sequences, or run GPU-accelerated sequence comparisons.
 homepage: https://github.com/gsneha26/SegAlign
+metadata:
+  docker_image: "quay.io/biocontainers/segalign-full:0.1.2.7--hdfd78af_1"
 ---
 
 # segalign-full

@@ -4,7 +4,6 @@ description: This package provides example datasets and processed data for Promo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PCHiCdata.html
 ---
 
-
 # bioconductor-pchicdata
 
 ## Overview

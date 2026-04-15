@@ -4,7 +4,6 @@ description: bioconductor-spikeli performs physical-chemistry based analysis of 
 homepage: https://bioconductor.org/packages/release/bioc/html/spikeLI.html
 ---
 
-
 # bioconductor-spikeli
 
 ## Overview

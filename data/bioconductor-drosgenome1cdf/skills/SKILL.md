@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosgenome1cdf.html
 ---
 
-
 # bioconductor-drosgenome1cdf
 
 name: bioconductor-drosgenome1cdf

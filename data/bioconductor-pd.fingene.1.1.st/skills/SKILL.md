@@ -4,7 +4,6 @@ description: This package provides annotation data and platform-specific metadat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.fingene.1.1.st.html
 ---
 
-
 # bioconductor-pd.fingene.1.1.st
 
 name: bioconductor-pd.fingene.1.1.st

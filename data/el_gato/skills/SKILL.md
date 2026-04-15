@@ -2,8 +2,9 @@
 name: el_gato
 description: el_gato determines the Sequence Type of Legionella pneumophila from NGS reads or genome assemblies by analyzing seven specific loci against the ESGLI database. Use when user asks to perform multilocus sequence typing for Legionella, identify allele numbers from sequencing data, or determine the ST of a Legionella sample.
 homepage: https://github.com/appliedbinf/el_gato
+metadata:
+  docker_image: "quay.io/biocontainers/elastic-blast:1.5.0--pyhdfd78af_0"
 ---
-
 
 # el_gato
 

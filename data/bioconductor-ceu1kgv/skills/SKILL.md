@@ -4,7 +4,6 @@ description: This tool provides integrated 1000 Genomes genotype calls and expre
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ceu1kgv.html
 ---
 
-
 # bioconductor-ceu1kgv
 
 name: bioconductor-ceu1kgv

@@ -1,10 +1,12 @@
 ---
 name: workflow-3-gucfg2galaxy-classification-galaxy-training-16s-m
-description: "This metagenomics workflow processes cleaned 16S sequences and count tables using Mothur tools to assign taxonomic classifications against a reference training set and filter out unwanted lineages. Use this skill when you need to taxonomically classify microbial sequences and refine your dataset by removing specific lineages to focus on relevant bacterial populations."
-homepage: https://workflowhub.eu/workflows/650
+description: This metagenomics workflow processes cleaned 16S sequences and count tables using Mothur tools to assign taxonomic classifications against a reference training set and filter out unwanted lineages. Use this skill when you need to taxonomically classify microbial sequences and refine your dataset by removing specific lineages to focus on relevant bacterial populations.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 3 [gucfg2galaxy]: Classification [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-3-gucfg2galaxy-classification-galaxy-training-16s-m
 
 ## Overview
 

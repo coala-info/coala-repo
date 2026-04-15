@@ -4,7 +4,6 @@ description: This package provides curated mRNA expression datasets from The Can
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.mRNA.html
 ---
 
-
 # bioconductor-rtcga.mrna
 
 name: bioconductor-rtcga.mrna

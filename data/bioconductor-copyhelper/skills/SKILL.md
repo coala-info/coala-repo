@@ -4,7 +4,6 @@ description: This package provides pre-calculated GC-content, mappability, and b
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CopyhelpeR.html
 ---
 
-
 # bioconductor-copyhelper
 
 ## Overview

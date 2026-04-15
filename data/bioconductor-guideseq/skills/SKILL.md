@@ -4,7 +4,6 @@ description: This package analyzes GUIDE-seq and PEtag-seq data to identify CRIS
 homepage: https://bioconductor.org/packages/release/bioc/html/GUIDEseq.html
 ---
 
-
 # bioconductor-guideseq
 
 name: bioconductor-guideseq

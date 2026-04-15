@@ -4,7 +4,6 @@ description: This tool analyzes time-course microarray data using B-spline basis
 homepage: https://bioconductor.org/packages/release/bioc/html/Rnits.html
 ---
 
-
 # bioconductor-rnits
 
 name: bioconductor-rnits

@@ -2,8 +2,9 @@
 name: proteomiqon-alignmentbasedquantification
 description: This tool quantifies peptides across multiple MS runs by transferring identities from reference runs to target runs using alignment data. Use when user asks to perform alignment-based quantification, address missing values in DDA data, or extract ion chromatograms for peptides without MS/MS identifications.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-alignmentbasedquantification:0.0.2--hdfd78af_0"
 ---
-
 
 # proteomiqon-alignmentbasedquantification
 

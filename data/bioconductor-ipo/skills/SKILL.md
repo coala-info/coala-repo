@@ -4,7 +4,6 @@ description: This tool automates the optimization of XCMS peak picking, retentio
 homepage: https://bioconductor.org/packages/release/bioc/html/IPO.html
 ---
 
-
 # bioconductor-ipo
 
 name: bioconductor-ipo

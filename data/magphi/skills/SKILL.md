@@ -1,9 +1,10 @@
 ---
 name: magphi
-description: "Magphi extracts genomic regions located between two user-defined seed sequences from draft or complete genomes. Use when user asks to extract intervening sequences between genomic markers, identify genomic islands, or perform comparative analysis of specific genomic regions across multiple genomes."
+description: Magphi extracts genomic regions located between two user-defined seed sequences from draft or complete genomes. Use when user asks to extract intervening sequences between genomic markers, identify genomic islands, or perform comparative analysis of specific genomic regions across multiple genomes.
 homepage: https://github.com/milnus/Magphi
+metadata:
+  docker_image: "quay.io/biocontainers/magphi:2.0.2--pyhdfd78af_0"
 ---
-
 
 # magphi
 

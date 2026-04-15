@@ -4,7 +4,6 @@ description: SplicingFactory quantifies and compares transcript isoform diversit
 homepage: https://bioconductor.org/packages/release/bioc/html/SplicingFactory.html
 ---
 
-
 # bioconductor-splicingfactory
 
 name: bioconductor-splicingfactory

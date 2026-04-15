@@ -4,7 +4,6 @@ description: The projectR package provides a framework for projection analysis t
 homepage: https://bioconductor.org/packages/release/bioc/html/projectR.html
 ---
 
-
 # bioconductor-projectr
 
 ## Overview

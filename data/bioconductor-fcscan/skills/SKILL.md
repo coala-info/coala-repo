@@ -4,7 +4,6 @@ description: This tool detects clusters of genomic features such as transcriptio
 homepage: https://bioconductor.org/packages/release/bioc/html/fcScan.html
 ---
 
-
 # bioconductor-fcscan
 
 name: bioconductor-fcscan

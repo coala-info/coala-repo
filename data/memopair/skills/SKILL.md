@@ -2,8 +2,9 @@
 name: memopair
 description: memopair identifies methylated motif pairs within genomic data using a reference genome and methylation pileup files. Use when user asks to identify methylated motif pairs, analyze motif-specific methylation density, or determine modification states at precise genomic positions.
 homepage: https://github.com/SorenHeidelbach/memopair
+metadata:
+  docker_image: "quay.io/biocontainers/memopair:0.1.6--h4349ce8_0"
 ---
-
 
 # memopair
 

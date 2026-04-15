@@ -1,10 +1,12 @@
 ---
 name: genetic-design-gibson-golden-gate-lcr
-description: "This workflow automates the design of genetic constructs for heterologous pathways by integrating enzyme selection via Selenzyme, part optimization with PartsGenie, and assembly planning using DNA Weaver and LCR Genie. Use this skill when you need to optimize enzyme sequences for a specific host organism and generate detailed assembly plans for Gibson, Golden Gate, or LCR cloning methods."
-homepage: https://workflowhub.eu/workflows/2007
+description: This workflow automates the design of genetic constructs for heterologous pathways by integrating enzyme selection via Selenzyme, part optimization with PartsGenie, and assembly planning using DNA Weaver and LCR Genie. Use this skill when you need to optimize enzyme sequences for a specific host organism and generate detailed assembly plans for Gibson, Golden Gate, or LCR cloning methods.
+homepage: https://www.micalis.fr/equipe/galaxy-synbiocad/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genetic Design (Gibson, Golden Gate, LCR)
+# genetic-design-gibson-golden-gate-lcr
 
 ## Overview
 

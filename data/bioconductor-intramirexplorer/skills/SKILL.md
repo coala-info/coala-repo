@@ -4,7 +4,6 @@ description: This tool predicts targets for Drosophila melanogaster intragenic m
 homepage: https://bioconductor.org/packages/release/bioc/html/IntramiRExploreR.html
 ---
 
-
 # bioconductor-intramirexplorer
 
 name: bioconductor-intramirexplorer

@@ -4,7 +4,6 @@ description: AUCell identifies cells with active gene signatures in single-cell 
 homepage: https://bioconductor.org/packages/release/bioc/html/AUCell.html
 ---
 
-
 # bioconductor-aucell
 
 name: bioconductor-aucell

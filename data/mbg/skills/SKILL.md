@@ -1,9 +1,10 @@
 ---
 name: mbg
-description: "MBG constructs a sparse de Bruijn graph from high-fidelity long reads using minimizers and homopolymer compression. Use when user asks to build a genomic assembly graph, generate a unitigified GFA from HiFi reads, or resolve repeats using a multiplex de Bruijn graph."
+description: MBG constructs a sparse de Bruijn graph from high-fidelity long reads using minimizers and homopolymer compression. Use when user asks to build a genomic assembly graph, generate a unitigified GFA from HiFi reads, or resolve repeats using a multiplex de Bruijn graph.
 homepage: https://github.com/maickrau/MBG
+metadata:
+  docker_image: "quay.io/biocontainers/mbg:1.0.17--h06902ac_0"
 ---
-
 
 # mbg
 

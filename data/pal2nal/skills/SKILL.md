@@ -1,9 +1,10 @@
 ---
 name: pal2nal
-description: "pal2nal converts a protein alignment into a codon-aware nucleotide alignment by using the protein sequences as a template. Use when user asks to back-translate protein alignments to DNA, prepare sequences for PAML analysis, or maintain reading frames in nucleotide alignments."
+description: pal2nal converts a protein alignment into a codon-aware nucleotide alignment by using the protein sequences as a template. Use when user asks to back-translate protein alignments to DNA, prepare sequences for PAML analysis, or maintain reading frames in nucleotide alignments.
 homepage: http://www.bork.embl.de/pal2nal/
+metadata:
+  docker_image: "biocontainers/pal2nal:v14.1-2-deb_cv1"
 ---
-
 
 # pal2nal
 

@@ -2,8 +2,9 @@
 name: gromacs_mpi
 description: This tool performs molecular dynamics simulations and trajectory analysis using MPI for parallel processing. Use when user asks to generate topologies, solvate systems, add ions, run energy minimization, perform equilibration, execute production MD runs, correct periodic boundary conditions, calculate RMSD, or extract energy data.
 homepage: http://www.gromacs.org/
+metadata:
+  docker_image: "quay.io/biocontainers/gromacs:2022"
 ---
-
 
 # gromacs_mpi
 

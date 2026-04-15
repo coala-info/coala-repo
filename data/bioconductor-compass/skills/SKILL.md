@@ -4,7 +4,6 @@ description: bioconductor-compass is a Bayesian hierarchical framework for analy
 homepage: https://bioconductor.org/packages/release/bioc/html/COMPASS.html
 ---
 
-
 # bioconductor-compass
 
 ## Overview

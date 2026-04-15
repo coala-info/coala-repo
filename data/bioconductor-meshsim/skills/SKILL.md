@@ -4,7 +4,6 @@ description: This tool calculates semantic similarity between MeSH terms, tree n
 homepage: https://bioconductor.org/packages/3.5/bioc/html/MeSHSim.html
 ---
 
-
 # bioconductor-meshsim
 
 name: bioconductor-meshsim

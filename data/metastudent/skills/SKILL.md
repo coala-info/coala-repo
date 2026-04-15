@@ -2,8 +2,9 @@
 name: metastudent
 description: Metastudent predicts protein function by inferring Gene Ontology terms from annotated sequences using homology-based inference. Use when user asks to predict Molecular Function or Biological Process ontologies, assign functional annotations to protein sequences, or infer GO terms from FASTA files.
 homepage: https://github.com/Rostlab/MetaStudent
+metadata:
+  docker_image: "biocontainers/metastudent:v2.0.1-6-deb_cv1"
 ---
-
 
 # metastudent
 

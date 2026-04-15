@@ -4,7 +4,6 @@ description: The bioconductor-seqtools package provides high-speed analysis and 
 homepage: https://bioconductor.org/packages/release/bioc/html/seqTools.html
 ---
 
-
 # bioconductor-seqtools
 
 name: bioconductor-seqtools

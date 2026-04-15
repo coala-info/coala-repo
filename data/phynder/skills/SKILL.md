@@ -1,9 +1,10 @@
 ---
 name: phynder
-description: "phynder assigns samples to specific branches within a phylogeny by calculating genotype likelihoods across a reference tree. Use when user asks to place query samples into a reference tree, map SNPs to specific branches, or identify the most likely phylogenetic position for degraded DNA sequences."
+description: phynder assigns samples to specific branches within a phylogeny by calculating genotype likelihoods across a reference tree. Use when user asks to place query samples into a reference tree, map SNPs to specific branches, or identify the most likely phylogenetic position for degraded DNA sequences.
 homepage: https://github.com/richarddurbin/phynder
+metadata:
+  docker_image: "quay.io/biocontainers/phynder:1.0--h566b1c6_5"
 ---
-
 
 # phynder
 

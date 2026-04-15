@@ -2,8 +2,9 @@
 name: microbeannotator
 description: MicrobeAnnotator is a pipeline for the metabolic profiling of microbial genomes that uses an iterative search strategy to assign functional annotations. Use when user asks to annotate protein sequences, perform metabolic profiling, build microbial functional databases, or calculate KEGG module completion.
 homepage: https://github.com/cruizperez/MicrobeAnnotator
+metadata:
+  docker_image: "quay.io/biocontainers/microbeannotator:2.0.5--pyhdfd78af_0"
 ---
-
 
 # microbeannotator
 

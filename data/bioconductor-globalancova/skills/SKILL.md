@@ -4,7 +4,6 @@ description: This tool performs statistical testing of differential gene express
 homepage: https://bioconductor.org/packages/release/bioc/html/GlobalAncova.html
 ---
 
-
 # bioconductor-globalancova
 
 name: bioconductor-globalancova

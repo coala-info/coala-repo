@@ -4,7 +4,6 @@ description: This package provides minor allele frequency data from the Exome Ag
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.ExAC.r1.0.hs37d5.html
 ---
 
-
 # bioconductor-mafdb.exac.r1.0.hs37d5
 
 ## Overview

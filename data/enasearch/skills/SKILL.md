@@ -1,7 +1,9 @@
 ---
 name: enasearch
-description: "ENASearch interacts with the European Nucleotide Archive (ENA) to search for and retrieve genomic data and metadata. Use when user asks to search the ENA database, retrieve run or analysis reports, download sequence data in various formats, or identify available metadata fields."
+description: ENASearch interacts with the European Nucleotide Archive (ENA) to search for and retrieve genomic data and metadata. Use when user asks to search the ENA database, retrieve run or analysis reports, download sequence data in various formats, or identify available metadata fields.
 homepage: http://bebatut.fr/enasearch/
+metadata:
+  docker_image: "quay.io/biocontainers/enasearch:0.2.2--py27_0"
 ---
 
 # enasearch

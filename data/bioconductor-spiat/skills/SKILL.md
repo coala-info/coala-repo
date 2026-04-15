@@ -4,7 +4,6 @@ description: SPIAT provides tools for the processing, quality control, and spati
 homepage: https://bioconductor.org/packages/release/bioc/html/SPIAT.html
 ---
 
-
 # bioconductor-spiat
 
 name: bioconductor-spiat

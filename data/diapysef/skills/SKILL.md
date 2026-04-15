@@ -2,6 +2,8 @@
 name: diapysef
 description: diapysef processes and converts multi-dimensional Trapped Ion Mobility Spectrometry and Parallel Accumulation-Serial Fragmentation data from Bruker instruments. Use when user asks to convert raw .d files to mzML, extract specific frames for plotting, generate peptide coordinates for targeted extraction, or export data to sqMass and parquet formats.
 homepage: https://github.com/Roestlab/dia-pasef
+metadata:
+  docker_image: "quay.io/biocontainers/diapysef:1.0.10--pyh7cba7a3_0"
 ---
 
 # diapysef

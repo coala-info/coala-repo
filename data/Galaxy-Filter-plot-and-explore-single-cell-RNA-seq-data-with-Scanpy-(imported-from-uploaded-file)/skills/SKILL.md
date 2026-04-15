@@ -1,10 +1,12 @@
 ---
 name: filter-plot-and-explore-single-cell-rna-seq-data-with-scanpy
-description: "This workflow processes batched AnnData files for single-cell RNA-seq analysis using Scanpy and AnnData tools to perform quality control, filtering, normalization, and dimensionality reduction. Use this skill when you need to identify cell clusters, visualize gene expression patterns, and perform marker gene analysis on pre-processed single-cell transcriptomic datasets."
-homepage: https://workflowhub.eu/workflows/1501
+description: This workflow processes batched AnnData files for single-cell RNA-seq analysis using Scanpy and AnnData tools to perform quality control, filtering, normalization, and dimensionality reduction. Use this skill when you need to identify cell clusters, visualize gene expression patterns, and perform marker gene analysis on pre-processed single-cell transcriptomic datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Filter plot and explore single-cell RNA-seq data with Scanpy (imported from uploaded file)
+# filter-plot-and-explore-single-cell-rna-seq-data-with-scanpy
 
 ## Overview
 

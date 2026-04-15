@@ -2,8 +2,9 @@
 name: ucsc-bedrestricttopositions
 description: This tool filters a BED file to retain only records that exactly match genomic intervals specified in a restriction BED file. Use when user asks to filter a BED file by exact genomic coordinates, extract specific features based on precise locations, or retrieve full feature information for known exact coordinates.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedrestricttopositions
 

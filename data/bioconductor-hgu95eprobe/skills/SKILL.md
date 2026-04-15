@@ -4,7 +4,6 @@ description: This package provides sequence-level information and physical coord
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95eprobe.html
 ---
 
-
 # bioconductor-hgu95eprobe
 
 ## Overview

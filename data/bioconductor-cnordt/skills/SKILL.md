@@ -4,7 +4,6 @@ description: This tool trains and optimizes synchronous Boolean logic models of 
 homepage: https://bioconductor.org/packages/release/bioc/html/CNORdt.html
 ---
 
-
 # bioconductor-cnordt
 
 name: bioconductor-cnordt

@@ -2,6 +2,8 @@
 name: skani
 description: skani calculates Average Nucleotide Identity and Aligned Fraction between DNA sequences using a fast, approximate mapping method. Use when user asks to compare genomes for evolutionary relatedness, search query genomes against large databases, or generate distance matrices for strain-level clustering.
 homepage: https://github.com/bluenote-1577/skani
+metadata:
+  docker_image: "quay.io/biocontainers/skani:0.3.1--ha6fb395_0"
 ---
 
 # skani

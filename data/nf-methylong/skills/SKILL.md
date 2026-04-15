@@ -4,6 +4,8 @@ description: nf-core/methylong processes Oxford Nanopore and PacBio HiFi long-re
 homepage: https://github.com/nf-core/methylong
 ---
 
+# methylong
+
 ## Overview
 nf-core/methylong is a bioinformatics pipeline tailored for long-read methylation calling. It handles Oxford Nanopore (ONT) and PacBio HiFi data, supporting various input formats including modification-basecalled BAMs, raw Pod5 reads, and raw BAMs. The pipeline automates the transition from raw sequencing data to downstream analysis results like phased variants and differential methylation regions.
 

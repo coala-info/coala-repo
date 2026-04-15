@@ -2,8 +2,9 @@
 name: seqstats
 description: seqstats provides quick summary statistics for FASTA and FASTQ sequence files. Use when user asks to get an overview of sequence data, calculate statistics for multiple files, or process compressed biological sequences.
 homepage: https://github.com/clwgg/seqstats
+metadata:
+  docker_image: "quay.io/biocontainers/seqstats:1.0.0--h577a1d6_5"
 ---
-
 
 # seqstats
 

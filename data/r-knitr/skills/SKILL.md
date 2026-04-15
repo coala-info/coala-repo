@@ -4,7 +4,6 @@ description: The knitr package provides a general-purpose engine for dynamic rep
 homepage: https://cloud.r-project.org/web/packages/knitr/index.html
 ---
 
-
 # r-knitr
 
 ## Overview

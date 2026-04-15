@@ -2,8 +2,9 @@
 name: opentargets
 description: The opentargets tool provides a Python interface to the Open Targets REST API for retrieving target-disease associations and supporting evidence. Use when user asks to search for targets or diseases, retrieve association scores, access supporting evidence, or map gene symbols to Ensembl IDs for drug discovery workflows.
 homepage: https://github.com/opentargets/opentargets-py
+metadata:
+  docker_image: "quay.io/biocontainers/opentargets:3.1.16--pyh864c0ab_1"
 ---
-
 
 # opentargets
 

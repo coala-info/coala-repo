@@ -1,10 +1,12 @@
 ---
 name: clm-fates_-alp1-simulation-5-years
-description: "This climate workflow executes a five-year simulation using the Functionally Assembled Terrestrial Ecosystem Simulator (FATES) and CTSM/FATES-EMERALD tool to process terrestrial ecosystem datasets and restart files. Use this skill when you need to analyze long-term vegetation dynamics, land-atmosphere interactions, or terrestrial carbon cycle responses within a specific climate scenario."
-homepage: https://workflowhub.eu/workflows/1427
+description: This climate workflow executes a five-year simulation using the Functionally Assembled Terrestrial Ecosystem Simulator (FATES) and CTSM/FATES-EMERALD tool to process terrestrial ecosystem datasets and restart files. Use this skill when you need to analyze long-term vegetation dynamics, land-atmosphere interactions, or terrestrial carbon cycle responses within a specific climate scenario.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CLM-FATES_ ALP1 simulation (5 years)
+# clm-fates_-alp1-simulation-5-years
 
 ## Overview
 

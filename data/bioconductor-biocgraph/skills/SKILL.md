@@ -4,7 +4,6 @@ description: This tool provides high-level interfaces for the visualization and 
 homepage: https://bioconductor.org/packages/release/bioc/html/biocGraph.html
 ---
 
-
 # bioconductor-biocgraph
 
 name: bioconductor-biocgraph

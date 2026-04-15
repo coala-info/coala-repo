@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping Agil
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4111a.db.html
 ---
 
-
 # bioconductor-hgug4111a.db
 
 name: bioconductor-hgug4111a.db

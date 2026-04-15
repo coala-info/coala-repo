@@ -4,7 +4,6 @@ description: r-swamp analyzes and visualizes high-dimensional data to identify a
 homepage: https://cran.r-project.org/web/packages/swamp/index.html
 ---
 
-
 # r-swamp
 
 name: r-swamp

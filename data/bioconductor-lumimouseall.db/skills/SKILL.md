@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the Illu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiMouseAll.db.html
 ---
 
-
 # bioconductor-lumimouseall.db
 
 ## Overview

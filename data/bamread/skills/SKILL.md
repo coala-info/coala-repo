@@ -2,8 +2,9 @@
 name: bamread
 description: bamread converts BAM alignment files into Pandas DataFrames for high-performance data analysis in Python. Use when user asks to load BAM files into Python, convert genomic alignments to a DataFrame, or perform exploratory data analysis on alignment records.
 homepage: http://github.com/endrebak/bamread
+metadata:
+  docker_image: "quay.io/biocontainers/bamread:0.0.20--py310h1fe012e_1"
 ---
-
 
 # bamread
 

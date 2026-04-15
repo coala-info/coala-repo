@@ -4,6 +4,8 @@ description: This pipeline performs comprehensive variant calling and scoring fo
 homepage: https://github.com/nf-core/raredisease
 ---
 
+# raredisease
+
 ## Overview
 nf-core/raredisease is a bioinformatic pipeline designed for the analysis of whole genome or whole exome sequencing data from rare disease patients. It automates the process of alignment, variant calling, and clinical prioritization, heavily inspired by the Mutation Identification Pipeline (MIP).
 

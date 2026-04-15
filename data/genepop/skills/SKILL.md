@@ -2,8 +2,9 @@
 name: genepop
 description: Genepop is a population genetics suite used to analyze genetic datasets for population structure, gene flow, and genetic equilibrium. Use when user asks to test for Hardy-Weinberg equilibrium, evaluate population differentiation, perform linkage disequilibrium tests, estimate F-statistics, analyze isolation by distance, or convert genetic data formats.
 homepage: https://f-rousset.r-universe.dev/genepop
+metadata:
+  docker_image: "quay.io/biocontainers/genepop:4.8.4--h9948957_0"
 ---
-
 
 # genepop
 

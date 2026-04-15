@@ -4,7 +4,6 @@ description: The multiGSEA package performs integrated pathway enrichment analys
 homepage: https://bioconductor.org/packages/release/bioc/html/multiGSEA.html
 ---
 
-
 # bioconductor-multigsea
 
 ## Overview

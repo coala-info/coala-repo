@@ -4,7 +4,6 @@ description: The hermes package provides an object-oriented framework for proces
 homepage: https://bioconductor.org/packages/release/bioc/html/hermes.html
 ---
 
-
 # bioconductor-hermes
 
 ## Overview

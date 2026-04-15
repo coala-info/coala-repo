@@ -1,10 +1,12 @@
 ---
 name: 1-plant-virus-detection-with-kraken2
-description: "This Galaxy workflow performs taxonomic classification of paired-end FASTQ sequencing data to detect plant viruses using Kraken2, Kraken2Tax, and Krona visualization. Use this skill when you need to identify viral pathogens in plant samples and analyze the taxonomic composition of metagenomic datasets."
-homepage: https://workflowhub.eu/workflows/101
+description: This Galaxy workflow performs taxonomic classification of paired-end FASTQ sequencing data to detect plant viruses using Kraken2, Kraken2Tax, and Krona visualization. Use this skill when you need to identify viral pathogens in plant samples and analyze the taxonomic composition of metagenomic datasets.
+homepage: https://www.gembloux.ulg.ac.be/phytopathologie/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 1: Plant virus detection with kraken2
+# 1-plant-virus-detection-with-kraken2
 
 ## Overview
 

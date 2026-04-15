@@ -1,10 +1,12 @@
 ---
 name: erga-dataqc-illumina-v2601-wf0
-description: "This ERGA workflow performs quality control on raw Illumina sequencing collections using FastQC, fastp, SeqKit, and MultiQC to assess read quality and generate comprehensive summary reports. Use this skill when you need to evaluate the integrity and quality of raw short-read genomic data to ensure it meets the standards required for high-quality reference genome assembly."
-homepage: https://workflowhub.eu/workflows/601
+description: This ERGA workflow performs quality control on raw Illumina sequencing collections using FastQC, fastp, SeqKit, and MultiQC to assess read quality and generate comprehensive summary reports. Use this skill when you need to evaluate the integrity and quality of raw short-read genomic data to ensure it meets the standards required for high-quality reference genome assembly.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA DataQC Illumina v2601 (WF0)
+# erga-dataqc-illumina-v2601-wf0
 
 ## Overview
 

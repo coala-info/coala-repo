@@ -2,8 +2,9 @@
 name: perl-socket6
 description: This Perl module provides IPv6 networking support and protocol-independent address resolution. Use when user asks to handle IPv6 socket structures, perform protocol-independent name resolution with getaddrinfo, or convert between human-readable and binary IPv6 addresses.
 homepage: http://metacpan.org/pod/Socket6
+metadata:
+  docker_image: "quay.io/biocontainers/perl-socket6:0.29--pl5321h7b50bb2_6"
 ---
-
 
 # perl-socket6
 

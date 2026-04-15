@@ -4,7 +4,6 @@ description: This tool transforms character vectors into syntactically valid R i
 homepage: https://cran.r-project.org/web/packages/syntactic/index.html
 ---
 
-
 # r-syntactic
 
 name: r-syntactic

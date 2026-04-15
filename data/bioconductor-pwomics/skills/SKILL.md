@@ -4,7 +4,6 @@ description: bioconductor-pwomics performs pathway-based integration of matching
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pwOmics.html
 ---
 
-
 # bioconductor-pwomics
 
 name: bioconductor-pwomics

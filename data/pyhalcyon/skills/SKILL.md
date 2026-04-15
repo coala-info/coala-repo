@@ -2,8 +2,9 @@
 name: pyhalcyon
 description: Pyhalcyon is a deep learning basecaller that translates raw nanopore sequencing signals into nucleotide sequences. Use when user asks to basecall nanopore reads, convert fast5 signal data to FASTQ format, or perform sequence translation using an encoder-decoder model with monotonic attention.
 homepage: https://pypi.org/project/pyhalcyon
+metadata:
+  docker_image: "quay.io/biocontainers/pyhalcyon:0.1.1--py_0"
 ---
-
 
 # pyhalcyon
 

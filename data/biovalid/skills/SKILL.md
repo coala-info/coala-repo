@@ -2,8 +2,9 @@
 name: biovalid
 description: Biovalid is a lightweight Python utility used to validate the structural integrity and format compliance of genomic data files. Use when user asks to validate bioinformatics files, check for formatting errors in FASTA or VCF files, or perform pre-flight checks on genomic data.
 homepage: https://github.com/RIVM-bioinformatics/biovalid
+metadata:
+  docker_image: "quay.io/biocontainers/biovalid:0.4.0--pyhdfd78af_0"
 ---
-
 
 # biovalid
 

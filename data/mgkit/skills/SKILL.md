@@ -2,6 +2,8 @@
 name: mgkit
 description: MGKit is a modular bioinformatics framework designed for processing functional annotations, sequence data, and count tables. Use when user asks to extract sequence statistics, manipulate count tables, transform mapping files, or analyze SNP and variant data.
 homepage: https://github.com/frubino/mgkit
+metadata:
+  docker_image: "quay.io/biocontainers/mgkit:0.5.8--py39hbcbf7aa_4"
 ---
 
 # mgkit

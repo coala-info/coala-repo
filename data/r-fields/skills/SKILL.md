@@ -4,7 +4,6 @@ description: This tool provides functions for spatial statistics, including Krig
 homepage: https://cloud.r-project.org/web/packages/fields/index.html
 ---
 
-
 # r-fields
 
 name: r-fields

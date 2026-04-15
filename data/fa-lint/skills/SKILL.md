@@ -1,9 +1,10 @@
 ---
 name: fa-lint
-description: "fa-lint validates FASTA files for correct formatting, biological plausibility, and common structural issues. Use when user asks to validate FASTA files, check for duplicate sequence identifiers, identify invalid characters, or verify compressed genomic datasets."
+description: fa-lint validates FASTA files for correct formatting, biological plausibility, and common structural issues. Use when user asks to validate FASTA files, check for duplicate sequence identifiers, identify invalid characters, or verify compressed genomic datasets.
 homepage: https://github.com/GallVp/fa-lint
+metadata:
+  docker_image: "quay.io/biocontainers/fa-lint:1.2.0--he881be0_0"
 ---
-
 
 # fa-lint
 

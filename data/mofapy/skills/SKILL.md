@@ -2,8 +2,9 @@
 name: mofapy
 description: mofapy is a Python implementation of the Multi-Omics Factor Analysis framework used to discover latent factors that explain variance across multiple data modalities. Use when user asks to identify disease subgroups, perform multi-omics data integration, discover latent biological factors, or impute missing values across different omics views.
 homepage: https://github.com/PMBio/MOFA
+metadata:
+  docker_image: "quay.io/biocontainers/mofapy:1.2--py_0"
 ---
-
 
 # mofapy
 

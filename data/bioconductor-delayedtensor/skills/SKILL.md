@@ -4,7 +4,6 @@ description: DelayedTensor provides a framework for performing out-of-core tenso
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedTensor.html
 ---
 
-
 # bioconductor-delayedtensor
 
 name: bioconductor-delayedtensor

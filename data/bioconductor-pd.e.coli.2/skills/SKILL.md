@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.e.coli.2.html
 ---
 
-
 # bioconductor-pd.e.coli.2
 
 name: bioconductor-pd.e.coli.2

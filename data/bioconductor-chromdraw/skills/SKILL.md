@@ -4,7 +4,6 @@ description: This tool visualizes karyotypes in linear and circular formats usin
 homepage: https://bioconductor.org/packages/release/bioc/html/chromDraw.html
 ---
 
-
 # bioconductor-chromdraw
 
 ## Overview

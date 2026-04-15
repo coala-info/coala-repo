@@ -2,6 +2,8 @@
 name: neurodocker
 description: Neurodocker automates the creation of Docker and Singularity container recipes for neuroimaging software. Use when user asks to generate container recipes, install neuroimaging tools like FSL or AFNI, or minify container images to reduce their size.
 homepage: https://github.com/kaczmarj/neurodocker
+metadata:
+  docker_image: "quay.io/biocontainers/neurodocker:0.5.0--py_0"
 ---
 
 # neurodocker

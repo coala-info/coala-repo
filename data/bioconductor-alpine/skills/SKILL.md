@@ -4,7 +4,6 @@ description: The alpine package models and corrects technical biases in RNA-seq 
 homepage: https://bioconductor.org/packages/3.17/bioc/html/alpine.html
 ---
 
-
 # bioconductor-alpine
 
 ## Overview

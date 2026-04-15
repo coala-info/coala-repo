@@ -4,7 +4,6 @@ description: The autonomics package provides a unified workflow for omics data a
 homepage: https://bioconductor.org/packages/release/bioc/html/autonomics.html
 ---
 
-
 # bioconductor-autonomics
 
 ## Overview

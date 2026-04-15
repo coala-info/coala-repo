@@ -2,6 +2,8 @@
 name: bio
 description: bio is a modular CLI toolkit designed to simplify common bioinformatics tasks like data retrieval, sequence manipulation, and alignment. Use when user asks to fetch GenBank records, convert sequences to FASTA or JSON, extract features, translate nucleotides, perform pairwise alignments, or query taxonomic and ontological data.
 homepage: https://github.com/ialbert/bio
+metadata:
+  docker_image: "quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0"
 ---
 
 # bio

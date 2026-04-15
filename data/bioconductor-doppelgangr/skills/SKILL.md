@@ -4,7 +4,6 @@ description: This tool identifies duplicate genomic profiles or technical replic
 homepage: https://bioconductor.org/packages/release/bioc/html/doppelgangR.html
 ---
 
-
 # bioconductor-doppelgangr
 
 name: bioconductor-doppelgangr

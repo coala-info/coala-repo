@@ -4,7 +4,6 @@ description: The pRoloc package provides infrastructure and machine learning alg
 homepage: https://bioconductor.org/packages/release/bioc/html/pRoloc.html
 ---
 
-
 # bioconductor-proloc
 
 ## Overview

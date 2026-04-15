@@ -4,7 +4,6 @@ description: This package identifies genomic inversions from SNP-array data by m
 homepage: https://bioconductor.org/packages/3.6/bioc/html/inveRsion.html
 ---
 
-
 # bioconductor-inversion
 
 ## Overview

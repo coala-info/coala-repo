@@ -2,8 +2,9 @@
 name: orfanage
 description: ORFanage identifies optimal open reading frames for transcripts by using reference annotations as templates. Use when user asks to find ORFs in novel transcripts, rescue truncated coding sequences, or annotate transcripts using known protein-coding evidence.
 homepage: https://github.com/alevar/ORFanage
+metadata:
+  docker_image: "quay.io/biocontainers/orfanage:1.2.0--ha666654_1"
 ---
-
 
 # orfanage
 

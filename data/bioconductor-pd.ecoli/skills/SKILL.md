@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ecoli.html
 ---
 
-
 # bioconductor-pd.ecoli
 
 name: bioconductor-pd.ecoli

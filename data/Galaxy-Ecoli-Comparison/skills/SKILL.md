@@ -1,10 +1,12 @@
 ---
 name: ecoli-comparison
-description: "This workflow performs comparative genomics on E. coli assemblies by processing FASTA sequences and essential gene tables using LASTZ for alignment and Bedtools for interval analysis. Use this skill when you need to characterize a newly assembled bacterial genome by identifying essential genes and analyzing sequence conservation relative to reference datasets."
-homepage: https://workflowhub.eu/workflows/1638
+description: This workflow performs comparative genomics on E. coli assemblies by processing FASTA sequences and essential gene tables using LASTZ for alignment and Bedtools for interval analysis. Use this skill when you need to characterize a newly assembled bacterial genome by identifying essential genes and analyzing sequence conservation relative to reference datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ecoli Comparison
+# ecoli-comparison
 
 ## Overview
 

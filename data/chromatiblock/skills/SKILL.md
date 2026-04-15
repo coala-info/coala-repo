@@ -1,9 +1,10 @@
 ---
 name: chromatiblock
-description: "Chromatiblock visualizes colinear blocks and structural variations across multiple prokaryotic genomes. Use when user asks to visualize syntenic regions, identify large-scale genomic rearrangements, or annotate genes across multiple isolates using BLASTx."
+description: Chromatiblock visualizes colinear blocks and structural variations across multiple prokaryotic genomes. Use when user asks to visualize syntenic regions, identify large-scale genomic rearrangements, or annotate genes across multiple isolates using BLASTx.
 homepage: http://github.com/mjsull/chromatiblock/
+metadata:
+  docker_image: "quay.io/biocontainers/chromatiblock:1.0.0--py_0"
 ---
-
 
 # chromatiblock
 

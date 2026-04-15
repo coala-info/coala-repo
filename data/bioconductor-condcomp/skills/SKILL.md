@@ -4,7 +4,6 @@ description: The condcomp package quantifies and characterizes distribution diff
 homepage: https://bioconductor.org/packages/3.8/bioc/html/condcomp.html
 ---
 
-
 # bioconductor-condcomp
 
 ## Overview

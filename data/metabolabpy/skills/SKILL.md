@@ -2,8 +2,9 @@
 name: metabolabpy
 description: MetabolabPy is a Python package designed to process and analyze 1D and 2D NMR spectra for metabolomics and tracer-based metabolism studies. Use when user asks to process raw NMR data, perform automatic phase and baseline correction, identify peaks, or quantify metabolites from HSQC analysis.
 homepage: https://github.com/ludwigc/metabolabpy
+metadata:
+  docker_image: "quay.io/biocontainers/metabolabpy:0.9.86--pyhdfd78af_0"
 ---
-
 
 # metabolabpy
 

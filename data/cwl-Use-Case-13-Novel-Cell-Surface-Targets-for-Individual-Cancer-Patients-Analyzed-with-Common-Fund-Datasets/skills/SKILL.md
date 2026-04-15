@@ -1,9 +1,12 @@
 ---
 name: use-case-13-novel-cell-surface-targets-for-individual-cancer
-description: "This CWL workflow identifies tumor-specific therapeutic targets from patient gene expression matrices by screening against GTEx healthy tissue data and integrating functional insights from LINCS, IDG, MetGENE, and GlyGen. Use this skill when you need to discover novel cell surface targets for precision oncology and characterize the metabolic, regulatory, and druggability profiles of candidate proteins in individual cancer cases."
-homepage: https://workflowhub.eu/workflows/814
+description: This CWL workflow identifies tumor-specific therapeutic targets from patient gene expression matrices by screening against GTEx healthy tissue data and integrating functional insights from LINCS, IDG, MetGENE, and GlyGen. Use this skill when you need to discover novel cell surface targets for precision oncology and characterize the metabolic, regulatory, and druggability profiles of candidate proteins in individual cancer cases.
+homepage: https://playbook-workflow-builder.cloud/
+metadata:
+  docker_image: "N/A"
 ---
-# Use Case 13: Novel Cell Surface Targets for Individual Cancer Patients Analyzed with Common Fund Datasets
+
+# use-case-13-novel-cell-surface-targets-for-individual-cancer
 
 ## Overview
 

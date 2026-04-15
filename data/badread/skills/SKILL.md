@@ -2,6 +2,8 @@
 name: badread
 description: Badread simulates realistic, imperfect long reads from a reference genome by imitating sequencing errors, artifacts, and quality fluctuations. Use when user asks to generate synthetic Oxford Nanopore or PacBio reads, simulate sequencing artifacts like chimeras and glitches, or stress-test assembly workflows with low-quality data.
 homepage: https://github.com/rrwick/Badread
+metadata:
+  docker_image: "quay.io/biocontainers/badread:0.4.1--pyhdfd78af_0"
 ---
 
 # badread

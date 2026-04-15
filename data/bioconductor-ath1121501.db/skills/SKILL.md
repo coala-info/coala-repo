@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Affymetrix Arabid
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501.db.html
 ---
 
-
 # bioconductor-ath1121501.db
 
 name: bioconductor-ath1121501.db

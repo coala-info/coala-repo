@@ -2,8 +2,9 @@
 name: hunspell-de-med
 description: This tool provides a German dictionary that combines standard vocabulary with medical terminology for spell-checking. Use when user asks to install a German medical dictionary, check medical documents for spelling, or replace the default German dictionary with medical terms.
 homepage: https://github.com/glutanimate/hunspell-de-med-workaround
+metadata:
+  docker_image: "biocontainers/hunspell-de-med:v20160103-3-deb_cv1"
 ---
-
 
 # hunspell-de-med
 

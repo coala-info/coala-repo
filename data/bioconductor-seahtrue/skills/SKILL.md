@@ -4,7 +4,6 @@ description: This tool analyzes Agilent Seahorse Extracellular Flux data by tran
 homepage: https://bioconductor.org/packages/release/bioc/html/seahtrue.html
 ---
 
-
 # bioconductor-seahtrue
 
 name: bioconductor-seahtrue

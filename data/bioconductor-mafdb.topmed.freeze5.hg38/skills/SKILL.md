@@ -4,7 +4,6 @@ description: This package provides minor allele frequency data from the NHLBI TO
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.TOPMed.freeze5.hg38.html
 ---
 
-
 # bioconductor-mafdb.topmed.freeze5.hg38
 
 name: bioconductor-mafdb.topmed.freeze5.hg38

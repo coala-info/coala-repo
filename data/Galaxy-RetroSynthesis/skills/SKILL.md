@@ -1,10 +1,12 @@
 ---
 name: retrosynthesis
-description: "This metabolic engineering workflow takes a target molecule and utilizes RetroPath2.0, RP2paths, and RRules Parser to predict biosynthetic pathways from an SBML model. Use this skill when you need to identify potential enzymatic reaction sequences and metabolic routes for the microbial production of a specific target compound."
-homepage: https://workflowhub.eu/workflows/2004
+description: This metabolic engineering workflow takes a target molecule and utilizes RetroPath2.0, RP2paths, and RRules Parser to predict biosynthetic pathways from an SBML model. Use this skill when you need to identify potential enzymatic reaction sequences and metabolic routes for the microbial production of a specific target compound.
+homepage: https://www.micalis.fr/equipe/galaxy-synbiocad/
+metadata:
+  docker_image: "N/A"
 ---
 
-# RetroSynthesis
+# retrosynthesis
 
 ## Overview
 

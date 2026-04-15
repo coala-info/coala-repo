@@ -2,8 +2,9 @@
 name: nspdk
 description: NSPDK extracts structural features from molecular graphs by decomposing SMILES strings into high-dimensional numerical descriptors. Use when user asks to extract molecular features, configure feature complexity, or convert SMILES strings into bit-space descriptors.
 homepage: https://github.com/aigulkhkmv/nspdk-features
+metadata:
+  docker_image: "quay.io/biocontainers/nspdk:9.2--0"
 ---
-
 
 # nspdk
 

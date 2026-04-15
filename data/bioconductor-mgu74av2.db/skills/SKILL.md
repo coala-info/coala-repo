@@ -4,7 +4,6 @@ description: This package provides annotation mappings for the Affymetrix MG-U74
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74av2.db.html
 ---
 
-
 # bioconductor-mgu74av2.db
 
 name: bioconductor-mgu74av2.db

@@ -4,7 +4,6 @@ description: This package generates interactive HTML or PDF reports for visualiz
 homepage: https://bioconductor.org/packages/release/bioc/html/regionReport.html
 ---
 
-
 # bioconductor-regionreport
 
 ## Overview

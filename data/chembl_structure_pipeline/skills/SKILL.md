@@ -2,8 +2,9 @@
 name: chembl_structure_pipeline
 description: This tool curates and standardizes chemical structures according to the protocols used by the ChEMBL database. Use when user asks to standardize functional groups, strip salts or solvents to extract parent molecules, and identify structural quality issues or valency errors.
 homepage: https://github.com/chembl/ChEMBL_Structure_Pipeline
+metadata:
+  docker_image: "quay.io/biocontainers/chembl_structure_pipeline:1.0.0--2"
 ---
-
 
 # chembl_structure_pipeline
 

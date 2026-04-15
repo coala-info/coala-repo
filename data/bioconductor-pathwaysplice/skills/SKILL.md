@@ -4,7 +4,6 @@ description: PathwaySplice performs pathway enrichment analysis for alternative 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/PathwaySplice.html
 ---
 
-
 # bioconductor-pathwaysplice
 
 name: bioconductor-pathwaysplice

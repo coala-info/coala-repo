@@ -2,8 +2,9 @@
 name: quatradis
 description: QuaTradis is a bioinformatics pipeline for processing transposon insertion libraries and performing comparative analysis of gene essentiality. Use when user asks to process raw FASTQ data into insertion plots, identify essential genes, or compare transposon datasets across different experimental conditions.
 homepage: https://github.com/quadram-institute-bioscience/QuaTradis
+metadata:
+  docker_image: "quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1"
 ---
-
 
 # quatradis
 

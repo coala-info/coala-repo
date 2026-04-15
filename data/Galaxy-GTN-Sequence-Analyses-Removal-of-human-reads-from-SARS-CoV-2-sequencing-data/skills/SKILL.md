@@ -1,10 +1,12 @@
 ---
 name: gtn-sequence-analyses-removal-of-human-reads-from-sars-cov-2
-description: "This Galaxy workflow processes SARS-CoV-2 sequencing data collections by trimming adapters with Trimmomatic and filtering out host sequences using BWA-MEM, Samtools, and seqtk. Use this skill when you need to decontaminate viral sequencing samples by removing human host reads to comply with privacy regulations or focus exclusively on pathogen genomics."
-homepage: https://workflowhub.eu/workflows/1653
+description: This Galaxy workflow processes SARS-CoV-2 sequencing data collections by trimming adapters with Trimmomatic and filtering out host sequences using BWA-MEM, Samtools, and seqtk. Use this skill when you need to decontaminate viral sequencing samples by removing human host reads to comply with privacy regulations or focus exclusively on pathogen genomics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN - Sequence Analyses - Removal of human reads from SARS-CoV-2 sequencing data
+# gtn-sequence-analyses-removal-of-human-reads-from-sars-cov-2
 
 ## Overview
 

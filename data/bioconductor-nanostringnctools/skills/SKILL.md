@@ -4,7 +4,6 @@ description: This tool provides a framework for importing, analyzing, and normal
 homepage: https://bioconductor.org/packages/release/bioc/html/NanoStringNCTools.html
 ---
 
-
 # bioconductor-nanostringnctools
 
 name: bioconductor-nanostringnctools

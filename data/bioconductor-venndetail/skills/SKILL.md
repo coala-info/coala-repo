@@ -4,7 +4,6 @@ description: VennDetail is an R package for visualizing multi-set intersections 
 homepage: https://bioconductor.org/packages/release/bioc/html/VennDetail.html
 ---
 
-
 # bioconductor-venndetail
 
 ## Overview

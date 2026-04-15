@@ -1,10 +1,12 @@
 ---
 name: gbif-data-quality-check-and-filtering-workflow-feb-2020
-description: "This ecology workflow retrieves species occurrence data from GBIF using the spocc tool and performs quality filtering, statistical summarization, and geospatial format conversion using OGR2ogr. Use this skill when you need to clean raw biodiversity records by removing low-quality observations and preparing standardized spatial datasets for species distribution modeling or conservation planning."
-homepage: https://workflowhub.eu/workflows/404
+description: This ecology workflow retrieves species occurrence data from GBIF using the spocc tool and performs quality filtering, statistical summarization, and geospatial format conversion using OGR2ogr. Use this skill when you need to clean raw biodiversity records by removing low-quality observations and preparing standardized spatial datasets for species distribution modeling or conservation planning.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# GBIF data Quality check and filtering workflow Feb-2020
+# gbif-data-quality-check-and-filtering-workflow-feb-2020
 
 ## Overview
 

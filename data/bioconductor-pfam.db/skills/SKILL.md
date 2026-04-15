@@ -4,7 +4,6 @@ description: This package provides access to PFAM protein family annotation data
 homepage: https://bioconductor.org/packages/release/data/annotation/html/PFAM.db.html
 ---
 
-
 # bioconductor-pfam.db
 
 name: bioconductor-pfam.db

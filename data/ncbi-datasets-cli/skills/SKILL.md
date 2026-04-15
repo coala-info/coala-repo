@@ -2,8 +2,9 @@
 name: ncbi-datasets-cli
 description: The ncbi-datasets-cli tool automates the retrieval, filtering, and organization of genome assemblies and metadata from NCBI databases. Use when user asks to download reference genomes, filter assemblies by quality or annotation status, and retrieve taxonomic reports for specific organisms.
 homepage: https://github.com/metagenlab/assembly_finder
+metadata:
+  docker_image: "quay.io/biocontainers/ncbi-datasets-cli:14.26.0"
 ---
-
 
 # ncbi-datasets-cli
 

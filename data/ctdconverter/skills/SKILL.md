@@ -2,8 +2,9 @@
 name: ctdconverter
 description: The ctdconverter tool transforms CTD files into functional wrappers for workflow platforms like Galaxy. Use when user asks to convert CTD files to Galaxy XML wrappers, perform batch conversion of tool definitions, or generate tool configuration files.
 homepage: https://github.com/WorkflowConversion/CTDConverter
+metadata:
+  docker_image: "biocontainers/ctdconverter:v2.0-4-deb_cv1"
 ---
-
 
 # ctdconverter
 

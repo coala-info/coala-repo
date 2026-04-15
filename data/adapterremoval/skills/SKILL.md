@@ -1,9 +1,10 @@
 ---
 name: adapterremoval
-description: "AdapterRemoval pre-processes raw sequencing data by removing adapter sequences, trimming low-quality bases, and merging overlapping paired-end reads. Use when user asks to trim adapters, merge overlapping reads, perform quality filtering, identify unknown adapters, or demultiplex samples using barcodes."
+description: AdapterRemoval pre-processes raw sequencing data by removing adapter sequences, trimming low-quality bases, and merging overlapping paired-end reads. Use when user asks to trim adapters, merge overlapping reads, perform quality filtering, identify unknown adapters, or demultiplex samples using barcodes.
 homepage: https://github.com/MikkelSchubert/adapterremoval
+metadata:
+  docker_image: "quay.io/biocontainers/adapterremoval:2.3.4--pl5321haf24da9_2"
 ---
-
 
 # adapterremoval
 

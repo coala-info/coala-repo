@@ -4,7 +4,6 @@ description: This tool performs hierarchical inference for genome-wide associati
 homepage: https://bioconductor.org/packages/release/bioc/html/hierinf.html
 ---
 
-
 # bioconductor-hierinf
 
 name: bioconductor-hierinf

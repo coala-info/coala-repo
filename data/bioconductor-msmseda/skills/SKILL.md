@@ -4,7 +4,6 @@ description: This tool performs exploratory data analysis and batch effect corre
 homepage: https://bioconductor.org/packages/release/bioc/html/msmsEDA.html
 ---
 
-
 # bioconductor-msmseda
 
 name: bioconductor-msmseda

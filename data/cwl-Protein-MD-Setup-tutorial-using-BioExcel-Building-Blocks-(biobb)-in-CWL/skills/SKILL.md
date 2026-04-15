@@ -1,9 +1,12 @@
 ---
 name: protein-md-setup-tutorial-using-bioexcel-building-blocks-bio
-description: "This CWL workflow automates the preparation of protein structures for molecular dynamics simulations by fetching PDB files and performing system setup, solvation, and energy minimization using the BioExcel Building Blocks library. Use this skill when you need to establish a refined, solvated, and energetically stable protein system ready for studying molecular behavior and conformational dynamics."
-homepage: https://workflowhub.eu/workflows/29
+description: This CWL workflow automates the preparation of protein structures for molecular dynamics simulations by fetching PDB files and performing system setup, solvation, and energy minimization using the BioExcel Building Blocks library. Use this skill when you need to establish a refined, solvated, and energetically stable protein system ready for studying molecular behavior and conformational dynamics.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in CWL
+
+# protein-md-setup-tutorial-using-bioexcel-building-blocks-bio
 
 ## Overview
 

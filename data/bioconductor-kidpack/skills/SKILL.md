@@ -4,7 +4,6 @@ description: This package provides gene expression data and metadata from renal 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/kidpack.html
 ---
 
-
 # bioconductor-kidpack
 
 name: bioconductor-kidpack

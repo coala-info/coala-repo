@@ -2,8 +2,9 @@
 name: vinalc
 description: VinaLC performs parallelized molecular docking for high-throughput virtual screening. Use when user asks to prepare input files for docking, configure docking parameters, or execute high-throughput molecular docking.
 homepage: https://github.com/XiaohuaZhangLLNL/VinaLC
+metadata:
+  docker_image: "quay.io/biocontainers/vinalc:1.4.2--h01b65b2_0"
 ---
-
 
 # vinalc
 

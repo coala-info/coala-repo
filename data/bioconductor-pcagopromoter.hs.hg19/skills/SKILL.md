@@ -4,7 +4,6 @@ description: This data package provides promoter sequences and transcription fac
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/pcaGoPromoter.Hs.hg19.html
 ---
 
-
 # bioconductor-pcagopromoter.hs.hg19
 
 name: bioconductor-pcagopromoter.hs.hg19

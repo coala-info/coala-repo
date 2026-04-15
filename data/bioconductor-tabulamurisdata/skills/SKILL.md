@@ -4,7 +4,6 @@ description: This package provides streamlined access to single-cell RNA-seq dat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TabulaMurisData.html
 ---
 
-
 # bioconductor-tabulamurisdata
 
 name: bioconductor-tabulamurisdata

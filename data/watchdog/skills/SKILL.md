@@ -2,8 +2,9 @@
 name: watchdog
 description: Watchdog observes and reacts to filesystem changes. Use when user asks to log file activity, run commands on file changes, auto-run tests, or refresh builds.
 homepage: https://github.com/gorakhargosh/watchdog
+metadata:
+  docker_image: "quay.io/biocontainers/watchdog:0.8.3--py36_0"
 ---
-
 
 # watchdog
 

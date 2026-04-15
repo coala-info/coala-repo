@@ -4,7 +4,6 @@ description: This tool identifies differential translational activity from genom
 homepage: https://bioconductor.org/packages/release/bioc/html/anota.html
 ---
 
-
 # bioconductor-anota
 
 name: bioconductor-anota

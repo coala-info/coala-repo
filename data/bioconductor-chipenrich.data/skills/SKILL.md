@@ -4,7 +4,6 @@ description: This package provides genomic annotations and data structures requi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/chipenrich.data.html
 ---
 
-
 # bioconductor-chipenrich.data
 
 name: bioconductor-chipenrich.data

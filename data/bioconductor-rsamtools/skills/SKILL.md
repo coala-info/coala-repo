@@ -4,7 +4,6 @@ description: This package provides an R interface for manipulating and importing
 homepage: https://bioconductor.org/packages/release/bioc/html/Rsamtools.html
 ---
 
-
 # bioconductor-rsamtools
 
 name: bioconductor-rsamtools

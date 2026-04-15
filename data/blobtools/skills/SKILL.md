@@ -2,6 +2,8 @@
 name: blobtools
 description: BlobTools is a suite for screening genome assemblies to identify and remove contaminants by integrating sequence information, read coverage, and taxonomic assignments. Use when user asks to create a BlobDB, visualize assembly statistics through BlobPlots, assign taxonomy to scaffolds, or filter non-target DNA from genomic data.
 homepage: https://blobtools.readme.io/docs/what-is-blobtools
+metadata:
+  docker_image: "quay.io/biocontainers/blobtools:1.1.1--py_1"
 ---
 
 # blobtools

@@ -4,7 +4,6 @@ description: This package provides the full 1000 Genomes Project Phase 2 human r
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.1000genomes.hs37d5.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.1000genomes.hs37d5
 
 name: bioconductor-bsgenome.hsapiens.1000genomes.hs37d5

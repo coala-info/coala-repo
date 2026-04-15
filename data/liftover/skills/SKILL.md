@@ -2,8 +2,9 @@
 name: liftover
 description: Liftover maps genomic point coordinates from one reference assembly to another using a high-performance C++ backend. Use when user asks to convert coordinates between assemblies, fetch UCSC chain files, or perform cross-assembly genomic data normalization.
 homepage: https://github.com/jeremymcrae/liftover
+metadata:
+  docker_image: "quay.io/biocontainers/liftover:1.3.3--py310h275bdba_0"
 ---
-
 
 # liftover
 

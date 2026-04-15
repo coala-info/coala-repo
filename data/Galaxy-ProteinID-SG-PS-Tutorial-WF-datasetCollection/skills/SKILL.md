@@ -1,10 +1,12 @@
 ---
 name: proteinid-sg-ps-tutorial-wf-datasetcollection
-description: "This proteomics workflow processes a collection of mzML files and a protein FASTA database using PeakPickerHiRes, SearchGUI, and PeptideShaker to identify peptides and proteins. Use this skill when you need to perform high-throughput protein identification across multiple mass spectrometry datasets using standard search engines and post-processing tools."
-homepage: https://workflowhub.eu/workflows/1399
+description: This proteomics workflow processes a collection of mzML files and a protein FASTA database using PeakPickerHiRes, SearchGUI, and PeptideShaker to identify peptides and proteins. Use this skill when you need to perform high-throughput protein identification across multiple mass spectrometry datasets using standard search engines and post-processing tools.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# ProteinID SG PS Tutorial WF datasetCollection
+# proteinid-sg-ps-tutorial-wf-datasetcollection
 
 ## Overview
 

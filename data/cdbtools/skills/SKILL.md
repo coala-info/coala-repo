@@ -1,9 +1,10 @@
 ---
 name: cdbtools
-description: "cdbtools provides utilities for creating, querying, and dumping high-performance constant databases. Use when user asks to create a database from structured text, retrieve values by key with support for duplicates, or deconstruct a database into a portable format."
+description: cdbtools provides utilities for creating, querying, and dumping high-performance constant databases. Use when user asks to create a database from structured text, retrieve values by key with support for duplicates, or deconstruct a database into a portable format.
 homepage: https://github.com/philpennock/cdbtools
+metadata:
+  docker_image: "quay.io/biocontainers/cdbtools:0.99--h077b44d_12"
 ---
-
 
 # cdbtools
 

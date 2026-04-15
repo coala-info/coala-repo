@@ -1,10 +1,12 @@
 ---
 name: rna-rna-interactome-analysis-using-clan
-description: "This workflow performs RNA-RNA interactome analysis on FASTQ reads and reference sequences using the ChiRA tools suite and the CLAN aligner. Use this skill when you need to identify and quantify chimeric RNA-RNA interactions from high-throughput sequencing data to characterize post-transcriptional regulatory networks."
-homepage: https://workflowhub.eu/workflows/67
+description: This workflow performs RNA-RNA interactome analysis on FASTQ reads and reference sequences using the ChiRA tools suite and the CLAN aligner. Use this skill when you need to identify and quantify chimeric RNA-RNA interactions from high-throughput sequencing data to characterize post-transcriptional regulatory networks.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA-RNA interactome analysis using CLAN
+# rna-rna-interactome-analysis-using-clan
 
 ## Overview
 

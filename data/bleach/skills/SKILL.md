@@ -1,9 +1,10 @@
 ---
 name: bleach
-description: "BleachBit is a cleanup utility that removes unnecessary files to free up storage and securely deletes data to protect user privacy. Use when user asks to clean system files, shred sensitive data, preview disk space recovery, or list available cleaners."
+description: BleachBit is a cleanup utility that removes unnecessary files to free up storage and securely deletes data to protect user privacy. Use when user asks to clean system files, shred sensitive data, preview disk space recovery, or list available cleaners.
 homepage: https://github.com/bleachbit/bleachbit
+metadata:
+  docker_image: "quay.io/biocontainers/bleach:1.4.2--py35_0"
 ---
-
 
 # bleach
 

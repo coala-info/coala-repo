@@ -2,8 +2,9 @@
 name: ucsc-autosql
 description: The ucsc-autosql tool generates SQL and C code from an AutoSql definition file. Use when user asks to generate SQL for a database table, create C code for data structures, define a database schema, or synchronize database schemas with application code.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-autosql:482--h0b57e2e_0"
 ---
-
 
 # ucsc-autosql
 

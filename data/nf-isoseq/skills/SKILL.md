@@ -4,6 +4,8 @@ description: This pipeline performs gene and isoform annotation from PacBio Iso-
 homepage: https://github.com/nf-core/isoseq
 ---
 
+# isoseq
+
 ## Overview
 The pipeline provides a best-practice analysis for gene and transcript annotation using PacBio Iso-Seq long-read sequencing data. It addresses the complexity of long-read processing by handling the transition from raw subreads to high-quality, non-chimeric circular consensus sequences (CCS) and subsequent mapping to a reference genome.
 

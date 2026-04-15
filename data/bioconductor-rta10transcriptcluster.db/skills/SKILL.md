@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rat Transc
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rta10transcriptcluster.db.html
 ---
 
-
 # bioconductor-rta10transcriptcluster.db
 
 name: bioconductor-rta10transcriptcluster.db

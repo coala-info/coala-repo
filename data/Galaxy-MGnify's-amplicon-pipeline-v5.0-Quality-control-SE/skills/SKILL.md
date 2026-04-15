@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-quality-control-se
-description: "This metagenomics workflow processes single-end amplicon reads through a quality control pipeline using FastQC, Trimmomatic, PRINSEQ, and MultiQC to generate cleaned FASTA sequences and summary reports. Use this skill when you need to remove adapter sequences, trim low-quality bases, and filter out short or ambiguous reads from single-end environmental sequencing datasets to ensure high-quality input for taxonomic classification."
-homepage: https://workflowhub.eu/workflows/1850
+description: This metagenomics workflow processes single-end amplicon reads through a quality control pipeline using FastQC, Trimmomatic, PRINSEQ, and MultiQC to generate cleaned FASTA sequences and summary reports. Use this skill when you need to remove adapter sequences, trim low-quality bases, and filter out short or ambiguous reads from single-end environmental sequencing datasets to ensure high-quality input for taxonomic classification.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - Quality control SE
+# mgnifys-amplicon-pipeline-v50-quality-control-se
 
 ## Overview
 

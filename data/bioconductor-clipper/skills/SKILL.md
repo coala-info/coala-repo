@@ -4,7 +4,6 @@ description: The bioconductor-clipper package performs topological pathway analy
 homepage: https://bioconductor.org/packages/release/bioc/html/clipper.html
 ---
 
-
 # bioconductor-clipper
 
 ## Overview

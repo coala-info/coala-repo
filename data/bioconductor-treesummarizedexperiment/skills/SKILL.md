@@ -4,7 +4,6 @@ description: The TreeSummarizedExperiment class integrates hierarchical tree str
 homepage: https://bioconductor.org/packages/release/bioc/html/TreeSummarizedExperiment.html
 ---
 
-
 # bioconductor-treesummarizedexperiment
 
 ## Overview

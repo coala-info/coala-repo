@@ -2,6 +2,8 @@
 name: mlstdb
 description: mlstdb manages local MLST databases by automating OAuth2 authentication, downloading curated schemes, and compiling them into BLAST databases. Use when user asks to connect to MLST providers, update local schemes, or purge specific alleles and sequence types from the database.
 homepage: https://github.com/himal2007/mlstdb
+metadata:
+  docker_image: "quay.io/biocontainers/mlstdb:0.2.0--pyh7e72e81_0"
 ---
 
 # mlstdb

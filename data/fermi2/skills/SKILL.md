@@ -1,7 +1,9 @@
 ---
 name: fermi2
-description: "fermi2 explores FMD-indexes as graphs for de novo assembly and sequence analysis. Use when user asks to explore FMD-indexes, analyze assembly graphs, or perform graph-based sequence analysis."
+description: fermi2 explores FMD-indexes as graphs for de novo assembly and sequence analysis. Use when user asks to explore FMD-indexes, analyze assembly graphs, or perform graph-based sequence analysis.
 homepage: https://github.com/lh3/fermi2
+metadata:
+  docker_image: "quay.io/biocontainers/fermi2:r193--h577a1d6_10"
 ---
 
 # fermi2

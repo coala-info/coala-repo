@@ -4,7 +4,6 @@ description: This package provides the complete genome sequences for the hg18 bu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg18.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg18
 
 ## Overview

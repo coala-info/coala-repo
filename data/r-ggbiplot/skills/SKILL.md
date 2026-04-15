@@ -4,7 +4,6 @@ description: This tool creates ggplot2-based biplots and scree plots to visualiz
 homepage: https://cran.r-project.org/web/packages/ggbiplot/index.html
 ---
 
-
 # r-ggbiplot
 
 name: r-ggbiplot

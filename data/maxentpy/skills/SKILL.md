@@ -1,9 +1,10 @@
 ---
 name: maxentpy
-description: "maxentpy scores DNA or RNA sequences to evaluate the strength of 5' and 3' splice sites using the MaxEntScan algorithm. Use when user asks to score splice sites, quantify the impact of mutations on splicing, or scan sequences for potential splicing signals."
+description: maxentpy scores DNA or RNA sequences to evaluate the strength of 5' and 3' splice sites using the MaxEntScan algorithm. Use when user asks to score splice sites, quantify the impact of mutations on splicing, or scan sequences for potential splicing signals.
 homepage: https://github.com/kepbod/maxentpy
+metadata:
+  docker_image: "quay.io/biocontainers/maxentpy:0.02--py310h1425a21_1"
 ---
-
 
 # maxentpy
 

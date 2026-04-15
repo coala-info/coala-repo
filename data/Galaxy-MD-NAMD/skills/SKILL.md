@@ -1,10 +1,12 @@
 ---
 name: md-namd
-description: "This Galaxy workflow performs molecular dynamics simulations in the computational chemistry domain using NAMD, processing PSF and CRD files through system setup, energy minimization, and NVT and NPT equilibration stages. Use this skill when you need to investigate the conformational dynamics and thermodynamic stability of biomolecular systems under specific temperature and pressure ensembles."
-homepage: https://workflowhub.eu/workflows/1701
+description: This Galaxy workflow performs molecular dynamics simulations in the computational chemistry domain using NAMD, processing PSF and CRD files through system setup, energy minimization, and NVT and NPT equilibration stages. Use this skill when you need to investigate the conformational dynamics and thermodynamic stability of biomolecular systems under specific temperature and pressure ensembles.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MD NAMD
+# md-namd
 
 ## Overview
 

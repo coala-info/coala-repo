@@ -2,8 +2,9 @@
 name: crux-toolkit
 description: The Crux toolkit is a unified command-line interface for proteomics informatics that identifies peptides and quantifies proteins from raw mass spectra. Use when user asks to index protein databases, search MS2 spectra using Tide or Comet, calculate false discovery rates with Percolator, or perform label-free protein quantification.
 homepage: http://crux.ms
+metadata:
+  docker_image: "quay.io/biocontainers/crux-toolkit:4.2--h9ee0642_0"
 ---
-
 
 # crux-toolkit
 

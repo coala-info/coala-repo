@@ -4,7 +4,6 @@ description: This package provides annotation data for the Illumina Human Whole-
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanWGDASLv3.db.html
 ---
 
-
 # bioconductor-illuminahumanwgdaslv3.db
 
 name: bioconductor-illuminahumanwgdaslv3.db

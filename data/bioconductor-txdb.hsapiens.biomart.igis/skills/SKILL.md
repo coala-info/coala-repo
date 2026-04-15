@@ -4,7 +4,6 @@ description: This package provides a TxDb object containing Homo sapiens genome 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Hsapiens.BioMart.igis.html
 ---
 
-
 # bioconductor-txdb.hsapiens.biomart.igis
 
 name: bioconductor-txdb.hsapiens.biomart.igis

@@ -2,8 +2,9 @@
 name: microview
 description: MicroView generates interactive HTML reports and dashboards from taxonomic classification data. Use when user asks to create a summary report from Kraken or Kaiju results, visualize taxonomic data, or perform grouped analysis using a metadata table.
 homepage: https://github.com/jvfe/microview
+metadata:
+  docker_image: "quay.io/biocontainers/microview:0.11.0--py312h031d066_0"
 ---
-
 
 # microview
 

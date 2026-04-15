@@ -4,7 +4,6 @@ description: The r-anndata package provides an R interface to the Python anndata
 homepage: https://cloud.r-project.org/web/packages/anndata/index.html
 ---
 
-
 # r-anndata
 
 name: r-anndata

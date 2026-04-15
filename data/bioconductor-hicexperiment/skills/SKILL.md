@@ -4,7 +4,6 @@ description: This package provides a standardized Bioconductor interface for imp
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCExperiment.html
 ---
 
-
 # bioconductor-hicexperiment
 
 name: bioconductor-hicexperiment

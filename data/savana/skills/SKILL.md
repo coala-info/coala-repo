@@ -1,7 +1,9 @@
 ---
 name: savana
-description: "SAVANA is a somatic structural variant caller and copy number aberration analyzer optimized for long-read sequencing data. Use when user asks to detect structural variations, identify copy number aberrations, estimate tumor purity, or perform tumor-only somatic variant calling."
+description: SAVANA is a somatic structural variant caller and copy number aberration analyzer optimized for long-read sequencing data. Use when user asks to detect structural variations, identify copy number aberrations, estimate tumor purity, or perform tumor-only somatic variant calling.
 homepage: https://github.com/cortes-ciriano-lab/savana
+metadata:
+  docker_image: "quay.io/biocontainers/savana:1.3.6--pyhdfd78af_0"
 ---
 
 # savana

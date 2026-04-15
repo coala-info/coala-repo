@@ -4,7 +4,6 @@ description: RLSeq provides a standardized framework for the quality control and
 homepage: https://bioconductor.org/packages/3.14/bioc/html/RLSeq.html
 ---
 
-
 # bioconductor-rlseq
 
 ## Overview

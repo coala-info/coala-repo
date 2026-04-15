@@ -1,7 +1,9 @@
 ---
 name: sgcocaller
-description: "This tool constructs personalized haplotypes and calls crossover events in single-cell DNA sequencing data from gametes. Use when user asks to analyze single-cell DNA sequencing data from gametes to identify haplotypes and crossover events."
+description: This tool constructs personalized haplotypes and calls crossover events in single-cell DNA sequencing data from gametes. Use when user asks to analyze single-cell DNA sequencing data from gametes to identify haplotypes and crossover events.
 homepage: https://gitlab.svi.edu.au/biocellgen-public/sgcocaller
+metadata:
+  docker_image: "quay.io/biocontainers/sgcocaller:0.3.9--hda81887_2"
 ---
 
 # sgcocaller

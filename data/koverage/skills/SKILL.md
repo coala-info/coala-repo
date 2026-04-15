@@ -1,7 +1,9 @@
 ---
 name: koverage
-description: "Koverage generates coverage statistics from sequencing reads and reference assemblies using mapping or kmer-based methods. Use when user asks to calculate assembly coverage, estimate abundance in metagenomic datasets, or generate read alignment statistics."
+description: Koverage generates coverage statistics from sequencing reads and reference assemblies using mapping or kmer-based methods. Use when user asks to calculate assembly coverage, estimate abundance in metagenomic datasets, or generate read alignment statistics.
 homepage: https://github.com/beardymcjohnface/Koverage
+metadata:
+  docker_image: "quay.io/biocontainers/koverage:0.1.11--pyhdfd78af_0"
 ---
 
 # koverage

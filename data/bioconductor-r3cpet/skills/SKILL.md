@@ -4,7 +4,6 @@ description: R3CPET is an R package that uses a non-parametric Bayesian model to
 homepage: https://bioconductor.org/packages/release/bioc/html/R3CPET.html
 ---
 
-
 # bioconductor-r3cpet
 
 ## Overview

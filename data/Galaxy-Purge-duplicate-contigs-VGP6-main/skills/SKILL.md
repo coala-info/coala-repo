@@ -1,10 +1,12 @@
 ---
 name: purge-duplicate-contigs-from-a-diploid-assembly-vgp6
-description: "This Galaxy workflow removes haplotypic and overlap duplications from diploid genome assemblies using purge_dups, processing primary and alternate haplotypes with HiFi reads, k-mer databases, and GenomeScope parameters. Use this skill when you need to refine a diploid assembly by eliminating redundant contigs to improve assembly contiguity and ensure accurate gene representation across both haplotypes."
-homepage: https://workflowhub.eu/workflows/633
+description: This Galaxy workflow removes haplotypic and overlap duplications from diploid genome assemblies using purge_dups, processing primary and alternate haplotypes with HiFi reads, k-mer databases, and GenomeScope parameters. Use this skill when you need to refine a diploid assembly by eliminating redundant contigs to improve assembly contiguity and ensure accurate gene representation across both haplotypes.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Purge duplicate contigs from a diploid assembly VGP6
+# purge-duplicate-contigs-from-a-diploid-assembly-vgp6
 
 ## Overview
 

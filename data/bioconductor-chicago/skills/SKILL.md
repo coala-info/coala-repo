@@ -4,7 +4,6 @@ description: bioconductor-chicago performs statistical analysis of Capture Hi-C 
 homepage: https://bioconductor.org/packages/release/bioc/html/Chicago.html
 ---
 
-
 # bioconductor-chicago
 
 name: bioconductor-chicago

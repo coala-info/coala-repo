@@ -4,7 +4,6 @@ description: This tool solves nonlinear least-squares problems in R using the Le
 homepage: https://cloud.r-project.org/web/packages/minpack.lm/index.html
 ---
 
-
 # r-minpack.lm
 
 name: r-minpack.lm

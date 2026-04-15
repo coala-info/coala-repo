@@ -4,7 +4,6 @@ description: The r-venndiagram package generates high-resolution, customizable V
 homepage: https://cran.r-project.org/web/packages/venndiagram/index.html
 ---
 
-
 # r-venndiagram
 
 ## Overview

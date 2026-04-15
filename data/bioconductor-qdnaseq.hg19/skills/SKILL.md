@@ -4,7 +4,6 @@ description: This package provides pre-calculated bin annotations for the human 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/QDNAseq.hg19.html
 ---
 
-
 # bioconductor-qdnaseq.hg19
 
 name: bioconductor-qdnaseq.hg19

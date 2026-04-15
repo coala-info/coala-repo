@@ -2,8 +2,9 @@
 name: circulocov
 description: CirculoCov calculates and visualizes read mapping coverage for circular sequences by padding reference ends to eliminate edge effects. Use when user asks to analyze circular genome coverage, map reads to circular contigs, or generate depth plots for bacterial assemblies.
 homepage: https://github.com/erinyoung/CirculoCov
+metadata:
+  docker_image: "quay.io/biocontainers/circulocov:0.1.20240104--pyhdfd78af_0"
 ---
-
 
 # circulocov
 

@@ -4,7 +4,6 @@ description: This tool intersects genomic regions with genomic features to provi
 homepage: https://bioconductor.org/packages/release/bioc/html/annotatr.html
 ---
 
-
 # bioconductor-annotatr
 
 name: bioconductor-annotatr

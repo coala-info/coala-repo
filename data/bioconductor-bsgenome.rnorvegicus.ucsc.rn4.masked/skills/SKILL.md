@@ -1,9 +1,8 @@
 ---
 name: bioconductor-bsgenome.rnorvegicus.ucsc.rn4.masked
-description: "This package provides a masked version of the Rattus norvegicus (rn4) genome for use in Bioconductor. Use when user asks to access the rn4 rat genome with assembly gap, ambiguity, RepeatMasker, or Tandem Repeats Finder masks applied."
+description: This package provides a masked version of the Rattus norvegicus (rn4) genome for use in Bioconductor. Use when user asks to access the rn4 rat genome with assembly gap, ambiguity, RepeatMasker, or Tandem Repeats Finder masks applied.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Rnorvegicus.UCSC.rn4.masked.html
 ---
-
 
 # bioconductor-bsgenome.rnorvegicus.ucsc.rn4.masked
 

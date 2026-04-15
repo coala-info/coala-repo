@@ -1,7 +1,9 @@
 ---
 name: feature_extraction
-description: "This imaging workflow processes 2D input images through filtering, thresholding, and label map conversion to extract and filter quantitative features based on user-defined rules. Use this skill when you need to segment objects from microscopy or scientific images and perform automated quantitative analysis of their morphological or intensity-based characteristics."
-homepage: https://workflowhub.eu/workflows/1508
+description: This imaging workflow processes 2D input images through filtering, thresholding, and label map conversion to extract and filter quantitative features based on user-defined rules. Use this skill when you need to segment objects from microscopy or scientific images and perform automated quantitative analysis of their morphological or intensity-based characteristics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # feature_extraction

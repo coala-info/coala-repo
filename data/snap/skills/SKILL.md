@@ -2,8 +2,9 @@
 name: snap
 description: SnapKit is a domain-specific language that simplifies Auto Layout management on Apple platforms through a concise and declarative syntax. Use when user asks to generate layout code, troubleshoot constraint conflicts, update existing UI relationships, or migrate from manual constraint anchors.
 homepage: https://github.com/SnapKit/SnapKit
+metadata:
+  docker_image: "quay.io/biocontainers/snap:2017_03_01--h7b50bb2_0"
 ---
-
 
 # snap
 

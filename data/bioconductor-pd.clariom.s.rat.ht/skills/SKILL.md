@@ -4,7 +4,6 @@ description: This package provides annotation and platform design information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.rat.ht.html
 ---
 
-
 # bioconductor-pd.clariom.s.rat.ht
 
 name: bioconductor-pd.clariom.s.rat.ht

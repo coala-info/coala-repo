@@ -4,7 +4,6 @@ description: This tool assigns stromal and Lehmann properties to breast cancer g
 homepage: https://bioconductor.org/packages/3.8/bioc/html/STROMA4.html
 ---
 
-
 # bioconductor-stroma4
 
 name: bioconductor-stroma4

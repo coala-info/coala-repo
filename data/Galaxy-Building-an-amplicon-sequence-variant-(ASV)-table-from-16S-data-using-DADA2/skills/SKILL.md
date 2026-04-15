@@ -1,10 +1,12 @@
 ---
 name: building-an-amplicon-sequence-variant-asv-table-from-16s-dat
-description: "This microbiome workflow processes raw 16S rRNA sequencing reads into an amplicon sequence variant (ASV) table and taxonomic assignments using the DADA2 pipeline. Use this skill when you need to resolve fine-scale microbial diversity from environmental or clinical samples by filtering sequencing noise and identifying exact biological sequences."
-homepage: https://workflowhub.eu/workflows/1395
+description: This microbiome workflow processes raw 16S rRNA sequencing reads into an amplicon sequence variant (ASV) table and taxonomic assignments using the DADA2 pipeline. Use this skill when you need to resolve fine-scale microbial diversity from environmental or clinical samples by filtering sequencing noise and identifying exact biological sequences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Building an amplicon sequence variant (ASV) table from 16S data using DADA2
+# building-an-amplicon-sequence-variant-asv-table-from-16s-dat
 
 ## Overview
 

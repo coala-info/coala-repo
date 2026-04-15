@@ -4,7 +4,6 @@ description: This tool provides infrastructure for quality control and analysis 
 homepage: https://bioconductor.org/packages/release/bioc/html/GWASTools.html
 ---
 
-
 # bioconductor-gwastools
 
 name: bioconductor-gwastools

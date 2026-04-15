@@ -4,7 +4,6 @@ description: The sparseMatrixStats package provides high-performance implementat
 homepage: https://bioconductor.org/packages/release/bioc/html/sparseMatrixStats.html
 ---
 
-
 # bioconductor-sparsematrixstats
 
 ## Overview

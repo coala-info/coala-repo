@@ -4,7 +4,6 @@ description: This tool performs high-performance multi-pattern string matching i
 homepage: https://cloud.r-project.org/web/packages/AhoCorasickTrie/index.html
 ---
 
-
 # r-ahocorasicktrie
 
 name: r-ahocorasicktrie

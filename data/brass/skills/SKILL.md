@@ -2,8 +2,9 @@
 name: brass
 description: This tool manages the build pipeline and development lifecycle for the Brass Mono monospaced font. Use when user asks to initialize the development environment, build or rebuild fonts from SVG sources, lint fonts for compliance, install fonts locally, or manage versioning and releases.
 homepage: https://github.com/fonsecapeter/brass_mono
+metadata:
+  docker_image: "quay.io/biocontainers/brass:5.1.6--2"
 ---
-
 
 # brass
 

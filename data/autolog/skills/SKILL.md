@@ -2,8 +2,9 @@
 name: autolog
 description: The autolog tool simplifies the process of setting up and managing consistent logging in Python applications. Use when user asks to initialize a logger, configure log levels, capture standard output and error streams, or set up log file rotation.
 homepage: http://noble.gs.washington.edu/~mmh1/software/autolog/
+metadata:
+  docker_image: "quay.io/biocontainers/autolog:0.2--py_0"
 ---
-
 
 # autolog
 

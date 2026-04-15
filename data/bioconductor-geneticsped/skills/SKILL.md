@@ -4,7 +4,6 @@ description: This tool provides comprehensive pedigree management and genetic an
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneticsPed.html
 ---
 
-
 # bioconductor-geneticsped
 
 name: bioconductor-geneticsped

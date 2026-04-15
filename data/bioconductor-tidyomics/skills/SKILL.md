@@ -4,7 +4,6 @@ description: The tidyomics package provides a unified interface for omics data a
 homepage: https://bioconductor.org/packages/release/bioc/html/tidyomics.html
 ---
 
-
 # bioconductor-tidyomics
 
 ## Overview

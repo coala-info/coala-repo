@@ -4,7 +4,6 @@ description: This tool provides a transcript database for the human hg38 genome 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Hsapiens.UCSC.hg38.knownGene.html
 ---
 
-
 # bioconductor-txdb.hsapiens.ucsc.hg38.knowngene
 
 name: bioconductor-txdb.hsapiens.ucsc.hg38.knowngene

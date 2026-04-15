@@ -4,7 +4,6 @@ description: This tool provides functions to perform reproducible parallel forea
 homepage: https://cloud.r-project.org/web/packages/doRNG/index.html
 ---
 
-
 # r-dorng
 
 name: r-dorng

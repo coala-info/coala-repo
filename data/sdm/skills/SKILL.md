@@ -2,8 +2,9 @@
 name: sdm
 description: The sdm tool efficiently demultiplexes and dereplicates biological sequence data. Use when user asks to demultiplex samples, remove primers, filter sequences by quality, extract sequences by header, or combine input files.
 homepage: https://github.com/hildebra/sdm/
+metadata:
+  docker_image: "quay.io/biocontainers/sdm:3.11--h077b44d_0"
 ---
-
 
 # sdm
 

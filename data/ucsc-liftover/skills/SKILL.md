@@ -2,8 +2,9 @@
 name: ucsc-liftover
 description: ucsc-liftover translates genomic features between different assembly coordinates. Use when user asks to lift genomic features between assemblies, update genomic coordinates from an older reference genome, or map coordinates between different species.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-liftover:482--h0b57e2e_0"
 ---
-
 
 # ucsc-liftover
 

@@ -4,7 +4,6 @@ description: This tool fits generalized linear models on large, dispersed datase
 homepage: https://bioconductor.org/packages/release/bioc/html/parglms.html
 ---
 
-
 # bioconductor-parglms
 
 name: bioconductor-parglms

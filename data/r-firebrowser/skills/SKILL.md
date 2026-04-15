@@ -4,7 +4,6 @@ description: This R client provides programmatic access to the Broad Institute's
 homepage: https://cran.r-project.org/web/packages/firebrowser/index.html
 ---
 
-
 # r-firebrowser
 
 name: r-firebrowser

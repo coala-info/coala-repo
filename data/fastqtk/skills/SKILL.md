@@ -2,6 +2,8 @@
 name: fastqtk
 description: fastqtk is a high-efficiency utility for manipulating, trimming, and generating statistics for FASTQ and FASTA files. Use when user asks to interleave or deinterleave paired-end reads, count reads, calculate length statistics, trim sequences, or convert between genomic file formats.
 homepage: https://github.com/ndaniel/fastqtk
+metadata:
+  docker_image: "quay.io/biocontainers/fastqtk:0.28--h5ca1c30_0"
 ---
 
 # fastqtk

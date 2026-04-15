@@ -4,7 +4,6 @@ description: The r-phylosignal package provides tools to quantify, visualize, an
 homepage: https://cran.r-project.org/web/packages/phylosignal/index.html
 ---
 
-
 # r-phylosignal
 
 ## Overview

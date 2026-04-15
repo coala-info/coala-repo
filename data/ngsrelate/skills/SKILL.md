@@ -2,8 +2,9 @@
 name: ngsrelate
 description: ngsrelate infers kinship and inbreeding coefficients from next-generation sequencing data using genotype likelihoods. Use when user asks to estimate relatedness statistics, calculate Jacquard coefficients, or infer kinship from low-coverage VCF or GLF files.
 homepage: https://github.com/ANGSD/NgsRelate
+metadata:
+  docker_image: "quay.io/biocontainers/ngsrelate:2.0--hea85c65_0"
 ---
-
 
 # ngsrelate
 

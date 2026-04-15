@@ -4,7 +4,6 @@ description: SpaNorm normalizes spatial molecular datasets by using generalized 
 homepage: https://bioconductor.org/packages/release/bioc/html/SpaNorm.html
 ---
 
-
 # bioconductor-spanorm
 
 ## Overview

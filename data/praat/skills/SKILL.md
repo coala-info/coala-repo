@@ -4,7 +4,6 @@ description: Praat is a specialized tool for analyzing, synthesizing, and manipu
 homepage: https://github.com/praat/praat.github.io
 ---
 
-
 # praat
 
 ## Overview

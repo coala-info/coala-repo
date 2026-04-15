@@ -4,7 +4,6 @@ description: The IRanges package provides memory-efficient containers and optimi
 homepage: https://bioconductor.org/packages/release/bioc/html/IRanges.html
 ---
 
-
 # bioconductor-iranges
 
 name: bioconductor-iranges

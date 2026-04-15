@@ -2,8 +2,9 @@
 name: clair3-illumina
 description: Clair3-illumina is a variant calling framework that identifies germline variants from Illumina short-read sequencing data using a combination of pileup calling and deep learning. Use when user asks to call germline variants, generate GVCF files, or perform variant calling on high-coverage amplicon data.
 homepage: https://github.com/HKU-BAL/Clair3
+metadata:
+  docker_image: "quay.io/biocontainers/clair3-illumina:2.0.0--ha525c76_0"
 ---
-
 
 # clair3-illumina
 

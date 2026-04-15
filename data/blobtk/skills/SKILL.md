@@ -2,6 +2,8 @@
 name: blobtk
 description: BlobTk is a high-performance toolkit designed to process genome assembly data for quality assessment and contamination identification. Use when user asks to calculate sequencing coverage depth, filter reads based on sequence names, generate assembly visualizations like snail or blob plots, or process taxonomic data.
 homepage: https://github.com/genomehubs/blobtk
+metadata:
+  docker_image: "quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0"
 ---
 
 # blobtk

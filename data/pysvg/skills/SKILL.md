@@ -2,8 +2,9 @@
 name: pysvg
 description: The pysvg tool enables the programmatic creation, modification, and parsing of Scalable Vector Graphics using a Python-based object model. Use when user asks to generate data visualizations, create algorithmic art, draw geometric shapes, or manipulate existing SVG files.
 homepage: http://codeboje.de/pysvg/
+metadata:
+  docker_image: "quay.io/biocontainers/pysvg:0.2.2--py27_0"
 ---
-
 
 # pysvg
 

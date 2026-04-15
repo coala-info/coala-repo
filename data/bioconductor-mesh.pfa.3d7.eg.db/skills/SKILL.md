@@ -4,7 +4,6 @@ description: This package provides mapping between MeSH identifiers and Entrez G
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Pfa.3D7.eg.db.html
 ---
 
-
 # bioconductor-mesh.pfa.3d7.eg.db
 
 name: bioconductor-mesh.pfa.3d7.eg.db

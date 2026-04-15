@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object containing UCSC re
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ptroglodytes.UCSC.panTro6.refGene.html
 ---
 
-
 # bioconductor-txdb.ptroglodytes.ucsc.pantro6.refgene
 
 name: bioconductor-txdb.ptroglodytes.ucsc.pantro6.refgene

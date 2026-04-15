@@ -2,8 +2,9 @@
 name: sim4db
 description: This tool installs and manages the sim4db package from the bioconda channel. Use when user asks to install sim4db.
 homepage: https://anaconda.org/channels/bioconda/packages/sim4db/overview
+metadata:
+  docker_image: "quay.io/biocontainers/sim4db:2008--pl5321h609437b_2"
 ---
-
 
 # sim4db
 

@@ -4,7 +4,6 @@ description: This tool identifies statistically significant spatial co-enrichmen
 homepage: https://bioconductor.org/packages/release/bioc/html/spatzie.html
 ---
 
-
 # bioconductor-spatzie
 
 name: bioconductor-spatzie

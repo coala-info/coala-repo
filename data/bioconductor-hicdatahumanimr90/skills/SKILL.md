@@ -4,7 +4,6 @@ description: This package provides processed Hi-C chromosome conformation captur
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiCDataHumanIMR90.html
 ---
 
-
 # bioconductor-hicdatahumanimr90
 
 name: bioconductor-hicdatahumanimr90

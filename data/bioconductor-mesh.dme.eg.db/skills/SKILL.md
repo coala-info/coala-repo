@@ -4,7 +4,6 @@ description: This package provides mappings between Entrez Gene IDs and Medical 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Dme.eg.db.html
 ---
 
-
 # bioconductor-mesh.dme.eg.db
 
 name: bioconductor-mesh.dme.eg.db

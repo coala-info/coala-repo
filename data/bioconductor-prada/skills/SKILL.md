@@ -4,7 +4,6 @@ description: This tool provides specialized analysis of cell-based fluorescence 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/prada.html
 ---
 
-
 # bioconductor-prada
 
 name: bioconductor-prada

@@ -1,10 +1,12 @@
 ---
 name: from-vcfs-to-snp-distance-matrix
-description: "This evolutionary genomics workflow processes a collection of VCF files and a reference genome using tools like bcftools consensus and snp-dists to generate a multifasta file and a pairwise SNP distance matrix. Use this skill when you need to quantify genetic divergence between bacterial isolates or analyze the transmission dynamics of a pathogen based on single nucleotide polymorphisms."
-homepage: https://workflowhub.eu/workflows/1569
+description: This evolutionary genomics workflow processes a collection of VCF files and a reference genome using tools like bcftools consensus and snp-dists to generate a multifasta file and a pairwise SNP distance matrix. Use this skill when you need to quantify genetic divergence between bacterial isolates or analyze the transmission dynamics of a pathogen based on single nucleotide polymorphisms.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# From VCFs to SNP distance matrix
+# from-vcfs-to-snp-distance-matrix
 
 ## Overview
 

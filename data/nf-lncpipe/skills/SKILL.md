@@ -4,6 +4,8 @@ description: This pipeline performs comprehensive analysis of long non-coding RN
 homepage: https://github.com/nf-core/lncpipe
 ---
 
+# lncpipe
+
 ## Overview
 nf-core/lncpipe is a bioinformatics pipeline designed for the systematic discovery and quantification of long non-coding RNAs (lncRNAs) from transcriptomic data. It automates the transition from raw sequencing reads to processed expression matrices, handling quality control, alignment, and biotype-specific quantification.
 

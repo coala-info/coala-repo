@@ -2,8 +2,9 @@
 name: camitk-actionstatemachine
 description: Manages state machines for actions within the CamiTK framework. Use when user asks to define, load, or execute state machine definitions for CamiTK actions, interact with or control the execution flow of CamiTK actions based on state, or programmatically manage the lifecycle of CamiTK actions through state transitions.
 homepage: https://anaconda.org/channels/bioconda/packages/camitk-actionstatemachine/overview
+metadata:
+  docker_image: "biocontainers/camitk-actionstatemachine:v4.1.2-3-deb_cv1"
 ---
-
 
 # camitk-actionstatemachine
 

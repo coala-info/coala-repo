@@ -2,6 +2,8 @@
 name: repenrich
 description: RepEnrich is a computational pipeline that quantifies repetitive element expression by assigning multi-mapping genomic reads to specific repeat families using a fractional strategy. Use when user asks to quantify transposon activation, analyze repetitive element expression, or assign multi-mapping reads to repeat families like LINEs, SINEs, and LTRs.
 homepage: https://github.com/nskvir/RepEnrich
+metadata:
+  docker_image: "quay.io/biocontainers/repenrich:1.2--py27_1"
 ---
 
 # repenrich

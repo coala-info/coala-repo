@@ -4,6 +4,8 @@ description: This pipeline performs basecalling, demultiplexing, QC, and alignme
 homepage: https://github.com/nf-core/nanoseq
 ---
 
+# nanoseq
+
 ## Overview
 The pipeline provides a comprehensive suite of tools for the analysis of Nanopore sequencing data. It handles the initial processing of raw reads, including optional demultiplexing and cleaning, through to alignment and specialized downstream analyses for both DNA and RNA modalities.
 

@@ -1,9 +1,10 @@
 ---
 name: bamstats
-description: "bamstats extracts detailed mapping metrics and genomic region coverage from BAM files. Use when user asks to generate mapping statistics, compute coverage across genomic features, or calculate insert size distributions."
+description: bamstats extracts detailed mapping metrics and genomic region coverage from BAM files. Use when user asks to generate mapping statistics, compute coverage across genomic features, or calculate insert size distributions.
 homepage: https://github.com/guigolab/bamstats
+metadata:
+  docker_image: "quay.io/biocontainers/bamstats:0.3.5--he881be0_0"
 ---
-
 
 # bamstats
 

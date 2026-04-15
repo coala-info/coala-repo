@@ -1,9 +1,12 @@
 ---
 name: inclusion-body-myositis-active-subnetwork-identification-wor
-description: "This CWL workflow integrates transcriptomic data with STRING protein-protein interactions and miRTarBase regulatory networks to identify disease-specific active subnetworks using the MOGAMUN algorithm. Use this skill when you need to identify significant molecular modules and regulatory drivers associated with Inclusion Body Myositis to better understand its underlying pathological mechanisms."
-homepage: https://workflowhub.eu/workflows/681
+description: This CWL workflow integrates transcriptomic data with STRING protein-protein interactions and miRTarBase regulatory networks to identify disease-specific active subnetworks using the MOGAMUN algorithm. Use this skill when you need to identify significant molecular modules and regulatory drivers associated with Inclusion Body Myositis to better understand its underlying pathological mechanisms.
+homepage: https://www.ejprarediseases.org/
+metadata:
+  docker_image: "N/A"
 ---
-# Inclusion Body Myositis Active Subnetwork Identification Workflow
+
+# inclusion-body-myositis-active-subnetwork-identification-wor
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: botocore
 description: Botocore is a low-level Python library that provides the foundational core functionality for interacting with Amazon Web Services. Use when user asks to manage AWS credentials, perform raw service requests, use paginators or waiters, or minimize memory overhead compared to high-level SDKs.
 homepage: https://github.com/boto/botocore
+metadata:
+  docker_image: "quay.io/biocontainers/botocore:1.3.6--py35_0"
 ---
-
 
 # botocore
 

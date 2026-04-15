@@ -4,7 +4,6 @@ description: The fcoex package generates modular co-expression networks for sing
 homepage: https://bioconductor.org/packages/3.10/bioc/html/fcoex.html
 ---
 
-
 # bioconductor-fcoex
 
 ## Overview

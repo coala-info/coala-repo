@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequences for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.soybean.html
 ---
 
-
 # bioconductor-pd.soybean
 
 name: bioconductor-pd.soybean

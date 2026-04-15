@@ -4,7 +4,6 @@ description: This tool performs graph theoretic association tests to evaluate th
 homepage: https://bioconductor.org/packages/release/bioc/html/GraphAT.html
 ---
 
-
 # bioconductor-graphat
 
 name: bioconductor-graphat

@@ -1,10 +1,12 @@
 ---
 name: vgp-hybrid-scaffolding-with-bionano-optical-maps
-description: "This VGP workflow performs hybrid scaffolding of Hifiasm purged assemblies using Bionano optical maps and PacBio reads, utilizing the Bionano Hybrid Scaffold tool alongside BUSCO and QUAST for quality assessment. Use this skill when you need to increase the contiguity of a vertebrate genome assembly by integrating physical map data to bridge gaps and validate the structural integrity of your scaffolds."
-homepage: https://workflowhub.eu/workflows/322
+description: This VGP workflow performs hybrid scaffolding of Hifiasm purged assemblies using Bionano optical maps and PacBio reads, utilizing the Bionano Hybrid Scaffold tool alongside BUSCO and QUAST for quality assessment. Use this skill when you need to increase the contiguity of a vertebrate genome assembly by integrating physical map data to bridge gaps and validate the structural integrity of your scaffolds.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP hybrid scaffolding with Bionano optical maps
+# vgp-hybrid-scaffolding-with-bionano-optical-maps
 
 ## Overview
 

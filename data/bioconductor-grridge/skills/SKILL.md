@@ -4,7 +4,6 @@ description: The GRridge package performs adaptive group-regularized ridge regre
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GRridge.html
 ---
 
-
 # bioconductor-grridge
 
 ## Overview

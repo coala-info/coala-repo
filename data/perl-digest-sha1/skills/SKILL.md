@@ -2,8 +2,9 @@
 name: perl-digest-sha1
 description: This tool calculates SHA-1 message digests for strings, data streams, and files using the Perl Digest::SHA1 module. Use when user asks to calculate SHA-1 hashes, perform data integrity checks, or generate checksums for files and incremental data streams.
 homepage: http://metacpan.org/pod/Digest::SHA1
+metadata:
+  docker_image: "quay.io/biocontainers/perl-digest-sha1:2.13--pl5321h9948957_8"
 ---
-
 
 # perl-digest-sha1
 

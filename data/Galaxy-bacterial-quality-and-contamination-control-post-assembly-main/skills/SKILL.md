@@ -1,10 +1,12 @@
 ---
 name: post-assembly-quality-control-and-contamination-check-for-ba
-description: "This bacterial genomics workflow processes assembled contigs and optional paired-end reads using Quast, CheckM2, Kraken2, and Bracken to evaluate assembly quality and taxonomic classification. Use this skill when you need to verify the completeness and contamination levels of a bacterial genome assembly while confirming the taxonomic identity and abundance of species within your sample."
-homepage: https://workflowhub.eu/workflows/1882
+description: This bacterial genomics workflow processes assembled contigs and optional paired-end reads using Quast, CheckM2, Kraken2, and Bracken to evaluate assembly quality and taxonomic classification. Use this skill when you need to verify the completeness and contamination levels of a bacterial genome assembly while confirming the taxonomic identity and abundance of species within your sample.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Post-Assembly Quality Control and Contamination Check for Bacterial Genomes
+# post-assembly-quality-control-and-contamination-check-for-ba
 
 ## Overview
 

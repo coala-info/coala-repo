@@ -1,9 +1,8 @@
 ---
 name: bioconductor-musicatk
-description: "bioconductor-musicatk performs comprehensive mutational signature analysis including variant extraction, signature discovery, and exposure prediction across multiple mutation modalities. Use when user asks to extract variants from VCF or MAF files, build mutation count tables, discover de novo signatures using NMF or LDA, predict exposures for known COSMIC signatures, or visualize signature profiles and exposure distributions."
+description: bioconductor-musicatk performs comprehensive mutational signature analysis including variant extraction, signature discovery, and exposure prediction across multiple mutation modalities. Use when user asks to extract variants from VCF or MAF files, build mutation count tables, discover de novo signatures using NMF or LDA, predict exposures for known COSMIC signatures, or visualize signature profiles and exposure distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/musicatk.html
 ---
-
 
 # bioconductor-musicatk
 

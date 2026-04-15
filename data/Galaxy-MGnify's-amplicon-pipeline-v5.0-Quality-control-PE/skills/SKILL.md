@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-quality-control-pe
-description: "This metagenomics workflow performs quality control on paired-end amplicon reads using fastp, SeqPrep, Trimmomatic, and PRINSEQ to filter and merge raw sequence data. Use this skill when you need to eliminate sequencing artifacts, trim low-quality bases, and merge overlapping reads from environmental samples to prepare high-fidelity sequences for downstream taxonomic analysis."
-homepage: https://workflowhub.eu/workflows/1854
+description: This metagenomics workflow performs quality control on paired-end amplicon reads using fastp, SeqPrep, Trimmomatic, and PRINSEQ to filter and merge raw sequence data. Use this skill when you need to eliminate sequencing artifacts, trim low-quality bases, and merge overlapping reads from environmental samples to prepare high-fidelity sequences for downstream taxonomic analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - Quality control PE
+# mgnifys-amplicon-pipeline-v50-quality-control-pe
 
 ## Overview
 

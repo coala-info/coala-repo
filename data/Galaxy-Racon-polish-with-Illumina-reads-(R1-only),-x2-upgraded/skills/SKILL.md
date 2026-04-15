@@ -1,10 +1,12 @@
 ---
 name: racon-polish-with-illumina-reads-r1-only-x2-upgraded
-description: "This Galaxy workflow polishes a genome assembly using Illumina R1 reads through two successive rounds of mapping with Minimap2 and consensus correction with Racon. Use this skill when you need to improve the base-level accuracy of a draft genome assembly by correcting errors using high-quality short-read sequencing data."
-homepage: https://workflowhub.eu/workflows/1604
+description: This Galaxy workflow polishes a genome assembly using Illumina R1 reads through two successive rounds of mapping with Minimap2 and consensus correction with Racon. Use this skill when you need to improve the base-level accuracy of a draft genome assembly by correcting errors using high-quality short-read sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Racon polish with Illumina reads (R1 only), x2 - upgraded
+# racon-polish-with-illumina-reads-r1-only-x2-upgraded
 
 ## Overview
 

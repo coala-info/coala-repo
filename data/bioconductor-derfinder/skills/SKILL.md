@@ -4,7 +4,6 @@ description: This tool performs annotation-agnostic differential expression anal
 homepage: https://bioconductor.org/packages/release/bioc/html/derfinder.html
 ---
 
-
 # bioconductor-derfinder
 
 name: bioconductor-derfinder

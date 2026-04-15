@@ -2,8 +2,9 @@
 name: vcf_parser
 description: vcf_parser processes and navigates genomic variant call format (VCF) files. Use when user asks to split multiallelic variants, access genotype attributes, or create new VCF files.
 homepage: https://github.com/moonso/vcf_parser
+metadata:
+  docker_image: "quay.io/biocontainers/vcfsamplecompare:2.013--pl526_0"
 ---
-
 
 # vcf_parser
 

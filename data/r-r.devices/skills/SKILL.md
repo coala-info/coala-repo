@@ -4,7 +4,6 @@ description: This tool provides a unified interface for creating, managing, and 
 homepage: https://cloud.r-project.org/web/packages/R.devices/index.html
 ---
 
-
 # r-r.devices
 
 name: r-r.devices

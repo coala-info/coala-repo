@@ -4,7 +4,6 @@ description: Bioconductor-joda quantifies gene deregulation between two cell pop
 homepage: https://bioconductor.org/packages/3.8/bioc/html/joda.html
 ---
 
-
 # bioconductor-joda
 
 name: bioconductor-joda

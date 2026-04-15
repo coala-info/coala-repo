@@ -4,7 +4,6 @@ description: This tool creates interactive d3.js heatmaps in R for visualizing m
 homepage: https://cran.r-project.org/web/packages/d3heatmap/index.html
 ---
 
-
 # r-d3heatmap
 
 name: r-d3heatmap

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-ccimpute
-description: "bioconductor-ccimpute imputes dropout events in scRNA-seq data using a consensus clustering framework to identify cell similarity. Use when user asks to impute missing values in scRNA-seq data, address dropout noise, or recover gene expression patterns using consensus clustering."
+description: bioconductor-ccimpute imputes dropout events in scRNA-seq data using a consensus clustering framework to identify cell similarity. Use when user asks to impute missing values in scRNA-seq data, address dropout noise, or recover gene expression patterns using consensus clustering.
 homepage: https://bioconductor.org/packages/release/bioc/html/ccImpute.html
 ---
-
 
 # bioconductor-ccimpute
 

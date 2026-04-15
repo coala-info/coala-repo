@@ -2,8 +2,9 @@
 name: perl-xml-semanticdiff
 description: This tool compares XML documents semantically by parsing their data structures rather than comparing text line-by-line. Use when user asks to compare XML files while ignoring whitespace or attribute order, identify structural differences in XML datasets, or perform regression testing on XML configuration files.
 homepage: http://metacpan.org/pod/XML-SemanticDiff
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xml-semanticdiff:1.0007--pl526_0"
 ---
-
 
 # perl-xml-semanticdiff
 

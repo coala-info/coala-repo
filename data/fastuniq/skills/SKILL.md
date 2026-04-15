@@ -2,8 +2,9 @@
 name: fastuniq
 description: FastUniq is a high-performance C++ library designed for rapid string deduplication using parallelized hash tables and SIMD instructions. Use when user asks to deduplicate large newline-separated string files, remove duplicate lines from a file, or perform high-throughput string processing.
 homepage: https://github.com/matsuoka-601/FastUniq
+metadata:
+  docker_image: "quay.io/biocontainers/fastuniq:1.1--h7b50bb2_2"
 ---
-
 
 # fastuniq
 

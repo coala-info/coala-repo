@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings between Illu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiRatAll.db.html
 ---
 
-
 # bioconductor-lumiratall.db
 
 ## Overview

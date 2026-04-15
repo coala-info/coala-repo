@@ -4,7 +4,6 @@ description: The stjudem package provides a specialized gene expression dataset 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/stjudem.html
 ---
 
-
 # bioconductor-stjudem
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides example MeDIP-seq and Input-seq datasets for 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MEDIPSData.html
 ---
 
-
 # bioconductor-medipsdata
 
 name: bioconductor-medipsdata

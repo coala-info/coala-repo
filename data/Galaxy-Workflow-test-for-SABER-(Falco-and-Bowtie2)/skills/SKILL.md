@@ -1,10 +1,12 @@
 ---
 name: falco-bowtie2
-description: "This workflow processes sequencing reads using Falco for quality assessment and Bowtie2 for alignment to evaluate the functional status of bioinformatics platforms. Use this skill when you need to monitor the reliability of Galaxy endpoints and ensure that core sequence analysis tools are executing correctly across different environments."
-homepage: https://workflowhub.eu/workflows/1845
+description: This workflow processes sequencing reads using Falco for quality assessment and Bowtie2 for alignment to evaluate the functional status of bioinformatics platforms. Use this skill when you need to monitor the reliability of Galaxy endpoints and ensure that core sequence analysis tools are executing correctly across different environments.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Falco-bowtie2
+# falco-bowtie2
 
 ## Overview
 

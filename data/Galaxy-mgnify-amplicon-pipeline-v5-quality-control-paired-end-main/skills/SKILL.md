@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-quality-control-pe
-description: "This MGnify subworkflow processes paired-end amplicon reads through a rigorous quality control pipeline using fastp, SeqPrep for merging, Trimmomatic, and PRINSEQ to generate cleaned FASTA files and MultiQC reports. Use this skill when you need to prepare raw metagenomic marker gene sequences for taxonomic profiling by removing low-quality bases, filtering short or ambiguous reads, and merging overlapping paired-end fragments."
-homepage: https://workflowhub.eu/workflows/1272
+description: This MGnify subworkflow processes paired-end amplicon reads through a rigorous quality control pipeline using fastp, SeqPrep for merging, Trimmomatic, and PRINSEQ to generate cleaned FASTA files and MultiQC reports. Use this skill when you need to prepare raw metagenomic marker gene sequences for taxonomic profiling by removing low-quality bases, filtering short or ambiguous reads, and merging overlapping paired-end fragments.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - Quality control PE
+# mgnifys-amplicon-pipeline-v50-quality-control-pe
 
 ## Overview
 

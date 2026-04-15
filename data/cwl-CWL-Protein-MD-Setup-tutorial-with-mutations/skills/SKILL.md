@@ -1,9 +1,12 @@
 ---
 name: cwl-protein-md-setup-tutorial-with-mutations
-description: "This Common Workflow Language pipeline prepares protein structures for molecular dynamics simulations by processing PDB files through BioExcel Building Blocks tools for hydrogen removal, side chain repair, and residue mutations. Use this skill when you need to generate a refined protein model with specific amino acid substitutions to investigate the structural or energetic impacts of mutations in a molecular dynamics environment."
-homepage: https://workflowhub.eu/workflows/289
+description: This Common Workflow Language pipeline prepares protein structures for molecular dynamics simulations by processing PDB files through BioExcel Building Blocks tools for hydrogen removal, side chain repair, and residue mutations. Use this skill when you need to generate a refined protein model with specific amino acid substitutions to investigate the structural or energetic impacts of mutations in a molecular dynamics environment.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Protein MD Setup tutorial with mutations
+
+# cwl-protein-md-setup-tutorial-with-mutations
 
 ## Overview
 

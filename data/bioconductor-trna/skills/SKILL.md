@@ -4,7 +4,6 @@ description: The bioconductor-trna package provides specialized tools for analyz
 homepage: https://bioconductor.org/packages/release/bioc/html/tRNA.html
 ---
 
-
 # bioconductor-trna
 
 name: bioconductor-trna

@@ -4,7 +4,6 @@ description: The r-clinfun package provides specialized statistical utilities fo
 homepage: https://cloud.r-project.org/web/packages/clinfun/index.html
 ---
 
-
 # r-clinfun
 
 ## Overview

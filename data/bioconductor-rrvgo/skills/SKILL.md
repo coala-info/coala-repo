@@ -4,7 +4,6 @@ description: This tool reduces redundancy in Gene Ontology enrichment results by
 homepage: https://bioconductor.org/packages/release/bioc/html/rrvgo.html
 ---
 
-
 # bioconductor-rrvgo
 
 name: bioconductor-rrvgo

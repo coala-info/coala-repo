@@ -2,8 +2,9 @@
 name: ucsc-spacedtotab
 description: `ucsc-spacedtotab` converts whitespace-delimited data, especially from genomic pipelines, into strict tab-delimited format. Use when user asks to convert whitespace-delimited data to tab-delimited, prepare genomic data for database loading, or convert command output to TSV.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-spacedtotab:482--h0b57e2e_0"
 ---
-
 
 # ucsc-spacedtotab
 

@@ -1,9 +1,10 @@
 ---
 name: cyvcf
-description: "cyvcf provides a high-speed interface for parsing and analyzing genomic variant data using the htslib C library. Use when user asks to extract variants from specific genomic regions, filter VCF files by INFO fields, or programmatically analyze genotypes and depth using NumPy."
+description: cyvcf provides a high-speed interface for parsing and analyzing genomic variant data using the htslib C library. Use when user asks to extract variants from specific genomic regions, filter VCF files by INFO fields, or programmatically analyze genotypes and depth using NumPy.
 homepage: https://github.com/brentp/cyvcf2
+metadata:
+  docker_image: "quay.io/biocontainers/cyvcf:0.8.0--py36_0"
 ---
-
 
 # cyvcf
 

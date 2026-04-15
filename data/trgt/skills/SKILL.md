@@ -2,6 +2,8 @@
 name: trgt
 description: TRGT characterizes tandem repeats and identifies pathogenic expansions using high-fidelity long-read sequencing data. Use when user asks to genotype tandem repeats, visualize repeat structures with waterfall plots, merge VCF files for joint analysis, or perform detailed locus deepdives.
 homepage: https://github.com/PacificBiosciences/trgt
+metadata:
+  docker_image: "quay.io/biocontainers/trgt:5.0.0--h9ee0642_0"
 ---
 
 # trgt

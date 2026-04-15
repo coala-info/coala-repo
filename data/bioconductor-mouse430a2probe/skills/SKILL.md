@@ -4,7 +4,6 @@ description: This package provides probe sequence data and array coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2probe.html
 ---
 
-
 # bioconductor-mouse430a2probe
 
 name: bioconductor-mouse430a2probe

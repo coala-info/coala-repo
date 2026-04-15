@@ -4,7 +4,6 @@ description: This package provides sample microarray datasets stored as FeatureS
 homepage: https://bioconductor.org/packages/release/data/annotation/html/oligoData.html
 ---
 
-
 # bioconductor-oligodata
 
 name: bioconductor-oligodata

@@ -1,10 +1,12 @@
 ---
 name: multisample-batch-correction-with-snapatac2-and-harmony
-description: "This workflow processes a collection of single-cell ATAC-seq fragment files using SnapATAC2 and Harmony to perform preprocessing, dimension reduction, batch correction, and Leiden clustering. Use this skill when you need to integrate multiple single-cell chromatin accessibility datasets and remove technical variation between samples to identify consistent cell clusters across different experimental batches."
-homepage: https://workflowhub.eu/workflows/1078
+description: This workflow processes a collection of single-cell ATAC-seq fragment files using SnapATAC2 and Harmony to perform preprocessing, dimension reduction, batch correction, and Leiden clustering. Use this skill when you need to integrate multiple single-cell chromatin accessibility datasets and remove technical variation between samples to identify consistent cell clusters across different experimental batches.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Multisample Batch Correction with SnapATAC2 and Harmony
+# multisample-batch-correction-with-snapatac2-and-harmony
 
 ## Overview
 

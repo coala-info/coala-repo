@@ -4,7 +4,6 @@ description: The IMMAN package reconstructs consensus protein interaction networ
 homepage: https://bioconductor.org/packages/release/bioc/html/IMMAN.html
 ---
 
-
 # bioconductor-imman
 
 ## Overview

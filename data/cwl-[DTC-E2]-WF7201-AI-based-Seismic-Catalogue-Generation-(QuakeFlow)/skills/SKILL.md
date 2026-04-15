@@ -1,9 +1,12 @@
 ---
 name: dtc-e2-wf7201-ai-based-seismic-catalogue-generation-quakeflo
-description: "This CWL workflow utilizes the QuakeFlow deep-learning pipeline to process continuous seismic waveform data for automated earthquake detection, phase picking, and event location. Use this skill when you need to generate high-resolution earthquake catalogues or characterize regional seismicity for seismic hazard assessment and forecasting."
-homepage: https://workflowhub.eu/workflows/1991
+description: This CWL workflow utilizes the QuakeFlow deep-learning pipeline to process continuous seismic waveform data for automated earthquake detection, phase picking, and event location. Use this skill when you need to generate high-resolution earthquake catalogues or characterize regional seismicity for seismic hazard assessment and forecasting.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-E2] WF7201: AI-based Seismic Catalogue Generation (QuakeFlow)
+
+# dtc-e2-wf7201-ai-based-seismic-catalogue-generation-quakeflo
 
 ## Overview
 

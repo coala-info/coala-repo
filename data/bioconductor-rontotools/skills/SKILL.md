@@ -4,7 +4,6 @@ description: This tool performs pathway enrichment and impact analysis by incorp
 homepage: https://bioconductor.org/packages/release/bioc/html/ROntoTools.html
 ---
 
-
 # bioconductor-rontotools
 
 name: bioconductor-rontotools

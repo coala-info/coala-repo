@@ -4,7 +4,6 @@ description: bioconductor-wavetiling performs wavelet-based functional data anal
 homepage: https://bioconductor.org/packages/3.6/bioc/html/waveTiling.html
 ---
 
-
 # bioconductor-wavetiling
 
 name: bioconductor-wavetiling

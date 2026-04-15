@@ -1,10 +1,12 @@
 ---
 name: mapseq-to-ampvis2
-description: "This Galaxy workflow processes MAPseq OTU tables and metadata using text reformatting tools, Query Tabular, and ampvis2 load to generate structured datasets for microbiome analysis. Use this skill when you need to prepare taxonomic classification data for visualization and statistical analysis of microbial community structures within the ampvis2 ecosystem."
-homepage: https://workflowhub.eu/workflows/1275
+description: This Galaxy workflow processes MAPseq OTU tables and metadata using text reformatting tools, Query Tabular, and ampvis2 load to generate structured datasets for microbiome analysis. Use this skill when you need to prepare taxonomic classification data for visualization and statistical analysis of microbial community structures within the ampvis2 ecosystem.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MAPseq to ampvis2
+# mapseq-to-ampvis2
 
 ## Overview
 

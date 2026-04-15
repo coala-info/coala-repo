@@ -1,9 +1,10 @@
 ---
 name: fragpipe
-description: "FragPipe is a comprehensive platform for shotgun proteomics data analysis. Use when user asks to identify peptides, quantify proteins, discover PTMs, or analyze DIA data."
+description: FragPipe is a comprehensive platform for shotgun proteomics data analysis. Use when user asks to identify peptides, quantify proteins, discover PTMs, or analyze DIA data.
 homepage: https://github.com/Nesvilab/FragPipe
+metadata:
+  docker_image: "quay.io/biocontainers/fragpipe:24.0--hdfd78af_0"
 ---
-
 
 # fragpipe
 

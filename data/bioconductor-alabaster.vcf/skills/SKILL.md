@@ -4,7 +4,6 @@ description: This package saves and loads Bioconductor VCF objects as structured
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.vcf.html
 ---
 
-
 # bioconductor-alabaster.vcf
 
 ## Overview

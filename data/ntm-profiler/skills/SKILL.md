@@ -1,7 +1,9 @@
 ---
 name: ntm-profiler
-description: "NTM-Profiler identifies Non-Tuberculous Mycobacteria species and detects drug resistance mutations from genomic data. Use when user asks to identify NTM species, detect drug resistance mutations, profile genomic sequences, or collate results from multiple samples."
+description: NTM-Profiler identifies Non-Tuberculous Mycobacteria species and detects drug resistance mutations from genomic data. Use when user asks to identify NTM species, detect drug resistance mutations, profile genomic sequences, or collate results from multiple samples.
 homepage: https://github.com/jodyphelan/NTM-Profiler
+metadata:
+  docker_image: "quay.io/biocontainers/ntm-profiler:0.8.1--pyhdfd78af_0"
 ---
 
 # ntm-profiler

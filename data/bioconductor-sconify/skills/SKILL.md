@@ -4,7 +4,6 @@ description: Sconify performs K-Nearest Neighbor statistics on high-dimensional 
 homepage: https://bioconductor.org/packages/release/bioc/html/Sconify.html
 ---
 
-
 # bioconductor-sconify
 
 ## Overview

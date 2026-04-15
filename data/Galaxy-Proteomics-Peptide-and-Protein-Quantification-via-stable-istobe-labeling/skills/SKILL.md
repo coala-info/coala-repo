@@ -1,10 +1,12 @@
 ---
 name: proteomics-peptide-and-protein-quantification-via-stable-ist
-description: "This proteomics workflow processes mzML raw data and FASTA sequences to perform peptide and protein quantification using OpenMS tools such as FeatureFinderMultiplex, XTandemAdapter, and ProteinQuantifier. Use this skill when you need to analyze mass spectrometry data from stable isotope labeling experiments to accurately measure relative protein expression levels across different biological samples."
-homepage: https://workflowhub.eu/workflows/1449
+description: This proteomics workflow processes mzML raw data and FASTA sequences to perform peptide and protein quantification using OpenMS tools such as FeatureFinderMultiplex, XTandemAdapter, and ProteinQuantifier. Use this skill when you need to analyze mass spectrometry data from stable isotope labeling experiments to accurately measure relative protein expression levels across different biological samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteomics: Peptide and Protein Quantification via stable istobe labeling
+# proteomics-peptide-and-protein-quantification-via-stable-ist
 
 ## Overview
 

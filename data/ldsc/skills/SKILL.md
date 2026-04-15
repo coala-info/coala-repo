@@ -2,6 +2,8 @@
 name: ldsc
 description: ldsc is a command-line toolset for estimating heritability and genetic correlations using GWAS summary statistics and linkage disequilibrium patterns. Use when user asks to munge summary statistics, estimate SNP heritability, calculate genetic correlations between traits, or perform partitioned and cell-type-specific heritability enrichment analyses.
 homepage: https://github.com/bulik/ldsc/
+metadata:
+  docker_image: "quay.io/biocontainers/ldsc:1.0.1--py_0"
 ---
 
 # ldsc

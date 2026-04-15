@@ -4,7 +4,6 @@ description: This tool identifies significant chromatin interactions in Hi-C dat
 homepage: https://bioconductor.org/packages/release/bioc/html/GOTHiC.html
 ---
 
-
 # bioconductor-gothic
 
 name: bioconductor-gothic

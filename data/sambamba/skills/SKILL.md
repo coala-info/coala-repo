@@ -2,6 +2,8 @@
 name: sambamba
 description: Sambamba is a high-performance tool for parallelized processing, filtering, and manipulation of BAM and SAM files. Use when user asks to view, sort, mark duplicates, index, or calculate coverage depth for genomic sequencing data.
 homepage: https://github.com/biod/sambamba
+metadata:
+  docker_image: "quay.io/biocontainers/sambamba:1.0.1--he614052_4"
 ---
 
 # sambamba

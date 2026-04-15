@@ -2,8 +2,9 @@
 name: bio_assembly_refinement
 description: This tool automates the refinement of draft bacterial assemblies by filtering contigs, trimming overlaps, and circularizing sequences. Use when user asks to remove redundant contigs, trim artificial overlaps, circularize genomes, or re-orient sequences based on marker genes.
 homepage: https://github.com/nds/bio_assembly_refinement
+metadata:
+  docker_image: "quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0"
 ---
-
 
 # bio_assembly_refinement
 

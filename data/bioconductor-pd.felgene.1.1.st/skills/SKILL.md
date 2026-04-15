@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.felgene.1.1.st.html
 ---
 
-
 # bioconductor-pd.felgene.1.1.st
 
 name: bioconductor-pd.felgene.1.1.st

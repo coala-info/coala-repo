@@ -4,7 +4,6 @@ description: The bioconductor-tomoda package analyzes tomo-seq data to identify 
 homepage: https://bioconductor.org/packages/release/bioc/html/tomoda.html
 ---
 
-
 # bioconductor-tomoda
 
 ## Overview

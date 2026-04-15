@@ -1,10 +1,12 @@
 ---
 name: mass-spectrometry-lc-ms-preprocessing-with-xcms
-description: "This metabolomics workflow processes LC-MS dataset collections and sample metadata using the XCMS and CAMERA R packages to perform peak picking, retention time correction, and feature annotation. Use this skill when you need to extract and align metabolic features from raw mass spectrometry data while annotating isotopes and adducts to prepare a validated data matrix for comparative metabolomics."
-homepage: https://workflowhub.eu/workflows/677
+description: This metabolomics workflow processes LC-MS dataset collections and sample metadata using the XCMS and CAMERA R packages to perform peak picking, retention time correction, and feature annotation. Use this skill when you need to extract and align metabolic features from raw mass spectrometry data while annotating isotopes and adducts to prepare a validated data matrix for comparative metabolomics.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mass spectrometry: LC-MS preprocessing with XCMS
+# mass-spectrometry-lc-ms-preprocessing-with-xcms
 
 ## Overview
 

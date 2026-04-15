@@ -4,7 +4,6 @@ description: EpiMix performs integrative analysis of DNA methylation and gene ex
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiMix.html
 ---
 
-
 # bioconductor-epimix
 
 name: bioconductor-epimix

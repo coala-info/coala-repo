@@ -2,8 +2,9 @@
 name: fastool
 description: Fastool efficiently reads and manipulates large FastQ and FastA files, including gzipped versions. Use when user asks to process large biological sequence files, filter sequences, or convert file formats.
 homepage: https://github.com/tobe-fe-dalao/fastool
+metadata:
+  docker_image: "quay.io/biocontainers/fastool:0.1.4--h577a1d6_10"
 ---
-
 
 # fastool
 

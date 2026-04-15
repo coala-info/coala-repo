@@ -4,7 +4,6 @@ description: This tool facilitates interactive data exchange between R and other
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gaggle.html
 ---
 
-
 # bioconductor-gaggle
 
 name: bioconductor-gaggle

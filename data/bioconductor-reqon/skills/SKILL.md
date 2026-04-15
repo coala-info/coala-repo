@@ -4,7 +4,6 @@ description: ReQON recalibrates nucleotide quality scores for aligned NGS data i
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ReQON.html
 ---
 
-
 # bioconductor-reqon
 
 name: bioconductor-reqon

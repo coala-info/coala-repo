@@ -1,7 +1,9 @@
 ---
 name: rhocall
-description: "rhocall identifies genomic regions of homozygosity and detects potential uniparental disomy from variant call files. Use when user asks to call regions of homozygosity, annotate VCF files with ROH information, tally chromosome-wide homozygosity for UPD detection, or visualize zygosity plots."
+description: rhocall identifies genomic regions of homozygosity and detects potential uniparental disomy from variant call files. Use when user asks to call regions of homozygosity, annotate VCF files with ROH information, tally chromosome-wide homozygosity for UPD detection, or visualize zygosity plots.
 homepage: https://github.com/dnil/rhocall
+metadata:
+  docker_image: "quay.io/biocontainers/rhocall:0.5.1--py312h0fa9677_5"
 ---
 
 # rhocall

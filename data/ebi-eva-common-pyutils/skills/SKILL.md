@@ -2,8 +2,9 @@
 name: ebi-eva-common-pyutils
 description: This library provides Python utilities for downloading genomic assemblies from NCBI and implementing standardized logging within bioinformatics workflows. Use when user asks to download genomic reference data, organize assembly files by species, or set up consistent logging handlers in Python scripts.
 homepage: https://github.com/EBIVariation/eva-common-pyutils
+metadata:
+  docker_image: "quay.io/biocontainers/ebi-eva-common-pyutils:0.8.3--pyh106432d_0"
 ---
-
 
 # ebi-eva-common-pyutils
 

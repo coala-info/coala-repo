@@ -4,7 +4,6 @@ description: The normr package provides a robust framework for normalizing ChIP-
 homepage: https://bioconductor.org/packages/release/bioc/html/normr.html
 ---
 
-
 # bioconductor-normr
 
 ## Overview

@@ -2,8 +2,9 @@
 name: mappy
 description: Mappy provides a Python interface for the minimap2 aligner to perform rapid pairwise alignment of genomic and spliced nucleotide sequences. Use when user asks to map long noisy reads, perform splice-aware alignments, find sequence overlaps, or parse FASTA and FASTQ files within a Python pipeline.
 homepage: https://github.com/lh3/minimap2
+metadata:
+  docker_image: "quay.io/biocontainers/mappy:2.30--py39h0699b22_0"
 ---
-
 
 # mappy
 

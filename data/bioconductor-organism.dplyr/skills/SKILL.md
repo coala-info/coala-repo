@@ -4,7 +4,6 @@ description: This tool creates and queries integrated organism-specific database
 homepage: https://bioconductor.org/packages/release/bioc/html/Organism.dplyr.html
 ---
 
-
 # bioconductor-organism.dplyr
 
 name: bioconductor-organism.dplyr

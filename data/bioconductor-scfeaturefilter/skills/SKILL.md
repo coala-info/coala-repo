@@ -4,7 +4,6 @@ description: This package filters features in single-cell RNA-seq data using a c
 homepage: https://bioconductor.org/packages/release/bioc/html/scFeatureFilter.html
 ---
 
-
 # bioconductor-scfeaturefilter
 
 ## Overview

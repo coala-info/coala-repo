@@ -2,8 +2,9 @@
 name: ant
 description: Apache Ant is a Java-based build tool that automates software compilation, testing, and deployment. Use when user asks to compile code, create JAR files, clean build directories, or manage build scripts.
 homepage: https://github.com/ant-design/ant-design
+metadata:
+  docker_image: "quay.io/biocontainers/ant:1.10.0--0"
 ---
-
 
 # ant
 

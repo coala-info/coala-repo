@@ -4,7 +4,6 @@ description: This package provides the manifest object containing the design spe
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation450kmanifest.html
 ---
 
-
 # bioconductor-illuminahumanmethylation450kmanifest
 
 name: bioconductor-illuminahumanmethylation450kmanifest

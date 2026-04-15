@@ -1,7 +1,9 @@
 ---
 name: rustybam
-description: "rustybam is a specialized toolkit for the rapid manipulation and transformation of genomic alignment formats like BAM and PAF. Use when user asks to calculate alignment statistics, filter sequences by length, trim PAF overlaps, break alignments at indels, invert query and target relationships, or perform coordinate liftovers between assemblies."
+description: rustybam is a specialized toolkit for the rapid manipulation and transformation of genomic alignment formats like BAM and PAF. Use when user asks to calculate alignment statistics, filter sequences by length, trim PAF overlaps, break alignments at indels, invert query and target relationships, or perform coordinate liftovers between assemblies.
 homepage: https://github.com/mrvollger/rustybam
+metadata:
+  docker_image: "quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0"
 ---
 
 # rustybam

@@ -2,6 +2,8 @@
 name: htslib
 description: HTSlib provides essential utilities for compressing, indexing, and identifying high-throughput sequencing data formats. Use when user asks to compress files with bgzip, index genomic files with tabix, query specific genomic intervals, or identify and check the integrity of bioinformatics file formats.
 homepage: https://github.com/samtools/htslib
+metadata:
+  docker_image: "quay.io/biocontainers/htslib:1.23--h566b1c6_0"
 ---
 
 # htslib

@@ -1,8 +1,11 @@
 ---
 name: beacon-omop-worker-survival
-description: "This CWL workflow executes survival analysis on clinical datasets standardized to the OMOP Common Data Model to generate time-to-event statistics and survival curves. Use this skill when you need to assess patient mortality rates, determine the duration until specific clinical events occur, or compare survival outcomes across different patient cohorts in a healthcare study."
-homepage: https://workflowhub.eu/workflows/1180
+description: This CWL workflow executes survival analysis on clinical datasets standardized to the OMOP Common Data Model to generate time-to-event statistics and survival curves. Use this skill when you need to assess patient mortality rates, determine the duration until specific clinical events occur, or compare survival outcomes across different patient cohorts in a healthcare study.
+homepage: https://trefx.uk/
+metadata:
+  docker_image: "N/A"
 ---
+
 # beacon-omop-worker-survival
 
 ## Overview

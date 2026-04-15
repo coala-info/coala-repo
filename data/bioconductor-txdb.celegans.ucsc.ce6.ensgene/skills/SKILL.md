@@ -4,7 +4,6 @@ description: This package provides an R interface to the UCSC ce6 genome annotat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Celegans.UCSC.ce6.ensGene.html
 ---
 
-
 # bioconductor-txdb.celegans.ucsc.ce6.ensgene
 
 name: bioconductor-txdb.celegans.ucsc.ce6.ensgene

@@ -2,8 +2,9 @@
 name: famsa
 description: FAMSA is a high-performance tool designed for large-scale multiple sequence alignment of protein datasets. Use when user asks to align protein sequences, perform profile-profile alignment, generate distance or identity matrices, or export guide trees.
 homepage: https://github.com/refresh-bio/FAMSA
+metadata:
+  docker_image: "quay.io/biocontainers/famsa:2.4.1--h9ee0642_0"
 ---
-
 
 # famsa
 

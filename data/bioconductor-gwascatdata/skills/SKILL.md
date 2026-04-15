@@ -4,7 +4,6 @@ description: This package provides a static March 2021 snapshot of the EBI/EMBL 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/gwascatData.html
 ---
 
-
 # bioconductor-gwascatdata
 
 ## Overview

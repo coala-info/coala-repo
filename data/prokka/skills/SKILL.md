@@ -1,9 +1,10 @@
 ---
 name: prokka
-description: "Prokka provides rapid functional annotation of prokaryotic genomes by identifying genes, protein translations, and structural RNAs from genomic DNA sequences. Use when user asks to annotate bacterial or archaeal contigs, generate GFF or GenBank files from genomic sequences, or prepare genomic data for NCBI submission."
+description: Prokka provides rapid functional annotation of prokaryotic genomes by identifying genes, protein translations, and structural RNAs from genomic DNA sequences. Use when user asks to annotate bacterial or archaeal contigs, generate GFF or GenBank files from genomic sequences, or prepare genomic data for NCBI submission.
 homepage: https://github.com/tseemann/prokka
+metadata:
+  docker_image: "quay.io/biocontainers/prokka:1.15.6--pl5321hdfd78af_0"
 ---
-
 
 # prokka
 

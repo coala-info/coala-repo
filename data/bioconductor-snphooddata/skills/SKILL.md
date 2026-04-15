@@ -4,7 +4,6 @@ description: This package provides example ChIP-Seq and genotype datasets for th
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SNPhoodData.html
 ---
 
-
 # bioconductor-snphooddata
 
 name: bioconductor-snphooddata

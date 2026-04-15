@@ -4,7 +4,6 @@ description: TxRegInfra provides infrastructure to query and integrate diverse t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/TxRegInfra.html
 ---
 
-
 # bioconductor-txreginfra
 
 ## Overview

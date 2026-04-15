@@ -4,7 +4,6 @@ description: This tool performs normalization and variance stabilization for mic
 homepage: https://bioconductor.org/packages/release/bioc/html/vsn.html
 ---
 
-
 # bioconductor-vsn
 
 name: bioconductor-vsn

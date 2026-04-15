@@ -1,9 +1,10 @@
 ---
 name: pynast
-description: "pyNastran is a Python library for reading, writing, and manipulating NASA Structural Analysis (Nastran) BDF and OP2 files. Use when user asks to automate model generation, modify bulk data files, extract results from binary files, or perform structural post-processing."
+description: pyNastran is a Python library for reading, writing, and manipulating NASA Structural Analysis (Nastran) BDF and OP2 files. Use when user asks to automate model generation, modify bulk data files, extract results from binary files, or perform structural post-processing.
 homepage: https://github.com/SteveDoyle2/pyNastran
+metadata:
+  docker_image: "biocontainers/pynast:v1.2.2-4-deb_cv1"
 ---
-
 
 # pynast
 

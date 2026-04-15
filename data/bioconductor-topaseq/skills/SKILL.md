@@ -4,7 +4,6 @@ description: ToPASeq performs topology-based pathway analysis of RNA-seq data by
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ToPASeq.html
 ---
 
-
 # bioconductor-topaseq
 
 name: bioconductor-topaseq

@@ -2,8 +2,9 @@
 name: ucsc-chromgraphfrombin
 description: `ucsc-chromgraphfrombin` converts binary chromGraph files into an ASCII text representation. Use when user asks to decode binary chromGraph files, convert binary chromGraph to text, inspect binary track data, or debug genomic visualization issues.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chromgraphfrombin:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chromgraphfrombin
 

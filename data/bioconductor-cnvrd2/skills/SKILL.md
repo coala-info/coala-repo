@@ -4,7 +4,6 @@ description: This tool measures gene copy number and identifies tag variants for
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVrd2.html
 ---
 
-
 # bioconductor-cnvrd2
 
 name: bioconductor-cnvrd2

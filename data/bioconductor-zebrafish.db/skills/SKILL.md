@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for zebrafish g
 homepage: https://bioconductor.org/packages/release/data/annotation/html/zebrafish.db.html
 ---
 
-
 # bioconductor-zebrafish.db
 
 ## Overview

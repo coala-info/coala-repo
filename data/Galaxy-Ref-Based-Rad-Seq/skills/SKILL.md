@@ -1,10 +1,12 @@
 ---
 name: ref-based-rad-seq
-description: "This workflow performs reference-based RAD-Seq data analysis by processing FASTQ reads, barcodes, and population maps using Stacks and BWA. Use this skill when you need to identify single nucleotide polymorphisms and calculate population genetic statistics for organisms with an available reference genome."
-homepage: https://workflowhub.eu/workflows/1662
+description: This workflow performs reference-based RAD-Seq data analysis by processing FASTQ reads, barcodes, and population maps using Stacks and BWA. Use this skill when you need to identify single nucleotide polymorphisms and calculate population genetic statistics for organisms with an available reference genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ref Based Rad Seq
+# ref-based-rad-seq
 
 ## Overview
 

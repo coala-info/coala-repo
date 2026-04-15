@@ -2,8 +2,9 @@
 name: sparsehash
 description: The sparsehash library provides C++ template classes for hash maps and hash sets optimized for either minimal memory usage or maximum lookup speed. Use when user asks to store millions of items with low RAM overhead, implement high-performance hash tables, or serialize hash maps directly to disk.
 homepage: https://github.com/sparsehash/sparsehash
+metadata:
+  docker_image: "quay.io/biocontainers/sparsehash:2.0.3--0"
 ---
-
 
 # sparsehash
 

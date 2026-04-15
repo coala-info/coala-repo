@@ -4,7 +4,6 @@ description: bioconductor-gars performs feature selection for high-dimensional d
 homepage: https://bioconductor.org/packages/release/bioc/html/GARS.html
 ---
 
-
 # bioconductor-gars
 
 name: bioconductor-gars

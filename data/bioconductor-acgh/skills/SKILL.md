@@ -4,7 +4,6 @@ description: This tool analyzes and visualizes array Comparative Genomic Hybridi
 homepage: https://bioconductor.org/packages/release/bioc/html/aCGH.html
 ---
 
-
 # bioconductor-acgh
 
 name: bioconductor-acgh

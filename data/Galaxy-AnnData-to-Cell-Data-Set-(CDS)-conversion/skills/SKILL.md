@@ -1,10 +1,12 @@
 ---
 name: anndata-to-cell-data-set-cds-conversion
-description: "This Galaxy workflow converts single-cell transcriptomics data from the AnnData format into a Monocle3 Cell Data Set (CDS) using AnnData inspection and Monocle3 creation tools. Use this skill when you need to perform trajectory inference or pseudotime analysis in Monocle3 using data previously processed in Scanpy or other AnnData-compatible pipelines."
-homepage: https://workflowhub.eu/workflows/1531
+description: This Galaxy workflow converts single-cell transcriptomics data from the AnnData format into a Monocle3 Cell Data Set (CDS) using AnnData inspection and Monocle3 creation tools. Use this skill when you need to perform trajectory inference or pseudotime analysis in Monocle3 using data previously processed in Scanpy or other AnnData-compatible pipelines.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# AnnData to Cell Data Set (CDS) conversion
+# anndata-to-cell-data-set-cds-conversion
 
 ## Overview
 

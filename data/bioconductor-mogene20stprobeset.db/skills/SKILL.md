@@ -4,7 +4,6 @@ description: This package provides biological annotations for the Affymetrix Mou
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene20stprobeset.db.html
 ---
 
-
 # bioconductor-mogene20stprobeset.db
 
 name: bioconductor-mogene20stprobeset.db

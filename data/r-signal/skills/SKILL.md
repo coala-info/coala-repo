@@ -4,7 +4,6 @@ description: The r-signal package provides a comprehensive suite of signal proce
 homepage: https://cloud.r-project.org/web/packages/signal/index.html
 ---
 
-
 # r-signal
 
 name: r-signal

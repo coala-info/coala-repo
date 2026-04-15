@@ -2,8 +2,9 @@
 name: tcdemux
 description: tcdemux is a bioinformatics utility that automates the demultiplexing, trimming, and preprocessing of raw sequencing data for target capture pipelines. Use when user asks to demultiplex internal barcodes, trim adaptors, verify read pairing, or mask low-complexity sequences in sequencing reads.
 homepage: https://github.com/TomHarrop/tcdemux
+metadata:
+  docker_image: "quay.io/biocontainers/tcdemux:0.1.1--pyhdfd78af_0"
 ---
-
 
 # tcdemux
 

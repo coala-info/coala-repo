@@ -4,7 +4,6 @@ description: This tool provides a shared resource interface for managing and des
 homepage: https://cloud.r-project.org/web/packages/bigmemory.sri/index.html
 ---
 
-
 # r-bigmemory.sri
 
 name: r-bigmemory.sri

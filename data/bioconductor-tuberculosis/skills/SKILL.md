@@ -4,7 +4,6 @@ description: This package provides access to a standardized collection of over 1
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tuberculosis.html
 ---
 
-
 # bioconductor-tuberculosis
 
 name: bioconductor-tuberculosis

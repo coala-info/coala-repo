@@ -1,10 +1,12 @@
 ---
 name: long-non-coding-rnas-lncrnas-annotation-with-feelnc
-description: "This workflow performs long non-coding RNA annotation by processing RNA-seq BAM files, genome annotations, and assembly sequences using StringTie for transcript assembly and FEELnc for lncRNA identification. Use this skill when you need to identify novel lncRNAs from transcriptomic data and classify them based on their genomic environment relative to protein-coding genes."
-homepage: https://workflowhub.eu/workflows/1484
+description: This workflow performs long non-coding RNA annotation by processing RNA-seq BAM files, genome annotations, and assembly sequences using StringTie for transcript assembly and FEELnc for lncRNA identification. Use this skill when you need to identify novel lncRNAs from transcriptomic data and classify them based on their genomic environment relative to protein-coding genes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Long non-coding RNAs (lncRNAs) annotation with FEELnc
+# long-non-coding-rnas-lncrnas-annotation-with-feelnc
 
 ## Overview
 

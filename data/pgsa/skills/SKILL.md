@@ -2,8 +2,9 @@
 name: pgsa
 description: PgSA creates a compact, searchable index from high-throughput sequencing reads using a pseudogenome suffix array approach. Use when user asks to build a searchable index from reads, query the presence of k-mers, or perform efficient sequence searches within a read set.
 homepage: http://sun.aei.polsl.pl/pgsa/
+metadata:
+  docker_image: "quay.io/biocontainers/pgsa:1.2--hfc679d8_1"
 ---
-
 
 # pgsa
 

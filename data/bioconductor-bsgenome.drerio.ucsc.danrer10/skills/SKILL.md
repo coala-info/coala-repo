@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Danio rerio (Ze
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer10.html
 ---
 
-
 # bioconductor-bsgenome.drerio.ucsc.danrer10
 
 name: bioconductor-bsgenome.drerio.ucsc.danrer10

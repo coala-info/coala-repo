@@ -4,7 +4,6 @@ description: This tool performs Conditional Quantile Normalization to remove GC-
 homepage: https://bioconductor.org/packages/release/bioc/html/cqn.html
 ---
 
-
 # bioconductor-cqn
 
 name: bioconductor-cqn

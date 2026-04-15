@@ -2,8 +2,9 @@
 name: vcferr
 description: vcferr injects stochastic errors and missing data into VCF genotypes based on user-defined probabilities. Use when user asks to inject errors into VCF genotypes, simulate specific error profiles like drop-outs or drop-ins, add missing data to VCF genotypes, or generate reproducible error datasets.
 homepage: https://github.com/signaturescience/vcferr
+metadata:
+  docker_image: "quay.io/biocontainers/vcferr:1.0.2--pyh5e36f6f_0"
 ---
-
 
 # vcferr
 

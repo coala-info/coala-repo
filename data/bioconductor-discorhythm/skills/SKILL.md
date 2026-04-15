@@ -4,7 +4,6 @@ description: DiscoRhythm analyzes periodicity and rhythmicity in large-scale tem
 homepage: https://bioconductor.org/packages/release/bioc/html/DiscoRhythm.html
 ---
 
-
 # bioconductor-discorhythm
 
 name: bioconductor-discorhythm

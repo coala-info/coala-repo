@@ -4,7 +4,6 @@ description: This package provides raw qPCR amplification curves and fluorescenc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/miRcompData.html
 ---
 
-
 # bioconductor-mircompdata
 
 name: bioconductor-mircompdata

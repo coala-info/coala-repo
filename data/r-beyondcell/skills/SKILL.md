@@ -4,7 +4,6 @@ description: Beyondcell is an R package that analyzes single-cell RNA-seq data t
 homepage: https://cran.r-project.org/web/packages/beyondcell/index.html
 ---
 
-
 # r-beyondcell
 
 ## Overview

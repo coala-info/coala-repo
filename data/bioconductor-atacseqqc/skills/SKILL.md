@@ -4,7 +4,6 @@ description: This tool performs quality control and preprocessing for ATAC-seq d
 homepage: https://bioconductor.org/packages/release/bioc/html/ATACseqQC.html
 ---
 
-
 # bioconductor-atacseqqc
 
 name: bioconductor-atacseqqc

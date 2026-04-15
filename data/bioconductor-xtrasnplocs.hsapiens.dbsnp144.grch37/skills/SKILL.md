@@ -4,7 +4,6 @@ description: This Bioconductor package provides genomic locations and alleles fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/XtraSNPlocs.Hsapiens.dbSNP144.GRCh37.html
 ---
 
-
 # bioconductor-xtrasnplocs.hsapiens.dbsnp144.grch37
 
 ## Overview

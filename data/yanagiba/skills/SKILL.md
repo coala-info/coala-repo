@@ -2,8 +2,9 @@
 name: yanagiba
 description: Yanagiba filters and trims Oxford Nanopore sequencing reads. Use when user asks to filter reads by length, filter reads by quality, trim reads, or calculate read quality.
 homepage: https://github.com/Adamtaranto/Yanagiba
+metadata:
+  docker_image: "quay.io/biocontainers/yanagiba:1.0.0--py36_1"
 ---
-
 
 # yanagiba
 

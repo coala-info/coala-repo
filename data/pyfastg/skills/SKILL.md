@@ -1,9 +1,10 @@
 ---
 name: pyfastg
-description: "pyfastg converts FASTG assembly files into NetworkX graph objects for biological sequence analysis. Use when user asks to parse FASTG files, convert assembly graphs to NetworkX objects, or analyze sequencing assembly connectivity and metadata."
+description: pyfastg converts FASTG assembly files into NetworkX graph objects for biological sequence analysis. Use when user asks to parse FASTG files, convert assembly graphs to NetworkX objects, or analyze sequencing assembly connectivity and metadata.
 homepage: https://github.com/fedarko/pyfastg
+metadata:
+  docker_image: "quay.io/biocontainers/pyfastg:0.2.0--pyhdfd78af_0"
 ---
-
 
 # pyfastg
 

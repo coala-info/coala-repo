@@ -1,10 +1,12 @@
 ---
 name: somatic-variant-discovery-from-wes-data-using-control-freec
-description: "This Galaxy workflow identifies somatic copy number variations from paired tumor and normal whole exome sequencing FASTQ files using BWA-MEM for mapping and Control-FREEC for CNV detection and visualization. Use this skill when you need to detect large-scale genomic alterations, such as amplifications or deletions, in cancer exomes to understand the genetic drivers of tumor progression."
-homepage: https://workflowhub.eu/workflows/1651
+description: This Galaxy workflow identifies somatic copy number variations from paired tumor and normal whole exome sequencing FASTQ files using BWA-MEM for mapping and Control-FREEC for CNV detection and visualization. Use this skill when you need to detect large-scale genomic alterations, such as amplifications or deletions, in cancer exomes to understand the genetic drivers of tumor progression.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC
+# somatic-variant-discovery-from-wes-data-using-control-freec
 
 ## Overview
 

@@ -1,9 +1,12 @@
 ---
 name: kallisto-rnaseq-workflow
-description: "This Common Workflow Language pipeline performs quality filtering of Illumina RNA-seq reads followed by transcript quantification using the kallisto pseudoalignment tool. Use this skill when you need to quantify gene expression levels, estimate transcript abundance, or characterize the transcriptomic profile of biological samples."
-homepage: https://workflowhub.eu/workflows/344
+description: This Common Workflow Language pipeline performs quality filtering of Illumina RNA-seq reads followed by transcript quantification using the kallisto pseudoalignment tool. Use this skill when you need to quantify gene expression levels, estimate transcript abundance, or characterize the transcriptomic profile of biological samples.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Kallisto RNAseq Workflow
+
+# kallisto-rnaseq-workflow
 
 ## Overview
 

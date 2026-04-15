@@ -1,9 +1,8 @@
 ---
 name: bioconductor-ribocrypt
-description: "bioconductor-ribocrypt provides interactive visualization and analysis of Ribo-seq and other NGS data with sub-codon resolution. Use when user asks to generate multi-omics browser plots, analyze codon dwell times, visualize P-site shifting, or launch the RiboCrypt Shiny application."
+description: bioconductor-ribocrypt provides interactive visualization and analysis of Ribo-seq and other NGS data with sub-codon resolution. Use when user asks to generate multi-omics browser plots, analyze codon dwell times, visualize P-site shifting, or launch the RiboCrypt Shiny application.
 homepage: https://bioconductor.org/packages/release/bioc/html/RiboCrypt.html
 ---
-
 
 # bioconductor-ribocrypt
 

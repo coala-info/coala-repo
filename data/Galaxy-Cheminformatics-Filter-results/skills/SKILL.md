@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-5-filter-results
-description: "This cheminformatics workflow processes Mpro docking poses and Fragment Network data using Open Babel, JQ, and text processing tools to filter and rank potential inhibitors. Use this skill when you need to select the most promising lead compounds for chemical synthesis and experimental validation based on docking scores and structural network analysis."
-homepage: https://workflowhub.eu/workflows/17
+description: This cheminformatics workflow processes Mpro docking poses and Fragment Network data using Open Babel, JQ, and text processing tools to filter and rank potential inhibitors. Use this skill when you need to select the most promising lead compounds for chemical synthesis and experimental validation based on docking scores and structural network analysis.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [5] Filter results
+# covid-19-cheminformatics-5-filter-results
 
 ## Overview
 

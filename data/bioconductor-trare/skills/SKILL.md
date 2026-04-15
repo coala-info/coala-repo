@@ -4,7 +4,6 @@ description: This tool identifies transcriptional network disruptions and infers
 homepage: https://bioconductor.org/packages/3.13/bioc/html/TraRe.html
 ---
 
-
 # bioconductor-trare
 
 name: bioconductor-trare

@@ -1,10 +1,12 @@
 ---
 name: gigascience-iedb-pepquery-neoantigen
-description: "This workflow predicts MHC binding for peptide sequences using the IEDB API and validates these potential neoantigens against MS/MS mass spectrometry data using PepQuery2. Use this skill when you need to identify novel, tumor-specific neoantigens by integrating MHC binding affinity predictions with proteomic evidence from mass spectrometry spectra."
-homepage: https://workflowhub.eu/workflows/1789
+description: This workflow predicts MHC binding for peptide sequences using the IEDB API and validates these potential neoantigens against MS/MS mass spectrometry data using PepQuery2. Use this skill when you need to identify novel, tumor-specific neoantigens by integrating MHC binding affinity predictions with proteomic evidence from mass spectrometry spectra.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GigaScience-IEDB-PepQuery-Neoantigen
+# gigascience-iedb-pepquery-neoantigen
 
 ## Overview
 

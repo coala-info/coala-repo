@@ -4,7 +4,6 @@ description: This package provides a backend for the Spectra Bioconductor packag
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendMgf.html
 ---
 
-
 # bioconductor-msbackendmgf
 
 ## Overview

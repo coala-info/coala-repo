@@ -4,7 +4,6 @@ description: biovizBase provides foundational utilities and standardized color s
 homepage: https://bioconductor.org/packages/release/bioc/html/biovizBase.html
 ---
 
-
 # bioconductor-biovizbase
 
 name: bioconductor-biovizbase

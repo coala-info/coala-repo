@@ -1,9 +1,10 @@
 ---
 name: longstitch
-description: "LongStitch corrects and scaffolds genome assemblies using long sequencing reads. Use when user asks to correct genome assemblies, scaffold genome assemblies, improve genome assembly quality, or refine genome assembly contiguity."
+description: LongStitch corrects and scaffolds genome assemblies using long sequencing reads. Use when user asks to correct genome assemblies, scaffold genome assemblies, improve genome assembly quality, or refine genome assembly contiguity.
 homepage: https://bcgsc.ca/resources/software/longstitch
+metadata:
+  docker_image: "quay.io/biocontainers/longstitch:1.0.5--hdfd78af_1"
 ---
-
 
 # longstitch
 

@@ -4,7 +4,6 @@ description: The r-segmented package fits regression models with segmented or pi
 homepage: https://cloud.r-project.org/web/packages/segmented/index.html
 ---
 
-
 # r-segmented
 
 ## Overview

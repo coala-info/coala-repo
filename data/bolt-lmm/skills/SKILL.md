@@ -1,9 +1,10 @@
 ---
 name: bolt-lmm
-description: "BOLT-LMM performs high-performance genetic association analysis and heritability estimation using linear mixed models on large-scale datasets. Use when user asks to run genome-wide association studies, estimate heritability, or perform association testing on large cohorts in PLINK or BGEN formats."
+description: BOLT-LMM performs high-performance genetic association analysis and heritability estimation using linear mixed models on large-scale datasets. Use when user asks to run genome-wide association studies, estimate heritability, or perform association testing on large cohorts in PLINK or BGEN formats.
 homepage: https://alkesgroup.broadinstitute.org/BOLT-LMM/
+metadata:
+  docker_image: "quay.io/biocontainers/bolt-lmm:2.5--h15e0e67_0"
 ---
-
 
 # bolt-lmm
 

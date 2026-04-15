@@ -2,8 +2,9 @@
 name: any2fasta
 description: any2fasta converts various biological sequence formats into FASTA while preserving complex identifiers and handling compressed files. Use when user asks to convert Genbank, FASTQ, or GFF files to FASTA, normalize sequence case, or clean up sequence headers.
 homepage: https://github.com/tseemann/any2fasta
+metadata:
+  docker_image: "quay.io/biocontainers/any2fasta:0.8.1--hdfd78af_0"
 ---
-
 
 # any2fasta
 

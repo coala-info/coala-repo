@@ -1,10 +1,12 @@
 ---
 name: sgwb-model-spectrum
-description: "This Galaxy workflow utilizes the sgwb_astro_tool to generate stochastic gravitational wave background model spectra based on astrophysical input parameters. Use this skill when you need to characterize the expected gravitational wave signal from populations of compact binary mergers or other cosmological sources across different frequency bands."
-homepage: https://workflowhub.eu/workflows/831
+description: This Galaxy workflow utilizes the sgwb_astro_tool to generate stochastic gravitational wave background model spectra based on astrophysical input parameters. Use this skill when you need to characterize the expected gravitational wave signal from populations of compact binary mergers or other cosmological sources across different frequency bands.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# SGWB model spectrum
+# sgwb-model-spectrum
 
 ## Overview
 

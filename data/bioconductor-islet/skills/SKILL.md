@@ -4,7 +4,6 @@ description: ISLET performs individual-specific and cell-type-specific deconvolu
 homepage: https://bioconductor.org/packages/release/bioc/html/ISLET.html
 ---
 
-
 # bioconductor-islet
 
 name: bioconductor-islet

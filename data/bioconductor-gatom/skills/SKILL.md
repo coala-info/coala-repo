@@ -4,7 +4,6 @@ description: The bioconductor-gatom package identifies active metabolic modules 
 homepage: https://bioconductor.org/packages/release/bioc/html/gatom.html
 ---
 
-
 # bioconductor-gatom
 
 name: bioconductor-gatom

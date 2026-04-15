@@ -1,10 +1,12 @@
 ---
 name: oceans-variables-20
-description: "This workflow processes Mediterranean eutrophication profiles and GEBCO bathymetry using ODV and DIVAnd to subset data and visualize phosphate concentrations. Use this skill when you need to perform spatial interpolation of oceanographic chemical tracers to study nutrient distribution or eutrophication patterns in the Mediterranean Sea."
-homepage: https://workflowhub.eu/workflows/1445
+description: This workflow processes Mediterranean eutrophication profiles and GEBCO bathymetry using ODV and DIVAnd to subset data and visualize phosphate concentrations. Use this skill when you need to perform spatial interpolation of oceanographic chemical tracers to study nutrient distribution or eutrophication patterns in the Mediterranean Sea.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ocean's variables 2.0
+# oceans-variables-20
 
 ## Overview
 

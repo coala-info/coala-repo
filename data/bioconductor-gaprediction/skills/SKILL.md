@@ -4,7 +4,6 @@ description: This tool predicts gestational age from DNA methylation data using 
 homepage: https://bioconductor.org/packages/release/bioc/html/GAprediction.html
 ---
 
-
 # bioconductor-gaprediction
 
 name: bioconductor-gaprediction

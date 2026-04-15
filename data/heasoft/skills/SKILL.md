@@ -2,6 +2,8 @@
 name: heasoft
 description: HEASoft is a comprehensive software suite designed for the analysis of X-ray and Gamma-ray data from high-energy astrophysics observatories. Use when user asks to perform spectral fitting, manipulate FITS files, analyze timing and imaging data, or script astrophysical workflows using Python.
 homepage: https://heasarc.gsfc.nasa.gov/lheasoft/
+metadata:
+  docker_image: "quay.io/biocontainers/heasoft:6.35.2--hedafe93_1"
 ---
 
 # heasoft

@@ -2,6 +2,8 @@
 name: conus
 description: The conus tool analyzes RNA secondary structures by training and applying various stochastic context-free grammar models. Use when user asks to train probabilistic RNA models, predict secondary structures from sequences, or evaluate grammar performance and ambiguity.
 homepage: http://eddylab.org/software/conus/
+metadata:
+  docker_image: "quay.io/biocontainers/conus:1.0--h7b50bb2_6"
 ---
 
 # conus

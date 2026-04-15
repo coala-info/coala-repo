@@ -1,9 +1,10 @@
 ---
 name: pymsaviz
-description: "pymsaviz generates customizable, publication-ready visualizations of multiple sequence alignments using matplotlib. Use when user asks to visualize sequence alignments, highlight conservation patterns, or add annotations to multiple sequence alignment plots."
+description: pymsaviz generates customizable, publication-ready visualizations of multiple sequence alignments using matplotlib. Use when user asks to visualize sequence alignments, highlight conservation patterns, or add annotations to multiple sequence alignment plots.
 homepage: https://moshi4.github.io/pyMSAviz/
+metadata:
+  docker_image: "quay.io/biocontainers/pymsaviz:0.5.0--pyhdfd78af_0"
 ---
-
 
 # pymsaviz
 

@@ -4,7 +4,6 @@ description: scFeatures generates multi-view feature matrices from single-cell a
 homepage: https://bioconductor.org/packages/release/bioc/html/scFeatures.html
 ---
 
-
 # bioconductor-scfeatures
 
 name: bioconductor-scfeatures

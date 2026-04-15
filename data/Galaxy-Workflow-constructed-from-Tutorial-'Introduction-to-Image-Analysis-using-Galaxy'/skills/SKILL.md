@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-tutorial-introduction-to-image-ana
-description: "This imaging workflow processes an input image through filtering, histogram equalization, and automated thresholding to generate label maps and object counts. Use this skill when you need to segment biological or physical structures from microscopy data to quantify the number of distinct objects present in a sample."
-homepage: https://workflowhub.eu/workflows/1532
+description: This imaging workflow processes an input image through filtering, histogram equalization, and automated thresholding to generate label maps and object counts. Use this skill when you need to segment biological or physical structures from microscopy data to quantify the number of distinct objects present in a sample.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from Tutorial 'Introduction to Image Analysis using Galaxy'
+# workflow-constructed-from-tutorial-introduction-to-image-ana
 
 ## Overview
 

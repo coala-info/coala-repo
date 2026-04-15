@@ -2,8 +2,9 @@
 name: red
 description: Red is a bioinformatics tool for the automated de-novo discovery and masking of genomic repeats using machine learning. Use when user asks to identify repetitive elements, mask genomes, or annotate genomic repeats.
 homepage: http://toolsmith.ens.utulsa.edu
+metadata:
+  docker_image: "quay.io/biocontainers/red:2018.09.10--h9948957_3"
 ---
-
 
 # red
 

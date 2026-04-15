@@ -4,7 +4,6 @@ description: The motifmatchr package provides a fast interface for identifying m
 homepage: https://bioconductor.org/packages/release/bioc/html/motifmatchr.html
 ---
 
-
 # bioconductor-motifmatchr
 
 ## Overview

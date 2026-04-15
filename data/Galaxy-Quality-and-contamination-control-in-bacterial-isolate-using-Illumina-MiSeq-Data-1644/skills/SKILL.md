@@ -1,10 +1,12 @@
 ---
 name: quality-and-contamination-control-in-bacterial-isolate-using
-description: "This bacterial genomics workflow processes paired-end Illumina MiSeq reads using Falco and fastp for quality control and trimming, followed by taxonomic classification and abundance estimation with Kraken2, Bracken, and Recentrifuge. Use this skill when you need to assess the sequencing quality of a bacterial isolate and detect potential taxonomic contamination within your genomic samples."
-homepage: https://workflowhub.eu/workflows/1644
+description: This bacterial genomics workflow processes paired-end Illumina MiSeq reads using Falco and fastp for quality control and trimming, followed by taxonomic classification and abundance estimation with Kraken2, Bracken, and Recentrifuge. Use this skill when you need to assess the sequencing quality of a bacterial isolate and detect potential taxonomic contamination within your genomic samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Quality and contamination control in bacterial isolate using Illumina MiSeq Data
+# quality-and-contamination-control-in-bacterial-isolate-using
 
 ## Overview
 

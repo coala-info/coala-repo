@@ -1,9 +1,10 @@
 ---
 name: strdust
-description: "STRdust genotypes tandem repeats and predicts consensus sequences from long-read sequencing data. Use when user asks to genotype specific repeat regions, screen for pathogenic expansions, or resolve complex repeat structures using long reads."
+description: STRdust genotypes tandem repeats and predicts consensus sequences from long-read sequencing data. Use when user asks to genotype specific repeat regions, screen for pathogenic expansions, or resolve complex repeat structures using long reads.
 homepage: https://github.com/wdecoster/STRdust
+metadata:
+  docker_image: "quay.io/biocontainers/strdust:0.16.0--hcdda2d0_0"
 ---
-
 
 # strdust
 

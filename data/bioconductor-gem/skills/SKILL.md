@@ -4,7 +4,6 @@ description: This tool performs fast Epigenome-Wide Association Studies to analy
 homepage: https://bioconductor.org/packages/release/bioc/html/GEM.html
 ---
 
-
 # bioconductor-gem
 
 name: bioconductor-gem

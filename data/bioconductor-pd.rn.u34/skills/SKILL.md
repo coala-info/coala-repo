@@ -4,7 +4,6 @@ description: This package provides platform design and sequence annotation for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rn.u34.html
 ---
 
-
 # bioconductor-pd.rn.u34
 
 name: bioconductor-pd.rn.u34

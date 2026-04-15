@@ -4,7 +4,6 @@ description: This package provides base annotation data and SQLite databases for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rhesus.db0.html
 ---
 
-
 # bioconductor-rhesus.db0
 
 name: bioconductor-rhesus.db0

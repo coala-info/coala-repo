@@ -2,8 +2,9 @@
 name: perl-hash-merge
 description: This tool merges two arbitrarily deep Perl hashes into a single hash while handling nested structures and conflicting keys. Use when user asks to combine nested hashes, define precedence for overlapping hash keys, or specify custom merging behaviors for different data types.
 homepage: http://metacpan.org/pod/Hash::Merge
+metadata:
+  docker_image: "quay.io/biocontainers/perl-hash-merge:0.302--pl5321hdfd78af_1"
 ---
-
 
 # perl-hash-merge
 

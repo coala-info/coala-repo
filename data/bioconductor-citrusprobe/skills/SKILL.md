@@ -4,7 +4,6 @@ description: This package provides probe sequence data and array coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/citrusprobe.html
 ---
 
-
 # bioconductor-citrusprobe
 
 name: bioconductor-citrusprobe

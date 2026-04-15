@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation maps for the Clariom 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomdhumanprobeset.db.html
 ---
 
-
 # bioconductor-clariomdhumanprobeset.db
 
 ## Overview

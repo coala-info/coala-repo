@@ -4,7 +4,6 @@ description: The r-gplots package provides a collection of enhanced R programmin
 homepage: https://cloud.r-project.org/web/packages/gplots/index.html
 ---
 
-
 # r-gplots
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: cct
-description: "The cct tool allows users to watch web videos on Android TV devices. Use when user asks to play web videos, watch TV channels, or manage cct settings."
+description: The cct tool allows users to watch web videos on Android TV devices. Use when user asks to play web videos, watch TV channels, or manage cct settings.
 homepage: https://github.com/Eanya-Tonic/CCTV_Viewer
+metadata:
+  docker_image: "biocontainers/cct:v20170919dfsg-1-deb_cv1"
 ---
-
 
 # cct
 

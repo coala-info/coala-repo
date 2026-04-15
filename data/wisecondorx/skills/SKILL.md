@@ -2,6 +2,8 @@
 name: wisecondorx
 description: WisecondorX detects copy number variations in shallow whole-genome sequencing data by comparing test samples against a normalized reference model. Use when user asks to convert aligned reads to binned counts, create a reference from control samples, predict genomic aberrations, or determine sample gender.
 homepage: https://github.com/CenterForMedicalGeneticsGhent/wisecondorX
+metadata:
+  docker_image: "quay.io/biocontainers/wisecondorx:1.2.9--pyhdfd78af_0"
 ---
 
 # wisecondorx

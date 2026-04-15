@@ -4,7 +4,6 @@ description: The biosigner package implements a wrapper feature selection algori
 homepage: https://bioconductor.org/packages/release/bioc/html/biosigner.html
 ---
 
-
 # bioconductor-biosigner
 
 ## Overview

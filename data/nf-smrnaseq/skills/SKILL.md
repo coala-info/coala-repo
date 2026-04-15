@@ -4,6 +4,8 @@ description: This pipeline performs Small RNA-Seq analysis using single-end FAST
 homepage: https://github.com/nf-core/smrnaseq
 ---
 
+# smrnaseq
+
 ## Overview
 The nf-core/smrnaseq pipeline provides a best-practice analysis for Small RNA-Seq data, addressing the complexities of miRNA discovery and quantification. It handles the processing of short reads, including adapter trimming, UMI deduplication, and filtering of non-target RNA species like rRNA or tRNA.
 

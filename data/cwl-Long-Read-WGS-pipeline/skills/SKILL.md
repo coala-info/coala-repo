@@ -1,9 +1,12 @@
 ---
 name: long-read-wgs-pipeline
-description: "This Common Workflow Language pipeline processes long-read whole genome sequencing data through quality filtering, de novo assembly with Flye, variant calling with Clair3 and FreeBayes, and comprehensive functional annotation using Bakta and Liftoff. Use this skill when you need to reconstruct complete genomes, identify structural and single-nucleotide variants, and characterize the functional or metabolic potential of organisms from long-read sequencing datasets."
-homepage: https://workflowhub.eu/workflows/1868
+description: This Common Workflow Language pipeline processes long-read whole genome sequencing data through quality filtering, de novo assembly with Flye, variant calling with Clair3 and FreeBayes, and comprehensive functional annotation using Bakta and Liftoff. Use this skill when you need to reconstruct complete genomes, identify structural and single-nucleotide variants, and characterize the functional or metabolic potential of organisms from long-read sequencing datasets.
+homepage: https://www.wur.nl/en/research-results/chair-groups/agrotechnology-and-food-sciences/biomolecular-sciences/laboratory-of-systems-and-synthetic-biology.htm
+metadata:
+  docker_image: "N/A"
 ---
-# Long Read WGS pipeline
+
+# long-read-wgs-pipeline
 
 ## Overview
 

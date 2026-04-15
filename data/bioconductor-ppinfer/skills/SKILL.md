@@ -4,7 +4,6 @@ description: This tool infers functionally related proteins using protein-protei
 homepage: https://bioconductor.org/packages/release/bioc/html/PPInfer.html
 ---
 
-
 # bioconductor-ppinfer
 
 name: bioconductor-ppinfer

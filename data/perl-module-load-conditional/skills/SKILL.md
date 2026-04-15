@@ -2,8 +2,9 @@
 name: perl-module-load-conditional
 description: This tool enables Perl scripts to query module availability, check versions, and conditionally load multiple dependencies at runtime. Use when user asks to check if a Perl module is installed, verify module version requirements, or perform all-or-nothing loading of multiple Perl modules.
 homepage: http://metacpan.org/pod/Module::Load::Conditional
+metadata:
+  docker_image: "quay.io/biocontainers/perl-module-load-conditional:0.68--pl526_2"
 ---
-
 
 # perl-module-load-conditional
 

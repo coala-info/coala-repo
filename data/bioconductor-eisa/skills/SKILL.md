@@ -4,7 +4,6 @@ description: This package implements the Iterative Signature Algorithm to identi
 homepage: https://bioconductor.org/packages/3.8/bioc/html/eisa.html
 ---
 
-
 # bioconductor-eisa
 
 ## Overview

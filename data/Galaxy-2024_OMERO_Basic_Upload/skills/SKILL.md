@@ -1,10 +1,12 @@
 ---
 name: 2024_omero_basic_upload
-description: "This bioimaging workflow uploads images, associated metadata, and regions of interest to an OMERO server using the OMERO suite of import tools. Use this skill when you need to centralize microscopy data and ensure that experimental metadata and spatial annotations are systematically linked to their corresponding images for long-term research data management."
-homepage: https://workflowhub.eu/workflows/2108
+description: This bioimaging workflow uploads images, associated metadata, and regions of interest to an OMERO server using the OMERO suite of import tools. Use this skill when you need to centralize microscopy data and ensure that experimental metadata and spatial annotations are systematically linked to their corresponding images for long-term research data management.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# 2024_OMERO_Basic_Upload
+# 2024_omero_basic_upload
 
 ## Overview
 

@@ -1,9 +1,12 @@
 ---
 name: prostate-cancer-classification-workflow
-description: "This CWL workflow processes H&E whole slide images using AI-based tools to perform multi-resolution tissue segmentation and prostate cancer classification. Use this skill when you need to automate the detection of malignant tissue and characterize the spatial distribution of tumors within prostate histopathology specimens."
+description: This CWL workflow processes H&E whole slide images using AI-based tools to perform multi-resolution tissue segmentation and prostate cancer classification. Use this skill when you need to automate the detection of malignant tissue and characterize the spatial distribution of tumors within prostate histopathology specimens.
 homepage: https://workflowhub.eu/workflows/1329
+metadata:
+  docker_image: "N/A"
 ---
-# Prostate cancer classification workflow
+
+# prostate-cancer-classification-workflow
 
 ## Overview
 

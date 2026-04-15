@@ -2,8 +2,9 @@
 name: heinz
 description: HEINZ identifies the most significant functional modules within an interaction network by solving the Maximum Weight Connected Subgraph problem. Use when user asks to find active subnetworks, identify high-scoring connected components, or extract functional modules from weighted interaction data.
 homepage: https://github.com/ls-cwi/heinz
+metadata:
+  docker_image: "quay.io/biocontainers/heinz:2.0.1--h503566f_5"
 ---
-
 
 # heinz
 

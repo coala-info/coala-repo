@@ -4,7 +4,6 @@ description: This tool provides access to human miRNA target prediction and vali
 homepage: https://bioconductor.org/packages/release/data/annotation/html/RmiR.hsa.html
 ---
 
-
 # bioconductor-rmir.hsa
 
 name: bioconductor-rmir.hsa

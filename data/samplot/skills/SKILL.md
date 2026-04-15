@@ -2,6 +2,8 @@
 name: samplot
 description: Samplot creates visual representations of genomic structural variants by plotting alignment data and coverage depth from multiple sequencing technologies. Use when user asks to visualize structural variants, plot BAM or CRAM files, or generate images of genomic regions from a VCF file.
 homepage: https://github.com/ryanlayer/samplot
+metadata:
+  docker_image: "quay.io/biocontainers/samplot:1.3.0--pyh5e36f6f_1"
 ---
 
 # samplot

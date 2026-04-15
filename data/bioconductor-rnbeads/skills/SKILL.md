@@ -4,7 +4,6 @@ description: RnBeads performs comprehensive end-to-end analysis of DNA methylati
 homepage: https://bioconductor.org/packages/release/bioc/html/RnBeads.html
 ---
 
-
 # bioconductor-rnbeads
 
 name: bioconductor-rnbeads

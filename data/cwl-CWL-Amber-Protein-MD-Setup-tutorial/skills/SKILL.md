@@ -1,9 +1,12 @@
 ---
 name: cwl-amber-protein-md-setup-tutorial
-description: "This Common Workflow Language workflow automates the preparation and equilibration of protein structures for molecular dynamics simulations using BioExcel Building Blocks and the AmberTools suite. Use this skill when you need to generate solvated, charge-neutralized topologies and initial energy-minimized coordinates to study the structural behavior and stability of proteins in aqueous environments."
-homepage: https://workflowhub.eu/workflows/260
+description: This Common Workflow Language workflow automates the preparation and equilibration of protein structures for molecular dynamics simulations using BioExcel Building Blocks and the AmberTools suite. Use this skill when you need to generate solvated, charge-neutralized topologies and initial energy-minimized coordinates to study the structural behavior and stability of proteins in aqueous environments.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Amber Protein MD Setup tutorial
+
+# cwl-amber-protein-md-setup-tutorial
 
 ## Overview
 

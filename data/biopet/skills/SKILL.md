@@ -2,6 +2,8 @@
 name: biopet
 description: Biopet is a Java-based framework for executing and managing high-throughput sequencing analysis pipelines and bioinformatics tools. Use when user asks to list available pipelines, execute complex workflows on a computing cluster, or configure pipeline parameters using JSON files.
 homepage: https://github.com/biopet/biopet
+metadata:
+  docker_image: "quay.io/biocontainers/biopet:0.9.0--py36r3.3.2_0"
 ---
 
 # biopet

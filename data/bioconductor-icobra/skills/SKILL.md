@@ -4,7 +4,6 @@ description: iCOBRA is an R package used to evaluate and visualize the performan
 homepage: https://bioconductor.org/packages/release/bioc/html/iCOBRA.html
 ---
 
-
 # bioconductor-icobra
 
 ## Overview

@@ -4,7 +4,6 @@ description: TrajectoryGeometry quantifies and visualizes the directionality of 
 homepage: https://bioconductor.org/packages/release/bioc/html/TrajectoryGeometry.html
 ---
 
-
 # bioconductor-trajectorygeometry
 
 ## Overview

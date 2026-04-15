@@ -2,6 +2,8 @@
 name: peakhood
 description: Peakhood identifies the most probable sequence context for CLIP-seq binding sites by distinguishing between genomic and transcriptomic evidence. Use when user asks to assign binding sites to genomic or transcript contexts, extract site-specific sequence information, or merge transcript context datasets.
 homepage: https://github.com/BackofenLab/Peakhood
+metadata:
+  docker_image: "quay.io/biocontainers/peakhood:0.3--pyhdfd78af_0"
 ---
 
 # peakhood

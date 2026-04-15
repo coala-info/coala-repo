@@ -2,8 +2,9 @@
 name: validictory
 description: validictory is a Python library for validating data objects against a predefined schema. Use when user asks to validate data against a schema, verify data integrity, handle validation errors, or define complex schema patterns.
 homepage: https://github.com/jpmckinney/validictory
+metadata:
+  docker_image: "quay.io/biocontainers/validictory:1.0.1--py36_0"
 ---
-
 
 # validictory
 

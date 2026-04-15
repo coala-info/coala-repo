@@ -2,6 +2,8 @@
 name: nextclade_js
 description: Nextclade performs viral genome alignment, mutation calling, clade assignment, and quality control checks. Use when user asks to analyze viral sequences, identify mutations, assign clades, or download pathogen-specific datasets.
 homepage: https://github.com/nextstrain/nextclade
+metadata:
+  docker_image: "quay.io/biocontainers/nextclade:3.18.1--h9ee0642_0"
 ---
 
 # nextclade_js

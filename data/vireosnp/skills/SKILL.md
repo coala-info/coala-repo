@@ -2,8 +2,9 @@
 name: vireosnp
 description: VireoSNP demultiplexes single-cell RNA-seq data to assign cells to their individual donors using genetic variations. Use when user asks to demultiplex single-cell RNA-seq data, assign cells to their donors, or identify doublets.
 homepage: https://github.com/huangyh09/vireoSNP
+metadata:
+  docker_image: "quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0"
 ---
-
 
 # vireosnp
 

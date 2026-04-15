@@ -1,9 +1,10 @@
 ---
 name: bed2gff
-description: "bed2gff converts BED files into GFF3 format while preserving gene-transcript relationships and genomic features. Use when user asks to convert BED to GFF3, translate genomic coordinates from 0-indexed to 1-indexed, or generate GFF3 annotations from BED12 files."
+description: bed2gff converts BED files into GFF3 format while preserving gene-transcript relationships and genomic features. Use when user asks to convert BED to GFF3, translate genomic coordinates from 0-indexed to 1-indexed, or generate GFF3 annotations from BED12 files.
 homepage: https://github.com/alejandrogzi/bed2gff
+metadata:
+  docker_image: "quay.io/biocontainers/bed2gff:0.1.5--h9948957_1"
 ---
-
 
 # bed2gff
 

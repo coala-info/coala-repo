@@ -2,8 +2,9 @@
 name: umi_tools
 description: umi_tools processes Unique Molecular Identifiers (UMIs) and cell barcodes to accurately quantify molecules and remove PCR duplicates in NGS data. Use when user asks to extract UMIs, whitelist single cells, deduplicate reads, or count gene expression.
 homepage: https://github.com/CGATOxford/UMI-tools
+metadata:
+  docker_image: "quay.io/biocontainers/umi-transfer:1.6.0--hc1c3326_0"
 ---
-
 
 # umi_tools
 

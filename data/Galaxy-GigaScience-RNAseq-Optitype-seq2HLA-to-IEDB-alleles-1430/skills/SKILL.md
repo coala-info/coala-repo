@@ -1,10 +1,12 @@
 ---
 name: gigascience-rnaseq-optitype-seq2hla-to-iedb-alleles
-description: "This Galaxy workflow processes paired-end RNA-seq FASTQ files to perform high-resolution HLA typing using OptiType and seq2HLA, formatting the resulting alleles for compatibility with IEDB binding prediction tools. Use this skill when you need to accurately identify human leukocyte antigen genotypes from transcriptomic data to support neoantigen discovery and immunogenetic profiling."
-homepage: https://workflowhub.eu/workflows/1430
+description: This Galaxy workflow processes paired-end RNA-seq FASTQ files to perform high-resolution HLA typing using OptiType and seq2HLA, formatting the resulting alleles for compatibility with IEDB binding prediction tools. Use this skill when you need to accurately identify human leukocyte antigen genotypes from transcriptomic data to support neoantigen discovery and immunogenetic profiling.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GigaScience-RNAseq-Optitype-seq2HLA-to-IEDB-alleles
+# gigascience-rnaseq-optitype-seq2hla-to-iedb-alleles
 
 ## Overview
 

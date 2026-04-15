@@ -2,8 +2,9 @@
 name: deltamsi
 description: DeltaMSI uses machine learning to automate the screening of microsatellite instability in solid tumors from next-generation sequencing data. Use when user asks to train a new MSI detection model, predict MSI status for unknown samples, or evaluate microsatellite length profiles.
 homepage: https://github.com/RADar-AZDelta/DeltaMSI
+metadata:
+  docker_image: "quay.io/biocontainers/deltamsi:1.0.1--pyh7cba7a3_0"
 ---
-
 
 # deltamsi
 

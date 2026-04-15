@@ -2,8 +2,9 @@
 name: w4mclassfilter
 description: The w4mclassfilter tool processes metabolomics datasets by filtering samples and features, and performing data cleaning and imputation. Use when user asks to filter metabolomics data by sample class, remove zero-variance features, impute missing values, or calculate representative samples for a class.
 homepage: https://github.com/HegemanLab/w4mclassfilter
+metadata:
+  docker_image: "quay.io/biocontainers/w4mclassfilter:0.98.19--r44hdfd78af_5"
 ---
-
 
 # w4mclassfilter
 

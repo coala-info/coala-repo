@@ -4,7 +4,6 @@ description: This tool uses Bayesian modeling to quantify mean methylation and b
 homepage: https://bioconductor.org/packages/release/bioc/html/scMET.html
 ---
 
-
 # bioconductor-scmet
 
 name: bioconductor-scmet

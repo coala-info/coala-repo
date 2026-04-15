@@ -2,8 +2,9 @@
 name: ucsc-bedweedoverlapping
 description: The `bedWeedOverlapping` tool removes genomic features from an input file that overlap with regions in a filter file. Use when user asks to filter out overlapping genomic regions, remove blacklisted regions, mask repeats, or isolate non-coding regions.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedweedoverlapping:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedweedoverlapping
 

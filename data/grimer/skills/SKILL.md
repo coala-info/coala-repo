@@ -2,8 +2,9 @@
 name: grimer
 description: GRIMER transforms microbiome taxonomic profiles into interactive dashboards for quality control and contamination detection. Use when user asks to generate interactive microbiome visualizations, identify potential contaminants by correlating abundance with metadata, or fetch and analyze study data from the MGnify database.
 homepage: https://github.com/pirovc/grimer
+metadata:
+  docker_image: "quay.io/biocontainers/grimer:1.1.0--pyhdfd78af_0"
 ---
-
 
 # grimer
 

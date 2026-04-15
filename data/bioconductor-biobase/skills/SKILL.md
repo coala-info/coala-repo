@@ -4,7 +4,6 @@ description: This package provides standardized data structures and functions fo
 homepage: https://bioconductor.org/packages/release/bioc/html/Biobase.html
 ---
 
-
 # bioconductor-biobase
 
 name: bioconductor-biobase

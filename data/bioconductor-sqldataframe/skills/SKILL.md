@@ -4,7 +4,6 @@ description: The SQLDataFrame package provides a lazy, memory-efficient interfac
 homepage: https://bioconductor.org/packages/release/bioc/html/SQLDataFrame.html
 ---
 
-
 # bioconductor-sqldataframe
 
 ## Overview

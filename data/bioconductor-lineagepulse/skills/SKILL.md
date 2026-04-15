@@ -4,7 +4,6 @@ description: LineagePulse performs differential expression analysis on single-ce
 homepage: https://bioconductor.org/packages/3.8/bioc/html/LineagePulse.html
 ---
 
-
 # bioconductor-lineagepulse
 
 ## Overview

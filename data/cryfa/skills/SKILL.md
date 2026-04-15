@@ -1,7 +1,9 @@
 ---
 name: cryfa
-description: "Cryfa is a security and compression utility that encrypts genomic data and compacts FASTA/FASTQ sequences. Use when user asks to encrypt or decrypt genomic files, compress FASTA or FASTQ datasets, or generate secure cryptographic keys for data protection."
+description: Cryfa is a security and compression utility that encrypts genomic data and compacts FASTA/FASTQ sequences. Use when user asks to encrypt or decrypt genomic files, compress FASTA or FASTQ datasets, or generate secure cryptographic keys for data protection.
 homepage: https://github.com/smortezah/cryfa
+metadata:
+  docker_image: "quay.io/biocontainers/cryfa:20.04--h9948957_3"
 ---
 
 # cryfa

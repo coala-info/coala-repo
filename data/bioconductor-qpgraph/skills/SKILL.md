@@ -4,7 +4,6 @@ description: This package infers molecular regulatory networks from high-through
 homepage: https://bioconductor.org/packages/release/bioc/html/qpgraph.html
 ---
 
-
 # bioconductor-qpgraph
 
 name: bioconductor-qpgraph

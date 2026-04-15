@@ -4,7 +4,6 @@ description: Bioconductor-splatter provides a unified framework for the comprehe
 homepage: https://bioconductor.org/packages/release/bioc/html/splatter.html
 ---
 
-
 # bioconductor-splatter
 
 name: bioconductor-splatter

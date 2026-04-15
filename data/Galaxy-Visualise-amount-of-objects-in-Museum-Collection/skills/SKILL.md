@@ -1,10 +1,12 @@
 ---
 name: visualise-amount-of-objects-in-museum-collection
-description: "This workflow processes tabular museum collection data and stop words using text mining tools, Datamash, and regex to generate bar charts and word clouds. Use this skill when you need to identify the chronological distribution of museum acquisitions and visualize the most frequent object types within a cultural heritage dataset."
-homepage: https://workflowhub.eu/workflows/1964
+description: This workflow processes tabular museum collection data and stop words using text mining tools, Datamash, and regex to generate bar charts and word clouds. Use this skill when you need to identify the chronological distribution of museum acquisitions and visualize the most frequent object types within a cultural heritage dataset.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Visualise amount of objects in Museum Collection
+# visualise-amount-of-objects-in-museum-collection
 
 ## Overview
 

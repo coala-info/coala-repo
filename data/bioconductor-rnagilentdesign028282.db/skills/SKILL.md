@@ -4,7 +4,6 @@ description: This package provides annotation mappings between Agilent Design 02
 homepage: https://bioconductor.org/packages/release/data/annotation/html/RnAgilentDesign028282.db.html
 ---
 
-
 # bioconductor-rnagilentdesign028282.db
 
 ## Overview

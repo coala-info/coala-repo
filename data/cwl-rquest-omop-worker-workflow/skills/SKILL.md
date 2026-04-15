@@ -1,8 +1,11 @@
 ---
 name: rquest-omop-worker-workflow
-description: "This CWL workflow utilizes the run_query tool to execute clinical data requests against OMOP-compliant databases based on structured JSON cohort definitions and connection parameters. Use this skill when you need to identify specific patient cohorts, quantify population demographics, or extract observational health data for multi-center clinical research projects."
-homepage: https://workflowhub.eu/workflows/471
+description: This CWL workflow utilizes the run_query tool to execute clinical data requests against OMOP-compliant databases based on structured JSON cohort definitions and connection parameters. Use this skill when you need to identify specific patient cohorts, quantify population demographics, or extract observational health data for multi-center clinical research projects.
+homepage: https://trefx.uk/
+metadata:
+  docker_image: "N/A"
 ---
+
 # rquest-omop-worker-workflow
 
 ## Overview

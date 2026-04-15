@@ -4,7 +4,6 @@ description: This package provides probe sequence data and physical mapping info
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430aprobe.html
 ---
 
-
 # bioconductor-moe430aprobe
 
 name: bioconductor-moe430aprobe

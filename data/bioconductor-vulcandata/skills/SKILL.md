@@ -4,7 +4,6 @@ description: This package provides example ChIP-Seq data and regulatory networks
 homepage: https://bioconductor.org/packages/release/data/experiment/html/vulcandata.html
 ---
 
-
 # bioconductor-vulcandata
 
 name: bioconductor-vulcandata

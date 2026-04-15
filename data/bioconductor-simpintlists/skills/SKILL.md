@@ -4,7 +4,6 @@ description: This tool retrieves and queries BioGRID protein-protein interaction
 homepage: https://bioconductor.org/packages/release/data/experiment/html/simpIntLists.html
 ---
 
-
 # bioconductor-simpintlists
 
 name: bioconductor-simpintlists

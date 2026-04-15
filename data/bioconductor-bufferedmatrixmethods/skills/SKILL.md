@@ -4,7 +4,6 @@ description: This tool performs memory-efficient microarray data analysis by pro
 homepage: https://bioconductor.org/packages/release/bioc/html/BufferedMatrixMethods.html
 ---
 
-
 # bioconductor-bufferedmatrixmethods
 
 name: bioconductor-bufferedmatrixmethods

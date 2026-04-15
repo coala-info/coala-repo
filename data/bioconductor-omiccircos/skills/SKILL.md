@@ -4,7 +4,6 @@ description: OmicCircos creates high-quality circular plots for the visualizatio
 homepage: https://bioconductor.org/packages/release/bioc/html/OmicCircos.html
 ---
 
-
 # bioconductor-omiccircos
 
 name: bioconductor-omiccircos

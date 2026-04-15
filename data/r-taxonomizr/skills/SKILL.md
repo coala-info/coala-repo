@@ -4,7 +4,6 @@ description: The taxonomizr package maps NCBI accession numbers and taxonomic ID
 homepage: https://cran.r-project.org/web/packages/taxonomizr/index.html
 ---
 
-
 # r-taxonomizr
 
 ## Overview

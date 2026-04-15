@@ -4,7 +4,6 @@ description: This tool provides access to curated time course gene expression da
 homepage: https://bioconductor.org/packages/release/data/experiment/html/timecoursedata.html
 ---
 
-
 # bioconductor-timecoursedata
 
 name: bioconductor-timecoursedata

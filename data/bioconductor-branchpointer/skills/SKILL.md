@@ -4,7 +4,6 @@ description: This tool predicts and analyzes cis-acting intronic branch point si
 homepage: https://bioconductor.org/packages/release/bioc/html/branchpointer.html
 ---
 
-
 # bioconductor-branchpointer
 
 name: bioconductor-branchpointer

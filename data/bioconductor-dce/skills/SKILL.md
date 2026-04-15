@@ -4,7 +4,6 @@ description: This tool analyzes differential causal effects in biological pathwa
 homepage: https://bioconductor.org/packages/3.13/bioc/html/dce.html
 ---
 
-
 # bioconductor-dce
 
 name: bioconductor-dce

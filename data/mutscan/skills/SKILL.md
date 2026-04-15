@@ -1,9 +1,10 @@
 ---
 name: mutscan
-description: "Mutscan rapidly detects targeted mutations directly from raw FASTQ sequencing data using a k-mer based approach. Use when user asks to scan for specific variants, monitor oncogenic mutations, or verify CRISPR editing results without performing full genome alignment."
+description: Mutscan rapidly detects targeted mutations directly from raw FASTQ sequencing data using a k-mer based approach. Use when user asks to scan for specific variants, monitor oncogenic mutations, or verify CRISPR editing results without performing full genome alignment.
 homepage: https://github.com/OpenGene/genefuse
+metadata:
+  docker_image: "quay.io/biocontainers/mutscan:1.14.1--h5ca1c30_0"
 ---
-
 
 # mutscan
 

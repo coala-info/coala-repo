@@ -2,8 +2,9 @@
 name: wham
 description: whamg identifies structural variants like deletions, duplications, inversions, and insertions from aligned BAM files. Use when user asks to identify structural variants, perform joint calling on multiple samples, or analyze a specific genomic region.
 homepage: https://github.com/zeeev/wham
+metadata:
+  docker_image: "quay.io/biocontainers/wham:1.8.0.1.2017.05.03--hd28b015_0"
 ---
-
 
 # wham
 

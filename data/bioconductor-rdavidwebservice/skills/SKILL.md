@@ -4,7 +4,6 @@ description: This tool provides an R interface to the DAVID web service for auto
 homepage: https://bioconductor.org/packages/3.8/bioc/html/RDAVIDWebService.html
 ---
 
-
 # bioconductor-rdavidwebservice
 
 name: bioconductor-rdavidwebservice

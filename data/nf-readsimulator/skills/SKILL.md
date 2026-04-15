@@ -4,6 +4,8 @@ description: This pipeline generates simulated sequencing reads for amplicon, ta
 homepage: https://github.com/nf-core/readsimulator
 ---
 
+# readsimulator
+
 ## Overview
 nf-core/readsimulator is a comprehensive workflow designed to produce synthetic sequencing data for a variety of biological applications. It integrates specialized simulation engines such as ART for amplicons, Japsa capsim for target capture, InsilicoSeq for metagenomes, and wgsim for whole-genome sequencing into a unified framework.
 

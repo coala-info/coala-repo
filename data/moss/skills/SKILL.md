@@ -2,8 +2,9 @@
 name: moss
 description: Moss is a somatic variant caller that uses joint analysis across multiple related samples to detect low-frequency single nucleotide variants. Use when user asks to call somatic SNVs from a cohort of samples, recover low-VAF variants using joint calling, or refine candidate mutations from primary callers like Strelka2 or Mutect2.
 homepage: https://github.com/elkebir-group/Moss
+metadata:
+  docker_image: "quay.io/biocontainers/moss:0.1.1--h06e5f0a_2"
 ---
-
 
 # moss
 

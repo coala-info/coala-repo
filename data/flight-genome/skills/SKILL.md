@@ -2,8 +2,9 @@
 name: flight-genome
 description: flight-genome is a bioinformatics tool that automates the recovery of genomes from metagenomic datasets by binning contigs based on sequence composition and coverage. Use when user asks to recover metagenome-assembled genomes, bin contigs from an assembly, or identify genomic clusters within complex microbial communities.
 homepage: https://github.com/rhysnewell/flight
+metadata:
+  docker_image: "quay.io/biocontainers/flight-genome:1.6.3--pyh7cba7a3_0"
 ---
-
 
 # flight-genome
 

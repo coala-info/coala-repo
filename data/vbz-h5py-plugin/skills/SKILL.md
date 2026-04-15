@@ -2,8 +2,9 @@
 name: vbz-h5py-plugin
 description: The vbz-h5py-plugin enables h5py to read and write HDF5 files compressed with the VBZ algorithm. Use when user asks to read VBZ-compressed HDF5 files, write VBZ-compressed HDF5 files, or interact with Oxford Nanopore raw data.
 homepage: https://github.com/nanoporetech/vbz-h5py-plugin
+metadata:
+  docker_image: "quay.io/biocontainers/vbz-h5py-plugin:1.0.1--pyhdfd78af_0"
 ---
-
 
 # vbz-h5py-plugin
 

@@ -4,7 +4,6 @@ description: This package provides pre-summarized quality control metrics from l
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MethylAidData.html
 ---
 
-
 # bioconductor-methylaiddata
 
 ## Overview

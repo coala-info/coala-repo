@@ -2,8 +2,9 @@
 name: crispr_studio
 description: CRISPRStudio generates color-coded SVG visualizations for the comparative analysis of CRISPR arrays and homologous spacers across different isolates. Use when user asks to visualize CRISPR arrays, compare spacers across bacterial or archaeal genomes, or identify shared evolutionary history in CRISPR-Cas systems.
 homepage: https://github.com/moineaulab/CRISPRStudio
+metadata:
+  docker_image: "quay.io/biocontainers/crispr_studio:1--1"
 ---
-
 
 # crispr_studio
 

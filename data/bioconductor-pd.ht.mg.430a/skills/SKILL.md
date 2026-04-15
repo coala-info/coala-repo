@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ht.mg.430a.html
 ---
 
-
 # bioconductor-pd.ht.mg.430a
 
 name: bioconductor-pd.ht.mg.430a

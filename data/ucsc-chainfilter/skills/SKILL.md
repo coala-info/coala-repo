@@ -2,8 +2,9 @@
 name: ucsc-chainfilter
 description: `ucsc-chainfilter` filters pairwise genomic alignments stored in `.chain` files. Use when user asks to filter alignments by score, isolate alignments for specific chromosomes, filter alignments by their span on target or query sequences, or filter alignments by strand.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainfilter:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chainfilter
 

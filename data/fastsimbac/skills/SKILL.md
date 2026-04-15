@@ -1,9 +1,10 @@
 ---
 name: fastsimbac
-description: "fastsimbac is a high-performance coalescent-based simulator for bacterial populations that models horizontal genetic exchange through gene conversion. Use when user asks to simulate bacterial genomic sequences, model gene conversion events, or generate ancestral recombination graphs in the ms output format."
+description: fastsimbac is a high-performance coalescent-based simulator for bacterial populations that models horizontal genetic exchange through gene conversion. Use when user asks to simulate bacterial genomic sequences, model gene conversion events, or generate ancestral recombination graphs in the ms output format.
 homepage: https://bitbucket.org/nicofmay/fastsimbac/
+metadata:
+  docker_image: "quay.io/biocontainers/fastsimbac:1.0.1_bd3ad13d8f79--h503566f_7"
 ---
-
 
 # fastsimbac
 

@@ -4,7 +4,6 @@ description: This tool provides a fast, memory-efficient implementation of hiera
 homepage: https://cran.r-project.org/web/packages/flashclust/index.html
 ---
 
-
 # r-flashclust
 
 name: r-flashclust

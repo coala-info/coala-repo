@@ -1,10 +1,12 @@
 ---
 name: gigascience_indels_sav_non-reference_demonstration_sts26t-ge
-description: "This proteogenomics workflow processes RNA-Seq reads and reference GTF/FASTA data using HISAT2, StringTie, FreeBayes, and CustomProDB to generate a comprehensive non-reference protein database. Use this skill when you need to identify neoantigens or novel protein variants by integrating transcriptomic evidence of indels, single amino acid variants, and non-canonical transcripts into a customized search database for mass spectrometry discovery."
-homepage: https://workflowhub.eu/workflows/1788
+description: This proteogenomics workflow processes RNA-Seq reads and reference GTF/FASTA data using HISAT2, StringTie, FreeBayes, and CustomProDB to generate a comprehensive non-reference protein database. Use this skill when you need to identify neoantigens or novel protein variants by integrating transcriptomic evidence of indels, single amino acid variants, and non-canonical transcripts into a customized search database for mass spectrometry discovery.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gigascience_Indels_SAV_non-reference_demonstration_STS26T-Gent_Workflow
+# gigascience_indels_sav_non-reference_demonstration_sts26t-ge
 
 ## Overview
 

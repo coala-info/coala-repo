@@ -4,7 +4,6 @@ description: This package provides access to the healthyFlowData Bioconductor ex
 homepage: https://bioconductor.org/packages/release/data/experiment/html/healthyFlowData.html
 ---
 
-
 # bioconductor-healthyflowdata
 
 name: bioconductor-healthyflowdata

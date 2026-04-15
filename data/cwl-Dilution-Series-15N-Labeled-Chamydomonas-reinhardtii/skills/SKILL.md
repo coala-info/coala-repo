@@ -1,9 +1,12 @@
 ---
 name: dilution-series-15n-labeled-chamydomonas-reinhardtii
-description: "This CWL workflow utilizes the ProteomIQon toolset to perform peptide identification and labeled quantification on mass spectrometry data from 15N labeled and unlabeled Chlamydomonas reinhardtii dilution series. Use this skill when you need to quantify protein abundance ratios in stable isotope labeled experiments or characterize the proteomic response of Chlamydomonas reinhardtii across varying isotopic enrichment levels."
-homepage: https://workflowhub.eu/workflows/2052
+description: This CWL workflow utilizes the ProteomIQon toolset to perform peptide identification and labeled quantification on mass spectrometry data from 15N labeled and unlabeled Chlamydomonas reinhardtii dilution series. Use this skill when you need to quantify protein abundance ratios in stable isotope labeled experiments or characterize the proteomic response of Chlamydomonas reinhardtii across varying isotopic enrichment levels.
+homepage: https://csbiology.github.io/
+metadata:
+  docker_image: "N/A"
 ---
-# Dilution Series 15N Labeled Chamydomonas reinhardtii
+
+# dilution-series-15n-labeled-chamydomonas-reinhardtii
 
 ## Overview
 

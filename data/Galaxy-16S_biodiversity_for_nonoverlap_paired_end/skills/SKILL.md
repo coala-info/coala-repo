@@ -1,10 +1,12 @@
 ---
 name: 16s_biodiversity_for_nonoverlap_paired_end
-description: "This Galaxy workflow processes non-overlapping paired-end 16S metagenomic data through quality control, VSearch clustering, and Phyloseq-based statistical analysis to determine microbial biodiversity. Use this skill when you need to identify differentially abundant taxa, calculate richness indices, and visualize community composition from environmental or clinical samples where sequencing reads do not overlap."
-homepage: https://workflowhub.eu/workflows/233
+description: This Galaxy workflow processes non-overlapping paired-end 16S metagenomic data through quality control, VSearch clustering, and Phyloseq-based statistical analysis to determine microbial biodiversity. Use this skill when you need to identify differentially abundant taxa, calculate richness indices, and visualize community composition from environmental or clinical samples where sequencing reads do not overlap.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 16S_biodiversity_for_nonoverlap_paired_end
+# 16s_biodiversity_for_nonoverlap_paired_end
 
 ## Overview
 

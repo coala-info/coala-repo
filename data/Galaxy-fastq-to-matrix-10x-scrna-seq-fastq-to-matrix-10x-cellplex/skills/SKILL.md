@@ -1,10 +1,12 @@
 ---
 name: single-cell-rna-seq-preprocessing-10x-genomics-cellplex-mult
-description: "This workflow processes multiplexed 10X Genomics CellPlex data by integrating gene expression FASTQs and Cell Multiplexing Oligo (CMO) sequences using STARsolo, CITE-seq-Count, and DropletUtils. Use this skill when you need to demultiplex pooled single-cell samples, perform genomic alignment, and generate analysis-ready expression and CMO matrices compatible with Seurat or Scanpy."
-homepage: https://workflowhub.eu/workflows/694
+description: This workflow processes multiplexed 10X Genomics CellPlex data by integrating gene expression FASTQs and Cell Multiplexing Oligo (CMO) sequences using STARsolo, CITE-seq-Count, and DropletUtils. Use this skill when you need to demultiplex pooled single-cell samples, perform genomic alignment, and generate analysis-ready expression and CMO matrices compatible with Seurat or Scanpy.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Single-Cell RNA-seq Preprocessing: 10X Genomics CellPlex Multiplexed Samples
+# single-cell-rna-seq-preprocessing-10x-genomics-cellplex-mult
 
 ## Overview
 

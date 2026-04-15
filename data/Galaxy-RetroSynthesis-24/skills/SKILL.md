@@ -1,10 +1,12 @@
 ---
 name: retrosynthesis
-description: "This workflow predicts metabolic pathways for a target chemical from a genome-scale metabolic model using RetroPath2.0 and RetroRules. Use this skill when you need to identify heterologous biosynthetic routes to produce a specific target molecule within a host organism's metabolic network."
-homepage: https://workflowhub.eu/workflows/24
+description: This workflow predicts metabolic pathways for a target chemical from a genome-scale metabolic model using RetroPath2.0 and RetroRules. Use this skill when you need to identify heterologous biosynthetic routes to produce a specific target molecule within a host organism's metabolic network.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# RetroSynthesis
+# retrosynthesis
 
 ## Overview
 

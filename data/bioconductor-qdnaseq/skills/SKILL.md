@@ -4,7 +4,6 @@ description: QDNAseq performs copy number analysis from shallow whole-genome seq
 homepage: https://bioconductor.org/packages/release/bioc/html/QDNAseq.html
 ---
 
-
 # bioconductor-qdnaseq
 
 ## Overview

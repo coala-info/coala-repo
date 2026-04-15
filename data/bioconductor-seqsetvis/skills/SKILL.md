@@ -4,7 +4,6 @@ description: The bioconductor-seqsetvis package provides tools for the compariso
 homepage: https://bioconductor.org/packages/release/bioc/html/seqsetvis.html
 ---
 
-
 # bioconductor-seqsetvis
 
 name: bioconductor-seqsetvis

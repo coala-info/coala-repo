@@ -2,8 +2,9 @@
 name: tetranscripts
 description: TEtranscripts quantifies transposable element and gene expression by using an expectation-maximization algorithm to optimally distribute multi-mapping RNA-seq reads. Use when user asks to quantify transposable element expression, handle multi-mapping reads in repetitive regions, or perform differential expression analysis of TE families.
 homepage: http://hammelllab.labsites.cshl.edu/software#TEToolkit
+metadata:
+  docker_image: "quay.io/biocontainers/tetranscripts:2.2.3--pyh7cba7a3_0"
 ---
-
 
 # tetranscripts
 

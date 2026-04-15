@@ -4,7 +4,6 @@ description: This tool discovers discriminative DNA motifs in high-throughput se
 homepage: https://bioconductor.org/packages/3.11/bioc/html/motifRG.html
 ---
 
-
 # bioconductor-motifrg
 
 name: bioconductor-motifrg

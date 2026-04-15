@@ -2,8 +2,9 @@
 name: covid-spike-classification
 description: This tool identifies clinically relevant SARS-CoV-2 spike protein mutations from Sanger sequencing trace files. Use when user asks to classify spike mutations, process AB1 files, or identify SARS-CoV-2 variants from sequencing traces.
 homepage: https://github.com/kblin/covid-spike-classification/
+metadata:
+  docker_image: "quay.io/biocontainers/covid-spike-classification:0.6.4--pyhdfd78af_0"
 ---
-
 
 # covid-spike-classification
 

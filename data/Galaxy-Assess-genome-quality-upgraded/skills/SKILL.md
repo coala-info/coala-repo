@@ -1,10 +1,12 @@
 ---
 name: assess-genome-quality-upgraded
-description: "This Galaxy workflow assesses the quality of a polished genome assembly and a reference genome using BUSCO for evolutionary completeness and QUAST for structural metrics. Use this skill when you need to determine the biological integrity and assembly statistics of a de novo genome to verify its suitability for downstream genomic research."
-homepage: https://workflowhub.eu/workflows/1580
+description: This Galaxy workflow assesses the quality of a polished genome assembly and a reference genome using BUSCO for evolutionary completeness and QUAST for structural metrics. Use this skill when you need to determine the biological integrity and assembly statistics of a de novo genome to verify its suitability for downstream genomic research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assess genome quality - upgraded
+# assess-genome-quality-upgraded
 
 ## Overview
 

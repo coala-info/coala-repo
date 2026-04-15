@@ -4,7 +4,6 @@ description: The sparrow package orchestrates and compares multiple gene set enr
 homepage: https://bioconductor.org/packages/release/bioc/html/sparrow.html
 ---
 
-
 # bioconductor-sparrow
 
 name: bioconductor-sparrow

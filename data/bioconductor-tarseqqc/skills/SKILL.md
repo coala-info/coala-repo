@@ -4,7 +4,6 @@ description: TarSeqQC performs quality control and exploration of targeted seque
 homepage: https://bioconductor.org/packages/3.5/bioc/html/TarSeqQC.html
 ---
 
-
 # bioconductor-tarseqqc
 
 name: bioconductor-tarseqqc

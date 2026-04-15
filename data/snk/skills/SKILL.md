@@ -2,6 +2,8 @@
 name: snk
 description: The snk tool transforms Snakemake workflows into standalone command-line interfaces for easier execution and management. Use when user asks to install workflows from GitHub, manage workflow packages, or run Snakemake pipelines using structured CLI commands.
 homepage: https://snk.wytamma.com
+metadata:
+  docker_image: "quay.io/biocontainers/snk:0.31.1--pyhdfd78af_0"
 ---
 
 # snk

@@ -1,9 +1,10 @@
 ---
 name: phamb
-description: "phamb identifies and isolates viral metagenome-assembled genomes from metagenomic bins using a Random Forest model. Use when user asks to differentiate viral clusters from bacterial ones, recover high-quality viral MAGs from VAMB output, or reduce the computational search space for viral evaluation."
+description: phamb identifies and isolates viral metagenome-assembled genomes from metagenomic bins using a Random Forest model. Use when user asks to differentiate viral clusters from bacterial ones, recover high-quality viral MAGs from VAMB output, or reduce the computational search space for viral evaluation.
 homepage: https://github.com/RasmussenLab/phamb
+metadata:
+  docker_image: "quay.io/biocontainers/phamb:1.0.1--pyhdfd78af_0"
 ---
-
 
 # phamb
 

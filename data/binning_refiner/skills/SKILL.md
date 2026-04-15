@@ -1,9 +1,10 @@
 ---
 name: binning_refiner
-description: "binning_refiner optimizes metagenomic binning results by identifying the intersection of contigs across multiple binning outputs to increase bin purity. Use when user asks to refine metagenomic bins, consolidate multiple binning program outputs, or improve the precision of Metagenome-Assembled Genomes."
+description: binning_refiner optimizes metagenomic binning results by identifying the intersection of contigs across multiple binning outputs to increase bin purity. Use when user asks to refine metagenomic bins, consolidate multiple binning program outputs, or improve the precision of Metagenome-Assembled Genomes.
 homepage: https://github.com/songweizhi/Binning_refiner
+metadata:
+  docker_image: "quay.io/biocontainers/binning_refiner:1.4.3"
 ---
-
 
 # binning_refiner
 

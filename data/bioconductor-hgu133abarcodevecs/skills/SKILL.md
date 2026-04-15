@@ -4,7 +4,6 @@ description: This package provides pre-computed parameter estimates for converti
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu133abarcodevecs.html
 ---
 
-
 # bioconductor-hgu133abarcodevecs
 
 name: bioconductor-hgu133abarcodevecs

@@ -2,8 +2,9 @@
 name: pygvcf2coverage
 description: pygvcf2coverage transforms gVCF files into streamlined coverage reports by collapsing genomic records into contiguous intervals. Use when user asks to extract coverage from a gVCF file, convert gVCF to TSV, or maintain ploidy information across genomic blocks.
 homepage: https://github.com/varda/varda2_preprocessing
+metadata:
+  docker_image: "quay.io/biocontainers/pygvcf2coverage:0.2--py_0"
 ---
-
 
 # pygvcf2coverage
 

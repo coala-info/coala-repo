@@ -4,7 +4,6 @@ description: This package detects epistasis between genes or genomic regions usi
 homepage: https://bioconductor.org/packages/release/bioc/html/FRGEpistasis.html
 ---
 
-
 # bioconductor-frgepistasis
 
 ## Overview

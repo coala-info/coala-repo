@@ -4,7 +4,6 @@ description: This package provides sequence-level data and array coordinates for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hcg110probe.html
 ---
 
-
 # bioconductor-hcg110probe
 
 name: bioconductor-hcg110probe

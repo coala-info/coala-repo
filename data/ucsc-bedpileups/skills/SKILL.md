@@ -2,8 +2,9 @@
 name: ucsc-bedpileups
 description: The ucsc-bedpileups utility identifies and reports exact genomic overlaps between features in BED format files. Use when user asks to find overlapping BED entries, identify high-occupancy genomic regions, or collapse features into a pileup representation.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedpileups:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedpileups
 

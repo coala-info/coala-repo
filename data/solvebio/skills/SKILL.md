@@ -2,6 +2,8 @@
 name: solvebio
 description: SolveBio is a unified data platform for storing, indexing, and querying large-scale molecular and clinical life sciences data. Use when user asks to manage vaults and datasets, ingest genomic data, perform server-side aggregations, or harmonize entities across datasets.
 homepage: https://github.com/solvebio/solvebio-python
+metadata:
+  docker_image: "quay.io/biocontainers/solvebio:2.34.0--pyh7e72e81_0"
 ---
 
 # solvebio

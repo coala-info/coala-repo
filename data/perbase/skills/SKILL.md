@@ -2,6 +2,8 @@
 name: perbase
 description: Perbase is a high-performance bioinformatics utility designed to calculate per-position depth and nucleotide-specific pileup statistics from BAM or CRAM files. Use when user asks to calculate sequencing depth, count nucleotide frequencies at specific positions, or generate pileup statistics with hardware-accelerated parallelization.
 homepage: https://github.com/sstadick/perbase
+metadata:
+  docker_image: "quay.io/biocontainers/perbase:1.2.0--h15397dd_0"
 ---
 
 # perbase

@@ -4,7 +4,6 @@ description: This tool performs peptide-level differential expression analysis a
 homepage: https://bioconductor.org/packages/release/bioc/html/ProteoMM.html
 ---
 
-
 # bioconductor-proteomm
 
 name: bioconductor-proteomm

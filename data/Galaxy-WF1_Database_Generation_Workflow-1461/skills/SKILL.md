@@ -1,10 +1,12 @@
 ---
 name: wf1_database_generation_workflow
-description: "This proteomics workflow integrates Human SwissProt, species-specific UniProt, and contaminant databases with MGF mass spectrometry files using FASTA Merge and MetaNovo to generate a refined protein sequence database. Use this skill when you need to reduce a large, redundant protein database into a compact, sample-specific search space to improve the sensitivity and accuracy of peptide identification in complex clinical or microbial samples."
-homepage: https://workflowhub.eu/workflows/1461
+description: This proteomics workflow integrates Human SwissProt, species-specific UniProt, and contaminant databases with MGF mass spectrometry files using FASTA Merge and MetaNovo to generate a refined protein sequence database. Use this skill when you need to reduce a large, redundant protein database into a compact, sample-specific search space to improve the sensitivity and accuracy of peptide identification in complex clinical or microbial samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF1_Database_Generation_Workflow
+# wf1_database_generation_workflow
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: barrnap-python
 description: barrnap-python predicts the location of ribosomal RNA genes in DNA sequences using hidden Markov models. Use when user asks to identify rRNA signatures, annotate ribosomal subunits in a genome, or generate GFF3 files for bacterial, archaeal, eukaryotic, or mitochondrial sequences.
 homepage: https://github.com/nickp60/barrnap-python
+metadata:
+  docker_image: "quay.io/biocontainers/barrnap-python:0.0.5--py36_1"
 ---
-
 
 # barrnap-python
 

@@ -2,8 +2,9 @@
 name: goldrush
 description: GoldRush is a bioinformatics tool for the memory-efficient assembly of long-read sequencing data using a linear-time algorithm. Use when user asks to assemble long-read sequencing data, run the GoldRush pipeline, generate a golden path of reads, or perform polishing and scaffolding on genomic assemblies.
 homepage: https://github.com/bcgsc/goldrush
+metadata:
+  docker_image: "quay.io/biocontainers/goldrush:1.2.2--py39h2de1943_0"
 ---
-
 
 # goldrush
 

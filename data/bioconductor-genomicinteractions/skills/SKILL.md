@@ -4,7 +4,6 @@ description: This tool provides a framework for the analysis, annotation, and vi
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicInteractions.html
 ---
 
-
 # bioconductor-genomicinteractions
 
 name: bioconductor-genomicinteractions

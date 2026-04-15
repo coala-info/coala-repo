@@ -4,7 +4,6 @@ description: The r-misctools package provides a collection of utility functions 
 homepage: https://cran.r-project.org/web/packages/misctools/index.html
 ---
 
-
 # r-misctools
 
 ## Overview

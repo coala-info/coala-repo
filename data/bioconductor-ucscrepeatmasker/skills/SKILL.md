@@ -4,7 +4,6 @@ description: This tool retrieves UCSC RepeatMasker genomic annotations as GRange
 homepage: https://bioconductor.org/packages/release/data/annotation/html/UCSCRepeatMasker.html
 ---
 
-
 # bioconductor-ucscrepeatmasker
 
 name: bioconductor-ucscrepeatmasker

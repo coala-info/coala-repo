@@ -4,7 +4,6 @@ description: This package automates the creation of 3D trans-omic network visual
 homepage: https://bioconductor.org/packages/release/bioc/html/transomics2cytoscape.html
 ---
 
-
 # bioconductor-transomics2cytoscape
 
 ## Overview

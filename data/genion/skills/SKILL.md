@@ -1,9 +1,10 @@
 ---
 name: genion
-description: "genion detects gene fusions and readthrough events from long-read RNA-seq data by analyzing genomic mappings and gene annotations. Use when user asks to detect gene fusions, identify readthrough events, or filter false positive chimeric transcripts in long-read sequencing data."
+description: genion detects gene fusions and readthrough events from long-read RNA-seq data by analyzing genomic mappings and gene annotations. Use when user asks to detect gene fusions, identify readthrough events, or filter false positive chimeric transcripts in long-read sequencing data.
 homepage: https://github.com/vpc-ccg/genion
+metadata:
+  docker_image: "quay.io/biocontainers/genion:1.2.3--h077b44d_2"
 ---
-
 
 # genion
 

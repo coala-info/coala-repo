@@ -2,6 +2,8 @@
 name: qualimap
 description: Qualimap evaluates the quality of alignments from Next Generation Sequencing experiments by processing BAM or SAM files to generate comprehensive QC reports. Use when user asks to perform general alignment quality control, analyze RNA-seq data for gene body coverage and strand specificity, or compare multiple samples to detect batch effects.
 homepage: http://qualimap.bioinfo.cipf.es/
+metadata:
+  docker_image: "quay.io/biocontainers/qualimap:2.3--hdfd78af_0"
 ---
 
 # qualimap

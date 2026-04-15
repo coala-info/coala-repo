@@ -4,7 +4,6 @@ description: This tool provides access to MeSHDb SQLite files from AnnotationHub
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHMeSHDbs.html
 ---
 
-
 # bioconductor-ahmeshdbs
 
 name: bioconductor-ahmeshdbs

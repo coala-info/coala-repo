@@ -4,7 +4,6 @@ description: This package provides access to single-cell RNA-seq data from human
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSE103322.html
 ---
 
-
 # bioconductor-gse103322
 
 name: bioconductor-gse103322

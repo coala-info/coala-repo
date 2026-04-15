@@ -4,7 +4,6 @@ description: This tool performs integrated statistical analysis of two different
 homepage: https://bioconductor.org/packages/release/bioc/html/SIM.html
 ---
 
-
 # bioconductor-sim
 
 name: bioconductor-sim

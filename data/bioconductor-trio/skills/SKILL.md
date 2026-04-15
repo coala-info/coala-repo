@@ -4,7 +4,6 @@ description: This package analyzes case-parent trio data to detect disease-assoc
 homepage: https://bioconductor.org/packages/release/bioc/html/trio.html
 ---
 
-
 # bioconductor-trio
 
 name: bioconductor-trio

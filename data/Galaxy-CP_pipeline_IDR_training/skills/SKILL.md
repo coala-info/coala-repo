@@ -1,10 +1,12 @@
 ---
 name: cp_pipeline_idr_training
-description: "This workflow downloads microscopy images from the Image Data Resource and employs CellProfiler to perform automated nucleoli segmentation and multi-parametric feature extraction. Use this skill when you need to characterize sub-nuclear morphology by quantifying object intensity, texture, and granularity across large biological imaging datasets."
-homepage: https://workflowhub.eu/workflows/1505
+description: This workflow downloads microscopy images from the Image Data Resource and employs CellProfiler to perform automated nucleoli segmentation and multi-parametric feature extraction. Use this skill when you need to characterize sub-nuclear morphology by quantifying object intensity, texture, and granularity across large biological imaging datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# CP_pipeline_IDR_training
+# cp_pipeline_idr_training
 
 ## Overview
 

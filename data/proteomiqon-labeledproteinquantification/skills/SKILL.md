@@ -2,8 +2,9 @@
 name: proteomiqon-labeledproteinquantification
 description: This tool aggregates peptide intensities from labeled protein quantification experiments to determine protein abundance. Use when user asks to quantify labeled proteins or aggregate peptide intensities.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-labeledproteinquantification:0.0.3--hdfd78af_1"
 ---
-
 
 # proteomiqon-labeledproteinquantification
 

@@ -1,9 +1,10 @@
 ---
 name: pyrpipe
-description: "pyrpipe is a Python framework that wraps Unix commands into an object-oriented API to create and automate bioinformatics pipelines. Use when user asks to build RNA-Seq pipelines, wrap Unix commands in Python, download SRA data, trim adapters, or align reads."
+description: pyrpipe is a Python framework that wraps Unix commands into an object-oriented API to create and automate bioinformatics pipelines. Use when user asks to build RNA-Seq pipelines, wrap Unix commands in Python, download SRA data, trim adapters, or align reads.
 homepage: https://github.com/urmi-21/pyrpipe
+metadata:
+  docker_image: "quay.io/biocontainers/pyrpipe:0.0.5--py_0"
 ---
-
 
 # pyrpipe
 

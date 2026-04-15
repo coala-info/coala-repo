@@ -4,7 +4,6 @@ description: DMRcate identifies differentially methylated regions from Illumina 
 homepage: https://bioconductor.org/packages/release/bioc/html/DMRcate.html
 ---
 
-
 # bioconductor-dmrcate
 
 ## Overview

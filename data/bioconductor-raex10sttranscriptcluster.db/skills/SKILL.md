@@ -4,7 +4,6 @@ description: This package maps Affymetrix Rat Exon 1.0 ST Array probe identifier
 homepage: https://bioconductor.org/packages/release/data/annotation/html/raex10sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-raex10sttranscriptcluster.db
 
 name: bioconductor-raex10sttranscriptcluster.db

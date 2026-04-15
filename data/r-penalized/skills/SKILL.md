@@ -4,7 +4,6 @@ description: The penalized package fits penalized regression models including La
 homepage: https://cloud.r-project.org/web/packages/penalized/index.html
 ---
 
-
 # r-penalized
 
 ## Overview

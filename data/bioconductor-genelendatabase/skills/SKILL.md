@@ -4,7 +4,6 @@ description: This package provides mRNA transcript lengths for various genomes a
 homepage: https://bioconductor.org/packages/release/data/experiment/html/geneLenDataBase.html
 ---
 
-
 # bioconductor-genelendatabase
 
 name: bioconductor-genelendatabase

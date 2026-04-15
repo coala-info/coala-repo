@@ -2,6 +2,8 @@
 name: mageck
 description: MAGeCK is a computational pipeline for analyzing genome-scale CRISPR-Cas9 knockout screens to identify significantly enriched or depleted genes. Use when user asks to generate read counts from FASTQ files, perform differential enrichment analysis between treatment and control samples, or conduct pathway analysis on screen results.
 homepage: http://mageck.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/mageck:0.5.9.5--py310h184ae93_8"
 ---
 
 # mageck

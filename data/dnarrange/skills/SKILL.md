@@ -2,8 +2,9 @@
 name: dnarrange
 description: The dnarrange suite detects and reconstructs complex structural variations by analyzing non-colinear long-read alignments. Use when user asks to identify genomic rearrangements, filter variants using control data, visualize rearrangements with dotplots, generate consensus sequences for read groups, or link breakpoints to reconstruct derivative chromosomes.
 homepage: https://github.com/mcfrith/dnarrange
+metadata:
+  docker_image: "quay.io/biocontainers/dnarrange:1.6.3--pyh7e72e81_0"
 ---
-
 
 # dnarrange
 

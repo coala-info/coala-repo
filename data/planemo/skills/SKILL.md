@@ -2,8 +2,9 @@
 name: planemo
 description: Planemo is a command-line toolkit designed to assist developers in creating, linting, testing, and publishing Galaxy tools. Use when user asks to initialize new tool projects, validate XML syntax, run functional tests, or preview tool interfaces in a local Galaxy instance.
 homepage: https://github.com/galaxyproject/planemo
+metadata:
+  docker_image: "quay.io/biocontainers/planemo:0.75.37--pyhdfd78af_0"
 ---
-
 
 # planemo
 

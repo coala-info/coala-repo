@@ -4,7 +4,6 @@ description: This tool performs automated Sanger sequencing data analysis, inclu
 homepage: https://bioconductor.org/packages/release/bioc/html/sangeranalyseR.html
 ---
 
-
 # bioconductor-sangeranalyser
 
 name: bioconductor-sangeranalyser

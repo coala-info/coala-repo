@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping SHDZ
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SHDZ.db.html
 ---
 
-
 # bioconductor-shdz.db
 
 name: bioconductor-shdz.db

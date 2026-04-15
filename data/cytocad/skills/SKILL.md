@@ -1,9 +1,10 @@
 ---
 name: cytocad
-description: "CytoCAD detects large-scale genomic copy-number gains and losses from low-depth whole-genome sequencing data. Use when user asks to identify copy-number variations, analyze read coverage for genomic anomalies, or generate chromosome ideograms from BAM files."
+description: CytoCAD detects large-scale genomic copy-number gains and losses from low-depth whole-genome sequencing data. Use when user asks to identify copy-number variations, analyze read coverage for genomic anomalies, or generate chromosome ideograms from BAM files.
 homepage: https://github.com/cytham/cytocad
+metadata:
+  docker_image: "quay.io/biocontainers/cytocad:1.0.3--py310h4b81fae_2"
 ---
-
 
 # cytocad
 

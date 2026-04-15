@@ -2,6 +2,8 @@
 name: strainge
 description: Strainge performs high-resolution identification and genomic variation analysis of microbial strains within metagenomic samples. Use when user asks to identify reference strains, profile genomic variation, call SNPs, or create k-mer databases for strain analysis.
 homepage: The package home page
+metadata:
+  docker_image: "quay.io/biocontainers/strainge:1.3.9--py38h737be40_0"
 ---
 
 # strainge

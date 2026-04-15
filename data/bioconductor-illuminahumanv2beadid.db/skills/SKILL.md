@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Illumina Humanv2 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2BeadID.db.html
 ---
 
-
 # bioconductor-illuminahumanv2beadid.db
 
 name: bioconductor-illuminahumanv2beadid.db

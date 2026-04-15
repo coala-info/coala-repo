@@ -4,7 +4,6 @@ description: This R package fits sparse generalized linear models by incorporati
 homepage: https://bioconductor.org/packages/release/bioc/html/glmSparseNet.html
 ---
 
-
 # bioconductor-glmsparsenet
 
 ## Overview

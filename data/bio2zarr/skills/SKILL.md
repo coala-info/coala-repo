@@ -2,6 +2,8 @@
 name: bio2zarr
 description: bio2zarr converts bioinformatics file formats like VCF, PLINK, and tskit into the Zarr format for high-performance distributed computing and efficient data access. Use when user asks to convert genomic data to Zarr, perform large-scale VCF transformations, or optimize genomic datasets for parallel processing.
 homepage: https://sgkit-dev.github.io/bio2zarr/
+metadata:
+  docker_image: "quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0"
 ---
 
 # bio2zarr

@@ -4,7 +4,6 @@ description: This tool provides expert guidance for performing applied regressio
 homepage: https://cloud.r-project.org/web/packages/car/index.html
 ---
 
-
 # r-car
 
 name: r-car

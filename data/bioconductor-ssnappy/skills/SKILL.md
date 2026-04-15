@@ -4,7 +4,6 @@ description: This tool performs single-sample directional pathway perturbation a
 homepage: https://bioconductor.org/packages/release/bioc/html/sSNAPPY.html
 ---
 
-
 # bioconductor-ssnappy
 
 name: bioconductor-ssnappy

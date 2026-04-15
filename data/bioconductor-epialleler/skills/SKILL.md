@@ -4,7 +4,6 @@ description: This package performs fast and scalable analysis of DNA methylation
 homepage: https://bioconductor.org/packages/release/bioc/html/epialleleR.html
 ---
 
-
 # bioconductor-epialleler
 
 ## Overview

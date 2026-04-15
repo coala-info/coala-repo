@@ -2,8 +2,9 @@
 name: svict
 description: SViCT detects structural variations and gene fusions from targeted sequencing data, specifically for liquid biopsy analysis. Use when user asks to detect structural variants in circulating tumor DNA, identify gene fusions, or analyze cfDNA sequencing data.
 homepage: https://github.com/vpc-ccg/svict
+metadata:
+  docker_image: "quay.io/biocontainers/svict:1.0.1--h077b44d_6"
 ---
-
 
 # svict
 

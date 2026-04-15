@@ -4,7 +4,6 @@ description: This tool provides access to curated electron and light microscopy 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html
 ---
 
-
 # bioconductor-bioimagedbs
 
 name: bioconductor-bioimagedbs

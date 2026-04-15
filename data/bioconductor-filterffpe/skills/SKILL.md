@@ -4,7 +4,6 @@ description: This tool filters artifact chimeric reads from Formalin-Fixed Paraf
 homepage: https://bioconductor.org/packages/release/bioc/html/FilterFFPE.html
 ---
 
-
 # bioconductor-filterffpe
 
 name: bioconductor-filterffpe

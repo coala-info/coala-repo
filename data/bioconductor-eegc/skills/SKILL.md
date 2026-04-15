@@ -4,7 +4,6 @@ description: bioconductor-eegc evaluates cellular engineering processes by compa
 homepage: https://bioconductor.org/packages/3.8/bioc/html/eegc.html
 ---
 
-
 # bioconductor-eegc
 
 name: bioconductor-eegc

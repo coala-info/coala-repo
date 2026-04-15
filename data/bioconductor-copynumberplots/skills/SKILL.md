@@ -4,7 +4,6 @@ description: This package creates specialized visualizations for copy-number var
 homepage: https://bioconductor.org/packages/release/bioc/html/CopyNumberPlots.html
 ---
 
-
 # bioconductor-copynumberplots
 
 ## Overview

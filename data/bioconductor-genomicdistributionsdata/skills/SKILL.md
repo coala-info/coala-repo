@@ -4,7 +4,6 @@ description: This package provides reference datasets for human and mouse genome
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GenomicDistributionsData.html
 ---
 
-
 # bioconductor-genomicdistributionsdata
 
 ## Overview

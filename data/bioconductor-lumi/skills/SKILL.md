@@ -4,7 +4,6 @@ description: The bioconductor-lumi package provides a comprehensive pipeline for
 homepage: https://bioconductor.org/packages/release/bioc/html/lumi.html
 ---
 
-
 # bioconductor-lumi
 
 name: bioconductor-lumi

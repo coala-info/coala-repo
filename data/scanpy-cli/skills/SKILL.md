@@ -2,8 +2,9 @@
 name: scanpy-cli
 description: scanpy-cli provides a command-line interface for executing single-cell RNA sequencing analysis pipelines using the Scanpy library. Use when user asks to filter cells, normalize data, perform batch correction, cluster cell populations, or generate UMAP visualizations.
 homepage: https://github.com/nictru/scanpy-cli
+metadata:
+  docker_image: "quay.io/biocontainers/scanpy-cli:0.2.0--pyhdfd78af_0"
 ---
-
 
 # scanpy-cli
 

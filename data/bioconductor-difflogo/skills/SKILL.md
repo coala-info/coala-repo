@@ -4,7 +4,6 @@ description: Bioconductor-difflogo visualizes differences between multiple DNA, 
 homepage: https://bioconductor.org/packages/release/bioc/html/DiffLogo.html
 ---
 
-
 # bioconductor-difflogo
 
 name: bioconductor-difflogo

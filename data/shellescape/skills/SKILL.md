@@ -2,8 +2,9 @@
 name: shellescape
 description: The shellescape tool transforms strings into shell-safe arguments by wrapping them in single quotes and escaping internal special characters. Use when user asks to escape strings for shell commands, sanitize external input for scripts, or process text streams into shell-safe formats using the escargs utility.
 homepage: https://github.com/alessio/shellescape
+metadata:
+  docker_image: "quay.io/biocontainers/shellescape:3.4.1--py36_0"
 ---
-
 
 # shellescape
 

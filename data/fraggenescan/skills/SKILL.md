@@ -2,8 +2,9 @@
 name: fraggenescan
 description: FragGeneScan predicts protein-coding genes in prokaryotic genomes, specifically handling short, fragmented sequencing reads and frame shifts. Use when user asks to predict genes in metagenomic reads, identify protein-coding regions in fragmented DNA, or annotate prokaryotic sequences with sequencing errors.
 homepage: https://sourceforge.net/projects/fraggenescan/
+metadata:
+  docker_image: "quay.io/biocontainers/fraggenescan:1.32--h7b50bb2_1"
 ---
-
 
 # fraggenescan
 

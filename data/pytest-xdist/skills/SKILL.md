@@ -2,8 +2,9 @@
 name: pytest-xdist
 description: pytest-xdist parallelizes test execution across multiple CPU cores or worker processes to speed up slow test suites. Use when user asks to run tests in parallel, distribute tests across multiple CPUs, or use a file-watching mode to re-run failing tests.
 homepage: https://github.com/pytest-dev/pytest-xdist
+metadata:
+  docker_image: "quay.io/biocontainers/pytest-xdist:1.14--py36_0"
 ---
-
 
 # pytest-xdist
 

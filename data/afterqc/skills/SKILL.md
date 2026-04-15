@@ -2,8 +2,9 @@
 name: afterqc
 description: AfterQC performs automated quality control, filtering, adapter trimming, and error correction for FASTQ sequencing data. Use when user asks to preprocess Illumina reads, detect bubble artifacts, correct mismatched bases in paired-end overlaps, or generate quality reports.
 homepage: https://github.com/OpenGene/AfterQC
+metadata:
+  docker_image: "quay.io/biocontainers/afterqc:0.9.7--py27_0"
 ---
-
 
 # afterqc
 

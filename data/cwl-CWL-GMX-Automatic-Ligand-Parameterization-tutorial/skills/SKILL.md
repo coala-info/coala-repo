@@ -1,9 +1,12 @@
 ---
 name: cwl-gmx-automatic-ligand-parameterization-tutorial
-description: "This CWL workflow automates small molecule ligand parameterization for molecular dynamics by using OpenBabel for energy minimization and ACPype to generate GROMACS topologies. Use this skill when you need to generate accurate force field parameters and topologies for small molecules to enable their inclusion in GROMACS molecular dynamics simulations."
-homepage: https://workflowhub.eu/workflows/255
+description: This CWL workflow automates small molecule ligand parameterization for molecular dynamics by using OpenBabel for energy minimization and ACPype to generate GROMACS topologies. Use this skill when you need to generate accurate force field parameters and topologies for small molecules to enable their inclusion in GROMACS molecular dynamics simulations.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL GMX Automatic Ligand Parameterization tutorial
+
+# cwl-gmx-automatic-ligand-parameterization-tutorial
 
 ## Overview
 

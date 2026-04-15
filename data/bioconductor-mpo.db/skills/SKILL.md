@@ -1,9 +1,8 @@
 ---
 name: bioconductor-mpo.db
-description: "bioconductor-mpo.db provides semantic relationships, mappings, and hierarchical navigation for the Mouse Phenotype Ontology. Use when user asks to fetch mouse phenotype terms, navigate the ontology hierarchy, or map between mouse phenotype IDs, MGI gene IDs, and human disease ontology IDs."
+description: bioconductor-mpo.db provides semantic relationships, mappings, and hierarchical navigation for the Mouse Phenotype Ontology. Use when user asks to fetch mouse phenotype terms, navigate the ontology hierarchy, or map between mouse phenotype IDs, MGI gene IDs, and human disease ontology IDs.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MPO.db.html
 ---
-
 
 # bioconductor-mpo.db
 

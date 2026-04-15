@@ -4,7 +4,6 @@ description: This tool identifies and visualizes ligand-receptor interactions be
 homepage: https://bioconductor.org/packages/release/bioc/html/scTHI.html
 ---
 
-
 # bioconductor-scthi
 
 name: bioconductor-scthi

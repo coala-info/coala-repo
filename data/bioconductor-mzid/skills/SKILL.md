@@ -4,7 +4,6 @@ description: The bioconductor-mzid package parses mzIdentML files into consisten
 homepage: https://bioconductor.org/packages/release/bioc/html/mzID.html
 ---
 
-
 # bioconductor-mzid
 
 ## Overview

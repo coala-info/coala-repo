@@ -2,8 +2,9 @@
 name: perl-namespace-autoclean
 description: This pragma automatically removes imported symbols from a Perl package's namespace at the end of compilation to keep the public API clean. Use when user asks to remove imported functions from a class interface, prevent imports from being called as methods, or clean up internal helper functions in Perl.
 homepage: https://github.com/moose/namespace-autoclean
+metadata:
+  docker_image: "quay.io/biocontainers/perl-namespace-autoclean:0.31--pl5321h9948957_2"
 ---
-
 
 # perl-namespace-autoclean
 

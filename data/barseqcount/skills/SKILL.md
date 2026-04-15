@@ -2,6 +2,8 @@
 name: barseqcount
 description: This tool analyzes DNA barcode sequencing experiments. Use when user asks to count and analyze DNA barcoding sequences.
 homepage: https://github.com/damienmarsic/barseqcount
+metadata:
+  docker_image: "quay.io/biocontainers/barseqcount:0.1.5--pyhdfd78af_0"
 ---
 
 # barseqcount

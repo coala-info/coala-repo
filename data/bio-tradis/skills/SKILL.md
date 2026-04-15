@@ -2,8 +2,9 @@
 name: bio-tradis
 description: bio-tradis provides a streamlined command-line interface for fetching genomic data, extracting sequences, performing alignments, and querying taxonomic information. Use when user asks to fetch GenBank records, extract gene sequences, translate nucleotides to proteins, align sequences, generate VCF files, or query taxonomic lineages and metadata.
 homepage: https://github.com/ialbert/bio
+metadata:
+  docker_image: "biocontainers/bio-tradis:v1.4.1dfsg-1-deb_cv1"
 ---
-
 
 # bio-tradis
 

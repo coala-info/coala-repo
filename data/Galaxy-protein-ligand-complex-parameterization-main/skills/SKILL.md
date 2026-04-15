@@ -1,10 +1,12 @@
 ---
 name: create-gro-and-top-complex-files
-description: "This Galaxy workflow parameterizes a protein-ligand complex from PDB and SDF inputs using GROMACS, AnteChamber, and ACPYPE to generate compatible topology and structure files. Use this skill when you need to prepare a biological system for molecular dynamics simulations by generating unified topology and coordinate files for a protein bound to a small molecule ligand."
-homepage: https://workflowhub.eu/workflows/247
+description: This Galaxy workflow parameterizes a protein-ligand complex from PDB and SDF inputs using GROMACS, AnteChamber, and ACPYPE to generate compatible topology and structure files. Use this skill when you need to prepare a biological system for molecular dynamics simulations by generating unified topology and coordinate files for a protein bound to a small molecule ligand.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Create GRO and TOP complex files
+# create-gro-and-top-complex-files
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool identifies differential alternative poly-adenylation usag
 homepage: https://bioconductor.org/packages/release/bioc/html/roar.html
 ---
 
-
 # bioconductor-roar
 
 name: bioconductor-roar

@@ -4,7 +4,6 @@ description: The r-sads tool provides maximum likelihood methods to fit, compare
 homepage: https://cran.r-project.org/web/packages/sads/index.html
 ---
 
-
 # r-sads
 
 name: r-sads

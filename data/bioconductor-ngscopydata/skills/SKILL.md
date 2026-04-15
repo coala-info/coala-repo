@@ -4,7 +4,6 @@ description: This package provides subsetted BAM files from human lung tumor and
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NGScopyData.html
 ---
 
-
 # bioconductor-ngscopydata
 
 name: bioconductor-ngscopydata

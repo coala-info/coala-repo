@@ -2,8 +2,9 @@
 name: perl-test-warnings
 description: This module monitors and tests for Perl warnings during test execution to ensure no unexpected warnings are emitted. Use when user asks to test for unexpected warnings, capture specific warnings for inspection, or allow certain warning patterns in Perl test scripts.
 homepage: https://github.com/karenetheridge/Test-Warnings
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-warnings:0.031--pl5321hdfd78af_0"
 ---
-
 
 # perl-test-warnings
 

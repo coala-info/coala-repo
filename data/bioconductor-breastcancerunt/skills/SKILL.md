@@ -4,7 +4,6 @@ description: This package provides access to the Sotiriou et al. (2007) breast c
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerUNT.html
 ---
 
-
 # bioconductor-breastcancerunt
 
 name: bioconductor-breastcancerunt

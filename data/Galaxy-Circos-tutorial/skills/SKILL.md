@@ -1,10 +1,12 @@
 ---
 name: circos-tutorial
-description: "This workflow processes genomic karyotype data using text manipulation tools and the Circos engine to generate complex circular visualizations of biological data. Use this skill when you need to create high-quality circular plots to represent genomic features, relationships, or structural variations across a reference genome."
-homepage: https://workflowhub.eu/workflows/1413
+description: This workflow processes genomic karyotype data using text manipulation tools and the Circos engine to generate complex circular visualizations of biological data. Use this skill when you need to create high-quality circular plots to represent genomic features, relationships, or structural variations across a reference genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Circos tutorial
+# circos-tutorial
 
 ## Overview
 

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-genominator
-description: "Genominator stores, retrieves, and summarizes large-scale genomic data using an SQLite backend to efficiently process datasets that exceed memory limits. Use when user asks to summarize sequencing reads by annotation, store genomic data in a database, aggregate reads into unique locations, or perform coverage and goodness-of-fit statistical analyses."
+description: Genominator stores, retrieves, and summarizes large-scale genomic data using an SQLite backend to efficiently process datasets that exceed memory limits. Use when user asks to summarize sequencing reads by annotation, store genomic data in a database, aggregate reads into unique locations, or perform coverage and goodness-of-fit statistical analyses.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Genominator.html
 ---
-
 
 # bioconductor-genominator
 

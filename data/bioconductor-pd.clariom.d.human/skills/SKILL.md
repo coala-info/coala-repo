@@ -4,7 +4,6 @@ description: This package provides annotation data and platform design informati
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.d.human.html
 ---
 
-
 # bioconductor-pd.clariom.d.human
 
 name: bioconductor-pd.clariom.d.human

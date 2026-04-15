@@ -2,8 +2,9 @@
 name: slclust
 description: This tool performs single-linkage clustering on biological data. Use when user asks to group similar items, refine clusters with Jaccard similarity, or perform hierarchical clustering.
 homepage: https://github.com/brianjohnhaas/SLCLUST
+metadata:
+  docker_image: "quay.io/biocontainers/slclust:02022010--h077b44d_6"
 ---
-
 
 # slclust
 

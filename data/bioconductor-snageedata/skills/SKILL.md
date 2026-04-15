@@ -4,7 +4,6 @@ description: This package provides gene-gene correlation matrices and gene lists
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SNAGEEdata.html
 ---
 
-
 # bioconductor-snageedata
 
 name: bioconductor-snageedata

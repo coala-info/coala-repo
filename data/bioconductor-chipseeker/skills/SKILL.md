@@ -4,7 +4,6 @@ description: ChIPseeker is an R/Bioconductor package used for annotating, visual
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPseeker.html
 ---
 
-
 # bioconductor-chipseeker
 
 name: bioconductor-chipseeker

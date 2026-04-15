@@ -4,7 +4,6 @@ description: This tool provides a unified interface for performing exact and app
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocNeighbors.html
 ---
 
-
 # bioconductor-biocneighbors
 
 ## Overview

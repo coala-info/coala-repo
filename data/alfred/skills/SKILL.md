@@ -2,8 +2,9 @@
 name: alfred
 description: Alfred is a comprehensive bioinformatics toolset for analyzing, quality-controlling, and quantifying BAM and CRAM alignment files. Use when user asks to perform alignment quality control, count DNA or RNA features, annotate genomic peaks with motifs, generate browser tracks, or conduct haplotype-resolved analysis.
 homepage: https://github.com/tobiasrausch/alfred
+metadata:
+  docker_image: "quay.io/biocontainers/alfred:0.5.1--h4d20210_0"
 ---
-
 
 # alfred
 

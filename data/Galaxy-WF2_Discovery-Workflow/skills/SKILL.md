@@ -1,10 +1,12 @@
 ---
 name: wf2_discovery-workflow
-description: "This metaproteomics discovery workflow processes mass spectrometry RAW files and microbial protein databases using MaxQuant, SearchGUI, and PeptideShaker to identify and filter microbial peptides. Use this skill when you need to characterize the microbial peptide landscape in clinical samples by comparing experimental mass spectra against human and microbial sequences to identify high-confidence biomarkers or functional signatures."
-homepage: https://workflowhub.eu/workflows/1435
+description: This metaproteomics discovery workflow processes mass spectrometry RAW files and microbial protein databases using MaxQuant, SearchGUI, and PeptideShaker to identify and filter microbial peptides. Use this skill when you need to characterize the microbial peptide landscape in clinical samples by comparing experimental mass spectra against human and microbial sequences to identify high-confidence biomarkers or functional signatures.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF2_Discovery-Workflow
+# wf2_discovery-workflow
 
 ## Overview
 

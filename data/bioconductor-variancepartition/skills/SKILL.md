@@ -4,7 +4,6 @@ description: This tool quantifies and visualizes the contribution of multiple so
 homepage: https://bioconductor.org/packages/release/bioc/html/variancePartition.html
 ---
 
-
 # bioconductor-variancepartition
 
 name: bioconductor-variancepartition

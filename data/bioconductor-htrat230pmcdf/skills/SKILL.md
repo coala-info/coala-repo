@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment an
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htrat230pmcdf.html
 ---
 
-
 # bioconductor-htrat230pmcdf
 
 name: bioconductor-htrat230pmcdf

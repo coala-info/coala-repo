@@ -4,7 +4,6 @@ description: This tool performs meta-analysis of RNA-seq count data from multipl
 homepage: https://bioconductor.org/packages/release/bioc/html/metaSeq.html
 ---
 
-
 # bioconductor-metaseq
 
 name: bioconductor-metaseq

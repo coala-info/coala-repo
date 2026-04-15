@@ -4,7 +4,6 @@ description: PECA performs differential expression analysis by averaging probe-l
 homepage: https://bioconductor.org/packages/release/bioc/html/PECA.html
 ---
 
-
 # bioconductor-peca
 
 name: bioconductor-peca

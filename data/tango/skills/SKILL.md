@@ -2,6 +2,8 @@
 name: tango
 description: tango assigns taxonomic classifications to metagenomic contigs by querying nucleotide sequences against protein databases using rank-specific thresholds. Use when user asks to download taxonomy data, format protein databases, build Diamond indices, or assign taxonomy to assembly sequences.
 homepage: https://github.com/johnne/tango
+metadata:
+  docker_image: "quay.io/biocontainers/tango:0.5.7--py_0"
 ---
 
 # tango

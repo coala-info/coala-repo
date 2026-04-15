@@ -2,8 +2,9 @@
 name: bygul
 description: Bygul simulates amplicon sequencing reads from complex mixtures of viral or bacterial strains with specified or random proportions. Use when user asks to simulate amplicon reads, generate sequencing data for wastewater surveillance, or create mixtures of genomic samples with specific proportions.
 homepage: https://github.com/andersen-lab/Bygul
+metadata:
+  docker_image: "quay.io/biocontainers/bygul:1.0.7--pyhdfd78af_0"
 ---
-
 
 # bygul
 

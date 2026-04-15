@@ -2,8 +2,9 @@
 name: updio
 description: UPDio is a bioinformatics tool that identifies Uniparental Disomy (UPD) in a proband by analyzing their genotypes against their parents. Use when user asks to identify Uniparental Disomy, find UPD events, or analyze VCF data for UPD.
 homepage: https://github.com/rhpvorderman/updio
+metadata:
+  docker_image: "quay.io/biocontainers/updio:1.1.0--hdfd78af_0"
 ---
-
 
 # updio
 

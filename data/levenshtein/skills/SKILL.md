@@ -2,8 +2,9 @@
 name: levenshtein
 description: This tool calculates the edit distance between strings and identifies the closest match from a list of candidates. Use when user asks to calculate string similarity, find the closest matching word, or implement fuzzy search suggestions.
 homepage: https://github.com/ka-weihe/fastest-levenshtein
+metadata:
+  docker_image: "quay.io/biocontainers/levenshtein:0.20.1"
 ---
-
 
 # levenshtein
 

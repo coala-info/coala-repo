@@ -4,7 +4,6 @@ description: This tool performs analysis of case-control genetic association stu
 homepage: https://bioconductor.org/packages/release/bioc/html/CGEN.html
 ---
 
-
 # bioconductor-cgen
 
 name: bioconductor-cgen

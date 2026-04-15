@@ -2,8 +2,9 @@
 name: bifrost
 description: Bifrost builds, updates, and queries compacted and colored de Bruijn graphs for large-scale genomic sequence analysis. Use when user asks to build a compacted de Bruijn graph, update an existing graph with new sequences, or query sequences against a colored graph.
 homepage: https://github.com/pmelsted/bifrost
+metadata:
+  docker_image: "quay.io/biocontainers/bifrost:1.3.5--h5ca1c30_3"
 ---
-
 
 # bifrost
 

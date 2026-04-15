@@ -1,10 +1,12 @@
 ---
 name: assembly-decontamination-vgp9
-description: "This VGP workflow processes scaffolded genome assemblies to remove foreign contaminants, adaptors, and mitochondrial sequences using NCBI FCS GX, FCS Adaptor, and BLAST+. Use this skill when you need to finalize a high-quality genome assembly by purging non-target biological sequences and identifying mitochondrial scaffolds to ensure data integrity for public submission."
-homepage: https://workflowhub.eu/workflows/645
+description: This VGP workflow processes scaffolded genome assemblies to remove foreign contaminants, adaptors, and mitochondrial sequences using NCBI FCS GX, FCS Adaptor, and BLAST+. Use this skill when you need to finalize a high-quality genome assembly by purging non-target biological sequences and identifying mitochondrial scaffolds to ensure data integrity for public submission.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly decontamination VGP9
+# assembly-decontamination-vgp9
 
 ## Overview
 

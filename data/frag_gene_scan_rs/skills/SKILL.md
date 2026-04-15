@@ -1,9 +1,10 @@
 ---
 name: frag_gene_scan_rs
-description: "FragGeneScanRs identifies coding regions in fragmented or error-prone DNA sequences such as metagenomic reads. Use when user asks to predict genes, identify protein-coding regions in DNA, or find genes in fragmented metagenomic datasets."
+description: FragGeneScanRs identifies coding regions in fragmented or error-prone DNA sequences such as metagenomic reads. Use when user asks to predict genes, identify protein-coding regions in DNA, or find genes in fragmented metagenomic datasets.
 homepage: https://github.com/unipept/FragGeneScanRs
+metadata:
+  docker_image: "quay.io/biocontainers/frag_gene_scan_rs:1.1.0--h4349ce8_0"
 ---
-
 
 # frag_gene_scan_rs
 

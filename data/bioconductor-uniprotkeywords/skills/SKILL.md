@@ -4,7 +4,6 @@ description: This package provides a standardized interface to the UniProt contr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/UniProtKeywords.html
 ---
 
-
 # bioconductor-uniprotkeywords
 
 ## Overview

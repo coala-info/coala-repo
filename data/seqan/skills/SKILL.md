@@ -2,8 +2,9 @@
 name: seqan
 description: SeqAn is a high-performance C++ library for biological sequence analysis that provides optimized data structures and algorithms for genomic data. Use when user asks to implement efficient sequence alignments, manage large-scale genomic I/O, perform rapid pattern matching with string indices, or develop custom bioinformatics tools requiring low-level performance.
 homepage: http://www.seqan.de/
+metadata:
+  docker_image: "quay.io/biocontainers/seqan:2.5.2--h168b838_0"
 ---
-
 
 # seqan
 

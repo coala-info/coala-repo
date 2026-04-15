@@ -4,7 +4,6 @@ description: This tool integrates proteomics and mass spectrometry data into the
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ProteomicsAnnotationHubData.html
 ---
 
-
 # bioconductor-proteomicsannotationhubdata
 
 name: bioconductor-proteomicsannotationhubdata

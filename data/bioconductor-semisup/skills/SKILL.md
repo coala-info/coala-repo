@@ -4,7 +4,6 @@ description: This package implements a semi-supervised learning framework to ide
 homepage: https://bioconductor.org/packages/release/bioc/html/semisup.html
 ---
 
-
 # bioconductor-semisup
 
 name: bioconductor-semisup

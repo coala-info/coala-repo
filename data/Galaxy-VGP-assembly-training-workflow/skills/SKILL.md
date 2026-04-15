@@ -1,10 +1,12 @@
 ---
 name: vgp-assembly-training-workflow
-description: "This workflow performs high-quality de novo genome assembly using Bionano, Hi-C, and long-read sequencing data through a pipeline of purging, scaffolding with SALSA and Bionano Hybrid Scaffold, and quality assessment via BUSCO and QUAST. Use this skill when you need to generate chromosome-level reference assemblies for complex eukaryotic genomes while ensuring the removal of haplotypic duplications and verifying structural integrity."
-homepage: https://workflowhub.eu/workflows/1607
+description: This workflow performs high-quality de novo genome assembly using Bionano, Hi-C, and long-read sequencing data through a pipeline of purging, scaffolding with SALSA and Bionano Hybrid Scaffold, and quality assessment via BUSCO and QUAST. Use this skill when you need to generate chromosome-level reference assemblies for complex eukaryotic genomes while ensuring the removal of haplotypic duplications and verifying structural integrity.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP assembly: training workflow
+# vgp-assembly-training-workflow
 
 ## Overview
 

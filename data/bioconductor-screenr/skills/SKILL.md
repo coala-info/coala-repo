@@ -4,7 +4,6 @@ description: ScreenR provides a pipeline for analyzing barcode screening data fr
 homepage: https://bioconductor.org/packages/release/bioc/html/ScreenR.html
 ---
 
-
 # bioconductor-screenr
 
 ## Overview

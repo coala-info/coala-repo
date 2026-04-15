@@ -4,7 +4,6 @@ description: bioconductor-ontoproc provides R interfaces for mapping informal bi
 homepage: https://bioconductor.org/packages/release/bioc/html/ontoProc.html
 ---
 
-
 # bioconductor-ontoproc
 
 name: bioconductor-ontoproc

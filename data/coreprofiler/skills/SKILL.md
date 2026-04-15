@@ -1,7 +1,9 @@
 ---
 name: coreprofiler
-description: "CoreProfiler generates core genome multilocus sequence types (cgMLSTs) for bacterial isolates. Use when user asks to perform cgMLST analysis, generate cgMLST profiles, compare bacterial strains, or analyze population structures."
+description: CoreProfiler generates core genome multilocus sequence types (cgMLSTs) for bacterial isolates. Use when user asks to perform cgMLST analysis, generate cgMLST profiles, compare bacterial strains, or analyze population structures.
 homepage: https://gitlab.com/ifb-elixirfr/abromics
+metadata:
+  docker_image: "quay.io/biocontainers/coreprofiler:2.0.0--pyhdfd78af_0"
 ---
 
 # coreprofiler

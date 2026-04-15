@@ -1,9 +1,8 @@
 ---
 name: bioconductor-simffpe
-description: "bioconductor-simffpe simulates NGS reads for FFPE samples by incorporating artificial chimeric reads and normal reads to mimic formalin-fixation artifacts. Use when user asks to simulate FFPE-specific sequencing artifacts, generate synthetic datasets with artificial chimeric reads, or estimate Phred score profiles from BAM files."
+description: bioconductor-simffpe simulates NGS reads for FFPE samples by incorporating artificial chimeric reads and normal reads to mimic formalin-fixation artifacts. Use when user asks to simulate FFPE-specific sequencing artifacts, generate synthetic datasets with artificial chimeric reads, or estimate Phred score profiles from BAM files.
 homepage: https://bioconductor.org/packages/release/bioc/html/SimFFPE.html
 ---
-
 
 # bioconductor-simffpe
 

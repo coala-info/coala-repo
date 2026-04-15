@@ -1,10 +1,12 @@
 ---
 name: workflow-5-otu-clustering-galaxy-training-16s-microbial-anal
-description: "This microbiome workflow processes 16S rRNA sequences, count tables, and taxonomy data using mothur tools to perform OTU clustering, taxonomic classification, and sample normalization. Use this skill when you need to group processed microbial sequences into operational taxonomic units and generate shared abundance tables for downstream ecological diversity analysis."
-homepage: https://workflowhub.eu/workflows/1404
+description: This microbiome workflow processes 16S rRNA sequences, count tables, and taxonomy data using mothur tools to perform OTU clustering, taxonomic classification, and sample normalization. Use this skill when you need to group processed microbial sequences into operational taxonomic units and generate shared abundance tables for downstream ecological diversity analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 5: OTU Clustering [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-5-otu-clustering-galaxy-training-16s-microbial-anal
 
 ## Overview
 

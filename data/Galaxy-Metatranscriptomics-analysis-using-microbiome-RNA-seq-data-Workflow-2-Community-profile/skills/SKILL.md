@@ -1,10 +1,12 @@
 ---
 name: metatranscriptomics-analysis-using-microbiome-rna-seq-data-w
-description: "This metatranscriptomics workflow processes forward and reverse microbiome RNA-seq reads to generate taxonomic community profiles using MetaPhlAn, Krona, and GraPhlAn. Use this skill when you need to characterize the taxonomic composition of a microbial community and visualize the relative abundance of species through hierarchical trees and interactive pie charts."
-homepage: https://workflowhub.eu/workflows/1451
+description: This metatranscriptomics workflow processes forward and reverse microbiome RNA-seq reads to generate taxonomic community profiles using MetaPhlAn, Krona, and GraPhlAn. Use this skill when you need to characterize the taxonomic composition of a microbial community and visualize the relative abundance of species through hierarchical trees and interactive pie charts.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metatranscriptomics analysis using microbiome RNA-seq data - Workflow 2: Community profile
+# metatranscriptomics-analysis-using-microbiome-rna-seq-data-w
 
 ## Overview
 

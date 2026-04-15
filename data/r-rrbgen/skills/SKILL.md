@@ -4,7 +4,6 @@ description: rrbgen is an R package for reading and writing BGEN v1.3 files cont
 homepage: https://cran.r-project.org/web/packages/rrbgen/index.html
 ---
 
-
 # r-rrbgen
 
 ## Overview

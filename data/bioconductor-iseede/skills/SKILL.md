@@ -4,7 +4,6 @@ description: This tool provides specialized panels for the iSEE framework to int
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEde.html
 ---
 
-
 # bioconductor-iseede
 
 name: bioconductor-iseede

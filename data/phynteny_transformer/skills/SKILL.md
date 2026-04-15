@@ -2,8 +2,9 @@
 name: phynteny_transformer
 description: Phynteny transformer performs functional annotation of bacteriophage genes by leveraging gene synteny and transformer-based deep learning. Use when user asks to annotate phage genomes, predict functions for dark matter genes, or incorporate gene order into functional predictions.
 homepage: https://github.com/susiegriggo/Phynteny_transformer
+metadata:
+  docker_image: "quay.io/biocontainers/phynteny_transformer:0.1.3--pyhdfd78af_0"
 ---
-
 
 # phynteny_transformer
 

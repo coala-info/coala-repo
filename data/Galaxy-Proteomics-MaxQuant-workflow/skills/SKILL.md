@@ -1,10 +1,12 @@
 ---
 name: proteomics-maxquant-workflow
-description: "This proteomics workflow performs label-free protein quantification by processing mass spectrometry samples and a protein database using MaxQuant followed by data filtering and statistical visualization. Use this skill when you need to identify and quantify proteins in complex biological samples to compare protein expression levels across different experimental conditions without using isotopic labels."
-homepage: https://workflowhub.eu/workflows/1448
+description: This proteomics workflow performs label-free protein quantification by processing mass spectrometry samples and a protein database using MaxQuant followed by data filtering and statistical visualization. Use this skill when you need to identify and quantify proteins in complex biological samples to compare protein expression levels across different experimental conditions without using isotopic labels.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteomics: MaxQuant workflow
+# proteomics-maxquant-workflow
 
 ## Overview
 

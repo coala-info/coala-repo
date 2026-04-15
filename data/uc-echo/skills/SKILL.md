@@ -2,8 +2,9 @@
 name: uc-echo
 description: This tool manages the uc-echo bioinformatics package. Use when user asks to install uc-echo or find its bioconda package.
 homepage: https://github.com/dh-orko/Help-me-get-rid-of-unhumans
+metadata:
+  docker_image: "biocontainers/uc-echo:v1.12-11-deb_cv1"
 ---
-
 
 # uc-echo
 

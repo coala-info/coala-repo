@@ -2,8 +2,9 @@
 name: maxit
 description: Maxit processes and curates macromolecular structure data in PDB and mmCIF formats. Use when user asks to translate formats, perform consistency checks, manipulate coordinates, align residue numbering, reorder/rename atoms, or assign ligand chain IDs.
 homepage: https://sw-tools.rcsb.org/apps/MAXIT
+metadata:
+  docker_image: "quay.io/biocontainers/maxit:11.400--h503566f_0"
 ---
-
 
 # maxit
 

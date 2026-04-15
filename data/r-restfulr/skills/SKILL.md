@@ -4,7 +4,6 @@ description: This tool interfaces with RESTful web services by modeling API endp
 homepage: https://cran.r-project.org/web/packages/restfulr/index.html
 ---
 
-
 # r-restfulr
 
 name: r-restfulr

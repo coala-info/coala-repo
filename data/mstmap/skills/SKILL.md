@@ -2,8 +2,9 @@
 name: mstmap
 description: MSTmap constructs accurate genetic linkage maps by calculating a Minimum Spanning Tree to group and order markers. Use when user asks to build linkage maps, group markers into linkage groups, determine marker order, or calculate genetic distances.
 homepage: http://mstmap.org/
+metadata:
+  docker_image: "quay.io/biocontainers/mstmap:1--h4ac6f70_3"
 ---
-
 
 # mstmap
 

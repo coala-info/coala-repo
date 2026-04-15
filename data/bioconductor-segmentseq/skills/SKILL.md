@@ -4,7 +4,6 @@ description: This tool performs simultaneous segmentation of high-throughput seq
 homepage: https://bioconductor.org/packages/release/bioc/html/segmentSeq.html
 ---
 
-
 # bioconductor-segmentseq
 
 name: bioconductor-segmentseq

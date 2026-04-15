@@ -2,8 +2,9 @@
 name: locarna
 description: LocARNA performs simultaneous alignment and folding of RNA sequences to identify common secondary structures. Use when user asks to perform multiple or pairwise RNA structural alignment, align sequences with low sequence identity, or use sparsified alignment for long RNA sequences.
 homepage: https://s-will.github.io/LocARNA
+metadata:
+  docker_image: "quay.io/biocontainers/locarna:2.0.1--pl5321h4ac6f70_0"
 ---
-
 
 # locarna
 

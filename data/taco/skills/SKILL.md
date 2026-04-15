@@ -2,8 +2,9 @@
 name: taco
 description: TACO aggregates transcriptome data from multiple RNA-Seq samples to produce a comprehensive, unified transcriptome. Use when user asks to merge GTF files, perform multi-sample transcriptome assembly, filter transcripts by expression metrics, or compare assemblies against a reference.
 homepage: https://github.com/tacorna/taco
+metadata:
+  docker_image: "quay.io/biocontainers/taco:0.7.3--py27_0"
 ---
-
 
 # taco
 

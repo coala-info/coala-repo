@@ -4,7 +4,6 @@ description: This tool analyzes SELEX-seq data to discover motifs and calculate 
 homepage: https://bioconductor.org/packages/release/bioc/html/SELEX.html
 ---
 
-
 # bioconductor-selex
 
 name: bioconductor-selex

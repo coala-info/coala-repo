@@ -4,7 +4,6 @@ description: The scruff package processes CEL-Seq and CEL-Seq2 single-cell RNA-s
 homepage: https://bioconductor.org/packages/release/bioc/html/scruff.html
 ---
 
-
 # bioconductor-scruff
 
 ## Overview

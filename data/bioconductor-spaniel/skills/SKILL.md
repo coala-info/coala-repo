@@ -1,9 +1,8 @@
 ---
 name: bioconductor-spaniel
-description: "Spaniel visualizes spatial transcriptomics data by overlaying gene expression, quality control metrics, and clusters onto histological tissue images. Use when user asks to import 10X Visium data into a SingleCellExperiment object, visualize spatial gene expression, perform spatial quality control, or map clusters onto tissue images."
+description: Spaniel visualizes spatial transcriptomics data by overlaying gene expression, quality control metrics, and clusters onto histological tissue images. Use when user asks to import 10X Visium data into a SingleCellExperiment object, visualize spatial gene expression, perform spatial quality control, or map clusters onto tissue images.
 homepage: https://bioconductor.org/packages/release/bioc/html/Spaniel.html
 ---
-
 
 # bioconductor-spaniel
 

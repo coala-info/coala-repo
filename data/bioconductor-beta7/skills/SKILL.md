@@ -4,7 +4,6 @@ description: This package provides access to microarray data from a study on dif
 homepage: https://bioconductor.org/packages/release/data/experiment/html/beta7.html
 ---
 
-
 # bioconductor-beta7
 
 name: bioconductor-beta7

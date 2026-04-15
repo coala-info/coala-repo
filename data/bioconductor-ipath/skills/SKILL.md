@@ -4,7 +4,6 @@ description: This tool performs individual-level pathway analysis to quantify pa
 homepage: https://bioconductor.org/packages/release/bioc/html/iPath.html
 ---
 
-
 # bioconductor-ipath
 
 ## Overview

@@ -2,8 +2,9 @@
 name: perl-indirect
 description: This module detects and discourages the use of indirect object syntax in Perl to prevent parsing ambiguities. Use when user asks to identify indirect method calls, enforce direct method syntax, or audit Perl scripts for potential bugs caused by indirect calls.
 homepage: http://search.cpan.org/dist/indirect/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-indirect:0.39--pl5321h7b50bb2_6"
 ---
-
 
 # perl-indirect
 

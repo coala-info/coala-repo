@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for mapping Aff
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230b.db.html
 ---
 
-
 # bioconductor-rae230b.db
 
 name: bioconductor-rae230b.db

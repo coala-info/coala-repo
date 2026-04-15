@@ -4,7 +4,6 @@ description: This package provides sample CEL files from the International HapMa
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmap100kxba.html
 ---
 
-
 # bioconductor-hapmap100kxba
 
 name: bioconductor-hapmap100kxba

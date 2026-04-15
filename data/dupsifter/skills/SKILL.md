@@ -2,8 +2,9 @@
 name: dupsifter
 description: Dupsifter identifies and marks PCR duplicates in sequencing libraries, with specific optimizations for whole-genome bisulfite sequencing data. Use when user asks to mark PCR duplicates, process WGBS data, or perform UMI-aware deduplication.
 homepage: https://github.com/huishenlab/dupsifter
+metadata:
+  docker_image: "quay.io/biocontainers/dupsifter:1.3.0.20241113--h566b1c6_1"
 ---
-
 
 # dupsifter
 

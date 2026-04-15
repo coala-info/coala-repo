@@ -4,7 +4,6 @@ description: This tool identifies and quantifies differentially expressed region
 homepage: https://bioconductor.org/packages/release/bioc/html/srnadiff.html
 ---
 
-
 # bioconductor-srnadiff
 
 name: bioconductor-srnadiff

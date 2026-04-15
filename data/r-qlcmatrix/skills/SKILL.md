@@ -4,7 +4,6 @@ description: The r-qlcmatrix tool provides optimized utility functions for handl
 homepage: https://cran.r-project.org/web/packages/qlcmatrix/index.html
 ---
 
-
 # r-qlcmatrix
 
 name: r-qlcmatrix

@@ -1,9 +1,10 @@
 ---
 name: verifybamid2
-description: "verifybamid2 quantifies inter-sample DNA contamination in sequencing libraries using an ancestry-agnostic SVD approach. Use when user asks to 'estimate DNA contamination', 'detect within-ancestry contamination', 'constrain contamination level', or 'constrain PC coordinates'."
+description: verifybamid2 quantifies inter-sample DNA contamination in sequencing libraries using an ancestry-agnostic SVD approach. Use when user asks to 'estimate DNA contamination', 'detect within-ancestry contamination', 'constrain contamination level', or 'constrain PC coordinates'.
 homepage: https://github.com/Griffan/VerifyBamID
+metadata:
+  docker_image: "quay.io/biocontainers/verifybamid2:2.0.1--h345183b_12"
 ---
-
 
 # verifybamid2
 

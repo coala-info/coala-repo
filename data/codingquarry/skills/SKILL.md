@@ -2,8 +2,9 @@
 name: codingquarry
 description: CodingQuarry is a gene prediction tool designed to identify gene structures in fungal genomes using Hidden Markov Models and RNA-seq data. Use when user asks to predict genes in fungal genomes, train gene models with existing annotations, handle AT-rich genomic regions, or identify effector proteins in plant pathogens.
 homepage: https://sourceforge.net/p/codingquarry/
+metadata:
+  docker_image: "quay.io/biocontainers/codingquarry:2.0--py311he264feb_11"
 ---
-
 
 # codingquarry
 

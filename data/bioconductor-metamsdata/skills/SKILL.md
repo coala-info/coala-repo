@@ -4,7 +4,6 @@ description: This package provides example GC-MS and LC-MS data files in NetCDF 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/metaMSdata.html
 ---
 
-
 # bioconductor-metamsdata
 
 name: bioconductor-metamsdata

@@ -1,10 +1,12 @@
 ---
 name: select-first-n-lines
-description: "This Galaxy workflow extracts a specified number of initial rows from an input dataset using the text processing head tool. Use this skill when you need to preview the structure of large data files or subset a ranked list to focus on the top-scoring biological features."
-homepage: https://workflowhub.eu/workflows/1397
+description: This Galaxy workflow extracts a specified number of initial rows from an input dataset using the text processing head tool. Use this skill when you need to preview the structure of large data files or subset a ranked list to focus on the top-scoring biological features.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Select First N Lines
+# select-first-n-lines
 
 ## Overview
 

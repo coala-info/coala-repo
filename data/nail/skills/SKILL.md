@@ -2,8 +2,9 @@
 name: nail
 description: Nail performs efficient protein sequence alignment using a fast approximation of the HMMER3 Forward/Backward algorithm. Use when user asks to search protein sequences against a database, perform sensitive probabilistic sequence modeling, or run accelerated HMMER-style searches.
 homepage: https://github.com/TravisWheelerLab/nail
+metadata:
+  docker_image: "quay.io/biocontainers/nail:0.4.0--h4349ce8_1"
 ---
-
 
 # nail
 

@@ -2,8 +2,9 @@
 name: plant_tribes_gene_family_aligner
 description: This tool generates multiple sequence alignments for gene families using algorithms like MAFFT or PASTA to prepare sequences for evolutionary analysis. Use when user asks to align gene family sequences, perform multiple sequence alignment on orthogroups, or prepare sequences for phylogenetic tree construction.
 homepage: https://github.com/dePamphilis/PlantTribes
+metadata:
+  docker_image: "quay.io/biocontainers/plant_tribes_gene_family_aligner:1.0.4--hdfd78af_1"
 ---
-
 
 # plant_tribes_gene_family_aligner
 

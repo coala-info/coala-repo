@@ -4,7 +4,6 @@ description: This package provides an R interface to the Megadepth utility for h
 homepage: https://bioconductor.org/packages/release/bioc/html/megadepth.html
 ---
 
-
 # bioconductor-megadepth
 
 name: bioconductor-megadepth

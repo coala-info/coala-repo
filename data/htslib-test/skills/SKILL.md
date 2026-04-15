@@ -2,8 +2,9 @@
 name: htslib-test
 description: HTSlib-test provides standalone utilities for identifying, compressing, and indexing genomic data files. Use when user asks to identify file formats, compress files with bgzip, or index and query tab-delimited genomic files using tabix.
 homepage: https://github.com/samtools/htslib
+metadata:
+  docker_image: "biocontainers/htslib-test:v1.9-11-deb_cv1"
 ---
-
 
 # htslib-test
 

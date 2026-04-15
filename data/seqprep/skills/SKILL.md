@@ -2,8 +2,9 @@
 name: seqprep
 description: SeqPrep removes adapter contamination from Illumina paired-end reads and merges overlapping forward and reverse reads into a single consensus sequence. Use when user asks to trim adapter sequences, merge overlapping paired-end reads, or mask adapter sequences with Ns.
 homepage: https://github.com/jstjohn/SeqPrep
+metadata:
+  docker_image: "biocontainers/seqprep:v1.3.2-3-deb_cv1"
 ---
-
 
 # seqprep
 

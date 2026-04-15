@@ -4,7 +4,6 @@ description: This package provides SNP locations and alleles for Homo sapiens fr
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/SNPlocs.Hsapiens.dbSNP.20101109.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp.20101109
 
 ## Overview

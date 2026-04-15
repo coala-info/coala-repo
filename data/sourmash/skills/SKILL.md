@@ -2,6 +2,8 @@
 name: sourmash
 description: Sourmash performs fast genomic sketching and comparison using MinHash algorithms to create representative signatures of DNA or RNA sequences. Use when user asks to create genomic signatures, calculate similarity between datasets, search databases for matches, or perform taxonomic classification of metagenomic samples.
 homepage: https://github.com/sourmash-bio/sourmash
+metadata:
+  docker_image: "quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0"
 ---
 
 # sourmash

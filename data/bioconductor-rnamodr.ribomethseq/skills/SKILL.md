@@ -4,7 +4,6 @@ description: This package detects 2'-O methylations in RNA by analyzing read end
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAmodR.RiboMethSeq.html
 ---
 
-
 # bioconductor-rnamodr.ribomethseq
 
 ## Overview

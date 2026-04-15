@@ -1,10 +1,12 @@
 ---
 name: ms-imaging-loading-exploring-data
-description: "This proteomics workflow processes mass spectrometry imaging data and internal calibrants using Cardinal-based quality control and data export tools to explore spatial molecular distributions. Use this skill when you need to perform initial quality assessment and data exploration of mass spectrometry imaging datasets to identify spatial patterns of proteins or metabolites."
-homepage: https://workflowhub.eu/workflows/1455
+description: This proteomics workflow processes mass spectrometry imaging data and internal calibrants using Cardinal-based quality control and data export tools to explore spatial molecular distributions. Use this skill when you need to perform initial quality assessment and data exploration of mass spectrometry imaging datasets to identify spatial patterns of proteins or metabolites.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MS Imaging Loading Exploring Data
+# ms-imaging-loading-exploring-data
 
 ## Overview
 

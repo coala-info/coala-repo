@@ -4,7 +4,6 @@ description: This Bioconductor package provides minor allele frequency data from
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.1Kgenomes.phase1.GRCh38.html
 ---
 
-
 # bioconductor-mafdb.1kgenomes.phase1.grch38
 
 ## Overview

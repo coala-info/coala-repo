@@ -2,8 +2,9 @@
 name: pedesigner
 description: The pedesigner tool automates the design of pegRNAs and secondary nicking guides for CRISPR prime editing systems by optimizing primer binding site and reverse transcription template lengths. Use when user asks to design pegRNAs, calculate optimal PBS and RTT lengths, or generate sequences for PE3 prime editing experiments.
 homepage: https://github.com/VeredKunik/pedesigner
+metadata:
+  docker_image: "quay.io/biocontainers/pedesigner:0.2.0--pyhdfd78af_0"
 ---
-
 
 # pedesigner
 

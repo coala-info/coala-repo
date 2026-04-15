@@ -2,8 +2,9 @@
 name: fast5-research
 description: This tool provides a Python API and command-line utilities for manipulating, reading, and writing Oxford Nanopore FAST5 files. Use when user asks to extract raw signal data, generate synthetic nanopore datasets, create read summaries, or perform granular HDF5 file manipulation for sequencing research.
 homepage: https://github.com/nanoporetech/fast5_research
+metadata:
+  docker_image: "quay.io/biocontainers/fast5-research:1.2.22--pyh864c0ab_0"
 ---
-
 
 # fast5-research
 

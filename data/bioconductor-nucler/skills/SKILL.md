@@ -4,7 +4,6 @@ description: This tool analyzes nucleosome positioning data from NGS and tiling 
 homepage: https://bioconductor.org/packages/release/bioc/html/nucleR.html
 ---
 
-
 # bioconductor-nucler
 
 name: bioconductor-nucler

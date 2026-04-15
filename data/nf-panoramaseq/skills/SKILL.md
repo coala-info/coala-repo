@@ -4,6 +4,8 @@ description: This pipeline processes sequencing-based spatial transcriptomics da
 homepage: https://github.com/nf-core/panoramaseq
 ---
 
+# panoramaseq
+
 ## Overview
 nf-core/panoramaseq is designed to handle the complexities of sequencing-based spatial transcriptomics data derived from in-situ arrays. It automates the processing of raw sequencing reads to provide researchers with data suitable for downstream spatial analysis.
 

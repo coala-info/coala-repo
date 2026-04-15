@@ -4,7 +4,6 @@ description: This tool integrates multi-omics data using causal reasoning and pr
 homepage: https://bioconductor.org/packages/release/bioc/html/cosmosR.html
 ---
 
-
 # bioconductor-cosmosr
 
 name: bioconductor-cosmosr

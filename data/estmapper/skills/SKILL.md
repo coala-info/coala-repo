@@ -2,6 +2,8 @@
 name: estmapper
 description: The estmapper tool deploys and maintains a Django application designed for Automata Theory testing. Use when user asks to set up a local environment, manage database migrations, create a superuser, or launch the development server.
 homepage: https://github.com/estmapper/1234
+metadata:
+  docker_image: "quay.io/biocontainers/estmapper:2008--py311pl5321hd8d945a_7"
 ---
 
 # estmapper

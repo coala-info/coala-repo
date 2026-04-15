@@ -2,6 +2,8 @@
 name: afplot
 description: afplot visualizes allele frequency distributions from VCF files to identify genomic patterns such as sample contamination, deletions, or loss of heterozygosity. Use when user asks to plot allele frequencies, detect sample contamination, identify genomic deletions, or generate whole-genome allele frequency visualizations.
 homepage: https://github.com/sndrtj/afplot
+metadata:
+  docker_image: "quay.io/biocontainers/afplot:0.2.1--py36h24bf2e0_1"
 ---
 
 # afplot

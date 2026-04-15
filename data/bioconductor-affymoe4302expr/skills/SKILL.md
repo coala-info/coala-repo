@@ -4,7 +4,6 @@ description: This package provides a curated database of normalized mouse gene e
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Affymoe4302Expr.html
 ---
 
-
 # bioconductor-affymoe4302expr
 
 name: bioconductor-affymoe4302expr

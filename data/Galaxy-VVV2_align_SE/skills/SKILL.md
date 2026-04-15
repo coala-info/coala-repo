@@ -1,10 +1,12 @@
 ---
 name: vvv2_align_se
-description: "This workflow processes single-end viral sequencing data and a ploidy file to perform reference-based alignment, variant calling, and genome annotation using tools like BWA-MEM, bcftools, VarDict, and VADR. Use this skill when you need to generate consensus sequences, identify haploid mutations, and visualize SNP distributions for viral pathogens."
-homepage: https://workflowhub.eu/workflows/517
+description: This workflow processes single-end viral sequencing data and a ploidy file to perform reference-based alignment, variant calling, and genome annotation using tools like BWA-MEM, bcftools, VarDict, and VADR. Use this skill when you need to generate consensus sequences, identify haploid mutations, and visualize SNP distributions for viral pathogens.
+homepage: https://www.anses.fr
+metadata:
+  docker_image: "N/A"
 ---
 
-# VVV2_align_SE
+# vvv2_align_se
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: gmx-protein-md-setup
-description: "This Galaxy workflow automates the preparation, solvation, and execution of GROMACS molecular dynamics simulations for protein structures using BioBB building blocks. Use this skill when you need to characterize the structural stability, energy profiles, and conformational changes of a protein within a simulated aqueous environment."
-homepage: https://workflowhub.eu/workflows/277
+description: This Galaxy workflow automates the preparation, solvation, and execution of GROMACS molecular dynamics simulations for protein structures using BioBB building blocks. Use this skill when you need to characterize the structural stability, energy profiles, and conformational changes of a protein within a simulated aqueous environment.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# GMX Protein MD Setup
+# gmx-protein-md-setup
 
 ## Overview
 

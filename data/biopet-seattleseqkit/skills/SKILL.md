@@ -2,8 +2,9 @@
 name: biopet-seattleseqkit
 description: Biopet-seattleseqkit processes and manipulates SeattleSeq output files to filter variants and aggregate data into gene-level matrices. Use when user asks to filter SeattleSeq files by genomic regions or field criteria, or merge variant annotations into a combined gene matrix.
 homepage: https://github.com/biopet/seattleseqkit
+metadata:
+  docker_image: "quay.io/biocontainers/biopet-seattleseqkit:0.2--0"
 ---
-
 
 # biopet-seattleseqkit
 

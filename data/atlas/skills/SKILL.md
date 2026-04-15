@@ -2,8 +2,9 @@
 name: atlas
 description: ATLAS processes low-depth and ancient DNA sequencing data by incorporating post-mortem damage patterns and error models into genotype likelihood calculations. Use when user asks to estimate post-mortem damage, call genotypes from ancient samples, calculate population genetics statistics, or filter and diagnose BAM files.
 homepage: https://bitbucket.org/wegmannlab/atlas/wiki/Home
+metadata:
+  docker_image: "quay.io/biocontainers/atlas:2.0.1--hadca570_0"
 ---
-
 
 # atlas
 

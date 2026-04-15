@@ -4,7 +4,6 @@ description: This tool performs Bayesian variable selection for Genome-Wide Asso
 homepage: https://bioconductor.org/packages/release/bioc/html/BG2.html
 ---
 
-
 # bioconductor-bg2
 
 name: bioconductor-bg2

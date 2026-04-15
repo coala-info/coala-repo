@@ -4,7 +4,6 @@ description: This package provides access to clinical, gene expression, and DNA 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/COPDSexualDimorphism.data.html
 ---
 
-
 # bioconductor-copdsexualdimorphism.data
 
 name: bioconductor-copdsexualdimorphism.data

@@ -4,7 +4,6 @@ description: The tRNAdbImport package retrieves tRNA sequences, genomic coordina
 homepage: https://bioconductor.org/packages/release/bioc/html/tRNAdbImport.html
 ---
 
-
 # bioconductor-trnadbimport
 
 ## Overview

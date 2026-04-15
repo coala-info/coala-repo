@@ -2,8 +2,9 @@
 name: ogtfinder
 description: OGTFinder predicts the optimal growth temperature and thermophilicity class of prokaryotes using proteome-wide amino acid descriptors. Use when user asks to estimate growth temperatures for bacteria or archaea, classify organisms by thermophilicity, or analyze proteome sequences to determine environmental temperature adaptations.
 homepage: https://github.com/SC-Git1/OGTFinder
+metadata:
+  docker_image: "quay.io/biocontainers/ogtfinder:0.0.2--pyhdfd78af_0"
 ---
-
 
 # ogtfinder
 

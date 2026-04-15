@@ -4,7 +4,6 @@ description: The rama package provides tools for the robust estimation of gene e
 homepage: https://bioconductor.org/packages/3.5/bioc/html/rama.html
 ---
 
-
 # bioconductor-rama
 
 ## Overview

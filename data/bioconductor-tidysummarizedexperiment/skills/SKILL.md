@@ -4,7 +4,6 @@ description: This tool enables the manipulation and visualization of Bioconducto
 homepage: https://bioconductor.org/packages/release/bioc/html/tidySummarizedExperiment.html
 ---
 
-
 # bioconductor-tidysummarizedexperiment
 
 name: bioconductor-tidysummarizedexperiment

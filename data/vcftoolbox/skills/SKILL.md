@@ -2,8 +2,9 @@
 name: vcftoolbox
 description: vcftoolbox is a Python-based toolkit for programmatic and command-line manipulation of Variant Call Format (VCF) files. Use when user asks to parse VCF headers, handle VEP or SnpEff annotations, edit VCF INFO fields, sort VCF files, manage genotype information, or generate variant IDs.
 homepage: http://github.com/moonso/vcftoolbox
+metadata:
+  docker_image: "quay.io/biocontainers/vcftoolbox:1.5.1--py_0"
 ---
-
 
 # vcftoolbox
 

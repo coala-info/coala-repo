@@ -1,9 +1,10 @@
 ---
 name: snp-sites
-description: "snp-sites extracts single nucleotide polymorphisms from multi-FASTA alignment files and converts them into VCF, Phylip, or SNP-only FASTA formats. Use when user asks to extract SNPs from a whole-genome alignment, convert alignments to VCF or Phylip format, or filter alignments to include only variable sites."
+description: snp-sites extracts single nucleotide polymorphisms from multi-FASTA alignment files and converts them into VCF, Phylip, or SNP-only FASTA formats. Use when user asks to extract SNPs from a whole-genome alignment, convert alignments to VCF or Phylip format, or filter alignments to include only variable sites.
 homepage: https://github.com/sanger-pathogens/snp-sites
+metadata:
+  docker_image: "quay.io/biocontainers/snp-sites:2.5.1--h577a1d6_7"
 ---
-
 
 # snp-sites
 

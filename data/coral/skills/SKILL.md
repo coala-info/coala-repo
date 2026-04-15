@@ -2,8 +2,9 @@
 name: coral
 description: Coral bridges the gap between paired-end RNA-seq mates to infer the full alignment of the intervening sequence. Use when user asks to bridge paired-end reads, resolve full fragment structures, or improve transcript assembly accuracy using coordinate-sorted BAM files.
 homepage: https://github.com/Shao-Group/coral
+metadata:
+  docker_image: "quay.io/biocontainers/coral:1.0.0--hf5e1fbb_1"
 ---
-
 
 # coral
 

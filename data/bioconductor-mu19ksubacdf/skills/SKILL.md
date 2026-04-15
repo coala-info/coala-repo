@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu19ksubacdf.html
 ---
 
-
 # bioconductor-mu19ksubacdf
 
 name: bioconductor-mu19ksubacdf

@@ -4,7 +4,6 @@ description: This tool provides access to pre-trained variational models and lar
 homepage: https://bioconductor.org/packages/release/data/experiment/html/orthosData.html
 ---
 
-
 # bioconductor-orthosdata
 
 name: bioconductor-orthosdata

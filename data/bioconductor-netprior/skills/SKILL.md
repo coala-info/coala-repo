@@ -4,7 +4,6 @@ description: This package implements a probabilistic framework to prioritize gen
 homepage: https://bioconductor.org/packages/release/bioc/html/netprioR.html
 ---
 
-
 # bioconductor-netprior
 
 ## Overview

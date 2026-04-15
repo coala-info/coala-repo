@@ -4,7 +4,6 @@ description: This tool performs functional annotation of custom transcriptomes t
 homepage: https://bioconductor.org/packages/release/bioc/html/factR.html
 ---
 
-
 # bioconductor-factr
 
 name: bioconductor-factr

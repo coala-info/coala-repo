@@ -2,8 +2,9 @@
 name: requests-mock
 description: requests-mock intercepts and simulates HTTP responses in Python applications to facilitate deterministic testing without network calls. Use when user asks to mock API responses, simulate network errors, test specific HTTP status codes, or verify request parameters in unit tests.
 homepage: https://github.com/getsentry/responses
+metadata:
+  docker_image: "quay.io/biocontainers/requests-mock:1.0.0--py27_1"
 ---
-
 
 # requests-mock
 

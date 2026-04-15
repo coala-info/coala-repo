@@ -4,7 +4,6 @@ description: This tool generates interactive HTML and JavaScript network visuali
 homepage: https://bioconductor.org/packages/release/bioc/html/RGraph2js.html
 ---
 
-
 # bioconductor-rgraph2js
 
 name: bioconductor-rgraph2js

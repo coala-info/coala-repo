@@ -4,7 +4,6 @@ description: This tool identifies differentially expressed genes in multiple-gro
 homepage: https://bioconductor.org/packages/release/bioc/html/Mulcom.html
 ---
 
-
 # bioconductor-mulcom
 
 ## Overview

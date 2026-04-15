@@ -4,7 +4,6 @@ description: This tool accesses MyGene.info REST web services to query and retri
 homepage: https://bioconductor.org/packages/release/bioc/html/mygene.html
 ---
 
-
 # bioconductor-mygene
 
 name: bioconductor-mygene

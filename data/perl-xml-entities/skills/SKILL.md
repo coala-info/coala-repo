@@ -2,8 +2,9 @@
 name: perl-xml-entities
 description: This tool decodes and encodes XML entities to convert special characters between XML-compliant formats and standard Unicode. Use when user asks to decode XML entities into readable text, encode special characters for XML safety, or sanitize strings for data processing pipelines.
 homepage: http://metacpan.org/pod/XML::Entities
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xml-entities:1.0002--pl526_0"
 ---
-
 
 # perl-xml-entities
 

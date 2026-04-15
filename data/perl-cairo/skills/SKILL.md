@@ -1,9 +1,10 @@
 ---
 name: perl-cairo
-description: "This tool provides a Perl interface to the Cairo 2D graphics library for device-independent vector drawing. Use when user asks to render graphics to image buffers, create PDF or SVG files, draw vector paths, or handle typography within Perl scripts."
+description: This tool provides a Perl interface to the Cairo 2D graphics library for device-independent vector drawing. Use when user asks to render graphics to image buffers, create PDF or SVG files, draw vector paths, or handle typography within Perl scripts.
 homepage: http://gtk2-perl.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/perl-cairo:1.109--pl5321hb0b1468_2"
 ---
-
 
 # perl-cairo
 

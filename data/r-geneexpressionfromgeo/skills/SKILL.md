@@ -4,7 +4,6 @@ description: This tool retrieves gene expression data and gene symbols from the 
 homepage: https://cran.r-project.org/web/packages/geneexpressionfromgeo/index.html
 ---
 
-
 # r-geneexpressionfromgeo
 
 name: r-geneexpressionfromgeo

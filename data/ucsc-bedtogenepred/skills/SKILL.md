@@ -2,6 +2,8 @@
 name: ucsc-bedtogenepred
 description: ucsc-bedtogenepred converts BED-formatted genomic features into the genePred format. Use when user asks to convert BED to genePred, convert BED12 to genePred, or create refFlat files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedtogenepred:482--h0b57e2e_0"
 ---
 
 # ucsc-bedtogenepred

@@ -2,8 +2,9 @@
 name: metaprob
 description: Metaprob is an embedded probabilistic programming language designed for generative modeling and meta-programming custom inference algorithms. Use when user asks to define generative models with execution traces, write custom inference procedures using reflective constructs, or perform complex causal reasoning.
 homepage: https://github.com/probcomp/metaprob
+metadata:
+  docker_image: "quay.io/biocontainers/metaprob:2--boost1.61_1"
 ---
-
 
 # metaprob
 

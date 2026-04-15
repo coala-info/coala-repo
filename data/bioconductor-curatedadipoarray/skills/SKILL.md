@@ -4,7 +4,6 @@ description: This package provides access to curated microarray datasets of MDI-
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedAdipoArray.html
 ---
 
-
 # bioconductor-curatedadipoarray
 
 name: bioconductor-curatedadipoarray

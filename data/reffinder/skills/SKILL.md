@@ -2,8 +2,9 @@
 name: reffinder
 description: reffinder is a stream-oriented utility for rapidly extracting bases and genomic regions from indexed FASTA files. Use when user asks to extract reference alleles at specific coordinates, retrieve nucleotide sequences for genomic ranges, or convert PLINK files to TPED format.
 homepage: https://github.com/ANGSD/refFinder
+metadata:
+  docker_image: "quay.io/biocontainers/reffinder:0.81--h5ca1c30_4"
 ---
-
 
 # reffinder
 

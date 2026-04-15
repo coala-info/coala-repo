@@ -4,7 +4,6 @@ description: The r-tinc tool assesses tumour-in-normal contamination and tumour 
 homepage: https://cran.r-project.org/web/packages/tinc/index.html
 ---
 
-
 # r-tinc
 
 name: r-tinc

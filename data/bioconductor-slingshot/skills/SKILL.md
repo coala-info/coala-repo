@@ -4,7 +4,6 @@ description: Bioconductor-slingshot performs trajectory inference and pseudotime
 homepage: https://bioconductor.org/packages/release/bioc/html/slingshot.html
 ---
 
-
 # bioconductor-slingshot
 
 name: bioconductor-slingshot

@@ -2,8 +2,9 @@
 name: perl-hpc-runner-command
 description: This tool orchestrates and manages data analysis workflows on HPC clusters by converting shell scripts with special directives into scheduled jobs. Use when user asks to automate bioinformatics pipelines, manage job dependencies, allocate cluster resources, or execute managed workflows locally and on schedulers like Slurm.
 homepage: https://github.com/biosails/HPC-Runner-Command
+metadata:
+  docker_image: "quay.io/biocontainers/perl-hpc-runner-command:3.2.13--pl5.22.0_0"
 ---
-
 
 # perl-hpc-runner-command
 

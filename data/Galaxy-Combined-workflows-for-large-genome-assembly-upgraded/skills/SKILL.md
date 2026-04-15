@@ -1,10 +1,12 @@
 ---
 name: combined-workflows-for-large-genome-assembly-upgraded
-description: "This Galaxy workflow performs large genome assembly using long and short reads through a pipeline involving kmer counting with Meryl, read trimming with fastp, assembly with Flye, and subsequent polishing and quality assessment. Use this skill when you need to generate high-quality de novo assemblies for large genomes by combining hybrid sequencing data to ensure high accuracy and structural completeness."
-homepage: https://workflowhub.eu/workflows/1611
+description: This Galaxy workflow performs large genome assembly using long and short reads through a pipeline involving kmer counting with Meryl, read trimming with fastp, assembly with Flye, and subsequent polishing and quality assessment. Use this skill when you need to generate high-quality de novo assemblies for large genomes by combining hybrid sequencing data to ensure high accuracy and structural completeness.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Combined workflows for large genome assembly - upgraded
+# combined-workflows-for-large-genome-assembly-upgraded
 
 ## Overview
 

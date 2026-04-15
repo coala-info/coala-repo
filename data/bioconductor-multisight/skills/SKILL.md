@@ -4,7 +4,6 @@ description: The multiSight package integrates and analyzes multi-omics datasets
 homepage: https://bioconductor.org/packages/3.13/bioc/html/multiSight.html
 ---
 
-
 # bioconductor-multisight
 
 ## Overview

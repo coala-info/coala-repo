@@ -4,7 +4,6 @@ description: This data package provides LC/MS metabolomics data from FAAH knocko
 homepage: https://bioconductor.org/packages/release/data/experiment/html/faahKO.html
 ---
 
-
 # bioconductor-faahko
 
 name: bioconductor-faahko

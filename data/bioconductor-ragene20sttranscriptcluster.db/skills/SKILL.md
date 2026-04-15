@@ -4,7 +4,6 @@ description: This package provides genomic annotation mappings for the Affymetri
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene20sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-ragene20sttranscriptcluster.db
 
 name: bioconductor-ragene20sttranscriptcluster.db

@@ -4,7 +4,6 @@ description: This package provides example TCGA Head and Neck Cancer DNA methyla
 homepage: https://bioconductor.org/packages/release/data/experiment/html/shinyMethylData.html
 ---
 
-
 # bioconductor-shinymethyldata
 
 name: bioconductor-shinymethyldata

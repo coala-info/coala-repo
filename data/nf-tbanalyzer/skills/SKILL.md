@@ -4,6 +4,8 @@ description: nf-core/tbanalyzer provides a toolkit for the genomic characterizat
 homepage: https://github.com/nf-core/tbanalyzer
 ---
 
+# tbanalyzer
+
 ## Overview
 nf-core/tbanalyzer is designed for the genomic characterization of *Mycobacterium tuberculosis* (Mtb) pathogens. It provides a comprehensive toolkit for identifying species and strain levels from raw sequencing data, facilitating the democratization of Mtb genomic analysis.
 

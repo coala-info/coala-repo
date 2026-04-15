@@ -2,8 +2,9 @@
 name: phylogenetics
 description: This tool provides a Python API to orchestrate phylogenetic workflows by wrapping PhyML for tree building and PAML for ancestral reconstruction. Use when user asks to build phylogenetic trees, reconstruct ancestral sequences, or programmatically manage phylogenetic project data.
 homepage: https://github.com/Zsailer/phylogenetics
+metadata:
+  docker_image: "quay.io/biocontainers/phylogenetics:0.5.0--py_0"
 ---
-
 
 # phylogenetics
 

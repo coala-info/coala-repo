@@ -2,8 +2,9 @@
 name: perl-escape-houdini
 description: This tool provides high-speed web escaping and unescaping for HTML, URI, XML, and JavaScript using the Houdini C library. Use when user asks to sanitize text for web reports, encode URLs, escape JavaScript strings, or process high-throughput text data in Perl scripts.
 homepage: https://github.com/yanick/Escape-Houdini
+metadata:
+  docker_image: "quay.io/biocontainers/perl-escape-houdini:0.3.0--pl5321h7b50bb2_4"
 ---
-
 
 # perl-escape-houdini
 

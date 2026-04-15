@@ -4,7 +4,6 @@ description: MarkItDown converts various unstructured file formats and media int
 homepage: https://github.com/microsoft/markitdown
 ---
 
-
 # markitdown
 
 ## Overview

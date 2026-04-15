@@ -2,8 +2,9 @@
 name: pycli
 description: PyClick is a Python framework for modeling user click behavior and estimating document relevance in web search results. Use when user asks to run baseline click models, predict click-through rates, or develop custom models using Maximum Likelihood Estimation or Expectation-Maximization algorithms.
 homepage: https://github.com/markovi/PyClick
+metadata:
+  docker_image: "quay.io/biocontainers/pycli:2.0.3--py35_0"
 ---
-
 
 # pycli
 

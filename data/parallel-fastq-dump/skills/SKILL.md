@@ -1,7 +1,9 @@
 ---
 name: parallel-fastq-dump
-description: "parallel-fastq-dump is a parallelized wrapper for the NCBI fastq-dump utility that speeds up the extraction of FASTQ files from SRA data. Use when user asks to convert SRA accessions to FASTQ format, speed up data extraction using multiple CPU cores, or download and process sequencing data from the Sequence Read Archive."
+description: parallel-fastq-dump is a parallelized wrapper for the NCBI fastq-dump utility that speeds up the extraction of FASTQ files from SRA data. Use when user asks to convert SRA accessions to FASTQ format, speed up data extraction using multiple CPU cores, or download and process sequencing data from the Sequence Read Archive.
 homepage: https://github.com/rvalieris/parallel-fastq-dump
+metadata:
+  docker_image: "quay.io/biocontainers/parallel-fastq-dump:0.6.7--pyhdfd78af_0"
 ---
 
 # parallel-fastq-dump

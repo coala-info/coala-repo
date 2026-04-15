@@ -2,8 +2,9 @@
 name: vechat
 description: VeChat is a specialized error-correction tool for noisy long-read sequencing data. Use when user asks to 'correct errors in long-read sequencing data', 'correct PacBio CLR reads', 'correct Oxford Nanopore reads', or 'remove chimeric sequences'.
 homepage: https://github.com/HaploKit/vechat
+metadata:
+  docker_image: "quay.io/biocontainers/vechat:1.1.1--hdcf5f25_1"
 ---
-
 
 # vechat
 

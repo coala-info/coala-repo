@@ -4,7 +4,6 @@ description: bioconductor-mqtl.nmr provides a pipeline for preprocessing 1H-NMR 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/mQTL.NMR.html
 ---
 
-
 # bioconductor-mqtl.nmr
 
 ## Overview

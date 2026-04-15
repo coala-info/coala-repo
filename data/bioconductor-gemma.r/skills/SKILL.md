@@ -4,7 +4,6 @@ description: This tool provides an R interface to access and analyze curated gen
 homepage: https://bioconductor.org/packages/release/bioc/html/gemma.R.html
 ---
 
-
 # bioconductor-gemma.r
 
 name: bioconductor-gemma.r

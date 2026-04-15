@@ -1,9 +1,10 @@
 ---
 name: artic-porechop
-description: "artic-porechop identifies and trims adapters from Oxford Nanopore reads while detecting and splitting chimeric sequences. Use when user asks to trim adapters, demultiplex barcoded reads, or process genomic data using the ARTIC protocol."
+description: artic-porechop identifies and trims adapters from Oxford Nanopore reads while detecting and splitting chimeric sequences. Use when user asks to trim adapters, demultiplex barcoded reads, or process genomic data using the ARTIC protocol.
 homepage: https://github.com/artic-network/Porechop
+metadata:
+  docker_image: "quay.io/biocontainers/artic-porechop:3.2pre1--py36hc9558a2_0"
 ---
-
 
 # artic-porechop
 

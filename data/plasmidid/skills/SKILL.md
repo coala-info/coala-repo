@@ -2,6 +2,8 @@
 name: plasmidid
 description: PlasmidID is a mapping-based and assembly-assisted tool designed to identify and visualize plasmids within bacterial samples by reconstructing them against a reference database. Use when user asks to identify plasmids in genomic data, map reads to a plasmid database, or generate circular visualizations of plasmidic composition.
 homepage: https://github.com/BU-ISCIII/plasmidID
+metadata:
+  docker_image: "quay.io/biocontainers/plasmidid:1.6.5--hdfd78af_0"
 ---
 
 # plasmidid

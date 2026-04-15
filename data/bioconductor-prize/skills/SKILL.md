@@ -4,7 +4,6 @@ description: The bioconductor-prize package prioritizes biological entities usin
 homepage: https://bioconductor.org/packages/3.6/bioc/html/Prize.html
 ---
 
-
 # bioconductor-prize
 
 name: bioconductor-prize

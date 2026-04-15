@@ -4,7 +4,6 @@ description: The r-mutoss package provides a unified interface for applying and 
 homepage: https://cran.r-project.org/web/packages/mutoss/index.html
 ---
 
-
 # r-mutoss
 
 name: r-mutoss

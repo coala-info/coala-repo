@@ -4,7 +4,6 @@ description: ProbABEL is a suite of tools designed for high-throughput genetic a
 homepage: https://github.com/GenABEL-Project/ProbABEL
 ---
 
-
 # probabel
 
 ## Overview

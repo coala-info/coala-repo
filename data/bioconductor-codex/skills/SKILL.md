@@ -1,9 +1,8 @@
 ---
 name: bioconductor-codex
-description: "bioconductor-codex performs normalization and copy number variation calling for whole exome sequencing data using a Poisson latent factor model. Use when user asks to normalize exome sequencing data, detect germline or somatic copy number variations, or remove systemic biases from GC content and exon capture."
+description: bioconductor-codex performs normalization and copy number variation calling for whole exome sequencing data using a Poisson latent factor model. Use when user asks to normalize exome sequencing data, detect germline or somatic copy number variations, or remove systemic biases from GC content and exon capture.
 homepage: https://bioconductor.org/packages/release/bioc/html/CODEX.html
 ---
-
 
 # bioconductor-codex
 

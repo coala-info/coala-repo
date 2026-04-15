@@ -4,7 +4,6 @@ description: This package provides masked genomic sequences for the Homo sapiens
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg17.masked.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg17.masked
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg17.masked

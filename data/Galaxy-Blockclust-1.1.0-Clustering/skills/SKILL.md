@@ -1,10 +1,12 @@
 ---
 name: blockclust-110-clustering
-description: "This transcriptomics workflow processes small non-coding RNA sequencing data using Samtools, blockbuster, and BlockClust to perform model-based clustering and classification. Use this skill when you need to identify and categorize small non-coding RNA species from deep sequencing data by analyzing read mapping patterns into discrete blocks and clusters."
-homepage: https://workflowhub.eu/workflows/1671
+description: This transcriptomics workflow processes small non-coding RNA sequencing data using Samtools, blockbuster, and BlockClust to perform model-based clustering and classification. Use this skill when you need to identify and categorize small non-coding RNA species from deep sequencing data by analyzing read mapping patterns into discrete blocks and clusters.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Blockclust 1.1.0 Clustering
+# blockclust-110-clustering
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool predicts binding site consensus motifs from ranked DNA se
 homepage: https://bioconductor.org/packages/release/bioc/html/BCRANK.html
 ---
 
-
 # bioconductor-bcrank
 
 name: bioconductor-bcrank

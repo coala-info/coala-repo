@@ -4,7 +4,6 @@ description: The crisprDesign package provides a comprehensive framework for des
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprDesign.html
 ---
 
-
 # bioconductor-crisprdesign
 
 name: bioconductor-crisprdesign

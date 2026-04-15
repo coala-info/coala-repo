@@ -2,8 +2,9 @@
 name: tqdm
 description: `tqdm` integrates fast, extensible progress meters into both code and shell environments. Use when user asks to wrap iterables with progress bars, control progress manually, or monitor data flow in CLI pipelines.
 homepage: https://github.com/tqdm/tqdm
+metadata:
+  docker_image: "quay.io/biocontainers/tqdm:4.7.2--py36_0"
 ---
-
 
 # tqdm
 

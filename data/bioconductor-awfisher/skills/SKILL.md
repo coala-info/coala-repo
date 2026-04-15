@@ -4,7 +4,6 @@ description: This tool performs adaptively weighted Fisher's meta-analysis on p-
 homepage: https://bioconductor.org/packages/release/bioc/html/AWFisher.html
 ---
 
-
 # bioconductor-awfisher
 
 name: bioconductor-awfisher

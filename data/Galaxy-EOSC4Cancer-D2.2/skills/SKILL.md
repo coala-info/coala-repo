@@ -1,10 +1,12 @@
 ---
 name: test-imported-from-uploaded-file
-description: "This Galaxy workflow automates the extraction, processing, and sharing of biomedical images by retrieving data from XNAT, applying a 2D convolution filter, and uploading the results back to the repository. Use this skill when you need to perform automated image feature extraction or spatial filtering on clinical imaging datasets stored in an XNAT instance for cancer research."
-homepage: https://workflowhub.eu/workflows/1381
+description: This Galaxy workflow automates the extraction, processing, and sharing of biomedical images by retrieving data from XNAT, applying a 2D convolution filter, and uploading the results back to the repository. Use this skill when you need to perform automated image feature extraction or spatial filtering on clinical imaging datasets stored in an XNAT instance for cancer research.
+homepage: https://eosc4cancer.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Test (imported from uploaded file)
+# test-imported-from-uploaded-file
 
 ## Overview
 

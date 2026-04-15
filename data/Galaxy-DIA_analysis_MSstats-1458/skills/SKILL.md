@@ -1,10 +1,12 @@
 ---
 name: dia_analysis_msstats
-description: "This proteomics workflow processes PyProphet export tables, comparison matrices, and sample annotations using MSstats to perform differential abundance analysis. Use this skill when you need to identify differentially expressed proteins in DIA mass spectrometry data and visualize results through volcano plots and quality control metrics."
-homepage: https://workflowhub.eu/workflows/1458
+description: This proteomics workflow processes PyProphet export tables, comparison matrices, and sample annotations using MSstats to perform differential abundance analysis. Use this skill when you need to identify differentially expressed proteins in DIA mass spectrometry data and visualize results through volcano plots and quality control metrics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# DIA_analysis_MSstats
+# dia_analysis_msstats
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: vcontact2
 description: vcontact2 classifies viral sequences into genus-level clusters by analyzing their protein content. Use when user asks to classify viral sequences, group viral sequences into clusters, provide taxonomic context for unknown viral fragments, or visualize protein-sharing networks.
 homepage: https://bitbucket.org/MAVERICLab/vcontact2
+metadata:
+  docker_image: "quay.io/biocontainers/vcontact2:0.11.3--pyhdfd78af_0"
 ---
-
 
 # vcontact2
 

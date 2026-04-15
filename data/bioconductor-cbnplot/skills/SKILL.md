@@ -4,7 +4,6 @@ description: CBNplot infers and visualizes Bayesian networks for genes or pathwa
 homepage: https://bioconductor.org/packages/release/bioc/html/CBNplot.html
 ---
 
-
 # bioconductor-cbnplot
 
 ## Overview

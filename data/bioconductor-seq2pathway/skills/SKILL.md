@@ -4,7 +4,6 @@ description: This tool performs functional enrichment analysis by mapping genomi
 homepage: https://bioconductor.org/packages/release/bioc/html/seq2pathway.html
 ---
 
-
 # bioconductor-seq2pathway
 
 name: bioconductor-seq2pathway

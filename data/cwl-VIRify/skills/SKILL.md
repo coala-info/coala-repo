@@ -1,9 +1,12 @@
 ---
 name: virify
-description: "This CWL workflow detects, annotates, and classifies viral contigs in metagenomic and metatranscriptomic assemblies using a suite of tools including VirFinder, VirSorter, PPR-Meta, and ViPhOG-based HMM searches. Use this skill when you need to identify viral sequences within complex environmental samples, characterize the taxonomic diversity of a virome, or detect specific RNA viruses in metatranscriptomic data."
-homepage: https://workflowhub.eu/workflows/26
+description: This CWL workflow detects, annotates, and classifies viral contigs in metagenomic and metatranscriptomic assemblies using a suite of tools including VirFinder, VirSorter, PPR-Meta, and ViPhOG-based HMM searches. Use this skill when you need to identify viral sequences within complex environmental samples, characterize the taxonomic diversity of a virome, or detect specific RNA viruses in metatranscriptomic data.
+homepage: https://www.ebi.ac.uk/metagenomics/
+metadata:
+  docker_image: "N/A"
 ---
-# VIRify
+
+# virify
 
 ## Overview
 

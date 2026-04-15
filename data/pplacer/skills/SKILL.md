@@ -1,9 +1,10 @@
 ---
 name: pplacer
-description: "pplacer places DNA fragments into a fixed phylogenetic reference tree to identify their origin. Use when user asks to place query sequences into a reference phylogeny, calculate phylogenetic diversity metrics, or perform taxonomic analysis on metagenomic reads."
+description: pplacer places DNA fragments into a fixed phylogenetic reference tree to identify their origin. Use when user asks to place query sequences into a reference phylogeny, calculate phylogenetic diversity metrics, or perform taxonomic analysis on metagenomic reads.
 homepage: http://matsen.fredhutch.org/pplacer/
+metadata:
+  docker_image: "quay.io/biocontainers/pplacer:1.1.alpha17--0"
 ---
-
 
 # pplacer
 

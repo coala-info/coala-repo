@@ -4,7 +4,6 @@ description: This tool estimates multivariate correlations and performs statisti
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CORREP.html
 ---
 
-
 # bioconductor-correp
 
 name: bioconductor-correp

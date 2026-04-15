@@ -4,7 +4,6 @@ description: This package performs meta-analysis of high-throughput biological d
 homepage: https://bioconductor.org/packages/release/bioc/html/categoryCompare.html
 ---
 
-
 # bioconductor-categorycompare
 
 ## Overview

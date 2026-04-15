@@ -4,7 +4,6 @@ description: BASiCS performs Bayesian hierarchical modeling for normalization, t
 homepage: https://bioconductor.org/packages/release/bioc/html/BASiCS.html
 ---
 
-
 # bioconductor-basics
 
 name: bioconductor-basics

@@ -1,9 +1,12 @@
 ---
 name: microbial-meta-genome-annotation
-description: "This Common Workflow Language pipeline performs comprehensive microbial genome and metagenome annotation using fasta sequence inputs and tools including Bakta, KofamScan, InterProScan 5, and eggNOG-mapper. Use this skill when you need to characterize the functional potential of microbial isolates or metagenomic assemblies by identifying genes and assigning biological roles to protein sequences."
-homepage: https://workflowhub.eu/workflows/1170
+description: This Common Workflow Language pipeline performs comprehensive microbial genome and metagenome annotation using fasta sequence inputs and tools including Bakta, KofamScan, InterProScan 5, and eggNOG-mapper. Use this skill when you need to characterize the functional potential of microbial isolates or metagenomic assemblies by identifying genes and assigning biological roles to protein sequences.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Microbial (meta-) genome annotation
+
+# microbial-meta-genome-annotation
 
 ## Overview
 

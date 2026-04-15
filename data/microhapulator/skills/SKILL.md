@@ -2,6 +2,8 @@
 name: microhapulator
 description: MicroHapulator is a forensic bioinformatics toolset for calling, filtering, and analyzing microhaplotype data from sequencing outputs. Use when user asks to call haplotypes from BAM files, filter alleles, calculate forensic statistics like likelihood ratios, or simulate synthetic genotypes and sequencing reads.
 homepage: https://github.com/bioforensics/MicroHapulator/
+metadata:
+  docker_image: "quay.io/biocontainers/microhapulator:0.8.4--pyhdfd78af_0"
 ---
 
 # microhapulator

@@ -1,9 +1,10 @@
 ---
 name: primerforge
-description: "primerforge identifies specific genomic primer pairs by analyzing ingroup targets and excluding outgroup sequences. Use when user asks to design primers for specific amplification, identify shared primers across multiple genomes, or filter primers based on melting temperature and PCR product size."
+description: primerforge identifies specific genomic primer pairs by analyzing ingroup targets and excluding outgroup sequences. Use when user asks to design primers for specific amplification, identify shared primers across multiple genomes, or filter primers based on melting temperature and PCR product size.
 homepage: https://github.com/dr-joe-wirth/primerForge
+metadata:
+  docker_image: "quay.io/biocontainers/primerforge:1.5.3--pyhdfd78af_0"
 ---
-
 
 # primerforge
 

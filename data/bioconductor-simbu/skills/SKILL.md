@@ -4,7 +4,6 @@ description: SimBu simulates realistic pseudo-bulk RNA-seq samples by aggregatin
 homepage: https://bioconductor.org/packages/release/bioc/html/SimBu.html
 ---
 
-
 # bioconductor-simbu
 
 ## Overview

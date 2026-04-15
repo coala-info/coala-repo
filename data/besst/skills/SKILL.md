@@ -2,8 +2,9 @@
 name: besst
 description: BESST is a genomic assembly scaffolder that uses paired-end or mate-pair read information to order and orient contigs into larger scaffolds. Use when user asks to bridge gaps between contigs, scaffold genomic assemblies, or infer library characteristics from BAM files.
 homepage: https://github.com/ksahlin/BESST
+metadata:
+  docker_image: "quay.io/biocontainers/besst:2.2.8--py27_0"
 ---
-
 
 # besst
 

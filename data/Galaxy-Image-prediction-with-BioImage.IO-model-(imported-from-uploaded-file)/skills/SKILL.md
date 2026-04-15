@@ -1,10 +1,12 @@
 ---
 name: image-prediction-with-bioimageio-model-imported-from-uploade
-description: "This workflow processes biological images by applying a BioImage.IO model through inference, thresholding, and label map conversion tools to generate segmented overlays. Use this skill when you need to perform automated object detection or segmentation on microscopy data using pre-trained deep learning models."
-homepage: https://workflowhub.eu/workflows/1526
+description: This workflow processes biological images by applying a BioImage.IO model through inference, thresholding, and label map conversion tools to generate segmented overlays. Use this skill when you need to perform automated object detection or segmentation on microscopy data using pre-trained deep learning models.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Image prediction with BioImage.IO model (imported from uploaded file)
+# image-prediction-with-bioimageio-model-imported-from-uploade
 
 ## Overview
 

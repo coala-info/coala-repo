@@ -4,7 +4,6 @@ description: The fastICA package implements the FastICA algorithm for performing
 homepage: https://cran.r-project.org/web/packages/fastica/index.html
 ---
 
-
 # r-fastica
 
 ## Overview

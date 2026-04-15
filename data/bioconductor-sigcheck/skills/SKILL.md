@@ -4,7 +4,6 @@ description: SigCheck verifies if a gene expression signature performs significa
 homepage: https://bioconductor.org/packages/release/bioc/html/SigCheck.html
 ---
 
-
 # bioconductor-sigcheck
 
 ## Overview

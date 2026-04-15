@@ -4,7 +4,6 @@ description: The scales package provides infrastructure for mapping data values 
 homepage: https://cloud.r-project.org/web/packages/scales/index.html
 ---
 
-
 # r-scales
 
 ## Overview

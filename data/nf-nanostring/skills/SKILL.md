@@ -4,6 +4,8 @@ description: This pipeline analyzes NanoString nCounter data by accepting a CSV 
 homepage: https://github.com/nf-core/nanostring
 ---
 
+# nanostring
+
 ## Overview
 The nf-core/nanostring pipeline provides a standardized workflow for the analysis of NanoString nCounter data. It addresses the need for reproducible quality control and normalization of raw count data, transforming individual RCC files into integrated datasets suitable for downstream biological interpretation.
 

@@ -4,7 +4,6 @@ description: The corncob package models relative abundance and variability in mi
 homepage: https://cran.r-project.org/web/packages/corncob/index.html
 ---
 
-
 # r-corncob
 
 ## Overview

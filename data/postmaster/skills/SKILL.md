@@ -2,8 +2,9 @@
 name: postmaster
 description: Postmaster annotates Salmon-generated alignment files with posterior probabilities based on transcript abundance estimates. Use when user asks to assign posterior probabilities to alignments, add ZW tags to BAM files, or process Salmon mappings for use in alignment-based downstream pipelines.
 homepage: https://github.com/COMBINE-lab/postmaster
+metadata:
+  docker_image: "quay.io/biocontainers/postmaster:0.1.0--ha6fb395_1"
 ---
-
 
 # postmaster
 

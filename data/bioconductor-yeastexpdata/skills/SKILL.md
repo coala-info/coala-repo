@@ -4,7 +4,6 @@ description: This package provides curated yeast gene expression and protein-pro
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastExpData.html
 ---
 
-
 # bioconductor-yeastexpdata
 
 name: bioconductor-yeastexpdata

@@ -2,6 +2,8 @@
 name: ezaai
 description: EzAAI is a bioinformatics suite for calculating Average Amino Acid Identity (AAI) between prokaryotic genomes and performing hierarchical clustering. Use when user asks to extract proteins from genome sequences, calculate AAI values between protein databases, convert CDS files to database formats, or cluster taxa based on identity results.
 homepage: http://leb.snu.ac.kr/ezaai
+metadata:
+  docker_image: "quay.io/biocontainers/ezaai:1.2.4--hdfd78af_0"
 ---
 
 # ezaai

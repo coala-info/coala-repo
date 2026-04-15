@@ -1,9 +1,10 @@
 ---
 name: roary2fripan.py
-description: "Converts Roary pan-genome output files into a format suitable for FRIpan analysis. Use when user asks to prepare Roary pan-genome data for input into FRIpan for core genome analysis."
+description: Converts Roary pan-genome output files into a format suitable for FRIpan analysis. Use when user asks to prepare Roary pan-genome data for input into FRIpan for core genome analysis.
 homepage: https://anaconda.org/channels/bioconda/packages/roary2fripan.py/overview
+metadata:
+  docker_image: "quay.io/biocontainers/roary2fripan.py:0.1--py27_0"
 ---
-
 
 # roary2fripan.py
 

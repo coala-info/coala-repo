@@ -4,7 +4,6 @@ description: This tool creates IGV session files and interactive HTML reports fr
 homepage: https://bioconductor.org/packages/release/bioc/html/tracktables.html
 ---
 
-
 # bioconductor-tracktables
 
 name: bioconductor-tracktables

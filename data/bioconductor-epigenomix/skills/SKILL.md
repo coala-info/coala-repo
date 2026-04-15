@@ -4,7 +4,6 @@ description: Bioconductor-epigenomix integrates gene transcription and histone m
 homepage: https://bioconductor.org/packages/release/bioc/html/epigenomix.html
 ---
 
-
 # bioconductor-epigenomix
 
 name: bioconductor-epigenomix

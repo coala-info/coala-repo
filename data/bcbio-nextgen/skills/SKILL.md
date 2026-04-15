@@ -2,8 +2,9 @@
 name: bcbio-nextgen
 description: bcbio-nextgen is a toolkit that provides automated, best-practice pipelines for complex genomic sequencing analysis. Use when user asks to process large-scale sequencing data, run variant calling workflows, or perform reproducible genomic analysis using multiple bioinformatics tools.
 homepage: https://github.com/bcbio/bcbio-nextgen
+metadata:
+  docker_image: "quay.io/biocontainers/bcbio-nextgen:1.2.9--pyh5e36f6f_3"
 ---
-
 
 # bcbio-nextgen
 

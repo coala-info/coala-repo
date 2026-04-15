@@ -4,7 +4,6 @@ description: This tool identifies and visualizes the shortest functional pathway
 homepage: https://bioconductor.org/packages/release/bioc/html/cisPath.html
 ---
 
-
 # bioconductor-cispath
 
 name: bioconductor-cispath

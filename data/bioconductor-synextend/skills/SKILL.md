@@ -4,7 +4,6 @@ description: bioconductor-synextend provides tools for orthology prediction, syn
 homepage: https://bioconductor.org/packages/release/bioc/html/SynExtend.html
 ---
 
-
 # bioconductor-synextend
 
 name: bioconductor-synextend

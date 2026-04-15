@@ -4,7 +4,6 @@ description: This package provides annotation data for the Roche NimbleGen hg18 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.081229.hg18.promoter.medip.hx1.html
 ---
 
-
 # bioconductor-pd.081229.hg18.promoter.medip.hx1
 
 name: bioconductor-pd.081229.hg18.promoter.medip.hx1

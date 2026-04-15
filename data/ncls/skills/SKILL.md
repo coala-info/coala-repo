@@ -2,8 +2,9 @@
 name: ncls
 description: The ncls tool provides high-performance interval management and overlap detection using a Nested Containment List data structure. Use when user asks to find overlapping genomic intervals, perform bulk interval queries, or build efficient spatial indices for static datasets.
 homepage: http://github.com/hunt-genes/ncls
+metadata:
+  docker_image: "quay.io/biocontainers/ncls:0.0.70--py39hbcbf7aa_0"
 ---
-
 
 # ncls
 

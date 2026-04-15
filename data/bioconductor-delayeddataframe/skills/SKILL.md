@@ -4,7 +4,6 @@ description: This tool manages large-scale genomic data frames by keeping column
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedDataFrame.html
 ---
 
-
 # bioconductor-delayeddataframe
 
 name: bioconductor-delayeddataframe

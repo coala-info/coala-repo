@@ -4,7 +4,6 @@ description: This tool provides ID mapping information for Illumina Mouse expres
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiMouseIDMapping.html
 ---
 
-
 # bioconductor-lumimouseidmapping
 
 name: bioconductor-lumimouseidmapping

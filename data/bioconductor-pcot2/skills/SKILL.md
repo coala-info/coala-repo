@@ -4,7 +4,6 @@ description: This package implements a permutation-based method for detecting co
 homepage: https://bioconductor.org/packages/3.5/bioc/html/pcot2.html
 ---
 
-
 # bioconductor-pcot2
 
 ## Overview

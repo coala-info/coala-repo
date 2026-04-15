@@ -2,6 +2,8 @@
 name: mkdesigner
 description: MKDesigner is a bioinformatics pipeline that automates the identification of genomic polymorphisms and the design of specific PCR primers for genotyping. Use when user asks to call SNPs or InDels, design primers for markers, or generate physical maps for fine mapping projects.
 homepage: https://github.com/KChigira/mkdesigner/
+metadata:
+  docker_image: "quay.io/biocontainers/mkdesigner:0.5.3--pyhdfd78af_0"
 ---
 
 # mkdesigner

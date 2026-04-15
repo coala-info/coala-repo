@@ -2,6 +2,8 @@
 name: scte
 description: scTE quantifies the expression of transposable elements and genes in single-cell datasets using a hierarchical classification strategy. Use when user asks to build genome indices for repetitive elements, quantify transposable element expression from BAM files, or integrate TE counts with single-cell gene expression data.
 homepage: https://github.com/JiekaiLab/scTE
+metadata:
+  docker_image: "quay.io/biocontainers/scte:1.0.0--pyhdfd78af_0"
 ---
 
 # scte

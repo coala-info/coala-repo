@@ -2,8 +2,9 @@
 name: fastcluster
 description: fastcluster provides optimized C++ routines for hierarchical, agglomerative clustering as a high-performance replacement for Scipy and R functions. Use when user asks to perform hierarchical clustering, use linkage methods like Ward or centroid, or process large datasets that require memory-efficient clustering.
 homepage: https://github.com/fastcluster/fastcluster
+metadata:
+  docker_image: "biocontainers/fastcluster:v1.1.22-1-deb-py2_cv1"
 ---
-
 
 # fastcluster
 

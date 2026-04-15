@@ -4,7 +4,6 @@ description: This tool performs immune cell deconvolution to estimate the absolu
 homepage: https://bioconductor.org/packages/release/bioc/html/quantiseqr.html
 ---
 
-
 # bioconductor-quantiseqr
 
 name: bioconductor-quantiseqr

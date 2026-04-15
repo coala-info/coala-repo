@@ -4,7 +4,6 @@ description: bioconductor-tcc performs robust differential expression analysis o
 homepage: https://bioconductor.org/packages/release/bioc/html/TCC.html
 ---
 
-
 # bioconductor-tcc
 
 ## Overview

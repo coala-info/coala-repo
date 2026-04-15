@@ -4,7 +4,6 @@ description: This package provides the environment mapping and coordinate conver
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hspeccdf.html
 ---
 
-
 # bioconductor-hspeccdf
 
 name: bioconductor-hspeccdf

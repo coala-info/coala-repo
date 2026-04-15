@@ -1,9 +1,8 @@
 ---
 name: bioconductor-brainimager
-description: "bioconductor-brainimager maps gene expression datasets to the Allen Brain Atlas to identify spatial tissue enrichments and estimate the developmental age of brain samples. Use when user asks to identify regional gene set enrichments in the human brain, visualize expression data on brain maps, or predict the transcriptomic age of a sample."
+description: bioconductor-brainimager maps gene expression datasets to the Allen Brain Atlas to identify spatial tissue enrichments and estimate the developmental age of brain samples. Use when user asks to identify regional gene set enrichments in the human brain, visualize expression data on brain maps, or predict the transcriptomic age of a sample.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/brainImageR.html
 ---
-
 
 # bioconductor-brainimager
 

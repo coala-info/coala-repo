@@ -2,6 +2,8 @@
 name: kegg-pathways-completeness
 description: This tool evaluates the completeness of KEGG modules and pathways based on provided KO annotations. Use when user asks to calculate pathway completeness from KO lists, analyze functional profiles per contig, or visualize metabolic modules as graphs.
 homepage: https://github.com/EBI-Metagenomics/kegg-pathways-completeness-tool
+metadata:
+  docker_image: "quay.io/biocontainers/kegg-pathways-completeness:1.3.0--pyhdfd78af_0"
 ---
 
 # kegg-pathways-completeness

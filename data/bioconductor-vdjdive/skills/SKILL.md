@@ -4,7 +4,6 @@ description: This package integrates 10X Genomics AIRR-seq data into the Biocond
 homepage: https://bioconductor.org/packages/release/bioc/html/VDJdive.html
 ---
 
-
 # bioconductor-vdjdive
 
 ## Overview

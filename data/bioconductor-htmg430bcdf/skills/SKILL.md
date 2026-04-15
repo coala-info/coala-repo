@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment an
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430bcdf.html
 ---
 
-
 # bioconductor-htmg430bcdf
 
 name: bioconductor-htmg430bcdf

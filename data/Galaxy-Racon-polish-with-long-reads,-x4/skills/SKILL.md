@@ -1,10 +1,12 @@
 ---
 name: racon-polish-with-long-reads-x4
-description: "This bioinformatics workflow performs four iterative rounds of genome assembly polishing by mapping long reads with Minimap2 and generating a consensus correction using Racon. Use this skill when you need to improve the base-call accuracy and structural integrity of a draft genome assembly by iteratively correcting errors using noisy long-read sequences."
-homepage: https://workflowhub.eu/workflows/227
+description: This bioinformatics workflow performs four iterative rounds of genome assembly polishing by mapping long reads with Minimap2 and generating a consensus correction using Racon. Use this skill when you need to improve the base-call accuracy and structural integrity of a draft genome assembly by iteratively correcting errors using noisy long-read sequences.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Racon polish with long reads, x4
+# racon-polish-with-long-reads-x4
 
 ## Overview
 

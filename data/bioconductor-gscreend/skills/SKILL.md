@@ -4,7 +4,6 @@ description: This package identifies essential genes in pooled CRISPR screens by
 homepage: https://bioconductor.org/packages/release/bioc/html/gscreend.html
 ---
 
-
 # bioconductor-gscreend
 
 ## Overview

@@ -2,8 +2,9 @@
 name: gmm-demux
 description: GMM-Demux is a Gaussian-Mixture-Model-based tool used to clean and validate barcoded single-cell datasets by identifying multiplets. Use when user asks to demultiplex cell-hashing data, remove multi-sample multiplets, estimate same-sample multiplet rates, or verify if cell clusters are technical artifacts.
 homepage: https://github.com/CHPGenetics/GMM-demux
+metadata:
+  docker_image: "quay.io/biocontainers/gmm-demux:0.2.2.3--pyh7e72e81_1"
 ---
-
 
 # gmm-demux
 

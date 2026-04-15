@@ -4,7 +4,6 @@ description: This tool creates complex circular visualizations and chord diagram
 homepage: https://cloud.r-project.org/web/packages/circlize/index.html
 ---
 
-
 # r-circlize
 
 name: r-circlize

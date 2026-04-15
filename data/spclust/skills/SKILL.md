@@ -1,9 +1,10 @@
 ---
 name: spclust
-description: "SpCLUST clusters divergent biological sequences using a Gaussian Mixture Model and MUSCLE-based distance matrices. Use when user asks to cluster divergent sequences, calculate distance matrices with specific substitution matrices, or perform parallel sequence clustering using MPI."
+description: SpCLUST clusters divergent biological sequences using a Gaussian Mixture Model and MUSCLE-based distance matrices. Use when user asks to cluster divergent sequences, calculate distance matrices with specific substitution matrices, or perform parallel sequence clustering using MPI.
 homepage: https://github.com/johnymatar/SpCLUST/
+metadata:
+  docker_image: "quay.io/biocontainers/spclust:28.5.19--h425c490_1"
 ---
-
 
 # spclust
 

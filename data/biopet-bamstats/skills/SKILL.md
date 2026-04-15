@@ -1,7 +1,9 @@
 ---
 name: biopet-bamstats
-description: "Biopet BamStats generates and manages detailed quality control metrics for BAM files organized by sample, library, and readgroup. Use when user asks to generate sequencing statistics from BAM files, merge multiple stats files for cohort analysis, or validate the integrity of existing stats files."
+description: Biopet BamStats generates and manages detailed quality control metrics for BAM files organized by sample, library, and readgroup. Use when user asks to generate sequencing statistics from BAM files, merge multiple stats files for cohort analysis, or validate the integrity of existing stats files.
 homepage: https://github.com/biopet/bamstats
+metadata:
+  docker_image: "quay.io/biocontainers/biopet-bamstats:1.0.1--0"
 ---
 
 # biopet-bamstats

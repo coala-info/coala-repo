@@ -4,7 +4,6 @@ description: This package provides a Shiny-based web interface for visualizing p
 homepage: https://bioconductor.org/packages/3.8/bioc/html/shinyTANDEM.html
 ---
 
-
 # bioconductor-shinytandem
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool analyzes whole-genome bisulfite sequencing data using the
 homepage: https://bioconductor.org/packages/release/bioc/html/bsseq.html
 ---
 
-
 # bioconductor-bsseq
 
 name: bioconductor-bsseq

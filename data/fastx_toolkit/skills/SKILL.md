@@ -2,6 +2,8 @@
 name: fastx_toolkit
 description: The FASTX-Toolkit provides a collection of command-line utilities for the preprocessing, filtering, and manipulation of FASTA and FASTQ sequencing data. Use when user asks to filter reads by quality, trim sequences, clip adapters, convert FASTQ to FASTA, or demultiplex barcodes.
 homepage: https://github.com/agordon/fastx_toolkit
+metadata:
+  docker_image: "biocontainers/fastx-toolkit:v0.0.14-6-deb_cv1"
 ---
 
 # fastx_toolkit

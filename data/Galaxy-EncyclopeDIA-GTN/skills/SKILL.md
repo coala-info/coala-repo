@@ -1,10 +1,12 @@
 ---
 name: encyclopedia-gtn
-description: "This proteomics workflow processes GPF and experimental DIA RAW files using msconvert and EncyclopeDIA to generate chromatogram libraries and protein quantitation reports. Use this skill when you need to perform library-based quantification of proteins and peptides from complex data-independent acquisition mass spectrometry datasets."
-homepage: https://workflowhub.eu/workflows/1471
+description: This proteomics workflow processes GPF and experimental DIA RAW files using msconvert and EncyclopeDIA to generate chromatogram libraries and protein quantitation reports. Use this skill when you need to perform library-based quantification of proteins and peptides from complex data-independent acquisition mass spectrometry datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# EncyclopeDIA-GTN
+# encyclopedia-gtn
 
 ## Overview
 

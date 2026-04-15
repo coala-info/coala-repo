@@ -4,7 +4,6 @@ description: The fgsea package provides a fast implementation of the Gene Set En
 homepage: https://bioconductor.org/packages/release/bioc/html/fgsea.html
 ---
 
-
 # bioconductor-fgsea
 
 ## Overview

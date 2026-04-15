@@ -2,8 +2,9 @@
 name: ucsc-bigwigcat
 description: ucsc-bigwigcat concatenates multiple bigWig files containing non-overlapping genomic data into a single output file. Use when user asks to join bigWig files, concatenate bigWig files, merge chromosome-level bigWig files, or assemble a full-genome track.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigwigcat:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigwigcat
 

@@ -1,9 +1,10 @@
 ---
 name: duphold
-description: "Duphold evaluates sequencing depth to provide fold-change metrics and SNP evidence for validating structural variant calls. Use when user asks to annotate structural variants with depth information, validate deletions and duplications, or filter SV calls based on coverage fold-change."
+description: Duphold evaluates sequencing depth to provide fold-change metrics and SNP evidence for validating structural variant calls. Use when user asks to annotate structural variants with depth information, validate deletions and duplications, or filter SV calls based on coverage fold-change.
 homepage: https://github.com/brentp/duphold
+metadata:
+  docker_image: "quay.io/biocontainers/duphold:0.2.1--hfb13731_0"
 ---
-
 
 # duphold
 

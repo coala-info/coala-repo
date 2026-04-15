@@ -2,6 +2,8 @@
 name: hicstuff
 description: hicstuff is a lightweight Python library and command-line toolset designed for the end-to-end processing and analysis of Hi-C data. Use when user asks to build a Hi-C pipeline, generate contact maps, convert between Hi-C file formats, or visualize contact frequencies.
 homepage: https://github.com/koszullab/hicstuff
+metadata:
+  docker_image: "quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0"
 ---
 
 # hicstuff

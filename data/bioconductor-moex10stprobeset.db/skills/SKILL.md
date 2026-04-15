@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Exon
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moex10stprobeset.db.html
 ---
 
-
 # bioconductor-moex10stprobeset.db
 
 name: bioconductor-moex10stprobeset.db

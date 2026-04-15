@@ -4,7 +4,6 @@ description: This tool performs normalization and quality assessment of array-CG
 homepage: https://bioconductor.org/packages/release/bioc/html/MANOR.html
 ---
 
-
 # bioconductor-manor
 
 name: bioconductor-manor

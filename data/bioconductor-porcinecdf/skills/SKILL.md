@@ -4,7 +4,6 @@ description: This package provides the Chip Description File environment and coo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/porcinecdf.html
 ---
 
-
 # bioconductor-porcinecdf
 
 name: bioconductor-porcinecdf

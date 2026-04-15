@@ -4,7 +4,6 @@ description: This package provides tools for the analysis of Illumina BeadArray 
 homepage: https://bioconductor.org/packages/release/bioc/html/beadarray.html
 ---
 
-
 # bioconductor-beadarray
 
 name: bioconductor-beadarray

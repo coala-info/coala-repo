@@ -4,7 +4,6 @@ description: The r-seqinr tool provides functions for the retrieval and analysis
 homepage: https://cloud.r-project.org/web/packages/seqinr/index.html
 ---
 
-
 # r-seqinr
 
 name: r-seqinr

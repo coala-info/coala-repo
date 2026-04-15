@@ -2,6 +2,8 @@
 name: fastqpuri
 description: FastqPuri is a high-performance suite for the quality assessment, trimming, and contamination filtering of Next-Generation Sequencing data. Use when user asks to generate quality reports, create Bloom filters for contaminants, or perform single-end and paired-end read trimming and filtering.
 homepage: https://github.com/jengelmann/FastqPuri
+metadata:
+  docker_image: "quay.io/biocontainers/fastqpuri:1.0.7--r44hb1d24b7_9"
 ---
 
 # fastqpuri

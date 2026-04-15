@@ -2,8 +2,9 @@
 name: ropebwt2
 description: Ropebwt2 incrementally constructs and updates FM-indexes for DNA sequences using a rope data structure. Use when user asks to build a BWT from FASTA files, perform incremental index updates, or apply reverse-complement lexicographical sorting for genomic indexing.
 homepage: https://github.com/lh3/ropebwt2
+metadata:
+  docker_image: "quay.io/biocontainers/ropebwt2:r187--h577a1d6_11"
 ---
-
 
 # ropebwt2
 

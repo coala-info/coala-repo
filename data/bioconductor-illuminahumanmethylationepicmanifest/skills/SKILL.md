@@ -4,7 +4,6 @@ description: This package provides the manifest object containing design metadat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICmanifest.html
 ---
 
-
 # bioconductor-illuminahumanmethylationepicmanifest
 
 name: bioconductor-illuminahumanmethylationepicmanifest

@@ -2,6 +2,8 @@
 name: pilea
 description: Pilea profiles bacterial growth dynamics from metagenomic short-read data by estimating Peak-to-Trough Ratios using sketching algorithms. Use when user asks to estimate bacterial replication rates, profile metagenomes, or index custom genomes for growth rate analysis.
 homepage: https://github.com/xinehc/pilea
+metadata:
+  docker_image: "quay.io/biocontainers/pilea:1.3.7--py312h4711d71_0"
 ---
 
 # pilea

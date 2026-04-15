@@ -4,7 +4,6 @@ description: This tool creates highly-configurable, publication-ready volcano pl
 homepage: https://bioconductor.org/packages/release/bioc/html/EnhancedVolcano.html
 ---
 
-
 # bioconductor-enhancedvolcano
 
 name: bioconductor-enhancedvolcano

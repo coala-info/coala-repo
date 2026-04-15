@@ -1,7 +1,9 @@
 ---
 name: hotspot3d
-description: "HotSpot3D maps linear protein sequence mutations onto 3D structures to identify and analyze spatial mutation clusters. Use when user asks to identify spatial hotspots, map mutations to 3D protein structures, or determine the statistical significance of mutation clusters."
+description: HotSpot3D maps linear protein sequence mutations onto 3D structures to identify and analyze spatial mutation clusters. Use when user asks to identify spatial hotspots, map mutations to 3D protein structures, or determine the statistical significance of mutation clusters.
 homepage: https://github.com/ding-lab/hotspot3d
+metadata:
+  docker_image: "quay.io/biocontainers/hotspot3d:1.8.2--pl526_0"
 ---
 
 # hotspot3d

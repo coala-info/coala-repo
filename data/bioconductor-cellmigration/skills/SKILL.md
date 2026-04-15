@@ -4,7 +4,6 @@ description: This tool tracks and analyzes cell movements over time from multi-s
 homepage: https://bioconductor.org/packages/release/bioc/html/cellmigRation.html
 ---
 
-
 # bioconductor-cellmigration
 
 name: bioconductor-cellmigration

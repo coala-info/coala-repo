@@ -4,7 +4,6 @@ description: Glimma generates interactive HTML widgets for exploring differentia
 homepage: https://bioconductor.org/packages/release/bioc/html/Glimma.html
 ---
 
-
 # bioconductor-glimma
 
 ## Overview

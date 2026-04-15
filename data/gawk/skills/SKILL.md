@@ -2,8 +2,9 @@
 name: gawk
 description: Gawk is a text processing tool used for pattern matching, data extraction, and sophisticated file reformatting. Use when user asks to filter records by field values, calculate column sums, manipulate delimited text files, or perform complex string transformations.
 homepage: https://www.gnu.org/software/gawk/
+metadata:
+  docker_image: "quay.io/biocontainers/gawk:5.3.1"
 ---
-
 
 # gawk
 

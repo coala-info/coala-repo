@@ -4,7 +4,6 @@ description: This tool provides expert guidance for the TraMineR R package to an
 homepage: https://cran.r-project.org/web/packages/traminer/index.html
 ---
 
-
 # r-traminer
 
 name: r-traminer

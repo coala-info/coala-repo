@@ -4,7 +4,6 @@ description: Phantasus provides a web-based interface for interactive gene expre
 homepage: https://bioconductor.org/packages/release/bioc/html/phantasus.html
 ---
 
-
 # bioconductor-phantasus
 
 ## Overview

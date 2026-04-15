@@ -1,10 +1,12 @@
 ---
 name: de-novo-digitisation
-description: "This workflow automates de novo digitisation by processing specimen metadata and image URIs through specimen data object creation and Teklia-based document layout analysis for segmentation. Use this skill when you need to convert physical specimen images and their associated catalog information into standardized digital specimen records with automated layout detection."
-homepage: https://workflowhub.eu/workflows/245
+description: This workflow automates de novo digitisation by processing specimen metadata and image URIs through specimen data object creation and Teklia-based document layout analysis for segmentation. Use this skill when you need to convert physical specimen images and their associated catalog information into standardized digital specimen records with automated layout detection.
+homepage: https://www.synthesys.info/
+metadata:
+  docker_image: "N/A"
 ---
 
-# De novo digitisation
+# de-novo-digitisation
 
 ## Overview
 

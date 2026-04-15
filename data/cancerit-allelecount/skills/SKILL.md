@@ -2,8 +2,9 @@
 name: cancerit-allelecount
 description: This tool extracts allele-specific coverage and nucleotide counts from sequencing alignment files at specified genomic loci. Use when user asks to count alleles at specific positions, extract coverage for copy number analysis, or convert allele counts to JSON format.
 homepage: https://github.com/cancerit/alleleCount
+metadata:
+  docker_image: "quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7"
 ---
-
 
 # cancerit-allelecount
 

@@ -2,6 +2,8 @@
 name: segalign-galaxy
 description: SegAlign is a GPU-accelerated system for performing pairwise whole genome alignments and repeat masking. Use when user asks to perform pairwise genome alignments, mask repetitive sequences using GPUs, or run SegAlign via Docker.
 homepage: https://github.com/gsneha26/SegAlign
+metadata:
+  docker_image: "quay.io/biocontainers/segalign-galaxy:0.1.2.7--hdfd78af_2"
 ---
 
 # segalign-galaxy

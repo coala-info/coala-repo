@@ -4,7 +4,6 @@ description: SPONGE is a bioinformatics framework for inferring genome-wide comp
 homepage: https://bioconductor.org/packages/release/bioc/html/SPONGE.html
 ---
 
-
 # bioconductor-sponge
 
 ## Overview

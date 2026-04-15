@@ -4,7 +4,6 @@ description: This tool enables formal S3-based object-oriented programming in R 
 homepage: https://cloud.r-project.org/web/packages/R.oo/index.html
 ---
 
-
 # r-r.oo
 
 name: r-r.oo

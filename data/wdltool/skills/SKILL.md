@@ -2,6 +2,8 @@
 name: wdltool
 description: wdltool is a Java utility used to validate, parse, and prepare WDL scripts for workflow execution. Use when user asks to validate WDL syntax, generate input JSON templates, or visualize workflow data-flow graphs.
 homepage: https://github.com/broadinstitute/wdltool
+metadata:
+  docker_image: "quay.io/biocontainers/wdltool:0.14--1"
 ---
 
 # wdltool

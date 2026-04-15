@@ -2,8 +2,9 @@
 name: knotinframe
 description: knotinframe detects -1 programmed ribosomal frameshifting signals by identifying slippery sites and evaluating the thermodynamic stability of downstream pseudoknots. Use when user asks to find frameshifting sites, detect -1 PRF signals, or analyze sequences for stimulatory pseudoknot structures.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/knotinframe
+metadata:
+  docker_image: "quay.io/biocontainers/knotinframe:2.3.2--h9948957_2"
 ---
-
 
 # knotinframe
 

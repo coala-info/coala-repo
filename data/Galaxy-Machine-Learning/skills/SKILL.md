@@ -1,10 +1,12 @@
 ---
 name: machine-learning
-description: "This Galaxy workflow utilizes training and testing datasets to perform supervised classification using Support Vector Machine (SVM) algorithms. Use this skill when you need to develop predictive models for medical diagnostics or categorize biological samples based on multidimensional feature sets."
-homepage: https://workflowhub.eu/workflows/1720
+description: This Galaxy workflow utilizes training and testing datasets to perform supervised classification using Support Vector Machine (SVM) algorithms. Use this skill when you need to develop predictive models for medical diagnostics or categorize biological samples based on multidimensional feature sets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Machine Learning
+# machine-learning
 
 ## Overview
 

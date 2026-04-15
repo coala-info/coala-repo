@@ -4,7 +4,6 @@ description: The GSBenchMark package provides curated gene expression datasets a
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSBenchMark.html
 ---
 
-
 # bioconductor-gsbenchmark
 
 ## Overview

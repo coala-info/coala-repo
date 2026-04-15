@@ -4,7 +4,6 @@ description: This tool analyzes translational selection and codon usage bias in 
 homepage: https://bioconductor.org/packages/release/bioc/html/sscu.html
 ---
 
-
 # bioconductor-sscu
 
 name: bioconductor-sscu

@@ -2,8 +2,9 @@
 name: extract_genome_region
 description: This tool extracts specific DNA sequences from a FASTA file based on coordinates provided in a CSV file. Use when user asks to retrieve genomic regions, subset a genome, or extract sequences with specific buffers for downstream analysis.
 homepage: https://github.com/xguse/extract-genome-region
+metadata:
+  docker_image: "quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0"
 ---
-
 
 # extract_genome_region
 

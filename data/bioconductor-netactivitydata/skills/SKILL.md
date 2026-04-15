@@ -4,7 +4,6 @@ description: This package provides pre-trained gene set activity models and anno
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NetActivityData.html
 ---
 
-
 # bioconductor-netactivitydata
 
 name: bioconductor-netactivitydata

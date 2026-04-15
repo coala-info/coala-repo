@@ -1,9 +1,10 @@
 ---
 name: stellarscope
-description: "StellarScope analyzes single-cell RNA sequencing data to identify and quantify transposable elements at the locus level. Use when user asks to analyze transposable elements in single-cell RNA sequencing data."
+description: StellarScope analyzes single-cell RNA sequencing data to identify and quantify transposable elements at the locus level. Use when user asks to analyze transposable elements in single-cell RNA sequencing data.
 homepage: https://github.com/nixonlab/stellarscope
+metadata:
+  docker_image: "quay.io/biocontainers/stellarscope:1.5--py312h0fa9677_1"
 ---
-
 
 # stellarscope
 

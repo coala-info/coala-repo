@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis on microarray d
 homepage: https://bioconductor.org/packages/3.6/bioc/html/LPEadj.html
 ---
 
-
 # bioconductor-lpeadj
 
 name: bioconductor-lpeadj

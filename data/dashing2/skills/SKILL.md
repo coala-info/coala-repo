@@ -2,6 +2,8 @@
 name: dashing2
 description: Dashing2 utilizes advanced sketching algorithms to rapidly estimate evolutionary distances and similarities between massive genomic datasets. Use when user asks to compare biological sequences, estimate genomic distances, find similar sequence pairs using locality sensitive hashing, or sketch genomic intervals.
 homepage: https://github.com/dnbaker/dashing2
+metadata:
+  docker_image: "quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0"
 ---
 
 # dashing2

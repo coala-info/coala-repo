@@ -1,10 +1,12 @@
 ---
 name: workflow-to-detect-snv-from-illumina-sequenced-baculovirus-i
-description: "This Galaxy workflow identifies single nucleotide variants in baculovirus isolates by processing Illumina sequencing data and NCBI reference genomes using BWA-MEM and bcftools. Use this skill when you need to characterize genetic diversity, identify specific mutations, or analyze intra-isolate variation within Baculoviridae populations."
-homepage: https://workflowhub.eu/workflows/1628
+description: This Galaxy workflow identifies single nucleotide variants in baculovirus isolates by processing Illumina sequencing data and NCBI reference genomes using BWA-MEM and bcftools. Use this skill when you need to characterize genetic diversity, identify specific mutations, or analyze intra-isolate variation within Baculoviridae populations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow to detect SNV from Illumina sequenced baculovirus isolates
+# workflow-to-detect-snv-from-illumina-sequenced-baculovirus-i
 
 ## Overview
 

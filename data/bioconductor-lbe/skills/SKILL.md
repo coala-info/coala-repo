@@ -4,7 +4,6 @@ description: bioconductor-lbe estimates the false discovery rate and the proport
 homepage: https://bioconductor.org/packages/release/bioc/html/LBE.html
 ---
 
-
 # bioconductor-lbe
 
 ## Overview

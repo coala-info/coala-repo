@@ -4,7 +4,6 @@ description: This package provides masked genome sequences for the Pan troglodyt
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ptroglodytes.UCSC.panTro2.masked.html
 ---
 
-
 # bioconductor-bsgenome.ptroglodytes.ucsc.pantro2.masked
 
 name: bioconductor-bsgenome.ptroglodytes.ucsc.pantro2.masked

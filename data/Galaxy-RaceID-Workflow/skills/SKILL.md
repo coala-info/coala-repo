@@ -1,10 +1,12 @@
 ---
 name: raceid-workflow
-description: "This Galaxy workflow processes a tabular expression matrix to perform single-cell RNA-seq analysis using RaceID for clustering and StemID for lineage trajectory inference. Use this skill when you need to identify rare cell types, characterize cellular heterogeneity, and reconstruct developmental multipotency or differentiation pathways from transcriptomic data."
-homepage: https://workflowhub.eu/workflows/1547
+description: This Galaxy workflow processes a tabular expression matrix to perform single-cell RNA-seq analysis using RaceID for clustering and StemID for lineage trajectory inference. Use this skill when you need to identify rare cell types, characterize cellular heterogeneity, and reconstruct developmental multipotency or differentiation pathways from transcriptomic data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RaceID Workflow
+# raceid-workflow
 
 ## Overview
 

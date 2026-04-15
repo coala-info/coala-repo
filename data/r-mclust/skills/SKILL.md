@@ -4,7 +4,6 @@ description: The r-mclust package performs Gaussian mixture modeling for automat
 homepage: https://cloud.r-project.org/web/packages/mclust/index.html
 ---
 
-
 # r-mclust
 
 ## Overview

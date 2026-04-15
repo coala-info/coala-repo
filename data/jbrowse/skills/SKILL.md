@@ -2,8 +2,9 @@
 name: jbrowse
 description: JBrowse is a high-performance genome browser suite used for visualizing genomic data through linear, circular, and dotplot views. Use when user asks to deploy a genome browser, visualize sequencing tracks, or analyze comparative genomics and synteny.
 homepage: https://jbrowse.org/
+metadata:
+  docker_image: "quay.io/biocontainers/jbrowse:1.16.11--pl5321h9f5acd7_5"
 ---
-
 
 # jbrowse
 

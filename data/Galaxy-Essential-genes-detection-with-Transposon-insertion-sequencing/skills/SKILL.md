@@ -1,10 +1,12 @@
 ---
 name: essential-genes-detection-with-transposon-insertion-sequenci
-description: "This genomics workflow processes transposon insertion sequencing (Tn-Seq) data using Cutadapt for demultiplexing, Bowtie for mapping reads to a reference genome, and the Transit Gumbel method to statistically identify essential genes. Use this skill when you need to determine which genes are critical for bacterial survival under specific experimental conditions by analyzing the distribution and frequency of transposon insertions across the genome."
-homepage: https://workflowhub.eu/workflows/1530
+description: This genomics workflow processes transposon insertion sequencing (Tn-Seq) data using Cutadapt for demultiplexing, Bowtie for mapping reads to a reference genome, and the Transit Gumbel method to statistically identify essential genes. Use this skill when you need to determine which genes are critical for bacterial survival under specific experimental conditions by analyzing the distribution and frequency of transposon insertions across the genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Essential genes detection with Transposon insertion sequencing
+# essential-genes-detection-with-transposon-insertion-sequenci
 
 ## Overview
 

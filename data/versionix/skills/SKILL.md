@@ -2,8 +2,9 @@
 name: versionix
 description: Versionix standardizes the extraction of version information from command-line tools. Use when user asks to get the version of a command-line tool, list registered tools, or check versionix statistics.
 homepage: https://github.com/sequana/versionix
+metadata:
+  docker_image: "quay.io/biocontainers/versionix:0.99.3--pyhdfd78af_0"
 ---
-
 
 # versionix
 

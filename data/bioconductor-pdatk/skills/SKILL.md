@@ -4,7 +4,6 @@ description: This package provides a framework for survival analysis and risk pr
 homepage: https://bioconductor.org/packages/release/bioc/html/PDATK.html
 ---
 
-
 # bioconductor-pdatk
 
 name: bioconductor-pdatk

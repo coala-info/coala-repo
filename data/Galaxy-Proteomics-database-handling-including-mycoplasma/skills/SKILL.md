@@ -1,10 +1,12 @@
 ---
 name: proteomics-database-handling-including-mycoplasma
-description: "This proteomics workflow downloads multiple protein FASTA databases, merges them into a filtered unique sequence set, and generates a decoy database using the Protein Database Downloader and DecoyDatabase tools. Use this skill when you need to construct a comprehensive search database that includes mycoplasma contaminants and decoy sequences for false discovery rate estimation in mass spectrometry data analysis."
-homepage: https://workflowhub.eu/workflows/1438
+description: This proteomics workflow downloads multiple protein FASTA databases, merges them into a filtered unique sequence set, and generates a decoy database using the Protein Database Downloader and DecoyDatabase tools. Use this skill when you need to construct a comprehensive search database that includes mycoplasma contaminants and decoy sequences for false discovery rate estimation in mass spectrometry data analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteomics: database handling including mycoplasma
+# proteomics-database-handling-including-mycoplasma
 
 ## Overview
 

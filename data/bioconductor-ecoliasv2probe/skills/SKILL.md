@@ -4,7 +4,6 @@ description: This package provides probe sequence and location data for the Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliasv2probe.html
 ---
 
-
 # bioconductor-ecoliasv2probe
 
 name: bioconductor-ecoliasv2probe

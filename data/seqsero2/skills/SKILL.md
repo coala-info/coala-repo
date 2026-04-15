@@ -2,8 +2,9 @@
 name: seqsero2
 description: SeqSero2 predicts Salmonella serotypes from whole genome sequencing data using allele micro-assembly or k-mer based workflows. Use when user asks to determine Salmonella serotypes, perform high-resolution allele assembly, or conduct rapid k-mer based screening from raw reads or genome assemblies.
 homepage: https://github.com/denglab/SeqSero2
+metadata:
+  docker_image: "quay.io/biocontainers/seqsero2:1.3.2--pyhdfd78af_0"
 ---
-
 
 # seqsero2
 

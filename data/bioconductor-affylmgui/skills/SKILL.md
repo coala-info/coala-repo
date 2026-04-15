@@ -4,7 +4,6 @@ description: This package provides a graphical user interface for analyzing Affy
 homepage: https://bioconductor.org/packages/release/bioc/html/affylmGUI.html
 ---
 
-
 # bioconductor-affylmgui
 
 ## Overview

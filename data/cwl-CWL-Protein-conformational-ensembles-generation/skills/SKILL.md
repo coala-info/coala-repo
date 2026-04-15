@@ -1,9 +1,12 @@
 ---
 name: cwl-protein-conformational-ensembles-generation
-description: "This Common Workflow Language pipeline processes 3D protein structures using BioExcel Building Blocks, CPPTRAJ, CONCOORD, and ProDy to generate conformational ensembles and analyze molecular flexibility. Use this skill when you need to characterize the conformational landscape of a protein to understand its biological function, evaluate the impact of genetic variants on structural dynamics, or model collective motions for drug discovery."
-homepage: https://workflowhub.eu/workflows/488
+description: This Common Workflow Language pipeline processes 3D protein structures using BioExcel Building Blocks, CPPTRAJ, CONCOORD, and ProDy to generate conformational ensembles and analyze molecular flexibility. Use this skill when you need to characterize the conformational landscape of a protein to understand its biological function, evaluate the impact of genetic variants on structural dynamics, or model collective motions for drug discovery.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Protein conformational ensembles generation
+
+# cwl-protein-conformational-ensembles-generation
 
 ## Overview
 

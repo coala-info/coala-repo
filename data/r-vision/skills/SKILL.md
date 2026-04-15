@@ -4,7 +4,6 @@ description: VISION is an R package for the functional interpretation of single-
 homepage: https://cran.r-project.org/web/packages/vision/index.html
 ---
 
-
 # r-vision
 
 ## Overview

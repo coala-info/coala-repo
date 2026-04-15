@@ -4,7 +4,6 @@ description: This tool provides a comprehensive pipeline for the analysis, norma
 homepage: https://bioconductor.org/packages/release/bioc/html/rCGH.html
 ---
 
-
 # bioconductor-rcgh
 
 name: bioconductor-rcgh

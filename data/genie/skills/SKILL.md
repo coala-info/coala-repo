@@ -2,8 +2,9 @@
 name: genie
 description: Genie is a bioinformatics suite for high-performance manipulation, filtering, and transformation of next-generation sequencing data. Use when user asks to convert sequencing formats, filter reads by quality or length, modify headers, or trim sequences.
 homepage: https://github.com/sakkayaphab/genie
+metadata:
+  docker_image: "quay.io/biocontainers/genie:0.7.0--h375a9b1_0"
 ---
-
 
 # genie
 

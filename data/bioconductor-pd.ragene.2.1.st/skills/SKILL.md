@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ragene.2.1.st.html
 ---
 
-
 # bioconductor-pd.ragene.2.1.st
 
 name: bioconductor-pd.ragene.2.1.st

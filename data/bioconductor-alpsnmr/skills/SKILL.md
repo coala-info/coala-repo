@@ -1,9 +1,8 @@
 ---
 name: bioconductor-alpsnmr
-description: "AlpsNMR provides an automated pipeline for the high-throughput processing and analysis of 1D NMR spectra. Use when user asks to load NMR data, perform preprocessing and quality control, detect and align peaks, or generate a peak table for statistical analysis."
+description: AlpsNMR provides an automated pipeline for the high-throughput processing and analysis of 1D NMR spectra. Use when user asks to load NMR data, perform preprocessing and quality control, detect and align peaks, or generate a peak table for statistical analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/AlpsNMR.html
 ---
-
 
 # bioconductor-alpsnmr
 

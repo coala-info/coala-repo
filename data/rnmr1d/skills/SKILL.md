@@ -2,8 +2,9 @@
 name: rnmr1d
 description: The rnmr1d tool performs automated high-throughput processing and analysis of 1D NMR datasets. Use when user asks to process raw NMR spectra, apply macro-command sequences, extract bucket data matrices, or calculate signal-to-noise ratios.
 homepage: https://github.com/INRA/Rnmr1D
+metadata:
+  docker_image: "biocontainers/rnmr1d:phenomenal-v1.2.22_cv0.3.49"
 ---
-
 
 # rnmr1d
 

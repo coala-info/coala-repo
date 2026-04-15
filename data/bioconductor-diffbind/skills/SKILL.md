@@ -4,7 +4,6 @@ description: Bioconductor-diffbind identifies significant changes in protein-DNA
 homepage: https://bioconductor.org/packages/release/bioc/html/DiffBind.html
 ---
 
-
 # bioconductor-diffbind
 
 ## Overview

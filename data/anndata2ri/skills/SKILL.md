@@ -1,9 +1,10 @@
 ---
 name: anndata2ri
-description: "anndata2ri automates the conversion of data structures between Python's AnnData and R's SingleCellExperiment formats. Use when user asks to convert single-cell data between Scanpy and Bioconductor, transfer objects between Python and R in Jupyter notebooks, or bridge workflows between the two ecosystems without intermediate files."
+description: anndata2ri automates the conversion of data structures between Python's AnnData and R's SingleCellExperiment formats. Use when user asks to convert single-cell data between Scanpy and Bioconductor, transfer objects between Python and R in Jupyter notebooks, or bridge workflows between the two ecosystems without intermediate files.
 homepage: https://github.com/theislab/anndata2ri
+metadata:
+  docker_image: "quay.io/biocontainers/anndata2ri:2.0--pyhdfd78af_0"
 ---
-
 
 # anndata2ri
 

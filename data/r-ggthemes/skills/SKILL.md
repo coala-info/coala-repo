@@ -4,7 +4,6 @@ description: The r-ggthemes package provides additional themes, scales, and geom
 homepage: https://cloud.r-project.org/web/packages/ggthemes/index.html
 ---
 
-
 # r-ggthemes
 
 ## Overview

@@ -2,8 +2,9 @@
 name: ucsc-crtreeindexbed
 description: The ucsc-crtreeindexbed tool transforms a standard BED file into a specialized CR-Tree index format. Use when user asks to 'create a CR-Tree index from a BED file', or 'index a BED file for fast retrieval of genomic features'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-crtreeindexbed:482--h0b57e2e_0"
 ---
-
 
 # ucsc-crtreeindexbed
 

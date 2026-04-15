@@ -2,8 +2,9 @@
 name: scvelo
 description: scVelo is a scalable toolkit that recovers directed dynamic information from single-cell transcriptomics by leveraging splicing kinetics. Use when user asks to estimate RNA velocity, recover transcriptional dynamics, infer latent time, or visualize cell differentiation trajectories.
 homepage: https://github.com/theislab/scvelo
+metadata:
+  docker_image: "quay.io/biocontainers/scvelo:0.2.5--pyhdfd78af_0"
 ---
-
 
 # scvelo
 

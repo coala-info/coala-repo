@@ -2,8 +2,9 @@
 name: vcfpy
 description: vcfpy is a Python 3 library for programmatically handling VCF files. Use when user asks to read VCF files, write VCF files, modify variant records, or add new fields to VCF headers.
 homepage: https://github.com/bihealth/vcfpy
+metadata:
+  docker_image: "quay.io/biocontainers/vcfpy:0.14.2--pyhdfd78af_0"
 ---
-
 
 # vcfpy
 

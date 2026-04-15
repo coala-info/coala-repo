@@ -1,9 +1,10 @@
 ---
 name: jarvis
-description: "JARVIS is a specialized tool designed for the reference-free lossless compression and decompression of DNA sequences. Use when user asks to compress genomic sequences, decompress .jc files, or estimate sequence entropy."
+description: JARVIS is a specialized tool designed for the reference-free lossless compression and decompression of DNA sequences. Use when user asks to compress genomic sequences, decompress .jc files, or estimate sequence entropy.
 homepage: https://github.com/cobilab/jarvis
+metadata:
+  docker_image: "quay.io/biocontainers/jarvis:1.1--h7b50bb2_6"
 ---
-
 
 # jarvis
 

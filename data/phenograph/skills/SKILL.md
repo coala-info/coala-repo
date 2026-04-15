@@ -2,8 +2,9 @@
 name: phenograph
 description: PhenoGraph is a clustering method that partitions single-cell biological data into distinct subpopulations by identifying communities within a phenotypic similarity graph. Use when user asks to cluster single-cell data, identify cell types without prior labeling, or detect communities in high-dimensional biological datasets.
 homepage: https://github.com/dpeerlab/PhenoGraph
+metadata:
+  docker_image: "quay.io/biocontainers/phenograph:1.5.7--pyhdfd78af_0"
 ---
-
 
 # phenograph
 

@@ -4,7 +4,6 @@ description: This package provides pre-calculated gene enrichment scores and cel
 homepage: https://bioconductor.org/packages/release/data/experiment/html/LRcellTypeMarkers.html
 ---
 
-
 # bioconductor-lrcelltypemarkers
 
 ## Overview

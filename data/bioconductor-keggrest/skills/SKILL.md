@@ -4,7 +4,6 @@ description: This tool provides a client interface to the KEGG REST API for retr
 homepage: https://bioconductor.org/packages/release/bioc/html/KEGGREST.html
 ---
 
-
 # bioconductor-keggrest
 
 name: bioconductor-keggrest

@@ -4,7 +4,6 @@ description: This tool performs Bayesian hierarchical Gaussian mixture modeling 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CNPBayes.html
 ---
 
-
 # bioconductor-cnpbayes
 
 name: bioconductor-cnpbayes

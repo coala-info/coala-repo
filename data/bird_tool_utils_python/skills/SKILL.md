@@ -2,8 +2,9 @@
 name: bird_tool_utils_python
 description: This library provides standardized utilities for developing bioinformatic command-line tools with consistent argument parsing, logging, and sequence processing. Use when user asks to implement professional CLI interfaces, parse FASTA or FASTQ files efficiently, manage temporary directories, or generate ROFF-formatted documentation.
 homepage: https://github.com/wwood/bird_tool_utils-python
+metadata:
+  docker_image: "quay.io/biocontainers/bird_tool_utils_python:0.6.0--pyh7e72e81_0"
 ---
-
 
 # bird_tool_utils_python
 

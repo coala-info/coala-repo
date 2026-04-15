@@ -4,7 +4,6 @@ description: This package provides access to the Tasic et al. (2016) single-cell
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/allenpvc.html
 ---
 
-
 # bioconductor-allenpvc
 
 name: bioconductor-allenpvc

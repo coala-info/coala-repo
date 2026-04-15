@@ -4,7 +4,6 @@ description: The terraTCGAdata package integrates TCGA data from the Terra platf
 homepage: https://bioconductor.org/packages/release/bioc/html/terraTCGAdata.html
 ---
 
-
 # bioconductor-terratcgadata
 
 ## Overview

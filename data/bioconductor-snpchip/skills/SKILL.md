@@ -4,7 +4,6 @@ description: This tool visualizes genome-wide data and SNP-level information thr
 homepage: https://bioconductor.org/packages/3.6/bioc/html/SNPchip.html
 ---
 
-
 # bioconductor-snpchip
 
 name: bioconductor-snpchip

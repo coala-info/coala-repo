@@ -4,7 +4,6 @@ description: This tool imports and summarizes transcript-level abundance estimat
 homepage: https://bioconductor.org/packages/release/bioc/html/tximport.html
 ---
 
-
 # bioconductor-tximport
 
 name: bioconductor-tximport

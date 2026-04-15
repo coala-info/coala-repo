@@ -2,6 +2,8 @@
 name: colabfold
 description: ColabFold predicts protein structures and complexes by accelerating the AlphaFold2 pipeline using MMseqs2 for rapid sequence alignment. Use when user asks to predict 3D protein models, generate multiple sequence alignments locally, or run high-throughput structure predictions using colabfold_batch and colabfold_search.
 homepage: https://github.com/sokrypton/ColabFold
+metadata:
+  docker_image: "quay.io/biocontainers/colabfold:1.5.5--pyh7cba7a3_2"
 ---
 
 # colabfold

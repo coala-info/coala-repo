@@ -4,7 +4,6 @@ description: gRbase is an R package that provides infrastructure for graphical m
 homepage: https://cran.r-project.org/web/packages/grbase/index.html
 ---
 
-
 # r-grbase
 
 ## Overview

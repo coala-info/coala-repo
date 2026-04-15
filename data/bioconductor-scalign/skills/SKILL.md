@@ -4,7 +4,6 @@ description: scAlign is a deep learning framework for aligning and integrating h
 homepage: https://bioconductor.org/packages/3.9/bioc/html/scAlign.html
 ---
 
-
 # bioconductor-scalign
 
 name: bioconductor-scalign

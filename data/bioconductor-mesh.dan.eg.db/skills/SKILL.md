@@ -4,7 +4,6 @@ description: This tool provides mapping between Medical Subject Headings (MeSH) 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Dan.eg.db.html
 ---
 
-
 # bioconductor-mesh.dan.eg.db
 
 name: bioconductor-mesh.dan.eg.db

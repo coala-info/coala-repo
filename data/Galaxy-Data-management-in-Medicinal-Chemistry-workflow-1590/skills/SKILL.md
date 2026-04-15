@@ -1,10 +1,12 @@
 ---
 name: data-management-in-medicinal-chemistry-workflow
-description: "This medicinal chemistry workflow processes chemical inputs like benzenesulfonyl chloride and ethylamine using OpenBabel, ChEMBL database searches, and reaction modeling tools. Use this skill when you need to simulate chemical reactions between precursors, identify related substructures in the ChEMBL database, and evaluate the drug-likeness of resulting molecular products."
-homepage: https://workflowhub.eu/workflows/1590
+description: This medicinal chemistry workflow processes chemical inputs like benzenesulfonyl chloride and ethylamine using OpenBabel, ChEMBL database searches, and reaction modeling tools. Use this skill when you need to simulate chemical reactions between precursors, identify related substructures in the ChEMBL database, and evaluate the drug-likeness of resulting molecular products.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Data management in Medicinal Chemistry workflow
+# data-management-in-medicinal-chemistry-workflow
 
 ## Overview
 

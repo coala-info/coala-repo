@@ -4,7 +4,6 @@ description: This package applies functional principal component analysis to ChI
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NarrowPeaks.html
 ---
 
-
 # bioconductor-narrowpeaks
 
 ## Overview

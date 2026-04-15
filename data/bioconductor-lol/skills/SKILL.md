@@ -4,7 +4,6 @@ description: This tool performs stable network inference and genomic marker sele
 homepage: https://bioconductor.org/packages/3.6/bioc/html/lol.html
 ---
 
-
 # bioconductor-lol
 
 name: bioconductor-lol

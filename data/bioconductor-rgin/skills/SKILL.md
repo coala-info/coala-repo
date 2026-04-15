@@ -4,7 +4,6 @@ description: The Rgin package provides a Bioconductor resource for integrating t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/Rgin.html
 ---
 
-
 # bioconductor-rgin
 
 name: bioconductor-rgin

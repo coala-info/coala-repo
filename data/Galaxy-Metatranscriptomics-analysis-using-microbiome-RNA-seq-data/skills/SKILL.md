@@ -1,10 +1,12 @@
 ---
 name: metatranscriptomics-analysis-using-microbiome-rna-seq-data
-description: "This metatranscriptomics workflow processes paired-end raw microbiome RNA-seq reads using tools like SortMeRNA, MetaPhlAn, and HUMAnN to perform taxonomic profiling and functional pathway analysis. Use this skill when you need to characterize the active microbial community composition and metabolic potential of a complex environmental or clinical sample by quantifying gene expression and biological pathways."
-homepage: https://workflowhub.eu/workflows/1466
+description: This metatranscriptomics workflow processes paired-end raw microbiome RNA-seq reads using tools like SortMeRNA, MetaPhlAn, and HUMAnN to perform taxonomic profiling and functional pathway analysis. Use this skill when you need to characterize the active microbial community composition and metabolic potential of a complex environmental or clinical sample by quantifying gene expression and biological pathways.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metatranscriptomics analysis using microbiome RNA-seq data
+# metatranscriptomics-analysis-using-microbiome-rna-seq-data
 
 ## Overview
 

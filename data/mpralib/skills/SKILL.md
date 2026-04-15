@@ -2,8 +2,9 @@
 name: mpralib
 description: mpralib is a Python library and command-line toolset designed for the quality control, validation, and processing of Massively Parallel Reporter Assay data. Use when user asks to validate MPRA data files against specific schemas, map barcodes to elements, or process high-throughput reporter assay count data.
 homepage: https://github.com/kircherlab/MPRAlib
+metadata:
+  docker_image: "quay.io/biocontainers/mpralib:0.9.1--pyhdfd78af_0"
 ---
-
 
 # mpralib
 

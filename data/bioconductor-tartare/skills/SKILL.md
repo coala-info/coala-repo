@@ -4,7 +4,6 @@ description: The tartare package provides a collection of complex mass spectrome
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tartare.html
 ---
 
-
 # bioconductor-tartare
 
 ## Overview

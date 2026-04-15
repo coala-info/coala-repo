@@ -4,7 +4,6 @@ description: Mirsynergy is a deterministic clustering algorithm that identifies 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Mirsynergy.html
 ---
 
-
 # bioconductor-mirsynergy
 
 ## Overview

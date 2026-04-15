@@ -2,8 +2,9 @@
 name: perl-module-build
 description: This tool manages the lifecycle of Perl software distributions using the Module::Build system. Use when user asks to configure, build, test, or install Perl modules, manage dependencies, or specify custom installation directories.
 homepage: http://metacpan.org/pod/Module-Build
+metadata:
+  docker_image: "quay.io/biocontainers/perl-module-build:0.4231--pl5321hdfd78af_0"
 ---
-
 
 # perl-module-build
 

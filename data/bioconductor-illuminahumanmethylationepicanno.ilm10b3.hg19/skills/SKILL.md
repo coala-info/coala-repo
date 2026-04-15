@@ -4,7 +4,6 @@ description: This package provides annotation data for the Illumina HumanMethyla
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICanno.ilm10b3.hg19.html
 ---
 
-
 # bioconductor-illuminahumanmethylationepicanno.ilm10b3.hg19
 
 ## Overview

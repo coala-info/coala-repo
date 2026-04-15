@@ -4,7 +4,6 @@ description: This package provides mapping between Medical Subject Headings (MeS
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Mga.eg.db.html
 ---
 
-
 # bioconductor-mesh.mga.eg.db
 
 name: bioconductor-mesh.mga.eg.db

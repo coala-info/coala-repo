@@ -2,8 +2,9 @@
 name: dartunifrac
 description: DartUniFrac calculates UniFrac distances for massive microbiome datasets using high-performance sketching and tree representation algorithms. Use when user asks to calculate weighted or unweighted UniFrac distances, process millions of samples efficiently, or use GPU acceleration for phylogenetic distance calculations.
 homepage: https://github.com/jianshu93/DartUniFrac
+metadata:
+  docker_image: "quay.io/biocontainers/dartunifrac:0.3.0--h3dc2dae_0"
 ---
-
 
 # dartunifrac
 

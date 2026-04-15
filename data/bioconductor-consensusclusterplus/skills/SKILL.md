@@ -4,7 +4,6 @@ description: ConsensusClusterPlus performs unsupervised class discovery and cons
 homepage: https://bioconductor.org/packages/release/bioc/html/ConsensusClusterPlus.html
 ---
 
-
 # bioconductor-consensusclusterplus
 
 name: bioconductor-consensusclusterplus

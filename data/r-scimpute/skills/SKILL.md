@@ -4,7 +4,6 @@ description: scImpute identifies and imputes dropout values in single-cell RNA-s
 homepage: https://cran.r-project.org/web/packages/scimpute/index.html
 ---
 
-
 # r-scimpute
 
 ## Overview

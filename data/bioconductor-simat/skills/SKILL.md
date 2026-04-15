@@ -4,7 +4,6 @@ description: SIMAT processes Gas Chromatography-Mass Spectrometry data acquired 
 homepage: https://bioconductor.org/packages/release/bioc/html/SIMAT.html
 ---
 
-
 # bioconductor-simat
 
 ## Overview

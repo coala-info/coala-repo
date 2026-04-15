@@ -4,7 +4,6 @@ description: This package provides a masked version of the Gallus gallus (chicke
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal4.masked.html
 ---
 
-
 # bioconductor-bsgenome.ggallus.ucsc.galgal4.masked
 
 ## Overview

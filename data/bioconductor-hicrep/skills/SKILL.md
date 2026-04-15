@@ -4,7 +4,6 @@ description: The hicrep package evaluates the reproducibility of Hi-C data by ca
 homepage: https://bioconductor.org/packages/3.5/bioc/html/hicrep.html
 ---
 
-
 # bioconductor-hicrep
 
 ## Overview

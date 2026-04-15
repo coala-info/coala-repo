@@ -1,10 +1,12 @@
 ---
 name: functional-annotation-of-protein-sequences
-description: "This Galaxy workflow performs comprehensive functional annotation of protein sequences in FASTA format using eggNOG-mapper and InterProScan to identify ortholog groups, protein domains, and motifs. Use this skill when you need to characterize the biological roles of novel or unannotated proteins by assigning Gene Ontology terms, KEGG pathways, and functional signatures across any organism."
-homepage: https://workflowhub.eu/workflows/1262
+description: This Galaxy workflow performs comprehensive functional annotation of protein sequences in FASTA format using eggNOG-mapper and InterProScan to identify ortholog groups, protein domains, and motifs. Use this skill when you need to characterize the biological roles of novel or unannotated proteins by assigning Gene Ontology terms, KEGG pathways, and functional signatures across any organism.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Functional annotation of protein sequences
+# functional-annotation-of-protein-sequences
 
 ## Overview
 

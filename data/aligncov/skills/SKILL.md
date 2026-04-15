@@ -2,8 +2,9 @@
 name: aligncov
 description: The aligncov tool converts BAM alignment files into tidy tab-separated tables containing coverage statistics and per-base depth data. Use when user asks to calculate breadth of coverage, determine mean depth, or generate position-by-position depth reports from sorted BAM files.
 homepage: https://github.com/pcrxn/aligncov
+metadata:
+  docker_image: "quay.io/biocontainers/aligncov:0.0.2--pyh7cba7a3_0"
 ---
-
 
 # aligncov
 

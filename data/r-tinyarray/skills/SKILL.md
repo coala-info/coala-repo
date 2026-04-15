@@ -4,7 +4,6 @@ description: The tinyarray package streamlines bioinformatics workflows for anal
 homepage: https://cran.r-project.org/web/packages/tinyarray/index.html
 ---
 
-
 # r-tinyarray
 
 ## Overview

@@ -4,7 +4,6 @@ description: The cancerclass package provides a framework for building and valid
 homepage: https://bioconductor.org/packages/release/bioc/html/cancerclass.html
 ---
 
-
 # bioconductor-cancerclass
 
 ## Overview

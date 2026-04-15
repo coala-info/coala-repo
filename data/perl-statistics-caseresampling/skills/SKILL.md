@@ -2,8 +2,9 @@
 name: perl-statistics-caseresampling
 description: This Perl module performs high-performance case resampling and bootstrapping to calculate robust statistics and confidence intervals. Use when user asks to resample data with replacement, estimate medians with uncertainty, or perform efficient bootstrap simulations for non-normally distributed datasets.
 homepage: http://metacpan.org/pod/Statistics::CaseResampling
+metadata:
+  docker_image: "quay.io/biocontainers/perl-statistics-caseresampling:0.15--pl5321h7b50bb2_5"
 ---
-
 
 # perl-statistics-caseresampling
 

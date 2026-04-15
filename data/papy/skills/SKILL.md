@@ -4,7 +4,6 @@ description: Papyros Shell is a desktop compositor for Wayland that provides a M
 homepage: https://github.com/papyros/papyros-shell
 ---
 
-
 # papy
 
 ## Overview

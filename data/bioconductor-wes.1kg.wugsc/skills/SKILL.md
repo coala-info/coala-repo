@@ -4,7 +4,6 @@ description: This package provides processed Whole Exome Sequencing BAM files fr
 homepage: https://bioconductor.org/packages/release/data/experiment/html/WES.1KG.WUGSC.html
 ---
 
-
 # bioconductor-wes.1kg.wugsc
 
 ## Overview

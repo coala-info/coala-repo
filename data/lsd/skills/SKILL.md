@@ -1,9 +1,10 @@
 ---
 name: lsd
-description: "lsd is a modern directory listing tool that provides colorized output, icons, and a native tree-view mode. Use when user asks to list files with icons, visualize directory structures in a tree view, sort files by metadata, or display recursive directory sizes."
+description: lsd is a modern directory listing tool that provides colorized output, icons, and a native tree-view mode. Use when user asks to list files with icons, visualize directory structures in a tree view, sort files by metadata, or display recursive directory sizes.
 homepage: https://github.com/lsd-rs/lsd
+metadata:
+  docker_image: "quay.io/biocontainers/lsd:2.2.3--1"
 ---
-
 
 # lsd
 

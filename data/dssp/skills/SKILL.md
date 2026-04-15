@@ -2,8 +2,9 @@
 name: dssp
 description: DSSP assigns secondary structure elements to protein structures based on 3D coordinates and hydrogen bonding patterns. Use when user asks to assign secondary structure codes, process mmCIF or PDB files for structural annotation, or identify specific motifs like alpha helices and beta strands.
 homepage: https://github.com/PDB-REDO/dssp
+metadata:
+  docker_image: "biocontainers/dssp:v3.0.0-3b1-deb_cv1"
 ---
-
 
 # dssp
 

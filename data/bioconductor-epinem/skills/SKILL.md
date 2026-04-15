@@ -4,7 +4,6 @@ description: This tool infers signaling pathway structures and logical epistatic
 homepage: https://bioconductor.org/packages/release/bioc/html/epiNEM.html
 ---
 
-
 # bioconductor-epinem
 
 name: bioconductor-epinem

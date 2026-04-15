@@ -1,10 +1,12 @@
 ---
 name: circos-nature-workflow
-description: "This Galaxy workflow generates high-quality circular visualizations of genomic data using the Circos tool based on chromosome and highlight input files. Use this skill when you need to create publication-quality circular plots to visualize genomic features, structural variations, or comparative genomics data across different chromosomes."
-homepage: https://workflowhub.eu/workflows/1415
+description: This Galaxy workflow generates high-quality circular visualizations of genomic data using the Circos tool based on chromosome and highlight input files. Use this skill when you need to create publication-quality circular plots to visualize genomic features, structural variations, or comparative genomics data across different chromosomes.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Circos: Nature workflow
+# circos-nature-workflow
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool facilitates streaming data processing in R using a produc
 homepage: https://bioconductor.org/packages/release/bioc/html/Streamer.html
 ---
 
-
 # bioconductor-streamer
 
 name: bioconductor-streamer

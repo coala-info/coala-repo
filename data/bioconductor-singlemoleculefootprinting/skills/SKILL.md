@@ -4,7 +4,6 @@ description: This package analyzes Single Molecule Footprinting data to map mole
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleMoleculeFootprinting.html
 ---
 
-
 # bioconductor-singlemoleculefootprinting
 
 ## Overview

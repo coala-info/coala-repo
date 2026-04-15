@@ -2,8 +2,9 @@
 name: genclust
 description: Genclust is a genetic algorithm for clustering gene expression data. Use when user asks to group genes with similar expression patterns.
 homepage: http://www.math.unipa.it/~lobosco/genclust/
+metadata:
+  docker_image: "quay.io/biocontainers/genclust:1.0--h470a237_0"
 ---
-
 
 # genclust
 

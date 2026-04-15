@@ -2,8 +2,9 @@
 name: lr_gapcloser
 description: lr_gapcloser fills gaps in genomic scaffolds by aligning error-corrected long-read data to bridge sequences of Ns. Use when user asks to fill gaps in a draft genome, close scaffold gaps using long reads, or improve assembly continuity.
 homepage: https://github.com/CAFS-bioinformatics/LR_Gapcloser
+metadata:
+  docker_image: "quay.io/biocontainers/lr_gapcloser:1.0--pl5321hdfd78af_0"
 ---
-
 
 # lr_gapcloser
 

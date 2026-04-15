@@ -4,7 +4,6 @@ description: This tool performs annotation-driven unsupervised clustering of mic
 homepage: https://bioconductor.org/packages/release/bioc/html/adSplit.html
 ---
 
-
 # bioconductor-adsplit
 
 name: bioconductor-adsplit

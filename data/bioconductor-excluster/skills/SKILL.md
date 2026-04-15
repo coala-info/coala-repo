@@ -4,7 +4,6 @@ description: Bioconductor-excluster detects differentially spliced genes in RNA-
 homepage: https://bioconductor.org/packages/release/bioc/html/ExCluster.html
 ---
 
-
 # bioconductor-excluster
 
 name: bioconductor-excluster

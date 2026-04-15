@@ -2,6 +2,8 @@
 name: minimac4
 description: Minimac4 is a specialized tool for efficient genotype imputation that estimates missing genotypes by comparing target panels against high-density reference panels. Use when user asks to perform genotype imputation, convert reference panels to MVCF format, or update M3VCF files for genomic analysis.
 homepage: https://github.com/statgen/Minimac4
+metadata:
+  docker_image: "quay.io/biocontainers/minimac4:4.1.6--hcb620b3_1"
 ---
 
 # minimac4

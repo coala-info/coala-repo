@@ -1,9 +1,10 @@
 ---
 name: kraken-biom
-description: "kraken-biom converts Kraken taxonomic report files into BIOM format tables for downstream microbiome analysis. Use when user asks to create a BIOM table from Kraken reports, aggregate taxonomic counts at specific ranks, or integrate sample metadata into a metagenomic feature table."
+description: kraken-biom converts Kraken taxonomic report files into BIOM format tables for downstream microbiome analysis. Use when user asks to create a BIOM table from Kraken reports, aggregate taxonomic counts at specific ranks, or integrate sample metadata into a metagenomic feature table.
 homepage: https://github.com/smdabdoub/kraken-biom
+metadata:
+  docker_image: "quay.io/biocontainers/kraken-biom:1.2.0--pyh5e36f6f_0"
 ---
-
 
 # kraken-biom
 

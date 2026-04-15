@@ -2,8 +2,9 @@
 name: perl-digest-md5-file
 description: This tool calculates MD5 checksums for local files and remote URLs. Use when user asks to calculate file digests, verify the integrity of remote data via URL, or generate MD5 hashes for large datasets.
 homepage: http://search.cpan.org/dist/Digest-MD5-File/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-digest-md5-file:0.08--pl5.22.0_0"
 ---
-
 
 # perl-digest-md5-file
 

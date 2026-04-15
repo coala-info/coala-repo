@@ -2,8 +2,9 @@
 name: dnmtools
 description: dnmtools is a suite of command-line utilities for analyzing large-scale DNA methylation data from bisulfite and Nanopore sequencing. Use when user asks to identify highly methylated regions, detect partially methylated domains, find allelically methylated regions, perform differential methylation analysis, or aggregate methylation levels across genomic features.
 homepage: https://github.com/smithlabcode/dnmtools
+metadata:
+  docker_image: "quay.io/biocontainers/dnmtools:1.5.1--hb66fcc3_0"
 ---
-
 
 # dnmtools
 

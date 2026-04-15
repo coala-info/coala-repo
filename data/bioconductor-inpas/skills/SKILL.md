@@ -4,7 +4,6 @@ description: InPAS identifies and quantifies alternative polyadenylation sites f
 homepage: https://bioconductor.org/packages/release/bioc/html/InPAS.html
 ---
 
-
 # bioconductor-inpas
 
 ## Overview

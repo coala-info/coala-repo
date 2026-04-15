@@ -1,9 +1,12 @@
 ---
 name: dtc-v4-wf5401-volcanic-gas-dispersal-and-deposition
-description: "This CWL workflow utilizes the FALL3D atmospheric dispersion model and Bayesian inference via PyMC to estimate eruption source parameters and ground-level sulfur dioxide concentrations from real-time sensor data and meteorological inputs. Use this skill when you need to perform source term estimation, generate probabilistic air quality forecasts, or characterize the environmental impact of volcanic gas emissions during effusive eruption events."
-homepage: https://workflowhub.eu/workflows/1982
+description: This CWL workflow utilizes the FALL3D atmospheric dispersion model and Bayesian inference via PyMC to estimate eruption source parameters and ground-level sulfur dioxide concentrations from real-time sensor data and meteorological inputs. Use this skill when you need to perform source term estimation, generate probabilistic air quality forecasts, or characterize the environmental impact of volcanic gas emissions during effusive eruption events.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-V4] WF5401: Volcanic gas dispersal and deposition
+
+# dtc-v4-wf5401-volcanic-gas-dispersal-and-deposition
 
 ## Overview
 

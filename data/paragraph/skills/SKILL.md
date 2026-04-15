@@ -2,6 +2,8 @@
 name: paragraph
 description: Paragraph is a graph-based structural variant genotyper that realigns short reads to local directed acyclic graphs to determine genotypes. Use when user asks to genotype structural variants using a graph-based approach, realign reads to variant graphs, or perform population-scale genotyping of deletions, insertions, and duplications.
 homepage: https://github.com/Illumina/paragraph
+metadata:
+  docker_image: "quay.io/biocontainers/paragraph:2.3--h8908b6f_0"
 ---
 
 # paragraph

@@ -2,6 +2,8 @@
 name: kaptive
 description: Kaptive identifies and characterizes surface polysaccharide gene clusters from bacterial genome assemblies to predict phenotypes like K-type or O-type. Use when user asks to identify polysaccharide loci, serotype bacterial isolates, extract features from locus databases, or convert typing results into summary tables.
 homepage: https://kaptive.readthedocs.io/en/latest
+metadata:
+  docker_image: "quay.io/biocontainers/kaptive:3.1.0--pyhdfd78af_0"
 ---
 
 # kaptive

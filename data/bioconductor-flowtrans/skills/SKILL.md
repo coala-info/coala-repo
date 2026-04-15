@@ -4,7 +4,6 @@ description: This package optimizes parameters for flow cytometry transformation
 homepage: https://bioconductor.org/packages/release/bioc/html/flowTrans.html
 ---
 
-
 # bioconductor-flowtrans
 
 ## Overview

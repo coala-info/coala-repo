@@ -4,7 +4,6 @@ description: The GSEABase package provides a standardized framework for managing
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEABase.html
 ---
 
-
 # bioconductor-gseabase
 
 ## Overview

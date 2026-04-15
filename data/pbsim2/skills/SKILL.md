@@ -2,8 +2,9 @@
 name: pbsim2
 description: pbsim2 simulates long-read sequencing data for PacBio and Nanopore technologies using generative models or sampling-based methods. Use when user asks to generate synthetic long reads, simulate specific sequencing chemistries, or mimic the error profiles of existing FASTQ datasets.
 homepage: https://github.com/yukiteruono/pbsim2
+metadata:
+  docker_image: "quay.io/biocontainers/pbsim2:2.0.1--h9948957_4"
 ---
-
 
 # pbsim2
 

@@ -4,7 +4,6 @@ description: This tool performs analysis and quality assessment of ribosome-prof
 homepage: https://bioconductor.org/packages/release/bioc/html/RiboProfiling.html
 ---
 
-
 # bioconductor-riboprofiling
 
 name: bioconductor-riboprofiling

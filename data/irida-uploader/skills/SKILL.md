@@ -1,9 +1,10 @@
 ---
 name: irida-uploader
-description: "Uploads Next-Generation Sequencing data to the IRIDA platform. Use when user asks to upload sequencing data to IRIDA."
+description: Uploads Next-Generation Sequencing data to the IRIDA platform. Use when user asks to upload sequencing data to IRIDA.
 homepage: https://github.com/phac-nml/irida-uploader
+metadata:
+  docker_image: "quay.io/biocontainers/irida-uploader:0.9.5--pyhdfd78af_0"
 ---
-
 
 # irida-uploader
 

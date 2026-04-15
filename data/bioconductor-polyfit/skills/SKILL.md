@@ -4,7 +4,6 @@ description: Polyfit corrects p-value distributions in discrete count data analy
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Polyfit.html
 ---
 
-
 # bioconductor-polyfit
 
 ## Overview

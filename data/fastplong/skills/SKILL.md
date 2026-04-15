@@ -2,8 +2,9 @@
 name: fastplong
 description: fastplong is a high-performance tool designed for quality control, filtering, and adapter trimming of long-read sequencing data. Use when user asks to filter reads by quality or length, trim adapter sequences, remove low complexity reads, or generate sequencing quality reports.
 homepage: https://github.com/OpenGene/fastplong
+metadata:
+  docker_image: "quay.io/biocontainers/fastplong:0.4.1--h224cc79_0"
 ---
-
 
 # fastplong
 

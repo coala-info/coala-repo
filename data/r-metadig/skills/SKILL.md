@@ -4,7 +4,6 @@ description: The r-metadig package provides tools to author, test, and run metad
 homepage: https://cran.r-project.org/web/packages/metadig/index.html
 ---
 
-
 # r-metadig
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides specialized functions for medical statistics, de
 homepage: https://cloud.r-project.org/web/packages/fmsb/index.html
 ---
 
-
 # r-fmsb
 
 name: r-fmsb

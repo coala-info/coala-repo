@@ -2,8 +2,9 @@
 name: viralflye
 description: viralFlye extracts, polishes, and categorizes viral sequences from complex metagenomic assemblies and can match them to microbial hosts. Use when user asks to 'recover viral genomes', 'identify circular or linear viruses', or 'predict viral hosts'.
 homepage: https://github.com/Dmitry-Antipov/viralFlye/
+metadata:
+  docker_image: "quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0"
 ---
-
 
 # viralflye
 

@@ -2,6 +2,8 @@
 name: plasclass
 description: PlasClass is a machine learning tool that classifies DNA sequences as either plasmid or chromosomal in origin. Use when user asks to distinguish between plasmid and chromosomal DNA, classify metagenomic contigs, or assign plasmid probability scores to FASTA sequences.
 homepage: https://github.com/Shamir-Lab/PlasClass
+metadata:
+  docker_image: "quay.io/biocontainers/plasclass:0.1.1--pyhdfd78af_0"
 ---
 
 # plasclass

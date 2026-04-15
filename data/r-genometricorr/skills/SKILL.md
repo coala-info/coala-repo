@@ -4,7 +4,6 @@ description: This tool performs spatial correlation and independence tests on ge
 homepage: https://cran.r-project.org/web/packages/genometricorr/index.html
 ---
 
-
 # r-genometricorr
 
 name: r-genometricorr

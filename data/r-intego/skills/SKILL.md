@@ -4,7 +4,6 @@ description: The r-intego tool integrates multiple Gene Ontology semantic simila
 homepage: https://cran.r-project.org/web/packages/intego/index.html
 ---
 
-
 # r-intego
 
 name: r-intego

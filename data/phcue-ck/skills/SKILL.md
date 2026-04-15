@@ -2,8 +2,9 @@
 name: phcue-ck
 description: The phcue-ck tool queries the ENA API to retrieve raw data locations and generate download manifests for sequencing accessions. Use when user asks to find FTP links for sequencing accessions, resolve accessions into download manifests, or generate structured output for raw data downloads.
 homepage: https://lgi-onehealth.github.io/phcue-ck/
+metadata:
+  docker_image: "quay.io/biocontainers/phcue-ck:0.2.0--h3dc2dae_4"
 ---
-
 
 # phcue-ck
 

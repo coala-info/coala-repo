@@ -4,7 +4,6 @@ description: This tool performs kinetic modeling to estimate RNA synthesis and d
 homepage: https://bioconductor.org/packages/release/bioc/html/DTA.html
 ---
 
-
 # bioconductor-dta
 
 name: bioconductor-dta

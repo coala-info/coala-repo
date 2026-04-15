@@ -2,8 +2,9 @@
 name: gocr
 description: GOCR is an open-source engine that extracts text and barcodes from images using a lightweight command-line interface. Use when user asks to extract text from images, decode barcodes, convert scans to XML or HTML formats, or perform OCR on Netpbm files.
 homepage: https://jocr.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/gocr:0.52--h7b50bb2_0"
 ---
-
 
 # gocr
 

@@ -1,9 +1,12 @@
 ---
 name: gsc-genotype-sparse-compression
-description: "This CWL workflow utilizes the Genotype Sparse Compression (GSC) tool to perform high-ratio lossless or lossy compression and decompression of genomic variant data in VCF or BCF formats. Use this skill when managing massive population-scale sequencing datasets to minimize storage footprints while maintaining rapid query access for downstream genomic analysis."
-homepage: https://workflowhub.eu/workflows/885
+description: This CWL workflow utilizes the Genotype Sparse Compression (GSC) tool to perform high-ratio lossless or lossy compression and decompression of genomic variant data in VCF or BCF formats. Use this skill when managing massive population-scale sequencing datasets to minimize storage footprints while maintaining rapid query access for downstream genomic analysis.
+homepage: https://github.com/luo-xiaolong/GSC.git
+metadata:
+  docker_image: "N/A"
 ---
-# GSC (Genotype Sparse Compression)
+
+# gsc-genotype-sparse-compression
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides a streamlined interface for accessing and int
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedTCGAData.html
 ---
 
-
 # bioconductor-curatedtcgadata
 
 ## Overview

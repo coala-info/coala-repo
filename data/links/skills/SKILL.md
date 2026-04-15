@@ -2,8 +2,9 @@
 name: links
 description: LINKS is a genomics tool that uses long-range sequence data and k-mer pairs to scaffold draft genome assemblies. Use when user asks to scaffold contigs, increase assembly continuity, or run alignment-free genome scaffolding workflows.
 homepage: https://github.com/bcgsc/LINKS
+metadata:
+  docker_image: "quay.io/biocontainers/links:2.0.1--h9948957_7"
 ---
-
 
 # links
 

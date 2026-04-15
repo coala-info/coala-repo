@@ -1,9 +1,12 @@
 ---
 name: quality-assessment-amplicon-classification-and-functional-pr
-description: "This CWL workflow performs quality assessment of paired-end amplicon sequencing reads, taxonomic classification using NG-Tax 2.0, and functional potential prediction via PICRUSt2. Use this skill when you need to characterize microbial community diversity and infer the metabolic capabilities of environmental or clinical samples based on marker gene profiles."
-homepage: https://workflowhub.eu/workflows/154
+description: This CWL workflow performs quality assessment of paired-end amplicon sequencing reads, taxonomic classification using NG-Tax 2.0, and functional potential prediction via PICRUSt2. Use this skill when you need to characterize microbial community diversity and infer the metabolic capabilities of environmental or clinical samples based on marker gene profiles.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Quality assessment, amplicon classification and functional prediction
+
+# quality-assessment-amplicon-classification-and-functional-pr
 
 ## Overview
 

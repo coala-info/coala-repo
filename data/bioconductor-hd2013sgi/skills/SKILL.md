@@ -4,7 +4,6 @@ description: This package provides tools and data for analyzing multiparametric 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HD2013SGI.html
 ---
 
-
 # bioconductor-hd2013sgi
 
 name: bioconductor-hd2013sgi

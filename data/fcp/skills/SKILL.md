@@ -2,8 +2,9 @@
 name: fcp
 description: fcp is a high-performance, multi-threaded utility designed to copy files and directories significantly faster than the traditional cp command. Use when user asks to copy large datasets, perform fast recursive directory copies, or leverage copy-on-write capabilities on macOS.
 homepage: https://github.com/Svetlitski/fcp
+metadata:
+  docker_image: "quay.io/biocontainers/fcp:1.0.7--py27_0"
 ---
-
 
 # fcp
 

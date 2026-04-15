@@ -2,8 +2,9 @@
 name: galaxy-upload
 description: The galaxy-upload utility provides a command-line interface for transferring data and large datasets to Galaxy servers. Use when user asks to upload files to a Galaxy history, perform resumable data transfers, or search for history IDs from the terminal.
 homepage: https://github.com/galaxyproject/galaxy-upload
+metadata:
+  docker_image: "quay.io/biocontainers/galaxy-upload:1.0.1--pyhdfd78af_0"
 ---
-
 
 # galaxy-upload
 

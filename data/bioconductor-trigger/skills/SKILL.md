@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of integrative genomic data
 homepage: https://bioconductor.org/packages/3.6/bioc/html/trigger.html
 ---
 
-
 # bioconductor-trigger
 
 name: bioconductor-trigger

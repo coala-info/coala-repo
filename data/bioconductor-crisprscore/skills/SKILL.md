@@ -4,7 +4,6 @@ description: The crisprScore package provides a unified R interface for calculat
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprScore.html
 ---
 
-
 # bioconductor-crisprscore
 
 ## Overview

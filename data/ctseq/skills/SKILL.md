@@ -2,6 +2,8 @@
 name: ctseq
 description: ctseq is a bioinformatics pipeline that processes methylation patch PCR data to generate methylation profiles and visualizations. Use when user asks to analyze methylation patch PCR data, extract UMI sequences, align reads to PCR fragment references, or generate methylation density heatmaps.
 homepage: https://github.com/ryanhmiller/ctseq
+metadata:
+  docker_image: "quay.io/biocontainers/ctseq:0.0.2--py_0"
 ---
 
 # ctseq

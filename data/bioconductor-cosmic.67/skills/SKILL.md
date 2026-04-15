@@ -4,7 +4,6 @@ description: This tool provides access to the COSMIC version 67 dataset for quer
 homepage: https://bioconductor.org/packages/release/data/experiment/html/COSMIC.67.html
 ---
 
-
 # bioconductor-cosmic.67
 
 name: bioconductor-cosmic.67

@@ -4,7 +4,6 @@ description: The affyILM package uses a physical model based on the Langmuir iso
 homepage: https://bioconductor.org/packages/release/bioc/html/affyILM.html
 ---
 
-
 # bioconductor-affyilm
 
 ## Overview

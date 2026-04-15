@@ -4,7 +4,6 @@ description: This tool decomposes tumor genomes into mutational signatures using
 homepage: https://bioconductor.org/packages/release/bioc/html/decompTumor2Sig.html
 ---
 
-
 # bioconductor-decomptumor2sig
 
 name: bioconductor-decomptumor2sig

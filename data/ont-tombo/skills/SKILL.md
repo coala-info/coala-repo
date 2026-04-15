@@ -1,9 +1,10 @@
 ---
 name: ont-tombo
-description: "Tombo processes raw Nanopore electrical signals to align them to a reference genome and identify base modifications. Use when user asks to resquiggle reads, detect DNA or RNA modifications using alternative models or sample comparisons, and visualize raw signal deviations."
+description: Tombo processes raw Nanopore electrical signals to align them to a reference genome and identify base modifications. Use when user asks to resquiggle reads, detect DNA or RNA modifications using alternative models or sample comparisons, and visualize raw signal deviations.
 homepage: https://github.com/nanoporetech/tombo
+metadata:
+  docker_image: "quay.io/biocontainers/ont-tombo:1.5.1--py37r36hb3f55d8_0"
 ---
-
 
 # ont-tombo
 

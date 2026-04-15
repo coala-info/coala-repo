@@ -2,8 +2,9 @@
 name: gamma
 description: GAMMA identifies gene matches in microbial genomic assemblies by evaluating protein-coding identity and annotating specific mutations. Use when user asks to identify gene alleles, detect mutations in genomic assemblies, or annotate antimicrobial resistance genes.
 homepage: https://github.com/rastanton/GAMMA
+metadata:
+  docker_image: "quay.io/biocontainers/gamma:2.2--hdfd78af_1"
 ---
-
 
 # gamma
 

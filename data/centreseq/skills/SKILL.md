@@ -2,6 +2,8 @@
 name: centreseq
 description: The centreseq tool is a bioinformatics pipeline designed to rapidly establish a core genome from a collection of bacterial strains. Use when user asks to establish a core genome, annotate bacterial assemblies, or perform sequence clustering.
 homepage: https://github.com/bfssi-forest-dussault/centreseq
+metadata:
+  docker_image: "quay.io/biocontainers/centreseq:0.3.8--py_0"
 ---
 
 # centreseq

@@ -4,7 +4,6 @@ description: This tool analyzes RNA stability and transcription kinetics from Ri
 homepage: https://bioconductor.org/packages/release/bioc/html/rifi.html
 ---
 
-
 # bioconductor-rifi
 
 name: bioconductor-rifi

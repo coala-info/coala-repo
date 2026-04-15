@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb annotation object for the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmulatta.UCSC.rheMac8.refGene.html
 ---
 
-
 # bioconductor-txdb.mmulatta.ucsc.rhemac8.refgene
 
 name: bioconductor-txdb.mmulatta.ucsc.rhemac8.refgene

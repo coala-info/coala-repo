@@ -2,8 +2,9 @@
 name: taxsbp
 description: TaxSBP partitions genomic sequences into bins based on taxonomic relationships using a specialized bin packing algorithm. Use when user asks to group sequences by taxonomy, distribute genomic data into balanced bins, or partition sequences for distributed computing while minimizing taxonomic fragmentation.
 homepage: https://github.com/pirovc/taxsbp
+metadata:
+  docker_image: "quay.io/biocontainers/taxsbp:1.1.1--py_0"
 ---
-
 
 # taxsbp
 

@@ -1,9 +1,10 @@
 ---
 name: plasmidfinder
-description: "PlasmidFinder identifies plasmid replicons in bacterial genomic sequences by comparing them against a curated database of known replication genes. Use when user asks to identify plasmid composition, detect plasmid replicons in bacterial isolates, or determine if antibiotic resistance genes are plasmid-mediated."
+description: PlasmidFinder identifies plasmid replicons in bacterial genomic sequences by comparing them against a curated database of known replication genes. Use when user asks to identify plasmid composition, detect plasmid replicons in bacterial isolates, or determine if antibiotic resistance genes are plasmid-mediated.
 homepage: https://bitbucket.org/genomicepidemiology/plasmidfinder
+metadata:
+  docker_image: "quay.io/biocontainers/plasmidfinder:2.1.6--hdfd78af_0"
 ---
-
 
 # plasmidfinder
 

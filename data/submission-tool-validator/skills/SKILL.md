@@ -2,8 +2,9 @@
 name: submission-tool-validator
 description: The submission-tool-validator is a command-line utility for client-side validation of proteomics data files prior to repository submission. Use when user asks to validate mzIdentML, mzTab, or ProteomeXchange XML files, or verify identification results against associated spectra.
 homepage: https://github.com/bigbio/submission-tool-validator
+metadata:
+  docker_image: "quay.io/biocontainers/submission-tool-validator:1.0.7--hdfd78af_0"
 ---
-
 
 # submission-tool-validator
 

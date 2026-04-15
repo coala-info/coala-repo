@@ -2,8 +2,9 @@
 name: md-cogent
 description: Cogent reconstructs a representative coding genome from transcriptome data, specifically optimized for PacBio Iso-Seq sequences. Use when user asks to organize transcript sequences into gene families, reconstruct contigs for non-model organisms, or create a reference-free genome for isoform collapsing.
 homepage: https://github.com/Magdoll/Cogent
+metadata:
+  docker_image: "quay.io/biocontainers/md-cogent:8.0.0--pyh3252c3a_0"
 ---
-
 
 # md-cogent
 

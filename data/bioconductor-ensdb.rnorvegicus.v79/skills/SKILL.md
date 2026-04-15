@@ -4,7 +4,6 @@ description: This package provides Ensembl-based genome annotations for Rattus n
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Rnorvegicus.v79.html
 ---
 
-
 # bioconductor-ensdb.rnorvegicus.v79
 
 name: bioconductor-ensdb.rnorvegicus.v79

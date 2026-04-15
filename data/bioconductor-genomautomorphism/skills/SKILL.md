@@ -4,7 +4,6 @@ description: This tool analyzes DNA mutational events and evolutionary processes
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomAutomorphism.html
 ---
 
-
 # bioconductor-genomautomorphism
 
 name: bioconductor-genomautomorphism

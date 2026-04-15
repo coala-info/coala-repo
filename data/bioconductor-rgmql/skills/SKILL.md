@@ -4,7 +4,6 @@ description: RGMQL provides an R interface for the GenoMetric Query Language to 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/RGMQL.html
 ---
 
-
 # bioconductor-rgmql
 
 ## Overview

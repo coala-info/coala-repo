@@ -2,6 +2,8 @@
 name: picard
 description: Picard is a suite of Java-based command-line utilities used for manipulating, validating, and analyzing high-throughput sequencing data in SAM, BAM, and VCF formats. Use when user asks to mark duplicates, add or replace read groups, validate SAM or BAM files, sort sequencing data, or prepare files for downstream variant calling.
 homepage: http://broadinstitute.github.io/picard/
+metadata:
+  docker_image: "quay.io/biocontainers/picard:3.4.0--hdfd78af_0"
 ---
 
 # picard

@@ -4,7 +4,6 @@ description: bioconductor-pics identifies transcription factor binding sites fro
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PICS.html
 ---
 
-
 # bioconductor-pics
 
 name: bioconductor-pics

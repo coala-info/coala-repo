@@ -4,7 +4,6 @@ description: This package provides SQLite-based genomic and functional annotatio
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene20sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-mogene20sttranscriptcluster.db
 
 ## Overview

@@ -2,6 +2,8 @@
 name: cutqc
 description: cutqc automates adapter trimming and quality control for NGS data while generating interactive reports to compare metrics before and after processing. Use when user asks to trim adapter sequences, evaluate read quality with FastQC, or generate a comparative quality control report for paired-end or single-end sequencing data.
 homepage: https://github.com/obenno/cutqc
+metadata:
+  docker_image: "quay.io/biocontainers/cutqc:0.07--hdfd78af_0"
 ---
 
 # cutqc

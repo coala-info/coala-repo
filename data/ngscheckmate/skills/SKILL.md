@@ -1,7 +1,9 @@
 ---
 name: ngscheckmate
-description: "NGSCheckMate verifies the identity of human sequencing samples by analyzing allele fractions of known SNPs to detect sample swaps or mislabeling. Use when user asks to verify sample identity, detect sample swaps, or compare sequencing data from different modalities like RNA-seq and WGS to confirm they belong to the same individual."
+description: NGSCheckMate verifies the identity of human sequencing samples by analyzing allele fractions of known SNPs to detect sample swaps or mislabeling. Use when user asks to verify sample identity, detect sample swaps, or compare sequencing data from different modalities like RNA-seq and WGS to confirm they belong to the same individual.
 homepage: https://github.com/parklab/NGSCheckMate
+metadata:
+  docker_image: "quay.io/biocontainers/ngscheckmate:1.0.1--py312pl5321h577a1d6_4"
 ---
 
 # ngscheckmate

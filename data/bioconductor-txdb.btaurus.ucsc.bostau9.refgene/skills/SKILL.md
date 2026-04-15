@@ -4,7 +4,6 @@ description: This package provides a TxDb object for the Bos taurus bosTau9 geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Btaurus.UCSC.bosTau9.refGene.html
 ---
 
-
 # bioconductor-txdb.btaurus.ucsc.bostau9.refgene
 
 name: bioconductor-txdb.btaurus.ucsc.bostau9.refgene

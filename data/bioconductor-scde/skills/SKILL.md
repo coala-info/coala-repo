@@ -4,7 +4,6 @@ description: The scde package provides statistical methods for analyzing single-
 homepage: https://bioconductor.org/packages/release/bioc/html/scde.html
 ---
 
-
 # bioconductor-scde
 
 name: bioconductor-scde

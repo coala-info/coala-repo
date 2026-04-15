@@ -4,7 +4,6 @@ description: This tool analyzes 4C-seq data to identify chromatin interactions a
 homepage: https://bioconductor.org/packages/3.12/bioc/html/FourCSeq.html
 ---
 
-
 # bioconductor-fourcseq
 
 name: bioconductor-fourcseq

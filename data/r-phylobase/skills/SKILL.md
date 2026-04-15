@@ -4,7 +4,6 @@ description: The r-phylobase package provides an S4 infrastructure for represent
 homepage: https://cloud.r-project.org/web/packages/phylobase/index.html
 ---
 
-
 # r-phylobase
 
 ## Overview

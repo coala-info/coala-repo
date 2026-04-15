@@ -4,7 +4,6 @@ description: This package provides foundational S4 class infrastructure and data
 homepage: https://bioconductor.org/packages/release/bioc/html/oligoClasses.html
 ---
 
-
 # bioconductor-oligoclasses
 
 name: bioconductor-oligoclasses

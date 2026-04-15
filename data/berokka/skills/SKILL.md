@@ -1,9 +1,10 @@
 ---
 name: berokka
-description: "Berokka identifies and removes redundant overlaps from the ends of circular bacterial genome assembly contigs. Use when user asks to clean up bacterial genome assemblies, trim terminal redundancy from contigs, or circularize FASTA sequences."
+description: Berokka identifies and removes redundant overlaps from the ends of circular bacterial genome assembly contigs. Use when user asks to clean up bacterial genome assemblies, trim terminal redundancy from contigs, or circularize FASTA sequences.
 homepage: https://github.com/tseemann/berokka
+metadata:
+  docker_image: "quay.io/biocontainers/berokka:0.2.3--0"
 ---
-
 
 # berokka
 

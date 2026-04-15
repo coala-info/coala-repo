@@ -4,7 +4,6 @@ description: This tool provides expert guidance for implementing Generalized Boo
 homepage: https://cloud.r-project.org/web/packages/gbm/index.html
 ---
 
-
 # r-gbm
 
 name: r-gbm

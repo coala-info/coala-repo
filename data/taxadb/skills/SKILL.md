@@ -1,7 +1,9 @@
 ---
 name: taxadb
-description: "taxadb creates and queries a local mirror of the NCBI taxonomy database for high-throughput taxonomic lookups. Use when user asks to download taxonomy dumps, build a local taxonomic database, resolve TaxIDs to scientific names, retrieve lineage information, or map sequence accessions to taxonomic IDs."
+description: taxadb creates and queries a local mirror of the NCBI taxonomy database for high-throughput taxonomic lookups. Use when user asks to download taxonomy dumps, build a local taxonomic database, resolve TaxIDs to scientific names, retrieve lineage information, or map sequence accessions to taxonomic IDs.
 homepage: https://github.com/HadrienG/taxadb
+metadata:
+  docker_image: "quay.io/biocontainers/taxadb:0.12.1--pyh5e36f6f_0"
 ---
 
 # taxadb

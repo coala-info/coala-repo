@@ -4,7 +4,6 @@ description: This tool generates synthetic nucleosome maps and sequencing reads 
 homepage: https://bioconductor.org/packages/release/bioc/html/nucleoSim.html
 ---
 
-
 # bioconductor-nucleosim
 
 name: bioconductor-nucleosim

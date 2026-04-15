@@ -1,9 +1,12 @@
 ---
 name: cwl-protein-ligand-complex-md-setup-tutorial
-description: "This Common Workflow Language workflow automates the structural preparation and topology generation for protein-ligand complexes using BioExcel Building Blocks and GROMACS. Use this skill when you need to characterize molecular interactions, evaluate binding stability, or investigate the conformational dynamics of a small molecule within a protein binding pocket."
-homepage: https://workflowhub.eu/workflows/258
+description: This Common Workflow Language workflow automates the structural preparation and topology generation for protein-ligand complexes using BioExcel Building Blocks and GROMACS. Use this skill when you need to characterize molecular interactions, evaluate binding stability, or investigate the conformational dynamics of a small molecule within a protein binding pocket.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Protein Ligand Complex MD Setup tutorial
+
+# cwl-protein-ligand-complex-md-setup-tutorial
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool performs regression subset selection and exhaustive searc
 homepage: https://cloud.r-project.org/web/packages/leaps/index.html
 ---
 
-
 # r-leaps
 
 name: r-leaps

@@ -4,6 +4,8 @@ description: This pipeline performs A-Z analysis of mitochondrial NGS data using
 homepage: https://github.com/nf-core/mitodetect
 ---
 
+# mitodetect
+
 ## Overview
 nf-core/mitodetect is a bioinformatics pipeline designed for the comprehensive analysis of mitochondrial Next-Generation Sequencing (NGS) data. It streamlines the transition from raw sequencing reads to analyzed mitochondrial genomic information, ensuring consistency and reproducibility across different datasets.
 

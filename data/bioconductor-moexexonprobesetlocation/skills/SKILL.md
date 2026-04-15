@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Exon
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MoExExonProbesetLocation.html
 ---
 
-
 # bioconductor-moexexonprobesetlocation
 
 name: bioconductor-moexexonprobesetlocation

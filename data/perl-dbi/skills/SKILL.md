@@ -2,8 +2,9 @@
 name: perl-dbi
 description: Perl DBI provides a database-independent interface for connecting Perl applications to various database management systems. Use when user asks to connect to a database, execute SQL queries, fetch result sets, or manage database transactions in Perl.
 homepage: http://dbi.perl.org/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-dbi:1.643--pl5321hec16e2b_1"
 ---
-
 
 # perl-dbi
 

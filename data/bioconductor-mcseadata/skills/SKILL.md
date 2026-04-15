@@ -4,7 +4,6 @@ description: This package provides experimental data, probe-to-feature associati
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mCSEAdata.html
 ---
 
-
 # bioconductor-mcseadata
 
 name: bioconductor-mcseadata

@@ -1,9 +1,10 @@
 ---
 name: fwdpy11
-description: "fwdpy11 is a Python package for forward-time population genetic simulation. Use when user asks to perform population genetic simulations, analyze population dynamics, or model evolutionary processes."
+description: fwdpy11 is a Python package for forward-time population genetic simulation. Use when user asks to perform population genetic simulations, analyze population dynamics, or model evolutionary processes.
 homepage: https://github.com/molpopgen/fwdpy11
+metadata:
+  docker_image: "quay.io/biocontainers/fwdpy11:0.24.5--py311h0f4446f_0"
 ---
-
 
 # fwdpy11
 

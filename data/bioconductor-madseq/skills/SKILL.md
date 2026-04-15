@@ -4,7 +4,6 @@ description: The bioconductor-madseq package detects and quantifies mosaic aneup
 homepage: https://bioconductor.org/packages/release/bioc/html/MADSEQ.html
 ---
 
-
 # bioconductor-madseq
 
 ## Overview

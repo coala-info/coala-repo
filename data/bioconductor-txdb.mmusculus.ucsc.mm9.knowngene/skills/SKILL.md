@@ -4,7 +4,6 @@ description: This package provides UCSC mm9 mouse gene annotations as a TxDb obj
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmusculus.UCSC.mm9.knownGene.html
 ---
 
-
 # bioconductor-txdb.mmusculus.ucsc.mm9.knowngene
 
 name: bioconductor-txdb.mmusculus.ucsc.mm9.knowngene

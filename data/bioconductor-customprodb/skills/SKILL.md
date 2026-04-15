@@ -4,7 +4,6 @@ description: This tool generates customized protein databases by incorporating g
 homepage: https://bioconductor.org/packages/release/bioc/html/customProDB.html
 ---
 
-
 # bioconductor-customprodb
 
 name: bioconductor-customprodb

@@ -2,8 +2,9 @@
 name: perl-fastx-reader
 description: This tool provides a high-performance interface and command-line utility for reading and counting FASTA and FASTQ sequence files. Use when user asks to count sequences in FASTA or FASTQ files, iterate through sequence records in Perl scripts, or process compressed biological sequence data.
 homepage: https://github.com/telatin/FASTQ-Parser
+metadata:
+  docker_image: "quay.io/biocontainers/perl-fastx-reader:1.12.0--pl5321hdfd78af_0"
 ---
-
 
 # perl-fastx-reader
 

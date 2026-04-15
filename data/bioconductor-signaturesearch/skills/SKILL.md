@@ -4,7 +4,6 @@ description: This tool performs gene expression signature searches and functiona
 homepage: https://bioconductor.org/packages/release/bioc/html/signatureSearch.html
 ---
 
-
 # bioconductor-signaturesearch
 
 name: bioconductor-signaturesearch

@@ -2,8 +2,9 @@
 name: favites_lite
 description: FAVITES-Lite is a high-performance tool designed to simulate viral transmission and evolution within a population. Use when user asks to model viral outbreaks, simulate epidemic spread, or generate viral sequence data for large-scale populations.
 homepage: https://github.com/niemasd/FAVITES-Lite
+metadata:
+  docker_image: "quay.io/biocontainers/favites_lite:1.0.3--hdfd78af_0"
 ---
-
 
 # favites_lite
 

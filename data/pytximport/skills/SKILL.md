@@ -1,9 +1,10 @@
 ---
 name: pytximport
-description: "pytximport summarizes transcript-level quantification data to the gene level for downstream statistical analysis. Use when user asks to summarize abundance estimates to the gene level, generate transcript-to-gene maps, or import quantification data from tools like Salmon and Kallisto."
+description: pytximport summarizes transcript-level quantification data to the gene level for downstream statistical analysis. Use when user asks to summarize abundance estimates to the gene level, generate transcript-to-gene maps, or import quantification data from tools like Salmon and Kallisto.
 homepage: https://pytximport.readthedocs.io/en/latest/start.html
+metadata:
+  docker_image: "quay.io/biocontainers/pytximport:0.12.0--pyhdfd78af_0"
 ---
-
 
 # pytximport
 

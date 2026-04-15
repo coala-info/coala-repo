@@ -4,7 +4,6 @@ description: MetaGxBreast provides a standardized compendium of breast cancer ge
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MetaGxBreast.html
 ---
 
-
 # bioconductor-metagxbreast
 
 ## Overview

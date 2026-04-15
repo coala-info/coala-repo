@@ -4,7 +4,6 @@ description: This tool verifies sample relationships and detects swaps within or
 homepage: https://bioconductor.org/packages/release/bioc/html/omicsPrint.html
 ---
 
-
 # bioconductor-omicsprint
 
 ## Overview

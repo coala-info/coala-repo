@@ -4,7 +4,6 @@ description: This package implements Dirichlet-Multinomial models for analyzing 
 homepage: https://bioconductor.org/packages/release/bioc/html/DirichletMultinomial.html
 ---
 
-
 # bioconductor-dirichletmultinomial
 
 ## Overview

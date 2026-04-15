@@ -2,6 +2,8 @@
 name: dms
 description: Dynamic Meta-Storms is a bioinformatics suite that calculates phylogenetically-aware dissimilarity between metagenomic samples at the species level. Use when user asks to merge MetaPhlAn profiles into abundance tables, compute pairwise distance matrices, or create customized phylogenetic reference files.
 homepage: https://github.com/qibebt-bioinfo/dynamic-meta-storms
+metadata:
+  docker_image: "quay.io/biocontainers/dms:1.1--h9948957_2"
 ---
 
 # dms

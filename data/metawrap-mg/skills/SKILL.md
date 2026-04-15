@@ -2,8 +2,9 @@
 name: metawrap-mg
 description: MetaWRAP is a modular pipeline that streamlines metagenomic data processing from raw reads to refined and annotated metagenome-assembled genomes. Use when user asks to perform read quality control, assemble metagenomes, run multiple binning tools, refine bin sets, reassemble bins for improved quality, or taxonomically classify genomes.
 homepage: https://github.com/bxlab/metaWRAP
+metadata:
+  docker_image: "quay.io/biocontainers/metawrap-mg:1.3.0--hdfd78af_3"
 ---
-
 
 # metawrap-mg
 

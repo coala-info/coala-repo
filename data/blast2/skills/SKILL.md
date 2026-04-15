@@ -4,7 +4,6 @@ description: Blast2Bam converts BLASTn XML output into SAM format by cross-refer
 homepage: https://github.com/guyduche/Blast2Bam
 ---
 
-
 # blast2
 
 ## Overview

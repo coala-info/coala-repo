@@ -4,7 +4,6 @@ description: This package identifies enhancers from STARR-seq data by comparing 
 homepage: https://bioconductor.org/packages/release/bioc/html/BasicSTARRseq.html
 ---
 
-
 # bioconductor-basicstarrseq
 
 ## Overview

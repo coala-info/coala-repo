@@ -4,7 +4,6 @@ description: The bioconductor-ideal package provides a framework for interactive
 homepage: https://bioconductor.org/packages/release/bioc/html/ideal.html
 ---
 
-
 # bioconductor-ideal
 
 ## Overview

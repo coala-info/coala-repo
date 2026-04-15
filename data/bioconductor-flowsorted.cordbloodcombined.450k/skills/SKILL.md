@@ -4,7 +4,6 @@ description: This package provides a reference dataset for estimating cell type 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBloodCombined.450k.html
 ---
 
-
 # bioconductor-flowsorted.cordbloodcombined.450k
 
 ## Overview

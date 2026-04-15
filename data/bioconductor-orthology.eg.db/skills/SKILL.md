@@ -4,7 +4,6 @@ description: This package provides orthology mappings between species using NCBI
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Orthology.eg.db.html
 ---
 
-
 # bioconductor-orthology.eg.db
 
 name: bioconductor-orthology.eg.db

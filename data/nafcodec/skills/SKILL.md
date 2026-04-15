@@ -2,8 +2,9 @@
 name: nafcodec
 description: nafcodec provides Python and Rust interfaces for efficiently decoding DNA and protein sequences stored in the Nucleotide Archive Format. Use when user asks to decode NAF files, iterate over compressed genomic records, or optimize decompression performance by selectively disabling sequence fields.
 homepage: https://github.com/althonos/nafcodec
+metadata:
+  docker_image: "quay.io/biocontainers/nafcodec:0.3.1--py310hec43fc7_1"
 ---
-
 
 # nafcodec
 

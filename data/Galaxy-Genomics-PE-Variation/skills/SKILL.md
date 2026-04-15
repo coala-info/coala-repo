@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-4-pe-variation
-description: "This COVID-19 genomics workflow processes paired-end sequencing reads and a GenBank reference using fastp, BWA-MEM, LoFreq, and SnpEff to identify and annotate genetic variations within individual viral samples. Use this skill when you need to detect low-frequency variants, assess viral evolution, or characterize the mutational landscape of SARS-CoV-2 samples from raw sequencing data."
-homepage: https://workflowhub.eu/workflows/7
+description: This COVID-19 genomics workflow processes paired-end sequencing reads and a GenBank reference using fastp, BWA-MEM, LoFreq, and SnpEff to identify and annotate genetic variations within individual viral samples. Use this skill when you need to detect low-frequency variants, assess viral evolution, or characterize the mutational landscape of SARS-CoV-2 samples from raw sequencing data.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [4] PE Variation
+# covid-19-genomics-4-pe-variation
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool identifies condition-specific genes in gene expression da
 homepage: https://bioconductor.org/packages/release/bioc/html/SpeCond.html
 ---
 
-
 # bioconductor-specond
 
 name: bioconductor-specond

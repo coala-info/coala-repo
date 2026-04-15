@@ -2,8 +2,9 @@
 name: curl
 description: curl is a command-line utility for transferring data to or from a server using various network protocols. Use when user asks to execute API requests, download or upload files, inspect HTTP headers, or troubleshoot network connections.
 homepage: https://github.com/curl/curl
+metadata:
+  docker_image: "quay.io/biocontainers/curl:7.80.0"
 ---
-
 
 # curl
 

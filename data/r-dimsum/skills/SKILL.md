@@ -4,7 +4,6 @@ description: DiMSum is an R-based pipeline and error model for processing and an
 homepage: https://cran.r-project.org/web/packages/dimsum/index.html
 ---
 
-
 # r-dimsum
 
 name: r-dimsum

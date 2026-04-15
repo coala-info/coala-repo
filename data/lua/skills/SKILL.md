@@ -2,8 +2,9 @@
 name: lua
 description: This tool provides technical patterns and configuration workflows for the Luanti voxel game engine and its Lua API. Use when user asks to manage engine CLI arguments, locate platform-specific data paths, or implement security and performance best practices for Luanti Lua scripting.
 homepage: https://github.com/luanti-org/luanti
+metadata:
+  docker_image: "quay.io/biocontainers/lua:5.3.4"
 ---
-
 
 # lua
 

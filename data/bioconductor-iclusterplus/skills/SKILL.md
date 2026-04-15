@@ -4,7 +4,6 @@ description: This tool performs integrative clustering of multi-type genomic dat
 homepage: https://bioconductor.org/packages/release/bioc/html/iClusterPlus.html
 ---
 
-
 # bioconductor-iclusterplus
 
 name: bioconductor-iclusterplus

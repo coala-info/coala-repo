@@ -2,8 +2,9 @@
 name: mugsy
 description: Mugsy aligns multiple whole genomes for comparative genomics analysis. Use when user asks to align multiple related genomes for comparative genomics analysis.
 homepage: https://github.com/margyle/MugsyDev
+metadata:
+  docker_image: "quay.io/biocontainers/mugsy:1.2.3--hdfd78af_4"
 ---
-
 
 # mugsy
 

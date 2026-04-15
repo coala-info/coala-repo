@@ -2,6 +2,8 @@
 name: pacini_typing
 description: Pacini-typing automates the detection of specific DNA sequences and Single Nucleotide Polymorphisms from raw sequencing reads or assembled genomes. Use when user asks to detect genes, identify SNPs, or perform genomic surveillance and pathogen characterization using FASTQ or FASTA files.
 homepage: https://github.com/RIVM-bioinformatics/Pacini-typing
+metadata:
+  docker_image: "quay.io/biocontainers/pacini_typing:2.0.2--pyhdfd78af_0"
 ---
 
 # pacini_typing

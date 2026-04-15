@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Caenorhabditis 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Celegans.UCSC.ce2.html
 ---
 
-
 # bioconductor-bsgenome.celegans.ucsc.ce2
 
 name: bioconductor-bsgenome.celegans.ucsc.ce2

@@ -4,7 +4,6 @@ description: This package provides a unified collection of alternative splicing 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/alternativeSplicingEvents.hg19.html
 ---
 
-
 # bioconductor-alternativesplicingevents.hg19
 
 name: bioconductor-alternativesplicingevents.hg19

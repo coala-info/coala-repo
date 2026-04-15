@@ -2,8 +2,9 @@
 name: ucsc-bigbedinfo
 description: The ucsc-bigbedinfo tool retrieves header information and summary statistics from bigBed files. Use when user asks to 'get bigBed file header information', 'list chromosomes', 'display the schema', 'get the item count', or 'get summary statistics'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigbedinfo:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigbedinfo
 

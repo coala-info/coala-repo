@@ -1,10 +1,12 @@
 ---
 name: workflow-methylation-seq
-description: "This epigenetics workflow processes FASTQ and bedGraph files to analyze DNA methylation patterns using bwameth for alignment, MethylDackel for extraction, and metilene for differential methylation analysis. Use this skill when you need to identify differentially methylated regions between samples or visualize the distribution of methylation levels across specific genomic features like CpG islands."
-homepage: https://workflowhub.eu/workflows/1566
+description: This epigenetics workflow processes FASTQ and bedGraph files to analyze DNA methylation patterns using bwameth for alignment, MethylDackel for extraction, and metilene for differential methylation analysis. Use this skill when you need to identify differentially methylated regions between samples or visualize the distribution of methylation levels across specific genomic features like CpG islands.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow Methylation Seq
+# workflow-methylation-seq
 
 ## Overview
 

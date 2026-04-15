@@ -1,10 +1,12 @@
 ---
 name: data-qc
-description: "This Galaxy workflow performs quality control on long reads and paired-end Illumina reads using NanoPlot, FastQC, and MultiQC to generate comprehensive summary reports. Use this skill when you need to evaluate the integrity and sequencing quality of hybrid datasets to ensure they meet the standards required for reliable downstream assembly or variant calling."
-homepage: https://workflowhub.eu/workflows/222
+description: This Galaxy workflow performs quality control on long reads and paired-end Illumina reads using NanoPlot, FastQC, and MultiQC to generate comprehensive summary reports. Use this skill when you need to evaluate the integrity and sequencing quality of hybrid datasets to ensure they meet the standards required for reliable downstream assembly or variant calling.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Data QC
+# data-qc
 
 ## Overview
 

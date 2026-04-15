@@ -4,7 +4,6 @@ description: This tool fits Gamma-Poisson generalized linear models to large-sca
 homepage: https://bioconductor.org/packages/release/bioc/html/glmGamPoi.html
 ---
 
-
 # bioconductor-glmgampoi
 
 name: bioconductor-glmgampoi

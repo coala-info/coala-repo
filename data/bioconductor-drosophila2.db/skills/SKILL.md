@@ -4,7 +4,6 @@ description: This tool provides comprehensive biological identifier mappings and
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosophila2.db.html
 ---
 
-
 # bioconductor-drosophila2.db
 
 name: bioconductor-drosophila2.db

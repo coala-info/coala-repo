@@ -4,7 +4,6 @@ description: The netboost package performs dimension reduction on high-dimension
 homepage: https://bioconductor.org/packages/release/bioc/html/netboost.html
 ---
 
-
 # bioconductor-netboost
 
 ## Overview

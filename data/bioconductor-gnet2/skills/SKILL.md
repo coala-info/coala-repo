@@ -4,7 +4,6 @@ description: GNET2 constructs gene regulatory networks by clustering genes into 
 homepage: https://bioconductor.org/packages/release/bioc/html/GNET2.html
 ---
 
-
 # bioconductor-gnet2
 
 ## Overview

@@ -4,7 +4,6 @@ description: HGC performs fast hierarchical clustering of large-scale single-cel
 homepage: https://bioconductor.org/packages/release/bioc/html/HGC.html
 ---
 
-
 # bioconductor-hgc
 
 ## Overview

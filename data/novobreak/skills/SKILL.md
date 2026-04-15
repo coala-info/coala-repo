@@ -1,7 +1,9 @@
 ---
 name: novobreak
-description: "novoBreak identifies somatic structural variation breakpoints in cancer genomes through local assembly of k-mers from tumor and normal paired-end data. Use when user asks to identify structural variations, discover somatic breakpoints, or detect virus integration sites."
+description: novoBreak identifies somatic structural variation breakpoints in cancer genomes through local assembly of k-mers from tumor and normal paired-end data. Use when user asks to identify structural variations, discover somatic breakpoints, or detect virus integration sites.
 homepage: https://github.com/czc/nb_distribution
+metadata:
+  docker_image: "quay.io/biocontainers/novobreak:1.1.3rc--h7132678_8"
 ---
 
 # novobreak

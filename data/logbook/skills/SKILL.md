@@ -2,8 +2,9 @@
 name: logbook
 description: Logbook is a Python logging library that provides a flexible alternative to the standard logging module by using handler stacks and context managers. Use when user asks to set up logging handlers, manage logging behavior across threads using context managers, or inject contextual data into logs with processors.
 homepage: http://logbook.pocoo.org/
+metadata:
+  docker_image: "quay.io/biocontainers/logbook:1.4.3--py37h14c3975_0"
 ---
-
 
 # logbook
 

@@ -4,7 +4,6 @@ description: KBoost infers gene regulatory networks from gene expression data us
 homepage: https://bioconductor.org/packages/release/bioc/html/KBoost.html
 ---
 
-
 # bioconductor-kboost
 
 name: bioconductor-kboost

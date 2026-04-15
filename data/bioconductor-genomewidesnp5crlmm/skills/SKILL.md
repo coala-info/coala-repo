@@ -4,7 +4,6 @@ description: This package provides data and annotation support for processing Af
 homepage: https://bioconductor.org/packages/release/data/annotation/html/genomewidesnp5Crlmm.html
 ---
 
-
 # bioconductor-genomewidesnp5crlmm
 
 name: bioconductor-genomewidesnp5crlmm

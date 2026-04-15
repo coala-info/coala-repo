@@ -2,6 +2,8 @@
 name: pangwes
 description: PANGWES performs genome-wide epistasis studies by analyzing pangenome-spanning unitig correlations within a de Bruijn graph framework. Use when user asks to construct colored compacted de Bruijn graphs, calculate mutual information between unitigs, determine shortest path distances in single genome subgraphs, or visualize epistasis results with Manhattan plots.
 homepage: https://github.com/jurikuronen/PANGWES
+metadata:
+  docker_image: "quay.io/biocontainers/pangwes:0.3.0_alpha--h9948957_1"
 ---
 
 # pangwes

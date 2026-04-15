@@ -2,8 +2,9 @@
 name: gneiss
 description: Gneiss is a toolset for analyzing compositional data by transforming feature abundances into log-ratio balances. Use when user asks to analyze microbiome abundance tables, perform log-ratio transformations, or apply statistical models like OLS and LME to compositional datasets.
 homepage: https://biocore.github.io/gneiss/
+metadata:
+  docker_image: "quay.io/biocontainers/gneiss:0.4.6--py_0"
 ---
-
 
 # gneiss
 

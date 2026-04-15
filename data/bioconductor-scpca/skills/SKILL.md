@@ -4,7 +4,6 @@ description: This tool performs Sparse Contrastive Principal Component Analysis 
 homepage: https://bioconductor.org/packages/release/bioc/html/scPCA.html
 ---
 
-
 # bioconductor-scpca
 
 name: bioconductor-scpca

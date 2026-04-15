@@ -4,7 +4,6 @@ description: This tool uses factorial latent variable modeling to identify biolo
 homepage: https://bioconductor.org/packages/release/bioc/html/slalom.html
 ---
 
-
 # bioconductor-slalom
 
 name: bioconductor-slalom

@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors for performing Froze
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2frmavecs.html
 ---
 
-
 # bioconductor-mouse430a2frmavecs
 
 name: bioconductor-mouse430a2frmavecs

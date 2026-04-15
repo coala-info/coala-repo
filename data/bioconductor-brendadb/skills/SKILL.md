@@ -4,7 +4,6 @@ description: The brendaDb package provides a structured R interface to parse, qu
 homepage: https://bioconductor.org/packages/release/bioc/html/brendaDb.html
 ---
 
-
 # bioconductor-brendadb
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File (CDF) environment fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430bcdf.html
 ---
 
-
 # bioconductor-moe430bcdf
 
 name: bioconductor-moe430bcdf

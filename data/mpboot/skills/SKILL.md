@@ -2,8 +2,9 @@
 name: mpboot
 description: mpboot performs fast phylogenetic tree inference and bootstrap approximation using the maximum parsimony criterion. Use when user asks to infer phylogenetic trees from sequence alignments, perform fast bootstrap analysis, or handle large-scale genomic datasets using parsimony-based methods.
 homepage: https://github.com/diepthihoang/mpboot
+metadata:
+  docker_image: "quay.io/biocontainers/mpboot:1.2--h503566f_0"
 ---
-
 
 # mpboot
 

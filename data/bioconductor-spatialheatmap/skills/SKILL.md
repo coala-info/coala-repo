@@ -4,7 +4,6 @@ description: This tool generates spatial heatmaps by mapping biological assay da
 homepage: https://bioconductor.org/packages/release/bioc/html/spatialHeatmap.html
 ---
 
-
 # bioconductor-spatialheatmap
 
 name: bioconductor-spatialheatmap

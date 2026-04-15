@@ -2,6 +2,8 @@
 name: relion-bin-plusmpi-plusgui
 description: RELION is a software suite for cryo-electron microscopy structure determination that uses Bayesian optimization for 2D and 3D image processing. Use when user asks to perform movie alignment, estimate CTF, pick particles, perform 2D or 3D classification, or execute high-resolution 3D refinement.
 homepage: https://github.com/3dem/relion
+metadata:
+  docker_image: "biocontainers/relion-bin-plusmpi-plusgui:v1.4dfsg-4-deb_cv1"
 ---
 
 # relion-bin-plusmpi-plusgui

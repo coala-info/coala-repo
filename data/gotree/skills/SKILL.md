@@ -1,7 +1,9 @@
 ---
 name: gotree
-description: "Gotree is a command-line toolkit for the rapid manipulation, analysis, and simulation of phylogenetic trees. Use when user asks to manipulate branch lengths, generate random trees, extract tree statistics, or reconstruct ancestral characters and sequences."
+description: Gotree is a command-line toolkit for the rapid manipulation, analysis, and simulation of phylogenetic trees. Use when user asks to manipulate branch lengths, generate random trees, extract tree statistics, or reconstruct ancestral characters and sequences.
 homepage: https://github.com/fredericlemoine/gotree
+metadata:
+  docker_image: "quay.io/biocontainers/gotree:0.5.1--he881be0_0"
 ---
 
 # gotree

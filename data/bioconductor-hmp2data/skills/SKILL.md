@@ -4,7 +4,6 @@ description: The HMP2Data package provides streamlined access to processed longi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HMP2Data.html
 ---
 
-
 # bioconductor-hmp2data
 
 ## Overview

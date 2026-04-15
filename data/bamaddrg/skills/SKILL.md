@@ -1,9 +1,10 @@
 ---
 name: bamaddrg
-description: "bamaddrg adds or modifies Read Group metadata in BAM files while merging them into a single stream. Use when user asks to inject read group tags, merge multiple BAM files for streaming, or clear existing read group information."
+description: bamaddrg adds or modifies Read Group metadata in BAM files while merging them into a single stream. Use when user asks to inject read group tags, merge multiple BAM files for streaming, or clear existing read group information.
 homepage: https://github.com/ekg/bamaddrg
+metadata:
+  docker_image: "quay.io/biocontainers/bamaddrg:9baba65f88228e55639689a3cea38dd150e6284f--h4dc6686_2"
 ---
-
 
 # bamaddrg
 

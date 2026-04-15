@@ -4,7 +4,6 @@ description: This package provides probe sequence data for the Affymetrix test3 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/test3probe.html
 ---
 
-
 # bioconductor-test3probe
 
 ## Overview

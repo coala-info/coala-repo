@@ -1,9 +1,10 @@
 ---
 name: phispy
-description: "PhiSpy identifies prophages and other mobile genetic elements within bacterial genomes using a Random Forest classifier. Use when user asks to detect prophage regions, identify mobile genetic elements like plasmids or pathogenicity islands, or generate annotated GenBank and GFF3 files for viral DNA integrated into bacterial chromosomes."
+description: PhiSpy identifies prophages and other mobile genetic elements within bacterial genomes using a Random Forest classifier. Use when user asks to detect prophage regions, identify mobile genetic elements like plasmids or pathogenicity islands, or generate annotated GenBank and GFF3 files for viral DNA integrated into bacterial chromosomes.
 homepage: https://github.com/linsalrob/PhiSpy
+metadata:
+  docker_image: "quay.io/biocontainers/phispy:4.2.21--py39h2de1943_8"
 ---
-
 
 # phispy
 

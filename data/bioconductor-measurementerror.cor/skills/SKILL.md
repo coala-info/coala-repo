@@ -4,7 +4,6 @@ description: This tool estimates correlation coefficients between random variabl
 homepage: https://bioconductor.org/packages/release/bioc/html/MeasurementError.cor.html
 ---
 
-
 # bioconductor-measurementerror.cor
 
 name: bioconductor-measurementerror.cor

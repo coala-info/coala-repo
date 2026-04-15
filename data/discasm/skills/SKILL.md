@@ -2,8 +2,9 @@
 name: discasm
 description: DISCASM performs targeted de novo assembly of discordant and unmapped RNA-Seq reads to reconstruct transcripts representing complex genomic rearrangements or novel insertions. Use when user asks to assemble chimeric junctions, perform de novo assembly on unmapped reads, or reconstruct fusion transcripts from alignment data.
 homepage: https://github.com/DISCASM/DISCASM
+metadata:
+  docker_image: "quay.io/biocontainers/discasm:0.1.3--py27pl5.22.0_0"
 ---
-
 
 # discasm
 

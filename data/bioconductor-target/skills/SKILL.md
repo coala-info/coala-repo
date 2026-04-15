@@ -4,7 +4,6 @@ description: This tool predicts direct gene targets by integrating ChIP-seq bind
 homepage: https://bioconductor.org/packages/release/bioc/html/target.html
 ---
 
-
 # bioconductor-target
 
 name: bioconductor-target

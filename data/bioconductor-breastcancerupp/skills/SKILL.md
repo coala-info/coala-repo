@@ -4,7 +4,6 @@ description: This package provides access to the Miller et al. (2005) breast can
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerUPP.html
 ---
 
-
 # bioconductor-breastcancerupp
 
 name: bioconductor-breastcancerupp

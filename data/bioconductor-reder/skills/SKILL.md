@@ -4,7 +4,6 @@ description: Bioconductor-reder provides an interactive Java-based interface for
 homepage: https://bioconductor.org/packages/release/bioc/html/RedeR.html
 ---
 
-
 # bioconductor-reder
 
 name: bioconductor-reder

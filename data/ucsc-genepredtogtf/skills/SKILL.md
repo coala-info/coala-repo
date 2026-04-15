@@ -2,8 +2,9 @@
 name: ucsc-genepredtogtf
 description: This tool converts gene models from UCSC genePred format to GTF format. Use when user asks to convert gene models from genePred format to GTF, transform gene annotation files, or convert gene tracks.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-genepredtogtf:482--h0b57e2e_0"
 ---
-
 
 # ucsc-genepredtogtf
 

@@ -4,7 +4,6 @@ description: The bioconductor-caen package implements a feature selection method
 homepage: https://bioconductor.org/packages/release/bioc/html/CAEN.html
 ---
 
-
 # bioconductor-caen
 
 ## Overview

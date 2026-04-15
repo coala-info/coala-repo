@@ -2,6 +2,8 @@
 name: get_homologues
 description: The get_homologues suite clusters protein or nucleotide sequences into homologous groups to define the core and pan-genomes of a set of organisms. Use when user asks to cluster sequences into homologous groups, define core or pan-genomes, generate presence-absence matrices, or perform comparative genomic analysis.
 homepage: https://github.com/eead-csic-compbio/get_homologues
+metadata:
+  docker_image: "quay.io/biocontainers/get_homologues:3.8.1--hdfd78af_0"
 ---
 
 # get_homologues

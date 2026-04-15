@@ -4,7 +4,6 @@ description: HiCDOC performs comparative analysis of Hi-C data to detect signifi
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCDOC.html
 ---
 
-
 # bioconductor-hicdoc
 
 name: bioconductor-hicdoc

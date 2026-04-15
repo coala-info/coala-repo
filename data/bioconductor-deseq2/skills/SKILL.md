@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of high-throughput sequenci
 homepage: https://bioconductor.org/packages/release/bioc/html/DESeq2.html
 ---
 
-
 # bioconductor-deseq2
 
 ## Overview

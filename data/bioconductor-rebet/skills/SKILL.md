@@ -4,7 +4,6 @@ description: This tool performs the subREgion-based BurdEn Test to detect rare v
 homepage: https://bioconductor.org/packages/release/bioc/html/REBET.html
 ---
 
-
 # bioconductor-rebet
 
 name: bioconductor-rebet

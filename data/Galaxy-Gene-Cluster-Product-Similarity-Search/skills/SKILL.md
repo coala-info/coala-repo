@@ -1,10 +1,12 @@
 ---
 name: gene-cluster-product-similarity-search
-description: "This Galaxy workflow identifies biosynthetic gene clusters from genomic sequences using antiSMASH and performs chemical similarity searches between predicted products and target molecule libraries using fingerprinting and drug-likeness tools. Use this skill when you need to prioritize genomic regions for natural product discovery by matching the predicted metabolic output of uncharacterized gene clusters against known bioactive compounds or chemical libraries."
-homepage: https://workflowhub.eu/workflows/1558
+description: This Galaxy workflow identifies biosynthetic gene clusters from genomic sequences using antiSMASH and performs chemical similarity searches between predicted products and target molecule libraries using fingerprinting and drug-likeness tools. Use this skill when you need to prioritize genomic regions for natural product discovery by matching the predicted metabolic output of uncharacterized gene clusters against known bioactive compounds or chemical libraries.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gene Cluster Product Similarity Search
+# gene-cluster-product-similarity-search
 
 ## Overview
 

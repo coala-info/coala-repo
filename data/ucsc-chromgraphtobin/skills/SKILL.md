@@ -2,8 +2,9 @@
 name: ucsc-chromgraphtobin
 description: The tool converts human-readable chromosome graph data into a binary format. Use when user asks to 'convert chromosome graph data to binary', 'transform chromosome graph data', 'prepare genomic data for visualization', or 'compress genomic signal data'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chromgraphtobin:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chromgraphtobin
 

@@ -4,7 +4,6 @@ description: PAIRADISE is a statistical framework for detecting alternative spli
 homepage: https://bioconductor.org/packages/release/bioc/html/PAIRADISE.html
 ---
 
-
 # bioconductor-pairadise
 
 ## Overview

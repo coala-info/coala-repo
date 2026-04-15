@@ -4,7 +4,6 @@ description: The metagene package produces enrichment profiles and metagene plot
 homepage: https://bioconductor.org/packages/3.8/bioc/html/metagene.html
 ---
 
-
 # bioconductor-metagene
 
 ## Overview

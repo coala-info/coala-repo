@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mirna20cdf.html
 ---
 
-
 # bioconductor-mirna20cdf
 
 name: bioconductor-mirna20cdf

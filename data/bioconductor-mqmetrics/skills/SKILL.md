@@ -4,7 +4,6 @@ description: MQmetrics performs quality control and visualization of proteomics 
 homepage: https://bioconductor.org/packages/3.13/bioc/html/MQmetrics.html
 ---
 
-
 # bioconductor-mqmetrics
 
 ## Overview

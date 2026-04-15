@@ -2,6 +2,8 @@
 name: metamaps
 description: MetaMaps performs high-resolution taxonomic assignment and abundance estimation for long-read metagenomic data. Use when user asks to build a reference database, map long reads to a database, or classify microbial species and strains.
 homepage: https://github.com/DiltheyLab/MetaMaps
+metadata:
+  docker_image: "quay.io/biocontainers/metamaps:0.1.98102e9--h21ec9f0_2"
 ---
 
 # metamaps

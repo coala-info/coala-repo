@@ -1,10 +1,12 @@
 ---
 name: 16s_biodiversity_biom
-description: "This workflow processes 16S rRNA count tables and metadata into BIOM format to perform differential abundance analysis with DESeq2 and generate comprehensive biodiversity visualizations using Phyloseq. Use this skill when you need to identify significantly different microbial taxa across experimental conditions and visualize community richness, taxonomic abundance, and ecological networks from metagenomic datasets."
-homepage: https://workflowhub.eu/workflows/142
+description: This workflow processes 16S rRNA count tables and metadata into BIOM format to perform differential abundance analysis with DESeq2 and generate comprehensive biodiversity visualizations using Phyloseq. Use this skill when you need to identify significantly different microbial taxa across experimental conditions and visualize community richness, taxonomic abundance, and ecological networks from metagenomic datasets.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 16S_biodiversity_BIOM
+# 16s_biodiversity_biom
 
 ## Overview
 

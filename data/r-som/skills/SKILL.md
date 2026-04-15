@@ -4,7 +4,6 @@ description: This tool implements Self-Organizing Maps for unsupervised learning
 homepage: https://cloud.r-project.org/web/packages/som/index.html
 ---
 
-
 # r-som
 
 name: r-som

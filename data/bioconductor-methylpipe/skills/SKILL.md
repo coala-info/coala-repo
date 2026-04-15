@@ -4,7 +4,6 @@ description: This tool analyzes base-pair resolution DNA methylation data using 
 homepage: https://bioconductor.org/packages/release/bioc/html/methylPipe.html
 ---
 
-
 # bioconductor-methylpipe
 
 name: bioconductor-methylpipe

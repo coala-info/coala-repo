@@ -4,7 +4,6 @@ description: RcisTarget identifies transcription factor binding motifs over-repr
 homepage: https://bioconductor.org/packages/release/bioc/html/RcisTarget.html
 ---
 
-
 # bioconductor-rcistarget
 
 name: bioconductor-rcistarget

@@ -4,7 +4,6 @@ description: The cyanoFilter package provides a specialized workflow for analyzi
 homepage: https://bioconductor.org/packages/release/bioc/html/cyanoFilter.html
 ---
 
-
 # bioconductor-cyanofilter
 
 ## Overview

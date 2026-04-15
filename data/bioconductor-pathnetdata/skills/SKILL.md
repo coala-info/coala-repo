@@ -4,7 +4,6 @@ description: This package provides experimental data and KEGG pathway connectivi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PathNetData.html
 ---
 
-
 # bioconductor-pathnetdata
 
 name: bioconductor-pathnetdata

@@ -2,8 +2,9 @@
 name: perl-bio-samtools
 description: This tool provides procedural knowledge for managing high-throughput sequencing data using the Samtools, BCFtools, and HTSlib ecosystem. Use when user asks to convert between BAM and CRAM formats, mark PCR duplicates, sort genomic coordinates, or perform variant calling.
 homepage: https://www.htslib.org/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-samtools:1.43--pl5321h577a1d6_6"
 ---
-
 
 # perl-bio-samtools
 

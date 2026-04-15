@@ -4,7 +4,6 @@ description: bioconductor-compgo performs comparative gene ontology enrichment a
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CompGO.html
 ---
 
-
 # bioconductor-compgo
 
 name: bioconductor-compgo

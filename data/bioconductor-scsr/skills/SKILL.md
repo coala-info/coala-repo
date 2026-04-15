@@ -4,7 +4,6 @@ description: The scsR package identifies and mitigates off-target effects in gen
 homepage: https://bioconductor.org/packages/3.8/bioc/html/scsR.html
 ---
 
-
 # bioconductor-scsr
 
 ## Overview

@@ -2,8 +2,9 @@
 name: yamllint
 description: yamllint checks YAML files for syntax errors and style violations. Use when user asks to lint YAML files, check YAML syntax, enforce style guidelines, detect issues like improper indentation, configure linting rules, or ignore specific files or rules.
 homepage: https://github.com/adrienverge/yamllint
+metadata:
+  docker_image: "quay.io/biocontainers/yamllint:1.2.1--py35_0"
 ---
-
 
 # yamllint
 

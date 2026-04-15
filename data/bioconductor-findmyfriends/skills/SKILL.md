@@ -4,7 +4,6 @@ description: FindMyFriends performs microbial pangenome analysis by grouping gen
 homepage: https://bioconductor.org/packages/3.6/bioc/html/FindMyFriends.html
 ---
 
-
 # bioconductor-findmyfriends
 
 name: bioconductor-findmyfriends

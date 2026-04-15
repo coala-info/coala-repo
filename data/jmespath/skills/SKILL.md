@@ -2,8 +2,9 @@
 name: jmespath
 description: JMESPath is a declarative query language designed to extract and reshape data from JSON documents. Use when user asks to query JSON data, filter lists based on conditions, reshape objects into new structures, or implement custom search functions in Python.
 homepage: https://github.com/jmespath/jmespath.py
+metadata:
+  docker_image: "quay.io/biocontainers/jmespath:0.9.0--py36_0"
 ---
-
 
 # jmespath
 

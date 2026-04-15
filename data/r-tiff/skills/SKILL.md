@@ -4,7 +4,6 @@ description: The r-tiff package provides an interface for reading and writing TI
 homepage: https://cloud.r-project.org/web/packages/tiff/index.html
 ---
 
-
 # r-tiff
 
 ## Overview

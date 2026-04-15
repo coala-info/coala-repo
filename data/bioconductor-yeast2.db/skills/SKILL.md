@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Yeast Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/yeast2.db.html
 ---
 
-
 # bioconductor-yeast2.db
 
 name: bioconductor-yeast2.db

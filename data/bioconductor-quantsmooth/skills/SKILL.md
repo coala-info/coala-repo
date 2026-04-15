@@ -4,7 +4,6 @@ description: This tool performs quantile smoothing on genomic array data to iden
 homepage: https://bioconductor.org/packages/release/bioc/html/quantsmooth.html
 ---
 
-
 # bioconductor-quantsmooth
 
 name: bioconductor-quantsmooth

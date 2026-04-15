@@ -4,7 +4,6 @@ description: This package provides 40 simulated flow cytometry datasets and clin
 homepage: https://bioconductor.org/packages/release/data/experiment/html/optimalFlowData.html
 ---
 
-
 # bioconductor-optimalflowdata
 
 ## Overview

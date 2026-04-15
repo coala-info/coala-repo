@@ -1,10 +1,12 @@
 ---
 name: amr-detection
-description: "This Galaxy workflow performs antimicrobial resistance detection by assembling raw sequencing reads with Shovill and analyzing the resulting contigs using ABRicate, staramr, and hamronize. Use this skill when you need to identify resistance genes, point mutations, and plasmid markers in bacterial genomes to characterize the resistome of clinical or environmental isolates."
-homepage: https://workflowhub.eu/workflows/470
+description: This Galaxy workflow performs antimicrobial resistance detection by assembling raw sequencing reads with Shovill and analyzing the resulting contigs using ABRicate, staramr, and hamronize. Use this skill when you need to identify resistance genes, point mutations, and plasmid markers in bacterial genomes to characterize the resistome of clinical or environmental isolates.
+homepage: https://erasmusmc-bioinformatics.github.io/benchAMRking/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AMR detection
+# amr-detection
 
 ## Overview
 

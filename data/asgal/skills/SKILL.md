@@ -2,8 +2,9 @@
 name: asgal
 description: ASGAL aligns RNA-Seq reads to a splicing graph to identify novel and known alternative splicing events. Use when user asks to map reads against a splicing graph, detect alternative splicing events such as exon skipping or intron retention, and perform genome-wide splicing analysis.
 homepage: https://asgal.algolab.eu/
+metadata:
+  docker_image: "quay.io/biocontainers/asgal:1.1.8--h5ca1c30_2"
 ---
-
 
 # asgal
 

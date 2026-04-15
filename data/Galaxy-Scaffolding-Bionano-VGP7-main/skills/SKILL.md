@@ -1,10 +1,12 @@
 ---
 name: scaffolding-bionano-vgp7
-description: "This workflow performs genome scaffolding by integrating Bionano optical map data with phased GFA assemblies using the Bionano Hybrid Scaffold tool and gfastats for quality assessment. Use this skill when you need to improve the continuity and structural accuracy of a de novo genome assembly by resolving conflicts and bridging gaps with high-resolution physical maps."
-homepage: https://workflowhub.eu/workflows/643
+description: This workflow performs genome scaffolding by integrating Bionano optical map data with phased GFA assemblies using the Bionano Hybrid Scaffold tool and gfastats for quality assessment. Use this skill when you need to improve the continuity and structural accuracy of a de novo genome assembly by resolving conflicts and bridging gaps with high-resolution physical maps.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Scaffolding-BioNano-VGP7
+# scaffolding-bionano-vgp7
 
 ## Overview
 

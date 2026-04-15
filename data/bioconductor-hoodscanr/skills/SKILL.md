@@ -4,7 +4,6 @@ description: bioconductor-hoodscanr performs cellular neighborhood analysis and 
 homepage: https://bioconductor.org/packages/release/bioc/html/hoodscanR.html
 ---
 
-
 # bioconductor-hoodscanr
 
 name: bioconductor-hoodscanr

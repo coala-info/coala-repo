@@ -4,6 +4,8 @@ description: The pipeline identifies, annotates, and quantifies phage sequences 
 homepage: https://github.com/nf-core/phageannotator
 ---
 
+# phageannotator
+
 ## Overview
 nf-core/phageannotator addresses the challenge of extracting and characterizing viral signals from complex (meta)-genomic data. It processes assemblies and reads to identify viral contigs, assess their quality, and provide detailed ecological context through host and lifestyle predictions.
 

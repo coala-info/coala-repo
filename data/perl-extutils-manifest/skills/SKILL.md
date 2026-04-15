@@ -2,8 +2,9 @@
 name: perl-extutils-manifest
 description: This tool manages MANIFEST and MANIFEST.SKIP files to ensure Perl project distributions contain the correct source files while excluding unnecessary artifacts. Use when user asks to create or update a manifest, verify manifest integrity, check for skipped files, or manage file exclusions in a Perl package.
 homepage: https://metacpan.org/release/ExtUtils-Manifest
+metadata:
+  docker_image: "quay.io/biocontainers/perl-extutils-manifest:1.75--pl5321hdfd78af_0"
 ---
-
 
 # perl-extutils-manifest
 

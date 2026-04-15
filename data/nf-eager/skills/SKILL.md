@@ -4,6 +4,8 @@ description: This pipeline processes raw FASTQ or preprocessed BAM data against 
 homepage: https://github.com/nf-core/eager
 ---
 
+# eager
+
 ## Overview
 nf-core/eager is a scalable and reproducible bioinformatics pipeline designed for the analysis of genomic NGS sequencing data, with a specific focus on ancient DNA (aDNA). It addresses the unique challenges of palaeogenomic data, such as highly degraded DNA fragments, characteristic biochemical damage patterns, and potential modern contamination.
 

@@ -1,10 +1,12 @@
 ---
 name: protein-structure-flexibility
-description: "This workflow analyzes protein structure flexibility by processing PDB files through coarse-grained methods including Normal Mode Analysis, Discrete Molecular Dynamics, and Brownian Dynamics using BioBB tools. Use this skill when you need to characterize macromolecular conformational ensembles, identify hinge points, or calculate B-factors and stiffness profiles to understand the functional dynamics of a protein."
-homepage: https://workflowhub.eu/workflows/557
+description: This workflow analyzes protein structure flexibility by processing PDB files through coarse-grained methods including Normal Mode Analysis, Discrete Molecular Dynamics, and Brownian Dynamics using BioBB tools. Use this skill when you need to characterize macromolecular conformational ensembles, identify hinge points, or calculate B-factors and stiffness profiles to understand the functional dynamics of a protein.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Protein structure flexibility
+# protein-structure-flexibility
 
 ## Overview
 

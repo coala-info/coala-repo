@@ -2,8 +2,9 @@
 name: rsv-typer
 description: rsv-typer automates the classification and genomic analysis of Respiratory Syncytial Virus (RSV) from Nanopore sequencing reads. Use when user asks to classify RSV subtypes, generate consensus sequences, or perform genomic surveillance using the rsv-typer pipeline.
 homepage: https://github.com/DiltheyLab/RSVTyper
+metadata:
+  docker_image: "quay.io/biocontainers/rsv-typer:0.5.0--pyh7e72e81_0"
 ---
-
 
 # rsv-typer
 

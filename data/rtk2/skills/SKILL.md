@@ -2,6 +2,8 @@
 name: rtk2
 description: rtk2 is a high-performance C++ tool designed for efficient matrix manipulation, rarefaction, and metagenomic data processing. Use when user asks to normalize sampling depth through rarefaction, convert gene clustering outputs into abundance matrices, or split large matrices into sub-matrices based on reference indices.
 homepage: https://github.com/hildebra/rtk2/
+metadata:
+  docker_image: "quay.io/biocontainers/rtk2:2.11.2--h077b44d_1"
 ---
 
 # rtk2

@@ -4,7 +4,6 @@ description: ORFik is an R package for the comprehensive analysis of transcript 
 homepage: https://bioconductor.org/packages/release/bioc/html/ORFik.html
 ---
 
-
 # bioconductor-orfik
 
 name: bioconductor-orfik

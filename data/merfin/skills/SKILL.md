@@ -2,6 +2,8 @@
 name: merfin
 description: Merfin improves the accuracy of genomic assemblies and variant calls by evaluating k-mer distributions from sequencing reads. Use when user asks to assess assembly quality, calculate k-mer completeness, or filter and polish variants using k-mer validation.
 homepage: https://github.com/arangrhie/merfin
+metadata:
+  docker_image: "quay.io/biocontainers/merfin:1.0--h9948957_3"
 ---
 
 # merfin

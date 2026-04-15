@@ -4,7 +4,6 @@ description: This package provides a transcript database for the mouse mm39 geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmusculus.UCSC.mm39.refGene.html
 ---
 
-
 # bioconductor-txdb.mmusculus.ucsc.mm39.refgene
 
 ## Overview

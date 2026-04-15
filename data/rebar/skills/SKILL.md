@@ -2,8 +2,9 @@
 name: rebar
 description: rebar identifies and characterizes genomic recombination by scanning mutational barcodes to detect parental origins and breakpoint locations. Use when user asks to detect recombinant lineages, identify parental origins and breakpoints, download reference datasets, or visualize recombination patterns through plots.
 homepage: https://github.com/phac-nml/rebar
+metadata:
+  docker_image: "quay.io/biocontainers/rebar:0.2.1--h9ee0642_0"
 ---
-
 
 # rebar
 

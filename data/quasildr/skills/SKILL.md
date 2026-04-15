@@ -2,8 +2,9 @@
 name: quasildr
 description: quasildr is a toolkit for single-cell data analysis that provides scalable nonlinear dimensionality reduction and density ridge estimation for trajectory inference. Use when user asks to create interpretable low-dimensional representations, identify density ridges, or perform trajectory inference on high-dimensional biological data.
 homepage: https://github.com/jzthree/quasildr
+metadata:
+  docker_image: "quay.io/biocontainers/quasildr:0.2.2--pyhdfd78af_0"
 ---
-
 
 # quasildr
 

@@ -2,8 +2,9 @@
 name: fastqc-rs
 description: fastqc-rs is a high-performance tool that generates quality control reports and visualizations for FASTQ sequencing data. Use when user asks to perform quality control on sequencing reads, generate HTML quality reports, or analyze base quality and GC content.
 homepage: https://github.com/fxwiegand/fastqc-rs
+metadata:
+  docker_image: "quay.io/biocontainers/fastqc-rs:0.3.4--hd2a40b3_1"
 ---
-
 
 # fastqc-rs
 

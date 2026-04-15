@@ -4,7 +4,6 @@ description: This tool performs differential gene expression analysis on microar
 homepage: https://bioconductor.org/packages/release/bioc/html/diffGeneAnalysis.html
 ---
 
-
 # bioconductor-diffgeneanalysis
 
 name: bioconductor-diffgeneanalysis

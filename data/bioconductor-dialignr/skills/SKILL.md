@@ -4,7 +4,6 @@ description: DIAlignR performs retention time alignment of targeted mass spectro
 homepage: https://bioconductor.org/packages/3.11/bioc/html/DIAlignR.html
 ---
 
-
 # bioconductor-dialignr
 
 name: bioconductor-dialignr

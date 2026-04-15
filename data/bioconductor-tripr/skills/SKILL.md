@@ -4,7 +4,6 @@ description: The tripr package provides a framework for analyzing B cell and T c
 homepage: https://bioconductor.org/packages/release/bioc/html/tripr.html
 ---
 
-
 # bioconductor-tripr
 
 ## Overview

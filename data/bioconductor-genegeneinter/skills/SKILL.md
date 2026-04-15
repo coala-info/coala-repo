@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of gene-gene interactions i
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GeneGeneInteR.html
 ---
 
-
 # bioconductor-genegeneinter
 
 name: bioconductor-genegeneinter

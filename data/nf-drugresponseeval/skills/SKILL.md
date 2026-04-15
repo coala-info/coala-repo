@@ -4,6 +4,8 @@ description: This pipeline evaluates drug response prediction models using stand
 homepage: https://github.com/nf-core/drugresponseeval
 ---
 
+# drugresponseeval
+
 ## Overview
 nf-core/drugresponseeval is a bioinformatics framework designed to evaluate drug response prediction models in a statistically sound and reproducible manner. It automates standardized evaluation protocols, including cross-validation, hyperparameter tuning, and preprocessing workflows, supporting model types ranging from simple statistical models to complex neural networks.
 

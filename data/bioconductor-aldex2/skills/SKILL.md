@@ -4,7 +4,6 @@ description: ALDEx2 performs differential abundance analysis for high-throughput
 homepage: https://bioconductor.org/packages/release/bioc/html/ALDEx2.html
 ---
 
-
 # bioconductor-aldex2
 
 name: bioconductor-aldex2

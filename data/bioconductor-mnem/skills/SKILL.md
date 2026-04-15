@@ -4,7 +4,6 @@ description: The mnem package implements Mixture Nested Effects Models to perfor
 homepage: https://bioconductor.org/packages/release/bioc/html/mnem.html
 ---
 
-
 # bioconductor-mnem
 
 ## Overview

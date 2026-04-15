@@ -4,7 +4,6 @@ description: This package provides a C++ interface for efficient, native access 
 homepage: https://bioconductor.org/packages/release/bioc/html/beachmat.hdf5.html
 ---
 
-
 # bioconductor-beachmat.hdf5
 
 ## Overview

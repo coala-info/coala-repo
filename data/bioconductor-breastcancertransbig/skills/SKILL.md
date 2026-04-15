@@ -4,7 +4,6 @@ description: This package provides access to the TRANSBIG breast cancer gene exp
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerTRANSBIG.html
 ---
 
-
 # bioconductor-breastcancertransbig
 
 name: bioconductor-breastcancertransbig

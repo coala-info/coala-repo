@@ -2,8 +2,9 @@
 name: ucsc-linestora
 description: The `ucsc-linestora` tool converts pipe-delimited text files into the UCSC Resource Archive (.ra) format. Use when user asks to convert pipe-delimited text to .ra format, prepare files for UCSC Track Hubs, or define track display settings for the UCSC Genome Browser.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-linestora:482--h0b57e2e_0"
 ---
-
 
 # ucsc-linestora
 

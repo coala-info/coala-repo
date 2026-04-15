@@ -4,7 +4,6 @@ description: plotgardener is a coordinate-based genomic visualization package fo
 homepage: https://bioconductor.org/packages/release/bioc/html/plotgardener.html
 ---
 
-
 # bioconductor-plotgardener
 
 ## Overview

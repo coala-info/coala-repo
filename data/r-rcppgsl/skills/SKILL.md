@@ -4,7 +4,6 @@ description: The r-rcppgsl package provides an interface that allows R users to 
 homepage: https://cran.r-project.org/web/packages/rcppgsl/index.html
 ---
 
-
 # r-rcppgsl
 
 ## Overview

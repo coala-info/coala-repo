@@ -4,7 +4,6 @@ description: This tool provides high-level wrapper functions to simplify mapping
 homepage: https://bioconductor.org/packages/3.5/bioc/html/AnnotationFuncs.html
 ---
 
-
 # bioconductor-annotationfuncs
 
 name: bioconductor-annotationfuncs

@@ -4,7 +4,6 @@ description: This tool loads and manipulates SFF files from Roche 454 and Ion To
 homepage: https://bioconductor.org/packages/3.8/bioc/html/rSFFreader.html
 ---
 
-
 # bioconductor-rsffreader
 
 name: bioconductor-rsffreader

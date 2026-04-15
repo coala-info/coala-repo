@@ -4,7 +4,6 @@ description: This tool provides genomic data resources, including region bins an
 homepage: https://bioconductor.org/packages/3.12/data/experiment/html/SCATEData.html
 ---
 
-
 # bioconductor-scatedata
 
 name: bioconductor-scatedata

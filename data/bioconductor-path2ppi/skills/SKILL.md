@@ -4,7 +4,6 @@ description: This tool predicts protein-protein interaction networks for a targe
 homepage: https://bioconductor.org/packages/release/bioc/html/Path2PPI.html
 ---
 
-
 # bioconductor-path2ppi
 
 name: bioconductor-path2ppi

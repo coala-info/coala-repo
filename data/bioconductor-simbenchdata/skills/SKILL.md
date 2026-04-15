@@ -4,7 +4,6 @@ description: This tool provides access to 35 curated single-cell RNA-seq dataset
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SimBenchData.html
 ---
 
-
 # bioconductor-simbenchdata
 
 name: bioconductor-simbenchdata

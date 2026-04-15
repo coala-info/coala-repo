@@ -2,6 +2,8 @@
 name: ngs-chew
 description: ngs-chew performs quality control and sample integrity checks on sequencing data by generating and comparing compact variant fingerprints. Use when user asks to identify sample swaps, detect cryptic relationships, estimate contamination, or verify biological sex from BAM or VCF files.
 homepage: https://github.com/bihealth/ngs-chew
+metadata:
+  docker_image: "quay.io/biocontainers/ngs-chew:0.9.4--pyhdfd78af_0"
 ---
 
 # ngs-chew

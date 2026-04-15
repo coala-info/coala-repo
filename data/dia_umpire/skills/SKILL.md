@@ -2,8 +2,9 @@
 name: dia_umpire
 description: DIA-Umpire is a computational framework for processing DIA mass spectrometry data by extracting pseudo-MS/MS spectra for protein identification and quantification. Use when user asks to extract pseudo-MS/MS spectra from DIA signals, perform untargeted proteomics, or quantify proteins from mass spectrometry data.
 homepage: https://github.com/Nesvilab/DIA-Umpire
+metadata:
+  docker_image: "biocontainers/dia-umpire:v2.1.2_cv4"
 ---
-
 
 # dia_umpire
 

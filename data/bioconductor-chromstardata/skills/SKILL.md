@@ -4,7 +4,6 @@ description: This package provides curated ChIP-seq and expression datasets from
 homepage: https://bioconductor.org/packages/release/data/experiment/html/chromstaRData.html
 ---
 
-
 # bioconductor-chromstardata
 
 ## Overview

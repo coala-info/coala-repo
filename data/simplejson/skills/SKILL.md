@@ -1,9 +1,10 @@
 ---
 name: simplejson
-description: "simplejson provides a flexible way to interact with and manipulate JSON data in Go without requiring predefined structs. Use when user asks to parse dynamic JSON, navigate nested data structures using method chaining, or modify JSON payloads on the fly."
+description: simplejson provides a flexible way to interact with and manipulate JSON data in Go without requiring predefined structs. Use when user asks to parse dynamic JSON, navigate nested data structures using method chaining, or modify JSON payloads on the fly.
 homepage: https://github.com/bitly/go-simplejson
+metadata:
+  docker_image: "quay.io/biocontainers/simplejson:3.8.1--py35_0"
 ---
-
 
 # simplejson
 

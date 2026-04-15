@@ -4,7 +4,6 @@ description: The graper package implements a Bayesian penalized regression model
 homepage: https://bioconductor.org/packages/release/bioc/html/graper.html
 ---
 
-
 # bioconductor-graper
 
 ## Overview

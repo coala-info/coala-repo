@@ -4,7 +4,6 @@ description: DeconRNASeq performs mRNA deconvolution to estimate the relative pr
 homepage: https://bioconductor.org/packages/release/bioc/html/DeconRNASeq.html
 ---
 
-
 # bioconductor-deconrnaseq
 
 name: bioconductor-deconrnaseq

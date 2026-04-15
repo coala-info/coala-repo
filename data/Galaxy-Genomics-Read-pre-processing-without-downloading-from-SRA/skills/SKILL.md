@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-1-read-pre-processing-without-downloading
-description: "This SARS-CoV-2 genomics workflow processes Illumina paired-end and Oxford Nanopore sequencing data using tools such as fastp, FastQC, BWA-MEM, and minimap2 to perform quality control and read filtering. Use this skill when you need to clean raw viral sequencing reads and remove low-quality data to prepare high-quality inputs for downstream COVID-19 genomic analysis."
-homepage: https://workflowhub.eu/workflows/4
+description: This SARS-CoV-2 genomics workflow processes Illumina paired-end and Oxford Nanopore sequencing data using tools such as fastp, FastQC, BWA-MEM, and minimap2 to perform quality control and read filtering. Use this skill when you need to clean raw viral sequencing reads and remove low-quality data to prepare high-quality inputs for downstream COVID-19 genomic analysis.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [1] Read pre-processing without downloading from SRA
+# covid-19-genomics-1-read-pre-processing-without-downloading
 
 ## Overview
 

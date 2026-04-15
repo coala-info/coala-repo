@@ -1,10 +1,12 @@
 ---
 name: workflow-to-reproduce-paper-8-exafs-fitting
-description: "This workflow performs EXAFS fitting for palladium-based catalyst samples using Athena project files and Pd/PdO crystal structures processed through Larch Athena, Feff, and Artemis tools. Use this skill when you need to characterize the local coordination environment and oxidation states of palladium catalysts within gasoline particulate filters to reproduce specific experimental findings."
-homepage: https://workflowhub.eu/workflows/1805
+description: This workflow performs EXAFS fitting for palladium-based catalyst samples using Athena project files and Pd/PdO crystal structures processed through Larch Athena, Feff, and Artemis tools. Use this skill when you need to characterize the local coordination environment and oxidation states of palladium catalysts within gasoline particulate filters to reproduce specific experimental findings.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow to reproduce paper 8 EXAFS fitting
+# workflow-to-reproduce-paper-8-exafs-fitting
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool identifies high-confidence protein binding sites from PAR
 homepage: https://bioconductor.org/packages/release/bioc/html/wavClusteR.html
 ---
 
-
 # bioconductor-wavcluster
 
 name: bioconductor-wavcluster

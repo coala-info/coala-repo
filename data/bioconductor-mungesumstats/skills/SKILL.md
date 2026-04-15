@@ -4,7 +4,6 @@ description: bioconductor-mungesumstats standardizes, cleans, and performs quali
 homepage: https://bioconductor.org/packages/release/bioc/html/MungeSumstats.html
 ---
 
-
 # bioconductor-mungesumstats
 
 name: bioconductor-mungesumstats

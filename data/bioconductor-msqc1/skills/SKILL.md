@@ -4,7 +4,6 @@ description: The bioconductor-msqc1 package provides datasets and tools for benc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/msqc1.html
 ---
 
-
 # bioconductor-msqc1
 
 ## Overview

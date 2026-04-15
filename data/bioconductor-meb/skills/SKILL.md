@@ -4,7 +4,6 @@ description: This tool identifies differentially expressed genes in bulk and sin
 homepage: https://bioconductor.org/packages/release/bioc/html/MEB.html
 ---
 
-
 # bioconductor-meb
 
 name: bioconductor-meb

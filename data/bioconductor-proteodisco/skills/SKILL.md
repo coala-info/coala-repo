@@ -4,7 +4,6 @@ description: ProteoDisco generates customized protein databases for proteogenomi
 homepage: https://bioconductor.org/packages/release/bioc/html/ProteoDisco.html
 ---
 
-
 # bioconductor-proteodisco
 
 name: bioconductor-proteodisco

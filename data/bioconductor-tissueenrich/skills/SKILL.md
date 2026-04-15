@@ -4,7 +4,6 @@ description: This package performs functional enrichment analysis to identify ti
 homepage: https://bioconductor.org/packages/release/bioc/html/TissueEnrich.html
 ---
 
-
 # bioconductor-tissueenrich
 
 ## Overview

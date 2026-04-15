@@ -4,7 +4,6 @@ description: This package provides the complete genome sequence for Drosophila m
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm6.html
 ---
 
-
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm6
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides a TxDb annotation object for Mus musculus based 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmusculus.UCSC.mm10.ensGene.html
 ---
 
-
 # bioconductor-txdb.mmusculus.ucsc.mm10.ensgene
 
 name: bioconductor-txdb.mmusculus.ucsc.mm10.ensgene

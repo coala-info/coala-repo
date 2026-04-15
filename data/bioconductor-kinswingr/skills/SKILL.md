@@ -4,7 +4,6 @@ description: KinSwingR predicts kinase activity by integrating kinase-substrate 
 homepage: https://bioconductor.org/packages/release/bioc/html/KinSwingR.html
 ---
 
-
 # bioconductor-kinswingr
 
 ## Overview

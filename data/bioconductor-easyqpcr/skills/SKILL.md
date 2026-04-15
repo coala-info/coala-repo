@@ -4,7 +4,6 @@ description: This tool analyzes low-throughput real-time quantitative PCR data t
 homepage: https://bioconductor.org/packages/3.9/bioc/html/EasyqpcR.html
 ---
 
-
 # bioconductor-easyqpcr
 
 name: bioconductor-easyqpcr

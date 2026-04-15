@@ -2,8 +2,9 @@
 name: corekaburra
 description: Corekaburra adds spatial context to pan-genome analyses by identifying and characterizing genomic regions flanked by core genes. Use when user asks to analyze synteny between core genes, identify genomic islands, or characterize the accessory gene content within core regions.
 homepage: https://github.com/milnus/Corekaburra
+metadata:
+  docker_image: "quay.io/biocontainers/corekaburra:0.0.5--pyhdfd78af_0"
 ---
-
 
 # corekaburra
 

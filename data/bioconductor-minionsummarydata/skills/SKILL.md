@@ -4,7 +4,6 @@ description: This package provides example Nanopore sequencing summary data from
 homepage: https://bioconductor.org/packages/release/data/experiment/html/minionSummaryData.html
 ---
 
-
 # bioconductor-minionsummarydata
 
 ## Overview

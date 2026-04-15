@@ -2,8 +2,9 @@
 name: pass
 description: PASS performs de novo assembly of short and long peptide fragments into protein sequences. Use when user asks to assemble peptide reads, perform de novo protein assembly, or conduct targeted assembly using seed sequences.
 homepage: https://github.com/bcgsc/PASS
+metadata:
+  docker_image: "quay.io/biocontainers/pass:0.3.1--hdfd78af_0"
 ---
-
 
 # pass
 

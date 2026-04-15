@@ -2,8 +2,9 @@
 name: pubchempy
 description: PubChemPy is a Python library that retrieves chemical data, properties, and structural information from the PubChem database via its REST API. Use when user asks to fetch molecular properties, search for compounds by name or identifier, perform substructure or similarity searches, and convert chemical identifiers like SMILES or IUPAC names.
 homepage: https://github.com/mcs07/PubChemPy
+metadata:
+  docker_image: "quay.io/biocontainers/pubchempy:1.0.4--py_0"
 ---
-
 
 # pubchempy
 

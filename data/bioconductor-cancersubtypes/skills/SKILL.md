@@ -4,7 +4,6 @@ description: This package provides a unified framework for identifying and valid
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CancerSubtypes.html
 ---
 
-
 # bioconductor-cancersubtypes
 
 name: bioconductor-cancersubtypes

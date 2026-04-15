@@ -4,7 +4,6 @@ description: The r-proxy package provides an extensible framework for calculatin
 homepage: https://cloud.r-project.org/web/packages/proxy/index.html
 ---
 
-
 # r-proxy
 
 ## Overview

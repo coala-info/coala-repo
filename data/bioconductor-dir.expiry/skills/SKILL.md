@@ -4,7 +4,6 @@ description: The dir.expiry package manages versioned cache directories by track
 homepage: https://bioconductor.org/packages/release/bioc/html/dir.expiry.html
 ---
 
-
 # bioconductor-dir.expiry
 
 ## Overview

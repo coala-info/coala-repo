@@ -1,10 +1,12 @@
 ---
 name: paired-end-variant-and-ploidy-aware-genotype-calling
-description: "This workflow processes paired-end Illumina reads through quality control, BWA-MEM mapping, and FreeBayes variant calling to generate annotated VCF and TSV files for organisms of any specified ploidy. Use this skill when you need to identify germline variants and functional effects in non-diploid or diploid genomes using a reference FASTA and GTF annotation."
-homepage: https://workflowhub.eu/workflows/2112
+description: This workflow processes paired-end Illumina reads through quality control, BWA-MEM mapping, and FreeBayes variant calling to generate annotated VCF and TSV files for organisms of any specified ploidy. Use this skill when you need to identify germline variants and functional effects in non-diploid or diploid genomes using a reference FASTA and GTF annotation.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Paired end variant and ploidy-aware genotype calling
+# paired-end-variant-and-ploidy-aware-genotype-calling
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool integrates multiple omics datasets using the STATIS metho
 homepage: https://bioconductor.org/packages/3.6/bioc/html/kimod.html
 ---
 
-
 # bioconductor-kimod
 
 name: bioconductor-kimod

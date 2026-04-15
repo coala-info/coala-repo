@@ -1,10 +1,12 @@
 ---
 name: allele-based-pathogen-identification
-description: "This microbiome workflow performs allele-based pathogen identification by mapping preprocessed sample collections to a reference genome using Minimap2, Clair3, and BCFtools. Use this skill when you need to accurately identify pathogen strains and analyze genetic variations within complex microbial samples to support epidemiological surveillance or clinical diagnostics."
-homepage: https://workflowhub.eu/workflows/1479
+description: This microbiome workflow performs allele-based pathogen identification by mapping preprocessed sample collections to a reference genome using Minimap2, Clair3, and BCFtools. Use this skill when you need to accurately identify pathogen strains and analyze genetic variations within complex microbial samples to support epidemiological surveillance or clinical diagnostics.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Allele-based Pathogen Identification
+# allele-based-pathogen-identification
 
 ## Overview
 

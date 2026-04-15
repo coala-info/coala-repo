@@ -1,10 +1,12 @@
 ---
 name: kmer-counting-meryl-upgraded
-description: "This genomics workflow processes Illumina sequencing reads using Meryl for k-mer counting and GenomeScope for statistical analysis of the resulting k-mer distribution. Use this skill when you need to estimate genome size, heterozygosity, and repetitiveness from raw sequencing data to assess the complexity of a genome before assembly."
-homepage: https://workflowhub.eu/workflows/1608
+description: This genomics workflow processes Illumina sequencing reads using Meryl for k-mer counting and GenomeScope for statistical analysis of the resulting k-mer distribution. Use this skill when you need to estimate genome size, heterozygosity, and repetitiveness from raw sequencing data to assess the complexity of a genome before assembly.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# kmer counting - meryl - upgraded
+# kmer-counting-meryl-upgraded
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: scala
-description: "Installs and manages Scala versions and related tools via Conda. Use when user asks to install Scala, run Scala scripts, or use the Scala REPL."
+description: Installs and manages Scala versions and related tools via Conda. Use when user asks to install Scala, run Scala scripts, or use the Scala REPL.
 homepage: https://github.com/binhnguyennus/awesome-scalability
+metadata:
+  docker_image: "quay.io/biocontainers/scala:2.11.8--1"
 ---
-
 
 # scala
 

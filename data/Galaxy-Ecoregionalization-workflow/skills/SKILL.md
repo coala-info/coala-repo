@@ -1,10 +1,12 @@
 ---
 name: ecoregionalization-workflow
-description: "This ecoregionalization workflow processes species occurrence records and environmental data using Jupyter notebooks, Boosted Regression Trees, and clustering tools like ClaraClust to generate spatial ecological maps. Use this skill when you need to delineate biogeographic regions or analyze the spatial distribution of taxa in relation to environmental variables for conservation planning and biodiversity assessment."
-homepage: https://workflowhub.eu/workflows/1680
+description: This ecoregionalization workflow processes species occurrence records and environmental data using Jupyter notebooks, Boosted Regression Trees, and clustering tools like ClaraClust to generate spatial ecological maps. Use this skill when you need to delineate biogeographic regions or analyze the spatial distribution of taxa in relation to environmental variables for conservation planning and biodiversity assessment.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ecoregionalization workflow
+# ecoregionalization-workflow
 
 ## Overview
 

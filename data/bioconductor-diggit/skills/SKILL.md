@@ -4,7 +4,6 @@ description: This tool identifies genetic variants that drive cellular phenotype
 homepage: https://bioconductor.org/packages/release/bioc/html/diggit.html
 ---
 
-
 # bioconductor-diggit
 
 name: bioconductor-diggit

@@ -2,8 +2,9 @@
 name: tetrimmer
 description: TETrimmer automates the refinement and curation of transposable element consensus sequences by performing sequence extension, alignment, and classification. Use when user asks to refine de novo TE libraries, define precise transposable element boundaries, or automate manual TE curation workflows.
 homepage: https://github.com/qjiangzhao/TETrimmer.git
+metadata:
+  docker_image: "quay.io/biocontainers/tetrimmer:1.6.2--hdfd78af_0"
 ---
-
 
 # tetrimmer
 

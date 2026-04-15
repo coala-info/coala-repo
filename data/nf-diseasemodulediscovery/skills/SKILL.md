@@ -4,6 +4,8 @@ description: This pipeline identifies disease modules by analyzing the local nei
 homepage: https://github.com/nf-core/diseasemodulediscovery
 ---
 
+# diseasemodulediscovery
+
 ## Overview
 nf-core/diseasemodulediscovery is a bioinformatics pipeline designed for network medicine hypothesis generation. It identifies active disease modules—clusters of proteins or genes closely related to a disease—by mapping user-provided "seed" genes onto a protein-protein interaction (PPI) network. By characterizing these local neighborhoods, the pipeline helps researchers uncover molecular mechanisms and identify potential drug targets for repurposing.
 

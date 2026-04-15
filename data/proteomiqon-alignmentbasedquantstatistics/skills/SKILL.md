@@ -2,8 +2,9 @@
 name: proteomiqon-alignmentbasedquantstatistics
 description: This tool scores peptide ion quantifications based on alignment properties. Use when user asks to score peptide quantifications from aligned mass spectrometry runs.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-alignmentbasedquantstatistics:0.0.3--hdfd78af_0"
 ---
-
 
 # proteomiqon-alignmentbasedquantstatistics
 

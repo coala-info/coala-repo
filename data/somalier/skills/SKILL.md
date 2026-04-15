@@ -2,6 +2,8 @@
 name: somalier
 description: Somalier is a high-performance tool used to verify sample identity, relatedness, and ancestry in genomic datasets by extracting genotypes at informative polymorphic sites. Use when user asks to identify sample swaps, confirm family relationships in pedigree files, predict sample ancestry, or perform quality control on large cohorts.
 homepage: https://github.com/brentp/somalier
+metadata:
+  docker_image: "quay.io/biocontainers/somalier:0.3.1--hc78c8e0_0"
 ---
 
 # somalier

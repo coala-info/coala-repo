@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene10stv1cdf.html
 ---
 
-
 # bioconductor-hugene10stv1cdf
 
 name: bioconductor-hugene10stv1cdf

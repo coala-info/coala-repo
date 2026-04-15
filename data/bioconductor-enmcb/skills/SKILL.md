@@ -4,7 +4,6 @@ description: This tool identifies Methylation Correlated Blocks (MCB) and builds
 homepage: https://bioconductor.org/packages/release/bioc/html/EnMCB.html
 ---
 
-
 # bioconductor-enmcb
 
 name: bioconductor-enmcb

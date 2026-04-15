@@ -1,7 +1,9 @@
 ---
 name: galileo
-description: "Provides information and configuration details for the Galileo 2 3D printer extruder and Z-driver projects. Use when user asks to understand Galileo 2 specifications, Klipper configuration, or reseller information."
+description: Provides information and configuration details for the Galileo 2 3D printer extruder and Z-driver projects. Use when user asks to understand Galileo 2 specifications, Klipper configuration, or reseller information.
 homepage: https://github.com/JaredC01/Galileo2
+metadata:
+  docker_image: "biocontainers/galileo:v0.5.1-6-deb_cv1"
 ---
 
 # galileo

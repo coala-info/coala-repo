@@ -1,9 +1,10 @@
 ---
 name: gangstr
-description: "GangSTR estimates the length of tandem repeats by analyzing short-read alignments using a maximum likelihood model. Use when user asks to genotype short tandem repeats, estimate allele lengths from BAM files, or perform genome-wide STR profiling."
+description: GangSTR estimates the length of tandem repeats by analyzing short-read alignments using a maximum likelihood model. Use when user asks to genotype short tandem repeats, estimate allele lengths from BAM files, or perform genome-wide STR profiling.
 homepage: https://github.com/gymreklab/GangSTR
+metadata:
+  docker_image: "quay.io/biocontainers/gangstr:2.5.0--h7337834_10"
 ---
-
 
 # gangstr
 

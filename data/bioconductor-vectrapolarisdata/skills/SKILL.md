@@ -4,7 +4,6 @@ description: This package provides large-scale multiplex immunofluorescence data
 homepage: https://bioconductor.org/packages/release/data/experiment/html/VectraPolarisData.html
 ---
 
-
 # bioconductor-vectrapolarisdata
 
 ## Overview

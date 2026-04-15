@@ -4,7 +4,6 @@ description: This package provides annotation data and probe-to-sequence mapping
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.human.html
 ---
 
-
 # bioconductor-pd.clariom.s.human
 
 name: bioconductor-pd.clariom.s.human

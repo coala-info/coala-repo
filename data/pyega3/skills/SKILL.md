@@ -2,6 +2,8 @@
 name: pyega3
 description: pyEGA3 is a Python client for securely accessing and downloading authorized genomic datasets from the European Genome-phenome Archive. Use when user asks to list authorized datasets, list files within a dataset, or download specific files and datasets using credentials.
 homepage: https://github.com/EGA-archive/ega-download-client
+metadata:
+  docker_image: "quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0"
 ---
 
 # pyega3

@@ -2,8 +2,9 @@
 name: emboss-lib
 description: EMBOSS is a comprehensive bioinformatics toolkit that integrates over 200 applications for sequence analysis and data management under a unified interface. Use when user asks to execute bioinformatics workflows, manage sequence data using Uniform Sequence Addresses, handle diverse biological data formats, or perform high-throughput sequence analysis.
 homepage: http://emboss.open-bio.org/
+metadata:
+  docker_image: "biocontainers/emboss-lib:v6.6.0dfsg-6-deb_cv1"
 ---
-
 
 # emboss-lib
 

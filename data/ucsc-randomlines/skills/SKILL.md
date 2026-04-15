@@ -2,8 +2,9 @@
 name: ucsc-randomlines
 description: The ucsc-randomlines tool extracts a random subset of lines from a file. Use when user asks to extract a random subset of lines, downsample a large dataset, or sample lines from a compressed file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-randomlines:482--h0b57e2e_0"
 ---
-
 
 # ucsc-randomlines
 

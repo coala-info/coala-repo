@@ -1,9 +1,10 @@
 ---
 name: sbml2metexplorejsongraph
-description: "Converts Systems Biology Markup Language (SBML) files into a JSON graph format compatible with MetExploreJS. Use when user asks to convert SBML to MetExploreJS JSON or visualize SBML models in MetExploreJS."
+description: Converts Systems Biology Markup Language (SBML) files into a JSON graph format compatible with MetExploreJS. Use when user asks to convert SBML to MetExploreJS JSON or visualize SBML models in MetExploreJS.
 homepage: https://github.com/bmerlet90/tool-SBML2MetexploreJsonGraph
+metadata:
+  docker_image: "biocontainers/sbml2metexplorejsongraph:phenomenal-v1.2_cv1.1.7"
 ---
-
 
 # sbml2metexplorejsongraph
 

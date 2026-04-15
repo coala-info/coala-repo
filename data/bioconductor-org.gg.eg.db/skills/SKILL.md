@@ -4,7 +4,6 @@ description: This package provides genome-wide annotations for chicken based on 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Gg.eg.db.html
 ---
 
-
 # bioconductor-org.gg.eg.db
 
 name: bioconductor-org.gg.eg.db

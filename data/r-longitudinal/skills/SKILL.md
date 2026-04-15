@@ -4,7 +4,6 @@ description: The r-longitudinal package provides data structures and functions f
 homepage: https://cloud.r-project.org/web/packages/longitudinal/index.html
 ---
 
-
 # r-longitudinal
 
 name: r-longitudinal

@@ -2,6 +2,8 @@
 name: flair
 description: FLAIR is a computational suite that processes long-read RNA-seq data to identify, correct, and quantify high-confidence transcript isoforms. Use when user asks to align long reads to a reference, correct splice junctions, collapse reads into isoforms, quantify transcript expression, or detect gene fusions.
 homepage: https://github.com/BrooksLabUCSC/flair
+metadata:
+  docker_image: "quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0"
 ---
 
 # flair

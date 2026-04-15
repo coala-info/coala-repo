@@ -4,7 +4,6 @@ description: This package provides a transcript-centric annotation database for 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn7.refGene.html
 ---
 
-
 # bioconductor-txdb.rnorvegicus.ucsc.rn7.refgene
 
 name: bioconductor-txdb.rnorvegicus.ucsc.rn7.refgene

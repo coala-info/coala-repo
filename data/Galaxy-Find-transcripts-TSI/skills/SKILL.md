@@ -1,10 +1,12 @@
 ---
 name: find-transcripts-tsi
-description: "This workflow performs tissue-specific transcript discovery by aligning paired-end RNA-seq reads to a masked genome using HISAT2 and assembling the resulting alignments into a GTF file with StringTie. Use this skill when you need to characterize the unique transcriptomic landscape of individual tissues or identify novel isoforms within a specific biological sample."
-homepage: https://workflowhub.eu/workflows/877
+description: This workflow performs tissue-specific transcript discovery by aligning paired-end RNA-seq reads to a masked genome using HISAT2 and assembling the resulting alignments into a GTF file with StringTie. Use this skill when you need to characterize the unique transcriptomic landscape of individual tissues or identify novel isoforms within a specific biological sample.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Find transcripts - TSI
+# find-transcripts-tsi
 
 ## Overview
 

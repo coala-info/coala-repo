@@ -4,7 +4,6 @@ description: This Bioconductor package provides genomic coordinates and gene mod
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Cfamiliaris.UCSC.canFam4.refGene.html
 ---
 
-
 # bioconductor-txdb.cfamiliaris.ucsc.canfam4.refgene
 
 name: bioconductor-txdb.cfamiliaris.ucsc.canfam4.refgene

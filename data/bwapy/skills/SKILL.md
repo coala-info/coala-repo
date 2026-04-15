@@ -2,8 +2,9 @@
 name: bwapy
 description: bwapy is a Python wrapper for the BWA MEM aligner that enables high-performance sequence mapping and alignment within Python applications. Use when user asks to align DNA sequences to a reference index, perform real-time sequence analysis in Python, or configure BWA MEM options for specific sequencing technologies.
 homepage: https://github.com/nanoporetech/bwapy
+metadata:
+  docker_image: "quay.io/biocontainers/bwapy:0.1.4--py311h384fd50_10"
 ---
-
 
 # bwapy
 

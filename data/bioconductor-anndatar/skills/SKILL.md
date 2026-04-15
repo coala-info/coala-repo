@@ -4,7 +4,6 @@ description: The anndataR package provides a native R implementation of the AnnD
 homepage: https://bioconductor.org/packages/release/bioc/html/anndataR.html
 ---
 
-
 # bioconductor-anndatar
 
 ## Overview

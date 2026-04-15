@@ -1,10 +1,12 @@
 ---
 name: intro-to-genome-assembly
-description: "This genome assembly workflow processes paired-end FASTQ reads using FastQC and MultiQC for quality control, performs de novo assembly with the Velvet suite, and evaluates the resulting contigs against a reference using Quast. Use this skill when you need to reconstruct a microbial genome from raw sequencing data and assess the structural integrity and completeness of the assembled contigs."
-homepage: https://workflowhub.eu/workflows/1622
+description: This genome assembly workflow processes paired-end FASTQ reads using FastQC and MultiQC for quality control, performs de novo assembly with the Velvet suite, and evaluates the resulting contigs against a reference using Quast. Use this skill when you need to reconstruct a microbial genome from raw sequencing data and assess the structural integrity and completeness of the assembled contigs.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Intro to Genome Assembly
+# intro-to-genome-assembly
 
 ## Overview
 

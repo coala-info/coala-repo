@@ -2,8 +2,9 @@
 name: phonenumbers
 description: The phonenumbers tool parses, validates, formats, and extracts metadata for international phone numbers. Use when user asks to parse raw strings into phone number objects, validate numbers against regional rules, format numbers for display or storage, extract geographic or carrier information, and find phone numbers within unstructured text.
 homepage: https://github.com/daviddrysdale/python-phonenumbers
+metadata:
+  docker_image: "quay.io/biocontainers/phonenumbers:7.2.4--py35_0"
 ---
-
 
 # phonenumbers
 

@@ -4,7 +4,6 @@ description: This package provides masked genome sequences for the Apis mellifer
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.UCSC.apiMel2.masked.html
 ---
 
-
 # bioconductor-bsgenome.amellifera.ucsc.apimel2.masked
 
 name: bioconductor-bsgenome.amellifera.ucsc.apimel2.masked

@@ -4,7 +4,6 @@ description: This package provides essential genomic datasets and resources requ
 homepage: https://bioconductor.org/packages/release/data/experiment/html/biscuiteerData.html
 ---
 
-
 # bioconductor-biscuiteerdata
 
 ## Overview

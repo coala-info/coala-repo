@@ -2,8 +2,9 @@
 name: spydrpick
 description: SpydrPick detects co-evolutionary signals in aligned genomic datasets by calculating mutual information and applying the ARACNE algorithm to identify direct genomic couplings. Use when user asks to detect co-evolutionary signals, identify genomic couplings, or analyze mutual information in nucleotide alignments while correcting for population structure and linkage disequilibrium.
 homepage: https://github.com/santeripuranen/SpydrPick
+metadata:
+  docker_image: "quay.io/biocontainers/spydrpick:1.2.0--h78a066a_0"
 ---
-
 
 # spydrpick
 

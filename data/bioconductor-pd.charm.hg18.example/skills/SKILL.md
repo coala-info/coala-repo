@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequences for the h
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.charm.hg18.example.html
 ---
 
-
 # bioconductor-pd.charm.hg18.example
 
 name: bioconductor-pd.charm.hg18.example

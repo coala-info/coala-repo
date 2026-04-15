@@ -4,7 +4,6 @@ description: SigFuge analyzes RNA-seq read depth coverage using functional data 
 homepage: https://bioconductor.org/packages/release/bioc/html/SigFuge.html
 ---
 
-
 # bioconductor-sigfuge
 
 name: bioconductor-sigfuge

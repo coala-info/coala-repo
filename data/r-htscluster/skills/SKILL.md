@@ -4,7 +4,6 @@ description: The r-htscluster package implements Poisson mixture models to clust
 homepage: https://cran.r-project.org/web/packages/htscluster/index.html
 ---
 
-
 # r-htscluster
 
 ## Overview

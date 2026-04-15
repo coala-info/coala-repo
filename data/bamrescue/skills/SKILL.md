@@ -1,7 +1,9 @@
 ---
 name: bamrescue
-description: "bamrescue identifies and repairs data loss in corrupted BAM files by skipping damaged BGZF blocks and concatenating the valid ones. Use when user asks to check BAM file integrity, identify corruption in genomic data, or rescue readable data from corrupted BAM files."
+description: bamrescue identifies and repairs data loss in corrupted BAM files by skipping damaged BGZF blocks and concatenating the valid ones. Use when user asks to check BAM file integrity, identify corruption in genomic data, or rescue readable data from corrupted BAM files.
 homepage: https://github.com/Arkanosis/bamrescue
+metadata:
+  docker_image: "quay.io/biocontainers/bamrescue:0.3.0--h4349ce8_0"
 ---
 
 # bamrescue

@@ -1,10 +1,12 @@
 ---
 name: cp_pipeline_idr_training
-description: "This Galaxy workflow downloads biological images from the Image Data Resource and performs automated nucleoli segmentation and feature extraction using a comprehensive suite of CellProfiler tools. Use this skill when you need to quantify morphological characteristics, texture, and intensity of sub-nuclear structures across large-scale microscopy datasets for phenotypic profiling."
-homepage: https://workflowhub.eu/workflows/41
+description: This Galaxy workflow downloads biological images from the Image Data Resource and performs automated nucleoli segmentation and feature extraction using a comprehensive suite of CellProfiler tools. Use this skill when you need to quantify morphological characteristics, texture, and intensity of sub-nuclear structures across large-scale microscopy datasets for phenotypic profiling.
+homepage: https://www.ibisba.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# CP_pipeline_IDR_training
+# cp_pipeline_idr_training
 
 ## Overview
 

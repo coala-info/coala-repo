@@ -4,7 +4,6 @@ description: HTSeqGenie provides an integrated pipeline for the end-to-end analy
 homepage: https://bioconductor.org/packages/3.8/bioc/html/HTSeqGenie.html
 ---
 
-
 # bioconductor-htseqgenie
 
 name: bioconductor-htseqgenie

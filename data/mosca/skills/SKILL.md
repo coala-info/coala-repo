@@ -2,6 +2,8 @@
 name: mosca
 description: MOSCA is an automated pipeline that integrates metagenomic, metatranscriptomic, and metaproteomic data to characterize the taxonomy and functional pathways of microbial communities. Use when user asks to perform multi-omics integration, assemble and bin microbial reads, annotate genes using UniProt, or visualize metabolic pathways.
 homepage: https://github.com/iquasere/MOSCA
+metadata:
+  docker_image: "quay.io/biocontainers/mosca:2.3.0--hdfd78af_0"
 ---
 
 # mosca

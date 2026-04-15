@@ -4,7 +4,6 @@ description: The mimager package visualizes microarray probe-level data to ident
 homepage: https://bioconductor.org/packages/release/bioc/html/mimager.html
 ---
 
-
 # bioconductor-mimager
 
 name: bioconductor-mimager

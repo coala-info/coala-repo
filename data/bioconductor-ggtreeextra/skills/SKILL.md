@@ -4,7 +4,6 @@ description: This tool extends ggtree to visualize phylogenetic trees with multi
 homepage: https://bioconductor.org/packages/release/bioc/html/ggtreeExtra.html
 ---
 
-
 # bioconductor-ggtreeextra
 
 name: bioconductor-ggtreeextra

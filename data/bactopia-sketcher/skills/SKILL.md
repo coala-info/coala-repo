@@ -2,8 +2,9 @@
 name: bactopia-sketcher
 description: bactopia-sketcher generates compact MinHash sketches of genomic data to enable rapid comparison and identification of sequencing reads or assemblies. Use when user asks to create Mash or Sourmash signatures, estimate genetic distance, identify species, or screen for contamination.
 homepage: https://bactopia.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/bactopia-sketcher:1.0.2--hdfd78af_0"
 ---
-
 
 # bactopia-sketcher
 

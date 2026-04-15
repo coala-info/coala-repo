@@ -4,7 +4,6 @@ description: This package provides curated, pre-processed microarray and RNA-seq
 homepage: https://bioconductor.org/packages/release/data/experiment/html/sampleClassifierData.html
 ---
 
-
 # bioconductor-sampleclassifierdata
 
 name: bioconductor-sampleclassifierdata

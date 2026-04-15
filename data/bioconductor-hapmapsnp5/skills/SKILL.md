@@ -4,7 +4,6 @@ description: This package provides sample Affymetrix SNP 5.0 HapMap data for tes
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmapsnp5.html
 ---
 
-
 # bioconductor-hapmapsnp5
 
 name: bioconductor-hapmapsnp5

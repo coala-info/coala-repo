@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Asparagus offic
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Aofficinalis.NCBI.V1.html
 ---
 
-
 # bioconductor-bsgenome.aofficinalis.ncbi.v1
 
 name: bioconductor-bsgenome.aofficinalis.ncbi.v1

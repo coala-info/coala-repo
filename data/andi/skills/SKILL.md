@@ -2,8 +2,9 @@
 name: andi
 description: andi calculates evolutionary distances between closely related genomic sequences using an alignment-free approach based on long exact matches. Use when user asks to estimate genomic distances, generate a distance matrix for phylogeny reconstruction, or compare thousands of closely related genomes efficiently.
 homepage: https://github.com/evolbioinf/andi/
+metadata:
+  docker_image: "quay.io/biocontainers/andi:0.14--hfc2f157_2"
 ---
-
 
 # andi
 

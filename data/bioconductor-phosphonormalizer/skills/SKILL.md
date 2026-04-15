@@ -4,7 +4,6 @@ description: This package performs pairwise normalization for label-free mass sp
 homepage: https://bioconductor.org/packages/release/bioc/html/phosphonormalizer.html
 ---
 
-
 # bioconductor-phosphonormalizer
 
 ## Overview

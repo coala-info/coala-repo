@@ -2,8 +2,9 @@
 name: pash
 description: PaSh is a compiler and runtime system that automatically parallelizes shell scripts to execute across multiple CPU cores. Use when user asks to parallelize shell pipelines, optimize script performance, or execute bash commands with data-parallel transformations.
 homepage: https://github.com/binpash/pash
+metadata:
+  docker_image: "quay.io/biocontainers/pash:3.0.6.2--0"
 ---
-
 
 # pash
 

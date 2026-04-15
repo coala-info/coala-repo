@@ -4,7 +4,6 @@ description: This package provides example top-down proteomics datasets for test
 homepage: https://bioconductor.org/packages/release/data/experiment/html/topdownrdata.html
 ---
 
-
 # bioconductor-topdownrdata
 
 name: bioconductor-topdownrdata

@@ -4,7 +4,6 @@ description: This tool performs pseudo-bulk aggregation of single-cell RNA seque
 homepage: https://bioconductor.org/packages/release/bioc/html/aggregateBioVar.html
 ---
 
-
 # bioconductor-aggregatebiovar
 
 name: bioconductor-aggregatebiovar

@@ -2,8 +2,9 @@
 name: gfastats
 description: gfastats is a high-performance tool for evaluating, reporting, and modifying genome assembly files. Use when user asks to generate assembly statistics, convert between FASTA and GFA formats, manipulate assemblies using SAK instructions, or filter sequences with BED files.
 homepage: https://github.com/vgl-hub/gfastats
+metadata:
+  docker_image: "quay.io/biocontainers/gfastats:1.3.11--h077b44d_0"
 ---
-
 
 # gfastats
 

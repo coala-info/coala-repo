@@ -4,7 +4,6 @@ description: This package integrates protein complex data from multiple database
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ScISI.html
 ---
 
-
 # bioconductor-scisi
 
 ## Overview

@@ -2,8 +2,9 @@
 name: snakemake-interface-logger-plugins
 description: This package provides the Python interface for developing custom Snakemake logger plugins to capture and redirect execution events. Use when user asks to create a custom log handler, migrate legacy log handler scripts to the modern plugin architecture, or implement specialized logging for Snakemake events.
 homepage: https://github.com/snakemake/snakemake-interface-logger-plugins
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-interface-logger-plugins:2.0.0--pyhd4c3c12_0"
 ---
-
 
 # snakemake-interface-logger-plugins
 

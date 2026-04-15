@@ -4,7 +4,6 @@ description: The r-shaman package performs a-parametric normalization of Hi-C co
 homepage: https://cran.r-project.org/web/packages/shaman/index.html
 ---
 
-
 # r-shaman
 
 name: r-shaman

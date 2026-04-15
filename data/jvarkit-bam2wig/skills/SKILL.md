@@ -2,8 +2,9 @@
 name: jvarkit-bam2wig
 description: This tool converts BAM alignment files into Wiggle or BedGraph formats to visualize genomic coverage and alignment metrics. Use when user asks to generate coverage tracks, convert BAM to Wiggle or BedGraph, visualize read clipping and indels, or calculate coverage ratios between samples.
 homepage: http://lindenb.github.io/jvarkit/Bam2Wig.html
+metadata:
+  docker_image: "quay.io/biocontainers/jvarkit-bam2wig:201904251722--0"
 ---
-
 
 # jvarkit-bam2wig
 

@@ -2,8 +2,9 @@
 name: bamsnap
 description: Bamsnap converts genomic data from BAM format into static PNG images for visual inspection and reporting. Use when user asks to generate snapshots of specific genomic coordinates, visualize variants in BAM files, or create images of sequencing reads with gene annotations.
 homepage: https://github.com/danielmsk/bamsnap
+metadata:
+  docker_image: "quay.io/biocontainers/bamsnap:0.2.19--py_0"
 ---
-
 
 # bamsnap
 

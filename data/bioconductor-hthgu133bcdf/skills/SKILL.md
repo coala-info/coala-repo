@@ -4,7 +4,6 @@ description: This package provides Chip Definition File mapping and coordinate c
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133bcdf.html
 ---
 
-
 # bioconductor-hthgu133bcdf
 
 name: bioconductor-hthgu133bcdf

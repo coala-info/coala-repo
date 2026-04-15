@@ -4,7 +4,6 @@ description: This tool provides functions for the processing and statistical ana
 homepage: https://bioconductor.org/packages/release/bioc/html/DAPAR.html
 ---
 
-
 # bioconductor-dapar
 
 name: bioconductor-dapar

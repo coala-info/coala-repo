@@ -4,7 +4,6 @@ description: This tool provides infrastructure for adding, formatting, and valid
 homepage: https://bioconductor.org/packages/release/bioc/html/ExperimentHubData.html
 ---
 
-
 # bioconductor-experimenthubdata
 
 name: bioconductor-experimenthubdata

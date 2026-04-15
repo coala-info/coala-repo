@@ -2,8 +2,9 @@
 name: perl-bio-cigar
 description: This Perl module parses and manages CIGAR strings to facilitate coordinate mapping between sequencing reads and reference genomes. Use when user asks to translate coordinates between query and reference positions, calculate alignment lengths, or decompose CIGAR strings into individual operations.
 homepage: http://search.cpan.org/~tsibley/Bio-Cigar-1.01
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-cigar:1.01--pl526_3"
 ---
-
 
 # perl-bio-cigar
 

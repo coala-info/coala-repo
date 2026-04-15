@@ -4,7 +4,6 @@ description: This tool performs multivariate and directional gene set testing to
 homepage: https://bioconductor.org/packages/3.5/bioc/html/mvGST.html
 ---
 
-
 # bioconductor-mvgst
 
 name: bioconductor-mvgst

@@ -4,7 +4,6 @@ description: BiocSklearn provides an R interface to the scikit-learn library for
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocSklearn.html
 ---
 
-
 # bioconductor-biocsklearn
 
 ## Overview

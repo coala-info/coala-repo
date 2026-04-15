@@ -4,7 +4,6 @@ description: This R package generates V-plots and footprint profiles to visualiz
 homepage: https://bioconductor.org/packages/release/bioc/html/VplotR.html
 ---
 
-
 # bioconductor-vplotr
 
 name: bioconductor-vplotr

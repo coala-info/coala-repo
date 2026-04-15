@@ -4,7 +4,6 @@ description: This package provides a central infrastructure of S4 generic functi
 homepage: https://bioconductor.org/packages/release/bioc/html/ProtGenerics.html
 ---
 
-
 # bioconductor-protgenerics
 
 ## Overview

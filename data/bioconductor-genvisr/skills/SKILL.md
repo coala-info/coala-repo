@@ -4,7 +4,6 @@ description: GenVisR produces highly customizable, publication-quality graphics 
 homepage: https://bioconductor.org/packages/release/bioc/html/GenVisR.html
 ---
 
-
 # bioconductor-genvisr
 
 name: bioconductor-genvisr

@@ -1,10 +1,12 @@
 ---
 name: clustering-3k-pbmc-with-scanpy
-description: "This scRNA-seq workflow processes gene expression matrices, barcodes, and gene lists using Scanpy and AnnData tools to perform filtering, normalization, dimensionality reduction, and clustering. Use this skill when you need to identify distinct cell populations, detect marker genes, and visualize cluster-specific expression patterns in peripheral blood mononuclear cell datasets or similar single-cell experiments."
-homepage: https://workflowhub.eu/workflows/1519
+description: This scRNA-seq workflow processes gene expression matrices, barcodes, and gene lists using Scanpy and AnnData tools to perform filtering, normalization, dimensionality reduction, and clustering. Use this skill when you need to identify distinct cell populations, detect marker genes, and visualize cluster-specific expression patterns in peripheral blood mononuclear cell datasets or similar single-cell experiments.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clustering 3k PBMC with Scanpy
+# clustering-3k-pbmc-with-scanpy
 
 ## Overview
 

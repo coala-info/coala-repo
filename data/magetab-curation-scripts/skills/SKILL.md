@@ -2,6 +2,8 @@
 name: magetab-curation-scripts
 description: The magetab-curation-scripts suite provides Perl-based utilities for the validation and curation of functional genomics experiment metadata in MAGE-TAB format. Use when user asks to validate MAGE-TAB files, check array design format files, verify Expression Atlas eligibility, or perform curation tasks for genomics databases.
 homepage: https://github.com/ebi-gene-expression-group/perl-curation-scripts
+metadata:
+  docker_image: "quay.io/biocontainers/magetab-curation-scripts:1.1.0--hdfd78af_0"
 ---
 
 # magetab-curation-scripts

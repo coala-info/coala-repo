@@ -4,7 +4,6 @@ description: This package provides access to the Varambally et al. (2005) prosta
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerVarambally.html
 ---
 
-
 # bioconductor-prostatecancervarambally
 
 name: bioconductor-prostatecancervarambally

@@ -2,6 +2,8 @@
 name: cansnper2
 description: CanSNPer2 is a bioinformatics pipeline that classifies bacterial genomes by aligning query sequences against reference genomes to identify lineage-defining SNPs. Use when user asks to classify bacterial genomes, create custom SNP-typing databases, download reference sequences, or generate phylogenetic tree visualizations.
 homepage: https://github.com/FOI-Bioinformatics/CanSNPer2
+metadata:
+  docker_image: "quay.io/biocontainers/cansnper2:2.0.6--py_0"
 ---
 
 # cansnper2

@@ -1,10 +1,12 @@
 ---
 name: erga-hifi-hap1hap2-purgeqc-v2309-wf3
-description: "This ERGA workflow processes dual-haplotype HiFi GFA contigs using purge_dups and minimap2 to remove haplotypic duplications while performing quality assessment with BUSCO, Merqury, and gfastats. Use this skill when you need to refine a diploid genome assembly by purging false duplications from primary and alternate haplotypes and validating the resulting assembly's completeness and k-mer consistency."
-homepage: https://workflowhub.eu/workflows/606
+description: This ERGA workflow processes dual-haplotype HiFi GFA contigs using purge_dups and minimap2 to remove haplotypic duplications while performing quality assessment with BUSCO, Merqury, and gfastats. Use this skill when you need to refine a diploid genome assembly by purging false duplications from primary and alternate haplotypes and validating the resulting assembly's completeness and k-mer consistency.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA HiFi Hap1Hap2 Purge+QC v2309 (WF3)
+# erga-hifi-hap1hap2-purgeqc-v2309-wf3
 
 ## Overview
 

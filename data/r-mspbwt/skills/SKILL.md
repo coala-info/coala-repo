@@ -4,7 +4,6 @@ description: The r-mspbwt package implements the Multi Symbol Positional Burrows
 homepage: https://cran.r-project.org/web/packages/mspbwt/index.html
 ---
 
-
 # r-mspbwt
 
 name: r-mspbwt

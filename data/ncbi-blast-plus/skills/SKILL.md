@@ -4,7 +4,6 @@ description: NCBI BLAST+ compares biological sequences to identify regions of lo
 homepage: https://github.com/ncbi/blast_plus_docs
 ---
 
-
 # ncbi-blast-plus
 
 ## Overview

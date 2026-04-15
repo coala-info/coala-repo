@@ -2,8 +2,9 @@
 name: ucsc-positionaltblcheck
 description: ucsc-positionaltblcheck validates that genomic data tables are correctly sorted by chromosome and start position. Use when user asks to check the sorting of genomic tables, verify BED file order, confirm integrity of exported genomic data, or validate sorting in bioinformatics pipelines.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-positionaltblcheck:482--h0b57e2e_0"
 ---
-
 
 # ucsc-positionaltblcheck
 

@@ -1,9 +1,10 @@
 ---
 name: scipy
-description: "SciPy provides efficient numerical routines for scientific computing tasks including optimization, statistics, signal processing, and linear algebra. Use when user asks to perform numerical integration, solve differential equations, optimize functions, analyze signals, or manipulate sparse matrices."
+description: SciPy provides efficient numerical routines for scientific computing tasks including optimization, statistics, signal processing, and linear algebra. Use when user asks to perform numerical integration, solve differential equations, optimize functions, analyze signals, or manipulate sparse matrices.
 homepage: https://github.com/scipy/scipy
+metadata:
+  docker_image: "quay.io/biocontainers/scipy:1.1.0"
 ---
-
 
 # scipy
 

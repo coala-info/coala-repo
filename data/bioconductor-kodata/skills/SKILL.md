@@ -4,7 +4,6 @@ description: This package provides access to LINCS knock-out consensus genomic s
 homepage: https://bioconductor.org/packages/release/data/experiment/html/KOdata.html
 ---
 
-
 # bioconductor-kodata
 
 name: bioconductor-kodata

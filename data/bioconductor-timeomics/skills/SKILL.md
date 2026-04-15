@@ -4,7 +4,6 @@ description: bioconductor-timeomics provides a multivariate framework for the an
 homepage: https://bioconductor.org/packages/release/bioc/html/timeOmics.html
 ---
 
-
 # bioconductor-timeomics
 
 ## Overview

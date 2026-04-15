@@ -2,6 +2,8 @@
 name: fsnviz
 description: FsnViz is a command-line utility that generates Circos plots to visualize RNA-seq gene fusion events from tabular data. Use when user asks to create genomic maps of gene fusions, visualize STAR-Fusion or FusionCatcher results, or generate SVG plots of chromosomal translocations.
 homepage: https://github.com/bow/fsnviz
+metadata:
+  docker_image: "quay.io/biocontainers/fsnviz:0.3.0--py35_1"
 ---
 
 # fsnviz

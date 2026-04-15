@@ -4,7 +4,6 @@ description: This package provides a 16S rRNA microbiome dataset from a human en
 homepage: https://bioconductor.org/packages/release/data/experiment/html/etec16s.html
 ---
 
-
 # bioconductor-etec16s
 
 ## Overview

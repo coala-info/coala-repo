@@ -4,7 +4,6 @@ description: This tool performs statistical testing for DNA methylation differen
 homepage: https://bioconductor.org/packages/3.6/bioc/html/M3D.html
 ---
 
-
 # bioconductor-m3d
 
 name: bioconductor-m3d

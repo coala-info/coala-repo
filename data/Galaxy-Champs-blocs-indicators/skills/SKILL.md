@@ -1,10 +1,12 @@
 ---
 name: champs-blocs-indicators
-description: "This ecological workflow processes field survey CSV data using IVR, QECB, and Ecology tools to compute specific environmental indicators and generate associated plots. Use this skill when you need to evaluate biodiversity or habitat quality indicators from Champs blocs field observations to assess ecological status."
-homepage: https://workflowhub.eu/workflows/1690
+description: This ecological workflow processes field survey CSV data using IVR, QECB, and Ecology tools to compute specific environmental indicators and generate associated plots. Use this skill when you need to evaluate biodiversity or habitat quality indicators from Champs blocs field observations to assess ecological status.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Champs blocs indicators
+# champs-blocs-indicators
 
 ## Overview
 

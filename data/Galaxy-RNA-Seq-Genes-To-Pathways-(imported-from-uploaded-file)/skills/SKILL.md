@@ -1,10 +1,12 @@
 ---
 name: rna-seq-genes-to-pathways-imported-from-uploaded-file
-description: "This transcriptomics workflow processes differential expression tables and count data using EGSEA, fgsea, and goseq to perform comprehensive functional enrichment analysis. Use this skill when you need to identify overrepresented biological pathways or gene sets from ranked gene lists to understand the functional implications of differential gene expression in mouse or other model organisms."
-homepage: https://workflowhub.eu/workflows/1699
+description: This transcriptomics workflow processes differential expression tables and count data using EGSEA, fgsea, and goseq to perform comprehensive functional enrichment analysis. Use this skill when you need to identify overrepresented biological pathways or gene sets from ranked gene lists to understand the functional implications of differential gene expression in mouse or other model organisms.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA Seq Genes To Pathways (imported from uploaded file)
+# rna-seq-genes-to-pathways-imported-from-uploaded-file
 
 ## Overview
 

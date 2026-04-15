@@ -1,9 +1,12 @@
 ---
 name: nanopore-guppy-basecalling-assembly-workflow
-description: "This CWL workflow processes raw Oxford Nanopore sequencing data through basecalling, quality control, taxonomic classification, and de novo assembly using tools such as Guppy, Kraken2, and Flye. Use this skill when you need to reconstruct high-quality genomes from raw signal data and characterize the taxonomic composition of environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/253
+description: This CWL workflow processes raw Oxford Nanopore sequencing data through basecalling, quality control, taxonomic classification, and de novo assembly using tools such as Guppy, Kraken2, and Flye. Use this skill when you need to reconstruct high-quality genomes from raw signal data and characterize the taxonomic composition of environmental or clinical samples.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Nanopore Guppy Basecalling Assembly Workflow
+
+# nanopore-guppy-basecalling-assembly-workflow
 
 ## Overview
 

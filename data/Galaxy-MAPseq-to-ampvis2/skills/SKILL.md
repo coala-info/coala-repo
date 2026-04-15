@@ -1,10 +1,12 @@
 ---
 name: mapseq-to-ampvis2
-description: "This microbiome workflow processes MAPseq OTU tables and metadata using Query Tabular and text reformatting tools to generate structured datasets for ampvis2 analysis. Use this skill when you need to transform raw MAPseq taxonomic assignments into a standardized format for downstream visualization and statistical analysis of microbial community diversity."
-homepage: https://workflowhub.eu/workflows/1855
+description: This microbiome workflow processes MAPseq OTU tables and metadata using Query Tabular and text reformatting tools to generate structured datasets for ampvis2 analysis. Use this skill when you need to transform raw MAPseq taxonomic assignments into a standardized format for downstream visualization and statistical analysis of microbial community diversity.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MAPseq to ampvis2
+# mapseq-to-ampvis2
 
 ## Overview
 

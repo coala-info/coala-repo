@@ -4,7 +4,6 @@ description: This tool performs probabilistic data integration to identify depen
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pint.html
 ---
 
-
 # bioconductor-pint
 
 name: bioconductor-pint

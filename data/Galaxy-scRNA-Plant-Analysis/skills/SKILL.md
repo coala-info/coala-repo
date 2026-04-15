@@ -1,10 +1,12 @@
 ---
 name: scrna-plant-analysis
-description: "This Galaxy workflow processes plant single-cell RNA-seq count matrices using ScanPy and AnnData tools to perform quality control, normalization, and dimensionality reduction. Use this skill when you need to identify cell clusters, compare transcriptomic profiles between wild-type and mutant plant samples, and visualize gene expression patterns across different cell populations."
-homepage: https://workflowhub.eu/workflows/1574
+description: This Galaxy workflow processes plant single-cell RNA-seq count matrices using ScanPy and AnnData tools to perform quality control, normalization, and dimensionality reduction. Use this skill when you need to identify cell clusters, compare transcriptomic profiles between wild-type and mutant plant samples, and visualize gene expression patterns across different cell populations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# scRNA Plant Analysis
+# scrna-plant-analysis
 
 ## Overview
 

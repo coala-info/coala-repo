@@ -2,8 +2,9 @@
 name: ldblockshow
 description: ldblockshow generates linkage disequilibrium heatmaps and identifies haplotype blocks from VCF files while integrating functional annotations and statistical signals. Use when user asks to visualize LD patterns, identify haplotype blocks, overlay GWAS signals on LD plots, or generate publication-quality genomic heatmaps.
 homepage: https://github.com/BGI-shenzhen/LDBlockShow
+metadata:
+  docker_image: "quay.io/biocontainers/ldblockshow:1.41--pl5321h077b44d_0"
 ---
-
 
 # ldblockshow
 

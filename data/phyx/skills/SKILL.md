@@ -2,6 +2,8 @@
 name: phyx
 description: Phyx is a collection of command-line utilities designed for efficient phylogenetic data manipulation and workflow construction. Use when user asks to concatenate alignments, reroot or prune trees, convert sequence formats, or clean alignments by removing ambiguous data.
 homepage: https://github.com/FePhyFoFum/phyx
+metadata:
+  docker_image: "quay.io/biocontainers/phyx:1.1--hc0837bd_5"
 ---
 
 # phyx

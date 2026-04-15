@@ -1,9 +1,10 @@
 ---
 name: gadma
-description: "GADMA automatically infers the joint demographic history of multiple populations from genetic data using global and local search algorithms. Use when user asks to infer demographic models from allele frequency spectrum data, automate the discovery of population histories, or perform demographic inference using engines like dadi, moments, or momi2."
+description: GADMA automatically infers the joint demographic history of multiple populations from genetic data using global and local search algorithms. Use when user asks to infer demographic models from allele frequency spectrum data, automate the discovery of population histories, or perform demographic inference using engines like dadi, moments, or momi2.
 homepage: https://github.com/ctlab/GADMA
+metadata:
+  docker_image: "quay.io/biocontainers/gadma:2.0.3--pyhdfd78af_0"
 ---
-
 
 # gadma
 

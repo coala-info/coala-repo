@@ -2,8 +2,9 @@
 name: bubblefinder
 description: BubbleFinder identifies and decomposes structural sites like snarls, superbubbles, and ultrabubbles in pangenome graphs using linear-time SPQR-tree algorithms. Use when user asks to detect snarls, identify superbubbles or ultrabubbles in GFA files, or export SPQR-tree structures for genomic variation analysis.
 homepage: https://github.com/algbio/BubbleFinder
+metadata:
+  docker_image: "quay.io/biocontainers/bubblefinder:1.0.3--h503566f_0"
 ---
-
 
 # bubblefinder
 

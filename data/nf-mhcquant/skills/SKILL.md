@@ -4,6 +4,8 @@ description: This pipeline identifies and quantifies immunopeptides from DDA mas
 homepage: https://github.com/nf-core/mhcquant
 ---
 
+# mhcquant
+
 ## Overview
 nf-core/mhcquant is a bioinformatics pipeline designed for the analysis of data-dependent acquisition (DDA) immunopeptidomics data. It identifies peptides presented on major histocompatibility complex (MHC) molecules, which are critical for T-cell immunosurveillance and clinical immunotherapy research. The workflow utilizes the OpenMS framework for computational mass spectrometry, performing database searches and peptide-spectrum-match rescoring.
 

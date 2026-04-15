@@ -2,8 +2,9 @@
 name: ucsc-matrixmarkettotsv
 description: The ucsc-matrixmarkettotsv tool converts sparse matrices from Matrix Market format into tab-separated value (TSV) files. Use when user asks to 'convert Matrix Market files to TSV', 'flatten sparse matrices', or 'prepare sparse matrix data for downstream analysis'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-matrixmarkettotsv:482--h0b57e2e_0"
 ---
-
 
 # ucsc-matrixmarkettotsv
 

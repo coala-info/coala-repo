@@ -2,8 +2,9 @@
 name: perl-sanger-cgp-allelecount
 description: This tool generates coverage counts for each allele at specific genomic locations from BAM or CRAM files. Use when user asks to count allele frequencies at specific loci, generate input for copy number algorithms like AscatNGS or Battenberg, or convert allele counts to JSON format.
 homepage: https://github.com/cancerit/alleleCount
+metadata:
+  docker_image: "quay.io/biocontainers/perl-sanger-cgp-allelecount:4.3.0--pl5321h7b50bb2_2"
 ---
-
 
 # perl-sanger-cgp-allelecount
 

@@ -1,10 +1,12 @@
 ---
 name: kmer-profiling-hifi-trio-vgp2
-description: "This VGP workflow utilizes Meryl and GenomeScope to process PacBio HiFi reads alongside paternal and maternal sequencing data for k-mer frequency analysis and haplotype partitioning. Use this skill when you need to estimate genomic complexity, including genome size, heterozygosity, and repeat content, while generating haplotype-specific k-mer databases for trio-based assembly quality control."
-homepage: https://workflowhub.eu/workflows/631
+description: This VGP workflow utilizes Meryl and GenomeScope to process PacBio HiFi reads alongside paternal and maternal sequencing data for k-mer frequency analysis and haplotype partitioning. Use this skill when you need to estimate genomic complexity, including genome size, heterozygosity, and repeat content, while generating haplotype-specific k-mer databases for trio-based assembly quality control.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# kmer-profiling-hifi-trio-VGP2
+# kmer-profiling-hifi-trio-vgp2
 
 ## Overview
 

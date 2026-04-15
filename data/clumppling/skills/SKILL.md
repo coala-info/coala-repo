@@ -2,8 +2,9 @@
 name: clumppling
 description: Clumppling aligns cluster labels across multiple runs of clustering algorithms to ensure consistency in population genetics results. Use when user asks to align clustering replicates, resolve label switching problems, identify consensus modes, or track cluster changes across different K-values.
 homepage: https://pypi.org/project/clumppling
+metadata:
+  docker_image: "quay.io/biocontainers/clumppling:2.0.6--pyhdfd78af_0"
 ---
-
 
 # clumppling
 

@@ -4,7 +4,6 @@ description: This package provides comprehensive biological annotations and data
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xlaevis.db.html
 ---
 
-
 # bioconductor-xlaevis.db
 
 ## Overview

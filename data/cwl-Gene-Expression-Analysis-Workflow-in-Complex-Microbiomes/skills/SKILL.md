@@ -1,9 +1,12 @@
 ---
 name: gene-expression-analysis-workflow-in-complex-microbiomes
-description: "This CWL workflow performs transcriptional profiling of complex microbiomes by integrating metagenomic and metatranscriptomic short-read data using Megahit for assembly, BWA MEM for mapping, and BLAST and DIAMOND for functional annotation. Use this skill when you need to quantify gene expression levels and characterize the functional metabolic potential of microbial communities across different environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/1955
+description: This CWL workflow performs transcriptional profiling of complex microbiomes by integrating metagenomic and metatranscriptomic short-read data using Megahit for assembly, BWA MEM for mapping, and BLAST and DIAMOND for functional annotation. Use this skill when you need to quantify gene expression levels and characterize the functional metabolic potential of microbial communities across different environmental or clinical samples.
+homepage: https://bonohu.hiroshima-u.ac.jp/index_en.html
+metadata:
+  docker_image: "N/A"
 ---
-# Gene Expression Analysis Workflow in Complex Microbiomes
+
+# gene-expression-analysis-workflow-in-complex-microbiomes
 
 ## Overview
 

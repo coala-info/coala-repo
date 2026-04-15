@@ -4,7 +4,6 @@ description: This tool infers cell type-specific gene expression from heterogene
 homepage: https://bioconductor.org/packages/release/bioc/html/CellMapper.html
 ---
 
-
 # bioconductor-cellmapper
 
 name: bioconductor-cellmapper

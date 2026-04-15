@@ -4,7 +4,6 @@ description: This package provides a structured, offline compilation of ENCODE m
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ENCODExplorerData.html
 ---
 
-
 # bioconductor-encodexplorerdata
 
 ## Overview

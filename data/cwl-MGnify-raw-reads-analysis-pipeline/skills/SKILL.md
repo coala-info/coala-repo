@@ -1,9 +1,12 @@
 ---
 name: mgnify-raw-reads-analysis-pipeline
-description: "This Common Workflow Language pipeline processes raw metagenomic sequencing reads through quality control, taxonomic classification, and functional annotation to analyze microbiome data. Use this skill when you need to characterize the taxonomic diversity and metabolic potential of microbial communities within environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/362
+description: This Common Workflow Language pipeline processes raw metagenomic sequencing reads through quality control, taxonomic classification, and functional annotation to analyze microbiome data. Use this skill when you need to characterize the taxonomic diversity and metabolic potential of microbial communities within environmental or clinical samples.
+homepage: https://www.ebi.ac.uk/metagenomics/
+metadata:
+  docker_image: "N/A"
 ---
-# MGnify - raw-reads analysis pipeline
+
+# mgnify-raw-reads-analysis-pipeline
 
 ## Overview
 

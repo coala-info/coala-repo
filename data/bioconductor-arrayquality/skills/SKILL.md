@@ -4,7 +4,6 @@ description: This tool performs comprehensive quality assessment and diagnostic 
 homepage: https://bioconductor.org/packages/release/bioc/html/arrayQuality.html
 ---
 
-
 # bioconductor-arrayquality
 
 name: bioconductor-arrayquality

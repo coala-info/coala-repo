@@ -1,10 +1,12 @@
 ---
 name: gtn-proteogemics3-novel-peptide-analysis
-description: "This proteogenomics workflow identifies and characterizes novel peptides by processing PSM reports and peptide sequences using NCBI BLAST+, Query Tabular, and PepPointer against genomic and proteomic reference data. Use this skill when you need to validate potential novel peptide sequences, map them to their genomic locations, and distinguish between known proteins and unannotated genomic regions in mouse proteogenomic studies."
-homepage: https://workflowhub.eu/workflows/1467
+description: This proteogenomics workflow identifies and characterizes novel peptides by processing PSM reports and peptide sequences using NCBI BLAST+, Query Tabular, and PepPointer against genomic and proteomic reference data. Use this skill when you need to validate potential novel peptide sequences, map them to their genomic locations, and distinguish between known proteins and unannotated genomic regions in mouse proteogenomic studies.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN Proteogemics3 Novel Peptide Analysis
+# gtn-proteogemics3-novel-peptide-analysis
 
 ## Overview
 

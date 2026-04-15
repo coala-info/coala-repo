@@ -4,7 +4,6 @@ description: The r-zerone package discretizes ChIP-seq data by classifying genom
 homepage: https://cran.r-project.org/web/packages/zerone/index.html
 ---
 
-
 # r-zerone
 
 ## Overview

@@ -1,7 +1,9 @@
 ---
 name: analyze_screen
-description: "This Galaxy workflow processes HeLa fluorescence siRNA screen images and rules through a feature extraction subworkflow and collection collapsing tools. Use this skill when you need to quantify cellular phenotypes and analyze high-throughput imaging data from siRNA knockdown experiments in HeLa cell lines."
-homepage: https://workflowhub.eu/workflows/1512
+description: This Galaxy workflow processes HeLa fluorescence siRNA screen images and rules through a feature extraction subworkflow and collection collapsing tools. Use this skill when you need to quantify cellular phenotypes and analyze high-throughput imaging data from siRNA knockdown experiments in HeLa cell lines.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # analyze_screen

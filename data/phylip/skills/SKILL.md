@@ -2,6 +2,8 @@
 name: phylip
 description: PHYLIP is a comprehensive suite of programs used for inferring evolutionary phylogenies and performing phylogenetic analysis. Use when user asks to build neighbor-joining trees, perform maximum likelihood analysis, generate consensus trees from bootstrapped data, or compute genetic distances.
 homepage: http://evolution.genetics.washington.edu/phylip/
+metadata:
+  docker_image: "quay.io/biocontainers/phylip:3.697--h470a237_0"
 ---
 
 # phylip

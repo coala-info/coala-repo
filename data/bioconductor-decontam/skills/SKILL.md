@@ -4,7 +4,6 @@ description: The bioconductor-decontam package provides statistical methods to i
 homepage: https://bioconductor.org/packages/release/bioc/html/decontam.html
 ---
 
-
 # bioconductor-decontam
 
 ## Overview

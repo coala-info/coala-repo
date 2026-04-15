@@ -4,7 +4,6 @@ description: This package provides a normalized gene expression dataset from syn
 homepage: https://bioconductor.org/packages/release/data/experiment/html/rheumaticConditionWOLLBOLD.html
 ---
 
-
 # bioconductor-rheumaticconditionwollbold
 
 name: bioconductor-rheumaticconditionwollbold

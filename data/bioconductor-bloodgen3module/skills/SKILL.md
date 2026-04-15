@@ -4,7 +4,6 @@ description: This package performs modular repertoire analysis of blood transcri
 homepage: https://bioconductor.org/packages/release/bioc/html/BloodGen3Module.html
 ---
 
-
 # bioconductor-bloodgen3module
 
 ## Overview

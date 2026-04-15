@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis for RNA-seq dat
 homepage: https://bioconductor.org/packages/release/bioc/html/EBSeq.html
 ---
 
-
 # bioconductor-ebseq
 
 name: bioconductor-ebseq

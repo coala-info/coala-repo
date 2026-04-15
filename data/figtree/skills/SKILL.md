@@ -2,8 +2,9 @@
 name: figtree
 description: Figtree is a graphical viewer for phylogenetic trees and a tool for producing publication-ready figures. Use when user asks to visualize, analyze, or export phylogenetic trees, or generate figures for scientific publications.
 homepage: https://github.com/rambaut/figtree
+metadata:
+  docker_image: "biocontainers/figtree:v1.4.4-3-deb_cv1"
 ---
-
 
 # figtree
 

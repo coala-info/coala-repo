@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2.db.html
 ---
 
-
 # bioconductor-mouse430a2.db
 
 name: bioconductor-mouse430a2.db

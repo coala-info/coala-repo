@@ -4,7 +4,6 @@ description: This tool performs parameter estimation and variable selection for 
 homepage: https://bioconductor.org/packages/release/bioc/html/fmrs.html
 ---
 
-
 # bioconductor-fmrs
 
 name: bioconductor-fmrs

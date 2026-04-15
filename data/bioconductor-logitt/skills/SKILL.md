@@ -4,7 +4,6 @@ description: This tool detects differentially expressed genes in Affymetrix Gene
 homepage: https://bioconductor.org/packages/3.6/bioc/html/logitT.html
 ---
 
-
 # bioconductor-logitt
 
 name: bioconductor-logitt

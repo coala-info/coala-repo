@@ -4,7 +4,6 @@ description: This package provides a CDF environment for the Affymetrix 'test2' 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/test2cdf.html
 ---
 
-
 # bioconductor-test2cdf
 
 name: bioconductor-test2cdf

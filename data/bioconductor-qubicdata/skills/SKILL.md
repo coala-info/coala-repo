@@ -4,7 +4,6 @@ description: This package provides access to standardized E. coli gene expressio
 homepage: https://bioconductor.org/packages/release/data/experiment/html/QUBICdata.html
 ---
 
-
 # bioconductor-qubicdata
 
 name: bioconductor-qubicdata

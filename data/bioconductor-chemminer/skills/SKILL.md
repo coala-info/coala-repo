@@ -1,9 +1,8 @@
 ---
 name: bioconductor-chemminer
-description: "ChemmineR is a comprehensive cheminformatics toolkit for analyzing, searching, and clustering small molecules within the R environment. Use when user asks to import or export SDF and SMILES files, calculate molecular properties, perform structural similarity searches, or cluster chemical libraries."
+description: ChemmineR is a comprehensive cheminformatics toolkit for analyzing, searching, and clustering small molecules within the R environment. Use when user asks to import or export SDF and SMILES files, calculate molecular properties, perform structural similarity searches, or cluster chemical libraries.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChemmineR.html
 ---
-
 
 # bioconductor-chemminer
 

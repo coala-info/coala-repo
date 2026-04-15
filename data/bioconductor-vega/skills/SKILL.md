@@ -4,7 +4,6 @@ description: Bioconductor-vega segments copy number profiles from array comparat
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Vega.html
 ---
 
-
 # bioconductor-vega
 
 ## Overview

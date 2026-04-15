@@ -4,7 +4,6 @@ description: This tool saves and loads matrix-like objects to and from file arti
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.matrix.html
 ---
 
-
 # bioconductor-alabaster.matrix
 
 name: bioconductor-alabaster.matrix

@@ -1,10 +1,12 @@
 ---
 name: scatac-seq-fastq-to-count-matrix
-description: "This single-cell ATAC-seq workflow processes raw FASTQ files into a cell-by-peak count matrix using BWA-MEM for alignment, MACS2 for peak calling, and EpiScanpy for AnnData generation. Use this skill when you need to transform raw 10x Genomics chromatin accessibility data into a standardized format for downstream clustering and cell type identification."
-homepage: https://workflowhub.eu/workflows/1506
+description: This single-cell ATAC-seq workflow processes raw FASTQ files into a cell-by-peak count matrix using BWA-MEM for alignment, MACS2 for peak calling, and EpiScanpy for AnnData generation. Use this skill when you need to transform raw 10x Genomics chromatin accessibility data into a standardized format for downstream clustering and cell type identification.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# scATAC-seq FASTQ to Count Matrix
+# scatac-seq-fastq-to-count-matrix
 
 ## Overview
 

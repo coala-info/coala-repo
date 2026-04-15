@@ -4,7 +4,6 @@ description: bioconductor-migsa performs massive and integrative gene set analys
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MIGSA.html
 ---
 
-
 # bioconductor-migsa
 
 name: bioconductor-migsa

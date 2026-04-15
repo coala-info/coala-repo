@@ -1,10 +1,12 @@
 ---
 name: vgp-genome-profile-analysis
-description: "This Galaxy workflow processes PacBio sequencing data using Meryl and GenomeScope to generate k-mer databases and estimate genome characteristics such as size, heterozygosity, and repetitiveness. Use this skill when you need to perform initial genome profiling and quality control to determine optimal assembly parameters for a new reference genome."
-homepage: https://workflowhub.eu/workflows/309
+description: This Galaxy workflow processes PacBio sequencing data using Meryl and GenomeScope to generate k-mer databases and estimate genome characteristics such as size, heterozygosity, and repetitiveness. Use this skill when you need to perform initial genome profiling and quality control to determine optimal assembly parameters for a new reference genome.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP genome profile analysis
+# vgp-genome-profile-analysis
 
 ## Overview
 

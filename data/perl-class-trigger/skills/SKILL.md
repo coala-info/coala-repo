@@ -2,8 +2,9 @@
 name: perl-class-trigger
 description: Class::Trigger is a Perl mixin that allows developers to define and execute inheritable callback hooks within class methods. Use when user asks to add trigger points to a class, register callbacks for specific events, or create extensible Perl frameworks with abortable hooks.
 homepage: https://github.com/miyagawa/Class-Trigger
+metadata:
+  docker_image: "quay.io/biocontainers/perl-class-trigger:0.15--pl5321hdfd78af_1"
 ---
-
 
 # perl-class-trigger
 

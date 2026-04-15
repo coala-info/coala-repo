@@ -1,9 +1,10 @@
 ---
 name: kmc
-description: "KMC is a high-performance utility for counting and manipulating k-mers in large genomic datasets. Use when user asks to count k-mers, perform set operations on k-mer databases, filter reads based on k-mer abundance, or convert binary k-mer files to text."
+description: KMC is a high-performance utility for counting and manipulating k-mers in large genomic datasets. Use when user asks to count k-mers, perform set operations on k-mer databases, filter reads based on k-mer abundance, or convert binary k-mer files to text.
 homepage: https://github.com/refresh-bio/kmc
+metadata:
+  docker_image: "quay.io/biocontainers/kmc:3.2.4--h5ca1c30_4"
 ---
-
 
 # kmc
 

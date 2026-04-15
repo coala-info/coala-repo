@@ -4,7 +4,6 @@ description: This tool performs differential composition and variability analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/sccomp.html
 ---
 
-
 # bioconductor-sccomp
 
 name: bioconductor-sccomp

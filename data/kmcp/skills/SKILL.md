@@ -2,6 +2,8 @@
 name: kmcp
 description: KMCP performs high-performance metagenomic profiling and pathogen detection using a k-mer-based pseudo-mapping approach. Use when user asks to compute k-mer sketches, build searchable genome indexes, search sequences against a database, or generate taxonomic abundance profiles.
 homepage: https://github.com/shenwei356/kmcp
+metadata:
+  docker_image: "quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1"
 ---
 
 # kmcp

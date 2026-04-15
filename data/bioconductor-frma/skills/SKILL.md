@@ -4,7 +4,6 @@ description: The frma package provides a preprocessing algorithm for Affymetrix 
 homepage: https://bioconductor.org/packages/release/bioc/html/frma.html
 ---
 
-
 # bioconductor-frma
 
 ## Overview

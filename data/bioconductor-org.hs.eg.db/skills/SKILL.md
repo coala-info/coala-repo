@@ -4,7 +4,6 @@ description: This Bioconductor package provides comprehensive genome-wide mappin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html
 ---
 
-
 # bioconductor-org.hs.eg.db
 
 ## Overview

@@ -2,6 +2,8 @@
 name: bmtagger
 description: BMTagger rapidly screens Next-Generation Sequencing reads against a reference host genome to identify and tag contaminating sequences. Use when user asks to screen NGS reads for host contamination, identify sequences matching a reference genome, or generate a list of reads for removal.
 homepage: https://github.com/movingpictures83/BMTagger
+metadata:
+  docker_image: "quay.io/biocontainers/bmtagger:3.101--3"
 ---
 
 # bmtagger

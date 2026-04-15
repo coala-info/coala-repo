@@ -1,9 +1,8 @@
 ---
 name: bioconductor-raer
-description: "bioconductor-raer characterizes RNA Adenosine-to-Inosine editing in single-cell and bulk RNA-sequencing data. Use when user asks to quantify known editing sites, detect novel editing sites from BAM files, calculate the Alu Editing Index, or perform differential editing analysis."
+description: bioconductor-raer characterizes RNA Adenosine-to-Inosine editing in single-cell and bulk RNA-sequencing data. Use when user asks to quantify known editing sites, detect novel editing sites from BAM files, calculate the Alu Editing Index, or perform differential editing analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/raer.html
 ---
-
 
 # bioconductor-raer
 

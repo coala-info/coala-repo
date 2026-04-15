@@ -2,8 +2,9 @@
 name: distle
 description: distle is a high-performance utility for rapidly generating distance matrices from large-scale genomic datasets. Use when user asks to calculate genetic distances, generate distance matrices from nucleotide alignments or cgMLST data, and create PHYLIP-compatible matrices for phylogenetic analysis.
 homepage: https://github.com/KHajji/distle
+metadata:
+  docker_image: "quay.io/biocontainers/distle:0.3.0--h54198d6_1"
 ---
-
 
 # distle
 

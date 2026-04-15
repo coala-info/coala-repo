@@ -1,9 +1,10 @@
 ---
 name: perl-ipc-run
-description: "perl-ipc-run provides a framework for managing subprocesses, capturing output, and handling complex redirections in Perl. Use when user asks to execute external commands, manage interactive process harnesses, pipe data between multiple processes, or handle Windows-specific command-line execution."
+description: perl-ipc-run provides a framework for managing subprocesses, capturing output, and handling complex redirections in Perl. Use when user asks to execute external commands, manage interactive process harnesses, pipe data between multiple processes, or handle Windows-specific command-line execution.
 homepage: https://metacpan.org/pod/IPC::Run
+metadata:
+  docker_image: "quay.io/biocontainers/perl-ipc-run:20250809.0--pl5321hdfd78af_0"
 ---
-
 
 # perl-ipc-run
 

@@ -4,7 +4,6 @@ description: HybridExpress is a Bioconductor package for analyzing RNA-Seq data 
 homepage: https://bioconductor.org/packages/release/bioc/html/HybridExpress.html
 ---
 
-
 # bioconductor-hybridexpress
 
 ## Overview

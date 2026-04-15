@@ -4,7 +4,6 @@ description: The PhIPData package provides a standardized S4 container for manag
 homepage: https://bioconductor.org/packages/release/bioc/html/PhIPData.html
 ---
 
-
 # bioconductor-phipdata
 
 ## Overview

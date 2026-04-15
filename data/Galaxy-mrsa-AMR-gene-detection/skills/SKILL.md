@@ -1,10 +1,12 @@
 ---
 name: mrsa-amr-gene-detection
-description: "This workflow identifies antimicrobial resistance genes and performs genome annotation on bacterial contigs and paired-end reads using staramr, Bakta, and Bowtie2. Use this skill when you need to characterize the resistome of a bacterial pathogen and visualize its genomic features to identify specific resistance markers."
-homepage: https://workflowhub.eu/workflows/1488
+description: This workflow identifies antimicrobial resistance genes and performs genome annotation on bacterial contigs and paired-end reads using staramr, Bakta, and Bowtie2. Use this skill when you need to characterize the resistome of a bacterial pathogen and visualize its genomic features to identify specific resistance markers.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# mrsa AMR gene detection
+# mrsa-amr-gene-detection
 
 ## Overview
 

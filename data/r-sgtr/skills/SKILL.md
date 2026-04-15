@@ -4,7 +4,6 @@ description: This tool visualizes population genomics results from RADSex and PS
 homepage: https://cran.r-project.org/web/packages/sgtr/index.html
 ---
 
-
 # r-sgtr
 
 name: r-sgtr

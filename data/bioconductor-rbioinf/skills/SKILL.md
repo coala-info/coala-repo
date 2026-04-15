@@ -4,7 +4,6 @@ description: This tool provides specialized functions for exploring and visualiz
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RBioinf.html
 ---
 
-
 # bioconductor-rbioinf
 
 name: bioconductor-rbioinf

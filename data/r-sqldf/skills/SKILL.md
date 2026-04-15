@@ -4,7 +4,6 @@ description: This tool allows users to manipulate R data frames using SQL syntax
 homepage: https://cloud.r-project.org/web/packages/sqldf/index.html
 ---
 
-
 # r-sqldf
 
 name: r-sqldf

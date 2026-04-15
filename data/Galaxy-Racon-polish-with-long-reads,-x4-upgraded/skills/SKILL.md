@@ -1,10 +1,12 @@
 ---
 name: racon-polish-with-long-reads-x4-upgraded
-description: "This Galaxy workflow performs four rounds of iterative genome assembly polishing using long reads mapped with minimap2 and processed by Racon. Use this skill when you need to improve the consensus accuracy and structural integrity of a draft genome assembly by correcting base-call errors using long-read sequencing data."
-homepage: https://workflowhub.eu/workflows/1599
+description: This Galaxy workflow performs four rounds of iterative genome assembly polishing using long reads mapped with minimap2 and processed by Racon. Use this skill when you need to improve the consensus accuracy and structural integrity of a draft genome assembly by correcting base-call errors using long-read sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Racon polish with long reads, x4 - upgraded
+# racon-polish-with-long-reads-x4-upgraded
 
 ## Overview
 

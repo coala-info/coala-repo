@@ -2,6 +2,8 @@
 name: biobasehttptools
 description: BiobaseHTTPTools provides command-line utilities for retrieving biological sequences and mapping identifiers across major bioinformatics databases like NCBI and Ensembl. Use when user asks to fetch sequences in FASTA format, convert accessions to Taxonomy IDs, retrieve Gene Ontology terms, or map gene IDs to UniProt identifiers.
 homepage: https://github.com/eggzilla/BiobaseHTTPTools
+metadata:
+  docker_image: "quay.io/biocontainers/biobasehttptools:1.1.0--0"
 ---
 
 # biobasehttptools

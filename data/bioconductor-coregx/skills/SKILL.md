@@ -4,7 +4,6 @@ description: This tool manages and analyzes multi-omic treatment response data b
 homepage: https://bioconductor.org/packages/release/bioc/html/CoreGx.html
 ---
 
-
 # bioconductor-coregx
 
 name: bioconductor-coregx

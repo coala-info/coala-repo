@@ -4,7 +4,6 @@ description: This tool parses Affymetrix microarray files including CEL, CDF, an
 homepage: https://bioconductor.org/packages/release/bioc/html/affxparser.html
 ---
 
-
 # bioconductor-affxparser
 
 name: bioconductor-affxparser

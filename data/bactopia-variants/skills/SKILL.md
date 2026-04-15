@@ -2,8 +2,9 @@
 name: bactopia-variants
 description: Bactopia-variants performs high-quality variant calling to identify SNPs and InDels in bacterial sequencing data against a reference genome. Use when user asks to call variants, identify genetic variations, or perform SNP-based strain characterization.
 homepage: https://bactopia.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/bactopia-variants:1.0.2--hdfd78af_0"
 ---
-
 
 # bactopia-variants
 

@@ -1,9 +1,10 @@
 ---
 name: perl-extutils-makemaker
-description: "ExtUtils::MakeMaker creates Makefiles to build, test, and install Perl modules from a Makefile.PL script. Use when user asks to create build scripts for Perl modules, generate Makefiles, manage Perl dependencies, or package Perl software for distribution."
+description: ExtUtils::MakeMaker creates Makefiles to build, test, and install Perl modules from a Makefile.PL script. Use when user asks to create build scripts for Perl modules, generate Makefiles, manage Perl dependencies, or package Perl software for distribution.
 homepage: https://metacpan.org/release/ExtUtils-MakeMaker
+metadata:
+  docker_image: "quay.io/biocontainers/perl-extutils-makemaker:7.36--pl526_1"
 ---
-
 
 # perl-extutils-makemaker
 

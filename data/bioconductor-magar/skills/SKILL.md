@@ -4,7 +4,6 @@ description: This tool identifies methylation quantitative trait loci (methQTL) 
 homepage: https://bioconductor.org/packages/release/bioc/html/MAGAR.html
 ---
 
-
 # bioconductor-magar
 
 name: bioconductor-magar

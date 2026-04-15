@@ -2,8 +2,9 @@
 name: vcf2pandas
 description: vcf2pandas converts genomic variant data from VCF files into pandas DataFrames. Use when user asks to convert VCF files to pandas, load genomic variant data, parse VCF structures, filter VCF data, select or rename VCF fields, or remove empty columns from VCF data.
 homepage: https://github.com/trentzz/vcf2pandas
+metadata:
+  docker_image: "quay.io/biocontainers/vcf2pandas:0.2.0--pyhdfd78af_0"
 ---
-
 
 # vcf2pandas
 

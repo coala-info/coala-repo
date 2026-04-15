@@ -1,9 +1,10 @@
 ---
 name: mimseq
-description: "mimseq analyzes tRNA sequencing data to quantify tRNA abundance and detect modification-induced misincorporation patterns. Use when user asks to analyze tRNA pools, quantify tRNA abundance, detect tRNA modifications, or perform modification crosstalk analysis."
+description: mimseq analyzes tRNA sequencing data to quantify tRNA abundance and detect modification-induced misincorporation patterns. Use when user asks to analyze tRNA pools, quantify tRNA abundance, detect tRNA modifications, or perform modification crosstalk analysis.
 homepage: https://github.com/nedialkova-lab/mim-tRNAseq
+metadata:
+  docker_image: "quay.io/biocontainers/mimseq:1.3.11--pyhdfd78af_0"
 ---
-
 
 # mimseq
 

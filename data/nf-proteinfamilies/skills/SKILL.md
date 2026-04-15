@@ -4,6 +4,8 @@ description: This pipeline generates protein families from amino acid FASTA sequ
 homepage: https://github.com/nf-core/proteinfamilies
 ---
 
+# proteinfamilies
+
 ## Overview
 nf-core/proteinfamilies is designed to organize protein sequences into functional groups by generating or updating protein family models. It handles the transition from raw amino acid sequences to high-quality Multiple Sequence Alignments (MSAs) and Hidden Markov Models (HMMs), which are essential for homology searching and functional characterization.
 

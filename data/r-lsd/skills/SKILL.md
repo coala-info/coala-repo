@@ -4,7 +4,6 @@ description: This tool creates high-density visualizations and colorful heatscat
 homepage: https://cran.r-project.org/web/packages/lsd/index.html
 ---
 
-
 # r-lsd
 
 name: r-lsd

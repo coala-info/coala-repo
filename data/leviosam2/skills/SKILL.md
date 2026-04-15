@@ -2,6 +2,8 @@
 name: leviosam2
 description: LevioSAM2 is a toolkit designed to migrate genomic alignment data and coordinates across different reference assemblies while updating full alignment records. Use when user asks to lift over SAM, BAM, or CRAM files, convert BED intervals between assemblies, or index UCSC chain files for genomic data migration.
 homepage: https://github.com/milkschen/leviosam2
+metadata:
+  docker_image: "quay.io/biocontainers/leviosam2:0.5.0--h9948957_1"
 ---
 
 # leviosam2

@@ -2,8 +2,9 @@
 name: ltrsift
 description: ltrsift is a postprocessing tool for the classification, refinement, and visualization of LTR retrotransposon candidates in genomic sequences. Use when user asks to filter LTR retrotransposon candidates, visualize genomic features, or classify retrotransposons using rule-based analysis.
 homepage: https://github.com/satta/ltrsift
+metadata:
+  docker_image: "biocontainers/ltrsift:v1.0.2-8-deb_cv1"
 ---
-
 
 # ltrsift
 

@@ -2,8 +2,9 @@
 name: svseq2
 description: svseq2 detects structural variations such as deletions and insertions in low-coverage sequencing datasets using soft-clipped read signatures. Use when user asks to detect deletions, identify insertions, or call structural variations from BAM files.
 homepage: https://sourceforge.net/projects/svseq2/
+metadata:
+  docker_image: "quay.io/biocontainers/svseq2:2--h077b44d_0"
 ---
-
 
 # svseq2
 

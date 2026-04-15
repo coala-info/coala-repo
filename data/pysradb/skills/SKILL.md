@@ -2,6 +2,8 @@
 name: pysradb
 description: pysradb is a toolkit for retrieving metadata and raw data from genomic repositories like SRA, ENA, and GEO. Use when user asks to fetch experimental metadata, convert accession IDs between GEO and SRA, search for genomic projects, or download sequencing data.
 homepage: https://github.com/saketkc/pysradb
+metadata:
+  docker_image: "quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0"
 ---
 
 # pysradb

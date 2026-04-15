@@ -2,8 +2,9 @@
 name: qcatch
 description: QCatch provides a quality control pipeline for single-cell quantification data to identify valid cell barcodes and generate interactive metric reports. Use when user asks to perform quality control on single-cell data, model empty droplets, filter quantification files, or generate HTML reports for alevin-fry results.
 homepage: https://github.com/COMBINE-lab/QCatch
+metadata:
+  docker_image: "quay.io/biocontainers/qcatch:0.2.10--pyhdfd78af_0"
 ---
-
 
 # qcatch
 

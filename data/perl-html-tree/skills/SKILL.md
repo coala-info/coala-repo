@@ -2,8 +2,9 @@
 name: perl-html-tree
 description: This tool parses HTML documents into a tree of objects for structured navigation and manipulation in Perl. Use when user asks to parse HTML into a logical model, find elements by tags or attributes, extract text from nodes, or modify HTML structures.
 homepage: http://metacpan.org/pod/HTML::Tree
+metadata:
+  docker_image: "quay.io/biocontainers/perl-html-tree:5.07--pl526_0"
 ---
-
 
 # perl-html-tree
 

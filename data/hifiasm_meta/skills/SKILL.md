@@ -2,8 +2,9 @@
 name: hifiasm_meta
 description: hifiasm_meta is a specialized assembler designed to produce high-quality de novo assemblies from metagenomic HiFi reads. Use when user asks to assemble metagenomic datasets, generate contig graphs from environmental samples, or handle high redundancy in microbial communities.
 homepage: https://github.com/xfengnefx/hifiasm-meta
+metadata:
+  docker_image: "quay.io/biocontainers/hifiasm:0.25.0--h5ca1c30_0"
 ---
-
 
 # hifiasm_meta
 

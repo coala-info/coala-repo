@@ -4,7 +4,6 @@ description: phantasusLite facilitates loading precomputed RNA-seq counts from r
 homepage: https://bioconductor.org/packages/release/bioc/html/phantasusLite.html
 ---
 
-
 # bioconductor-phantasuslite
 
 name: bioconductor-phantasuslite

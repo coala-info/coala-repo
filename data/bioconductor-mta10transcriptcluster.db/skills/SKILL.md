@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mta10transcriptcluster.db.html
 ---
 
-
 # bioconductor-mta10transcriptcluster.db
 
 name: bioconductor-mta10transcriptcluster.db

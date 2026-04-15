@@ -1,7 +1,9 @@
 ---
 name: workflow-0
-description: "This Galaxy workflow processes GenBank fragments to evaluate their manufacturability and saves the resulting annotated sequences and reports into a relational database. Use this skill when you need to determine the synthetic feasibility of genetic parts and systematically store validated sequence data for large-scale DNA assembly or metabolic engineering projects."
-homepage: https://workflowhub.eu/workflows/1768
+description: This Galaxy workflow processes GenBank fragments to evaluate their manufacturability and saves the resulting annotated sequences and reports into a relational database. Use this skill when you need to determine the synthetic feasibility of genetic parts and systematically store validated sequence data for large-scale DNA assembly or metabolic engineering projects.
+homepage: https://parisbiofoundry.org/the-asu-biofoundry/
+metadata:
+  docker_image: "N/A"
 ---
 
 # workflow-0

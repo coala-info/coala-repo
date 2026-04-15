@@ -4,7 +4,6 @@ description: This tool computes Hartigan's dip test statistic to determine if a 
 homepage: https://cloud.r-project.org/web/packages/diptest/index.html
 ---
 
-
 # r-diptest
 
 name: r-diptest

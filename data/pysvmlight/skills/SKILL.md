@@ -2,8 +2,9 @@
 name: pysvmlight
 description: pysvmlight provides a Python interface for the SVM-Light software to train and apply support vector machine models. Use when user asks to train SVM models, perform classification or regression, or use SVM-Light optimization algorithms within a Python workflow.
 homepage: https://bitbucket.org/wcauchois/pysvmlight
+metadata:
+  docker_image: "quay.io/biocontainers/pysvmlight:0.4--py27h470a237_1"
 ---
-
 
 # pysvmlight
 

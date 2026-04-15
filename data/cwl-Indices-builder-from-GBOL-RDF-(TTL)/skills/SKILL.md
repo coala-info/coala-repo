@@ -1,9 +1,12 @@
 ---
 name: indices-builder-from-gbol-rdf-ttl
-description: "This CWL workflow converts annotated genomes in GBOL RDF format into FASTA and GTF files to generate alignment and quantification indices using STAR, bowtie2, and kallisto. Use this skill when preparing reference genomic and transcriptomic data for sequence alignment, read mapping, or gene expression quantification from semantically annotated sources."
-homepage: https://workflowhub.eu/workflows/75
+description: This CWL workflow converts annotated genomes in GBOL RDF format into FASTA and GTF files to generate alignment and quantification indices using STAR, bowtie2, and kallisto. Use this skill when preparing reference genomic and transcriptomic data for sequence alignment, read mapping, or gene expression quantification from semantically annotated sources.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Indices builder from GBOL RDF (TTL)
+
+# indices-builder-from-gbol-rdf-ttl
 
 ## Overview
 

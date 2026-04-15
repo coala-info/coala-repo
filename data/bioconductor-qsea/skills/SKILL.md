@@ -4,7 +4,6 @@ description: This tool performs quantitative sequencing enrichment analysis for 
 homepage: https://bioconductor.org/packages/release/bioc/html/qsea.html
 ---
 
-
 # bioconductor-qsea
 
 name: bioconductor-qsea

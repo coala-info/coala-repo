@@ -4,7 +4,6 @@ description: This package provides genome annotations and reference copy number 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/facopy.annot.html
 ---
 
-
 # bioconductor-facopy.annot
 
 name: bioconductor-facopy.annot

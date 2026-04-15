@@ -2,8 +2,9 @@
 name: repeatmasker-recon
 description: RepeatMasker screens DNA sequences against libraries of transposable elements to annotate and mask genomic repeats. Use when user asks to mask a genome, identify transposable elements, or search for repeats using species-specific or custom libraries.
 homepage: https://www.repeatmasker.org/RepeatMasker
+metadata:
+  docker_image: "biocontainers/repeatmasker-recon:v1.08-4-deb_cv1"
 ---
-
 
 # repeatmasker-recon
 

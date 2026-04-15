@@ -2,8 +2,9 @@
 name: xtea
 description: xTea detects non-reference transposable element insertions. Use when user asks to detect non-reference transposable element insertions, identify germline TE insertions, identify somatic TE insertions, or analyze TE insertions using hybrid data.
 homepage: https://github.com/parklab/xTea
+metadata:
+  docker_image: "quay.io/biocontainers/xtea:0.1.9--hdfd78af_0"
 ---
-
 
 # xtea
 

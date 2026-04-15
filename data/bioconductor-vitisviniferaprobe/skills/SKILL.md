@@ -4,7 +4,6 @@ description: This package provides sequence information and microarray coordinat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/vitisviniferaprobe.html
 ---
 
-
 # bioconductor-vitisviniferaprobe
 
 ## Overview

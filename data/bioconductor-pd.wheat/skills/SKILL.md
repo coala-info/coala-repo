@@ -4,7 +4,6 @@ description: This package provides platform design annotation data for the Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.wheat.html
 ---
 
-
 # bioconductor-pd.wheat
 
 name: bioconductor-pd.wheat

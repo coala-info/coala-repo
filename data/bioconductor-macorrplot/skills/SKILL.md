@@ -4,7 +4,6 @@ description: This package provides a graphical diagnostic tool to assess the qua
 homepage: https://bioconductor.org/packages/release/bioc/html/maCorrPlot.html
 ---
 
-
 # bioconductor-macorrplot
 
 ## Overview

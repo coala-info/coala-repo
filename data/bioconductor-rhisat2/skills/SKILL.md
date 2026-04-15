@@ -4,7 +4,6 @@ description: This tool provides an R interface to the HISAT2 aligner for genome 
 homepage: https://bioconductor.org/packages/release/bioc/html/Rhisat2.html
 ---
 
-
 # bioconductor-rhisat2
 
 name: bioconductor-rhisat2

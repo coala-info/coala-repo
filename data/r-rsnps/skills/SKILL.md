@@ -4,7 +4,6 @@ description: The r-rsnps package provides a programmatic interface to retrieve S
 homepage: https://cran.r-project.org/web/packages/rsnps/index.html
 ---
 
-
 # r-rsnps
 
 ## Overview

@@ -2,8 +2,9 @@
 name: slimm
 description: SLIMM is a taxonomic profiling tool that identifies microorganisms in metagenomic samples using alignment files. Use when user asks to perform species-level identification, generate taxonomic profiles from BAM or SAM files, or build custom taxonomic databases.
 homepage: https://github.com/seqan/slimm/blob/master/README.md
+metadata:
+  docker_image: "quay.io/biocontainers/slimm:0.3.4--hd6d6fdc_6"
 ---
-
 
 # slimm
 

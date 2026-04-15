@@ -4,7 +4,6 @@ description: This tool provides utilities for processing and analyzing droplet-b
 homepage: https://bioconductor.org/packages/release/bioc/html/DropletUtils.html
 ---
 
-
 # bioconductor-dropletutils
 
 name: bioconductor-dropletutils

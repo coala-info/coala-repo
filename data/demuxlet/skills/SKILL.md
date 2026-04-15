@@ -1,9 +1,10 @@
 ---
 name: demuxlet
-description: "demuxlet deconvolutes sample identities and identifies doublets in pooled single-cell RNA-seq data using genetic variation. Use when user asks to assign cells to donors, identify cross-genotype doublets, or demultiplex pooled single-cell experiments using SNP genotypes."
+description: demuxlet deconvolutes sample identities and identifies doublets in pooled single-cell RNA-seq data using genetic variation. Use when user asks to assign cells to donors, identify cross-genotype doublets, or demultiplex pooled single-cell experiments using SNP genotypes.
 homepage: https://github.com/statgen/demuxlet
+metadata:
+  docker_image: "quay.io/biocontainers/demuxlet:1.0--h5ca1c30_7"
 ---
-
 
 # demuxlet
 

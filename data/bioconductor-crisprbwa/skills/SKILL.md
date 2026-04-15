@@ -4,7 +4,6 @@ description: The crisprBwa package provides an R interface for the BWA-backtrack
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprBwa.html
 ---
 
-
 # bioconductor-crisprbwa
 
 ## Overview

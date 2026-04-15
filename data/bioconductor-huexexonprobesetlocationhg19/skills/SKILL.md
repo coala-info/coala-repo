@@ -4,7 +4,6 @@ description: This package provides exon-level chromosome location data for Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuExExonProbesetLocationHg19.html
 ---
 
-
 # bioconductor-huexexonprobesetlocationhg19
 
 name: bioconductor-huexexonprobesetlocationhg19

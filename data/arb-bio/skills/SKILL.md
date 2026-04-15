@@ -2,6 +2,8 @@
 name: arb-bio
 description: ARB is a graphical software suite for the integrated management and analysis of large ribosomal RNA sequence databases. Use when user asks to align sequences, construct phylogenetic trees, design taxon-specific probes, or manage large rRNA databases.
 homepage: http://www.arb-home.de
+metadata:
+  docker_image: "quay.io/biocontainers/arb-bio:6.0.6--0"
 ---
 
 # arb-bio

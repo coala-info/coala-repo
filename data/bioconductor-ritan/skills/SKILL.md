@@ -4,7 +4,6 @@ description: RITAN integrates multiple annotation resources and network interact
 homepage: https://bioconductor.org/packages/release/bioc/html/RITAN.html
 ---
 
-
 # bioconductor-ritan
 
 ## Overview

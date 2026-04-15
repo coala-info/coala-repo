@@ -2,6 +2,8 @@
 name: raiss
 description: RAISS predicts missing SNP Z-scores in GWAS datasets by leveraging the linkage disequilibrium structure of neighboring variants. Use when user asks to impute missing summary statistics, precompute LD matrices, optimize imputation parameters via grid search, or perform sanity checks on imputed genetic data.
 homepage: http://statistical-genetics.pages.pasteur.fr/raiss/
+metadata:
+  docker_image: "quay.io/biocontainers/raiss:4.0.1--pyhdfd78af_0"
 ---
 
 # raiss

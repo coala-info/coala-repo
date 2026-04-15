@@ -1,9 +1,12 @@
 ---
 name: cwl-based-rna-seq-workflow
-description: "This CWL-based transcriptomics workflow processes raw RNA-Seq FASTQ files using FastQC, Trim Galore, and HISAT2 for read alignment, followed by transcript assembly with StringTie and differential expression analysis via Ballgown and DESeq2. Use this skill when you need to identify differentially expressed genes and transcripts across experimental conditions or characterize novel isoforms within Illumina-sequenced transcriptomes."
-homepage: https://workflowhub.eu/workflows/524
+description: This CWL-based transcriptomics workflow processes raw RNA-Seq FASTQ files using FastQC, Trim Galore, and HISAT2 for read alignment, followed by transcript assembly with StringTie and differential expression analysis via Ballgown and DESeq2. Use this skill when you need to identify differentially expressed genes and transcripts across experimental conditions or characterize novel isoforms within Illumina-sequenced transcriptomes.
+homepage: https://biodataanalysisgroup.github.io/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL-based RNA-Seq workflow
+
+# cwl-based-rna-seq-workflow
 
 ## Overview
 

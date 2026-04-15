@@ -2,6 +2,8 @@
 name: pypgatk
 description: pypgatk is a proteogenomics toolkit used to generate customized protein search databases from genomic variants, non-canonical reading frames, and alternative transcripts. Use when user asks to download reference data, translate VCF variants to protein databases, perform three-frame translation, generate decoy databases, or map peptides back to genomic coordinates.
 homepage: http://github.com/bigbio/py-pgatk
+metadata:
+  docker_image: "quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0"
 ---
 
 # pypgatk

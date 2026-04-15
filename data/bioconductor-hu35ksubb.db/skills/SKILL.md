@@ -4,7 +4,6 @@ description: This package provides comprehensive SQLite-based annotation data fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubb.db.html
 ---
 
-
 # bioconductor-hu35ksubb.db
 
 name: bioconductor-hu35ksubb.db

@@ -4,7 +4,6 @@ description: This package provides SNP locations and alleles for the human genom
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SNPlocs.Hsapiens.dbSNP149.GRCh38.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp149.grch38
 
 ## Overview

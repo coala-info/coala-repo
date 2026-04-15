@@ -1,9 +1,10 @@
 ---
 name: talloc
-description: "talloc is a hierarchical memory allocator for C that manages memory chunks through a parent-child dependency tree. Use when user asks to manage memory lifecycles, allocate zero-initialized memory, or organize complex data structures into hierarchical contexts for automatic cleanup."
+description: talloc is a hierarchical memory allocator for C that manages memory chunks through a parent-child dependency tree. Use when user asks to manage memory lifecycles, allocate zero-initialized memory, or organize complex data structures into hierarchical contexts for automatic cleanup.
 homepage: https://github.com/esneider/talloc
+metadata:
+  docker_image: "quay.io/biocontainers/talloc:2.1.9--0"
 ---
-
 
 # talloc
 

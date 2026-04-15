@@ -4,7 +4,6 @@ description: The r-fgwas package performs genome-wide association analysis for l
 homepage: https://cran.r-project.org/web/packages/fgwas/index.html
 ---
 
-
 # r-fgwas
 
 ## Overview

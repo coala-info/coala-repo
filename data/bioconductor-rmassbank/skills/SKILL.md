@@ -4,7 +4,6 @@ description: This tool processes high-resolution MS/MS spectra to create standar
 homepage: https://bioconductor.org/packages/release/bioc/html/RMassBank.html
 ---
 
-
 # bioconductor-rmassbank
 
 name: bioconductor-rmassbank

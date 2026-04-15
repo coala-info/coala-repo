@@ -4,7 +4,6 @@ description: This tool converts biological sequences into low-dimensional numeri
 homepage: https://bioconductor.org/packages/release/bioc/html/rSWeeP.html
 ---
 
-
 # bioconductor-rsweep
 
 ## Overview

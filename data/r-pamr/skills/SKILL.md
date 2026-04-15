@@ -4,7 +4,6 @@ description: The r-pamr package implements the nearest shrunken centroids method
 homepage: https://cloud.r-project.org/web/packages/pamr/index.html
 ---
 
-
 # r-pamr
 
 name: r-pamr

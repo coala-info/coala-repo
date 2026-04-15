@@ -1,9 +1,10 @@
 ---
 name: perl-proc-fork
-description: "This tool provides a block-based interface for the Perl Proc::Fork module to simplify process forking and parallel execution. Use when user asks to fork processes in Perl, manage parent and child process behaviors, or implement retry logic for system forks."
+description: This tool provides a block-based interface for the Perl Proc::Fork module to simplify process forking and parallel execution. Use when user asks to fork processes in Perl, manage parent and child process behaviors, or implement retry logic for system forks.
 homepage: http://github.com/ap/Proc-Fork
+metadata:
+  docker_image: "quay.io/biocontainers/perl-proc-fork:0.806--pl526_0"
 ---
-
 
 # perl-proc-fork
 

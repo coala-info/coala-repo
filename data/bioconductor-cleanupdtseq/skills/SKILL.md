@@ -4,7 +4,6 @@ description: This package uses a Naive Bayes classifier to distinguish true poly
 homepage: https://bioconductor.org/packages/release/bioc/html/cleanUpdTSeq.html
 ---
 
-
 # bioconductor-cleanupdtseq
 
 ## Overview

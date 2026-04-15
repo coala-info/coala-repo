@@ -1,10 +1,12 @@
 ---
 name: workflow7-beta-diversity-galaxy-training-16s-microbial-analy
-description: "This 16S microbial analysis workflow processes shared OTU files and subsampled data using Mothur tools to calculate distance matrices and generate beta diversity visualizations. Use this skill when you need to compare microbial community composition between different samples or groups through distance-based clustering, heatmaps, and Venn diagrams."
-homepage: https://workflowhub.eu/workflows/1418
+description: This 16S microbial analysis workflow processes shared OTU files and subsampled data using Mothur tools to calculate distance matrices and generate beta diversity visualizations. Use this skill when you need to compare microbial community composition between different samples or groups through distance-based clustering, heatmaps, and Venn diagrams.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow7: Beta Diversity [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow7-beta-diversity-galaxy-training-16s-microbial-analy
 
 ## Overview
 

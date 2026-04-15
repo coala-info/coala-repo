@@ -2,8 +2,9 @@
 name: backspinpy
 description: BackSPIN is a biclustering algorithm that simultaneously clusters genes and cells in single-cell RNA-sequencing data by iteratively reordering and splitting the expression matrix. Use when user asks to cluster scRNA-seq data, identify cell populations and gene modules, or perform hierarchical biclustering on a CEF formatted file.
 homepage: https://github.com/linnarsson-lab/BackSPIN
+metadata:
+  docker_image: "quay.io/biocontainers/backspinpy:0.2.1--pyh24bf2e0_1"
 ---
-
 
 # backspinpy
 

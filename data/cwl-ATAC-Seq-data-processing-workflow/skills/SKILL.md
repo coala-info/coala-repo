@@ -1,9 +1,12 @@
 ---
 name: atac-seq-data-processing-workflow
-description: "This Common Workflow Language pipeline processes raw bulk ATAC-Seq reads into genome-wide accessibility tracks and peak calls using trimGalore, bowtie2, and MACS2. Use this skill when you need to identify open chromatin regions and map regulatory elements across the genome to characterize the epigenetic landscape of your samples."
-homepage: https://workflowhub.eu/workflows/1760
+description: This Common Workflow Language pipeline processes raw bulk ATAC-Seq reads into genome-wide accessibility tracks and peak calls using trimGalore, bowtie2, and MACS2. Use this skill when you need to identify open chromatin regions and map regulatory elements across the genome to characterize the epigenetic landscape of your samples.
+homepage: https://eosc4cancer.eu
+metadata:
+  docker_image: "N/A"
 ---
-# ATAC-Seq data processing workflow
+
+# atac-seq-data-processing-workflow
 
 ## Overview
 

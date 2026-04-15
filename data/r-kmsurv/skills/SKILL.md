@@ -4,7 +4,6 @@ description: The r-kmsurv package provides survival analysis datasets and specia
 homepage: https://cran.r-project.org/web/packages/kmsurv/index.html
 ---
 
-
 # r-kmsurv
 
 ## Overview

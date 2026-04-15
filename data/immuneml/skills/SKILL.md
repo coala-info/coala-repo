@@ -2,8 +2,9 @@
 name: immuneml
 description: immuneML is a machine learning platform for the classification and analysis of adaptive immune receptor repertoires. Use when user asks to install or validate the software, execute machine learning workflows using specification files, or troubleshoot and interpret analysis results.
 homepage: https://github.com/uio-bmi/immuneML
+metadata:
+  docker_image: "quay.io/biocontainers/immuneml:3.0.17--pyhdfd78af_0"
 ---
-
 
 # immuneml
 

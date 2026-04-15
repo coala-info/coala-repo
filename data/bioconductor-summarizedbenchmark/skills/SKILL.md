@@ -4,7 +4,6 @@ description: This tool provides a standardized framework for benchmarking comput
 homepage: https://bioconductor.org/packages/3.8/bioc/html/SummarizedBenchmark.html
 ---
 
-
 # bioconductor-summarizedbenchmark
 
 name: bioconductor-summarizedbenchmark

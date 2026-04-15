@@ -2,8 +2,9 @@
 name: strangepg
 description: strangepg is a high-performance tool for the interactive visualization and manipulation of massive pangenome graphs. Use when user asks to visualize GFA files, compute force-directed layouts, perform 3D graph visualization, or query pangenome data using the strawk scripting language.
 homepage: https://github.com/qwx9/strangepg
+metadata:
+  docker_image: "quay.io/biocontainers/strangepg:0.9.4--h0ac75b0_0"
 ---
-
 
 # strangepg
 

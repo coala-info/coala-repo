@@ -1,10 +1,12 @@
 ---
 name: dia_analysis_osw
-description: "This proteomics workflow processes mass spectrometry data collections using msconvert, OpenSwathWorkflow, and the PyProphet suite to perform Data-Independent Acquisition (DIA) analysis guided by spectral libraries and experimental design annotations. Use this skill when you need to identify and quantify peptides and proteins from complex biological mixtures while maintaining rigorous false discovery rate control at both the peptide and protein levels."
-homepage: https://workflowhub.eu/workflows/1463
+description: This proteomics workflow processes mass spectrometry data collections using msconvert, OpenSwathWorkflow, and the PyProphet suite to perform Data-Independent Acquisition (DIA) analysis guided by spectral libraries and experimental design annotations. Use this skill when you need to identify and quantify peptides and proteins from complex biological mixtures while maintaining rigorous false discovery rate control at both the peptide and protein levels.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# DIA_Analysis_OSW
+# dia_analysis_osw
 
 ## Overview
 

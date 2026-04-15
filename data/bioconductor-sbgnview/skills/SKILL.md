@@ -4,7 +4,6 @@ description: SBGNview visualizes and integrates omics data by mapping gene and c
 homepage: https://bioconductor.org/packages/release/bioc/html/SBGNview.html
 ---
 
-
 # bioconductor-sbgnview
 
 name: bioconductor-sbgnview

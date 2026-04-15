@@ -4,7 +4,6 @@ description: This tool performs automated quality assessment and outlier detecti
 homepage: https://bioconductor.org/packages/3.6/bioc/html/flowQ.html
 ---
 
-
 # bioconductor-flowq
 
 name: bioconductor-flowq

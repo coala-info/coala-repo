@@ -4,7 +4,6 @@ description: bioconductor-bader performs differential expression analysis on RNA
 homepage: https://bioconductor.org/packages/release/bioc/html/BADER.html
 ---
 
-
 # bioconductor-bader
 
 name: bioconductor-bader

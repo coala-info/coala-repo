@@ -4,7 +4,6 @@ description: This tool performs genotype calling for Affymetrix SNP arrays using
 homepage: https://bioconductor.org/packages/release/bioc/html/RLMM.html
 ---
 
-
 # bioconductor-rlmm
 
 name: bioconductor-rlmm

@@ -2,8 +2,9 @@
 name: cif-tools
 description: The cif-tools suite provides high-performance utilities for validating, comparing, and querying structural data in mmCIF and PDB formats. Use when user asks to validate mmCIF files against dictionaries, identify differences between structural models, extract specific data using mmCQL, or reconstruct sequences from structural data.
 homepage: https://github.com/PDB-REDO/cif-tools
+metadata:
+  docker_image: "quay.io/biocontainers/cif-tools:1.0.12--h077b44d_0"
 ---
-
 
 # cif-tools
 

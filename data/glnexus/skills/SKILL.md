@@ -2,8 +2,9 @@
 name: glnexus
 description: GLnexus is a scalable tool designed for the joint-genotyping of large genomic cohorts by merging individual gVCF files into a unified project VCF. Use when user asks to perform joint-genotyping, merge gVCF files into a pVCF, or scale variant calling for population-scale sequencing projects.
 homepage: https://github.com/dnanexus-rnd/GLnexus
+metadata:
+  docker_image: "quay.io/biocontainers/glnexus:1.4.1--h17e8430_5"
 ---
-
 
 # glnexus
 

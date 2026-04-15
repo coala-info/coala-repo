@@ -2,6 +2,8 @@
 name: metagraph
 description: MetaGraph is a bioinformatics suite that constructs, manipulates, and queries large-scale sequence graphs using succinct data structures. Use when user asks to build de Bruijn graphs, clean sequencing errors, annotate graph nodes, or align reads to a graph index.
 homepage: https://github.com/ratschlab/metagraph
+metadata:
+  docker_image: "quay.io/biocontainers/metagraph:0.5.0--haea4672_0"
 ---
 
 # metagraph

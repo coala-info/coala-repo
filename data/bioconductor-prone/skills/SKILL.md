@@ -4,7 +4,6 @@ description: PRONE evaluates and compares multiple normalization methods for pro
 homepage: https://bioconductor.org/packages/release/bioc/html/PRONE.html
 ---
 
-
 # bioconductor-prone
 
 name: bioconductor-prone

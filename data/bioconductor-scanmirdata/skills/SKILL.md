@@ -4,7 +4,6 @@ description: This package provides pre-computed miRNA binding affinity models fo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scanMiRData.html
 ---
 
-
 # bioconductor-scanmirdata
 
 ## Overview

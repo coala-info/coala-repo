@@ -1,9 +1,10 @@
 ---
 name: bedgovcf
-description: "bedgovcf converts BED-formatted genomic data into VCF files using a configuration-driven mapping approach. Use when user asks to transform BED files to VCF, map BED columns to specific VCF fields, or apply functional transformations like rounding and conditional logic to genomic data."
+description: bedgovcf converts BED-formatted genomic data into VCF files using a configuration-driven mapping approach. Use when user asks to transform BED files to VCF, map BED columns to specific VCF fields, or apply functional transformations like rounding and conditional logic to genomic data.
 homepage: https://github.com/nvnieuwk/bedgovcf
+metadata:
+  docker_image: "quay.io/biocontainers/bedgovcf:0.1.1--h9ee0642_1"
 ---
-
 
 # bedgovcf
 

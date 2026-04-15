@@ -1,9 +1,8 @@
 ---
 name: bioconductor-toast
-description: "TOAST analyzes high-throughput genomic data from heterogeneous tissue samples to identify cell-type specific signals. Use when user asks to estimate cell type proportions, perform cell-type specific differential expression or methylation analysis, and conduct cross-cell type differential analysis."
+description: TOAST analyzes high-throughput genomic data from heterogeneous tissue samples to identify cell-type specific signals. Use when user asks to estimate cell type proportions, perform cell-type specific differential expression or methylation analysis, and conduct cross-cell type differential analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/TOAST.html
 ---
-
 
 # bioconductor-toast
 

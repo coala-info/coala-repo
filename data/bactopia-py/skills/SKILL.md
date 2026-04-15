@@ -1,9 +1,10 @@
 ---
 name: bactopia-py
-description: "Bactopia-py is an automated pipeline for the comprehensive analysis of bacterial genomes, covering quality control, assembly, and annotation. Use when user asks to process raw sequencing data, identify antimicrobial resistance genes, perform pangenome analysis, or conduct taxonomic classification."
+description: Bactopia-py is an automated pipeline for the comprehensive analysis of bacterial genomes, covering quality control, assembly, and annotation. Use when user asks to process raw sequencing data, identify antimicrobial resistance genes, perform pangenome analysis, or conduct taxonomic classification.
 homepage: https://bactopia.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/bactopia-py:1.7.0--pyhdfd78af_0"
 ---
-
 
 # bactopia-py
 

@@ -4,7 +4,6 @@ description: This tool optimizes targeted sequencing panels by identifying genom
 homepage: https://bioconductor.org/packages/release/bioc/html/seq.hotSPOT.html
 ---
 
-
 # bioconductor-seq.hotspot
 
 ## Overview

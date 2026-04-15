@@ -2,8 +2,9 @@
 name: apoc
 description: APoc aligns and compares protein binding pockets to quantify their structural and chemical similarity. Use when user asks to compare protein functional sites, identify convergent evolution in binding pockets, or screen a pocket against a library of structures.
 homepage: http://cssb.biology.gatech.edu/APoc
+metadata:
+  docker_image: "quay.io/biocontainers/apoc:1b16--0"
 ---
-
 
 # apoc
 

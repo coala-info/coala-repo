@@ -2,8 +2,9 @@
 name: taxopy
 description: taxopy interacts with NCBI-formatted taxonomic databases to manage TaxIds, scientific names, and lineages. Use when user asks to map TaxIds to names, retrieve taxonomic ranks, find the lowest common ancestor, or perform majority-vote consensus taxonomy.
 homepage: https://apcamargo.github.io/taxopy/
+metadata:
+  docker_image: "quay.io/biocontainers/taxopy:0.14.0--pyhdfd78af_0"
 ---
-
 
 # taxopy
 

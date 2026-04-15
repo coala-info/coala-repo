@@ -2,6 +2,8 @@
 name: pathwaymatcher
 description: PathwayMatcher maps biological identifiers such as genes, proteins, proteoforms, and genetic variants to the Reactome pathway database. Use when user asks to map omics data to pathways, perform pathway enrichment analysis, identify reactions involving specific proteoforms, or analyze the functional impact of genetic variants.
 homepage: https://github.com/LuisFranciscoHS/PathwayMatcher
+metadata:
+  docker_image: "quay.io/biocontainers/pathwaymatcher:1.9.1--1"
 ---
 
 # pathwaymatcher

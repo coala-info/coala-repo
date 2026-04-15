@@ -4,7 +4,6 @@ description: This tool provides access to curated transcription factor-target ge
 homepage: https://bioconductor.org/packages/release/data/experiment/html/dorothea.html
 ---
 
-
 # bioconductor-dorothea
 
 name: bioconductor-dorothea

@@ -1,9 +1,10 @@
 ---
 name: jgoslin
-description: "jgoslin parses and normalizes lipid shorthand notation into a consistent structural format. Use when user asks to parse lipid names, normalize lipid nomenclature, or extract structural metadata from lipid shorthand strings."
+description: jgoslin parses and normalizes lipid shorthand notation into a consistent structural format. Use when user asks to parse lipid names, normalize lipid nomenclature, or extract structural metadata from lipid shorthand strings.
 homepage: https://github.com/lifs-tools/jgoslin
+metadata:
+  docker_image: "quay.io/biocontainers/jgoslin:2.2.0--hdfd78af_0"
 ---
-
 
 # jgoslin
 

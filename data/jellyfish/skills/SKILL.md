@@ -1,7 +1,9 @@
 ---
 name: jellyfish
-description: "Jellyfish is a bioinformatics tool used for fast and memory-efficient counting of k-mers in DNA sequences. Use when user asks to count k-mers, merge k-mer databases, generate k-mer histograms, or query k-mer frequencies."
+description: Jellyfish is a bioinformatics tool used for fast and memory-efficient counting of k-mers in DNA sequences. Use when user asks to count k-mers, merge k-mer databases, generate k-mer histograms, or query k-mer frequencies.
 homepage: http://www.genome.umd.edu/jellyfish.html
+metadata:
+  docker_image: "biocontainers/jellyfish:v2.2.10-2-deb_cv1"
 ---
 
 # jellyfish

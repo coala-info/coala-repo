@@ -2,8 +2,9 @@
 name: corgi
 description: corgi is a deep-learning tool designed to identify and classify mitochondrial and plastid sequences from genomic data. Use when user asks to identify organelle sequences, classify mitochondrial or plastid DNA, or run predictions on genomic sequence files.
 homepage: https://pypi.org/project/bio-corgi/
+metadata:
+  docker_image: "quay.io/biocontainers/corgi:0.4.3--pyhdfd78af_0"
 ---
-
 
 # corgi
 

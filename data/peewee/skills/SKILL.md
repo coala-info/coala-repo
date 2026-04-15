@@ -2,8 +2,9 @@
 name: peewee
 description: Peewee is a minimalist Python Object-Relational Mapper that allows developers to interact with databases using expressive classes and method chaining. Use when user asks to define database models, execute SQL queries using Pythonic operators, manage database connections, or generate model code from existing databases.
 homepage: https://github.com/coleifer/peewee
+metadata:
+  docker_image: "quay.io/biocontainers/peewee:2.8.0--py35_1"
 ---
-
 
 # peewee
 

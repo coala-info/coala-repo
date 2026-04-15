@@ -4,7 +4,6 @@ description: This tool performs copy number study and segmentation for multivari
 homepage: https://bioconductor.org/packages/release/bioc/html/biomvRCNS.html
 ---
 
-
 # bioconductor-biomvrcns
 
 name: bioconductor-biomvrcns

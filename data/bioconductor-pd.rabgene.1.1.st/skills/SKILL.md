@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rabgene 1.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rabgene.1.1.st.html
 ---
 
-
 # bioconductor-pd.rabgene.1.1.st
 
 name: bioconductor-pd.rabgene.1.1.st

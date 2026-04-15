@@ -1,9 +1,10 @@
 ---
 name: sword
-description: "SWORD performs protein sequence alignment using a heuristic filter followed by an optimal Smith-Waterman phase. Use when user asks to search a query sequence against a protein database, perform sensitive protein alignment, or use the Smith-Waterman algorithm on a reduced database."
+description: SWORD performs protein sequence alignment using a heuristic filter followed by an optimal Smith-Waterman phase. Use when user asks to search a query sequence against a protein database, perform sensitive protein alignment, or use the Smith-Waterman algorithm on a reduced database.
 homepage: https://github.com/rvaser/sword
+metadata:
+  docker_image: "quay.io/biocontainers/sword:1.0.4--h9948957_5"
 ---
-
 
 # sword
 

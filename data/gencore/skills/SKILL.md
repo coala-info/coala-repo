@@ -2,8 +2,9 @@
 name: gencore
 description: gencore performs deduplication and error correction on NGS data by clustering reads to generate high-fidelity consensus sequences. Use when user asks to deduplicate BAM files, generate consensus sequences, reduce sequencing errors, or process UMI-tagged data for cancer genomics.
 homepage: https://github.com/OpenGene/gencore
+metadata:
+  docker_image: "quay.io/biocontainers/gencore:0.17.2--he5ce664_4"
 ---
-
 
 # gencore
 

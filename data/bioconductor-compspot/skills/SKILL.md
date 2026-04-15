@@ -4,7 +4,6 @@ description: The compSPOT package identifies significant genomic mutation hotspo
 homepage: https://bioconductor.org/packages/release/bioc/html/compSPOT.html
 ---
 
-
 # bioconductor-compspot
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides the CDF environment mapping and coordinate co
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubacdf.html
 ---
 
-
 # bioconductor-mu11ksubacdf
 
 name: bioconductor-mu11ksubacdf

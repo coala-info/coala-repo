@@ -4,7 +4,6 @@ description: This package analyzes real-time quantitative PCR data to identify s
 homepage: https://bioconductor.org/packages/release/bioc/html/SLqPCR.html
 ---
 
-
 # bioconductor-slqpcr
 
 name: bioconductor-slqpcr

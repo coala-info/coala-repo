@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for the Chimpanzee (
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ptroglodytes.UCSC.panTro6.html
 ---
 
-
 # bioconductor-bsgenome.ptroglodytes.ucsc.pantro6
 
 name: bioconductor-bsgenome.ptroglodytes.ucsc.pantro6

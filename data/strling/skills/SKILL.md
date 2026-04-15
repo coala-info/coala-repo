@@ -1,7 +1,9 @@
 ---
 name: strling
-description: "STRling detects large Short Tandem Repeat expansions from short-read sequencing data. Use when user asks to detect STR expansions, analyze genomic data for repeat regions, or identify novel STR expansions."
+description: STRling detects large Short Tandem Repeat expansions from short-read sequencing data. Use when user asks to detect STR expansions, analyze genomic data for repeat regions, or identify novel STR expansions.
 homepage: https://github.com/quinlan-lab/STRling
+metadata:
+  docker_image: "quay.io/biocontainers/strling:0.6.0--h7b50bb2_0"
 ---
 
 # strling

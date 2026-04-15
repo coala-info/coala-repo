@@ -2,8 +2,9 @@
 name: zipstrain
 description: ZipStrain is a high-performance bioinformatics tool for strain-level metagenomics that profiles specific nucleotide variations across microbial genomes. Use when user asks to prepare reference data, profile samples, compare strains across multiple samples, build a profile database, or generate a comparison configuration.
 homepage: https://github.com/OlmLab/ZipStrain
+metadata:
+  docker_image: "quay.io/biocontainers/zipstrain:0.3.1--pyhdfd78af_0"
 ---
-
 
 # zipstrain
 

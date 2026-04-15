@@ -4,7 +4,6 @@ description: The r-fnn package provides fast implementations of k-nearest neighb
 homepage: https://cran.r-project.org/web/packages/fnn/index.html
 ---
 
-
 # r-fnn
 
 ## Overview

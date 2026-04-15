@@ -4,7 +4,6 @@ description: The RBGL package provides an R interface to the Boost Graph Library
 homepage: https://bioconductor.org/packages/release/bioc/html/RBGL.html
 ---
 
-
 # bioconductor-rbgl
 
 ## Overview

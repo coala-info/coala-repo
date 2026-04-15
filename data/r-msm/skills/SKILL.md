@@ -4,7 +4,6 @@ description: This tool fits and analyzes continuous-time multi-state Markov and 
 homepage: https://cloud.r-project.org/web/packages/msm/index.html
 ---
 
-
 # r-msm
 
 name: r-msm

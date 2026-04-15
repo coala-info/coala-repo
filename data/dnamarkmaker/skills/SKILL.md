@@ -1,9 +1,10 @@
 ---
 name: dnamarkmaker
-description: "DNAMarkMaker identifies SNPs from NGS alignment files and designs primers for ARMS and CAPS molecular markers. Use when user asks to identify polymorphisms between samples, design ARMS or CAPS primers, or develop molecular markers for various ploidy levels."
+description: DNAMarkMaker identifies SNPs from NGS alignment files and designs primers for ARMS and CAPS molecular markers. Use when user asks to identify polymorphisms between samples, design ARMS or CAPS primers, or develop molecular markers for various ploidy levels.
 homepage: https://github.com/SegawaTenta/DNAMarkMaker-CUI
+metadata:
+  docker_image: "quay.io/biocontainers/dnamarkmaker:1.0--pyhdfd78af_0"
 ---
-
 
 # dnamarkmaker
 

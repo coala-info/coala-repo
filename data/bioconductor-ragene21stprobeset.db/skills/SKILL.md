@@ -4,7 +4,6 @@ description: This Bioconductor package provides SQLite-based annotation data for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene21stprobeset.db.html
 ---
 
-
 # bioconductor-ragene21stprobeset.db
 
 ## Overview

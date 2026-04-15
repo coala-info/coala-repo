@@ -1,10 +1,12 @@
 ---
 name: gtn_differential_isoform_expression
-description: "This transcriptomics workflow processes RNA-seq data and genome annotations using RNA STAR, StringTie, and IsoformSwitchAnalyzeR to identify differential isoform usage and functional switches. Use this skill when you need to characterize how alternative splicing or promoter usage changes protein domains, coding potential, and biological functions between different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1688
+description: This transcriptomics workflow processes RNA-seq data and genome annotations using RNA STAR, StringTie, and IsoformSwitchAnalyzeR to identify differential isoform usage and functional switches. Use this skill when you need to characterize how alternative splicing or promoter usage changes protein domains, coding potential, and biological functions between different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN_differential_isoform_expression
+# gtn_differential_isoform_expression
 
 ## Overview
 

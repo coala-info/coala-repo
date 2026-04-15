@@ -1,9 +1,10 @@
 ---
 name: primer3-py
-description: "primer3-py provides a Python interface for primer design and thermodynamic analysis of DNA sequences using the Primer3 library. Use when user asks to design primers, calculate melting temperatures, or analyze secondary structures like hairpins and dimers."
+description: primer3-py provides a Python interface for primer design and thermodynamic analysis of DNA sequences using the Primer3 library. Use when user asks to design primers, calculate melting temperatures, or analyze secondary structures like hairpins and dimers.
 homepage: https://github.com/libnano/primer3-py
+metadata:
+  docker_image: "quay.io/biocontainers/primer3-py:2.3.0--py312h0fa9677_0"
 ---
-
 
 # primer3-py
 

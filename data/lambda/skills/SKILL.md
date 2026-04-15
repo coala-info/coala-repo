@@ -2,8 +2,9 @@
 name: lambda
 description: Lambda is a high-speed sequence alignment tool designed for searching large biological datasets with BLAST-like sensitivity. Use when user asks to index sequence databases, perform local alignments, conduct taxonomic classification, or manage memory-efficient parallel searches.
 homepage: http://seqan.github.io/lambda/
+metadata:
+  docker_image: "quay.io/biocontainers/lambda:3.1.0--haf24da9_1"
 ---
-
 
 # lambda
 

@@ -4,7 +4,6 @@ description: This tool annotates human genetic variants and genes with Quantitat
 homepage: https://bioconductor.org/packages/release/bioc/html/Qtlizer.html
 ---
 
-
 # bioconductor-qtlizer
 
 name: bioconductor-qtlizer

@@ -1,8 +1,10 @@
 ---
 name: altex-be
 description: AltEx-BE automates the design of sgRNAs for exon skipping using base editing by identifying targetable exons and assessing off-target risks. Use when user asks to design sgRNAs for exon skipping, identify base editing targets in specific genes, or perform batch processing of transcripts for base editor configuration.
+homepage: https://github.com/kinari-labwork/AltEx-BE
+metadata:
+  docker_image: "quay.io/biocontainers/altex-be:1.0.5--pyhdfd78af_0"
 ---
-
 
 # altex-be
 

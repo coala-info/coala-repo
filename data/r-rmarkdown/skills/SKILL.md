@@ -4,7 +4,6 @@ description: The r-rmarkdown package converts R Markdown files into high-quality
 homepage: https://cloud.r-project.org/web/packages/rmarkdown/index.html
 ---
 
-
 # r-rmarkdown
 
 ## Overview

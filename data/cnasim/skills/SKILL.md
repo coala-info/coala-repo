@@ -2,8 +2,9 @@
 name: cnasim
 description: CNAsim simulates the evolutionary dynamics and genomic profiles of tumor cell populations to generate synthetic single-cell datasets. Use when user asks to simulate copy number profiles, generate synthetic readcounts, or produce full-scale DNA sequencing reads for tumor cell lineages.
 homepage: https://github.com/samsonweiner/CNAsim
+metadata:
+  docker_image: "quay.io/biocontainers/cnasim:1.3.5--pyhdfd78af_0"
 ---
-
 
 # cnasim
 

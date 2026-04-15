@@ -1,10 +1,12 @@
 ---
 name: variant-calling-from-matched-tumornormal-sample-pair-hg38-ve
-description: "This workflow performs somatic variant calling from matched tumor and normal paired-end FASTQ reads using BWA-MEM for alignment and VarScan for mutation detection against the hg38 reference genome. Use this skill when you need to identify tumor-specific genomic alterations while filtering out germline variations and assessing sample quality through comprehensive metrics."
-homepage: https://workflowhub.eu/workflows/628
+description: This workflow performs somatic variant calling from matched tumor and normal paired-end FASTQ reads using BWA-MEM for alignment and VarScan for mutation detection against the hg38 reference genome. Use this skill when you need to identify tumor-specific genomic alterations while filtering out germline variations and assessing sample quality through comprehensive metrics.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Variant calling from matched tumor/normal sample pair (hg38 version)
+# variant-calling-from-matched-tumornormal-sample-pair-hg38-ve
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The bioconductor-eds package reads Alevin's Efficient single cell b
 homepage: https://bioconductor.org/packages/release/bioc/html/eds.html
 ---
 
-
 # bioconductor-eds
 
 ## Overview

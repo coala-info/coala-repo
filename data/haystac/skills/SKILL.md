@@ -2,6 +2,8 @@
 name: haystac
 description: haystac is a Bayesian-based pipeline for identifying species and estimating their abundance within complex sequencing datasets. Use when user asks to build reference databases from NCBI, preprocess sequencing reads, or perform species identification and damage pattern analysis for ancient DNA.
 homepage: https://github.com/antonisdim/haystac
+metadata:
+  docker_image: "quay.io/biocontainers/haystac:0.4.12--pyhcf36b3e_0"
 ---
 
 # haystac

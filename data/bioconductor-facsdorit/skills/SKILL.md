@@ -4,7 +4,6 @@ description: The bioconductor-facsdorit package provides example Flow Cytometry 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/facsDorit.html
 ---
 
-
 # bioconductor-facsdorit
 
 name: bioconductor-facsdorit

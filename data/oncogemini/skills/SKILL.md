@@ -2,6 +2,8 @@
 name: oncogemini
 description: Oncogemini is a specialized framework for analyzing tumor-normal pairs and longitudinal cancer genomics data using a SQLite database. Use when user asks to query somatic variants, identify truncal mutations, perform bottleneck analysis for clonal expansion, or detect loss of heterozygosity.
 homepage: https://github.com/fakedrtom/oncogemini
+metadata:
+  docker_image: "quay.io/biocontainers/oncogemini:1.0.0--pyh3252c3a_0"
 ---
 
 # oncogemini

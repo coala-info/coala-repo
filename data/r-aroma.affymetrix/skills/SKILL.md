@@ -4,7 +4,6 @@ description: This tool processes and analyzes large-scale Affymetrix microarray 
 homepage: https://cran.r-project.org/web/packages/aroma.affymetrix/index.html
 ---
 
-
 # r-aroma.affymetrix
 
 name: r-aroma.affymetrix

@@ -4,7 +4,6 @@ description: This package provides genome-wide annotations and identifier mappin
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Dm.eg.db.html
 ---
 
-
 # bioconductor-org.dm.eg.db
 
 ## Overview

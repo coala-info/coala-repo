@@ -1,9 +1,10 @@
 ---
 name: perl-json-validator
-description: "This tool validates Perl data structures against JSON Schema and OpenAPI specifications. Use when user asks to validate data against a schema, build schemas programmatically using a DSL, coerce data types, or bundle schemas for distribution."
+description: This tool validates Perl data structures against JSON Schema and OpenAPI specifications. Use when user asks to validate data against a schema, build schemas programmatically using a DSL, coerce data types, or bundle schemas for distribution.
 homepage: https://github.com/jhthorsen/json-validator
+metadata:
+  docker_image: "quay.io/biocontainers/perl-json-validator:5.15--pl5321hdfd78af_0"
 ---
-
 
 # perl-json-validator
 

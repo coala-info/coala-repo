@@ -4,7 +4,6 @@ description: This tool identifies pairs of features that are differentially corr
 homepage: https://bioconductor.org/packages/release/bioc/html/discordant.html
 ---
 
-
 # bioconductor-discordant
 
 name: bioconductor-discordant

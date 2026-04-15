@@ -4,7 +4,6 @@ description: This package provides sample transcript quantification data from va
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tximportData.html
 ---
 
-
 # bioconductor-tximportdata
 
 name: bioconductor-tximportdata

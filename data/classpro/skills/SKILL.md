@@ -2,8 +2,9 @@
 name: classpro
 description: ClassPro categorizes k-mers within HiFi reads into erroneous, haploid, diploid, or repeat functional types using FASTK profiles. Use when user asks to classify k-mers in HiFi reads, identify repetitive or erroneous genomic regions, or generate k-mer classification files for diploid genome analysis.
 homepage: https://github.com/yoshihikosuzuki/ClassPro/
+metadata:
+  docker_image: "quay.io/biocontainers/classpro:1.0.2--hda11466_1"
 ---
-
 
 # classpro
 

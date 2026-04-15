@@ -4,7 +4,6 @@ description: This tool performs model-based background correction for Illumina m
 homepage: https://bioconductor.org/packages/release/bioc/html/MBCB.html
 ---
 
-
 # bioconductor-mbcb
 
 name: bioconductor-mbcb

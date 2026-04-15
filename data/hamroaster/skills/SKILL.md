@@ -2,8 +2,9 @@
 name: hamroaster
 description: hAMRoaster is a benchmarking pipeline that compares antimicrobial resistance gene detection results against phenotypic gold standards to evaluate tool performance. Use when user asks to validate AMR gene callers, compare bioinformatics predictions to phenotypic data, or calculate sensitivity and specificity metrics for AMR detection tools.
 homepage: https://github.com/ewissel/hAMRoaster
+metadata:
+  docker_image: "quay.io/biocontainers/hamroaster:2.0--hdfd78af_0"
 ---
-
 
 # hamroaster
 

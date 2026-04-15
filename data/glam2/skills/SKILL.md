@@ -2,8 +2,9 @@
 name: glam2
 description: This tool performs sequence alignment and motif discovery. Use when user asks to find patterns in biological sequences, align DNA/RNA/protein sequences, or discover motifs.
 homepage: https://github.com/LELEGOBOO/Glam2
+metadata:
+  docker_image: "biocontainers/glam2:v1064-5-deb_cv1"
 ---
-
 
 # glam2
 

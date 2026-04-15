@@ -4,7 +4,6 @@ description: This package provides genome-wide annotation and identifier mapping
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Ss.eg.db.html
 ---
 
-
 # bioconductor-org.ss.eg.db
 
 name: bioconductor-org.ss.eg.db

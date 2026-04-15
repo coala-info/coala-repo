@@ -4,7 +4,6 @@ description: The qcmetrics package provides a standardized framework for impleme
 homepage: https://bioconductor.org/packages/release/bioc/html/qcmetrics.html
 ---
 
-
 # bioconductor-qcmetrics
 
 ## Overview

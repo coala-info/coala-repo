@@ -2,8 +2,9 @@
 name: pb-falconc
 description: This tool provides C-optimized utilities for Pacific Biosciences genome assembly pipelines like FALCON and FALCON-Unzip. Use when user asks to install, update, or execute the underlying C binaries for PacBio secondary analysis and genome assembly.
 homepage: https://github.com/PacificBiosciences/pbbioconda
+metadata:
+  docker_image: "quay.io/biocontainers/pb-falconc:1.15.0--h41535f3_3"
 ---
-
 
 # pb-falconc
 

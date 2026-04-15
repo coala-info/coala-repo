@@ -1,10 +1,12 @@
 ---
 name: pathway-analysis
-description: "This synthetic biology workflow evaluates heterologous pathways within a specific chassis using flux balance analysis, thermodynamic constraints, and multi-metric scoring tools to rank the most viable candidates. Use this skill when you need to identify the most efficient metabolic routes for producing a target compound by comparing the theoretical yield and thermodynamic feasibility of multiple engineered pathways."
-homepage: https://workflowhub.eu/workflows/1572
+description: This synthetic biology workflow evaluates heterologous pathways within a specific chassis using flux balance analysis, thermodynamic constraints, and multi-metric scoring tools to rank the most viable candidates. Use this skill when you need to identify the most efficient metabolic routes for producing a target compound by comparing the theoretical yield and thermodynamic feasibility of multiple engineered pathways.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pathway Analysis
+# pathway-analysis
 
 ## Overview
 

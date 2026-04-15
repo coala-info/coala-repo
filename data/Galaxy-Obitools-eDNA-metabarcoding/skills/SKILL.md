@@ -1,10 +1,12 @@
 ---
 name: obitools-edna-metabarcoding
-description: "This workflow processes paired-end environmental DNA sequencing data using the OBITools suite and NCBI BLAST+ to perform sequence assembly, quality filtering, and taxonomic assignment. Use this skill when you need to characterize biodiversity from environmental samples by converting raw metabarcoding reads into filtered taxonomic abundance tables while removing sequencing errors and PCR artifacts."
-homepage: https://workflowhub.eu/workflows/655
+description: This workflow processes paired-end environmental DNA sequencing data using the OBITools suite and NCBI BLAST+ to perform sequence assembly, quality filtering, and taxonomic assignment. Use this skill when you need to characterize biodiversity from environmental samples by converting raw metabarcoding reads into filtered taxonomic abundance tables while removing sequencing errors and PCR artifacts.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Obitools eDNA metabarcoding
+# obitools-edna-metabarcoding
 
 ## Overview
 

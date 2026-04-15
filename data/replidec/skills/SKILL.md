@@ -2,8 +2,9 @@
 name: replidec
 description: Replidec predicts the replication cycle of bacteriophages by classifying them as virulent, temperate, or chronic using a Bayesian classifier and homology searches. Use when user asks to determine phage lifestyles, analyze metagenomic viral contigs, or identify temperate and chronic viruses from genomic or protein sequences.
 homepage: https://github.com/deng-lab/Replidec
+metadata:
+  docker_image: "quay.io/biocontainers/replidec:0.3.5--pyhdfd78af_0"
 ---
-
 
 # replidec
 

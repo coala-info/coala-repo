@@ -4,7 +4,6 @@ description: This tool identifies somatic copy number alterations in single-cell
 homepage: https://bioconductor.org/packages/release/bioc/html/infercnv.html
 ---
 
-
 # bioconductor-infercnv
 
 ## Overview

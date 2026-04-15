@@ -1,10 +1,12 @@
 ---
 name: maxquant-msstatstmt-training
-description: "This proteomics workflow processes MS dataset collections, experimental design templates, and annotation files using MaxQuant and MSstatsTMT to analyze tandem mass tag data. Use this skill when you need to perform protein identification, quality control, and statistical differential expression analysis on multiplexed TMT mass spectrometry datasets."
-homepage: https://workflowhub.eu/workflows/1401
+description: This proteomics workflow processes MS dataset collections, experimental design templates, and annotation files using MaxQuant and MSstatsTMT to analyze tandem mass tag data. Use this skill when you need to perform protein identification, quality control, and statistical differential expression analysis on multiplexed TMT mass spectrometry datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MaxQuant MSstatsTMT Training
+# maxquant-msstatstmt-training
 
 ## Overview
 

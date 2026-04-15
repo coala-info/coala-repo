@@ -1,10 +1,12 @@
 ---
 name: tsi-scaffolding-with-hic
-description: "This workflow performs genome scaffolding by integrating assembly FASTA files with Hi-C sequencing data using BWA-MEM2, YAHS, and PretextMap to generate chromosome-level assemblies and contact maps. Use this skill when you need to improve the continuity of a draft genome assembly by orienting and joining contigs into larger scaffolds using chromatin conformation capture data."
-homepage: https://workflowhub.eu/workflows/1054
+description: This workflow performs genome scaffolding by integrating assembly FASTA files with Hi-C sequencing data using BWA-MEM2, YAHS, and PretextMap to generate chromosome-level assemblies and contact maps. Use this skill when you need to improve the continuity of a draft genome assembly by orienting and joining contigs into larger scaffolds using chromatin conformation capture data.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# TSI-Scaffolding-with-HiC
+# tsi-scaffolding-with-hic
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides the infrastructure for managing ligand-recept
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Dme.eg.db.html
 ---
 
-
 # bioconductor-lrbase.dme.eg.db
 
 name: bioconductor-lrbase.dme.eg.db

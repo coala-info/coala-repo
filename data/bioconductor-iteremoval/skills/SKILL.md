@@ -4,7 +4,6 @@ description: This tool implements an iterative removal algorithm for feature sel
 homepage: https://bioconductor.org/packages/3.8/bioc/html/iteremoval.html
 ---
 
-
 # bioconductor-iteremoval
 
 name: bioconductor-iteremoval

@@ -2,8 +2,9 @@
 name: sailfish
 description: Sailfish is a high-performance template engine for Rust that compiles templates into code for type safety and speed. Use when user asks to generate Rust template structs, write .stpl files, or choose rendering traits for performance requirements.
 homepage: https://github.com/rust-sailfish/sailfish
+metadata:
+  docker_image: "quay.io/biocontainers/sailfish:0.10.1--1"
 ---
-
 
 # sailfish
 

@@ -2,8 +2,9 @@
 name: sequenticon
 description: Sequenticon transforms DNA sequences into unique, colorful identicons for visual identification and verification. Use when user asks to generate sequence icons, create visual checksums for DNA, batch process sequences into images, or produce printable labels for biological samples.
 homepage: https://github.com/Edinburgh-Genome-Foundry/sequenticon
+metadata:
+  docker_image: "quay.io/biocontainers/sequenticon:0.1.8--pyh7e72e81_0"
 ---
-
 
 # sequenticon
 

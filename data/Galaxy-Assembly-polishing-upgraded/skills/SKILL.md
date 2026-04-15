@@ -1,10 +1,12 @@
 ---
 name: assembly-polishing-upgraded
-description: "This bioinformatics workflow improves the accuracy of a genome assembly using long and short reads through iterative rounds of Racon polishing and Medaka consensus processing. Use this skill when you need to correct base-call errors and improve the structural integrity of a draft assembly by leveraging both high-coverage long reads and high-accuracy Illumina data."
-homepage: https://workflowhub.eu/workflows/1578
+description: This bioinformatics workflow improves the accuracy of a genome assembly using long and short reads through iterative rounds of Racon polishing and Medaka consensus processing. Use this skill when you need to correct base-call errors and improve the structural integrity of a draft assembly by leveraging both high-coverage long reads and high-accuracy Illumina data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assembly polishing - upgraded
+# assembly-polishing-upgraded
 
 ## Overview
 

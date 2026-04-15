@@ -4,7 +4,6 @@ description: This package provides ligand-receptor gene pair mappings for Sus sc
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Ssc.eg.db.html
 ---
 
-
 # bioconductor-lrbase.ssc.eg.db
 
 ## Overview

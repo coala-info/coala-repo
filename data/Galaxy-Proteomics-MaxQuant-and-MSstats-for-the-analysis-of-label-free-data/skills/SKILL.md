@@ -1,10 +1,12 @@
 ---
 name: proteomics-maxquant-and-msstats-for-the-analysis-of-label-fr
-description: "This proteomics workflow processes MaxQuant protein groups and evidence files using MSstats to perform statistical analysis and visualization of label-free quantification data. Use this skill when you need to identify differentially expressed proteins between biological conditions and generate heatmaps of significant protein changes from mass spectrometry experiments."
-homepage: https://workflowhub.eu/workflows/1426
+description: This proteomics workflow processes MaxQuant protein groups and evidence files using MSstats to perform statistical analysis and visualization of label-free quantification data. Use this skill when you need to identify differentially expressed proteins between biological conditions and generate heatmaps of significant protein changes from mass spectrometry experiments.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteomics: MaxQuant and MSstats for the analysis of label-free data
+# proteomics-maxquant-and-msstats-for-the-analysis-of-label-fr
 
 ## Overview
 

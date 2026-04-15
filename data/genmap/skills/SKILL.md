@@ -1,7 +1,9 @@
 ---
 name: genmap
-description: "GenMap computes (k, e)-mappability to identify unique and repetitive regions within genomic sequences. Use when user asks to build genomic indices, compute k-mer mappability, or generate bedGraph files for sequence uniqueness analysis."
+description: GenMap computes (k, e)-mappability to identify unique and repetitive regions within genomic sequences. Use when user asks to build genomic indices, compute k-mer mappability, or generate bedGraph files for sequence uniqueness analysis.
 homepage: https://github.com/cpockrandt/genmap
+metadata:
+  docker_image: "quay.io/biocontainers/genmap:1.3.0--h9948957_4"
 ---
 
 # genmap

@@ -4,7 +4,6 @@ description: This package provides base annotation data for Escherichia coli Sak
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliSakai.db0.html
 ---
 
-
 # bioconductor-ecolisakai.db0
 
 name: bioconductor-ecolisakai.db0

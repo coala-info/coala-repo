@@ -2,8 +2,9 @@
 name: htsinfer
 description: HTSinfer analyzes Illumina high-throughput sequencing data to reconstruct missing metadata and verify sample integrity. Use when user asks to infer library source, determine read orientation, identify adapters, or extract sequencing parameters from FASTQ files.
 homepage: https://github.com/zavolanlab/htsinfer
+metadata:
+  docker_image: "quay.io/biocontainers/htsinfer:1.0.0_rc.1--pyhdfd78af_0"
 ---
-
 
 # htsinfer
 

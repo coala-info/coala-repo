@@ -4,7 +4,6 @@ description: This package provides a transcript database object for the Rattus n
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn6.refGene.html
 ---
 
-
 # bioconductor-txdb.rnorvegicus.ucsc.rn6.refgene
 
 name: bioconductor-txdb.rnorvegicus.ucsc.rn6.refgene

@@ -4,7 +4,6 @@ description: This tool creates and manages interactive GUI widgets in R using S4
 homepage: https://bioconductor.org/packages/release/bioc/html/widgetTools.html
 ---
 
-
 # bioconductor-widgettools
 
 name: bioconductor-widgettools

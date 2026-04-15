@@ -2,8 +2,9 @@
 name: ucsc-twobitdup
 description: ucsc-twobitdup identifies bit-for-bit identical genomic sequences within a .2bit file. Use when user asks to identify redundant genomic sequences, validate genome assemblies, or troubleshoot mapping issues caused by duplicate references.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0"
 ---
-
 
 # ucsc-twobitdup
 

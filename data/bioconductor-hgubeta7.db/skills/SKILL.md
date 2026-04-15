@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgubeta7.db.html
 ---
 
-
 # bioconductor-hgubeta7.db
 
 name: bioconductor-hgubeta7.db

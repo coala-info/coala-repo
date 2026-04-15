@@ -2,8 +2,9 @@
 name: escher-fluxomics
 description: This tool manages and visualizes metabolic pathways using the Escher tool. Use when user asks to generate interactive visualizations of metabolic networks, build, share, or embed data-rich pathway diagrams, or work with metabolic models and fluxomics data.
 homepage: https://escher.github.io
+metadata:
+  docker_image: "biocontainers/escher-fluxomics:phenomenal-v1.6.0-beta.4_cv1.1.20"
 ---
-
 
 # escher-fluxomics
 

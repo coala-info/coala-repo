@@ -4,7 +4,6 @@ description: The GDSArray package represents Genomic Data Structure files as arr
 homepage: https://bioconductor.org/packages/release/bioc/html/GDSArray.html
 ---
 
-
 # bioconductor-gdsarray
 
 name: bioconductor-gdsarray

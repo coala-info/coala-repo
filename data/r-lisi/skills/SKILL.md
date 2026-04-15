@@ -4,7 +4,6 @@ description: The r-lisi package computes the Local Inverse Simpson's Index to qu
 homepage: https://cran.r-project.org/web/packages/lisi/index.html
 ---
 
-
 # r-lisi
 
 ## Overview

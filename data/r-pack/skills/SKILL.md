@@ -4,7 +4,6 @@ description: This tool converts R values to and from raw binary vectors using Pe
 homepage: https://cloud.r-project.org/web/packages/pack/index.html
 ---
 
-
 # r-pack
 
 name: r-pack

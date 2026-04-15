@@ -4,7 +4,6 @@ description: Bioconductor-quartpac identifies mutational clusters in protein qua
 homepage: https://bioconductor.org/packages/3.6/bioc/html/QuartPAC.html
 ---
 
-
 # bioconductor-quartpac
 
 name: bioconductor-quartpac

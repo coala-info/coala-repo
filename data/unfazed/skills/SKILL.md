@@ -2,8 +2,9 @@
 name: unfazed
 description: unfazed phases de novo variants and structural variations in trios using multiple methods. Use when user asks to phase de novo variants, phase structural variants and CNVs, or phase sex chromosomes.
 homepage: https://github.com/jbelyeu/unfazed
+metadata:
+  docker_image: "quay.io/biocontainers/unfazed:1.0.2--pyh3252c3a_0"
 ---
-
 
 # unfazed
 

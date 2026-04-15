@@ -4,7 +4,6 @@ description: This tool provides expert guidance for using the R 'survey' package
 homepage: https://cloud.r-project.org/web/packages/survey/index.html
 ---
 
-
 # r-survey
 
 name: r-survey

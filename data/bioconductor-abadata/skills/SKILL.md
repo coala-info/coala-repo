@@ -4,7 +4,6 @@ description: This package provides gene expression data from the Allen Human Bra
 homepage: https://bioconductor.org/packages/3.6/data/experiment/html/ABAData.html
 ---
 
-
 # bioconductor-abadata
 
 name: bioconductor-abadata

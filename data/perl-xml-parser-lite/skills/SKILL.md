@@ -2,8 +2,9 @@
 name: perl-xml-parser-lite
 description: This module provides a lightweight, pure-Perl XML parser for event-based processing without external C library dependencies. Use when user asks to parse XML data using Perl, handle XML events with callbacks, or process XML in environments where libexpat is not available.
 homepage: http://metacpan.org/pod/XML-Parser-Lite
+metadata:
+  docker_image: "quay.io/biocontainers/perl-xml-parser-lite:0.722--pl526_0"
 ---
-
 
 # perl-xml-parser-lite
 

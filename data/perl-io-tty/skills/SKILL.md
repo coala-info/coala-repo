@@ -2,8 +2,9 @@
 name: perl-io-tty
 description: The perl-io-tty package provides low-level Perl interfaces for pseudo-terminal allocation and terminal constant management. Use when user asks to allocate a pseudo-tty, automate interactive command-line tools, or bypass errors requiring a terminal environment.
 homepage: http://metacpan.org/pod/IO-Tty
+metadata:
+  docker_image: "quay.io/biocontainers/perl-io-tty:1.16--pl5321hec16e2b_1"
 ---
-
 
 # perl-io-tty
 

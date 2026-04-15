@@ -2,8 +2,9 @@
 name: fineradstructure
 description: fineradstructure is a population genomics tool that uses RADseq linkage information to identify fine-scale population structure and shared ancestry. Use when user asks to calculate a co-ancestry matrix, perform MCMC clustering on RADseq data, or build trees to visualize subtle population subdivisions.
 homepage: http://cichlid.gurdon.cam.ac.uk/fineRADstructure.html
+metadata:
+  docker_image: "quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7"
 ---
-
 
 # fineradstructure
 

@@ -4,7 +4,6 @@ description: This tool parameterizes and applies gene signatures based on linear
 homepage: https://bioconductor.org/packages/release/bioc/html/sigsquared.html
 ---
 
-
 # bioconductor-sigsquared
 
 name: bioconductor-sigsquared

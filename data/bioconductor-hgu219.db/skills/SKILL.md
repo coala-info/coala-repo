@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Human Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu219.db.html
 ---
 
-
 # bioconductor-hgu219.db
 
 name: bioconductor-hgu219.db

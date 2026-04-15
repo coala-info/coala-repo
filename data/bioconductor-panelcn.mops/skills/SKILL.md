@@ -4,7 +4,6 @@ description: bioconductor-panelcn.mops detects copy number variations in targete
 homepage: https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html
 ---
 
-
 # bioconductor-panelcn.mops
 
 ## Overview

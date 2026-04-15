@@ -4,7 +4,6 @@ description: bioconductor-dupradar provides quality control for RNA-Seq data by 
 homepage: https://bioconductor.org/packages/release/bioc/html/dupRadar.html
 ---
 
-
 # bioconductor-dupradar
 
 ## Overview

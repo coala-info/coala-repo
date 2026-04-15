@@ -4,7 +4,6 @@ description: ampvis2 is an R package for the visualization and analysis of micro
 homepage: https://cran.r-project.org/web/packages/ampvis2/index.html
 ---
 
-
 # r-ampvis2
 
 ## Overview

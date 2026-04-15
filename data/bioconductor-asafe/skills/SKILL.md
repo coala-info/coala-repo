@@ -4,7 +4,6 @@ description: This tool estimates ancestry-specific allele frequencies from genot
 homepage: https://bioconductor.org/packages/release/bioc/html/ASAFE.html
 ---
 
-
 # bioconductor-asafe
 
 name: bioconductor-asafe

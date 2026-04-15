@@ -4,7 +4,6 @@ description: This tool performs machine learning and feature selection for micro
 homepage: https://bioconductor.org/packages/release/bioc/html/Rmagpie.html
 ---
 
-
 # bioconductor-rmagpie
 
 name: bioconductor-rmagpie

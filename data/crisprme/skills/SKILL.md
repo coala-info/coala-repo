@@ -2,8 +2,9 @@
 name: crisprme
 description: CRISPRme evaluates CRISPR-Cas off-target effects by incorporating genetic variation and genomic annotations into the search pipeline. Use when user asks to perform variant-aware off-target discovery, integrate genomic annotations to prioritize sites, or generate personalized safety reports and interactive web dashboards.
 homepage: https://github.com/samuelecancellieri/CRISPRme
+metadata:
+  docker_image: "quay.io/biocontainers/crisprme:2.1.9--py38hdfd78af_0"
 ---
-
 
 # crisprme
 

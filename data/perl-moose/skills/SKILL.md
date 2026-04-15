@@ -2,8 +2,9 @@
 name: perl-moose
 description: Perl-moose provides a modern, declarative object-oriented framework for Perl that replaces traditional manual class construction. Use when user asks to define classes with attributes, enforce type constraints, implement roles for code reuse, or apply method modifiers.
 homepage: http://moose.perl.org/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-moose:2.2202--pl5321hec16e2b_0"
 ---
-
 
 # perl-moose
 

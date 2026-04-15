@@ -4,7 +4,6 @@ description: The beachmat package provides a C++ interface for R matrix objects 
 homepage: https://bioconductor.org/packages/release/bioc/html/beachmat.html
 ---
 
-
 # bioconductor-beachmat
 
 ## Overview

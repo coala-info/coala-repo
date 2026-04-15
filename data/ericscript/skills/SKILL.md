@@ -2,8 +2,9 @@
 name: ericscript
 description: EricScript is a bioinformatics pipeline designed to discover and score chimeric transcripts and gene fusions from transcriptomic data. Use when user asks to identify gene fusions, download Ensembl-based reference databases, or predict high-confidence chimeric transcripts using the EricScore.
 homepage: https://github.com/databio/ericscript
+metadata:
+  docker_image: "quay.io/biocontainers/ericscript:0.5.5--pl5.22.0r3.3.2_1"
 ---
-
 
 # ericscript
 

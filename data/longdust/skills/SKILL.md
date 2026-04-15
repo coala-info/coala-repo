@@ -2,8 +2,9 @@
 name: longdust
 description: This tool identifies long, highly repetitive DNA sequences like STRs, VNTRs, and satellite DNA in a genome. Use when user asks to find long repetitive DNA sequences, analyze low-complexity regions, or detect repeats with long repeat units.
 homepage: https://github.com/lh3/longdust
+metadata:
+  docker_image: "quay.io/biocontainers/longdust:1.4--h577a1d6_0"
 ---
-
 
 # longdust
 

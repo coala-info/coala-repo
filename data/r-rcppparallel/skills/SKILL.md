@@ -4,7 +4,6 @@ description: This tool provides high-level parallel programming patterns for Rcp
 homepage: https://cloud.r-project.org/web/packages/RcppParallel/index.html
 ---
 
-
 # r-rcppparallel
 
 name: r-rcppparallel

@@ -1,7 +1,9 @@
 ---
 name: pox-virus-tiled-amplicon-ref-masking
-description: "This workflow utilizes a reference FASTA and a primer scheme with Datamash and EMBOSS maskseq to generate two masked half-genome references for pox virus sequencing analysis. Use this skill when analyzing tiled amplicon data from pox viruses to account for inverted terminal repeats that can interfere with accurate read mapping and variant detection."
-homepage: https://workflowhub.eu/workflows/1632
+description: This workflow utilizes a reference FASTA and a primer scheme with Datamash and EMBOSS maskseq to generate two masked half-genome references for pox virus sequencing analysis. Use this skill when analyzing tiled amplicon data from pox viruses to account for inverted terminal repeats that can interfere with accurate read mapping and variant detection.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # pox-virus-tiled-amplicon-ref-masking

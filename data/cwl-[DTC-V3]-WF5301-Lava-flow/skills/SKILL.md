@@ -1,9 +1,12 @@
 ---
 name: dtc-v3-wf5301-lava-flow
-description: "This CWL workflow utilizes topographic datasets and eruption source parameters to model the progression and spatial distribution of lava flows. Use this skill when assessing volcanic hazards or planning emergency responses by determining the potential inundation areas of active or future eruptions."
-homepage: https://workflowhub.eu/workflows/1786
+description: This CWL workflow utilizes topographic datasets and eruption source parameters to model the progression and spatial distribution of lava flows. Use this skill when assessing volcanic hazards or planning emergency responses by determining the potential inundation areas of active or future eruptions.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-V3] WF5301: Lava flow
+
+# dtc-v3-wf5301-lava-flow
 
 ## Overview
 

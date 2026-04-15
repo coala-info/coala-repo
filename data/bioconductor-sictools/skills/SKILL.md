@@ -4,7 +4,6 @@ description: bioconductor-sictools detects SNV and Indel differences between two
 homepage: https://bioconductor.org/packages/release/bioc/html/SICtools.html
 ---
 
-
 # bioconductor-sictools
 
 name: bioconductor-sictools

@@ -4,7 +4,6 @@ description: The Cormotif package fits Bayesian hierarchical models to identify 
 homepage: https://bioconductor.org/packages/release/bioc/html/Cormotif.html
 ---
 
-
 # bioconductor-cormotif
 
 ## Overview

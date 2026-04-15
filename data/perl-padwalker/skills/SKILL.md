@@ -2,8 +2,9 @@
 name: perl-padwalker
 description: Perl-padwalker provides tools for inspecting and manipulating lexical variables within Perl's scopes and closures. Use when user asks to peek into private variables of calling subroutines, identify variables captured by closures, or find the lexical name of a variable reference.
 homepage: http://metacpan.org/pod/PadWalker
+metadata:
+  docker_image: "quay.io/biocontainers/perl-padwalker:2.5--pl5321h9948957_5"
 ---
-
 
 # perl-padwalker
 

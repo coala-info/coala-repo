@@ -4,7 +4,6 @@ description: This tool performs multi-class classification and discriminant anal
 homepage: https://bioconductor.org/packages/3.8/bioc/html/dualKS.html
 ---
 
-
 # bioconductor-dualks
 
 name: bioconductor-dualks

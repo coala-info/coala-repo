@@ -4,7 +4,6 @@ description: This package provides annotation and platform design metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mirna.3.1.html
 ---
 
-
 # bioconductor-pd.mirna.3.1
 
 name: bioconductor-pd.mirna.3.1

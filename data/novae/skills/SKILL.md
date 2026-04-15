@@ -2,8 +2,9 @@
 name: novae
 description: Novae is a graph-based foundation model for spatial domain assignment and representation learning in spatial omics data. Use when user asks to perform zero-shot spatial domain inference, fine-tune models on specific tissue datasets, or integrate H&E staining with spatial transcriptomics.
 homepage: https://mics-lab.github.io/novae/
+metadata:
+  docker_image: "quay.io/biocontainers/novae:1.0.2--pyhdfd78af_0"
 ---
-
 
 # novae
 

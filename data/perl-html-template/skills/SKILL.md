@@ -1,9 +1,10 @@
 ---
 name: perl-html-template
-description: "perl-html-template is a Perl module that separates application logic from presentation by populating HTML templates with data. Use when user asks to generate dynamic HTML, create templates with placeholders and loops, or separate Perl code from web design."
+description: perl-html-template is a Perl module that separates application logic from presentation by populating HTML templates with data. Use when user asks to generate dynamic HTML, create templates with placeholders and loops, or separate Perl code from web design.
 homepage: https://metacpan.org/pod/HTML::Template
+metadata:
+  docker_image: "quay.io/biocontainers/perl-html-template:2.97--pl526_1"
 ---
-
 
 # perl-html-template
 

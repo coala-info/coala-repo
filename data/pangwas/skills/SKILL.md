@@ -2,6 +2,8 @@
 name: pangwas
 description: panGWAS is an integrated bioinformatics framework for building pangenomes and performing genome-wide association studies to link genetic variations to phenotypes. Use when user asks to build a pangenome, identify genetic variations across a population, or run GWAS to link variants to specific phenotypes.
 homepage: https://github.com/phac-nml/pangwas
+metadata:
+  docker_image: "quay.io/biocontainers/pangwas:0.1.0--pyh7e72e81_0"
 ---
 
 # pangwas

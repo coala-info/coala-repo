@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for Macaca fascicul
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mfascicularis.NCBI.6.0.html
 ---
 
-
 # bioconductor-bsgenome.mfascicularis.ncbi.6.0
 
 name: bioconductor-bsgenome.mfascicularis.ncbi.6.0

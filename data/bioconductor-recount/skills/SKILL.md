@@ -4,7 +4,6 @@ description: This tool provides access to pre-processed RNA-seq data from the re
 homepage: https://bioconductor.org/packages/release/bioc/html/recount.html
 ---
 
-
 # bioconductor-recount
 
 name: bioconductor-recount

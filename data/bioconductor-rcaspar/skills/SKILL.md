@@ -1,9 +1,8 @@
 ---
 name: bioconductor-rcaspar
-description: "RCASPAR performs survival analysis on high-dimensional datasets using a piecewise baseline hazard Cox regression model with Lq-norm regularization. Use when user asks to predict survival times from genomic data, perform k-fold cross-validation for survival models, or evaluate survival predictions using Kaplan-Meier plots and ROC analysis."
+description: RCASPAR performs survival analysis on high-dimensional datasets using a piecewise baseline hazard Cox regression model with Lq-norm regularization. Use when user asks to predict survival times from genomic data, perform k-fold cross-validation for survival models, or evaluate survival predictions using Kaplan-Meier plots and ROC analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/RCASPAR.html
 ---
-
 
 # bioconductor-rcaspar
 

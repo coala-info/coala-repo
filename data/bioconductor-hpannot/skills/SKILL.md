@@ -4,7 +4,6 @@ description: This tool provides signaling pathway topologies and functional anno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hpAnnot.html
 ---
 
-
 # bioconductor-hpannot
 
 name: bioconductor-hpannot

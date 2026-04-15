@@ -4,7 +4,6 @@ description: This tool performs nonlinear differential expression analysis on hi
 homepage: https://bioconductor.org/packages/release/bioc/html/cytoKernel.html
 ---
 
-
 # bioconductor-cytokernel
 
 name: bioconductor-cytokernel

@@ -2,6 +2,8 @@
 name: haplomap
 description: Haplomap performs haplotype-based computational genetic mapping to identify genomic regions associated with specific phenotypes in inbred populations. Use when user asks to perform genetic mapping, identify genomic regions associated with phenotypes, or analyze haplotype blocks in mouse populations.
 homepage: https://github.com/zqfang/haplomap
+metadata:
+  docker_image: "quay.io/biocontainers/haplomap:0.1.2--h4656aac_1"
 ---
 
 # haplomap

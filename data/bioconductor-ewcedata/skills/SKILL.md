@@ -4,7 +4,6 @@ description: This package provides reference datasets, ortholog mappings, and ex
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ewceData.html
 ---
 
-
 # bioconductor-ewcedata
 
 ## Overview

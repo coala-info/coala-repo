@@ -4,7 +4,6 @@ description: The adaptest package performs a two-stage data-adaptive procedure t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/adaptest.html
 ---
 
-
 # bioconductor-adaptest
 
 ## Overview

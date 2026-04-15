@@ -4,7 +4,6 @@ description: This package implements a marginal mixture model to identify differ
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneSelectMMD.html
 ---
 
-
 # bioconductor-geneselectmmd
 
 ## Overview

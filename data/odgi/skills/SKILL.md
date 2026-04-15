@@ -1,7 +1,9 @@
 ---
 name: odgi
-description: "odgi is a suite of tools designed to manipulate, analyze, and visualize large-scale pangenome graphs using a succinct binary format. Use when user asks to convert GFA files to binary format, sort graphs to improve locality, generate pangenome visualizations, or extract specific paths and statistics."
+description: odgi is a suite of tools designed to manipulate, analyze, and visualize large-scale pangenome graphs using a succinct binary format. Use when user asks to convert GFA files to binary format, sort graphs to improve locality, generate pangenome visualizations, or extract specific paths and statistics.
 homepage: https://github.com/vgteam/odgi
+metadata:
+  docker_image: "quay.io/biocontainers/odgi:0.9.4--h077b44d_0"
 ---
 
 # odgi

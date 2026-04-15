@@ -2,6 +2,8 @@
 name: bcftools
 description: bcftools is a comprehensive suite of utilities for manipulating, filtering, and calling genetic variants in VCF and BCF formats. Use when user asks to call variants, filter records by quality or depth, query specific fields, manage samples, or generate consensus sequences.
 homepage: https://github.com/samtools/bcftools
+metadata:
+  docker_image: "quay.io/biocontainers/bcftools:1.23--h3a4d415_0"
 ---
 
 # bcftools

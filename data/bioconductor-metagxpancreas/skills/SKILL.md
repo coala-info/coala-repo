@@ -4,7 +4,6 @@ description: MetaGxPancreas provides a standardized compendium of pancreatic can
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MetaGxPancreas.html
 ---
 
-
 # bioconductor-metagxpancreas
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: bandwagon
-description: "BandWagon predicts and visualizes DNA migration patterns from restriction enzyme digestions to simulate agarose gel electrophoresis. Use when user asks to compute digestion fragments, simulate gel patterns, or generate digestion reports for linear and circular DNA constructs."
+description: BandWagon predicts and visualizes DNA migration patterns from restriction enzyme digestions to simulate agarose gel electrophoresis. Use when user asks to compute digestion fragments, simulate gel patterns, or generate digestion reports for linear and circular DNA constructs.
 homepage: https://github.com/Edinburgh-Genome-Foundry/bandwagon
+metadata:
+  docker_image: "quay.io/biocontainers/bandwagon:0.3.4--pyh7e72e81_0"
 ---
-
 
 # bandwagon
 

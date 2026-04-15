@@ -2,8 +2,9 @@
 name: pyopenms
 description: pyOpenMS provides Python bindings for the OpenMS library to process and analyze mass spectrometry data. Use when user asks to read or write MS file formats, perform feature detection, execute label-free quantification, or extract ion chromatograms.
 homepage: https://github.com/OpenMS/OpenMS
+metadata:
+  docker_image: "quay.io/biocontainers/pyopenms:3.4.1--py312h13ede07_3"
 ---
-
 
 # pyopenms
 

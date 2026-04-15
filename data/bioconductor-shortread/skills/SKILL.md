@@ -4,7 +4,6 @@ description: This tool provides a comprehensive toolkit for processing, quality 
 homepage: https://bioconductor.org/packages/release/bioc/html/ShortRead.html
 ---
 
-
 # bioconductor-shortread
 
 name: bioconductor-shortread

@@ -4,7 +4,6 @@ description: This tool queries and analyzes curated relationships between chemic
 homepage: https://bioconductor.org/packages/release/bioc/html/CTDquerier.html
 ---
 
-
 # bioconductor-ctdquerier
 
 name: bioconductor-ctdquerier

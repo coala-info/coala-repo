@@ -1,10 +1,12 @@
 ---
 name: msi-finding-diff-analytes
-description: "This mass spectrometry imaging workflow processes treated and control metabolomics datasets using Cardinal and MALDIquant tools to perform preprocessing, peak detection, and spatial segmentation. Use this skill when you need to identify spatially resolved differential analytes or glycans between experimental groups and visualize their distribution across tissue samples."
-homepage: https://workflowhub.eu/workflows/1587
+description: This mass spectrometry imaging workflow processes treated and control metabolomics datasets using Cardinal and MALDIquant tools to perform preprocessing, peak detection, and spatial segmentation. Use this skill when you need to identify spatially resolved differential analytes or glycans between experimental groups and visualize their distribution across tissue samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MSI Finding Diff Analytes
+# msi-finding-diff-analytes
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: taxonomy-profiling-and-visualization-with-krona
-description: "This microbiome workflow performs taxonomic profiling on a collection of preprocessed samples using Kraken2 and generates interactive visualizations with Krona. Use this skill when you need to identify the taxonomic composition of metagenomic samples and create hierarchical pie charts to explore the relative abundance of different organisms."
-homepage: https://workflowhub.eu/workflows/1483
+description: This microbiome workflow performs taxonomic profiling on a collection of preprocessed samples using Kraken2 and generates interactive visualizations with Krona. Use this skill when you need to identify the taxonomic composition of metagenomic samples and create hierarchical pie charts to explore the relative abundance of different organisms.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Taxonomy Profiling and Visualization with Krona
+# taxonomy-profiling-and-visualization-with-krona
 
 ## Overview
 

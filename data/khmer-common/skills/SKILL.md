@@ -2,8 +2,9 @@
 name: khmer-common
 description: khmer-common provides a toolkit for memory-efficient analysis and transformation of nucleotide sequence data using k-mer based probabilistic data structures. Use when user asks to perform digital normalization, count k-mer abundances, filter low-abundance reads, or manipulate FASTQ files for assembly preparation.
 homepage: https://khmer.readthedocs.io/
+metadata:
+  docker_image: "biocontainers/khmer-common:v2.1.2dfsg-6-deb_cv1"
 ---
-
 
 # khmer-common
 

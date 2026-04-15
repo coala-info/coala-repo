@@ -2,8 +2,9 @@
 name: cnvnator
 description: CNVnator identifies structural variants by analyzing read depth across the genome using a mean-shift approach. Use when user asks to extract read mapping, generate histograms, calculate statistics, partition signals, or call copy number variants.
 homepage: https://github.com/abyzovlab/CNVnator
+metadata:
+  docker_image: "quay.io/biocontainers/cnvnator:0.4.1--py312h99c8fb2_11"
 ---
-
 
 # cnvnator
 

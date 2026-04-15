@@ -4,7 +4,6 @@ description: Bioconductor-fusesom performs unsupervised clustering of high-dimen
 homepage: https://bioconductor.org/packages/release/bioc/html/FuseSOM.html
 ---
 
-
 # bioconductor-fusesom
 
 name: bioconductor-fusesom

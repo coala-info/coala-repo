@@ -1,10 +1,12 @@
 ---
 name: amplicon-tutorial
-description: "This microbiome workflow processes soil sample sequences and SILVA reference data using the Mothur tool suite to perform sequence alignment, taxonomic classification, and OTU clustering. Use this skill when you need to characterize microbial community composition and diversity from environmental amplicon sequencing data to generate taxonomic profiles and BIOM files."
-homepage: https://workflowhub.eu/workflows/1476
+description: This microbiome workflow processes soil sample sequences and SILVA reference data using the Mothur tool suite to perform sequence alignment, taxonomic classification, and OTU clustering. Use this skill when you need to characterize microbial community composition and diversity from environmental amplicon sequencing data to generate taxonomic profiles and BIOM files.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Amplicon Tutorial
+# amplicon-tutorial
 
 ## Overview
 

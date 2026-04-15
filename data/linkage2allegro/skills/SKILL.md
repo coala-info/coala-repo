@@ -2,8 +2,9 @@
 name: linkage2allegro
 description: This tool converts genetic linkage files from Merlin, Simwalk, Genehunter, and Swiftlink formats into Allegro format. Use when user asks to convert genetic linkage data from one of the supported input formats to Allegro format.
 homepage: https://github.com/BioTools-Tek/linkage-converter
+metadata:
+  docker_image: "quay.io/biocontainers/linkage2allegro:2017.3--py35_0"
 ---
-
 
 # linkage2allegro
 

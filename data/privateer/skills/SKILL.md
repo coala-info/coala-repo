@@ -2,8 +2,9 @@
 name: privateer
 description: Privateer validates carbohydrate structures in 3D models by checking stereochemistry and consistency with experimental electron density. Use when user asks to validate sugar molecules, detect errors in carbohydrate modeling, generate SNFG vector diagrams, or produce torsion restraints for refinement.
 homepage: https://github.com/glycojones/privateer
+metadata:
+  docker_image: "quay.io/biocontainers/privateer:MKV--py311h8d1dbc1_0"
 ---
-
 
 # privateer
 

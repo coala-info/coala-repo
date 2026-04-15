@@ -2,8 +2,9 @@
 name: valet
 description: VALET identifies structural errors in metagenomic assemblies by analyzing read alignments. Use when user asks to validate metagenomic assemblies, identify structural errors in metagenomic assemblies, or compare multiple metagenomic assemblies.
 homepage: https://github.com/marbl/VALET
+metadata:
+  docker_image: "quay.io/biocontainers/valet:1.0--3"
 ---
-
 
 # valet
 

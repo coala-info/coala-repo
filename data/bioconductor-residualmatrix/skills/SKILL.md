@@ -4,7 +4,6 @@ description: The ResidualMatrix package provides a memory-efficient representati
 homepage: https://bioconductor.org/packages/release/bioc/html/ResidualMatrix.html
 ---
 
-
 # bioconductor-residualmatrix
 
 ## Overview

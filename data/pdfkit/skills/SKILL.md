@@ -1,9 +1,10 @@
 ---
 name: pdfkit
-description: "pdfkit converts HTML content, URLs, or local files into PDF documents using the wkhtmltopdf rendering engine. Use when user asks to generate PDFs from web pages, convert HTML strings to PDF files, or batch process multiple URLs into a single document."
+description: pdfkit converts HTML content, URLs, or local files into PDF documents using the wkhtmltopdf rendering engine. Use when user asks to generate PDFs from web pages, convert HTML strings to PDF files, or batch process multiple URLs into a single document.
 homepage: https://pypi.python.org/pypi/pdfkit
+metadata:
+  docker_image: "quay.io/biocontainers/pdfkit:0.6.1--py35_0"
 ---
-
 
 # pdfkit
 

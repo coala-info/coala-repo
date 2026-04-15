@@ -1,7 +1,9 @@
 ---
 name: vcf2parquet
-description: "vcf2parquet converts VCF files into Parquet format for faster querying and reduced storage footprints. Use when user asks to convert VCF files to Parquet, split large VCF datasets into multiple partitioned Parquet files, or optimize genomic data for use with tools like DuckDB and Polars."
+description: vcf2parquet converts VCF files into Parquet format for faster querying and reduced storage footprints. Use when user asks to convert VCF files to Parquet, split large VCF datasets into multiple partitioned Parquet files, or optimize genomic data for use with tools like DuckDB and Polars.
 homepage: https://github.com/natir/vcf2parquet
+metadata:
+  docker_image: "quay.io/biocontainers/vcf2parquet:0.5.0--h790517f_1"
 ---
 
 # vcf2parquet

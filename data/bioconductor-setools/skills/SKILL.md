@@ -4,7 +4,6 @@ description: The SEtools package provides convenience functions for manipulating
 homepage: https://bioconductor.org/packages/release/bioc/html/SEtools.html
 ---
 
-
 # bioconductor-setools
 
 ## Overview

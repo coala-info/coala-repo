@@ -2,8 +2,9 @@
 name: cwltool
 description: cwltool is the reference implementation for executing Common Workflow Language standards to run portable data analysis workflows. Use when user asks to run CWL workflows, configure container runtimes like Docker or Singularity, validate workflow syntax, or optimize execution through caching and parallelism.
 homepage: https://github.com/common-workflow-language/cwltool
+metadata:
+  docker_image: "quay.io/biocontainers/cwltool:1.0.20180225105849--py36_0"
 ---
-
 
 # cwltool
 

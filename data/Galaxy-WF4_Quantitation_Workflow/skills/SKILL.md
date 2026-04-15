@@ -1,10 +1,12 @@
 ---
 name: wf4_quantitation_workflow
-description: "This proteomics workflow performs protein quantification by processing raw mass spectrometry data and experimental design files using the MaxQuant tool against a specified protein database. Use this skill when you need to identify and quantify proteins in complex biological samples to determine relative abundance across different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1468
+description: This proteomics workflow performs protein quantification by processing raw mass spectrometry data and experimental design files using the MaxQuant tool against a specified protein database. Use this skill when you need to identify and quantify proteins in complex biological samples to determine relative abundance across different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF4_Quantitation_Workflow
+# wf4_quantitation_workflow
 
 ## Overview
 

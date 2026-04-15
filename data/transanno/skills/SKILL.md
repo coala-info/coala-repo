@@ -2,6 +2,8 @@
 name: transanno
 description: transanno is a high-performance genomic liftover tool that converts VCF, GFF3, and GTF coordinates between genome assemblies while managing metadata and allele swaps. Use when user asks to lift over VCF files, convert gene annotations between assemblies, or generate custom chain files from minimap2 alignments.
 homepage: https://github.com/informationsea/transanno
+metadata:
+  docker_image: "quay.io/biocontainers/transanno:0.4.5--h4349ce8_0"
 ---
 
 # transanno

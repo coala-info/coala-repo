@@ -4,7 +4,6 @@ description: bioconductor-scater provides tools for quality control, visualizati
 homepage: https://bioconductor.org/packages/release/bioc/html/scater.html
 ---
 
-
 # bioconductor-scater
 
 name: bioconductor-scater

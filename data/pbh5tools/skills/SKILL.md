@@ -2,6 +2,8 @@
 name: pbh5tools
 description: pbh5tools provides a suite of utilities for manipulating and extracting data from legacy PacBio HDF5 sequencing files. Use when user asks to summarize base call files, generate alignment statistics, filter reads by quality or length, subsample alignments, or convert HDF5 records to CSV format.
 homepage: https://github.com/zkennedy/pbh5tools
+metadata:
+  docker_image: "quay.io/biocontainers/pbh5tools:0.8.0--py27h470a237_1"
 ---
 
 # pbh5tools

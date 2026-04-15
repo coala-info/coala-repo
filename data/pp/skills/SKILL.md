@@ -2,8 +2,9 @@
 name: pp
 description: The pp skill provides procedural knowledge for building, testing, and debugging the PPSSPP emulator codebase. Use when user asks to build the headless target, run automated test suites, or perform graphics analysis using display list dumps.
 homepage: https://github.com/hrydgard/ppsspp
+metadata:
+  docker_image: "quay.io/biocontainers/pp:1.6.5--py27_1"
 ---
-
 
 # pp
 

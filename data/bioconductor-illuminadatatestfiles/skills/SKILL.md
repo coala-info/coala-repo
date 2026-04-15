@@ -4,7 +4,6 @@ description: This package provides example Illumina microarray output files in I
 homepage: https://bioconductor.org/packages/release/data/experiment/html/IlluminaDataTestFiles.html
 ---
 
-
 # bioconductor-illuminadatatestfiles
 
 name: bioconductor-illuminadatatestfiles

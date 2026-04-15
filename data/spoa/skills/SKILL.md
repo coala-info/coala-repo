@@ -2,8 +2,9 @@
 name: spoa
 description: Spoa is a high-performance library and tool that generates consensus sequences and multiple sequence alignments using the SIMD-accelerated partial order alignment algorithm. Use when user asks to generate a consensus sequence, create a multiple sequence alignment, or construct a partial order graph from genomic sequences.
 homepage: https://github.com/rvaser/spoa
+metadata:
+  docker_image: "quay.io/biocontainers/spoa:4.1.5--h077b44d_0"
 ---
-
 
 # spoa
 

@@ -2,8 +2,9 @@
 name: thapbi-pict
 description: thapbi-pict is a bioinformatics pipeline for identifying plant pathogens and other taxa from environmental samples using marker gene sequences. Use when user asks to process raw FASTQ files into ASV counts, classify sequences against a taxonomic database, or assess diagnostic performance against known samples.
 homepage: https://github.com/peterjc/thapbi-pict
+metadata:
+  docker_image: "quay.io/biocontainers/thapbi-pict:1.0.21--pyhdfd78af_0"
 ---
-
 
 # thapbi-pict
 

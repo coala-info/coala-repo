@@ -1,10 +1,12 @@
 ---
 name: erga-bge-genome-report-asm-analyses-one-asm-wgs-illumina-pe
-description: "This Galaxy workflow performs comprehensive quality assessment of a genome assembly using NCBI accessions for the assembly, Illumina WGS paired-end reads, and Hi-C data through tools like BUSCO, BlobToolKit, Merqury, and HiCExplorer. Use this skill when you need to generate standardized genome reports for eukaryotic species to validate assembly completeness, identify potential contaminants, and visualize Hi-C contact maps for structural accuracy."
-homepage: https://workflowhub.eu/workflows/1103
+description: This Galaxy workflow performs comprehensive quality assessment of a genome assembly using NCBI accessions for the assembly, Illumina WGS paired-end reads, and Hi-C data through tools like BUSCO, BlobToolKit, Merqury, and HiCExplorer. Use this skill when you need to generate standardized genome reports for eukaryotic species to validate assembly completeness, identify potential contaminants, and visualize Hi-C contact maps for structural accuracy.
+homepage: https://www.erga-biodiversity.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ERGA-BGE Genome Report ASM analyses (one-asm WGS Illumina PE + HiC)
+# erga-bge-genome-report-asm-analyses-one-asm-wgs-illumina-pe
 
 ## Overview
 

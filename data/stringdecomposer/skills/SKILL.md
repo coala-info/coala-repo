@@ -2,8 +2,9 @@
 name: stringdecomposer
 description: StringDecomposer partitions long DNA sequences into constituent monomers based on a provided library to identify the organization of centromeric repeats. Use when user asks to decompose sequences into monomers, identify alpha satellites in long reads, or translate DNA sequences into a monomeric alphabet.
 homepage: https://github.com/ablab/stringdecomposer
+metadata:
+  docker_image: "quay.io/biocontainers/stringdecomposer:1.1.2--py311he264feb_5"
 ---
-
 
 # stringdecomposer
 

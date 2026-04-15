@@ -2,8 +2,9 @@
 name: pbhoover
 description: pbhoover is a genomic consensus caller designed to generate VCF files from legacy Pacific Biosciences sequencing data. Use when user asks to call variants from low-coverage PacBio BAM files, generate a consensus sequence, or process older P4C2 and P6C4 chemistry data.
 homepage: https://gitlab.com/LPCDRP/pbhoover
+metadata:
+  docker_image: "quay.io/biocontainers/pbhoover:1.1.0--pyhdfd78af_1"
 ---
-
 
 # pbhoover
 

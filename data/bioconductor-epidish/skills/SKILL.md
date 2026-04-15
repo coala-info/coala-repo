@@ -4,7 +4,6 @@ description: EpiDISH performs epigenetic dissection of intra-sample heterogeneit
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiDISH.html
 ---
 
-
 # bioconductor-epidish
 
 ## Overview

@@ -4,7 +4,6 @@ description: bioconductor-dmrscan identifies differentially methylated regions b
 homepage: https://bioconductor.org/packages/release/bioc/html/DMRScan.html
 ---
 
-
 # bioconductor-dmrscan
 
 name: bioconductor-dmrscan

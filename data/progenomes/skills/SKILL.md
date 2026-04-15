@@ -2,6 +2,8 @@
 name: progenomes
 description: The progenomes tool enables researchers to access, download, and inspect high-quality annotated prokaryotic genomes from the proGenomes dataset. Use when user asks to download genomic datasets, view proGenomes database content, or retrieve prokaryotic metadata for bioinformatics pipelines.
 homepage: https://github.com/BigDataBiology/progenomes-cli
+metadata:
+  docker_image: "quay.io/biocontainers/progenomes:0.3.0--pyhdfd78af_0"
 ---
 
 # progenomes

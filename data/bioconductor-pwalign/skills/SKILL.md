@@ -4,7 +4,6 @@ description: This tool performs pairwise sequence alignment and computes edit di
 homepage: https://bioconductor.org/packages/release/bioc/html/pwalign.html
 ---
 
-
 # bioconductor-pwalign
 
 name: bioconductor-pwalign

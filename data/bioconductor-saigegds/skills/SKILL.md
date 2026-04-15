@@ -4,7 +4,6 @@ description: SAIGEgds performs large-scale association testing and phenome-wide 
 homepage: https://bioconductor.org/packages/release/bioc/html/SAIGEgds.html
 ---
 
-
 # bioconductor-saigegds
 
 ## Overview

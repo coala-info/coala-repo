@@ -2,6 +2,8 @@
 name: rvtests
 description: rvtests is a high-performance software package for conducting genetic association studies of rare variants using single-variant, gene-level, and family-based statistical models. Use when user asks to perform single-variant association tests, run burden or kernel-based groupwise tests, analyze related individuals with kinship matrices, or generate summary statistics for meta-analysis.
 homepage: https://github.com/zhanxw/rvtests
+metadata:
+  docker_image: "quay.io/biocontainers/rvtests:2.0.7--h3d151dd_2"
 ---
 
 # rvtests

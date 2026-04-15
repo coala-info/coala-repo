@@ -4,7 +4,6 @@ description: This package provides reference datasets, metagene profiles, and pr
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ChIC.data.html
 ---
 
-
 # bioconductor-chic.data
 
 ## Overview

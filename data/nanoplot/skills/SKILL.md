@@ -1,9 +1,10 @@
 ---
 name: nanoplot
-description: "NanoPlot generates visualizations and statistical reports for long-read sequencing data from various input formats. Use when user asks to visualize sequencing quality, calculate N50 metrics, generate length and quality plots, or process Oxford Nanopore summary files."
+description: NanoPlot generates visualizations and statistical reports for long-read sequencing data from various input formats. Use when user asks to visualize sequencing quality, calculate N50 metrics, generate length and quality plots, or process Oxford Nanopore summary files.
 homepage: https://github.com/wdecoster/NanoPlot
+metadata:
+  docker_image: "quay.io/biocontainers/nanoplot:1.46.2--pyhdfd78af_0"
 ---
-
 
 # nanoplot
 

@@ -1,9 +1,10 @@
 ---
 name: strike
-description: "STRIKE evaluates the quality of a protein sequence alignment by scoring its consistency with a known 3D structure. Use when user asks to assess alignment quality, score structural consistency, or compare different sequence alignments using a template structure."
+description: STRIKE evaluates the quality of a protein sequence alignment by scoring its consistency with a known 3D structure. Use when user asks to assess alignment quality, score structural consistency, or compare different sequence alignments using a template structure.
 homepage: http://www.tcoffee.org/Projects/strike/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/strike:1.2--h9948957_6"
 ---
-
 
 # strike
 

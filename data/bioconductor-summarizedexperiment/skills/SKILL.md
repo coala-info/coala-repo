@@ -4,7 +4,6 @@ description: The SummarizedExperiment package provides a container for coordinat
 homepage: https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html
 ---
 
-
 # bioconductor-summarizedexperiment
 
 ## Overview

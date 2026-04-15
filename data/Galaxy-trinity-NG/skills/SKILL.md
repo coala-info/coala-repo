@@ -1,10 +1,12 @@
 ---
 name: trinity-ng
-description: "This transcriptomics workflow processes paired-end RNA-seq read collections and sample metadata to perform de novo transcriptome assembly, functional annotation, and differential expression analysis using Trinity, Trimmomatic, and TransDecoder. Use this skill when you need to reconstruct a transcriptome for a non-model organism lacking a reference genome and identify significantly regulated genes or expression clusters across multiple biological conditions."
-homepage: https://workflowhub.eu/workflows/1716
+description: This transcriptomics workflow processes paired-end RNA-seq read collections and sample metadata to perform de novo transcriptome assembly, functional annotation, and differential expression analysis using Trinity, Trimmomatic, and TransDecoder. Use this skill when you need to reconstruct a transcriptome for a non-model organism lacking a reference genome and identify significantly regulated genes or expression clusters across multiple biological conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# trinity NG
+# trinity-ng
 
 ## Overview
 

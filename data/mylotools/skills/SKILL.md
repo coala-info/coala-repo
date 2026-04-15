@@ -1,7 +1,9 @@
 ---
 name: mylotools
-description: "mylotools provides utilities for manipulating and performing quality control on myloasm long-read assembler outputs. Use when user asks to process or analyze myloasm assembly outputs, such as manipulating assembly graphs or performing quality checks."
+description: mylotools provides utilities for manipulating and performing quality control on myloasm long-read assembler outputs. Use when user asks to process or analyze myloasm assembly outputs, such as manipulating assembly graphs or performing quality checks.
 homepage: https://github.com/bluenote-1577/mylotools
+metadata:
+  docker_image: "quay.io/biocontainers/mylotools:2.0.0--pyh7e72e81_0"
 ---
 
 # mylotools

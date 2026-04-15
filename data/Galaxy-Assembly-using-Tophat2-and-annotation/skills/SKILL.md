@@ -1,10 +1,12 @@
 ---
 name: covid-19-assembly-using-tophat2-and-annotation
-description: "This workflow performs transcriptomic assembly and functional annotation of COVID-19 samples using Illumina accessions, reference genomes, and protein databases via TopHat2, Cufflinks, and TransDecoder. Use this skill when you need to reconstruct viral transcripts from raw sequencing reads, quantify gene expression, and identify protein-coding regions or secondary metabolite clusters in SARS-CoV-2 datasets."
-homepage: https://workflowhub.eu/workflows/40
+description: This workflow performs transcriptomic assembly and functional annotation of COVID-19 samples using Illumina accessions, reference genomes, and protein databases via TopHat2, Cufflinks, and TransDecoder. Use this skill when you need to reconstruct viral transcripts from raw sequencing reads, quantify gene expression, and identify protein-coding regions or secondary metabolite clusters in SARS-CoV-2 datasets.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: assembly using Tophat2 and annotation
+# covid-19-assembly-using-tophat2-and-annotation
 
 ## Overview
 

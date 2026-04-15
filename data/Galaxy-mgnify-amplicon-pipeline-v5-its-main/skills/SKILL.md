@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-its
-description: "This Galaxy workflow performs taxonomic classification and visualization of Internal Transcribed Spacer regions from processed metagenomic sequences using MAPseq, bedtools, and Krona. Use this skill when you need to characterize fungal or eukaryotic community composition by assigning ITS sequences to the ITSoneDB and UNITE databases and generating interactive abundance charts."
-homepage: https://workflowhub.eu/workflows/1273
+description: This Galaxy workflow performs taxonomic classification and visualization of Internal Transcribed Spacer regions from processed metagenomic sequences using MAPseq, bedtools, and Krona. Use this skill when you need to characterize fungal or eukaryotic community composition by assigning ITS sequences to the ITSoneDB and UNITE databases and generating interactive abundance charts.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - ITS
+# mgnifys-amplicon-pipeline-v50-its
 
 ## Overview
 

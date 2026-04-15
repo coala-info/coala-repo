@@ -1,9 +1,8 @@
 ---
 name: bioconductor-iseepathways
-description: "iSEEpathways provides interactive visualization panels for pathway analysis results within the iSEE ecosystem. Use when user asks to visualize gene set enrichment results, browse pathway tables interactively, or link pathway selections to feature-level plots."
+description: iSEEpathways provides interactive visualization panels for pathway analysis results within the iSEE ecosystem. Use when user asks to visualize gene set enrichment results, browse pathway tables interactively, or link pathway selections to feature-level plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEpathways.html
 ---
-
 
 # bioconductor-iseepathways
 

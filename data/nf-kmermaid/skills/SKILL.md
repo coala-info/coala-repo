@@ -4,6 +4,8 @@ description: This pipeline performs comparative analysis of omes using k-mer bas
 homepage: https://github.com/nf-core/kmermaid
 ---
 
+# kmermaid
+
 ## Overview
 nf-core/kmermaid is designed for the comparative analysis of biological sequences, such as genomes or transcriptomes, using k-mer similarity methods. It provides a flexible framework to process raw sequencing data or assembled sequences into sketches that can be compared to determine distances between samples.
 

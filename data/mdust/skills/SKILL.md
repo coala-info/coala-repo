@@ -1,9 +1,10 @@
 ---
 name: mdust
-description: "mdust removes repetitive sequences from DNA or RNA sequences. Use when user asks to remove adapter sequences from biological sequence data."
+description: mdust removes repetitive sequences from DNA or RNA sequences. Use when user asks to remove adapter sequences from biological sequence data.
 homepage: https://github.com/lh3/mdust
+metadata:
+  docker_image: "quay.io/biocontainers/mdust:2006.10.17--h7b50bb2_7"
 ---
-
 
 # mdust
 

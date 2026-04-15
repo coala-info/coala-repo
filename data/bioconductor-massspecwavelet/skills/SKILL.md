@@ -4,7 +4,6 @@ description: This tool processes mass spectrometry data using Continuous Wavelet
 homepage: https://bioconductor.org/packages/release/bioc/html/MassSpecWavelet.html
 ---
 
-
 # bioconductor-massspecwavelet
 
 ## Overview

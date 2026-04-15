@@ -2,8 +2,9 @@
 name: smetana
 description: SMETANA quantifies metabolic exchange and community-level interactions within microbial consortia using genome-scale metabolic models. Use when user asks to analyze metabolite exchange between species, identify essential community dependencies, or simulate the impact of environmental perturbations on microbial metabolic niches.
 homepage: https://github.com/cdanielmachado/smetana
+metadata:
+  docker_image: "quay.io/biocontainers/smetana:1.2.1--pyhdfd78af_0"
 ---
-
 
 # smetana
 

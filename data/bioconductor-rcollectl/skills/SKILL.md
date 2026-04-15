@@ -4,7 +4,6 @@ description: The Rcollectl package provides an R interface to the collectl monit
 homepage: https://bioconductor.org/packages/release/bioc/html/Rcollectl.html
 ---
 
-
 # bioconductor-rcollectl
 
 ## Overview

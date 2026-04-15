@@ -4,7 +4,6 @@ description: This package provides access to the Open Cancer TherApeutic Discove
 homepage: https://bioconductor.org/packages/release/data/experiment/html/octad.db.html
 ---
 
-
 # bioconductor-octad.db
 
 name: bioconductor-octad.db

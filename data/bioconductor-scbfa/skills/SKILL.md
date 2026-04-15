@@ -4,7 +4,6 @@ description: This tool performs gene detection analysis and dimensionality reduc
 homepage: https://bioconductor.org/packages/release/bioc/html/scBFA.html
 ---
 
-
 # bioconductor-scbfa
 
 name: bioconductor-scbfa

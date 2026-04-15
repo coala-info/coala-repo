@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis for heterogeneo
 homepage: https://bioconductor.org/packages/3.8/bioc/html/DEComplexDisease.html
 ---
 
-
 # bioconductor-decomplexdisease
 
 name: bioconductor-decomplexdisease

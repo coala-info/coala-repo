@@ -1,10 +1,12 @@
 ---
 name: pox-virus-illumina-amplicon-workflow-from-half-genomes
-description: "This virology workflow processes Illumina paired-end amplicon reads from pox virus samples using BWA-MEM for mapping to masked references and iVar for primer trimming and consensus generation. Use this skill when you need to resolve complex inverted terminal repeat sequences in pox virus genomes by analyzing data from samples sequenced as two separate half-genome pools."
-homepage: https://workflowhub.eu/workflows/439
+description: This virology workflow processes Illumina paired-end amplicon reads from pox virus samples using BWA-MEM for mapping to masked references and iVar for primer trimming and consensus generation. Use this skill when you need to resolve complex inverted terminal repeat sequences in pox virus genomes by analyzing data from samples sequenced as two separate half-genome pools.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pox Virus Illumina Amplicon Workflow from half-genomes
+# pox-virus-illumina-amplicon-workflow-from-half-genomes
 
 ## Overview
 

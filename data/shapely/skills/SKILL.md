@@ -2,8 +2,9 @@
 name: shapely
 description: Shapely is a Python library for the manipulation and analysis of planar geometric objects. Use when user asks to manipulate geometric shapes, perform spatial operations like buffering and intersections, check spatial predicates, or serialize geometries to WKT and GeoJSON.
 homepage: https://github.com/shapely/shapely
+metadata:
+  docker_image: "quay.io/biocontainers/shapely:2.0.4"
 ---
-
 
 # shapely
 

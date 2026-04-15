@@ -2,8 +2,9 @@
 name: phigaro
 description: Phigaro is a bioinformatics pipeline designed to detect and annotate prophage sequences within genomic and metagenomic FASTA files. Use when user asks to identify viral regions in a genome, predict prophages, or generate taxonomic classifications and interactive maps of phage sequences.
 homepage: https://phigaro.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/phigaro:2.4.0--pyhdfd78af_0"
 ---
-
 
 # phigaro
 

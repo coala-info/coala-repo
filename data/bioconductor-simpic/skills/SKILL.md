@@ -4,7 +4,6 @@ description: bioconductor-simpic simulates single-cell ATAC-seq data using a gam
 homepage: https://bioconductor.org/packages/release/bioc/html/simPIC.html
 ---
 
-
 # bioconductor-simpic
 
 ## Overview

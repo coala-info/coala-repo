@@ -4,7 +4,6 @@ description: This tool provides comprehensive quality control and metric analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/qckitfastq.html
 ---
 
-
 # bioconductor-qckitfastq
 
 name: bioconductor-qckitfastq

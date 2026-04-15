@@ -2,8 +2,9 @@
 name: networkx
 description: NetworkX is a Python library for creating, manipulating, and studying the structure and dynamics of complex networks and graphs. Use when user asks to model relationships between entities, calculate network metrics, find shortest paths, or perform graph analysis.
 homepage: https://github.com/networkx/networkx
+metadata:
+  docker_image: "quay.io/biocontainers/networkx:1.11"
 ---
-
 
 # networkx
 

@@ -1,9 +1,12 @@
 ---
 name: protein-ligand-docking-fpocket
-description: "This Common Workflow Language pipeline performs protein-ligand docking by identifying potential binding pockets with FPocket and calculating binding affinities using AutoDock Vina within the BioExcel Building Blocks framework. Use this skill when you need to identify optimal binding sites on a protein surface and predict the preferred orientation and binding strength of small molecules for drug discovery or functional characterization."
-homepage: https://workflowhub.eu/workflows/257
+description: This Common Workflow Language pipeline performs protein-ligand docking by identifying potential binding pockets with FPocket and calculating binding affinities using AutoDock Vina within the BioExcel Building Blocks framework. Use this skill when you need to identify optimal binding sites on a protein surface and predict the preferred orientation and binding strength of small molecules for drug discovery or functional characterization.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# Protein-ligand docking (fpocket)
+
+# protein-ligand-docking-fpocket
 
 ## Overview
 

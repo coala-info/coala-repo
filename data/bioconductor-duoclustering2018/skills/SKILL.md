@@ -4,7 +4,6 @@ description: This package provides access to benchmark datasets and pre-computed
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DuoClustering2018.html
 ---
 
-
 # bioconductor-duoclustering2018
 
 name: bioconductor-duoclustering2018

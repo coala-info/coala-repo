@@ -1,9 +1,10 @@
 ---
 name: rsidx
 description: rsidx indexes VCF files by rsID to enable high-speed random access to variant data using identifiers instead of genomic coordinates. Use when user asks to index VCF files by rsID, search for specific rsIDs in a VCF, or perform batch lookups of variant identifiers.
-homepage: https://github.com/bioforensics/rsidx
+homepage: https://github.com/bioforensics/rsidx/
+metadata:
+  docker_image: "quay.io/biocontainers/rsidx:0.3.1--pyhdfd78af_0"
 ---
-
 
 # rsidx
 

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-splicewiz
-description: "SpliceWiz is an R package for analyzing alternative splicing and intron retention in large-scale RNA-seq datasets. Use when user asks to build splicing references, align reads using STAR, process BAM files for splicing counts, or create NxtSE objects for differential splicing analysis."
+description: SpliceWiz is an R package for analyzing alternative splicing and intron retention in large-scale RNA-seq datasets. Use when user asks to build splicing references, align reads using STAR, process BAM files for splicing counts, or create NxtSE objects for differential splicing analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpliceWiz.html
 ---
-
 
 # bioconductor-splicewiz
 

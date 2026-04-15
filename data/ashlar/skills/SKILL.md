@@ -1,9 +1,10 @@
 ---
 name: ashlar
-description: "Ashlar aligns and stitches high-resolution microscopy image tiles into seamless, multi-cycle mosaics. Use when user asks to stitch image tiles, register multiple imaging cycles, or generate pyramidal OME-TIFF files from raw microscopy data."
+description: Ashlar aligns and stitches high-resolution microscopy image tiles into seamless, multi-cycle mosaics. Use when user asks to stitch image tiles, register multiple imaging cycles, or generate pyramidal OME-TIFF files from raw microscopy data.
 homepage: https://github.com/sorgerlab/ashlar
+metadata:
+  docker_image: "quay.io/biocontainers/ashlar:1.19.0--pyhdfd78af_0"
 ---
-
 
 # ashlar
 

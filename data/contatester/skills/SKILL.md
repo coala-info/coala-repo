@@ -1,9 +1,10 @@
 ---
 name: contatester
-description: "contatester assesses the purity of human genomic samples by identifying and estimating cross-contamination within VCF files. Use when user asks to assess sample purity, identify cross-contamination between individuals, or estimate contamination levels in NGS data."
+description: contatester assesses the purity of human genomic samples by identifying and estimating cross-contamination within VCF files. Use when user asks to assess sample purity, identify cross-contamination between individuals, or estimate contamination levels in NGS data.
 homepage: https://github.com/CNRGH/contatester
+metadata:
+  docker_image: "quay.io/biocontainers/contatester:1.0.0--py311r44he3b539c_4"
 ---
-
 
 # contatester
 

@@ -4,7 +4,6 @@ description: The r-samr tool performs Significance Analysis of Microarrays to id
 homepage: https://cran.r-project.org/web/packages/samr/index.html
 ---
 
-
 # r-samr
 
 name: r-samr

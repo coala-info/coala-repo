@@ -1,9 +1,10 @@
 ---
 name: probcons-extra
-description: "PROBCONS performs multiple protein sequence alignment using hidden Markov models and consistency-based scoring to maximize accuracy. Use when user asks to align multiple protein sequences, perform iterative refinement, generate MFA or ClustalW outputs, or compute EM parameter training."
+description: PROBCONS performs multiple protein sequence alignment using hidden Markov models and consistency-based scoring to maximize accuracy. Use when user asks to align multiple protein sequences, perform iterative refinement, generate MFA or ClustalW outputs, or compute EM parameter training.
 homepage: http://probcons.stanford.edu/
+metadata:
+  docker_image: "biocontainers/probcons-extra:v1.12-12-deb_cv1"
 ---
-
 
 # probcons-extra
 

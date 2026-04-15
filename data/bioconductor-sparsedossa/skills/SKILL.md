@@ -4,7 +4,6 @@ description: This tool provides a Bayesian hierarchical model for characterizing
 homepage: https://bioconductor.org/packages/3.8/bioc/html/sparseDOSSA.html
 ---
 
-
 # bioconductor-sparsedossa
 
 name: bioconductor-sparsedossa

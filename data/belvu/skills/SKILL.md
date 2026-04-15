@@ -1,9 +1,10 @@
 ---
 name: belvu
-description: "Belvu visualizes and manipulates sequence alignments. Use when user asks to visualize DNA or protein sequence alignments, create dot plots, or generate consensus sequences."
+description: Belvu visualizes and manipulates sequence alignments. Use when user asks to visualize DNA or protein sequence alignments, create dot plots, or generate consensus sequences.
 homepage: https://github.com/nathanhaigh/docker-seqtools
+metadata:
+  docker_image: "biocontainers/belvu:v4.44.1dfsg-3-deb_cv1"
 ---
-
 
 # belvu
 

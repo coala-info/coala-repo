@@ -4,7 +4,6 @@ description: Matrix eQTL is an R package that performs efficient expression quan
 homepage: https://cran.r-project.org/web/packages/matrixeqtl/index.html
 ---
 
-
 # r-matrixeqtl
 
 ## Overview

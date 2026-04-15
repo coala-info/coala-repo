@@ -1,10 +1,12 @@
 ---
 name: metagenome-assembled-genomes-mags-generation
-description: "This workflow generates dereplicated metagenome-assembled genomes from paired short reads using assemblers like metaSPAdes or MEGAHIT, multiple binners refined by Binette, and downstream tools for taxonomic assignment and functional annotation. Use this skill when you need to reconstruct high-quality microbial genomes from environmental samples to characterize taxonomic diversity, estimate relative abundances, and identify functional potential across multiple metagenomic datasets."
-homepage: https://workflowhub.eu/workflows/1352
+description: This workflow generates dereplicated metagenome-assembled genomes from paired short reads using assemblers like metaSPAdes or MEGAHIT, multiple binners refined by Binette, and downstream tools for taxonomic assignment and functional annotation. Use this skill when you need to reconstruct high-quality microbial genomes from environmental samples to characterize taxonomic diversity, estimate relative abundances, and identify functional potential across multiple metagenomic datasets.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metagenome-Assembled Genomes (MAGs) generation
+# metagenome-assembled-genomes-mags-generation
 
 ## Overview
 

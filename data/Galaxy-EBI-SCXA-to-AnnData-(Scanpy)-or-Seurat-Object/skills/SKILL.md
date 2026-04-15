@@ -1,10 +1,12 @@
 ---
 name: ebi-scxa-to-anndata-scanpy-or-seurat-object
-description: "This Galaxy workflow retrieves single-cell RNA-seq data from the EBI Single Cell Expression Atlas using an accession number and converts it into standardized AnnData or Seurat objects using Scanpy and Seurat tools. Use this skill when you need to import publicly available single-cell datasets for downstream filtering, visualization, or comparative transcriptomic analysis in Python or R environments."
-homepage: https://workflowhub.eu/workflows/1535
+description: This Galaxy workflow retrieves single-cell RNA-seq data from the EBI Single Cell Expression Atlas using an accession number and converts it into standardized AnnData or Seurat objects using Scanpy and Seurat tools. Use this skill when you need to import publicly available single-cell datasets for downstream filtering, visualization, or comparative transcriptomic analysis in Python or R environments.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# EBI SCXA to AnnData (Scanpy) or Seurat Object
+# ebi-scxa-to-anndata-scanpy-or-seurat-object
 
 ## Overview
 

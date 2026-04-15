@@ -2,8 +2,9 @@
 name: predicthaplo
 description: PredictHaplo reconstructs the genetic diversity and individual haplotype sequences within a viral population using a Dirichlet process mixture model. Use when user asks to infer viral strains from aligned reads, reconstruct haplotypes, or estimate the frequency of genetic variants in a sample.
 homepage: https://github.com/cbg-ethz/PredictHaplo
+metadata:
+  docker_image: "quay.io/biocontainers/predicthaplo:2.1.4--h9b88814_6"
 ---
-
 
 # predicthaplo
 

@@ -1,9 +1,10 @@
 ---
 name: mono
-description: "Mono is a software platform for creating cross-platform applications based on Microsoft's .NET Framework. Use when user asks to understand or discuss the Mono platform, its purpose, or its relationship to .NET and C#."
+description: Mono is a software platform for creating cross-platform applications based on Microsoft's .NET Framework. Use when user asks to understand or discuss the Mono platform, its purpose, or its relationship to .NET and C#.
 homepage: https://github.com/Seldaek/monolog
+metadata:
+  docker_image: "quay.io/biocontainers/mono:4.6.2.6--0"
 ---
-
 
 # mono
 

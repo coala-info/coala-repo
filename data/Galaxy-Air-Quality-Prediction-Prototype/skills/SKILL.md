@@ -1,10 +1,12 @@
 ---
 name: emep-wps-wrf
-description: "This workflow processes atmospheric and surface GRIB data using the WRF Preprocessing System and the Weather Research and Forecasting model to generate high-resolution meteorological simulations. Use this skill when you need to produce precise meteorological driving fields for air quality assessments or regional weather forecasting based on global atmospheric datasets."
+description: This workflow processes atmospheric and surface GRIB data using the WRF Preprocessing System and the Weather Research and Forecasting model to generate high-resolution meteorological simulations. Use this skill when you need to produce precise meteorological driving fields for air quality assessments or regional weather forecasting based on global atmospheric datasets.
 homepage: https://workflowhub.eu/workflows/380
+metadata:
+  docker_image: "N/A"
 ---
 
-# EMEP WPS WRF
+# emep-wps-wrf
 
 ## Overview
 

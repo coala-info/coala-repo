@@ -2,6 +2,8 @@
 name: rtk
 description: RTK performs rarefaction on large-scale count matrices to normalize sampling depth and calculate diversity statistics. Use when user asks to estimate sampling depths, perform rarefaction, generate rarefied count tables, or calculate alpha diversity measures.
 homepage: https://github.com/hildebra/Rarefaction/
+metadata:
+  docker_image: "quay.io/biocontainers/rtk:0.93.2--h077b44d_6"
 ---
 
 # rtk

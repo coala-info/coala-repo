@@ -2,6 +2,8 @@
 name: meteor
 description: Meteor performs high-resolution metagenomic analysis by mapping shotgun sequencing reads against microbial gene catalogues to generate taxonomic and functional profiles. Use when user asks to download gene catalogues, map reads to a reference, generate species-level abundance tables, perform functional annotation, or conduct strain-level population structure inference.
 homepage: https://github.com/metagenopolis/meteor
+metadata:
+  docker_image: "quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0"
 ---
 
 # meteor

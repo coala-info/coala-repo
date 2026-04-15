@@ -4,6 +4,8 @@ description: This pipeline processes raw Calling Cards data from yeast or mammal
 homepage: https://github.com/nf-core/callingcards
 ---
 
+# callingcards
+
 ## Overview
 The nf-core/callingcards pipeline is designed for the automated processing of Calling Cards experimental data, a method used to track transcription factor binding or transposon insertions. It handles the complexities of demultiplexing yeast libraries or processing mammalian data to identify and count "hops" across the genome.
 

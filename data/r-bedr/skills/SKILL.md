@@ -4,7 +4,6 @@ description: This tool performs genomic interval arithmetic and region processin
 homepage: https://cloud.r-project.org/web/packages/bedr/index.html
 ---
 
-
 # r-bedr
 
 name: r-bedr

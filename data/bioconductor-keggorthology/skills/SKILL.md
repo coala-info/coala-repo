@@ -4,7 +4,6 @@ description: This tool provides a representation of the KEGG Orthology hierarchy
 homepage: https://bioconductor.org/packages/release/bioc/html/keggorthology.html
 ---
 
-
 # bioconductor-keggorthology
 
 name: bioconductor-keggorthology

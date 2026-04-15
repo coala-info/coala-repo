@@ -4,7 +4,6 @@ description: This package provides example Illumina bead-level microarray data f
 homepage: https://bioconductor.org/packages/release/data/experiment/html/blimaTestingData.html
 ---
 
-
 # bioconductor-blimatestingdata
 
 name: bioconductor-blimatestingdata

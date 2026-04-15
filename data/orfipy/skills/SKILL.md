@@ -1,9 +1,10 @@
 ---
 name: orfipy
-description: "orfipy is a high-performance tool for rapidly discovering and extracting open reading frames from DNA sequences. Use when user asks to find ORFs, translate sequences to peptides, generate BED or BED12 files for genomic mapping, or perform ORF discovery on transcriptome assemblies."
+description: orfipy is a high-performance tool for rapidly discovering and extracting open reading frames from DNA sequences. Use when user asks to find ORFs, translate sequences to peptides, generate BED or BED12 files for genomic mapping, or perform ORF discovery on transcriptome assemblies.
 homepage: https://github.com/urmi-21/orfipy
+metadata:
+  docker_image: "quay.io/biocontainers/orfipy:0.0.4--py37h96cfd12_1"
 ---
-
 
 # orfipy
 

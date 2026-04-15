@@ -2,8 +2,9 @@
 name: leaff
 description: Leaff is a specialized diffing utility that analyzes compiled Lean modules to provide a high-level summary of logical changes between project versions. Use when user asks to compare Lean library versions, identify added or removed theorems, detect renamed lemmas, or verify that a refactor preserved the intended logic.
 homepage: https://github.com/alexjbest/leaff
+metadata:
+  docker_image: "biocontainers/leaff:v020150903r2013-6-deb_cv1"
 ---
-
 
 # leaff
 

@@ -4,6 +4,8 @@ description: This pipeline identifies differentially active transcription factor
 homepage: https://github.com/nf-core/tfactivity
 ---
 
+# tfactivity
+
 ## Overview
 nf-core/tfactivity is a bioinformatics pipeline designed to identify and rank transcription factors (TFs) that are most likely responsible for observed differential gene expression between multiple biological conditions. It solves the problem of prioritizing regulatory drivers by integrating chromatin accessibility information with transcriptomic data.
 

@@ -4,7 +4,6 @@ description: This tool classifies and annotates cell types in single-cell RNA-se
 homepage: https://bioconductor.org/packages/3.13/bioc/html/scClassifR.html
 ---
 
-
 # bioconductor-scclassifr
 
 name: bioconductor-scclassifr

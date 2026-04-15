@@ -4,7 +4,6 @@ description: This tool calculates P-values and score thresholds for Position Wei
 homepage: https://cloud.r-project.org/web/packages/TFMPvalue/index.html
 ---
 
-
 # r-tfmpvalue
 
 name: r-tfmpvalue

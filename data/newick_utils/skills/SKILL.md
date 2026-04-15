@@ -2,6 +2,8 @@
 name: newick_utils
 description: The newick_utils suite provides a high-performance toolkit for processing, manipulating, and visualizing phylogenetic tree data. Use when user asks to visualize trees in ASCII or SVG formats, re-root clades, prune or keep specific taxa, collapse low-support nodes, or extract tree statistics and labels.
 homepage: http://cegg.unige.ch/newick_utils
+metadata:
+  docker_image: "quay.io/biocontainers/newick_utils:1.6--hd747bf3_9"
 ---
 
 # newick_utils

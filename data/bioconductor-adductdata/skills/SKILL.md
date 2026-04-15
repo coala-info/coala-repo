@@ -4,7 +4,6 @@ description: This package provides mass spectrometry data and pre-computed model
 homepage: https://bioconductor.org/packages/release/data/experiment/html/adductData.html
 ---
 
-
 # bioconductor-adductdata
 
 name: bioconductor-adductdata

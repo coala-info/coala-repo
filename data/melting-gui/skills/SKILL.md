@@ -2,8 +2,9 @@
 name: melting-gui
 description: The melting-gui tool calculates the precise temperature and pressure coordinates of the inflection point on a substance's melting curve using automated filtering and mathematical fitting. Use when user asks to calculate thermodynamic inflection points, identify melting behavior transitions, or analyze melting curve data for plateau regions.
 homepage: https://github.com/GokalpKoreken/Auto-Thermodynamic-Point-of-Inflection-on-Melting-Curve-Calculator-GUI-
+metadata:
+  docker_image: "biocontainers/melting-gui:v4.3.1dfsg-2-deb_cv1"
 ---
-
 
 # melting-gui
 

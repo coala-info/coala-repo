@@ -1,9 +1,10 @@
 ---
 name: porfast
-description: "Extracts Open Reading Frames (ORFs) from paired-end Illumina sequencing reads. Use when user asks to extract ORFs from FASTQ files."
+description: Extracts Open Reading Frames (ORFs) from paired-end Illumina sequencing reads. Use when user asks to extract ORFs from FASTQ files.
 homepage: https://github.com/telatin/porfast
+metadata:
+  docker_image: "quay.io/biocontainers/porfast:0.8.0--hbeb723e_0"
 ---
-
 
 # porfast
 

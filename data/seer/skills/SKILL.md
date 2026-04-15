@@ -2,8 +2,9 @@
 name: seer
 description: Performs sequence element (kmer) enrichment analysis to identify genetic patterns associated with specific phenotypes. Use when user asks to find enriched sequence motifs or kmers that differentiate between sample groups or correlate with continuous traits.
 homepage: https://github.com/johnlees/seer
+metadata:
+  docker_image: "biocontainers/seer:v1.1.4-2b2-deb_cv1"
 ---
-
 
 # seer
 

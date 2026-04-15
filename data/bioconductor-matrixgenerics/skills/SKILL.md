@@ -4,7 +4,6 @@ description: This package provides S4 generic summary statistic functions for ro
 homepage: https://bioconductor.org/packages/release/bioc/html/MatrixGenerics.html
 ---
 
-
 # bioconductor-matrixgenerics
 
 name: bioconductor-matrixgenerics

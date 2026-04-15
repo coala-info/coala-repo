@@ -2,8 +2,9 @@
 name: ucsc-countchars
 description: The ucsc-countchars tool scans a file and reports the total frequency of a single specified character. Use when user asks to 'count characters', 'count newlines', 'count tabs', 'count specific nucleotides', 'verify file integrity', 'check for expected delimiters', or 'perform basic sequence composition analysis'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-countchars:482--h0b57e2e_0"
 ---
-
 
 # ucsc-countchars
 

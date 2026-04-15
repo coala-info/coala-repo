@@ -2,8 +2,9 @@
 name: pigpen
 description: PIGPEN is a bioinformatics suite designed to detect and quantify oxidative marks on RNA molecules by analyzing nucleotide conversions in sequencing data. Use when user asks to identify 8-oxoguanosine positions, quantify RNA localization at subcellular sites, or perform differential oxidation analysis.
 homepage: https://github.com/TaliaferroLab/OINC-seq
+metadata:
+  docker_image: "quay.io/biocontainers/pigpen:0.0.9--pyhdfd78af_0"
 ---
-
 
 # pigpen
 

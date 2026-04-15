@@ -1,9 +1,10 @@
 ---
 name: prinseq-plus-plus
-description: "prinseq-plus-plus is a high-performance C++ tool used for rapid quality control, filtering, and trimming of high-throughput sequencing data. Use when user asks to filter reads by quality or length, trim adapters and low-quality bases, remove sequence duplicates, or perform complexity filtering."
+description: prinseq-plus-plus is a high-performance C++ tool used for rapid quality control, filtering, and trimming of high-throughput sequencing data. Use when user asks to filter reads by quality or length, trim adapters and low-quality bases, remove sequence duplicates, or perform complexity filtering.
 homepage: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
+metadata:
+  docker_image: "quay.io/biocontainers/prinseq-plus-plus:1.2.4--h7ff8a90_1"
 ---
-
 
 # prinseq-plus-plus
 

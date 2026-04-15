@@ -2,6 +2,8 @@
 name: plassembler
 description: Plassembler automates the recovery and assembly of plasmids from bacterial genomes using hybrid or long-read sequencing data. Use when user asks to assemble plasmids, recover extrachromosomal elements, or perform hybrid assembly of bacterial sequences.
 homepage: https://github.com/gbouras13/plassembler
+metadata:
+  docker_image: "quay.io/biocontainers/plassembler:1.8.2--pyhdfd78af_0"
 ---
 
 # plassembler

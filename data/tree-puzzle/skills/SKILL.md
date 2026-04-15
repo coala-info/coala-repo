@@ -2,8 +2,9 @@
 name: tree-puzzle
 description: The tree-puzzle tool implements the Tree of Thoughts framework to solve complex puzzles and benchmark reasoning strategies. Use when user asks to solve a Sudoku puzzle, run experiments comparing reasoning strategies, or benchmark puzzle-solving methods.
 homepage: https://github.com/jieyilong/tree-of-thought-puzzle-solver
+metadata:
+  docker_image: "biocontainers/tree-puzzle:v5.2-11-deb_cv1"
 ---
-
 
 # tree-puzzle
 

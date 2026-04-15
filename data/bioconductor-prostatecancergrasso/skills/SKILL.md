@@ -4,7 +4,6 @@ description: This package provides access to the Grasso et al. (2012) prostate c
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerGrasso.html
 ---
 
-
 # bioconductor-prostatecancergrasso
 
 name: bioconductor-prostatecancergrasso

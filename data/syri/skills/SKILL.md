@@ -2,8 +2,9 @@
 name: syri
 description: SyRI identifies syntenic regions and structural rearrangements by comparing two whole-genome assemblies. Use when user asks to find genomic differences between assemblies, classify structural variations, or identify syntenic regions.
 homepage: https://github.com/schneebergerlab/syri
+metadata:
+  docker_image: "quay.io/biocontainers/syri:1.7.1--py311hcf77733_1"
 ---
-
 
 # syri
 

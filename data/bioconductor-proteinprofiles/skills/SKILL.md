@@ -4,7 +4,6 @@ description: This tool analyzes protein abundance profiles to identify groups of
 homepage: https://bioconductor.org/packages/release/bioc/html/proteinProfiles.html
 ---
 
-
 # bioconductor-proteinprofiles
 
 name: bioconductor-proteinprofiles

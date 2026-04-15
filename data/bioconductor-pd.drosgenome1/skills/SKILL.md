@@ -4,7 +4,6 @@ description: This package provides platform design annotation data for the Affym
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.drosgenome1.html
 ---
 
-
 # bioconductor-pd.drosgenome1
 
 name: bioconductor-pd.drosgenome1

@@ -4,6 +4,8 @@ description: nf-core/demultiplex processes raw sequencing data from Illumina, El
 homepage: https://github.com/nf-core/demultiplex
 ---
 
+# demultiplex
+
 ## Overview
 nf-core/demultiplex is a bioinformatics pipeline designed to automate the conversion of raw binary data from next-generation sequencing machines into individual FASTQ files. It provides a unified interface for various vendor-specific tools, handling the complexities of barcode identification and sample separation across multiple sequencing technologies.
 

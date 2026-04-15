@@ -4,7 +4,6 @@ description: This tool performs differential binding analysis for ChIP-seq data 
 homepage: https://bioconductor.org/packages/release/bioc/html/CSSQ.html
 ---
 
-
 # bioconductor-cssq
 
 name: bioconductor-cssq

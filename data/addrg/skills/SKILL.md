@@ -2,8 +2,9 @@
 name: addrg
 description: The addrg tool generates Bitcoin and altcoin addresses along with their corresponding private keys using a minimal and auditable codebase. Use when user asks to generate a Bitcoin address, create keys for altcoin networks using specific version bytes, or derive addresses from a passphrase.
 homepage: https://github.com/weex/addrgen
+metadata:
+  docker_image: "quay.io/biocontainers/addrg:0.2.1--h577a1d6_14"
 ---
-
 
 # addrg
 

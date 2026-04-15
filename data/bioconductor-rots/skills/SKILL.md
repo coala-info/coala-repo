@@ -4,7 +4,6 @@ description: ROTS is a data-adaptive method that identifies differentially expre
 homepage: https://bioconductor.org/packages/release/bioc/html/ROTS.html
 ---
 
-
 # bioconductor-rots
 
 ## Overview

@@ -2,8 +2,9 @@
 name: metawrap-classify-bins
 description: This tool provides conservative taxonomic assignments for metagenomic bins using Kraken databases. Use when user asks to classify bins, assign taxonomy to draft genomes, or identify organisms in a refined bin set.
 homepage: https://github.com/bxlab/metaWRAP
+metadata:
+  docker_image: "quay.io/biocontainers/metawrap-classify-bins:1.3.0--hdfd78af_3"
 ---
-
 
 # metawrap-classify-bins
 

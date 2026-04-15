@@ -1,10 +1,12 @@
 ---
 name: k-mer-profiling-and-reads-statistics-vgp1
-description: "This Galaxy workflow processes PacBio HiFi reads using Meryl, GenomeScope, and RDeval to generate k-mer databases and comprehensive read statistics. Use this skill when you need to estimate genome size, heterozygosity, and repeat content or assess the quality and complexity of sequencing data prior to de novo assembly."
-homepage: https://workflowhub.eu/workflows/632
+description: This Galaxy workflow processes PacBio HiFi reads using Meryl, GenomeScope, and RDeval to generate k-mer databases and comprehensive read statistics. Use this skill when you need to estimate genome size, heterozygosity, and repeat content or assess the quality and complexity of sequencing data prior to de novo assembly.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# K-mer profiling and reads statistics VGP1
+# k-mer-profiling-and-reads-statistics-vgp1
 
 ## Overview
 

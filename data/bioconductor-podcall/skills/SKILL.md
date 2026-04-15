@@ -4,7 +4,6 @@ description: PoDCall is an R package that uses Gaussian Mixture Models and Likel
 homepage: https://bioconductor.org/packages/release/bioc/html/PoDCall.html
 ---
 
-
 # bioconductor-podcall
 
 ## Overview

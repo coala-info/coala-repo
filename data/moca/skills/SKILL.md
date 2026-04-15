@@ -1,9 +1,10 @@
 ---
 name: moca
-description: "moca analyzes the evolutionary conservation of transcription factor binding sites to distinguish functional biological motifs from noise. Use when user asks to identify motifs in ChIP-Seq data, calculate motif conservation scores, or generate conservation plots."
+description: moca analyzes the evolutionary conservation of transcription factor binding sites to distinguish functional biological motifs from noise. Use when user asks to identify motifs in ChIP-Seq data, calculate motif conservation scores, or generate conservation plots.
 homepage: https://github.com/saketkc/moca
+metadata:
+  docker_image: "quay.io/biocontainers/moca:0.4.3--py27_0"
 ---
-
 
 # moca
 

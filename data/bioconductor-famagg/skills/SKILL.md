@@ -4,7 +4,6 @@ description: The FamAgg package provides a framework for analyzing the familial 
 homepage: https://bioconductor.org/packages/release/bioc/html/FamAgg.html
 ---
 
-
 # bioconductor-famagg
 
 ## Overview

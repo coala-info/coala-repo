@@ -4,7 +4,6 @@ description: This package provides interface and utility functions for retrievin
 homepage: https://bioconductor.org/packages/release/bioc/html/annotate.html
 ---
 
-
 # bioconductor-annotate
 
 name: bioconductor-annotate

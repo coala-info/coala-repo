@@ -2,8 +2,9 @@
 name: smalr
 description: SMALR generates 3D animal poses and shapes from 2D photographs by fitting a linear model to keypoints and silhouettes. Use when user asks to reconstruct 3D animal meshes, set up the SMALR environment, or refine animal textures and shapes from images.
 homepage: https://github.com/silviazuffi/smalr_online
+metadata:
+  docker_image: "biocontainers/smalr:v1.1dfsg-2-deb_cv1"
 ---
-
 
 # smalr
 

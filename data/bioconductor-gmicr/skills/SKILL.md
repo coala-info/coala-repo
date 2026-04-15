@@ -4,7 +4,6 @@ description: This tool builds Gene Module-Immune Cell networks by integrating ge
 homepage: https://bioconductor.org/packages/release/bioc/html/GmicR.html
 ---
 
-
 # bioconductor-gmicr
 
 name: bioconductor-gmicr

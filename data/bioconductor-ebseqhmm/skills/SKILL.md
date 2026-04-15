@@ -4,7 +4,6 @@ description: EBSeqHMM performs differential expression analysis for ordered RNA-
 homepage: https://bioconductor.org/packages/3.8/bioc/html/EBSeqHMM.html
 ---
 
-
 # bioconductor-ebseqhmm
 
 ## Overview

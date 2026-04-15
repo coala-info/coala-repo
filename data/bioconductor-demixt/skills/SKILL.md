@@ -4,7 +4,6 @@ description: DeMixT performs transcriptomic deconvolution to estimate component 
 homepage: https://bioconductor.org/packages/release/bioc/html/DeMixT.html
 ---
 
-
 # bioconductor-demixt
 
 name: bioconductor-demixt

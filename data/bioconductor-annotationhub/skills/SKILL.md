@@ -4,7 +4,6 @@ description: This tool provides a client interface to discover and retrieve a va
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationHub.html
 ---
 
-
 # bioconductor-annotationhub
 
 name: bioconductor-annotationhub

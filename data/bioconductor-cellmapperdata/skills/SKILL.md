@@ -4,7 +4,6 @@ description: This tool provides access to pre-processed microarray expression co
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CellMapperData.html
 ---
 
-
 # bioconductor-cellmapperdata
 
 name: bioconductor-cellmapperdata

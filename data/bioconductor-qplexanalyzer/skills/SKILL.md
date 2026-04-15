@@ -4,7 +4,6 @@ description: This package provides a pipeline for the statistical analysis and d
 homepage: https://bioconductor.org/packages/release/bioc/html/qPLEXanalyzer.html
 ---
 
-
 # bioconductor-qplexanalyzer
 
 name: bioconductor-qplexanalyzer

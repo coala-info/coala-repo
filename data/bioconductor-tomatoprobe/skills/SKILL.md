@@ -4,7 +4,6 @@ description: This package provides probe sequence data and layout information fo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/tomatoprobe.html
 ---
 
-
 # bioconductor-tomatoprobe
 
 name: bioconductor-tomatoprobe

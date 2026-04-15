@@ -4,7 +4,6 @@ description: This package provides the human genome sequence (hg38) with major a
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.major
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.major

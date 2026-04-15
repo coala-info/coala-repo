@@ -1,10 +1,12 @@
 ---
 name: ecoregionalization-workflow-part-2
-description: "This ecological workflow processes environmental and biological tabular data using ClaraClust and EcoMap to perform ecoregionalization and generate spatial maps. Use this skill when you need to identify distinct ecological regions and visualize their spatial distribution based on clustered environmental and biological variables."
-homepage: https://workflowhub.eu/workflows/1209
+description: This ecological workflow processes environmental and biological tabular data using ClaraClust and EcoMap to perform ecoregionalization and generate spatial maps. Use this skill when you need to identify distinct ecological regions and visualize their spatial distribution based on clustered environmental and biological variables.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ecoregionalization workflow (Part 2)
+# ecoregionalization-workflow-part-2
 
 ## Overview
 

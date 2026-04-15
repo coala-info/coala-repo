@@ -4,7 +4,6 @@ description: This tool performs GWAS-based Mendelian Randomization and path anal
 homepage: https://bioconductor.org/packages/release/bioc/html/GMRP.html
 ---
 
-
 # bioconductor-gmrp
 
 name: bioconductor-gmrp

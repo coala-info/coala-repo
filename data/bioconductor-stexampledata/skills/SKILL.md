@@ -4,7 +4,6 @@ description: This package provides a collection of curated spatial transcriptomi
 homepage: https://bioconductor.org/packages/release/data/experiment/html/STexampleData.html
 ---
 
-
 # bioconductor-stexampledata
 
 name: bioconductor-stexampledata

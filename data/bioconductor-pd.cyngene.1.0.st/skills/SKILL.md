@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the C
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cyngene.1.0.st.html
 ---
 
-
 # bioconductor-pd.cyngene.1.0.st
 
 name: bioconductor-pd.cyngene.1.0.st

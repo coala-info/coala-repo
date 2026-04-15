@@ -4,7 +4,6 @@ description: MOFA is a statistical framework that integrates multiple data modal
 homepage: https://bioconductor.org/packages/3.9/bioc/html/MOFA.html
 ---
 
-
 # bioconductor-mofa
 
 ## Overview

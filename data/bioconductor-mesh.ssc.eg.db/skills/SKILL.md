@@ -4,7 +4,6 @@ description: This tool provides annotation mapping between MeSH identifiers and 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Ssc.eg.db.html
 ---
 
-
 # bioconductor-mesh.ssc.eg.db
 
 name: bioconductor-mesh.ssc.eg.db

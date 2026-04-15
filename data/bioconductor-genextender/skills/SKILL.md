@@ -4,7 +4,6 @@ description: bioconductor-genextender performs functional annotation of ChIP-seq
 homepage: https://bioconductor.org/packages/release/bioc/html/geneXtendeR.html
 ---
 
-
 # bioconductor-genextender
 
 name: bioconductor-genextender

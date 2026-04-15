@@ -2,8 +2,9 @@
 name: arriba
 description: Arriba discovers chimeric transcripts and structural rearrangements from RNA-Seq data as a post-processor for the STAR aligner. Use when user asks to detect gene fusions, identify viral integration sites, or visualize structural rearrangements in transcriptomic data.
 homepage: https://github.com/suhrig/arriba
+metadata:
+  docker_image: "quay.io/biocontainers/arriba:2.5.1--h87b9561_0"
 ---
-
 
 # arriba
 

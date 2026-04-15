@@ -1,9 +1,10 @@
 ---
 name: isa2w4m
-description: "Converts ISA study metadata into the 3 TSV file format required by Workflow4Metabolomics. Use when user asks to convert ISA metadata to Workflow4Metabolomics format."
+description: Converts ISA study metadata into the 3 TSV file format required by Workflow4Metabolomics. Use when user asks to convert ISA metadata to Workflow4Metabolomics format.
 homepage: https://github.com/workflow4metabolomics/isa2w4m
+metadata:
+  docker_image: "biocontainers/isa2w4m:phenomenal-v1.1.0_cv1.4.11"
 ---
-
 
 # isa2w4m
 

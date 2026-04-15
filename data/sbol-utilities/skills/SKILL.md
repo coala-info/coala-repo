@@ -1,7 +1,9 @@
 ---
 name: sbol-utilities
-description: "sbol-utilities provides a toolkit for manipulating, converting, and analyzing SBOL 3 synthetic biology data. Use when user asks to convert between SBOL and other formats, visualize object trees, expand combinatorial designs, calculate sequences, or compare SBOL files."
+description: sbol-utilities provides a toolkit for manipulating, converting, and analyzing SBOL 3 synthetic biology data. Use when user asks to convert between SBOL and other formats, visualize object trees, expand combinatorial designs, calculate sequences, or compare SBOL files.
 homepage: https://github.com/SynBioDex/SBOL-utilities
+metadata:
+  docker_image: "quay.io/biocontainers/sbol-utilities:1.0a16--pyhdfd78af_0"
 ---
 
 # sbol-utilities

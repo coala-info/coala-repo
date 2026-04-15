@@ -2,6 +2,8 @@
 name: eggnog-mapper
 description: eggnog-mapper performs functional annotation of novel biological sequences by leveraging orthology-based transfer from the eggNOG database. Use when user asks to annotate protein or nucleotide sequences, perform metagenomic gene prediction, or assign GO terms and KEGG pathways to genomic data.
 homepage: https://github.com/jhcepas/eggnog-mapper
+metadata:
+  docker_image: "quay.io/biocontainers/eggnog-mapper:2.1.13--pyhdfd78af_2"
 ---
 
 # eggnog-mapper

@@ -1,10 +1,12 @@
 ---
 name: funannotate
-description: "This Galaxy workflow performs comprehensive structural and functional genome annotation by integrating genome assemblies, RNA-Seq data, and protein evidence using Funannotate, RNA STAR, eggNOG-mapper, and InterProScan. Use this skill when you need to identify gene models, predict protein functions, and generate submission-ready files for newly sequenced fungal or eukaryotic genomes."
-homepage: https://workflowhub.eu/workflows/754
+description: This Galaxy workflow performs comprehensive structural and functional genome annotation by integrating genome assemblies, RNA-Seq data, and protein evidence using Funannotate, RNA STAR, eggNOG-mapper, and InterProScan. Use this skill when you need to identify gene models, predict protein functions, and generate submission-ready files for newly sequenced fungal or eukaryotic genomes.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Funannotate
+# funannotate
 
 ## Overview
 

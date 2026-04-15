@@ -2,8 +2,9 @@
 name: chromsize
 description: The chromsize tool calculates chromosome lengths from FASTA or 2bit genomic data files. Use when user asks to calculate chromosome sizes, generate a chrom.sizes file, or determine sequence lengths from genomic data.
 homepage: https://github.com/alejandrogzi/chromsize
+metadata:
+  docker_image: "quay.io/biocontainers/chromsize:0.0.32--ha6fb395_0"
 ---
-
 
 # chromsize
 

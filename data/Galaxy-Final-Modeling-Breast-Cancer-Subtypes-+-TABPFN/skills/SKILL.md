@@ -1,10 +1,12 @@
 ---
 name: final-modeling-breast-cancer-subtypes-tabpfn
-description: "This Galaxy workflow integrates clinical, gene expression, and copy number alteration data to classify breast cancer subtypes using Flexynesis and TabPFN machine learning models. Use this skill when you need to evaluate the predictive performance of multi-omic integration methods or visualize molecular embeddings for patient stratification in oncology research."
-homepage: https://workflowhub.eu/workflows/1873
+description: This Galaxy workflow integrates clinical, gene expression, and copy number alteration data to classify breast cancer subtypes using Flexynesis and TabPFN machine learning models. Use this skill when you need to evaluate the predictive performance of multi-omic integration methods or visualize molecular embeddings for patient stratification in oncology research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Final - Modeling Breast Cancer Subtypes + TABPFN
+# final-modeling-breast-cancer-subtypes-tabpfn
 
 ## Overview
 

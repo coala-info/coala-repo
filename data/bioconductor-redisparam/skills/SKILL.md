@@ -4,7 +4,6 @@ description: RedisParam is a BiocParallel back-end that uses a Redis database to
 homepage: https://bioconductor.org/packages/release/bioc/html/RedisParam.html
 ---
 
-
 # bioconductor-redisparam
 
 ## Overview

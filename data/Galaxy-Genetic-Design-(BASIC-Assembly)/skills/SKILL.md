@@ -1,10 +1,12 @@
 ---
 name: genetic-design-basic-assembly
-description: "This workflow automates the design of genetic constructs for metabolic pathways using Selenzyme for enzyme selection, BasicDesign for assembly planning, and DNA-Bot for generating laboratory automation scripts from SBML and taxonomic inputs. Use this skill when you need to translate a theoretical metabolic pathway into physical DNA assembly instructions and robotic liquid handling scripts for BASIC assembly in a specific host organism."
-homepage: https://workflowhub.eu/workflows/2009
+description: This workflow automates the design of genetic constructs for metabolic pathways using Selenzyme for enzyme selection, BasicDesign for assembly planning, and DNA-Bot for generating laboratory automation scripts from SBML and taxonomic inputs. Use this skill when you need to translate a theoretical metabolic pathway into physical DNA assembly instructions and robotic liquid handling scripts for BASIC assembly in a specific host organism.
+homepage: https://www.micalis.fr/equipe/galaxy-synbiocad/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genetic Design (BASIC Assembly)
+# genetic-design-basic-assembly
 
 ## Overview
 

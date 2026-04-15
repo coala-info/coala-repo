@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the Agil
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4845a.db.html
 ---
 
-
 # bioconductor-hgug4845a.db
 
 name: bioconductor-hgug4845a.db

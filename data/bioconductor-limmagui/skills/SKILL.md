@@ -4,7 +4,6 @@ description: Bioconductor-limmagui provides a graphical user interface for the l
 homepage: https://bioconductor.org/packages/release/bioc/html/limmaGUI.html
 ---
 
-
 # bioconductor-limmagui
 
 name: bioconductor-limmagui

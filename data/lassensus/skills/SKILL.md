@@ -2,6 +2,8 @@
 name: lassensus
 description: Lassensus is a bioinformatics pipeline that generates consensus sequences for Lassa virus by automatically selecting the best-matching reference from GenBank. Use when user asks to generate Lassa virus consensus sequences, identify the best reference genome for highly divergent samples, or perform long-read polishing of L and S segments.
 homepage: https://github.com/DaanJansen94/lassensus
+metadata:
+  docker_image: "quay.io/biocontainers/lassensus:0.0.5--pyhdfd78af_0"
 ---
 
 # lassensus

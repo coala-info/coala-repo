@@ -2,8 +2,9 @@
 name: perl-perl-version
 description: This tool parses, normalizes, and compares different Perl version number formats. Use when user asks to normalize version strings, compare Perl versions, or increment version components.
 homepage: http://metacpan.org/pod/Perl::Version
+metadata:
+  docker_image: "quay.io/biocontainers/perl-perl-version:1.018--pl5321hdfd78af_0"
 ---
-
 
 # perl-perl-version
 

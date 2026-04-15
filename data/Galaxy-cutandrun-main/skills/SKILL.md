@@ -1,10 +1,12 @@
 ---
 name: cutampruncutamptag-analysis-protein-dna-interaction-mapping
-description: "This workflow processes paired-end FASTQ sequencing data for CUT&RUN and CUT&TAG epigenomic profiling using Cutadapt for trimming, Bowtie2 for alignment, and MACS2 for peak calling. Use this skill when you need to identify high-resolution genomic binding sites for transcription factors or histone modifications from low-input chromatin profiling experiments."
-homepage: https://workflowhub.eu/workflows/395
+description: This workflow processes paired-end FASTQ sequencing data for CUT&RUN and CUT&TAG epigenomic profiling using Cutadapt for trimming, Bowtie2 for alignment, and MACS2 for peak calling. Use this skill when you need to identify high-resolution genomic binding sites for transcription factors or histone modifications from low-input chromatin profiling experiments.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# CUT&amp;RUN/CUT&amp;TAG Analysis: Protein-DNA Interaction Mapping
+# cutampruncutamptag-analysis-protein-dna-interaction-mapping
 
 ## Overview
 

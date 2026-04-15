@@ -1,10 +1,12 @@
 ---
 name: exome-seq-training-full-w-cached-ref
-description: "This workflow processes trio-based exome sequencing data using BWA-MEM, FreeBayes, and GEMINI to identify candidate mutations associated with genetic diseases. Use this skill when you need to analyze family-based genomic data to discover inherited or de novo variants that may explain a clinical phenotype."
-homepage: https://workflowhub.eu/workflows/1668
+description: This workflow processes trio-based exome sequencing data using BWA-MEM, FreeBayes, and GEMINI to identify candidate mutations associated with genetic diseases. Use this skill when you need to analyze family-based genomic data to discover inherited or de novo variants that may explain a clinical phenotype.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Exome Seq Training Full W Cached Ref
+# exome-seq-training-full-w-cached-ref
 
 ## Overview
 

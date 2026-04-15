@@ -4,7 +4,6 @@ description: The ompBAM package provides C++ header files and templates for deve
 homepage: https://bioconductor.org/packages/release/bioc/html/ompBAM.html
 ---
 
-
 # bioconductor-ompbam
 
 name: bioconductor-ompbam

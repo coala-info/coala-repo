@@ -4,7 +4,6 @@ description: The r-jetset tool identifies the optimal Affymetrix probe set for a
 homepage: https://cran.r-project.org/web/packages/jetset/index.html
 ---
 
-
 # r-jetset
 
 name: r-jetset

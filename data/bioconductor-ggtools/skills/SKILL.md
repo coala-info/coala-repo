@@ -4,7 +4,6 @@ description: This tool performs eQTL analysis by integrating expression and geno
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GGtools.html
 ---
 
-
 # bioconductor-ggtools
 
 name: bioconductor-ggtools

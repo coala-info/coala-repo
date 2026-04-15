@@ -2,8 +2,9 @@
 name: snakemake-logger-plugin-snkmt
 description: This plugin captures Snakemake workflow events and stores execution metadata in a SQLite database for monitoring and auditing. Use when user asks to log workflow events to a database, track job execution history, or provide data for the snkmt dashboard.
 homepage: https://github.com/cademirch/snakemake-logger-plugin-snkmt
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-logger-plugin-snkmt:0.1.6--pyhdfd78af_0"
 ---
-
 
 # snakemake-logger-plugin-snkmt
 

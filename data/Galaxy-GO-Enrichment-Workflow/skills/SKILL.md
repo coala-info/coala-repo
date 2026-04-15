@@ -1,10 +1,12 @@
 ---
 name: go-enrichment-workflow
-description: "This transcriptomics workflow utilizes GOEnrichment and GOSlimmer tools to analyze gene lists against population backgrounds and Gene Ontology annotations for species such as Drosophila and Mouse. Use this skill when you need to identify significantly enriched biological processes, molecular functions, or cellular components within sets of differentially expressed genes to understand the functional impact of experimental conditions."
-homepage: https://workflowhub.eu/workflows/1667
+description: This transcriptomics workflow utilizes GOEnrichment and GOSlimmer tools to analyze gene lists against population backgrounds and Gene Ontology annotations for species such as Drosophila and Mouse. Use this skill when you need to identify significantly enriched biological processes, molecular functions, or cellular components within sets of differentially expressed genes to understand the functional impact of experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GO Enrichment Workflow
+# go-enrichment-workflow
 
 ## Overview
 

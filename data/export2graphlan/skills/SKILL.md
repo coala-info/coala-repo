@@ -1,9 +1,10 @@
 ---
 name: export2graphlan
-description: "export2graphlan is a preprocessing utility that converts microbial abundance tables and biomarker results into input files for GraPhlAn visualization. Use when user asks to generate phylogenetic tree and annotation files, convert MetaPhlAn or HUMAnN tables for visualization, or integrate LEfSe results into circular cladograms."
+description: export2graphlan is a preprocessing utility that converts microbial abundance tables and biomarker results into input files for GraPhlAn visualization. Use when user asks to generate phylogenetic tree and annotation files, convert MetaPhlAn or HUMAnN tables for visualization, or integrate LEfSe results into circular cladograms.
 homepage: https://github.com/segatalab/export2graphlan
+metadata:
+  docker_image: "quay.io/biocontainers/export2graphlan:0.22--py_0"
 ---
-
 
 # export2graphlan
 

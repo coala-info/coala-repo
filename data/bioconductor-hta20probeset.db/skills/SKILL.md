@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Affymetrix Human 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hta20probeset.db.html
 ---
 
-
 # bioconductor-hta20probeset.db
 
 name: bioconductor-hta20probeset.db

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-spotclean
-description: "bioconductor-spotclean decontaminates spatial transcriptomics data by correcting for mRNA bleed and spot swapping between neighboring spots. Use when user asks to decontaminate 10x Visium data, estimate spot contamination rates, or reassign contaminating UMIs to their spots of origin."
+description: bioconductor-spotclean decontaminates spatial transcriptomics data by correcting for mRNA bleed and spot swapping between neighboring spots. Use when user asks to decontaminate 10x Visium data, estimate spot contamination rates, or reassign contaminating UMIs to their spots of origin.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpotClean.html
 ---
-
 
 # bioconductor-spotclean
 

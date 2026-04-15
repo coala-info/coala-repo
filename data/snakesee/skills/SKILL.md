@@ -2,6 +2,8 @@
 name: snakesee
 description: snakesee is a passive monitoring tool and terminal dashboard that tracks Snakemake workflow progress by reading local metadata. Use when user asks to monitor Snakemake workflows in real-time, view execution status snapshots, or estimate completion times using historical data.
 homepage: https://github.com/nh13/snakesee
+metadata:
+  docker_image: "quay.io/biocontainers/snakesee:0.6.1--pyhdfd78af_0"
 ---
 
 # snakesee

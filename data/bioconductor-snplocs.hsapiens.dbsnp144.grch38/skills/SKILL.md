@@ -4,7 +4,6 @@ description: This package provides access to human SNP locations and alleles fro
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SNPlocs.Hsapiens.dbSNP144.GRCh38.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp144.grch38
 
 name: bioconductor-snplocs.hsapiens.dbsnp144.grch38

@@ -2,8 +2,9 @@
 name: dimet
 description: DIMet is a bioinformatics pipeline for the downstream analysis and visualization of tracer metabolomics data. Use when user asks to compare metabolic states between conditions, track labeling dynamics over time, or perform differential analysis on isotopologue distributions and metabolite pools.
 homepage: https://github.com/cbib/DIMet.git
+metadata:
+  docker_image: "quay.io/biocontainers/dimet:0.2.4--pyhdfd78af_1"
 ---
-
 
 # dimet
 

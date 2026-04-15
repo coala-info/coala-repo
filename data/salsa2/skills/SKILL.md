@@ -1,7 +1,9 @@
 ---
 name: salsa2
-description: "SALSA2 integrates Hi-C data with genome assemblies to produce chromosome-scale scaffolds. Use when user asks to scaffold assemblies using Hi-C data, correct misassemblies, or utilize assembly graphs to resolve contig orientations."
+description: SALSA2 integrates Hi-C data with genome assemblies to produce chromosome-scale scaffolds. Use when user asks to scaffold assemblies using Hi-C data, correct misassemblies, or utilize assembly graphs to resolve contig orientations.
 homepage: https://github.com/marbl/SALSA
+metadata:
+  docker_image: "quay.io/biocontainers/salsa2:2.3--py27h16ec135_1"
 ---
 
 # salsa2

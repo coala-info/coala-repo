@@ -2,8 +2,9 @@
 name: pypiper
 description: Pypiper is a Python framework for wrapping command-line tools into restartable pipelines with automatic checkpointing and resource tracking. Use when user asks to build a bioinformatics pipeline, manage shell command execution in Python, or implement automatic checkpointing and resource monitoring for data processing scripts.
 homepage: http://pypiper.readthedocs.io/en/latest/
+metadata:
+  docker_image: "quay.io/biocontainers/pypiper:0.8--py_0"
 ---
-
 
 # pypiper
 

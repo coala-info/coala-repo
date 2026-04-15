@@ -1,9 +1,10 @@
 ---
 name: fastahack
-description: "fastahack indexes and performs random access on FASTA-formatted sequence files to rapidly extract genomic regions. Use when user asks to index a FASTA file, extract specific genomic sequences or regions, perform batch extraction via stdin, or calculate sequence entropy."
+description: fastahack indexes and performs random access on FASTA-formatted sequence files to rapidly extract genomic regions. Use when user asks to index a FASTA file, extract specific genomic sequences or regions, perform batch extraction via stdin, or calculate sequence entropy.
 homepage: https://github.com/ekg/fastahack
+metadata:
+  docker_image: "quay.io/biocontainers/fastahack:2016.07.2--0"
 ---
-
 
 # fastahack
 

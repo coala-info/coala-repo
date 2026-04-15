@@ -2,8 +2,9 @@
 name: perl-parse-recdescent
 description: This tool creates recursive-descent parsers in Perl using top-down grammar rules to process complex or nested text structures. Use when user asks to define context-free grammars, parse mathematical expressions, or build custom configuration language parsers.
 homepage: http://metacpan.org/pod/Parse-RecDescent
+metadata:
+  docker_image: "quay.io/biocontainers/perl-parse-recdescent:1.967015--pl526_0"
 ---
-
 
 # perl-parse-recdescent
 

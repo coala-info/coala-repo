@@ -4,7 +4,6 @@ description: This package provides a FeatureDb object containing common SNP data
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.UCSC.snp137common.hg19.html
 ---
 
-
 # bioconductor-fdb.ucsc.snp137common.hg19
 
 name: bioconductor-fdb.ucsc.snp137common.hg19

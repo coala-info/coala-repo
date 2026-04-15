@@ -2,6 +2,8 @@
 name: hicberg
 description: hicberg transforms raw sequencing reads into high-quality genomic contact maps through a unified pipeline of alignment, filtering, and normalization. Use when user asks to process Hi-C data, generate COOL format matrices from FASTQ files, or reconstruct genomic contact data.
 homepage: https://github.com/sebgra/hicberg
+metadata:
+  docker_image: "quay.io/biocontainers/hicberg:1.0.1--py312hcf36b3e_0"
 ---
 
 # hicberg

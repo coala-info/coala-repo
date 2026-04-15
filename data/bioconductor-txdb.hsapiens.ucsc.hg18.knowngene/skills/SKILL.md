@@ -4,7 +4,6 @@ description: This package provides UCSC hg18 human genome annotations as a TxDb 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Hsapiens.UCSC.hg18.knownGene.html
 ---
 
-
 # bioconductor-txdb.hsapiens.ucsc.hg18.knowngene
 
 name: bioconductor-txdb.hsapiens.ucsc.hg18.knowngene

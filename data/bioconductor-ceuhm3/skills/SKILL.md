@@ -4,7 +4,6 @@ description: This package provides HapMap Phase III genotype calls and expressio
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ceuhm3.html
 ---
 
-
 # bioconductor-ceuhm3
 
 name: bioconductor-ceuhm3

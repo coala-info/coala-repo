@@ -1,9 +1,10 @@
 ---
 name: chanjo
-description: "Chanjo manages and analyzes clinical genomics sequence coverage data by storing annotated metrics in a SQL database. Use when user asks to initialize a coverage database, link genomic region definitions, load processed coverage data, or calculate mean coverage and completeness metrics."
+description: Chanjo manages and analyzes clinical genomics sequence coverage data by storing annotated metrics in a SQL database. Use when user asks to initialize a coverage database, link genomic region definitions, load processed coverage data, or calculate mean coverage and completeness metrics.
 homepage: https://github.com/Clinical-Genomics/chanjo
+metadata:
+  docker_image: "quay.io/biocontainers/chanjo:3.3.0--py27_0"
 ---
-
 
 # chanjo
 

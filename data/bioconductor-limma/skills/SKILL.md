@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis using linear mo
 homepage: https://bioconductor.org/packages/release/bioc/html/limma.html
 ---
 
-
 # bioconductor-limma
 
 name: bioconductor-limma

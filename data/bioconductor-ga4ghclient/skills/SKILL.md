@@ -4,7 +4,6 @@ description: This tool provides an R interface to access and analyze genomic dat
 homepage: https://bioconductor.org/packages/release/bioc/html/GA4GHclient.html
 ---
 
-
 # bioconductor-ga4ghclient
 
 name: bioconductor-ga4ghclient

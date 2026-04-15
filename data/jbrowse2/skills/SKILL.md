@@ -2,8 +2,9 @@
 name: jbrowse2
 description: JBrowse 2 is a genome browser used to visualize complex genomic data, structural variants, and protein structures. Use when user asks to initialize a web instance, add reference genomes, register data tracks, or generate text indexes for searching gene names.
 homepage: https://jbrowse.org/
+metadata:
+  docker_image: "quay.io/biocontainers/jbrowse2:4.1.3--h71b9176_0"
 ---
-
 
 # jbrowse2
 

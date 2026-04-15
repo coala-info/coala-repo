@@ -2,8 +2,9 @@
 name: perl-threaded
 description: This tool provides a Perl interpreter build specifically configured with thread support for executing scripts that require internal parallelism. Use when user asks to install a threaded Perl environment, run scripts utilizing the threads or threads::shared modules, or resolve interpreter dependencies in Bioconda.
 homepage: http://www.perl.org/
+metadata:
+  docker_image: "quay.io/biocontainers/perl-threaded:5.32.1--hdfd78af_1"
 ---
-
 
 # perl-threaded
 

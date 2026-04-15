@@ -4,7 +4,6 @@ description: This package provides R wrappers for the HTSlib C library to facili
 homepage: https://bioconductor.org/packages/release/bioc/html/Rhtslib.html
 ---
 
-
 # bioconductor-rhtslib
 
 ## Overview

@@ -4,7 +4,6 @@ description: The r-grain package performs probability propagation and inference 
 homepage: https://cran.r-project.org/web/packages/grain/index.html
 ---
 
-
 # r-grain
 
 ## Overview

@@ -2,6 +2,8 @@
 name: freyja
 description: Freyja recovers the relative abundance of SARS-CoV-2 lineages from mixed sequencing datasets using a library of lineage-defining mutational barcodes. Use when user asks to call variants from BAM files, update lineage barcodes, de-mix samples to estimate lineage proportions, or aggregate results from multiple samples.
 homepage: https://github.com/andersen-lab/Freyja
+metadata:
+  docker_image: "quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0"
 ---
 
 # freyja

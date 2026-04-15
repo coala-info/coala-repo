@@ -4,7 +4,6 @@ description: This tool provides an R interface for building genome indices and p
 homepage: https://bioconductor.org/packages/release/bioc/html/Rbowtie.html
 ---
 
-
 # bioconductor-rbowtie
 
 name: bioconductor-rbowtie

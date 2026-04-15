@@ -4,7 +4,6 @@ description: This package provides data structures and functions to manage linka
 homepage: https://bioconductor.org/packages/release/bioc/html/ldblock.html
 ---
 
-
 # bioconductor-ldblock
 
 ## Overview

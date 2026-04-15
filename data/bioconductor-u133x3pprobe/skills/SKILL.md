@@ -4,7 +4,6 @@ description: This package provides sequence and coordinate data for probes on th
 homepage: https://bioconductor.org/packages/release/data/annotation/html/u133x3pprobe.html
 ---
 
-
 # bioconductor-u133x3pprobe
 
 name: bioconductor-u133x3pprobe

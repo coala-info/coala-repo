@@ -4,7 +4,6 @@ description: This Bioconductor package provides mappings between MeSH identifier
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Ame.eg.db.html
 ---
 
-
 # bioconductor-mesh.ame.eg.db
 
 name: bioconductor-mesh.ame.eg.db

@@ -4,7 +4,6 @@ description: This tool performs pathway analysis on microarray data by calculati
 homepage: https://bioconductor.org/packages/3.5/bioc/html/sigPathway.html
 ---
 
-
 # bioconductor-sigpathway
 
 name: bioconductor-sigpathway

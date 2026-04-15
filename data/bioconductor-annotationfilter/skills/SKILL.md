@@ -4,7 +4,6 @@ description: The AnnotationFilter package provides a standardized framework for 
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationFilter.html
 ---
 
-
 # bioconductor-annotationfilter
 
 ## Overview

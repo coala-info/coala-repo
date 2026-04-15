@@ -4,7 +4,6 @@ description: BiFET identifies transcription factors whose footprints are over-re
 homepage: https://bioconductor.org/packages/release/bioc/html/BiFET.html
 ---
 
-
 # bioconductor-bifet
 
 name: bioconductor-bifet

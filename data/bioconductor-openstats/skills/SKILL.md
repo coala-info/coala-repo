@@ -4,7 +4,6 @@ description: OpenStats performs robust and scalable statistical analysis of high
 homepage: https://bioconductor.org/packages/release/bioc/html/OpenStats.html
 ---
 
-
 # bioconductor-openstats
 
 name: bioconductor-openstats

@@ -1,10 +1,12 @@
 ---
 name: tb-variants-tutorial-main-workflow
-description: "This workflow performs comprehensive variant analysis on Mycobacterium tuberculosis sequencing data using fastp, snippy, Kraken2, and TB-Profiler to identify mutations and drug resistance profiles from FASTQ collections and reference genomes. Use this skill when you need to characterize genetic diversity, detect antibiotic resistance markers, and generate clinical reports for Mycobacterium tuberculosis isolates."
-homepage: https://workflowhub.eu/workflows/2049
+description: This workflow performs comprehensive variant analysis on Mycobacterium tuberculosis sequencing data using fastp, snippy, Kraken2, and TB-Profiler to identify mutations and drug resistance profiles from FASTQ collections and reference genomes. Use this skill when you need to characterize genetic diversity, detect antibiotic resistance markers, and generate clinical reports for Mycobacterium tuberculosis isolates.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# TB variants tutorial main workflow
+# tb-variants-tutorial-main-workflow
 
 ## Overview
 

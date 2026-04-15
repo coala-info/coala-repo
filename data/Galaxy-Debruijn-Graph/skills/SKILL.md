@@ -1,10 +1,12 @@
 ---
 name: debruijn-graph
-description: "This Galaxy workflow performs de novo genome assembly on paired-end mutant reads using VelvetOptimiser and SPAdes to generate comparative assembly statistics. Use this skill when you need to reconstruct a genome from raw sequencing data and evaluate the performance of different De Bruijn graph-based assembly algorithms."
-homepage: https://workflowhub.eu/workflows/1626
+description: This Galaxy workflow performs de novo genome assembly on paired-end mutant reads using VelvetOptimiser and SPAdes to generate comparative assembly statistics. Use this skill when you need to reconstruct a genome from raw sequencing data and evaluate the performance of different De Bruijn graph-based assembly algorithms.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Debruijn Graph
+# debruijn-graph
 
 ## Overview
 

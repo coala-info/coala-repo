@@ -4,7 +4,6 @@ description: BiocHubsShiny provides a graphical interface for interactively sear
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocHubsShiny.html
 ---
 
-
 # bioconductor-biochubsshiny
 
 name: bioconductor-biochubsshiny

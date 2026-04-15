@@ -4,7 +4,6 @@ description: RchyOptimyx optimizes gating strategies for flow cytometry data by 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/RchyOptimyx.html
 ---
 
-
 # bioconductor-rchyoptimyx
 
 ## Overview

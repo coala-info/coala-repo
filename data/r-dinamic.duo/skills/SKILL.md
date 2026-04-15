@@ -4,7 +4,6 @@ description: The DiNAMIC.Duo package detects and compares recurrent DNA copy num
 homepage: https://cran.r-project.org/web/packages/dinamic.duo/index.html
 ---
 
-
 # r-dinamic.duo
 
 ## Overview

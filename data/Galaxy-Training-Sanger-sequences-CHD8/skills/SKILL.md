@@ -1,10 +1,12 @@
 ---
 name: training-sanger-sequences-chd8
-description: "This Galaxy workflow processes raw Sanger sequencing data for the CHD8 gene by converting ab1 files to FASTQ, trimming, and performing sequence alignment to generate a consensus sequence. Use this skill when you need to perform quality control and assembly of Sanger chromatograms to identify genetic variants or verify sequence integrity in clinical and research samples."
-homepage: https://workflowhub.eu/workflows/1635
+description: This Galaxy workflow processes raw Sanger sequencing data for the CHD8 gene by converting ab1 files to FASTQ, trimming, and performing sequence alignment to generate a consensus sequence. Use this skill when you need to perform quality control and assembly of Sanger chromatograms to identify genetic variants or verify sequence integrity in clinical and research samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Training Sanger sequences CHD8
+# training-sanger-sequences-chd8
 
 ## Overview
 

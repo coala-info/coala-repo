@@ -1,9 +1,10 @@
 ---
 name: debwt
-description: "deBWT rapidly constructs BWT indexes from DNA sequences using a de Bruijn graph-based data structure. Use when user asks to build a BWT index, process repetitive genomes, or construct indexes for large collections of DNA sequences."
+description: deBWT rapidly constructs BWT indexes from DNA sequences using a de Bruijn graph-based data structure. Use when user asks to build a BWT index, process repetitive genomes, or construct indexes for large collections of DNA sequences.
 homepage: https://github.com/DixianZhu/deBWT
+metadata:
+  docker_image: "quay.io/biocontainers/debwt:1.0.1--h577a1d6_8"
 ---
-
 
 # debwt
 

@@ -2,6 +2,8 @@
 name: mimsi
 description: MiMSI identifies microsatellite instability phenotypes from tumor-normal BAM pairs using a deep learning approach. Use when user asks to classify MSI status, analyze tumor-normal BAM files for microsatellite instability, or run multiple instance learning models on genomic data.
 homepage: https://github.com/mskcc/mimsi
+metadata:
+  docker_image: "quay.io/biocontainers/mimsi:0.4.5--pyhdfd78af_0"
 ---
 
 # mimsi

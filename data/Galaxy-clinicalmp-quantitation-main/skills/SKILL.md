@@ -1,10 +1,12 @@
 ---
 name: clinical-metaproteomics-quantitation
-description: "This Galaxy workflow performs quantitative metaproteomics by processing raw mass spectrometry data and protein databases using MaxQuant to measure protein and peptide abundance. Use this skill when you need to identify biomarkers, conduct differential expression studies, or analyze the functional roles of microbial proteins within complex clinical samples."
-homepage: https://workflowhub.eu/workflows/1177
+description: This Galaxy workflow performs quantitative metaproteomics by processing raw mass spectrometry data and protein databases using MaxQuant to measure protein and peptide abundance. Use this skill when you need to identify biomarkers, conduct differential expression studies, or analyze the functional roles of microbial proteins within complex clinical samples.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clinical Metaproteomics Quantitation
+# clinical-metaproteomics-quantitation
 
 ## Overview
 

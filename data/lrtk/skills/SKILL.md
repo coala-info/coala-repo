@@ -2,6 +2,8 @@
 name: lrtk
 description: LRTK is a toolkit for processing and analyzing linked-read sequencing data from various platforms. Use when user asks to simulate linked-reads, correct barcodes, perform barcode-aware alignment, reconstruct DNA fragments, or detect genomic variants.
 homepage: https://github.com/ericcombiolab/LRTK
+metadata:
+  docker_image: "quay.io/biocontainers/lrtk:2.0--pyh7cba7a3_0"
 ---
 
 # lrtk

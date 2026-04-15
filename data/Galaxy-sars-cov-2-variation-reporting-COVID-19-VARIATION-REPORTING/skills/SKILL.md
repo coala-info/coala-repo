@@ -1,10 +1,12 @@
 ---
 name: covid-19-variation-analysis-reporting
-description: "This SARS-CoV-2 genomics workflow processes VCF variant datasets and gene translations using SnpSift, Datamash, and snpfreqplot to generate comprehensive tabular reports and allele-frequency visualizations. Use this skill when you need to aggregate and interpret mutation data across multiple viral samples to identify high-impact variants and track allele frequency distributions."
-homepage: https://workflowhub.eu/workflows/109
+description: This SARS-CoV-2 genomics workflow processes VCF variant datasets and gene translations using SnpSift, Datamash, and snpfreqplot to generate comprehensive tabular reports and allele-frequency visualizations. Use this skill when you need to aggregate and interpret mutation data across multiple viral samples to identify high-impact variants and track allele frequency distributions.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19: variation analysis reporting
+# covid-19-variation-analysis-reporting
 
 ## Overview
 

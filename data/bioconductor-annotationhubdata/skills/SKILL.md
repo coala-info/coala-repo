@@ -4,7 +4,6 @@ description: AnnotationHubData provides the infrastructure for processing, annot
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationHubData.html
 ---
 
-
 # bioconductor-annotationhubdata
 
 ## Overview

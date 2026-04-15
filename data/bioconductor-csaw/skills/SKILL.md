@@ -4,7 +4,6 @@ description: This tool detects differentially bound regions in ChIP-seq data usi
 homepage: https://bioconductor.org/packages/release/bioc/html/csaw.html
 ---
 
-
 # bioconductor-csaw
 
 name: bioconductor-csaw

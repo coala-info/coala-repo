@@ -4,7 +4,6 @@ description: The bioconductor-viper package infers protein activity from gene ex
 homepage: https://bioconductor.org/packages/release/bioc/html/viper.html
 ---
 
-
 # bioconductor-viper
 
 ## Overview

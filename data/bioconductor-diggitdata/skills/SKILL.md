@@ -4,7 +4,6 @@ description: This package provides example datasets and regulatory networks for 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/diggitdata.html
 ---
 
-
 # bioconductor-diggitdata
 
 name: bioconductor-diggitdata

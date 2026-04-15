@@ -4,7 +4,6 @@ description: NxtIRFcore is an R/Bioconductor package for the quantification and 
 homepage: https://bioconductor.org/packages/3.14/bioc/html/NxtIRFcore.html
 ---
 
-
 # bioconductor-nxtirfcore
 
 name: bioconductor-nxtirfcore

@@ -2,6 +2,8 @@
 name: dampa
 description: DAMPA designs and evaluates enrichment probes for targeted metagenomics by utilizing pangenome graphs to capture genetic diversity. Use when user asks to design a new probe panel, evaluate existing probe coverage, or optimize pangenome sensitivity for highly variable pathogens.
 homepage: https://github.com/MultipathogenGenomics/dampa
+metadata:
+  docker_image: "quay.io/biocontainers/dampa:0.2.0--pyhdfd78af_0"
 ---
 
 # dampa

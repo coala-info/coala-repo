@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for the Monodelphis 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mdomestica.UCSC.monDom5.html
 ---
 
-
 # bioconductor-bsgenome.mdomestica.ucsc.mondom5
 
 ## Overview

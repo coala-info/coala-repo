@@ -2,8 +2,9 @@
 name: accusnv
 description: AccuSNV identifies and classifies high-precision single nucleotide variants in bacterial genomes using a combination of sequence alignment and deep learning. Use when user asks to align reads to a reference, identify candidate SNVs, or perform downstream evolutionary analysis on bacterial isolates.
 homepage: https://github.com/liaoherui/AccuSNV
+metadata:
+  docker_image: "quay.io/biocontainers/accusnv:1.0.0.5--pyhdfd78af_0"
 ---
-
 
 # accusnv
 

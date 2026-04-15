@@ -2,8 +2,9 @@
 name: cured
 description: CURED identifies unique sequence biomarkers and restriction enzyme sites to design diagnostic tests for distinguishing specific strains from background diversity. Use when user asks to identify unique k-mers, find restriction enzyme sites for diagnostics, or download and compare genomes from NCBI to find clonal biomarkers.
 homepage: https://github.com/microbialARC/CURED
+metadata:
+  docker_image: "quay.io/biocontainers/cured:1.05--hdfd78af_0"
 ---
-
 
 # cured
 

@@ -2,8 +2,9 @@
 name: syny
 description: SYNY is a bioinformatics pipeline used to investigate gene organization similarity and synteny between genomes. Use when user asks to identify conserved protein-coding genes, infer collinearity from genome alignments, visualize genomic reorganization, or improve genome annotations.
 homepage: https://github.com/PombertLab/SYNY
+metadata:
+  docker_image: "quay.io/biocontainers/syny:1.3.2--py312pl5321h7e72e81_0"
 ---
-
 
 # syny
 

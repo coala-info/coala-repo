@@ -4,7 +4,6 @@ description: The findpython package locates a Python binary on a system that mee
 homepage: https://cloud.r-project.org/web/packages/findpython/index.html
 ---
 
-
 # r-findpython
 
 ## Overview

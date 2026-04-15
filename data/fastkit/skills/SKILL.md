@@ -2,6 +2,8 @@
 name: fastkit
 description: FastKit is a utility for formatting and validating biological sequence data in FASTA files. Use when user asks to format sequences, normalize character case, strip header spaces, or validate DNA and protein data integrity.
 homepage: https://github.com/neoformit/fastkit
+metadata:
+  docker_image: "quay.io/biocontainers/fastkit:1.0.2--pyhdfd78af_0"
 ---
 
 # fastkit

@@ -2,8 +2,9 @@
 name: je-suite
 description: je-suite is a toolkit for de-multiplexing high-throughput sequencing reads and performing UMI-based deduplication. Use when user asks to split FASTQ files by barcodes, extract molecular tags, or remove PCR duplicates using UMI information.
 homepage: https://gbcs.embl.de/Je
+metadata:
+  docker_image: "quay.io/biocontainers/je-suite:2.0.RC--0"
 ---
-
 
 # je-suite
 

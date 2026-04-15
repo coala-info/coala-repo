@@ -4,7 +4,6 @@ description: Bioconductor-eventpointer identifies and analyzes alternative splic
 homepage: https://bioconductor.org/packages/release/bioc/html/EventPointer.html
 ---
 
-
 # bioconductor-eventpointer
 
 name: bioconductor-eventpointer

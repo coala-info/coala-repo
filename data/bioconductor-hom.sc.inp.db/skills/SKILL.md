@@ -4,7 +4,6 @@ description: This package provides orthology and paralogy mappings for Saccharom
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Sc.inp.db.html
 ---
 
-
 # bioconductor-hom.sc.inp.db
 
 name: bioconductor-hom.sc.inp.db

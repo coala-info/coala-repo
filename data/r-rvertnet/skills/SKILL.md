@@ -4,7 +4,6 @@ description: This tool accesses and searches vertebrate specimen records from th
 homepage: https://cloud.r-project.org/web/packages/rvertnet/index.html
 ---
 
-
 # r-rvertnet
 
 name: r-rvertnet

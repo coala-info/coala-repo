@@ -4,7 +4,6 @@ description: This tool projects single-cell RNA-seq data from a query experiment
 homepage: https://bioconductor.org/packages/release/bioc/html/scmap.html
 ---
 
-
 # bioconductor-scmap
 
 name: bioconductor-scmap

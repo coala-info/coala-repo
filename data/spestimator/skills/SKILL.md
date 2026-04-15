@@ -2,8 +2,9 @@
 name: spestimator
 description: Spestimator identifies bacterial species in genomic data by aligning sequences against a 16S rRNA database and mapping hits to reference genome accessions. Use when user asks to identify organisms in FASTA files, download corresponding reference genomes, or update the local RefSeq database.
 homepage: https://github.com/erinyoung/Spestimator
+metadata:
+  docker_image: "quay.io/biocontainers/spestimator:0.3.0.233--pyhdfd78af_0"
 ---
-
 
 # spestimator
 

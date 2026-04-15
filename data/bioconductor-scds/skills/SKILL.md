@@ -4,7 +4,6 @@ description: The scds package provides methods for annotating and scoring double
 homepage: https://bioconductor.org/packages/release/bioc/html/scds.html
 ---
 
-
 # bioconductor-scds
 
 ## Overview

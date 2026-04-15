@@ -4,7 +4,6 @@ description: This tool extracts isotopic patterns from raw protein mass spectrom
 homepage: https://bioconductor.org/packages/3.6/bioc/html/IPPD.html
 ---
 
-
 # bioconductor-ippd
 
 ## Overview

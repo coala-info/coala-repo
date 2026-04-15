@@ -4,7 +4,6 @@ description: This package provides masked genome sequences for the Zebra finch b
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Tguttata.UCSC.taeGut1.masked.html
 ---
 
-
 # bioconductor-bsgenome.tguttata.ucsc.taegut1.masked
 
 name: bioconductor-bsgenome.tguttata.ucsc.taegut1.masked

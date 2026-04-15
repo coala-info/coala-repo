@@ -4,7 +4,6 @@ description: This package provides cell count time-series data and metadata from
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/mitoODEdata.html
 ---
 
-
 # bioconductor-mitoodedata
 
 ## Overview

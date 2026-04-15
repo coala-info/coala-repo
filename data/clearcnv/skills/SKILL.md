@@ -1,9 +1,10 @@
 ---
 name: clearcnv
-description: "ClearCNV detects copy number variations in clinical sequencing panels by normalizing coverage and clustering samples. Use when user asks to call CNVs from BAM files, reassign samples to compatible sequencing panels, or calculate match scores for normalization."
+description: ClearCNV detects copy number variations in clinical sequencing panels by normalizing coverage and clustering samples. Use when user asks to call CNVs from BAM files, reassign samples to compatible sequencing panels, or calculate match scores for normalization.
 homepage: https://github.com/bihealth/clear-cnv
+metadata:
+  docker_image: "quay.io/biocontainers/clearcnv:0.306--pyhdfd78af_0"
 ---
-
 
 # clearcnv
 

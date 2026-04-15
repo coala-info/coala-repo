@@ -4,7 +4,6 @@ description: This package provides an R interface to the Metabolomics Workbench 
 homepage: https://bioconductor.org/packages/release/bioc/html/metabolomicsWorkbenchR.html
 ---
 
-
 # bioconductor-metabolomicsworkbenchr
 
 ## Overview

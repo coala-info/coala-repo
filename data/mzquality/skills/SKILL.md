@@ -2,6 +2,8 @@
 name: mzquality
 description: mzquality monitors and reports the quality of mass spectrometry measurements in metabolomics studies by transforming raw data into standardized objects for automated analysis. Use when user asks to monitor data quality, perform batch correction using quality control samples, detect outliers, or filter unreliable compounds and samples.
 homepage: https://github.com/hankemeierlab/mzQuality
+metadata:
+  docker_image: "biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15"
 ---
 
 # mzquality

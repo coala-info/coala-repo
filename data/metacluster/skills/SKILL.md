@@ -1,9 +1,10 @@
 ---
 name: metacluster
-description: "Metacluster is a Python framework for solving clustering problems using metaheuristic optimization algorithms and performance metrics. Use when user asks to perform metaheuristic clustering, optimize cluster configurations, evaluate clustering performance with nature-inspired algorithms, or automate the comparison of multiple optimization models."
+description: Metacluster is a Python framework for solving clustering problems using metaheuristic optimization algorithms and performance metrics. Use when user asks to perform metaheuristic clustering, optimize cluster configurations, evaluate clustering performance with nature-inspired algorithms, or automate the comparison of multiple optimization models.
 homepage: https://github.com/thieu1995/MetaCluster
+metadata:
+  docker_image: "quay.io/biocontainers/metacluster:5.1--h9948957_7"
 ---
-
 
 # metacluster
 

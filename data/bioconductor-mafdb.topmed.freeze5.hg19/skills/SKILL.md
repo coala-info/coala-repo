@@ -4,7 +4,6 @@ description: This package provides access to Minor Allele Frequency data from th
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.TOPMed.freeze5.hg19.html
 ---
 
-
 # bioconductor-mafdb.topmed.freeze5.hg19
 
 name: bioconductor-mafdb.topmed.freeze5.hg19

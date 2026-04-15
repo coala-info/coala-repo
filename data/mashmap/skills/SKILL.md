@@ -2,8 +2,9 @@
 name: mashmap
 description: MashMap is a fast and memory-efficient tool for genomic sequence comparison that estimates sequence identity using a k-mer based winnowing scheme. Use when user asks to map long noisy reads to a reference, compare whole genome assemblies, identify orthologous regions, or compute average nucleotide identity.
 homepage: https://github.com/marbl/MashMap
+metadata:
+  docker_image: "quay.io/biocontainers/mashmap:3.1.3--pl5321hb4818e0_2"
 ---
-
 
 # mashmap
 

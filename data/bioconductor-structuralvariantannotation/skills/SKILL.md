@@ -4,7 +4,6 @@ description: This tool provides a framework for parsing, annotating, and compari
 homepage: https://bioconductor.org/packages/release/bioc/html/StructuralVariantAnnotation.html
 ---
 
-
 # bioconductor-structuralvariantannotation
 
 name: bioconductor-structuralvariantannotation

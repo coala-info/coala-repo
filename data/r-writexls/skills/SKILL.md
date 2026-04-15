@@ -4,7 +4,6 @@ description: This tool exports R data frames to Excel XLS or XLSX files using a 
 homepage: https://cloud.r-project.org/web/packages/WriteXLS/index.html
 ---
 
-
 # r-writexls
 
 name: r-writexls

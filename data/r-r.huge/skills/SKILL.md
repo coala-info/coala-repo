@@ -4,7 +4,6 @@ description: The R.huge package provides methods for managing and accessing larg
 homepage: https://cloud.r-project.org/web/packages/R.huge/index.html
 ---
 
-
 # r-r.huge
 
 name: r-r.huge

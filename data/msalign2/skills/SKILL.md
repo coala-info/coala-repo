@@ -2,8 +2,9 @@
 name: msalign2
 description: msalign2 aligns liquid chromatography-mass spectrometry or capillary electrophoresis-mass spectrometry data by calculating temporal transformation curves to correct for experimental drift. Use when user asks to align LC-MS or CE-MS datasets, correct retention or migration time shifts, or calculate temporal transformations between mass spectrometry runs.
 homepage: http://www.ms-utils.org/msalign2/index.html
+metadata:
+  docker_image: "quay.io/biocontainers/msalign2:1.0--h577a1d6_6"
 ---
-
 
 # msalign2
 

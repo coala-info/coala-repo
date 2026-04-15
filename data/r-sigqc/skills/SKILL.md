@@ -4,7 +4,6 @@ description: This tool performs quality control and evaluation of gene expressio
 homepage: https://cran.r-project.org/web/packages/sigqc/index.html
 ---
 
-
 # r-sigqc
 
 name: r-sigqc

@@ -4,7 +4,6 @@ description: The r-ccqtl tool analyzes Quantitative Trait Loci (QTL) in Collabor
 homepage: https://cran.r-project.org/web/packages/ccqtl/index.html
 ---
 
-
 # r-ccqtl
 
 name: r-ccqtl

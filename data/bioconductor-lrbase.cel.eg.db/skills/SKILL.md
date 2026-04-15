@@ -4,7 +4,6 @@ description: This package provides the class definition and construction tools f
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Cel.eg.db.html
 ---
 
-
 # bioconductor-lrbase.cel.eg.db
 
 ## Overview

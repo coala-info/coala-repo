@@ -1,10 +1,12 @@
 ---
 name: fgenesh-annotation-tsi
-description: "This Galaxy workflow performs structural genome annotation by processing assembled and hard-masked FASTA sequences alongside known cDNA and protein data using FGENESH++ tools, JCVI GFF stats, and BUSCO. Use this skill when you need to generate high-quality gene models for a newly assembled genome using homology-based evidence and assess the completeness of the resulting proteome."
-homepage: https://workflowhub.eu/workflows/881
+description: This Galaxy workflow performs structural genome annotation by processing assembled and hard-masked FASTA sequences alongside known cDNA and protein data using FGENESH++ tools, JCVI GFF stats, and BUSCO. Use this skill when you need to generate high-quality gene models for a newly assembled genome using homology-based evidence and assess the completeness of the resulting proteome.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Fgenesh annotation -TSI
+# fgenesh-annotation-tsi
 
 ## Overview
 

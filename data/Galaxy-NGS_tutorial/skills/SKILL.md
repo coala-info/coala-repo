@@ -1,10 +1,12 @@
 ---
 name: ngs_tutorial
-description: "This workflow downloads sequencing accessions and maps them to a reference genome using BWA-MEM, followed by variant calling with LoFreq and functional annotation via SnpEff. Use this skill when you need to identify and annotate genetic variants from raw SRA data to understand the biological impact of mutations in a genomic study."
-homepage: https://workflowhub.eu/workflows/1540
+description: This workflow downloads sequencing accessions and maps them to a reference genome using BWA-MEM, followed by variant calling with LoFreq and functional annotation via SnpEff. Use this skill when you need to identify and annotate genetic variants from raw SRA data to understand the biological impact of mutations in a genomic study.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# NGS_tutorial
+# ngs_tutorial
 
 ## Overview
 

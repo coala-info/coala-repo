@@ -4,7 +4,6 @@ description: This tool performs Expression Weighted Celltype Enrichment analysis
 homepage: https://bioconductor.org/packages/release/bioc/html/EWCE.html
 ---
 
-
 # bioconductor-ewce
 
 name: bioconductor-ewce

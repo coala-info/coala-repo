@@ -4,7 +4,6 @@ description: This tool performs analytics and statistical modeling on massive da
 homepage: https://cloud.r-project.org/web/packages/biganalytics/index.html
 ---
 
-
 # r-biganalytics
 
 name: r-biganalytics

@@ -1,10 +1,12 @@
 ---
 name: metaquantome_datacreation_workflow
-description: "This proteomics workflow processes raw mass spectrometry data collections using Search GUI, Peptide Shaker, and FlashLFQ to generate quantified peptide and protein datasets integrated with taxonomic information from Unipept. Use this skill when you need to perform metaproteomic data analysis to quantify protein expression and assign taxonomic or functional annotations across different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1450
+description: This proteomics workflow processes raw mass spectrometry data collections using Search GUI, Peptide Shaker, and FlashLFQ to generate quantified peptide and protein datasets integrated with taxonomic information from Unipept. Use this skill when you need to perform metaproteomic data analysis to quantify protein expression and assign taxonomic or functional annotations across different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# metaQuantome_datacreation_workflow
+# metaquantome_datacreation_workflow
 
 ## Overview
 

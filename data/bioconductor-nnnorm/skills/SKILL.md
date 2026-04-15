@@ -4,7 +4,6 @@ description: This tool uses neural networks to normalize two-color DNA microarra
 homepage: https://bioconductor.org/packages/release/bioc/html/nnNorm.html
 ---
 
-
 # bioconductor-nnnorm
 
 ## Overview

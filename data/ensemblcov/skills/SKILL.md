@@ -2,6 +2,8 @@
 name: ensemblcov
 description: Ensemblcov links genomic variants in a parallel and threaded manner. Use when user asks to link variants in a genomic context.
 homepage: https://github.com/IBCHgenomic/ensemlcov
+metadata:
+  docker_image: "quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0"
 ---
 
 # ensemblcov

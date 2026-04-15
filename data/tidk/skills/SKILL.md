@@ -2,6 +2,8 @@
 name: tidk
 description: The Telomere Identification toolKit identifies, searches for, and visualizes telomeric repeat patterns in genomic assemblies or raw reads. Use when user asks to discover unknown telomeric repeats, calculate repeat density across a genome, or generate SVG plots of telomere locations.
 homepage: https://github.com/tolkit/telomeric-identifier
+metadata:
+  docker_image: "quay.io/biocontainers/tidk:0.2.65--h3dc2dae_0"
 ---
 
 # tidk

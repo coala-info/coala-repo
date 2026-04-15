@@ -2,8 +2,9 @@
 name: pyprophet
 description: PyProphet processes SWATH-MS proteomics data by training semi-supervised classifiers to distinguish target peak groups from decoys and estimate false discovery rates. Use when user asks to score OpenSWATH results, merge multiple mass spectrometry runs, estimate peptide or protein-level FDR, and export proteomics data to TSV or Parquet formats.
 homepage: https://github.com/PyProphet/pyprophet
+metadata:
+  docker_image: "quay.io/biocontainers/pyprophet:3.0.5--py311haab0aaa_0"
 ---
-
 
 # pyprophet
 

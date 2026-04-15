@@ -1,9 +1,10 @@
 ---
 name: grabix
-description: "grabix provides random access to text files compressed with bgzip for efficient retrieval of specific lines or ranges. Use when user asks to index bgzipped files, extract specific lines or ranges, sample random lines, or get the total line count of a file."
+description: grabix provides random access to text files compressed with bgzip for efficient retrieval of specific lines or ranges. Use when user asks to index bgzipped files, extract specific lines or ranges, sample random lines, or get the total line count of a file.
 homepage: https://github.com/arq5x/grabix
+metadata:
+  docker_image: "quay.io/biocontainers/grabix:0.1.8--h077b44d_12"
 ---
-
 
 # grabix
 

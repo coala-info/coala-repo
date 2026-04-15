@@ -1,9 +1,10 @@
 ---
 name: sdust
-description: "sdust identifies low-complexity regions in DNA sequences using the symmetric DUST algorithm. Use when user asks to find low-complexity regions, mask genomic sequences, or identify simple repeats in FASTA files."
+description: sdust identifies low-complexity regions in DNA sequences using the symmetric DUST algorithm. Use when user asks to find low-complexity regions, mask genomic sequences, or identify simple repeats in FASTA files.
 homepage: https://github.com/lh3/sdust
+metadata:
+  docker_image: "quay.io/biocontainers/sdust:0.1--h077b44d_2"
 ---
-
 
 # sdust
 

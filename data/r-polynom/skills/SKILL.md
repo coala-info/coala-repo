@@ -4,7 +4,6 @@ description: This tool performs univariate polynomial manipulations in R using t
 homepage: https://cloud.r-project.org/web/packages/polynom/index.html
 ---
 
-
 # r-polynom
 
 name: r-polynom

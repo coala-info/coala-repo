@@ -1,9 +1,12 @@
 ---
 name: cwl-based-chip-seq-workflow
-description: "This Common Workflow Language pipeline processes raw FASTQ ChIP-Seq data through quality control, alignment, and peak calling using tools such as HISAT2, MACS2, and DiffBind. Use this skill when you need to identify protein-DNA binding sites, detect super-enhancer regions, and perform differential binding analysis to compare epigenetic profiles between experimental samples."
-homepage: https://workflowhub.eu/workflows/525
+description: This Common Workflow Language pipeline processes raw FASTQ ChIP-Seq data through quality control, alignment, and peak calling using tools such as HISAT2, MACS2, and DiffBind. Use this skill when you need to identify protein-DNA binding sites, detect super-enhancer regions, and perform differential binding analysis to compare epigenetic profiles between experimental samples.
+homepage: https://biodataanalysisgroup.github.io/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL-based ChIP-Seq workflow
+
+# cwl-based-chip-seq-workflow
 
 ## Overview
 

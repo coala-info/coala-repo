@@ -4,7 +4,6 @@ description: The R.utils package provides a collection of utility functions that
 homepage: https://cloud.r-project.org/web/packages/R.utils/index.html
 ---
 
-
 # r-r.utils
 
 name: r-r.utils

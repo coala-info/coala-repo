@@ -4,7 +4,6 @@ description: The r-pscl package provides tools for Bayesian item-response theory
 homepage: https://cloud.r-project.org/web/packages/pscl/index.html
 ---
 
-
 # r-pscl
 
 name: r-pscl

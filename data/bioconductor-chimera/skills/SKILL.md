@@ -4,7 +4,6 @@ description: This tool processes and analyzes fusion gene data from various dete
 homepage: https://bioconductor.org/packages/3.6/bioc/html/chimera.html
 ---
 
-
 # bioconductor-chimera
 
 name: bioconductor-chimera

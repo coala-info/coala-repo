@@ -4,7 +4,6 @@ description: This package provides a FeatureDb object for accessing and querying
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.UCSC.snp135common.hg19.html
 ---
 
-
 # bioconductor-fdb.ucsc.snp135common.hg19
 
 name: bioconductor-fdb.ucsc.snp135common.hg19

@@ -1,9 +1,10 @@
 ---
 name: perl-bio-searchio-hmmer
-description: "This Perl module parses output files from the HMMER software suite to extract hits, scores, and alignments. Use when user asks to parse HMMER2 or HMMER3 reports, extract E-values and bit scores from HMMER results, or automate the processing of hmmsearch and hmmscan output files."
+description: This Perl module parses output files from the HMMER software suite to extract hits, scores, and alignments. Use when user asks to parse HMMER2 or HMMER3 reports, extract E-values and bit scores from HMMER results, or automate the processing of hmmsearch and hmmscan output files.
 homepage: https://metacpan.org/release/Bio-SearchIO-hmmer
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-searchio-hmmer:1.7.3--pl5321hdfd78af_0"
 ---
-
 
 # perl-bio-searchio-hmmer
 

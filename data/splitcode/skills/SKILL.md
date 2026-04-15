@@ -1,9 +1,10 @@
 ---
 name: splitcode
-description: "This tool parses, interprets, and edits technical sequences like DNA and RNA. Use when user asks to extract subsequences, trim sequences, filter reads, work with FASTQ or BAM files, or perform reverse complement operations."
+description: This tool parses, interprets, and edits technical sequences like DNA and RNA. Use when user asks to extract subsequences, trim sequences, filter reads, work with FASTQ or BAM files, or perform reverse complement operations.
 homepage: https://github.com/pachterlab/splitcode
+metadata:
+  docker_image: "quay.io/biocontainers/splitcode:0.31.6--h077b44d_0"
 ---
-
 
 # splitcode
 

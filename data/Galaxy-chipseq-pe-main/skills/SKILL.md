@@ -1,10 +1,12 @@
 ---
 name: chip-seq-analysis-paired-end-read-processing
-description: "This Galaxy workflow processes paired-end ChIP-seq FASTQ collections through adapter trimming with fastp, Bowtie2 alignment, and MACS2 peak calling to identify protein-DNA binding sites. Use this skill when you need to map transcription factor or histone modification locations, filter for high-quality concordant read pairs, and generate normalized genomic coverage profiles from paired-end sequencing data."
-homepage: https://workflowhub.eu/workflows/398
+description: This Galaxy workflow processes paired-end ChIP-seq FASTQ collections through adapter trimming with fastp, Bowtie2 alignment, and MACS2 peak calling to identify protein-DNA binding sites. Use this skill when you need to map transcription factor or histone modification locations, filter for high-quality concordant read pairs, and generate normalized genomic coverage profiles from paired-end sequencing data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ChIP-seq Analysis: Paired-End Read Processing
+# chip-seq-analysis-paired-end-read-processing
 
 ## Overview
 

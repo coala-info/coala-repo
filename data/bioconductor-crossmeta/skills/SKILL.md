@@ -4,7 +4,6 @@ description: This tool performs cross-platform meta-analysis of microarray data 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/crossmeta.html
 ---
 
-
 # bioconductor-crossmeta
 
 name: bioconductor-crossmeta

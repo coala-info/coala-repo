@@ -2,8 +2,9 @@
 name: lsabgc
 description: lsaBGC-Pan is a comprehensive workflow designed to explore the evolutionary landscape of biosynthetic gene clusters across microbial genomes. Use when user asks to identify orthologous biosynthetic gene clusters, construct species-level phylogenies, perform comparative genomic analyses, or automate the transition from raw predictions to consolidated evolutionary reports.
 homepage: https://github.com/Kalan-Lab/lsaBGC-Pan
+metadata:
+  docker_image: "quay.io/biocontainers/lsabgc:1.1.10--pyhdfd78af_0"
 ---
-
 
 # lsabgc
 

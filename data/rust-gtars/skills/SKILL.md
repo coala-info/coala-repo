@@ -2,8 +2,9 @@
 name: rust-gtars
 description: rust-gtars is a high-performance suite of tools designed for efficient genomic interval processing and analysis. Use when user asks to find genomic overlaps, generate smoothed signal profiles, tokenize genomic regions, calculate distances between features, or split genomic fragments.
 homepage: https://github.com/databio/gtars
+metadata:
+  docker_image: "quay.io/biocontainers/rust-gtars:0.6.0--h885253a_0"
 ---
-
 
 # rust-gtars
 

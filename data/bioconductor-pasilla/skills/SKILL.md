@@ -4,7 +4,6 @@ description: This package provides RNA-Seq data from Drosophila melanogaster for
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pasilla.html
 ---
 
-
 # bioconductor-pasilla
 
 name: bioconductor-pasilla

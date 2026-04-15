@@ -1,9 +1,12 @@
 ---
 name: wrf-emep-linear-workflow
-description: "This CWL workflow processes ERA5 reanalysis data and geographic inputs using the Weather Research and Forecasting (WRF) and EMEP models to simulate regional meteorology and atmospheric chemistry. Use this skill when characterizing regional air quality, assessing the dispersion of atmospheric pollutants, or investigating the impact of meteorological conditions on chemical transport."
-homepage: https://workflowhub.eu/workflows/455
+description: This CWL workflow processes ERA5 reanalysis data and geographic inputs using the Weather Research and Forecasting (WRF) and EMEP models to simulate regional meteorology and atmospheric chemistry. Use this skill when characterizing regional air quality, assessing the dispersion of atmospheric pollutants, or investigating the impact of meteorological conditions on chemical transport.
+homepage: https://doi.org/10.5281/zenodo.7817216
+metadata:
+  docker_image: "N/A"
 ---
-# WRF / EMEP Linear Workflow
+
+# wrf-emep-linear-workflow
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides example bead-level and summarized Illumina Be
 homepage: https://bioconductor.org/packages/release/data/experiment/html/beadarrayExampleData.html
 ---
 
-
 # bioconductor-beadarrayexampledata
 
 name: bioconductor-beadarrayexampledata

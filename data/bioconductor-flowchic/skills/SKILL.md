@@ -4,7 +4,6 @@ description: This tool analyzes flow cytometric data of microbial communities by
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCHIC.html
 ---
 
-
 # bioconductor-flowchic
 
 name: bioconductor-flowchic

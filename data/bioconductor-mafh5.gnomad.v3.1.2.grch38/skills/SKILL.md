@@ -4,7 +4,6 @@ description: This Bioconductor package provides Minor Allele Frequency data from
 homepage: https://bioconductor.org/packages/3.16/data/annotation/html/MafH5.gnomAD.v3.1.2.GRCh38.html
 ---
 
-
 # bioconductor-mafh5.gnomad.v3.1.2.grch38
 
 ## Overview

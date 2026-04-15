@@ -4,7 +4,6 @@ description: This package provides datasets and example workflows for analyzing 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/qPLEXdata.html
 ---
 
-
 # bioconductor-qplexdata
 
 name: bioconductor-qplexdata

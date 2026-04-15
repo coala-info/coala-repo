@@ -2,8 +2,9 @@
 name: uvp
 description: UVP is a bioinformatics pipeline for analyzing *Mycobacterium tuberculosis* genomic data, automating read mapping, variant calling, and lineage assignment. Use when user asks to analyze *Mycobacterium tuberculosis* genomic data, map reads, call variants, assign lineage, annotate SNPs, or filter contamination.
 homepage: https://github.com/CPTR-ReSeqTB/UVP
+metadata:
+  docker_image: "quay.io/biocontainers/uvp:2.7.0--py_0"
 ---
-
 
 # uvp
 

@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-extracting-structural-info
-description: "This Galaxy workflow processes compiled X-ray Absorption Spectroscopy data of gold colloids and TiO2-supported nanoparticles using Larch Athena and Larch Plot tools. Use this skill when you need to characterize the structural evolution and identify nanoparticle growth in ultra-dilute gold colloids during their immobilization onto solid supports."
-homepage: https://workflowhub.eu/workflows/1800
+description: This Galaxy workflow processes compiled X-ray Absorption Spectroscopy data of gold colloids and TiO2-supported nanoparticles using Larch Athena and Larch Plot tools. Use this skill when you need to characterize the structural evolution and identify nanoparticle growth in ultra-dilute gold colloids during their immobilization onto solid supports.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3''
+# workflow-constructed-from-history-extracting-structural-info
 
 ## Overview
 

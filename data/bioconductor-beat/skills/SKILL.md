@@ -4,7 +4,6 @@ description: This tool performs statistical modeling and quantification of DNA m
 homepage: https://bioconductor.org/packages/release/bioc/html/BEAT.html
 ---
 
-
 # bioconductor-beat
 
 name: bioconductor-beat

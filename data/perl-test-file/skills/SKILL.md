@@ -2,8 +2,9 @@
 name: perl-test-file
 description: The perl-test-file module provides a suite of functions for validating file attributes and permissions within Perl testing frameworks. Use when user asks to verify file existence, check file permissions, or validate file sizes and ownership in Perl test scripts.
 homepage: https://github.com/briandfoy/test-file
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-file:1.995--pl5321hdfd78af_0"
 ---
-
 
 # perl-test-file
 

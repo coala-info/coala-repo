@@ -4,7 +4,6 @@ description: This tool identifies copy number variations and aberrations from SN
 homepage: https://bioconductor.org/packages/3.8/bioc/html/genoCN.html
 ---
 
-
 # bioconductor-genocn
 
 name: bioconductor-genocn

@@ -2,8 +2,9 @@
 name: virchip
 description: virchip predicts transcription factor binding sites using a multi-layer perceptron model without requiring new ChIP-seq experiments. Use when user asks to predict transcription factor binding sites, predict TF binding for specific TFs, or predict binding for TFs without known sequence preferences.
 homepage: https://virchip.hoffmanlab.org
+metadata:
+  docker_image: "quay.io/biocontainers/virchip:1.2.2--py_0"
 ---
-
 
 # virchip
 

@@ -4,7 +4,6 @@ description: CatsCradle performs gene-centric clustering and spatial transcripto
 homepage: https://bioconductor.org/packages/release/bioc/html/CatsCradle.html
 ---
 
-
 # bioconductor-catscradle
 
 name: bioconductor-catscradle

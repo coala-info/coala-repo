@@ -4,7 +4,6 @@ description: This tool performs tidy data analysis on flow cytometry data by app
 homepage: https://bioconductor.org/packages/release/bioc/html/tidyFlowCore.html
 ---
 
-
 # bioconductor-tidyflowcore
 
 name: bioconductor-tidyflowcore

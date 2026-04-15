@@ -4,7 +4,6 @@ description: This package provides spike-in Gas Chromatography/Mass Spectrometry
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gcspikelite.html
 ---
 
-
 # bioconductor-gcspikelite
 
 name: bioconductor-gcspikelite

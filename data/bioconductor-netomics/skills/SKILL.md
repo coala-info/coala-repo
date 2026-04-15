@@ -4,7 +4,6 @@ description: The netOmics package provides a framework for constructing, integra
 homepage: https://bioconductor.org/packages/3.14/bioc/html/netOmics.html
 ---
 
-
 # bioconductor-netomics
 
 ## Overview

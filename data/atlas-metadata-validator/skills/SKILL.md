@@ -2,8 +2,9 @@
 name: atlas-metadata-validator
 description: This tool validates MAGE-TAB files for compatibility with EBI Gene Expression Group analysis pipelines. Use when user asks to verify IDF and SDRF files, check metadata for experiment types like single-cell or microarray, or validate Human Cell Atlas imports.
 homepage: https://github.com/ebi-gene-expression-group/atlas-metadata-validator
+metadata:
+  docker_image: "quay.io/biocontainers/atlas-metadata-validator:1.6.1--pyhdfd78af_0"
 ---
-
 
 # atlas-metadata-validator
 

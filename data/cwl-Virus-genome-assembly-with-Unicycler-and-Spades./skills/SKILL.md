@@ -1,9 +1,12 @@
 ---
 name: virus-genome-assembly-with-unicycler-and-spades
-description: "This CWL workflow assembles viral genomes from sequencing data using Unicycler and SPAdes in parallel while generating assembly graph visualizations and metrics with Bandage. Use this skill when you need to reconstruct complete viral genomes from sequencing data to characterize pathogen sequences or evaluate assembly quality for infectious disease research."
-homepage: https://workflowhub.eu/workflows/3
+description: This CWL workflow assembles viral genomes from sequencing data using Unicycler and SPAdes in parallel while generating assembly graph visualizations and metrics with Bandage. Use this skill when you need to reconstruct complete viral genomes from sequencing data to characterize pathogen sequences or evaluate assembly quality for infectious disease research.
+homepage: https://github.com/fjrmoreews/cwl-workflow-SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
-# Virus genome assembly with Unicycler and Spades.
+
+# virus-genome-assembly-with-unicycler-and-spades
 
 ## Overview
 

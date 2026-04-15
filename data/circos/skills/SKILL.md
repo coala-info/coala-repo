@@ -1,9 +1,10 @@
 ---
 name: circos
-description: "Generates circular visualizations of data for genomics, bioinformatics, and other scientific fields. Use when Claude needs to create complex, circular plots to represent relationships, genomic data, or network structures."
+description: Generates circular visualizations of data for genomics, bioinformatics, and other scientific fields. Use when Claude needs to create complex, circular plots to represent relationships, genomic data, or network structures.
 homepage: http://circos.ca
+metadata:
+  docker_image: "quay.io/biocontainers/circos:0.69.9--hdfd78af_0"
 ---
-
 
 # circos
 

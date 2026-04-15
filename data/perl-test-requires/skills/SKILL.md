@@ -2,8 +2,9 @@
 name: perl-test-requires
 description: This Perl testing utility checks for module or version availability and skips tests if requirements are not met. Use when user asks to declare test dependencies, skip tests for missing modules, or enforce minimum Perl versions in test scripts.
 homepage: https://github.com/tokuhirom/Test-Requires
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-requires:0.11--pl5321hdfd78af_1"
 ---
-
 
 # perl-test-requires
 

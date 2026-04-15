@@ -4,7 +4,6 @@ description: This tool performs supervised classification and machine learning a
 homepage: https://bioconductor.org/packages/release/bioc/html/MLSeq.html
 ---
 
-
 # bioconductor-mlseq
 
 name: bioconductor-mlseq

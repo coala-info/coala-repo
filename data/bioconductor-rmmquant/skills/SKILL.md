@@ -4,7 +4,6 @@ description: Rmmquant is a Bioconductor package for gene expression quantificati
 homepage: https://bioconductor.org/packages/release/bioc/html/Rmmquant.html
 ---
 
-
 # bioconductor-rmmquant
 
 ## Overview

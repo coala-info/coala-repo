@@ -4,7 +4,6 @@ description: This package provides synchronized gene expression and comparative 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Neve2006.html
 ---
 
-
 # bioconductor-neve2006
 
 ## Overview

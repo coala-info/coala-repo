@@ -4,7 +4,6 @@ description: The DropletTestFiles package provides raw, non-analysis-ready datas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DropletTestFiles.html
 ---
 
-
 # bioconductor-droplettestfiles
 
 ## Overview

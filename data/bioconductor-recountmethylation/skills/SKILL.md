@@ -4,7 +4,6 @@ description: This package provides access to standardized, large-scale DNA methy
 homepage: https://bioconductor.org/packages/release/bioc/html/recountmethylation.html
 ---
 
-
 # bioconductor-recountmethylation
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis by integrating 
 homepage: https://bioconductor.org/packages/release/bioc/html/consensusDE.html
 ---
 
-
 # bioconductor-consensusde
 
 name: bioconductor-consensusde

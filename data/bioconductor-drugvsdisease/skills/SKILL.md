@@ -4,7 +4,6 @@ description: This tool compares drug and disease gene expression profiles to ide
 homepage: https://bioconductor.org/packages/release/bioc/html/DrugVsDisease.html
 ---
 
-
 # bioconductor-drugvsdisease
 
 name: bioconductor-drugvsdisease

@@ -4,7 +4,6 @@ description: This package provides base annotation data for Xenopus genomic data
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xenopus.db0.html
 ---
 
-
 # bioconductor-xenopus.db0
 
 name: bioconductor-xenopus.db0

@@ -1,10 +1,12 @@
 ---
 name: identification-of-somatic-and-germline-variants-from-tumor-a
-description: "This cancer genomics workflow processes paired tumor and normal FASTQ samples using BWA-MEM for alignment, VarScan for somatic variant calling, and GEMINI for functional annotation against clinical databases. Use this skill when you need to distinguish between inherited germline mutations and acquired somatic variants in cancer research to identify potential therapeutic targets or driver mutations."
-homepage: https://workflowhub.eu/workflows/1678
+description: This cancer genomics workflow processes paired tumor and normal FASTQ samples using BWA-MEM for alignment, VarScan for somatic variant calling, and GEMINI for functional annotation against clinical databases. Use this skill when you need to distinguish between inherited germline mutations and acquired somatic variants in cancer research to identify potential therapeutic targets or driver mutations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Identification of somatic and germline variants from tumor and normal sample pairs tutorial
+# identification-of-somatic-and-germline-variants-from-tumor-a
 
 ## Overview
 

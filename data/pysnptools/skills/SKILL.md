@@ -2,8 +2,9 @@
 name: pysnptools
 description: Pysnptools is a high-performance Python library for efficiently loading, subsetting, and processing large-scale genomic datasets using memory-mapping and lazy-loading. Use when user asks to load PLINK files, subset genetic data by individuals or markers, standardize genotypes, or prepare SNP matrices for GWAS and machine learning workflows.
 homepage: http://research.microsoft.com/en-us/um/redmond/projects/mscompbio/
+metadata:
+  docker_image: "quay.io/biocontainers/pysnptools:0.3.13--py27_0"
 ---
-
 
 # pysnptools
 

@@ -4,7 +4,6 @@ description: The fCI package identifies differentially expressed genes by calcul
 homepage: https://bioconductor.org/packages/release/bioc/html/fCI.html
 ---
 
-
 # bioconductor-fci
 
 ## Overview

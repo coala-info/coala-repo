@@ -4,7 +4,6 @@ description: bioconductor-ggpa performs joint analysis of multiple GWAS datasets
 homepage: https://bioconductor.org/packages/release/bioc/html/GGPA.html
 ---
 
-
 # bioconductor-ggpa
 
 name: bioconductor-ggpa

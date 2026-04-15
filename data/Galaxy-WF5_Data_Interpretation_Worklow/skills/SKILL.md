@@ -1,10 +1,12 @@
 ---
 name: wf5_data_interpretation_worklow
-description: "This workflow processes MaxQuant protein groups, evidence, and peptide data using MSstatsTMT and Unipept to perform statistical interpretation and functional annotation of quantitative proteomics datasets. Use this skill when you need to identify differentially expressed proteins across multiple experimental conditions in TMT-labeled mass spectrometry experiments and gain taxonomic or functional insights into the identified peptides."
-homepage: https://workflowhub.eu/workflows/1482
+description: This workflow processes MaxQuant protein groups, evidence, and peptide data using MSstatsTMT and Unipept to perform statistical interpretation and functional annotation of quantitative proteomics datasets. Use this skill when you need to identify differentially expressed proteins across multiple experimental conditions in TMT-labeled mass spectrometry experiments and gain taxonomic or functional insights into the identified peptides.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF5_Data_Interpretation_Worklow
+# wf5_data_interpretation_worklow
 
 ## Overview
 

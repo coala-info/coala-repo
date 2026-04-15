@@ -4,7 +4,6 @@ description: This tool predicts transcription factor binding profiles using a st
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPanalyser.html
 ---
 
-
 # bioconductor-chipanalyser
 
 name: bioconductor-chipanalyser

@@ -4,6 +4,8 @@ description: This pipeline processes MeerKAT pulsar data using observation filte
 homepage: https://github.com/nf-core/meerpipe
 ---
 
+# nf-core-meerpipe
+
 ## Overview
 nf-core/meerpipe is designed for the processing of MeerKAT pulsar data as part of the MeerTime project. It automates the transition from raw observation archives to high-quality data products required for pulsar timing analysis, including RFI-cleaned archives and precise Time of Arrivals (ToA).
 

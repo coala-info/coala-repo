@@ -4,7 +4,6 @@ description: SEPIRA estimates transcription factor activity from mRNA expression
 homepage: https://bioconductor.org/packages/3.8/bioc/html/SEPIRA.html
 ---
 
-
 # bioconductor-sepira
 
 name: bioconductor-sepira

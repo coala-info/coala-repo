@@ -1,9 +1,10 @@
 ---
 name: nanofilt
-description: "NanoFilt filters and trims long-read sequencing data based on quality, length, and GC content. Use when user asks to filter FASTQ reads by quality score, trim adapter sequences from read ends, or subset reads by length and GC content."
+description: NanoFilt filters and trims long-read sequencing data based on quality, length, and GC content. Use when user asks to filter FASTQ reads by quality score, trim adapter sequences from read ends, or subset reads by length and GC content.
 homepage: https://github.com/wdecoster/nanofilt
+metadata:
+  docker_image: "quay.io/biocontainers/nanofilt:2.8.0--py_0"
 ---
-
 
 # nanofilt
 

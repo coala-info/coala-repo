@@ -1,10 +1,12 @@
 ---
 name: generic-variation-analysis-on-wgs-pe-data
-description: "This workflow performs variant calling on paired-end whole genome sequencing data by integrating fastp for quality control, BWA-MEM for mapping, and LoFreq for sensitive detection of low-frequency alleles. Use this skill when you need to identify genetic polymorphisms, assess subclonal diversity, or characterize viral and bacterial evolution from raw sequencing reads using a GenBank reference."
-homepage: https://workflowhub.eu/workflows/353
+description: This workflow performs variant calling on paired-end whole genome sequencing data by integrating fastp for quality control, BWA-MEM for mapping, and LoFreq for sensitive detection of low-frequency alleles. Use this skill when you need to identify genetic polymorphisms, assess subclonal diversity, or characterize viral and bacterial evolution from raw sequencing reads using a GenBank reference.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Generic variation analysis on WGS PE data
+# generic-variation-analysis-on-wgs-pe-data
 
 ## Overview
 

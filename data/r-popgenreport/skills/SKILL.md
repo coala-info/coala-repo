@@ -4,7 +4,6 @@ description: PopGenReport is an R package for performing population and landscap
 homepage: https://cloud.r-project.org/web/packages/PopGenReport/index.html
 ---
 
-
 # r-popgenreport
 
 name: r-popgenreport

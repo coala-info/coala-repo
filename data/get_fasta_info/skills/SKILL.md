@@ -2,8 +2,9 @@
 name: get_fasta_info
 description: This tool extracts structural statistics, metadata, and missing data proportions from FASTA and FASTQ files. Use when user asks to summarize sequence lengths, quantify gaps, validate file integrity, or list per-sequence details.
 homepage: https://github.com/nylander/get_fasta_info
+metadata:
+  docker_image: "quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0"
 ---
-
 
 # get_fasta_info
 

@@ -2,8 +2,9 @@
 name: perl-compress-raw-bzip2
 description: This tool provides a low-level Perl interface to the bzlib library for high-performance, in-memory bzip2 compression and decompression. Use when user asks to compress data blocks using Perl, decompress bzip2 streams, or manage memory-efficient data transformation within bioinformatics pipelines.
 homepage: http://metacpan.org/pod/Compress::Raw::Bzip2
+metadata:
+  docker_image: "quay.io/biocontainers/perl-compress-raw-bzip2:2.201--pl5321h87f3376_1"
 ---
-
 
 # perl-compress-raw-bzip2
 

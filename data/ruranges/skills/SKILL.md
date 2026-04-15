@@ -2,8 +2,9 @@
 name: ruranges
 description: ruranges provides high-performance Rust-implemented kernels for interval arithmetic and genomic coordinate operations using NumPy arrays. Use when user asks to calculate overlaps between genomic intervals, find k-nearest neighbors, perform interval subtraction, or merge overlapping regions.
 homepage: https://github.com/pyranges/ruranges
+metadata:
+  docker_image: "quay.io/biocontainers/ruranges:0.0.15--py313he6b6a99_1"
 ---
-
 
 # ruranges
 

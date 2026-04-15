@@ -4,7 +4,6 @@ description: This package provides pre-built, large-scale gene expression databa
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChIPXpressData.html
 ---
 
-
 # bioconductor-chipxpressdata
 
 name: bioconductor-chipxpressdata

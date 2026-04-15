@@ -2,8 +2,9 @@
 name: rcx-tk
 description: The rcx-tk utility preprocesses and validates environmental chemistry and mass spectrometry metadata spreadsheets for downstream analysis. Use when user asks to process general metadata, handle alkane retention index files, validate injection numbers, or generate standardized sample identifiers.
 homepage: https://github.com/RECETOX/rcx-tk
+metadata:
+  docker_image: "quay.io/biocontainers/rcx-tk:0.1.0--pyhdfd78af_0"
 ---
-
 
 # rcx-tk
 

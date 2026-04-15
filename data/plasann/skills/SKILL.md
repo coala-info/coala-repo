@@ -2,8 +2,9 @@
 name: plasann
 description: PlasAnn is a specialized pipeline for the comprehensive annotation and visualization of plasmid sequences. Use when user asks to annotate plasmid features, generate circular plasmid maps, or process FASTA and GenBank files for mobile genetic elements.
 homepage: https://github.com/ajlopatkin/PlasAnn
+metadata:
+  docker_image: "quay.io/biocontainers/plasann:1.1.6--pyhdfd78af_0"
 ---
-
 
 # plasann
 

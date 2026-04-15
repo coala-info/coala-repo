@@ -4,7 +4,6 @@ description: This package provides Illumina EPIC DNA methylation reference data 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/BeadSorted.Saliva.EPIC.html
 ---
 
-
 # bioconductor-beadsorted.saliva.epic
 
 name: bioconductor-beadsorted.saliva.epic

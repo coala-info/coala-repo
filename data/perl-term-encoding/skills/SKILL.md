@@ -2,8 +2,9 @@
 name: perl-term-encoding
 description: This tool detects the character encoding of the user's terminal to ensure correct text rendering. Use when user asks to detect terminal encoding, configure standard output for internationalization, or prevent text corruption in command-line interfaces.
 homepage: http://metacpan.org/pod/Term::Encoding
+metadata:
+  docker_image: "quay.io/biocontainers/perl-term-encoding:0.03--pl526_0"
 ---
-
 
 # perl-term-encoding
 

@@ -4,6 +4,8 @@ description: This pipeline performs meta-analysis of trait associations by integ
 homepage: https://github.com/nf-core/omicsgenetraitassociation
 ---
 
+# omicsgenetraitassociation
+
 ## Overview
 nf-core/omicsgenetraitassociation is designed to perform meta-analysis of trait associations while accounting for correlations across omics studies. These correlations often arise from hidden non-independencies, such as overlapping or related samples, which can bias standard meta-analysis approaches if not properly addressed.
 

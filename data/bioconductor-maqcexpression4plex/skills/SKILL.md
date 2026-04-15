@@ -4,7 +4,6 @@ description: This package provides sample expression data from the human HG18 4-
 homepage: https://bioconductor.org/packages/release/data/experiment/html/maqcExpression4plex.html
 ---
 
-
 # bioconductor-maqcexpression4plex
 
 name: bioconductor-maqcexpression4plex

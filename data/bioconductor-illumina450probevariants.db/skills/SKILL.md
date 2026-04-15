@@ -4,7 +4,6 @@ description: This package provides genetic variant data from the 1000 Genomes Pr
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Illumina450ProbeVariants.db.html
 ---
 
-
 # bioconductor-illumina450probevariants.db
 
 name: bioconductor-illumina450probevariants.db

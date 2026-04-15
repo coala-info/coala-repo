@@ -4,7 +4,6 @@ description: bulkAnalyseR creates interactive Shiny applications for the compreh
 homepage: https://cran.r-project.org/web/packages/bulkanalyser/index.html
 ---
 
-
 # r-bulkanalyser
 
 ## Overview

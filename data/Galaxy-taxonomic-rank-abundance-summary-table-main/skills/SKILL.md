@@ -1,10 +1,12 @@
 ---
 name: taxonomic-abundance-summary-tables-for-a-specified-taxonomic
-description: "This metagenomics workflow processes MAPseq OTU table collections using text reformatting, grouping, and column joining tools to generate abundance summary tables for a user-defined taxonomic rank. Use this skill when you need to aggregate amplicon sequencing data to compare the relative abundance of specific taxa across multiple datasets at a consistent taxonomic level."
-homepage: https://workflowhub.eu/workflows/1296
+description: This metagenomics workflow processes MAPseq OTU table collections using text reformatting, grouping, and column joining tools to generate abundance summary tables for a user-defined taxonomic rank. Use this skill when you need to aggregate amplicon sequencing data to compare the relative abundance of specific taxa across multiple datasets at a consistent taxonomic level.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Taxonomic abundance summary tables for a specified taxonomic rank
+# taxonomic-abundance-summary-tables-for-a-specified-taxonomic
 
 ## Overview
 

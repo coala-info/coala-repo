@@ -1,10 +1,12 @@
 ---
 name: taxonomic-profiling-and-visualization-of-metagenomic-data
-description: "This metagenomics workflow processes raw sequencing reads and metadata to perform taxonomic profiling and community visualization using Kraken2, Bracken, and MetaPhlAn. Use this skill when you need to characterize the microbial composition of a sample and generate interactive visualizations to compare taxonomic distributions across different datasets."
-homepage: https://workflowhub.eu/workflows/1470
+description: This metagenomics workflow processes raw sequencing reads and metadata to perform taxonomic profiling and community visualization using Kraken2, Bracken, and MetaPhlAn. Use this skill when you need to characterize the microbial composition of a sample and generate interactive visualizations to compare taxonomic distributions across different datasets.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Taxonomic Profiling and Visualization of Metagenomic Data
+# taxonomic-profiling-and-visualization-of-metagenomic-data
 
 ## Overview
 

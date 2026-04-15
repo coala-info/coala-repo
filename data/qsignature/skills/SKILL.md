@@ -2,8 +2,9 @@
 name: qsignature
 description: qsignature detects potential sample mix-ups in genetic data using SNP distance measurements. Use when user asks to detect sample mix-ups or check sample identity.
 homepage: https://anaconda.org/channels/bioconda/packages/qsignature/overview
+metadata:
+  docker_image: "quay.io/biocontainers/qsignature:0.1pre--3"
 ---
-
 
 # qsignature
 

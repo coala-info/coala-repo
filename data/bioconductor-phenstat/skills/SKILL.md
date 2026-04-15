@@ -4,7 +4,6 @@ description: PhenStat performs statistical analysis of phenotypic data from high
 homepage: https://bioconductor.org/packages/release/bioc/html/PhenStat.html
 ---
 
-
 # bioconductor-phenstat
 
 name: bioconductor-phenstat

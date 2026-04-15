@@ -4,7 +4,6 @@ description: This package provides data and annotation support for Illumina 370k
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human370quadv3cCrlmm.html
 ---
 
-
 # bioconductor-human370quadv3ccrlmm
 
 name: bioconductor-human370quadv3ccrlmm

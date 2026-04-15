@@ -1,10 +1,12 @@
 ---
 name: metagenomic-binning
-description: "This metagenomic workflow processes trimmed reads and assemblies to group contigs into bins using CONCOCT, MetaBAT2, MaxBin2, and SemiBin, followed by bin refinement with Binette. Use this skill when you need to reconstruct individual microbial genomes from complex environmental samples to characterize the taxonomic and functional diversity of a microbiome."
-homepage: https://workflowhub.eu/workflows/2028
+description: This metagenomic workflow processes trimmed reads and assemblies to group contigs into bins using CONCOCT, MetaBAT2, MaxBin2, and SemiBin, followed by bin refinement with Binette. Use this skill when you need to reconstruct individual microbial genomes from complex environmental samples to characterize the taxonomic and functional diversity of a microbiome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metagenomic Binning
+# metagenomic-binning
 
 ## Overview
 

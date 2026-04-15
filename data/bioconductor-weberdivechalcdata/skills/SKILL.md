@@ -4,7 +4,6 @@ description: This package provides access to spatially-resolved transcriptomics 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/WeberDivechaLCdata.html
 ---
 
-
 # bioconductor-weberdivechalcdata
 
 name: bioconductor-weberdivechalcdata

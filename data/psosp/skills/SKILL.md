@@ -2,6 +2,8 @@
 name: psosp
 description: PSOSP classifies prophages as SOS-dependent, SOS-independent, or SOS-uncertain by analyzing LexA protein binding sites and their Heterology Index. Use when user asks to predict prophage induction mechanisms, identify SOS boxes in bacterial genomes, or determine if a prophage requires the SOS response for induction.
 homepage: https://github.com/mujiezhang/PSOSP
+metadata:
+  docker_image: "quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2"
 ---
 
 # psosp

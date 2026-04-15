@@ -1,10 +1,12 @@
 ---
 name: galaxy-workflow-genome_assessment_post_assembly
-description: "This workflow performs comprehensive quality control on genome assemblies using raw reads and FASTA contigs through tools including Quast, BUSCO, Meryl, and Merqury. Use this skill when you need to evaluate the completeness, accuracy, and continuity of a de novo genome assembly by generating k-mer based statistics and ortholog recovery reports."
-homepage: https://workflowhub.eu/workflows/794
+description: This workflow performs comprehensive quality control on genome assemblies using raw reads and FASTA contigs through tools including Quast, BUSCO, Meryl, and Merqury. Use this skill when you need to evaluate the completeness, accuracy, and continuity of a de novo genome assembly by generating k-mer based statistics and ortholog recovery reports.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Galaxy-Workflow-Genome_assessment_post_assembly
+# galaxy-workflow-genome_assessment_post_assembly
 
 ## Overview
 

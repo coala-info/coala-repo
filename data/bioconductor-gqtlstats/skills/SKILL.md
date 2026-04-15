@@ -4,7 +4,6 @@ description: This package provides infrastructure for the scalable analysis and 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gQTLstats.html
 ---
 
-
 # bioconductor-gqtlstats
 
 ## Overview

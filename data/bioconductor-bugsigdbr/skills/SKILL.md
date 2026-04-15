@@ -4,7 +4,6 @@ description: The bugsigdbr package provides an R interface to access and process
 homepage: https://bioconductor.org/packages/release/bioc/html/bugsigdbr.html
 ---
 
-
 # bioconductor-bugsigdbr
 
 ## Overview

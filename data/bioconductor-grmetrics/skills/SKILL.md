@@ -4,7 +4,6 @@ description: The GRmetrics package calculates and visualizes growth rate inhibit
 homepage: https://bioconductor.org/packages/release/bioc/html/GRmetrics.html
 ---
 
-
 # bioconductor-grmetrics
 
 ## Overview

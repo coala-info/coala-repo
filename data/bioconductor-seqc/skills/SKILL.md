@@ -4,7 +4,6 @@ description: This tool provides access to benchmark RNA-seq datasets and TaqMan 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/seqc.html
 ---
 
-
 # bioconductor-seqc
 
 name: bioconductor-seqc

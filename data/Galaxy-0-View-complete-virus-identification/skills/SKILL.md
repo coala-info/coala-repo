@@ -1,10 +1,12 @@
 ---
 name: 0-view-complete-virus-identification
-description: "This workflow performs comprehensive viral identification from sequencing reads using fastp for preprocessing, Kraken2 and Krona for taxonomic classification, and Shovill for assembly followed by BLAST and HMMER validation. Use this skill when you need to detect, assemble, and characterize known or novel viruses within complex metagenomic samples or clinical isolates."
-homepage: https://workflowhub.eu/workflows/100
+description: This workflow performs comprehensive viral identification from sequencing reads using fastp for preprocessing, Kraken2 and Krona for taxonomic classification, and Shovill for assembly followed by BLAST and HMMER validation. Use this skill when you need to detect, assemble, and characterize known or novel viruses within complex metagenomic samples or clinical isolates.
+homepage: https://www.gembloux.ulg.ac.be/phytopathologie/
+metadata:
+  docker_image: "N/A"
 ---
 
-# 0: View complete virus identification
+# 0-view-complete-virus-identification
 
 ## Overview
 

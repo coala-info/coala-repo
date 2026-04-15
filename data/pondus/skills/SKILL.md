@@ -4,7 +4,6 @@ description: Pondus is a lightweight personal weight management tool for logging
 homepage: https://github.com/enicklas/pondus
 ---
 
-
 # pondus
 
 ## Overview

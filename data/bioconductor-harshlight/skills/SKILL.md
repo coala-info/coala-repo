@@ -4,7 +4,6 @@ description: This tool detects and corrects spatial artifacts such as extended, 
 homepage: https://bioconductor.org/packages/release/bioc/html/Harshlight.html
 ---
 
-
 # bioconductor-harshlight
 
 name: bioconductor-harshlight

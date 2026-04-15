@@ -4,7 +4,6 @@ description: This package provides minor allele frequency data from the 1000 Gen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.1Kgenomes.phase1.hs37d5.html
 ---
 
-
 # bioconductor-mafdb.1kgenomes.phase1.hs37d5
 
 name: bioconductor-mafdb.1kgenomes.phase1.hs37d5

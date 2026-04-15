@@ -4,7 +4,6 @@ description: This package provides access to curated landmark single-cell multim
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SingleCellMultiModal.html
 ---
 
-
 # bioconductor-singlecellmultimodal
 
 name: bioconductor-singlecellmultimodal

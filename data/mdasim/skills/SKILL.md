@@ -2,8 +2,9 @@
 name: mdasim
 description: MDAsim simulates whole genome amplification of DNA sequences using Multiple Displacement Amplification. Use when user asks to simulate MDA for a DNA sequence, model its effects on genome coverage, or generate simulated amplified DNA data.
 homepage: https://sourceforge.net/projects/mdasim/
+metadata:
+  docker_image: "quay.io/biocontainers/mdasim:2.1.1--hf316886_7"
 ---
-
 
 # mdasim
 

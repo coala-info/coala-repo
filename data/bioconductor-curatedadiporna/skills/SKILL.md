@@ -4,7 +4,6 @@ description: This package provides a curated, multi-study RNA-Seq dataset of 3T3
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedAdipoRNA.html
 ---
 
-
 # bioconductor-curatedadiporna
 
 ## Overview

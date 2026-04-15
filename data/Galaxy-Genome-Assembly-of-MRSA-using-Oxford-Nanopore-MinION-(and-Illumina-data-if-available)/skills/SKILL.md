@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-of-mrsa-using-oxford-nanopore-minion-and-ill
-description: "This Galaxy workflow performs de novo genome assembly of Methicillin-resistant Staphylococcus aureus (MRSA) using Oxford Nanopore long reads and optional Illumina short reads processed through Flye, filtlong, and Polypolish. Use this skill when you need to reconstruct complete bacterial genomes and resolve complex genomic regions to study antimicrobial resistance or pathogen transmission."
-homepage: https://workflowhub.eu/workflows/1613
+description: This Galaxy workflow performs de novo genome assembly of Methicillin-resistant Staphylococcus aureus (MRSA) using Oxford Nanopore long reads and optional Illumina short reads processed through Flye, filtlong, and Polypolish. Use this skill when you need to reconstruct complete bacterial genomes and resolve complex genomic regions to study antimicrobial resistance or pathogen transmission.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome Assembly of MRSA using Oxford Nanopore MinION (and Illumina data if available)
+# genome-assembly-of-mrsa-using-oxford-nanopore-minion-and-ill
 
 ## Overview
 

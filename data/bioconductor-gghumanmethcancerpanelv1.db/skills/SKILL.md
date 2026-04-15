@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings for the Illu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GGHumanMethCancerPanelv1.db.html
 ---
 
-
 # bioconductor-gghumanmethcancerpanelv1.db
 
 ## Overview

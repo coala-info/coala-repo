@@ -4,7 +4,6 @@ description: This tool performs co-expression analysis between long intergenic n
 homepage: https://bioconductor.org/packages/3.6/bioc/html/LINC.html
 ---
 
-
 # bioconductor-linc
 
 name: bioconductor-linc

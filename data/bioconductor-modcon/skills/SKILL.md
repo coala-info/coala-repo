@@ -4,7 +4,6 @@ description: This tool modifies splice donor context through synonymous codon se
 homepage: https://bioconductor.org/packages/release/bioc/html/ModCon.html
 ---
 
-
 # bioconductor-modcon
 
 name: bioconductor-modcon

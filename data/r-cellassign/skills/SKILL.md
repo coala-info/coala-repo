@@ -4,7 +4,6 @@ description: r-cellassign performs automated, probabilistic cell type assignment
 homepage: https://cran.r-project.org/web/packages/cellassign/index.html
 ---
 
-
 # r-cellassign
 
 name: r-cellassign

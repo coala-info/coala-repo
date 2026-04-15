@@ -4,7 +4,6 @@ description: This R package provides specialized tools for single-cell omics ana
 homepage: https://cran.r-project.org/web/packages/scopfunctions/index.html
 ---
 
-
 # r-scopfunctions
 
 name: r-scopfunctions

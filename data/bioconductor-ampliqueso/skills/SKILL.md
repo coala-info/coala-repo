@@ -4,7 +4,6 @@ description: This tool analyzes amplicon sequencing panels using coverage-based 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ampliQueso.html
 ---
 
-
 # bioconductor-ampliqueso
 
 name: bioconductor-ampliqueso

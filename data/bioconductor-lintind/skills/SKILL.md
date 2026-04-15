@@ -4,7 +4,6 @@ description: LinTInd processes and analyzes data from CRISPR/Cas9-based syntheti
 homepage: https://bioconductor.org/packages/release/bioc/html/LinTInd.html
 ---
 
-
 # bioconductor-lintind
 
 name: bioconductor-lintind

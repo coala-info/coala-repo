@@ -4,6 +4,8 @@ description: This pipeline performs alternative splicing analysis from RNA-seq d
 homepage: https://github.com/nf-core/rnasplice
 ---
 
+# rnasplice
+
 ## Overview
 nf-core/rnasplice is designed for the comprehensive analysis of alternative splicing in RNA-seq datasets. It addresses the complexity of transcriptomic variation by offering multiple analysis paths, including exon-level, transcript-level, and event-based splicing detection.
 

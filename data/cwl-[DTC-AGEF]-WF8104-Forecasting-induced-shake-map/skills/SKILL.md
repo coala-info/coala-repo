@@ -1,9 +1,12 @@
 ---
 name: dtc-agef-wf8104-forecasting-induced-shake-map
-description: "This Common Workflow Language pipeline generates seismic hazard maps for future anthropogenic seismicity by integrating past activity models and time-varying technological factors through a multi-model ensemble approach. Use this skill when forecasting short-term ground vibrations, such as peak ground acceleration, to assess the potential seismic impact of industrial operations in newly active or future source zones."
-homepage: https://workflowhub.eu/workflows/1986
+description: This Common Workflow Language pipeline generates seismic hazard maps for future anthropogenic seismicity by integrating past activity models and time-varying technological factors through a multi-model ensemble approach. Use this skill when forecasting short-term ground vibrations, such as peak ground acceleration, to assess the potential seismic impact of industrial operations in newly active or future source zones.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-AGEF] WF8104: Forecasting induced shake map
+
+# dtc-agef-wf8104-forecasting-induced-shake-map
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package analyzes Methylation Sensitive Genotyping by Sequencin
 homepage: https://bioconductor.org/packages/release/bioc/html/msgbsR.html
 ---
 
-
 # bioconductor-msgbsr
 
 name: bioconductor-msgbsr

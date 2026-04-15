@@ -2,6 +2,8 @@
 name: ddocent
 description: dDocent is a population genomics pipeline that transforms raw sequencing reads into high-quality SNP and INDEL calls for non-model organisms. Use when user asks to perform de novo or reference-based assembly, optimize clustering parameters, or call and filter variants from RADseq data.
 homepage: https://ddocent.com
+metadata:
+  docker_image: "quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0"
 ---
 
 # ddocent

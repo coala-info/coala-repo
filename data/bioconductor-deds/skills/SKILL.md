@@ -4,7 +4,6 @@ description: This tool integrates multiple differential expression statistics in
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DEDS.html
 ---
 
-
 # bioconductor-deds
 
 name: bioconductor-deds

@@ -2,8 +2,9 @@
 name: ucsc-fatovcf
 description: This tool converts multi-sequence FASTA alignments into VCF (Variant Call Format) files. Use when user asks to convert FASTA alignments to VCF, or represent genomic variants from aligned sequences.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fatovcf:482--hdc0a859_1"
 ---
-
 
 # ucsc-fatovcf
 

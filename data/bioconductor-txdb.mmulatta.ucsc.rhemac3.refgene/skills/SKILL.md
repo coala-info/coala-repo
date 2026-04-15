@@ -4,7 +4,6 @@ description: This package provides a transcript database for the Macaca mulatta 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmulatta.UCSC.rheMac3.refGene.html
 ---
 
-
 # bioconductor-txdb.mmulatta.ucsc.rhemac3.refgene
 
 ## Overview

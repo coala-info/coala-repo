@@ -2,8 +2,9 @@
 name: cutadapt
 description: Cutadapt identifies and removes adapter sequences, primers, and low-quality bases from high-throughput sequencing reads. Use when user asks to trim adapters, filter reads by quality or length, remove poly-A tails, or demultiplex sequencing data.
 homepage: https://cutadapt.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/cutadapt:5.2--py311haab0aaa_0"
 ---
-
 
 # cutadapt
 

@@ -1,10 +1,12 @@
 ---
 name: proteogenomics-1-database-creation
-description: "This proteogenomics workflow integrates RNA-seq reads, reference genomes, and protein databases using tools like HISAT2, FreeBayes, and CustomProDB to construct customized FASTA databases. Use this skill when you need to create a comprehensive search database that includes sample-specific variants, indels, and novel transcripts for identifying non-canonical peptides in mass spectrometry data."
-homepage: https://workflowhub.eu/workflows/1407
+description: This proteogenomics workflow integrates RNA-seq reads, reference genomes, and protein databases using tools like HISAT2, FreeBayes, and CustomProDB to construct customized FASTA databases. Use this skill when you need to create a comprehensive search database that includes sample-specific variants, indels, and novel transcripts for identifying non-canonical peptides in mass spectrometry data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Proteogenomics 1: Database Creation
+# proteogenomics-1-database-creation
 
 ## Overview
 

@@ -2,6 +2,8 @@
 name: dpcstruct
 description: DPCstruct is a pipeline for the unsupervised identification and classification of protein domains using local structural alignments. Use when user asks to identify recurring structural motifs, cluster protein alignments, or define domain boundaries in large-scale structural databases.
 homepage: https://github.com/RitAreaSciencePark/DPCstruct
+metadata:
+  docker_image: "quay.io/biocontainers/dpcstruct:0.1.1--h9948957_0"
 ---
 
 # dpcstruct

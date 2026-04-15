@@ -4,7 +4,6 @@ description: This tool performs stability-based gene selection and rank aggregat
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GeneSelector.html
 ---
 
-
 # bioconductor-geneselector
 
 name: bioconductor-geneselector

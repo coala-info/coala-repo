@@ -4,7 +4,6 @@ description: This tool provides datasets and code to explore and reproduce the D
 homepage: https://bioconductor.org/packages/release/data/experiment/html/dressCheck.html
 ---
 
-
 # bioconductor-dresscheck
 
 name: bioconductor-dresscheck

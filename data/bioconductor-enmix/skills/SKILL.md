@@ -4,7 +4,6 @@ description: This package provides a comprehensive toolset for the analysis and 
 homepage: https://bioconductor.org/packages/release/bioc/html/ENmix.html
 ---
 
-
 # bioconductor-enmix
 
 name: bioconductor-enmix

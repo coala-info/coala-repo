@@ -4,7 +4,6 @@ description: pairedGSEA provides a unified framework for analyzing and comparing
 homepage: https://bioconductor.org/packages/release/bioc/html/pairedGSEA.html
 ---
 
-
 # bioconductor-pairedgsea
 
 ## Overview

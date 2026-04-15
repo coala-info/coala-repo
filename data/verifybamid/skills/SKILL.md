@@ -2,8 +2,9 @@
 name: verifybamid
 description: VerifyBamID quantifies DNA contamination in sequence reads. Use when user asks to quantify DNA contamination, estimate DNA contamination, or check for DNA contamination.
 homepage: https://github.com/Griffan/VerifyBamID
+metadata:
+  docker_image: "quay.io/biocontainers/verifybamid:1.1.3--h5b5514e_6"
 ---
-
 
 # verifybamid
 

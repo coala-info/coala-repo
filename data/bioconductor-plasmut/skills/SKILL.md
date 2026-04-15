@@ -4,7 +4,6 @@ description: This tool uses Bayesian modeling to distinguish whether mutations i
 homepage: https://bioconductor.org/packages/release/bioc/html/plasmut.html
 ---
 
-
 # bioconductor-plasmut
 
 name: bioconductor-plasmut

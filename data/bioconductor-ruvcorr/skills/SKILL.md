@@ -4,7 +4,6 @@ description: The RUVcorr package removes systematic noise and batch effects from
 homepage: https://bioconductor.org/packages/release/bioc/html/RUVcorr.html
 ---
 
-
 # bioconductor-ruvcorr
 
 ## Overview

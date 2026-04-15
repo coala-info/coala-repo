@@ -4,7 +4,6 @@ description: This package calculates specialized biological distance measures su
 homepage: https://bioconductor.org/packages/release/bioc/html/bioDist.html
 ---
 
-
 # bioconductor-biodist
 
 name: bioconductor-biodist

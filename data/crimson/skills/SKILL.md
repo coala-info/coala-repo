@@ -1,7 +1,9 @@
 ---
 name: crimson
-description: "Crimson converts legacy bioinformatics text outputs from tools like FastQC, Picard, and samtools into structured JSON or YAML formats. Use when user asks to parse bioinformatics log files, convert tool outputs to machine-readable formats, or aggregate quality control data into JSON."
+description: Crimson converts legacy bioinformatics text outputs from tools like FastQC, Picard, and samtools into structured JSON or YAML formats. Use when user asks to parse bioinformatics log files, convert tool outputs to machine-readable formats, or aggregate quality control data into JSON.
 homepage: https://github.com/bow/crimson
+metadata:
+  docker_image: "quay.io/biocontainers/crimson:1.1.1--pyh7cba7a3_0"
 ---
 
 # crimson

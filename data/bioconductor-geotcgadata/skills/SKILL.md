@@ -4,7 +4,6 @@ description: This package provides utilities for preprocessing, normalizing, and
 homepage: https://bioconductor.org/packages/release/bioc/html/GeoTcgaData.html
 ---
 
-
 # bioconductor-geotcgadata
 
 ## Overview

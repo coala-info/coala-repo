@@ -4,7 +4,6 @@ description: The TENxBUSData package provides streamlined access to pre-processe
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TENxBUSData.html
 ---
 
-
 # bioconductor-tenxbusdata
 
 ## Overview

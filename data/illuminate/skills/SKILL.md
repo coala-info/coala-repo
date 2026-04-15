@@ -2,8 +2,9 @@
 name: illuminate
 description: The illuminate skill provides instructions for managing the vim-illuminate plugin to automatically highlight and navigate occurrences of the word under the cursor. Use when user asks to configure highlighting providers, toggle the plugin on specific buffers, customize visual styles, or set up keymaps for jumping between references.
 homepage: https://github.com/RRethy/vim-illuminate
+metadata:
+  docker_image: "quay.io/biocontainers/illuminate:0.6.3--py35_0"
 ---
-
 
 # illuminate
 

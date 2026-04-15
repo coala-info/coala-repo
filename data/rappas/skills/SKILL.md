@@ -1,9 +1,10 @@
 ---
 name: rappas
-description: "RAPPAS performs alignment-free phylogenetic placement of genomic reads onto a reference tree using a phylo-kmer database. Use when user asks to build a phylo-kmer database from a reference alignment or place metagenomic reads onto a phylogenetic tree without alignment."
+description: RAPPAS performs alignment-free phylogenetic placement of genomic reads onto a reference tree using a phylo-kmer database. Use when user asks to build a phylo-kmer database from a reference alignment or place metagenomic reads onto a phylogenetic tree without alignment.
 homepage: https://github.com/blinard-BIOINFO/RAPPAS
+metadata:
+  docker_image: "quay.io/biocontainers/rappas:1.22--hdfd78af_0"
 ---
-
 
 # rappas
 

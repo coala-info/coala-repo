@@ -4,7 +4,6 @@ description: This package evaluates binary classifiers by calculating standardiz
 homepage: https://bioconductor.org/packages/release/bioc/html/ROCpAI.html
 ---
 
-
 # bioconductor-rocpai
 
 ## Overview

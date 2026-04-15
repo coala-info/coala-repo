@@ -4,7 +4,6 @@ description: This tool implements an empirical Bayesian framework to identify di
 homepage: https://bioconductor.org/packages/release/bioc/html/EBcoexpress.html
 ---
 
-
 # bioconductor-ebcoexpress
 
 name: bioconductor-ebcoexpress

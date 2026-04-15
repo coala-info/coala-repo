@@ -4,7 +4,6 @@ description: This tool saves and loads Biostrings XStringSet objects to and from
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.string.html
 ---
 
-
 # bioconductor-alabaster.string
 
 name: bioconductor-alabaster.string

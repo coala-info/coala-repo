@@ -2,8 +2,9 @@
 name: shovill
 description: Shovill is an assembly pipeline that optimizes the assembly of small, haploid microbial genomes by wrapping SPAdes and other assemblers with pre- and post-processing steps. Use when user asks to assemble bacterial isolates, perform de novo assembly of microbial reads, or generate high-quality contigs with optimized memory and speed.
 homepage: https://github.com/tseemann/shovill
+metadata:
+  docker_image: "quay.io/biocontainers/shovill:1.4.2--hdfd78af_0"
 ---
-
 
 # shovill
 

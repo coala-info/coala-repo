@@ -2,8 +2,9 @@
 name: perl-number-misc
 description: This tool provides a collection of utilities for formatting, validating, and manipulating numeric data in Perl scripts. Use when user asks to format numbers with commas, round values to specific decimal places, validate numeric types, or check if a number falls within a range.
 homepage: http://metacpan.org/pod/Number::Misc
+metadata:
+  docker_image: "quay.io/biocontainers/perl-number-misc:1.2--pl526_1"
 ---
-
 
 # perl-number-misc
 

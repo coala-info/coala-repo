@@ -2,6 +2,8 @@
 name: famus
 description: FAMUS is a bioinformatics framework that uses supervised contrastive learning and neural networks to assign functional annotations to protein sequences. Use when user asks to install pre-trained models, classify unknown protein sequences, or train custom models on specific protein families.
 homepage: https://github.com/burstein-lab/famus
+metadata:
+  docker_image: "quay.io/biocontainers/famus:0.2.2--py312hdfd78af_0"
 ---
 
 # famus

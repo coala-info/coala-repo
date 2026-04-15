@@ -4,7 +4,6 @@ description: This tool performs Bayesian hierarchical modeling for cross-study d
 homepage: https://bioconductor.org/packages/release/bioc/html/XDE.html
 ---
 
-
 # bioconductor-xde
 
 name: bioconductor-xde

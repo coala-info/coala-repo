@@ -4,7 +4,6 @@ description: This package provides base annotation data and raw SQLite databases
 homepage: https://bioconductor.org/packages/release/data/annotation/html/yeast.db0.html
 ---
 
-
 # bioconductor-yeast.db0
 
 name: bioconductor-yeast.db0

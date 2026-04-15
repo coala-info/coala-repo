@@ -1,7 +1,9 @@
 ---
 name: guide-counter
-description: "guide-counter quantifies sgRNA sequences from CRISPR screen FASTQ files to produce a count matrix for downstream analysis. Use when user asks to count CRISPR guides, quantify sgRNA abundance, or generate a count table from sequencing data."
+description: guide-counter quantifies sgRNA sequences from CRISPR screen FASTQ files to produce a count matrix for downstream analysis. Use when user asks to count CRISPR guides, quantify sgRNA abundance, or generate a count table from sequencing data.
 homepage: https://github.com/fulcrumgenomics/guide-counter
+metadata:
+  docker_image: "quay.io/biocontainers/guide-counter:0.1.3--h503566f_4"
 ---
 
 # guide-counter

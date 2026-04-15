@@ -4,7 +4,6 @@ description: This tool estimates gene expression levels by combining data from m
 homepage: https://bioconductor.org/packages/release/bioc/html/multiscan.html
 ---
 
-
 # bioconductor-multiscan
 
 name: bioconductor-multiscan

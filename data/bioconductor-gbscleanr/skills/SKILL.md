@@ -4,7 +4,6 @@ description: GBScleanR performs error correction and genotype estimation for NGS
 homepage: https://bioconductor.org/packages/release/bioc/html/GBScleanR.html
 ---
 
-
 # bioconductor-gbscleanr
 
 ## Overview

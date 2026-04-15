@@ -4,7 +4,6 @@ description: This tool dynamically defines R functions and S4 methods by compili
 homepage: https://cloud.r-project.org/web/packages/inline/index.html
 ---
 
-
 # r-inline
 
 name: r-inline

@@ -4,7 +4,6 @@ description: The seqCAT package authenticates biological samples and detects sam
 homepage: https://bioconductor.org/packages/release/bioc/html/seqCAT.html
 ---
 
-
 # bioconductor-seqcat
 
 ## Overview

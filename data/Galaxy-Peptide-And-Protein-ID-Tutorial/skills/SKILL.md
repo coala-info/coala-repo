@@ -1,10 +1,12 @@
 ---
 name: peptide-and-protein-id-tutorial
-description: "This proteomics workflow processes mzML mass spectrometry data and a protein database using PeakPickerHiRes, SearchGUI, and PeptideShaker to identify peptides and proteins. Use this skill when you need to perform automated protein identification and validation from raw mass spectrometry spectra to generate comprehensive lists of peptides and protein groups."
-homepage: https://workflowhub.eu/workflows/1394
+description: This proteomics workflow processes mzML mass spectrometry data and a protein database using PeakPickerHiRes, SearchGUI, and PeptideShaker to identify peptides and proteins. Use this skill when you need to perform automated protein identification and validation from raw mass spectrometry spectra to generate comprehensive lists of peptides and protein groups.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Peptide And Protein ID Tutorial
+# peptide-and-protein-id-tutorial
 
 ## Overview
 

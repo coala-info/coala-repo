@@ -4,7 +4,6 @@ description: This tool performs sample size and power analysis for high-dimensio
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SSPA.html
 ---
 
-
 # bioconductor-sspa
 
 name: bioconductor-sspa

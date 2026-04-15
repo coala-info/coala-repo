@@ -2,6 +2,8 @@
 name: cerberus-x
 description: Cerberus-x (formerly MetaCerberus) is a versatile pipeline that transforms raw sequencing reads or assembled contigs into metabolic knowledge.
 homepage: https://github.com/raw-lab/cerberus
+metadata:
+  docker_image: "quay.io/biocontainers/cerberus-x:1.5.0--pyhdfd78af_0"
 ---
 
 # cerberus-x

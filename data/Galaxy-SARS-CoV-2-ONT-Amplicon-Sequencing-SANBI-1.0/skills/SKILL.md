@@ -1,10 +1,12 @@
 ---
 name: ont-amplicon-sequencing
-description: "This workflow processes Oxford Nanopore amplicon sequencing data using a reference genome and primer BED file with tools including NanoPlot, Read It and Keep, and the ARTIC suite. Use this skill when you need to perform viral genomic surveillance or reconstruct consensus genomes from multiplexed amplicon libraries."
-homepage: https://workflowhub.eu/workflows/521
+description: This workflow processes Oxford Nanopore amplicon sequencing data using a reference genome and primer BED file with tools including NanoPlot, Read It and Keep, and the ARTIC suite. Use this skill when you need to perform viral genomic surveillance or reconstruct consensus genomes from multiplexed amplicon libraries.
+homepage: https://www.sanbi.ac.za/
+metadata:
+  docker_image: "N/A"
 ---
 
-# ONT Amplicon Sequencing
+# ont-amplicon-sequencing
 
 ## Overview
 

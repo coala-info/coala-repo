@@ -4,6 +4,8 @@ description: This pipeline performs rare variant burden tests by comparing case-
 homepage: https://github.com/nf-core/rarevariantburden
 ---
 
+# rarevariantburden
+
 ## Overview
 nf-core/rarevariantburden (CoCoRV-nf) addresses the challenge of performing rare variant burden tests when only patient/case sequencing data is available. It leverages pre-processed public summary counts from gnomAD (v2 or v4.1) as a proxy for control groups to identify disease-predisposition genes.
 

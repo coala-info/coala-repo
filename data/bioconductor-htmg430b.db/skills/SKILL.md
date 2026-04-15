@@ -4,7 +4,6 @@ description: This tool provides annotation data for the Affymetrix HT Mouse Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430b.db.html
 ---
 
-
 # bioconductor-htmg430b.db
 
 name: bioconductor-htmg430b.db

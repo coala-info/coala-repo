@@ -1,9 +1,10 @@
 ---
 name: colormap
-description: "This tool maps normalized scalar data to high-quality color gradients using fragment shaders or a C++ library. Use when user asks to map float values to RGBA colors, integrate scientific palettes into shaders, or process heatmaps in C++."
+description: This tool maps normalized scalar data to high-quality color gradients using fragment shaders or a C++ library. Use when user asks to map float values to RGBA colors, integrate scientific palettes into shaders, or process heatmaps in C++.
 homepage: https://github.com/kbinani/colormap-shaders
+metadata:
+  docker_image: "biocontainers/colormap:v1.0.2-1-deb-py3_cv1"
 ---
-
 
 # colormap
 

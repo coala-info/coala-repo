@@ -2,8 +2,9 @@
 name: taranis
 description: Taranis is a bioinformatics pipeline for high-resolution bacterial typing that generates allelic profiles from genomic assemblies using wgMLST or cgMLST schemas. Use when user asks to validate genomic schemas, identify reference alleles, or perform allele calling for bacterial strain characterization.
 homepage: https://github.com/BU-ISCIII/taranis
+metadata:
+  docker_image: "quay.io/biocontainers/taranis:2.0.1--hdfd78af_0"
 ---
-
 
 # taranis
 

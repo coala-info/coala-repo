@@ -4,7 +4,6 @@ description: This package provides example RNA-Seq datasets, annotation files, a
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/JctSeqData.html
 ---
 
-
 # bioconductor-jctseqdata
 
 name: bioconductor-jctseqdata

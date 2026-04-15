@@ -4,7 +4,6 @@ description: The mogsa package provides a framework for the integrative analysis
 homepage: https://bioconductor.org/packages/release/bioc/html/mogsa.html
 ---
 
-
 # bioconductor-mogsa
 
 ## Overview

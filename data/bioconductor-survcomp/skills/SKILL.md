@@ -4,7 +4,6 @@ description: This tool provides functions for performance assessment and compari
 homepage: https://bioconductor.org/packages/release/bioc/html/survcomp.html
 ---
 
-
 # bioconductor-survcomp
 
 name: bioconductor-survcomp

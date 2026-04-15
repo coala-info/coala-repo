@@ -2,8 +2,9 @@
 name: tidyp
 description: The tidyp tool cleans and validates HTML content. Use when user asks to clean HTML, validate HTML, or format HTML.
 homepage: https://github.com/jbengler/tidyplots
+metadata:
+  docker_image: "quay.io/biocontainers/tidyp:1.04--h7b50bb2_9"
 ---
-
 
 # tidyp
 

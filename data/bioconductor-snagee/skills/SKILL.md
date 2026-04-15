@@ -4,7 +4,6 @@ description: SNAGEE assesses the quality of gene expression data by calculating 
 homepage: https://bioconductor.org/packages/release/bioc/html/SNAGEE.html
 ---
 
-
 # bioconductor-snagee
 
 ## Overview

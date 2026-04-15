@@ -2,8 +2,9 @@
 name: mach2
 description: Mach2 reconstructs cancer cell migration histories by applying parsimony criteria to clonal trees and anatomical locations. Use when user asks to reconstruct migration paths between anatomical sites, resolve evolutionary polytomies, or generate optimal migration histories for cancer clones.
 homepage: https://github.com/elkebir-group/mach2
+metadata:
+  docker_image: "quay.io/biocontainers/mach2:1.0.2--pyhdfd78af_0"
 ---
-
 
 # mach2
 

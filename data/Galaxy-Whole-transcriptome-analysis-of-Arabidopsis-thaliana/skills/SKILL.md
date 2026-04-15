@@ -1,10 +1,12 @@
 ---
 name: whole-transcriptome-analysis-of-arabidopsis-thaliana
-description: "This plant transcriptomics workflow integrates miRNA-seq and mRNA-seq data from Arabidopsis thaliana using Salmon, MiRDeep2, and DESeq2 to perform differential expression analysis and target prediction with TargetFinder. Use this skill when you need to identify regulatory interactions by correlating upregulated miRNAs with their downregulated target mRNAs to understand gene expression control under specific experimental conditions."
-homepage: https://workflowhub.eu/workflows/1717
+description: This plant transcriptomics workflow integrates miRNA-seq and mRNA-seq data from Arabidopsis thaliana using Salmon, MiRDeep2, and DESeq2 to perform differential expression analysis and target prediction with TargetFinder. Use this skill when you need to identify regulatory interactions by correlating upregulated miRNAs with their downregulated target mRNAs to understand gene expression control under specific experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Whole transcriptome analysis of Arabidopsis thaliana
+# whole-transcriptome-analysis-of-arabidopsis-thaliana
 
 ## Overview
 

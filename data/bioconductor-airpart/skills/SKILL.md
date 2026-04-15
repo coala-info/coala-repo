@@ -4,7 +4,6 @@ description: This tool analyzes single-cell allelic imbalance and differential a
 homepage: https://bioconductor.org/packages/release/bioc/html/airpart.html
 ---
 
-
 # bioconductor-airpart
 
 name: bioconductor-airpart

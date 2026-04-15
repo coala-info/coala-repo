@@ -2,8 +2,9 @@
 name: perl-net-netrc
 description: This tool parses .netrc files to extract login credentials and associated comments into a structured Raku hash. Use when user asks to parse a .netrc file, extract machine credentials, or retrieve authentication tokens from a configuration string.
 homepage: https://github.com/Altai-man/perl6-Config-Netrc
+metadata:
+  docker_image: "quay.io/biocontainers/perl-net-netrc:2.14--pl526_1"
 ---
-
 
 # perl-net-netrc
 

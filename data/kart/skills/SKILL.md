@@ -2,8 +2,9 @@
 name: kart
 description: Kart is an ultra-efficient NGS read mapper that uses a divide-and-conquer strategy to align short and long reads to a reference genome. Use when user asks to index a reference genome, map paired-end or interleaved reads, or align error-prone PacBio sequences.
 homepage: https://github.com/hsinnan75/Kart
+metadata:
+  docker_image: "quay.io/biocontainers/kart:2.5.6--h13024bc_6"
 ---
-
 
 # kart
 

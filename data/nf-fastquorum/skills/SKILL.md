@@ -4,6 +4,8 @@ description: The pipeline processes single-end, paired-end, or duplex sequencing
 homepage: https://github.com/nf-core/fastquorum
 ---
 
+# fastquorum
+
 ## Overview
 nf-core/fastquorum implements the fgbio Best Practices FASTQ to Consensus Pipeline to produce high-accuracy consensus reads using unique molecular indexes (UMIs). It addresses the challenge of sequencing errors by grouping reads that originated from the same source molecule and calling a consensus sequence, which is particularly effective for detecting low-frequency variants.
 

@@ -1,10 +1,12 @@
 ---
 name: workflow-6-alpha-diversity-galaxy-training-16s-microbial-ana
-description: "This 16S microbial analysis workflow processes a shared OTU file using Mothur tools to calculate alpha diversity indices and generate rarefaction curves. Use this skill when you need to evaluate the richness and diversity of microbial communities within individual samples or determine if sequencing depth is sufficient to capture the full taxonomic variety."
-homepage: https://workflowhub.eu/workflows/1412
+description: This 16S microbial analysis workflow processes a shared OTU file using Mothur tools to calculate alpha diversity indices and generate rarefaction curves. Use this skill when you need to evaluate the richness and diversity of microbial communities within individual samples or determine if sequencing depth is sufficient to capture the full taxonomic variety.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 6: Alpha Diversity [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-6-alpha-diversity-galaxy-training-16s-microbial-ana
 
 ## Overview
 

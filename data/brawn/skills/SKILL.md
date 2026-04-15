@@ -2,8 +2,9 @@
 name: brawn
 description: Brawn is a Python-based alignment tool designed to merge sequences into existing reference alignments using a profile-profile approach and a caching system. Use when user asks to align sequences to a reference, build a reference alignment cache, or insert sequences into an existing protein alignment.
 homepage: https://github.com/SJShaw/brawn
+metadata:
+  docker_image: "quay.io/biocontainers/brawn:1.0.2--pyhdfd78af_0"
 ---
-
 
 # brawn
 

@@ -4,7 +4,6 @@ description: This tool integrates microRNA-target interactions into signaling pa
 homepage: https://bioconductor.org/packages/release/bioc/html/mirIntegrator.html
 ---
 
-
 # bioconductor-mirintegrator
 
 name: bioconductor-mirintegrator

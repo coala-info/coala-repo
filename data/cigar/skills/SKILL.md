@@ -2,8 +2,9 @@
 name: cigar
 description: The cigar library parses, modifies, and performs soft-masking on CIGAR strings representing sequence alignments. Use when user asks to parse CIGAR strings, mask bases at alignment boundaries, or modify alignment operations for SAM/BAM records.
 homepage: https://github.com/brentp/cigar
+metadata:
+  docker_image: "quay.io/biocontainers/cigar:0.1.3--py_0"
 ---
-
 
 # cigar
 

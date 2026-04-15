@@ -2,6 +2,8 @@
 name: schicexplorer
 description: scHiCExplorer is a comprehensive suite of tools for processing, normalizing, and analyzing single-cell Hi-C data using the scool format. Use when user asks to demultiplex raw reads, manage scool matrices, perform quality control, normalize contact frequencies, cluster cells based on chromatin structure, or visualize cluster-specific profiles.
 homepage: https://github.com/joachimwolff/scHiCExplorer
+metadata:
+  docker_image: "quay.io/biocontainers/schicexplorer:7--py_0"
 ---
 
 # schicexplorer

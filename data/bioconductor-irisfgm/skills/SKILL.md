@@ -4,7 +4,6 @@ description: IRIS-FGM is a Bioconductor package for analyzing single-cell RNA-se
 homepage: https://bioconductor.org/packages/3.13/bioc/html/IRISFGM.html
 ---
 
-
 # bioconductor-irisfgm
 
 ## Overview

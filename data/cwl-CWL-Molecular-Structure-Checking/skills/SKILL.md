@@ -1,9 +1,12 @@
 ---
 name: cwl-molecular-structure-checking
-description: "This Common Workflow Language workflow utilizes the BioExcel Building Blocks library to perform comprehensive quality checks and structural repairs on molecular protein structures. Use this skill when you need to ensure the integrity and stability of a protein system by resolving atomic clashes, fixing side-chain issues, and standardizing protonation states prior to initiating molecular dynamics simulations."
-homepage: https://workflowhub.eu/workflows/776
+description: This Common Workflow Language workflow utilizes the BioExcel Building Blocks library to perform comprehensive quality checks and structural repairs on molecular protein structures. Use this skill when you need to ensure the integrity and stability of a protein system by resolving atomic clashes, fixing side-chain issues, and standardizing protonation states prior to initiating molecular dynamics simulations.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Molecular Structure Checking
+
+# cwl-molecular-structure-checking
 
 ## Overview
 

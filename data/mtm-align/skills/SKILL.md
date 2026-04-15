@@ -2,8 +2,9 @@
 name: mtm-align
 description: mtm-align performs structural alignment of multiple protein molecules based on their 3D coordinates. Use when user asks to align multiple protein structures, find topological matches across a set of proteins, or generate a structural similarity matrix.
 homepage: http://yanglab.nankai.edu.cn/mTM-align/help/
+metadata:
+  docker_image: "quay.io/biocontainers/mtm-align:20220104--h9948957_3"
 ---
-
 
 # mtm-align
 

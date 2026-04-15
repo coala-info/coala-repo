@@ -2,8 +2,9 @@
 name: trf
 description: trf detects tandem repeats within DNA sequences. Use when user asks to detect tandem repeats, analyze satellite DNA, identify microsatellites or minisatellites, or mask repetitive elements.
 homepage: https://tandem.bu.edu/trf/trf.html
+metadata:
+  docker_image: "quay.io/biocontainers/trf:4.10.0rc2--h7b50bb2_0"
 ---
-
 
 # trf
 

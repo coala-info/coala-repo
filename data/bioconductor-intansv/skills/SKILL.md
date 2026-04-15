@@ -4,7 +4,6 @@ description: This R package integrates, annotates, and visualizes structural var
 homepage: https://bioconductor.org/packages/release/bioc/html/intansv.html
 ---
 
-
 # bioconductor-intansv
 
 name: bioconductor-intansv

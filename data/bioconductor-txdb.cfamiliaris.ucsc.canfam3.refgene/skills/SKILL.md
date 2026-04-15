@@ -4,7 +4,6 @@ description: This Bioconductor package provides a TxDb annotation object for the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Cfamiliaris.UCSC.canFam3.refGene.html
 ---
 
-
 # bioconductor-txdb.cfamiliaris.ucsc.canfam3.refgene
 
 name: bioconductor-txdb.cfamiliaris.ucsc.canfam3.refgene

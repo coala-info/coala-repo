@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mapping 25
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mapping250k.nsp.html
 ---
 
-
 # bioconductor-pd.mapping250k.nsp
 
 name: bioconductor-pd.mapping250k.nsp

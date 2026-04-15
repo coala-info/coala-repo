@@ -4,7 +4,6 @@ description: The r-annotables package provides local lookup tables for convertin
 homepage: https://cran.r-project.org/web/packages/annotables/index.html
 ---
 
-
 # r-annotables
 
 name: r-annotables

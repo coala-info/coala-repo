@@ -4,7 +4,6 @@ description: The qsmooth package performs smooth quantile normalization to balan
 homepage: https://bioconductor.org/packages/release/bioc/html/qsmooth.html
 ---
 
-
 # bioconductor-qsmooth
 
 ## Overview

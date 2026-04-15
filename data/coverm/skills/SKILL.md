@@ -2,8 +2,9 @@
 name: coverm
 description: CoverM estimates the abundance and coverage of genomes or contigs in metagenomic samples by mapping reads to references. Use when user asks to calculate mean coverage, determine relative abundance of MAGs, or generate coverage statistics from BAM files.
 homepage: https://github.com/wwood/coverm
+metadata:
+  docker_image: "quay.io/biocontainers/coverm:0.7.0--hcb7b614_4"
 ---
-
 
 # coverm
 

@@ -4,7 +4,6 @@ description: This package provides access to yeast RNA-Seq experiment data from 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastRNASeq.html
 ---
 
-
 # bioconductor-yeastrnaseq
 
 name: bioconductor-yeastrnaseq

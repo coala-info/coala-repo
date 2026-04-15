@@ -4,7 +4,6 @@ description: The bioconductor-mpra package provides tools for the statistical an
 homepage: https://bioconductor.org/packages/release/bioc/html/mpra.html
 ---
 
-
 # bioconductor-mpra
 
 ## Overview

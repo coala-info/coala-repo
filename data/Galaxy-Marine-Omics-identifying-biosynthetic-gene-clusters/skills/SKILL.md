@@ -1,10 +1,12 @@
 ---
 name: marine-omics-identifying-biosynthetic-gene-clusters
-description: "This marine omics workflow processes nucleotide FASTA files to identify and annotate secondary metabolite biosynthetic gene clusters using Prodigal, InterProScan, and Sanntis neural networks. Use this skill when you need to discover novel bioactive compounds or characterize the secondary metabolic potential of marine microorganisms from genomic sequences."
-homepage: https://workflowhub.eu/workflows/1663
+description: This marine omics workflow processes nucleotide FASTA files to identify and annotate secondary metabolite biosynthetic gene clusters using Prodigal, InterProScan, and Sanntis neural networks. Use this skill when you need to discover novel bioactive compounds or characterize the secondary metabolic potential of marine microorganisms from genomic sequences.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Marine Omics identifying biosynthetic gene clusters
+# marine-omics-identifying-biosynthetic-gene-clusters
 
 ## Overview
 

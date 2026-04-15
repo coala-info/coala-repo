@@ -1,10 +1,12 @@
 ---
 name: consensus-peak-calling-for-chip-seq-single-end-replicates
-description: "This workflow identifies high-confidence consensus peaks from single-end ChIP-seq or ATAC-seq replicates by integrating individual peak calls, library-size normalization via subsampling, and intersection analysis using MACS2 and bedtools. Use this skill when you need to extract robust genomic binding sites or open chromatin regions that are consistently present across multiple biological replicates while controlling for differences in sequencing depth."
-homepage: https://workflowhub.eu/workflows/561
+description: This workflow identifies high-confidence consensus peaks from single-end ChIP-seq or ATAC-seq replicates by integrating individual peak calls, library-size normalization via subsampling, and intersection analysis using MACS2 and bedtools. Use this skill when you need to extract robust genomic binding sites or open chromatin regions that are consistently present across multiple biological replicates while controlling for differences in sequencing depth.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Consensus Peak Calling for ChIP-seq Single-End Replicates
+# consensus-peak-calling-for-chip-seq-single-end-replicates
 
 ## Overview
 

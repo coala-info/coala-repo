@@ -4,7 +4,6 @@ description: This package projects transcriptomic datasets onto pre-computed Rep
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicSuperSignature.html
 ---
 
-
 # bioconductor-genomicsupersignature
 
 ## Overview

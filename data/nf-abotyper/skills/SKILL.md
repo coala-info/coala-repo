@@ -4,6 +4,8 @@ description: This pipeline processes Oxford Nanopore FASTQ files and a sampleshe
 homepage: https://github.com/nf-core/abotyper
 ---
 
+# abotyper
+
 ## Overview
 nf-core/abotyper is a bioinformatics pipeline designed for the analysis of Third Generation Sequencing data, specifically targeting the human ABO gene. It automates the process of deducing ABO blood types by analyzing sequences from exons 6 and 7, which contain the primary polymorphisms required for accurate genotyping.
 

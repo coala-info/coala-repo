@@ -1,10 +1,12 @@
 ---
 name: training-16s-rrna-analysis-with-nanopore-sequencing-reads
-description: "This Galaxy workflow processes Nanopore sequencing read collections for 16S rRNA microbiome analysis using Porechop for adapter trimming, fastp for quality control, and Kraken2 for taxonomic classification. Use this skill when you need to characterize the taxonomic composition of microbial communities from long-read sequencing data to identify bacterial species and visualize their relative abundance."
-homepage: https://workflowhub.eu/workflows/1473
+description: This Galaxy workflow processes Nanopore sequencing read collections for 16S rRNA microbiome analysis using Porechop for adapter trimming, fastp for quality control, and Kraken2 for taxonomic classification. Use this skill when you need to characterize the taxonomic composition of microbial communities from long-read sequencing data to identify bacterial species and visualize their relative abundance.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Training: 16S rRNA Analysis with Nanopore Sequencing Reads
+# training-16s-rrna-analysis-with-nanopore-sequencing-reads
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: hinge
 description: Hingemonium transforms a MacBook into a virtual harmonium by using the laptop's lid movement to simulate bellows. Use when user asks to install the application, configure keyboard and bellows controls, select musical scales, or troubleshoot hardware sensor issues.
 homepage: https://github.com/Rocktopus101/Hingemonium
+metadata:
+  docker_image: "biocontainers/hinge:v0.5.0-4-deb_cv1"
 ---
-
 
 # hinge
 

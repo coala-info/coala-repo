@@ -4,7 +4,6 @@ description: This package provides annotation and platform design metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.pae.g1a.html
 ---
 
-
 # bioconductor-pd.pae.g1a
 
 name: bioconductor-pd.pae.g1a

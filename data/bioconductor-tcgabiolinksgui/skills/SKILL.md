@@ -4,7 +4,6 @@ description: TCGAbiolinksGUI provides a graphical interface and R functions for 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/TCGAbiolinksGUI.html
 ---
 
-
 # bioconductor-tcgabiolinksgui
 
 name: bioconductor-tcgabiolinksgui

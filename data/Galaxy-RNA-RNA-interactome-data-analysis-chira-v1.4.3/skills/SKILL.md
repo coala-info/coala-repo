@@ -1,10 +1,12 @@
 ---
 name: rna-rna-interactome-data-analysis-chira-v143
-description: "This transcriptomics workflow processes FASTQ reads, genomic references, and annotations using the ChiRA tool suite, FastQC, and Cutadapt to perform comprehensive RNA-RNA interactome analysis. Use this skill when you need to identify and quantify chimeric RNA-RNA interactions from ligation-based sequencing data to characterize molecular binding events and post-transcriptional regulatory networks."
-homepage: https://workflowhub.eu/workflows/1681
+description: This transcriptomics workflow processes FASTQ reads, genomic references, and annotations using the ChiRA tool suite, FastQC, and Cutadapt to perform comprehensive RNA-RNA interactome analysis. Use this skill when you need to identify and quantify chimeric RNA-RNA interactions from ligation-based sequencing data to characterize molecular binding events and post-transcriptional regulatory networks.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA-RNA interactome data analysis - chira  v1.4.3
+# rna-rna-interactome-data-analysis-chira-v143
 
 ## Overview
 

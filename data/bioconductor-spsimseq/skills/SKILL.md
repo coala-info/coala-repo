@@ -4,7 +4,6 @@ description: This tool performs semi-parametric simulation of bulk and single-ce
 homepage: https://bioconductor.org/packages/release/bioc/html/SPsimSeq.html
 ---
 
-
 # bioconductor-spsimseq
 
 name: bioconductor-spsimseq

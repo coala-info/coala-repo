@@ -4,7 +4,6 @@ description: The scry package provides methods for feature selection and dimensi
 homepage: https://bioconductor.org/packages/release/bioc/html/scry.html
 ---
 
-
 # bioconductor-scry
 
 ## Overview

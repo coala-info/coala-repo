@@ -1,9 +1,10 @@
 ---
 name: metawatt
-description: "Metawatt compares and analyzes energy transition scenarios from various sources. Use when user asks to compare different energy transition scenarios, analyze data related to electricity transition pathways, or understand energy scenarios from French agencies."
+description: Metawatt compares and analyzes energy transition scenarios from various sources. Use when user asks to compare different energy transition scenarios, analyze data related to electricity transition pathways, or understand energy scenarios from French agencies.
 homepage: https://github.com/edhelas/metawatt
+metadata:
+  docker_image: "quay.io/biocontainers/metawatt:3.5.3--boost1.64_0"
 ---
-
 
 # metawatt
 

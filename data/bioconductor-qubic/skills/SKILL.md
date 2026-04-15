@@ -4,7 +4,6 @@ description: bioconductor-qubic performs qualitative biclustering to identify co
 homepage: https://bioconductor.org/packages/release/bioc/html/QUBIC.html
 ---
 
-
 # bioconductor-qubic
 
 name: bioconductor-qubic

@@ -4,7 +4,6 @@ description: This Bioconductor package provides annotation data for mapping Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene10stprobeset.db.html
 ---
 
-
 # bioconductor-mogene10stprobeset.db
 
 name: bioconductor-mogene10stprobeset.db

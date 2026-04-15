@@ -4,7 +4,6 @@ description: This tool performs methylation analysis of targeted Next Generation
 homepage: https://bioconductor.org/packages/release/bioc/html/MethTargetedNGS.html
 ---
 
-
 # bioconductor-methtargetedngs
 
 name: bioconductor-methtargetedngs

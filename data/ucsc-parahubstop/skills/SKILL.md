@@ -2,8 +2,9 @@
 name: ucsc-parahubstop
 description: The `ucsc-parahubstop` utility terminates the `paraHub` daemon gracefully. Use when user asks to stop the paraHub, shut down the paraHub, or terminate the paraHub daemon.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-parahubstop:482--h0b57e2e_0"
 ---
-
 
 # ucsc-parahubstop
 

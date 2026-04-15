@@ -2,8 +2,9 @@
 name: ucsc-hgloadsqltab
 description: `ucsc-hgloadsqltab` creates a database table and loads data into it using a SQL schema and a tab-separated file. Use when user asks to create a database table, load data into a database table, import tab-separated data into a MySQL table, or create a custom track table for the UCSC Genome Browser.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-hgloadsqltab:482--h0b57e2e_0"
 ---
-
 
 # ucsc-hgloadsqltab
 

@@ -1,7 +1,9 @@
 ---
 name: gfatools
-description: "gfatools is a suite of utilities for manipulating and converting sequence graphs in GFA and rGFA formats. Use when user asks to extract subgraphs, convert graphs to FASTA or BED formats, calculate graph statistics, or perform assembly cleaning operations like bubble popping and transitive reduction."
+description: gfatools is a suite of utilities for manipulating and converting sequence graphs in GFA and rGFA formats. Use when user asks to extract subgraphs, convert graphs to FASTA or BED formats, calculate graph statistics, or perform assembly cleaning operations like bubble popping and transitive reduction.
 homepage: https://github.com/lh3/gfatools
+metadata:
+  docker_image: "quay.io/biocontainers/gfatools:0.5.5--h577a1d6_0"
 ---
 
 # gfatools

@@ -1,10 +1,12 @@
 ---
 name: covid-19-genomics-4-se-variation
-description: "This COVID-19 genomics workflow processes single-end sequencing data and the NC_045512 reference genome using fastp, Bowtie2, LoFreq, and SnpEff to identify and annotate genetic variations. Use this skill when you need to detect low-frequency intra-host variants and assess their functional impact on the SARS-CoV-2 genome to understand viral evolution or transmission patterns."
-homepage: https://workflowhub.eu/workflows/8
+description: This COVID-19 genomics workflow processes single-end sequencing data and the NC_045512 reference genome using fastp, Bowtie2, LoFreq, and SnpEff to identify and annotate genetic variations. Use this skill when you need to detect low-frequency intra-host variants and assess their functional impact on the SARS-CoV-2 genome to understand viral evolution or transmission patterns.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Genomics [4] SE Variation
+# covid-19-genomics-4-se-variation
 
 ## Overview
 

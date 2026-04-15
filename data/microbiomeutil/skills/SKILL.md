@@ -2,8 +2,9 @@
 name: microbiomeutil
 description: Microbiomeutil provides a streamlined interface for the microbiomeutilities R package to simplify the processing, cleaning, and visualization of phyloseq data containers. Use when user asks to clean taxonomic names, generate publication-quality visualizations like heatmaps or rarefaction curves, and analyze longitudinal or paired microbiome data.
 homepage: https://github.com/microsud/microbiomeutilities
+metadata:
+  docker_image: "biocontainers/microbiomeutil:v20101212dfsg1-2-deb_cv1"
 ---
-
 
 # microbiomeutil
 

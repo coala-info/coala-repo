@@ -2,8 +2,9 @@
 name: mutyper
 description: mutyper polarizes and annotates biallelic SNPs with their ancestral k-mer context. Use when user asks to create ancestral sequences, annotate variants with mutation types, calculate mutation spectra, determine genomic targets, or generate k-mer site frequency spectra.
 homepage: https://github.com/harrispopgen/mutyper
+metadata:
+  docker_image: "quay.io/biocontainers/mutyper:1.0.2--py310h7c10099_3"
 ---
-
 
 # mutyper
 

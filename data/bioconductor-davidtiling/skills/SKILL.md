@@ -4,7 +4,6 @@ description: This package provides data and tools for analyzing high-resolution 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/davidTiling.html
 ---
 
-
 # bioconductor-davidtiling
 
 name: bioconductor-davidtiling

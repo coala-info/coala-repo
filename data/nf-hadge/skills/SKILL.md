@@ -4,6 +4,8 @@ description: This pipeline performs single-cell multiplexing deconvolution by co
 homepage: https://github.com/nf-core/hadge
 ---
 
+# hadge
+
 ## Overview
 nf-core/hadge (hashing deconvolution combined with genotype information) is designed for demultiplexing single-cell data where multiple donors are pooled in a single experiment. It integrates 11 different computational methods to assign cells to their original donors using both cell-surface protein tags (hashing) and natural genetic variation (genotypes).
 

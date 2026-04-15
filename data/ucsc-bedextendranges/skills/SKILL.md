@@ -2,8 +2,9 @@
 name: ucsc-bedextendranges
 description: ucsc-bedextendranges extends genomic intervals to a specified minimum length, using strand information to determine the direction of extension. Use when user asks to standardize peak widths, extend genomic regions to a minimum length, or prepare features for signal extraction.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedextendranges:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedextendranges
 

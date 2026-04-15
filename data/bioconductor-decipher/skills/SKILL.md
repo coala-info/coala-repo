@@ -4,7 +4,6 @@ description: DECIPHER is a comprehensive R package for the manipulation, alignme
 homepage: https://bioconductor.org/packages/release/bioc/html/DECIPHER.html
 ---
 
-
 # bioconductor-decipher
 
 name: bioconductor-decipher

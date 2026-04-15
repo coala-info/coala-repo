@@ -4,7 +4,6 @@ description: ASSIGN quantifies pathway activity in genomic data using a Bayesian
 homepage: https://bioconductor.org/packages/release/bioc/html/ASSIGN.html
 ---
 
-
 # bioconductor-assign
 
 name: bioconductor-assign

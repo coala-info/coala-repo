@@ -4,7 +4,6 @@ description: DriverNet identifies driver mutations by quantifying their influenc
 homepage: https://bioconductor.org/packages/release/bioc/html/DriverNet.html
 ---
 
-
 # bioconductor-drivernet
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool detects subclonal single nucleotide variants in deep sequ
 homepage: https://bioconductor.org/packages/release/bioc/html/deepSNV.html
 ---
 
-
 # bioconductor-deepsnv
 
 name: bioconductor-deepsnv

@@ -2,8 +2,9 @@
 name: tabpfn
 description: TabPFN is a transformer-based foundation model designed for classification and regression tasks on tabular data using in-context learning. Use when user asks to perform tabular data classification, run regression on structured datasets, or use a scikit-learn compatible transformer model for zero-shot machine learning.
 homepage: https://github.com/PriorLabs/TabPFN
+metadata:
+  docker_image: "quay.io/biocontainers/tabpfn:2.0.3"
 ---
-
 
 # tabpfn
 

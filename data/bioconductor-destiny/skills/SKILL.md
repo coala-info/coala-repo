@@ -4,7 +4,6 @@ description: bioconductor-destiny implements Diffusion Maps and Diffusion Pseudo
 homepage: https://bioconductor.org/packages/release/bioc/html/destiny.html
 ---
 
-
 # bioconductor-destiny
 
 name: bioconductor-destiny

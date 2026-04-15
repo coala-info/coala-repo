@@ -1,9 +1,12 @@
 ---
 name: a-workflow-for-marine-genomic-observatories-data-analysis
-description: "This CWL workflow processes marine metagenomic sequencing data using the MGnify pipeline v5.1 to perform taxonomic classification and functional annotation through tools like InterProScan, EggNOG, and Diamond. Use this skill when you need to characterize the biodiversity and metabolic potential of marine microbial communities by identifying gene functions and taxonomic compositions within environmental samples."
-homepage: https://workflowhub.eu/workflows/384
+description: This CWL workflow processes marine metagenomic sequencing data using the MGnify pipeline v5.1 to perform taxonomic classification and functional annotation through tools like InterProScan, EggNOG, and Diamond. Use this skill when you need to characterize the biodiversity and metabolic potential of marine microbial communities by identifying gene functions and taxonomic compositions within environmental samples.
+homepage: https://www.embrc.eu/emo-bon
+metadata:
+  docker_image: "N/A"
 ---
-# A workflow for marine Genomic Observatories data analysis
+
+# a-workflow-for-marine-genomic-observatories-data-analysis
 
 ## Overview
 

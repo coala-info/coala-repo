@@ -4,7 +4,6 @@ description: The bioconductor-diffloop package provides tools for the identifica
 homepage: https://bioconductor.org/packages/3.6/bioc/html/diffloop.html
 ---
 
-
 # bioconductor-diffloop
 
 ## Overview

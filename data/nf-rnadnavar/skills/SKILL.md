@@ -4,6 +4,8 @@ description: This pipeline performs somatic mutation detection by integrating RN
 homepage: https://github.com/nf-core/rnadnavar
 ---
 
+# rnadnavar
+
 ## Overview
 nf-core/rnadnavar is a bioinformatics pipeline designed for somatic mutation detection using a combination of RNA and DNA sequencing data. It addresses the challenge of identifying high-confidence variants in cancer research by employing multiple variant calling algorithms and a consensus approach to filter out background noise, particularly in RNA data.
 

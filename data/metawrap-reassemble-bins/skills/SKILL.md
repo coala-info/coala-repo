@@ -2,8 +2,9 @@
 name: metawrap-reassemble-bins
 description: This tool improves the quality of metagenomic bins by extracting bin-specific reads and reassembling them with a non-metagenomic assembler. Use when user asks to reassemble bins, refine draft genomes, or improve bin completion and purity.
 homepage: https://github.com/bxlab/metaWRAP
+metadata:
+  docker_image: "quay.io/biocontainers/metawrap-reassemble-bins:1.3.0--hdfd78af_3"
 ---
-
 
 # metawrap-reassemble-bins
 

@@ -2,8 +2,9 @@
 name: bactopia-gather
 description: The bactopia-gather tool standardizes the gathering and organization of genomic input data into a uniform directory structure. Use when user asks to gather local FASTQ files, download public datasets from the SRA using accession numbers, or process large-scale projects using a sample sheet.
 homepage: https://bactopia.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/bactopia-gather:1.0.4--hdfd78af_0"
 ---
-
 
 # bactopia-gather
 

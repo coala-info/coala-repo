@@ -4,7 +4,6 @@ description: This package analyzes the periodicity of k-mers in genomic sequence
 homepage: https://bioconductor.org/packages/release/bioc/html/periodicDNA.html
 ---
 
-
 # bioconductor-periodicdna
 
 ## Overview

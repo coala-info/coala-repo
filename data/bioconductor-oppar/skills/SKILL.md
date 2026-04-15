@@ -4,7 +4,6 @@ description: This tool implements the modified Cancer Outlier Profile Analysis m
 homepage: https://bioconductor.org/packages/release/bioc/html/oppar.html
 ---
 
-
 # bioconductor-oppar
 
 ## Overview

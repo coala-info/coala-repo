@@ -4,7 +4,6 @@ description: This package provides the full masked genome sequences for the Mus 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm8.masked.html
 ---
 
-
 # bioconductor-bsgenome.mmusculus.ucsc.mm8.masked
 
 name: bioconductor-bsgenome.mmusculus.ucsc.mm8.masked

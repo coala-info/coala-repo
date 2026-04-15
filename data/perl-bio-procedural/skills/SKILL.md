@@ -2,8 +2,9 @@
 name: perl-bio-procedural
 description: This library provides a procedural wrapper for the BioPerl toolkit to simplify common biological data tasks. Use when user asks to read or write sequences, translate DNA to protein, or generate reverse complements using a functional interface.
 homepage: https://metacpan.org/release/Bio-Procedural
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-procedural:1.7.4--pl5321hdfd78af_1"
 ---
-
 
 # perl-bio-procedural
 

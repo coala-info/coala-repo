@@ -2,8 +2,9 @@
 name: guidemaker
 description: GuideMaker identifies and filters CRISPR guide RNAs for diverse genomes and custom Cas enzymes. Use when user asks to design gRNA panels, manage off-target constraints, or calculate efficiency scores for CRISPR experiments.
 homepage: https://github.com/USDA-ARS-GBRU/GuideMaker
+metadata:
+  docker_image: "quay.io/biocontainers/guidemaker:0.4.2--pyhdfd78af_0"
 ---
-
 
 # guidemaker
 

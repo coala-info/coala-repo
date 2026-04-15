@@ -2,8 +2,9 @@
 name: perl-data-munge
 description: This tool provides a collection of Perl utility functions for functional-style data transformation, string manipulation, and efficient file handling. Use when user asks to perform non-destructive substitutions, generate optimized regular expressions from lists, trim whitespace, slurp filehandles, or check for element membership in arrays.
 homepage: http://metacpan.org/pod/Data::Munge
+metadata:
+  docker_image: "quay.io/biocontainers/perl-data-munge:0.111--pl5321hdfd78af_0"
 ---
-
 
 # perl-data-munge
 

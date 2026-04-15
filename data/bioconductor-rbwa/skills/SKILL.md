@@ -4,7 +4,6 @@ description: This tool provides an R interface for the Burrows-Wheeler Aligner t
 homepage: https://bioconductor.org/packages/release/bioc/html/Rbwa.html
 ---
 
-
 # bioconductor-rbwa
 
 name: bioconductor-rbwa

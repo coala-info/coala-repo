@@ -1,7 +1,9 @@
 ---
 name: illumina-utils
-description: "illumina-utils provides a suite of specialized tools for demultiplexing, quality filtering, and merging paired-end Illumina sequencing data. Use when user asks to demultiplex raw FASTQ files, generate configuration files for genomic workflows, merge overlapping paired-end reads, or perform quality control filtering."
+description: illumina-utils provides a suite of specialized tools for demultiplexing, quality filtering, and merging paired-end Illumina sequencing data. Use when user asks to demultiplex raw FASTQ files, generate configuration files for genomic workflows, merge overlapping paired-end reads, or perform quality control filtering.
 homepage: https://github.com/meren/illumina-utils
+metadata:
+  docker_image: "quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0"
 ---
 
 # illumina-utils

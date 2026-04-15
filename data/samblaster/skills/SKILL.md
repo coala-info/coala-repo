@@ -1,9 +1,10 @@
 ---
 name: samblaster
-description: "samblaster marks duplicate reads and extracts discordant or split read pairs from read-id grouped SAM files. Use when user asks to mark duplicates, extract discordant read pairs, or isolate split-read mappings for structural variant analysis."
+description: samblaster marks duplicate reads and extracts discordant or split read pairs from read-id grouped SAM files. Use when user asks to mark duplicates, extract discordant read pairs, or isolate split-read mappings for structural variant analysis.
 homepage: https://github.com/GregoryFaust/samblaster
+metadata:
+  docker_image: "quay.io/biocontainers/samblaster:0.1.26--h9948957_7"
 ---
-
 
 # samblaster
 

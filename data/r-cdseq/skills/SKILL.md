@@ -4,7 +4,6 @@ description: CDSeq deconvolutes bulk RNA-seq data to simultaneously estimate cel
 homepage: https://cran.r-project.org/web/packages/cdseq/index.html
 ---
 
-
 # r-cdseq
 
 ## Overview

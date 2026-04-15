@@ -2,8 +2,9 @@
 name: pyimzml
 description: pyimzml is a Python-based parser for reading and extracting data from imaging mass spectrometry files in the imzML format. Use when user asks to parse imzML files, extract m/z and intensity spectra, access spatial coordinates, or generate ion images from mass spectrometry data.
 homepage: https://github.com/alexandrovteam/pyimzML
+metadata:
+  docker_image: "quay.io/biocontainers/pyimzml:1.5.1--pyh5e36f6f_0"
 ---
-
 
 # pyimzml
 

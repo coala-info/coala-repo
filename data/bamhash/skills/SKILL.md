@@ -1,7 +1,9 @@
 ---
 name: bamhash
-description: "BamHash generates order-independent checksums for sequencing data to verify data integrity across different file formats and pipeline stages. Use when user asks to calculate checksums for BAM, CRAM, FASTQ, or FASTA files, detect data corruption, or verify that read data remains consistent after alignment and processing."
+description: BamHash generates order-independent checksums for sequencing data to verify data integrity across different file formats and pipeline stages. Use when user asks to calculate checksums for BAM, CRAM, FASTQ, or FASTA files, detect data corruption, or verify that read data remains consistent after alignment and processing.
 homepage: https://github.com/DecodeGenetics/BamHash
+metadata:
+  docker_image: "quay.io/biocontainers/bamhash:2.0--h35c04b2_0"
 ---
 
 # bamhash

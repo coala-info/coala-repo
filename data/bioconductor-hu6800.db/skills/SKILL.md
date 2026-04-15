@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation data for mapping Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800.db.html
 ---
 
-
 # bioconductor-hu6800.db
 
 name: bioconductor-hu6800.db

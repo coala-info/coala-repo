@@ -4,7 +4,6 @@ description: This tool performs comprehensive DNA barcode analysis including ext
 homepage: https://bioconductor.org/packages/release/bioc/html/CellBarcode.html
 ---
 
-
 # bioconductor-cellbarcode
 
 name: bioconductor-cellbarcode

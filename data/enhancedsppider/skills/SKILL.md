@@ -2,8 +2,9 @@
 name: enhancedsppider
 description: EnhancedSppIDer resolves the taxonomic composition of sequencing libraries by mapping reads against a combined reference genome to identify hybrids and quantify genomic contributions. Use when user asks to identify species in a sequencing library, analyze hybrid genomes, map long-read or short-read data to multiple species, or extract reads belonging to specific taxa.
 homepage: https://github.com/JohnnyChen1113/EnhancedSppIDer
+metadata:
+  docker_image: "quay.io/biocontainers/enhancedsppider:0.2.2--pyhdfd78af_0"
 ---
-
 
 # enhancedsppider
 

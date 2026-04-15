@@ -2,6 +2,8 @@
 name: megagta
 description: MegaGTA is a metagenomic gene-targeted assembler that uses Hidden Markov Models to reconstruct specific genes of interest from complex microbial communities. Use when user asks to perform targeted assembly of specific genes, reconstruct low-abundance sequences using HMMs, or process metagenomic reads for antibiotic resistance and metabolic markers.
 homepage: https://github.com/HKU-BAL/MegaGTA
+metadata:
+  docker_image: "quay.io/biocontainers/megagta:0.1_alpha--0"
 ---
 
 # megagta

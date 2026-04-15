@@ -4,6 +4,8 @@ description: This pipeline identifies viral integration events in genomic data u
 homepage: https://github.com/nf-core/viralintegration
 ---
 
+# viralintegration
+
 ## Overview
 nf-core/viralintegration is a bioinformatics pipeline designed to detect viral sequences integrated into host genomes. It utilizes a chimeric read approach, originally based on CTAT-VirusIntegrationFinder, to pinpoint exactly where viral DNA has inserted into the host's genetic material.
 

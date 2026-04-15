@@ -1,7 +1,9 @@
 ---
 name: workflow-generate-dataset-for-assembly-tutorial
-description: "This bioinformatics workflow processes paired-end FASTQ sequencing data through trimming with Cutadapt, assembly with MEGAHIT, and read mapping with Bowtie2 to generate a downsampled, tutorial-ready dataset. Use this skill when you need to create a representative but computationally lightweight subset of genomic or metagenomic reads for educational demonstrations or software benchmarking."
-homepage: https://workflowhub.eu/workflows/1480
+description: This bioinformatics workflow processes paired-end FASTQ sequencing data through trimming with Cutadapt, assembly with MEGAHIT, and read mapping with Bowtie2 to generate a downsampled, tutorial-ready dataset. Use this skill when you need to create a representative but computationally lightweight subset of genomic or metagenomic reads for educational demonstrations or software benchmarking.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # workflow-generate-dataset-for-assembly-tutorial

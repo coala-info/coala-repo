@@ -1,10 +1,12 @@
 ---
 name: simtext-training-workflow
-description: "This workflow analyzes the similarity between search queries by retrieving PubMed literature and generating PubTator matrices for interactive visualization using the pubmed_by_queries and simtext_app tools. Use this skill when you need to characterize the functional or thematic relationships between a set of genes or biological concepts based on their shared vocabulary in published research."
-homepage: https://workflowhub.eu/workflows/1603
+description: This workflow analyzes the similarity between search queries by retrieving PubMed literature and generating PubTator matrices for interactive visualization using the pubmed_by_queries and simtext_app tools. Use this skill when you need to characterize the functional or thematic relationships between a set of genes or biological concepts based on their shared vocabulary in published research.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Simtext training workflow
+# simtext-training-workflow
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This package provides the 2014 release of the JASPAR database conta
 homepage: https://bioconductor.org/packages/release/data/experiment/html/JASPAR2014.html
 ---
 
-
 # bioconductor-jaspar2014
 
 name: bioconductor-jaspar2014

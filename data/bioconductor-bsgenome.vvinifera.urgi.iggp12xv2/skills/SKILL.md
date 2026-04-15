@@ -4,7 +4,6 @@ description: This package provides the full reference nuclear genome sequences f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Vvinifera.URGI.IGGP12Xv2.html
 ---
 
-
 # bioconductor-bsgenome.vvinifera.urgi.iggp12xv2
 
 name: bioconductor-bsgenome.vvinifera.urgi.iggp12xv2

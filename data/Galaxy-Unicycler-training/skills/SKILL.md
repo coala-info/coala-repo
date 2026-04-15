@@ -1,10 +1,12 @@
 ---
 name: unicycler-training
-description: "This Galaxy workflow performs hybrid bacterial genome assembly and annotation by processing paired-end short reads and long reads using FastQC, Unicycler, Quast, and Prokka. Use this skill when you need to produce a high-quality, polished consensus sequence and functional annotation for a bacterial isolate using a combination of short-read and long-read sequencing data."
-homepage: https://workflowhub.eu/workflows/1598
+description: This Galaxy workflow performs hybrid bacterial genome assembly and annotation by processing paired-end short reads and long reads using FastQC, Unicycler, Quast, and Prokka. Use this skill when you need to produce a high-quality, polished consensus sequence and functional annotation for a bacterial isolate using a combination of short-read and long-read sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Unicycler training
+# unicycler-training
 
 ## Overview
 

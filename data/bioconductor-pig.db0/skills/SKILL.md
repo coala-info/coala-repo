@@ -4,7 +4,6 @@ description: This package provides the base SQLite database infrastructure for S
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pig.db0.html
 ---
 
-
 # bioconductor-pig.db0
 
 name: bioconductor-pig.db0

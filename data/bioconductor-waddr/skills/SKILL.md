@@ -4,7 +4,6 @@ description: This tool compares two distributions using the 2-Wasserstein distan
 homepage: https://bioconductor.org/packages/release/bioc/html/waddR.html
 ---
 
-
 # bioconductor-waddr
 
 ## Overview

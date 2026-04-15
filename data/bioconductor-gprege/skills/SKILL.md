@@ -4,7 +4,6 @@ description: This tool analyzes biological time-series expression data using Gau
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gprege.html
 ---
 
-
 # bioconductor-gprege
 
 name: bioconductor-gprege

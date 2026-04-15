@@ -4,7 +4,6 @@ description: The GenomicRanges package provides foundational infrastructure for 
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicRanges.html
 ---
 
-
 # bioconductor-genomicranges
 
 name: bioconductor-genomicranges

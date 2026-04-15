@@ -4,7 +4,6 @@ description: This tool identifies co-methylated and differentially methylated re
 homepage: https://bioconductor.org/packages/release/bioc/html/coMethDMR.html
 ---
 
-
 # bioconductor-comethdmr
 
 name: bioconductor-comethdmr

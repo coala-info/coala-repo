@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-0-xchem-combined
-description: "This cheminformatics workflow performs virtual screening of the SARS-CoV-2 main protease by processing receptor, active site, candidate ligand, and reference molecule inputs through XChem docking, TransFS scoring, and SuCOS scoring subworkflows. Use this skill when you need to identify and rank potential drug candidates against the SARS-CoV-2 main protease using structure-based docking and multiple scoring methods to prioritize molecules for experimental validation."
-homepage: https://workflowhub.eu/workflows/18
+description: This cheminformatics workflow performs virtual screening of the SARS-CoV-2 main protease by processing receptor, active site, candidate ligand, and reference molecule inputs through XChem docking, TransFS scoring, and SuCOS scoring subworkflows. Use this skill when you need to identify and rank potential drug candidates against the SARS-CoV-2 main protease using structure-based docking and multiple scoring methods to prioritize molecules for experimental validation.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [0] XChem combined
+# covid-19-cheminformatics-0-xchem-combined
 
 ## Overview
 

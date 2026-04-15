@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the honey bee (
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.NCBI.AmelHAv3.1.html
 ---
 
-
 # bioconductor-bsgenome.amellifera.ncbi.amelhav3.1
 
 name: bioconductor-bsgenome.amellifera.ncbi.amelhav3.1

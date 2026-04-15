@@ -1,7 +1,9 @@
 ---
 name: biobb-wf-md-setup-protein
-description: "This Galaxy workflow automates the preparation and execution of protein molecular dynamics simulations by processing PDB structures through BioExcel Building Blocks and GROMACS tools for solvation, ionization, and equilibration. Use this skill when you need to generate a stable, solvated protein system and perform production MD runs to analyze structural properties like RMSD and radius of gyration."
-homepage: https://workflowhub.eu/workflows/194
+description: This Galaxy workflow automates the preparation and execution of protein molecular dynamics simulations by processing PDB structures through BioExcel Building Blocks and GROMACS tools for solvation, ionization, and equilibration. Use this skill when you need to generate a stable, solvated protein system and perform production MD runs to analyze structural properties like RMSD and radius of gyration.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
 # biobb-wf-md-setup-protein

@@ -1,10 +1,12 @@
 ---
 name: pathogen-detection-pathogfair-samples-aggregation-and-visual
-description: "This workflow aggregates pathogen identification results, antimicrobial resistance data, and virulence factors from multiple samples using tools like bedtools, ClustalW, FastTree, and ggplot2 to generate comparative visualizations. Use this skill when you need to track pathogen transmission across foodborne or environmental samples by analyzing gene presence-absence heatmaps and phylogenetic relationships between detected virulence factors and resistance markers."
-homepage: https://workflowhub.eu/workflows/1060
+description: This workflow aggregates pathogen identification results, antimicrobial resistance data, and virulence factors from multiple samples using tools like bedtools, ClustalW, FastTree, and ggplot2 to generate comparative visualizations. Use this skill when you need to track pathogen transmission across foodborne or environmental samples by analyzing gene presence-absence heatmaps and phylogenetic relationships between detected virulence factors and resistance markers.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Pathogen Detection PathoGFAIR Samples Aggregation and Visualisation
+# pathogen-detection-pathogfair-samples-aggregation-and-visual
 
 ## Overview
 

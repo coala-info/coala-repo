@@ -2,8 +2,9 @@
 name: recur
 description: RECUR identifies amino acid substitutions that have occurred multiple times independently across a phylogenetic tree. Use when user asks to identify recurrent substitutions, perform ancestral state reconstruction, or detect sites of functional convergence in protein or codon alignments.
 homepage: https://github.com/OrthoFinder/RECUR
+metadata:
+  docker_image: "quay.io/biocontainers/recur:1.0.0--pyhdfd78af_0"
 ---
-
 
 # recur
 

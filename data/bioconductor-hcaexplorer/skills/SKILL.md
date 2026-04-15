@@ -4,7 +4,6 @@ description: This tool provides an R interface to browse, query, and filter meta
 homepage: https://bioconductor.org/packages/3.10/bioc/html/HCAExplorer.html
 ---
 
-
 # bioconductor-hcaexplorer
 
 name: bioconductor-hcaexplorer

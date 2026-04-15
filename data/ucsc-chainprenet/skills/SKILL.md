@@ -2,8 +2,9 @@
 name: ucsc-chainprenet
 description: The `ucsc-chainprenet` tool filters alignment chains by removing those statistically unlikely to be part of the final whole-genome alignment. Use when user asks to filter alignment chains, prepare chains for whole-genome netting, or optimize whole-genome alignment computation.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainprenet:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chainprenet
 

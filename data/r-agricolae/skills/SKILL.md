@@ -4,7 +4,6 @@ description: The r-agricolae package provides statistical procedures for agricul
 homepage: https://cloud.r-project.org/web/packages/agricolae/index.html
 ---
 
-
 # r-agricolae
 
 name: r-agricolae

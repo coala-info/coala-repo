@@ -4,7 +4,6 @@ description: This tool performs Genomic Regions Enrichment of Annotations Tool (
 homepage: https://bioconductor.org/packages/release/bioc/html/rGREAT.html
 ---
 
-
 # bioconductor-rgreat
 
 name: bioconductor-rgreat

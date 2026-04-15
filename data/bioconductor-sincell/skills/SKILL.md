@@ -4,7 +4,6 @@ description: This tool provides a methodological toolbox for analyzing single-ce
 homepage: https://bioconductor.org/packages/release/bioc/html/sincell.html
 ---
 
-
 # bioconductor-sincell
 
 ## Overview

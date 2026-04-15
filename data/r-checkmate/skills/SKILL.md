@@ -4,7 +4,6 @@ description: The r-checkmate package provides high-performance functions to vali
 homepage: https://cloud.r-project.org/web/packages/checkmate/index.html
 ---
 
-
 # r-checkmate
 
 ## Overview

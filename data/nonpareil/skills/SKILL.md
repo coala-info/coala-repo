@@ -1,9 +1,10 @@
 ---
 name: nonpareil
-description: "Nonpareil estimates the coverage and redundancy of metagenomic datasets to determine sequencing completeness. Use when user asks to assess metagenomic library saturation, estimate required sequencing depth, or calculate sequence redundancy without a reference."
+description: Nonpareil estimates the coverage and redundancy of metagenomic datasets to determine sequencing completeness. Use when user asks to assess metagenomic library saturation, estimate required sequencing depth, or calculate sequence redundancy without a reference.
 homepage: http://nonpareil.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/nonpareil:3.5.5--r44h077b44d_2"
 ---
-
 
 # nonpareil
 

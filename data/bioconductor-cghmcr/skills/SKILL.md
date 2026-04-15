@@ -4,7 +4,6 @@ description: This tool identifies recurrent genomic regions of gain or loss acro
 homepage: https://bioconductor.org/packages/release/bioc/html/cghMCR.html
 ---
 
-
 # bioconductor-cghmcr
 
 name: bioconductor-cghmcr

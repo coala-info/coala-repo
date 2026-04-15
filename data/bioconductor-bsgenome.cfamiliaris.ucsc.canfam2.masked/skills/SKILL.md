@@ -4,7 +4,6 @@ description: This package provides the masked genome sequences for Canis lupus f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cfamiliaris.UCSC.canFam2.masked.html
 ---
 
-
 # bioconductor-bsgenome.cfamiliaris.ucsc.canfam2.masked
 
 ## Overview

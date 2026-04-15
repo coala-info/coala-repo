@@ -1,9 +1,12 @@
 ---
 name: dtc-e4-wf7401-dynamic-source-inversion-workflow
-description: "This CWL workflow performs dynamic source inversion of earthquakes by processing seismic and geodetic data using the FD3D_TSN inversion code and a Bayesian framework. Use this skill when you need to characterize the physical parameters of earthquake ruptures, estimate model uncertainties, or determine the stress and friction properties of seismic sources."
-homepage: https://workflowhub.eu/workflows/1994
+description: This CWL workflow performs dynamic source inversion of earthquakes by processing seismic and geodetic data using the FD3D_TSN inversion code and a Bayesian framework. Use this skill when you need to characterize the physical parameters of earthquake ruptures, estimate model uncertainties, or determine the stress and friction properties of seismic sources.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-E4] WF7401: Dynamic Source Inversion Workflow
+
+# dtc-e4-wf7401-dynamic-source-inversion-workflow
 
 ## Overview
 

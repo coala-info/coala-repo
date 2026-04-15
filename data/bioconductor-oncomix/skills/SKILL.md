@@ -4,7 +4,6 @@ description: This tool identifies potential oncogenes by modeling mRNA expressio
 homepage: https://bioconductor.org/packages/release/bioc/html/oncomix.html
 ---
 
-
 # bioconductor-oncomix
 
 name: bioconductor-oncomix

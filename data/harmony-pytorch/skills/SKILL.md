@@ -2,8 +2,9 @@
 name: harmony-pytorch
 description: Harmony-pytorch implements the Harmony algorithm to correct batch effects and integrate single-cell transcriptomics data across multiple datasets. Use when user asks to integrate single-cell datasets, correct batch effects in PCA embeddings, or harmonize data across multiple batches using PyTorch.
 homepage: https://github.com/lilab-bcb/harmony-pytorch
+metadata:
+  docker_image: "quay.io/biocontainers/harmony-pytorch:0.1.8--pyhdfd78af_0"
 ---
-
 
 # harmony-pytorch
 

@@ -2,8 +2,9 @@
 name: cryptkeeper
 description: CryptKeeper is a negative design tool that identifies burdensome open reading frames and unintentional regulatory elements in DNA sequences. Use when user asks to identify cryptic ribosome binding sites, predict unintentional promoters or terminators, analyze plasmid stability, or visualize sequence-based expression burden.
 homepage: https://github.com/barricklab/cryptkeeper
+metadata:
+  docker_image: "quay.io/biocontainers/cryptkeeper:1.0.1--pyhdfd78af_0"
 ---
-
 
 # cryptkeeper
 

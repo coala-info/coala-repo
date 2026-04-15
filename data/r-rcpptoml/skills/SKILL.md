@@ -4,7 +4,6 @@ description: The r-rcpptoml package provides R bindings for the C++11 cpptoml pa
 homepage: https://cran.r-project.org/web/packages/rcpptoml/index.html
 ---
 
-
 # r-rcpptoml
 
 ## Overview

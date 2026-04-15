@@ -4,7 +4,6 @@ description: The recoup package visualizes Next Generation Sequencing signal pro
 homepage: https://bioconductor.org/packages/release/bioc/html/recoup.html
 ---
 
-
 # bioconductor-recoup
 
 ## Overview

@@ -4,7 +4,6 @@ description: bioconductor-bicare performs biclustering analysis on gene expressi
 homepage: https://bioconductor.org/packages/release/bioc/html/BicARE.html
 ---
 
-
 # bioconductor-bicare
 
 name: bioconductor-bicare

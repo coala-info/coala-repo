@@ -1,9 +1,10 @@
 ---
 name: pycodestyle
-description: "pycodestyle checks Python source code against the style conventions defined in PEP 8. Use when user asks to check code for style violations, audit formatting, or generate statistics on PEP 8 compliance."
+description: pycodestyle checks Python source code against the style conventions defined in PEP 8. Use when user asks to check code for style violations, audit formatting, or generate statistics on PEP 8 compliance.
 homepage: https://github.com/PyCQA/pycodestyle
+metadata:
+  docker_image: "quay.io/biocontainers/pycodestyle:2.0.0--py35_0"
 ---
-
 
 # pycodestyle
 

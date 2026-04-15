@@ -1,10 +1,12 @@
 ---
 name: raw-read-quality-and-contamination-control-for-genome-assemb
-description: "This genomics workflow processes short paired-end Illumina reads through quality control, trimming, and taxonomic classification using fastp, Kraken2, and Bracken. Use this skill when you need to assess raw read quality, remove adapters, and identify potential microbial contamination or verify species composition before proceeding with genome assembly."
-homepage: https://workflowhub.eu/workflows/1881
+description: This genomics workflow processes short paired-end Illumina reads through quality control, trimming, and taxonomic classification using fastp, Kraken2, and Bracken. Use this skill when you need to assess raw read quality, remove adapters, and identify potential microbial contamination or verify species composition before proceeding with genome assembly.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Raw Read Quality and Contamination Control For Genome Assembly
+# raw-read-quality-and-contamination-control-for-genome-assemb
 
 ## Overview
 

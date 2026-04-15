@@ -4,7 +4,6 @@ description: This package provides annotations, control metadata, and example da
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HEEBOdata.html
 ---
 
-
 # bioconductor-heebodata
 
 name: bioconductor-heebodata

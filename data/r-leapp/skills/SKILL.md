@@ -4,7 +4,6 @@ description: The r-leapp tool adjusts for latent variables and unobserved confou
 homepage: https://cran.r-project.org/web/packages/leapp/index.html
 ---
 
-
 # r-leapp
 
 name: r-leapp

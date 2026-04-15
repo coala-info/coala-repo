@@ -1,10 +1,12 @@
 ---
 name: gbif-data-quality-check-and-filtering-workflow-feb-2020
-description: "This ecology workflow retrieves species occurrence data from GBIF and performs quality control through filtering, statistical summaries, and spatial data conversion using OGR2ogr. Use this skill when you need to prepare high-quality biodiversity datasets by removing erroneous or incomplete occurrence records for use in ecological research or species distribution modeling."
-homepage: https://workflowhub.eu/workflows/1670
+description: This ecology workflow retrieves species occurrence data from GBIF and performs quality control through filtering, statistical summaries, and spatial data conversion using OGR2ogr. Use this skill when you need to prepare high-quality biodiversity datasets by removing erroneous or incomplete occurrence records for use in ecological research or species distribution modeling.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GBIF data Quality check and filtering workflow Feb-2020
+# gbif-data-quality-check-and-filtering-workflow-feb-2020
 
 ## Overview
 

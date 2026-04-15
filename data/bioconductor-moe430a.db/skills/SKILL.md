@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Mouse Expr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430a.db.html
 ---
 
-
 # bioconductor-moe430a.db
 
 name: bioconductor-moe430a.db

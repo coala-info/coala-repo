@@ -4,7 +4,6 @@ description: MEAL is an R package designed to analyze Illumina HumanMethylation 
 homepage: https://bioconductor.org/packages/release/bioc/html/MEAL.html
 ---
 
-
 # bioconductor-meal
 
 ## Overview

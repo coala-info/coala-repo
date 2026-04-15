@@ -1,10 +1,12 @@
 ---
 name: paired-end-variant-calling-in-haploid-system
-description: "This workflow processes paired-end whole genome sequencing data from haploid organisms using fastp, BWA-MEM, and LoFreq to identify and annotate SNPs and small indels against a reference genome and GTF file. Use this skill when you need to characterize genetic variation and functional effects in haploid genomes such as those found in eukaryotic parasites, fungi, or bacteria."
-homepage: https://workflowhub.eu/workflows/1190
+description: This workflow processes paired-end whole genome sequencing data from haploid organisms using fastp, BWA-MEM, and LoFreq to identify and annotate SNPs and small indels against a reference genome and GTF file. Use this skill when you need to characterize genetic variation and functional effects in haploid genomes such as those found in eukaryotic parasites, fungi, or bacteria.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Paired end variant calling in haploid system
+# paired-end-variant-calling-in-haploid-system
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: kmer-counting-meryl
-description: "This Galaxy workflow processes Illumina sequencing reads using Meryl for k-mer counting and GenomeScope for downstream statistical analysis. Use this skill when you need to estimate genome size, heterozygosity, and repeat content from raw sequencing data to assess the complexity of a genome before assembly."
-homepage: https://workflowhub.eu/workflows/223
+description: This Galaxy workflow processes Illumina sequencing reads using Meryl for k-mer counting and GenomeScope for downstream statistical analysis. Use this skill when you need to estimate genome size, heterozygosity, and repeat content from raw sequencing data to assess the complexity of a genome before assembly.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# kmer counting - meryl
+# kmer-counting-meryl
 
 ## Overview
 

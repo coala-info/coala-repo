@@ -2,8 +2,9 @@
 name: ctn-dev
 description: This tool assists in the setup, configuration, and calibration of the Phoenix Flight Controller for Teensy 3.0 hardware. Use when user asks to map hardware pins, select flight kinematics, or perform accelerometer trimming using manual stick commands.
 homepage: https://github.com/cTn-dev/Phoenix-FlightController
+metadata:
+  docker_image: "biocontainers/ctn-dev:v3.2.0dfsg-5-deb_cv1"
 ---
-
 
 # ctn-dev
 

@@ -4,7 +4,6 @@ description: The readr package provides a fast and consistent way to read rectan
 homepage: https://cloud.r-project.org/web/packages/readr/index.html
 ---
 
-
 # r-readr
 
 ## Overview

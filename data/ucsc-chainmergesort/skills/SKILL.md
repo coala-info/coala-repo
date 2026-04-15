@@ -2,8 +2,9 @@
 name: ucsc-chainmergesort
 description: The `ucsc-chainmergesort` tool merges multiple sorted pairwise alignment files in `.chain` format. Use when user asks to merge chain files, combine alignment chains, or sort and merge chain files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chainmergesort:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chainmergesort
 

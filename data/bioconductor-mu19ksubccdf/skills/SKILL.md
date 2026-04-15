@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment for the 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu19ksubccdf.html
 ---
 
-
 # bioconductor-mu19ksubccdf
 
 name: bioconductor-mu19ksubccdf

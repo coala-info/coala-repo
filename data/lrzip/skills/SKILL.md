@@ -2,8 +2,9 @@
 name: lrzip
 description: lrzip is a compression utility optimized for identifying redundancies across very large files using long-range redundancy reduction. Use when user asks to compress large files, decompress .lrz archives, archive directories with lrztar, or optimize compression for high RAM availability.
 homepage: https://github.com/ckolivas/lrzip
+metadata:
+  docker_image: "quay.io/biocontainers/lrzip:0.651--h32784b6_1"
 ---
-
 
 # lrzip
 

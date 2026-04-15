@@ -4,7 +4,6 @@ description: bioconductor-swimr analyzes and visualizes C. elegans swimming beha
 homepage: https://bioconductor.org/packages/3.6/bioc/html/SwimR.html
 ---
 
-
 # bioconductor-swimr
 
 name: bioconductor-swimr

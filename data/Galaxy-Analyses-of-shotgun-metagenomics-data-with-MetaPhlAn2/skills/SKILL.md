@@ -1,7 +1,9 @@
 ---
 name: analyses-of-shotgun-metagenomics-data-with-metaphlan-v2
-description: "This shotgun metagenomics workflow processes fastq collections to generate taxonomic and functional profiles using MetaPhlAn2, HUMAnN2, and Krona. Use this skill when you need to characterize microbial community composition and quantify metabolic pathway or gene family abundances from shotgun sequencing data."
-homepage: https://workflowhub.eu/workflows/624
+description: This shotgun metagenomics workflow processes fastq collections to generate taxonomic and functional profiles using MetaPhlAn2, HUMAnN2, and Krona. Use this skill when you need to characterize microbial community composition and quantify metabolic pathway or gene family abundances from shotgun sequencing data.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
 # analyses-of-shotgun-metagenomics-data-with-metaphlan-v2

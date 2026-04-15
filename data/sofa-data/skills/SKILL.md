@@ -2,8 +2,9 @@
 name: sofa-data
 description: This tool executes a Python-based ETL pipeline to scrape and ingest sports data from SofaScore into a relational database. Use when user asks to scrape sports data from SofaScore, update player and manager attributes, or refresh database records for specific European football leagues.
 homepage: https://github.com/danielsaban/data-scraping-sofascore
+metadata:
+  docker_image: "biocontainers/sofa-data:v1.0beta4-12-deb_cv1"
 ---
-
 
 # sofa-data
 

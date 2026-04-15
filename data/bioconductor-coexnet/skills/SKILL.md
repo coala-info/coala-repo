@@ -1,9 +1,8 @@
 ---
 name: bioconductor-coexnet
-description: "bioconductor-coexnet constructs and analyzes co-expression networks from raw microarray data. Use when user asks to download GEO datasets, normalize AffyBatch data, identify differentially expressed genes, determine network thresholds, or build and compare co-expression and protein-protein interaction networks."
+description: bioconductor-coexnet constructs and analyzes co-expression networks from raw microarray data. Use when user asks to download GEO datasets, normalize AffyBatch data, identify differentially expressed genes, determine network thresholds, or build and compare co-expression and protein-protein interaction networks.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/coexnet.html
 ---
-
 
 # bioconductor-coexnet
 

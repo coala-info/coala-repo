@@ -2,8 +2,9 @@
 name: liftoff
 description: Liftoff maps gene annotations between genome assemblies by aligning gene sequences from a reference to a target genome. Use when user asks to map annotations between assemblies, re-annotate a new genome version, or identify additional gene copies in a target genome.
 homepage: https://github.com/agshumate/Liftoff
+metadata:
+  docker_image: "quay.io/biocontainers/liftoff:1.6.3--pyhdfd78af_2"
 ---
-
 
 # liftoff
 

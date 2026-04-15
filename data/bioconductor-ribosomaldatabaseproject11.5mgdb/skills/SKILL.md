@@ -4,7 +4,6 @@ description: This package provides access to the Ribosomal Database Project vers
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/ribosomaldatabaseproject11.5MgDb.html
 ---
 
-
 # bioconductor-ribosomaldatabaseproject11.5mgdb
 
 name: bioconductor-ribosomaldatabaseproject11.5mgdb

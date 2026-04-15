@@ -1,9 +1,10 @@
 ---
 name: pandoc
-description: "Pandoc is a command-line utility that converts files between different markup and document formats. Use when user asks to convert documents between formats like Markdown, PDF, and DOCX, generate slide decks, or process academic citations and metadata."
+description: Pandoc is a command-line utility that converts files between different markup and document formats. Use when user asks to convert documents between formats like Markdown, PDF, and DOCX, generate slide decks, or process academic citations and metadata.
 homepage: https://github.com/jgm/pandoc
+metadata:
+  docker_image: "quay.io/biocontainers/pandoc:2.1.3--0"
 ---
-
 
 # pandoc
 

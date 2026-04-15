@@ -2,6 +2,8 @@
 name: jaffa
 description: JAFFA is a transcript-centric bioinformatics pipeline designed to detect gene fusions across various sequencing read lengths. Use when user asks to identify gene fusions, perform de novo assembly of transcripts, or analyze long-read RNA sequencing data for chimeric sequences.
 homepage: https://github.com/Oshlack/JAFFA
+metadata:
+  docker_image: "quay.io/biocontainers/jaffa:2.3--hdfd78af_0"
 ---
 
 # jaffa

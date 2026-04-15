@@ -2,8 +2,9 @@
 name: pretextmap
 description: PretextMap transforms aligned sequence data into compressed genome contact maps for rapid visualization. Use when user asks to convert BAM, CRAM, or pairs files into the pretext format, generate Hi-C contact maps, or filter sequences to improve map resolution.
 homepage: https://github.com/wtsi-hpag/PretextMap
+metadata:
+  docker_image: "quay.io/biocontainers/pretextmap:0.2.3--h9948957_0"
 ---
-
 
 # pretextmap
 

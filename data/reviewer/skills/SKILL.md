@@ -2,8 +2,9 @@
 name: reviewer
 description: REViewer generates haplotype-aware visualizations of tandem repeat genotypes using graph-realigned reads. Use when user asks to visualize repeat expansions, manually inspect tandem repeat genotypes, or validate ExpansionHunter results.
 homepage: https://github.com/Illumina/REViewer
+metadata:
+  docker_image: "quay.io/biocontainers/reviewer:0.2.7--h48da230_0"
 ---
-
 
 # reviewer
 

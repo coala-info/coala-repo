@@ -4,7 +4,6 @@ description: This package provides platform design metadata and probe sequence i
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cotton.html
 ---
 
-
 # bioconductor-pd.cotton
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the hg17 assemb
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg17.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg17
 
 ## Overview

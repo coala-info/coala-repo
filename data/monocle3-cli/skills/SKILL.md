@@ -2,8 +2,9 @@
 name: monocle3-cli
 description: The monocle3-cli tool provides command-line wrappers for the Monocle3 R package to perform single-cell trajectory analysis. Use when user asks to create Monocle3 objects, preprocess expression data, perform dimensionality reduction, cluster cells, or learn developmental trajectories.
 homepage: https://github.com/ebi-gene-expression-group/monocle-scripts
+metadata:
+  docker_image: "quay.io/biocontainers/monocle3-cli:0.0.9--r36_1"
 ---
-
 
 # monocle3-cli
 

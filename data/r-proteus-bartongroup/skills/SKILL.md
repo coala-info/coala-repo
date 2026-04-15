@@ -4,7 +4,6 @@ description: Proteus is an R package for the downstream analysis of MaxQuant pro
 homepage: https://cran.r-project.org/web/packages/proteus-bartongroup/index.html
 ---
 
-
 # r-proteus-bartongroup
 
 ## Overview

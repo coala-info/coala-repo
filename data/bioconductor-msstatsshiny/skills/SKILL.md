@@ -4,7 +4,6 @@ description: MSstatsShiny provides a graphical user interface for performing pro
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsShiny.html
 ---
 
-
 # bioconductor-msstatsshiny
 
 ## Overview

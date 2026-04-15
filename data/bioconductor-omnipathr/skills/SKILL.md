@@ -1,9 +1,8 @@
 ---
 name: bioconductor-omnipathr
-description: "OmnipathR retrieves and analyzes comprehensive molecular signaling data including protein interactions, gene regulatory networks, and intercellular communication. Use when user asks to retrieve signaling networks, access enzyme-substrate relationships, identify protein complexes, analyze cell-cell communication, translate protein identifiers, or perform graph-based path finding."
+description: OmnipathR retrieves and analyzes comprehensive molecular signaling data including protein interactions, gene regulatory networks, and intercellular communication. Use when user asks to retrieve signaling networks, access enzyme-substrate relationships, identify protein complexes, analyze cell-cell communication, translate protein identifiers, or perform graph-based path finding.
 homepage: https://bioconductor.org/packages/release/bioc/html/OmnipathR.html
 ---
-
 
 # bioconductor-omnipathr
 

@@ -1,9 +1,10 @@
 ---
 name: scnic
-description: "SCNIC builds and analyzes correlation networks for compositional data to identify functional modules and relationships between different data types. Use when user asks to calculate correlations within a dataset, group features into modules to reduce dimensionality, or identify correlations between two distinct data tables."
+description: SCNIC builds and analyzes correlation networks for compositional data to identify functional modules and relationships between different data types. Use when user asks to calculate correlations within a dataset, group features into modules to reduce dimensionality, or identify correlations between two distinct data tables.
 homepage: https://github.com/shafferm/SCNIC
+metadata:
+  docker_image: "quay.io/biocontainers/scnic:0.6.6--pyhdfd78af_0"
 ---
-
 
 # scnic
 

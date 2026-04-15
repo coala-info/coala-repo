@@ -1,10 +1,12 @@
 ---
 name: identification-and-evolutionary-analysis-of-transcription-as
-description: "This Galaxy workflow identifies and analyzes the evolution of transcription-associated proteins from protein sequence collections using TAPScan, MAFFT, and Quicktree. Use this skill when you need to classify transcription factors and regulators within a proteome and reconstruct their phylogenetic history to study evolutionary conservation or divergence."
-homepage: https://workflowhub.eu/workflows/1650
+description: This Galaxy workflow identifies and analyzes the evolution of transcription-associated proteins from protein sequence collections using TAPScan, MAFFT, and Quicktree. Use this skill when you need to classify transcription factors and regulators within a proteome and reconstruct their phylogenetic history to study evolutionary conservation or divergence.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Identification and Evolutionary Analysis of Transcription-Associated Proteins
+# identification-and-evolutionary-analysis-of-transcription-as
 
 ## Overview
 

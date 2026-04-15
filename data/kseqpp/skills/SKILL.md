@@ -1,9 +1,10 @@
 ---
 name: kseqpp
-description: "kseqpp is a high-performance C++ library for reading and writing FASTA and FASTQ sequence files. Use when user asks to parse genomic sequences, handle compressed sequence I/O, or integrate fast sequence processing into C++ bioinformatics applications."
+description: kseqpp is a high-performance C++ library for reading and writing FASTA and FASTQ sequence files. Use when user asks to parse genomic sequences, handle compressed sequence I/O, or integrate fast sequence processing into C++ bioinformatics applications.
 homepage: https://github.com/cartoonist/kseqpp
+metadata:
+  docker_image: "quay.io/biocontainers/kseqpp:1.1.2--h077b44d_1"
 ---
-
 
 # kseqpp
 

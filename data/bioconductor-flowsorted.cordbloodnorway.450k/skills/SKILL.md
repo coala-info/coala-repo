@@ -4,7 +4,6 @@ description: This package provides raw DNA methylation data from flow-sorted umb
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBloodNorway.450k.html
 ---
 
-
 # bioconductor-flowsorted.cordbloodnorway.450k
 
 ## Overview

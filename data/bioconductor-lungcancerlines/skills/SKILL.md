@@ -4,7 +4,6 @@ description: This package provides RNA-seq data and a TP53 genomic reference for
 homepage: https://bioconductor.org/packages/release/data/experiment/html/LungCancerLines.html
 ---
 
-
 # bioconductor-lungcancerlines
 
 name: bioconductor-lungcancerlines

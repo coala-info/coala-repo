@@ -4,7 +4,6 @@ description: The r-fastqcr package parses, aggregates, and analyzes FastQC repor
 homepage: https://cran.r-project.org/web/packages/fastqcr/index.html
 ---
 
-
 # r-fastqcr
 
 ## Overview

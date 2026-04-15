@@ -1,10 +1,12 @@
 ---
 name: age-prediction-dna-methylation
-description: "This Galaxy workflow performs age prediction from DNA methylation data using Scikit-learn pipeline building, hyperparameter optimization, and ensemble regression methods on training and testing datasets. Use this skill when you need to build and evaluate machine learning models to estimate biological age from epigenetic markers or analyze the performance of regression-based epigenetic clocks."
-homepage: https://workflowhub.eu/workflows/1721
+description: This Galaxy workflow performs age prediction from DNA methylation data using Scikit-learn pipeline building, hyperparameter optimization, and ensemble regression methods on training and testing datasets. Use this skill when you need to build and evaluate machine learning models to estimate biological age from epigenetic markers or analyze the performance of regression-based epigenetic clocks.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Age Prediction DNA Methylation
+# age-prediction-dna-methylation
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: cafe
 description: CAFE analyzes changes in gene family size across a phylogenetic tree using a birth-death model to estimate rates of gene gain and loss. Use when user asks to estimate birth-death rates, identify gene family expansions or contractions, or model gene family evolution across species.
 homepage: https://hahnlab.github.io/CAFE/
+metadata:
+  docker_image: "quay.io/biocontainers/cafe:5.1.0--h5ca1c30_1"
 ---
-
 
 # cafe
 

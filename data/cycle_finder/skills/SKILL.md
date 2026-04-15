@@ -2,8 +2,9 @@
 name: cycle_finder
 description: The cycle_finder tool identifies and characterizes genomic repeats from short-read sequencing data using de Bruijn graphs. Use when user asks to detect tandem or interspersed repeats, estimate repeat copy numbers, or compare repeat content between two samples.
 homepage: https://github.com/rkajitani/cycle_finder
+metadata:
+  docker_image: "biocontainers/cycle:v0.3.1-14-deb_cv1"
 ---
-
 
 # cycle_finder
 

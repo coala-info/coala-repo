@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50-its
-description: "This metagenomics workflow processes sequence data and BED files to classify Internal Transcribed Spacer regions using MAPseq against the ITSoneDB and UNITE databases. Use this skill when you need to characterize fungal or eukaryotic community composition from environmental samples by generating taxonomic classifications, OTU tables, and Krona visualizations."
-homepage: https://workflowhub.eu/workflows/1856
+description: This metagenomics workflow processes sequence data and BED files to classify Internal Transcribed Spacer regions using MAPseq against the ITSoneDB and UNITE databases. Use this skill when you need to characterize fungal or eukaryotic community composition from environmental samples by generating taxonomic classifications, OTU tables, and Krona visualizations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0 - ITS
+# mgnifys-amplicon-pipeline-v50-its
 
 ## Overview
 

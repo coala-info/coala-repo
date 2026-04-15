@@ -4,7 +4,6 @@ description: The phyloseq package integrates and analyzes microbiome census data
 homepage: https://bioconductor.org/packages/release/bioc/html/phyloseq.html
 ---
 
-
 # bioconductor-phyloseq
 
 ## Overview

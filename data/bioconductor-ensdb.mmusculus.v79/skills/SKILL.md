@@ -4,7 +4,6 @@ description: This package provides Ensembl-based genome annotations for Mus musc
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Mmusculus.v79.html
 ---
 
-
 # bioconductor-ensdb.mmusculus.v79
 
 name: bioconductor-ensdb.mmusculus.v79

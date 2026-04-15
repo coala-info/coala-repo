@@ -4,7 +4,6 @@ description: This tool provides a connector to the KEGG database for retrieving 
 homepage: https://bioconductor.org/packages/3.14/bioc/html/biodbKegg.html
 ---
 
-
 # bioconductor-biodbkegg
 
 name: bioconductor-biodbkegg

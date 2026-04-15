@@ -1,10 +1,12 @@
 ---
 name: music-deconvolution-data-generation-sc-matrix-eset
-description: "This single-cell transcriptomics workflow retrieves data from the EBI Single Cell Expression Atlas and processes it using Scanpy and MuSiC tools to generate a standardized ExpressionSet object. Use this skill when you need to prepare single-cell RNA-seq reference datasets for MuSiC deconvolution by converting raw counts and metadata into a compatible format for downstream tissue composition analysis."
-homepage: https://workflowhub.eu/workflows/1548
+description: This single-cell transcriptomics workflow retrieves data from the EBI Single Cell Expression Atlas and processes it using Scanpy and MuSiC tools to generate a standardized ExpressionSet object. Use this skill when you need to prepare single-cell RNA-seq reference datasets for MuSiC deconvolution by converting raw counts and metadata into a compatible format for downstream tissue composition analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# MuSiC-Deconvolution: Data generation | sc | matrix + ESet
+# music-deconvolution-data-generation-sc-matrix-eset
 
 ## Overview
 

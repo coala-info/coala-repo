@@ -4,7 +4,6 @@ description: CoGAPS is a Bayesian Nonnegative Matrix Factorization algorithm tha
 homepage: https://bioconductor.org/packages/release/bioc/html/CoGAPS.html
 ---
 
-
 # bioconductor-cogaps
 
 ## Overview

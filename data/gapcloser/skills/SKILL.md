@@ -2,8 +2,9 @@
 name: gapcloser
 description: TGS-GapCloser bridges gaps in genomic scaffolds by utilizing long-read sequencing data to fill "N" regions with high-confidence sequences. Use when user asks to fill gaps in a draft assembly, bridge genomic scaffolds using TGS reads, or perform hybrid gap-filling with both long and short reads.
 homepage: https://github.com/BGI-Qingdao/TGS-GapCloser
+metadata:
+  docker_image: "biocontainers/gapcloser:v1.12-r6_cv3"
 ---
-
 
 # gapcloser
 

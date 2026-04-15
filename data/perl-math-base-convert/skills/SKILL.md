@@ -2,8 +2,9 @@
 name: perl-math-base-convert
 description: This tool performs efficient conversions between different number bases and custom positional notation systems. Use when user asks to convert numbers between standard bases like hex or base64, shorten long numeric IDs, or define custom character sets for number transformation.
 homepage: https://metacpan.org/pod/Math::Base::Convert
+metadata:
+  docker_image: "quay.io/biocontainers/perl-math-base-convert:0.13--pl5321hdfd78af_0"
 ---
-
 
 # perl-math-base-convert
 

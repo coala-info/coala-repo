@@ -4,7 +4,6 @@ description: The bioconductor-msgfplus package provides an R interface to the MS
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MSGFplus.html
 ---
 
-
 # bioconductor-msgfplus
 
 ## Overview

@@ -4,7 +4,6 @@ description: svaRetro identifies retrotransposed transcripts by analyzing struct
 homepage: https://bioconductor.org/packages/release/bioc/html/svaRetro.html
 ---
 
-
 # bioconductor-svaretro
 
 ## Overview

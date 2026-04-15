@@ -4,7 +4,6 @@ description: This package provides sample Affymetrix microarray data files in va
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AffymetrixDataTestFiles.html
 ---
 
-
 # bioconductor-affymetrixdatatestfiles
 
 name: bioconductor-affymetrixdatatestfiles

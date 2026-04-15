@@ -2,8 +2,9 @@
 name: metafun
 description: metaFun is a modular pipeline for the comprehensive analysis of metagenomic and comparative genomic data. Use when user asks to perform quality control on raw reads, conduct strain-level microbial diversity analysis, or download reference databases for functional and taxonomic assignments.
 homepage: https://github.com/aababc1/metaFun
+metadata:
+  docker_image: "quay.io/biocontainers/metafun:1.0.0--hdfd78af_0"
 ---
-
 
 # metafun
 

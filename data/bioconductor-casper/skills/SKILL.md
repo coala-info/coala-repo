@@ -1,9 +1,8 @@
 ---
 name: bioconductor-casper
-description: "Bioconductor-casper quantifies isoform expression and performs experimental design for RNA-seq data using Bayesian models. Use when user asks to estimate transcript-level expression, simulate RNA-seq data for power analysis, or analyze differential isoform usage."
+description: Bioconductor-casper quantifies isoform expression and performs experimental design for RNA-seq data using Bayesian models. Use when user asks to estimate transcript-level expression, simulate RNA-seq data for power analysis, or analyze differential isoform usage.
 homepage: https://bioconductor.org/packages/release/bioc/html/casper.html
 ---
-
 
 # bioconductor-casper
 

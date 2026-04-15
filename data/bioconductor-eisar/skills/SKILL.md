@@ -4,7 +4,6 @@ description: The eisaR package performs Exon-Intron Split Analysis to distinguis
 homepage: https://bioconductor.org/packages/release/bioc/html/eisaR.html
 ---
 
-
 # bioconductor-eisar
 
 ## Overview

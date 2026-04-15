@@ -1,7 +1,9 @@
 ---
 name: pipits
-description: "pipits is a bioinformatics workflow designed for the analysis of fungal ITS sequences from raw FASTQ files. Use when user asks to process fungal ITS data, extract ITS subregions, or generate OTU abundance tables and BIOM files."
+description: pipits is a bioinformatics workflow designed for the analysis of fungal ITS sequences from raw FASTQ files. Use when user asks to process fungal ITS data, extract ITS subregions, or generate OTU abundance tables and BIOM files.
 homepage: https://github.com/hsgweon/pipits
+metadata:
+  docker_image: "quay.io/biocontainers/pipits:4.0--pyhdfd78af_0"
 ---
 
 # pipits

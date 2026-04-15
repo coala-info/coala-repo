@@ -4,7 +4,6 @@ description: This package provides frozen parameter vectors and background distr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene.1.0.st.v1frmavecs.html
 ---
 
-
 # bioconductor-hugene.1.0.st.v1frmavecs
 
 name: bioconductor-hugene.1.0.st.v1frmavecs

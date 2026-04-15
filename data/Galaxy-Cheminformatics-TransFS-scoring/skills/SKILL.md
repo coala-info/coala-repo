@@ -1,10 +1,12 @@
 ---
 name: covid-19-cheminformatics-4-transfs-scoring
-description: "This cheminformatics workflow evaluates protein-ligand complexes using the XChem TransFS pose scoring tool, taking a PDB protein structure and a collection of ligand poses as inputs. Use this skill when you need to rank or filter potential drug candidates based on deep learning-based binding affinity predictions for a specific viral target."
-homepage: https://workflowhub.eu/workflows/16
+description: This cheminformatics workflow evaluates protein-ligand complexes using the XChem TransFS pose scoring tool, taking a PDB protein structure and a collection of ligand poses as inputs. Use this skill when you need to rank or filter potential drug candidates based on deep learning-based binding affinity predictions for a specific viral target.
+homepage: https://github.com/galaxyproject/SARS-CoV-2
+metadata:
+  docker_image: "N/A"
 ---
 
-# COVID-19 - Cheminformatics [4] TransFS scoring
+# covid-19-cheminformatics-4-transfs-scoring
 
 ## Overview
 

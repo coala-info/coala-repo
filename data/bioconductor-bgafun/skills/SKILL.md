@@ -4,7 +4,6 @@ description: This tool identifies functional residues in protein alignments usin
 homepage: https://bioconductor.org/packages/3.5/bioc/html/bgafun.html
 ---
 
-
 # bioconductor-bgafun
 
 name: bioconductor-bgafun

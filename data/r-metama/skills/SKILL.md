@@ -4,7 +4,6 @@ description: This tool performs meta-analysis of transcriptomic data to identify
 homepage: https://cran.r-project.org/web/packages/metama/index.html
 ---
 
-
 # r-metama
 
 name: r-metama

@@ -4,7 +4,6 @@ description: This tool performs probe-level comparative analysis of Affymetrix G
 homepage: https://bioconductor.org/packages/3.5/bioc/html/sscore.html
 ---
 
-
 # bioconductor-sscore
 
 name: bioconductor-sscore

@@ -4,7 +4,6 @@ description: This tool designs and evaluates multi-arm multi-stage clinical tria
 homepage: https://cran.r-project.org/web/packages/mams/index.html
 ---
 
-
 # r-mams
 
 name: r-mams

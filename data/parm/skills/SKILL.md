@@ -2,6 +2,8 @@
 name: parm
 description: PARM is a deep learning framework that predicts cell-type-specific promoter activity and identifies regulatory motifs through in-silico mutagenesis. Use when user asks to predict promoter activity from DNA sequences, perform in-silico mutagenesis to identify transcription factor binding sites, visualize mutation effect matrices, or train custom models on MPRA data.
 homepage: https://github.com/vansteensellab/PARM
+metadata:
+  docker_image: "quay.io/biocontainers/parm:0.1.44--pyh7e72e81_0"
 ---
 
 # parm

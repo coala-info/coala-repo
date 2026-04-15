@@ -4,7 +4,6 @@ description: This tool provides an R interface to access, query, and integrate A
 homepage: https://bioconductor.org/packages/release/bioc/html/AlphaMissenseR.html
 ---
 
-
 # bioconductor-alphamissenser
 
 name: bioconductor-alphamissenser

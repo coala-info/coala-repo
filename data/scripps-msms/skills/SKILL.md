@@ -2,8 +2,9 @@
 name: scripps-msms
 description: MSMS computes the solvent excluded surface and reduced surface of molecular structures to generate triangulated meshes and surface area calculations. Use when user asks to calculate molecular surface areas, generate triangulated meshes from atomic coordinates, or identify internal cavities in a protein structure.
 homepage: https://ccsb.scripps.edu/msms/
+metadata:
+  docker_image: "quay.io/biocontainers/scripps-msms:2.6.1--h9ee0642_0"
 ---
-
 
 # scripps-msms
 

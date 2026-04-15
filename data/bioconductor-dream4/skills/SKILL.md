@@ -4,7 +4,6 @@ description: The bioconductor-dream4 package provides synthetic gene regulatory 
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/DREAM4.html
 ---
 
-
 # bioconductor-dream4
 
 ## Overview

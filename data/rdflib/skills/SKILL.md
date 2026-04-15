@@ -2,8 +2,9 @@
 name: rdflib
 description: RDFLib is a Python library for representing, manipulating, and serializing information as RDF graphs. Use when user asks to parse RDF data, manage triples, query graphs with SPARQL, or convert between semantic formats like Turtle and JSON-LD.
 homepage: https://github.com/RDFLib/rdflib
+metadata:
+  docker_image: "quay.io/biocontainers/rdflib:4.2.2--py34_0"
 ---
-
 
 # rdflib
 

@@ -2,6 +2,8 @@
 name: gencove
 description: The Gencove tool manages low-pass sequencing analysis workflows and genomic data on the Gencove Base platform. Use when user asks to upload sequencing files, manage projects and pipelines, list samples, or download genomic deliverables and metadata.
 homepage: https://docs.gencove.com
+metadata:
+  docker_image: "quay.io/biocontainers/gencove:4.2.0--pyhdfd78af_0"
 ---
 
 # gencove

@@ -2,8 +2,9 @@
 name: byobu
 description: Byobu is a terminal multiplexer enhancement that provides persistent remote sessions, window management, and real-time system status monitoring. Use when user asks to maintain persistent terminal sessions, manage multiple windows or panes, monitor system health, or configure terminal status notifications.
 homepage: https://github.com/dustinkirkland/byobu
+metadata:
+  docker_image: "quay.io/biocontainers/byobu:5.98--hb42da9c_2"
 ---
-
 
 # byobu
 

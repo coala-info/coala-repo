@@ -1,10 +1,12 @@
 ---
 name: workflow-constructed-from-history-heinz-workflow-trial-sep-1
-description: "This transcriptomics workflow processes edge files and dataset collections using DESeq2 and the Heinz suite to perform BUM model fitting, scoring, and optimal subnetwork identification. Use this skill when you need to extract biologically meaningful modules from a large interaction network by prioritizing genes with significant differential expression."
-homepage: https://workflowhub.eu/workflows/1677
+description: This transcriptomics workflow processes edge files and dataset collections using DESeq2 and the Heinz suite to perform BUM model fitting, scoring, and optimal subnetwork identification. Use this skill when you need to extract biologically meaningful modules from a large interaction network by prioritizing genes with significant differential expression.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow Constructed From History 'Heinz Workflow Trial Sep 11'
+# workflow-constructed-from-history-heinz-workflow-trial-sep-1
 
 ## Overview
 

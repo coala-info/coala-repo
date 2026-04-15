@@ -4,7 +4,6 @@ description: This tool imports and parses tRNAscan-SE output files into Biocondu
 homepage: https://bioconductor.org/packages/release/bioc/html/tRNAscanImport.html
 ---
 
-
 # bioconductor-trnascanimport
 
 name: bioconductor-trnascanimport

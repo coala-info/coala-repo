@@ -2,8 +2,9 @@
 name: dicompyler
 description: dicompyler is an extensible radiation therapy research platform and DICOM RT viewer used to visualize dose distributions and calculate dose-volume histogram parameters. Use when user asks to view DICOM RT data, analyze dose-volume histograms, visualize dose distributions over anatomical structures, or anonymize patient data for research.
 homepage: https://github.com/bastula/dicompyler
+metadata:
+  docker_image: "biocontainers/dicompyler:v0.4.2-3-deb_cv1"
 ---
-
 
 # dicompyler
 

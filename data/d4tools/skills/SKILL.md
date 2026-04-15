@@ -1,9 +1,10 @@
 ---
 name: d4tools
-description: "d4tools manages high-performance genomic signal data by converting, querying, and calculating statistics on files in the D4 format. Use when user asks to convert BAM, CRAM, BigWig, or BedGraph files to D4, query specific genomic regions, or calculate coverage statistics like mean and median."
+description: d4tools manages high-performance genomic signal data by converting, querying, and calculating statistics on files in the D4 format. Use when user asks to convert BAM, CRAM, BigWig, or BedGraph files to D4, query specific genomic regions, or calculate coverage statistics like mean and median.
 homepage: https://github.com/38/d4-format
+metadata:
+  docker_image: "quay.io/biocontainers/d4tools:0.3.11--ha986137_3"
 ---
-
 
 # d4tools
 

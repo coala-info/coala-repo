@@ -4,7 +4,6 @@ description: The girafe package processes and visualizes aligned genomic sequenc
 homepage: https://bioconductor.org/packages/3.6/bioc/html/girafe.html
 ---
 
-
 # bioconductor-girafe
 
 ## Overview

@@ -1,7 +1,9 @@
 ---
 name: metaquantome-function-worklow
-description: "This metaproteomics workflow integrates functional and intensity data using the metaQuantome suite to perform database mapping, statistical filtering, and differential expression analysis. Use this skill when you need to quantify and visualize the functional landscape of microbial communities to identify significant biological processes or enzymatic activities across different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1453
+description: This metaproteomics workflow integrates functional and intensity data using the metaQuantome suite to perform database mapping, statistical filtering, and differential expression analysis. Use this skill when you need to quantify and visualize the functional landscape of microbial communities to identify significant biological processes or enzymatic activities across different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # metaquantome-function-worklow

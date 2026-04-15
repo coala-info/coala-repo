@@ -4,7 +4,6 @@ description: biocViews manages Bioconductor package repositories by categorizing
 homepage: https://bioconductor.org/packages/release/bioc/html/biocViews.html
 ---
 
-
 # bioconductor-biocviews
 
 ## Overview

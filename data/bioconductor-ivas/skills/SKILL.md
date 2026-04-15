@@ -4,7 +4,6 @@ description: This tool identifies genetic variants affecting alternative splicin
 homepage: https://bioconductor.org/packages/release/bioc/html/IVAS.html
 ---
 
-
 # bioconductor-ivas
 
 name: bioconductor-ivas

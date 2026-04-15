@@ -4,7 +4,6 @@ description: This tool provides C-like command-line option parsing for R scripts
 homepage: https://cloud.r-project.org/web/packages/getopt/index.html
 ---
 
-
 # r-getopt
 
 name: r-getopt

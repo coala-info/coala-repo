@@ -2,6 +2,8 @@
 name: cell-types-analysis
 description: The cell-types-analysis suite benchmarks single-cell RNA sequencing cell type classifiers and generates consensus labels from multiple classification outputs. Use when user asks to map cell labels to ontologies, evaluate tool performance against ground truth, or aggregate multiple classifier results into consensus labels.
 homepage: https://github.com/ebi-gene-expression-group/cell-types-analysis
+metadata:
+  docker_image: "quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1"
 ---
 
 # cell-types-analysis

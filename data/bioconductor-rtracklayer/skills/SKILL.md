@@ -4,7 +4,6 @@ description: This tool provides an interface for importing and exporting genomic
 homepage: https://bioconductor.org/packages/release/bioc/html/rtracklayer.html
 ---
 
-
 # bioconductor-rtracklayer
 
 name: bioconductor-rtracklayer

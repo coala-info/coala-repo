@@ -4,7 +4,6 @@ description: This package provides specialized tools for analyzing placental DNA
 homepage: https://bioconductor.org/packages/release/bioc/html/planet.html
 ---
 
-
 # bioconductor-planet
 
 ## Overview

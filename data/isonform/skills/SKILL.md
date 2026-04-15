@@ -2,8 +2,9 @@
 name: isonform
 description: isONform reconstructs transcript isoforms from long-read sequencing data without requiring a reference genome. Use when user asks to reconstruct transcript isoforms, generate consensus sequences from clustered reads, or perform de novo transcriptome assembly.
 homepage: https://github.com/aljpetri/isONform
+metadata:
+  docker_image: "quay.io/biocontainers/isonform:0.3.4--pyh7cba7a3_0"
 ---
-
 
 # isonform
 

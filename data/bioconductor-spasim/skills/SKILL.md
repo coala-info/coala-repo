@@ -4,7 +4,6 @@ description: bioconductor-spasim simulates complex spatial patterns of cells in 
 homepage: https://bioconductor.org/packages/release/bioc/html/spaSim.html
 ---
 
-
 # bioconductor-spasim
 
 name: bioconductor-spasim

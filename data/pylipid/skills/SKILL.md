@@ -2,8 +2,9 @@
 name: pylipid
 description: PyLipID is a Python toolkit for analyzing lipid-protein interactions and kinetics from molecular dynamics simulations. Use when user asks to characterize lipid-protein interactions, identify binding sites, calculate residence times, implement dual-cutoff schemes, or generate representative binding poses.
 homepage: https://github.com/wlsong/PyLipID
+metadata:
+  docker_image: "quay.io/biocontainers/pylipid:1.5.14--pyhdfd78af_0"
 ---
-
 
 # pylipid
 

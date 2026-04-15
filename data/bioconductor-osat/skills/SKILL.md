@@ -4,7 +4,6 @@ description: This tool assigns samples to experimental batches using optimizatio
 homepage: https://bioconductor.org/packages/release/bioc/html/OSAT.html
 ---
 
-
 # bioconductor-osat
 
 name: bioconductor-osat

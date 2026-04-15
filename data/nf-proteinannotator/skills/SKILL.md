@@ -4,6 +4,8 @@ description: This pipeline computes statistics for protein FASTA inputs and gene
 homepage: https://github.com/nf-core/proteinannotator
 ---
 
+# nf-core-proteinannotator
+
 ## Overview
 nf-core/proteinannotator is designed to solve the problem of characterizing large sets of amino acid sequences by identifying their functional and structural properties. It automates the scanning of protein sequences against signatures of protein families, domains, and sites to provide a comprehensive view of the protein's potential roles and physical characteristics.
 

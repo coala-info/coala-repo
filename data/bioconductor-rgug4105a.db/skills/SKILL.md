@@ -4,7 +4,6 @@ description: This package provides annotation data for the Agilent Rat Genome 4x
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgug4105a.db.html
 ---
 
-
 # bioconductor-rgug4105a.db
 
 name: bioconductor-rgug4105a.db

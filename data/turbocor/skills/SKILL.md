@@ -2,6 +2,8 @@
 name: turbocor
 description: Turbocor corrects and refines phylogenetic trees by resolving structural inconsistencies and adjusting branch lengths. Use when user asks to resolve tree inconsistencies, adjust branch lengths based on evolutionary models, or compute and analyze thresholded correlation matrices.
 homepage: https://github.com/dcjones/turbocor
+metadata:
+  docker_image: "quay.io/biocontainers/turbocor:0.1.1--h5177ac6_0"
 ---
 
 # turbocor

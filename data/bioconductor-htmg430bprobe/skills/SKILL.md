@@ -4,7 +4,6 @@ description: This package provides nucleotide sequence information and chip coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430bprobe.html
 ---
 
-
 # bioconductor-htmg430bprobe
 
 ## Overview

@@ -1,9 +1,10 @@
 ---
 name: cellprofiler
-description: "CellProfiler automates the quantitative analysis of biological images. Use when user asks to analyze biological images, extract measurements from microscopy data, or process large batches of images."
+description: CellProfiler automates the quantitative analysis of biological images. Use when user asks to analyze biological images, extract measurements from microscopy data, or process large batches of images.
 homepage: https://github.com/CellProfiler/CellProfiler
+metadata:
+  docker_image: "quay.io/biocontainers/cellprofiler:4.2.8--pyhdfd78af_0"
 ---
-
 
 # cellprofiler
 

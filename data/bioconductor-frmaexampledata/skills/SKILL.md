@@ -4,7 +4,6 @@ description: This package provides example AffyBatch datasets for testing and de
 homepage: https://bioconductor.org/packages/release/data/experiment/html/frmaExampleData.html
 ---
 
-
 # bioconductor-frmaexampledata
 
 name: bioconductor-frmaexampledata

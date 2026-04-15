@@ -2,6 +2,8 @@
 name: fraposa-pgsc
 description: The fraposa-pgsc tool projects study samples onto a reference PCA space to predict genetic ancestry while correcting for shrinkage using the OADP algorithm. Use when user asks to project samples onto a reference panel, predict ancestry labels, or visualize population clusters in PCA space.
 homepage: https://github.com/PGScatalog/fraposa_pgsc
+metadata:
+  docker_image: "quay.io/biocontainers/fraposa-pgsc:1.0.2--pyhdfd78af_0"
 ---
 
 # fraposa-pgsc

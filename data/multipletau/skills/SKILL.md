@@ -4,7 +4,6 @@ description: multipletau computes the autocorrelation or cross-correlation of si
 homepage: https://github.com/FCS-analysis/multipletau
 ---
 
-
 # multipletau
 
 ## Overview

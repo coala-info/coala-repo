@@ -1,10 +1,12 @@
 ---
 name: dctmd-calculations-with-gromacs
-description: "This workflow performs dissipated-corrected targeted molecular dynamics (dcTMD) simulations using GROMACS to calculate free energy and friction profiles from protein-ligand complexes provided in PDB and SDF formats. Use this skill when you need to estimate the binding free energy and characterize the non-equilibrium dissociation kinetics of a small molecule ligand from its target protein."
-homepage: https://workflowhub.eu/workflows/249
+description: This workflow performs dissipated-corrected targeted molecular dynamics (dcTMD) simulations using GROMACS to calculate free energy and friction profiles from protein-ligand complexes provided in PDB and SDF formats. Use this skill when you need to estimate the binding free energy and characterize the non-equilibrium dissociation kinetics of a small molecule ligand from its target protein.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# dcTMD calculations with GROMACS
+# dctmd-calculations-with-gromacs
 
 ## Overview
 

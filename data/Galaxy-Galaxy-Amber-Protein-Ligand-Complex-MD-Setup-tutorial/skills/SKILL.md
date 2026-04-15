@@ -1,10 +1,12 @@
 ---
 name: amber-protein-ligand-complex-md-setup
-description: "This Galaxy workflow automates the preparation and simulation of protein-ligand complexes using the AMBER force field, processing PDB structures through BioBB tools for ligand parameterization, solvation, and equilibration. Use this skill when you need to study the binding stability and conformational dynamics of a small molecule within a protein active site through molecular dynamics simulations."
-homepage: https://workflowhub.eu/workflows/298
+description: This Galaxy workflow automates the preparation and simulation of protein-ligand complexes using the AMBER force field, processing PDB structures through BioBB tools for ligand parameterization, solvation, and equilibration. Use this skill when you need to study the binding stability and conformational dynamics of a small molecule within a protein active site through molecular dynamics simulations.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AMBER Protein Ligand Complex MD Setup
+# amber-protein-ligand-complex-md-setup
 
 ## Overview
 

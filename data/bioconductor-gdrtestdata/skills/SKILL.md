@@ -4,7 +4,6 @@ description: The bioconductor-gdrtestdata package generates synthetic drug respo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gDRtestData.html
 ---
 
-
 # bioconductor-gdrtestdata
 
 ## Overview

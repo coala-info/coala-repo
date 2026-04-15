@@ -4,7 +4,6 @@ description: This tool provides a framework for the pre-processing and statistic
 homepage: https://bioconductor.org/packages/release/bioc/html/structToolbox.html
 ---
 
-
 # bioconductor-structtoolbox
 
 name: bioconductor-structtoolbox

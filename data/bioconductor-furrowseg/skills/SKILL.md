@@ -4,7 +4,6 @@ description: This tool performs automated image segmentation and feature extract
 homepage: https://bioconductor.org/packages/release/data/experiment/html/furrowSeg.html
 ---
 
-
 # bioconductor-furrowseg
 
 name: bioconductor-furrowseg

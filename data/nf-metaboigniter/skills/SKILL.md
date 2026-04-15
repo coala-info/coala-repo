@@ -4,6 +4,8 @@ description: This pipeline ingests raw mass spectrometry data in mzML format to 
 homepage: https://github.com/nf-core/metaboigniter
 ---
 
+# metaboigniter
+
 ## Overview
 nf-core/metaboigniter is a bioinformatics pipeline designed for the pre-processing and analysis of mass spectrometry-based metabolomics data. It handles raw mzML files to extract biological insights through a series of refinement steps including feature detection, adduct detection, and alignment to match features across different samples.
 

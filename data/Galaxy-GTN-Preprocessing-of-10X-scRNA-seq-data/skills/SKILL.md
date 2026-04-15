@@ -1,10 +1,12 @@
 ---
 name: gtn-preprocessing-of-10x-scrna-seq-data
-description: "This single-cell transcriptomics workflow processes raw 10X Genomics FASTQ files using RNA STARSolo for alignment and DropletUtils for barcode processing and quality control. Use this skill when you need to transform raw sequencing reads from 10X Chromium platforms into a filtered gene expression matrix while accounting for cell barcodes and unique molecular identifiers."
-homepage: https://workflowhub.eu/workflows/1546
+description: This single-cell transcriptomics workflow processes raw 10X Genomics FASTQ files using RNA STARSolo for alignment and DropletUtils for barcode processing and quality control. Use this skill when you need to transform raw sequencing reads from 10X Chromium platforms into a filtered gene expression matrix while accounting for cell barcodes and unique molecular identifiers.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN - Preprocessing of 10X scRNA-seq data
+# gtn-preprocessing-of-10x-scrna-seq-data
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The moanin package provides a framework for analyzing time-course t
 homepage: https://bioconductor.org/packages/release/bioc/html/moanin.html
 ---
 
-
 # bioconductor-moanin
 
 ## Overview

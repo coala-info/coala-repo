@@ -2,8 +2,9 @@
 name: ucsc-twobitmask
 description: ucsc-twobitmask applies hard or soft masking to DNA sequences in .2bit files based on provided genomic coordinates. Use when user asks to apply hard or soft masking to DNA sequences, generate masked genome versions, hard mask specific regions, soft mask specific regions, or add new masked regions to an existing .2bit file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-twobitmask:482--h0b57e2e_0"
 ---
-
 
 # ucsc-twobitmask
 

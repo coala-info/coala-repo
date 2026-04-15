@@ -4,7 +4,6 @@ description: The txrevise package decomposes complex transcript models into inde
 homepage: https://cran.r-project.org/web/packages/txrevise/index.html
 ---
 
-
 # r-txrevise
 
 ## Overview

@@ -4,7 +4,6 @@ description: ADaCGH2 provides parallelized implementations of segmentation algor
 homepage: https://bioconductor.org/packages/release/bioc/html/ADaCGH2.html
 ---
 
-
 # bioconductor-adacgh2
 
 ## Overview

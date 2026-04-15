@@ -4,7 +4,6 @@ description: The biobroom package converts Bioconductor S4 objects into tidy dat
 homepage: https://bioconductor.org/packages/release/bioc/html/biobroom.html
 ---
 
-
 # bioconductor-biobroom
 
 ## Overview

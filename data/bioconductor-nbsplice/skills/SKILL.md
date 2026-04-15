@@ -4,7 +4,6 @@ description: NBSplice detects differential splicing by modeling isoform expressi
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NBSplice.html
 ---
 
-
 # bioconductor-nbsplice
 
 ## Overview

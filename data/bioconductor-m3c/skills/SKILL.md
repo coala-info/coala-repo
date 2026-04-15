@@ -4,7 +4,6 @@ description: Bioconductor-m3c performs Monte Carlo reference-based consensus clu
 homepage: https://bioconductor.org/packages/release/bioc/html/M3C.html
 ---
 
-
 # bioconductor-m3c
 
 name: bioconductor-m3c

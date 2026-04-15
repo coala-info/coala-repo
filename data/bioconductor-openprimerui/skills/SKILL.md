@@ -4,7 +4,6 @@ description: This tool provides a Shiny-based graphical interface for designing,
 homepage: https://bioconductor.org/packages/3.8/bioc/html/openPrimeRui.html
 ---
 
-
 # bioconductor-openprimerui
 
 name: bioconductor-openprimerui

@@ -1,10 +1,12 @@
 ---
 name: classification-lsvc
-description: "This machine learning workflow utilizes Linear Support Vector Machines to classify tabular data from training and test sets while generating detailed performance plots. Use this skill when you need to develop a robust classification model for biological or clinical datasets and require visual validation of model sensitivity and specificity."
-homepage: https://workflowhub.eu/workflows/1592
+description: This machine learning workflow utilizes Linear Support Vector Machines to classify tabular data from training and test sets while generating detailed performance plots. Use this skill when you need to develop a robust classification model for biological or clinical datasets and require visual validation of model sensitivity and specificity.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Classification LSVC
+# classification-lsvc
 
 ## Overview
 

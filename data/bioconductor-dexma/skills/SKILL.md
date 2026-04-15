@@ -4,7 +4,6 @@ description: The DExMA package performs gene expression meta-analysis by integra
 homepage: https://bioconductor.org/packages/release/bioc/html/DExMA.html
 ---
 
-
 # bioconductor-dexma
 
 ## Overview

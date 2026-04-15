@@ -1,10 +1,12 @@
 ---
 name: ludwig-image-recognition-model-mnist
-description: "This Galaxy workflow utilizes the Ludwig Experiment tool to train and evaluate a deep learning image classifier using a configuration file, a CSV dataset, and a ZIP archive of MNIST images. Use this skill when you need to perform automated machine learning for handwritten digit recognition or benchmark image classification models using the MNIST dataset."
-homepage: https://workflowhub.eu/workflows/1614
+description: This Galaxy workflow utilizes the Ludwig Experiment tool to train and evaluate a deep learning image classifier using a configuration file, a CSV dataset, and a ZIP archive of MNIST images. Use this skill when you need to perform automated machine learning for handwritten digit recognition or benchmark image classification models using the MNIST dataset.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Ludwig - Image recognition model - MNIST
+# ludwig-image-recognition-model-mnist
 
 ## Overview
 

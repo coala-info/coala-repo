@@ -1,9 +1,10 @@
 ---
 name: expat
-description: "Expat provides a high-performance, event-based XML SAX parser for Node.js that processes documents as streams. Use when user asks to parse XML efficiently, handle large XML files using streams, or process XML tags and attributes through event callbacks."
+description: Expat provides a high-performance, event-based XML SAX parser for Node.js that processes documents as streams. Use when user asks to parse XML efficiently, handle large XML files using streams, or process XML tags and attributes through event callbacks.
 homepage: https://github.com/xmppo/node-expat
+metadata:
+  docker_image: "quay.io/biocontainers/expat:2.1.0--0"
 ---
-
 
 # expat
 

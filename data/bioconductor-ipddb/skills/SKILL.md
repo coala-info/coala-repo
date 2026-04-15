@@ -4,7 +4,6 @@ description: The bioconductor-ipddb package provides an SQLite-based interface t
 homepage: https://bioconductor.org/packages/release/bioc/html/ipdDb.html
 ---
 
-
 # bioconductor-ipddb
 
 ## Overview

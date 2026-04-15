@@ -4,7 +4,6 @@ description: This package calculates phenotypic distances and performs functiona
 homepage: https://bioconductor.org/packages/3.6/bioc/html/phenoDist.html
 ---
 
-
 # bioconductor-phenodist
 
 name: bioconductor-phenodist

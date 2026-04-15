@@ -4,7 +4,6 @@ description: This package provides the Chip Description File environment for the
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95dcdf.html
 ---
 
-
 # bioconductor-hgu95dcdf
 
 name: bioconductor-hgu95dcdf

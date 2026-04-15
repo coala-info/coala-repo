@@ -2,8 +2,9 @@
 name: edta
 description: EDTA is a comprehensive pipeline designed to identify, classify, and annotate transposable elements in genome assemblies. Use when user asks to annotate transposable elements, create a curated TE library, or mask repetitive sequences in a genome.
 homepage: https://github.com/oushujun/EDTA
+metadata:
+  docker_image: "quay.io/biocontainers/edta:2.2.2--hdfd78af_1"
 ---
-
 
 # edta
 

@@ -2,8 +2,9 @@
 name: latch
 description: Latch is a Python framework for building bioinformatics workflows and deploying them to cloud infrastructure with automatically generated no-code interfaces. Use when user asks to initialize a bioinformatics project, register workflows to the cloud, or create graphical interfaces for non-technical collaborators.
 homepage: https://pypi.org/project/latch/
+metadata:
+  docker_image: "quay.io/biocontainers/latch:2.67.23--pyhdfd78af_0"
 ---
-
 
 # latch
 

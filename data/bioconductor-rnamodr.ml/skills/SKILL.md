@@ -4,7 +4,6 @@ description: This tool detects post-transcriptional RNA modifications by integra
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAmodR.ML.html
 ---
 
-
 # bioconductor-rnamodr.ml
 
 name: bioconductor-rnamodr.ml

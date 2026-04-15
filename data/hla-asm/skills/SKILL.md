@@ -2,8 +2,9 @@
 name: hla-asm
 description: The hla-asm tool performs high-resolution HLA typing and exon identification from assembled genomic data. Use when user asks to perform HLA typing on a FASTA assembly, identify HLA exon coordinates, or extract HLA sequences from de novo assemblies.
 homepage: https://github.com/DiltheyLab/HLA-LA/blob/master/HLA-ASM.md
+metadata:
+  docker_image: "quay.io/biocontainers/hla-asm:1.0.1--pl5321hdfd78af_0"
 ---
-
 
 # hla-asm
 

@@ -4,7 +4,6 @@ description: This tool calculates F-statistics for genomic features using nested
 homepage: https://bioconductor.org/packages/release/bioc/html/derfinderHelper.html
 ---
 
-
 # bioconductor-derfinderhelper
 
 name: bioconductor-derfinderhelper

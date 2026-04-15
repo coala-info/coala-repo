@@ -4,7 +4,6 @@ description: This tool performs probabilistic analysis of Affymetrix GeneChip da
 homepage: https://bioconductor.org/packages/release/bioc/html/puma.html
 ---
 
-
 # bioconductor-puma
 
 name: bioconductor-puma

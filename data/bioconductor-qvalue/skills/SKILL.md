@@ -4,7 +4,6 @@ description: This tool estimates false discovery rates and calculates q-values f
 homepage: https://bioconductor.org/packages/release/bioc/html/qvalue.html
 ---
 
-
 # bioconductor-qvalue
 
 name: bioconductor-qvalue

@@ -4,7 +4,6 @@ description: BioNetStat performs statistical analysis and comparison of biologic
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BioNetStat.html
 ---
 
-
 # bioconductor-bionetstat
 
 name: bioconductor-bionetstat

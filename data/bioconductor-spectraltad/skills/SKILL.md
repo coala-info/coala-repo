@@ -4,7 +4,6 @@ description: SpectralTAD identifies Topologically Associated Domains from Hi-C c
 homepage: https://bioconductor.org/packages/release/bioc/html/SpectralTAD.html
 ---
 
-
 # bioconductor-spectraltad
 
 name: bioconductor-spectraltad

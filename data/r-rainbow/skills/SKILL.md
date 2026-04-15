@@ -4,7 +4,6 @@ description: The rainbow package provides tools for functional data analysis, fo
 homepage: https://cloud.r-project.org/web/packages/rainbow/index.html
 ---
 
-
 # r-rainbow
 
 ## Overview

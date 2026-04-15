@@ -4,7 +4,6 @@ description: IsoformSwitchAnalyzeR identifies and analyzes isoform switches with
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoformSwitchAnalyzeR.html
 ---
 
-
 # bioconductor-isoformswitchanalyzer
 
 name: bioconductor-isoformswitchanalyzer

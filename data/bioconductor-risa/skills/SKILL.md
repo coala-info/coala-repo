@@ -4,7 +4,6 @@ description: This tool processes Investigation/Study/Assay (ISA-Tab) metadata fi
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Risa.html
 ---
 
-
 # bioconductor-risa
 
 name: bioconductor-risa

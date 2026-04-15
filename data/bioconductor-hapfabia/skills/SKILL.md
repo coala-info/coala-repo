@@ -4,7 +4,6 @@ description: This tool identifies short identity by descent segments in large se
 homepage: https://bioconductor.org/packages/release/bioc/html/hapFabia.html
 ---
 
-
 # bioconductor-hapfabia
 
 name: bioconductor-hapfabia

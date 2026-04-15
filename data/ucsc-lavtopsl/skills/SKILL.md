@@ -2,8 +2,9 @@
 name: ucsc-lavtopsl
 description: The `lavToPsl` utility converts `.lav` alignment files, typically from blastz or lastz, into the `.psl` format. Use when user asks to 'convert alignment files to PSL', 'calculate alignment statistics', 'lift coordinates', or 'create custom tracks for genome visualization'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-lavtopsl:482--h0b57e2e_0"
 ---
-
 
 # ucsc-lavtopsl
 

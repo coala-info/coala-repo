@@ -2,8 +2,9 @@
 name: perl-date-manip
 description: This tool provides a comprehensive interface for parsing, manipulating, and performing arithmetic on complex date and time strings. Use when user asks to parse natural language dates, calculate business day offsets, determine time intervals, or compare timestamps.
 homepage: https://metacpan.org/pod/Date::Manip
+metadata:
+  docker_image: "quay.io/biocontainers/perl-date-manip:6.98--pl5321hdfd78af_0"
 ---
-
 
 # perl-date-manip
 

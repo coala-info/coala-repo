@@ -2,8 +2,9 @@
 name: svsolver
 description: The svsolver suite performs finite element Navier-Stokes simulations to generate detailed hemodynamic data from anatomical meshes and boundary conditions. Use when user asks to preprocess mesh files, execute parallel fluid flow simulations, or convert raw solver output into visualization formats like VTK.
 homepage: https://simtk.org/projects/simvascular/
+metadata:
+  docker_image: "quay.io/biocontainers/svsolver:2022.07.20--mpich_h7252990_0"
 ---
-
 
 # svsolver
 

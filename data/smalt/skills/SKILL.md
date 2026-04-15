@@ -2,6 +2,8 @@
 name: smalt
 description: Smalt is a minimalist template engine that renders environment variables into configuration files for containerized environments. Use when user asks to render templates, inject environment variables into config files, or scope variables using regex to avoid accidental collisions.
 homepage: https://github.com/roquie/smalte
+metadata:
+  docker_image: "biocontainers/smalt:v0.7.6-8-deb_cv1"
 ---
 
 # smalt

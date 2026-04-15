@@ -4,7 +4,6 @@ description: This tool performs unconstrained and constrained ordination of micr
 homepage: https://bioconductor.org/packages/release/bioc/html/RCM.html
 ---
 
-
 # bioconductor-rcm
 
 name: bioconductor-rcm

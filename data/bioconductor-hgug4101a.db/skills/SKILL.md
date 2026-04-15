@@ -4,7 +4,6 @@ description: This package provides annotation data for mapping Agilent Human Gen
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4101a.db.html
 ---
 
-
 # bioconductor-hgug4101a.db
 
 name: bioconductor-hgug4101a.db

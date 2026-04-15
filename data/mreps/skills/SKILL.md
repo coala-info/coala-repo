@@ -2,8 +2,9 @@
 name: mreps
 description: This tool identifies serial (tandem) repeats in DNA sequences. Use when user asks to find tandem repeats in DNA sequences.
 homepage: http://mreps.univ-mlv.fr/
+metadata:
+  docker_image: "quay.io/biocontainers/mreps:2.6.01--h7b50bb2_6"
 ---
-
 
 # mreps
 

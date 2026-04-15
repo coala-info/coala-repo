@@ -1,9 +1,10 @@
 ---
 name: dominate
-description: "Dominate provides a Pythonic API to programmatically generate HTML structures using classes and context managers. Use when user asks to create HTML documents in Python, generate dynamic markup without templates, or build DOM trees using Python logic."
+description: Dominate provides a Pythonic API to programmatically generate HTML structures using classes and context managers. Use when user asks to create HTML documents in Python, generate dynamic markup without templates, or build DOM trees using Python logic.
 homepage: https://github.com/Knio/dominate
+metadata:
+  docker_image: "quay.io/biocontainers/dominate:2.1.16--py36_0"
 ---
-
 
 # dominate
 

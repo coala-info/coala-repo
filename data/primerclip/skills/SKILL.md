@@ -2,8 +2,9 @@
 name: primerclip
 description: Primerclip trims primer sequences from aligned sequencing reads using genomic coordinates. Use when user asks to trim primers from SAM files, process Swift Biosciences Accel-Amplicon panels, or remove primer sequences based on genomic intervals.
 homepage: https://github.com/swiftbiosciences/primerclip
+metadata:
+  docker_image: "quay.io/biocontainers/primerclip:0.3.8--0"
 ---
-
 
 # primerclip
 

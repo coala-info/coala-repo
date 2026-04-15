@@ -4,7 +4,6 @@ description: This package provides annotation data and identifier mappings for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html
 ---
 
-
 # bioconductor-illuminahumanv2.db
 
 name: bioconductor-illuminahumanv2.db

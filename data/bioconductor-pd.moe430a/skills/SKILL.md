@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequences for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.moe430a.html
 ---
 
-
 # bioconductor-pd.moe430a
 
 name: bioconductor-pd.moe430a

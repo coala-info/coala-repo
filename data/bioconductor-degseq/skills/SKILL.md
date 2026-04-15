@@ -4,7 +4,6 @@ description: This tool identifies differentially expressed genes from RNA-seq da
 homepage: https://bioconductor.org/packages/release/bioc/html/DEGseq.html
 ---
 
-
 # bioconductor-degseq
 
 name: bioconductor-degseq

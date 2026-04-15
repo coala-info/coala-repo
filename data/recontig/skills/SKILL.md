@@ -1,7 +1,9 @@
 ---
 name: recontig
-description: "recontig translates chromosome and contig identifiers between different reference naming standards in genomic files. Use when user asks to convert contig names between UCSC, Ensembl, or NCBI formats, remap headers and records in VCF, BAM, or SAM files, or create custom contig mapping files."
+description: recontig translates chromosome and contig identifiers between different reference naming standards in genomic files. Use when user asks to convert contig names between UCSC, Ensembl, or NCBI formats, remap headers and records in VCF, BAM, or SAM files, or create custom contig mapping files.
 homepage: https://github.com/blachlylab/recontig
+metadata:
+  docker_image: "quay.io/biocontainers/recontig:1.5.0--h9ee0642_0"
 ---
 
 # recontig

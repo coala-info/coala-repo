@@ -2,8 +2,9 @@
 name: ucsc-fetchchromsizes
 description: This tool retrieves chromosome length information for a specified genome assembly from UCSC. Use when user asks to fetch chromosome sizes, get chromosome lengths, or retrieve genome assembly sizes.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fetchchromsizes:482--h0b57e2e_0"
 ---
-
 
 # ucsc-fetchchromsizes
 

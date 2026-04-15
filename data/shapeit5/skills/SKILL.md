@@ -2,8 +2,9 @@
 name: shapeit5
 description: SHAPEIT5 is a high-performance software suite designed for accurate haplotype estimation and phasing of common and rare variants in large-scale genomic cohorts. Use when user asks to phase common variants or SNP arrays, phase rare variants using a scaffolded approach, ligate phased genomic chunks, or calculate switch error rates for validation.
 homepage: https://odelaneau.github.io/shapeit5/
+metadata:
+  docker_image: "quay.io/biocontainers/shapeit5:5.1.1--h34261f4_2"
 ---
-
 
 # shapeit5
 

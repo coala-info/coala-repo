@@ -4,7 +4,6 @@ description: Odilia is a high-performance, open-source screen reader for *nix de
 homepage: https://github.com/odilia-app/odilia
 ---
 
-
 # odil
 
 ## Overview

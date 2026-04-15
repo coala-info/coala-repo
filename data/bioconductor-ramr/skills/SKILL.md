@@ -4,7 +4,6 @@ description: This tool detects rare aberrantly methylated regions or epimutation
 homepage: https://bioconductor.org/packages/release/bioc/html/ramr.html
 ---
 
-
 # bioconductor-ramr
 
 name: bioconductor-ramr

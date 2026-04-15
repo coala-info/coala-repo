@@ -2,8 +2,9 @@
 name: perl-atlas-modules
 description: The perl-atlas-modules package provides a suite of Perl classes and functions for processing transcriptomics data within the EMBL-EBI Expression Atlas production pipeline. Use when user asks to parse MAGE-TAB files, interface with Atlas databases, validate experiment types, or configure the Atlas metadata environment.
 homepage: https://github.com/ebi-gene-expression-group/perl-atlas-modules
+metadata:
+  docker_image: "quay.io/biocontainers/perl-atlas-modules:0.3.1--pl5262hdbdd923_5"
 ---
-
 
 # perl-atlas-modules
 

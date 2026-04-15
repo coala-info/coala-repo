@@ -4,7 +4,6 @@ description: This tool analyzes replicated microarray time course data using mul
 homepage: https://bioconductor.org/packages/release/bioc/html/timecourse.html
 ---
 
-
 # bioconductor-timecourse
 
 name: bioconductor-timecourse

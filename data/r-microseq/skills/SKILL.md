@@ -4,7 +4,6 @@ description: This tool provides basic biological sequence handling in R by stori
 homepage: https://cloud.r-project.org/web/packages/microseq/index.html
 ---
 
-
 # r-microseq
 
 name: r-microseq

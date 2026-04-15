@@ -4,7 +4,6 @@ description: This package provides the masked genome sequences for Rattus norveg
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Rnorvegicus.UCSC.rn5.masked.html
 ---
 
-
 # bioconductor-bsgenome.rnorvegicus.ucsc.rn5.masked
 
 ## Overview

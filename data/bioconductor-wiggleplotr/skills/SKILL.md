@@ -4,7 +4,6 @@ description: This tool visualizes genomic read coverage from BigWig files alongs
 homepage: https://bioconductor.org/packages/release/bioc/html/wiggleplotr.html
 ---
 
-
 # bioconductor-wiggleplotr
 
 name: bioconductor-wiggleplotr

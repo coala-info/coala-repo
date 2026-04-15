@@ -1,9 +1,10 @@
 ---
 name: igdtools
-description: "This tool converts VCF files to the Indexable Genotype Data (IGD) format and processes IGD files. Use when user asks to convert VCF to IGD, extract allele frequencies, view variant statistics, restrict variants by range or frequency, or filter samples."
+description: This tool converts VCF files to the Indexable Genotype Data (IGD) format and processes IGD files. Use when user asks to convert VCF to IGD, extract allele frequencies, view variant statistics, restrict variants by range or frequency, or filter samples.
 homepage: https://aprilweilab.github.io/
+metadata:
+  docker_image: "quay.io/biocontainers/igdtools:2.6--py312h5e9d817_0"
 ---
-
 
 # igdtools
 

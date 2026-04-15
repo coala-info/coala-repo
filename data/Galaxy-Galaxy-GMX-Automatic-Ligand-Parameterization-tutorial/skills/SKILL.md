@@ -1,10 +1,12 @@
 ---
 name: gmx-ligand-parameterization
-description: "This Galaxy workflow automates the generation of GROMACS topology and coordinate files for small molecules by fetching a ligand, adding hydrogens, performing energy minimization with Open Babel, and calculating force field parameters using ACPYPE. Use this skill when you need to prepare a ligand for molecular dynamics simulations by creating accurate force field parameters and optimized structures compatible with the GROMACS engine."
-homepage: https://workflowhub.eu/workflows/294
+description: This Galaxy workflow automates the generation of GROMACS topology and coordinate files for small molecules by fetching a ligand, adding hydrogens, performing energy minimization with Open Babel, and calculating force field parameters using ACPYPE. Use this skill when you need to prepare a ligand for molecular dynamics simulations by creating accurate force field parameters and optimized structures compatible with the GROMACS engine.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# GMX ligand parameterization
+# gmx-ligand-parameterization
 
 ## Overview
 

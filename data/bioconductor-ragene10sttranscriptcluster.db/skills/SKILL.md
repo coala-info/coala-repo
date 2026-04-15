@@ -4,7 +4,6 @@ description: This package provides biological annotations for the Affymetrix Rat
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene10sttranscriptcluster.db.html
 ---
 
-
 # bioconductor-ragene10sttranscriptcluster.db
 
 ## Overview

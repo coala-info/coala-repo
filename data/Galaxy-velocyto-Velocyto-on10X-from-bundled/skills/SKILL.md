@@ -1,10 +1,12 @@
 ---
 name: rna-velocity-analysis-velocyto-for-10x-data-from-bundled-out
-description: "This Galaxy workflow utilizes Velocyto to process 10X Genomics single-cell BAM files and bundled matrices, generating loom files that contain quantified spliced and unspliced transcript counts. Use this skill when you need to estimate the rate of gene expression change to predict the future state of individual cells and infer developmental trajectories from single-cell sequencing data."
-homepage: https://workflowhub.eu/workflows/715
+description: This Galaxy workflow utilizes Velocyto to process 10X Genomics single-cell BAM files and bundled matrices, generating loom files that contain quantified spliced and unspliced transcript counts. Use this skill when you need to estimate the rate of gene expression change to predict the future state of individual cells and infer developmental trajectories from single-cell sequencing data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA Velocity Analysis: Velocyto for 10X Data from Bundled Output
+# rna-velocity-analysis-velocyto-for-10x-data-from-bundled-out
 
 ## Overview
 

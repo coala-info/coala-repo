@@ -4,7 +4,6 @@ description: This package provides the full genome sequences for the Common Marm
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cjacchus.UCSC.calJac4.html
 ---
 
-
 # bioconductor-bsgenome.cjacchus.ucsc.caljac4
 
 name: bioconductor-bsgenome.cjacchus.ucsc.caljac4

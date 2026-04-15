@@ -4,7 +4,6 @@ description: The QuasR package provides an integrated workflow for preprocessing
 homepage: https://bioconductor.org/packages/release/bioc/html/QuasR.html
 ---
 
-
 # bioconductor-quasr
 
 name: bioconductor-quasr

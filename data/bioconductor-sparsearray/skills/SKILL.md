@@ -4,7 +4,6 @@ description: This tool provides a memory-efficient framework for representing an
 homepage: https://bioconductor.org/packages/release/bioc/html/SparseArray.html
 ---
 
-
 # bioconductor-sparsearray
 
 name: bioconductor-sparsearray

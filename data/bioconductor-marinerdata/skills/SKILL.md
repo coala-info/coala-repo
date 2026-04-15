@@ -4,7 +4,6 @@ description: This package provides curated Hi-C contact maps and chromatin loop 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/marinerData.html
 ---
 
-
 # bioconductor-marinerdata
 
 ## Overview

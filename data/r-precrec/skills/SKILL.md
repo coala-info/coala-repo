@@ -4,7 +4,6 @@ description: The r-precrec package calculates and visualizes Receiver Operator C
 homepage: https://cloud.r-project.org/web/packages/precrec/index.html
 ---
 
-
 # r-precrec
 
 ## Overview

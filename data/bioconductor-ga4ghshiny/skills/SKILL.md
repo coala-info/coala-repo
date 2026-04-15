@@ -4,7 +4,6 @@ description: GA4GHshiny provides a web-based user interface for exploring genomi
 homepage: https://bioconductor.org/packages/release/bioc/html/GA4GHshiny.html
 ---
 
-
 # bioconductor-ga4ghshiny
 
 ## Overview

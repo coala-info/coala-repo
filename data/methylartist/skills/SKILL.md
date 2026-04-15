@@ -2,6 +2,8 @@
 name: methylartist
 description: Methylartist is a toolkit for processing, aggregating, and visualizing modified base calls from long-read sequencing data. Use when user asks to convert raw methylation calls into SQLite databases, aggregate methylation levels over genomic features, or generate locus-specific and phased methylation plots.
 homepage: https://github.com/adamewing/methylartist
+metadata:
+  docker_image: "quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0"
 ---
 
 # methylartist

@@ -2,8 +2,9 @@
 name: perl-bio-tools-phylo-paml
 description: This tool provides a BioPerl interface for parsing and extracting structured data from PAML output files. Use when user asks to parse PAML results, extract dN/dS values, or convert PAML output into phylogenetic tree objects.
 homepage: https://metacpan.org/release/Bio-Tools-Phylo-PAML
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bio-tools-phylo-paml:1.7.3--pl526_0"
 ---
-
 
 # perl-bio-tools-phylo-paml
 

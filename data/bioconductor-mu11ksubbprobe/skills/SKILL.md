@@ -4,7 +4,6 @@ description: This package provides probe sequences and layout information for th
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubbprobe.html
 ---
 
-
 # bioconductor-mu11ksubbprobe
 
 name: bioconductor-mu11ksubbprobe

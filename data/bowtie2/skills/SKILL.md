@@ -1,7 +1,9 @@
 ---
 name: bowtie2
-description: "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. Use when user asks to build a genome index, align single-end or paired-end reads, perform local or end-to-end alignment, or optimize alignment performance for large datasets."
+description: Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. Use when user asks to build a genome index, align single-end or paired-end reads, perform local or end-to-end alignment, or optimize alignment performance for large datasets.
 homepage: https://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+metadata:
+  docker_image: "quay.io/biocontainers/bowtie2:2.5.4--h7071971_4"
 ---
 
 # bowtie2

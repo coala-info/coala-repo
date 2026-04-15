@@ -4,7 +4,6 @@ description: DegNorm corrects for transcript degradation bias in RNA-seq data by
 homepage: https://bioconductor.org/packages/release/bioc/html/DegNorm.html
 ---
 
-
 # bioconductor-degnorm
 
 name: bioconductor-degnorm

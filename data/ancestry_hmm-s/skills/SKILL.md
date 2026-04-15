@@ -2,8 +2,9 @@
 name: ancestry_hmm-s
 description: Ancestry_HMM-S detects selection in admixed populations by using a Hidden Markov Model to distinguish between neutral ancestry fluctuations and adaptive introgression. Use when user asks to identify loci under selection, quantify selective pressure in hybrid zones, or calculate likelihood ratios for specific selection coefficients.
 homepage: https://github.com/jesvedberg/Ancestry_HMM-S
+metadata:
+  docker_image: "quay.io/biocontainers/ancestry_hmm-s:0.9.0.2--h9948957_6"
 ---
-
 
 # ancestry_hmm-s
 

@@ -4,7 +4,6 @@ description: This package provides the full genome sequence for Arabidopsis lyra
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Alyrata.JGI.v1.html
 ---
 
-
 # bioconductor-bsgenome.alyrata.jgi.v1
 
 ## Overview

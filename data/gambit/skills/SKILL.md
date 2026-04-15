@@ -1,7 +1,9 @@
 ---
 name: gambit
-description: "GAMBIT rapidly classifies bacterial isolates by comparing genomic assemblies against a reference database using an efficient distance metric. Use when user asks to identify bacterial species, calculate genomic distance matrices, or construct hierarchical clustering trees from assemblies."
+description: GAMBIT rapidly classifies bacterial isolates by comparing genomic assemblies against a reference database using an efficient distance metric. Use when user asks to identify bacterial species, calculate genomic distance matrices, or construct hierarchical clustering trees from assemblies.
 homepage: https://github.com/jlumpe/gambit
+metadata:
+  docker_image: "quay.io/biocontainers/gambit:1.1.0--py39hbcbf7aa_2"
 ---
 
 # gambit

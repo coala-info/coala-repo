@@ -4,7 +4,6 @@ description: The nudge package identifies differentially expressed genes in micr
 homepage: https://bioconductor.org/packages/3.5/bioc/html/nudge.html
 ---
 
-
 # bioconductor-nudge
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool performs chromatin segmentation analysis by wrapping Chro
 homepage: https://bioconductor.org/packages/release/bioc/html/segmenter.html
 ---
 
-
 # bioconductor-segmenter
 
 name: bioconductor-segmenter

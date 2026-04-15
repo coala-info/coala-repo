@@ -2,8 +2,9 @@
 name: ucsc-psltochain
 description: `ucsc-psltochain` converts alignment data from PSL format to Chain format. Use when user asks to create liftOver files, generate syntenic nets, or visualize synteny.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-psltochain:482--h0b57e2e_0"
 ---
-
 
 # ucsc-psltochain
 

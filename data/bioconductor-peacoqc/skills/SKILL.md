@@ -4,7 +4,6 @@ description: PeacoQC performs automated quality control on flow and mass cytomet
 homepage: https://bioconductor.org/packages/release/bioc/html/PeacoQC.html
 ---
 
-
 # bioconductor-peacoqc
 
 name: bioconductor-peacoqc

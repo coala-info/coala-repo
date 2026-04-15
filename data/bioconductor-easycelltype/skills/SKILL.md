@@ -4,7 +4,6 @@ description: This tool automates cell type annotation for single-cell RNA-seq da
 homepage: https://bioconductor.org/packages/release/bioc/html/EasyCellType.html
 ---
 
-
 # bioconductor-easycelltype
 
 name: bioconductor-easycelltype

@@ -4,7 +4,6 @@ description: This tool identifies differentially expressed gene sets across phen
 homepage: https://bioconductor.org/packages/release/bioc/html/BAGS.html
 ---
 
-
 # bioconductor-bags
 
 name: bioconductor-bags

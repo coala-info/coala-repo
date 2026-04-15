@@ -4,7 +4,6 @@ description: This package provides annotation data and probe sequence mappings f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.bsubtilis.html
 ---
 
-
 # bioconductor-pd.bsubtilis
 
 ## Overview

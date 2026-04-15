@@ -1,9 +1,10 @@
 ---
 name: smaca
-description: "SMAca calculates the absolute copy number of the SMN1 gene from BAM files to identify SMA carriers and silent carriers. Use when user asks to identify SMA carriers, calculate SMN1 copy number, or detect silent carriers using sequence-specific variants."
+description: SMAca calculates the absolute copy number of the SMN1 gene from BAM files to identify SMA carriers and silent carriers. Use when user asks to identify SMA carriers, calculate SMN1 copy number, or detect silent carriers using sequence-specific variants.
 homepage: https://github.com/babelomics/SMAca
+metadata:
+  docker_image: "quay.io/biocontainers/smaca:1.2.3--py311hc1104ee_6"
 ---
-
 
 # smaca
 

@@ -4,7 +4,6 @@ description: bioconductor-ccfindr performs single-cell RNA-seq data analysis usi
 homepage: https://bioconductor.org/packages/release/bioc/html/ccfindR.html
 ---
 
-
 # bioconductor-ccfindr
 
 ## Overview

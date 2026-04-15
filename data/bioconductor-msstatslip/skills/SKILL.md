@@ -4,7 +4,6 @@ description: This tool performs preprocessing, summarization, and differential a
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsLiP.html
 ---
 
-
 # bioconductor-msstatslip
 
 name: bioconductor-msstatslip

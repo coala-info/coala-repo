@@ -4,7 +4,6 @@ description: This package processes raw drug response data into standardized Mul
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRcore.html
 ---
 
-
 # bioconductor-gdrcore
 
 name: bioconductor-gdrcore

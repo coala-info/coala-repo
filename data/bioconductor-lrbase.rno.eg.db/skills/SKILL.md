@@ -4,7 +4,6 @@ description: This package provides ligand-receptor interaction data for Rattus n
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/LRBase.Rno.eg.db.html
 ---
 
-
 # bioconductor-lrbase.rno.eg.db
 
 ## Overview

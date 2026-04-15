@@ -2,6 +2,8 @@
 name: genometreetk
 description: genometreetk is a toolkit designed for the refinement, rooting, pruning, and decoration of phylogenomic trees. Use when user asks to root trees, prune specific taxa, decorate trees with metadata, or calculate bootstrap support values.
 homepage: http://pypi.python.org/pypi/genometreetk/
+metadata:
+  docker_image: "quay.io/biocontainers/genometreetk:0.1.6--py_2"
 ---
 
 # genometreetk

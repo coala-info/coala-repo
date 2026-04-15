@@ -4,7 +4,6 @@ description: This Bioconductor package provides platform design and annotation d
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.focus.html
 ---
 
-
 # bioconductor-pd.hg.focus
 
 name: bioconductor-pd.hg.focus

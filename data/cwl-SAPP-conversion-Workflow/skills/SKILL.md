@@ -1,9 +1,12 @@
 ---
 name: sapp-conversion-workflow
-description: "This CWL workflow utilizes the Semantic Annotation Platform with Provenance (SAPP) to convert genome annotations and functional data from EMBL, InterProScan, eggNOG-mapper, and KoFamScan into standardized RDF and HDT formats. Use this skill when you need to integrate disparate functional annotations into a unified, semantically enriched knowledge graph to facilitate complex biological queries and ensure data provenance."
-homepage: https://workflowhub.eu/workflows/1174
+description: This CWL workflow utilizes the Semantic Annotation Platform with Provenance (SAPP) to convert genome annotations and functional data from EMBL, InterProScan, eggNOG-mapper, and KoFamScan into standardized RDF and HDT formats. Use this skill when you need to integrate disparate functional annotations into a unified, semantically enriched knowledge graph to facilitate complex biological queries and ensure data provenance.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# SAPP conversion Workflow
+
+# sapp-conversion-workflow
 
 ## Overview
 

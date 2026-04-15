@@ -1,9 +1,10 @@
 ---
 name: abruijn
-description: "abruijn is a de novo assembler designed to generate high-quality contigs from long, noisy sequencing reads using a repeat graph approach. Use when user asks to perform de novo assembly of PacBio or Oxford Nanopore reads, assemble metagenomes, or resolve complex genomic repeats."
+description: abruijn is a de novo assembler designed to generate high-quality contigs from long, noisy sequencing reads using a repeat graph approach. Use when user asks to perform de novo assembly of PacBio or Oxford Nanopore reads, assemble metagenomes, or resolve complex genomic repeats.
 homepage: https://github.com/fenderglass/ABruijn/
+metadata:
+  docker_image: "quay.io/biocontainers/abruijn:2.1b--py27_0"
 ---
-
 
 # abruijn
 

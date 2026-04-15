@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation maps for translating 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hs25kresogen.db.html
 ---
 
-
 # bioconductor-hs25kresogen.db
 
 ## Overview

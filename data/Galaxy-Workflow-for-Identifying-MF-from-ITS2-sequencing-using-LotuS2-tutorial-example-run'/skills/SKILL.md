@@ -1,10 +1,12 @@
 ---
 name: workflow-for-identifying-mf-from-its2-sequencing-using-lotus
-description: "This Galaxy workflow processes paired-end ITS2 sequencing data, mapping files, and configuration options using the LotuS2 tool to identify fungal taxa. Use this skill when you need to characterize fungal community composition and diversity from environmental samples through high-throughput sequence analysis."
-homepage: https://workflowhub.eu/workflows/1460
+description: This Galaxy workflow processes paired-end ITS2 sequencing data, mapping files, and configuration options using the LotuS2 tool to identify fungal taxa. Use this skill when you need to characterize fungal community composition and diversity from environmental samples through high-throughput sequence analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow for Identifying MF from ITS2 sequencing using LotuS2 - tutorial example run'
+# workflow-for-identifying-mf-from-its2-sequencing-using-lotus
 
 ## Overview
 

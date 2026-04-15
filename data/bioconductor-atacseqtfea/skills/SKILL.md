@@ -4,7 +4,6 @@ description: This package identifies differential transcription factor activity 
 homepage: https://bioconductor.org/packages/release/bioc/html/ATACseqTFEA.html
 ---
 
-
 # bioconductor-atacseqtfea
 
 ## Overview

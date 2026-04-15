@@ -4,7 +4,6 @@ description: The GRaNIE package reconstructs enhancer-mediated gene regulatory n
 homepage: https://bioconductor.org/packages/release/bioc/html/GRaNIE.html
 ---
 
-
 # bioconductor-granie
 
 name: bioconductor-granie

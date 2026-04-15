@@ -4,7 +4,6 @@ description: This package provides example datasets and standardized workflows f
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CardinalWorkflows.html
 ---
 
-
 # bioconductor-cardinalworkflows
 
 ## Overview

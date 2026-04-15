@@ -4,7 +4,6 @@ description: bioconductor-proteasy maps peptide termini to known protease cleava
 homepage: https://bioconductor.org/packages/3.16/bioc/html/proteasy.html
 ---
 
-
 # bioconductor-proteasy
 
 name: bioconductor-proteasy

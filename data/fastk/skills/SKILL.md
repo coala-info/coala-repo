@@ -2,6 +2,8 @@
 name: fastk
 description: FastK is a high-performance k-mer counter that generates histograms, sorted k-mer tables, and sequence profiles for high-fidelity sequencing datasets. Use when user asks to count k-mers, generate k-mer frequency histograms, create sequence profiles, or perform set operations on k-mer tables.
 homepage: https://github.com/thegenemyers/FASTK
+metadata:
+  docker_image: "quay.io/biocontainers/fastk:1.2--h71df26d_1"
 ---
 
 # fastk

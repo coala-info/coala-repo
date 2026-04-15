@@ -2,8 +2,9 @@
 name: palikiss
 description: Palikiss performs comparative RNA secondary structure prediction and pseudoknot detection using multiple sequence alignments. Use when user asks to predict consensus RNA structures, identify pseudoknots in sequence alignments, or analyze structural motifs across multiple RNA sequences.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/palikiss
+metadata:
+  docker_image: "quay.io/biocontainers/palikiss:1.1.0--pl5321h9948957_2"
 ---
-
 
 # palikiss
 

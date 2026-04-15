@@ -1,10 +1,12 @@
 ---
 name: locked-combining-single-cell-datasets-after-pre-processing
-description: "This single-cell RNA-seq workflow integrates seven pre-processed sample datasets into a unified AnnData object using AnnData manipulation and inspection tools. Use this skill when you need to merge multiple individual scRNA-seq samples into a single batched dataset for downstream comparative analysis and cell-type identification across different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1543
+description: This single-cell RNA-seq workflow integrates seven pre-processed sample datasets into a unified AnnData object using AnnData manipulation and inspection tools. Use this skill when you need to merge multiple individual scRNA-seq samples into a single batched dataset for downstream comparative analysis and cell-type identification across different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# LOCKED | Combining single cell datasets after pre-processing
+# locked-combining-single-cell-datasets-after-pre-processing
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: bacphlip
 description: BACPHLIP predicts whether a bacteriophage genome follows a temperate or virulent lifestyle using a Random Forest classifier. Use when user asks to determine phage lifestyle, predict if a phage is lytic or lysogenic, or identify temperate-specific protein domains in a phage genome.
 homepage: https://github.com/adamhockenberry/bacphlip
+metadata:
+  docker_image: "quay.io/biocontainers/bacphlip:0.9.6--py_0"
 ---
-
 
 # bacphlip
 

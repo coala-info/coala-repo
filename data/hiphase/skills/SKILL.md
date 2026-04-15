@@ -1,9 +1,10 @@
 ---
 name: hiphase
-description: "Hiphase phases small, structural, and tandem repeat variants from PacBio HiFi reads. Use when user asks to phase variants, determine allelic phase of variants, or phase structural variants and short tandem repeats."
+description: Hiphase phases small, structural, and tandem repeat variants from PacBio HiFi reads. Use when user asks to phase variants, determine allelic phase of variants, or phase structural variants and short tandem repeats.
 homepage: https://github.com/PacificBiosciences/HiPhase
+metadata:
+  docker_image: "quay.io/biocontainers/hiphase:1.6.0--h9ee0642_0"
 ---
-
 
 # hiphase
 

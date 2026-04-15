@@ -4,7 +4,6 @@ description: This tool designs and optimizes DNA barcode combinations for multip
 homepage: https://bioconductor.org/packages/release/bioc/html/DNABarcodeCompatibility.html
 ---
 
-
 # bioconductor-dnabarcodecompatibility
 
 name: bioconductor-dnabarcodecompatibility

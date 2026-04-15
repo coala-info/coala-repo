@@ -1,9 +1,8 @@
 ---
 name: bioconductor-msmstests
-description: "This package performs statistical tests for identifying differentially expressed proteins in label-free LC-MS/MS experiments using spectral counts. Use when user asks to identify differentially expressed proteins from spectral count data, perform differential proteomics analysis using GLMs, or apply reproducibility filters to LC-MS/MS results."
+description: This package performs statistical tests for identifying differentially expressed proteins in label-free LC-MS/MS experiments using spectral counts. Use when user asks to identify differentially expressed proteins from spectral count data, perform differential proteomics analysis using GLMs, or apply reproducibility filters to LC-MS/MS results.
 homepage: https://bioconductor.org/packages/release/bioc/html/msmsTests.html
 ---
-
 
 # bioconductor-msmstests
 

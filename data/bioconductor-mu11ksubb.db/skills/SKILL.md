@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Murine 11K
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubb.db.html
 ---
 
-
 # bioconductor-mu11ksubb.db
 
 name: bioconductor-mu11ksubb.db

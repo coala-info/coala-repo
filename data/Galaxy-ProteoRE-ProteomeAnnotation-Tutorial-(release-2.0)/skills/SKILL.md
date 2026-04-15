@@ -1,10 +1,12 @@
 ---
 name: proteore-proteomeannotation-tutorial-release-20
-description: "This proteomics workflow processes protein lists from LC-MS/MS experiments using ID conversion, tissue-specific expression mapping from the Human Protein Atlas, and functional enrichment via Reactome and clusterProfiler. Use this skill when you need to annotate identified proteins with biological context, compare multiple proteomic datasets via Venn diagrams, or identify enriched pathways and gene ontology terms within a specific tissue profile."
-homepage: https://workflowhub.eu/workflows/1411
+description: This proteomics workflow processes protein lists from LC-MS/MS experiments using ID conversion, tissue-specific expression mapping from the Human Protein Atlas, and functional enrichment via Reactome and clusterProfiler. Use this skill when you need to annotate identified proteins with biological context, compare multiple proteomic datasets via Venn diagrams, or identify enriched pathways and gene ontology terms within a specific tissue profile.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# ProteoRE ProteomeAnnotation Tutorial (release 2.0)
+# proteore-proteomeannotation-tutorial-release-20
 
 ## Overview
 

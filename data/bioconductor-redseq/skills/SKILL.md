@@ -4,7 +4,6 @@ description: Bioconductor-redseq analyzes Restriction Enzyme Digestion sequencin
 homepage: https://bioconductor.org/packages/release/bioc/html/REDseq.html
 ---
 
-
 # bioconductor-redseq
 
 name: bioconductor-redseq

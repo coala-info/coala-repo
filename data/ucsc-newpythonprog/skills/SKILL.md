@@ -2,8 +2,9 @@
 name: ucsc-newpythonprog
 description: This tool generates new Python script templates. Use when user asks to generate a new Python script template or create a new Python script skeleton.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-newpythonprog:482--h0b57e2e_2"
 ---
-
 
 # ucsc-newpythonprog
 

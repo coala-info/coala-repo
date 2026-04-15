@@ -1,7 +1,9 @@
 ---
 name: merfishtools
-description: "merfishtools uses a Bayesian model to analyze MERFISH data for accurate transcript expression estimation and differential expression analysis. Use when user asks to estimate transcript expression from spatial readout data, identify differentially expressed genes between two conditions, or perform multi-condition expression analysis."
+description: merfishtools uses a Bayesian model to analyze MERFISH data for accurate transcript expression estimation and differential expression analysis. Use when user asks to estimate transcript expression from spatial readout data, identify differentially expressed genes between two conditions, or perform multi-condition expression analysis.
 homepage: https://merfishtools.github.io
+metadata:
+  docker_image: "quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3"
 ---
 
 # merfishtools

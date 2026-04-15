@@ -4,7 +4,6 @@ description: GeneRegionScan performs high-resolution, probe-level analysis of sp
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneRegionScan.html
 ---
 
-
 # bioconductor-generegionscan
 
 ## Overview

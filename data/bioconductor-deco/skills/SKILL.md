@@ -4,7 +4,6 @@ description: The deco package decomposes heterogeneity in large omic datasets to
 homepage: https://bioconductor.org/packages/3.9/bioc/html/deco.html
 ---
 
-
 # bioconductor-deco
 
 ## Overview

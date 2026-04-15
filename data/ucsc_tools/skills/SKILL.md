@@ -2,8 +2,9 @@
 name: ucsc_tools
 description: The ucsc_tools skill provides a structured workflow for interacting with UCSC Xena data hubs to search, filter, query, download, and prepare omics datasets. Use when user asks to generate a XenaHub object, filter datasets, query metadata, download data, prepare data for analysis, update Xena data hubs, or explore Xena metadata.
 homepage: https://github.com/ropensci/UCSCXenaTools
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0"
 ---
-
 
 # ucsc_tools
 

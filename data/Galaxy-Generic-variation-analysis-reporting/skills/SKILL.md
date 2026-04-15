@@ -1,10 +1,12 @@
 ---
 name: genetic-variation-analysis-reporting
-description: "This genetic variation analysis workflow processes VCF datasets using SnpSift and Datamash to generate filtered tabular reports and allele-frequency plots. Use this skill when you need to aggregate variant calling results from multiple samples into comprehensive reports to identify high-impact mutations and visualize allele frequency distributions across a population."
-homepage: https://workflowhub.eu/workflows/354
+description: This genetic variation analysis workflow processes VCF datasets using SnpSift and Datamash to generate filtered tabular reports and allele-frequency plots. Use this skill when you need to aggregate variant calling results from multiple samples into comprehensive reports to identify high-impact mutations and visualize allele frequency distributions across a population.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genetic variation analysis reporting
+# genetic-variation-analysis-reporting
 
 ## Overview
 

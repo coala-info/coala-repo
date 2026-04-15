@@ -1,10 +1,12 @@
 ---
 name: mass-spectrometry-gcms-with-metams
-description: "This untargeted metabolomics workflow processes GC-MS dataset collections and sample metadata using XCMS for peak picking and the metaMS R package for pseudo-spectra definition and feature extraction. Use this skill when you need to perform automated peak detection, alignment, and multivariate statistical analysis to identify metabolic differences between experimental groups in gas chromatography-mass spectrometry studies."
-homepage: https://workflowhub.eu/workflows/680
+description: This untargeted metabolomics workflow processes GC-MS dataset collections and sample metadata using XCMS for peak picking and the metaMS R package for pseudo-spectra definition and feature extraction. Use this skill when you need to perform automated peak detection, alignment, and multivariate statistical analysis to identify metabolic differences between experimental groups in gas chromatography-mass spectrometry studies.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mass spectrometry: GCMS with metaMS
+# mass-spectrometry-gcms-with-metams
 
 ## Overview
 

@@ -4,6 +4,8 @@ description: This pipeline retrieves metadata and raw FastQ files from public da
 homepage: https://github.com/nf-core/fetchngs
 ---
 
+# fetchngs
+
 ## Overview
 The pipeline simplifies the process of obtaining public sequencing data by resolving database identifiers to their experiment-level metadata and raw data links. It automates the retrieval of FastQ files and collates all associated metadata into a single, structured samplesheet, eliminating the need for manual data gathering from multiple web interfaces.
 

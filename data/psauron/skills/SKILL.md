@@ -1,9 +1,10 @@
 ---
 name: psauron
-description: "PSAURON uses recurrent neural networks to assess and score the likelihood that protein-coding gene annotations are genuine. Use when user asks to score protein-coding gene annotations, validate CDS or protein sequences, or filter gene predictions in non-model organisms."
+description: PSAURON uses recurrent neural networks to assess and score the likelihood that protein-coding gene annotations are genuine. Use when user asks to score protein-coding gene annotations, validate CDS or protein sequences, or filter gene predictions in non-model organisms.
 homepage: https://github.com/salzberg-lab/PSAURON
+metadata:
+  docker_image: "quay.io/biocontainers/psauron:1.1.0--pyhdfd78af_0"
 ---
-
 
 # psauron
 

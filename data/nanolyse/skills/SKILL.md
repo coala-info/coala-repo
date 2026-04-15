@@ -2,8 +2,9 @@
 name: nanolyse
 description: NanoLyse removes contaminant reads from Nanopore sequencing datasets by aligning them against a reference genome such as lambda phage. Use when user asks to decontaminate FASTQ data, remove lambda phage control reads, or filter reads against a custom contaminant reference.
 homepage: https://github.com/wdecoster/NanoLyse
+metadata:
+  docker_image: "quay.io/biocontainers/nanolyse:1.2.1--pyhdfd78af_0"
 ---
-
 
 # nanolyse
 

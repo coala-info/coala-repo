@@ -4,7 +4,6 @@ description: This package provides a curated subset of the MicroArray Quality Co
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/MAQCsubsetAFX.html
 ---
 
-
 # bioconductor-maqcsubsetafx
 
 name: bioconductor-maqcsubsetafx

@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix HG-U133A_t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u133a.tag.html
 ---
 
-
 # bioconductor-pd.hg.u133a.tag
 
 name: bioconductor-pd.hg.u133a.tag

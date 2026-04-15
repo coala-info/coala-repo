@@ -4,7 +4,6 @@ description: The sevenbridges package provides an R interface to interact progra
 homepage: https://bioconductor.org/packages/release/bioc/html/sevenbridges.html
 ---
 
-
 # bioconductor-sevenbridges
 
 name: bioconductor-sevenbridges

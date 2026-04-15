@@ -4,7 +4,6 @@ description: This package provides a SQLite interface to the JASPAR 2016 databas
 homepage: https://bioconductor.org/packages/release/data/experiment/html/JASPAR2016.html
 ---
 
-
 # bioconductor-jaspar2016
 
 ## Overview

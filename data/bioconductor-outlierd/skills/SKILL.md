@@ -4,7 +4,6 @@ description: This tool detects outliers in high-throughput biological data using
 homepage: https://bioconductor.org/packages/3.5/bioc/html/OutlierD.html
 ---
 
-
 # bioconductor-outlierd
 
 name: bioconductor-outlierd

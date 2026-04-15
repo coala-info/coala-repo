@@ -2,8 +2,9 @@
 name: lxml
 description: lxml provides a high-performance Pythonic interface for parsing, manipulating, and validating XML and HTML documents using the libxml2 and libxslt C libraries. Use when user asks to parse large XML files, perform XPath queries, execute XSLT transformations, sanitize HTML, or generate XML documents incrementally.
 homepage: https://github.com/lxml/lxml
+metadata:
+  docker_image: "quay.io/biocontainers/lxml:4.9.1"
 ---
-
 
 # lxml
 

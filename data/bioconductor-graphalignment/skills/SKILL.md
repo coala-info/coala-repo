@@ -4,7 +4,6 @@ description: This tool aligns two networks by considering both node similarity a
 homepage: https://bioconductor.org/packages/release/bioc/html/GraphAlignment.html
 ---
 
-
 # bioconductor-graphalignment
 
 name: bioconductor-graphalignment

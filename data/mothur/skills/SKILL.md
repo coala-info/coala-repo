@@ -2,6 +2,8 @@
 name: mothur
 description: mothur is a comprehensive bioinformatics suite used to process amplicon sequencing data and analyze microbial communities. Use when user asks to process 16S/18S/ITS rRNA gene sequences, align reads to reference databases, remove chimeras, assign taxonomy, or cluster sequences into operational taxonomic units.
 homepage: https://www.mothur.org
+metadata:
+  docker_image: "quay.io/biocontainers/mothur:1.48.5--h11ba690_0"
 ---
 
 # mothur

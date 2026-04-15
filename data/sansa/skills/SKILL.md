@@ -1,7 +1,9 @@
 ---
 name: sansa
-description: "Sansa is a high-performance tool for the functional and population-based annotation of structural variants. Use when user asks to annotate structural variants against reference databases, map variants to genomic features like genes or exons, identify gene fusion candidates, or mark duplicate variants in multi-sample files."
+description: Sansa is a high-performance tool for the functional and population-based annotation of structural variants. Use when user asks to annotate structural variants against reference databases, map variants to genomic features like genes or exons, identify gene fusion candidates, or mark duplicate variants in multi-sample files.
 homepage: https://github.com/dellytools/sansa
+metadata:
+  docker_image: "quay.io/biocontainers/sansa:0.2.5--h4d20210_0"
 ---
 
 # sansa

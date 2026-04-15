@@ -2,8 +2,9 @@
 name: biobox_add_taxid
 description: This tool adds a TaxID column to biobox-formatted files by mapping sequence identifiers to NCBI Taxonomy IDs using an external mapping file. Use when user asks to add taxonomic identifiers to biobox files, map BinIDs or ContigIDs to TaxIDs, or prepare metagenomics binning data for evaluation with CAMI Amber.
 homepage: https://github.com/SantaMcCloud/biobox_add_taxid
+metadata:
+  docker_image: "quay.io/biocontainers/biobox_add_taxid:1.2--pyh7e72e81_0"
 ---
-
 
 # biobox_add_taxid
 

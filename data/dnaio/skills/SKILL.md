@@ -1,9 +1,10 @@
 ---
 name: dnaio
-description: "dnaio is a Python library for high-speed parsing and writing of FASTA, FASTQ, and unmapped BAM files. Use when user asks to read or write genomic sequences, process paired-end sequencing data, or handle compressed sequence files."
+description: dnaio is a Python library for high-speed parsing and writing of FASTA, FASTQ, and unmapped BAM files. Use when user asks to read or write genomic sequences, process paired-end sequencing data, or handle compressed sequence files.
 homepage: https://github.com/marcelm/dnaio/
+metadata:
+  docker_image: "quay.io/biocontainers/dnaio:1.2.3--py313h031d066_0"
 ---
-
 
 # dnaio
 

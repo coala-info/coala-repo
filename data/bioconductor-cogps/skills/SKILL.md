@@ -4,7 +4,6 @@ description: The coGPS package identifies genes that exhibit outlier expression 
 homepage: https://bioconductor.org/packages/release/bioc/html/coGPS.html
 ---
 
-
 # bioconductor-cogps
 
 ## Overview

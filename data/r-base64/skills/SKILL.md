@@ -4,7 +4,6 @@ description: This tool encodes and decodes data to and from base64 format in R. 
 homepage: https://cloud.r-project.org/web/packages/base64/index.html
 ---
 
-
 # r-base64
 
 name: r-base64

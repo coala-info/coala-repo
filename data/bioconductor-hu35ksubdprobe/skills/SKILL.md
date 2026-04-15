@@ -4,7 +4,6 @@ description: This package provides probe sequence and layout data for the Affyme
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubdprobe.html
 ---
 
-
 # bioconductor-hu35ksubdprobe
 
 name: bioconductor-hu35ksubdprobe

@@ -4,7 +4,6 @@ description: This package provides documented workflows and data for the primary
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ccTutorial.html
 ---
 
-
 # bioconductor-cctutorial
 
 name: bioconductor-cctutorial

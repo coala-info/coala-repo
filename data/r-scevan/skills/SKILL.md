@@ -4,7 +4,6 @@ description: SCEVAN performs unsupervised analysis of single-cell RNA-seq data t
 homepage: https://cran.r-project.org/web/packages/scevan/index.html
 ---
 
-
 # r-scevan
 
 name: r-scevan

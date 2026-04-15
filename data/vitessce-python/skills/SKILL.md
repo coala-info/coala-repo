@@ -2,8 +2,9 @@
 name: vitessce-python
 description: `vitessce-python` is a Python library for creating interactive, linked-view dashboards for multimodal and spatially resolved single-cell experiments. Use when user asks to visualize single-cell spatial data, rapidly prototype dashboards, configure custom layouts, add specific data elements, visualize large point sets, optimize high-resolution data, or link multiple views.
 homepage: https://vitessce.io/
+metadata:
+  docker_image: "quay.io/biocontainers/vitessce-python:3.7.9--pyhdfd78af_0"
 ---
-
 
 # vitessce-python
 

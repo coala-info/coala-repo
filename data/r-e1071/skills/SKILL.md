@@ -4,7 +4,6 @@ description: The e1071 package provides a suite of statistical and machine learn
 homepage: https://cloud.r-project.org/web/packages/e1071/index.html
 ---
 
-
 # r-e1071
 
 ## Overview

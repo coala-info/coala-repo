@@ -2,8 +2,9 @@
 name: filechunkio
 description: Filechunkio creates a seekable, file-like object representing a specific chunk of an existing file without duplicating data on disk. Use when user asks to perform multipart uploads, slice large files without consuming extra disk space, or read specific byte ranges efficiently.
 homepage: https://github.com/fabiant7t/filechunkio
+metadata:
+  docker_image: "quay.io/biocontainers/filechunkio:1.6--py36_0"
 ---
-
 
 # filechunkio
 

@@ -2,8 +2,9 @@
 name: mawk
 description: mawk is an interpreter for the AWK programming language that processes text files based on patterns and rules. Use when user asks to process text files, extract data, or reformat text based on patterns and rules.
 homepage: https://www.gnu.org/software/gawk/
+metadata:
+  docker_image: "quay.io/biocontainers/mawk:1.3.4--h7b50bb2_11"
 ---
-
 
 # mawk
 

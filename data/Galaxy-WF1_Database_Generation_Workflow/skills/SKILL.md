@@ -1,10 +1,12 @@
 ---
 name: wf1_database_generation_workflow
-description: "This Galaxy workflow processes Human SwissProt, species-specific FASTA files, and MGF mass spectrometry data using FASTA Merge and MetaNovo to generate a compact, sample-specific protein database. Use this skill when you need to reduce the search space for metaproteomic analysis by filtering large protein databases down to the sequences most likely present in your specific clinical or biological samples."
-homepage: https://workflowhub.eu/workflows/1474
+description: This Galaxy workflow processes Human SwissProt, species-specific FASTA files, and MGF mass spectrometry data using FASTA Merge and MetaNovo to generate a compact, sample-specific protein database. Use this skill when you need to reduce the search space for metaproteomic analysis by filtering large protein databases down to the sequences most likely present in your specific clinical or biological samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF1_Database_Generation_Workflow
+# wf1_database_generation_workflow
 
 ## Overview
 

@@ -1,10 +1,12 @@
 ---
 name: workflow-for-running-a-fully-coupled-cesm-b1850-f19_g17
-description: "This climate modeling workflow executes a fully coupled Community Earth System Model simulation using B1850 configuration data and user namelists, followed by data extraction and xarray-based map plotting. Use this skill when you need to simulate pre-industrial climate conditions to analyze global atmospheric and oceanic interactions through coupled Earth system modeling."
-homepage: https://workflowhub.eu/workflows/364
+description: This climate modeling workflow executes a fully coupled Community Earth System Model simulation using B1850 configuration data and user namelists, followed by data extraction and xarray-based map plotting. Use this skill when you need to simulate pre-industrial climate conditions to analyze global atmospheric and oceanic interactions through coupled Earth system modeling.
+homepage: https://www.cesm.ucar.edu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow for running a fully coupled CESM B1850 f19_g17
+# workflow-for-running-a-fully-coupled-cesm-b1850-f19_g17
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: imsindel
 description: IMSindel detects intermediate-size insertions and deletions by performing de novo assembly on soft-clipped and unmapped reads. Use when user asks to call intermediate-size indels, analyze soft-clipped fragments, or identify structural variants in genomic data.
 homepage: https://github.com/NCGG-MGC/IMSindel
+metadata:
+  docker_image: "quay.io/biocontainers/imsindel:1.0.2--hdfd78af_1"
 ---
-
 
 # imsindel
 

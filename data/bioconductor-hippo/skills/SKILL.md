@@ -4,7 +4,6 @@ description: bioconductor-hippo performs hierarchical clustering and feature sel
 homepage: https://bioconductor.org/packages/release/bioc/html/HIPPO.html
 ---
 
-
 # bioconductor-hippo
 
 name: bioconductor-hippo

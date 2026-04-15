@@ -4,7 +4,6 @@ description: This package provides subsets of The Cancer Genome Atlas (TCGA) dat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TCGAWorkflowData.html
 ---
 
-
 # bioconductor-tcgaworkflowdata
 
 ## Overview

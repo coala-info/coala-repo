@@ -2,6 +2,8 @@
 name: refinem
 description: RefineM is a bioinformatics toolkit used to improve the quality of metagenome-assembled genomes by identifying and removing contaminating scaffolds. Use when user asks to refine genomic bins, identify outliers based on GC content or tetranucleotide signatures, and filter scaffolds using taxonomic profiling.
 homepage: http://pypi.python.org/pypi/refinem/
+metadata:
+  docker_image: "quay.io/biocontainers/refinem:0.1.2--pyh3252c3a_0"
 ---
 
 # refinem

@@ -4,7 +4,6 @@ description: This tool creates interactive Tree-and-Leaf visualizations for hier
 homepage: https://bioconductor.org/packages/release/bioc/html/TreeAndLeaf.html
 ---
 
-
 # bioconductor-treeandleaf
 
 name: bioconductor-treeandleaf

@@ -4,7 +4,6 @@ description: This package provides a multi-omic dataset and analysis scripts int
 homepage: https://bioconductor.org/packages/release/data/experiment/html/BloodCancerMultiOmics2017.html
 ---
 
-
 # bioconductor-bloodcancermultiomics2017
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool visualizes highly multiplexed imaging cytometry data by h
 homepage: https://bioconductor.org/packages/release/bioc/html/cytomapper.html
 ---
 
-
 # bioconductor-cytomapper
 
 name: bioconductor-cytomapper

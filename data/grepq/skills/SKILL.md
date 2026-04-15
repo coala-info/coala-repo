@@ -2,6 +2,8 @@
 name: grepq
 description: grepq is a high-performance utility for filtering and analyzing FASTQ files using optimized regex matching and parallel processing. Use when user asks to filter genomic sequences by patterns or IUPAC codes, apply quality control thresholds, convert FASTQ to FASTA, or export sequence data to SQLite databases.
 homepage: https://github.com/Rbfinch/grepq
+metadata:
+  docker_image: "quay.io/biocontainers/grepq:1.5.4--h6ce8773_0"
 ---
 
 # grepq

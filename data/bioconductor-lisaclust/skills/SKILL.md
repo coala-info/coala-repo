@@ -4,7 +4,6 @@ description: This tool identifies and visualizes regions of cell type colocaliza
 homepage: https://bioconductor.org/packages/release/bioc/html/lisaClust.html
 ---
 
-
 # bioconductor-lisaclust
 
 name: bioconductor-lisaclust

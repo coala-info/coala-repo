@@ -2,8 +2,9 @@
 name: pairsnp
 description: pairsnp rapidly generates pairwise SNP distance matrices from genomic alignments using sparse matrix libraries for improved performance. Use when user asks to calculate SNP distances between sequences, generate distance matrices from FASTA files, or identify k-nearest neighbors in large genomic datasets.
 homepage: https://github.com/gtonkinhill/pairsnp
+metadata:
+  docker_image: "quay.io/biocontainers/pairsnp:0.3.1--h077b44d_4"
 ---
-
 
 # pairsnp
 

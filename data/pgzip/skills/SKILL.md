@@ -2,8 +2,9 @@
 name: pgzip
 description: pgzip is a parallelized gzip implementation that increases throughput by distributing compression and decompression tasks across multiple CPU cores. Use when user asks to compress data in parallel, decompress files with read-ahead optimization, or tune gzip performance using custom concurrency settings.
 homepage: https://github.com/klauspost/pgzip
+metadata:
+  docker_image: "quay.io/biocontainers/pgzip:0.3.5"
 ---
-
 
 # pgzip
 

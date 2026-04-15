@@ -4,7 +4,6 @@ description: The transite package identifies RNA-binding proteins that modulate 
 homepage: https://bioconductor.org/packages/release/bioc/html/transite.html
 ---
 
-
 # bioconductor-transite
 
 ## Overview

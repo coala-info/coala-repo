@@ -4,7 +4,6 @@ description: CytoPipelineGUI provides interactive Shiny applications and program
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoPipelineGUI.html
 ---
 
-
 # bioconductor-cytopipelinegui
 
 ## Overview

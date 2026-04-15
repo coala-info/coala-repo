@@ -1,9 +1,10 @@
 ---
 name: mvicuna
-description: "mvicuna performs preprocessing and de novo assembly of viral sequencing data from populations with high mutation rates and contamination. Use when user asks to remove duplicate reads, trim quality or vector sequences, merge overlapping paired-end reads, or estimate sequence frequency for viral datasets."
+description: mvicuna performs preprocessing and de novo assembly of viral sequencing data from populations with high mutation rates and contamination. Use when user asks to remove duplicate reads, trim quality or vector sequences, merge overlapping paired-end reads, or estimate sequence frequency for viral datasets.
 homepage: https://github.com/broadinstitute/mvicuna
+metadata:
+  docker_image: "quay.io/biocontainers/mvicuna:1.0--h9f5acd7_8"
 ---
-
 
 # mvicuna
 

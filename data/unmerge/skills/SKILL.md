@@ -2,8 +2,9 @@
 name: unmerge
 description: The unmerge tool splits interlaced FASTQ files containing paired-end sequencing data into separate forward and reverse read files. Use when user asks to 'split interlaced FASTQ files', 'de-interlace paired-end reads', 'separate R1 and R2 reads', or 'subsample interlaced FASTQ files'.
 homepage: https://github.com/andvides/unmerge.git
+metadata:
+  docker_image: "quay.io/biocontainers/unmerge:1.0--h503566f_5"
 ---
-
 
 # unmerge
 

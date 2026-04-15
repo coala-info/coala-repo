@@ -4,7 +4,6 @@ description: This package provides mapping tables for Illumina Human Expression 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiHumanIDMapping.html
 ---
 
-
 # bioconductor-lumihumanidmapping
 
 ## Overview

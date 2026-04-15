@@ -4,7 +4,6 @@ description: CoverageView calculates and visualizes genomic read coverage depth 
 homepage: https://bioconductor.org/packages/release/bioc/html/CoverageView.html
 ---
 
-
 # bioconductor-coverageview
 
 ## Overview

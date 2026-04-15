@@ -4,7 +4,6 @@ description: This tool performs trajectory-based differential expression analysi
 homepage: https://bioconductor.org/packages/release/bioc/html/tradeSeq.html
 ---
 
-
 # bioconductor-tradeseq
 
 name: bioconductor-tradeseq

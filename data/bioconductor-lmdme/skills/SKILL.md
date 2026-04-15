@@ -4,7 +4,6 @@ description: This tool performs linear model decomposition and multivariate anal
 homepage: https://bioconductor.org/packages/release/bioc/html/lmdme.html
 ---
 
-
 # bioconductor-lmdme
 
 name: bioconductor-lmdme

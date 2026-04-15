@@ -4,7 +4,6 @@ description: This package provides tools for the analysis and visualization of h
 homepage: https://bioconductor.org/packages/release/bioc/html/HiTC.html
 ---
 
-
 # bioconductor-hitc
 
 name: bioconductor-hitc

@@ -4,7 +4,6 @@ description: This Bioconductor package provides SQLite-based annotation data for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HsAgilentDesign026652.db.html
 ---
 
-
 # bioconductor-hsagilentdesign026652.db
 
 name: bioconductor-hsagilentdesign026652.db

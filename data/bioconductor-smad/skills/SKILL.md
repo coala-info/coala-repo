@@ -4,7 +4,6 @@ description: The SMAD package scores protein-protein interactions from affinity 
 homepage: https://bioconductor.org/packages/release/bioc/html/SMAD.html
 ---
 
-
 # bioconductor-smad
 
 ## Overview

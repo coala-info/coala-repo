@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of microarray data with sma
 homepage: https://bioconductor.org/packages/release/bioc/html/LPE.html
 ---
 
-
 # bioconductor-lpe
 
 name: bioconductor-lpe

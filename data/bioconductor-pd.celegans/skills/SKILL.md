@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the C
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.celegans.html
 ---
 
-
 # bioconductor-pd.celegans
 
 name: bioconductor-pd.celegans

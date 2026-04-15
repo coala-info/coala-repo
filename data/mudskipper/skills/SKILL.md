@@ -1,7 +1,9 @@
 ---
 name: mudskipper
-description: "Mudskipper projects genomic alignments onto transcriptomic coordinates using a GTF annotation. Use when user asks to convert genomic BAM or SAM files to transcriptomic alignments, project bulk or single-cell RNA-seq reads to transcripts, or index a GTF for efficient alignment conversion."
+description: Mudskipper projects genomic alignments onto transcriptomic coordinates using a GTF annotation. Use when user asks to convert genomic BAM or SAM files to transcriptomic alignments, project bulk or single-cell RNA-seq reads to transcripts, or index a GTF for efficient alignment conversion.
 homepage: https://github.com/OceanGenomics/mudskipper
+metadata:
+  docker_image: "quay.io/biocontainers/mudskipper:0.1.0--h7d875b9_0"
 ---
 
 # mudskipper

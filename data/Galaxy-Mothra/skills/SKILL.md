@@ -1,10 +1,12 @@
 ---
 name: mothra-test
-description: "This Galaxy workflow processes an input dataset collection using the Mothra sdr_mothra tool to generate images and reports, then packages the results into an RO-Crate. Use this skill when you need to perform automated image analysis or data reduction on a collection of datasets and require standardized metadata packaging for research transparency."
-homepage: https://workflowhub.eu/workflows/413
+description: This Galaxy workflow processes an input dataset collection using the Mothra sdr_mothra tool to generate images and reports, then packages the results into an RO-Crate. Use this skill when you need to perform automated image analysis or data reduction on a collection of datasets and require standardized metadata packaging for research transparency.
+homepage: https://www.synthesys.info/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Mothra Test
+# mothra-test
 
 ## Overview
 

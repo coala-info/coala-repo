@@ -1,10 +1,12 @@
 ---
 name: rna-seq-analysis-paired-end-read-processing-and-quantificati
-description: "This workflow processes paired-end RNA-Seq FASTQ collections through quality filtering with fastp, STAR alignment, and gene quantification using featureCounts, StringTie, or Cufflinks. Use this skill when you need to transform raw transcriptomic sequencing data into normalized expression values, count tables, and genomic coverage tracks while accounting for library strandedness and adapter contamination."
-homepage: https://workflowhub.eu/workflows/401
+description: This workflow processes paired-end RNA-Seq FASTQ collections through quality filtering with fastp, STAR alignment, and gene quantification using featureCounts, StringTie, or Cufflinks. Use this skill when you need to transform raw transcriptomic sequencing data into normalized expression values, count tables, and genomic coverage tracks while accounting for library strandedness and adapter contamination.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# RNA-Seq Analysis: Paired-End Read Processing and Quantification
+# rna-seq-analysis-paired-end-read-processing-and-quantificati
 
 ## Overview
 

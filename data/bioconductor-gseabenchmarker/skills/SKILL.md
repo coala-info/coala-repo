@@ -4,7 +4,6 @@ description: This tool provides a framework for the reproducible evaluation and 
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEABenchmarkeR.html
 ---
 
-
 # bioconductor-gseabenchmarker
 
 name: bioconductor-gseabenchmarker

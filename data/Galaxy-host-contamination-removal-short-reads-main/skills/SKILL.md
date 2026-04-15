@@ -1,10 +1,12 @@
 ---
 name: host-or-contamination-removal-on-short-reads
-description: "This microbiome workflow processes paired-end Illumina short-reads by mapping them against a reference genome using Bowtie2 and aggregating mapping statistics with MultiQC to isolate non-host sequences. Use this skill when you need to filter out human or host DNA contamination from metagenomic samples to prevent biased results and reduce computational overhead in downstream microbiome analysis."
-homepage: https://workflowhub.eu/workflows/2026
+description: This microbiome workflow processes paired-end Illumina short-reads by mapping them against a reference genome using Bowtie2 and aggregating mapping statistics with MultiQC to isolate non-host sequences. Use this skill when you need to filter out human or host DNA contamination from metagenomic samples to prevent biased results and reduce computational overhead in downstream microbiome analysis.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Host or Contamination Removal on Short-Reads
+# host-or-contamination-removal-on-short-reads
 
 ## Overview
 

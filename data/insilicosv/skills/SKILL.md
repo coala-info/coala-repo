@@ -1,9 +1,10 @@
 ---
 name: insilicosv
-description: "insilicoSV is a framework for simulating simple and complex structural variants using a flexible grammatical notation. Use when user asks to simulate structural variants, define custom genomic rearrangements, or create synthetic benchmarks for bioinformatic pipelines."
+description: insilicoSV is a framework for simulating simple and complex structural variants using a flexible grammatical notation. Use when user asks to simulate structural variants, define custom genomic rearrangements, or create synthetic benchmarks for bioinformatic pipelines.
 homepage: https://github.com/PopicLab/insilicoSV
+metadata:
+  docker_image: "quay.io/biocontainers/insilicosv:0.0.6--pyhdfd78af_0"
 ---
-
 
 # insilicosv
 

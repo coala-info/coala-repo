@@ -2,6 +2,8 @@
 name: telr
 description: TELR identifies transposable element insertions in long-read sequencing data that are absent from a reference genome. Use when user asks to detect non-reference transposable elements, perform local reassembly of insertion loci, or estimate allele frequencies from PacBio and Oxford Nanopore reads.
 homepage: https://github.com/bergmanlab/telr
+metadata:
+  docker_image: "quay.io/biocontainers/telr:1.1--pyhdfd78af_0"
 ---
 
 # telr

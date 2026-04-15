@@ -4,7 +4,6 @@ description: The r-misc3d package provides functions for creating 3D plots, isos
 homepage: https://cloud.r-project.org/web/packages/misc3d/index.html
 ---
 
-
 # r-misc3d
 
 ## Overview

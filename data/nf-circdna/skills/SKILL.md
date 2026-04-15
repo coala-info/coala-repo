@@ -4,6 +4,8 @@ description: This pipeline identifies extrachromosomal circular DNAs (ecDNAs) fr
 homepage: https://github.com/nf-core/circdna
 ---
 
+# circdna
+
 ## Overview
 nf-core/circdna is a bioinformatics pipeline designed for the identification of extrachromosomal circular DNAs (ecDNAs) in eukaryotic cells. It addresses the biological challenge of detecting various circular DNA types, ranging from small eccDNAs and microDNAs to large, amplified circular amplicons, by integrating multiple specialized software tools into a single workflow.
 

@@ -4,7 +4,6 @@ description: Logolas is an R package for creating flexible sequence logos that v
 homepage: https://bioconductor.org/packages/3.8/bioc/html/Logolas.html
 ---
 
-
 # bioconductor-logolas
 
 ## Overview

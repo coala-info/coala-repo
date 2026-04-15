@@ -1,10 +1,12 @@
 ---
 name: fragment-based-virtual-screening-using-rdock-for-docking-and
-description: "This Galaxy workflow performs fragment-based virtual screening by docking candidate compounds into a protein receptor using rDock and scoring the resulting poses against reference fragments with SuCOS. Use this skill when you need to identify potential lead compounds for a protein target by prioritizing molecules that mimic the binding mode and chemical features of known fragment hits."
-homepage: https://workflowhub.eu/workflows/246
+description: This Galaxy workflow performs fragment-based virtual screening by docking candidate compounds into a protein receptor using rDock and scoring the resulting poses against reference fragments with SuCOS. Use this skill when you need to identify potential lead compounds for a protein target by prioritizing molecules that mimic the binding mode and chemical features of known fragment hits.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Fragment-based virtual screening using rDock for docking and SuCOS for pose scoring
+# fragment-based-virtual-screening-using-rdock-for-docking-and
 
 ## Overview
 

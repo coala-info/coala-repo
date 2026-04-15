@@ -4,7 +4,6 @@ description: This tool provides a backend for the Spectra package to enable dire
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendRawFileReader.html
 ---
 
-
 # bioconductor-msbackendrawfilereader
 
 ## Overview

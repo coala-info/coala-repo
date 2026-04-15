@@ -2,8 +2,9 @@
 name: perl-io-gzip
 description: This Perl extension provides a specialized I/O layer that allows standard filehandles to transparently compress or decompress Gzip data. Use when user asks to read or write Gzip files using native Perl filehandles, handle raw deflate streams, or implement transparent decompression for mixed file types.
 homepage: https://metacpan.org/pod/PerlIO::gzip
+metadata:
+  docker_image: "quay.io/biocontainers/perl-io-gzip:0.20--pl5.22.0_0"
 ---
-
 
 # perl-io-gzip
 

@@ -2,8 +2,9 @@
 name: biopet-extractadaptersfastqc
 description: This tool extracts adapter sequences from FastQC data files for use in downstream trimming applications. Use when user asks to extract adapter sequences from FastQC reports, convert FastQC adapter findings to FASTA format, or identify sequences for adapter trimming.
 homepage: https://github.com/biopet/extractadaptersfastqc
+metadata:
+  docker_image: "quay.io/biocontainers/biopet-extractadaptersfastqc:0.2--1"
 ---
-
 
 # biopet-extractadaptersfastqc
 

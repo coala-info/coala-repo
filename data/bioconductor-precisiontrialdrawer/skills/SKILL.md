@@ -4,7 +4,6 @@ description: This tool designs and analyzes NGS-based gene panels for cancer cli
 homepage: https://bioconductor.org/packages/3.9/bioc/html/PrecisionTrialDrawer.html
 ---
 
-
 # bioconductor-precisiontrialdrawer
 
 name: bioconductor-precisiontrialdrawer

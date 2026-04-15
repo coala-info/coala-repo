@@ -4,7 +4,6 @@ description: The INTACT package integrates transcriptome-wide association study 
 homepage: https://bioconductor.org/packages/release/bioc/html/INTACT.html
 ---
 
-
 # bioconductor-intact
 
 ## Overview

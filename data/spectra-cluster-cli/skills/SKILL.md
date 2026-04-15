@@ -1,9 +1,10 @@
 ---
 name: spectra-cluster-cli
-description: "spectra-cluster-cli clusters similar mass spectra from proteomics experiments to identify consistent patterns using the PRIDE Cluster algorithm. Use when user asks to cluster mass spectrometry data, group similar spectra, perform incremental clustering, or filter peaks for improved accuracy."
+description: spectra-cluster-cli clusters similar mass spectra from proteomics experiments to identify consistent patterns using the PRIDE Cluster algorithm. Use when user asks to cluster mass spectrometry data, group similar spectra, perform incremental clustering, or filter peaks for improved accuracy.
 homepage: https://github.com/spectra-cluster/spectra-cluster-cli
+metadata:
+  docker_image: "quay.io/biocontainers/spectra-cluster-cli:1.1.2--0"
 ---
-
 
 # spectra-cluster-cli
 

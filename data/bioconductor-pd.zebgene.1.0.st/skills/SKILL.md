@@ -4,7 +4,6 @@ description: This package provides platform design information and probe sequenc
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.zebgene.1.0.st.html
 ---
 
-
 # bioconductor-pd.zebgene.1.0.st
 
 ## Overview

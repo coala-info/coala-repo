@@ -4,7 +4,6 @@ description: The r-fastbaps package performs fast hierarchical Bayesian analysis
 homepage: https://cran.r-project.org/web/packages/fastbaps/index.html
 ---
 
-
 # r-fastbaps
 
 name: r-fastbaps

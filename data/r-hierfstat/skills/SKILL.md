@@ -4,7 +4,6 @@ description: The hierfstat package estimates hierarchical F-statistics and genet
 homepage: https://cloud.r-project.org/web/packages/hierfstat/index.html
 ---
 
-
 # r-hierfstat
 
 ## Overview

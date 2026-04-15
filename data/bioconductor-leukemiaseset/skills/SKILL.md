@@ -4,7 +4,6 @@ description: This package provides a curated ExpressionSet object containing pre
 homepage: https://bioconductor.org/packages/release/data/experiment/html/leukemiasEset.html
 ---
 
-
 # bioconductor-leukemiaseset
 
 ## Overview

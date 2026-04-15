@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-maker
-description: "This genomics workflow performs automated genome annotation by integrating EST, cDNA, and protein evidence using the Maker pipeline alongside gene predictors like Augustus and SNAP. Use this skill when you need to identify gene structures in a newly assembled genome and iteratively refine gene models through evidence-based training and quality assessment with BUSCO."
-homepage: https://workflowhub.eu/workflows/1504
+description: This genomics workflow performs automated genome annotation by integrating EST, cDNA, and protein evidence using the Maker pipeline alongside gene predictors like Augustus and SNAP. Use this skill when you need to identify gene structures in a newly assembled genome and iteratively refine gene models through evidence-based training and quality assessment with BUSCO.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome annotation with Maker
+# genome-annotation-with-maker
 
 ## Overview
 

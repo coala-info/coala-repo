@@ -4,7 +4,6 @@ description: The koinar package provides an R client for the Koina service to ge
 homepage: https://bioconductor.org/packages/release/bioc/html/koinar.html
 ---
 
-
 # bioconductor-koinar
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package provides a computational framework for the downstream 
 homepage: https://bioconductor.org/packages/release/bioc/html/circRNAprofiler.html
 ---
 
-
 # bioconductor-circrnaprofiler
 
 ## Overview

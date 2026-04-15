@@ -4,6 +4,8 @@ description: This pipeline processes 10x Genomics Visium spatial transcriptomics
 homepage: https://github.com/nf-core/spatialvi
 ---
 
+# spatialvi
+
 ## Overview
 nf-core/spatialvi is designed for the bioinformatics analysis of Visium spatial transcriptomics data from 10x Genomics. It addresses the need for a portable and reproducible workflow that can handle the transition from raw sequencing reads to downstream biological insights like tissue clustering and spatial gene autocorrelation.
 

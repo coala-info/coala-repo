@@ -2,8 +2,9 @@
 name: plotly
 description: Plotly creates interactive, browser-based visualizations and graphs from data using high-level or low-level interfaces. Use when user asks to create interactive charts, customize figure layouts, render plots in Jupyter notebooks, or export visualizations to static images and HTML files.
 homepage: https://github.com/plotly/plotly.py
+metadata:
+  docker_image: "quay.io/biocontainers/plotly:3.1.1"
 ---
-
 
 # plotly
 

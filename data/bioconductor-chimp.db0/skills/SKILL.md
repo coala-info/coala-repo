@@ -4,7 +4,6 @@ description: This package provides base annotation data and database schemas for
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chimp.db0.html
 ---
 
-
 # bioconductor-chimp.db0
 
 name: bioconductor-chimp.db0

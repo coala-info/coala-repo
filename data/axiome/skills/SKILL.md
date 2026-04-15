@@ -2,6 +2,8 @@
 name: axiome
 description: Axiome provides a unified API gateway and marketplace that translates natural language requests into executable calls across various services. Use when user asks to search for specific API capabilities, execute tasks through integrated agents, export tool schemas for LLMs, or run multi-step workflows.
 homepage: https://github.com/ujjwalredd/Axiomeer
+metadata:
+  docker_image: "quay.io/biocontainers/axiome:2.0.4--py27_0"
 ---
 
 # axiome

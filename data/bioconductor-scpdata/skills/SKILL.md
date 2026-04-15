@@ -4,7 +4,6 @@ description: This tool provides access to curated mass spectrometry-based single
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scpdata.html
 ---
 
-
 # bioconductor-scpdata
 
 name: bioconductor-scpdata

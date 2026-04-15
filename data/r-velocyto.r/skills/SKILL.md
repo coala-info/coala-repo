@@ -4,7 +4,6 @@ description: This tool estimates RNA velocity from single-cell RNA-seq data by m
 homepage: https://cran.r-project.org/web/packages/velocyto.r/index.html
 ---
 
-
 # r-velocyto.r
 
 ## Overview

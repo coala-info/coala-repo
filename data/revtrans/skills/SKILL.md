@@ -2,8 +2,9 @@
 name: revtrans
 description: Revtrans generates a codon-based nucleotide alignment by mapping DNA sequences onto a corresponding protein multiple sequence alignment. Use when user asks to create a codon-aware alignment, thread nucleotides through a protein alignment, or prepare sequences for dN/dS and selection analysis.
 homepage: http://www.cbs.dtu.dk/services/RevTrans-2.0/web/download.php
+metadata:
+  docker_image: "quay.io/biocontainers/revtrans:1.4--py27_0"
 ---
-
 
 # revtrans
 

@@ -2,8 +2,9 @@
 name: luigi
 description: Manages complex batch job pipelines by handling dependency resolution, workflow management, and visualization. Use when user asks to define, schedule, and monitor multi-step data processing workflows.
 homepage: https://github.com/spotify/luigi
+metadata:
+  docker_image: "biocontainers/luigi:phenomenal-v2.6.0_cv0.1.6"
 ---
-
 
 # luigi
 

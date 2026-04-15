@@ -4,6 +4,8 @@ description: This pipeline processes CLIP-seq FastQ files using genome FASTA and
 homepage: https://github.com/nf-core/clipseq
 ---
 
+# clipseq
+
 ## Overview
 nf-core/clipseq is a bioinformatics pipeline designed for the analysis of cross-linking and immunoprecipitation (CLIP) sequencing data. It addresses the challenge of identifying precise RNA-protein interaction sites by processing raw reads through a standardized workflow of quality control, mapping, and specialized peak calling.
 

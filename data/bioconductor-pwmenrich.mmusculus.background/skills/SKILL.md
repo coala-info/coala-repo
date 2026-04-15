@@ -4,7 +4,6 @@ description: This package provides pre-compiled genomic background models and mo
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PWMEnrich.Mmusculus.background.html
 ---
 
-
 # bioconductor-pwmenrich.mmusculus.background
 
 name: bioconductor-pwmenrich.mmusculus.background

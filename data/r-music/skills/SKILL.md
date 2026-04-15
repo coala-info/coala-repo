@@ -4,7 +4,6 @@ description: The r-music tool provides functions for music theory experimentatio
 homepage: https://cloud.r-project.org/web/packages/music/index.html
 ---
 
-
 # r-music
 
 name: r-music

@@ -1,9 +1,12 @@
 ---
 name: cosifer
-description: "This CWL workflow utilizes the COSIFER framework to reconstruct molecular interaction networks from high-throughput data by integrating multiple inference methods into a consensus model. Use this skill when you need to identify robust gene regulatory relationships or protein-protein interactions to characterize the molecular landscape of complex diseases like pediatric cancer."
-homepage: https://workflowhub.eu/workflows/118
+description: This CWL workflow utilizes the COSIFER framework to reconstruct molecular interaction networks from high-throughput data by integrating multiple inference methods into a consensus model. Use this skill when you need to identify robust gene regulatory relationships or protein-protein interactions to characterize the molecular landscape of complex diseases like pediatric cancer.
+homepage: https://ipc-project.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# COSIFER
+
+# cosifer
 
 ## Overview
 

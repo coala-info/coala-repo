@@ -4,7 +4,6 @@ description: This package provides expression and genotype data for 79 unrelated
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/yri1kgv.html
 ---
 
-
 # bioconductor-yri1kgv
 
 name: bioconductor-yri1kgv

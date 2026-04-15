@@ -4,6 +4,8 @@ description: nf-core/radseq performs variant calling for Restriction site-associ
 homepage: https://github.com/nf-core/radseq
 ---
 
+# radseq
+
 ## Overview
 nf-core/radseq is a bioinformatics pipeline designed for best-practice variant calling in Restriction site-associated DNA sequencing (RADseq) experiments. It addresses the challenge of identifying genetic markers in both model organisms with established genomes and non-model organisms where a reference must be constructed de novo.
 

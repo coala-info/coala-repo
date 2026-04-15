@@ -4,6 +4,8 @@ description: This pipeline performs automated quantitative analysis of DIA prote
 homepage: https://github.com/nf-core/diaproteomics
 ---
 
+# diaproteomics
+
 ## Overview
 The diaproteomics pipeline provides an automated solution for the quantitative processing of data-independent acquisition (DIA) proteomics mass spectrometry measurements. It addresses the complexity of DIA data by integrating targeted extraction, false discovery rate (FDR) estimation, and chromatogram alignment to ensure high-quality protein and peptide quantification.
 

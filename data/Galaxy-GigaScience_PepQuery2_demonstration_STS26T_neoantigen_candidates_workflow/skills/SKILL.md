@@ -1,10 +1,12 @@
 ---
 name: gigascience_pepquery2_demonstration_sts26t_neoantigen_candid
-description: "This proteomics workflow validates candidate neoantigens identified by FragPipe using mass spectrometry raw files, PepQuery2 for peptide-spectrum match scoring, and NCBI BLAST+ for sequence specificity analysis. Use this skill when you need to confirm the presence of predicted neoantigen sequences in experimental mass spectrometry data and verify their novelty against known human protein databases."
-homepage: https://workflowhub.eu/workflows/1791
+description: This proteomics workflow validates candidate neoantigens identified by FragPipe using mass spectrometry raw files, PepQuery2 for peptide-spectrum match scoring, and NCBI BLAST+ for sequence specificity analysis. Use this skill when you need to confirm the presence of predicted neoantigen sequences in experimental mass spectrometry data and verify their novelty against known human protein databases.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GigaScience_PepQuery2_demonstration_STS26T_neoantigen_candidates_workflow
+# gigascience_pepquery2_demonstration_sts26t_neoantigen_candid
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: brooklyn_plot
-description: "This tool identifies gene co-expression and transcriptional bursting patterns in single-cell RNA sequencing data. Use when user asks to analyze RNA-seq data for gene co-expression patterns and transcriptional bursting, or to generate Brooklyn plots."
+description: This tool identifies gene co-expression and transcriptional bursting patterns in single-cell RNA sequencing data. Use when user asks to analyze RNA-seq data for gene co-expression patterns and transcriptional bursting, or to generate Brooklyn plots.
 homepage: https://github.com/arunhpatil/brooklyn/
+metadata:
+  docker_image: "quay.io/biocontainers/brooklyn_plot:0.0.4--pyhdfd78af_0"
 ---
-
 
 # brooklyn_plot
 

@@ -2,6 +2,8 @@
 name: artemis
 description: Artemis is an interactive visualization and analysis environment for genomic data, sequence features, and high-throughput sequencing alignments. Use when user asks to visualize genomes, compare DNA sequences for synteny, view BAM or CRAM alignment files, or generate circular and linear DNA maps.
 homepage: http://sanger-pathogens.github.io/Artemis/
+metadata:
+  docker_image: "quay.io/biocontainers/artemis:18.2.0--hdfd78af_0"
 ---
 
 # artemis

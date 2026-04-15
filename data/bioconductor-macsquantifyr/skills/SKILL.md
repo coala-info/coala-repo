@@ -4,7 +4,6 @@ description: MACSQuantifyR automates the processing, statistical analysis, and v
 homepage: https://bioconductor.org/packages/release/bioc/html/MACSQuantifyR.html
 ---
 
-
 # bioconductor-macsquantifyr
 
 name: bioconductor-macsquantifyr

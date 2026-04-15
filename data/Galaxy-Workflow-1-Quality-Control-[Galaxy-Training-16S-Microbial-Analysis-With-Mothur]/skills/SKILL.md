@@ -1,10 +1,12 @@
 ---
 name: workflow-1-quality-control-galaxy-training-16s-microbial-ana
-description: "This 16S microbial analysis workflow processes contigs and group files using mothur tools to perform initial quality control, sequence screening, and dereplication. Use this skill when you need to filter out ambiguous bases or long homopolymers from 16S rRNA gene sequences and generate a count table of unique sequences for microbiome profiling."
-homepage: https://workflowhub.eu/workflows/1422
+description: This 16S microbial analysis workflow processes contigs and group files using mothur tools to perform initial quality control, sequence screening, and dereplication. Use this skill when you need to filter out ambiguous bases or long homopolymers from 16S rRNA gene sequences and generate a count table of unique sequences for microbiome profiling.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 1: Quality Control [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-1-quality-control-galaxy-training-16s-microbial-ana
 
 ## Overview
 

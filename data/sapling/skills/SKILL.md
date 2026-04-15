@@ -2,8 +2,9 @@
 name: sapling
 description: Sapling identifies backbone trees and full phylogenies to model tumor evolution from bulk sequencing data. Use when user asks to infer evolutionary structures, generate backbone trees, or expand existing phylogenies from mutation frequency data.
 homepage: https://github.com/elkebir-group/Sapling
+metadata:
+  docker_image: "quay.io/biocontainers/sapling:1.0.0--pyhdfd78af_0"
 ---
-
 
 # sapling
 

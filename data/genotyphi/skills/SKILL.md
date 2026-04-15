@@ -2,8 +2,9 @@
 name: genotyphi
 description: genotyphi classifies Salmonella Typhi strains into hierarchical lineages and identifies AMR genes and plasmid replicons from sequence data. Use when user asks to classify Salmonella Typhi genotypes, detect AMR mutations in Typhi, or identify plasmid replicons from FASTQ or VCF files.
 homepage: https://github.com/katholt/genotyphi
+metadata:
+  docker_image: "quay.io/biocontainers/genotyphi:2.0--hdfd78af_0"
 ---
-
 
 # genotyphi
 

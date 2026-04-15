@@ -4,7 +4,6 @@ description: Bioconductor-diffcyt provides statistical methods for differential 
 homepage: https://bioconductor.org/packages/release/bioc/html/diffcyt.html
 ---
 
-
 # bioconductor-diffcyt
 
 name: bioconductor-diffcyt

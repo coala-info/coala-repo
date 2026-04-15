@@ -2,6 +2,8 @@
 name: snakedeploy
 description: Snakedeploy automates the deployment and management of Snakemake workflows from remote repositories to local execution environments. Use when user asks to deploy a workflow, pin Conda environments, update Snakemake wrappers, or scaffold new plugins.
 homepage: https://github.com/snakemake/snakedeploy
+metadata:
+  docker_image: "quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0"
 ---
 
 # snakedeploy

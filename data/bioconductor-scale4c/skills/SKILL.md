@@ -4,7 +4,6 @@ description: This tool performs scale-space transformation and visualization of 
 homepage: https://bioconductor.org/packages/release/bioc/html/Scale4C.html
 ---
 
-
 # bioconductor-scale4c
 
 name: bioconductor-scale4c

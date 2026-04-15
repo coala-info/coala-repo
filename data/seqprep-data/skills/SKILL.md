@@ -2,8 +2,9 @@
 name: seqprep-data
 description: SeqPrep trims adapter sequences from paired-end reads and merges overlapping reads into single, higher-quality sequences. Use when user asks to trim adapters from sequencing data, merge overlapping paired-end reads, or handle read-through in short DNA fragments.
 homepage: https://github.com/jstjohn/SeqPrep
+metadata:
+  docker_image: "biocontainers/seqprep-data:v1.3.2-3-deb_cv1"
 ---
-
 
 # seqprep-data
 

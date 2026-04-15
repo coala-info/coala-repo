@@ -4,7 +4,6 @@ description: This Bioconductor package provides annotation data for the Affymetr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene11stprobeset.db.html
 ---
 
-
 # bioconductor-ragene11stprobeset.db
 
 ## Overview

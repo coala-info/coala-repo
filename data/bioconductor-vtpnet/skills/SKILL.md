@@ -4,7 +4,6 @@ description: Bioconductor-vtpnet constructs and analyzes Variant-Transcription F
 homepage: https://bioconductor.org/packages/release/bioc/html/vtpnet.html
 ---
 
-
 # bioconductor-vtpnet
 
 name: bioconductor-vtpnet

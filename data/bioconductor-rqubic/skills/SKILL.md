@@ -4,7 +4,6 @@ description: This tool performs qualitative biclustering on gene expression data
 homepage: https://bioconductor.org/packages/release/bioc/html/rqubic.html
 ---
 
-
 # bioconductor-rqubic
 
 name: bioconductor-rqubic

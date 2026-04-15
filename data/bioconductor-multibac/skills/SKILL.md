@@ -4,7 +4,6 @@ description: Bioconductor-multibac corrects batch effects and removes systematic
 homepage: https://bioconductor.org/packages/release/bioc/html/MultiBaC.html
 ---
 
-
 # bioconductor-multibac
 
 name: bioconductor-multibac

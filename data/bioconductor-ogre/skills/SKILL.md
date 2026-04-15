@@ -1,9 +1,8 @@
 ---
 name: bioconductor-ogre
-description: "OGRE calculates and visualizes overlaps between genomic region datasets within the R environment. Use when user asks to calculate genomic overlaps, generate overlap statistics, or visualize genomic regions and coverage profiles."
+description: OGRE calculates and visualizes overlaps between genomic region datasets within the R environment. Use when user asks to calculate genomic overlaps, generate overlap statistics, or visualize genomic regions and coverage profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/OGRE.html
 ---
-
 
 # bioconductor-ogre
 

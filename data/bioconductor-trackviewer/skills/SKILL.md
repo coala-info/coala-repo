@@ -4,7 +4,6 @@ description: bioconductor-trackviewer is a Bioconductor package for the integrat
 homepage: https://bioconductor.org/packages/release/bioc/html/trackViewer.html
 ---
 
-
 # bioconductor-trackviewer
 
 ## Overview

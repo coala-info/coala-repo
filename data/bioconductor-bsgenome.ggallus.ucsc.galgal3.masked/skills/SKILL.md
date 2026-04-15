@@ -4,7 +4,6 @@ description: This package provides the full masked genome sequences for the Gall
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal3.masked.html
 ---
 
-
 # bioconductor-bsgenome.ggallus.ucsc.galgal3.masked
 
 name: bioconductor-bsgenome.ggallus.ucsc.galgal3.masked

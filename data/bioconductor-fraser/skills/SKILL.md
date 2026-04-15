@@ -4,7 +4,6 @@ description: FRASER detects rare aberrant splicing events in RNA-seq data by mod
 homepage: https://bioconductor.org/packages/release/bioc/html/FRASER.html
 ---
 
-
 # bioconductor-fraser
 
 name: bioconductor-fraser

@@ -4,7 +4,6 @@ description: This tool performs multitaper spectral analysis in R to estimate po
 homepage: https://cloud.r-project.org/web/packages/multitaper/index.html
 ---
 
-
 # r-multitaper
 
 name: r-multitaper

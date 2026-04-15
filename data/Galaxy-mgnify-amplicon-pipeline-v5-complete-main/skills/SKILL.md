@@ -1,10 +1,12 @@
 ---
 name: mgnifys-amplicon-pipeline-v50
-description: "This metagenomics workflow processes SRA accessions through MGnify's amplicon pipeline v5.0 to perform quality control, rRNA prediction for SSU and LSU sequences, and ITS classification. Use this skill when you need to characterize microbial community composition and generate taxonomic abundance summary tables from environmental or clinical amplicon sequencing data."
-homepage: https://workflowhub.eu/workflows/1274
+description: This metagenomics workflow processes SRA accessions through MGnify's amplicon pipeline v5.0 to perform quality control, rRNA prediction for SSU and LSU sequences, and ITS classification. Use this skill when you need to characterize microbial community composition and generate taxonomic abundance summary tables from environmental or clinical amplicon sequencing data.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MGnify's amplicon pipeline v5.0
+# mgnifys-amplicon-pipeline-v50
 
 ## Overview
 

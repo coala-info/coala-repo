@@ -4,7 +4,6 @@ description: This tool analyzes biological pathway activity and cross-talk by in
 homepage: https://bioconductor.org/packages/3.6/bioc/html/StarBioTrek.html
 ---
 
-
 # bioconductor-starbiotrek
 
 name: bioconductor-starbiotrek

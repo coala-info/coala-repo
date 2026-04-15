@@ -1,9 +1,10 @@
 ---
 name: pygcap
-description: "pygcap is a bioinformatics tool for identifying, analyzing, and visualizing gene clusters across microbial genomes. Use when user asks to find homologous gene clusters in taxonomic groups, download genomic data from NCBI, or analyze gene synteny and content."
+description: pygcap is a bioinformatics tool for identifying, analyzing, and visualizing gene clusters across microbial genomes. Use when user asks to find homologous gene clusters in taxonomic groups, download genomic data from NCBI, or analyze gene synteny and content.
 homepage: https://github.com/jrim42/pyGCAP
+metadata:
+  docker_image: "quay.io/biocontainers/pygcap:1.2.6--pyhdfd78af_0"
 ---
-
 
 # pygcap
 

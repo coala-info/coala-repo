@@ -4,7 +4,6 @@ description: This tool analyzes downstream chemo-proteomics data to identify pro
 homepage: https://bioconductor.org/packages/release/bioc/html/Doscheda.html
 ---
 
-
 # bioconductor-doscheda
 
 name: bioconductor-doscheda

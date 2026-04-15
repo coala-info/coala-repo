@@ -2,8 +2,9 @@
 name: multiqc_sav
 description: This tool integrates Illumina SAV data into MultiQC reports to visualize raw sequencing run metrics from InterOp binary files. Use when user asks to visualize sequencing run performance, include SAV plots in MultiQC reports, or monitor cluster density and quality scores.
 homepage: http://multiqc.info
+metadata:
+  docker_image: "quay.io/biocontainers/multiqc_sav:0.2.0--pyh7e72e81_0"
 ---
-
 
 # multiqc_sav
 

@@ -4,7 +4,6 @@ description: The bioconductor-pathprint package converts gene expression data in
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pathprint.html
 ---
 
-
 # bioconductor-pathprint
 
 ## Overview

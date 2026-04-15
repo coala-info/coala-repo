@@ -4,7 +4,6 @@ description: The bioconductor-hpaanalyze package retrieves and analyzes proteomi
 homepage: https://bioconductor.org/packages/release/bioc/html/HPAanalyze.html
 ---
 
-
 # bioconductor-hpaanalyze
 
 ## Overview

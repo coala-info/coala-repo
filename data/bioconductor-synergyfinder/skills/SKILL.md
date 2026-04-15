@@ -4,7 +4,6 @@ description: This tool analyzes and visualizes drug combination screening data t
 homepage: https://bioconductor.org/packages/release/bioc/html/synergyfinder.html
 ---
 
-
 # bioconductor-synergyfinder
 
 name: bioconductor-synergyfinder

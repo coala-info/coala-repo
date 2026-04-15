@@ -1,10 +1,12 @@
 ---
 name: hybrid-genome-assembly-tutorial-workflow
-description: "This genomics workflow performs hybrid de novo genome assembly using Illumina and Nanopore reads through tools like Flye, Unicycler, and Pilon, while evaluating quality with BUSCO and QUAST. Use this skill when you need to generate a highly accurate and contiguous genome assembly by leveraging the complementary strengths of long-read and short-read sequencing data."
-homepage: https://workflowhub.eu/workflows/2011
+description: This genomics workflow performs hybrid de novo genome assembly using Illumina and Nanopore reads through tools like Flye, Unicycler, and Pilon, while evaluating quality with BUSCO and QUAST. Use this skill when you need to generate a highly accurate and contiguous genome assembly by leveraging the complementary strengths of long-read and short-read sequencing data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Hybrid Genome Assembly Tutorial Workflow
+# hybrid-genome-assembly-tutorial-workflow
 
 ## Overview
 

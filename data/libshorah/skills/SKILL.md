@@ -2,8 +2,9 @@
 name: libshorah
 description: libshorah reconstructs local haplotypes and calls mutations in heterogeneous viral samples using the viloca interface. Use when user asks to reconstruct haplotypes, call mutations in viral samples, perform error-corrected variant calling, or analyze shotgun and amplicon sequencing data.
 homepage: https://github.com/LaraFuhrmann/VILOCA
+metadata:
+  docker_image: "quay.io/biocontainers/libshorah:1.99.4--py38hebc1f04_1"
 ---
-
 
 # libshorah
 

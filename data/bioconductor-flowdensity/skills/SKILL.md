@@ -4,7 +4,6 @@ description: This tool performs automated sequential gating of flow cytometry da
 homepage: https://bioconductor.org/packages/release/bioc/html/flowDensity.html
 ---
 
-
 # bioconductor-flowdensity
 
 name: bioconductor-flowdensity

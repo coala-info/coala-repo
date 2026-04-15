@@ -4,7 +4,6 @@ description: This tool evaluates and visualizes batch effects and data integrati
 homepage: https://bioconductor.org/packages/release/bioc/html/CellMixS.html
 ---
 
-
 # bioconductor-cellmixs
 
 name: bioconductor-cellmixs

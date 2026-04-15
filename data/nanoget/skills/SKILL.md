@@ -1,9 +1,10 @@
 ---
 name: nanoget
-description: "Nanoget extracts and standardizes read-level information from Oxford Nanopore sequencing data into pandas DataFrames. Use when user asks to process BAM alignments, extract metrics from FASTQ files, or parse sequencing summary text files."
+description: Nanoget extracts and standardizes read-level information from Oxford Nanopore sequencing data into pandas DataFrames. Use when user asks to process BAM alignments, extract metrics from FASTQ files, or parse sequencing summary text files.
 homepage: https://github.com/wdecoster/nanoget
+metadata:
+  docker_image: "quay.io/biocontainers/nanoget:1.19.4--pyhdfd78af_0"
 ---
-
 
 # nanoget
 

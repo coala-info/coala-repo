@@ -1,10 +1,12 @@
 ---
 name: papaa019_pi3k_og_model_tutorial
-description: "This cancer genomics workflow utilizes the PAPAA tool suite to analyze multi-omic data, including RNA-seq, mutation, and copy number profiles, to classify aberrant pathway activity such as PI3K signaling. Use this skill when you need to identify oncogenic pathway signatures across different cancer types or predict therapeutic responses based on integrated genomic and transcriptomic alterations."
-homepage: https://workflowhub.eu/workflows/1605
+description: This cancer genomics workflow utilizes the PAPAA tool suite to analyze multi-omic data, including RNA-seq, mutation, and copy number profiles, to classify aberrant pathway activity such as PI3K signaling. Use this skill when you need to identify oncogenic pathway signatures across different cancer types or predict therapeutic responses based on integrated genomic and transcriptomic alterations.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# papaa@0.1.9_PI3K_OG_model_tutorial
+# papaa019_pi3k_og_model_tutorial
 
 ## Overview
 

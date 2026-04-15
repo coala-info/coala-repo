@@ -4,7 +4,6 @@ description: This package provides SQLite-based maps to link manufacturer probe 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/h10kcod.db.html
 ---
 
-
 # bioconductor-h10kcod.db
 
 name: bioconductor-h10kcod.db

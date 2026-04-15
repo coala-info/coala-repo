@@ -2,8 +2,9 @@
 name: pyarrow
 description: PyArrow provides Python bindings for Apache Arrow to enable efficient in-memory data processing and interoperability between data tools. Use when user asks to convert between Pandas and Arrow tables, read or write Parquet datasets, or manage large-scale data for high-performance storage formats like Lance.
 homepage: https://github.com/lance-format/lance
+metadata:
+  docker_image: "quay.io/biocontainers/pyarrow:4.0.1"
 ---
-
 
 # pyarrow
 

@@ -1,10 +1,12 @@
 ---
 name: tree-building-imported-from-uploaded-file
-description: "This Galaxy workflow performs phylogenetic tree construction from FASTA sequence files using MAFFT for multiple sequence alignment and both FastTree and IQ-TREE for tree inference. Use this skill when you need to reconstruct evolutionary relationships between biological sequences and compare results from different maximum-likelihood tree estimation algorithms."
-homepage: https://workflowhub.eu/workflows/1559
+description: This Galaxy workflow performs phylogenetic tree construction from FASTA sequence files using MAFFT for multiple sequence alignment and both FastTree and IQ-TREE for tree inference. Use this skill when you need to reconstruct evolutionary relationships between biological sequences and compare results from different maximum-likelihood tree estimation algorithms.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Tree Building (imported from uploaded file)
+# tree-building-imported-from-uploaded-file
 
 ## Overview
 

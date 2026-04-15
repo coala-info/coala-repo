@@ -4,7 +4,6 @@ description: The chromstaR package performs joint analysis of multiple ChIP-seq 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/chromstaR.html
 ---
 
-
 # bioconductor-chromstar
 
 name: bioconductor-chromstar

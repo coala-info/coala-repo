@@ -4,7 +4,6 @@ description: This tool performs integrative analyses of alternative splicing and
 homepage: https://bioconductor.org/packages/release/bioc/html/psichomics.html
 ---
 
-
 # bioconductor-psichomics
 
 name: bioconductor-psichomics

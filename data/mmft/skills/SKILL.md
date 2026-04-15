@@ -2,6 +2,8 @@
 name: mmft
 description: mmft is a collection of Rust-based utilities for rapid FASTA file processing and sequence manipulation. Use when user asks to calculate assembly metrics like N50, filter records by regex or ID, extract subsequences, or perform basic transformations like reverse complementing.
 homepage: https://github.com/ARU-life-sciences/mmft
+metadata:
+  docker_image: "quay.io/biocontainers/mmft:0.3.2--hc1c3326_0"
 ---
 
 # mmft

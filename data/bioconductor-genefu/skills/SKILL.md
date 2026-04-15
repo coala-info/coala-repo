@@ -4,7 +4,6 @@ description: The genefu package provides standardized implementations of molecul
 homepage: https://bioconductor.org/packages/release/bioc/html/genefu.html
 ---
 
-
 # bioconductor-genefu
 
 ## Overview

@@ -4,7 +4,6 @@ description: This package retrieves, processes, and visualizes oncogenomic data 
 homepage: https://bioconductor.org/packages/release/bioc/html/pgxRpi.html
 ---
 
-
 # bioconductor-pgxrpi
 
 name: bioconductor-pgxrpi

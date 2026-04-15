@@ -4,7 +4,6 @@ description: bioconductor-ringo provides a modular framework for the primary ana
 homepage: https://bioconductor.org/packages/3.18/bioc/html/Ringo.html
 ---
 
-
 # bioconductor-ringo
 
 name: bioconductor-ringo

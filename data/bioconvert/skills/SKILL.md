@@ -2,6 +2,8 @@
 name: bioconvert
 description: Bioconvert is a utility that converts bioinformatics data between various file formats by wrapping existing high-performance tools and native Python implementations. Use when user asks to convert genomic file formats, transform data between formats like BAM and FASTQ, or benchmark different conversion methods for performance.
 homepage: http://bioconvert.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3"
 ---
 
 # bioconvert

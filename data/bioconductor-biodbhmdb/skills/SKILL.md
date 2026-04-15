@@ -4,7 +4,6 @@ description: The biodbHmdb package provides a connector to the Human Metabolome 
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbHmdb.html
 ---
 
-
 # bioconductor-biodbhmdb
 
 ## Overview

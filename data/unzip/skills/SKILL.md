@@ -2,8 +2,9 @@
 name: unzip
 description: This tool extracts compressed archive files. Use when user asks to uncompress ZIP, RAR, TAR, GZ, or other common archive formats, extract the contents of a compressed file to a specified directory, or list the contents of an archive without extracting them.
 homepage: https://github.com/peazip/PeaZip
+metadata:
+  docker_image: "quay.io/biocontainers/unzip:6.0--2"
 ---
-
 
 # unzip
 

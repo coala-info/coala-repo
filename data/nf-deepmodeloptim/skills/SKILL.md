@@ -4,6 +4,8 @@ description: This pipeline facilitates the development and optimization of deep 
 homepage: https://github.com/nf-core/deepmodeloptim
 ---
 
+# deepmodeloptim
+
 ## Overview
 nf-core/deepmodeloptim is an end-to-end pipeline designed to facilitate the testing and development of deep learning models for genomics. It addresses the principle that model performance is largely driven by training data quality and quantity, providing a framework to augment biological data towards an optimal task-specific training set.
 

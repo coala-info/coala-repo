@@ -2,8 +2,9 @@
 name: perl-extutils-pkgconfig
 description: This tool provides a Perl interface to the pkg-config utility for querying library metadata and configuration flags. Use when user asks to find C library paths for Perl extensions, check library version constraints, or integrate pkg-config functionality into a Makefile.PL.
 homepage: http://gtk2-perl.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/perl-extutils-pkgconfig:1.16--pl526_1"
 ---
-
 
 # perl-extutils-pkgconfig
 

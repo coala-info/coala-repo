@@ -4,7 +4,6 @@ description: bioconductor-gostag performs functional enrichment analysis and vis
 homepage: https://bioconductor.org/packages/release/bioc/html/goSTAG.html
 ---
 
-
 # bioconductor-gostag
 
 name: bioconductor-gostag

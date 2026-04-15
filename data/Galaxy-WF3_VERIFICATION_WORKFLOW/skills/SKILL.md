@@ -1,10 +1,12 @@
 ---
 name: wf3_verification_workflow
-description: "This proteomics workflow validates peptide identifications from MGF mass spectrometry data and peptide reports using PepQuery2 and automated protein database construction tools. Use this skill when you need to perform rigorous spectrum-level verification of peptide candidates and generate a refined UniProt-based database for quantitative proteomics analysis."
-homepage: https://workflowhub.eu/workflows/1464
+description: This proteomics workflow validates peptide identifications from MGF mass spectrometry data and peptide reports using PepQuery2 and automated protein database construction tools. Use this skill when you need to perform rigorous spectrum-level verification of peptide candidates and generate a refined UniProt-based database for quantitative proteomics analysis.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF3_VERIFICATION_WORKFLOW
+# wf3_verification_workflow
 
 ## Overview
 

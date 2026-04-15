@@ -4,7 +4,6 @@ description: GenoGAM performs statistical analysis of genome-wide data like ChIP
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GenoGAM.html
 ---
 
-
 # bioconductor-genogam
 
 name: bioconductor-genogam

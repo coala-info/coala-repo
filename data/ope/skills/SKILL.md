@@ -2,8 +2,9 @@
 name: ope
 description: Ope wraps gnu-parallel to simplify running bioinformatics sequence analysis tools in parallel across multiple processor cores. Use when user asks to run sequence analysis tools in parallel, process large FASTA files across multiple cores, or execute bioinformatics workflows using gnu-parallel.
 homepage: https://github.com/camillescott/ope
+metadata:
+  docker_image: "quay.io/biocontainers/ope:0.8--pyh5bfb8f1_0"
 ---
-
 
 # ope
 

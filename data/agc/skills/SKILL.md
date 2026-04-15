@@ -2,6 +2,8 @@
 name: agc
 description: The Assembled Genomes Compressor (AGC) performs multi-genome compression of de-novo assemblies while providing rapid random access to specific sequences. Use when user asks to create compressed genome archives, append new assemblies to existing collections, extract specific samples or contigs, and list metadata from compressed datasets.
 homepage: https://github.com/refresh-bio/agc
+metadata:
+  docker_image: "quay.io/biocontainers/agc:3.2.1--h9ee0642_0"
 ---
 
 # agc

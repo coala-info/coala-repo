@@ -4,7 +4,6 @@ description: This package performs differential gene coexpression analysis by au
 homepage: https://cran.r-project.org/web/packages/easydifferentialgenecoexpression/index.html
 ---
 
-
 # r-easydifferentialgenecoexpression
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool infers intracellular signal transduction networks from st
 homepage: https://bioconductor.org/packages/release/bioc/html/lpNet.html
 ---
 
-
 # bioconductor-lpnet
 
 name: bioconductor-lpnet

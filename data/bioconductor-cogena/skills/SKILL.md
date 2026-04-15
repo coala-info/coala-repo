@@ -4,7 +4,6 @@ description: The cogena package performs gene set enrichment analysis on co-expr
 homepage: https://bioconductor.org/packages/release/bioc/html/cogena.html
 ---
 
-
 # bioconductor-cogena
 
 ## Overview

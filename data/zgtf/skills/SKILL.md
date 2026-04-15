@@ -2,8 +2,9 @@
 name: zgtf
 description: `zgtf` converts and processes GTF files for genomics workflows. Use when user asks to 'convert GTF files', 'process GTF files', 'convert annotation formats', 'prepare gene models'.
 homepage: The package home page
+metadata:
+  docker_image: "quay.io/biocontainers/zgtf:0.1.2--pyh5e36f6f_0"
 ---
-
 
 # zgtf
 

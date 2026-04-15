@@ -4,7 +4,6 @@ description: This tool performs quantitative literature enrichment analysis to c
 homepage: https://bioconductor.org/packages/3.11/bioc/html/PubScore.html
 ---
 
-
 # bioconductor-pubscore
 
 name: bioconductor-pubscore

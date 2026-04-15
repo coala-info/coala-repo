@@ -4,7 +4,6 @@ description: This tool performs hierarchical ordered partitioning and collapsing
 homepage: https://bioconductor.org/packages/release/bioc/html/hopach.html
 ---
 
-
 # bioconductor-hopach
 
 name: bioconductor-hopach

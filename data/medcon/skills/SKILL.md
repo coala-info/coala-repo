@@ -2,8 +2,9 @@
 name: medcon
 description: The medcon tool benchmarks AI models against the MedConceptsQA dataset to evaluate medical concept knowledge. Use when user asks to perform standardized medical QA evaluations, compare model performance on medical leaderboards, or run zero-shot and few-shot tests on HuggingFace or OpenAI models.
 homepage: https://github.com/nadavlab/MedConceptsQA
+metadata:
+  docker_image: "biocontainers/medcon:v0.16.1dfsg-1-deb_cv1"
 ---
-
 
 # medcon
 

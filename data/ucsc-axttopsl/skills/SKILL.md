@@ -2,8 +2,9 @@
 name: ucsc-axttopsl
 description: `ucsc-axttopsl` converts AXT alignment files into PSL (Pattern Space Layout) files. Use when user asks to convert AXT files to PSL format, integrate custom alignments into the UCSC Genome Browser, or calculate alignment coverage and identity metrics.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-axttopsl:482--h0b57e2e_0"
 ---
-
 
 # ucsc-axttopsl
 

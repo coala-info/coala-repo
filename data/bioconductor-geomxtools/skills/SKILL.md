@@ -4,7 +4,6 @@ description: GeomxTools provides specialized tools for the analysis, quality con
 homepage: https://bioconductor.org/packages/release/bioc/html/GeomxTools.html
 ---
 
-
 # bioconductor-geomxtools
 
 ## Overview

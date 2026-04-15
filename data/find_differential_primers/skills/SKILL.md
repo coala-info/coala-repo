@@ -2,6 +2,8 @@
 name: find_differential_primers
 description: This tool identifies primer sets that uniquely amplify target sequence groups while excluding negative groups for diagnostic or metabarcoding applications. Use when user asks to design specific primers, perform off-target screening with BLAST, classify primer specificity, or extract predicted amplicons.
 homepage: https://github.com/widdowquinn/find_differential_primers
+metadata:
+  docker_image: "quay.io/biocontainers/find_differential_primers:0.1.4--py_0"
 ---
 
 # find_differential_primers

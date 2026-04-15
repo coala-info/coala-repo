@@ -1,9 +1,12 @@
 ---
 name: cwl4incorporatetssintogxf-paired-end-file
-description: "This Common Workflow Language pipeline utilizes the TSSr R package to identify transcription start sites from paired-end CAGE-seq data and integrate them into existing genome annotation files. Use this skill when you need to refine gene models by accurately mapping transcription start sites and extending 5'UTR regions to better characterize the regulatory landscape of a genome."
-homepage: https://workflowhub.eu/workflows/1343
+description: This Common Workflow Language pipeline utilizes the TSSr R package to identify transcription start sites from paired-end CAGE-seq data and integrate them into existing genome annotation files. Use this skill when you need to refine gene models by accurately mapping transcription start sites and extending 5'UTR regions to better characterize the regulatory landscape of a genome.
+homepage: https://bonohu.hiroshima-u.ac.jp/index_en.html
+metadata:
+  docker_image: "N/A"
 ---
-# CWL4IncorporateTSSintoGXF (paired-end file)
+
+# cwl4incorporatetssintogxf-paired-end-file
 
 ## Overview
 

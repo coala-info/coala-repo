@@ -4,7 +4,6 @@ description: This tool performs multivariate analysis of omics data using PCA, P
 homepage: https://bioconductor.org/packages/release/bioc/html/ropls.html
 ---
 
-
 # bioconductor-ropls
 
 name: bioconductor-ropls

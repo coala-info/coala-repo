@@ -1,10 +1,12 @@
 ---
 name: paper-9-n2o-lamno3-figs1
-description: "This Galaxy workflow processes XANES time series project files to analyze N2O decomposition on LaMnO3 catalysts using Larch Athena and Larch Plot tools. Use this skill when you need to characterize the oxidation state and local coordination environment of manganese catalysts during time-resolved catalytic reaction experiments."
-homepage: https://workflowhub.eu/workflows/1806
+description: This Galaxy workflow processes XANES time series project files to analyze N2O decomposition on LaMnO3 catalysts using Larch Athena and Larch Plot tools. Use this skill when you need to characterize the oxidation state and local coordination environment of manganese catalysts during time-resolved catalytic reaction experiments.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Paper 9 N2O-LaMnO3 Figs1
+# paper-9-n2o-lamno3-figs1
 
 ## Overview
 

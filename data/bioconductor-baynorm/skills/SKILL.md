@@ -4,7 +4,6 @@ description: This tool provides a Bayesian approach for normalizing single-cell 
 homepage: https://bioconductor.org/packages/release/bioc/html/bayNorm.html
 ---
 
-
 # bioconductor-baynorm
 
 ## Overview

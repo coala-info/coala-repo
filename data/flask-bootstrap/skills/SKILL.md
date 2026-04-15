@@ -2,8 +2,9 @@
 name: flask-bootstrap
 description: This tool scaffolds production-ready Flask applications using the cookiecutter-flask boilerplate with integrated Bootstrap 5, database management, and authentication. Use when user asks to create a new Flask project, initialize a database migration, manage frontend assets with webpack, or run tests using pytest.
 homepage: https://github.com/cookiecutter-flask/cookiecutter-flask
+metadata:
+  docker_image: "quay.io/biocontainers/flask-bootstrap:3.3.5.7--py36_0"
 ---
-
 
 # flask-bootstrap
 

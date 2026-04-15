@@ -4,7 +4,6 @@ description: This package provides probe sequence data and physical coordinates 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rtu34probe.html
 ---
 
-
 # bioconductor-rtu34probe
 
 name: bioconductor-rtu34probe

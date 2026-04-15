@@ -4,7 +4,6 @@ description: This package provides platform design annotation and metadata for t
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u95d.html
 ---
 
-
 # bioconductor-pd.hg.u95d
 
 name: bioconductor-pd.hg.u95d

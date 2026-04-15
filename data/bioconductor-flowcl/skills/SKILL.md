@@ -4,7 +4,6 @@ description: bioconductor-flowcl performs semantic labeling of flow cytometric c
 homepage: https://bioconductor.org/packages/3.16/bioc/html/flowCL.html
 ---
 
-
 # bioconductor-flowcl
 
 name: bioconductor-flowcl

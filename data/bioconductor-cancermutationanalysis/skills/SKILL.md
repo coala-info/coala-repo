@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of somatic mutations to dis
 homepage: https://bioconductor.org/packages/3.5/bioc/html/CancerMutationAnalysis.html
 ---
 
-
 # bioconductor-cancermutationanalysis
 
 name: bioconductor-cancermutationanalysis

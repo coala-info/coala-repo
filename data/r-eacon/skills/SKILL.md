@@ -4,7 +4,6 @@ description: EaCoN is an R package for performing full-workflow copy-number anal
 homepage: https://cran.r-project.org/web/packages/eacon/index.html
 ---
 
-
 # r-eacon
 
 ## Overview

@@ -2,8 +2,9 @@
 name: wtdbg2
 description: wtdbg2 is a high-speed assembler designed for long-read sequencing data, capable of assembling large genomes directly from raw, noisy reads. Use when user asks to assemble long-read sequencing data, generate contig layouts, produce consensus sequences, or polish an assembly.
 homepage: https://github.com/ruanjue/wtdbg2
+metadata:
+  docker_image: "quay.io/biocontainers/wtdbg2:2.0--h470a237_0"
 ---
-
 
 # wtdbg2
 

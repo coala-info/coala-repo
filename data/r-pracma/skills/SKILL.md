@@ -4,7 +4,6 @@ description: The r-pracma package provides advanced numerical analysis functions
 homepage: https://cloud.r-project.org/web/packages/pracma/index.html
 ---
 
-
 # r-pracma
 
 name: r-pracma

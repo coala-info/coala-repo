@@ -2,8 +2,9 @@
 name: dbcan
 description: dbcan automates the annotation of Carbohydrate-Active enZymes (CAZymes) from protein, genomic, or metagenomic sequence data. Use when user asks to annotate CAZymes, identify carbohydrate metabolism genes, or classify sequences into CAZyme subfamilies.
 homepage: http://bcb.unl.edu/dbCAN2/
+metadata:
+  docker_image: "quay.io/biocontainers/dbcan:5.2.8--pyhdfd78af_0"
 ---
-
 
 # dbcan
 

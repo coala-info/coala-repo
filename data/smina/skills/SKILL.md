@@ -1,9 +1,10 @@
 ---
 name: smina
-description: "smina is a computational chemistry tool used to predict ligand-receptor binding poses and evaluate binding affinities through docking and energy minimization. Use when user asks to dock ligands to a receptor, perform energy minimization on molecular poses, evaluate binding affinity with scoring functions, or define binding sites using autoboxing."
+description: smina is a computational chemistry tool used to predict ligand-receptor binding poses and evaluate binding affinities through docking and energy minimization. Use when user asks to dock ligands to a receptor, perform energy minimization on molecular poses, evaluate binding affinity with scoring functions, or define binding sites using autoboxing.
 homepage: https://sourceforge.net/projects/smina/
+metadata:
+  docker_image: "quay.io/biocontainers/smina:2017.11.9--0"
 ---
-
 
 # smina
 

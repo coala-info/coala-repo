@@ -4,7 +4,6 @@ description: This package provides platform design and probe sequence informatio
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rhesus.html
 ---
 
-
 # bioconductor-pd.rhesus
 
 name: bioconductor-pd.rhesus

@@ -2,8 +2,9 @@
 name: ucsc-chaintopslbasic
 description: This tool converts chain alignment files into PSL format. Use when user asks to convert chain files to PSL format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-chaintopslbasic:482--h0b57e2e_0"
 ---
-
 
 # ucsc-chaintopslbasic
 

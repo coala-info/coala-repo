@@ -1,9 +1,12 @@
 ---
 name: longread-16s-classification-workflow
-description: "This Common Workflow Language pipeline performs quality assessment and taxonomic classification of long-read 16S amplicon sequences using NanoPlot, fastplong, and Emu. Use this skill when you need to characterize the species-level taxonomic composition and abundance of microbial communities from Oxford Nanopore or PacBio sequencing data."
-homepage: https://workflowhub.eu/workflows/1952
+description: This Common Workflow Language pipeline performs quality assessment and taxonomic classification of long-read 16S amplicon sequences using NanoPlot, fastplong, and Emu. Use this skill when you need to characterize the species-level taxonomic composition and abundance of microbial communities from Oxford Nanopore or PacBio sequencing data.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Longread 16S classification workflow
+
+# longread-16s-classification-workflow
 
 ## Overview
 

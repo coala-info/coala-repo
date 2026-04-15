@@ -2,8 +2,9 @@
 name: galaxy-ops
 description: This tool performs genomic interval arithmetic and set operations on BED files. Use when user asks to subtract regions, find intersections, merge overlapping segments, cluster features, or calculate overlap density.
 homepage: https://github.com/galaxyproject/gops
+metadata:
+  docker_image: "quay.io/biocontainers/galaxy-ops:1.1.0--py27_0"
 ---
-
 
 # galaxy-ops
 

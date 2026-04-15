@@ -4,7 +4,6 @@ description: The spqn package implements spatial quantile normalization to remov
 homepage: https://bioconductor.org/packages/release/bioc/html/spqn.html
 ---
 
-
 # bioconductor-spqn
 
 ## Overview

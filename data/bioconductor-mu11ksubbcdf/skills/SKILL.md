@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File for the Affymetrix M
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubbcdf.html
 ---
 
-
 # bioconductor-mu11ksubbcdf
 
 ## Overview

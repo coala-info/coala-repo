@@ -2,8 +2,9 @@
 name: iva
 description: IVA is a de novo assembler designed to reconstruct RNA virus genomes from sequencing data by iteratively extending seed sequences. Use when user asks to assemble viral genomes from RNA-seq reads, extend existing contigs, or perform quality control on viral assemblies.
 homepage: https://github.com/sanger-pathogens/iva
+metadata:
+  docker_image: "quay.io/biocontainers/iva:1.0.11--py_0"
 ---
-
 
 # iva
 

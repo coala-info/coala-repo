@@ -4,7 +4,6 @@ description: This tool provides a complete pipeline for the analysis of Serial A
 homepage: https://bioconductor.org/packages/release/bioc/html/sagenhaft.html
 ---
 
-
 # bioconductor-sagenhaft
 
 name: bioconductor-sagenhaft

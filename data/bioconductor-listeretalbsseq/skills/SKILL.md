@@ -4,7 +4,6 @@ description: This package provides base-resolution bisulfite sequencing data for
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ListerEtAlBSseq.html
 ---
 
-
 # bioconductor-listeretalbsseq
 
 name: bioconductor-listeretalbsseq

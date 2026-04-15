@@ -4,7 +4,6 @@ description: This tool provides algorithms for controlling False Discovery Rate 
 homepage: https://bioconductor.org/packages/release/bioc/html/onlineFDR.html
 ---
 
-
 # bioconductor-onlinefdr
 
 name: bioconductor-onlinefdr

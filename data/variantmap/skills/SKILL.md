@@ -2,8 +2,9 @@
 name: variantmap
 description: Variantmap provides an interactive, browser-based interface for exploring structural variant data. Use when user asks to explore structural variant data, visualize variant patterns, filter variants by gene annotations, extract variant metrics, or capture heatmap images.
 homepage: https://github.com/cytham/variantmap
+metadata:
+  docker_image: "quay.io/biocontainers/variantmap:1.0.2--py_0"
 ---
-
 
 # variantmap
 

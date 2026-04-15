@@ -4,7 +4,6 @@ description: The rebook package provides a framework for modularizing Bioconduct
 homepage: https://bioconductor.org/packages/release/bioc/html/rebook.html
 ---
 
-
 # bioconductor-rebook
 
 ## Overview

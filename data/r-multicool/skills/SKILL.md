@@ -4,7 +4,6 @@ description: The r-multicool package provides efficient tools for generating mul
 homepage: https://cloud.r-project.org/web/packages/multicool/index.html
 ---
 
-
 # r-multicool
 
 ## Overview

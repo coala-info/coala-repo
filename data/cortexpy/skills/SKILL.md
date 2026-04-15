@@ -2,8 +2,9 @@
 name: cortexpy
 description: Cortexpy is a Python-based suite for inspecting, traversing, and converting colored De Bruijn graphs produced by Cortex and McCortex. Use when user asks to traverse assembly graphs, resolve branches using link information, or export graph data to JSON and GFA formats.
 homepage: https://github.com/winni2k/cortexpy
+metadata:
+  docker_image: "quay.io/biocontainers/cortexpy:0.46.5--py38h9948957_6"
 ---
-
 
 # cortexpy
 

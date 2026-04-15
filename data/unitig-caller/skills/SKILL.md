@@ -2,8 +2,9 @@
 name: unitig-caller
 description: unitig-caller identifies and calls specific sequence fragments (unitigs) across multiple genomic datasets. Use when user asks to extract unique unitigs, build a population graph, query for unitig presence in new datasets, or perform fast unitig presence/absence calling.
 homepage: https://github.com/johnlees/unitig-caller
+metadata:
+  docker_image: "quay.io/biocontainers/unitig-caller:1.3.1--py311heec5c76_1"
 ---
-
 
 # unitig-caller
 

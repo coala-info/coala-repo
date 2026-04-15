@@ -4,7 +4,6 @@ description: This tool performs penalized generalized least squares for high-dim
 homepage: https://bioconductor.org/packages/release/bioc/html/pengls.html
 ---
 
-
 # bioconductor-pengls
 
 name: bioconductor-pengls

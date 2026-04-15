@@ -4,7 +4,6 @@ description: This package provides annotation and sequence information for the p
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.2006.07.18.hg18.refseq.promoter.html
 ---
 
-
 # bioconductor-pd.2006.07.18.hg18.refseq.promoter
 
 name: bioconductor-pd.2006.07.18.hg18.refseq.promoter

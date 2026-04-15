@@ -1,7 +1,9 @@
 ---
 name: dx-cwl
-description: "dx-cwl compiles Common Workflow Language definitions into DNAnexus-native objects and executes them on the platform. Use when user asks to compile CWL tools or workflows into DNAnexus applets and run CWL workflows on the DNAnexus cloud."
+description: dx-cwl compiles Common Workflow Language definitions into DNAnexus-native objects and executes them on the platform. Use when user asks to compile CWL tools or workflows into DNAnexus applets and run CWL workflows on the DNAnexus cloud.
 homepage: https://github.com/dnanexus/dx-cwl
+metadata:
+  docker_image: "quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0"
 ---
 
 # dx-cwl

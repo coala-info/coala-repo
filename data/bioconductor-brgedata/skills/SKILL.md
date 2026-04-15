@@ -4,7 +4,6 @@ description: This package provides multi-omic and exposome datasets from a Spani
 homepage: https://bioconductor.org/packages/release/data/experiment/html/brgedata.html
 ---
 
-
 # bioconductor-brgedata
 
 name: bioconductor-brgedata

@@ -2,8 +2,9 @@
 name: theseus
 description: Theseus is a modern operating system written in Rust that shifts resource management from the kernel into the compiler using intralingual design. Use when user asks to navigate the codebase, configure the specialized Rust toolchain, build the kernel, or execute workflows for testing in virtualized environments like QEMU.
 homepage: https://github.com/theseus-os/Theseus
+metadata:
+  docker_image: "biocontainers/theseus:v3.3.0-8-deb_cv1"
 ---
-
 
 # theseus
 

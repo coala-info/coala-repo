@@ -2,8 +2,9 @@
 name: vcflib
 description: vcflib is a suite of command-line utilities for high-performance, modular processing and analysis of VCF files. Use when user asks to filter VCF files, remove duplicate variants, normalize indels, realign complex alleles, intersect or compare VCF files, validate VCF files, calculate variant statistics, or identify variants in low-complexity regions.
 homepage: https://github.com/vcflib/vcflib
+metadata:
+  docker_image: "quay.io/biocontainers/vcflib:1.0.14--h34261f4_0"
 ---
-
 
 # vcflib
 

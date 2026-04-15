@@ -2,6 +2,8 @@
 name: msisensor-rna
 description: MSIsensor-RNA detects microsatellite instability status by analyzing gene expression levels from bulk or single-cell transcriptomic data. Use when user asks to identify informative genes for MSI detection, train custom MSI models, or perform MSI scoring on RNA-seq samples.
 homepage: https://github.com/xjtu-omics/msisensor-rna
+metadata:
+  docker_image: "quay.io/biocontainers/msisensor-rna:0.1.6--pyhdfd78af_0"
 ---
 
 # msisensor-rna

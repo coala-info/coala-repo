@@ -1,10 +1,12 @@
 ---
 name: repeat-masking-tsi
-description: "This genomics workflow identifies and masks repetitive elements in a FASTA genome sequence using RepeatModeler for de novo repeat discovery and RepeatMasker for soft and hard masking. Use this skill when you need to identify transposable elements in a newly sequenced genome and generate masked versions of the assembly to facilitate downstream gene prediction or comparative genomic analysis."
-homepage: https://workflowhub.eu/workflows/875
+description: This genomics workflow identifies and masks repetitive elements in a FASTA genome sequence using RepeatModeler for de novo repeat discovery and RepeatMasker for soft and hard masking. Use this skill when you need to identify transposable elements in a newly sequenced genome and generate masked versions of the assembly to facilitate downstream gene prediction or comparative genomic analysis.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Repeat masking - TSI
+# repeat-masking-tsi
 
 ## Overview
 

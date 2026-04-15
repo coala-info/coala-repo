@@ -2,6 +2,8 @@
 name: transcov
 description: transcov analyzes read depth distribution relative to transcription start sites by processing genomic annotations and alignment files into coverage matrices. Use when user asks to preprocess annotations, generate coverage matrices from BAM files, or collapse multiple matrices for comparative analysis.
 homepage: https://github.com/hogfeldt/transcov
+metadata:
+  docker_image: "quay.io/biocontainers/transcov:1.1.3--py_0"
 ---
 
 # transcov

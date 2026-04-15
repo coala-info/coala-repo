@@ -1,7 +1,9 @@
 ---
 name: pyfasta
-description: "pyfasta provides fast, memory-efficient access to FASTA files through indexing and memory-mapping. Use when user asks to extract sub-sequences, split FASTA files into chunks, calculate GC content, or access genomic data via a Pythonic API."
+description: pyfasta provides fast, memory-efficient access to FASTA files through indexing and memory-mapping. Use when user asks to extract sub-sequences, split FASTA files into chunks, calculate GC content, or access genomic data via a Pythonic API.
 homepage: https://github.com/brentp/pyfasta
+metadata:
+  docker_image: "quay.io/biocontainers/pyfasta:0.5.2--pyhdfd78af_2"
 ---
 
 # pyfasta

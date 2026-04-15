@@ -4,7 +4,6 @@ description: This tool identifies position-related trends and significant genomi
 homepage: https://bioconductor.org/packages/release/bioc/html/PREDA.html
 ---
 
-
 # bioconductor-preda
 
 name: bioconductor-preda

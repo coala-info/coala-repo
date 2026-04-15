@@ -2,8 +2,9 @@
 name: igv-notebook
 description: igv-notebook provides interactive genomic visualization within Python-based notebooks by wrapping the igv.js library. Use when user asks to initialize a genome browser, load genomic tracks from local or remote files, and navigate to specific loci in Jupyter or Colab environments.
 homepage: https://github.com/igvteam/igv-notebook
+metadata:
+  docker_image: "quay.io/biocontainers/igv-notebook:0.6.2--pyhdfd78af_0"
 ---
-
 
 # igv-notebook
 

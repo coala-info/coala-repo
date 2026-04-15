@@ -4,7 +4,6 @@ description: This tool normalizes and summarizes miRNA microarray data using the
 homepage: https://bioconductor.org/packages/3.6/bioc/html/LVSmiRNA.html
 ---
 
-
 # bioconductor-lvsmirna
 
 name: bioconductor-lvsmirna

@@ -4,7 +4,6 @@ description: BiocHail provides an R interface to the Hail framework for scalable
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocHail.html
 ---
 
-
 # bioconductor-biochail
 
 ## Overview

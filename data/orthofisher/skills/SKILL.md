@@ -2,8 +2,9 @@
 name: orthofisher
 description: Orthofisher automates gene identification and retrieval for phylogenomics and evolutionary biology analyses. Use when user asks to identify and retrieve orthologous genes from genomic data.
 homepage: https://github.com/JLSteenwyk/orthofisher.git
+metadata:
+  docker_image: "quay.io/biocontainers/orthofisher:1.1.1--pyhdfd78af_0"
 ---
-
 
 # orthofisher
 

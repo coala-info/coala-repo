@@ -2,8 +2,9 @@
 name: snns
 description: This tool provides implementation patterns and parameters for building Self-Normalizing Networks using SELU activation, Lecun initialization, and Alpha Dropout. Use when user asks to implement self-normalizing properties, prevent vanishing or exploding gradients without batch normalization, or configure SNNs in PyTorch and TensorFlow.
 homepage: https://github.com/bioinf-jku/SNNs
+metadata:
+  docker_image: "quay.io/biocontainers/snns:4.3--1"
 ---
-
 
 # snns
 

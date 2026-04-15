@@ -1,10 +1,12 @@
 ---
 name: host-contamination-removal
-description: "This Galaxy workflow removes host DNA contamination from paired-end FASTQ sequencing data by aligning reads to a reference genome using Bowtie2 and generating quality reports with MultiQC. Use this skill when you need to filter out non-target host sequences from metagenomic or clinical samples to ensure downstream analysis focuses exclusively on the microbial or pathogen DNA of interest."
-homepage: https://workflowhub.eu/workflows/2042
+description: This Galaxy workflow removes host DNA contamination from paired-end FASTQ sequencing data by aligning reads to a reference genome using Bowtie2 and generating quality reports with MultiQC. Use this skill when you need to filter out non-target host sequences from metagenomic or clinical samples to ensure downstream analysis focuses exclusively on the microbial or pathogen DNA of interest.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Host contamination removal
+# host-contamination-removal
 
 ## Overview
 

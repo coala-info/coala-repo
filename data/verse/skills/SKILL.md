@@ -2,8 +2,9 @@
 name: verse
 description: The verse skill orchestrates AgentVerse, a framework for multi-agent collaboration, by deploying task-solving systems and simulation environments. Use when user asks to run a CLI simulation, launch a GUI simulation, execute a specific task, or run benchmarks.
 homepage: https://github.com/OpenBMB/AgentVerse
+metadata:
+  docker_image: "quay.io/biocontainers/verse:0.1.5--h577a1d6_9"
 ---
-
 
 # verse
 

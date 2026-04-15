@@ -1,9 +1,10 @@
 ---
 name: hardklor
-description: "Hardklor deconvolves complex mass spectra to identify overlapping isotopic distributions and assign monoisotopic masses. Use when user asks to deconvolve mass spectra, identify molecular features in high-resolution data, or reduce isotopic distributions to monoisotopic mass assignments."
+description: Hardklor deconvolves complex mass spectra to identify overlapping isotopic distributions and assign monoisotopic masses. Use when user asks to deconvolve mass spectra, identify molecular features in high-resolution data, or reduce isotopic distributions to monoisotopic mass assignments.
 homepage: https://github.com/mhoopmann/hardklor
+metadata:
+  docker_image: "quay.io/biocontainers/hardklor:2.3.2--h503566f_6"
 ---
-
 
 # hardklor
 

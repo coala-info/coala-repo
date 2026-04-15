@@ -4,7 +4,6 @@ description: The bioconductor-scanmirapp package provides a Shiny-based interfac
 homepage: https://bioconductor.org/packages/release/bioc/html/scanMiRApp.html
 ---
 
-
 # bioconductor-scanmirapp
 
 ## Overview

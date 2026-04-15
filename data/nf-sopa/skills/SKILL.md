@@ -4,6 +4,8 @@ description: This pipeline processes spatial transcriptomics and multiplex imagi
 homepage: https://github.com/nf-core/sopa
 ---
 
+# nf-core-sopa
+
 ## Overview
 nf-core/sopa is a technology-invariant pipeline for spatial omics analysis, built on the SpatialData framework. It addresses the challenge of processing large-scale spatial datasets by providing a standardized workflow for cell segmentation and transcript or channel intensity aggregation.
 

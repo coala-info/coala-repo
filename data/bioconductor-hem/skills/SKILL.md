@@ -4,7 +4,6 @@ description: This tool fits the Heterogeneous Error Model to identify differenti
 homepage: https://bioconductor.org/packages/release/bioc/html/HEM.html
 ---
 
-
 # bioconductor-hem
 
 name: bioconductor-hem

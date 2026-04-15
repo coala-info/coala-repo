@@ -2,8 +2,9 @@
 name: esme_mpich_4_3_1
 description: ESME provides a consistent foundation of high-performance computing libraries, including NetCDF, HDF5, and ParallelIO, compiled against MPICH 4.3.1 for climate modeling. Use when user asks to compile climate models, run MPI-based simulations, or verify parallel I/O performance using OSU Micro Benchmarks.
 homepage: https://github.com/j34ni/bioconda-recipes
+metadata:
+  docker_image: "quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0"
 ---
-
 
 # esme_mpich_4_3_1
 

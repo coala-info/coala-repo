@@ -1,10 +1,12 @@
 ---
 name: clonal_population-imported-from-uploaded-file
-description: "This workflow extracts and formats data from cBioPortal patient mutation tables and copy number files to perform clonal population analysis using PyClone-vi. Use this skill when you need to characterize the subclonal architecture of tumor samples and generate cellular prevalence visualizations for integration into cBioPortal timelines."
-homepage: https://workflowhub.eu/workflows/1355
+description: This workflow extracts and formats data from cBioPortal patient mutation tables and copy number files to perform clonal population analysis using PyClone-vi. Use this skill when you need to characterize the subclonal architecture of tumor samples and generate cellular prevalence visualizations for integration into cBioPortal timelines.
+homepage: https://eosc4cancer.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# clonal_population (imported from uploaded file)
+# clonal_population-imported-from-uploaded-file
 
 ## Overview
 

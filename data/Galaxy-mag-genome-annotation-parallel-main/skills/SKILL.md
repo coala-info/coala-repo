@@ -1,10 +1,12 @@
 ---
 name: mag-genome-annotation-parallel
-description: "This workflow performs parallel annotation of bacterial metagenome-assembled genomes using Bakta, Integron Finder, PlasmidFinder, and ISEScan to generate standardized genomic features and merged summary tables. Use this skill when you need to simultaneously characterize gene functions, mobile genetic elements, plasmids, and insertion sequences across a large collection of prokaryotic assemblies to compare genomic content and horizontal gene transfer potential."
-homepage: https://workflowhub.eu/workflows/2115
+description: This workflow performs parallel annotation of bacterial metagenome-assembled genomes using Bakta, Integron Finder, PlasmidFinder, and ISEScan to generate standardized genomic features and merged summary tables. Use this skill when you need to simultaneously characterize gene functions, mobile genetic elements, plasmids, and insertion sequences across a large collection of prokaryotic assemblies to compare genomic content and horizontal gene transfer potential.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MAG Genome Annotation Parallel
+# mag-genome-annotation-parallel
 
 ## Overview
 

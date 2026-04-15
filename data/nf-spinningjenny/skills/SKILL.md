@@ -4,6 +4,8 @@ description: This pipeline simulates the first industrial revolution using Agent
 homepage: https://github.com/nf-core/spinningjenny
 ---
 
+# spinningjenny
+
 ## Overview
 nf-core/spinningjenny is a computational pipeline designed to simulate the first industrial revolution using Agent Based Models (ABM). It leverages NetLogo for model execution and R for statistical visualization, allowing researchers to explore historical economic scenarios through parallelized simulations.
 

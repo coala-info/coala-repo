@@ -4,7 +4,6 @@ description: This package provides SQLite-based annotation mappings between manu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hwgcod.db.html
 ---
 
-
 # bioconductor-hwgcod.db
 
 ## Overview

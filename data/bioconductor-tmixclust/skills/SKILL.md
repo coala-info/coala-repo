@@ -4,7 +4,6 @@ description: TMixClust performs soft-clustering of longitudinal gene expression 
 homepage: https://bioconductor.org/packages/release/bioc/html/TMixClust.html
 ---
 
-
 # bioconductor-tmixclust
 
 ## Overview

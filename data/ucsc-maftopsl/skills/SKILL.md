@@ -2,8 +2,9 @@
 name: ucsc-maftopsl
 description: ucsc-maftopsl transforms MAF alignment blocks into PSL records. Use when user asks to convert MAF to PSL, process comparative genomics data, or prepare alignments for Genome Browser visualization.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-maftopsl:482--h0b57e2e_0"
 ---
-
 
 # ucsc-maftopsl
 

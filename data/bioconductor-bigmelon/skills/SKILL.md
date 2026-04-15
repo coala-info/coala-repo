@@ -4,7 +4,6 @@ description: This tool performs memory-efficient analysis of large-scale Illumin
 homepage: https://bioconductor.org/packages/release/bioc/html/bigmelon.html
 ---
 
-
 # bioconductor-bigmelon
 
 name: bioconductor-bigmelon

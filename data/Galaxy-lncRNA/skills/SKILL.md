@@ -1,10 +1,12 @@
 ---
 name: lncrna
-description: "This Galaxy workflow processes BAM file collections and sample matrices to analyze RNA-seq data using lnctools and interaction analysis subworkflows for mRNA, lncRNA, and miRNA profiling. Use this skill when you need to identify novel long non-coding RNAs and characterize their expression patterns and interactions with mRNA and miRNA from transcriptomic data."
+description: This Galaxy workflow processes BAM file collections and sample matrices to analyze RNA-seq data using lnctools and interaction analysis subworkflows for mRNA, lncRNA, and miRNA profiling. Use this skill when you need to identify novel long non-coding RNAs and characterize their expression patterns and interactions with mRNA and miRNA from transcriptomic data.
 homepage: https://workflowhub.eu/workflows/199
+metadata:
+  docker_image: "N/A"
 ---
 
-# lncRNA
+# lncrna
 
 ## Overview
 

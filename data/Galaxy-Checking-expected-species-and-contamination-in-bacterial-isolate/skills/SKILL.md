@@ -1,10 +1,12 @@
 ---
 name: checking-expected-species-and-contamination-in-bacterial-iso
-description: "This Galaxy workflow processes paired-end sequencing reads using Kraken2, Bracken, and Recentrifuge to perform taxonomic classification and abundance estimation for bacterial isolates. Use this skill when you need to verify that a sequenced sample contains the expected bacterial species and identify any potential microbial contaminants."
-homepage: https://workflowhub.eu/workflows/1674
+description: This Galaxy workflow processes paired-end sequencing reads using Kraken2, Bracken, and Recentrifuge to perform taxonomic classification and abundance estimation for bacterial isolates. Use this skill when you need to verify that a sequenced sample contains the expected bacterial species and identify any potential microbial contaminants.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Checking expected species and contamination in bacterial isolate
+# checking-expected-species-and-contamination-in-bacterial-iso
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool provides mapping between Medical Subject Headings (MeSH) 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Eco.K12.MG1655.eg.db.html
 ---
 
-
 # bioconductor-mesh.eco.k12.mg1655.eg.db
 
 name: bioconductor-mesh.eco.k12.mg1655.eg.db

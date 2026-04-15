@@ -4,7 +4,6 @@ description: Bioconductor-sradb provides an interface to query and download meta
 homepage: https://bioconductor.org/packages/release/bioc/html/SRAdb.html
 ---
 
-
 # bioconductor-sradb
 
 name: bioconductor-sradb

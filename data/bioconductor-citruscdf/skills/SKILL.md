@@ -4,7 +4,6 @@ description: This package provides the Chip Description File (CDF) annotation da
 homepage: https://bioconductor.org/packages/release/data/annotation/html/citruscdf.html
 ---
 
-
 # bioconductor-citruscdf
 
 name: bioconductor-citruscdf

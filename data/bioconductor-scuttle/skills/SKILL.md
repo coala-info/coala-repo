@@ -4,7 +4,6 @@ description: This tool provides fundamental utility functions for quality contro
 homepage: https://bioconductor.org/packages/release/bioc/html/scuttle.html
 ---
 
-
 # bioconductor-scuttle
 
 name: bioconductor-scuttle

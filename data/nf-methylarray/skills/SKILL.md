@@ -4,6 +4,8 @@ description: This pipeline processes Illumina methylation array data from raw ID
 homepage: https://github.com/nf-core/methylarray
 ---
 
+# methylarray
+
 ## Overview
 The pipeline provides an end-to-end solution for the analysis of methylation data generated from Illumina arrays. It addresses the biological challenge of identifying epigenetic variations by processing raw intensity data into normalized methylation values and performing statistical testing for differential methylation across sample groups.
 

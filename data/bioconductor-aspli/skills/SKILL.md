@@ -4,7 +4,6 @@ description: ASpli analyzes alternative splicing in RNA-seq data by integrating 
 homepage: https://bioconductor.org/packages/release/bioc/html/ASpli.html
 ---
 
-
 # bioconductor-aspli
 
 name: bioconductor-aspli

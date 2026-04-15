@@ -4,7 +4,6 @@ description: This package provides access to the landmark Golub et al. (1999) le
 homepage: https://bioconductor.org/packages/release/data/experiment/html/golubEsets.html
 ---
 
-
 # bioconductor-golubesets
 
 name: bioconductor-golubesets

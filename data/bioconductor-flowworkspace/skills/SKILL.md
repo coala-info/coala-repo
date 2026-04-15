@@ -4,7 +4,6 @@ description: This package manages and manipulates gated flow cytometry data usin
 homepage: https://bioconductor.org/packages/release/bioc/html/flowWorkspace.html
 ---
 
-
 # bioconductor-flowworkspace
 
 name: bioconductor-flowworkspace

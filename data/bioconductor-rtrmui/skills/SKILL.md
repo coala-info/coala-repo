@@ -4,7 +4,6 @@ description: This tool provides a Shiny-based graphical user interface for ident
 homepage: https://bioconductor.org/packages/release/bioc/html/rTRMui.html
 ---
 
-
 # bioconductor-rtrmui
 
 name: bioconductor-rtrmui

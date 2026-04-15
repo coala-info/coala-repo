@@ -1,10 +1,12 @@
 ---
 name: music-stage-3-preprocess-visualisations
-description: "This Galaxy workflow processes cell proportion data collections from MuSiC deconvolution using tools like collection collapsing, column joining, and transposition to generate structured results and error tables. Use this skill when you need to format and aggregate deconvolution performance metrics to visualize the accuracy of predicted cell type compositions across multiple samples."
-homepage: https://workflowhub.eu/workflows/1571
+description: This Galaxy workflow processes cell proportion data collections from MuSiC deconvolution using tools like collection collapsing, column joining, and transposition to generate structured results and error tables. Use this skill when you need to format and aggregate deconvolution performance metrics to visualize the accuracy of predicted cell type compositions across multiple samples.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Music Stage 3 - Preprocess Visualisations
+# music-stage-3-preprocess-visualisations
 
 ## Overview
 

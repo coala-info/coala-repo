@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Human Gene
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene20stprobeset.db.html
 ---
 
-
 # bioconductor-hugene20stprobeset.db
 
 name: bioconductor-hugene20stprobeset.db

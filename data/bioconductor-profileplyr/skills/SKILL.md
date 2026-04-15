@@ -4,7 +4,6 @@ description: This tool visualizes and annotates sequencing read signals over gen
 homepage: https://bioconductor.org/packages/release/bioc/html/profileplyr.html
 ---
 
-
 # bioconductor-profileplyr
 
 name: bioconductor-profileplyr

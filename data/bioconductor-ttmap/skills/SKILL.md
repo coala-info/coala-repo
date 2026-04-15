@@ -4,7 +4,6 @@ description: TTMap is a topological data analysis tool that clusters gene expres
 homepage: https://bioconductor.org/packages/release/bioc/html/TTMap.html
 ---
 
-
 # bioconductor-ttmap
 
 ## Overview

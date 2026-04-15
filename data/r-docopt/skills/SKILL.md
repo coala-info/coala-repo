@@ -4,7 +4,6 @@ description: The r-docopt tool creates command-line interfaces for R scripts by 
 homepage: https://cloud.r-project.org/web/packages/docopt/index.html
 ---
 
-
 # r-docopt
 
 ## Overview

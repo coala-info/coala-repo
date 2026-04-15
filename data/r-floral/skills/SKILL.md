@@ -4,7 +4,6 @@ description: FLORAL performs log-ratio lasso regression for compositional data t
 homepage: https://cran.r-project.org/web/packages/floral/index.html
 ---
 
-
 # r-floral
 
 name: r-floral

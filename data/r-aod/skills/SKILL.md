@@ -4,7 +4,6 @@ description: This tool analyzes overdispersed counts or proportions in R by fitt
 homepage: https://cloud.r-project.org/web/packages/aod/index.html
 ---
 
-
 # r-aod
 
 name: r-aod

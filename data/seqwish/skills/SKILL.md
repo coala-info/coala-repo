@@ -1,9 +1,10 @@
 ---
 name: seqwish
-description: "seqwish converts sequences and their pairwise alignments into a variation graph in GFA format. Use when user asks to build a pangenome graph, induce a variation graph from alignments, or convert PAF and FASTA files into GFA format."
+description: seqwish converts sequences and their pairwise alignments into a variation graph in GFA format. Use when user asks to build a pangenome graph, induce a variation graph from alignments, or convert PAF and FASTA files into GFA format.
 homepage: https://github.com/ekg/seqwish
+metadata:
+  docker_image: "quay.io/biocontainers/seqwish:0.7.11--h5ca1c30_1"
 ---
-
 
 # seqwish
 

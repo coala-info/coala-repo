@@ -2,8 +2,9 @@
 name: perl-memoize
 description: This tool caches the results of Perl functions to improve performance by avoiding redundant computations. Use when user asks to speed up expensive functions, trade memory for speed, or implement function memoization in Perl scripts.
 homepage: http://metacpan.org/pod/Memoize
+metadata:
+  docker_image: "quay.io/biocontainers/perl-memoize:1.09--pl5321hdfd78af_0"
 ---
-
 
 # perl-memoize
 

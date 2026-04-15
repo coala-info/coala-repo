@@ -4,7 +4,6 @@ description: Bambu performs transcript discovery and quantification from long-re
 homepage: https://bioconductor.org/packages/release/bioc/html/bambu.html
 ---
 
-
 # bioconductor-bambu
 
 name: bioconductor-bambu

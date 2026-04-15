@@ -4,7 +4,6 @@ description: This package serializes and restores SummarizedExperiment and Range
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.se.html
 ---
 
-
 # bioconductor-alabaster.se
 
 ## Overview

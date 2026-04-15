@@ -1,9 +1,12 @@
 ---
 name: cwl-protein-md-setup-tutorial
-description: "This CWL workflow automates the preparation of protein structures for molecular dynamics simulations using BioExcel Building Blocks to perform hydrogen removal, side-chain repair, solvation, and system neutralization. Use this skill when you need to generate a physically valid and equilibrated aqueous environment for a protein to investigate its structural stability, folding dynamics, or atomic-level interactions."
-homepage: https://workflowhub.eu/workflows/279
+description: This CWL workflow automates the preparation of protein structures for molecular dynamics simulations using BioExcel Building Blocks to perform hydrogen removal, side-chain repair, solvation, and system neutralization. Use this skill when you need to generate a physically valid and equilibrated aqueous environment for a protein to investigate its structural stability, folding dynamics, or atomic-level interactions.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# CWL Protein MD Setup tutorial
+
+# cwl-protein-md-setup-tutorial
 
 ## Overview
 

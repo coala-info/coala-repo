@@ -2,8 +2,9 @@
 name: mango
 description: Mango is a high-performance genomic visualization engine designed for low-latency browsing and analysis of large-scale sequencing data. Use when user asks to visualize genomic alignments, inspect variant calls, or browse reference genomes across large cohorts using distributed computing.
 homepage: https://github.com/bdgenomics/mango
+metadata:
+  docker_image: "quay.io/biocontainers/mango:0.0.5--py_0"
 ---
-
 
 # mango
 

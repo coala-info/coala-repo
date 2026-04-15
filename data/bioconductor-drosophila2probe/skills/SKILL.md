@@ -4,7 +4,6 @@ description: This package provides the nucleotide sequence data and array coordi
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosophila2probe.html
 ---
 
-
 # bioconductor-drosophila2probe
 
 name: bioconductor-drosophila2probe

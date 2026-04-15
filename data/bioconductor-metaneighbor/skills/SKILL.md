@@ -4,7 +4,6 @@ description: MetaNeighbor assesses cell type identity and replicability across s
 homepage: https://bioconductor.org/packages/release/bioc/html/MetaNeighbor.html
 ---
 
-
 # bioconductor-metaneighbor
 
 name: bioconductor-metaneighbor

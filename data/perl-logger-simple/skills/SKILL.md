@@ -2,8 +2,9 @@
 name: perl-logger-simple
 description: This tool provides a simple logging mechanism for Perl applications to record messages to persistent log files. Use when user asks to initialize a logger, write messages to a log file, or manage log severity levels in Perl.
 homepage: http://metacpan.org/pod/Logger::Simple
+metadata:
+  docker_image: "quay.io/biocontainers/perl-logger-simple:2.0--pl526_0"
 ---
-
 
 # perl-logger-simple
 

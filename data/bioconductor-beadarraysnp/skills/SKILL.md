@@ -4,7 +4,6 @@ description: This package analyzes Illumina BeadArray genotyping data, specifica
 homepage: https://bioconductor.org/packages/3.5/bioc/html/beadarraySNP.html
 ---
 
-
 # bioconductor-beadarraysnp
 
 name: bioconductor-beadarraysnp

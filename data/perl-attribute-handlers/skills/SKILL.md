@@ -2,8 +2,9 @@
 name: perl-attribute-handlers
 description: This Perl module simplifies the definition of custom attributes by providing a declarative syntax for creating attribute handlers. Use when user asks to define custom Perl attributes, implement specialized behaviors during compilation phases, or automatically tie variables to classes using attributes.
 homepage: https://github.com/tsee/Attribute-Handlers
+metadata:
+  docker_image: "quay.io/biocontainers/perl-attribute-handlers:0.96--pl5.22.0_0"
 ---
-
 
 # perl-attribute-handlers
 

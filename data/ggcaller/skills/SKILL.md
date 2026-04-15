@@ -2,8 +2,9 @@
 name: ggcaller
 description: ggCaller performs graph-based gene calling and pangenome analysis for bacterial genomics by traversing population-level de Bruijn graphs. Use when user asks to call genes across multiple bacterial strains, perform pangenome clustering, or identify open reading frames using a graph-based approach.
 homepage: https://github.com/samhorsfield96/ggCaller
+metadata:
+  docker_image: "quay.io/biocontainers/ggcaller:1.4.3--py39h3961c5e_0"
 ---
-
 
 # ggcaller
 

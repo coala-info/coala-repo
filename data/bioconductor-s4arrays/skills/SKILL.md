@@ -4,7 +4,6 @@ description: The S4Arrays package provides foundational S4 infrastructure and a 
 homepage: https://bioconductor.org/packages/release/bioc/html/S4Arrays.html
 ---
 
-
 # bioconductor-s4arrays
 
 ## Overview

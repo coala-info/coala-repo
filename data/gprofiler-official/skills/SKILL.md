@@ -2,8 +2,9 @@
 name: gprofiler-official
 description: The gprofiler-official tool performs functional enrichment analysis, gene identifier conversion, and orthology mapping for biological data interpretation. Use when user asks to find enriched biological pathways, convert gene identifiers, or map orthologs between species.
 homepage: http://biit.cs.ut.ee/gprofiler
+metadata:
+  docker_image: "quay.io/biocontainers/gprofiler-official:1.0.0--pyh7e72e81_1"
 ---
-
 
 # gprofiler-official
 

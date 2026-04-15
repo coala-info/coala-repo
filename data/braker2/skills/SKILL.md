@@ -1,9 +1,10 @@
 ---
 name: braker2
-description: "BRAKER2 is an automated pipeline for the structural annotation of eukaryotic genomes using GeneMark-EX and AUGUSTUS. Use when user asks to annotate a genome assembly, predict gene structures using RNA-Seq or protein evidence, or train gene prediction models for non-model organisms."
+description: BRAKER2 is an automated pipeline for the structural annotation of eukaryotic genomes using GeneMark-EX and AUGUSTUS. Use when user asks to annotate a genome assembly, predict gene structures using RNA-Seq or protein evidence, or train gene prediction models for non-model organisms.
 homepage: https://github.com/Gaius-Augustus/BRAKER
+metadata:
+  docker_image: "quay.io/biocontainers/braker2:2.1.6--hdfd78af_5"
 ---
-
 
 # braker2
 

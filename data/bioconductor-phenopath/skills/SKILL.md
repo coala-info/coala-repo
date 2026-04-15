@@ -4,7 +4,6 @@ description: PhenoPath performs genomic trajectory analysis by modeling gene exp
 homepage: https://bioconductor.org/packages/release/bioc/html/phenopath.html
 ---
 
-
 # bioconductor-phenopath
 
 name: bioconductor-phenopath

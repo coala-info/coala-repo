@@ -4,7 +4,6 @@ description: This tool simulates microbial community dynamics using various ecol
 homepage: https://bioconductor.org/packages/release/bioc/html/miaSim.html
 ---
 
-
 # bioconductor-miasim
 
 name: bioconductor-miasim

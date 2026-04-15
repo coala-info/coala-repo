@@ -2,6 +2,8 @@
 name: cpstools
 description: cpstools is a bioinformatic suite designed for the processing, structural analysis, and comparative genomics of chloroplast genomes. Use when user asks to validate GenBank annotations, identify chloroplast structural regions, standardize sequence start points, calculate nucleotide diversity, analyze codon usage, or prepare concatenated alignments for phylogeny.
 homepage: https://github.com/Xwb7533/CPStools
+metadata:
+  docker_image: "quay.io/biocontainers/cpstools:3.0--pyhdfd78af_0"
 ---
 
 # cpstools

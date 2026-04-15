@@ -1,10 +1,12 @@
 ---
 name: lncrnas-annotation-workflow
-description: "This workflow processes RNA-seq alignments, genome assemblies, and annotations using StringTie, gffread, and FEELnc to identify and classify long non-coding RNAs. Use this skill when you need to discover novel lncRNAs in a specific tissue or condition and want to integrate them into an existing genome annotation for comprehensive transcriptomic analysis."
-homepage: https://workflowhub.eu/workflows/1324
+description: This workflow processes RNA-seq alignments, genome assemblies, and annotations using StringTie, gffread, and FEELnc to identify and classify long non-coding RNAs. Use this skill when you need to discover novel lncRNAs in a specific tissue or condition and want to integrate them into an existing genome annotation for comprehensive transcriptomic analysis.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# lncRNAs annotation workflow
+# lncrnas-annotation-workflow
 
 ## Overview
 

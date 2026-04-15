@@ -2,8 +2,9 @@
 name: vcf-annotator
 description: The vcf-annotator tool annotates VCF files with biological information by cross-referencing variant data with a GenBank reference. Use when user asks to annotate VCF files, determine mutation effects on protein sequences, identify genic or intergenic mutations, or extract gene product descriptions.
 homepage: https://github.com/rpetit3/vcf-annotator
+metadata:
+  docker_image: "quay.io/biocontainers/vcf-annotator:0.7--hdfd78af_0"
 ---
-
 
 # vcf-annotator
 

@@ -2,8 +2,9 @@
 name: ffmpeg
 description: FFmpeg is a command-line tool for processing audio and video files. Use when user asks to convert video and audio formats, transcode media streams, perform basic video editing, resize video, apply filters, or extract media information.
 homepage: https://github.com/FFmpeg/FFmpeg
+metadata:
+  docker_image: "quay.io/biocontainers/ffmpeg:7.1.1"
 ---
-
 
 # ffmpeg
 

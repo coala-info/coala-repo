@@ -4,7 +4,6 @@ description: The easyreporting package provides an R6-based interface to simplif
 homepage: https://bioconductor.org/packages/release/bioc/html/easyreporting.html
 ---
 
-
 # bioconductor-easyreporting
 
 ## Overview

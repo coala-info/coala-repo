@@ -2,8 +2,9 @@
 name: ucsc-bigwigtobedgraph
 description: This tool converts binary bigWig files into the ASCII-based bedGraph format. Use when user asks to convert bigWig to bedGraph, extract raw signal values, or extract signal for a specific genomic region.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bigwigtobedgraph:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bigwigtobedgraph
 

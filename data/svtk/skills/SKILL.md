@@ -2,6 +2,8 @@
 name: svtk
 description: The Structural Variation Toolkit (svtk) provides a suite of utilities for processing, annotating, and evaluating structural variant calls. Use when user asks to convert VCF files to BED format, annotate functional context, count variant types, or perform statistical validation using split-read and read-depth evidence.
 homepage: https://github.com/talkowski-lab/svtk
+metadata:
+  docker_image: "quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7"
 ---
 
 # svtk

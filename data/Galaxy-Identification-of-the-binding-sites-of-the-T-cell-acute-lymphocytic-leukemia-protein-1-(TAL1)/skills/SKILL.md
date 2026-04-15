@@ -1,10 +1,12 @@
 ---
 name: identification-of-the-binding-sites-of-the-t-cell-acute-lymp
-description: "This epigenetics workflow processes paired-end ChIP-seq FASTQ reads from multiple cell types to identify TAL1 transcription factor binding sites using BWA for alignment, MACS2 for peak calling, and deepTools for genomic visualization. Use this skill when you need to compare protein-DNA interaction profiles across different hematopoietic lineages or identify cell-type-specific regulatory elements and overlapping genomic binding regions."
-homepage: https://workflowhub.eu/workflows/1606
+description: This epigenetics workflow processes paired-end ChIP-seq FASTQ reads from multiple cell types to identify TAL1 transcription factor binding sites using BWA for alignment, MACS2 for peak calling, and deepTools for genomic visualization. Use this skill when you need to compare protein-DNA interaction profiles across different hematopoietic lineages or identify cell-type-specific regulatory elements and overlapping genomic binding regions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Identification of the binding sites of the T-cell acute lymphocytic leukemia protein 1 (TAL1)
+# identification-of-the-binding-sites-of-the-t-cell-acute-lymp
 
 ## Overview
 

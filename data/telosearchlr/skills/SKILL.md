@@ -2,8 +2,9 @@
 name: telosearchlr
 description: TeloSearchLR scans the terminal regions of long sequencing reads to identify and rank tandemly repeated telomeric motifs. Use when user asks to discover telomere repeat motifs, perform exhaustive motif searches, or verify specific motifs in long-read sequencing data.
 homepage: https://github.com/gchchung/TeloSearchLR
+metadata:
+  docker_image: "quay.io/biocontainers/telosearchlr:1.0.1--pyhdfd78af_0"
 ---
-
 
 # telosearchlr
 

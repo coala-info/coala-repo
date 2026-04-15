@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of gene occupancy in random
 homepage: https://bioconductor.org/packages/release/bioc/html/occugene.html
 ---
 
-
 # bioconductor-occugene
 
 name: bioconductor-occugene

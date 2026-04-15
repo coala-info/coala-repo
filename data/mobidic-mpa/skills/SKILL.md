@@ -2,8 +2,9 @@
 name: mobidic-mpa
 description: The MoBiDiC Prioritization Algorithm filters and ranks genomic variants to help identify causative mutations in large datasets. Use when user asks to prioritize genomic variants, rank mutations from VCF files, or interpret variants for rare disease diagnostics.
 homepage: https://neuro-2.iurc.montp.inserm.fr/mpaweb/
+metadata:
+  docker_image: "quay.io/biocontainers/mobidic-mpa:1.3.0--pyh5e36f6f_0"
 ---
-
 
 # mobidic-mpa
 

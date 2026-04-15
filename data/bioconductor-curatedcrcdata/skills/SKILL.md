@@ -4,7 +4,6 @@ description: This package provides curated and standardized colorectal cancer ge
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedCRCData.html
 ---
 
-
 # bioconductor-curatedcrcdata
 
 name: bioconductor-curatedcrcdata

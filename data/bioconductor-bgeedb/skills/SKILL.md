@@ -4,7 +4,6 @@ description: Bioconductor-bgeedb provides an R interface to the Bgee database fo
 homepage: https://bioconductor.org/packages/release/bioc/html/BgeeDB.html
 ---
 
-
 # bioconductor-bgeedb
 
 ## Overview

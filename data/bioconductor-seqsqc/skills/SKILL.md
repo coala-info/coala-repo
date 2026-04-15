@@ -4,7 +4,6 @@ description: This tool performs sample-level quality control for next-generation
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqSQC.html
 ---
 
-
 # bioconductor-seqsqc
 
 name: bioconductor-seqsqc

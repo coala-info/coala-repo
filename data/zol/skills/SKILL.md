@@ -2,8 +2,9 @@
 name: zol
 description: Zol is a bioinformatics toolkit for comparative analysis of co-located gene sets, providing evolutionary insights from genomic data. Use when user asks to identify ortholog groups, assess gene conservation, detect lateral gene transfer, visualize genomic neighborhoods, identify unique genomic features, or analyze BiG-SCAPE gene cluster families.
 homepage: https://github.com/Kalan-Lab/zol
+metadata:
+  docker_image: "quay.io/biocontainers/zol:1.6.17--py312hf731ba3_1"
 ---
-
 
 # zol
 

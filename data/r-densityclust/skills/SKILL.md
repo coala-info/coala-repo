@@ -4,7 +4,6 @@ description: This tool implements the density peaks clustering algorithm to iden
 homepage: https://cloud.r-project.org/web/packages/densityClust/index.html
 ---
 
-
 # r-densityclust
 
 ## Overview

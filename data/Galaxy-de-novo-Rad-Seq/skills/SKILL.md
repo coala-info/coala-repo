@@ -1,10 +1,12 @@
 ---
 name: de-novo-rad-seq
-description: "This ecology workflow processes raw RAD-Seq FASTQ data, barcodes, and population maps using Stacks and FastQC to perform de novo assembly and population genetic analysis. Use this skill when you need to identify genetic markers and analyze population structure in non-model organisms lacking a reference genome."
-homepage: https://workflowhub.eu/workflows/1666
+description: This ecology workflow processes raw RAD-Seq FASTQ data, barcodes, and population maps using Stacks and FastQC to perform de novo assembly and population genetic analysis. Use this skill when you need to identify genetic markers and analyze population structure in non-model organisms lacking a reference genome.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# de novo Rad Seq
+# de-novo-rad-seq
 
 ## Overview
 

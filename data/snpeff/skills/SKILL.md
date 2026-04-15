@@ -1,9 +1,10 @@
 ---
 name: snpeff
-description: "SnpEff annotates genomic variants and predicts their functional effects on genes and proteins. Use when user asks to annotate VCF files, predict variant impacts, download genome databases, or generate variant summary statistics."
+description: SnpEff annotates genomic variants and predicts their functional effects on genes and proteins. Use when user asks to annotate VCF files, predict variant impacts, download genome databases, or generate variant summary statistics.
 homepage: http://snpeff.sourceforge.net/
+metadata:
+  docker_image: "quay.io/biocontainers/snpeff:5.4.0a--hdfd78af_0"
 ---
-
 
 # snpeff
 

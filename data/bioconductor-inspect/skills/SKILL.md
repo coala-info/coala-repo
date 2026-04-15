@@ -4,7 +4,6 @@ description: This tool infers RNA synthesis, processing, and degradation rates f
 homepage: https://bioconductor.org/packages/release/bioc/html/INSPEcT.html
 ---
 
-
 # bioconductor-inspect
 
 name: bioconductor-inspect

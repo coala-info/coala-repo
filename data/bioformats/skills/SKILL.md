@@ -2,6 +2,8 @@
 name: bioformats
 description: Bio-Formats is a software toolset for reading, writing, and converting biological image file formats and their associated metadata. Use when user asks to convert proprietary microscopy files to standardized formats, extract image metadata, or perform batch image processing.
 homepage: https://github.com/gtamazian/bioformats
+metadata:
+  docker_image: "quay.io/biocontainers/bioformats:0.1.15--py27_0"
 ---
 
 # bioformats

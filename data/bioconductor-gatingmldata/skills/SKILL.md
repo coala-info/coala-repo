@@ -4,7 +4,6 @@ description: This package provides Gating-ML test data and XML files for validat
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/gatingMLData.html
 ---
 
-
 # bioconductor-gatingmldata
 
 name: bioconductor-gatingmldata

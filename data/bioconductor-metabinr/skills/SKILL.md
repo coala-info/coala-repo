@@ -4,7 +4,6 @@ description: This tool performs abundance-based and composition-based binning of
 homepage: https://bioconductor.org/packages/release/bioc/html/metabinR.html
 ---
 
-
 # bioconductor-metabinr
 
 name: bioconductor-metabinr

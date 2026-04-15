@@ -1,9 +1,12 @@
 ---
 name: mgnify-assembly-analysis-pipeline
-description: "This Common Workflow Language pipeline performs quality control, taxonomic classification of ribosomal regions, and functional annotation of proteins for assembled metagenomic data. Use this skill when you need to characterize the taxonomic diversity, metabolic potential, and biochemical pathways of microbial communities within environmental or clinical samples."
-homepage: https://workflowhub.eu/workflows/360
+description: This Common Workflow Language pipeline performs quality control, taxonomic classification of ribosomal regions, and functional annotation of proteins for assembled metagenomic data. Use this skill when you need to characterize the taxonomic diversity, metabolic potential, and biochemical pathways of microbial communities within environmental or clinical samples.
+homepage: https://www.ebi.ac.uk/metagenomics/
+metadata:
+  docker_image: "N/A"
 ---
-# MGnify - assembly analysis pipeline
+
+# mgnify-assembly-analysis-pipeline
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool classifies pediatric brain tumors into nine subtypes usin
 homepage: https://bioconductor.org/packages/release/bioc/html/MethPed.html
 ---
 
-
 # bioconductor-methped
 
 ## Overview

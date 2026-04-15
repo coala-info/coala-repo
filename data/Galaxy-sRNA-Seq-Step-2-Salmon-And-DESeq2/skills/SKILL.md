@@ -1,10 +1,12 @@
 ---
 name: srna-seq-step-2-salmon-and-deseq2
-description: "This transcriptomics workflow performs small RNA quantification and differential abundance analysis using Salmon and DESeq2 on control and case dataset collections paired with a reference transcriptome and gene mapping file. Use this skill when you need to identify differentially expressed small RNAs and determine their statistical significance across different experimental conditions."
-homepage: https://workflowhub.eu/workflows/1676
+description: This transcriptomics workflow performs small RNA quantification and differential abundance analysis using Salmon and DESeq2 on control and case dataset collections paired with a reference transcriptome and gene mapping file. Use this skill when you need to identify differentially expressed small RNAs and determine their statistical significance across different experimental conditions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# sRNA Seq Step 2: Salmon And DESeq2
+# srna-seq-step-2-salmon-and-deseq2
 
 ## Overview
 

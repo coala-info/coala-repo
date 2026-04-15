@@ -4,7 +4,6 @@ description: This package provides a subset of ChIP-Seq BAM and peak files from 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MMDiffBamSubset.html
 ---
 
-
 # bioconductor-mmdiffbamsubset
 
 name: bioconductor-mmdiffbamsubset

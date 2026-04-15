@@ -4,7 +4,6 @@ description: This tool performs genetic colocalisation analysis to determine if 
 homepage: https://cloud.r-project.org/web/packages/coloc/index.html
 ---
 
-
 # r-coloc
 
 name: r-coloc

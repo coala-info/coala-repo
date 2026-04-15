@@ -2,6 +2,8 @@
 name: mg-toolkit
 description: The mg-toolkit is a command-line utility for fetching metadata, searching protein databases, and performing bulk downloads of analysis results from the MGnify repository. Use when user asks to extract sample metadata into CSV formats, search non-redundant protein databases with HMMER, or perform bulk downloads of specific analysis result groups for entire studies.
 homepage: https://github.com/EBI-metagenomics/emg-toolkit
+metadata:
+  docker_image: "quay.io/biocontainers/mg-toolkit:0.10.4--pyhdfd78af_0"
 ---
 
 # mg-toolkit

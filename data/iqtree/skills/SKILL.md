@@ -2,8 +2,9 @@
 name: iqtree
 description: IQ-TREE infers high-quality phylogenetic trees from molecular sequences using maximum likelihood. Use when user asks to construct phylogenetic trees, perform automatic model selection, or calculate branch support values.
 homepage: http://www.iqtree.org
+metadata:
+  docker_image: "quay.io/biocontainers/iqtree:3.0.1--h503566f_0"
 ---
-
 
 # iqtree
 

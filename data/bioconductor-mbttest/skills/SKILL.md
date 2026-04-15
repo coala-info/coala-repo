@@ -4,7 +4,6 @@ description: This tool performs multiple beta t-tests to identify differentially
 homepage: https://bioconductor.org/packages/release/bioc/html/MBttest.html
 ---
 
-
 # bioconductor-mbttest
 
 name: bioconductor-mbttest

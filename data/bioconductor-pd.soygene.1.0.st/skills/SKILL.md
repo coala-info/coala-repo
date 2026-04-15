@@ -4,7 +4,6 @@ description: This Bioconductor package provides annotation and platform design i
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.soygene.1.0.st.html
 ---
 
-
 # bioconductor-pd.soygene.1.0.st
 
 name: bioconductor-pd.soygene.1.0.st

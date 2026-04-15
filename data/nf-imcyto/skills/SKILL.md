@@ -4,6 +4,8 @@ description: This pipeline performs image segmentation and single-cell expressio
 homepage: https://github.com/nf-core/imcyto
 ---
 
+# imcyto
+
 ## Overview
 nf-core/imcyto is a bioinformatics pipeline designed for the automated processing of Imaging Mass Cytometry (IMC) data, though it is flexible enough to support other multiplexed imaging modalities such as immunofluorescence or immunohistochemistry. It addresses the challenge of converting raw multi-channel image acquisition files into segmented single-cell expression profiles by integrating image conversion, preprocessing, and pixel classification.
 

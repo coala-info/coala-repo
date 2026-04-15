@@ -1,9 +1,8 @@
 ---
 name: bioconductor-rfastp
-description: "Rfastp provides an R interface to the fastp C++ toolkit for high-speed FASTQ data preprocessing and quality control. Use when user asks to perform quality filtering, trim adapters, handle UMIs, merge paired-end reads, or generate sequencing quality reports."
+description: Rfastp provides an R interface to the fastp C++ toolkit for high-speed FASTQ data preprocessing and quality control. Use when user asks to perform quality filtering, trim adapters, handle UMIs, merge paired-end reads, or generate sequencing quality reports.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rfastp.html
 ---
-
 
 # bioconductor-rfastp
 

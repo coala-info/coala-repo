@@ -1,9 +1,12 @@
 ---
 name: cromast-a-workflow-for-assessing-protein-domain-classificati
-description: "This CWL workflow integrates Pfam and CATH database identifiers with structural alignment tools to cross-map and categorize protein domain structural instances. Use this skill when you need to refine protein domain classifications, resolve discrepancies between structural databases, or characterize the structural consistency of specific domain families."
-homepage: https://workflowhub.eu/workflows/390
+description: This CWL workflow integrates Pfam and CATH database identifiers with structural alignment tools to cross-map and categorize protein domain structural instances. Use this skill when you need to refine protein domain classifications, resolve discrepancies between structural databases, or characterize the structural consistency of specific domain families.
+homepage: https://capsid.loria.fr/
+metadata:
+  docker_image: "N/A"
 ---
-# CroMaSt: A workflow for assessing protein domain classification by cross-mapping of structural instances between domain databases and structural alignment
+
+# cromast-a-workflow-for-assessing-protein-domain-classificati
 
 ## Overview
 

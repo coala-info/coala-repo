@@ -4,7 +4,6 @@ description: This tool classifies single-cell RNA-Seq data across different plat
 homepage: https://cran.r-project.org/web/packages/singlecellnet/index.html
 ---
 
-
 # r-singlecellnet
 
 name: r-singlecellnet

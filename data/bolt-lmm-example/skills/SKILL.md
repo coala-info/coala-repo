@@ -4,7 +4,6 @@ description: Bolt is a high-performance structural variant caller designed to de
 homepage: https://github.com/sakkayaphab/bolt
 ---
 
-
 # bolt-lmm-example
 
 ## Overview

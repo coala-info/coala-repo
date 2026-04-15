@@ -2,8 +2,9 @@
 name: scikit-image
 description: scikit-image is a Python library that provides a collection of algorithms for scientific image processing. Use when user asks to perform image filtering, segmentation, feature detection, geometric transformations, or color space conversions.
 homepage: https://github.com/scikit-image/scikit-image
+metadata:
+  docker_image: "quay.io/biocontainers/scikit-image:0.24.0"
 ---
-
 
 # scikit-image
 

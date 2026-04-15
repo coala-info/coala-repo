@@ -2,8 +2,9 @@
 name: json_collect_data_source
 description: This tool automates the retrieval, extraction, and organization of multiple data files from JSON-specified sources into a single collection. Use when user asks to collect multiple data files, unpack archives into a collection, or stage datasets for high-throughput processing.
 homepage: https://github.com/fabio-cumbo/galaxy-json-collect-data-source
+metadata:
+  docker_image: "quay.io/biocontainers/json_collect_data_source:1.0.1--2"
 ---
-
 
 # json_collect_data_source
 

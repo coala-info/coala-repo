@@ -2,8 +2,9 @@
 name: speaq
 description: SpeaQ performs Scene Graph Generation by enhancing Transformer-based detectors through groupwise query specialization for visual relationship detection. Use when user asks to train scene graph generation models, enable groupwise query specialization, or evaluate visual relationship detection performance.
 homepage: https://github.com/mlvlab/SpeaQ
+metadata:
+  docker_image: "biocontainers/speaq:phenomenal-v2.3.1_cv1.0.1.13"
 ---
-
 
 # speaq
 

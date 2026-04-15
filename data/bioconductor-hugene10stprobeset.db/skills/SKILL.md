@@ -4,7 +4,6 @@ description: This package provides annotation maps for Affymetrix Human Gene 1.0
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene10stprobeset.db.html
 ---
 
-
 # bioconductor-hugene10stprobeset.db
 
 name: bioconductor-hugene10stprobeset.db

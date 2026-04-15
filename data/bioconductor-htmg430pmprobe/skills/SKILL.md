@@ -4,7 +4,6 @@ description: This package provides probe sequence data and spatial coordinates f
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430pmprobe.html
 ---
 
-
 # bioconductor-htmg430pmprobe
 
 name: bioconductor-htmg430pmprobe

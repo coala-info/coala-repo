@@ -4,7 +4,6 @@ description: This package provides access to BAM files containing paired-end RNA
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RNAseqData.HNRNPC.bam.chr14.html
 ---
 
-
 # bioconductor-rnaseqdata.hnrnpc.bam.chr14
 
 name: bioconductor-rnaseqdata.hnrnpc.bam.chr14

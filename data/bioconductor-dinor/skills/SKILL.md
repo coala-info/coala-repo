@@ -4,7 +4,6 @@ description: This tool analyzes NOMe-seq data to detect differences in nucleosom
 homepage: https://bioconductor.org/packages/release/bioc/html/dinoR.html
 ---
 
-
 # bioconductor-dinor
 
 name: bioconductor-dinor

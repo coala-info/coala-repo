@@ -4,7 +4,6 @@ description: This package provides flow cytometry data files and metadata for te
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/flowQBData.html
 ---
 
-
 # bioconductor-flowqbdata
 
 name: bioconductor-flowqbdata

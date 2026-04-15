@@ -4,7 +4,6 @@ description: The sigminer package provides a comprehensive toolset for mutationa
 homepage: https://cran.r-project.org/web/packages/sigminer/index.html
 ---
 
-
 # r-sigminer
 
 ## Overview

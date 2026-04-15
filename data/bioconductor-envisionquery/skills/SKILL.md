@@ -4,7 +4,6 @@ description: This tool retrieves biological data and performs ID mapping through
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ENVISIONQuery.html
 ---
 
-
 # bioconductor-envisionquery
 
 name: bioconductor-envisionquery

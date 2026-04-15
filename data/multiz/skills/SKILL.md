@@ -2,8 +2,9 @@
 name: multiz
 description: Performs multiple sequence alignment of DNA sequences. Use when user asks to align multiple DNA sequences.
 homepage: http://www.bx.psu.edu/miller_lab/
+metadata:
+  docker_image: "quay.io/biocontainers/multiz:11.2--hec16e2b_3"
 ---
-
 
 # multiz
 

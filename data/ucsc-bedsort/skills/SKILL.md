@@ -2,8 +2,9 @@
 name: ucsc-bedsort
 description: ucsc-bedsort orders BED files by chromosome and then by start position. Use when user asks to order BED files, sort BED files, prepare BED files for BigBed conversion, or prepare BED files for UCSC Genome Browser visualization.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedsort:482--h0b57e2e_0"
 ---
-
 
 # ucsc-bedsort
 

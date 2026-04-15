@@ -4,7 +4,6 @@ description: bioconductor-smap performs copy number profiling of array-CGH data 
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SMAP.html
 ---
 
-
 # bioconductor-smap
 
 name: bioconductor-smap

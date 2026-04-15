@@ -4,7 +4,6 @@ description: bioconductor-decontx identifies and removes ambient RNA and backgro
 homepage: https://bioconductor.org/packages/release/bioc/html/decontX.html
 ---
 
-
 # bioconductor-decontx
 
 name: bioconductor-decontx

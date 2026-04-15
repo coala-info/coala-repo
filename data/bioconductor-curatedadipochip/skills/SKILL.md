@@ -4,7 +4,6 @@ description: This package provides access to a curated ChIP-Seq dataset of diffe
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedAdipoChIP.html
 ---
 
-
 # bioconductor-curatedadipochip
 
 name: bioconductor-curatedadipochip

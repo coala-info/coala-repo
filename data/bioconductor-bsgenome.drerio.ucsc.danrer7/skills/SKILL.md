@@ -4,7 +4,6 @@ description: This package provides the complete genome sequence for the Danio re
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer7.html
 ---
 
-
 # bioconductor-bsgenome.drerio.ucsc.danrer7
 
 ## Overview

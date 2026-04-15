@@ -2,8 +2,9 @@
 name: emptydrops
 description: Emptydrops identifies and filters true cells from ambient RNA background noise in droplet-based single-cell sequencing data. Use when user asks to filter empty droplets, distinguish cells from background noise, or process raw gene-barcode matrices.
 homepage: https://pypi.org/project/emptydrops/
+metadata:
+  docker_image: "quay.io/biocontainers/emptydrops:0.0.5--py_0"
 ---
-
 
 # emptydrops
 

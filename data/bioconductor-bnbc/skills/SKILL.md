@@ -4,7 +4,6 @@ description: This tool performs normalization and batch correction for Hi-C cont
 homepage: https://bioconductor.org/packages/release/bioc/html/bnbc.html
 ---
 
-
 # bioconductor-bnbc
 
 name: bioconductor-bnbc

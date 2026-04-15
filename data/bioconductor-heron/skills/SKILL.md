@@ -4,7 +4,6 @@ description: This tool performs hierarchical analysis of high-density peptide ar
 homepage: https://bioconductor.org/packages/release/bioc/html/HERON.html
 ---
 
-
 # bioconductor-heron
 
 name: bioconductor-heron

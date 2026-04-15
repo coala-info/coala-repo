@@ -4,7 +4,6 @@ description: This package provides the Pan troglodytes (Chimp) genome sequences 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ptroglodytes.UCSC.panTro3.html
 ---
 
-
 # bioconductor-bsgenome.ptroglodytes.ucsc.pantro3
 
 ## Overview

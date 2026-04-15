@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for mapping m20k
 homepage: https://bioconductor.org/packages/release/data/annotation/html/m20kcod.db.html
 ---
 
-
 # bioconductor-m20kcod.db
 
 name: bioconductor-m20kcod.db

@@ -4,7 +4,6 @@ description: Cardinal provides a comprehensive framework for the analysis and vi
 homepage: https://bioconductor.org/packages/release/bioc/html/Cardinal.html
 ---
 
-
 # bioconductor-cardinal
 
 name: bioconductor-cardinal

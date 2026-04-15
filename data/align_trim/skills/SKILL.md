@@ -2,8 +2,9 @@
 name: align_trim
 description: This tool soft-clips primer sequences from aligned reads and performs coverage normalization for amplicon-based sequencing data. Use when user asks to trim primers from BAM files, normalize read depth per amplicon, or generate amplicon performance reports.
 homepage: https://github.com/artic-network/align_trim
+metadata:
+  docker_image: "quay.io/biocontainers/alignlib-lite:0.3--py312h9c9b0c2_9"
 ---
-
 
 # align_trim
 

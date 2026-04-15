@@ -2,8 +2,9 @@
 name: metawrap-refinement
 description: This tool consolidates and optimizes metagenomic bins from multiple binning predictions to produce a refined set of high-quality genomes. Use when user asks to refine metagenomic bins, consolidate binning outputs, or improve bin completion and contamination using CheckM.
 homepage: https://github.com/bxlab/metaWRAP
+metadata:
+  docker_image: "quay.io/biocontainers/metawrap:1.2--0"
 ---
-
 
 # metawrap-refinement
 

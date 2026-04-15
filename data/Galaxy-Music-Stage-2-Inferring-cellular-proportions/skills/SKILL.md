@@ -1,10 +1,12 @@
 ---
 name: music-stage-2-inferring-cellular-proportions
-description: "This Galaxy workflow utilizes the MuSiC deconvolution tool and Expression Set construction to infer cell type proportions from pseudobulk datasets using a single-cell RNA-seq reference. Use this skill when you need to quantify the cellular composition of heterogeneous tissue samples by leveraging multi-subject single-cell transcriptomic data to account for cross-subject consistency."
-homepage: https://workflowhub.eu/workflows/1575
+description: This Galaxy workflow utilizes the MuSiC deconvolution tool and Expression Set construction to infer cell type proportions from pseudobulk datasets using a single-cell RNA-seq reference. Use this skill when you need to quantify the cellular composition of heterogeneous tissue samples by leveraging multi-subject single-cell transcriptomic data to account for cross-subject consistency.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Music Stage 2 - Inferring cellular proportions
+# music-stage-2-inferring-cellular-proportions
 
 ## Overview
 

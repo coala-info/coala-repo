@@ -1,10 +1,12 @@
 ---
 name: peptideml
-description: "This proteomics workflow processes anti-cancer and non-anti-cancer peptide sequences using PDAUG tools to extract sequence descriptors and train multiple machine learning models. Use this skill when you need to build and evaluate predictive models to distinguish therapeutic anti-cancer peptides from non-functional sequences based on their physicochemical properties."
-homepage: https://workflowhub.eu/workflows/1454
+description: This proteomics workflow processes anti-cancer and non-anti-cancer peptide sequences using PDAUG tools to extract sequence descriptors and train multiple machine learning models. Use this skill when you need to build and evaluate predictive models to distinguish therapeutic anti-cancer peptides from non-functional sequences based on their physicochemical properties.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# PeptideML
+# peptideml
 
 ## Overview
 

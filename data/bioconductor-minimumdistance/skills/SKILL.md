@@ -4,7 +4,6 @@ description: This tool detects de novo copy number alterations in case-parent tr
 homepage: https://bioconductor.org/packages/release/bioc/html/MinimumDistance.html
 ---
 
-
 # bioconductor-minimumdistance
 
 name: bioconductor-minimumdistance

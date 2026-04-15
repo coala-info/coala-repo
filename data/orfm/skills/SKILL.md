@@ -2,8 +2,9 @@
 name: orfm
 description: OrfM rapidly identifies and translates open reading frames from DNA sequences into amino acid sequences without requiring start codons. Use when user asks to find ORFs in metagenomic data, translate DNA into protein sequences, or extract potential peptides from fragmented reads.
 homepage: https://github.com/wwood/OrfM
+metadata:
+  docker_image: "quay.io/biocontainers/orfm:1.4.0--h577a1d6_0"
 ---
-
 
 # orfm
 

@@ -2,8 +2,9 @@
 name: scp-aspera
 description: The scp-aspera tool performs high-speed downloads of metabolomics datasets from the MetaboLights database using the Aspera FASP protocol. Use when user asks to download public or private MetaboLights studies, transfer large metabolomics data files, or retrieve specific study metadata.
 homepage: https://github.com/phnmnl/container-scp-aspera
+metadata:
+  docker_image: "biocontainers/scp-aspera:phenomenal-v3.7.2_cv0.3.16"
 ---
-
 
 # scp-aspera
 

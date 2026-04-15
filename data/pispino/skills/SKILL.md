@@ -2,6 +2,8 @@
 name: pispino
 description: PISPINO provides a streamlined workflow for the preliminary processing, merging, and quality filtering of raw demultiplexed Illumina sequencing data. Use when user asks to generate sample manifests, map read pairs to sample names, or perform sequence preparation tasks like reindexing and merging FASTQ files.
 homepage: https://github.com/hsgweon/pispino
+metadata:
+  docker_image: "quay.io/biocontainers/pispino:1.1--py35_0"
 ---
 
 # pispino

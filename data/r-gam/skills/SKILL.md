@@ -4,7 +4,6 @@ description: This tool fits and analyzes Generalized Additive Models in R to mod
 homepage: https://cloud.r-project.org/web/packages/gam/index.html
 ---
 
-
 # r-gam
 
 name: r-gam

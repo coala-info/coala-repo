@@ -1,10 +1,12 @@
 ---
 name: workflow-3-classification-galaxy-training-16s-microbial-anal
-description: "This microbiome workflow classifies cleaned 16S rRNA sequences and count tables against a reference training set using Mothur tools to assign taxonomy and filter unwanted lineages. Use this skill when you need to taxonomically identify microbial species in environmental samples and refine your dataset by removing non-target sequences such as mitochondria or chloroplasts."
-homepage: https://workflowhub.eu/workflows/1428
+description: This microbiome workflow classifies cleaned 16S rRNA sequences and count tables against a reference training set using Mothur tools to assign taxonomy and filter unwanted lineages. Use this skill when you need to taxonomically identify microbial species in environmental samples and refine your dataset by removing non-target sequences such as mitochondria or chloroplasts.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 3: Classification [Galaxy Training: 16S Microbial Analysis With Mothur]
+# workflow-3-classification-galaxy-training-16s-microbial-anal
 
 ## Overview
 

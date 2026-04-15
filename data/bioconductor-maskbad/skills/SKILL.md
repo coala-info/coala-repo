@@ -4,7 +4,6 @@ description: This tool identifies and masks Affymetrix probes with binding affin
 homepage: https://bioconductor.org/packages/release/bioc/html/maskBAD.html
 ---
 
-
 # bioconductor-maskbad
 
 name: bioconductor-maskbad

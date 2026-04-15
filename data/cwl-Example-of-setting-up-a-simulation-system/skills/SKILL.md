@@ -1,9 +1,12 @@
 ---
 name: example-of-setting-up-a-simulation-system
-description: "This CWL workflow automates the preparation of a protein molecular dynamics simulation system using GROMACS tools to generate topologies, solvate the molecule, add ions, and perform energy minimization and equilibration. Use this skill when preparing biological macromolecules for atomistic simulations to ensure the system is properly solvated, neutralized, and energetically stable for production runs."
-homepage: https://workflowhub.eu/workflows/98
+description: This CWL workflow automates the preparation of a protein molecular dynamics simulation system using GROMACS tools to generate topologies, solvate the molecule, add ions, and perform energy minimization and equilibration. Use this skill when preparing biological macromolecules for atomistic simulations to ensure the system is properly solvated, neutralized, and energetically stable for production runs.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
-# Example of setting up a simulation system
+
+# example-of-setting-up-a-simulation-system
 
 ## Overview
 

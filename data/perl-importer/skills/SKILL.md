@@ -2,8 +2,9 @@
 name: perl-importer
 description: The perl-importer module provides an alternative interface for importing symbols that gives the consumer control over how functions are brought into their scope. Use when user asks to import symbols lexically, rename imported functions to avoid naming conflicts, or get function references without installing them into a symbol table.
 homepage: http://metacpan.org/pod/Importer
+metadata:
+  docker_image: "quay.io/biocontainers/perl-importer:0.026--pl5321hdfd78af_0"
 ---
-
 
 # perl-importer
 

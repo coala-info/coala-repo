@@ -1,9 +1,10 @@
 ---
 name: pangbank-api
-description: "This tool manages PanGBank pangenome databases and provides a REST API for data exploration. Use when user asks to import pangenome collections, manage database schemas, list existing collections, or deploy the FastAPI server."
+description: This tool manages PanGBank pangenome databases and provides a REST API for data exploration. Use when user asks to import pangenome collections, manage database schemas, list existing collections, or deploy the FastAPI server.
 homepage: https://github.com/labgem/pangbank-api
+metadata:
+  docker_image: "quay.io/biocontainers/pangbank-api:0.1.2--pyhdfd78af_0"
 ---
-
 
 # pangbank-api
 

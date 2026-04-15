@@ -2,8 +2,9 @@
 name: pmmrcalculator
 description: The pmmrcalculator tool calculates the pairwise mismatch rate for individuals within an EigenStrat dataset. Use when user asks to calculate pairwise mismatch rates, identify sample duplicates, or assess genetic similarity between individuals.
 homepage: https://github.com/TCLamnidis/pMMRCalculator
+metadata:
+  docker_image: "quay.io/biocontainers/pmmrcalculator:1.1.0--hdfd78af_0"
 ---
-
 
 # pmmrcalculator
 

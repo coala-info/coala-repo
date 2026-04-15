@@ -2,6 +2,8 @@
 name: vadr
 description: VADR classifies and annotates viral sequences by comparing them against a library of covariance models to identify features and quality alerts. Use when user asks to classify viral sequences, annotate features like CDS or genes, or screen submissions for viruses such as SARS-CoV-2, Influenza, and Mpox.
 homepage: https://github.com/ncbi/vadr
+metadata:
+  docker_image: "quay.io/biocontainers/vadr:1.6.4--pl5321h031d066_0"
 ---
 
 # vadr

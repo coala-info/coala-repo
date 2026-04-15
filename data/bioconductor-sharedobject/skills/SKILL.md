@@ -4,7 +4,6 @@ description: This tool enables the sharing of R objects across multiple processe
 homepage: https://bioconductor.org/packages/release/bioc/html/SharedObject.html
 ---
 
-
 # bioconductor-sharedobject
 
 name: bioconductor-sharedobject

@@ -4,7 +4,6 @@ description: This package provides genome-wide annotation data for Zebrafish usi
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Dr.eg.db.html
 ---
 
-
 # bioconductor-org.dr.eg.db
 
 name: bioconductor-org.dr.eg.db

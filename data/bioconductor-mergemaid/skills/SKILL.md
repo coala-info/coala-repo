@@ -4,7 +4,6 @@ description: This tool facilitates multi-study gene expression analysis by mergi
 homepage: https://bioconductor.org/packages/3.5/bioc/html/MergeMaid.html
 ---
 
-
 # bioconductor-mergemaid
 
 name: bioconductor-mergemaid

@@ -1,10 +1,12 @@
 ---
 name: amr-gene-detection
-description: "This workflow identifies antimicrobial resistance genes, point mutations, and virulence factors in assembled bacterial genomes using StarAMR, AMRFinderPlus, and ABRicate. Use this skill when you need to characterize the genetic basis of antibiotic resistance and pathogenicity in bacterial isolates for genomic surveillance or clinical research."
-homepage: https://workflowhub.eu/workflows/1049
+description: This workflow identifies antimicrobial resistance genes, point mutations, and virulence factors in assembled bacterial genomes using StarAMR, AMRFinderPlus, and ABRicate. Use this skill when you need to characterize the genetic basis of antibiotic resistance and pathogenicity in bacterial isolates for genomic surveillance or clinical research.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# AMR Gene Detection
+# amr-gene-detection
 
 ## Overview
 

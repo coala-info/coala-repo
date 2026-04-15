@@ -2,8 +2,9 @@
 name: rainbow
 description: Rainbow Fart is a VSCode extension that plays complimentary audio clips when specific programming keywords are detected in the editor. Use when user asks to enable auditory positive reinforcement, authorize the local audio server, or trigger sounds while coding.
 homepage: https://github.com/SaekiRaku/vscode-rainbow-fart
+metadata:
+  docker_image: "quay.io/biocontainers/rainbow:2.0.4--pl5321h7b50bb2_11"
 ---
-
 
 # rainbow
 

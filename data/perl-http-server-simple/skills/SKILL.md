@@ -2,8 +2,9 @@
 name: perl-http-server-simple
 description: This tool provides a minimal, pure-Perl HTTP server implementation designed to be embedded directly into applications. Use when user asks to create a standalone web server, embed a lightweight HTTP service in a Perl script, or run a background server for integration testing.
 homepage: https://metacpan.org/pod/HTTP::Server::Simple
+metadata:
+  docker_image: "quay.io/biocontainers/perl-http-server-simple:0.52--pl526_2"
 ---
-
 
 # perl-http-server-simple
 

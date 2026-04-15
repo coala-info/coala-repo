@@ -2,8 +2,9 @@
 name: vapor
 description: VAPOR classifies viral samples from short-read sequencing data by comparing reads against a reference database to find the best matching strain. Use when user asks to classify viral samples, find the best matching viral reference strain, or retrieve matching reference sequences.
 homepage: https://github.com/connor-lab/vapor
+metadata:
+  docker_image: "quay.io/biocontainers/vapor:1.0.3--pyhdfd78af_0"
 ---
-
 
 # vapor
 

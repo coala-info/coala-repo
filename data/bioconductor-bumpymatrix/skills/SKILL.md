@@ -4,7 +4,6 @@ description: The BumpyMatrix package provides a two-dimensional container where 
 homepage: https://bioconductor.org/packages/release/bioc/html/BumpyMatrix.html
 ---
 
-
 # bioconductor-bumpymatrix
 
 name: bioconductor-bumpymatrix

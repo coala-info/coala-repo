@@ -2,8 +2,9 @@
 name: cansnper
 description: CanSNPer performs hierarchical genotype classification of bacterial pathogens by identifying canonical Single Nucleotide Polymorphisms in query sequences. Use when user asks to classify query FASTA sequences, map SNPs to a phylogenetic structure, generate visual phylogenetic trees, or manage a local SNP database.
 homepage: https://github.com/adrlar/CanSNPer/
+metadata:
+  docker_image: "quay.io/biocontainers/cansnper:1.0.10--py_1"
 ---
-
 
 # cansnper
 

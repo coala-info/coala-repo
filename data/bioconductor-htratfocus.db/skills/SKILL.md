@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rat Focus 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htratfocus.db.html
 ---
 
-
 # bioconductor-htratfocus.db
 
 name: bioconductor-htratfocus.db

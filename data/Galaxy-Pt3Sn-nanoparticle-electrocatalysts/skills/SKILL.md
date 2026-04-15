@@ -1,10 +1,12 @@
 ---
 name: paper-1-xanes-lcf-exafs
-description: "This Galaxy workflow performs XANES, LCF, and EXAFS analysis on Pt and Sn edge X-ray absorption spectra using Larch tools and crystallographic information files. Use this skill when you need to characterize the oxidation states and local atomic structures of bimetallic nanoparticle electrocatalysts under different reactive gas environments."
-homepage: https://workflowhub.eu/workflows/1798
+description: This Galaxy workflow performs XANES, LCF, and EXAFS analysis on Pt and Sn edge X-ray absorption spectra using Larch tools and crystallographic information files. Use this skill when you need to characterize the oxidation states and local atomic structures of bimetallic nanoparticle electrocatalysts under different reactive gas environments.
+homepage: https://eurosciencegateway.eu/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Paper 1: XANES, LCF, EXAFS
+# paper-1-xanes-lcf-exafs
 
 ## Overview
 

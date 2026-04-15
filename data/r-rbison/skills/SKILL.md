@@ -4,7 +4,6 @@ description: The rbison package provides an R interface to the USGS BISON servic
 homepage: https://cran.r-project.org/web/packages/rbison/index.html
 ---
 
-
 # r-rbison
 
 ## Overview

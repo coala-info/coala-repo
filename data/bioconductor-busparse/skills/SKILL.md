@@ -4,7 +4,6 @@ description: This tool processes and converts Barcode, UMI, Set (BUS) format dat
 homepage: https://bioconductor.org/packages/release/bioc/html/BUSpaRse.html
 ---
 
-
 # bioconductor-busparse
 
 name: bioconductor-busparse

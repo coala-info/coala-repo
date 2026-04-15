@@ -4,7 +4,6 @@ description: This package provides a framework for performing iterative clusteri
 homepage: https://bioconductor.org/packages/3.8/bioc/html/iterClust.html
 ---
 
-
 # bioconductor-iterclust
 
 ## Overview

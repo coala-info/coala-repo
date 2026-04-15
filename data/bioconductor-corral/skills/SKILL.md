@@ -4,7 +4,6 @@ description: bioconductor-corral performs dimensionality reduction and batch int
 homepage: https://bioconductor.org/packages/release/bioc/html/corral.html
 ---
 
-
 # bioconductor-corral
 
 name: bioconductor-corral

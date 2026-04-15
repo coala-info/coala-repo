@@ -1,9 +1,10 @@
 ---
 name: parmed
-description: "ParmEd facilitates the creation, manipulation, and conversion of molecular topologies and coordinate files across various force field formats. Use when user asks to convert between molecular file formats, modify force field parameters, or programmatically edit chemical systems for simulations."
+description: ParmEd facilitates the creation, manipulation, and conversion of molecular topologies and coordinate files across various force field formats. Use when user asks to convert between molecular file formats, modify force field parameters, or programmatically edit chemical systems for simulations.
 homepage: https://github.com/ParmEd/ParmEd
+metadata:
+  docker_image: "quay.io/biocontainers/parmed:3.4.3"
 ---
-
 
 # parmed
 

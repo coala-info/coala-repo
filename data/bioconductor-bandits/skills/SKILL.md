@@ -4,7 +4,6 @@ description: BANDITS is a Bayesian hierarchical method for detecting differentia
 homepage: https://bioconductor.org/packages/release/bioc/html/BANDITS.html
 ---
 
-
 # bioconductor-bandits
 
 ## Overview

@@ -2,8 +2,9 @@
 name: endorspy
 description: endorspy calculates sequencing metrics such as endogenous DNA percentage, clonality, and duplication rates by analyzing samtools flagstat outputs. Use when user asks to calculate endogenous DNA content, determine library complexity, or generate MultiQC-compatible sequencing metrics from flagstat files.
 homepage: https://github.com/aidaanva/endorS.py
+metadata:
+  docker_image: "quay.io/biocontainers/endorspy:1.4--hdfd78af_0"
 ---
-
 
 # endorspy
 

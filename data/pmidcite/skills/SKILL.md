@@ -1,7 +1,9 @@
 ---
 name: pmidcite
-description: "pmidcite retrieves citation counts, reference lists, and NIH impact metrics for PubMed IDs using the NIH Open Citation Collection. Use when user asks to fetch citation data, perform forward or backward citation snowballing, or summarize the impact of a group of papers."
+description: pmidcite retrieves citation counts, reference lists, and NIH impact metrics for PubMed IDs using the NIH Open Citation Collection. Use when user asks to fetch citation data, perform forward or backward citation snowballing, or summarize the impact of a group of papers.
 homepage: http://github.com/dvklopfenstein/pmidcite
+metadata:
+  docker_image: "quay.io/biocontainers/pmidcite:0.3.1--pyhdfd78af_0"
 ---
 
 # pmidcite

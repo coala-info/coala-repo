@@ -2,6 +2,8 @@
 name: beamspy
 description: BEAMSpy is a Python toolkit for the putative annotation of metabolites in untargeted LC-MS and DIMS metabolomics assays. Use when user asks to annotate metabolites, match features against reference databases, or perform correlation analysis to group metabolic features.
 homepage: https://github.com/computational-metabolomics/beamspy
+metadata:
+  docker_image: "quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0"
 ---
 
 # beamspy

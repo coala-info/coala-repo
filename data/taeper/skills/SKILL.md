@@ -2,8 +2,9 @@
 name: taeper
 description: taeper simulates Nanopore sequencing by copying fast5 files to a destination directory according to their original generation timestamps. Use when user asks to replicate real-time sequencing behavior, stress-test live analysis workflows, or speed up the simulation of historical sequencing data.
 homepage: https://github.com/mbhall88/taeper
+metadata:
+  docker_image: "quay.io/biocontainers/taeper:0.1.0--py36_0"
 ---
-
 
 # taeper
 

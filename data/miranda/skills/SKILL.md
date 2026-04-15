@@ -1,9 +1,10 @@
 ---
 name: miranda
-description: "Finds genomic targets for microRNAs using the MIRANDA algorithm. Use when user asks to find microRNA binding sites in DNA or RNA sequences."
+description: Finds genomic targets for microRNAs using the MIRANDA algorithm. Use when user asks to find microRNA binding sites in DNA or RNA sequences.
 homepage: https://github.com/miranda-ng/miranda-ng
+metadata:
+  docker_image: "quay.io/biocontainers/miranda:3.3a--h7b50bb2_9"
 ---
-
 
 # miranda
 

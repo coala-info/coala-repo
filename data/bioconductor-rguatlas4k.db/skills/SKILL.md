@@ -4,7 +4,6 @@ description: This package provides Bioconductor annotation data for the Rat Geno
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rguatlas4k.db.html
 ---
 
-
 # bioconductor-rguatlas4k.db
 
 name: bioconductor-rguatlas4k.db

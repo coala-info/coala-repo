@@ -4,7 +4,6 @@ description: This tool provides an integrated RNA-Seq pipeline for processing ra
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ArrayExpressHTS.html
 ---
 
-
 # bioconductor-arrayexpresshts
 
 name: bioconductor-arrayexpresshts

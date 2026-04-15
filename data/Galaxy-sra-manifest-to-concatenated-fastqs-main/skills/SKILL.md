@@ -1,7 +1,9 @@
 ---
 name: sra_manifest_to_concatenated_fastqs_parallel
-description: "This workflow processes an SRA manifest to download sequencing data using fasterq-dump and concatenates multiple runs into per-sample fastq collections based on user-defined identifier columns. Use this skill when you need to automatically aggregate raw sequencing data from the Sequence Read Archive into unified sample-level datasets for downstream genomic analysis."
-homepage: https://workflowhub.eu/workflows/622
+description: This workflow processes an SRA manifest to download sequencing data using fasterq-dump and concatenates multiple runs into per-sample fastq collections based on user-defined identifier columns. Use this skill when you need to automatically aggregate raw sequencing data from the Sequence Read Archive into unified sample-level datasets for downstream genomic analysis.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
 # sra_manifest_to_concatenated_fastqs_parallel

@@ -1,10 +1,12 @@
 ---
 name: pacbio-hifi-genome-assembly-using-hifiasm-v21
-description: "This workflow performs de novo genome assembly on PacBio HiFi FASTQ reads using HiFi Adapter Filter for preprocessing, Hifiasm for assembly, and Bandage for visualization and statistics. Use this skill when you need to generate high-quality, contiguous genome assemblies from circular consensus sequencing data and evaluate the structural connectivity of the resulting assembly graphs."
-homepage: https://workflowhub.eu/workflows/221
+description: This workflow performs de novo genome assembly on PacBio HiFi FASTQ reads using HiFi Adapter Filter for preprocessing, Hifiasm for assembly, and Bandage for visualization and statistics. Use this skill when you need to generate high-quality, contiguous genome assemblies from circular consensus sequencing data and evaluate the structural connectivity of the resulting assembly graphs.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# PacBio HiFi genome assembly using hifiasm v2.1
+# pacbio-hifi-genome-assembly-using-hifiasm-v21
 
 ## Overview
 

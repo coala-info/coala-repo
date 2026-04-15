@@ -1,10 +1,12 @@
 ---
 name: combined-workflows-for-large-genome-assembly
-description: "This Galaxy workflow processes long and paired-end short reads to perform large genome assembly using meryl for kmer counting, fastp for trimming, Flye for assembly, and Quast for quality assessment. Use this skill when you need to generate a high-quality de novo assembly for a complex organism and require integrated polishing and validation to ensure genomic accuracy."
-homepage: https://workflowhub.eu/workflows/230
+description: This Galaxy workflow processes long and paired-end short reads to perform large genome assembly using meryl for kmer counting, fastp for trimming, Flye for assembly, and Quast for quality assessment. Use this skill when you need to generate a high-quality de novo assembly for a complex organism and require integrated polishing and validation to ensure genomic accuracy.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Combined workflows for large genome assembly
+# combined-workflows-for-large-genome-assembly
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: real
 description: REAL is a specialized tool designed for the efficient alignment of short-read genomic sequencing data to reference sequences. Use when user asks to index a reference genome, align single-end or paired-end reads, or manage mapping parameters for bioinformatics workflows.
 homepage: https://nms.kcl.ac.uk/informatics/projects/real/?id=man
+metadata:
+  docker_image: "quay.io/biocontainers/real:1.0--he941832_1"
 ---
-
 
 # real
 

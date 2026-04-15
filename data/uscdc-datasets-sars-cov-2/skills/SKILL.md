@@ -2,8 +2,9 @@
 name: uscdc-datasets-sars-cov-2
 description: The uscdc-datasets-sars-cov-2 tool downloads and organizes SARS-CoV-2 genomic benchmark datasets from NCBI. Use when user asks to retrieve SARS-CoV-2 genomic datasets, organize downloaded data, validate lineages, test QC thresholds, compare sequencing platforms, benchmark metagenomic approaches, or generate a Makefile for data download.
 homepage: https://github.com/CDCgov/datasets-sars-cov-2
+metadata:
+  docker_image: "quay.io/biocontainers/uscdc-datasets-sars-cov-2:0.7.2--hdfd78af_0"
 ---
-
 
 # uscdc-datasets-sars-cov-2
 

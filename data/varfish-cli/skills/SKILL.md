@@ -2,6 +2,8 @@
 name: varfish-cli
 description: The varfish-cli tool automates the upload of genomic variant data and the management of projects on a VarFish server instance. Use when user asks to import cases, list projects, convert DRAGEN QC metrics, or interact with the VarFish API.
 homepage: https://github.com/bihealth/varfish-cli
+metadata:
+  docker_image: "quay.io/biocontainers/varfish-cli:0.7.0--pyhdfd78af_0"
 ---
 
 # varfish-cli

@@ -4,7 +4,6 @@ description: This tool provides access to and analysis of segmented Copy Number 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.CNV.html
 ---
 
-
 # bioconductor-rtcga.cnv
 
 name: bioconductor-rtcga.cnv

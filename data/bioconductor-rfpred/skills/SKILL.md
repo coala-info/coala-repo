@@ -4,7 +4,6 @@ description: This tool calculates functional meta-scores for human missense vari
 homepage: https://bioconductor.org/packages/release/bioc/html/rfPred.html
 ---
 
-
 # bioconductor-rfpred
 
 name: bioconductor-rfpred

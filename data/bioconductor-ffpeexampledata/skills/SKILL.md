@@ -4,7 +4,6 @@ description: This package provides Illumina DASL microarray data from FFPE tissu
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ffpeExampleData.html
 ---
 
-
 # bioconductor-ffpeexampledata
 
 name: bioconductor-ffpeexampledata

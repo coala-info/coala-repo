@@ -1,7 +1,9 @@
 ---
 name: fgap
-description: "fgap improves the continuity of draft genome assemblies by closing gaps using BLAST+ alignments against provided datasets. Use when user asks to close gaps in a draft assembly, fill positive gaps with new sequences, or join overlapping contigs."
+description: fgap improves the continuity of draft genome assemblies by closing gaps using BLAST+ alignments against provided datasets. Use when user asks to close gaps in a draft assembly, fill positive gaps with new sequences, or join overlapping contigs.
 homepage: https://github.com/pirovc/fgap
+metadata:
+  docker_image: "quay.io/biocontainers/fgap:1.8.1--hdfd78af_2"
 ---
 
 # fgap

@@ -1,9 +1,10 @@
 ---
 name: estscan
-description: "ESTScan identifies coding regions in DNA sequences and corrects frameshift errors. Use when user asks to find coding regions in DNA, predict genes, or correct frameshift mutations."
+description: ESTScan identifies coding regions in DNA sequences and corrects frameshift errors. Use when user asks to find coding regions in DNA, predict genes, or correct frameshift mutations.
 homepage: https://github.com/sib-swiss/ESTScan
+metadata:
+  docker_image: "biocontainers/estscan:v3.0.3-3-deb_cv1"
 ---
-
 
 # estscan
 

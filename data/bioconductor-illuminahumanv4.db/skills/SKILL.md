@@ -4,7 +4,6 @@ description: This package provides annotation data for the Illumina Humanv4 expr
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html
 ---
 
-
 # bioconductor-illuminahumanv4.db
 
 name: bioconductor-illuminahumanv4.db

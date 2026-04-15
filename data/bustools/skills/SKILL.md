@@ -1,7 +1,9 @@
 ---
 name: bustools
-description: "bustools processes BUS files to transform raw pseudoalignment output into digital expression matrices for single-cell analysis. Use when user asks to sort BUS files, correct barcode errors, generate gene count matrices, inspect BUS file quality, or convert BUS files to text."
+description: bustools processes BUS files to transform raw pseudoalignment output into digital expression matrices for single-cell analysis. Use when user asks to sort BUS files, correct barcode errors, generate gene count matrices, inspect BUS file quality, or convert BUS files to text.
 homepage: https://github.com/BUStools/bustools
+metadata:
+  docker_image: "quay.io/biocontainers/bustools:0.45.1--h6f0a7f7_0"
 ---
 
 # bustools

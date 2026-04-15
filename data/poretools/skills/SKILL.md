@@ -2,6 +2,8 @@
 name: poretools
 description: Poretools is a toolkit for manipulating, extracting, and visualizing data from Oxford Nanopore FAST5 files. Use when user asks to extract FASTQ or FASTA sequences, calculate run statistics, or generate plots for read length distributions and sequencing yield.
 homepage: https://github.com/arq5x/poretools
+metadata:
+  docker_image: "quay.io/biocontainers/poretools:0.6.1a0--py27_0"
 ---
 
 # poretools

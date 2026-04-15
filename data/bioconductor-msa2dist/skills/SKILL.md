@@ -4,7 +4,6 @@ description: The bioconductor-msa2dist package calculates pairwise distances and
 homepage: https://bioconductor.org/packages/release/bioc/html/MSA2dist.html
 ---
 
-
 # bioconductor-msa2dist
 
 ## Overview

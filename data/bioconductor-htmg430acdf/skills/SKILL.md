@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430acdf.html
 ---
 
-
 # bioconductor-htmg430acdf
 
 name: bioconductor-htmg430acdf

@@ -4,7 +4,6 @@ description: This tool provides an R interface to the NCBI Entrez Utilities API 
 homepage: https://cloud.r-project.org/web/packages/rentrez/index.html
 ---
 
-
 # r-rentrez
 
 name: r-rentrez

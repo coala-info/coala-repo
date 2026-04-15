@@ -1,9 +1,10 @@
 ---
 name: chopper
-description: "Chopper is a high-performance utility for preprocessing, filtering, and trimming long-read sequencing data. Use when user asks to filter FASTQ files by quality, length, or GC content, trim reads using various quality-based strategies, or remove contaminant sequences."
+description: Chopper is a high-performance utility for preprocessing, filtering, and trimming long-read sequencing data. Use when user asks to filter FASTQ files by quality, length, or GC content, trim reads using various quality-based strategies, or remove contaminant sequences.
 homepage: https://github.com/wdecoster/chopper
+metadata:
+  docker_image: "quay.io/biocontainers/chopper:0.12.0--hcdda2d0_0"
 ---
-
 
 # chopper
 

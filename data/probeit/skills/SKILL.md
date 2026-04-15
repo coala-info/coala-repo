@@ -2,6 +2,8 @@
 name: probeit
 description: Probeit automates the design of dual-probe sets for pathogen detection and genotyping. Use when user asks to design probes for specific genomic targets, identify sequences present in a positive genome but absent in a negative background, or target specific nucleotide and amino acid mutations.
 homepage: https://github.com/steineggerlab/probeit
+metadata:
+  docker_image: "quay.io/biocontainers/probeit:2.2--py36hff8b118_0"
 ---
 
 # probeit

@@ -1,10 +1,12 @@
 ---
 name: regression-gradientboosting
-description: "This Galaxy workflow performs gradient boosting regression on training and testing datasets using Scikit-learn ensemble tools and generates performance visualizations with Plotly. Use this skill when you need to build a predictive model for continuous numerical outcomes and evaluate its accuracy through residual plots and actual versus predicted comparisons."
-homepage: https://workflowhub.eu/workflows/1596
+description: This Galaxy workflow performs gradient boosting regression on training and testing datasets using Scikit-learn ensemble tools and generates performance visualizations with Plotly. Use this skill when you need to build a predictive model for continuous numerical outcomes and evaluate its accuracy through residual plots and actual versus predicted comparisons.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Regression GradientBoosting
+# regression-gradientboosting
 
 ## Overview
 

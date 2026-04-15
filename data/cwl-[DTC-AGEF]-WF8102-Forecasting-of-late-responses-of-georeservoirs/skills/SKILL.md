@@ -1,9 +1,12 @@
 ---
 name: dtc-agef-wf8102-forecasting-of-late-responses-of-georeservoi
-description: "This Common Workflow Language workflow generates an advanced earthquake catalog by integrating EPISODES platform applications with specialized tools for phase association and catalog homogenization. Use this skill when forecasting the late seismic responses of georeservoirs or assessing long-term geological stability following subsurface industrial activities."
-homepage: https://workflowhub.eu/workflows/1984
+description: This Common Workflow Language workflow generates an advanced earthquake catalog by integrating EPISODES platform applications with specialized tools for phase association and catalog homogenization. Use this skill when forecasting the late seismic responses of georeservoirs or assessing long-term geological stability following subsurface industrial activities.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-AGEF] WF8102: Forecasting of late responses of georeservoirs
+
+# dtc-agef-wf8102-forecasting-of-late-responses-of-georeservoi
 
 ## Overview
 

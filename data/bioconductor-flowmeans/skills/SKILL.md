@@ -4,7 +4,6 @@ description: This tool performs non-parametric clustering for automated gating o
 homepage: https://bioconductor.org/packages/release/bioc/html/flowMeans.html
 ---
 
-
 # bioconductor-flowmeans
 
 name: bioconductor-flowmeans

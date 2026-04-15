@@ -4,7 +4,6 @@ description: This tool analyzes gene expression variability at the pathway level
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pathVar.html
 ---
 
-
 # bioconductor-pathvar
 
 name: bioconductor-pathvar

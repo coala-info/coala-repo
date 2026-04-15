@@ -4,7 +4,6 @@ description: The consICA package provides a robust framework for performing cons
 homepage: https://bioconductor.org/packages/release/bioc/html/consICA.html
 ---
 
-
 # bioconductor-consica
 
 ## Overview

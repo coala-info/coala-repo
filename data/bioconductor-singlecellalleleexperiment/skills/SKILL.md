@@ -4,7 +4,6 @@ description: This package extends the SingleCellExperiment class to support mult
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleCellAlleleExperiment.html
 ---
 
-
 # bioconductor-singlecellalleleexperiment
 
 ## Overview

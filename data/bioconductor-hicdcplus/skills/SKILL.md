@@ -4,7 +4,6 @@ description: HiCDCPlus performs statistical analysis of Hi-C and HiChIP data to 
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCDCPlus.html
 ---
 
-
 # bioconductor-hicdcplus
 
 name: bioconductor-hicdcplus

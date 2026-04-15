@@ -2,8 +2,9 @@
 name: perl-extutils-installpaths
 description: This tool resolves installation paths for Perl distributions by mapping file types to their target system directories. Use when user asks to determine Perl module installation locations, configure custom install prefixes, or generate path maps for ExtUtils::Install.
 homepage: http://metacpan.org/pod/ExtUtils::InstallPaths
+metadata:
+  docker_image: "quay.io/biocontainers/perl-extutils-installpaths:0.012--pl526_0"
 ---
-
 
 # perl-extutils-installpaths
 

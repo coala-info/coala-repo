@@ -4,7 +4,6 @@ description: AnnotationDbi provides a unified interface for querying and mapping
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html
 ---
 
-
 # bioconductor-annotationdbi
 
 name: bioconductor-annotationdbi

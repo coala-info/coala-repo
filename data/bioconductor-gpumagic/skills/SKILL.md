@@ -4,7 +4,6 @@ description: This package compiles R functions into OpenCL code for execution on
 homepage: https://bioconductor.org/packages/release/bioc/html/gpuMagic.html
 ---
 
-
 # bioconductor-gpumagic
 
 name: bioconductor-gpumagic

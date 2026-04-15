@@ -2,8 +2,9 @@
 name: hcluster_sg
 description: This tool performs hierarchical clustering on sparse graphs. Use when user asks to cluster nodes in a sparse graph.
 homepage: https://anaconda.org/channels/bioconda/packages/hcluster_sg/overview
+metadata:
+  docker_image: "quay.io/biocontainers/hcluster_sg:0.5.1--h7d875b9_4"
 ---
-
 
 # hcluster_sg
 

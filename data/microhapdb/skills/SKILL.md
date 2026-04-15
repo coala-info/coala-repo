@@ -2,8 +2,9 @@
 name: microhapdb
 description: MicroHapDB is a portable database and toolkit for managing human microhaplotype variation and population frequency data. Use when user asks to search for specific markers, filter alleles by population frequency, rank markers for ancestry inference, or access microhaplotype data programmatically.
 homepage: https://github.com/bioforensics/MicroHapDB/
+metadata:
+  docker_image: "quay.io/biocontainers/microhapdb:0.12--pyhdfd78af_0"
 ---
-
 
 # microhapdb
 

@@ -4,7 +4,6 @@ description: This tool performs statistical analysis, quality control, and data 
 homepage: https://bioconductor.org/packages/release/bioc/html/SWATH2stats.html
 ---
 
-
 # bioconductor-swath2stats
 
 name: bioconductor-swath2stats

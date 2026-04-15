@@ -1,10 +1,12 @@
 ---
 name: gtn-training-galaxy-101-for-everyone
-description: "This workflow processes the Iris dataset using Datamash for summary statistics, grouping tools for data aggregation, and ggplot2 for generating scatterplots. Use this skill when you need to perform exploratory data analysis, calculate descriptive statistics across categories, and visualize numerical relationships within a tabular dataset."
-homepage: https://workflowhub.eu/workflows/1536
+description: This workflow processes the Iris dataset using Datamash for summary statistics, grouping tools for data aggregation, and ggplot2 for generating scatterplots. Use this skill when you need to perform exploratory data analysis, calculate descriptive statistics across categories, and visualize numerical relationships within a tabular dataset.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN Training: Galaxy 101 For Everyone
+# gtn-training-galaxy-101-for-everyone
 
 ## Overview
 

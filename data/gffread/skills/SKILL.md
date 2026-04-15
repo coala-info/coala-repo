@@ -1,9 +1,10 @@
 ---
 name: gffread
-description: "gffread is a versatile utility for processing, converting, and validating GFF and GTF annotation files. Use when user asks to convert between GFF and GTF formats, extract transcript sequences from a genome, or validate the structural integrity of gene models."
+description: gffread is a versatile utility for processing, converting, and validating GFF and GTF annotation files. Use when user asks to convert between GFF and GTF formats, extract transcript sequences from a genome, or validate the structural integrity of gene models.
 homepage: http://ccb.jhu.edu/software/stringtie/gff.shtml
+metadata:
+  docker_image: "quay.io/biocontainers/gffread:0.12.7--h077b44d_6"
 ---
-
 
 # gffread
 

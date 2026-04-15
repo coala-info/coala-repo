@@ -4,7 +4,6 @@ description: CRImage performs image analysis and calculates tumor cellularity fo
 homepage: https://bioconductor.org/packages/release/bioc/html/CRImage.html
 ---
 
-
 # bioconductor-crimage
 
 name: bioconductor-crimage

@@ -4,7 +4,6 @@ description: This tool provides a standardized infrastructure for managing and p
 homepage: https://bioconductor.org/packages/release/bioc/html/QFeatures.html
 ---
 
-
 # bioconductor-qfeatures
 
 name: bioconductor-qfeatures

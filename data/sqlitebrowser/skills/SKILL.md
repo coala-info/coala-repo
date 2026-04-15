@@ -2,8 +2,9 @@
 name: sqlitebrowser
 description: DB Browser for SQLite is a graphical interface for managing, designing, and editing SQLite-compatible database files. Use when user asks to browse database records, modify table schemas, run SQL queries, or import data from CSV files.
 homepage: https://github.com/sqlitebrowser/sqlitebrowser
+metadata:
+  docker_image: "quay.io/biocontainers/sqlitebrowser:3.8.0--0"
 ---
-
 
 # sqlitebrowser
 

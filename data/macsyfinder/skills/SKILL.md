@@ -1,9 +1,10 @@
 ---
 name: macsyfinder
-description: "MacSyFinder detects molecular systems in protein datasets by identifying clusters of proteins that form functional biological machineries. Use when user asks to detect secretion systems, identify protein clusters, manage system models, or search for complex bacterial machineries in genomic data."
+description: MacSyFinder detects molecular systems in protein datasets by identifying clusters of proteins that form functional biological machineries. Use when user asks to detect secretion systems, identify protein clusters, manage system models, or search for complex bacterial machineries in genomic data.
 homepage: https://github.com/gem-pasteur/macsyfinder
+metadata:
+  docker_image: "quay.io/biocontainers/macsyfinder:2.1.6--pyhdfd78af_0"
 ---
-
 
 # macsyfinder
 

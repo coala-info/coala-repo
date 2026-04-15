@@ -2,6 +2,8 @@
 name: blinker
 description: Blink Shell is a professional-grade terminal emulator for iOS and iPadOS that provides high-performance remote connections via SSH and Mosh. Use when user asks to establish persistent remote sessions, manage SSH keys, execute local Unix utilities, or run Python and Lua scripts on a mobile device.
 homepage: https://github.com/blinksh/blink
+metadata:
+  docker_image: "quay.io/biocontainers/blinker:1.4--py35_0"
 ---
 
 # blinker

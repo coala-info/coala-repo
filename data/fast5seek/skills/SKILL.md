@@ -2,8 +2,9 @@
 name: fast5seek
 description: fast5seek identifies and locates raw fast5 signal files that correspond to read IDs provided in fastq, BAM, or SAM reference files. Use when user asks to find raw signal data for specific reads, subset fast5 files based on mapping results, or extract original signal files for a filtered set of sequences.
 homepage: https://github.com/mbhall88/fast5seek
+metadata:
+  docker_image: "quay.io/biocontainers/fast5seek:0.1.1--py35_0"
 ---
-
 
 # fast5seek
 

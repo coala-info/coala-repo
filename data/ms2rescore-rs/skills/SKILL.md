@@ -2,8 +2,9 @@
 name: ms2rescore-rs
 description: This tool rescores peptide identifications by integrating peak intensities and retention time predictions into the scoring process to improve identification reliability. Use when user asks to rescore proteomics datasets, improve peptide identification accuracy, or process large-scale mass spectrometry data efficiently.
 homepage: https://github.com/compomics/ms2rescore-rs
+metadata:
+  docker_image: "quay.io/biocontainers/ms2rescore-rs:0.4.3--py311he252b13_0"
 ---
-
 
 # ms2rescore-rs
 

@@ -4,7 +4,6 @@ description: This tool performs high-throughput gene expression analysis using G
 homepage: https://bioconductor.org/packages/release/bioc/html/gaga.html
 ---
 
-
 # bioconductor-gaga
 
 name: bioconductor-gaga

@@ -4,7 +4,6 @@ description: The AnVIL package provides an R interface to interact with the AnVI
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVIL.html
 ---
 
-
 # bioconductor-anvil
 
 ## Overview

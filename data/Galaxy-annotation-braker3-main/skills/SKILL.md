@@ -1,10 +1,12 @@
 ---
 name: genome-annotation-with-braker3
-description: "This workflow automates eukaryotic genome annotation by integrating soft-masked sequences, RNA-seq alignments, and protein evidence using Braker3, followed by quality assessment with BUSCO and OMArk. Use this skill when you need to predict high-precision gene structures in a novel genome assembly and validate the completeness of the resulting protein-coding gene models."
-homepage: https://workflowhub.eu/workflows/2029
+description: This workflow automates eukaryotic genome annotation by integrating soft-masked sequences, RNA-seq alignments, and protein evidence using Braker3, followed by quality assessment with BUSCO and OMArk. Use this skill when you need to predict high-precision gene structures in a novel genome assembly and validate the completeness of the resulting protein-coding gene models.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome annotation with Braker3
+# genome-annotation-with-braker3
 
 ## Overview
 

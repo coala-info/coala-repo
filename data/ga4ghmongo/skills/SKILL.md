@@ -2,8 +2,9 @@
 name: ga4ghmongo
 description: This tool provides a document-based schema for modeling genomic variants in MongoDB using the GA4GH standard. Use when user asks to model variant data with high fidelity, convert genomic variants into MongoDB-ready dictionaries, or manage variants across multiple variant sets.
 homepage: https://github.com/Phelimb/ga4gh-mongo
+metadata:
+  docker_image: "quay.io/biocontainers/ga4ghmongo:0.0.1.2--py36_0"
 ---
-
 
 # ga4ghmongo
 

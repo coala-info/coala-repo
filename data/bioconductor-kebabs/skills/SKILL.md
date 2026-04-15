@@ -4,7 +4,6 @@ description: This tool performs kernel-based analysis of biological sequences us
 homepage: https://bioconductor.org/packages/release/bioc/html/kebabs.html
 ---
 
-
 # bioconductor-kebabs
 
 name: bioconductor-kebabs

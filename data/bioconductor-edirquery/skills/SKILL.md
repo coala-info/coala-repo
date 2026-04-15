@@ -4,7 +4,6 @@ description: This tool queries the Exome Database of Interspersed Repeats to ide
 homepage: https://bioconductor.org/packages/release/bioc/html/EDIRquery.html
 ---
 
-
 # bioconductor-edirquery
 
 name: bioconductor-edirquery

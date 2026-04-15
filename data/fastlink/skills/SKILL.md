@@ -2,8 +2,9 @@
 name: fastlink
 description: The fastlink tool performs probabilistic record linkage to merge disparate datasets while accounting for typographical errors and missing values. Use when user asks to merge dataframes using probabilistic matching, link records with string similarity, or perform deduplication on large administrative datasets.
 homepage: https://github.com/kosukeimai/fastLink
+metadata:
+  docker_image: "biocontainers/fastlink:v4.1P-fix100dfsg-2-deb_cv1"
 ---
-
 
 # fastlink
 

@@ -4,7 +4,6 @@ description: The bioconductor-mia package provides tools for the analysis and ma
 homepage: https://bioconductor.org/packages/release/bioc/html/mia.html
 ---
 
-
 # bioconductor-mia
 
 ## Overview

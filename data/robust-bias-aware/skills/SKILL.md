@@ -2,8 +2,9 @@
 name: robust-bias-aware
 description: This tool identifies stable disease-related modules by aggregating multiple Steiner Trees while correcting for gene study bias. Use when user asks to identify disease modules, find significant sub-networks from seed genes, or perform bias-aware network mining.
 homepage: https://github.com/bionetslab/robust_bias_aware_pip_package
+metadata:
+  docker_image: "quay.io/biocontainers/robust-bias-aware:0.0.1--pyh7cba7a3_1"
 ---
-
 
 # robust-bias-aware
 

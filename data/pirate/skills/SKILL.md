@@ -2,6 +2,8 @@
 name: pirate
 description: PIRATE performs pangenome analysis by iteratively clustering orthologous groups across multiple sequence identity thresholds. Use when user asks to map the genetic landscape of bacterial populations, construct a pangenome from GFF3 files, or classify gene families and allelic variance.
 homepage: https://github.com/SionBayliss/PIRATE
+metadata:
+  docker_image: "quay.io/biocontainers/pirate:1.0.5--hdfd78af_3"
 ---
 
 # pirate

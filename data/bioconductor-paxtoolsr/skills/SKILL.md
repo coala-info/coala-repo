@@ -4,7 +4,6 @@ description: The paxtoolsr package provides an R interface to the Paxtools Java 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/paxtoolsr.html
 ---
 
-
 # bioconductor-paxtoolsr
 
 ## Overview

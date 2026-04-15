@@ -2,8 +2,9 @@
 name: nopilesum
 description: nopilesum performs allele counting on genomic alignments against known variant sites to produce summaries similar to GATK4's GetPileupSummaries. Use when user asks to summarize genomic alignments, count alleles at known variant sites, or perform lightweight pileup summaries with low memory usage.
 homepage: https://github.com/blachlylab/nopilesum
+metadata:
+  docker_image: "quay.io/biocontainers/nopilesum:1.1.2--h5884fcd_0"
 ---
-
 
 # nopilesum
 

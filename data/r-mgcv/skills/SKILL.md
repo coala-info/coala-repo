@@ -4,7 +4,6 @@ description: The r-mgcv package fits Generalized Additive Models and Generalized
 homepage: https://cloud.r-project.org/web/packages/mgcv/index.html
 ---
 
-
 # r-mgcv
 
 name: r-mgcv

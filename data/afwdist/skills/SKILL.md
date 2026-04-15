@@ -1,8 +1,10 @@
 ---
 name: afwdist
 description: afwdist calculates pairwise distance metrics between groups of genetic variants using allele frequencies. Use when user asks to calculate genetic distances between samples, compare intra-patient viral populations, or measure distances against a reference genome.
+homepage: https://github.com/PathoGenOmics-Lab/afwdist
+metadata:
+  docker_image: "quay.io/biocontainers/afwdist:1.0.0--h4349ce8_0"
 ---
-
 
 # afwdist
 

@@ -4,6 +4,8 @@ description: This pipeline processes Ribo-seq or TI-seq data from FASTQ files us
 homepage: https://github.com/nf-core/riboseq
 ---
 
+# nf-core-riboseq
+
 ## Overview
 nf-core/riboseq is a bioinformatics pipeline designed for the specialized analysis of ribosome profiling (Ribo-seq) and translation initiation site profiling (TI-seq) data. It handles the intensive preprocessing required for these libraries—including UMI deduplication and ribosomal RNA depletion—before performing genomic alignment and downstream translation-specific quantification.
 

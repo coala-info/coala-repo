@@ -4,7 +4,6 @@ description: The r-speaq package provides a comprehensive suite for NMR spectral
 homepage: https://cran.r-project.org/web/packages/speaq/index.html
 ---
 
-
 # r-speaq
 
 ## Overview

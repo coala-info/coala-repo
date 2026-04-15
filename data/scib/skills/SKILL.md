@@ -1,9 +1,10 @@
 ---
 name: scib
-description: "scib benchmarks single-cell data integration methods by evaluating batch effect removal and biological conservation. Use when user asks to assess integration performance, calculate batch correction metrics, evaluate biological conservation, or run integration algorithm wrappers."
+description: scib benchmarks single-cell data integration methods by evaluating batch effect removal and biological conservation. Use when user asks to assess integration performance, calculate batch correction metrics, evaluate biological conservation, or run integration algorithm wrappers.
 homepage: https://github.com/theislab/scib
+metadata:
+  docker_image: "quay.io/biocontainers/scib:1.1.7--py311hf552afe_1"
 ---
-
 
 # scib
 

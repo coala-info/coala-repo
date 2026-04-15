@@ -4,7 +4,6 @@ description: This tool predicts, visualizes, and encodes DNA structural features
 homepage: https://bioconductor.org/packages/release/bioc/html/DNAshapeR.html
 ---
 
-
 # bioconductor-dnashaper
 
 name: bioconductor-dnashaper

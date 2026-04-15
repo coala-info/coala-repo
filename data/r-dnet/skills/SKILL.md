@@ -4,7 +4,6 @@ description: The r-dnet tool provides a comprehensive framework for integrative 
 homepage: https://cran.r-project.org/web/packages/dnet/index.html
 ---
 
-
 # r-dnet
 
 name: r-dnet

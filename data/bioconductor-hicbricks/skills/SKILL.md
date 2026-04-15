@@ -4,7 +4,6 @@ description: HiCBricks provides an HDF5-based framework for the efficient storag
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCBricks.html
 ---
 
-
 # bioconductor-hicbricks
 
 ## Overview

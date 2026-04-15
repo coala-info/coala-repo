@@ -1,9 +1,10 @@
 ---
 name: rnalyze
-description: "rnalyze automates the complete RNA-Seq workflow from data acquisition and quality control to alignment and quantification. Use when user asks to download SRA data, perform read trimming, align reads to a reference genome, or generate gene counts."
+description: rnalyze automates the complete RNA-Seq workflow from data acquisition and quality control to alignment and quantification. Use when user asks to download SRA data, perform read trimming, align reads to a reference genome, or generate gene counts.
 homepage: https://github.com/MohamedElsisii/rnalyze
+metadata:
+  docker_image: "quay.io/biocontainers/rnalyze:1.0.1--hdfd78af_1"
 ---
-
 
 # rnalyze
 

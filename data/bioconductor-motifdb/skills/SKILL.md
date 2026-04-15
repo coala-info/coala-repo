@@ -4,7 +4,6 @@ description: MotifDb provides a unified interface to query and retrieve thousand
 homepage: https://bioconductor.org/packages/release/bioc/html/MotifDb.html
 ---
 
-
 # bioconductor-motifdb
 
 ## Overview

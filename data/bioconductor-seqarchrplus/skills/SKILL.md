@@ -4,7 +4,6 @@ description: This R package discovers de novo sequence architectures and motif c
 homepage: https://bioconductor.org/packages/release/bioc/html/seqArchRplus.html
 ---
 
-
 # bioconductor-seqarchrplus
 
 name: bioconductor-seqarchrplus

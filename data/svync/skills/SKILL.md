@@ -2,8 +2,9 @@
 name: svync
 description: svync is a command-line utility that standardizes structural variant VCF files by mapping inconsistent tags and nomenclature into a unified schema. Use when user asks to normalize structural variant caller outputs, map VCF INFO tags, or prepare genomic data for multi-caller integration.
 homepage: https://github.com/nvnieuwk/svync
+metadata:
+  docker_image: "quay.io/biocontainers/svync:0.3.0--h9ee0642_0"
 ---
-
 
 # svync
 

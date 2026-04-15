@@ -2,8 +2,9 @@
 name: psm-utils
 description: psm-utils is a library and command-line interface for handling and converting peptide-spectrum match (PSM) files across various proteomics search engine formats. Use when user asks to convert search engine results, standardize peptide modifications using ProForma 2.0, or prepare proteomics data for rescoring and visualization.
 homepage: https://github.com/compomics/psm_utils
+metadata:
+  docker_image: "quay.io/biocontainers/psm-utils:1.5.2--pyhdfd78af_0"
 ---
-
 
 # psm-utils
 

@@ -4,7 +4,6 @@ description: This tool performs multivariate quality control for high-throughput
 homepage: https://bioconductor.org/packages/release/bioc/html/mdqc.html
 ---
 
-
 # bioconductor-mdqc
 
 name: bioconductor-mdqc

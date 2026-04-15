@@ -4,7 +4,6 @@ description: This tool generates randomized well-plate layouts for experimental 
 homepage: https://bioconductor.org/packages/release/bioc/html/wpm.html
 ---
 
-
 # bioconductor-wpm
 
 name: bioconductor-wpm

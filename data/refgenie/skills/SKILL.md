@@ -2,6 +2,8 @@
 name: refgenie
 description: Refgenie is a reference genome manager that standardizes the storage, retrieval, and building of bioinformatics assets. Use when user asks to manage reference genomes, download pre-built genomic assets, retrieve local file paths for indexes, or build custom genome assemblies.
 homepage: http://refgenie.databio.org
+metadata:
+  docker_image: "quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0"
 ---
 
 # refgenie

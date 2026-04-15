@@ -2,8 +2,9 @@
 name: pyasr
 description: PyASR is a Python library that provides a modern wrapper for PAML to streamline ancestral sequence reconstruction workflows for protein data. Use when user asks to reconstruct ancestral sequences, run PAML via Python, or manage phylogenetic data using Pandas and DendroPy.
 homepage: https://github.com/Zsailer/pyasr
+metadata:
+  docker_image: "quay.io/biocontainers/pyasr:0.6.1--py_0"
 ---
-
 
 # pyasr
 

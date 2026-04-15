@@ -4,7 +4,6 @@ description: This tool creates and manages custom global options functions in R 
 homepage: https://cloud.r-project.org/web/packages/GlobalOptions/index.html
 ---
 
-
 # r-globaloptions
 
 name: r-globaloptions

@@ -4,7 +4,6 @@ description: This package provides platform-specific constants and SNP mapping d
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human550v3bCrlmm.html
 ---
 
-
 # bioconductor-human550v3bcrlmm
 
 ## Overview

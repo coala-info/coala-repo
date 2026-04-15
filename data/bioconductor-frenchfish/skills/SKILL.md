@@ -4,7 +4,6 @@ description: This tool provides statistical correction of FISH probe counts in t
 homepage: https://bioconductor.org/packages/release/bioc/html/frenchFISH.html
 ---
 
-
 # bioconductor-frenchfish
 
 name: bioconductor-frenchfish

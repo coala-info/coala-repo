@@ -4,7 +4,6 @@ description: The bioconductor-xmapbridge package enables the visualization of nu
 homepage: https://bioconductor.org/packages/release/bioc/html/xmapbridge.html
 ---
 
-
 # bioconductor-xmapbridge
 
 ## Overview

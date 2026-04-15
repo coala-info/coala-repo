@@ -4,7 +4,6 @@ description: This tool predicts whether a coiled coil protein sequence is more l
 homepage: https://bioconductor.org/packages/release/bioc/html/procoil.html
 ---
 
-
 # bioconductor-procoil
 
 name: bioconductor-procoil

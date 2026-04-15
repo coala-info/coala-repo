@@ -2,6 +2,8 @@
 name: galaxy-workflow-executor
 description: The galaxy-workflow-executor automates the execution of Galaxy workflows from the command line using the Bioblend library. Use when user asks to generate parameter templates, execute workflows with automated data uploads, or resume interrupted workflow runs.
 homepage: https://github.com/ebi-gene-expression-group/galaxy-workflow-executor
+metadata:
+  docker_image: "quay.io/biocontainers/galaxy-workflow-executor:0.2.6--pyh5e36f6f_0"
 ---
 
 # galaxy-workflow-executor

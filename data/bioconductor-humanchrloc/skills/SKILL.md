@@ -4,7 +4,6 @@ description: This tool provides human chromosomal location annotation data by ma
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanCHRLOC.html
 ---
 
-
 # bioconductor-humanchrloc
 
 name: bioconductor-humanchrloc

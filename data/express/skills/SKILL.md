@@ -2,8 +2,9 @@
 name: express
 description: Express is a minimalist web framework for Node.js used to build web applications and HTTP APIs. Use when user asks to create a web server, set up modular routing, integrate middleware, or build RESTful services.
 homepage: https://github.com/expressjs/express
+metadata:
+  docker_image: "quay.io/biocontainers/express:1.5.1--h2d50403_1"
 ---
-
 
 # express
 

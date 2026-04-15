@@ -1,9 +1,10 @@
 ---
 name: lighter
-description: "Lighter corrects sequencing errors in genomic reads using a memory-efficient k-mer sampling approach. Use when user asks to correct sequencing errors, improve read quality before assembly, or perform k-mer based error correction on genomic data."
+description: Lighter corrects sequencing errors in genomic reads using a memory-efficient k-mer sampling approach. Use when user asks to correct sequencing errors, improve read quality before assembly, or perform k-mer based error correction on genomic data.
 homepage: https://github.com/mourisl/Lighter
+metadata:
+  docker_image: "quay.io/biocontainers/lighter:1.1.3--h077b44d_2"
 ---
-
 
 # lighter
 

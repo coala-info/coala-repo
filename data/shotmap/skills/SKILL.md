@@ -2,8 +2,9 @@
 name: shotmap
 description: Shotmap performs functional annotation and comparative analysis of shotgun metagenomic sequences. Use when user asks to build search databases, execute functional annotation on metagenomes, or perform statistical comparisons between multiple samples.
 homepage: https://github.com/sharpton/shotmap
+metadata:
+  docker_image: "biocontainers/shotmap:v1.0.0_cv3"
 ---
-
 
 # shotmap
 

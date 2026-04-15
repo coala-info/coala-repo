@@ -1,9 +1,10 @@
 ---
 name: jvarkit-bamstats04
-description: "jvarkit-bamstats04 generates per-interval coverage statistics and summary metrics from BAM or CRAM files. Use when user asks to calculate median coverage per region, identify bases with zero coverage, or aggregate depth statistics across specific genomic intervals."
+description: jvarkit-bamstats04 generates per-interval coverage statistics and summary metrics from BAM or CRAM files. Use when user asks to calculate median coverage per region, identify bases with zero coverage, or aggregate depth statistics across specific genomic intervals.
 homepage: http://lindenb.github.io/jvarkit/BamStats04.html
+metadata:
+  docker_image: "quay.io/biocontainers/jvarkit-bamstats04:2025.07.28--hdfd78af_0"
 ---
-
 
 # jvarkit-bamstats04
 

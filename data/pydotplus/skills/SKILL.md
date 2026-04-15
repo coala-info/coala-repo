@@ -2,8 +2,9 @@
 name: pydotplus
 description: pydotplus is a Python library that provides an interface for parsing, creating, and rendering Graphviz DOT language diagrams. Use when user asks to parse DOT files, programmatically build graphs, visualize decision trees, or render data into image formats like PNG and SVG.
 homepage: https://github.com/carlos-jenkins/pydotplus
+metadata:
+  docker_image: "quay.io/biocontainers/pydotplus:2.0.2--py36_0"
 ---
-
 
 # pydotplus
 

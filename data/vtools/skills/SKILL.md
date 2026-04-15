@@ -2,6 +2,8 @@
 name: vtools
 description: vtools is a high-performance toolset designed for filtering, evaluating, and calculating coverage metrics for VCF and gVCF files. Use when user asks to filter variants based on population frequency, calculate exon-level coverage from gVCFs, or evaluate genotype concordance between VCF files.
 homepage: https://github.com/LUMC/vtools
+metadata:
+  docker_image: "quay.io/biocontainers/vtools:1.1.0--py311h93dcfea_7"
 ---
 
 # vtools

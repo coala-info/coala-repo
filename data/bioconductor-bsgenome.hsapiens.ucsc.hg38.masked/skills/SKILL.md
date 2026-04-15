@@ -4,7 +4,6 @@ description: This package provides the full masked genomic sequences for Homo sa
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.masked.html
 ---
 
-
 # bioconductor-bsgenome.hsapiens.ucsc.hg38.masked
 
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38.masked

@@ -4,7 +4,6 @@ description: This tool performs static analysis of R code to identify variable d
 homepage: https://cran.r-project.org/web/packages/codedepends/index.html
 ---
 
-
 # r-codedepends
 
 name: r-codedepends

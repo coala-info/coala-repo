@@ -4,7 +4,6 @@ description: The ribor package provides an R interface for the efficient storage
 homepage: https://bioconductor.org/packages/release/bioc/html/ribor.html
 ---
 
-
 # bioconductor-ribor
 
 ## Overview

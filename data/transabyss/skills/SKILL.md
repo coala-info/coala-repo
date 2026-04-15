@@ -2,8 +2,9 @@
 name: transabyss
 description: Trans-ABySS performs de novo assembly of RNA-Seq data. Use when user asks to assemble RNA-Seq data, perform individual k-mer assemblies, merge multiple assemblies, or produce a transcriptome.
 homepage: http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss
+metadata:
+  docker_image: "quay.io/biocontainers/transabyss:2.0.1--py27_4"
 ---
-
 
 # transabyss
 

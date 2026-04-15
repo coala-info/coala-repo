@@ -4,7 +4,6 @@ description: This tool provides an R interface to the Google Genomics API for re
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GoogleGenomics.html
 ---
 
-
 # bioconductor-googlegenomics
 
 name: bioconductor-googlegenomics

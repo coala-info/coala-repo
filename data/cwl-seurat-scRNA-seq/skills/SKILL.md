@@ -1,9 +1,12 @@
 ---
 name: seurat-scrna-seq
-description: "This CWL workflow processes single-cell RNA-seq count matrices using the Seurat toolkit to perform data normalization, feature selection, and dimensionality reduction. Use this skill when you need to identify distinct cell populations, characterize transcriptomic heterogeneity, or visualize the cellular composition of complex biological tissues."
+description: This CWL workflow processes single-cell RNA-seq count matrices using the Seurat toolkit to perform data normalization, feature selection, and dimensionality reduction. Use this skill when you need to identify distinct cell populations, characterize transcriptomic heterogeneity, or visualize the cellular composition of complex biological tissues.
 homepage: https://workflowhub.eu/workflows/303
+metadata:
+  docker_image: "N/A"
 ---
-# seurat scRNA-seq
+
+# seurat-scrna-seq
 
 ## Overview
 

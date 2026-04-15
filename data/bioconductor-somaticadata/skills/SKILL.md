@@ -4,7 +4,6 @@ description: This package provides a high-density paired tumor-normal glioblasto
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SomatiCAData.html
 ---
 
-
 # bioconductor-somaticadata
 
 name: bioconductor-somaticadata

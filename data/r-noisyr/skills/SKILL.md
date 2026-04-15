@@ -4,7 +4,6 @@ description: The noisyr package provides an end-to-end pipeline for quantifying 
 homepage: https://cran.r-project.org/web/packages/noisyr/index.html
 ---
 
-
 # r-noisyr
 
 ## Overview

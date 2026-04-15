@@ -2,8 +2,9 @@
 name: proteomiqon-labelfreeproteinquantification
 description: This tool aggregates quantified peptide ion data into protein-level abundances using a multi-step hierarchical process. Use when user asks to perform label-free protein quantification, aggregate peptide intensities into protein groups, or convert peptide data into protein abundances.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-labelfreeproteinquantification:0.0.3--hdfd78af_1"
 ---
-
 
 # proteomiqon-labelfreeproteinquantification
 

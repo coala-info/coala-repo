@@ -4,7 +4,6 @@ description: This tool saves and loads SingleCellExperiment objects to and from 
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.sce.html
 ---
 
-
 # bioconductor-alabaster.sce
 
 name: bioconductor-alabaster.sce

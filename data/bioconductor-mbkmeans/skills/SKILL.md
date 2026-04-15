@@ -4,7 +4,6 @@ description: The mbkmeans package implements a memory-efficient mini-batch k-mea
 homepage: https://bioconductor.org/packages/release/bioc/html/mbkmeans.html
 ---
 
-
 # bioconductor-mbkmeans
 
 ## Overview

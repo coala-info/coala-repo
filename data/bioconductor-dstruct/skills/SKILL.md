@@ -4,7 +4,6 @@ description: This tool identifies differentially reactive regions in RNA molecul
 homepage: https://bioconductor.org/packages/release/bioc/html/dStruct.html
 ---
 
-
 # bioconductor-dstruct
 
 name: bioconductor-dstruct

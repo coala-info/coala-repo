@@ -2,8 +2,9 @@
 name: moff
 description: moFF extracts MS1 apex intensities for identified peptides and performs retention time alignment for match-between-runs quantification. Use when user asks to extract peptide intensities, perform match between runs, or quantify proteomics data across multiple samples.
 homepage: https://github.com/compomics/moFF
+metadata:
+  docker_image: "quay.io/biocontainers/moff:2.0.3--4"
 ---
-
 
 # moff
 

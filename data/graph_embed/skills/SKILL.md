@@ -2,8 +2,9 @@
 name: graph_embed
 description: This tool transforms data matrices into 2D visualizations by constructing a supervised force-directed graph embedding. Use when user asks to generate 2D embeddings, visualize class separation in datasets, or create graph-based data visualizations.
 homepage: https://github.com/fabriziocosta/GraphEmbed
+metadata:
+  docker_image: "quay.io/biocontainers/graphclust-wrappers:0.6.0--pl526_1"
 ---
-
 
 # graph_embed
 

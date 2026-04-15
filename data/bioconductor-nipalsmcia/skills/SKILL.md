@@ -4,7 +4,6 @@ description: This tool performs Multiple Co-Inertia Analysis (MCIA) for joint di
 homepage: https://bioconductor.org/packages/release/bioc/html/nipalsMCIA.html
 ---
 
-
 # bioconductor-nipalsmcia
 
 name: bioconductor-nipalsmcia

@@ -4,7 +4,6 @@ description: COCOA annotates epigenetic variation by identifying which reference
 homepage: https://bioconductor.org/packages/release/bioc/html/COCOA.html
 ---
 
-
 # bioconductor-cocoa
 
 ## Overview

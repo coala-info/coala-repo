@@ -4,7 +4,6 @@ description: The metaMS package provides an end-to-end pipeline for untargeted G
 homepage: https://bioconductor.org/packages/release/bioc/html/metaMS.html
 ---
 
-
 # bioconductor-metams
 
 ## Overview

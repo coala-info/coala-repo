@@ -4,7 +4,6 @@ description: SIAMCAT is an R package for the statistical analysis of microbiome 
 homepage: https://bioconductor.org/packages/release/bioc/html/SIAMCAT.html
 ---
 
-
 # bioconductor-siamcat
 
 ## Overview

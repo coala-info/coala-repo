@@ -1,10 +1,12 @@
 ---
 name: intro_to_fnn_v1_0_10_0
-description: "This workflow utilizes training and testing datasets to configure, build, and train a Feedforward Neural Network using Keras tools for regression analysis and performance visualization. Use this skill when you need to develop predictive models for continuous variables and evaluate their accuracy through residual plots and actual versus predicted curves."
-homepage: https://workflowhub.eu/workflows/1583
+description: This workflow utilizes training and testing datasets to configure, build, and train a Feedforward Neural Network using Keras tools for regression analysis and performance visualization. Use this skill when you need to develop predictive models for continuous variables and evaluate their accuracy through residual plots and actual versus predicted curves.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Intro_To_FNN_v1_0_10_0
+# intro_to_fnn_v1_0_10_0
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: phyml
 description: PhyML estimates phylogenetic trees from sequence alignments using the Maximum Likelihood principle. Use when user asks to build a phylogeny, optimize tree topologies using NNI or SPR moves, or calculate branch support through bootstrapping or aLRT.
 homepage: http://www.atgc-montpellier.fr/phyml/
+metadata:
+  docker_image: "quay.io/biocontainers/phyml:3.3.20220408--h9bc3f66_3"
 ---
-
 
 # phyml
 

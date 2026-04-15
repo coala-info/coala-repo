@@ -4,6 +4,8 @@ description: The pipeline processes single-end or paired-end FASTQ reads using a
 homepage: https://github.com/nf-core/evexplorer
 ---
 
+# evexplorer
+
 ## Overview
 The evexplorer pipeline provides a standardized framework for the bioinformatics analysis of sequencing data, focusing on quality control and initial processing. It streamlines the transition from raw FASTQ files to interpreted results by integrating reference genome alignment and quality assessment tools.
 

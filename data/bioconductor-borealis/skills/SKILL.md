@@ -1,9 +1,8 @@
 ---
 name: bioconductor-borealis
-description: "bioconductor-borealis detects outlier DNA methylation sites in bisulfite sequencing data by comparing individual samples against a cohort using a beta-binomial model. Use when user asks to identify differentially methylated loci, run the Borealis pipeline on Bismark outputs, or visualize site-specific methylation deviations."
+description: bioconductor-borealis detects outlier DNA methylation sites in bisulfite sequencing data by comparing individual samples against a cohort using a beta-binomial model. Use when user asks to identify differentially methylated loci, run the Borealis pipeline on Bismark outputs, or visualize site-specific methylation deviations.
 homepage: https://bioconductor.org/packages/release/bioc/html/borealis.html
 ---
-
 
 # bioconductor-borealis
 

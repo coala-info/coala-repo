@@ -2,6 +2,8 @@
 name: gapseq
 description: gapseq automates the reconstruction of bacterial metabolic models by predicting pathways, transporters, and performing gap-filling. Use when user asks to reconstruct metabolic networks from protein sequences, perform growth simulations on specific media, or execute the comprehensive doall workflow.
 homepage: https://github.com/jotech/gapseq
+metadata:
+  docker_image: "quay.io/biocontainers/gapseq:1.4.0--h9ee0642_1"
 ---
 
 # gapseq

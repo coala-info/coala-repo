@@ -1,10 +1,12 @@
 ---
 name: preparing-genomic-data-for-phylogeny-recostruction-gtn
-description: "This workflow processes a collection of genome assemblies through annotation with Funannotate and BUSCO, ortholog identification via ProteinOrtho, and alignment using ClustalW and ClipKIT to generate a concatenated matrix with PhyKit. Use this skill when you need to prepare high-quality phylogenomic datasets from raw assemblies by identifying conserved orthologous groups and constructing trimmed sequence alignments for downstream tree reconstruction."
-homepage: https://workflowhub.eu/workflows/1656
+description: This workflow processes a collection of genome assemblies through annotation with Funannotate and BUSCO, ortholog identification via ProteinOrtho, and alignment using ClustalW and ClipKIT to generate a concatenated matrix with PhyKit. Use this skill when you need to prepare high-quality phylogenomic datasets from raw assemblies by identifying conserved orthologous groups and constructing trimmed sequence alignments for downstream tree reconstruction.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# preparing genomic data for phylogeny recostruction (GTN)
+# preparing-genomic-data-for-phylogeny-recostruction-gtn
 
 ## Overview
 

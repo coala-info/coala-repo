@@ -2,8 +2,9 @@
 name: fastq
 description: The fastq library provides a lightweight Python toolbox for reading, writing, and analyzing FASTQ files and their associated quality scores. Use when user asks to read or write FASTQ files, calculate sequence statistics like GC content and mean quality, or convert FASTQ entries to FASTA format.
 homepage: https://github.com/not-a-feature/fastq
+metadata:
+  docker_image: "quay.io/biocontainers/fastq:2.0.4--pyhdfd78af_0"
 ---
-
 
 # fastq
 

@@ -2,8 +2,9 @@
 name: pywgsim
 description: pywgsim is a Python-wrapped tool that simulates paired-end sequencing reads with controlled genomic variations and sequencing errors. Use when user asks to simulate short reads from a reference genome, generate ground truth datasets with specific mutation rates, or produce a fixed number of reads per contig.
 homepage: https://github.com/ialbert/pywgsim
+metadata:
+  docker_image: "quay.io/biocontainers/pywgsim:0.6.0--py310h397c9d8_0"
 ---
-
 
 # pywgsim
 

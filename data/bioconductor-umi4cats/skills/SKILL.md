@@ -1,9 +1,8 @@
 ---
 name: bioconductor-umi4cats
-description: "UMI4Cats processes and analyzes UMI-4C sequencing data to quantify chromatin interactions from a specific viewpoint. Use when user asks to digest a genome in silico, process FASTQ files into UMI-deduplicated counts, call significant chromatin interactions, or perform differential interaction analysis between conditions."
+description: UMI4Cats processes and analyzes UMI-4C sequencing data to quantify chromatin interactions from a specific viewpoint. Use when user asks to digest a genome in silico, process FASTQ files into UMI-deduplicated counts, call significant chromatin interactions, or perform differential interaction analysis between conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/UMI4Cats.html
 ---
-
 
 # bioconductor-umi4cats
 

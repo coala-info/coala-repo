@@ -4,7 +4,6 @@ description: The tanggle package provides ggplot2-based visualizations for impli
 homepage: https://bioconductor.org/packages/release/bioc/html/tanggle.html
 ---
 
-
 # bioconductor-tanggle
 
 name: bioconductor-tanggle

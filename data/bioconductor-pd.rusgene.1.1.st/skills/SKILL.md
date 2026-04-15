@@ -4,7 +4,6 @@ description: This package provides platform design annotation for the Affymetrix
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rusgene.1.1.st.html
 ---
 
-
 # bioconductor-pd.rusgene.1.1.st
 
 name: bioconductor-pd.rusgene.1.1.st

@@ -4,7 +4,6 @@ description: The r-basejump package provides utility functions for bioinformatic
 homepage: https://cran.r-project.org/web/packages/basejump/index.html
 ---
 
-
 # r-basejump
 
 name: r-basejump

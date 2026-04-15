@@ -4,7 +4,6 @@ description: This package provides a TxDb annotation object for the Gallus gallu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ggallus.UCSC.galGal4.refGene.html
 ---
 
-
 # bioconductor-txdb.ggallus.ucsc.galgal4.refgene
 
 ## Overview

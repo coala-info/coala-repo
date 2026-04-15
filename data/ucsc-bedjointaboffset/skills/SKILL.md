@@ -2,8 +2,9 @@
 name: ucsc-bedjointaboffset
 description: ucsc-bedjointaboffset joins a BED file with a TAB file to append byte offset and line length information to BED records. Use when user asks to append offset and length to a BED file, join a BED file with a TAB file, create an indexed BED file, or build custom tracks and indices.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-bedjointaboffset:377--h199ee4e_0"
 ---
-
 
 # ucsc-bedjointaboffset
 

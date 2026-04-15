@@ -2,8 +2,9 @@
 name: tmscoring
 description: The `tmscoring` package compares protein structures to determine their structural similarity. Use when user asks to 'compare protein structures', 'calculate TM-score', 'calculate RMSD', 'align protein structures', 'get local residue-specific scores', or 'generate aligned PDB files'.
 homepage: https://github.com/Dapid/tmscoring
+metadata:
+  docker_image: "quay.io/biocontainers/tmscoring:0.4.post0--pyhdc42f0e_0"
 ---
-
 
 # tmscoring
 

@@ -4,7 +4,6 @@ description: This tool builds custom R annotation packages for Affymetrix and Ni
 homepage: https://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html
 ---
 
-
 # bioconductor-pdinfobuilder
 
 name: bioconductor-pdinfobuilder

@@ -4,7 +4,6 @@ description: This tool performs a statistical test to determine if global normal
 homepage: https://bioconductor.org/packages/release/bioc/html/quantro.html
 ---
 
-
 # bioconductor-quantro
 
 name: bioconductor-quantro

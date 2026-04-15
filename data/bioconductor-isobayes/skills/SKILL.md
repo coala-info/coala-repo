@@ -4,7 +4,6 @@ description: IsoBayes performs Bayesian inference for protein isoform-level quan
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoBayes.html
 ---
 
-
 # bioconductor-isobayes
 
 name: bioconductor-isobayes

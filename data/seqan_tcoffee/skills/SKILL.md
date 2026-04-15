@@ -2,8 +2,9 @@
 name: seqan_tcoffee
 description: seqan_tcoffee performs multiple sequence alignment using a consistency-based approach to produce high-quality results for divergent biological sequences. Use when user asks to generate a multiple sequence alignment, align protein or nucleotide sequences, or specify output formats like FASTA, MSF, and SAF.
 homepage: http://www.seqan.de/apps/seqan-t-coffee/
+metadata:
+  docker_image: "quay.io/biocontainers/seqan:2.5.2--h168b838_0"
 ---
-
 
 # seqan_tcoffee
 

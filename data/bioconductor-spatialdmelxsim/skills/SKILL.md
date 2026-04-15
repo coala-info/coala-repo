@@ -4,7 +4,6 @@ description: This package provides access to allelic expression counts from spat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/spatialDmelxsim.html
 ---
 
-
 # bioconductor-spatialdmelxsim
 
 name: bioconductor-spatialdmelxsim

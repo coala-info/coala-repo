@@ -4,7 +4,6 @@ description: This tool provides an R interface to query, filter, and download si
 homepage: https://bioconductor.org/packages/release/bioc/html/hca.html
 ---
 
-
 # bioconductor-hca
 
 name: bioconductor-hca

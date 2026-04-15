@@ -2,8 +2,9 @@
 name: gromacs_py
 description: gromacs_py is a Python wrapper for the GROMACS molecular dynamics suite that automates system preparation and simulation workflows. Use when user asks to generate topologies, prepare molecular systems with solvation and neutralization, or execute MD simulations including minimization and equilibration.
 homepage: https://github.com/samuelmurail/gromacs_py
+metadata:
+  docker_image: "quay.io/biocontainers/gromacs:2022"
 ---
-
 
 # gromacs_py
 

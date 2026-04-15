@@ -4,7 +4,6 @@ description: This tool uses parametric empirical Bayes methods to analyze microa
 homepage: https://bioconductor.org/packages/release/bioc/html/EBarrays.html
 ---
 
-
 # bioconductor-ebarrays
 
 name: bioconductor-ebarrays

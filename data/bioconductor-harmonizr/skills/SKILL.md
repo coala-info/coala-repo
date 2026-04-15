@@ -4,7 +4,6 @@ description: HarmonizR performs batch effect correction on biological datasets c
 homepage: https://bioconductor.org/packages/release/bioc/html/HarmonizR.html
 ---
 
-
 # bioconductor-harmonizr
 
 name: bioconductor-harmonizr

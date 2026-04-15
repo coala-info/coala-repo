@@ -4,7 +4,6 @@ description: This tool visualizes and ranks Gene Ontology terms from gene expres
 homepage: https://bioconductor.org/packages/release/bioc/html/GOexpress.html
 ---
 
-
 # bioconductor-goexpress
 
 name: bioconductor-goexpress

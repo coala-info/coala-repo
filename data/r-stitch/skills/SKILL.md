@@ -4,7 +4,6 @@ description: This tool performs reference panel-free, read-aware genotype imputa
 homepage: https://cran.r-project.org/web/packages/stitch/index.html
 ---
 
-
 # r-stitch
 
 name: r-stitch

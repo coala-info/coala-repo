@@ -2,6 +2,8 @@
 name: shiba
 description: Shiba identifies alternative mRNA splicing patterns from bulk and single-cell RNA-seq alignments. Use when user asks to identify alternative splicing events, perform differential splicing analysis, or process bulk and single-cell RNA-seq data.
 homepage: https://github.com/Sika-Zheng-Lab/Shiba
+metadata:
+  docker_image: "quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_1"
 ---
 
 # shiba

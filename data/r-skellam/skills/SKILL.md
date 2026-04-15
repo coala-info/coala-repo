@@ -4,7 +4,6 @@ description: This tool provides statistical functions for the Skellam distributi
 homepage: https://cloud.r-project.org/web/packages/skellam/index.html
 ---
 
-
 # r-skellam
 
 name: r-skellam

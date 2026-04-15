@@ -2,6 +2,8 @@
 name: ntstat
 description: ntStat is a bioinformatics toolkit for efficient k-mer analysis and genome characterization using Bloom filters. Use when user asks to generate k-mer statistics, filter k-mers by frequency, estimate genome size and heterozygosity, or query Bloom filters for specific sequences.
 homepage: https://github.com/bcgsc/ntStat
+metadata:
+  docker_image: "quay.io/biocontainers/ntstat:1.0.1--py311he264feb_2"
 ---
 
 # ntstat

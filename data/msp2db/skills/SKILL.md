@@ -2,8 +2,9 @@
 name: msp2db
 description: The msp2db tool converts mass spectrometry MSP text files into relational databases for efficient spectral lookup and data integration. Use when user asks to convert MSP files to SQLite or MySQL databases, batch process spectral libraries, or prepare metabolomics data for spectral matching.
 homepage: https://github.com/computational-metabolomics/msp2db
+metadata:
+  docker_image: "quay.io/biocontainers/msp2db:0.0.9--py_0"
 ---
-
 
 # msp2db
 

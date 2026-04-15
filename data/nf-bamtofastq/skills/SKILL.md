@@ -4,6 +4,8 @@ description: This pipeline converts mapped or unmapped BAM and CRAM files into c
 homepage: https://github.com/nf-core/bamtofastq
 ---
 
+# bamtofastq
+
 ## Overview
 nf-core/bamtofastq is a bioinformatics pipeline designed to transform sequence alignment files (BAM or CRAM) back into raw sequencing data (FASTQ). It handles both single-end and paired-end data by automatically detecting the library type and ensuring read pairs are correctly collated before extraction.
 

@@ -2,8 +2,9 @@
 name: cliquesnv
 description: CliqueSNV reconstructs viral haplotypes and identifies sub-populations from sequencing data using a graph-based approach to distinguish true biological variation from errors. Use when user asks to reconstruct viral haplotypes, perform variant calling for Illumina or PacBio reads, or determine the genetic diversity and frequency of viral strains in a sample.
 homepage: https://github.com/vtsyvina/CliqueSNV
+metadata:
+  docker_image: "quay.io/biocontainers/cliquesnv:2.0.3--hdfd78af_0"
 ---
-
 
 # cliquesnv
 

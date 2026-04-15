@@ -2,8 +2,9 @@
 name: flash2
 description: FLASH2 merges overlapping paired-end reads into single, longer consensus sequences. Use when user asks to merge paired-end reads, handle outie or engulfed overlaps, or combine forward and reverse FASTQ files.
 homepage: https://github.com/dstreett/FLASH2
+metadata:
+  docker_image: "quay.io/biocontainers/flash2:2.2.00--h577a1d6_9"
 ---
-
 
 # flash2
 

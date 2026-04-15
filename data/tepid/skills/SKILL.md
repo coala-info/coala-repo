@@ -2,8 +2,9 @@
 name: tepid
 description: TEPID (Transposable Element Polymorphism IDentification) is a bioinformatic pipeline designed to find variation in transposable element content between a sample and a reference genome. Use when user asks to run tepid or use its main features.
 homepage: https://github.com/ListerLab/TEPID
+metadata:
+  docker_image: "quay.io/biocontainers/tepid:0.10--py_0"
 ---
-
 
 # tepid
 

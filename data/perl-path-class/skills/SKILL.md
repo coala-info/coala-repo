@@ -2,8 +2,9 @@
 name: perl-path-class
 description: This tool provides a cross-platform object-oriented interface for manipulating file and directory paths in Perl. Use when user asks to create path objects, navigate directory trees, handle cross-platform path conversions, or open file handles using Path::Class.
 homepage: http://metacpan.org/pod/Path::Class
+metadata:
+  docker_image: "quay.io/biocontainers/perl-path-class:0.37--pl526_1"
 ---
-
 
 # perl-path-class
 

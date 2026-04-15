@@ -4,7 +4,6 @@ description: This package provides functional and genomic annotations for manufa
 homepage: https://bioconductor.org/packages/release/data/annotation/html/OperonHumanV3.db.html
 ---
 
-
 # bioconductor-operonhumanv3.db
 
 name: bioconductor-operonhumanv3.db

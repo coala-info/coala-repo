@@ -1,9 +1,10 @@
 ---
 name: flexidot
-description: "FlexiDot creates high-quality, ambiguity-aware dotplots to visualize and compare discrete biological sequences. Use when user asks to visualize sequence structural features, find internal repeats or inversions, perform pairwise or all-to-all sequence comparisons, or overlay GFF annotations onto dotplots."
+description: FlexiDot creates high-quality, ambiguity-aware dotplots to visualize and compare discrete biological sequences. Use when user asks to visualize sequence structural features, find internal repeats or inversions, perform pairwise or all-to-all sequence comparisons, or overlay GFF annotations onto dotplots.
 homepage: https://github.com/flexidot-bio/flexidot
+metadata:
+  docker_image: "quay.io/biocontainers/flexidot:2.1.0--pyhdfd78af_0"
 ---
-
 
 # flexidot
 

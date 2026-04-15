@@ -4,7 +4,6 @@ description: RNAprobR processes and analyzes high-throughput RNA structure probi
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RNAprobR.html
 ---
 
-
 # bioconductor-rnaprobr
 
 name: bioconductor-rnaprobr

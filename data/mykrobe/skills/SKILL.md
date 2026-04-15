@@ -1,7 +1,9 @@
 ---
 name: mykrobe
-description: "Predicts antibiotic resistance from genome sequence data for specific bacterial species. Use when you need to predict antibiotic resistance profiles for Staphylococcus aureus and Mycobacterium tuberculosis from their genome sequences."
+description: Predicts antibiotic resistance from genome sequence data for specific bacterial species. Use when you need to predict antibiotic resistance profiles for Staphylococcus aureus and Mycobacterium tuberculosis from their genome sequences.
 homepage: https://github.com/iqbal-lab/Mykrobe-predictor
+metadata:
+  docker_image: "quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3"
 ---
 
 # mykrobe

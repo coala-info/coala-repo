@@ -4,7 +4,6 @@ description: The bioconductor-depmap package provides a framework for accessing 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/depmap.html
 ---
 
-
 # bioconductor-depmap
 
 ## Overview

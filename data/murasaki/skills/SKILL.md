@@ -4,7 +4,6 @@ description: Murasaki is a minimalist and lightweight theme for the Hexo static 
 homepage: https://github.com/prinsss/hexo-theme-murasaki
 ---
 
-
 # murasaki
 
 ## Overview

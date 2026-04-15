@@ -4,7 +4,6 @@ description: The biscuiteer package processes and integrates output from the bis
 homepage: https://bioconductor.org/packages/release/bioc/html/biscuiteer.html
 ---
 
-
 # bioconductor-biscuiteer
 
 ## Overview

@@ -4,7 +4,6 @@ description: Bioconductor-findit2 identifies influential transcription factors a
 homepage: https://bioconductor.org/packages/release/bioc/html/FindIT2.html
 ---
 
-
 # bioconductor-findit2
 
 name: bioconductor-findit2

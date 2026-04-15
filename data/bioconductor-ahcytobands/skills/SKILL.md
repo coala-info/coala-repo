@@ -4,7 +4,6 @@ description: This tool provides access to chromosomal cytogenetic band data and 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHCytoBands.html
 ---
 
-
 # bioconductor-ahcytobands
 
 name: bioconductor-ahcytobands

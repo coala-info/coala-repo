@@ -4,7 +4,6 @@ description: This tool identifies significant recurrent genomic copy number alte
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gaia.html
 ---
 
-
 # bioconductor-gaia
 
 name: bioconductor-gaia

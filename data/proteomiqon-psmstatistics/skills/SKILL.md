@@ -2,8 +2,9 @@
 name: proteomiqon-psmstatistics
 description: This tool statistically evaluates and refines peptide-spectrum matches by calculating false discovery rates and confidence metrics using machine learning. Use when user asks to consolidate search engine scores, calculate Q-values or PEP values, and filter PSM results based on statistical thresholds.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-psmstatistics:0.0.8--hdfd78af_0"
 ---
-
 
 # proteomiqon-psmstatistics
 

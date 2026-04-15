@@ -4,7 +4,6 @@ description: This tool predicts chromatin looping interactions by combining ChIP
 homepage: https://bioconductor.org/packages/release/bioc/html/sevenC.html
 ---
 
-
 # bioconductor-sevenc
 
 name: bioconductor-sevenc

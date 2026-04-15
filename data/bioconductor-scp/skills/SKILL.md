@@ -4,7 +4,6 @@ description: The bioconductor-scp package provides a standardized framework for 
 homepage: https://bioconductor.org/packages/release/bioc/html/scp.html
 ---
 
-
 # bioconductor-scp
 
 ## Overview

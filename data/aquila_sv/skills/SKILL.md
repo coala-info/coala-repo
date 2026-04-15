@@ -2,8 +2,9 @@
 name: aquila_sv
 description: AquilaSV detects structural variants by performing local, phased diploid assemblies from linked-read sequencing data. Use when user asks to detect structural variants, perform local phased assembly, or identify haplotype-specific genomic variations.
 homepage: https://github.com/maiziezhoulab/AquilaSV
+metadata:
+  docker_image: "quay.io/biocontainers/aquila:1.0.0--py_0"
 ---
-
 
 # aquila_sv
 

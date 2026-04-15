@@ -4,7 +4,6 @@ description: This tool identifies clonally exclusive gene or pathway pairs in ca
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GeneAccord.html
 ---
 
-
 # bioconductor-geneaccord
 
 name: bioconductor-geneaccord

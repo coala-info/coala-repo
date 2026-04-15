@@ -2,8 +2,9 @@
 name: perl-config-general
 description: This tool manages Perl configuration files using the Apache-style syntax for hierarchical data structures. Use when user asks to parse configuration files, load Apache-style configs into Perl hashes, or save configuration data back to a file.
 homepage: http://metacpan.org/pod/Config-General
+metadata:
+  docker_image: "quay.io/biocontainers/perl-config-general:2.67--pl5321hdfd78af_0"
 ---
-
 
 # perl-config-general
 

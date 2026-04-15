@@ -4,7 +4,6 @@ description: DELocal identifies differentially expressed genes by comparing thei
 homepage: https://bioconductor.org/packages/release/bioc/html/DELocal.html
 ---
 
-
 # bioconductor-delocal
 
 ## Overview

@@ -1,10 +1,12 @@
 ---
 name: gtn-sequence-analyses-mapping
-description: "This Galaxy workflow processes a collection of sequencing reads through quality control and trimming before aligning them to a reference genome using Bowtie2. Use this skill when you need to assess the quality of raw sequencing data and generate filtered alignment files for downstream genomic analysis or visualization."
-homepage: https://workflowhub.eu/workflows/1661
+description: This Galaxy workflow processes a collection of sequencing reads through quality control and trimming before aligning them to a reference genome using Bowtie2. Use this skill when you need to assess the quality of raw sequencing data and generate filtered alignment files for downstream genomic analysis or visualization.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN - Sequence Analyses - Mapping
+# gtn-sequence-analyses-mapping
 
 ## Overview
 

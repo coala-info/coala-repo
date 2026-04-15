@@ -1,9 +1,10 @@
 ---
 name: bamtools
-description: "bamtools is a command-line toolkit for the manipulation, filtering, and management of BAM alignment files. Use when user asks to filter alignments by quality or region, convert BAM files to other formats, split files by reference or tag, merge multiple datasets, or generate alignment statistics."
+description: bamtools is a command-line toolkit for the manipulation, filtering, and management of BAM alignment files. Use when user asks to filter alignments by quality or region, convert BAM files to other formats, split files by reference or tag, merge multiple datasets, or generate alignment statistics.
 homepage: https://github.com/pezmaster31/bamtools
+metadata:
+  docker_image: "quay.io/biocontainers/bamtools:2.5.3--he132191_0"
 ---
-
 
 # bamtools
 

@@ -4,7 +4,6 @@ description: This tool performs multivariate analysis and integration of biologi
 homepage: https://bioconductor.org/packages/release/bioc/html/mixOmics.html
 ---
 
-
 # bioconductor-mixomics
 
 name: bioconductor-mixomics

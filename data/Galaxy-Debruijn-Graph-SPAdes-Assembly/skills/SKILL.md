@@ -1,10 +1,12 @@
 ---
 name: debruijn-graph-spades-assembly
-description: "This Galaxy workflow performs de novo genome assembly on paired-end read collections using the SPAdes assembler, followed by assembly quality assessment with Fasta Statistics and visualization via Bandage. Use this skill when you need to reconstruct a genome from sequencing data and evaluate the resulting contigs through statistical summaries and graphical representations of the assembly graph."
-homepage: https://workflowhub.eu/workflows/2046
+description: This Galaxy workflow performs de novo genome assembly on paired-end read collections using the SPAdes assembler, followed by assembly quality assessment with Fasta Statistics and visualization via Bandage. Use this skill when you need to reconstruct a genome from sequencing data and evaluate the resulting contigs through statistical summaries and graphical representations of the assembly graph.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Debruijn Graph SPAdes Assembly
+# debruijn-graph-spades-assembly
 
 ## Overview
 

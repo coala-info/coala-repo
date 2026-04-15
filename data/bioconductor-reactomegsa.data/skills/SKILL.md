@@ -4,7 +4,6 @@ description: This package provides multi-omics datasets including RNA-seq, prote
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ReactomeGSA.data.html
 ---
 
-
 # bioconductor-reactomegsa.data
 
 ## Overview

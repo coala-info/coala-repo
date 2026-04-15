@@ -4,7 +4,6 @@ description: This tool provides a memory-efficient representation of scaled and 
 homepage: https://bioconductor.org/packages/release/bioc/html/ScaledMatrix.html
 ---
 
-
 # bioconductor-scaledmatrix
 
 name: bioconductor-scaledmatrix

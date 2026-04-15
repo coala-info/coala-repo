@@ -2,8 +2,9 @@
 name: ra-integrate
 description: This tool integrates the Ra de novo DNA assembler for third-generation sequencing data. Use when user asks to assemble DNA sequences from third-generation sequencing data using the Ra assembler.
 homepage: https://github.com/mediavrog/integrated-rating-request
+metadata:
+  docker_image: "quay.io/biocontainers/ra-integrate:0.1--0"
 ---
-
 
 # ra-integrate
 

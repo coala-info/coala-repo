@@ -4,7 +4,6 @@ description: This tool designs, analyzes, and compares multiplex PCR primers to 
 homepage: https://bioconductor.org/packages/release/bioc/html/openPrimeR.html
 ---
 
-
 # bioconductor-openprimer
 
 name: bioconductor-openprimer

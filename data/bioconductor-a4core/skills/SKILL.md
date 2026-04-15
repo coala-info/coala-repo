@@ -4,7 +4,6 @@ description: The a4Core package provides the foundational infrastructure and dat
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Core.html
 ---
 
-
 # bioconductor-a4core
 
 ## Overview

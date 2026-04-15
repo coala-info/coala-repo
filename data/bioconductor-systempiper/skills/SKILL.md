@@ -4,7 +4,6 @@ description: systemPipeR automates the construction, management, and execution o
 homepage: https://bioconductor.org/packages/release/bioc/html/systemPipeR.html
 ---
 
-
 # bioconductor-systempiper
 
 name: bioconductor-systempiper

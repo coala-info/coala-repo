@@ -4,7 +4,6 @@ description: This tool infers genetic ancestry from human molecular data includi
 homepage: https://bioconductor.org/packages/release/bioc/html/RAIDS.html
 ---
 
-
 # bioconductor-raids
 
 name: bioconductor-raids

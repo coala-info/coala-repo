@@ -4,7 +4,6 @@ description: This package provides the manifest data required to process and ann
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICv2manifest.html
 ---
 
-
 # bioconductor-illuminahumanmethylationepicv2manifest
 
 ## Overview

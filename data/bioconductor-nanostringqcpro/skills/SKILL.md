@@ -4,7 +4,6 @@ description: This tool performs quality control and preprocessing of NanoString 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NanoStringQCPro.html
 ---
 
-
 # bioconductor-nanostringqcpro
 
 name: bioconductor-nanostringqcpro

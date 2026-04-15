@@ -4,7 +4,6 @@ description: This tool performs exact goodness-of-fit tests for multinomial data
 homepage: https://cran.r-project.org/web/packages/xnomial/index.html
 ---
 
-
 # r-xnomial
 
 name: r-xnomial

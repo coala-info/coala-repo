@@ -1,9 +1,10 @@
 ---
 name: onehot2seq
-description: "onehot2seq decodes 3D numpy arrays into DNA, RNA, or protein sequences in text or FASTA format. Use when user asks to convert one-hot encoded numpy arrays to biological sequences, decode tensors into FASTA files, or translate numeric arrays into DNA, RNA, or protein strings."
+description: onehot2seq decodes 3D numpy arrays into DNA, RNA, or protein sequences in text or FASTA format. Use when user asks to convert one-hot encoded numpy arrays to biological sequences, decode tensors into FASTA files, or translate numeric arrays into DNA, RNA, or protein strings.
 homepage: https://github.com/akikuno/onehot2seq
+metadata:
+  docker_image: "quay.io/biocontainers/onehot2seq:0.0.2--pyh086e186_1"
 ---
-
 
 # onehot2seq
 

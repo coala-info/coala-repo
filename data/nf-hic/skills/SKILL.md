@@ -4,6 +4,8 @@ description: This pipeline processes paired-end Hi-C FASTQ data using a samplesh
 homepage: https://github.com/nf-core/hic
 ---
 
+# hic
+
 ## Overview
 nf-core/hic is a bioinformatics best-practice analysis pipeline for the analysis of Chromosome Conformation Capture data (Hi-C). It addresses the complexity of Hi-C data by handling read alignment, filtering of valid interaction products, and the generation of normalized contact matrices.
 

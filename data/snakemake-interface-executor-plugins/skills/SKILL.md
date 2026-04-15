@@ -2,8 +2,9 @@
 name: snakemake-interface-executor-plugins
 description: This package provides the stable API and interface definitions for developing Snakemake executor plugins that interact with external cluster managers or cloud services. Use when user asks to implement a new Snakemake executor, define custom executor settings, or manage job lifecycles in external execution environments.
 homepage: https://github.com/snakemake/snakemake-interface-executor-plugins
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-interface-executor-plugins:9.3.9--pyhdfd78af_0"
 ---
-
 
 # snakemake-interface-executor-plugins
 

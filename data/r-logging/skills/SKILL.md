@@ -4,7 +4,6 @@ description: This tool provides a hierarchical logging system for R based on the
 homepage: https://cloud.r-project.org/web/packages/logging/index.html
 ---
 
-
 # r-logging
 
 name: r-logging

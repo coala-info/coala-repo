@@ -1,10 +1,12 @@
 ---
 name: workflow-6-gucfg2galaxy-alpha-diversity-16s-microbial-analys
-description: "This metagenomics workflow processes a Mothur shared file to perform alpha diversity analysis using Mothur's rarefaction and summary tools. Use this skill when you need to evaluate microbial community richness and diversity within individual samples or assess if your sequencing depth is sufficient through rarefaction curves."
-homepage: https://workflowhub.eu/workflows/652
+description: This metagenomics workflow processes a Mothur shared file to perform alpha diversity analysis using Mothur's rarefaction and summary tools. Use this skill when you need to evaluate microbial community richness and diversity within individual samples or assess if your sequencing depth is sufficient through rarefaction curves.
+homepage: https://www.qcif.edu.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Workflow 6 [gucfg2galaxy]: Alpha Diversity [16S Microbial Analysis With Mothur]
+# workflow-6-gucfg2galaxy-alpha-diversity-16s-microbial-analys
 
 ## Overview
 

@@ -2,8 +2,9 @@
 name: perl-lyve-set
 description: Lyve-SET is a phylogenomics pipeline that identifies high-quality SNPs from raw sequencing data to create multiple sequence alignments and phylogenetic trees for genomic epidemiology. Use when user asks to initialize a phylogenomics project, interleave paired-end reads, identify high-quality SNPs, mask problematic genomic regions, or generate phylogenetic trees for outbreak investigations.
 homepage: https://github.com/lskatz/lyve-SET
+metadata:
+  docker_image: "quay.io/biocontainers/perl-lyve-set:2.0.1--pl526_0"
 ---
-
 
 # perl-lyve-set
 

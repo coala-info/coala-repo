@@ -4,7 +4,6 @@ description: This package provides example flow cytometry datasets for testing a
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/flowFitExampleData.html
 ---
 
-
 # bioconductor-flowfitexampledata
 
 name: bioconductor-flowfitexampledata

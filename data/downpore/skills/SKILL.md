@@ -2,6 +2,8 @@
 name: downpore
 description: Downpore is a high-speed suite of tools for processing long-read sequencing data during genome assembly and consensus. Use when user asks to trim adapters or barcodes, de-multiplex sequencing reads, align reads to a reference, or find overlaps for genomic assembly.
 homepage: https://github.com/jteutenberg/downpore
+metadata:
+  docker_image: "quay.io/biocontainers/downpore:0.3.4--h375a9b1_0"
 ---
 
 # downpore

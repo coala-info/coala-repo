@@ -4,7 +4,6 @@ description: The cbpManager package provides an interactive R Shiny interface to
 homepage: https://bioconductor.org/packages/release/bioc/html/cbpManager.html
 ---
 
-
 # bioconductor-cbpmanager
 
 name: bioconductor-cbpmanager

@@ -4,7 +4,6 @@ description: The bioconductor-soggi package visualizes and analyzes genomic sign
 homepage: https://bioconductor.org/packages/release/bioc/html/soGGi.html
 ---
 
-
 # bioconductor-soggi
 
 name: bioconductor-soggi

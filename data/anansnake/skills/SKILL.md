@@ -2,8 +2,9 @@
 name: anansnake
 description: anansnake is a Snakemake-based workflow that automates gene regulatory network analysis by executing ANANSE to predict enhancer-gene interactions and transcription factor influence. Use when user asks to predict transcription factor influence, determine enhancer-gene interactions, or bridge the gap between sequencing data and gene regulatory network analysis.
 homepage: https://github.com/vanheeringen-lab/anansnake
+metadata:
+  docker_image: "quay.io/biocontainers/anansnake:0.1.0--pyh7cba7a3_0"
 ---
-
 
 # anansnake
 

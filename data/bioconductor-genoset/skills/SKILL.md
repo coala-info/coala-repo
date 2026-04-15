@@ -4,7 +4,6 @@ description: This tool provides the GenoSet class for managing and analyzing gen
 homepage: https://bioconductor.org/packages/3.6/bioc/html/genoset.html
 ---
 
-
 # bioconductor-genoset
 
 name: bioconductor-genoset

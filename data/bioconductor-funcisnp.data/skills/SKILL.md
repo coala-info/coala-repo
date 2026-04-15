@@ -4,7 +4,6 @@ description: This package provides pre-packaged experiment data and genomic feat
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/FunciSNP.data.html
 ---
 
-
 # bioconductor-funcisnp.data
 
 name: bioconductor-funcisnp.data

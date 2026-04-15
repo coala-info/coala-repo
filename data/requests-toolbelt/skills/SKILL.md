@@ -2,8 +2,9 @@
 name: requests-toolbelt
 description: The requests-toolbelt is a collection of utility classes and functions that extend the requests library to handle complex HTTP scenarios. Use when user asks to stream multipart form-data for large file uploads, construct custom user-agent strings, enforce specific SSL/TLS protocols, or implement stateless sessions with a forgetful cookie jar.
 homepage: https://github.com/requests/toolbelt
+metadata:
+  docker_image: "quay.io/biocontainers/requests-toolbelt:0.5.0--py35_0"
 ---
-
 
 # requests-toolbelt
 

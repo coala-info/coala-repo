@@ -2,6 +2,8 @@
 name: rnasketch
 description: RNAsketch is a toolkit for designing nucleic acid sequences that meet specific structural objectives. Use when user asks to design multistate RNA sequences, create temperature-sensitive switches, engineer ligand-responsive riboswitches, or design sRNA co-folding interactions.
 homepage: https://github.com/ViennaRNA/RNAsketch
+metadata:
+  docker_image: "quay.io/biocontainers/rnasketch:1.5--py27_1"
 ---
 
 # rnasketch

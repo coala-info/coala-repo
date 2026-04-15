@@ -4,7 +4,6 @@ description: MNE-Python is a library designed for processing and analyzing neuro
 homepage: https://github.com/mne-tools/mne-python
 ---
 
-
 # mne
 
 ## Overview

@@ -2,6 +2,8 @@
 name: svdss
 description: SVDSS detects structural variants in high-accuracy long reads by identifying sample-specific strings relative to a reference genome. Use when user asks to index a reference, smooth BAM files, extract sample-specific strings, call structural variants, or genotype variants using the SVDSS workflow.
 homepage: https://github.com/Parsoa/SVDSS
+metadata:
+  docker_image: "quay.io/biocontainers/svdss:2.1.0--h9013031_0"
 ---
 
 # svdss

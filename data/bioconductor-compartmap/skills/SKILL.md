@@ -4,7 +4,6 @@ description: This tool infers higher-order chromatin structure and A/B compartme
 homepage: https://bioconductor.org/packages/3.8/bioc/html/compartmap.html
 ---
 
-
 # bioconductor-compartmap
 
 name: bioconductor-compartmap

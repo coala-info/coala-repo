@@ -1,9 +1,12 @@
 ---
 name: chip-seq-data-processing-workflow
-description: "This Common Workflow Language pipeline processes raw ChIP-Seq reads into genome-wide signal tracks and peaks using trimGalore, bowtie2, and MACS2. Use this skill when you need to identify protein-DNA binding sites or characterize histone modification patterns across the genome to understand epigenetic regulation."
-homepage: https://workflowhub.eu/workflows/1761
+description: This Common Workflow Language pipeline processes raw ChIP-Seq reads into genome-wide signal tracks and peaks using trimGalore, bowtie2, and MACS2. Use this skill when you need to identify protein-DNA binding sites or characterize histone modification patterns across the genome to understand epigenetic regulation.
+homepage: https://eosc4cancer.eu
+metadata:
+  docker_image: "N/A"
 ---
-# ChIP-Seq data processing workflow
+
+# chip-seq-data-processing-workflow
 
 ## Overview
 

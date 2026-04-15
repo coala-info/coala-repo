@@ -4,6 +4,8 @@ description: Reconstructs consensus genomes and identifies intra-host variants f
 homepage: https://github.com/nf-core/viralmetagenome
 ---
 
+# viralmetagenome
+
 ## Overview
 The nf-core/viralmetagenome pipeline is designed for the reconstruction of viral consensus genomes and the identification of intra-host variants from metagenomic sequencing data. It supports both untargeted metagenomics and enriched sequencing methods like hybrid capture, providing a robust framework for discovering and characterizing viral sequences in complex biological samples.
 

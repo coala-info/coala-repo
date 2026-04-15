@@ -2,8 +2,9 @@
 name: mmseqs2
 description: MMseqs2 is a high-performance software suite designed for rapid protein and nucleotide sequence searching, clustering, and taxonomic assignment. Use when user asks to search sequences against databases, cluster large datasets into representative groups, or assign taxonomy to metagenomic sequences.
 homepage: https://github.com/soedinglab/mmseqs2
+metadata:
+  docker_image: "quay.io/biocontainers/mmseqs2:18.8cc5c--hd6d6fdc_0"
 ---
-
 
 # mmseqs2
 

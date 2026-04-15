@@ -1,9 +1,10 @@
 ---
 name: binlorry
-description: "BinLorry is a utility for partitioning and filtering sequencing reads based on header attributes or external metadata. Use when user asks to bin reads by barcode, filter sequences by length, or subset data using a CSV metadata table."
+description: BinLorry is a utility for partitioning and filtering sequencing reads based on header attributes or external metadata. Use when user asks to bin reads by barcode, filter sequences by length, or subset data using a CSV metadata table.
 homepage: https://github.com/rambaut/binlorry
+metadata:
+  docker_image: "quay.io/biocontainers/binlorry:1.3.1--py_0"
 ---
-
 
 # binlorry
 

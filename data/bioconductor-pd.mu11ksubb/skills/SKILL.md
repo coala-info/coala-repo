@@ -4,7 +4,6 @@ description: This package provides platform design information and probe sequenc
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mu11ksubb.html
 ---
 
-
 # bioconductor-pd.mu11ksubb
 
 ## Overview

@@ -1,7 +1,9 @@
 ---
 name: cayman
-description: "Cayman quantifies the abundance of carbohydrate-active enzymes in metagenomic datasets by mapping shotgun reads to a reference gene catalog. Use when user asks to profile CAZyme abundance, quantify carbohydrate metabolism genes, or generate RPKM matrices from metagenomic reads."
+description: Cayman quantifies the abundance of carbohydrate-active enzymes in metagenomic datasets by mapping shotgun reads to a reference gene catalog. Use when user asks to profile CAZyme abundance, quantify carbohydrate metabolism genes, or generate RPKM matrices from metagenomic reads.
 homepage: https://github.com/zellerlab/cayman
+metadata:
+  docker_image: "quay.io/biocontainers/cayman:0.10.2--pyh7e72e81_0"
 ---
 
 # cayman

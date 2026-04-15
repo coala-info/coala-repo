@@ -4,7 +4,6 @@ description: The bioconductor-flowpeaks package implements a fast, unsupervised 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowPeaks.html
 ---
 
-
 # bioconductor-flowpeaks
 
 ## Overview

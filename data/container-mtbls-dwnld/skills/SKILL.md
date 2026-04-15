@@ -2,8 +2,9 @@
 name: container-mtbls-dwnld
 description: This tool downloads MetaboLights study data and transforms it into simplified tabular files for metabolomics analysis. Use when user asks to download MetaboLights datasets, convert ISA-Tab files to tabular formats, or prepare metabolomics data for Workflow4Metabolomics.
 homepage: https://github.com/phnmnl/container-mtbls-dwnld
+metadata:
+  docker_image: "biocontainers/container-mtbls-dwnld:latest"
 ---
-
 
 # container-mtbls-dwnld
 

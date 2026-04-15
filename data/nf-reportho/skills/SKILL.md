@@ -4,6 +4,8 @@ description: This pipeline fetches and summarizes orthology predictions from mul
 homepage: https://github.com/nf-core/reportho
 ---
 
+# reportho
+
 ## Overview
 nf-core/reportho addresses the challenge of inconsistent orthology predictions across different bioinformatics databases by aggregating results into a unified consensus. It identifies synonymous identifiers through sequence identity and calculates agreement statistics to provide a confidence-ranked list of orthologs for specific query proteins.
 

@@ -4,7 +4,6 @@ description: This tool performs Differential Allelic Representation analysis to 
 homepage: https://bioconductor.org/packages/release/bioc/html/tadar.html
 ---
 
-
 # bioconductor-tadar
 
 name: bioconductor-tadar

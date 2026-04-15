@@ -2,8 +2,9 @@
 name: novoalign
 description: Novoalign is a high-accuracy short-read aligner that performs optimal global alignment of genomic sequences using the Needleman-Wunsch algorithm. Use when user asks to index a reference genome, align single-end or paired-end reads, perform bisulfite mapping, or trim adapters during the alignment process.
 homepage: http://www.novocraft.com/products/novoalign/
+metadata:
+  docker_image: "quay.io/biocontainers/novoalign:4.03.04--h43eeafb_3"
 ---
-
 
 # novoalign
 

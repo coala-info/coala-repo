@@ -4,7 +4,6 @@ description: The tLOH package assesses evidence for Loss of Heterozygosity in sp
 homepage: https://bioconductor.org/packages/release/bioc/html/tLOH.html
 ---
 
-
 # bioconductor-tloh
 
 ## Overview

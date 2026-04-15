@@ -4,7 +4,6 @@ description: This tool removes unwanted variation from gene expression microarra
 homepage: https://bioconductor.org/packages/release/bioc/html/RUVnormalize.html
 ---
 
-
 # bioconductor-ruvnormalize
 
 name: bioconductor-ruvnormalize

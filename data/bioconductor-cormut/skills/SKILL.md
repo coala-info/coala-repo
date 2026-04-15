@@ -4,7 +4,6 @@ description: This tool detects correlated mutations in protein-coding genes by c
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CorMut.html
 ---
 
-
 # bioconductor-cormut
 
 name: bioconductor-cormut

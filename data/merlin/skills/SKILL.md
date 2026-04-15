@@ -2,6 +2,8 @@
 name: merlin
 description: Merlin performs multipoint linkage analysis, error detection, and haplotyping for dense genetic maps in pedigrees. Use when user asks to perform non-parametric or parametric linkage analysis, estimate identity-by-descent sharing, detect genotype errors, or generate most likely haplotypes.
 homepage: http://csg.sph.umich.edu/abecasis/merlin
+metadata:
+  docker_image: "quay.io/biocontainers/merlin:1.1.2--h077b44d_8"
 ---
 
 # merlin

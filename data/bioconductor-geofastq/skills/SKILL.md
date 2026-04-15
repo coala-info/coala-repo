@@ -4,7 +4,6 @@ description: GEOfastq retrieves high-throughput sequencing data from GEO by iden
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOfastq.html
 ---
 
-
 # bioconductor-geofastq
 
 ## Overview

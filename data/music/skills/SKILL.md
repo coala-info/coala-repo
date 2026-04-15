@@ -2,8 +2,9 @@
 name: music
 description: LX Music is a cross-platform desktop music player that integrates multiple music sources and provides advanced features like a local HTTP API and data synchronization. Use when user asks to assist with technical setup, troubleshoot data paths, develop integrations via the Open API, or configure custom music sources.
 homepage: https://github.com/lyswhut/lx-music-desktop
+metadata:
+  docker_image: "quay.io/biocontainers/music:1.0.0--0"
 ---
-
 
 # music
 

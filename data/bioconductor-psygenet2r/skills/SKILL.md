@@ -4,7 +4,6 @@ description: The psygenet2r package retrieves and analyzes gene-disease associat
 homepage: https://bioconductor.org/packages/3.6/bioc/html/psygenet2r.html
 ---
 
-
 # bioconductor-psygenet2r
 
 ## Overview

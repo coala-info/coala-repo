@@ -4,7 +4,6 @@ description: This package provides annotation data for the Affymetrix Rat Exon 1
 homepage: https://bioconductor.org/packages/release/data/annotation/html/raex10stprobeset.db.html
 ---
 
-
 # bioconductor-raex10stprobeset.db
 
 name: bioconductor-raex10stprobeset.db

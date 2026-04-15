@@ -4,7 +4,6 @@ description: This tool fits Generalized Additive Models for Location, Scale and 
 homepage: https://cloud.r-project.org/web/packages/gamlss/index.html
 ---
 
-
 # r-gamlss
 
 name: r-gamlss

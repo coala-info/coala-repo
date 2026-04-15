@@ -4,7 +4,6 @@ description: CHRONOS is an R package that analyzes time-series transcriptomic da
 homepage: https://bioconductor.org/packages/release/bioc/html/CHRONOS.html
 ---
 
-
 # bioconductor-chronos
 
 ## Overview

@@ -4,7 +4,6 @@ description: BioQC detects tissue heterogeneity and performs gene-set enrichment
 homepage: https://bioconductor.org/packages/release/bioc/html/BioQC.html
 ---
 
-
 # bioconductor-bioqc
 
 name: bioconductor-bioqc

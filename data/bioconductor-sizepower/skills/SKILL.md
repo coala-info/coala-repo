@@ -4,7 +4,6 @@ description: The bioconductor-sizepower package calculates sample sizes and stat
 homepage: https://bioconductor.org/packages/release/bioc/html/sizepower.html
 ---
 
-
 # bioconductor-sizepower
 
 ## Overview

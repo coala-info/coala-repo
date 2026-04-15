@@ -4,7 +4,6 @@ description: This package provides a Bioconductor TxDb object for the Sus scrofa
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Sscrofa.UCSC.susScr11.refGene.html
 ---
 
-
 # bioconductor-txdb.sscrofa.ucsc.susscr11.refgene
 
 name: bioconductor-txdb.sscrofa.ucsc.susscr11.refgene

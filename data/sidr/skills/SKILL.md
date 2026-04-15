@@ -2,6 +2,8 @@
 name: sidr
 description: SIDR uses machine learning to classify and separate target genomic sequences from contaminants based on features like GC content and sequencing coverage. Use when user asks to refine genomic assemblies, filter out sequence contaminants, or classify contigs using decision trees.
 homepage: https://github.com/damurdock/SIDR
+metadata:
+  docker_image: "quay.io/biocontainers/sidr:0.0.2a2--pyh3252c3a_0"
 ---
 
 # sidr

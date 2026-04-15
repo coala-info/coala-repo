@@ -2,8 +2,9 @@
 name: noresm
 description: The Norwegian Earth System Model (NorESM) simulates past, present, and future global climate states using a fully-coupled framework. Use when user asks to create a new climate simulation case, manage model externals, or build and submit NorESM runs on specific machine targets.
 homepage: https://github.com/NorESMhub/NorESM
+metadata:
+  docker_image: "quay.io/biocontainers/noresm:2.0.2--py37pl5321h736fc29_1"
 ---
-
 
 # noresm
 

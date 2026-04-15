@@ -1,9 +1,10 @@
 ---
 name: flippyr
-description: "flippyr aligns PLINK binary filesets to a reference genome by identifying and correcting strand-flipped variants and allele mismatches. Use when user asks to orient genomic data to a reference, identify strand-flipped SNPs, or prepare PLINK files for imputation."
+description: flippyr aligns PLINK binary filesets to a reference genome by identifying and correcting strand-flipped variants and allele mismatches. Use when user asks to orient genomic data to a reference, identify strand-flipped SNPs, or prepare PLINK files for imputation.
 homepage: https://github.com/BEFH/flippyr
+metadata:
+  docker_image: "quay.io/biocontainers/flippyr:0.6.1--pyh7e72e81_0"
 ---
-
 
 # flippyr
 

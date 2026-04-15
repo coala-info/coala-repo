@@ -2,8 +2,9 @@
 name: fastqsplitter
 description: fastqsplitter partitions FASTQ files into multiple chunks while preserving the mandatory four-line record structure. Use when user asks to split FASTQ files, partition sequencing data into smaller parts, or divide compressed FASTQ files.
 homepage: https://github.com/LUMC/fastqsplitter
+metadata:
+  docker_image: "quay.io/biocontainers/fastqsplitter:1.2.0--py310h4b81fae_5"
 ---
-
 
 # fastqsplitter
 

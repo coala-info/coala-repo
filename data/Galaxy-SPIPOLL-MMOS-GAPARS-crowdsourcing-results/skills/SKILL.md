@@ -1,10 +1,12 @@
 ---
 name: spipoll-mmos-gapars-crowdsourcing-results
-description: "This workflow processes crowdsourced pollinator observation data from SPIPOLL and MMOS by cleaning, concatenating, and grouping classification CSV files using regex and text manipulation tools. Use this skill when you need to aggregate and filter large volumes of citizen science classification results to identify consensus in insect species observations."
-homepage: https://workflowhub.eu/workflows/660
+description: This workflow processes crowdsourced pollinator observation data from SPIPOLL and MMOS by cleaning, concatenating, and grouping classification CSV files using regex and text manipulation tools. Use this skill when you need to aggregate and filter large volumes of citizen science classification results to identify consensus in insect species observations.
+homepage: https://www.pndb.fr/
+metadata:
+  docker_image: "N/A"
 ---
 
-# SPIPOLL MMOS GAPARS crowdsourcing results
+# spipoll-mmos-gapars-crowdsourcing-results
 
 ## Overview
 

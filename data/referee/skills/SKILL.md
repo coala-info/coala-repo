@@ -2,8 +2,9 @@
 name: referee
 description: Referee assigns empirical quality scores to genome assemblies by analyzing mapped reads and calculating genotype likelihoods. Use when user asks to assess assembly quality, identify low-quality regions, or perform reference base correction.
 homepage: https://github.com/gwct/referee
+metadata:
+  docker_image: "quay.io/biocontainers/referee:1.2--hdfd78af_0"
 ---
-
 
 # referee
 

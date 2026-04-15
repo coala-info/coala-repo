@@ -4,7 +4,6 @@ description: This package provides a transcript database for Caenorhabditis eleg
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Celegans.UCSC.ce11.refGene.html
 ---
 
-
 # bioconductor-txdb.celegans.ucsc.ce11.refgene
 
 name: bioconductor-txdb.celegans.ucsc.ce11.refgene

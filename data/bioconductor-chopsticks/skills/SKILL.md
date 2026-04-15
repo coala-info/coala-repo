@@ -4,7 +4,6 @@ description: The chopsticks package provides high-performance classes and method
 homepage: https://bioconductor.org/packages/release/bioc/html/chopsticks.html
 ---
 
-
 # bioconductor-chopsticks
 
 ## Overview

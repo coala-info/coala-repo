@@ -4,7 +4,6 @@ description: This package provides probe sequence data for the Affymetrix Mu11Ks
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubaprobe.html
 ---
 
-
 # bioconductor-mu11ksubaprobe
 
 name: bioconductor-mu11ksubaprobe

@@ -1,10 +1,12 @@
 ---
 name: vgp-hifi-phased-assembly-with-hifiasm-and-hic-data
-description: "This Galaxy workflow performs phased genome assembly using PacBio HiFi reads, Hi-C data, and Meryl databases with the hifiasm assembler, followed by quality evaluation using BUSCO, Merqury, and QUAST. Use this skill when you need to produce high-fidelity, haplotype-resolved reference genomes for diploid organisms to accurately represent allelic diversity and structural variation."
-homepage: https://workflowhub.eu/workflows/318
+description: This Galaxy workflow performs phased genome assembly using PacBio HiFi reads, Hi-C data, and Meryl databases with the hifiasm assembler, followed by quality evaluation using BUSCO, Merqury, and QUAST. Use this skill when you need to produce high-fidelity, haplotype-resolved reference genomes for diploid organisms to accurately represent allelic diversity and structural variation.
+homepage: https://usegalaxy.eu
+metadata:
+  docker_image: "N/A"
 ---
 
-# VGP HiFi phased assembly with hifiasm and HiC data
+# vgp-hifi-phased-assembly-with-hifiasm-and-hic-data
 
 ## Overview
 

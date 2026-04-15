@@ -2,8 +2,9 @@
 name: wfa2-lib
 description: WFA2-lib is a high-performance library for sequence alignment using the Wavefront Alignment algorithm. Use when user asks to align sequences, perform gap-affine alignment, align long or noisy sequences with low memory, accelerate alignment, or use different distance metrics.
 homepage: https://github.com/smarco/WFA2-lib
+metadata:
+  docker_image: "quay.io/biocontainers/wfa2-lib:2.3.5--h9948957_3"
 ---
-
 
 # wfa2-lib
 

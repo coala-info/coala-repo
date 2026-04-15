@@ -4,7 +4,6 @@ description: This package provides pre-computed vectors and parameter estimates 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rat2302frmavecs.html
 ---
 
-
 # bioconductor-rat2302frmavecs
 
 name: bioconductor-rat2302frmavecs

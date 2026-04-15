@@ -4,7 +4,6 @@ description: This tool provides an R interface for genomic mapping, alignment, a
 homepage: https://bioconductor.org/packages/release/bioc/html/gmapR.html
 ---
 
-
 # bioconductor-gmapr
 
 name: bioconductor-gmapr

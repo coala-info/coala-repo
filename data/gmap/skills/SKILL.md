@@ -1,9 +1,10 @@
 ---
 name: gmap
-description: "GMAP provides high-speed genomic mapping and alignment for long mRNA/EST sequences and short-read sequencing data. Use when user asks to build a genome index, map cDNA to a reference genome, align short reads with SNP tolerance, or detect splice sites and gene fusions."
+description: GMAP provides high-speed genomic mapping and alignment for long mRNA/EST sequences and short-read sequencing data. Use when user asks to build a genome index, map cDNA to a reference genome, align short reads with SNP tolerance, or detect splice sites and gene fusions.
 homepage: http://research-pub.gene.com/gmap
+metadata:
+  docker_image: "quay.io/biocontainers/gmap:2025.07.31--pl5321hb1d24b7_1"
 ---
-
 
 # gmap
 

@@ -2,8 +2,9 @@
 name: visceral-evaluatesegmentation
 description: The visceral-evaluatesegmentation tool assesses the quality of volumetric segmentations by comparing a test segmentation against a ground truth reference using various metrics. Use when user asks to evaluate segmentation quality, compare segmentations, save evaluation results to XML, select specific metrics, evaluate fuzzy segmentations, or specify distance units.
 homepage: https://github.com/Visceral-Project/EvaluateSegmentation
+metadata:
+  docker_image: "quay.io/biocontainers/visceral-evaluatesegmentation:2021.03.25--h287ed61_0"
 ---
-
 
 # visceral-evaluatesegmentation
 

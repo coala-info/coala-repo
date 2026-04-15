@@ -4,7 +4,6 @@ description: This package provides data and tools to analyze cross-hybridization
 homepage: https://bioconductor.org/packages/release/data/experiment/html/XhybCasneuf.html
 ---
 
-
 # bioconductor-xhybcasneuf
 
 ## Overview

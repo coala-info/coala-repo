@@ -1,10 +1,12 @@
 ---
 name: gmx-protein-ligand-complex-md-setup
-description: "This Galaxy workflow automates the preparation and simulation of protein-ligand complexes by processing PDB structures through BioBB tools and GROMACS for parameterization, solvation, and energy minimization. Use this skill when you need to investigate the binding stability and dynamic interactions of a small molecule within a protein active site through molecular dynamics."
-homepage: https://workflowhub.eu/workflows/295
+description: This Galaxy workflow automates the preparation and simulation of protein-ligand complexes by processing PDB structures through BioBB tools and GROMACS for parameterization, solvation, and energy minimization. Use this skill when you need to investigate the binding stability and dynamic interactions of a small molecule within a protein active site through molecular dynamics.
+homepage: https://mmb.irbbarcelona.org/biobb/
+metadata:
+  docker_image: "N/A"
 ---
 
-# GMX Protein Ligand Complex MD Setup
+# gmx-protein-ligand-complex-md-setup
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: This tool provides statistical methods for sample size assessment a
 homepage: https://bioconductor.org/packages/release/bioc/html/OCplus.html
 ---
 
-
 # bioconductor-ocplus
 
 name: bioconductor-ocplus

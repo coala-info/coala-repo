@@ -4,7 +4,6 @@ description: This package designs and validates target probe sequences for the B
 homepage: https://bioconductor.org/packages/3.11/bioc/html/brainflowprobes.html
 ---
 
-
 # bioconductor-brainflowprobes
 
 ## Overview

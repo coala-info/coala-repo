@@ -4,7 +4,6 @@ description: This tool stores, accesses, and manipulates epitranscriptomic infor
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiTxDb.html
 ---
 
-
 # bioconductor-epitxdb
 
 name: bioconductor-epitxdb

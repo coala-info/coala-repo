@@ -1,10 +1,12 @@
 ---
 name: olympic-age-distribution
-description: "This Galaxy workflow processes a collection of Olympic athlete datasets to analyze age distributions using column manipulation, summary statistics, and ggplot2 histograms. Use this skill when you need to characterize the demographic profile of sports participants and visualize age frequency patterns across multiple data groups."
-homepage: https://workflowhub.eu/workflows/2117
+description: This Galaxy workflow processes a collection of Olympic athlete datasets to analyze age distributions using column manipulation, summary statistics, and ggplot2 histograms. Use this skill when you need to characterize the demographic profile of sports participants and visualize age frequency patterns across multiple data groups.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Olympic Age Distribution
+# olympic-age-distribution
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: BgeeCall generates statistically grounded present or absent gene ex
 homepage: https://bioconductor.org/packages/release/bioc/html/BgeeCall.html
 ---
 
-
 # bioconductor-bgeecall
 
 ## Overview

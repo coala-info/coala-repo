@@ -2,8 +2,9 @@
 name: esme_netcdf-c_psmpi_5_10_0
 description: This tool provides a C interface for the NetCDF data format optimized for parallel I/O using PSMPI in high-performance computing environments. Use when user asks to inspect NetCDF file structures, generate C code templates from datasets, create binary files from CDL descriptions, or implement parallel data access for scientific modeling.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
+metadata:
+  docker_image: "quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0"
 ---
-
 
 # esme_netcdf-c_psmpi_5_10_0
 

@@ -4,7 +4,6 @@ description: This tool performs differential expression and gene set analysis on
 homepage: https://bioconductor.org/packages/release/bioc/html/dearseq.html
 ---
 
-
 # bioconductor-dearseq
 
 name: bioconductor-dearseq

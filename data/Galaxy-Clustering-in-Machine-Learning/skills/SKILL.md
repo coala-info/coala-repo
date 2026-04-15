@@ -1,10 +1,12 @@
 ---
 name: clustering-in-machine-learning
-description: "This machine learning workflow processes numeric datasets like iris, circles, and moon using scikit-learn clustering algorithms and visualizes the results with ggplot2 scatterplots. Use this skill when you need to identify natural groupings within multi-dimensional data and compare the effectiveness of different clustering methods like K-means, DBSCAN, and hierarchical clustering."
-homepage: https://workflowhub.eu/workflows/1609
+description: This machine learning workflow processes numeric datasets like iris, circles, and moon using scikit-learn clustering algorithms and visualizes the results with ggplot2 scatterplots. Use this skill when you need to identify natural groupings within multi-dimensional data and compare the effectiveness of different clustering methods like K-means, DBSCAN, and hierarchical clustering.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clustering in Machine Learning
+# clustering-in-machine-learning
 
 ## Overview
 

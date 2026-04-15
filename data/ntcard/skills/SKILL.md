@@ -2,8 +2,9 @@
 name: ntcard
 description: ntCard is a memory-efficient streaming algorithm that estimates k-mer abundance and frequency distributions in genomic data. Use when user asks to estimate genome size, assess library complexity, or generate a k-mer spectrum histogram.
 homepage: https://github.com/bcgsc/ntCard
+metadata:
+  docker_image: "quay.io/biocontainers/ntcard:1.2.2--pl5321h077b44d_7"
 ---
-
 
 # ntcard
 

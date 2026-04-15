@@ -4,7 +4,6 @@ description: This tool identifies subpopulations and macrostates in time-series 
 homepage: https://bioconductor.org/packages/release/bioc/html/deltaGseg.html
 ---
 
-
 # bioconductor-deltagseg
 
 name: bioconductor-deltagseg

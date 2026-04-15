@@ -2,8 +2,9 @@
 name: gfflu
 description: gfflu rapidly annotates Influenza A virus gene segments and generates SnpEff-compatible GFF3 files using BLASTX and Miniprot. Use when user asks to annotate IAV segments, generate GFF3 files for SnpEff, or convert influenza nucleotide sequences to protein and GenBank formats.
 homepage: https://github.com/CFIA-NCFAD/gfflu
+metadata:
+  docker_image: "quay.io/biocontainers/gfflu:0.0.2--pyhdfd78af_0"
 ---
-
 
 # gfflu
 

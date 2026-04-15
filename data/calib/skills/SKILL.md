@@ -1,9 +1,10 @@
 ---
 name: calib
-description: "Calib clusters and error-corrects barcode-tagged paired-end reads using Locality Sensitive Hashing and MinHashing. Use when user asks to cluster reads based on barcodes and sequence similarity, generate consensus sequences from read clusters, or eliminate PCR and sequencing errors in barcode-tagged data."
+description: Calib clusters and error-corrects barcode-tagged paired-end reads using Locality Sensitive Hashing and MinHashing. Use when user asks to cluster reads based on barcodes and sequence similarity, generate consensus sequences from read clusters, or eliminate PCR and sequencing errors in barcode-tagged data.
 homepage: https://github.com/vpc-ccg/calib
+metadata:
+  docker_image: "quay.io/biocontainers/calib:0.3.4--hdcf5f25_5"
 ---
-
 
 # calib
 

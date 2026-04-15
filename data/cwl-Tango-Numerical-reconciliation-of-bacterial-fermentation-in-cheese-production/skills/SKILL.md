@@ -1,9 +1,12 @@
 ---
 name: tango-numerical-reconciliation-of-bacterial-fermentation-in
-description: "This CWL workflow utilizes optimization and dynamic simulation tools to perform numerical reconciliation of bacterial fermentation in cheese production through metabolic modeling. Use this skill when characterizing the metabolic interactions and population dynamics of microbial communities during food fermentation processes."
-homepage: https://workflowhub.eu/workflows/873
+description: This CWL workflow utilizes optimization and dynamic simulation tools to perform numerical reconciliation of bacterial fermentation in cheese production through metabolic modeling. Use this skill when characterizing the metabolic interactions and population dynamics of microbial communities during food fermentation processes.
+homepage: https://doi.org/10.1016/j.ymben.2024.02.014
+metadata:
+  docker_image: "N/A"
 ---
-# Tango: Numerical reconciliation of bacterial fermentation in cheese production
+
+# tango-numerical-reconciliation-of-bacterial-fermentation-in
 
 ## Overview
 

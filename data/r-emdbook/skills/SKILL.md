@@ -4,7 +4,6 @@ description: The emdbook package provides auxiliary functions and datasets to su
 homepage: https://cloud.r-project.org/web/packages/emdbook/index.html
 ---
 
-
 # r-emdbook
 
 ## Overview

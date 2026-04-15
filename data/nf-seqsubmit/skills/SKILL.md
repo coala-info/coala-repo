@@ -4,6 +4,8 @@ description: This pipeline automates the submission of Metagenome Assembled Geno
 homepage: https://github.com/nf-core/seqsubmit
 ---
 
+# nf-core-seqsubmit
+
 ## Overview
 nf-core/seqsubmit facilitates the complex process of uploading sequence data and associated metadata to the European Nucleotide Archive (ENA). It acts as a wrapper for the ENA Webin CLI, ensuring that genomic assemblies and metagenomic data meet the structural and metadata requirements of the International Nucleotide Sequence Database Collaboration (INSDC).
 

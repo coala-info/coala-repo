@@ -4,7 +4,6 @@ description: This tool performs statistical assessment of periodic gene expressi
 homepage: https://bioconductor.org/packages/release/bioc/html/cycle.html
 ---
 
-
 # bioconductor-cycle
 
 name: bioconductor-cycle

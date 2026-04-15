@@ -2,8 +2,9 @@
 name: circminer
 description: CircMiner identifies circular RNAs from sequencing data using a splice-aware pseudo-alignment scheme. Use when user asks to build a reference index, detect circular RNAs, annotate transcripts, or convert GTF formats.
 homepage: https://github.com/vpc-ccg/circminer
+metadata:
+  docker_image: "quay.io/biocontainers/circminer:0.4.2--h5ca1c30_6"
 ---
-
 
 # circminer
 

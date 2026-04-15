@@ -4,7 +4,6 @@ description: This package provides a transcript database for Rattus norvegicus b
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.BioMart.igis.html
 ---
 
-
 # bioconductor-txdb.rnorvegicus.biomart.igis
 
 name: bioconductor-txdb.rnorvegicus.biomart.igis

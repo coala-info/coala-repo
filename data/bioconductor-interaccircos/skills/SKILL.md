@@ -4,7 +4,6 @@ description: This tool creates interactive circular genomic visualizations in R 
 homepage: https://bioconductor.org/packages/release/bioc/html/interacCircos.html
 ---
 
-
 # bioconductor-interaccircos
 
 name: bioconductor-interaccircos

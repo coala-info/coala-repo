@@ -4,6 +4,8 @@ description: This pipeline phases and imputes genetic data using BAM, CRAM, or V
 homepage: https://github.com/nf-core/phaseimpute
 ---
 
+# phaseimpute
+
 ## Overview
 nf-core/phaseimpute is a bioinformatics pipeline designed to estimate missing genotypes and determine chromosomal phasing. It addresses the challenges of low-coverage sequencing by leveraging reference panels to fill in missing genetic information, supporting multiple imputation engines such as GLIMPSE, QUILT, STITCH, Beagle5, and Minimac4.
 

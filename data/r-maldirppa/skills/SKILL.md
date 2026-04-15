@@ -4,7 +4,6 @@ description: The MALDIrppa package provides robust statistical methods for pre-p
 homepage: https://cran.r-project.org/web/packages/maldirppa/index.html
 ---
 
-
 # r-maldirppa
 
 ## Overview

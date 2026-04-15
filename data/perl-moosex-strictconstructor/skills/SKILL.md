@@ -2,8 +2,9 @@
 name: perl-moosex-strictconstructor
 description: This tool makes Moose constructors throw an error when passed unknown attributes to help catch typos and bugs. Use when user asks to enforce strict constructor arguments, catch invalid attributes during object instantiation, or implement MooseX::StrictConstructor in Perl classes.
 homepage: http://metacpan.org/release/MooseX::StrictConstructor
+metadata:
+  docker_image: "quay.io/biocontainers/perl-moosex-strictconstructor:0.21--pl5321hdfd78af_1"
 ---
-
 
 # perl-moosex-strictconstructor
 

@@ -1,10 +1,12 @@
 ---
 name: gigascience_indels_sav_non-reference_demonstration_sts26t-ge
-description: "This workflow processes RNA-Seq reads and reference GTF data using HISAT2, StringTie, FreeBayes, and CustomProDB to generate a non-reference protein database containing single amino acid variants and indels. Use this skill when you need to identify neoantigens or create customized protein databases from transcriptomic data for proteogenomic discovery in tools like FragPipe."
-homepage: https://workflowhub.eu/workflows/1437
+description: This workflow processes RNA-Seq reads and reference GTF data using HISAT2, StringTie, FreeBayes, and CustomProDB to generate a non-reference protein database containing single amino acid variants and indels. Use this skill when you need to identify neoantigens or create customized protein databases from transcriptomic data for proteogenomic discovery in tools like FragPipe.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Gigascience_Indels_SAV_non-reference_demonstration_STS26T-Gent_Workflow
+# gigascience_indels_sav_non-reference_demonstration_sts26t-ge
 
 ## Overview
 

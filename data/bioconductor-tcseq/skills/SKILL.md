@@ -4,7 +4,6 @@ description: This tool analyzes time course sequencing data such as RNA-seq, ATA
 homepage: https://bioconductor.org/packages/release/bioc/html/TCseq.html
 ---
 
-
 # bioconductor-tcseq
 
 name: bioconductor-tcseq

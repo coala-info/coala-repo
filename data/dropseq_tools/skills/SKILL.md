@@ -2,6 +2,8 @@
 name: dropseq_tools
 description: The dropseq_tools suite provides command-line utilities for processing and analyzing single-cell RNA-seq data generated via the Drop-seq protocol. Use when user asks to process BAM files with cellular barcodes and UMIs, annotate reads with gene functions, or generate a digital expression matrix.
 homepage: http://mccarrolllab.com/dropseq/
+metadata:
+  docker_image: "quay.io/biocontainers/dropseq_tools:3.0.2--hdfd78af_0"
 ---
 
 # dropseq_tools

@@ -2,6 +2,8 @@
 name: chips
 description: ChIPs is a toolkit designed to model and simulate realistic ChIP-sequencing data based on experimental parameters. Use when user asks to learn model parameters from existing datasets or generate synthetic reads from a reference genome.
 homepage: https://github.com/gymreklab/chips
+metadata:
+  docker_image: "quay.io/biocontainers/chips:2.4--h43eeafb_7"
 ---
 
 # chips

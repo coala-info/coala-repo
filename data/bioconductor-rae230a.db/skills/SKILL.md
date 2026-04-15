@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Affymet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230a.db.html
 ---
 
-
 # bioconductor-rae230a.db
 
 name: bioconductor-rae230a.db

@@ -2,8 +2,9 @@
 name: pseqsid
 description: pseqsid calculates pairwise identity, similarity, and Normalized Similarity Scores from protein multiple sequence alignments. Use when user asks to calculate sequence identity matrices, evaluate protein similarity based on custom amino acid groups, or compute normalized similarity scores for structural template selection.
 homepage: https://github.com/amaurypm/pseqsid
+metadata:
+  docker_image: "quay.io/biocontainers/pseqsid:1.1.0--h4349ce8_0"
 ---
-
 
 # pseqsid
 

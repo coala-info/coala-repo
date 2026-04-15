@@ -4,7 +4,6 @@ description: This tool provides interactive R-to-browser x-y plotting and websoc
 homepage: https://bioconductor.org/packages/3.6/bioc/html/BrowserVizDemo.html
 ---
 
-
 # bioconductor-browservizdemo
 
 name: bioconductor-browservizdemo

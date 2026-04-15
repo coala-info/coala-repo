@@ -4,7 +4,6 @@ description: PROPS calculates pathway-based features from gene expression data b
 homepage: https://bioconductor.org/packages/release/bioc/html/PROPS.html
 ---
 
-
 # bioconductor-props
 
 ## Overview

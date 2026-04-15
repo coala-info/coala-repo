@@ -4,7 +4,6 @@ description: This tool performs statistical analysis to determine if phenotypic 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/PCpheno.html
 ---
 
-
 # bioconductor-pcpheno
 
 name: bioconductor-pcpheno

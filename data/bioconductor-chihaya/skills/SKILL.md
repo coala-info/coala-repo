@@ -1,9 +1,8 @@
 ---
 name: bioconductor-chihaya
-description: "bioconductor-chihaya saves and reloads DelayedArray objects to HDF5 files while preserving the tree of delayed operations. Use when user asks to save DelayedArray objects to HDF5, reload serialized delayed operations, preserve sparsity in saved arrays, or reference external data files to avoid duplication."
+description: bioconductor-chihaya saves and reloads DelayedArray objects to HDF5 files while preserving the tree of delayed operations. Use when user asks to save DelayedArray objects to HDF5, reload serialized delayed operations, preserve sparsity in saved arrays, or reference external data files to avoid duplication.
 homepage: https://bioconductor.org/packages/release/bioc/html/chihaya.html
 ---
-
 
 # bioconductor-chihaya
 

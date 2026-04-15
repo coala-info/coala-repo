@@ -1,9 +1,8 @@
 ---
 name: bioconductor-polyphen.hsapiens.dbsnp131
-description: "This package provides PolyPhen-2 functional impact predictions for human missense SNPs from dbSNP build 131. Use when user asks to retrieve functional impact scores, map rsIDs to amino acid substitutions, or query classifier probabilities for variants in the hg19/GRCh37 assembly."
+description: This package provides PolyPhen-2 functional impact predictions for human missense SNPs from dbSNP build 131. Use when user asks to retrieve functional impact scores, map rsIDs to amino acid substitutions, or query classifier probabilities for variants in the hg19/GRCh37 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/PolyPhen.Hsapiens.dbSNP131.html
 ---
-
 
 # bioconductor-polyphen.hsapiens.dbsnp131
 

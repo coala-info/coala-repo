@@ -1,10 +1,12 @@
 ---
 name: anndata-object-to-monocle-input-files
-description: "This transcriptomics workflow processes AnnData objects to extract and filter gene annotations, cell annotations, and expression matrices using AnnData inspection and text processing tools. Use this skill when you need to prepare single-cell RNA sequencing datasets for trajectory analysis in Monocle by cleaning expression matrices and standardizing metadata."
-homepage: https://workflowhub.eu/workflows/1520
+description: This transcriptomics workflow processes AnnData objects to extract and filter gene annotations, cell annotations, and expression matrices using AnnData inspection and text processing tools. Use this skill when you need to prepare single-cell RNA sequencing datasets for trajectory analysis in Monocle by cleaning expression matrices and standardizing metadata.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# AnnData object to Monocle input files
+# anndata-object-to-monocle-input-files
 
 ## Overview
 

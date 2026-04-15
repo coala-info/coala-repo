@@ -2,6 +2,8 @@
 name: mhg
 description: MHG identifies and partitions homologous regions across multiple genomes using an annotation-free, graph-based approach. Use when user asks to identify homologous blocks, partition alignment graphs, or find maximal homologous groups across non-coding or poorly annotated sequences.
 homepage: https://github.com/NakhlehLab/Maximal-Homologous-Groups
+metadata:
+  docker_image: "quay.io/biocontainers/mhg:1.1.0--hdfd78af_0"
 ---
 
 # mhg

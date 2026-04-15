@@ -4,7 +4,6 @@ description: This package provides a comprehensive collection of mass-spectromet
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pRolocdata.html
 ---
 
-
 # bioconductor-prolocdata
 
 name: bioconductor-prolocdata

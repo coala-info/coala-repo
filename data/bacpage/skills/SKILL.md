@@ -2,6 +2,8 @@
 name: bacpage
 description: bacpage is a modular bioinformatics pipeline that automates the assembly and analysis of bacterial genomes from raw sequencing reads. Use when user asks to initialize genomic projects, execute reference-based or de novo assemblies, generate quality control reports, or reconstruct phylogenetic trees.
 homepage: https://github.com/CholGen/bacpage
+metadata:
+  docker_image: "quay.io/biocontainers/bacpage:2025.08.21--pyhdfd78af_0"
 ---
 
 # bacpage

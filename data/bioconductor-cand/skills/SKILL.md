@@ -4,7 +4,6 @@ description: This tool detects heterogeneity in population structure across chro
 homepage: https://bioconductor.org/packages/3.5/bioc/html/CAnD.html
 ---
 
-
 # bioconductor-cand
 
 name: bioconductor-cand

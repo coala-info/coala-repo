@@ -4,7 +4,6 @@ description: This tool identifies functional epigenetic modules by integrating D
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FEM.html
 ---
 
-
 # bioconductor-fem
 
 name: bioconductor-fem

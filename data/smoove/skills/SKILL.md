@@ -1,7 +1,9 @@
 ---
 name: smoove
-description: "smoove simplifies structural variant calling and genotyping by orchestrating tools like lumpy and svtyper into a streamlined workflow. Use when user asks to call structural variants, genotype samples, or perform joint calling on large cohorts."
+description: smoove simplifies structural variant calling and genotyping by orchestrating tools like lumpy and svtyper into a streamlined workflow. Use when user asks to call structural variants, genotype samples, or perform joint calling on large cohorts.
 homepage: https://github.com/brentp/smoove
+metadata:
+  docker_image: "quay.io/biocontainers/smoove:0.2.8--h9ee0642_1"
 ---
 
 # smoove

@@ -1,9 +1,10 @@
 ---
 name: fusion-inspector
-description: "FusionInspector validates and refines predicted fusion transcripts by performing a supervised re-alignment of RNA-Seq reads to candidate fusion contigs. Use when user asks to validate fusion candidates, recover evidence for specific fusion transcripts, or generate high-quality visualizations of fusion breakpoints."
+description: FusionInspector validates and refines predicted fusion transcripts by performing a supervised re-alignment of RNA-Seq reads to candidate fusion contigs. Use when user asks to validate fusion candidates, recover evidence for specific fusion transcripts, or generate high-quality visualizations of fusion breakpoints.
 homepage: https://github.com/FusionInspector/FusionInspector
+metadata:
+  docker_image: "quay.io/biocontainers/fusion-inspector:2.10.0--py313pl5321hdfd78af_1"
 ---
-
 
 # fusion-inspector
 

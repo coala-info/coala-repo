@@ -1,9 +1,12 @@
 ---
 name: metagenome-and-metatranscriptome-assembly-in-cwl
-description: "This CWL workflow performs quality control, host decontamination, and assembly of metagenomic or metatranscriptomic short-read data using metaSPAdes or MEGAHIT. Use this skill when you need to reconstruct genomes or transcripts from environmental samples to characterize microbial community composition and functional potential."
-homepage: https://workflowhub.eu/workflows/474
+description: This CWL workflow performs quality control, host decontamination, and assembly of metagenomic or metatranscriptomic short-read data using metaSPAdes or MEGAHIT. Use this skill when you need to reconstruct genomes or transcripts from environmental samples to characterize microbial community composition and functional potential.
+homepage: https://www.ebi.ac.uk/metagenomics
+metadata:
+  docker_image: "N/A"
 ---
-# Metagenome and metatranscriptome assembly in CWL
+
+# metagenome-and-metatranscriptome-assembly-in-cwl
 
 ## Overview
 

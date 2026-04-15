@@ -2,8 +2,9 @@
 name: perl-minion-backend-sqlite
 description: This tool provides a lightweight SQLite-based storage engine for the Minion job queue. Use when user asks to set up a file-based job queue, initialize a Minion backend for testing or development, or manage background jobs using a local SQLite database.
 homepage: https://github.com/Grinnz/Minion-Backend-SQLite
+metadata:
+  docker_image: "quay.io/biocontainers/perl-minion-backend-sqlite:5.0.7--pl5321hdfd78af_0"
 ---
-
 
 # perl-minion-backend-sqlite
 

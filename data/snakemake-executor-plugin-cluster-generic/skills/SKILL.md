@@ -2,8 +2,9 @@
 name: snakemake-executor-plugin-cluster-generic
 description: This plugin enables Snakemake to execute workflows on cluster workload managers by passing job scripts to user-specified submission commands. Use when user asks to execute workflows on a cluster, configure job submission commands like qsub or sbatch, or manage job cancellation and resources on a scheduler.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-cluster-generic
+metadata:
+  docker_image: "quay.io/biocontainers/snakemake-executor-plugin-cluster-generic:1.0.9--pyhdfd78af_0"
 ---
-
 
 # snakemake-executor-plugin-cluster-generic
 

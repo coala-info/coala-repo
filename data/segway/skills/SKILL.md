@@ -2,6 +2,8 @@
 name: segway
 description: Segway is a genomic segmentation tool that uses Dynamic Bayesian Networks to transform multiple tracks of functional genomics data into discrete annotations. Use when user asks to train a model on chromatin data, identify genomic segments like enhancers or promoters, or calculate posterior probabilities for label assignments.
 homepage: http://segway.hoffmanlab.org/
+metadata:
+  docker_image: "quay.io/biocontainers/segway:3.0.4--pyh7cba7a3_1"
 ---
 
 # segway

@@ -4,7 +4,6 @@ description: This package provides advanced tools for the Frozen Robust Multiarr
 homepage: https://bioconductor.org/packages/release/bioc/html/frmaTools.html
 ---
 
-
 # bioconductor-frmatools
 
 name: bioconductor-frmatools

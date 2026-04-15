@@ -4,7 +4,6 @@ description: The PSICQUIC package provides an R interface to query a distributed
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PSICQUIC.html
 ---
 
-
 # bioconductor-psicquic
 
 ## Overview

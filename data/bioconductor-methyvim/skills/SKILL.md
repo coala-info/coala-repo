@@ -4,7 +4,6 @@ description: This tool performs targeted data-adaptive estimation and inference 
 homepage: https://bioconductor.org/packages/3.8/bioc/html/methyvim.html
 ---
 
-
 # bioconductor-methyvim
 
 name: bioconductor-methyvim

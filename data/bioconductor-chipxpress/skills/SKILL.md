@@ -4,7 +4,6 @@ description: ChIPXpress identifies functional transcription factor target genes 
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPXpress.html
 ---
 
-
 # bioconductor-chipxpress
 
 name: bioconductor-chipxpress

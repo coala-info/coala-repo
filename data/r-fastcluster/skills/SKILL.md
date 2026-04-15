@@ -4,7 +4,6 @@ description: This tool provides high-performance, memory-efficient implementatio
 homepage: https://cloud.r-project.org/web/packages/fastcluster/index.html
 ---
 
-
 # r-fastcluster
 
 name: r-fastcluster

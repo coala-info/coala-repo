@@ -4,7 +4,6 @@ description: This tool provides access to Medical Subject Headings (MeSH) annota
 homepage: https://bioconductor.org/packages/3.6/data/annotation/html/MeSH.db.html
 ---
 
-
 # bioconductor-mesh.db
 
 name: bioconductor-mesh.db

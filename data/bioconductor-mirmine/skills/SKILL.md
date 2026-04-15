@@ -4,7 +4,6 @@ description: This tool provides access to a curated collection of human miRNA ex
 homepage: https://bioconductor.org/packages/3.8/bioc/html/miRmine.html
 ---
 
-
 # bioconductor-mirmine
 
 name: bioconductor-mirmine

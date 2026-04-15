@@ -1,9 +1,10 @@
 ---
 name: fastpca
-description: "Performs fast, parallelized Principal Component Analysis (PCA) on molecular dynamics data. Use when user asks to analyze molecular dynamics data, reduce dimensionality, or identify dominant modes of motion."
+description: Performs fast, parallelized Principal Component Analysis (PCA) on molecular dynamics data. Use when user asks to analyze molecular dynamics data, reduce dimensionality, or identify dominant modes of motion.
 homepage: https://github.com/lettis/FastPCA
+metadata:
+  docker_image: "quay.io/biocontainers/fastpca:0.9.1"
 ---
-
 
 # fastpca
 

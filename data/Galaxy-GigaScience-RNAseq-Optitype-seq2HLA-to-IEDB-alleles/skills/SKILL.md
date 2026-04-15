@@ -1,10 +1,12 @@
 ---
 name: gigascience-rnaseq-optitype-seq2hla-to-iedb-alleles
-description: "This workflow processes paired-end RNA-seq FASTQ files to perform high-resolution HLA typing using OptiType and seq2HLA, outputting allele calls formatted for compatibility with the Immune Epitope Database. Use this skill when you need to identify HLA genotypes from transcriptomic data to support neoantigen discovery and downstream immune epitope binding predictions."
-homepage: https://workflowhub.eu/workflows/1794
+description: This workflow processes paired-end RNA-seq FASTQ files to perform high-resolution HLA typing using OptiType and seq2HLA, outputting allele calls formatted for compatibility with the Immune Epitope Database. Use this skill when you need to identify HLA genotypes from transcriptomic data to support neoantigen discovery and downstream immune epitope binding predictions.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GigaScience-RNAseq-Optitype-seq2HLA-to-IEDB-alleles
+# gigascience-rnaseq-optitype-seq2hla-to-iedb-alleles
 
 ## Overview
 

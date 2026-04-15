@@ -4,7 +4,6 @@ description: This tool provides a benchmarking framework for comparing single-ce
 homepage: https://bioconductor.org/packages/release/bioc/html/CellBench.html
 ---
 
-
 # bioconductor-cellbench
 
 name: bioconductor-cellbench

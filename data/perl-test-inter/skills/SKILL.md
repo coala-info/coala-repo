@@ -2,8 +2,9 @@
 name: perl-test-inter
 description: perl-test-inter provides a framework for Perl testing that allows developers to define test cases as data structures for streamlined comparison and reporting. Use when user asks to write table-driven tests, automate function output verification, or run specific test cases interactively in Perl.
 homepage: https://metacpan.org/pod/Test::Inter
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-inter:1.12--pl5321hdfd78af_0"
 ---
-
 
 # perl-test-inter
 

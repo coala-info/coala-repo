@@ -4,7 +4,6 @@ description: This tool provides a bridge between remote HDF5 Object Stores and t
 homepage: https://bioconductor.org/packages/3.8/bioc/html/restfulSE.html
 ---
 
-
 # bioconductor-restfulse
 
 name: bioconductor-restfulse

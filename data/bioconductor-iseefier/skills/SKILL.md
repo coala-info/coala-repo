@@ -4,7 +4,6 @@ description: The iSEEfier package automates the configuration of iSEE dashboards
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEfier.html
 ---
 
-
 # bioconductor-iseefier
 
 ## Overview

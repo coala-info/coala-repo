@@ -4,7 +4,6 @@ description: This tool identifies differentially distributed genes across two co
 homepage: https://bioconductor.org/packages/release/bioc/html/scDDboost.html
 ---
 
-
 # bioconductor-scddboost
 
 name: bioconductor-scddboost

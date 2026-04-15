@@ -2,8 +2,9 @@
 name: openduck
 description: Openduck performs Dynamic Undocking simulations using Steered Molecular Dynamics to calculate the work required to break specific protein-ligand interactions. Use when user asks to evaluate binding mode stability, filter docking poses based on undocking work, or perform steered molecular dynamics to test interaction strength.
 homepage: https://github.com/galaxycomputationalchemistry/duck
+metadata:
+  docker_image: "quay.io/biocontainers/openduck:0.1.2--py_0"
 ---
-
 
 # openduck
 

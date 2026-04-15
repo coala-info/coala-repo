@@ -4,7 +4,6 @@ description: This tool visualizes differentially expressed regions and coverage 
 homepage: https://bioconductor.org/packages/release/bioc/html/derfinderPlot.html
 ---
 
-
 # bioconductor-derfinderplot
 
 name: bioconductor-derfinderplot

@@ -4,7 +4,6 @@ description: The txdbmaker package generates TxDb objects that store genomic coo
 homepage: https://bioconductor.org/packages/release/bioc/html/txdbmaker.html
 ---
 
-
 # bioconductor-txdbmaker
 
 ## Overview

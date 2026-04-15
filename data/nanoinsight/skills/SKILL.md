@@ -2,8 +2,9 @@
 name: nanoinsight
 description: NanoINSight characterizes genomic insertions by generating consensus sequences and performing repeat annotation to identify transposable elements. Use when user asks to characterize insertion content, generate consensus sequences for structural variants, or perform repeat classification on VCF files.
 homepage: https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight
+metadata:
+  docker_image: "quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0"
 ---
-
 
 # nanoinsight
 

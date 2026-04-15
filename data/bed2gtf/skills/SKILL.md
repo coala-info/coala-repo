@@ -1,9 +1,10 @@
 ---
 name: bed2gtf
-description: "bed2gtf converts BED files into GTF annotations while preserving gene-level metadata and attribute fields. Use when user asks to convert BED to GTF, map genes to transcripts, or generate GTF files for downstream tools like STAR."
+description: bed2gtf converts BED files into GTF annotations while preserving gene-level metadata and attribute fields. Use when user asks to convert BED to GTF, map genes to transcripts, or generate GTF files for downstream tools like STAR.
 homepage: https://github.com/alejandrogzi/bed2gtf
+metadata:
+  docker_image: "quay.io/biocontainers/bed2gtf:1.9.3--h9948957_2"
 ---
-
 
 # bed2gtf
 

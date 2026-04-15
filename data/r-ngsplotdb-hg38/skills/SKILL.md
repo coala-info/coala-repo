@@ -4,7 +4,6 @@ description: This package provides the hg38 human genome database and functional
 homepage: https://cran.r-project.org/web/packages/ngsplotdb-hg38/index.html
 ---
 
-
 # r-ngsplotdb-hg38
 
 ## Overview

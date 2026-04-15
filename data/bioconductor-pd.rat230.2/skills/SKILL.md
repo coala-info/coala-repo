@@ -4,7 +4,6 @@ description: This package provides platform design annotation and probe sequence
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rat230.2.html
 ---
 
-
 # bioconductor-pd.rat230.2
 
 name: bioconductor-pd.rat230.2

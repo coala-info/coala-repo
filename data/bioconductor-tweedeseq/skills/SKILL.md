@@ -4,7 +4,6 @@ description: The tweeDEseq package performs differential expression analysis of 
 homepage: https://bioconductor.org/packages/release/bioc/html/tweeDEseq.html
 ---
 
-
 # bioconductor-tweedeseq
 
 ## Overview

@@ -2,6 +2,8 @@
 name: gtdbtk
 description: GTDB-Tk assigns taxonomic classifications to prokaryotic genomes by identifying marker genes and placing them into a reference phylogenetic tree. Use when user asks to assign taxonomy to bacterial or archaeal genomes, run the classify_wf pipeline, or perform phylogenetic placement and ANI validation.
 homepage: http://pypi.python.org/pypi/gtdbtk/
+metadata:
+  docker_image: "quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2"
 ---
 
 # gtdbtk

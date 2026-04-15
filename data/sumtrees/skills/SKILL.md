@@ -2,8 +2,9 @@
 name: sumtrees
 description: Manages and queries SumTree data structures for efficient text editing and manipulation. Use when user asks to create, edit, or query SumTree data structures, or to get line and column information.
 homepage: https://github.com/brmassa/SumTree
+metadata:
+  docker_image: "biocontainers/sumtrees:v4.4.0-1-deb_cv1"
 ---
-
 
 # sumtrees
 

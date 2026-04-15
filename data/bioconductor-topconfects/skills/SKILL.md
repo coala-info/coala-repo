@@ -4,7 +4,6 @@ description: This tool performs differential expression analysis to rank genes b
 homepage: https://bioconductor.org/packages/release/bioc/html/topconfects.html
 ---
 
-
 # bioconductor-topconfects
 
 name: bioconductor-topconfects

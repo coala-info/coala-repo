@@ -4,7 +4,6 @@ description: This package provides curated datasets for Generalized Additive Mod
 homepage: https://cloud.r-project.org/web/packages/gamlss.data/index.html
 ---
 
-
 # r-gamlss.data
 
 name: r-gamlss.data

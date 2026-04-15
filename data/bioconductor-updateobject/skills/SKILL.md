@@ -4,7 +4,6 @@ description: This tool automates the process of updating out-of-sync S4 objects 
 homepage: https://bioconductor.org/packages/release/bioc/html/updateObject.html
 ---
 
-
 # bioconductor-updateobject
 
 ## Overview

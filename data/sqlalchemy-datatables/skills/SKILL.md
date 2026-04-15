@@ -2,8 +2,9 @@
 name: sqlalchemy-datatables
 description: This library integrates SQLAlchemy models with the jQuery DataTables plugin to simplify server-side processing of complex data requests. Use when user asks to translate DataTables request parameters into SQLAlchemy queries, implement server-side pagination and filtering, or map database columns to frontend table displays.
 homepage: https://github.com/pegase745/sqlalchemy-datatables
+metadata:
+  docker_image: "quay.io/biocontainers/sqlalchemy-datatables:2.0.1--py_0"
 ---
-
 
 # sqlalchemy-datatables
 

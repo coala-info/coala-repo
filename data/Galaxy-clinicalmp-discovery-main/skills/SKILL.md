@@ -1,10 +1,12 @@
 ---
 name: clinical-metaproteomics-discovery-workflow
-description: "This clinical metaproteomics workflow processes tandem mass spectrometry data and curated protein databases using MaxQuant, SearchGUI, and PeptideShaker to identify microbial and human peptides. Use this skill when you need to discover biomarkers or characterize host-microbiome interactions in clinical samples by searching MS/MS spectra against a streamlined database of MetaNovo-generated microbial proteins, Human SwissProt, and common contaminants."
-homepage: https://workflowhub.eu/workflows/1225
+description: This clinical metaproteomics workflow processes tandem mass spectrometry data and curated protein databases using MaxQuant, SearchGUI, and PeptideShaker to identify microbial and human peptides. Use this skill when you need to discover biomarkers or characterize host-microbiome interactions in clinical samples by searching MS/MS spectra against a streamlined database of MetaNovo-generated microbial proteins, Human SwissProt, and common contaminants.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Clinical Metaproteomics Discovery Workflow
+# clinical-metaproteomics-discovery-workflow
 
 ## Overview
 

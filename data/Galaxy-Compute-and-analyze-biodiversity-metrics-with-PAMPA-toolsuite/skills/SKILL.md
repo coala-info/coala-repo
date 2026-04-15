@@ -1,10 +1,12 @@
 ---
 name: compute-and-analyze-biodiversity-metrics-with-pampa-toolsuit
-description: "This ecology workflow processes Catch Per Unit Effort datasets using the PAMPA toolsuite and text processing tools to calculate biodiversity metrics and perform statistical modeling. Use this skill when you need to analyze community and population trends in ecosystems by computing presence-absence tables, community metrics, and Generalized Linear Models from abundance data."
-homepage: https://workflowhub.eu/workflows/1696
+description: This ecology workflow processes Catch Per Unit Effort datasets using the PAMPA toolsuite and text processing tools to calculate biodiversity metrics and perform statistical modeling. Use this skill when you need to analyze community and population trends in ecosystems by computing presence-absence tables, community metrics, and Generalized Linear Models from abundance data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Compute and analyze biodiversity metrics with PAMPA toolsuite
+# compute-and-analyze-biodiversity-metrics-with-pampa-toolsuit
 
 ## Overview
 

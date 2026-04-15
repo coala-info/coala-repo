@@ -4,7 +4,6 @@ description: This R package simplifies functional enrichment results by clusteri
 homepage: https://bioconductor.org/packages/release/bioc/html/simplifyEnrichment.html
 ---
 
-
 # bioconductor-simplifyenrichment
 
 ## Overview

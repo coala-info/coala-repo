@@ -2,8 +2,9 @@
 name: ifcnv
 description: ifCNV identifies genomic amplifications and deletions in targeted sequencing data using an Isolation Forest machine learning algorithm. Use when user asks to detect copy number variations, identify genomic outliers, or analyze read-depth distribution in capture and amplicon-based panels.
 homepage: https://github.com/SimCab-CHU/ifCNV
+metadata:
+  docker_image: "quay.io/biocontainers/ifcnv:0.2.1--pyh5e36f6f_0"
 ---
-
 
 # ifcnv
 

@@ -4,7 +4,6 @@ description: This tool provides access to SELDI-TOF protein mass spectrometry da
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ProData.html
 ---
 
-
 # bioconductor-prodata
 
 name: bioconductor-prodata

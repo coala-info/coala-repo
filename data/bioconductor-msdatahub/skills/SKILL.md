@@ -4,7 +4,6 @@ description: MsDataHub provides access to example mass spectrometry datasets fro
 homepage: https://bioconductor.org/packages/release/bioc/html/MsDataHub.html
 ---
 
-
 # bioconductor-msdatahub
 
 name: bioconductor-msdatahub

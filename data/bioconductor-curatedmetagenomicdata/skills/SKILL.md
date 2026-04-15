@@ -4,7 +4,6 @@ description: This tool provides access to standardized human microbiome data inc
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedMetagenomicData.html
 ---
 
-
 # bioconductor-curatedmetagenomicdata
 
 name: bioconductor-curatedmetagenomicdata

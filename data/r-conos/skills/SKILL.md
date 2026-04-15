@@ -4,7 +4,6 @@ description: r-conos integrates large collections of single-cell RNA-seq dataset
 homepage: https://cran.r-project.org/web/packages/conos/index.html
 ---
 
-
 # r-conos
 
 ## Overview

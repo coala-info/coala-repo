@@ -2,8 +2,9 @@
 name: osra
 description: OSRA translates visual chemical diagrams from images or PDF documents into computational molecular formats like SMILES or SDF. Use when user asks to convert chemical structure images to machine-readable strings, extract molecular data from PDFs, or perform optical structure recognition on scanned documents.
 homepage: http://cactus.nci.nih.gov/osra/
+metadata:
+  docker_image: "quay.io/biocontainers/osra:2.1.0--0"
 ---
-
 
 # osra
 

@@ -2,8 +2,9 @@
 name: ostir
 description: The ostir tool estimates ribosome binding efficiency and translation initiation rates for bacterial start codons using thermodynamic models. Use when user asks to predict translation initiation rates, analyze FASTA files for ribosome binding efficiency, or calculate thermodynamic values for translation potential.
 homepage: https://github.com/barricklab/rbs-calculator
+metadata:
+  docker_image: "quay.io/biocontainers/ostir:1.1.2--pyhdfd78af_0"
 ---
-
 
 # ostir
 

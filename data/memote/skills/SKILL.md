@@ -2,6 +2,8 @@
 name: memote
 description: Memote performs quality control and benchmarking for genome-scale metabolic models to ensure stoichiometric consistency and annotation completeness. Use when user asks to run metabolic model tests, generate quality reports, compare model versions, or initialize a new model repository.
 homepage: https://memote.readthedocs.io/
+metadata:
+  docker_image: "quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0"
 ---
 
 # memote

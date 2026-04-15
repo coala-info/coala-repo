@@ -4,7 +4,6 @@ description: The r-deldir package computes Delaunay triangulations and Dirichlet
 homepage: https://cloud.r-project.org/web/packages/deldir/index.html
 ---
 
-
 # r-deldir
 
 ## Overview

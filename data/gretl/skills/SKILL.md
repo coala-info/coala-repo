@@ -2,6 +2,8 @@
 name: gretl
 description: gretl is a command-line utility for the quantitative analysis and evaluation of pangenome graphs in GFA format. Use when user asks to calculate graph statistics, analyze path similarity, determine core genome size, perform window-based analysis, or estimate pangenome saturation.
 homepage: https://github.com/moinsebi/gretl
+metadata:
+  docker_image: "quay.io/biocontainers/gretl:0.1.1--hc1c3326_2"
 ---
 
 # gretl

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-clumsid
-description: "Bioconductor-clumsid compares and clusters tandem mass spectrometry data to aid in metabolite identification. Use when user asks to extract MS2 spectra, merge redundant scans, calculate spectral similarity, or visualize metabolite clusters using multidimensional scaling and correlation networks."
+description: Bioconductor-clumsid compares and clusters tandem mass spectrometry data to aid in metabolite identification. Use when user asks to extract MS2 spectra, merge redundant scans, calculate spectral similarity, or visualize metabolite clusters using multidimensional scaling and correlation networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/CluMSID.html
 ---
-
 
 # bioconductor-clumsid
 

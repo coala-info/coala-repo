@@ -1,10 +1,12 @@
 ---
 name: taxonomy-assignment-with-qiime2
-description: "This Galaxy workflow performs taxonomic assignment for microbiome studies by processing biom2 feature tables and representative sequences using QIIME2 tools to train and apply a Naive Bayes classifier against reference databases. Use this skill when you need to characterize the microbial community structure of amplicon sequencing samples by identifying the specific taxa associated with detected operational taxonomic units or amplicon sequence variants."
-homepage: https://workflowhub.eu/workflows/2098
+description: This Galaxy workflow performs taxonomic assignment for microbiome studies by processing biom2 feature tables and representative sequences using QIIME2 tools to train and apply a Naive Bayes classifier against reference databases. Use this skill when you need to characterize the microbial community structure of amplicon sequencing samples by identifying the specific taxa associated with detected operational taxonomic units or amplicon sequence variants.
+homepage: https://mdhs.unimelb.edu.au/melbournebioinformatics
+metadata:
+  docker_image: "N/A"
 ---
 
-# Taxonomy Assignment with QIIME2
+# taxonomy-assignment-with-qiime2
 
 ## Overview
 

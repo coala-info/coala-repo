@@ -2,8 +2,9 @@
 name: scexecute
 description: scexecute splits a single-cell BAM file by cell barcodes and executes a specified command on each resulting subset. Use when user asks to split BAM files by barcode, run commands on individual cell subsets, or process single-cell data using tools that are not natively single-cell aware.
 homepage: https://github.com/HorvathLab/NGS/tree/master/SCExecute#readme
+metadata:
+  docker_image: "quay.io/biocontainers/scexecute:1.3.3--hdfd78af_0"
 ---
-
 
 # scexecute
 

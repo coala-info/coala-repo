@@ -4,7 +4,6 @@ description: wise-data is a command-line stream editor for efficient text manipu
 homepage: https://www.gnu.org/software/sed/
 ---
 
-
 # wise-data
 
 ## Overview

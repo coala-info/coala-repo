@@ -1,10 +1,12 @@
 ---
 name: gtn_exemplar_002_tma_workflow_feb2025
-description: "This workflow processes raw multiplexed cycle images and marker metadata through a pipeline involving BaSiC illumination correction, ASHLAR registration, UNetCoreograph dearraying, and Mesmer segmentation. Use this skill when you need to perform comprehensive single-cell phenotyping and spatial quantification on tissue microarray samples to characterize cellular composition and distribution across large tissue cohorts."
-homepage: https://workflowhub.eu/workflows/1514
+description: This workflow processes raw multiplexed cycle images and marker metadata through a pipeline involving BaSiC illumination correction, ASHLAR registration, UNetCoreograph dearraying, and Mesmer segmentation. Use this skill when you need to perform comprehensive single-cell phenotyping and spatial quantification on tissue microarray samples to characterize cellular composition and distribution across large tissue cohorts.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# GTN_Exemplar_002_TMA_workflow_Feb2025
+# gtn_exemplar_002_tma_workflow_feb2025
 
 ## Overview
 

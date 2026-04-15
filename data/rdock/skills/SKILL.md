@@ -1,9 +1,10 @@
 ---
 name: rdock
-description: "rdock tunnels a remote Docker socket over SSH to allow local Docker CLI commands to execute on a remote host. Use when user asks to connect to a remote Docker engine, run Docker commands on a remote server, or set up an SSH tunnel for the Docker daemon."
+description: rdock tunnels a remote Docker socket over SSH to allow local Docker CLI commands to execute on a remote host. Use when user asks to connect to a remote Docker engine, run Docker commands on a remote server, or set up an SSH tunnel for the Docker daemon.
 homepage: https://github.com/dvddarias/rdocker
+metadata:
+  docker_image: "quay.io/biocontainers/rdock:2013.1-0"
 ---
-
 
 # rdock
 

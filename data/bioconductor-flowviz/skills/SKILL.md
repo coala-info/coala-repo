@@ -4,7 +4,6 @@ description: This tool provides visualization functions for flow cytometry data 
 homepage: https://bioconductor.org/packages/release/bioc/html/flowViz.html
 ---
 
-
 # bioconductor-flowviz
 
 name: bioconductor-flowviz

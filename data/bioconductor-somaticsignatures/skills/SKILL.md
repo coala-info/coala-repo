@@ -4,7 +4,6 @@ description: This tool identifies mutational signatures from somatic single nucl
 homepage: https://bioconductor.org/packages/release/bioc/html/SomaticSignatures.html
 ---
 
-
 # bioconductor-somaticsignatures
 
 name: bioconductor-somaticsignatures

@@ -2,8 +2,9 @@
 name: pbdagcon
 description: pbdagcon generates high-quality consensus sequences by applying directed acyclic graphs to multiple sequence alignments. Use when user asks to generate a consensus sequence from alignments, perform HGAP-style read correction, or refine sequence quality using PacBio data.
 homepage: https://github.com/jgurtowski/pbdagcon_python
+metadata:
+  docker_image: "quay.io/biocontainers/pbdagcon:0.1--boost1.60_0"
 ---
-
 
 # pbdagcon
 

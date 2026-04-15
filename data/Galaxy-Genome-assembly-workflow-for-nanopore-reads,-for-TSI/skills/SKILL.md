@@ -1,10 +1,12 @@
 ---
 name: genome-assembly-workflow-for-nanopore-reads-for-tsi
-description: "This Galaxy workflow processes raw Nanopore sequencing reads through a pipeline of quality control, adapter trimming with Porechop, and filtering before performing de novo assembly using the Flye assembler. Use this skill when you need to reconstruct complete genomes from long-read data and evaluate the resulting assembly quality through statistical metrics and Bandage visualization graphs."
-homepage: https://workflowhub.eu/workflows/1114
+description: This Galaxy workflow processes raw Nanopore sequencing reads through a pipeline of quality control, adapter trimming with Porechop, and filtering before performing de novo assembly using the Flye assembler. Use this skill when you need to reconstruct complete genomes from long-read data and evaluate the resulting assembly quality through statistical metrics and Bandage visualization graphs.
+homepage: https://www.biocommons.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Genome assembly workflow for nanopore reads, for TSI
+# genome-assembly-workflow-for-nanopore-reads-for-tsi
 
 ## Overview
 

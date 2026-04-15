@@ -4,7 +4,6 @@ description: MatrixQCvis provides an interactive Shiny-based dashboard for the q
 homepage: https://bioconductor.org/packages/release/bioc/html/MatrixQCvis.html
 ---
 
-
 # bioconductor-matrixqcvis
 
 ## Overview

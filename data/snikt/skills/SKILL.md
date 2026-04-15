@@ -2,8 +2,9 @@
 name: snikt
 description: snikt detects and removes systemic contamination in DNA or RNA sequencing reads by identifying biases in nucleotide composition and quality scores. Use when user asks to identify contamination in sequencing reads, trim adapters from long-read data, or generate quality control reports for FASTQ files.
 homepage: https://github.com/piyuranjan/SNIKT
+metadata:
+  docker_image: "quay.io/biocontainers/snikt:0.5.0--r44hdfd78af_3"
 ---
-
 
 # snikt
 

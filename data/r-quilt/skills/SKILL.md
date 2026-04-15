@@ -4,7 +4,6 @@ description: r-quilt performs rapid genotype imputation and calling from low-cov
 homepage: https://cran.r-project.org/web/packages/quilt/index.html
 ---
 
-
 # r-quilt
 
 name: r-quilt

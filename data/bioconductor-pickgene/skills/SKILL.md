@@ -4,7 +4,6 @@ description: This package identifies differentially expressed genes in microarra
 homepage: https://bioconductor.org/packages/release/bioc/html/pickgene.html
 ---
 
-
 # bioconductor-pickgene
 
 ## Overview

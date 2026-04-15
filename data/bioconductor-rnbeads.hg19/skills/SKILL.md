@@ -4,7 +4,6 @@ description: This package provides genomic annotations and example data for the 
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.hg19.html
 ---
 
-
 # bioconductor-rnbeads.hg19
 
 name: bioconductor-rnbeads.hg19

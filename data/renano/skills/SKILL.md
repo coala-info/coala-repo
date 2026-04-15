@@ -2,8 +2,9 @@
 name: renano
 description: RENANO is a tool for the lossless compression and decompression of Oxford Nanopore Technologies FASTQ data using reference-based or reference-free algorithms. Use when user asks to compress FASTQ files, decompress renano files, or optimize nanopore data storage using a reference genome.
 homepage: https://github.com/guilledufort/RENANO
+metadata:
+  docker_image: "quay.io/biocontainers/renano:1.3--h077b44d_4"
 ---
-
 
 # renano
 

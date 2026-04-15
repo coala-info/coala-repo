@@ -2,6 +2,8 @@
 name: lordec
 description: LoRDEC is a hybrid error-correction tool that uses accurate short-read sequencing data to correct errors in long-read sequences via a De Bruijn Graph. Use when user asks to correct long reads, build a short-read graph, trim uncorrected regions, or generate read statistics.
 homepage: http://www.atgc-montpellier.fr/lordec/
+metadata:
+  docker_image: "quay.io/biocontainers/lordec:0.9--h77376b9_3"
 ---
 
 # lordec

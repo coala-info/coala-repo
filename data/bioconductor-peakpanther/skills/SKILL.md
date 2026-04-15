@@ -4,7 +4,6 @@ description: This tool performs targeted peak picking and annotation for high-re
 homepage: https://bioconductor.org/packages/release/bioc/html/peakPantheR.html
 ---
 
-
 # bioconductor-peakpanther
 
 name: bioconductor-peakpanther

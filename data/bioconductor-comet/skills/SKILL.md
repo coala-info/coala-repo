@@ -1,9 +1,8 @@
 ---
 name: bioconductor-comet
-description: "bioconductor-comet visualizes omic-wide association scan results by generating multi-panel plots that integrate regional Manhattan plots, genomic annotations, and correlation heatmaps. Use when user asks to visualize EWAS results, create integrated regional association plots, display co-methylation patterns, or generate multi-track genomic visualizations."
+description: bioconductor-comet visualizes omic-wide association scan results by generating multi-panel plots that integrate regional Manhattan plots, genomic annotations, and correlation heatmaps. Use when user asks to visualize EWAS results, create integrated regional association plots, display co-methylation patterns, or generate multi-track genomic visualizations.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/coMET.html
 ---
-
 
 # bioconductor-comet
 

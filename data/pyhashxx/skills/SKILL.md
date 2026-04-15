@@ -2,8 +2,9 @@
 name: pyhashxx
 description: pyhashxx provides a Python wrapper for the high-speed xxHash algorithm to perform fast, thread-safe data hashing. Use when user asks to hash bytes or nested tuples, compute digests for large data streams incrementally, or generate non-cryptographic hashes with custom seeds.
 homepage: https://github.com/ewencp/pyhashxx
+metadata:
+  docker_image: "quay.io/biocontainers/pyhashxx:0.1.3--py34_0"
 ---
-
 
 # pyhashxx
 

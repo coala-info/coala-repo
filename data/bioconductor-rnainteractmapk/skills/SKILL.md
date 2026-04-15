@@ -4,7 +4,6 @@ description: This package provides data and code to analyze and reproduce a larg
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/RNAinteractMAPK.html
 ---
 
-
 # bioconductor-rnainteractmapk
 
 name: bioconductor-rnainteractmapk

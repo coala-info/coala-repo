@@ -2,8 +2,9 @@
 name: perl-test-fork
 description: This tool manages test numbering and process coordination for testing multi-process Perl code. Use when user asks to test code that forks, manage test sub-plans for child processes, or ensure valid TAP output for asynchronous Perl scripts.
 homepage: http://metacpan.org/pod/Test::Fork
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-fork:0.02--pl526_0"
 ---
-
 
 # perl-test-fork
 

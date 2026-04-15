@@ -4,7 +4,6 @@ description: This tool identifies bacterial transcription termination peaks from
 homepage: https://bioconductor.org/packages/release/bioc/html/PIPETS.html
 ---
 
-
 # bioconductor-pipets
 
 name: bioconductor-pipets

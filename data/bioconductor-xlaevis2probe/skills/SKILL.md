@@ -4,7 +4,6 @@ description: This package provides probe sequence data for the Affymetrix Xenopu
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xlaevis2probe.html
 ---
 
-
 # bioconductor-xlaevis2probe
 
 ## Overview

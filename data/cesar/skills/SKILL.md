@@ -2,8 +2,9 @@
 name: cesar
 description: CESAR maps known coding sequences from a reference genome onto target genomes while preserving splice site logic and codon structure. Use when user asks to map coding exons across species, identify gene structures in related genomes, or perform structure-aware genomic realignment.
 homepage: https://github.com/hillerlab/CESAR2.0
+metadata:
+  docker_image: "quay.io/biocontainers/cesar:1.01--h503566f_3"
 ---
-
 
 # cesar
 

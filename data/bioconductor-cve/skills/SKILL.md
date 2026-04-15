@@ -4,7 +4,6 @@ description: Bioconductor-cve provides an interactive Shiny-based framework for 
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CVE.html
 ---
 
-
 # bioconductor-cve
 
 name: bioconductor-cve

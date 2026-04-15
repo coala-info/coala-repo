@@ -4,7 +4,6 @@ description: This package provides probe sequence data and metadata for the Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/saureusprobe.html
 ---
 
-
 # bioconductor-saureusprobe
 
 name: bioconductor-saureusprobe

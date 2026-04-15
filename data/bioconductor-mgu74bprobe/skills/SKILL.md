@@ -4,7 +4,6 @@ description: This package provides nucleotide sequence data and array coordinate
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74bprobe.html
 ---
 
-
 # bioconductor-mgu74bprobe
 
 name: bioconductor-mgu74bprobe

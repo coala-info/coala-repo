@@ -4,7 +4,6 @@ description: This tool imports and processes SomaLogic ADAT files into R for pro
 homepage: https://bioconductor.org/packages/3.8/bioc/html/readat.html
 ---
 
-
 # bioconductor-readat
 
 name: bioconductor-readat

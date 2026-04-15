@@ -4,7 +4,6 @@ description: The r-imp4p package provides tools for estimating and imputing miss
 homepage: https://cran.r-project.org/web/packages/imp4p/index.html
 ---
 
-
 # r-imp4p
 
 ## Overview

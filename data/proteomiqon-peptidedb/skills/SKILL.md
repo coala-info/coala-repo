@@ -2,8 +2,9 @@
 name: proteomiqon-peptidedb
 description: This tool transforms protein sequences from FASTA files into a structured SQLite database of peptides by simulating in silico digestion and chemical modifications. Use when user asks to create a peptide database, perform in silico digestion, or prepare a reference database for shotgun proteomics.
 homepage: https://csbiology.github.io/ProteomIQon/
+metadata:
+  docker_image: "quay.io/biocontainers/proteomiqon-peptidedb:0.0.7--hdfd78af_1"
 ---
-
 
 # proteomiqon-peptidedb
 

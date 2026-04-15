@@ -4,7 +4,6 @@ description: This Bioconductor package provides platform design and annotation d
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.moex.1.0.st.v1.html
 ---
 
-
 # bioconductor-pd.moex.1.0.st.v1
 
 name: bioconductor-pd.moex.1.0.st.v1

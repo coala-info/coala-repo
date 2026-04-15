@@ -4,7 +4,6 @@ description: This tool performs statistical analysis of RIP-seq data to identify
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RIPSeeker.html
 ---
 
-
 # bioconductor-ripseeker
 
 name: bioconductor-ripseeker

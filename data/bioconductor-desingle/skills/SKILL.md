@@ -4,7 +4,6 @@ description: DEsingle performs differential expression analysis for single-cell 
 homepage: https://bioconductor.org/packages/release/bioc/html/DEsingle.html
 ---
 
-
 # bioconductor-desingle
 
 name: bioconductor-desingle

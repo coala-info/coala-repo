@@ -4,7 +4,6 @@ description: The GenRank package prioritizes candidate genes by integrating resu
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GenRank.html
 ---
 
-
 # bioconductor-genrank
 
 ## Overview

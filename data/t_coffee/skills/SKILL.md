@@ -1,9 +1,10 @@
 ---
 name: t_coffee
-description: "t_coffee computes, evaluates, and manipulates multiple sequence alignments for DNA, RNA, protein sequences, and structures. Use when user asks to generate multiple sequence alignments, evaluate alignment quality, refine existing alignments, or work with various sequence and structural data."
+description: t_coffee computes, evaluates, and manipulates multiple sequence alignments for DNA, RNA, protein sequences, and structures. Use when user asks to generate multiple sequence alignments, evaluate alignment quality, refine existing alignments, or work with various sequence and structural data.
 homepage: https://github.com/jashkenas/coffee-script-tmbundle
+metadata:
+  docker_image: "quay.io/biocontainers/t-coffee:13.46.2.7c9e712d--pl5321hb2a3317_0"
 ---
-
 
 # t_coffee
 

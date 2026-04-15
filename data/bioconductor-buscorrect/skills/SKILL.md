@@ -4,7 +4,6 @@ description: This tool performs batch effect correction and identifies biologica
 homepage: https://bioconductor.org/packages/release/bioc/html/BUScorrect.html
 ---
 
-
 # bioconductor-buscorrect
 
 name: bioconductor-buscorrect

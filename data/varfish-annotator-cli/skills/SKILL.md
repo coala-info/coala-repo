@@ -2,8 +2,9 @@
 name: varfish-annotator-cli
 description: The varfish-annotator-cli prepares genomic databases and annotates VCF files for the VarFish analysis platform. Use when user asks to initialize a local database, annotate small variants, annotate structural variants, or transform VCF files for VarFish.
 homepage: https://github.com/bihealth/varfish-annotator
+metadata:
+  docker_image: "quay.io/biocontainers/varfish-annotator-cli:0.34--hdfd78af_0"
 ---
-
 
 # varfish-annotator-cli
 

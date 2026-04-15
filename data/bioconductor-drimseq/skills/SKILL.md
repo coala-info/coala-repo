@@ -4,7 +4,6 @@ description: DRIMSeq implements a Dirichlet-multinomial framework for modeling m
 homepage: https://bioconductor.org/packages/release/bioc/html/DRIMSeq.html
 ---
 
-
 # bioconductor-drimseq
 
 ## Overview

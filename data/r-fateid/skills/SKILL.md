@@ -4,7 +4,6 @@ description: This tool quantifies and visualizes cell fate bias in multi-lineage
 homepage: https://cran.r-project.org/web/packages/fateid/index.html
 ---
 
-
 # r-fateid
 
 name: r-fateid

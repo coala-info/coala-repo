@@ -2,6 +2,8 @@
 name: rseqc
 description: RSeQC is a bioinformatics suite used to evaluate the quality and technical biases of RNA-seq data by analyzing mapped reads against genomic features. Use when user asks to infer library strand specificity, assess gene body coverage, calculate transcript integrity numbers, or analyze the distribution of reads across genomic regions.
 homepage: https://rseqc.sourceforge.net
+metadata:
+  docker_image: "quay.io/biocontainers/rseqc:5.0.4--pyhdfd78af_1"
 ---
 
 # rseqc

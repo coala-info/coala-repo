@@ -1,10 +1,12 @@
 ---
 name: dia_lib_osw
-description: "This proteomics workflow processes DDA data, FASTA sequences, and experimental design files using MaxQuant and OpenMS tools to generate a spectral library for DIA analysis. Use this skill when you need to build a high-quality, decoy-enhanced assay library from DDA experiments to enable targeted peptide quantification in subsequent DIA-MS workflows."
-homepage: https://workflowhub.eu/workflows/1421
+description: This proteomics workflow processes DDA data, FASTA sequences, and experimental design files using MaxQuant and OpenMS tools to generate a spectral library for DIA analysis. Use this skill when you need to build a high-quality, decoy-enhanced assay library from DDA experiments to enable targeted peptide quantification in subsequent DIA-MS workflows.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# DIA_lib_OSW
+# dia_lib_osw
 
 ## Overview
 

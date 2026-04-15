@@ -4,7 +4,6 @@ description: This tool performs genotyping and copy number estimation for Affyme
 homepage: https://bioconductor.org/packages/release/bioc/html/crlmm.html
 ---
 
-
 # bioconductor-crlmm
 
 name: bioconductor-crlmm

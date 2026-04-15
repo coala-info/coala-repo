@@ -4,7 +4,6 @@ description: This tool performs fast multilevel B-spline interpolation for scatt
 homepage: https://cran.r-project.org/web/packages/mba/index.html
 ---
 
-
 # r-mba
 
 name: r-mba

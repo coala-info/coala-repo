@@ -1,9 +1,10 @@
 ---
 name: pyham
-description: "pyham is a Python library for the functional and evolutionary analysis of Hierarchical Orthologous Groups. Use when user asks to map orthoXML files to species trees, identify gene evolutionary events like gains and losses, generate taxonomic profiles, or visualize gene lineage histories."
+description: pyham is a Python library for the functional and evolutionary analysis of Hierarchical Orthologous Groups. Use when user asks to map orthoXML files to species trees, identify gene evolutionary events like gains and losses, generate taxonomic profiles, or visualize gene lineage histories.
 homepage: https://github.com/DessimozLab/pyham
+metadata:
+  docker_image: "quay.io/biocontainers/pyham:1.1.11--pyh7cba7a3_0"
 ---
-
 
 # pyham
 

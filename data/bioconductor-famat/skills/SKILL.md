@@ -4,7 +4,6 @@ description: The famat package identifies functional links between metabolites a
 homepage: https://bioconductor.org/packages/release/bioc/html/famat.html
 ---
 
-
 # bioconductor-famat
 
 ## Overview

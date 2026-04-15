@@ -2,8 +2,9 @@
 name: biofluff
 description: Biofluff is a suite of Python scripts designed for the visual exploration and clustering of Next-Generation Sequencing data. Use when user asks to generate clustered heatmaps of epigenetic marks, visualize signal profiles across genomic features, or create bandplots to summarize signal variance.
 homepage: https://github.com/simonvh/fluff
+metadata:
+  docker_image: "quay.io/biocontainers/biofluff:3.0.4--pyhdfd78af_1"
 ---
-
 
 # biofluff
 

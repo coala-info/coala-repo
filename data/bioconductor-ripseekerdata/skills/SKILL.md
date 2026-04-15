@@ -4,7 +4,6 @@ description: This package provides example RIP-seq datasets for testing and demo
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/RIPSeekerData.html
 ---
 
-
 # bioconductor-ripseekerdata
 
 name: bioconductor-ripseekerdata

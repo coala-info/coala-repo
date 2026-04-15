@@ -4,7 +4,6 @@ description: This package provides platform design and annotation data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.chogene.2.1.st.html
 ---
 
-
 # bioconductor-pd.chogene.2.1.st
 
 name: bioconductor-pd.chogene.2.1.st

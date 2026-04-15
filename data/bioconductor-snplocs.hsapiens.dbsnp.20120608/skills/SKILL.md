@@ -4,7 +4,6 @@ description: This package provides access to SNP locations and alleles for Homo 
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/SNPlocs.Hsapiens.dbSNP.20120608.html
 ---
 
-
 # bioconductor-snplocs.hsapiens.dbsnp.20120608
 
 name: bioconductor-snplocs.hsapiens.dbsnp.20120608

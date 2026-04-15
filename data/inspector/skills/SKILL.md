@@ -2,6 +2,8 @@
 name: inspector
 description: Inspector evaluates de novo genome assembly quality by identifying structural and base-level errors using long reads. Use when user asks to evaluate assembly quality, detect structural or small-scale errors in contigs, or perform error correction on assemblies.
 homepage: https://github.com/ChongLab/Inspector
+metadata:
+  docker_image: "quay.io/biocontainers/inspector:1.3.1--hdfd78af_1"
 ---
 
 # inspector

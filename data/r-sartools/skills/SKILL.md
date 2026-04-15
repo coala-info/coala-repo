@@ -1,9 +1,8 @@
 ---
 name: r-sartools
-description: "SARTools performs comprehensive differential expression analysis of RNA-Seq data using DESeq2 or edgeR wrappers. Use when user asks to perform end-to-end RNA-Seq workflows, generate quality control visualizations, conduct statistical testing for differential expression, or create automated HTML analysis reports."
+description: SARTools performs comprehensive differential expression analysis of RNA-Seq data using DESeq2 or edgeR wrappers. Use when user asks to perform end-to-end RNA-Seq workflows, generate quality control visualizations, conduct statistical testing for differential expression, or create automated HTML analysis reports.
 homepage: https://cran.r-project.org/web/packages/sartools/index.html
 ---
-
 
 # r-sartools
 

@@ -4,7 +4,6 @@ description: This package provides annotation data for the mouse genome assembly
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.mm10.html
 ---
 
-
 # bioconductor-rnbeads.mm10
 
 name: bioconductor-rnbeads.mm10

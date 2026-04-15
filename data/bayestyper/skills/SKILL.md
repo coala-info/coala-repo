@@ -2,6 +2,8 @@
 name: bayestyper
 description: BayesTyper is a probabilistic genotyping framework that uses k-mer alignment to genotype diverse variation types across a variant graph. Use when user asks to genotype SNPs and structural variants, perform k-mer based variant calling, or estimate genotypes for complex genomic regions.
 homepage: https://github.com/bioinformatics-centre/BayesTyper
+metadata:
+  docker_image: "quay.io/biocontainers/bayestyper:1.5--h077b44d_4"
 ---
 
 # bayestyper

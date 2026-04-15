@@ -4,7 +4,6 @@ description: This tool provides access to pre-processed biological and chemical 
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ontoProcData.html
 ---
 
-
 # bioconductor-ontoprocdata
 
 name: bioconductor-ontoprocdata

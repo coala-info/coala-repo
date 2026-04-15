@@ -4,7 +4,6 @@ description: This package compares characteristic features across multiple count
 homepage: https://bioconductor.org/packages/release/bioc/html/countsimQC.html
 ---
 
-
 # bioconductor-countsimqc
 
 ## Overview

@@ -2,8 +2,9 @@
 name: sativa
 description: SATIVA identifies and corrects mislabeled taxonomic metadata in sequence alignments using phylogenetic analysis. Use when user asks to audit taxonomic labels, identify mislabeled sequences, or suggest taxonomic corrections for phylogenetic data.
 homepage: https://github.com/amkozlov/sativa
+metadata:
+  docker_image: "quay.io/biocontainers/sativa:0.9.3--py312h031d066_0"
 ---
-
 
 # sativa
 

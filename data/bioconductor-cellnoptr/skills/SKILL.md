@@ -4,7 +4,6 @@ description: This tool creates logic-based models of signal transduction network
 homepage: https://bioconductor.org/packages/release/bioc/html/CellNOptR.html
 ---
 
-
 # bioconductor-cellnoptr
 
 name: bioconductor-cellnoptr

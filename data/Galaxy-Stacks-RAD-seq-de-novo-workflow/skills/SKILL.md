@@ -1,10 +1,12 @@
 ---
 name: stacks-rad-seq-de-novo-workflow
-description: "This workflow processes demultiplexed RAD-seq fastq reads and a population map using the Stacks2 toolset to perform de novo locus assembly, catalog construction, and variant calling. Use this skill when studying the population genetics, phylogeography, or genetic diversity of organisms without a reference genome to generate SNP data and population-level summary statistics."
-homepage: https://workflowhub.eu/workflows/348
+description: This workflow processes demultiplexed RAD-seq fastq reads and a population map using the Stacks2 toolset to perform de novo locus assembly, catalog construction, and variant calling. Use this skill when studying the population genetics, phylogeography, or genetic diversity of organisms without a reference genome to generate SNP data and population-level summary statistics.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Stacks RAD-seq de novo workflow
+# stacks-rad-seq-de-novo-workflow
 
 ## Overview
 

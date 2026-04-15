@@ -1,9 +1,10 @@
 ---
 name: sina
-description: "SINA is a tool for reference-based multiple sequence alignment that allows incorporating additional sequences into an existing alignment without modification. Use when user asks to add new sequences to an existing multiple sequence alignment, leverage a pre-existing curated MSA to align new sequences, perform homology searches against a reference MSA to classify query sequences, or work with ARB format reference databases."
+description: SINA is a tool for reference-based multiple sequence alignment that allows incorporating additional sequences into an existing alignment without modification. Use when user asks to add new sequences to an existing multiple sequence alignment, leverage a pre-existing curated MSA to align new sequences, perform homology searches against a reference MSA to classify query sequences, or work with ARB format reference databases.
 homepage: https://github.com/epruesse/SINA
+metadata:
+  docker_image: "quay.io/biocontainers/sina:1.7.2--h9aa86b4_0"
 ---
-
 
 # sina
 

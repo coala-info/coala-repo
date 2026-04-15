@@ -4,7 +4,6 @@ description: The bioconductor-yrimulti package provides specialized data structu
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/yriMulti.html
 ---
 
-
 # bioconductor-yrimulti
 
 ## Overview

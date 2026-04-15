@@ -2,6 +2,8 @@
 name: fuc
 description: The fuc package is a comprehensive bioinformatics suite for genomic data processing, variant analysis, and visualization. Use when user asks to manipulate VCF or BAM files, run NGS pipelines from FASTQ to BAM, discover variants, or generate genomic visualizations like oncoplots.
 homepage: https://github.com/sbslee/fuc
+metadata:
+  docker_image: "quay.io/biocontainers/fuc:0.38.0--pyh7e72e81_0"
 ---
 
 # fuc

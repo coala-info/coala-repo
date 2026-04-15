@@ -2,8 +2,9 @@
 name: perl-soap-lite
 description: This tool provides a Perl library for implementing and interacting with SOAP, XML-RPC, and UDDI web services. Use when user asks to create SOAP clients or servers, invoke remote methods, handle complex XML data structures, or configure transport layers for distributed communication in Perl.
 homepage: http://metacpan.org/pod/SOAP-Lite
+metadata:
+  docker_image: "quay.io/biocontainers/perl-soap-lite:1.27--pl5321hdfd78af_0"
 ---
-
 
 # perl-soap-lite
 

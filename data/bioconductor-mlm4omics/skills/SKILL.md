@@ -1,9 +1,8 @@
 ---
 name: bioconductor-mlm4omics
-description: "bioconductor-mlm4omics provides Bayesian multilevel models for analyzing omics data with missing and left-censored values. Use when user asks to fit multilevel models for clinical proteomics, handle missing not at random data, or perform variance decomposition with censored observations."
+description: bioconductor-mlm4omics provides Bayesian multilevel models for analyzing omics data with missing and left-censored values. Use when user asks to fit multilevel models for clinical proteomics, handle missing not at random data, or perform variance decomposition with censored observations.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/mlm4omics.html
 ---
-
 
 # bioconductor-mlm4omics
 

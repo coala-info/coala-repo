@@ -4,7 +4,6 @@ description: bioconductor-cn.mops detects copy number variations (CNVs) from nex
 homepage: https://bioconductor.org/packages/release/bioc/html/cn.mops.html
 ---
 
-
 # bioconductor-cn.mops
 
 ## Overview

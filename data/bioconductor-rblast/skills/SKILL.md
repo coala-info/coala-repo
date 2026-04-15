@@ -4,7 +4,6 @@ description: The rBLAST package provides an R interface to the BLAST+ software s
 homepage: https://bioconductor.org/packages/release/bioc/html/rBLAST.html
 ---
 
-
 # bioconductor-rblast
 
 ## Overview

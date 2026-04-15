@@ -1,10 +1,12 @@
 ---
 name: msfinder-workflow-golm-imported-from-uploaded-file
-description: "This metabolomics workflow processes spectral library files using MSMetaEnhancer, matchms, and RECETOX MsFinder to perform metadata enrichment and in silico fragment annotation. Use this skill when you need to upcycle mass spectral libraries or generate theoretical fragment substructures to improve the accuracy of metabolite identification."
-homepage: https://workflowhub.eu/workflows/888
+description: This metabolomics workflow processes spectral library files using MSMetaEnhancer, matchms, and RECETOX MsFinder to perform metadata enrichment and in silico fragment annotation. Use this skill when you need to upcycle mass spectral libraries or generate theoretical fragment substructures to improve the accuracy of metabolite identification.
+homepage: https://www.recetox.muni.cz/en/services/data-services-2/spectrometric-data-processing-and-analysis
+metadata:
+  docker_image: "N/A"
 ---
 
-# MsFinder Workflow GOLM (imported from uploaded file)
+# msfinder-workflow-golm-imported-from-uploaded-file
 
 ## Overview
 

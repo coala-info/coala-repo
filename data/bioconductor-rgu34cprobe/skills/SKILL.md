@@ -4,7 +4,6 @@ description: This package provides probe sequence and location data for the Affy
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgu34cprobe.html
 ---
 
-
 # bioconductor-rgu34cprobe
 
 name: bioconductor-rgu34cprobe

@@ -2,6 +2,8 @@
 name: jasminesv
 description: Jasmine consolidates structural variant calls from multiple VCF files using a network-based approach to group analogous variants across samples. Use when user asks to merge structural variant calls, consolidate VCF files from long-read datasets, or refine insertion sequences using sequence identity.
 homepage: https://github.com/mkirsche/Jasmine
+metadata:
+  docker_image: "quay.io/biocontainers/jasminesv:1.1.5--hdfd78af_0"
 ---
 
 # jasminesv

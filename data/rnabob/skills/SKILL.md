@@ -1,9 +1,10 @@
 ---
 name: rnabob
-description: "rnabob is a bioinformatics tool for RNA structure analysis and prediction. Use when user asks to predict RNA secondary structures, calculate thermodynamic stability, analyze structural motifs, or generate dot-bracket notation."
+description: rnabob is a bioinformatics tool for RNA structure analysis and prediction. Use when user asks to predict RNA secondary structures, calculate thermodynamic stability, analyze structural motifs, or generate dot-bracket notation.
 homepage: https://github.com/JPSieg/KertisThesis2021
+metadata:
+  docker_image: "quay.io/biocontainers/rnabob:2.2.1--h470a237_1"
 ---
-
 
 # rnabob
 

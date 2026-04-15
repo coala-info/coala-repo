@@ -1,9 +1,10 @@
 ---
 name: pytabix
-description: "pytabix provides a Python interface for efficiently retrieving specific genomic regions from bgzip-compressed and tabix-indexed files. Use when user asks to query genomic intervals, fetch data from remote tabix-indexed URLs, or retrieve records from BED, VCF, or GFF files using chromosome coordinates."
+description: pytabix provides a Python interface for efficiently retrieving specific genomic regions from bgzip-compressed and tabix-indexed files. Use when user asks to query genomic intervals, fetch data from remote tabix-indexed URLs, or retrieve records from BED, VCF, or GFF files using chromosome coordinates.
 homepage: https://github.com/slowkow/pytabix
+metadata:
+  docker_image: "quay.io/biocontainers/pytabix:0.1--py311hc84137b_7"
 ---
-
 
 # pytabix
 

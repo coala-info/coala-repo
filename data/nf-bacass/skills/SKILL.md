@@ -4,6 +4,8 @@ description: This pipeline performs bacterial assembly and annotation using shor
 homepage: https://github.com/nf-core/bacass
 ---
 
+# bacass
+
 ## Overview
 nf-core/bacass is designed for the de novo assembly and functional annotation of bacterial genomes. It streamlines the transition from raw sequencing reads to polished, annotated contigs by providing specialized routes for different data modalities, including short-read only, long-read only, and hybrid approaches.
 

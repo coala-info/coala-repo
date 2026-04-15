@@ -4,7 +4,6 @@ description: NanoMethViz is an R package for the visualization and analysis of D
 homepage: https://bioconductor.org/packages/release/bioc/html/NanoMethViz.html
 ---
 
-
 # bioconductor-nanomethviz
 
 ## Overview

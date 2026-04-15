@@ -1,7 +1,9 @@
 ---
 name: vcf2lineage
-description: "This Galaxy workflow transforms variant calls and a reference genome into consensus sequences and lineage assignments using SnpSift, bcftools, and Pangolin. Use this skill when you need to identify specific viral lineages and generate multi-sample consensus FASTA files from genomic variant data."
-homepage: https://workflowhub.eu/workflows/1391
+description: This Galaxy workflow transforms variant calls and a reference genome into consensus sequences and lineage assignments using SnpSift, bcftools, and Pangolin. Use this skill when you need to identify specific viral lineages and generate multi-sample consensus FASTA files from genomic variant data.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
 # vcf2lineage

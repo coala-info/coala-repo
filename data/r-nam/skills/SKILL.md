@@ -4,7 +4,6 @@ description: This tool performs association mapping and genomic prediction in ne
 homepage: https://cran.r-project.org/web/packages/nam/index.html
 ---
 
-
 # r-nam
 
 name: r-nam

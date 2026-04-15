@@ -1,10 +1,12 @@
 ---
 name: mmgbsa-calculations-with-gromacs
-description: "This Galaxy workflow performs ensemble molecular dynamics simulations and MMGBSA free energy calculations for protein-ligand complexes using GROMACS and AmberTools, taking PDB and SDF files as primary inputs. Use this skill when you need to estimate the binding affinity of a small molecule to a protein target by averaging energy components across multiple simulation trajectories."
-homepage: https://workflowhub.eu/workflows/248
+description: This Galaxy workflow performs ensemble molecular dynamics simulations and MMGBSA free energy calculations for protein-ligand complexes using GROMACS and AmberTools, taking PDB and SDF files as primary inputs. Use this skill when you need to estimate the binding affinity of a small molecule to a protein target by averaging energy components across multiple simulation trajectories.
+homepage: https://iwc.galaxyproject.org/
+metadata:
+  docker_image: "N/A"
 ---
 
-# MMGBSA calculations with GROMACS
+# mmgbsa-calculations-with-gromacs
 
 ## Overview
 

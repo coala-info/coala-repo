@@ -1,9 +1,10 @@
 ---
 name: gapmm2
-description: "gapmm2 is a wrapper for minimap2 that improves the detection of short terminal exons in spliced alignments using sensitive local alignment. Use when user asks to align transcripts to a reference genome, recover missing terminal exons, or generate refined PAF and GFF3 files."
+description: gapmm2 is a wrapper for minimap2 that improves the detection of short terminal exons in spliced alignments using sensitive local alignment. Use when user asks to align transcripts to a reference genome, recover missing terminal exons, or generate refined PAF and GFF3 files.
 homepage: https://github.com/nextgenusfs/gapmm2
+metadata:
+  docker_image: "quay.io/biocontainers/gapmm2:25.8.12--pyhdfd78af_0"
 ---
-
 
 # gapmm2
 

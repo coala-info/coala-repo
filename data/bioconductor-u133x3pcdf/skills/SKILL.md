@@ -4,7 +4,6 @@ description: This package provides the Chip Description File environment and coo
 homepage: https://bioconductor.org/packages/release/data/annotation/html/u133x3pcdf.html
 ---
 
-
 # bioconductor-u133x3pcdf
 
 name: bioconductor-u133x3pcdf

@@ -2,8 +2,9 @@
 name: dastk
 description: DAStk identifies transcription factor activity shifts between biological states by calculating motif displacement scores from ATAC-seq or similar chromatin accessibility data. Use when user asks to calculate MD-scores, identify differential transcription factor activity, or generate barcode and MA plots for motif displacement.
 homepage: https://github.com/Dowell-Lab/DAStk
+metadata:
+  docker_image: "quay.io/biocontainers/dastk:1.0.1--pyh7cba7a3_0"
 ---
-
 
 # dastk
 

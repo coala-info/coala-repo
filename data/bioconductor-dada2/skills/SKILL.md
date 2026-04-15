@@ -4,7 +4,6 @@ description: This tool performs high-resolution sample inference from amplicon s
 homepage: https://bioconductor.org/packages/release/bioc/html/dada2.html
 ---
 
-
 # bioconductor-dada2
 
 name: bioconductor-dada2

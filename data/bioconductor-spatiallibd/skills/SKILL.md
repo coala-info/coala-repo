@@ -4,7 +4,6 @@ description: The spatialLIBD package provides tools for the interactive visualiz
 homepage: https://bioconductor.org/packages/release/data/experiment/html/spatialLIBD.html
 ---
 
-
 # bioconductor-spatiallibd
 
 ## Overview

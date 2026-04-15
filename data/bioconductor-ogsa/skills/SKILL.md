@@ -4,7 +4,6 @@ description: This tool performs Outlier Gene Set Analysis (OGSA) to identify pat
 homepage: https://bioconductor.org/packages/3.5/bioc/html/OGSA.html
 ---
 
-
 # bioconductor-ogsa
 
 name: bioconductor-ogsa

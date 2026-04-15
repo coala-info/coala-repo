@@ -1,10 +1,12 @@
 ---
 name: arc2omero
-description: "This bioimaging workflow automates the transfer of Annotated Research Context (ARC) data from ZIP files to an OMERO instance using tools like unzip, xlsx2tsv, and OMERO import utilities. Use this skill when you need to preserve complex ARC structures and automate the metadata annotation of imaging assays during the migration of research data to a centralized OMERO repository."
-homepage: https://workflowhub.eu/workflows/2116
+description: This bioimaging workflow automates the transfer of Annotated Research Context (ARC) data from ZIP files to an OMERO instance using tools like unzip, xlsx2tsv, and OMERO import utilities. Use this skill when you need to preserve complex ARC structures and automate the metadata annotation of imaging assays during the migration of research data to a centralized OMERO repository.
+homepage: https://git.nfdi4plants.org/natural-variation-and-evolution/microscopy_collection/map-by-seq_clsm-stacks/-/tree/main?ref_type=heads
+metadata:
+  docker_image: "N/A"
 ---
 
-# ARC2OMERO
+# arc2omero
 
 ## Overview
 

@@ -1,9 +1,10 @@
 ---
 name: linearfold
-description: "LinearFold predicts RNA secondary structures in linear time using beam search heuristics. Use when user asks to predict RNA secondary structures, analyze long RNA sequences, incorporate SHAPE reactivity data, or perform constrained folding."
+description: LinearFold predicts RNA secondary structures in linear time using beam search heuristics. Use when user asks to predict RNA secondary structures, analyze long RNA sequences, incorporate SHAPE reactivity data, or perform constrained folding.
 homepage: https://github.com/LinearFold/LinearFold
+metadata:
+  docker_image: "quay.io/biocontainers/linearfold:1.0.1.dev20220829--h9948957_2"
 ---
-
 
 # linearfold
 

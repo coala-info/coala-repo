@@ -1,10 +1,12 @@
 ---
 name: metagenomics-assembly-tutorial-workflow
-description: "This metagenomics workflow processes input dataset collections using metaSPAdes and MEGAHIT for de novo assembly, followed by Bowtie2 mapping and quality assessment with Quast and Bandage. Use this skill when you need to reconstruct microbial genomes from complex environmental samples and evaluate the quality and connectivity of the resulting contigs and scaffolds."
-homepage: https://workflowhub.eu/workflows/1634
+description: This metagenomics workflow processes input dataset collections using metaSPAdes and MEGAHIT for de novo assembly, followed by Bowtie2 mapping and quality assessment with Quast and Bandage. Use this skill when you need to reconstruct microbial genomes from complex environmental samples and evaluate the quality and connectivity of the resulting contigs and scaffolds.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# Metagenomics assembly tutorial workflow
+# metagenomics-assembly-tutorial-workflow
 
 ## Overview
 

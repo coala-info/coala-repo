@@ -4,7 +4,6 @@ description: This package provides curated phylogenetic profiling datasets inclu
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PhyloProfileData.html
 ---
 
-
 # bioconductor-phyloprofiledata
 
 ## Overview

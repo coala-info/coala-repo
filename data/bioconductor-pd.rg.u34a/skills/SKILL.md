@@ -4,7 +4,6 @@ description: This package provides annotation and platform design data for the A
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rg.u34a.html
 ---
 
-
 # bioconductor-pd.rg.u34a
 
 name: bioconductor-pd.rg.u34a

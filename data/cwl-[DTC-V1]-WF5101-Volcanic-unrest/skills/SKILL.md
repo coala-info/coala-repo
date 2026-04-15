@@ -1,9 +1,12 @@
 ---
 name: dtc-v1-wf5101-volcanic-unrest
-description: "This geophysics workflow integrates GNSS ground deformation data with physics-based HPC simulations and machine learning models to detect volcanic unrest and invert for magmatic dike source parameters. Use this skill when you need to characterize the spatial probability of magmatic sources from ground deformation patterns to provide early warnings for potential lava flow inundation during volcanic unrest."
-homepage: https://workflowhub.eu/workflows/1728
+description: This geophysics workflow integrates GNSS ground deformation data with physics-based HPC simulations and machine learning models to detect volcanic unrest and invert for magmatic dike source parameters. Use this skill when you need to characterize the spatial probability of magmatic sources from ground deformation patterns to provide early warnings for potential lava flow inundation during volcanic unrest.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-V1] WF5101: Volcanic unrest
+
+# dtc-v1-wf5101-volcanic-unrest
 
 ## Overview
 

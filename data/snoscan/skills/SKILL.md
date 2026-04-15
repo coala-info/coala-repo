@@ -1,9 +1,10 @@
 ---
 name: snoscan
-description: "Searches for C/D box guide snoRNA genes within a given genomic sequence. Use when user asks to find snoRNAs, identify C/D box snoRNA genes, or search for non-coding RNAs."
+description: Searches for C/D box guide snoRNA genes within a given genomic sequence. Use when user asks to find snoRNAs, identify C/D box snoRNA genes, or search for non-coding RNAs.
 homepage: http://lowelab.ucsc.edu/snoscan
+metadata:
+  docker_image: "quay.io/biocontainers/snoscan:1.0--pl5321h031d066_5"
 ---
-
 
 # snoscan
 

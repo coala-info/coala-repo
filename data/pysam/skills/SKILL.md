@@ -2,8 +2,9 @@
 name: pysam
 description: Pysam provides a Pythonic interface to the htslib C-API for reading, manipulating, and writing genomic data files in SAM, BAM, CRAM, and VCF formats. Use when user asks to perform complex genomic data processing, access individual alignment segments or variant records, generate pileups for site-specific analysis, or execute samtools and bcftools commands within Python.
 homepage: https://github.com/pysam-developers/pysam
+metadata:
+  docker_image: "quay.io/biocontainers/pysam:0.23.3--py313hd07c5dd_2"
 ---
-
 
 # pysam
 

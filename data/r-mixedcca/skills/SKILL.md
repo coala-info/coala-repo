@@ -4,7 +4,6 @@ description: This tool performs sparse canonical correlation analysis for datase
 homepage: https://cran.r-project.org/web/packages/mixedcca/index.html
 ---
 
-
 # r-mixedcca
 
 name: r-mixedcca

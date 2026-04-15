@@ -4,7 +4,6 @@ description: chromVAR analyzes sparse chromatin accessibility data by computing 
 homepage: https://bioconductor.org/packages/release/bioc/html/chromVAR.html
 ---
 
-
 # bioconductor-chromvar
 
 ## Overview

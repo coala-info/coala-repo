@@ -1,9 +1,10 @@
 ---
 name: hicup
-description: "hicup maps Hi-C sequencing reads to a reference genome and performs quality control. Use when user asks to map Hi-C reads to a reference genome, perform quality control on Hi-C data, or prepare Hi-C data for downstream analysis."
+description: hicup maps Hi-C sequencing reads to a reference genome and performs quality control. Use when user asks to map Hi-C reads to a reference genome, perform quality control on Hi-C data, or prepare Hi-C data for downstream analysis.
 homepage: http://www.bioinformatics.babraham.ac.uk/projects/hicup/
+metadata:
+  docker_image: "quay.io/biocontainers/hicup:0.9.2--hdfd78af_1"
 ---
-
 
 # hicup
 

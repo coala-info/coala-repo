@@ -2,8 +2,9 @@
 name: perl-archive-tar-wrapper
 description: This tool provides a Perl interface to the system's native tar binary for high-performance archive manipulation. Use when user asks to create, extract, or inspect tar archives while preserving file permissions and minimizing memory usage.
 homepage: http://metacpan.org/pod/Archive::Tar::Wrapper
+metadata:
+  docker_image: "quay.io/biocontainers/perl-archive-tar-wrapper:0.33--pl526_0"
 ---
-
 
 # perl-archive-tar-wrapper
 

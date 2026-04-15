@@ -1,9 +1,12 @@
 ---
 name: ngtax
-description: "This CWL workflow processes 16S and ITS amplicon sequencing reads to perform quality control and taxonomic classification using FastQC and the NG-Tax 2.0 pipeline. Use this skill when you need to characterize microbial community structures or identify specific taxa within environmental and clinical samples."
-homepage: https://workflowhub.eu/workflows/45
+description: This CWL workflow processes 16S and ITS amplicon sequencing reads to perform quality control and taxonomic classification using FastQC and the NG-Tax 2.0 pipeline. Use this skill when you need to characterize microbial community structures or identify specific taxa within environmental and clinical samples.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# NGTax
+
+# ngtax
 
 ## Overview
 

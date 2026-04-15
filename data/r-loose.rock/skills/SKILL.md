@@ -4,7 +4,6 @@ description: This R package provides tools for enhancing workflow productivity t
 homepage: https://cran.r-project.org/web/packages/loose.rock/index.html
 ---
 
-
 # r-loose.rock
 
 name: r-loose.rock

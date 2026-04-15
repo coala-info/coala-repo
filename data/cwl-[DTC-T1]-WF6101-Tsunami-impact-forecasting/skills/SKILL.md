@@ -1,9 +1,12 @@
 ---
 name: dtc-t1-wf6101-tsunami-impact-forecasting
-description: "This CWL workflow performs probabilistic tsunami impact forecasting by integrating real-time earthquake, sea level, and GNSS data with topo-bathymetric grids using simulation tools like Tsunami-HySEA and SeisSol. Use this skill when providing operational tsunami early warning, generating probabilistic hazard maps, or conducting rapid post-event assessments of earthquake-induced tsunami impacts on coastal regions."
-homepage: https://workflowhub.eu/workflows/1231
+description: This CWL workflow performs probabilistic tsunami impact forecasting by integrating real-time earthquake, sea level, and GNSS data with topo-bathymetric grids using simulation tools like Tsunami-HySEA and SeisSol. Use this skill when providing operational tsunami early warning, generating probabilistic hazard maps, or conducting rapid post-event assessments of earthquake-induced tsunami impacts on coastal regions.
+homepage: https://dtgeo.eu/
+metadata:
+  docker_image: "N/A"
 ---
-# [DTC-T1] WF6101: Tsunami impact forecasting
+
+# dtc-t1-wf6101-tsunami-impact-forecasting
 
 ## Overview
 

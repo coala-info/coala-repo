@@ -4,7 +4,6 @@ description: This package provides example whole-genome bisulfite sequencing dat
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bsseqData.html
 ---
 
-
 # bioconductor-bsseqdata
 
 name: bioconductor-bsseqdata

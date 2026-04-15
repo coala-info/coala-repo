@@ -2,8 +2,9 @@
 name: bracken
 description: Bracken is a statistical tool that reestimates taxonomic abundance from Kraken classification results to provide more accurate quantification of species or other taxonomic levels. Use when user asks to estimate taxonomic abundance, redistribute reads from higher-level clades to species, or generate precise metagenomic quantification from Kraken reports.
 homepage: https://github.com/jenniferlu717/Bracken
+metadata:
+  docker_image: "quay.io/biocontainers/bracken:3.1--h9948957_0"
 ---
-
 
 # bracken
 

@@ -4,7 +4,6 @@ description: SeqGSEA performs gene set enrichment analysis for RNA-Seq data by i
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqGSEA.html
 ---
 
-
 # bioconductor-seqgsea
 
 name: bioconductor-seqgsea

@@ -4,7 +4,6 @@ description: DEGraph performs differential expression testing on gene networks b
 homepage: https://bioconductor.org/packages/release/bioc/html/DEGraph.html
 ---
 
-
 # bioconductor-degraph
 
 name: bioconductor-degraph

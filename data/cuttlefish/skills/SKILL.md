@@ -1,9 +1,10 @@
 ---
 name: cuttlefish
-description: "Cuttlefish efficiently builds compacted de Bruijn graphs from genomic sequences by identifying maximal unitigs. Use when user asks to build a compacted de Bruijn graph, identify maximal unitigs, or process large genomic datasets into GFA or FASTA formats."
+description: Cuttlefish efficiently builds compacted de Bruijn graphs from genomic sequences by identifying maximal unitigs. Use when user asks to build a compacted de Bruijn graph, identify maximal unitigs, or process large genomic datasets into GFA or FASTA formats.
 homepage: https://github.com/COMBINE-lab/cuttlefish
+metadata:
+  docker_image: "quay.io/biocontainers/cuttlefish:2.2.0--h6b3f7d6_5"
 ---
-
 
 # cuttlefish
 

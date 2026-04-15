@@ -2,8 +2,9 @@
 name: carnac-lr
 description: CARNAC-LR clusters long-read RNA sequences into groups representing distinct transcripts or gene families using a clustering coefficient-based approach. Use when user asks to cluster long-read transcriptomic data, group RNA reads into gene families, or identify transcript communities from error-prone sequencing reads.
 homepage: https://github.com/kamimrcht/CARNAC-LR
+metadata:
+  docker_image: "quay.io/biocontainers/carnac-lr:1.0.0--h503566f_5"
 ---
-
 
 # carnac-lr
 

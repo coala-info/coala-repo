@@ -4,7 +4,6 @@ description: This package provides pre-processed clinical data from The Cancer G
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.clinical.html
 ---
 
-
 # bioconductor-rtcga.clinical
 
 ## Overview

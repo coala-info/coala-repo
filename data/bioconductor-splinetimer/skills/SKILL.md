@@ -4,7 +4,6 @@ description: This tool performs differential gene expression analysis of time-co
 homepage: https://bioconductor.org/packages/release/bioc/html/splineTimeR.html
 ---
 
-
 # bioconductor-splinetimer
 
 name: bioconductor-splinetimer

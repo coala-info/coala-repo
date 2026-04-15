@@ -2,6 +2,8 @@
 name: autometa
 description: Autometa is a bioinformatics pipeline that recovers high-quality microbial genomes from complex metagenomes by integrating sequence composition, coverage, and taxonomic information. Use when user asks to bin metagenomic contigs, filter sequences by length, calculate assembly coverage, or identify single-copy marker genes.
 homepage: https://github.com/KwanLab/Autometa
+metadata:
+  docker_image: "quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0"
 ---
 
 # autometa

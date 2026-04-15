@@ -4,7 +4,6 @@ description: This tool creates scale-drawn protein schematics by fetching and vi
 homepage: https://bioconductor.org/packages/release/bioc/html/drawProteins.html
 ---
 
-
 # bioconductor-drawproteins
 
 ## Overview

@@ -1,9 +1,12 @@
 ---
 name: nanopore-assembly-workflow-deprecated
-description: "This Common Workflow Language pipeline performs de novo assembly and taxonomic classification of Nanopore sequencing data using tools like Flye, Medaka, and Kraken2, with optional hybrid polishing via Pilon when Illumina reads are available. Use this skill when you need to reconstruct high-quality microbial genomes from complex environmental samples, determine taxonomic composition, or evaluate the completeness and contamination of metagenomic assemblies."
-homepage: https://workflowhub.eu/workflows/254
+description: This Common Workflow Language pipeline performs de novo assembly and taxonomic classification of Nanopore sequencing data using tools like Flye, Medaka, and Kraken2, with optional hybrid polishing via Pilon when Illumina reads are available. Use this skill when you need to reconstruct high-quality microbial genomes from complex environmental samples, determine taxonomic composition, or evaluate the completeness and contamination of metagenomic assemblies.
+homepage: https://m-unlock.com
+metadata:
+  docker_image: "N/A"
 ---
-# Nanopore Assembly Workflow - Deprecated -
+
+# nanopore-assembly-workflow-deprecated
 
 ## Overview
 

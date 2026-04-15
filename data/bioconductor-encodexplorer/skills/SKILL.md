@@ -4,7 +4,6 @@ description: This tool provides an interface to query ENCODE project metadata an
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ENCODExplorer.html
 ---
 
-
 # bioconductor-encodexplorer
 
 name: bioconductor-encodexplorer

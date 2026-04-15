@@ -1,9 +1,10 @@
 ---
 name: go-figure
-description: "GO-Figure! transforms lists of Gene Ontology terms into publication-ready summary visualizations. Use when user asks to visualize functional enrichment results, generate GO term plots, or summarize genomic data interpretation."
+description: GO-Figure! transforms lists of Gene Ontology terms into publication-ready summary visualizations. Use when user asks to visualize functional enrichment results, generate GO term plots, or summarize genomic data interpretation.
 homepage: https://gitlab.com/evogenlab/GO-Figure
+metadata:
+  docker_image: "quay.io/biocontainers/go-figure:1.0.2--hdfd78af_0"
 ---
-
 
 # go-figure
 

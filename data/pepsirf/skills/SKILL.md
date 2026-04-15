@@ -2,6 +2,8 @@
 name: pepsirf
 description: PepSIRF processes raw sequencing data from peptide-based assays to generate and analyze serological immune profiles. Use when user asks to demultiplex FASTQ reads, calculate peptide enrichment, perform taxonomic deconvolution, or normalize data using Z-scores.
 homepage: https://github.com/LadnerLab/PepSIRF
+metadata:
+  docker_image: "quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0"
 ---
 
 # pepsirf

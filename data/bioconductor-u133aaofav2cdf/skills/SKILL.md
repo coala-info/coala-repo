@@ -4,7 +4,6 @@ description: This package provides the Chip Definition File environment and coor
 homepage: https://bioconductor.org/packages/release/data/annotation/html/u133aaofav2cdf.html
 ---
 
-
 # bioconductor-u133aaofav2cdf
 
 name: bioconductor-u133aaofav2cdf

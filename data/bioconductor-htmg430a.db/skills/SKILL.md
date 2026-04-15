@@ -4,7 +4,6 @@ description: This package provides comprehensive annotation data for the Affymet
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430a.db.html
 ---
 
-
 # bioconductor-htmg430a.db
 
 name: bioconductor-htmg430a.db

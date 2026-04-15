@@ -4,7 +4,6 @@ description: This tool simulates ChIP-seq experiments to generate synthetic data
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPsim.html
 ---
 
-
 # bioconductor-chipsim
 
 name: bioconductor-chipsim

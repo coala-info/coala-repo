@@ -2,6 +2,8 @@
 name: scaden
 description: Scaden is a deep-learning framework used to estimate the cellular composition of bulk RNA-seq samples using single-cell RNA-seq data. Use when user asks to simulate artificial bulk samples, process gene expression data, train deconvolution models, or predict cell type proportions in bulk RNA-seq datasets.
 homepage: https://github.com/KevinMenden/scaden
+metadata:
+  docker_image: "quay.io/biocontainers/scaden:1.1.2--pyhdfd78af_0"
 ---
 
 # scaden

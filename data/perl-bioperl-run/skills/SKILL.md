@@ -2,8 +2,9 @@
 name: perl-bioperl-run
 description: BioPerl-Run provides a consistent object-oriented interface to execute and manage dozens of external bioinformatics binaries through Perl. Use when user asks to run external tools like BLAST or ClustalW, manage command-line arguments for genomic pipelines, or parse output from bioinformatics software into BioPerl objects.
 homepage: http://metacpan.org/pod/BioPerl-Run
+metadata:
+  docker_image: "quay.io/biocontainers/perl-bioperl-run:1.007003--pl5321hdfd78af_0"
 ---
-
 
 # perl-bioperl-run
 

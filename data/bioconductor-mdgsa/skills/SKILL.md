@@ -4,7 +4,6 @@ description: This tool performs multidimensional gene set analysis using logisti
 homepage: https://bioconductor.org/packages/3.5/bioc/html/mdgsa.html
 ---
 
-
 # bioconductor-mdgsa
 
 name: bioconductor-mdgsa

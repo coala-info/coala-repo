@@ -4,7 +4,6 @@ description: This tool analyzes and detects transcription factor co-binding pair
 homepage: https://bioconductor.org/packages/3.8/bioc/html/cobindR.html
 ---
 
-
 # bioconductor-cobindr
 
 name: bioconductor-cobindr

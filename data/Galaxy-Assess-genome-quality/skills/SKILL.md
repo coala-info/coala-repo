@@ -1,10 +1,12 @@
 ---
 name: assess-genome-quality
-description: "This genomics workflow evaluates the quality of a polished assembly relative to a reference genome using BUSCO for gene content completeness and QUAST for structural assembly metrics. Use this skill when you need to validate the integrity and biological completeness of a de novo genome assembly before proceeding with functional annotation or comparative genomics."
-homepage: https://workflowhub.eu/workflows/229
+description: This genomics workflow evaluates the quality of a polished assembly relative to a reference genome using BUSCO for gene content completeness and QUAST for structural assembly metrics. Use this skill when you need to validate the integrity and biological completeness of a de novo genome assembly before proceeding with functional annotation or comparative genomics.
+homepage: https://usegalaxy.org.au/
+metadata:
+  docker_image: "N/A"
 ---
 
-# Assess genome quality
+# assess-genome-quality
 
 ## Overview
 

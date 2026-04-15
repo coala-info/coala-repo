@@ -4,7 +4,6 @@ description: This tool performs mutational signature discovery and exposure anal
 homepage: https://bioconductor.org/packages/release/bioc/html/signeR.html
 ---
 
-
 # bioconductor-signer
 
 name: bioconductor-signer

@@ -4,7 +4,6 @@ description: This tool performs discrete, real, and gentle stochastic boosting f
 homepage: https://cloud.r-project.org/web/packages/ada/index.html
 ---
 
-
 # r-ada
 
 name: r-ada

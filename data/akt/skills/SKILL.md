@@ -2,6 +2,8 @@
 name: akt
 description: AKT is a high-performance utility for analyzing large-scale genomic datasets to resolve sample relatedness and population structure. Use when user asks to estimate ancestry via PCA, calculate kinship coefficients, identify unrelated individuals, or perform Mendelian phasing on VCF and BCF files.
 homepage: https://github.com/Illumina/akt
+metadata:
+  docker_image: "quay.io/biocontainers/akt:0.3.3--h5ca1c30_7"
 ---
 
 # akt

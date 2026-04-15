@@ -1,10 +1,12 @@
 ---
 name: wf3_verification_workflow
-description: "This proteomics workflow validates peptide identifications from SGPS and MaxQuant reports against MGF mass spectrometry data using PepQuery2 and automated protein database construction tools. Use this skill when you need to statistically verify the presence of specific peptide sequences in clinical datasets and generate a refined protein database for downstream quantitation."
-homepage: https://workflowhub.eu/workflows/1425
+description: This proteomics workflow validates peptide identifications from SGPS and MaxQuant reports against MGF mass spectrometry data using PepQuery2 and automated protein database construction tools. Use this skill when you need to statistically verify the presence of specific peptide sequences in clinical datasets and generate a refined protein database for downstream quantitation.
+homepage: https://training.galaxyproject.org
+metadata:
+  docker_image: "N/A"
 ---
 
-# WF3_VERIFICATION_WORKFLOW
+# wf3_verification_workflow
 
 ## Overview
 

@@ -4,7 +4,6 @@ description: The plasmidomics tool analyzes plasmid sequences to identify functi
 homepage: https://github.com/braddmg/Plasmidome-analysis
 ---
 
-
 # plasmidomics
 
 ## Overview

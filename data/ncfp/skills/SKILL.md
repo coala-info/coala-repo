@@ -2,8 +2,9 @@
 name: ncfp
 description: The ncfp tool automates the retrieval of nucleotide coding sequences from NCBI based on a provided set of protein sequences. Use when user asks to recover DNA sequences for specific proteins, download CDS from NCBI accessions, or synchronize protein and nucleotide datasets for phylogenetic analysis.
 homepage: http://widdowquinn.github.io/ncfp/
+metadata:
+  docker_image: "quay.io/biocontainers/ncfp:0.2.0--py_0"
 ---
-
 
 # ncfp
 

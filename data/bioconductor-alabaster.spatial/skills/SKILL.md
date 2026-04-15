@@ -4,7 +4,6 @@ description: The alabaster.spatial package provides a framework for saving and l
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.spatial.html
 ---
 
-
 # bioconductor-alabaster.spatial
 
 ## Overview

@@ -4,6 +4,8 @@ description: This pipeline performs allele-specific expression analysis using RN
 homepage: https://github.com/nf-core/alleleexpression
 ---
 
+# alleleexpression
+
 ## Overview
 The nf-core/alleleexpression pipeline addresses the challenge of identifying allele-specific expression (ASE) by integrating transcriptomic data with genomic variants. It processes raw sequencing reads and known variants to distinguish between maternal and paternal expression levels, accounting for mapping biases and duplicate reads.
 

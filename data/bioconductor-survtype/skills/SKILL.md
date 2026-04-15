@@ -4,7 +4,6 @@ description: This tool identifies patient subtypes by integrating survival data 
 homepage: https://bioconductor.org/packages/release/bioc/html/survtype.html
 ---
 
-
 # bioconductor-survtype
 
 name: bioconductor-survtype

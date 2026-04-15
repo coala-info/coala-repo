@@ -1,9 +1,8 @@
 ---
 name: bioconductor-heatplus
-description: "The bioconductor-heatplus package generates flexible annotated heatmaps that integrate multiple layers of clinical or experimental metadata with data matrices and dendrograms. Use when user asks to create annotated heatmaps, add metadata covariates to heatmap visualizations, plot ExpressionSet objects with annotations, or generate double-annotated heatmaps with both row and column data."
+description: The bioconductor-heatplus package generates flexible annotated heatmaps that integrate multiple layers of clinical or experimental metadata with data matrices and dendrograms. Use when user asks to create annotated heatmaps, add metadata covariates to heatmap visualizations, plot ExpressionSet objects with annotations, or generate double-annotated heatmaps with both row and column data.
 homepage: https://bioconductor.org/packages/release/bioc/html/Heatplus.html
 ---
-
 
 # bioconductor-heatplus
 

@@ -4,7 +4,6 @@ description: scPipe is an R package for preprocessing single-cell RNA-seq and AT
 homepage: https://bioconductor.org/packages/release/bioc/html/scPipe.html
 ---
 
-
 # bioconductor-scpipe
 
 ## Overview

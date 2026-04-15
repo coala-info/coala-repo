@@ -4,7 +4,6 @@ description: This tool provides functions for working with linear dimension redu
 homepage: https://cran.r-project.org/web/packages/ldrtools/index.html
 ---
 
-
 # r-ldrtools
 
 name: r-ldrtools

@@ -4,7 +4,6 @@ description: This tool infers and visualizes hierarchical tree structures from s
 homepage: https://bioconductor.org/packages/3.8/bioc/html/cellTree.html
 ---
 
-
 # bioconductor-celltree
 
 name: bioconductor-celltree

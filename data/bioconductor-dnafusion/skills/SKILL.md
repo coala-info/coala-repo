@@ -4,7 +4,6 @@ description: This package detects and characterizes EML4-ALK fusions in cfDNA se
 homepage: https://bioconductor.org/packages/release/bioc/html/DNAfusion.html
 ---
 
-
 # bioconductor-dnafusion
 
 name: bioconductor-dnafusion

@@ -4,7 +4,6 @@ description: TitanCNA performs statistical inference of subclonal copy number al
 homepage: https://bioconductor.org/packages/release/bioc/html/TitanCNA.html
 ---
 
-
 # bioconductor-titancna
 
 name: bioconductor-titancna

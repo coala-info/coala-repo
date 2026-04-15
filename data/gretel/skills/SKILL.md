@@ -1,9 +1,10 @@
 ---
 name: gretel
-description: "Gretel recovers and ranks haplotypes from metagenomic data by reconstructing the most likely sequences of variants from aligned reads. Use when user asks to recover haplotypes from metagenomes, reconstruct strain sequences from BAM and VCF files, or rank genomic variants by likelihood."
+description: Gretel recovers and ranks haplotypes from metagenomic data by reconstructing the most likely sequences of variants from aligned reads. Use when user asks to recover haplotypes from metagenomes, reconstruct strain sequences from BAM and VCF files, or rank genomic variants by likelihood.
 homepage: https://github.com/SamStudio8/gretel
+metadata:
+  docker_image: "quay.io/biocontainers/gretel:0.0.94--pyh864c0ab_1"
 ---
-
 
 # gretel
 

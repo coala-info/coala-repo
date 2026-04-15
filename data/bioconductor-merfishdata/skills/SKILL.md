@@ -4,7 +4,6 @@ description: This package provides access to curated MERFISH spatial transcripto
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MerfishData.html
 ---
 
-
 # bioconductor-merfishdata
 
 name: bioconductor-merfishdata

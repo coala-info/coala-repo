@@ -4,7 +4,6 @@ description: This tool analyzes translational efficiency and gene expression mod
 homepage: https://bioconductor.org/packages/release/bioc/html/anota2seq.html
 ---
 
-
 # bioconductor-anota2seq
 
 name: bioconductor-anota2seq

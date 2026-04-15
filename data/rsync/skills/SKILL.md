@@ -4,7 +4,6 @@ description: rsync is a utility for fast, incremental file synchronization and d
 homepage: https://github.com/RsyncProject/rsync
 ---
 
-
 # rsync
 
 ## Overview

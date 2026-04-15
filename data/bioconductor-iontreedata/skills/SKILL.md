@@ -4,7 +4,6 @@ description: This package provides example mass spectrometry datasets and a demo
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/iontreeData.html
 ---
 
-
 # bioconductor-iontreedata
 
 name: bioconductor-iontreedata

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-summix
-description: "Bioconductor-summix estimates, adjusts, and leverages genetic substructure in allele frequency summary data. Use when user asks to estimate ancestry mixture proportions, adjust allele frequencies to match a target population, or perform selection scans based on local ancestry deviations."
+description: Bioconductor-summix estimates, adjusts, and leverages genetic substructure in allele frequency summary data. Use when user asks to estimate ancestry mixture proportions, adjust allele frequencies to match a target population, or perform selection scans based on local ancestry deviations.
 homepage: https://bioconductor.org/packages/release/bioc/html/Summix.html
 ---
-
 
 # bioconductor-summix
 

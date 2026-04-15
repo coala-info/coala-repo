@@ -4,7 +4,6 @@ description: This package provides the base SQLite databases for Drosophila mela
 homepage: https://bioconductor.org/packages/release/data/annotation/html/fly.db0.html
 ---
 
-
 # bioconductor-fly.db0
 
 name: bioconductor-fly.db0

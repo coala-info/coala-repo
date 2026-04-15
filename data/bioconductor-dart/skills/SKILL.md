@@ -4,7 +4,6 @@ description: This tool estimates pathway or perturbation gene signature activity
 homepage: https://bioconductor.org/packages/release/bioc/html/DART.html
 ---
 
-
 # bioconductor-dart
 
 name: bioconductor-dart

@@ -1,9 +1,8 @@
 ---
 name: bioconductor-ctrap
-description: "bioconductor-ctrap compares differential gene expression results against Connectivity Map perturbations and drug sensitivity data to identify mimicking or reversing compounds. Use when user asks to compare transcriptomic profiles with CMap perturbations, predict targeting drugs based on expression-drug sensitivity associations, or perform drug set enrichment analysis."
+description: bioconductor-ctrap compares differential gene expression results against Connectivity Map perturbations and drug sensitivity data to identify mimicking or reversing compounds. Use when user asks to compare transcriptomic profiles with CMap perturbations, predict targeting drugs based on expression-drug sensitivity associations, or perform drug set enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/cTRAP.html
 ---
-
 
 # bioconductor-ctrap
 

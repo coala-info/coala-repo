@@ -4,7 +4,6 @@ description: This package provides Minor Allele Frequency data from the NHLBI Ex
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MafDb.ESP6500SI.V2.SSA137.GRCh38.html
 ---
 
-
 # bioconductor-mafdb.esp6500si.v2.ssa137.grch38
 
 name: bioconductor-mafdb.esp6500si.v2.ssa137.grch38

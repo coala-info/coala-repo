@@ -1,9 +1,10 @@
 ---
 name: deeptools
-description: "deeptools is a suite of Python tools designed to process, normalize, and visualize high-throughput sequencing data from BAM files. Use when user asks to generate normalized coverage tracks, compare treatment and control samples, perform quality control on sequencing libraries, or create heatmaps and profile plots of genomic signal enrichment."
+description: deeptools is a suite of Python tools designed to process, normalize, and visualize high-throughput sequencing data from BAM files. Use when user asks to generate normalized coverage tracks, compare treatment and control samples, perform quality control on sequencing libraries, or create heatmaps and profile plots of genomic signal enrichment.
 homepage: https://github.com/deeptools/deepTools
+metadata:
+  docker_image: "quay.io/biocontainers/deeptools:3.5.6--pyhdfd78af_0"
 ---
-
 
 # deeptools
 

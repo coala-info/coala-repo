@@ -2,6 +2,8 @@
 name: delly
 description: Delly is an integrated structural variant discovery tool that identifies genomic rearrangements using paired-end mapping, split-read analysis, and read-depth information. Use when user asks to discover germline structural variants, identify somatic mutations in tumor-normal pairs, call long-read variants, or detect copy-number variations.
 homepage: https://github.com/dellytools/delly
+metadata:
+  docker_image: "quay.io/biocontainers/delly:1.7.2--h4d20210_0"
 ---
 
 # delly

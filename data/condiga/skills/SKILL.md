@@ -2,8 +2,9 @@
 name: condiga
 description: ConDiGA is a pipeline that improves metaproteomics protein sequence databases by integrating taxonomic classification, gene prediction, and contig coverage. Use when user asks to create taxonomically representative protein databases, map predicted genes to reference genomes, or improve protein sequence database accuracy for metaproteomics.
 homepage: https://github.com/metagentools/ConDiGA
+metadata:
+  docker_image: "quay.io/biocontainers/condiga:0.2.2--pyhdfd78af_0"
 ---
-
 
 # condiga
 

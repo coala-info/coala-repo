@@ -4,7 +4,6 @@ description: satuRn is a Bioconductor package for differential transcript usage 
 homepage: https://bioconductor.org/packages/release/bioc/html/satuRn.html
 ---
 
-
 # bioconductor-saturn
 
 ## Overview

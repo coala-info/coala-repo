@@ -1,9 +1,10 @@
 ---
 name: pdb2pqr
-description: "PDB2PQR converts protein structures from PDB to PQR format by repairing missing atoms, adding hydrogens, and assigning force field parameters. Use when user asks to prepare structures for electrostatics calculations, assign charges and radii, or determine pH-dependent protonation states."
+description: PDB2PQR converts protein structures from PDB to PQR format by repairing missing atoms, adding hydrogens, and assigning force field parameters. Use when user asks to prepare structures for electrostatics calculations, assign charges and radii, or determine pH-dependent protonation states.
 homepage: https://github.com/Electrostatics/pdb2pqr
+metadata:
+  docker_image: "biocontainers/pdb2pqr:v2.1.1dfsg-5-deb_cv1"
 ---
-
 
 # pdb2pqr
 

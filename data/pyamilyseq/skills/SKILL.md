@@ -2,6 +2,8 @@
 name: pyamilyseq
 description: PyamilySeq organizes gene sequences into pangenomic families based on sequence identity using either internal clustering or external bioinformatic results. Use when user asks to perform end-to-end pangenome analysis, process external clustering outputs, or extend an existing pangenome with new sequences.
 homepage: https://github.com/NickJD/PyamilySeq
+metadata:
+  docker_image: "quay.io/biocontainers/pyamilyseq:1.3.3--pyhdfd78af_0"
 ---
 
 # pyamilyseq

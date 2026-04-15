@@ -2,8 +2,9 @@
 name: ucsc-fastqtofa
 description: The `ucsc-fastqtofa` tool converts FASTQ files to FASTA format. Use when user asks to 'convert FASTQ to FASTA' or 'transform FASTQ to FASTA'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+metadata:
+  docker_image: "quay.io/biocontainers/ucsc-fastqtofa:482--h0b57e2e_0"
 ---
-
 
 # ucsc-fastqtofa
 

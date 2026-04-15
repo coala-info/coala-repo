@@ -1,9 +1,8 @@
 ---
 name: bioconductor-miaviz
-description: "This tool provides visualization functions for microbiome data stored in TreeSummarizedExperiment objects. Use when user asks to create abundance plots, visualize prevalence, plot phylogenetic trees, or generate time-series trajectories for microbial communities."
+description: This tool provides visualization functions for microbiome data stored in TreeSummarizedExperiment objects. Use when user asks to create abundance plots, visualize prevalence, plot phylogenetic trees, or generate time-series trajectories for microbial communities.
 homepage: https://bioconductor.org/packages/release/bioc/html/miaViz.html
 ---
-
 
 # bioconductor-miaviz
 

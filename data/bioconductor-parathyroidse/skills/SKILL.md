@@ -4,7 +4,6 @@ description: This package provides RNA-Seq experiment data from parathyroid aden
 homepage: https://bioconductor.org/packages/release/data/experiment/html/parathyroidSE.html
 ---
 
-
 # bioconductor-parathyroidse
 
 name: bioconductor-parathyroidse

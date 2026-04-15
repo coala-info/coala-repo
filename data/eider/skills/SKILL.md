@@ -2,6 +2,8 @@
 name: eider
 description: Eider is a command-line utility for executing SQL queries against DuckDB using inline strings, standard input, or external files. Use when user asks to run SQL queries from the terminal, execute templated SQL scripts with parameters, or interact with DuckDB database files and Parquet data.
 homepage: https://github.com/heuermh/eider
+metadata:
+  docker_image: "quay.io/biocontainers/eider:0.3--hdfd78af_0"
 ---
 
 # eider

@@ -4,7 +4,6 @@ description: The MAIT package provides a comprehensive workflow for LC/MS metabo
 homepage: https://bioconductor.org/packages/release/bioc/html/MAIT.html
 ---
 
-
 # bioconductor-mait
 
 ## Overview

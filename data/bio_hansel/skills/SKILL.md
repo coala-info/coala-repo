@@ -1,9 +1,10 @@
 ---
 name: bio_hansel
-description: "bio_hansel performs fast, k-mer based subtyping of microbial pathogens from genomic assemblies or raw sequencing reads. Use when user asks to subtype Salmonella or Mycobacterium tuberculosis, identify specific sub-lineages for outbreak investigation, or process batch genomic data for public health surveillance."
+description: bio_hansel performs fast, k-mer based subtyping of microbial pathogens from genomic assemblies or raw sequencing reads. Use when user asks to subtype Salmonella or Mycobacterium tuberculosis, identify specific sub-lineages for outbreak investigation, or process batch genomic data for public health surveillance.
 homepage: https://github.com/phac-nml/bio_hansel
+metadata:
+  docker_image: "quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0"
 ---
-
 
 # bio_hansel
 

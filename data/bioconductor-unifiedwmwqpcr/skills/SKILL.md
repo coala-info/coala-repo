@@ -4,7 +4,6 @@ description: This package implements the unified Wilcoxon-Mann-Whitney test for 
 homepage: https://bioconductor.org/packages/release/bioc/html/unifiedWMWqPCR.html
 ---
 
-
 # bioconductor-unifiedwmwqpcr
 
 ## Overview

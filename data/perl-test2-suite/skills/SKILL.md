@@ -2,8 +2,9 @@
 name: perl-test2-suite
 description: The perl-test2-suite package provides a modern, modular framework for writing and executing comprehensive unit tests in Perl. Use when user asks to write Perl test scripts, perform deep data structure validation, mock subroutines, or migrate from Test::More to the Test2 ecosystem.
 homepage: http://metacpan.org/pod/Test2-Suite
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test2-suite:0.000163--pl5321hdfd78af_0"
 ---
-
 
 # perl-test2-suite
 

@@ -2,8 +2,9 @@
 name: perl-test-base
 description: The perl-test-base tool provides a data-driven testing framework for Perl that separates test logic from data blocks. Use when user asks to implement data-driven tests in Perl, define test cases in the script's data section, apply custom filters to test inputs, or compare complex multi-line outputs.
 homepage: https://github.com/ingydotnet/test-base-pm
+metadata:
+  docker_image: "quay.io/biocontainers/perl-test-base:0.89--pl526_0"
 ---
-
 
 # perl-test-base
 

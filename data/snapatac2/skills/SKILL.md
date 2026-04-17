@@ -22,9 +22,10 @@ import snapatac2 as sa
 # Import fragment files and create a backed .h5ad file
 data = sa.pp.import_fragments(
     "fragments.tsv.gz",
-    output_file="sample.h5ad",
-    genome=sa.genome.hg38,
-    min_num_fragments=500
+    chrom_sizes=sa.genome.hg38,  # genome object — not a path to chrom_sizes.txt
+    file="sample.h5ad",
+    min_num_fragments=500,
+    sorted_by_barcode=False,  # typical 10x fragments are coordinate-sorted; use True if barcode-sorted
 )
 
 # Generate a tile matrix (e.g., 500bp bins) for initial embedding
@@ -50,17 +51,21 @@ sa.tl.umap(data, use_rep="X_spectral")
 ```
 
 ### 3. Peak Calling and Matrix Generation
-After clustering, call peaks on groups of cells to create a cell-by-peak matrix.
+After clustering, call peaks on groups of cells to create a cell-by-peak matrix. You can also count into a fixed BED (e.g. reference peaks) without MACS3.
 
 ```python
-# Call peaks using MACS3 for each cluster
+# Option A — peaks from MACS3, then merge
 sa.tl.macs3(data, groupby="leiden")
-
-# Merge peaks into a consensus set
 peaks = sa.tl.merge_peaks(sa.tl.get_peaks(data), sa.genome.hg38)
+peak_mat = sa.pp.make_peak_matrix(data, use_peaks=peaks)
 
-# Create the peak-count matrix
-sa.pp.make_peak_matrix(data, use_peaks=peaks)
+# Option B — count into an existing BED (cPeaks, consensus peaks, etc.)
+peak_mat = sa.pp.make_peak_matrix(
+    data,
+    peak_file="peaks.bed",
+)
+# Many 2.x builds return AnnData and do not take output_file= here — persist explicitly:
+peak_mat.write("cell_by_peak.h5ad")
 ```
 
 ### 4. Integration and Batch Correction
@@ -78,10 +83,15 @@ sa.pp.harmony(dataset, batch="sample")
 ```
 
 ## Expert Tips and Best Practices
-- **Memory Management**: Always use the `output_file` parameter in `import_fragments` to ensure the AnnData object is backed by HDF5. This prevents OOM (Out of Memory) errors on large datasets.
+- **Memory Management**: Pass **`file=`** to `import_fragments` so the AnnData is **backed** on disk (HDF5). That avoids loading entire objects into RAM on large runs.
+- **`chrom_sizes`**: Must be a **genome object** (e.g. `sa.genome.hg38`), not a path string to a `chrom_sizes.txt` file.
+- **Fragment sort order**: Default 10x-style files are **coordinate-sorted** — set **`sorted_by_barcode=False`**. If your file is **sorted by barcode**, use **`sorted_by_barcode=True`**.
+- **Peak matrix from BED**: Use **`peak_file="/path/to/peaks.bed"`** in **`make_peak_matrix`**. Do not assume a top-level **`snapatac2.read_regions`** exists across all 2.x builds.
+- **Saving `make_peak_matrix` output**: The function often returns **`AnnData`** without an **`output_file=`** keyword — call **`peak_mat.write("out.h5ad")`** (or follow your version’s backed-write docs).
 - **Feature Selection**: For ATAC-seq, `sa.pp.select_features` typically filters out the top 1% of bins (often representing promoters or repetitive regions) to focus on informative distal regulatory elements.
-- **Genome Objects**: Use the built-in genome objects (e.g., `sa.genome.GRCh38`, `sa.genome.mm10`) to automatically handle chromosome sizes and gene annotations.
-- **Visualization**: Use `sa.pl.umap` for standard embeddings and `sa.pl.coverage` to visualize "pseudo-bulk" tracks for specific genomic regions across clusters.
+- **Genome Objects**: Use the built-in genome objects (e.g. `sa.genome.hg38`, `sa.genome.mm10`) for chromosome sizes and gene annotations where the API expects them.
+- **Visualization**: Use `sa.pl.umap` for standard embeddings and `sa.pl.coverage` to visualize pseudo-bulk tracks for specific genomic regions across clusters.
+
 
 ## Reference documentation
 - [SnapATAC2 Overview](./references/scverse_org_SnapATAC2_index.html.md)

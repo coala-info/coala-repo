@@ -92,10 +92,17 @@ inputs:
       position: 103
       prefix: -S
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: index
+    type: File
+    secondaryFiles: .tbi
+    doc: Compressed input file with tabix index (.tbi) attached as a secondary file.
+    outputBinding:
+      glob: $(inputs.input_file.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tabix:1.11--hdfd78af_0
-stdout: tabix.out

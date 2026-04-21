@@ -30,6 +30,7 @@ Filtering is performed using expressions with `-i` (include) or `-e` (exclude).
 - **List Samples**: `bcftools query -l file.vcf.gz`
 - **Extract Fields**: `bcftools query -f'%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' file.vcf.gz`
 - **Subset Samples**: `bcftools view -s sample1,sample2 -Oz -o subset.vcf.gz file.vcf.gz`
+- **Subset by Region**: `bcftools view --regions chr1:1000-2000,chr2:500-600 -Oz -o region.vcf.gz file.vcf.gz` (or `-r`; pass a BED with `-R file.bed`). The input must be compressed and **indexed** (e.g. `bcftools index file.vcf.gz` to produce `file.vcf.gz.csi` or `.tbi`) so random access works.
 
 ### Annotating and Reheadering
 - **Add Header Lines**: `bcftools annotate -h header_lines.txt in.vcf.gz`

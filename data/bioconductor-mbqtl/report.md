@@ -12,5 +12,6 @@ The package is compatible with dataframe, MRexperiment and text formats.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Mercedeh66/mbQTL
+- **Docker Image**: quay.io/biocontainers/bioconductor-mbqtl:1.10.0--r45hdfd78af_0
 - **Skill**: generated
 

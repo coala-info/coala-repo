@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-bcbiobase:0.9.0--r44hdfd78af_1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

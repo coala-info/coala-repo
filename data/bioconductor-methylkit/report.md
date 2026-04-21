@@ -12,5 +12,6 @@ The package is designed to deal with sequencing data from RRBS and its variants,
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/al2na/methylKit
+- **Docker Image**: quay.io/biocontainers/bioconductor-methylkit:1.36.0--r45ha27e39d_0
 - **Skill**: generated
 

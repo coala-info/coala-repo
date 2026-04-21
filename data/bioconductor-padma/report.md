@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/andreamrau/padma
+- **Docker Image**: quay.io/biocontainers/bioconductor-padma:1.20.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ Using simple input, this package creates plots of gene models. Users can create 
 - **Version**: 1.1.0
 - **Author**: J Grey Monroe [aut, cre]
 - **Maintainer**: J Grey Monroe <greymonroe at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-genemodel:1.1.0--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 285
 - **Last updated**: 2025-04-22

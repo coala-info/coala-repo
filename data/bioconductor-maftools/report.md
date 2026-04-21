@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/PoisonAlien/maftools
+- **Docker Image**: quay.io/biocontainers/bioconductor-maftools:2.26.0--r45h01b2380_0
 - **Skill**: generated
 

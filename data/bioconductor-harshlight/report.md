@@ -12,5 +12,6 @@ The package is used to detect extended, diffuse and compact blemishes on microar
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-harshlight:1.78.0--r44h3df3fcb_0
 - **Skill**: generated
 

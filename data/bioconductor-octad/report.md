@@ -12,5 +12,6 @@ The package offers deep-learning based reference tissue selection, disease gene 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-octad:1.12.0--r45hdfd78af_1
 - **Skill**: generated
 

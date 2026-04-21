@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rubic:1.0.3--r34hdfd78af_8
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

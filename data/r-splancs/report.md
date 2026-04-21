@@ -10,6 +10,7 @@ The Splancs package was written as an enhancement to S-Plus for display and anal
 - **Version**: 2.01-45
 - **Author**: Roger Bivand [cre], Barry Rowlingson [aut], Peter Diggle [aut], Giovanni Petris [ctb], Stephen Eglen [ctb]
 - **Maintainer**: Roger Bivand <Roger.Bivand at nhh.no>
+- **Docker Image**: quay.io/biocontainers/r-splancs:2.01_38--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 145
 - **Last updated**: 2025-04-22

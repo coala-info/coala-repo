@@ -16,6 +16,7 @@ Provides a set of functions to analyse
 - **Version**: 1.3.3
 - **Author**: Matthieu Lesnoff and Renaud Lancelot
 - **Maintainer**: Renaud Lancelot <renaud.lancelot at cirad.fr>
+- **Docker Image**: quay.io/biocontainers/r-aod:1.3--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 482
 - **Last updated**: 2025-04-22

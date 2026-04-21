@@ -10,6 +10,7 @@ R package rcpptoml (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rcpptoml:0.1.3--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 4.6K
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package also includes functions for simulating data with these patterns from
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kdkorthauer/scDD
+- **Docker Image**: quay.io/biocontainers/bioconductor-scdd:1.34.0--r45hdfd78af_0
 - **Skill**: generated
 

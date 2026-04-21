@@ -12,5 +12,6 @@ The package comprises a set of pretrained machine learning models to predict bas
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/grisslab/scAnnotatR
+- **Docker Image**: quay.io/biocontainers/bioconductor-scannotatr:1.16.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package contains functions that are intended for extracting the signatures o
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-svaplsseq:1.13.0--r40_0
 - **Skill**: generated
 

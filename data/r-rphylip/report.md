@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rphylip:0.1_23--r3.4.1_1
 - **Skill**: generated
 - **Total Downloads**: 242
 - **Last updated**: 2025-04-22

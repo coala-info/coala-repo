@@ -12,5 +12,6 @@ The package contains functions that can be used to compare expression measures o
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-spktools:1.66.0--r45hdfd78af_0
 - **Skill**: generated
 

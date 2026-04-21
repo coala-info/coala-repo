@@ -10,6 +10,7 @@ R package ic10 (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ic10:2.0.2--r45h3121a25_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

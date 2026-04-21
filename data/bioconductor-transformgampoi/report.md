@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/const-ae/transformGamPoi
+- **Docker Image**: quay.io/biocontainers/bioconductor-transformgampoi:1.16.0--r45ha27e39d_0
 - **Skill**: generated
 

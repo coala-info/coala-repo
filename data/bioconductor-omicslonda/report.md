@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/aametwally/OmicsLonDA
+- **Docker Image**: quay.io/biocontainers/bioconductor-omicslonda:1.14.0--r42hdfd78af_0
 - **Skill**: generated
 

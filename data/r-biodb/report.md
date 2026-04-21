@@ -10,6 +10,7 @@ R package biodb (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-biodb:1.2.2--r45hd63eeec_10
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

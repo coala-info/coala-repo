@@ -10,6 +10,7 @@ R package rsolnp (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rsolnp:1.16--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 54
 - **Last updated**: 2025-04-22

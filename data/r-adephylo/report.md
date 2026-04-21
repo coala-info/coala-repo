@@ -10,6 +10,7 @@ Multivariate tools to analyze comparative data, i.e. a phylogeny and some traits
 - **Version**: 1.1-17
 - **Author**: Stéphane Dray [aut], Thibaut Jombart [aut], Anders Ellern Bilgrau [ctb], Aurélie Siberchicot [ctb, cre]
 - **Maintainer**: Aurélie Siberchicot <aurelie.siberchicot at univ-lyon1.fr>
+- **Docker Image**: quay.io/biocontainers/r-adephylo:1.1_11--r351h96ca727_3
 - **Skill**: generated
 - **Total Downloads**: 50
 - **Last updated**: 2025-04-22

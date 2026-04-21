@@ -10,6 +10,7 @@ R package chord (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-chord:2.03--r43hdfd78af_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

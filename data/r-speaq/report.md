@@ -11,6 +11,7 @@ Makes Nuclear Magnetic Resonance spectroscopy (NMR spectroscopy) data analysis a
 - **Version**: 2.7.0
 - **Author**: Charlie Beirnaert, Trung Nghia Vu, Pieter Meysman, Kris Laukens and Dirk Valkenborg
 - **Maintainer**: Charlie Beirnaert <charlie_beirnaert at icloud.com>
+- **Docker Image**: quay.io/biocontainers/r-speaq:2.7.0--r45h3121a25_4
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

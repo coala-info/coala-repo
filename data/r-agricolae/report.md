@@ -10,6 +10,7 @@ Original idea was presented in the thesis "A statistical analysis tool for agric
 - **Version**: 1.3-7
 - **Author**: Felipe de Mendiburu
 - **Maintainer**: Felipe de Mendiburu <fmendiburu at lamolina.edu.pe>
+- **Docker Image**: quay.io/biocontainers/r-agricolae:1.2_4--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 114
 - **Last updated**: 2025-04-22

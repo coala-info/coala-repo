@@ -12,5 +12,6 @@ the package offers a set of further analysis features to gain insights like the 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIONF/PhyloProfile
+- **Docker Image**: quay.io/biocontainers/bioconductor-phyloprofile:2.2.2--r45hdfd78af_0
 - **Skill**: generated
 

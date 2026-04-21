@@ -12,5 +12,6 @@ the package is to find zones with similar transcriptional profiles and spatially
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/liuwd15/tomoda
+- **Docker Image**: quay.io/biocontainers/bioconductor-tomoda:1.20.0--r45hdfd78af_0
 - **Skill**: generated
 

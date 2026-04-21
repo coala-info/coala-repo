@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/yigbt/multiGSEA
+- **Docker Image**: quay.io/biocontainers/bioconductor-multigsea:1.20.0--r45hdfd78af_0
 - **Skill**: generated
 

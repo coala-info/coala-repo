@@ -18,6 +18,7 @@ Visualises simple graphs (networks) based on a transition matrix, utilities to p
 - **Version**: 1.6.5
 - **Author**: Karline Soetaert
 - **Maintainer**: Karline Soetaert <karline.soetaert at nioz.nl>
+- **Docker Image**: quay.io/biocontainers/r-diagram:1.6.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 6.3K
 - **Last updated**: 2025-04-22

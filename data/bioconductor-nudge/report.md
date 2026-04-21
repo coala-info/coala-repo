@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N. Dean &#x3c;&#x6e;&#x65;&#x6d;&#x61;&#x64;&#x20;&#x61;&#x74;&#x20;&#x73;&#x74;&#x61;&#x74;&#x2e;&#x77;&#x61;&#x73;&#x68;&#x69;&#x6e;&#x67;&#x74;&#x6f;&#x6e;&#x2e;&#x65;&#x64;&#x75;&#x3e; and A. E. Raftery &#x3c;&#x72;&#x61;&#x66;&#x74;&#x65;&#x72;&#x79;&#x20;&#x61;&#x74;&#x20;&#x73;&#x74;&#x61;&#x74;&#x2e;&#x77;&#x61;&#x73;&#x68;&#x69;&#x6e;&#x67;&#x74;&#x6f;&#x6e;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **Maintainer**: N. Dean &#x3c;&#x6e;&#x65;&#x6d;&#x61;&#x64;&#x20;&#x61;&#x74;&#x20;&#x73;&#x74;&#x61;&#x74;&#x2e;&#x77;&#x61;&#x73;&#x68;&#x69;&#x6e;&#x67;&#x74;&#x6f;&#x6e;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-nudge:1.46.0--r341_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package is developed for generating refined lists of signature genes from mu
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/mastR
+- **Docker Image**: quay.io/biocontainers/bioconductor-mastr:1.10.2--r45hdfd78af_0
 - **Skill**: generated
 

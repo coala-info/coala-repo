@@ -10,6 +10,7 @@ R package enrichr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-enrichr:1.0--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 380
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.0.6
 - **Author**: Markus Jochim [cre, aut], Raphael Winkelmann [aut], Lasse Bombien [aut], Michel Scheffers [aut]
 - **Maintainer**: Markus Jochim <markusjochim at phonetik.uni-muenchen.de>
+- **Docker Image**: quay.io/biocontainers/r-wrassp:0.1.4--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 401
 - **Last updated**: 2025-04-22

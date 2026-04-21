@@ -12,6 +12,7 @@ A coalescent simulator that allows the rapid simulation of
 - **Version**: 1.7.5
 - **Author**: Paul Staab [aut, cph], Zhu Sha [aut, cph], Dirk Metzler [aut, cre, cph, ths], Gerton Lunter [aut, cph, ths]
 - **Maintainer**: Dirk Metzler <metzler at bio.lmu.de>
+- **Docker Image**: quay.io/biocontainers/r-scrm:1.7.2_4--r351h29659fb_1
 - **Skill**: generated
 - **Total Downloads**: 106
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package provides functions for estimating coordinates of individuals and var
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-missrows:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,6 +12,7 @@ Provides a simple yet powerful logging utility. Based loosely on
 - **Version**: 1.4.9
 - **Author**: Brian Lee Yung Rowe [aut, cre]
 - **Maintainer**: Brian Lee Yung Rowe <r at zatonovo.com>
+- **Docker Image**: quay.io/biocontainers/r-futile.logger:1.4.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.3K
 - **Last updated**: 2025-04-22

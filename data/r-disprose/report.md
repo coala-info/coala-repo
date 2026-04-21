@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-disprose:0.1.6--r44h3342da4_3
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

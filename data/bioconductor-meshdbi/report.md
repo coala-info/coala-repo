@@ -12,5 +12,6 @@ The package is unified implementation of MeSH.db, MeSH.AOR.db, and MeSH.PCR.db a
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-meshdbi:1.46.0--r45hdfd78af_0
 - **Skill**: generated
 

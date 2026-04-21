@@ -10,6 +10,7 @@ R package lncpipereporter (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-lncpipereporter:0.1.1--r44h7b50bb2_10
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

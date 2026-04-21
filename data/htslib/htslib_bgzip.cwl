@@ -5,11 +5,8 @@ label: htslib_bgzip
 doc: Block compression/decompression utility
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input file(s) to process
+    type: File
+    doc: Input file to process
     inputBinding:
       position: 1
   - id: binary
@@ -54,8 +51,10 @@ inputs:
       position: 102
       prefix: --index
   - id: index_name
-    type: File
-    doc: name of BGZF index file [file.gz.gzi]
+    type:
+      - 'null'
+      - string
+    doc: name of BGZF index file [file.gz.gzi] (path string; not a pre-existing staged input)
     inputBinding:
       position: 102
       prefix: --index-name

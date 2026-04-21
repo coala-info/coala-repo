@@ -11,6 +11,7 @@ Define a command-line interface by just giving it
 - **Version**: 0.7.2
 - **Author**: Edwin de Jonge [aut, cre]
 - **Maintainer**: Edwin de Jonge <edwindjonge at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-docopt:0.4.3.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.5K
 - **Last updated**: 2025-04-22

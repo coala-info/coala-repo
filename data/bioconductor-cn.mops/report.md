@@ -12,5 +12,6 @@ The package supplies functions to convert BAM files into read count matrices or 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-cn.mops:1.56.0--r45ha27e39d_0
 - **Skill**: generated
 

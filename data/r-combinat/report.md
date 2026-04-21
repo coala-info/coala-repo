@@ -10,6 +10,7 @@ routines for combinatorics</p>
 - **Version**: 0.0-8
 - **Author**: Scott Chasalow
 - **Maintainer**: Vince Carey <stvjc at channing.harvard.edu>
+- **Docker Image**: quay.io/biocontainers/r-combinat:0.0_8--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 833
 - **Last updated**: 2025-04-22

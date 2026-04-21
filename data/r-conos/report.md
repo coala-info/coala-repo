@@ -10,6 +10,7 @@ Wires together large collections of single-cell RNA-seq datasets, which allows f
 - **Version**: 1.5.2
 - **Author**: Viktor Petukhov [aut], Nikolas Barkas [aut], Peter Kharchenko [aut], Weiliang Qiu [ctb], Evan Biederstedt [aut, cre]
 - **Maintainer**: Evan Biederstedt <evan.biederstedt at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-conos:1.5.3--r45h0df16ae_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

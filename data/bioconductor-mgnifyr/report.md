@@ -12,5 +12,6 @@ The package can be used to import microbial data for instance into TreeSummarize
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/EBI-Metagenomics/MGnifyR
+- **Docker Image**: quay.io/biocontainers/bioconductor-mgnifyr:1.6.1--r45hdfd78af_0
 - **Skill**: generated
 

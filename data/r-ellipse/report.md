@@ -11,6 +11,7 @@ N/A
 - **Version**: 0.5.0
 - **Author**: Duncan Murdoch and E. D. Chow (porting to R by Jesus M. Frias Celayeta)
 - **Maintainer**: Duncan Murdoch <murdoch.duncan at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-ellipse:0.3_8--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.1K
 - **Last updated**: 2025-04-22

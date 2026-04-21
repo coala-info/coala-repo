@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kstreet13/slingshot
+- **Docker Image**: quay.io/biocontainers/bioconductor-slingshot:2.18.0--r45hdfd78af_0
 - **Skill**: generated
 

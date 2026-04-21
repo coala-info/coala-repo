@@ -10,6 +10,7 @@ R package gprofiler (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-gprofiler:0.6.1--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 283
 - **Last updated**: 2025-04-22

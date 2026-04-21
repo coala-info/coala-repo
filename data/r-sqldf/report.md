@@ -17,6 +17,7 @@ The sqldf() function is typically passed a single argument which
 - **Version**: 0.4-12
 - **Author**: G. Grothendieck [aut, cre]
 - **Maintainer**: G. Grothendieck <ggrothendieck at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-sqldf:0.4_10--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 73
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package provides S4 classes and methods to filter, summarise and visualise g
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kevinrue/TVTB
+- **Docker Image**: quay.io/biocontainers/bioconductor-tvtb:1.36.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,6 +12,7 @@ A command line parser inspired by Python's 'optparse' library to
 - **Version**: 1.7.5
 - **Author**: Trevor L. Davis [aut, cre], Allen Day [ctb] (Some documentation and examples ported from the getopt package.), Python Software Foundation [ctb] (Some documentation from the optparse Python module.), Steve Lianoglou [ctb], Jim Nikelski [ctb], Kirill Müller [ctb], Peter Humburg [ctb], Rich FitzJohn [ctb], Gyu Jin Choi [ctb]
 - **Maintainer**: Trevor L. Davis <trevor.l.davis at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-optparse:1.7.3
 - **Skill**: generated
 - **Total Downloads**: 5.9K
 - **Last updated**: 2025-04-22

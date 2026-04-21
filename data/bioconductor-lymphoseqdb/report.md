@@ -12,5 +12,6 @@ the package LymphoSeq.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-lymphoseqdb:0.99.2--r45hdfd78af_14
 - **Skill**: generated
 

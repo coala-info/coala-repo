@@ -10,6 +10,7 @@ R package ngsplot (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ngsplot:2.63--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

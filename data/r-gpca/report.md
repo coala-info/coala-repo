@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-gpca:1.0--r351h6115d3f_1
 - **Skill**: not generated
 - **Total Downloads**: 183
 - **Last updated**: 2025-04-22

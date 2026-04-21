@@ -13,6 +13,7 @@ Provides Map, Reduce and Filter variants to generate jobs on
 - **Version**: 1.10
 - **Author**: Bernd Bischl [aut, cre], Michel Lang [aut], Henrik Bengtsson [aut]
 - **Maintainer**: Bernd Bischl <bernd_bischl at gmx.net>
+- **Docker Image**: quay.io/biocontainers/r-batchjobs:1.6--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 40
 - **Last updated**: 2025-04-22

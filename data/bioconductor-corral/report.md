@@ -12,5 +12,6 @@ The package also includes additional options, including variations of CA to addr
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-corral:1.20.0--r45h575d39b_0
 - **Skill**: generated
 

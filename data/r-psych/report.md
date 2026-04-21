@@ -11,6 +11,7 @@ A general purpose toolbox developed originally for personality, psychometric the
 - **Version**: 2.6.1
 - **Author**: William Revelle [aut, cre]
 - **Maintainer**: William Revelle <revelle at northwestern.edu>
+- **Docker Image**: quay.io/biocontainers/r-psych:1.7.8--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 144.4K
 - **Last updated**: 2025-04-22

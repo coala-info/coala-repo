@@ -12,5 +12,6 @@ The package implements two main algorithms to answer two key questions: a SCORE 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/IMB-Computational-Genomics-Lab/scGPS
+- **Docker Image**: quay.io/biocontainers/bioconductor-scgps:1.24.0--r45ha27e39d_0
 - **Skill**: generated
 

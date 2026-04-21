@@ -12,5 +12,6 @@ The package can be combined with timeOmics to incorporate time-course expression
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/abodein/netOmics
+- **Docker Image**: quay.io/biocontainers/bioconductor-netomics:1.8.0--r43hdfd78af_0
 - **Skill**: generated
 

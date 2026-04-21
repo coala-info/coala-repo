@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UBod/msa
+- **Docker Image**: quay.io/biocontainers/bioconductor-msa:1.42.0--r45he8cd136_0
 - **Skill**: generated
 

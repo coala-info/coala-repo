@@ -11,6 +11,7 @@ N/A
 - **Version**: 0.17
 - **Author**: Jesse Krijthe [aut, cre], Laurens van der Maaten [cph] (Author of original C++ code)
 - **Maintainer**: Jesse Krijthe <jkrijthe at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-rtsne:0.13--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 2.7K
 - **Last updated**: 2025-04-22

@@ -12,6 +12,7 @@ Reads data files acquired by Bruker Daltonics' matrix-assisted
 - **Version**: 1.9.3
 - **Author**: Sebastian Gibb [aut, cre], Samuel Granjeaud [ctb], Alan Race [ctb]
 - **Maintainer**: Sebastian Gibb <mail at sebastiangibb.de>
+- **Docker Image**: quay.io/biocontainers/r-readbrukerflexdata:1.8.5--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 270
 - **Last updated**: 2025-04-22

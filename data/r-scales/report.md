@@ -11,6 +11,7 @@ Graphical scales map data to aesthetics, and provide methods
 - **Version**: 1.4.0
 - **Author**: Hadley Wickham [aut], Thomas Lin Pedersen [cre, aut], Dana Seidel [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Thomas Lin Pedersen <thomas.pedersen at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-scales:0.4.1--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 621.8K
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/caggtaagtat/ModCon
+- **Docker Image**: quay.io/biocontainers/bioconductor-modcon:1.18.0--pl5321r45hdfd78af_0
 - **Skill**: generated
 

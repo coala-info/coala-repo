@@ -18,6 +18,7 @@ For curve, surface and function fitting with an emphasis
 - **Version**: 17.1
 - **Author**: Douglas Nychka [aut, cre], Reinhard Furrer [aut], John Paige [aut], Stephan Sain [aut], Florian Gerber [aut], Matthew Iverson [aut], Rider Johnson [aut]
 - **Maintainer**: Douglas Nychka <douglasnychka at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-fields:8.10--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 614
 - **Last updated**: 2025-04-22

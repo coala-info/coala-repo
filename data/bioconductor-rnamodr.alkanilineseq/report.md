@@ -12,5 +12,6 @@ The package builds on the core functionality of the RNAmodR package to detect sp
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FelixErnst/RNAmodR.AlkAnilineSeq
+- **Docker Image**: quay.io/biocontainers/bioconductor-rnamodr.alkanilineseq:1.24.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -17,6 +17,7 @@ Basic wavelet routines for time series (1D), image (2D) and array
 - **Version**: 1.8.5
 - **Author**: Brandon Whitcher
 - **Maintainer**: Brandon Whitcher <bwhitcher at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-waveslim:1.7.5--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 428
 - **Last updated**: 2025-04-22

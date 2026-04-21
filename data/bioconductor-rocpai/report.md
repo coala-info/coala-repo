@@ -12,5 +12,6 @@ The package analyzes the Curve ROC, identificates it among different types of Cu
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/juanpegarcia/ROCpAI
+- **Docker Image**: quay.io/biocontainers/bioconductor-rocpai:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

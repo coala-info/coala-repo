@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Winnie09/SCATEData
+- **Docker Image**: quay.io/biocontainers/bioconductor-scatedata:1.10.0--r43hdfd78af_0
 - **Skill**: generated
 

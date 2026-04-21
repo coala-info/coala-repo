@@ -10,6 +10,7 @@ This is a package for estimating the copula mixture model and plotting correspon
 - **Version**: 1.3
 - **Author**: Qunhua Li
 - **Maintainer**: Qunhua Li <qunhua.li at psu.edu>
+- **Docker Image**: quay.io/biocontainers/r-idr:1.2--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 319
 - **Last updated**: 2025-04-22

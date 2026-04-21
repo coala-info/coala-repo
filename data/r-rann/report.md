@@ -16,6 +16,7 @@ Finds the k nearest neighbours for every point in a
 - **Version**: 2.6.2
 - **Author**: Gregory Jefferis [aut, cre], Samuel E. Kemp [aut], Kirill Müller [ctb], Sunil Arya [aut, cph], David Mount [aut, cph], University of Maryland [cph] (ANN library is copyright University of Maryland and Sunil Arya and David Mount. See file COPYRIGHT for details)
 - **Maintainer**: Gregory Jefferis <jefferis at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-rann:2.5--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 2.6K
 - **Last updated**: 2025-04-22

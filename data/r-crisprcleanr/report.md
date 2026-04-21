@@ -10,6 +10,7 @@ R package crisprcleanr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-crisprcleanr:3.0.0--r44hdfd78af_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

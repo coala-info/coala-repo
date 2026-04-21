@@ -10,6 +10,7 @@ R package cdseq (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-cdseq:0--r44h9948957_6
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

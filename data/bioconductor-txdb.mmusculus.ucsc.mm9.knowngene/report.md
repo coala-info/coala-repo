@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-txdb.mmusculus.ucsc.mm9.knowngene:3.2.2--r45hdfd78af_18
 - **Skill**: generated
 

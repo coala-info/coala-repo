@@ -12,5 +12,6 @@ The package proposes several sparse multivariate models we have developed to ide
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mixOmicsTeam/mixOmics
+- **Docker Image**: quay.io/biocontainers/bioconductor-mixomics:6.34.0--r45h575d39b_0
 - **Skill**: generated
 

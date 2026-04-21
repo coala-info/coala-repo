@@ -10,6 +10,7 @@ R package imputelcmd (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-imputelcmd:2.1--r45h3342da4_4
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -14,6 +14,7 @@ Perform large scale genomic data retrieval and functional annotation retrieval. 
 - **Version**: 1.0.7
 - **Author**: Hajk-Georg Drost [aut, cre], Haakon Tjeldnes [aut, ctb]
 - **Maintainer**: Hajk-Georg Drost <hajk-georg.drost at tuebingen.mpg.de>
+- **Docker Image**: quay.io/biocontainers/r-biomartr:1.0.7--r45h3342da4_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

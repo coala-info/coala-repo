@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Karl Kornacker Developer [aut], Tony Handstad Developer [aut, cre]
 - **Maintainer**: Thomas Carroll &#x3c;&#x74;&#x63;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x63;&#x73;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-triform:1.29.0--r40_0
 - **Skill**: generated
 

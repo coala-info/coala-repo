@@ -12,5 +12,6 @@ The package builds on the core functionality of the RNAmodR package to detect sp
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FelixErnst/RNAmodR.RiboMethSeq
+- **Docker Image**: quay.io/biocontainers/bioconductor-rnamodr.ribomethseq:1.24.0--r45hdfd78af_0
 - **Skill**: generated
 

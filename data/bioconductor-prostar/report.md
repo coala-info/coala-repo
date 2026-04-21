@@ -12,5 +12,6 @@ The package Prostar (Proteomics statistical analysis with R) is a Bioconductor d
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/edyp-lab/Prostar
+- **Docker Image**: quay.io/biocontainers/bioconductor-prostar:1.42.0--r45hdfd78af_0
 - **Skill**: generated
 

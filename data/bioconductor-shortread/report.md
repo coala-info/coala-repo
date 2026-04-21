@@ -12,5 +12,6 @@ The package includes functions for filtering and trimming reads, and for generat
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/ShortRead
+- **Docker Image**: quay.io/biocontainers/bioconductor-shortread:1.68.0--r45ha27e39d_0
 - **Skill**: generated
 

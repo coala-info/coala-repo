@@ -12,5 +12,6 @@ The package also includes functions of estimating the methylation levels from Me
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-methyanalysis:1.32.0--r40hdfd78af_1
 - **Skill**: generated
 

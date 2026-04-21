@@ -12,6 +12,7 @@ Package for Bayesian model averaging and variable selection for linear models,
 - **Version**: 3.18.20
 - **Author**: Adrian Raftery [aut], Jennifer Hoeting [aut], Chris Volinsky [aut], Ian Painter [aut], Ka Yee Yeung [aut], Hana Sevcikova [cre]
 - **Maintainer**: Hana Sevcikova <hanas at uw.edu>
+- **Docker Image**: quay.io/biocontainers/r-bma:3.18.6--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 46
 - **Last updated**: 2025-04-22

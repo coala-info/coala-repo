@@ -12,5 +12,6 @@ The package also provides functions to calculate and visualise MS2 fragment ions
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/PSM
+- **Docker Image**: quay.io/biocontainers/bioconductor-psmatch:1.14.0--r45hdfd78af_0
 - **Skill**: generated
 

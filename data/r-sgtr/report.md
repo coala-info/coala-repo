@@ -10,6 +10,7 @@ R package sgtr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-sgtr:1.1.4--r44h503566f_8
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ The package is built around a shiny "gadget" to allow the exploration of the dat
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-spatialcpie:1.26.0--r45hdfd78af_0
 - **Skill**: generated
 

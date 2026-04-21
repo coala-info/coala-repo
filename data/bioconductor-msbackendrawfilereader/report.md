@@ -12,5 +12,6 @@ The package is generalizing the functionality introduced by the rawrr package Me
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fgcz/MsBackendRawFileReader
+- **Docker Image**: quay.io/biocontainers/bioconductor-msbackendrawfilereader:1.16.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-chbutils:0.1_2017_10_26--r44hdfd78af_7
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

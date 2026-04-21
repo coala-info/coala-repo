@@ -12,5 +12,6 @@ The package vignette describes how the data provided here were derived from the 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-pasilla:1.38.0--r45hdfd78af_0
 - **Skill**: generated
 

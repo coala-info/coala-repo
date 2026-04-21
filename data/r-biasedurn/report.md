@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-biasedurn:1.07--r3.2.2_0
 - **Skill**: not generated
 - **Total Downloads**: 832
 - **Last updated**: 2025-04-22

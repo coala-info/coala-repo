@@ -10,6 +10,7 @@ R package intlim (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-intlim:v.1.1.0--r36_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

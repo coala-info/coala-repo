@@ -12,5 +12,6 @@ The package uses ggplot2 and ComplexHeatmap graphics facilities for curve and he
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/pmoulos/recoup
+- **Docker Image**: quay.io/biocontainers/bioconductor-recoup:1.38.0--r45hdfd78af_0
 - **Skill**: generated
 

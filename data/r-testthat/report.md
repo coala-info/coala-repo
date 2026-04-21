@@ -13,6 +13,7 @@ Software testing is important, but, in part because it is
 - **Version**: 3.3.2
 - **Author**: Hadley Wickham [aut, cre], Posit Software, PBC [cph, fnd], R Core team [ctb] (Implementation of utils::recover())
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-testthat:1.0.2--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 118.7K
 - **Last updated**: 2025-04-22

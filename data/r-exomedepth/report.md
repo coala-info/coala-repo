@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-exomedepth:1.1.18--r44hb2a3317_0
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,6 +12,7 @@ An easy way to determine which directories on the users
 - **Version**: 0.3.4
 - **Author**: Hadley Wickham [trl, cre, cph], Sridhar Ratnakumar [aut], Trent Mick [aut], ActiveState [cph] (R/appdir.r, R/cache.r, R/data.r, R/log.r translated from appdirs), Eddy Petrisor [ctb], Trevor Davis [trl, aut], Gabor Csardi [ctb], Gregory Jefferis [ctb], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-rappdirs:0.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 73.6K
 - **Last updated**: 2025-04-22

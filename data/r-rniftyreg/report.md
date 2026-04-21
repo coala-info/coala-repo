@@ -10,6 +10,7 @@ N/A
 - **Version**: 2.8.4
 - **Author**: Jon Clayden [cre, aut], Marc Modat [aut], Benoit Presles [aut], Thanasis Anthopoulos [aut], Pankaj Daga [aut]
 - **Maintainer**: Jon Clayden <code at clayden.org>
+- **Docker Image**: quay.io/biocontainers/r-rniftyreg:2.2.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 43
 - **Last updated**: 2025-04-22

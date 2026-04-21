@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-xmlrpc:0.2_4--r44h9ee0642_8
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

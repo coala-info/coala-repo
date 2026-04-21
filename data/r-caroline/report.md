@@ -18,6 +18,7 @@ The caroline R library contains dozens of functions useful
 - **Version**: 0.9.9
 - **Author**: David Schruth [aut, cre]
 - **Maintainer**: David Schruth <code at anthropoidea.org>
+- **Docker Image**: quay.io/biocontainers/r-caroline:0.7.6--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 296
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package includes functions to: (1) construct global linkage maps between gen
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-trigger:1.52.0--r44h3df3fcb_0
 - **Skill**: generated
 

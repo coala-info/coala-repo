@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ebimetagenomics:0.6--r351h6115d3f_1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ R package dinamic.duo (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-dinamic.duo:1.0.4--r44heae9e1c_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

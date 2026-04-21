@@ -15,6 +15,7 @@ A general framework for finite mixtures of regression
 - **Version**: 2.3-20
 - **Author**: Bettina Gruen [aut, cre], Friedrich Leisch [aut], Deepayan Sarkar [ctb], Frederic Mortier [ctb], Nicolas Picard [ctb]
 - **Maintainer**: Bettina Gruen <Bettina.Gruen at R-project.org>
+- **Docker Image**: quay.io/biocontainers/r-flexmix:2.3_14--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 530
 - **Last updated**: 2025-04-22

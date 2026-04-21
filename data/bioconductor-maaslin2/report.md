@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/biobakery/maaslin2
+- **Docker Image**: quay.io/biocontainers/bioconductor-maaslin2:1.18.0--r43hdfd78af_0
 - **Skill**: generated
 

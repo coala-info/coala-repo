@@ -13,6 +13,7 @@ Genomic regions processing using open-source command line tools such as 'BEDTool
 - **Version**: 1.1.5
 - **Author**: Syed Haider [aut], Daryl Waggott [aut], Emilie Lalonde [ctb], Clement Fung [ctb], Helena Winata [ctb], Dan Knight [ctb], Michael Chirico [ctb], Melinda Luo [ctb], Paul C. Boutros [aut, cre, cph]
 - **Maintainer**: Paul C. Boutros <pboutros at sbpdiscovery.org>
+- **Docker Image**: quay.io/biocontainers/r-bedr:1.0.4--r351h6115d3f_1
 - **Skill**: generated
 - **Total Downloads**: 39
 - **Last updated**: 2025-04-22

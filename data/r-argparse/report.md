@@ -12,6 +12,7 @@ A command line parser to
 - **Version**: 2.3.1
 - **Author**: Trevor L. Davis [aut, cre], Allen Day [ctb] (Some documentation and examples ported from the getopt package.), Python Software Foundation [ctb] (Some documentation from the argparse Python module.), Paul Newell [ctb]
 - **Maintainer**: Trevor L. Davis <trevor.l.davis at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-argparse:1.0.1--py35r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 153.1K
 - **Last updated**: 2025-04-22

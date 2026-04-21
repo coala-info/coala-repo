@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/taoshengxu/CancerSubtypes
+- **Docker Image**: quay.io/biocontainers/bioconductor-cancersubtypes:1.26.0--r43hdfd78af_0
 - **Skill**: generated
 

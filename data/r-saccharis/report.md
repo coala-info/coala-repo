@@ -10,6 +10,7 @@ R package saccharis (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-saccharis:1.0.5--r43hdfd78af_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

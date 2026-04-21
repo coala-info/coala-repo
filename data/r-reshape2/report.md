@@ -11,6 +11,7 @@ Flexibly restructure and aggregate data using
 - **Version**: 0.8.10
 - **Author**: Hadley Wickham [aut, cre]
 - **Maintainer**: Hadley Wickham <hadley at rstudio.com>
+- **Docker Image**: quay.io/biocontainers/r-reshape2:1.4.3
 - **Skill**: generated
 - **Total Downloads**: 539.1K
 - **Last updated**: 2025-04-22

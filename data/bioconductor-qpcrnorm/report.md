@@ -12,5 +12,6 @@ The package contains functions to perform normalization of high-throughput qPCR 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-qpcrnorm:1.68.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -11,6 +11,7 @@ Implements a James-Stein-type shrinkage estimator for
 - **Version**: 1.6.10
 - **Author**: Juliane Schafer, Rainer Opgen-Rhein, Verena Zuber, Miika Ahdesmaki, A. Pedro Duarte Silva, and Korbinian Strimmer.
 - **Maintainer**: Korbinian Strimmer <strimmerlab at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-corpcor:1.6.8--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 676
 - **Last updated**: 2025-04-22

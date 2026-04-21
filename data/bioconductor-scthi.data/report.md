@@ -12,5 +12,6 @@ the package scTHI.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-scthi.data:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

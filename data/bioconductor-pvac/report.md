@@ -12,5 +12,6 @@ The package contains the function for filtering genes by the proportion of varia
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-pvac:1.58.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ R package netcomi (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-netcomi:1.1.0--r42hdfd78af_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ The package also provides methods for retrieving enriched pathways.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/nlhuong/TimeSeriesExperiment
+- **Docker Image**: quay.io/biocontainers/bioconductor-timeseriesexperiment:1.12.0--r41hdfd78af_0
 - **Skill**: generated
 

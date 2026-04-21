@@ -15,6 +15,7 @@ Set of functions for sparse matrix algebra.
 - **Version**: 2.11-3
 - **Author**: Reinhard Furrer [aut, cre], Florian Gerber [aut], Roman Flury [aut], Daniel Gerber [ctb], Kaspar Moesinger [ctb], Annina Cincera [ctb], Youcef Saad [ctb] (SPARSEKIT http://www-users.cs.umn.edu/~saad/software/SPARSKIT/), Esmond G. Ng [ctb] (Fortran Cholesky routines), Barry W. Peyton [ctb] (Fortran Cholesky routines), Joseph W.H. Liu [ctb] (Fortran Cholesky routines), Alan D. George [ctb] (Fortran Cholesky routines), Lehoucq B. Rich [ctb] (ARPACK), Maschhoff Kristi [ctb] (ARPACK), Sorensen C. Danny [ctb] (ARPACK), Yang Chao [ctb] (ARPACK)
 - **Maintainer**: Reinhard Furrer <reinhard.furrer at math.uzh.ch>
+- **Docker Image**: quay.io/biocontainers/r-spam:1.4_0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 2.0K
 - **Last updated**: 2025-04-22

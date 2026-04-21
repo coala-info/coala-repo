@@ -10,6 +10,7 @@ R package grbase (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-grbase:2.0.3--r45h27b97c1_3
 - **Skill**: generated
 - **Total Downloads**: 41
 - **Last updated**: 2025-04-22

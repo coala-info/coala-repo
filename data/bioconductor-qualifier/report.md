@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Mike Jiang,Greg Finak,Raphael Gottardo
 - **Maintainer**: Mike Jiang &#x3c;&#x77;&#x6a;&#x69;&#x61;&#x6e;&#x67;&#x32;&#x20;&#x61;&#x74;&#x20;&#x66;&#x68;&#x63;&#x72;&#x63;&#x2e;&#x6f;&#x72;&#x67;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-qualifier:1.29.1--r36_0
 - **Skill**: generated
 

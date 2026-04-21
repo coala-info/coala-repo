@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/przemol/seqplots
+- **Docker Image**: quay.io/biocontainers/bioconductor-seqplots:1.27.0--r40_0
 - **Skill**: generated
 

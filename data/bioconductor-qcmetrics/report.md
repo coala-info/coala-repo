@@ -12,5 +12,6 @@ The package provides a framework for generic quality control of data. It permits
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lgatto/qcmetrics
+- **Docker Image**: quay.io/biocontainers/bioconductor-qcmetrics:1.48.0--r45hdfd78af_0
 - **Skill**: generated
 

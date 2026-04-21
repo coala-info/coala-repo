@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Seth Falcon
 - **Maintainer**: Seth Falcon &#x3c;&#x73;&#x65;&#x74;&#x68;&#x20;&#x61;&#x74;&#x20;&#x75;&#x73;&#x65;&#x72;&#x70;&#x72;&#x69;&#x6d;&#x61;&#x72;&#x79;&#x2e;&#x6e;&#x65;&#x74;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-pkgdeptools:1.63.0--r42hdfd78af_0
 - **Skill**: generated
 

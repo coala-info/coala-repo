@@ -10,6 +10,7 @@ N/A
 - **Version**: 0.3.8
 - **Author**: Myles Lewis [aut, cre]
 - **Maintainer**: Myles Lewis <myles.lewis at qmul.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-locuszoomr:0.3.8--r44h3121a25_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

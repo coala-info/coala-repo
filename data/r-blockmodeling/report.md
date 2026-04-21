@@ -10,6 +10,7 @@ This is primarily meant as an implementation of generalized blockmodeling for va
 - **Version**: 1.1.8
 - **Author**: Aleš Žiberna [aut, cre], Marjan Cugmas [ctb]
 - **Maintainer**: Aleš Žiberna <ales.ziberna at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-blockmodeling:0.1.8--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.1K
 - **Last updated**: 2025-04-22

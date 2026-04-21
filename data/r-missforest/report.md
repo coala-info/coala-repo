@@ -17,6 +17,7 @@ The function 'missForest' in this package is used to
 - **Version**: 1.6.1
 - **Author**: Daniel J. Stekhoven [aut, cre]
 - **Maintainer**: Daniel J. Stekhoven <stekhoven at nexus.ethz.ch>
+- **Docker Image**: quay.io/biocontainers/r-missforest:1.4--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 42
 - **Last updated**: 2025-04-22

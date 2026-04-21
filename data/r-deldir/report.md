@@ -16,6 +16,7 @@ Calculates the Delaunay triangulation and the Dirichlet
 - **Version**: 2.0-4
 - **Author**: Rolf Turner
 - **Maintainer**: Rolf Turner <rolfturner at posteo.net>
+- **Docker Image**: quay.io/biocontainers/r-deldir:0.1_12--r3.3.1_1
 - **Skill**: generated
 - **Total Downloads**: 3.8K
 - **Last updated**: 2025-04-22

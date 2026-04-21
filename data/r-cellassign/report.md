@@ -10,6 +10,7 @@ R package cellassign (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-cellassign:0.99.2--r44hdfd78af_7
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

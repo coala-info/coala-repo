@@ -10,6 +10,7 @@ R package tmae (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-tmae:1.0.5--r45h9ee0642_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -13,6 +13,7 @@ Provides an alternative to R's built-in functionality for handling
 - **Version**: 1.7.5.1
 - **Author**: Jon Clayden [cre, aut], K Kosako [aut], K Takata [aut]
 - **Maintainer**: Jon Clayden <code at clayden.org>
+- **Docker Image**: quay.io/biocontainers/r-ore:1.3.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 547
 - **Last updated**: 2025-04-22

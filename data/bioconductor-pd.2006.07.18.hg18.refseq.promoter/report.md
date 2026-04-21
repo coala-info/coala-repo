@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-pd.2006.07.18.hg18.refseq.promoter:1.8.1--r45hdfd78af_14
 - **Skill**: generated
 

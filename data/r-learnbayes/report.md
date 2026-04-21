@@ -10,6 +10,7 @@ R package learnbayes (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-learnbayes:2.15--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 487
 - **Last updated**: 2025-04-22

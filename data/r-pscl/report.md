@@ -14,6 +14,7 @@ Bayesian analysis of item-response theory (IRT) models,
 - **Version**: 1.5.9
 - **Author**: Simon Jackman [aut, cre], Alex Tahk [ctb], Achim Zeileis [ctb], Christina Maimone [ctb], James Fearon [ctb], Zoe Meers [ctb]
 - **Maintainer**: Simon Jackman <simon.jackman at sydney.edu.au>
+- **Docker Image**: quay.io/biocontainers/r-pscl:1.4.9--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 915
 - **Last updated**: 2025-04-22

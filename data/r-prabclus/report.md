@@ -17,6 +17,7 @@ Distance-based parametric bootstrap tests for clustering with
 - **Version**: 2.3-5
 - **Author**: Christian Hennig [aut, cre], Bernhard Hausdorf [aut]
 - **Maintainer**: Christian Hennig <christian.hennig at unibo.it>
+- **Docker Image**: quay.io/biocontainers/r-prabclus:2.2_6--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 244
 - **Last updated**: 2025-04-22

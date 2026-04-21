@@ -10,6 +10,7 @@ R package misctools (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-misctools:0.6_22--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 2.5K
 - **Last updated**: 2025-04-22

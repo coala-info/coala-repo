@@ -11,6 +11,7 @@ Functions to visualise webs and calculate a series of indices commonly used to d
 - **Version**: 2.23
 - **Author**: Carsten F. Dormann [aut, cre], Jochen Fruend [aut], Bernd Gruber [aut], Tobias Bauer [ctb], Stephen Beckett [ctb], Mariano Devoto [ctb], Gabriel M.F. Felix [ctb], Jose M. Iriondo [ctb], Tore Opsahl [ctb], Rafael B.P. Pinheiro [ctb], Rouven Strauss [ctb], Diego P. Vazquez [ctb]
 - **Maintainer**: Carsten F. Dormann <carsten.dormann at biom.uni-freiburg.de>
+- **Docker Image**: quay.io/biocontainers/r-bipartite:2.11--r351h29659fb_2
 - **Skill**: generated
 - **Total Downloads**: 43
 - **Last updated**: 2025-04-22

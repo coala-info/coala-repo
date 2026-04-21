@@ -10,6 +10,7 @@ A wide range of methods for phylogenetic analysis - concentrated in phylogenetic
 - **Version**: 2.5-2
 - **Author**: Liam J. Revell [aut, cre]
 - **Maintainer**: Liam J. Revell <liam.revell at umb.edu>
+- **Docker Image**: quay.io/biocontainers/r-phytools:0.6_99--r36h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 118
 - **Last updated**: 2025-04-22

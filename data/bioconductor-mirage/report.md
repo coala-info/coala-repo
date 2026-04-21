@@ -12,5 +12,6 @@ The package contains functions for inferece of target gene regulation by miRNA, 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mirage:1.52.0--r45hdfd78af_0
 - **Skill**: generated
 

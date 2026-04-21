@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-dynamictreecut:1.63_1--r3.4.1_0
 - **Skill**: not generated
 - **Total Downloads**: 1.4K
 - **Last updated**: 2025-04-22

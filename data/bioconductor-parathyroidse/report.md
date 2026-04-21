@@ -12,5 +12,6 @@ The package vignette describes the creation of the object from raw sequencing da
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-parathyroidse:1.40.0--r43hdfd78af_0
 - **Skill**: generated
 

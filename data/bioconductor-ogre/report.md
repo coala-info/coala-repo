@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/svenbioinf/OGRE
+- **Docker Image**: quay.io/biocontainers/bioconductor-ogre:1.14.0--r45hdfd78af_0
 - **Skill**: generated
 

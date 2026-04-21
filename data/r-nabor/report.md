@@ -17,6 +17,7 @@ An R wrapper for 'libnabo', an exact or approximate k nearest
 - **Version**: 0.5.0
 - **Author**: Stephane Mangenat (for 'libnabo'), Gregory Jefferis
 - **Maintainer**: Gregory Jefferis <jefferis at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-nabor:0.5.0--r351_1
 - **Skill**: generated
 - **Total Downloads**: 493
 - **Last updated**: 2025-04-22

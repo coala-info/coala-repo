@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/reactome/ReactomeContentService4R
+- **Docker Image**: quay.io/biocontainers/bioconductor-reactomecontentservice4r:1.10.0--r43hdfd78af_1
 - **Skill**: generated
 

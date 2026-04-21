@@ -10,6 +10,7 @@ R package rrbgen (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rrbgen:0.0.6--r44h9948957_12
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

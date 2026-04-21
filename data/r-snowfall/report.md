@@ -15,6 +15,7 @@ Usability wrapper around snow for easier development of
 - **Version**: 1.84-6.3
 - **Author**: Jochen Knaus
 - **Maintainer**: Jochen Knaus <jo at imbi.uni-freiburg.de>
+- **Docker Image**: quay.io/biocontainers/r-snowfall:1.84_6.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 52
 - **Last updated**: 2025-04-22

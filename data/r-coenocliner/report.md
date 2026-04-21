@@ -11,6 +11,7 @@ Simulate species occurrence and abundances (counts) along
 - **Version**: 0.2-4
 - **Author**: Gavin L. Simpson [aut, cre], Jari Oksanen [ctb], Francisco Rodriguez-Sanchez [ctb]
 - **Maintainer**: Gavin L. Simpson <ucfagls at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-coenocliner:0.2_2--r351h6115d3f_2
 - **Skill**: generated
 - **Total Downloads**: 292
 - **Last updated**: 2025-04-22

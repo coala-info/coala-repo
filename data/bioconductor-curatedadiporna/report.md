@@ -12,5 +12,6 @@ The package document the data collection, pre-processing and processing. In addi
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/MahShaaban/curatedAdipoRNA
+- **Docker Image**: quay.io/biocontainers/bioconductor-curatedadiporna:1.26.0--r45hdfd78af_0
 - **Skill**: generated
 

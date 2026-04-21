@@ -11,6 +11,7 @@ A fast, consistent tool for working with data frame like
 - **Version**: 1.2.0
 - **Author**: Hadley Wickham [aut, cre], Romain François [aut], Lionel Henry [aut], Kirill Müller [aut], Davis Vaughan [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-dplyr:0.5.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 752.3K
 - **Last updated**: 2025-04-22

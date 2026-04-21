@@ -12,5 +12,6 @@ The package offers statistical tests based on the 2-Wasserstein distance for det
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/goncalves-lab/waddR
+- **Docker Image**: quay.io/biocontainers/bioconductor-waddr:1.24.0--r45ha27e39d_0
 - **Skill**: generated
 

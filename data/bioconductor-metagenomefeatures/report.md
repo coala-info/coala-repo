@@ -12,5 +12,6 @@ The package can be used to explore the taxonomic composition of a marker-gene da
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HCBravoLab/metagenomeFeatures
+- **Docker Image**: quay.io/biocontainers/bioconductor-metagenomefeatures:2.10.0--r40hdfd78af_1
 - **Skill**: generated
 

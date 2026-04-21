@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/txdbmaker
+- **Docker Image**: quay.io/biocontainers/bioconductor-txdbmaker:1.6.2--r45hdfd78af_0
 - **Skill**: generated
 

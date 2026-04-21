@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rbison:0.6.0--r351h6115d3f_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

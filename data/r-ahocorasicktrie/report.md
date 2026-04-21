@@ -16,6 +16,7 @@ Aho-Corasick is an optimal algorithm for finding many
 - **Version**: 0.1.3
 - **Author**: Matt Chambers [aut, cre], Tomas Petricek [aut, cph], Vanderbilt University [cph]
 - **Maintainer**: Matt Chambers <matt.chambers42 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-ahocorasicktrie:0.1.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 372
 - **Last updated**: 2025-04-22

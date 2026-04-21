@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-lme4qtl:0.1.10--r44hdfd78af_8
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

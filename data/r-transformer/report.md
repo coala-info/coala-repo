@@ -10,6 +10,7 @@ Transformer is a Deep Neural Network Architecture based i.a. on the Attention me
 - **Version**: 0.2.0
 - **Author**: Bastiaan Quast [aut, cre]
 - **Maintainer**: Bastiaan Quast <bquast at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-transformer:0.2.12--r36_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/reactome/ReactomeGraph4R
+- **Docker Image**: quay.io/biocontainers/bioconductor-reactomegraph4r:1.10.0--r43hdfd78af_0
 - **Skill**: generated
 

@@ -16,6 +16,7 @@ These functions were developed to support functional data
 - **Version**: 6.3.0
 - **Author**: James Ramsay [aut, cre], Giles Hooker [ctb], Spencer Graves [ctb]
 - **Maintainer**: James Ramsay <ramsay at psych.mcgill.ca>
+- **Docker Image**: quay.io/biocontainers/r-fda:2.4.4--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.7K
 - **Last updated**: 2025-04-22

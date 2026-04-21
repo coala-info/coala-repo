@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/PapenfussLab/svaRetro
+- **Docker Image**: quay.io/biocontainers/bioconductor-svaretro:1.15.1--r45hdfd78af_0
 - **Skill**: generated
 

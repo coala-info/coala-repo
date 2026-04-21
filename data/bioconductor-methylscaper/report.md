@@ -12,5 +12,6 @@ The package supports both single-cell and single-molecule data, and a common int
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rhondabacher/methylscaper
+- **Docker Image**: quay.io/biocontainers/bioconductor-methylscaper:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

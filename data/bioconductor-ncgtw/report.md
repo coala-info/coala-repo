@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ChiungTingWu/ncGTW
+- **Docker Image**: quay.io/biocontainers/bioconductor-ncgtw:1.24.0--r45ha27e39d_0
 - **Skill**: generated
 

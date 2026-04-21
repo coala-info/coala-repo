@@ -12,5 +12,6 @@ The package include this data for 21 inversions.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-scoreinvhap:1.32.0--r45hdfd78af_0
 - **Skill**: generated
 

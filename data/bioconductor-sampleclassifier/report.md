@@ -12,5 +12,6 @@ The package is designed to classify microarray RNA-seq gene expression profiles.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sampleclassifier:1.30.0--r44hdfd78af_0
 - **Skill**: generated
 

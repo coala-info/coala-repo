@@ -12,5 +12,6 @@ The package provides access to the copy of the Synaptic proteome database. It wa
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lptolik/synaptome.db
+- **Docker Image**: quay.io/biocontainers/bioconductor-synaptome.data:0.99.6--r45hdfd78af_4
 - **Skill**: generated
 

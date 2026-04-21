@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-liger:2.2.1--r44h165a49b_0
 - **Skill**: generated
 - **Total Downloads**: 155
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package vision (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-vision:2.0.0--r44h9948957_8
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ the package shinyMethyl. Original samples are from 450k methylation arrays, and 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-shinymethyldata:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

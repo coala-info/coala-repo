@@ -12,5 +12,6 @@ The package provides an integrated pipeline for the analysis of PAR-CLIP data. P
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-wavcluster:2.44.0--r45hdfd78af_0
 - **Skill**: generated
 

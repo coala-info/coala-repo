@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/antagomir/pint
+- **Docker Image**: quay.io/biocontainers/bioconductor-pint:1.36.0--r36_0
 - **Skill**: generated
 

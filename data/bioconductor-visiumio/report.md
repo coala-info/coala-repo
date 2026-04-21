@@ -12,5 +12,6 @@ The package allows users to readily import spatial data obtained from either the
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/VisiumIO
+- **Docker Image**: quay.io/biocontainers/bioconductor-visiumio:1.6.3--r45hdfd78af_0
 - **Skill**: generated
 

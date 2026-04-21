@@ -16,6 +16,7 @@ Routines to handle family data with a pedigree object. The initial purpose
 - **Version**: 1.9.6.2
 - **Author**: Jason Sinnwell [aut, cre], Terry Therneau [aut], Daniel Schaid [ctb], Elizabeth Atkinson [ctb], Carly Mester [ctb]
 - **Maintainer**: Jason Sinnwell <sinnwell.jason at mayo.edu>
+- **Docker Image**: quay.io/biocontainers/r-kinship2:1.6.4--r351h6115d3f_3
 - **Skill**: generated
 - **Total Downloads**: 320
 - **Last updated**: 2025-04-22

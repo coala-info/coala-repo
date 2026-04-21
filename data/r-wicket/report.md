@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-wicket:0.4.0--r351h29659fb_3
 - **Skill**: generated
 - **Total Downloads**: 271
 - **Last updated**: 2025-04-22

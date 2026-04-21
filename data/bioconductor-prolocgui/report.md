@@ -12,5 +12,6 @@ The package pRolocGUI comprises functions to interactively visualise spatial pro
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lgatto/pRolocGUI
+- **Docker Image**: quay.io/biocontainers/bioconductor-prolocgui:2.20.0--r45hdfd78af_0
 - **Skill**: generated
 

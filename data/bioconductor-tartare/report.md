@@ -12,5 +12,6 @@ The package is considered to be used with the rawrr package and the Spectra MsBa
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/cpanse/tartare
+- **Docker Image**: quay.io/biocontainers/bioconductor-tartare:1.24.0--r45hdfd78af_0
 - **Skill**: generated
 

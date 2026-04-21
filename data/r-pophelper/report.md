@@ -10,6 +10,7 @@ R package pophelper (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-pophelper:2.3.1--r44hdfd78af_5
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

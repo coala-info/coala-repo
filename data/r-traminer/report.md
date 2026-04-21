@@ -10,6 +10,7 @@ R package traminer (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-traminer:2.0_9--r351h29659fb_1
 - **Skill**: generated
 - **Total Downloads**: 39
 - **Last updated**: 2025-04-22

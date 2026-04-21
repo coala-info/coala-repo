@@ -14,6 +14,7 @@ Solve a system of nonlinear equations using a Broyden or a Newton method
 - **Version**: 3.3.5
 - **Author**: Berend Hasselman
 - **Maintainer**: Berend Hasselman <bhh at xs4all.nl>
+- **Docker Image**: quay.io/biocontainers/r-nleqslv:3.2--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 1.1K
 - **Last updated**: 2025-04-22

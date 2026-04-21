@@ -10,6 +10,7 @@ R package cellosaurus (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-cellosaurus:0.8.2--r44hdfd78af_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

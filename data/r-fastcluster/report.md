@@ -16,6 +16,7 @@ This is a two-in-one package which provides interfaces to
 - **Version**: 1.3.0
 - **Author**: Daniel Müllner [aut, cph, cre], Google Inc. [cph]
 - **Maintainer**: Daniel Müllner <daniel at danifold.net>
+- **Docker Image**: quay.io/biocontainers/r-fastcluster:1.1.20--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.7K
 - **Last updated**: 2025-04-22

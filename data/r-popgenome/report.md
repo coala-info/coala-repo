@@ -10,6 +10,7 @@ R package popgenome (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-popgenome:2.7.2--r36h0357c0b_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

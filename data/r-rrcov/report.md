@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.7-7
 - **Author**: Valentin Todorov [aut, cre]
 - **Maintainer**: Valentin Todorov <valentin.todorov at chello.at>
+- **Docker Image**: quay.io/biocontainers/r-rrcov:1.3_11--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 541
 - **Last updated**: 2025-04-22

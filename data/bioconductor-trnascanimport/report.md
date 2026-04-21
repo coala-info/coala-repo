@@ -12,5 +12,6 @@ The package imports the result of tRNAscan-SE as a GRanges object.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FelixErnst/tRNAscanImport
+- **Docker Image**: quay.io/biocontainers/bioconductor-trnascanimport:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

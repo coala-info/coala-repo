@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/brendelgroup/tsrchitect
+- **Docker Image**: quay.io/biocontainers/bioconductor-tsrchitect:1.20.0--r41hdfd78af_0
 - **Skill**: generated
 

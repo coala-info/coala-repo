@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/TCGAutils
+- **Docker Image**: quay.io/biocontainers/bioconductor-tcgautils:1.30.2--r45hdfd78af_0
 - **Skill**: generated
 

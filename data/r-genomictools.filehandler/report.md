@@ -10,6 +10,7 @@ R package genomictools.filehandler (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-genomictools.filehandler:0.1.5.9--r45h3342da4_6
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

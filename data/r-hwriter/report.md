@@ -11,6 +11,7 @@ Easy-to-use and versatile functions to output R objects in
 - **Version**: 1.3.2.1
 - **Author**: Gregoire Pau
 - **Maintainer**: Gregoire Pau <gregoire.pau at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-hwriter:1.3.2--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.2K
 - **Last updated**: 2025-04-22

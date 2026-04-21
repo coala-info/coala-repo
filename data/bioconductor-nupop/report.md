@@ -12,5 +12,6 @@ the package was written in Fotran. In addition to the R package, a stand-alone F
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jiping/NuPoP_doc.
+- **Docker Image**: quay.io/biocontainers/bioconductor-nupop:2.18.0--r45h63f16b7_0
 - **Skill**: generated
 

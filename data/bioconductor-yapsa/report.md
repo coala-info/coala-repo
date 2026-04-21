@@ -12,5 +12,6 @@ the package provides different sets of mutational signatures, including the COSM
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-yapsa:1.36.1--r45hdfd78af_0
 - **Skill**: generated
 

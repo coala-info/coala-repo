@@ -19,6 +19,7 @@ In putative Transcription Factor Binding Sites (TFBSs)
 - **Version**: 1.0.0
 - **Author**: Ge Tan [aut, cre]
 - **Maintainer**: Ge Tan <ge_tan at live.com>
+- **Docker Image**: quay.io/biocontainers/r-tfmpvalue:0.0.6--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 486
 - **Last updated**: 2025-04-22

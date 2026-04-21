@@ -10,6 +10,7 @@ Understanding the drivers of microbial diversity is an important frontier of mic
 - **Version**: 4.8.4
 - **Author**: Amy D Willis [aut, cre], Bryan D Martin [aut], Pauline Trinh [aut], Sarah Teichman [aut], David Clausen [aut], Kathryn Barger [aut], John Bunge [aut]
 - **Maintainer**: Amy D Willis <adwillis at uw.edu>
+- **Docker Image**: quay.io/biocontainers/r-breakaway:4.7.9--r43h3121a25_2
 - **Skill**: generated
 - **Total Downloads**: 230
 - **Last updated**: 2025-04-22

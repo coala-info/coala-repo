@@ -12,5 +12,6 @@ The package contains raw NetCDF files from a E.coli salt stress experiment, extr
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/acinostroza/TargetSearchData
+- **Docker Image**: quay.io/biocontainers/bioconductor-targetsearchdata:1.48.0--r45hdfd78af_0
 - **Skill**: generated
 

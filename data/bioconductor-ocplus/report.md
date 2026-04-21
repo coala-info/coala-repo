@@ -12,5 +12,6 @@ The package includes tools both for planned experiments (for sample size assessm
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-ocplus:1.84.0--r45hdfd78af_0
 - **Skill**: generated
 

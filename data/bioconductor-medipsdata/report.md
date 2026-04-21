@@ -12,5 +12,6 @@ the package contains MeDIP seq data from 3 NSCLC samples and adjacent normal tis
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-medipsdata:1.46.0--r45hdfd78af_0
 - **Skill**: generated
 

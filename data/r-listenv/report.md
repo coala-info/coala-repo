@@ -10,6 +10,7 @@ List environments are environments that have list-like properties.  For instance
 - **Version**: 0.10.0
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-listenv:0.6.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 13.6K
 - **Last updated**: 2025-04-22

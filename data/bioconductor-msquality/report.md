@@ -12,5 +12,6 @@ The package is especially addressed towards users that acquire mass spectrometry
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-msquality:1.10.0--r45hdfd78af_0
 - **Skill**: generated
 

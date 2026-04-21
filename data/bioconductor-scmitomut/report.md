@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/wenjie1991/scMitoMut
+- **Docker Image**: quay.io/biocontainers/bioconductor-scmitomut:1.6.0--r45ha27e39d_0
 - **Skill**: generated
 

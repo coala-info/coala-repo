@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-whopgenome:0.9.7--r44he56ddfa_10
 - **Skill**: not generated
 - **Total Downloads**: 255
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package supports both Cox proportional hazards models and Kaplan–Meier ana
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rtnsurvival:1.34.0--r45hdfd78af_0
 - **Skill**: generated
 

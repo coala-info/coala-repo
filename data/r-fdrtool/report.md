@@ -16,6 +16,7 @@ Estimates both tail area-based false
 - **Version**: 1.2.18
 - **Author**: Bernd Klaus [aut], Korbinian Strimmer [aut, cre]
 - **Maintainer**: Korbinian Strimmer <strimmerlab at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-fdrtool:1.2.15--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 969
 - **Last updated**: 2025-04-22

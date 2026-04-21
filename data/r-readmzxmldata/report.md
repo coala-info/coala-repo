@@ -10,6 +10,7 @@ Functions for reading mass spectrometry data in mzXML format.</p>
 - **Version**: 2.8.4
 - **Author**: Sebastian Gibb [aut, cre]
 - **Maintainer**: Sebastian Gibb <mail at sebastiangibb.de>
+- **Docker Image**: quay.io/biocontainers/r-readmzxmldata:2.8.1--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 262
 - **Last updated**: 2025-04-22

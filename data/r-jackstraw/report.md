@@ -10,6 +10,7 @@ Test for association between the observed data and their estimated latent variab
 - **Version**: 1.3.17
 - **Author**: Neo Christopher Chung [aut, cre], John D. Storey [aut], Wei Hao [aut], Alejandro Ochoa [aut]
 - **Maintainer**: Neo Christopher Chung <nchchung at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-jackstraw:1.3.17--r44h3342da4_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

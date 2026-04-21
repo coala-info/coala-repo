@@ -11,6 +11,7 @@ Statistical modeling for correlated count data using the beta-binomial distribut
 - **Version**: 0.4.2
 - **Author**: Bryan D Martin [aut], Daniela Witten [aut], Sarah Teichman [ctb], Amy D Willis [aut, cre], Thomas W Yee [ctb] (VGAM library), Xiangjie Xue [ctb] (VGAM library)
 - **Maintainer**: Amy D Willis <adwillis at uw.edu>
+- **Docker Image**: quay.io/biocontainers/r-corncob:0.4.2--r44h3342da4_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

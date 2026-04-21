@@ -12,5 +12,6 @@ The package provides a comprehensive mapping table of nine different Metabolite 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/yigbt/metaboliteIDmapping
+- **Docker Image**: quay.io/biocontainers/bioconductor-metaboliteidmapping:1.0.0--r45hdfd78af_7
 - **Skill**: generated
 

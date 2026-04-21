@@ -14,6 +14,7 @@ Allows users to calculate pairwise Nei's Genetic Distances (Nei 1972), pairwise 
 - **Version**: 1.6.3
 - **Author**: LW Pembleton
 - **Maintainer**: LW Pembleton <lwpembleton at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-stampp:1.5.1--r36h6115d3f_4
 - **Skill**: generated
 - **Total Downloads**: 41
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-peakpick:0.11--r44hdfd78af_0
 - **Skill**: not generated
 - **Total Downloads**: 183
 - **Last updated**: 2025-04-22

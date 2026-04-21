@@ -10,6 +10,7 @@ R package saige (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-saige:1.3.1--r44h38d2662_4
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

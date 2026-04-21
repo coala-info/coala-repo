@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-discriminer:0.1_29--r3.3.1_0
 - **Skill**: not generated
 - **Total Downloads**: 250
 - **Last updated**: 2025-04-22

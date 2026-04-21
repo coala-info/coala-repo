@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.2.4
 - **Author**: David Winter [aut, cre], Scott Chamberlain [ctb], Han Guangchun [ctb]
 - **Maintainer**: David Winter <david.winter at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-rentrez:1.1.0--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 433
 - **Last updated**: 2025-04-22

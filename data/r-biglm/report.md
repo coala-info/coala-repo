@@ -10,6 +10,7 @@ Regression for data too large to fit in memory.</p>
 - **Version**: 0.9-3
 - **Author**: Thomas Lumley
 - **Maintainer**: Thomas Lumley <t.lumley at auckland.ac.nz>
+- **Docker Image**: quay.io/biocontainers/r-biglm:0.9_1--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 682
 - **Last updated**: 2025-04-22

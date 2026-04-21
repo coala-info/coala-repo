@@ -12,5 +12,6 @@ The package also provides a Lindel-derived score to predict the probability of a
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/crisprVerse/crisprScore
+- **Docker Image**: quay.io/biocontainers/bioconductor-crisprscore:1.14.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ N/A
 - **Version**: 5.5-0
 - **Author**: Mikis Stasinopoulos [aut, cre, cph], Robert Rigby [aut], Vlasios Voudouris [ctb], Calliope Akantziliotou [ctb], Marco Enea [ctb], Daniil Kiose [ctb], Achim Zeileis [ctb]
 - **Maintainer**: Mikis Stasinopoulos <d.stasinopoulos at gre.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-gamlss:5.0_0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 107
 - **Last updated**: 2025-04-22

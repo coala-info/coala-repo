@@ -10,6 +10,7 @@ Auxiliary functions and data sets for "Ecological Models and Data", a book prese
 - **Version**: 1.3.14
 - **Author**: Ben Bolker [aut, cre], Sang Woo Park [ctb], James Vonesh [dtc], Jacqueline Wilson [dtc], Russ Schmitt [dtc], Sally Holbrook [dtc], James D. Thomson [dtc], R. Scot Duncan [dtc]
 - **Maintainer**: Ben Bolker <bolker at mcmaster.ca>
+- **Docker Image**: quay.io/biocontainers/r-emdbook:1.3.9--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 1.5K
 - **Last updated**: 2025-04-22

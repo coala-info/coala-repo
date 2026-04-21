@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-hardyweinberg:1.6.3--r351h29659fb_0
 - **Skill**: not generated
 - **Total Downloads**: 42
 - **Last updated**: 2025-04-22

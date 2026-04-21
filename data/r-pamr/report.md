@@ -10,6 +10,7 @@ Some functions for sample classification in microarrays.</p>
 - **Version**: 1.57
 - **Author**: Trevor Hastie [aut], Rob Tibshirani [aut], Balasubramanian Narasimhan [aut, cre], Gilbert Chu [aut]
 - **Maintainer**: Balasubramanian Narasimhan <naras at stanford.edu>
+- **Docker Image**: quay.io/biocontainers/r-pamr:1.55--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 380
 - **Last updated**: 2025-04-22

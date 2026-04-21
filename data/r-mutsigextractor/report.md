@@ -10,6 +10,7 @@ R package mutsigextractor (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-mutsigextractor:1.29--r45hdfd78af_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

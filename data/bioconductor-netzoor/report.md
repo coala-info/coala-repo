@@ -12,5 +12,6 @@ the package has 3 methods for network inference including PANDA and its optimize
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/netZoo/netZooR
+- **Docker Image**: quay.io/biocontainers/bioconductor-netzoor:1.14.1--r45hdfd78af_0
 - **Skill**: generated
 

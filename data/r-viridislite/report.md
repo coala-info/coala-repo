@@ -13,6 +13,7 @@ Color maps designed to improve graph readability for readers with
 - **Version**: 0.4.3
 - **Author**: Simon Garnier [aut, cre], Noam Ross [ctb, cph], Bob Rudis [ctb, cph], Marco Sciaini [ctb, cph], Antônio Pedro Camargo [ctb, cph], Cédric Scherer [ctb, cph]
 - **Maintainer**: Simon Garnier <garnier at njit.edu>
+- **Docker Image**: quay.io/biocontainers/r-viridislite:0.1.3--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 422.6K
 - **Last updated**: 2025-04-22

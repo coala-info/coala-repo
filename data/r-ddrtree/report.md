@@ -10,6 +10,7 @@ R package ddrtree (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ddrtree:0.1.5--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 562
 - **Last updated**: 2025-04-22

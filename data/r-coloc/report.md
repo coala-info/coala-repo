@@ -10,6 +10,7 @@ N/A
 - **Version**: 5.2.3
 - **Author**: Chris Wallace [aut, cre], Claudia Giambartolomei [aut], Vincent Plagnol [ctb]
 - **Maintainer**: Chris Wallace <cew54 at cam.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-coloc:5.1.0.1--r42h3121a25_1
 - **Skill**: generated
 - **Total Downloads**: 53
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ the package are built based on the SpatialExperiment object, allowing integratio
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ChenLaboratory/scider
+- **Docker Image**: quay.io/biocontainers/bioconductor-scider:1.8.0--r45ha27e39d_0
 - **Skill**: generated
 

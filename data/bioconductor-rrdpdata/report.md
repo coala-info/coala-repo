@@ -12,5 +12,6 @@ The package provides the data for the RDP Classifier 2.14 released in August 202
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mhahsler/rRDP
+- **Docker Image**: quay.io/biocontainers/bioconductor-rrdpdata:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

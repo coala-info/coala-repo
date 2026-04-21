@@ -11,6 +11,7 @@ Population genetic analyses for hierarchical analysis of partially
 - **Version**: 2.9.8
 - **Author**: Zhian N. Kamvar [cre, aut], Javier F. Tabima [aut], Sydney E. Everhart [ctb, dtc], Jonah C. Brooks [aut], Stacy A. Krueger-Hadfield [ctb], Erik Sotka [ctb], Brian J. Knaus [ctb], Patrick G. Meirmans [ctb], Frédéric D. Chevalier [ctb], David Folarin [aut], Niklaus J. Grünwald [ths]
 - **Maintainer**: Zhian N. Kamvar <zkamvar at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-poppr:2.8.5--r40h516909a_1
 - **Skill**: generated
 - **Total Downloads**: 44
 - **Last updated**: 2025-04-22

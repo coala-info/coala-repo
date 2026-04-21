@@ -10,6 +10,7 @@ A collection of functions for computations and visualizations of microbial pan-g
 - **Version**: 2.1
 - **Author**: Lars Snipen and Kristian Hovde Liland
 - **Maintainer**: Lars Snipen <lars.snipen at nmbu.no>
+- **Docker Image**: quay.io/biocontainers/r-micropan:1.2--r351h29659fb_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

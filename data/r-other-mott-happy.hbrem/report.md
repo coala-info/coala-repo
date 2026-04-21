@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: biocontainers/r-other-mott-happy.hbrem:v2.4-1-deb_cv1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

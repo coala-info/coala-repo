@@ -10,6 +10,7 @@ R package monocle3 (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-monocle3:1.4.26--r44h9948957_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ A collection of tools to explore the phylogenetic signal in univariate and multi
 - **Version**: 1.3.1
 - **Author**: Francois Keck
 - **Maintainer**: Francois Keck <francois.keck at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-phylosignal:1.2.1--r351h29659fb_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ A language extension to efficiently write functional programs in R. Syntax exten
 - **Version**: 1.2.4
 - **Author**: Brian Lee Yung Rowe
 - **Maintainer**: Brian Lee Yung Rowe <r at zatonovo.com>
+- **Docker Image**: quay.io/biocontainers/r-lambda.r:1.1.7--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 7.9K
 - **Last updated**: 2025-04-22

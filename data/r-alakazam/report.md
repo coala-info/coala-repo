@@ -14,6 +14,7 @@ Provides methods for high-throughput adaptive immune
 - **Version**: 1.4.2
 - **Author**: Susanna Marquez [cre, aut], Namita Gupta [aut], Nima Nouri [aut], Ruoyi Jiang [aut], Julian Zhou [aut], Kenneth Hoehn [aut], Daniel Gadala-Maria [ctb], Edel Aron [ctb], Cole Jensen [aut], Gisela Gabernet [ctb], Caroline Sullivan [ctb], Hailong Meng [ctb], Huimin Lyu [ctb], Burhan Sabuwala [ctb], Jason Vander Heiden [aut], Steven Kleinstein [aut, cph]
 - **Maintainer**: Susanna Marquez <susanna.marquez at yale.edu>
+- **Docker Image**: quay.io/biocontainers/r-alakazam:1.2.1--r43h21a89ab_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -16,6 +16,7 @@ Online data collection tools like Google Forms often export
 - **Version**: 1.4.8
 - **Author**: Ananda Mahto
 - **Maintainer**: Ananda Mahto <mrdwab at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-splitstackshape:1.4.2--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 493
 - **Last updated**: 2025-04-22

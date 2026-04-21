@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Sarah Song, Mik Black
 - **Maintainer**: Sarah Song &#x3c;&#x71;&#x73;&#x6f;&#x6e;&#x30;&#x30;&#x33;&#x20;&#x61;&#x74;&#x20;&#x73;&#x74;&#x61;&#x74;&#x2e;&#x61;&#x75;&#x63;&#x6b;&#x6c;&#x61;&#x6e;&#x64;&#x2e;&#x61;&#x63;&#x2e;&#x6e;&#x7a;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-pcot2:1.58.0--r40hdfd78af_1
 - **Skill**: generated
 

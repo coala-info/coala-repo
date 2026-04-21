@@ -17,6 +17,7 @@ Toolset for the exploration of genetic and genomic
 - **Version**: 2.1.11
 - **Author**: Thibaut Jombart [aut], Zhian N. Kamvar [aut, cre], Caitlin Collins [ctb], Roman Lustrik [ctb], Marie-Pauline Beugin [ctb], Brian J. Knaus [ctb], Peter Solymos [ctb], Vladimir Mikryukov [ctb], Klaus Schliep [ctb], Tiago Maié [ctb], Libor Morkovsky [ctb], Ismail Ahmed [ctb], Anne Cori [ctb], Federico Calboli [ctb], RJ Ewing [ctb], Frédéric Michaud [ctb], Rebecca DeCamp [ctb], Alexandre Courtiol [ctb], Lindsay V. Clark [ctb], Pavel Dimens [ctb], Max Coulter [ctb], Ivan Krylov [ctb]
 - **Maintainer**: Zhian N. Kamvar <zkamvar at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-adegenet:2.1.1--r351h96ca727_1
 - **Skill**: generated
 - **Total Downloads**: 119
 - **Last updated**: 2025-04-22

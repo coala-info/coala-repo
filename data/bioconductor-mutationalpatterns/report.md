@@ -12,5 +12,6 @@ The package covers a wide range of patterns including: mutational signatures, tr
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mutationalpatterns:3.19.1--r45hdfd78af_0
 - **Skill**: generated
 

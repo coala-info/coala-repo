@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/hemberg-lab/scfind
+- **Docker Image**: quay.io/biocontainers/bioconductor-scfind:1.9.0--r40h5f743cb_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package includes functions to build restriction enzyme cut site (RECS) map, 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-redseq:1.56.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/PeeperLab/CopywriteR
+- **Docker Image**: quay.io/biocontainers/bioconductor-copywriter:2.29.0--r42hdfd78af_0
 - **Skill**: generated
 

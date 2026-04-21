@@ -9,6 +9,7 @@ This package provides an easy and simple way to read, write and display bitmap i
 - **Version**: 0.1-8
 - **Author**: Simon Urbanek
 - **Maintainer**: Simon Urbanek <Simon.Urbanek at r-project.org>
+- **Docker Image**: quay.io/biocontainers/r-png:0.1.7--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 90.8K
 - **Last updated**: 2025-04-22

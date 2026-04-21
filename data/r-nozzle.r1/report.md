@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-nozzle.r1:1.1_1--r3.2.2_0
 - **Skill**: not generated
 - **Total Downloads**: 312
 - **Last updated**: 2025-04-22

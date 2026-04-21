@@ -12,5 +12,6 @@ The package is to provide a model based Bayesian method to characterize and simu
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sparsedossa:1.24.0--r43hdfd78af_0
 - **Skill**: generated
 

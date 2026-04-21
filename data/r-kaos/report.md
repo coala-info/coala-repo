@@ -12,6 +12,7 @@ Sequences encoding by using the chaos game representation.
 - **Version**: 0.1.2
 - **Author**: Dominik Eger and Hannah Franziska Löchel
 - **Maintainer**: Hannah Franziska Löchel <loechelh at mathematik.uni-marburg.de>
+- **Docker Image**: quay.io/biocontainers/r-kaos:0.1.0--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

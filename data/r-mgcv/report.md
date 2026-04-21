@@ -14,6 +14,7 @@ Generalized additive (mixed) models, some of their extensions and
 - **Version**: 1.9-4
 - **Author**: Simon Wood [aut, cre]
 - **Maintainer**: Simon Wood <simon.wood at r-project.org>
+- **Docker Image**: quay.io/biocontainers/r-mgcv:1.8_28
 - **Skill**: generated
 - **Total Downloads**: 1.1M
 - **Last updated**: 2025-04-22

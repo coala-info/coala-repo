@@ -10,6 +10,7 @@ A cross-platform R framework that facilitates processing of any number of Affyme
 - **Version**: 3.2.3
 - **Author**: Henrik Bengtsson [aut, cre, cph], James Bullard [ctb], Kasper Hansen [ctb], Pierre Neuvial [ctb], Elizabeth Purdom [ctb], Mark Robinson [ctb], Ken Simpson [ctb]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-aroma.affymetrix:3.2.3--r45h3121a25_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

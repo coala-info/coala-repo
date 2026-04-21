@@ -10,6 +10,7 @@ Provides several metrics for assessing relative importance in linear models. The
 - **Version**: 2.2-7
 - **Author**: Ulrike Groemping [aut, cre], Matthias Lehrkamp [ctb]
 - **Maintainer**: Ulrike Groemping <ulrike.groemping at bht-berlin.de>
+- **Docker Image**: quay.io/biocontainers/r-relaimpo:2.2_2--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 37
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package contains functions for pre-processing Affymetrix data using the RMA+
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-refplus:1.70.0--r43hdfd78af_0
 - **Skill**: generated
 

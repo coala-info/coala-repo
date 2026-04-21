@@ -14,6 +14,7 @@ Functions for reading (tab, csv, Bruker fid, Ciphergen
 - **Version**: 0.14.1
 - **Author**: Sebastian Gibb [aut, cre], Pietro Franceschi [ctb]
 - **Maintainer**: Sebastian Gibb <mail at sebastiangibb.de>
+- **Docker Image**: quay.io/biocontainers/r-maldiquantforeign:0.12--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 34
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ Methods and classes for object-oriented programming in R with or without referen
 - **Version**: 1.27.1
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.oo:1.21.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 52.8K
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package stitch (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-stitch:1.8.5--r44h64f727c_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

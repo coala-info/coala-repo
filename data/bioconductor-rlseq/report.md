@@ -12,5 +12,6 @@ The package is intended to provide a simple pipeline, called with the `RLSeq()` 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bishop-Laboratory/RLSeq
+- **Docker Image**: quay.io/biocontainers/bioconductor-rlseq:1.6.0--r43hdfd78af_0
 - **Skill**: generated
 

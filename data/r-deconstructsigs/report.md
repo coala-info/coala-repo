@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-deconstructsigs:1.9.0--r44hdfd78af_4
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

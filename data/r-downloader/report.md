@@ -15,6 +15,7 @@ Provides a wrapper for the download.file function,
 - **Version**: 0.4.1
 - **Author**: Winston Chang [aut, cre]
 - **Maintainer**: Winston Chang <winston at stdout.org>
+- **Docker Image**: quay.io/biocontainers/r-downloader:0.0.4--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 7.2K
 - **Last updated**: 2025-04-22

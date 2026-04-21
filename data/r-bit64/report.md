@@ -16,6 +16,7 @@ Package 'bit64' provides serializable S3 atomic 64bit (signed) integers.
 - **Version**: 4.6.0-1
 - **Author**: Michael Chirico [aut, cre], Jens Oehlschlägel [aut], Leonardo Silvestri [ctb], Ofek Shilon [ctb]
 - **Maintainer**: Michael Chirico <michaelchirico4 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-bit64:0.9_5--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 141.1K
 - **Last updated**: 2025-04-22

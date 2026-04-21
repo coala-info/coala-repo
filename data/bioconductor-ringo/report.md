@@ -12,5 +12,6 @@ The package Ringo facilitates the primary analysis of ChIP-chip data. The main f
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-ringo:1.66.0--r43hf17093f_0
 - **Skill**: generated
 

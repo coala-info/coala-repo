@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Zhicheng Ji, Hongkai Ji
 - **Maintainer**: Zhicheng Ji &#x3c;&#x7a;&#x6a;&#x69;&#x34;&#x20;&#x61;&#x74;&#x20;&#x6a;&#x68;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sepa:1.13.0--r36_1
 - **Skill**: generated
 

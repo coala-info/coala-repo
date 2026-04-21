@@ -13,6 +13,7 @@ Infers the V genotype of an individual from immunoglobulin (Ig)
 - **Version**: 1.1.2
 - **Author**: Daniel Gadala-Maria [aut], Susanna Marquez [aut, cre], Moriah Cohen [aut], Jason Vander Heiden [aut], Gur Yaari [aut], Steven Kleinstein [aut, cph]
 - **Maintainer**: Susanna Marquez <susanna.marquez at yale.edu>
+- **Docker Image**: quay.io/biocontainers/r-tigger:0.4.0--r40h6115d3f_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

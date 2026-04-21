@@ -10,6 +10,7 @@ A set of tools to permute multisets without loops or hash tables and to generate
 - **Version**: 1.0.1
 - **Author**: James Curran, Aaron Williams, Jerome Kelleher, Dave Barber
 - **Maintainer**: James Curran <j.curran at auckland.ac.nz>
+- **Docker Image**: quay.io/biocontainers/r-multicool:0.1_10--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.8K
 - **Last updated**: 2025-04-22

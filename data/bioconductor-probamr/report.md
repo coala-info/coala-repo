@@ -12,5 +12,6 @@ The package builds SAM file from shotgun proteomics data The package also provid
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-probamr:1.44.0--r45hdfd78af_0
 - **Skill**: generated
 

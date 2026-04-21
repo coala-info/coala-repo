@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-cghflasso:0.2_1--r3.2.2_0
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -13,6 +13,7 @@ Provided are classes for boolean and skewed boolean vectors,
 - **Version**: 4.6.0
 - **Author**: Michael Chirico [aut, cre], Jens Oehlschlägel [aut], Brian Ripley [ctb]
 - **Maintainer**: Michael Chirico <MichaelChirico4 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-bit:1.1_12--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 139.3K
 - **Last updated**: 2025-04-22

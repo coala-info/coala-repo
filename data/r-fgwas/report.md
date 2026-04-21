@@ -10,6 +10,7 @@ R package fgwas (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-fgwas:0.3.6--r45hdfd78af_8
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

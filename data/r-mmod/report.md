@@ -11,6 +11,7 @@ Provides functions for measuring
 - **Version**: 1.3.3
 - **Author**: David Winter [aut, cre], Peter Green [ctb], Zhian Kamvar [ctb], Thierry Gosselin [ctb]
 - **Maintainer**: David Winter <david.winter at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-mmod:1.3.3--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 40
 - **Last updated**: 2025-04-22

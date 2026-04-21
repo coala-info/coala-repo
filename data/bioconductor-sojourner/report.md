@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sheng-liu/sojourner
+- **Docker Image**: quay.io/biocontainers/bioconductor-sojourner:1.11.0--r42hf17093f_1
 - **Skill**: generated
 

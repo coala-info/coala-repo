@@ -12,5 +12,6 @@ The package comprises a set of pretrained machine learning models to predict bas
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-scclassifr:1.2.0--r41hdfd78af_0
 - **Skill**: generated
 

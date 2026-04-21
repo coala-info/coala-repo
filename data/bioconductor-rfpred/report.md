@@ -12,5 +12,6 @@ the package gives rfPred scores to missense variants identified by the chromosom
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rfpred:1.48.0--r45h01b2380_0
 - **Skill**: generated
 

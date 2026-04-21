@@ -14,6 +14,7 @@ Gaussian finite mixture models fitted via EM algorithm for
 - **Version**: 6.1.2
 - **Author**: Chris Fraley [aut], Adrian E. Raftery [aut], Luca Scrucca [aut, cre], Thomas Brendan Murphy [ctb], Michael Fop [ctb]
 - **Maintainer**: Luca Scrucca <luca.scrucca at unibo.it>
+- **Docker Image**: quay.io/biocontainers/r-mclust:5.2--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 2.0K
 - **Last updated**: 2025-04-22

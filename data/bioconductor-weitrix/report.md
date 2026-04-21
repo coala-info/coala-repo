@@ -12,5 +12,6 @@ the package "limma". Calibrate weights to account for known predictors of precis
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-weitrix:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

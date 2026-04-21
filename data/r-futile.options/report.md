@@ -10,6 +10,7 @@ A scoped options management framework. Used in other packages.</p>
 - **Version**: 1.0.1
 - **Author**: Brian Lee Yung Rowe
 - **Maintainer**: Brian Lee Yung Rowe <r at zatonovo.com>
+- **Docker Image**: quay.io/biocontainers/r-futile.options:1.0.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 8.3K
 - **Last updated**: 2025-04-22

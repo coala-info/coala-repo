@@ -12,5 +12,6 @@ The package contains functions to infer and visualize cell cycle process using S
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/hansenlab/tricycle
+- **Docker Image**: quay.io/biocontainers/bioconductor-tricycle:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

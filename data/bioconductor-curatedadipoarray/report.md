@@ -12,5 +12,6 @@ The package documents the data collection and processing. In addition to the doc
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/MahShaaban/curatedAdipoArray
+- **Docker Image**: quay.io/biocontainers/bioconductor-curatedadipoarray:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

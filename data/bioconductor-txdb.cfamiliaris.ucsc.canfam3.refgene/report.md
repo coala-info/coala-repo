@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-txdb.cfamiliaris.ucsc.canfam3.refgene:3.11.0--r45hdfd78af_10
 - **Skill**: generated
 

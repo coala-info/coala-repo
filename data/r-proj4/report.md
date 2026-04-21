@@ -14,6 +14,7 @@ A simple interface to lat/long projection and datum
 - **Version**: 1.0-15
 - **Author**: Simon Urbanek [aut, cre, cph] (https://urbanek.org)
 - **Maintainer**: Simon Urbanek <simon.urbanek at r-project.org>
+- **Docker Image**: quay.io/biocontainers/r-proj4:1.0_8--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 293
 - **Last updated**: 2025-04-22

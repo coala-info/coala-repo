@@ -10,6 +10,7 @@ Utility functions useful when programming and developing R packages.</p>
 - **Version**: 2.13.0
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.utils:2.5.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 52.8K
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package fnn (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-fnn:1.1--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 5.4K
 - **Last updated**: 2025-04-22

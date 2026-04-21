@@ -12,5 +12,6 @@ The package contains data of the Primary Blood Cancer Encyclopedia (PACE) projec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-bloodcancermultiomics2017:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/danro9685/RESOLVE
+- **Docker Image**: quay.io/biocontainers/bioconductor-resolve:1.12.0--r45hdfd78af_0
 - **Skill**: generated
 

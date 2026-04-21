@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/abodein/timeOmics
+- **Docker Image**: quay.io/biocontainers/bioconductor-timeomics:1.22.0--r45h575d39b_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ R package scdc (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-scdc:0--r43h9948957_10
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

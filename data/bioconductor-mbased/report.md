@@ -12,5 +12,6 @@ The package implements MBASED algorithm for detecting allele-specific gene expre
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mbased:1.44.0--r45hdfd78af_0
 - **Skill**: generated
 

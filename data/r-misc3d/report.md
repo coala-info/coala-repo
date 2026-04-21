@@ -11,6 +11,7 @@ A collection of miscellaneous 3d plots, including
 - **Version**: 0.9-2
 - **Author**: Luke Tierney [aut, cre], Dai Feng [aut]
 - **Maintainer**: Luke Tierney <luke-tierney at uiowa.edu>
+- **Docker Image**: quay.io/biocontainers/r-misc3d:0.8_4--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.6K
 - **Last updated**: 2025-04-22

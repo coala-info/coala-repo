@@ -12,5 +12,6 @@ The package proposes a differential splicing evaluation method based on isoform 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-nbsplice:1.15.0--r42hdfd78af_0
 - **Skill**: generated
 

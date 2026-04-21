@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-blockfest:1.6--r351h96ca727_2
 - **Skill**: not generated
 - **Total Downloads**: 331
 - **Last updated**: 2025-04-22

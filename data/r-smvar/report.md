@@ -10,6 +10,7 @@ R package smvar (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-smvar:1.3.3--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 275
 - **Last updated**: 2025-04-22

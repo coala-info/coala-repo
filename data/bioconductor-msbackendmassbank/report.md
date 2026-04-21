@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/MsBackendMassbank
+- **Docker Image**: quay.io/biocontainers/bioconductor-msbackendmassbank:1.18.2--r45hdfd78af_0
 - **Skill**: generated
 

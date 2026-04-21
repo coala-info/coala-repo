@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Yuanhang Liu
 - **Maintainer**: Yuanhang Liu &#x3c;&#x6c;&#x69;&#x75;&#x79;&#x31;&#x32;&#x20;&#x61;&#x74;&#x20;&#x75;&#x74;&#x68;&#x73;&#x63;&#x73;&#x61;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: https://github.com/Liuy12/XBSeq
+- **Docker Image**: quay.io/biocontainers/bioconductor-xbseq:1.22.0--r40hdfd78af_1
 - **Skill**: generated
 

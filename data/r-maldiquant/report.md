@@ -17,6 +17,7 @@ A complete analysis pipeline for matrix-assisted laser
 - **Version**: 1.22.3
 - **Author**: Sebastian Gibb [aut, cre], Korbinian Strimmer [ths], Sigurdur Smarason [ctb], Laurent Gatto [ctb], Paolo Inglese [ctb]
 - **Maintainer**: Sebastian Gibb <mail at sebastiangibb.de>
+- **Docker Image**: quay.io/biocontainers/r-maldiquant:1.18--r341ha44fe06_0
 - **Skill**: generated
 - **Total Downloads**: 222
 - **Last updated**: 2025-04-22

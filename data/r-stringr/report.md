@@ -14,6 +14,7 @@ A consistent, simple and easy to use set of wrappers around
 - **Version**: 1.6.0
 - **Author**: Hadley Wickham [aut, cre, cph], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-stringr:1.1.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 644.3K
 - **Last updated**: 2025-04-22

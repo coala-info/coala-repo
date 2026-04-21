@@ -10,6 +10,7 @@ Functions to analyse missing value mechanisms and to impute data sets in the con
 - **Version**: 1.2
 - **Author**: Quentin Giai Gianetto
 - **Maintainer**: Quentin Giai Gianetto <quentin2g at yahoo.fr>
+- **Docker Image**: quay.io/biocontainers/r-imp4p:0.7--r351h29659fb_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

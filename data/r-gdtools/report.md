@@ -16,6 +16,7 @@ Compute text metrics (width, ascent, descent) using 'Cairo'
 - **Version**: 0.5.0
 - **Author**: David Gohel [aut, cre], Hadley Wickham [aut], Lionel Henry [aut], Jeroen Ooms [aut], Yixuan Qiu [ctb], R Core Team [cph] (Cairo code from X11 device), ArData [cph], RStudio [cph]
 - **Maintainer**: David Gohel <david.gohel at ardata.fr>
+- **Docker Image**: quay.io/biocontainers/r-gdtools:0.1.4--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 425
 - **Last updated**: 2025-04-22

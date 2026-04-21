@@ -10,6 +10,7 @@ Implements the 'libyaml' 'YAML' 1.
 - **Version**: 2.3.12
 - **Author**: Hadley Wickham [cre], Shawn Garbett [ctb], Jeremy Stephens [aut, ctb], Kirill Simonov [aut], Yihui Xie [ctb], Zhuoer Dong [ctb], Jeffrey Horner [ctb], reikoch [ctb], Will Beasley [ctb], Brendan O'Connor [ctb], Michael Quinn [ctb], Charlie Gao [ctb], Gregory R. Warnes [ctb], Zhian N. Kamvar [ctb]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-yaml:2.1.13--r3.3.1_1
 - **Skill**: generated
 - **Total Downloads**: 477.2K
 - **Last updated**: 2025-04-22

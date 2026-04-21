@@ -11,6 +11,7 @@ Provides a wrapper for several 'FFTW' functions. This package provides access to
 - **Version**: 0.9-11
 - **Author**: Karim Rahim
 - **Maintainer**: Karim Rahim <karim.rahim at queensu.ca>
+- **Docker Image**: quay.io/biocontainers/r-fftwtools:0.9.7--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 547
 - **Last updated**: 2025-04-22

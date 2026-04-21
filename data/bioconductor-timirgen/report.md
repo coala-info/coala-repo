@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Krutik6/TimiRGeN
+- **Docker Image**: quay.io/biocontainers/bioconductor-timirgen:1.11.0--r43hdfd78af_0
 - **Skill**: generated
 

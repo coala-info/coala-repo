@@ -10,6 +10,7 @@ R package dimsum (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-dimsum:1.4--r40hdfd78af_5
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

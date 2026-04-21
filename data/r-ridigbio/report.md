@@ -14,6 +14,7 @@ An interface to iDigBio's search API that allows downloading
 - **Version**: 0.4.1
 - **Author**: Francois Michonneau [aut, cph] (Original Author), Matthew Collins [aut] (Original Author), Scott Chamberlain [ctb], Kevin Love [ctb], Hem Nalini Morzaria-Luna [ctb], Michelle L. Gaynor [ctb, aut], Jesse Bennett [cre] (Maintainer)
 - **Maintainer**: Jesse Bennett <j3553 at ufl.edu>
+- **Docker Image**: quay.io/biocontainers/r-ridigbio:0.3.5--r351h6115d3f_3
 - **Skill**: generated
 - **Total Downloads**: 282
 - **Last updated**: 2025-04-22

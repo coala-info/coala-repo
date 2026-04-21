@@ -12,5 +12,6 @@ The package contains functions for diagnostics (proteome/genome-wide and feature
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/symbioticMe/proBatch
+- **Docker Image**: quay.io/biocontainers/bioconductor-probatch:1.13.0--r42hdfd78af_0
 - **Skill**: generated
 

@@ -12,6 +12,7 @@ Cross-platform command-line argument parser written purely in R
 - **Version**: 0.7.2
 - **Author**: David J. H. Shih
 - **Maintainer**: David J. H. Shih <djh.shih at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-argparser:0.4--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 1.0K
 - **Last updated**: 2025-04-22

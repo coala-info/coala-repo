@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ubioinformat/TraRe
+- **Docker Image**: quay.io/biocontainers/bioconductor-trare:1.5.0--r42hdfd78af_0
 - **Skill**: generated
 

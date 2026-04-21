@@ -10,6 +10,7 @@ R package grain (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-grain:1.4.6--r45h0df16ae_0
 - **Skill**: generated
 - **Total Downloads**: 41
 - **Last updated**: 2025-04-22

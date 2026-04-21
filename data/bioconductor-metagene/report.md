@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CharlesJB/metagene
+- **Docker Image**: quay.io/biocontainers/bioconductor-metagene:2.31.0--r43hdfd78af_0
 - **Skill**: generated
 

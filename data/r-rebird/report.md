@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.3.0
 - **Author**: Rafael Maia [aut], Scott Chamberlain [aut], Andy Teucher [aut], Guy Babineau [ctb], Marianna Foos [ctb], David Bradnum [ctb], Sebastian Pardo [aut, cre]
 - **Maintainer**: Sebastian Pardo <sebpardo at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-rebird:1.0.0--r351h6115d3f_1
 - **Skill**: generated
 - **Total Downloads**: 40
 - **Last updated**: 2025-04-22

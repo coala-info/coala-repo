@@ -15,6 +15,7 @@ Estimates hierarchical F-statistics from haploid or
 - **Version**: 0.5-11
 - **Author**: Jerome Goudet [aut, cre], Thibaut Jombart [aut], Zhian N. Kamvar [ctb], Eric Archer [ctb], Olivier Hardy [ctb]
 - **Maintainer**: Jerome Goudet <jerome.goudet at unil.ch>
+- **Docker Image**: quay.io/biocontainers/r-hierfstat:0.04_22--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 45
 - **Last updated**: 2025-04-22

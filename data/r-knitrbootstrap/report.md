@@ -10,6 +10,7 @@ R package knitrbootstrap (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-knitrbootstrap:1.0.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 302
 - **Last updated**: 2025-04-22

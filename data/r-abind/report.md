@@ -14,6 +14,7 @@ Combine multidimensional arrays into a single array.
 - **Version**: 1.4-8
 - **Author**: Tony Plate [aut, cre], Richard Heiberger [aut]
 - **Maintainer**: Tony Plate <tplate at acm.org>
+- **Docker Image**: quay.io/biocontainers/r-abind:1.4.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 84.1K
 - **Last updated**: 2025-04-22

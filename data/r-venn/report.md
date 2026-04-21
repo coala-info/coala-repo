@@ -11,6 +11,7 @@ A close to zero dependency package to draw and display Venn
 - **Version**: 1.12
 - **Author**: Adrian Dusa [aut, cre, cph]
 - **Maintainer**: Adrian Dusa <dusa.adrian at unibuc.ro>
+- **Docker Image**: quay.io/biocontainers/r-venn:1.2--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 445
 - **Last updated**: 2025-04-22

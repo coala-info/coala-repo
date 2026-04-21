@@ -11,6 +11,7 @@ More comfortable interface to work with R data or source files
 - **Version**: 1.3
 - **Author**: Michel Lang
 - **Maintainer**: Michel Lang <michellang at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-fail:1.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 282
 - **Last updated**: 2025-04-22

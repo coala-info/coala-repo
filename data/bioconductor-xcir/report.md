@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/SRenan/XCIR
+- **Docker Image**: quay.io/biocontainers/bioconductor-xcir:1.7.0--r41hdfd78af_0
 - **Skill**: generated
 

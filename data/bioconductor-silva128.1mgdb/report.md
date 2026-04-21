@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HCBravoLab/silva128.1MgDb
+- **Docker Image**: quay.io/biocontainers/bioconductor-silva128.1mgdb:1.00.0--r351_0
 - **Skill**: generated
 

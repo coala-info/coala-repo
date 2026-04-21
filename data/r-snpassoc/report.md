@@ -16,6 +16,7 @@ Functions to perform most of the common analysis in genome
 - **Version**: 2.1-2
 - **Author**: Victor Moreno [aut], Juan R Gonzalez [aut], Dolors Pelegri [aut, cre]
 - **Maintainer**: Dolors Pelegri <dolors.pelegri at isglobal.org>
+- **Docker Image**: quay.io/biocontainers/r-snpassoc:1.9_2--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 41
 - **Last updated**: 2025-04-22

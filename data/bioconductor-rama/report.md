@@ -12,5 +12,6 @@ The package uses a Bayesian hierarchical model for the robust estimation. Outlie
 - **Author**: Raphael Gottardo
 - **Maintainer**: Raphael Gottardo &#x3c;&#x72;&#x61;&#x70;&#x68;&#x20;&#x61;&#x74;&#x20;&#x73;&#x74;&#x61;&#x74;&#x2e;&#x75;&#x62;&#x63;&#x2e;&#x63;&#x61;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rama:1.72.0--r42ha9d7317_2
 - **Skill**: generated
 

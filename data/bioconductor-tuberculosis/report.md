@@ -12,5 +12,6 @@ The package has more than 10,000 samples from both microarray and sequencing stu
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/schifferl/tuberculosis
+- **Docker Image**: quay.io/biocontainers/bioconductor-tuberculosis:1.16.0--r45hdfd78af_0
 - **Skill**: generated
 

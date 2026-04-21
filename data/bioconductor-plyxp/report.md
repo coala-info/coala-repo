@@ -12,5 +12,6 @@ The package provides `rlang` data masks for the SummarizedExperiment class. The 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jtlandis/plyxp
+- **Docker Image**: quay.io/biocontainers/bioconductor-plyxp:1.4.3--r45hdfd78af_0
 - **Skill**: generated
 

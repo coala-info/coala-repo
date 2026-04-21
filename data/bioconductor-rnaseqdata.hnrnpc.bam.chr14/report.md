@@ -12,5 +12,6 @@ The package contains 8 BAM files, 1 per sequencing run. Each BAM file was obtain
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rnaseqdata.hnrnpc.bam.chr14:0.48.0--r45hdfd78af_0
 - **Skill**: generated
 

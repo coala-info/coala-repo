@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Julian Gehring, Clemens Kreutz
 - **Maintainer**: Julian Gehring &#x3c;&#x6a;&#x67;&#x2d;&#x62;&#x69;&#x6f;&#x63;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x78;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-tssi:1.29.0--r36h516909a_1
 - **Skill**: generated
 

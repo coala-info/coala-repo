@@ -11,6 +11,7 @@ Automated compound deconvolution, alignment across samples, and identification o
 - **Version**: 2.2.0
 - **Author**: Xavier Domingo-Almenara [aut, cre, cph], Jasen P. Finch [ctb], Adria Olomi [ctb], Sara Samino [aut], Maria Vinaixa [aut], Alexandre Perera [aut, ths], Jesus Brezmes [aut, ths], Oscar Yanes [aut, ths]
 - **Maintainer**: Xavier Domingo-Almenara <xavier.domingo at urv.cat>
+- **Docker Image**: quay.io/biocontainers/r-erah:2.2.0--r44h40dc89f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

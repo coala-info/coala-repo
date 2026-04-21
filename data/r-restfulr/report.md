@@ -10,6 +10,7 @@ Models a RESTful service as if it were a nested R list.</p>
 - **Version**: 0.0.16
 - **Author**: Michael Lawrence [aut, cre]
 - **Maintainer**: Michael Lawrence <michafla at gene.com>
+- **Docker Image**: quay.io/biocontainers/r-restfulr:0.0.16--r45hf7ecca6_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

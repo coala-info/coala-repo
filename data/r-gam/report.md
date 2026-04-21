@@ -10,6 +10,7 @@ Functions for fitting and working with generalized	additive models, as described
 - **Version**: 1.22-7
 - **Author**: Trevor Hastie [aut, cre], Balasubramanian Narasimhan [ctb]
 - **Maintainer**: Trevor Hastie <hastie at stanford.edu>
+- **Docker Image**: quay.io/biocontainers/r-gam:1.14_4--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 520
 - **Last updated**: 2025-04-22

@@ -11,6 +11,7 @@ A collection of some tests commonly used for identifying
 - **Version**: 0.15
 - **Author**: Lukasz Komsta
 - **Maintainer**: Lukasz Komsta <lukasz.komsta at umlub.pl>
+- **Docker Image**: quay.io/biocontainers/r-outliers:0.14--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 414
 - **Last updated**: 2025-04-22

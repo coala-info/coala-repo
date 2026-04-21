@@ -12,5 +12,6 @@ The package vignette shows the R code to reproduce all figures in the paper.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rnainteractmapk:1.40.0--r43hdfd78af_0
 - **Skill**: generated
 

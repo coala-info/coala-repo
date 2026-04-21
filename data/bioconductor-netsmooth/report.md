@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIMSBbioinfo/netSmooth
+- **Docker Image**: quay.io/biocontainers/bioconductor-netsmooth:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

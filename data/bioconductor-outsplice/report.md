@@ -12,5 +12,6 @@ The package also will calculate the splicing burden in each tumor and characteri
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/GuoLabUCSD/OutSplice
+- **Docker Image**: quay.io/biocontainers/bioconductor-outsplice:1.10.0--r45hdfd78af_0
 - **Skill**: generated
 

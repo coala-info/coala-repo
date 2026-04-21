@@ -15,6 +15,7 @@ Genomic alterations including single nucleotide substitution,
 - **Version**: 2.3.1
 - **Author**: Shixiang Wang [aut, cre], Ziyu Tao [aut], Huimin Li [aut], Tao Wu [aut], Xue-Song Liu [aut, ctb], Anand Mayakonda [ctb]
 - **Maintainer**: Shixiang Wang <w_shixiang at 163.com>
+- **Docker Image**: quay.io/biocontainers/r-sigminer:2.3.1--r45h0df16ae_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

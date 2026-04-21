@@ -12,6 +12,7 @@ Implements the Cross-contribution Compensating Multiple
 - **Version**: 0.0.21
 - **Author**: Henning Redestig
 - **Maintainer**: Henning Redestig <henning.red at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-crmn:0.0.21--r45h3342da4_6
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

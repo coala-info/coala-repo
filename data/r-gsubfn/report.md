@@ -16,6 +16,7 @@ The gsubfn function is like gsub but can take a replacement
 - **Version**: 0.7
 - **Author**: G. Grothendieck
 - **Maintainer**: G. Grothendieck <ggrothendieck at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-gsubfn:0.6_6--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 651
 - **Last updated**: 2025-04-22

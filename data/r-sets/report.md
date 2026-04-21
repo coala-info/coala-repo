@@ -12,6 +12,7 @@ Data structures and basic operations for ordinary sets,
 - **Version**: 1.0-25
 - **Author**: David Meyer [aut, cre], Kurt Hornik [aut], Christian Buchta [ctb]
 - **Maintainer**: David Meyer <David.Meyer at R-project.org>
+- **Docker Image**: quay.io/biocontainers/r-sets:1.0_16--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 372
 - **Last updated**: 2025-04-22

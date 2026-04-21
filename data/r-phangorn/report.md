@@ -14,6 +14,7 @@ Allows for estimation of phylogenetic trees and networks
 - **Version**: 2.12.1
 - **Author**: Klaus Schliep [aut, cre], Emmanuel Paradis [aut], Leonardo de Oliveira Martins [aut], Alastair Potts [aut], Iris Bardel-Kahr [aut], Tim W. White [ctb], Cyrill Stachniss [ctb], Michelle Kendall [ctb], Keren Halabi [ctb], Richel Bilderbeek [ctb], Kristin Winchell [ctb], Liam Revell [ctb], Mike Gilchrist [ctb], Jeremy Beaulieu [ctb], Brian O'Meara [ctb], Long Qu [ctb], Joseph Brown [ctb], Santiago Claramunt [ctb]
 - **Maintainer**: Klaus Schliep <klaus.schliep at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-phangorn:2.4.0--r341h9d2a408_0
 - **Skill**: generated
 - **Total Downloads**: 637
 - **Last updated**: 2025-04-22

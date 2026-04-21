@@ -12,5 +12,6 @@ The package is able to read bead-level data (raw TIFFs and text files) output by
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-beadarray:2.56.0--r44h3df3fcb_1
 - **Skill**: generated
 

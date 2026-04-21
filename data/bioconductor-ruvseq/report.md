@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/drisso/RUVSeq
+- **Docker Image**: quay.io/biocontainers/bioconductor-ruvseq:1.44.0--r45hdfd78af_0
 - **Skill**: generated
 

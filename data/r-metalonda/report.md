@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-metalonda:1.1.8--r45h3121a25_6
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

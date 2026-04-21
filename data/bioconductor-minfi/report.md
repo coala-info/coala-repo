@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/hansenlab/minfi
+- **Docker Image**: quay.io/biocontainers/bioconductor-minfi:1.56.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -16,6 +16,7 @@ Functions for fitting continuous-time Markov and hidden
 - **Version**: 1.8.2
 - **Author**: Christopher Jackson [aut, cre]
 - **Maintainer**: Christopher Jackson <chris.jackson at mrc-bsu.cam.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-msm:1.6.7--r351h96ca727_0
 - **Skill**: generated
 - **Total Downloads**: 217
 - **Last updated**: 2025-04-22

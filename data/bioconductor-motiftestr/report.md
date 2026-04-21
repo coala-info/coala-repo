@@ -12,5 +12,6 @@ The package also contains core functions to prepare data for analysis, and to vi
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/smped/motifTestR
+- **Docker Image**: quay.io/biocontainers/bioconductor-motiftestr:1.6.1--r45hdfd78af_0
 - **Skill**: generated
 

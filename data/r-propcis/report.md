@@ -10,6 +10,7 @@ Computes two-sample confidence intervals for single, paired and independent prop
 - **Version**: 0.3-0
 - **Author**: Ralph Scherer
 - **Maintainer**: Ralph Scherer <shearer.ra76 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-propcis:0.3_0--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 284
 - **Last updated**: 2025-04-22

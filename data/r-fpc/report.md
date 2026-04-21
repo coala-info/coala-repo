@@ -17,6 +17,7 @@ Various methods for clustering and cluster validation.
 - **Version**: 2.2-14
 - **Author**: Christian Hennig [aut, cre]
 - **Maintainer**: Christian Hennig <christian.hennig at unibo.it>
+- **Docker Image**: quay.io/biocontainers/r-fpc:2.1_10--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 253
 - **Last updated**: 2025-04-22

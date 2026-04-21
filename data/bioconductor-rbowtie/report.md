@@ -12,5 +12,6 @@ The package is used by the QuasR bioconductor package. We recommend to use the Q
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fmicompbio/Rbowtie
+- **Docker Image**: quay.io/biocontainers/bioconductor-rbowtie:1.50.0--r45ha27e39d_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Huber-group-EMBL/rhdf5
+- **Docker Image**: quay.io/biocontainers/bioconductor-rhdf5:2.54.1--r45h882589e_0
 - **Skill**: generated
 

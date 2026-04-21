@@ -10,6 +10,7 @@ Methods that simplify the setup of S3 generic functions and S3 methods.  Major e
 - **Version**: 1.8.2
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.methodss3:1.7.1--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 52.2K
 - **Last updated**: 2025-04-22

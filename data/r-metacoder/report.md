@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-metacoder:0.3.9--r45h0df16ae_0
 - **Skill**: generated
 - **Total Downloads**: 43
 - **Last updated**: 2025-04-22

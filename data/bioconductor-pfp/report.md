@@ -12,5 +12,6 @@ The package is helpful for researchers to find the biomarkers and its function.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/aib-group/PFP
+- **Docker Image**: quay.io/biocontainers/bioconductor-pfp:1.7.0--r43hdfd78af_0
 - **Skill**: generated
 

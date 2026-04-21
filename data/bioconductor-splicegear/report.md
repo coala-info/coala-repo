@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Laurent Gautier &#x3c;&#x6c;&#x61;&#x75;&#x72;&#x65;&#x6e;&#x74;&#x20;&#x61;&#x74;&#x20;&#x63;&#x62;&#x73;&#x2e;&#x64;&#x74;&#x75;&#x2e;&#x64;&#x6b;&#x3e;
 - **Maintainer**: Laurent Gautier &#x3c;&#x6c;&#x61;&#x75;&#x72;&#x65;&#x6e;&#x74;&#x20;&#x61;&#x74;&#x20;&#x63;&#x62;&#x73;&#x2e;&#x64;&#x74;&#x75;&#x2e;&#x64;&#x6b;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-splicegear:1.58.0--r36_0
 - **Skill**: generated
 

@@ -13,6 +13,7 @@ Computes various confidence intervals for the Kaplan-Meier
 - **Version**: 0.5-6
 - **Author**: Ralf Strobl
 - **Maintainer**: Tobias Verbeke <tobias.verbeke at openanalytics.eu>
+- **Docker Image**: quay.io/biocontainers/r-km.ci:0.5_2--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 796
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package genometricorr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-genometricorr:1.1.17--0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

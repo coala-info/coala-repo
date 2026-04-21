@@ -16,6 +16,7 @@ Several functions are available for calculating the most
 - **Version**: 0.2-6
 - **Author**: AC Del Re [aut, cre]
 - **Maintainer**: AC Del Re <stats at acdelre.com>
+- **Docker Image**: quay.io/biocontainers/r-compute.es:0.2_4--r3.2.2_0
 - **Skill**: not generated
 - **Total Downloads**: 305
 - **Last updated**: 2025-04-22

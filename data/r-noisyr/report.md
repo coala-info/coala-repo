@@ -14,6 +14,7 @@ Quantifies and removes technical noise from high-throughput
 - **Version**: 1.0.0
 - **Author**: Ilias Moutsopoulos [aut, cre], Irina Mohorianu [aut, ctb], Hajk-Georg Drost [ctb], Elze Lauzikaite [ctb]
 - **Maintainer**: Ilias Moutsopoulos <im383 at cam.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-noisyr:1.0.0--r44h3342da4_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

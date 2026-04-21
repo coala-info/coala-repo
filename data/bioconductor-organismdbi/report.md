@@ -12,5 +12,6 @@ The package enables a simple unified interface to several annotation packages ea
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-organismdbi:1.52.0--r45hdfd78af_0
 - **Skill**: generated
 

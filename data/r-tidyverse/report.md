@@ -13,6 +13,7 @@ The 'tidyverse' is a set of packages that work in harmony
 - **Version**: 2.0.0
 - **Author**: Hadley Wickham [aut, cre], RStudio [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at rstudio.com>
+- **Docker Image**: quay.io/biocontainers/r-tidyverse:1.2.1
 - **Skill**: generated
 - **Total Downloads**: 299.4K
 - **Last updated**: 2025-04-22

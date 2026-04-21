@@ -11,6 +11,7 @@ Memoization can be used to speed up repetitive and computational expensive funct
 - **Version**: 0.17.0
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.cache:0.12.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.1K
 - **Last updated**: 2025-04-22

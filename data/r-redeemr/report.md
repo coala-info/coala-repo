@@ -10,6 +10,7 @@ R package redeemr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-redeemr:1.0.0--r44h7b50bb2_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

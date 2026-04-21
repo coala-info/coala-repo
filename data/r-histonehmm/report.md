@@ -10,6 +10,7 @@ R package histonehmm (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-histonehmm:1.8--r44hb2a3317_8
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

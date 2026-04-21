@@ -11,6 +11,7 @@ Functions for plotting graphical shapes
 - **Version**: 1.4.6.1
 - **Author**: Karline Soetaert
 - **Maintainer**: Karline Soetaert <karline.soetaert at nioz.nl>
+- **Docker Image**: quay.io/biocontainers/r-shape:1.4.2--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 16.8K
 - **Last updated**: 2025-04-22

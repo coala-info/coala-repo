@@ -12,5 +12,6 @@ The package provides parallel implementation of algorithms that process binary m
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIMIB-DISCo/TRONCO
+- **Docker Image**: quay.io/biocontainers/bioconductor-tronco:2.42.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package implements a method for normalising microarray intensities from sing
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-vsn:3.78.1--r45h01b2380_0
 - **Skill**: generated
 

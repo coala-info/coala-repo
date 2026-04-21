@@ -13,6 +13,7 @@ Several utility functions for the book entitled
 - **Version**: 0.7.6
 - **Author**: Minato Nakazawa
 - **Maintainer**: Minato Nakazawa <minatonakazawa at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-fmsb:0.6.3--r351h6115d3f_3
 - **Skill**: generated
 - **Total Downloads**: 328
 - **Last updated**: 2025-04-22

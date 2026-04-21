@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/bioFAM/MOFA2
+- **Docker Image**: quay.io/biocontainers/bioconductor-mofa2:1.20.2--r45h9ee0642_0
 - **Skill**: generated
 

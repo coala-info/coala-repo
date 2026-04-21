@@ -10,6 +10,7 @@ R package corbi (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-corbi:0.4_2--r351he0ffe0d_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

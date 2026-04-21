@@ -10,6 +10,7 @@ A collection of algorithms and functions to aid statistical modeling. Includes l
 - **Version**: 1.5.1
 - **Author**: Gordon Smyth [cre, aut], Lizhong Chen [aut], Yifang Hu [ctb], Peter Dunn [ctb], Belinda Phipson [ctb], Yunshun Chen [ctb]
 - **Maintainer**: Gordon Smyth <smyth at wehi.edu.au>
+- **Docker Image**: quay.io/biocontainers/r-statmod:1.4.29--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 2.0K
 - **Last updated**: 2025-04-22

@@ -11,6 +11,7 @@ Density, probability, quantile and random number
 - **Version**: 1.0-9
 - **Author**: Olaf Mersmann [aut, cre], Heike Trautmann [aut], Detlef Steuer [aut], Björn Bornkamp [aut]
 - **Maintainer**: Olaf Mersmann <olafm at p-value.net>
+- **Docker Image**: quay.io/biocontainers/r-truncnorm:1.0_7--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 1.4K
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ the package ensures efficient analysis of modern multicore systems.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/biomod-lih/consICA
+- **Docker Image**: quay.io/biocontainers/bioconductor-consica:2.8.0--r45hdfd78af_0
 - **Skill**: generated
 

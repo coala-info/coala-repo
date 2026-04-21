@@ -12,5 +12,6 @@ The package also provides tools to read, write and interconvert the file formats
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/LaraSellesVidal/ncRNAtools
+- **Docker Image**: quay.io/biocontainers/bioconductor-ncrnatools:1.20.0--r45hdfd78af_0
 - **Skill**: generated
 

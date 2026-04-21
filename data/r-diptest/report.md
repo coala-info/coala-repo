@@ -12,6 +12,7 @@ Compute Hartigan's dip test statistic for unimodality /
 - **Version**: 0.77-2
 - **Author**: Martin Maechler [aut, cre] (Ported to R and C from Fortran and S-plus; much enhanced), Dario Ringach [aut] (Fortran and S-plus; at NYU.edu)
 - **Maintainer**: Martin Maechler <maechler at stat.math.ethz.ch>
+- **Docker Image**: quay.io/biocontainers/r-diptest:0.75_7--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 608
 - **Last updated**: 2025-04-22

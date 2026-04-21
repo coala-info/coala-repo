@@ -10,6 +10,7 @@ R package r0 (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-r0:1.2_6--r44h3121a25_3
 - **Skill**: generated
 - **Total Downloads**: 277
 - **Last updated**: 2025-04-22

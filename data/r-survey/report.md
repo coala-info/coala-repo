@@ -10,6 +10,7 @@ Summary statistics, two-sample tests, rank tests, generalised linear models, cum
 - **Version**: 4.4-8
 - **Author**: Thomas Lumley [aut], Peter Gao [aut], Ben Schneider [aut], "Thomas Lumley" [cre]
 - **Maintainer**: "Thomas Lumley" <t.lumley at auckland.ac.nz>
+- **Docker Image**: quay.io/biocontainers/r-survey:3.31_5--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 480
 - **Last updated**: 2025-04-22

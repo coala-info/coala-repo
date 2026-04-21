@@ -12,5 +12,6 @@ the package implements a consensus classifier, which consolidates and improves o
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/bhklab/consensusOV
+- **Docker Image**: quay.io/biocontainers/bioconductor-consensusov:1.32.0--r45hdfd78af_0
 - **Skill**: generated
 

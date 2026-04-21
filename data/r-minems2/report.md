@@ -10,6 +10,7 @@ R package minems2 (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-minems2:0.9.3--r44h9948957_8
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

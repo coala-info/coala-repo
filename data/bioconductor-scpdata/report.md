@@ -12,5 +12,6 @@ The package disseminates mass spectrometry (MS)-based single-cell proteomics (SC
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-scpdata:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

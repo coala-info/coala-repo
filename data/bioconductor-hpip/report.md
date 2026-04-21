@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mrbakhsh/HPiP
+- **Docker Image**: quay.io/biocontainers/bioconductor-hpip:1.16.1--r45hdfd78af_0
 - **Skill**: generated
 

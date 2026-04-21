@@ -16,6 +16,7 @@ Functions for creating plots and image files in a unified way
 - **Version**: 2.17.3
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.devices:2.15.1--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 320
 - **Last updated**: 2025-04-22

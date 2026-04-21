@@ -12,5 +12,6 @@ The package contains BioGRID interactions for arabidopsis(thale cress), c.elegan
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-simpintlists:1.46.0--r45hdfd78af_0
 - **Skill**: generated
 

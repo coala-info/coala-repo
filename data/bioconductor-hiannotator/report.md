@@ -12,5 +12,6 @@ The package comes with three types of annotation functions which calculates if a
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-hiannotator:1.40.0--r44hdfd78af_0
 - **Skill**: generated
 

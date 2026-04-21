@@ -12,5 +12,6 @@ The package is especially tailored towards metabolomics and proteomics mass spec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-matrixqcvis:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package has functions for handling the occupancy distribution for a multinom
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-occugene:1.70.0--r45hdfd78af_0
 - **Skill**: generated
 

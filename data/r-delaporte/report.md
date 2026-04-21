@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-delaporte:3.0.0--r3.3.1_0
 - **Skill**: not generated
 - **Total Downloads**: 390
 - **Last updated**: 2025-04-22

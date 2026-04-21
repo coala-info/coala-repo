@@ -12,5 +12,6 @@ the package omXplore.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/edyp-lab/omXplore
+- **Docker Image**: quay.io/biocontainers/bioconductor-omxplore:1.4.2--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package will automatically search those targets in the chromatograms resulti
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/acinostroza/TargetSearch
+- **Docker Image**: quay.io/biocontainers/bioconductor-targetsearch:2.12.0--r45h01b2380_0
 - **Skill**: generated
 

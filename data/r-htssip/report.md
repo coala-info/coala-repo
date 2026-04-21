@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-htssip:1.4.1--r44h3342da4_7
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

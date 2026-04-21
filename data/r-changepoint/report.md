@@ -10,6 +10,7 @@ Implements various mainstream and specialised changepoint methods for finding si
 - **Version**: 2.3
 - **Author**: Rebecca Killick [aut, cre], Kaylea Haynes [ctb], Harjit Hullait [ctb], Idris Eckley [ths], Paul Fearnhead [ctb, ths], Robin Long [ctb], Jamie Lee [ctr]
 - **Maintainer**: Rebecca Killick <r.killick at lancs.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-changepoint:2.2.2--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 679
 - **Last updated**: 2025-04-22

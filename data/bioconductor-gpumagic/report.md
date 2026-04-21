@@ -12,5 +12,6 @@ The package aims to help users write openCL code with little or no effort. It is
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Jiefei-Wang/gpuMagic
+- **Docker Image**: quay.io/biocontainers/bioconductor-gpumagic:1.18.0--r43hf17093f_1
 - **Skill**: generated
 

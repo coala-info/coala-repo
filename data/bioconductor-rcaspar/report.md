@@ -12,5 +12,6 @@ The package is the R-version of the C-based software \bold{CASPAR} (Kaderali,200
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rcaspar:1.56.0--r45hdfd78af_0
 - **Skill**: generated
 

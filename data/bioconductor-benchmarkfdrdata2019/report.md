@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/stephaniehicks/benchmarkfdrData2019
+- **Docker Image**: quay.io/biocontainers/bioconductor-benchmarkfdrdata2019:1.20.0--r44hdfd78af_0
 - **Skill**: generated
 

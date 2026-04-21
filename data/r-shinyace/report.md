@@ -10,6 +10,7 @@ R package shinyace (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-shinyace:0.2.1--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 290
 - **Last updated**: 2025-04-22

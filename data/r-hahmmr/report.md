@@ -10,6 +10,7 @@ Haplotype-aware Hidden Markov Model for RNA (HaHMMR) is a method for detecting c
 - **Version**: 1.0.0
 - **Author**: Teng Gao [aut, cre], Evan Biederstedt [aut], Peter Kharchenko [aut]
 - **Maintainer**: Teng Gao <tgaoteng at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-hahmmr:1.0.0--r44h40dc89f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

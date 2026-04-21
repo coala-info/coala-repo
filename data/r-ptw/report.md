@@ -17,6 +17,7 @@ Parametric Time Warping aligns patterns, i.e., it aims to
 - **Version**: 1.9-17
 - **Author**: Jan Gerretzen [ctb], Paul Eilers [aut], Hans Wouters [ctb], Tom Bloemberg [aut], Ron Wehrens [aut, cre]
 - **Maintainer**: Ron Wehrens <ron.wehrens at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-ptw:1.9_11--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 369
 - **Last updated**: 2025-04-22

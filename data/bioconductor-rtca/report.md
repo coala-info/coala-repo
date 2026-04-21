@@ -12,5 +12,6 @@ The package imports real-time cell electrical impedance data into R. As an alter
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rtca:1.62.0--r45hdfd78af_0
 - **Skill**: generated
 

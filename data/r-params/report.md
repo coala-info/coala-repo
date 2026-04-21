@@ -12,6 +12,7 @@ An interface to simplify organizing parameters used in a package,
 - **Version**: 0.7.7
 - **Author**: Sahil Seth [aut, cre], Yihui Xie [ctb] (kable from knitr R/table.R)
 - **Maintainer**: Sahil Seth <me at sahilseth.com>
+- **Docker Image**: quay.io/biocontainers/r-params:0.4--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 282
 - **Last updated**: 2025-04-22

@@ -18,6 +18,7 @@ Fitting possibly high dimensional penalized
 - **Version**: 0.9-53
 - **Author**: Jelle Goeman [aut, cre], Rosa Meijer [aut], Nimisha Chaturvedi [aut], Matthew Lueder [aut]
 - **Maintainer**: Jelle Goeman <j.j.goeman at lumc.nl>
+- **Docker Image**: quay.io/biocontainers/r-penalized:0.9.47--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 444
 - **Last updated**: 2025-04-22

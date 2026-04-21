@@ -11,6 +11,7 @@ Fitting regression models where, in addition to possible linear terms, one or mo
 - **Version**: 2.2-1
 - **Author**: Vito M. R. Muggeo [aut, cre]
 - **Maintainer**: Vito M. R. Muggeo <vito.muggeo at unipa.it>
+- **Docker Image**: quay.io/biocontainers/r-segmented:0.5_1.4--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 1.7K
 - **Last updated**: 2025-04-22

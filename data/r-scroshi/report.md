@@ -10,6 +10,7 @@ R package scroshi (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-scroshi:1.0.0.0--r44h3121a25_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

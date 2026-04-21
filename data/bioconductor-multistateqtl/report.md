@@ -12,5 +12,6 @@ The package 'multistateQTL' contains functions which can remove or impute missin
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/dunstone-a/multistateQTL
+- **Docker Image**: quay.io/biocontainers/bioconductor-multistateqtl:2.2.0--r45hdfd78af_0
 - **Skill**: generated
 

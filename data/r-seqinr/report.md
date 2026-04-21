@@ -13,6 +13,7 @@ Exploratory data analysis and data visualization
 - **Version**: 4.2-36
 - **Author**: Delphine Charif [aut], Olivier Clerc [ctb], Carolin Frank [ctb], Jean R. Lobry [aut, cph], Anamaria Necşulea [ctb], Leonor Palmeira [ctb], Simon Penel [cre], Guy Perrière [ctb]
 - **Maintainer**: Simon Penel <simon.penel at univ-lyon1.fr>
+- **Docker Image**: quay.io/biocontainers/r-seqinr:3.4_5--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 124
 - **Last updated**: 2025-04-22

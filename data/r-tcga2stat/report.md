@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-tcga2stat:1.2--r44h3121a25_11
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

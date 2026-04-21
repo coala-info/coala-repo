@@ -12,5 +12,6 @@ the package Spectra that stores MS/MS spectra. MetCirc offers functionality to c
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-metcirc:1.40.0--r45hdfd78af_0
 - **Skill**: generated
 

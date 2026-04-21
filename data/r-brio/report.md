@@ -12,6 +12,7 @@ Functions to handle basic input output, these functions
 - **Version**: 1.1.5
 - **Author**: Jim Hester [aut], Gábor Csárdi [aut, cre], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Gábor Csárdi <csardi.gabor at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-brio:0.3.17--r36_0
 - **Skill**: generated
 - **Total Downloads**: 15.2K
 - **Last updated**: 2025-04-22

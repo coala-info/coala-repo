@@ -10,6 +10,7 @@ It is meant to be used with the 'extrafont' package. The 'extrafont' package con
 - **Version**: 1.1
 - **Author**: Winston Chang [aut], Frederic Bertrand [cre]
 - **Maintainer**: Frederic Bertrand <frederic.bertrand at lecnam.net>
+- **Docker Image**: quay.io/biocontainers/r-extrafontdb:1.0--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 808
 - **Last updated**: 2025-04-22

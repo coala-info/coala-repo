@@ -14,6 +14,7 @@ Create, store, access, and manipulate massive matrices.
 - **Version**: 4.6.4
 - **Author**: Michael J. Kane [aut, cre], John W. Emerson [aut], Peter Haverty [aut], Charles Determan [aut]
 - **Maintainer**: Michael J. Kane <bigmemoryauthors at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-bigmemory:4.5.19--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 536
 - **Last updated**: 2025-04-22

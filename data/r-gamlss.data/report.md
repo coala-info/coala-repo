@@ -12,6 +12,7 @@ Data used as examples in the books on Generalized Additive Models for Location S
 - **Version**: 6.0-7
 - **Author**: Mikis Stasinopoulos [aut, cre], Robert Rigby [aut], Fernanda De Bastiani [ctb]
 - **Maintainer**: Mikis Stasinopoulos <d.stasinopoulos at gre.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-gamlss.data:5.0_0--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 318
 - **Last updated**: 2025-04-22

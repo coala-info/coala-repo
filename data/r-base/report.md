@@ -10,6 +10,7 @@ R package base (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-base:4.4.1
 - **Skill**: generated
 - **Total Downloads**: 1.5M
 - **Last updated**: 2025-04-22

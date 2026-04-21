@@ -15,6 +15,7 @@ Provides classes for storing and manipulating taxonomic data.
 - **Version**: 0.4.4
 - **Author**: Scott Chamberlain [aut], Zachary Foster [aut, cre]
 - **Maintainer**: Zachary Foster <zacharyfoster1989 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-taxa:0.3.2--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 39
 - **Last updated**: 2025-04-22

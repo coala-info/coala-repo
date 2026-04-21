@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-contibait:1.30.0--r43hf17093f_1
 - **Skill**: generated
 

@@ -13,6 +13,7 @@ High level functions for parallel programming with 'Rcpp'.
 - **Version**: 5.1.11-1
 - **Author**: JJ Allaire [aut], Romain Francois [aut, cph], Kevin Ushey [aut, cre], Gregory Vandenbrouck [aut], Marcus Geelnard [aut, cph] (TinyThread library, https://tinythreadpp.bitsnbites.eu/), Hamada S. Badr [ctb], Posit, PBC [cph], Intel [aut, cph] (Intel TBB library, https://www.threadingbuildingblocks.org/), Microsoft [cph]
 - **Maintainer**: Kevin Ushey <kevin at rstudio.com>
+- **Docker Image**: quay.io/biocontainers/r-rcppparallel:4.3.20--r3.3.1_1
 - **Skill**: generated
 - **Total Downloads**: 7.8K
 - **Last updated**: 2025-04-22

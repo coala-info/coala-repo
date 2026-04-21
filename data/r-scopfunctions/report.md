@@ -10,6 +10,7 @@ R package scopfunctions (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-scopfunctions:0--r44h9948957_4
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ Create Q-Q and manhattan plots for GWAS data from PLINK results.</p>
 - **Version**: 0.1.9
 - **Author**: Stephen Turner
 - **Maintainer**: Stephen Turner <vustephen at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-qqman:0.1.4--r351h6115d3f_3
 - **Skill**: generated
 - **Total Downloads**: 593
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ArnaudDroitLab/metagene2
+- **Docker Image**: quay.io/biocontainers/bioconductor-metagene2:1.26.0--r45hdfd78af_0
 - **Skill**: generated
 

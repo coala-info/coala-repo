@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-peer:1.3--r341h470a237_1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

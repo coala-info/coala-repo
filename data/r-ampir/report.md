@@ -11,6 +11,7 @@ A toolkit to predict antimicrobial peptides from protein sequences on a genome-w
 - **Version**: 1.1.0
 - **Author**: Legana Fingerhut [aut, cre], Ira Cooke [aut], Jinlong Zhang [ctb] (R/read_faa.R), Nan Xiao [ctb] (R/calc_pseudo_comp.R)
 - **Maintainer**: Legana Fingerhut <legana.fingerhut at my.jcu.edu.au>
+- **Docker Image**: quay.io/biocontainers/r-ampir:1.1.0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

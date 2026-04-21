@@ -11,6 +11,7 @@ It provides more configurations on the option values such as validation
 - **Version**: 0.1.3
 - **Author**: Zuguang Gu [aut, cre]
 - **Maintainer**: Zuguang Gu <z.gu at dkfz.de>
+- **Docker Image**: quay.io/biocontainers/r-globaloptions:0.0.8--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 2.1K
 - **Last updated**: 2025-04-22

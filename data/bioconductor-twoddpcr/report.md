@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CRUKMI-ComputationalBiology/twoddpcr
+- **Docker Image**: quay.io/biocontainers/bioconductor-twoddpcr:1.34.0--r45hdfd78af_0
 - **Skill**: generated
 

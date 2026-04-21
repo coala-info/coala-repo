@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/LiesaSalzer/MobilityTransformR
+- **Docker Image**: quay.io/biocontainers/bioconductor-mobilitytransformr:1.6.0--r43hdfd78af_0
 - **Skill**: generated
 

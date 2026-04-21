@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/yuhuihui2011/vasp
+- **Docker Image**: quay.io/biocontainers/bioconductor-vasp:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

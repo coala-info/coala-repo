@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BioinfoHR/coRdon
+- **Docker Image**: quay.io/biocontainers/bioconductor-cordon:1.28.0--r45hdfd78af_0
 - **Skill**: generated
 

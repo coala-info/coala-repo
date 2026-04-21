@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lima1/PureCN
+- **Docker Image**: quay.io/biocontainers/bioconductor-purecn:2.16.0--r45hdfd78af_0
 - **Skill**: generated
 

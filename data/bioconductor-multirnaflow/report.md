@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/loubator/MultiRNAflow
+- **Docker Image**: quay.io/biocontainers/bioconductor-multirnaflow:1.8.0--r45h575d39b_0
 - **Skill**: generated
 

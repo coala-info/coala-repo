@@ -10,6 +10,7 @@ DEPRECATED. Do not start building new projects based on this package. (The (in-h
 - **Version**: 0.7.1
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-aroma.apd:0.6.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

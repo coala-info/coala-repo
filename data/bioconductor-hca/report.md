@@ -12,5 +12,6 @@ the package allows the user to page through large result sets, and to flexibly q
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-hca:1.14.0--r44hdfd78af_0
 - **Skill**: generated
 

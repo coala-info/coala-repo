@@ -12,5 +12,6 @@ the package mAPKL.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mapkldata:1.34.0--r43hdfd78af_0
 - **Skill**: generated
 

@@ -16,6 +16,7 @@ Utilities to process, organize and explore protein structure,
 - **Version**: 2.4-5
 - **Author**: Barry Grant [aut, cre], Xin-Qiu Yao [aut], Lars Skjaerven [aut], Julien Ide [aut]
 - **Maintainer**: Barry Grant <bjgrant at ucsd.edu>
+- **Docker Image**: quay.io/biocontainers/r-bio3d:2.4_1
 - **Skill**: generated
 - **Total Downloads**: 481
 - **Last updated**: 2025-04-22

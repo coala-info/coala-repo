@@ -12,6 +12,7 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: N/A
+- **Docker Image**: quay.io/biocontainers/bioconductor-a4base:1.58.0--r45hdfd78af_0
 - **Skill**: generated
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-a4base/overview
 - **Total Downloads**: 36.4K

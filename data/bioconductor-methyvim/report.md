@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/nhejazi/methyvim
+- **Docker Image**: quay.io/biocontainers/bioconductor-methyvim:1.11.0--r40hdfd78af_1
 - **Skill**: generated
 

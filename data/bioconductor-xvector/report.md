@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/XVector
+- **Docker Image**: quay.io/biocontainers/bioconductor-xvector:0.50.0--r45h01b2380_0
 - **Skill**: generated
 

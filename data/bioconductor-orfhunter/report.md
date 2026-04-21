@@ -12,5 +12,6 @@ the package was confirmed by the examples of the analysis of RNA molecules from 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rfctbio-bsu/ORFhunteR
+- **Docker Image**: quay.io/biocontainers/bioconductor-orfhunter:1.18.0--r45ha27e39d_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-maxlik:1.3_4--r3.3.2_0
 - **Skill**: not generated
 - **Total Downloads**: 3.0K
 - **Last updated**: 2025-04-22

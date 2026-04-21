@@ -12,6 +12,7 @@ Package for drawing calibrated scales with tick marks on (non-orthogonal)
 - **Version**: 1.7.7
 - **Author**: Jan Graffelman
 - **Maintainer**: Jan Graffelman <jan.graffelman at upc.edu>
+- **Docker Image**: quay.io/biocontainers/r-calibrate:1.7.2--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 682
 - **Last updated**: 2025-04-22

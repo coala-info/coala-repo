@@ -12,5 +12,6 @@ the package provides multiple methods for analysis (e.g., differential expressio
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BioinformaticsFMRP/TCGAbiolinks
+- **Docker Image**: quay.io/biocontainers/bioconductor-tcgabiolinks:2.38.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -11,6 +11,7 @@ Provides a base S4 class for comparative methods, incorporating
 - **Version**: 0.8.12
 - **Author**: R Hackathon et al. (alphabetically: Ben Bolker, Marguerite Butler, Peter Cowan, Damien de Vienne, Dirk Eddelbuettel, Mark Holder, Thibaut Jombart, Steve Kembel, Francois Michonneau, David Orme, Brian O'Meara, Emmanuel Paradis, Jim Regetz, Derrick Zwickl)
 - **Maintainer**: Francois Michonneau <francois.michonneau at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-phylobase:0.8.6--r351h29659fb_0
 - **Skill**: generated
 - **Total Downloads**: 66
 - **Last updated**: 2025-04-22

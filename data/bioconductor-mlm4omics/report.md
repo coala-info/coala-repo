@@ -12,5 +12,6 @@ The package has two main functions to handle not-missing-at-random missing respo
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mlm4omics:1.2.0--r351hf484d3e_0
 - **Skill**: generated
 

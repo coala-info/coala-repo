@@ -11,6 +11,7 @@ Tools for multivariate data analysis. Several methods are provided for the analy
 - **Version**: 1.7-23
 - **Author**: Stéphane Dray [aut], Anne-Béatrice Dufour [aut], Jean Thioulouse [aut], Daniel Chessel [ant], Thibaut Jombart [ctb], Sandrine Pavoine [ctb], Jean R. Lobry [ctb], Sébastien Ollier [ctb], Daniel Borcard [ctb], Pierre Legendre [ctb], Stéphanie Bougeard [ctb], Aurélie Siberchicot [ctb, cre]
 - **Maintainer**: Aurélie Siberchicot <aurelie.siberchicot at univ-lyon1.fr>
+- **Docker Image**: quay.io/biocontainers/r-ade4:1.7_11--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 3.2K
 - **Last updated**: 2025-04-22

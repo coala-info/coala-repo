@@ -12,6 +12,7 @@ Plots univariate comparison graphs, an alternative to
 - **Version**: 1.3.1
 - **Author**: Peter Kampstra
 - **Maintainer**: Peter Kampstra <beanplot at kampstra.net>
+- **Docker Image**: quay.io/biocontainers/r-beanplot:1.2--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 432
 - **Last updated**: 2025-04-22

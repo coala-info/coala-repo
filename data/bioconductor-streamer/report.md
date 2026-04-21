@@ -12,5 +12,6 @@ The package provides useful Producer and Consumer stream components for operatio
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-streamer:1.56.0--r45h01b2380_0
 - **Skill**: generated
 

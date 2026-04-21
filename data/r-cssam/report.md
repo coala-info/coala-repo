@@ -10,6 +10,7 @@ R package cssam (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-cssam:1.4--r43h9948957_8
 - **Skill**: generated
 - **Total Downloads**: 188
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ Computes functional rarity indices as proposed by Violle et al.
 - **Version**: 1.5.0
 - **Author**: Matthias Grenié [aut, cre], Pierre Denelle [aut], Caroline Tucker [aut], François Munoz [ths], Cyrille Violle [ths]
 - **Maintainer**: Matthias Grenié <matthias.grenie at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-funrar:1.2.2--r351h6115d3f_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

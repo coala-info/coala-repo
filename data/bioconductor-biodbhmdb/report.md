@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/pkrog/biodbHmdb
+- **Docker Image**: quay.io/biocontainers/bioconductor-biodbhmdb:1.12.0--r44he5774e6_0
 - **Skill**: generated
 

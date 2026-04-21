@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rwave:2.4--r3.2.2_0
 - **Skill**: not generated
 - **Total Downloads**: 38
 - **Last updated**: 2025-04-22

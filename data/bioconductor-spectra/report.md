@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/Spectra
+- **Docker Image**: quay.io/biocontainers/bioconductor-spectra:1.20.1--r45hdfd78af_0
 - **Skill**: generated
 

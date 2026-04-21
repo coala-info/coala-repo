@@ -10,6 +10,7 @@ Computes Dunn's test (1964) for stochastic dominance and reports the results amo
 - **Version**: 1.3.7
 - **Author**: Alexis Dinno [aut, cre, cph]
 - **Maintainer**: Alexis Dinno <alexis.dinno at pdx.edu>
+- **Docker Image**: quay.io/biocontainers/r-dunn.test:1.3.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 326
 - **Last updated**: 2025-04-22

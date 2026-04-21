@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kkdey/CountClust
+- **Docker Image**: quay.io/biocontainers/bioconductor-countclust:1.21.0--r41hdfd78af_0
 - **Skill**: generated
 

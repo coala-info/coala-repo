@@ -12,6 +12,7 @@ A collection of functions to implement a class for univariate
 - **Version**: 1.4-1
 - **Author**: Bill Venables [aut, cre] (S original), Kurt Hornik [aut] (R port), Martin Maechler [aut] (R port)
 - **Maintainer**: Bill Venables <Bill.Venables at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-polynom:1.3_8--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 3.5K
 - **Last updated**: 2025-04-22

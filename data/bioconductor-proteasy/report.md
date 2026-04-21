@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/martinry/proteasy
+- **Docker Image**: quay.io/biocontainers/bioconductor-proteasy:1.2.0--r43hdfd78af_0
 - **Skill**: generated
 

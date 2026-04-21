@@ -12,5 +12,6 @@ The package generally provides methods for gene set enrichment analysis of high-
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-seqgsea:1.50.0--r45hdfd78af_0
 - **Skill**: generated
 

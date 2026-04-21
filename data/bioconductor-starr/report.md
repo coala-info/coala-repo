@@ -12,5 +12,6 @@ The package provides functions for data import, quality assessment, data visuali
 - **Author**: Benedikt Zacher, Johannes Soeding, Pei Fen Kuan, Matthias Siebert, Achim Tresch
 - **Maintainer**: Benedikt Zacher &#x3c;&#x7a;&#x61;&#x63;&#x68;&#x65;&#x72;&#x20;&#x61;&#x74;&#x20;&#x6c;&#x6d;&#x62;&#x2e;&#x75;&#x6e;&#x69;&#x2d;&#x6d;&#x75;&#x65;&#x6e;&#x63;&#x68;&#x65;&#x6e;&#x2e;&#x64;&#x65;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-starr:1.43.0--r40h037d062_0
 - **Skill**: generated
 

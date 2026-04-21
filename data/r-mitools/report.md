@@ -11,6 +11,7 @@ Tools to perform analyses and combine results from
 - **Version**: 2.4
 - **Author**: Thomas Lumley
 - **Maintainer**: Thomas Lumley <t.lumley at auckland.ac.nz>
+- **Docker Image**: quay.io/biocontainers/r-mitools:2.3--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 719
 - **Last updated**: 2025-04-22

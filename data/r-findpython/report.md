@@ -10,6 +10,7 @@ Package designed to find an acceptable python binary.</p>
 - **Version**: 1.0.9
 - **Author**: Trevor L. Davis [aut, cre], Paul Gilbert [aut]
 - **Maintainer**: Trevor L. Davis <trevor.l.davis at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-findpython:1.0.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 152.8K
 - **Last updated**: 2025-04-22

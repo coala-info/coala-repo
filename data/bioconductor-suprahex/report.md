@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Hai Fang and Julian Gough
 - **Maintainer**: Hai Fang &#x3c;&#x68;&#x66;&#x61;&#x6e;&#x67;&#x20;&#x61;&#x74;&#x20;&#x77;&#x65;&#x6c;&#x6c;&#x2e;&#x6f;&#x78;&#x2e;&#x61;&#x63;&#x2e;&#x75;&#x6b;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-suprahex:1.40.0--r43hdfd78af_0
 - **Skill**: generated
 

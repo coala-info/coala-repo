@@ -10,6 +10,7 @@ R package bayesprism (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-bayesprism:0--r42h4ac6f70_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

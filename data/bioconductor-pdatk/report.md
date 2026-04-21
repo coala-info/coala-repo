@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/bhklab/PDATK
+- **Docker Image**: quay.io/biocontainers/bioconductor-pdatk:1.8.0--r43hdfd78af_0
 - **Skill**: generated
 

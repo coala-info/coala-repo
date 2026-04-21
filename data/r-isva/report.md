@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.9
 - **Author**: Andrew E Teschendorff
 - **Maintainer**: Andrew Teschendorff <a.teschendorff at ucl.ac.uk>
+- **Docker Image**: quay.io/biocontainers/r-isva:1.10--r45h3342da4_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ The package aims to identify miRNA sponge or ceRNA modules in heterogeneous data
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/zhangjunpeng411/miRSM
+- **Docker Image**: quay.io/biocontainers/bioconductor-mirsm:1.16.0--r42hc247a5b_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ A collection of functions useful in (vegetation) community analyses and ordinati
 - **Version**: 0.7.10
 - **Author**: Friedemann von Lampe [aut, cre], Schellenberg Jenny [aut]
 - **Maintainer**: Friedemann von Lampe <fvonlampe at uni-goettingen.de>
+- **Docker Image**: quay.io/biocontainers/r-goeveg:0.4.2--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 38
 - **Last updated**: 2025-04-22

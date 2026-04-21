@@ -14,6 +14,7 @@ Genomic data for the plant pathogen "Phytophthora infestans." It
 - **Version**: 1.3.0
 - **Author**: Brian J. Knaus [cre, aut], Niklaus J. Grunwald [aut]
 - **Maintainer**: Brian J. Knaus <briank.lists at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-pinfsc50:1.1.0--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 461
 - **Last updated**: 2025-04-22

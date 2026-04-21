@@ -12,5 +12,6 @@ the package is to provide MERFISH data for benchmarking and analysis.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ccb-hms/MerfishData
+- **Docker Image**: quay.io/biocontainers/bioconductor-merfishdata:1.12.0--r45hdfd78af_0
 - **Skill**: generated
 

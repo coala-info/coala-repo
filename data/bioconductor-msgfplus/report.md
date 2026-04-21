@@ -12,5 +12,6 @@ The package contains functionality for building up a parameter set both in code 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-msgfplus:1.28.0--r41hdfd78af_0
 - **Skill**: generated
 

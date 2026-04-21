@@ -10,6 +10,7 @@ R package exactranktests (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-exactranktests:0.8_29--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 860
 - **Last updated**: 2025-04-22

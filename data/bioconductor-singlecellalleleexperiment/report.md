@@ -12,5 +12,6 @@ The package is part of a workflow named single-cell ImmunoGenomic Diversity (scI
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/AGImkeller/SingleCellAlleleExperiment
+- **Docker Image**: quay.io/biocontainers/bioconductor-singlecellalleleexperiment:1.6.0--r45hdfd78af_0
 - **Skill**: generated
 

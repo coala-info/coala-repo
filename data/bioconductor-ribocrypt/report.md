@@ -12,5 +12,6 @@ The package is still under development.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/m-swirski/RiboCrypt
+- **Docker Image**: quay.io/biocontainers/bioconductor-ribocrypt:1.16.0--r45hdfd78af_0
 - **Skill**: generated
 

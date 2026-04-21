@@ -12,5 +12,6 @@ the package provides metrics and graphics to determine the optimal number of com
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-ropls:1.42.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ R package fastbaps (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-fastbaps:1.0.8--r44h5ca1c30_4
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

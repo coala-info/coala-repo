@@ -12,5 +12,6 @@ The package includes functions to assign the read counts and get the features to
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ZarnackGroup/m6Aboost
+- **Docker Image**: quay.io/biocontainers/bioconductor-m6aboost:1.16.0--r45hdfd78af_0
 - **Skill**: generated
 

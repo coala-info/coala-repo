@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-recetox-xmsannotator:0.10.0--r42h78b79e7_1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

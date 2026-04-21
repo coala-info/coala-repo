@@ -12,5 +12,6 @@ The package document the data collection, pre-processing and processing of the d
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/MahShaaban/curatedAdipoChIP
+- **Docker Image**: quay.io/biocontainers/bioconductor-curatedadipochip:1.26.0--r45hdfd78af_0
 - **Skill**: generated
 

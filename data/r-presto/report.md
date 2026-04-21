@@ -10,6 +10,7 @@ R package presto (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-presto:1.0.0--r44h503566f_4
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

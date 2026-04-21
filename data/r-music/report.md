@@ -10,6 +10,7 @@ An aid for learning and using music theory. You can build chords, scales, and ch
 - **Version**: 0.1.2
 - **Author**: Efstathios D. Gennatas [aut, cre]
 - **Maintainer**: Efstathios D. Gennatas <gennatas at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-music:0.2.0--r44hdfd78af_3
 - **Skill**: generated
 - **Total Downloads**: 288
 - **Last updated**: 2025-04-22

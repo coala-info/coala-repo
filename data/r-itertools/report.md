@@ -12,6 +12,7 @@ Various tools for creating iterators, many patterned after
 - **Version**: 0.1-3
 - **Author**: Steve Weston, Hadley Wickham
 - **Maintainer**: Steve Weston <stephen.b.weston at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-itertools:0.1_3--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 414
 - **Last updated**: 2025-04-22

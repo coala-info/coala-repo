@@ -10,6 +10,7 @@ R package qtlseqr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-qtlseqr:0.7.5.2--r44h9948957_7
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

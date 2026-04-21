@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/tgac-vumc/QDNAseq.hg19
+- **Docker Image**: quay.io/biocontainers/bioconductor-qdnaseq.hg19:1.40.0--r45hdfd78af_0
 - **Skill**: generated
 

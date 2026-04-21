@@ -12,5 +12,6 @@ The package contains functions to create a SingleCellExperiment Seurat object an
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-spaniel:1.24.0--r45hdfd78af_0
 - **Skill**: generated
 

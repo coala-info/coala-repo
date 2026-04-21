@@ -12,5 +12,6 @@ The package 'nem' allows to reconstruct features of pathways from the nested str
 - **Author**: Holger Froehlich, Florian Markowetz, Achim Tresch, Theresa Niederberger, Christian Bender, Matthias Maneck, Claudio Lottaz, Tim Beissbarth
 - **Maintainer**: Holger Froehlich &#x3c;&#x66;&#x72;&#x6f;&#x68;&#x6c;&#x69;&#x63;&#x68;&#x20;&#x61;&#x74;&#x20;&#x62;&#x69;&#x74;&#x2e;&#x75;&#x6e;&#x69;&#x2d;&#x62;&#x6f;&#x6e;&#x6e;&#x2e;&#x64;&#x65;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-nem:2.60.0--r36h516909a_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package is developed for generating specifc lists of signature genes based o
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/smartid
+- **Docker Image**: quay.io/biocontainers/bioconductor-smartid:1.6.1--r45hdfd78af_0
 - **Skill**: generated
 

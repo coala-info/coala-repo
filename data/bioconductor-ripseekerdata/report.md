@@ -12,5 +12,6 @@ the package RIPSeeker. The data correspond to two RIP-seq experiments, namely PR
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-ripseekerdata:1.22.0--r36_0
 - **Skill**: generated
 

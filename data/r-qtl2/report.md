@@ -14,6 +14,7 @@ Provides a set of tools to perform quantitative
 - **Version**: 0.38
 - **Author**: Karl W Broman [aut, cre], R Core Team [ctb]
 - **Maintainer**: Karl W Broman <broman at wisc.edu>
+- **Docker Image**: quay.io/biocontainers/r-qtl2:0.22--r40he1b5a44_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

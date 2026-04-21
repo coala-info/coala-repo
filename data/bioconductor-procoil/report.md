@@ -12,5 +12,6 @@ The package allows for predicting whether a coiled coil sequence (amino acid seq
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UBod/procoil
+- **Docker Image**: quay.io/biocontainers/bioconductor-procoil:2.38.0--r45hdfd78af_0
 - **Skill**: generated
 

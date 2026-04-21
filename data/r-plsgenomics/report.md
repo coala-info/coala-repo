@@ -17,6 +17,7 @@ Routines for PLS-based genomic analyses,
 - **Version**: 1.5-3
 - **Author**: Anne-Laure Boulesteix, Ghislain Durif, Sophie Lambert-Lacroix, Julie Peyre, and Korbinian Strimmer.
 - **Maintainer**: Ghislain Durif <gd.dev at libertymail.net>
+- **Docker Image**: quay.io/biocontainers/r-plsgenomics:1.5_2--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

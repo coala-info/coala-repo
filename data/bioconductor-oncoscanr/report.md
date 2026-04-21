@@ -12,5 +12,6 @@ the package is tailored for the ThermoFisher Oncoscan assay analyzed with their 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/yannchristinat/oncoscanR
+- **Docker Image**: quay.io/biocontainers/bioconductor-oncoscanr:1.12.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package is primarily useful to developers of other R packages who wish to ma
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/Rhtslib
+- **Docker Image**: quay.io/biocontainers/bioconductor-rhtslib:3.6.0--r45h01b2380_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ R package txrevise (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-txrevise:2.0--r44hdfd78af_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

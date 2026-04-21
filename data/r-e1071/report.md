@@ -13,6 +13,7 @@ Functions for latent class analysis, short time Fourier
 - **Version**: 1.7-17
 - **Author**: David Meyer [aut, cre], Evgenia Dimitriadou [aut, cph], Kurt Hornik [aut], Andreas Weingessel [aut], Friedrich Leisch [aut], Chih-Chung Chang [ctb, cph] (libsvm C++-code), Chih-Chen Lin [ctb, cph] (libsvm C++-code)
 - **Maintainer**: David Meyer <David.Meyer at R-project.org>
+- **Docker Image**: quay.io/biocontainers/r-e1071:1.6_8--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 56.4K
 - **Last updated**: 2025-04-22

@@ -11,6 +11,7 @@ Functions to allow you to easily pass command-line arguments into R, and functio
 - **Version**: 1.1-5
 - **Author**: Thomas Hoffmann
 - **Maintainer**: Thomas Hoffmann <tjhoffm at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-batch:1.1_5
 - **Skill**: generated
 - **Total Downloads**: 304
 - **Last updated**: 2025-04-22

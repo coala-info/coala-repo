@@ -14,6 +14,7 @@ Package providing a fast match() replacement for cases
 - **Version**: 1.1-8
 - **Author**: Simon Urbanek [aut, cre, cph] (https://urbanek.nz)
 - **Maintainer**: Simon Urbanek <Simon.Urbanek at r-project.org>
+- **Docker Image**: quay.io/biocontainers/r-fastmatch:1.1_0--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 3.4K
 - **Last updated**: 2025-04-22

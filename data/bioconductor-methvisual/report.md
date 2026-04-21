@@ -12,5 +12,6 @@ The package 'methVisual' allows the visualization of DNA methylation data after 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-methvisual:1.39.0--r40_0
 - **Skill**: generated
 

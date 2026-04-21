@@ -10,6 +10,7 @@ Dissimilarity-based analysis functions including ordination and Mantel test func
 - **Version**: 2.1.3
 - **Author**: Sarah Goslee [aut, cre], Dean Urban [aut]
 - **Maintainer**: Sarah Goslee <Sarah.Goslee at usda.gov>
+- **Docker Image**: quay.io/biocontainers/r-ecodist:2.0.1--r351h96ca727_3
 - **Skill**: generated
 - **Total Downloads**: 381
 - **Last updated**: 2025-04-22

@@ -11,6 +11,7 @@ A small utility which wraps Rscript and provides access to all R
 - **Version**: 0.3.2
 - **Author**: Sahil Seth [aut, cre]
 - **Maintainer**: Sahil Seth <me at sahilseth.com>
+- **Docker Image**: quay.io/biocontainers/r-funr:0.2.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 374
 - **Last updated**: 2025-04-22

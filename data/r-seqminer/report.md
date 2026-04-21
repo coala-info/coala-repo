@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-seqminer:7.1--r351h29659fb_0
 - **Skill**: generated
 - **Total Downloads**: 540
 - **Last updated**: 2025-04-22

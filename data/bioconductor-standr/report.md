@@ -12,5 +12,6 @@ the package are built based on the SpatialExperiment object, allowing integratio
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/standR
+- **Docker Image**: quay.io/biocontainers/bioconductor-standr:1.14.0--r45hdfd78af_0
 - **Skill**: generated
 

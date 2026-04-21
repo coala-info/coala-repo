@@ -12,5 +12,6 @@ The package tries to handle pepXML files generated from different softwares. The
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-pepxmltab:1.44.0--r45hdfd78af_0
 - **Skill**: generated
 

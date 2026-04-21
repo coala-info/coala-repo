@@ -10,6 +10,7 @@ Significance Analysis of Microarrays for differential expression analysis, RNAse
 - **Version**: 3.0
 - **Author**: R. Tibshirani, Michael J. Seo, G. Chu, Balasubramanian Narasimhan, Jun Li
 - **Maintainer**: Rob Tibshirani <tibs at stanford.edu>
+- **Docker Image**: quay.io/biocontainers/r-samr:3.0.1--r45h87e0c26_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

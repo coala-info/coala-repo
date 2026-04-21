@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mafdb.gnomad.r2.1.hs37d5:3.10.0--r41hdfd78af_6
 - **Skill**: generated
 

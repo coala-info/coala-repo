@@ -14,6 +14,7 @@ Extend the 'bigmemory' package with various analytics.
 - **Version**: 1.1.22
 - **Author**: John W. Emerson [aut], Michael J. Kane [cre, aut], Saksham Chandra [ctb]
 - **Maintainer**: Michael J. Kane <bigmemoryauthors at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-biganalytics:1.1.14--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 369
 - **Last updated**: 2025-04-22

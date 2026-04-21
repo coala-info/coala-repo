@@ -12,5 +12,6 @@ the package provides a "BigMatrixFactor" class, a file-backed matrix with factor
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/phaverty/bigmemoryExtras
+- **Docker Image**: quay.io/biocontainers/bioconductor-bigmemoryextras:1.38.0--r40hdfd78af_1
 - **Skill**: generated
 

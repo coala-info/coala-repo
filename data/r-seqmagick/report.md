@@ -15,6 +15,7 @@ Tools for reading and writing biological sequences in multiple
 - **Version**: 0.1.8
 - **Author**: Guangchuang Yu [aut, cre]
 - **Maintainer**: Guangchuang Yu <guangchuangyu at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-seqmagick:0.1.8--r45h3121a25_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

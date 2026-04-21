@@ -12,5 +12,6 @@ The package applies a functional version of principal component analysis (FPCA) 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-narrowpeaks:1.31.0--r40h037d062_0
 - **Skill**: generated
 

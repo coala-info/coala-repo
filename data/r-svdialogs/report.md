@@ -14,6 +14,7 @@ Quickly construct standard dialog boxes for your GUI, including
 - **Version**: 1.1.2
 - **Author**: Philippe Grosjean [aut, cre], Paul Hibbins [ctb]
 - **Maintainer**: Philippe Grosjean <phgrosjean at sciviews.org>
+- **Docker Image**: quay.io/biocontainers/r-svdialogs:0.9_57--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 35
 - **Last updated**: 2025-04-22

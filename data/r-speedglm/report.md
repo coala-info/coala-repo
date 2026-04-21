@@ -10,6 +10,7 @@ Fitting linear models and generalized linear models to large data sets by updati
 - **Version**: 0.3-5
 - **Author**: Marco Enea [aut, cre], Ronen Meiri [ctb] (on behalf of DMWay Analytics LTD), Tomer Kalimi [ctb] (on behalf of DMWay Analytics LTD)
 - **Maintainer**: Marco Enea <marco.enea at unipa.it>
+- **Docker Image**: quay.io/biocontainers/r-speedglm:0.3_1--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 632
 - **Last updated**: 2025-04-22

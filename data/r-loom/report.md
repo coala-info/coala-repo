@@ -10,6 +10,7 @@ R package loom (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-loom:0.2.0.2--r44hdfd78af_7
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

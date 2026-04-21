@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Bhakti Dwivedi and Jeanne Kowalski
 - **Maintainer**: Bhakti Dwivedi &#x3c;&#x62;&#x68;&#x61;&#x6b;&#x74;&#x69;&#x2e;&#x64;&#x77;&#x69;&#x76;&#x65;&#x64;&#x69;&#x20;&#x61;&#x74;&#x20;&#x65;&#x6d;&#x6f;&#x72;&#x79;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sispa:1.30.0--r43hdfd78af_0
 - **Skill**: generated
 

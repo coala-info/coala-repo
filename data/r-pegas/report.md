@@ -10,6 +10,7 @@ Functions for reading, writing, plotting, analysing, and manipulating allelic an
 - **Version**: 1.4
 - **Author**: Emmanuel Paradis [aut, cre, cph], Thibaut Jombart [aut, cph], Zhian N. Kamvar [aut, cph], Brian Knaus [aut, cph], Klaus Schliep [aut, cph], Alastair Potts [aut, cph], David Winter [aut, cph]
 - **Maintainer**: Emmanuel Paradis <Emmanuel.Paradis at ird.fr>
+- **Docker Image**: quay.io/biocontainers/r-pegas:0.11--r351h96ca727_2
 - **Skill**: generated
 - **Total Downloads**: 54
 - **Last updated**: 2025-04-22

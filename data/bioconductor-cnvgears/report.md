@@ -12,5 +12,6 @@ The package is best suited for studies in human family-based cohorts.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/SinomeM/CNVgears
+- **Docker Image**: quay.io/biocontainers/bioconductor-cnvgears:1.8.0--r43hdfd78af_0
 - **Skill**: generated
 

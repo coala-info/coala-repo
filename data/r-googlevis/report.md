@@ -10,6 +10,7 @@ R package googlevis (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-googlevis:0.5.10--r3.2.2_1
 - **Skill**: generated
 - **Total Downloads**: 338
 - **Last updated**: 2025-04-22

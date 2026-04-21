@@ -12,5 +12,6 @@ The package provides segmentation, statistics, summary table, fragments visualiz
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CyanolabFreiburg/rifiComparative
+- **Docker Image**: quay.io/biocontainers/bioconductor-rificomparative:1.10.0--r45hdfd78af_0
 - **Skill**: generated
 

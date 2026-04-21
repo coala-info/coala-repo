@@ -13,6 +13,7 @@ Performs discrete, real, and gentle boost under both exponential and
 - **Version**: 2.0-5.1
 - **Author**: Mark Culp [aut, cre], Kjell Johnson [aut], George Michailidis [aut]
 - **Maintainer**: Mark Culp <mvculp at mail.wvu.edu>
+- **Docker Image**: quay.io/biocontainers/r-ada:2.0_5--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 482
 - **Last updated**: 2025-04-22

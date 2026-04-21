@@ -10,6 +10,7 @@ This lightweight R package provides a method for normalizing and denoising prote
 - **Version**: 2.0.1
 - **Author**: Matthew Mulè [aut, cre], Andrew Martins [aut], John Tsang [pdr]
 - **Maintainer**: Matthew Mulè <mattmule at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-dsb:2.0.1--r44h3121a25_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

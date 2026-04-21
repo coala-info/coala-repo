@@ -11,6 +11,7 @@ Wrappers on 'regexpr' and 'gregexpr' to return the match
 - **Version**: 2.1.2
 - **Author**: Gábor Csárdi [aut, cre], Matthew Lincoln [ctb]
 - **Maintainer**: Gábor Csárdi <csardi.gabor at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-rematch2:2.0.1--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 23.7K
 - **Last updated**: 2025-04-22

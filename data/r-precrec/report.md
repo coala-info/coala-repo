@@ -12,6 +12,7 @@ Accurate calculations and visualization of precision-recall and ROC (Receiver Op
 - **Version**: 0.14.5
 - **Author**: Takaya Saito [aut, cre], Marc Rehmsmeier [aut]
 - **Maintainer**: Takaya Saito <takaya.saito at outlook.com>
+- **Docker Image**: quay.io/biocontainers/r-precrec:0.9.1--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 50
 - **Last updated**: 2025-04-22

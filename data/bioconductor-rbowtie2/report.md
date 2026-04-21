@@ -12,5 +12,6 @@ The package contains wrapper functions that allow for genome indexing and alignm
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rbowtie2:2.16.0--r45ha27e39d_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package consists of three main functions. The first function, fitDTU, fits q
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/statOmics/satuRn
+- **Docker Image**: quay.io/biocontainers/bioconductor-saturn:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

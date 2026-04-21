@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/AllenTiTaiWang/anamiR
+- **Docker Image**: quay.io/biocontainers/bioconductor-anamir:1.13.0--r36_0
 - **Skill**: generated
 

@@ -16,6 +16,7 @@ Tools to help to create tidy data, where each column is a
 - **Version**: 1.3.2
 - **Author**: Hadley Wickham [aut, cre], Davis Vaughan [aut], Maximilian Girlich [aut], Kevin Ushey [ctb], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-tidyr:1.0.2
 - **Skill**: generated
 - **Total Downloads**: 464.7K
 - **Last updated**: 2025-04-22

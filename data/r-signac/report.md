@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-signac:1.17.1--r45h119cb76_1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

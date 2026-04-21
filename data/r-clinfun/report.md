@@ -13,6 +13,7 @@ Utilities to make your clinical collaborations easier if not
 - **Version**: 1.1.5
 - **Author**: Venkatraman E. Seshan [aut, cre], Karissa Whiting [aut]
 - **Maintainer**: Venkatraman E. Seshan <seshanv at mskcc.org>
+- **Docker Image**: quay.io/biocontainers/r-clinfun:1.0.15--r40h9bbef5b_0
 - **Skill**: generated
 - **Total Downloads**: 364
 - **Last updated**: 2025-04-22

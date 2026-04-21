@@ -12,5 +12,6 @@ The package provides a unified testing interface to rapidly run and benchmark mu
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/xanibas/granulator
+- **Docker Image**: quay.io/biocontainers/bioconductor-granulator:1.14.0--r44hdfd78af_0
 - **Skill**: generated
 

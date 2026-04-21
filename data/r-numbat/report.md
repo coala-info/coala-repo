@@ -10,6 +10,7 @@ A computational method that infers copy number variations (CNVs) in cancer scRNA
 - **Version**: 1.5.2
 - **Author**: Teng Gao [cre, aut], Ruslan Soldatov [aut], Hirak Sarkar [aut], Evan Biederstedt [aut], Peter Kharchenko [aut]
 - **Maintainer**: Teng Gao <tgaoteng at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-numbat:1.5.2--r44h40dc89f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

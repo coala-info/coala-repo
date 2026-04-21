@@ -14,6 +14,7 @@ Provides a computational framework for analyzing mutations in
 - **Version**: 1.3.1
 - **Author**: Mohamed Uduman [aut], Namita Gupta [aut], Susanna Marquez [aut, cre], Julian Zhou [aut], Nima Nouri [aut], Noah Yann Lee [aut], Ang Cui [ctb], Jason Vander Heiden [aut], Gur Yaari [aut], Steven Kleinstein [aut, cph]
 - **Maintainer**: Susanna Marquez <susanna.marquez at yale.edu>
+- **Docker Image**: quay.io/biocontainers/r-shazam:1.1.2--r42h3121a25_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

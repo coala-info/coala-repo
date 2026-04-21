@@ -17,6 +17,7 @@ These functions take a gene expression value matrix, a
 - **Version**: 1.3
 - **Author**: Yunting Sun , Nancy R.Zhang, Art B.Owen
 - **Maintainer**: Yunting Sun <yunting.sun at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-leapp:1.3--r44h3342da4_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

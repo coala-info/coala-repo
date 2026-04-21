@@ -18,6 +18,7 @@ The ff package provides data structures that are stored on
 - **Version**: 4.5.2
 - **Author**: Daniel Adler [aut], Christian Gläser [ctb], Oleg Nenadic [ctb], Jens Oehlschlägel [aut, cre], Martijn Schuemie [ctb], Walter Zucchini [ctb]
 - **Maintainer**: Jens Oehlschlägel <Jens.Oehlschlaegel at truecluster.com>
+- **Docker Image**: quay.io/biocontainers/r-ff:2.2_13--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 783
 - **Last updated**: 2025-04-22

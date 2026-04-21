@@ -12,5 +12,6 @@ the package xcms as an alternative preprocessing step.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-cosmiq:1.44.0--r45ha27e39d_0
 - **Skill**: generated
 

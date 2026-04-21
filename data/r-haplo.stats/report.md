@@ -11,6 +11,7 @@ Routines for the analysis of indirectly measured haplotypes. The statistical met
 - **Version**: 1.9.8.2
 - **Author**: Schaid Daniel [aut], Jason P. Sinnwell [aut, cre]
 - **Maintainer**: Jason P. Sinnwell <sinnwell.jason at mayo.edu>
+- **Docker Image**: quay.io/biocontainers/r-haplo.stats:1.7.7--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 44
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package contains a function to prepare the data (`prepareSummarizedExperimen
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-netactivity:1.12.0--r45hdfd78af_0
 - **Skill**: generated
 

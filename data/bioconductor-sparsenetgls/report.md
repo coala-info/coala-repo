@@ -12,5 +12,6 @@ The package provides methods of combining the graph structure learning and gener
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sparsenetgls:1.28.0--r45hdfd78af_0
 - **Skill**: generated
 

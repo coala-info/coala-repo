@@ -10,6 +10,7 @@ David Scott's ASH routines ported from S-PLUS to R.</p>
 - **Version**: 1.0-15
 - **Author**: S original by David W. Scott R port by Albrecht Gebhardt adopted to recent S-PLUS by Stephen Kaluzny
 - **Maintainer**: Albrecht Gebhardt <albrecht.gebhardt at aau.at>
+- **Docker Image**: quay.io/biocontainers/r-ash:1.0_15--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.7K
 - **Last updated**: 2025-04-22

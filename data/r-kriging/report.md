@@ -10,6 +10,7 @@ An implementation of a simple and highly optimized ordinary kriging algorithm to
 - **Version**: 1.2
 - **Author**: Omar E. Olmedo
 - **Maintainer**: Omar E. Olmedo <omareolmedo at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-kriging:1.1--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 331
 - **Last updated**: 2025-04-22

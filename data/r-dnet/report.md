@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-dnet:1.1.7--r43h3342da4_5
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

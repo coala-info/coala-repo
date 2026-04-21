@@ -14,6 +14,7 @@ Provides a computational framework for identification of B cell clones from
 - **Version**: 1.4.0
 - **Author**: Nima Nouri [aut], Edel Aron [ctb], Gisela Gabernet [ctb], Cole Jensen [ctb], Huimin Lyu [ctb], Susanna Marquez [ctb, cre], Jason Vander Heiden [aut], Steven Kleinstein [aut, cph]
 - **Maintainer**: Susanna Marquez <susanna.marquez at yale.edu>
+- **Docker Image**: quay.io/biocontainers/r-scoper:1.2.1--r42h21a89ab_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

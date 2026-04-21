@@ -12,6 +12,7 @@ Compatibility wrapper to replace the orphaned package. New
 - **Version**: 2.0.2
 - **Author**: Jeroen Ooms [aut, cre]
 - **Maintainer**: Jeroen Ooms <jeroenooms at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-base64:1.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 448
 - **Last updated**: 2025-04-22

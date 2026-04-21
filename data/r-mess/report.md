@@ -12,6 +12,7 @@ A mixed collection of useful and semi-useful diverse
 - **Version**: 0.6.0
 - **Author**: Claus Thorn Ekstrøm [aut, cre], Niels Aske Lundtorp Olsen [ctb]
 - **Maintainer**: Claus Thorn Ekstrøm <claus at rprimer.dk>
+- **Docker Image**: quay.io/biocontainers/r-mess:0.5.5--r351h29659fb_0
 - **Skill**: generated
 - **Total Downloads**: 43
 - **Last updated**: 2025-04-22

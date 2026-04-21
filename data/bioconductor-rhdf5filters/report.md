@@ -12,5 +12,6 @@ The package is intended to provide seemless integration with rhdf5, however the 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Huber-group-EMBL/rhdf5filters
+- **Docker Image**: quay.io/biocontainers/bioconductor-rhdf5filters:1.22.0--r45ha27e39d_0
 - **Skill**: generated
 

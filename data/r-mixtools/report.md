@@ -10,6 +10,7 @@ Analyzes finite mixture models for various parametric and semiparametric setting
 - **Version**: 2.0.0.1
 - **Author**: Derek Young [aut, cre], Tatiana Benaglia [aut], Didier Chauveau [aut], David Hunter [aut], Kedai Cheng [aut], Ryan Elmore [ctb], Thomas Hettmansperger [ctb], Hoben Thomas [ctb], Fengjuan Xuan [ctb]
 - **Maintainer**: Derek Young <derek.young at uky.edu>
+- **Docker Image**: quay.io/biocontainers/r-mixtools:1.1.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 109
 - **Last updated**: 2025-04-22

@@ -16,6 +16,7 @@ A collection of measures for measuring ecological diversity.
 - **Version**: 0.2.0
 - **Author**: Kyle Bittinger [aut, cre]
 - **Maintainer**: Kyle Bittinger <kylebittinger at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-abdiv:0.2.0--r44h3121a25_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

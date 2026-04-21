@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rocr:1.0_7--r3.3.1_0
 - **Skill**: not generated
 - **Total Downloads**: 117.6K
 - **Last updated**: 2025-04-22

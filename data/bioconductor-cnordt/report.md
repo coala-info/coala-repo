@@ -12,5 +12,6 @@ the package CellNOptR handles time-course data, as opposed to steady state data 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-cnordt:1.52.0--r45h01b2380_0
 - **Skill**: generated
 

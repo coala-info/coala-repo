@@ -11,6 +11,7 @@ Tools for Clustering and Principal Component Analysis
 - **Version**: 0.8-20
 - **Author**: Antoine Lucas [aut, cre]
 - **Maintainer**: Antoine Lucas <antoinelucas at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-amap:0.8_14--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 773
 - **Last updated**: 2025-04-22

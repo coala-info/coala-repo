@@ -14,6 +14,7 @@ Simplifies the creation of Excel .xlsx files by providing a
 - **Version**: 4.2.8.1
 - **Author**: Philipp Schauberger [aut], Alexander Walker [aut], Luca Braglia [ctb], Joshua Sturm [ctb], Jan Marvin Garbuszus [ctb, cre], Jordan Mark Barbone [ctb], David Zimmermann [ctb], Reinhold Kainhofer [ctb]
 - **Maintainer**: Jan Marvin Garbuszus <jan.garbuszus at ruhr-uni-bochum.de>
+- **Docker Image**: quay.io/biocontainers/r-openxlsx:4.0.17--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 16.0K
 - **Last updated**: 2025-04-22

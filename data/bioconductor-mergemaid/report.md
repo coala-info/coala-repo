@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: Xiaogang Zhong &#x3c;&#x7a;&#x68;&#x6f;&#x6e;&#x67;&#x20;&#x61;&#x74;&#x20;&#x61;&#x6d;&#x73;&#x2e;&#x6a;&#x68;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e; Leslie Cope &#x3c;&#x63;&#x6f;&#x70;&#x65;&#x20;&#x61;&#x74;&#x20;&#x6a;&#x68;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e; Elizabeth Garrett &#x3c;&#x65;&#x73;&#x67;&#x20;&#x61;&#x74;&#x20;&#x6a;&#x68;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e; Giovanni Parmigiani &#x3c;&#x67;&#x70;&#x20;&#x61;&#x74;&#x20;&#x6a;&#x68;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **Maintainer**: Xiaogang Zhong &#x3c;&#x7a;&#x68;&#x6f;&#x6e;&#x67;&#x20;&#x61;&#x74;&#x20;&#x61;&#x6d;&#x73;&#x2e;&#x6a;&#x68;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mergemaid:2.59.0--r40_0
 - **Skill**: generated
 

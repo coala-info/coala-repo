@@ -12,5 +12,6 @@ The package allows users to create HTML pages that may be viewed on a web browse
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-reportingtools:2.50.0--r45hdfd78af_0
 - **Skill**: generated
 

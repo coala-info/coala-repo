@@ -12,6 +12,7 @@ Provides beginner friendly framework to analyse population genetic
 - **Version**: 3.1.3
 - **Author**: Bernd Gruber [aut, cre], Aaron Adamack [aut]
 - **Maintainer**: Bernd Gruber <bernd.gruber at canberra.edu.au>
+- **Docker Image**: quay.io/biocontainers/r-popgenreport:3.0.4--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 38
 - **Last updated**: 2025-04-22

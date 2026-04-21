@@ -15,6 +15,7 @@
 - **Version**: 0.1.3
 - **Author**: Alboukadel Kassambara [aut, cre]
 - **Maintainer**: Alboukadel Kassambara <alboukadel.kassambara at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-fastqcr:0.1.2--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

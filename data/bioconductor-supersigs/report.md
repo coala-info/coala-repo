@@ -12,5 +12,6 @@ the package allow the user to learn supervised mutational signatures from their 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/TomasettiLab/supersigs
+- **Docker Image**: quay.io/biocontainers/bioconductor-supersigs:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

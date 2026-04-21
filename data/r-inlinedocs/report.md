@@ -15,6 +15,7 @@ Generates Rd files from R source code with comments.
 - **Version**: 2023.9.4
 - **Author**: Toby Dylan Hocking [aut, cre], Keith Ponting [aut], Thomas Wutzler [aut], Philippe Grosjean [aut], Markus Müller [aut], R Core Team [ctb, cph]
 - **Maintainer**: Toby Dylan Hocking <toby.hocking at r-project.org>
+- **Docker Image**: quay.io/biocontainers/r-inlinedocs:2013.9.3--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 35
 - **Last updated**: 2025-04-22

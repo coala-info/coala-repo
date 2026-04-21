@@ -12,5 +12,6 @@ The package provides also a benchmark for gene set analysis methods in terms of 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-padog:1.52.0--r45hdfd78af_0
 - **Skill**: generated
 

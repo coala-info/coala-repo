@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/andreyshabalin/ramwas
+- **Docker Image**: quay.io/biocontainers/bioconductor-ramwas:1.34.0--r45h01b2380_0
 - **Skill**: generated
 

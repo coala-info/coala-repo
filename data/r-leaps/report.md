@@ -10,6 +10,7 @@ Regression subset selection, including exhaustive search.</p>
 - **Version**: 3.2
 - **Author**: Thomas Lumley based on Fortran code by Alan Miller
 - **Maintainer**: Thomas Lumley <t.lumley at auckland.ac.nz>
+- **Docker Image**: quay.io/biocontainers/r-leaps:2.9--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 6.7K
 - **Last updated**: 2025-04-22

@@ -16,6 +16,7 @@ Provides a set of functions for inferring, visualizing, and analyzing B cell phy
 - **Version**: 2.4.0
 - **Author**: Kenneth Hoehn [aut, cre], Cole Jensen [aut], Jessie Fielding [aut], Hunter Melton [aut], Susanna Marquez [ctb], Jason Vander Heiden [ctb], Steven Kleinstein [aut, cph]
 - **Maintainer**: Kenneth Hoehn <kenneth.b.hoehn at dartmouth.edu>
+- **Docker Image**: quay.io/biocontainers/r-dowser:1.2.0--r42h3121a25_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

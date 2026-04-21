@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-momr:1.1--r351h6115d3f_0
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ The package conducts pathway testing from untargetted metabolomics data. It requ
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-metapone:1.16.0--r45hdfd78af_0
 - **Skill**: generated
 

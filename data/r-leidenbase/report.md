@@ -17,6 +17,7 @@ An R to C/C++ interface that runs the Leiden community
 - **Version**: 0.1.36
 - **Author**: Brent Ewing [aut, cre], Vincent Traag [ctb], Gábor Csárdi [ctb], Tamás Nepusz [ctb], Szabolcs Horvat [ctb], Fabio Zanini [ctb]
 - **Maintainer**: Brent Ewing <bge at uw.edu>
+- **Docker Image**: quay.io/biocontainers/r-leidenbase:0.1.31--r44hf1f7472_0
 - **Skill**: generated
 - **Total Downloads**: 610
 - **Last updated**: 2025-04-22

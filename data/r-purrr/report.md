@@ -11,6 +11,7 @@ A complete and consistent functional programming toolkit for
 - **Version**: 1.2.1
 - **Author**: Hadley Wickham [aut, cre], Lionel Henry [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-purrr:0.2.2--1
 - **Skill**: generated
 - **Total Downloads**: 444.0K
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package provides also a backend for Bioconductor's Spectra package and allow
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/CompoundDb
+- **Docker Image**: quay.io/biocontainers/bioconductor-compounddb:1.14.2--r45hdfd78af_0
 - **Skill**: generated
 

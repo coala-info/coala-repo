@@ -10,6 +10,7 @@ R package mytai (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-mytai:2.3.5--r44hef20b61_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ The package includes the statistical method described in Kaufmann et al. (2009) 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-csar:1.62.0--r45h01b2380_0
 - **Skill**: generated
 

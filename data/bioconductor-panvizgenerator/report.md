@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/thomasp85/PanVizGenerator
+- **Docker Image**: quay.io/biocontainers/bioconductor-panvizgenerator:1.22.0--r41hdfd78af_0
 - **Skill**: generated
 

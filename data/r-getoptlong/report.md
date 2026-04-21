@@ -12,6 +12,7 @@ This is a command-line argument parser which wraps the
 - **Version**: 1.1.0
 - **Author**: Zuguang Gu [aut, cre]
 - **Maintainer**: Zuguang Gu <z.gu at dkfz.de>
+- **Docker Image**: quay.io/biocontainers/r-getoptlong:0.1.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 340
 - **Last updated**: 2025-04-22

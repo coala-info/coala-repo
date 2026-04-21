@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Vitek-Lab/MSstatsLiP
+- **Docker Image**: quay.io/biocontainers/bioconductor-msstatslip:1.16.0--r45ha27e39d_0
 - **Skill**: generated
 

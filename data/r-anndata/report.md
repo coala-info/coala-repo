@@ -12,6 +12,7 @@ A 'reticulate' wrapper for the Python package 'anndata'.
 - **Version**: 0.8.0
 - **Author**: Philipp Angerer [ccp], Alex Wolf [ccp], Isaac Virshup [ccp], Sergei Rybakov [ccp], Robrecht Cannoodt [aut, cre, cph]
 - **Maintainer**: Robrecht Cannoodt <rcannood at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-anndata:0.9.0--r45hdfd78af_0
 - **Skill**: generated
 - **Total Downloads**: 215
 - **Last updated**: 2025-04-22

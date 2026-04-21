@@ -12,6 +12,7 @@ Contains the program 'ttf2pt1', for use with the
 - **Version**: 1.3.14
 - **Author**: Winston Chang [aut], Andrew Weeks [aut], Frank M. Siegert [aut], Mark Heath [aut], Thomas Henlick [aut], Sergey Babkin [aut], Turgut Uyar [aut], Rihardas Hepas [aut], Szalay Tamas [aut], Johan Vromans [aut], Petr Titera [aut], Lei Wang [aut], Chen Xiangyang [aut], Zvezdan Petkovic [aut], Rigel [aut], I. Lee Hetherington [aut], Frederic Bertrand [cre]
 - **Maintainer**: Frederic Bertrand <frederic.bertrand at lecnam.net>
+- **Docker Image**: quay.io/biocontainers/r-rttf2pt1:1.3.4--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 561
 - **Last updated**: 2025-04-22

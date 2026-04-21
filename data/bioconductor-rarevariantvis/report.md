@@ -12,5 +12,6 @@ The package includes homozygous region caller and allows to analyse whole human 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rarevariantvis:2.38.0--r45hdfd78af_0
 - **Skill**: generated
 

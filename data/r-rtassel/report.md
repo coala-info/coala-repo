@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rtassel:0.1.2019.07.25--r44h9ee0642_6
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ the package access the data via the UCSC REST API but some of them query the UCS
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/UCSC.utils
+- **Docker Image**: quay.io/biocontainers/bioconductor-ucsc.utils:1.6.1--r45hdfd78af_0
 - **Skill**: generated
 

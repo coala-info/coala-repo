@@ -16,6 +16,7 @@ The main function kcca implements a general framework for
 - **Version**: 1.5.0
 - **Author**: Friedrich Leisch [aut] (maintainer up to 2024), Evgenia Dimitriadou [ctb], Lena Ortega Menjivar [ctb], Dominik Ernst [ctb], Bettina Grün [ctb, cre]
 - **Maintainer**: Bettina Grün <Bettina.Gruen at R-project.org>
+- **Docker Image**: quay.io/biocontainers/r-flexclust:1.3_4--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 485
 - **Last updated**: 2025-04-22

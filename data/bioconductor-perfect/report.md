@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/cxquy91/PERFect
+- **Docker Image**: quay.io/biocontainers/bioconductor-perfect:1.14.0--r43hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-rbamtools:2.16.11--r351h29659fb_0
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

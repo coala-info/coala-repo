@@ -12,5 +12,6 @@ The package offer different classifiers based on comparisons of pair of features
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-switchbox:1.46.0--r45ha27e39d_0
 - **Skill**: generated
 

@@ -11,6 +11,7 @@ Implementation of heatmaps that offers more control
 - **Version**: 1.0.13
 - **Author**: Raivo Kolde [aut, cre]
 - **Maintainer**: Raivo Kolde <rkolde at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-pheatmap:1.0.8--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 3.3K
 - **Last updated**: 2025-04-22

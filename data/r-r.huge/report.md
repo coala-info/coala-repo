@@ -10,6 +10,7 @@ DEPRECATED. Do not start building new projects based on this package. Cross-plat
 - **Version**: 0.10.1
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.huge:0.9.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 292
 - **Last updated**: 2025-04-22

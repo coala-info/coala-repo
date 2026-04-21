@@ -12,5 +12,6 @@ The package includes DNA methylation data for the primary Chronic Lymphocytic Le
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-cllmethylation:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

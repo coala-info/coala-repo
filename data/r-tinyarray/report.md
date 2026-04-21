@@ -10,6 +10,7 @@ N/A
 - **Version**: 2.4.3
 - **Author**: Xiaojie Sun [aut, cre]
 - **Maintainer**: Xiaojie Sun <18763899370 at 163.com>
+- **Docker Image**: quay.io/biocontainers/r-tinyarray:2.4.3--r44h3121a25_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

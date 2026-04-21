@@ -12,5 +12,6 @@ The package MQmetrics (MaxQuant metrics) provides a workflow to analyze the qual
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mqmetrics:1.10.0--r43hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ R package mfassignr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-mfassignr:1.1.2--r44hdfd78af_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

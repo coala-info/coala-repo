@@ -12,5 +12,6 @@ The package outputs a combined table of feature pair alignments, organized into 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-metabcombiner:1.20.0--r45h01b2380_0
 - **Skill**: generated
 

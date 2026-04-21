@@ -13,6 +13,7 @@ Provides text and label geoms for 'ggplot2' that help to avoid
 - **Version**: 0.9.6
 - **Author**: Kamil Slowikowski [aut, cre], Alicia Schep [ctb], Sean Hughes [ctb], Trung Kien Dang [ctb], Saulius Lukauskas [ctb], Jean-Olivier Irisson [ctb], Zhian N Kamvar [ctb], Thompson Ryan [ctb], Dervieux Christophe [ctb], Yutani Hiroaki [ctb], Pierre Gramme [ctb], Amir Masoud Abdol [ctb], Malcolm Barrett [ctb], Robrecht Cannoodt [ctb], Michał Krassowski [ctb], Michael Chirico [ctb], Pedro Aphalo [ctb], Francis Barton [ctb]
 - **Maintainer**: Kamil Slowikowski <kslowikowski at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-ggrepel:0.6.5--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 4.9K
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package tailfindr (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-tailfindr:1.4--r44h9948957_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

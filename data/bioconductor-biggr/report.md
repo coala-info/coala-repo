@@ -12,5 +12,6 @@ The package facilitates flux balance analysis (FBA) and the sampling of feasible
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-biggr:1.34.0--r42hdfd78af_0
 - **Skill**: generated
 

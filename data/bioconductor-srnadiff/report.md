@@ -12,5 +12,6 @@ the package implements the identify-then-annotate methodology that builds on the
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-srnadiff:1.30.0--r45ha27e39d_0
 - **Skill**: generated
 

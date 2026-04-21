@@ -14,6 +14,7 @@ Deciding what resolution to use can be a difficult question when
 - **Version**: 0.5.1
 - **Author**: Luke Zappia [aut, cre], Alicia Oshlack [aut], Andrea Rau [ctb], Paul Hoffman [ctb]
 - **Maintainer**: Luke Zappia <luke at lazappi.id.au>
+- **Docker Image**: quay.io/biocontainers/r-clustree:0.5.1
 - **Skill**: generated
 - **Total Downloads**: 77
 - **Last updated**: 2025-04-22

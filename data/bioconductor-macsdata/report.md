@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/macs3-project/MACS
+- **Docker Image**: quay.io/biocontainers/bioconductor-macsdata:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

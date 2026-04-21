@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-biclust:1.2.0--r3.4.1_0
 - **Skill**: not generated
 - **Total Downloads**: 46
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ the package is is to provide data for benchmarking and analysis.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/SingleCellMultiModal
+- **Docker Image**: quay.io/biocontainers/bioconductor-singlecellmultimodal:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

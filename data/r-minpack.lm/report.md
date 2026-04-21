@@ -11,6 +11,7 @@ The nls.lm function provides an R interface to lmder and lmdif from the MINPACK 
 - **Version**: 1.2-4
 - **Author**: Timur V. Elzhov, Katharine M. Mullen, Andrej-Nikolai Spiess, Ben Bolker
 - **Maintainer**: Katharine M. Mullen <mullenkate at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-minpack.lm:1.2_1--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.0K
 - **Last updated**: 2025-04-22

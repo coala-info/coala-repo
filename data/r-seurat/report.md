@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-seurat:3.0.2--r36h0357c0b_1
 - **Skill**: not generated
 - **Total Downloads**: 905
 - **Last updated**: 2025-04-22

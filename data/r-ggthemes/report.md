@@ -14,6 +14,7 @@ Some extra themes, geoms, and scales for 'ggplot2'.
 - **Version**: 5.2.0
 - **Author**: Jeffrey B. Arnold [aut, cre] (<https://orcid.org/0000-0001-9953-3904>), Gergely Daroczi [ctb], Bo Werth [ctb], Brian Weitzner [ctb], Joshua Kunst [ctb], Baptise Auguie [ctb], Bob Rudis [ctb], Hadley Wickham [ctb] (Code from the ggplot2 package.), Justin Talbot [ctb] (Code from the labeling package), Joshua London [ctb]
 - **Maintainer**: Jeffrey B. Arnold <jeffrey.arnold at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-ggthemes:3.4.0--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 142
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mcalgaro93/benchdamic
+- **Docker Image**: quay.io/biocontainers/bioconductor-benchdamic:1.6.0--r43hdfd78af_0
 - **Skill**: generated
 

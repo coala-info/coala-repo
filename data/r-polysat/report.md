@@ -16,6 +16,7 @@ A collection of tools to handle microsatellite data of
 - **Version**: 1.7-7
 - **Author**: Lindsay V. Clark [aut, cre], Alistair J. Hall [ctb], Handunnethi Nihal de Silva [ctb], Tyler William Smith [ctb]
 - **Maintainer**: Lindsay V. Clark <Lindsay.Clark at seattlechildrens.org>
+- **Docker Image**: quay.io/biocontainers/r-polysat:1.7_4--r351h14c3975_0
 - **Skill**: generated
 - **Total Downloads**: 377
 - **Last updated**: 2025-04-22

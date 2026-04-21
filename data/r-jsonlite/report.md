@@ -16,6 +16,7 @@ A reasonably fast JSON parser and generator, optimized for statistical
 - **Version**: 2.0.0
 - **Author**: Jeroen Ooms [aut, cre], Duncan Temple Lang [ctb], Lloyd Hilaiel [cph] (author of bundled libyajl)
 - **Maintainer**: Jeroen Ooms <jeroenooms at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-jsonlite:0.9.19--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 845.0K
 - **Last updated**: 2025-04-22

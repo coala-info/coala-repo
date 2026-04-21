@@ -11,6 +11,7 @@ Based on (but not identical to) the no-longer-maintained package 'phyext', provi
 - **Version**: 0.0.4
 - **Author**: J. Conrad Stack
 - **Maintainer**: John R. Stevens <john.r.stevens at usu.edu>
+- **Docker Image**: quay.io/biocontainers/r-phyext2:0.0.4--r45h3121a25_11
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

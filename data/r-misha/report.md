@@ -13,6 +13,7 @@ A toolkit for analysis of genomic data. The 'misha' package
 - **Version**: 5.4.0
 - **Author**: Misha Hoichman [aut], Aviezer Lifshitz [aut, cre], Eitan Yaffe [aut], Amos Tanay [aut], Weizmann Institute of Science [cph]
 - **Maintainer**: Aviezer Lifshitz <aviezer.lifshitz at weizmann.ac.il>
+- **Docker Image**: quay.io/biocontainers/r-misha:4.1.0--r44h503566f_8
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

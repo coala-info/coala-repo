@@ -14,6 +14,7 @@ The canonical way to perform meta-analysis involves using effect sizes.
 - **Version**: 1.13
 - **Author**: Michael Dewey [aut, cre]
 - **Maintainer**: Michael Dewey <lists at dewey.myzen.co.uk>
+- **Docker Image**: quay.io/biocontainers/r-metap:1.4--r43h3121a25_3
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

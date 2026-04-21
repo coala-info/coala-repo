@@ -10,6 +10,7 @@ R package epic (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-epic:1.1.7--r44hdfd78af_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

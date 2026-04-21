@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jhsiao999/peco
+- **Docker Image**: quay.io/biocontainers/bioconductor-peco:1.22.0--r45hdfd78af_0
 - **Skill**: generated
 

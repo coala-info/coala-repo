@@ -12,5 +12,6 @@ The package is designed to detect marker genes from RNA-seq data.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mgfr:1.32.0--r44hdfd78af_0
 - **Skill**: generated
 

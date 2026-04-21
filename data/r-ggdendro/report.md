@@ -18,6 +18,7 @@ This is a set of tools for dendrograms and
 - **Version**: 0.2.0
 - **Author**: Andrie de Vries [aut, cre], Brian D. Ripley [aut] (author of package tree)
 - **Maintainer**: Andrie de Vries <apdevries at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-ggdendro:0.1_17--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 118
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The package calculates the indexes for selective stength in codon usage in bacte
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sscu:2.40.0--r45hdfd78af_0
 - **Skill**: generated
 

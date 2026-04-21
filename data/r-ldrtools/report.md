@@ -10,6 +10,7 @@ R package ldrtools (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ldrtools:0.2_1--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 279
 - **Last updated**: 2025-04-22

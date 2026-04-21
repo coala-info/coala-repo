@@ -10,6 +10,7 @@ A "pure R" implementation of the t-SNE algorithm.</p>
 - **Version**: 0.1-3.1
 - **Author**: Justin Donaldson
 - **Maintainer**: Justin Donaldson <jdonaldson at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-tsne:0.1_3--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 882
 - **Last updated**: 2025-04-22

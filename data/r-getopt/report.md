@@ -14,6 +14,7 @@ Package designed to be used with Rscript to write
 - **Version**: 1.20.4
 - **Author**: Trevor L Davis [aut, cre], Allen Day [aut] (Original package author), Roman Zenka [ctb]
 - **Maintainer**: Trevor L Davis <trevor.l.davis at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-getopt:1.20.0--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 162.2K
 - **Last updated**: 2025-04-22

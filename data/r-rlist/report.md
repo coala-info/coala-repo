@@ -14,6 +14,7 @@ Provides a set of functions for data manipulation with
 - **Version**: 0.4.6.2
 - **Author**: Kun Ren
 - **Maintainer**: Kun Ren <ken at renkun.me>
+- **Docker Image**: quay.io/biocontainers/r-rlist:0.4.6.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22

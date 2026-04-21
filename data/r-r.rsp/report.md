@@ -10,6 +10,7 @@ The RSP markup language makes any text-based document come alive.  RSP provides 
 - **Version**: 0.46.0
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-r.rsp:0.30.0--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 39
 - **Last updated**: 2025-04-22

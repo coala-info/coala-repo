@@ -12,5 +12,6 @@ the package can outputs detailed HTML reports, including chromatograms.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sangeranalyser:1.20.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The package is an R wrapper for Progenetix REST API built upon the Beacon v2 pro
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/progenetix/pgxRpi
+- **Docker Image**: quay.io/biocontainers/bioconductor-pgxrpi:1.6.0--r45hdfd78af_0
 - **Skill**: generated
 

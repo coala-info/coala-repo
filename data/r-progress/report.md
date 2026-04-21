@@ -14,6 +14,7 @@ Configurable Progress bars, they may include percentage,
 - **Version**: 1.2.3
 - **Author**: Gábor Csárdi [aut, cre], Rich FitzJohn [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Gábor Csárdi <csardi.gabor at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-progress:1.0.2--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 97.2K
 - **Last updated**: 2025-04-22

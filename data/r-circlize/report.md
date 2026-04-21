@@ -16,6 +16,7 @@ Circular layout is an efficient way for the visualization of huge
 - **Version**: 0.4.17
 - **Author**: Zuguang Gu [aut, cre]
 - **Maintainer**: Zuguang Gu <z.gu at dkfz.de>
+- **Docker Image**: quay.io/biocontainers/r-circlize:0.3.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 923
 - **Last updated**: 2025-04-22

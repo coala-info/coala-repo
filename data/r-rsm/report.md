@@ -16,6 +16,7 @@ Provides functions to generate response-surface designs,
 - **Version**: 2.10.6
 - **Author**: Russell Lenth [aut, cre]
 - **Maintainer**: Russell Lenth <russell-lenth at uiowa.edu>
+- **Docker Image**: quay.io/biocontainers/r-rsm:2.7_4--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 302
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package ngsplotdb-hg38 (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ngsplotdb-hg38:3.00--r3.4.1_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

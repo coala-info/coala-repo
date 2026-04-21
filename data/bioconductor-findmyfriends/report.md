@@ -12,5 +12,6 @@ the package is assisting in the creation of pangenome matrices where genes from 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/thomasp85/FindMyFriends
+- **Docker Image**: quay.io/biocontainers/bioconductor-findmyfriends:1.23.0--r41h619a076_1
 - **Skill**: generated
 

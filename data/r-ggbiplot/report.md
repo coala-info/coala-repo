@@ -16,6 +16,7 @@ A 'ggplot2' based implementation of biplots, giving a representation of a datase
 - **Version**: 0.6.2
 - **Author**: Vincent Q. Vu [aut], Michael Friendly [aut, cre], Aghasi Tavadyan [ctb]
 - **Maintainer**: Michael Friendly <friendly at yorku.ca>
+- **Docker Image**: quay.io/biocontainers/r-ggbiplot:0.55--r44h7b50bb2_12
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

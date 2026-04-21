@@ -12,5 +12,6 @@ the package are pairwiseAlignment() and stringDist(). The former solves (Needlem
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/pwalign
+- **Docker Image**: quay.io/biocontainers/bioconductor-pwalign:1.6.0--r45h01b2380_0
 - **Skill**: generated
 

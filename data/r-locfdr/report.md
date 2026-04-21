@@ -10,6 +10,7 @@ Computation of local false discovery rates.</p>
 - **Version**: 1.1-8
 - **Author**: Bradley Efron [aut], Brit Turnbull [aut], Balasubramanian Narasimhan [aut, cre], Korbinian Strimmer [ctb]
 - **Maintainer**: Balasubramanian Narasimhan <naras at stat.Stanford.EDU>
+- **Docker Image**: quay.io/biocontainers/r-locfdr:1.1_8--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 418
 - **Last updated**: 2025-04-22

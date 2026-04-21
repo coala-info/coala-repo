@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/quon-titative-biology/scAlign
+- **Docker Image**: quay.io/biocontainers/bioconductor-scalign:1.11.0--py36r42hdfd78af_0
 - **Skill**: generated
 

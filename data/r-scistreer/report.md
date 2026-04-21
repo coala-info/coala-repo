@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.2.1
 - **Author**: Teng Gao [cre, aut], Evan Biederstedt [aut], Peter Kharchenko [aut], Yufeng Wu [aut]
 - **Maintainer**: Teng Gao <tgaoteng at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-scistreer:1.2.1--r44h40dc89f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

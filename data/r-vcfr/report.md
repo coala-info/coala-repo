@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-vcfr:1.8.0--r351h29659fb_1
 - **Skill**: not generated
 - **Total Downloads**: 115
 - **Last updated**: 2025-04-22

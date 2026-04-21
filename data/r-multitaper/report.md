@@ -10,6 +10,7 @@ Implements multitaper spectral analysis using discrete prolate spheroidal sequen
 - **Version**: 1.0-17
 - **Author**: Karim Rahim, Wesley S. Burr
 - **Maintainer**: Karim Rahim <karim.rahim at queensu.ca>
+- **Docker Image**: quay.io/biocontainers/r-multitaper:1.0.11--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 362
 - **Last updated**: 2025-04-22

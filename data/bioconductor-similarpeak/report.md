@@ -12,5 +12,6 @@ the package implements six pseudometrics specialized in pattern similarity detec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/adeschen/similaRpeak
+- **Docker Image**: quay.io/biocontainers/bioconductor-similarpeak:1.42.0--r45hdfd78af_0
 - **Skill**: generated
 

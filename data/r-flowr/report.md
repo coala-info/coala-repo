@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-flowr:0.9.10--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ R package ontologyplot (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-ontologyplot:1.7--r45h3342da4_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

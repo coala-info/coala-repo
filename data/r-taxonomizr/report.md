@@ -10,6 +10,7 @@ Functions for assigning taxonomy to NCBI accession numbers and taxon IDs based o
 - **Version**: 0.11.1
 - **Author**: Scott Sherrill-Mix [aut, cre]
 - **Maintainer**: Scott Sherrill-Mix <ssm at msu.edu>
+- **Docker Image**: quay.io/biocontainers/r-taxonomizr:0.7.1--r40hdf9a8c9_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

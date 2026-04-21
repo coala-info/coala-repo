@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/snikumbh/seqArchRplus
+- **Docker Image**: quay.io/biocontainers/bioconductor-seqarchrplus:1.2.0--r43hdfd78af_0
 - **Skill**: generated
 

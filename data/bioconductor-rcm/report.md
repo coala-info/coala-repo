@@ -12,5 +12,6 @@ The package includes unconstrained as well as constrained analysis. In addition,
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CenterForStatistics-UGent/RCM
+- **Docker Image**: quay.io/biocontainers/bioconductor-rcm:1.26.0--r45hdfd78af_0
 - **Skill**: generated
 

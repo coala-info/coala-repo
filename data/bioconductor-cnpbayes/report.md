@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/scristia/CNPBayes
+- **Docker Image**: quay.io/biocontainers/bioconductor-cnpbayes:1.13.5--r36he1b5a44_1
 - **Skill**: generated
 

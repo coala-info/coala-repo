@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/phaverty/genoset
+- **Docker Image**: quay.io/biocontainers/bioconductor-genoset:1.45.1--r40hd029910_1
 - **Skill**: generated
 

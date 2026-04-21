@@ -17,6 +17,7 @@ Functions for causal structure
 - **Version**: 2.7-12
 - **Author**: Markus Kalisch [aut, cre], Alain Hauser [aut], Martin Maechler [aut], Diego Colombo [ctb], Doris Entner [ctb], Patrik Hoyer [ctb], Antti Hyttinen [ctb], Jonas Peters [ctb], Nicoletta Andri [ctb], Emilija Perkovic [ctb], Preetam Nandy [ctb], Philipp Ruetimann [ctb], Daniel Stekhoven [ctb], Manuel Schuerch [ctb], Marco Eigenmann [ctb], Leonard Henckel [ctb], Joris Mooij [ctb]
 - **Maintainer**: Markus Kalisch <kalisch at stat.math.ethz.ch>
+- **Docker Image**: quay.io/biocontainers/r-pcalg:2.7_12--r45h0df16ae_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

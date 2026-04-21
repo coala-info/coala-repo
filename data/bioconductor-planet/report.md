@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/wvictor14/planet
+- **Docker Image**: quay.io/biocontainers/bioconductor-planet:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

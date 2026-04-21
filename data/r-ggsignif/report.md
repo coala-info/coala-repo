@@ -17,6 +17,7 @@ Enrich your 'ggplots' with group-wise comparisons.
 - **Version**: 0.6.4
 - **Author**: Constantin Ahlmann-Eltze [aut, cre, ctb] (Twitter: @const_ae), Indrajeet Patil [aut, ctb] (Twitter: @patilindrajeets)
 - **Maintainer**: Constantin Ahlmann-Eltze <artjom31415 at googlemail.com>
+- **Docker Image**: quay.io/biocontainers/r-ggsignif:0.4.0--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 2.0K
 - **Last updated**: 2025-04-22

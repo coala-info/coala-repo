@@ -12,5 +12,6 @@ The package allows you to store intermediate results for further investiation, i
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/shdam/pairedGSEA
+- **Docker Image**: quay.io/biocontainers/bioconductor-pairedgsea:1.10.0--r45hdfd78af_0
 - **Skill**: generated
 

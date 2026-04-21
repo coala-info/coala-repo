@@ -12,5 +12,6 @@ the package includes multiple functions to subset samples from paired times, val
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BiotechPedro/microSTASIS
+- **Docker Image**: quay.io/biocontainers/bioconductor-microstasis:1.6.0--r44hdfd78af_0
 - **Skill**: generated
 

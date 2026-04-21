@@ -12,5 +12,6 @@ The package implements a probabilistic dropout model that ensures that the infor
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/const-ae/proDA
+- **Docker Image**: quay.io/biocontainers/bioconductor-proda:1.24.0--r45hdfd78af_0
 - **Skill**: generated
 

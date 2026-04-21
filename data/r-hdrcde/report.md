@@ -10,6 +10,7 @@ Computation of highest density regions in one and two dimensions, kernel estimat
 - **Version**: 3.5.0
 - **Author**: Rob Hyndman [aut, cre, cph], Jochen Einbeck [aut], Matthew Wand [aut], Simon Carrignon [ctb], Fan Cheng [ctb]
 - **Maintainer**: Rob Hyndman <Rob.Hyndman at monash.edu>
+- **Docker Image**: quay.io/biocontainers/r-hdrcde:3.1--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 1.5K
 - **Last updated**: 2025-04-22

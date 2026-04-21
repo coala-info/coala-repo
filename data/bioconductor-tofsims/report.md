@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lorenzgerber/tofsims
+- **Docker Image**: quay.io/biocontainers/bioconductor-tofsims:1.22.0--r41hc247a5b_2
 - **Skill**: generated
 

@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/zhangjunpeng411/miRspongeR
+- **Docker Image**: quay.io/biocontainers/bioconductor-mirsponge:1.10.0--r36he1b5a44_1
 - **Skill**: generated
 

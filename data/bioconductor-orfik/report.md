@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Roleren/ORFik
+- **Docker Image**: quay.io/biocontainers/bioconductor-orfik:1.30.2--r45ha27e39d_0
 - **Skill**: generated
 

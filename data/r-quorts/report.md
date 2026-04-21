@@ -10,6 +10,7 @@ R package quorts (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-quorts:1.3.0--0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

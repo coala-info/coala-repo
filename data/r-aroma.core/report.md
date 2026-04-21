@@ -12,6 +12,7 @@ Core methods and classes used by higher-level 'aroma.*' packages
 - **Version**: 3.3.2
 - **Author**: Henrik Bengtsson [aut, cre, cph], Mark Robinson [ctb], Ken Simpson [ctb]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
+- **Docker Image**: quay.io/biocontainers/r-aroma.core:3.3.2--r45h3121a25_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

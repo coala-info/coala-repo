@@ -12,5 +12,6 @@ The package encompasses functions to find potential guide RNAs for the CRISPR-ba
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-crisprseek:1.50.0--r45hdfd78af_0
 - **Skill**: generated
 

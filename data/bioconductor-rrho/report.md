@@ -12,5 +12,6 @@ The package is aimed at inference on the amount of agreement in two sorted lists
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-rrho:1.50.0--r45hdfd78af_0
 - **Skill**: generated
 

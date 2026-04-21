@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/alexchwong/NxtIRFcore
+- **Docker Image**: quay.io/biocontainers/bioconductor-nxtirfcore:1.6.0--r43hf17093f_0
 - **Skill**: generated
 

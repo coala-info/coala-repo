@@ -12,5 +12,6 @@ The package contains the methods to fit a cell-cycle model on cell count data an
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-mitoode:1.25.0--r40h037d062_0
 - **Skill**: generated
 

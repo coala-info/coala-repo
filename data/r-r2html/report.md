@@ -17,6 +17,7 @@ Includes HTML function and methods to write in an HTML
 - **Version**: 2.3.4
 - **Author**: Eric Lecoutre [aut], Milan Bouchet-Valat [cre, ctb], Thomas Friedrichsmeier [ctb]
 - **Maintainer**: Milan Bouchet-Valat <nalimilan at club.fr>
+- **Docker Image**: quay.io/biocontainers/r-r2html:2.3.2--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 399
 - **Last updated**: 2025-04-22

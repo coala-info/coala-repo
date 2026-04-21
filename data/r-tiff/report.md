@@ -10,6 +10,7 @@ Functions to read, write and display bitmap images stored in the TIFF format. It
 - **Version**: 0.1-12
 - **Author**: Simon Urbanek [aut, cre], Kent Johnson [ctb]
 - **Maintainer**: Simon Urbanek <Simon.Urbanek at r-project.org>
+- **Docker Image**: quay.io/biocontainers/r-tiff:0.1.5--r3.3.2_2
 - **Skill**: generated
 - **Total Downloads**: 533
 - **Last updated**: 2025-04-22

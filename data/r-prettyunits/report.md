@@ -17,6 +17,7 @@ Pretty, human readable formatting of quantities.
 - **Version**: 1.2.0
 - **Author**: Gabor Csardi [aut, cre], Bill Denney [ctb], Christophe Regouby [ctb]
 - **Maintainer**: Gabor Csardi <csardi.gabor at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-prettyunits:1.0.2--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 173.4K
 - **Last updated**: 2025-04-22

@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/hfang-bristol/Pi
+- **Docker Image**: quay.io/biocontainers/bioconductor-pi:2.14.0--r43hdfd78af_0
 - **Skill**: generated
 

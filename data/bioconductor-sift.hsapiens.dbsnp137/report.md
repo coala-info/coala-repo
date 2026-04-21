@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-sift.hsapiens.dbsnp137:1.0.0--r45hdfd78af_14
 - **Skill**: generated
 

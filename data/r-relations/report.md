@@ -12,6 +12,7 @@ Data structures and algorithms for k-ary relations with
 - **Version**: 0.6-16
 - **Author**: David Meyer [aut], Kurt Hornik [aut, cre], Christian Buchta [ctb]
 - **Maintainer**: Kurt Hornik <Kurt.Hornik at R-project.org>
+- **Docker Image**: quay.io/biocontainers/r-relations:0.6_6--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 35
 - **Last updated**: 2025-04-22

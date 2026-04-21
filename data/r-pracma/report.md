@@ -13,6 +13,7 @@ Provides a large number of functions from numerical analysis and
 - **Version**: 2.4.6
 - **Author**: Hans W. Borchers [aut, cre]
 - **Maintainer**: Hans W. Borchers <hwborchers at googlemail.com>
+- **Docker Image**: quay.io/biocontainers/r-pracma:1.8.8--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 7.1K
 - **Last updated**: 2025-04-22

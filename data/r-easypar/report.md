@@ -10,6 +10,7 @@ R package easypar (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-easypar:1.0.0--r44hdfd78af_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

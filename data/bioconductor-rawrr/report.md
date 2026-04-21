@@ -12,5 +12,6 @@ The package provides basic functions to download and install the required third-
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fgcz/rawrr
+- **Docker Image**: quay.io/biocontainers/bioconductor-rawrr:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

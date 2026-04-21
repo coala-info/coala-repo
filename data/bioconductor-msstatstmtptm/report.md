@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Vitek-Lab/MSstatsTMTPTM
+- **Docker Image**: quay.io/biocontainers/bioconductor-msstatstmtptm:1.1.2--r41h619a076_2
 - **Skill**: generated
 

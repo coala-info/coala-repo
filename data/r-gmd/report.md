@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-gmd:0.3.3--r3.3.1_1
 - **Skill**: not generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ R package hmm (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-hmm:1.0.2--r45hdfd78af_1
 - **Skill**: generated
 - **Total Downloads**: 382
 - **Last updated**: 2025-04-22

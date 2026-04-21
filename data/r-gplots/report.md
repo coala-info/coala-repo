@@ -19,6 +19,7 @@ Various R programming tools for plotting data, including:
 - **Version**: 3.3.0
 - **Author**: Gregory R. Warnes [aut], Ben Bolker [aut], Lodewijk Bonebakker [aut], Robert Gentleman [aut], Wolfgang Huber [aut], Andy Liaw [aut], Thomas Lumley [aut], Martin Maechler [aut], Arni Magnusson [aut], Steffen Moeller [aut], Marc Schwartz [aut], Bill Venables [aut], Tal Galili [aut, cre]
 - **Maintainer**: Tal Galili <tal.galili at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-gplots:2.17.0--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 134.2K
 - **Last updated**: 2025-04-22

@@ -14,6 +14,7 @@ Contains general data structures and
 - **Version**: 1.1.13
 - **Author**: Rainer Opgen-Rhein and Korbinian Strimmer.
 - **Maintainer**: Korbinian Strimmer <strimmerlab at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-longitudinal:1.1.12--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 278
 - **Last updated**: 2025-04-22

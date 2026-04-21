@@ -12,5 +12,6 @@ The package provides ready to use epigenomes (obtained from TWGBS) and transcrip
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/cimbusch/tissueTreg
+- **Docker Image**: quay.io/biocontainers/bioconductor-tissuetreg:1.30.0--r45hdfd78af_0
 - **Skill**: generated
 

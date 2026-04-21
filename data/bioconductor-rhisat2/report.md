@@ -12,5 +12,6 @@ The package contains wrapper functions to create a genome index and to perform t
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fmicompbio/Rhisat2
+- **Docker Image**: quay.io/biocontainers/bioconductor-rhisat2:1.26.0--r45ha27e39d_0
 - **Skill**: generated
 

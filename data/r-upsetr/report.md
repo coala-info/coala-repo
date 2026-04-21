@@ -11,6 +11,7 @@ N/A
 - **Version**: 1.4.0
 - **Author**: Jake Conway [cre], Nils Gehlenborg [aut]
 - **Maintainer**: Jake Conway <jake_conway at hms.harvard.edu>
+- **Docker Image**: quay.io/biocontainers/r-upsetr:1.0.3--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 318
 - **Last updated**: 2025-04-22

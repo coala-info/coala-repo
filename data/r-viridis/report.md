@@ -14,6 +14,7 @@ Color maps designed to improve graph readability for readers with
 - **Version**: 0.6.5
 - **Author**: Simon Garnier [aut, cre], Noam Ross [ctb, cph], Bob Rudis [ctb, cph], Marco Sciaini [ctb, cph], Antônio Pedro Camargo [ctb, cph], Cédric Scherer [ctb, cph]
 - **Maintainer**: Simon Garnier <garnier at njit.edu>
+- **Docker Image**: quay.io/biocontainers/r-viridis:0.3.1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 25.8K
 - **Last updated**: 2025-04-22

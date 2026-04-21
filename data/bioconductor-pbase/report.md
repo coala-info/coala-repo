@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ComputationalProteomicsUnit/Pbase
+- **Docker Image**: quay.io/biocontainers/bioconductor-pbase:0.26.0--r36he1b5a44_0
 - **Skill**: generated
 

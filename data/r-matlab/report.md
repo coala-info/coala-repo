@@ -10,6 +10,7 @@ Emulate 'MATLAB' code using 'R'.</p>
 - **Version**: 1.0.4.1
 - **Author**: P. Roebuck
 - **Maintainer**: P. Roebuck <proebuck1701 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-matlab:1.0.2--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 305
 - **Last updated**: 2025-04-22

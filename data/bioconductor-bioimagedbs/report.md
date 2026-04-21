@@ -12,5 +12,6 @@ The package provides a bioimage dataset for the image analysis using machine lea
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-bioimagedbs:1.18.0--r45hdfd78af_0
 - **Skill**: generated
 

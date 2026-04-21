@@ -12,5 +12,6 @@ The package provides a BiblioSpec reader, a function which can add the protein i
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fgcz/specL
+- **Docker Image**: quay.io/biocontainers/bioconductor-specl:1.44.0--r45hdfd78af_0
 - **Skill**: generated
 

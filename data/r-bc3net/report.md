@@ -10,6 +10,7 @@ N/A
 - **Version**: 1.0.5
 - **Author**: Ricardo de Matos Simoes [aut, cre], Frank Emmert-Streib [aut]
 - **Maintainer**: Ricardo de Matos Simoes <ricardo_dematossimoes at dfci.harvard.edu>
+- **Docker Image**: quay.io/biocontainers/r-bc3net:1.0.4--r351h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

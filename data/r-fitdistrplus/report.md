@@ -16,6 +16,7 @@ Extends the fitdistr() function (of the MASS package) with several functions
 - **Version**: 1.2-6
 - **Author**: Marie-Laure Delignette-Muller [aut], Christophe Dutang [aut], Regis Pouillot [ctb], Jean-Baptiste Denis [ctb], Aurélie Siberchicot [aut, cre]
 - **Maintainer**: Aurélie Siberchicot <aurelie.siberchicot at univ-lyon1.fr>
+- **Docker Image**: quay.io/biocontainers/r-fitdistrplus:1.0_6--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 831
 - **Last updated**: 2025-04-22

@@ -10,6 +10,7 @@ R package eztune (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-eztune:3.1.1--r44h3121a25_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

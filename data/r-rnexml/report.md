@@ -13,6 +13,7 @@ Provides access to phyloinformatic data in 'NeXML' format.  The
 - **Version**: 2.4.11
 - **Author**: Carl Boettiger [cre, aut], Scott Chamberlain [aut], Hilmar Lapp [aut], Kseniia Shumelchyk [aut], Rutger Vos [aut]
 - **Maintainer**: Carl Boettiger <cboettig at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-rnexml:2.4.0--r36h6115d3f_0
 - **Skill**: generated
 - **Total Downloads**: 61
 - **Last updated**: 2025-04-22

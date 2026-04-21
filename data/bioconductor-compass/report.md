@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RGLab/COMPASS
+- **Docker Image**: quay.io/biocontainers/bioconductor-compass:1.48.0--r45ha27e39d_0
 - **Skill**: generated
 

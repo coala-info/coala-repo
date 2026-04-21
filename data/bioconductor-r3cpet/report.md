@@ -12,5 +12,6 @@ The package provides a method to infer the set of proteins that are more probabl
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sirusb/R3CPET
+- **Docker Image**: quay.io/biocontainers/bioconductor-r3cpet:1.42.0--r45ha27e39d_0
 - **Skill**: generated
 

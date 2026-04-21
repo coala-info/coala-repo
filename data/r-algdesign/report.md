@@ -15,6 +15,7 @@ Algorithmic experimental designs. Calculates exact and
 - **Version**: 1.2.1.2
 - **Author**: Bob Wheeler [aut], Jerome Braun [cre]
 - **Maintainer**: Jerome Braun <jvbraun.statistics at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-algdesign:1.1_7.3--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 490
 - **Last updated**: 2025-04-22

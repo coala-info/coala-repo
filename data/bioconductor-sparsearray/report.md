@@ -12,5 +12,6 @@ The package defines the SparseArray virtual class and two concrete subclasses: C
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/SparseArray
+- **Docker Image**: quay.io/biocontainers/bioconductor-sparsearray:1.10.8--r45h01b2380_0
 - **Skill**: generated
 

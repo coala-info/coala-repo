@@ -14,6 +14,7 @@ Onedimensional Normal (i.e. Gaussian) Mixture Models (S3) Classes,
 - **Version**: 1.3-3
 - **Author**: Martin Maechler [aut, cre], Friedrich Leisch [ctb] (norMixEM()), Erik Jørgensen [ctb] (pnorMix(), qnorMix())
 - **Maintainer**: Martin Maechler <maechler at stat.math.ethz.ch>
+- **Docker Image**: quay.io/biocontainers/r-nor1mix:1.2_1--r3.2.2_0
 - **Skill**: generated
 - **Total Downloads**: 362
 - **Last updated**: 2025-04-22

@@ -15,6 +15,7 @@ An improved implementation (based on k-nearest neighbors) of
 - **Version**: 0.3.3
 - **Author**: Thomas Lin Pedersen [aut, cre], Sean Hughes [aut], Xiaojie Qiu [aut]
 - **Maintainer**: Thomas Lin Pedersen <thomasp85 at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-densityclust:0.2.1--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 43
 - **Last updated**: 2025-04-22

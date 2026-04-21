@@ -12,5 +12,6 @@ the package provides multiple methods for query, prepare and download network da
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/claudiacava/SpidermiR
+- **Docker Image**: quay.io/biocontainers/bioconductor-spidermir:1.32.0--r43hdfd78af_0
 - **Skill**: generated
 

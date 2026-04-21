@@ -12,5 +12,6 @@ The package is an extension to the 'QFeatures' package and relies on 'SingleCell
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UCLouvain-CBIO/scp
+- **Docker Image**: quay.io/biocontainers/bioconductor-scp:1.20.0--r45hdfd78af_0
 - **Skill**: generated
 

@@ -10,6 +10,7 @@ R package geneexpressionfromgeo (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-geneexpressionfromgeo:1.3--r45h3121a25_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

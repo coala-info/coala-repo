@@ -9,6 +9,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-solarius:0.3.0.2--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

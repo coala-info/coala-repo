@@ -12,6 +12,7 @@ A framework for creating HTML widgets that render in various
 - **Version**: 1.6.4
 - **Author**: Ramnath Vaidyanathan [aut, cph], Yihui Xie [aut], JJ Allaire [aut], Joe Cheng [aut], Carson Sievert [aut, cre], Kenton Russell [aut, cph], Ellis Hughes [ctb], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Carson Sievert <carson at posit.co>
+- **Docker Image**: quay.io/biocontainers/r-htmlwidgets:0.5--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 426.9K
 - **Last updated**: 2025-04-22

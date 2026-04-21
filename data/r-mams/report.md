@@ -10,6 +10,7 @@ R package mams (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-mams:1.0.1--r44hdfd78af_1
 - **Skill**: generated
 - **Total Downloads**: 284
 - **Last updated**: 2025-04-22

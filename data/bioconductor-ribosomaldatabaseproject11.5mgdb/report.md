@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HCBravoLab/ribosonaldatabaseproject11.5
+- **Docker Image**: quay.io/biocontainers/bioconductor-ribosomaldatabaseproject11.5mgdb:1.00.0--r351_0
 - **Skill**: generated
 

@@ -11,6 +11,7 @@ Pure R implementation of the ubiquitous log4j package. It offers hierarchic
 - **Version**: 0.10-108
 - **Author**: Mario Frasca [aut], Walerian Sokolowski [cre]
 - **Maintainer**: Walerian Sokolowski <r-logging at wlogsolutions.com>
+- **Docker Image**: quay.io/biocontainers/r-logging:0.7_103--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22

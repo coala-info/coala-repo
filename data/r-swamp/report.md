@@ -11,6 +11,7 @@ Collection of functions to connect the structure of the data with the informatio
 - **Version**: 1.5.1
 - **Author**: Martin Lauss
 - **Maintainer**: Martin Lauss <martin.lauss at med.lu.se>
+- **Docker Image**: quay.io/biocontainers/r-swamp:1.5.1--r45h3121a25_7
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

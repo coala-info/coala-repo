@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: Not found
+- **Docker Image**: quay.io/biocontainers/bioconductor-txdb.rnorvegicus.ucsc.rn6.refgene:3.4.6--r45hdfd78af_13
 - **Skill**: generated
 

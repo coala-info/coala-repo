@@ -12,5 +12,6 @@ The package is particularly useful for bioinformatics applications but can be us
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/guokai8/VennDetail
+- **Docker Image**: quay.io/biocontainers/bioconductor-venndetail:1.26.0--r45hdfd78af_0
 - **Skill**: generated
 

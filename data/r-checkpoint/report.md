@@ -10,6 +10,7 @@ N/A
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-checkpoint:0.4.0--r3.3.2_0
 - **Skill**: generated
 - **Total Downloads**: 66.5K
 - **Last updated**: 2025-04-22

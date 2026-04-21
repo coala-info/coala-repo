@@ -11,6 +11,7 @@ Given a group of genomes and their relationship with each other, the package clu
 - **Version**: 1.2
 - **Author**: Thomas Clarke [aut, cre]
 - **Maintainer**: Thomas Clarke <tclarke at jcvi.org>
+- **Docker Image**: quay.io/biocontainers/r-ggrasp:1.0--r351h6115d3f_2
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -10,6 +10,7 @@ R package mmgenome (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-mmgenome:0.7.1--r44h9ee0642_7
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

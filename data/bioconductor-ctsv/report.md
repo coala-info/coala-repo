@@ -12,5 +12,6 @@ The package outputs p-values and q-values for genes in each cell type, and CTSV 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jingeyu/CTSV
+- **Docker Image**: quay.io/biocontainers/bioconductor-ctsv:1.12.0--r45hdfd78af_0
 - **Skill**: generated
 

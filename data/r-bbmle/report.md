@@ -10,6 +10,7 @@ Methods and functions for fitting maximum likelihood models in R. This package m
 - **Version**: 1.0.25.1
 - **Author**: Ben Bolker [aut, cre], R Development Core Team [aut], Iago Giné-Vázquez [ctb]
 - **Maintainer**: Ben Bolker <bolker at mcmaster.ca>
+- **Docker Image**: quay.io/biocontainers/r-bbmle:1.0.18--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 4.7K
 - **Last updated**: 2025-04-22

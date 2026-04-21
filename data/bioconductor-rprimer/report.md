@@ -12,5 +12,6 @@ the package vignette.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sofpn/rprimer
+- **Docker Image**: quay.io/biocontainers/bioconductor-rprimer:1.14.0--r45hdfd78af_0
 - **Skill**: generated
 

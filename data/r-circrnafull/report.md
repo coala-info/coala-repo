@@ -10,6 +10,7 @@ R package circrnafull (documentation from project home).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
+- **Docker Image**: quay.io/biocontainers/r-circrnafull:1.0.0--r44hdfd78af_1
 - **Skill**: generated
 - **Total Downloads**: N/A
 - **Last updated**: N/A

@@ -12,5 +12,6 @@ the package is available on all platforms; click for details.
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lgatto/MSnbase
+- **Docker Image**: quay.io/biocontainers/bioconductor-msnbase:2.36.0--r45ha27e39d_0
 - **Skill**: generated
 

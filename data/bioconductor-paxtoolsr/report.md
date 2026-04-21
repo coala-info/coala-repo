@@ -12,5 +12,6 @@ The package provides a set of R functions for interacting with BioPAX OWL files 
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BioPAX/paxtoolsr
+- **Docker Image**: quay.io/biocontainers/bioconductor-paxtoolsr:1.36.0--r43hdfd78af_0
 - **Skill**: generated
 

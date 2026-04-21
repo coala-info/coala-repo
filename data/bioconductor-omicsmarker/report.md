@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/cdeterman/OmicsMarkeR
+- **Docker Image**: quay.io/biocontainers/bioconductor-omicsmarker:1.19.0--r40_0
 - **Skill**: generated
 

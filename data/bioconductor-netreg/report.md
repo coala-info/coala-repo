@@ -12,5 +12,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Author**: N/A
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/dirmeier/netReg
+- **Docker Image**: quay.io/biocontainers/bioconductor-netreg:1.13.1--r40h399db7b_1
 - **Skill**: generated
 

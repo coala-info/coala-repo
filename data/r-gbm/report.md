@@ -16,6 +16,7 @@ An implementation of extensions to Freund and Schapire's AdaBoost
 - **Version**: 2.2.3
 - **Author**: Greg Ridgeway [aut, cre], Daniel Edwards [ctb], Brian Kriegler [ctb], Stefan Schroedl [ctb], Harry Southworth [ctb], Brandon Greenwell [ctb], Bradley Boehmke [ctb], Jay Cunningham [ctb], GBM Developers [aut] (https://github.com/gbm-developers)
 - **Maintainer**: Greg Ridgeway <gridge at upenn.edu>
+- **Docker Image**: quay.io/biocontainers/r-gbm:2.1.3--r3.4.1_0
 - **Skill**: generated
 - **Total Downloads**: 14.9K
 - **Last updated**: 2025-04-22

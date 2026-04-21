@@ -10,6 +10,7 @@ Provides a visual exploratory tool on correlation matrix that supports automatic
 - **Version**: 0.95
 - **Author**: Taiyun Wei [cre, aut], Viliam Simko [aut], Michael Levy [ctb], Yihui Xie [ctb], Yan Jin [ctb], Jeff Zemla [ctb], Moritz Freidank [ctb], Jun Cai [ctb], Tomas Protivinsky [ctb]
 - **Maintainer**: Taiyun Wei <weitaiyun at gmail.com>
+- **Docker Image**: quay.io/biocontainers/r-corrplot:0.77--r3.3.1_0
 - **Skill**: generated
 - **Total Downloads**: 4.5K
 - **Last updated**: 2025-04-22

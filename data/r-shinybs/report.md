@@ -10,6 +10,7 @@ Adds easy access to additional Twitter Bootstrap components to Shiny. </p>
 - **Version**: 0.63.0
 - **Author**: Eric Bailey [aut], Federico Marini [cre, ctb], Jesse Koops [ctb]
 - **Maintainer**: Federico Marini <marinif at uni-mainz.de>
+- **Docker Image**: quay.io/biocontainers/r-shinybs:0.25.0--r341h470a237_0
 - **Skill**: generated
 - **Total Downloads**: 6.1K
 - **Last updated**: 2025-04-22

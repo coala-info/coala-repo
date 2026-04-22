@@ -188,4 +188,6 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/entrez-direct:24.0--he881be0_0
+  - class: NetworkAccess
+    networkAccess: true
 stdout: entrez-direct_efetch.out

@@ -9,6 +9,13 @@ inputs:
   - id: input_file
     type: File
     doc: Input VCF/BCF file
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
+      - pattern: .idx
+        required: false
     inputBinding:
       position: 1
   - id: regions_positional

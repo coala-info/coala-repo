@@ -9,6 +9,9 @@ inputs:
   - id: input_file
     type: File
     doc: The TAB-delimited file to be indexed (must be bgzip compressed).
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 1
   - id: region
